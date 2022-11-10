@@ -7,20 +7,20 @@ from urllib.parse import urlsplit, parse_qsl, quote
 from requests import get
 from tqdm.auto import tqdm
 
-from internet_archive_query_log.config import Config
 from internet_archive_query_log.util import backoff_session
 
 
 @dataclass(frozen=True)
 class InternetArchiveQueries:
-    config: Config
+    prefix: str
+    query_parameter: str
     data_directory_path: Path
     cdx_api_url: str
 
     @cached_property
     def _params(self) -> Iterable[tuple[str, Any]]:
         return (
-            ("url", self.config.prefix),
+            ("url", self.prefix),
             ("matchType", "prefix"),
             ("fl", "original"),
             ("filter", "mimetype:text/html"),
@@ -30,7 +30,7 @@ class InternetArchiveQueries:
     @cached_property
     def _output_directory_path(self) -> Path:
         output_directory_path = \
-            self.data_directory_path / quote(self.config.prefix, safe="")
+            self.data_directory_path / quote(self.prefix, safe="")
         output_directory_path.mkdir(exist_ok=True)
         return output_directory_path
 
@@ -76,7 +76,7 @@ class InternetArchiveQueries:
             for url in response.text.splitlines(keepends=False):
                 query_string = urlsplit(url).query
                 for key, value in parse_qsl(query_string):
-                    if key == self.config.query_parameter:
+                    if key == self.query_parameter:
                         # TODO we might write CSV format here to
                         #  also include the timestamp and url.
                         file.write(f"{value}\n")

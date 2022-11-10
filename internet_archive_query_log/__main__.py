@@ -16,7 +16,9 @@ def internet_archive_query_log():
 
 _CONFIGS = {
     "google": Config(
-        prefix="google.com/search",
+        prefixes={
+            "google.com/search"
+        },
         query_parameter="q",
     )
 }
@@ -46,11 +48,14 @@ _CONFIGS = {
     default=CDX_API_URL,
 )
 def fetch_queries(search_engine: str, data_dir: Path, api_url: str, **kwargs):
-    InternetArchiveQueries(
-        config=_CONFIGS[search_engine],
-        data_directory_path=data_dir,
-        cdx_api_url=api_url,
-    ).fetch()
+    config = _CONFIGS[search_engine]
+    for prefix in config.prefixes:
+        InternetArchiveQueries(
+            prefix=prefix,
+            query_parameter=config.query_parameter,
+            data_directory_path=data_dir,
+            cdx_api_url=api_url,
+        ).fetch()
 
 
 if __name__ == "__main__":
