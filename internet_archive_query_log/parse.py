@@ -38,8 +38,12 @@ class FragmentParameter(QueryParser):
 @dataclass(frozen=True)
 class PathSuffix(QueryParser):
     prefix: str
+    single_segment: bool = False
 
     def parse_query(self, url: SplitResult) -> Optional[str]:
         if not url.path.startswith(self.prefix):
             return None
-        return unquote(url.path.removeprefix(self.prefix))
+        path = url.path.removeprefix(self.prefix)
+        if self.single_segment and "/" in path:
+            path, _ = path.split("/", maxsplit=1)
+        return unquote(path)
