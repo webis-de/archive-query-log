@@ -2,25 +2,26 @@ from dataclasses import dataclass
 from functools import cached_property
 from pathlib import Path
 from typing import Any, Iterable, Optional
-from urllib.parse import urlsplit, parse_qsl, quote
+from urllib.parse import urlsplit, quote
 
 from requests import get
 from tqdm.auto import tqdm
 
+from internet_archive_query_log.parse import QueryParser
 from internet_archive_query_log.util import backoff_session
 
 
 @dataclass(frozen=True)
 class InternetArchiveQueries:
-    prefix: str
-    query_parameter: str
+    url_prefix: str
+    parser: QueryParser
     data_directory_path: Path
     cdx_api_url: str
 
     @cached_property
     def _params(self) -> Iterable[tuple[str, Any]]:
         return (
-            ("url", self.prefix),
+            ("url", self.url_prefix),
             ("matchType", "prefix"),
             ("fl", "original"),
             ("filter", "mimetype:text/html"),
@@ -30,7 +31,7 @@ class InternetArchiveQueries:
     @cached_property
     def _output_directory_path(self) -> Path:
         output_directory_path = \
-            self.data_directory_path / quote(self.prefix, safe="")
+            self.data_directory_path / quote(self.url_prefix, safe="")
         output_directory_path.mkdir(exist_ok=True)
         return output_directory_path
 
@@ -39,7 +40,7 @@ class InternetArchiveQueries:
         return self._output_directory_path / "queries.txt"
 
     @cached_property
-    def _num_pages(self) -> int:
+    def num_pages(self) -> int:
         num_pages_response = get(
             self.cdx_api_url,
             params=[
@@ -74,19 +75,18 @@ class InternetArchiveQueries:
                 print(f"Failed to load page {page}.")
                 return None
             for url in response.text.splitlines(keepends=False):
-                query_string = urlsplit(url).query
-                for key, value in parse_qsl(query_string):
-                    if key == self.query_parameter:
-                        # TODO we might write CSV format here to
-                        #  also include the timestamp and url.
-                        file.write(f"{value}\n")
+                query = self.parser.parse_query(urlsplit(url))
+                if query is not None:
+                    # TODO we might write CSV format here to
+                    #  also include the timestamp and url.
+                    file.write(f"{query}\n")
 
     def _fetch_pages(self) -> None:
         """
         Fetch queries from each individual page.
         """
         for page in tqdm(
-                range(self._num_pages),
+                range(self.num_pages),
                 desc="Fetch queries",
                 unit="page",
         ):
@@ -99,7 +99,7 @@ class InternetArchiveQueries:
         This allows to
         """
         missing_pages = set()
-        for page in range(self._num_pages):
+        for page in range(self.num_pages):
             path = self._page_cache_path(page)
             if not path.exists() or not path.is_file():
                 missing_pages.add(page)
@@ -111,7 +111,7 @@ class InternetArchiveQueries:
         """
         with self._result_path.open("wt") as file:
             for page in tqdm(
-                    range(self._num_pages),
+                    range(self.num_pages),
                     desc="Merge queries",
                     unit="page",
             ):
