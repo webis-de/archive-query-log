@@ -151,7 +151,11 @@ _CONFIGS: Mapping[str, Config] = {
         ]
     ),
     # TODO Add more search engines
-    #  (see https://en.wikipedia.org/wiki/List_of_search_engines).
+    #  - https://en.wikipedia.org/wiki/List_of_search_engines).
+    #  - https://www.ebay-kleinanzeigen.de/
+    #  - https://www.youtube.com/
+    #  - https://www.semanticscholar.org/
+    #  - https://webis.de/publications.html
 }
 
 
