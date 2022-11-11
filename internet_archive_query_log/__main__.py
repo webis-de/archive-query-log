@@ -1,3 +1,4 @@
+from itertools import chain
 from pathlib import Path
 from typing import Mapping, Optional
 
@@ -9,11 +10,13 @@ from internet_archive_query_log.config import Config, QuerySource
 from internet_archive_query_log.parse import QueryParameter, FragmentParameter, \
     PathSuffix
 from internet_archive_query_log.queries import InternetArchiveQueries
+from internet_archive_query_log.sites import STACKEXCHANGE_SITES, EBAY_SITES, \
+    AMAZON_SITES, WIKIPEDIA_SITES
 from internet_archive_query_log.util import URL
 
 _CONFIGS: Mapping[str, Config] = {
-    "google": Config(
-        query_sources=(
+    "google": Config(  # TODO: Test
+        query_sources=[
             # TODO Add all global pages
             #  (see https://www.google.com/supported_domains).
             QuerySource("google.com/search?", QueryParameter("q")),
@@ -39,138 +42,113 @@ _CONFIGS: Mapping[str, Config] = {
                 "earth.google.com/web/search/",
                 PathSuffix("web/search/", single_segment=True),
             ),
-        )
+        ]
     ),
-    "bing": Config(
-        query_sources=(
+    "bing": Config(  # TODO: Test
+        query_sources=[
             # TODO Add all global pages.
             QuerySource("bing.com/search?", QueryParameter("q")),
-        )
+        ]
     ),
-    "yahoo": Config(
-        query_sources=(
+    "yahoo": Config(  # TODO: Test
+        query_sources=[
             # TODO Add all global pages.
             QuerySource("yahoo.com/search?", QueryParameter("p")),
             QuerySource("search.yahoo.com/search?", QueryParameter("p")),
-            # QuerySource("en.search.yahoo.com/search?", QueryParameter("p")),
             QuerySource("de.search.yahoo.com/search?", QueryParameter("p")),
-        )
+        ]
     ),
-    "duckduckgo": Config(
-        query_sources=(
+    "duckduckgo": Config(  # Tested
+        query_sources=[
             QuerySource("duckduckgo.com/?", QueryParameter("q")),
-        )
+        ]
     ),
-    "internet-archive": Config(
-        query_sources=(
+    "internet-archive": Config(  # Tested
+        query_sources=[
             QuerySource("archive.org/search.php?", QueryParameter("query")),
-        )
+        ]
     ),
-    "wikipedia": Config(
-        query_sources=(
-            # TODO Add all global pages.
+    "wikipedia": Config(  # Tested
+        query_sources=[
             QuerySource(
-                "en.wikipedia.org/w/index.php?",
+                f"{site}/w/index.php?",
                 QueryParameter("search"),
-            ),
-            QuerySource(
-                "de.wikipedia.org/w/index.php?",
-                QueryParameter("search"),
-            ),
+            )
+            for site in WIKIPEDIA_SITES
+        ]
+    ),
+    "amazon": Config(  # Tested
+        query_sources=[
+            QuerySource(f"{site}/s?", QueryParameter("k"))
+            for site in AMAZON_SITES
+        ]
+    ),
+    "ebay": Config(  # Tested
+        query_sources=chain.from_iterable(
+            [
+                QuerySource(f"{site}/?", QueryParameter("_nkw")),
+                QuerySource(f"{site}/sch/i.html?", QueryParameter("_nkw")),
+            ]
+            for site in EBAY_SITES
         )
     ),
-    "amazon": Config(
-        query_sources=(
-            # TODO Add all global pages.
-            QuerySource("amazon.com/s?", QueryParameter("k")),
-            QuerySource("amazon.de/s?", QueryParameter("k")),
-        )
-    ),
-    "ebay": Config(
-        query_sources=(
-            # TODO Are there global pages?
-            QuerySource("ebay.com/?", QueryParameter("_nkw")),
-            QuerySource("ebay.com/sch/i.html?", QueryParameter("_nkw")),
-        )
-    ),
-    "lastfm": Config(
-        query_sources=(
+    "lastfm": Config(  # Tested
+        query_sources=[
             QuerySource("last.fm/search?", QueryParameter("q")),
-        )
+        ]
     ),
-    "twitter": Config(
-        query_sources=(
+    "twitter": Config(  # Tested
+        query_sources=[
             QuerySource("twitter.com/search?", QueryParameter("q")),
-        )
+        ]
     ),
-    "facebook": Config(
-        query_sources=(
-            QuerySource("facebook.com/search/?", QueryParameter("q")),
+    "facebook": Config(  # Tested
+        query_sources=[
             QuerySource("facebook.com/search?", QueryParameter("q")),
-            QuerySource("facebook.com/search/top/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/top?", QueryParameter("q")),
-            QuerySource("facebook.com/search/posts/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/posts?", QueryParameter("q")),
-            QuerySource("facebook.com/search/people/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/people?", QueryParameter("q")),
-            QuerySource("facebook.com/search/photos/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/photos?", QueryParameter("q")),
-            QuerySource("facebook.com/search/videos/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/videos?", QueryParameter("q")),
-            QuerySource("facebook.com/search/pages/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/pages?", QueryParameter("q")),
-            QuerySource("facebook.com/search/places/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/places?", QueryParameter("q")),
-            QuerySource("facebook.com/search/groups/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/groups?", QueryParameter("q")),
-            QuerySource("facebook.com/search/events/?", QueryParameter("q")),
-            QuerySource("facebook.com/search/events?", QueryParameter("q")),
-        )
+        ]
     ),
-    "pubmed": Config(
-        query_sources=(
+    "pubmed": Config(  # Tested
+        query_sources=[
             QuerySource("pubmed.gov/?", QueryParameter("term")),
             QuerySource("pubmed.ncbi.nlm.nih.gov/?", QueryParameter("term")),
-        )
+        ]
     ),
-    "google-scholar": Config(
-        query_sources=(
+    "google-scholar": Config(  # Tested
+        query_sources=[
             QuerySource("scholar.google.com/scholar?", QueryParameter("q")),
-        )
+        ]
     ),
-    "dblp": Config(
-        query_sources=(
+    "dblp": Config(  # Tested
+        query_sources=[
             QuerySource("dblp.org/search?", QueryParameter("q")),
             QuerySource("dblp.uni-trier.de/search?", QueryParameter("q")),
-        )
+        ]
     ),
-    "github": Config(
-        query_sources=(
+    "github": Config(  # Tested
+        query_sources=[
             QuerySource("github.com/search?", QueryParameter("q")),
-            QuerySource("github.com/search/?", QueryParameter("q")),
-        )
+        ]
     ),
-    "stackexchange": Config(
-        query_sources=(
-            # TODO Add other sites (see https://stackexchange.com/sites).
-            QuerySource("stackoverflow.com/search?", QueryParameter("q")),
-            QuerySource("serverfault.com/search?", QueryParameter("q")),
-        )
+    "stackexchange": Config(  # Tested
+        query_sources=[
+            QuerySource(f"{site}/search?", QueryParameter("q"))
+            for site in STACKEXCHANGE_SITES
+        ]
     ),
-    "chatnoir": Config(
-        query_sources=(
+    "chatnoir": Config(  # Tested
+        query_sources=[
             QuerySource("chatnoir.eu/?", QueryParameter("q")),
-        )
+        ]
     ),
-    "argsme": Config(
-        query_sources=(
-            QuerySource("args.me/search.html?", QueryParameter("query")),
-        )
+    "argsme": Config(  # Tested
+        query_sources=[
+            QuerySource("args.me/?query=", QueryParameter("query")),
+        ]
     ),
-    "netspeak": Config(
-        query_sources=(
-            QuerySource("netspeak.org/#", FragmentParameter("q")),
-        )
+    "netspeak": Config(  # No queries found
+        query_sources=[
+            QuerySource("netspeak.org/?q=", FragmentParameter("q")),
+        ]
     ),
     # TODO Add more search engines
     #  (see https://en.wikipedia.org/wiki/List_of_search_engines).

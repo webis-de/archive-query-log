@@ -1,10 +1,12 @@
+from csv import DictWriter
 from dataclasses import dataclass
+from datetime import datetime
 from functools import cached_property
 from pathlib import Path
 from typing import Any, Iterable, Optional
 from urllib.parse import urlsplit, quote
 
-from requests import get
+from requests import get, HTTPError
 from tqdm.auto import tqdm
 
 from internet_archive_query_log.parse import QueryParser
@@ -21,23 +23,23 @@ class InternetArchiveQueries:
     @cached_property
     def _params(self) -> Iterable[tuple[str, Any]]:
         return (
-            ("url", self.url_prefix),
+            ("url", quote(self.url_prefix)),
             ("matchType", "prefix"),
-            ("fl", "original"),
+            ("fl", "timestamp,original"),
             ("filter", "mimetype:text/html"),
             ("filter", "!statuscode:[45].."),
         )
 
     @cached_property
-    def _output_directory_path(self) -> Path:
-        output_directory_path = \
-            self.data_directory_path / quote(self.url_prefix, safe="")
-        output_directory_path.mkdir(exist_ok=True)
-        return output_directory_path
+    def _result_path(self) -> Path:
+        name = quote(self.url_prefix, safe="")
+        return self.data_directory_path / f"{name}.csv"
 
     @cached_property
-    def _result_path(self) -> Path:
-        return self._output_directory_path / "queries.txt"
+    def _cache_path(self) -> Path:
+        cache_path = self.data_directory_path / self._result_path.stem
+        cache_path.mkdir(exist_ok=True)
+        return cache_path
 
     @cached_property
     def num_pages(self) -> int:
@@ -51,7 +53,7 @@ class InternetArchiveQueries:
         return int(num_pages_response.text)
 
     def _page_cache_path(self, page: int) -> Path:
-        return self._output_directory_path / f"page_{page:05}.txt"
+        return self._cache_path / f"page_{page:05}.csv"
 
     def _fetch_page(self, page: int) -> Optional[Path]:
         path = self._page_cache_path(page)
@@ -61,25 +63,38 @@ class InternetArchiveQueries:
             return path
 
         session = backoff_session()
+        try:
+            response = session.get(
+                self.cdx_api_url,
+                params=[
+                    *self._params,
+                    ("page", page),
+                ],
+                timeout=10 * 60  # 10 minutes, better safe than sorry ;)
+            )
+        except HTTPError:
+            print(f"Failed to load page {page}.")
+            return None
         with path.open("wt") as file:
-            try:
-                response = session.get(
-                    self.cdx_api_url,
-                    params=[
-                        *self._params,
-                        ("page", page),
-                    ],
-                    timeout=10 * 60  # 10 minutes, better safe than sorry ;)
+            writer = DictWriter(
+                file,
+                fieldnames=["posix", "query", "url"],
+            )
+            writer.writeheader()
+            for line in response.text.splitlines(keepends=False):
+                timestamp_string, url = line.split()
+                timestamp = datetime.strptime(
+                    timestamp_string,
+                    "%Y%m%d%H%M%S"
                 )
-            except:
-                print(f"Failed to load page {page}.")
-                return None
-            for url in response.text.splitlines(keepends=False):
+                posix = int(timestamp.timestamp())
                 query = self.parser.parse_query(urlsplit(url))
                 if query is not None:
-                    # TODO we might write CSV format here to
-                    #  also include the timestamp and url.
-                    file.write(f"{query}\n")
+                    writer.writerow({
+                        "posix": posix,
+                        "query": query,
+                        "url": url
+                    })
 
     def _fetch_pages(self) -> None:
         """
@@ -117,9 +132,17 @@ class InternetArchiveQueries:
             ):
                 path = self._page_cache_path(page)
                 with path.open("rt") as page_file:
-                    file.write(page_file.read())
+                    lines = page_file
+                    if page > 0:
+                        # Consume CSV header for every page but the first.
+                        next(lines)
+                    for line in lines:
+                        file.write(line)
 
     def fetch(self) -> None:
+        if self._result_path.exists():
+            assert self._result_path.is_file()
+            return
         self._fetch_pages()
         missing_pages = self._missing_pages()
         if len(missing_pages) > 0:
@@ -129,3 +152,6 @@ class InternetArchiveQueries:
                 f"might only have timed out."
             )
         self._merge_cached_pages()
+        for path in self._cache_path.iterdir():
+            path.unlink()
+        self._cache_path.rmdir()
