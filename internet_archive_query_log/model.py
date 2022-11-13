@@ -21,3 +21,14 @@ class Query(DataClassJsonMixin):
     def archive_url(self) -> str:
         timestamp = self.datetime.strftime("%Y%m%d%H%M%S")
         return f"https://web.archive.org/web/{timestamp}/{self.url}"
+
+
+@dataclass(frozen=True, slots=True)
+class Result(DataClassJsonMixin):
+    """
+    Single retrieved result from a query's archived SERP.
+    """
+    rank: int
+    url: str
+    title: str
+    snippet: str | None = None
