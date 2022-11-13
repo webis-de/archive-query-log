@@ -86,13 +86,14 @@ class InternetArchiveQueries(Iterable[Query]):
                     timestamp_string,
                     "%Y%m%d%H%M%S"
                 )
-                query = self.parser.parse_query(urlsplit(url))
-                if query is not None:
-                    file.write(schema.dumps(Query(
-                        text=query,
+                query_text = self.parser.parse_query(urlsplit(url))
+                if query_text is not None:
+                    query = Query(
+                        text=query_text,
                         url=url,
                         timestamp=int(timestamp.timestamp()),
-                    )))
+                    )
+                    file.write(schema.dumps(query))
                     file.write("\n")
 
     def _fetch_pages(self) -> None:

@@ -44,7 +44,7 @@ def fetch_queries(
         api_url: str,
 ) -> None:
     config = SOURCES[search_engine]
-    for source in config.query_sources:
+    for source in config:
         queries = InternetArchiveQueries(
             url_prefix=source.url_prefix,
             parser=source.parser,
@@ -71,7 +71,7 @@ def num_pages(api_url: str, search_engine: Optional[str]) -> None:
         else (SOURCES[search_engine],)
     total_pages = 0
     for config in configs:
-        for source in config.query_sources:
+        for source in config:
             queries = InternetArchiveQueries(
                 url_prefix=source.url_prefix,
                 parser=source.parser,
