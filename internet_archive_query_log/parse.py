@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import final, Optional
+from typing import final, Optional, Iterable
 from urllib.parse import SplitResult, parse_qsl, unquote
+
+from internet_archive_query_log.model import Result
 
 
 class QueryParser(ABC):
@@ -47,3 +49,9 @@ class PathSuffix(QueryParser):
         if self.single_segment and "/" in path:
             path, _ = path.split("/", maxsplit=1)
         return unquote(path)
+
+
+class SerpParser(ABC):
+    @abstractmethod
+    def parse_serp(self, content: bytes) -> Iterable[Result]:
+        ...
