@@ -3,10 +3,12 @@ from datetime import datetime
 from functools import cached_property
 from math import log10, floor
 from pathlib import Path
+from tempfile import gettempdir
 from typing import Any, Iterable, Optional, Iterator
 from urllib.parse import urlsplit, quote
 
 from requests import get, HTTPError
+from requests.exceptions import ChunkedEncodingError
 from tqdm.auto import tqdm
 
 from internet_archive_query_log.model import Query
@@ -39,7 +41,7 @@ class InternetArchiveQueries(Iterable[Query]):
 
     @cached_property
     def _cache_path(self) -> Path:
-        cache_path = self.data_directory_path / self._result_path.stem
+        cache_path = Path(gettempdir()) / self._result_path.stem
         cache_path.mkdir(exist_ok=True)
         return cache_path
 
@@ -56,7 +58,7 @@ class InternetArchiveQueries(Iterable[Query]):
 
     def _page_cache_path(self, page: int) -> Path:
         num_digits = floor(log10(self.num_pages)) + 1
-        return self._cache_path / f"page_{page:05}.jsonl"
+        return self._cache_path / f"page_{page:{num_digits}}.jsonl"
 
     def _fetch_page(self, page: int) -> Optional[Path]:
         path = self._page_cache_path(page)
@@ -76,7 +78,10 @@ class InternetArchiveQueries(Iterable[Query]):
                 timeout=10 * 60  # 10 minutes, better safe than sorry ;)
             )
         except HTTPError:
-            print(f"Failed to load page {page}.")
+            print(f"Failed to load page: {page}")
+            return None
+        except ChunkedEncodingError:
+            print(f"Failed to read page contents: {page}")
             return None
         schema = Query.schema()
         with path.open("wt") as file:
@@ -140,6 +145,7 @@ class InternetArchiveQueries(Iterable[Query]):
         if self._result_path.exists():
             assert self._result_path.is_file()
             return
+        print(f"Storing temporary files at: {self._cache_path}")
         self._fetch_pages()
         missing_pages = self._missing_pages()
         if len(missing_pages) > 0:
