@@ -1,7 +1,7 @@
-from csv import DictWriter
 from dataclasses import dataclass
 from datetime import datetime
 from functools import cached_property
+from math import log10, floor
 from pathlib import Path
 from typing import Any, Iterable, Optional
 from urllib.parse import urlsplit, quote
@@ -9,6 +9,7 @@ from urllib.parse import urlsplit, quote
 from requests import get, HTTPError
 from tqdm.auto import tqdm
 
+from internet_archive_query_log.model import Query
 from internet_archive_query_log.parse import QueryParser
 from internet_archive_query_log.util import backoff_session
 
@@ -33,7 +34,7 @@ class InternetArchiveQueries:
     @cached_property
     def _result_path(self) -> Path:
         name = quote(self.url_prefix, safe="")
-        return self.data_directory_path / f"{name}.csv"
+        return self.data_directory_path / f"{name}.jsonl"
 
     @cached_property
     def _cache_path(self) -> Path:
@@ -53,7 +54,8 @@ class InternetArchiveQueries:
         return int(num_pages_response.text)
 
     def _page_cache_path(self, page: int) -> Path:
-        return self._cache_path / f"page_{page:05}.csv"
+        num_digits = floor(log10(self.num_pages)) + 1
+        return self._cache_path / f"page_{page:05}.jsonl"
 
     def _fetch_page(self, page: int) -> Optional[Path]:
         path = self._page_cache_path(page)
@@ -75,26 +77,22 @@ class InternetArchiveQueries:
         except HTTPError:
             print(f"Failed to load page {page}.")
             return None
+        schema = Query.schema()
         with path.open("wt") as file:
-            writer = DictWriter(
-                file,
-                fieldnames=["posix", "query", "url"],
-            )
-            writer.writeheader()
             for line in response.text.splitlines(keepends=False):
                 timestamp_string, url = line.split()
                 timestamp = datetime.strptime(
                     timestamp_string,
                     "%Y%m%d%H%M%S"
                 )
-                posix = int(timestamp.timestamp())
                 query = self.parser.parse_query(urlsplit(url))
                 if query is not None:
-                    writer.writerow({
-                        "posix": posix,
-                        "query": query,
-                        "url": url
-                    })
+                    file.write(schema.dumps(Query(
+                        text=query,
+                        url=url,
+                        timestamp=int(timestamp.timestamp()),
+                    )))
+                    file.write("\n")
 
     def _fetch_pages(self) -> None:
         """

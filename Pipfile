@@ -8,6 +8,7 @@ requests = "*"
 urllib3 = "*"
 tqdm = "*"
 click = "*"
+dataclasses-json = "*"
 
 [dev-packages]
 
