@@ -3,7 +3,7 @@ from datetime import datetime
 from functools import cached_property
 from math import log10, floor
 from pathlib import Path
-from typing import Any, Iterable, Optional
+from typing import Any, Iterable, Optional, Iterator
 from urllib.parse import urlsplit, quote
 
 from requests import get, HTTPError
@@ -15,7 +15,7 @@ from internet_archive_query_log.util import backoff_session
 
 
 @dataclass(frozen=True)
-class InternetArchiveQueries:
+class InternetArchiveQueries(Iterable[Query]):
     url_prefix: str
     parser: QueryParser
     data_directory_path: Path
@@ -154,3 +154,10 @@ class InternetArchiveQueries:
         for path in self._cache_path.iterdir():
             path.unlink()
         self._cache_path.rmdir()
+
+    def __iter__(self) -> Iterator[Query]:
+        self.fetch()
+        schema = Query.schema()
+        with self._result_path.open("rt") as file:
+            for line in file:
+                yield schema.loads(line)
