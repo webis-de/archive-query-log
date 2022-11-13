@@ -133,9 +133,6 @@ class InternetArchiveQueries(Iterable[Query]):
                 path = self._page_cache_path(page)
                 with path.open("rt") as page_file:
                     lines = page_file
-                    if page > 0:
-                        # Consume CSV header for every page but the first.
-                        next(lines)
                     for line in lines:
                         file.write(line)
 
