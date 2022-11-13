@@ -22,6 +22,11 @@ class Query(DataClassJsonMixin):
         timestamp = self.datetime.strftime("%Y%m%d%H%M%S")
         return f"https://web.archive.org/web/{timestamp}/{self.url}"
 
+    @property
+    def raw_archive_url(self) -> str:
+        timestamp = self.datetime.strftime("%Y%m%d%H%M%S")
+        return f"https://web.archive.org/web/{timestamp}id_/{self.url}"
+
 
 @dataclass(frozen=True, slots=True)
 class Result(DataClassJsonMixin):
