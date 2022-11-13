@@ -28,7 +28,8 @@ class InternetArchiveQueries:
             ("matchType", "prefix"),
             ("fl", "timestamp,original"),
             ("filter", "mimetype:text/html"),
-            ("filter", "!statuscode:[45].."),
+            ("filter", "statuscode:200"),
+            # ("filter", "!statuscode:[45].."),  # Less strict, with redirects.
         )
 
     @cached_property
