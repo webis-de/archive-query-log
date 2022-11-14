@@ -3,6 +3,9 @@ from dataclasses import dataclass
 from typing import final, Optional, Iterable
 from urllib.parse import SplitResult, parse_qsl, unquote
 
+from bleach import clean
+from bs4 import BeautifulSoup, Tag
+
 from internet_archive_query_log.model import Result
 
 
@@ -59,3 +62,40 @@ class SerpParser(ABC):
             encoding: str | None
     ) -> Iterable[Result]:
         ...
+
+
+class BingSerpParser(SerpParser):
+
+    @staticmethod
+    def _clean_html(tag: Tag) -> str:
+        return clean(
+            tag.decode_contents(),
+            tags=["strong"],
+            attributes=[],
+            protocols=[],
+            strip=True,
+            strip_comments=True,
+        ).strip()
+
+    def parse_serp(
+            self,
+            content: bytes,
+            encoding: str | None
+    ) -> Iterable[Result]:
+        soup = BeautifulSoup(content, "html.parser", from_encoding=encoding)
+        results: Tag = soup.find("ol", id="b_results")
+        if results is None:
+            return
+        result: Tag
+        for result in results.find_all("li", class_="b_algo"):
+            print(result.decode_contents())
+            title: Tag = result.find("h2")
+            caption: Tag | None = result.find("p")
+            yield Result(
+                url=title.find("a").attrs["href"],
+                title=self._clean_html(title),
+                snippet=(
+                    self._clean_html(caption)
+                    if caption is not None else ""
+                )
+            )
