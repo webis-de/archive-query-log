@@ -10,6 +10,7 @@ tqdm = "*"
 click = "*"
 dataclasses-json = "*"
 beautifulsoup4 = "*"
+bleach = "*"
 
 [dev-packages]
 
