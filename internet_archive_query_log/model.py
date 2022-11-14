@@ -1,7 +1,9 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
+from typing import Sequence
 
-from dataclasses_json import DataClassJsonMixin
+from dataclasses_json import DataClassJsonMixin, config
+from marshmallow.fields import List, Nested
 
 
 @dataclass(frozen=True, slots=True)
@@ -36,3 +38,17 @@ class Result(DataClassJsonMixin):
     url: str
     title: str
     snippet: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class Serp(Query, DataClassJsonMixin):
+    """
+    Search engine result page (SERP) corresponding to a query.
+    """
+    results: Sequence[Result] = field(
+        metadata=config(
+            encoder=list,
+            decoder=tuple,
+            mm_field=List(Nested(Result.schema()))
+        )
+    )
