@@ -13,7 +13,7 @@ from tqdm.auto import tqdm
 
 from internet_archive_query_log.model import Query
 from internet_archive_query_log.parse import QueryParser
-from internet_archive_query_log.util import backoff_session
+from internet_archive_query_log.util.http import backoff_session
 
 
 @dataclass(frozen=True)

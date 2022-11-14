@@ -12,7 +12,7 @@ from tqdm.auto import tqdm
 from internet_archive_query_log.model import Query, Serp
 from internet_archive_query_log.parse import SerpParser
 from internet_archive_query_log.queries import InternetArchiveQueries
-from internet_archive_query_log.util import backoff_session
+from internet_archive_query_log.util.http import backoff_session
 
 
 @dataclass(frozen=True)
