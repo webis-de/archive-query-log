@@ -67,6 +67,18 @@ SOURCES: Mapping[str, Sequence[Source]] = {
             serp_parsers=[BingSerpParser()],
         ),
     ],
+    "ecosia": [
+        Source(
+            url_prefix="ecosia.org/search?",
+            query_parser=QueryParameter("q"),
+            serp_parsers=[],
+        ),
+        Source(
+            url_prefix="ecosia.org/search?method=index&",
+            query_parser=QueryParameter("q"),
+            serp_parsers=[],
+        )
+    ],
     "yahoo": [
         # TODO Test
         # TODO Add all global pages.
