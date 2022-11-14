@@ -74,10 +74,20 @@ SOURCES: Mapping[str, Sequence[Source]] = {
             serp_parsers=[],
         ),
         Source(
-            url_prefix="ecosia.org/search?method=index&",
+            url_prefix="ecosia.org/news?",
             query_parser=QueryParameter("q"),
             serp_parsers=[],
-        )
+        ),
+        Source(
+            url_prefix="ecosia.org/images?",
+            query_parser=QueryParameter("q"),
+            serp_parsers=[],
+        ),
+        Source(
+            url_prefix="ecosia.org/videos?",
+            query_parser=QueryParameter("q"),
+            serp_parsers=[],
+        ),
     ],
     "yahoo": [
         # TODO Test
@@ -223,6 +233,30 @@ SOURCES: Mapping[str, Sequence[Source]] = {
             query_parser=QueryParameter("query"),
             serp_parsers=[],
         ),
+    ],
+    "yandex": [
+        Source(
+            url_prefix="yandex.com/search/?",
+            query_parser=QueryParameter("text"),
+            serp_parsers=[]
+        ),
+        Source(
+            url_prefix="yandex.com/images/search/?",
+            query_parser=QueryParameter("text"),
+            serp_parsers=[]
+        ),
+        Source(
+            url_prefix="yandex.com/video/search/?",
+            query_parser=QueryParameter("text"),
+            serp_parsers=[]
+        )
+    ],
+    "ask": [
+        Source(
+            url_prefix="ask.com/web?",
+            query_parser=QueryParameter("q"),
+            serp_parsers=[]
+        )
     ],
     # No archived queries found for:
     "netspeak": [
