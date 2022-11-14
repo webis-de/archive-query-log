@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import final, Optional, Iterable
+from typing import final, Optional, Sequence, Iterator
 from urllib.parse import SplitResult, parse_qsl, unquote
 
 from bleach import clean
@@ -60,7 +60,7 @@ class SerpParser(ABC):
             self,
             content: bytes,
             encoding: str | None
-    ) -> Iterable[Result]:
+    ) -> Sequence[Result]:
         ...
 
 
@@ -77,18 +77,17 @@ class BingSerpParser(SerpParser):
             strip_comments=True,
         ).strip()
 
-    def parse_serp(
+    def _parse_serp_iter(
             self,
             content: bytes,
             encoding: str | None
-    ) -> Iterable[Result]:
+    ) -> Iterator[Result]:
         soup = BeautifulSoup(content, "html.parser", from_encoding=encoding)
         results: Tag = soup.find("ol", id="b_results")
         if results is None:
             return
         result: Tag
         for result in results.find_all("li", class_="b_algo"):
-            print(result.decode_contents())
             title: Tag = result.find("h2")
             caption: Tag | None = result.find("p")
             yield Result(
@@ -99,3 +98,10 @@ class BingSerpParser(SerpParser):
                     if caption is not None else ""
                 )
             )
+
+    def parse_serp(
+            self,
+            content: bytes,
+            encoding: str | None
+    ) -> Sequence[Result]:
+        return list(self._parse_serp_iter(content, encoding))
