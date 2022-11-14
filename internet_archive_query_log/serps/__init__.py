@@ -9,7 +9,7 @@ from urllib.parse import quote
 
 from tqdm.auto import tqdm
 
-from internet_archive_query_log.model import Query, Serp
+from internet_archive_query_log.model import ArchivedSerpUrl, ArchivedSerp
 from internet_archive_query_log.parse import SerpParser
 from internet_archive_query_log.queries import InternetArchiveQueries
 from internet_archive_query_log.util.http import backoff_session
@@ -43,7 +43,7 @@ class InternetArchiveSerps:
     def _fetch_chunk(
             self,
             chunk: int,
-            queries: Iterable[Query],
+            queries: Iterable[ArchivedSerpUrl],
     ) -> Path | None:
         path = self._chunk_cache_path(chunk)
         if path.exists():
@@ -52,8 +52,8 @@ class InternetArchiveSerps:
             return path
 
         session = backoff_session()
-        schema = Serp.schema()
-        serps: list[Serp] = []
+        schema = ArchivedSerp.schema()
+        serps: list[ArchivedSerp] = []
         for query in queries:
             response = session.get(
                 query.raw_archive_url,
@@ -70,8 +70,8 @@ class InternetArchiveSerps:
                 response.content,
                 response.encoding,
             )
-            serps.append(Serp(
-                text=query.text,
+            serps.append(ArchivedSerp(
+                query=query.query,
                 url=query.url,
                 timestamp=query.timestamp,
                 results=results,
@@ -81,7 +81,9 @@ class InternetArchiveSerps:
                 file.write(schema.dumps(serp))
                 file.write("\n")
 
-    def _chunked_queries(self) -> Iterator[Tuple[int, Iterable[Query]]]:
+    def _chunked_queries(
+            self
+    ) -> Iterator[Tuple[int, Iterable[ArchivedSerpUrl]]]:
         all_queries = iter(self.queries)
         for chunk in range(self.num_chunks):
             yield chunk, list(islice(all_queries, self.chunk_size))

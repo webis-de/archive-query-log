@@ -11,13 +11,13 @@ from requests import get, HTTPError
 from requests.exceptions import ChunkedEncodingError
 from tqdm.auto import tqdm
 
-from internet_archive_query_log.model import Query
+from internet_archive_query_log.model import ArchivedSerpUrl
 from internet_archive_query_log.parse import QueryParser
 from internet_archive_query_log.util.http import backoff_session
 
 
 @dataclass(frozen=True)
-class InternetArchiveQueries(Sized, Iterable[Query]):
+class InternetArchiveQueries(Sized, Iterable[ArchivedSerpUrl]):
     url_prefix: str
     parser: QueryParser
     data_directory_path: Path
@@ -83,7 +83,7 @@ class InternetArchiveQueries(Sized, Iterable[Query]):
         except ChunkedEncodingError:
             print(f"Failed to read page contents: {page}")
             return None
-        schema = Query.schema()
+        schema = ArchivedSerpUrl.schema()
         with path.open("wt") as file:
             for line in response.text.splitlines(keepends=False):
                 timestamp_string, url = line.split()
@@ -93,8 +93,8 @@ class InternetArchiveQueries(Sized, Iterable[Query]):
                 )
                 query_text = self.parser.parse_query(urlsplit(url))
                 if query_text is not None:
-                    query = Query(
-                        text=query_text,
+                    query = ArchivedSerpUrl(
+                        query=query_text,
                         url=url,
                         timestamp=int(timestamp.timestamp()),
                     )
@@ -163,9 +163,9 @@ class InternetArchiveQueries(Sized, Iterable[Query]):
         with self._result_path.open("rt") as file:
             return sum(1 for _ in file)
 
-    def __iter__(self) -> Iterator[Query]:
+    def __iter__(self) -> Iterator[ArchivedSerpUrl]:
         self.fetch()
-        schema = Query.schema()
+        schema = ArchivedSerpUrl.schema()
         with self._result_path.open("rt") as file:
             for line in file:
                 yield schema.loads(line)

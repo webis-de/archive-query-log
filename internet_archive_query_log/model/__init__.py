@@ -7,12 +7,17 @@ from marshmallow.fields import List, Nested
 
 
 @dataclass(frozen=True, slots=True)
-class Query(DataClassJsonMixin):
+class Domain(DataClassJsonMixin):
+    domain: str
+
+
+@dataclass(frozen=True, slots=True)
+class ArchivedUrl(Domain, DataClassJsonMixin):
     """
-    Archived snapshot of a search engine query and the SERP it points to.
+    Archived snapshot of a URL.
     """
-    text: str
     url: str
+    domain: str = field(init=False)
     timestamp: int
 
     @property
@@ -31,7 +36,17 @@ class Query(DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class Result(DataClassJsonMixin):
+class ArchivedSerpUrl(ArchivedUrl, DataClassJsonMixin):
+    """
+    Archived snapshot of a search engine query and the SERP it points to.
+    """
+    url: str
+    timestamp: int
+    query: str
+
+
+@dataclass(frozen=True, slots=True)
+class SearchResult(DataClassJsonMixin):
     """
     Single retrieved result from a query's archived SERP.
     """
@@ -41,14 +56,14 @@ class Result(DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class Serp(Query, DataClassJsonMixin):
+class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
     """
     Search engine result page (SERP) corresponding to a query.
     """
-    results: Sequence[Result] = field(
+    results: Sequence[SearchResult] = field(
         metadata=config(
             encoder=list,
             decoder=tuple,
-            mm_field=List(Nested(Result.schema()))
+            mm_field=List(Nested(SearchResult.schema()))
         )
     )
