@@ -4,7 +4,7 @@ from functools import cached_property
 from math import log10, floor
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Any, Iterable, Optional, Iterator
+from typing import Any, Iterable, Optional, Iterator, Sized
 from urllib.parse import urlsplit, quote
 
 from requests import get, HTTPError
@@ -17,7 +17,7 @@ from internet_archive_query_log.util import backoff_session
 
 
 @dataclass(frozen=True)
-class InternetArchiveQueries(Iterable[Query]):
+class InternetArchiveQueries(Sized, Iterable[Query]):
     url_prefix: str
     parser: QueryParser
     data_directory_path: Path
@@ -116,7 +116,6 @@ class InternetArchiveQueries(Iterable[Query]):
         """
         Find missing pages.
         Most often, the missing pages are caused by request timeouts.
-        This allows to
         """
         missing_pages = set()
         for page in range(self.num_pages):
@@ -158,6 +157,11 @@ class InternetArchiveQueries(Iterable[Query]):
         for path in self._cache_path.iterdir():
             path.unlink()
         self._cache_path.rmdir()
+
+    def __len__(self) -> int:
+        self.fetch()
+        with self._result_path.open("rt") as file:
+            return sum(1 for _ in file)
 
     def __iter__(self) -> Iterator[Query]:
         self.fetch()
