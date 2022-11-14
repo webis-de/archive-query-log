@@ -47,7 +47,7 @@ def fetch_queries(
     for source in config:
         queries = InternetArchiveQueries(
             url_prefix=source.url_prefix,
-            parser=source.parser,
+            parser=source.query_parser,
             data_directory_path=data_dir,
             cdx_api_url=api_url,
         )
@@ -74,7 +74,7 @@ def num_pages(api_url: str, search_engine: Optional[str]) -> None:
         for source in config:
             queries = InternetArchiveQueries(
                 url_prefix=source.url_prefix,
-                parser=source.parser,
+                parser=source.query_parser,
                 data_directory_path=NotImplemented,
                 cdx_api_url=api_url,
             )

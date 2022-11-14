@@ -1,10 +1,12 @@
 from dataclasses import dataclass
+from typing import Iterable
 
-from internet_archive_query_log.parse import QueryParser
+from internet_archive_query_log.parse import QueryParser, SerpParser
 
 
 @dataclass(frozen=True)
-class QuerySource:
+class Source:
     url_prefix: str
-    parser: QueryParser
+    query_parser: QueryParser
+    serp_parsers: Iterable[SerpParser]
 

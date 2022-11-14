@@ -1,186 +1,223 @@
 from typing import Mapping, Sequence
 
-from internet_archive_query_log.config_model import QuerySource
+from internet_archive_query_log.config_model import Source
 from internet_archive_query_log.parse import QueryParameter, PathSuffix, \
-    FragmentParameter
+    FragmentParameter, BingSerpParser
 from internet_archive_query_log.sites import WIKIPEDIA_SITES, AMAZON_SITES, \
     EBAY_SITES, STACKEXCHANGE_SITES
 
-SOURCES: Mapping[str, Sequence[QuerySource]] = {
+SOURCES: Mapping[str, Sequence[Source]] = {
     "google": [
         # TODO Test
         # TODO Add all global pages
         #  (see https://www.google.com/supported_domains).
-        QuerySource(
+        Source(
             "google.com/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
         # Note that images.google.com and shopping.google.com
         # all redirects to google.com.
-        QuerySource(
+        Source(
             "news.google.com/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "play.google.com/store/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
-        QuerySource(
-            "photos.google.com/search/", PathSuffix("search/"),
+        Source(
+            "photos.google.com/search/",
+            PathSuffix("search/"),
+            serp_parsers=[],
         ),
-        QuerySource(
-            "podcasts.google.com/search/", PathSuffix("search/"),
+        Source(
+            "podcasts.google.com/search/",
+            PathSuffix("search/"),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "google.com/finance/quote/",
             PathSuffix("finance/quote/"),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "google.com/maps/search/",
             PathSuffix("maps/search/", single_segment=True),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "google.de/maps/search/",
             PathSuffix("maps/search/", single_segment=True),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "earth.google.com/web/search/",
             PathSuffix("web/search/", single_segment=True),
+            serp_parsers=[],
         ),
     ],
     "bing": [
         # TODO Add all global pages.
-        QuerySource(
+        Source(
             "bing.com/search?",
             QueryParameter("q"),
+            serp_parsers=[BingSerpParser()],
         ),
     ],
     "yahoo": [
         # TODO Test
         # TODO Add all global pages.
-        QuerySource(
+        Source(
             "yahoo.com/search?",
             QueryParameter("p"),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "search.yahoo.com/search?",
             QueryParameter("p"),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "de.search.yahoo.com/search?",
             QueryParameter("p"),
+            serp_parsers=[],
         ),
     ],
     "duckduckgo": [
-        QuerySource(
+        Source(
             "duckduckgo.com/?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
     ],
     "internet-archive": [
-        QuerySource(
+        Source(
             "archive.org/search.php?",
             QueryParameter("query"),
+            serp_parsers=[],
         ),
     ],
     "wikipedia": [
-        QuerySource(
+        Source(
             f"{site}/w/index.php?",
             QueryParameter("search"),
+            serp_parsers=[],
         )
         for site in WIKIPEDIA_SITES
     ],
     "amazon": [
-        QuerySource(f"{site}/s?",
-                    QueryParameter("k"),
-                    )
+        Source(
+            f"{site}/s?",
+            QueryParameter("k"),
+            serp_parsers=[],
+        )
         for site in AMAZON_SITES
     ],
     "ebay": [
-                QuerySource(f"{site}/?",
-                            QueryParameter("_nkw"),
-                            )
+                Source(
+                    f"{site}/?",
+                    QueryParameter("_nkw"),
+                    serp_parsers=[],
+                )
                 for site in EBAY_SITES
             ] + [
 
-                QuerySource(f"{site}/sch/i.html?",
-                            QueryParameter("_nkw"),
-                            )
+                Source(
+                    f"{site}/sch/i.html?",
+                    QueryParameter("_nkw"),
+                    serp_parsers=[],
+                )
                 for site in EBAY_SITES
             ],
     "lastfm": [
-        QuerySource(
+        Source(
             "last.fm/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
     ],
     "twitter": [
-        QuerySource(
+        Source(
             "twitter.com/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
     ],
     "facebook": [
-        QuerySource(
+        Source(
             "facebook.com/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
     ],
     "pubmed": [
-        QuerySource(
+        Source(
             "pubmed.gov/?",
             QueryParameter("term"),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "pubmed.ncbi.nlm.nih.gov/?",
             QueryParameter("term"),
+            serp_parsers=[],
         ),
     ],
     "google-scholar": [
-        QuerySource(
+        Source(
             "scholar.google.com/scholar?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
     ],
     "dblp": [
-        QuerySource(
+        Source(
             "dblp.org/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
-        QuerySource(
+        Source(
             "dblp.uni-trier.de/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
     ],
     "github": [
-        QuerySource(
+        Source(
             "github.com/search?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
     ],
     "stackexchange": [
-        QuerySource(f"{site}/search?",
-                    QueryParameter("q"),
-                    )
+        Source(f"{site}/search?",
+               QueryParameter("q"),
+               serp_parsers=[],
+               )
         for site in STACKEXCHANGE_SITES
     ],
     "chatnoir": [
-        QuerySource(
+        Source(
             "chatnoir.eu/?",
             QueryParameter("q"),
+            serp_parsers=[],
         ),
     ],
     "argsme": [
-        QuerySource(
+        Source(
             "args.me/?query=",
             QueryParameter("query"),
+            serp_parsers=[],
         ),
     ],
     # No archived queries found for:
     "netspeak": [
-        QuerySource(
+        Source(
             "netspeak.org/?q=",
             FragmentParameter("q"),
+            serp_parsers=[],
         ),
     ],
     # TODO Add more search engines
