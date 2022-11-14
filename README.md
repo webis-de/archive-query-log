@@ -2,6 +2,11 @@
 
 Scrape real-life query logs from archived search engine result pages (SERPs) on the Internet Archive.
 
+## Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribute](#contribute)
+
 ## Installation
 
 1. Install [Python 3.10](https://python.org/downloads/)
