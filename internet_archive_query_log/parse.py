@@ -1,12 +1,12 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import final, Optional, Sequence, Iterator
-from urllib.parse import SplitResult, parse_qsl, unquote
+from urllib.parse import SplitResult, parse_qsl, unquote, urlsplit
 
 from bleach import clean
 from bs4 import BeautifulSoup, Tag
 
-from internet_archive_query_log.model import Result
+from internet_archive_query_log.model import Result, Query
 
 
 class QueryParser(ABC):
@@ -63,6 +63,9 @@ class SerpParser(ABC):
     ) -> Sequence[Result]:
         ...
 
+    def can_parse(self, query: Query) -> bool:
+        return True
+
 
 class BingSerpParser(SerpParser):
 
@@ -105,3 +108,9 @@ class BingSerpParser(SerpParser):
             encoding: str | None
     ) -> Sequence[Result]:
         return list(self._parse_serp_iter(content, encoding))
+
+    def can_parse(self, query: Query) -> bool:
+        # bing.*/*
+        domain_parts = urlsplit(query.url).netloc.split(".")
+        return "bing" in domain_parts
+
