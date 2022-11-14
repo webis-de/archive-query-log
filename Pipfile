@@ -12,6 +12,7 @@ dataclasses-json = "*"
 beautifulsoup4 = "*"
 bleach = "*"
 marshmallow = "*"
+ranx = "*"
 
 [dev-packages]
 
