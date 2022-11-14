@@ -1,6 +1,8 @@
 from dataclasses import dataclass, field
 from datetime import datetime
+from functools import cached_property
 from typing import Sequence
+from urllib.parse import SplitResult, urlsplit
 
 from dataclasses_json import DataClassJsonMixin, config
 from marshmallow.fields import List, Nested
@@ -14,35 +16,52 @@ class Domain(DataClassJsonMixin):
 @dataclass(frozen=True, slots=True)
 class ArchivedUrl(Domain, DataClassJsonMixin):
     """
-    Archived snapshot of a URL.
+    Archived URL.
     """
     url: str
     domain: str = field(init=False)
     timestamp: int
 
-    @property
+    @cached_property
     def datetime(self) -> datetime:
         return datetime.fromtimestamp(self.timestamp)
 
+    @cached_property
+    def split_url(self) -> SplitResult:
+        return urlsplit(self.url)
+
+    @cached_property
+    def archive_timestamp(self) -> str:
+        return self.datetime.strftime("%Y%m%d%H%M%S")
+
     @property
     def archive_url(self) -> str:
-        timestamp = self.datetime.strftime("%Y%m%d%H%M%S")
-        return f"https://web.archive.org/web/{timestamp}/{self.url}"
+        return f"https://web.archive.org/web/" \
+               f"{self.archive_timestamp}/{self.url}"
 
     @property
     def raw_archive_url(self) -> str:
-        timestamp = self.datetime.strftime("%Y%m%d%H%M%S")
-        return f"https://web.archive.org/web/{timestamp}id_/{self.url}"
+        return f"https://web.archive.org/web/" \
+               f"{self.archive_timestamp}id_/{self.url}"
 
 
 @dataclass(frozen=True, slots=True)
 class ArchivedSerpUrl(ArchivedUrl, DataClassJsonMixin):
     """
-    Archived snapshot of a search engine query and the SERP it points to.
+    Archived URL of a search engine query and the SERP it points to.
     """
     url: str
     timestamp: int
     query: str
+
+
+@dataclass(frozen=True, slots=True)
+class ArchivedSerpContent(ArchivedSerpUrl, DataClassJsonMixin):
+    """
+    Archived content of a search engine query and the SERP it points to.
+    """
+    content: bytes
+    encoding: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -58,7 +77,7 @@ class SearchResult(DataClassJsonMixin):
 @dataclass(frozen=True, slots=True)
 class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
     """
-    Search engine result page (SERP) corresponding to a query.
+    Archived search engine result page (SERP) corresponding to a query.
     """
     results: Sequence[SearchResult] = field(
         metadata=config(

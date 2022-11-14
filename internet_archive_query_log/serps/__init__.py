@@ -9,8 +9,9 @@ from urllib.parse import quote
 
 from tqdm.auto import tqdm
 
-from internet_archive_query_log.model import ArchivedSerpUrl, ArchivedSerp
-from internet_archive_query_log.parse import SerpParser
+from internet_archive_query_log.model import ArchivedSerpUrl, ArchivedSerp, \
+    ArchivedSerpContent
+from internet_archive_query_log.parse import SearchResultsParser
 from internet_archive_query_log.queries import InternetArchiveQueries
 from internet_archive_query_log.util.http import backoff_session
 
@@ -18,7 +19,7 @@ from internet_archive_query_log.util.http import backoff_session
 @dataclass(frozen=True)
 class InternetArchiveSerps:
     queries: InternetArchiveQueries
-    parsers: Iterable[SerpParser]
+    parsers: Iterable[SearchResultsParser]
     chunk_size: int = 10
 
     @cached_property
@@ -59,23 +60,21 @@ class InternetArchiveSerps:
                 query.raw_archive_url,
                 timeout=5 * 60  # 5 minutes, better safe than sorry ;)
             )
-            parsers = [
-                parser
-                for parser in self.parsers
-                if parser.can_parse(query)
-            ]
-            if len(parsers) == 0:
-                raise ValueError(f"No SERP parser found for query: {query}")
-            results = parsers[0].parse_serp(
-                response.content,
-                response.encoding,
-            )
-            serps.append(ArchivedSerp(
-                query=query.query,
+            content = ArchivedSerpContent(
                 url=query.url,
                 timestamp=query.timestamp,
-                results=results,
-            ))
+                query=query.query,
+                content=response.content,
+                encoding=response.encoding,
+            )
+            parsed = None
+            for parser in self.parsers:
+                parsed = parser.parse(content)
+                if parsed is not None:
+                    break
+            if parsed is None:
+                raise ValueError(f"No SERP parser found for query: {query}")
+            serps.append(parsed)
         with path.open("wt") as file:
             for serp in serps:
                 file.write(schema.dumps(serp))

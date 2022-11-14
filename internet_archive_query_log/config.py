@@ -2,7 +2,7 @@ from typing import Mapping, Sequence
 
 from internet_archive_query_log.config_model import Source
 from internet_archive_query_log.parse import QueryParameter, PathSuffix, \
-    FragmentParameter, BingSerpParser
+    FragmentParameter, BingSearchResultsParser
 from internet_archive_query_log.sites import WIKIPEDIA_SITES, AMAZON_SITES, \
     EBAY_SITES, STACKEXCHANGE_SITES
 
@@ -34,7 +34,7 @@ SOURCES: Mapping[str, Sequence[Source]] = {
         Source(
             url_prefix="bing.com/search?",
             query_parser=QueryParameter("q"),
-            serp_parsers=[BingSerpParser()],
+            serp_parsers=[BingSearchResultsParser()],
         ),
     ],
     "chatnoir": [

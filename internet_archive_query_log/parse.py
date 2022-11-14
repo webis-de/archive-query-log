@@ -1,17 +1,29 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import final, Optional, Sequence, Iterator
-from urllib.parse import SplitResult, parse_qsl, unquote, urlsplit
+from urllib.parse import parse_qsl, unquote
 
 from bleach import clean
 from bs4 import BeautifulSoup, Tag
 
-from internet_archive_query_log.model import SearchResult, ArchivedSerpUrl
+from internet_archive_query_log.model import SearchResult, ArchivedSerpUrl, \
+    ArchivedUrl, ArchivedSerpContent, ArchivedSerp
 
 
 class QueryParser(ABC):
+
+    def parse(self, url: ArchivedUrl) -> ArchivedSerpUrl | None:
+        query = self._parse_query(url)
+        if query is None:
+            return None
+        return ArchivedSerpUrl(
+            url=url.url,
+            timestamp=url.timestamp,
+            query=query,
+        )
+
     @abstractmethod
-    def parse_query(self, url: SplitResult) -> Optional[str]:
+    def _parse_query(self, url: ArchivedUrl) -> str | None:
         ...
 
 
@@ -20,8 +32,10 @@ class QueryParser(ABC):
 class QueryParameter(QueryParser):
     key: str
 
-    def parse_query(self, url: SplitResult) -> Optional[str]:
-        for key, value in parse_qsl(url.query):
+    def _parse_query(self, url: ArchivedUrl) -> str | None:
+        # We cannot use map access syntax here, as ``parse_qsl``
+        # returns a list of tuples.
+        for key, value in parse_qsl(url.split_url.query):
             if key == self.key:
                 return value
         return None
@@ -32,8 +46,10 @@ class QueryParameter(QueryParser):
 class FragmentParameter(QueryParser):
     key: str
 
-    def parse_query(self, url: SplitResult) -> Optional[str]:
-        for key, value in parse_qsl(url.fragment):
+    def _parse_query(self, url: ArchivedUrl) -> Optional[str]:
+        # We cannot use map access syntax here, as ``parse_qsl``
+        # returns a list of tuples.
+        for key, value in parse_qsl(url.split_url.fragment):
             if key == self.key:
                 return value
         return None
@@ -45,29 +61,37 @@ class PathSuffix(QueryParser):
     prefix: str
     single_segment: bool = False
 
-    def parse_query(self, url: SplitResult) -> Optional[str]:
-        if not url.path.startswith(self.prefix):
+    def _parse_query(self, url: ArchivedUrl) -> Optional[str]:
+        path = url.split_url.path
+        if not path.startswith(self.prefix):
             return None
-        path = url.path.removeprefix(self.prefix)
+        path = path.removeprefix(self.prefix)
         if self.single_segment and "/" in path:
             path, _ = path.split("/", maxsplit=1)
         return unquote(path)
 
 
-class SerpParser(ABC):
+class SearchResultsParser(ABC):
+    def parse(self, content: ArchivedSerpContent) -> ArchivedSerp | None:
+        results = self._parse_results(content)
+        if results is None:
+            return None
+        return ArchivedSerp(
+            url=content.url,
+            timestamp=content.timestamp,
+            query=content.query,
+            results=results,
+        )
+
     @abstractmethod
-    def parse_serp(
+    def _parse_results(
             self,
-            content: bytes,
-            encoding: str | None
-    ) -> Sequence[SearchResult]:
+            content: ArchivedSerpContent,
+    ) -> Sequence[SearchResult] | None:
         ...
 
-    def can_parse(self, query: ArchivedSerpUrl) -> bool:
-        return True
 
-
-class BingSerpParser(SerpParser):
+class BingSearchResultsParser(SearchResultsParser):
 
     @staticmethod
     def _clean_html(tag: Tag) -> str:
@@ -83,7 +107,7 @@ class BingSerpParser(SerpParser):
     def _parse_serp_iter(
             self,
             content: bytes,
-            encoding: str | None
+            encoding: str,
     ) -> Iterator[SearchResult]:
         soup = BeautifulSoup(content, "html.parser", from_encoding=encoding)
         results: Tag = soup.find("ol", id="b_results")
@@ -102,15 +126,12 @@ class BingSerpParser(SerpParser):
                 )
             )
 
-    def parse_serp(
+    def _parse_results(
             self,
-            content: bytes,
-            encoding: str | None
-    ) -> Sequence[SearchResult]:
-        return list(self._parse_serp_iter(content, encoding))
-
-    def can_parse(self, query: ArchivedSerpUrl) -> bool:
-        # bing.*/*
-        domain_parts = urlsplit(query.url).netloc.split(".")
-        return "bing" in domain_parts
-
+            content: ArchivedSerpContent,
+    ) -> Sequence[SearchResult] | None:
+        domain_parts = content.split_url.netloc.split(".")
+        if "bing" not in domain_parts:
+            # bing.*/*
+            return None
+        return list(self._parse_serp_iter(content.content, content.encoding))

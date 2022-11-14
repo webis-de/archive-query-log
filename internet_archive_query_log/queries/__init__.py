@@ -4,14 +4,14 @@ from functools import cached_property
 from math import log10, floor
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Any, Iterable, Optional, Iterator, Sized
-from urllib.parse import urlsplit, quote
+from typing import Any, Iterable, Iterator, Sized
+from urllib.parse import quote
 
 from requests import get, HTTPError
 from requests.exceptions import ChunkedEncodingError
 from tqdm.auto import tqdm
 
-from internet_archive_query_log.model import ArchivedSerpUrl
+from internet_archive_query_log.model import ArchivedSerpUrl, ArchivedUrl
 from internet_archive_query_log.parse import QueryParser
 from internet_archive_query_log.util.http import backoff_session
 
@@ -60,7 +60,7 @@ class InternetArchiveQueries(Sized, Iterable[ArchivedSerpUrl]):
         num_digits = floor(log10(self.num_pages)) + 1
         return self._cache_path / f"page_{page:{num_digits}}.jsonl"
 
-    def _fetch_page(self, page: int) -> Optional[Path]:
+    def _fetch_page(self, page: int) -> Path | None:
         path = self._page_cache_path(page)
         if path.exists():
             # Page was already downloaded, skip it.
@@ -91,13 +91,9 @@ class InternetArchiveQueries(Sized, Iterable[ArchivedSerpUrl]):
                     timestamp_string,
                     "%Y%m%d%H%M%S"
                 )
-                query_text = self.parser.parse_query(urlsplit(url))
-                if query_text is not None:
-                    query = ArchivedSerpUrl(
-                        query=query_text,
-                        url=url,
-                        timestamp=int(timestamp.timestamp()),
-                    )
+                archived_url = ArchivedUrl(url, int(timestamp.timestamp()))
+                query = self.parser.parse(archived_url)
+                if query is not None:
                     file.write(schema.dumps(query))
                     file.write("\n")
 
