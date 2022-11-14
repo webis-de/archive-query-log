@@ -12,58 +12,58 @@ SOURCES: Mapping[str, Sequence[Source]] = {
         # TODO Add all global pages
         #  (see https://www.google.com/supported_domains).
         Source(
-            "google.com/search?",
-            QueryParameter("q"),
+            url_prefix="google.com/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
         # Note that images.google.com and shopping.google.com
         # all redirects to google.com.
         Source(
-            "news.google.com/search?",
-            QueryParameter("q"),
+            url_prefix="news.google.com/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
         Source(
-            "play.google.com/store/search?",
-            QueryParameter("q"),
+            url_prefix="play.google.com/store/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
         Source(
-            "photos.google.com/search/",
-            PathSuffix("search/"),
+            url_prefix="photos.google.com/search/",
+            query_parser=PathSuffix("search/"),
             serp_parsers=[],
         ),
         Source(
-            "podcasts.google.com/search/",
-            PathSuffix("search/"),
+            url_prefix="podcasts.google.com/search/",
+            query_parser=PathSuffix("search/"),
             serp_parsers=[],
         ),
         Source(
-            "google.com/finance/quote/",
-            PathSuffix("finance/quote/"),
+            url_prefix="google.com/finance/quote/",
+            query_parser=PathSuffix("finance/quote/"),
             serp_parsers=[],
         ),
         Source(
-            "google.com/maps/search/",
-            PathSuffix("maps/search/", single_segment=True),
+            url_prefix="google.com/maps/search/",
+            query_parser=PathSuffix("maps/search/", single_segment=True),
             serp_parsers=[],
         ),
         Source(
-            "google.de/maps/search/",
-            PathSuffix("maps/search/", single_segment=True),
+            url_prefix="google.de/maps/search/",
+            query_parser=PathSuffix("maps/search/", single_segment=True),
             serp_parsers=[],
         ),
         Source(
-            "earth.google.com/web/search/",
-            PathSuffix("web/search/", single_segment=True),
+            url_prefix="earth.google.com/web/search/",
+            query_parser=PathSuffix("web/search/", single_segment=True),
             serp_parsers=[],
         ),
     ],
     "bing": [
         # TODO Add all global pages.
         Source(
-            "bing.com/search?",
-            QueryParameter("q"),
+            url_prefix="bing.com/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[BingSerpParser()],
         ),
     ],
@@ -71,152 +71,152 @@ SOURCES: Mapping[str, Sequence[Source]] = {
         # TODO Test
         # TODO Add all global pages.
         Source(
-            "yahoo.com/search?",
-            QueryParameter("p"),
+            url_prefix="yahoo.com/search?",
+            query_parser=QueryParameter("p"),
             serp_parsers=[],
         ),
         Source(
-            "search.yahoo.com/search?",
-            QueryParameter("p"),
+            url_prefix="search.yahoo.com/search?",
+            query_parser=QueryParameter("p"),
             serp_parsers=[],
         ),
         Source(
-            "de.search.yahoo.com/search?",
-            QueryParameter("p"),
+            url_prefix="de.search.yahoo.com/search?",
+            query_parser=QueryParameter("p"),
             serp_parsers=[],
         ),
     ],
     "duckduckgo": [
         Source(
-            "duckduckgo.com/?",
-            QueryParameter("q"),
+            url_prefix="duckduckgo.com/?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
     ],
     "internet-archive": [
         Source(
-            "archive.org/search.php?",
-            QueryParameter("query"),
+            url_prefix="archive.org/search.php?",
+            query_parser=QueryParameter("query"),
             serp_parsers=[],
         ),
     ],
     "wikipedia": [
         Source(
-            f"{site}/w/index.php?",
-            QueryParameter("search"),
+            url_prefix=f"{site}/w/index.php?",
+            query_parser=QueryParameter("search"),
             serp_parsers=[],
         )
         for site in WIKIPEDIA_SITES
     ],
     "amazon": [
         Source(
-            f"{site}/s?",
-            QueryParameter("k"),
+            url_prefix=f"{site}/s?",
+            query_parser=QueryParameter("k"),
             serp_parsers=[],
         )
         for site in AMAZON_SITES
     ],
     "ebay": [
                 Source(
-                    f"{site}/?",
-                    QueryParameter("_nkw"),
+                    url_prefix=f"{site}/?",
+                    query_parser=QueryParameter("_nkw"),
                     serp_parsers=[],
                 )
                 for site in EBAY_SITES
             ] + [
-
                 Source(
-                    f"{site}/sch/i.html?",
-                    QueryParameter("_nkw"),
+                    url_prefix=f"{site}/sch/i.html?",
+                    query_parser=QueryParameter("_nkw"),
                     serp_parsers=[],
                 )
                 for site in EBAY_SITES
             ],
     "lastfm": [
         Source(
-            "last.fm/search?",
-            QueryParameter("q"),
+            url_prefix="last.fm/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
     ],
     "twitter": [
         Source(
-            "twitter.com/search?",
-            QueryParameter("q"),
+            url_prefix="twitter.com/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
     ],
     "facebook": [
         Source(
-            "facebook.com/search?",
-            QueryParameter("q"),
+            url_prefix="facebook.com/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
     ],
     "pubmed": [
         Source(
-            "pubmed.gov/?",
-            QueryParameter("term"),
+            url_prefix="pubmed.gov/?",
+            query_parser=QueryParameter("term"),
             serp_parsers=[],
         ),
         Source(
-            "pubmed.ncbi.nlm.nih.gov/?",
-            QueryParameter("term"),
+            url_prefix="pubmed.ncbi.nlm.nih.gov/?",
+            query_parser=QueryParameter("term"),
             serp_parsers=[],
         ),
     ],
     "google-scholar": [
         Source(
-            "scholar.google.com/scholar?",
-            QueryParameter("q"),
+            url_prefix="scholar.google.com/scholar?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
     ],
     "dblp": [
         Source(
-            "dblp.org/search?",
-            QueryParameter("q"),
+            url_prefix="dblp.org/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
         Source(
-            "dblp.uni-trier.de/search?",
-            QueryParameter("q"),
+            url_prefix="dblp.uni-trier.de/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
     ],
     "github": [
         Source(
-            "github.com/search?",
-            QueryParameter("q"),
+            url_prefix="github.com/search?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
     ],
     "stackexchange": [
-        Source(f"{site}/search?",
-               QueryParameter("q"),
-               serp_parsers=[],
-               )
+        Source(
+            url_prefix=f"{site}/search?",
+            query_parser=QueryParameter("q"),
+            serp_parsers=[],
+        )
         for site in STACKEXCHANGE_SITES
     ],
     "chatnoir": [
         Source(
-            "chatnoir.eu/?",
-            QueryParameter("q"),
+            url_prefix="chatnoir.eu/?",
+            query_parser=QueryParameter("q"),
             serp_parsers=[],
         ),
     ],
     "argsme": [
         Source(
-            "args.me/?query=",
-            QueryParameter("query"),
+            url_prefix="args.me/?query=",
+            query_parser=QueryParameter("query"),
             serp_parsers=[],
         ),
     ],
     # No archived queries found for:
     "netspeak": [
         Source(
-            "netspeak.org/?q=",
-            FragmentParameter("q"),
+            url_prefix="netspeak.org/?q=",
+            query_parser=FragmentParameter("q"),
             serp_parsers=[],
         ),
     ],
