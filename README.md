@@ -5,6 +5,7 @@ Scrape real-life query logs from archived search engine result pages (SERPs) on 
 ## Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Architecture](#architecture)
 - [Contribute](#contribute)
 
 ## Installation
@@ -51,6 +52,18 @@ You can also check how many chunk files would be created before aggregating all 
 pipenv run python -m internet_archive_query_log serps num-chunks bing
 ```
 
+## Architecture
+
+1. Collect services.
+2. Collect service domains.
+3. Collect archived service URLs.
+4. Filter archived service URLs and identify URLs with query data.
+5. Parse queries and SERP URLs from service URLs.
+6. Download archived SERPs.
+7. Parse downloaded SERPs.
+8. Download archived documents linked from SERPs, if available.
+9. Build IR test collection.
+
 ## Contribute
 
 If you've found a search engine to be missing from this query log, please add the corresponding [query source](#adding-query-sources) or add [SERP parser(s)](#adding-serp-parsers) to enhance the query log with ranked results.
@@ -60,7 +73,7 @@ If you're unsure about anything, post an [issue](https://git.webis.de/code-resea
 ## Adding query sources
 
 Follow these steps to add a `Source` to the [configuration](internet_archive_query_log/config.py):
-1. Most important is the `url_prefix` that is used to fetch lists of archived snapshots. Keep that as precise as possible but keep in mind that not all URLs are well-formed.
+1. Most important is the `url_prefix` that is used to fetch lists of archived snapshots. Keep that as precise as possible but keep in mind that not all URLs are well-formed. (Note that the prefix matches all URLs that start with the )
 2. Specify a `query_parser`, that is, where in the URL is the query found. For most sites that is probably `QueryParameter("q")`, i.e., the `q=` parameter in the URLs query string.
 3. For now, you can leave `serp_parsers` empty. We can gradually [add parsers](#adding-serp-parsers) later to cover most SERPs.
 
