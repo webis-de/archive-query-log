@@ -33,7 +33,6 @@ class Result(DataClassJsonMixin):
     """
     Single retrieved result from a query's archived SERP.
     """
-    rank: int
     url: str
     title: str
     snippet: str | None = None
