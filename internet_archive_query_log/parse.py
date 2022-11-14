@@ -53,5 +53,9 @@ class PathSuffix(QueryParser):
 
 class SerpParser(ABC):
     @abstractmethod
-    def parse_serp(self, content: bytes) -> Iterable[Result]:
+    def parse_serp(
+            self,
+            content: bytes,
+            encoding: str | None
+    ) -> Iterable[Result]:
         ...
