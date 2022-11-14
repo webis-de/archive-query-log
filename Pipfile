@@ -11,6 +11,7 @@ click = "*"
 dataclasses-json = "*"
 beautifulsoup4 = "*"
 bleach = "*"
+marshmallow = "*"
 
 [dev-packages]
 
