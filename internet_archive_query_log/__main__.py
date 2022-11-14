@@ -16,12 +16,12 @@ def internet_archive_query_log():
     pass
 
 
-@internet_archive_query_log.group()
-def queries():
+@internet_archive_query_log.group("queries")
+def queries_group():
     pass
 
 
-@queries.command("fetch")
+@queries_group.command("fetch")
 @option(
     "-d", "--data-dir",
     type=PathParam(
@@ -60,7 +60,20 @@ def fetch_queries(
         queries.fetch()
 
 
-@queries.command("num-pages")
+@queries_group.command("num-pages")
+@option(
+    "-d", "--data-dir",
+    type=PathParam(
+        exists=True,
+        file_okay=False,
+        dir_okay=True,
+        writable=True,
+        readable=True,
+        resolve_path=True,
+        path_type=Path,
+    ),
+    default=DATA_DIRECTORY_PATH
+)
 @option(
     "-u", "--api-url", "--cdx-api-url",
     type=URL,
@@ -71,7 +84,11 @@ def fetch_queries(
     type=Choice(sorted(SOURCES.keys()), case_sensitive=False),
     required=False,
 )
-def num_query_pages(api_url: str, search_engine: Optional[str]) -> None:
+def num_query_pages(
+        api_url: str,
+        data_dir: Path,
+        search_engine: Optional[str]
+) -> None:
     configs = SOURCES.values() \
         if search_engine is None \
         else (SOURCES[search_engine],)
@@ -81,7 +98,7 @@ def num_query_pages(api_url: str, search_engine: Optional[str]) -> None:
             queries = InternetArchiveQueries(
                 url_prefix=source.url_prefix,
                 parser=source.query_parser,
-                data_directory_path=NotImplemented,
+                data_directory_path=data_dir,
                 cdx_api_url=api_url,
             )
             pages = queries.num_pages
@@ -90,12 +107,12 @@ def num_query_pages(api_url: str, search_engine: Optional[str]) -> None:
     print(f"total: {total_pages} pages")
 
 
-@internet_archive_query_log.group()
-def serps():
+@internet_archive_query_log.group("serps")
+def serps_group():
     pass
 
 
-@serps.command("fetch")
+@serps_group.command("fetch")
 @option(
     "-d", "--data-dir",
     type=PathParam(
@@ -144,7 +161,20 @@ def fetch_serps(
         serps.fetch()
 
 
-@serps.command("num-chunks")
+@serps_group.command("num-chunks")
+@option(
+    "-d", "--data-dir",
+    type=PathParam(
+        exists=True,
+        file_okay=False,
+        dir_okay=True,
+        writable=True,
+        readable=True,
+        resolve_path=True,
+        path_type=Path,
+    ),
+    default=DATA_DIRECTORY_PATH
+)
 @option(
     "-u", "--api-url", "--cdx-api-url",
     type=URL,
@@ -162,6 +192,7 @@ def fetch_serps(
 )
 def num_serp_chunks(
         api_url: str,
+        data_dir: Path,
         search_engine: Optional[str],
         chunk_size: int,
 ) -> None:
@@ -175,7 +206,7 @@ def num_serp_chunks(
                 queries=InternetArchiveQueries(
                     url_prefix=source.url_prefix,
                     parser=source.query_parser,
-                    data_directory_path=NotImplemented,
+                    data_directory_path=data_dir,
                     cdx_api_url=api_url,
                 ),
                 parsers=source.serp_parsers,
