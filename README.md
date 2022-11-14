@@ -45,3 +45,24 @@ You can also check how many chunk files would be created before aggregating all 
 ```shell
 pipenv run python -m internet_archive_query_log serps num-chunks bing
 ```
+
+## Contribute
+
+If you've found a search engine to be missing from this query log, please add the corresponding [query source](#adding-query-sources) or add [SERP parser(s)](#adding-serp-parsers) to enhance the query log with ranked results.
+We gratefully accept [issues](issues) and [pull requests](pulls)!
+If you're unsure about anything, post an [issue](issues), or [contact us](mailto:jan.reimer@student.uni-halle.de).
+
+## Adding query sources
+
+Follow these steps to add a `Source` to the [configuration](internet_archive_query_log/config.py):
+1. Most important is the `url_prefix` that is used to fetch lists of archived snapshots. Keep that as precise as possible but keep in mind that not all URLs are well-formed.
+2. Specify a `query_parser`, that is, where in the URL is the query found. For most sites that is probably `QueryParameter("q")`, i.e., the `q=` parameter in the URLs query string.
+3. For now, you can leave `serp_parsers` empty. We can gradually [add parsers](#adding-serp-parsers) later to cover most SERPs.
+
+You can get a rough estimate of how many pages of URLs will be fetched with `pipenv run python -m internet_archive_query_log queries num-pages bing` (see [above](#queries)).
+Note that some sites (e.g., Amazon and eBay) operate on multiple TLDs. Instead of adding individual sources for each domain, it is often easier to use Python list comprehension to create the same source for multiple domains.
+An example can be seen [here](internet_archive_query_log/config.py#L193-L200).
+
+## Adding SERP parsers
+
+TBD
