@@ -14,12 +14,11 @@ class Domain(DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class ArchivedUrl(Domain, DataClassJsonMixin):
+class ArchivedUrl(DataClassJsonMixin):
     """
     Archived URL.
     """
     url: str
-    domain: str = field(init=False)
     timestamp: int
 
     @cached_property
