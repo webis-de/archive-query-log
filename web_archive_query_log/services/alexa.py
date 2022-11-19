@@ -16,7 +16,7 @@ from requests.exceptions import ChunkedEncodingError
 from tqdm.auto import tqdm
 
 from web_archive_query_log.model import ArchivedUrl
-from web_archive_query_log.util.http import backoff_session
+from web_archive_query_log.util.http_session import backoff_session
 
 
 @dataclass(frozen=True)

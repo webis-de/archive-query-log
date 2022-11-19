@@ -13,7 +13,7 @@ from web_archive_query_log.model import ArchivedSerpUrl, ArchivedSerp, \
     ArchivedSerpContent
 from web_archive_query_log.parse import SearchResultsParser
 from web_archive_query_log.queries import InternetArchiveQueries
-from web_archive_query_log.util.http import backoff_session
+from web_archive_query_log.util.http_session import backoff_session
 
 
 @dataclass(frozen=True)
