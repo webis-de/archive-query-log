@@ -13,6 +13,9 @@ beautifulsoup4 = "*"
 bleach = "*"
 marshmallow = "*"
 ranx = "*"
+joblib = "*"
+aiohttp = "*"
+aiohttp-retry = "*"
 
 [dev-packages]
 
