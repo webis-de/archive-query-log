@@ -9,11 +9,11 @@ from urllib.parse import quote
 
 from tqdm.auto import tqdm
 
-from internet_archive_query_log.model import ArchivedSerpUrl, ArchivedSerp, \
+from web_archive_query_log.model import ArchivedSerpUrl, ArchivedSerp, \
     ArchivedSerpContent
-from internet_archive_query_log.parse import SearchResultsParser
-from internet_archive_query_log.queries import InternetArchiveQueries
-from internet_archive_query_log.util.http import backoff_session
+from web_archive_query_log.parse import SearchResultsParser
+from web_archive_query_log.queries import InternetArchiveQueries
+from web_archive_query_log.util.http import backoff_session
 
 
 @dataclass(frozen=True)

@@ -1,31 +1,29 @@
+from csv import reader
 from dataclasses import dataclass
 from datetime import datetime
 from functools import cached_property
 from io import TextIOWrapper
+from itertools import islice
 from math import floor, log10
 from pathlib import Path
 from tempfile import gettempdir
 from typing import Sized, Iterable, Any, Iterator
 from zipfile import ZipFile
 
+from ranx import Run, fuse
 from requests import get, HTTPError
 from requests.exceptions import ChunkedEncodingError
 from tqdm.auto import tqdm
 
-from internet_archive_query_log.model import ArchivedUrl
-from internet_archive_query_log.util.http import backoff_session
-
-"""
-Fuse rankings from all Alexa top-1M snapshots:
-http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
-https://web.archive.org/web/20220000000000*/http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
-https://amenra.github.io/ranx/run/
-https://amenra.github.io/ranx/fusion/
-"""
+from web_archive_query_log.model import ArchivedUrl
+from web_archive_query_log.util.http import backoff_session
 
 
 @dataclass(frozen=True)
 class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
+    """
+    Get all archived URLs of Alexa top-1M rankings.
+    """
     data_directory_path: Path
     cdx_api_url: str
 
@@ -170,6 +168,9 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
 
 @dataclass(frozen=True)
 class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
+    """
+    Fuse the rop-1000 of all archived Alexa top-1M rankings.
+    """
     data_directory_path: Path
     cdx_api_url: str
 
@@ -193,12 +194,12 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
     def _url_cache_path(self, url: ArchivedUrl) -> Path:
         return self._cache_path / f"{url.timestamp}.zip"
 
-    def _fetch_url(self, url: ArchivedUrl) -> Path | None:
+    def _fetch_ranking(self, url: ArchivedUrl) -> None:
         path = self._url_cache_path(url)
         if path.exists():
             # Page was already downloaded, skip it.
             assert path.is_file()
-            return path
+            return
 
         session = backoff_session()
         try:
@@ -208,23 +209,25 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
             )
         except HTTPError:
             print(f"Failed to load URL: {url}")
-            return None
+            return
         except ChunkedEncodingError:
             print(f"Failed to read URL contents: {url}")
-            return None
+            return
         with path.open("wb") as file:
             file.write(response.content)
 
-    def _fetch_urls(self) -> None:
+    def _fetch_rankings(self) -> None:
         """
         Fetch queries from each individual page.
         """
-        for url in tqdm(
-                self._urls,
-                desc="Fetch urls",
-                unit="page",
-        ):
-            self._fetch_url(url)
+        urls = self._urls
+        urls = tqdm(
+            urls,
+            desc="Fetch rankings",
+            unit="ranking",
+        )
+        for url in urls:
+            self._fetch_ranking(url)
 
     def _missing_urls(self) -> set[ArchivedUrl]:
         """
@@ -238,24 +241,51 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
                 missing_urls.add(url)
         return missing_urls
 
-    def _fuse_cached_urls(self) -> None:
-        """
-        Fuse cached rankings.
-        """
-        for url in self._urls:
+    def _fuse_cached_rankings(self) -> None:
+        runs: list[Run] = []
+        for url in tqdm(
+                self._urls,
+                desc="Read ranking",
+                unit="ranking",
+        ):
             path = self._url_cache_path(url)
+            if not path.exists():  # todo remove
+                continue
             with path.open("rb") as file:
                 with ZipFile(file) as zip_file:
                     with zip_file.open("top-1m.csv", "r") as csv_file:
-                        with TextIOWrapper(csv_file) as csv_text_file:
-                            print(sum(1 for _ in csv_text_file))
+                        with TextIOWrapper(csv_file) as lines:
+                            lines = islice(lines, 1_000)
+                            scores: dict[str, float] = {
+                                line[1]: 1_000_000 - int(line[0])
+                                for line in reader(lines)
+                            }
+                            print(len(scores))
+                            run = Run({"_": scores})
+                            runs.append(run)
+                            print(len(runs))
+        print(f"Fusing {len(runs)} rankings.")
+        combined_run = fuse(
+            runs=runs,
+            norm="min-max",
+            method="sum",
+        ).to_dict()
+        domains = [
+            domain
+            for domain, _ in sorted(
+                combined_run["_"].items(),
+                key=lambda item: item[1],
+                reverse=True,
+            )
+        ]
+        print(domains[:50])
 
     def fetch(self) -> None:
         if self._result_path.exists():
             assert self._result_path.is_file()
             return
         print(f"Storing temporary files at: {self._cache_path}")
-        self._fetch_urls()
+        self._fetch_rankings()
         missing_urls = self._missing_urls()
         if len(missing_urls) > 0:
             raise RuntimeError(
@@ -263,7 +293,7 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
                 f"Consider retrying the download, as some requests "
                 f"might only have timed out."
             )
-        self._fuse_cached_urls()
+        self._fuse_cached_rankings()
         # for path in self._cache_path.iterdir():
         #     path.unlink()
         # self._cache_path.rmdir()
@@ -279,3 +309,5 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
         with self._result_path.open("rt") as file:
             for line in file:
                 yield schema.loads(line)
+
+

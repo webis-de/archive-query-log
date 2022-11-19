@@ -11,9 +11,9 @@ from requests import get, HTTPError
 from requests.exceptions import ChunkedEncodingError
 from tqdm.auto import tqdm
 
-from internet_archive_query_log.model import ArchivedSerpUrl, ArchivedUrl
-from internet_archive_query_log.parse import QueryParser
-from internet_archive_query_log.util.http import backoff_session
+from web_archive_query_log.model import ArchivedSerpUrl, ArchivedUrl
+from web_archive_query_log.parse import QueryParser
+from web_archive_query_log.util.http import backoff_session
 
 
 @dataclass(frozen=True)

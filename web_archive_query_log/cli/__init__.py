@@ -3,12 +3,12 @@ from typing import Optional
 
 from click import group, argument, Choice, Path as PathParam, option, INT
 
-from internet_archive_query_log import DATA_DIRECTORY_PATH, \
+from web_archive_query_log import DATA_DIRECTORY_PATH, \
     CDX_API_URL
-from internet_archive_query_log.cli.util import URL
-from internet_archive_query_log.config import SOURCES
-from internet_archive_query_log.queries import InternetArchiveQueries
-from internet_archive_query_log.serps import InternetArchiveSerps
+from web_archive_query_log.cli.util import URL
+from web_archive_query_log.config import SOURCES
+from web_archive_query_log.queries import InternetArchiveQueries
+from web_archive_query_log.serps import InternetArchiveSerps
 
 
 @group()

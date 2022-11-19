@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Iterable
 
-from internet_archive_query_log.parse import QueryParser, SearchResultsParser
+from web_archive_query_log.parse import QueryParser, SearchResultsParser
 
 
 @dataclass(frozen=True)

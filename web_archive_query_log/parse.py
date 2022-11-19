@@ -6,7 +6,7 @@ from urllib.parse import parse_qsl, unquote
 from bleach import clean
 from bs4 import BeautifulSoup, Tag
 
-from internet_archive_query_log.model import SearchResult, ArchivedSerpUrl, \
+from web_archive_query_log.model import SearchResult, ArchivedSerpUrl, \
     ArchivedUrl, ArchivedSerpContent, ArchivedSerp
 
 

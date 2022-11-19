@@ -2,9 +2,9 @@ from pathlib import Path
 
 from click import option, Path as PathParam
 
-from internet_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
-from internet_archive_query_log.cli import internet_archive_query_log, URL
-from internet_archive_query_log.services.alexa import AlexaTop1MArchivedUrls, \
+from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
+from web_archive_query_log.cli import internet_archive_query_log, URL
+from web_archive_query_log.services.alexa import AlexaTop1MArchivedUrls, \
     AlexaTop1MFusedDomains
 
 
