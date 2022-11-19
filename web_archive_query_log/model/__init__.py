@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 from functools import cached_property
+from hashlib import md5
 from typing import Sequence
 from urllib.parse import SplitResult, urlsplit
 
@@ -22,12 +23,20 @@ class ArchivedUrl(DataClassJsonMixin):
     timestamp: int
 
     @cached_property
+    def url_md5(self) -> str:
+        return md5(self.url.encode()).hexdigest()
+
+    @cached_property
     def datetime(self) -> datetime:
         return datetime.fromtimestamp(self.timestamp)
 
     @cached_property
     def split_url(self) -> SplitResult:
         return urlsplit(self.url)
+
+    @cached_property
+    def url_domain(self) -> str:
+        return self.split_url.netloc
 
     @cached_property
     def archive_timestamp(self) -> str:
