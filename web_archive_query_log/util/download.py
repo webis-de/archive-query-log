@@ -4,8 +4,9 @@ from pathlib import Path
 from random import random
 from typing import Iterable, Mapping
 
-from aiohttp import TCPConnector, ClientSession, ClientTimeout
-from aiohttp_retry import RetryClient
+from aiohttp import TCPConnector, ClientSession, ClientTimeout, \
+    ClientResponseError, ClientConnectorError, ServerTimeoutError
+from aiohttp_retry import RetryClient, JitterRetry
 from tqdm.auto import tqdm
 
 from web_archive_query_log.model import ArchivedUrl
@@ -27,8 +28,18 @@ class WebArchiveRawDownloader:
 
     @asynccontextmanager
     async def _client(self) -> RetryClient:
+        retry_options = JitterRetry(
+            attempts=10,
+            start_timeout=1,  # 1 second
+            max_timeout=5 * 60,  # 3 minutes
+            statuses={502, 503, 504},  # server errors
+            exceptions={ClientConnectorError, ServerTimeoutError},
+        )
         async with self._session() as session:
-            retry_client = RetryClient(client_session=session)
+            retry_client = RetryClient(
+                client_session=session,
+                retry_options=retry_options,
+            )
             yield retry_client
 
     async def download(
