@@ -19,8 +19,17 @@ class WebArchiveRawDownloader:
 
     @asynccontextmanager
     async def _session(self) -> ClientSession:
-        connector = TCPConnector(limit=100)
-        timeout = ClientTimeout(total=60)
+        # The Wayback Machine doesn't seem to support more than 20
+        # parallel connections from the same IP.
+        connector = TCPConnector(
+            limit=100,
+            limit_per_host=20,
+        )
+        # Graceful timeout as the Wayback Machine is sometimes very slow.
+        timeout = ClientTimeout(
+            total=10 * 60,
+            connect=5 * 60,
+        )
         async with ClientSession(
                 connector=connector,
                 timeout=timeout,
