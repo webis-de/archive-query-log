@@ -5,7 +5,8 @@ from random import random
 from typing import Iterable, Mapping
 
 from aiohttp import TCPConnector, ClientSession, ClientTimeout, \
-    ClientResponseError, ClientConnectorError, ServerTimeoutError
+    ClientResponseError, ClientConnectorError, ServerTimeoutError, \
+    ClientPayloadError
 from aiohttp_retry import RetryClient, JitterRetry
 from tqdm.auto import tqdm
 
@@ -33,7 +34,11 @@ class WebArchiveRawDownloader:
             start_timeout=1,  # 1 second
             max_timeout=5 * 60,  # 3 minutes
             statuses={502, 503, 504},  # server errors
-            exceptions={ClientConnectorError, ServerTimeoutError},
+            exceptions={
+                ClientConnectorError,
+                ServerTimeoutError,
+                ClientPayloadError,
+            },
         )
         async with self._session() as session:
             retry_client = RetryClient(
@@ -128,8 +133,7 @@ class WebArchiveRawDownloader:
                     ):
                         file.write(chunk)
                 return file_path
-        except Exception as e:
-            print(e)
+        except ClientResponseError as e:
             return None
 
     @staticmethod
