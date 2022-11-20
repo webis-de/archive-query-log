@@ -8,9 +8,10 @@ from itertools import islice
 from math import floor, log10
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Sized, Iterable, Any, Iterator, Collection, Mapping
+from typing import Sized, Iterable, Any, Iterator, Mapping, Set
 from zipfile import ZipFile
 
+from publicsuffixlist import PublicSuffixList
 from ranx import Run, fuse
 from requests import get, HTTPError
 from requests.exceptions import ChunkedEncodingError
@@ -175,29 +176,35 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
     """
     data_directory_path: Path
     cdx_api_url: str
+    fusion_method: str = "rrf"
+    max_domains_per_ranking: int = 1000
 
     @cached_property
-    def _urls(self) -> Collection[ArchivedUrl]:
-        return list(AlexaTop1MArchivedUrls(
+    def _urls(self) -> Set[ArchivedUrl]:
+        urls = AlexaTop1MArchivedUrls(
             data_directory_path=self.data_directory_path,
             cdx_api_url=self.cdx_api_url
-        ))
+        )
+        return set(urls)
 
     @cached_property
     def _result_path(self) -> Path:
-        return self.data_directory_path / f"alexa-top-1m-fused-domains.jsonl"
+        name = f"alexa-top-1m-fused-domains-{self.fusion_method}" \
+               f"-top-{self.max_domains_per_ranking}.csv"
+        return self.data_directory_path / name
 
     @cached_property
     def _cache_path(self) -> Path:
-        cache_path = Path(gettempdir()) / self._result_path.stem
+        cache_path = Path(gettempdir()) / "alexa-top-1m-fused-domains"
         cache_path.mkdir(exist_ok=True)
         return cache_path
 
     def _fetch_rankings(self) -> Iterable[Path]:
         downloader = WebArchiveRawDownloader()
         paths: Mapping[ArchivedUrl, Path] = run(downloader.download(
+            self._urls,
             self._cache_path,
-            self._urls
+            lambda url: f"{url.timestamp}.zip",
         ))
         if len(paths) < len(self._urls):
             raise RuntimeError("Some downloads were unsuccessful. Try again.")
@@ -205,8 +212,10 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
 
     def _fuse_cached_rankings(self) -> None:
         runs: list[Run] = []
+        num_runs = sum(1 for _ in self._cache_path.iterdir())
         for path in tqdm(
                 self._cache_path.iterdir(),
+                total=num_runs,
                 desc="Read ranking",
                 unit="ranking",
         ):
@@ -214,20 +223,18 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
                 with ZipFile(file) as zip_file:
                     with zip_file.open("top-1m.csv", "r") as csv_file:
                         with TextIOWrapper(csv_file) as lines:
-                            lines = islice(lines, 1_000)
+                            lines = islice(lines, self.max_domains_per_ranking)
                             scores: dict[str, float] = {
                                 line[1]: 1_000_000 - int(line[0])
                                 for line in reader(lines)
                             }
-                            print(len(scores))
                             run = Run({"_": scores})
                             runs.append(run)
-                            print(len(runs))
         print(f"Fusing {len(runs)} rankings.")
         combined_run = fuse(
             runs=runs,
             norm="min-max",
-            method="sum",
+            method=self.fusion_method,
         ).to_dict()
         domains = [
             domain
@@ -237,7 +244,11 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
                 reverse=True,
             )
         ]
-        print(domains[:50])
+        public_suffix_list = PublicSuffixList(only_icann=True)
+        with self._result_path.open("wt") as file:
+            for index, domain in enumerate(domains):
+                suffix = public_suffix_list.publicsuffix(domain)
+                file.write(f"{index + 1},{domain},{suffix}\n")
 
     def fetch(self) -> None:
         if self._result_path.exists():
