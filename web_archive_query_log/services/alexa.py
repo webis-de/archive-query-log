@@ -1,3 +1,4 @@
+from asyncio import run
 from csv import reader
 from dataclasses import dataclass
 from datetime import datetime
@@ -7,7 +8,7 @@ from itertools import islice
 from math import floor, log10
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Sized, Iterable, Any, Iterator
+from typing import Sized, Iterable, Any, Iterator, Collection, Mapping
 from zipfile import ZipFile
 
 from ranx import Run, fuse
@@ -16,6 +17,7 @@ from requests.exceptions import ChunkedEncodingError
 from tqdm.auto import tqdm
 
 from web_archive_query_log.model import ArchivedUrl
+from web_archive_query_log.util.download import WebArchiveRawDownloader
 from web_archive_query_log.util.http_session import backoff_session
 
 
@@ -175,11 +177,11 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
     cdx_api_url: str
 
     @cached_property
-    def _urls(self) -> AlexaTop1MArchivedUrls:
-        return AlexaTop1MArchivedUrls(
+    def _urls(self) -> Collection[ArchivedUrl]:
+        return list(AlexaTop1MArchivedUrls(
             data_directory_path=self.data_directory_path,
             cdx_api_url=self.cdx_api_url
-        )
+        ))
 
     @cached_property
     def _result_path(self) -> Path:
@@ -191,66 +193,23 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
         cache_path.mkdir(exist_ok=True)
         return cache_path
 
-    def _url_cache_path(self, url: ArchivedUrl) -> Path:
-        return self._cache_path / f"{url.timestamp}.zip"
-
-    def _fetch_ranking(self, url: ArchivedUrl) -> None:
-        path = self._url_cache_path(url)
-        if path.exists():
-            # Page was already downloaded, skip it.
-            assert path.is_file()
-            return
-
-        session = backoff_session()
-        try:
-            response = session.get(
-                url.raw_archive_url,
-                timeout=5 * 60  # 5 minutes, better safe than sorry ;)
-            )
-        except HTTPError:
-            print(f"Failed to load URL: {url}")
-            return
-        except ChunkedEncodingError:
-            print(f"Failed to read URL contents: {url}")
-            return
-        with path.open("wb") as file:
-            file.write(response.content)
-
-    def _fetch_rankings(self) -> None:
-        """
-        Fetch queries from each individual page.
-        """
-        urls = self._urls
-        urls = tqdm(
-            urls,
-            desc="Fetch rankings",
-            unit="ranking",
-        )
-        for url in urls:
-            self._fetch_ranking(url)
-
-    def _missing_urls(self) -> set[ArchivedUrl]:
-        """
-        Find missing URLs.
-        Most often, the missing URLs are caused by request timeouts.
-        """
-        missing_urls = set()
-        for url in self._urls:
-            path = self._url_cache_path(url)
-            if not path.exists() or not path.is_file():
-                missing_urls.add(url)
-        return missing_urls
+    def _fetch_rankings(self) -> Iterable[Path]:
+        downloader = WebArchiveRawDownloader()
+        paths: Mapping[ArchivedUrl, Path] = run(downloader.download(
+            self._cache_path,
+            self._urls
+        ))
+        if len(paths) < len(self._urls):
+            raise RuntimeError("Some downloads were unsuccessful. Try again.")
+        return paths.values()
 
     def _fuse_cached_rankings(self) -> None:
         runs: list[Run] = []
-        for url in tqdm(
-                self._urls,
+        for path in tqdm(
+                self._cache_path.iterdir(),
                 desc="Read ranking",
                 unit="ranking",
         ):
-            path = self._url_cache_path(url)
-            if not path.exists():  # todo remove
-                continue
             with path.open("rb") as file:
                 with ZipFile(file) as zip_file:
                     with zip_file.open("top-1m.csv", "r") as csv_file:
@@ -286,13 +245,6 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
             return
         print(f"Storing temporary files at: {self._cache_path}")
         self._fetch_rankings()
-        missing_urls = self._missing_urls()
-        if len(missing_urls) > 0:
-            raise RuntimeError(
-                f"URLs missing: {missing_urls}\n"
-                f"Consider retrying the download, as some requests "
-                f"might only have timed out."
-            )
         self._fuse_cached_rankings()
         # for path in self._cache_path.iterdir():
         #     path.unlink()
@@ -309,5 +261,3 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
         with self._result_path.open("rt") as file:
             for line in file:
                 yield schema.loads(line)
-
-
