@@ -1,6 +1,7 @@
-from asyncio import ensure_future, gather
+from asyncio import ensure_future, gather, sleep
 from contextlib import asynccontextmanager
 from pathlib import Path
+from random import random
 from typing import Iterable, Mapping
 
 from aiohttp import TCPConnector, ClientSession, ClientTimeout
@@ -127,6 +128,7 @@ class WebArchiveRawDownloader:
             client: RetryClient,
             progress: tqdm,
     ) -> Path | None:
+        await sleep(random())
         res = await WebArchiveRawDownloader._download_single(
             download_directory_path,
             archived_url,
