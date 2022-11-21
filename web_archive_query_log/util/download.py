@@ -144,7 +144,6 @@ class WebArchiveRawDownloader:
             return file_path
         url = archived_url.raw_archive_url
         await sleep(1.0 * random())
-        print(f"Request {url}")
         try:
             async with client.get(url) as response:
                 with file_path.open("wb") as file:
