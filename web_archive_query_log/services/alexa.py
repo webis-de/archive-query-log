@@ -177,7 +177,9 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
     data_directory_path: Path
     cdx_api_url: str
     fusion_method: str = "rrf"
-    max_domains_per_ranking: int = 1000
+    max_domains_per_ranking: int | None = 1000
+    deduplicate_per_ranking: bool = True
+    deduplicate_fused_ranking: bool = False
 
     @cached_property
     def _urls(self) -> Set[ArchivedUrl]:
@@ -210,6 +212,22 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
             raise RuntimeError("Some downloads were unsuccessful. Try again.")
         return paths.values()
 
+    def _iter_deduplicated(self, domains: Iterable[str]) -> Iterator[str]:
+        public_suffix_list = PublicSuffixList()
+        second_level_domains = set()
+        for domain in domains:
+            public_suffix = public_suffix_list.publicsuffix(domain)
+            second_level_domain = public_suffix_list.subdomain(domain, 0)
+            if second_level_domain is None:
+                second_level_domain = public_suffix
+            second_level_domain = second_level_domain.removesuffix(
+                f".{public_suffix}"
+            )
+            if second_level_domain in second_level_domains:
+                continue
+            second_level_domains.add(second_level_domain)
+            yield domain
+
     def _fuse_cached_rankings(self) -> None:
         runs: list[Run] = []
         num_runs = sum(1 for _ in self._cache_path.iterdir())
@@ -223,10 +241,17 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
                 with ZipFile(file) as zip_file:
                     with zip_file.open("top-1m.csv", "r") as csv_file:
                         with TextIOWrapper(csv_file) as lines:
-                            lines = islice(lines, self.max_domains_per_ranking)
+                            domains = (line[1] for line in reader(lines))
+                            if self.deduplicate_per_ranking:
+                                domains = self._iter_deduplicated(domains)
+                            if self.max_domains_per_ranking is not None:
+                                domains = islice(
+                                    domains,
+                                    self.max_domains_per_ranking,
+                                )
                             scores: dict[str, float] = {
-                                line[1]: 1_000_000 - int(line[0])
-                                for line in reader(lines)
+                                domain: 1_000_000 - index
+                                for index, domain in enumerate(domains)
                             }
                             run = Run({"_": scores})
                             runs.append(run)
@@ -236,19 +261,21 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
             norm="min-max",
             method=self.fusion_method,
         ).to_dict()
-        domains = [
+        domains = (
             domain
             for domain, _ in sorted(
-                combined_run["_"].items(),
-                key=lambda item: item[1],
-                reverse=True,
-            )
-        ]
+            combined_run["_"].items(),
+            key=lambda item: item[1],
+            reverse=True,
+        )
+        )
+        if self.deduplicate_fused_ranking and not self.deduplicate_per_ranking:
+            domains = self._iter_deduplicated(domains)
         public_suffix_list = PublicSuffixList(only_icann=True)
         with self._result_path.open("wt") as file:
             for index, domain in enumerate(domains):
-                suffix = public_suffix_list.publicsuffix(domain)
-                file.write(f"{index + 1},{domain},{suffix}\n")
+                public_suffix = public_suffix_list.publicsuffix(domain)
+                file.write(f"{index + 1},{domain},{public_suffix}\n")
 
     def fetch(self) -> None:
         if self._result_path.exists():
