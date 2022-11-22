@@ -4,7 +4,6 @@ from pathlib import Path
 from click import argument, Path as PathParam
 
 from web_archive_query_log.cli import main
-from web_archive_query_log.urls.iterable import ArchivedUrls
 
 
 @main.group("download")
@@ -39,6 +38,9 @@ def download():
 )
 def warc(download_dir: Path, urls_file: Path) -> None:
     from web_archive_query_log.download.warc import WebArchiveWarcDownloader
-    downloader = WebArchiveWarcDownloader(download_dir)
-    urls = ArchivedUrls(urls_file)
-    run(downloader.download(urls))
+    from web_archive_query_log.urls.iterable import ArchivedUrls
+    downloader = WebArchiveWarcDownloader(
+        ArchivedUrls(urls_file),
+        download_dir,
+    )
+    run(downloader.download())

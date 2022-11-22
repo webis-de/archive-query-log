@@ -7,7 +7,6 @@ from math import log10
 from pathlib import Path
 from random import random
 from tempfile import TemporaryFile
-from typing import Iterable, Mapping
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
@@ -16,6 +15,7 @@ from warcio import WARCWriter, StatusAndHeaders
 
 from web_archive_query_log.model import ArchivedUrl
 from web_archive_query_log.util.archive_http import archive_http_client
+from web_archive_query_log.util.iterable import SizedIterable
 
 
 @dataclass(frozen=True)
@@ -25,6 +25,11 @@ class WebArchiveWarcDownloader:
 
     The downloader will retry requests with a backoff and will continue
     downloading URLs even if some URLs fail.
+    """
+
+    archived_urls: SizedIterable[ArchivedUrl]
+    """
+    The archived URLs to download.
     """
 
     download_path: Path
@@ -85,19 +90,12 @@ class WebArchiveWarcDownloader:
                 if file_size + buffer_size <= self.max_file_size:
                     return path
 
-    async def download(
-            self,
-            archived_urls: Iterable[ArchivedUrl],
-    ) -> Mapping[ArchivedUrl, bool]:
+    async def download(self) -> None:
         """
         Download WARC files for archived URLs from the Web Archive.
-
-        :param archived_urls: The archived URLs to download.
-        :return: For each URL, whether it was successfully downloaded or not.
         """
-        archived_urls = list(archived_urls)
         progress = tqdm(
-            total=len(archived_urls),
+            total=len(self.archived_urls),
             desc="Download archived URLs",
             unit="URL",
         )
@@ -108,12 +106,23 @@ class WebArchiveWarcDownloader:
                     client=client,
                     progress=progress,
                 ))
-                for archived_url in archived_urls
+                for archived_url in self.archived_urls
             ))
-        return {
-            archived_url: response
-            for archived_url, response in zip(archived_urls, responses)
+        error_urls: set[ArchivedUrl] = {
+            archived_url
+            for archived_url, response in zip(self.archived_urls, responses)
         }
+        if len(error_urls) > 0:
+            if len(error_urls) > 10:
+                raise RuntimeError(
+                    f"Some downloads did not succeed: "
+                    f"{len(error_urls)} in total"
+                )
+            else:
+                raise RuntimeError(
+                    f"Some downloads did not succeed: "
+                    f"{', '.join(url.raw_archive_url for url in error_urls)}"
+                )
 
     async def _download_single(
             self,
