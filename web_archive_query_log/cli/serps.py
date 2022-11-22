@@ -8,7 +8,7 @@ from web_archive_query_log.cli import main
 from web_archive_query_log.cli.util import URL, PathParam
 from web_archive_query_log.config import SOURCES
 from web_archive_query_log.queries import InternetArchiveQueries
-from web_archive_query_log.serps import InternetArchiveSerps
+from web_archive_query_log.results import InternetArchiveSerps
 
 
 @main.group("serps")
