@@ -42,7 +42,7 @@ class WebArchiveRawDownloader:
             desc="Download archived URLs",
             unit="URL",
         )
-        async with archive_http_client() as client:
+        async with archive_http_client(limit=10) as client:
             responses = await gather(*(
                 ensure_future(self._download_single_progress(
                     archived_url=archived_url,
@@ -80,7 +80,7 @@ class WebArchiveRawDownloader:
         :return: The download file path if the request was successful,
          and None otherwise.
         """
-        async with archive_http_client() as client:
+        async with archive_http_client(limit=1) as client:
             return await self._download_single(
                 archived_url=archived_url,
                 download_directory_path=download_directory_path,
@@ -102,6 +102,7 @@ class WebArchiveRawDownloader:
         await sleep(1.0 * random())
         try:
             async with client.get(url) as response:
+                response.raise_for_status()
                 with file_path.open("wb") as file:
                     async for data, _ in response.content.iter_chunks():
                         file.write(data)
