@@ -1,7 +1,7 @@
-from asyncio import ensure_future, gather, sleep
+from asyncio import gather, ensure_future, sleep
 from pathlib import Path
 from random import random
-from typing import Iterable, Mapping, Callable
+from typing import Iterable, Callable, Mapping
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
