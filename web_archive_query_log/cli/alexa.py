@@ -3,12 +3,13 @@ from pathlib import Path
 from click import option, Path as PathParam
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
-from web_archive_query_log.cli import internet_archive_query_log, URL
+from web_archive_query_log.cli.main import main
+from web_archive_query_log.cli.util import URL
 from web_archive_query_log.services.alexa import AlexaTop1MArchivedUrls, \
     AlexaTop1MFusedDomains
 
 
-@internet_archive_query_log.group("alexa")
+@main.group("alexa")
 def alexa():
     pass
 

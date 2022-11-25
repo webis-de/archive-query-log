@@ -58,7 +58,7 @@ class InternetArchiveQueries(Sized, Iterable[ArchivedSerpUrl]):
 
     def _page_cache_path(self, page: int) -> Path:
         num_digits = floor(log10(self.num_pages)) + 1
-        return self._cache_path / f"page_{page:{num_digits}}.jsonl"
+        return self._cache_path / f"page_{page:0{num_digits}}.jsonl"
 
     def _fetch_page(self, page: int) -> Path | None:
         path = self._page_cache_path(page)

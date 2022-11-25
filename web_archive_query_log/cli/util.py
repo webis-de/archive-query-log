@@ -1,6 +1,6 @@
 from urllib.parse import urlparse
 
-from click.types import StringParamType
+from click.types import StringParamType, Path
 
 
 class UrlParamType(StringParamType):
@@ -17,3 +17,5 @@ class UrlParamType(StringParamType):
 
 
 URL = UrlParamType()
+
+PathParam = Path

@@ -16,6 +16,8 @@ ranx = "*"
 joblib = "*"
 aiohttp = "*"
 aiohttp-retry = "*"
+publicsuffixlist = "*"
+warcio = "*"
 
 [dev-packages]
 

@@ -1,13 +1,10 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import final, Optional, Sequence, Iterator
+from typing import final, Optional
 from urllib.parse import parse_qsl, unquote
 
-from bleach import clean
-from bs4 import BeautifulSoup, Tag
-
-from web_archive_query_log.model import SearchResult, ArchivedSerpUrl, \
-    ArchivedUrl, ArchivedSerpContent, ArchivedSerp
+from web_archive_query_log.model import ArchivedSerpUrl, \
+    ArchivedUrl
 
 
 class QueryParser(ABC):
@@ -71,67 +68,3 @@ class PathSuffix(QueryParser):
         return unquote(path)
 
 
-class SearchResultsParser(ABC):
-    def parse(self, content: ArchivedSerpContent) -> ArchivedSerp | None:
-        results = self._parse_results(content)
-        if results is None:
-            return None
-        return ArchivedSerp(
-            url=content.url,
-            timestamp=content.timestamp,
-            query=content.query,
-            results=results,
-        )
-
-    @abstractmethod
-    def _parse_results(
-            self,
-            content: ArchivedSerpContent,
-    ) -> Sequence[SearchResult] | None:
-        ...
-
-
-class BingSearchResultsParser(SearchResultsParser):
-
-    @staticmethod
-    def _clean_html(tag: Tag) -> str:
-        return clean(
-            tag.decode_contents(),
-            tags=["strong"],
-            attributes=[],
-            protocols=[],
-            strip=True,
-            strip_comments=True,
-        ).strip()
-
-    def _parse_serp_iter(
-            self,
-            content: bytes,
-            encoding: str,
-    ) -> Iterator[SearchResult]:
-        soup = BeautifulSoup(content, "html.parser", from_encoding=encoding)
-        results: Tag = soup.find("ol", id="b_results")
-        if results is None:
-            return
-        result: Tag
-        for result in results.find_all("li", class_="b_algo"):
-            title: Tag = result.find("h2")
-            caption: Tag | None = result.find("p")
-            yield SearchResult(
-                url=title.find("a").attrs["href"],
-                title=self._clean_html(title),
-                snippet=(
-                    self._clean_html(caption)
-                    if caption is not None else ""
-                )
-            )
-
-    def _parse_results(
-            self,
-            content: ArchivedSerpContent,
-    ) -> Sequence[SearchResult] | None:
-        domain_parts = content.split_url.netloc.split(".")
-        if "bing" not in domain_parts:
-            # bing.*/*
-            return None
-        return list(self._parse_serp_iter(content.content, content.encoding))

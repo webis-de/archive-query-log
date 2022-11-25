@@ -2,7 +2,8 @@ from typing import Mapping, Sequence
 
 from web_archive_query_log.config_model import Source
 from web_archive_query_log.parse import QueryParameter, PathSuffix, \
-    FragmentParameter, BingSearchResultsParser
+    FragmentParameter
+from web_archive_query_log.results.bing import BingSearchResultsParser
 from web_archive_query_log.sites import WIKIPEDIA_SITES, AMAZON_SITES, \
     EBAY_SITES, STACKEXCHANGE_SITES
 
