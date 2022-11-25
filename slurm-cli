@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+srun \
+  --cpus-per-task 1 \
+  --mem=4G \
+  --container-writable \
+  --container-image=ubuntu:20.04 \
+  --container-name=web-archive-query-log-ubuntu-20.04 \
+  --container-mounts="$PWD":/workspace \
+  --chdir "$PWD" \
+  --pty \
+  su -c "
+  python3.10 -m pipenv run python -m web_archive_query_log
+  "

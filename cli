@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+pipenv run python -m web_archive_query_log

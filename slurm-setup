@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+srun \
+  --cpus-per-task 1 \
+  --mem=4G \
+  --container-writable \
+  --container-image=ubuntu:20.04 \
+  --container-name=web-archive-query-log-ubuntu-20.04 \
+  --container-mounts="$PWD":/workspace \
+  --chdir "$PWD" \
+  --pty \
+  su -c "
+  cd /workspace
+  apt update -y
+  apt install -y software-properties-common git
+  add-apt-repository -y ppa:deadsnakes/ppa
+  apt install -y python3.10 python3.10-dev python3.10-venv python3-pip
+  python3.10 -m pip install --user --upgrade pip cython pipenv
+  python3.10 -m pipenv install --deploy
+  "
