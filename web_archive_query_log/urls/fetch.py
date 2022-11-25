@@ -154,6 +154,7 @@ class ArchivedUrlsFetcher:
     async def _http_client(client: RetryClient | None) -> RetryClient:
         if client is not None:
             yield client
+            return
         async with archive_http_client(limit=5) as client:
             yield client
 
@@ -266,6 +267,7 @@ class ArchivedUrlsFetcher:
             output_path: Path,
             urls: AbstractSet[str],
             file_name: Callable[[str], str] = _safe_quote_url,
+            client: RetryClient | None = None,
     ) -> None:
         output_path.mkdir(exist_ok=True)
         progress = tqdm(
@@ -273,7 +275,7 @@ class ArchivedUrlsFetcher:
             desc="Fetch archived URLs for URLs",
             unit="URL",
         )
-        async with self._http_client() as client:
+        async with self._http_client(client) as client:
             await gather(*(
                 ensure_future(self._fetch_progress(
                     output_path=output_path / f"{file_name(url)}.jsonl",
@@ -283,4 +285,3 @@ class ArchivedUrlsFetcher:
                 ))
                 for url in urls
             ))
-
