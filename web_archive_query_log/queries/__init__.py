@@ -12,7 +12,7 @@ from requests.exceptions import ChunkedEncodingError
 from tqdm.auto import tqdm
 
 from web_archive_query_log.model import ArchivedSerpUrl, ArchivedUrl
-from web_archive_query_log.parse import QueryParser
+from web_archive_query_log.queries.parse import QueryParser
 from web_archive_query_log.util.http_session import backoff_session
 
 
