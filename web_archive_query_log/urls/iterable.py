@@ -11,7 +11,7 @@ class ArchivedUrls(Sized, Iterable[ArchivedUrl]):
     Read archived URLs from a JSONL file.
     """
 
-    urls_path: Path
+    path: Path
     """
     Path where the URLs are stored in JSONL format.
     """
@@ -20,17 +20,17 @@ class ArchivedUrls(Sized, Iterable[ArchivedUrl]):
         self._check_urls_path()
 
     def _check_urls_path(self):
-        if not self.urls_path.exists() or not self.urls_path.is_file():
+        if not self.path.exists() or not self.path.is_file():
             raise ValueError(
-                f"URLs path must be a file: {self.urls_path}"
+                f"URLs path must be a file: {self.path}"
             )
 
     def __len__(self) -> int:
-        with self.urls_path.open("rt") as file:
+        with self.path.open("rt") as file:
             return sum(1 for _ in file)
 
     def __iter__(self) -> Iterator[ArchivedUrl]:
         schema = ArchivedUrl.schema()
-        with self.urls_path.open("rt") as file:
+        with self.path.open("rt") as file:
             for line in file:
                 yield schema.loads(line)
