@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash -e
+
 srun \
   --cpus-per-task 1 \
   --mem=4G \
