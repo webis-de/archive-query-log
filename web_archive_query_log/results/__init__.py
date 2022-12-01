@@ -15,6 +15,7 @@ from web_archive_query_log.results.parse import SearchResultsParser
 from web_archive_query_log.queries import InternetArchiveQueries
 from web_archive_query_log.util.http_session import backoff_session
 
+# TODO Refactor to operate on WARCs, separate out download to download module
 @dataclass(frozen=True)
 class InternetArchiveSerps:
     queries: InternetArchiveQueries

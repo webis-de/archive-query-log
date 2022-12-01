@@ -16,6 +16,7 @@ from web_archive_query_log.queries.parse import QueryParser
 from web_archive_query_log.util.http_session import backoff_session
 
 
+# TODO refactor to take in a path with URLs
 @dataclass(frozen=True)
 class InternetArchiveQueries(Sized, Iterable[ArchivedSerpUrl]):
     url_prefix: str
