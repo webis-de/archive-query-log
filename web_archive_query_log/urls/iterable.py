@@ -1,6 +1,8 @@
 from dataclasses import dataclass
+from gzip import GzipFile
+from io import TextIOWrapper
 from pathlib import Path
-from typing import Sized, Iterable, Iterator
+from typing import Sized, Iterable, Iterator, IO
 
 from web_archive_query_log.model import ArchivedUrl
 
@@ -32,5 +34,12 @@ class ArchivedUrls(Sized, Iterable[ArchivedUrl]):
     def __iter__(self) -> Iterator[ArchivedUrl]:
         schema = ArchivedUrl.schema()
         with self.path.open("rt") as file:
-            for line in file:
-                yield schema.loads(line)
+            if self.path.suffix == ".gz":
+                with GzipFile(fileobj=file, mode="rb") as gzip_file:
+                    gzip_file: IO[bytes]
+                    with TextIOWrapper(gzip_file) as text_file:
+                        for line in text_file:
+                            yield schema.loads(line)
+            else:
+                for line in file:
+                    yield schema.loads(line)
