@@ -6,75 +6,7 @@ from typing import Sequence
 from urllib.parse import SplitResult, urlsplit
 
 from dataclasses_json import DataClassJsonMixin, config
-from marshmallow.fields import List, Nested
-
-from web_archive_query_log.model.parser import PageNumberParser
-from web_archive_query_log.queries import QueryParser
-from web_archive_query_log.results import SearchResultsParser
-
-
-@dataclass(frozen=True, slots=True)
-class Service(DataClassJsonMixin):
-    """
-    An online service that has a search interface.
-
-    Output of: service collection, service domains
-    Input of: service URLs, query extraction
-    """
-
-    name: str
-    """
-    Service name (corresponds to ``alexa_domain`` without 
-    the ``alexa_public_suffix``).
-    """
-    public_suffix: str
-    """
-    Public suffix (https://publicsuffix.org/) of ``alexa_domain``.
-    """
-    alexa_domain: str
-    """
-    Domain as it appears in Alexa top-1M ranks.
-    """
-    alexa_rank: int
-    """
-    Rank from fused Alexa top-1M rankings.
-    """
-    category: str
-    """
-    Category of the service (manual annotation).
-    """
-    notes: str
-    """
-    Notes about the service (manual annotation).
-    """
-    input_field: bool
-    """
-    Whether the service has an input field.
-    """
-    search_form: bool
-    """
-    Whether the service has a search form element.
-    """
-    search_div: bool
-    """
-    Whether the service has a search div element.
-    """
-    domains: Sequence[str]
-    """
-    Known domains of the service, including the main domain.
-    """
-    query_parsers: Sequence[QueryParser]
-    """
-    Query parsers in order of precedence.
-    """
-    page_num_parsers: Sequence[PageNumberParser]
-    """
-    Page number parsers in order of precedence.
-    """
-    serp_parsers: Sequence[SearchResultsParser]
-    """
-    SERP parsers in order of precedence.
-    """
+from marshmallow.fields import List, Nested, String
 
 
 @dataclass(frozen=True, slots=True)
@@ -231,4 +163,108 @@ class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
     )
     """
     Retrieved results from the SERP in the same order as they appear.
+    """
+
+
+# noinspection PyPep8
+from web_archive_query_log.model.parser import QueryParser, \
+    PageNumberParser, QueryParserField, PageNumberParserField, \
+    ResultsParserField, ResultQueryParserField, ResultQueryParser, \
+    ResultsParser
+
+
+@dataclass(frozen=True, slots=True)
+class Service(DataClassJsonMixin):
+    """
+    An online service that has a search interface.
+
+    Output of: service collection, service domains
+    Input of: service URLs, query extraction
+    """
+
+    name: str
+    """
+    Service name (corresponds to ``alexa_domain`` without 
+    the ``alexa_public_suffix``).
+    """
+    public_suffix: str
+    """
+    Public suffix (https://publicsuffix.org/) of ``alexa_domain``.
+    """
+    alexa_domain: str
+    """
+    Domain as it appears in Alexa top-1M ranks.
+    """
+    alexa_rank: int | None
+    """
+    Rank from fused Alexa top-1M rankings.
+    """
+    category: str | None
+    """
+    Category of the service (manual annotation).
+    """
+    notes: str | None
+    """
+    Notes about the service (manual annotation).
+    """
+    input_field: bool | None
+    """
+    Whether the service has an input field.
+    """
+    search_form: bool | None
+    """
+    Whether the service has a search form element.
+    """
+    search_div: bool | None
+    """
+    Whether the service has a search div element.
+    """
+    domains: Sequence[str] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(String())
+        )
+    )
+    """
+    Known domains of the service, including the main domain.
+    """
+    query_parsers: Sequence[QueryParser] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(QueryParserField())
+        )
+    )
+    """
+    Query parsers in order of precedence.
+    """
+    page_num_parsers: Sequence[PageNumberParser] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(PageNumberParserField())
+        )
+    )
+    """
+    Page number parsers in order of precedence.
+    """
+    results_parsers: Sequence[ResultsParser] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(ResultsParserField())
+        )
+    )
+    """
+    SERP parsers in order of precedence.
+    """
+
+    result_query_parsers: Sequence[ResultQueryParser] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(ResultQueryParserField())
+        )
+    )
+    """
+    Result query parsers in order of precedence.
+    
+    Note: the result query can be different from the original query 
+    due to spelling correction etc.
     """
