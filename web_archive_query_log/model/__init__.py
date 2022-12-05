@@ -8,6 +8,67 @@ from urllib.parse import SplitResult, urlsplit
 from dataclasses_json import DataClassJsonMixin, config
 from marshmallow.fields import List, Nested
 
+from web_archive_query_log.model.parser import PageNumberParser
+from web_archive_query_log.queries import QueryParser
+from web_archive_query_log.results import SearchResultsParser
+
+
+@dataclass(frozen=True, slots=True)
+class Source(DataClassJsonMixin):
+    name: str
+    """
+    Service name (corresponds to ``alexa_domain`` without 
+    the ``alexa_public_suffix``).
+    """
+    public_suffix: str
+    """
+    Public suffix (https://publicsuffix.org/) of ``alexa_domain``.
+    """
+    alexa_domain: str
+    """
+    Domain as it appears in Alexa top-1M ranks.
+    """
+    alexa_rank: int
+    """
+    Rank from fused Alexa top-1M rankings.
+    """
+    category: str
+    """
+    Category of the service (manual annotation).
+    """
+    notes: str
+    """
+    Notes about the service (manual annotation).
+    """
+    input_field: bool
+    """
+    Whether the service has an input field.
+    """
+    search_form: bool
+    """
+    Whether the service has a search form element.
+    """
+    search_div: bool
+    """
+    Whether the service has a search div element.
+    """
+    domains: Sequence[str]
+    """
+    Known domains of the service, including the main domain.
+    """
+    query_parsers: Sequence[QueryParser]
+    """
+    Query parsers in order of precedence.
+    """
+    page_num_parsers: Sequence[PageNumberParser]
+    """
+    Page number parsers in order of precedence.
+    """
+    serp_parsers: Sequence[SearchResultsParser]
+    """
+    SERP parsers in order of precedence.
+    """
+
 
 @dataclass(frozen=True, slots=True)
 class Domain(DataClassJsonMixin):
