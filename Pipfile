@@ -18,6 +18,8 @@ aiohttp = "*"
 aiohttp-retry = "*"
 publicsuffixlist = "*"
 warcio = "*"
+apache-beam = "*"
+pyspark = "*"
 
 [dev-packages]
 
