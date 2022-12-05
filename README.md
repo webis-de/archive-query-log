@@ -115,6 +115,7 @@ The intermediate results from each step are stored in different formats.
      ...
    ]
    ```
+- Python data class: `Service`
 
 ### Service URLs
 - all archived URLs for one service are stored in a single file
@@ -127,6 +128,7 @@ The intermediate results from each step are stored in different formats.
      "timestamp": "int" // archive timestamp as POSIX integer
    }
    ```
+- Python data class: `ArchivedUrl`
 
 ### Service SERP URLs
 - all archived URLs for one service are stored in a single file
@@ -141,6 +143,7 @@ The intermediate results from each step are stored in different formats.
      "page_num": "string" // parsed page number (optional)
    }
    ```
+- Python data class: `ArchivedSerpUrl`
 
 ### Service SERP HTML
 - all downloaded SERPs for one service are stored in a single directory
@@ -158,6 +161,7 @@ The intermediate results from each step are stored in different formats.
    }
    ```
   (same format as in previous step)
+- Python data class: `ArchivedSerpContent` (roughly)
 
 ### Service parsed SERPs
 - all parsed SERPs for one service are stored in a single file
@@ -181,6 +185,7 @@ The intermediate results from each step are stored in different formats.
      ]
    }
    ```
+- Python data class: `ArchivedSerp` with `SearchResult`
   
 ### Search result downloads
 TODO
