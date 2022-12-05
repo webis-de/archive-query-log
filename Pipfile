@@ -20,6 +20,8 @@ publicsuffixlist = "*"
 warcio = "*"
 apache-beam = "*"
 pyspark = "*"
+jupyter = "*"
+pandas = "*"
 
 [dev-packages]
 
