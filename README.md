@@ -69,34 +69,45 @@ The intermediate results from each step are stored in different formats.
 
 ### Services
 - all services are stored in a single JSON file:
-  `<DATADIR>/services.jsonl`
+  `<DATADIR>/services.json`
 - one object per service, array containing all services
 - JSON format:
    ```json
    [
      {
-       "name": "string",             // service name (alexa_domain - alexa_public_suffix)
-       "alexa_domain": "int",        // domain as it appears in Alexa top-1M ranks
-       "alexa_public_suffix": "int", // public suffix (https://publicsuffix.org/) of alexa_domain
-       "alexa_rank": "int",          // rank from fused Alexa top-1M rankings
-       "category": "string",         // manual annotation
-       "notes": "string",            // manual annotation
-       "has_input_field": "bool",    // manual annotation
-       "has_search_form": "bool",    // manual annotation
-       "has_search_div": "bool",     // manual annotation
-       "domains": ["string"],        // known domains (including the main domain)
-       "query_parsers": [            // query parsers in order of precedence, one of ...
+       "name": "string",                // service name (alexa_domain - alexa_public_suffix)
+       "public_suffix": "string",       // public suffix (https://publicsuffix.org/) of alexa_domain
+       "alexa_domain": "string",        // domain as it appears in Alexa top-1M ranks
+       "alexa_rank": "int",             // rank from fused Alexa top-1M rankings
+       "category": "string",            // manual annotation
+       "notes": "string",               // manual annotation
+       "input_field": "bool",           // manual annotation
+       "search_form": "bool",           // manual annotation
+       "search_div": "bool",            // manual annotation
+       "domains": ["string"],           // known domains (including the main domain)
+       "query_parsers": [               // query parsers in order of precedence
          {
-           "type": "query_parameter", // for URLs like https://example.com/search?q=foo
-           "key": "string"
+           "url_prefix": "string",      // URL prefix
+           "type": "query_parameter",   // for URLs like https://example.com/search?q=foo
+           "parameter": "string"
          },
          {
+           "url_prefix": "string",       // URL prefix
            "type": "fragment_parameter", // for URLs like https://example.com/search#q=foo
-           "key": "string"
+           "parameter": "string"
          },
          {
-           "type": "path_suffix", // for URLs like https://example.com/search/foo
-           "prefix": "string"
+           "url_prefix": "string",      // URL prefix
+           "type": "path_suffix",       // for URLs like https://example.com/search/foo
+           "path_prefix": "string"
+         },
+         ...
+       ],
+       "page_num_parsers": [            // page number parsers in order of precedence
+         {
+           "url_prefix": "string",      // URL prefix
+           "type": "query_parameter",   // for URLs like https://example.com/search?q=foo
+           "parameter": "string"
          },
          ...
        ]
@@ -124,9 +135,10 @@ The intermediate results from each step are stored in different formats.
 - JSONL format:
    ```json
    {
-     "url": "string",    // archived URL
-     "timestamp": "int", // archive timestamp as POSIX integer
-     "query": "string"   // parsed query
+     "url": "string",     // archived URL
+     "timestamp": "int",  // archive timestamp as POSIX integer
+     "query": "string",   // parsed query
+     "page_num": "string" // parsed page number (optional)
    }
    ```
 
@@ -139,9 +151,10 @@ The intermediate results from each step are stored in different formats.
 - additional WARC header `Archived-URL` (for request and response) with the archived URL in JSONL format:
    ```json
    {
-     "url": "string",    // archived URL
-     "timestamp": "int", // archive timestamp as POSIX integer
-     "query": "string"   // parsed query
+     "url": "string",     // archived URL
+     "timestamp": "int",  // archive timestamp as POSIX integer
+     "query": "string",   // parsed query
+     "page_num": "string" // parsed page number (optional)
    }
    ```
   (same format as in previous step)
@@ -156,6 +169,7 @@ The intermediate results from each step are stored in different formats.
      "url": "string",          // archived URL
      "timestamp": "int",       // archive timestamp as POSIX integer
      "query": "string",        // parsed query
+     "page_num": "string",     // parsed page number (optional)
      "result_query": "string", // query displayed on the SERP (e.g. with spelling correction)
      "results": [
        {
@@ -167,6 +181,12 @@ The intermediate results from each step are stored in different formats.
      ]
    }
    ```
+  
+### Search result downloads
+TODO
+  
+### Test Collection
+TODO
 
 ## Contribute
 
