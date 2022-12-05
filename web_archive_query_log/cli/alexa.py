@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from click import option, Path as PathParam
+from click import option, Path as PathParam, argument
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
 from web_archive_query_log.cli.main import main
@@ -14,33 +14,33 @@ def alexa():
     pass
 
 
-@alexa.command("archived-urls")
-@option(
-    "-d", "--data-dir",
-    type=PathParam(
-        exists=True,
-        file_okay=False,
-        dir_okay=True,
-        writable=True,
-        readable=True,
-        resolve_path=True,
-        path_type=Path,
-    ),
-    default=DATA_DIRECTORY_PATH
-)
+@alexa.command("fetch-archived-urls")
 @option(
     "-u", "--api-url", "--cdx-api-url",
     type=URL,
     default=CDX_API_URL,
 )
-def archived_urls(data_dir: Path, api_url: str) -> None:
+@argument(
+    "output-path",
+    type=PathParam(
+        exists=False,
+        file_okay=True,
+        dir_okay=False,
+        writable=True,
+        readable=False,
+        resolve_path=True,
+        path_type=Path,
+    ),
+    default=DATA_DIRECTORY_PATH / f"alexa-top-1m-archived-urls.jsonl"
+)
+def archived_urls(api_url: str, output_path: Path) -> None:
     AlexaTop1MArchivedUrls(
-        data_directory_path=data_dir,
+        output_path=output_path,
         cdx_api_url=api_url,
     ).fetch()
 
 
-@alexa.command("domains")
+@alexa.command("fuse-domains")
 @option(
     "-d", "--data-dir",
     type=PathParam(

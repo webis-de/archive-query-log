@@ -27,7 +27,7 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
     """
     Get all archived URLs of Alexa top-1M rankings.
     """
-    data_directory_path: Path
+    output_path: Path
     cdx_api_url: str
 
     @cached_property
@@ -41,11 +41,11 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
 
     @cached_property
     def _result_path(self) -> Path:
-        return self.data_directory_path / f"alexa-top-1m-archived-urls.jsonl"
+        return self.output_path
 
     @cached_property
     def _cache_path(self) -> Path:
-        cache_path = Path(gettempdir()) / self._result_path.stem
+        cache_path = Path(gettempdir()) / self.output_path.stem
         cache_path.mkdir(exist_ok=True)
         return cache_path
 
@@ -126,7 +126,7 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
         """
         Merge queries from all pages.
         """
-        with self._result_path.open("wt") as file:
+        with self.output_path.open("wt") as file:
             for page in tqdm(
                     range(self.num_pages),
                     desc="Merge urls",
@@ -139,8 +139,8 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
                         file.write(line)
 
     def fetch(self) -> None:
-        if self._result_path.exists():
-            assert self._result_path.is_file()
+        if self.output_path.exists():
+            assert self.output_path.is_file()
             return
         print(f"Storing temporary files at: {self._cache_path}")
         self._fetch_pages()
@@ -158,13 +158,13 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
 
     def __len__(self) -> int:
         self.fetch()
-        with self._result_path.open("rt") as file:
+        with self.output_path.open("rt") as file:
             return sum(1 for _ in file)
 
     def __iter__(self) -> Iterator[ArchivedUrl]:
         self.fetch()
         schema = ArchivedUrl.schema()
-        with self._result_path.open("rt") as file:
+        with self.output_path.open("rt") as file:
             for line in file:
                 yield schema.loads(line)
 
@@ -184,7 +184,7 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
     @cached_property
     def _urls(self) -> Set[ArchivedUrl]:
         urls = AlexaTop1MArchivedUrls(
-            data_directory_path=self.data_directory_path,
+            output_path=self.data_directory_path / f"alexa-top-1m-archived-urls.jsonl",
             cdx_api_url=self.cdx_api_url
         )
         return set(urls)
