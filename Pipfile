@@ -22,6 +22,7 @@ apache-beam = "*"
 pyspark = "*"
 jupyter = "*"
 pandas = "*"
+pyyaml = "*"
 
 [dev-packages]
 
