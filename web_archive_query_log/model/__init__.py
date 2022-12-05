@@ -103,6 +103,7 @@ class ArchivedSerpUrl(ArchivedUrl, DataClassJsonMixin):
     """
     Query that was used to retrieve the SERP.
     """
+    page_num: int | None
 
 
 @dataclass(frozen=True, slots=True)

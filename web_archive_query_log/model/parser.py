@@ -47,15 +47,18 @@ class QueryParserField(Field):
         value: Mapping[str, Any]
         parser_type = value["type"]
         if parser_type == "query_parameter":
-            from web_archive_query_log.queries.parse import QueryParameter
-            return QueryParameter(key=value["parameter"])
+            from web_archive_query_log.queries.parse import \
+                QueryParameterQueryParser
+            return QueryParameterQueryParser(parameter=value["parameter"])
         elif parser_type == "fragment_parameter":
-            from web_archive_query_log.queries.parse import FragmentParameter
-            return FragmentParameter(key=value["parameter"])
+            from web_archive_query_log.queries.parse import \
+                FragmentParameterQueryParser
+            return FragmentParameterQueryParser(parameter=value["parameter"])
         elif parser_type == "path_suffix":
-            from web_archive_query_log.queries.parse import PathSuffix
-            return PathSuffix(
-                prefix=value["path_prefix"],
+            from web_archive_query_log.queries.parse import \
+                PathSuffixQueryParser
+            return PathSuffixQueryParser(
+                path_prefix=value["path_prefix"],
                 single_segment=value.get("single_segment", False),
             )
         else:
@@ -73,11 +76,14 @@ class PageNumberParserField(Field):
         value: Mapping[str, Any]
         parser_type = value["type"]
         if parser_type == "query_parameter":
-            from web_archive_query_log.queries.parse import QueryParameter
-            return QueryParameter(key=value["parameter"])
+            from web_archive_query_log.queries.parse import \
+                QueryParameterPageNumberParser
+            return QueryParameterPageNumberParser(parameter=value["parameter"])
         elif parser_type == "fragment_parameter":
-            from web_archive_query_log.queries.parse import FragmentParameter
-            return FragmentParameter(key=value["parameter"])
+            from web_archive_query_log.queries.parse import \
+                FragmentParameterPageNumberParser
+            return FragmentParameterPageNumberParser(
+                parameter=value["parameter"])
         else:
             raise ValueError(f"Unknown parser type: {parser_type}")
 

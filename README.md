@@ -128,10 +128,10 @@ The intermediate results from each step are stored in different formats.
 - JSONL format:
    ```json
    {
-     "url": "string",     // archived URL
-     "timestamp": "int",  // archive timestamp as POSIX integer
-     "query": "string",   // parsed query
-     "page_num": "string" // parsed page number (optional)
+     "url": "string",    // archived URL
+     "timestamp": "int", // archive timestamp as POSIX integer
+     "query": "string",  // parsed query
+     "page_num": "int"   // parsed page number (optional)
    }
    ```
 - Python data class: `ArchivedSerpUrl`
@@ -145,10 +145,10 @@ The intermediate results from each step are stored in different formats.
 - additional WARC header `Archived-URL` (for request and response) with the archived URL in JSONL format:
    ```json
    {
-     "url": "string",     // archived URL
-     "timestamp": "int",  // archive timestamp as POSIX integer
-     "query": "string",   // parsed query
-     "page_num": "string" // parsed page number (optional)
+     "url": "string",    // archived URL
+     "timestamp": "int", // archive timestamp as POSIX integer
+     "query": "string",  // parsed query
+     "page_num": "int"   // parsed page number (optional)
    }
    ```
   (same format as in previous step)
@@ -164,7 +164,7 @@ The intermediate results from each step are stored in different formats.
      "url": "string",          // archived URL
      "timestamp": "int",       // archive timestamp as POSIX integer
      "query": "string",        // parsed query
-     "page_num": "string",     // parsed page number (optional)
+     "page_num": "int",        // parsed page number (optional)
      "result_query": "string", // query displayed on the SERP (e.g. with spelling correction)
      "results": [
        {
