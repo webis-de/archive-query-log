@@ -68,58 +68,49 @@ pipenv run python -m web_archive_query_log serps num-chunks bing
 The intermediate results from each step are stored in different formats.
 
 ### Services
-- all services are stored in a single JSON file:
-  `<DATADIR>/services.json`
+- all services are stored in a single YAML file:
+  `<DATADIR>/services.yaml`
 - one object per service, array containing all services
-- JSON format:
-   ```json
-   [
-     {
-       "name": "string",                // service name (alexa_domain - alexa_public_suffix)
-       "public_suffix": "string",       // public suffix (https://publicsuffix.org/) of alexa_domain
-       "alexa_domain": "string",        // domain as it appears in Alexa top-1M ranks
-       "alexa_rank": "int",             // rank from fused Alexa top-1M rankings
-       "category": "string",            // manual annotation
-       "notes": "string",               // manual annotation
-       "input_field": "bool",           // manual annotation
-       "search_form": "bool",           // manual annotation
-       "search_div": "bool",            // manual annotation
-       "domains": ["string"],           // known domains (including the main domain)
-       "query_parsers": [               // query parsers in order of precedence
-         {
-           "url_prefix": "string",      // URL prefix
-           "type": "query_parameter",   // for URLs like https://example.com/search?q=foo
-           "parameter": "string"
-         },
-         {
-           "url_prefix": "string",       // URL prefix
-           "type": "fragment_parameter", // for URLs like https://example.com/search#q=foo
-           "parameter": "string"
-         },
-         {
-           "url_prefix": "string",      // URL prefix
-           "type": "path_suffix",       // for URLs like https://example.com/search/foo
-           "path_prefix": "string"
-         },
-         ...
-       ],
-       "page_num_parsers": [            // page number parsers in order of precedence
-         {
-           "url_prefix": "string",      // URL prefix
-           "type": "query_parameter",   // for URLs like https://example.com/search?q=foo
-           "parameter": "string"
-         },
-         ...
-       ]
-     },
-     ...
-   ]
-   ```
+  - YAML format:
+     ```yaml
+     - name: string               # service name (alexa_domain - alexa_public_suffix)
+       public_suffix: string      # public suffix (https://publicsuffix.org/) of alexa_domain
+       alexa_domain: string       # domain as it appears in Alexa top-1M ranks
+       alexa_rank: int            # rank from fused Alexa top-1M rankings
+       category: string           # manual annotation
+       notes: string              # manual annotation
+       input_field: bool          # manual annotation
+       search_form: bool          # manual annotation
+       search_div: bool           # manual annotation
+       domains:                   # known domains of service (including the main domain)
+       - string
+       - string
+       - ...
+       query_parsers:             # query parsers in order of precedence
+       - pattern: regex
+         type: query_parameter    # for URLs like https://example.com/search?q=foo
+         parameter: string
+       - pattern: regex
+         type: fragment_parameter # for URLs like https://example.com/search#q=foo
+         parameter: string
+       - pattern: regex
+         type: query_parameter    # for URLs like https://example.com/search/foo
+         path_prefix: string
+       - ...
+       page_num_parsers:          # page number parsers in order of precedence
+       - pattern: regex
+         type: query_parameter    # for URLs like https://example.com/search?page=2
+         parameter: string
+       - ...
+       serp_parsers:              # SERP parsers in order of precedence
+       - ...
+     - ...
+     ```
 - Python data class: `Service`
 
 ### Service URLs
 - all archived URLs for one service are stored in a single file
-  `<DATADIR>/<SERVICENAME>/urls.jsonl`
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/urls.jsonl`
 - one line per archived URL
 - JSONL format:
    ```json
@@ -132,7 +123,7 @@ The intermediate results from each step are stored in different formats.
 
 ### Service SERP URLs
 - all archived URLs for one service are stored in a single file
-  `<DATADIR>/<SERVICENAME>/serp-urls.jsonl`
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/serp-urls.jsonl`
 - one line per archived URL
 - JSONL format:
    ```json
@@ -147,9 +138,9 @@ The intermediate results from each step are stored in different formats.
 
 ### Service SERP HTML
 - all downloaded SERPs for one service are stored in a single directory
-  `<DATADIR>/<SERVICENAME>/serps/`
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/serps/`
 - downloaded SERPs are stored in 1GB-sized WARC files
-  `<DATADIR>/<SERVICENAME>/serps/<CHUNK>.warc.gz` (5 digits for `<CHUNK>`)
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/serps/<CHUNK>.warc.gz` (5 digits for `<CHUNK>`)
 - one WARC request and one WARC response per archived URL
 - additional WARC header `Archived-URL` (for request and response) with the archived URL in JSONL format:
    ```json
@@ -165,7 +156,7 @@ The intermediate results from each step are stored in different formats.
 
 ### Service parsed SERPs
 - all parsed SERPs for one service are stored in a single file
-  `<DATADIR>/<SERVICENAME>/serps.jsonl`
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/serps.jsonl`
 - one line per search engine result page (SERP)
 - JSONL format:
    ```json
