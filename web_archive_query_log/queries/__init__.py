@@ -86,7 +86,9 @@ class InternetArchiveQueries(Sized, Iterable[ArchivedSerpUrl]):
         schema = ArchivedSerpUrl.schema()
         with path.open("wt") as file:
             for line in response.text.splitlines(keepends=False):
-                timestamp_string, url = line.split()
+                elements = line.split()
+                timestamp_string = elements[0]
+                url = ",".join(elements[1:])
                 timestamp = datetime.strptime(
                     timestamp_string,
                     "%Y%m%d%H%M%S"
