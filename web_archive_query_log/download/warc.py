@@ -111,6 +111,7 @@ class WebArchiveWarcDownloader:
         error_urls: set[ArchivedUrl] = {
             archived_url
             for archived_url, response in zip(self.archived_urls, responses)
+            if response is None
         }
         if len(error_urls) > 0:
             if len(error_urls) > 10:
