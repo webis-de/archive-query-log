@@ -1,10 +1,12 @@
 from json import loads
+from math import nan
 from pathlib import Path
-
+from re import compile, escape
 from urllib.parse import quote
 
 from click import argument
 from pandas import DataFrame, read_csv, Series, concat
+from yaml import dump
 
 from web_archive_query_log.cli import main
 from web_archive_query_log.cli.util import PathParam
@@ -42,9 +44,10 @@ def from_sheets(sheet_name: str, transpose: bool = False) -> DataFrame:
 
 def load_services() -> DataFrame:
     df = from_sheets(sheet_services)
+    df = df[~df["service"].str.contains(".", regex=False)]
     df["name"] = df["service"]
-    df["alexa_domain"] = df["service"] + "." + df["tld"]
-    df["alexa_public_suffix"] = df["tld"]
+    df["public_suffix"] = df["tld"]
+    df["alexa_domain"] = df["name"] + "." + df["public_suffix"]
     df["alexa_rank"] = df["rank"]
     df["notes"] = df["Notes"]
     for col in ["has_input_field", "has_search_form", "has_search_div"]:
@@ -53,7 +56,7 @@ def load_services() -> DataFrame:
     df[col].replace("True", True, inplace=True)
     df["alexa_rank"].astype(int, copy=False)
     df["alexa_rank"].replace(99999, None, inplace=True)
-    return df[["name", "alexa_domain", "alexa_public_suffix", "alexa_rank",
+    return df[["name", "public_suffix", "alexa_domain", "alexa_rank",
                "category", "notes", "input_field",
                "search_form", "search_div"]]
 
@@ -64,10 +67,20 @@ def load_domains() -> DataFrame:
     return df[["name", "domain"]]
 
 
+def url_prefix_pattern(url_prefix: str) -> str | None:
+    if url_prefix == "":
+        return None
+    return f"[^/]+/{escape(url_prefix)}"
+
+
+compile(r"[^/]+/images/search\?")
+
+
 def load_url_prefixes() -> DataFrame:
     df = from_sheets(sheet_url_prefixes, transpose=True)
-    df["url_prefix"] = df["value"]
-    return df[["name", "url_prefix"]]
+    df["value"].replace("NULL", "", inplace=True)
+    df["pattern"] = df["value"].map(url_prefix_pattern)
+    return df[["name", "pattern"]]
 
 
 def load_query_parsers() -> DataFrame:
@@ -87,19 +100,19 @@ def query_parser(row: Series) -> dict:
     row.update(loads(row["query_parser"]))
     if row["type"] == "qp":
         return {
-            "url_prefix": row["url_prefix"],
+            "pattern": row["pattern"],
             "type": "query_parameter",
             "parameter": row["key"]
         }
     elif row["type"] == "fp":
         return {
-            "url_prefix": row["url_prefix"],
+            "pattern": row["pattern"],
             "type": "fragment_parameter",
             "parameter": row["key"]
         }
     elif row["type"] == "ps":
         return {
-            "url_prefix": row["url_prefix"],
+            "pattern": row["pattern"],
             "type": "path_suffix",
             "path_prefix": row["key"]
         }
@@ -134,16 +147,27 @@ def import_services(services_file: Path):
         ],
         axis="columns")
     services["query_parsers"] = [
-        [
+        sorted((
             query_parser(row)
             for _, row in
-            query_parsers[query_parsers["name"] == service["name"]
-                          ].iterrows()
-        ]
+            query_parsers[query_parsers["name"].str.endswith(service["name"])
+            ].iterrows()
+        ), key=lambda qp: str(qp["pattern"]))
         for _, service in services.iterrows()
     ]
     services["page_num_parsers"] = [
         []
         for _, service in services.iterrows()
     ]
-    services.to_json(services_file, orient="records", indent=2)
+    services["results_parsers"] = [
+        []
+        for _, service in services.iterrows()
+    ]
+    services["result_query_parsers"] = [
+        []
+        for _, service in services.iterrows()
+    ]
+    services.replace({nan: None}, inplace=True)
+    services_dict = services.to_dict(orient="records")
+    with services_file.open("wt") as file:
+        dump(services_dict, stream=file, sort_keys=False)
