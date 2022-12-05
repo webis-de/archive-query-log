@@ -133,6 +133,9 @@ class WebArchiveWarcDownloader:
         if self._is_url_downloaded(archived_url):
             return True
         url = archived_url.raw_archive_url
+        url_headers = {
+            "Archived-URL": archived_url.schema().dumps(archived_url),
+        }
         await sleep(1.0 * random())
         try:
             async with client.get(url) as response:
@@ -148,7 +151,8 @@ class WebArchiveWarcDownloader:
                             statusline=f"{response.request_info.method} {response.request_info.url.path} {protocol}",
                             headers=response.request_info.headers,
                             protocol=protocol,
-                        )
+                        ),
+                        warc_headers_dict={**url_headers},
                     )
                     writer.write_record(request_record)
                     response_record = writer.create_warc_record(
@@ -161,6 +165,7 @@ class WebArchiveWarcDownloader:
                         ),
                         payload=BytesIO(await response.content.read()),
                         length=response.content_length,
+                        warc_headers_dict={**url_headers},
                     )
                     writer.write_record(response_record)
                     tmp_file.flush()
