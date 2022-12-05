@@ -14,7 +14,14 @@ from web_archive_query_log.results import SearchResultsParser
 
 
 @dataclass(frozen=True, slots=True)
-class Source(DataClassJsonMixin):
+class Service(DataClassJsonMixin):
+    """
+    An online service that has a search interface.
+
+    Output of: service collection, service domains
+    Input of: service URLs, query extraction
+    """
+
     name: str
     """
     Service name (corresponds to ``alexa_domain`` without 
@@ -71,45 +78,74 @@ class Source(DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class Domain(DataClassJsonMixin):
-    domain: str
-
-
-@dataclass(frozen=True, slots=True)
 class ArchivedUrl(DataClassJsonMixin):
     """
-    Archived URL.
+    A URL that is archived in the Wayback Machine (https://web.archive.org/).
+    The archived snapshot can be retrieved using the ``archive_url``
+    and ``raw_archive_url`` properties.
+
+    Output of: service URLs
+    Input of: query extraction
     """
+
     url: str
+    """
+    Original URL that was archived.
+    """
     timestamp: int
-
-    @cached_property
-    def url_md5(self) -> str:
-        return md5(self.url.encode()).hexdigest()
-
-    @cached_property
-    def datetime(self) -> datetime:
-        return datetime.fromtimestamp(self.timestamp)
+    """
+    Timestamp of the archived snapshot in the Wayback Machine.
+    """
 
     @cached_property
     def split_url(self) -> SplitResult:
+        """
+        Original URL split into its components.
+        """
         return urlsplit(self.url)
 
     @cached_property
     def url_domain(self) -> str:
+        """
+        Domain of the original URL.
+        """
         return self.split_url.netloc
 
     @cached_property
+    def url_md5(self) -> str:
+        """
+        MD5 hash of the original URL.
+        """
+        return md5(self.url.encode()).hexdigest()
+
+    @cached_property
+    def datetime(self) -> datetime:
+        """
+        Snapshot timestamp as a ``datetime`` object.
+        """
+        return datetime.fromtimestamp(self.timestamp)
+
+    @cached_property
     def archive_timestamp(self) -> str:
+        """
+        Snapshot timestamp as a string in the format used
+        by the Wayback Machine (``YYYYmmddHHMMSS``).
+        """
         return self.datetime.strftime("%Y%m%d%H%M%S")
 
     @property
     def archive_url(self) -> str:
+        """
+        URL of the archived snapshot in the Wayback Machine.
+        """
         return f"https://web.archive.org/web/" \
                f"{self.archive_timestamp}/{self.url}"
 
     @property
     def raw_archive_url(self) -> str:
+        """
+        URL of the archived snapshot's raw contents in the Wayback Machine.
+        """
         return f"https://web.archive.org/web/" \
                f"{self.archive_timestamp}id_/{self.url}"
 
@@ -117,20 +153,43 @@ class ArchivedUrl(DataClassJsonMixin):
 @dataclass(frozen=True, slots=True)
 class ArchivedSerpUrl(ArchivedUrl, DataClassJsonMixin):
     """
-    Archived URL of a search engine query and the SERP it points to.
+    Archived URL of a search engine result page (SERP) for a query.
+
+    Output of: query extraction
+    Input of: SERPs download
     """
+
     url: str
+    """
+    Original URL that was archived.
+    """
     timestamp: int
+    """
+    Timestamp of the archived snapshot in the Wayback Machine.
+    """
     query: str
+    """
+    Query that was used to retrieve the SERP.
+    """
 
 
 @dataclass(frozen=True, slots=True)
 class ArchivedSerpContent(ArchivedSerpUrl, DataClassJsonMixin):
     """
-    Archived content of a search engine query and the SERP it points to.
+    Snapshot content of an archived SERP.
+
+    Output of: SERPs download
+    Input of: SERP parsing
     """
+
     content: bytes
+    """
+    Raw byte content of the archived SERP's snapshot.
+    """
     encoding: str
+    """
+    Encoding of the archived SERP's snapshot.
+    """
 
 
 @dataclass(frozen=True, slots=True)
@@ -138,16 +197,31 @@ class SearchResult(DataClassJsonMixin):
     """
     Single retrieved result from a query's archived SERP.
     """
+
     url: str
+    """
+    URL that the result points to.
+    """
     title: str
+    """
+    Title of the result.
+    """
     snippet: str | None = None
+    """
+    Snippet of the result.
+    Highlighting should be normalized to ``<em>`` tags.
+    Other HTML tags must be removed.
+    """
 
 
 @dataclass(frozen=True, slots=True)
 class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
     """
     Archived search engine result page (SERP) corresponding to a query.
+
+    Output of: SERP parsing
     """
+
     results: Sequence[SearchResult] = field(
         metadata=config(
             encoder=list,
@@ -155,3 +229,6 @@ class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
             mm_field=List(Nested(SearchResult.schema()))
         )
     )
+    """
+    Retrieved results from the SERP in the same order as they appear.
+    """
