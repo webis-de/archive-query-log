@@ -86,18 +86,23 @@ class InternetArchiveQueries(Sized, Iterable[ArchivedSerpUrl]):
         schema = ArchivedSerpUrl.schema()
         with path.open("wt") as file:
             for line in response.text.splitlines(keepends=False):
-                elements = line.split()
-                timestamp_string = elements[0]
-                url = ",".join(elements[1:])
-                timestamp = datetime.strptime(
-                    timestamp_string,
-                    "%Y%m%d%H%M%S"
-                )
-                archived_url = ArchivedUrl(url, int(timestamp.timestamp()))
-                query = self.parser.parse(archived_url)
-                if query is not None:
-                    file.write(schema.dumps(query))
-                    file.write("\n")
+                try:
+                    elements = line.split()
+                    timestamp_string = elements[0]
+                    url = ",".join(elements[1:])
+                    timestamp = datetime.strptime(
+                        timestamp_string,
+                        "%Y%m%d%H%M%S"
+                    )
+                    archived_url = ArchivedUrl(url, int(timestamp.timestamp()))
+                    query = self.parser.parse(archived_url)
+                    if query is not None:
+                        file.write(schema.dumps(query))
+                        file.write("\n")
+
+                except:
+                    print(f"Failed to parse line: \n{line}")
+                    continue
 
     def _fetch_pages(self) -> None:
         """
