@@ -6,6 +6,7 @@ from web_archive_query_log.config_model import Source
 from web_archive_query_log.queries.parse import QueryParameter, FragmentParameter, PathSuffix, QueryParser
 
 # Constants
+SERVICE_DF = pd.read_csv(str(Path("web_archive_query_log/services/services.csv").resolve()), sep=";")
 DOMAIN_DF = pd.read_csv(str(Path("web_archive_query_log/services/domains.csv").resolve()), sep=";", low_memory=False)
 URL_DF = pd.read_csv(str(Path("web_archive_query_log/services/url_prefixes.csv").resolve()), sep=";")
 PARSER_DF = pd.read_csv(str(Path("web_archive_query_log/services/query_parsers.csv").resolve()), sep=";")
@@ -14,6 +15,9 @@ PARSER_MAP = {"qp": QueryParameter,
              "ps": PathSuffix}
 
 
+def get_service_names() -> Sequence[str]:
+    service_series = SERVICE_DF.loc[SERVICE_DF["parsers_collected"] == 1, "service"]
+    return [str(name) for name in list(service_series)]
 
 def create_sources(service_names: Sequence[str]) -> Mapping[str, Sequence[Source]]:
     map = {}
@@ -73,3 +77,17 @@ def get_parser(service_name='google', row=0) -> QueryParser | None:
         parser = PARSER_MAP[parse_dict["type"]]
         return parser(parse_dict["key"])
     return None
+
+
+
+
+def split_excel_file(file_name=str(Path("web_archive_query_log/services/ia_ql_services.xlsx").resolve())):
+    sheet_dict = {"Services": str(Path("web_archive_query_log/services/services.csv").resolve()),
+                  "Domains": str(Path("web_archive_query_log/services/domains.csv").resolve()),
+                  "URL Prefixes": str(Path("web_archive_query_log/services/url_prefixes.csv").resolve()),
+                  "Query Parsers": str(Path("web_archive_query_log/services/query_parsers.csv").resolve())}
+
+    for sheet, out_path in sheet_dict.items():
+        df = pd.read_excel(file_name, sheet_name=sheet)
+        df.to_csv(out_path, sep=";")
+
