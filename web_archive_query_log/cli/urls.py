@@ -95,3 +95,41 @@ def fetch(
         output_path=output_path,
         urls=set(urls),
     ))
+
+@urls_group.command("fetch-service")
+@option(
+    "-d", "--data-directory" ,"--data-directory-path",
+    type=PathParam(
+        exists=True,
+        file_okay=False,
+        dir_okay=True,
+        writable=True,
+        readable=False,
+        resolve_path=True,
+        path_type=Path,
+    ),
+    default=DATA_DIRECTORY_PATH
+)
+@argument(
+    "service_name",
+    type=STRING,
+    required=True,
+)
+def fetch_service(
+        data_directory: Path,
+        service_name: str,
+) -> None:
+    from web_archive_query_log.config import SERVICES
+    service = SERVICES[service_name]
+    fetcher = ArchivedUrlsFetcher(
+        match_scope=UrlMatchScope.DOMAIN,
+        include_status_codes={200},
+        exclude_status_codes=set(),
+        include_mime_types={"text/html"},
+        exclude_mime_types=set(),
+        cdx_api_url=CDX_API_URL
+    )
+    run(fetcher.fetch_many(
+        output_path=data_directory / service_name,
+        urls=set(service.domains),
+    ))
