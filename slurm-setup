@@ -11,7 +11,6 @@ srun \
   --pty \
   sh -c "
   cd /workspace
-  apt-get update -y
-  pip install --user --upgrade pip cython pipenv
-  pipenv install --deploy
+  pip install --upgrade pip cython pipenv
+  python -m pipenv install --deploy
   "

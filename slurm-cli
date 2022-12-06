@@ -10,5 +10,5 @@ srun \
   --chdir "$PWD" \
   --pty \
   sh -c "
-  pipenv run python -m web_archive_query_log
+  python -m pipenv run python -m web_archive_query_log
   "
