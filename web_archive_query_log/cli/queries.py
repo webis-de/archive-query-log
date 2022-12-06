@@ -49,7 +49,7 @@ def fetch_service(
     domains = tqdm(
         domains,
         desc=f"Parse queries",
-        unit="domains",
+        unit="domain",
     )
     for domain in domains:
         domain_dir = service_dir / domain
