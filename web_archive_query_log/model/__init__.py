@@ -174,11 +174,11 @@ class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
     """
     Retrieved results from the SERP in the same order as they appear.
     """
-    result_query: str | None
+    interpreted_query: str | None
     """
-    Query that is displayed on the SERP.
+    Interpreted query that is displayed or otherwise included in the SERP.
     
-    Note: the result query can be different from the original query 
+    Note: the interpreted result query can be different from the original query 
     due to spelling correction etc.
     """
 
@@ -283,7 +283,7 @@ class Service(DataClassJsonMixin):
     The interpreted query is the query that is displayed 
     or otherwise included in the SERP.
     
-    Note: the result query can be different from the original query 
+    Note: the interpreted result query can be different from the original query 
     due to spelling correction etc.
     """
     results_parsers: Sequence[ResultsParser] = field(
