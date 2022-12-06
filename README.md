@@ -3,9 +3,10 @@
 Scrape real-life query logs from archived search engine result pages (SERPs) on the Internet Archive.
 
 ## Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
-- [Architecture](#architecture)
+- [Architecture and Formats](#architecture-and-formats)
 - [Contribute](#contribute)
 
 ## Installation
@@ -17,60 +18,29 @@ Scrape real-life query logs from archived search engine result pages (SERPs) on 
     ```shell
     pipenv install
     ```
-   
+
 ## Usage
-
-### Queries
-
-To fetch all search queries that were archived from a search engine, use:
-
-```shell
-pipenv run python -m web_archive_query_log queries fetch bing
-```
-
-You can first check how many pages of URLs the Internet Archive finds for the configured URL prefix.
-(Omit the search engine parameter to get a summary of the number of pages for all configured search engines.)
-
-```shell
-pipenv run python -m web_archive_query_log queries num-pages bing
-```
-
-### Search engine result pages (SERPs)
-
-To fetch all search engine result pages (SERPs) that were archived from a search engine, use:
-
-```shell
-pipenv run python -m web_archive_query_log serps fetch bing
-```
-
-It is recommended to fetch the corresponding [queries](#queries) first.
-
-You can also check how many chunk files would be created before aggregating all SERPs to a single file.
-(Omit the search engine parameter to get a summary of the number of chunks for all configured search engines.)
-
-```shell
-pipenv run python -m web_archive_query_log serps num-chunks bing
-```
-
-## Architecture
 
 1. Collect services.
 2. Collect service domains.
 3. Collect archived service URLs.  
-  `python -m web_archive_query_log urls fetch-service bing`
+   `python -m web_archive_query_log service archived-urls SERVICENAME`
 4. Filter archived service URLs and identify URLs with query data.
 5. Parse queries and SERP URLs from service URLs.  
-   `python -m web_archive_query_log queries parse-service bing`
-6. Download archived SERPs.  
-  `python -m web_archive_query_log download download-service bing`
-7. Parse downloaded SERPs.
+   `python -m web_archive_query_log service archived-serp-urls SERVICENAME`
+6. Download archived SERP contents.  
+   `python -m web_archive_query_log service archived-serp-contents SERVICENAME`
+7. Parse downloaded SERPs.  
+   `python -m web_archive_query_log service archived-serps SERVICENAME` (not yet implemented)
 8. Download archived documents linked from SERPs, if available.
 9. Build IR test collection.
 
-### Formats
+## Architecture and Formats
+
 The intermediate results from each step are stored in different formats.
 
 ### Services
+
 - all services are stored in a single YAML file:
   `<DATADIR>/services.yaml`
 - one object per service, array containing all services
@@ -119,6 +89,7 @@ The intermediate results from each step are stored in different formats.
 - Python data class: `Service`
 
 ### Service URLs
+
 - all archived URLs for one service are stored in a single file
   `<DATADIR>/<SERVICENAME>/<DOMAIN>/urls.jsonl`
 - one line per archived URL
@@ -132,6 +103,7 @@ The intermediate results from each step are stored in different formats.
 - Python data class: `ArchivedUrl`
 
 ### Service SERP URLs
+
 - all archived URLs for one service are stored in a single file
   `<DATADIR>/<SERVICENAME>/<DOMAIN>/serp-urls.jsonl`
 - one line per archived URL
@@ -148,6 +120,7 @@ The intermediate results from each step are stored in different formats.
 - Python data class: `ArchivedSerpUrl`
 
 ### Service SERP HTML
+
 - all downloaded SERPs for one service are stored in a single directory
   `<DATADIR>/<SERVICENAME>/<DOMAIN>/serps/`
 - downloaded SERPs are stored in 1GB-sized WARC files
@@ -167,6 +140,7 @@ The intermediate results from each step are stored in different formats.
 - Python data class: `ArchivedSerpContent` (roughly)
 
 ### Service parsed SERPs
+
 - all parsed SERPs for one service are stored in a single file
   `<DATADIR>/<SERVICENAME>/<DOMAIN>/serps.jsonl`
 - one line per search engine result page (SERP)
@@ -190,11 +164,13 @@ The intermediate results from each step are stored in different formats.
    }
    ```
 - Python data class: `ArchivedSerp` with `SearchResult`
-  
+
 ### Search result downloads
+
 TODO
-  
+
 ### Test Collection
+
 TODO
 
 ## Contribute
