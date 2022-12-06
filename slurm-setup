@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 srun \
-  --cpus-per-task 1 \
+  --cpus-per-task 4 \
   --mem=4G \
   --container-writable \
   --container-image=python:3.10 \
@@ -12,5 +12,5 @@ srun \
   sh -c "
   cd /workspace
   pip install --upgrade pip cython pipenv
-  python -m pipenv install --deploy
+  python -m pipenv install --deploy --verbose
   "

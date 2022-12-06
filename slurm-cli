@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 srun \
-  --cpus-per-task 1 \
+  --cpus-per-task 4 \
   --mem=4G \
   --container-writable \
   --container-image=python:3.10 \
@@ -10,5 +10,6 @@ srun \
   --chdir "$PWD" \
   --pty \
   sh -c "
-  python -m pipenv run python -m web_archive_query_log
+  cd /workspace
+  python -m pipenv run python -m web_archive_query_log $*
   "
