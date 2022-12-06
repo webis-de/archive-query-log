@@ -96,19 +96,13 @@ class ArchivedSerpUrlsParser:
             if archived_serp_url is not None
         )
         output_schema = ArchivedSerpUrl.schema()
-        if output_path.suffix == ".gz":
-            # noinspection PyTypeChecker
-            with output_path.open("wb") as file, \
-                    GzipFile(fileobj=file, mode="wb") as gzip_file, \
-                    TextIOWrapper(gzip_file) as text_file:
-                for archived_serp_url in archived_serp_urls:
-                    text_file.write(output_schema.dumps(archived_serp_url))
-                    text_file.write("\n")
-        else:
-            with output_path.open("wt") as file:
-                for archived_serp_url in archived_serp_urls:
-                    file.write(output_schema.dumps(archived_serp_url))
-                    file.write("\n")
+        # noinspection PyTypeChecker
+        with output_path.open("wb") as file, \
+                GzipFile(fileobj=file, mode="wb") as gzip_file, \
+                TextIOWrapper(gzip_file) as text_file:
+            for archived_serp_url in archived_serp_urls:
+                text_file.write(output_schema.dumps(archived_serp_url))
+                text_file.write("\n")
 
     def _parse_single(
             self,

@@ -45,7 +45,6 @@ class ArchivedUrlsFetcher:
     include_mime_types: AbstractSet[str] = frozenset({"text/html"})
     exclude_mime_types: AbstractSet[str] = frozenset({})
     cdx_api_url: str = CDX_API_URL
-    gzip: bool = True
 
     def _params(self, url: str) -> Sequence[tuple[Any, Any]]:
         params = [
@@ -91,9 +90,7 @@ class ArchivedUrlsFetcher:
             num_pages: int,
     ) -> Path:
         num_digits = floor(log10(num_pages)) + 1
-        name = f"{page:0{num_digits}d}.jsonl"
-        if self.gzip:
-            name += ".gz"
+        name = f"{page:0{num_digits}d}.jsonl.gz"
         return cache_path / name
 
     @staticmethod
@@ -140,19 +137,13 @@ class ArchivedUrlsFetcher:
                     text.splitlines(keepends=False),
                     schema,
                 )
-                if self.gzip:
-                    # noinspection PyTypeChecker
-                    with file_path.open("wb") as file, \
-                            GzipFile(fileobj=file, mode="wb") as gzip_file, \
-                            TextIOWrapper(gzip_file) as text_file:
-                        for line in lines:
-                            text_file.write(line)
-                            text_file.write("\n")
-                else:
-                    with file_path.open("wt") as file:
-                        for line in lines:
-                            file.write(line)
-                            file.write("\n")
+                # noinspection PyTypeChecker
+                with file_path.open("wb") as file, \
+                        GzipFile(fileobj=file, mode="wb") as gzip_file, \
+                        TextIOWrapper(gzip_file) as text_file:
+                    for line in lines:
+                        text_file.write(line)
+                        text_file.write("\n")
                 return
         except ClientResponseError:
             file_path.unlink(missing_ok=True)
@@ -241,7 +232,7 @@ class ArchivedUrlsFetcher:
         """
         pages = tqdm(
             range(num_pages),
-            desc="Merge queries",
+            desc="Merge archived URLs",
             unit="page",
         )
         paths = (
@@ -252,26 +243,19 @@ class ArchivedUrlsFetcher:
             )
             for page in pages
         )
-        if self.gzip:
-            # noinspection PyTypeChecker
-            with output_path.open("wb") as file, \
-                    GzipFile(fileobj=file, mode="wb") as gzip_file, \
-                    TextIOWrapper(gzip_file) as text_file:
-                for path in paths:
-                    # noinspection PyTypeChecker
-                    with path.open("rt") as page_file, \
-                            GzipFile(
-                                fileobj=page_file, mode="wb"
-                            ) as page_gzip_file, \
-                            TextIOWrapper(page_gzip_file) as page_text_file:
-                        for line in page_text_file:
-                            text_file.write(line)
-        else:
-            with output_path.open("wt") as file:
-                for path in paths:
-                    with path.open("rt") as page_file:
-                        for line in page_file:
-                            file.write(line)
+        # noinspection PyTypeChecker
+        with output_path.open("wb") as file, \
+                GzipFile(fileobj=file, mode="wb") as gzip_file, \
+                TextIOWrapper(gzip_file) as text_file:
+            for path in paths:
+                # noinspection PyTypeChecker
+                with path.open("rb") as page_file, \
+                        GzipFile(
+                            fileobj=page_file, mode="rb"
+                        ) as page_gzip_file, \
+                        TextIOWrapper(page_gzip_file) as page_text_file:
+                    for line in page_text_file:
+                        text_file.write(line)
 
     async def fetch(
             self,

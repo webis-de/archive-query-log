@@ -28,26 +28,17 @@ class ArchivedUrls(Sized, Iterable[ArchivedUrl]):
             )
 
     def __len__(self) -> int:
-        if self.path.suffix == ".gz":
-            # noinspection PyTypeChecker
-            with self.path.open("rb") as file, \
-                    GzipFile(fileobj=file, mode="rb") as gzip_file, \
-                    TextIOWrapper(gzip_file) as text_file:
-                return sum(1 for _ in text_file)
-        else:
-            with self.path.open("rt") as file:
-                return sum(1 for _ in file)
+        # noinspection PyTypeChecker
+        with self.path.open("rb") as file, \
+                GzipFile(fileobj=file, mode="rb") as gzip_file, \
+                TextIOWrapper(gzip_file) as text_file:
+            return sum(1 for _ in text_file)
 
     def __iter__(self) -> Iterator[ArchivedUrl]:
         schema = ArchivedUrl.schema()
-        if self.path.suffix == ".gz":
-            # noinspection PyTypeChecker
-            with self.path.open("rb") as file, \
-                    GzipFile(fileobj=file, mode="rb") as gzip_file, \
-                    TextIOWrapper(gzip_file) as text_file:
-                for line in text_file:
-                    yield schema.loads(line)
-        else:
-            with self.path.open("rt") as file:
-                for line in file:
-                    yield schema.loads(line)
+        # noinspection PyTypeChecker
+        with self.path.open("rb") as file, \
+                GzipFile(fileobj=file, mode="rb") as gzip_file, \
+                TextIOWrapper(gzip_file) as text_file:
+            for line in text_file:
+                yield schema.loads(line)
