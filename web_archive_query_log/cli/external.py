@@ -8,6 +8,7 @@ from click import argument
 from pandas import DataFrame, read_csv, Series, concat
 from yaml import dump
 
+from web_archive_query_log import DATA_DIRECTORY_PATH
 from web_archive_query_log.cli import main
 from web_archive_query_log.cli.util import PathParam
 
@@ -131,7 +132,8 @@ def query_parser(row: Series) -> dict:
         readable=False,
         resolve_path=True,
         path_type=Path,
-    )
+    ),
+    default=DATA_DIRECTORY_PATH / "services.yaml",
 )
 def import_services(services_file: Path):
     services = load_services()
