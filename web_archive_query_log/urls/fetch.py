@@ -3,21 +3,24 @@ from contextlib import asynccontextmanager
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
+from gzip import GzipFile
+from io import TextIOWrapper
 from math import floor, log10
 from pathlib import Path
 from random import random
 from tempfile import gettempdir
-from typing import AbstractSet, Sequence, Any, Callable
+from typing import AbstractSet, Sequence, Any, Callable, Iterable, Iterator
 from urllib.parse import urlencode
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
+from marshmallow import Schema
 from tqdm.auto import tqdm
 
 from web_archive_query_log import CDX_API_URL
 from web_archive_query_log.model import ArchivedUrl
 from web_archive_query_log.util.archive_http import archive_http_client
-from web_archive_query_log.util.urls import _safe_quote_url
+from web_archive_query_log.util.urls import safe_quote_url
 
 
 class UrlMatchScope(Enum):
@@ -40,6 +43,7 @@ class ArchivedUrlsFetcher:
     include_mime_types: AbstractSet[str] = frozenset({"text/html"})
     exclude_mime_types: AbstractSet[str] = frozenset({})
     cdx_api_url: str = CDX_API_URL
+    gzip: bool = True
 
     def _params(self, url: str) -> Sequence[tuple[Any, Any]]:
         params = [
@@ -78,14 +82,35 @@ class ArchivedUrlsFetcher:
                 text = await response.text()
                 return int(text)
 
-    @staticmethod
     def _page_cache_path(
+            self,
             cache_path: Path,
             page: int,
             num_pages: int,
     ) -> Path:
         num_digits = floor(log10(num_pages)) + 1
-        return cache_path / f"page_{page:0{num_digits}}.jsonl"
+        name = f"{page:0{num_digits}d}.jsonl"
+        if self.gzip:
+            name += ".gz"
+        return cache_path / name
+
+    @staticmethod
+    def _parse_response_lines(
+            lines: Iterable[str],
+            schema: Schema,
+    ) -> Iterator[str]:
+        for line in lines:
+            line = line.strip()
+            timestamp_string, url = line.split()
+            timestamp = datetime.strptime(
+                timestamp_string,
+                "%Y%m%d%H%M%S"
+            )
+            archived_url = ArchivedUrl(
+                url=url,
+                timestamp=int(timestamp.timestamp()),
+            )
+            yield schema.dumps(archived_url)
 
     async def _fetch_page(
             self,
@@ -109,20 +134,23 @@ class ArchivedUrlsFetcher:
                 response.raise_for_status()
                 text = await response.text()
                 schema = ArchivedUrl.schema()
-                with file_path.open("wt") as file:
-                    for line in text.splitlines(keepends=False):
-                        line = line.strip()
-                        timestamp_string, url = line.split()
-                        timestamp = datetime.strptime(
-                            timestamp_string,
-                            "%Y%m%d%H%M%S"
-                        )
-                        archived_url = ArchivedUrl(
-                            url=url,
-                            timestamp=int(timestamp.timestamp()),
-                        )
-                        file.write(schema.dumps(archived_url))
-                        file.write("\n")
+                lines = self._parse_response_lines(
+                    text.splitlines(keepends=False),
+                    schema,
+                )
+                if self.gzip:
+                    # noinspection PyTypeChecker
+                    with file_path.open("wb") as file, \
+                            GzipFile(fileobj=file, mode="wb") as gzip_file, \
+                            TextIOWrapper(gzip_file) as text_file:
+                        for line in lines:
+                            text_file.write(line)
+                            text_file.write("\n")
+                else:
+                    with file_path.open("wt") as file:
+                        for line in lines:
+                            file.write(line)
+                            file.write("\n")
                 return
         except ClientResponseError:
             file_path.unlink(missing_ok=True)
@@ -186,22 +214,20 @@ class ArchivedUrlsFetcher:
                 for page in range(num_pages)
             ))
 
-    @staticmethod
-    def _missing_pages(cache_path: Path, num_pages: int) -> set[int]:
+    def _missing_pages(self, cache_path: Path, num_pages: int) -> set[int]:
         """
         Find missing pages.
         Most often, the missing pages are caused by request timeouts.
         """
         missing_pages = set()
         for page in range(num_pages):
-            path = ArchivedUrlsFetcher._page_cache_path(cache_path, page,
-                                                        num_pages)
+            path = self._page_cache_path(cache_path, page, num_pages)
             if not path.exists() or not path.is_file():
                 missing_pages.add(page)
         return missing_pages
 
-    @staticmethod
     def _merge_cached_pages(
+            self,
             cache_path: Path,
             num_pages: int,
             output_path: Path,
@@ -209,21 +235,39 @@ class ArchivedUrlsFetcher:
         """
         Merge queries from all pages.
         """
-        with output_path.open("wt") as file:
-            for page in tqdm(
-                    range(num_pages),
-                    desc="Merge queries",
-                    unit="page",
-            ):
-                path = ArchivedUrlsFetcher._page_cache_path(
-                    cache_path,
-                    page,
-                    num_pages,
-                )
-                with path.open("rt") as page_file:
-                    lines = page_file
-                    for line in lines:
-                        file.write(line)
+        pages = tqdm(
+            range(num_pages),
+            desc="Merge queries",
+            unit="page",
+        )
+        paths = (
+            self._page_cache_path(
+                cache_path,
+                page,
+                num_pages,
+            )
+            for page in pages
+        )
+        if self.gzip:
+            # noinspection PyTypeChecker
+            with output_path.open("wb") as file, \
+                    GzipFile(fileobj=file, mode="wb") as gzip_file, \
+                    TextIOWrapper(gzip_file) as text_file:
+                for path in paths:
+                    # noinspection PyTypeChecker
+                    with path.open("rt") as page_file, \
+                            GzipFile(
+                                fileobj=page_file, mode="wb"
+                            ) as page_gzip_file, \
+                            TextIOWrapper(page_gzip_file) as page_text_file:
+                        for line in page_text_file:
+                            text_file.write(line)
+        else:
+            with output_path.open("wt") as file:
+                for path in paths:
+                    with path.open("rt") as page_file:
+                        for line in page_file:
+                            file.write(line)
 
     async def fetch(
             self,
@@ -266,7 +310,7 @@ class ArchivedUrlsFetcher:
             self,
             output_path: Path,
             urls: AbstractSet[str],
-            file_name: Callable[[str], str] = _safe_quote_url,
+            file_name: Callable[[str], str] = safe_quote_url,
             client: RetryClient | None = None,
     ) -> None:
         output_path.mkdir(exist_ok=True)
@@ -278,7 +322,8 @@ class ArchivedUrlsFetcher:
         async with self._http_client(client) as client:
             await gather(*(
                 ensure_future(self._fetch_progress(
-                    output_path=output_path / f"{file_name(url)}.jsonl",
+                    output_path=output_path / f"{file_name(url)}.jsonl"
+                                              f"{'.gz' if self.gzip else ''}",
                     url=url,
                     progress=progress,
                     client=client,
