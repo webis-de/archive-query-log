@@ -120,7 +120,6 @@ def fetch_service(
         data_directory: Path,
         service_name: str,
 ) -> None:
-    from web_archive_query_log.config import SERVICES
     service = SERVICES[service_name]
     fetcher = ArchivedUrlsFetcher(
         match_scope=UrlMatchScope.DOMAIN,
