@@ -2,9 +2,10 @@ from dataclasses import dataclass
 from gzip import GzipFile
 from io import TextIOWrapper
 from pathlib import Path
-from typing import Sized, Iterable, Iterator
+from typing import Sized, Iterable, Iterator, IO
 
 from web_archive_query_log.model import ArchivedSerpUrl
+from web_archive_query_log.util.text import count_lines
 
 
 @dataclass(frozen=True)
@@ -28,17 +29,16 @@ class ArchivedSerpUrls(Sized, Iterable[ArchivedSerpUrl]):
             )
 
     def __len__(self) -> int:
-        # noinspection PyTypeChecker
-        with self.path.open("rb") as file, \
-                GzipFile(fileobj=file, mode="rb") as gzip_file, \
-                TextIOWrapper(gzip_file) as text_file:
-            return sum(1 for _ in text_file)
+        with self.path.open("rb") as file:
+            with GzipFile(fileobj=file, mode="rb") as gzip_file:
+                gzip_file: IO[bytes]
+                return count_lines(gzip_file)
 
     def __iter__(self) -> Iterator[ArchivedSerpUrl]:
         schema = ArchivedSerpUrl.schema()
-        # noinspection PyTypeChecker
-        with self.path.open("rb") as file, \
-                GzipFile(fileobj=file, mode="rb") as gzip_file, \
-                TextIOWrapper(gzip_file) as text_file:
-            for line in text_file:
-                yield schema.loads(line)
+        with self.path.open("rb") as file:
+            with GzipFile(fileobj=file, mode="rb") as gzip_file:
+                gzip_file: IO[bytes]
+                with TextIOWrapper(gzip_file) as text_file:
+                    for line in text_file:
+                        yield schema.loads(line)
