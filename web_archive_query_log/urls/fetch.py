@@ -244,18 +244,11 @@ class ArchivedUrlsFetcher:
             for page in pages
         )
         # noinspection PyTypeChecker
-        with output_path.open("wb") as file, \
-                GzipFile(fileobj=file, mode="wb") as gzip_file, \
-                TextIOWrapper(gzip_file) as text_file:
+        with output_path.open("wb") as file:
             for path in paths:
-                # noinspection PyTypeChecker
-                with path.open("rb") as page_file, \
-                        GzipFile(
-                            fileobj=page_file, mode="rb"
-                        ) as page_gzip_file, \
-                        TextIOWrapper(page_gzip_file) as page_text_file:
-                    for line in page_text_file:
-                        text_file.write(line)
+                with path.open("rb") as page_file:
+                    from shutil import copyfileobj
+                    copyfileobj(page_file, file)
 
     async def fetch(
             self,
