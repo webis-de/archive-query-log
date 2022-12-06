@@ -91,19 +91,28 @@ class ArchivedSerpUrl(ArchivedUrl, DataClassJsonMixin):
     Input of: SERPs download
     """
 
-    url: str
-    """
-    Original URL that was archived.
-    """
-    timestamp: int
-    """
-    Timestamp of the archived snapshot in the Wayback Machine.
-    """
     query: str
     """
     Query that was used to retrieve the SERP.
     """
-    page_num: int | None
+    page: int | None
+    """
+    Page number of the SERP, e.g., 1, 2, 3.
+    
+    Note: the page number should be zero-indexed, i.e., 
+    the first result page has the page number 0.
+    
+    See also: ``results_page_offset``.
+    """
+    offset: int | None
+    """
+    Offset (start position) of the first result in the SERP, e.g., 10, 20.
+    
+    Note: the offset should be zero-indexed, i.e.,
+    the first result page has the offset 0.
+    
+    See also ``results_page``.
+    """
 
 
 @dataclass(frozen=True, slots=True)
@@ -175,9 +184,9 @@ class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
 
 
 # noinspection PyPep8
-from web_archive_query_log.model.parser import QueryParser, \
-    PageNumberParser, QueryParserField, PageNumberParserField, \
-    ResultsParserField, ResultQueryParserField, ResultQueryParser, \
+from web_archive_query_log.model.parse import QueryParser, \
+    PageParser, OffsetParser, QueryParserField, PageOffsetParserField, \
+    ResultsParserField, InterpretedQueryParserField, InterpretedQueryParser, \
     ResultsParser
 
 
@@ -245,10 +254,19 @@ class Service(DataClassJsonMixin):
     """
     Query parsers in order of precedence.
     """
-    page_num_parsers: Sequence[PageNumberParser] = field(
+    page_parsers: Sequence[PageParser] = field(
         metadata=config(
             decoder=tuple,
-            mm_field=List(PageNumberParserField())
+            mm_field=List(PageOffsetParserField())
+        )
+    )
+    """
+    Page number parsers in order of precedence.
+    """
+    offset_parsers: Sequence[OffsetParser] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(PageOffsetParserField())
         )
     )
     """
@@ -264,10 +282,10 @@ class Service(DataClassJsonMixin):
     SERP parsers in order of precedence.
     """
 
-    result_query_parsers: Sequence[ResultQueryParser] = field(
+    result_query_parsers: Sequence[InterpretedQueryParser] = field(
         metadata=config(
             decoder=tuple,
-            mm_field=List(ResultQueryParserField())
+            mm_field=List(InterpretedQueryParserField())
         )
     )
     """

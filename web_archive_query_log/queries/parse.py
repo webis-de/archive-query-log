@@ -8,7 +8,7 @@ from urllib.parse import parse_qsl, unquote
 from tqdm.auto import tqdm
 
 from web_archive_query_log.model import ArchivedSerpUrl, \
-    ArchivedUrl, PageNumberParser, QueryParser
+    ArchivedUrl, PageParser, QueryParser, OffsetParser
 from web_archive_query_log.urls.iterable import ArchivedUrls
 
 
@@ -50,7 +50,7 @@ class PathSuffixQueryParser(QueryParser):
 
 
 @dataclass(frozen=True)
-class QueryParameterPageNumberParser(PageNumberParser):
+class QueryParameterPageOffsetParser(PageParser, OffsetParser):
     parameter: str
 
     def parse(self, url: ArchivedUrl) -> int | None:
@@ -61,7 +61,7 @@ class QueryParameterPageNumberParser(PageNumberParser):
 
 
 @dataclass(frozen=True)
-class FragmentParameterPageNumberParser(PageNumberParser):
+class FragmentParameterPageOffsetParser(PageParser, OffsetParser):
     parameter: str
 
     def parse(self, url: ArchivedUrl) -> int | None:
@@ -74,7 +74,8 @@ class FragmentParameterPageNumberParser(PageNumberParser):
 @dataclass(frozen=True)
 class ArchivedSerpUrlsParser:
     query_parsers: Sequence[QueryParser]
-    page_number_parsers: Sequence[PageNumberParser]
+    page_parsers: Sequence[PageParser]
+    offset_parsers: Sequence[OffsetParser]
     verbose: bool = False
 
     def parse(self, input_path: Path, output_path: Path) -> None:
@@ -122,15 +123,22 @@ class ArchivedSerpUrlsParser:
         if query is None:
             return None
 
-        page_number: int | None = None
-        for parser in self.page_number_parsers:
-            page_number = parser.parse(archived_url)
-            if page_number is not None:
+        page: int | None = None
+        for parser in self.page_parsers:
+            page = parser.parse(archived_url)
+            if page is not None:
+                break
+
+        offset: int | None = None
+        for parser in self.offset_parsers:
+            offset = parser.parse(archived_url)
+            if offset is not None:
                 break
 
         return ArchivedSerpUrl(
             url=archived_url.url,
             timestamp=archived_url.timestamp,
             query=query,
-            page_num=page_number,
+            page=page,
+            offset=offset,
         )

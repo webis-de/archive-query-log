@@ -42,7 +42,8 @@ def fetch_service(
     from web_archive_query_log.queries.parse import ArchivedSerpUrlsParser
     parser = ArchivedSerpUrlsParser(
         query_parsers=service.query_parsers,
-        page_number_parsers=service.page_num_parsers,
+        page_parsers=service.page_parsers,
+        offset_parsers=service.offset_parsers,
         verbose=True,
     )
     domains = service.domains
