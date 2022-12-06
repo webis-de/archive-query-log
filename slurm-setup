@@ -2,11 +2,12 @@
 
 srun \
   --cpus-per-task 4 \
-  --mem=4G \
+  --ntasks-per-node 1 \
+  --mem 4G \
   --container-writable \
-  --container-image=python:3.10 \
-  --container-name=web-archive-query-log-python-3.10 \
-  --container-mounts="$PWD":/workspace \
+  --container-image python:3.10 \
+  --container-name web-archive-query-log-python-3.10 \
+  --container-mounts "$PWD":/workspace \
   --chdir "$PWD" \
   --pty \
   sh -c "
