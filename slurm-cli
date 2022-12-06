@@ -4,11 +4,11 @@ srun \
   --cpus-per-task 1 \
   --mem=4G \
   --container-writable \
-  --container-image=ubuntu:20.04 \
-  --container-name=web-archive-query-log-ubuntu-20.04 \
+  --container-image=python:3.10 \
+  --container-name=web-archive-query-log-python-3.10 \
   --container-mounts="$PWD":/workspace \
   --chdir "$PWD" \
   --pty \
   su -c "
-  python3.10 -m pipenv run python -m web_archive_query_log
+  pipenv run python -m web_archive_query_log
   "
