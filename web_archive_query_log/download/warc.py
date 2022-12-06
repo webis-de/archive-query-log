@@ -1,6 +1,5 @@
 from asyncio import gather, ensure_future, sleep
 from dataclasses import dataclass
-from functools import cached_property
 from io import BytesIO
 from itertools import count
 from math import log10
@@ -27,16 +26,6 @@ class WebArchiveWarcDownloader:
     downloading URLs even if some URLs fail.
     """
 
-    archived_urls: SizedIterable[ArchivedUrl]
-    """
-    The archived URLs to download.
-    """
-
-    download_path: Path
-    """
-    Path to the directory in which the downloaded HTML files should be stored.
-    """
-
     max_file_size: int = 1_000_000_000  # 1GB
     """
     Maximum number of bytes to write to a single WARC file.
@@ -47,41 +36,51 @@ class WebArchiveWarcDownloader:
     Enable GZIP compression when writing WARC files or not.
     """
 
-    def __post_init__(self):
-        self._check_download_path()
-
-    def _check_download_path(self):
-        self.download_path.mkdir(exist_ok=True)
-        if not self.download_path.is_dir():
+    @staticmethod
+    def _check_download_path(download_path: Path):
+        download_path.mkdir(exist_ok=True)
+        if not download_path.is_dir():
             raise ValueError(
-                f"Download path must be a directory: {self.download_path}"
+                f"Download path must be a directory: {download_path}"
             )
 
-    @cached_property
-    def _lock_path(self) -> Path:
-        path = self.download_path / ".lock"
+    @staticmethod
+    def _lock_path(download_path: Path) -> Path:
+        path = download_path / ".lock"
         path.touch(exist_ok=True)
         return path
 
-    def _is_url_downloaded(self, archived_url: ArchivedUrl) -> bool:
+    def _is_url_downloaded(
+            self,
+            download_path: Path,
+            archived_url: ArchivedUrl,
+    ) -> bool:
         url = archived_url.raw_archive_url
-        with self._lock_path.open("rt") as file:
+        with self._lock_path(download_path).open("rt") as file:
             return any(
                 line.strip() == url
                 for line in file
             )
 
-    def _set_url_downloaded(self, archived_url: ArchivedUrl):
+    def _set_url_downloaded(
+            self,
+            download_path: Path,
+            archived_url: ArchivedUrl,
+    ):
         url = archived_url.raw_archive_url
-        with self._lock_path.open("at") as file:
+        with self._lock_path(download_path).open("at") as file:
             file.write(f"{url}\n")
 
-    def _next_available_file_path(self, buffer_size: int) -> Path:
+    def _next_available_file_path(
+            self,
+            download_path: Path,
+            buffer_size: int,
+    ) -> Path:
         for index in count():
             if index > 1000 and log10(index) == 1:
                 print(f"Warning: Download file lookup is at {index}.")
             name = f"{index:05}.warc.gz"
-            path = self.download_path / name
+            path = download_path / name
             if not path.exists():
                 path.touch()
                 return path
@@ -90,27 +89,33 @@ class WebArchiveWarcDownloader:
                 if file_size + buffer_size <= self.max_file_size:
                     return path
 
-    async def download(self) -> None:
+    async def download(
+            self,
+            download_path: Path,
+            archived_urls: SizedIterable[ArchivedUrl],
+    ) -> None:
         """
         Download WARC files for archived URLs from the Web Archive.
         """
+        self._check_download_path(download_path)
         progress = tqdm(
-            total=len(self.archived_urls),
+            total=len(archived_urls),
             desc="Download archived URLs",
             unit="URL",
         )
         async with archive_http_client(limit=10) as client:
             responses = await gather(*(
                 ensure_future(self._download_single_progress(
+                    download_path=download_path,
                     archived_url=archived_url,
                     client=client,
                     progress=progress,
                 ))
-                for archived_url in self.archived_urls
+                for archived_url in archived_urls
             ))
         error_urls: set[ArchivedUrl] = {
             archived_url
-            for archived_url, response in zip(self.archived_urls, responses)
+            for archived_url, response in zip(archived_urls, responses)
             if response is None
         }
         if len(error_urls) > 0:
@@ -127,10 +132,11 @@ class WebArchiveWarcDownloader:
 
     async def _download_single(
             self,
-            archived_url: ArchivedUrl,
+            download_path: Path,
             client: RetryClient,
+            archived_url: ArchivedUrl,
     ) -> bool:
-        if self._is_url_downloaded(archived_url):
+        if self._is_url_downloaded(download_path, archived_url):
             return True
         url = archived_url.raw_archive_url
         url_headers = {
@@ -148,7 +154,11 @@ class WebArchiveWarcDownloader:
                         uri=str(response.request_info.url),
                         record_type="request",
                         http_headers=StatusAndHeaders(
-                            statusline=f"{response.request_info.method} {response.request_info.url.path} {protocol}",
+                            statusline=" ".join((
+                                response.request_info.method,
+                                response.request_info.url.path,
+                                protocol,
+                            )),
                             headers=response.request_info.headers,
                             protocol=protocol,
                         ),
@@ -159,7 +169,11 @@ class WebArchiveWarcDownloader:
                         uri=str(response.url),
                         record_type="response",
                         http_headers=StatusAndHeaders(
-                            statusline=f"{protocol} {response.status} {response.reason}",
+                            statusline=" ".join((
+                                protocol,
+                                str(response.status),
+                                response.reason,
+                            )),
                             headers=response.headers,
                             protocol=protocol
                         ),
@@ -171,13 +185,16 @@ class WebArchiveWarcDownloader:
                     tmp_file.flush()
                     tmp_size = tmp_file.tell()
                     tmp_file.seek(0)
-                    file_path = self._next_available_file_path(tmp_size)
+                    file_path = self._next_available_file_path(
+                        download_path,
+                        tmp_size,
+                    )
                     with file_path.open("ab") as file:
                         tmp = tmp_file.read()
                         if not len(tmp) == tmp_size:
                             raise RuntimeError("Invalid buffer size.")
                         file.write(tmp)
-                    self._set_url_downloaded(archived_url)
+                    self._set_url_downloaded(download_path, archived_url)
                     return True
         except ClientResponseError:
             return False
@@ -186,10 +203,11 @@ class WebArchiveWarcDownloader:
 
     async def _download_single_progress(
             self,
-            archived_url: ArchivedUrl,
+            download_path: Path,
             client: RetryClient,
+            archived_url: ArchivedUrl,
             progress: tqdm,
     ) -> bool:
-        res = await self._download_single(archived_url, client)
+        res = await self._download_single(download_path, client, archived_url)
         progress.update(1)
         return res
