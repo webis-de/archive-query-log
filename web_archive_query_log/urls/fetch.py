@@ -9,7 +9,8 @@ from math import floor, log10
 from pathlib import Path
 from random import random
 from tempfile import gettempdir
-from typing import AbstractSet, Sequence, Any, Callable, Iterable, Iterator
+from typing import AbstractSet, Sequence, Any, Iterable, Iterator, Mapping, \
+    Tuple
 from urllib.parse import urlencode
 
 from aiohttp import ClientResponseError
@@ -67,8 +68,8 @@ class ArchivedUrlsFetcher:
         return params
 
     @staticmethod
-    def _cache_path(output_path: Path) -> Path:
-        cache_path = Path(gettempdir()) / output_path.stem
+    def _cache_path(url: str) -> Path:
+        cache_path = Path(gettempdir()) / safe_quote_url(url)
         cache_path.mkdir(exist_ok=True)
         return cache_path
 
@@ -215,7 +216,7 @@ class ArchivedUrlsFetcher:
                     progress=progress,
                 )
 
-            responses = await pool.map(fetch_single, range(num_pages))
+            await pool.map(fetch_single, range(num_pages))
 
     def _missing_pages(self, cache_path: Path, num_pages: int) -> set[int]:
         """
@@ -278,7 +279,7 @@ class ArchivedUrlsFetcher:
             url: str,
             client: RetryClient | None = None,
     ) -> None:
-        cache_path = self._cache_path(output_path)
+        cache_path = self._cache_path(url)
         num_pages = await self._num_pages(url)
         if output_path.exists():
             assert output_path.is_file()
@@ -311,28 +312,24 @@ class ArchivedUrlsFetcher:
 
     async def fetch_many(
             self,
-            output_path: Path,
-            urls: AbstractSet[str],
-            file_name: Callable[[str], str] = safe_quote_url,
+            url_output_paths: Mapping[str, Path],
             client: RetryClient | None = None,
     ) -> None:
-        output_path.mkdir(exist_ok=True)
         progress = tqdm(
-            total=len(urls),
+            total=len(url_output_paths),
             desc="Fetch archived URLs for URLs",
             unit="URL",
         )
         async with self._http_client(client) as client:
             pool = AioPool(size=100)  # avoid creating too many tasks at once
 
-            async def fetch_single(url: str):
+            async def fetch_single(url_output_path: Tuple[str, Path]):
+                url, output_path = url_output_path
                 return await self._fetch_progress(
-                    output_path=output_path /
-                                f"{file_name(url)}.jsonl"
-                                f"{'.gz' if self.gzip else ''}",
+                    output_path=output_path,
                     url=url,
                     progress=progress,
                     client=client,
                 )
 
-            responses = await pool.map(fetch_single, urls)
+            await pool.map(fetch_single, url_output_paths.items())

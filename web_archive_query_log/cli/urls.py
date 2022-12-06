@@ -84,6 +84,7 @@ def fetch(
         urls: Iterable[str],
 ) -> None:
     from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher
+    from web_archive_query_log.util.urls import safe_quote_url
     fetcher = ArchivedUrlsFetcher(
         match_scope=UrlMatchScope(match_scope),
         include_status_codes=set(include_status_codes),
@@ -92,10 +93,10 @@ def fetch(
         exclude_mime_types=set(exclude_mime_types),
         cdx_api_url=api_url
     )
-    run(fetcher.fetch_many(
-        output_path=output_path,
-        urls=set(urls),
-    ))
+    run(fetcher.fetch_many({
+        url: output_path / f"{safe_quote_url(url)}.jsonl.gz"
+        for url in urls
+    }))
 
 
 @urls_group.command("fetch-service")
@@ -113,6 +114,7 @@ def fetch(
     default=DATA_DIRECTORY_PATH
 )
 @argument(
+
     "service_name",
     type=ServiceChoice(),
     required=True,
@@ -123,7 +125,9 @@ def fetch_service(
 ) -> None:
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher
+    from web_archive_query_log.util.urls import safe_quote_url
     service = SERVICES[service_name]
+    service_dir = data_directory / service.name
     fetcher = ArchivedUrlsFetcher(
         match_scope=UrlMatchScope.DOMAIN,
         include_status_codes={200},
@@ -132,7 +136,13 @@ def fetch_service(
         exclude_mime_types=set(),
         cdx_api_url=CDX_API_URL
     )
-    run(fetcher.fetch_many(
-        output_path=data_directory / service_name,
-        urls=set(service.domains),
-    ))
+    domain_dirs = {
+        domain: service_dir / safe_quote_url(domain)
+        for domain in set(service.domains)
+    }
+    for domain_dir in domain_dirs.values():
+        domain_dir.mkdir(parents=True, exist_ok=True)
+    run(fetcher.fetch_many({
+        domain: domain_dir / "urls.jsonl.gz"
+        for domain, domain_dir in domain_dirs.items()
+    }))
