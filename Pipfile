@@ -24,6 +24,7 @@ jupyter = "*"
 pandas = "*"
 pyyaml = "*"
 asyncio-pool = "*"
+fastwarc = "*"
 
 [dev-packages]
 
