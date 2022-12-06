@@ -165,6 +165,13 @@ class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
     """
     Retrieved results from the SERP in the same order as they appear.
     """
+    result_query: str
+    """
+    Query that is displayed on the SERP.
+    
+    Note: the result query can be different from the original query 
+    due to spelling correction etc.
+    """
 
 
 # noinspection PyPep8
