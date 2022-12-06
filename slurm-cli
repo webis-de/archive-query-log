@@ -9,6 +9,6 @@ srun \
   --container-mounts="$PWD":/workspace \
   --chdir "$PWD" \
   --pty \
-  su -c "
+  sh -c "
   pipenv run python -m web_archive_query_log
   "

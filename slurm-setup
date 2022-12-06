@@ -9,7 +9,7 @@ srun \
   --container-mounts="$PWD":/workspace \
   --chdir "$PWD" \
   --pty \
-  bash -c "
+  sh -c "
   cd /workspace
   apt-get update -y
   pip install --user --upgrade pip cython pipenv
