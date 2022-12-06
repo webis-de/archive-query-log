@@ -100,12 +100,19 @@ The intermediate results from each step are stored in different formats.
          type: query_parameter    # for URLs like https://example.com/search/foo
          path_prefix: string
        - ...
-       page_num_parsers:          # page number parsers in order of precedence
+       page_parsers:              # page number parsers in order of precedence
        - pattern: regex
          type: query_parameter    # for URLs like https://example.com/search?page=2
          parameter: string
        - ...
-       serp_parsers:              # SERP parsers in order of precedence
+       offset_parsers:            # page offset parsers in order of precedence
+       - pattern: regex
+         type: query_parameter    # for URLs like https://example.com/search?start=11
+         parameter: string
+       - ...
+       interpreted_query_parsers: # interpreted query parsers in order of precedence
+       - ...
+       results_parsers:           # search result and snippet parsers in order of precedence
        - ...
      - ...
      ```
@@ -134,7 +141,8 @@ The intermediate results from each step are stored in different formats.
      "url": "string",    // archived URL
      "timestamp": "int", // archive timestamp as POSIX integer
      "query": "string",  // parsed query
-     "page_num": "int"   // parsed page number (optional)
+     "page": "int",      // result page number (optional)
+     "offset": "int"     // result page offset (optional)
    }
    ```
 - Python data class: `ArchivedSerpUrl`
@@ -151,7 +159,8 @@ The intermediate results from each step are stored in different formats.
      "url": "string",    // archived URL
      "timestamp": "int", // archive timestamp as POSIX integer
      "query": "string",  // parsed query
-     "page_num": "int"   // parsed page number (optional)
+     "page": "int",      // result page number (optional)
+     "offset": "int"     // result page offset (optional)
    }
    ```
   (same format as in previous step)
@@ -164,16 +173,17 @@ The intermediate results from each step are stored in different formats.
 - JSONL format:
    ```json
    {
-     "url": "string",          // archived URL
-     "timestamp": "int",       // archive timestamp as POSIX integer
-     "query": "string",        // parsed query
-     "page_num": "int",        // parsed page number (optional)
-     "result_query": "string", // query displayed on the SERP (e.g. with spelling correction)
+     "url": "string",               // archived URL
+     "timestamp": "int",            // archive timestamp as POSIX integer
+     "query": "string",             // parsed query
+     "page": "int",                 // result page number (optional)
+     "offset": "int",               // result page offset (optional)
+     "interpreted_query": "string", // query displayed on the SERP (e.g. with spelling correction; optional)
      "results": [
        {
-         "url": "string",      // URL of the result
-         "title": "string",    // title of the result
-         "snippet": "string"   // snippet of the result (highlighting normalized to <em>)
+         "url": "string",           // URL of the result
+         "title": "string",         // title of the result
+         "snippet": "string"        // snippet of the result (highlighting normalized to <em>)
        },
        ...
      ]
