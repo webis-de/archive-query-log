@@ -7,7 +7,6 @@ from web_archive_query_log import DATA_DIRECTORY_PATH
 from web_archive_query_log.config import SERVICES
 from web_archive_query_log.cli import main
 from web_archive_query_log.cli.util import PathParam
-from web_archive_query_log.queries.parse import ArchivedSerpUrlsParser
 
 
 @main.group("queries")
@@ -40,6 +39,7 @@ def fetch_service(
 ) -> None:
     service = SERVICES[service_name]
     service_dir = data_directory / service.name
+    from web_archive_query_log.queries.parse import ArchivedSerpUrlsParser
     parser = ArchivedSerpUrlsParser(
         query_parsers=service.query_parsers,
         page_number_parsers=service.page_num_parsers,

@@ -5,8 +5,6 @@ from click import option, Path as PathParam, argument
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
 from web_archive_query_log.cli.main import main
 from web_archive_query_log.cli.util import URL
-from web_archive_query_log.services.alexa import AlexaTop1MArchivedUrls, \
-    AlexaTop1MFusedDomains
 
 
 @main.group("alexa")
@@ -34,6 +32,7 @@ def alexa():
     default=DATA_DIRECTORY_PATH / f"alexa-top-1m-archived-urls.jsonl"
 )
 def archived_urls(api_url: str, output_path: Path) -> None:
+    from web_archive_query_log.services.alexa import AlexaTop1MArchivedUrls
     AlexaTop1MArchivedUrls(
         output_path=output_path,
         cdx_api_url=api_url,
@@ -60,6 +59,7 @@ def archived_urls(api_url: str, output_path: Path) -> None:
     default=CDX_API_URL,
 )
 def domains(data_dir: Path, api_url: str) -> None:
+    from web_archive_query_log.services.alexa import AlexaTop1MFusedDomains
     AlexaTop1MFusedDomains(
         data_directory_path=data_dir,
         cdx_api_url=api_url,

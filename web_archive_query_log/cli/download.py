@@ -7,10 +7,6 @@ from tqdm.auto import tqdm
 from web_archive_query_log import DATA_DIRECTORY_PATH
 from web_archive_query_log.config import SERVICES
 from web_archive_query_log.cli import main
-from web_archive_query_log.download.warc import WebArchiveWarcDownloader
-from web_archive_query_log.queries.iterable import ArchivedSerpUrls
-from web_archive_query_log.urls.iterable import ArchivedUrls
-
 
 @main.group("download")
 def download():
@@ -43,6 +39,8 @@ def download():
     ),
 )
 def warc(download_dir: Path, urls_file: Path) -> None:
+    from web_archive_query_log.download.warc import WebArchiveWarcDownloader
+    from web_archive_query_log.urls.iterable import ArchivedUrls
     downloader = WebArchiveWarcDownloader()
     run(downloader.download(
         download_dir,
@@ -73,6 +71,8 @@ def fetch_service(
         data_directory: Path,
         service_name: str,
 ) -> None:
+    from web_archive_query_log.download.warc import WebArchiveWarcDownloader
+    from web_archive_query_log.queries.iterable import ArchivedSerpUrls
     service = SERVICES[service_name]
     service_dir = data_directory / service.name
     downloader = WebArchiveWarcDownloader()

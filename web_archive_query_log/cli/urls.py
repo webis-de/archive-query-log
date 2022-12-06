@@ -8,7 +8,7 @@ from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
 from web_archive_query_log.config import SERVICES
 from web_archive_query_log.cli.main import main
 from web_archive_query_log.cli.util import URL
-from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher, UrlMatchScope
+from web_archive_query_log.urls.fetch import UrlMatchScope
 
 
 @main.group("urls")
@@ -84,6 +84,7 @@ def fetch(
         output_path: Path,
         urls: Iterable[str],
 ) -> None:
+    from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher
     fetcher = ArchivedUrlsFetcher(
         match_scope=UrlMatchScope(match_scope),
         include_status_codes=set(include_status_codes),
@@ -120,6 +121,7 @@ def fetch_service(
         data_directory: Path,
         service_name: str,
 ) -> None:
+    from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher
     service = SERVICES[service_name]
     fetcher = ArchivedUrlsFetcher(
         match_scope=UrlMatchScope.DOMAIN,
