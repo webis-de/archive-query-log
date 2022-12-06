@@ -139,7 +139,7 @@ class SearchResult(DataClassJsonMixin):
     """
     Title of the result.
     """
-    snippet: str | None = None
+    snippet: str | None
     """
     Snippet of the result.
     Highlighting should be normalized to ``<em>`` tags.
@@ -165,7 +165,7 @@ class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
     """
     Retrieved results from the SERP in the same order as they appear.
     """
-    result_query: str
+    result_query: str | None
     """
     Query that is displayed on the SERP.
     
