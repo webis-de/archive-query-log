@@ -46,14 +46,15 @@ def fetch_service(
         page_number_parsers=service.page_num_parsers,
         verbose=True,
     )
-    service_domain_dirs = list(service_dir.glob("*"))
-    service_domain_dirs = tqdm(
-        service_domain_dirs,
+    domains = service.domains
+    domains = tqdm(
+        domains,
         desc=f"Parse queries",
         unit="domains",
     )
-    for service_domain_dir in service_domain_dirs:
+    for domain in domains:
+        domain_dir = service_dir / domain
         parser.parse(
-            input_path=service_domain_dir / "urls.jsonl",
-            output_path=service_domain_dir / "serp-urls.jsonl",
+            input_path=domain_dir / "urls.jsonl.gz",
+            output_path=domain_dir / "serp-urls.jsonl.gz",
         )
