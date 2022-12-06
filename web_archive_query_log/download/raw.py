@@ -1,10 +1,11 @@
-from asyncio import gather, ensure_future, sleep
+from asyncio import sleep
 from pathlib import Path
 from random import random
 from typing import Iterable, Callable, Mapping
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
+from asyncio_pool import AioPool
 from tqdm.auto import tqdm
 
 from web_archive_query_log.model import ArchivedUrl
@@ -43,16 +44,18 @@ class WebArchiveRawDownloader:
             unit="URL",
         )
         async with archive_http_client(limit=10) as client:
-            responses = await gather(*(
-                ensure_future(self._download_single_progress(
-                    archived_url=archived_url,
-                    download_directory_path=download_directory_path,
-                    file_name=file_name,
-                    client=client,
-                    progress=progress,
-                ))
-                for archived_url in archived_urls
-            ))
+            pool = AioPool(size=100)  # avoid creating too many tasks at once
+
+            async def download_single(archived_url: ArchivedUrl):
+                return await self._download_single_progress(
+                    archived_url,
+                    download_directory_path,
+                    file_name,
+                    client,
+                    progress,
+                )
+
+            responses = await pool.map(download_single, archived_urls)
         return {
             archived_url: response
             for archived_url, response in zip(archived_urls, responses)

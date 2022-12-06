@@ -1,4 +1,4 @@
-from asyncio import sleep, gather, ensure_future
+from asyncio import sleep
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
 from datetime import datetime
@@ -14,6 +14,7 @@ from urllib.parse import urlencode
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
+from asyncio_pool import AioPool
 from marshmallow import Schema
 from tqdm.auto import tqdm
 
@@ -199,20 +200,22 @@ class ArchivedUrlsFetcher:
         progress = tqdm(
             total=num_pages,
             desc="Fetch archived URLs",
-            unit="URL",
+            unit="page",
         )
         async with self._http_client(client) as client:
-            await gather(*(
-                ensure_future(self._fetch_page_progress(
+            pool = AioPool(size=100)  # avoid creating too many tasks at once
+
+            async def fetch_single(page: int):
+                return await self._fetch_page_progress(
                     cache_path=cache_path,
                     url=url,
                     page=page,
                     num_pages=num_pages,
                     client=client,
                     progress=progress,
-                ))
-                for page in range(num_pages)
-            ))
+                )
+
+            responses = await pool.map(fetch_single, range(num_pages))
 
     def _missing_pages(self, cache_path: Path, num_pages: int) -> set[int]:
         """
@@ -320,13 +323,16 @@ class ArchivedUrlsFetcher:
             unit="URL",
         )
         async with self._http_client(client) as client:
-            await gather(*(
-                ensure_future(self._fetch_progress(
-                    output_path=output_path / f"{file_name(url)}.jsonl"
-                                              f"{'.gz' if self.gzip else ''}",
+            pool = AioPool(size=100)  # avoid creating too many tasks at once
+
+            async def fetch_single(url: str):
+                return await self._fetch_progress(
+                    output_path=output_path /
+                                f"{file_name(url)}.jsonl"
+                                f"{'.gz' if self.gzip else ''}",
                     url=url,
                     progress=progress,
                     client=client,
-                ))
-                for url in urls
-            ))
+                )
+
+            responses = await pool.map(fetch_single, urls)

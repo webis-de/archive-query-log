@@ -1,4 +1,4 @@
-from asyncio import gather, ensure_future, sleep
+from asyncio import sleep
 from dataclasses import dataclass
 from io import BytesIO
 from itertools import count
@@ -9,6 +9,7 @@ from tempfile import TemporaryFile
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
+from asyncio_pool import AioPool
 from tqdm.auto import tqdm
 from warcio import WARCWriter, StatusAndHeaders
 
@@ -104,15 +105,17 @@ class WebArchiveWarcDownloader:
             unit="URL",
         )
         async with archive_http_client(limit=10) as client:
-            responses = await gather(*(
-                ensure_future(self._download_single_progress(
-                    download_path=download_path,
-                    archived_url=archived_url,
-                    client=client,
-                    progress=progress,
-                ))
-                for archived_url in archived_urls
-            ))
+            pool = AioPool(size=100)  # avoid creating too many tasks at once
+
+            async def download_single(archived_url: ArchivedUrl):
+                return await self._download_single_progress(
+                    download_path,
+                    client,
+                    archived_url,
+                    progress,
+                )
+
+            responses = await pool.map(download_single, archived_urls)
         error_urls: set[ArchivedUrl] = {
             archived_url
             for archived_url, response in zip(archived_urls, responses)
