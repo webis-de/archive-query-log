@@ -5,9 +5,8 @@ from typing import Iterable
 from click import option, Path as PathParam, argument, STRING, Choice, INT
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
-from web_archive_query_log.config import SERVICES
 from web_archive_query_log.cli.main import main
-from web_archive_query_log.cli.util import URL
+from web_archive_query_log.cli.util import URL, ServiceChoice
 from web_archive_query_log.urls.fetch import UrlMatchScope
 
 
@@ -98,9 +97,10 @@ def fetch(
         urls=set(urls),
     ))
 
+
 @urls_group.command("fetch-service")
 @option(
-    "-d", "--data-directory" ,"--data-directory-path",
+    "-d", "--data-directory", "--data-directory-path",
     type=PathParam(
         exists=True,
         file_okay=False,
@@ -114,13 +114,14 @@ def fetch(
 )
 @argument(
     "service_name",
-    type=Choice(sorted(SERVICES.keys())),
+    type=ServiceChoice(),
     required=True,
 )
 def fetch_service(
         data_directory: Path,
         service_name: str,
 ) -> None:
+    from web_archive_query_log.config import SERVICES
     from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher
     service = SERVICES[service_name]
     fetcher = ArchivedUrlsFetcher(

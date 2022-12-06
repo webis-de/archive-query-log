@@ -1,12 +1,13 @@
 from asyncio import run
 from pathlib import Path
 
-from click import argument, Path as PathParam, option, Choice
+from click import argument, Path as PathParam, option
 from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH
-from web_archive_query_log.config import SERVICES
+from web_archive_query_log.cli.util import ServiceChoice
 from web_archive_query_log.cli import main
+
 
 @main.group("download")
 def download():
@@ -64,13 +65,14 @@ def warc(download_dir: Path, urls_file: Path) -> None:
 )
 @argument(
     "service_name",
-    type=Choice(sorted(SERVICES.keys())),
+    type=ServiceChoice(),
     required=True,
 )
 def fetch_service(
         data_directory: Path,
         service_name: str,
 ) -> None:
+    from web_archive_query_log.config import SERVICES
     from web_archive_query_log.download.warc import WebArchiveWarcDownloader
     from web_archive_query_log.queries.iterable import ArchivedSerpUrls
     service = SERVICES[service_name]
