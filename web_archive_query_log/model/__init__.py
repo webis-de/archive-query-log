@@ -272,6 +272,20 @@ class Service(DataClassJsonMixin):
     """
     Page number parsers in order of precedence.
     """
+    interpreted_query_parsers: Sequence[InterpretedQueryParser] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(InterpretedQueryParserField())
+        )
+    )
+    """
+    Interpreted query parsers in order of precedence.
+    The interpreted query is the query that is displayed 
+    or otherwise included in the SERP.
+    
+    Note: the result query can be different from the original query 
+    due to spelling correction etc.
+    """
     results_parsers: Sequence[ResultsParser] = field(
         metadata=config(
             decoder=tuple,
@@ -280,17 +294,4 @@ class Service(DataClassJsonMixin):
     )
     """
     SERP parsers in order of precedence.
-    """
-
-    result_query_parsers: Sequence[InterpretedQueryParser] = field(
-        metadata=config(
-            decoder=tuple,
-            mm_field=List(InterpretedQueryParserField())
-        )
-    )
-    """
-    Result query parsers in order of precedence.
-    
-    Note: the result query can be different from the original query 
-    due to spelling correction etc.
     """

@@ -157,15 +157,19 @@ def import_services(services_file: Path):
         ), key=lambda qp: str(qp["pattern"]))
         for _, service in services.iterrows()
     ]
-    services["page_num_parsers"] = [
+    services["page_parsers"] = [
+        []
+        for _, service in services.iterrows()
+    ]
+    services["offset_parsers"] = [
+        []
+        for _, service in services.iterrows()
+    ]
+    services["interpreted_query_parsers"] = [
         []
         for _, service in services.iterrows()
     ]
     services["results_parsers"] = [
-        []
-        for _, service in services.iterrows()
-    ]
-    services["result_query_parsers"] = [
         []
         for _, service in services.iterrows()
     ]
