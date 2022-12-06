@@ -23,6 +23,7 @@ pyspark = "*"
 jupyter = "*"
 pandas = "*"
 pyyaml = "*"
+asyncio-pool = "*"
 
 [dev-packages]
 
