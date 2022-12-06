@@ -195,7 +195,7 @@ class ArchivedUrlsFetcher:
             unit="page",
         )
         async with self._http_client(client) as client:
-            pool = AioPool(size=100)  # avoid creating too many tasks at once
+            pool = AioPool(size=50)  # avoid creating too many tasks at once
 
             async def fetch_single(page: int):
                 return await self._fetch_page_progress(
@@ -298,7 +298,7 @@ class ArchivedUrlsFetcher:
             unit="URL",
         )
         async with self._http_client(client) as client:
-            pool = AioPool(size=100)  # avoid creating too many tasks at once
+            pool = AioPool(size=10)  # avoid creating too many tasks at once
 
             async def fetch_single(url_output_path: Tuple[str, Path]):
                 url, output_path = url_output_path
