@@ -5,6 +5,7 @@ from typing import Iterable
 from click import option, Path as PathParam, argument, STRING, Choice, INT
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
+from web_archive_query_log.config import SERVICES
 from web_archive_query_log.cli.main import main
 from web_archive_query_log.cli.util import URL
 from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher, UrlMatchScope
@@ -112,7 +113,7 @@ def fetch(
 )
 @argument(
     "service_name",
-    type=STRING,
+    type=Choice(sorted(SERVICES.keys())),
     required=True,
 )
 def fetch_service(
