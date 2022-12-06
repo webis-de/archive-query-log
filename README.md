@@ -56,9 +56,11 @@ pipenv run python -m web_archive_query_log serps num-chunks bing
 
 1. Collect services.
 2. Collect service domains.
-3. Collect archived service URLs.
+3. Collect archived service URLs.  
+  `python -m web_archive_query_log urls fetch-service bing`
 4. Filter archived service URLs and identify URLs with query data.
-5. Parse queries and SERP URLs from service URLs.
+5. Parse queries and SERP URLs from service URLs.  
+   `python -m web_archive_query_log queries parse-service bing`
 6. Download archived SERPs.
 7. Parse downloaded SERPs.
 8. Download archived documents linked from SERPs, if available.
