@@ -2,7 +2,6 @@ from asyncio import run
 from pathlib import Path
 
 from click import option, argument, STRING, IntRange
-from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
 from web_archive_query_log.cli import main
@@ -134,22 +133,14 @@ def archived_serp_contents_command(
 ) -> None:
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.download.warc import WebArchiveWarcDownloader
-    from web_archive_query_log.queries.iterable import ArchivedSerpUrls
-    service = SERVICES[service_name]
-    service_dir = data_directory / service.name
+    service_config = SERVICES[service]
     downloader = WebArchiveWarcDownloader()
-    domains = service.domains
-    domains = tqdm(
-        domains,
-        desc=f"Download SERP contents",
-        unit="domain",
-    )
-    for domain in domains:
-        domain_dir = service_dir / domain
-        run(downloader.download(
-            domain_dir / "serps",
-            ArchivedSerpUrls(domain_dir / "serp-urls.jsonl.gz"),
-        ))
+    run(downloader.download_service(
+        data_directory,
+        service_config,
+        domain,
+        cdx_page,
+    ))
 
 
 @service_group.command(

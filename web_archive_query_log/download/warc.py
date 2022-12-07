@@ -2,10 +2,10 @@ from asyncio import sleep
 from dataclasses import dataclass
 from io import BytesIO
 from itertools import count
-from math import log10
 from pathlib import Path
 from random import random
 from tempfile import TemporaryFile
+from typing import Sequence, NamedTuple
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
@@ -13,9 +13,15 @@ from asyncio_pool import AioPool
 from tqdm.auto import tqdm
 from warcio import WARCWriter, StatusAndHeaders
 
-from web_archive_query_log.model import ArchivedUrl
+from web_archive_query_log.model import ArchivedUrl, Service
+from web_archive_query_log.queries.iterable import ArchivedSerpUrls
 from web_archive_query_log.util.archive_http import archive_http_client
 from web_archive_query_log.util.iterable import SizedIterable
+
+
+class _CdxPage(NamedTuple):
+    input_path: Path
+    output_path: Path
 
 
 @dataclass(frozen=True)
@@ -30,11 +36,6 @@ class WebArchiveWarcDownloader:
     max_file_size: int = 1_000_000_000  # 1GB
     """
     Maximum number of bytes to write to a single WARC file.
-    """
-
-    gzip: bool = True
-    """
-    Enable GZIP compression when writing WARC files or not.
     """
 
     @staticmethod
@@ -78,8 +79,6 @@ class WebArchiveWarcDownloader:
             buffer_size: int,
     ) -> Path:
         for index in count():
-            if index > 1000 and log10(index) == 1:
-                print(f"Warning: Download file lookup is at {index}.")
             name = f"{index:05}.warc.gz"
             path = download_path / name
             if not path.exists():
@@ -98,6 +97,8 @@ class WebArchiveWarcDownloader:
         """
         Download WARC files for archived URLs from the Web Archive.
         """
+        if len(archived_urls) == 0:
+            return
         self._check_download_path(download_path)
         progress = tqdm(
             total=len(archived_urls),
@@ -214,3 +215,77 @@ class WebArchiveWarcDownloader:
         res = await self._download_single(download_path, client, archived_url)
         progress.update(1)
         return res
+
+    def _service_pages(
+            self,
+            data_directory: Path,
+            service: Service,
+            domain: str | None,
+            cdx_page: int | None,
+    ) -> Sequence[_CdxPage]:
+        """
+        List all items that need to be downloaded.
+        """
+        service_path = data_directory / service.name
+
+        if domain is not None:
+            domain_paths = [service_path / domain]
+        else:
+            domain_paths = [
+                path
+                for path in service_path.iterdir()
+                if path.is_dir()
+            ]
+
+        if cdx_page is not None:
+            assert domain is not None
+            assert len(domain_paths) == 1
+            cdx_page_paths = [domain_paths[0] / f"{cdx_page:010}"]
+        else:
+            cdx_page_paths = [
+                path
+                for domain_path in domain_paths
+                for path in domain_path.iterdir()
+                if (
+                        path.is_dir() and
+                        path.name.isdigit() and
+                        len(path.name) == 10
+                )
+            ]
+
+        pages = (
+            _CdxPage(
+                input_path=cdx_page_path / "archived-serp-urls.jsonl.gz",
+                output_path=cdx_page_path / "archived-serp-contents",
+            )
+            for cdx_page_path in cdx_page_paths
+        )
+        return [page for page in pages if page.input_path.exists()]
+
+    async def download_service(
+            self,
+            data_directory: Path,
+            service: Service,
+            domain: str | None = None,
+            cdx_page: int | None = None,
+    ):
+        pages = self._service_pages(
+            data_directory,
+            service,
+            domain,
+            cdx_page,
+        )
+
+        if len(pages) == 0:
+            return
+
+        if len(pages) > 1:
+            pages = tqdm(
+                pages,
+                desc="Download archived SERP contents",
+                unit="page",
+            )
+
+        for page in pages:
+            archived_urls = ArchivedSerpUrls(page.input_path)
+            await self.download(page.output_path, archived_urls)
