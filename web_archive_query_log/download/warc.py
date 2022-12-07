@@ -96,6 +96,8 @@ class WebArchiveWarcDownloader:
         """
         Download WARC files for archived URLs from the Web Archive.
         """
+        self._check_download_path(download_path)
+
         archived_urls = [
             archived_url
             for archived_url in archived_urls
@@ -103,7 +105,6 @@ class WebArchiveWarcDownloader:
         ]
         if len(archived_urls) == 0:
             return
-        self._check_download_path(download_path)
 
         progress = None
         if self.verbose:
