@@ -104,26 +104,18 @@ def archived_serp_urls_command(
 ) -> None:
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.queries.parse import ArchivedSerpUrlsParser
-    service = SERVICES[service_name]
-    service_dir = data_directory / service.name
+    service_config = SERVICES[service]
     parser = ArchivedSerpUrlsParser(
-        query_parsers=service.query_parsers,
-        page_parsers=service.page_parsers,
-        offset_parsers=service.offset_parsers,
-        verbose=True,
+        query_parsers=service_config.query_parsers,
+        page_parsers=service_config.page_parsers,
+        offset_parsers=service_config.offset_parsers,
     )
-    domains = service.domains
-    domains = tqdm(
-        domains,
-        desc=f"Parse queries",
-        unit="domain",
+    parser.parse_service(
+        data_directory,
+        service_config,
+        domain,
+        cdx_page,
     )
-    for domain in domains:
-        domain_dir = service_dir / domain
-        parser.parse(
-            input_path=domain_dir / "urls.jsonl.gz",
-            output_path=domain_dir / "serp-urls.jsonl.gz",
-        )
 
 
 @service_group.command(

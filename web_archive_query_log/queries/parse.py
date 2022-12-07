@@ -2,13 +2,13 @@ from dataclasses import dataclass
 from gzip import GzipFile
 from io import TextIOWrapper
 from pathlib import Path
-from typing import Sequence
+from typing import Sequence, NamedTuple
 from urllib.parse import parse_qsl, unquote
 
 from tqdm.auto import tqdm
 
 from web_archive_query_log.model import ArchivedSerpUrl, \
-    ArchivedUrl, PageParser, QueryParser, OffsetParser
+    ArchivedUrl, PageParser, QueryParser, OffsetParser, Service
 from web_archive_query_log.urls.iterable import ArchivedUrls
 
 
@@ -69,6 +69,11 @@ class FragmentParameterPageOffsetParser(PageParser, OffsetParser):
             if key == self.parameter and value.isdigit():
                 return int(value)
         return None
+
+
+class _CdxPage(NamedTuple):
+    input_path: Path
+    output_path: Path
 
 
 @dataclass(frozen=True)
@@ -136,3 +141,76 @@ class ArchivedSerpUrlsParser:
             page=page,
             offset=offset,
         )
+
+    def _service_pages(
+            self,
+            data_directory: Path,
+            service: Service,
+            domain: str | None,
+            cdx_page: int | None,
+    ) -> Sequence[_CdxPage]:
+        """
+        List all items that need to be downloaded.
+        """
+        service_path = data_directory / service.name
+
+        if domain is not None:
+            domain_paths = [service_path / domain]
+        else:
+            domain_paths = [
+                path
+                for path in service_path.iterdir()
+                if path.is_dir()
+            ]
+
+        if cdx_page is not None:
+            assert domain is not None
+            assert len(domain_paths) == 1
+            cdx_page_paths = [domain_paths[0] / f"{cdx_page:010}"]
+        else:
+            cdx_page_paths = [
+                path
+                for domain_path in domain_paths
+                for path in domain_path.iterdir()
+                if (
+                        path.is_dir() and
+                        path.name.isdigit() and
+                        len(path.name) == 10
+                )
+            ]
+
+        pages = (
+            _CdxPage(
+                input_path=cdx_page_path / "archived-urls.jsonl.gz",
+                output_path=cdx_page_path / "archived-serp-urls.jsonl.gz",
+            )
+            for cdx_page_path in cdx_page_paths
+        )
+        return [
+            page for page in pages
+            if page.input_path.exists() and not page.output_path.exists()
+        ]
+
+    def parse_service(
+            self,
+            data_directory: Path,
+            service: Service,
+            domain: str | None = None,
+            cdx_page: int | None = None,
+    ):
+        pages = self._service_pages(
+            data_directory,
+            service,
+            domain,
+            cdx_page,
+        )
+
+        if len(pages) > 1:
+            pages = tqdm(
+                pages,
+                desc="Parse archived SERP URLs",
+                unit="page",
+            )
+
+        for page in pages:
+            self.parse(page.input_path, page.output_path)
