@@ -21,20 +21,20 @@ Scrape real-life query logs from archived search engine result pages (SERPs) on 
 
 ## Usage
 
-1. Collect services.
-2. Collect service domains.
-3. Collect archived service URLs.  
+1. Collect services. (#1-service-collection)
+2. Collect service domains. (#2-service-domains)
+3. Collect archived service URLs. (#3-service-urls)  
    `python -m web_archive_query_log service archived-urls SERVICENAME [DOMAIN [CDX_PAGE]]`
-4. Filter archived service URLs and identify URLs with query data.
-5. Parse queries and SERP URLs from service URLs.  
+4. Filter archived service URLs and identify URLs with query data. (#4-service-urls)
+5. Parse queries and SERP URLs from service URLs. (#5-url-query-extraction)  
    `python -m web_archive_query_log service archived-serp-urls SERVICENAME [DOMAIN [CDX_PAGE]]`
-6. Download archived SERP contents.  
+6. Download archived SERP contents. (#6-serps-download)  
    `python -m web_archive_query_log service archived-serp-contents SERVICENAME [DOMAIN [CDX_PAGE]]`
-7. Parse downloaded SERPs.  
+7. Parse downloaded SERPs. (#7-serps-parsing)  
    `python -m web_archive_query_log service archived-serps SERVICENAME [DOMAIN [CDX_PAGE]]` (not fully implemented)
-8. Download archived documents linked from SERPs, if available.
+8. Download archived documents linked from SERPs, if available. (#8-results-download)
    `python -m web_archive_query_log service archived-serp-results-contents SERVICENAME [DOMAIN [CDX_PAGE]]` (not yet implemented)
-9. Build IR test collection.
+9. Build IR test collection. (#9-corpus construction)
 
 ## Architecture and Formats
 
