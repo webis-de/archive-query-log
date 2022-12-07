@@ -88,10 +88,10 @@ The intermediate results from each step are stored in different formats.
      ```
 - Python data class: `Service`
 
-### Service URLs
+### Archived URLs
 
-- all archived URLs for one service are stored in a single file
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/urls.jsonl`
+- archived URLs are stored in subdirectories based on the service name, domain, and CDX page:
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-urls.jsonl` (`<CDXPAGE>` is a 10-digit number with leading zeros)
 - one line per archived URL
 - JSONL format:
    ```json
@@ -102,10 +102,10 @@ The intermediate results from each step are stored in different formats.
    ```
 - Python data class: `ArchivedUrl`
 
-### Service SERP URLs
+### Archived SERP URLs
 
-- all archived URLs for one service are stored in a single file
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/serp-urls.jsonl`
+- archived SERP URLs are stored in subdirectories based on the service name, domain, and CDX page:
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-urls.jsonl` (`<CDXPAGE>` is a 10-digit number with leading zeros)
 - one line per archived URL
 - JSONL format:
    ```json
@@ -119,12 +119,12 @@ The intermediate results from each step are stored in different formats.
    ```
 - Python data class: `ArchivedSerpUrl`
 
-### Service SERP HTML
+### Archived SERP contents
 
-- all downloaded SERPs for one service are stored in a single directory
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/serps/`
-- downloaded SERPs are stored in 1GB-sized WARC files
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/serps/<CHUNK>.warc.gz` (5 digits for `<CHUNK>`)
+- archived SERP contents are stored in subdirectories based on the service name, domain, and CDX page:
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-contents/` (`<CDXPAGE>` is a 10-digit number with leading zeros)
+- contents are stored in 1GB-sized WARC file chunks
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-contents/<CHUNK>.warc.gz` (`<CHUNK>` is a 10-digit number with leading zeros)
 - one WARC request and one WARC response per archived URL
 - additional WARC header `Archived-URL` (for request and response) with the archived URL in JSONL format:
    ```json
@@ -139,10 +139,10 @@ The intermediate results from each step are stored in different formats.
   (same format as in previous step)
 - Python data class: `ArchivedSerpContent` (roughly)
 
-### Service parsed SERPs
+### Archived SERPs
 
-- all parsed SERPs for one service are stored in a single file
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/serps.jsonl`
+- archived SERPs are stored in subdirectories based on the service name, domain, and CDX page:
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp.jsonl` (`<CDXPAGE>` is a 10-digit number with leading zeros)
 - one line per search engine result page (SERP)
 - JSONL format:
    ```json
