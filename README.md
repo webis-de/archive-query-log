@@ -91,7 +91,7 @@ The intermediate results from each step are stored in different formats.
 ### Archived URLs
 
 - archived URLs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-urls.jsonl` (`<CDXPAGE>` is a 10-digit number with leading zeros)
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-urls.jsonl.gz` (`<CDXPAGE>` is a 10-digit number with leading zeros)
 - one line per archived URL
 - JSONL format:
    ```json
@@ -105,7 +105,7 @@ The intermediate results from each step are stored in different formats.
 ### Archived SERP URLs
 
 - archived SERP URLs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-urls.jsonl` (`<CDXPAGE>` is a 10-digit number with leading zeros)
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-urls.jsonl.gz` (`<CDXPAGE>` is a 10-digit number with leading zeros)
 - one line per archived URL
 - JSONL format:
    ```json
@@ -142,7 +142,7 @@ The intermediate results from each step are stored in different formats.
 ### Archived SERPs
 
 - archived SERPs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp.jsonl` (`<CDXPAGE>` is a 10-digit number with leading zeros)
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp.jsonl.gz` (`<CDXPAGE>` is a 10-digit number with leading zeros)
 - one line per search engine result page (SERP)
 - JSONL format:
    ```json
