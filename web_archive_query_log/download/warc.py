@@ -1,9 +1,7 @@
-from asyncio import sleep
 from dataclasses import dataclass
 from io import BytesIO
 from itertools import count
 from pathlib import Path
-from random import random
 from tempfile import TemporaryFile
 from typing import Sequence, NamedTuple
 
@@ -37,6 +35,7 @@ class WebArchiveWarcDownloader:
     """
     Maximum number of bytes to write to a single WARC file.
     """
+    verbose: bool = False
 
     @staticmethod
     def _check_download_path(download_path: Path):
@@ -97,19 +96,28 @@ class WebArchiveWarcDownloader:
         """
         Download WARC files for archived URLs from the Web Archive.
         """
+        archived_urls = [
+            archived_url
+            for archived_url in archived_urls
+            if not self._is_url_downloaded(download_path, archived_url)
+        ]
         if len(archived_urls) == 0:
             return
         self._check_download_path(download_path)
-        progress = tqdm(
-            total=len(archived_urls),
-            desc="Download archived URLs",
-            unit="URL",
-        )
-        async with archive_http_client(limit=10) as client:
+
+        progress = None
+        if self.verbose:
+            progress = tqdm(
+                total=len(archived_urls),
+                desc="Download archived URLs",
+                unit="URL",
+            )
+
+        async with archive_http_client(limit=100) as client:
             pool = AioPool(size=100)  # avoid creating too many tasks at once
 
             async def download_single(archived_url: ArchivedUrl):
-                return await self._download_single_progress(
+                return await self._download_single(
                     download_path,
                     client,
                     archived_url,
@@ -139,14 +147,16 @@ class WebArchiveWarcDownloader:
             download_path: Path,
             client: RetryClient,
             archived_url: ArchivedUrl,
+            progress: tqdm | None = None,
     ) -> bool:
         if self._is_url_downloaded(download_path, archived_url):
+            if progress is not None:
+                progress.update()
             return True
         url = archived_url.raw_archive_url
         url_headers = {
             "Archived-URL": archived_url.schema().dumps(archived_url),
         }
-        await sleep(1.0 * random())
         try:
             async with client.get(url) as response:
                 with TemporaryFile() as tmp_file:
@@ -204,17 +214,10 @@ class WebArchiveWarcDownloader:
             return False
         except BaseException as e:
             raise e
+        finally:
+            if progress is not None:
+                progress.update()
 
-    async def _download_single_progress(
-            self,
-            download_path: Path,
-            client: RetryClient,
-            archived_url: ArchivedUrl,
-            progress: tqdm,
-    ) -> bool:
-        res = await self._download_single(download_path, client, archived_url)
-        progress.update(1)
-        return res
 
     def _service_pages(
             self,

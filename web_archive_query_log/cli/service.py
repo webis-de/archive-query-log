@@ -134,7 +134,7 @@ def archived_serp_contents_command(
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.download.warc import WebArchiveWarcDownloader
     service_config = SERVICES[service]
-    downloader = WebArchiveWarcDownloader()
+    downloader = WebArchiveWarcDownloader(verbose=True)
     run(downloader.download_service(
         data_directory,
         service_config,
