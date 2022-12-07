@@ -40,7 +40,7 @@ Scrape real-life query logs from archived search engine result pages (SERPs) on 
 
 The intermediate results from each step are stored in different formats.
 
-### Services
+### 1 Archived Services
 
 - all services are stored in a single YAML file:
   [`data/services.yaml`](data/services.yaml)
@@ -89,7 +89,9 @@ The intermediate results from each step are stored in different formats.
      ```
 - Python data class: `Service`
 
-### Archived URLs
+### 2 Archived Serice Domains
+
+### 3 Archived Service URLs
 
 - archived URLs are stored in subdirectories based on the service name, domain, and CDX page:
   `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-urls.jsonl.gz`
@@ -108,7 +110,7 @@ The intermediate results from each step are stored in different formats.
    ```
 - Python data class: `ArchivedUrl`
 
-### Archived SERP URLs
+### 3 Archived Query URLs
 
 - archived SERP URLs are stored in subdirectories based on the service name, domain, and CDX page:
   `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-urls.jsonl.gz`
@@ -130,7 +132,9 @@ The intermediate results from each step are stored in different formats.
    ```
 - Python data class: `ArchivedSerpUrl`
 
-### Archived SERP contents
+### 4 Archived Queries
+
+### 5 Archived Raw SERPs
 
 - archived SERP contents are stored as 1GB-sized WARC chunk files in subdirectories based on the service name, domain, and CDX page:
   `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-contents/<WARCCHUNK>.warc.gz`
@@ -154,7 +158,7 @@ The intermediate results from each step are stored in different formats.
   (same format as in previous step)
 - Python data class: `ArchivedSerpContent` (roughly)
 
-### Archived SERPs
+### 7 Archived Parsed SERPs
 
 - archived SERPs are stored in subdirectories based on the service name, domain, and CDX page:
   `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp.jsonl.gz`
@@ -185,11 +189,13 @@ The intermediate results from each step are stored in different formats.
    ```
 - Python data class: `ArchivedSerp` with `SearchResult`
 
-### Archived search result contents
+### 8 Archived Raw Search Results
+
+### 9 Archived Parsed Search Results
 
 **TODO**
 
-### Corpus
+### 10 Archived Web Search Corpus
 
 **TODO**
 
