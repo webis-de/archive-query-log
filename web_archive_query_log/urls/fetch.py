@@ -1,4 +1,3 @@
-from asyncio import sleep
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
@@ -6,7 +5,6 @@ from gzip import GzipFile
 from io import TextIOWrapper
 from itertools import chain
 from pathlib import Path
-from random import random
 from typing import AbstractSet, Sequence, Any, Iterable, Iterator, NamedTuple
 from urllib.parse import urlencode
 
@@ -47,6 +45,7 @@ class ArchivedUrlsFetcher:
     include_mime_types: AbstractSet[str] = frozenset({"text/html"})
     exclude_mime_types: AbstractSet[str] = frozenset({})
     cdx_api_url: str = CDX_API_URL
+    overwrite: bool = False
 
     def _params(self, url: str) -> Sequence[tuple[Any, Any]]:
         params = [
@@ -102,7 +101,8 @@ class ArchivedUrlsFetcher:
             client: RetryClient,
             progress: tqdm | None = None,
     ) -> None:
-        if page.path.exists():
+        if page.path.exists() and not self.overwrite:
+            progress.update()
             return
         page.path.parent.mkdir(parents=True, exist_ok=True)
         params = [
@@ -110,7 +110,6 @@ class ArchivedUrlsFetcher:
             ("page", page.page),
         ]
         url = f"{self.cdx_api_url}?{urlencode(params)}"
-        await sleep(1.0 * random())
         try:
             async with client.get(url) as response:
                 response.raise_for_status()
@@ -140,7 +139,7 @@ class ArchivedUrlsFetcher:
             raise e
         finally:
             if progress is not None:
-                progress.update(1)
+                progress.update()
 
     async def _service_pages(
             self,
@@ -197,7 +196,7 @@ class ArchivedUrlsFetcher:
                     cdx_page=None,
                     client=client,
                 )
-                progress.update(1)
+                progress.update()
                 return res
 
             pool = AioPool(size=1000)
@@ -222,6 +221,9 @@ class ArchivedUrlsFetcher:
                 cdx_page,
                 client,
             )
+
+            if len(pages) == 0:
+                return
 
             progress = None
             if len(pages) > 1:

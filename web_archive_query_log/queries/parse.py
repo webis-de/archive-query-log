@@ -81,9 +81,13 @@ class ArchivedSerpUrlsParser:
     query_parsers: Sequence[QueryParser]
     page_parsers: Sequence[PageParser]
     offset_parsers: Sequence[OffsetParser]
+    overwrite: bool = False
     verbose: bool = False
 
     def parse(self, input_path: Path, output_path: Path) -> None:
+        if output_path.exists() and not self.overwrite:
+            return
+        output_path.parent.mkdir(parents=True, exist_ok=True)
         archived_urls = ArchivedUrls(input_path)
         if self.verbose:
             archived_urls = tqdm(
@@ -186,10 +190,7 @@ class ArchivedSerpUrlsParser:
             )
             for cdx_page_path in cdx_page_paths
         )
-        return [
-            page for page in pages
-            if page.input_path.exists() and not page.output_path.exists()
-        ]
+        return [page for page in pages if page.input_path.exists()]
 
     def parse_service(
             self,
@@ -204,6 +205,9 @@ class ArchivedSerpUrlsParser:
             domain,
             cdx_page,
         )
+
+        if len(pages) == 0:
+            return
 
         if len(pages) > 1:
             pages = tqdm(
