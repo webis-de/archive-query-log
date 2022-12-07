@@ -71,9 +71,7 @@ def archived_urls_command(
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher, \
         UrlMatchScope
-    from web_archive_query_log.util.urls import safe_quote_url
-    service = SERVICES[service_name]
-    service_dir = data_directory / service.name
+    service_config = SERVICES[service]
     fetcher = ArchivedUrlsFetcher(
         match_scope=UrlMatchScope.DOMAIN,
         include_status_codes={200},
@@ -82,16 +80,12 @@ def archived_urls_command(
         exclude_mime_types=set(),
         cdx_api_url=CDX_API_URL
     )
-    domain_dirs = {
-        domain: service_dir / safe_quote_url(domain)
-        for domain in set(service.domains)
-    }
-    for domain_dir in domain_dirs.values():
-        domain_dir.mkdir(parents=True, exist_ok=True)
-    run(fetcher.fetch_many({
-        domain: domain_dir / "urls.jsonl.gz"
-        for domain, domain_dir in domain_dirs.items()
-    }))
+    run(fetcher.fetch_service(
+        data_directory,
+        service_config,
+        domain,
+        cdx_page,
+    ))
 
 
 @service_group.command(
