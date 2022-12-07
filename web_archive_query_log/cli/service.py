@@ -1,7 +1,7 @@
 from asyncio import run
 from pathlib import Path
 
-from click import option, argument
+from click import option, argument, STRING, IntRange
 from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
@@ -32,9 +32,25 @@ def _data_directory_option():
 
 def _service_name_argument():
     return argument(
-        "service_name",
+        "service",
         type=ServiceChoice(),
         required=True,
+    )
+
+
+def _domain_argument():
+    return argument(
+        "domain",
+        type=STRING,
+        required=False,
+    )
+
+
+def _cdx_page_argument():
+    return argument(
+        "cdx_page",
+        type=IntRange(min=0),
+        required=False,
     )
 
 
@@ -44,7 +60,14 @@ def _service_name_argument():
 )
 @_data_directory_option()
 @_service_name_argument()
-def urls(data_directory: Path, service_name: str) -> None:
+@_domain_argument()
+@_cdx_page_argument()
+def archived_urls_command(
+        data_directory: Path,
+        service: str,
+        domain: str | None,
+        cdx_page: int | None,
+) -> None:
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher, \
         UrlMatchScope
@@ -77,7 +100,14 @@ def urls(data_directory: Path, service_name: str) -> None:
 )
 @_data_directory_option()
 @_service_name_argument()
-def queries(data_directory: Path, service_name: str) -> None:
+@_domain_argument()
+@_cdx_page_argument()
+def archived_serp_urls_command(
+        data_directory: Path,
+        service: str,
+        domain: str | None,
+        cdx_page: int | None,
+) -> None:
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.queries.parse import ArchivedSerpUrlsParser
     service = SERVICES[service_name]
@@ -108,9 +138,13 @@ def queries(data_directory: Path, service_name: str) -> None:
 )
 @_data_directory_option()
 @_service_name_argument()
-def fetch_service(
+@_domain_argument()
+@_cdx_page_argument()
+def archived_serp_contents_command(
         data_directory: Path,
-        service_name: str,
+        service: str,
+        domain: str | None,
+        cdx_page: int | None,
 ) -> None:
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.download.warc import WebArchiveWarcDownloader
@@ -138,8 +172,12 @@ def fetch_service(
 )
 @_data_directory_option()
 @_service_name_argument()
-def fetch_service(
+@_domain_argument()
+@_cdx_page_argument()
+def archived_serps_command(
         data_directory: Path,
         service_name: str,
+        domain: str | None,
+        cdx_page: int | None,
 ) -> None:
     raise NotImplementedError()
