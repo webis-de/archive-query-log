@@ -42,7 +42,7 @@ The intermediate results from each step are stored in different formats.
 ### Services
 
 - all services are stored in a single YAML file:
-  `<DATADIR>/services.yaml`
+  [`data/services.yaml`](data/services.yaml)
 - one object per service, array containing all services
   - YAML format:
      ```yaml
@@ -91,8 +91,13 @@ The intermediate results from each step are stored in different formats.
 ### Archived URLs
 
 - archived URLs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-urls.jsonl.gz` (`<CDXPAGE>` is a 10-digit number with leading zeros)
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-urls.jsonl.gz`
+  - `<DATADIR>`: main data directory (e.g., `/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/`)
+  - `<SERVICENAME>`: name of the service
+  - `<DOMAIN>`: one of the domains of the service
+  - `<CDXPAGE>`: page number of the [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api) from which the URLs were originally fetched (10-digit number with leading zeros, e.g., `0000000001`)
 - one line per archived URL
+- lines are not ordered within one CDX page file path
 - JSONL format:
    ```json
    {
@@ -105,8 +110,13 @@ The intermediate results from each step are stored in different formats.
 ### Archived SERP URLs
 
 - archived SERP URLs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-urls.jsonl.gz` (`<CDXPAGE>` is a 10-digit number with leading zeros)
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-urls.jsonl.gz`
+  - `<DATADIR>`: main data directory (e.g., `/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/`)
+  - `<SERVICENAME>`: name of the service
+  - `<DOMAIN>`: one of the domains of the service
+  - `<CDXPAGE>`: page number of the [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api) from which the URLs were originally fetched (10-digit number with leading zeros, e.g., `0000000001`)
 - one line per archived URL
+- lines are not ordered within one CDX page file path
 - JSONL format:
    ```json
    {
@@ -121,11 +131,15 @@ The intermediate results from each step are stored in different formats.
 
 ### Archived SERP contents
 
-- archived SERP contents are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-contents/` (`<CDXPAGE>` is a 10-digit number with leading zeros)
-- contents are stored in 1GB-sized WARC file chunks
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-contents/<CHUNK>.warc.gz` (`<CHUNK>` is a 10-digit number with leading zeros)
+- archived SERP contents are stored as 1GB-sized WARC chunk files in subdirectories based on the service name, domain, and CDX page:
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-contents/<WARCCHUNK>.warc.gz`
+  - `<DATADIR>`: main data directory (e.g., `/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/`)
+  - `<SERVICENAME>`: name of the service
+  - `<DOMAIN>`: one of the domains of the service
+  - `<CDXPAGE>`: page number of the [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api) from which the URLs were originally fetched (10-digit number with leading zeros, e.g., `0000000001`)
+  - `<WARCCHUNK>`: chunk number of WARC chunk files (10-digit number with leading zeros, e.g., `0000000001`; WARCs are "filled" sequentially, i.e., the first `0000000001`)
 - one WARC request and one WARC response per archived URL
+- WARC records are not ordered within and across chunks, but WARC request and response are kept together
 - additional WARC header `Archived-URL` (for request and response) with the archived URL in JSONL format:
    ```json
    {
@@ -142,8 +156,13 @@ The intermediate results from each step are stored in different formats.
 ### Archived SERPs
 
 - archived SERPs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp.jsonl.gz` (`<CDXPAGE>` is a 10-digit number with leading zeros)
+  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp.jsonl.gz`
+  - `<DATADIR>`: main data directory (e.g., `/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/`)
+  - `<SERVICENAME>`: name of the service
+  - `<DOMAIN>`: one of the domains of the service
+  - `<CDXPAGE>`: page number of the [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api) from which the URLs were originally fetched (10-digit number with leading zeros, e.g., `0000000001`)
 - one line per search engine result page (SERP)
+- lines are not ordered within one CDX page file path
 - JSONL format:
    ```json
    {
