@@ -1,4 +1,4 @@
-# 📜 internet-archive-query-log
+# 📜 Web Archive Query and Search Logs
 
 Scrape real-life query logs from archived search engine result pages (SERPs) on the Internet Archive.
 
