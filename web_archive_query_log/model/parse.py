@@ -2,8 +2,8 @@ from typing import Sequence, Protocol, runtime_checkable, Any, Mapping, Union
 
 from marshmallow.fields import Field
 
-from web_archive_query_log.model import ArchivedUrl, SearchResult, \
-    ArchivedSerpContent
+from web_archive_query_log.model import ArchivedUrl, ArchivedSerpResult, \
+    ArchivedRawSerp
 
 
 @runtime_checkable
@@ -26,7 +26,7 @@ class OffsetParser(Protocol):
 
 @runtime_checkable
 class InterpretedQueryParser(Protocol):
-    def parse(self, content: "ArchivedSerpContent") -> str | None:
+    def parse(self, content: "ArchivedRawSerp") -> str | None:
         ...
 
 
@@ -34,8 +34,8 @@ class InterpretedQueryParser(Protocol):
 class ResultsParser(Protocol):
     def parse(
             self,
-            content: "ArchivedSerpContent",
-    ) -> Sequence["SearchResult"] | None:
+            content: "ArchivedRawSerp",
+    ) -> Sequence["ArchivedSerpResult"] | None:
         ...
 
 

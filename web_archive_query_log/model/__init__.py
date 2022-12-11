@@ -16,8 +16,8 @@ class ArchivedUrl(DataClassJsonMixin):
     The archived snapshot can be retrieved using the ``archive_url``
     and ``raw_archive_url`` properties.
 
-    Output of: service URLs
-    Input of: query extraction
+    Output of: 2-archived-urls
+    Input of: 3-archived-query-urls
     """
 
     url: str
@@ -83,12 +83,12 @@ class ArchivedUrl(DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class ArchivedSerpUrl(ArchivedUrl, DataClassJsonMixin):
+class ArchivedQueryUrl(ArchivedUrl, DataClassJsonMixin):
     """
     Archived URL of a search engine result page (SERP) for a query.
 
-    Output of: query extraction
-    Input of: SERPs download
+    Output of: 3-archived-query-urls
+    Input of: 4-archived-raw-serps, 8-ir-corpus
     """
 
     query: str
@@ -116,12 +116,12 @@ class ArchivedSerpUrl(ArchivedUrl, DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class ArchivedSerpContent(ArchivedSerpUrl, DataClassJsonMixin):
+class ArchivedRawSerp(ArchivedQueryUrl, DataClassJsonMixin):
     """
     Snapshot content of an archived SERP.
 
-    Output of: SERPs download
-    Input of: SERP parsing
+    Output of: 4-archived-raw-serps
+    Input of: 5-archived-parsed-serps
     """
 
     content: bytes
@@ -135,7 +135,7 @@ class ArchivedSerpContent(ArchivedSerpUrl, DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class SearchResult(DataClassJsonMixin):
+class ArchivedSerpResult(DataClassJsonMixin):
     """
     Single retrieved result from a query's archived SERP.
     """
@@ -151,24 +151,24 @@ class SearchResult(DataClassJsonMixin):
     snippet: str | None
     """
     Snippet of the result.
-    Highlighting should be normalized to ``<em>`` tags.
-    Other HTML tags must be removed.
+    Highlighting is normalized to ``<em>`` tags. Other HTML tags are removed.
     """
 
 
 @dataclass(frozen=True, slots=True)
-class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
+class ArchivedParsedSerp(ArchivedQueryUrl, DataClassJsonMixin):
     """
     Archived search engine result page (SERP) corresponding to a query.
 
-    Output of: SERP parsing
+    Output of: 5-archived-parsed-serps
+    Input of: 6-archived-raw-search-results, 8-ir-corpus
     """
 
-    results: Sequence[SearchResult] = field(
+    results: Sequence[ArchivedSerpResult] = field(
         metadata=config(
             encoder=list,
             decoder=tuple,
-            mm_field=List(Nested(SearchResult.schema()))
+            mm_field=List(Nested(ArchivedSerpResult.schema()))
         )
     )
     """
@@ -181,6 +181,47 @@ class ArchivedSerp(ArchivedSerpUrl, DataClassJsonMixin):
     Note: the interpreted result query can be different from the original query 
     due to spelling correction etc.
     """
+
+
+@dataclass(frozen=True, slots=True)
+class ArchivedRawSearchResult(ArchivedUrl, DataClassJsonMixin):
+    """
+    Raw content of an archived search result.
+
+    Output of: 6-archived-raw-search-results
+    Input of: 7-archived-parsed-search-results
+    """
+
+    content: bytes
+    """
+    Raw byte content of the archived SERP's snapshot.
+    """
+    encoding: str
+    """
+    Encoding of the archived SERP's snapshot.
+    """
+
+    serp_title: str
+    """
+    Title of the result as it appeared on the SERP.
+    """
+    snippet: str | None
+    """
+    Snippet of the result as it appeared on the SERP.
+    Highlighting is normalized to ``<em>`` tags. Other HTML tags are removed.
+    """
+
+
+@dataclass(frozen=True, slots=True)
+class ArchivedParsedSearchResult(ArchivedUrl, DataClassJsonMixin):
+    """
+    Parsed representation of an archived search result.
+
+    Output of: 7-archived-parsed-search-results
+    Input of: 8-ir-corpus
+    """
+    # TODO
+    pass
 
 
 # noinspection PyPep8

@@ -7,7 +7,7 @@ from urllib.parse import parse_qsl, unquote
 
 from tqdm.auto import tqdm
 
-from web_archive_query_log.model import ArchivedSerpUrl, \
+from web_archive_query_log.model import ArchivedQueryUrl, \
     ArchivedUrl, PageParser, QueryParser, OffsetParser, Service
 from web_archive_query_log.urls.iterable import ArchivedUrls
 
@@ -77,7 +77,7 @@ class _CdxPage(NamedTuple):
 
 
 @dataclass(frozen=True)
-class ArchivedSerpUrlsParser:
+class ArchivedQueryUrlParser:
     query_parsers: Sequence[QueryParser]
     page_parsers: Sequence[PageParser]
     offset_parsers: Sequence[OffsetParser]
@@ -104,7 +104,7 @@ class ArchivedSerpUrlsParser:
             for archived_serp_url in archived_serp_urls
             if archived_serp_url is not None
         )
-        output_schema = ArchivedSerpUrl.schema()
+        output_schema = ArchivedQueryUrl.schema()
         # noinspection PyTypeChecker
         with output_path.open("wb") as file, \
                 GzipFile(fileobj=file, mode="wb") as gzip_file, \
@@ -116,7 +116,7 @@ class ArchivedSerpUrlsParser:
     def _parse_single(
             self,
             archived_url: ArchivedUrl
-    ) -> ArchivedSerpUrl | None:
+    ) -> ArchivedQueryUrl | None:
         query: str | None = None
         for parser in self.query_parsers:
             query = parser.parse(archived_url)
@@ -138,7 +138,7 @@ class ArchivedSerpUrlsParser:
             if offset is not None:
                 break
 
-        return ArchivedSerpUrl(
+        return ArchivedQueryUrl(
             url=archived_url.url,
             timestamp=archived_url.timestamp,
             query=query,

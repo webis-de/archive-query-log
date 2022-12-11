@@ -8,18 +8,18 @@ from fastwarc import GZipStream, FileStream, ArchiveIterator, WarcRecordType, \
 from fastwarc.stream_io import IOStream
 from marshmallow import Schema
 
-from web_archive_query_log.model import ArchivedSerpUrl, ArchivedSerpContent
+from web_archive_query_log.model import ArchivedQueryUrl, ArchivedRawSerp
 
 
 @dataclass(frozen=True)
-class ArchivedSerpContents(Sized, Iterable[ArchivedSerpContent]):
+class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
     """
-    Read archived SERP contents from a directory of WARC files.
+    Read archived raw SERP contents from a directory of WARC files.
     """
 
     path: Path
     """
-    Path where the SERP contents are stored in WARC format.
+    Path where the raw SERP contents are stored in WARC format.
     """
 
     def __post_init__(self):
@@ -49,25 +49,27 @@ class ArchivedSerpContents(Sized, Iterable[ArchivedSerpContent]):
 
     @cached_property
     def _archived_serp_url_schema(self) -> Schema:
-        return ArchivedSerpUrl.schema()
+        return ArchivedQueryUrl.schema()
 
-    def _read_serp_content(self, record: WarcRecord) -> ArchivedSerpContent:
+    def _read_serp_content(self, record: WarcRecord) -> ArchivedRawSerp:
+        archived_serp_url: ArchivedQueryUrl
         archived_serp_url = self._archived_serp_url_schema.loads(
             record.headers["Archived-URL"]
         )
         content_type = record.http_charset
         if content_type is None:
             content_type = "utf8"
-        return ArchivedSerpContent(
+        return ArchivedRawSerp(
             url=archived_serp_url.url,
             timestamp=archived_serp_url.timestamp,
             query=archived_serp_url.query,
-            page_num=archived_serp_url.page_num,
+            page=archived_serp_url.page,
+            offset=archived_serp_url.offset,
             content=record.reader.read(),
             encoding=content_type,
         )
 
-    def __iter__(self) -> Iterator[ArchivedSerpContent]:
+    def __iter__(self) -> Iterator[ArchivedRawSerp]:
         for stream in self._streams():
             for record in ArchiveIterator(
                     stream,

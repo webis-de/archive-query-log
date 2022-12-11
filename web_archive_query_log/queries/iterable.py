@@ -4,19 +4,19 @@ from io import TextIOWrapper
 from pathlib import Path
 from typing import Sized, Iterable, Iterator, IO
 
-from web_archive_query_log.model import ArchivedSerpUrl
+from web_archive_query_log.model import ArchivedQueryUrl
 from web_archive_query_log.util.text import count_lines
 
 
 @dataclass(frozen=True)
-class ArchivedSerpUrls(Sized, Iterable[ArchivedSerpUrl]):
+class ArchivedQueryUrls(Sized, Iterable[ArchivedQueryUrl]):
     """
-    Read archived SERP URLs (with queries) from a JSONL file.
+    Read archived query URLs from a JSONL file.
     """
 
     path: Path
     """
-    Path where the SERP URLs are stored in JSONL format.
+    Path where the query URLs are stored in JSONL format.
     """
 
     def __post_init__(self):
@@ -34,8 +34,8 @@ class ArchivedSerpUrls(Sized, Iterable[ArchivedSerpUrl]):
                 gzip_file: IO[bytes]
                 return count_lines(gzip_file)
 
-    def __iter__(self) -> Iterator[ArchivedSerpUrl]:
-        schema = ArchivedSerpUrl.schema()
+    def __iter__(self) -> Iterator[ArchivedQueryUrl]:
+        schema = ArchivedQueryUrl.schema()
         with self.path.open("rb") as file:
             with GzipFile(fileobj=file, mode="rb") as gzip_file:
                 gzip_file: IO[bytes]

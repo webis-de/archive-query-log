@@ -88,23 +88,23 @@ def archived_urls_command(
 
 
 @service_group.command(
-    "archived-serp-urls",
+    "archived-query-urls",
     help="Parse queries from fetched archived URLs.",
 )
 @_data_directory_option()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
-def archived_serp_urls_command(
+def archived_query_urls_command(
         data_directory: Path,
         service: str,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
     from web_archive_query_log.config import SERVICES
-    from web_archive_query_log.queries.parse import ArchivedSerpUrlsParser
+    from web_archive_query_log.queries.parse import ArchivedQueryUrlParser
     service_config = SERVICES[service]
-    parser = ArchivedSerpUrlsParser(
+    parser = ArchivedQueryUrlParser(
         query_parsers=service_config.query_parsers,
         page_parsers=service_config.page_parsers,
         offset_parsers=service_config.offset_parsers,
@@ -118,14 +118,14 @@ def archived_serp_urls_command(
 
 
 @service_group.command(
-    "archived-serp-contents",
-    help="Download SERP contents (as WARC files) for parsed queries.",
+    "archived-raw-serps",
+    help="Download raw SERP contents (as WARC files) for parsed queries.",
 )
 @_data_directory_option()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
-def archived_serp_contents_command(
+def archived_raw_serps_command(
         data_directory: Path,
         service: str,
         domain: str | None,
@@ -144,14 +144,14 @@ def archived_serp_contents_command(
 
 
 @service_group.command(
-    "archived-serps",
-    help="Parse SERP results from SERP contents.",
+    "archived-parsed-serps",
+    help="Parse SERP results from raw SERPs.",
 )
 @_data_directory_option()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
-def archived_serps_command(
+def archived_parsed_serps_command(
         data_directory: Path,
         service_name: str,
         domain: str | None,

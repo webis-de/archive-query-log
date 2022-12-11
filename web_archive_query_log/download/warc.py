@@ -12,7 +12,7 @@ from tqdm.auto import tqdm
 from warcio import WARCWriter, StatusAndHeaders
 
 from web_archive_query_log.model import ArchivedUrl, Service
-from web_archive_query_log.queries.iterable import ArchivedSerpUrls
+from web_archive_query_log.queries.iterable import ArchivedQueryUrls
 from web_archive_query_log.util.archive_http import archive_http_client
 from web_archive_query_log.util.iterable import SizedIterable
 
@@ -291,5 +291,5 @@ class WebArchiveWarcDownloader:
             )
 
         for page in pages:
-            archived_urls = ArchivedSerpUrls(page.input_path)
+            archived_urls = ArchivedQueryUrls(page.input_path)
             await self.download(page.output_path, archived_urls)

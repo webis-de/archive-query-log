@@ -8,9 +8,9 @@ from bleach import clean
 from bs4 import Tag, BeautifulSoup
 from tqdm.auto import tqdm
 
-from web_archive_query_log.download.iterable import ArchivedSerpContents
-from web_archive_query_log.model import ArchivedSerpContent, SearchResult, \
-    ResultsParser, InterpretedQueryParser, ArchivedSerp
+from web_archive_query_log.download.iterable import ArchivedRawSerps
+from web_archive_query_log.model import ArchivedRawSerp, ArchivedSerpResult, \
+    ResultsParser, InterpretedQueryParser, ArchivedParsedSerp
 
 
 class BingResultsParser(ResultsParser):
@@ -30,7 +30,7 @@ class BingResultsParser(ResultsParser):
             self,
             content: bytes,
             encoding: str,
-    ) -> Iterator[SearchResult]:
+    ) -> Iterator[ArchivedSerpResult]:
         soup = BeautifulSoup(content, "html.parser", from_encoding=encoding)
         results: Tag = soup.find("ol", id="b_results")
         if results is None:
@@ -39,7 +39,7 @@ class BingResultsParser(ResultsParser):
         for result in results.find_all("li", class_="b_algo"):
             title: Tag = result.find("h2")
             caption: Tag | None = result.find("p")
-            yield SearchResult(
+            yield ArchivedSerpResult(
                 url=title.find("a").attrs["href"],
                 title=self._clean_html(title),
                 snippet=(
@@ -50,8 +50,8 @@ class BingResultsParser(ResultsParser):
 
     def _parse_results(
             self,
-            content: ArchivedSerpContent,
-    ) -> Sequence[SearchResult] | None:
+            content: ArchivedRawSerp,
+    ) -> Sequence[ArchivedSerpResult] | None:
         domain_parts = content.split_url.netloc.split(".")
         if "bing" not in domain_parts:
             # bing.*/*
@@ -60,13 +60,13 @@ class BingResultsParser(ResultsParser):
 
 
 @dataclass(frozen=True)
-class ArchivedSerpsParser:
+class ArchivedParsedSerpParser:
     results_parsers: Sequence[ResultsParser]
     result_query_parsers: Sequence[InterpretedQueryParser]
     verbose: bool = False
 
     def parse(self, input_path: Path, output_path: Path) -> None:
-        archived_serp_contents = ArchivedSerpContents(input_path)
+        archived_serp_contents = ArchivedRawSerps(input_path)
         if self.verbose:
             archived_serp_contents = tqdm(
                 archived_serp_contents,
@@ -82,7 +82,7 @@ class ArchivedSerpsParser:
             for archived_serp in archived_serps
             if archived_serp is not None
         )
-        output_schema = ArchivedSerp.schema()
+        output_schema = ArchivedParsedSerp.schema()
         # noinspection PyTypeChecker
         with output_path.open("wb") as file, \
                 GzipFile(fileobj=file, mode="wb") as gzip_file, \
@@ -93,9 +93,9 @@ class ArchivedSerpsParser:
 
     def _parse_single(
             self,
-            archived_serp_content: ArchivedSerpContent
-    ) -> ArchivedSerp | None:
-        results: Sequence[SearchResult] | None = None
+            archived_serp_content: ArchivedRawSerp
+    ) -> ArchivedParsedSerp | None:
+        results: Sequence[ArchivedSerpResult] | None = None
         for parser in self.results_parsers:
             results = parser.parse(archived_serp_content)
             if results is not None:
@@ -110,7 +110,7 @@ class ArchivedSerpsParser:
             if interpreted_query is not None:
                 break
 
-        return ArchivedSerp(
+        return ArchivedParsedSerp(
             url=archived_serp_content.url,
             timestamp=archived_serp_content.timestamp,
             query=archived_serp_content.query,
