@@ -8,8 +8,8 @@ from web_archive_query_log.cli import main
 from web_archive_query_log.cli.util import PathParam, ServiceChoice
 
 
-@main.group("service")
-def service_group():
+@main.group("make")
+def make_group():
     pass
 
 
@@ -53,7 +53,7 @@ def _cdx_page_argument():
     )
 
 
-@service_group.command(
+@make_group.command(
     "archived-urls",
     help="Fetch archived URLs from the Wayback Machine's CDX API.",
 )
@@ -87,7 +87,7 @@ def archived_urls_command(
     ))
 
 
-@service_group.command(
+@make_group.command(
     "archived-query-urls",
     help="Parse queries from fetched archived URLs.",
 )
@@ -117,7 +117,7 @@ def archived_query_urls_command(
     )
 
 
-@service_group.command(
+@make_group.command(
     "archived-raw-serps",
     help="Download raw SERP contents (as WARC files) for parsed queries.",
 )
@@ -143,7 +143,7 @@ def archived_raw_serps_command(
     ))
 
 
-@service_group.command(
+@make_group.command(
     "archived-parsed-serps",
     help="Parse SERP results from raw SERPs.",
 )
@@ -154,6 +154,41 @@ def archived_raw_serps_command(
 def archived_parsed_serps_command(
         data_directory: Path,
         service_name: str,
+        domain: str | None,
+        cdx_page: int | None,
+) -> None:
+    raise NotImplementedError()
+
+
+@make_group.command(
+    "archived-raw-search-results",
+    help="Download raw search result contents (as WARC files) "
+         "for parsed SERPs.",
+)
+@_data_directory_option()
+@_service_name_argument()
+@_domain_argument()
+@_cdx_page_argument()
+def archived_raw_serps_command(
+        data_directory: Path,
+        service: str,
+        domain: str | None,
+        cdx_page: int | None,
+) -> None:
+    raise NotImplementedError()
+
+
+@make_group.command(
+    "archived-parsed-search-results",
+    help="Parse search results from raw search result contents.",
+)
+@_data_directory_option()
+@_service_name_argument()
+@_domain_argument()
+@_cdx_page_argument()
+def archived_parsed_serps_command(
+        data_directory: Path,
+        service: str,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:

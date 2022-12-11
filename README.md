@@ -39,13 +39,13 @@ If you want to learn more about each step here are some more detailed guides:
 
 Let's start with a small example and construct a query log for the [ChatNoir](https://chatnoir.eu) search engine:
 
-1. `python -m web_archive_query_log service archived-urls chatnoir`
-2. `python -m web_archive_query_log service archived-query-urls chatnoir`
-3. `python -m web_archive_query_log service archived-raw-serps chatnoir`
-4. `python -m web_archive_query_log service archived-parsed-serps chatnoir`
-5. `python -m web_archive_query_log service archived-raw-search-results chatnoir`
-6. `python -m web_archive_query_log service archived-parsed-search-results chatnoir`
-7. `python -m web_archive_query_log service ir-corpus chatnoir`
+1. `python -m web_archive_query_log make archived-urls chatnoir`
+2. `python -m web_archive_query_log make archived-query-urls chatnoir`
+3. `python -m web_archive_query_log make archived-raw-serps chatnoir`
+4. `python -m web_archive_query_log make archived-parsed-serps chatnoir`
+5. `python -m web_archive_query_log make archived-raw-search-results chatnoir`
+6. `python -m web_archive_query_log make archived-parsed-search-results chatnoir`
+7. `python -m web_archive_query_log make ir-corpus chatnoir`
 
 Got the idea? Now you're ready to scrape your own query logs!
 To scale things up and understand the data, just keep on reading.
@@ -111,7 +111,7 @@ You can run this step with the following command line, where `<SERVICENAME>` is 
 you want to fetch archived URLs from:
 
 ```shell:
-python -m web_archive_query_log service archived-urls <SERVICENAME>
+python -m web_archive_query_log make archived-urls <SERVICENAME>
 ```
 
 This will create multiple files in the `archived-urls` subdirectory
@@ -150,7 +150,7 @@ You can run this step with the following command line, where `<SERVICENAME>` is 
 you want to parse query URLs from:
 
 ```shell:
-python -m web_archive_query_log service archived-query-urls <SERVICENAME>
+python -m web_archive_query_log make archived-query-urls <SERVICENAME>
 ```
 
 This will create multiple files in the `archived-query-urls` subdirectory
@@ -195,7 +195,7 @@ You can run this step with the following command line, where `<SERVICENAME>` is 
 you want to download raw SERP HTML contents from:
 
 ```shell:
-python -m web_archive_query_log service archived-raw-serps <SERVICENAME>
+python -m web_archive_query_log make archived-raw-serps <SERVICENAME>
 ```
 
 This will create multiple files in the `archived-urls` subdirectory
@@ -245,7 +245,7 @@ You can run this step with the following command line, where `<SERVICENAME>` is 
 you want to parse SERPs from:
 
 ```shell:
-python -m web_archive_query_log service archived-parsed-serps <SERVICENAME>
+python -m web_archive_query_log make archived-parsed-serps <SERVICENAME>
 ```
 
 This will create multiple files in the `archived-serps` subdirectory
@@ -303,7 +303,7 @@ You can run this step with the following command line, where `<SERVICENAME>` is 
 you want to download search results from:
 
 ```shell:
-python -m web_archive_query_log service archived-raw-search-results <SERVICENAME>
+python -m web_archive_query_log make archived-raw-search-results <SERVICENAME>
 ```
 
 **TODO**
@@ -319,7 +319,7 @@ You can run this step with the following command line, where `<SERVICENAME>` is 
 you want to parse search results from:
 
 ```shell:
-python -m web_archive_query_log service archived-parsed-search-results <SERVICENAME>
+python -m web_archive_query_log make archived-parsed-search-results <SERVICENAME>
 ```
 
 **TODO**
@@ -342,7 +342,7 @@ You can change this with the `--data-directory` option, e.g.:
 ```bash
 
 ```shell
-python -m web_archive_query_log service archived-urls --data-directory /mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/
+python -m web_archive_query_log make archived-urls --data-directory /mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/
 ```
 
 ### Pro Tip: Limit Scraping for Testing
@@ -352,7 +352,7 @@ testing your settings on a smaller sample from that service can be helpful.
 You can specify a single domain to scrape from like this:
 
 ```shell
-python -m web_archive_query_log service archived-urls SERVICENAME DOMAIN
+python -m web_archive_query_log make archived-urls SERVICENAME DOMAIN
 ```
 
 If a domain is very popular and therefore has many archived URLs,
@@ -362,7 +362,7 @@ from the Wayback Machine's
 [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api):
 
 ```shell
-python -m web_archive_query_log service archived-urls SERVICENAME DOMAIN CDX_PAGE
+python -m web_archive_query_log make archived-urls SERVICENAME DOMAIN CDX_PAGE
 ```
 
 ## Contribute
