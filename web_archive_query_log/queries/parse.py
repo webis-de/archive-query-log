@@ -156,7 +156,10 @@ class ArchivedQueryUrlParser:
         """
         List all items that need to be downloaded.
         """
-        service_path = data_directory / service.name
+        input_format_path = data_directory / "archived-urls"
+        output_format_path = data_directory / "archived-query-urls"
+
+        service_path = input_format_path / service.name
 
         if domain is not None:
             domain_paths = [service_path / domain]
@@ -170,27 +173,28 @@ class ArchivedQueryUrlParser:
         if cdx_page is not None:
             assert domain is not None
             assert len(domain_paths) == 1
-            cdx_page_paths = [domain_paths[0] / f"{cdx_page:010}"]
+            cdx_page_paths = [domain_paths[0] / f"{cdx_page:010}.jsonl.gz"]
         else:
             cdx_page_paths = [
                 path
                 for domain_path in domain_paths
                 for path in domain_path.iterdir()
                 if (
-                        path.is_dir() and
-                        path.name.isdigit() and
-                        len(path.name) == 10
+                        path.is_file() and
+                        len(path.name.removesuffix(".jsonl.gz")) == 10 and
+                        path.name.removesuffix(".jsonl.gz").isdigit()
                 )
             ]
 
-        pages = (
+        return [
             _CdxPage(
-                input_path=cdx_page_path / "archived-urls.jsonl.gz",
-                output_path=cdx_page_path / "archived-serp-urls.jsonl.gz",
+                input_path=cdx_page_path,
+                output_path=output_format_path / cdx_page_path.relative_to(
+                    input_format_path
+                ),
             )
             for cdx_page_path in cdx_page_paths
-        )
-        return [page for page in pages if page.input_path.exists()]
+        ]
 
     def parse_service(
             self,

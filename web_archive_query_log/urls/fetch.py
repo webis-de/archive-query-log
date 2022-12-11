@@ -104,7 +104,6 @@ class ArchivedUrlsFetcher:
         if page.path.exists() and not self.overwrite:
             progress.update()
             return
-        page.path.parent.mkdir(parents=True, exist_ok=True)
         params = [
             *self._params(page.url),
             ("page", page.page),
@@ -119,6 +118,7 @@ class ArchivedUrlsFetcher:
                     text.splitlines(keepends=False),
                     schema,
                 )
+                page.path.parent.mkdir(parents=True, exist_ok=True)
                 # noinspection PyTypeChecker
                 with page.path.open("wb") as file, \
                         GzipFile(fileobj=file, mode="wb") as gzip_file, \
@@ -154,12 +154,13 @@ class ArchivedUrlsFetcher:
         """
         if cdx_page is not None:
             assert domain is not None
-            service_path = data_directory / service.name
+            output_format_path = data_directory / "archived-urls"
+            service_path = output_format_path / service.name
             domain_path = service_path / domain
-            cdx_page_path = domain_path / f"{cdx_page:010}"
+            cdx_page_path = domain_path / f"{cdx_page:010}.jsonl.gz"
             return [
                 _CdxPage(
-                    path=cdx_page_path / "archived-urls.jsonl.gz",
+                    path=cdx_page_path,
                     url=domain,
                     page=cdx_page,
                 )
@@ -214,7 +215,7 @@ class ArchivedUrlsFetcher:
             cdx_page: int | None = None,
     ):
         async with archive_http_client(limit=5) as client:
-            pages = await  self._service_pages(
+            pages = await self._service_pages(
                 data_directory,
                 service,
                 domain,
