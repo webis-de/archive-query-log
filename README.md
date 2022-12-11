@@ -1,12 +1,13 @@
 # 📜 Web Archive Query and Search Logs
 
-Scrape real-life query logs from archived search engine result pages (SERPs) on the Internet Archive.
+Scrape real-life query logs from archived query URLs and search engine result pages (SERPs) on the Internet Archive.
+
+[Start now](#tldr) by scraping your own query log [here](#tldr).
 
 ## Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
-- [Architecture and Formats](#architecture-and-formats)
+- [Usage](#tldr)
 - [Contribute](#contribute)
 
 ## Installation
@@ -21,188 +22,367 @@ Scrape real-life query logs from archived search engine result pages (SERPs) on 
 
 ## Usage
 
-1. Collect services. (#1-service-collection)
-2. Collect service domains. (#2-service-domains)
-3. Collect archived service URLs. (#3-service-urls)  
-   `python -m web_archive_query_log service archived-urls SERVICENAME [DOMAIN [CDX_PAGE]]`
-4. Filter archived service URLs and identify URLs with query data. (#4-service-urls)
-5. Parse queries and SERP URLs from service URLs. (#5-url-query-extraction)  
-   `python -m web_archive_query_log service archived-serp-urls SERVICENAME [DOMAIN [CDX_PAGE]]`
-6. Download archived SERP contents. (#6-serps-download)  
-   `python -m web_archive_query_log service archived-serp-contents SERVICENAME [DOMAIN [CDX_PAGE]]`
-7. Parse downloaded SERPs. (#7-serps-parsing)  
-   `python -m web_archive_query_log service archived-serps SERVICENAME [DOMAIN [CDX_PAGE]]` (not fully implemented)
-8. Download archived documents linked from SERPs, if available. (#8-results-download)
-   `python -m web_archive_query_log service archived-serp-results-contents SERVICENAME [DOMAIN [CDX_PAGE]]` (not yet implemented)
-9. Build IR test collection. (#9-corpus construction)
+To quickly scrape a sample query log, jump to the [TL;DR](#tldr).
 
-## Architecture and Formats
+If you want to learn more about each step here are some more detailed guides:
 
-The intermediate results from each step are stored in different formats.
+1. [Select services](#1-selected-services)
+2. [Fetch archived URLs](#2-archived-urls)
+3. [Parse archived query URLs](#3-archived-query-urls)
+4. [Download archived raw SERPs](#4-archived-raw-serps)
+5. [Parse archived SERPs](#5-archived-parsed-serps)
+6. [Download archived raw search results](#6-archived-raw-search-results)
+7. [Parse archived search results](#7-archived-parsed-search-results)
+8. [Construct IR corpus](#8-ir-corpus)
 
-### 1 Archived Services
+### TL;DR
 
-- all services are stored in a single YAML file:
-  [`data/services.yaml`](data/services.yaml)
-- one object per service, array containing all services
-  - YAML format:
-     ```yaml
-     - name: string               # service name (alexa_domain - alexa_public_suffix)
-       public_suffix: string      # public suffix (https://publicsuffix.org/) of alexa_domain
-       alexa_domain: string       # domain as it appears in Alexa top-1M ranks
-       alexa_rank: int            # rank from fused Alexa top-1M rankings
-       category: string           # manual annotation
-       notes: string              # manual annotation
-       input_field: bool          # manual annotation
-       search_form: bool          # manual annotation
-       search_div: bool           # manual annotation
-       domains:                   # known domains of service (including the main domain)
-       - string
-       - string
-       - ...
-       query_parsers:             # query parsers in order of precedence
-       - pattern: regex
-         type: query_parameter    # for URLs like https://example.com/search?q=foo
-         parameter: string
-       - pattern: regex
-         type: fragment_parameter # for URLs like https://example.com/search#q=foo
-         parameter: string
-       - pattern: regex
-         type: query_parameter    # for URLs like https://example.com/search/foo
-         path_prefix: string
-       - ...
-       page_parsers:              # page number parsers in order of precedence
-       - pattern: regex
-         type: query_parameter    # for URLs like https://example.com/search?page=2
-         parameter: string
-       - ...
-       offset_parsers:            # page offset parsers in order of precedence
-       - pattern: regex
-         type: query_parameter    # for URLs like https://example.com/search?start=11
-         parameter: string
-       - ...
-       interpreted_query_parsers: # interpreted query parsers in order of precedence
-       - ...
-       results_parsers:           # search result and snippet parsers in order of precedence
-       - ...
-     - ...
-     ```
-- Python data class: `Service`
+Let's start with a small example and construct a query log for the [ChatNoir](https://chatnoir.eu) search engine:
 
-### 2 Archived Serice Domains
+1. `python -m web_archive_query_log service archived-urls chatnoir`
+2. `python -m web_archive_query_log service archived-query-urls chatnoir`
+3. `python -m web_archive_query_log service archived-raw-serps chatnoir`
+4. `python -m web_archive_query_log service archived-parsed-serps chatnoir`
+5. `python -m web_archive_query_log service archived-raw-search-results chatnoir`
+6. `python -m web_archive_query_log service archived-parsed-search-results chatnoir`
+7. `python -m web_archive_query_log service ir-corpus chatnoir`
 
-### 3 Archived Service URLs
+Got the idea? Now you're ready to scrape your own query logs!
+To scale things up and understand the data, just keep on reading.
+For more details on how to add more services, see [below](#contribute).
 
-- archived URLs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-urls.jsonl.gz`
-  - `<DATADIR>`: main data directory (e.g., `/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/`)
-  - `<SERVICENAME>`: name of the service
-  - `<DOMAIN>`: one of the domains of the service
-  - `<CDXPAGE>`: page number of the [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api) from which the URLs were originally fetched (10-digit number with leading zeros, e.g., `0000000001`)
-- one line per archived URL
-- lines are not ordered within one CDX page file path
-- JSONL format:
-   ```json
-   {
-     "url": "string",   // archived URL
-     "timestamp": "int" // archive timestamp as POSIX integer
-   }
-   ```
-- Python data class: `ArchivedUrl`
+### 1. Selected Services
 
-### 3 Archived Query URLs
+Manually or semi-automatically collect a list of services that you would like to scrape query logs from.
 
-- archived SERP URLs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-urls.jsonl.gz`
-  - `<DATADIR>`: main data directory (e.g., `/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/`)
-  - `<SERVICENAME>`: name of the service
-  - `<DOMAIN>`: one of the domains of the service
-  - `<CDXPAGE>`: page number of the [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api) from which the URLs were originally fetched (10-digit number with leading zeros, e.g., `0000000001`)
-- one line per archived URL
-- lines are not ordered within one CDX page file path
-- JSONL format:
-   ```json
-   {
-     "url": "string",    // archived URL
-     "timestamp": "int", // archive timestamp as POSIX integer
-     "query": "string",  // parsed query
-     "page": "int",      // result page number (optional)
-     "offset": "int"     // result page offset (optional)
-   }
-   ```
-- Python data class: `ArchivedSerpUrl`
+The list of services should be stored in a single [YAML][yaml-spec] file
+at [`data/selected-services.yaml`](data/selected-services.yaml) and contains one entry per service, like shown below:
 
-### 4 Archived Queries
+```yaml
+- name: string               # service name (alexa_domain - alexa_public_suffix)
+  public_suffix: string      # public suffix (https://publicsuffix.org/) of alexa_domain
+  alexa_domain: string       # domain as it appears in Alexa top-1M ranks
+  alexa_rank: int            # rank from fused Alexa top-1M rankings
+  category: string           # manual annotation
+  notes: string              # manual annotation
+  input_field: bool          # manual annotation
+  search_form: bool          # manual annotation
+  search_div: bool           # manual annotation
+  domains: # known domains of service (including the main domain)
+    - string
+    - string
+    - ...
+  query_parsers: # query parsers in order of precedence
+    - pattern: regex
+      type: query_parameter    # for URLs like https://example.com/search?q=foo
+      parameter: string
+    - pattern: regex
+      type: fragment_parameter # for URLs like https://example.com/search#q=foo
+      parameter: string
+    - pattern: regex
+      type: query_parameter    # for URLs like https://example.com/search/foo
+      path_prefix: string
+    - ...
+  page_parsers: # page number parsers in order of precedence
+    - pattern: regex
+      type: query_parameter    # for URLs like https://example.com/search?page=2
+      parameter: string
+    - ...
+  offset_parsers: # page offset parsers in order of precedence
+    - pattern: regex
+      type: query_parameter    # for URLs like https://example.com/search?start=11
+      parameter: string
+    - ...
+  interpreted_query_parsers: # interpreted query parsers in order of precedence
+    - ...
+  results_parsers: # search result and snippet parsers in order of precedence
+    - ...
+- ...
+```
 
-### 5 Archived Raw SERPs
+In the source code, a selected service corresponds
+to the Python class [`SelectedService`](web_archive_query_log/model/__init__.py).
 
-- archived SERP contents are stored as 1GB-sized WARC chunk files in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp-contents/<WARCCHUNK>.warc.gz`
-  - `<DATADIR>`: main data directory (e.g., `/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/`)
-  - `<SERVICENAME>`: name of the service
-  - `<DOMAIN>`: one of the domains of the service
-  - `<CDXPAGE>`: page number of the [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api) from which the URLs were originally fetched (10-digit number with leading zeros, e.g., `0000000001`)
-  - `<WARCCHUNK>`: chunk number of WARC chunk files (10-digit number with leading zeros, e.g., `0000000001`; WARCs are "filled" sequentially, i.e., the first `0000000001`)
-- one WARC request and one WARC response per archived URL
-- WARC records are not ordered within and across chunks, but WARC request and response are kept together
-- additional WARC header `Archived-URL` (for request and response) with the archived URL in JSONL format:
-   ```json
-   {
-     "url": "string",    // archived URL
-     "timestamp": "int", // archive timestamp as POSIX integer
-     "query": "string",  // parsed query
-     "page": "int",      // result page number (optional)
-     "offset": "int"     // result page offset (optional)
-   }
-   ```
-  (same format as in previous step)
-- Python data class: `ArchivedSerpContent` (roughly)
+### 2. Archived URLs
 
-### 7 Archived Parsed SERPs
+Fetch all archived URLs for a service from the Internet Archive's Wayback Machine.
 
-- archived SERPs are stored in subdirectories based on the service name, domain, and CDX page:
-  `<DATADIR>/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/archived-serp.jsonl.gz`
-  - `<DATADIR>`: main data directory (e.g., `/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/`)
-  - `<SERVICENAME>`: name of the service
-  - `<DOMAIN>`: one of the domains of the service
-  - `<CDXPAGE>`: page number of the [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api) from which the URLs were originally fetched (10-digit number with leading zeros, e.g., `0000000001`)
-- one line per search engine result page (SERP)
-- lines are not ordered within one CDX page file path
-- JSONL format:
-   ```json
-   {
-     "url": "string",               // archived URL
-     "timestamp": "int",            // archive timestamp as POSIX integer
-     "query": "string",             // parsed query
-     "page": "int",                 // result page number (optional)
-     "offset": "int",               // result page offset (optional)
-     "interpreted_query": "string", // query displayed on the SERP (e.g. with spelling correction; optional)
-     "results": [
-       {
-         "url": "string",           // URL of the result
-         "title": "string",         // title of the result
-         "snippet": "string"        // snippet of the result (highlighting normalized to <em>)
-       },
-       ...
-     ]
-   }
-   ```
-- Python data class: `ArchivedSerp` with `SearchResult`
+You can run this step with the following command line, where `<SERVICENAME>` is the name of the service
+you want to fetch archived URLs from:
 
-### 8 Archived Raw Search Results
+```shell:
+python -m web_archive_query_log service archived-urls <SERVICENAME>
+```
 
-### 9 Archived Parsed Search Results
+This will create multiple files in the `archived-urls` subdirectory
+under the [data directory](#pro-tip--specify-a-custom-data-directory),
+based on the service name (`<SERVICENAME>`), domain (`<DOMAIN>`),
+and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`)
+from which the URLs were originally fetched:
+
+```
+<DATADIR>/archived-urls/<SERVICENAME>/<DOMAIN>/<CDXPAGE>.jsonl.gz
+```
+
+Here, the `<CDXPAGE>` is a 10-digit number with leading zeros, e.g., `0000000001`.
+
+Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file
+with one archived URL per line, in arbitrary order.
+Each line contains the following fields:
+
+```json
+{
+  "url": "string",
+  // archived URL
+  "timestamp": "int"
+  // archive timestamp as POSIX integer
+}
+```
+
+In the source code, an archived URL corresponds
+to the Python class [`ArchivedUrl`](web_archive_query_log/model/__init__.py).
+
+### 3. Archived Query URLs
+
+Parse and filter archived URLs that contain a query and may point to a search engine result page (SERP).
+
+You can run this step with the following command line, where `<SERVICENAME>` is the name of the service
+you want to parse query URLs from:
+
+```shell:
+python -m web_archive_query_log service archived-query-urls <SERVICENAME>
+```
+
+This will create multiple files in the `archived-query-urls` subdirectory
+under the [data directory](#pro-tip--specify-a-custom-data-directory),
+based on the service name (`<SERVICENAME>`), domain (`<DOMAIN>`),
+and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`)
+from which the URLs were originally fetched:
+
+```
+<DATADIR>/archived-query-urls/<SERVICENAME>/<DOMAIN>/<CDXPAGE>.jsonl.gz
+```
+
+Here, the `<CDXPAGE>` is a 10-digit number with leading zeros, e.g., `0000000001`.
+
+Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file
+with one archived query URL per line, in arbitrary order.
+Each line contains the following fields:
+
+```json
+{
+  "url": "string",
+  // archived URL
+  "timestamp": "int",
+  // archive timestamp as POSIX integer
+  "query": "string",
+  // parsed query
+  "page": "int",
+  // result page number (optional)
+  "offset": "int"
+  // result page offset (optional)
+}
+```
+
+In the source code, an archived query URL corresponds
+to the Python class [`ArchivedQueryUrl`](web_archive_query_log/model/__init__.py).
+
+### 4. Archived Raw SERPs
+
+Download the raw HTML content of archived search engine result pages (SERPs).
+
+You can run this step with the following command line, where `<SERVICENAME>` is the name of the service
+you want to download raw SERP HTML contents from:
+
+```shell:
+python -m web_archive_query_log service archived-raw-serps <SERVICENAME>
+```
+
+This will create multiple files in the `archived-urls` subdirectory
+under the [data directory](#pro-tip--specify-a-custom-data-directory),
+based on the service name (`<SERVICENAME>`), domain (`<DOMAIN>`),
+and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`)
+from which the URLs were originally fetched.
+Archived raw SERPs are stored as 1GB-sized WARC chunk files, that is, WARC chunks are "filled" sequentially
+up to a size of 1GB each. If a chunk is full, a new chunk is created.
+
+```
+<DATADIR>/archived-raw-serps/<SERVICENAME>/<DOMAIN>/<CDXPAGE>/<WARCCHUNK>.jsonl.gz
+```
+
+Here, the `<CDXPAGE>` and `<WARCCHUNK>` are both 10-digit numbers with leading zeros, e.g., `0000000001`.
+
+Each individual file is a GZIP-compressed [WARC][warc-spec] file
+with one WARC request and one WARC response per archived raw SERP.
+WARC records are arbitrarily ordered within or across chunks, but the WARC request and response
+for the same archived query URL are kept together.
+The archived query URL is stored in the WARC request's and response's `Archived-URL` field
+in [JSONL][jsonl-spec] format (the same format as in the previous step):
+
+```json
+{
+  "url": "string",
+  // archived URL
+  "timestamp": "int",
+  // archive timestamp as POSIX integer
+  "query": "string",
+  // parsed query
+  "page": "int",
+  // result page number (optional)
+  "offset": "int"
+  // result page offset (optional)
+}
+```
+
+In the source code, an archived raw SERP corresponds
+to the Python class [`ArchivedRawSerp`](web_archive_query_log/model/__init__.py).
+
+### 5. Archived Parsed SERPs
+
+Parse and filter archived SERPs from raw contents.
+
+You can run this step with the following command line, where `<SERVICENAME>` is the name of the service
+you want to parse SERPs from:
+
+```shell:
+python -m web_archive_query_log service archived-parsed-serps <SERVICENAME>
+```
+
+This will create multiple files in the `archived-serps` subdirectory
+under the [data directory](#pro-tip--specify-a-custom-data-directory),
+based on the service name (`<SERVICENAME>`), domain (`<DOMAIN>`),
+and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`)
+from which the URLs were originally fetched:
+
+```
+<DATADIR>/archived-serps/<SERVICENAME>/<DOMAIN>/<CDXPAGE>.jsonl.gz
+```
+
+Here, the `<CDXPAGE>` is a 10-digit number with leading zeros, e.g., `0000000001`.
+
+Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file
+with one archived parsed SERP per line, in arbitrary order.
+Each line contains the following fields:
+
+```json
+{
+  "url": "string",
+  // archived URL
+  "timestamp": "int",
+  // archive timestamp as POSIX integer
+  "query": "string",
+  // parsed query
+  "page": "int",
+  // result page number (optional)
+  "offset": "int",
+  // result page offset (optional)
+  "interpreted_query": "string",
+  // query displayed on the SERP (e.g. with spelling correction; optional)
+  "results": [
+    {
+      "url": "string",
+      // URL of the result
+      "title": "string",
+      // title of the result
+      "snippet": "string"
+      // snippet of the result (highlighting normalized to <em>)
+    },
+    ...
+  ]
+}
+```
+
+In the source code, an archived parsed SERP corresponds
+to the Python class [`ArchivedParsedSerp`](web_archive_query_log/model/__init__.py).
+
+### 6. Archived Raw Search Results
+
+Download the raw HTML content of archived search engine results.
+
+You can run this step with the following command line, where `<SERVICENAME>` is the name of the service
+you want to download search results from:
+
+```shell:
+python -m web_archive_query_log service archived-raw-search-results <SERVICENAME>
+```
 
 **TODO**
 
-### 10 Archived Web Search Corpus
+In the source code, an archived raw search result corresponds
+to the Python class [`ArchivedRawSearchResult`](web_archive_query_log/model/__init__.py).
+
+### 7. Archived Parsed Search Results
+
+Parse the main content from archived raw search engine results.
+
+You can run this step with the following command line, where `<SERVICENAME>` is the name of the service
+you want to parse search results from:
+
+```shell:
+python -m web_archive_query_log service archived-parsed-search-results <SERVICENAME>
+```
 
 **TODO**
+
+In the source code, an archived parsed search result corresponds
+to the Python class [`ArchivedParsedSearchResult`](web_archive_query_log/model/__init__.py).
+
+### 8. IR Corpus
+
+Construct an information retrieval corpus of the query log, qrels derived from the SERP ranking,
+and downloaded search result documents, in standard TREC formats.
+
+**TODO**
+
+### Pro Tip: Specify a Custom Data Directory
+
+By default, the data directory is set to [`data/`](data).
+You can change this with the `--data-directory` option, e.g.:
+
+```bash
+
+```shell
+python -m web_archive_query_log service archived-urls --data-directory /mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/
+```
+
+### Pro Tip: Limit Scraping for Testing
+
+If the service you're scraping queries for is very large and has many domains,
+testing your settings on a smaller sample from that service can be helpful.
+You can specify a single domain to scrape from like this:
+
+```shell
+python -m web_archive_query_log service archived-urls SERVICENAME DOMAIN
+```
+
+If a domain is very popular and therefore has many archived URLs,
+you can further limit the number of archived URLs to scrape by selecting
+a [page](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api)
+from the Wayback Machine's
+[CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api):
+
+```shell
+python -m web_archive_query_log service archived-urls SERVICENAME DOMAIN CDX_PAGE
+```
 
 ## Contribute
 
-If you've found a search engine to be missing from this query log, please **TODO**.
-We gratefully accept [issues](https://git.webis.de/code-research/web-search/internet-archive-query-log/-/issues) and [pull requests](https://git.webis.de/code-research/web-search/internet-archive-query-log/-/merge_requests)!
-If you're unsure about anything, post an [issue](https://git.webis.de/code-research/web-search/internet-archive-query-log/-/issues), or [contact us](mailto:jan.reimer@student.uni-halle.de).
+If you've found an important service to be missing from this query log,
+please suggest it by creating an [issue][repo-issues].
+We also very gratefully accept [pull requests][repo-prs]
+for adding [service definitions](#1-selected-services) or new parsers!
+
+If you're unsure about anything, post an [issue][repo-issues], or [contact us](mailto:jan.reimer@student.uni-halle.de).
 
 
+[repo-issues]: https://git.webis.de/code-research/web-search/web-archive-query-log/-/issues
+
+[repo-prs]: https://git.webis.de/code-research/web-search/web-archive-query-log/-/merge_requests
+
+[cdx-pagination]: https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api
+
+[warc-spec]: https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1/
+
+[jsonl-spec]: https://jsonlines.org/
+
+[yaml-spec]: https://yaml.org/
