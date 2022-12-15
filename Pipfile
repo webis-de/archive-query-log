@@ -27,6 +27,7 @@ asyncio-pool = "*"
 fastwarc = "*"
 pytest = "*"
 approvaltests = "*"
+python-slugify = "*"
 
 [dev-packages]
 
