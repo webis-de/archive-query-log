@@ -25,6 +25,8 @@ pandas = "*"
 pyyaml = "*"
 asyncio-pool = "*"
 fastwarc = "*"
+pytest = "*"
+approvaltests = "*"
 
 [dev-packages]
 
