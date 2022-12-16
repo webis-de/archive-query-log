@@ -206,9 +206,6 @@
   - pattern: '[^/]+/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/search\?'
-    type: query_parameter
-    parameter: q
   page_parsers: []
   offset_parsers:
   - pattern: '[^/]+/search\?'
