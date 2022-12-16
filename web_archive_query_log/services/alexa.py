@@ -183,8 +183,10 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
 
     @cached_property
     def _urls(self) -> Set[ArchivedUrl]:
+        alexa_path = self.data_directory_path / \
+                     "alexa-top-1m-archived-urls.jsonl"
         urls = AlexaTop1MArchivedUrls(
-            output_path=self.data_directory_path / f"alexa-top-1m-archived-urls.jsonl",
+            output_path=alexa_path,
             cdx_api_url=self.cdx_api_url
         )
         return set(urls)
@@ -261,14 +263,12 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
             norm="min-max",
             method=self.fusion_method,
         ).to_dict()
-        domains = (
-            domain
-            for domain, _ in sorted(
+        items = sorted(
             combined_run["_"].items(),
             key=lambda item: item[1],
             reverse=True,
         )
-        )
+        domains = (domain for domain, _ in items)
         if self.deduplicate_fused_ranking and not self.deduplicate_per_ranking:
             domains = self._iter_deduplicated(domains)
         public_suffix_list = PublicSuffixList(only_icann=True)

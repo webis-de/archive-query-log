@@ -169,7 +169,7 @@ def archived_parsed_serps_command(
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
-def archived_raw_serps_command(
+def archived_raw_search_results_command(
         data_directory: Path,
         service: str,
         domain: str | None,
@@ -186,7 +186,7 @@ def archived_raw_serps_command(
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
-def archived_parsed_serps_command(
+def archived_parsed_search_results_command(
         data_directory: Path,
         service: str,
         domain: str | None,

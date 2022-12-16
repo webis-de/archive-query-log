@@ -29,7 +29,7 @@ def alexa():
         resolve_path=True,
         path_type=Path,
     ),
-    default=DATA_DIRECTORY_PATH / f"alexa-top-1m-archived-urls.jsonl"
+    default=DATA_DIRECTORY_PATH / "alexa-top-1m-archived-urls.jsonl"
 )
 def archived_urls(api_url: str, output_path: Path) -> None:
     from web_archive_query_log.services.alexa import AlexaTop1MArchivedUrls

@@ -98,19 +98,19 @@ class ArchivedQueryUrl(ArchivedUrl, DataClassJsonMixin):
     page: int | None
     """
     Page number of the SERP, e.g., 1, 2, 3.
-    
-    Note: the page number should be zero-indexed, i.e., 
+
+    Note: the page number should be zero-indexed, i.e.,
     the first result page has the page number 0.
-    
+
     See also: ``results_page_offset``.
     """
     offset: int | None
     """
     Offset (start position) of the first result in the SERP, e.g., 10, 20.
-    
+
     Note: the offset should be zero-indexed, i.e.,
     the first result page has the offset 0.
-    
+
     See also ``results_page``.
     """
 
@@ -177,8 +177,8 @@ class ArchivedParsedSerp(ArchivedQueryUrl, DataClassJsonMixin):
     interpreted_query: str | None
     """
     Interpreted query that is displayed or otherwise included in the SERP.
-    
-    Note: the interpreted result query can be different from the original query 
+
+    Note: the interpreted result query can be different from the original query
     due to spelling correction etc.
     """
 
@@ -224,7 +224,7 @@ class ArchivedParsedSearchResult(ArchivedUrl, DataClassJsonMixin):
     pass
 
 
-# noinspection PyPep8
+# flake8: noqa: E402
 from web_archive_query_log.model.parse import QueryParser, \
     PageParser, OffsetParser, QueryParserField, PageOffsetParserField, \
     ResultsParserField, InterpretedQueryParserField, InterpretedQueryParser, \
@@ -242,7 +242,7 @@ class Service(DataClassJsonMixin):
 
     name: str
     """
-    Service name (corresponds to ``alexa_domain`` without 
+    Service name (corresponds to ``alexa_domain`` without
     the ``alexa_public_suffix``).
     """
     public_suffix: str
@@ -323,8 +323,8 @@ class Service(DataClassJsonMixin):
     Interpreted query parsers in order of precedence.
     The interpreted query is the query that is displayed 
     or otherwise included in the SERP.
-    
-    Note: the interpreted result query can be different from the original query 
+
+    Note: the interpreted result query can be different from the original query
     due to spelling correction etc.
     """
     results_parsers: Sequence[ResultsParser] = field(

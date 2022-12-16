@@ -185,7 +185,7 @@ class ArchivedUrlsFetcher:
             progress = tqdm(
                 service.domains,
                 total=len(service.domains),
-                desc=f"Fetching number of pages",
+                desc="Fetching number of pages",
                 unit="domain",
             )
 

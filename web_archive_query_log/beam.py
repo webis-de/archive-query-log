@@ -28,7 +28,7 @@ if __name__ == "__main__":
     input_files = list(input_dir.glob("input_*.txt"))
     output_path = Path(__file__).parent / "counts.txt"
 
-    pipeline_opts=dict(
+    pipeline_opts = dict(
         runner='PortableRunner',
         # job_endpoint='localhost:8099',
         # job_endpoint='flink.srv.webis.de:8099',

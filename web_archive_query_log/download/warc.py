@@ -219,7 +219,6 @@ class WebArchiveWarcDownloader:
             if progress is not None:
                 progress.update()
 
-
     def _service_pages(
             self,
             data_directory: Path,

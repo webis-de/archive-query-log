@@ -152,7 +152,8 @@ def import_services(services_file: Path):
         sorted((
             query_parser(row)
             for _, row in
-            query_parsers[query_parsers["name"].str.endswith(service["name"])
+            query_parsers[
+                query_parsers["name"].str.endswith(service["name"])
             ].iterrows()
         ), key=lambda qp: str(qp["pattern"]))
         for _, service in services.iterrows()
