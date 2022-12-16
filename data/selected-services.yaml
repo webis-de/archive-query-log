@@ -234,18 +234,27 @@
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /results?
 - name: baidu
   public_suffix: com
   alexa_domain: baidu.com
   alexa_rank: 3
   category: general
-  notes: Different TLD redirect to youtube.com (https://stackoverflow.com/a/65375894)
+  notes: Different TLD redirect to baidu.com
   input_field: false
   search_form: false
   search_div: true
   domains:
   - baidu.com
+  - ai.baidu.com
+  - b2b.baidu.com
+  - baidu.cn
+  - image.baidu.com
+  - map.baidu.com
+  - tieba.baidu.com
+  - wenku.baidu.com
+  - zhidao.baidu.com
   query_parsers:
   - pattern: '[^/]+/f\?'
     type: query_parameter
@@ -260,10 +269,20 @@
     type: query_parameter
     parameter: wd
   page_parsers: []
-  offset_parsers: []
+  offset_parsers:
+  - pattern: '[^/]+/s\?'
+    type: query_parameter
+    parameter: pn
+  - pattern: '[^/]+/f\?'
+    type: query_parameter
+    parameter: pn
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /s?
+  - /search
+  - /sf/vsearch?
+  - /f?
 - name: qq
   public_suffix: com
   alexa_domain: qq.com
@@ -283,11 +302,15 @@
   - pattern: '[^/]+/x/search'
     type: query_parameter
     parameter: q
-  page_parsers: []
+  page_parsers:
+  - pattern: '[^/]+/search\.htm\?'
+    type: query_parameter
+    parameter: page
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /search.htm?
 - name: facebook
   public_suffix: com
   alexa_domain: facebook.com
@@ -307,7 +330,8 @@
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /search
 - name: tmall
   public_suffix: com
   alexa_domain: tmall.com
@@ -327,7 +351,8 @@
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - search_product
 - name: taobao
   public_suffix: com
   alexa_domain: taobao.com
@@ -347,7 +372,8 @@
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - search?
 - name: yahoo
   public_suffix: com
   alexa_domain: yahoo.com
@@ -360,15 +386,23 @@
   domains:
   - yahoo.com
   - yahoo.net
+  - de.yahoo.com
+  - uk.yahoo.com
+  - sg.search.yahoo.com
+  - de.search.yahoo.com
   query_parsers:
   - pattern: '[^/]+/search\?'
     type: query_parameter
     parameter: p
   page_parsers: []
-  offset_parsers: []
+  offset_parsers:
+  - pattern: '[^/]+/search\?'
+    type: query_parameter
+    parameter: b
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /search
 - name: amazon
   public_suffix: com
   alexa_domain: amazon.com
@@ -408,11 +442,15 @@
   - pattern: '[^/]+/s\?'
     type: query_parameter
     parameter: k
-  page_parsers: []
+  page_parsers:
+  - pattern: '[^/]+/s\?'
+    type: query_parameter
+    parameter: page
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /s?
 - name: wikipedia
   public_suffix: org
   alexa_domain: wikipedia.org
@@ -1303,12 +1341,19 @@
   - zu.wikibooks.org
   - zu.wikipedia.org
   - zu.wiktionary.org
-  query_parsers: []
+  query_parsers:
+  - pattern: '[^/]+w/index.php?\?'
+    type: query_parameter
+    parameter: search
   page_parsers: []
-  offset_parsers: []
+  offset_parsers:
+  - pattern: '[^/]+w/index.php?\?'
+    type: query_parameter
+    parameter: offset
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /w/index.php?
 - name: '360'
   public_suffix: cn
   alexa_domain: 360.cn
@@ -1338,11 +1383,21 @@
   - pattern: '[^/]+/search'
     type: query_parameter
     parameter: q
-  page_parsers: []
+  page_parsers:
+  - pattern: '[^/]+/s\?'
+    type: query_parameter
+    parameter: pn
+  - pattern: '[^/]+/search'
+    type: query_parameter
+    parameter: pn
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /s?
+  - /ns?
+  - /search
+  - /i?
 - name: weibo
   public_suffix: com
   alexa_domain: weibo.com
