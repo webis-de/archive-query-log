@@ -336,3 +336,13 @@ class Service(DataClassJsonMixin):
     """
     SERP parsers in order of precedence.
     """
+    focused_url_prefixes: Sequence[str] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(String())
+        )
+    )
+    """
+    URL prefixes for a more focused pipeline which might miss some queries
+    but executes faster.
+    """
