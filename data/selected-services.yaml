@@ -210,7 +210,10 @@
     type: query_parameter
     parameter: q
   page_parsers: []
-  offset_parsers: []
+  offset_parsers:
+  - pattern: '[^/]+/search\?'
+    type: query_parameter
+    parameter: start
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes:
