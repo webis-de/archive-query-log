@@ -19,6 +19,10 @@ Scrape real-life query logs from archived query URLs and search engine result pa
     ```shell
     pipenv install
     ```
+5. Run tests:
+    ```shell
+    pipenv run test
+    ```
 
 ## Usage
 
