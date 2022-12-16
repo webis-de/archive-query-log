@@ -28,6 +28,9 @@ fastwarc = "*"
 pytest = "*"
 approvaltests = "*"
 python-slugify = "*"
+pylint = "*"
+flake8 = "*"
+requests-html = "*"
 
 [dev-packages]
 
