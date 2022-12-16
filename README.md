@@ -8,6 +8,7 @@ Scrape real-life query logs from archived query URLs and search engine result pa
 
 - [Installation](#installation)
 - [Usage](#tldr)
+- [Development](#development)
 - [Contribute](#contribute)
 
 ## Installation
@@ -18,10 +19,6 @@ Scrape real-life query logs from archived query URLs and search engine result pa
 4. Install dependencies:
     ```shell
     pipenv install
-    ```
-5. Run tests:
-    ```shell
-    pipenv run test
     ```
 
 ## Usage
@@ -343,8 +340,6 @@ and downloaded search result documents, in standard TREC formats.
 By default, the data directory is set to [`data/`](data).
 You can change this with the `--data-directory` option, e.g.:
 
-```bash
-
 ```shell
 python -m web_archive_query_log make archived-urls --data-directory /mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/
 ```
@@ -367,6 +362,15 @@ from the Wayback Machine's
 
 ```shell
 python -m web_archive_query_log make archived-urls SERVICENAME DOMAIN CDX_PAGE
+```
+
+## Development
+
+Run tests:
+```shell
+pipenv run flake8
+pipenv run pylint
+pipenv run pytest
 ```
 
 ## Contribute
