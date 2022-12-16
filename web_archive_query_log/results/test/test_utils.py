@@ -1,7 +1,7 @@
 from approvaltests import verify_as_json
 from approvaltests.namer.cli_namer import CliNamer
 from approvaltests.core.options import Options
-from fastwarc.warc import ArchiveIterator
+from fastwarc import ArchiveIterator
 from os.path import exists
 from slugify import slugify
 

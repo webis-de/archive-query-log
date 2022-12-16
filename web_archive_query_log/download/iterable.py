@@ -5,7 +5,6 @@ from typing import Sized, Iterable, Iterator
 
 from fastwarc import GZipStream, FileStream, ArchiveIterator, WarcRecordType, \
     WarcRecord
-from fastwarc.stream_io import IOStream
 from marshmallow import Schema
 
 from web_archive_query_log.model import ArchivedQueryUrl, ArchivedRawSerp
@@ -31,7 +30,7 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
                 f"URLs path must be a directory: {self.path}"
             )
 
-    def _streams(self) -> Iterator[IOStream]:
+    def _streams(self) -> Iterator[GZipStream]:
         files = self.path.glob("*.warc.gz")
         for file in files:
             yield GZipStream(FileStream(str(file), "rb"))
