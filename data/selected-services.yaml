@@ -2909,6 +2909,7 @@
   search_div: true
   domains:
   - elfagr.com
+  - elfagr.org
   query_parsers:
   - pattern: '[^/]+/search'
     type: query_parameter
@@ -3298,6 +3299,7 @@
   search_div: true
   domains:
   - fmovies.to
+  - fmovies.wtf
   query_parsers:
   - pattern: '[^/]+/search\?'
     type: query_parameter
@@ -3374,6 +3376,7 @@
   search_form: false
   search_div: true
   domains:
+  - cima4u.life
   - cima4u.tv
   query_parsers: []
   page_parsers: []
@@ -3789,28 +3792,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: 9anime
-  public_suffix: to
-  alexa_domain: 9anime.to
-  alexa_rank: 1954
-  category: null
-  notes: Covered by 9anime.id
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - 9anime.gs
-  - 9anime.id
-  - 9anime.to
-  query_parsers:
-  - pattern: '[^/]+/filter\?'
-    type: query_parameter
-    parameter: keyword
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: zdf
   public_suffix: de
   alexa_domain: zdf.de
@@ -4090,7 +4071,10 @@
   search_form: true
   search_div: true
   domains:
+  - gogoanime.ai
   - gogoanime.ar
+  - gogoanime.fi
+  - gogoanime.pe
   - gogoanime.sk
   query_parsers:
   - pattern: '[^/]+/search\.html\?'
@@ -4842,6 +4826,7 @@
   search_div: true
   domains:
   - 3isk.tv
+  - 3isk.video
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -5012,6 +4997,7 @@
   search_div: true
   domains:
   - hdrezka.ag
+  - hdrezka.me
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -5047,28 +5033,6 @@
   domains:
   - akurat.co
   query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: gogoanime
-  public_suffix: ai
-  alexa_domain: gogoanime.ai
-  alexa_rank: 2358
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - gogoanime.ai
-  - gogoanime.ar
-  - gogoanime.sk
-  query_parsers:
-  - pattern: '[^/]+/search\.html\?'
-    type: path_suffix
-    path_prefix: keyword
   page_parsers: []
   offset_parsers: []
   interpreted_query_parsers: []
@@ -5312,46 +5276,6 @@
   domains:
   - acs.org
   query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: 3isk
-  public_suffix: video
-  alexa_domain: 3isk.video
-  alexa_rank: 2417
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - 3isk.tv
-  - 3isk.video
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: gogoanime
-  public_suffix: fi
-  alexa_domain: gogoanime.fi
-  alexa_rank: 2419
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - gogoanime.ar
-  - gogoanime.fi
-  - gogoanime.sk
-  query_parsers:
-  - pattern: '[^/]+/search\.html\?'
-    type: path_suffix
-    path_prefix: keyword
   page_parsers: []
   offset_parsers: []
   interpreted_query_parsers: []
@@ -5663,28 +5587,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: gogoanime
-  public_suffix: pe
-  alexa_domain: gogoanime.pe
-  alexa_rank: 2599
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - gogoanime.ar
-  - gogoanime.pe
-  - gogoanime.sk
-  query_parsers:
-  - pattern: '[^/]+/search\.html\?'
-    type: path_suffix
-    path_prefix: keyword
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: 2ch-c
   public_suffix: net
   alexa_domain: 2ch-c.net
@@ -5865,6 +5767,7 @@
   search_form: false
   search_div: true
   domains:
+  - shahed4u.land
   - shahed4u.onl
   query_parsers: []
   page_parsers: []
@@ -5974,24 +5877,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: shahed4u
-  public_suffix: land
-  alexa_domain: shahed4u.land
-  alexa_rank: 3001
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - shahed4u.land
-  - shahed4u.onl
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: nqrkzcd7ixwr
   public_suffix: com
   alexa_domain: nqrkzcd7ixwr.com
@@ -6088,6 +5973,7 @@
   search_div: true
   domains:
   - torrent9.blue
+  - torrent9.nz
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -6491,27 +6377,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: elfagr
-  public_suffix: org
-  alexa_domain: elfagr.org
-  alexa_rank: 3975
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - elfagr.com
-  - elfagr.org
-  query_parsers:
-  - pattern: '[^/]+/search'
-    type: query_parameter
-    parameter: w
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: biggo
   public_suffix: com.tw
   alexa_domain: biggo.com.tw
@@ -6760,7 +6625,9 @@
   search_form: true
   search_div: true
   domains:
+  - 4movierulz.pl
   - 4movierulz.pw
+  - 4movierulz.tv
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -7066,7 +6933,10 @@
   search_form: true
   search_div: true
   domains:
+  - 7movierulz.ag
   - 7movierulz.at
+  - 7movierulz.cc
+  - 7movierulz.sk
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -7671,24 +7541,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: torrent9
-  public_suffix: nz
-  alexa_domain: torrent9.nz
-  alexa_rank: 4573
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - torrent9.blue
-  - torrent9.nz
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: unblocked
   public_suffix: llc
   alexa_domain: unblocked.llc
@@ -7699,7 +7551,9 @@
   search_form: false
   search_div: true
   domains:
+  - unblocked.dk
   - unblocked.llc
+  - unblocked.nz
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -7886,6 +7740,7 @@
   search_form: false
   search_div: true
   domains:
+  - searchengines.guru
   - searchengines.ru
   query_parsers: []
   page_parsers: []
@@ -9178,6 +9033,7 @@
   search_form: false
   search_div: true
   domains:
+  - 123movies.co
   - 123movies.fun
   query_parsers: []
   page_parsers: []
@@ -9400,24 +9256,6 @@
   search_div: true
   domains:
   - xvideos2.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: 7movierulz
-  public_suffix: ag
-  alexa_domain: 7movierulz.ag
-  alexa_rank: 5600
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 7movierulz.ag
-  - 7movierulz.at
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -10121,24 +9959,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: 4movierulz
-  public_suffix: pl
-  alexa_domain: 4movierulz.pl
-  alexa_rank: 6181
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 4movierulz.pl
-  - 4movierulz.pw
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: viralnova
   public_suffix: com
   alexa_domain: viralnova.com
@@ -10184,24 +10004,6 @@
   search_div: true
   domains:
   - diretta.it
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: hdrezka
-  public_suffix: me
-  alexa_domain: hdrezka.me
-  alexa_rank: 6234
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - hdrezka.ag
-  - hdrezka.me
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -11221,6 +11023,8 @@
   search_form: true
   search_div: false
   domains:
+  - dontorrent.fun
+  - dontorrent.lol
   - dontorrent.net
   query_parsers: []
   page_parsers: []
@@ -11408,6 +11212,7 @@
   search_form: false
   search_div: true
   domains:
+  - dunia21.com
   - dunia21.tv
   query_parsers: []
   page_parsers: []
@@ -11511,6 +11316,7 @@
   search_div: false
   domains:
   - ibtimes.co.uk
+  - ibtimes.com
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -11959,24 +11765,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: ibtimes
-  public_suffix: com
-  alexa_domain: ibtimes.com
-  alexa_rank: 7445
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: false
-  domains:
-  - ibtimes.co.uk
-  - ibtimes.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: 4udear
   public_suffix: com
   alexa_domain: 4udear.com
@@ -12260,24 +12048,6 @@
   search_div: true
   domains:
   - chittorgarh.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: unblocked
-  public_suffix: dk
-  alexa_domain: unblocked.dk
-  alexa_rank: 7635
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - unblocked.dk
-  - unblocked.llc
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -12743,24 +12513,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: 7movierulz
-  public_suffix: sk
-  alexa_domain: 7movierulz.sk
-  alexa_rank: 8119
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 7movierulz.at
-  - 7movierulz.sk
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: theringer
   public_suffix: com
   alexa_domain: theringer.com
@@ -12891,6 +12643,7 @@
   search_div: true
   domains:
   - jmcomic.asia
+  - jmcomic.mobi
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -13800,6 +13553,7 @@
   search_div: true
   domains:
   - 5movierulz.tc
+  - 5movierulz.tv
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -13851,24 +13605,6 @@
   search_div: true
   domains:
   - fzg360.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: dontorrent
-  public_suffix: lol
-  alexa_domain: dontorrent.lol
-  alexa_rank: 8765
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: false
-  domains:
-  - dontorrent.lol
-  - dontorrent.net
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -14164,24 +13900,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: unblocked
-  public_suffix: nz
-  alexa_domain: unblocked.nz
-  alexa_rank: 9427
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - unblocked.llc
-  - unblocked.nz
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: kuai8
   public_suffix: com
   alexa_domain: kuai8.com
@@ -14193,23 +13911,6 @@
   search_div: false
   domains:
   - kuai8.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: cima4u
-  public_suffix: life
-  alexa_domain: cima4u.life
-  alexa_rank: 9467
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - cima4u.life
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -14556,24 +14257,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: searchengines
-  public_suffix: guru
-  alexa_domain: searchengines.guru
-  alexa_rank: 10092
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - searchengines.guru
-  - searchengines.ru
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: tigerdirect
   public_suffix: com
   alexa_domain: tigerdirect.com
@@ -14585,24 +14268,6 @@
   search_div: false
   domains:
   - tigerdirect.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: 7movierulz
-  public_suffix: cc
-  alexa_domain: 7movierulz.cc
-  alexa_rank: 10163
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 7movierulz.at
-  - 7movierulz.cc
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -15051,24 +14716,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: dontorrent
-  public_suffix: fun
-  alexa_domain: dontorrent.fun
-  alexa_rank: 10492
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: false
-  domains:
-  - dontorrent.fun
-  - dontorrent.net
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: hearthstonetopdecks
   public_suffix: com
   alexa_domain: hearthstonetopdecks.com
@@ -15147,25 +14794,8 @@
   search_form: true
   search_div: false
   domains:
+  - dygang.cc
   - dygang.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: 123movies
-  public_suffix: co
-  alexa_domain: 123movies.co
-  alexa_rank: 10599
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 123movies.co
-  - 123movies.fun
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -16008,24 +15638,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: jmcomic
-  public_suffix: mobi
-  alexa_domain: jmcomic.mobi
-  alexa_rank: 11295
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - jmcomic.asia
-  - jmcomic.mobi
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: textile
   public_suffix: gov.tm
   alexa_domain: textile.gov.tm
@@ -16123,27 +15735,6 @@
   domains:
   - ficanportio.biz
   query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: fmovies
-  public_suffix: wtf
-  alexa_domain: fmovies.wtf
-  alexa_rank: 11794
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - fmovies.to
-  - fmovies.wtf
-  query_parsers:
-  - pattern: '[^/]+/search\?'
-    type: query_parameter
-    parameter: keyword
   page_parsers: []
   offset_parsers: []
   interpreted_query_parsers: []
@@ -16574,24 +16165,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: dunia21
-  public_suffix: com
-  alexa_domain: dunia21.com
-  alexa_rank: 12146
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - dunia21.com
-  - dunia21.tv
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: moe
   public_suffix: gov.cn
   alexa_domain: moe.gov.cn
@@ -16949,24 +16522,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: 5movierulz
-  public_suffix: tv
-  alexa_domain: 5movierulz.tv
-  alexa_rank: 12425
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 5movierulz.tc
-  - 5movierulz.tv
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: fgov
   public_suffix: be
   alexa_domain: fgov.be
@@ -17239,24 +16794,6 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
-- name: dygang
-  public_suffix: cc
-  alexa_domain: dygang.cc
-  alexa_rank: 12603
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: false
-  domains:
-  - dygang.cc
-  - dygang.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: ftc
   public_suffix: gov
   alexa_domain: ftc.gov
@@ -17336,24 +16873,6 @@
   search_div: true
   domains:
   - balenciaga.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
-- name: 4movierulz
-  public_suffix: tv
-  alexa_domain: 4movierulz.tv
-  alexa_rank: 12643
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 4movierulz.pw
-  - 4movierulz.tv
   query_parsers: []
   page_parsers: []
   offset_parsers: []
