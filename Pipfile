@@ -31,7 +31,6 @@ python-slugify = "*"
 pylint = "*"
 flake8 = "*"
 requests-html = "*"
-pytest-approvaltests = "*"
 
 [dev-packages]
 
