@@ -6,7 +6,7 @@ from io import TextIOWrapper
 from itertools import chain
 from pathlib import Path
 from typing import AbstractSet, Sequence, Any, Iterable, Iterator, NamedTuple
-from urllib.parse import urlencode
+from urllib.parse import urlencode, quote
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
@@ -157,7 +157,7 @@ class ArchivedUrlsFetcher:
             assert domain is not None
             output_format_path = data_directory / "archived-urls"
             service_path = output_format_path / service.name
-            domain_path = service_path / domain
+            domain_path = service_path / quote(domain, safe="")
             cdx_page_path = domain_path / f"{cdx_page:010}.jsonl.gz"
             return [
                 _CdxPage(

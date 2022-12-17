@@ -3,7 +3,7 @@ from gzip import GzipFile
 from io import TextIOWrapper
 from pathlib import Path
 from typing import Sequence, NamedTuple
-from urllib.parse import parse_qsl, unquote
+from urllib.parse import parse_qsl, unquote, quote
 
 from tqdm.auto import tqdm
 
@@ -175,7 +175,7 @@ class ArchivedQueryUrlParser:
                     path
                     for path in domain_paths
                     if any(
-                        path.name.endswith(prefix)
+                        path.name.endswith(quote(prefix, safe=""))
                         for prefix in service.focused_url_prefixes
                     )
                 ]

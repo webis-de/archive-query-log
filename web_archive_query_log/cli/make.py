@@ -82,8 +82,9 @@ def archived_urls_command(
     from web_archive_query_log.urls.fetch import ArchivedUrlsFetcher, \
         UrlMatchScope
     service_config = SERVICES[service]
+    match_scope = UrlMatchScope.PREFIX if focused else UrlMatchScope.DOMAIN
     fetcher = ArchivedUrlsFetcher(
-        match_scope=UrlMatchScope.DOMAIN,
+        match_scope=match_scope,
         include_status_codes={200},
         exclude_status_codes=set(),
         include_mime_types={"text/html"},

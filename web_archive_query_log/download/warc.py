@@ -4,6 +4,7 @@ from itertools import count
 from pathlib import Path
 from tempfile import TemporaryFile
 from typing import Sequence, NamedTuple
+from urllib.parse import quote
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
@@ -248,7 +249,7 @@ class WebArchiveWarcDownloader:
                     path
                     for path in domain_paths
                     if any(
-                        path.name.endswith(prefix)
+                        path.name.endswith(quote(prefix, safe=""))
                         for prefix in service.focused_url_prefixes
                     )
                 ]
