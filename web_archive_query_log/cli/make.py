@@ -91,6 +91,8 @@ def archived_urls_command(
         exclude_mime_types=set(),
         cdx_api_url=CDX_API_URL
     )
+    if focused:
+        data_directory = data_directory / "focused"
     run(fetcher.fetch_service(
         data_directory=data_directory,
         focused=focused,
@@ -124,6 +126,8 @@ def archived_query_urls_command(
         page_parsers=service_config.page_parsers,
         offset_parsers=service_config.offset_parsers,
     )
+    if focused:
+        data_directory = data_directory / "focused"
     parser.parse_service(
         data_directory=data_directory,
         focused=focused,
@@ -153,6 +157,8 @@ def archived_raw_serps_command(
     from web_archive_query_log.download.warc import WebArchiveWarcDownloader
     service_config = SERVICES[service]
     downloader = WebArchiveWarcDownloader(verbose=True)
+    if focused:
+        data_directory = data_directory / "focused"
     run(downloader.download_service(
         data_directory=data_directory,
         focused=focused,
