@@ -1366,6 +1366,7 @@
   domains:
   - 360.cn
   - so.com
+  - 360kan.com
   - tv.360kan.com
   query_parsers:
   - pattern: null
