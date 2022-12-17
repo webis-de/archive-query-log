@@ -1,7 +1,7 @@
 from asyncio import run
 from pathlib import Path
 
-from click import option, argument, STRING, IntRange
+from click import option, argument, STRING, IntRange, BOOL
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
 from web_archive_query_log.cli import main
@@ -26,6 +26,15 @@ def _data_directory_option():
             path_type=Path,
         ),
         default=DATA_DIRECTORY_PATH
+    )
+
+
+def _focused_argument():
+    return option(
+        "-f", "--focused",
+        type=BOOL,
+        default=False,
+        is_flag=True,
     )
 
 
@@ -58,11 +67,13 @@ def _cdx_page_argument():
     help="Fetch archived URLs from the Wayback Machine's CDX API.",
 )
 @_data_directory_option()
+@_focused_argument()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
 def archived_urls_command(
         data_directory: Path,
+        focused: bool,
         service: str,
         domain: str | None,
         cdx_page: int | None,
@@ -80,10 +91,11 @@ def archived_urls_command(
         cdx_api_url=CDX_API_URL
     )
     run(fetcher.fetch_service(
-        data_directory,
-        service_config,
-        domain,
-        cdx_page,
+        data_directory=data_directory,
+        focused=focused,
+        service=service_config,
+        domain=domain,
+        cdx_page=cdx_page,
     ))
 
 
@@ -92,11 +104,13 @@ def archived_urls_command(
     help="Parse queries from fetched archived URLs.",
 )
 @_data_directory_option()
+@_focused_argument()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
 def archived_query_urls_command(
         data_directory: Path,
+        focused: bool,
         service: str,
         domain: str | None,
         cdx_page: int | None,
@@ -110,10 +124,11 @@ def archived_query_urls_command(
         offset_parsers=service_config.offset_parsers,
     )
     parser.parse_service(
-        data_directory,
-        service_config,
-        domain,
-        cdx_page,
+        data_directory=data_directory,
+        focused=focused,
+        service=service_config,
+        domain=domain,
+        cdx_page=cdx_page,
     )
 
 
@@ -122,11 +137,13 @@ def archived_query_urls_command(
     help="Download raw SERP contents (as WARC files) for parsed queries.",
 )
 @_data_directory_option()
+@_focused_argument()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
 def archived_raw_serps_command(
         data_directory: Path,
+        focused: bool,
         service: str,
         domain: str | None,
         cdx_page: int | None,
@@ -136,10 +153,11 @@ def archived_raw_serps_command(
     service_config = SERVICES[service]
     downloader = WebArchiveWarcDownloader(verbose=True)
     run(downloader.download_service(
-        data_directory,
-        service_config,
-        domain,
-        cdx_page,
+        data_directory=data_directory,
+        focused=focused,
+        service=service_config,
+        domain=domain,
+        cdx_page=cdx_page,
     ))
 
 
@@ -148,11 +166,13 @@ def archived_raw_serps_command(
     help="Parse SERP results from raw SERPs.",
 )
 @_data_directory_option()
+@_focused_argument()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
 def archived_parsed_serps_command(
         data_directory: Path,
+        focused: bool,
         service_name: str,
         domain: str | None,
         cdx_page: int | None,
@@ -166,11 +186,13 @@ def archived_parsed_serps_command(
          "for parsed SERPs.",
 )
 @_data_directory_option()
+@_focused_argument()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
 def archived_raw_search_results_command(
         data_directory: Path,
+        focused: bool,
         service: str,
         domain: str | None,
         cdx_page: int | None,
@@ -183,11 +205,13 @@ def archived_raw_search_results_command(
     help="Parse search results from raw search result contents.",
 )
 @_data_directory_option()
+@_focused_argument()
 @_service_name_argument()
 @_domain_argument()
 @_cdx_page_argument()
 def archived_parsed_search_results_command(
         data_directory: Path,
+        focused: bool,
         service: str,
         domain: str | None,
         cdx_page: int | None,

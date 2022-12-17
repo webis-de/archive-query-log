@@ -144,6 +144,7 @@ class ArchivedUrlsFetcher:
     async def _service_pages(
             self,
             data_directory: Path,
+            focused: bool,
             service: Service,
             domain: str | None,
             cdx_page: int | None,
@@ -170,6 +171,7 @@ class ArchivedUrlsFetcher:
             async def cdx_page_pages(_cdx_page: int) -> Sequence[_CdxPage]:
                 return await self._service_pages(
                     data_directory=data_directory,
+                    focused=focused,
                     service=service,
                     domain=domain,
                     cdx_page=_cdx_page,
@@ -182,9 +184,29 @@ class ArchivedUrlsFetcher:
                 await pool.map(cdx_page_pages, range(num_cdx_pages))
             ))
         else:
+            domains = service.domains
+            if focused:
+                domains = [
+                    f"{domain}{url_prefix}"
+                    for domain in domains
+                    for url_prefix in service.focused_url_prefixes
+                ]
+            else:
+                suffix_free_domains = []
+                for domain in sorted(domains, key=len):
+                    if not any(
+                            domain.endswith(suffix)
+                            for suffix in suffix_free_domains
+                    ):
+                        suffix_free_domains.append(domain)
+                domains = suffix_free_domains
+
+            if len(domains) == 0:
+                return []
+
             progress = tqdm(
-                service.domains,
-                total=len(service.domains),
+                domains,
+                total=len(domains),
                 desc="Fetching number of pages",
                 unit="domain",
             )
@@ -192,6 +214,7 @@ class ArchivedUrlsFetcher:
             async def domain_pages(_domain: str) -> Sequence[_CdxPage]:
                 res = await self._service_pages(
                     data_directory=data_directory,
+                    focused=focused,
                     service=service,
                     domain=_domain,
                     cdx_page=None,
@@ -203,24 +226,26 @@ class ArchivedUrlsFetcher:
             pool = AioPool(size=1000)
 
             res: Sequence[Sequence[_CdxPage]]
-            res = await pool.map(domain_pages, service.domains)
+            res = await pool.map(domain_pages, domains)
             res = sorted(res, key=len, reverse=True)
             return list(chain.from_iterable(res))
 
     async def fetch_service(
             self,
             data_directory: Path,
+            focused: bool,
             service: Service,
             domain: str | None = None,
             cdx_page: int | None = None,
     ):
         async with archive_http_client(limit=5) as client:
             pages = await self._service_pages(
-                data_directory,
-                service,
-                domain,
-                cdx_page,
-                client,
+                data_directory=data_directory,
+                focused=focused,
+                service=service,
+                domain=domain,
+                cdx_page=cdx_page,
+                client=client,
             )
 
             if len(pages) == 0:

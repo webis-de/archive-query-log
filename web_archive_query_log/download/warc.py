@@ -222,6 +222,7 @@ class WebArchiveWarcDownloader:
     def _service_pages(
             self,
             data_directory: Path,
+            focused: bool,
             service: Service,
             domain: str | None,
             cdx_page: int | None,
@@ -242,6 +243,15 @@ class WebArchiveWarcDownloader:
                 for path in service_path.iterdir()
                 if path.is_dir()
             ]
+            if focused:
+                domain_paths = [
+                    path
+                    for path in domain_paths
+                    if any(
+                        path.name.endswith(prefix)
+                        for prefix in service.focused_url_prefixes
+                    )
+                ]
 
         if cdx_page is not None:
             assert domain is not None
@@ -273,15 +283,17 @@ class WebArchiveWarcDownloader:
     async def download_service(
             self,
             data_directory: Path,
+            focused: bool,
             service: Service,
             domain: str | None = None,
             cdx_page: int | None = None,
     ):
         pages = self._service_pages(
-            data_directory,
-            service,
-            domain,
-            cdx_page,
+            data_directory=data_directory,
+            focused=focused,
+            service=service,
+            domain=domain,
+            cdx_page=cdx_page,
         )
 
         if len(pages) == 0:
