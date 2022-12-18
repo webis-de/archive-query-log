@@ -3922,7 +3922,7 @@
   - pattern: '^https?://[^/]+/search/'
     type: path_segment
     segment: 1
-    space_patterns:
+    remove_patterns:
     - "\.html$"
   page_parsers: [ ]
   offset_parsers: [ ]
@@ -18133,7 +18133,7 @@
   - pattern: '^https?://[^/]+/job/'
     type: path_segment
     segment: 1
-    space_patterns:
+    remove_patterns:
     - "\.htm$"
   page_parsers: [ ]
   offset_parsers: [ ]
@@ -18883,7 +18883,7 @@
   - pattern: '^https?://[^/]+/r/'
     type: path_segment
     segment: 1
-    space_patterns:
+    remove_patterns:
     - "-recipes$"
     path_prefix: r
   page_parsers: [ ]
