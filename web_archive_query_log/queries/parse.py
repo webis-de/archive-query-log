@@ -44,6 +44,7 @@ class FragmentParameterQueryParser(QueryParser):
 class PathSegmentQueryParser(QueryParser):
     url_pattern: Pattern[str]
     segment: int
+    delimiter: str = "/"
     remove_patterns: Sequence[Pattern[str]] = tuple()
     space_patterns: Sequence[Pattern[str]] = tuple()
 
@@ -51,7 +52,32 @@ class PathSegmentQueryParser(QueryParser):
         if self.url_pattern.search(url.url) is None:
             return None
         path = url.split_url.path
-        path_segments = path.split("/")
+        path_segments = path.split(self.delimiter)
+        if len(path_segments) <= self.segment:
+            return None
+        path_segment = path_segments[self.segment]
+        for pattern in self.remove_patterns:
+            path_segment = pattern.sub("", path_segment)
+        if len(self.space_patterns) > 0:
+            for pattern in self.space_patterns:
+                path_segment = pattern.sub(" ", path_segment)
+            path_segment = path_segment.replace("  ", " ")
+        return unquote(path_segment).strip()
+
+
+@dataclass(frozen=True)
+class FragmentSegmentQueryParser(QueryParser):
+    url_pattern: Pattern[str]
+    segment: int
+    delimiter: str = "/"
+    remove_patterns: Sequence[Pattern[str]] = tuple()
+    space_patterns: Sequence[Pattern[str]] = tuple()
+
+    def parse(self, url: ArchivedUrl) -> str | None:
+        if self.url_pattern.search(url.url) is None:
+            return None
+        path = url.split_url.fragment
+        path_segments = path.split(self.delimiter)
         if len(path_segments) <= self.segment:
             return None
         path_segment = path_segments[self.segment]
@@ -96,13 +122,34 @@ class FragmentParameterPageOffsetParser(PageParser, OffsetParser):
 class PathSegmentPageOffsetParser(PageParser, OffsetParser):
     url_pattern: Pattern[str]
     segment: int
+    delimiter: str = "/"
     remove_patterns: Sequence[Pattern[str]] = tuple()
 
     def parse(self, url: ArchivedUrl) -> int | None:
         if self.url_pattern.search(url.url) is None:
             return None
         path = url.split_url.path
-        path_segments = path.split("/")
+        path_segments = path.split(self.delimiter)
+        if len(path_segments) <= self.segment:
+            return None
+        path_segment = path_segments[self.segment]
+        for pattern in self.remove_patterns:
+            path_segment = pattern.sub("", path_segment)
+        return int(path_segment)
+
+
+@dataclass(frozen=True)
+class FragmentSegmentPageOffsetParser(PageParser, OffsetParser):
+    url_pattern: Pattern[str]
+    segment: int
+    delimiter: str = "/"
+    remove_patterns: Sequence[Pattern[str]] = tuple()
+
+    def parse(self, url: ArchivedUrl) -> int | None:
+        if self.url_pattern.search(url.url) is None:
+            return None
+        path = url.split_url.fragment
+        path_segments = path.split(self.delimiter)
         if len(path_segments) <= self.segment:
             return None
         path_segment = path_segments[self.segment]
