@@ -229,6 +229,7 @@
   search_div: true
   domains:
   - youtube.com
+  - youtu.be
   query_parsers:
   - url_pattern: '^https?://(www\.)?youtube[^/]+/results\?'
     type: query_parameter
@@ -9861,23 +9862,6 @@
   search_div: true
   domains:
   - thoughclassifiedjeff.com
-  query_parsers: [ ]
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes: [ ]
-- name: youtu
-  public_suffix: be
-  alexa_domain: youtu.be
-  alexa_rank: 6122
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - youtu.be
   query_parsers: [ ]
   page_parsers: [ ]
   offset_parsers: [ ]
