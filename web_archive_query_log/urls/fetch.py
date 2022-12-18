@@ -67,15 +67,32 @@ class ArchivedUrlsFetcher:
             params.append(("filter", f"statuscode:{pattern}"))
         return params
 
-    async def _num_pages(self, url: str, client: RetryClient) -> int:
-        params = [
-            *self._params(url),
+    async def _num_pages(
+            self,
+            output_path: Path,
+            url: str,
+            client: RetryClient,
+    ) -> int:
+        params = self._params(url)
+        params_hash = urlencode(params)
+        num_pages_path = output_path / ".lock"
+        num_pages_path.touch(exist_ok=True)
+        with num_pages_path.open("rt") as file:
+            for line in file:
+                line_params_hash, line_num_pages = line.split()
+                if line_params_hash == params_hash:
+                    return int(line_num_pages)
+        num_pages_params = [
+            *params,
             ("showNumPages", True),
         ]
-        url = f"{self.cdx_api_url}?{urlencode(params)}"
+        url = f"{self.cdx_api_url}?{urlencode(num_pages_params)}"
         async with client.get(url) as response:
             text = await response.text()
-            return int(text)
+            num_pages = int(text)
+        with num_pages_path.open("at") as file:
+            file.write(f"{params_hash} {num_pages}\n")
+        return num_pages
 
     @staticmethod
     def _parse_response_lines(
@@ -153,9 +170,9 @@ class ArchivedUrlsFetcher:
         """
         List all items that need to be downloaded.
         """
+        output_format_path = data_directory / "archived-urls"
         if cdx_page is not None:
             assert domain is not None
-            output_format_path = data_directory / "archived-urls"
             service_path = output_format_path / service.name
             domain_path = service_path / quote(domain, safe="")
             cdx_page_path = domain_path / f"{cdx_page:010}.jsonl.gz"
@@ -178,7 +195,11 @@ class ArchivedUrlsFetcher:
                     client=client,
                 )
 
-            num_cdx_pages = await self._num_pages(domain, client)
+            num_cdx_pages = await self._num_pages(
+                output_format_path,
+                domain,
+                client,
+            )
             pool = AioPool(size=1)
             return list(chain.from_iterable(
                 await pool.map(cdx_page_pages, range(num_cdx_pages))
