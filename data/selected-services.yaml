@@ -200,15 +200,18 @@
   - google.vu
   - google.ws
   query_parsers:
-  - pattern: '[^/]+/scholar\?'
+  - pattern: '^https?://scholar[^/]+/scholar\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://(www\.)?google[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
   offset_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://scholar[^/]+/scholar\?'
+    type: query_parameter
+    parameter: start
+  - pattern: '^https?://(www\.)?google[^/]+/search\?'
     type: query_parameter
     parameter: start
   interpreted_query_parsers: []
@@ -227,7 +230,10 @@
   domains:
   - youtube.com
   query_parsers:
-  - pattern: '[^/]+/results\?'
+  - pattern: '^https?://(www\.)?youtube[^/]+/results\?'
+    type: query_parameter
+    parameter: search_query
+  - pattern: '^https?://(www\.)?youtube[^/]+/[^/]+/search\?'
     type: query_parameter
     parameter: search_query
   page_parsers: []
@@ -256,24 +262,24 @@
   - wenku.baidu.com
   - zhidao.baidu.com
   query_parsers:
-  - pattern: '[^/]+/f\?'
+  - pattern: '^https?://[^/]+/f\?'
     type: query_parameter
     parameter: kw
-  - pattern: '[^/]+/s\?'
+  - pattern: '^https?://[^/]+/s\?'
     type: query_parameter
     parameter: wd
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: word
-  - pattern: '[^/]+/sf/vsearch\?'
+  - pattern: '^https?://[^/]+/sf/vsearch\?'
     type: query_parameter
     parameter: wd
   page_parsers: []
   offset_parsers:
-  - pattern: '[^/]+/s\?'
+  - pattern: '^https?://[^/]+/s\?'
     type: query_parameter
     parameter: pn
-  - pattern: '[^/]+/f\?'
+  - pattern: '^https?://[^/]+/f\?'
     type: query_parameter
     parameter: pn
   interpreted_query_parsers: []
@@ -296,14 +302,14 @@
   - qq.com
   - wechat.com
   query_parsers:
-  - pattern: '[^/]+/search\.htm\?'
+  - pattern: '^https?://[^/]+/search\.htm\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/x/search'
+  - pattern: '^https?://[^/]+/x/search'
     type: query_parameter
     parameter: q
   page_parsers:
-  - pattern: '[^/]+/search\.htm\?'
+  - pattern: '^https?://[^/]+/search\.htm\?'
     type: query_parameter
     parameter: page
   offset_parsers: []
@@ -323,7 +329,7 @@
   domains:
   - facebook.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -344,7 +350,7 @@
   domains:
   - tmall.com
   query_parsers:
-  - pattern: '[^/]+/search_product'
+  - pattern: '^https?://[^/]+/search_product'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -365,7 +371,7 @@
   domains:
   - taobao.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -391,12 +397,12 @@
   - sg.search.yahoo.com
   - de.search.yahoo.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: p
   page_parsers: []
   offset_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: b
   interpreted_query_parsers: []
@@ -439,11 +445,11 @@
   - pattern: null
     type: path_suffix
     path_prefix: search
-  - pattern: '[^/]+/s\?'
+  - pattern: '^https?://[^/]+/s\?'
     type: query_parameter
     parameter: k
   page_parsers:
-  - pattern: '[^/]+/s\?'
+  - pattern: '^https?://[^/]+/s\?'
     type: query_parameter
     parameter: page
   offset_parsers: []
@@ -1342,12 +1348,12 @@
   - zu.wikipedia.org
   - zu.wiktionary.org
   query_parsers:
-  - pattern: '[^/]+w/index.php?\?'
+  - pattern: '^https?://[^/]+w/index.php?\?'
     type: query_parameter
     parameter: search
   page_parsers: []
   offset_parsers:
-  - pattern: '[^/]+w/index.php?\?'
+  - pattern: '^https?://[^/]+w/index.php?\?'
     type: query_parameter
     parameter: offset
   interpreted_query_parsers: []
@@ -1372,23 +1378,23 @@
   - pattern: null
     type: query_parameter
     parameter: k
-  - pattern: '[^/]+/i\?'
+  - pattern: '^https?://[^/]+/i\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/ns\?'
+  - pattern: '^https?://[^/]+/ns\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/s\?'
+  - pattern: '^https?://[^/]+/s\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers:
-  - pattern: '[^/]+/s\?'
+  - pattern: '^https?://[^/]+/s\?'
     type: query_parameter
     parameter: pn
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: pn
   offset_parsers: []
@@ -1414,7 +1420,7 @@
   - pattern: null
     type: path_suffix
     path_prefix: weibo
-  - pattern: '[^/]+/weibo\?'
+  - pattern: '^https?://[^/]+/weibo\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1434,7 +1440,7 @@
   domains:
   - reddit.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1471,13 +1477,13 @@
   domains:
   - microsoft.com
   query_parsers:
-  - pattern: '[^/]+/de\-de/search'
+  - pattern: '^https?://[^/]+/de\-de/search'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/en\-gb/search'
+  - pattern: '^https?://[^/]+/en\-gb/search'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/en\-us/search'
+  - pattern: '^https?://[^/]+/en\-us/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1497,19 +1503,19 @@
   domains:
   - bing.com
   query_parsers:
-  - pattern: '[^/]+/images/search\?'
+  - pattern: '^https?://[^/]+/images/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/news/search\?'
+  - pattern: '^https?://[^/]+/news/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/shop\?'
+  - pattern: '^https?://[^/]+/shop\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/videos/search\?'
+  - pattern: '^https?://[^/]+/videos/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1529,7 +1535,7 @@
   domains:
   - twitter.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1615,7 +1621,7 @@
   - naver.com
   - search.naver.com
   query_parsers:
-  - pattern: '[^/]+/search\.naver\?'
+  - pattern: '^https?://[^/]+/search\.naver\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -1635,7 +1641,7 @@
   domains:
   - aliexpress.com
   query_parsers:
-  - pattern: '[^/]+/w/wholesale'
+  - pattern: '^https?://[^/]+/w/wholesale'
     type: query_parameter
     parameter: SearchText
   page_parsers: []
@@ -1655,13 +1661,13 @@
   domains:
   - yandex.ru
   query_parsers:
-  - pattern: '[^/]+/images/search'
+  - pattern: '^https?://[^/]+/images/search'
     type: query_parameter
     parameter: text
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: text
-  - pattern: '[^/]+/video/search'
+  - pattern: '^https?://[^/]+/video/search'
     type: query_parameter
     parameter: text
   page_parsers: []
@@ -1701,7 +1707,7 @@
   domains:
   - pornhub.com
   query_parsers:
-  - pattern: '[^/]+/video/search\?'
+  - pattern: '^https?://[^/]+/video/search\?'
     type: query_parameter
     parameter: search
   page_parsers: []
@@ -1721,10 +1727,10 @@
   domains:
   - stackoverflow.com
   query_parsers:
-  - pattern: '[^/]+/questions'
+  - pattern: '^https?://[^/]+/questions'
     type: path_suffix
     path_prefix: tagged
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1744,7 +1750,7 @@
   domains:
   - tribunnews.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1764,7 +1770,7 @@
   domains:
   - imdb.com
   query_parsers:
-  - pattern: '[^/]+/find\?'
+  - pattern: '^https?://[^/]+/find\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1824,7 +1830,7 @@
   domains:
   - github.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1844,7 +1850,7 @@
   domains:
   - etsy.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -1864,22 +1870,22 @@
   domains:
   - sogou.com
   query_parsers:
-  - pattern: '[^/]+/pics\?'
+  - pattern: '^https?://[^/]+/pics\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/result\?'
+  - pattern: '^https?://[^/]+/result\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/sogou\?'
+  - pattern: '^https?://[^/]+/sogou\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/v\?'
+  - pattern: '^https?://[^/]+/v\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/web\?'
+  - pattern: '^https?://[^/]+/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/weixin\?'
+  - pattern: '^https?://[^/]+/weixin\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -1899,7 +1905,7 @@
   domains:
   - espn.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: path_suffix
     path_prefix: q
   page_parsers: []
@@ -1919,7 +1925,7 @@
   domains:
   - detik.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -1939,7 +1945,7 @@
   domains:
   - booking.com
   query_parsers:
-  - pattern: '[^/]+/searchresults'
+  - pattern: '^https?://[^/]+/searchresults'
     type: query_parameter
     parameter: ss
   page_parsers: []
@@ -1960,16 +1966,16 @@
   - cnblogs.com
   - zzk.cnblogs.com
   query_parsers:
-  - pattern: '[^/]+/s/kb\?'
+  - pattern: '^https?://[^/]+/s/kb\?'
     type: query_parameter
     parameter: Keywords
-  - pattern: '[^/]+/s/news\?'
+  - pattern: '^https?://[^/]+/s/news\?'
     type: query_parameter
     parameter: Keywords
-  - pattern: '[^/]+/s/question\?'
+  - pattern: '^https?://[^/]+/s/question\?'
     type: query_parameter
     parameter: Keywords
-  - pattern: '[^/]+/s\?'
+  - pattern: '^https?://[^/]+/s\?'
     type: query_parameter
     parameter: w
   page_parsers: []
@@ -1989,7 +1995,7 @@
   domains:
   - alibaba.com
   query_parsers:
-  - pattern: '[^/]+/trade/search\?'
+  - pattern: '^https?://[^/]+/trade/search\?'
     type: query_parameter
     parameter: SearchText
   page_parsers: []
@@ -2009,7 +2015,7 @@
   domains:
   - freepik.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -2030,7 +2036,7 @@
   - nih.gov
   - search.nih.gov
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -2226,7 +2232,7 @@
   - worldbuilding.stackexchange.com
   - writing.stackexchange.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2248,7 +2254,7 @@
   - daum.net
   - search.daum.net
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2268,7 +2274,7 @@
   domains:
   - craigslist.org
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -2308,7 +2314,7 @@
   domains:
   - aliyun.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: k
   page_parsers: []
@@ -2328,7 +2334,7 @@
   domains:
   - gome.com.cn
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: question
   page_parsers: []
@@ -2388,7 +2394,7 @@
   domains:
   - slideshare.net
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2408,7 +2414,7 @@
   domains:
   - globo.com
   query_parsers:
-  - pattern: '[^/]+/busca'
+  - pattern: '^https?://[^/]+/busca'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2445,7 +2451,7 @@
   domains:
   - varzesh3.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2465,7 +2471,7 @@
   domains:
   - wikihow.com
   query_parsers:
-  - pattern: '[^/]+/wikiHowTo\?'
+  - pattern: '^https?://[^/]+/wikiHowTo\?'
     type: query_parameter
     parameter: search
   page_parsers: []
@@ -2502,10 +2508,10 @@
   domains:
   - bukalapak.com
   query_parsers:
-  - pattern: '[^/]+/products/'
+  - pattern: '^https?://[^/]+/products/'
     type: path_suffix
     path_prefix: s
-  - pattern: '[^/]+/products\?'
+  - pattern: '^https?://[^/]+/products\?'
     type: query_parameter
     parameter: search[keywords]
   page_parsers: []
@@ -2525,7 +2531,7 @@
   domains:
   - ask.com
   query_parsers:
-  - pattern: '[^/]+/web\?'
+  - pattern: '^https?://[^/]+/web\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2545,7 +2551,7 @@
   domains:
   - intuit.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: search_term
   page_parsers: []
@@ -2565,7 +2571,7 @@
   domains:
   - usps.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: keyword
   page_parsers: []
@@ -2636,7 +2642,7 @@
   domains:
   - bankofamerica.com
   query_parsers:
-  - pattern: '[^/]+/global\-search\-public'
+  - pattern: '^https?://[^/]+/global\-search\-public'
     type: query_parameter
     parameter: state
   page_parsers: []
@@ -2684,7 +2690,7 @@
   - wikimedia.org
   - wikitech.wikimedia.org
   query_parsers:
-  - pattern: '[^/]+/w'
+  - pattern: '^https?://[^/]+/w'
     type: query_parameter
     parameter: search
   page_parsers: []
@@ -2704,7 +2710,7 @@
   domains:
   - blackboard.com
   query_parsers:
-  - pattern: '[^/]+/site\-search\?'
+  - pattern: '^https?://[^/]+/site\-search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2724,7 +2730,7 @@
   domains:
   - steampowered.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: term
   page_parsers: []
@@ -2744,7 +2750,7 @@
   domains:
   - investopedia.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2784,7 +2790,7 @@
   domains:
   - dbs.com.sg
   query_parsers:
-  - pattern: '[^/]+/searchresults\.page'
+  - pattern: '^https?://[^/]+/searchresults\.page'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2804,16 +2810,16 @@
   domains:
   - ecosia.org
   query_parsers:
-  - pattern: '[^/]+/images\?'
+  - pattern: '^https?://[^/]+/images\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/news\?'
+  - pattern: '^https?://[^/]+/news\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/videos\?'
+  - pattern: '^https?://[^/]+/videos\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -2833,7 +2839,7 @@
   domains:
   - chinaz.com
   query_parsers:
-  - pattern: '[^/]+/search\.aspx\?'
+  - pattern: '^https?://[^/]+/search\.aspx\?'
     type: query_parameter
     parameter: keyword
   page_parsers: []
@@ -2853,7 +2859,7 @@
   domains:
   - turkiye.gov.tr
   query_parsers:
-  - pattern: '[^/]+/arama\?'
+  - pattern: '^https?://[^/]+/arama\?'
     type: query_parameter
     parameter: aranan
   page_parsers: []
@@ -2891,7 +2897,7 @@
   - dcinside.com
   - search.dcinside.com
   query_parsers:
-  - pattern: '[^/]+/combine'
+  - pattern: '^https?://[^/]+/combine'
     type: path_suffix
     path_prefix: q
   page_parsers: []
@@ -2912,7 +2918,7 @@
   - elfagr.com
   - elfagr.org
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: w
   page_parsers: []
@@ -2969,7 +2975,7 @@
   domains:
   - bandcamp.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3009,7 +3015,7 @@
   domains:
   - smartsheet.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: fragment_parameter
     parameter: q
   page_parsers: []
@@ -3029,7 +3035,7 @@
   domains:
   - allrecipes.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3083,7 +3089,7 @@
   domains:
   - tdameritrade.com
   query_parsers:
-  - pattern: '[^/]+/search\-results\.html\?'
+  - pattern: '^https?://[^/]+/search\-results\.html\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3144,7 +3150,7 @@
   domains:
   - caf.fr
   query_parsers:
-  - pattern: '[^/]+/allocataires/recherche\?'
+  - pattern: '^https?://[^/]+/allocataires/recherche\?'
     type: query_parameter
     parameter: search
   page_parsers: []
@@ -3164,7 +3170,7 @@
   domains:
   - stanford.edu
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3204,7 +3210,7 @@
   domains:
   - 4shared.com
   query_parsers:
-  - pattern: '[^/]+/web/q'
+  - pattern: '^https?://[^/]+/web/q'
     type: fragment_parameter
     parameter: query
   page_parsers: []
@@ -3241,7 +3247,7 @@
   domains:
   - etrade.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3261,7 +3267,7 @@
   domains:
   - lifewire.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3281,7 +3287,7 @@
   domains:
   - yixiin.com
   query_parsers:
-  - pattern: '[^/]+/sell/search\.php\?'
+  - pattern: '^https?://[^/]+/sell/search\.php\?'
     type: query_parameter
     parameter: kw
   page_parsers: []
@@ -3302,7 +3308,7 @@
   - fmovies.to
   - fmovies.wtf
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: keyword
   page_parsers: []
@@ -3342,7 +3348,7 @@
   domains:
   - klix.ba
   query_parsers:
-  - pattern: '[^/]+/pretraga\?'
+  - pattern: '^https?://[^/]+/pretraga\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3397,7 +3403,7 @@
   domains:
   - cyberleninka.ru
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3434,7 +3440,7 @@
   domains:
   - las2orillas.co
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3454,7 +3460,7 @@
   domains:
   - tnaflix.com
   query_parsers:
-  - pattern: '[^/]+/search\.php\?'
+  - pattern: '^https?://[^/]+/search\.php\?'
     type: query_parameter
     parameter: what
   page_parsers: []
@@ -3474,7 +3480,7 @@
   domains:
   - elyamnelaraby.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: w
   page_parsers: []
@@ -3517,7 +3523,7 @@
   domains:
   - php.net
   query_parsers:
-  - pattern: '[^/]+/manual\-lookup\.php\?'
+  - pattern: '^https?://[^/]+/manual\-lookup\.php\?'
     type: query_parameter
     parameter: pattern
   page_parsers: []
@@ -3543,7 +3549,7 @@
   - pattern: null
     type: path_suffix
     path_prefix: provide
-  - pattern: '[^/]+/chanpin'
+  - pattern: '^https?://[^/]+/chanpin'
     type: query_parameter
     parameter: title
   page_parsers: []
@@ -3563,7 +3569,7 @@
   domains:
   - indosport.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3583,7 +3589,7 @@
   domains:
   - dailypost.ng
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: s
   page_parsers: []
@@ -3603,7 +3609,7 @@
   domains:
   - uspto.gov
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -3657,7 +3663,7 @@
   domains:
   - acfun.cn
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: keyword
   page_parsers: []
@@ -3697,7 +3703,7 @@
   domains:
   - postermywall.com
   query_parsers:
-  - pattern: '[^/]+/index\.php/posters/search\?'
+  - pattern: '^https?://[^/]+/index\.php/posters/search\?'
     type: query_parameter
     parameter: s
   page_parsers: []
@@ -3717,13 +3723,13 @@
   domains:
   - hangseng.com
   query_parsers:
-  - pattern: '[^/]+/en\-hk/search'
+  - pattern: '^https?://[^/]+/en\-hk/search'
     type: query_parameter
     parameter: searchString
-  - pattern: '[^/]+/zh\-cn/search'
+  - pattern: '^https?://[^/]+/zh\-cn/search'
     type: query_parameter
     parameter: searchString
-  - pattern: '[^/]+/zh\-hk/search'
+  - pattern: '^https?://[^/]+/zh\-hk/search'
     type: query_parameter
     parameter: searchString
   page_parsers: []
@@ -3743,7 +3749,7 @@
   domains:
   - animixplay.to
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3763,7 +3769,7 @@
   domains:
   - npmjs.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3785,7 +3791,7 @@
   - 9anime.id
   - 9anime.to
   query_parsers:
-  - pattern: '[^/]+/filter\?'
+  - pattern: '^https?://[^/]+/filter\?'
     type: query_parameter
     parameter: keyword
   page_parsers: []
@@ -3805,7 +3811,7 @@
   domains:
   - zdf.de
   query_parsers:
-  - pattern: '[^/]+/suche\?'
+  - pattern: '^https?://[^/]+/suche\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3826,7 +3832,7 @@
   - asura.gg
   - asurascans.com
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: s
   page_parsers: []
@@ -3846,7 +3852,7 @@
   domains:
   - knowyourmeme.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3917,7 +3923,7 @@
   domains:
   - sfgate.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -3957,7 +3963,7 @@
   domains:
   - searchmulty.com
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -3977,7 +3983,7 @@
   domains:
   - haibunda.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -3997,7 +4003,7 @@
   domains:
   - mostaghelonline.com
   query_parsers:
-  - pattern: '[^/]+/newsstudios/archive/'
+  - pattern: '^https?://[^/]+/newsstudios/archive/'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -4034,7 +4040,7 @@
   domains:
   - moniban.news
   query_parsers:
-  - pattern: '[^/]+/newsstudios/archive/'
+  - pattern: '^https?://[^/]+/newsstudios/archive/'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -4078,7 +4084,7 @@
   - gogoanime.pe
   - gogoanime.sk
   query_parsers:
-  - pattern: '[^/]+/search\.html\?'
+  - pattern: '^https?://[^/]+/search\.html\?'
     type: path_suffix
     path_prefix: keyword
   page_parsers: []
@@ -4115,10 +4121,10 @@
   domains:
   - givemesport.com
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: s
-  - pattern: '[^/]+/page'
+  - pattern: '^https?://[^/]+/page'
     type: query_parameter
     parameter: s
   page_parsers: []
@@ -4138,7 +4144,7 @@
   domains:
   - akhbarelyom.com
   query_parsers:
-  - pattern: '[^/]+/News/Search'
+  - pattern: '^https?://[^/]+/News/Search'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -4158,7 +4164,7 @@
   domains:
   - manganato.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: path_suffix
     path_prefix: story
   page_parsers: []
@@ -4252,7 +4258,7 @@
   domains:
   - agenziaentrate.gov.it
   query_parsers:
-  - pattern: '[^/]+/portale/ricerca\?'
+  - pattern: '^https?://[^/]+/portale/ricerca\?'
     type: query_parameter
     parameter: _it_smc_sogei_search_web_SogeiAdvancedSearchPortlet_keywords
   page_parsers: []
@@ -4326,7 +4332,7 @@
   domains:
   - rei.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -4363,7 +4369,7 @@
   domains:
   - sportzwiki.com
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: s
   page_parsers: []
@@ -4706,7 +4712,7 @@
   domains:
   - ap.org
   query_parsers:
-  - pattern: '[^/]+/search\.wz\?'
+  - pattern: '^https?://[^/]+/search\.wz\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -5172,7 +5178,7 @@
   - results.excite.com
   - websearch.excite.co.jp
   query_parsers:
-  - pattern: '[^/]+/serp\?'
+  - pattern: '^https?://[^/]+/serp\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -6129,10 +6135,10 @@
   domains:
   - in.com
   query_parsers:
-  - pattern: '[^/]+/search/\?'
+  - pattern: '^https?://[^/]+/search/\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/sell/search\.php\?'
+  - pattern: '^https?://[^/]+/sell/search\.php\?'
     type: query_parameter
     parameter: kw
   page_parsers: []
@@ -7432,7 +7438,7 @@
   domains:
   - careerbuilder.com
   query_parsers:
-  - pattern: '[^/]+/jobs\?'
+  - pattern: '^https?://[^/]+/jobs\?'
     type: query_parameter
     parameter: keywords
   page_parsers: []
@@ -12805,37 +12811,37 @@
   - pattern: null
     type: path_suffix
     path_prefix: www.pricegrabber.com
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: s
-  - pattern: '[^/]+/classify\?'
+  - pattern: '^https?://[^/]+/classify\?'
     type: query_parameter
     parameter: keyword
-  - pattern: '[^/]+/jobs/search\?'
+  - pattern: '^https?://[^/]+/jobs/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/jobs\?'
+  - pattern: '^https?://[^/]+/jobs\?'
     type: query_parameter
     parameter: keywords
-  - pattern: '[^/]+/meta/meta\.ger3\?'
+  - pattern: '^https?://[^/]+/meta/meta\.ger3\?'
     type: query_parameter
     parameter: eingabe
-  - pattern: '[^/]+/results\?'
+  - pattern: '^https?://[^/]+/results\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/search\.naver\?'
+  - pattern: '^https?://[^/]+/search\.naver\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/serp\?'
+  - pattern: '^https?://[^/]+/serp\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/serp\?'
+  - pattern: '^https?://[^/]+/serp\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -13433,7 +13439,7 @@
   domains:
   - healthdata.org
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: search_terms
   page_parsers: []
@@ -17691,7 +17697,7 @@
   domains:
   - 9gag.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -17711,7 +17717,7 @@
   domains:
   - adzuna.co.uk
   query_parsers:
-  - pattern: '[^/]+/jobs/search\?'
+  - pattern: '^https?://[^/]+/jobs/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -17731,7 +17737,7 @@
   domains:
   - answers.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -17751,7 +17757,7 @@
   domains:
   - args.me
   query_parsers:
-  - pattern: '[^/]+/search\.html\?'
+  - pattern: '^https?://[^/]+/search\.html\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -17788,7 +17794,7 @@
   domains:
   - base-search.net
   query_parsers:
-  - pattern: '[^/]+/Search/Results\?'
+  - pattern: '^https?://[^/]+/Search/Results\?'
     type: query_parameter
     parameter: lookfor
   page_parsers: []
@@ -17809,7 +17815,7 @@
   - biglobe.ne.jp
   - cgi.search.biglobe.ne.jp
   query_parsers:
-  - pattern: '[^/]+/cgi\-bin/search\-st\?'
+  - pattern: '^https?://[^/]+/cgi\-bin/search\-st\?'
     type: query_parameter
     parameter: search
   page_parsers: []
@@ -17850,7 +17856,7 @@
   - brave.com
   - search.brave.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -17870,7 +17876,7 @@
   domains:
   - business.com
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -17890,7 +17896,7 @@
   domains:
   - chatnoir.eu
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -17910,7 +17916,7 @@
   domains:
   - chegg.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -17930,7 +17936,7 @@
   domains:
   - chemrefer.com
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: s
   page_parsers: []
@@ -17950,19 +17956,19 @@
   domains:
   - citeab.com
   query_parsers:
-  - pattern: '[^/]+/antibodies/search\?'
+  - pattern: '^https?://[^/]+/antibodies/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/biochemicals/search\?'
+  - pattern: '^https?://[^/]+/biochemicals/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/experimental\-models/search\?'
+  - pattern: '^https?://[^/]+/experimental\-models/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/kits/search\?'
+  - pattern: '^https?://[^/]+/kits/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/proteins/search\?'
+  - pattern: '^https?://[^/]+/proteins/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -17982,7 +17988,7 @@
   domains:
   - dice.com
   query_parsers:
-  - pattern: '[^/]+/jobs\?'
+  - pattern: '^https?://[^/]+/jobs\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18002,7 +18008,7 @@
   domains:
   - dogpile.com
   query_parsers:
-  - pattern: '[^/]+/serp\?'
+  - pattern: '^https?://[^/]+/serp\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18022,7 +18028,7 @@
   domains:
   - ebi.ac.uk
   query_parsers:
-  - pattern: '[^/]+/ebisearch/search'
+  - pattern: '^https?://[^/]+/ebisearch/search'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -18042,7 +18048,7 @@
   domains:
   - egerin.com
   query_parsers:
-  - pattern: '[^/]+/search/\?'
+  - pattern: '^https?://[^/]+/search/\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18062,7 +18068,7 @@
   domains:
   - ehow.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18116,7 +18122,7 @@
   domains:
   - fireball.de
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18136,7 +18142,7 @@
   domains:
   - genieknows.com
   query_parsers:
-  - pattern: '[^/]+/\?'
+  - pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: s
   page_parsers: []
@@ -18156,7 +18162,7 @@
   domains:
   - gigablast.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18196,10 +18202,10 @@
   domains:
   - globalspec.com
   query_parsers:
-  - pattern: '[^/]+/article/search'
+  - pattern: '^https?://[^/]+/article/search'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/search/all'
+  - pattern: '^https?://[^/]+/search/all'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -18220,7 +18226,7 @@
   - goo.ne.jp
   - search.goo.ne.jp
   query_parsers:
-  - pattern: '[^/]+/web\.jsp\?'
+  - pattern: '^https?://[^/]+/web\.jsp\?'
     type: query_parameter
     parameter: MT
   page_parsers: []
@@ -18240,7 +18246,7 @@
   domains:
   - indeed.com
   query_parsers:
-  - pattern: '[^/]+/jobs\?'
+  - pattern: '^https?://[^/]+/jobs\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18260,7 +18266,7 @@
   domains:
   - info.com
   query_parsers:
-  - pattern: '[^/]+/serp\?'
+  - pattern: '^https?://[^/]+/serp\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18301,10 +18307,10 @@
   - kelkoo.co.uk
   - kelkoo.de
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/suche\?'
+  - pattern: '^https?://[^/]+/suche\?'
     type: query_parameter
     parameter: anfrage
   page_parsers: []
@@ -18324,7 +18330,7 @@
   domains:
   - kiddle.co
   query_parsers:
-  - pattern: '[^/]+/s\.php\?'
+  - pattern: '^https?://[^/]+/s\.php\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18345,7 +18351,7 @@
   - kidzsearch.com
   - search.kidzsearch.com
   query_parsers:
-  - pattern: '[^/]+/kzsearch\.php\?'
+  - pattern: '^https?://[^/]+/kzsearch\.php\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18365,7 +18371,7 @@
   domains:
   - leit.is
   query_parsers:
-  - pattern: '[^/]+/leita\?'
+  - pattern: '^https?://[^/]+/leita\?'
     type: query_parameter
     parameter: search
   page_parsers: []
@@ -18385,7 +18391,7 @@
   domains:
   - loc.gov
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18409,7 +18415,7 @@
   - pattern: null
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/web/\?'
+  - pattern: '^https?://[^/]+/web/\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18429,7 +18435,7 @@
   domains:
   - metacrawler.com
   query_parsers:
-  - pattern: '[^/]+/serp\?'
+  - pattern: '^https?://[^/]+/serp\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18449,7 +18455,7 @@
   domains:
   - metager.org
   query_parsers:
-  - pattern: '[^/]+/meta/meta\.ger3\?'
+  - pattern: '^https?://[^/]+/meta/meta\.ger3\?'
     type: query_parameter
     parameter: eingabe
   page_parsers: []
@@ -18489,7 +18495,7 @@
   domains:
   - mojeek.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18509,7 +18515,7 @@
   domains:
   - monster.com
   query_parsers:
-  - pattern: '[^/]+/jobs/search\?'
+  - pattern: '^https?://[^/]+/jobs/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18546,7 +18552,7 @@
   domains:
   - mysimon.com
   query_parsers:
-  - pattern: '[^/]+/shopping\?'
+  - pattern: '^https?://[^/]+/shopping\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18606,7 +18612,7 @@
   domains:
   - ncbi.nlm.nih.gov
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: term
   page_parsers: []
@@ -18626,7 +18632,7 @@
   domains:
   - netflix.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18646,7 +18652,7 @@
   domains:
   - newsandmoods.com
   query_parsers:
-  - pattern: '[^/]+/news/search\?'
+  - pattern: '^https?://[^/]+/news/search\?'
     type: query_parameter
     parameter: sstring
   page_parsers: []
@@ -18666,7 +18672,7 @@
   domains:
   - newslookup.com
   query_parsers:
-  - pattern: '[^/]+/results\?'
+  - pattern: '^https?://[^/]+/results\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18686,7 +18692,7 @@
   domains:
   - nextag.de
   query_parsers:
-  - pattern: '[^/]+/shopping/products\?'
+  - pattern: '^https?://[^/]+/shopping/products\?'
     type: query_parameter
     parameter: search
   page_parsers: []
@@ -18706,7 +18712,7 @@
   domains:
   - omgili.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18726,7 +18732,7 @@
   domains:
   - petalsearch.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -18746,7 +18752,7 @@
   domains:
   - picsearch.com
   query_parsers:
-  - pattern: '[^/]+/index\.cgi\?'
+  - pattern: '^https?://[^/]+/index\.cgi\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18783,7 +18789,7 @@
   domains:
   - podscope.com
   query_parsers:
-  - pattern: '[^/]+/search\.php\?'
+  - pattern: '^https?://[^/]+/search\.php\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18806,7 +18812,7 @@
   - pattern: null
     type: path_suffix
     path_prefix: www.pricegrabber.com
-  - pattern: '[^/]+/classify\?'
+  - pattern: '^https?://[^/]+/classify\?'
     type: query_parameter
     parameter: keyword
   page_parsers: []
@@ -18826,7 +18832,7 @@
   domains:
   - pricerunner.com
   query_parsers:
-  - pattern: '[^/]+/results\?'
+  - pattern: '^https?://[^/]+/results\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18846,7 +18852,7 @@
   domains:
   - pronto.com
   query_parsers:
-  - pattern: '[^/]+/shopping\?'
+  - pattern: '^https?://[^/]+/shopping\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18866,7 +18872,7 @@
   domains:
   - qmamu.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -18904,7 +18910,7 @@
   - nova.rambler.ru
   - rambler.ru
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -18965,7 +18971,7 @@
   domains:
   - rozee.pk
   query_parsers:
-  - pattern: '[^/]+/job/jsearch/'
+  - pattern: '^https?://[^/]+/job/jsearch/'
     type: path_suffix
     path_prefix: q
   page_parsers: []
@@ -18985,7 +18991,7 @@
   domains:
   - sapo.pt
   query_parsers:
-  - pattern: '[^/]+/pesquisa'
+  - pattern: '^https?://[^/]+/pesquisa'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -19022,7 +19028,7 @@
   domains:
   - semanticscholar.org
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -19063,7 +19069,7 @@
   domains:
   - shodan.io
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -19083,7 +19089,7 @@
   domains:
   - shopping.com
   query_parsers:
-  - pattern: '[^/]+/search\.html\?'
+  - pattern: '^https?://[^/]+/search\.html\?'
     type: query_parameter
     parameter: keyword
   page_parsers: []
@@ -19123,7 +19129,7 @@
   domains:
   - songza.fm
   query_parsers:
-  - pattern: '[^/]+/search'
+  - pattern: '^https?://[^/]+/search'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -19143,10 +19149,10 @@
   domains:
   - sourceforge.net
   query_parsers:
-  - pattern: '[^/]+/directory'
+  - pattern: '^https?://[^/]+/directory'
     type: query_parameter
     parameter: q
-  - pattern: '[^/]+/software'
+  - pattern: '^https?://[^/]+/software'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -19166,34 +19172,34 @@
   domains:
   - swisscows.com
   query_parsers:
-  - pattern: '[^/]+/de/web\?'
+  - pattern: '^https?://[^/]+/de/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/en/web\?'
+  - pattern: '^https?://[^/]+/en/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/es/web\?'
+  - pattern: '^https?://[^/]+/es/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/fr/web\?'
+  - pattern: '^https?://[^/]+/fr/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/hu/web\?'
+  - pattern: '^https?://[^/]+/hu/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/it/web\?'
+  - pattern: '^https?://[^/]+/it/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/lv/web\?'
+  - pattern: '^https?://[^/]+/lv/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/nl/web\?'
+  - pattern: '^https?://[^/]+/nl/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/ru/web\?'
+  - pattern: '^https?://[^/]+/ru/web\?'
     type: query_parameter
     parameter: query
-  - pattern: '[^/]+/uk/web\?'
+  - pattern: '^https?://[^/]+/uk/web\?'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -19213,7 +19219,7 @@
   domains:
   - thomasnet.com
   query_parsers:
-  - pattern: '[^/]+/search\.html\?'
+  - pattern: '^https?://[^/]+/search\.html\?'
     type: query_parameter
     parameter: searchterm
   page_parsers: []
@@ -19289,7 +19295,7 @@
   - jp.wazap.com
   - wazap.com
   query_parsers:
-  - pattern: '[^/]+/search\.wz\?'
+  - pattern: '^https?://[^/]+/search\.wz\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -19309,7 +19315,7 @@
   domains:
   - webcrawler.com
   query_parsers:
-  - pattern: '[^/]+/serp\?'
+  - pattern: '^https?://[^/]+/serp\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -19329,7 +19335,7 @@
   domains:
   - webmd.com
   query_parsers:
-  - pattern: '[^/]+/search/search_results'
+  - pattern: '^https?://[^/]+/search/search_results'
     type: query_parameter
     parameter: query
   page_parsers: []
@@ -19349,7 +19355,7 @@
   domains:
   - yellowpages.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: search_terms
   page_parsers: []
@@ -19369,7 +19375,7 @@
   domains:
   - you.com
   query_parsers:
-  - pattern: '[^/]+/search\?'
+  - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -19389,7 +19395,7 @@
   domains:
   - youdao.com
   query_parsers:
-  - pattern: '[^/]+/result\?'
+  - pattern: '^https?://[^/]+/result\?'
     type: query_parameter
     parameter: word
   page_parsers: []
@@ -19409,7 +19415,7 @@
   domains:
   - yummly.com
   query_parsers:
-  - pattern: '[^/]+/recipes\?'
+  - pattern: '^https?://[^/]+/recipes\?'
     type: query_parameter
     parameter: q
   page_parsers: []
@@ -19429,7 +19435,7 @@
   domains:
   - zalando.de
   query_parsers:
-  - pattern: '[^/]+/catalogue'
+  - pattern: '^https?://[^/]+/catalogue'
     type: query_parameter
     parameter: q
   page_parsers: []
