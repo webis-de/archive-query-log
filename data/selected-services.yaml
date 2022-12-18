@@ -442,9 +442,9 @@
   - amazon.se
   - amazon.sg
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: search
+  - pattern: '^https?://[^/]+/search\?'
+    type: query_parameter
+    parameter: q
   - pattern: '^https?://[^/]+/s\?'
     type: query_parameter
     parameter: k
@@ -1417,9 +1417,6 @@
   domains:
   - weibo.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: weibo
   - pattern: '^https?://[^/]+/weibo\?'
     type: query_parameter
     parameter: q
@@ -1477,13 +1474,7 @@
   domains:
   - microsoft.com
   query_parsers:
-  - pattern: '^https?://[^/]+/de\-de/search'
-    type: query_parameter
-    parameter: q
-  - pattern: '^https?://[^/]+/en\-gb/search'
-    type: query_parameter
-    parameter: q
-  - pattern: '^https?://[^/]+/en\-us/search'
+  - pattern: '^https?://[^/]+/[a-z]+-[a-z]+/search'
     type: query_parameter
     parameter: q
   page_parsers: [ ]
@@ -1687,9 +1678,9 @@
   domains:
   - apple.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: search
+  - pattern: '^https?://[^/]+/[a-z]+/search/'
+    type: path_segment
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -1727,9 +1718,9 @@
   domains:
   - stackoverflow.com
   query_parsers:
-  - pattern: '^https?://[^/]+/questions'
-    type: path_suffix
-    path_prefix: tagged
+  - pattern: '^https?://[^/]+/questions/tagged/'
+    type: path_segment
+    segment: 2
   - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
@@ -1905,9 +1896,9 @@
   domains:
   - espn.com
   query_parsers:
-  - pattern: '^https?://[^/]+/search'
-    type: path_suffix
-    path_prefix: q
+  - pattern: '^https?://[^/]+/search/_/q/'
+    type: path_segment
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -2354,9 +2345,9 @@
   domains:
   - xnxx.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: search
+  - pattern: '^https?://[^/]+/search/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -2508,9 +2499,9 @@
   domains:
   - bukalapak.com
   query_parsers:
-  - pattern: '^https?://[^/]+/products/'
-    type: path_suffix
-    path_prefix: s
+  - pattern: '^https?://[^/]+/products/s/'
+    type: path_segment
+    segment: 2
   - pattern: '^https?://[^/]+/products\?'
     type: query_parameter
     parameter: search[keywords]
@@ -2642,7 +2633,7 @@
   domains:
   - bankofamerica.com
   query_parsers:
-  - pattern: '^https?://[^/]+/global\-search\-public'
+  - pattern: '^https?://[^/]+/global-search-public'
     type: query_parameter
     parameter: state
   page_parsers: [ ]
@@ -2662,9 +2653,9 @@
   domains:
   - airbnb.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: s
+  - pattern: '^https?://[^/]+/s/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -2710,7 +2701,7 @@
   domains:
   - blackboard.com
   query_parsers:
-  - pattern: '^https?://[^/]+/site\-search\?'
+  - pattern: '^https?://[^/]+/site-search\?'
     type: query_parameter
     parameter: q
   page_parsers: [ ]
@@ -2770,9 +2761,9 @@
   domains:
   - kakao.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: search
+  - pattern: '^https?://[^/]+/search/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -2897,9 +2888,9 @@
   - dcinside.com
   - search.dcinside.com
   query_parsers:
-  - pattern: '^https?://[^/]+/combine'
-    type: path_suffix
-    path_prefix: q
+  - pattern: '^https?://[^/]+/combine/q/'
+    type: path_segment
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -2995,9 +2986,9 @@
   domains:
   - 123rf.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: stock-photo
+  - pattern: '^https?://[^/]+/stock-photo/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -3089,7 +3080,7 @@
   domains:
   - tdameritrade.com
   query_parsers:
-  - pattern: '^https?://[^/]+/search\-results\.html\?'
+  - pattern: '^https?://[^/]+/search-results\.html\?'
     type: query_parameter
     parameter: q
   page_parsers: [ ]
@@ -3109,30 +3100,30 @@
   domains:
   - ci123.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: all
-  - pattern: null
-    type: path_suffix
-    path_prefix: ask
-  - pattern: null
-    type: path_suffix
-    path_prefix: bbs
-  - pattern: null
-    type: path_suffix
-    path_prefix: blog
-  - pattern: null
-    type: path_suffix
-    path_prefix: baobao
-  - pattern: null
-    type: path_suffix
-    path_prefix: qq
-  - pattern: null
-    type: path_suffix
-    path_prefix: zhishi
-  - pattern: null
-    type: path_suffix
-    path_prefix: ping
+  - pattern: '^https?://[^/]+/all/'
+    type: path_segment
+    segment: 1
+  - pattern: '^https?://[^/]+/ask/'
+    type: path_segment
+    segment: 1
+  - pattern: '^https?://[^/]+/bbs/'
+    type: path_segment
+    segment: 1
+  - pattern: '^https?://[^/]+/blog/'
+    type: path_segment
+    segment: 1
+  - pattern: '^https?://[^/]+/baobao/'
+    type: path_segment
+    segment: 1
+  - pattern: '^https?://[^/]+/qq/'
+    type: path_segment
+    segment: 1
+  - pattern: '^https?://[^/]+/zhishi/'
+    type: path_segment
+    segment: 1
+  - pattern: '^https?://[^/]+/ping/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -3189,10 +3180,7 @@
   search_div: false
   domains:
   - b2b168.com
-  query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: info.b2b168.com
+  query_parsers: [ ]
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -3327,10 +3315,7 @@
   search_div: true
   domains:
   - gotporn.com
-  query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: search
+  query_parsers: [ ]
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -3500,12 +3485,12 @@
   domains:
   - vectorstock.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: royalty-free-vectors
-  - pattern: null
-    type: path_suffix
-    path_prefix: free-vectors
+  - pattern: '^https?://[^/]+/royalty-free-vectors/'
+    type: path_segment
+    segment: 1
+  - pattern: '^https?://[^/]+/free-vectors/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -3523,7 +3508,7 @@
   domains:
   - php.net
   query_parsers:
-  - pattern: '^https?://[^/]+/manual\-lookup\.php\?'
+  - pattern: '^https?://[^/]+/manual-lookup\.php\?'
     type: query_parameter
     parameter: pattern
   page_parsers: [ ]
@@ -3543,12 +3528,9 @@
   domains:
   - 19888.tv
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: provide
-  - pattern: null
-    type: path_suffix
-    path_prefix: provide
+  - pattern: '^https?://[^/]+/provide'
+    type: path_segment
+    segment: 1
   - pattern: '^https?://[^/]+/chanpin'
     type: query_parameter
     parameter: title
@@ -3683,9 +3665,9 @@
   domains:
   - doc88.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: tag
+  - pattern: '^https?://[^/]+/tag/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -3723,13 +3705,7 @@
   domains:
   - hangseng.com
   query_parsers:
-  - pattern: '^https?://[^/]+/en\-hk/search'
-    type: query_parameter
-    parameter: searchString
-  - pattern: '^https?://[^/]+/zh\-cn/search'
-    type: query_parameter
-    parameter: searchString
-  - pattern: '^https?://[^/]+/zh\-hk/search'
+  - pattern: '^https?://[^/]+/[a-z]+-[a-z]+/search'
     type: query_parameter
     parameter: searchString
   page_parsers: [ ]
@@ -3943,9 +3919,11 @@
   domains:
   - cjdropshipping.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: search
+  - pattern: '^https?://[^/]+/search/'
+    type: path_segment
+    segment: 1
+    space_patterns:
+    - "\.html$"
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -4060,9 +4038,9 @@
   domains:
   - boyfriendtv.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: search
+  - pattern: '^https?://[^/]+/search/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -4085,7 +4063,7 @@
   - gogoanime.sk
   query_parsers:
   - pattern: '^https?://[^/]+/search\.html\?'
-    type: path_suffix
+    type: query_parameter
     path_prefix: keyword
   page_parsers: [ ]
   offset_parsers: [ ]
@@ -4164,9 +4142,9 @@
   domains:
   - manganato.com
   query_parsers:
-  - pattern: '^https?://[^/]+/search'
-    type: path_suffix
-    path_prefix: story
+  - pattern: '^https?://[^/]+/search/story/'
+    type: path_segment
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -4238,10 +4216,13 @@
   domains:
   - thumbzilla.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: tags
-  page_parsers: [ ]
+  - pattern: '^https?://[^/]+/tags/'
+    type: path_segment
+    segment: 1
+  page_parsers:
+  - pattern: '^https?://[^/]+/tags/'
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -4278,9 +4259,9 @@
   domains:
   - commentcamarche.net
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: s
+  - pattern: '^https?://[^/]+/s/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -12805,45 +12786,12 @@
   domains:
   - er.ru
   query_parsers:
-  - pattern: null
-    type: query_parameter
-    parameter: s
-  - pattern: null
-    type: path_suffix
-    path_prefix: www.pricegrabber.com
-  - pattern: '^https?://[^/]+/\?'
-    type: query_parameter
-    parameter: s
-  - pattern: '^https?://[^/]+/classify\?'
-    type: query_parameter
-    parameter: keyword
-  - pattern: '^https?://[^/]+/jobs/search\?'
-    type: query_parameter
-    parameter: q
-  - pattern: '^https?://[^/]+/jobs\?'
-    type: query_parameter
-    parameter: keywords
-  - pattern: '^https?://[^/]+/meta/meta\.ger3\?'
-    type: query_parameter
-    parameter: eingabe
-  - pattern: '^https?://[^/]+/results\?'
-    type: query_parameter
-    parameter: q
-  - pattern: '^https?://[^/]+/search\.naver\?'
-    type: query_parameter
-    parameter: query
   - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: q
   - pattern: '^https?://[^/]+/search\?'
     type: query_parameter
     parameter: query
-  - pattern: '^https?://[^/]+/serp\?'
-    type: query_parameter
-    parameter: q
-  - pattern: '^https?://[^/]+/serp\?'
-    type: query_parameter
-    parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -17815,7 +17763,7 @@
   - biglobe.ne.jp
   - cgi.search.biglobe.ne.jp
   query_parsers:
-  - pattern: '^https?://[^/]+/cgi\-bin/search\-st\?'
+  - pattern: '^https?://[^/]+/cgi-bin/search-st\?'
     type: query_parameter
     parameter: search
   page_parsers: [ ]
@@ -17835,9 +17783,9 @@
   domains:
   - blinkx.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: videos
+  - pattern: '^https?://[^/]+/videos/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -17962,7 +17910,7 @@
   - pattern: '^https?://[^/]+/biochemicals/search\?'
     type: query_parameter
     parameter: q
-  - pattern: '^https?://[^/]+/experimental\-models/search\?'
+  - pattern: '^https?://[^/]+/experimental-models/search\?'
     type: query_parameter
     parameter: q
   - pattern: '^https?://[^/]+/kits/search\?'
@@ -18182,9 +18130,11 @@
   domains:
   - glassdoor.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: Job
+  - pattern: '^https?://[^/]+/job/'
+    type: path_segment
+    segment: 1
+    space_patterns:
+    - "\.htm$"
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -18286,9 +18236,9 @@
   domains:
   - jobstreet.com.sg
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: job-search
+  - pattern: '^https?://[^/]+/[a-z]+/job-search/'
+    type: path_segment
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -18572,9 +18522,9 @@
   domains:
   - najdi.si
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: najdi
+  - pattern: '^https?://[^/]+/najdi/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -18809,9 +18759,9 @@
   domains:
   - pricegrabber.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: www.pricegrabber.com
+  - pattern: '^https?://[^/]+/[^/]+/products/'
+    type: path_segment
+    segment: 0
   - pattern: '^https?://[^/]+/classify\?'
     type: query_parameter
     parameter: keyword
@@ -18930,8 +18880,11 @@
   domains:
   - recipebridge.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
+  - pattern: '^https?://[^/]+/r/'
+    type: path_segment
+    segment: 1
+    space_patterns:
+    - "-recipes$"
     path_prefix: r
   page_parsers: [ ]
   offset_parsers: [ ]
@@ -18951,9 +18904,9 @@
   - rediff.com
   - shopping.rediff.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: product
+  - pattern: '^https?://[^/]+/product/'
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -18971,9 +18924,9 @@
   domains:
   - rozee.pk
   query_parsers:
-  - pattern: '^https?://[^/]+/job/jsearch/'
-    type: path_suffix
-    path_prefix: q
+  - pattern: '^https?://[^/]+/job/jsearch/q/'
+    type: path_segment
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -19109,9 +19062,11 @@
   domains:
   - shopzilla.com
   query_parsers:
-  - pattern: null
-    type: path_suffix
-    path_prefix: www.shopzilla.com
+  - pattern: '^https?://[^/]+/[^/]+/products/'
+    type: path_segment
+    segment: 0
+    space_patterns:
+    - "-"
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -19172,34 +19127,7 @@
   domains:
   - swisscows.com
   query_parsers:
-  - pattern: '^https?://[^/]+/de/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/en/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/es/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/fr/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/hu/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/it/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/lv/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/nl/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/ru/web\?'
-    type: query_parameter
-    parameter: query
-  - pattern: '^https?://[^/]+/uk/web\?'
+  - pattern: '^https?://[^/]+/[a-z]+/web\?'
     type: query_parameter
     parameter: query
   page_parsers: [ ]
