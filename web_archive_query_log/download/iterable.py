@@ -22,12 +22,12 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
     """
 
     def __post_init__(self):
-        self._check_urls_path()
+        self._check_raw_serps_paths()
 
-    def _check_urls_path(self):
+    def _check_raw_serps_paths(self):
         if not self.path.exists() or not self.path.is_dir():
             raise ValueError(
-                f"URLs path must be a directory: {self.path}"
+                f"Raw SERPs path must be a directory: {self.path}"
             )
 
     def _streams(self) -> Iterator[GZipStream]:
