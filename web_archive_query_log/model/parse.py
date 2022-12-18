@@ -1,3 +1,4 @@
+from re import compile, IGNORECASE
 from typing import Sequence, Protocol, runtime_checkable, Any, Mapping, Union
 
 from marshmallow.fields import Field
@@ -52,17 +53,39 @@ class QueryParserField(Field):
         if parser_type == "query_parameter":
             from web_archive_query_log.queries.parse import \
                 QueryParameterQueryParser
-            return QueryParameterQueryParser(parameter=value["parameter"])
+            return QueryParameterQueryParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+                parameter=value["parameter"],
+            )
         elif parser_type == "fragment_parameter":
             from web_archive_query_log.queries.parse import \
                 FragmentParameterQueryParser
-            return FragmentParameterQueryParser(parameter=value["parameter"])
+            return FragmentParameterQueryParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+                parameter=value["parameter"],
+            )
         elif parser_type == "path_suffix":
             from web_archive_query_log.queries.parse import \
-                PathSuffixQueryParser
-            return PathSuffixQueryParser(
-                path_prefix=value["path_prefix"],
-                single_segment=value.get("single_segment", False),
+                PathSegmentQueryParser
+            return PathSegmentQueryParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+                segment=value["segment"],
+                remove_patterns=(
+                    [
+                        compile(pattern, IGNORECASE)
+                        for pattern in value["remove_patterns"]
+                    ]
+                    if "remove_patterns" in value
+                    else []
+                ),
+                space_patterns=(
+                    [
+                        compile(pattern, IGNORECASE)
+                        for pattern in value["space_patterns"]
+                    ]
+                    if "space_patterns" in value
+                    else []
+                ),
             )
         else:
             raise ValueError(f"Unknown parser type: {parser_type}")
@@ -81,12 +104,32 @@ class PageOffsetParserField(Field):
         if parser_type == "query_parameter":
             from web_archive_query_log.queries.parse import \
                 QueryParameterPageOffsetParser
-            return QueryParameterPageOffsetParser(parameter=value["parameter"])
+            return QueryParameterPageOffsetParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+                parameter=value["parameter"],
+            )
         elif parser_type == "fragment_parameter":
             from web_archive_query_log.queries.parse import \
                 FragmentParameterPageOffsetParser
             return FragmentParameterPageOffsetParser(
-                parameter=value["parameter"])
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+                parameter=value["parameter"],
+            )
+        elif parser_type == "path_suffix":
+            from web_archive_query_log.queries.parse import \
+                PathSegmentPageOffsetParser
+            return PathSegmentPageOffsetParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+                segment=value["segment"],
+                remove_patterns=(
+                    [
+                        compile(pattern, IGNORECASE)
+                        for pattern in value["remove_patterns"]
+                    ]
+                    if "remove_patterns" in value
+                    else []
+                ),
+            )
         else:
             raise ValueError(f"Unknown parser type: {parser_type}")
 
@@ -120,6 +163,8 @@ class ResultsParserField(Field):
         parser_type = value["type"]
         if parser_type == "bing":
             from web_archive_query_log.results.parse import BingResultsParser
-            return BingResultsParser()
+            return BingResultsParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+            )
         else:
             raise ValueError(f"Unknown parser type: {parser_type}")

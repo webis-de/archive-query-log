@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from gzip import GzipFile
 from io import TextIOWrapper
 from pathlib import Path
-from typing import Sequence, NamedTuple
+from typing import Sequence, NamedTuple, Pattern
 from urllib.parse import parse_qsl, unquote, quote
 
 from tqdm.auto import tqdm
@@ -14,46 +14,64 @@ from web_archive_query_log.urls.iterable import ArchivedUrls
 
 @dataclass(frozen=True)
 class QueryParameterQueryParser(QueryParser):
+    url_pattern: Pattern[str]
     parameter: str
 
     def parse(self, url: ArchivedUrl) -> str | None:
+        if self.url_pattern.search(url.url) is None:
+            return None
         for key, value in parse_qsl(url.split_url.query):
             if key == self.parameter:
-                return value
+                return value.strip()
         return None
 
 
 @dataclass(frozen=True)
 class FragmentParameterQueryParser(QueryParser):
+    url_pattern: Pattern[str]
     parameter: str
 
     def parse(self, url: ArchivedUrl) -> str | None:
+        if self.url_pattern.search(url.url) is None:
+            return None
         for key, value in parse_qsl(url.split_url.fragment):
             if key == self.parameter:
-                return value
+                return value.strip()
         return None
 
 
 @dataclass(frozen=True)
-class PathSuffixQueryParser(QueryParser):
-    path_prefix: str
-    single_segment: bool = False
+class PathSegmentQueryParser(QueryParser):
+    url_pattern: Pattern[str]
+    segment: int
+    remove_patterns: Sequence[Pattern[str]] = tuple()
+    space_patterns: Sequence[Pattern[str]] = tuple()
 
     def parse(self, url: ArchivedUrl) -> str | None:
-        path = url.split_url.path
-        if not path.startswith(self.path_prefix):
+        if self.url_pattern.search(url.url) is None:
             return None
-        path = path.removeprefix(self.path_prefix)
-        if self.single_segment and "/" in path:
-            path, _ = path.split("/", maxsplit=1)
-        return unquote(path)
+        path = url.split_url.path
+        path_segments = path.split("/")
+        if len(path_segments) <= self.segment:
+            return None
+        path_segment = path_segments[self.segment]
+        for pattern in self.remove_patterns:
+            path_segment = pattern.sub("", path_segment)
+        if len(self.space_patterns) > 0:
+            for pattern in self.space_patterns:
+                path_segment = pattern.sub(" ", path_segment)
+            path_segment = path_segment.replace("  ", " ")
+        return unquote(path_segment).strip()
 
 
 @dataclass(frozen=True)
 class QueryParameterPageOffsetParser(PageParser, OffsetParser):
+    url_pattern: Pattern[str]
     parameter: str
 
     def parse(self, url: ArchivedUrl) -> int | None:
+        if self.url_pattern.search(url.url) is None:
+            return None
         for key, value in parse_qsl(url.split_url.query):
             if key == self.parameter and value.isdigit():
                 return int(value)
@@ -62,13 +80,35 @@ class QueryParameterPageOffsetParser(PageParser, OffsetParser):
 
 @dataclass(frozen=True)
 class FragmentParameterPageOffsetParser(PageParser, OffsetParser):
+    url_pattern: Pattern[str]
     parameter: str
 
     def parse(self, url: ArchivedUrl) -> int | None:
+        if self.url_pattern.search(url.url) is None:
+            return None
         for key, value in parse_qsl(url.split_url.fragment):
             if key == self.parameter and value.isdigit():
                 return int(value)
         return None
+
+
+@dataclass(frozen=True)
+class PathSegmentPageOffsetParser(PageParser, OffsetParser):
+    url_pattern: Pattern[str]
+    segment: int
+    remove_patterns: Sequence[Pattern[str]] = tuple()
+
+    def parse(self, url: ArchivedUrl) -> int | None:
+        if self.url_pattern.search(url.url) is None:
+            return None
+        path = url.split_url.path
+        path_segments = path.split("/")
+        if len(path_segments) <= self.segment:
+            return None
+        path_segment = path_segments[self.segment]
+        for pattern in self.remove_patterns:
+            path_segment = pattern.sub("", path_segment)
+        return int(path_segment)
 
 
 class _CdxPage(NamedTuple):

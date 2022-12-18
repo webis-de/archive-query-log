@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from gzip import GzipFile
 from io import TextIOWrapper
 from pathlib import Path
-from typing import Sequence, Iterator
+from typing import Sequence, Iterator, Pattern
 
 from bleach import clean
 from bs4 import Tag, BeautifulSoup
@@ -13,7 +13,9 @@ from web_archive_query_log.model import ArchivedRawSerp, ArchivedSerpResult, \
     ResultsParser, InterpretedQueryParser, ArchivedParsedSerp
 
 
+@dataclass(frozen=True)
 class BingResultsParser(ResultsParser):
+    url_pattern: Pattern[str]
 
     @staticmethod
     def _clean_html(tag: Tag) -> str:
@@ -52,6 +54,8 @@ class BingResultsParser(ResultsParser):
             self,
             content: ArchivedRawSerp,
     ) -> Sequence[ArchivedSerpResult] | None:
+        if self.url_pattern.search(content.url) is None:
+            return None
         domain_parts = content.split_url.netloc.split(".")
         if "bing" not in domain_parts:
             # bing.*/*
