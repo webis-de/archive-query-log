@@ -16,7 +16,7 @@ from web_archive_query_log.util.html import clean_html
 
 
 class HtmlResultsParser(ResultsParser, ABC):
-    url_pattern: Pattern[str] = ...
+    url_pattern: Pattern[str]
 
     @abstractmethod
     def parse_html(self, html: Tag) -> Iterator[ArchivedSerpResult]:
