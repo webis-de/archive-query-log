@@ -72,7 +72,7 @@ def load_domains() -> DataFrame:
 def url_prefix_pattern(url_prefix: str) -> str | None:
     if url_prefix == "":
         return None
-    return f"[^/]+/{escape(url_prefix)}"
+    return f"^https?://[^/]+/{escape(url_prefix)}"
 
 
 compile(r"[^/]+/images/search\?")
@@ -106,21 +106,22 @@ def service_domains(domains: DataFrame, service: Series) -> list[str]:
 def query_parser(row: Series) -> dict:
     row = row.to_dict()
     row.update(loads(row["query_parser"]))
+    url_pattern = "" if row["pattern"] is None else row["pattern"]
     if row["type"] == "qp":
         return {
-            "pattern": row["pattern"],
+            "url_pattern": url_pattern,
             "type": "query_parameter",
             "parameter": row["key"]
         }
     elif row["type"] == "fp":
         return {
-            "pattern": row["pattern"],
+            "url_pattern": url_pattern,
             "type": "fragment_parameter",
             "parameter": row["key"]
         }
     elif row["type"] == "ps":
         return {
-            "pattern": row["pattern"],
+            "url_pattern": url_pattern,
             "type": "path_suffix",
             "path_prefix": row["key"]
         }
@@ -136,7 +137,7 @@ def page_offset_parser(row: Series, count="results") -> dict:
     if row["count"] == count:
         url_pattern = "" if row["pattern"] is None else row["pattern"]
         return {
-            "url_pattern": f'^https?://{url_pattern}',
+            "url_pattern": url_pattern,
             "type": page_offset_parser_map[row["type"]],
             "parameter": row["key"]
             }
@@ -190,7 +191,7 @@ def import_services(services_file: Path):
             query_parsers[
                 query_parsers["name"].str.endswith(service["name"])
             ].iterrows()
-        ), key=lambda qp: str(qp["pattern"]))
+        ), key=lambda qp: str(qp["url_pattern"]))
         for _, service in services.iterrows()
     ]
     page_offset_parsers = concat(
