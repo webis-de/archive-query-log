@@ -35,7 +35,7 @@ class InterpretedQueryParser(Protocol):
 class ResultsParser(Protocol):
     def parse(
             self,
-            content: "ArchivedRawSerp",
+            raw_serp: "ArchivedRawSerp",
     ) -> Sequence["ArchivedSerpResult"] | None:
         ...
 
@@ -202,7 +202,7 @@ class ResultsParserField(Field):
         value: Mapping[str, Any]
         parser_type = value["type"]
         if parser_type == "bing":
-            from web_archive_query_log.results.parse import BingResultsParser
+            from web_archive_query_log.results.bing import BingResultsParser
             return BingResultsParser(
                 url_pattern=compile(value["url_pattern"], IGNORECASE),
             )

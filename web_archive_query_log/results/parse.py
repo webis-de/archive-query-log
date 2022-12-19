@@ -1,10 +1,12 @@
+from abc import abstractmethod, ABC
 from dataclasses import dataclass
 from gzip import GzipFile
 from io import TextIOWrapper
 from pathlib import Path
-from typing import Sequence, NamedTuple
+from typing import Sequence, NamedTuple, Iterator, Pattern
 from urllib.parse import quote
 
+from bs4 import Tag, BeautifulSoup
 from tqdm.auto import tqdm
 
 from web_archive_query_log.download.iterable import ArchivedRawSerps
@@ -12,17 +14,65 @@ from web_archive_query_log.model import ArchivedRawSerp, ArchivedSerpResult, \
     ResultsParser, InterpretedQueryParser, ArchivedParsedSerp, Service
 
 
+class HtmlResultsParser(ResultsParser, ABC):
+    url_pattern: Pattern[str] = ...
+
+    @abstractmethod
+    def parse_html(self, html: Tag) -> Iterator[ArchivedSerpResult]:
+        ...
+
+    def parse(
+            self,
+            raw_serp: ArchivedRawSerp,
+    ) -> Sequence[ArchivedSerpResult] | None:
+        if self.url_pattern.search(raw_serp.url) is None:
+            return None
+        html = BeautifulSoup(
+            raw_serp.content,
+            "html.parser",
+            from_encoding=raw_serp.encoding
+        )
+        results = tuple(self.parse_html(html))
+        return results if len(results) > 0 else None
+
+
+class HtmlInterpretedQueryParser(InterpretedQueryParser, ABC):
+    url_pattern: Pattern[str] = ...
+
+    @abstractmethod
+    def parse_html(self, html: Tag) -> str | None:
+        ...
+
+    def parse(
+            self,
+            raw_serp: ArchivedRawSerp,
+    ) -> str | None:
+        if self.url_pattern.search(raw_serp.url) is None:
+            return None
+        html = BeautifulSoup(
+            raw_serp.content,
+            "html.parser",
+            from_encoding=raw_serp.encoding
+        )
+        return self.parse_html(html)
+
+
 class _CdxPage(NamedTuple):
     input_path: Path
     output_path: Path
 
+
 @dataclass(frozen=True)
 class ArchivedParsedSerpParser:
     results_parsers: Sequence[ResultsParser]
-    result_query_parsers: Sequence[InterpretedQueryParser]
+    interpreted_query_parsers: Sequence[InterpretedQueryParser]
+    overwrite: bool = False
     verbose: bool = False
 
     def parse(self, input_path: Path, output_path: Path) -> None:
+        if output_path.exists() and not self.overwrite:
+            return
+        output_path.parent.mkdir(parents=True, exist_ok=True)
         archived_serp_contents = ArchivedRawSerps(input_path)
         if self.verbose:
             archived_serp_contents = tqdm(
@@ -62,7 +112,7 @@ class ArchivedParsedSerpParser:
             return None
 
         interpreted_query: str | None = None
-        for parser in self.result_query_parsers:
+        for parser in self.interpreted_query_parsers:
             interpreted_query = parser.parse(archived_serp_content)
             if interpreted_query is not None:
                 break
