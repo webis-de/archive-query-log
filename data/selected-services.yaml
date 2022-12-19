@@ -238,10 +238,10 @@
   - youtube.com
   - youtu.be
   query_parsers:
-  - url_pattern: '^https?://(www\.)?youtube[^/]+/results\?'
+  - url_pattern: '^https?://[^/]+/results\?'
     type: query_parameter
     parameter: search_query
-  - url_pattern: '^https?://(www\.)?youtube[^/]+/[^/]+/search\?'
+  - url_pattern: '^https?://[^/]+/[^/]+/search\?'
     type: query_parameter
     parameter: search_query
   page_parsers: [ ]
