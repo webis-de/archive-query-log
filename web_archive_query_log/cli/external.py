@@ -3,6 +3,7 @@ from math import nan
 from pathlib import Path
 from re import compile, escape
 from urllib.parse import quote
+from numpy import nan
 
 from click import argument
 from pandas import DataFrame, read_csv, Series, concat
@@ -17,7 +18,7 @@ sheet_services = "Services"
 sheet_domains = "Domains"
 sheet_url_prefixes = "URL Prefixes"
 sheet_query_parsers = "Query Parsers"
-
+sheet_page_parsers = "Page Parsers"
 
 @main.group("external")
 def external():
@@ -56,7 +57,7 @@ def load_services() -> DataFrame:
     df[col].replace("False", False, inplace=True)
     df[col].replace("True", True, inplace=True)
     df["alexa_rank"].astype(int, copy=False)
-    df["alexa_rank"].replace(99999, None, inplace=True)
+    df["alexa_rank"].replace(99999, nan, inplace=True)
     return df[["name", "public_suffix", "alexa_domain", "alexa_rank",
                "category", "notes", "input_field",
                "search_form", "search_div"]]
@@ -89,6 +90,12 @@ def load_query_parsers() -> DataFrame:
     df["query_parser"] = df["value"]
     return df[["name", "query_parser"]]
 
+def load_page_offset_parsers() -> DataFrame:
+    df = from_sheets(sheet_page_parsers, transpose=True)
+    df["value"].replace("NULL", "{}", inplace=True)
+    df["page_offset_parser"] = df["value"]
+    return df[["name", "page_offset_parser"]]
+
 
 def service_domains(domains: DataFrame, service: Series) -> list[str]:
     return sorted(
@@ -120,6 +127,34 @@ def query_parser(row: Series) -> dict:
     else:
         raise NotImplementedError()
 
+page_offset_parser_map = {"parameter": "query_parameter",
+                          "suffix": "path_suffix",
+                          "fragment": "fragment_parameter"}
+def page_offset_parser(row: Series, count="results") -> dict:
+    row = row.to_dict()
+    row.update(loads(row["page_offset_parser"]))
+    if row["count"] == count:
+        url_pattern = "" if row["pattern"] is None else row["pattern"]
+        return {
+            "url_pattern": f'^https?://{url_pattern}',
+            "type": page_offset_parser_map[row["type"]],
+            "parameter": row["key"]
+            }
+    else:
+        return NotImplementedError()
+
+def page_offset_parser_series(page_offset_parsers, services, count):
+    return [
+        sorted((
+            page_offset_parser(row, count=count)
+            for _, row in
+            page_offset_parsers[
+                (page_offset_parsers["name"].str.fullmatch(service["name"])) &
+                (page_offset_parsers["page_offset_parser"].str.contains(f'"count": "{count}"'))
+            ].iterrows()
+        ), key=lambda pp: str(pp["url_pattern"]))
+        for _, service in services.iterrows()
+    ]
 
 @external.command("import-services")
 @argument(
@@ -158,14 +193,14 @@ def import_services(services_file: Path):
         ), key=lambda qp: str(qp["pattern"]))
         for _, service in services.iterrows()
     ]
-    services["page_parsers"] = [
-        []
-        for _, service in services.iterrows()
-    ]
-    services["offset_parsers"] = [
-        []
-        for _, service in services.iterrows()
-    ]
+    page_offset_parsers = concat(
+        [
+            load_url_prefixes(),
+            load_page_offset_parsers()[["page_offset_parser"]]
+        ],
+        axis="columns")
+    services["page_parsers"] = page_offset_parser_series(page_offset_parsers, services, count="pages")
+    services["offset_parsers"] = page_offset_parser_series(page_offset_parsers, services, count="results")
     services["interpreted_query_parsers"] = [
         []
         for _, service in services.iterrows()
