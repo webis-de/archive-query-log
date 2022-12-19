@@ -80,13 +80,13 @@ class ArchivedParsedSerpParser:
                 desc="Parse SERP WARC records",
                 unit="record",
             )
-        archived_serps = (
+        archived_parsed_serps = (
             self._parse_single(archived_serp_content)
             for archived_serp_content in archived_serp_contents
         )
-        archived_serps = (
+        archived_parsed_serps = (
             archived_serp
-            for archived_serp in archived_serps
+            for archived_serp in archived_parsed_serps
             if archived_serp is not None
         )
         output_schema = ArchivedParsedSerp.schema()
@@ -94,8 +94,8 @@ class ArchivedParsedSerpParser:
         with output_path.open("wb") as file, \
                 GzipFile(fileobj=file, mode="wb") as gzip_file, \
                 TextIOWrapper(gzip_file) as text_file:
-            for archived_serp_url in archived_serps:
-                text_file.write(output_schema.dumps(archived_serp_url))
+            for archived_parsed_serp in archived_parsed_serps:
+                text_file.write(output_schema.dumps(archived_parsed_serp))
                 text_file.write("\n")
 
     def _parse_single(
@@ -139,7 +139,7 @@ class ArchivedParsedSerpParser:
         List all items that need to be downloaded.
         """
         input_format_path = data_directory / "archived-raw-serps"
-        output_format_path = data_directory / "archived-pasred-serps"
+        output_format_path = data_directory / "archived-parsed-serps"
 
         service_path = input_format_path / service.name
 
