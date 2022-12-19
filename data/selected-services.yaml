@@ -294,7 +294,6 @@
     url_selector: 'h3.t > a'
     title_selector: 'h3.t'
     snippet_selector: 'div.c-abstract'
-    highlight_tag: em
   focused_url_prefixes:
   - /s?
   - /search
@@ -1519,8 +1518,17 @@
     parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: '^https?://[^/]+/search\?'
+    type: html_selector
+    query_selector: 'input#sb_form_q'
+  results_parsers:
+  - url_pattern: '^https?://[^/]+/search\?'
+    type: html_selector
+    result_selector: 'ol#b_results > li.b_algo'
+    url_selector: 'h2 > a'
+    title_selector: 'h2'
+    snippet_selector: 'p'
   focused_url_prefixes: [ ]
 - name: twitter
   public_suffix: com

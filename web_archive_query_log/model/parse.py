@@ -231,11 +231,6 @@ class ResultsParserField(Field):
                 title_selector=value["title_selector"],
                 snippet_selector=value["snippet_selector"],
             )
-        elif parser_type == "bing":
-            from web_archive_query_log.results.bing import BingResultsParser
-            return BingResultsParser(
-                url_pattern=compile(value["url_pattern"], IGNORECASE),
-            )
         elif parser_type == "chatnoir":
             from web_archive_query_log.results.chatnoir import \
                 ChatNoirResultsParser
