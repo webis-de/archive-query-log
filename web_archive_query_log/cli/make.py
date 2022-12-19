@@ -3,7 +3,7 @@ from pathlib import Path
 
 from click import option, argument, STRING, IntRange, BOOL
 
-from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
+from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL, LOGGER
 from web_archive_query_log.cli import main
 from web_archive_query_log.cli.util import PathParam, ServiceChoice
 
@@ -92,6 +92,10 @@ def archived_urls_command(
         cdx_api_url=CDX_API_URL
     )
     if focused:
+        if len(service_config.focused_url_prefixes) == 0:
+            LOGGER.warning(
+                f"No focused URL prefixes configured for service {service}."
+            )
         data_directory = data_directory / "focused"
     run(fetcher.fetch_service(
         data_directory=data_directory,
@@ -121,6 +125,15 @@ def archived_query_urls_command(
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.queries.parse import ArchivedQueryUrlParser
     service_config = SERVICES[service]
+    if len(service_config.query_parsers) == 0:
+        LOGGER.warning(
+            f"No query parsers configured for service {service}."
+        )
+    if len(service_config.page_parsers) == 0 \
+            and len(service_config.offset_parsers) == 0:
+        LOGGER.warning(
+            f"No page or offset parsers configured for service {service}."
+        )
     parser = ArchivedQueryUrlParser(
         query_parsers=service_config.query_parsers,
         page_parsers=service_config.page_parsers,
@@ -187,6 +200,14 @@ def archived_parsed_serps_command(
     from web_archive_query_log.config import SERVICES
     from web_archive_query_log.results.parse import ArchivedParsedSerpParser
     service_config = SERVICES[service]
+    if len(service_config.results_parsers) == 0:
+        LOGGER.warning(
+            f"No result parsers configured for service {service}."
+        )
+    if len(service_config.interpreted_query_parsers) == 0:
+        LOGGER.warning(
+            f"No interpreted query parsers configured for service {service}."
+        )
     parser = ArchivedParsedSerpParser(
         results_parsers=service_config.results_parsers,
         interpreted_query_parsers=service_config.interpreted_query_parsers,
