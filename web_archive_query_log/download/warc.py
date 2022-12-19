@@ -287,6 +287,10 @@ class WebArchiveWarcDownloader:
 
     @staticmethod
     def _deduplicate_urls(urls: Iterable[_CdxUrl]) -> Iterable[_CdxUrl]:
+        urls = sorted(
+            urls,
+            key=lambda url: url.archived_url.query
+        )
         grouped_query_urls = groupby(
             urls,
             key=lambda url: url.archived_url.query
