@@ -3,8 +3,6 @@
   alexa_domain: google.com
   alexa_rank: 1
   category: general
-  notes: Removed s/results/code-search? and cse? as URL_Prefixes because they redirected
-    to the same page for all domains
   input_field: false
   search_form: false
   search_div: false
@@ -200,7 +198,7 @@
   - google.vu
   - google.ws
   query_parsers:
-  - url_pattern: '^https?://scholar[^/]+/scholar\?'
+  - url_pattern: '^https?://[^/]+/scholar\?'
     type: query_parameter
     parameter: q
   - url_pattern: '^https?://(www\.)?google[^/]+/search\?'
@@ -208,14 +206,23 @@
     parameter: q
   page_parsers: [ ]
   offset_parsers:
-  - url_pattern: '^https?://scholar[^/]+/scholar\?'
+  - url_pattern: '^https?://[^/]+/scholar\?'
     type: query_parameter
     parameter: start
   - url_pattern: '^https?://(www\.)?google[^/]+/search\?'
     type: query_parameter
     parameter: start
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: '^https?://(www\.)?google[^/]+/search\?'
+    type: html_selector
+    query_selector: 'form#tsf input[name="q"]'
+  results_parsers:
+  - url_pattern: '^https?://(www\.)?google[^/]+/search\?'
+    type: html_selector
+    result_selector: 'div#search > div > div#rso > div > div > div.g'
+    url_selector: 'a'
+    title_selector: 'a h3'
+    snippet_selector: 'span'
   focused_url_prefixes:
   - /search?
 - name: youtube
