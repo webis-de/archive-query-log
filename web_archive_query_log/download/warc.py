@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from io import BytesIO
-from itertools import count
+from itertools import count, groupby, chain
 from pathlib import Path
 from tempfile import TemporaryFile
-from typing import Sequence, NamedTuple
-from urllib.parse import quote
+from typing import Sequence, NamedTuple, Iterable
+from urllib.parse import quote, parse_qsl
 
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
@@ -15,11 +15,15 @@ from warcio import WARCWriter, StatusAndHeaders
 from web_archive_query_log.model import ArchivedUrl, Service
 from web_archive_query_log.queries.iterable import ArchivedQueryUrls
 from web_archive_query_log.util.archive_http import archive_http_client
-from web_archive_query_log.util.iterable import SizedIterable
 
 
 class _CdxPage(NamedTuple):
     input_path: Path
+    output_path: Path
+
+
+class _CdxUrl(NamedTuple):
+    archived_url: ArchivedUrl
     output_path: Path
 
 
@@ -52,32 +56,27 @@ class WebArchiveWarcDownloader:
         path.touch(exist_ok=True)
         return path
 
-    def _is_url_downloaded(
-            self,
-            download_path: Path,
-            archived_url: ArchivedUrl,
-    ) -> bool:
-        url = archived_url.raw_archive_url
-        with self._lock_path(download_path).open("rt") as file:
+    def _is_url_downloaded(self, url: _CdxUrl) -> bool:
+        if not url.output_path.exists():
+            return False
+        archive_url = url.archived_url.raw_archive_url
+        with self._lock_path(url.output_path).open("rt") as file:
             return any(
-                line.strip() == url
+                line.strip() == archive_url
                 for line in file
             )
 
-    def _set_url_downloaded(
-            self,
-            download_path: Path,
-            archived_url: ArchivedUrl,
-    ):
-        url = archived_url.raw_archive_url
-        with self._lock_path(download_path).open("at") as file:
-            file.write(f"{url}\n")
+    def _set_url_downloaded(self, url: _CdxUrl):
+        archive_url = url.archived_url.raw_archive_url
+        with self._lock_path(url.output_path).open("at") as file:
+            file.write(f"{archive_url}\n")
 
     def _next_available_file_path(
             self,
             download_path: Path,
             buffer_size: int,
     ) -> Path:
+        WebArchiveWarcDownloader._check_download_path(download_path)
         for index in count():
             name = f"{index:010}.warc.gz"
             path = download_path / name
@@ -89,28 +88,26 @@ class WebArchiveWarcDownloader:
                 if file_size + buffer_size <= self.max_file_size:
                     return path
 
-    async def download(
+    async def _download(
             self,
-            download_path: Path,
-            archived_urls: SizedIterable[ArchivedUrl],
+            urls: Iterable[_CdxUrl],
     ) -> None:
         """
         Download WARC files for archived URLs from the Web Archive.
         """
-        self._check_download_path(download_path)
 
-        archived_urls = [
-            archived_url
-            for archived_url in archived_urls
-            if not self._is_url_downloaded(download_path, archived_url)
+        urls = [
+            url
+            for url in urls
+            if not self._is_url_downloaded(url)
         ]
-        if len(archived_urls) == 0:
+        if len(urls) == 0:
             return
 
         progress = None
         if self.verbose:
             progress = tqdm(
-                total=len(archived_urls),
+                total=len(urls),
                 desc="Download archived URLs",
                 unit="URL",
             )
@@ -118,49 +115,40 @@ class WebArchiveWarcDownloader:
         async with archive_http_client(limit=100) as client:
             pool = AioPool(size=100)  # avoid creating too many tasks at once
 
-            async def download_single(archived_url: ArchivedUrl):
-                return await self._download_single(
-                    download_path,
-                    client,
-                    archived_url,
-                    progress,
-                )
+            async def download_single(url: _CdxUrl):
+                return await self._download_single(client, url, progress)
 
-            responses = await pool.map(download_single, archived_urls)
-        error_urls: set[ArchivedUrl] = {
-            archived_url
-            for archived_url, response in zip(archived_urls, responses)
-            if response is None
-        }
-        if len(error_urls) > 0:
-            if len(error_urls) > 10:
-                raise RuntimeError(
-                    f"Some downloads did not succeed: "
-                    f"{len(error_urls)} in total"
-                )
-            else:
-                raise RuntimeError(
-                    f"Some downloads did not succeed: "
-                    f"{', '.join(url.raw_archive_url for url in error_urls)}"
-                )
+            await pool.map(download_single, urls)
+
+    async def download(
+            self,
+            download_path: Path,
+            archived_urls: Iterable[ArchivedUrl],
+    ) -> None:
+        """
+        Download WARC files for archived URLs from the Web Archive.
+        """
+        await self._download([
+            _CdxUrl(url, download_path)
+            for url in archived_urls
+        ])
 
     async def _download_single(
             self,
-            download_path: Path,
             client: RetryClient,
-            archived_url: ArchivedUrl,
+            url: _CdxUrl,
             progress: tqdm | None = None,
     ) -> bool:
-        if self._is_url_downloaded(download_path, archived_url):
+        if self._is_url_downloaded(url):
             if progress is not None:
                 progress.update()
             return True
-        url = archived_url.raw_archive_url
+        archive_url = url.archived_url.raw_archive_url
         url_headers = {
-            "Archived-URL": archived_url.schema().dumps(archived_url),
+            "Archived-URL": url.archived_url.schema().dumps(url.archived_url),
         }
         try:
-            async with client.get(url) as response:
+            async with client.get(archive_url) as response:
                 with TemporaryFile() as tmp_file:
                     writer = WARCWriter(tmp_file, gzip=True)
                     # noinspection PyProtectedMember
@@ -202,7 +190,7 @@ class WebArchiveWarcDownloader:
                     tmp_size = tmp_file.tell()
                     tmp_file.seek(0)
                     file_path = self._next_available_file_path(
-                        download_path,
+                        url.output_path,
                         tmp_size,
                     )
                     with file_path.open("ab") as file:
@@ -210,7 +198,7 @@ class WebArchiveWarcDownloader:
                         if not len(tmp) == tmp_size:
                             raise RuntimeError("Invalid buffer size.")
                         file.write(tmp)
-                    self._set_url_downloaded(download_path, archived_url)
+                    self._set_url_downloaded(url)
                     return True
         except ClientResponseError:
             return False
@@ -281,6 +269,43 @@ class WebArchiveWarcDownloader:
         )
         return [page for page in pages if page.input_path.exists()]
 
+    @staticmethod
+    def _canonical_url(urls: Iterable[_CdxUrl]) -> _CdxUrl:
+        urls = sorted(
+            urls,
+            key=lambda url: url.archived_url.url
+        )
+        urls = sorted(
+            urls,
+            key=lambda url: len(url.archived_url.url)
+        )
+        urls = sorted(
+            urls,
+            key=lambda url: len(parse_qsl(url.archived_url.split_url.query))
+        )
+        return urls[0]
+
+    @staticmethod
+    def _deduplicate_urls(urls: Iterable[_CdxUrl]) -> Iterable[_CdxUrl]:
+        grouped_query_urls = groupby(
+            urls,
+            key=lambda url: url.archived_url.query
+        )
+        return [
+            WebArchiveWarcDownloader._canonical_url(urls)
+            for query, urls in grouped_query_urls
+        ]
+
+    @staticmethod
+    def _page_urls(page: _CdxPage, focused: bool) -> Iterable[_CdxUrl]:
+        urls = (
+            _CdxUrl(url, page.output_path)
+            for url in ArchivedQueryUrls(page.input_path)
+        )
+        if focused:
+            urls = WebArchiveWarcDownloader._deduplicate_urls(urls)
+        return urls
+
     async def download_service(
             self,
             data_directory: Path,
@@ -300,13 +325,19 @@ class WebArchiveWarcDownloader:
         if len(pages) == 0:
             return
 
-        if len(pages) > 1:
+        if focused:
             pages = tqdm(
                 pages,
-                desc="Download archived SERP contents",
+                desc=f"Deduplicate query URLs",
                 unit="page",
             )
 
-        for page in pages:
-            archived_urls = ArchivedQueryUrls(page.input_path)
-            await self.download(page.output_path, archived_urls)
+        archived_urls = chain.from_iterable(
+            self._page_urls(page, focused)
+            for page in pages
+        )
+
+        if focused:
+            archived_urls = self._deduplicate_urls(archived_urls)
+
+        await self._download(archived_urls)
