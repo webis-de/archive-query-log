@@ -17836,7 +17836,10 @@
   - url_pattern: '^https?://[^/]+/\?'
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: '^https?://[^/]+/\?'
+    type: query_parameter
+    parameter: p
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
