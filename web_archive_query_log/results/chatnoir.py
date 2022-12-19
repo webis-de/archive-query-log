@@ -24,6 +24,8 @@ class ChatNoirResultsParser(HtmlResultsParser):
             # Remove header. Only the snippet will be left.
             header.decompose()
             snippet = clean_html(result, "em")
+            if len(snippet) == 0:
+                snippet = None
             yield ArchivedSerpResult(url, title, snippet)
 
 
