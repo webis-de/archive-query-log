@@ -17841,8 +17841,12 @@
     type: query_parameter
     parameter: p
   offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: '^https?://[^/]+/\?'
+    type: chatnoir
+  results_parsers:
+  - url_pattern: '^https?://[^/]+/\?'
+    type: chatnoir
   focused_url_prefixes: [ ]
 - name: chegg
   public_suffix: com
