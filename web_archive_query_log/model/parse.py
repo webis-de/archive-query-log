@@ -184,9 +184,12 @@ class InterpretedQueryParserField(Field):
     ) -> InterpretedQueryParser:
         value: Mapping[str, Any]
         parser_type = value["type"]
-        if parser_type == "google":
-            # TODO
-            raise NotImplementedError()
+        if parser_type == "chatnoir":
+            from web_archive_query_log.results.chatnoir import \
+                ChatNoirInterpretedQueryParser
+            return ChatNoirInterpretedQueryParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+            )
         else:
             raise ValueError(f"Unknown parser type: {parser_type}")
 
@@ -204,6 +207,12 @@ class ResultsParserField(Field):
         if parser_type == "bing":
             from web_archive_query_log.results.bing import BingResultsParser
             return BingResultsParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+            )
+        if parser_type == "chatnoir":
+            from web_archive_query_log.results.chatnoir import \
+                ChatNoirResultsParser
+            return ChatNoirResultsParser(
                 url_pattern=compile(value["url_pattern"], IGNORECASE),
             )
         else:
