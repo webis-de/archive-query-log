@@ -171,7 +171,12 @@ class ArchivedQueryUrlParser:
     overwrite: bool = False
     verbose: bool = False
 
-    def parse(self, input_path: Path, output_path: Path) -> None:
+    def parse(
+            self,
+            input_path: Path,
+            output_path: Path,
+            focused: bool = False,
+    ) -> None:
         if output_path.exists() and not self.overwrite:
             return
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -183,7 +188,7 @@ class ArchivedQueryUrlParser:
                 unit="URL",
             )
         archived_serp_urls = (
-            self._parse_single(archived_url)
+            self._parse_single(archived_url, focused)
             for archived_url in archived_urls
         )
         archived_serp_urls = (
@@ -202,7 +207,8 @@ class ArchivedQueryUrlParser:
 
     def _parse_single(
             self,
-            archived_url: ArchivedUrl
+            archived_url: ArchivedUrl,
+            focused: bool,
     ) -> ArchivedQueryUrl | None:
         query: str | None = None
         for parser in self.query_parsers:
@@ -219,11 +225,17 @@ class ArchivedQueryUrlParser:
             if page is not None:
                 break
 
+        if focused and page is not None and page != 0:
+            return None
+
         offset: int | None = None
         for parser in self.offset_parsers:
             offset = parser.parse(archived_url)
             if offset is not None:
                 break
+
+        if focused and offset is not None and offset != 0:
+            return None
 
         return ArchivedQueryUrl(
             url=archived_url.url,
@@ -320,4 +332,4 @@ class ArchivedQueryUrlParser:
             )
 
         for page in pages:
-            self.parse(page.input_path, page.output_path)
+            self.parse(page.input_path, page.output_path, focused)
