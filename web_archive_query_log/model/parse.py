@@ -221,7 +221,7 @@ class ResultsParserField(Field):
                 HtmlSelectorResultsParser
             return HtmlSelectorResultsParser(
                 url_pattern=compile(value["url_pattern"], IGNORECASE),
-                results_selector=value["selector"],
+                results_selector=value["results_selector"],
                 url_selector=value["url_selector"],
                 url_attribute=(
                     value["url_attribute"]

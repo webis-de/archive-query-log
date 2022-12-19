@@ -219,7 +219,7 @@
   results_parsers:
   - url_pattern: '^https?://(www\.)?google[^/]+/search\?'
     type: html_selector
-    result_selector: 'div#search > div > div#rso > div > div > div.g'
+    results_selector: 'div#search > div > div#rso > div > div > div.g'
     url_selector: 'a'
     title_selector: 'a h3'
     snippet_selector: 'span'
@@ -297,7 +297,7 @@
   results_parsers:
   - url_pattern: '^https?://[^/]+/s\?'
     type: html_selector
-    result_selector: 'div#content_left > div.result, div#content_left > div.result-op'
+    results_selector: 'div#content_left > div.result, div#content_left > div.result-op'
     url_selector: 'h3.t > a'
     title_selector: 'h3.t'
     snippet_selector: 'div.c-abstract'
@@ -1535,7 +1535,7 @@
   results_parsers:
   - url_pattern: '^https?://[^/]+/search\?'
     type: html_selector
-    result_selector: 'ol#b_results > li.b_algo'
+    results_selector: 'ol#b_results > li.b_algo'
     url_selector: 'h2 > a'
     title_selector: 'h2'
     snippet_selector: 'p'
