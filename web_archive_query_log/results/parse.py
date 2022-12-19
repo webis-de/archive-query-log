@@ -68,7 +68,7 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
 
 
 class HtmlInterpretedQueryParser(InterpretedQueryParser, ABC):
-    url_pattern: Pattern[str] = ...
+    url_pattern: Pattern[str]
 
     @abstractmethod
     def parse_html(self, html: Tag) -> str | None:
