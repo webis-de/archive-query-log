@@ -2199,6 +2199,9 @@
   - cnblogs.com
   - zzk.cnblogs.com
   query_parsers:
+  - url_pattern: ^https?://[^/]+/s/blogpost\?
+    type: query_parameter
+    parameter: Keywords
   - url_pattern: ^https?://[^/]+/s/kb\?
     type: query_parameter
     parameter: Keywords
