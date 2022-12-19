@@ -12,6 +12,7 @@ from tqdm.auto import tqdm
 from web_archive_query_log.download.iterable import ArchivedRawSerps
 from web_archive_query_log.model import ArchivedRawSerp, ArchivedSerpResult, \
     ResultsParser, InterpretedQueryParser, ArchivedParsedSerp, Service
+from web_archive_query_log.util.html import clean_html
 
 
 class HtmlResultsParser(ResultsParser, ABC):
@@ -36,6 +37,36 @@ class HtmlResultsParser(ResultsParser, ABC):
         return results if len(results) > 0 else None
 
 
+@dataclass(frozen=True)
+class HtmlSelectorResultsParser(HtmlResultsParser):
+    url_pattern: Pattern[str]
+    results_selector: str
+    url_selector: str
+    url_attribute: str
+    title_selector: str
+    snippet_selector: str
+
+    def parse_html(self, html: Tag) -> Iterator[ArchivedSerpResult]:
+        for result in html.select(self.results_selector):
+            url_tag = result.select_one(self.url_selector)
+            if url_tag is None:
+                continue
+            url = url_tag.attrs[self.url_attribute]
+            if url is None:
+                continue
+            title_tag = result.select_one(self.title_selector)
+            if title_tag is None:
+                continue
+            title = clean_html(title_tag)
+            if len(title) == 0:
+                continue
+            snippet_tag = result.select_one(self.snippet_selector)
+            snippet = None
+            if snippet_tag is not None:
+                snippet = clean_html(snippet_tag)
+            yield ArchivedSerpResult(url, title, snippet)
+
+
 class HtmlInterpretedQueryParser(InterpretedQueryParser, ABC):
     url_pattern: Pattern[str] = ...
 
@@ -55,6 +86,19 @@ class HtmlInterpretedQueryParser(InterpretedQueryParser, ABC):
             from_encoding=raw_serp.encoding
         )
         return self.parse_html(html)
+
+
+@dataclass(frozen=True)
+class HtmlSelectorInterpretedQueryParser(HtmlInterpretedQueryParser):
+    url_pattern: Pattern[str]
+    query_selector: str
+    query_attribute: str
+
+    def parse_html(self, html: Tag) -> str | None:
+        search_field = html.select_one(self.query_selector)
+        if search_field is None:
+            return None
+        return search_field.attrs[self.query_attribute]
 
 
 class _CdxPage(NamedTuple):

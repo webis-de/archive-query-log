@@ -184,7 +184,19 @@ class InterpretedQueryParserField(Field):
     ) -> InterpretedQueryParser:
         value: Mapping[str, Any]
         parser_type = value["type"]
-        if parser_type == "chatnoir":
+        if parser_type == "html_selector":
+            from web_archive_query_log.results.parse import \
+                HtmlSelectorInterpretedQueryParser
+            return HtmlSelectorInterpretedQueryParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+                query_selector=value["query_selector"],
+                query_attribute=(
+                    value["query_attribute"]
+                    if "query_attribute" in value
+                    else "value"
+                ),
+            )
+        elif parser_type == "chatnoir":
             from web_archive_query_log.results.chatnoir import \
                 ChatNoirInterpretedQueryParser
             return ChatNoirInterpretedQueryParser(
@@ -204,12 +216,27 @@ class ResultsParserField(Field):
     ) -> ResultsParser:
         value: Mapping[str, Any]
         parser_type = value["type"]
-        if parser_type == "bing":
+        if parser_type == "html_selector":
+            from web_archive_query_log.results.parse import \
+                HtmlSelectorResultsParser
+            return HtmlSelectorResultsParser(
+                url_pattern=compile(value["url_pattern"], IGNORECASE),
+                results_selector=value["selector"],
+                url_selector=value["url_selector"],
+                url_attribute=(
+                    value["url_attribute"]
+                    if "url_attribute" in value
+                    else "href"
+                ),
+                title_selector=value["title_selector"],
+                snippet_selector=value["snippet_selector"],
+            )
+        elif parser_type == "bing":
             from web_archive_query_log.results.bing import BingResultsParser
             return BingResultsParser(
                 url_pattern=compile(value["url_pattern"], IGNORECASE),
             )
-        if parser_type == "chatnoir":
+        elif parser_type == "chatnoir":
             from web_archive_query_log.results.chatnoir import \
                 ChatNoirResultsParser
             return ChatNoirResultsParser(

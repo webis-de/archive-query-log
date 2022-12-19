@@ -20,10 +20,10 @@ class ChatNoirResultsParser(HtmlResultsParser):
         for result in results.find_all("article", class_="search-result"):
             header: Tag = result.find("header")
             url = header.find("a", class_="link")["href"]
-            title = clean_html(header.find("h2"), "em")
+            title = clean_html(header.find("h2"))
             # Remove header. Only the snippet will be left.
             header.decompose()
-            snippet = clean_html(result, "em")
+            snippet = clean_html(result)
             if len(snippet) == 0:
                 snippet = None
             yield ArchivedSerpResult(url, title, snippet)

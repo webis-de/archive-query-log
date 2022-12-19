@@ -283,8 +283,18 @@
   - url_pattern: '^https?://[^/]+/f\?'
     type: query_parameter
     parameter: pn
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: '^https?://[^/]+/s\?'
+    type: html_selector
+    query_selector: 'input#kw'
+  results_parsers:
+  - url_pattern: '^https?://[^/]+/s\?'
+    type: html_selector
+    result_selector: 'div#content_left > div.result, div#content_left > div.result-op'
+    url_selector: 'h3.t > a'
+    title_selector: 'h3.t'
+    snippet_selector: 'div.c-abstract'
+    highlight_tag: em
   focused_url_prefixes:
   - /s?
   - /search
