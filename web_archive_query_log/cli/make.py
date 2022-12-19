@@ -180,11 +180,26 @@ def archived_raw_serps_command(
 def archived_parsed_serps_command(
         data_directory: Path,
         focused: bool,
-        service_name: str,
+        service: str,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
-    raise NotImplementedError()
+    from web_archive_query_log.config import SERVICES
+    from web_archive_query_log.results.parse import ArchivedParsedSerpParser
+    service_config = SERVICES[service]
+    parser = ArchivedParsedSerpParser(
+        results_parsers=service_config.results_parsers,
+        interpreted_query_parsers=service_config.interpreted_query_parsers,
+    )
+    if focused:
+        data_directory = data_directory / "focused"
+    parser.parse_service(
+        data_directory=data_directory,
+        focused=focused,
+        service=service_config,
+        domain=domain,
+        cdx_page=cdx_page,
+    )
 
 
 @make_group.command(
