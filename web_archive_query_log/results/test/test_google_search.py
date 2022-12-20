@@ -5,10 +5,17 @@ from tempfile import TemporaryDirectory
 from typing import IO
 
 from pytest import raises, mark
+from unittest import TestCase
 
 from web_archive_query_log.cli.make import archived_urls_command, \
     archived_query_urls_command
 
+
+class TestGoogleSearch(TestCase):
+    def test_bla(self):
+        verify_serp_parsing(
+            'https://web.archive.org/web/20130630095955id_/https://www.google.com/reader/directory/search?q=je%20te%C5%BEka&start=330'
+        )
 
 # Needed because dataclasses-json uses deprecated features of marshmallow.
 @mark.filterwarnings("ignore:The 'default' argument to fields is deprecated")
