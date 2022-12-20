@@ -20010,7 +20010,10 @@
   - url_pattern: ^https?://[^/]+/suche\?
     type: query_parameter
     parameter: anfrage
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/(search|suche)\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
