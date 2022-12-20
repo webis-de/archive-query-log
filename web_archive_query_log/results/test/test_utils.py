@@ -1,34 +1,39 @@
 from approvaltests import verify_as_json
 from approvaltests.namer.cli_namer import CliNamer
 from approvaltests.core.options import Options
-from fastwarc import ArchiveIterator
 from os.path import exists
 from slugify import slugify
+from web_archive_query_log.download.iterable import ArchivedRawSerps
+from pathlib import Path
 
-
-def get_record_with_id(warc_file: str, warc_record_id: str):
-    warc_file = f'data/serp-parsing/warcs/{warc_file}'
-
-    if not exists(warc_file):
-        warc_file = f'../../{warc_file}'
-
-    for record in ArchiveIterator(open(warc_file, 'rb')):
-        if record.record_id == warc_record_id:
-            return record
-
-    raise ValueError(f'Could not find record with id {warc_record_id} in {warc_file}')
-
-
-def verify_serp_parse_as_json(actual, warc_record_id):
-    verify_as_json(
-        actual,
-        options=Options().with_namer(CliNamer(slugify(warc_record_id)))
-    )
-
-
-def verify_serp_parsing(warc_file: str, warc_record_id: str):
-    get_record_with_id(warc_file, warc_record_id)
+def verify_serp_parsing(archived_url: str):
+    __get_record_with_id(archived_url)
 
     actual = {'asdasd': 'asdasd'}
 
-    verify_serp_parse_as_json(actual, warc_record_id)
+    __verify_serp_parse_as_json(actual, archived_url)
+
+
+def __get_record_with_id(archived_url: str):
+    warc_directory = f'data/serp-parsing/warcs/'
+
+    if not exists(warc_directory):
+        warc_directory = f'../../{warc_directory}'
+
+    for record in ArchivedRawSerps(path=Path(warc_directory)):
+        if record.url == archived_url or record.url == ('http' + archived_url.split('_/http')[-1]):
+            return record
+
+    raise ValueError(f'Could not find record with url {archived_url} in {warc_directory}')
+
+
+def __verify_serp_parse_as_json(actual, archived_url):
+    test_dir = f'data/serp-parsing/expected_serp_results'
+
+    if not exists(test_dir):
+        test_dir = f'../../{test_dir}'
+
+    verify_as_json(
+        actual,
+        options=Options().with_namer(CliNamer(f'{test_dir}/{slugify(archived_url)}'))
+    )
