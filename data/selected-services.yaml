@@ -606,9 +606,6 @@
   - amazon.se
   - amazon.sg
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search\?
-    type: query_parameter
-    parameter: q
   - url_pattern: ^https?://[^/]+/s\?
     type: query_parameter
     parameter: k
@@ -1578,6 +1575,24 @@
   domains:
   - weibo.com
   query_parsers:
+  - url_pattern: ^https?://[^/]+/pic\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/realtime\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/topic\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/user\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/video\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/weibo
+    type: path_suffix
+    path_prefix: weibo
   - url_pattern: ^https?://[^/]+/weibo\?
     type: query_parameter
     parameter: q
@@ -1673,7 +1688,10 @@
   - url_pattern: ^https?://[^/]+/videos/search\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/shop\?
+    type: query_parameter
+    parameter: page
   offset_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
@@ -1815,6 +1833,9 @@
   - aliexpress.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/w/wholesale
+    type: query_parameter
+    parameter: SearchText
+  - url_pattern: ^https?://[^/]+/wholesale
     type: query_parameter
     parameter: SearchText
   page_parsers:
@@ -7574,9 +7595,6 @@
   - url_pattern: ^https?://[^/]+/search/\?
     type: query_parameter
     parameter: q
-  - url_pattern: ^https?://[^/]+/sell/search\.php\?
-    type: query_parameter
-    parameter: kw
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
