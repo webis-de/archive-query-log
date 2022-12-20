@@ -3,7 +3,8 @@
   alexa_domain: google.com
   alexa_rank: 1
   category: general
-  notes: TLD redirects from https://www.google.com/supported_domains
+  notes: |
+    TLDs from https://www.google.com/supported_domains.
   input_field: false
   search_form: false
   search_div: false
@@ -231,7 +232,9 @@
   alexa_domain: youtube.com
   alexa_rank: 2
   category: video
-  notes: TLD redirects from https://stackoverflow.com/a/65375894
+  notes: |
+    TLDs from https://stackoverflow.com/a/65375894.
+    SERPs rendered using JavaScript.
   input_field: false
   search_form: false
   search_div: true
@@ -402,7 +405,8 @@
   alexa_domain: baidu.com
   alexa_rank: 3
   category: general
-  notes: Different TLD redirect to baidu.com
+  notes: |
+    TLDs mined manually by exploring baidu.com.
   input_field: false
   search_form: false
   search_div: true
@@ -458,7 +462,8 @@
   alexa_domain: qq.com
   alexa_rank: 4
   category: general
-  notes: null
+  notes: |
+    SERPs from qq.com rendered using JavaScript.
   input_field: null
   search_form: null
   search_div: null
