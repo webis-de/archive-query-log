@@ -1,7 +1,7 @@
 from bleach import clean
 from bs4 import Tag
 
-_HIGHLIGHT_TAGS = ["em", "strong", "mark"]
+_HIGHLIGHT_TAGS = ["em", "strong", "mark", "b", "i", "u"]
 
 
 def clean_html(html: str | Tag) -> str:
