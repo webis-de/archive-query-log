@@ -482,14 +482,17 @@
   - v.qq.com
   - wechat.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/?/search\.html?\?
+  - url_pattern: ^https?://[^/]+/search\.htm\?
     type: query_parameter
     parameter: query
+  - url_pattern: ^https?://[^/]+/?/search\.html\?
+    type: query_parameter
+    parameter: ms_key
   - url_pattern: ^https?://[^/]+/x/search/\?
     type: query_parameter
     parameter: q
   page_parsers:
-  - url_pattern: ^https?://[^/]+/?/search\.html?\?
+  - url_pattern: ^https?://[^/]+/search\.htm\?
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -497,6 +500,9 @@
   - url_pattern: ^https?://[^/]+/x/search/\?
     type: html_selector
     query_selector: input#keywords
+  - url_pattern: ^https?://[^/]+/?/search\.html\?
+    type: html_selector
+    query_selector: input#iWordMid
   results_parsers:
   - url_pattern: ^https?://[^/]+/x/search/\?
     type: html_selector
@@ -506,7 +512,6 @@
   focused_url_prefixes:
   - /search.htm?
   - /search.html?
-  - //search.htm?
   - //search.html?
   - /x/search/?
 - name: facebook
