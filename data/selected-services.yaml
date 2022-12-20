@@ -1574,6 +1574,7 @@
   search_div: true
   domains:
   - weibo.com
+  - s.weibo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/pic\?
     type: query_parameter
@@ -1590,9 +1591,9 @@
   - url_pattern: ^https?://[^/]+/video\?
     type: query_parameter
     parameter: q
-  - url_pattern: ^https?://[^/]+/weibo
-    type: path_suffix
-    path_prefix: weibo
+  - url_pattern: ^https?://[^/]+/weibo/
+    type: path_segment
+    segment: 1
   - url_pattern: ^https?://[^/]+/weibo\?
     type: query_parameter
     parameter: q
@@ -8096,6 +8097,7 @@
   search_form: false
   search_div: true
   domains:
+  - gob.mx
   - www.gob.mx
   query_parsers:
   - url_pattern: ^https?://[^/]+/busqueda\?
