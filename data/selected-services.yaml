@@ -218,6 +218,9 @@
   - url_pattern: ^https?://(www\.)?google[^/]+/search\?
     type: html_selector
     query_selector: form#tsf input[name="q"]
+  - url_pattern: ^https?://[^/]+/scholar\?
+    type: html_selector
+    query_selector: input#gs_hdr_tsi
   results_parsers:
   - url_pattern: ^https?://(www\.)?google[^/]+/search\?
     type: html_selector
@@ -225,6 +228,12 @@
     url_selector: a
     title_selector: a h3
     snippet_selector: span
+  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
+    type: html_selector
+    results_selector: div#gs_res_ccl_mid > div.gs_r
+    url_selector: h3.gs_rt a
+    title_selector: h3.gs_rt
+    snippet_selector: dic.gs_rs
   focused_url_prefixes:
   - /search?
 - name: youtube
