@@ -2574,7 +2574,8 @@
   alexa_domain: craigslist.org
   alexa_rank: 115
   category: shopping
-  notes: Subdomains from https://www.craigslist.org/about/sites
+  notes: |
+    Subdomains from https://www.craigslist.org/about/sites.
   input_field: true
   search_form: true
   search_div: true
@@ -3460,7 +3461,8 @@
   alexa_domain: tistory.com
   alexa_rank: 153
   category: null
-  notes: Uses daum search
+  notes: |
+    Uses daum search (https://daum.net/).
   input_field: false
   search_form: false
   search_div: true
@@ -3520,7 +3522,8 @@
   alexa_domain: office365.com
   alexa_rank: 182
   category: null
-  notes: Uses microsoft search
+  notes: |
+    Uses Microsoft search (https://microsoft.com/microsoft-search).
   input_field: true
   search_form: true
   search_div: true
@@ -3629,7 +3632,8 @@
   alexa_domain: redd.it
   alexa_rank: 200
   category: null
-  notes: Reddit already covered
+  notes: |
+    TODO: Merge into Reddit.
   input_field: false
   search_form: false
   search_div: true
@@ -3646,7 +3650,8 @@
   alexa_domain: steamcommunity.com
   alexa_rank: 207
   category: null
-  notes: Only user search; Hubs are not free text
+  notes: |
+    Only user search; Hubs are not free text.
   input_field: true
   search_form: true
   search_div: false
@@ -3663,7 +3668,8 @@
   alexa_domain: deepl.com
   alexa_rank: 229
   category: null
-  notes: No search
+  notes: |
+    No search.
   input_field: false
   search_form: false
   search_div: true
@@ -3917,7 +3923,8 @@
   alexa_domain: europa.eu
   alexa_rank: 493
   category: null
-  notes: Query not in URL
+  notes: |
+    Query not in URL.
   input_field: true
   search_form: true
   search_div: false
@@ -3976,7 +3983,8 @@
   alexa_domain: news18.com
   alexa_rank: 707
   category: null
-  notes: Uses Google Search
+  notes: |
+    Uses Google search (https://cse.google.com/).
   input_field: false
   search_form: false
   search_div: true
@@ -4096,7 +4104,8 @@
   alexa_domain: commbank.com.au
   alexa_rank: 1043
   category: null
-  notes: Query not in URL
+  notes: |
+    Query not in URL.
   input_field: false
   search_form: false
   search_div: true
@@ -4113,7 +4122,8 @@
   alexa_domain: jf71qh5v14.com
   alexa_rank: 1047
   category: null
-  notes: Redirect
+  notes: |
+    TODO: Redirect.
   input_field: false
   search_form: false
   search_div: true
@@ -4268,7 +4278,8 @@
   alexa_domain: baskino.me
   alexa_rank: 1245
   category: null
-  notes: Query not in URL
+  notes: |
+    Query not in URL.
   input_field: true
   search_form: true
   search_div: false
@@ -4406,7 +4417,8 @@
   alexa_domain: gitlab.com
   alexa_rank: 1469
   category: code
-  notes: Query not in URL
+  notes: |
+    Query not in URL.
   input_field: false
   search_form: false
   search_div: true
@@ -4423,7 +4435,8 @@
   alexa_domain: cima4u.tv
   alexa_rank: 1480
   category: null
-  notes: No search
+  notes: |
+    No search.
   input_field: false
   search_form: false
   search_div: true
@@ -4461,7 +4474,8 @@
   alexa_domain: shippingchina.com
   alexa_rank: 1520
   category: null
-  notes: Search for shipments
+  notes: |
+    Search for shipments.
   input_field: true
   search_form: true
   search_div: false
@@ -4664,7 +4678,8 @@
   alexa_domain: dy2018.com
   alexa_rank: 1731
   category: null
-  notes: Query not in URL
+  notes: |
+    Query not in URL.
   input_field: true
   search_form: true
   search_div: true
@@ -4681,7 +4696,8 @@
   alexa_domain: win-rar.com
   alexa_rank: 1768
   category: null
-  notes: Query not in URL
+  notes: |
+    Query not in URL.
   input_field: true
   search_form: true
   search_div: false
@@ -4901,7 +4917,9 @@
   alexa_domain: listindiario.com
   alexa_rank: 2014
   category: null
-  notes: Uses google; Query not in URL
+  notes: |
+    Uses Google search (https://cse.google.com/).
+    Query not in URL.
   input_field: false
   search_form: false
   search_div: true
@@ -4918,7 +4936,8 @@
   alexa_domain: 24h.com.vn
   alexa_rank: 2021
   category: null
-  notes: Uses google
+  notes: |
+    Uses Google search (https://cse.google.com/).
   input_field: false
   search_form: false
   search_div: true
@@ -5264,7 +5283,8 @@
   alexa_domain: limestart.cn
   alexa_rank: 2126
   category: null
-  notes: Uses baidu
+  notes: |
+    Uses Baidu search.
   input_field: false
   search_form: false
   search_div: true
@@ -5364,7 +5384,8 @@
   alexa_domain: republicworld.com
   alexa_rank: 2146
   category: news
-  notes: Query not in URL
+  notes: |
+    Query not in URL.
   input_field: false
   search_form: false
   search_div: true
@@ -5438,7 +5459,8 @@
   alexa_domain: startpage.com
   alexa_rank: 2159
   category: general
-  notes: Query not in URL
+  notes: |
+    Query not in URL.
   input_field: true
   search_form: true
   search_div: false
@@ -19450,7 +19472,8 @@
   alexa_domain: base-search.net
   alexa_rank: null
   category: education
-  notes: base (bielefeld academic search engine)
+  notes: |
+    Bielefeld Academic Search Engine (BASE)
   input_field: null
   search_form: null
   search_div: null
@@ -19751,7 +19774,8 @@
   alexa_domain: evi.com
   alexa_rank: null
   category: semantic-web
-  notes: Discontinued
+  notes: |
+    Discontinued.
   input_field: null
   search_form: null
   search_div: null
@@ -19768,7 +19792,8 @@
   alexa_domain: findsounds.com
   alexa_rank: null
   category: audio
-  notes: Discontinued
+  notes: |
+    Discontinued.
   input_field: null
   search_form: null
   search_div: null
@@ -20056,7 +20081,8 @@
   alexa_domain: loc.gov
   alexa_rank: null
   category: education
-  notes: library of congress
+  notes: |
+    Library of Congress.
   input_field: null
   search_form: null
   search_div: null
@@ -20200,7 +20226,8 @@
   alexa_domain: munax.com
   alexa_rank: null
   category: multimedia
-  notes: Discontinued
+  notes: |
+    Discontinued.
   input_field: null
   search_form: null
   search_div: null
@@ -20217,7 +20244,7 @@
   alexa_domain: mysimon.com
   alexa_rank: null
   category: shopping
-  notes: https://www.kelkoo.de/suche?
+  notes: none
   input_field: null
   search_form: null
   search_div: null
@@ -20437,7 +20464,8 @@
   alexa_domain: pixsta.com
   alexa_rank: null
   category: multimedia
-  notes: Visual search
+  notes: |
+    Visual search.
   input_field: null
   search_form: null
   search_div: null
@@ -20557,7 +20585,8 @@
   alexa_domain: quora.com
   alexa_rank: null
   category: question-answering
-  notes: Excluded from internet archive
+  notes: |
+    TODO: Excluded from Internet Archive.
   input_field: null
   search_form: null
   search_div: null
@@ -20678,7 +20707,9 @@
   alexa_domain: seeqpod.com
   alexa_rank: null
   category: multimedia
-  notes: Discontinued; Query not stored in URL
+  notes: |
+    Discontinued.
+    Query not stored in URL.
   input_field: null
   search_form: null
   search_div: null
@@ -20881,7 +20912,9 @@
   alexa_domain: tineye.com
   alexa_rank: null
   category: image
-  notes: Image search; Queries are not stored in URL
+  notes: |
+    Image search.
+    Queries are not stored in URL.
   input_field: null
   search_form: null
   search_div: null
@@ -20898,7 +20931,8 @@
   alexa_domain: veveo.net
   alexa_rank: null
   category: conversational
-  notes: Discontinued
+  notes: |
+    Discontinued.
   input_field: null
   search_form: null
   search_div: null
