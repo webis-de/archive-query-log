@@ -44,7 +44,7 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
     url_selector: str
     url_attribute: str
     title_selector: str
-    snippet_selector: str
+    snippet_selector: str | None
 
     def parse_html(self, html: Tag) -> Iterator[ArchivedSerpResult]:
         for result in html.select(self.results_selector):
@@ -60,10 +60,11 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
             title = clean_html(title_tag)
             if len(title) == 0:
                 continue
-            snippet_tag = result.select_one(self.snippet_selector)
             snippet = None
-            if snippet_tag is not None:
-                snippet = clean_html(snippet_tag)
+            if self.snippet_selector is not None:
+                snippet_tag = result.select_one(self.snippet_selector)
+                if snippet_tag is not None:
+                    snippet = clean_html(snippet_tag)
             yield ArchivedSerpResult(url, title, snippet)
 
 

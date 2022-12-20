@@ -229,7 +229,11 @@ class ResultsParserField(Field):
                     else "href"
                 ),
                 title_selector=value["title_selector"],
-                snippet_selector=value["snippet_selector"],
+                snippet_selector=(
+                    value["snippet_selector"]
+                    if "snippet_selector" in value
+                    else None
+                ),
             )
         elif parser_type == "chatnoir":
             from web_archive_query_log.results.chatnoir import \
