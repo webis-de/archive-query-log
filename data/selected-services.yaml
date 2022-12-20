@@ -478,12 +478,13 @@
   search_div: null
   domains:
   - qq.com
+  - v.qq.com
   - wechat.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.htm\?
     type: query_parameter
     parameter: query
-  - url_pattern: ^https?://[^/]+/x/search
+  - url_pattern: ^https?://[^/]+/x/search/\?
     type: query_parameter
     parameter: q
   page_parsers:
@@ -491,10 +492,19 @@
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/x/search/\?
+    type: html_selector
+    query_selector: input#keywords
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/x/search/\?
+    type: html_selector
+    results_selector: div#search_container > div.wrapper > div.wrapper_main > div.result_item
+    url_selector: h2.result_title > a
+    title_selector: h2.result_title
   focused_url_prefixes:
   - /search.htm?
+  - /x/search/?
 - name: facebook
   public_suffix: com
   alexa_domain: facebook.com
