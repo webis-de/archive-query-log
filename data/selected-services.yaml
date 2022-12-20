@@ -482,14 +482,14 @@
   - v.qq.com
   - wechat.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search\.htm\?
+  - url_pattern: ^https?://[^/]+/?/search\.html?\?
     type: query_parameter
     parameter: query
   - url_pattern: ^https?://[^/]+/x/search/\?
     type: query_parameter
     parameter: q
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search\.htm\?
+  - url_pattern: ^https?://[^/]+/?/search\.html?\?
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -505,6 +505,9 @@
     title_selector: h2.result_title
   focused_url_prefixes:
   - /search.htm?
+  - /search.html?
+  - //search.htm?
+  - //search.html?
   - /x/search/?
 - name: facebook
   public_suffix: com
