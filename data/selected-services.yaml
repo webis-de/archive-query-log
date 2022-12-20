@@ -236,6 +236,7 @@
     snippet_selector: dic.gs_rs
   focused_url_prefixes:
   - /search?
+  - /scholar?
 - name: youtube
   public_suffix: com
   alexa_domain: youtube.com
