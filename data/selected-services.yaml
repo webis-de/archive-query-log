@@ -5161,7 +5161,10 @@
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5181,7 +5184,10 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5255,7 +5261,10 @@
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: query
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5277,7 +5286,10 @@
     segment: 1
     remove_patterns:
     - \.html$
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/
+    type: query_parameter
+    parameter: pageNum
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5317,7 +5329,12 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: query
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: path_segment
+    segment: 1
+    replace_patterns:
+    - ?query.*
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5337,7 +5354,10 @@
   - url_pattern: ^https?://[^/]+/newsstudios/archive/
     type: query_parameter
     parameter: query
-  page_parsers: [ ]
+  page_parsers: 
+  - url_pattern: ^https?://[^/]+/newsstudios/archive/
+    type: query_parameter
+    parameter: curp
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5374,7 +5394,10 @@
   - url_pattern: ^https?://[^/]+/newsstudios/archive/
     type: query_parameter
     parameter: query
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/newsstudios/archive/
+    type: query_parameter
+    parameter: curp
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5394,7 +5417,10 @@
   - url_pattern: ^https?://[^/]+/search/
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/
+    type: path_segment
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5462,7 +5488,12 @@
   - url_pattern: ^https?://[^/]+/page
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page
+    type: path_segment
+    segment: 1
+    replace_patterns:
+    - ?s.*
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5502,7 +5533,12 @@
   - url_pattern: ^https?://[^/]+/search/story/
     type: path_segment
     segment: 2
-  page_parsers: [ ]
+    replace_patterns:
+    - ?page.*
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/story/
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5585,6 +5621,8 @@
   - url_pattern: ^https?://[^/]+/tags/
     type: path_segment
     segment: 1
+    replace_patterns:
+    - ?page.*
   page_parsers:
   - url_pattern: ^https?://[^/]+/tags/
     type: query_parameter
@@ -5628,7 +5666,12 @@
   - url_pattern: ^https?://[^/]+/s/
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+    replace_patterns:
+    - ?page.*
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/s/
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5648,7 +5691,10 @@
   - url_pattern: ^https?://[^/]+/search/
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/
+    type: path_segment
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5686,7 +5732,10 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5723,7 +5772,10 @@
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page\?
+    type: path_segment
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
