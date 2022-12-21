@@ -555,7 +555,7 @@
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
-  - search_product
+  - /search_product
 - name: taobao
   public_suffix: com
   alexa_domain: taobao.com
@@ -576,7 +576,7 @@
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
-  - search?
+  - /search?
 - name: yahoo
   public_suffix: com
   alexa_domain: yahoo.com
@@ -1634,7 +1634,14 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /weibo?
+  - /weibo
+  - /realtime?
+  - /user?
+  - /video?
+  - /pic?
+  - /topic?
 - name: reddit
   public_suffix: com
   alexa_domain: reddit.com
@@ -1654,7 +1661,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: instagram
   public_suffix: com
   alexa_domain: instagram.com
@@ -1694,7 +1702,8 @@
     parameter: skip
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - ^\/[a-z]+-[a-z]+\/search
 - name: bing
   public_suffix: com
   alexa_domain: bing.com
@@ -1741,7 +1750,12 @@
     url_selector: h2 > a
     title_selector: h2
     snippet_selector: p
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
+  - /shop?
+  - /news/search?
+  - /images/search?
+  - /videos/search?
 - name: twitter
   public_suffix: com
   alexa_domain: twitter.com
@@ -1761,7 +1775,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: ebay
   public_suffix: com
   alexa_domain: ebay.com
@@ -1853,7 +1868,8 @@
     parameter: start
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search.naver?
 - name: aliexpress
   public_suffix: com
   alexa_domain: aliexpress.com
@@ -1882,7 +1898,9 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /w/wholesale
+  - /wholesale
 - name: yandex
   public_suffix: ru
   alexa_domain: yandex.ru
@@ -1911,7 +1929,10 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
+  - /images/search
+  - /video/search
 - name: apple
   public_suffix: com
   alexa_domain: apple.com
@@ -1934,7 +1955,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: pornhub
   public_suffix: com
   alexa_domain: pornhub.com
@@ -1957,7 +1979,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /video/search?
 - name: stackoverflow
   public_suffix: com
   alexa_domain: stackoverflow.com
@@ -1986,7 +2009,9 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
+  - /questions/tagged
 - name: tribunnews
   public_suffix: com
   alexa_domain: tribunnews.com
@@ -2009,7 +2034,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: imdb
   public_suffix: com
   alexa_domain: imdb.com
@@ -2029,7 +2055,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /find
 - name: chaturbate
   public_suffix: com
   alexa_domain: chaturbate.com
@@ -2098,7 +2125,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: etsy
   public_suffix: com
   alexa_domain: etsy.com
@@ -2121,7 +2149,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: sogou
   public_suffix: com
   alexa_domain: sogou.com
@@ -2168,7 +2197,13 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /web?
+  - /sogou?
+  - /pics?
+  - /result?
+  - /weixin?
+  - /v?
 - name: espn
   public_suffix: com
   alexa_domain: espn.com
@@ -2188,7 +2223,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: detik
   public_suffix: com
   alexa_domain: detik.com
@@ -2211,7 +2247,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: booking
   public_suffix: com
   alexa_domain: booking.com
@@ -2234,7 +2271,8 @@
     parameter: offset
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /searchresults
 - name: cnblogs
   public_suffix: com
   alexa_domain: cnblogs.com
@@ -2282,7 +2320,12 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /s?
+  - /s/news?
+  - /s/question?
+  - /s/kb?
+  - /s/blogpost?
 - name: alibaba
   public_suffix: com
   alexa_domain: alibaba.com
@@ -2305,7 +2348,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /trade/search?
 - name: freepik
   public_suffix: com
   alexa_domain: freepik.com
@@ -2328,7 +2372,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: nih
   public_suffix: gov
   alexa_domain: nih.gov
@@ -2352,7 +2397,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: stackexchange
   public_suffix: com
   alexa_domain: stackexchange.com
@@ -2551,7 +2597,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: daum
   public_suffix: net
   alexa_domain: daum.net
@@ -2576,7 +2623,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: craigslist
   public_suffix: org
   alexa_domain: craigslist.org
@@ -3314,7 +3362,8 @@
     parameter: s
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: duckduckgo
   public_suffix: com
   alexa_domain: duckduckgo.com
@@ -3357,7 +3406,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: gome
   public_suffix: com.cn
   alexa_domain: gome.com.cn
@@ -3377,7 +3427,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: xnxx
   public_suffix: com
   alexa_domain: xnxx.com
@@ -3397,7 +3448,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: w3schools
   public_suffix: com
   alexa_domain: w3schools.com
@@ -3420,7 +3472,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /#gsc.tab
 - name: slideshare
   public_suffix: net
   alexa_domain: slideshare.net
@@ -3443,7 +3496,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: globo
   public_suffix: com
   alexa_domain: globo.com
@@ -3463,7 +3517,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /busca
 - name: tistory
   public_suffix: com
   alexa_domain: tistory.com
@@ -3501,7 +3556,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: wikihow
   public_suffix: com
   alexa_domain: wikihow.com
@@ -3524,7 +3580,8 @@
     parameter: start
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /wikiHowTo?
 - name: office365
   public_suffix: com
   alexa_domain: office365.com
@@ -3773,7 +3830,10 @@
     type: query_parameter
     parameter: q
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers: 
+  - url_pattern: ^https?://[^/]+/site-search\?
+    type: query_parameter
+    parameter: first
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes: [ ]
@@ -3813,7 +3873,10 @@
     type: query_parameter
     parameter: q
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers: 
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: offset
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes: [ ]
@@ -3832,7 +3895,12 @@
   - url_pattern: ^https?://[^/]+/search/
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/
+    type: path_segment
+    segment: 2
+    space_patterns:
+    - 'page:'
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -3881,7 +3949,16 @@
   - url_pattern: ^https?://[^/]+/videos\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/news\?
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/videos\?
+    type: query_parameter
+    parameter: p
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
