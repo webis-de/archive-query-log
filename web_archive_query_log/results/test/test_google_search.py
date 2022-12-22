@@ -6,6 +6,7 @@ from typing import IO
 
 from pytest import raises, mark
 from unittest import TestCase
+from web_archive_query_log.results.test.test_utils import verify_serp_parsing
 
 from web_archive_query_log.cli.make import archived_urls_command, \
     archived_query_urls_command
