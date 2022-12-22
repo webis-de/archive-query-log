@@ -1,3 +1,4 @@
-**
+./archived*
 !.gitignore
 !selected-services.yaml
+!manually-annotated-data
