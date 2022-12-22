@@ -1683,6 +1683,7 @@
   search_div: true
   domains:
   - microsoft.com
+  - office365.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/search
     type: query_parameter
@@ -3522,24 +3523,6 @@
   - url_pattern: ^https?://[^/]+/wikiHowTo\?
     type: query_parameter
     parameter: start
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes: [ ]
-- name: office365
-  public_suffix: com
-  alexa_domain: office365.com
-  alexa_rank: 182
-  category: null
-  notes: |
-    Uses Microsoft search (https://microsoft.com/microsoft-search).
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - office365.com
-  query_parsers: [ ]
-  page_parsers: [ ]
-  offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes: [ ]
