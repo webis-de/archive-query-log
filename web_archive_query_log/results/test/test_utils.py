@@ -9,13 +9,13 @@ from pathlib import Path
 def verify_serp_parsing(archived_url: str):
     __get_record_with_id(archived_url)
 
-    actual = {'asdasd': 'asdasd'}
+    actual = {'asdasd': 'asdassds'}
 
     __verify_serp_parse_as_json(actual, archived_url)
 
 
 def __get_record_with_id(archived_url: str):
-    warc_directory = f'data/serp-parsing/warcs/'
+    warc_directory = f'data/archived-raw-serps/warcs/'
 
     if not exists(warc_directory):
         warc_directory = f'../../{warc_directory}'
@@ -28,7 +28,7 @@ def __get_record_with_id(archived_url: str):
 
 
 def __verify_serp_parse_as_json(actual, archived_url):
-    test_dir = f'data/serp-parsing/expected_serp_results'
+    test_dir = f'data/archived-raw-serps/expected_serp_results'
 
     if not exists(test_dir):
         test_dir = f'../../{test_dir}'
