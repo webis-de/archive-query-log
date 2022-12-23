@@ -2147,18 +2147,28 @@
   alexa_domain: ebay.com
   alexa_rank: 30
   category: shopping
-  notes: null
+  notes: |
+    Domains from https://ebay.com/ (dropdown) 
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: false
   search_form: false
   search_div: false
   domains:
+  - adn.ebay.com
+  - anywhere.ebay.com
+  - applications.ebay.com
   - ar.ebay.com
+  - blog.ebay.com
   - bo.ebay.com
   - br.ebay.com
   - by.ebay.com
+  - charity.ebay.com
   - cl.ebay.com
   - co.ebay.com
+  - community.ebay.com
   - cr.ebay.com
+  - deals.ebay.com
+  - developer.ebay.com
   - do.ebay.com
   - ebay.at
   - ebay.be
@@ -2167,6 +2177,7 @@
   - ebay.cn
   - ebay.co.jp
   - ebay.co.uk
+  - ebay.com
   - ebay.com
   - ebay.com.au
   - ebay.com.hk
@@ -2182,22 +2193,42 @@
   - ebay.nl
   - ebay.ph
   - ebay.pl
+  - ebayinc.com
+  - ebaypartnernetwork.ebay.com
   - ec.ebay.com
+  - feedback.ebay.com
+  - forums.ebay.com
+  - fr.ebay.com
+  - givingworks.ebay.com
+  - globaldeals.ebay.com
   - gt.ebay.com
   - hn.ebay.com
   - il.ebay.com
   - kz.ebay.com
+  - labs.ebay.com
+  - m.ebay.com
   - mx.ebay.com
+  - myworld.ebay.com
   - ni.ebay.com
   - pa.ebay.com
+  - pages.ebay.com
   - pe.ebay.com
   - pr.ebay.com
   - pt.ebay.com
   - py.ebay.com
   - ru.ebay.com
+  - sandbox.ebay.com
+  - shop.ebay.com
+  - sm.ebay.com
+  - stores.ebay.com
+  - survey.ebay.com
   - sv.ebay.com
+  - tech.ebay.com
+  - tech.ebayinc.com
+  - uk.ebay.com
   - uy.ebay.com
   - ve.ebay.com
+  - vero.ebay.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
     type: query_parameter
