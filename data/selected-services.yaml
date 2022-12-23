@@ -1719,16 +1719,93 @@
   alexa_domain: reddit.com
   alexa_rank: 17
   category: social-media
-  notes: Subdomains from https://github.com/JamieFarrelly/Popular-Site-Subdomains
+  notes: |
+    Subdomains from https://old.reddit.com/prefs/ (dropdown) 
+    and https://github.com/JamieFarrelly/Popular-Site-Subdomains
   input_field: false
   search_form: false
   search_div: true
   domains:
+  - af.reddit.com
+  - ar.reddit.com
+  - be.reddit.com
+  - bg.reddit.com
+  - bn-bd.reddit.com
+  - bn-IN.reddit.com
+  - bs.reddit.com
+  - ca.reddit.com
+  - cs.reddit.com
+  - cy.reddit.com
+  - da.reddit.com
+  - de.reddit.com
+  - el.reddit.com
+  - en-au.reddit.com
+  - en-ca.reddit.com
+  - en-gb.reddit.com
+  - en-us.reddit.com
+  - en.reddit.com
+  - eo.reddit.com
+  - es-ar.reddit.com
+  - es-cl.reddit.com
+  - es-mx.reddit.com
+  - es.reddit.com
+  - et.reddit.com
+  - eu.reddit.com
+  - fa.reddit.com
+  - fi.reddit.com
+  - fil.reddit.com
+  - fr-ca.reddit.com
+  - fr.reddit.com
+  - fy-NL.reddit.com
+  - ga-ie.reddit.com
+  - gd.reddit.com
+  - gl.reddit.com
+  - he.reddit.com
+  - hi.reddit.com
+  - hr.reddit.com
+  - hu.reddit.com
+  - hy.reddit.com
+  - id.reddit.com
+  - is.reddit.com
+  - it.reddit.com
+  - ja.reddit.com
+  - kn_IN.reddit.com
+  - ko.reddit.com
+  - la.reddit.com
+  - leet.reddit.com
+  - lol.reddit.com
+  - lt.reddit.com
+  - lv.reddit.com
   - m.reddit.com
   - mod.reddit.com
+  - ms.reddit.com
+  - mt-MT.reddit.com
+  - nl.reddit.com
+  - nn.reddit.com
+  - no.reddit.com
+  - old.reddit.com
+  - pir.reddit.com
+  - pl.reddit.com
+  - pt-pt.reddit.com
+  - pt.reddit.com
+  - pt_BR.reddit.com
   - redd.it
   - reddit.com
   - redditmedia.com
+  - ro.reddit.com
+  - ru.reddit.com
+  - sk.reddit.com
+  - sl.reddit.com
+  - sr-la.reddit.com
+  - sr.reddit.com
+  - sv.reddit.com
+  - ta.reddit.com
+  - th.reddit.com
+  - tr.reddit.com
+  - uk.reddit.com
+  - vi.reddit.com
+  - zh-cn.reddit.com
+  - zh.reddit.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
