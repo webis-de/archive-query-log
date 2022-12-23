@@ -3474,18 +3474,18 @@
   domains:
   - w3schools.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/\#
+  - url_pattern: ^https?://[^/]+/.*#gsc
     type: fragment_parameter
     parameter: gsc.q
   page_parsers:
-  - url_pattern: ^https?://[^/]+/\#gsc\.tab
+  - url_pattern: ^https?://[^/]+/.*#gsc
     type: query_parameter
     parameter: gsc.page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
-  - /#gsc.tab  # TODO: Check if URL prefixes like this work with the CDX API.
+  - / # Unfortunately, matching by URL fragment (#) is not supported by the CDX API.
 - name: slideshare
   public_suffix: net
   alexa_domain: slideshare.net
@@ -4249,8 +4249,7 @@
   alexa_domain: jf71qh5v14.com
   alexa_rank: 1047
   category: null
-  notes: |
-    TODO: Redirect.
+  notes: null
   input_field: false
   search_form: false
   search_div: true
@@ -20864,7 +20863,7 @@
   alexa_rank: null
   category: question-answering
   notes: |
-    TODO: Excluded from Internet Archive.
+    Blocked from Internet Archive (Blocked Site Error).
   input_field: null
   search_form: null
   search_div: null
