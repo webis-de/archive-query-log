@@ -5,7 +5,8 @@
   category: general
   notes: |
     Domains from https://www.google.com/supported_domains 
-    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains
+    and from https://infogalactic.com/info/List_of_Google_domains.
   input_field: false
   search_form: false
   search_div: false
@@ -33,6 +34,8 @@
   - firebase.google.com
   - fonts.google.com
   - forms.google.com
+  - g.cn
+  - google.ac
   - google.ad
   - google.ae
   - google.al
@@ -51,6 +54,7 @@
   - google.by
   - google.ca
   - google.cat
+  - google.cc
   - google.cd
   - google.cf
   - google.cg
@@ -84,7 +88,6 @@
   - google.co.zm
   - google.co.zw
   - google.com
-  - google.com
   - google.com.af
   - google.com.ag
   - google.com.ai
@@ -112,12 +115,14 @@
   - google.com.kh
   - google.com.kw
   - google.com.lb
+  - google.com.lc
   - google.com.ly
   - google.com.mm
   - google.com.mt
   - google.com.mx
   - google.com.my
   - google.com.na
+  - google.com.nf
   - google.com.ng
   - google.com.ni
   - google.com.np
@@ -156,9 +161,11 @@
   - google.fr
   - google.ga
   - google.ge
+  - google.gf
   - google.gg
   - google.gl
   - google.gm
+  - google.gp
   - google.gr
   - google.gy
   - google.hn
@@ -167,6 +174,7 @@
   - google.hu
   - google.ie
   - google.im
+  - google.io
   - google.iq
   - google.is
   - google.it
@@ -216,6 +224,7 @@
   - google.st
   - google.td
   - google.tg
+  - google.tk
   - google.tl
   - google.tm
   - google.tn
