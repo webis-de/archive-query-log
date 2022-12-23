@@ -90,7 +90,10 @@ class ArchivedUrlsFetcher:
         url = f"{self.cdx_api_url}?{urlencode(num_pages_params)}"
         async with client.get(url) as response:
             text = await response.text()
-            num_pages = int(text)
+            try:
+                num_pages = int(text)
+            except:
+                num_pages = 0
         with num_pages_path.open("at") as file:
             file.write(f"{params_hash} {num_pages}\n")
         return num_pages
