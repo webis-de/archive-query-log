@@ -7,7 +7,7 @@ from web_archive_query_log.download.iterable import ArchivedRawSerps
 from pathlib import Path
 
 def verify_serp_parsing(archived_url: str):
-    __get_record_with_id(archived_url)
+    archived_record = __get_record_with_id(archived_url)
 
     actual = {'asdasd': 'asdassds'}
 
@@ -15,7 +15,7 @@ def verify_serp_parsing(archived_url: str):
 
 
 def __get_record_with_id(archived_url: str):
-    warc_directory = f'data/archived-raw-serps/warcs/'
+    warc_directory = f'data/manual-annotations/archived-raw-serps/warcs/'
 
     if not exists(warc_directory):
         warc_directory = f'../../{warc_directory}'
@@ -28,7 +28,7 @@ def __get_record_with_id(archived_url: str):
 
 
 def __verify_serp_parse_as_json(actual, archived_url):
-    test_dir = f'data/archived-raw-serps/expected_serp_results'
+    test_dir = f'data/manual-annotations/archived-raw-serps/expected_serp_results'
 
     if not exists(test_dir):
         test_dir = f'../../{test_dir}'
