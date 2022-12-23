@@ -1,4 +1,5 @@
-./archived*
+archived-*
+focused
 !.gitignore
 !selected-services.yaml
 !manual-annotations
