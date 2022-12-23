@@ -221,6 +221,9 @@
   - url_pattern: ^https?://[^/]+/scholar\?
     type: html_selector
     query_selector: input#gs_hdr_tsi
+  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
+    type: html_selector
+    query_selector: form[name=gs] input[name=q]
   results_parsers:
   - url_pattern: ^https?://(www\.)?google[^/]+/search\?
     type: html_selector
@@ -234,6 +237,12 @@
     url_selector: h3.gs_rt a
     title_selector: h3.gs_rt
     snippet_selector: dic.gs_rs
+  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
+    type: html_selector
+    results_selector: div p.g
+    url_selector: a
+    title_selector: a
+    snippet_selector: font
   focused_url_prefixes:
   - /search?
   - /scholar?

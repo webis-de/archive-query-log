@@ -1,0 +1,60 @@
+{
+    "interpreted_query": "\" www.exactresult. com/\"",
+    "offset": null,
+    "page": null,
+    "query": "\" www.exactresult. com/\"",
+    "results": [
+        {
+            "snippet": "<em>...</em> <em>www</em>.<em>exactresult</em>.<em>com</em> &gt;&gt; More like this &gt;&gt; More info; Europe.ExactResult.com - \"piercing\njewelry\" information and piercing jewelry links in UK, Spain (Espa\u00f1a <em>...</em>\nwww.babieca.com/cgi-bin/engine/ smartsearch.cgi?keywords=Body%20Piercing%20Jewelry%20@%20TongueStud.com -  28k - Cached - Similar pages[ More results from www.babieca.com ]",
+            "title": "ExactResult Search Engine - <em>www</em>.<em>exactresult</em>.<em>com</em> exactresult",
+            "url": "http://www.joeant.com/DIR/info/get/15892/31536"
+        },
+        {
+            "snippet": "<em>...</em> <em>www</em>.<em>exactresult</em>.<em>com</em> &gt;&gt; More like this &gt;&gt; More info; Europe.ExactResult.com - \"piercing\njewelry\" information and piercing jewelry links in UK, Spain (Espa\u00f1a <em>...</em>\nwww.babieca.com/cgi-bin/engine/ smartsearch.cgi?keywords=Body%20Piercing%20Jewelry%20@%20TongueStud.com -  28k - Cached - Similar pages[ More results from www.babieca.com ]",
+            "title": "tylox Side Effects, Interactions and Information - Drugs.com",
+            "url": "http://www.drugs.com/xq/cfm/pageID_0/search_tylox/searchtype_internet/qx/"
+        },
+        {
+            "snippet": "<em>...</em> .. <em>www</em>.<em>exactresult</em>.<em>com</em> (additional listing). Synthroid,Levothyroxine,T4,Levothroid,Levo-T:\ndrugs and medicine without prescription. <em>...</em>\nwww.drugs.com/xq/cfm/pageID_0/search_Levothroid/ searchtype_internet/results_1/qx/ -  44k - Cached - Similar pages[ More results from www.drugs.com ]",
+            "title": "Levothroid Side Effects, Interactions and Information - Drugs. <em>...</em>",
+            "url": "http://www.drugs.com/xq/cfm/pageID_0/search_Levothroid/searchtype_internet/results_1/qx/"
+        },
+        {
+            "snippet": "<em>...</em> <em>www</em>.<em>exactresult</em>.<em>com</em> &gt;&gt; More like this &gt;&gt; More info; Europe.ExactResult.com - \"piercing\njewelry\" information and piercing jewelry links in UK, Spain (Espa\u00f1a <em>...</em>\nwww.babieca.com/cgi-bin/engine/ smartsearch.cgi?keywords=Body%20Piercing%20Jewelry%20@%20TongueStud.com -  28k - Cached - Similar pages[ More results from www.babieca.com ]",
+            "title": "askmen.com - exclusive celebrity gossip",
+            "url": "http://www.babieca.com/cgi-bin/engine/smartsearch.cgi?keywords=AskMen.com%20-%20%20Exclusive%20Celebrity%20Gossip"
+        },
+        {
+            "snippet": "<em>...</em> <em>www</em>.<em>exactresult</em>.<em>com</em> &gt;&gt; More like this &gt;&gt; More info; Europe.ExactResult.com - \"piercing\njewelry\" information and piercing jewelry links in UK, Spain (Espa\u00f1a <em>...</em>\nwww.babieca.com/cgi-bin/engine/ smartsearch.cgi?keywords=Body%20Piercing%20Jewelry%20@%20TongueStud.com -  28k - Cached - Similar pages[ More results from www.babieca.com ]",
+            "title": "body piercing jewelry @ tonguestud.com",
+            "url": "http://www.babieca.com/cgi-bin/engine/smartsearch.cgi?keywords=Body%20Piercing%20Jewelry%20@%20TongueStud.com"
+        },
+        {
+            "snippet": "<em>...</em> .. manufacturer free within Canada. Wood and faux wood, cellular shades,\nroller blinds, ... <em>www</em>.<em>exactresult</em>.<em>com</em>. <em>...</em> <em>www</em>.<em>exactresult</em>.<em>com</em>. Member ... <em>...</em>\nwww.build.us/cgi-bin/search/ smartsearch.cgi?keywords=Wood%20Treatmen -  12k - Cached - Similar pages",
+            "title": "spainsearch.info - picture",
+            "url": "http://www.spainsearch.info/bp/search.pl?keywords=picture&country=spain"
+        },
+        {
+            "snippet": "<em>...</em> .. manufacturer free within Canada. Wood and faux wood, cellular shades,\nroller blinds, ... <em>www</em>.<em>exactresult</em>.<em>com</em>. <em>...</em> <em>www</em>.<em>exactresult</em>.<em>com</em>. Member ... <em>...</em>\nwww.build.us/cgi-bin/search/ smartsearch.cgi?keywords=Wood%20Treatmen -  12k - Cached - Similar pages",
+            "title": "Teoma Search: Information Magnetism",
+            "url": "http://www.teoma.com/search.asp?t=Information%20Magnetism"
+        },
+        {
+            "snippet": "<em>...</em> .. manufacturer free within Canada. Wood and faux wood, cellular shades,\nroller blinds, ... <em>www</em>.<em>exactresult</em>.<em>com</em>. <em>...</em> <em>www</em>.<em>exactresult</em>.<em>com</em>. Member ... <em>...</em>\nwww.build.us/cgi-bin/search/ smartsearch.cgi?keywords=Wood%20Treatmen -  12k - Cached - Similar pages",
+            "title": "Build.us Search Page - wood treatmen",
+            "url": "http://www.build.us/cgi-bin/search/smartsearch.cgi?keywords=Wood%20Treatmen"
+        },
+        {
+            "snippet": "<em>...</em> Open in new window | From <em>www</em>.<em>exactresult</em>.<em>com</em>. study / learn English in\nSt. Julians, Malta - Academy Magister - Home &gt; Other schools in Malta. <em>...</em>\nwww.ask.co.uk/ reply.asp?ask=Where+can+I+find+st+julians+malta+holiday+information -  74k - Cached - Similar pages",
+            "title": "Discover Holidays - Honeymoons In Santiago De Cuba.",
+            "url": "http://www.discover-cuba.co.uk/Honeymoons-In-Santiago-De-Cuba.html"
+        },
+        {
+            "snippet": "<em>...</em> Open in new window | From <em>www</em>.<em>exactresult</em>.<em>com</em>. study / learn English in\nSt. Julians, Malta - Academy Magister - Home &gt; Other schools in Malta. <em>...</em>\nwww.ask.co.uk/ reply.asp?ask=Where+can+I+find+st+julians+malta+holiday+information -  74k - Cached - Similar pages",
+            "title": "Ask Jeeves | Where can I find st julians malta holiday <em>...</em>",
+            "url": "http://www.ask.co.uk/reply.asp?ask=Where+can+I+find+st+julians+malta+holiday+information"
+        }
+    ],
+    "timestamp": 1062373767,
+    "url": "http://www.google.com:80/search?q=%22+www.exactresult.+com/%22"
+}

@@ -50,3 +50,21 @@ class TestGoogleSearch(TestCase):
             'https://web.archive.org/web/20210224224643id_/http://www.google.com/search?hl=en&lr=&ie=ISO-8859-1&q=%22+dead+cock%22+mortuary',
             'google'
         )
+
+    def test_boston_hotels_search(self):
+        verify_serp_parsing(
+            'https://web.archive.org/web/20030829041921id_/http://www.google.com:80/search?q=%22+www.boston-hotels-cheap.net%22',
+            'google'
+        )
+
+    def test_extractresult_search(self):
+        verify_serp_parsing(
+            'https://web.archive.org/web/20030901014927id_/http://www.google.com:80/search?q=%22+www.exactresult.+com/%22',
+            'google'
+        )
+
+    def test_wallstquotes_search(self):
+        verify_serp_parsing(
+            'https://web.archive.org/web/20030829090453id_/http://www.google.com:80/search?q=%22+www.wallstquotes.+com%22',
+            'google'
+        )
