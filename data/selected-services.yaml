@@ -2272,12 +2272,26 @@
   alexa_domain: twitter.com
   alexa_rank: 26
   category: social-media
-  notes: null
+  notes: |
+    Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: null
   search_form: null
   search_div: null
   domains:
+  - business.twitter.com
+  - cards.twitter.com
+  - dev.twitter.com
+  - jobs.twitter.com
+  - m.twitter.com
+  - marketing.twitter.com
+  - mobile.twitter.com
+  - pulse.twitter.com
+  - search.twitter.com
+  - support.twitter.com
+  - td.twitter.com
   - twitter.com
+  - twitter.com
+  - video.twitter.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
