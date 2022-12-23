@@ -1674,13 +1674,15 @@
   alexa_domain: reddit.com
   alexa_rank: 17
   category: social-media
-  notes: null
+  notes: Subdomains from https://github.com/JamieFarrelly/Popular-Site-Subdomains
   input_field: false
   search_form: false
   search_div: true
   domains:
-  - reddit.com
+  - m.reddit.com
+  - mod.reddit.com
   - redd.it
+  - reddit.com
   - redditmedia.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
