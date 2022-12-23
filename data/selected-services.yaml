@@ -20899,12 +20899,29 @@
   alexa_domain: netflix.com
   alexa_rank: null
   category: video
-  notes: null
+  notes: |
+    Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: null
   search_form: null
   search_div: null
   domains:
+  - awards.netflix.com
+  - cache.netflix.com
+  - dvd.com
+  - dvd.netflix.com
+  - film.netflixawards.com
+  - fyc.netflix.com
+  - fyseetv.netflixawards.com
+  - ir.netflix.com
+  - ispspeedindex.netflix.com
+  - jobs.netflix.com
+  - media.netflix.com
   - netflix.com
+  - netflix.com
+  - openconnect.netflix.com
+  - openconnect.netflix.com
+  - series.netflixawards.com
+  - techblog.netflix.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
