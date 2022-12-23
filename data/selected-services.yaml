@@ -660,7 +660,7 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /s?
-- name: wikipedia
+- name: wikimedia
   public_suffix: org
   alexa_domain: wikipedia.org
   alexa_rank: 11
@@ -806,6 +806,7 @@
   - co.wikipedia.org
   - co.wikiquote.org
   - co.wiktionary.org
+  - commons.wikimedia.org
   - cr.wikipedia.org
   - cr.wikiquote.org
   - cr.wiktionary.org
@@ -844,6 +845,7 @@
   - din.wikipedia.org
   - diq.wikipedia.org
   - diq.wiktionary.org
+  - donate.wikimedia.org
   - dsb.wikipedia.org
   - dty.wikipedia.org
   - dv.wikipedia.org
@@ -916,6 +918,7 @@
   - fo.wikipedia.org
   - fo.wikisource.org
   - fo.wiktionary.org
+  - foundation.wikimedia.org
   - fr.wikibooks.org
   - fr.wikinews.org
   - fr.wikipedia.org
@@ -1023,6 +1026,7 @@
   - ik.wikipedia.org
   - ik.wiktionary.org
   - ilo.wikipedia.org
+  - incubator.wikimedia.org
   - inh.wikipedia.org
   - io.wikipedia.org
   - io.wiktionary.org
@@ -1153,6 +1157,7 @@
   - mai.wikipedia.org
   - map-bms.wikipedia.org
   - mdf.wikipedia.org
+  - meta.wikimedia.org
   - mg.wikibooks.org
   - mg.wikipedia.org
   - mg.wiktionary.org
@@ -1376,6 +1381,7 @@
   - sn.wiktionary.org
   - so.wikipedia.org
   - so.wiktionary.org
+  - species.wikimedia.org
   - sq.wikibooks.org
   - sq.wikinews.org
   - sq.wikipedia.org
@@ -1509,7 +1515,10 @@
   - wa.wikisource.org
   - wa.wiktionary.org
   - war.wikipedia.org
+  - wikimania.wikimedia.org
+  - wikimedia.org
   - wikipedia.org
+  - wikitech.wikimedia.org
   - wo.wikipedia.org
   - wo.wikiquote.org
   - wo.wiktionary.org
@@ -1551,12 +1560,12 @@
   - zu.wikipedia.org
   - zu.wiktionary.org
   query_parsers:
-  - url_pattern: ^https?://[^/]+w/index.php?\?
+  - url_pattern: ^https?://[^/]+/w/index.php\?
     type: query_parameter
     parameter: search
   page_parsers: [ ]
   offset_parsers:
-  - url_pattern: ^https?://[^/]+w/index.php?\?
+  - url_pattern: ^https?://[^/]+/w/index.php\?
     type: query_parameter
     parameter: offset
   interpreted_query_parsers: [ ]
@@ -3771,35 +3780,6 @@
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes: [ ]
-- name: wikimedia
-  public_suffix: org
-  alexa_domain: wikimedia.org
-  alexa_rank: 245
-  category: general
-  notes: null
-  input_field: null
-  search_form: null
-  search_div: null
-  domains:
-  - commons.wikimedia.org
-  - donate.wikimedia.org
-  - foundation.wikimedia.org
-  - incubator.wikimedia.org
-  - meta.wikimedia.org
-  - species.wikimedia.org
-  - wikimania.wikimedia.org
-  - wikimedia.org
-  - wikitech.wikimedia.org
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/w
-    type: query_parameter
-    parameter: search
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes:
-  - /w
 - name: blackboard
   public_suffix: com
   alexa_domain: blackboard.com
