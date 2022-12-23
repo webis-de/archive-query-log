@@ -40,10 +40,12 @@ def _get_record_with_id(archived_url: str):
 
     if not exists(warc_directory):
         warc_directory = f'../../{warc_directory}'
+    archived_url_without_protocol = archived_url.split('_/https://')[-1].split('_/http://')[-1]
 
     for record in ArchivedRawSerps(path=Path(warc_directory)):
-        if record.url == archived_url or record.url == (
-                'http' + archived_url.split('_/http')[-1]):
+        url_without_protocol = record.url.split('https://')[-1].split('http://')[-1]
+
+        if record.url == archived_url or url_without_protocol == archived_url_without_protocol:
             return record
 
     raise ValueError(
