@@ -4,11 +4,35 @@
   alexa_rank: 1
   category: general
   notes: |
-    TLDs from https://www.google.com/supported_domains.
+    Domains from https://www.google.com/supported_domains 
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: false
   search_form: false
   search_div: false
   domains:
+  - answers.google.com
+  - asia.google.com
+  - blog.google.com
+  - blogsearch.google.com
+  - books.google.com
+  - calendar.google.com
+  - cloud.google.com
+  - code.google.com
+  - contacts.google.com
+  - design.google.com
+  - developers.google.com
+  - ditu.google.com
+  - doc.google.com
+  - docs.google.com
+  - documents.google.com
+  - drive.google.com
+  - earth.google.com
+  - encrypted.google.com
+  - europe.google.com
+  - finance.google.com
+  - firebase.google.com
+  - fonts.google.com
+  - forms.google.com
   - google.ad
   - google.ae
   - google.al
@@ -59,6 +83,7 @@
   - google.co.za
   - google.co.zm
   - google.co.zw
+  - google.com
   - google.com
   - google.com.af
   - google.com.ag
@@ -199,6 +224,42 @@
   - google.vg
   - google.vu
   - google.ws
+  - groups.google.com
+  - hangouts.google.com
+  - image.google.com
+  - images.google.com
+  - issuetracker.google.com
+  - keep.google.com
+  - local.google.com
+  - m.google.com
+  - mail.google.com
+  - map.google.com
+  - maps.google.com
+  - music.google.com
+  - news.google.com
+  - on.google.com
+  - patents.google.com
+  - photos.google.com
+  - picasa.google.com
+  - picasaweb.google.com
+  - play.google.com
+  - plus.google.com
+  - print.google.com
+  - productforums.google.com
+  - research.google.com
+  - sb.google.com
+  - scholar.google.com
+  - search.google.com
+  - sites.google.com
+  - spreadsheets.google.com
+  - store.google.com
+  - support.google.com
+  - talkgadget.google.com
+  - translate.google.com
+  - trends.google.com
+  - video.google.com
+  - wave.google.com
+  - ww.google.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/scholar\?
     type: query_parameter
