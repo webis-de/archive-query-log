@@ -1028,7 +1028,9 @@
   alexa_domain: wikipedia.org
   alexa_rank: 11
   category: education
-  notes: null
+  notes: |
+    Domains from https://commons.wikimedia.org/wiki/Data:Wikipedia_statistics/data.tab
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: true
   search_form: true
   search_div: true
@@ -1419,6 +1421,7 @@
   - jam.wikipedia.org
   - jbo.wikipedia.org
   - jbo.wiktionary.org
+  - jobs.wikipedia.org
   - jv.wikipedia.org
   - jv.wikisource.org
   - jv.wiktionary.org
@@ -1516,11 +1519,13 @@
   - lv.wikibooks.org
   - lv.wikipedia.org
   - lv.wiktionary.org
+  - m.wikipedia.org
   - mad.wikipedia.org
   - mai.wikipedia.org
   - map-bms.wikipedia.org
   - mdf.wikipedia.org
   - meta.wikimedia.org
+  - meta.wikipedia.org
   - mg.wikibooks.org
   - mg.wikipedia.org
   - mg.wiktionary.org
@@ -1662,6 +1667,7 @@
   - qu.wikipedia.org
   - qu.wikiquote.org
   - qu.wiktionary.org
+  - quote.wikipedia.org
   - rm.wikibooks.org
   - rm.wikipedia.org
   - rm.wiktionary.org
@@ -1716,6 +1722,7 @@
   - shn.wikipedia.org
   - shn.wikivoyage.org
   - shn.wiktionary.org
+  - shop.wikipedia.org
   - shy.wiktionary.org
   - si.wikibooks.org
   - si.wikipedia.org
@@ -1744,6 +1751,7 @@
   - sn.wiktionary.org
   - so.wikipedia.org
   - so.wiktionary.org
+  - sources.wikipedia.org
   - species.wikimedia.org
   - sq.wikibooks.org
   - sq.wikinews.org
@@ -1761,6 +1769,9 @@
   - ss.wiktionary.org
   - st.wikipedia.org
   - st.wiktionary.org
+  - stats.wikimedia.org
+  - stats.wikipedia.org
+  - store.wikipedia.org
   - stq.wikipedia.org
   - su.wikibooks.org
   - su.wikipedia.org
@@ -1792,6 +1803,7 @@
   - te.wikiquote.org
   - te.wikisource.org
   - te.wiktionary.org
+  - test.wikipedia.org
   - tet.wikipedia.org
   - tg.wikibooks.org
   - tg.wikipedia.org
@@ -1880,6 +1892,7 @@
   - war.wikipedia.org
   - wikimania.wikimedia.org
   - wikimedia.org
+  - wikimediafoundation.org
   - wikipedia.org
   - wikitech.wikimedia.org
   - wo.wikipedia.org
