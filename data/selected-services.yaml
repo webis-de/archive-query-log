@@ -2220,12 +2220,27 @@
   alexa_domain: bing.com
   alexa_rank: 25
   category: general
-  notes: null
+  notes: |
+    Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: false
   search_form: false
   search_div: false
   domains:
+  - be.bing.com
   - bing.com
+  - blogs.bing.com
+  - br.bing.com
+  - cn.bing.com
+  - de.bing.com
+  - g.bing.com
+  - hk.bing.com
+  - it.bing.com
+  - it.bing.com
+  - kr.bing.com
+  - nz.bing.com
+  - pulse.bing.com
+  - se.bing.com
+  - ssl.bing.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/images/search\?
     type: query_parameter
