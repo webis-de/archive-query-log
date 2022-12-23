@@ -531,8 +531,17 @@
     parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: form[action*="search"] > input[name="q"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    results_selector: div[class*="search_result"]
+    url_selector: div[class*="search_title"] > a
+    title_selector: div[class*="search_title"]
+    snippet_selector: div[class*="fsm"]
   focused_url_prefixes:
   - /search
 - name: tmall
