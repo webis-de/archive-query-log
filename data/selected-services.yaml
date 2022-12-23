@@ -4179,6 +4179,7 @@
   domains:
   - 123rf.com
   query_parsers:
+  - url_pattern: ^https?://[^/]+/stock-photo/[^/]\.html\?
     type: path_segment
     segment: 1
     remove_patterns:
