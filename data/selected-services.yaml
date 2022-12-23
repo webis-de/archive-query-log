@@ -2143,11 +2143,14 @@
   alexa_domain: instagram.com
   alexa_rank: 19
   category: social-media
-  notes: null
+  notes: |
+    Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: null
   search_form: null
   search_div: null
   domains:
+  - developers.instagram.com
+  - help.instagram.com
   - instagram.com
   query_parsers: [ ]
   page_parsers: [ ]
