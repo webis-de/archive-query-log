@@ -126,7 +126,7 @@ class ArchivedParsedSerpParser:
                 unit="record",
             )
         archived_parsed_serps = (
-            self._parse_single(archived_serp_content)
+            self.parse_single(archived_serp_content)
             for archived_serp_content in archived_serp_contents
         )
         archived_parsed_serps = (
@@ -143,7 +143,7 @@ class ArchivedParsedSerpParser:
                 text_file.write(output_schema.dumps(archived_parsed_serp))
                 text_file.write("\n")
 
-    def _parse_single(
+    def parse_single(
             self,
             archived_serp_content: ArchivedRawSerp
     ) -> ArchivedParsedSerp | None:
