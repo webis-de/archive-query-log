@@ -13,7 +13,7 @@ from unittest import TestCase
 class TestChatNoirSearch(TestCase):
     # Needed because dataclasses-json uses deprecated features of marshmallow.
     @mark.filterwarnings("ignore:The 'default' argument to fields is deprecated")
-    def test_archived_urls_chatnoir(self):
+    def ignore_test_archived_urls_chatnoir(self):
         with TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
             assert temp_path.exists()
@@ -47,7 +47,7 @@ class TestChatNoirSearch(TestCase):
 
     # Needed because dataclasses-json uses deprecated features of marshmallow.
     @mark.filterwarnings("ignore:The 'default' argument to fields is deprecated")
-    def test_archived_query_urls_chatnoir(self):
+    def ignore_test_archived_query_urls_chatnoir(self):
         with TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
             assert temp_path.exists()
