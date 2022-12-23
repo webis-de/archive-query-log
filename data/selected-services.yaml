@@ -2522,12 +2522,48 @@
   alexa_domain: apple.com
   alexa_rank: 39
   category: company-page
-  notes: null
+  notes: |
+    Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: true
   search_form: true
   search_div: false
   domains:
+  - advertising.apple.com
   - apple.com
+  - appleid.apple.com
+  - asia.apple.com
+  - asw.apple.com
+  - c.apple.com
+  - checkcoverage.apple.com
+  - concierge.apple.com
+  - consultants.apple.com
+  - deploy.apple.com
+  - developer.apple.com
+  - devforums.apple.com
+  - discussions.apple.com
+  - euro.apple.com
+  - guide.apple.com
+  - help.apple.com
+  - images.apple.com
+  - investor.apple.com
+  - iphone.apple.com
+  - itunes.apple.com
+  - jobs.apple.com
+  - macos.apple.com
+  - maps.apple.com
+  - mapsconnect.apple.com
+  - mfi.apple.com
+  - movies.apple.com
+  - movietrailers.apple.com
+  - news.apple.com
+  - register.apple.com
+  - searchads.apple.com
+  - selfsolve.apple.com
+  - servers.apple.com
+  - store.apple.com
+  - support.apple.com
+  - trailers.apple.com
+  - training.apple.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/
     type: path_segment
