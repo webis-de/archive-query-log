@@ -6,13 +6,19 @@ from yaml import safe_load
 from web_archive_query_log.model import Service
 
 
-def read_services(path: Path) -> Mapping[str, Service]:
+def read_services(path: Path, ignore_parsing_errors=True) -> Mapping[str, Service]:
     with path.open("r") as file:
         services_dict = safe_load(file)
-        services = [
-            (service.name, service)
-            for service in Service.schema().load(services_dict, many=True)
-        ]
+        services = []
+
+        for service_dict in services_dict:
+            try:
+                service = Service.schema().load(service_dict, many=False)
+                services += [(service.name, service)]
+            except Exception as e:
+                if not ignore_parsing_errors:
+                    raise ValueError('Could not handle service ' + service_dict['name'], e)
+
         service_names = set()
         for name, service in services:
             if name in service_names:

@@ -531,8 +531,17 @@
     parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: form[action*="search"] > input[name="q"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    results_selector: div[class*="search_result"]
+    url_selector: div[class*="search_title"] > a
+    title_selector: div[class*="search_title"]
+    snippet_selector: div[class*="fsm"]
   focused_url_prefixes:
   - /search
 - name: tmall
@@ -555,7 +564,7 @@
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
-  - search_product
+  - /search_product
 - name: taobao
   public_suffix: com
   alexa_domain: taobao.com
@@ -576,7 +585,7 @@
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
-  - search?
+  - /search?
 - name: yahoo
   public_suffix: com
   alexa_domain: yahoo.com
@@ -1634,7 +1643,14 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /weibo?
+  - /weibo
+  - /realtime?
+  - /user?
+  - /video?
+  - /pic?
+  - /topic?
 - name: reddit
   public_suffix: com
   alexa_domain: reddit.com
@@ -1654,7 +1670,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: instagram
   public_suffix: com
   alexa_domain: instagram.com
@@ -1695,7 +1712,8 @@
     parameter: skip
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - ^\/[a-z]+-[a-z]+\/search
 - name: bing
   public_suffix: com
   alexa_domain: bing.com
@@ -1742,7 +1760,12 @@
     url_selector: h2 > a
     title_selector: h2
     snippet_selector: p
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
+  - /shop?
+  - /news/search?
+  - /images/search?
+  - /videos/search?
 - name: twitter
   public_suffix: com
   alexa_domain: twitter.com
@@ -1762,7 +1785,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: ebay
   public_suffix: com
   alexa_domain: ebay.com
@@ -1854,7 +1878,8 @@
     parameter: start
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search.naver?
 - name: aliexpress
   public_suffix: com
   alexa_domain: aliexpress.com
@@ -1883,7 +1908,9 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /w/wholesale
+  - /wholesale
 - name: yandex
   public_suffix: ru
   alexa_domain: yandex.ru
@@ -1912,7 +1939,10 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
+  - /images/search
+  - /video/search
 - name: apple
   public_suffix: com
   alexa_domain: apple.com
@@ -1935,7 +1965,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: pornhub
   public_suffix: com
   alexa_domain: pornhub.com
@@ -1958,7 +1989,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /video/search?
 - name: stackoverflow
   public_suffix: com
   alexa_domain: stackoverflow.com
@@ -1987,7 +2019,9 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
+  - /questions/tagged
 - name: tribunnews
   public_suffix: com
   alexa_domain: tribunnews.com
@@ -2010,7 +2044,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: imdb
   public_suffix: com
   alexa_domain: imdb.com
@@ -2030,7 +2065,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /find
 - name: chaturbate
   public_suffix: com
   alexa_domain: chaturbate.com
@@ -2099,7 +2135,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: etsy
   public_suffix: com
   alexa_domain: etsy.com
@@ -2122,7 +2159,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: sogou
   public_suffix: com
   alexa_domain: sogou.com
@@ -2169,7 +2207,13 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /web?
+  - /sogou?
+  - /pics?
+  - /result?
+  - /weixin?
+  - /v?
 - name: espn
   public_suffix: com
   alexa_domain: espn.com
@@ -2189,7 +2233,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: detik
   public_suffix: com
   alexa_domain: detik.com
@@ -2212,7 +2257,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: booking
   public_suffix: com
   alexa_domain: booking.com
@@ -2235,7 +2281,8 @@
     parameter: offset
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /searchresults
 - name: cnblogs
   public_suffix: com
   alexa_domain: cnblogs.com
@@ -2283,7 +2330,12 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /s?
+  - /s/news?
+  - /s/question?
+  - /s/kb?
+  - /s/blogpost?
 - name: alibaba
   public_suffix: com
   alexa_domain: alibaba.com
@@ -2306,7 +2358,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /trade/search?
 - name: freepik
   public_suffix: com
   alexa_domain: freepik.com
@@ -2329,7 +2382,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: nih
   public_suffix: gov
   alexa_domain: nih.gov
@@ -2353,7 +2407,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: stackexchange
   public_suffix: com
   alexa_domain: stackexchange.com
@@ -2552,7 +2607,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: daum
   public_suffix: net
   alexa_domain: daum.net
@@ -2577,7 +2633,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: craigslist
   public_suffix: org
   alexa_domain: craigslist.org
@@ -3315,7 +3372,8 @@
     parameter: s
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: duckduckgo
   public_suffix: com
   alexa_domain: duckduckgo.com
@@ -3358,7 +3416,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: gome
   public_suffix: com.cn
   alexa_domain: gome.com.cn
@@ -3378,7 +3437,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: xnxx
   public_suffix: com
   alexa_domain: xnxx.com
@@ -3398,7 +3458,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: w3schools
   public_suffix: com
   alexa_domain: w3schools.com
@@ -3421,7 +3482,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /#gsc.tab  # TODO: Check if URL prefixes like this work with the CDX API.
 - name: slideshare
   public_suffix: net
   alexa_domain: slideshare.net
@@ -3444,7 +3506,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: globo
   public_suffix: com
   alexa_domain: globo.com
@@ -3464,7 +3527,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /busca
 - name: tistory
   public_suffix: com
   alexa_domain: tistory.com
@@ -3502,7 +3566,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: wikihow
   public_suffix: com
   alexa_domain: wikihow.com
@@ -3525,7 +3590,8 @@
     parameter: start
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /wikiHowTo?
 - name: bukalapak
   public_suffix: com
   alexa_domain: bukalapak.com
@@ -3554,7 +3620,9 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /products?
+  - /products/
 - name: ask
   public_suffix: com
   alexa_domain: ask.com
@@ -3577,7 +3645,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /web?
 - name: intuit
   public_suffix: com
   alexa_domain: intuit.com
@@ -3597,7 +3666,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: usps
   public_suffix: com
   alexa_domain: usps.com
@@ -3613,11 +3683,15 @@
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: keyword
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: PNO
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: redd
   public_suffix: it
   alexa_domain: redd.it
@@ -3691,7 +3765,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /global-search-public
 - name: airbnb
   public_suffix: com
   alexa_domain: airbnb.com
@@ -3739,7 +3814,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /w
 - name: blackboard
   public_suffix: com
   alexa_domain: blackboard.com
@@ -3756,10 +3832,14 @@
     type: query_parameter
     parameter: q
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers: 
+  - url_pattern: ^https?://[^/]+/site-search\?
+    type: query_parameter
+    parameter: first
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /site-search?
 - name: steampowered
   public_suffix: com
   alexa_domain: steampowered.com
@@ -3779,7 +3859,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: investopedia
   public_suffix: com
   alexa_domain: investopedia.com
@@ -3796,10 +3877,14 @@
     type: query_parameter
     parameter: q
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers: 
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: offset
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: kakao
   public_suffix: com
   alexa_domain: kakao.com
@@ -3812,14 +3897,20 @@
   domains:
   - kakao.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/[^/]+/  # FIXME
+    type: path_segment
+    segment: 2
+    remove_patterns:
+    - 'page:'  # FIXME
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: dbs
   public_suffix: com.sg
   alexa_domain: dbs.com.sg
@@ -3839,7 +3930,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /searchresults.page
 - name: ecosia
   public_suffix: org
   alexa_domain: ecosia.org
@@ -3864,11 +3956,24 @@
   - url_pattern: ^https?://[^/]+/videos\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/news\?
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/videos\?
+    type: query_parameter
+    parameter: p
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
+  - /images?
+  - /news?
+  - /videos?
 - name: chinaz
   public_suffix: com
   alexa_domain: chinaz.com
@@ -3888,7 +3993,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search.aspx?
 - name: turkiye
   public_suffix: gov.tr
   alexa_domain: turkiye.gov.tr
@@ -3905,10 +4011,14 @@
     type: query_parameter
     parameter: aranan
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/arama\?
+    type: query_parameter
+    parameter: sf
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /arama?
 - name: europa
   public_suffix: eu
   alexa_domain: europa.eu
@@ -3943,11 +4053,22 @@
   - url_pattern: ^https?://[^/]+/combine/q/
     type: path_segment
     segment: 2
-  page_parsers: [ ]
+  - url_pattern: ^https?://[^/]+/post/sort/[^/]+/q/
+    type: path_segment
+    segment: 4
+  - url_pattern: ^https?://[^/]+/post/p/[^/]+/sort/[^/]+/q/
+    type: path_segment
+    segment: 6
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/post/p/[^/]+/sort/[^/]+/q/
+    type: path_segment
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /combine
+  - /post
 - name: elfagr
   public_suffix: com
   alexa_domain: elfagr.com
@@ -3964,11 +4085,15 @@
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: w
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: news18
   public_suffix: com
   alexa_domain: news18.com
@@ -4002,7 +4127,10 @@
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -4022,11 +4150,15 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: p
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: 123rf
   public_suffix: com
   alexa_domain: 123rf.com
@@ -4039,14 +4171,29 @@
   domains:
   - 123rf.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/stock-photo/
+  - url_pattern: ^https?://[^/]+/stock-photo/[^/]\.html
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+    remove_patterns:
+    - \.html$
+  - url_pattern: ^https?://[^/]+/lizenzfreie-bilder/[^/]\.html
+    type: path_segment
+    segment: 1
+    remove_patterns:
+    - \.html$
+  page_parsers: 
+  - url_pattern: ^https?://[^/]+/stock-photo/[^/]\.html\?
+    type: query_parameter
+    parameter: page
+  - url_pattern: ^https?://[^/]+/lizenzfreie-bilder/[^/]\.html\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /stock-photo
+  - /lizenzfreie-bilder
 - name: smartsheet
   public_suffix: com
   alexa_domain: smartsheet.com
@@ -4069,7 +4216,8 @@
     parameter: first
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: allrecipes
   public_suffix: com
   alexa_domain: allrecipes.com
@@ -4086,10 +4234,14 @@
     type: query_parameter
     parameter: q
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: offset
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: commbank
   public_suffix: com.au
   alexa_domain: commbank.com.au
@@ -4141,11 +4293,15 @@
   - url_pattern: ^https?://[^/]+/search-results\.html\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search-results\.html\?
+    type: query_parameter
+    parameter: pageNumber
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search-results.html?
 - name: ci123
   public_suffix: com
   alexa_domain: ci123.com
@@ -4182,11 +4338,43 @@
   - url_pattern: ^https?://[^/]+/ping/
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/all/
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/ask/
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/bbs/
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/blog/
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/baobao/
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/qq/
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/zhishi/
+    type: query_parameter
+    parameter: p
+  - url_pattern: ^https?://[^/]+/ping/
+    type: query_parameter
+    parameter: p
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /all
+  - /ask
+  - /bbs
+  - /blog
+  - /baobao
+  - /qq
+  - /zhishi
+  - /ping
 - name: caf
   public_suffix: fr
   alexa_domain: caf.fr
@@ -4206,7 +4394,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /allocataires/recherche?
 - name: stanford
   public_suffix: edu
   alexa_domain: stanford.edu
@@ -4260,10 +4449,14 @@
     type: fragment_parameter
     parameter: query
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/web/q
+    type: query_parameter
+    parameter: offset
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /web/q
 - name: baskino
   public_suffix: me
   alexa_domain: baskino.me
@@ -4301,7 +4494,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: lifewire
   public_suffix: com
   alexa_domain: lifewire.com
@@ -4318,10 +4512,14 @@
     type: query_parameter
     parameter: q
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: offset
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: yixiin
   public_suffix: com
   alexa_domain: yixiin.com
@@ -4341,7 +4539,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /sell/search.php?
 - name: fmovies
   public_suffix: to
   alexa_domain: fmovies.to
@@ -4362,7 +4561,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: gotporn
   public_suffix: com
   alexa_domain: gotporn.com
@@ -4375,14 +4575,24 @@
   domains:
   - gotporn.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/a/
+  - url_pattern: ^https?://[^/]+/search/a/[^/]+
     type: path_segment
     segment: 2
-  page_parsers: [ ]
+  - url_pattern: ^https?://[^/]+/search/[^/]+
+    type: path_segment
+    segment: 1
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/a/[^/]+
+    type: query_parameter
+    parameter: page
+  - url_pattern: ^https?://[^/]+/search/[^/]+
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: klix
   public_suffix: ba
   alexa_domain: klix.ba
@@ -4398,11 +4608,15 @@
   - url_pattern: ^https?://[^/]+/pretraga\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers: 
+  - url_pattern: ^https?://[^/]+/pretraga\?
+    type: query_parameter
+    parameter: str
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /pretraga?
 - name: gitlab
   public_suffix: com
   alexa_domain: gitlab.com
@@ -4455,11 +4669,15 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: shippingchina
   public_suffix: com
   alexa_domain: shippingchina.com
@@ -4497,7 +4715,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: tnaflix
   public_suffix: com
   alexa_domain: tnaflix.com
@@ -4513,11 +4732,15 @@
   - url_pattern: ^https?://[^/]+/search\.php\?
     type: query_parameter
     parameter: what
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\.php\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search.php?
 - name: elyamnelaraby
   public_suffix: com
   alexa_domain: elyamnelaraby.com
@@ -4533,11 +4756,15 @@
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: w
-  page_parsers: [ ]
+  page_parsers: 
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: vectorstock
   public_suffix: com
   alexa_domain: vectorstock.com
@@ -4550,17 +4777,26 @@
   domains:
   - vectorstock.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/royalty-free-vectors/
+  - url_pattern: ^https?://[^/]+/(royalty-free-vectors|free-vectors)/[^/]+-vectors(-page_[0-9]+)?
     type: path_segment
     segment: 1
-  - url_pattern: ^https?://[^/]+/free-vectors/
+    remove_patterns:
+    - -vectors$
+    - -vectors-page_[0-9]+$
+    space_patterns:
+    - '-'
+  page_parsers: 
+  - url_pattern: ^https?://[^/]+/(royalty-free-vectors|free-vectors)/[^/]+-vectors-page_[0-9]+
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+    remove_patterns:
+    - ^[^/]+-vectors-page_
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /royalty-free-vectors
+  - /free-vectors
 - name: php
   public_suffix: net
   alexa_domain: php.net
@@ -4580,12 +4816,13 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /manual-lookup.php?
 - name: '19888'
   public_suffix: tv
   alexa_domain: 19888.tv
   alexa_rank: 1661
-  category: null
+  category: shopping
   notes: null
   input_field: false
   search_form: false
@@ -4593,17 +4830,33 @@
   domains:
   - 19888.tv
   query_parsers:
-  - url_pattern: ^https?://[^/]+/provide
+  - url_pattern: ^https?://[^/]+/provide/title_[^/]+
     type: path_segment
     segment: 1
-  - url_pattern: ^https?://[^/]+/chanpin
+    remove_patterns:
+    - ^title_
+    - \.html$
+  - url_pattern: ^https?://[^/]+/chanpin/(p[0-9]+/)?\?
     type: query_parameter
     parameter: title
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/provide/title_[^/]+/p[0-9]+
+    type: path_segment
+    segment: 2
+    remove_patterns:
+    - ^p
+    - \.html$
+  - url_pattern: ^https?://[^/]+/chanpin/p[0-9]+/\?
+    type: path_segment
+    segment: 1
+    remove_patterns:
+    - ^p
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /chanpin
+  - /provide
 - name: indosport
   public_suffix: com
   alexa_domain: indosport.com
@@ -4623,7 +4876,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: dailypost
   public_suffix: ng
   alexa_domain: dailypost.ng
@@ -4643,7 +4897,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /?
 - name: uspto
   public_suffix: gov
   alexa_domain: uspto.gov
@@ -4663,7 +4918,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: dy2018
   public_suffix: com
   alexa_domain: dy2018.com
@@ -4715,11 +4971,15 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: keyword
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: pCursor
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: doc88
   public_suffix: com
   alexa_domain: doc88.com
@@ -4739,7 +4999,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /tag
 - name: postermywall
   public_suffix: com
   alexa_domain: postermywall.com
@@ -4759,7 +5020,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /index.php/posters/search?
 - name: hangseng
   public_suffix: com
   alexa_domain: hangseng.com
@@ -4779,7 +5041,10 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /en-hk/search
+  - /zh-hk/search
+  - /zh-cn/search
 - name: animixplay
   public_suffix: to
   alexa_domain: animixplay.to
@@ -4799,7 +5064,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
 - name: npmjs
   public_suffix: com
   alexa_domain: npmjs.com
@@ -4815,11 +5081,15 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: 9anime
   public_suffix: id
   alexa_domain: 9anime.id
@@ -4837,11 +5107,15 @@
   - url_pattern: ^https?://[^/]+/filter\?
     type: query_parameter
     parameter: keyword
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/filter\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /filter?
 - name: zdf
   public_suffix: de
   alexa_domain: zdf.de
@@ -4861,7 +5135,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /suche?
 - name: asurascans
   public_suffix: com
   alexa_domain: asurascans.com
@@ -4878,7 +5153,10 @@
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -4898,7 +5176,10 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -4972,7 +5253,10 @@
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: query
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -4994,7 +5278,10 @@
     segment: 1
     remove_patterns:
     - \.html$
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/
+    type: query_parameter
+    parameter: pageNum
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5031,10 +5318,13 @@
   domains:
   - haibunda.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search\?
+  - url_pattern: ^https?://[^/]+/search(/[0-9]+)\?
     type: query_parameter
     parameter: query
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/[0-9]+
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5054,7 +5344,10 @@
   - url_pattern: ^https?://[^/]+/newsstudios/archive/
     type: query_parameter
     parameter: query
-  page_parsers: [ ]
+  page_parsers: 
+  - url_pattern: ^https?://[^/]+/newsstudios/archive/
+    type: query_parameter
+    parameter: curp
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5091,7 +5384,10 @@
   - url_pattern: ^https?://[^/]+/newsstudios/archive/
     type: query_parameter
     parameter: query
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/newsstudios/archive/
+    type: query_parameter
+    parameter: curp
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5108,10 +5404,13 @@
   domains:
   - boyfriendtv.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+
+    type: path_segment
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5176,10 +5475,13 @@
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
     parameter: s
-  - url_pattern: ^https?://[^/]+/page
+  - url_pattern: ^https?://[^/]+/page/[0-9]+\?
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5216,10 +5518,13 @@
   domains:
   - manganato.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/story/
+  - url_pattern: ^https?://[^/]+/search/story/[^/]+
     type: path_segment
     segment: 2
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/story/[^/]+\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5345,7 +5650,10 @@
   - url_pattern: ^https?://[^/]+/s/
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/s/
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5362,10 +5670,13 @@
   domains:
   - ashemaletube.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 1
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+
+    type: path_segment
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5403,7 +5714,10 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5440,7 +5754,10 @@
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]

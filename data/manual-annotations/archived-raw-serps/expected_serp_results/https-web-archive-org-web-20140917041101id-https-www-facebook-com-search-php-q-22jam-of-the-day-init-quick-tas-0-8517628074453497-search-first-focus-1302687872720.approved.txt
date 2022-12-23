@@ -1,0 +1,60 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "\"Jam of the Day",
+    "results": [
+        {
+            "snippet": "Los Angeles | San Francisco \u00b7 Product/Service \u00b7 385 likes",
+            "title": "DayJam",
+            "url": "https://www.facebook.com/whatsyourdayjam"
+        },
+        {
+            "snippet": "San Francisco, California \u00b7 Entertainment Website \u00b7 533 likes",
+            "title": "J(am) of the Day",
+            "url": "https://www.facebook.com/JoftheDay"
+        },
+        {
+            "snippet": "Odense, Denmark \u00b7 Concert Venue \u00b7 1,713 likes",
+            "title": "Jam Days",
+            "url": "https://www.facebook.com/jamdays"
+        },
+        {
+            "snippet": "Community \u00b7 2,921 likes",
+            "title": "Phish Jam of the Day",
+            "url": "https://www.facebook.com/phjamoftheday"
+        },
+        {
+            "snippet": "5374 Nohava \u00b7 North Port, Florida \u00b7 34286\nDJ \u00b7 Wedding Planning \u00b7 Entertainer\n1 was here \u00b7 932 likes \u00b7 Always open",
+            "title": "Jam All Day Entertainment",
+            "url": "https://www.facebook.com/JamAllDayEntertainment"
+        },
+        {
+            "snippet": "74 Constant Spring Road \u00b7 Kingston, Jamaica\nReligious Organization\n17 were here \u00b7 1,838 likes \u00b7 Closed now, reopens tomorrow 8:30 am",
+            "title": "East Jamaica Conference of Seventh-day Adventists",
+            "url": "https://www.facebook.com/ejcsda"
+        },
+        {
+            "snippet": "88-28 163rd St \u00b7 Jamaica, New York \u00b7 11432\nReligious Organization\n371 were here \u00b7 1,185 likes",
+            "title": "Jamaica Seventh-day Adventist Church",
+            "url": "https://www.facebook.com/jasda.org"
+        },
+        {
+            "snippet": "Chicago, Illinois \u00b7 Company \u00b7 400 likes",
+            "title": "Holy Day of Atonement 2014 in Jamaica",
+            "url": "https://www.facebook.com/HolyDayofAtonement2014"
+        },
+        {
+            "snippet": "Community \u00b7 235 likes",
+            "title": "Toronto Jamaica Day",
+            "url": "https://www.facebook.com/torontojamaicaday"
+        },
+        {
+            "snippet": "Treasure Beach \u00b7 St. Elizabeth, Jamaica, W.I\nLocal Business\n2,446 were here \u00b7 441 likes \u00b7 Always open",
+            "title": "Jakes At Treasure Beach, Jamaica",
+            "url": "https://www.facebook.com/pages/Jakes-At-Treasure-Beach-Jamaica/198084876878208"
+        }
+    ],
+    "timestamp": 1410919861,
+    "url": "https://www.facebook.com/search.php?q=%22Jam+of+the+Day&init=quick&tas=0.8517628074453497&search_first_focus=1302687872720"
+}
