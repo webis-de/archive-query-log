@@ -534,7 +534,10 @@
   interpreted_query_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
-    query_selector: form[action*="search"] > input[name="q"]
+    query_selector: form[action*="search"] input[name="q"]
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: form input[name="q"]
   results_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
@@ -542,6 +545,12 @@
     url_selector: div[class*="search_title"] > a
     title_selector: div[class*="search_title"]
     snippet_selector: div[class*="fsm"]
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    results_selector: ul[class="uiList"] > li
+    url_selector: div[class*="TextTitle"] > a
+    title_selector: div[class*="TextTitle"]
+    
   focused_url_prefixes:
   - /search
 - name: tmall

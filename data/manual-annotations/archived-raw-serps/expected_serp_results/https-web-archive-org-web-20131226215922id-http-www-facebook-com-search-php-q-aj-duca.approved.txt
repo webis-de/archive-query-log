@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "AJ Duca",
+    "offset": null,
+    "page": null,
+    "query": "AJ Duca",
+    "results": [],
+    "timestamp": 1388091562,
+    "url": "http://www.facebook.com/search.php?q=AJ+Duca"
+}
