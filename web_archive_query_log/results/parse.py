@@ -153,14 +153,14 @@ class ArchivedParsedSerpParser:
             if results is not None:
                 break
 
-        if results is None:
-            return None
-
         interpreted_query: str | None = None
         for parser in self.interpreted_query_parsers:
             interpreted_query = parser.parse(archived_serp_content)
             if interpreted_query is not None:
                 break
+
+        if results is None and interpreted_query is None:
+            return None
 
         return ArchivedParsedSerp(
             url=archived_serp_content.url,
@@ -169,7 +169,7 @@ class ArchivedParsedSerpParser:
             page=archived_serp_content.page,
             offset=archived_serp_content.offset,
             interpreted_query=interpreted_query,
-            results=results,
+            results=results if results else [],
         )
 
     def _service_pages(
