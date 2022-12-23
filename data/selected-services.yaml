@@ -1662,6 +1662,8 @@
   search_div: true
   domains:
   - reddit.com
+  - redd.it
+  - redditmedia.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
@@ -3692,24 +3694,6 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /search
-- name: redd
-  public_suffix: it
-  alexa_domain: redd.it
-  alexa_rank: 200
-  category: null
-  notes: |
-    TODO: Merge into Reddit.
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - redd.it
-  query_parsers: [ ]
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes: [ ]
 - name: steamcommunity
   public_suffix: com
   alexa_domain: steamcommunity.com
@@ -10404,23 +10388,6 @@
   search_div: true
   domains:
   - peardeck.com
-  query_parsers: [ ]
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes: [ ]
-- name: redditmedia
-  public_suffix: com
-  alexa_domain: redditmedia.com
-  alexa_rank: 5169
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - redditmedia.com
   query_parsers: [ ]
   page_parsers: [ ]
   offset_parsers: [ ]
