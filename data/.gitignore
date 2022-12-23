@@ -1,3 +1,4 @@
+/archived-*
 focused
 !.gitignore
 !selected-services.yaml
