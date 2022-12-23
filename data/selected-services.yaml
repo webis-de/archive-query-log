@@ -1716,13 +1716,61 @@
   alexa_domain: microsoft.com
   alexa_rank: 21
   category: company-page
-  notes: null
+  notes: Subdomains from https://github.com/JamieFarrelly/Popular-Site-Subdomains
   input_field: true
   search_form: true
   search_div: true
   domains:
+  - advertising.microsoft.com
+  - answers.microsoft.com
+  - api.microsoft.com
+  - apps.microsoft.com
+  - asia.microsoft.com
+  - azure.microsoft.com
+  - bingads.microsoft.com
+  - blogs.office.com
+  - business.microsoft.com
+  - careers.microsoft.com
+  - community.microsoft.com
+  - connect.microsoft.com
+  - dev.microsoft.com
+  - developer.microsoft.com
+  - developers.microsoft.com
+  - dns.microsoft.com
+  - docs.microsoft.com
+  - download.microsoft.com
+  - e.microsoft.com
+  - education.microsoft.com
+  - events.microsoft.com
+  - example.microsoft.com
+  - forms.microsoft.com
+  - fuse.microsoft.com
+  - g.microsoft.com
+  - go.microsoft.com
+  - info.microsoft.com
+  - learn.microsoft.com
+  - messenger.microsoft.com
   - microsoft.com
+  - mran.microsoft.com
+  - msdn.microsoft.com
+  - mva.microsoft.com
+  - mvp.microsoft.com
+  - office.microsoft.com
   - office365.com
+  - partner.microsoft.com
+  - powerbi.microsoft.com
+  - privacy.microsoft.com
+  - referencesource.microsoft.com
+  - research.microsoft.com
+  - roadmap.office.com
+  - rss.microsoft.com
+  - s.microsoft.com
+  - shop.microsoft.com
+  - social.microsoft.com
+  - support.microsoft.com
+  - testconnectivity.microsoft.com
+  - webgallery.microsoft.com
+  - windows.microsoft.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/search
     type: query_parameter
