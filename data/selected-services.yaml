@@ -304,12 +304,39 @@
   alexa_rank: 2
   category: video
   notes: |
-    TLDs from https://stackoverflow.com/a/65375894.
+    Domains from https://stackoverflow.com/a/65375894
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
     SERPs rendered using JavaScript.
   input_field: false
   search_form: false
   search_div: true
   domains:
+  - au.youtube.com
+  - br.youtube.com
+  - cms.youtube.com
+  - creatoracademy.youtube.com
+  - de.youtube.com
+  - es.youtube.com
+  - fr.youtube.com
+  - gaming.youtube.com
+  - gr.youtube.com
+  - hk.youtube.com
+  - ie.youtube.com
+  - il.youtube.com
+  - in.youtube.com
+  - it.youtube.com
+  - jp.youtube.com
+  - kids.youtube.com
+  - m.youtube.com
+  - music.youtube.com
+  - mx.youtube.com
+  - news.youtube.com
+  - nl.youtube.com
+  - nz.youtube.com
+  - tv.youtube.com
+  - tw.youtube.com
+  - uk.youtube.com
+  - youtu.be
   - youtube.ae
   - youtube.at
   - youtube.az
@@ -457,7 +484,6 @@
   - youtube.uy
   - youtube.vn
   - youtube.voto
-  - youtu.be
   query_parsers:
   - url_pattern: ^https?://[^/]+/results\?
     type: query_parameter
@@ -687,7 +713,7 @@
     results_selector: ul[class="uiList"] > li
     url_selector: div[class*="TextTitle"] > a
     title_selector: div[class*="TextTitle"]
-    
+
   focused_url_prefixes:
   - /search
 - name: tmall
@@ -2687,7 +2713,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /trade/search?
 - name: freepik
   public_suffix: com
@@ -4114,7 +4140,7 @@
     type: query_parameter
     parameter: q
   page_parsers: [ ]
-  offset_parsers: 
+  offset_parsers:
   - url_pattern: ^https?://[^/]+/site-search\?
     type: query_parameter
     parameter: first
@@ -4159,7 +4185,7 @@
     type: query_parameter
     parameter: q
   page_parsers: [ ]
-  offset_parsers: 
+  offset_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: offset
@@ -4463,7 +4489,7 @@
     segment: 1
     remove_patterns:
     - \.html$
-  page_parsers: 
+  page_parsers:
   - url_pattern: ^https?://[^/]+/stock-photo/[^/]\.html\?
     type: query_parameter
     parameter: page
@@ -4647,7 +4673,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /all
   - /ask
   - /bbs
@@ -4889,7 +4915,7 @@
   - url_pattern: ^https?://[^/]+/pretraga\?
     type: query_parameter
     parameter: q
-  page_parsers: 
+  page_parsers:
   - url_pattern: ^https?://[^/]+/pretraga\?
     type: query_parameter
     parameter: str
@@ -5037,7 +5063,7 @@
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: w
-  page_parsers: 
+  page_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: page
@@ -5066,7 +5092,7 @@
     - -vectors-page_[0-9]+$
     space_patterns:
     - '-'
-  page_parsers: 
+  page_parsers:
   - url_pattern: ^https?://[^/]+/(royalty-free-vectors|free-vectors)/[^/]+-vectors-page_[0-9]+
     type: path_segment
     segment: 1
@@ -5178,7 +5204,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /?
 - name: uspto
   public_suffix: gov
@@ -5625,7 +5651,7 @@
   - url_pattern: ^https?://[^/]+/newsstudios/archive/
     type: query_parameter
     parameter: query
-  page_parsers: 
+  page_parsers:
   - url_pattern: ^https?://[^/]+/newsstudios/archive/
     type: query_parameter
     parameter: curp
