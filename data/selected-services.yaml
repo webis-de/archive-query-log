@@ -629,11 +629,14 @@
   alexa_domain: amazon.com
   alexa_rank: 10
   category: shopping
-  notes: null
+  notes: |
+    Subdomains from https://amazon.de/customer-preferences/country (dropdown) 
+    and https://github.com/JamieFarrelly/Popular-Site-Subdomains
   input_field: true
   search_form: true
   search_div: true
   domains:
+  - advertising.amazon.com
   - amazon.ae
   - amazon.ca
   - amazon.cn
@@ -656,6 +659,48 @@
   - amazon.sa
   - amazon.se
   - amazon.sg
+  - ams.amazon.com
+  - authorcentral.amazon.com
+  - aws.amazon.com
+  - cloud.amazon.com
+  - developer.amazon.com
+  - fba.amazon.com
+  - fresh.amazon.com
+  - gamedev.amazon.com
+  - in.amazon.com
+  - music.amazon.com
+  - payments.amazon.com
+  - press.amazonstudios.com
+  - prime.amazon.com
+  - primenow.amazon.com
+  - read.amazon.com
+  - sell.amazon.com
+  - services.amazon.com
+  - sesblog.amazon.com
+  - smile.amazon.ae
+  - smile.amazon.ca
+  - smile.amazon.cn
+  - smile.amazon.co.jp
+  - smile.amazon.co.uk
+  - smile.amazon.com
+  - smile.amazon.com.au
+  - smile.amazon.com.be
+  - smile.amazon.com.br
+  - smile.amazon.com.mx
+  - smile.amazon.com.tr
+  - smile.amazon.de
+  - smile.amazon.eg
+  - smile.amazon.es
+  - smile.amazon.fr
+  - smile.amazon.in
+  - smile.amazon.it
+  - smile.amazon.nl
+  - smile.amazon.pl
+  - smile.amazon.sa
+  - smile.amazon.se
+  - smile.amazon.sg
+  - storywriter.amazon.com
+  - studios.amazon.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/s\?
     type: query_parameter
