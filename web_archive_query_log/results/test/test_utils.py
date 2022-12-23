@@ -6,10 +6,28 @@ from slugify import slugify
 from web_archive_query_log.download.iterable import ArchivedRawSerps
 from pathlib import Path
 
-def verify_serp_parsing(archived_url: str):
+from web_archive_query_log.config import SERVICES
+from web_archive_query_log.results.parse import ArchivedParsedSerpParser
+
+from copy import deepcopy
+
+def verify_serp_parsing(archived_url: str, service: str):
+    result_parsers = []
+    interpreted_query_parsers = []
+    services = SERVICES.values()
+    if service and service in SERVICES:
+        services = [SERVICES[service]]
+
+    for service in services:
+        if 'results_parsers' in dir(service) and service.results_parsers:
+            result_parsers += service.results_parsers
+        if 'interpreted_query_parsers' in dir(service) and service.interpreted_query_parsers:
+            interpreted_query_parsers += service.interpreted_query_parsers
+
+    parser = ArchivedParsedSerpParser(result_parsers, interpreted_query_parsers)
     archived_record = __get_record_with_id(archived_url)
 
-    actual = {'asdasd': 'asdassds'}
+    actual = parser.parse_single(archived_record)
 
     __verify_serp_parse_as_json(actual, archived_url)
 
@@ -32,6 +50,14 @@ def __verify_serp_parse_as_json(actual, archived_url):
 
     if not exists(test_dir):
         test_dir = f'../../{test_dir}'
+
+    if not exists(test_dir):
+        raise ValueError('Could not handle')
+
+    raw_actual = deepcopy(actual)
+    if actual:
+        actual = raw_actual.to_dict(encode_json=False)
+        actual['results'] = [i.to_dict(encode_json=False) for i in raw_actual.results]
 
     verify_as_json(
         actual,
