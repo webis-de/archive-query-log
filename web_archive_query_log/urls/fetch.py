@@ -76,6 +76,7 @@ class ArchivedUrlsFetcher:
         params = self._params(url)
         params_hash = urlencode(params)
         num_pages_path = output_path / ".lock"
+        num_pages_path.parent.mkdir(exist_ok=True, parents=True)
         num_pages_path.touch(exist_ok=True)
         with num_pages_path.open("rt") as file:
             for line in file:
@@ -248,6 +249,9 @@ class ArchivedUrlsFetcher:
 
             res: Sequence[Sequence[_CdxPage]]
             res = await pool.map(domain_pages, domains)
+            for val in res:
+                if isinstance(val, Exception):
+                    raise val
             res = sorted(res, key=len, reverse=True)
             return list(chain.from_iterable(res))
 
