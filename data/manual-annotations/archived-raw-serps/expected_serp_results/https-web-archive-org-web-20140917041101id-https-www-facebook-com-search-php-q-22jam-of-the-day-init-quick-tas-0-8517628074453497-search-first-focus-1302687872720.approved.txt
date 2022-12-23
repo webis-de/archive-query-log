@@ -1,5 +1,5 @@
 {
-    "interpreted_query": null,
+    "interpreted_query": "\"Jam of the Day",
     "offset": null,
     "page": null,
     "query": "\"Jam of the Day",

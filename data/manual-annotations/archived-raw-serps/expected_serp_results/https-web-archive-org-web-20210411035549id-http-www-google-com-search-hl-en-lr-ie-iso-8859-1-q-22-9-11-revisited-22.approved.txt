@@ -1,0 +1,60 @@
+{
+    "interpreted_query": "\" 9/11 revisited\"",
+    "offset": null,
+    "page": null,
+    "query": "\" 9/11 revisited\"",
+    "results": [
+        {
+            "snippet": "Political revolutionary warfare has been integrated as a topic of interest. That will be the primary focus through the republican and democratic national conventions.",
+            "title": "9-11 Revisited \u2013 A site devoted to the events of 9-11",
+            "url": "http://www.oredigger61.org/"
+        },
+        {
+            "snippet": "<em>9/11 revisited</em>: The 102 minutes that changed America in pics, news clippings. Sunday marks the 15th ...",
+            "title": "9/11 revisited: The 102 minutes that changed America in pics ...",
+            "url": "https://www.hindustantimes.com/world-news/9-11-revisited-the-102-minutes-that-changed-america/story-vflNYwdDiss10Yh9Qeu8sN.html"
+        },
+        {
+            "snippet": "<em>9/11 Revisited</em>, Were Explosives Used? ... September 11th Revisited is perhaps the most riveting film ever made about the destruction of the World Trade Center.",
+            "title": "9/11 Revisited, Were Explosives Used? | Documentary Heaven",
+            "url": "https://documentaryheaven.com/911-revisited-were-explosives-used/"
+        },
+        {
+            "snippet": "co.uk/journalsPermissions.nav. DOI: 10.1177/0957926510382840 http://das.sagepub.com. Practical historians and adversaries: <em>9/11 revisited</em>. Ivan Leudar.",
+            "title": "Practical historians and adversaries: 9/11 revisited - SAGE ...",
+            "url": "https://journals.sagepub.com/doi/pdf/10.1177/0957926510382840"
+        },
+        {
+            "snippet": "Ivan Leudar and Jir\u00ed Nekvapil. Practical historians and adversaries: <em>9/11 revisited</em>. Published by: http://www.sagepublications.com.",
+            "title": "(PDF) Practical historians and adversaries: 9/11 revisited",
+            "url": "https://www.researchgate.net/publication/254085747_Practical_historians_and_adversaries_911_revisited"
+        },
+        {
+            "snippet": "The Morning of <em>9/11 Revisited</em>. Stephen Knight \u00b7 News; 1 Comments. We arrived back in Quito on the morning of September 11, 2001, after a\u00a0...",
+            "title": "The Morning of 9/11 Revisited - Volunteer Latin America",
+            "url": "https://www.volunteerlatinamerica.com/blog/posts/morning-of-911-revisited"
+        },
+        {
+            "snippet": "<em>9/11 Revisited</em>. Web Admin 10/05/2019 Architecture, Art &amp; Architecture, Articles, History. By Barry Benepe. In May 2018, the New York Times published a report\u00a0...",
+            "title": "Planes or Bombs? 9/11 Revisited | WESTVIEW NEWS",
+            "url": "http://westviewnews.org/2019/10/05/planes-or-bombs-9-11-revisited/web-admin/"
+        },
+        {
+            "snippet": "<em>9/11 revisited</em>. 09. September 2006 Mathias Br\u00f6ckers. Bekenntnisse eines Verschw\u00f6rungstheoretikers. Eigentlich ist doch alles ganz einfach mit dem 11.",
+            "title": "9/11 revisited | Telepolis - Heise",
+            "url": "https://www.heise.de/tp/features/9-11-revisited-3407802.html"
+        },
+        {
+            "snippet": "Montag, 11. September 2006. \"<em>9/11 revisited</em>\". \"September 11th Revisited\" ist ein fesselnder Film \u00fcber die Zerst\u00f6rung des World Trade Center (Foto: Wikipedia).",
+            "title": "\"9/11 revisited\" - Willkommen im systemagazin!",
+            "url": "https://systemagazin.de/serendipity/index.php?/archives/147-911-revisited.html"
+        },
+        {
+            "snippet": "Nearly a week after the failed attack on a Detroit-bound passenger jet on Christmas Day, officials are asking ...",
+            "title": "Lessons of 9/11 Revisited in Aftermath of Failed Plane Attack ...",
+            "url": "https://www.youtube.com/watch?v=h7Y-KGYX-JY"
+        }
+    ],
+    "timestamp": 1618106149,
+    "url": "http://www.google.com/search?hl=en&lr=&ie=ISO-8859-1&q=%22+9/11+revisited%22"
+}

@@ -1,0 +1,55 @@
+{
+    "interpreted_query": "\" Lenin\"",
+    "offset": null,
+    "page": null,
+    "query": "\" Lenin\"",
+    "results": [
+        {
+            "snippet": "Vladimir Ilyich Ulyanov (22 April [O.S. 10 April] 1870 \u2013 21 January 1924), better known by his alias Lenin, was a Russian revolutionary, politician, and political theorist. He served as the head of government of Soviet Russia from 1917 to 1924 and of the Soviet Union from 1922 to 1924.",
+            "title": "Vladimir Lenin - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Vladimir_Lenin"
+        },
+        {
+            "snippet": "Wladimir Iljitsch <em>Lenin</em> (russisch \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0418\u043b\u044c\u0438\u0447 \u041b\u0435\u043d\u0438\u043d, wissenschaftliche Transliteration Vladimir Il'i\u010d <em>Lenin</em>, eigentlich Wladimir Iljitsch Uljanow russisch\u00a0...",
+            "title": "Wladimir Iljitsch Lenin \u2013 Wikipedia",
+            "url": "https://de.wikipedia.org/wiki/Wladimir_Iljitsch_Lenin"
+        },
+        {
+            "snippet": "He was the founder of the organization known as Comintern (Communist International) and the posthumous source of \u201c<em>Leninism</em>,\u201d the doctrine\u00a0...",
+            "title": "Vladimir Lenin | Biography, Facts, &amp; Ideology | Britannica",
+            "url": "https://www.britannica.com/biography/Vladimir-Lenin"
+        },
+        {
+            "snippet": "Vladimir <em>Lenin</em> was founder of the Russian Communist Party, leader of the Bolshevik Revolution and architect and first head of the Soviet state.",
+            "title": "Vladimir Lenin - Death, WW1 &amp; Facts - Biography",
+            "url": "https://www.biography.com/political-figure/vladimir-lenin"
+        },
+        {
+            "snippet": "Vladimir <em>Lenin</em> was a Russian communist revolutionary and head of the Bolshevik Party who rose to prominence during the Russian Revolution\u00a0...",
+            "title": "Vladimir Lenin - Biography, Policies &amp; Tomb - HISTORY",
+            "url": "https://www.history.com/topics/russia/vladimir-lenin"
+        },
+        {
+            "snippet": "<em>Lenin</em> became the virtual dictator of the world's first Marxist state. His government made peace with Germany, nationalized industry and distributed land but,\u00a0...",
+            "title": "Lenin returns to Russia from exile - HISTORY",
+            "url": "https://www.history.com/this-day-in-history/lenin-returns-to-russia-from-exile"
+        },
+        {
+            "snippet": "Politiker. 1870. 22. April: <em>Lenin</em> wird als Wladimir Iljitsch Uljanow in Simbirsk (ab 1924: Uljanowsk; inzwischen zur\u00fcckbenannt)\u00a0...",
+            "title": "LeMO Biografie - Biografie Wladimir I. Lenin",
+            "url": "https://www.dhm.de/lemo/biografie/wladimir-lenin"
+        },
+        {
+            "snippet": "After his Siberian exile, <em>Lenin</em> - the pseudonym he adopted in 1901 - spent most of the subsequent decade and a half in western Europe, where he emerged as a\u00a0...",
+            "title": "History - Historic Figures: Vladimir Lenin (1870 - 1924) - BBC",
+            "url": "http://www.bbc.com/history/historic_figures/lenin_vladimir.shtml"
+        },
+        {
+            "snippet": "Information archive of Vladimir <em>Lenin's</em> writings, speeches, letters, with photographs, sounds and film.",
+            "title": "Lenin Internet Archive - Marxists Internet Archive",
+            "url": "https://www.marxists.org/archive/lenin/index.htm"
+        }
+    ],
+    "timestamp": 1614385592,
+    "url": "http://www.google.com/search?hl=en&lr=&ie=ISO-8859-1&q=%22+Lenin%22"
+}

@@ -57,7 +57,8 @@ def __verify_serp_parse_as_json(actual, archived_url):
     raw_actual = deepcopy(actual)
     if actual:
         actual = raw_actual.to_dict(encode_json=False)
-        actual['results'] = [i.to_dict(encode_json=False) for i in raw_actual.results]
+        if raw_actual.results:
+            actual['results'] = [i.to_dict(encode_json=False) for i in raw_actual.results]
 
     verify_as_json(
         actual,

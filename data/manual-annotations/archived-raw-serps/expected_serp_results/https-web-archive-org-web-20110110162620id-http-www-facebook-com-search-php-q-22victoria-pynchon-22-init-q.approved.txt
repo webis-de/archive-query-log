@@ -1,0 +1,20 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "\"Victoria Pynchon\"",
+    "results": [
+        {
+            "snippet": null,
+            "title": "Victoria Pynchon",
+            "url": "http://www.facebook.com/VictoriaPynchon"
+        },
+        {
+            "snippet": null,
+            "title": "Victoria Pynchon",
+            "url": "http://www.facebook.com/profile.php?id=100000377238106"
+        }
+    ],
+    "timestamp": 1294673180,
+    "url": "http://www.facebook.com/search.php?q=%22Victoria+Pynchon%22&init=q"
+}

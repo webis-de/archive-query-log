@@ -62,9 +62,14 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
                 continue
             snippet = None
             if self.snippet_selector is not None:
-                snippet_tag = result.select_one(self.snippet_selector)
-                if snippet_tag is not None:
-                    snippet = clean_html(snippet_tag)
+                snippet_tags = result.select(self.snippet_selector)
+                if snippet_tags is not None and snippet_tags:
+                    for snippet_candidate in snippet_tags:
+                        snippet_candidate = clean_html(snippet_candidate)
+
+                        if snippet_candidate and len(snippet_candidate) > 0 and (not snippet or len(snippet_candidate) > len(snippet)):
+                            snippet = snippet_candidate
+
             yield ArchivedSerpResult(url, title, snippet)
 
 
@@ -153,14 +158,14 @@ class ArchivedParsedSerpParser:
             if results is not None:
                 break
 
-        if results is None:
-            return None
-
         interpreted_query: str | None = None
         for parser in self.interpreted_query_parsers:
             interpreted_query = parser.parse(archived_serp_content)
             if interpreted_query is not None:
                 break
+
+        if results is None and interpreted_query is None:
+            return None
 
         return ArchivedParsedSerp(
             url=archived_serp_content.url,
@@ -169,7 +174,7 @@ class ArchivedParsedSerpParser:
             page=archived_serp_content.page,
             offset=archived_serp_content.offset,
             interpreted_query=interpreted_query,
-            results=results,
+            results=results if results else [],
         )
 
     def _service_pages(
