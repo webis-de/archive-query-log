@@ -503,7 +503,7 @@
   alexa_rank: 3
   category: general
   notes: |
-    TLDs mined manually by exploring baidu.com.
+    Domains from manually exploring https://baidu.com.
   input_field: false
   search_form: false
   search_div: true
@@ -939,8 +939,8 @@
   alexa_rank: 10
   category: shopping
   notes: |
-    Subdomains from https://amazon.de/customer-preferences/country (dropdown) 
-    and https://github.com/JamieFarrelly/Popular-Site-Subdomains
+    Domains from https://amazon.de/customer-preferences/country (dropdown) 
+    and https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: true
   search_form: true
   search_div: true
@@ -2042,8 +2042,8 @@
   alexa_rank: 17
   category: social-media
   notes: |
-    Subdomains from https://old.reddit.com/prefs/ (dropdown) 
-    and https://github.com/JamieFarrelly/Popular-Site-Subdomains
+    Domains from https://old.reddit.com/prefs/ (dropdown) 
+    and https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: false
   search_form: false
   search_div: true
@@ -2163,7 +2163,8 @@
   alexa_domain: microsoft.com
   alexa_rank: 21
   category: company-page
-  notes: Subdomains from https://github.com/JamieFarrelly/Popular-Site-Subdomains
+  notes: |
+    Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
   input_field: true
   search_form: true
   search_div: true
@@ -3254,7 +3255,7 @@
   alexa_rank: 115
   category: shopping
   notes: |
-    Subdomains from https://www.craigslist.org/about/sites.
+    Domains from https://www.craigslist.org/about/sites.
   input_field: true
   search_form: true
   search_div: true
