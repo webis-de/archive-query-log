@@ -227,7 +227,7 @@
     results_selector: div#search div#rso div.g
     url_selector: a
     title_selector: a h3
-    snippet_selector: span > span
+    snippet_selector: span
   - url_pattern: ^https?://(www\.)?google[^/]+/search\?
     type: html_selector
     results_selector: div#gs_res_ccl_mid > div.gs_r

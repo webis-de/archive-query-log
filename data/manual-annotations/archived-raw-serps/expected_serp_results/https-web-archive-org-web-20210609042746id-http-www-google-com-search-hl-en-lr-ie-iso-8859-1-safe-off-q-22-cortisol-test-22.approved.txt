@@ -1,0 +1,60 @@
+{
+    "interpreted_query": "\" Cortisol test\"",
+    "offset": null,
+    "page": null,
+    "query": "\" Cortisol test\"",
+    "results": [
+        {
+            "snippet": "A <em>cortisol test</em> measures the level of cortisol in your blood, urine, or saliva. Blood tests are the most common way of measuring cortisol. If your\u00a0...",
+            "title": "Cortisol Test: MedlinePlus Medical Test",
+            "url": "https://medlineplus.gov/lab-tests/cortisol-test/"
+        },
+        {
+            "snippet": "<em>Cortisol Test</em>. Das Stresshormon Cortisol messen. (7). F\u00fchlen Sie sich zunehmend gestresst? Dann geht\u00a0...",
+            "title": "Cortisol-Test \u2013 Cortisolspiegel Zuhause messen | cerascreen",
+            "url": "https://www.cerascreen.de/products/cortisol-test"
+        },
+        {
+            "snippet": "Cortisol is a steroid hormone released by the adrenal glands. The adrenal glands sit on top of your kidneys. A cortisol level test may also be called a serum <em>cortisol</em>\u200b\u00a0...",
+            "title": "Cortisol Level Test: Purpose, Procedure, and Risks - Healthline",
+            "url": "https://www.healthline.com/health/cortisol-urine"
+        },
+        {
+            "snippet": "Cortisol is a hormone that has many important body functions. A <em>cortisol test</em> measures blood levels to help diagnose conditions like Cushing\u00a0...",
+            "title": "Cortisol | Lab Tests Online",
+            "url": "https://labtestsonline.org/tests/cortisol"
+        },
+        {
+            "snippet": "\u203a A to Z Guides \u203a Reference",
+            "title": "Cortisol Test: Understanding High vs. Low Cortisol Levels",
+            "url": "https://www.webmd.com/a-to-z-guides/cortisol-test"
+        },
+        {
+            "snippet": "<em>Cortisol Test</em> Kit von CERASCREEN \u2013 Cortisol-Spiegel messen | Stressprofil | Hormonspeicheltest f\u00fcr zu Hause bei Ersch\u00f6pfung, Dauerstress &amp; Schlafst\u00f6rung\u200b\u00a0...",
+            "title": "Cortisol Test Kit von CERASCREEN \u2013 Cortisol-Spiegel ...",
+            "url": "https://www.amazon.de/Cortisol-Test-CERASCREEN-Cortisol-Spiegel-Speichelprobe/dp/B016V2KUN2"
+        },
+        {
+            "snippet": "This at-home sleep &amp; stress test goes beyond just sleep patterns. Learn about your restfulness and cortisol levels with this at-home <em>cortisol test</em> kit.",
+            "title": "At-Home Cortisol Levels Test Kit - Sleep &amp; Stress Test ...",
+            "url": "https://www.everlywell.com/products/sleep-and-stress-panel/"
+        },
+        {
+            "snippet": "What is a <em>Cortisol Test</em>? Definition: A cortisol level is a blood test that measures the amount of cortisol, a steroid hormone produced by the adrenal cortex.",
+            "title": "Cortisol Test | UCLA Health",
+            "url": "https://www.uclahealth.org/endocrine-center/cortisol-test"
+        },
+        {
+            "snippet": "A <em>cortisol test</em> measures adrenal function and also indicates if you are putting your body under too much stress. You can measure your cortisol levels at home\u00a0...",
+            "title": "Cortisol Test Kit - Check Cortisol Levels with our Blood Test",
+            "url": "https://www.forthwithlife.co.uk/mental-health/cortisol/"
+        },
+        {
+            "snippet": "Takeaway. If a doctor orders a <em>cortisol test</em>, there is a strong likelihood that they are trying to diagnose a specific disorder. The doctor will\u00a0...",
+            "title": "Cortisol level test: Purpose, procedure, and results",
+            "url": "https://www.medicalnewstoday.com/articles/322330"
+        }
+    ],
+    "timestamp": 1623205666,
+    "url": "http://www.google.com/search?hl=en&lr=&ie=ISO-8859-1&safe=off&q=++++%22+Cortisol+test%22"
+}

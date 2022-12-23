@@ -15,17 +15,17 @@
             "url": "https://de.wikipedia.org/wiki/Wladimir_Iljitsch_Lenin"
         },
         {
-            "snippet": "He was the founder of the organization known as Comintern (Communist International) and the posthumous source of \u201c<em>Leninism</em>,\u201d the doctrine\u00a0...",
+            "snippet": "17 Jan 2021 \u2014 He was the founder of the organization known as Comintern (Communist International) and the posthumous source of \u201c<em>Leninism</em>,\u201d the doctrine\u00a0...",
             "title": "Vladimir Lenin | Biography, Facts, &amp; Ideology | Britannica",
             "url": "https://www.britannica.com/biography/Vladimir-Lenin"
         },
         {
-            "snippet": "Vladimir <em>Lenin</em> was founder of the Russian Communist Party, leader of the Bolshevik Revolution and architect and first head of the Soviet state.",
+            "snippet": "21 Sep 2020 \u2014 Vladimir <em>Lenin</em> was founder of the Russian Communist Party, leader of the Bolshevik Revolution and architect and first head of the Soviet state.",
             "title": "Vladimir Lenin - Death, WW1 &amp; Facts - Biography",
             "url": "https://www.biography.com/political-figure/vladimir-lenin"
         },
         {
-            "snippet": "Vladimir <em>Lenin</em> was a Russian communist revolutionary and head of the Bolshevik Party who rose to prominence during the Russian Revolution\u00a0...",
+            "snippet": "5 Mar 2020 \u2014 Vladimir <em>Lenin</em> was a Russian communist revolutionary and head of the Bolshevik Party who rose to prominence during the Russian Revolution\u00a0...",
             "title": "Vladimir Lenin - Biography, Policies &amp; Tomb - HISTORY",
             "url": "https://www.history.com/topics/russia/vladimir-lenin"
         },
