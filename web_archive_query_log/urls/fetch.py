@@ -205,6 +205,10 @@ class ArchivedUrlsFetcher:
                 client,
             )
             pool = AioPool(size=1)
+
+            if num_cdx_pages <= 0:
+                return []
+
             return list(chain.from_iterable(
                 await pool.map(cdx_page_pages, range(num_cdx_pages))
             ))
