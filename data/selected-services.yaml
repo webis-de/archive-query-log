@@ -2444,13 +2444,14 @@
     type: query_parameter
     parameter: _nkw
   page_parsers:
-  - url_pattern: ^https?://
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
     type: query_parameter
     parameter: _pgn
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /sch/i.html?
 - name: naver
   public_suffix: com
   alexa_domain: naver.com
