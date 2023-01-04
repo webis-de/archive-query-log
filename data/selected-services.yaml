@@ -2720,10 +2720,10 @@
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
-  interpreted_query_parsers:
-  - /
+  interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /
 - name: xvideos
   public_suffix: com
   alexa_domain: xvideos.com
