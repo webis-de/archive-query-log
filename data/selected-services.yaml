@@ -7570,7 +7570,10 @@
   - url_pattern: ^https?://[^/]+/newindex\.aspx\?
     type: query_parameter
     parameter: Keyword
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/newindex\.aspx\?
+    type: query_parameter
+    parameter: pi
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -7636,12 +7639,16 @@
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
   - /?
+  - /page
 - name: adyen
   public_suffix: com
   alexa_domain: adyen.com
