@@ -13,17 +13,20 @@ def read_services(path: Path, ignore_parsing_errors=True) -> Mapping[str, Servic
 
         for service_dict in services_dict:
             try:
-                service = Service.schema().load(service_dict, many=False)
+                service = Service.schema().load(service_dict)
                 services += [(service.name, service)]
-            except Exception as e:
+            except Exception as exception:
                 if not ignore_parsing_errors:
-                    raise ValueError('Could not handle service ' + service_dict['name'], e)
-
-        service_names = set()
-        for name, service in services:
-            if name in service_names:
-                raise ValueError(f"Duplicate service name {name}")
-            service_names.add(name)
+                    raise ValueError(
+                        f"Could not parse service {service_dict['name']}",
+                        exception
+                    )
+        if not ignore_parsing_errors:
+            service_names = set()
+            for name, service in services:
+                if name in service_names:
+                    raise ValueError(f"Duplicate service name {name}")
+                service_names.add(name)
         return {
             name: service
             for name, service in services
