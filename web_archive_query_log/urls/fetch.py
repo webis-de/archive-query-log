@@ -293,3 +293,22 @@ class ArchivedUrlsFetcher:
 
             pool = AioPool(size=1000)
             await pool.map(fetch_page, pages)
+
+    async def num_service_pages(
+            self,
+            data_directory: Path,
+            focused: bool,
+            service: Service,
+            domain: str | None = None,
+            cdx_page: int | None = None,
+    ):
+        async with archive_http_client(limit=5) as client:
+            pages = await self._service_pages(
+                data_directory=data_directory,
+                focused=focused,
+                service=service,
+                domain=domain,
+                cdx_page=cdx_page,
+                client=client,
+            )
+            return len(pages)
