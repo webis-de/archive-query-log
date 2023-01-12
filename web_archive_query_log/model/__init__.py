@@ -118,7 +118,7 @@ class ArchivedQueryUrl(ArchivedUrl, DataClassJsonMixin):
 @dataclass(frozen=True, slots=True)
 class ArchivedRawSerp(ArchivedQueryUrl, DataClassJsonMixin):
     """
-    Snapshot content of an archived SERP.
+    Raw snapshot content of an archived SERP.
 
     Output of: 4-archived-raw-serps
     Input of: 5-archived-parsed-serps
