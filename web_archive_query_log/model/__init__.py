@@ -4,6 +4,7 @@ from functools import cached_property
 from hashlib import md5
 from typing import Sequence
 from urllib.parse import SplitResult, urlsplit
+from uuid import UUID, uuid5, NAMESPACE_URL
 
 from dataclasses_json import DataClassJsonMixin, config
 from marshmallow.fields import List, Nested, String
@@ -28,6 +29,13 @@ class ArchivedUrl(DataClassJsonMixin):
     """
     Timestamp of the archived snapshot in the Wayback Machine.
     """
+
+    @cached_property
+    def id(self) -> UUID:
+        """
+        Unique ID for this archived URL.
+        """
+        return uuid5(NAMESPACE_URL, f"{self.timestamp}:{self.url}")
 
     @cached_property
     def split_url(self) -> SplitResult:
