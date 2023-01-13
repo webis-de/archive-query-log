@@ -3,6 +3,7 @@ from gzip import GzipFile
 from pathlib import Path
 
 from click import option, argument, STRING, IntRange, BOOL
+from diskcache import Cache
 from fastwarc import ArchiveIterator, WarcRecordType
 from tqdm.auto import tqdm
 
@@ -83,7 +84,7 @@ def _cdx_page_argument():
 def all_archived_urls_command(
         data_directory: Path,
         focused: bool,
-        service: str | None,
+        service: str,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
@@ -115,27 +116,29 @@ def all_archived_urls_command(
     print(num_pages * _BLOCKS_PER_PAGE * _URLS_PER_BLOCK)
 
 
-@stats_group.command(
-    "archived-urls",
-    help="Get number of fetched  archived URLs from "
-         "the Wayback Machine's CDX API.",
-)
-@_data_directory_option()
-@_focused_argument()
-@_service_name_argument()
-@_domain_argument()
-@_cdx_page_argument()
-def archived_urls_command(
+def _count_jsonl_path(
+        data_directory: Path,
+        path: Path,
+) -> int:
+    cache = Cache(str(DATA_DIRECTORY_PATH / "stats-cache"))
+    if path not in cache:
+        with GzipFile(path, "r") as file:
+            cache[path] = sum(1 for _ in file)
+    return cache[path]
+
+
+def _count_jsonl(
         data_directory: Path,
         focused: bool,
-        service: str | int,
+        type: str,
+        service: str,
         domain: str | None,
         cdx_page: int | None,
-) -> None:
+) -> int:
     glob_paths = []
     if focused:
         glob_paths.append("focused")
-    glob_paths.append("archived-urls")
+    glob_paths.append(type)
     glob_paths.append(service)
     if domain is not None:
         glob_paths.append(f"{domain}*")
@@ -152,13 +155,92 @@ def archived_urls_command(
     paths = tqdm(
         paths,
         total=total_paths,
-        desc="Count archived URLs",
+        desc="Count JSON lines",
         unit="file",
     )
     for path in paths:
-        with GzipFile(path, "r") as file:
-            count += sum(1 for _ in file)
-    print(count)
+        count += _count_jsonl_path(data_directory, path)
+    return count
+
+
+def _count_warc_path(
+        data_directory: Path,
+        path: Path,
+) -> int:
+    cache = Cache(str(DATA_DIRECTORY_PATH / "stats-cache"))
+    if path not in cache:
+        with path.open("rb") as file:
+            iterator = ArchiveIterator(
+                file,
+                record_types=WarcRecordType.response,
+            )
+            cache[path] += sum(1 for _ in iterator)
+
+    return cache[path]
+
+
+def _count_warc(
+        data_directory: Path,
+        focused: bool,
+        type: str,
+        service: str,
+        domain: str | None,
+        cdx_page: int | None,
+) -> int:
+    glob_paths = []
+    if focused:
+        glob_paths.append("focused")
+    glob_paths.append(type)
+    glob_paths.append(service)
+    if domain is not None:
+        glob_paths.append(f"{domain}*")
+    else:
+        glob_paths.append("*")
+    if cdx_page is not None:
+        glob_paths.append(f"*{cdx_page}")
+    else:
+        glob_paths.append("*")
+    glob_paths.append(f"*.warc.gz")
+    glob_path = "/".join(glob_paths)
+    total_paths = sum(1 for _ in data_directory.glob(glob_path))
+    count = 0
+    paths = data_directory.glob(glob_path)
+    paths = tqdm(
+        paths,
+        total=total_paths,
+        desc="Count WARC responses",
+        unit="file",
+    )
+    for path in paths:
+        count += _count_warc_path(data_directory, path)
+    return count
+
+
+@stats_group.command(
+    "archived-urls",
+    help="Get number of fetched  archived URLs from "
+         "the Wayback Machine's CDX API.",
+)
+@_data_directory_option()
+@_focused_argument()
+@_service_name_argument()
+@_domain_argument()
+@_cdx_page_argument()
+def archived_urls_command(
+        data_directory: Path,
+        focused: bool,
+        service: str,
+        domain: str | None,
+        cdx_page: int | None,
+) -> None:
+    print(_count_jsonl(
+        data_directory=data_directory,
+        focused=focused,
+        type="archived-urls",
+        service=service,
+        domain=domain,
+        cdx_page=cdx_page,
+    ))
 
 
 @stats_group.command(
@@ -177,33 +259,14 @@ def archived_query_urls_command(
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
-    glob_paths = []
-    if focused:
-        glob_paths.append("focused")
-    glob_paths.append("archived-query-urls")
-    glob_paths.append(service)
-    if domain is not None:
-        glob_paths.append(f"{domain}*")
-    else:
-        glob_paths.append("*")
-    if cdx_page is not None:
-        glob_paths.append(f"*{cdx_page}.jsonl.gz")
-    else:
-        glob_paths.append(f"*.jsonl.gz")
-    glob_path = "/".join(glob_paths)
-    total_paths = sum(1 for _ in data_directory.glob(glob_path))
-    count = 0
-    paths = data_directory.glob(glob_path)
-    paths = tqdm(
-        paths,
-        total=total_paths,
-        desc="Count archived URLs",
-        unit="file",
-    )
-    for path in paths:
-        with GzipFile(path, "r") as file:
-            count += sum(1 for _ in file)
-    print(count)
+    print(_count_jsonl(
+        data_directory=data_directory,
+        focused=focused,
+        type="archived-query-urls",
+        service=service,
+        domain=domain,
+        cdx_page=cdx_page,
+    ))
 
 
 @stats_group.command(
@@ -222,38 +285,14 @@ def archived_raw_serps_command(
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
-    glob_paths = []
-    if focused:
-        glob_paths.append("focused")
-    glob_paths.append("archived-raw-serps")
-    glob_paths.append(service)
-    if domain is not None:
-        glob_paths.append(f"{domain}*")
-    else:
-        glob_paths.append("*")
-    if cdx_page is not None:
-        glob_paths.append(f"*{cdx_page}")
-    else:
-        glob_paths.append("*")
-    glob_paths.append(f"*.warc.gz")
-    glob_path = "/".join(glob_paths)
-    print(glob_path)
-    total_paths = sum(1 for _ in data_directory.glob(glob_path))
-    count = 0
-    paths = data_directory.glob(glob_path)
-    paths = tqdm(
-        paths,
-        total=total_paths,
-        desc="Count archived URLs",
-        unit="file",
-    )
-    for path in paths:
-        with path.open("rb") as file:
-            count += sum(1 for _ in ArchiveIterator(
-                file,
-                record_types=WarcRecordType.response,
-            ))
-    print(count)
+    print(_count_warc(
+        data_directory=data_directory,
+        focused=focused,
+        type="archived-raw-serps",
+        service=service,
+        domain=domain,
+        cdx_page=cdx_page,
+    ))
 
 
 @stats_group.command(
@@ -272,33 +311,14 @@ def archived_parsed_serps_command(
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
-    glob_paths = []
-    if focused:
-        glob_paths.append("focused")
-    glob_paths.append("archived-parsed-serps")
-    glob_paths.append(service)
-    if domain is not None:
-        glob_paths.append(f"{domain}*")
-    else:
-        glob_paths.append("*")
-    if cdx_page is not None:
-        glob_paths.append(f"*{cdx_page}.jsonl.gz")
-    else:
-        glob_paths.append(f"*.jsonl.gz")
-    glob_path = "/".join(glob_paths)
-    total_paths = sum(1 for _ in data_directory.glob(glob_path))
-    count = 0
-    paths = data_directory.glob(glob_path)
-    paths = tqdm(
-        paths,
-        total=total_paths,
-        desc="Count archived URLs",
-        unit="file",
-    )
-    for path in paths:
-        with GzipFile(path, "r") as file:
-            count += sum(1 for _ in file)
-    print(count)
+    print(_count_jsonl(
+        data_directory=data_directory,
+        focused=focused,
+        type="archived-parsed-serps",
+        service=service,
+        domain=domain,
+        cdx_page=cdx_page,
+    ))
 
 
 @stats_group.command(
