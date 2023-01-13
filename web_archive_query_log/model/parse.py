@@ -196,12 +196,6 @@ class InterpretedQueryParserField(Field):
                     else "value"
                 ),
             )
-        elif parser_type == "chatnoir":
-            from web_archive_query_log.results.chatnoir import \
-                ChatNoirInterpretedQueryParser
-            return ChatNoirInterpretedQueryParser(
-                url_pattern=compile(value["url_pattern"], IGNORECASE),
-            )
         else:
             raise ValueError(f"Unknown parser type: {parser_type}")
 

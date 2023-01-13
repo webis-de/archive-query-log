@@ -27,14 +27,3 @@ class ChatNoirResultsParser(HtmlResultsParser):
             if len(snippet) == 0:
                 snippet = None
             yield ArchivedSerpResult(url, title, snippet)
-
-
-@dataclass(frozen=True)
-class ChatNoirInterpretedQueryParser(HtmlInterpretedQueryParser):
-    url_pattern: Pattern[str]
-
-    def parse_html(self, html: Tag) -> str | None:
-        search_field = html.find("input", id="SearchInput")
-        if search_field is None:
-            return None
-        return search_field.attrs["value"]
