@@ -10,9 +10,9 @@ from bs4 import Tag, BeautifulSoup
 from tqdm.auto import tqdm
 
 from web_archive_query_log.download.iterable import ArchivedRawSerps
-from web_archive_query_log.model import ArchivedRawSerp, ArchivedSnippet, \
-    ResultsParser, InterpretedQueryParser, ArchivedParsedSerp, Service, \
-    HighlightedText
+from web_archive_query_log.model import ArchivedRawSerp, \
+    ArchivedSearchResultSnippet, ResultsParser, InterpretedQueryParser, \
+    ArchivedParsedSerp, Service, HighlightedText
 from web_archive_query_log.util.html import clean_html
 
 
@@ -24,13 +24,13 @@ class HtmlResultsParser(ResultsParser, ABC):
             self,
             html: Tag,
             timestamp: int,
-    ) -> Iterator[ArchivedSnippet]:
+    ) -> Iterator[ArchivedSearchResultSnippet]:
         ...
 
     def parse(
             self,
             raw_serp: ArchivedRawSerp,
-    ) -> Sequence[ArchivedSnippet] | None:
+    ) -> Sequence[ArchivedSearchResultSnippet] | None:
         if self.url_pattern.search(raw_serp.url) is None:
             return None
         html = BeautifulSoup(
@@ -55,8 +55,8 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
             self,
             html: Tag,
             timestamp: int,
-    ) -> Iterator[ArchivedSnippet]:
-        for result in html.select(self.results_selector):
+    ) -> Iterator[ArchivedSearchResultSnippet]:
+        for index, result in enumerate(html.select(self.results_selector)):
             url_tag = result.select_one(self.url_selector)
             if url_tag is None:
                 continue
@@ -82,7 +82,8 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
                                  len(snippet_candidate) > len(snippet))):
                             snippet = snippet_candidate
 
-            yield ArchivedSnippet(
+            yield ArchivedSearchResultSnippet(
+                rank=index + 1,
                 url=url,
                 timestamp=timestamp,
                 title=HighlightedText(title),
@@ -169,7 +170,7 @@ class ArchivedParsedSerpParser:
             self,
             archived_serp_content: ArchivedRawSerp
     ) -> ArchivedParsedSerp | None:
-        results: Sequence[ArchivedSnippet] | None = None
+        results: Sequence[ArchivedSearchResultSnippet] | None = None
         for parser in self.results_parsers:
             results = parser.parse(archived_serp_content)
             if results is not None:

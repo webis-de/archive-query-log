@@ -3,7 +3,7 @@ from typing import Sequence, Protocol, runtime_checkable, Any, Mapping, Union
 
 from marshmallow.fields import Field
 
-from web_archive_query_log.model import ArchivedUrl, ArchivedSnippet, \
+from web_archive_query_log.model import ArchivedUrl, ArchivedSearchResultSnippet, \
     ArchivedRawSerp
 
 
@@ -36,7 +36,7 @@ class ResultsParser(Protocol):
     def parse(
             self,
             raw_serp: "ArchivedRawSerp",
-    ) -> Sequence["ArchivedSnippet"] | None:
+    ) -> Sequence["ArchivedSearchResultSnippet"] | None:
         ...
 
 

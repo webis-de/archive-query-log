@@ -3,7 +3,8 @@ from typing import Pattern, Iterator
 
 from bs4 import Tag
 
-from web_archive_query_log.model import ArchivedSnippet, HighlightedText
+from web_archive_query_log.model import ArchivedSearchResultSnippet, \
+    HighlightedText
 from web_archive_query_log.results.parse import HtmlResultsParser
 from web_archive_query_log.util.html import clean_html
 
@@ -16,11 +17,12 @@ class ChatNoirResultsParser(HtmlResultsParser):
             self,
             html: Tag,
             timestamp: int,
-    ) -> Iterator[ArchivedSnippet]:
+    ) -> Iterator[ArchivedSearchResultSnippet]:
         results = html.find("section", id="SearchResults")
         if results is None:
             return
-        for result in results.find_all("article", class_="search-result"):
+        results_iter = results.find_all("article", class_="search-result")
+        for index, result in enumerate(results_iter):
             header: Tag = result.find("header")
             url = header.find("a", class_="link")["href"]
             title = clean_html(header.find("h2"))
@@ -29,7 +31,8 @@ class ChatNoirResultsParser(HtmlResultsParser):
             snippet = clean_html(result)
             if len(snippet) == 0:
                 snippet = None
-            yield ArchivedSnippet(
+            yield ArchivedSearchResultSnippet(
+                rank=index + 1,
                 url=url,
                 timestamp=timestamp,
                 title=HighlightedText(title),

@@ -146,14 +146,22 @@ class ArchivedRawSerp(ArchivedQueryUrl, DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class ArchivedSnippet(DataClassJsonMixin):
+class ArchivedSearchResultSnippet(DataClassJsonMixin):
     """
     Single retrieved result from a query's archived SERP.
     """
 
+    rank: int
+    """
+    Rank of the result in the SERP.
+    """
     url: str
     """
     URL that the result points to.
+    """
+    timestamp: int
+    """
+    Timestamp of the archived SERP's snapshot in the Wayback Machine.
     """
     title: HighlightedText | str = field(metadata=config(
         encoder=str,
@@ -163,7 +171,7 @@ class ArchivedSnippet(DataClassJsonMixin):
     """
     Title of the result with optional highlighting.
     """
-    snippet: HighlightedText | str | None= field(metadata=config(
+    snippet: HighlightedText | str | None = field(metadata=config(
         encoder=str,
         decoder=HighlightedText,
         mm_field=HighlightedTextField(allow_none=True),
@@ -173,17 +181,13 @@ class ArchivedSnippet(DataClassJsonMixin):
     Highlighting should be normalized to ``<em>`` tags. 
     Other HTML tags are removed.
     """
-    timestamp: int
-    """
-    Timestamp of the archived SERP's snapshot in the Wayback Machine.
-    """
 
     @cached_property
     def id(self) -> UUID:
         """
         Unique ID for this archived URL.
         """
-        return uuid5(NAMESPACE_URL, f"{self.timestamp}:{self.url}")
+        return uuid5(NAMESPACE_URL, f"{self.rank}:{self.timestamp}:{self.url}")
 
     @cached_property
     def split_url(self) -> SplitResult:
@@ -248,11 +252,11 @@ class ArchivedParsedSerp(ArchivedQueryUrl, DataClassJsonMixin):
     Input of: 6-archived-raw-search-results, 8-ir-corpus
     """
 
-    results: Sequence[ArchivedSnippet] = field(
+    results: Sequence[ArchivedSearchResultSnippet] = field(
         metadata=config(
             encoder=list,
             decoder=tuple,
-            mm_field=List(Nested(ArchivedSnippet.schema()))
+            mm_field=List(Nested(ArchivedSearchResultSnippet.schema()))
         )
     )
     """
@@ -268,7 +272,7 @@ class ArchivedParsedSerp(ArchivedQueryUrl, DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class ArchivedRawSearchResult(ArchivedSnippet, DataClassJsonMixin):
+class ArchivedRawSearchResult(ArchivedSearchResultSnippet, DataClassJsonMixin):
     """
     Raw content of an archived search result.
 
@@ -287,7 +291,8 @@ class ArchivedRawSearchResult(ArchivedSnippet, DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class ArchivedParsedSearchResult(ArchivedSnippet, DataClassJsonMixin):
+class ArchivedParsedSearchResult(ArchivedSearchResultSnippet,
+                                 DataClassJsonMixin):
     """
     Parsed representation of an archived search result.
 
