@@ -3,9 +3,8 @@ from typing import Pattern, Iterator
 
 from bs4 import Tag
 
-from web_archive_query_log.model import ArchivedSerpResult
-from web_archive_query_log.results.parse import HtmlResultsParser, \
-    HtmlInterpretedQueryParser
+from web_archive_query_log.model import ArchivedSnippet, HighlightedText
+from web_archive_query_log.results.parse import HtmlResultsParser
 from web_archive_query_log.util.html import clean_html
 
 
@@ -13,7 +12,11 @@ from web_archive_query_log.util.html import clean_html
 class ChatNoirResultsParser(HtmlResultsParser):
     url_pattern: Pattern[str]
 
-    def parse_html(self, html: Tag) -> Iterator[ArchivedSerpResult]:
+    def parse_html(
+            self,
+            html: Tag,
+            timestamp: int,
+    ) -> Iterator[ArchivedSnippet]:
         results = html.find("section", id="SearchResults")
         if results is None:
             return
@@ -26,4 +29,9 @@ class ChatNoirResultsParser(HtmlResultsParser):
             snippet = clean_html(result)
             if len(snippet) == 0:
                 snippet = None
-            yield ArchivedSerpResult(url, title, snippet)
+            yield ArchivedSnippet(
+                url=url,
+                timestamp=timestamp,
+                title=HighlightedText(title),
+                snippet=HighlightedText(snippet),
+            )

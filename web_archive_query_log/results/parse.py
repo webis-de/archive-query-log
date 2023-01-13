@@ -10,8 +10,9 @@ from bs4 import Tag, BeautifulSoup
 from tqdm.auto import tqdm
 
 from web_archive_query_log.download.iterable import ArchivedRawSerps
-from web_archive_query_log.model import ArchivedRawSerp, ArchivedSerpResult, \
-    ResultsParser, InterpretedQueryParser, ArchivedParsedSerp, Service
+from web_archive_query_log.model import ArchivedRawSerp, ArchivedSnippet, \
+    ResultsParser, InterpretedQueryParser, ArchivedParsedSerp, Service, \
+    HighlightedText
 from web_archive_query_log.util.html import clean_html
 
 
@@ -19,13 +20,17 @@ class HtmlResultsParser(ResultsParser, ABC):
     url_pattern: Pattern[str]
 
     @abstractmethod
-    def parse_html(self, html: Tag) -> Iterator[ArchivedSerpResult]:
+    def parse_html(
+            self,
+            html: Tag,
+            timestamp: int,
+    ) -> Iterator[ArchivedSnippet]:
         ...
 
     def parse(
             self,
             raw_serp: ArchivedRawSerp,
-    ) -> Sequence[ArchivedSerpResult] | None:
+    ) -> Sequence[ArchivedSnippet] | None:
         if self.url_pattern.search(raw_serp.url) is None:
             return None
         html = BeautifulSoup(
@@ -33,7 +38,7 @@ class HtmlResultsParser(ResultsParser, ABC):
             "html.parser",
             from_encoding=raw_serp.encoding
         )
-        results = tuple(self.parse_html(html))
+        results = tuple(self.parse_html(html, raw_serp.timestamp))
         return results if len(results) > 0 else None
 
 
@@ -46,7 +51,11 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
     title_selector: str
     snippet_selector: str | None
 
-    def parse_html(self, html: Tag) -> Iterator[ArchivedSerpResult]:
+    def parse_html(
+            self,
+            html: Tag,
+            timestamp: int,
+    ) -> Iterator[ArchivedSnippet]:
         for result in html.select(self.results_selector):
             url_tag = result.select_one(self.url_selector)
             if url_tag is None:
@@ -67,10 +76,18 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
                     for snippet_candidate in snippet_tags:
                         snippet_candidate = clean_html(snippet_candidate)
 
-                        if snippet_candidate and len(snippet_candidate) > 0 and (not snippet or len(snippet_candidate) > len(snippet)):
+                        if (snippet_candidate and
+                                len(snippet_candidate) > 0 and
+                                (not snippet or
+                                 len(snippet_candidate) > len(snippet))):
                             snippet = snippet_candidate
 
-            yield ArchivedSerpResult(url, title, snippet)
+            yield ArchivedSnippet(
+                url=url,
+                timestamp=timestamp,
+                title=HighlightedText(title),
+                snippet=HighlightedText(snippet),
+            )
 
 
 class HtmlInterpretedQueryParser(InterpretedQueryParser, ABC):
@@ -152,7 +169,7 @@ class ArchivedParsedSerpParser:
             self,
             archived_serp_content: ArchivedRawSerp
     ) -> ArchivedParsedSerp | None:
-        results: Sequence[ArchivedSerpResult] | None = None
+        results: Sequence[ArchivedSnippet] | None = None
         for parser in self.results_parsers:
             results = parser.parse(archived_serp_content)
             if results is not None:
