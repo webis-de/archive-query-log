@@ -166,7 +166,7 @@ class ArchivedSnippet(DataClassJsonMixin):
     snippet: HighlightedText | str | None= field(metadata=config(
         encoder=str,
         decoder=HighlightedText,
-        mm_field=HighlightedTextField(),
+        mm_field=HighlightedTextField(allow_none=True),
     ))
     """
     Snippet of the result.
