@@ -15,17 +15,22 @@ from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH
 from web_archive_query_log.model import ArchivedUrl, ArchivedQueryUrl, \
-    ArchivedParsedSerp
+    ArchivedParsedSerp, ArchivedSearchResultSnippet
 
 
 @dataclass(frozen=True)
-class Location:
+class _Location:
     relative_path: Path
     offset: int
 
 
 @dataclass(frozen=True)
-class _Index(MutableMapping[UUID, Location]):
+class _ArchivedSnippetLocation(_Location):
+    index: int
+
+
+@dataclass(frozen=True)
+class _LocationIndex(MutableMapping[UUID, _Location]):
     data_directory: Path
     index_name: str
 
@@ -39,13 +44,13 @@ class _Index(MutableMapping[UUID, Location]):
     def _index(self) -> Cache:
         return Cache(str(self._index_path))
 
-    def __setitem__(self, key: UUID, value: Location):
+    def __setitem__(self, key: UUID, value: _Location):
         self._index[key] = value
 
     def __delitem__(self, key: UUID) -> None:
         del self._index[key]
 
-    def __getitem__(self, key: UUID) -> Location:
+    def __getitem__(self, key: UUID) -> _Location:
         return self._index[key]
 
     def __contains__(self, key: UUID) -> bool:
@@ -61,7 +66,7 @@ class _Index(MutableMapping[UUID, Location]):
 _RecordType = TypeVar("_RecordType", bound=DataClassJsonMixin)
 
 
-class Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
+class _Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
     @property
     @abstractmethod
     def data_directory(self) -> Path:
@@ -73,8 +78,8 @@ class Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
         pass
 
     @cached_property
-    def _index(self) -> _Index:
-        return _Index(self.data_directory, self._index_name)
+    def _index(self) -> _LocationIndex:
+        return _LocationIndex(self.data_directory, self._index_name)
 
     @abstractmethod
     def index(self) -> None:
@@ -87,13 +92,13 @@ class Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
         return iter(self._index)
 
 
-class _JsonLineIndex(Index[_RecordType]):
+class _JsonLineIndex(_Index[_RecordType]):
     @property
     @abstractmethod
     def _record_type(self) -> Type[_RecordType]:
         pass
 
-    @property
+    @cached_property
     def _schema(self) -> Schema:
         return self._record_type.schema()
 
@@ -117,7 +122,7 @@ class _JsonLineIndex(Index[_RecordType]):
                     for line in gzip_file:
                         record = self._schema.loads(line)
                         record_id = record.id
-                        record_location = Location(
+                        record_location = _Location(
                             path.relative_to(self.data_directory),
                             offset,
                         )
@@ -154,3 +159,60 @@ class ArchivedParsedSerpIndex(_JsonLineIndex[ArchivedParsedSerp]):
     _record_type = ArchivedParsedSerp
     _index_name = "archived-parsed-serps"
     data_directory: Path = DATA_DIRECTORY_PATH
+
+
+@dataclass(frozen=True)
+class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
+    _schema = ArchivedParsedSerp.schema()
+    _index_name = "archived-search-result-snippets"
+
+    data_directory: Path = DATA_DIRECTORY_PATH
+
+    def _index_paths(self) -> Iterator[Path]:
+        return self.data_directory.glob("archived-parsed-serps/*/*/*.jsonl.gz")
+
+    def index(self) -> None:
+        num_paths = sum(1 for _ in self._index_paths())
+        paths = self._index_paths()
+        paths = tqdm(
+            paths,
+            total=num_paths,
+            desc=f"Indexing {self._index_name}",
+            unit="file",
+        )
+        for path in paths:
+            offset = 0
+            with path.open("rb") as file:
+                with GzipFile(fileobj=file, mode="r") as gzip_file:
+                    gzip_file: IO[str]
+                    for line in gzip_file:
+                        record = self._schema.loads(line)
+                        snippets = enumerate(record.results)
+                        for snippet_index, snippet in snippets:
+                            snippet_id = snippet.id
+                            snippet_location = _ArchivedSnippetLocation(
+                                path.relative_to(self.data_directory),
+                                offset,
+                                snippet_index,
+                            )
+                            self._index[snippet_id] = snippet_location
+                        offset = gzip_file.tell()
+
+    def __getitem__(self, key: UUID) -> _RecordType:
+        # noinspection PyTypeChecker
+        location: _ArchivedSnippetLocation = self._index[key]
+        path = self.data_directory / location.relative_path
+        with GzipFile(path, "rb") as gzip_file:
+            gzip_file: IO[bytes]
+            gzip_file.seek(location.offset)
+            with TextIOWrapper(gzip_file) as text_file:
+                line = text_file.readline()
+                record: ArchivedParsedSerp = self._schema.loads(line)
+                return record.results[location.index]
+
+
+if __name__ == '__main__':
+    index = ArchivedSearchResultSnippetIndex()
+    index.index()
+    uuid = UUID("2354a638-f9dc-564a-8ab5-fa4c4c5dad05")
+    print(f"{uuid} -> {index[uuid]}\n -> {index[uuid].id}")
