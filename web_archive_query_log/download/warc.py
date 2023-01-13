@@ -14,6 +14,7 @@ from warcio import WARCWriter, StatusAndHeaders
 
 from web_archive_query_log.model import ArchivedUrl, Service
 from web_archive_query_log.queries.iterable import ArchivedQueryUrls
+from web_archive_query_log.serps.iterable import ArchivedParsedSerps
 from web_archive_query_log.util.archive_http import archive_http_client
 
 
@@ -215,12 +216,17 @@ class WebArchiveWarcDownloader:
             service: Service,
             domain: str | None,
             cdx_page: int | None,
+            snippets: bool = False,
     ) -> Sequence[_CdxPage]:
         """
         List all items that need to be downloaded.
         """
-        input_format_path = data_directory / "archived-query-urls"
-        output_format_path = data_directory / "archived-raw-serps"
+        if snippets:
+            input_format_path = data_directory / "archived-parsed-serps"
+            output_format_path = data_directory / "archived-raw-search-results"
+        else:
+            input_format_path = data_directory / "archived-query-urls"
+            output_format_path = data_directory / "archived-raw-serps"
 
         service_path = input_format_path / service.name
 
@@ -271,6 +277,10 @@ class WebArchiveWarcDownloader:
 
     @staticmethod
     def _canonical_url(urls: Iterable[_CdxUrl]) -> _CdxUrl:
+        """
+        First URL, sorted by URL query string length, then by URL length,
+        then by URL.
+        """
         urls = sorted(
             urls,
             key=lambda url: url.archived_url.url
@@ -286,7 +296,12 @@ class WebArchiveWarcDownloader:
         return urls[0]
 
     @staticmethod
-    def _deduplicate_urls(urls: Iterable[_CdxUrl]) -> Iterable[_CdxUrl]:
+    def _deduplicate_urls(
+            urls: Iterable[_CdxUrl],
+            snippets: bool,
+    ) -> Iterable[_CdxUrl]:
+        if snippets:
+            return urls
         urls = sorted(
             urls,
             key=lambda url: url.archived_url.query
@@ -301,13 +316,23 @@ class WebArchiveWarcDownloader:
         ]
 
     @staticmethod
-    def _page_urls(page: _CdxPage, focused: bool) -> Iterable[_CdxUrl]:
-        urls = (
-            _CdxUrl(url, page.output_path)
-            for url in ArchivedQueryUrls(page.input_path)
-        )
+    def _page_urls(
+            page: _CdxPage,
+            focused: bool,
+            snippets: bool,
+    ) -> Iterable[_CdxUrl]:
+        if snippets:
+            urls = (
+                _CdxUrl(url, page.output_path)
+                for url in ArchivedParsedSerps(page.input_path)
+            )
+        else:
+            urls = (
+                _CdxUrl(url, page.output_path)
+                for url in ArchivedQueryUrls(page.input_path)
+            )
         if focused:
-            urls = WebArchiveWarcDownloader._deduplicate_urls(urls)
+            urls = WebArchiveWarcDownloader._deduplicate_urls(urls, snippets)
         return urls
 
     async def download_service(
@@ -317,6 +342,7 @@ class WebArchiveWarcDownloader:
             service: Service,
             domain: str | None = None,
             cdx_page: int | None = None,
+            snippets: bool = False,
     ):
         pages = self._service_pages(
             data_directory=data_directory,
@@ -324,6 +350,7 @@ class WebArchiveWarcDownloader:
             service=service,
             domain=domain,
             cdx_page=cdx_page,
+            snippets=snippets,
         )
 
         if len(pages) == 0:
@@ -337,11 +364,11 @@ class WebArchiveWarcDownloader:
             )
 
         archived_urls = chain.from_iterable(
-            self._page_urls(page, focused)
+            self._page_urls(page, focused, snippets)
             for page in pages
         )
 
         if focused:
-            archived_urls = self._deduplicate_urls(archived_urls)
+            archived_urls = self._deduplicate_urls(archived_urls, snippets)
 
         await self._download(archived_urls)
