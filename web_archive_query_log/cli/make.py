@@ -240,7 +240,20 @@ def archived_raw_search_results_command(
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
-    raise NotImplementedError()
+    from web_archive_query_log.config import SERVICES
+    from web_archive_query_log.download.warc import WebArchiveWarcDownloader
+    service_config = SERVICES[service]
+    downloader = WebArchiveWarcDownloader(verbose=True)
+    if focused:
+        data_directory = data_directory / "focused"
+    run(downloader.download_service(
+        data_directory=data_directory,
+        focused=focused,
+        service=service_config,
+        domain=domain,
+        cdx_page=cdx_page,
+        snippets=True,
+    ))
 
 
 @make_group.command(
