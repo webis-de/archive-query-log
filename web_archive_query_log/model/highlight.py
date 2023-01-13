@@ -3,11 +3,14 @@ from functools import cached_property
 from html.parser import HTMLParser
 from typing import List, Union, Optional
 
-from web_archive_query_log import LOGGER
-
 
 class Highlight(str):
-    pass
+    depth: int
+
+    def __new__(cls, value: str, depth: int):
+        result = super().__new__(cls, value)
+        result.depth = depth
+        return result
 
 
 @dataclass(frozen=True, unsafe_hash=True)
@@ -35,49 +38,48 @@ class HighlightedText(str):
 
 
 class _HighlightParser(HTMLParser):
-    _current_sequence: List[Union[str, Highlight]]
-    _current_data: Optional[str]
-    _current_is_highlight: bool
+    _sequence: List[Union[str, Highlight]]
+    _data: Optional[str]
+    _highlight_depth: int
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self._current_sequence = []
-        self._current_data = None
-        self._current_is_highlight = False
+        self._sequence = []
+        self._data = None
+        self._highlight_depth = 0
+
+    def _flush_data(self):
+        if self._data is not None:
+            if self._highlight_depth > 0:
+                self._sequence.append(
+                    Highlight(
+                        self._data,
+                        depth=self._highlight_depth
+                    )
+                )
+            else:
+                self._sequence.append(self._data)
+        self._data = None
 
     @property
     def sequence(self) -> List[Union[str, Highlight]]:
-        sequence = self._current_sequence
-        if self._current_data is not None:
-            sequence.append(self._current_data)
-        return sequence
+        self._flush_data()
+        return self._sequence
 
     def handle_starttag(self, tag: str, attrs):
         if tag != "em":
             raise SyntaxError("Can only parse <em> tags.")
         if attrs:
             raise SyntaxError("Cannot parse attributes.")
-        if self._current_is_highlight:
-            raise SyntaxError("Nested <em> tags are not supported.")
-        if self._current_data is not None:
-            self._current_sequence.append(self._current_data)
-        else:
-            LOGGER.debug("Empty non-hightlight string.")
-        self._current_data = None
-        self._current_is_highlight = True
+        self._flush_data()
+        self._highlight_depth += 1
 
     # Overridable -- handle end tag
     def handle_endtag(self, tag: str):
         if tag != "em":
             raise SyntaxError("Can only parse <em> tags.")
-        if not self._current_is_highlight:
-            raise SyntaxError("Nested <em> tags are not supported.")
-        if self._current_data is not None:
-            self._current_sequence.append(Highlight(self._current_data))
-        else:
-            LOGGER.debug("Empty highlight string.")
-        self._current_data = None
-        self._current_is_highlight = False
+        self._flush_data()
+        self._highlight_depth -= 1
 
     def handle_charref(self, name: str):
         raise AssertionError(
@@ -90,7 +92,10 @@ class _HighlightParser(HTMLParser):
         )
 
     def handle_data(self, data: str):
-        self._current_data = data
+        if self._data is None:
+            self._data = data
+        else:
+            self._data += data
 
     def handle_comment(self, data: str):
         raise SyntaxError("Comments are not supported.")
