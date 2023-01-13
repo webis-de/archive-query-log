@@ -13,8 +13,8 @@ class Highlight(str):
 @dataclass(frozen=True, unsafe_hash=True)
 class HighlightedText(str):
     """
-    Highlighted text with ``<em>`` tags around the highlighted parts.
-    Other tags are not supported.
+    Text with highlighting using``<em>`` tags.
+    Other tags are not allowed.
     """
     html: str
 
