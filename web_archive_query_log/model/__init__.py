@@ -146,7 +146,7 @@ class ArchivedRawSerp(ArchivedQueryUrl, DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class ArchivedSearchResultSnippet(DataClassJsonMixin):
+class ArchivedSearchResultSnippet(ArchivedUrl, DataClassJsonMixin):
     """
     Single retrieved result from a query's archived SERP.
     """
@@ -154,14 +154,6 @@ class ArchivedSearchResultSnippet(DataClassJsonMixin):
     rank: int
     """
     Rank of the result in the SERP.
-    """
-    url: str
-    """
-    URL that the result points to.
-    """
-    timestamp: int
-    """
-    Timestamp of the archived SERP's snapshot in the Wayback Machine.
     """
     title: HighlightedText | str = field(metadata=config(
         encoder=str,
@@ -188,59 +180,6 @@ class ArchivedSearchResultSnippet(DataClassJsonMixin):
         Unique ID for this archived URL.
         """
         return uuid5(NAMESPACE_URL, f"{self.rank}:{self.timestamp}:{self.url}")
-
-    @cached_property
-    def split_url(self) -> SplitResult:
-        """
-        URL split into its components.
-        """
-        return urlsplit(self.url)
-
-    @cached_property
-    def url_domain(self) -> str:
-        """
-        Domain of the URL.
-        """
-        return self.split_url.netloc
-
-    @cached_property
-    def url_md5(self) -> str:
-        """
-        MD5 hash of the URL.
-        """
-        return md5(self.url.encode()).hexdigest()
-
-    @cached_property
-    def datetime(self) -> datetime:
-        """
-        SERP snapshot timestamp as a ``datetime`` object.
-        """
-        return datetime.fromtimestamp(self.timestamp)
-
-    @cached_property
-    def archive_timestamp(self) -> str:
-        """
-        SERP snapshot timestamp as a string in the format used
-        by the Wayback Machine (``YYYYmmddHHMMSS``).
-        """
-        return self.datetime.strftime("%Y%m%d%H%M%S")
-
-    @property
-    def archive_url(self) -> str:
-        """
-        URL of the "nearest" archived snapshot in the Wayback Machine.
-        """
-        return f"https://web.archive.org/web/" \
-               f"{self.archive_timestamp}/{self.url}"
-
-    @property
-    def raw_archive_url(self) -> str:
-        """
-        URL of the "nearest" archived snapshot's raw contents
-        in the Wayback Machine.
-        """
-        return f"https://web.archive.org/web/" \
-               f"{self.archive_timestamp}id_/{self.url}"
 
 
 @dataclass(frozen=True, slots=True)
