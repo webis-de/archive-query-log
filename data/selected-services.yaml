@@ -722,15 +722,15 @@
   results_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
-    results_selector: div[class*="search_result"]
-    url_selector: div[class*="search_title"] > a
-    title_selector: div[class*="search_title"]
-    snippet_selector: div[class*="fsm"]
+    results_selector: div.search_result
+    url_selector: div.search_title > a
+    title_selector: div.search_title
+    snippet_selector: div.fsm
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
-    results_selector: ul[class="uiList"] > li
-    url_selector: div[class*="TextTitle"] > a
-    title_selector: div[class*="TextTitle"]
+    results_selector: ul.uiList > li
+    url_selector: div.TextTitle > a
+    title_selector: div.TextTitle
 
   focused_url_prefixes:
   - /search
