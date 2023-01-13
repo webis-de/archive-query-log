@@ -169,11 +169,12 @@ class _JsonLineIndex(_Index[_RecordType]):
         )
 
     def index(self) -> None:
-        num_paths = sum(1 for _ in self._index_paths())
         paths = self._index_paths()
+        paths = [path for path in paths if path not in self._path_index]
+        if len(paths) == 0:
+            return
         paths = tqdm(
             paths,
-            total=num_paths,
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
@@ -251,11 +252,12 @@ class ArchivedRawSerpIndex(_Index[ArchivedRawSerp]):
         )
 
     def index(self) -> None:
-        num_paths = sum(1 for _ in self._index_paths())
         paths = self._index_paths()
+        paths = [path for path in paths if path not in self._path_index]
+        if len(paths) == 0:
+            return
         paths = tqdm(
             paths,
-            total=num_paths,
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
@@ -346,11 +348,12 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
         )
 
     def index(self) -> None:
-        num_paths = sum(1 for _ in self._index_paths())
         paths = self._index_paths()
+        paths = [path for path in paths if path not in self._path_index]
+        if len(paths) == 0:
+            return
         paths = tqdm(
             paths,
-            total=num_paths,
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
