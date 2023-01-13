@@ -294,6 +294,16 @@ class ArchivedParsedSearchResult(ArchivedSnippet, DataClassJsonMixin):
     Output of: 7-archived-parsed-search-results
     Input of: 8-ir-corpus
     """
+    content_title: str | None
+    """
+    Title of the archived SERP's snapshot content.
+
+    Note: the content title can be different from the snippet title due to ellipses etc.
+    """
+    content_plaintext: str | None
+    """
+    Plaintext of the archived SERP's snapshot content.
+    """
     # TODO
     pass
 
