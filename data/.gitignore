@@ -3,3 +3,4 @@ focused
 !.gitignore
 !selected-services.yaml
 !manual-annotations
+stats-cache
