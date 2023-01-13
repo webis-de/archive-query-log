@@ -2453,6 +2453,7 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /sch/i.html?
+  - /i.html?
 - name: naver
   public_suffix: com
   alexa_domain: naver.com
