@@ -90,7 +90,10 @@ class ArchivedUrlsFetcher:
         url = f"{self.cdx_api_url}?{urlencode(num_pages_params)}"
         async with client.get(url) as response:
             text = await response.text()
-            num_pages = int(text)
+            try:
+                num_pages = int(text)
+            except:
+                num_pages = 0
         with num_pages_path.open("at") as file:
             file.write(f"{params_hash} {num_pages}\n")
         return num_pages
@@ -202,6 +205,10 @@ class ArchivedUrlsFetcher:
                 client,
             )
             pool = AioPool(size=1)
+
+            if num_cdx_pages <= 0:
+                return []
+
             return list(chain.from_iterable(
                 await pool.map(cdx_page_pages, range(num_cdx_pages))
             ))
