@@ -21304,7 +21304,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers:
   - url_pattern: ^https?://[^/]+/\?
-    type: chatnoir
+    type: html_selector
+    query_selector: input#SearchInput
   results_parsers:
   - url_pattern: ^https?://[^/]+/\?
     type: chatnoir
