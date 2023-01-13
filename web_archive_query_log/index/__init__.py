@@ -18,7 +18,8 @@ from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH
 from web_archive_query_log.model import ArchivedUrl, ArchivedQueryUrl, \
-    ArchivedParsedSerp, ArchivedSearchResultSnippet, ArchivedRawSerp
+    ArchivedParsedSerp, ArchivedSearchResultSnippet, ArchivedRawSerp, \
+    ArchivedRawSearchResult
 from web_archive_query_log.util.text import count_lines
 
 
@@ -220,35 +221,20 @@ class _JsonLineIndex(_Index[_RecordType]):
 
 
 @dataclass(frozen=True)
-class ArchivedUrlIndex(_JsonLineIndex[ArchivedUrl]):
-    _record_type = ArchivedUrl
-    _index_name = "archived-urls"
+class _WarcIndex(_Index[_RecordType]):
 
-    data_directory: Path = DATA_DIRECTORY_PATH
-    focused: bool = False
+    @abstractmethod
+    def _read_id(self, record: WarcRecord) -> UUID:
+        pass
 
-
-@dataclass(frozen=True)
-class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
-    _record_type = ArchivedQueryUrl
-    _index_name = "archived-query-urls"
-
-    data_directory: Path = DATA_DIRECTORY_PATH
-    focused: bool = False
-
-
-@dataclass(frozen=True)
-class ArchivedRawSerpIndex(_Index[ArchivedRawSerp]):
-    _index_name = "archived-raw-serps"
-    _schema = ArchivedQueryUrl.schema()
-
-    data_directory: Path = DATA_DIRECTORY_PATH
-    focused: bool = False
+    @abstractmethod
+    def _read_record(self, record: WarcRecord) -> _RecordType:
+        pass
 
     def _index_paths(self) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
         return self.data_directory.glob(
-            f"{focused}archived-raw-serps/*/*/*/*.warc.gz"
+            f"{focused}{self._index_name}/*/*/*/*.warc.gz"
         )
 
     def index(self) -> None:
@@ -285,10 +271,7 @@ class ArchivedRawSerpIndex(_Index[ArchivedRawSerp]):
             for record in records:
                 record: WarcRecord
                 offset = record.stream_pos
-                record_url: ArchivedQueryUrl = self._schema.loads(
-                    record.headers["Archived-URL"]
-                )
-                record_id = record_url.id
+                record_id = self._read_id(record)
                 record_location = _Location(
                     path.relative_to(self.data_directory),
                     offset,
@@ -296,24 +279,7 @@ class ArchivedRawSerpIndex(_Index[ArchivedRawSerp]):
                 self._index[record_id] = record_location
             self._path_index.add(path)
 
-    def _read_serp_content(self, record: WarcRecord) -> ArchivedRawSerp:
-        archived_serp_url: ArchivedQueryUrl = self._schema.loads(
-            record.headers["Archived-URL"]
-        )
-        content_type = record.http_charset
-        if content_type is None:
-            content_type = "utf8"
-        return ArchivedRawSerp(
-            url=archived_serp_url.url,
-            timestamp=archived_serp_url.timestamp,
-            query=archived_serp_url.query,
-            page=archived_serp_url.page,
-            offset=archived_serp_url.offset,
-            content=record.reader.read(),
-            encoding=content_type,
-        )
-
-    def __getitem__(self, key: UUID) -> ArchivedRawSerp:
+    def __getitem__(self, key: UUID) -> _RecordType:
         # noinspection PyTypeChecker
         location: _ArchivedSnippetLocation = self._index[key]
         path = self.data_directory / location.relative_path
@@ -321,7 +287,54 @@ class ArchivedRawSerpIndex(_Index[ArchivedRawSerp]):
             file.seek(location.offset)
             stream = GZipStream(PythonIOStreamAdapter(file))
             record: WarcRecord = next(ArchiveIterator(stream))
-            return self._read_serp_content(record)
+            return self._read_record(record)
+
+
+@dataclass(frozen=True)
+class ArchivedUrlIndex(_JsonLineIndex[ArchivedUrl]):
+    _record_type = ArchivedUrl
+    _index_name = "archived-urls"
+
+    data_directory: Path = DATA_DIRECTORY_PATH
+    focused: bool = False
+
+
+@dataclass(frozen=True)
+class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
+    _record_type = ArchivedQueryUrl
+    _index_name = "archived-query-urls"
+
+    data_directory: Path = DATA_DIRECTORY_PATH
+    focused: bool = False
+
+
+@dataclass(frozen=True)
+class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
+    _index_name = "archived-raw-serps"
+    _schema = ArchivedQueryUrl.schema()
+
+    data_directory: Path = DATA_DIRECTORY_PATH
+    focused: bool = False
+
+    def _read_id(self, record: WarcRecord) -> UUID:
+        return self._schema.loads(record.headers["Archived-URL"]).id
+
+    def _read_record(self, record: WarcRecord) -> ArchivedRawSerp:
+        archived_url: ArchivedQueryUrl = self._schema.loads(
+            record.headers["Archived-URL"]
+        )
+        content_type = record.http_charset
+        if content_type is None:
+            content_type = "utf8"
+        return ArchivedRawSerp(
+            url=archived_url.url,
+            timestamp=archived_url.timestamp,
+            query=archived_url.query,
+            page=archived_url.page,
+            offset=archived_url.offset,
+            content=record.reader.read(),
+            encoding=content_type,
+        )
 
 
 @dataclass(frozen=True)
@@ -403,12 +416,52 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
                 return record.results[location.index]
 
 
+@dataclass(frozen=True)
+class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
+    _index_name = "archived-raw-search-results"
+    _schema = ArchivedSearchResultSnippet.schema()
+
+    data_directory: Path = DATA_DIRECTORY_PATH
+    focused: bool = False
+
+    def _read_id(self, record: WarcRecord) -> UUID:
+        return self._schema.loads(record.headers["Archived-URL"]).id
+
+    def _read_record(self, record: WarcRecord) -> ArchivedRawSearchResult:
+        archived_url: ArchivedSearchResultSnippet = self._schema.loads(
+            record.headers["Archived-URL"]
+        )
+        content_type = record.http_charset
+        if content_type is None:
+            content_type = "utf8"
+        return ArchivedRawSearchResult(
+            url=archived_url.url,
+            timestamp=archived_url.timestamp,
+            rank=archived_url.rank,
+            title=archived_url.title,
+            snippet=archived_url.snippet,
+            content=record.reader.read(),
+            encoding=content_type,
+        )
+
+
 if __name__ == '__main__':
-    # index = ArchivedUrlIndex(focused=True)
+    index = ArchivedUrlIndex(focused=True)
+    index.index()
+    print(len(index))
     index = ArchivedQueryUrlIndex(focused=True)
-    # index = ArchivedRawSerpIndex(focused=True)
-    # index = ArchivedParsedSerpIndex(focused=True)
-    # index = ArchivedSearchResultSnippetIndex(focused=True)
+    index.index()
+    print(len(index))
+    index = ArchivedRawSerpIndex(focused=True)
+    index.index()
+    print(len(index))
+    index = ArchivedParsedSerpIndex(focused=True)
+    index.index()
+    print(len(index))
+    index = ArchivedSearchResultSnippetIndex(focused=True)
+    index.index()
+    print(len(index))
+    index = ArchivedRawSearchResultIndex(focused=True)
     index.index()
     print(len(index))
     # uuid = UUID("6942d399-da90-565a-add4-b35022a6fa86")
