@@ -324,7 +324,8 @@ class WebArchiveWarcDownloader:
         if snippets:
             urls = (
                 _CdxUrl(url, page.output_path)
-                for url in ArchivedParsedSerps(page.input_path)
+                for serp in ArchivedParsedSerps(page.input_path)
+                for url in serp.results
             )
         else:
             urls = (
