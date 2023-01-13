@@ -10,12 +10,15 @@ from uuid import UUID
 
 from dataclasses_json import DataClassJsonMixin
 from diskcache import Cache
+from fastwarc import ArchiveIterator, GZipStream, FileStream, WarcRecord, \
+    WarcRecordType
+from fastwarc.stream_io import PythonIOStreamAdapter
 from marshmallow import Schema
 from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH
 from web_archive_query_log.model import ArchivedUrl, ArchivedQueryUrl, \
-    ArchivedParsedSerp, ArchivedSearchResultSnippet
+    ArchivedParsedSerp, ArchivedSearchResultSnippet, ArchivedRawSerp
 
 
 @dataclass(frozen=True)
@@ -155,6 +158,71 @@ class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
 
 
 @dataclass(frozen=True)
+class ArchivedRawSerpIndex(_Index[ArchivedRawSerp]):
+    _index_name = "archived-raw-serps"
+    _schema = ArchivedQueryUrl.schema()
+
+    data_directory: Path = DATA_DIRECTORY_PATH
+
+    def _index_paths(self) -> Iterator[Path]:
+        return self.data_directory.glob("archived-raw-serps/*/*/*/*.warc.gz")
+
+    def index(self) -> None:
+        num_paths = sum(1 for _ in self._index_paths())
+        paths = self._index_paths()
+        paths = tqdm(
+            paths,
+            total=num_paths,
+            desc=f"Indexing {self._index_name}",
+            unit="file",
+        )
+        for path in paths:
+            stream = GZipStream(FileStream(str(path), "rb"))
+            for record in ArchiveIterator(
+                    stream,
+                    record_types=WarcRecordType.response
+                                          ):
+                record: WarcRecord
+                offset = record.stream_pos
+                record_url: ArchivedQueryUrl = self._schema.loads(
+                    record.headers["Archived-URL"]
+                )
+                record_id = record_url.id
+                record_location = _Location(
+                    path.relative_to(self.data_directory),
+                    offset,
+                )
+                self._index[record_id] = record_location
+
+    def _read_serp_content(self, record: WarcRecord) -> ArchivedRawSerp:
+        archived_serp_url: ArchivedQueryUrl = self._schema.loads(
+            record.headers["Archived-URL"]
+        )
+        content_type = record.http_charset
+        if content_type is None:
+            content_type = "utf8"
+        return ArchivedRawSerp(
+            url=archived_serp_url.url,
+            timestamp=archived_serp_url.timestamp,
+            query=archived_serp_url.query,
+            page=archived_serp_url.page,
+            offset=archived_serp_url.offset,
+            content=record.reader.read(),
+            encoding=content_type,
+        )
+
+    def __getitem__(self, key: UUID) -> ArchivedRawSerp:
+        # noinspection PyTypeChecker
+        location: _ArchivedSnippetLocation = self._index[key]
+        path = self.data_directory / location.relative_path
+        with path.open("rb") as file:
+            file.seek(location.offset)
+            stream = GZipStream(PythonIOStreamAdapter(file))
+            record: WarcRecord = next(ArchiveIterator(stream))
+            return self._read_serp_content(record)
+
+
+@dataclass(frozen=True)
 class ArchivedParsedSerpIndex(_JsonLineIndex[ArchivedParsedSerp]):
     _record_type = ArchivedParsedSerp
     _index_name = "archived-parsed-serps"
@@ -198,7 +266,7 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
                             self._index[snippet_id] = snippet_location
                         offset = gzip_file.tell()
 
-    def __getitem__(self, key: UUID) -> _RecordType:
+    def __getitem__(self, key: UUID) -> ArchivedSearchResultSnippet:
         # noinspection PyTypeChecker
         location: _ArchivedSnippetLocation = self._index[key]
         path = self.data_directory / location.relative_path
@@ -212,7 +280,7 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
 
 
 if __name__ == '__main__':
-    index = ArchivedSearchResultSnippetIndex()
+    index = ArchivedRawSerpIndex()
     index.index()
-    uuid = UUID("2354a638-f9dc-564a-8ab5-fa4c4c5dad05")
+    uuid = UUID("6942d399-da90-565a-add4-b35022a6fa86")
     print(f"{uuid} -> {index[uuid]}\n -> {index[uuid].id}")
