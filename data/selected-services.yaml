@@ -9332,9 +9332,19 @@
   search_form: true
   search_div: true
   domains:
+  - 1movierulz.com
+  - 3movierulz.sx
   - 4movierulz.pl
   - 4movierulz.pw
   - 4movierulz.tv
+  - 5movierulz.tc
+  - 5movierulz.tv
+  - 6movierulz.com
+  - 7movierulz.ag
+  - 7movierulz.at
+  - 7movierulz.cc
+  - 7movierulz.sk
+  - movierulzfree.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
@@ -9717,30 +9727,6 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /try/search
-- name: 7movierulz
-  public_suffix: at
-  alexa_domain: 7movierulz.at
-  alexa_rank: 4208
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 7movierulz.ag
-  - 7movierulz.at
-  - 7movierulz.cc
-  - 7movierulz.sk
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: query_parameter
-    parameter: s
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes:
-  - /?
 - name: rvcj
   public_suffix: com
   alexa_domain: rvcj.com
@@ -10400,27 +10386,6 @@
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes: [ ]
-- name: 3movierulz
-  public_suffix: sx
-  alexa_domain: 3movierulz.sx
-  alexa_rank: 4536
-  category: null
-  notes: null
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - 3movierulz.sx
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: query_parameter
-    parameter: s
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes:
-  - /?
 - name: nikkansports
   public_suffix: com
   alexa_domain: nikkansports.com
@@ -16203,27 +16168,6 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /search.asp?
-- name: 6movierulz
-  public_suffix: com
-  alexa_domain: 6movierulz.com
-  alexa_rank: 7640
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 6movierulz.com
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: query_parameter
-    parameter: s
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes:
-  - /?
 - name: citibank
   public_suffix: co.in
   alexa_domain: citibank.co.in
@@ -16484,27 +16428,6 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - search.shtml?
-- name: 1movierulz
-  public_suffix: com
-  alexa_domain: 1movierulz.com
-  alexa_rank: 7729
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - 1movierulz.com
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: query_parameter
-    parameter: s
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes:
-  - /?
 - name: how01
   public_suffix: com
   alexa_domain: how01.com
