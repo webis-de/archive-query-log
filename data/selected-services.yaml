@@ -8554,7 +8554,7 @@
   alexa_domain: news19.biz
   alexa_rank: 3279
   category: null
-  notes: excluded; Page not loading
+  notes: excluded; No valid snapshot
   input_field: false
   search_form: false
   search_div: true
@@ -8612,7 +8612,7 @@
   alexa_domain: resumersvo.fun
   alexa_rank: 3386
   category: null
-  notes: excluded; Page not loading
+  notes: excluded; No valid snaphshot
   input_field: false
   search_form: false
   search_div: true
@@ -8670,7 +8670,7 @@
   alexa_domain: in.com
   alexa_rank: 3476
   category: null
-  notes: excluded; Page not loading
+  notes: excluded; No valid snaphshot
   input_field: false
   search_form: false
   search_div: true
@@ -9811,7 +9811,7 @@
   alexa_domain: vid.me
   alexa_rank: 4223
   category: null
-  notes: excluded; Page not loading
+  notes: excluded; No valid snaphshot
   input_field: true
   search_form: true
   search_div: false
@@ -11828,7 +11828,7 @@
   alexa_domain: bestdealfor28.life
   alexa_rank: 5302
   category: null
-  notes: excluded; Page not loading
+  notes: excluded; No valid snaphshot
   input_field: false
   search_form: false
   search_div: true
@@ -12877,7 +12877,7 @@
   alexa_domain: quicklisti.com
   alexa_rank: 5723
   category: null
-  notes: excluded; Page not loading
+  notes: excluded; No valid snaphshot
   input_field: false
   search_form: false
   search_div: true
@@ -13052,7 +13052,7 @@
   alexa_domain: injuredcandy.com
   alexa_rank: 5850
   category: null
-  notes: excluded; Page not loading
+  notes: excluded; No valid snaphshot
   input_field: false
   search_form: false
   search_div: true
@@ -13069,7 +13069,7 @@
   alexa_domain: pussl18.com
   alexa_rank: 5900
   category: null
-  notes: excluded; Page not loading
+  notes: excluded; No valid snaphshot
   input_field: false
   search_form: false
   search_div: true
@@ -19274,7 +19274,7 @@
   alexa_domain: latam.com
   alexa_rank: 10399
   category: null
-  notes: null
+  notes: Search results are flight connections; Query is destination
   input_field: false
   search_form: false
   search_div: true
@@ -19533,7 +19533,7 @@
   alexa_domain: dygang.com
   alexa_rank: 10555
   category: null
-  notes: excluded; Query not in URL
+  notes: Search ID instead of Query
   input_field: true
   search_form: true
   search_div: false
@@ -19541,12 +19541,17 @@
   - dygang.cc
   - dygang.com
   - so.dygang.com
-  query_parsers: [ ]
+  - dygod.net
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/e/search/result/\?
+    type: query_parameter
+    parameter: searchid
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /e/search/result?
 - name: aps
   public_suffix: org
   alexa_domain: aps.org
@@ -21052,29 +21057,17 @@
   search_div: false
   domains:
   - 123greetings.com
-  query_parsers: [ ]
+  - search.123greetings.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[^/]+/search/search.pl\?
+    type: query_parameter
+    parameter: query
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
-- name: dygod
-  public_suffix: net
-  alexa_domain: dygod.net
-  alexa_rank: 12092
-  category: null
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: false
-  domains:
-  - dygod.net
-  query_parsers: [ ]
-  page_parsers: [ ]
-  offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /cgi-bin/search/search.pl?
 - name: sportsala
   public_suffix: com
   alexa_domain: sportsala.com
@@ -21086,12 +21079,23 @@
   search_div: true
   domains:
   - sportsala.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
+  - /page
 - name: thegudda
   public_suffix: com
   alexa_domain: thegudda.com
@@ -21103,18 +21107,29 @@
   search_div: false
   domains:
   - thegudda.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
+  - /page
 - name: eyourcom
   public_suffix: fun
   alexa_domain: eyourcom.fun
   alexa_rank: 12110
   category: null
-  notes: null
+  notes: excluded; No valid snapshot
   input_field: false
   search_form: false
   search_div: true
@@ -21131,7 +21146,7 @@
   alexa_domain: deferscoop.com
   alexa_rank: 12117
   category: null
-  notes: null
+  notes: excluded; No valid snapshot
   input_field: false
   search_form: false
   search_div: true
@@ -21154,18 +21169,25 @@
   search_div: false
   domains:
   - wgu.edu
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search.html
+    type: query_parameter
+    parameter: cludoquery
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search.html
+    type: query_parameter
+    parameter: cludopage
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search.html
 - name: tronglyre
   public_suffix: club
   alexa_domain: tronglyre.club
   alexa_rank: 12132
   category: null
-  notes: null
+  notes: excluded; No valid snapshot
   input_field: false
   search_form: false
   search_div: true
@@ -21188,12 +21210,17 @@
   search_div: false
   domains:
   - teamliquid.net
-  query_parsers: [ ]
+  - tl.net
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[^/]+/search.php\?
+    type: query_parameter
+    parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /forum/search.php?
 - name: moe
   public_suffix: gov.cn
   alexa_domain: moe.gov.cn
@@ -21205,18 +21232,23 @@
   search_div: true
   domains:
   - moe.gov.cn
-  query_parsers: [ ]
+  - so.moe.gov.cn
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/s\?
+    type: query_parameter
+    parameter: qt
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /s?
 - name: maandhave
   public_suffix: biz
   alexa_domain: maandhave.biz
   alexa_rank: 12151
   category: null
-  notes: null
+  notes: excluded; No valid snapshot
   input_field: false
   search_form: false
   search_div: true
@@ -21239,18 +21271,22 @@
   search_div: true
   domains:
   - recommendationletters.pro
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: bdpcc
   public_suffix: com
   alexa_domain: bdpcc.com
   alexa_rank: 12181
   category: null
-  notes: null
+  notes: excluded; Query not in URL
   input_field: true
   search_form: true
   search_div: false
@@ -21267,7 +21303,7 @@
   alexa_domain: 2checkout.com
   alexa_rank: 12182
   category: null
-  notes: null
+  notes: excluded; No search
   input_field: false
   search_form: false
   search_div: true
@@ -21290,12 +21326,23 @@
   search_div: false
   domains:
   - 9to5mac.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
+  - /page
 - name: levi
   public_suffix: com
   alexa_domain: levi.com
@@ -21307,12 +21354,33 @@
   search_div: true
   domains:
   - levi.com
-  query_parsers: [ ]
-  page_parsers: [ ]
-  offset_parsers: [ ]
+  - levi.com.cn
+  - levi.in
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[A-Z]/[a-z]+_[A-Z]+/search/[^/]+
+    type: path_segment
+    segment: 3
+  - url_pattern: ^https?://[^/]+/search/result\?
+    type: query_parameter
+    parameter: keyword
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/[A-Z]/[a-z]+_[A-Z]+/search/[^/]+
+    type: query_parameter
+    parameter: page
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: start
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /US/en_US/search
+  - /DE/de_DE/search
+  - /search/result?
+  - /search?
 - name: lassuranceretraite
   public_suffix: fr
   alexa_domain: lassuranceretraite.fr
@@ -21324,18 +21392,23 @@
   search_div: true
   domains:
   - lassuranceretraite.fr
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/.*/resultat-de-recherche.html\?
+    type: query_parameter
+    parameter: searchedText
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /portail-info/hors-menu/recherche/resultat-de-recherche.html?
+  - /portail-info/sites/pub/hors-menu/recherche/resultat-de-recherche.html?
 - name: xataka
   public_suffix: com
   alexa_domain: xataka.com
   alexa_rank: 12239
   category: null
-  notes: null
+  notes: excluded; Query not in URL
   input_field: false
   search_form: false
   search_div: true
@@ -21358,12 +21431,16 @@
   search_div: true
   domains:
   - nationwide.co.uk
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search/\?
+    type: query_parameter
+    parameter: term
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: kbhgames
   public_suffix: com
   alexa_domain: kbhgames.com
@@ -21375,12 +21452,23 @@
   search_div: false
   domains:
   - kbhgames.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
+  - /page
 - name: podbean
   public_suffix: com
   alexa_domain: podbean.com
@@ -21392,18 +21480,22 @@
   search_div: false
   domains:
   - podbean.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/site/search/index\?
+    type: query_parameter
+    parameter: v
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /site/search/index?
 - name: lenglishiam
   public_suffix: biz
   alexa_domain: lenglishiam.biz
   alexa_rank: 12276
   category: null
-  notes: null
+  notes: excluded; No valid snapshot
   input_field: false
   search_form: false
   search_div: true
@@ -21426,12 +21518,16 @@
   search_div: true
   domains:
   - jsoftj.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
 - name: thevintagenews
   public_suffix: com
   alexa_domain: thevintagenews.com
@@ -21443,12 +21539,23 @@
   search_div: false
   domains:
   - thevintagenews.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
+  - /page
 - name: gaymaletube
   public_suffix: com
   alexa_domain: gaymaletube.com
@@ -21460,18 +21567,25 @@
   search_div: true
   domains:
   - gaymaletube.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search/a/[^/]+\?
+    type: path_segment
+    segment: 2
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/a/[^/]+\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search/a
 - name: giggsyunited
   public_suffix: com
   alexa_domain: giggsyunited.com
   alexa_rank: 12327
   category: null
-  notes: null
+  notes: excluded; Not archived
   input_field: false
   search_form: false
   search_div: true
@@ -21494,12 +21608,19 @@
   search_div: true
   domains:
   - angola24horas.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/mais/[^/]+/pesquisar\?
+    type: query_parameter
+    parameter: searchword
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/mais/[^/]+/pesquisar\?
+    type: query_parameter
+    parameter: start
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /mais
 - name: ntv
   public_suffix: ru
   alexa_domain: ntv.ru
@@ -21511,12 +21632,19 @@
   search_div: true
   domains:
   - ntv.ru
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/finder/\?
+    type: query_parameter
+    parameter: keytext
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/finder/\?
+    type: query_parameter
+    parameter: pn
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /finder/
 - name: amateur8
   public_suffix: com
   alexa_domain: amateur8.com
@@ -21528,12 +21656,16 @@
   search_div: false
   domains:
   - amateur8.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search/[^/]+
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: leninetudo
   public_suffix: com
   alexa_domain: leninetudo.com
@@ -21545,12 +21677,16 @@
   search_div: true
   domains:
   - leninetudo.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
 - name: fgov
   public_suffix: be
   alexa_domain: fgov.be
@@ -21562,12 +21698,19 @@
   search_div: true
   domains:
   - fgov.be
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]+/search\?
+    type: query_parameter
+    parameter: keywords
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /en/search?
 - name: sourcecodester
   public_suffix: com
   alexa_domain: sourcecodester.com
@@ -21579,12 +21722,16 @@
   search_div: true
   domains:
   - sourcecodester.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: msdmanuals
   public_suffix: com
   alexa_domain: msdmanuals.com
@@ -21596,12 +21743,21 @@
   search_div: true
   domains:
   - msdmanuals.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/.*SearchResults\?
+    type: query_parameter
+    parameter: query
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/.*SearchResults\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /SearchResults?
+  - /professional/SearchResults?
+  - /home/SearchResults?
 - name: javdb36
   public_suffix: com
   alexa_domain: javdb36.com
@@ -21613,12 +21769,19 @@
   search_div: true
   domains:
   - javdb36.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: bauhaus
   public_suffix: info
   alexa_domain: bauhaus.info
@@ -21630,12 +21793,19 @@
   search_div: true
   domains:
   - bauhaus.info
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/suche/produkte\?
+    type: query_parameter
+    parameter: text
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/suche/produkte\?
+    type: query_parameter
+    parameter: shownProducts
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /suche/produkte?
 - name: oomall
   public_suffix: com
   alexa_domain: oomall.com
@@ -21647,12 +21817,17 @@
   search_div: true
   domains:
   - oomall.com
-  query_parsers: [ ]
+  - s.oomall.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search.php\?
+    type: query_parameter
+    parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search.php?
 - name: sciencemag
   public_suffix: org
   alexa_domain: sciencemag.org
@@ -21664,18 +21839,26 @@
   search_div: true
   domains:
   - sciencemag.org
-  query_parsers: [ ]
-  page_parsers: [ ]
+  - science.org
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/action/doSearch\?
+    type: query_parameter
+    parameter: AllField
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/action/doSearch\?
+    type: query_parameter
+    parameter: startPage
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /action/doSearch?
 - name: anentryle
   public_suffix: club
   alexa_domain: anentryle.club
   alexa_rank: 12503
-  category: null
-  notes: null
+  category: spam
+  notes: excluded
   input_field: false
   search_form: false
   search_div: true
@@ -21698,12 +21881,16 @@
   search_div: true
   domains:
   - clubic.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/rechercher/\?
+    type: query_parameter
+    parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /rechercher/?
 - name: irrawaddy
   public_suffix: com
   alexa_domain: irrawaddy.com
@@ -21715,12 +21902,16 @@
   search_div: true
   domains:
   - irrawaddy.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
 - name: virgool
   public_suffix: io
   alexa_domain: virgool.io
@@ -21732,29 +21923,37 @@
   search_div: true
   domains:
   - virgool.io
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: decolar
   public_suffix: com
   alexa_domain: decolar.com
   alexa_rank: 12566
   category: null
-  notes: null
+  notes: Search results are flight connections; Query is destination
   input_field: false
   search_form: false
   search_div: true
   domains:
   - decolar.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/shop/flights/results/roundtrip/[^/]+/[^/]+
+    type: path_segment
+    segment: 5
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /shop/flights/results/roundtrip
 - name: parsijoo
   public_suffix: ir
   alexa_domain: parsijoo.ir
@@ -21766,12 +21965,22 @@
   search_div: null
   domains:
   - parsijoo.ir
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/*.\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/*.\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /web?
+  - /?
+  - /bazaar?
+  - /autocomplete/Search?
 - name: ac-versailles
   public_suffix: fr
   alexa_domain: ac-versailles.fr
@@ -21783,12 +21992,20 @@
   search_div: false
   domains:
   - ac-versailles.fr
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers: 
+  - url_pattern: ^https?://[^/]+/recherche
+    type: query_parameter
+    parameter: keywords
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/recherche
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /recherche?
+  - /recherche/type/actualites?
 - name: patagonia
   public_suffix: com
   alexa_domain: patagonia.com
@@ -21800,12 +22017,29 @@
   search_div: true
   domains:
   - patagonia.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  - eu.patagonia.com
+  - patagonia-ar.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]/[a-z]/search/\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/search/\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]/[a-z]/search/\?
+    type: query_parameter
+    parameter: page
+  - url_pattern: ^https?://[^/]+/search/\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search/?
+  - /de/de/search/?
+  - /gb/en/search/?
 - name: anightsregalia
   public_suffix: cam
   alexa_domain: anightsregalia.cam
@@ -21828,18 +22062,26 @@
   alexa_domain: ftc.gov
   alexa_rank: 12619
   category: null
-  notes: null
+  notes: excluded; No valid snapshot
   input_field: true
   search_form: true
   search_div: true
   domains:
   - ftc.gov
-  query_parsers: [ ]
-  page_parsers: [ ]
+  - search.ftc.gov
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: query
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: joemonster
   public_suffix: org
   alexa_domain: joemonster.org
@@ -21851,12 +22093,19 @@
   search_div: false
   domains:
   - joemonster.org
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search.php\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search.php\?
+    type: query_parameter
+    parameter: pageID
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search.php?
 - name: pearsonvue
   public_suffix: com
   alexa_domain: pearsonvue.com
@@ -21868,12 +22117,20 @@
   search_div: true
   domains:
   - pearsonvue.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  - home.pearsonvue.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/Search.aspx\?
+    type: query_parameter
+    parameter: searchtext
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/Search.aspx\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /Search.aspx?
 - name: bjeea
   public_suffix: cn
   alexa_domain: bjeea.cn
@@ -21885,12 +22142,22 @@
   search_div: true
   domains:
   - bjeea.cn
-  query_parsers: [ ]
-  page_parsers: [ ]
+  - search.bjeea.cn
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/plus/search.php\?
+    type: query_parameter
+    parameter: q
+    remove_patterns:
+    - '+'
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/plus/search.php\?
+    type: query_parameter
+    parameter: PageNo
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /plus/search.php?
 - name: balenciaga
   public_suffix: com
   alexa_domain: balenciaga.com
@@ -21902,18 +22169,23 @@
   search_div: true
   domains:
   - balenciaga.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[^/]+/search\?
+    type: query_parameter
+    parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /en-us/search?
+  - /de-de/search?
 - name: onlyfreetoonporn
   public_suffix: com
   alexa_domain: onlyfreetoonporn.com
   alexa_rank: 12650
   category: null
-  notes: null
+  notes: excluded; No valid snapshot
   input_field: false
   search_form: false
   search_div: true
@@ -21930,7 +22202,7 @@
   alexa_domain: slashgear.com
   alexa_rank: 12663
   category: null
-  notes: null
+  notes: excluded; No search
   input_field: false
   search_form: false
   search_div: true
@@ -21953,12 +22225,19 @@
   search_div: true
   domains:
   - povar.ru
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/xmlsearch\?
+    type: query_parameter
+    parameter: query
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/xmlsearch\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /xmlsearch?
 - name: unza
   public_suffix: zm
   alexa_domain: unza.zm
@@ -21970,12 +22249,19 @@
   search_div: true
   domains:
   - unza.zm
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search/node\?
+    type: query_parameter
+    parameter: keys
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/node\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search/node?
 - name: trendymalldeals
   public_suffix: com
   alexa_domain: trendymalldeals.com
@@ -21987,18 +22273,22 @@
   search_div: false
   domains:
   - trendymalldeals.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: query
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: distemshu
   public_suffix: biz
   alexa_domain: distemshu.biz
   alexa_rank: 12691
   category: null
-  notes: null
+  notes: excluded; No valid snapshot
   input_field: false
   search_form: false
   search_div: true
@@ -22021,12 +22311,21 @@
   search_div: false
   domains:
   - jetboobs.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/en/[0-9]+/[^/]+/[0-9]+.html
+    type: path_segment
+    segment: 2
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/en/[0-9]+/[^/]+/[0-9]+.html
+    type: path_segment
+    segment: 3
+    remove_patterns:
+    - '.html'
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /en/
 - name: infocert
   public_suffix: it
   alexa_domain: infocert.it
@@ -22038,12 +22337,19 @@
   search_div: false
   domains:
   - infocert.it
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: start
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
 - name: dafiti
   public_suffix: com.br
   alexa_domain: dafiti.com.br
@@ -22055,18 +22361,32 @@
   search_div: true
   domains:
   - dafiti.com.br
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/catalog/\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/catalog/\?
+    type: query_parameter
+    parameter: page
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /catalog/?
+  - /?
 - name: tax
   public_suffix: gov.uk
   alexa_domain: tax.gov.uk
   alexa_rank: 12703
   category: null
-  notes: null
+  notes: excluded; Not archived
   input_field: true
   search_form: true
   search_div: true
@@ -22089,12 +22409,19 @@
   search_div: true
   domains:
   - hotsale.com.ar
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/ofertas
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/ofertas/[0-9]+\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /ofertas
 - name: asianembed
   public_suffix: io
   alexa_domain: asianembed.io
@@ -22106,12 +22433,16 @@
   search_div: true
   domains:
   - asianembed.io
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search.html\?
+    type: query_parameter
+    parameter: keyword
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search.html\?
 - name: futebolplayhd
   public_suffix: com
   alexa_domain: futebolplayhd.com
@@ -22123,12 +22454,16 @@
   search_div: false
   domains:
   - futebolplayhd.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/buscar/[^/]+
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /buscar
 - name: legifrance
   public_suffix: gouv.fr
   alexa_domain: legifrance.gouv.fr
@@ -22140,12 +22475,19 @@
   search_div: true
   domains:
   - legifrance.gouv.fr
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: query
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search/
 - name: mychicconsulting
   public_suffix: es
   alexa_domain: mychicconsulting.es
@@ -22157,12 +22499,23 @@
   search_div: true
   domains:
   - mychicconsulting.es
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
+  - /page
 - name: bloodyelbow
   public_suffix: com
   alexa_domain: bloodyelbow.com
@@ -22174,12 +22527,19 @@
   search_div: false
   domains:
   - bloodyelbow.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: futemax
   public_suffix: live
   alexa_domain: futemax.live
@@ -22191,18 +22551,23 @@
   search_div: false
   domains:
   - futemax.live
-  query_parsers: [ ]
+  - futemax.app
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/buscar/[^/]+
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /buscar
 - name: limetorrents
   public_suffix: pro
   alexa_domain: limetorrents.pro
   alexa_rank: 12745
   category: null
-  notes: null
+  notes: exlcluded; Query not in URL
   input_field: true
   search_form: true
   search_div: false
@@ -22225,12 +22590,16 @@
   search_div: false
   domains:
   - manualslib.com
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[A-z]+/[^/]+
+    type: path_segment
+    segment: 1
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /brand
 - name: byrutor
   public_suffix: com
   alexa_domain: byrutor.com
@@ -22242,18 +22611,23 @@
   search_div: false
   domains:
   - byrutor.com
-  query_parsers: [ ]
+  - s1.byrutor.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: story
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
 - name: thenextweb
   public_suffix: com
   alexa_domain: thenextweb.com
   alexa_rank: 12778
   category: null
-  notes: null
+  notes: excluded; Query not in URL
   input_field: false
   search_form: false
   search_div: true
@@ -22276,12 +22650,20 @@
   search_div: true
   domains:
   - justice.gov
-  query_parsers: [ ]
-  page_parsers: [ ]
+  - search.justice.gov
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: query
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: americanmilitarynews
   public_suffix: com
   alexa_domain: americanmilitarynews.com
@@ -22293,18 +22675,29 @@
   search_div: true
   domains:
   - americanmilitarynews.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
+  - /page
 - name: soverthlaest
   public_suffix: space
   alexa_domain: soverthlaest.space
   alexa_rank: 12864
-  category: null
-  notes: null
+  category: spam
+  notes: excluded
   input_field: false
   search_form: false
   search_div: true
@@ -22327,18 +22720,25 @@
   search_div: true
   domains:
   - simplyhired.com
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: pn
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search?
 - name: podregarddomicile
   public_suffix: com
   alexa_domain: podregarddomicile.com
   alexa_rank: 12958
   category: null
-  notes: null
+  notes: excluded; Not archived
   input_field: true
   search_form: true
   search_div: false
@@ -22361,12 +22761,21 @@
   search_div: false
   domains:
   - xgap.tv
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/en/search/[^/]+/[0-9]+.html
+    type: path_segment
+    segment: 2
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/en/search/[^/]+/[0-9]+.html
+    type: path_segment
+    segment: 3
+    remove_patterns:
+    - '.html'
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /en/search
 - name: forexmetatradexdx
   public_suffix: info
   alexa_domain: forexmetatradexdx.info
@@ -22378,18 +22787,22 @@
   search_div: true
   domains:
   - forexmetatradexdx.info
-  query_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
 - name: tvsubtitles
   public_suffix: net
   alexa_domain: tvsubtitles.net
   alexa_rank: 12995
   category: null
-  notes: null
+  notes: excluded; Query not in URL
   input_field: false
   search_form: false
   search_div: true
@@ -22412,12 +22825,19 @@
   search_div: true
   domains:
   - zooplus.it
-  query_parsers: [ ]
-  page_parsers: [ ]
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search/results\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/results\?
+    type: query_parameter
+    parameter: p
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search/results?
 - name: reptilefightearn
   public_suffix: com
   alexa_domain: reptilefightearn.com
