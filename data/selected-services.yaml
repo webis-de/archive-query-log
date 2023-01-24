@@ -24019,14 +24019,28 @@
   - kidzsearch.com
   - search.kidzsearch.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/kzsearch\.php\?
+  - url_pattern: ^https?://[^/]+/kz(?:image|video|facts|wiki|news|game|app)?search\.php\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  - url_pattern: ^https?://[^/]+/kidztube/search\.php\?
+    type: query_parameter
+    parameter: keywords
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/kz(?:image|video|facts|wiki|news|game|app)?search\.php\?
+    type: query_parameter
+    parameter: gsc.page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /kzsearch.php?
+  - /kzimagesearch.php?
+  - /kzvideosearch.php?
+  - /kzfactssearch.php?
+  - /kzwikisearch.php?
+  - /kznewssearch.php?
+  - /kzgamesearch.php?
+  - /kzappsearch.php?
 - name: leit
   public_suffix: is
   alexa_domain: leit.is
@@ -24039,14 +24053,19 @@
   domains:
   - leit.is
   query_parsers:
-  - url_pattern: ^https?://[^/]+/leita\?
+  - url_pattern: ^https?://[^/]+/(leita|company_search)\?
     type: query_parameter
     parameter: search
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/(leita|company_search)\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /leita?
+  - /company_search?
 - name: loc
   public_suffix: gov
   alexa_domain: loc.gov
@@ -24060,14 +24079,27 @@
   domains:
   - loc.gov
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search
+  - url_pattern: ^https?://[^/]+/(search|audio|books|film\-and\-videos|manuscripts|maps|notated\-music|newspapers|photos|web\-archives)
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/(search|audio|books|film\-and\-videos|manuscripts|maps|notated\-music|newspapers|photos|web\-archives)
+    type: query_parameter
+    parameter: sp
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
+  - /audio
+  - /books
+  - /film-and-videos
+  - /manuscripts
+  - /maps
+  - /notated-music
+  - /newspapers
+  - /photos
+  - /web-archives
 - name: lycos
   public_suffix: com
   alexa_domain: lycos.com
@@ -24091,7 +24123,9 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /?
+  - /web/?
 - name: metacrawler
   public_suffix: com
   alexa_domain: metacrawler.com
@@ -24107,11 +24141,15 @@
   - url_pattern: ^https?://[^/]+/serp\?
     type: query_parameter
     parameter: q
-  page_parsers: [ ]
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/serp\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /serp?
 - name: metager
   public_suffix: org
   alexa_domain: metager.org
@@ -24128,10 +24166,14 @@
     type: query_parameter
     parameter: eingabe
   page_parsers: [ ]
-  offset_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/meta/meta\.ger3\?
+    type: query_parameter
+    parameter: next
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /meta.ger3?
 - name: miner
   public_suffix: hu
   alexa_domain: miner.hu
@@ -24147,11 +24189,19 @@
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
     parameter: s
-  page_parsers: [ ]
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
+    type: path_segment
+    segment: 1
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+    - /?
+    - /page
 - name: mojeek
   public_suffix: com
   alexa_domain: mojeek.com
