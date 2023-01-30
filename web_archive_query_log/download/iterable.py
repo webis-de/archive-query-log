@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from functools import cached_property
+from json import JSONDecodeError
 from pathlib import Path
 from typing import Sized, Iterable, Iterator
 
@@ -30,15 +31,15 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
                 f"Raw SERPs path must be a directory: {self.path}"
             )
 
-    def _streams(self) -> Iterator[GZipStream]:
+    def _streams(self) -> Iterator[tuple[Path, GZipStream]]:
         files = self.path.glob("*.warc.gz")
         for file in files:
-            yield GZipStream(FileStream(str(file), "rb"))
+            yield file, GZipStream(FileStream(str(file), "rb"))
 
     def __len__(self) -> int:
         return sum(
             1
-            for stream in self._streams()
+            for _, stream in self._streams()
             for _ in ArchiveIterator(
                 stream,
                 record_types=WarcRecordType.response,
@@ -69,10 +70,15 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
         )
 
     def __iter__(self) -> Iterator[ArchivedRawSerp]:
-        for stream in self._streams():
+        for path, stream in self._streams():
             for record in ArchiveIterator(
                     stream,
                     record_types=WarcRecordType.response,
                     parse_http=True,
             ):
-                yield self._read_serp_content(record)
+                try:
+                    yield self._read_serp_content(record)
+                except JSONDecodeError as e:
+                    print(f"Error decoding JSON "
+                          f"from record {record.record_id} at {path}.")
+                    raise e
