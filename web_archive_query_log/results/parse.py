@@ -122,6 +122,8 @@ class HtmlSelectorInterpretedQueryParser(HtmlInterpretedQueryParser):
         search_field = html.select_one(self.query_selector)
         if search_field is None:
             return None
+        if self.query_attribute not in search_field.attrs:
+            return None
         return search_field.attrs[self.query_attribute]
 
 
