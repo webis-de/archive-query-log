@@ -746,7 +746,6 @@
     results_selector: ul.uiList > li
     url_selector: div.TextTitle > a
     title_selector: div.TextTitle
-
   focused_url_prefixes:
   - /search
 - name: tmall
@@ -1981,8 +1980,17 @@
   - url_pattern: ^https?://[^/]+/w/index.php\?
     type: query_parameter
     parameter: offset
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: div#searchText > input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    results_selector: ul.mw-search-results > li
+    url_selector: div.mw-search-result-heading a
+    title_selector: div.mw-search-result-heading
+    snippet_selector: div.searchresult
   focused_url_prefixes:
   - /w/index.php?
 - name: '360'
@@ -2172,8 +2180,16 @@
     parameter: q
   page_parsers: [ ]
   offset_parsers: [ ]
-  interpreted_query_parsers: [ ]
-  results_parsers: [ ]
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: input#header-search-bar
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    results_selector: div[data-testid=posts-list] div[data-testid=post-container]
+    url_selector: div[data-adclicklocation=title] a
+    title_selector: div[data-testid=post-title]
   focused_url_prefixes:
   - /search
 - name: instagram
