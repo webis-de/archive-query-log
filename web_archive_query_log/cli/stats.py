@@ -1,7 +1,7 @@
 from asyncio import run
 from pathlib import Path
 
-from click import option, argument, STRING, IntRange, BOOL
+from click import option, argument, BOOL
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL, LOGGER
 from web_archive_query_log.cli import main
@@ -51,22 +51,6 @@ def _service_name_argument():
     )
 
 
-def _domain_argument():
-    return argument(
-        "domain",
-        type=STRING,
-        required=False,
-    )
-
-
-def _cdx_page_argument():
-    return argument(
-        "cdx_page",
-        type=IntRange(min=0),
-        required=False,
-    )
-
-
 @stats_group.command(
     "all-archived-urls",
     help="Get upper bound for the number of all archived URLs from "
@@ -75,8 +59,6 @@ def _cdx_page_argument():
 @_data_directory_option()
 @_focused_argument()
 @_service_name_argument()
-@_domain_argument()
-@_cdx_page_argument()
 def all_archived_urls_command(
         data_directory: Path,
         focused: bool,
