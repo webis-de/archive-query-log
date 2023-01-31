@@ -2,12 +2,13 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from functools import cached_property
 from hashlib import md5
-from typing import Sequence
+from pathlib import Path
+from typing import Sequence, Any
 from urllib.parse import SplitResult, urlsplit
 from uuid import UUID, uuid5, NAMESPACE_URL
 
 from dataclasses_json import DataClassJsonMixin, config
-from marshmallow.fields import List, Nested, String
+from marshmallow.fields import List, Nested, String, Field
 
 from web_archive_query_log.model.highlight import HighlightedText
 from web_archive_query_log.util.serialization import HighlightedTextField
@@ -373,4 +374,207 @@ class Service(DataClassJsonMixin):
     """
     URL prefixes for a more focused pipeline which might miss some queries
     but executes faster.
+    """
+
+
+class PathField(Field):
+    def _serialize(
+            self, value: Any, attr: str | None, obj: Any, **kwargs
+    ) -> str:
+        return str(value)
+
+    def _deserialize(
+            self, value: str, attr: str, data: Any, **kwargs: Any
+    ) -> Path:
+        return Path(value)
+
+
+@dataclass(frozen=True, slots=True)
+class CorpusJsonlLocation(DataClassJsonMixin):
+    relative_path: Path = field(
+        metadata=config(
+            encoder=str,
+            decoder=Path,
+            mm_field=PathField(),
+        )
+    )
+    """
+    Path of the JSONL file relative to the corpus root path.
+    """
+    line: int
+    """
+    Line number of the JSONL file entry.
+    """
+
+
+@dataclass(frozen=True, slots=True)
+class CorpusJsonlSnippetLocation(CorpusJsonlLocation, DataClassJsonMixin):
+    index: int
+    """
+    Index of the snippet in the JSONL file entry's results list.
+    """
+
+
+@dataclass(frozen=True, slots=True)
+class CorpusWarcLocation(DataClassJsonMixin):
+    relative_path: Path = field(
+        metadata=config(
+            encoder=str,
+            decoder=Path,
+            mm_field=PathField(),
+        )
+    )
+    """
+    Path of the WARC file relative to the corpus root path.
+    """
+    byte_offset: int
+    """
+    Position of the WARC record's first byte in the (compressed) WARC file.
+    """
+
+
+@dataclass(frozen=True, slots=True)
+class CorpusQueryUrl(DataClassJsonMixin):
+    id: UUID
+    """
+    Unique ID based on the URL and timestamp.
+    """
+    url: str
+    """
+    Original URL that was archived.
+    """
+    timestamp: int
+    """
+    POSIX timestamp of the URL's archived snapshot in the Wayback Machine.
+    """
+    wayback_url: str
+    """
+    URL to access the archived snapshot in the Wayback Machine.
+    """
+    wayback_raw_url: str
+    """
+    URL to access the archived snapshot's raw contents in the Wayback Machine.
+    """
+    url_query: str | None
+    """
+    Query that was parsed from the URL.
+    """
+    url_page: int | None
+    """
+    SERP page number that was parsed from the URL, e.g., 1, 2, 3.
+
+    Note: the page number should be zero-indexed, i.e.,
+    the first result page has the page number 0.
+    """
+    url_offset: int | None
+    """
+    SERP results offset (start position) that was parsed from the URL, 
+    e.g., 10, 20.
+
+    Note: the offset should be zero-indexed, i.e.,
+    the first result page has the offset 0.
+    """
+    serp_query: str | None
+    """
+    Interpreted query as displayed on (or otherwise included in) the SERP.
+
+    Note: the interpreted result query can be different from the original query
+    due to spelling correction etc.
+    """
+    archived_url_location: CorpusJsonlLocation
+    """
+    Location of the corresponding URL entry and JSONL file.
+    """
+    archived_query_url_location: CorpusJsonlLocation | None
+    """
+    Location of the corresponding query URL entry and JSONL file.
+    """
+    archived_raw_serp_location: CorpusWarcLocation | None
+    """
+    Location of the corresponding raw SERP entry and WARC file.
+    """
+    archived_parsed_serp_location: CorpusJsonlLocation | None
+    """
+    Location of the corresponding parsed SERP entry in the JSONL file.
+    """
+
+
+@dataclass(frozen=True, slots=True)
+class CorpusDocument(DataClassJsonMixin):
+    id: UUID
+    """
+    Unique ID for this archived URL.
+    """
+    url: str
+    """
+    Original URL that was archived.
+    """
+    timestamp: int
+    """
+    POSIX timestamp of the archived snapshot in the Wayback Machine.
+    
+    Note that there might not be a snapshot for the exact timestamp, 
+    but the Wayback Machine will instead redirect 
+    to the nearest available snapshot.
+    """
+    wayback_url: str
+    """
+    URL of the archived snapshot in the Wayback Machine.
+    
+    Note that there might not be a snapshot for the exact timestamp, 
+    but the Wayback Machine will instead redirect 
+    to the nearest available snapshot.
+    """
+    wayback_raw_url: str
+    """
+    URL of the archived snapshot's raw contents in the Wayback Machine.
+    
+    Note that there might not be a snapshot for the exact timestamp, 
+    but the Wayback Machine will instead redirect 
+    to the nearest available snapshot.
+    """
+    query: CorpusQueryUrl
+    rank: int
+    """
+    Rank of the result in the SERP.
+    """
+    snippet_title: HighlightedText | str = field(metadata=config(
+        encoder=str,
+        decoder=HighlightedText,
+        mm_field=HighlightedTextField(),
+    ))
+    """
+    Snippet title of the result with optional highlighting.
+    Highlighting should be normalized to ``<em>`` tags. 
+    Other HTML tags are removed.
+    """
+    snippet_text: HighlightedText | str | None = field(metadata=config(
+        encoder=str,
+        decoder=HighlightedText,
+        mm_field=HighlightedTextField(allow_none=True),
+    ))
+    """
+    Snippet text of the result with optional highlighting.
+    Highlighting should be normalized to ``<em>`` tags. 
+    Other HTML tags are removed.
+    """
+    archived_snippet_location: CorpusJsonlSnippetLocation
+    """
+    Location of a JSONL file snippet entry in the raw corpus.
+    """
+    archived_raw_search_result_location: CorpusWarcLocation | None
+    archived_parsed_search_result_location: CorpusJsonlLocation | None
+
+
+@dataclass(frozen=True, slots=True)
+class CorpusQuery(CorpusQueryUrl, DataClassJsonMixin):
+    results: Sequence[CorpusDocument] | None = field(
+        metadata=config(
+            encoder=list,
+            decoder=tuple,
+            mm_field=List(Nested(CorpusDocument.schema()))
+        )
+    )
+    """
+    Retrieved results from the SERP in the same order as they appear.
     """
