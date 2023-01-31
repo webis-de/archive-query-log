@@ -169,6 +169,7 @@ class ArchivedUrlsFetcher:
         List all items that need to be downloaded.
         """
         output_format_path = data_directory / "archived-urls"
+        output_format_path.mkdir(parents=True, exist_ok=True)
         if cdx_page is not None:
             assert domain is not None
             service_path = output_format_path / service.name
