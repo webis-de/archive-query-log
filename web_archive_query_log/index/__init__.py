@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from functools import cached_property
 from gzip import GzipFile
 from io import TextIOWrapper
+from multiprocessing.pool import ThreadPool
 from pathlib import Path
 from typing import MutableMapping, Iterator, TypeVar, Generic, Mapping, \
     Type, IO, MutableSet
@@ -176,52 +177,65 @@ class _JsonLineIndex(_Index[_RecordType]):
     def _schema(self) -> Schema:
         return self._record_type.schema()
 
-    def _index_paths(self) -> Iterator[Path]:
+    def _indexable_paths(self) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
         service = f"{self.service}" if self.service is not None else "*"
-        return self.data_directory.glob(
+        paths = self.data_directory.glob(
             f"{focused}{self._index_name}/{service}/*/*.jsonl.gz"
         )
+        paths = (
+            path
+            for path in paths
+            if path not in self._path_index
+        )
+        return paths
+
+    def _index_path(self, path: Path) -> None:
+        if path in self._path_index:
+            return
+        offset = 0
+        with path.open("rb") as file:
+            with GzipFile(fileobj=file, mode="rb") as gzip_file:
+                gzip_file: IO[bytes]
+                num_lines = count_lines(gzip_file)
+        with path.open("rb") as file:
+            with GzipFile(fileobj=file, mode="r") as gzip_file:
+                gzip_file: IO[str]
+                lines = gzip_file
+                if num_lines > 10_000:
+                    lines = tqdm(
+                        lines,
+                        total=num_lines,
+                        desc=f"Indexing {self._index_name}",
+                        unit="line",
+                    )
+                for line in lines:
+                    record = self._schema.loads(line)
+                    record_id = record.id
+                    record_location = _Location(
+                        path.relative_to(self.data_directory),
+                        offset,
+                    )
+                    self._index[record_id] = record_location
+                    offset = gzip_file.tell()
+        self._path_index.add(path)
 
     def index(self) -> None:
-        paths = self._index_paths()
-        paths = [path for path in paths if path not in self._path_index]
+        paths = list(self._indexable_paths())
         if len(paths) == 0:
             return
-        paths = tqdm(
-            paths,
+        progress = tqdm(
+            total=len(paths),
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        for path in paths:
-            if path in self._path_index:
-                continue
-            offset = 0
-            with path.open("rb") as file:
-                with GzipFile(fileobj=file, mode="rb") as gzip_file:
-                    gzip_file: IO[bytes]
-                    num_lines = count_lines(gzip_file)
-            with path.open("rb") as file:
-                with GzipFile(fileobj=file, mode="r") as gzip_file:
-                    gzip_file: IO[str]
-                    lines = gzip_file
-                    if num_lines > 10_000:
-                        lines = tqdm(
-                            lines,
-                            total=num_lines,
-                            desc=f"Indexing {self._index_name}",
-                            unit="line",
-                        )
-                    for line in lines:
-                        record = self._schema.loads(line)
-                        record_id = record.id
-                        record_location = _Location(
-                            path.relative_to(self.data_directory),
-                            offset,
-                        )
-                        self._index[record_id] = record_location
-                        offset = gzip_file.tell()
-            self._path_index.add(path)
+        pool = ThreadPool()
+
+        def index_path(path: Path):
+            self._index_path(path)
+            progress.update()
+
+        pool.map(index_path, paths)
 
     def __getitem__(self, key: UUID) -> _RecordType:
         location = self._index[key]
@@ -245,54 +259,67 @@ class _WarcIndex(_Index[_RecordType]):
     def _read_record(self, record: WarcRecord) -> _RecordType:
         pass
 
-    def _index_paths(self) -> Iterator[Path]:
+    def _indexable_paths(self) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
         service = f"{self.service}" if self.service is not None else "*"
-        return self.data_directory.glob(
+        paths = self.data_directory.glob(
             f"{focused}{self._index_name}/{service}/*/*/*.warc.gz"
         )
+        paths = (
+            path
+            for path in paths
+            if path not in self._path_index
+        )
+        return paths
+
+    def _index_path(self, path: Path) -> None:
+        if path in self._path_index:
+            return
+        stream = GZipStream(FileStream(str(path), "rb"))
+        num_records = sum(1 for _ in ArchiveIterator(
+            stream,
+            record_types=WarcRecordType.response,
+            parse_http=False,
+        ))
+        stream = GZipStream(FileStream(str(path), "rb"))
+        records = ArchiveIterator(
+            stream,
+            record_types=WarcRecordType.response
+        )
+        if num_records > 10_000:
+            records = tqdm(
+                records,
+                total=num_records,
+                desc=f"Indexing {self._index_name}",
+                unit="record",
+            )
+        for record in records:
+            record: WarcRecord
+            offset = record.stream_pos
+            record_id = self._read_id(record)
+            record_location = _Location(
+                path.relative_to(self.data_directory),
+                offset,
+            )
+            self._index[record_id] = record_location
+        self._path_index.add(path)
 
     def index(self) -> None:
-        paths = self._index_paths()
-        paths = [path for path in paths if path not in self._path_index]
+        paths = list(self._indexable_paths())
         if len(paths) == 0:
             return
-        paths = tqdm(
-            paths,
+        progress = tqdm(
+            total=len(paths),
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        for path in paths:
-            if path in self._path_index:
-                continue
-            stream = GZipStream(FileStream(str(path), "rb"))
-            num_records = sum(1 for _ in ArchiveIterator(
-                stream,
-                record_types=WarcRecordType.response,
-                parse_http=False,
-            ))
-            stream = GZipStream(FileStream(str(path), "rb"))
-            records = ArchiveIterator(
-                stream,
-                record_types=WarcRecordType.response
-            )
-            if num_records > 10_000:
-                records = tqdm(
-                    records,
-                    total=num_records,
-                    desc=f"Indexing {self._index_name}",
-                    unit="record",
-                )
-            for record in records:
-                record: WarcRecord
-                offset = record.stream_pos
-                record_id = self._read_id(record)
-                record_location = _Location(
-                    path.relative_to(self.data_directory),
-                    offset,
-                )
-                self._index[record_id] = record_location
-            self._path_index.add(path)
+        pool = ThreadPool()
+
+        def index_path(path: Path):
+            self._index_path(path)
+            progress.update()
+
+        pool.map(index_path, paths)
 
     def __getitem__(self, key: UUID) -> _RecordType:
         # noinspection PyTypeChecker
@@ -374,55 +401,68 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
     focused: bool = False
     service: str | None = None
 
-    def _index_paths(self) -> Iterator[Path]:
+    def _indexable_paths(self) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
         service = f"{self.service}" if self.service is not None else "*"
-        return self.data_directory.glob(
+        paths = self.data_directory.glob(
             f"{focused}archived-parsed-serps/{service}/*/*.jsonl.gz"
         )
+        paths = (
+            path
+            for path in paths
+            if path not in self._path_index
+        )
+        return paths
+
+    def _index_path(self, path: Path) -> None:
+        if path in self._path_index:
+            return
+        offset = 0
+        with path.open("rb") as file:
+            with GzipFile(fileobj=file, mode="rb") as gzip_file:
+                gzip_file: IO[bytes]
+                num_lines = count_lines(gzip_file)
+        with path.open("rb") as file:
+            with GzipFile(fileobj=file, mode="r") as gzip_file:
+                gzip_file: IO[str]
+                lines = gzip_file
+                if num_lines > 10_000:
+                    lines = tqdm(
+                        lines,
+                        total=num_lines,
+                        desc=f"Indexing {self._index_name}",
+                        unit="line",
+                    )
+                for line in lines:
+                    record = self._schema.loads(line)
+                    snippets = enumerate(record.results)
+                    for snippet_index, snippet in snippets:
+                        snippet_id = snippet.id
+                        snippet_location = _ArchivedSnippetLocation(
+                            path.relative_to(self.data_directory),
+                            offset,
+                            snippet_index,
+                        )
+                        self._index[snippet_id] = snippet_location
+                    offset = gzip_file.tell()
+        self._path_index.add(path)
 
     def index(self) -> None:
-        paths = self._index_paths()
-        paths = [path for path in paths if path not in self._path_index]
+        paths = list(self._indexable_paths())
         if len(paths) == 0:
             return
-        paths = tqdm(
-            paths,
+        progress = tqdm(
+            total=len(paths),
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        for path in paths:
-            if path in self._path_index:
-                continue
-            offset = 0
-            with path.open("rb") as file:
-                with GzipFile(fileobj=file, mode="rb") as gzip_file:
-                    gzip_file: IO[bytes]
-                    num_lines = count_lines(gzip_file)
-            with path.open("rb") as file:
-                with GzipFile(fileobj=file, mode="r") as gzip_file:
-                    gzip_file: IO[str]
-                    lines = gzip_file
-                    if num_lines > 10_000:
-                        lines = tqdm(
-                            lines,
-                            total=num_lines,
-                            desc=f"Indexing {self._index_name}",
-                            unit="line",
-                        )
-                    for line in lines:
-                        record = self._schema.loads(line)
-                        snippets = enumerate(record.results)
-                        for snippet_index, snippet in snippets:
-                            snippet_id = snippet.id
-                            snippet_location = _ArchivedSnippetLocation(
-                                path.relative_to(self.data_directory),
-                                offset,
-                                snippet_index,
-                            )
-                            self._index[snippet_id] = snippet_location
-                        offset = gzip_file.tell()
-            self._path_index.add(path)
+        pool = ThreadPool()
+
+        def index_path(path: Path):
+            self._index_path(path)
+            progress.update()
+
+        pool.map(index_path, paths)
 
     def __getitem__(self, key: UUID) -> ArchivedSearchResultSnippet:
         # noinspection PyTypeChecker
@@ -465,3 +505,7 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
             content=record.reader.read(),
             encoding=content_type,
         )
+
+
+if __name__ == '__main__':
+    index = ArchivedRawSearchResultIndex()
