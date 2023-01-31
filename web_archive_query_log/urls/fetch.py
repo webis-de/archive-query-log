@@ -11,6 +11,7 @@ from urllib.parse import urlencode, quote
 from aiohttp import ClientResponseError
 from aiohttp_retry import RetryClient
 from asyncio_pool import AioPool
+from diskcache import Cache
 from marshmallow import Schema
 from tqdm.auto import tqdm
 
@@ -69,20 +70,14 @@ class ArchivedUrlsFetcher:
 
     async def _num_pages(
             self,
-            output_path: Path,
+            cache: Cache,
             url: str,
             client: RetryClient,
     ) -> int:
         params = self._params(url)
         params_hash = urlencode(params)
-        num_pages_path = output_path / ".lock"
-        num_pages_path.parent.mkdir(exist_ok=True, parents=True)
-        num_pages_path.touch(exist_ok=True)
-        with num_pages_path.open("rt") as file:
-            for line in file:
-                line_params_hash, line_num_pages = line.split()
-                if line_params_hash == params_hash:
-                    return int(line_num_pages)
+        if params_hash in cache:
+            return cache[params_hash]
         num_pages_params = [
             *params,
             ("showNumPages", True),
@@ -94,8 +89,7 @@ class ArchivedUrlsFetcher:
                 num_pages = int(text)
             except:
                 num_pages = 0
-        with num_pages_path.open("at") as file:
-            file.write(f"{params_hash} {num_pages}\n")
+        cache[params_hash] = num_pages
         return num_pages
 
     @staticmethod
@@ -199,11 +193,12 @@ class ArchivedUrlsFetcher:
                     client=client,
                 )
 
-            num_cdx_pages = await self._num_pages(
-                output_format_path,
-                domain,
-                client,
-            )
+            with Cache(str(output_format_path / ".pages")) as cache:
+                num_cdx_pages = await self._num_pages(
+                    cache,
+                    domain,
+                    client,
+                )
             pool = AioPool(size=1)
 
             if num_cdx_pages <= 0:
@@ -308,7 +303,7 @@ class ArchivedUrlsFetcher:
             service: Service,
             domain: str | None = None,
             cdx_page: int | None = None,
-    ):
+    ) -> int:
         async with archive_http_client(limit=5) as client:
             pages = await self._service_pages(
                 data_directory=data_directory,
