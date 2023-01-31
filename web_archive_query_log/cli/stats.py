@@ -325,7 +325,12 @@ def archived_parsed_search_results_command(
     required=False,
 )
 @option(
-    "-k", "--top-services",
+    "--min-rank", "--min-alexa-rank",
+    type=IntRange(min=1),
+    required=False,
+)
+@option(
+    "--max-rank", "--max-alexa-rank",
     type=IntRange(min=1),
     required=False,
 )
@@ -333,12 +338,25 @@ def all_stats_command(
         data_directory: Path,
         focused: bool,
         output: Path | None,
-        top_services: int | None,
+        min_rank: int | None,
+        max_rank: int | None,
 ) -> None:
     services = SERVICES.values()
+    if min_rank is not None:
+        services = (
+            service
+            for service in services
+            if (service.alexa_rank is not None and
+                service.alexa_rank >= min_rank)
+        )
+    if max_rank is not None:
+        services = (
+            service
+            for service in services
+            if (service.alexa_rank is not None and
+                service.alexa_rank <= max_rank)
+        )
     services = sorted(services, key=lambda service: service.alexa_rank or inf)
-    if top_services is not None:
-        services = services[:top_services]
     results: dict[str, dict[str, int]] = {}
     for service in services:
         service_results: dict[str, int] = {}
