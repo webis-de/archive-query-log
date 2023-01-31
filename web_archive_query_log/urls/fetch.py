@@ -248,7 +248,7 @@ class ArchivedUrlsFetcher:
                 progress.update()
                 return res
 
-            pool = AioPool(size=1000)
+            pool = AioPool(size=100)
 
             res: Sequence[Sequence[_CdxPage]]
             res = await pool.map(domain_pages, domains)
