@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
+from functools import cached_property
 from gzip import GzipFile
 from io import TextIOWrapper
 from itertools import chain
@@ -48,9 +49,9 @@ class ArchivedUrlsFetcher:
     cdx_api_url: str = CDX_API_URL
     overwrite: bool = False
 
-    def _params(self, url: str) -> Sequence[tuple[Any, Any]]:
+    @cached_property
+    def _base_params(self) -> Sequence[tuple[Any, Any]]:
         params = [
-            ("url", url),
             ("matchType", self.match_scope.value),
             ("fl", "timestamp,original"),
         ]
@@ -67,6 +68,12 @@ class ArchivedUrlsFetcher:
             pattern = "|".join(str(code) for code in self.exclude_status_codes)
             params.append(("filter", f"statuscode:{pattern}"))
         return params
+
+    def _params(self, url: str) -> Sequence[tuple[Any, Any]]:
+        return [
+            ("url", url),
+            *self._base_params,
+        ]
 
     async def _num_pages(
             self,
@@ -229,6 +236,7 @@ class ArchivedUrlsFetcher:
             if len(domains) == 0:
                 return []
 
+            domains = sorted(domains)
             progress = tqdm(
                 domains,
                 total=len(domains),
