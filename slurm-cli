@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
 srun \
-  --cpus-per-task 4 \
+  --cpus-per-task 10 \
   --ntasks-per-node 1 \
-  --mem 40G \
+  --mem 100G \
   --container-writable \
   --container-image python:3.10 \
   --container-name web-archive-query-log-python-3.10 \
