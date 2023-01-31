@@ -38,6 +38,7 @@ class _ArchivedSnippetLocation(_Location):
 class _LocationIndex(MutableMapping[UUID, _Location]):
     data_directory: Path
     focused: bool
+    service: str | None
     index_name: str
 
     @cached_property
@@ -45,6 +46,8 @@ class _LocationIndex(MutableMapping[UUID, _Location]):
         index_path = self.data_directory / "index"
         if self.focused:
             index_path /= "focused"
+        if self.service is not None:
+            index_path /= self.service
         index_path /= self.index_name
         index_path.mkdir(parents=True, exist_ok=True)
         return index_path
@@ -76,6 +79,7 @@ class _LocationIndex(MutableMapping[UUID, _Location]):
 class _PathIndex(MutableSet[Path]):
     data_directory: Path
     focused: bool
+    service: str | None
     index_name: str
 
     @cached_property
@@ -83,6 +87,8 @@ class _PathIndex(MutableSet[Path]):
         index_path = self.data_directory / "index"
         if self.focused:
             index_path /= "focused"
+        if self.service is not None:
+            index_path /= self.service
         index_path /= f"{self.index_name}-paths"
         index_path.mkdir(parents=True, exist_ok=True)
         return index_path
@@ -123,6 +129,11 @@ class _Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
 
     @property
     @abstractmethod
+    def service(self) -> str | None:
+        pass
+
+    @property
+    @abstractmethod
     def _index_name(self) -> str:
         pass
 
@@ -131,6 +142,7 @@ class _Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
         return _LocationIndex(
             data_directory=self.data_directory,
             focused=self.focused,
+            service=self.service,
             index_name=self._index_name,
         )
 
@@ -139,6 +151,7 @@ class _Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
         return _PathIndex(
             data_directory=self.data_directory,
             focused=self.focused,
+            service=self.service,
             index_name=self._index_name,
         )
 
@@ -165,8 +178,9 @@ class _JsonLineIndex(_Index[_RecordType]):
 
     def _index_paths(self) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
+        service = f"{self.service}" if self.service is not None else "*"
         return self.data_directory.glob(
-            f"{focused}{self._index_name}/*/*/*.jsonl.gz"
+            f"{focused}{self._index_name}/{service}/*/*.jsonl.gz"
         )
 
     def index(self) -> None:
@@ -233,8 +247,9 @@ class _WarcIndex(_Index[_RecordType]):
 
     def _index_paths(self) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
+        service = f"{self.service}" if self.service is not None else "*"
         return self.data_directory.glob(
-            f"{focused}{self._index_name}/*/*/*/*.warc.gz"
+            f"{focused}{self._index_name}/{service}/*/*/*.warc.gz"
         )
 
     def index(self) -> None:
@@ -297,6 +312,7 @@ class ArchivedUrlIndex(_JsonLineIndex[ArchivedUrl]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
+    service: str | None = None
 
 
 @dataclass(frozen=True)
@@ -306,6 +322,7 @@ class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
+    service: str | None = None
 
 
 @dataclass(frozen=True)
@@ -315,6 +332,7 @@ class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
+    service: str | None = None
 
     def _read_id(self, record: WarcRecord) -> UUID:
         return self._schema.loads(record.headers["Archived-URL"]).id
@@ -344,6 +362,7 @@ class ArchivedParsedSerpIndex(_JsonLineIndex[ArchivedParsedSerp]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
+    service: str | None = None
 
 
 @dataclass(frozen=True)
@@ -353,11 +372,13 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
+    service: str | None = None
 
     def _index_paths(self) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
+        service = f"{self.service}" if self.service is not None else "*"
         return self.data_directory.glob(
-            f"{focused}archived-parsed-serps/*/*/*.jsonl.gz"
+            f"{focused}archived-parsed-serps/{service}/*/*.jsonl.gz"
         )
 
     def index(self) -> None:
@@ -423,6 +444,7 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
+    service: str | None = None
 
     def _read_id(self, record: WarcRecord) -> UUID:
         return self._schema.loads(record.headers["Archived-URL"]).id
@@ -443,26 +465,3 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
             content=record.reader.read(),
             encoding=content_type,
         )
-
-
-if __name__ == '__main__':
-    index = ArchivedUrlIndex(focused=True)
-    index.index()
-    print(len(index))
-    index = ArchivedQueryUrlIndex(focused=True)
-    index.index()
-    print(len(index))
-    index = ArchivedRawSerpIndex(focused=True)
-    index.index()
-    print(len(index))
-    index = ArchivedParsedSerpIndex(focused=True)
-    index.index()
-    print(len(index))
-    index = ArchivedSearchResultSnippetIndex(focused=True)
-    index.index()
-    print(len(index))
-    index = ArchivedRawSearchResultIndex(focused=True)
-    index.index()
-    print(len(index))
-    # uuid = UUID("6942d399-da90-565a-add4-b35022a6fa86")
-    # print(f"{uuid} -> {index[uuid]}\n -> {index[uuid].id}")
