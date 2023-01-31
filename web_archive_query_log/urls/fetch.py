@@ -304,7 +304,7 @@ class ArchivedUrlsFetcher:
             domain: str | None = None,
             cdx_page: int | None = None,
     ) -> int:
-        async with archive_http_client(limit=5) as client:
+        async with archive_http_client(limit=2) as client:
             pages = await self._service_pages(
                 data_directory=data_directory,
                 focused=focused,
