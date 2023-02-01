@@ -1,57 +1,22 @@
 from asyncio import run
+from gzip import open as gzip_open
+from json import loads
 from math import inf
 from pathlib import Path
 
-from click import option, argument, BOOL, IntRange
+from click import option, BOOL, IntRange
 from pandas import DataFrame
+from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL, LOGGER
 from web_archive_query_log.cli import main
-from web_archive_query_log.cli.util import PathParam, ServiceChoice
+from web_archive_query_log.cli.util import PathParam
 from web_archive_query_log.config import SERVICES
 
 # See:
 # https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api
 _URLS_PER_BLOCK = 3000
 _BLOCKS_PER_PAGE = 50
-
-
-@main.group("stats")
-def stats_group():
-    pass
-
-
-def _data_directory_option():
-    return option(
-        "-d", "--data-directory", "--data-directory-path",
-        type=PathParam(
-            exists=True,
-            file_okay=False,
-            dir_okay=True,
-            writable=True,
-            readable=False,
-            resolve_path=True,
-            path_type=Path,
-        ),
-        default=DATA_DIRECTORY_PATH
-    )
-
-
-def _focused_option():
-    return option(
-        "-f", "--focused",
-        type=BOOL,
-        default=False,
-        is_flag=True,
-    )
-
-
-def _service_name_argument():
-    return argument(
-        "service",
-        type=ServiceChoice(),
-        required=True,
-    )
 
 
 def _all_archived_urls(
@@ -85,32 +50,29 @@ def _all_archived_urls(
     return num_pages * _BLOCKS_PER_PAGE * _URLS_PER_BLOCK
 
 
-@stats_group.command(
-    "all-archived-urls",
-    help="Get upper bound for the number of all archived URLs from "
-         "the Wayback Machine's CDX API.",
+@main.command(
+    "stats",
+    help="Get stats for the most recent exported corpus.",
 )
-@_data_directory_option()
-@_focused_option()
-@_service_name_argument()
-def all_archived_urls_command(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-) -> None:
-    print(_all_archived_urls(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
-    ))
-
-
-@stats_group.command(
-    "all",
-    help="Get all stats for all services.",
+@option(
+    "-d", "--data-directory", "--data-directory-path",
+    type=PathParam(
+        exists=True,
+        file_okay=False,
+        dir_okay=True,
+        writable=True,
+        readable=False,
+        resolve_path=True,
+        path_type=Path,
+    ),
+    default=DATA_DIRECTORY_PATH
 )
-@_data_directory_option()
-@_focused_option()
+@option(
+    "-f", "--focused",
+    type=BOOL,
+    default=False,
+    is_flag=True,
+)
 @option(
     "--min-rank", "--min-alexa-rank",
     type=IntRange(min=1),
@@ -119,6 +81,19 @@ def all_archived_urls_command(
 @option(
     "--max-rank", "--max-alexa-rank",
     type=IntRange(min=1),
+    required=False,
+)
+@option(
+    "-c", "--corpus-directory", "--corpus-directory-path",
+    type=PathParam(
+        exists=False,
+        file_okay=False,
+        dir_okay=True,
+        writable=True,
+        readable=True,
+        resolve_path=True,
+        path_type=Path,
+    ),
     required=False,
 )
 @option(
@@ -134,17 +109,13 @@ def all_archived_urls_command(
     ),
     required=False,
 )
-@option(
-    "--parallel",
-    is_flag=True,
-)
-def all_stats_command(
+def stats_command(
         data_directory: Path,
         focused: bool,
-        output: Path | None,
         min_rank: int | None,
         max_rank: int | None,
-        parallel: bool,
+        corpus_directory: Path | None,
+        output: Path | None,
 ) -> None:
     services = SERVICES.values()
     if min_rank is not None:
@@ -162,27 +133,98 @@ def all_stats_command(
                 service.alexa_rank <= max_rank)
         )
     services = sorted(services, key=lambda service: service.alexa_rank or inf)
-    results: dict[str, dict[str, int]] = {}
+
+    results: dict[str, dict[str, int]] = {
+        service.name: {
+            "all-archived-urls": 0,
+            "archived-urls": 0,
+            "archived-query-urls": 0,
+            "archived-raw-serps": 0,
+            "archived-parsed-serps": 0,
+            "archived-snippets": 0,
+            "archived-raw-search-results": 0,
+            "archived-parsed-search-results": 0,
+        }
+        for service in services
+    }
+
     for service in services:
-        service_results: dict[str, int] = {}
-        print(f"\033[1mService: {service.name}\033[0m")
-        service_results["all-archived-urls"] = _all_archived_urls(
+        results[service.name]["all-archived-urls"] = _all_archived_urls(
             data_directory,
             focused,
             service.name,
         )
-        print(f"✔ Available Archived URLs: "
-              f"{service_results['all-archived-urls']}")
-        print()
-        results[service.name] = service_results
 
+    corpus_path: Path
+    if corpus_directory is not None:
+        corpus_path = corpus_directory
+    elif focused:
+        corpus_path = data_directory / "focused" / "corpus"
+    else:
+        corpus_path = data_directory / "corpus"
+
+    if corpus_path.exists():
+        queries_paths = sorted(
+            corpus_path.glob("queries-*.jsonl.gz"),
+            reverse=True,
+        )
+        documents_paths = sorted(
+            corpus_path.glob("documents-*.jsonl.gz"),
+            reverse=True,
+        )
+        if len(queries_paths) > 0 and len(documents_paths) > 0:
+            queries_path = queries_paths[0]
+            documents_path = documents_paths[0]
+
+            with gzip_open(queries_path, "rt") as queries_file:
+                lines = tqdm(
+                    queries_file,
+                    desc="Read queries corpus"
+                )
+                for line in lines:
+                    query = loads(line)
+                    service_name = query["service"]
+                    if query["archived_url_location"] is not None:
+                        results[service_name]["archived-urls"] += 1
+                    if query["archived_query_url_location"] is not None:
+                        results[service_name]["archived-query-urls"] += 1
+                    if query["archived_raw_serp_location"] is not None:
+                        results[service_name]["archived-raw-serps"] += 1
+                    if query["archived_parsed_serp_location"] is not None:
+                        results[service_name]["archived-parsed-serps"] += 1
+
+            with gzip_open(documents_path, "rt") as documents_file:
+                lines = tqdm(
+                    documents_file,
+                    desc="Read documents corpus"
+                )
+                for line in lines:
+                    document = loads(line)
+                    service_name = document["service"]
+                    if document["archived_snippet_location"] is not None:
+                        results[service_name]["archived-snippets"] += 1
+                    if document[
+                        "archived_raw_search_result_location"] is not None:
+                        results[service_name][
+                            "archived-raw-search-results"] += 1
+                    if document[
+                        "archived_parsed_search_result_location"] is not None:
+                        results[service_name][
+                            "archived-parsed-search-results"] += 1
+
+    output_path: Path
     if output is not None:
-        df = DataFrame([
-            {
-                "service": service_name,
-                **service_results,
-            }
-            for service_name, service_results in results.items()
-        ])
-        df.to_csv(output, index=False)
-        print(f"Statistics saved to {output}.")
+        output_path = output
+    elif focused:
+        output_path = data_directory / "focused" / "stats.csv"
+    else:
+        output_path = data_directory / "stats.csv"
+
+    df = DataFrame([
+        {
+            "service": service_name,
+            **service_results,
+        }
+        for service_name, service_results in results.items()
+    ])
+    df.to_csv(output_path, index=False)
