@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from io import BytesIO
 from itertools import count, groupby, chain
 from pathlib import Path
+from random import Random
 from tempfile import TemporaryFile
 from typing import Sequence, NamedTuple, Iterable
 from urllib.parse import quote, parse_qsl
@@ -303,9 +304,9 @@ class WebArchiveWarcDownloader:
     def _deduplicate_urls(
             urls: Iterable[_CdxUrl],
             snippets: bool,
-    ) -> Iterable[_CdxUrl]:
+    ) -> list[_CdxUrl]:
         if snippets:
-            return urls
+            return list(urls)
         urls = sorted(
             urls,
             key=lambda url: url.archived_url.query
@@ -375,5 +376,9 @@ class WebArchiveWarcDownloader:
 
         if focused:
             archived_urls = self._deduplicate_urls(archived_urls, snippets)
+            archived_urls = Random(0).sample(
+                archived_urls,
+                min(len(archived_urls), 10_000)
+            )
 
         await self._download(archived_urls)
