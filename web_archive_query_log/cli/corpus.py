@@ -76,6 +76,8 @@ def corpus_command(
     output_path: Path
     if output_directory is not None:
         output_path = output_directory
+    elif focused:
+        output_path = data_directory / "focused" / "corpus"
     else:
         output_path = data_directory / "corpus"
     output_path.mkdir(parents=True, exist_ok=True)
@@ -250,7 +252,6 @@ def _build_search_result(
         archived_raw_search_result_index: ArchivedRawSearchResultIndex,
         # archived_parsed_search_result_index: ArchivedParsedSearchResultIndex,
         archived_search_result_snippet: ArchivedSearchResultSnippet,
-        corpus_query_url: CorpusQueryUrl,
 ) -> CorpusSearchResult:
     archived_snippet_loc = archived_search_result_snippet_index \
         .locate(archived_search_result_snippet.id)
@@ -258,13 +259,12 @@ def _build_search_result(
         .locate(archived_search_result_snippet.id)
     # archived_parsed_search_result_loc = archived_parsed_search_result_index \
     #     .locate(archived_search_result_snippet.id)
-    return CorpusDocument(
+    return CorpusSearchResult(
         id=archived_search_result_snippet.id,
         url=archived_search_result_snippet.url,
         timestamp=archived_search_result_snippet.timestamp,
         wayback_url=archived_search_result_snippet.archive_url,
         wayback_raw_url=archived_search_result_snippet.raw_archive_url,
-        query=corpus_query_url,
         snippet_rank=archived_search_result_snippet.rank,
         snippet_title=archived_search_result_snippet.title,
         snippet_text=archived_search_result_snippet.snippet,
@@ -320,6 +320,9 @@ def _build_query_documents(
     )
     snippets = archived_parsed_serp_loc.record.results \
         if archived_parsed_serp_loc is not None else []
+    path_components = archived_url_loc.location.relative_path.parts
+    service = path_components[2] \
+        if path_components[0] == "focused" else path_components[1]
 
     def convert_search_result(
             archived_search_result_snippet: ArchivedSearchResultSnippet
@@ -329,12 +332,12 @@ def _build_query_documents(
             archived_raw_search_result_index,
             # archived_parsed_search_result_index,
             archived_search_result_snippet,
-            query_url,
         )
 
     with ThreadPoolExecutor() as executor:
         results = list(executor.map(convert_search_result, snippets))
     query = CorpusQuery(
+        service=service,
         id=query_url.id,
         url=query_url.url,
         timestamp=query_url.timestamp,
@@ -353,6 +356,7 @@ def _build_query_documents(
 
     documents = [
         CorpusDocument(
+            service=service,
             id=result.id,
             url=result.url,
             timestamp=result.timestamp,
