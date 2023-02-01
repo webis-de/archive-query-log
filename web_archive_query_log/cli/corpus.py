@@ -2,6 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 from contextlib import ExitStack
 from math import inf
 from pathlib import Path
+from typing import Collection
 
 from click import option, BOOL, IntRange, argument
 from tqdm.auto import tqdm
@@ -53,6 +54,11 @@ from web_archive_query_log.model import ArchivedUrl, CorpusQueryUrl, \
     type=IntRange(min=1),
     required=False,
 )
+@option(
+    "-q", "--queries",
+    is_flag=True,
+    default=False,
+)
 @argument(
     "queries_output",
     type=PathParam(
@@ -84,6 +90,7 @@ def corpus_command(
         focused: bool,
         min_rank: int | None,
         max_rank: int | None,
+        queries: bool,
         queries_output: Path,
         documents_output: Path,
 ) -> None:
@@ -154,7 +161,11 @@ def corpus_command(
             documents_output.open("w") as documents_file:
         for service in services:
             print(f"\033[1mService: {service.name}\033[0m")
-            archived_urls = archived_url_index.values()
+            archived_urls: Collection[ArchivedUrl]
+            if queries:
+                archived_urls = archived_query_url_index.values()
+            else:
+                archived_urls = archived_url_index.values()
             query_schema = CorpusQuery.schema()
             document_schema = CorpusDocument.schema()
 
