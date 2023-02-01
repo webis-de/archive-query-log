@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from functools import cached_property
 from gzip import GzipFile
 from io import TextIOWrapper
-from multiprocessing.pool import ThreadPool
 from pathlib import Path
 from typing import MutableMapping, Iterator, TypeVar, Generic, Mapping, \
     Type, IO, MutableSet, NamedTuple, ContextManager
@@ -256,13 +256,14 @@ class _JsonLineIndex(_Index[Location, _RecordType]):
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool(processes=None if parallel else 1)
+        pool = ThreadPoolExecutor(None if parallel else 1)
 
         def index_path(path: Path):
             self._index_path(path)
             progress.update()
 
-        pool.map(index_path, paths)
+        for _ in pool.map(index_path, paths):
+            pass
         self._index.close()
 
     def locate(self, key: UUID) -> LocatedRecord[Location, _RecordType] | None:
@@ -347,13 +348,14 @@ class _WarcIndex(_Index[Location, _RecordType]):
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool(processes=None if parallel else 1)
+        pool = ThreadPoolExecutor(None if parallel else 1)
 
         def index_path(path: Path):
             self._index_path(path)
             progress.update()
 
-        pool.map(index_path, paths)
+        for _ in pool.map(index_path, paths):
+            pass
         self._index.close()
 
     def locate(
@@ -504,13 +506,14 @@ class ArchivedSearchResultSnippetIndex(
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool(processes=None if parallel else 1)
+        pool = ThreadPoolExecutor(None if parallel else 1)
 
         def index_path(path: Path):
             self._index_path(path)
             progress.update()
 
-        pool.map(index_path, paths)
+        for _ in pool.map(index_path, paths):
+            pass
         self._index.close()
 
     def locate(
