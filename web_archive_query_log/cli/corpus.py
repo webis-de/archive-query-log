@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import ExitStack
 from math import inf
 from pathlib import Path
 
@@ -16,7 +17,7 @@ from web_archive_query_log.index import ArchivedRawSerpIndex, \
 from web_archive_query_log.model import ArchivedUrl, CorpusQueryUrl, \
     ArchivedSearchResultSnippet, CorpusDocument, CorpusJsonlLocation, \
     CorpusWarcLocation, CorpusJsonlSnippetLocation, ArchivedRawSerp, \
-    ArchivedQueryUrl, ArchivedParsedSerp, CorpusQuery
+    ArchivedQueryUrl, ArchivedParsedSerp, CorpusQuery, CorpusSearchResult
 
 
 @main.command(
@@ -107,98 +108,111 @@ def corpus_command(
     services = sorted(services, key=lambda service: service.alexa_rank or inf)
     for service in services:
         print(f"\033[1mService: {service.name}\033[0m")
-        archived_url_index = ArchivedUrlIndex(
-            data_directory=data_directory,
-            focused=focused,
-            service=service.name,
-        )
-        archived_query_url_index = ArchivedQueryUrlIndex(
-            data_directory=data_directory,
-            focused=focused,
-            service=service.name,
-        )
-        archived_raw_serp_index = ArchivedRawSerpIndex(
-            data_directory=data_directory,
-            focused=focused,
-            service=service.name,
-        )
-        archived_parsed_serp_index = ArchivedParsedSerpIndex(
-            data_directory=data_directory,
-            focused=focused,
-            service=service.name,
-        )
-        archived_search_result_snippet_index = \
-            ArchivedSearchResultSnippetIndex(
-                data_directory=data_directory,
-                focused=focused,
-                service=service.name,
-            )
-        archived_raw_search_result_index = ArchivedRawSearchResultIndex(
-            data_directory=data_directory,
-            focused=focused,
-            service=service.name,
-        )
-        # archived_parsed_search_result_index = \
-        #     ArchivedParsedSearchResultIndex(
-        #         data_directory=data_directory,
-        #         focused=focused,
-        #         service=service.name,
-        #     )
-        indexes = [
-            archived_url_index,
-            archived_query_url_index,
-            archived_raw_serp_index,
-            archived_parsed_serp_index,
-            archived_search_result_snippet_index,
-            archived_raw_search_result_index,
-            # archived_parsed_search_result_index,
-        ]
-        indexes = tqdm(
-            indexes,
-            desc="Build indexes",
-            unit="index",
-        )
-        for index in indexes:
-            index.index()
-
-        archived_urls = archived_url_index.values()
-        query_schema = CorpusQuery.schema()
-        document_schema = CorpusDocument.schema()
-        with queries_output.open("w") as queries_file, \
-                documents_output.open("w") as documents_file:
-
-            progress = tqdm(
-                total=len(archived_urls),
-                desc="Build corpus",
-                unit="URL",
-            )
-
-            def dump_url(url: ArchivedUrl) -> None:
-                query, documents = _build_query_documents(
-                    archived_url_index=archived_url_index,
-                    archived_query_url_index=archived_query_url_index,
-                    archived_raw_serp_index=archived_raw_serp_index,
-                    archived_parsed_serp_index=archived_parsed_serp_index,
-                    archived_search_result_snippet_index=(
-                        archived_search_result_snippet_index
-                    ),
-                    archived_raw_search_result_index=(
-                        archived_raw_search_result_index
-                    ),
-                    # archived_parsed_search_result_index=(
-                    #     archived_parsed_search_result_index
-                    # ),
-                    archived_url=url,
+        with ExitStack() as exit_stack:
+            archived_url_index = exit_stack.enter_context(
+                ArchivedUrlIndex(
+                    data_directory=data_directory,
+                    focused=focused,
+                    service=service.name,
                 )
-                queries_file.write(query_schema.dumps(query))
-                queries_file.write("\n")
-                for document in documents:
-                    documents_file.write(document_schema.dumps(document))
-                    documents_file.write("\n")
-                progress.update()
+            )
+            archived_query_url_index = exit_stack.enter_context(
+                ArchivedQueryUrlIndex(
+                    data_directory=data_directory,
+                    focused=focused,
+                    service=service.name,
+                )
+            )
+            archived_raw_serp_index = exit_stack.enter_context(
+                ArchivedRawSerpIndex(
+                    data_directory=data_directory,
+                    focused=focused,
+                    service=service.name,
+                )
+            )
+            archived_parsed_serp_index = exit_stack.enter_context(
+                ArchivedParsedSerpIndex(
+                    data_directory=data_directory,
+                    focused=focused,
+                    service=service.name,
+                )
+            )
+            archived_search_result_snippet_index = exit_stack.enter_context(
+                ArchivedSearchResultSnippetIndex(
+                    data_directory=data_directory,
+                    focused=focused,
+                    service=service.name,
+                )
+            )
+            archived_raw_search_result_index = exit_stack.enter_context(
+                ArchivedRawSearchResultIndex(
+                    data_directory=data_directory,
+                    focused=focused,
+                    service=service.name,
+                )
+            )
+            # archived_parsed_search_result_index = exit_stack.enter_context.(
+            #     ArchivedParsedSearchResultIndex(
+            #         data_directory=data_directory,
+            #         focused=focused,
+            #         service=service.name,
+            #     )
+            # )
+            indexes = [
+                archived_url_index,
+                archived_query_url_index,
+                archived_raw_serp_index,
+                archived_parsed_serp_index,
+                archived_search_result_snippet_index,
+                archived_raw_search_result_index,
+                # archived_parsed_search_result_index,
+            ]
+            indexes = tqdm(
+                indexes,
+                desc="Build indexes",
+                unit="index",
+            )
+            for index in indexes:
+                index.index()
 
-            with ThreadPoolExecutor() as executor:
-                executor.map(dump_url, archived_urls)
+            archived_urls = archived_url_index.values()
+            query_schema = CorpusQuery.schema()
+            document_schema = CorpusDocument.schema()
+            with queries_output.open("w") as queries_file, \
+                    documents_output.open("w") as documents_file:
+
+                progress = tqdm(
+                    total=len(archived_urls),
+                    desc="Build corpus",
+                    unit="URL",
+                )
+
+                def dump_url(url: ArchivedUrl) -> None:
+                    query, documents = _build_query_documents(
+                        archived_url_index=archived_url_index,
+                        archived_query_url_index=archived_query_url_index,
+                        archived_raw_serp_index=archived_raw_serp_index,
+                        archived_parsed_serp_index=archived_parsed_serp_index,
+                        archived_search_result_snippet_index=(
+                            archived_search_result_snippet_index
+                        ),
+                        archived_raw_search_result_index=(
+                            archived_raw_search_result_index
+                        ),
+                        # archived_parsed_search_result_index=(
+                        #     archived_parsed_search_result_index
+                        # ),
+                        archived_url=url,
+                    )
+                    queries_file.write(query_schema.dumps(query))
+                    queries_file.write("\n")
+                    for document in documents:
+                        documents_file.write(document_schema.dumps(document))
+                        documents_file.write("\n")
+                    progress.update()
+
+                with ThreadPoolExecutor() as executor:
+                    executor.map(dump_url, archived_urls)
 
         print()
 
@@ -234,12 +248,12 @@ def _build_query_url(
         ),
         archived_url_location=CorpusJsonlLocation(
             relative_path=archived_url_loc.location.relative_path,
-            line=archived_url_loc.location.offset,
+            byte_offset=archived_url_loc.location.offset,
         ),
         archived_query_url_location=(
             CorpusJsonlLocation(
                 relative_path=archived_query_url_loc.location.relative_path,
-                line=archived_query_url_loc.location.offset,
+                byte_offset=archived_query_url_loc.location.offset,
             )
             if archived_query_url_loc is not None else None
         ),
@@ -253,20 +267,20 @@ def _build_query_url(
         archived_parsed_serp_location=(
             CorpusJsonlLocation(
                 relative_path=archived_parsed_serp_loc.location.relative_path,
-                line=archived_parsed_serp_loc.location.offset,
+                byte_offset=archived_parsed_serp_loc.location.offset,
             )
             if archived_parsed_serp_loc is not None else None
         ),
     )
 
 
-def _build_document(
+def _build_search_result(
         archived_search_result_snippet_index: ArchivedSearchResultSnippetIndex,
         archived_raw_search_result_index: ArchivedRawSearchResultIndex,
         # archived_parsed_search_result_index: ArchivedParsedSearchResultIndex,
         archived_search_result_snippet: ArchivedSearchResultSnippet,
         corpus_query_url: CorpusQueryUrl,
-) -> CorpusDocument:
+) -> CorpusSearchResult:
     archived_snippet_loc = archived_search_result_snippet_index \
         .locate(archived_search_result_snippet.id)
     archived_raw_search_result_loc = archived_raw_search_result_index \
@@ -285,7 +299,7 @@ def _build_document(
         snippet_text=archived_search_result_snippet.snippet,
         archived_snippet_location=CorpusJsonlSnippetLocation(
             relative_path=archived_snippet_loc.location.relative_path,
-            line=archived_snippet_loc.location.offset,
+            byte_offset=archived_snippet_loc.location.offset,
             index=archived_snippet_loc.location.index,
         ),
         archived_raw_search_result_location=(
@@ -336,10 +350,10 @@ def _build_query_documents(
     snippets = archived_parsed_serp_loc.record.results \
         if archived_parsed_serp_loc is not None else []
 
-    def convert_document(
+    def convert_search_result(
             archived_search_result_snippet: ArchivedSearchResultSnippet
-    ) -> CorpusDocument:
-        return _build_document(
+    ) -> CorpusSearchResult:
+        return _build_search_result(
             archived_search_result_snippet_index,
             archived_raw_search_result_index,
             # archived_parsed_search_result_index,
@@ -348,7 +362,7 @@ def _build_query_documents(
         )
 
     with ThreadPoolExecutor() as executor:
-        documents = list(executor.map(convert_document, snippets))
+        results = list(executor.map(convert_search_result, snippets))
     query = CorpusQuery(
         id=query_url.id,
         url=query_url.url,
@@ -363,6 +377,30 @@ def _build_query_documents(
         archived_query_url_location=query_url.archived_query_url_location,
         archived_raw_serp_location=query_url.archived_raw_serp_location,
         archived_parsed_serp_location=query_url.archived_parsed_serp_location,
-        results=documents,
+        results=results,
     )
+
+    documents = [
+        CorpusDocument(
+            id=result.id,
+            url=result.url,
+            timestamp=result.timestamp,
+            wayback_url=result.wayback_url,
+            wayback_raw_url=result.wayback_raw_url,
+            query=query,
+            snippet_rank=result.snippet_rank,
+            snippet_title=result.snippet_title,
+            snippet_text=result.snippet_text,
+            archived_snippet_location=result.archived_snippet_location,
+            archived_raw_search_result_location=(
+                result.archived_raw_search_result_location
+            ),
+            archived_parsed_search_result_location=None,
+            # archived_parsed_search_result_location=(
+            #     result.archived_parsed_search_result_location
+            # ),
+        )
+        for result in results
+    ]
+
     return query, documents

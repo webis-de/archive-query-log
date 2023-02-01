@@ -111,13 +111,13 @@ def _archived_urls(
         service: str,
 ) -> int:
     from web_archive_query_log.index import ArchivedUrlIndex
-    index = ArchivedUrlIndex(
+    with ArchivedUrlIndex(
         data_directory=data_directory,
         focused=focused,
         service=service,
-    )
-    index.index()
-    return len(index)
+    ) as index:
+        index.index()
+        return len(index)
 
 
 @stats_group.command(
@@ -146,13 +146,13 @@ def _archived_query_urls(
         service: str,
 ) -> int:
     from web_archive_query_log.index import ArchivedQueryUrlIndex
-    index = ArchivedQueryUrlIndex(
+    with  ArchivedQueryUrlIndex(
         data_directory=data_directory,
         focused=focused,
         service=service,
-    )
-    index.index()
-    return len(index)
+    ) as index:
+        index.index()
+        return len(index)
 
 
 @stats_group.command(
@@ -180,13 +180,13 @@ def _archived_raw_serps(
         service: str,
 ) -> int:
     from web_archive_query_log.index import ArchivedRawSerpIndex
-    index = ArchivedRawSerpIndex(
+    with ArchivedRawSerpIndex(
         data_directory=data_directory,
         focused=focused,
         service=service,
-    )
-    index.index()
-    return len(index)
+    ) as index:
+        index.index()
+        return len(index)
 
 
 @stats_group.command(
@@ -214,13 +214,13 @@ def _archived_parsed_serps(
         service: str,
 ) -> int:
     from web_archive_query_log.index import ArchivedParsedSerpIndex
-    index = ArchivedParsedSerpIndex(
+    with ArchivedParsedSerpIndex(
         data_directory=data_directory,
         focused=focused,
         service=service,
-    )
-    index.index()
-    return len(index)
+    ) as index:
+        index.index()
+        return len(index)
 
 
 @stats_group.command(
@@ -248,13 +248,13 @@ def _archived_raw_search_results(
         service: str,
 ) -> int:
     from web_archive_query_log.index import ArchivedRawSearchResultIndex
-    index = ArchivedRawSearchResultIndex(
+    with ArchivedRawSearchResultIndex(
         data_directory=data_directory,
         focused=focused,
         service=service,
-    )
-    index.index()
-    return len(index)
+    ) as index:
+        index.index()
+        return len(index)
 
 
 @stats_group.command(

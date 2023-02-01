@@ -401,9 +401,9 @@ class CorpusJsonlLocation(DataClassJsonMixin):
     """
     Path of the JSONL file relative to the corpus root path.
     """
-    line: int
+    byte_offset: int
     """
-    Line number of the JSONL file entry.
+    Position of the JSONL line's first byte in the decompressed JSONL file.
     """
 
 
@@ -429,7 +429,7 @@ class CorpusWarcLocation(DataClassJsonMixin):
     """
     byte_offset: int
     """
-    Position of the WARC record's first byte in the (compressed) WARC file.
+    Position of the WARC record's first byte in the compressed WARC file.
     """
 
 
@@ -500,7 +500,7 @@ class CorpusQueryUrl(DataClassJsonMixin):
 
 
 @dataclass(frozen=True, slots=True)
-class CorpusDocument(DataClassJsonMixin):
+class CorpusSearchResult(DataClassJsonMixin):
     id: UUID
     """
     Unique ID for this archived URL.
@@ -533,7 +533,6 @@ class CorpusDocument(DataClassJsonMixin):
     but the Wayback Machine will instead redirect 
     to the nearest available snapshot.
     """
-    query: CorpusQueryUrl
     snippet_rank: int
     """
     Rank of the result in the SERP.
@@ -560,21 +559,35 @@ class CorpusDocument(DataClassJsonMixin):
     """
     archived_snippet_location: CorpusJsonlSnippetLocation
     """
-    Location of a JSONL file snippet entry in the raw corpus.
+    Location of the corresponding snippet entry in the JSONL file.
     """
     archived_raw_search_result_location: CorpusWarcLocation | None
+    """
+    Location of the corresponding raw search result entry and WARC file.
+    """
     archived_parsed_search_result_location: CorpusJsonlLocation | None
+    """
+    Location of the corresponding parsed search result entry in the JSONL file.
+    """
 
 
 @dataclass(frozen=True, slots=True)
 class CorpusQuery(CorpusQueryUrl, DataClassJsonMixin):
-    results: Sequence[CorpusDocument] | None = field(
+    results: Sequence[CorpusSearchResult] | None = field(
         metadata=config(
             encoder=list,
             decoder=tuple,
-            mm_field=List(Nested(CorpusDocument.schema()))
+            mm_field=List(Nested(CorpusSearchResult.schema()))
         )
     )
     """
     Retrieved results from the SERP in the same order as they appear.
+    """
+
+
+@dataclass(frozen=True, slots=True)
+class CorpusDocument(CorpusSearchResult, DataClassJsonMixin):
+    query: CorpusQueryUrl
+    """
+    Query and SERP that was used to retrieve this result.
     """

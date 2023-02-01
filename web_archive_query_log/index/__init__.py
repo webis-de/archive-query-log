@@ -7,7 +7,7 @@ from multiprocessing import cpu_count
 from multiprocessing.pool import ThreadPool
 from pathlib import Path
 from typing import MutableMapping, Iterator, TypeVar, Generic, Mapping, \
-    Type, IO, MutableSet, NamedTuple
+    Type, IO, MutableSet, NamedTuple, ContextManager
 from uuid import UUID
 
 from dataclasses_json import DataClassJsonMixin
@@ -42,28 +42,15 @@ _LocationType = TypeVar("_LocationType", bound=NamedTuple)
 @dataclass(frozen=True)
 class _LocationIndex(
     MutableMapping[UUID, _LocationType],
+    ContextManager,
     Generic[_LocationType],
 ):
-    data_directory: Path
-    focused: bool
-    service: str | None
-    index_name: str
+    path: Path
     location_type: Type[_LocationType]
 
     @cached_property
-    def _index_path(self) -> Path:
-        index_path = self.data_directory / "index"
-        if self.focused:
-            index_path /= "focused"
-        if self.service is not None:
-            index_path /= self.service
-        index_path /= self.index_name
-        index_path.mkdir(parents=True, exist_ok=True)
-        return index_path
-
-    @cached_property
     def _index(self) -> Cache:
-        return Cache(str(self._index_path))
+        return Cache(str(self.path))
 
     def __setitem__(self, key: UUID, value: _LocationType):
         self._index[str(key)] = tuple(value)
@@ -84,28 +71,20 @@ class _LocationIndex(
         for uuid in self._index:
             yield UUID(uuid)
 
+    def close(self):
+        self._index.close()
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
+
 
 @dataclass(frozen=True)
-class _PathIndex(MutableSet[Path]):
-    data_directory: Path
-    focused: bool
-    service: str | None
-    index_name: str
-
-    @cached_property
-    def _index_path(self) -> Path:
-        index_path = self.data_directory / "index"
-        if self.focused:
-            index_path /= "focused"
-        if self.service is not None:
-            index_path /= self.service
-        index_path /= f"{self.index_name}-paths"
-        index_path.mkdir(parents=True, exist_ok=True)
-        return index_path
+class _PathIndex(MutableSet[Path], ContextManager):
+    path: Path
 
     @cached_property
     def _index(self) -> Cache:
-        return Cache(str(self._index_path))
+        return Cache(str(self.path))
 
     def add(self, value: Path) -> None:
         self._index[str(value)] = True
@@ -123,6 +102,12 @@ class _PathIndex(MutableSet[Path]):
         for path in self._index:
             yield Path(path)
 
+    def close(self):
+        self._index.close()
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
+
 
 _RecordType = TypeVar("_RecordType", bound=DataClassJsonMixin)
 
@@ -135,6 +120,7 @@ class LocatedRecord(Generic[_LocationType, _RecordType]):
 
 class _Index(
     Mapping[UUID, _RecordType],
+    ContextManager,
     Generic[_LocationType, _RecordType],
     ABC,
 ):
@@ -165,22 +151,25 @@ class _Index(
 
     @cached_property
     def _index(self) -> _LocationIndex[_LocationType]:
-        return _LocationIndex(
-            data_directory=self.data_directory,
-            focused=self.focused,
-            service=self.service,
-            index_name=self._index_name,
-            location_type=self._location_type,
-        )
+        index_path = self.data_directory / "index"
+        if self.focused:
+            index_path /= "focused"
+        if self.service is not None:
+            index_path /= self.service
+        index_path /= self._index_name
+        index_path.mkdir(parents=True, exist_ok=True)
+        return _LocationIndex(index_path, self._location_type)
 
     @cached_property
     def _path_index(self) -> _PathIndex:
-        return _PathIndex(
-            data_directory=self.data_directory,
-            focused=self.focused,
-            service=self.service,
-            index_name=self._index_name,
-        )
+        index_path = self.data_directory / "index"
+        if self.focused:
+            index_path /= "focused"
+        if self.service is not None:
+            index_path /= self.service
+        index_path /= f"{self._index_name}-paths"
+        index_path.mkdir(parents=True, exist_ok=True)
+        return _PathIndex(index_path)
 
     @abstractmethod
     def index(self) -> None:
@@ -198,6 +187,13 @@ class _Index(
 
     def __iter__(self) -> Iterator[UUID]:
         return iter(self._index)
+
+    def close(self):
+        self._index.close()
+        self._path_index.close()
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
 
 
 class _JsonLineIndex(_Index[Location, _RecordType]):
@@ -227,31 +223,29 @@ class _JsonLineIndex(_Index[Location, _RecordType]):
         if path in self._path_index:
             return
         offset = 0
-        with path.open("rb") as file:
-            with GzipFile(fileobj=file, mode="rb") as gzip_file:
-                gzip_file: IO[bytes]
-                num_lines = count_lines(gzip_file)
-        with path.open("rb") as file:
-            with GzipFile(fileobj=file, mode="r") as gzip_file:
-                gzip_file: IO[str]
-                lines = gzip_file
-                if num_lines > 10_000:
-                    lines = tqdm(
-                        lines,
-                        total=num_lines,
-                        desc=f"Indexing {self._index_name}",
-                        unit="line",
-                    )
-                for line in lines:
-                    record = self._schema.loads(line)
-                    record_id = record.id
-                    record_location = Location(
-                        relative_path=path.relative_to(self.data_directory),
-                        offset=offset,
-                    )
-                    # noinspection PyTypeChecker
-                    self._index[record_id] = record_location
-                    offset = gzip_file.tell()
+        with GzipFile(path, mode="rb") as gzip_file:
+            gzip_file: IO[bytes]
+            num_lines = count_lines(gzip_file)
+        with GzipFile(path, "r") as gzip_file:
+            gzip_file: IO[str]
+            lines = gzip_file
+            if num_lines > 10_000:
+                lines = tqdm(
+                    lines,
+                    total=num_lines,
+                    desc=f"Indexing {self._index_name}",
+                    unit="line",
+                )
+            for line in lines:
+                record = self._schema.loads(line)
+                record_id = record.id
+                record_location = Location(
+                    relative_path=path.relative_to(self.data_directory),
+                    offset=offset,
+                )
+                # noinspection PyTypeChecker
+                self._index[record_id] = record_location
+                offset = gzip_file.tell()
         self._path_index.add(path)
 
     def index(self) -> None:
@@ -270,6 +264,7 @@ class _JsonLineIndex(_Index[Location, _RecordType]):
             progress.update()
 
         pool.map(index_path, paths)
+        self._index.close()
 
     def locate(self, key: UUID) -> LocatedRecord[Location, _RecordType] | None:
         if key not in self._index:
@@ -360,6 +355,7 @@ class _WarcIndex(_Index[Location, _RecordType]):
             progress.update()
 
         pool.map(index_path, paths)
+        self._index.close()
 
     def locate(
             self,
@@ -472,34 +468,32 @@ class ArchivedSearchResultSnippetIndex(
         if path in self._path_index:
             return
         offset = 0
-        with path.open("rb") as file:
-            with GzipFile(fileobj=file, mode="rb") as gzip_file:
-                gzip_file: IO[bytes]
-                num_lines = count_lines(gzip_file)
-        with path.open("rb") as file:
-            with GzipFile(fileobj=file, mode="r") as gzip_file:
-                gzip_file: IO[str]
-                lines = gzip_file
-                if num_lines > 10_000:
-                    lines = tqdm(
-                        lines,
-                        total=num_lines,
-                        desc=f"Indexing {self._index_name}",
-                        unit="line",
+        with GzipFile(path, mode="rb") as gzip_file:
+            gzip_file: IO[bytes]
+            num_lines = count_lines(gzip_file)
+        with GzipFile(path, mode="r") as gzip_file:
+            gzip_file: IO[str]
+            lines = gzip_file
+            if num_lines > 10_000:
+                lines = tqdm(
+                    lines,
+                    total=num_lines,
+                    desc=f"Indexing {self._index_name}",
+                    unit="line",
+                )
+            for line in lines:
+                record = self._schema.loads(line)
+                snippets = enumerate(record.results)
+                for snippet_index, snippet in snippets:
+                    snippet_id = snippet.id
+                    snippet_location = ArchivedSnippetLocation(
+                        relative_path=path.relative_to(
+                            self.data_directory),
+                        offset=offset,
+                        index=snippet_index,
                     )
-                for line in lines:
-                    record = self._schema.loads(line)
-                    snippets = enumerate(record.results)
-                    for snippet_index, snippet in snippets:
-                        snippet_id = snippet.id
-                        snippet_location = ArchivedSnippetLocation(
-                            relative_path=path.relative_to(
-                                self.data_directory),
-                            offset=offset,
-                            index=snippet_index,
-                        )
-                        self._index[snippet_id] = snippet_location
-                    offset = gzip_file.tell()
+                    self._index[snippet_id] = snippet_location
+                offset = gzip_file.tell()
         self._path_index.add(path)
 
     def index(self) -> None:
@@ -518,6 +512,7 @@ class ArchivedSearchResultSnippetIndex(
             progress.update()
 
         pool.map(index_path, paths)
+        self._index.close()
 
     def locate(
             self,
