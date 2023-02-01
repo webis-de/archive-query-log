@@ -37,7 +37,7 @@ def _data_directory_option():
     )
 
 
-def _focused_argument():
+def _focused_option():
     return option(
         "-f", "--focused",
         type=BOOL,
@@ -91,7 +91,7 @@ def _all_archived_urls(
          "the Wayback Machine's CDX API.",
 )
 @_data_directory_option()
-@_focused_argument()
+@_focused_option()
 @_service_name_argument()
 def all_archived_urls_command(
         data_directory: Path,
@@ -126,7 +126,7 @@ def _archived_urls(
          "the Wayback Machine's CDX API.",
 )
 @_data_directory_option()
-@_focused_argument()
+@_focused_option()
 @_service_name_argument()
 def archived_urls_command(
         data_directory: Path,
@@ -160,7 +160,7 @@ def _archived_query_urls(
     help="Get number of queries from fetched archived URLs.",
 )
 @_data_directory_option()
-@_focused_argument()
+@_focused_option()
 @_service_name_argument()
 def archived_query_urls_command(
         data_directory: Path,
@@ -194,7 +194,7 @@ def _archived_raw_serps(
     help="Get number of raw SERP contents (in WARC files) for parsed queries.",
 )
 @_data_directory_option()
-@_focused_argument()
+@_focused_option()
 @_service_name_argument()
 def archived_raw_serps_command(
         data_directory: Path,
@@ -228,7 +228,7 @@ def _archived_parsed_serps(
     help="Get number of parsed SERPs.",
 )
 @_data_directory_option()
-@_focused_argument()
+@_focused_option()
 @_service_name_argument()
 def archived_parsed_serps_command(
         data_directory: Path,
@@ -263,7 +263,7 @@ def _archived_raw_search_results(
          "for parsed SERPs.",
 )
 @_data_directory_option()
-@_focused_argument()
+@_focused_option()
 @_service_name_argument()
 def archived_raw_search_results_command(
         data_directory: Path,
@@ -291,7 +291,7 @@ def _archived_parsed_search_results(
          "from raw search result contents.",
 )
 @_data_directory_option()
-@_focused_argument()
+@_focused_option()
 @_service_name_argument()
 def archived_parsed_search_results_command(
         data_directory: Path,
@@ -310,7 +310,17 @@ def archived_parsed_search_results_command(
     help="Get all stats for all services.",
 )
 @_data_directory_option()
-@_focused_argument()
+@_focused_option()
+@option(
+    "--min-rank", "--min-alexa-rank",
+    type=IntRange(min=1),
+    required=False,
+)
+@option(
+    "--max-rank", "--max-alexa-rank",
+    type=IntRange(min=1),
+    required=False,
+)
 @option(
     "-o", "--output", "--output-path",
     type=PathParam(
@@ -322,16 +332,6 @@ def archived_parsed_search_results_command(
         resolve_path=True,
         path_type=Path,
     ),
-    required=False,
-)
-@option(
-    "--min-rank", "--min-alexa-rank",
-    type=IntRange(min=1),
-    required=False,
-)
-@option(
-    "--max-rank", "--max-alexa-rank",
-    type=IntRange(min=1),
     required=False,
 )
 def all_stats_command(
