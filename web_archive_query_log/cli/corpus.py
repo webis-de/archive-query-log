@@ -53,10 +53,6 @@ from web_archive_query_log.model import ArchivedUrl, CorpusQueryUrl, \
     type=IntRange(min=1),
     required=False,
 )
-@option(
-    "--parallel",
-    is_flag=True,
-)
 @argument(
     "queries_output",
     type=PathParam(
@@ -88,7 +84,6 @@ def corpus_command(
         focused: bool,
         min_rank: int | None,
         max_rank: int | None,
-        parallel: bool,
         queries_output: Path,
         documents_output: Path,
 ) -> None:
@@ -155,27 +150,10 @@ def corpus_command(
         #         focused=focused,
         #     )
         # )
-        indexes = [
-            archived_url_index,
-            archived_query_url_index,
-            archived_raw_serp_index,
-            archived_parsed_serp_index,
-            archived_search_result_snippet_index,
-            archived_raw_search_result_index,
-            # archived_parsed_search_result_index,
-        ]
     with queries_output.open("w") as queries_file, \
             documents_output.open("w") as documents_file:
         for service in services:
             print(f"\033[1mService: {service.name}\033[0m")
-            indexes = tqdm(
-                indexes,
-                desc="Build indexes",
-                unit="index",
-            )
-            for index in indexes:
-                index.index(service=service, parallel=parallel)
-
             archived_urls = archived_url_index.values()
             query_schema = CorpusQuery.schema()
             document_schema = CorpusDocument.schema()
