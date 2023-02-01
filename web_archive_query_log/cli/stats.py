@@ -112,9 +112,9 @@ def _archived_urls(
 ) -> int:
     from web_archive_query_log.index import ArchivedUrlIndex
     with ArchivedUrlIndex(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
+            data_directory=data_directory,
+            focused=focused,
+            service=service,
     ) as index:
         index.index()
         return len(index)
@@ -147,9 +147,9 @@ def _archived_query_urls(
 ) -> int:
     from web_archive_query_log.index import ArchivedQueryUrlIndex
     with  ArchivedQueryUrlIndex(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
+            data_directory=data_directory,
+            focused=focused,
+            service=service,
     ) as index:
         index.index()
         return len(index)
@@ -181,9 +181,9 @@ def _archived_raw_serps(
 ) -> int:
     from web_archive_query_log.index import ArchivedRawSerpIndex
     with ArchivedRawSerpIndex(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
+            data_directory=data_directory,
+            focused=focused,
+            service=service,
     ) as index:
         index.index()
         return len(index)
@@ -215,9 +215,9 @@ def _archived_parsed_serps(
 ) -> int:
     from web_archive_query_log.index import ArchivedParsedSerpIndex
     with ArchivedParsedSerpIndex(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
+            data_directory=data_directory,
+            focused=focused,
+            service=service,
     ) as index:
         index.index()
         return len(index)
@@ -249,9 +249,9 @@ def _archived_raw_search_results(
 ) -> int:
     from web_archive_query_log.index import ArchivedRawSearchResultIndex
     with ArchivedRawSearchResultIndex(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
+            data_directory=data_directory,
+            focused=focused,
+            service=service,
     ) as index:
         index.index()
         return len(index)
@@ -334,12 +334,17 @@ def archived_parsed_search_results_command(
     ),
     required=False,
 )
+@option(
+    "--no-index",
+    is_flag=True,
+)
 def all_stats_command(
         data_directory: Path,
         focused: bool,
         output: Path | None,
         min_rank: int | None,
         max_rank: int | None,
+        no_index: bool,
 ) -> None:
     services = SERVICES.values()
     if min_rank is not None:
@@ -369,50 +374,51 @@ def all_stats_command(
         )
         print(f"✔ Available Archived URLs: "
               f"{service_results['all-archived-urls']}")
-        service_results["archived-urls"] = _archived_urls(
-            data_directory,
-            focused,
-            service.name,
-        )
-        print(f"✔ Archived URLs: "
-              f"{service_results['archived-urls']}")
-        service_results["archived-query-urls"] = _archived_query_urls(
-            data_directory,
-            focused,
-            service.name,
-        )
-        print(f"✔ Archived query URLs: "
-              f"{service_results['archived-query-urls']}")
-        service_results["archived-raw-serps"] = _archived_raw_serps(
-            data_directory,
-            focused,
-            service.name,
-        )
-        print(f"✔ Archived raw SERPs: "
-              f"{service_results['archived-raw-serps']}")
-        service_results["archived-parsed-serps"] = _archived_parsed_serps(
-            data_directory,
-            focused,
-            service.name,
-        )
-        print(f"✔ Archived parsed SERPs: "
-              f"{service_results['archived-parsed-serps']}")
-        service_results["archived-raw-search-results"] = \
-            _archived_raw_search_results(
+        if not no_index:
+            service_results["archived-urls"] = _archived_urls(
                 data_directory,
                 focused,
                 service.name,
             )
-        print(f"✔ Archived raw search results: "
-              f"{service_results['archived-raw-search-results']}")
-        # service_results["archived-parsed-search-results"] = \
-        #     _archived_parsed_search_results(
-        #         data_directory,
-        #         focused,
-        #         service.name,
-        #     )
-        # print(f"✔ Archived parsed search results: "
-        #         f"{service_results['archived-parsed-search-results']}")
+            print(f"✔ Archived URLs: "
+                  f"{service_results['archived-urls']}")
+            service_results["archived-query-urls"] = _archived_query_urls(
+                data_directory,
+                focused,
+                service.name,
+            )
+            print(f"✔ Archived query URLs: "
+                  f"{service_results['archived-query-urls']}")
+            service_results["archived-raw-serps"] = _archived_raw_serps(
+                data_directory,
+                focused,
+                service.name,
+            )
+            print(f"✔ Archived raw SERPs: "
+                  f"{service_results['archived-raw-serps']}")
+            service_results["archived-parsed-serps"] = _archived_parsed_serps(
+                data_directory,
+                focused,
+                service.name,
+            )
+            print(f"✔ Archived parsed SERPs: "
+                  f"{service_results['archived-parsed-serps']}")
+            service_results["archived-raw-search-results"] = \
+                _archived_raw_search_results(
+                    data_directory,
+                    focused,
+                    service.name,
+                )
+            print(f"✔ Archived raw search results: "
+                  f"{service_results['archived-raw-search-results']}")
+            # service_results["archived-parsed-search-results"] = \
+            #     _archived_parsed_search_results(
+            #         data_directory,
+            #         focused,
+            #         service.name,
+            #     )
+            # print(f"✔ Archived parsed search results: "
+            #         f"{service_results['archived-parsed-search-results']}")
         print()
         results[service.name] = service_results
 
