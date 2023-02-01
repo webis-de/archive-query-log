@@ -109,6 +109,7 @@ def _archived_urls(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> int:
     from web_archive_query_log.index import ArchivedUrlIndex
     with ArchivedUrlIndex(
@@ -116,7 +117,7 @@ def _archived_urls(
             focused=focused,
             service=service,
     ) as index:
-        index.index()
+        index.index(parallel=parallel)
         return len(index)
 
 
@@ -127,16 +128,22 @@ def _archived_urls(
 )
 @_data_directory_option()
 @_focused_option()
+@option(
+    "--parallel",
+    is_flag=True,
+)
 @_service_name_argument()
 def archived_urls_command(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> None:
     print(_archived_urls(
         data_directory=data_directory,
         focused=focused,
         service=service,
+        parallel=parallel,
     ))
 
 
@@ -144,6 +151,7 @@ def _archived_query_urls(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> int:
     from web_archive_query_log.index import ArchivedQueryUrlIndex
     with  ArchivedQueryUrlIndex(
@@ -151,7 +159,7 @@ def _archived_query_urls(
             focused=focused,
             service=service,
     ) as index:
-        index.index()
+        index.index(parallel=parallel)
         return len(index)
 
 
@@ -161,16 +169,22 @@ def _archived_query_urls(
 )
 @_data_directory_option()
 @_focused_option()
+@option(
+    "--parallel",
+    is_flag=True,
+)
 @_service_name_argument()
 def archived_query_urls_command(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> None:
     print(_archived_query_urls(
         data_directory=data_directory,
         focused=focused,
         service=service,
+        parallel=parallel,
     ))
 
 
@@ -178,6 +192,7 @@ def _archived_raw_serps(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> int:
     from web_archive_query_log.index import ArchivedRawSerpIndex
     with ArchivedRawSerpIndex(
@@ -185,7 +200,7 @@ def _archived_raw_serps(
             focused=focused,
             service=service,
     ) as index:
-        index.index()
+        index.index(parallel=parallel)
         return len(index)
 
 
@@ -195,16 +210,22 @@ def _archived_raw_serps(
 )
 @_data_directory_option()
 @_focused_option()
+@option(
+    "--parallel",
+    is_flag=True,
+)
 @_service_name_argument()
 def archived_raw_serps_command(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> None:
     print(_archived_raw_serps(
         data_directory=data_directory,
         focused=focused,
         service=service,
+        parallel=parallel,
     ))
 
 
@@ -212,6 +233,7 @@ def _archived_parsed_serps(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> int:
     from web_archive_query_log.index import ArchivedParsedSerpIndex
     with ArchivedParsedSerpIndex(
@@ -219,7 +241,7 @@ def _archived_parsed_serps(
             focused=focused,
             service=service,
     ) as index:
-        index.index()
+        index.index(parallel=parallel)
         return len(index)
 
 
@@ -229,16 +251,22 @@ def _archived_parsed_serps(
 )
 @_data_directory_option()
 @_focused_option()
+@option(
+    "--parallel",
+    is_flag=True,
+)
 @_service_name_argument()
 def archived_parsed_serps_command(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> None:
     print(_archived_parsed_serps(
         data_directory=data_directory,
         focused=focused,
         service=service,
+        parallel=parallel,
     ))
 
 
@@ -246,6 +274,7 @@ def _archived_raw_search_results(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> int:
     from web_archive_query_log.index import ArchivedRawSearchResultIndex
     with ArchivedRawSearchResultIndex(
@@ -253,7 +282,7 @@ def _archived_raw_search_results(
             focused=focused,
             service=service,
     ) as index:
-        index.index()
+        index.index(parallel=parallel)
         return len(index)
 
 
@@ -264,16 +293,22 @@ def _archived_raw_search_results(
 )
 @_data_directory_option()
 @_focused_option()
+@option(
+    "--parallel",
+    is_flag=True,
+)
 @_service_name_argument()
 def archived_raw_search_results_command(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> None:
     print(_archived_raw_search_results(
         data_directory=data_directory,
         focused=focused,
         service=service,
+        parallel=parallel,
     ))
 
 
@@ -281,6 +316,7 @@ def _archived_parsed_search_results(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> int:
     raise NotImplementedError()
 
@@ -292,16 +328,22 @@ def _archived_parsed_search_results(
 )
 @_data_directory_option()
 @_focused_option()
+@option(
+    "--parallel",
+    is_flag=True,
+)
 @_service_name_argument()
 def archived_parsed_search_results_command(
         data_directory: Path,
         focused: bool,
         service: str,
+        parallel: bool,
 ) -> None:
     print(_archived_parsed_search_results(
         data_directory=data_directory,
         focused=focused,
         service=service,
+        parallel=parallel,
     ))
 
 
@@ -338,6 +380,10 @@ def archived_parsed_search_results_command(
     "--no-index",
     is_flag=True,
 )
+@option(
+    "--parallel",
+    is_flag=True,
+)
 def all_stats_command(
         data_directory: Path,
         focused: bool,
@@ -345,6 +391,7 @@ def all_stats_command(
         min_rank: int | None,
         max_rank: int | None,
         no_index: bool,
+        parallel: bool,
 ) -> None:
     services = SERVICES.values()
     if min_rank is not None:
@@ -379,6 +426,7 @@ def all_stats_command(
                 data_directory,
                 focused,
                 service.name,
+                parallel,
             )
             print(f"✔ Archived URLs: "
                   f"{service_results['archived-urls']}")
@@ -386,6 +434,7 @@ def all_stats_command(
                 data_directory,
                 focused,
                 service.name,
+                parallel,
             )
             print(f"✔ Archived query URLs: "
                   f"{service_results['archived-query-urls']}")
@@ -393,6 +442,7 @@ def all_stats_command(
                 data_directory,
                 focused,
                 service.name,
+                parallel,
             )
             print(f"✔ Archived raw SERPs: "
                   f"{service_results['archived-raw-serps']}")
@@ -400,6 +450,7 @@ def all_stats_command(
                 data_directory,
                 focused,
                 service.name,
+                parallel,
             )
             print(f"✔ Archived parsed SERPs: "
                   f"{service_results['archived-parsed-serps']}")
@@ -408,6 +459,7 @@ def all_stats_command(
                     data_directory,
                     focused,
                     service.name,
+                    parallel,
                 )
             print(f"✔ Archived raw search results: "
                   f"{service_results['archived-raw-search-results']}")
@@ -416,6 +468,7 @@ def all_stats_command(
             #         data_directory,
             #         focused,
             #         service.name,
+            #         parallel,
             #     )
             # print(f"✔ Archived parsed search results: "
             #         f"{service_results['archived-parsed-search-results']}")

@@ -171,7 +171,7 @@ class _Index(
         return _PathIndex(index_path)
 
     @abstractmethod
-    def index(self) -> None:
+    def index(self, parallel: bool = False) -> None:
         pass
 
     @abstractmethod
@@ -247,7 +247,7 @@ class _JsonLineIndex(_Index[Location, _RecordType]):
                 offset = gzip_file.tell()
         self._path_index.add(path)
 
-    def index(self) -> None:
+    def index(self, parallel: bool = False) -> None:
         paths = list(self._indexable_paths())
         if len(paths) == 0:
             return
@@ -256,7 +256,7 @@ class _JsonLineIndex(_Index[Location, _RecordType]):
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool()
+        pool = ThreadPool(processes=None if parallel else 1)
 
         def index_path(path: Path):
             self._index_path(path)
@@ -338,7 +338,7 @@ class _WarcIndex(_Index[Location, _RecordType]):
             self._index[record_id] = record_location
         self._path_index.add(path)
 
-    def index(self) -> None:
+    def index(self, parallel: bool = False) -> None:
         paths = list(self._indexable_paths())
         if len(paths) == 0:
             return
@@ -347,7 +347,7 @@ class _WarcIndex(_Index[Location, _RecordType]):
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool()
+        pool = ThreadPool(processes=None if parallel else 1)
 
         def index_path(path: Path):
             self._index_path(path)
@@ -495,7 +495,7 @@ class ArchivedSearchResultSnippetIndex(
                 offset = gzip_file.tell()
         self._path_index.add(path)
 
-    def index(self) -> None:
+    def index(self, parallel: bool = False) -> None:
         paths = list(self._indexable_paths())
         if len(paths) == 0:
             return
@@ -504,7 +504,7 @@ class ArchivedSearchResultSnippetIndex(
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool()
+        pool = ThreadPool(processes=None if parallel else 1)
 
         def index_path(path: Path):
             self._index_path(path)

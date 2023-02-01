@@ -53,6 +53,10 @@ from web_archive_query_log.model import ArchivedUrl, CorpusQueryUrl, \
     type=IntRange(min=1),
     required=False,
 )
+@option(
+    "--parallel",
+    is_flag=True,
+)
 @argument(
     "queries_output",
     type=PathParam(
@@ -84,6 +88,7 @@ def corpus_command(
         focused: bool,
         min_rank: int | None,
         max_rank: int | None,
+        parallel: bool,
         queries_output: Path,
         documents_output: Path,
 ) -> None:
@@ -175,7 +180,7 @@ def corpus_command(
                     unit="index",
                 )
                 for index in indexes:
-                    index.index()
+                    index.index(parallel=parallel)
 
                 archived_urls = archived_url_index.values()
                 query_schema = CorpusQuery.schema()
