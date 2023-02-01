@@ -115,9 +115,8 @@ def _archived_urls(
     with ArchivedUrlIndex(
             data_directory=data_directory,
             focused=focused,
-            service=service,
     ) as index:
-        index.index(parallel=parallel)
+        index.index(service=service, parallel=parallel)
         return len(index)
 
 
@@ -157,9 +156,8 @@ def _archived_query_urls(
     with  ArchivedQueryUrlIndex(
             data_directory=data_directory,
             focused=focused,
-            service=service,
     ) as index:
-        index.index(parallel=parallel)
+        index.index(service=service, parallel=parallel)
         return len(index)
 
 
@@ -198,9 +196,8 @@ def _archived_raw_serps(
     with ArchivedRawSerpIndex(
             data_directory=data_directory,
             focused=focused,
-            service=service,
     ) as index:
-        index.index(parallel=parallel)
+        index.index(service=service, parallel=parallel)
         return len(index)
 
 
@@ -239,9 +236,8 @@ def _archived_parsed_serps(
     with ArchivedParsedSerpIndex(
             data_directory=data_directory,
             focused=focused,
-            service=service,
     ) as index:
-        index.index(parallel=parallel)
+        index.index(service=service, parallel=parallel)
         return len(index)
 
 
@@ -280,9 +276,8 @@ def _archived_raw_search_results(
     with ArchivedRawSearchResultIndex(
             data_directory=data_directory,
             focused=focused,
-            service=service,
     ) as index:
-        index.index(parallel=parallel)
+        index.index(service=service, parallel=parallel)
         return len(index)
 
 

@@ -14,7 +14,7 @@ from diskcache import Cache
 from fastwarc import ArchiveIterator, GZipStream, FileStream, WarcRecord, \
     WarcRecordType
 from fastwarc.stream_io import PythonIOStreamAdapter
-from marshmallow import Schema
+from marshmallow import Schema, ValidationError
 from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH
@@ -135,11 +135,6 @@ class _Index(
 
     @property
     @abstractmethod
-    def service(self) -> str | None:
-        pass
-
-    @property
-    @abstractmethod
     def _index_name(self) -> str:
         pass
 
@@ -153,8 +148,6 @@ class _Index(
         index_path = self.data_directory / "index"
         if self.focused:
             index_path /= "focused"
-        if self.service is not None:
-            index_path /= self.service
         index_path /= self._index_name
         index_path.mkdir(parents=True, exist_ok=True)
         return _LocationIndex(index_path, self._location_type)
@@ -164,14 +157,16 @@ class _Index(
         index_path = self.data_directory / "index"
         if self.focused:
             index_path /= "focused"
-        if self.service is not None:
-            index_path /= self.service
         index_path /= f"{self._index_name}-paths"
         index_path.mkdir(parents=True, exist_ok=True)
         return _PathIndex(index_path)
 
     @abstractmethod
-    def index(self, parallel: bool = False) -> None:
+    def index(
+            self,
+            service: str | None = None,
+            parallel: bool = False,
+    ) -> None:
         pass
 
     @abstractmethod
@@ -205,9 +200,12 @@ class _JsonLineIndex(_Index[Location, _RecordType]):
     def _schema(self) -> Schema:
         return self._record_type.schema()
 
-    def _indexable_paths(self) -> Iterator[Path]:
+    def _indexable_paths(
+            self,
+            service: str | None = None,
+    ) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
-        service = f"{self.service}" if self.service is not None else "*"
+        service = f"{service}" if service is not None else "*"
         paths = self.data_directory.glob(
             f"{focused}{self._index_name}/{service}/*/*.jsonl.gz"
         )
@@ -247,8 +245,12 @@ class _JsonLineIndex(_Index[Location, _RecordType]):
                 offset = gzip_file.tell()
         self._path_index.add(path)
 
-    def index(self, parallel: bool = False) -> None:
-        paths = list(self._indexable_paths())
+    def index(
+            self,
+            service: str | None = None,
+            parallel: bool = False,
+    ) -> None:
+        paths = list(self._indexable_paths(service))
         if len(paths) == 0:
             return
         progress = tqdm(
@@ -293,9 +295,12 @@ class _WarcIndex(_Index[Location, _RecordType]):
     def _read_record(self, record: WarcRecord) -> _RecordType:
         pass
 
-    def _indexable_paths(self) -> Iterator[Path]:
+    def _indexable_paths(
+            self,
+            service: str | None = None,
+    ) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
-        service = f"{self.service}" if self.service is not None else "*"
+        service = f"{service}" if service is not None else "*"
         paths = self.data_directory.glob(
             f"{focused}{self._index_name}/{service}/*/*/*.warc.gz"
         )
@@ -339,8 +344,12 @@ class _WarcIndex(_Index[Location, _RecordType]):
             self._index[record_id] = record_location
         self._path_index.add(path)
 
-    def index(self, parallel: bool = False) -> None:
-        paths = list(self._indexable_paths())
+    def index(
+            self,
+            service: str | None = None,
+            parallel: bool = False,
+    ) -> None:
+        paths = list(self._indexable_paths(service))
         if len(paths) == 0:
             return
         progress = tqdm(
@@ -384,7 +393,6 @@ class ArchivedUrlIndex(_JsonLineIndex[ArchivedUrl]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
-    service: str | None = None
 
 
 @dataclass(frozen=True)
@@ -395,7 +403,6 @@ class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
-    service: str | None = None
 
 
 @dataclass(frozen=True)
@@ -406,10 +413,13 @@ class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
-    service: str | None = None
 
     def _read_id(self, record: WarcRecord) -> UUID:
-        return self._schema.loads(record.headers["Archived-URL"]).id
+        try:
+            return self._schema.loads(record.headers["Archived-URL"]).id
+        except ValidationError as e:
+            print(record.headers["Archived-URL"])
+            raise e
 
     def _read_record(self, record: WarcRecord) -> ArchivedRawSerp:
         archived_url: ArchivedQueryUrl = self._schema.loads(
@@ -437,7 +447,6 @@ class ArchivedParsedSerpIndex(_JsonLineIndex[ArchivedParsedSerp]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
-    service: str | None = None
 
 
 @dataclass(frozen=True)
@@ -450,11 +459,13 @@ class ArchivedSearchResultSnippetIndex(
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
-    service: str | None = None
 
-    def _indexable_paths(self) -> Iterator[Path]:
+    def _indexable_paths(
+            self,
+            service: str | None = None,
+    ) -> Iterator[Path]:
         focused = "focused/" if self.focused else ""
-        service = f"{self.service}" if self.service is not None else "*"
+        service = f"{service}" if service is not None else "*"
         paths = self.data_directory.glob(
             f"{focused}archived-parsed-serps/{service}/*/*.jsonl.gz"
         )
@@ -497,8 +508,12 @@ class ArchivedSearchResultSnippetIndex(
                 offset = gzip_file.tell()
         self._path_index.add(path)
 
-    def index(self, parallel: bool = False) -> None:
-        paths = list(self._indexable_paths())
+    def index(
+            self,
+            service: str | None = None,
+            parallel: bool = False,
+    ) -> None:
+        paths = list(self._indexable_paths(service))
         if len(paths) == 0:
             return
         progress = tqdm(
@@ -548,10 +563,13 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
-    service: str | None = None
 
     def _read_id(self, record: WarcRecord) -> UUID:
-        return self._schema.loads(record.headers["Archived-URL"]).id
+        try:
+            return self._schema.loads(record.headers["Archived-URL"]).id
+        except ValidationError as e:
+            print(record.headers["Archived-URL"])
+            raise e
 
     def _read_record(self, record: WarcRecord) -> ArchivedRawSearchResult:
         archived_url: ArchivedSearchResultSnippet = self._schema.loads(

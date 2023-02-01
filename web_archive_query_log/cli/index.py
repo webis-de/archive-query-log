@@ -13,7 +13,6 @@ from web_archive_query_log.config import SERVICES
 from web_archive_query_log.index import ArchivedRawSerpIndex, \
     ArchivedUrlIndex, ArchivedQueryUrlIndex, ArchivedParsedSerpIndex, \
     ArchivedSearchResultSnippetIndex, ArchivedRawSearchResultIndex
-from web_archive_query_log.model import Service
 
 
 @main.command(
@@ -72,78 +71,47 @@ def index_command(
         )
     services = sorted(services, key=lambda service: service.alexa_rank or inf)
 
-    pool = ThreadPoolExecutor()
-    progress = tqdm(
-        total=len(services),
-        desc="Index services",
-        unit="service",
-    )
-
-    def index(service: Service) -> None:
-        _index_service(
-            data_directory=data_directory,
-            focused=focused,
-            service=service,
-        )
-        progress.update()
-
-    for _ in pool.map(index, services):
-        pass
-
-
-def _index_service(
-        data_directory: Path,
-        focused: bool,
-        service: Service,
-) -> None:
     with ExitStack() as exit_stack:
         archived_url_index = exit_stack.enter_context(
             ArchivedUrlIndex(
                 data_directory=data_directory,
                 focused=focused,
-                service=service.name,
             )
         )
         archived_query_url_index = exit_stack.enter_context(
             ArchivedQueryUrlIndex(
                 data_directory=data_directory,
                 focused=focused,
-                service=service.name,
             )
         )
         archived_raw_serp_index = exit_stack.enter_context(
             ArchivedRawSerpIndex(
                 data_directory=data_directory,
                 focused=focused,
-                service=service.name,
             )
         )
         archived_parsed_serp_index = exit_stack.enter_context(
             ArchivedParsedSerpIndex(
                 data_directory=data_directory,
                 focused=focused,
-                service=service.name,
             )
         )
         archived_search_result_snippet_index = exit_stack.enter_context(
             ArchivedSearchResultSnippetIndex(
                 data_directory=data_directory,
                 focused=focused,
-                service=service.name,
             )
         )
         archived_raw_search_result_index = exit_stack.enter_context(
             ArchivedRawSearchResultIndex(
                 data_directory=data_directory,
                 focused=focused,
-                service=service.name,
             )
         )
         # archived_parsed_search_result_index = exit_stack.enter_context.(
         #     ArchivedParsedSearchResultIndex(
         #         data_directory=data_directory,
         #         focused=focused,
-        #         service=service_name,
         #     )
         # )
         indexes = [
@@ -156,16 +124,23 @@ def _index_service(
             # archived_parsed_search_result_index,
         ]
 
+        service_indexes = [
+            (service, index)
+            for service in services
+            for index in indexes
+        ]
+
         pool = ThreadPoolExecutor()
         progress = tqdm(
-            total=len(indexes),
-            desc="Build indexes",
-            unit="index",
+            total=len(service_indexes),
+            desc="Build service indexes",
+            unit="service index",
         )
 
-        def index(indexer) -> None:
-            indexer.index(parallel=True)
+        def run_index(service_index) -> None:
+            service, index = service_index
+            index.index(service.name)
             progress.update()
 
-        for _ in pool.map(index, indexes):
+        for _ in pool.map(run_index, service_indexes):
             pass
