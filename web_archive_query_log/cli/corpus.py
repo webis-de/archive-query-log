@@ -1,16 +1,14 @@
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import ExitStack
-from math import inf
 from pathlib import Path
 from typing import Collection
 
-from click import option, BOOL, IntRange, argument
+from click import option, BOOL, argument
 from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH
 from web_archive_query_log.cli import main
 from web_archive_query_log.cli.util import PathParam
-from web_archive_query_log.config import SERVICES
 from web_archive_query_log.index import ArchivedRawSerpIndex, \
     ArchivedUrlIndex, ArchivedQueryUrlIndex, ArchivedParsedSerpIndex, \
     ArchivedSearchResultSnippetIndex, ArchivedRawSearchResultIndex, \
@@ -43,16 +41,6 @@ from web_archive_query_log.model import ArchivedUrl, CorpusQueryUrl, \
     type=BOOL,
     default=False,
     is_flag=True,
-)
-@option(
-    "--min-rank", "--min-alexa-rank",
-    type=IntRange(min=1),
-    required=False,
-)
-@option(
-    "--max-rank", "--max-alexa-rank",
-    type=IntRange(min=1),
-    required=False,
 )
 @option(
     "-q", "--queries",
@@ -88,8 +76,6 @@ from web_archive_query_log.model import ArchivedUrl, CorpusQueryUrl, \
 def corpus_command(
         data_directory: Path,
         focused: bool,
-        min_rank: int | None,
-        max_rank: int | None,
         queries: bool,
         queries_output: Path,
         documents_output: Path,
@@ -97,22 +83,6 @@ def corpus_command(
     from web_archive_query_log.index import ArchivedUrlIndex, \
         ArchivedQueryUrlIndex, ArchivedRawSerpIndex, ArchivedParsedSerpIndex, \
         ArchivedSearchResultSnippetIndex, ArchivedRawSearchResultIndex
-    services = SERVICES.values()
-    if min_rank is not None:
-        services = (
-            service
-            for service in services
-            if (service.alexa_rank is not None and
-                service.alexa_rank >= min_rank)
-        )
-    if max_rank is not None:
-        services = (
-            service
-            for service in services
-            if (service.alexa_rank is not None and
-                service.alexa_rank <= max_rank)
-        )
-    services = sorted(services, key=lambda service: service.alexa_rank or inf)
 
     with ExitStack() as exit_stack:
         archived_url_index = exit_stack.enter_context(
@@ -159,50 +129,49 @@ def corpus_command(
         # )
     with queries_output.open("w") as queries_file, \
             documents_output.open("w") as documents_file:
-        for service in services:
-            print(f"\033[1mService: {service.name}\033[0m")
-            archived_urls: Collection[ArchivedUrl]
-            if queries:
-                archived_urls = archived_query_url_index.values()
-            else:
-                archived_urls = archived_url_index.values()
-            query_schema = CorpusQuery.schema()
-            document_schema = CorpusDocument.schema()
 
-            progress = tqdm(
-                total=len(archived_urls),
-                desc="Build corpus",
-                unit="URL",
+        archived_urls: Collection[ArchivedUrl]
+        if queries:
+            archived_urls = archived_query_url_index.values()
+        else:
+            archived_urls = archived_url_index.values()
+        query_schema = CorpusQuery.schema()
+        document_schema = CorpusDocument.schema()
+
+        progress = tqdm(
+            total=len(archived_urls),
+            desc="Build corpus",
+            unit="URL",
+        )
+
+        def dump_url(url: ArchivedUrl) -> None:
+            query, documents = _build_query_documents(
+                archived_url_index=archived_url_index,
+                archived_query_url_index=archived_query_url_index,
+                archived_raw_serp_index=archived_raw_serp_index,
+                archived_parsed_serp_index=archived_parsed_serp_index,
+                archived_search_result_snippet_index=(
+                    archived_search_result_snippet_index
+                ),
+                archived_raw_search_result_index=(
+                    archived_raw_search_result_index
+                ),
+                # archived_parsed_search_result_index=(
+                #     archived_parsed_search_result_index
+                # ),
+                archived_url=url,
             )
+            queries_file.write(query_schema.dumps(query))
+            queries_file.write("\n")
+            for document in documents:
+                documents_file.write(document_schema.dumps(document))
+                documents_file.write("\n")
+            progress.update()
 
-            def dump_url(url: ArchivedUrl) -> None:
-                query, documents = _build_query_documents(
-                    archived_url_index=archived_url_index,
-                    archived_query_url_index=archived_query_url_index,
-                    archived_raw_serp_index=archived_raw_serp_index,
-                    archived_parsed_serp_index=archived_parsed_serp_index,
-                    archived_search_result_snippet_index=(
-                        archived_search_result_snippet_index
-                    ),
-                    archived_raw_search_result_index=(
-                        archived_raw_search_result_index
-                    ),
-                    # archived_parsed_search_result_index=(
-                    #     archived_parsed_search_result_index
-                    # ),
-                    archived_url=url,
-                )
-                queries_file.write(query_schema.dumps(query))
-                queries_file.write("\n")
-                for document in documents:
-                    documents_file.write(document_schema.dumps(document))
-                    documents_file.write("\n")
-                progress.update()
+        with ThreadPoolExecutor() as executor:
+            executor.map(dump_url, archived_urls)
 
-            with ThreadPoolExecutor() as executor:
-                executor.map(dump_url, archived_urls)
-
-        print()
+    print()
 
 
 def _build_query_url(
