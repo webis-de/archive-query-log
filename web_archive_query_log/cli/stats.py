@@ -105,243 +105,6 @@ def all_archived_urls_command(
     ))
 
 
-def _archived_urls(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> int:
-    from web_archive_query_log.index import ArchivedUrlIndex
-    with ArchivedUrlIndex(
-            data_directory=data_directory,
-            focused=focused,
-    ) as index:
-        index.index(service=service, parallel=parallel)
-        return len(index)
-
-
-@stats_group.command(
-    "archived-urls",
-    help="Get number of fetched archived URLs from "
-         "the Wayback Machine's CDX API.",
-)
-@_data_directory_option()
-@_focused_option()
-@option(
-    "--parallel",
-    is_flag=True,
-)
-@_service_name_argument()
-def archived_urls_command(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> None:
-    print(_archived_urls(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
-        parallel=parallel,
-    ))
-
-
-def _archived_query_urls(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> int:
-    from web_archive_query_log.index import ArchivedQueryUrlIndex
-    with  ArchivedQueryUrlIndex(
-            data_directory=data_directory,
-            focused=focused,
-    ) as index:
-        index.index(service=service, parallel=parallel)
-        return len(index)
-
-
-@stats_group.command(
-    "archived-query-urls",
-    help="Get number of queries from fetched archived URLs.",
-)
-@_data_directory_option()
-@_focused_option()
-@option(
-    "--parallel",
-    is_flag=True,
-)
-@_service_name_argument()
-def archived_query_urls_command(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> None:
-    print(_archived_query_urls(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
-        parallel=parallel,
-    ))
-
-
-def _archived_raw_serps(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> int:
-    from web_archive_query_log.index import ArchivedRawSerpIndex
-    with ArchivedRawSerpIndex(
-            data_directory=data_directory,
-            focused=focused,
-    ) as index:
-        index.index(service=service, parallel=parallel)
-        return len(index)
-
-
-@stats_group.command(
-    "archived-raw-serps",
-    help="Get number of raw SERP contents (in WARC files) for parsed queries.",
-)
-@_data_directory_option()
-@_focused_option()
-@option(
-    "--parallel",
-    is_flag=True,
-)
-@_service_name_argument()
-def archived_raw_serps_command(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> None:
-    print(_archived_raw_serps(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
-        parallel=parallel,
-    ))
-
-
-def _archived_parsed_serps(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> int:
-    from web_archive_query_log.index import ArchivedParsedSerpIndex
-    with ArchivedParsedSerpIndex(
-            data_directory=data_directory,
-            focused=focused,
-    ) as index:
-        index.index(service=service, parallel=parallel)
-        return len(index)
-
-
-@stats_group.command(
-    "archived-parsed-serps",
-    help="Get number of parsed SERPs.",
-)
-@_data_directory_option()
-@_focused_option()
-@option(
-    "--parallel",
-    is_flag=True,
-)
-@_service_name_argument()
-def archived_parsed_serps_command(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> None:
-    print(_archived_parsed_serps(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
-        parallel=parallel,
-    ))
-
-
-def _archived_raw_search_results(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> int:
-    from web_archive_query_log.index import ArchivedRawSearchResultIndex
-    with ArchivedRawSearchResultIndex(
-            data_directory=data_directory,
-            focused=focused,
-    ) as index:
-        index.index(service=service, parallel=parallel)
-        return len(index)
-
-
-@stats_group.command(
-    "archived-raw-search-results",
-    help="Get number of downloaded raw search result contents (as WARC files) "
-         "for parsed SERPs.",
-)
-@_data_directory_option()
-@_focused_option()
-@option(
-    "--parallel",
-    is_flag=True,
-)
-@_service_name_argument()
-def archived_raw_search_results_command(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> None:
-    print(_archived_raw_search_results(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
-        parallel=parallel,
-    ))
-
-
-def _archived_parsed_search_results(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> int:
-    raise NotImplementedError()
-
-
-@stats_group.command(
-    "archived-parsed-search-results",
-    help="Get number of parsed search results "
-         "from raw search result contents.",
-)
-@_data_directory_option()
-@_focused_option()
-@option(
-    "--parallel",
-    is_flag=True,
-)
-@_service_name_argument()
-def archived_parsed_search_results_command(
-        data_directory: Path,
-        focused: bool,
-        service: str,
-        parallel: bool,
-) -> None:
-    print(_archived_parsed_search_results(
-        data_directory=data_directory,
-        focused=focused,
-        service=service,
-        parallel=parallel,
-    ))
-
-
 @stats_group.command(
     "all",
     help="Get all stats for all services.",
@@ -372,10 +135,6 @@ def archived_parsed_search_results_command(
     required=False,
 )
 @option(
-    "--no-index",
-    is_flag=True,
-)
-@option(
     "--parallel",
     is_flag=True,
 )
@@ -385,7 +144,6 @@ def all_stats_command(
         output: Path | None,
         min_rank: int | None,
         max_rank: int | None,
-        no_index: bool,
         parallel: bool,
 ) -> None:
     services = SERVICES.values()
@@ -408,7 +166,6 @@ def all_stats_command(
     for service in services:
         service_results: dict[str, int] = {}
         print(f"\033[1mService: {service.name}\033[0m")
-        print(f"✔ Alexa rank: {service.alexa_rank}")
         service_results["all-archived-urls"] = _all_archived_urls(
             data_directory,
             focused,
@@ -416,57 +173,6 @@ def all_stats_command(
         )
         print(f"✔ Available Archived URLs: "
               f"{service_results['all-archived-urls']}")
-        if not no_index:
-            service_results["archived-urls"] = _archived_urls(
-                data_directory,
-                focused,
-                service.name,
-                parallel,
-            )
-            print(f"✔ Archived URLs: "
-                  f"{service_results['archived-urls']}")
-            service_results["archived-query-urls"] = _archived_query_urls(
-                data_directory,
-                focused,
-                service.name,
-                parallel,
-            )
-            print(f"✔ Archived query URLs: "
-                  f"{service_results['archived-query-urls']}")
-            service_results["archived-raw-serps"] = _archived_raw_serps(
-                data_directory,
-                focused,
-                service.name,
-                parallel,
-            )
-            print(f"✔ Archived raw SERPs: "
-                  f"{service_results['archived-raw-serps']}")
-            service_results["archived-parsed-serps"] = _archived_parsed_serps(
-                data_directory,
-                focused,
-                service.name,
-                parallel,
-            )
-            print(f"✔ Archived parsed SERPs: "
-                  f"{service_results['archived-parsed-serps']}")
-            service_results["archived-raw-search-results"] = \
-                _archived_raw_search_results(
-                    data_directory,
-                    focused,
-                    service.name,
-                    parallel,
-                )
-            print(f"✔ Archived raw search results: "
-                  f"{service_results['archived-raw-search-results']}")
-            # service_results["archived-parsed-search-results"] = \
-            #     _archived_parsed_search_results(
-            #         data_directory,
-            #         focused,
-            #         service.name,
-            #         parallel,
-            #     )
-            # print(f"✔ Archived parsed search results: "
-            #         f"{service_results['archived-parsed-search-results']}")
         print()
         results[service.name] = service_results
 
