@@ -573,6 +573,10 @@ class CorpusSearchResult(DataClassJsonMixin):
 
 @dataclass(frozen=True, slots=True)
 class CorpusQuery(CorpusQueryUrl, DataClassJsonMixin):
+    service: str
+    """
+    Name of the search engine service from which the query was fetched.
+    """
     results: Sequence[CorpusSearchResult] | None = field(
         metadata=config(
             encoder=list,
@@ -587,6 +591,10 @@ class CorpusQuery(CorpusQueryUrl, DataClassJsonMixin):
 
 @dataclass(frozen=True, slots=True)
 class CorpusDocument(CorpusSearchResult, DataClassJsonMixin):
+    service: str
+    """
+    Name of the search engine service from which the snippet was fetched.
+    """
     query: CorpusQueryUrl
     """
     Query and SERP that was used to retrieve this result.
