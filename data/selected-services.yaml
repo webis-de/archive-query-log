@@ -4442,7 +4442,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /s
 - name: blackboard
   public_suffix: com
   alexa_domain: blackboard.com
@@ -5042,7 +5043,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /search
 - name: b2b168
   public_suffix: com
   alexa_domain: b2b168.com
@@ -6419,7 +6421,9 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /
+  - /page
 - name: startpage
   public_suffix: com
   alexa_domain: startpage.com
@@ -8642,6 +8646,7 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /?
+  - /search
 - name: resumersvo
   public_suffix: fun
   alexa_domain: resumersvo.fun
@@ -10274,7 +10279,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /search
 - name: openai
   public_suffix: com
   alexa_domain: openai.com
@@ -10413,7 +10419,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /jobs
 - name: ssl2anyone3
   public_suffix: com
   alexa_domain: ssl2anyone3.com
@@ -10600,7 +10607,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: actblue
   public_suffix: com
   alexa_domain: actblue.com
@@ -11809,7 +11817,9 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /
+  - /page
 - name: wenxuecity
   public_suffix: com
   alexa_domain: wenxuecity.com
@@ -12150,7 +12160,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: salesloft
   public_suffix: com
   alexa_domain: salesloft.com
@@ -13247,7 +13258,7 @@
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
-  - /index.php/vod/search
+  - /index.php/
 - name: sergey-mavrodi
   public_suffix: com
   alexa_domain: sergey-mavrodi.com
@@ -15274,7 +15285,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: alarab
   public_suffix: com
   alexa_domain: alarab.com
@@ -15390,7 +15402,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /contents
 - name: hentai-time
   public_suffix: com
   alexa_domain: hentai-time.com
@@ -15973,7 +15986,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /search
 - name: twindiversity
   public_suffix: com
   alexa_domain: twindiversity.com
@@ -16589,7 +16603,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /search
 - name: buedemusica
   public_suffix: com
   alexa_domain: buedemusica.com
@@ -16871,7 +16886,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: marieclaire
   public_suffix: com.tw
   alexa_domain: marieclaire.com.tw
@@ -16995,7 +17011,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: technorati
   public_suffix: com
   alexa_domain: technorati.com
@@ -17107,7 +17124,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes: 
+  - /search
 - name: prweb
   public_suffix: com
   alexa_domain: prweb.com
@@ -17538,7 +17556,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /s
 - name: anysex
   public_suffix: com
   alexa_domain: anysex.com
@@ -17704,7 +17723,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: 3bmeteo
   public_suffix: com
   alexa_domain: 3bmeteo.com
@@ -17863,7 +17883,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: sbi
   public_suffix: co.in
   alexa_domain: sbi.co.in
@@ -18320,6 +18341,7 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /search?
+  - /index.php?
 - name: royal
   public_suffix: uk
   alexa_domain: royal.uk
@@ -19193,19 +19215,13 @@
   alexa_domain: mocah.org
   alexa_rank: 10277
   category: null
-  notes: null
+  notes: excluded; Query not in URL
   input_field: true
   search_form: true
   search_div: false
   domains:
   - mocah.org
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/[0-9]+\-[^/]+\.html
-    type: path_segment
-    segment: 0
-    remove_patterns:
-    - \.html$
-    - ([0-9])
+  query_parsers: [ ]
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -20976,7 +20992,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /search
 - name: taskthesa
   public_suffix: club
   alexa_domain: taskthesa.club
@@ -23073,7 +23090,8 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: [ ]
+  focused_url_prefixes:
+  - /rechercher
 - name: musicasparamissa
   public_suffix: com.br
   alexa_domain: musicasparamissa.com.br
