@@ -106,80 +106,80 @@ def corpus_command(
                 service.alexa_rank <= max_rank)
         )
     services = sorted(services, key=lambda service: service.alexa_rank or inf)
-    for service in services:
-        print(f"\033[1mService: {service.name}\033[0m")
-        with ExitStack() as exit_stack:
-            archived_url_index = exit_stack.enter_context(
-                ArchivedUrlIndex(
-                    data_directory=data_directory,
-                    focused=focused,
-                    service=service.name,
+    with queries_output.open("w") as queries_file, \
+            documents_output.open("w") as documents_file:
+        for service in services:
+            print(f"\033[1mService: {service.name}\033[0m")
+            with ExitStack() as exit_stack:
+                archived_url_index = exit_stack.enter_context(
+                    ArchivedUrlIndex(
+                        data_directory=data_directory,
+                        focused=focused,
+                        service=service.name,
+                    )
                 )
-            )
-            archived_query_url_index = exit_stack.enter_context(
-                ArchivedQueryUrlIndex(
-                    data_directory=data_directory,
-                    focused=focused,
-                    service=service.name,
+                archived_query_url_index = exit_stack.enter_context(
+                    ArchivedQueryUrlIndex(
+                        data_directory=data_directory,
+                        focused=focused,
+                        service=service.name,
+                    )
                 )
-            )
-            archived_raw_serp_index = exit_stack.enter_context(
-                ArchivedRawSerpIndex(
-                    data_directory=data_directory,
-                    focused=focused,
-                    service=service.name,
+                archived_raw_serp_index = exit_stack.enter_context(
+                    ArchivedRawSerpIndex(
+                        data_directory=data_directory,
+                        focused=focused,
+                        service=service.name,
+                    )
                 )
-            )
-            archived_parsed_serp_index = exit_stack.enter_context(
-                ArchivedParsedSerpIndex(
-                    data_directory=data_directory,
-                    focused=focused,
-                    service=service.name,
+                archived_parsed_serp_index = exit_stack.enter_context(
+                    ArchivedParsedSerpIndex(
+                        data_directory=data_directory,
+                        focused=focused,
+                        service=service.name,
+                    )
                 )
-            )
-            archived_search_result_snippet_index = exit_stack.enter_context(
-                ArchivedSearchResultSnippetIndex(
-                    data_directory=data_directory,
-                    focused=focused,
-                    service=service.name,
+                archived_search_result_snippet_index = exit_stack.enter_context(
+                    ArchivedSearchResultSnippetIndex(
+                        data_directory=data_directory,
+                        focused=focused,
+                        service=service.name,
+                    )
                 )
-            )
-            archived_raw_search_result_index = exit_stack.enter_context(
-                ArchivedRawSearchResultIndex(
-                    data_directory=data_directory,
-                    focused=focused,
-                    service=service.name,
+                archived_raw_search_result_index = exit_stack.enter_context(
+                    ArchivedRawSearchResultIndex(
+                        data_directory=data_directory,
+                        focused=focused,
+                        service=service.name,
+                    )
                 )
-            )
-            # archived_parsed_search_result_index = exit_stack.enter_context.(
-            #     ArchivedParsedSearchResultIndex(
-            #         data_directory=data_directory,
-            #         focused=focused,
-            #         service=service.name,
-            #     )
-            # )
-            indexes = [
-                archived_url_index,
-                archived_query_url_index,
-                archived_raw_serp_index,
-                archived_parsed_serp_index,
-                archived_search_result_snippet_index,
-                archived_raw_search_result_index,
-                # archived_parsed_search_result_index,
-            ]
-            indexes = tqdm(
-                indexes,
-                desc="Build indexes",
-                unit="index",
-            )
-            for index in indexes:
-                index.index()
+                # archived_parsed_search_result_index = exit_stack.enter_context.(
+                #     ArchivedParsedSearchResultIndex(
+                #         data_directory=data_directory,
+                #         focused=focused,
+                #         service=service.name,
+                #     )
+                # )
+                indexes = [
+                    archived_url_index,
+                    archived_query_url_index,
+                    archived_raw_serp_index,
+                    archived_parsed_serp_index,
+                    archived_search_result_snippet_index,
+                    archived_raw_search_result_index,
+                    # archived_parsed_search_result_index,
+                ]
+                indexes = tqdm(
+                    indexes,
+                    desc="Build indexes",
+                    unit="index",
+                )
+                for index in indexes:
+                    index.index()
 
-            archived_urls = archived_url_index.values()
-            query_schema = CorpusQuery.schema()
-            document_schema = CorpusDocument.schema()
-            with queries_output.open("w") as queries_file, \
-                    documents_output.open("w") as documents_file:
+                archived_urls = archived_url_index.values()
+                query_schema = CorpusQuery.schema()
+                document_schema = CorpusDocument.schema()
 
                 progress = tqdm(
                     total=len(archived_urls),
@@ -214,7 +214,7 @@ def corpus_command(
                 with ThreadPoolExecutor() as executor:
                     executor.map(dump_url, archived_urls)
 
-        print()
+            print()
 
 
 def _build_query_url(
