@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from click import option, Path as PathParam, argument
+from click import option, Path as PathParam, argument, IntRange
 
 from web_archive_query_log import DATA_DIRECTORY_PATH, CDX_API_URL
 from web_archive_query_log.cli.main import main
@@ -58,9 +58,15 @@ def archived_urls(api_url: str, output_path: Path) -> None:
     type=URL,
     default=CDX_API_URL,
 )
-def domains(data_dir: Path, api_url: str) -> None:
+@option(
+    "-k", "--depth",
+    type=IntRange(min=1),
+    default=1000,
+)
+def domains(data_dir: Path, api_url: str, depth: int) -> None:
     from web_archive_query_log.services.alexa import AlexaTop1MFusedDomains
     AlexaTop1MFusedDomains(
         data_directory_path=data_dir,
         cdx_api_url=api_url,
+        max_domains_per_ranking=depth,
     ).fetch()
