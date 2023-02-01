@@ -534,7 +534,7 @@ class CorpusDocument(DataClassJsonMixin):
     to the nearest available snapshot.
     """
     query: CorpusQueryUrl
-    rank: int
+    snippet_rank: int
     """
     Rank of the result in the SERP.
     """
