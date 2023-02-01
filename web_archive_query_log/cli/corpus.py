@@ -1,9 +1,11 @@
 from concurrent.futures import ThreadPoolExecutor
-from contextlib import ExitStack
+from csv import writer
+from datetime import datetime
+from gzip import GzipFile
 from pathlib import Path
 from typing import Collection
 
-from click import option, BOOL, argument
+from click import option, BOOL
 from tqdm.auto import tqdm
 
 from web_archive_query_log import DATA_DIRECTORY_PATH
@@ -44,99 +46,95 @@ from web_archive_query_log.model import ArchivedUrl, CorpusQueryUrl, \
 )
 @option(
     "-q", "--queries",
-    is_flag=True,
+    type=BOOL,
     default=False,
+    is_flag=True,
 )
-@argument(
-    "queries_output",
+@option(
+    "-o", "--output-directory", "--output-directory-path",
     type=PathParam(
         exists=False,
-        file_okay=True,
-        dir_okay=False,
+        file_okay=False,
+        dir_okay=True,
         writable=True,
-        readable=False,
+        readable=True,
         resolve_path=True,
         path_type=Path,
     ),
-    required=True,
-)
-@argument(
-    "documents_output",
-    type=PathParam(
-        exists=False,
-        file_okay=True,
-        dir_okay=False,
-        writable=True,
-        readable=False,
-        resolve_path=True,
-        path_type=Path,
-    ),
-    required=True,
+    required=False,
 )
 def corpus_command(
         data_directory: Path,
         focused: bool,
         queries: bool,
-        queries_output: Path,
-        documents_output: Path,
+        output_directory: Path,
 ) -> None:
     from web_archive_query_log.index import ArchivedUrlIndex, \
         ArchivedQueryUrlIndex, ArchivedRawSerpIndex, ArchivedParsedSerpIndex, \
         ArchivedSearchResultSnippetIndex, ArchivedRawSearchResultIndex
 
-    with ExitStack() as exit_stack:
-        archived_url_index = exit_stack.enter_context(
-            ArchivedUrlIndex(
-                data_directory=data_directory,
-                focused=focused,
-            )
-        )
-        archived_query_url_index = exit_stack.enter_context(
-            ArchivedQueryUrlIndex(
-                data_directory=data_directory,
-                focused=focused,
-            )
-        )
-        archived_raw_serp_index = exit_stack.enter_context(
-            ArchivedRawSerpIndex(
-                data_directory=data_directory,
-                focused=focused,
-            )
-        )
-        archived_parsed_serp_index = exit_stack.enter_context(
-            ArchivedParsedSerpIndex(
-                data_directory=data_directory,
-                focused=focused,
-            )
-        )
-        archived_search_result_snippet_index = exit_stack.enter_context(
-            ArchivedSearchResultSnippetIndex(
-                data_directory=data_directory,
-                focused=focused,
-            )
-        )
-        archived_raw_search_result_index = exit_stack.enter_context(
-            ArchivedRawSearchResultIndex(
-                data_directory=data_directory,
-                focused=focused,
-            )
-        )
-        # archived_parsed_search_result_index = exit_stack.enter_context.(
-        #     ArchivedParsedSearchResultIndex(
-        #         data_directory=data_directory,
-        #         focused=focused,
-        #     )
-        # )
-    with queries_output.open("w") as queries_file, \
-            documents_output.open("w") as documents_file:
+    output_path: Path
+    if output_directory is not None:
+        output_path = output_directory
+    else:
+        output_path = data_directory / "corpus"
+    output_path.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+
+    queries_path = output_path / f"queries-{timestamp}.jsonl.gz"
+    queries_path.touch(exist_ok=True)
+    queries_offsets_path = output_path / f"queries-{timestamp}.jsonl.offsets"
+    queries_offsets_path.touch(exist_ok=True)
+    documents_path = output_path / f"documents-{timestamp}.jsonl.gz"
+    documents_path.touch(exist_ok=True)
+    documents_offsets_path = \
+        output_path / f"documents-{timestamp}.jsonl.offsets"
+    documents_offsets_path.touch(exist_ok=True)
+
+    # Load indices.
+    archived_url_index = ArchivedUrlIndex(
+        data_directory=data_directory,
+        focused=focused,
+    )
+    archived_query_url_index = ArchivedQueryUrlIndex(
+        data_directory=data_directory,
+        focused=focused,
+    )
+    archived_raw_serp_index = ArchivedRawSerpIndex(
+        data_directory=data_directory,
+        focused=focused,
+    )
+    archived_parsed_serp_index = ArchivedParsedSerpIndex(
+        data_directory=data_directory,
+        focused=focused,
+    )
+    archived_search_result_snippet_index = ArchivedSearchResultSnippetIndex(
+        data_directory=data_directory,
+        focused=focused,
+    )
+    archived_raw_search_result_index = ArchivedRawSearchResultIndex(
+        data_directory=data_directory,
+        focused=focused,
+    )
+    # archived_parsed_search_result_index = ArchivedParsedSearchResultIndex(
+    #     data_directory=data_directory,
+    #     focused=focused,
+    # )
+
+    query_schema = CorpusQuery.schema()
+    document_schema = CorpusDocument.schema()
+    with queries_path.open("wb") as queries_file, \
+            queries_offsets_path.open("w") as queries_offsets_file, \
+            documents_path.open("wb") as documents_file, \
+            documents_offsets_path.open("w") as documents_offsets_file:
+        queries_offsets_writer = writer(queries_offsets_file)
+        documents_offsets_writer = writer(documents_offsets_file)
 
         archived_urls: Collection[ArchivedUrl]
         if queries:
             archived_urls = archived_query_url_index.values()
         else:
             archived_urls = archived_url_index.values()
-        query_schema = CorpusQuery.schema()
-        document_schema = CorpusDocument.schema()
 
         progress = tqdm(
             total=len(archived_urls),
@@ -161,17 +159,33 @@ def corpus_command(
                 # ),
                 archived_url=url,
             )
-            queries_file.write(query_schema.dumps(query))
-            queries_file.write("\n")
+            queries_file_offset = queries_file.tell()
+            with GzipFile(
+                    fileobj=queries_file,
+                    mode="w",
+            ) as queries_gzip_file:
+                queries_gzip_file.write(
+                    f"{query_schema.dumps(query)}\n".encode("utf8")
+                )
+            queries_offsets_writer.writerow(
+                [str(query.id), str(queries_file_offset)]
+            )
             for document in documents:
-                documents_file.write(document_schema.dumps(document))
-                documents_file.write("\n")
+                documents_file_offset = documents_file.tell()
+                with GzipFile(
+                        fileobj=documents_file,
+                        mode="w",
+                ) as documents_gzip_file:
+                    documents_gzip_file.write(
+                        f"{document_schema.dumps(document)}\n".encode("utf8")
+                    )
+                documents_offsets_writer.writerow(
+                    [str(document.id), str(documents_file_offset)]
+                )
             progress.update()
 
-        with ThreadPoolExecutor() as executor:
-            executor.map(dump_url, archived_urls)
-
-    print()
+        for archived_url in archived_urls:
+            dump_url(archived_url)
 
 
 def _build_query_url(
