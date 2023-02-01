@@ -7,7 +7,7 @@ from multiprocessing import cpu_count
 from multiprocessing.pool import ThreadPool
 from pathlib import Path
 from typing import MutableMapping, Iterator, TypeVar, Generic, Mapping, \
-    Type, IO, MutableSet
+    Type, IO, MutableSet, NamedTuple
 from uuid import UUID
 
 from dataclasses_json import DataClassJsonMixin
@@ -25,23 +25,30 @@ from web_archive_query_log.model import ArchivedUrl, ArchivedQueryUrl, \
 from web_archive_query_log.util.text import count_lines
 
 
-@dataclass(frozen=True)
-class _Location:
+class Location(NamedTuple):
     relative_path: Path
     offset: int
 
 
-@dataclass(frozen=True)
-class _ArchivedSnippetLocation(_Location):
+class ArchivedSnippetLocation(NamedTuple):
+    relative_path: Path
+    offset: int
     index: int
 
 
+_LocationType = TypeVar("_LocationType", bound=NamedTuple)
+
+
 @dataclass(frozen=True)
-class _LocationIndex(MutableMapping[UUID, _Location]):
+class _LocationIndex(
+    MutableMapping[UUID, _LocationType],
+    Generic[_LocationType],
+):
     data_directory: Path
     focused: bool
     service: str | None
     index_name: str
+    location_type: Type[_LocationType]
 
     @cached_property
     def _index_path(self) -> Path:
@@ -58,23 +65,24 @@ class _LocationIndex(MutableMapping[UUID, _Location]):
     def _index(self) -> Cache:
         return Cache(str(self._index_path))
 
-    def __setitem__(self, key: UUID, value: _Location):
-        self._index[key] = value
+    def __setitem__(self, key: UUID, value: _LocationType):
+        self._index[str(key)] = tuple(value)
 
     def __delitem__(self, key: UUID) -> None:
-        del self._index[key]
+        del self._index[str(key)]
 
-    def __getitem__(self, key: UUID) -> _Location:
-        return self._index[key]
+    def __getitem__(self, key: UUID) -> _LocationType:
+        return self.location_type(*self._index[str(key)])
 
     def __contains__(self, key: UUID) -> bool:
-        return key in self._index
+        return str(key) in self._index
 
     def __len__(self) -> int:
         return len(self._index)
 
     def __iter__(self) -> Iterator[UUID]:
-        return iter(self._index)
+        for uuid in self._index:
+            yield UUID(uuid)
 
 
 @dataclass(frozen=True)
@@ -100,25 +108,36 @@ class _PathIndex(MutableSet[Path]):
         return Cache(str(self._index_path))
 
     def add(self, value: Path) -> None:
-        self._index[value] = True
+        self._index[str(value)] = True
 
     def discard(self, value: Path) -> None:
-        del self._index[value]
+        del self._index[str(value)]
 
     def __contains__(self, value: Path) -> bool:
-        return value in self._index
+        return str(value) in self._index
 
     def __len__(self) -> int:
         return len(self._index)
 
-    def __iter__(self) -> Iterator[UUID]:
-        return iter(self._index)
+    def __iter__(self) -> Iterator[Path]:
+        for path in self._index:
+            yield Path(path)
 
 
 _RecordType = TypeVar("_RecordType", bound=DataClassJsonMixin)
 
 
-class _Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
+@dataclass(frozen=True, slots=True)
+class LocatedRecord(Generic[_LocationType, _RecordType]):
+    location: _LocationType
+    record: _RecordType
+
+
+class _Index(
+    Mapping[UUID, _RecordType],
+    Generic[_LocationType, _RecordType],
+    ABC,
+):
     @property
     @abstractmethod
     def data_directory(self) -> Path:
@@ -139,13 +158,19 @@ class _Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
     def _index_name(self) -> str:
         pass
 
+    @property
+    @abstractmethod
+    def _location_type(self) -> Type[_LocationType]:
+        pass
+
     @cached_property
-    def _index(self) -> _LocationIndex:
+    def _index(self) -> _LocationIndex[_LocationType]:
         return _LocationIndex(
             data_directory=self.data_directory,
             focused=self.focused,
             service=self.service,
             index_name=self._index_name,
+            location_type=self._location_type,
         )
 
     @cached_property
@@ -161,6 +186,13 @@ class _Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
     def index(self) -> None:
         pass
 
+    @abstractmethod
+    def locate(
+            self,
+            key: UUID
+    ) -> LocatedRecord[_LocationType, _RecordType] | None:
+        pass
+
     def __len__(self) -> int:
         return len(self._index)
 
@@ -168,7 +200,7 @@ class _Index(Generic[_RecordType], Mapping[UUID, _RecordType], ABC):
         return iter(self._index)
 
 
-class _JsonLineIndex(_Index[_RecordType]):
+class _JsonLineIndex(_Index[Location, _RecordType]):
     @property
     @abstractmethod
     def _record_type(self) -> Type[_RecordType]:
@@ -213,10 +245,11 @@ class _JsonLineIndex(_Index[_RecordType]):
                 for line in lines:
                     record = self._schema.loads(line)
                     record_id = record.id
-                    record_location = _Location(
-                        path.relative_to(self.data_directory),
-                        offset,
+                    record_location = Location(
+                        relative_path=path.relative_to(self.data_directory),
+                        offset=offset,
                     )
+                    # noinspection PyTypeChecker
                     self._index[record_id] = record_location
                     offset = gzip_file.tell()
         self._path_index.add(path)
@@ -238,7 +271,9 @@ class _JsonLineIndex(_Index[_RecordType]):
 
         pool.map(index_path, paths)
 
-    def __getitem__(self, key: UUID) -> _RecordType:
+    def locate(self, key: UUID) -> LocatedRecord[Location, _RecordType] | None:
+        if key not in self._index:
+            return None
         location = self._index[key]
         path = self.data_directory / location.relative_path
         with GzipFile(path, "rb") as gzip_file:
@@ -246,11 +281,14 @@ class _JsonLineIndex(_Index[_RecordType]):
             gzip_file.seek(location.offset)
             with TextIOWrapper(gzip_file) as text_file:
                 line = text_file.readline()
-                return self._schema.loads(line)
+                return LocatedRecord(location, self._schema.loads(line))
+
+    def __getitem__(self, key: UUID) -> _RecordType:
+        return self.locate(key).record
 
 
 @dataclass(frozen=True)
-class _WarcIndex(_Index[_RecordType]):
+class _WarcIndex(_Index[Location, _RecordType]):
 
     @abstractmethod
     def _read_id(self, record: WarcRecord) -> UUID:
@@ -298,10 +336,11 @@ class _WarcIndex(_Index[_RecordType]):
             record: WarcRecord
             offset = record.stream_pos
             record_id = self._read_id(record)
-            record_location = _Location(
-                path.relative_to(self.data_directory),
-                offset,
+            record_location = Location(
+                relative_path=path.relative_to(self.data_directory),
+                offset=offset,
             )
+            # noinspection PyTypeChecker
             self._index[record_id] = record_location
         self._path_index.add(path)
 
@@ -322,21 +361,29 @@ class _WarcIndex(_Index[_RecordType]):
 
         pool.map(index_path, paths)
 
-    def __getitem__(self, key: UUID) -> _RecordType:
-        # noinspection PyTypeChecker
-        location: _ArchivedSnippetLocation = self._index[key]
+    def locate(
+            self,
+            key: UUID,
+    ) -> LocatedRecord[Location, _RecordType] | None:
+        if key not in self._index:
+            return None
+        location: Location = self._index[key]
         path = self.data_directory / location.relative_path
         with path.open("rb") as file:
             file.seek(location.offset)
             stream = GZipStream(PythonIOStreamAdapter(file))
             record: WarcRecord = next(ArchiveIterator(stream))
-            return self._read_record(record)
+            return LocatedRecord(location, self._read_record(record))
+
+    def __getitem__(self, key: UUID) -> _RecordType:
+        return self.locate(key).record
 
 
 @dataclass(frozen=True)
 class ArchivedUrlIndex(_JsonLineIndex[ArchivedUrl]):
     _record_type = ArchivedUrl
     _index_name = "archived-urls"
+    _location_type = Location
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
@@ -347,6 +394,7 @@ class ArchivedUrlIndex(_JsonLineIndex[ArchivedUrl]):
 class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
     _record_type = ArchivedQueryUrl
     _index_name = "archived-query-urls"
+    _location_type = Location
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
@@ -357,6 +405,7 @@ class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
 class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
     _index_name = "archived-raw-serps"
     _schema = ArchivedQueryUrl.schema()
+    _location_type = Location
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
@@ -387,6 +436,7 @@ class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
 class ArchivedParsedSerpIndex(_JsonLineIndex[ArchivedParsedSerp]):
     _record_type = ArchivedParsedSerp
     _index_name = "archived-parsed-serps"
+    _location_type = Location
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
@@ -394,9 +444,12 @@ class ArchivedParsedSerpIndex(_JsonLineIndex[ArchivedParsedSerp]):
 
 
 @dataclass(frozen=True)
-class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
+class ArchivedSearchResultSnippetIndex(
+    _Index[ArchivedSnippetLocation, ArchivedSearchResultSnippet]
+):
     _schema = ArchivedParsedSerp.schema()
     _index_name = "archived-search-result-snippets"
+    _location_type = ArchivedSnippetLocation
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
@@ -439,10 +492,11 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
                     snippets = enumerate(record.results)
                     for snippet_index, snippet in snippets:
                         snippet_id = snippet.id
-                        snippet_location = _ArchivedSnippetLocation(
-                            path.relative_to(self.data_directory),
-                            offset,
-                            snippet_index,
+                        snippet_location = ArchivedSnippetLocation(
+                            relative_path=path.relative_to(
+                                self.data_directory),
+                            offset=offset,
+                            index=snippet_index,
                         )
                         self._index[snippet_id] = snippet_location
                     offset = gzip_file.tell()
@@ -465,9 +519,14 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
 
         pool.map(index_path, paths)
 
-    def __getitem__(self, key: UUID) -> ArchivedSearchResultSnippet:
+    def locate(
+            self,
+            key: UUID,
+    ) -> LocatedRecord[ArchivedSnippetLocation, _RecordType] | None:
+        if key not in self._index:
+            return None
         # noinspection PyTypeChecker
-        location: _ArchivedSnippetLocation = self._index[key]
+        location: ArchivedSnippetLocation = self._index[key]
         path = self.data_directory / location.relative_path
         with GzipFile(path, "rb") as gzip_file:
             gzip_file: IO[bytes]
@@ -475,13 +534,20 @@ class ArchivedSearchResultSnippetIndex(_Index[ArchivedSearchResultSnippet]):
             with TextIOWrapper(gzip_file) as text_file:
                 line = text_file.readline()
                 record: ArchivedParsedSerp = self._schema.loads(line)
-                return record.results[location.index]
+                return LocatedRecord(
+                    location,
+                    record.results[location.index],
+                )
+
+    def __getitem__(self, key: UUID) -> ArchivedSearchResultSnippet:
+        return self.locate(key).record
 
 
 @dataclass(frozen=True)
 class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
     _index_name = "archived-raw-search-results"
     _schema = ArchivedSearchResultSnippet.schema()
+    _location_type = Location
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
