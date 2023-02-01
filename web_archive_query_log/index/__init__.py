@@ -3,7 +3,6 @@ from dataclasses import dataclass
 from functools import cached_property
 from gzip import GzipFile
 from io import TextIOWrapper
-from multiprocessing import cpu_count
 from multiprocessing.pool import ThreadPool
 from pathlib import Path
 from typing import MutableMapping, Iterator, TypeVar, Generic, Mapping, \
@@ -257,7 +256,7 @@ class _JsonLineIndex(_Index[Location, _RecordType]):
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool(min(10, cpu_count()))
+        pool = ThreadPool()
 
         def index_path(path: Path):
             self._index_path(path)
@@ -348,7 +347,7 @@ class _WarcIndex(_Index[Location, _RecordType]):
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool(min(10, cpu_count()))
+        pool = ThreadPool()
 
         def index_path(path: Path):
             self._index_path(path)
@@ -505,7 +504,7 @@ class ArchivedSearchResultSnippetIndex(
             desc=f"Indexing {self._index_name}",
             unit="file",
         )
-        pool = ThreadPool(min(10, cpu_count()))
+        pool = ThreadPool()
 
         def index_path(path: Path):
             self._index_path(path)
