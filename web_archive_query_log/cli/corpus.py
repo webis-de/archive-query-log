@@ -4,6 +4,7 @@ from datetime import datetime
 from gzip import GzipFile
 from pathlib import Path
 from typing import Collection
+from uuid import UUID
 
 from click import option, BOOL
 from tqdm.auto import tqdm
@@ -14,10 +15,10 @@ from web_archive_query_log.cli.util import PathParam
 from web_archive_query_log.index import ArchivedRawSerpIndex, \
     ArchivedUrlIndex, ArchivedQueryUrlIndex, ArchivedParsedSerpIndex, \
     ArchivedSearchResultSnippetIndex, ArchivedRawSearchResultIndex, \
-    LocatedRecord, Location
+    LocatedRecord
 from web_archive_query_log.model import ArchivedUrl, CorpusQueryUrl, \
     ArchivedSearchResultSnippet, CorpusDocument, CorpusJsonlLocation, \
-    CorpusWarcLocation, CorpusJsonlSnippetLocation, ArchivedRawSerp, \
+    CorpusWarcLocation, ArchivedRawSerp, \
     ArchivedQueryUrl, ArchivedParsedSerp, CorpusQuery, CorpusSearchResult
 
 
@@ -132,20 +133,20 @@ def corpus_command(
         queries_offsets_writer = writer(queries_offsets_file)
         documents_offsets_writer = writer(documents_offsets_file)
 
-        archived_urls: Collection[ArchivedUrl]
+        archived_ids: Collection[UUID]
         if queries:
-            archived_urls = archived_query_url_index.values()
+            archived_ids = set(archived_query_url_index)
         else:
-            archived_urls = archived_url_index.values()
+            archived_ids = set(archived_url_index)
 
-        progress = tqdm(
-            total=len(archived_urls),
+        archived_ids = tqdm(
+            archived_ids,
             desc="Build corpus",
-            unit="URL",
+            unit="ID",
         )
 
-        def dump_url(url: ArchivedUrl) -> None:
-            query, documents = _build_query_documents(
+        for archived_id in archived_ids:
+            query_documents = _build_query_documents(
                 archived_url_index=archived_url_index,
                 archived_query_url_index=archived_query_url_index,
                 archived_raw_serp_index=archived_raw_serp_index,
@@ -159,8 +160,11 @@ def corpus_command(
                 # archived_parsed_search_result_index=(
                 #     archived_parsed_search_result_index
                 # ),
-                archived_url=url,
+                archived_id=archived_id,
             )
+            if query_documents is None:
+                continue
+            query, documents = query_documents
             queries_file_offset = queries_file.tell()
             with GzipFile(
                     fileobj=queries_file,
@@ -184,19 +188,23 @@ def corpus_command(
                 documents_offsets_writer.writerow(
                     [str(document.id), str(documents_file_offset)]
                 )
-            progress.update()
-
-        for archived_url in archived_urls:
-            dump_url(archived_url)
 
 
 def _build_query_url(
-        archived_url: ArchivedUrl,
-        archived_url_loc: LocatedRecord[Location, ArchivedUrl],
-        archived_query_url_loc: LocatedRecord[Location, ArchivedQueryUrl],
-        archived_raw_serp_loc: LocatedRecord[Location, ArchivedRawSerp],
-        archived_parsed_serp_loc: LocatedRecord[Location, ArchivedParsedSerp],
-) -> CorpusQueryUrl:
+        archived_url_loc: LocatedRecord[
+            CorpusJsonlLocation, ArchivedUrl
+        ],
+        archived_query_url_loc: LocatedRecord[
+                                    CorpusJsonlLocation, ArchivedQueryUrl
+                                ] | None,
+        archived_raw_serp_loc: LocatedRecord[
+                                   CorpusWarcLocation, ArchivedRawSerp
+                               ] | None,
+        archived_parsed_serp_loc: LocatedRecord[
+                                      CorpusJsonlLocation, ArchivedParsedSerp
+                                  ] | None,
+) -> CorpusQueryUrl | None:
+    archived_url = archived_url_loc.record
     return CorpusQueryUrl(
         id=archived_url.id,
         url=archived_url.url,
@@ -219,29 +227,20 @@ def _build_query_url(
             archived_parsed_serp_loc.record.interpreted_query
             if archived_parsed_serp_loc is not None else None
         ),
-        archived_url_location=CorpusJsonlLocation(
-            relative_path=archived_url_loc.location.relative_path,
-            byte_offset=archived_url_loc.location.offset,
+        archived_url_location=(
+            archived_url_loc.location
+            if archived_url_loc is not None else None
         ),
         archived_query_url_location=(
-            CorpusJsonlLocation(
-                relative_path=archived_query_url_loc.location.relative_path,
-                byte_offset=archived_query_url_loc.location.offset,
-            )
+            archived_query_url_loc.location
             if archived_query_url_loc is not None else None
         ),
         archived_raw_serp_location=(
-            CorpusWarcLocation(
-                relative_path=archived_raw_serp_loc.location.relative_path,
-                byte_offset=archived_raw_serp_loc.location.offset,
-            )
+            archived_raw_serp_loc.location
             if archived_raw_serp_loc is not None else None
         ),
         archived_parsed_serp_location=(
-            CorpusJsonlLocation(
-                relative_path=archived_parsed_serp_loc.location.relative_path,
-                byte_offset=archived_parsed_serp_loc.location.offset,
-            )
+            archived_parsed_serp_loc.location
             if archived_parsed_serp_loc is not None else None
         ),
     )
@@ -254,11 +253,12 @@ def _build_search_result(
         archived_search_result_snippet: ArchivedSearchResultSnippet,
 ) -> CorpusSearchResult:
     archived_snippet_loc = archived_search_result_snippet_index \
-        .locate(archived_search_result_snippet.id)
+        .get(archived_search_result_snippet.id)
     archived_raw_search_result_loc = archived_raw_search_result_index \
-        .locate(archived_search_result_snippet.id)
+        .get(archived_search_result_snippet.id)
     # archived_parsed_search_result_loc = archived_parsed_search_result_index \
-    #     .locate(archived_search_result_snippet.id)
+    #     .get(archived_search_result_snippet.id)
+    archived_parsed_search_result_loc = None
     return CorpusSearchResult(
         id=archived_search_result_snippet.id,
         url=archived_search_result_snippet.url,
@@ -268,26 +268,14 @@ def _build_search_result(
         snippet_rank=archived_search_result_snippet.rank,
         snippet_title=archived_search_result_snippet.title,
         snippet_text=archived_search_result_snippet.snippet,
-        archived_snippet_location=CorpusJsonlSnippetLocation(
-            relative_path=archived_snippet_loc.location.relative_path,
-            byte_offset=archived_snippet_loc.location.offset,
-            index=archived_snippet_loc.location.index,
-        ),
+        archived_snippet_location=archived_snippet_loc.location,
         archived_raw_search_result_location=(
-            CorpusWarcLocation(
-                relative_path=archived_raw_search_result_loc
-                .location.relative_path,
-                byte_offset=archived_raw_search_result_loc.location.offset,
-            )
+            archived_raw_search_result_loc.location
             if archived_raw_search_result_loc is not None else None
         ),
         archived_parsed_search_result_location=None,
         # archived_parsed_search_result_location=(
-        #     CorpusJsonlLocation(
-        #         relative_path=archived_parsed_search_result_loc
-        #         .location.relative_path,
-        #         line=archived_parsed_search_result_loc.location.offset,
-        #     )
+        #     archived_parsed_search_result_loc.location
         #     if archived_parsed_search_result_loc is not None else None
         # ),
     )
@@ -301,18 +289,15 @@ def _build_query_documents(
         archived_search_result_snippet_index: ArchivedSearchResultSnippetIndex,
         archived_raw_search_result_index: ArchivedRawSearchResultIndex,
         # archived_parsed_search_result_index: ArchivedParsedSearchResultIndex,
-        archived_url: ArchivedUrl,
-) -> tuple[CorpusQuery, list[CorpusDocument]]:
-    archived_url_loc = archived_url_index \
-        .locate(archived_url.id)
-    archived_query_url_loc = archived_query_url_index \
-        .locate(archived_url.id)
-    archived_raw_serp_loc = archived_raw_serp_index \
-        .locate(archived_url.id)
-    archived_parsed_serp_loc = archived_parsed_serp_index \
-        .locate(archived_url.id)
+        archived_id: UUID,
+) -> tuple[CorpusQuery, list[CorpusDocument]] | None:
+    archived_url_loc = archived_url_index.get(archived_id)
+    archived_query_url_loc = archived_query_url_index.get(archived_id)
+    archived_raw_serp_loc = archived_raw_serp_index.get(archived_id)
+    archived_parsed_serp_loc = archived_parsed_serp_index.get(archived_id)
+    if archived_url_loc is None:
+        return None
     query_url = _build_query_url(
-        archived_url,
         archived_url_loc,
         archived_query_url_loc,
         archived_raw_serp_loc,
