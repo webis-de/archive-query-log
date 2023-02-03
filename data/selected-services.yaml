@@ -5035,16 +5035,33 @@
   search_div: true
   domains:
   - stanford.edu
+  - google.stanford.edu
+  - itservices.stanford.edu
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: q
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/searchview
+    type: query_parameter
+    parameter: query
+  - url_pattern: ^https?://[^/]+/service\.websearch\?
+    type: query_parameter
+    parameter: query
+  - url_pattern: ^https?://[^/]+/linux\?
+    type: query_parameter
+    parameter: query
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes: 
   - /search
+  - /?
+  - /service/websearch?
+  - /linux?
 - name: b2b168
   public_suffix: com
   alexa_domain: b2b168.com

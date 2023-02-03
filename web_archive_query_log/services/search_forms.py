@@ -48,7 +48,8 @@ class SearchFormIdentifier:
         # into separate columns
         self.out_df['tmp'] = self.df['service'].progress_apply(
             func=self.check_url)
-        self.out_df[['search_form', 'search_div', 'form_snippets', 'div_snippets']] = \
+        self.out_df[['input', 'search_form', 'search_div', 'input_snippets',
+                     'form_snippets', 'div_snippets']] = \
             pd.DataFrame(self.out_df['tmp'].tolist(), index=self.out_df.index)
         self.out_df.drop('tmp', axis=1, inplace=True)
         self.out_df.to_csv(self.out_file)
@@ -96,10 +97,11 @@ class SearchFormIdentifier:
 
         # Look for elements with the pattern in them and save the snippets
         soup = BeautifulSoup(html, 'html.parser')
+        found_input, input_snippets = find_input_tag(soup=soup)
         found_search_form, form_snippets = find_search_tag(soup=soup, tag='form')
         found_search_div, div_snippets = find_search_tag(soup=soup, tag='div')
 
-        return found_search_form, found_search_div, form_snippets, div_snippets
+        return found_input, found_search_form, found_search_div, input_snippets, form_snippets, div_snippets
 
     def get_internet_archive_html(self, url: str, year=2022, byte_digits=4):
         """
