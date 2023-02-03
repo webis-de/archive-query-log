@@ -60,6 +60,8 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
             url_tag = result.select_one(self.url_selector)
             if url_tag is None:
                 continue
+            if self.url_attribute not in url_tag.attrs:
+                continue
             url = url_tag.attrs[self.url_attribute]
             if url is None:
                 continue
