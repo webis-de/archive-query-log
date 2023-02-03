@@ -1,395 +1,436 @@
 from abc import ABC, abstractmethod
-from concurrent.futures import ThreadPoolExecutor
+from csv import writer, reader
 from dataclasses import dataclass
 from functools import cached_property
 from gzip import GzipFile
 from io import TextIOWrapper
+from itertools import islice
+from json import loads
 from pathlib import Path
-from typing import MutableMapping, Iterator, TypeVar, Generic, Mapping, \
-    Type, IO, MutableSet, NamedTuple, ContextManager
-from uuid import UUID
+from shutil import copyfileobj
+from typing import Iterator, TypeVar, Generic, Type, IO, final
+from uuid import UUID, uuid5, NAMESPACE_URL
 
 from dataclasses_json import DataClassJsonMixin
 from diskcache import Cache
-from fastwarc import ArchiveIterator, GZipStream, FileStream, WarcRecord, \
+from fastwarc import ArchiveIterator, FileStream, WarcRecord, \
     WarcRecordType
 from fastwarc.stream_io import PythonIOStreamAdapter
-from marshmallow import Schema, ValidationError
+from marshmallow import Schema
 from tqdm.auto import tqdm
 
-from web_archive_query_log import DATA_DIRECTORY_PATH
+from web_archive_query_log import DATA_DIRECTORY_PATH, LOGGER
 from web_archive_query_log.model import ArchivedUrl, ArchivedQueryUrl, \
     ArchivedParsedSerp, ArchivedSearchResultSnippet, ArchivedRawSerp, \
-    ArchivedRawSearchResult
+    ArchivedRawSearchResult, CorpusJsonlLocation, CorpusJsonlSnippetLocation, \
+    CorpusWarcLocation
 from web_archive_query_log.util.text import count_lines
 
 
-class Location(NamedTuple):
-    relative_path: Path
-    offset: int
-
-
-class ArchivedSnippetLocation(NamedTuple):
-    relative_path: Path
-    offset: int
-    index: int
-
-
-_LocationType = TypeVar("_LocationType", bound=NamedTuple)
-
-
 @dataclass(frozen=True)
-class _LocationIndex(
-    MutableMapping[UUID, _LocationType],
-    ContextManager,
-    Generic[_LocationType],
-):
-    path: Path
-    location_type: Type[_LocationType]
+class _MetaIndex:
+    base_type: str
+    data_directory: Path = DATA_DIRECTORY_PATH
+    focused: bool = False
 
     @cached_property
-    def _index(self) -> Cache:
-        return Cache(str(self.path))
+    def base_path(self) -> Path:
+        base_path = self.data_directory
+        if self.focused:
+            base_path /= "focused"
+        if self.base_type == "archived-search-result-snippets":
+            base_path /= "archived-parsed-serps"
+        else:
+            base_path /= self.base_type
+        return base_path
 
-    def __setitem__(self, key: UUID, value: _LocationType):
-        self._index[str(key)] = tuple(value)
+    def _is_indexable_path(self, path: Path) -> bool:
+        if self.base_type == "archived-urls":
+            return path.is_file() and path.name.endswith(".jsonl.gz")
+        elif self.base_type == "archived-query-urls":
+            return path.is_file() and path.name.endswith(".jsonl.gz")
+        elif self.base_type == "archived-raw-serps":
+            return path.is_dir()
+        elif self.base_type == "archived-parsed-serps":
+            return path.is_file() and path.name.endswith(".jsonl.gz")
+        elif self.base_type == "archived-search-result-snippets":
+            return path.is_file() and path.name.endswith(".jsonl.gz")
+        elif self.base_type == "archived-raw-search-results":
+            return path.is_dir()
+        elif self.base_type == "archived-parsed-search-results":
+            return path.is_file() and path.name.endswith(".jsonl.gz")
+        else:
+            raise ValueError(f"Unknown base type: {self.base_type}")
 
-    def __delitem__(self, key: UUID) -> None:
-        del self._index[str(key)]
+    def _indexable_paths(self) -> Iterator[Path]:
+        base_path = self.base_path
+        for service_path in base_path.iterdir():
+            if not service_path.is_dir():
+                continue
+            if service_path.name.startswith("."):
+                continue
+            for pattern_path in service_path.iterdir():
+                if (not pattern_path.is_dir() or
+                        pattern_path.name.startswith(".")):
+                    continue
+                for path in pattern_path.iterdir():
+                    if self._is_indexable_path(path):
+                        yield path
 
-    def __getitem__(self, key: UUID) -> _LocationType:
-        return self.location_type(*self._index[str(key)])
+    def _index_path(self, path: Path) -> Path:
+        if self.base_type == "archived-urls":
+            return path.with_name(
+                f"{path.name.removesuffix('.jsonl.gz')}.index"
+            )
+        elif self.base_type == "archived-query-urls":
+            return path.with_name(
+                f"{path.name.removesuffix('.jsonl.gz')}.index"
+            )
+        elif self.base_type == "archived-raw-serps":
+            return path.with_name(
+                f"{path.name}.index"
+            )
+        elif self.base_type == "archived-parsed-serps":
+            return path.with_name(
+                f"{path.name.removesuffix('.jsonl.gz')}.index"
+            )
+        elif self.base_type == "archived-search-result-snippets":
+            return path.with_name(
+                f"{path.name.removesuffix('.jsonl.gz')}.snippets.index"
+            )
+        elif self.base_type == "archived-raw-search-results":
+            return path.with_name(
+                f"{path.name}.index"
+            )
+        elif self.base_type == "archived-parsed-search-results":
+            return path.with_name(
+                f"{path.name.removesuffix('.jsonl.gz')}.index"
+            )
+        else:
+            raise ValueError(f"Unknown base type: {self.base_type}")
 
-    def __contains__(self, key: UUID) -> bool:
-        return str(key) in self._index
+    def _index_jsonl(self, path: Path) -> None:
+        if not path.exists():
+            return
+        index_path = self._index_path(path)
+        if index_path.exists():
+            if (index_path.stat().st_size == 0 or
+                    index_path.stat().st_mtime < path.stat().st_mtime):
+                # Remove empty or stale index.
+                index_path.unlink()
+            else:
+                # Index is up-to-date.
+                return
 
-    def __len__(self) -> int:
-        return len(self._index)
+        offset = 0
+        index: list[tuple[str, str, str]] = []
+        with GzipFile(path, mode="r") as gzip_file:
+            gzip_file: IO[str]
+            for line in gzip_file:
+                record = loads(line)
+                record_id = uuid5(
+                    NAMESPACE_URL,
+                    f"{record['timestamp']}:{record['url']}",
+                )
+                index.append((
+                    str(record_id),
+                    str(path.relative_to(self.data_directory)),
+                    str(offset),
+                ))
+                offset = gzip_file.tell()
 
-    def __iter__(self) -> Iterator[UUID]:
-        for uuid in self._index:
-            yield UUID(uuid)
+        with index_path.open("wt") as index_file:
+            index_writer = writer(index_file)
+            index_writer.writerows(index)
 
-    def close(self):
-        self._index.close()
+    def _index_warc(self, dir_path: Path) -> None:
+        if not dir_path.exists():
+            return
+        index_path = self._index_path(dir_path)
+        if index_path.exists():
+            if (index_path.stat().st_size == 0 or
+                    index_path.stat().st_mtime < dir_path.stat().st_mtime):
+                # Remove empty or stale index.
+                index_path.unlink()
+            else:
+                # Index is up-to-date.
+                return
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.close()
+        index: list[tuple[str, str, str]] = []
+        for path in dir_path.iterdir():
+            if path.name.startswith("."):
+                continue
+            records = ArchiveIterator(
+                FileStream(str(path), "rb"),
+                record_types=WarcRecordType.response,
+                parse_http=False,
+            )
+            for record in records:
+                record: WarcRecord
+                offset = record.stream_pos
+                record_url = loads(record.headers["Archived-URL"])
+                record_id = uuid5(
+                    NAMESPACE_URL,
+                    f"{record_url['timestamp']}:{record_url['url']}",
+                )
+                index.append((
+                    str(record_id),
+                    str(path.relative_to(self.data_directory)),
+                    str(offset),
+                ))
 
+        with index_path.open("wt") as index_file:
+            index_writer = writer(index_file)
+            index_writer.writerows(index)
 
-@dataclass(frozen=True)
-class _PathIndex(MutableSet[Path], ContextManager):
-    path: Path
+    def _index_jsonl_snippets(self, path: Path) -> None:
+        if not path.exists():
+            return
+        index_path = self._index_path(path)
+        if index_path.exists():
+            if (index_path.stat().st_size == 0 or
+                    index_path.stat().st_mtime < path.stat().st_mtime):
+                # Remove empty or stale index.
+                index_path.unlink()
+            else:
+                # Index is up-to-date.
+                return
+
+        offset = 0
+        index: list[tuple[str, str, str, str]] = []
+        with GzipFile(path, mode="r") as gzip_file:
+            gzip_file: IO[str]
+            for line in gzip_file:
+                record = loads(line)
+                for snippet_index, snippet in enumerate(record["results"]):
+                    record_id = uuid5(
+                        NAMESPACE_URL,
+                        f"{record['timestamp']}:{snippet['url']}",
+                    )
+                    index.append((
+                        str(record_id),
+                        str(path.relative_to(self.data_directory)),
+                        str(offset),
+                        str(snippet_index)
+                    ))
+                offset = gzip_file.tell()
+
+        with index_path.open("wt") as index_file:
+            index_writer = writer(index_file)
+            index_writer.writerows(index)
+
+    def _index(self, path: Path) -> None:
+        if self.base_type == "archived-urls":
+            self._index_jsonl(path)
+        elif self.base_type == "archived-query-urls":
+            self._index_jsonl(path)
+        elif self.base_type == "archived-raw-serps":
+            self._index_warc(path)
+        elif self.base_type == "archived-parsed-serps":
+            self._index_jsonl(path)
+        elif self.base_type == "archived-search-result-snippets":
+            self._index_jsonl_snippets(path)
+        elif self.base_type == "archived-raw-search-results":
+            self._index_warc(path)
+        elif self.base_type == "archived-parsed-search-results":
+            self._index_jsonl(path)
+        else:
+            raise ValueError(f"Unknown base type: {self.base_type}")
 
     @cached_property
-    def _index(self) -> Cache:
-        return Cache(str(self.path))
+    def _aggregated_index_path(self) -> Path:
+        if self.base_type == "archived-urls":
+            return self.base_path / ".index"
+        elif self.base_type == "archived-query-urls":
+            return self.base_path / ".index"
+        elif self.base_type == "archived-raw-serps":
+            return self.base_path / ".index"
+        elif self.base_type == "archived-parsed-serps":
+            return self.base_path / ".index"
+        elif self.base_type == "archived-search-result-snippets":
+            return self.base_path / ".snippets.index"
+        elif self.base_type == "archived-raw-search-results":
+            return self.base_path / ".index"
+        elif self.base_type == "archived-parsed-search-results":
+            return self.base_path / ".index"
+        else:
+            raise ValueError(f"Unknown base type: {self.base_type}")
 
-    def add(self, value: Path) -> None:
-        self._index[str(value)] = True
+    def index(self) -> None:
+        # Index each path individually.
+        paths = tqdm(
+            self._indexable_paths(),
+            total=sum(1 for _ in self._indexable_paths()),
+            desc="Index paths",
+            unit="path",
+        )
+        for path in paths:
+            self._index(path)
 
-    def discard(self, value: Path) -> None:
-        del self._index[str(value)]
-
-    def __contains__(self, value: Path) -> bool:
-        return str(value) in self._index
-
-    def __len__(self) -> int:
-        return len(self._index)
-
-    def __iter__(self) -> Iterator[Path]:
-        for path in self._index:
-            yield Path(path)
-
-    def close(self):
-        self._index.close()
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.close()
+        # Aggregate all indexes into a single index.
+        aggregated_index_path = self._aggregated_index_path
+        with aggregated_index_path.open("wb") as aggregated_index_file:
+            paths = tqdm(
+                self._indexable_paths(),
+                total=sum(1 for _ in self._indexable_paths()),
+                desc="Aggregate indices",
+                unit="path",
+            )
+            for path in paths:
+                index_path = self._index_path(path)
+                if not index_path.exists():
+                    continue
+                with index_path.open("rb") as index_file:
+                    copyfileobj(index_file, aggregated_index_file)
 
 
+_CorpusLocationType = TypeVar(
+    "_CorpusLocationType",
+    CorpusJsonlLocation, CorpusJsonlSnippetLocation, CorpusWarcLocation
+)
 _RecordType = TypeVar("_RecordType", bound=DataClassJsonMixin)
 
 
-@dataclass(frozen=True, slots=True)
-class LocatedRecord(Generic[_LocationType, _RecordType]):
-    location: _LocationType
+@dataclass(frozen=True)
+class LocatedRecord(Generic[_CorpusLocationType, _RecordType]):
+    location: _CorpusLocationType
     record: _RecordType
 
 
-class _Index(
-    Mapping[UUID, _RecordType],
-    ContextManager,
-    Generic[_LocationType, _RecordType],
-    ABC,
-):
-    @property
-    @abstractmethod
-    def data_directory(self) -> Path:
-        pass
+_T = TypeVar("_T")
+
+
+@dataclass(frozen=True)
+class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
+    data_directory: Path
+    focused: bool
 
     @property
     @abstractmethod
-    def focused(self) -> bool:
-        pass
-
-    @property
-    @abstractmethod
-    def _index_name(self) -> str:
-        pass
-
-    @property
-    @abstractmethod
-    def _location_type(self) -> Type[_LocationType]:
+    def base_type(self) -> str:
         pass
 
     @cached_property
-    def _index(self) -> _LocationIndex[_LocationType]:
-        index_path = self.data_directory / "index"
-        if self.focused:
-            index_path /= "focused"
-        index_path /= self._index_name
-        index_path.mkdir(parents=True, exist_ok=True)
-        return _LocationIndex(index_path, self._location_type)
+    def _meta_index(self) -> _MetaIndex:
+        return _MetaIndex(self.base_type, self.data_directory, self.focused)
+
+    @abstractmethod
+    def _to_corpus_location(self, csv_line: list) -> _CorpusLocationType:
+        pass
 
     @cached_property
-    def _path_index(self) -> _PathIndex:
-        index_path = self.data_directory / "index"
+    def _index_path(self) -> Path:
+        index_path = self.data_directory
         if self.focused:
             index_path /= "focused"
-        index_path /= f"{self._index_name}-paths"
-        index_path.mkdir(parents=True, exist_ok=True)
-        return _PathIndex(index_path)
+        if self.base_type == "archived-search-result-snippets":
+            return index_path / "archived-parsed-serps" / ".snippets.index"
+        else:
+            return index_path / self.base_type / ".index"
+
+    @cached_property
+    def _index(self) -> Cache:
+        cache = Cache()
+        index_path = self._index_path
+        if not index_path.exists():
+            LOGGER.warning(f"Index not found: {index_path}")
+            return cache
+        with index_path.open("rb") as index_file:
+            num_lines = count_lines(index_file)
+        with index_path.open("rt") as index_file:
+            index_reader = reader(index_file)
+            index_reader = tqdm(
+                index_reader,
+                total=num_lines,
+                desc="Load index",
+                unit="line",
+            )
+            index_reader = islice(index_reader, 10_000)
+            for csv_line in index_reader:
+                cache[UUID(csv_line[0])] = self._to_corpus_location(csv_line)
+            # noinspection PyTypeChecker
+            return cache
+
+    def index(self) -> None:
+        self._meta_index.index()
 
     @abstractmethod
-    def index(
-            self,
-            service: str | None = None,
-            parallel: bool = False,
-    ) -> None:
+    def _read_record(self, location: _CorpusLocationType) -> _RecordType:
         pass
 
-    @abstractmethod
-    def locate(
+    def __getitem__(
             self,
-            key: UUID
-    ) -> LocatedRecord[_LocationType, _RecordType] | None:
-        pass
+            item: UUID
+    ) -> LocatedRecord[_CorpusLocationType, _RecordType]:
+        location = self._index[item]
+        record = self._read_record(location)
+        return LocatedRecord(location, record)
 
-    def __len__(self) -> int:
-        return len(self._index)
+    def get(
+            self,
+            item: UUID
+    ) -> LocatedRecord[_CorpusLocationType, _RecordType] | None:
+        if item not in self._index:
+            return None
+        return self[item]
 
     def __iter__(self) -> Iterator[UUID]:
         return iter(self._index)
 
-    def close(self):
-        self._index.close()
-        self._path_index.close()
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.close()
-
-
-class _JsonLineIndex(_Index[Location, _RecordType]):
+@dataclass(frozen=True)
+class _JsonLineIndex(_Index[CorpusJsonlLocation, _RecordType]):
     @property
     @abstractmethod
-    def _record_type(self) -> Type[_RecordType]:
+    def record_type(self) -> Type[_RecordType]:
         pass
 
     @cached_property
     def _schema(self) -> Schema:
-        return self._record_type.schema()
+        return self.record_type.schema()
 
-    def _indexable_paths(
-            self,
-            service: str | None = None,
-    ) -> Iterator[Path]:
-        focused = "focused/" if self.focused else ""
-        service = f"{service}" if service is not None else "*"
-        paths = self.data_directory.glob(
-            f"{focused}{self._index_name}/{service}/*/*.jsonl.gz"
+    def _to_corpus_location(self, csv_line: list) -> CorpusJsonlLocation:
+        return CorpusJsonlLocation(
+            relative_path=Path(csv_line[1]),
+            byte_offset=int(csv_line[2]),
         )
-        paths = (
-            path
-            for path in paths
-            if path not in self._path_index
-        )
-        return paths
 
-    def _index_path(self, path: Path) -> None:
-        if path in self._path_index:
-            return
-        offset = 0
-        with GzipFile(path, mode="rb") as gzip_file:
-            gzip_file: IO[bytes]
-            num_lines = count_lines(gzip_file)
-        with GzipFile(path, "r") as gzip_file:
-            gzip_file: IO[str]
-            lines = gzip_file
-            if num_lines > 10_000:
-                lines = tqdm(
-                    lines,
-                    total=num_lines,
-                    desc=f"Indexing {self._index_name}",
-                    unit="line",
-                )
-            for line in lines:
-                record = self._schema.loads(line)
-                record_id = record.id
-                record_location = Location(
-                    relative_path=path.relative_to(self.data_directory),
-                    offset=offset,
-                )
-                # noinspection PyTypeChecker
-                self._index[record_id] = record_location
-                offset = gzip_file.tell()
-        self._path_index.add(path)
-
-    def index(
-            self,
-            service: str | None = None,
-            parallel: bool = False,
-    ) -> None:
-        paths = list(self._indexable_paths(service))
-        if len(paths) == 0:
-            return
-        progress = tqdm(
-            total=len(paths),
-            desc=f"Indexing {self._index_name}",
-            unit="file",
-        )
-        pool = ThreadPoolExecutor(None if parallel else 1)
-
-        def index_path(path: Path):
-            self._index_path(path)
-            progress.update()
-
-        for _ in pool.map(index_path, paths):
-            pass
-        self._index.close()
-
-    def locate(self, key: UUID) -> LocatedRecord[Location, _RecordType] | None:
-        if key not in self._index:
-            return None
-        location = self._index[key]
+    def _read_record(self, location: CorpusJsonlLocation) -> _RecordType:
         path = self.data_directory / location.relative_path
         with GzipFile(path, "rb") as gzip_file:
             gzip_file: IO[bytes]
-            gzip_file.seek(location.offset)
+            gzip_file.seek(location.byte_offset)
             with TextIOWrapper(gzip_file) as text_file:
                 line = text_file.readline()
-                return LocatedRecord(location, self._schema.loads(line))
-
-    def __getitem__(self, key: UUID) -> _RecordType:
-        return self.locate(key).record
+                return self._schema.loads(line)
 
 
 @dataclass(frozen=True)
-class _WarcIndex(_Index[Location, _RecordType]):
+class _WarcIndex(_Index[CorpusWarcLocation, _RecordType]):
 
-    @abstractmethod
-    def _read_id(self, record: WarcRecord) -> UUID:
-        pass
-
-    @abstractmethod
-    def _read_record(self, record: WarcRecord) -> _RecordType:
-        pass
-
-    def _indexable_paths(
-            self,
-            service: str | None = None,
-    ) -> Iterator[Path]:
-        focused = "focused/" if self.focused else ""
-        service = f"{service}" if service is not None else "*"
-        paths = self.data_directory.glob(
-            f"{focused}{self._index_name}/{service}/*/*/*.warc.gz"
+    def _to_corpus_location(self, csv_line: list) -> CorpusWarcLocation:
+        return CorpusWarcLocation(
+            relative_path=Path(csv_line[1]),
+            byte_offset=int(csv_line[2]),
         )
-        paths = (
-            path
-            for path in paths
-            if path not in self._path_index
-        )
-        return paths
 
-    def _index_path(self, path: Path) -> None:
-        if path in self._path_index:
-            return
-        stream = GZipStream(FileStream(str(path), "rb"))
-        num_records = sum(1 for _ in ArchiveIterator(
-            stream,
-            record_types=WarcRecordType.response,
-            parse_http=False,
-        ))
-        stream = GZipStream(FileStream(str(path), "rb"))
-        records = ArchiveIterator(
-            stream,
-            record_types=WarcRecordType.response
-        )
-        if num_records > 10_000:
-            records = tqdm(
-                records,
-                total=num_records,
-                desc=f"Indexing {self._index_name}",
-                unit="record",
-            )
-        for record in records:
-            record: WarcRecord
-            offset = record.stream_pos
-            record_id = self._read_id(record)
-            record_location = Location(
-                relative_path=path.relative_to(self.data_directory),
-                offset=offset,
-            )
-            # noinspection PyTypeChecker
-            self._index[record_id] = record_location
-        self._path_index.add(path)
-
-    def index(
-            self,
-            service: str | None = None,
-            parallel: bool = False,
-    ) -> None:
-        paths = list(self._indexable_paths(service))
-        if len(paths) == 0:
-            return
-        progress = tqdm(
-            total=len(paths),
-            desc=f"Indexing {self._index_name}",
-            unit="file",
-        )
-        pool = ThreadPoolExecutor(None if parallel else 1)
-
-        def index_path(path: Path):
-            self._index_path(path)
-            progress.update()
-
-        for _ in pool.map(index_path, paths):
-            pass
-        self._index.close()
-
-    def locate(
-            self,
-            key: UUID,
-    ) -> LocatedRecord[Location, _RecordType] | None:
-        if key not in self._index:
-            return None
-        location: Location = self._index[key]
+    def _read_record(self, location: CorpusJsonlLocation) -> _RecordType:
         path = self.data_directory / location.relative_path
         with path.open("rb") as file:
-            file.seek(location.offset)
-            stream = GZipStream(PythonIOStreamAdapter(file))
+            file.seek(location.byte_offset)
+            stream = PythonIOStreamAdapter(file)
             record: WarcRecord = next(ArchiveIterator(stream))
-            return LocatedRecord(location, self._read_record(record))
+            return self._read_warc_record(record)
 
-    def __getitem__(self, key: UUID) -> _RecordType:
-        return self.locate(key).record
+    @abstractmethod
+    def _read_warc_record(self, record: WarcRecord) -> _RecordType:
+        pass
 
 
 @dataclass(frozen=True)
 class ArchivedUrlIndex(_JsonLineIndex[ArchivedUrl]):
-    _record_type = ArchivedUrl
-    _index_name = "archived-urls"
-    _location_type = Location
+    base_type = final("archived-urls")
+    record_type = ArchivedUrl
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
@@ -397,9 +438,8 @@ class ArchivedUrlIndex(_JsonLineIndex[ArchivedUrl]):
 
 @dataclass(frozen=True)
 class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
-    _record_type = ArchivedQueryUrl
-    _index_name = "archived-query-urls"
-    _location_type = Location
+    base_type = "archived-query-urls"
+    record_type = ArchivedQueryUrl
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
@@ -407,22 +447,14 @@ class ArchivedQueryUrlIndex(_JsonLineIndex[ArchivedQueryUrl]):
 
 @dataclass(frozen=True)
 class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
-    _index_name = "archived-raw-serps"
-    _schema = ArchivedQueryUrl.schema()
-    _location_type = Location
+    base_type = "archived-raw-serps"
+    schema = ArchivedQueryUrl.schema()
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
 
-    def _read_id(self, record: WarcRecord) -> UUID:
-        try:
-            return self._schema.loads(record.headers["Archived-URL"]).id
-        except ValidationError as e:
-            print(record.headers["Archived-URL"])
-            raise e
-
-    def _read_record(self, record: WarcRecord) -> ArchivedRawSerp:
-        archived_url: ArchivedQueryUrl = self._schema.loads(
+    def _read_warc_record(self, record: WarcRecord) -> ArchivedRawSerp:
+        archived_url: ArchivedQueryUrl = self.schema.loads(
             record.headers["Archived-URL"]
         )
         content_type = record.http_charset
@@ -441,9 +473,8 @@ class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
 
 @dataclass(frozen=True)
 class ArchivedParsedSerpIndex(_JsonLineIndex[ArchivedParsedSerp]):
-    _record_type = ArchivedParsedSerp
-    _index_name = "archived-parsed-serps"
-    _location_type = Location
+    base_type = "archived-parsed-serps"
+    record_type = ArchivedParsedSerp
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
@@ -451,128 +482,48 @@ class ArchivedParsedSerpIndex(_JsonLineIndex[ArchivedParsedSerp]):
 
 @dataclass(frozen=True)
 class ArchivedSearchResultSnippetIndex(
-    _Index[ArchivedSnippetLocation, ArchivedSearchResultSnippet]
+    _Index[CorpusJsonlSnippetLocation, ArchivedSearchResultSnippet]
 ):
-    _schema = ArchivedParsedSerp.schema()
-    _index_name = "archived-search-result-snippets"
-    _location_type = ArchivedSnippetLocation
+    base_type = "archived-search-result-snippets"
+    schema = ArchivedParsedSerp.schema()
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
 
-    def _indexable_paths(
+    def _to_corpus_location(
             self,
-            service: str | None = None,
-    ) -> Iterator[Path]:
-        focused = "focused/" if self.focused else ""
-        service = f"{service}" if service is not None else "*"
-        paths = self.data_directory.glob(
-            f"{focused}archived-parsed-serps/{service}/*/*.jsonl.gz"
+            csv_line: list
+    ) -> CorpusJsonlSnippetLocation:
+        return CorpusJsonlSnippetLocation(
+            relative_path=Path(csv_line[1]),
+            byte_offset=int(csv_line[2]),
+            index=int(csv_line[3]),
         )
-        paths = (
-            path
-            for path in paths
-            if path not in self._path_index
-        )
-        return paths
 
-    def _index_path(self, path: Path) -> None:
-        if path in self._path_index:
-            return
-        offset = 0
-        with GzipFile(path, mode="rb") as gzip_file:
-            gzip_file: IO[bytes]
-            num_lines = count_lines(gzip_file)
-        with GzipFile(path, mode="r") as gzip_file:
-            gzip_file: IO[str]
-            lines = gzip_file
-            if num_lines > 10_000:
-                lines = tqdm(
-                    lines,
-                    total=num_lines,
-                    desc=f"Indexing {self._index_name}",
-                    unit="line",
-                )
-            for line in lines:
-                record = self._schema.loads(line)
-                snippets = enumerate(record.results)
-                for snippet_index, snippet in snippets:
-                    snippet_id = snippet.id
-                    snippet_location = ArchivedSnippetLocation(
-                        relative_path=path.relative_to(
-                            self.data_directory),
-                        offset=offset,
-                        index=snippet_index,
-                    )
-                    self._index[snippet_id] = snippet_location
-                offset = gzip_file.tell()
-        self._path_index.add(path)
-
-    def index(
+    def _read_record(
             self,
-            service: str | None = None,
-            parallel: bool = False,
-    ) -> None:
-        paths = list(self._indexable_paths(service))
-        if len(paths) == 0:
-            return
-        progress = tqdm(
-            total=len(paths),
-            desc=f"Indexing {self._index_name}",
-            unit="file",
-        )
-        pool = ThreadPoolExecutor(None if parallel else 1)
-
-        def index_path(path: Path):
-            self._index_path(path)
-            progress.update()
-
-        for _ in pool.map(index_path, paths):
-            pass
-        self._index.close()
-
-    def locate(
-            self,
-            key: UUID,
-    ) -> LocatedRecord[ArchivedSnippetLocation, _RecordType] | None:
-        if key not in self._index:
-            return None
-        # noinspection PyTypeChecker
-        location: ArchivedSnippetLocation = self._index[key]
+            location: CorpusJsonlSnippetLocation
+    ) -> _RecordType:
         path = self.data_directory / location.relative_path
         with GzipFile(path, "rb") as gzip_file:
             gzip_file: IO[bytes]
-            gzip_file.seek(location.offset)
+            gzip_file.seek(location.byte_offset)
             with TextIOWrapper(gzip_file) as text_file:
                 line = text_file.readline()
-                record: ArchivedParsedSerp = self._schema.loads(line)
-                return LocatedRecord(
-                    location,
-                    record.results[location.index],
-                )
-
-    def __getitem__(self, key: UUID) -> ArchivedSearchResultSnippet:
-        return self.locate(key).record
+                record: ArchivedParsedSerp = self.schema.loads(line)
+                return record.results[location.index]
 
 
 @dataclass(frozen=True)
 class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
-    _index_name = "archived-raw-search-results"
-    _schema = ArchivedSearchResultSnippet.schema()
-    _location_type = Location
+    base_type = "archived-raw-search-results"
+    schema = ArchivedSearchResultSnippet.schema()
 
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
 
-    def _read_id(self, record: WarcRecord) -> UUID:
-        try:
-            return self._schema.loads(record.headers["Archived-URL"]).id
-        except ValidationError as e:
-            print(record.headers["Archived-URL"])
-            raise e
-
-    def _read_record(self, record: WarcRecord) -> ArchivedRawSearchResult:
-        archived_url: ArchivedSearchResultSnippet = self._schema.loads(
+    def _read_warc_record(self, record: WarcRecord) -> ArchivedRawSearchResult:
+        archived_url: ArchivedSearchResultSnippet = self.schema.loads(
             record.headers["Archived-URL"]
         )
         content_type = record.http_charset
@@ -590,4 +541,22 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
 
 
 if __name__ == '__main__':
-    index = ArchivedRawSearchResultIndex()
+    # index = ArchivedUrlIndex(focused=True)
+    # index.index()
+    # print(index[UUID("712d7714-3a23-592c-807b-8e82a256c181")])
+
+    # index = ArchivedQueryUrlIndex(focused=True)
+    # index.index()
+    # print(index[UUID("935f36cd-623a-5a10-a01f-ddec1ecc59c5")].record.id)
+    index = ArchivedRawSerpIndex(focused=True)
+    # index.index()
+    print(index[UUID("b72ccc4a-18c9-5339-b0d3-59154b8faed9")].record.id)
+    index = ArchivedParsedSerpIndex(focused=True)
+    # index.index()
+    print(index[UUID("6e59a3a4-5343-5001-a51a-911dc0b2b032")].record.id)
+    index = ArchivedSearchResultSnippetIndex(focused=True)
+    # index.index()
+    print(index[UUID("96a3e930-dc8f-5369-88a4-8a4a60ca06fb")].record.id)
+    index = ArchivedRawSearchResultIndex(focused=True)
+    # index.index()
+    print(index[UUID("116c6f96-c76d-5a39-bc80-f2605d689885")].record.id)
