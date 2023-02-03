@@ -4,7 +4,6 @@ from dataclasses import dataclass
 from functools import cached_property
 from gzip import GzipFile
 from io import TextIOWrapper
-from itertools import islice
 from json import loads
 from pathlib import Path
 from shutil import copyfileobj
@@ -345,7 +344,6 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
                 desc="Load index",
                 unit="line",
             )
-            index_reader = islice(index_reader, 10_000)
             for csv_line in index_reader:
                 cache[UUID(csv_line[0])] = self._to_corpus_location(csv_line)
             # noinspection PyTypeChecker
