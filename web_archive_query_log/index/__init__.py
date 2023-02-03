@@ -138,9 +138,12 @@ class _MetaIndex:
                 ))
                 offset = gzip_file.tell()
 
-        with index_path.open("wt") as index_file:
-            index_writer = writer(index_file)
-            index_writer.writerows(index)
+        try:
+            with index_path.open("wt") as index_file:
+                index_writer = writer(index_file)
+                index_writer.writerows(index)
+        except Exception as e:
+            LOGGER.warning(e)
 
     def _index_warc(self, dir_path: Path) -> None:
         if not dir_path.exists():
