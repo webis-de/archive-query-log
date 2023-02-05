@@ -63,6 +63,8 @@ class _MetaIndex:
 
     def _indexable_paths(self) -> Iterator[Path]:
         base_path = self.base_path
+        if not base_path.exists():
+            return
         for service_path in base_path.iterdir():
             if not service_path.is_dir():
                 continue
