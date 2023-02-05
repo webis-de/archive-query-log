@@ -370,7 +370,7 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
                 unit="line",
             )
             for csv_line in index_reader:
-                cache[UUID(csv_line[0])] = self._to_corpus_location(csv_line)
+                cache[csv_line[0]] = csv_line
             # noinspection PyTypeChecker
             return cache
 
@@ -385,7 +385,7 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
             self,
             item: UUID
     ) -> LocatedRecord[_CorpusLocationType, _RecordType]:
-        location = self._index[item]
+        location = self._to_corpus_location(self._index[str(item)])
         record = self._read_record(location)
         return LocatedRecord(location, record)
 
@@ -393,12 +393,13 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
             self,
             item: UUID
     ) -> LocatedRecord[_CorpusLocationType, _RecordType] | None:
-        if item not in self._index:
+        if str(item) not in self._index:
             return None
         return self[item]
 
     def __iter__(self) -> Iterator[UUID]:
-        return iter(self._index)
+        for uuid in self._index:
+            yield UUID(uuid)
 
 
 @dataclass(frozen=True)
