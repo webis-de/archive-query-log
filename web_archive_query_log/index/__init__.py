@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from functools import cached_property
 from gzip import GzipFile
 from io import TextIOWrapper
-from json import loads
+from json import loads, JSONDecodeError
 from pathlib import Path
 from shutil import copyfileobj
 from typing import Iterator, TypeVar, Generic, Type, IO, final
@@ -126,7 +126,11 @@ class _MetaIndex:
         with GzipFile(path, mode="r") as gzip_file:
             gzip_file: IO[str]
             for line in gzip_file:
-                record = loads(line)
+                try:
+                    record = loads(line)
+                except JSONDecodeError:
+                    LOGGER.error(f"Could not index {line} at {path}.")
+                    return
                 record_id = uuid5(
                     NAMESPACE_URL,
                     f"{record['timestamp']}:{record['url']}",
@@ -143,7 +147,7 @@ class _MetaIndex:
                 index_writer = writer(index_file)
                 index_writer.writerows(index)
         except Exception as e:
-            LOGGER.warning(e)
+            LOGGER.error(e)
 
     def _index_warc(self, dir_path: Path) -> None:
         if not dir_path.exists():
@@ -170,7 +174,15 @@ class _MetaIndex:
             for record in records:
                 record: WarcRecord
                 offset = record.stream_pos
-                record_url = loads(record.headers["Archived-URL"])
+                try:
+                    record_url = loads(record.headers["Archived-URL"])
+                except JSONDecodeError:
+                    LOGGER.error(
+                        f"Could not index "
+                        f"{record.headers['Archived-URL']} "
+                        f"at {path}."
+                    )
+                    return
                 record_id = uuid5(
                     NAMESPACE_URL,
                     f"{record_url['timestamp']}:{record_url['url']}",
@@ -181,9 +193,12 @@ class _MetaIndex:
                     str(offset),
                 ))
 
-        with index_path.open("wt") as index_file:
-            index_writer = writer(index_file)
-            index_writer.writerows(index)
+        try:
+            with index_path.open("wt") as index_file:
+                index_writer = writer(index_file)
+                index_writer.writerows(index)
+        except Exception as e:
+            LOGGER.error(e)
 
     def _index_jsonl_snippets(self, path: Path) -> None:
         if not path.exists():
@@ -203,7 +218,11 @@ class _MetaIndex:
         with GzipFile(path, mode="r") as gzip_file:
             gzip_file: IO[str]
             for line in gzip_file:
-                record = loads(line)
+                try:
+                    record = loads(line)
+                except JSONDecodeError:
+                    LOGGER.error(f"Could not index {line} at {path}.")
+                    return
                 for snippet_index, snippet in enumerate(record["results"]):
                     record_id = uuid5(
                         NAMESPACE_URL,
@@ -217,9 +236,12 @@ class _MetaIndex:
                     ))
                 offset = gzip_file.tell()
 
-        with index_path.open("wt") as index_file:
-            index_writer = writer(index_file)
-            index_writer.writerows(index)
+        try:
+            with index_path.open("wt") as index_file:
+                index_writer = writer(index_file)
+                index_writer.writerows(index)
+        except Exception as e:
+            LOGGER.error(e)
 
     def _index(self, path: Path) -> None:
         if self.base_type == "archived-urls":
