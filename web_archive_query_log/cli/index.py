@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import ExitStack
 from pathlib import Path
 
 from click import option, BOOL
@@ -39,54 +40,69 @@ def index_command(
         data_directory: Path,
         focused: bool,
 ) -> None:
-    archived_url_index = ArchivedUrlIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_query_url_index = ArchivedQueryUrlIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_raw_serp_index = ArchivedRawSerpIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_parsed_serp_index = ArchivedParsedSerpIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_search_result_snippet_index = ArchivedSearchResultSnippetIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_raw_search_result_index = ArchivedRawSearchResultIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    # archived_parsed_search_result_index = ArchivedParsedSearchResultIndex(
-    #     data_directory=data_directory,
-    #     focused=focused,
-    # )
-    indexes = [
-        archived_url_index,
-        archived_query_url_index,
-        archived_raw_serp_index,
-        archived_parsed_serp_index,
-        archived_search_result_snippet_index,
-        archived_raw_search_result_index,
-        # archived_parsed_search_result_index,
-    ]
+    with ExitStack() as stack:
+        archived_url_index = stack.enter_context(
+            ArchivedUrlIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_query_url_index = stack.enter_context(
+            ArchivedQueryUrlIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_raw_serp_index = stack.enter_context(
+            ArchivedRawSerpIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_parsed_serp_index = stack.enter_context(
+            ArchivedParsedSerpIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_search_result_snippet_index = stack.enter_context(
+            ArchivedSearchResultSnippetIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_raw_search_result_index = stack.enter_context(
+            ArchivedRawSearchResultIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        # archived_parsed_search_result_index = stack.enter_context(
+        #     ArchivedParsedSearchResultIndex(
+        #         data_directory=data_directory,
+        #         focused=focused,
+        #     )
+        # )
+        indexes = [
+            archived_url_index,
+            archived_query_url_index,
+            archived_raw_serp_index,
+            archived_parsed_serp_index,
+            archived_search_result_snippet_index,
+            archived_raw_search_result_index,
+            # archived_parsed_search_result_index,
+        ]
 
-    pool = ThreadPoolExecutor()
-    progress = tqdm(
-        total=len(indexes),
-        desc="Build indices",
-        unit="index",
-    )
+        pool = ThreadPoolExecutor()
+        progress = tqdm(
+            total=len(indexes),
+            desc="Build indices",
+            unit="index",
+        )
 
-    def run_index(index) -> None:
-        index.index()
-        progress.update()
+        def run_index(index) -> None:
+            index.index()
+            progress.update()
 
-    for _ in pool.map(run_index, indexes):
-        pass
+        for _ in pool.map(run_index, indexes):
+            pass

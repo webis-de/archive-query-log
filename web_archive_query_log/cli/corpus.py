@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import ExitStack
 from csv import writer
 from datetime import datetime
 from gzip import GzipFile
@@ -95,99 +96,115 @@ def corpus_command(
     documents_offsets_path.touch(exist_ok=True)
 
     # Load indices.
-    archived_url_index = ArchivedUrlIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_query_url_index = ArchivedQueryUrlIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_raw_serp_index = ArchivedRawSerpIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_parsed_serp_index = ArchivedParsedSerpIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_search_result_snippet_index = ArchivedSearchResultSnippetIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    archived_raw_search_result_index = ArchivedRawSearchResultIndex(
-        data_directory=data_directory,
-        focused=focused,
-    )
-    # archived_parsed_search_result_index = ArchivedParsedSearchResultIndex(
-    #     data_directory=data_directory,
-    #     focused=focused,
-    # )
-
-    query_schema = CorpusQuery.schema()
-    document_schema = CorpusDocument.schema()
-    with queries_path.open("wb") as queries_file, \
-            queries_offsets_path.open("w") as queries_offsets_file, \
-            documents_path.open("wb") as documents_file, \
-            documents_offsets_path.open("w") as documents_offsets_file:
-        queries_offsets_writer = writer(queries_offsets_file)
-        documents_offsets_writer = writer(documents_offsets_file)
-
-        archived_ids: Collection[UUID]
-        if queries:
-            archived_ids = set(archived_query_url_index)
-        else:
-            archived_ids = set(archived_url_index)
-
-        archived_ids = tqdm(
-            archived_ids,
-            desc="Build corpus",
-            unit="ID",
+    with ExitStack() as stack:
+        archived_url_index = stack.enter_context(
+            ArchivedUrlIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
         )
+        archived_query_url_index = stack.enter_context(
+            ArchivedQueryUrlIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_raw_serp_index = stack.enter_context(
+            ArchivedRawSerpIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_parsed_serp_index = stack.enter_context(
+            ArchivedParsedSerpIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_search_result_snippet_index = stack.enter_context(
+            ArchivedSearchResultSnippetIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        archived_raw_search_result_index = stack.enter_context(
+            ArchivedRawSearchResultIndex(
+                data_directory=data_directory,
+                focused=focused,
+            )
+        )
+        # archived_parsed_search_result_index = stack.enter_context(
+        #     ArchivedParsedSearchResultIndex(
+        #         data_directory=data_directory,
+        #         focused=focused,
+        #     )
+        # )
 
-        for archived_id in archived_ids:
-            query_documents = _build_query_documents(
-                archived_url_index=archived_url_index,
-                archived_query_url_index=archived_query_url_index,
-                archived_raw_serp_index=archived_raw_serp_index,
-                archived_parsed_serp_index=archived_parsed_serp_index,
-                archived_search_result_snippet_index=(
-                    archived_search_result_snippet_index
-                ),
-                archived_raw_search_result_index=(
-                    archived_raw_search_result_index
-                ),
-                # archived_parsed_search_result_index=(
-                #     archived_parsed_search_result_index
-                # ),
-                archived_id=archived_id,
+        query_schema = CorpusQuery.schema()
+        document_schema = CorpusDocument.schema()
+        with queries_path.open("wb") as queries_file, \
+                queries_offsets_path.open("w") as queries_offsets_file, \
+                documents_path.open("wb") as documents_file, \
+                documents_offsets_path.open("w") as documents_offsets_file:
+            queries_offsets_writer = writer(queries_offsets_file)
+            documents_offsets_writer = writer(documents_offsets_file)
+
+            archived_ids: Collection[UUID]
+            if queries:
+                archived_ids = set(archived_query_url_index)
+            else:
+                archived_ids = set(archived_url_index)
+
+            archived_ids = tqdm(
+                archived_ids,
+                desc="Build corpus",
+                unit="ID",
             )
-            if query_documents is None:
-                continue
-            query, documents = query_documents
-            queries_file_offset = queries_file.tell()
-            with GzipFile(
-                    fileobj=queries_file,
-                    mode="w",
-            ) as queries_gzip_file:
-                queries_gzip_file.write(
-                    f"{query_schema.dumps(query)}\n".encode("utf8")
+
+            for archived_id in archived_ids:
+                query_documents = _build_query_documents(
+                    archived_url_index=archived_url_index,
+                    archived_query_url_index=archived_query_url_index,
+                    archived_raw_serp_index=archived_raw_serp_index,
+                    archived_parsed_serp_index=archived_parsed_serp_index,
+                    archived_search_result_snippet_index=(
+                        archived_search_result_snippet_index
+                    ),
+                    archived_raw_search_result_index=(
+                        archived_raw_search_result_index
+                    ),
+                    # archived_parsed_search_result_index=(
+                    #     archived_parsed_search_result_index
+                    # ),
+                    archived_id=archived_id,
                 )
-            queries_offsets_writer.writerow(
-                [str(query.id), str(queries_file_offset)]
-            )
-            for document in documents:
-                documents_file_offset = documents_file.tell()
+                if query_documents is None:
+                    continue
+                query, documents = query_documents
+                queries_file_offset = queries_file.tell()
                 with GzipFile(
-                        fileobj=documents_file,
+                        fileobj=queries_file,
                         mode="w",
-                ) as documents_gzip_file:
-                    documents_gzip_file.write(
-                        f"{document_schema.dumps(document)}\n".encode("utf8")
+                ) as queries_gzip_file:
+                    queries_gzip_file.write(
+                        f"{query_schema.dumps(query)}\n".encode("utf8")
                     )
-                documents_offsets_writer.writerow(
-                    [str(document.id), str(documents_file_offset)]
+                queries_offsets_writer.writerow(
+                    [str(query.id), str(queries_file_offset)]
                 )
+                for document in documents:
+                    documents_file_offset = documents_file.tell()
+                    with GzipFile(
+                            fileobj=documents_file,
+                            mode="w",
+                    ) as documents_gzip_file:
+                        documents_gzip_file.write(
+                            f"{document_schema.dumps(document)}\n".encode(
+                                "utf8")
+                        )
+                    documents_offsets_writer.writerow(
+                        [str(document.id), str(documents_file_offset)]
+                    )
 
 
 def _build_query_url(

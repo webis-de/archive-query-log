@@ -6,12 +6,12 @@ from gzip import GzipFile
 from io import TextIOWrapper
 from json import loads, JSONDecodeError
 from pathlib import Path
+from shelve import open as shelve_open, Shelf
 from shutil import copyfileobj
-from typing import Iterator, TypeVar, Generic, Type, IO, final
+from typing import Iterator, TypeVar, Generic, Type, IO, final, ContextManager
 from uuid import UUID, uuid5, NAMESPACE_URL
 
 from dataclasses_json import DataClassJsonMixin
-from diskcache import Cache
 from fastwarc import ArchiveIterator, FileStream, WarcRecord, \
     WarcRecordType
 from fastwarc.stream_io import PythonIOStreamAdapter
@@ -324,7 +324,11 @@ _T = TypeVar("_T")
 
 
 @dataclass(frozen=True)
-class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
+class _Index(
+    Generic[_CorpusLocationType, _RecordType],
+    ContextManager,
+    ABC,
+):
     data_directory: Path
     focused: bool
 
@@ -352,12 +356,22 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
             return index_path / self.base_type / ".index"
 
     @cached_property
-    def _index(self) -> Cache:
-        cache = Cache()
+    def _index_shelve(self) -> Shelf:
         index_path = self._index_path
+        shelf_path = self._index_path.with_name(
+            f"{self._index_path.name}.shelf"
+        )
+        shelf_done_path = self._index_path.with_name(
+            f"{self._index_path.name}.shelf.done"
+        )
+        shelf = shelve_open(str(shelf_path), "c")
+
         if not index_path.exists():
             LOGGER.warning(f"Index not found: {index_path}")
-            return cache
+            return shelf
+
+        if shelf_done_path.exists():
+            return shelf
         with index_path.open("rt") as index_file:
             index_file = tqdm(
                 index_file,
@@ -365,9 +379,10 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
                 unit="line",
             )
             for line in index_file:
-                cache[line.split(",", maxsplit=1)[0]] = line
-            # noinspection PyTypeChecker
-            return cache
+                uuid, line = line.split(",", maxsplit=1)
+                shelf[uuid] = line
+        shelf_done_path.touch()
+        return shelf
 
     def index(self) -> None:
         self._meta_index.index()
@@ -380,7 +395,7 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
             self,
             item: UUID
     ) -> LocatedRecord[_CorpusLocationType, _RecordType]:
-        csv_line = self._index[str(item)].split(",")
+        csv_line = self._index_shelve[str(item)].split(",")
         location = self._to_corpus_location(csv_line)
         record = self._read_record(location)
         return LocatedRecord(location, record)
@@ -389,13 +404,16 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
             self,
             item: UUID
     ) -> LocatedRecord[_CorpusLocationType, _RecordType] | None:
-        if str(item) not in self._index:
+        if str(item) not in self._index_shelve:
             return None
         return self[item]
 
     def __iter__(self) -> Iterator[UUID]:
-        for uuid in self._index:
+        for uuid in self._index_shelve:
             yield UUID(uuid)
+
+    def __exit__(self, *args) -> None:
+        self._index_shelve.close()
 
 
 @dataclass(frozen=True)
@@ -558,24 +576,3 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
             content=record.reader.read(),
             encoding=content_type,
         )
-
-
-if __name__ == '__main__':
-    index = ArchivedUrlIndex(focused=True)
-    index.index()
-    print(index[UUID("712d7714-3a23-592c-807b-8e82a256c181")].record.id)
-    index = ArchivedQueryUrlIndex(focused=True)
-    index.index()
-    print(index[UUID("935f36cd-623a-5a10-a01f-ddec1ecc59c5")].record.id)
-    index = ArchivedRawSerpIndex(focused=True)
-    index.index()
-    print(index[UUID("b72ccc4a-18c9-5339-b0d3-59154b8faed9")].record.id)
-    index = ArchivedParsedSerpIndex(focused=True)
-    index.index()
-    print(index[UUID("6e59a3a4-5343-5001-a51a-911dc0b2b032")].record.id)
-    index = ArchivedSearchResultSnippetIndex(focused=True)
-    index.index()
-    print(index[UUID("96a3e930-dc8f-5369-88a4-8a4a60ca06fb")].record.id)
-    index = ArchivedRawSearchResultIndex(focused=True)
-    index.index()
-    print(index[UUID("116c6f96-c76d-5a39-bc80-f2605d689885")].record.id)
