@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from csv import writer, reader
+from csv import writer
 from dataclasses import dataclass
 from functools import cached_property
 from gzip import GzipFile
@@ -23,7 +23,6 @@ from web_archive_query_log.model import ArchivedUrl, ArchivedQueryUrl, \
     ArchivedParsedSerp, ArchivedSearchResultSnippet, ArchivedRawSerp, \
     ArchivedRawSearchResult, CorpusJsonlLocation, CorpusJsonlSnippetLocation, \
     CorpusWarcLocation
-from web_archive_query_log.util.text import count_lines
 
 
 @dataclass(frozen=True)
@@ -359,18 +358,14 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
         if not index_path.exists():
             LOGGER.warning(f"Index not found: {index_path}")
             return cache
-        with index_path.open("rb") as index_file:
-            num_lines = count_lines(index_file)
         with index_path.open("rt") as index_file:
-            index_reader = reader(index_file)
-            index_reader = tqdm(
-                index_reader,
-                total=num_lines,
+            index_file = tqdm(
+                index_file,
                 desc="Load index",
                 unit="line",
             )
-            for csv_line in index_reader:
-                cache[csv_line[0]] = csv_line
+            for line in index_file:
+                cache[line.split(",", maxsplit=1)[0]] = line
             # noinspection PyTypeChecker
             return cache
 
@@ -385,7 +380,8 @@ class _Index(Generic[_CorpusLocationType, _RecordType], ABC):
             self,
             item: UUID
     ) -> LocatedRecord[_CorpusLocationType, _RecordType]:
-        location = self._to_corpus_location(self._index[str(item)])
+        csv_line = self._index[str(item)].split(",")
+        location = self._to_corpus_location(csv_line)
         record = self._read_record(location)
         return LocatedRecord(location, record)
 
