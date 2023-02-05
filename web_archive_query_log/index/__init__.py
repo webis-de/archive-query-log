@@ -6,7 +6,7 @@ from gzip import GzipFile
 from io import TextIOWrapper
 from json import loads, JSONDecodeError
 from pathlib import Path
-from shelve import open as shelve_open, Shelf
+from shelve import open as shelf_open, Shelf
 from shutil import copyfileobj
 from typing import Iterator, TypeVar, Generic, Type, IO, final, ContextManager
 from uuid import UUID, uuid5, NAMESPACE_URL
@@ -23,6 +23,7 @@ from web_archive_query_log.model import ArchivedUrl, ArchivedQueryUrl, \
     ArchivedParsedSerp, ArchivedSearchResultSnippet, ArchivedRawSerp, \
     ArchivedRawSearchResult, CorpusJsonlLocation, CorpusJsonlSnippetLocation, \
     CorpusWarcLocation
+from web_archive_query_log.util.text import count_lines
 
 
 @dataclass(frozen=True)
@@ -261,7 +262,7 @@ class _MetaIndex:
             raise ValueError(f"Unknown base type: {self.base_type}")
 
     @cached_property
-    def _aggregated_index_path(self) -> Path:
+    def path(self) -> Path:
         if self.base_type == "archived-urls":
             return self.base_path / ".index"
         elif self.base_type == "archived-query-urls":
@@ -279,32 +280,54 @@ class _MetaIndex:
         else:
             raise ValueError(f"Unknown base type: {self.base_type}")
 
+    @cached_property
+    def shelf_path(self) -> Path:
+        return self.path.with_name(f"{self.path.name}.shelf")
+
     def index(self) -> None:
         # Index each path individually.
-        paths = tqdm(
+        indexed_paths = []
+        indexable_paths = tqdm(
             self._indexable_paths(),
             total=sum(1 for _ in self._indexable_paths()),
             desc="Index paths",
             unit="path",
         )
-        for path in paths:
-            self._index(path)
+        for indexable_path in indexable_paths:
+            self._index(indexable_path)
+            indexed_paths.append(indexable_path)
 
-        # Aggregate all indexes into a single index.
-        aggregated_index_path = self._aggregated_index_path
-        with aggregated_index_path.open("wb") as aggregated_index_file:
-            paths = tqdm(
-                self._indexable_paths(),
-                total=sum(1 for _ in self._indexable_paths()),
-                desc="Aggregate indices",
+        # Merge all indexes into a single index.
+        path = self.path
+        num_lines = 0
+        with path.open("wb") as aggregated_index_file:
+            indexed_paths = tqdm(
+                indexed_paths,
+                desc="Merge indices",
                 unit="path",
             )
-            for path in paths:
-                index_path = self._index_path(path)
+            for indexed_path in indexed_paths:
+                index_path = self._index_path(indexed_path)
                 if not index_path.exists():
                     continue
                 with index_path.open("rb") as index_file:
                     copyfileobj(index_file, aggregated_index_file)
+                with index_path.open("rb") as index_file:
+                    num_lines += count_lines(index_file)
+
+        # Create index shelf for efficient lookups.
+        shelf_path = self.shelf_path
+        with shelf_open(str(shelf_path), "c") as shelf:
+            with path.open("rt") as file:
+                lines = tqdm(
+                    file,
+                    total=num_lines,
+                    desc="Create index shelf",
+                    unit="line",
+                )
+                for line in lines:
+                    uuid, line = line.split(",", maxsplit=1)
+                    shelf[uuid] = line
 
 
 _CorpusLocationType = TypeVar(
@@ -346,43 +369,19 @@ class _Index(
         pass
 
     @cached_property
-    def _index_path(self) -> Path:
+    def _index_shelf_path(self) -> Path:
         index_path = self.data_directory
         if self.focused:
             index_path /= "focused"
         if self.base_type == "archived-search-result-snippets":
-            return index_path / "archived-parsed-serps" / ".snippets.index"
+            return index_path / "archived-parsed-serps" / \
+                ".snippets.index.shelf"
         else:
-            return index_path / self.base_type / ".index"
+            return index_path / self.base_type / ".index.shelf"
 
     @cached_property
     def _index_shelve(self) -> Shelf:
-        index_path = self._index_path
-        shelf_path = self._index_path.with_name(
-            f"{self._index_path.name}.shelf"
-        )
-        shelf_done_path = self._index_path.with_name(
-            f"{self._index_path.name}.shelf.done"
-        )
-        shelf = shelve_open(str(shelf_path), "c")
-
-        if not index_path.exists():
-            LOGGER.warning(f"Index not found: {index_path}")
-            return shelf
-
-        if shelf_done_path.exists():
-            return shelf
-        with index_path.open("rt") as index_file:
-            index_file = tqdm(
-                index_file,
-                desc="Load index",
-                unit="line",
-            )
-            for line in index_file:
-                uuid, line = line.split(",", maxsplit=1)
-                shelf[uuid] = line
-        shelf_done_path.touch()
-        return shelf
+        return shelf_open(str(self._index_shelf_path), "r")
 
     def index(self) -> None:
         self._meta_index.index()
