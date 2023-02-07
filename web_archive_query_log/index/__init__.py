@@ -317,19 +317,20 @@ class _MetaIndex:
                 with index_path.open("rb") as index_file:
                     num_lines += count_lines(index_file)
 
-        # Create index shelf for efficient lookups.
-        shelf_path = self.shelf_path
-        with shelf_open(str(shelf_path), "c") as shelf:
-            with path.open("rt") as file:
-                lines = tqdm(
-                    file,
-                    total=num_lines,
-                    desc="Create index shelf",
-                    unit="line",
-                )
-                for line in lines:
-                    uuid, line = line.split(",", maxsplit=1)
-                    shelf[uuid] = line
+        # TODO: This is too slow.
+        # # Create index shelf for efficient lookups.
+        # shelf_path = self.shelf_path
+        # with shelf_open(str(shelf_path), "c") as shelf:
+        #     with path.open("rt") as file:
+        #         lines = tqdm(
+        #             file,
+        #             total=num_lines,
+        #             desc="Create index shelf",
+        #             unit="line",
+        #         )
+        #         for line in lines:
+        #             uuid, line = line.split(",", maxsplit=1)
+        #             shelf[uuid] = line
 
 
 _CorpusLocationType = TypeVar(
