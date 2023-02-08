@@ -1048,7 +1048,7 @@
     parameter: k
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/s\?
     type: query_parameter
@@ -2063,9 +2063,9 @@
   - url_pattern: ^https?://[^/]+/video\?
     type: query_parameter
     parameter: q
-  - url_pattern: ^https?://[^/]+/weibo/
+  - url_pattern: ^https?://[^/]+/weibo/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   - url_pattern: ^https?://[^/]+/weibo\?
     type: query_parameter
     parameter: q
@@ -2625,9 +2625,9 @@
   - trailers.apple.com
   - training.apple.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/search/
+  - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
@@ -2673,9 +2673,9 @@
   domains:
   - stackoverflow.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/questions/tagged/
+  - url_pattern: ^https?://[^/]+/questions/tagged/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
@@ -2898,9 +2898,9 @@
   domains:
   - espn.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/_/q/
+  - url_pattern: ^https?://[^/]+/search/_/q/[^/]+
     type: path_segment
-    segment: 3
+    segment: 4
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -4126,9 +4126,9 @@
   domains:
   - xnxx.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -4278,9 +4278,9 @@
   domains:
   - bukalapak.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/products/s/
+  - url_pattern: ^https?://[^/]+/products/s/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   - url_pattern: ^https?://[^/]+/products\?
     type: query_parameter
     parameter: search[keywords]
@@ -4435,9 +4435,9 @@
   domains:
   - airbnb.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/s/
+  - url_pattern: ^https?://[^/]+/s/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -4527,13 +4527,13 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
-  page_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/  # FIXME
-    type: path_segment
     segment: 2
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/[^/]+/[^/]+
+    type: path_segment
+    segment: 3
     remove_patterns:
-    - 'page:'  # FIXME
+    - 'page:'
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -4678,19 +4678,19 @@
   - dcinside.com
   - search.dcinside.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/combine/q/
+  - url_pattern: ^https?://[^/]+/combine/q/[^/]+
     type: path_segment
-    segment: 2
-  - url_pattern: ^https?://[^/]+/post/sort/[^/]+/q/
+    segment: 3
+  - url_pattern: ^https?://[^/]+/post/sort/[^/]+/q/[^/]+
     type: path_segment
-    segment: 4
-  - url_pattern: ^https?://[^/]+/post/p/[^/]+/sort/[^/]+/q/
+    segment: 5
+  - url_pattern: ^https?://[^/]+/post/p/[^/]+/sort/[^/]+/q/[^/]+
     type: path_segment
-    segment: 6
+    segment: 7
   page_parsers:
-  - url_pattern: ^https?://[^/]+/post/p/[^/]+/sort/[^/]+/q/
+  - url_pattern: ^https?://[^/]+/post/p/[^/]+/sort/[^/]+/q/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -4756,9 +4756,9 @@
     type: query_parameter
     parameter: s
   page_parsers:
-  - url_pattern: ^https?://[^/]+/page\?
+  - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -4802,12 +4802,12 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/stock-photo/[^/]\.html
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - \.html$
   - url_pattern: ^https?://[^/]+/lizenzfreie-bilder/[^/]\.html
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - \.html$
   page_parsers:
@@ -4942,30 +4942,30 @@
   domains:
   - ci123.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/all/
+  - url_pattern: ^https?://[^/]+/all/[^/]+
     type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/ask/
+    segment: 2
+  - url_pattern: ^https?://[^/]+/ask/[^/]+
     type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/bbs/
+    segment: 2
+  - url_pattern: ^https?://[^/]+/bbs/[^/]+
     type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/blog/
+    segment: 2
+  - url_pattern: ^https?://[^/]+/blog/[^/]+
     type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/baobao/
+    segment: 2
+  - url_pattern: ^https?://[^/]+/baobao/[^/]+
     type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/qq/
+    segment: 2
+  - url_pattern: ^https?://[^/]+/qq/[^/]+
     type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/zhishi/
+    segment: 2
+  - url_pattern: ^https?://[^/]+/zhishi/[^/]+
     type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/ping/
+    segment: 2
+  - url_pattern: ^https?://[^/]+/ping/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/all/
     type: query_parameter
@@ -5233,10 +5233,10 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+
     type: query_parameter
@@ -5435,16 +5435,16 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/(royalty-free-vectors|free-vectors)/[^/]+-vectors(-page_[0-9]+)?
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - -vectors$
     - -vectors-page_[0-9]+$
     space_patterns:
-    - \-
+    - "-"
   page_parsers:
   - url_pattern: ^https?://[^/]+/(royalty-free-vectors|free-vectors)/[^/]+-vectors-page_[0-9]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - ^[^/]+-vectors-page_
   offset_parsers: [ ]
@@ -5488,7 +5488,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/provide/title_[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - ^title_
     - \.html$
@@ -5498,13 +5498,13 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/provide/title_[^/]+/p[0-9]+
     type: path_segment
-    segment: 2
+    segment: 3
     remove_patterns:
     - ^p
     - \.html$
   - url_pattern: ^https?://[^/]+/chanpin/p[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - ^p
   offset_parsers: [ ]
@@ -5648,9 +5648,9 @@
   domains:
   - doc88.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/tag/
+  - url_pattern: ^https?://[^/]+/tag/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -5812,7 +5812,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -5932,9 +5932,9 @@
   domains:
   - cjdropshipping.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - \.html$
   page_parsers:
@@ -5985,7 +5985,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[0-9]+
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -6070,11 +6070,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -6147,7 +6147,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -6189,7 +6189,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/story/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/story/[^/]+\?
     type: query_parameter
@@ -6236,7 +6236,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/loupan/list-key[^/]\.html
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - ^list-key
     - \.html$
@@ -6276,11 +6276,11 @@
   domains:
   - thumbzilla.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/tags/
+  - url_pattern: ^https?://[^/]+/tags/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
-  - url_pattern: ^https?://[^/]+/tags/
+  - url_pattern: ^https?://[^/]+/tags/[^/]+
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -6321,11 +6321,11 @@
   domains:
   - commentcamarche.net
   query_parsers:
-  - url_pattern: ^https?://[^/]+/s/
+  - url_pattern: ^https?://[^/]+/s/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
-  - url_pattern: ^https?://[^/]+/s/
+  - url_pattern: ^https?://[^/]+/s/[^/]+
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -6347,11 +6347,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -6572,9 +6572,9 @@
   domains:
   - eluniversal.com.mx
   query_parsers:
-  - url_pattern: ^https?://[^/]+/resultados-busqueda/
+  - url_pattern: ^https?://[^/]+/resultados-busqueda/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -6634,13 +6634,13 @@
   domains:
   - javhdporn.net
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/page/
+  - url_pattern: ^https?://[^/]+/search/[^/]+/page/[0-9]+
     type: path_segment
-    segment: 3
+    segment: 4
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -6685,7 +6685,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -6727,14 +6727,14 @@
   domains:
   - ixxx.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/a/
+  - url_pattern: ^https?://[^/]+/search/a/[^/]+
+    type: path_segment
+    segment: 3
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 2
-  - url_pattern: ^https?://[^/]+/search/
-    type: path_segment
-    segment: 1
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -6806,7 +6806,7 @@
   offset_parsers:
   - url_pattern: ^https?://[^/]+/preisvergleich/MainSearchProductCategory/100I16-[0-9]+\.html\?
     type: path_segment
-    segment: 2
+    segment: 3
     remove_patterns:
     - ^100I16-
     - \.html$
@@ -6936,14 +6936,14 @@
   domains:
   - pornhd.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/a/
+  - url_pattern: ^https?://[^/]+/search/a/[^/]+
+    type: path_segment
+    segment: 3
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 2
-  - url_pattern: ^https?://[^/]+/search/
-    type: path_segment
-    segment: 1
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -6980,11 +6980,11 @@
   domains:
   - redwap.me
   query_parsers:
-  - url_pattern: ^https?://[^/]+/to/
+  - url_pattern: ^https?://[^/]+/to/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     space_patterns:
-    - \-
+    - "-"
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -7009,7 +7009,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/page/[0-9]+/\?
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -7028,9 +7028,9 @@
   - 3isk.tv
   - 3isk.video
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     space_patterns:
     - \+
   page_parsers: [ ]
@@ -7126,7 +7126,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -7150,7 +7150,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -7213,9 +7213,9 @@
   domains:
   - jagranjosh.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -7289,7 +7289,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -7709,7 +7709,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -7751,7 +7751,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -7983,11 +7983,11 @@
   domains:
   - sagepub.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/[a-z]+/(content|events|product)/
+  - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/[a-z]+/(content|events|product)/[^/]+
     type: path_segment
-    segment: 3
+    segment: 4
   page_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/[a-z]+/(content|events|product)/
+  - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/[a-z]+/(content|events|product)/[^/]+
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -8026,13 +8026,13 @@
   domains:
   - javbus.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
-    type: path_segment
-    segment: 1
-  page_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 2
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+
+    type: path_segment
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -8098,9 +8098,9 @@
   domains:
   - kat.cr
   query_parsers:
-  - url_pattern: ^https?://[^/]+/usearch/
+  - url_pattern: ^https?://[^/]+/usearch/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -8121,14 +8121,14 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/news/search(-xzg-)?kw-[^-]-\.html
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - ^search(-xzg-)?kw-
     - (-fields-[0-9])?(-page-[0-9])?-?\.html$
   page_parsers:
   - url_pattern: ^https?://[^/]+/news/search(-xzg-)?kw-[^-]-\.html
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - ^search(-xzg-)?kw-[^-]-(-fields-[0-9])?
     - (-page-[0-9])?-?\.html$
@@ -8255,7 +8255,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -8513,9 +8513,9 @@
   domains:
   - meteofrance.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/recherche/
+  - url_pattern: ^https?://[^/]+/recherche/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -8875,7 +8875,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -8931,14 +8931,14 @@
   domains:
   - fuq.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/a/
+  - url_pattern: ^https?://[^/]+/search/a/[^/]+
+    type: path_segment
+    segment: 3
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 2
-  - url_pattern: ^https?://[^/]+/search/
-    type: path_segment
-    segment: 1
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -9019,13 +9019,13 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/(internships|jobs)/keywords-[^/]+/
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - ^keywords-
   page_parsers:
   - url_pattern: ^https?://[^/]+/(internships|jobs)/keywords-[^/]+/page-[0-9]+/
     type: path_segment
-    segment: 2
+    segment: 3
     remove_patterns:
     - ^page-
   offset_parsers: [ ]
@@ -9070,11 +9070,11 @@
   domains:
   - le360.ma
   query_parsers:
-  - url_pattern: ^https?://[^/]+/recherche/
+  - url_pattern: ^https?://[^/]+/recherche/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
-  - url_pattern: ^https?://[^/]+/recherche/
+  - url_pattern: ^https?://[^/]+/recherche/[^/]+
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -9208,7 +9208,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -9306,9 +9306,9 @@
   domains:
   - besoccer.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -9333,7 +9333,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -9352,11 +9352,11 @@
   - zaobao.com
   - zaobao.com.sg
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/site/
+  - url_pattern: ^https?://[^/]+/search/site/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/site/
+  - url_pattern: ^https?://[^/]+/search/site/[^/]+
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -9376,9 +9376,9 @@
   domains:
   - pornmd.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/(gay|straight|tranny)/
+  - url_pattern: ^https?://[^/]+/(gay|straight|tranny)/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     space_patterns:
     - \+
   page_parsers: [ ]
@@ -9419,7 +9419,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -9438,9 +9438,9 @@
   - pron.tv
   - mypron.tv
   query_parsers:
-  - url_pattern: ^https?://[^/]+/videos/search/
+  - url_pattern: ^https?://[^/]+/videos/search/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -9576,19 +9576,19 @@
   domains:
   - ulta.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/ulta/a/_/Ntt-
+  - url_pattern: ^https?://[^/]+/ulta/a/_/Ntt-[^/]+
     type: path_segment
-    segment: 3
+    segment: 4
     remove_patterns:
     - ^Ntt-
-  - url_pattern: ^https?://[^/]+/shop
+  - url_pattern: ^https?://[^/]+/shop/[^/]+
     type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/brand
+    segment: 2
+  - url_pattern: ^https?://[^/]+/brand/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     space_patterns:
-    - \-
+    - "-"
   page_parsers: [ ]
   offset_parsers:
   - url_pattern: ^https?://[^/]+/ulta/a/_/Ntt-
@@ -9612,13 +9612,13 @@
   domains:
   - pornhat.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
-    type: path_segment
-    segment: 1
-  page_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 2
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+
+    type: path_segment
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -9636,13 +9636,13 @@
   domains:
   - fanpage.gr
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/page/
+  - url_pattern: ^https?://[^/]+/search/[^/]+/page/[0-9]+
     type: path_segment
-    segment: 3
+    segment: 4
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -9761,13 +9761,13 @@
   domains:
   - bestjavporn.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/page/
+  - url_pattern: ^https?://[^/]+/search/[^/]+/page/[0-9]+
     type: path_segment
-    segment: 3
+    segment: 4
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -9785,9 +9785,9 @@
   domains:
   - hunter.io
   query_parsers:
-  - url_pattern: ^https?://[^/]+/try/search/
+  - url_pattern: ^https?://[^/]+/try/search/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -9830,9 +9830,9 @@
   - url_pattern: ^https?://[^/]+/search/
     type: query_parameter
     parameter: gsc.q
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/
     type: query_parameter
@@ -9854,9 +9854,9 @@
   domains:
   - masrawy.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/0/
+  - url_pattern: ^https?://[^/]+/search/0/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -9992,9 +9992,9 @@
   domains:
   - letmejerk.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/se/
+  - url_pattern: ^https?://[^/]+/se/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/se/
     type: query_parameter
@@ -10043,7 +10043,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -10149,9 +10149,9 @@
   domains:
   - sunporno.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -10224,7 +10224,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -10289,9 +10289,9 @@
   domains:
   - leagueofgraphs.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -10327,18 +10327,18 @@
   domains:
   - letour.fr
   query_parsers:
-  - url_pattern: ^https?://[^/]+/en/search/
+  - url_pattern: ^https?://[^/]+/en/search/[^/]+
     type: path_segment
-    segment: 2
-  - url_pattern: ^https?://[^/]+/fr/rechercher/
+    segment: 3
+  - url_pattern: ^https?://[^/]+/fr/rechercher/[^/]+
     type: path_segment
-    segment: 2
-  - url_pattern: ^https?://[^/]+/de/suche/
+    segment: 3
+  - url_pattern: ^https?://[^/]+/de/suche/[^/]+
     type: path_segment
-    segment: 2
-  - url_pattern: ^https?://[^/]+/es/busqueda/
+    segment: 3
+  - url_pattern: ^https?://[^/]+/es/busqueda/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -10617,9 +10617,9 @@
   domains:
   - yupptv.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -10666,15 +10666,15 @@
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
     parameter: wd
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - (-+[0-9]-+)\.html$
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - ([^0-9.])
   offset_parsers: [ ]
@@ -10711,9 +10711,9 @@
   domains:
   - thefappeningblog.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -10783,20 +10783,16 @@
   - searchengines.guru
   - searchengines.ru
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/search
+  - url_pattern: ^https?://[^/]+/(en|ru)/search
     type: query_parameter
     parameter: keyword
-  page_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/search
-    type: path_segment
-    segment: 1
-    remove_patterns:
-    - page
+  page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
-  - /search
+  - /en/search
+  - /ru/search
 - name: watchfreejavonline
   public_suffix: co
   alexa_domain: watchfreejavonline.co
@@ -10912,9 +10908,9 @@
     type: query_parameter
     parameter: s
   page_parsers:
-  - url_pattern: ^https?://[^/]+/page/\?
+  - url_pattern: ^https?://[^/]+/page/[0-9]+
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -10954,15 +10950,16 @@
   domains:
   - opensubtitles.org
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/search2/sublanguageid-[a-z]+/
-    type: path_segment
-    segment: 3
-    remove_patterns: moviename-
-  page_parsers: [ ]
-  offset_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/search2/sublanguageid-[a-z]+/moviename.*/offset
+  - url_pattern: ^https?://[^/]+/[a-z]+/search2/sublanguageid-[a-z]+/moviename-[^/]+
     type: path_segment
     segment: 4
+    remove_patterns:
+    - moviename-
+  page_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]+/search2/sublanguageid-[a-z]+/moviename-[^/]+/offset-[0-9]+
+    type: path_segment
+    segment: 5
     remove_patterns:
     - offset-
   interpreted_query_parsers: [ ]
@@ -11236,13 +11233,13 @@
   domains:
   - iwank.tv
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+/
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -11346,7 +11343,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/Search/[0-9]+\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -11444,9 +11441,9 @@
   domains:
   - darty.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/nav/recherche/
+  - url_pattern: ^https?://[^/]+/nav/recherche/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
     remove_patterns:
     - \.html$
   - url_pattern: ^https?://[^/]+/nav/recherche\?
@@ -11785,7 +11782,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -11830,7 +11827,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -12107,7 +12104,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -12264,7 +12261,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -12462,9 +12459,9 @@
   domains:
   - jobartis.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/vagas-emprego/
+  - url_pattern: ^https?://[^/]+/vagas-emprego/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   - url_pattern: ^https?://[^/]+/vagas-emprego\?
     type: query_parameter
     parameter: q[content_matches_tsquery]
@@ -12534,9 +12531,9 @@
   domains:
   - gib.gov.tr
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/node/
+  - url_pattern: ^https?://[^/]+/search/node/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/node/
     type: query_parameter
@@ -12733,7 +12730,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -12794,13 +12791,13 @@
   domains:
   - imzog.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/search
+  - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+/[0-9]+
     type: path_segment
-    segment: 3
+    segment: 4
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -12928,7 +12925,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -12964,13 +12961,13 @@
   domains:
   - sexseq.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/trends/
+  - url_pattern: ^https?://[^/]+/trends/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/trends/[^/]+/[0-9]+/
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -13067,9 +13064,9 @@
   domains:
   - rule34video.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -13211,13 +13208,13 @@
   domains:
   - linkvertise.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+/\?
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -13259,18 +13256,18 @@
   domains:
   - olevod.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/index\.php/[^/]+/search
+  - url_pattern: ^https?://[^/]+/index\.php/[^/]+/search.html\?
     type: query_parameter
     parameter: wd
   - url_pattern: ^https?://[^/]+/index\.php/[^/]+/search/page/[0-9]+/wd/[^/]+\.html
     type: path_segment
-    segment: 6
+    segment: 7
     remove_patterns:
     - \.html$
   page_parsers:
   - url_pattern: ^https?://[^/]+/index\.php/[^/]+/search/page/[0-9]+/wd/[^/]+\.html
     type: path_segment
-    segment: 4
+    segment: 5
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -13409,9 +13406,9 @@
   domains:
   - netacad.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/node/
+  - url_pattern: ^https?://[^/]+/search/node/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/node/
     type: query_parameter
@@ -13433,9 +13430,9 @@
   domains:
   - espnfc.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/_/q/
+  - url_pattern: ^https?://[^/]+/search/_/q/[^/]+
     type: path_segment
-    segment: 3
+    segment: 4
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -13537,13 +13534,13 @@
   domains:
   - all-free-download.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[^/]+/[^/]+\.html
+  - url_pattern: ^https?://[^/]+/(free-vector|free-photos|font)/[^/]+\.html
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - \.html$
     space_patterns:
-    - \-
+    - "-"
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -13573,7 +13570,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -13716,9 +13713,9 @@
   - url_pattern: ^https?://[^/]+/videos
     type: query_parameter
     parameter: query
-  - url_pattern: ^https?://[^/]+/products/search/
+  - url_pattern: ^https?://[^/]+/products/search/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/products/search/
     type: fragment_parameter
@@ -13880,7 +13877,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -13908,7 +13905,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -13998,7 +13995,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -14243,11 +14240,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+/[0-9]+
     type: path_segment
-    segment: 3
+    segment: 4
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -14526,9 +14523,9 @@
   domains:
   - programiz.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -14618,7 +14615,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -14637,9 +14634,9 @@
   domains:
   - fashionnova.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/pages/search-results/
+  - url_pattern: ^https?://[^/]+/pages/search-results/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/pages/search-results/
     type: query_parameter
@@ -14898,9 +14895,9 @@
   - dontorrent.lol
   - dontorrent.net
   query_parsers:
-  - url_pattern: ^https?://[^/]+/buscar/
+  - url_pattern: ^https?://[^/]+/buscar/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -15015,11 +15012,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - s
   offset_parsers: [ ]
@@ -15271,9 +15268,9 @@
   - url_pattern: ^https?://[^/]+/search/site\?
     type: query_parameter
     parameter: q
-  - url_pattern: ^https?://[^/]+/search/site/
+  - url_pattern: ^https?://[^/]+/search/site/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/site/
     type: query_parameter
@@ -15295,9 +15292,9 @@
   domains:
   - pornhdvideos.net
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -15405,17 +15402,17 @@
   domains:
   - gaoding.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/contents/
+  - url_pattern: ^https?://[^/]+/contents/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
-    - pn_[0-9]+
+    - _pn[0-9]+$
   page_parsers:
-  - url_pattern: ^https?://[^/]+/contents/[^/]+_pn[0-9]
+  - url_pattern: ^https?://[^/]+/contents/[^/]+_pn[0-9]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
-    - .*_pn
+    - ^.*_pn
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -15442,7 +15439,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -15553,7 +15550,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -15593,9 +15590,9 @@
   domains:
   - goodporn.to
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -15931,7 +15928,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -15996,9 +15993,9 @@
   - apherald.com
   - indiaherald.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/[a-z]+/
+  - url_pattern: ^https?://[^/]+/search/[a-z]+/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -16163,9 +16160,9 @@
   domains:
   - moviesjoy.to
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -16184,13 +16181,13 @@
   domains:
   - books.com.tw
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/cat/[^/]+/sort/[^/]+/[^/]+/[^/]+/ovs/[^/]+/spell/[^/]+/[^/]+/[^/]+/page/
+  - url_pattern: ^https?://[^/]+/search/[^/]+/cat/[^/]+/sort/[^/]+/[^/]+/[^/]+/ovs/[^/]+/spell/[^/]+/[^/]+/[^/]+/page/[0-9]+
     type: path_segment
-    segment: 15
+    segment: 16
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -16208,9 +16205,9 @@
   domains:
   - storyblocks.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[^/]+/search/
+  - url_pattern: ^https?://[^/]+/[^/]+/search/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/search/
     type: query_parameter
@@ -16351,7 +16348,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -16370,9 +16367,9 @@
   domains:
   - sidereel.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/
+  - url_pattern: ^https?://[^/]+/search/[^/]+/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -16400,7 +16397,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -16474,9 +16471,9 @@
   domains:
   - anyporn.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -16571,9 +16568,9 @@
   domains:
   - razer.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -16643,7 +16640,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -16836,7 +16833,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -16855,9 +16852,9 @@
   domains:
   - xxxhdvideo.mobi
   query_parsers:
-  - url_pattern: ^https?://[^/]+/sex/
+  - url_pattern: ^https?://[^/]+/sex/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -17018,11 +17015,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+/[0-9]+\.html
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+/[0-9]+\.html
     type: path_segment
-    segment: 3
+    segment: 4
     remove_patterns:
     - \.html$
   offset_parsers: [ ]
@@ -17107,7 +17104,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/(girls|boys|tranny)/[^/]
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -17216,7 +17213,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -17258,11 +17255,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/results/[^/]+/[0-9]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/results/[^/]+/[0-9]+
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -17282,20 +17279,20 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/page[0-9]+\.html
     type: path_segment
-    segment: 1
+    segment: 2
   - url_pattern: ^https?://[^/]+/pics/search/[^/]+/[0-9]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/page[0-9]+\.html
     type: path_segment
-    segment: 2
+    segment: 3
     remove_patterns:
     - page
     - \.html$
   - url_pattern: ^https?://[^/]+/pics/search/[^/]+/[0-9]+
     type: path_segment
-    segment: 3
+    segment: 4
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -17335,9 +17332,9 @@
   domains:
   - bank-zone.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -17375,7 +17372,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/esf/[^/]+$
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -17406,7 +17403,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -17475,7 +17472,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -17596,7 +17593,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -17732,7 +17729,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: query_parameter
@@ -18020,9 +18017,9 @@
   domains:
   - tickld.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -18128,11 +18125,11 @@
     parameter: keyword
   - url_pattern: ^https?://[^/]+/news/lists/keyword/[^/]+/page/[0-9]+\.html
     type: path_segment
-    segment: 3
+    segment: 4
   page_parsers:
   - url_pattern: ^https?://[^/]+/news/lists/keyword/[^/]+/page/[0-9]+\.html
     type: path_segment
-    segment: 5
+    segment: 6
     remove_patterns:
     - \.html$
   offset_parsers: [ ]
@@ -18269,7 +18266,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -18871,7 +18868,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -18899,7 +18896,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/news/page/[0-9]+/\?
     type: path_segment
-    segment: 3
+    segment: 4
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -18927,7 +18924,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -19043,7 +19040,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/[0-9]+/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -19076,7 +19073,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -19374,7 +19371,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -19467,7 +19464,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -19522,7 +19519,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/(cards|decks)/page/[0-9]+/\?
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -19673,7 +19670,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+\?page
     type: query_parameter
@@ -19830,7 +19827,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: query_parameter
@@ -19920,7 +19917,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -19984,12 +19981,22 @@
   domains:
   - yoo7.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/tag/
+  - url_pattern: ^https?://[^/]+/tag/.+
     type: path_segment
-    segment: 1
+    segment: 0
+    delimiter: " "  # hack to use the whole path
+    remove_patterns:
+    - ^/tag/
+    - /p[0-9]+$
     space_patterns:
-    - \/
-  page_parsers: [ ]
+    - /
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/tag/.+/p[0-9]+
+    type: path_segment
+    segment: 0
+    delimiter: " "  # hack to use the whole path
+    remove_patterns:
+    - ^/tag/.+/p
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -20011,7 +20018,7 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: q
-  - url_pattern: ^https?://[^/]+/[a-z]+\-[a-z]+/search\?
+  - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/search\?
     type: query_parameter
     parameter: q
   page_parsers: [ ]
@@ -20044,7 +20051,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -20224,7 +20231,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -20386,7 +20393,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -20455,7 +20462,7 @@
     parameter: keyword
   - url_pattern: ^https?://[^/]+/searchCase/[^/]+\?
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -20733,7 +20740,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/search/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/search/[^/]+
     type: query_parameter
@@ -20934,11 +20941,11 @@
     parameter: query
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/page/[0-9]+
     type: path_segment
-    segment: 3
+    segment: 4
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -21004,7 +21011,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -21158,7 +21165,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -21186,7 +21193,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -21405,7 +21412,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -21428,7 +21435,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/[A-Z]/[a-z]+_[A-Z]+/search/[^/]+
     type: path_segment
-    segment: 3
+    segment: 4
   - url_pattern: ^https?://[^/]+/search/result\?
     type: query_parameter
     parameter: keyword
@@ -21462,7 +21469,7 @@
   domains:
   - lassuranceretraite.fr
   query_parsers:
-  - url_pattern: ^https?://[^/]+/.*/resultat\-de\-recherche\.html\?
+  - url_pattern: ^https?://[^/]+/.*/resultat-de-recherche\.html\?
     type: query_parameter
     parameter: searchedText
   page_parsers: [ ]
@@ -21531,7 +21538,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -21618,7 +21625,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -21639,7 +21646,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+\?
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+\?
     type: query_parameter
@@ -21728,7 +21735,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -22016,7 +22023,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/shop/flights/results/roundtrip/[^/]+/[^/]+
     type: path_segment
-    segment: 5
+    segment: 6
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -22383,11 +22390,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/en/[0-9]+/[^/]+/[0-9]+\.html
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/en/[0-9]+/[^/]+/[0-9]+\.html
     type: path_segment
-    segment: 3
+    segment: 4
     remove_patterns:
     - \.html$
   offset_parsers: [ ]
@@ -22485,7 +22492,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/ofertas/[0-9]+\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -22526,7 +22533,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/buscar/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -22578,7 +22585,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -22624,7 +22631,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/buscar/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -22660,10 +22667,13 @@
   domains:
   - manualslib.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[A-z]+/[^/]+
+  - url_pattern: ^https?://[^/]+/[a-z]+/[^/]+.html
     type: path_segment
-    segment: 1
-  page_parsers: [ ]
+    segment: 2
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]+/[^/]+.html\?
+    type: query_parameter
+    parameter: page
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -22754,7 +22764,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -22833,11 +22843,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/en/search/[^/]+/[0-9]+\.html
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/en/search/[^/]+/[0-9]+\.html
     type: path_segment
-    segment: 3
+    segment: 4
     remove_patterns:
     - \.html$
   offset_parsers: [ ]
@@ -23059,11 +23069,11 @@
   - tailorbrands.com
   - support.tailorbrands.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/hc/[a-z]+\-[a-z]+/search\?
+  - url_pattern: ^https?://[^/]+/hc/[a-z]+-[a-z]+/search\?
     type: query_parameter
     parameter: query
   page_parsers:
-  - url_pattern: ^https?://[^/]+/hc/[a-z]+\-[a-z]+/search\?
+  - url_pattern: ^https?://[^/]+/hc/[a-z]+-[a-z]+/search\?
     type: query_parameter
     parameter: page
   offset_parsers: [ ]
@@ -23165,11 +23175,11 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/en/search/[^/]+/[0-9]+\.html
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers:
   - url_pattern: ^https?://[^/]+/en/search/[^/]+/[0-9]+\.html
     type: path_segment
-    segment: 3
+    segment: 4
     remove_patterns:
     - \.html$
   offset_parsers: [ ]
@@ -23431,14 +23441,14 @@
   domains:
   - blinkx.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/videos/
+  - url_pattern: ^https?://[^/]+/videos/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers:
   - url_pattern: ^https?://[^/]+/videos/[^/]+/[0-9]+
     type: path_segment
-    segment: 2
+    segment: 3
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
@@ -23797,7 +23807,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -23843,14 +23853,14 @@
   - url_pattern: ^https?://[^/]+/Search/
     type: query_parameter
     parameter: keyword
-  - url_pattern: ^https?://[^/]+/Job/
+  - url_pattern: ^https?://[^/]+/Job/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - \.htm$
-  - url_pattern: ^https?://[^/]+/Salaries/
+  - url_pattern: ^https?://[^/]+/Salaries/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
       - \.htm$
   page_parsers: [ ]
@@ -23995,20 +24005,20 @@
   domains:
   - jobstreet.com.sg
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/job-search/
+  - url_pattern: ^https?://[^/]+/[a-z]+/job-search/[^/]+
     type: path_segment
-    segment: 2
-  - url_pattern: ^https?://[^/]+/[a-z]+/companies/browse\-reviews\?
+    segment: 3
+  - url_pattern: ^https?://[^/]+/[a-z]+/companies/browse-reviews\?
     type: query_parameter
     parameter: q
-  - url_pattern: ^https?://[^/]+/career\-resources/search\?
+  - url_pattern: ^https?://[^/]+/career-resources/search\?
     type: query_parameter
     parameter: q
   page_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/job-search/[^/]+/[0-9]+
     type: path_segment
-    segment: 3
-  - url_pattern: ^https?://[^/]+/career\-resources/search\?
+    segment: 4
+  - url_pattern: ^https?://[^/]+/career-resources/search\?
     type: query_parameter
     parameter: pages
   offset_parsers: [ ]
@@ -24144,11 +24154,11 @@
   domains:
   - loc.gov
   query_parsers:
-  - url_pattern: ^https?://[^/]+/(search|audio|books|film\-and\-videos|manuscripts|maps|notated\-music|newspapers|photos|web\-archives)
+  - url_pattern: ^https?://[^/]+/(search|audio|books|film-and-videos|manuscripts|maps|notated-music|newspapers|photos|web-archives)
     type: query_parameter
     parameter: q
   page_parsers:
-  - url_pattern: ^https?://[^/]+/(search|audio|books|film\-and\-videos|manuscripts|maps|notated\-music|newspapers|photos|web\-archives)
+  - url_pattern: ^https?://[^/]+/(search|audio|books|film-and-videos|manuscripts|maps|notated-music|newspapers|photos|web-archives)
     type: query_parameter
     parameter: sp
   offset_parsers: [ ]
@@ -24260,7 +24270,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+/\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -24369,9 +24379,9 @@
   domains:
   - najdi.si
   query_parsers:
-  - url_pattern: ^https?://[^/]+/najdi/
+  - url_pattern: ^https?://[^/]+/najdi/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -24390,17 +24400,15 @@
   domains:
   - naukri.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[^/]+\-jobs?(\?|\-[0-9]+)?
-    type: path_segment
-    segment: 0
-    space_patterns:
-    - \-
-    remove_patterns:
-    - jobs\-[0-9]+
+  - url_pattern: ^https?://[^/]+/[^/]+-jobs\?
+    type: query_parameter
+    parameter: k
   page_parsers:
-    - url_pattern: ^https?://[^/]+/[^/]+\-jobs\-[0-9]+
-      type: query_parameter
-      parameter: k
+  - url_pattern: ^https?://[^/]+/[^/]+-jobs-[0-9]+\?
+    type: path_segment
+    segment: 1
+    remove_patterns:
+    - ^[^/]+-jobs-
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -24642,7 +24650,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/products/
     type: path_segment
-    segment: 0
+    segment: 1
   - url_pattern: ^https?://[^/]+/classify\?
     type: query_parameter
     parameter: keyword
@@ -24778,9 +24786,9 @@
   domains:
   - recipebridge.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/r/
+  - url_pattern: ^https?://[^/]+/r/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
     remove_patterns:
     - -recipes$
   - url_pattern: ^https?://[^/]+/recipes\?
@@ -24804,6 +24812,9 @@
   notes: |
     TODO: Set correct query parser for https://shopping.rediff.com/?sc_cid=shopping_ushomesrch#!bracelet/30-60
     Bracelet is the query term
+    Currently no parser supports these queries and/or offsets:
+    - https://shopping.rediff.com/product/test?sc_cid=shopping_ushomesrch#!design/30-60
+    - https://shopping.rediff.com/#!design/30-60
   input_field: null
   search_form: null
   search_div: null
@@ -24811,19 +24822,19 @@
   - rediff.com
   - shopping.rediff.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/product/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 1
-  - url_pattern: ^https?://[^/]+/\?
-    type: fragment_parameter
-    parameter: !
+  - url_pattern: ^https?://[^/]+/product/[^/]+
+    type: path_segment
+    segment: 2
   page_parsers: [ ]
   offset_parsers:
-  - url_pattern: ^https?://[^/]+/\?[^/]+/[0-9]+\-[0-9]+
+  - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+-[0-9]+
     type: path_segment
-    segment: 1
+    segment: 3
     remove_patterns:
-      - \-[0-9]+
+    - -[0-9]+$
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
@@ -24841,14 +24852,14 @@
   domains:
   - rozee.pk
   query_parsers:
-  - url_pattern: ^https?://[^/]+/job/jsearch/q/
+  - url_pattern: ^https?://[^/]+/job/jsearch/q/[^/]+
     type: path_segment
-    segment: 3
+    segment: 4
   page_parsers: [ ]
   offset_parsers:
   - url_pattern: ^https?://[^/]+/job/jsearch/q/[^/]+/fpn/[0-9]+
     type: path_segment
-    segment: 5
+    segment: 6
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
   focused_url_prefixes:
@@ -25031,16 +25042,16 @@
   domains:
   - shopzilla.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[^/]+/products/
+  - url_pattern: ^https?://[^/]+/[^/]+/products/[^/]+
     type: path_segment
-    segment: 0
+    segment: 3
     space_patterns:
-    - \-
+    - "-"
   - url_pattern: ^https?://[^/]+/[^/]+/[^/]+/products/
     type: path_segment
-    segment: 1
+    segment: 2
     space_patterns:
-      - \-
+      - "-"
   page_parsers: [ ]
   offset_parsers:
   - url_pattern: ^https?://[^/]+/.*/products/\?
@@ -25139,13 +25150,13 @@
   - url_pattern: ^https?://[^/]+/search\.html\?
     type: query_parameter
     parameter: searchterm
-  - url_pattern: ^https?://[^/]+/search/(industry\-insights|white\-paper\-guides|product\-news|company\-news)/
+  - url_pattern: ^https?://[^/]+/search/(industry-insights|white-paper-guides|product-news|company-news)/
     type: query_parameter
     parameter: q
   page_parsers:
-  - url_pattern: ^https?://[^/]+/search/(industry\-insights|white\-paper\-guides|product\-news|company\-news)/[0-9]+
+  - url_pattern: ^https?://[^/]+/search/(industry-insights|white-paper-guides|product-news|company-news)/[0-9]+
     type: path_segment
-    segment: 2
+    segment: 3
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -25163,9 +25174,9 @@
   domains:
   - tineye.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/
     type: query_parameter
@@ -25350,7 +25361,7 @@
     parameter: word
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
