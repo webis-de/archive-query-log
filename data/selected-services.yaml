@@ -24889,7 +24889,7 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /pesquisa
-- name: search.ch
+- name: search-ch
   public_suffix: ch
   alexa_domain: search.ch
   alexa_rank: null
@@ -25573,9 +25573,9 @@
   - bongacams.com
   - en.bongacams.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/(female|male|couples|trans|new\-models)/tags/
+  - url_pattern: ^https?://[^/]+/(female|male|couples|trans|new-models)/tags/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -25619,9 +25619,9 @@
   domains:
   - livejasmin.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/(girls|boys)/
+  - url_pattern: ^https?://[^/]+/[a-z]+/(girls|boys)/[^/]+
     type: path_segment
-    segment: 2
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -25644,9 +25644,9 @@
   - url_pattern: ^https?://[^/]+/dk\?
     type: query_parameter
     parameter: st.query
-  - url_pattern: ^https?://[^/]+/music/search/tracks/
+  - url_pattern: ^https?://[^/]+/music/search/tracks/[^/]+
     type: path_segment
-    segment: 3
+    segment: 4
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
@@ -25691,9 +25691,9 @@
   domains:
   - xhamster.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+page
     type: query_parameter
@@ -25857,7 +25857,7 @@
   page_parsers:
   - url_pattern: ^https?://[^/]+/page/[0-9]+\?
     type: path_segment
-    segment: 1
+    segment: 2
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
@@ -26039,12 +26039,12 @@
   domains:
   - shutterstock.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
-    type: path_segment
-    segment: 1
-  - url_pattern: ^https?://[^/]+/(editorial|video|music)/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
     segment: 2
+  - url_pattern: ^https?://[^/]+/(editorial|video|music)/search/[^/]+
+    type: path_segment
+    segment: 3
   page_parsers: [ ]
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
