@@ -1014,6 +1014,7 @@
   - press.amazonstudios.com
   - prime.amazon.com
   - primenow.amazon.com
+  - primevideo.com
   - read.amazon.com
   - sell.amazon.com
   - services.amazon.com
@@ -5057,7 +5058,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /search
   - /?
   - /service/websearch?
@@ -10296,7 +10297,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /search
 - name: openai
   public_suffix: com
@@ -10436,7 +10437,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /jobs
 - name: ssl2anyone3
   public_suffix: com
@@ -16003,7 +16004,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /search
 - name: twindiversity
   public_suffix: com
@@ -16620,7 +16621,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /search
 - name: buedemusica
   public_suffix: com
@@ -17141,7 +17142,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /search
 - name: prweb
   public_suffix: com
@@ -21135,7 +21136,7 @@
   offset_parsers: [ ]
   interpreted_query_parsers: [ ]
   results_parsers: [ ]
-  focused_url_prefixes: 
+  focused_url_prefixes:
   - /cgi-bin/search/search.pl?
 - name: sportsala
   public_suffix: com
@@ -22061,7 +22062,7 @@
   search_div: false
   domains:
   - ac-versailles.fr
-  query_parsers: 
+  query_parsers:
   - url_pattern: ^https?://[^/]+/recherche
     type: query_parameter
     parameter: keywords
@@ -24877,7 +24878,7 @@
   results_parsers: [ ]
   focused_url_prefixes:
   - /pesquisa
-- name: search
+- name: search.ch
   public_suffix: ch
   alexa_domain: search.ch
   alexa_rank: null
@@ -25410,3 +25411,710 @@
   - /sports-women
   - /sports-men
   - /sports-kids
+- name: jd
+  public_suffix: com
+  alexa_domain: jd.com
+  alexa_rank: 12
+  category: e-commerce
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - jd.com
+  - search.jd.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/Search\?
+    type: query_parameter
+    parameter: keyword
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/Search\?
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /Search?
+- name: vk
+  public_suffix: com
+  alexa_domain: vk.com
+  alexa_rank: 20
+  category: social-media
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - vk.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: c[q]
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: csdn
+  public_suffix: net
+  alexa_domain: csdn.net
+  alexa_rank: 22
+  category: social-media
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - csdn.net
+  - so.csdn.net
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/.*/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /so/search?
+- name: twitch
+  public_suffix: tv
+  alexa_domain: twitch.tv
+  alexa_rank: 28
+  category: download-streaming
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - twitch.tv
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: term
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: zoom
+  public_suffix: us
+  alexa_domain: zoom.us
+  alexa_rank: 30
+  category: corporate
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - zoom.us
+  - explore.zoom.us
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]+/search
+    type: fragment_parameter
+    parameter: q
+  page_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]+/search
+    type: query_parameter
+    parameter: first
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /en/search
+- name: linkedin
+  public_suffix: com
+  alexa_domain: linkedin.com
+  alexa_rank: 36
+  category: social-media
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - linkedin.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: keywords
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search
+- name: bongacams
+  public_suffix: com
+  alexa_domain: bongacams.com
+  alexa_rank: 37
+  category: pornography
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - bongacams.com
+  - en.bongacams.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/(female|male|couples|trans|new\-models)/tags/
+    type: path_segment
+    segment: 2
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /female/tags/
+  - /male/tags/
+  - /couples/tags/
+  - /trans/tags/
+  - /new-models/tags/
+- name: mail.ru
+  public_suffix: ru
+  alexa_domain: mail.ru
+  alexa_rank: 42
+  category: web-portal
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - mail.ru
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: text
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: livejasmin
+  public_suffix: com
+  alexa_domain: livejasmin.com
+  alexa_rank: 52
+  category: pornography
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - livejasmin.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[a-z]+/(girls|boys)/
+    type: path_segment
+    segment: 2
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /en/girls/
+  - /en/boys/
+- name: ok.ru
+  public_suffix: ru
+  alexa_domain: ok.ru
+  alexa_rank: 56
+  category: social-media
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - ok.ru
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/dk\?
+    type: query_parameter
+    parameter: st.query
+  - url_pattern: ^https?://[^/]+/music/search/tracks/
+    type: path_segment
+    segment: 3
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /dk?
+  - /music/search/tracks/
+- name: cnn
+  public_suffix: com
+  alexa_domain: cnn.com
+  alexa_rank: 64
+  category: news-and-boulevard
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - cnn.com
+  - edition.cnn.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: xhamster
+  public_suffix: com
+  alexa_domain: xhamster.com
+  alexa_rank: 70
+  category: pornography
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - xhamster.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search/
+    type: path_segment
+    segment: 1
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search/[^/]+page
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search
+- name: canva
+  public_suffix: com
+  alexa_domain: canva.com
+  alexa_rank: 74
+  category: service
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - canva.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/design/play\?
+    type: query_parameter
+    parameter: layoutQuery
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /design/play?
+- name: tumblr
+  public_suffix: com
+  alexa_domain: tumblr.com
+  alexa_rank: 75
+  category: social-media
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - tumblr.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search/
+    type: path_segment
+    segment: 1
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search
+- name: instructure
+  public_suffix: com
+  alexa_domain: instructure.com
+  alexa_rank: 78
+  category: corporate
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - instructure.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: search_api_fulltext
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: roblox
+  public_suffix: com
+  alexa_domain: roblox.com
+  alexa_rank: 80
+  category: gaming
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - roblox.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/(catalog\/browse.aspx\?|discover)
+    type: query_parameter
+    parameter: Keyword
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /catalog/browse.aspx?
+  - /discover
+- name: imgur
+  public_suffix: com
+  alexa_domain: imgur.com
+  alexa_rank: 81
+  category: media-sharing
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - imgur.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: flipkart
+  public_suffix: com
+  alexa_domain: flipkart.com
+  alexa_rank: 82
+  category: e-commerce
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - flipkart.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: fandom
+  public_suffix: com
+  alexa_domain: fandom.com
+  alexa_rank: 84
+  category: wiki
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - fandom.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: s
+  - url_pattern: ^https?://[^/]+/page/[0-9]+\?
+    type: query_parameter
+    parameter: s
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/page/[0-9]+
+    type: path_segment
+    segment: 1
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /?
+  - /page
+- name: bbc
+  public_suffix: co.uk
+  alexa_domain: bbc.co.uk
+  alexa_rank: 85
+  category: news-and-boulevard
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - bbc.co.uk
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: walmart
+  public_suffix: com
+  alexa_domain: walmart.com
+  alexa_rank: 93
+  category: e-commerce
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - walmart.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: salesforce
+  public_suffix: com
+  alexa_domain: salesforce.com
+  alexa_rank: 102
+  category: corporate
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - salesforce.com
+  - force.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: fragment_parameter
+    parameter: q
+  page_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: first
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search
+- name: udemy
+  public_suffix: com
+  alexa_domain: udemy.com
+  alexa_rank: 105
+  category: education
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - udemy.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/courses/.*search\-query
+    type: query_parameter
+    parameter: search-query
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/courses/.*search\-query
+    type: query_parameter
+    parameter: p
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /courses
+- name: avito
+  public_suffix: ru
+  alexa_domain: avito.ru
+  alexa_rank: 120
+  category: e-commerce
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - avito.ru
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/[^/]+\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/[^/]+\?
+    type: query_parameter
+    parameter: p
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /
+- name: grid
+  public_suffix: id
+  alexa_domain: grid.id
+  alexa_rank: 122
+  category: news-and-boulevard
+  notes: Uses Google
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - grid.id
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: tiktok
+  public_suffix: com
+  alexa_domain: tiktok.com
+  alexa_rank: 126
+  category: media-sharing
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - tiktok.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: q
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search
+- name: shutterstock
+  public_suffix: com
+  alexa_domain: shutterstock.com
+  alexa_rank: 128
+  category: e-commerce
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - shutterstock.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search/
+    type: path_segment
+    segment: 1
+  - url_pattern: ^https?://[^/]+/(editorial|video|music)/search/
+    type: path_segment
+    segment: 2
+  page_parsers: [ ]
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search
+  - /editorial/search/
+  - /video/search/
+  - /music/search/
+- name: researchgate
+  public_suffix: net
+  alexa_domain: researchgate.net
+  alexa_rank: 135
+  category: database
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - researchgate.net
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: query
+  page_parsers: [ ]
+  offset_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: offset
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search
+- name: tokopedia
+  public_suffix: com
+  alexa_domain: tokopedia.com
+  alexa_rank: 141
+  category: e-commerce
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - tokopedia.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /search?
+- name: youm7
+  public_suffix: com
+  alexa_domain: youm7.com
+  alexa_rank: 143
+  category: news-and-boulevard
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - youm7.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/(H|h)ome/Search\?
+    type: query_parameter
+    parameter: allwords
+    space_patterns:
+    - \+
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: page
+  offset_parsers: [ ]
+  interpreted_query_parsers: [ ]
+  results_parsers: [ ]
+  focused_url_prefixes:
+  - /home/Search?
+  - /Home/Search?
