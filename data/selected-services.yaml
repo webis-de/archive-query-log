@@ -25844,7 +25844,7 @@
     type: query_parameter
     parameter: s
   page_parsers:
-  - url_pattern: ^https?://[^/]+/page/[0-9]+
+  - url_pattern: ^https?://[^/]+/page/[0-9]+\?
     type: path_segment
     segment: 1
   offset_parsers: [ ]
