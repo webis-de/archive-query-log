@@ -1,9 +1,10 @@
 import yaml
-from typing import Mapping
+from typing import Mapping, Sequence
 from pandas import concat, DataFrame
 from web_archive_query_log.cli.external import load_services, load_domains, service_domains, load_url_prefixes, \
     load_query_parsers, query_parser, load_page_offset_parsers, page_offset_parser_series
 from web_archive_query_log import DATA_DIRECTORY_PATH
+import pandas as pd
 
 services_file = DATA_DIRECTORY_PATH / "selected-services_overwrite.yaml"
 
@@ -114,4 +115,20 @@ def set_query_parsers(service_elem: dict, services: DataFrame) -> Mapping:
     name = service_elem["name"]
     row = services.loc[services["name"] == name, :]
     service_elem.update({"query_parsers": row["query_parsers"].values[0]})
+
+
+def update_ranks(df: pd.DataFrame, yaml_list: Sequence[dict]):
+    for i, elem in enumerate(yaml_list):
+        name = elem["name"]
+        try:
+            rank = int(df.loc[df["service"] == name, "rank"].values[0])
+        except:
+            rank = 999999
+        yaml_list[i]["alexa_rank"] = rank
+
+    return yaml_list
+
+def sort_by_rank(yaml_list: Sequence[dict]):
+    return sorted(yaml_list, key=lambda d: d['alexa_rank'])
+
 
