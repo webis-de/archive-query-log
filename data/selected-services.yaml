@@ -1898,9 +1898,15 @@
   - trailers.apple.com
   - training.apple.com
   query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: q
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+
     type: path_segment
     segment: 3
+  - url_pattern: ^https?://[^/]+/search/[^/]+
+    type: path_segment
+    segment: 2
   page_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: query_parameter
