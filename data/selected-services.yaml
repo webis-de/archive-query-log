@@ -4,12 +4,8 @@
   alexa_rank: 1
   category: general
   notes: 'Domains from https://www.google.com/supported_domains
-
     and from https://github.com/JamieFarrelly/Popular-Site-Subdomains
-
-    and from https://infogalactic.com/info/List_of_Google_domains.
-
-    '
+    and from https://infogalactic.com/info/List_of_Google_domains.'
   input_field: false
   search_form: false
   search_div: false
@@ -335,12 +331,8 @@
   alexa_rank: 2
   category: video
   notes: 'Domains from https://stackoverflow.com/a/65375894
-
     and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    SERPs rendered using JavaScript.
-
-    '
+    SERPs rendered using JavaScript.'
   input_field: false
   search_form: false
   search_div: true
@@ -536,9 +528,7 @@
   alexa_domain: baidu.com
   alexa_rank: 3
   category: general
-  notes: 'Domains from manually exploring https://baidu.com.
-
-    '
+  notes: 'Domains from manually exploring https://baidu.com.'
   input_field: false
   search_form: false
   search_div: true
@@ -599,9 +589,7 @@
   alexa_domain: qq.com
   alexa_rank: 4
   category: general
-  notes: 'SERPs from qq.com rendered using JavaScript.
-
-    '
+  notes: 'SERPs from qq.com rendered using JavaScript.'
   input_field: null
   search_form: null
   search_div: null
@@ -647,9 +635,7 @@
   alexa_domain: facebook.com
   alexa_rank: 5
   category: social-media
-  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: false
@@ -804,9 +790,7 @@
   alexa_domain: yahoo.com
   alexa_rank: 9
   category: general
-  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: false
@@ -981,10 +965,7 @@
   alexa_rank: 10
   category: shopping
   notes: 'Domains from https://amazon.de/customer-preferences/country (dropdown)
-
-    and https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+    and https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: true
   search_form: true
   search_div: true
@@ -1191,10 +1172,7 @@
   alexa_rank: 17
   category: social-media
   notes: 'Domains from https://old.reddit.com/prefs/ (dropdown)
-
-    and https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+    and https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: true
@@ -1324,9 +1302,7 @@
   alexa_domain: instagram.com
   alexa_rank: 19
   category: social-media
-  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: null
   search_form: null
   search_div: null
@@ -1366,9 +1342,7 @@
   alexa_domain: microsoft.com
   alexa_rank: 21
   category: company-page
-  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: true
   search_form: true
   search_div: true
@@ -1463,9 +1437,7 @@
   alexa_domain: bing.com
   alexa_rank: 25
   category: general
-  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: false
@@ -1531,9 +1503,7 @@
   alexa_domain: twitter.com
   alexa_rank: 26
   category: social-media
-  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: null
   search_form: null
   search_div: null
@@ -1614,10 +1584,7 @@
   alexa_rank: 31
   category: shopping
   notes: 'Domains from https://ebay.com/ (dropdown)
-
-    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: false
@@ -1854,9 +1821,7 @@
   alexa_domain: apple.com
   alexa_rank: 39
   category: company-page
-  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: true
   search_form: true
   search_div: false
@@ -2741,9 +2706,7 @@
   alexa_domain: stackexchange.com
   alexa_rank: 103
   category: question-answering
-  notes: 'Domains from https://stackexchange.com/sites.
-
-    '
+  notes: 'Domains from https://stackexchange.com/sites.'
   input_field: true
   search_form: true
   search_div: true
@@ -2994,9 +2957,7 @@
   alexa_domain: craigslist.org
   alexa_rank: 115
   category: shopping
-  notes: 'Domains from https://www.craigslist.org/about/sites.
-
-    '
+  notes: 'Domains from https://www.craigslist.org/about/sites.'
   input_field: true
   search_form: true
   search_div: true
@@ -4120,9 +4081,7 @@
   alexa_domain: quora.com
   alexa_rank: 168
   category: question-answering
-  notes: 'excluded; Excluded from Internet Archive.
-
-    '
+  notes: 'excluded; Excluded from Internet Archive.'
   input_field: null
   search_form: null
   search_div: null
@@ -4239,9 +4198,7 @@
   alexa_domain: steamcommunity.com
   alexa_rank: 206
   category: null
-  notes: 'excluded; Only user search; Hubs are not free text.
-
-    '
+  notes: 'excluded; Only user search; Hubs are not free text.'
   input_field: true
   search_form: true
   search_div: false
@@ -4258,9 +4215,7 @@
   alexa_domain: deepl.com
   alexa_rank: 224
   category: null
-  notes: 'exluded; No search
-
-    '
+  notes: 'exluded; No search'
   input_field: false
   search_form: false
   search_div: true
@@ -4320,10 +4275,7 @@
   alexa_rank: 247
   category: education
   notes: 'Domains from https://commons.wikimedia.org/wiki/Data:Wikipedia_statistics/data.tab
-
-    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-
-    '
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: true
   search_form: true
   search_div: true
@@ -5669,16 +5621,10 @@
   alexa_rank: 449
   category: shopping
   notes: 'TODO: Set correct query parser for https://shopping.rediff.com/?sc_cid=shopping_ushomesrch#!bracelet/30-60
-
     Bracelet is the query term
-
     Currently no parser supports these queries and/or offsets:
-
     - https://shopping.rediff.com/product/test?sc_cid=shopping_ushomesrch#!design/30-60
-
-    - https://shopping.rediff.com/#!design/30-60
-
-    '
+    - https://shopping.rediff.com/#!design/30-60'
   input_field: null
   search_form: null
   search_div: null
@@ -5766,9 +5712,7 @@
   alexa_domain: europa.eu
   alexa_rank: 504
   category: null
-  notes: 'excluded; Query not in URL.
-
-    '
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: false
@@ -5817,9 +5761,7 @@
   alexa_domain: news18.com
   alexa_rank: 688
   category: null
-  notes: 'excluded; Query not in URL; Uses Google search (https://cse.google.com/).
-
-    '
+  notes: 'excluded; Query not in URL; Uses Google search (https://cse.google.com/).'
   input_field: false
   search_form: false
   search_div: true
@@ -6030,9 +5972,7 @@
   alexa_domain: commbank.com.au
   alexa_rank: 954
   category: null
-  notes: 'excluded; Query not in URL.
-
-    '
+  notes: 'excluded; Query not in URL.'
   input_field: false
   search_form: false
   search_div: true
@@ -6142,9 +6082,7 @@
   alexa_domain: 24h.com.vn
   alexa_rank: 1122
   category: null
-  notes: 'excluded; Redirects to Google; Uses Google search (https://cse.google.com/).
-
-    '
+  notes: 'excluded; Redirects to Google; Uses Google search (https://cse.google.com/).'
   input_field: false
   search_form: false
   search_div: true
@@ -6161,9 +6099,7 @@
   alexa_domain: baskino.me
   alexa_rank: 1150
   category: null
-  notes: 'excluded; Query not in URL.
-
-    '
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: false
@@ -6575,10 +6511,7 @@
   alexa_rank: 1380
   category: null
   notes: 'Uses Google search (https://cse.google.com/).
-
-    Query not in URL.
-
-    '
+    Query not in URL.'
   input_field: false
   search_form: false
   search_div: true
@@ -6619,9 +6552,7 @@
   alexa_domain: startpage.com
   alexa_rank: 1394
   category: general
-  notes: 'excluded; Query not in URL.
-
-    '
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: false
@@ -7432,9 +7363,7 @@
   alexa_domain: gitlab.com
   alexa_rank: 1786
   category: code
-  notes: 'excluded; Query not in URL.
-
-    '
+  notes: 'excluded; Query not in URL.'
   input_field: false
   search_form: false
   search_div: true
@@ -7873,9 +7802,7 @@
   alexa_domain: republicworld.com
   alexa_rank: 1913
   category: news
-  notes: 'excluded; Query not in URL.
-
-    '
+  notes: 'excluded; Query not in URL.'
   input_field: false
   search_form: false
   search_div: true
@@ -8806,9 +8733,7 @@
   alexa_domain: dy2018.com
   alexa_rank: 2239
   category: null
-  notes: 'excluded; Query not in URL.
-
-    '
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: true
@@ -9970,9 +9895,7 @@
   alexa_domain: win-rar.com
   alexa_rank: 2673
   category: null
-  notes: 'excluded; Query not in URL.
-
-    '
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: false
@@ -11039,9 +10962,7 @@
   alexa_domain: cima4u.tv
   alexa_rank: 3135
   category: null
-  notes: 'excluded; No search.
-
-    '
+  notes: 'excluded; No search.'
   input_field: false
   search_form: false
   search_div: true
@@ -11100,9 +11021,7 @@
   alexa_domain: shippingchina.com
   alexa_rank: 3147
   category: null
-  notes: 'excluded; No standard SERP: Search for ships.
-
-    '
+  notes: 'excluded; No standard SERP: Search for ships.'
   input_field: true
   search_form: true
   search_div: false
@@ -11808,9 +11727,7 @@
   alexa_domain: loc.gov
   alexa_rank: 3591
   category: education
-  notes: 'Library of Congress.
-
-    '
+  notes: 'Library of Congress.'
   input_field: null
   search_form: null
   search_div: null
@@ -16449,9 +16366,7 @@
   alexa_domain: limestart.cn
   alexa_rank: 8239
   category: null
-  notes: 'excluded; Redirects to Baidu; Uses Baidu search.
-
-    '
+  notes: 'excluded; Redirects to Baidu; Uses Baidu search.'
   input_field: false
   search_form: false
   search_div: true
@@ -25601,9 +25516,7 @@
   alexa_domain: evi.com
   alexa_rank: 284749
   category: semantic-web
-  notes: 'excluded; Discontinued.
-
-    '
+  notes: 'excluded; Discontinued.'
   input_field: null
   search_form: null
   search_div: null
@@ -25661,9 +25574,7 @@
   alexa_domain: base-search.net
   alexa_rank: null
   category: education
-  notes: 'Bielefeld Academic Search Engine (BASE)
-
-    '
+  notes: 'Bielefeld Academic Search Engine (BASE)'
   input_field: null
   search_form: null
   search_div: null
@@ -25759,9 +25670,7 @@
   alexa_domain: findsounds.com
   alexa_rank: null
   category: audio
-  notes: 'excluded; Discontinued.
-
-    '
+  notes: 'excluded; Discontinued.'
   input_field: null
   search_form: null
   search_div: null
@@ -25884,9 +25793,7 @@
   alexa_domain: munax.com
   alexa_rank: null
   category: multimedia
-  notes: 'excluded; Discontinued.
-
-    '
+  notes: 'excluded; Discontinued.'
   input_field: null
   search_form: null
   search_div: null
@@ -26023,9 +25930,7 @@
   alexa_domain: pixsta.com
   alexa_rank: null
   category: reverse-image
-  notes: 'excluded; Reverse image search.
-
-    '
+  notes: 'excluded; Reverse image search.'
   input_field: null
   search_form: null
   search_div: null
