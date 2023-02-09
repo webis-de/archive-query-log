@@ -32,6 +32,9 @@ pylint = "*"
 flake8 = "*"
 requests-html = "*"
 diskcache = "*"
+seaborn = "*"
+matplotlib = "*"
+fasttext-langdetect = "*"
 
 [dev-packages]
 
