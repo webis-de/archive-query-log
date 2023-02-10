@@ -196,7 +196,7 @@ class ArchivedParsedSerpParser:
             page=archived_serp_content.page,
             offset=archived_serp_content.offset,
             interpreted_query=interpreted_query,
-            results=results if results else [],
+            results=results if results is not None else [],
         )
 
     def _service_pages(
