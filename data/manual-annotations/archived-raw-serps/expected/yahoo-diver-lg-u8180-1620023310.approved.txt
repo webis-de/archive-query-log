@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "diver LG U8180",
+    "offset": null,
+    "page": null,
+    "query": "diver LG U8180",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>LG</em> Assistenza sul prodotto per <em>LG</em> <em>U8180</em>.HASOR. Scarica <em>U8180</em>.HASOR manuali, documenti e software. Visualizza <em>U8180</em>.HASOR informazioni sulla garanzia e servizi di pianificazione.",
+            "timestamp": 1620023310,
+            "title": "LG U8180.HASOR Supporto prodotto :Manuali, garanzia e altro LG...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQAoBEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fwww.lg.com%2fit%2fsupporto%2fprodotto%2flg-U8180.HASOR/RK=2/RS=QfIkBHZhyq5386q0alXufWPKYEw-"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>LG</em> Software e Firmware : Ottimizza il tuo prodotto attraverso <em>driver</em> e aggiornamenti JavaScript sembra essere disabilitato su questo browser. Per favore abilita JavaScript epr assicurarti un esperienza di navigazione ottimale su tutti i nostri siti e servizi.",
+            "timestamp": 1620023310,
+            "title": "LG Software e Firmware | LG Italy",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQAohEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fwww.lg.com%2fit%2fsupporto%2fsoftware-firmware/RK=2/RS=jKjpQOu1AKt_r2lpO.tdHztoQUk-"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Driver LG u8180</em> Introvabili Altri produttori (HTC, Acer, BlackBerry, ecc)",
+            "timestamp": 1620023310,
+            "title": "Driver LG u8180 Introvabili - Hardware Upgrade Forum",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQApBEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzMEdnRpZAMEc2VjA3Ny/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fwww.hwupgrade.it%2fforum%2fshowthread.php%3ft%3d1314785/RK=2/RS=xpuvWT2yS6j.S1yWXVPjkpOFuFg-"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>LG</em> Mobile <em>Drivers</em> and Software. Learn how to use, update, maintain and troubleshoot your <em>LG</em> devices and appliances.",
+            "timestamp": 1620023310,
+            "title": "LG Mobile Drivers and Software | LG USA Support",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQApREbDQx.;_ylu=Y29sbwNpcjIEcG9zAzQEdnRpZAMEc2VjA3Ny/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fwww.lg.com%2fus%2fsupport%2fhelp-library%2flg-mobile-drivers-and-software-CT10000025-20150179827560/RK=2/RS=.fLZ0GLyzipuaavz.P24cuYIps0-"
+        },
+        {
+            "rank": 5,
+            "snippet": "scaricare <em>driver lg u8180</em> windows 7 access_time Posted on Giugno 26, 2019 by admin Dopo aver lanciato <em>LG</em> PC Suite e aver connesso il cellulare, l\u2019interfaccia del programma ti mostrer\u00e0 tutti i contenuti sincronizzabili: Telefoni vintage da collezionismo.",
+            "timestamp": 1620023310,
+            "title": "SCARICARE DRIVER LG U8180 WINDOWS 7",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQArhEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzUEdnRpZAMEc2VjA3Ny/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fsposi.mobi%2fdriver-lg-u8180-windows-7-14%2f/RK=2/RS=4uH7gXjS5e6eVihWi.6fU0hL.nE-"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>LG</em> Assistenza sul prodotto per <em>LG</em> U8330.AHITDW. Scarica U8330.AHITDW manuali, documenti e software. Visualizza U8330.AHITDW informazioni sulla garanzia e servizi di pianificazione.",
+            "timestamp": 1620023310,
+            "title": "LG U8330.AHITDW Supporto prodotto :Manuali, garanzia e altro LG...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQAsBEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzYEdnRpZAMEc2VjA3Ny/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fwww.lg.com%2fit%2fsupporto%2fprodotto%2flg-U8330.AHITDW/RK=2/RS=bXGS1Iv0hIyIIKV3ehP3HYyh1d0-"
+        },
+        {
+            "rank": 7,
+            "snippet": "scaricare <em>driver</em> <em>lg</em> <em>u8180</em> windows 7 Usato ottime condizioni come da foto perfettamente funzionante ritiro a mano pagamento cash o tramite bonifico bancario con spedizione a vostro carico. <em>LG</em> U con tutti gli accessori ma batteria da cambiare Vendo telefono cellulare <em>LG</em> U funzionante in ottimo stato completo di tutti gli imballi e di tutti gli accessori originali.",
+            "timestamp": 1620023310,
+            "title": "DRIVER LG U8180 WINDOWS 7 SCARICARE - nwoverland.org",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQAshEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzcEdnRpZAMEc2VjA3Ny/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fnwoverland.org%2ffilm%2fdriver-lg-u8180-windows-7-scaricare-9424.php/RK=2/RS=GNArdOu5xyrDs80GbFJcB7lgnKg-"
+        },
+        {
+            "rank": 8,
+            "snippet": "21/10/2007 \u00b7  ki mi sa' dire dove posso scaricare il software del <em>LG</em> <em>U8180</em>?ho perso il cd di installazzione....grazie a tutti",
+            "timestamp": 1620023310,
+            "title": "aiuto!risp. x favore!? | Yahoo Answers",
+            "url": "https://it.answers.yahoo.com/question/index;_ylt=AwrP4nYutI9gClQAtBEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzgEdnRpZAMEc2VjA3Ny?qid=20071021151833AA4tNsa"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>LG</em> U 8330 : nokia sblocco <em>lg</em> 8110 sblocco <em>lg</em> 8330 cellulare <em>LG</em> U8130 <em>LG</em> Per chi ha un cell <em>lg</em> 8180 o 8330 e win xp:installate i <em>driver</em> della porta anche <em>driver</em> <em>lg</em> u8130 U8130 : <em>lg</em> u8130 , sblocco <em>lg</em> u8130 , codici <em>lg</em> u8130 , <em>driver</em> <em>lg</em> u8130 <em>LG</em> U8130. configurazione mms vodafone cellulare <em>lg</em> <em>u8180</em>. giochi <em>lg</em> 8130. giochi",
+            "timestamp": 1620023310,
+            "title": "driver cellulare lg u8180",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQAthEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzkEdnRpZAMEc2VjA3Ny/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fdigilander.libero.it%2fCellularieTelefoni%2fdriver_cellulare_lg_u8180.html/RK=2/RS=2XYoqWPmfpA8QHBjemeFb0NKmY8-"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Lg</em> <em>U8180</em> Scarica SBLOCCO TELEFONINO <em>LG</em> usb <em>LG</em> <em>U8180</em> scarica <em>LG</em> <em>U8180</em> <em>driver</em> . <em>DRIVER</em> <em>LG</em> U8380 E Strano Bug il primo \u00e8 che dovendo ristallare i <em>driver</em> <em>LG</em>, ho trovato il cd rotto a met\u00e0. Cellulare: <em>LG</em> <em>U8180</em> - MOTOROLA: C385 A835 V975 A1000 V60 - NEC e808 cellulare <em>lg</em>: telefoni cellulare <em>lg</em> | loghi cellulare <em>lg</em> | Cellulare <em>LG</em> G7110, leggi le ...",
+            "timestamp": 1620023310,
+            "title": "DRIVER CELLULARE LG U8180 - digilander.libero.it",
+            "url": "https://r.search.yahoo.com/_ylt=AwrP4nYutI9gClQAtxEbDQx.;_ylu=Y29sbwNpcjIEcG9zAzEwBHZ0aWQDBHNlYwNzcg--/RV=2/RE=1620059310/RO=10/RU=https%3a%2f%2fdigilander.libero.it%2fsport2006d%2fdriver_cellulare_lg_u8180.html/RK=2/RS=jNeLRGECNZti97XvxSBnaH4F5YY-"
+        }
+    ],
+    "timestamp": 1620023310,
+    "url": "https://it.search.yahoo.com/search?p=+diver+LG+U8180&fr=yfp-t-501&ei=UTF-8&rd=r1"
+}

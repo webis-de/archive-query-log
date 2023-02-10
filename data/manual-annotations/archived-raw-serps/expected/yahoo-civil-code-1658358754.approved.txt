@@ -1,0 +1,52 @@
+{
+    "interpreted_query": "Civil Code",
+    "offset": null,
+    "page": null,
+    "query": "Civil Code",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Countries with a collection of laws known formally or informally as \"<em>civil code</em>\". A <em>civil code</em> is a codification of private law relating to property, family, and obligations. A jurisdiction that has a <em>civil code</em> generally also has a <em>code</em> of <em>civil</em> procedure. In some jurisdictions with a <em>civil code</em>, a number of the core areas of private law that ...",
+            "timestamp": 1658358754,
+            "title": "en.wikipedia.org \u203a wiki \u203a Civil_codeCivil code - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Civil_code"
+        },
+        {
+            "rank": 2,
+            "snippet": "Jan 01, 2019 \u00b7  California <em>Code</em>, <em>Civil Code</em> - <em>CIV</em>. Current as of January 01, 2019 | Updated by FindLaw Staff. This is FindLaw's hosted version of California <em>Code</em>, <em>Civil Code</em>. Use this page to navigate to all sections within <em>Civil Code</em>. Expand sections by using the arrow icons.",
+            "timestamp": 1658358754,
+            "title": "codes.findlaw.com \u203a ca \u203a civil-codeCalifornia Code, Civil Code - CIV | FindLaw",
+            "url": "https://codes.findlaw.com/ca/civil-code/"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Civil Code</em> (Chapters 10-22) New Hampshire. New Jersey. Court Organization and <em>Civil Code</em>: New Mexico. Torts: New York. Multiple Titles: North Carolina. North Dakota ...",
+            "timestamp": 1658358754,
+            "title": "www.law.cornell.edu \u203a wex \u203a table_civil_codeState Civil Codes | US Law | LII / Legal Information Institute",
+            "url": "https://www.law.cornell.edu/wex/table_civil_code"
+        },
+        {
+            "rank": 4,
+            "snippet": "Expand all. <em>Civil Code</em> - <em>CIV</em>. TITLE OF THE ACT. THE <em>CIVIL CODE</em> OF THE STATE OF CALIFORNIA. PRELIMINARY PROVISIONS. DEFINITIONS AND SOURCES OF LAW. EFFECT OF THE 1872 CODES.",
+            "timestamp": 1658358754,
+            "title": "leginfo.legislature.ca.gov \u203a faces \u203a codesTOCCalifornia Legislative Information",
+            "url": "https://leginfo.legislature.ca.gov/faces/codesTOCSelected.xhtml?tocCode=CIV&tocTitle=+Civil+Code+-+CIV"
+        },
+        {
+            "rank": 5,
+            "snippet": "persons of the <em>civil</em> law are protected by law and free from infringement by any organization or individual. Article 4 All persons of the <em>civil</em> law are equal in legal status when conducting <em>civil</em> activities. Article 5 When conducting a <em>civil</em> activity, a person of the <em>civil</em> law shall, in compliance",
+            "timestamp": 1658358754,
+            "title": "www.npc.gov.cn \u203a englishnpc \u203a c23934Civil Code of the People\u2019s Republic of China",
+            "url": "https://www.npc.gov.cn/englishnpc/c23934/202012/f627aa3a4651475db936899d69419d1e/files/47c16489e186437eab3244495cb47d66.pdf"
+        },
+        {
+            "rank": 6,
+            "snippet": "Title. CCQ, r. 1. Regulation under article 1614 of the <em>Civil Code</em> respecting the discounting of damages for bodily injury. CCQ, r. 2. Regulation respecting the minimum market capitalization of a company for the purposes of paragraph 9 of article 1339 of the <em>Civil Code</em>. CCQ, r. 3. Rules respecting the solemnization of <em>civil</em> marriages and <em>civil</em> ...",
+            "timestamp": 1658358754,
+            "title": "www.legisquebec.gouv.qc.ca \u203a en \u203a tdmccq-1991 - Civil Code of Qu\u00e9bec - L\u00e9gis Qu\u00e9bec",
+            "url": "https://www.legisquebec.gouv.qc.ca/en/tdm/cs/CCQ-1991"
+        }
+    ],
+    "timestamp": 1658358754,
+    "url": "https://search.yahoo.com/search?p=Civil%20Code"
+}

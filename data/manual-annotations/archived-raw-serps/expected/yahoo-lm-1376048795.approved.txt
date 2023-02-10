@@ -1,0 +1,87 @@
+{
+    "interpreted_query": ";lm",
+    "offset": null,
+    "page": null,
+    "query": ";lm",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "View the basic <em>LM</em> stock chart on Yahoo! Finance. Change the date range, chart type and compare <em>Legg Mason</em>, Inc. Common Stock against other companies.",
+            "timestamp": 1376048795,
+            "title": "<em>LM</em>: Summary for <em>Legg Mason</em>, Inc. Common Stock- Yahoo! Finance",
+            "url": "http://finance.yahoo.com/q?s=LM"
+        },
+        {
+            "rank": 2,
+            "snippet": "Not Registered Yet? Sign up to enter <em>LM</em>.com and receive exclusive content and special offers. But first, we need to verify you are a smoker and at least 21 years old.",
+            "timestamp": 1376048795,
+            "title": "<em>LM</em>.com - Official Website for L&amp;M Cigarettes",
+            "url": "https://www.lm.com/lm/login_input.action"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1376048795,
+            "title": ";<em>lm </em>- Image Results",
+            "url": "http://images.search.yahoo.com/search/images?_adv_prop=image&va=%3Blm"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>LM</em> Restaurant - French Gastro Bistro - 111 W Huron St. Chicago. <em>LM</em> Bistro - 111 W Huron St. Chicago IL 60654 - 312. 202. 9900. Troquet French Bar - 1834 W. Montrose ...",
+            "timestamp": 1376048795,
+            "title": "<em>LM</em> Bistro, Chicago - French Bistro Chicago",
+            "url": "http://www.lmrestaurant.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Updated stock quote for <em>LM</em> - including <em>LM</em> stock price today, earnings and estimates, stock charts, news, futures and other investing data.",
+            "timestamp": 1376048795,
+            "title": "<em>LM</em> Stock Quote - Lingo Media Corp. Stock Price Today (<em>LM</em>:CVE ...",
+            "url": "http://www.marketwatch.com/investing/stock/LM?countrycode=CA"
+        },
+        {
+            "rank": 6,
+            "snippet": "Acronym Definition; <em>LM</em>: <em>Lunar Module</em> (replaced LEM) <em>LM</em>: Le Mans: <em>LM</em>: Lumen: <em>LM</em>: <em>Lockheed Martin</em>: <em>LM</em>: Logistics Management: <em>LM</em>: Life Member: <em>LM</em>: Light Meter ...",
+            "timestamp": 1376048795,
+            "title": "<em>LM</em> - What does <em>LM</em> stand for? Acronyms and abbreviations by ...",
+            "url": "http://acronyms.thefreedictionary.com/lm"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>lunar module</em>. Relevant Questions What Is An <em>Lm</em> Interest R... What Is Adobe <em>Lm</em> Service... How To Disable Adobe <em>Lm</em> What Is An Lm1881 Chip? How To Disable <em>Lm</em> Authen ...",
+            "timestamp": 1376048795,
+            "title": "<em>Lm</em> | Define <em>Lm</em> at Dictionary.com",
+            "url": "http://dictionary.reference.com/browse/Lm"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1376048795,
+            "title": "<em>LM</em> - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/LM"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>LM</em>. 198 likes \u00b7 7 talking about this. Facebook logo. Email or Phone: Password: Keep me logged in. Forgot your password? Recent; 2013. March; February; January;",
+            "timestamp": 1376048795,
+            "title": "<em>LM</em> | Facebook",
+            "url": "https://www.facebook.com/fotografie.lm"
+        },
+        {
+            "rank": 10,
+            "snippet": "Shop for magellan 5220 <em>lm</em> on Pronto.com. Find and compare prices on magellan 5220 <em>lm</em> from popular brands and stores all in one place.",
+            "timestamp": 1376048795,
+            "title": "Magellan 5220 <em>Lm</em> - Lowest Prices &amp; Best Deals on Magellan ...",
+            "url": "http://www.pronto.com/shop/magellan-5220-lm"
+        },
+        {
+            "rank": 11,
+            "snippet": "Welcome to LMPassage. Enter your securID username and passcode to access the <em>Lockheed Martin</em> intranet.",
+            "timestamp": 1376048795,
+            "title": "LMPassage",
+            "url": "https://lmpassage3.external.lmco.com/"
+        }
+    ],
+    "timestamp": 1376048795,
+    "url": "http://search.yahoo.com/search?p=%3Blm"
+}

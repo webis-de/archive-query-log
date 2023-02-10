@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "ashland oregon ",
+    "offset": null,
+    "page": null,
+    "query": "ashland oregon",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland Oregon</em> Travel Guide",
+            "url": "http://srd.yahoo.com/srst/865745/ashland+oregon+/1/63/T=1015427114/F=a5adb854818fbfb7ea3faf8bf66ab90b/*http://www.oregoncitylink.com/ashland/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Area Association of the <em>Oregon</em> Bed &amp; Breakfast",
+            "url": "http://srd.yahoo.com/srst/23743200/ashland+oregon+/2/63/T=1015427114/F=b4a5171f953a9ef8c9eca11a71d735c5/*http://www.BandBAshland.com"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "Southern <em>Oregon</em> University",
+            "url": "http://srd.yahoo.com/srst/322194/ashland+oregon+/3/63/T=1015427114/F=f0265e36bba412090d374c0a0affb353/*http://www.sou.edu/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Oregon</em> Shakespeare Festival",
+            "url": "http://srd.yahoo.com/srst/228679/ashland+oregon+/4/63/T=1015427114/F=a21f31c54065090ee0726d4a8d5d7c0f/*http://www.orshakes.org/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Chamber of Commerce",
+            "url": "http://srd.yahoo.com/srst/15759776/ashland+oregon+/5/63/T=1015427114/F=b91778362a6c6a220e16dedb89db317f/*http://www.ashlandchamber.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "City of <em>Ashland</em>",
+            "url": "http://srd.yahoo.com/srst/490502/ashland+oregon+/6/63/T=1015427114/F=903268293d65679b6ddf16a4eba8cb47/*http://www.ashland.or.us/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Daily Tidings",
+            "url": "http://srd.yahoo.com/srst/27003302/ashland+oregon+/7/63/T=1015427114/F=dd7372464174301c59a97863ad0a6296/*http://www.dailytidings.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Springs Hotel",
+            "url": "http://srd.yahoo.com/srst/38061803/ashland+oregon+/8/63/T=1015427114/F=f7b01519c423a898d537b0e4a54749c3/*http://www.ashlandspringshotel.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "Southern <em>Oregon</em> University",
+            "url": "http://srd.yahoo.com/srst/32780115/ashland+oregon+/9/63/T=1015427114/F=b5f428b8dfa4053d93efbca619ad45d6/*http://www.sou.edu/library/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "Mt. <em>Ashland</em>",
+            "url": "http://srd.yahoo.com/srst/987734/ashland+oregon+/10/63/T=1015427114/F=8e6d55497f9f2006558fa8b6fd1f213c/*http://www.mtashland.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Independent Film Festival",
+            "url": "http://srd.yahoo.com/srst/32298408/ashland+oregon+/11/63/T=1015427114/F=6ab19099caf004cfaae449b216d4da8f/*http://www.ashlandfilm.org/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em>'s Bed &amp; Breakfast Network",
+            "url": "http://srd.yahoo.com/srst/319672/ashland+oregon+/12/63/T=1015427114/F=18848e496d75646176122baf5daf702f/*http://www.abbnet.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Ice Rink",
+            "url": "http://srd.yahoo.com/srst/375441/ashland+oregon+/13/63/T=1015427114/F=17af76bfc678472a47d6503589b358c9/*http://www.opendoor.com/icerink/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Community Food Store",
+            "url": "http://srd.yahoo.com/srst/16333857/ashland+oregon+/14/63/T=1015427114/F=453c36f67fb2e46933df6b56abd2a7e8/*http://www.acfs.org"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "Mt. <em>Ashland</em> Inn",
+            "url": "http://srd.yahoo.com/srst/42492204/ashland+oregon+/15/63/T=1015427114/F=8a89c7e964169e1343beae6b0b16c21d/*http://www.mtashlandinn.com/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "Windmill Inn of <em>Ashland</em>",
+            "url": "http://srd.yahoo.com/srst/30983531/ashland+oregon+/16/63/T=1015427114/F=61e8896088e1f05a1571f697d1bd53f5/*http://www.windmillinns.com/ash.htm"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> High School",
+            "url": "http://srd.yahoo.com/srst/26283305/ashland+oregon+/17/63/T=1015427114/F=017e77e430cfd7191ea15a89c931e5c0/*http://www.ashland.k12.or.us/ahs/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Middle School",
+            "url": "http://srd.yahoo.com/srst/13360807/ashland+oregon+/18/63/T=1015427114/F=36f8023b1b8549e8da27ad1be29d7977/*http://www.ashland.k12.or.us/ams/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "Southern <em>Oregon</em> Concert Band",
+            "url": "http://srd.yahoo.com/srst/767132/ashland+oregon+/19/63/T=1015427114/F=f2c39e54f2312a95c104b971fe807f8b/*http://www.geocities.com/Vienna/Choir/4708/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1015423512,
+            "title": "<em>Ashland</em> Parks Foundation",
+            "url": "http://srd.yahoo.com/srst/44204621/ashland+oregon+/20/63/T=1015427114/F=26df5c38d98fe8ae2447682cc61280cf/*http://id.mind.net/community/aparks/"
+        }
+    ],
+    "timestamp": 1015423512,
+    "url": "http://search.yahoo.com:80/search?p=ashland+oregon+"
+}

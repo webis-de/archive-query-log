@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "",
+    "offset": null,
+    "page": null,
+    "query": "danil kozlovsky",
+    "results": [],
+    "timestamp": 1360453772,
+    "url": "http://v.qq.com/search.html?pagetype=3&stag=word.tag&ms_key=danil%20kozlovsky"
+}
