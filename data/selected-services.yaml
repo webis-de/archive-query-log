@@ -730,6 +730,12 @@
     type: html_selector
     query_selector: form input[name="q"]
   results_parsers:
+  - url_pattern: ^https?://[^/]+/search.php\?
+    type: html_selector
+    results_selector: div#pagelet_search_results div.detailedsearch_result
+    url_selector: div.instant_search_title > a
+    title_selector: div.instant_search_title
+    snippet_selector: div.fsm
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
     results_selector: div.search_result
