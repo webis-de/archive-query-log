@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "#AmpatuanMassacre",
+    "offset": null,
+    "page": null,
+    "query": "#AmpatuanMassacre",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "28 were convicted but 55 were acquitted including principal accused Datu Sajid Islam Ampatuan in the 2009 <em>Ampatuan Massacre</em>\u00a0...",
+            "timestamp": 1583309425,
+            "title": "No closure yet in Ampatuan massacre convictions - Duration: 3:13.",
+            "url": "https://www.youtube.com/watch?v=SSfh2jlr5-g"
+        },
+        {
+            "rank": 2,
+            "snippet": "Three days left before the court hands down its verdict on the #<em>AmpatuanMassacre</em>. SubSelfie.com marks this dark chapter in\u00a0...",
+            "timestamp": 1583309425,
+            "title": "SHARIFF AGUAK | Behind the Scenes of the Ampatuan Massacre Music Video - Duration: 2:14.",
+            "url": "https://www.youtube.com/watch?v=ZAP98CW7DdY"
+        },
+        {
+            "rank": 3,
+            "snippet": "Maguindanaomassacre #<em>AmpatuanMassacre</em> #MaguindanaoMassacreVerdict The Maguindanao massacre, also known as the\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Maguindanao massacre Ampatuan Massacre Maguindanao Massacre Verdict - Duration: 2:10.",
+            "url": "https://www.youtube.com/watch?v=6bW-H_niepY"
+        },
+        {
+            "rank": 4,
+            "snippet": "\"Parang nabunutan kami ng tinik sa aming puso. Yung durog na durog, parang biglang nabuo..\" Panoorin ang reaksyon ng mga\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Ampatuan Massacre Verdict: Reaksyon ng mga Kaanak - Duration: 2:03.",
+            "url": "https://www.youtube.com/watch?v=H8nuW3kXklg"
+        },
+        {
+            "rank": 5,
+            "snippet": "Filipino journalists invite you to join the Million Candles Campaign on 23 November 2014. Act against impunity (exemption from\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Isang Kandila, Milyong Tanglaw (Million Candles Campaign) - Duration: 1:31.",
+            "url": "https://www.youtube.com/watch?v=8Q_C7Cnp8uk"
+        },
+        {
+            "rank": 6,
+            "snippet": "Luchi Cruz-Valdes, news anchor and News5 head, invites you to join the Million Candles Campaign on 23 November 2014.",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Luchi Cruz-Valdes) - Duration: 1:22.",
+            "url": "https://www.youtube.com/watch?v=Jtc34XMgH2M"
+        },
+        {
+            "rank": 7,
+            "snippet": "Pia Hontiveros-Pagkalinawan, 9News Philippines news anchor and reporter, invites you to join the Million Candles Campaign on\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Pia Hontiveros-Pagkalinawan) - Duration: 1:35.",
+            "url": "https://www.youtube.com/watch?v=p931JZF8RnE"
+        },
+        {
+            "rank": 8,
+            "snippet": "Ted Failon, ABS-CBN News and Current Affairs news anchor and reporter, invites you to join the Million Candles Campaign on 23\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Ted Failon) - Duration: 1:27.",
+            "url": "https://www.youtube.com/watch?v=IsABhj_MbAs"
+        },
+        {
+            "rank": 9,
+            "snippet": "Ces Ore\u00f1a-Drilon, ABS-CBN News and Current Affairs news anchor and reporter, invites you to join the Million Candles\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Ces Ore\u00f1a-Drilon) - Duration: 1:20.",
+            "url": "https://www.youtube.com/watch?v=XmQM4rYndzM"
+        },
+        {
+            "rank": 10,
+            "snippet": "Children of the victims of the #<em>AmpatuanMassacre</em> perform a song at the massacre site in sitio Masalay, barangay Salman,\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Children of Ampatuan massacre victims sing for justice - Duration: 0:35.",
+            "url": "https://www.youtube.com/watch?v=H01pvCYi_PA"
+        },
+        {
+            "rank": 11,
+            "snippet": "Balikan: Istorya ng naglibing sa 58 pinaslang sa <em>Ampatuan massacre</em> Para sa iba pang istorya: Visit our WEBSITE\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Balikan: Istorya ng naglibing sa 58 pinaslang sa Ampatuan massacre - Duration: 3:53.",
+            "url": "https://www.youtube.com/watch?v=MRy5Xrz3Ix0"
+        },
+        {
+            "rank": 12,
+            "snippet": "Tina Monzon-Palma, ABS-CBN News Channel Anchor and ABS-CBN Foundation Program Director, invites you to join the Million\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Tina Monzon-Palma) - Duration: 1:10.",
+            "url": "https://www.youtube.com/watch?v=sKPVCGuMQGE"
+        },
+        {
+            "rank": 13,
+            "snippet": "Ed Lingao, reporter and news anchor of TV5's Aksyon Tonite, invites you to join the Million Candles Campaign on 23 November\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Ed Lingao) - Duration: 1:01.",
+            "url": "https://www.youtube.com/watch?v=PjiV1bHsqLs"
+        },
+        {
+            "rank": 14,
+            "snippet": "Cheche Lazaro,Probe Productions Inc. reporter and host, invites you to join the Million Candles Campaign on 23 November 2014.",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Cheche Lazaro) - Duration: 1:27.",
+            "url": "https://www.youtube.com/watch?v=RZ4sy7N-8xY"
+        },
+        {
+            "rank": 15,
+            "snippet": "Jessica Soho, GMA News and Public Affairs anchor and reporter, invites you to join the Million Candles Campaign on 23\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Jessica Soho) - Duration: 1:30.",
+            "url": "https://www.youtube.com/watch?v=5z-ftpWnzks"
+        },
+        {
+            "rank": 16,
+            "snippet": "Filipino journalists invite you to join the Million Candles Campaign on 23 November 2014. Act against impunity (exemption from\u00a0...",
+            "timestamp": 1583309425,
+            "title": "A United Call for Justice (Million Candles Campaign) - Duration: 1:19.",
+            "url": "https://www.youtube.com/watch?v=6KIdmqUVmws"
+        },
+        {
+            "rank": 17,
+            "snippet": "Malou Mangahas, executive director of the Philippine Center for Investigative Journalism and host of GMA News TV's Investigative\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Million Candles Campaign (Malou Mangahas) - Duration: 1:20.",
+            "url": "https://www.youtube.com/watch?v=V7WhHqc1K4Q"
+        },
+        {
+            "rank": 18,
+            "snippet": "Binalikan ni NUJP chairperson Nonoy Espina ang 10-taong pakikipaglaban para makamit ang hustisya para sa\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Paglaban para sa 58 - Duration: 4:26.",
+            "url": "https://www.youtube.com/watch?v=i88OJQsBaok"
+        },
+        {
+            "rank": 19,
+            "snippet": "Court proceedings ng <em>Ampatuan Massacre</em> case maaaring tumagal ng 15 oras #<em>AmpatuanMassacre</em> #MaguindanaoMassacre\u00a0...",
+            "timestamp": 1583309425,
+            "title": "Court proceedings ng Ampatuan Massacre case maaaring tumagal ng 15 oras - Duration: 1:48.",
+            "url": "https://www.youtube.com/watch?v=ijPrWcEs2c4"
+        },
+        {
+            "rank": 20,
+            "snippet": "ANGHATOL #AMPATUANBOO #<em>AMPATUANMASSACRE</em> ZALDY AMPATUAN GUILTY NG PANGKAHABANG BUHAY NA\u00a0...",
+            "timestamp": 1583309425,
+            "title": "MAGUINDANAO MASSACRE ANG HATOL - Duration: 2:09.",
+            "url": "https://www.youtube.com/watch?v=qJiUXBJ83-8"
+        }
+    ],
+    "timestamp": 1583309425,
+    "url": "https://www.youtube.com/results?search_query=%23AmpatuanMassacre&app=desktop"
+}

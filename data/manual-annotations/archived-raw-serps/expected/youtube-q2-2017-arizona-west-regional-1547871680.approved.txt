@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Q2 2017 Arizona West Regional",
+    "offset": null,
+    "page": null,
+    "query": "Q2 2017 Arizona West Regional",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1547871680,
+            "title": "2017 Arizona West Regional - Playlist",
+            "url": "https://www.youtube.com/watch?v=Auol6fcN4bk&list=PLiMRelV0stOMIuo7VTrMtY-zadbOX6cDz"
+        },
+        {
+            "rank": 2,
+            "snippet": "F1M2 - <em>2017 Arizona West Regional</em> Red (4841, 330, 3255) - 349 Blue (2478, 6314, 3019) - 335\u00a0...",
+            "timestamp": 1547871680,
+            "title": "F1M2 - 2017 Arizona West Regional - Duration: 3:29.",
+            "url": "https://www.youtube.com/watch?v=41-ZZn__n3E"
+        },
+        {
+            "rank": 3,
+            "snippet": "QM58 - <em>2017 Arizona West Regional</em> Red (3133, 6674, 1165) - 175 Blue (6479, 1290, 6683) - 145\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM58 - 2017 Arizona West Regional - Duration: 3:21.",
+            "url": "https://www.youtube.com/watch?v=mssJvZzWLt8"
+        },
+        {
+            "rank": 4,
+            "snippet": "QM51 - <em>2017 Arizona West Regional</em> Red (1165, 1633, 5465) - 210 Blue (1492, 498, 991) - 295\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM51 - 2017 Arizona West Regional - Duration: 3:39.",
+            "url": "https://www.youtube.com/watch?v=tpOLa13WQTQ"
+        },
+        {
+            "rank": 5,
+            "snippet": "QM40 - <em>2017 Arizona West Regional</em> Red (2403, 4111, 4146) - 222 Blue (498, 1726, 330) - 345\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM40 - 2017 Arizona West Regional - Duration: 5:32.",
+            "url": "https://www.youtube.com/watch?v=N24BURmgv70"
+        },
+        {
+            "rank": 6,
+            "snippet": "QM74 - <em>2017 Arizona West Regional</em> Red (3944, 3019, 3321) - 141 Blue (2449, 5465, 3133) - 225\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM74 - 2017 Arizona West Regional - Duration: 3:36.",
+            "url": "https://www.youtube.com/watch?v=4CicUhtrVKY"
+        },
+        {
+            "rank": 7,
+            "snippet": "SF1M1 - <em>2017 Arizona West Regional</em> Red (4841, 330, 3255) - 231 Blue (696, 498, 6479) - 255\u00a0...",
+            "timestamp": 1547871680,
+            "title": "SF1M1 - 2017 Arizona West Regional - Duration: 4:27.",
+            "url": "https://www.youtube.com/watch?v=f8LGXv6OmpM"
+        },
+        {
+            "rank": 8,
+            "snippet": "QM71 - <em>2017 Arizona West Regional</em> Red (2840, 6479, 2375) - 190 Blue (330, 4146, 1212) - 200\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM71 - 2017 Arizona West Regional - Duration: 3:27.",
+            "url": "https://www.youtube.com/watch?v=nk-XdU3j2NU"
+        },
+        {
+            "rank": 9,
+            "snippet": "QM7 - <em>2017 Arizona West Regional</em> Red (2403, 6314, 1492) - 350 Blue (1726, 2449, 6674) - 150\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM7 - 2017 Arizona West Regional - Duration: 3:24.",
+            "url": "https://www.youtube.com/watch?v=baFT4SH1pjU"
+        },
+        {
+            "rank": 10,
+            "snippet": "F1M1 - <em>2017 Arizona West Regional</em> Red (4841, 330, 3255) - 465 Blue (2478, 6314, 3019) - 235\u00a0...",
+            "timestamp": 1547871680,
+            "title": "F1M1 - 2017 Arizona West Regional - Duration: 3:22.",
+            "url": "https://www.youtube.com/watch?v=XhuQrgaKEeg"
+        },
+        {
+            "rank": 11,
+            "snippet": "QM17 - <em>2017 Arizona West Regional</em> Red (3577, 6352, 5200) - 95 Blue (5465, 696, 3019) - 336\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM17 - 2017 Arizona West Regional - Duration: 4:04.",
+            "url": "https://www.youtube.com/watch?v=v0xp9QqDHKo"
+        },
+        {
+            "rank": 12,
+            "snippet": "QM37 - <em>2017 Arizona West Regional</em> Red (4565, 6683, 3133) - 190 Blue (1212, 6372, 5200) - 200\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM37 - 2017 Arizona West Regional - Duration: 3:37.",
+            "url": "https://www.youtube.com/watch?v=TEznu_je-Zk"
+        },
+        {
+            "rank": 13,
+            "snippet": "QF2M1 - <em>2017 Arizona West Regional</em> Red (6479, 498, 696) - 395 Blue (6413, 3187, 1165) - 305\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QF2M1 - 2017 Arizona West Regional - Duration: 3:22.",
+            "url": "https://www.youtube.com/watch?v=1k2fgKOS4ng"
+        },
+        {
+            "rank": 14,
+            "snippet": "QM55 - <em>2017 Arizona West Regional</em> Red (4111, 4496, 2449) - 255 Blue (3255, 6314, 1212) - 355\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM55 - 2017 Arizona West Regional - Duration: 4:23.",
+            "url": "https://www.youtube.com/watch?v=LLJpGJseZcs"
+        },
+        {
+            "rank": 15,
+            "snippet": "SF2M1 - <em>2017 Arizona West Regional</em> Red (3019, 6314, 2478) - 310 Blue (1726, 2662, 698) - 256\u00a0...",
+            "timestamp": 1547871680,
+            "title": "SF2M1 - 2017 Arizona West Regional - Duration: 3:25.",
+            "url": "https://www.youtube.com/watch?v=U_jUpzwKcys"
+        },
+        {
+            "rank": 16,
+            "snippet": "QM10 - <em>2017 Arizona West Regional</em> Red (1165, 2647, 3019) - 200 Blue (3255, 6413, 5465) - 285\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM10 - 2017 Arizona West Regional - Duration: 3:22.",
+            "url": "https://www.youtube.com/watch?v=FK6dmK1hABQ"
+        },
+        {
+            "rank": 17,
+            "snippet": "QM77 - <em>2017 Arizona West Regional</em> Red (3255, 991, 4565) - 346 Blue (6674, 2403, 3853) - 145\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM77 - 2017 Arizona West Regional - Duration: 3:21.",
+            "url": "https://www.youtube.com/watch?v=wpCzg374r34"
+        },
+        {
+            "rank": 18,
+            "snippet": "QM9 - <em>2017 Arizona West Regional</em> Red (6479, 330, 5101) - 230 Blue (2844, 498, 6352) - 250\u00a0...",
+            "timestamp": 1547871680,
+            "title": "QM9 - 2017 Arizona West Regional - Duration: 3:55.",
+            "url": "https://www.youtube.com/watch?v=xMFMeYlpM5A"
+        },
+        {
+            "rank": 19,
+            "snippet": "Final 1 - 2018 <em>Arizona West Regional</em> Red (Teams 2478, 2403, 2840) - 444 Blue (Teams 3853, 4146, 3019) - 302\u00a0...",
+            "timestamp": 1547871680,
+            "title": "Final 1 - 2018 Arizona West Regional - Duration: 3:08.",
+            "url": "https://www.youtube.com/watch?v=C3ssYBR-lC0"
+        },
+        {
+            "rank": 20,
+            "snippet": "Filmed by Sara Heidemann - Edited by Eli Uva ------------------------------------------------------ Check out our website to stay up to date\u00a0...",
+            "timestamp": 1547871680,
+            "title": "Arizona West Regional 2017  - FRC Team 3255 SuperNURDs - Duration: 3:19.",
+            "url": "https://www.youtube.com/watch?v=iKlcyY9Cdjc"
+        }
+    ],
+    "timestamp": 1547871680,
+    "url": "https://www.youtube.com/results?search_query=Q2+2017+Arizona%20West%20Regional"
+}
