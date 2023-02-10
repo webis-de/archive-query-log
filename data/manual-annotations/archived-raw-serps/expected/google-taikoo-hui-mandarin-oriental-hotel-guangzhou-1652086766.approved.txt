@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Taikoo Hui Mandarin Oriental Hotel Guangzhou",
+    "offset": null,
+    "page": null,
+    "query": "Taikoo Hui Mandarin Oriental Hotel Guangzhou",
+    "results": [
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "The Taikoo Lounge | Mandarin Oriental Hotel, Guangzhou",
+            "url": "/url?q=https://www.mandarinoriental.com/guangzhou/tianhe/fine-dining/lounges/the-taikoo-lounge&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAUQAg&usg=AOvVaw0dX6JG4zKS59iXCAaxnu6e"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "Taikoo Hui Guangzhou-Living",
+            "url": "/url?q=http://www.taikoohui.com/en/Hotel&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAoQAg&usg=AOvVaw0WVe0xkJgOeA4YoNJUOX2M"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "\u041e\u0442\u0435\u043b\u044c Mandarin Oriental Guangzhou - \u0413\u0443\u0430\u043d\u0447\u0436\u043e\u0443 - Booking.com",
+            "url": "/url?q=https://www.booking.com/hotel/cn/taikoo-hui-guangzhou-development-company-limited-mandarin-oriental.ru.html&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAsQAg&usg=AOvVaw2jfrVFpRUirggABV1o2HTf"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "Taikoo Hui Mandarin Oriental Hotel - The Skyscraper Center",
+            "url": "/url?q=https://www.skyscrapercenter.com/building/taikoo-hui-mandarin-oriental-hotel/9065&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAgQAg&usg=AOvVaw3-C__rzZJx-9fuBj2h8e3X"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "MANDARIN ORIENTAL, GUANGZHOU 5* (\u0413\u0443\u0430\u043d\u0447\u0436\u043e\u0443) - TripAdvisor",
+            "url": "/url?q=https://www.tripadvisor.ru/Hotel_Review-g298555-d2547883-Reviews-Mandarin_Oriental_Guangzhou-Guangzhou_Guangdong.html&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAkQAg&usg=AOvVaw1n5ZG3v2USiTqdxBBQa6QI"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "Mandarin Oriental, Guangzhou | Swire Properties",
+            "url": "/url?q=https://www.swireproperties.com/en/portfolio/current-developments/taikoo-hui-guangzhou/mandarin-oriental-guangzhou&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAcQAg&usg=AOvVaw0vrRI-37mHKJ1FBeiSZHbd"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "Taikoo Hui + Mandarin Oriental Hotel and Residences - Arquitectonica",
+            "url": "/url?q=https://arquitectonica.com/architecture/project/taikoo-hui-and-mandarin-oriental-hotel-residences/&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAIQAg&usg=AOvVaw0BJStK8f3QeR3N_Wh7_try"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "Taikoo Hui Mandarin Oriental Hotel, Guangzhou | 280391 | EMPORIS",
+            "url": "/url?q=https://www.emporis.com/buildings/280391/taikoo-hui-mandarin-oriental-hotel-guangzhou-china&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAMQAg&usg=AOvVaw0Lohc7YvzdzY9mXwx34uAT"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "Taikoo Hui (Guangzhou, China) - Hager Group",
+            "url": "/url?q=https://www.hagergroup.com/en/detail/taikoo-hui/e75784/%3Fbackpageid%3D3313%26backblockid%3D74935519&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAQQAg&usg=AOvVaw2Ldap2ylRXvGVPEpx-fukP"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1652086766,
+            "title": "Mandarin Oriental Guangzhou - Expedia",
+            "url": "/url?q=https://www.expedia.com/Guangzhou-Hotels-Mandarin-Oriental-Guangzhou.h5628172.Hotel-Information&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAYQAg&usg=AOvVaw3FGvNd95JT0Rw4eSDzYegT"
+        }
+    ],
+    "timestamp": 1652086766,
+    "url": "https://www.google.com/search?q=Taikoo+Hui+Mandarin+Oriental+Hotel+Guangzhou"
+}

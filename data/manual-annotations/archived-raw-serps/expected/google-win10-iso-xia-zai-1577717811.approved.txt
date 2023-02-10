@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "win10 iso \u4e0b\u8f7d",
+    "offset": null,
+    "page": null,
+    "query": "win10 iso \u4e0b\u8f7d",
+    "results": [],
+    "timestamp": 1577717811,
+    "url": "https://www.google.com/search?q=win10+iso+%E4%B8%8B%E8%BD%BD&tbm=nws&source=lnt&tbs=qdr%3Ay&sa=X&ved=0ahUKEwjurrCb3t3mAhXPjp4KHT3MDxg4FBCnBQgf"
+}

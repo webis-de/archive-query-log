@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Hawaii part ii lyrics",
+    "offset": null,
+    "page": null,
+    "query": "Hawaii part ii lyrics",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "Miracle Musical - Hawaii: Part II Lyrics and Tracklist | Genius",
+            "url": "/url?q=https://genius.com/albums/Miracle-musical/Hawaii-part-ii&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQFnoECAYQAg&usg=AOvVaw3tUKXI_8MCcBlrnajKpS86"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "Miracle Musical - Hawaii: Part II: Part II Lyrics and Tracklist | Genius",
+            "url": "/url?q=https://genius.com/albums/Miracle-musical/Hawaii-part-ii-part-ii&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQFnoECAUQAg&usg=AOvVaw0XJUfHfeEUZIeHDwVi8civ"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "Hawaii: Part II (2012) Album Lyrics - Miracle Musical",
+            "url": "/url?q=https://lyrics.az/miracle-musical/hawaii-part-ii/&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQFnoECAEQAg&usg=AOvVaw30nOyLZGHvZoQwQiOwfDLg"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "Miracle Musical Hawaii: Part II English Album Lyrics - Translateasy",
+            "url": "/url?q=https://www.translateasy.com/en/album/miracle-musical-hawaii-part-ii-english-all-lyrics/2536&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQFnoECAoQAg&usg=AOvVaw0X4OeELjxpmmat0pqh9q9U"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "Hawaii: Part II | Tally Hall Wikia",
+            "url": "/url?q=https://tallyhall.fandom.com/wiki/Hawaii:_Part_II&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQFnoECAcQAg&usg=AOvVaw1HVSuoHs6RxbqCn_o9B-WJ"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "Miracle Musical - Lyrics.lol",
+            "url": "/url?q=https://lyrics.lol/artist/963509-miracle-musical&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQFnoECAgQAg&usg=AOvVaw0tSoKDFS3i7ykJEO3-JP-Q"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "hawaii: part ii lyrics (@partiilyricsbot) | Twitter",
+            "url": "/url?q=https://twitter.com/partiilyricsbot&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQFnoECAAQAg&usg=AOvVaw0UISrihk_g-QPtQr4nujyc"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "Miracle Musical - White Ball [LYRICS] - YouTube",
+            "url": "/url?q=https://www.youtube.com/watch%3Fv%3D7Kcg7TCB-8Q&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQtwJ6BAgCEAE&usg=AOvVaw3Mxlels3ZLF_7gn2GI6Ykd"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "\u30df\u30e9\u30af\u30eb\u30df\u30e5\u30fc\u30b8\u30ab\u30eb \u2014 HAWAII PART: II (Full Album) - YouTube",
+            "url": "/url?q=https://www.youtube.com/watch%3Fv%3DveqG2Fwh_yo&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQtwJ6BAgDEAE&usg=AOvVaw24ax2xOf9fmivBh_M-ppCP"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1633318830,
+            "title": "Hawaii: Part II - YouTube",
+            "url": "/url?q=https://www.youtube.com/playlist%3Flist%3DPLTcd3oH8q1PHcI60PDKJgER6vM7d07AG-&sa=U&ved=2ahUKEwjc8dDOhbDzAhVLtZ4KHdKyACgQFnoECAkQAg&usg=AOvVaw2fe1ewKcAdYUxgdP4yfWLx"
+        }
+    ],
+    "timestamp": 1633318830,
+    "url": "https://www.google.com/search?q=Hawaii+part+ii+lyrics&sa=X&ved=2ahUKEwjA74_v6arzAhVTwZ4KHfAcBCAQ1QJ6BAgFEAw"
+}

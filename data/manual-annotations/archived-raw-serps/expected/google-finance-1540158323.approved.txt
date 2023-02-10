@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "finance",
+    "offset": null,
+    "page": null,
+    "query": "finance",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "At Yahoo <em>Finance</em>, you get free stock quotes, up-to-date news, portfolio \nmanagement resources, international market data, social interaction and \nmortgage rates\u00a0...",
+            "timestamp": 1540158323,
+            "title": "Yahoo <em>Finance</em> - Business <em>Finance</em>, Stock Market, Quotes, News",
+            "url": "/url?q=https://finance.yahoo.com/&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFggUMAA&usg=AOvVaw2AIq-FLFkx4w1gGrEyW3aH"
+        },
+        {
+            "rank": 2,
+            "snippet": "- Similar",
+            "timestamp": 1540158323,
+            "title": "<em>Finance</em> - Google",
+            "url": "/url?q=https://www.google.com/finance&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFggdMAE&usg=AOvVaw0Yx7bXef6UuIh4rwBR85uq"
+        },
+        {
+            "rank": 3,
+            "snippet": "Carmen Segarra is a former New York Federal Reserve expert examiner who \nwas embedded at Goldman Sachs between November 2011 and\u00a0...",
+            "timestamp": 1540158323,
+            "title": "News for <em>finance</em>",
+            "url": "/search?q=finance&gbv=1&prmd=ivns&source=univ&tbm=nws&tbo=u&sa=X&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QqAIIIA"
+        },
+        {
+            "rank": 4,
+            "snippet": "Latest investing news and <em>finance</em> headlines straight from Wall Street.",
+            "timestamp": 1540158323,
+            "title": "<em>Finance</em> - CNBC.com",
+            "url": "/url?q=https://www.cnbc.com/finance/&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFggpMAU&usg=AOvVaw3NRLFPt3F9g8t-79LhQ64I"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Finance</em> is a field that is concerned with the allocation (investment) of assets and \nliabilities over space and time, often under conditions of risk or uncertainty.",
+            "timestamp": 1540158323,
+            "title": "<em>Finance</em> - Wikipedia",
+            "url": "/url?q=https://en.wikipedia.org/wiki/Finance&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFggsMAY&usg=AOvVaw2Ec5rfaZGOK8rMuzaMybYh"
+        },
+        {
+            "rank": 7,
+            "snippet": "Business news &amp; <em>Financial</em> news from Reuters.com.",
+            "timestamp": 1540158323,
+            "title": "Business News &amp; <em>Financial</em> News | Reuters",
+            "url": "/url?q=https://www.reuters.com/finance&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFghLMAo&usg=AOvVaw2imIdLySDhQIFZHlNz_VoM"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Finance</em> is a term for matters regarding the management, creation, and study of \nmoney, investments, and other <em>financial</em> instruments.",
+            "timestamp": 1540158323,
+            "title": "<em>Finance</em> - Investopedia",
+            "url": "/url?q=https://www.investopedia.com/terms/f/finance.asp&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFghPMAs&usg=AOvVaw0cMgRr6KgFsJMElyuXbJTa"
+        },
+        {
+            "rank": 9,
+            "snippet": "May 3, 2018 <em>...</em> <em>Finance</em> is the study of how money is managed and the process of acquiring \nneeded funds. Personal <em>finance</em>, corporate <em>finance</em> and public\u00a0...",
+            "timestamp": 1540158323,
+            "title": "What is <em>finance</em>? - Investopedia",
+            "url": "/url?q=https://www.investopedia.com/ask/answers/what-is-finance/&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFghSMAw&usg=AOvVaw2IVOmxARkfJpLH1Qy1axPy"
+        },
+        {
+            "rank": 10,
+            "snippet": "News, analysis and comment from the <em>Financial</em> Times, the world's leading global \nbusiness publication.",
+            "timestamp": 1540158323,
+            "title": "<em>Financial</em> Times",
+            "url": "/url?q=https://www.ft.com/&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFghWMA0&usg=AOvVaw3yREcLi30pCMT5qozze-6h"
+        },
+        {
+            "rank": 11,
+            "snippet": "Get breaking <em>Finance</em> news and the latest business articles from AOL. From stock \nmarket news to jobs and real estate, it can all be found here.",
+            "timestamp": 1540158323,
+            "title": "AOL - <em>Finance</em> News &amp; Latest Business Headlines - AOL.com",
+            "url": "/url?q=https://www.aol.com/finance/&sa=U&ved=0ahUKEwjx9pjX25jeAhUVLX0KHUgFBP4QFghaMA4&usg=AOvVaw0QyPUHaaGMHK9U-hUWvBuf"
+        }
+    ],
+    "timestamp": 1540158323,
+    "url": "http://www.google.co.uk/search?q=finance&gbv=1&sei=jw_NW8voLJWv0PEPld2DuA8"
+}

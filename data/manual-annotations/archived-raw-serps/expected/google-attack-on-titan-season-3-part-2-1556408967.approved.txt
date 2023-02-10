@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "attack on titan season 3 part 2",
+    "offset": null,
+    "page": null,
+    "query": "attack on titan season 3 part 2",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "13 hours ago - Go ahead and clear your Sunday morning schedule, because the official launch time is here for <em>Attack on Titan Season 3 Part 2</em>. The battle to retake Wall Maria begins on Sunday, April 28 at 10:35am Pacific Time. ... With Eren\u2019s new hardening ability, the Scouts are confident they can ...",
+            "timestamp": 1556408967,
+            "title": "Crunchyroll Sets Launch Time for Attack on Titan Season 3 Part 2",
+            "url": "https://www.crunchyroll.com/anime-news/2019/04/27/crunchyroll-sets-launch-time-for-attack-on-titan-season-3-part-2"
+        },
+        {
+            "rank": 2,
+            "snippet": "3 days ago - Looking for information on the anime <em>Shingeki no Kyojin Season 3 Part 2</em> (<em>Attack on Titan Season 3 Part 2</em>)? Find out more with MyAnimeList,\u00a0...",
+            "timestamp": 1556408967,
+            "title": "Shingeki no Kyojin Season 3 Part 2 - MyAnimeList.net",
+            "url": "https://myanimelist.net/anime/38524/Shingeki_no_Kyojin_Season_3_Part_2"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Attack on Titan season 3</em> is due to return with <em>episode</em> 13 this weekend Sunday ... Sunday at <em>2</em>:00 PM ET/11:00 AM <em>PT</em> on Funimation, Hulu, and Crunchyroll as a\u00a0...",
+            "timestamp": 1556408967,
+            "title": "Attack on Titan Season 3: Return Date, Trailer, Episode Guide, and ...",
+            "url": "https://www.denofgeek.com/us/culture/attack-on-titan/265790/attack-on-titan-season-3-release-date-trailer-episode-guide-news"
+        },
+        {
+            "rank": 4,
+            "snippet": "Counting down the days, hours, minutes and seconds until <em>Attack On Titan</em>.",
+            "timestamp": 1556408967,
+            "title": "Countdown To Attack On Titan | Season 3 Part 2 Release Date",
+            "url": "https://yourcountdown.to/attack-on-titan"
+        },
+        {
+            "rank": 5,
+            "snippet": "Jump to <em>Episode</em> list - August 18, 2018 (television). Levi's squad, now composed of Eren and his remaining friends, are camped out in a cottage where\u00a0...",
+            "timestamp": 1556408967,
+            "title": "Attack on Titan (season 3) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Attack_on_Titan_(season_3)"
+        },
+        {
+            "rank": 6,
+            "snippet": "Jump to <em>Season</em> 1 (2013) - )[edit]. Main article: <em>Attack on Titan</em> (<em>season</em> 1) ... (2013-04-07), May <em>3</em>, 2014. <em>2</em>, <em>2</em>, \"That Day: The Fall of Shiganshina, <em>Part 2</em>\" ... <em>3</em>, <em>3</em>, \"A Dim Light Amid Despair: Humanity's Comeback, <em>Part</em> 1\" Transcription:\u00a0...",
+            "timestamp": 1556408967,
+            "title": "Attack on Titan (TV series) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Attack_on_Titan_(TV_series)"
+        },
+        {
+            "rank": 7,
+            "snippet": "20 hours ago - <em>Attack on Titan Season 3</em> returns this weekend as the fight to retake Shiganshina District continues. The first 12 episodes of the third <em>season</em>\u00a0...",
+            "timestamp": 1556408967,
+            "title": "'Attack on Titan' Season 3 Part 2: When and How to Watch Anime's ...",
+            "url": "https://www.newsweek.com/attack-titan-season-3-part-2-1406410"
+        },
+        {
+            "rank": 8,
+            "snippet": "1 hour ago - <em>Attack on Titan</em>'s third <em>season</em> has been on hiatus since last year, and now the series will return to finish off the intense and action packed\u00a0...",
+            "timestamp": 1556408967,
+            "title": "How to Watch Attack on Titan Season 3 Part 2 - ComicBook.com",
+            "url": "https://comicbook.com/anime/2019/04/27/attack-on-titan-season-3-part-2-how-to-watch-anime-streaming-crunchyroll-funimation-hulu/"
+        }
+    ],
+    "timestamp": 1556408967,
+    "url": "https://www.google.com/search?q=attack+on+titan+season+3+part+2&rlz=1C1CHBF_en-GBGB760GB760&oq=attac&aqs=chrome.0.69i59j0l2j69i65l3.1486j0j4&sourceid=chrome&ie=UTF-8"
+}
