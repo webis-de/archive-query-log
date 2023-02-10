@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "\" www.wallstquotes. com\"",
+    "offset": null,
+    "page": null,
+    "query": "\" www.wallstquotes. com\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1062140693,
+            "title": "WallStQuotes.com | Home",
+            "url": "http://www.wallstquotes.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1062140693,
+            "title": "LINKS 004001 - 004500 comWeb Letter W - Sakellaris Network snn. <em>...</em>",
+            "url": "http://www.snn.gr/com/w/w_004500_com.html"
+        }
+    ],
+    "timestamp": 1062140693,
+    "url": "http://www.google.com:80/search?q=%22+www.wallstquotes.+com%22"
+}

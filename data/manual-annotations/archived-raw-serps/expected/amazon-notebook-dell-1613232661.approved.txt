@@ -1,0 +1,346 @@
+{
+    "interpreted_query": "notebook dell",
+    "offset": null,
+    "page": null,
+    "query": "notebook dell",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron I15-3583-As80P 8\u00aa Gera\u00e7\u00e3o Intel Core I5 8Gb 256Gb Ssd 15.6\" Placa de V\u00eddeo Amd Windows 10 Preto",
+            "url": "/Notebook-Dell-Inspiron-I15-3583-As80P-Gera%C3%A7%C3%A3o/dp/B08HN93WDL/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-1&tag=katlivros-20"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 15 3000, I15-3583-A3Xp, 8\u00aa Gera\u00e7\u00e3o Intel Core I5-8265U, 8 Gb Ram, Hd 1Tb, Intel\u00ae Uhd Graphics 620, Tela 15.6\" Led Hd, Windows 10, Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-A3XP-i5-8265U/dp/B07WCV29BD/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-2&tag=katlivros-20"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3584-A30P 8\u00aa Gera\u00e7\u00e3o Intel Core i3 4GB 1TB Tela LED HD 15.6\" Windows 10 Preto, Inspiron 15 3000",
+            "url": "/Notebook-Dell-Inspiron-i15-3584-A30P-Gera%C3%A7%C3%A3o/dp/B08FCW1X5J/ref=sr_1_3?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-3&tag=katlivros-20"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 3583-AS110S 8\u00aa Gera\u00e7\u00e3o Intel Core i7 8GB 1TB 128GB SSD Placa de v\u00eddeo AMD 15.6\" Windows 10 Prata",
+            "url": "/Notebook-Dell-Inspiron-3583-AS110S-Gera%C3%A7%C3%A3o/dp/B08FXBMGRP/ref=sr_1_4?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-4&tag=katlivros-20"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3584-AS50P 8\u00aa Gera\u00e7\u00e3o Intel Core i3 4GB 256GB SSD Tela LED 15.6\" Windows 10 Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3584-AS50P-Gera%C3%A7%C3%A3o/dp/B08BHJ64L7/ref=sr_1_5?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-5&tag=katlivros-20"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 15 3000, I15-3583-D3Xp, 8\u00aa Gera\u00e7\u00e3o Intel Core I5-8265U, 8 Gb Ram, Hd 1Tb, Intel\u00ae Hd Graphics 620, Tela 15.6\" Led Hd, Linux, Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-D3XP-i5-8265U/dp/B07WHJC2JX/ref=sr_1_6?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-6&tag=katlivros-20"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron I15-3584-Ds50P 8\u00aa Gera\u00e7\u00e3o Intel Core I3 4Gb 256Gb Ssd Tela Led 15.6\" Linux Preto",
+            "url": "/Notebook-Dell-Inspiron-I15-3584-Ds50P-Gera%C3%A7%C3%A3o/dp/B08BGCG5RQ/ref=sr_1_7?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-7&tag=katlivros-20"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 15 3000, I15-3583-A20B, 8\u00aa Gera\u00e7\u00e3o Intel Core I5-8265U, 8 Gb Ram, Hd 2Tb, Amd Radeon 520 2G Gddr5, Tela 15.6\" Led Hd, Windows 10, Branco",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-A20B-i5-8265U/dp/B07WCV29BG/ref=sr_1_8?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-8&tag=katlivros-20"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 2 em 1 Ultrafino 14 5000, i14-5481-A20S, 8\u00aa Gera\u00e7\u00e3o Intel Core i5-8265U, 8 GB RAM, HD 1TB, Intel\u00ae UHD Graphics 620, Tela 14\" LED IPS, Windows 10, Prata",
+            "url": "/Inspiron-Ultrafino-14-5000-i14-5481-A20S/dp/B07PY8G4SD/ref=sr_1_9?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-9&tag=katlivros-20"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Ultrafino Dell Inspiron i15-5590-A10S 10\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 256GB SSD Placa V\u00eddeo NVIDIA Full HD 15.6\" Windows 10 Prata",
+            "url": "/Notebook-Ultrafino-Dell-Inspiron-i15-5590-A10S/dp/B085YT34JC/ref=sr_1_10?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-10&tag=katlivros-20"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 15 3000, i15-3583-A05P, Intel Pentium Gold, 4 GB, 500 GB, Tela LED 15\" HD, Windows 10, Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-A05P-Pentium/dp/B0849C5RNH/ref=sr_1_11?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-11&tag=katlivros-20"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3584-AS40P 8\u00aa gera\u00e7\u00e3o Intel Core i3 4GB 128GB SSD 15.6\" Windows 10 Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3584-AS40P-gera%C3%A7%C3%A3o/dp/B08G2T8X68/ref=sr_1_12?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-12&tag=katlivros-20"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Ultrafino Dell Inspiron i15-5590-A20S 10\u00aa Gera\u00e7\u00e3o Intel Core i7 8GB 256GB SSD Placa V\u00eddeo NVIDIA 15.6\" Windows 10 Prata",
+            "url": "/Notebook-Ultrafino-Dell-Inspiron-i15-5590-A20S/dp/B085YTD1G9/ref=sr_1_13?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-13&tag=katlivros-20"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 2 em 1 Ultrafino 14 5000, i14-5481-A30S, 8\u00aa Gera\u00e7\u00e3o Intel Core i7-8565U, 8 GB RAM, HD 1TB, Intel\u00ae UHD Graphics 620, Tela 14\" LED Full HD IPS, Windows 10, Prata",
+            "url": "/Inspiron-Ultrafino-14-5000-i14-5481-A30S/dp/B07PY8G4S4/ref=sr_1_14?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-14&tag=katlivros-20"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Gamer Dell G3-3590-A60P, 9\u00aa Gera\u00e7\u00e3o Intel Core i7-9750h, 8Gb, 512GB SSD, NVI GTX 1660Ti, Tela FHD 15.6\", Windows 10, Preto",
+            "url": "/Notebook-Dell-G3-3590-A60P-Gera%C3%A7%C3%A3o-i7-9750h/dp/B084ZS477F/ref=sr_1_15?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-15&tag=katlivros-20"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Inspiron 15 3000, I15-3583-A30P, 8\u00aa Gera\u00e7\u00e3o Intel Core I7-8565U, 8 Gb Ram, Hd 2Tb, Amd Radeon 520 2G Gddr5, Tela 15.6\" Led, Windows 10, Dell, 4, AMD Radeon, Preto",
+            "url": "/Notebook-Inspiron-I15-3583-A30P-I7-8565U-Dell/dp/B07TSJ55MN/ref=sr_1_16?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-16&tag=katlivros-20"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Ultrafino Dell Inspiron i15-5590-A30S 10\u00aa Gera\u00e7\u00e3o Intel Core i7 16GB 256GB SSD Placa V\u00eddeo NVIDIA 15.6\" Windows 10 Prata",
+            "url": "/Notebook-Ultrafino-Dell-Inspiron-i15-5590-A30S/dp/B085YTC959/ref=sr_1_17?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-17&tag=katlivros-20"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Samsung Book E20 Intel\u00ae Dual-Core, Windows 10 Home, 4GB, 500GB, 15.6'' HD LED",
+            "url": "/Samsung-Intel%C2%AE-Dual-Core-Windows-500GB/dp/B08BB91X67/ref=sr_1_18?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-18&tag=katlivros-20"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 15 3000 3583-AS90P 8\u00aa gera\u00e7\u00e3o Intel Core i7 8GB 256GB SSD 15.6\" Windows 10 Preto",
+            "url": "/Notebook-Dell-Inspiron-3583-AS90P-gera%C3%A7%C3%A3o/dp/B08FX158GZ/ref=sr_1_19?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-19&tag=katlivros-20"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-AS90S 8\u00aa Gera\u00e7\u00e3o Intel Core i7 8GB 256GB SSD 15.6\" Windows 10 Prata",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-AS90S-Gera%C3%A7%C3%A3o/dp/B08FWRXMVY/ref=sr_1_20?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-20&tag=katlivros-20"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Gamer Dell G3-3590-A50P, 9\u00aa Gera\u00e7\u00e3o Intel Core i5-9300h, 8GB RAM, 512GB SSD, NVI GTX 1650, Tela FHD 15.6\", Windows 10",
+            "url": "/Notebook-Dell-G3-3590-A50P-Gera%C3%A7%C3%A3o-i5-9300h/dp/B084ZS8DSZ/ref=sr_1_21?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-21&tag=katlivros-20"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Lenovo Ultrafino ideapad S145 i3 - 8130U 4GB 1TB Windows 10 15.6\", Prata",
+            "url": "/Notebook-Lenovo-Ideapad-i3-8130U-81XM0002BR/dp/B085H7G8ZK/ref=sr_1_22?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-22&tag=katlivros-20"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-AS55P 8\u00aa Gera\u00e7\u00e3o Intel Core i3 4GB 256GB SSD Tela LED 15.6\" Windows 10 Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-AS55P-Gera%C3%A7%C3%A3o/dp/B08PNN2XVC/ref=sr_1_23?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-23&tag=katlivros-20"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 3583-M35P 15.6\" 8\u00aa Gera\u00e7\u00e3o Intel Core i3 4GB 1TB Windows 10 McAfee Preto",
+            "url": "/Notebook-Dell-Inspiron-3583-M35P-Gera%C3%A7%C3%A3o/dp/B08QZKVWJM/ref=sr_1_24?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-24&tag=katlivros-20"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 15 3000, I15-3583-D2Xb, 8\u00aa Gera\u00e7\u00e3o Intel Core I5-8265U, 4 Gb Ram, Hd 1Tb, Intel\u00ae Uhd Graphics 620, Tela 15.6\" Led Hd, Linux, Branco",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-D2XB-i5-8265U/dp/B07WD9F8MV/ref=sr_1_25?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-25&tag=katlivros-20"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Ultrafino Dell Inspiron 5490-A40S 10\u00aa Gera\u00e7\u00e3o Intel Core i7 16GB 256GB SSD NVIDIA Full HD 14\" Windows 10 Prata",
+            "url": "/Notebook-Ultrafino-Dell-Inspiron-5490-A40S/dp/B084KJ9NBS/ref=sr_1_26?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-26&tag=katlivros-20"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Ultrafino Dell Inspiron I14-5490-A20S 10\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 256GB SSD Placa V\u00eddeo NVIDIA Full HD 14\" Windows 10 Prata",
+            "url": "/Notebook-Ultrafino-Dell-Inspiron-I14-5490-A20S/dp/B085YT5JLP/ref=sr_1_27?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-27&tag=katlivros-20"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Ultrafino Dell Inspiron i14-5490-A30S 10\u00aa Gera\u00e7\u00e3o Intel Core i7 8GB 256GB SSD Placa V\u00eddeo NVIDIA Full HD 14\" Windows 10 Prata",
+            "url": "/Notebook-Ultrafino-Dell-Inspiron-i14-5490-A30S/dp/B085YS7DSJ/ref=sr_1_28?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-28&tag=katlivros-20"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-MFS1S 8\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 256GB SSD 15.6\" Windows 10 Prata",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-MFS1S-Gera%C3%A7%C3%A3o/dp/B08HPGTMXL/ref=sr_1_29?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-29&tag=katlivros-20"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-M3XP 8\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 1TB 15.6\" Windows 10 Preto McAfee",
+            "url": "/Notebook-Inspiron-i15-3583-M3XP-Gera%C3%A7%C3%A3o-Windows/dp/B07SYB6FHF/ref=sr_1_30?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-30&tag=katlivros-20"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 3480-M05S 14\" Intel Pentium Gold 4GB 500GB Windows 10 Prata",
+            "url": "/Notebook-Dell-Inspiron-3480-M05S-Pentium/dp/B08QXMZPJM/ref=sr_1_31?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-31&tag=katlivros-20"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 3583-MFS1PB 15.6\" 8\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 256GB SSD Windows 10 Capa Essential Preto",
+            "url": "/Notebook-Dell-Inspiron-3583-MFS1PB-Essential/dp/B08LXD9XM9/ref=sr_1_32?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-32&tag=katlivros-20"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Ultraport\u00e1til Dell Inspiron 13 7000, i13-7391-A20S, 10\u00aa Gera\u00e7\u00e3o Intel Core i5, 8GB, 512GB SSD, NVIDIA GeForce MX250 2GB GDDR5, Full HD 13.3\", Windows 10, Prata",
+            "url": "/Notebook-Ultraport%C3%A1til-Dell-Inspiron-i13-7391-A20S/dp/B07ZHRWBYJ/ref=sr_1_33?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-33&tag=katlivros-20"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-MS80P 8\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 256GB SSD 15.6\" Placa de v\u00eddeo AMD Windows 10 Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-MS80P-Gera%C3%A7%C3%A3o/dp/B08G596JNV/ref=sr_1_34?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-34&tag=katlivros-20"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Ultrafino Dell Inspiron 5490-A10S 10\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 256GB SSD Full HD 14\" Windows 10 Prata",
+            "url": "/Notebook-Ultrafino-Dell-Inspiron-5490-A10S/dp/B08G5CCB1D/ref=sr_1_35?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-35&tag=katlivros-20"
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-MS110S 8\u00aa Gera\u00e7\u00e3o Intel Core i7 8GB 1TB 128GB SSD 15.6\" Placa de v\u00eddeo AMD Windows 10 Prata",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-MS110S-Gera%C3%A7%C3%A3o/dp/B08HRB3KC7/ref=sr_1_36?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-36&tag=katlivros-20"
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-UFS1P 8\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 256GB SSD 15.6\" Linux Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-UFS1P-Gera%C3%A7%C3%A3o/dp/B08HN9BWSQ/ref=sr_1_37?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-37&tag=katlivros-20"
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 15 3000, I15-3583-A2Xp, 8\u00aa Gera\u00e7\u00e3o Intel Core I5-8265U, 4 Gb Ram, Hd 1Tb, Intel\u00ae Uhd Graphics 620, Tela 15.6\" Led Hd, Windows 10, Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-A2XP-i5-8265U/dp/B07WFDZD2Z/ref=sr_1_38?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-38&tag=katlivros-20"
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 3584-AS50B 8\u00aa gera\u00e7\u00e3o Intel Core i3 4GB 256GB SSD 15.6\" Windows 10 Branco",
+            "url": "/Notebook-Dell-Inspiron-3584-AS50B-gera%C3%A7%C3%A3o/dp/B08FX6NPPF/ref=sr_1_39?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-39&tag=katlivros-20"
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 3480-M10S 14\" 8\u00aa Gera\u00e7\u00e3o Intel Core i3 4GB 1TB Windows 10 Prata McAfee",
+            "url": "/Notebook-Dell-Inspiron-3480-M10S-Gera%C3%A7%C3%A3o/dp/B08RDW1QXD/ref=sr_1_40?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-40&tag=katlivros-20"
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Gamer Dell G3 15 3500-A20P 10\u00aa Gera\u00e7\u00e3o Core i5 8GB 512GB SSD NVIDIA GTX 1650Ti Tela 15.6\" Windows 10 Preto",
+            "url": "/Notebook-Dell-3500-A20P-Gera%C3%A7%C3%A3o-Windows/dp/B08L8JHQVN/ref=sr_1_41?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-41&tag=katlivros-20"
+        },
+        {
+            "rank": 43,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook 2 em 1 Dell Inspiron i14-5481-M11 8\u00aa Gera\u00e7\u00e3o Intel Core i3 4GB 128GB SSD 14\" Touch Windows 10 McAfee",
+            "url": "/Notebook-Inspiron-i14-5481-M11-Gera%C3%A7%C3%A3o-Windows/dp/B07VTR11K5/ref=sr_1_42?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-42&tag=katlivros-20"
+        },
+        {
+            "rank": 44,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 15 3000 i15-3583-DS90S 8\u00aa Gera\u00e7\u00e3o Intel Core i7 8GB 256GB SSD 15.6\" Linux Preto",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-DS90S-Gera%C3%A7%C3%A3o/dp/B08FWNBH6B/ref=sr_1_43?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-43&tag=katlivros-20"
+        },
+        {
+            "rank": 45,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-AS100P 8\u00aa Gera\u00e7\u00e3o Intel Core i7 8GB 256GB SSD 15.6\u201d Placa V\u00eddeo AMD Windows 10, Black",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-AS100P-Gera%C3%A7%C3%A3o/dp/B08HR8V38F/ref=sr_1_44?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-44&tag=katlivros-20"
+        },
+        {
+            "rank": 46,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron I15-3584-D30P 8\u00aa Gera\u00e7\u00e3o Intel Core I3 4Gb 1Tb 15.6\" Linux Preto",
+            "url": "/Notebook-Dell-Inspiron-I15-3584-D30P-Gera%C3%A7%C3%A3o/dp/B08FX8QQVF/ref=sr_1_45?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-45&tag=katlivros-20"
+        },
+        {
+            "rank": 47,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron i15-3583-MFS1P 8\u00aa Ger. Intel Core i5 8GB 256GB SSD 15.6\" Windows 10 Preto McAfee",
+            "url": "/Notebook-Dell-Inspiron-i15-3583-MFS1P-Windows/dp/B08CM4447W/ref=sr_1_46?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-46&tag=katlivros-20"
+        },
+        {
+            "rank": 48,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Notebook Dell Inspiron 3583-FS1P 15.6\" 8\u00aa Gera\u00e7\u00e3o Intel Core i5 8GB 256GB SSD Windows 10 Preto",
+            "url": "/Notebook-Dell-Inspiron-3583-FS1P-Gera%C3%A7%C3%A3o/dp/B08HN9P5QB/ref=sr_1_47?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-47&tag=katlivros-20"
+        },
+        {
+            "rank": 49,
+            "snippet": null,
+            "timestamp": 1613232661,
+            "title": "Capa para Notebook Dell Essential 15,6\u201d Preto",
+            "url": "/Pasta-Para-Notebook-Essential-Prata/dp/B07PT4XJJL/ref=sr_1_48?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=notebook+dell&linkCode=sl2&linkId=e69cdc65575812a23eb13b5de77ffae8&qid=1613236262&sr=8-48&tag=katlivros-20"
+        }
+    ],
+    "timestamp": 1613232661,
+    "url": "https://www.amazon.com.br/s?k=notebook+dell&__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&linkCode=sl2&tag=katlivros-20&linkId=e69cdc65575812a23eb13b5de77ffae8&language=pt_BR&ref_=as_li_ss_tl"
+}

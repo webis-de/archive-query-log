@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\" www.exactresult. com/\"",
+    "offset": null,
+    "page": null,
+    "query": "\" www.exactresult. com/\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "ExactResult Search Engine - <em>www</em>.<em>exactresult</em>.<em>com</em> exactresult",
+            "url": "http://www.joeant.com/DIR/info/get/15892/31536"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "tylox Side Effects, Interactions and Information - Drugs.com",
+            "url": "http://www.drugs.com/xq/cfm/pageID_0/search_tylox/searchtype_internet/qx/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "Levothroid Side Effects, Interactions and Information - Drugs. <em>...</em>",
+            "url": "http://www.drugs.com/xq/cfm/pageID_0/search_Levothroid/searchtype_internet/results_1/qx/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "askmen.com - exclusive celebrity gossip",
+            "url": "http://www.babieca.com/cgi-bin/engine/smartsearch.cgi?keywords=AskMen.com%20-%20%20Exclusive%20Celebrity%20Gossip"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "body piercing jewelry @ tonguestud.com",
+            "url": "http://www.babieca.com/cgi-bin/engine/smartsearch.cgi?keywords=Body%20Piercing%20Jewelry%20@%20TongueStud.com"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "spainsearch.info - picture",
+            "url": "http://www.spainsearch.info/bp/search.pl?keywords=picture&country=spain"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "Teoma Search: Information Magnetism",
+            "url": "http://www.teoma.com/search.asp?t=Information%20Magnetism"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "Build.us Search Page - wood treatmen",
+            "url": "http://www.build.us/cgi-bin/search/smartsearch.cgi?keywords=Wood%20Treatmen"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "Discover Holidays - Honeymoons In Santiago De Cuba.",
+            "url": "http://www.discover-cuba.co.uk/Honeymoons-In-Santiago-De-Cuba.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1062373767,
+            "title": "Ask Jeeves | Where can I find st julians malta holiday <em>...</em>",
+            "url": "http://www.ask.co.uk/reply.asp?ask=Where+can+I+find+st+julians+malta+holiday+information"
+        }
+    ],
+    "timestamp": 1062373767,
+    "url": "http://www.google.com:80/search?q=%22+www.exactresult.+com/%22"
+}
