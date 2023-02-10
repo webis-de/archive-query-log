@@ -5,42 +5,58 @@
     "query": "\" dove\" \"soap\" \"",
     "results": [
         {
+            "rank": 1,
             "snippet": "That's because <em>Dove</em> isn't <em>soap</em>, it's a Beauty Bar. While ordinary soaps can strip skin of essential nutrients, <em>Dove</em> Beauty Bar has mild cleansers to care for skin and effectively wash away dirt and germs. Made with our \u00bc moisturizing cream, <em>Dove</em> Beauty Bar leaves your skin feeling soft, smooth, and radiant.",
+            "timestamp": 1617107771,
             "title": "Find the Dove Beauty Bar for you \u2013 Dove",
             "url": "https://www.dove.com/us/en/washing-and-bathing/beauty-bar.html"
         },
         {
+            "rank": 3,
             "snippet": "BEST ANSWER: Any <em>soap</em> if used properly kills bacteria. <em>Dove</em> does not have the \"special\" anti-bacterial in it that dial and others have. however, it is far safer that\u00a0...",
+            "timestamp": 1617107771,
             "title": "Dove White Beauty Bar",
             "url": "https://www.dove.com/us/en/washing-and-bathing/beauty-bar/white-beauty-bar.html"
         },
         {
+            "rank": 4,
             "snippet": "That's because <em>Dove</em> isn't a <em>soap</em> bar, it's a Beauty Bar. While ordinary soaps can strip skin of essential nutrients, <em>Dove</em> beauty bar has mild cleansers to care for skin as it cleans. With our \u00bc moisturising cream, <em>Dove</em> Beauty Bar leaves your face and body feeling soft, smooth, and more radiant than ordinary <em>soap</em>.",
+            "timestamp": 1617107771,
             "title": "Dove Beauty Bar | The bar for your bath - Dove",
             "url": "https://www.dove.com/uk/washing-and-bathing/beauty-bar.html"
         },
         {
+            "rank": 5,
             "snippet": "<em>Dove</em> Original Beauty Cream Bar combines a gentle cleansing formula with our signature \u00bc moisturising cream to give you soft, smooth, and healthy-looking skin.",
+            "timestamp": 1617107771,
             "title": "Dove Original Beauty Cream Bar",
             "url": "https://www.dove.com/uk/washing-and-bathing/beauty-bar/original-beauty-cream-bar.html"
         },
         {
+            "rank": 6,
             "snippet": "That's because <em>Dove</em> isn't a <em>soap</em>; it's a Beauty Bar. Formulated with mild cleansers that care for skin as you cleanse, this moisturizing bar helps deliver\u00a0...",
+            "timestamp": 1617107771,
             "title": "Dove Beauty Bar Gentle Cleanser for Softer ... - Amazon.com",
             "url": "https://www.amazon.com/Dove-White-Beauty-Bar-14/dp/B004UH74DA"
         },
         {
+            "rank": 7,
             "snippet": "GENTLE CLEANSING: Lather in the luxurious feel of this beauty bar that won't dry skin like ordinary bath <em>soap</em> can. Gentle enough to use every day on both your\u00a0...",
+            "timestamp": 1617107771,
             "title": "Dove Beauty Bar Gently Cleanses and ... - Amazon.com",
             "url": "https://www.amazon.com/Dove-Beauty-Bar-Sensitive-Skin/dp/B005HO0AR2"
         },
         {
+            "rank": 8,
             "snippet": "<em>Dove</em> is a personal care brand owned by Unilever originating in the United States. <em>Dove</em> ... Personal care brands \u00b7 Products introduced in 1957 \u00b7 <em>Soap</em> brands \u00b7 Unilever brands. Hidden categories: All accuracy disputes \u00b7 Articles with disputed\u00a0...",
+            "timestamp": 1617107771,
             "title": "Dove (toiletries) - Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Dove_(toiletries)"
         },
         {
+            "rank": 9,
             "snippet": "<em>Dove</em> Original Beauty Cream Bar White <em>Soap</em> 100 G / 3.5 Oz Bars (Pack of 12) by <em>Dove</em> bei Amazon.de | G\u00fcnstiger Preis | Kostenloser Versand ab 29\u20ac f\u00fcr\u00a0...",
+            "timestamp": 1617107771,
             "title": "Dove Original Beauty Cream Bar White Soap 100 G / 3.5 Oz ...",
             "url": "https://www.amazon.de/Dove-Original-Beauty-Cream-White/dp/B01JVAG7PQ"
         }

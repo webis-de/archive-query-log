@@ -5,42 +5,58 @@
     "query": "\" homemade l",
     "results": [
         {
+            "rank": 1,
             "snippet": "Thalia: Infos zu Autor, Inhalt und Bewertungen \u2764 Jetzt \u00bb<em>Homemade</em>\u00ab nach Hause oder Ihre Filiale vor Ort bestellen!",
+            "timestamp": 1617107839,
             "title": "Homemade von Eleanor Ozich - Buch | Thalia",
             "url": "https://www.thalia.de/shop/home/artikeldetails/ID148333938.html"
         },
         {
+            "rank": 2,
             "snippet": "Thalia: Infos zu Autor, Inhalt und Bewertungen \u2764 Jetzt \u00bb<em>Homemade</em>\u00ab nach Hause oder Ihre Filiale vor Ort bestellen!",
+            "timestamp": 1617107839,
             "title": "Homemade von ZS-Team - Buch | Thalia",
             "url": "https://www.thalia.de/shop/home/artikeldetails/ID145822406.html"
         },
         {
+            "rank": 3,
             "snippet": "<em>Homemade</em> Ingredients &amp; Condiments. Narrow your Search: broth/stock \u00b7 compound butter \u00b7 condiments \u00b7 dressinade \u00b7 <em>homemade</em> \u00b7 <em>homemade</em> ingredient \u00b7 how to\u00a0...",
+            "timestamp": 1617107839,
             "title": "Homemade Ingredients &amp; Condiments Archives - Simply Scratch",
             "url": "https://www.simplyscratch.com/category/recipes/homemade-ingredients-condiments"
         },
         {
+            "rank": 4,
             "snippet": "Apr 24, 2018 - This classic coleslaw recipe is completely <em>homemade</em>. Shredded cabbage and carrots are tossed with a <em>homemade</em> creamy coleslaw dressing.",
+            "timestamp": 1617107839,
             "title": "Classic Coleslaw Recipe with Homemade Dressing l ...",
             "url": "https://www.pinterest.de/pin/291045194664646766/"
         },
         {
+            "rank": 5,
             "snippet": "<em>Homemade L</em>-Dolly Werkstatt, Handwerker, Holz, Ideen, Bosch Werkzeuge, Baumhaus\u00a0...",
+            "timestamp": 1617107839,
             "title": "Homemade L-Dolly | Ideen, Werkzeug, Werkstatt - Pinterest",
             "url": "https://www.pinterest.de/pin/306033737158537629/"
         },
         {
+            "rank": 6,
             "snippet": "-Nr. 807578. Inhalt: 1,50 <em>L</em>. Made in: Made in Europe. Material:\u00a0...",
+            "timestamp": 1617107839,
             "title": "homemade \u2013 Vorratsglas \u2013 Ritzenhoff &amp; Breker",
             "url": "https://www.ritzenhoff-breker.de/Vorratsglas/807578"
         },
         {
+            "rank": 7,
             "snippet": "<em>Homemade</em> By Steffi - dein Paradies f\u00fcr Stoffe &amp; N\u00e4hzubeh\u00f6r. Du liebst es\u2026 \u2026 kreativ zu sein? \u2026 Dich selber oder Deine Lieben mit selbst gen\u00e4hten Sachen\u00a0...",
+            "timestamp": 1617107839,
             "title": "Stoffe &amp; N\u00e4hzubeh\u00f6r preiswert online kaufen | Homemade by ...",
             "url": "https://www.homemade-by-steffi.de/"
         },
         {
+            "rank": 8,
             "snippet": "18 Dec 2008 \u2014 <em>DIY L</em>-bracket In the following article Trevis Thomas (Flickr) shows us how to make an L-bracket \u2013 A useful Tripod mod that allows you to mount\u00a0...",
+            "timestamp": 1617107839,
             "title": "DIY L-Plate / L-Bracket - DIY Photography",
             "url": "https://www.diyphotography.net/diy-l-plate-l-bracket/"
         }

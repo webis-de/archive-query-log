@@ -5,12 +5,16 @@
     "query": "\" www.boston-hotels-cheap.net\"",
     "results": [
         {
+            "rank": 1,
             "snippet": "Home Page, Hotels, City Tours, Map, City Info, City Facts, City Weather, FAQ's\nPage, About Us, boston-hotels-cheap.net is the leading hotel booking company online. <em>...</em>\nwww.boston-hotels-cheap.net/about-us.htm -  26k - Cached - Similar pages[ More results from www.boston-hotels-cheap.net ]",
+            "timestamp": 1062123561,
             "title": "boston-hotels-cheap.net | Home",
             "url": "http://www.boston-hotels-cheap.net/"
         },
         {
+            "rank": 2,
             "snippet": "Home Page, Hotels, City Tours, Map, City Info, City Facts, City Weather, FAQ's\nPage, About Us, boston-hotels-cheap.net is the leading hotel booking company online. <em>...</em>\nwww.boston-hotels-cheap.net/about-us.htm -  26k - Cached - Similar pages[ More results from www.boston-hotels-cheap.net ]",
+            "timestamp": 1062123561,
             "title": "boston-hotels-cheap.net | About Us",
             "url": "http://www.boston-hotels-cheap.net/about-us.htm"
         }

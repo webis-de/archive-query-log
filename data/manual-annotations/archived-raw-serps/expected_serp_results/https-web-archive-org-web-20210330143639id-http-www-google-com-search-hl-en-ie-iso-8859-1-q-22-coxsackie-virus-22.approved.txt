@@ -5,52 +5,72 @@
     "query": "\" coxsackie virus\"_",
     "results": [
         {
+            "rank": 1,
             "snippet": "Coxsackieviruses are a few related enteroviruses that belong to the Picornaviridae family of ... \"Clinical and epidemiologic observations of <em>Coxsackie</em><em>-virus</em> infection\". N. Engl. J. Med. 244 (23): 868\u201373. doi:10.1056/NEJM195106072442302.",
+            "timestamp": 1617107799,
             "title": "Coxsackievirus - Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Coxsackievirus"
         },
         {
+            "rank": 3,
             "snippet": "Replication of the <em>coxsackie virus</em> happens through contributions of the host and virus components. The virus enters the cell where it is internalized into\u00a0...",
+            "timestamp": 1617107799,
             "title": "Coxsackie A virus - Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Coxsackie_A_virus"
         },
         {
+            "rank": 4,
             "snippet": "Coxsackieviruses are RNA viruses that may cause hand, foot, and mouth disease (HFMD), as well as disease of muscles, lungs, and heart. HFMD usually occurs in children but can occur in adults. The majority of HFMD infections are self-limited, so no treatment is required.",
+            "timestamp": 1617107799,
             "title": "Coxsackievirus Incubation Period, Symptoms, Treatment &amp; Rash",
             "url": "https://www.medicinenet.com/coxsackie_virus/article.htm"
         },
         {
+            "rank": 5,
             "snippet": "14 Oct 2019 \u2014 Types A and B are the most common. Type A viruses cause herpangina (sores in the throat) and hand, foot, and mouth disease, common among\u00a0...",
+            "timestamp": 1617107799,
             "title": "Coxsackie Virus - WebMD",
             "url": "https://www.webmd.com/a-to-z-guides/coxsackie-virus"
         },
         {
+            "rank": 6,
             "snippet": "Hand, foot and mouth disease is a viral infection caused by a strain of <em>Coxsackie virus</em>. It causes a blister-like rash that, as the name implies, involves the hands,\u00a0...",
+            "timestamp": 1617107799,
             "title": "Hand, Foot and Mouth Disease (Coxsackie viral infection)",
             "url": "https://www.health.ny.gov/diseases/communicable/hand_foot_mouth/fact_sheet.htm"
         },
         {
+            "rank": 7,
             "snippet": "<em>Coxsackie virus</em>. Ziektebeeld. Coxsackievirussen behoren tot de enterovirussen. Ze kunnen allerlei verschijnselen\u00a0...",
+            "timestamp": 1617107799,
             "title": "Coxsackie virus - HMC",
             "url": "https://www.haaglandenmc.nl/verwijzers/bepalingen/bepaling/t/coxsackie-virus"
         },
         {
+            "rank": 8,
             "snippet": "Other articles where <em>Coxsackie virus</em> is discussed: herpangina: \u2026which are in the subgroup Coxsackie A, seen most commonly in young children. The most\u00a0...",
+            "timestamp": 1617107799,
             "title": "Coxsackie virus | infectious agent | Britannica",
             "url": "https://www.britannica.com/science/Coxsackie-virus"
         },
         {
+            "rank": 9,
             "snippet": "Coxsackievirus \u2014 sometimes written as two words, <em>Coxsackie virus</em> \u2014 belongs to a group of viruses called enteroviruses. Coxsackievirus infections occur most\u00a0...",
+            "timestamp": 1617107799,
             "title": "Coxsackievirus in children: How serious is it? - Mayo Clinic",
             "url": "https://www.mayoclinic.org/coxsackievirus/expert-answers/faq-20058531"
         },
         {
+            "rank": 10,
             "snippet": "Human enterovirus 69. Human echovirus 1\u20137,9,11\u201321,24\u201327,29\u201333. Human enterovirus C. Human <em>coxsackie virus</em> A1: 1,11,13,15,17\u201322,24Poliovirus 1\u20133.",
+            "timestamp": 1617107799,
             "title": "Coxsackie A Virus - an overview | ScienceDirect Topics",
             "url": "https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/coxsackie-a-virus"
         },
         {
+            "rank": 11,
             "snippet": "<em>Coxsackie virus</em>, also called hand, foot, and, mouth disease (HFMD), is a common illness of infants and children that is characterized by fever, sores in the mouth\u00a0...",
+            "timestamp": 1617107799,
             "title": "Coxsackie Virus Facts | Parents",
             "url": "https://www.parents.com/baby/health/other-issues/coxsackie-virus-facts/"
         }

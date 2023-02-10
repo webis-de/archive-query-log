@@ -5,52 +5,72 @@
     "query": "\" Cortisol test\"",
     "results": [
         {
+            "rank": 1,
             "snippet": "A <em>cortisol test</em> measures the level of cortisol in your blood, urine, or saliva. Blood tests are the most common way of measuring cortisol. If your\u00a0...",
+            "timestamp": 1623205666,
             "title": "Cortisol Test: MedlinePlus Medical Test",
             "url": "https://medlineplus.gov/lab-tests/cortisol-test/"
         },
         {
+            "rank": 3,
             "snippet": "<em>Cortisol Test</em>. Das Stresshormon Cortisol messen. (7). F\u00fchlen Sie sich zunehmend gestresst? Dann geht\u00a0...",
+            "timestamp": 1623205666,
             "title": "Cortisol-Test \u2013 Cortisolspiegel Zuhause messen | cerascreen",
             "url": "https://www.cerascreen.de/products/cortisol-test"
         },
         {
+            "rank": 4,
             "snippet": "Cortisol is a steroid hormone released by the adrenal glands. The adrenal glands sit on top of your kidneys. A cortisol level test may also be called a serum <em>cortisol</em>\u200b\u00a0...",
+            "timestamp": 1623205666,
             "title": "Cortisol Level Test: Purpose, Procedure, and Risks - Healthline",
             "url": "https://www.healthline.com/health/cortisol-urine"
         },
         {
+            "rank": 5,
             "snippet": "Cortisol is a hormone that has many important body functions. A <em>cortisol test</em> measures blood levels to help diagnose conditions like Cushing\u00a0...",
+            "timestamp": 1623205666,
             "title": "Cortisol | Lab Tests Online",
             "url": "https://labtestsonline.org/tests/cortisol"
         },
         {
+            "rank": 6,
             "snippet": "\u203a A to Z Guides \u203a Reference",
+            "timestamp": 1623205666,
             "title": "Cortisol Test: Understanding High vs. Low Cortisol Levels",
             "url": "https://www.webmd.com/a-to-z-guides/cortisol-test"
         },
         {
+            "rank": 7,
             "snippet": "<em>Cortisol Test</em> Kit von CERASCREEN \u2013 Cortisol-Spiegel messen | Stressprofil | Hormonspeicheltest f\u00fcr zu Hause bei Ersch\u00f6pfung, Dauerstress &amp; Schlafst\u00f6rung\u200b\u00a0...",
+            "timestamp": 1623205666,
             "title": "Cortisol Test Kit von CERASCREEN \u2013 Cortisol-Spiegel ...",
             "url": "https://www.amazon.de/Cortisol-Test-CERASCREEN-Cortisol-Spiegel-Speichelprobe/dp/B016V2KUN2"
         },
         {
+            "rank": 8,
             "snippet": "This at-home sleep &amp; stress test goes beyond just sleep patterns. Learn about your restfulness and cortisol levels with this at-home <em>cortisol test</em> kit.",
+            "timestamp": 1623205666,
             "title": "At-Home Cortisol Levels Test Kit - Sleep &amp; Stress Test ...",
             "url": "https://www.everlywell.com/products/sleep-and-stress-panel/"
         },
         {
+            "rank": 9,
             "snippet": "What is a <em>Cortisol Test</em>? Definition: A cortisol level is a blood test that measures the amount of cortisol, a steroid hormone produced by the adrenal cortex.",
+            "timestamp": 1623205666,
             "title": "Cortisol Test | UCLA Health",
             "url": "https://www.uclahealth.org/endocrine-center/cortisol-test"
         },
         {
+            "rank": 10,
             "snippet": "A <em>cortisol test</em> measures adrenal function and also indicates if you are putting your body under too much stress. You can measure your cortisol levels at home\u00a0...",
+            "timestamp": 1623205666,
             "title": "Cortisol Test Kit - Check Cortisol Levels with our Blood Test",
             "url": "https://www.forthwithlife.co.uk/mental-health/cortisol/"
         },
         {
+            "rank": 11,
             "snippet": "Takeaway. If a doctor orders a <em>cortisol test</em>, there is a strong likelihood that they are trying to diagnose a specific disorder. The doctor will\u00a0...",
+            "timestamp": 1623205666,
             "title": "Cortisol level test: Purpose, procedure, and results",
             "url": "https://www.medicalnewstoday.com/articles/322330"
         }
