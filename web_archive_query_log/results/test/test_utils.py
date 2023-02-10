@@ -1,75 +1,85 @@
-from approvaltests import verify_as_json
-from approvaltests.namer.cli_namer import CliNamer
-from approvaltests.core.options import Options
-from os.path import exists
-from slugify import slugify
-from web_archive_query_log.download.iterable import ArchivedRawSerps
 from pathlib import Path
 
+from approvaltests import verify_as_json
+from approvaltests.core.options import Options
+from approvaltests.namer.cli_namer import CliNamer
+from slugify import slugify
+
+from web_archive_query_log import PROJECT_DIRECTORY_PATH
 from web_archive_query_log.config import SERVICES
+from web_archive_query_log.download.iterable import ArchivedRawSerps
+from web_archive_query_log.model import ArchivedParsedSerp, ArchivedRawSerp
 from web_archive_query_log.results.parse import ArchivedParsedSerpParser
 
-from copy import deepcopy
+_expected_dir = PROJECT_DIRECTORY_PATH / \
+                "data/manual-annotations/" \
+                "archived-raw-serps/expected_serp_results/"
+_warc_dir = PROJECT_DIRECTORY_PATH / \
+            "data/manual-annotations/" \
+            "archived-raw-serps/warcs/"
 
 
-def verify_serp_parsing(archived_url: str, service: str):
-    result_parsers = []
-    interpreted_query_parsers = []
-    services = SERVICES.values()
-    if service and service in SERVICES:
+def verify_serp_parsing(
+        wayback_raw_url: str,
+        service: str  # | None = None,
+) -> None:
+    if service is None and False:
+        services = SERVICES.values()
+    else:
         services = [SERVICES[service]]
 
+    result_parsers = []
+    interpreted_query_parsers = []
     for service in services:
-        if 'results_parsers' in dir(service) and service.results_parsers:
-            result_parsers += service.results_parsers
-        if 'interpreted_query_parsers' in dir(
-                service) and service.interpreted_query_parsers:
-            interpreted_query_parsers += service.interpreted_query_parsers
+        result_parsers += service.results_parsers
+        interpreted_query_parsers += service.interpreted_query_parsers
+    parser = ArchivedParsedSerpParser(
+        result_parsers,
+        interpreted_query_parsers,
+    )
 
-    parser = ArchivedParsedSerpParser(result_parsers,
-                                      interpreted_query_parsers)
-    archived_record = _get_record_with_id(archived_url)
+    archived_raw_serp = _find_archived_raw_serp(wayback_raw_url)
+    archived_parsed_serp = parser.parse_single(archived_raw_serp)
 
-    actual = parser.parse_single(archived_record)
+    if archived_parsed_serp is None:
+        return
 
-    _verify_serp_parse_as_json(actual, archived_url)
+    _verify_archived_parsed_serp_results(
+        archived_raw_serp,
+        archived_parsed_serp,
+    )
 
 
-def _get_record_with_id(archived_url: str):
-    warc_directory = f'data/manual-annotations/archived-raw-serps/warcs/'
+def _find_archived_raw_serp(wayback_raw_url: str) -> ArchivedRawSerp:
+    # archived_url_without_protocol = \
+    #     wayback_raw_url.split('_/https://')[-1].split('_/http://')[-1]
 
-    if not exists(warc_directory):
-        warc_directory = f'../../{warc_directory}'
-    archived_url_without_protocol = archived_url.split('_/https://')[-1].split('_/http://')[-1]
-
-    for record in ArchivedRawSerps(path=Path(warc_directory)):
-        url_without_protocol = record.url.split('https://')[-1].split('http://')[-1]
-
-        if record.url == archived_url or url_without_protocol == archived_url_without_protocol:
+    for record in ArchivedRawSerps(path=Path(_warc_dir)):
+        if record.raw_archive_url == wayback_raw_url:
             return record
+        # url_without_protocol = \
+        #     record.url.split('https://')[-1].split('http://')[-1]
+        # if  url_without_protocol == archived_url_without_protocol:
+        #     return record
 
     raise ValueError(
-        f'Could not find record with url {archived_url} in {warc_directory}')
+        f'Could not find record with URL {wayback_raw_url} in {_warc_dir}')
 
 
-def _verify_serp_parse_as_json(actual, archived_url):
-    test_dir = f'data/manual-annotations/archived-raw-serps/expected_serp_results'
+_schema = ArchivedParsedSerp.schema()
 
-    if not exists(test_dir):
-        test_dir = f'../../{test_dir}'
 
-    if not exists(test_dir):
-        raise ValueError('Could not handle')
-
-    raw_actual = deepcopy(actual)
-    if actual:
-        actual = raw_actual.to_dict(encode_json=False)
-        if raw_actual.results:
-            actual['results'] = [i.to_dict(encode_json=False) for i in
-                                 raw_actual.results]
-
+def _verify_archived_parsed_serp_results(
+        archived_raw_serp: ArchivedRawSerp,
+        archived_parsed_serp: ArchivedParsedSerp,
+) -> None:
+    actual = _schema.dump(archived_parsed_serp)
     verify_as_json(
         actual,
         options=Options().with_namer(
-            CliNamer(f'{test_dir}/{slugify(archived_url)}'))
+            CliNamer(
+                f"{_expected_dir}/"
+                f"{slugify(archived_raw_serp.raw_archive_url)}"
+            )
+        )
     )
