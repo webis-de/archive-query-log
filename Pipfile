@@ -36,6 +36,7 @@ seaborn = "*"
 matplotlib = "*"
 fasttext-langdetect = "*"
 pex = "*"
+unidecode = "*"
 
 [dev-packages]
 
