@@ -1,0 +1,52 @@
+{
+    "interpreted_query": "\u7ebf\u6027\u4ee3\u6570",
+    "offset": null,
+    "page": null,
+    "query": "\u7ebf\u6027\u4ee3\u6570",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1497236213,
+            "title": "<em>\u7ebf\u6027\u4ee3\u6570\uff08\u521b\u65b0\uff09</em>\n<em></em>",
+            "url": "//item.jd.com/1782981424.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1497236213,
+            "title": "<em>\u7ebf\u6027\u4ee3\u6570\u5178\u578b\u9898\u89e3\u7b54\u6307\u5357(\u540c\u6d4e\u7b2c5\u7248)/\u5927\u5b66\u6570\u5b66\u5b66\u4e60\u8f85\u5bfc\u4e1b\u4e66</em>\n<em></em>",
+            "url": "//item.jd.com/12878340071.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1497236213,
+            "title": "<em>\u7ebf\u6027\u4ee3\u6570\u5178\u578b\u9898\u89e3\u7b54\u6307\u5357(\u540c\u6d4e\u7b2c5\u7248)/\u5927\u5b66\u6570\u5b66\u5b66\u4e60\u8f85\u5bfc\u4e1b\u4e66</em>\n<em></em>",
+            "url": "//item.jd.com/12509943805.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1497236213,
+            "title": "<em>\u7ebf\u6027\u4ee3\u6570\u5178\u578b\u9898\u89e3\u7b54\u6307\u5357(\u540c\u6d4e\u7b2c5\u7248)/\u5927\u5b66\u6570\u5b66\u5b66\u4e60\u8f85\u5bfc\u4e1b\u4e66</em>\n<em></em>",
+            "url": "//item.jd.com/11639679374.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1497236213,
+            "title": "<em>\u7ebf\u6027\u4ee3\u6570\u5178\u578b\u9898\u89e3\u7b54\u6307\u5357(\u540c\u6d4e\u7b2c5\u7248)/\u5927\u5b66\u6570\u5b66\u5b66\u4e60\u8f85\u5bfc\u4e1b\u4e66</em>\n<em></em>",
+            "url": "//item.jd.com/11874097860.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1497236213,
+            "title": "<em>\u7ebf\u6027\u4ee3\u6570\u5178\u578b\u9898\u89e3\u7b54\u6307\u5357(\u540c\u6d4e\u7b2c5\u7248)/\u5927\u5b66\u6570\u5b66\u5b66\u4e60\u8f85\u5bfc\u4e1b\u4e66</em>\n<em></em>",
+            "url": "//item.jd.com/11901191615.html"
+        }
+    ],
+    "timestamp": 1497236213,
+    "url": "http://search.jd.com/search?keyword=%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0&enc=utf-8&qrst=1&rt=1&stop=1&spm=2.1.1&vt=2&cid3=3672"
+}

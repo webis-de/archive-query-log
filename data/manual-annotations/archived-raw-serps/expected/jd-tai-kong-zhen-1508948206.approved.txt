@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u592a\u7a7a\u6795",
+    "offset": null,
+    "page": null,
+    "query": "\u592a\u7a7a\u6795",
+    "results": [],
+    "timestamp": 1508948206,
+    "url": "http://search.jd.com/search?keyword=%E5%A4%AA%E7%A9%BA%E6%9E%95&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&cid3=12198"
+}
