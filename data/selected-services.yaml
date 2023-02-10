@@ -578,6 +578,9 @@
   - url_pattern: ^https?://[^/]+/s\?
     type: html_selector
     query_selector: input#kw
+  - url_pattern: ^https?://[^/]+/cse/site\?
+    type: html_selector
+    query_selector: input#kw
   results_parsers:
   - url_pattern: ^https?://[^/]+/s\?
     type: html_selector
@@ -1087,18 +1090,26 @@
   - jd.com
   - search.jd.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/Search\?
+  - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: keyword
   page_parsers:
-  - url_pattern: ^https?://[^/]+/Search\?
+  - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input#key-re-search
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#J_goodsList ul.gl-warp li.gl-item
+    url_selector: div.p-name > a
+    title_selector: div.p-name
   focused_url_prefixes:
-  - /Search?
+  - /search?
 - name: '360'
   public_suffix: cn
   alexa_domain: 360.cn
