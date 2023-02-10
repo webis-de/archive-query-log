@@ -299,35 +299,30 @@
   - url_pattern: ^https?://[^/]+/scholar\?
     type: html_selector
     query_selector: input#sbhost
-  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
+  - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     query_selector: form#tsf input[name="q"], form#sf input[name="q"]
-  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
+  - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     query_selector: form[name=gs] input[name=q]
   results_parsers:
-  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
+  - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
-    results_selector: div#search div#rso div.g, div#search div#ires div.g
-    url_selector: h3.r a, h3 a, a
-    title_selector: a h3, hr.r, h3
+    results_selector: div#search div#rso div.g:not(.g-blk), div#search div#ires div.g:not(.g-blk)
+    url_selector: .r a, .rc a, h3 a, a
+    title_selector: .r a h3, .rc a h3, h3, a h3
     snippet_selector: span.st, span
-  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
+  - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     results_selector: div#main div.xpd
     url_selector: a
     title_selector: a h3
-  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
+  - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     results_selector: div#gs_res_ccl_mid > div.gs_r
     url_selector: h3.gs_rt a
     title_selector: h3.gs_rt
     snippet_selector: dic.gs_rs
-  - url_pattern: ^https?://(www\.)?google[^/]+/search\?
-    type: html_selector
-    results_selector: div p.g
-    url_selector: a
-    title_selector: a
   focused_url_prefixes:
   - /search?
   - /scholar?
@@ -760,6 +755,11 @@
     snippet_selector: div.fsm
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
+    results_selector: div#all_search_results div._gli
+    url_selector: div._gll a
+    title_selector: div._gll a
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
     results_selector: div.search_result
     url_selector: div.search_title > a
     title_selector: div.search_title
@@ -1008,6 +1008,11 @@
     results_selector: table tr td font ol li
     url_selector: big a
     title_selector: big
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    results_selector: dl dd li
+    url_selector: a
+    title_selector: a
   focused_url_prefixes:
   - /search
 - name: amazon
@@ -1143,6 +1148,11 @@
     results_selector: div#J_goodsList ul.gl-warp li.gl-item
     url_selector: div.p-name > a
     title_selector: div.p-name
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#plist.psearch ul li[sku], div#plist.psearch ul li[bookid]
+    url_selector: div.p-name > a
+    title_selector: div.p-name
   focused_url_prefixes:
   - /search?
 - name: '360'
@@ -1180,8 +1190,23 @@
     type: query_parameter
     parameter: pn
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    query_selector: input#keyword
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    results_selector: div#main ul.result li.res-list
+    url_selector: h3.res-title a
+    title_selector: h3.res-title
+    snippet_selector: div.res-desc, p.res-desc
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    results_selector: div#main ul.result li.res-list
+    url_selector: div.mh-cont a.mh-title-link
+    title_selector: div.mh-cont a.mh-title-link
+    snippet_selector: div.mh-cont div.mh-abstract, div.mh-content-box div.mh-content-desc span.mh-content-desc-info
   focused_url_prefixes:
   - /s?
   - /ns?
