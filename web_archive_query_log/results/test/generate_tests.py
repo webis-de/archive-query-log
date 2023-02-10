@@ -139,17 +139,19 @@ def main():
             from web_archive_query_log.results.test.test_utils import verify_serp_parsing
             """).lstrip())
             for query_url in query_urls[service_name]:
+                timestamp: str = query_url["timestamp"]
                 url_query: str = query_url["url_query"]
                 url_query = unidecode(url_query)
                 url_query = url_query.lower()
                 url_query = PATTERN_SPECIAL_CHARS.sub("_", url_query)
                 wayback_raw_url = query_url["wayback_raw_url"]
+                wayback_raw_url_safe = wayback_raw_url.replace('"', '\\"')
                 o.write(dedent(f"""
 
-                def test_parse_query_{url_query}():
+                def test_parse_query_{url_query}_{timestamp}():
                     verify_serp_parsing(
-                        "{wayback_raw_url}",
-                        "{service_name}"
+                        "{wayback_raw_url_safe}",
+                        "{service_name}",
                     )
                 """))
 
