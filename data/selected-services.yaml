@@ -526,8 +526,17 @@
     parameter: search_query
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/results\?
+    type: html_selector
+    query_selector: input#masthead-search-term
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/results\?
+    type: html_selector
+    results_selector: div#page.search div#results div.yt-lockup
+    url_selector: h3.yt-lockup-title a
+    title_selector: h3.yt-lockup-title
+    snippet_selector: div.yt-lockup-description
   focused_url_prefixes:
   - /results?
 - name: baidu
