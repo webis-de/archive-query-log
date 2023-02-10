@@ -18,7 +18,7 @@ from web_archive_query_log import PROJECT_DIRECTORY_PATH
 from web_archive_query_log.config import SERVICES
 from web_archive_query_log.model import Service, ArchivedQueryUrl
 
-NUM_SERVICES = 10
+NUM_SERVICES = 50
 NUM_QUERIES_PER_SERVICE = 5
 
 DATA_PATH = Path(
