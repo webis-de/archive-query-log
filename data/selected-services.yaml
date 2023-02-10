@@ -318,9 +318,9 @@
   - url_pattern: ^https?://(www\.)?google[^/]+/search\?
     type: html_selector
     results_selector: div p.g
-    url_selector: a
-    title_selector: a
-    snippet_selector: font
+    url_selector: "> a"
+    title_selector: "> a"
+    # snippet_selector: font # FIXME: does also include "cached" links. Exclude them!
   focused_url_prefixes:
   - /search?
   - /scholar?
