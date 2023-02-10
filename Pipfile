@@ -35,6 +35,7 @@ diskcache = "*"
 seaborn = "*"
 matplotlib = "*"
 fasttext-langdetect = "*"
+pex = "*"
 
 [dev-packages]
 
