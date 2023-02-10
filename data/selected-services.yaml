@@ -628,6 +628,9 @@
     query_selector: input#keywords
   - url_pattern: ^https?://[^/]+/?/search\.html\?
     type: html_selector
+    query_selector: input#iWord
+  - url_pattern: ^https?://[^/]+/?/search\.html\?
+    type: html_selector
     query_selector: input#iWordMid
   results_parsers:
   - url_pattern: ^https?://[^/]+/x/search/\?
@@ -971,8 +974,31 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: query_parameter
     parameter: b
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    query_selector: input#yschsp
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    query_selector: form[action*="search"] input[name="p"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    results_selector: div#results div#main div#web ol li div.res
+    url_selector: h3 a
+    title_selector: h3
+    snippet_selector: div.abstr
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    results_selector: div#results div#main div#web ol li div.algo-sr
+    url_selector: h3.title a
+    title_selector: h3.title
+    snippet_selector: div.aAbs
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    results_selector: table tr td font ol li
+    url_selector: big a
+    title_selector: big
   focused_url_prefixes:
   - /search
 - name: amazon
