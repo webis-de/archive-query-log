@@ -53,21 +53,21 @@ class TestGoogleSearch(TestCase):
         )
 
     def test_boston_hotels_search(self):
-        skip("TODO: Parser includes the 'cached' URL in the snippet.")
+        skip("TODO: Parser not yet written.")
         verify_serp_parsing(
             'https://web.archive.org/web/20030829041921id_/http://www.google.com:80/search?q=%22+www.boston-hotels-cheap.net%22',
             'google'
         )
 
     def test_extractresult_search(self):
-        skip("TODO: Parser includes the 'cached' URL in the snippet.")
+        skip("TODO: Parser not yet written.")
         verify_serp_parsing(
             'https://web.archive.org/web/20030901014927id_/http://www.google.com:80/search?q=%22+www.exactresult.+com/%22',
             'google'
         )
 
     def test_wallstquotes_search(self):
-        skip("TODO: Parser includes the 'cached' URL in the snippet.")
+        skip("TODO: Parser not yet written.")
         verify_serp_parsing(
             'https://web.archive.org/web/20030829090453id_/http://www.google.com:80/search?q=%22+www.wallstquotes.+com%22',
             'google'
