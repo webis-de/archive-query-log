@@ -21,9 +21,9 @@ _warc_dir = PROJECT_DIRECTORY_PATH / \
 
 def verify_serp_parsing(
         wayback_raw_url: str,
-        service: str  # | None = None,
+        service: str | None = None,
 ) -> None:
-    if service is None and False:
+    if service is None:
         services = SERVICES.values()
     else:
         services = [SERVICES[service]]
@@ -51,16 +51,9 @@ def verify_serp_parsing(
 
 
 def _find_archived_raw_serp(wayback_raw_url: str) -> ArchivedRawSerp:
-    # archived_url_without_protocol = \
-    #     wayback_raw_url.split('_/https://')[-1].split('_/http://')[-1]
-
     for record in ArchivedRawSerps(path=Path(_warc_dir)):
         if record.raw_archive_url == wayback_raw_url:
             return record
-        # url_without_protocol = \
-        #     record.url.split('https://')[-1].split('http://')[-1]
-        # if  url_without_protocol == archived_url_without_protocol:
-        #     return record
 
     raise ValueError(
         f'Could not find record with URL {wayback_raw_url} in {_warc_dir}')
