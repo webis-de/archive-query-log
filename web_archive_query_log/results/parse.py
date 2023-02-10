@@ -133,7 +133,10 @@ class HtmlSelectorInterpretedQueryParser(HtmlInterpretedQueryParser):
             return None
         if self.query_attribute not in search_field.attrs:
             return None
-        return search_field.attrs[self.query_attribute]
+        interpreted_query = search_field.attrs[self.query_attribute]
+        if interpreted_query is None or len(interpreted_query) == 0:
+            return None
+        return interpreted_query
 
 
 class _CdxPage(NamedTuple):
