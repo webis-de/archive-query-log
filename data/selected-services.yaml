@@ -326,9 +326,8 @@
   - url_pattern: ^https?://(www\.)?google[^/]+/search\?
     type: html_selector
     results_selector: div p.g
-    url_selector: "> a"
-    title_selector: "> a"
-    # snippet_selector: font # FIXME: does also include "cached" links. Exclude them!
+    url_selector: a
+    title_selector: a
   focused_url_prefixes:
   - /search?
   - /scholar?
@@ -1062,8 +1061,16 @@
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    query_selector: input#twotabsearchtextbox
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    results_selector: div#search div.s-result-list div.s-result-item
+    url_selector: h2 a
+    title_selector: h2
   focused_url_prefixes:
   - /s?
   - /search
