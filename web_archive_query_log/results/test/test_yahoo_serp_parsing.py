@@ -35,3 +35,38 @@ def test_parse_query_yahoo_ashland_oregon_1015423512():
         "https://web.archive.org/web/20020306150512id_/http://search.yahoo.com:80/search?p=ashland+oregon+",
         "yahoo",
     )
+
+
+def test_parse_query_yahoo_lawyer_career_information_970996615():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20001008111655id_/http://search.yahoo.com:80/search?p=lawyer+career+information",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_world_hebrew_hbrh_shlvm_1489427128():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20170313184528id_/https://search.yahoo.com/search?p=World+Hebrew+%D7%97%D7%91%D7%A8%D7%94+%D7%A9%D7%9C%D7%95%D7%9D",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_john_mccain_956454509():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20000423034829id_/http://search.yahoo.com:80/search?p=John+McCain&hn=48",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_bc_gov_971492707():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20001014050507id_/http://search.yahoo.com:80/search?p=bc+gov",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_region_de_coquimbo_970960857():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20001008012057id_/http://search.yahoo.com:80/search?p=region+de+coquimbo",
+        "yahoo",
+    )

@@ -35,3 +35,38 @@ def test_parse_query_jd_iu_vdun35358z_1537907650():
         "https://web.archive.org/web/20180925223410id_/http://search.jd.com/search?keyword=%BC%D2%CD%A5%C2%D2%C2%D7%B5%E7%D3%B0%CD%F8%A1%BA%2B%CE%A2v%D0%C5dun35358%A1%BB%A8z&qr=&qrst=UNEXPAND&et=&rt=1&ev=exprice_0-19%40&uc=0",
         "jd",
     )
+
+
+def test_parse_query_jd_tuan_dui_guan_li_1429813603():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20150423202643id_/http://search.jd.com/search?keyword=%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86&enc=utf-8&qrst=1&rt=1&stop=1&book=y&499055734",
+        "jd",
+    )
+
+
+def test_parse_query_jd_che_zai_cd_1507664971():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20171010214931id_/http://search.jd.com/search?keyword=%E8%BD%A6%E8%BD%BDCD&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq=%E8%BD%A6%E8%BD%BDCD&ev=exstarlevel_2%40128_2382%40&uc=0",
+        "jd",
+    )
+
+
+def test_parse_query_jd_ch_1382528052():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20131023133412id_/http://search.jd.com/search?keyword=%C4%DA%BF%E3%20%C3%DE&qr=%C4%D0%CA%BF%C4%DA%BF%E3&qrst=expand&et=4&rt=1&sttr=1&area=1&ev=1373_71335%40&uc=0",
+        "jd",
+    )
+
+
+def test_parse_query_jd_1368578723():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20130515024523id_/http://search.jd.com/search?keyword=%B4%B4%D0%C2&qr=&qrst=UNEXPAND&et=&rt=1&area=1&ev=&uc=0&bs=no",
+        "jd",
+    )
+
+
+def test_parse_query_jd_guan_yin_liao_1501752634():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20170803113034id_/http://search.jd.com/search?keyword=%E9%A6%86%E9%A5%AE%E6%96%99&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq=%E9%A6%86%E9%A5%AE%E6%96%99&cid2=12202&stock=1&ev=2762_32941%40&uc=0",
+        "jd",
+    )

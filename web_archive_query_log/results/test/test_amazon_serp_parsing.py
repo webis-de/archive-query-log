@@ -35,3 +35,38 @@ def test_parse_query_amazon_deng_shi_jia_meng_www_baidu_com_aaaa_oq1_2018nian_8y
         "https://web.archive.org/web/20190729013958id_/https://www.amazon.cn/s?k=%E7%81%AF%E9%A5%B0%E5%8A%A0%E7%9B%9F+www.baidu.com%2Faaaa+oq1+2018%E5%B9%B48%E6%9C%8819%E6%97%A519%E6%97%B632%E5%88%8618%E7%A7%92",
         "amazon",
     )
+
+
+def test_parse_query_amazon_tazas_te_transparente_1613035337():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210211102217id_/https://www.amazon.es/s?k=tazas+te+transparente&__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&sprefix=tazas+te+tra,aps,244&linkCode=sl2&tag=loxlo3-21&linkId=3e3ee226a50fb1466af6122597a0551c&language=es_ES&ref_=as_li_ss_tl",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_pillow_fsa_1615964514():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210317080154id_/https://www.amazon.com/s?i=aps&k=pillow+fsa&ref=nb_sb_noss_1&url=search-alias%3Daps&pldnSite=1",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_yangumagazin_yanmagasado_1625727694():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210708090134id_/https://www.amazon.co.jp/s?k=%22%E3%83%A4%E3%83%B3%E3%82%B0%E3%83%9E%E3%82%AC%E3%82%B8%E3%83%B3%22%7C%22%E3%83%A4%E3%83%B3%E3%83%9E%E3%82%AC%E3%82%B5%E3%83%BC%E3%83%89%22&x=0&y=0&linkCode=ll2&tag=rapfoodnewe0c-22&linkId=76c8bdecef23a7536b9c5ec384e267da&language=ja_JP&ref_=as_li_ss_tl",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_monitor_1625069899():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210630181819id_/https://www.amazon.de/s?k=monitor&rh=p_n_condition-type%3A776950031&dc&__mk_de_DE=AMAZON&qid=1625076577&rnid=776942031",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_gaming_monitor_1639065822():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20211209170342id_/https://www.amazon.ca/s?k=Gaming+Monitor&_encoding=UTF8&camp=15121&creative=330641&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&tag=liquipedia07-20",
+        "amazon",
+    )

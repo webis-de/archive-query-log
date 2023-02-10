@@ -35,3 +35,38 @@ def test_parse_query_facebook_https_peelarchivesblog_com_about_peel_1599241783()
         "https://web.archive.org/web/20200904194943id_/https://www.facebook.com/search/top?q=https%3A%2F%2Fpeelarchivesblog.com%2Fabout-peel%2F",
         "facebook",
     )
+
+
+def test_parse_query_facebook_trumptrain_1461904486():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20160429063446id_/https://www.facebook.com/search/top/?q=%23TrumpTrain&ref=top_filter&_fb_noscript=1",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_bernieorbust_1467812085():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20160706153445id_/https://www.facebook.com/search/latest/?q=%23BernieOrBust&ref=top_filter",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_wisconsin_1463064570():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20160512164930id_/https://www.facebook.com/search/top/?q=wisconsin&_fb_noscript=1",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_alda_lesbiennes_refugiees_1615284371():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210309110611id_/https://www.facebook.com/search/top/?q=alda%20-%20lesbiennes%20r%C3%A9fugi%C3%A9es&epa=SEARCH_BOX",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_mens_health_survival_of_the_fittest_1619473718():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210426234838id_/http://www.facebook.com/search/?q=mens+health+survival+of+the+fittest&amp;init=quick",
+        "facebook",
+    )

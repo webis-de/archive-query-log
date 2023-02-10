@@ -35,3 +35,38 @@ def test_parse_query_baidu_mao_kui_lu_mao_cong_cong_mao_ning_kui_mao_dan_dan_man
         "https://web.archive.org/web/20190725053018id_/https://www.baidu.com/s?wd=%E8%8C%85%E8%81%B5%E9%A9%B4%E8%8C%85%E8%81%A1%E8%81%A6%E7%8C%AB%E8%81%B9%E8%81%B5%E7%8C%AB%E8%81%B8%E8%81%B8%E5%BF%99%E5%8D%A4&oq=%E8%8C%85%E8%81%B5%E9%A9%B4%E8%8C%85%E8%81%A1%E8%81%A6%E7%8C%AB%E8%81%B9%E8%81%B5%E7%8C%AB%E8%81%B8%E8%81%B8%E5%BF%99%E5%8D%A4&ie=utf-8&rsv_pq=d25fbc8d000b4e82&rsv_t=fc63O4O%2FKyZwE5v5jDt8lv18HT8dHQWj2Go%2BcrYpMDHze7HivVjCvAF%2F6R0&rqlang=cn&nojs=1&bqid=d25fbc8d000b4e82",
         "baidu",
     )
+
+
+def test_parse_query_baidu_e_eeeae_1547510808():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190115010648id_/https://www.baidu.com/s?wd=%C3%A9%C2%98%C2%BF%C3%A9%C2%87%C2%8C%C3%A8%C2%9C%C2%98%C3%A8%C2%9B%C2%9B%C3%A6%C2%B1",
+        "baidu",
+    )
+
+
+def test_parse_query_baidu_e_eeeae_1567878230():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190907194350id_/https://www.baidu.com/s?wd=%C3%A9%C2%98%C2%BF%C3%A9%C2%87%C2%8C%C3%A8%C2%9C%C2%98%C3%A8%C2%9B%C2%9B%C3%A6%C2%B1",
+        "baidu",
+    )
+
+
+def test_parse_query_baidu_mao_kui_lu_mao_cong_cong_mao_ning_kui_mao_dan_dan_mang_lu_1553838201():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190329064321id_/https://www.baidu.com/s?wd=%E8%8C%85%E8%81%B5%E9%A9%B4%E8%8C%85%E8%81%A1%E8%81%A6%E7%8C%AB%E8%81%B9%E8%81%B5%E7%8C%AB%E8%81%B8%E8%81%B8%E5%BF%99%E5%8D%A4&oq=%E8%8C%85%E8%81%B5%E9%A9%B4%E8%8C%85%E8%81%A1%E8%81%A6%E7%8C%AB%E8%81%B9%E8%81%B5%E7%8C%AB%E8%81%B8%E8%81%B8%E5%BF%99%E5%8D%A4&ie=utf-8&rsv_pq=ce502b7c00017f4e&rsv_t=429fdL0VhHNPGYvy2nJwvedkWEHrVvYOK1YdtSoHeKxoh77YPXsd%2FA%2FeSOo&rqlang=cn&nojs=1&bqid=ce502b7c00017f4e",
+        "baidu",
+    )
+
+
+def test_parse_query_baidu_e_eeeae_1558963051():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190527151731id_/https://www.baidu.com/s?wd=%C3%A9%C2%98%C2%BF%C3%A9%C2%87%C2%8C%C3%A8%C2%9C%C2%98%C3%A8%C2%9B%C2%9B%C3%A6%C2%B1",
+        "baidu",
+    )
+
+
+def test_parse_query_baidu_zhong_guo_lian_tong_smsc_1372160086():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20130625133446id_/http://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A%20smsc&tn=baidufir",
+        "baidu",
+    )

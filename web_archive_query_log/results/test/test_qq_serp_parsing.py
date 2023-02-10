@@ -35,3 +35,38 @@ def test_parse_query_qq_jie_ke_luo_de_wei_er_1445892389():
         "https://web.archive.org/web/20151026214629id_/http://v.qq.com/search.html?pagetype=3&stag=txt.playpage.sports&ms_key=%E6%9D%B0%E5%85%8B.%E7%BD%97%E5%BE%B7%E7%BB%B4%E5%B0%94",
         "qq",
     )
+
+
+def test_parse_query_qq_lin_xi_tong_1507483207():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20171008192007id_/http://v.qq.com/search.html?pagetype=3&stj2=tiket&ms_key=%E6%9E%97%E7%86%B9%E7%9E%B3",
+        "qq",
+    )
+
+
+def test_parse_query_qq_shen_shan_zheng_er_lang_1405119212():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20140712005332id_/http://v.qq.com//search.html?pagetype=3&ms_key=%E7%A5%9E%E5%B1%B1%E5%BE%81%E4%BA%8C%E9%83%8E",
+        "qq",
+    )
+
+
+def test_parse_query_qq_james_boshier_1449178049():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20151203222729id_/http://v.qq.com//search.html?pagetype=3&ms_key=James+Boshier",
+        "qq",
+    )
+
+
+def test_parse_query_qq_ji_zhou_dao_ttglao_hu_ji_ping_tai_guan_wang_x_fa33n_comx_1488991663():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20170308174743id_/http://v.qq.com/search.html?pagetype=3&stj2=search.search&stag=txt.index&ms_key=%E6%B5%8E%E5%B7%9E%E5%B2%9Bttg%E8%80%81%E8%99%8E%E6%9C%BA%E5%B9%B3%E5%8F%B0%E5%AE%98%E7%BD%91%E3%80%93FA33N.COM%E3%80%93",
+        "qq",
+    )
+
+
+def test_parse_query_qq_hua_ze_xiang_cai_1408309927():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20140817231207id_/http://v.qq.com//search.html?pagetype=3&ms_key=%E8%8A%B1%E6%B3%BD%E9%A6%99%E8%8F%9C",
+        "qq",
+    )

@@ -35,3 +35,38 @@ def test_parse_query_google_win10_iso_xia_zai_1577717811():
         "https://web.archive.org/web/20191230155651id_/https://www.google.com/search?q=win10+iso+%E4%B8%8B%E8%BD%BD&tbm=nws&source=lnt&tbs=qdr%3Ay&sa=X&ved=0ahUKEwjurrCb3t3mAhXPjp4KHT3MDxg4FBCnBQgf",
         "google",
     )
+
+
+def test_parse_query_google_243_1628713922():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210811223202id_/https://www.google.com/search?q=243",
+        "google",
+    )
+
+
+def test_parse_query_google_does_steve_has_a_beard_1601705030():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20201003080350id_/https://www.google.com/search?q=does+steve+has+a+beard&oq=does+steve+has+a+beard&aqs=chrome..69i57j0i22i30l3.6767j0j4&sourceid=chrome&ie=UTF-8",
+        "google",
+    )
+
+
+def test_parse_query_google_why_is_one_foot_slightly_larger_than_the_other_one_1605140430():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20201112012030id_/https://www.google.com/search?q=Why%20is%20one%20foot%20slightly%20larger%20than%20the%20other%20one%3F",
+        "google",
+    )
+
+
+def test_parse_query_google_zombie_apocalypse_1565114134():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190806195534id_/https://www.google.com/search?q=zombie+apocalypse&rlz=1C1GCEA_enGB797GB797&source=lnms&tbm=vid&sa=X&ved=0ahUKEwjo4aahg-_jAhUPTcAKHa1NCZ4Q_AUIEigC",
+        "google",
+    )
+
+
+def test_parse_query_google_w_fan_j_li_s_ma_n_tang_and_w_yu_april_2012_towards_certain_fixes_with_editing_rules_and_master_data_the_vldb_journal_21_2_213_238_297_10_1007_s00778_011_0253_7_1614165399():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210224121639id_/https://scholar.google.com/scholar?hl=en&q=W.+Fan%2C+J.+Li%2C+S.+Ma%2C+N.+Tang%2C+and+W.+Yu.+April+2012.+Towards+certain+fixes+with+editing+rules+and+master+data.+The+VLDB+Journal%2C+21(2)%3A+213--238.+297+10.1007%2Fs00778-011-0253-7+",
+        "google",
+    )

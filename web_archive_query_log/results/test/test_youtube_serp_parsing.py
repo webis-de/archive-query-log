@@ -35,3 +35,38 @@ def test_parse_query_youtube_ampatuanmassacre_1583309425():
         "https://web.archive.org/web/20200304091025id_/https://www.youtube.com/results?search_query=%23AmpatuanMassacre&app=desktop",
         "youtube",
     )
+
+
+def test_parse_query_youtube_hp_probook_640_g1_razborka_1579996098():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20200126004818id_/https://www.youtube.com/results?search_query=hp+probook+640+g1+%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%D0%BA%D0%B0",
+        "youtube",
+    )
+
+
+def test_parse_query_youtube_razbor_shchetki_pylesosa_samsung_1584184489():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20200314121449id_/https://www.youtube.com/results?search_query=%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80+%D1%89%D0%B5%D1%82%D0%BA%D0%B8+%D0%BF%D1%8B%D0%BB%D0%B5%D1%81%D0%BE%D1%81%D0%B0+samsung",
+        "youtube",
+    )
+
+
+def test_parse_query_youtube_literatura_6_klass_biografiia_pushkina_1595705363():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20200725212923id_/https://www.youtube.com/results?search_query=%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0+6+%D0%BA%D0%BB%D0%B0%D1%81%D1%81+%D0%B1%D0%B8%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F+%D0%BF%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0",
+        "youtube",
+    )
+
+
+def test_parse_query_youtube_ne_prosto_bekkhen_reaktsiia_1582514079():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20200224041439id_/https://www.youtube.com/results?search_query=%D0%BD%D0%B5+%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE+%D0%B1%D1%8D%D0%BA%D1%85%D0%B5%D0%BD+%D1%80%D0%B5%D0%B0%D0%BA%D1%86%D0%B8%D1%8F",
+        "youtube",
+    )
+
+
+def test_parse_query_youtube_prokhozhdenie_igry_madagaskar_2_chast_4_1562167916():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190703173156id_/https://www.youtube.com/results?search_query=%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B3%D1%80%D1%8B+%D0%BC%D0%B0%D0%B4%D0%B0%D0%B3%D0%B0%D1%81%D0%BA%D0%B0%D1%80+2+%D1%87%D0%B0%D1%81%D1%82%D1%8C+4&sp=CAESCwgFEAQYAiAByAEB",
+        "youtube",
+    )
