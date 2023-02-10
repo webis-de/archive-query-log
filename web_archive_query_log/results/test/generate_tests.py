@@ -70,12 +70,18 @@ def main():
     print("Generate WARC files.")
     schema = ArchivedQueryUrl.schema()
     for service_name in service_names:
-        warc_path = WARCS_PATH / f"{service_name}.warc.gz"
-        with warc_path.open("wb") as o:
-            writer = WARCWriter(o, gzip=True)
-            for query_url in tqdm(
-                    query_urls[service_name], desc=service_name
-            ):
+        for query_url in tqdm(
+                query_urls[service_name], desc=service_name
+        ):
+            name = slugify(
+                f"{service_name}-"
+                f"{query_url['url_query']}-{query_url['timestamp']}"
+            )
+            warc_path = WARCS_PATH / f"{name}.warc.gz"
+            if warc_path.exists():
+                continue
+            with warc_path.open("wb") as o:
+                writer = WARCWriter(o, gzip=True)
                 archived_query_url = ArchivedQueryUrl(
                     url=query_url["url"],
                     timestamp=int(query_url["timestamp"]),
