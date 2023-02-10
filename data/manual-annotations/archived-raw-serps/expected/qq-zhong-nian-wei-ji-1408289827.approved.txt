@@ -1,9 +1,1 @@
-{
-    "interpreted_query": "",
-    "offset": null,
-    "page": null,
-    "query": "\u4e2d\u5e74\u5371\u673a",
-    "results": [],
-    "timestamp": 1408289827,
-    "url": "http://v.qq.com/search.html?pagetype=3&stag=word.tag&ms_key=%E4%B8%AD%E5%B9%B4%E5%8D%B1%E6%9C%BA"
-}
+null

@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "\u9986\u996e\u6599",
+    "offset": null,
+    "page": null,
+    "query": "\u9986\u996e\u6599",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1501752634,
+            "title": "<em>\u3010\u9c81\u4ea7\u540d\u54c1\u9986\u3011\u8336\u4eba\u5cad\u7ea2\u7cd6\u59dc\u8336\u56fa\u4f53\u996e\u6599 120g</em>\n<em></em>",
+            "url": "http://item.jd.com/13215483545.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1501752634,
+            "title": "<em>\u5de2\u5ac4 \u82b1\u8336\u996e\u54c1\u65e0\u82b1\u679c\u8336\u7247\u793c\u54c1\u88c5 400g</em>\n<em></em>",
+            "url": "http://item.jd.com/10552032512.html"
+        }
+    ],
+    "timestamp": 1501752634,
+    "url": "http://search.jd.com/search?keyword=%E9%A6%86%E9%A5%AE%E6%96%99&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq=%E9%A6%86%E9%A5%AE%E6%96%99&cid2=12202&stock=1&ev=2762_32941%40&uc=0"
+}

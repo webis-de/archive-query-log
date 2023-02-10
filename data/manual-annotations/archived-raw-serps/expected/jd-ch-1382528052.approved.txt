@@ -1,0 +1,171 @@
+{
+    "interpreted_query": "\u5185\u88e4 \u68c9",
+    "offset": null,
+    "page": null,
+    "query": "\ufffd\u06bf\ufffd \ufffd\ufffd",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f  \u590f\u88c5\u65b0\u6b3e\u7537\u58eb\u7eaf\u68c9\u77ed\u8896\u886c\u886b \u97e9\u7248\u65f6\u5c1a\u4fee\u8eab\u7eaf\u8272\u886c\u8863\u6f6e M11206102 \u519b\u7eff/42 XL/52",
+            "url": "http://item.jd.com/1021610104.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f 2013\u590f\u88c5\u65b0\u6b3e\u7537\u88c5\u7ffb\u9886\u84dd\u8272\u6ce2\u70b9\u7eaf\u68c9 \u5546\u52a1\u4f11\u95f2 \u7537\u58eb\u77ed\u8896\u886c\u886b M11206702 \u9ed1\u8272/80 XXL/54",
+            "url": "http://item.jd.com/1021608100.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u6b63\u54c1 \u590f\u88c5\u7537\u58eb\u77ed\u8896\u886c\u886b \u97e9\u7248\u4fee\u8eab\u4f11\u95f2\u886c\u8863 \u7eaf\u68c9\u683c\u5b50\u886c\u8863\u6f6e M11206706 \u7eff\u683c/48 XXL/54",
+            "url": "http://item.jd.com/1026674931.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u5305\u90ae\u7537\u58eb\u6625\u590f\u88c5 \u7eaf\u68c9\u957f\u8896\u6761\u7eb9\u886c\u886b \u7236\u4eb2\u8282 \u4f11\u95f2\u82f1\u4f26\u886c\u8863 M11101106 \u84dd\u6761/59 XL/52",
+            "url": "http://item.jd.com/1021558771.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u6b63\u54c1 \u6625\u5b63\u65b0\u54c1\u7537\u58eb\u7eaf\u68c9\u886c\u886b\u957f\u8896\u5370\u82b1\u4fee\u8eab\u4f11\u95f2\u886c\u8863 \u97e9\u7248\u6f6e M11101802 \u84dd\u6df7\u8272/57 XL/52",
+            "url": "http://item.jd.com/1021635634.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u6625\u79cb\u5b63\u9ad8\u7aef\u7537\u58eb\u8fdb\u53e3\u7eaf\u68c9\u886c\u886b \u97e9\u7248\u6f6e\u7537\u957f\u8896\u4f11\u95f2\u767d\u8272\u886c\u8863 M11101152 \u767d\u8272/00 XXL/54",
+            "url": "http://item.jd.com/1021548715.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u7537\u58eb\u7eaf\u68c9\u7ad6\u6761\u7eb9\u886c\u886b \u5546\u52a1\u4f11\u95f2\u886c\u8863 \u6625\u79cb\u957f\u8896\u4fee\u8eab\u6f6e\u7537\u88c5\u514d\u70eb M11301002 \u84dd\u8272/50 XXL/54",
+            "url": "http://item.jd.com/1023170593.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u7537\u58eb\u514d\u70eb\u7eaf\u68c9\u957f\u8896\u886c\u886b2013\u6625\u590f\u65b0\u6b3e\u4e1d\u5149\u68c9\u683c\u7eb9\u4fee\u8eab\u7537\u88c5\u886c\u8863 M10301013 \u68d5\u8272/70 XL/52",
+            "url": "http://item.jd.com/1023175156.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u6625\u79cb\u6b3e\u7eaf\u68c9\u8584\u6b3e\u9488\u7ec7\u5f00\u886b \u7537\u6f6e\u97e9\u7248\u7ebf\u8863 \u7537\u58eb\u6bdb\u8863v\u9886\u5916\u5957 M11157118 \u7eff\u6761/49 L/110",
+            "url": "http://item.jd.com/1022649669.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u7537\u58eb\u6ce2\u70b9\u7ffb\u9886\u7eaf\u68c9\u886c\u886b\u6f6e\u6d41\u4f11\u95f2\u4fee\u8eab\u957f\u8896\u886c\u8863\u75372013\u6625\u79cb\u65b0\u54c1 M11301001 \u767d\u8272/00 L/50",
+            "url": "http://item.jd.com/1023180289.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u7537\u58eb\u7ad6\u6761\u7eb9\u886c\u886b \u957f\u8896\u7eaf\u68c9\u514d\u70eb\u5546\u52a1\u4f11\u95f2\u6263\u9886\u886c\u8863 \u6625\u79cb\u4fee\u8eab\u7537\u88c5 M11301005 \u7eff\u6761/49 S/46",
+            "url": "http://item.jd.com/1023182460.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u7537\u58eb\u7ad6\u6761\u7eb9\u886c\u886b \u649e\u8272\u62fc\u63a5\u9886 \u7acb\u9886\u7537\u5b50\u957f\u8896\u886c\u8863 \u8fdb\u53e3\u7eaf\u68c9 M11301007 \u84dd\u8272/50 XXL/54",
+            "url": "http://item.jd.com/1023184986.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u7537\u5b50\u683c\u7eb9\u7eaf\u68c9\u957f\u8896\u886c\u886b\u97e9\u7248\u4fee\u8eab\u886c\u8863 2013\u6625\u590f\u65b0\u6b3e \u6f6e\u7537\u6297\u76b1 M10301055 \u84dd\u683c/58 XXL/54",
+            "url": "http://item.jd.com/1023208254.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f 2013\u65b0\u6b3e \u7537\u58eb\u4e1d\u5149\u68c9\u5370\u788e\u82b1\u957f\u8896\u886c\u886b \u5546\u52a1\u4f11\u95f2\u5c16\u9886\u886c\u886b\u7537 M10301003 \u7d2b\u8272/60 L/50",
+            "url": "http://item.jd.com/1023210173.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u6b63\u54c1 \u7537\u58eb\u7ad6\u6761\u7eb9\u957f\u8896\u886c\u886b\u7eaf\u68c9\u5546\u52a1\u4f11\u95f2\u7537\u6b3e \u4fee\u8eab\u65b9\u9886\u886c\u8863 M10301009 \u9ed1\u8272/80 L/50",
+            "url": "http://item.jd.com/1023217235.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u7537\u58eb\u7ad6\u6761\u7eb9\u886c\u886b \u7537\u5b50\u8fdb\u53e3\u7eaf\u68c9\u514d\u70eb\u957f\u8896\u5546\u52a1\u4f11\u95f2\u886c\u8863\u6625\u79cb\u6b3e M11301008 \u84dd\u6761/59 L/50",
+            "url": "http://item.jd.com/1023222341.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "Armani Jeans/AJ\u7cfb\u5217 \u963f\u739b\u5c3c\u7537\u88c5 \u7537\u5f0f\u7eaf\u68c9\u8212\u9002\u82f1\u4f26\u98ce\u886c\u886b 81363 \u7070\u8272 XL",
+            "url": "http://item.jd.com/1041626598.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f  \u6625\u79cb\u6b63\u54c1\u7eaf\u68c9\u6bdb\u8863 \u4fee\u8eab\u9488\u7ec7\u886b\u7537 V\u9886\u5957\u886b\u6bdb\u8863 \u6f6e\u7537\u5957\u5934\u886b 839143025 \u5496\u5561\u8272/73 XL/52",
+            "url": "http://item.jd.com/1021414264.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "hanris\u701a\u745e 2013\u590f\u5b63\u6e05\u4ed3\u7537\u886c\u886b\u7537\u58eb\u886c\u8863\u804c\u4e1a\u6b63\u88c5\u886c\u886b\u6761\u7eb9\u5bf8\u886b\u4e2d\u8001\u5e74\u5973\u58eb\u52a0\u539a\u6253\u5e95\u88e4 08 \u9886\u56f441",
+            "url": "http://item.jd.com/1020177826.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u6625\u590f\u88c5\u7537\u58eb\u771f\u4e1d\u957f\u8896\u886c\u886b \u7537\u88c5\u6ce2\u70b9\u4fee\u8eab\u5546\u52a1\u4f11\u95f2\u6851\u8695\u4e1d\u886c\u8863 M11101151 \u767d\u8272/01 XXL/54",
+            "url": "http://item.jd.com/1021553338.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f \u4e13\u67dc\u65b0\u54c1 \u97e9\u7248\u4f11\u95f2 \u65f6\u5c1aV\u9886\u4fee\u8eab\u5f00\u886b\u7537 \u9488\u7ec7\u6bdb\u8863 \u5c0f\u5916\u5957\u6f6e 839141023 \u7070\u8272/90 52/115",
+            "url": "http://item.jd.com/1021406159.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f 2013\u65b0\u54c1\u88c5\u7537\u58eb\u957f\u8896\u886c\u8863 \u5546\u52a1\u6b63\u88c5 \u767d\u8272\u97e9\u7248\u4fee\u8eab\u886c\u886b \u7537 \u6f6e M10301043 \u767d\u8272/00 XL/52",
+            "url": "http://item.jd.com/1023186587.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1382528052,
+            "title": "\u66fc\u94c1\u897f 2013\u65b0\u54c1\u6625\u590f\u88c5\u7537\u58eb\u6761\u7eb9\u957f\u8896\u886c\u8863\u54c1\u8d28\u5546\u52a1\u4f11\u95f2\u4e2d\u5e74\u683c\u7eb9\u886c\u886b M10301046 \u9ed1\u683c/88 XL/52",
+            "url": "http://item.jd.com/1023212217.html"
+        }
+    ],
+    "timestamp": 1382528052,
+    "url": "http://search.jd.com/search?keyword=%C4%DA%BF%E3%20%C3%DE&qr=%C4%D0%CA%BF%C4%DA%BF%E3&qrst=expand&et=4&rt=1&sttr=1&area=1&ev=1373_71335%40&uc=0"
+}

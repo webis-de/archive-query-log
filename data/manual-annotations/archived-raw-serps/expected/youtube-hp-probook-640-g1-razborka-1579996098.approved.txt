@@ -1,0 +1,171 @@
+{
+    "interpreted_query": "hp probook 640 g1 \u0440\u0430\u0437\u0431\u043e\u0440\u043a\u0430",
+    "offset": null,
+    "page": null,
+    "query": "hp probook 640 g1 \u0440\u0430\u0437\u0431\u043e\u0440\u043a\u0430",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "lacement fan and heatsink +replacement battery module +replacement main access pannel +replacement optical drive +\u00a0...",
+            "timestamp": 1579996098,
+            "title": "HP ProBook 640 G1   Disassembly and fan cleaning laptop repair - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 14:54",
+            "url": "https://www.youtube.com/watch?v=74WXMKcuqF4"
+        },
+        {
+            "rank": 2,
+            "snippet": "In this video tutorial, I will guide you how to disassemble the <em>HP ProBook</em> 650 <em>G1</em> notebook.",
+            "timestamp": 1579996098,
+            "title": "HP ProBook 650 G1 Disassembly and fan cleaning - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 13:10",
+            "url": "https://www.youtube.com/watch?v=d8gCTE3eOEU"
+        },
+        {
+            "rank": 3,
+            "snippet": "\u041f\u043e\u0441\u0442\u0430\u0440\u0430\u043b\u0441\u044f \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0438 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e \u0432\u0441\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u044c.. <em>\u0420\u0430\u0437\u0431\u043e\u0440\u043a\u0443</em>, \u0447\u0438\u0441\u0442\u043a\u0443 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0430..",
+            "timestamp": 1579996098,
+            "title": "HP ProBook 450. \u0420\u0430\u0437\u0431\u043e\u0440\u043a\u0430 \u0438 \u0447\u0438\u0441\u0442\u043a\u0430 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 26:05",
+            "url": "https://www.youtube.com/watch?v=LEmaHNsDugM"
+        },
+        {
+            "rank": 4,
+            "snippet": "\u041e\u0442\u0437\u044b\u0432\u044b \u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0430 \u0423\u043b\u044c\u0442\u0440\u0430\u0431\u0443\u043a <em>HP</em> ELITEBOOK 840 <em>G1</em>.\u0422\u0430\u043a \u0436\u0435 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u043e\u0432 \u0432\u0430\u0439\u0431\u0435\u0440 +380974519418 \u0441\u0430\u0439\u0442\u00a0...",
+            "timestamp": 1579996098,
+            "title": "\u041e\u0442\u0437\u044b\u0432\u044b \u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0430 \u0423\u043b\u044c\u0442\u0440\u0430\u0431\u0443\u043a HP ELITEBOOK 840 G1 \u0438 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0430 HP ProBook 640 G1 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 28:00",
+            "url": "https://www.youtube.com/watch?v=loBqfqur4n4"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>HP PROBOOK</em> 650 G2 disassembly laptop charge port repair charging port repair fix http://powerjackrepair.org laptop dc power\u00a0...",
+            "timestamp": 1579996098,
+            "title": "HP PROBOOK 650 G2 disassembly laptop charge port repair charging port repair fix power jack repair - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 1:13:42",
+            "url": "https://www.youtube.com/watch?v=6PVqHmosrNc"
+        },
+        {
+            "rank": 6,
+            "snippet": "\u041a\u0430\u043a\u0438\u0435 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0430 \u0438 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0438 \u0432\u044b \u0447\u0430\u0449\u0435 \u0432\u0441\u0435\u0433\u043e \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u0435\u0442\u0435 \u0432 \u0440\u0430\u0437\u043d\u043e\u043e\u0431\u0440\u0430\u0437\u043d\u044b\u0445 \u043e\u0444\u0438\u0441\u0430\u0445? \u041c\u044b \u0434\u0443\u043c\u0430\u0435\u043c, \u0447\u0442\u043e \u0447\u0430\u0449\u0435 \u0432\u0441\u0435\u0433\u043e \u044d\u0442\u043e...",
+            "timestamp": 1579996098,
+            "title": "\u041e\u0431\u0437\u043e\u0440 HP ProBook 450 G6 \u2014 \u043d\u043e\u0443\u0442\u0431\u0443\u043a, \u0433\u0434\u0435 \u0432\u0441\u0451, \u043a\u0430\u043a \u043f\u043e\u043b\u043e\u0436\u0435\u043d\u043e (\u043f\u043e\u0447\u0442\u0438) - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 14:25",
+            "url": "https://www.youtube.com/watch?v=0TCratvjBZg"
+        },
+        {
+            "rank": 7,
+            "snippet": "CPU can be changed, graphic card is solder on, ram can be changed to 16GB max with 8 GB in each slot and there are 2 slots,\u00a0...",
+            "timestamp": 1579996098,
+            "title": "OPEN ME UP! HP Probook 450 G1 and G2 Disassembly - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 17:42",
+            "url": "https://www.youtube.com/watch?v=2Bfx4W21kmY"
+        },
+        {
+            "rank": 8,
+            "snippet": "\u0412\u0438\u0434\u0435\u043e \u043e \u0442\u043e\u043c, \u043a\u0430\u043a \u0440\u0430\u0437\u043e\u0431\u0440\u0430\u0442\u044c, \u043f\u043e\u0447\u0438\u0441\u0442\u0438\u0442\u044c \u043e\u0442 \u043f\u044b\u043b\u0438 \u0438 \u0437\u0430\u043c\u0435\u043d\u0438\u0442\u044c \u0442\u0435\u0440\u043c\u043e\u043f\u0430\u0441\u0442\u0443 \u0432 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0435 HP ProBook 455 G1. \u0422\u0430\u043a\u0436\u0435 \u0432 \u0432\u0438\u0434\u0435\u043e ...",
+            "timestamp": 1579996098,
+            "title": "HP ProBook 455 G1 \u0420\u0430\u0437\u0431\u043e\u0440\u043a\u0430 \u0434\u043b\u044f \u0447\u0438\u0441\u0442\u043a\u0438 \u043e\u0442 \u043f\u044b\u043b\u0438 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0430 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 11:16",
+            "url": "https://www.youtube.com/watch?v=7V3hkK_5bAY"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>HP Probook</em> 650 g2 notebook keyboard replacement.",
+            "timestamp": 1579996098,
+            "title": "HP Probook 650 g2 keyboard replacement - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 7:51",
+            "url": "https://www.youtube.com/watch?v=pceLsPKbxNA"
+        },
+        {
+            "rank": 10,
+            "snippet": "\u0414\u043e\u043d\u0430\u0442 (\u043f\u043e\u043c\u043e\u0449\u044c \u043a\u0430\u043d\u0430\u043b\u0443) https://donatepay.ru/don/SoVeTTV <em>\u0420\u0430\u0437\u0431\u043e\u0440\u043a\u0430</em> \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0430 <em>Hp ProBook</em> 450 G0 . \u0427\u0438\u0441\u0442\u0438\u043c \u043e\u0442 \u043f\u044b\u043b\u0438 \u0438 \u0433\u0440\u044f\u0437\u0438\u00a0...",
+            "timestamp": 1579996098,
+            "title": "Hp ProBook 450 G0 \u0440\u0430\u0437\u0431\u043e\u0440\u043a\u0430 , \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0441\u043d\u0430\u044f \u0447\u0438\u0441\u0442\u043a\u0430 , \u0437\u0430\u043c\u0435\u043d\u0430 \u0442\u0435\u0440\u043c\u043e\u043f\u0430\u0441\u0442\u044b - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 17:35",
+            "url": "https://www.youtube.com/watch?v=A1jJmfOnQZM"
+        },
+        {
+            "rank": 11,
+            "snippet": "\u041c\u0443\u0437\u044b\u043a\u0430: https://soundcloud.com/saturn_bel",
+            "timestamp": 1579996098,
+            "title": "\u0420\u0430\u0437\u0431\u043e\u0440\u043a\u0430 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0430 HP Probook 470 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 7:57",
+            "url": "https://www.youtube.com/watch?v=5Px683Eyuuw"
+        },
+        {
+            "rank": 12,
+            "snippet": "http://www.service.muk.ua/ \u041c\u0423\u041a-\u0421\u0435\u0440\u0432\u0438\u0441 \u2014 \u0432\u0441\u0435 \u0432\u0438\u0434\u044b \u0418\u0422 \u0440\u0435\u043c\u043e\u043d\u0442\u0430: \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0439\u043d\u044b\u0439, \u043d\u0435 \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0439\u043d\u044b\u0439 \u0440\u0435\u043c\u043e\u043d\u0442, \u043f\u0440\u043e\u0434\u0430\u0436\u0430 \u0437\u0430\u043f\u0430\u0441\u043d\u044b\u0445\u00a0...",
+            "timestamp": 1579996098,
+            "title": "\u0420\u0435\u043c\u043e\u043d\u0442 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0430. \u0417\u0430\u043c\u0435\u043d\u0430 \u0432\u0438\u043d\u0447\u0435\u0441\u0442\u0435\u0440\u0430 \u0432 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0435 HP ProBook 640 G1 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 1:19",
+            "url": "https://www.youtube.com/watch?v=5-n-MqZyPjk"
+        },
+        {
+            "rank": 13,
+            "snippet": "[OLD VERSION] *** MAJOR UPDATE: NEW and BETTER version of the guide here:\u00a0...",
+            "timestamp": 1579996098,
+            "title": "[OLD] SSD + HDD Dual Drive Setup in Almost ANY LAPTOP - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 8:21",
+            "url": "https://www.youtube.com/watch?v=_n3KCjQYDHI"
+        },
+        {
+            "rank": 14,
+            "snippet": "This is a tutorial on how to Uninstall - Install a laptop keyboard key. This keyboard is from an <em>HP</em> Compaq 620 625. How to replace\u00a0...",
+            "timestamp": 1579996098,
+            "title": "How to : Individual Laptop Keyboard Keys Fix Repair Installation Guide HP Compaq Pavilion HD - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 3:58",
+            "url": "https://www.youtube.com/watch?v=QCYOiK9QP08"
+        },
+        {
+            "rank": 15,
+            "snippet": "Hewlett Packard 6xx Notebook Change keyboard Disassembly ,Tastatur Wechseln neues Modell Installation. This Video shows\u00a0...",
+            "timestamp": 1579996098,
+            "title": "HP Compaq Laptop Change keyboard HP 655 650 635 630 625 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 5:19",
+            "url": "https://www.youtube.com/watch?v=eK8HCtlMv_o"
+        },
+        {
+            "rank": 16,
+            "snippet": "How to fix overheating laptop, how to clean laptop fan and replace thermal paste in this video guide.Assembling process ...",
+            "timestamp": 1579996098,
+            "title": "HP ProBook 450 G2 disassembly and fan cleaning - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 14:41",
+            "url": "https://www.youtube.com/watch?v=hq_7urdtSLU"
+        },
+        {
+            "rank": 17,
+            "snippet": "http://www.service.muk.ua/ \u041c\u0423\u041a-\u0421\u0435\u0440\u0432\u0438\u0441 \u2014 \u0432\u0441\u0435 \u0432\u0438\u0434\u044b \u0418\u0422 \u0440\u0435\u043c\u043e\u043d\u0442\u0430: \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0439\u043d\u044b\u0439, \u043d\u0435 \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0439\u043d\u044b\u0439 \u0440\u0435\u043c\u043e\u043d\u0442, \u043f\u0440\u043e\u0434\u0430\u0436\u0430 \u0437\u0430\u043f\u0430\u0441\u043d\u044b\u0445\u00a0...",
+            "timestamp": 1579996098,
+            "title": "\u0420\u0435\u043c\u043e\u043d\u0442 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0430. \u0417\u0430\u043c\u0435\u043d\u0430 \u043a\u0443\u043b\u0435\u0440\u0430 \u0432 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0435 HP ProBook 640 G1 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 1:03",
+            "url": "https://www.youtube.com/watch?v=Uuzp5doaMKI"
+        },
+        {
+            "rank": 18,
+            "snippet": "How to replace lcd of hp probook 640Don\u00b4t forget to Subscribe",
+            "timestamp": 1579996098,
+            "title": "How to: HP Probook 640 LCD replacement - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 5:33",
+            "url": "https://www.youtube.com/watch?v=CojVhxPUdyA"
+        },
+        {
+            "rank": 19,
+            "snippet": "Here's a video guide on how to disassembly <em>HP Probook</em> 650 <em>G1</em> laptop and change memory (ram) and upgrade to SSD from\u00a0...",
+            "timestamp": 1579996098,
+            "title": "HP Probook 650 G1: how to change RAM and upgrade SSD - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 2:38",
+            "url": "https://www.youtube.com/watch?v=frM68bzVX_E"
+        },
+        {
+            "rank": 20,
+            "snippet": "Learn how to remove and replace the system board on <em>HP Probook 640</em> and 645 G2 notebooks. For other helpful videos go to\u00a0...",
+            "timestamp": 1579996098,
+            "title": "How to Replace the System Board | HP Probook 640 and 645 G2 Notebooks - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 4:24",
+            "url": "https://www.youtube.com/watch?v=cQp9T_P4cxk"
+        },
+        {
+            "rank": 21,
+            "snippet": "http://www.service.muk.ua/ \u041c\u0423\u041a-\u0421\u0435\u0440\u0432\u0438\u0441 \u2014 \u0432\u0441\u0435 \u0432\u0438\u0434\u044b \u0418\u0422 \u0440\u0435\u043c\u043e\u043d\u0442\u0430: \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0439\u043d\u044b\u0439, \u043d\u0435 \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0439\u043d\u044b\u0439 \u0440\u0435\u043c\u043e\u043d\u0442, \u043f\u0440\u043e\u0434\u0430\u0436\u0430 \u0437\u0430\u043f\u0430\u0441\u043d\u044b\u0445\u00a0...",
+            "timestamp": 1579996098,
+            "title": "\u0420\u0435\u043c\u043e\u043d\u0442 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0430. \u0417\u0430\u043c\u0435\u043d\u0430 \u043a\u043b\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u044b \u0432 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u0435 HP ProBook 640 G1 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 1:40",
+            "url": "https://www.youtube.com/watch?v=Mr9dQAkNRQE"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1579996098,
+            "title": "HP Probook 650 G1 keyboard removal - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 1:30",
+            "url": "https://www.youtube.com/watch?v=TZehG1iqgvk"
+        },
+        {
+            "rank": 23,
+            "snippet": "Hello Guys this is Malhar Jetly and i am back again with the weekday Monday's! Today we have a <em>HP</em> Laptop Which might suit\u00a0...",
+            "timestamp": 1579996098,
+            "title": "HP Probook 640 G1 Review - The Perfect Laptop for students? - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 4:21",
+            "url": "https://www.youtube.com/watch?v=doMV8xkj4FY"
+        }
+    ],
+    "timestamp": 1579996098,
+    "url": "https://www.youtube.com/results?search_query=hp+probook+640+g1+%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%D0%BA%D0%B0"
+}

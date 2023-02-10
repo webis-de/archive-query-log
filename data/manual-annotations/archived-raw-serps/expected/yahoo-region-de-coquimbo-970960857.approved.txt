@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "region de coquimbo",
+    "offset": null,
+    "page": null,
+    "query": "region de coquimbo",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970960857,
+            "title": "Universidad <em>de</em> la Serena",
+            "url": "http://srd.yahoo.com/srst/799369/region+de+coquimbo/1/3/*http://www.userena.cl/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970960857,
+            "title": "Colores Naturales <em>de</em> Chile",
+            "url": "http://srd.yahoo.com/srst/13330882/region+de+coquimbo/2/3/*http://www.cochineal.cl/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970960857,
+            "title": "Hotel Mar <em>de</em> Ensue\u0144o",
+            "url": "http://srd.yahoo.com/srst/23440658/region+de+coquimbo/3/3/*http://www.hotelmarensueno.com/"
+        }
+    ],
+    "timestamp": 970960857,
+    "url": "http://search.yahoo.com:80/search?p=region+de+coquimbo"
+}

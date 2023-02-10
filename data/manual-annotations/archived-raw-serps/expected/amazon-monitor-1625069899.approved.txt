@@ -1,0 +1,122 @@
+{
+    "interpreted_query": "monitor",
+    "offset": null,
+    "page": null,
+    "query": "monitor",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Samsung C24F396FHR 60,9 cm (24 Zoll) Curved Monitor, schwarz",
+            "url": "https://www.amazon.de/Samsung-C24F396FHR-Curved-Monitor-schwarz/dp/B08WJG41B4/ref=sr_1_1?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-1"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Dell S2421NX, 24 Zoll, Full HD 1920x1080, 75 Hz, IPS entspiegelt, 16:9, AMD FreeSync, 4 ms (extrem), neigbar, VESA, HDMI, 3 Jahre Austauschservice, schwarz/silber",
+            "url": "https://www.amazon.de/Dell-S2421NX-Zoll-1920x1080-entspiegelt/dp/B08FRJ78PR/ref=sr_1_2?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-2"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Acer R240HY Monitor 23,8 Zoll (60 cm Bildschirm) Full HD, 60Hz, 4ms (G2G), HDMI 1.4, DVI, VGA",
+            "url": "https://www.amazon.de/Acer-R240HY-Monitor-Zoll-Bildschirm/dp/B0953NC74N/ref=sr_1_3?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-3"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Acer KG272 Gaming Monitor 27 Zoll (69 cm Bildschirm) Full HD, 75Hz, 1ms (VRB), 2xHDMI 1.4, VGA, HDMI FreeSync",
+            "url": "https://www.amazon.de/Acer-Gaming-Monitor-Bildschirm-FreeSync/dp/B08SQ6YL7Z/ref=sr_1_4?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-4"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Dell S2421HGF, 24 Zoll, Gaming Monitor, Full HD 1920 x 1080, 144Hz, TN entspiegelt, 16:9, FreeSync, 1ms, h\u00f6henverstellbar",
+            "url": "https://www.amazon.de/Dell-S2421HGF-Gaming-Monitor-Reaktionszeit/dp/B086M269P3/ref=sr_1_5?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-5"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "BenQ GW2780 68,58 cm (27 Zoll) LED Monitor (Full-HD, Eye-Care, IPS-Panel Technologie, HDMI, DP, Lautsprecher) schwarz",
+            "url": "https://www.amazon.de/BenQ-GW2780-IPS-Panel-Technologie-Lautsprecher/dp/B073NTCT4R/ref=sr_1_6?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-6"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "HUAWEI Display 23.8\", 60 cm (23,8 Zoll), Full HD FullView Monitor, IPS-Panel (HDMI, 1920 x 1080, 60Hz, 5ms Reaktionszeit), Rahmenloses Design, Eye Comfort, Schwarz,Garantieverl\u00e4ngerung auf 30 Monate",
+            "url": "https://www.amazon.de/HUAWEI-IPS-Panel-Reaktionszeit-Rahmenloses-Garantieverl%C3%A4ngerung/dp/B08L99QYGH/ref=sr_1_7?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-7"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Dell 27 Curved Gaming Monitor \u2013 S2721HGF 1920 x 1080 at 144 Hz,1ms (MPRT),HDMI 1.4 x 2 DP1.2 x 1 Headphone Out",
+            "url": "https://www.amazon.de/Dell-S2721HGF-Gaming-PC-Bildschirm-gebogen-FreeSync/dp/B08FRJBSHQ/ref=sr_1_8?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-8"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Philips 273V7QDAB - 27 Zoll FHD Monitor (1920x1080, 75 Hz, VGA, DVI, HDMI) schwarz",
+            "url": "https://www.amazon.de/Philips-273V7QDAB-Monitor-Reaktionszeit-schwarz/dp/B06ZZV3QHL/ref=sr_1_9?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-9"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Dell S2721NX, 27 Zoll, Full HD 1920x1080, 75 Hz, IPS entspiegelt, 16:9, AMD FreeSync, 4 ms (extrem), neigbar, VESA, HDMI, 3 Jahre Austauschservice, schwarz",
+            "url": "https://www.amazon.de/Dell-S2721NX-Zoll-1920x1080-entspiegelt/dp/B08FRH4NYF/ref=sr_1_10?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-10"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "ASUS VG248QG 60,96 cm (24 Zoll) Gaming Monitor (Full HD, G-Sync Compatible, DVI, HDMI, DisplayPort, 0,5ms Reaktionszeit, bis zu 165Hz) schwarz",
+            "url": "https://www.amazon.de/ASUS-VG248QG-Compatible-DisplayPort-Reaktionszeit/dp/B07RMQ5PHX/ref=sr_1_11?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-11"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "AOC Gaming Q27G2U - 27 Zoll QHD Monitor, 144 Hz, 1ms, FreeSync Premium (2560x1440, HDMI, DisplayPort, USB Hub) schwarz",
+            "url": "https://www.amazon.de/AOC-Q27G2U-DisplayPort-Free-Sync-Reaktionszeit/dp/B083QQ6V1N/ref=sr_1_12?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-12"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "Lenovo L27q-30 68,58 cm (27 Zoll, 2560x1440, WQHD, 75Hz, WideView, entspiegelt) Monitor (HDMI, DisplayPort, 4ms Reaktionszeit) schwarz",
+            "url": "https://www.amazon.de/Lenovo-L27q-30-2560x1440-DisplayPort-Reaktionszeit/dp/B083QZXNDT/ref=sr_1_13?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-13"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "BenQ EL2870U 71,12 cm (28 Zoll) Gaming Monitor (4K, 1ms, FreeSync, HDR)",
+            "url": "https://www.amazon.de/BenQ-EL2870U-Eye-Care-Free-Sync-Reaktionszeit/dp/B079HV1TDC/ref=sr_1_14?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-14"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "HP 27m Monitor (27 Zoll Display, Full HD IPS, 60 Hz, HDMI, VGA, 5ms Reaktionszeit) schwarz",
+            "url": "https://www.amazon.de/HP-Zoll-Full-Monitor-HDMI/dp/B07PQGRN5Q/ref=sr_1_15?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-15"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1625069899,
+            "title": "AOC Gaming C24G1 - 24 Zoll FHD Curved Monitor, 144 Hz, 1ms, FreeSync Premium, HDMI, DisplayPort) schwarz",
+            "url": "https://www.amazon.de/AOC-C24G1-DisplayPort-Reaktionszeit-1920x1080/dp/B07DTN4BM8/ref=sr_1_16?__mk_de_DE=AMAZON&dchild=1&keywords=monitor&qid=1625077100&refinements=p_n_condition-type%3A776950031&rnid=776942031&sr=8-16"
+        }
+    ],
+    "timestamp": 1625069899,
+    "url": "https://www.amazon.de/s?k=monitor&rh=p_n_condition-type%3A776950031&dc&__mk_de_DE=AMAZON&qid=1625076577&rnid=776942031"
+}

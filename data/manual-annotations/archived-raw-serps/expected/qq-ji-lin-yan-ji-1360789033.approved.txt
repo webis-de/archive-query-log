@@ -1,9 +1,1 @@
-{
-    "interpreted_query": "",
-    "offset": null,
-    "page": null,
-    "query": "\u5409\u6797\u5ef6\u5409",
-    "results": [],
-    "timestamp": 1360789033,
-    "url": "http://v.qq.com:80/search.html?pagetype=3&ms_key=%E5%90%89%E6%9E%97%E5%BB%B6%E5%90%89"
-}
+null

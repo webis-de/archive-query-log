@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55",
+    "offset": null,
+    "page": null,
+    "query": "\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1576497545,
+            "title": "<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>(\u8303\u4f8b) - \u767e\u5ea6\u6587\u5e93",
+            "url": "https://wenku.baidu.com/view/e897aa86d4d8d15abe234e9e.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1576497545,
+            "title": "<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>(\u8303\u4f8b) -\u5b9e\u7528\u6587\u6863-\u8003\u8bd5\u5427",
+            "url": "https://www.so.com/link?m=aDh1%2Bg6tMw8mk7nsV9lUuDpm2oGPYcr1sxFSRSwxSG2xTt19aTYp3OjtPI%2FE7OAUxw6C6s0z%2BSVUC4yGdIdgjfmpAqu1sPITcWBMYe8%2BASmRWhVSA3yNZLCNR0Xa264B8C3AFztM3l6ni19jRL9K7gTPtS%2BE%2BgZA5ho4Hw3inkZL%2FMgiacoQoCDOdcudVkze0dNn8OeWWctC%2FewvotBUHovJFvvD7ahm9pM393w%3D%3D"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1576497545,
+            "title": "<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>(\u8303\u4f8b)-\u8c03\u67e5\u7b14\u5f55-\u6cd5\u5e2e\u7f51",
+            "url": "https://www.so.com/link?m=aY6UXA90ZDoxsS9aMk3fiak2KF%2FotIaJs1iRYEM8BVKu9HwQD8x%2FSPBAI1vLGhLPL2RBwczvmCL%2BEeswO6h%2BAhHT7vqLdfkkIC74gNyzf5ha%2FIylYuqF%2Fj2t6IzzKK3ZlDKPgQFQi6xS4hEso5b45Y%2BHQHeDN26%2FMWEMfUJagHJnfxsQ2r69MEnoeR4rYO7nDCluXak%2Bw8X8%3D"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>(\u8303\u4f8b) \u88ab\u8c03\u67e5\u4eba:\u9ec4_,\u7537,51\u5c81,\u6c49\u65cf,_\u5e02_\u533a_\u4e61_\u6751\u6751\u59d4\u4f1a\u4e3b\u4efb \u8c03\u67e5\u4eba:\u674e_\u3001\u738b_ \u8c03\u67e5\u76ee\u7684:\u4e3a\u738b_\u4e0e_\u6751\u6751\u59d4\u4f1a\u623f\u4ea7\u7ea0\u7eb7\u6848 \u65f6\u95f4:2003\u5e743\u670821\u65e5\u4e0a\u53489:00- 11:00 \u5730\u70b9...",
+            "timestamp": 1576497545,
+            "title": "<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>(\u8303\u4f8b) - \u6cd5\u5f8b\u6587\u4e66- 110\u7f51",
+            "url": "https://www.so.com/link?m=aj%2FJDmBGhhBOqaBhQ7nvAa0AvKrRA6qmuh7X%2Bdt1OkDqCs%2FbmghOxsI2d8hMTumcuXKbMpqPCGJaJwbMLz%2F5BTPFypbpTOdasQKCdjusvCLszVVsc7iYuqyYKEP0lqZz5VAvkOhX1bukBjzIMa2idAX95EiphYmT2xDQqasAPdWKsz1QNvNOHp30qEoc%3D"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1576497545,
+            "title": "\u7eaa\u68c0\u76d1\u5bdf<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>_\u767e\u5ea6\u6587\u5e93",
+            "url": "https://wenku.baidu.com/view/e487ebfffab069dc502201eb.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1576497545,
+            "title": "\u884c\u653f\u5904\u7f5a<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>- \u8c46\u4e01\u7f51",
+            "url": "https://www.docin.com/p-1851117561.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1576497545,
+            "title": "\u4fe1\u8bbf<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>(\u53ef\u7f16\u8f91)doc\u4e0b\u8f7d_\u7231\u95ee\u5171\u4eab\u8d44\u6599",
+            "url": "http://ishare.iask.sina.com.cn/f/j2YPh1frj5.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1576497545,
+            "title": "\u4fe1\u8bbf<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>.doc",
+            "url": "https://max.book118.com/html/2016/1225/76699205.shtm"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1576497545,
+            "title": "\u8fdd\u6cd5\u751f\u80b2<em>\u6848\u4ef6\u8c03\u67e5\u7b14\u5f55</em>- \u767e\u5ea6\u6587\u5e93",
+            "url": "https://wenku.baidu.com/view/0868ee8e84868762caaed51d.html"
+        }
+    ],
+    "timestamp": 1576497545,
+    "url": "https://www.so.com/s?q=%E6%A1%88%E4%BB%B6%E8%B0%83%E6%9F%A5%E7%AC%94%E5%BD%95&src=related_2.6&psid=836a2b7f45bb7fe2b7bcbe6bbe47b867&nlpv=zzzc_base_2"
+}

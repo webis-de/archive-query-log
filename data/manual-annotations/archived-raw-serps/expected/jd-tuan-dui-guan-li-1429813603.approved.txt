@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "\u56e2\u961f\u7ba1\u7406",
+    "offset": null,
+    "page": null,
+    "query": "\u56e2\u961f\u7ba1\u7406",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "<em>\u63a8\u8350&gt;&gt;</em><em></em>\u7ed9\u4f60\u4e00\u4e2a\u56e2\u961f\uff0c\u4f60\u80fd\u600e\u4e48\u7ba1\uff08\u5957\u88c5\u51682\u518c\uff09",
+            "url": "http://item.jd.com/11376070.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "<em>\u63a8\u8350&gt;&gt;</em><em></em>\u5e26\u961f\u4f0d+\u6293\u6267\u884c \u4e0d\u4f1a\u5e26\u56e2\u961f\uff0c\u4f60\u5c31\u53ea\u80fd\u5e72\u5230\u6b7b\uff01\uff08\u5957\u88c5\u51712\u518c\uff09",
+            "url": "http://item.jd.com/11496926.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u4e0d\u61c2\u5e26\u4eba\uff0c\u4f60\u5c31\u81ea\u5df1\u5e72\u5230\u6b7b\uff1a\u628a\u8eab\u8fb9\u7684\u5eb8\u624d\u53d8\u5e72\u5c06",
+            "url": "http://item.jd.com/11275738.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u7ed9\u4f60\u4e00\u4e2a\u56e2\u961f\uff0c\u4f60\u80fd\u600e\u4e48\u7ba1",
+            "url": "http://item.jd.com/11172331.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u7167\u7740\u505a\uff0c\u4f60\u5c31\u80fd\u5e26\u597d\u56e2\u961f",
+            "url": "http://item.jd.com/11455532.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u5468\u9e3f\u794e\u81ea\u8ff0 \u6211\u7684\u4e92\u8054\u7f51\u65b9\u6cd5\u8bba",
+            "url": "http://item.jd.com/11499476.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u8ddf\u6211\u4eec\u505a\u6d41\u7a0b\u7ba1\u7406",
+            "url": "http://item.jd.com/10078135.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u56e2\u961f\u6b63\u80fd\u91cf\uff1a\u5e26\u961f\u4f0d\u5c31\u662f\u5e26\u4eba\u5fc3",
+            "url": "http://item.jd.com/11106851.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u5305\u90ae\u72fc\u6027\u7ba1\u7406+\u72fc\u6027\u6267\u884c+\u72fc\u6027\u56e2\u961f \u51713\u672c \u4f01\u4e1a\u7ba1\u7406\u7c7b \u5458\u5de5\u57f9\u8bad\u5b66\u4e60 \u804c\u573a\u52b1\u5fd7 \u7ecf\u5178\u7545\u9500",
+            "url": "http://item.jd.com/1206899593.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u4e0d\u61c2\u7ba1\u7406\u5e38\u8bc6\uff0c\u4f60\u8fd8\u6562\u5e26\u56e2\u961f\uff1f",
+            "url": "http://item.jd.com/11580120.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u9a6c\u4e91\uff1a\u6211\u7684\u56e2\u961f\u51ed\u4ec0\u4e48",
+            "url": "http://item.jd.com/11577521.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u523a\u732c\u6548\u5e94\uff1a\u6253\u9020\u9ad8\u7ee9\u6548\u56e2\u961f\u7684\u79d8\u8bc0",
+            "url": "http://item.jd.com/11457554.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u7ed9\u4f60\u4e00\u4e2a\u56e2\u961f\uff0c\u4f60\u80fd\u600e\u4e48\u7ba1\uff1f\uff082\uff09\uff08\u5b9e\u8df5\u7248\uff09",
+            "url": "http://item.jd.com/11342892.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u6253\u9020\u9ad8\u7ee9\u6548\u56e2\u961f\uff08\u7b2c2\u7248\uff09",
+            "url": "http://item.jd.com/11044497.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u805a\u573a\uff1a\u56e2\u961f\u52a9\u52a8\u5b66\u4e60\uff08Facilitation\uff09\u768411\u9879\u5173\u952e\u6280\u80fd",
+            "url": "http://item.jd.com/11671685.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u7ba1\u4eba\u7684\u827a\u672f\uff1a\u56e2\u961f\u6c9f\u901a\u7684\u65b9\u6cd5\u548c\u6280\u5de7\uff08\u539f\u4e66\u7b2c6\u7248\uff09",
+            "url": "http://item.jd.com/11317647.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u5fae\u7ba1\u7406 \u7ed9\u4f60\u4e00\u4e2a\u6280\u672f\u56e2\u961f\uff0c\u4f60\u8be5\u600e\u4e48\u7ba1",
+            "url": "http://item.jd.com/11449798.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u5f3a\u52bf\u9886\u5bfc\u5e26\u51fa\u7cbe\u82f1\u4e0b\u5c5e",
+            "url": "http://item.jd.com/11525341.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "4D\u5353\u8d8a\u56e2\u961f\uff1a\u7f8e\u56fd\u5b87\u822a\u5c40\u7684\u7ba1\u7406\u6cd5\u5219\uff08\u4fee\u8ba2\u7248\uff09",
+            "url": "http://item.jd.com/11446347.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u9500\u552e\u56e2\u961f\u7ba1\u7406\u5168\u65b0\u4fee\u8ba2\u5927\u5168\u96c6\uff08\u8d85\u503c\u91d1\u7248\uff09",
+            "url": "http://item.jd.com/10365446.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u5e26\u961f\u4f0d\uff1a\u4e0d\u4f1a\u5e26\u56e2\u961f\uff0c\u4f60\u5c31\u53ea\u80fd\u5e72\u5230\u6b7b\uff01",
+            "url": "http://item.jd.com/11379967.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u56e2\u961f\u534f\u4f5c\u7684\u4e94\u5927\u969c\u788d",
+            "url": "http://item.jd.com/11299299.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u7ed9\u4f60\u4e00\u4e2a\u56e2\u961f\uff0c\u4f60\u80fd\u600e\u4e48\u7ba1\u7cfb\u5217\uff08\u8d85\u503c\u91d1\u7248\uff09\uff08\u5957\u88c5\u51713\u518c\uff09",
+            "url": "http://item.jd.com/11284911.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u72fc\u6027\u4f01\u4e1a\u7ba1\u7406\u5168\u5957\u88c5\u51713\u518c \u72fc\u6027\u56e2\u961f \u6267\u884c \u7ba1\u7406",
+            "url": "http://item.jd.com/1090586565.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u7ed9\u4f60\u4e00\u4e2a\u56e2\u961f\u4f60\u80fd\u600e\u4e48\u7ba1  MBA\u5546\u5b66\u9662\u6700\u53d7\u6b22\u8fce\u7684\u56e2\u961f\u7ba1\u7406\u8bfe\u7a0b\uff0c\u4f01\u4e1a\u4e0e\u4f01\u4e1a\u5bb6\u7545\u9500\u7ba1\u7406\u4e66\u7c4d",
+            "url": "http://item.jd.com/1026986687.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u804c\u4e1a\u7ecf\u7406\u4eba\u7ba1\u7406\u5de5\u5177\u7cbe\u9009\uff08\u4fee\u8ba2\u672c\uff09",
+            "url": "http://item.jd.com/11611610.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u72fc\u6027\u56e2\u961f\uff1a\u4f01\u4e1a\u5982\u4f55\u6253\u9020\u7cbe\u82f1\u56e2\u961f",
+            "url": "http://item.jd.com/10305850.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u54c8\u4f5b\u6700\u53d7\u6b22\u8fce\u7684\u7ba1\u7406\u8bfe",
+            "url": "http://item.jd.com/11301628.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u5982\u4f55\u6784\u5efa\u654f\u6377\u9879\u76ee\u7ba1\u7406\u56e2\u961f\uff1a ScrumMaster\u3001\u654f\u6377\u6559\u7ec3\u4e0e\u9879\u76ee\u7ecf\u7406\u7684\u5b9e\u7528\u6307\u5357",
+            "url": "http://item.jd.com/11039477.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1429813603,
+            "title": "\u5f17\u5e03\u514b\u57f9\u8bad\u5bd3\u8a00\u6545\u4e8b\u6e38\u620f\u5168\u6848\u7cfb\u5217\uff1a\u56e2\u961f\u5efa\u8bbe\u80fd\u529b\u57f9\u8bad\u5168\u6848\uff08\u7b2c3\u7248\uff09",
+            "url": "http://item.jd.com/11535946.html"
+        }
+    ],
+    "timestamp": 1429813603,
+    "url": "http://search.jd.com/search?keyword=%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86&enc=utf-8&qrst=1&rt=1&stop=1&book=y&499055734"
+}

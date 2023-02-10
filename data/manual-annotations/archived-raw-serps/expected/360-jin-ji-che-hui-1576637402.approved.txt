@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\u7d27\u6025\u64a4\u56de",
+    "offset": null,
+    "page": null,
+    "query": "\u7d27\u6025\u64a4\u56de",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1576637402,
+            "title": "\u7f55\u89c1!\u591a\u5bb6\u4e0a\u5e02\u516c\u53f8<em>\u7d27\u6025\u64a4\u56de</em>,\u8fd9\u4e2a\u5e02\u573a\u53c8\u8981\u706b\u4e86?_\u8bc1\u5238\u65f6\u62a5\u7f51",
+            "url": "https://www.so.com/link?m=a7uusHeAHlREQhaiqZokX8LkRAXHlMVmSK1VIZ1duw7SSQAFEouw9c6zOdCzvkhLTJMt2PdabdOLJXgrkCI2XJZXHRR2zVkYUX9d7dyqgI1RSMOA6jS7sqDgi2%2BHoORYuieeU4HWYvsvc7tEmJxisyb09XAX%2F3UBEe%2FMNpudwARXdIjdLxu16RQ%3D%3D"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1576637402,
+            "title": "\u53d1\u4e86\u6587\u4ef6\u53c8<em>\u7d27\u6025\u64a4\u56de</em>!\u5f00\u5c01\u64a4\u9500\u201c\u53d6\u6d88\u9650\u552e\u201d\u51b3\u5b9a_\u8d22\u7ecf\u9891\u9053_\u8bc1\u5238\u4e4b\u661f",
+            "url": "https://www.so.com/link?m=atP3%2FhwvSKmGxDtB3z%2BD9l9DXYngMcij6Nd%2FEXbBQCD8jZltPYlLijMld2pPAXZLFJsQuD9q4IrlaQ8ZSd72XQRSaQxYjl%2FhuF0DPyD2LBlzNboYNEF7Ro7t8zHimAye48s1ohctNpopeR%2BXxvkbX2Gs8FW0g4NV%2Fh2cMkCEA3P%2FNxT6B3peMxYGuFZ8%3D"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1576637402,
+            "title": "\u4f0a\u6717\u4eae\u51fa\u771f\u6b63\u5e95\u724c,\u7f8e\u519b\u4e2d\u4e1c\u53f8\u4ee4\u90e8<em>\u7d27\u6025\u64a4\u56de</em>\u672c\u571f,3\u767e\u67b6\u6218\u673a\u6212\u5907",
+            "url": "https://www.360kuai.com/pc/9623c53bf491b728a?cota=3&kuai_so=1&sign=360_57c3bbd1&refer_scene=so_1"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1576637402,
+            "title": "\u667a\u6167\u957f\u6c99- \u8fd9\u5ea7\u57ce\u5e02<em>\u7d27\u6025\u64a4\u56de</em>\u201c\u53d6\u6d88\u9650\u552e\u201d\u6587\u4ef6!\u5565\u60c5\u51b5?\u5f53\u5730\u4f4f\u5efa\u5c40...",
+            "url": "https://www.so.com/link?m=a9siC8%2FpUzXyHAWaRdzaHLGTrpuGMiKSC9YRXgfgXce84emzHx14YMf8SYSt6JSqKcW4YWRhhEsbLtEiHnndBqG1crXApWTAmduLcYBy1D1Ckxgwb%2BTgZ%2BFDgt%2FcadLSM5zbHbmLKyA4yqa2p%2BcqHTnshNkNkEG9eO1GQSvL9EyU%3D"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1576637402,
+            "title": "\u7f8e\u66fe<em>\u7d27\u6025\u64a4\u56de</em>\u5728\u4fc4\u6700\u9ad8\u95f4\u8c0d?_\u7279\u6717\u666e",
+            "url": "https://www.so.com/link?m=a3uiDk3xoByRGgv%2BfrXnFyQ2vO%2BZuLMFEEejg%2BNokjxWgh9zUYCN3d4ertAgAQrAAXPM6Fex1NRGK62ITit3ogjqNx%2F5FPRYVMYQVZtgQBgM37C%2Fa3l4sTFZB%2FrcFU6CU0i2FCUNuFXYfyvdKXhE%2FjuRvgonC21pcRqXRyr4KAEA%3D"
+        },
+        {
+            "rank": 7,
+            "snippet": "\u82b1\u706b\u7f51\u8baf\u6700\u8fd1\u6709\u7528\u6237\u53cd\u9988\u82f9\u679c\u672c\u5468\u53d1\u5e03\u7684\u65b0\u7cfb\u7edf\u7248\u672ciOS 13.2,\u53ef\u5f15\u53d1\u667a\u80fd\u97f3\u7bb1\u5347\u7ea7\u540e\u65e0\u6cd5\u4f7f\u7528\u7684\u60c5\u51b5\u3002\u82f9\u679c\u516c\u53f8<em>\u7d27\u6025</em>\u5bf9\u8be5\u5347\u7ea7\u7248\u672c<em>\u64a4\u56de</em>,\u5e76\u547c\u5401\u7528\u6237\u6682\u7f13\u5bf9\u667a\u80fd\u97f3\u7bb1\u7684\u7cfb\u7edf\u66f4\u65b0...",
+            "timestamp": 1576637402,
+            "title": "\u82f9\u679c\u4e3a\u4f55\u8981<em>\u7d27\u6025\u64a4\u56de</em>HomePod\u667a\u80fd\u97f3\u7bb1\u7cfb\u7edf\u5347\u7ea7_\u4e92\u8054\u7f51_\u82b1\u706b\u7f51",
+            "url": "https://www.huahuo.com/hulianwang/2019-10-31/92453.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1576637402,
+            "title": "\u653f\u7b56\u677e\u7ed1:\u591a\u5bb6\u4e0a\u5e02\u516c\u53f8<em>\u7d27\u6025\u64a4\u56de</em>\u518d\u878d\u8d44\u65b9\u6848\u6b32\u91cd\u505a!_\u79c1\u52df\u6392\u6392\u7f51",
+            "url": "https://www.simuwang.com/news/show-418-228603.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1576637402,
+            "title": "\u7f8e\u5a92\u62a5\u9053 \u60ca\u4eba\u5185\u5e55 :\u7f8e\u56fd\u66fe<em>\u7d27\u6025\u64a4\u56de</em>\u5728\u4fc4\u6700\u9ad8\u95f4\u8c0d_\u65b0\u95fb\u9891\u9053_\u4e2d\u534e\u7f51",
+            "url": "https://news.china.com/international/1000/20190911/37024771.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1576637402,
+            "title": "\u5f00\u5c01\u697c\u5e02\u53d1\u4e86\u6587\u4ef6\u53c8<em>\u7d27\u6025\u64a4\u56de</em>!\u4e00\u5927\u6279\u57ce\u5e02\u5728\u6269\u5f20!\u9ec4\u91d1\u6982\u5ff5\u6da8\u55e8\u4e86_...",
+            "url": "https://www.so.com/link?m=a%2BZ4cmU1z3ZlZmSboMNSAJ66Q4mA0NrN7Nal2W%2BIm0wAl3TYjzMc6BxPyA7Wwt40Xo4cNnCNla4opdAHCoV7nhcpqqBQgQX%2FzsoaT4FH7HROoQcqgWa58QganC088qibrX5op%2FZ41W%2FCeG%2BPU4QQPw0N7IimCPUcmM3KC3UOUHxD0md6vhwID7U9C5NhysFKpNrrxmg%3D%3D"
+        }
+    ],
+    "timestamp": 1576637402,
+    "url": "https://www.so.com/s?q=%E7%B4%A7%E6%80%A5%E6%92%A4%E5%9B%9E&src=webcache"
+}

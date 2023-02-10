@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u8288\u6708\u4f20",
+    "offset": null,
+    "page": null,
+    "query": "James Boshier",
+    "results": [],
+    "timestamp": 1449178049,
+    "url": "http://v.qq.com//search.html?pagetype=3&ms_key=James+Boshier"
+}

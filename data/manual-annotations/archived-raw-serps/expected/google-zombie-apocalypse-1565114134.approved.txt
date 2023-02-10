@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "zombie apocalypse",
+    "offset": null,
+    "page": null,
+    "query": "zombie apocalypse",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "What other EPIC stuff do you want to learn? \u25bb\u25bb Subscribe! http://brrk.co/AWEsub How long would you last in a ...",
+            "timestamp": 1565114134,
+            "title": "How To Survive the Zombie Apocalypse - EPIC HOW TO - YouTube",
+            "url": "https://www.youtube.com/watch?v=uPx2DT49yMg"
+        },
+        {
+            "rank": 2,
+            "snippet": "The <em>zombie apocalypse</em> isn't as far off as you'd think. Which means it's better to be safe than sorry.",
+            "timestamp": 1565114134,
+            "title": "The 10 Best States for Surviving a Zombie Apocalypse | Mental Floss",
+            "url": "http://mentalfloss.com/article/587597/best-states-for-surviving-zombie-apocalypse"
+        },
+        {
+            "rank": 3,
+            "snippet": "We've all secretly wished for a real <em>zombie apocalypse</em> at one point or ... a real <em>zombie apocalypse</em> would ...",
+            "timestamp": 1565114134,
+            "title": "How Could We Survive a Zombie Apocalypse? - YouTube",
+            "url": "https://www.youtube.com/watch?v=ynuOn7voQHc"
+        },
+        {
+            "rank": 4,
+            "snippet": "CREDITS: 1. The Full Auto Pencil Shooter Ballistic https://www.youtube.com/watch?v=aDy2A2IbanA 2. \"The ...",
+            "timestamp": 1565114134,
+            "title": "10 People who will Survive in Zombie Apocalypse - YouTube",
+            "url": "https://www.youtube.com/watch?v=_C4VBJ1gGEc"
+        },
+        {
+            "rank": 5,
+            "snippet": "Top 10 <em>Zombie Apocalypse</em> Survival Tips // Subscribe: http://goo.gl/Q2kKrD // TIMESTAMPS BELOW ...",
+            "timestamp": 1565114134,
+            "title": "Top 10 Zombie Apocalypse Survival Tips - YouTube",
+            "url": "https://www.youtube.com/watch?v=ovHUBZEg1lQ"
+        },
+        {
+            "rank": 6,
+            "snippet": "Logan Miller and Joey Morgan from \"Scouts Guide to the <em>Zombie Apocalypse</em>\" show you how to hack together ...",
+            "timestamp": 1565114134,
+            "title": "How to Survive a Zombie Apocalypse - YouTube",
+            "url": "https://www.youtube.com/watch?v=MUoFxl8t1e8"
+        },
+        {
+            "rank": 7,
+            "snippet": "If there was a zombie outbreak, where would you go, what would you do, and could ... Brilliant Places to HIDE ...",
+            "timestamp": 1565114134,
+            "title": "What to do in case of a Zombie outbreak - YouTube",
+            "url": "https://www.youtube.com/watch?v=zgB_IeVnS08"
+        },
+        {
+            "rank": 8,
+            "snippet": "Learn more about Counter-Zombie Dominance, the Pentagon's plan in case of a <em>zombie apocalypse</em> ...",
+            "timestamp": 1565114134,
+            "title": "The U.S. Government's Zombie Apocalypse Plan | HISTORY - YouTube",
+            "url": "https://www.youtube.com/watch?v=rAFCrfdIFyg"
+        },
+        {
+            "rank": 9,
+            "snippet": "View full lesson: http://ed.ted.com/lessons/how-do-you-decide-where-to-go-in-a-<em>zombie</em>-<em>apocalypse</em>-david ...",
+            "timestamp": 1565114134,
+            "title": "How do you decide where to go in a zombie apocalypse? - David ...",
+            "url": "https://www.youtube.com/watch?v=vdtQgwOOiBg"
+        },
+        {
+            "rank": 10,
+            "snippet": "Do you think Schools are a good place for the <em>Zombie Apocalypse</em>? SUBSCRIBE for MORE Zombie Survival ...",
+            "timestamp": 1565114134,
+            "title": "Are Schools GOOD in a Zombie Apocalypse? - YouTube",
+            "url": "https://www.youtube.com/watch?v=Mcw0X5WzX3o"
+        }
+    ],
+    "timestamp": 1565114134,
+    "url": "https://www.google.com/search?q=zombie+apocalypse&rlz=1C1GCEA_enGB797GB797&source=lnms&tbm=vid&sa=X&ved=0ahUKEwjo4aahg-_jAhUPTcAKHa1NCZ4Q_AUIEigC"
+}

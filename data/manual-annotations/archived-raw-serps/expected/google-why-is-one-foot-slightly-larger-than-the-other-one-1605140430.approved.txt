@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "Why is one foot slightly larger than the other one?",
+    "offset": null,
+    "page": null,
+    "query": "Why is one foot slightly larger than the other one?",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Why Is One Foot Bigger Than The Other? - CoreWalking",
+            "timestamp": 1605140430,
+            "title": "Why Is One Foot Bigger Than The Other? - CoreWalking",
+            "url": "https://corewalking.com/one-foot-bigger/"
+        },
+        {
+            "rank": 2,
+            "snippet": "It's very common and perfectly normal to have <em>feet</em> that are <em>different</em> sizes. ... In fact, some people to have <em>one foot</em> that's up to 3 inches <em>bigger than</em> the <em>other</em>! ... the <em>foot</em> opposite the dominant hand is exercised <em>more</em>, creating the <em>slight</em> variance\u00a0...",
+            "timestamp": 1605140430,
+            "title": "Is It Normal to Have Different-Sized Feet? - Center for Foot ...",
+            "url": "https://cincinnatifootcare.com/foot-health/normal-different-sized-feet/"
+        },
+        {
+            "rank": 3,
+            "snippet": "12\u200f/03\u200f/2015 \u2014 I used to think it was so the shoe companies could make <em>more</em> money because everyone would have to buy two pairs of shoes in <em>different</em> sizes. As it turns out\u00a0...",
+            "timestamp": 1605140430,
+            "title": "Why does everyone have one foot bigger than the other ...",
+            "url": "https://www.quora.com/Why-does-everyone-have-one-foot-bigger-than-the-other"
+        },
+        {
+            "rank": 4,
+            "snippet": "19\u200f/01\u200f/2012 \u2014 Actually, almost everyone has <em>one foot slightly</em> longer <em>than</em> the <em>other</em>. The difference is usually less <em>than</em> half <em>a</em> shoe size so it does not need to be\u00a0...",
+            "timestamp": 1605140430,
+            "title": "One foot bigger than the other - What can I do?? | Styleforum",
+            "url": "https://www.styleforum.net/threads/one-foot-bigger-than-the-other-what-can-i-do.283906/"
+        },
+        {
+            "rank": 5,
+            "snippet": "19\u200f/12\u200f/2012 \u2014 Having <em>one foot</em> that is <em>larger than another</em> is extremely common. The human ... <em>One</em> of my <em>feet</em> is <em>slightly larger than</em> the <em>other one</em>. Not enough\u00a0...",
+            "timestamp": 1605140430,
+            "title": "Reader Poll: Is One of Your Feet Bigger Than the Other ...",
+            "url": "https://sectionhiker.com/reader-poll-is-one-of-your-feet-bigger-than-the-other/"
+        },
+        {
+            "rank": 6,
+            "snippet": "11\u200f/06\u200f/2015 \u2014 Almost everyone in the population has <em>slightly</em> to very noticeably differently sized <em>feet</em>. So, you're pretty much normal. Sometimes, if you contact customer service\u00a0...",
+            "timestamp": 1605140430,
+            "title": "One foot bigger than the other : femalefashionadvice - Reddit",
+            "url": "https://www.reddit.com/r/femalefashionadvice/comments/398lxr/one_foot_bigger_than_the_other/"
+        },
+        {
+            "rank": 7,
+            "snippet": "You may not believe this but our <em>feet</em> differ in size <em>from</em> each <em>other</em>. \u00b7 The structure of our body is not completely symmetrical. \u00b7 Our right side is <em>slightly more</em>\u00a0...",
+            "timestamp": 1605140430,
+            "title": "One of our Feet Bigger than the Other - Science Inspiration",
+            "url": "http://scienceinspiration.blogspot.com/2012/11/one-of-our-feet-bigger-than-other.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "If your <em>feet</em> have <em>more than a 1 1</em>/2 size difference, <em>then</em> getting mismatched shoes would be better for your <em>feet's</em> health and protection. However, if money is <em>a</em>\u00a0...",
+            "timestamp": 1605140430,
+            "title": "Shoes For Different Sized Feet | Healthy Feet Store",
+            "url": "https://www.healthyfeetstore.com/different-sized-feet.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Yes, <em>different</em> sized <em>feet</em> is quite common so you're not alone. In fact two thirds of people have <em>one foot larger than</em> the <em>other</em>, usually the right <em>foot</em>. Hereditary\u00a0...",
+            "timestamp": 1605140430,
+            "title": "Uneven feet - Wolky shoes",
+            "url": "https://www.wolkyshop.co.uk/2613-wolkylife.html"
+        }
+    ],
+    "timestamp": 1605140430,
+    "url": "https://www.google.com/search?q=Why%20is%20one%20foot%20slightly%20larger%20than%20the%20other%20one%3F"
+}

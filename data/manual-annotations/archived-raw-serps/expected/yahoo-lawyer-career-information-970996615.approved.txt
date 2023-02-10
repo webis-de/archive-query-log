@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "lawyer career information",
+    "offset": null,
+    "page": null,
+    "query": "lawyer career information",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970996615,
+            "title": "MacNicol, Peter",
+            "url": "http://srd.yahoo.com/srst/7018198/lawyer+career+information/1/1/*http://www.petermacnicol.net"
+        }
+    ],
+    "timestamp": 970996615,
+    "url": "http://search.yahoo.com:80/search?p=lawyer+career+information"
+}

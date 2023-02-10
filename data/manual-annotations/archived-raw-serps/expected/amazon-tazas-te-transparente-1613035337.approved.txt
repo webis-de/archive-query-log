@@ -1,0 +1,430 @@
+{
+    "interpreted_query": "tazas te transparente",
+    "offset": null,
+    "page": null,
+    "query": "tazas te transparente",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Omada Design 2 tazas de caf\u00e9 de 9 cl con bandeja y azucarero, respectivamente en porcelana y acr\u00edlico transparente y de color, Crystal Line",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A08054433SIRFM0UPA1OB&url=%2Fazucarero-porcelana-acr%25C3%25ADlico-transparente-omadadesign%2Fdp%2FB00B4PLQ5S%2Fref%3Dsr_1_1_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-1-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_atf"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Zaloife Juego de Vasos para Caf\u00e9 Latte Macchiato, 2 Piezas Tazas Cafe 250 ml, Vaso Doble Pared, Vidrio Glasses, Transparente",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A05422552EUF9AKENGK33&url=%2FMacchiato-Piezas-Vidrio-Glasses-Transparente%2Fdp%2FB083DK2P33%2Fref%3Dsr_1_2_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-2-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_atf"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "VEVOUK - Juego de 2 tazas de caf\u00e9 aisladas con espiral estrellada de doble pared t\u00e9rmica, transparente, 240 ml, ideal para latte, capuchinos y bebidas, juegos de tazas de t\u00e9",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A0491762QGB14AO2LHV8&url=%2FVEVOUK-aisladas-estrellada-transparente-capuchinos%2Fdp%2FB0887X6LD9%2Fref%3Dsr_1_3_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-3-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_atf"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Accesorio Nutribullet, Tazas Nutribullet 32OZ y tapa de la taza, Tazas transparentes Tazas Pieza de repuesto Accesorios del exprimidor para NUTRIBULLET Exprimidor de licuadora Nutri Bullet 900W 600W",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A02960963PZNUZKEMQ34F&url=%2FNutribullet-transparentes-Accesorios-exprimidor-NUTRIBULLET%2Fdp%2FB082CYTGL2%2Fref%3Dsr_1_4_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-4-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_atf"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Taza de Caf\u00e9 de Vidrio Forma de Coraz\u00f3n Taza de Caf\u00e9 Aislada de Doble Pared Taza de T\u00e9 Capuchino Transparente de 180 ml, 6 oz con Platillo y Cucharas de Caf\u00e9 Forma Coraz\u00f3n para San Valent\u00edn",
+            "url": "https://www.amazon.es/Capuchino-Transparente-Platillo-Cucharas-Valent%C3%ADn/dp/B08R8832CL/ref=sr_1_5?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-5&tag=loxlo3-21"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "ShawFly Paquete de 2 tazas de vidrio de caf\u00e9 con doble aislamiento, tazas de vidrio transparente, bebidas fr\u00edas, jugo de agua, vino leche, caf\u00e9, agua, t\u00e9 helado y taza de c\u00f3cteles(1, 250 ml)",
+            "url": "https://www.amazon.es/ShawFly-Paquete-aislamiento-transparente-c%C3%B3cteles/dp/B08N172NBT/ref=sr_1_6?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-6&tag=loxlo3-21"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "UMI. Tazas de Vidrio de caf\u00e9 Essentials de 300 ml, Paquete de 6 Tazas Transparentes para Capuchino, t\u00e9 con Leche, Jugo de Leche",
+            "url": "https://www.amazon.es/Vidrio-Essentials-Paquete-Transparentes-Capuchino/dp/B08G825BDY/ref=sr_1_7?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-7&tag=loxlo3-21"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Lav - Juego de 6 tazas para bebidas calientes, base de color, t\u00e9, caf\u00e9 y caf\u00e9 latte, capuchino, tazas de cristal (225 cc)",
+            "url": "https://www.amazon.es/bebidas-calientes-capuchino-vidrio-bebida/dp/B07XZFRSGZ/ref=sr_1_8?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-8&tag=loxlo3-21"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "STRMZD Taza de t\u00e9 de flores, Taza transparente de esmalte sin plomo, Taza de caf\u00e9 de vidrio con cuchara de acero, Ni\u00f1a hermana, madre, d\u00eda de San Valent\u00edn, Navidad, Regalos personalizados para mujeres",
+            "url": "https://www.amazon.es/STRMZD-transparente-esmalte-Valent%C3%ADn-personalizados/dp/B08PYYK63W/ref=sr_1_9?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-9&tag=loxlo3-21"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "UMI. Essentials Tazas de Vidrio de caf\u00e9 de 350 ml de Doble Pared para Capuchino, t\u00e9, Leche, Jugo, 2 Juegos, Transparente",
+            "url": "https://www.amazon.es/Essentials-Vidrio-Capuchino-Juegos-Transparente/dp/B08G8LBWFW/ref=sr_1_10?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-10&tag=loxlo3-21"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Taza linda Taza de caf\u00e9 Taza de t\u00e9 Vasos Vasos con aislamiento de doble pared Taza de caf\u00e9 Taza de leche, El mejor regalo para la oficina y cumplea\u00f1os personal (Oso)",
+            "url": "https://www.amazon.es/Binoster-Aislamiento-Oficina-cumplea%C3%B1os-Personal/dp/B07ZFC7K3F/ref=sr_1_11?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-11&tag=loxlo3-21"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Vevouk Juego de tazas de caf\u00e9 de cristal aisladas de doble pared con asa, de vidrio para caf\u00e9 con latte, 2 juegos para t\u00e9, caf\u00e9, caf\u00e9 latte, capuchino, expreso, bebidas fr\u00edas\u2026",
+            "url": "https://www.amazon.es/cristal-aisladas-capuchino-expreso-bebidas/dp/B0887XP1RN/ref=sr_1_12?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-12&tag=loxlo3-21"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "evecase Juego de tazas de caf\u00e9 de cristal transparente con dise\u00f1o de mariposa, con cuchara de acero, regalos para mujeres, esposa,maestra, cumplea\u00f1os, d\u00eda de la madre",
+            "url": "https://www.amazon.es/EveCase-transparente-personalizado-cumplea%C3%B1os-Valent%C3%ADn/dp/B07Q3X6G4F/ref=sr_1_13?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-13&tag=loxlo3-21"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "BOQO Tazas de Vidrio Doble Pared, Taza de Cristal con Mango,400ml Juego de 2",
+            "url": "https://www.amazon.es/BOQO-Tazas-Vidrio-Doble-Cristal/dp/B07P7JPCWB/ref=sr_1_14?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-14&tag=loxlo3-21"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "EZOWare 350ml Tazas de Caf\u00e9 Reutilizables para Llevar, Vasos de Viaje en Cristal con Funda y Tapa de Silicona para Bebidas Calientes o Heladas, Caf\u00e9, Bebidas, Te - Set de 4, Colores Variados",
+            "url": "https://www.amazon.es/EZOWare-Reutilizables-Cristal-Silicona-Calientes/dp/B087Z3M9ZV/ref=sr_1_15?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-15&tag=loxlo3-21"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "2pcs Taza de Caf\u00e9,Vaso de Caf\u00e9,Taza de Caf\u00e9 de Vidrio de Pared Doble de 350 ML, Tazas de Cristal Caf\u00e9 Espresso Transparente,Resistente al Calor para Bebida Fr\u00eda/Caliente, Caf\u00e9, T\u00e9, Leche, Cerveza",
+            "url": "https://www.amazon.es/Piezas-Resistente-Bebidas-Calientes-Cerveza/dp/B089NPK7W4/ref=sr_1_16?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-16&tag=loxlo3-21"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "N\\A Tetera de cristal de vidrio con tapa, doble pared, resistente al calor, botella transparente para ni\u00f1os, escuela, guarder\u00eda, deportes al aire libre, bicicleta, fitness, camping",
+            "url": "https://www.amazon.es/N-resistente-transparente-guarder%C3%ADa-bicicleta/dp/B08KW6STZ7/ref=sr_1_17?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-17&tag=loxlo3-21"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Juego de 6 vasos de caf\u00e9 con mango de metal, 22 cl, 220 ml, juego de 6 vasos de vidrio transparente, caf\u00e9, capuchino, tazas de t\u00e9 helado, vasos, tazas",
+            "url": "https://www.amazon.es/Juego-vidrio-transparente-capuchino-helado/dp/B08VWLMM75/ref=sr_1_18?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-18&tag=loxlo3-21"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Nerthus FIH 664 Filtro 350 ml, Aislante Gracias a su Doble Pared, Botella infusor, Termo, Taza de Viaje, Tetera de Cristal, 0.35 litros",
+            "url": "https://www.amazon.es/Nerthus-FIH-664-664-Botella-Aislante/dp/B0855525PW/ref=sr_1_19?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-19&tag=loxlo3-21"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "VEVOUK - Juego de 2 tazas de caf\u00e9 aisladas con espiral estrellada de doble pared t\u00e9rmica, transparente, 240 ml, ideal para latte, capuchinos y bebidas, juegos de tazas de t\u00e9",
+            "url": "https://www.amazon.es/VEVOUK-aisladas-estrellada-transparente-capuchinos/dp/B0887X6LD9/ref=sr_1_20?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-20&tag=loxlo3-21"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "YUEMING Taza de t\u00e9, Vidrio, Taza de caf\u00e9, Taza Transparente, Vidrio de borosilicato Resistente al Calor, Taza, Taza de t\u00e9, Taza de Oficina",
+            "url": "https://www.amazon.es/YUEMING-Transparente-borosilicato-Resistente-Oficina/dp/B07WTLV89Y/ref=sr_1_21?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-21&tag=loxlo3-21"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Amisglass Tazas de Vidrio para Caf\u00e9, Juego de 2 Piezas de Vasos de Doble Pared de Caf\u00e9 de Cristal Transparente Ideal para Caf\u00e9 y T\u00e9 - 93 ml",
+            "url": "https://www.amazon.es/Amisglass-Vidrio-Piezas-Cristal-Transparente/dp/B082KRWV5Z/ref=sr_1_22?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-22&tag=loxlo3-21"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "HEYNNA\u00ae Tazas de Caf\u00e9 2 x 250 ml Vasos de Caf\u00e9 de Cristal con Doble Pared Hechos de Vidrio Borosilicato \u2013 Vasos de Caf\u00e9 Aptos para Lavavajillas",
+            "url": "https://www.amazon.es/HEYNNA%C2%AE-Cristal-Hechos-Vidrio-Borosilicato/dp/B088MKVNH1/ref=sr_1_23?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-23&tag=loxlo3-21"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "CMXING Tazas de caf\u00e9 de Pared Doble Copas Tazas de caf\u00e9 Termo Transparentes aisladas para Espresso Cappuccino Latte (300 ml)",
+            "url": "https://www.amazon.es/Cmxing-cristal-Pared-Espresso-Paquete/dp/B07GR19GTY/ref=sr_1_24?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-24&tag=loxlo3-21"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Ecooe Doble Pared de Vidrio de Borosilicato Tazas para el T\u00e9 Caf\u00e9 con Leche Latte Capuchino Jugo 2x350ml",
+            "url": "https://www.amazon.es/Ecooe-tazas-vidrio-doble-pared/dp/B077MZ6YNX/ref=sr_1_25?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-25&tag=loxlo3-21"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Samadoyo taza de t\u00e9 de cristal de borosilicato de alta calidad con de calidad alimentaria sus # 304 infusor filtro, t\u00e9 taza para caf\u00e9 de t\u00e9 o t\u00e9 bolsa, resistente al calor, 500 ml, LFGB Test.",
+            "url": "https://www.amazon.es/Samadoyo-cristal-borosilicato-alimentaria-resistente/dp/B01N4C3HB3/ref=sr_1_26?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-26&tag=loxlo3-21"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "BESTonZON Tazas de caf\u00e9 de Vidrio de 480ML Taza Transparente Grande Resistente al Calor con Mango para Leche Latte Cappuccinos Bolsa de t\u00e9 Bebida",
+            "url": "https://www.amazon.es/BESTONZON-Vidrio-Transparente-Resistente-Cappuccinos/dp/B07P5S45H1/ref=sr_1_27?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-27&tag=loxlo3-21"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Decdeal Taza de T\u00e9 de Cristal de Flores con Cuchara, sin Plomo Rosa y Mariposa de Vidrio Transparente con Asa, Regalo de Cumplea\u00f1os/Navidad para Mujeres Mam\u00e1 Abuela Amiga",
+            "url": "https://www.amazon.es/Decdeal-Cristal-Mariposa-Transparente-Cumplea%C3%B1os/dp/B081GQNFJ2/ref=sr_1_28?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-28&tag=loxlo3-21"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "BOQO Tazas de Vidrio Doble Pared, Taza de Cristal con Mango,400ml Juego de 2",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A080982016LPXVD0CIVOW&url=%2FBOQO-Tazas-Vidrio-Doble-Cristal%2Fdp%2FB07P7JPCWB%2Fref%3Dsr_1_29_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-29-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_mtf"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Alliebe clavos libres de ganchos adhesivos ganchos de pared 6KG(Max) transparente reutilizable sin costura ganchos impermeables y a prueba toalla tazas tazas de esp\u00e1tula(24Pack)",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A0012340NQXGNYGPUNQ3&url=%2FAlliebe-adhesivos-transparente-reutilizable-impermeables%2Fdp%2FB08L6DGT13%2Fref%3Dsr_1_30_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-30-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_mtf"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Soporte de Taza Caf\u00e9 de Acr\u00edlico Transparente Extra\u00edbles de 14 Pulgadas Soporte Transparente de \u00c1rbol para Tazas de Caf\u00e9 para Contador con 6 Ganchos",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A01872171HF7F76ZS79FW&url=%2FAcr%25C3%25ADlico-Transparente-Extra%25C3%25ADbles-Pulgadas-Contador%2Fdp%2FB08R8SWR6S%2Fref%3Dsr_1_31_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-31-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_mtf"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "VEVOUK Juego de 2 tazas de caf\u00e9 de vidrio con aislamiento de doble pared de 220 ml, resistentes al calor, tazas de caf\u00e9 transparentes con asas para t\u00e9, latte, capuchino, leche, zumo, d\u00eda de Navidad\u2026",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A04917862IBO8A9U6B470&url=%2Faislamiento-resistentes-transparentes-capuchino-Navidad%2Fdp%2FB08883KTKM%2Fref%3Dsr_1_32_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-32-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_mtf"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "BODUM 11889-01S JOYCUP - Taza de viaje, doble pared, 0,3 l, banda negra, pl\u00e1stico",
+            "url": "https://www.amazon.es/BODUM-11889-01S-JOYCUP-viaje-pl%C3%A1stico/dp/B0817FHVF4/ref=sr_1_33?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-33&tag=loxlo3-21"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Decdeal - Taza de caf\u00e9 y t\u00e9 de Cristal Transparente con decoraci\u00f3n esmaltada de Flores con Cuchara y toallita, Caja de Regalo",
+            "url": "https://www.amazon.es/Decdeal-Transparente-decoraci%C3%B3n-esmaltada-toallita/dp/B081RLXCZ9/ref=sr_1_34?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-34&tag=loxlo3-21"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Omada Design 2 tazas grandes de 35 cl y dos platillos de colores, respectivamente en porcelana y acr\u00edlico transparente, perfectos para el desayuno, Diamond Line",
+            "url": "https://www.amazon.es/respectivamente-porcelana-transparente-perfectos-Omadadesign/dp/B07H362JWY/ref=sr_1_35?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-35&tag=loxlo3-21"
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Pasabahce Vela Servicio Taza T\u00e8 con Platillo, Vidrio, Transparente, 6 Piezas",
+            "url": "https://www.amazon.es/Pasabahce-Servicio-Platillo-Vidrio-Transparente/dp/B009923IU4/ref=sr_1_36?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-36&tag=loxlo3-21"
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Summer Boonie Bucket Hats For Mens Fisherman Hats With Wide Brim Sun Fishing Bucket Hat Breathable mesh polyester",
+            "url": "https://www.amazon.es/Beddingleer-calentador-transparentes-elegante-resistentes/dp/B072M5BZCH/ref=sr_1_37?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-37&tag=loxlo3-21"
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "WDragon Juego de 4 tazas de t\u00e9 y caf\u00e9 de borosilicato transparente de 300 ml",
+            "url": "https://www.amazon.es/wDragon-claro-cristal-borosilicato-espresso/dp/B0722LFXB6/ref=sr_1_38?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-38&tag=loxlo3-21"
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Taza de t\u00e9, taza de vidrio transparente, personalizada con grabado - grande",
+            "url": "https://www.amazon.es/Taza-vidrio-transparente-personalizada-grabado/dp/B08QYSP8X6/ref=sr_1_39?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-39&tag=loxlo3-21"
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "STRMZD Taza de t\u00e9 de flores, Taza transparente de esmalte sin plomo, Taza de caf\u00e9 de vidrio con cuchara de acero, Ni\u00f1a hermana, madre, d\u00eda de San Valent\u00edn, Navidad, Regalos personalizados para mujeres",
+            "url": "https://www.amazon.es/STRMZD-transparente-esmalte-Valent%C3%ADn-personalizados/dp/B08NGQNFG7/ref=sr_1_40?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-40&tag=loxlo3-21"
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "ANSUG Doble taza de caf\u00e9 de cristal con cuchara de cristal, vasos de cristal resistentes al calor, taza transparente con asa para t\u00e9, caf\u00e9, capuchino, cerveza.",
+            "url": "https://www.amazon.es/Ansug-cristal-resistente-transparente-capuchino/dp/B086BMNPM7/ref=sr_1_41?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-41&tag=loxlo3-21"
+        },
+        {
+            "rank": 43,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Zaloife Juego de Vasos para Caf\u00e9 Latte Macchiato, 2 Piezas Tazas Cafe 250 ml, Vaso Doble Pared, Vidrio Glasses, Transparente",
+            "url": "https://www.amazon.es/Macchiato-Piezas-Vidrio-Glasses-Transparente/dp/B083DK2P33/ref=sr_1_42?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-42&tag=loxlo3-21"
+        },
+        {
+            "rank": 44,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Creano Taza de T\u00e9 con Tapa, Pr\u00e1ctica para Fior di T\u00e8lini o Bolsita de T\u00e9, Latte Macchiato, Caf\u00e9 | 200ml",
+            "url": "https://www.amazon.es/Creano-GlasTasse-Teelini-139-cristal/dp/B00GJRNGX6/ref=sr_1_43?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-43&tag=loxlo3-21"
+        },
+        {
+            "rank": 45,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Phoetya Taza de cristal con forma de coraz\u00f3n, doble pared de cristal con asa, taza de caf\u00e9 y zumo, taza de cristal de doble pared, transparente, \u00fanica (180 ml)",
+            "url": "https://www.amazon.es/Phoetya-cristal-forma-coraz%C3%B3n-transparente/dp/B08Q82PTQY/ref=sr_1_44?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-44&tag=loxlo3-21"
+        },
+        {
+            "rank": 46,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "ZHANG Mango De Vidrio Taza De Caf\u00e9 para El Hogar Taza De Agua Doble Taza De Jugo con Aislamiento T\u00e9rmico Transparente Taza De T\u00e9",
+            "url": "https://www.amazon.es/ZHANG-Vidrio-Aislamiento-T%C3%A9rmico-Transparente/dp/B08T19WJH3/ref=sr_1_45?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-45&tag=loxlo3-21"
+        },
+        {
+            "rank": 47,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Pasabahce 97302 - 6 tazas de caf\u00e9 con platillo \"Vela\", para t\u00e9, caf\u00e9 y capuchino, para 6 personas",
+            "url": "https://www.amazon.es/tlg-tazas-caf%C3%A9-plato-base/dp/B016QJ6O8A/ref=sr_1_46?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-46&tag=loxlo3-21"
+        },
+        {
+            "rank": 48,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "GooDoi Taza de Caf\u00e9 de Cristal Pared Doble Vaso Taza, Tazas para Espresso Juego de Vasos para Caf\u00e9 Latte Macchiato, 300ML, 2 Piezas",
+            "url": "https://www.amazon.es/GooDoi-Cristal-Espresso-Macchiato-Piezas/dp/B07QLHH1F9/ref=sr_1_47?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-47&tag=loxlo3-21"
+        },
+        {
+            "rank": 49,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Cooko Cristal Vidrio de Caf\u00e9 de Doble Pared, Tazas de Caf\u00e9 Resistentes al Calor, Alta Tazas Borosilicato con Mango Para T\u00e9, Latte, Leche, Cappuccino, Jugo,350ml Juego de 1",
+            "url": "https://www.amazon.es/Cooko-Cristal-Resistentes-Borosilicato-Cappuccino/dp/B073FD93CL/ref=sr_1_48?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-48&tag=loxlo3-21"
+        },
+        {
+            "rank": 50,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Taza de t\u00e9 resistente al calor de doble capa de cristal de borosilicato transparente con infusor y tapa, taza de t\u00e9, 350 ml, 8.5 onzas",
+            "url": "https://www.amazon.es/infusor-borosilicato-transparente-resistente-cristal/dp/B06XCX6R9Y/ref=sr_1_49?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-49&tag=loxlo3-21"
+        },
+        {
+            "rank": 51,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Tetera de cristal transparente de 550 ml con infusor de acero inoxidable resistente al calor, perfecta para t\u00e9 y caf\u00e9 (550 ml)",
+            "url": "https://www.amazon.es/cristal-transparente-inoxidable-resistente-perfecta/dp/B08H5CQJD1/ref=sr_1_50?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-50&tag=loxlo3-21"
+        },
+        {
+            "rank": 52,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "PluieSoleil Tetera de Cristal Resistente con Infusor Elegante,Tetera Te de Vidrio con Filtro de Borosilicato con Tapa,Teteras de Cristal con Filtro para Te Infusiones",
+            "url": "https://www.amazon.es/PluieSoleil-Cristal-Infusor-Inoxidable-Resistente/dp/B07GJFDN5R/ref=sr_1_51?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-51&tag=loxlo3-21"
+        },
+        {
+            "rank": 53,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "furein Tetera Multiuso de Cristal Transparente y Acero Inoxidable para T\u00e9, Infusiones o Caf\u00e9 con Filtro (500ML)",
+            "url": "https://www.amazon.es/furein-Multiuso-Transparente-Inoxidable-Infusiones/dp/B083HGVKGZ/ref=sr_1_52?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-52&tag=loxlo3-21"
+        },
+        {
+            "rank": 54,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "GuangYang Juegos Tazas de Caf\u00e9 Porcelana Vintage - 7OZ/220ML Conjuntos de Taza y Platillo Inglesa Patr\u00f3n de Rosa Flores Set de 6 Tazas de T\u00e9/Cappuccino",
+            "url": "https://www.amazon.es/Juegos-Tazas-Caf%C3%A9-Porcelana-Vintage/dp/B07JHZLND7/ref=sr_1_53?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-53&tag=loxlo3-21"
+        },
+        {
+            "rank": 55,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "2x Vaso de t\u00e9 PURE500 hecho del Borosilicate a prueba de calor (450 ml) - lavavajillas a mano y altamente transparente - GAIWAN\u00ae GERMANY",
+            "url": "https://www.amazon.es/PURE500-hecho-Borosilicate-prueba-calor/dp/B06XN67MP8/ref=sr_1_54?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-54&tag=loxlo3-21"
+        },
+        {
+            "rank": 56,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Dajar A La Bonne Heure - Taza (cristal, 250 ml, 7,1 cm), color transparente",
+            "url": "https://www.amazon.es/Dajar-250-ML-Luminarc-Cristal-Transparente/dp/B077GY9PVJ/ref=sr_1_55?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-55&tag=loxlo3-21"
+        },
+        {
+            "rank": 57,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Ibili 624500 - Taza de t\u00e9 con filtro, cristal, transparente, 12 x 10 x 14 cm",
+            "url": "https://www.amazon.es/Ibili-624500-Taza-Filtro-Vidrio-Transparente/dp/B07CFYR73F/ref=sr_1_56?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&dchild=1&keywords=tazas+te+transparente&linkCode=sl2&linkId=3e3ee226a50fb1466af6122597a0551c&qid=1613038938&sprefix=tazas+te+tra%2Caps%2C244&sr=8-56&tag=loxlo3-21"
+        },
+        {
+            "rank": 58,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "GAIWAN PURE 550S - Vaso de t\u00e9 con infusor y tapa incorporados - Apto para lavavajillas - Resistente al calor",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_btf_aps_sr_pg1_1?ie=UTF8&adId=A04693431GI7XE46IDAPT&url=%2Fpure500-resistente-borosilicatado-transparencia-lavavajillas%2Fdp%2FB07B27D7K3%2Fref%3Dsr_1_57_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-57-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_btf"
+        },
+        {
+            "rank": 59,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "WBYJ Vasos Medidores, Juego de 3 Tazas Medidora de Plastico Transparente, Jarras Medidoras Plastico Cocina para Hornear con Mango, F\u00e1cil de Leer y Medidas (200ML+400ML+900ML)",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_btf_aps_sr_pg1_1?ie=UTF8&adId=A01171711BXT32EZOJRVF&url=%2FWBYJ-Medidores-Medidora-Transparente-Medidoras%2Fdp%2FB08HH26KLS%2Fref%3Dsr_1_58_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-58-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_btf"
+        },
+        {
+            "rank": 60,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "110 Vasos Desechables Ondulaci\u00f3n Kraft de Doble Pared de Caf\u00e9 para Llevar - Vasos Carton 240 ml 8 Onzas con Tapas y Agitadores de Madera para Servir el Caf\u00e9, el T\u00e9, Bebidas Calientes y Fr\u00edas",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_btf_aps_sr_pg1_1?ie=UTF8&adId=A002954912QR1ZMLBS27W&url=%2FVasos-Desechables-Ondulaci%25C3%25B3n-Kraft-Llevar%2Fdp%2FB07G55PMFD%2Fref%3Dsr_1_59_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-59-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_btf"
+        },
+        {
+            "rank": 61,
+            "snippet": null,
+            "timestamp": 1613035337,
+            "title": "Tapas De Silicona El\u00e1stica Protectoras para Alimentos 6 Paquetes De Varios Tama\u00f1os De Silicona Ajustables Cocina - Sin BPA, Aptas para Lavavajillas, Microondas, Horno Y Congelador",
+            "url": "https://www.amazon.es/gp/slredirect/picassoRedirect.html/ref=pa_sp_btf_aps_sr_pg1_1?ie=UTF8&adId=A09028291FSJEQUUDZQJA&url=%2FSilicona-El%25C3%25A1stica-Protectoras-Alimentos-Ajustables%2Fdp%2FB07FLXS67Z%2Fref%3Dsr_1_60_sspa%3F__mk_es_ES%3D%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591%26crid%3D12A9DD0FYHVU2%26dchild%3D1%26keywords%3Dtazas%2Bte%2Btransparente%26linkCode%3Dsl2%26linkId%3D3e3ee226a50fb1466af6122597a0551c%26qid%3D1613038938%26sprefix%3Dtazas%2Bte%2Btra%252Caps%252C244%26sr%3D8-60-spons%26tag%3Dloxlo3-21%26psc%3D1&qualifier=1613038938&id=3068288346657924&widgetName=sp_btf"
+        }
+    ],
+    "timestamp": 1613035337,
+    "url": "https://www.amazon.es/s?k=tazas+te+transparente&__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=12A9DD0FYHVU2&sprefix=tazas+te+tra,aps,244&linkCode=sl2&tag=loxlo3-21&linkId=3e3ee226a50fb1466af6122597a0551c&language=es_ES&ref_=as_li_ss_tl"
+}

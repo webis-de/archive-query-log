@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "John McCain",
+    "offset": null,
+    "page": null,
+    "query": "John McCain",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>McCain</em>, <em>John</em>",
+            "url": "http://dir.yahoo.com/Government/U_S__Government/Politics/Parties/Republican_Party/2000_Presidential_Election/Candidates/McCain__John/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>McCain</em>, <em>John</em>",
+            "url": "http://dir.yahoo.com/Government/U_S__Government/Politics/Humor/2000_Presidential_Election/Candidates/McCain__John/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>John</em> <em>McCain</em> on the Issues",
+            "url": "http://issues2000.org/John_McCain.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Senator <em>John</em> <em>McCain</em>",
+            "url": "http://www.senate.gov/~mccain/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Center for Public Integrity: <em>John</em> <em>McCain</em>",
+            "url": "http://www.publicintegrity.org/reports/bop2000/mccain_index.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>John</em> <em>McCain</em> for President",
+            "url": "http://www.mccain2000.com"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>McCain</em> Reader, The",
+            "url": "http://www.phoenixnewtimes.com/specialprojects/mccain/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>McCain</em> 2000 Interactive",
+            "url": "http://www.mccaininteractive.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Draft <em>McCain</em> 2000",
+            "url": "http://www.supportmccain.org/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Run <em>McCain</em>",
+            "url": "http://www.runmccain.com"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "It's Your Country",
+            "url": "http://www.itsyourcountry.com/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Faith of My Fathers",
+            "url": "http://www.johnsmccain.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>John</em> <em>McCain</em> Dance",
+            "url": "http://www.olsommer.com/mccain.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Dancing <em>John</em> <em>McCain</em>",
+            "url": "http://www.olsommer.com/mccain.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Senator <em>John</em> <em>McCain</em>, R-Arizona",
+            "url": "http://cnn.com/chat/transcripts/mccain.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Senator <em>John</em> <em>McCain</em>, The Gun Debate",
+            "url": "http://abcnews.go.com/sections/politics/DailyNews/chat_mccain990519.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>John</em> <em>McCain</em>",
+            "url": "http://www.talkcity.com/calendar/events/event5547.htmpl"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "<em>McCain</em>, <em>John</em>",
+            "url": "http://www.senate.gov/~mccain/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "It's Your Country",
+            "url": "http://www.itsyourcountry.com/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 956454509,
+            "title": "Faith of My Fathers",
+            "url": "http://www.johnsmccain.com/"
+        }
+    ],
+    "timestamp": 956454509,
+    "url": "http://search.yahoo.com:80/search?p=John+McCain&hn=48"
+}

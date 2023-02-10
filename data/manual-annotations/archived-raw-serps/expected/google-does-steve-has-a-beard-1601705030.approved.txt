@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "does steve has a beard",
+    "offset": null,
+    "page": null,
+    "query": "does steve has a beard",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Minecraft debate - Does steve have a beard? - Planet Minecraft",
+            "timestamp": 1601705030,
+            "title": "Minecraft debate - Does steve have a beard? - Planet Minecraft",
+            "url": "https://www.planetminecraft.com/forums/minecraft/discussion/minecraft-debate-does-steve-have-219781/#:~:text=The%20original%20Steve%20skin%20had,and%20yet%20he%20doesn't."
+        },
+        {
+            "rank": 2,
+            "snippet": "2016/07/22 - I dunno about you but I think this <em>has</em> priority over all the other bugfixes. <em>Does Steve have</em> a smoothstone or mossy cobble face? 4 comments. share.",
+            "timestamp": 1601705030,
+            "title": "Does Steve have a beard? : Minecraft - Reddit",
+            "url": "https://www.reddit.com/r/Minecraft/comments/mb8ux/does_steve_have_a_beard/"
+        },
+        {
+            "rank": 3,
+            "snippet": "What reason <em>does</em> he <em>have</em> for smiling? And why are the mob's mouths not covering their chins? Having a mouth of a chin just looks stupid and if it is a smile, what's the pink\u00a0...",
+            "timestamp": 1601705030,
+            "title": "Steve: Smile or Beard? - Discussion - Minecraft: Java Edition ...",
+            "url": "https://www.minecraftforum.net/forums/minecraft-java-edition/discussion/163476-steve-smile-or-beard"
+        },
+        {
+            "rank": 4,
+            "snippet": "2019/09/30 - No matter how hard I try to see a <em>beard</em>, I can only see a smile. 0 ... Up until the beta version of Minecraft, <em>Steve had a beard</em>. 0. Calebrey8's avatar \u00b7 Calebrey8\u00b7 9/30/2019. You call that a <em>beard</em>? Come on! a) that would be classified as a goatee and b) it's a smile, not a <em>beard</em>. Look it ... Let's <em>do</em> a bet. I will make a video of 50 wolves vs 10 pigmen. Which will win? Last updated on 8/30/2020.",
+            "timestamp": 1601705030,
+            "title": "Who always thought the beard on steve was a smile? | Fandom",
+            "url": "https://minecraft.fandom.com/f/p/3111877215257123540/r/3111879236911678683"
+        },
+        {
+            "rank": 5,
+            "snippet": "2019/03/31 - Now, if you look carefully, you'll notice that the \"<em>beard</em>\" is growing over <em>Steve's</em> mouth. Now, if this is a <em>beard</em> ... covering it a little ;) The reason he's screaming like that is because anyone who <em>has</em> it is a st00pid default and needs to get a better skin and git gud. ... WHY <em>DID</em> I CLICK THIS THREAD!&gt; 1 \u00b7 2 \u00b7 Next.",
+            "timestamp": 1601705030,
+            "title": "A question about Minecraft Steve's face | Hypixel - Minecraft ...",
+            "url": "https://hypixel.net/threads/a-question-about-minecraft-steves-face.1999886/"
+        },
+        {
+            "rank": 6,
+            "snippet": "I was looking at a the current render of the default Player Character of Minecraft, <em>Steve</em>: And for the first time, when I saw his face, I saw a big... ... However, I swear that I <em>had</em> previously always seen him as having a <em>beard</em>. It's all the ... <em>Did</em> it used to be a <em>beard</em> and they decided a smile was more appealing?",
+            "timestamp": 1601705030,
+            "title": "Minecraft Steve's Face: Is it a beard or a smile? | ResetEra",
+            "url": "https://www.resetera.com/threads/minecraft-steves-face-is-it-a-beard-or-a-smile.32034/"
+        },
+        {
+            "rank": 7,
+            "snippet": "View, comment, download and edit <em>steve</em> with <em>beard</em> Minecraft skins.",
+            "timestamp": 1601705030,
+            "title": "Steve With Beard | Minecraft Skins",
+            "url": "https://www.minecraftskins.com/search/skin/steve-with-beard/1/"
+        },
+        {
+            "rank": 8,
+            "snippet": "For Super Smash Bros. Ultimate on the Nintendo Switch, a GameFAQs message board topic titled \"<em>Does Steve have a beard</em>?\".",
+            "timestamp": 1601705030,
+            "title": "Does Steve have a beard? - Super Smash Bros. Ultimate",
+            "url": "https://gamefaqs.gamespot.com/boards/234547-super-smash-bros-ultimate/79014073"
+        },
+        {
+            "rank": 9,
+            "snippet": "2020/05/08 - News of the second retirement of Titans president <em>Steve</em> Underwood <em>has</em> caused many to recognize for the first time a glorious and distinctive configuration of facial ... I get a lot of compliments about my <em>beard</em> and mustache, usually from others who <em>have beards</em> and mustaches.\u201d ... So why <em>does</em> he <em>have</em> it?",
+            "timestamp": 1601705030,
+            "title": "Steve Underwood enjoys his viral facial-hair moment ...",
+            "url": "https://profootballtalk.nbcsports.com/2020/05/08/steve-underwood-enjoys-his-viral-facial-hair-moment/"
+        }
+    ],
+    "timestamp": 1601705030,
+    "url": "https://www.google.com/search?q=does+steve+has+a+beard&oq=does+steve+has+a+beard&aqs=chrome..69i57j0i22i30l3.6767j0j4&sourceid=chrome&ie=UTF-8"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "243",
+    "offset": null,
+    "page": null,
+    "query": "243",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": ".<em>243</em> Winchester ... The .<em>243</em> Winchester (6.2\u00d752mm) is a popular sporting rifle cartridge. Developed as a versatile short action cartridge to hunt both medium game\u00a0...",
+            "timestamp": 1628713922,
+            "title": ".243 Winchester - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/.243_Winchester"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>243</em> Winchester Rifles for sale online or in-store at Sportsman's Warehouse. Find a full selection of <em>243</em> winchester rifles from top rifle manufacturers at\u00a0...",
+            "timestamp": 1628713922,
+            "title": "243 Winchester Rifles | Sportsman's Warehouse",
+            "url": "https://www.sportsmans.com/shooting-gear-gun-supplies/rifles/rifles/c/cat-243-winchester-rifles"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>243</em>. (a) A battery is punishable by a fine not exceeding two thousand dollars ($2,000), or by imprisonment in a county jail not exceeding six months,\u00a0...",
+            "timestamp": 1628713922,
+            "title": "Penal Code Section 243 - Law section",
+            "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=243.&lawCode=PEN"
+        },
+        {
+            "rank": 4,
+            "snippet": "Shop Great Deals for .<em>243</em> Winchester in our Rifles Department | Sportsman's Guide.",
+            "timestamp": 1628713922,
+            "title": ".243 Winchester Rifles | Guns | Sportsman's Guide",
+            "url": "https://www.sportsmansguide.com/productlist/guns/rifles/243-winchester?d=185&c=30&gauge_chamber=.243+Winchester"
+        },
+        {
+            "rank": 5,
+            "snippet": "MidwayUSA carries a full line of <em>243</em> Winchester from all the major brands.",
+            "timestamp": 1628713922,
+            "title": "243 Ammunition for Sale | 243 Winchester Ammo - MidwayUSA",
+            "url": "https://www.midwayusa.com/243-winchester/br?cid=21947"
+        },
+        {
+            "rank": 6,
+            "snippet": "Savage Axis XP Youth <em>243</em> Win Bolt Action Rifle with Muddy Girl Stock and Scope. $419.99. Brand: Savage; Item Number: 19976. WIZARD <em>243</em> WIN SINGLE SHOT RIFLE\u00a0...",
+            "timestamp": 1628713922,
+            "title": "243 WINCHESTER Rifles For Sale | Vance Outdoors",
+            "url": "https://www.vanceoutdoors.com/category.cfm/outdoors/rifles/of3/243-winchester"
+        },
+        {
+            "rank": 7,
+            "snippet": "Join the numbers and get to the <em>243</em> tile! Keep going Try again. 1. 1. How to play: Use your arrow keys to move the tiles. When three tiles with the same\u00a0...",
+            "timestamp": 1628713922,
+            "title": "243",
+            "url": "https://hgentry.github.io/81/"
+        },
+        {
+            "rank": 8,
+            "snippet": "\u203a centerfire-rifle-cartridges",
+            "timestamp": 1628713922,
+            "title": "RWS .243 Win. SPEED TIP 5,8g | RWS Ammunition",
+            "url": "https://rws-ammunition.com/en/products/centerfire-rifle-cartridges/rws-243-win-speed-tip-5-8g"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>243</em> WIN. SP V330812 100 GRS. Semi-Jacketed Soft Point bullet. A lead core with a precisely engineered jacket results from its controlled expansion and high\u00a0...",
+            "timestamp": 1628713922,
+            "title": "243 WIN. \u2013 SP (V330812) \u2013 100 GRS \u2013 Sellier &amp; Bellot",
+            "url": "https://www.sellier-bellot.cz/en/products/rifle-ammunition/rifle-ammunition-sp/detail/175/"
+        }
+    ],
+    "timestamp": 1628713922,
+    "url": "https://www.google.com/search?q=243"
+}

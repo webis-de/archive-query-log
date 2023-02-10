@@ -1,0 +1,444 @@
+{
+    "interpreted_query": "Gaming Monitor",
+    "offset": null,
+    "page": null,
+    "query": "Gaming Monitor",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung 27-Inch LC27RG50FQNXZA Curved Gaming Monitor (LC27RG50FQNXZA) - Computer Monitor, 1920 x 1080 Resolution, 4ms Response Time, G-Sync Compatible, HDMI, Black",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A07493171NPXHP6VTCMN1&url=%2FSamsung-LC27RG50FQNXZA-Curved-Gaming-Monitor%2Fdp%2FB07TGMC29J%2Fref%3Dsr_1_1_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-1-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_atf"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung LF24G35TFWNXZA Gaming 24-inch Screen LED-Lit Monitor 1ms 144Hz with Freesync Pro (2021) (LF24G35TFWNXZA)",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A0826151PZK6ORTIZLCM&url=%2FSamsung-LF24G35TFWNXZA-24-inch-LED-Lit-Freesync%2Fdp%2FB08SHFP8CC%2Fref%3Dsr_1_2_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-2-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_atf"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ViewSonic VX2468-PC-MHD 24 Inch Full HD 1080p 165Hz 1ms Curved Gaming Monitor with AMD FreeSync Premium Eye Care Frameless HDMI and Display Port",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A01260321T429G4HTZQ8H&url=%2FViewSonic-VX2468-PC-MHD-Monitor-FreeSync-Frameless%2Fdp%2FB08QMNKQZN%2Fref%3Dsr_1_3_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-3-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_atf"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "KOORUI Gaming Monitor,165Hz,1ms (MPRT) Response Time, Full HD Frameless IPS Monitor with Freesync Technology,90% DCI-P3+HDR10, Type C/HDMI1.4/DP1.2, Black (165HZ 1080P)",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_atf_aps_sr_pg1_1?ie=UTF8&adId=A1021851EJCBQCVEQOH7&url=%2FKOORUI-Response-Frameless-Freesync-Technology%2Fdp%2FB09GLZYZ19%2Fref%3Dsr_1_4_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-4-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_atf"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "AOC C24G1A 24\" Curved Frameless Gaming Monitor, FHD 1920x1080, 1500R, VA, 1ms MPRT, 165Hz (144Hz Supported), FreeSync Premium, Height Adjustable Black",
+            "url": "https://www.amazon.ca/AOC-C24G1A-Curved-Computer-Monitor/dp/B08D3Y5PFZ/ref=sr_1_5?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-5"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Asus VG248QG 24\u201d G-Sync Compatible Gaming Monitor 165Hz Full HD 1080p 0.5ms DP HDMI DVI Eye Care",
+            "url": "https://www.amazon.ca/Asus-VG248QG-G-Sync-Compatible-Monitor/dp/B07TNM8L6S/ref=sr_1_6?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-6"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "LG UltraGear 32GK60W-B QHD VA 165Hz 1ms MBR Gaming Monitor, AMD FreeSync Premium, Black",
+            "url": "https://www.amazon.ca/LG-UltraGear-32GK60W-B-Monitor-FreeSync/dp/B099X9M4QD/ref=sr_1_7?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-7"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "AOC C24G1A 24\" Curved Frameless Gaming Monitor, FHD 1920x1080, 1500R, VA, 1ms MPRT, 165Hz (144Hz Supported), FreeSync Premium, Height Adjustable Black",
+            "url": "https://www.amazon.ca/AOC-C24G1A-Curved-Computer-Monitor/dp/B08D3Y5PFZ/ref=sxin_14_ac_d_rm?_encoding=UTF8&ac_md=0-0-Z2FtaW5nIG1vbml0b3I%3D-ac_d_rm_rm_rm&camp=15121&creative=330641&cv_ct_cx=Gaming+Monitor&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&pd_rd_i=B08D3Y5PFZ&pd_rd_r=041ce6c7-bce4-4d33-88c1-98ee869af3ab&pd_rd_w=ppM6a&pd_rd_wg=jj1K8&pf_rd_p=9d3bab83-da21-4400-9769-ce78809c5afe&pf_rd_r=VZFDQX9BHSDY3GYT7X0T&psc=1&qid=1639069422&sr=1-1-12d4272d-8adb-4121-8624-135149aa9081"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Dell S2421HGF 24inch FHD TN, Anti-Glare Gaming Monitor - 1ms Response time, 1080p 144Hz, LED edgelight System, AMD FreeSync Premium, VESA, Gray",
+            "url": "https://www.amazon.ca/Dell-S2421HGF-24inch-Anti-Glare-Monitor/dp/B089T73ZB9/ref=sxin_15?_encoding=UTF8&asc_contentid=amzn1.osa.d7ab8994-bad7-456b-be8e-2789f76c3166.A2EUQ1WTGCTBG2.en_CA&asc_contenttype=article&ascsubtag=amzn1.osa.d7ab8994-bad7-456b-be8e-2789f76c3166.A2EUQ1WTGCTBG2.en_CA&camp=15121&creative=330641&creativeASIN=B089T73ZB9&cv_ct_cx=Gaming+Monitor&cv_ct_id=amzn1.osa.d7ab8994-bad7-456b-be8e-2789f76c3166.A2EUQ1WTGCTBG2.en_CA&cv_ct_pg=search&cv_ct_we=asin&cv_ct_wn=osp-single-source-earns-comm&keywords=Gaming+Monitor&linkCode=oas&linkId=769e0014053b086f96c5e9f93948f632&pd_rd_i=B089T73ZB9&pd_rd_r=041ce6c7-bce4-4d33-88c1-98ee869af3ab&pd_rd_w=pG4mZ&pd_rd_wg=jj1K8&pf_rd_p=76687e4d-08d2-474f-aa35-a7d08b6317c1&pf_rd_r=VZFDQX9BHSDY3GYT7X0T&qid=1639069422&sr=1-1-a3cc9a7a-2f07-46dc-8259-ac02200376a0&tag=ignospca-20"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "LG UltraGear 32GN600-B 32 Inch(31.5) QHD VA 5ms with 1ms MBR 144Hz 165Hz Gaming Monitor AMD FreeSync, Black",
+            "url": "https://www.amazon.ca/LG-UltraGear-32GN600-B-UltragearTM-FreeSync/dp/B08LZPXD4C/ref=sr_1_8?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-8"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Acer 24'' IPS Gaming Monitor, Max Resolution1920x1080 165Hz, 1ms response time, 400 nits, Speaker 2X 2W, Non Glare",
+            "url": "https://www.amazon.ca/Acer-Monitor-Resolution1920x1080-response-Speaker/dp/B08CY4PCMG/ref=sr_1_9?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-9"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Acer 27\" IPS Gaming Monitor, Resolution 2560x1440 @144Hz, 1MS response time, Peak Brightness 400 nits, 2X2W speakers,Non Glare",
+            "url": "https://www.amazon.ca/Acer-XV272U-Pbmiiprzx-Technology-DisplayHDR400/dp/B07MQBPMJ2/ref=sr_1_10?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-10"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS TUF Gaming VG259QR 24.5\u201d Gaming Monitor, 1080P Full HD, 165Hz (Supports 144Hz), 1ms, Extreme Low Motion Blur, G-SYNC Compatible Ready, Eye Care, DisplayPort HDMI, Shadow Boost, Height Adjustable",
+            "url": "https://www.amazon.ca/ASUS-Gaming-1080P-Monitor-VG259QR/dp/B08K2GYHD8/ref=sr_1_11?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-11"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS TUF Gaming VG279Q1A 27\u201d Gaming Monitor, 1080P Full HD, 165Hz (Supports 144Hz), IPS, 1ms, Adaptive-sync/FreeSync Premium, Extreme Low Motion Blur, Eye Care, HDMI DisplayPort",
+            "url": "https://www.amazon.ca/VG279Q1A-Supports-Adaptive-sync-FreeSync-DisplayPort/dp/B08LCPKS6G/ref=sr_1_12?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-12"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS TUF Gaming VG328H1B 32\u201d Curved Monitor, 1080P Full HD, 165Hz (Supports 144Hz), Extreme Low Motion Blur, Adaptive-sync, FreeSync Premium, 1ms, Eye Care, HDMI D-Sub",
+            "url": "https://www.amazon.ca/VG328H1B-Monitor-Supports-Adaptive-sync-FreeSync/dp/B087V5RLFB/ref=sr_1_13?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-13"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "LG UltraGear 32GP850-B 32 Inch QHD 2560 x 1440 Nano IPS Gaming Monitor 1ms 165Hz NVIDIA G-SYNC Compatible, AMD FreeSync Premium, Black",
+            "url": "https://www.amazon.ca/LG-UltraGear-32GP850-B-Ultragear-Compatible/dp/B093MFKDLP/ref=sr_1_14?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-14"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Asus VG279Q 27\" Full HD 1080p IPS 144Hz 1ms (MPRT) DP HDMI DVI Eye Care Gaming Monitor with FreeSync/Adaptive Sync, Black",
+            "url": "https://www.amazon.ca/Asus-VG279Q-Monitor-FreeSync-Adaptive/dp/B07KXHTRT5/ref=sr_1_15?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-15"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "MSI OPTIX MAG27CQ Full HD Gaming Red LED Non-Glare Super Narrow Bezel 1ms 2560 x 1440 144Hz Refresh Rate 2K Resolution FreeSync 27\u201d Curved Gaming Monitor Optix MAG27CQ",
+            "url": "https://www.amazon.ca/MAG27CQ-Non-Glare-Resolution-FreeSync-Optix/dp/B079NGSWRL/ref=sr_1_16?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-16"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "LG Ultragear 27GL83A-B 27 inch 16:9 QHD IPS 144Hz 1ms NVIDIA G-SYNC Compatible Gaming Monitor, Black",
+            "url": "https://www.amazon.ca/LG-27GL83A-B-27-Inch-Led-Lit-14700510/dp/B07YGZL8XF/ref=sr_1_17?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-17"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ViewSonic VX2718-PC-MHD 27 Inch Full HD 1080p 164Hz 1ms Curved Gaming Monitor with Adaptive-Sync Eye Care Frameless HDMI and Display Port Black",
+            "url": "https://www.amazon.ca/ViewSonic-VX2718-PC-MHD-Monitor-Adaptive-Sync-Frameless/dp/B08DLBDKBQ/ref=sr_1_18?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-18"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung LS27R350FHNXZA 27\" LED-Lit Monitor 75Hz Freesync Dark Blue Grey",
+            "url": "https://www.amazon.ca/Samsung-LS27R350FHNXZA-LED-Lit-Monitor-Freesync/dp/B08CGQRNFX/ref=sr_1_19?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-19"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "SAMSUNG T350 Series 22-Inch FHD 1080p Computer Monitor, 75Hz, IPS Panel, HDMI, VGA (D-Sub), 3-Sided Border-Less, FreeSync (LF22T350FHNXZA)",
+            "url": "https://www.amazon.ca/Samsung-LF22T350FHNXZA-22-inch-Eye-Saver-Freesync/dp/B08FNW672V/ref=sr_1_20?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-20"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Partaker Mini Gaming PC,Desktop Computer,Powerful Mini PC with Core i9 10900F Octa Core Processor, 32GB DDR4 240GB SSD 1TB HDD, GTX1050Ti, 4K, Dual Monitor Capable, WiFi, Bluetooth, Win10 Pro",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A03004791KVQ293OSRAN7&url=%2FPartaker-Computer-Processor-GTX1050Ti-Bluetooth%2Fdp%2FB09DY3XTHG%2Fref%3Dsr_1_21_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-21-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_mtf"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "SAMSUNG 49-inch Odyssey G9 Gaming Monitor | QHD, 240hz, 1000R Curved, QLED, NVIDIA G-SYNC &amp; FreeSync | LC49G95TSSNXZA Model",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A0322747NL28JH4AH68C&url=%2FSamsung-Entertainment-LC49G95TSSNXZA-G-Sync-Curved%2Fdp%2FB088HH6LW5%2Fref%3Dsr_1_22_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-22-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_mtf"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung LC32G55TQWNXZA WQHD 144HZ 1MS Freesync HDR10 Monitor with 1000R Curvature, Black",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A0322591RASUT2VK3WPS&url=%2FSamsung-LC32G55TQWNXZA-Freesync-Monitor-Curvature%2Fdp%2FB08FF3HDW5%2Fref%3Dsr_1_23_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-23-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_mtf"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ViewSonic VX2718-PC-MHD 27 Inch Full HD 1080p 164Hz 1ms Curved Gaming Monitor with Adaptive-Sync Eye Care Frameless HDMI and Display Port Black",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_mtf_aps_sr_pg1_1?ie=UTF8&adId=A104027822G3YEQ1OID04&url=%2FViewSonic-VX2718-PC-MHD-Monitor-Adaptive-Sync-Frameless%2Fdp%2FB08DLBDKBQ%2Fref%3Dsr_1_24_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-24-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_mtf"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS TUF Gaming VG27VQ 27\u201d Curved Gaming Monitor 165Hz Full HD (1920 x 1080) 1ms ELMB Eye Care DisplayPort HDMI Dual-link DVI-D",
+            "url": "https://www.amazon.ca/Gaming-VG27VQ-Monitor-DisplayPort-Dual-Link/dp/B07YYWVBQ8/ref=sr_1_25?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-25"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS TUF Gaming VG34VQL1B 34? Curved HDR Monitor, WQHD (3440x1440), 165Hz, 1ms, Extreme Low Motion Blur, FreeSync Premium, Eye Care, DisplayPort HDMI USB, Height Adjustable, DisplayHDR 400, Black",
+            "url": "https://www.amazon.ca/Asus-VG34VQL1B/dp/B08LCMYT54/ref=sr_1_26?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-26"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "SAMSUNG 24-Inch CRG5 144Hz Curved Gaming Monitor (LC24RG50FQNXZA) \u00e2\u00e2\u201a\u00ac\u00e2\u20ac\u0153 Computer Monitor, 1920 x 1080p Resolution, 4ms Response, FreeSync, Game Mode, HDMI",
+            "url": "https://www.amazon.ca/Samsung-LC24RG50FQNXZA-Gaming-Monitor-CRG5/dp/B07L99L5KQ/ref=sr_1_27?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-27"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS ROG Strix XG27AQ 27\u201d HDR Gaming Monitor, 1440P WQHD (2560 x 1440), Fast IPS, 170Hz, 1ms, G-SYNC Compatible, Extreme Low Motion Blur Sync, Eye Care, HDMI DisplayPort USB 3.0 Hub, DisplayHDR 400",
+            "url": "https://www.amazon.ca/Asus-XG27AQ/dp/B08LCNNGZN/ref=sr_1_28?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-28"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung LF24G35TFWNXZA Gaming 24-inch Screen LED-Lit Monitor 1ms 144Hz with Freesync Pro (2021) (LF24G35TFWNXZA)",
+            "url": "https://www.amazon.ca/Samsung-LF24G35TFWNXZA-24-inch-LED-Lit-Freesync/dp/B08SHFP8CC/ref=sr_1_29?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-29"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "AOPEN 27HC5R Pbiipx 27\" 1500R Curved Full HD (1920 x 1080) VA Gaming Monitor with AMD Radeon FREESYNC Premium Technology, 165Hz (Display Port &amp; 2 x HDMI Ports), Black",
+            "url": "https://www.amazon.ca/AOPEN-27HC5R-Pbiipx-FREESYNC-Technology/dp/B08DG9JL1V/ref=sr_1_30?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-30"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "MSI Optix G32CQ4 31.5in, 165Hz, 1ms, Curved Gaming Monitor, Black",
+            "url": "https://www.amazon.ca/MSI-Optix-G32CQ4-31-5in-Monitor/dp/B08CG2Y55P/ref=sr_1_31?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-31"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "KOORUI Gaming Monitor,165Hz,1ms (MPRT) Response Time, Full HD Frameless IPS Monitor with Freesync Technology,90% DCI-P3+HDR10, Type C/HDMI1.4/DP1.2, Black (165HZ 1080P)",
+            "url": "https://www.amazon.ca/KOORUI-Response-Frameless-Freesync-Technology/dp/B09GLZYZ19/ref=sr_1_32?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-32"
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung LC27F396FHNXZA 27-Inch 1800R Curved Monitor 4ms Freesync Super Slim Design",
+            "url": "https://www.amazon.ca/Samsung-LC27F396FWNXZA-C27F396-Curved-Monitor/dp/B07PBZMW4W/ref=sr_1_33?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-33"
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "LG 24MK600M-B 24 Inch Full HD Monitor with Radeon FreeSync, Black",
+            "url": "https://www.amazon.ca/LG-24MK600M-B-Monitor-Radeon-FreeSync/dp/B07JGL19WK/ref=sr_1_34?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-34"
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS TUF Gaming 32\" 1440P HDR Curved Monitor (VG32VQ1B) - QHD (2560 x 1440), 165Hz (Supports 144Hz), 1ms, Extreme Low Motion Blur, Speaker, FreeSync Premium, VESA Mountable, DisplayPort, HDMI",
+            "url": "https://www.amazon.ca/VG32VQ1B-Supports-FreeSyncTM-Adaptive-sync-DisplayPort/dp/B088MKF848/ref=sr_1_35?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-35"
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "AOC CQ32G2S 32\" Curved Frameless Gaming Monitor 2K QHD, 1500R Curved VA, 1ms, 165Hz, FreeSync, Height adjustable, 3-Year Zero Dead Pixel Guarantee",
+            "url": "https://www.amazon.ca/AOC-CQ32G2S-Frameless-adjustable-Guarantee/dp/B08C8L6SB9/ref=sr_1_36?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-36"
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung 32\" Odyssey G7 Gaming Monitor - LC32G75TQSNXZA - 1000R Curved, 240Hz, 1ms, Black",
+            "url": "https://www.amazon.ca/Samsung-Odyssey-Gaming-Monitor-LC32G75TQSNXZA/dp/B088HHZBGJ/ref=sr_1_37?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-37"
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Asus TUF Gaming VG32VQ 31.5\" 16:9 Curved 144 Hz HDR Adaptive-Sync LCD Gaming Monitor",
+            "url": "https://www.amazon.ca/Asus-Gaming-VG32VQ-31-5-Adaptive-Sync/dp/B07VFKSGRW/ref=sr_1_38?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-38"
+        },
+        {
+            "rank": 43,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Gigabyte M27Q 27\" 170Hz 1440P Gaming , 2560 x 1440 SS IPS , 0.5ms (MPRT) Response Time, 92% DCI-P3, HDR Ready, FreeSync Premium, 1x Port 1.2, 2X HDMI 2.0, 2X USB 3.0, BLACK",
+            "url": "https://www.amazon.ca/Gigabyte-Monitor-Display-Response-FreeSync/dp/B08JWCHR5N/ref=sr_1_39?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-39"
+        },
+        {
+            "rank": 44,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "AOC CQ32G1 Curved Frameless Gaming Monitor, Quad HD 2560x1440, VA Panel, 1 ms, MPRT, 144Hz, FreeSync, DisplayPort/HDMI/VGA, VESA, Black, 32\" 2K QHD Curved",
+            "url": "https://www.amazon.ca/AOC-CQ32G1-Frameless-2560x1440-DisplayPort/dp/B07HKM16DT/ref=sr_1_40?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-40"
+        },
+        {
+            "rank": 45,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Sceptre Curved 30\" 21:9 Gaming LED Monitor 2560x1080p UltraWide Ultra Slim HDMI DisplayPort Up to 85Hz MPRT 1ms FPS-RTS Build-in Speakers, Machine Black (C305W-2560UN)",
+            "url": "https://www.amazon.ca/Sceptre-30-Inch-C305W-2560UN-DisplayPort-Build/dp/B07XZNXWGS/ref=sr_1_41?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-41"
+        },
+        {
+            "rank": 46,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "MSI 24\u201d FHD (1920 x 1080) Non-Glare with Super Narrow Bezel 144Hz 1ms 16:9 HDMI/DP AMD Radeon FreeSync IPS Gaming Monitor (OPTIX G241),Black",
+            "url": "https://www.amazon.ca/MSI-Non-Glare-Super-Narrow-Bezel/dp/B083K17XLH/ref=sr_1_42?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-42"
+        },
+        {
+            "rank": 47,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "LG UltraGear 27GN800-B 27 Inch QHD IPS Gaming Monitor IPS 1ms 144Hz NVIDIA G-SYNC, Black",
+            "url": "https://www.amazon.ca/LG-UltraGear-27GN800-B-Ultragear-Compatible/dp/B08LLD2QXJ/ref=sr_1_43?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-43"
+        },
+        {
+            "rank": 48,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Sceptre Curved 27\" Gaming Monitor up to 165Hz DisplayPort 144Hz HDMI Edge-Less AMD FreeSync Premium, Build-in Speakers Machine Black 2021 (C275B-1858RN)",
+            "url": "https://www.amazon.ca/Sceptre-DisplayPort-Edge-Less-FreeSync-C275B-1858RN/dp/B089V2R9WW/ref=sr_1_44?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-44"
+        },
+        {
+            "rank": 49,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS ROG Strix 31.5\u201d 1440P Curved Gaming Monitor (XG32VC), QHD (2560 x 1440), 170Hz, 1ms, Extreme Low Motion Blur Sync, FreeSync Premium Pro, HDMI DisplayPort USB 3.0 Type C, 125% sRGB, DisplayHDR 400",
+            "url": "https://www.amazon.ca/XG32VC-Monitor-FreeSync-DisplayPort-DisplayHDR/dp/B08GL5DPJH/ref=sr_1_45?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-45"
+        },
+        {
+            "rank": 50,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ASUS TUF Gaming VG279QL1A 27\u201d HDR Gaming Monitor, 1080P Full HD, 165Hz (Supports 144Hz), IPS, 1ms, FreeSync Premium, DisplayHDR 400, Extreme Low Motion Blur, Eye Care, HDMI DisplayPort",
+            "url": "https://www.amazon.ca/VG279QL1A-Supports-FreeSync-DisplayHDR-DisplayPort/dp/B08CYC6P3V/ref=sr_1_46?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-46"
+        },
+        {
+            "rank": 51,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Dell S3422DWG - 34-inch WQHD (3440 x 1440) 21:9 144Hz Curved Gaming Monitor, HDR 400, 1800R Curvature, 2ms Grey-to-Grey Response Time (Extreme Mode), 16.7 Million Colors, Black (Latest Model)",
+            "url": "https://www.amazon.ca/Dell-S3422DWG-Curvature-Grey-Grey/dp/B095X7RV77/ref=sr_1_47?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-47"
+        },
+        {
+            "rank": 52,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung LC32G55TQWNXZA WQHD 144HZ 1MS Freesync HDR10 Monitor with 1000R Curvature, Black",
+            "url": "https://www.amazon.ca/Samsung-LC32G55TQWNXZA-Freesync-Monitor-Curvature/dp/B08FF3HDW5/ref=sr_1_48?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-48"
+        },
+        {
+            "rank": 53,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "AOC G2490VX 24\" Frameless Gaming Monitor, FHD 1920x1080, 1ms, 144Hz, G-SYNC Compatible+AdaptiveSync, DisplayPort/HDMI, VESA, Black",
+            "url": "https://www.amazon.ca/AOC-G2490VX-Compatible-AdaptiveSync-DisplayPort/dp/B08FJHMTZJ/ref=sr_1_49?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-49"
+        },
+        {
+            "rank": 54,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "LG UltraGear 27GP850-B 27 Inch QHD 2560 x 1440 Nano IPS Gaming Monitor IPS 1ms 165Hz NVIDIA G-SYNC, Black",
+            "url": "https://www.amazon.ca/LG-UltraGear-27GP850-B-Ultragear-Compatible/dp/B093MTSTKD/ref=sr_1_50?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-50"
+        },
+        {
+            "rank": 55,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung LS24R350FZNXZA 24\" LED-Lit Monitor 75Hz Freesync Dark Blue Grey (LS24R350FZNXZA)",
+            "url": "https://www.amazon.ca/Samsung-LS24R350FZNXZA-LED-Lit-Monitor-Freesync/dp/B091BCRJR7/ref=sr_1_51?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-51"
+        },
+        {
+            "rank": 56,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "MSI Optix MAG321CQR 31.5\" VA Curved Gaming Monitor, QHD 144Hz 1ms, Height Adjustable Arm, AMD FreeSync, RGB",
+            "url": "https://www.amazon.ca/Non-Glare-Super-Narrow-Gaming-Monitor/dp/B07NQG1FFB/ref=sr_1_52?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-52"
+        },
+        {
+            "rank": 57,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung LC32R500FHNXZA 32\" FHD Freesync 1500R Curved Monitor 3,000:1 Contrast 4ms",
+            "url": "https://www.amazon.ca/Samsung-LC32R500FHNXZA-Freesync-Curved-Monitor/dp/B089HPRSJ4/ref=sr_1_53?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-53"
+        },
+        {
+            "rank": 58,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "MSI Optix MAG301CR2 FHD Non-Glare 1ms 2560 x 1080 Ultra Wide 200Hz HDR Ready USB/DP/HDMI Smart Headset Hanger FreeSync 30\u201dGaming Curved Monitor - Black",
+            "url": "https://www.amazon.ca/MSI-Optix-MAG301CR2-Non-Glare-FreeSync/dp/B08N5GS4K2/ref=sr_1_54?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-54"
+        },
+        {
+            "rank": 59,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Acer SB220Q bi 21.5\" Full HD (1920 x 1080) IPS Ultra-Thin Zero Frame Monitor (HDMI &amp; VGA port)",
+            "url": "https://www.amazon.ca/Acer-SB220Q-Ultra-Thin-Frame-Monitor/dp/B07CVL2D2S/ref=sr_1_55?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-55"
+        },
+        {
+            "rank": 60,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ViewSonic Elite XG320U 32 Inch 4K UHD Gaming Monitor with 150Hz, 1ms, HDR 600, FreeSync Premium Pro, HDMI, DisplayPort, USB, and Advanced Ergonomics for Esports",
+            "url": "https://www.amazon.ca/ViewSonic-XG320U-FreeSync-DisplayPort-Ergonomics/dp/B094RHCTG7/ref=sr_1_56?_encoding=UTF8&camp=15121&creative=330641&keywords=Gaming+Monitor&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&qid=1639069422&sr=8-56"
+        },
+        {
+            "rank": 61,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "15\" USB Type-C Monitor Portable Monitor Full HD 1080P 100% sRGB Portable USB C External Monitor for Laptop, Ultra Slim VESA External Travel Monitor 2nd/Dual/Extender Screen for Mac PC, Portable Gaming Monitor for Xbox PS4 Sliver",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_btf_aps_sr_pg1_1?ie=UTF8&adId=A06613133VMFE1XONLM59&url=%2FType-C-Monitor-Portable-External-Extender%2Fdp%2FB09KGSBRYK%2Fref%3Dsr_1_57_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-57-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_btf"
+        },
+        {
+            "rank": 62,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "VIVO Premium Dual 17 to 32 inch Gaming Pneumatic Monitor Arms Clamp-on Desk Mount Stand with Blue LED Lights, Max VESA 100x100, Black STAND-GM2BB",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_btf_aps_sr_pg1_1?ie=UTF8&adId=A0724124211UH3ODJIP4Y&url=%2FVIVO-Premium-Pneumatic-Monitor-STAND-GM2BB%2Fdp%2FB089B66T2Z%2Fref%3Dsr_1_58_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-58-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_btf"
+        },
+        {
+            "rank": 63,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "ViewSonic VX3418-2KPC 34 Inch 21:9 UltraWide WQHD 1440p 144Hz 1ms Curved Gaming Monitor with Adaptive-Sync Eye Care HDMI and Display Port Black",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_btf_aps_sr_pg1_1?ie=UTF8&adId=A01253201I63YZ4Q4EGVJ&url=%2FViewSonic-VX3418-2KPC-Inch-UltraWide-Adaptive-Sync%2Fdp%2FB08ZT31QCN%2Fref%3Dsr_1_59_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-59-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_btf"
+        },
+        {
+            "rank": 64,
+            "snippet": null,
+            "timestamp": 1639065822,
+            "title": "Samsung 32\" Odyssey G7 Gaming Monitor - LC32G75TQSNXZA - 1000R Curved, 240Hz, 1ms, Black",
+            "url": "https://www.amazon.ca/gp/slredirect/picassoRedirect.html/ref=pa_sp_btf_aps_sr_pg1_1?ie=UTF8&adId=A074926172LAP1DGYTJ8&url=%2FSamsung-Odyssey-Gaming-Monitor-LC32G75TQSNXZA%2Fdp%2FB088HHZBGJ%2Fref%3Dsr_1_60_sspa%3F_encoding%3DUTF8%26camp%3D15121%26creative%3D330641%26keywords%3DGaming%2BMonitor%26linkCode%3Dur2%26linkId%3D769e0014053b086f96c5e9f93948f632%26qid%3D1639069422%26sr%3D8-60-spons%26psc%3D1&qualifier=1639069422&id=7028162466236178&widgetName=sp_btf"
+        }
+    ],
+    "timestamp": 1639065822,
+    "url": "https://www.amazon.ca/s?k=Gaming+Monitor&_encoding=UTF8&camp=15121&creative=330641&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&tag=liquipedia07-20"
+}

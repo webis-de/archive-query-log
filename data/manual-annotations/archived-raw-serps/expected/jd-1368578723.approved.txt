@@ -1,0 +1,262 @@
+{
+    "interpreted_query": "\u521b\u65b0",
+    "offset": null,
+    "page": null,
+    "query": "\ufffd\ufffd\ufffd\ufffd",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Aurvana   LIVE \u8033\u673a",
+            "url": "http://item.jd.com/135642.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09\u58f0\u5361\u3000Sound Blaster X-Fi Surround 5.1 Pro",
+            "url": "http://item.jd.com/386713.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09 Aurvana In-Ear2 \u52a8\u94c1\u5165\u8033\u8033\u585e",
+            "url": "http://item.jd.com/273839.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08creative\uff09Inspire T12 \u5fae\u578b\u4e66\u67b6\u97f3\u7bb1",
+            "url": "http://item.jd.com/143779.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster X-Fi Titanium HD",
+            "url": "http://item.jd.com/273841.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09 SBS A60 2.0 \u97f3\u7bb1",
+            "url": "http://item.jd.com/240901.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster Recon3D Fatal1ty Champion PCIe  3D\u51a0\u519b\u7248 PCIe\u58f0\u5361",
+            "url": "http://item.jd.com/603690.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09 Sound Blaster ZX \u58f0\u5361 Sound Blaster ZX \u58f0\u5361",
+            "url": "http://item.jd.com/845627.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09 Sound Blaster Z \u58f0\u5361 Sound Blaster Z \u58f0\u5361",
+            "url": "http://item.jd.com/845626.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Inspire T3130",
+            "url": "http://item.jd.com/179466.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster\u9b54\u517d\u4e16\u754c\u8033\u673a",
+            "url": "http://item.jd.com/208729.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster Audigy 4 Value \u58f0\u5361\uff08PCI\u63a5\u53e3\uff0c\u7f51\u7edcK\u6b4c\u7248\uff09",
+            "url": "http://item.jd.com/108878.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Audigy Value \u58f0\u5361\uff08PCI\u63a5\u53e3\uff09",
+            "url": "http://item.jd.com/105720.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster 5.1 VX \u58f0\u5361\uff08PCI\u63a5\u53e3\uff0c\u652f\u6301vista\u7cfb\u7edf\uff09",
+            "url": "http://item.jd.com/125187.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Inspire T6160 5.1\u73af\u7ed5\u97f3\u7bb1\u7cfb\u7edf  \u60a8\u73a9\u6e38\u620f\uff0c\u542c\u97f3\u4e50\uff0c\u770b\u7535\u5f71\u7684\u7406\u60f3\u9009\u62e9",
+            "url": "http://item.jd.com/182217.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09USB SB-PLAY \u58f0\u5361",
+            "url": "http://item.jd.com/144163.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09 EP-630\u8033\u585e(\u9ed1\uff09",
+            "url": "http://item.jd.com/105943.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09\u8033\u673a AURVANA IN-EAR(\u9ed1\u8272\uff09",
+            "url": "http://item.jd.com/130732.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09EP-630\u8033\u673a\uff08\u767d\uff09",
+            "url": "http://item.jd.com/132591.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0(creative)  D200 \u84dd\u7259\u65e0\u7ebf\u97f3\u7bb1 \u9ed1\u8272",
+            "url": "http://item.jd.com/301103.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09 ZiiSound T6 II 2.1\u65e0\u7ebf\u97f3\u7bb1\u7cfb\u7edf \u9ed1\u8272 ZiiSound T6 II 2.1\u65e0\u7ebf\u97f3\u7bb1\u7cfb\u7edf \u9ed1\u8272",
+            "url": "http://item.jd.com/848266.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster X-Fi Xtreme Audio \u58f0\u5361\uff08PCI-E\u63a5\u53e3\uff0c\u652f\u6301vista\u7cfb\u7edf\uff09",
+            "url": "http://item.jd.com/125183.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08CREATIVE\uff09HS-350 \u8033\u9ea6",
+            "url": "http://item.jd.com/142603.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09EP-3NC \u4e3b\u52a8\u964d\u566a\u5165\u8033\u5f0f\u8033\u585e",
+            "url": "http://item.jd.com/273840.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09 Headset HS-300\u8033\u9ea6",
+            "url": "http://item.jd.com/105936.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09\u8033\u673aEP-550",
+            "url": "http://item.jd.com/130561.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08creative\uff09WP-250 \u84dd\u7259\u65e0\u7ebf\u901a\u8bdd\u8033\u673a",
+            "url": "http://item.jd.com/759856.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster Recon3D PCIe 3D\u8d85\u503c\u7248 PCIe\u58f0\u5361",
+            "url": "http://item.jd.com/603695.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08creative\uff09Sound Blaster Recon3D Omega Wireless  \u65e0\u7ebf\u6e38\u620f\u5957\u88c5 \u81f3\u5c0a\u7248",
+            "url": "http://item.jd.com/759899.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0 \uff08Creative\uff09 HS-450 \u8033\u9ea6",
+            "url": "http://item.jd.com/142650.html"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08creative\uff09EP-510\u8033\u673a \u8fd0\u52a8-\u53cb\u597d\u5b89\u5168\u7684\u8033\u94a9\u8bbe\u8ba1!",
+            "url": "http://item.jd.com/124006.html"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster Recon3D Fatal1ty Professional PCIe 3D\u73a9\u5bb6\u7248 PCIe\u58f0\u5361",
+            "url": "http://item.jd.com/603692.html"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0(creative)  E-MU 0404 PCIE \u5185\u7f6e\u58f0\u5361",
+            "url": "http://item.jd.com/522912.html"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08creative\uff09WP-350 \u84dd\u7259\u65e0\u7ebf\u901a\u8bdd\u8033\u673a",
+            "url": "http://item.jd.com/759857.html"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09\u8033\u673aEP-220\uff08\u767d\u8272\uff09",
+            "url": "http://item.jd.com/130709.html"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1368578723,
+            "title": "\u521b\u65b0\uff08Creative\uff09Sound Blaster World of Wracraft Tap Chat \u9b54\u517d\u4e16\u754c\u8033\u673a\u4e13\u7528\u811a\u8e0f\u677f",
+            "url": "http://item.jd.com/735100.html"
+        }
+    ],
+    "timestamp": 1368578723,
+    "url": "http://search.jd.com/search?keyword=%B4%B4%D0%C2&qr=&qrst=UNEXPAND&et=&rt=1&area=1&ev=&uc=0&bs=no"
+}

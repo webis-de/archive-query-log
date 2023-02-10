@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "bc gov",
+    "offset": null,
+    "page": null,
+    "query": "bc gov",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "Washington State Ferries",
+            "url": "http://srd.yahoo.com/srst/23245566/bc+gov/1/139/*http://www.wsdot.wa.gov/ferries/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Parks",
+            "url": "http://srd.yahoo.com/srst/32800871/bc+gov/2/139/*http://www.elp.gov.bc.ca/bcparks/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "Youth Options <em>BC</em>",
+            "url": "http://srd.yahoo.com/srst/2091923/bc+gov/3/139/*http://www.youth.gov.bc.ca/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Stats",
+            "url": "http://srd.yahoo.com/srst/7403595/bc+gov/4/139/*http://www.bcstats.gov.bc.ca/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Geographical Names Information System",
+            "url": "http://srd.yahoo.com/srst/33311224/bc+gov/5/139/*http://www.gdbc.gov.bc.ca/bcnames/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Land Use Coordination Office (LUCO)",
+            "url": "http://srd.yahoo.com/srst/32801189/bc+gov/6/139/*http://www.luco.gov.bc.ca/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> <em>Gov</em>ernment Directory",
+            "url": "http://srd.yahoo.com/srst/813684/bc+gov/7/139/*http://www.dir.gov.bc.ca"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Human Rights Commission",
+            "url": "http://srd.yahoo.com/srst/30019101/bc+gov/8/139/*http://www.bchrc.gov.bc.ca/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> OnLine",
+            "url": "http://srd.yahoo.com/srst/2135765/bc+gov/9/139/*http://www.bconline.gov.bc.ca"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Geographical Names Information System",
+            "url": "http://srd.yahoo.com/srst/523394/bc+gov/10/139/*http://www.gdbc.gov.bc.ca/bcnames/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Heritage",
+            "url": "http://srd.yahoo.com/srst/31789866/bc+gov/11/139/*http://www.heritage.gov.bc.ca/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "First Nations Communities in <em>B.C</em>.",
+            "url": "http://srd.yahoo.com/srst/28763053/bc+gov/12/139/*http://www.aaf.gov.bc.ca/aaf/nations/nations.htm"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "SET-<em>BC</em> - Special Education Technology-British Columbia",
+            "url": "http://srd.yahoo.com/srst/666531/bc+gov/13/139/*http://www.set.gov.bc.ca"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "Special Education Technology-British Columbia (SET-<em>BC</em>)",
+            "url": "http://srd.yahoo.com/srst/666533/bc+gov/14/139/*http://www.set.gov.bc.ca"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "SET-<em>BC</em> - Special Education Technology-British Columbia",
+            "url": "http://srd.yahoo.com/srst/666534/bc+gov/15/139/*http://www.set.gov.bc.ca"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Education: Provincial Examinations and Information",
+            "url": "http://srd.yahoo.com/srst/9215036/bc+gov/16/139/*http://www.bced.gov.bc.ca/exams/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Ministry of Children and Families",
+            "url": "http://srd.yahoo.com/srst/26542507/bc+gov/17/139/*http://www.mcf.gov.bc.ca/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Stats: Population Section - Geography and Mapping",
+            "url": "http://srd.yahoo.com/srst/33285241/bc+gov/18/139/*http://www.bcstats.gov.bc.ca/data/pop/georef/geopage.htm"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> Geographical Names: Nisga'a Treaty",
+            "url": "http://srd.yahoo.com/srst/33295077/bc+gov/19/139/*http://www.gdbc.gov.bc.ca/bcnames/g2_nl.htm"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 971492707,
+            "title": "<em>BC</em> <em>Gov</em>ernment Recruitment Access Office",
+            "url": "http://srd.yahoo.com/srst/13335805/bc+gov/20/139/*http://rao.gov.bc.ca"
+        }
+    ],
+    "timestamp": 971492707,
+    "url": "http://search.yahoo.com:80/search?p=bc+gov"
+}

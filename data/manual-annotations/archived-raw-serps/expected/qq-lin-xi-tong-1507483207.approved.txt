@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u660e\u65e5\u4e4b\u5b50",
+    "offset": null,
+    "page": null,
+    "query": "\u6797\u71b9\u77b3",
+    "results": [],
+    "timestamp": 1507483207,
+    "url": "http://v.qq.com/search.html?pagetype=3&stj2=tiket&ms_key=%E6%9E%97%E7%86%B9%E7%9E%B3"
+}
