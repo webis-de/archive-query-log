@@ -1,6 +1,7 @@
 from pathlib import Path
+from webbrowser import open_new_tab
 
-from approvaltests import verify_as_json
+from approvaltests import verify_as_json, ApprovalException
 from approvaltests.core.options import Options
 from approvaltests.namer.cli_namer import CliNamer
 from slugify import slugify
@@ -41,11 +42,15 @@ def verify_serp_parsing(
     archived_raw_serp = _find_archived_raw_serp(wayback_raw_url)
     archived_parsed_serp = parser.parse_single(archived_raw_serp)
 
-    _verify_archived_parsed_serp_results(
-        archived_raw_serp,
-        archived_parsed_serp,
-        service_name,
-    )
+    try:
+        _verify_archived_parsed_serp_results(
+            archived_raw_serp,
+            archived_parsed_serp,
+            service_name,
+        )
+    except ApprovalException as e:
+        open_new_tab(archived_raw_serp.raw_archive_url)
+        raise e
 
 
 def _find_archived_raw_serp(wayback_raw_url: str) -> ArchivedRawSerp:
