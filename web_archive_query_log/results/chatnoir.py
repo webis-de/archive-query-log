@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import Pattern, Iterator
+from urllib.parse import urljoin
 
 from bs4 import Tag
 
@@ -17,6 +18,7 @@ class ChatNoirResultsParser(HtmlResultsParser):
             self,
             html: Tag,
             timestamp: int,
+            serp_url: str,
     ) -> Iterator[ArchivedSearchResultSnippet]:
         results = html.find("section", id="SearchResults")
         if results is None:
@@ -25,6 +27,7 @@ class ChatNoirResultsParser(HtmlResultsParser):
         for index, result in enumerate(results_iter):
             header: Tag = result.find("header")
             url = header.find("a", class_="link")["href"]
+            url = urljoin(serp_url, url)
             title = clean_html(header.find("h2"))
             # Remove header. Only the snippet will be left.
             header.decompose()

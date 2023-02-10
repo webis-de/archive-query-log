@@ -4,7 +4,7 @@ from gzip import GzipFile
 from io import TextIOWrapper
 from pathlib import Path
 from typing import Sequence, NamedTuple, Iterator, Pattern
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 
 from bs4 import Tag, BeautifulSoup
 from tqdm.auto import tqdm
@@ -24,6 +24,7 @@ class HtmlResultsParser(ResultsParser, ABC):
             self,
             html: Tag,
             timestamp: int,
+            serp_url: str,
     ) -> Iterator[ArchivedSearchResultSnippet]:
         ...
 
@@ -38,7 +39,11 @@ class HtmlResultsParser(ResultsParser, ABC):
             "html.parser",
             from_encoding=raw_serp.encoding
         )
-        results = tuple(self.parse_html(html, raw_serp.timestamp))
+        results = tuple(self.parse_html(
+            html,
+            raw_serp.timestamp,
+            raw_serp.url,
+        ))
         return results if len(results) > 0 else None
 
 
@@ -55,6 +60,7 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
             self,
             html: Tag,
             timestamp: int,
+            serp_url: str,
     ) -> Iterator[ArchivedSearchResultSnippet]:
         for index, result in enumerate(html.select(self.results_selector)):
             url_tag = result.select_one(self.url_selector)
@@ -65,6 +71,7 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
             url = url_tag.attrs[self.url_attribute]
             if url is None:
                 continue
+            url = urljoin(serp_url, url)
             title_tag = result.select_one(self.title_selector)
             if title_tag is None:
                 continue
