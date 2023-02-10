@@ -13,7 +13,7 @@ from web_archive_query_log.results.parse import ArchivedParsedSerpParser
 
 _expected_dir = PROJECT_DIRECTORY_PATH / \
                 "data/manual-annotations/" \
-                "archived-raw-serps/expected_serp_results/"
+                "archived-raw-serps/expected/"
 _warc_dir = PROJECT_DIRECTORY_PATH / \
             "data/manual-annotations/" \
             "archived-raw-serps/warcs/"
