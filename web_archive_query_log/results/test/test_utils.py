@@ -21,12 +21,12 @@ _warc_dir = PROJECT_DIRECTORY_PATH / \
 
 def verify_serp_parsing(
         wayback_raw_url: str,
-        service: str | None = None,
+        service_name: str | None = None,
 ) -> None:
-    if service is None:
+    if service_name is None:
         services = SERVICES.values()
     else:
-        services = [SERVICES[service]]
+        services = [SERVICES[service_name]]
 
     result_parsers = []
     interpreted_query_parsers = []
@@ -41,12 +41,10 @@ def verify_serp_parsing(
     archived_raw_serp = _find_archived_raw_serp(wayback_raw_url)
     archived_parsed_serp = parser.parse_single(archived_raw_serp)
 
-    if archived_parsed_serp is None:
-        return
-
     _verify_archived_parsed_serp_results(
         archived_raw_serp,
         archived_parsed_serp,
+        service_name,
     )
 
 
@@ -64,15 +62,20 @@ _schema = ArchivedParsedSerp.schema()
 
 def _verify_archived_parsed_serp_results(
         archived_raw_serp: ArchivedRawSerp,
-        archived_parsed_serp: ArchivedParsedSerp,
+        archived_parsed_serp: ArchivedParsedSerp | None,
+        service: str | None = None,
 ) -> None:
-    actual = _schema.dump(archived_parsed_serp)
+    if archived_parsed_serp is not None:
+        actual = _schema.dump(archived_parsed_serp)
+    else:
+        actual = None
+    name = f"{archived_raw_serp.query}-{archived_raw_serp.timestamp}"
+    if service is not None:
+        name = f"{service}-{name}"
+    name = slugify(name)
     verify_as_json(
         actual,
         options=Options().with_namer(
-            CliNamer(
-                f"{_expected_dir}/"
-                f"{slugify(archived_raw_serp.raw_archive_url)}"
-            )
+            CliNamer(f"{_expected_dir}/{name}")
         )
     )
