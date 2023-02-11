@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "wonder kids beginning",
+    "offset": null,
+    "page": null,
+    "query": "wonder kids beginning",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Toddler Bible Buddies: in the <em>Beginning</em>. The <em>Wonder Kids</em>. Play full songs with Apple Music. Get up to 3 months free . Try Now . Top Songs By The <em>Wonder Kids</em>. Jesus Loves Me . The <em>Wonder</em> \u2026",
+            "timestamp": 1652132287,
+            "title": "In The Beginning (Genesis 1:1) - The Wonder Kids | Shazam",
+            "url": "https://www.shazam.com/track/85911340/in-the-beginning-genesis-11"
+        },
+        {
+            "rank": 2,
+            "snippet": "Help your <em>kids</em> discover the <em>wonder</em> of God\u2019s love through inspirational books, music and apps. From the tiniest babes to young adults, <em>Wonder Kids</em> creates entertaining and engaging content \u2026",
+            "timestamp": 1652132287,
+            "title": "Wonder Kids",
+            "url": "https://www.mywonderkids.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Mar 30, 2009\u00a0\u00b7 Check out In the <em>Beginning</em> by The <em>Wonder Kids</em> on Amazon Music. Stream ad-free or purchase CD's and MP3s now on Amazon.com. ... The <em>Wonder Kids</em>. From the Album 30 \u2026",
+            "timestamp": 1652132287,
+            "title": "In the Beginning by The Wonder Kids on Amazon Music",
+            "url": "https://www.amazon.com/In-the-Beginning/dp/B0026ZRY2E"
+        },
+        {
+            "rank": 4,
+            "snippet": "WonderKids\u2122 Providing social skills groups for<em> children</em> ages 5-21 with Autism Spectrum Disorder or Social (Pragmatic) Communication Disorder in an Autism center. A referral is \u2026",
+            "timestamp": 1652132287,
+            "title": "WonderKids\u2122 - Wesley Family Services",
+            "url": "https://wfspa.org/service/wonderkids/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Wonder Kids is a fanseries created by VintageRainbow. It's genres consists of action, fantasy, adventure, comedy, and drama and is set in the late modern 1970s-mid 1980s. The series \u2026",
+            "timestamp": 1652132287,
+            "title": "Wonder Kids Wiki | Fandom",
+            "url": "https://wonder-kids.fandom.com/wiki/Wonder_Kids_Wiki"
+        }
+    ],
+    "timestamp": 1652132287,
+    "url": "https://www.bing.com/search?q=wonder+kids+beginning&pc=0TRO&ptag=C1N6612A70619013F5&form=CONBNT&conlogo=CT3210127"
+}

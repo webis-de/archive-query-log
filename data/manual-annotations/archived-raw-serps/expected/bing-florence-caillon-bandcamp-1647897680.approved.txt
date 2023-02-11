@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "Florence Caillon bandcamp",
+    "offset": null,
+    "page": null,
+    "query": "Florence Caillon bandcamp",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "L\u2019Eolienne/<em>Florence Caillon</em> d\u00e9veloppe un langage hybride qu\u2019elle nomme \u00ab cirque chor\u00e9graphi\u00e9 \u00bb. Elle s\u2019attache \u00e0 chor\u00e9graphier le vocabulaire circassien en d\u00e9veloppant des \u00e9tats de corps et diff\u00e9rents principes issus de l\u2019\u00e9criture chor\u00e9graphique.",
+            "timestamp": 1647897680,
+            "title": "L'Eolienne Cirque Chor\u00e9graphi\u00e9 - Florence Caillon",
+            "url": "https://www.eolienne-cirque-choregraphie.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "The Windy Train (extrait du film \"Rachel...\") by <em>Florence Caillon</em> published on 2019-11-21T17:11:28Z. Travelling Mirror by <em>Florence Caillon</em> published on 2019-11-21T17:11:10Z. Tianjin Boat by <em>Florence Caillon</em> published on 2019-11-21T17:10:20Z. Oyesh (extrait du film \"Qui a tu\u00e9 Lady Winsley\") by <em>Florence Caillon</em>",
+            "timestamp": 1647897680,
+            "title": "Stream Florence Caillon music | Listen to songs, albums ...",
+            "url": "https://soundcloud.com/florence-caillon"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Florence Caillon</em> Album Songs- Download <em>Florence Caillon</em> all albums hit songs or play <em>Florence Caillon</em> new albums MP3 songs. Listen latest songs from <em>Florence Caillon</em> album list free online on Gaana.com. Gaana.com presents the Best of <em>Florence Caillon</em> songs for you. Also enjoy the online music collection of your favourite artists for free.",
+            "timestamp": 1647897680,
+            "title": "Florence Caillon Album Songs- Download Florence \u2026",
+            "url": "https://gaana.com/artist/florence-caillon/albums"
+        },
+        {
+            "rank": 4,
+            "snippet": "Listen to music by <em>Florence Caillon /</em> Xavier Demerliac on Apple Music. Find top songs and albums by <em>Florence Caillon /</em> Xavier Demerliac including In the Air and Hypnotic System.",
+            "timestamp": 1647897680,
+            "title": "\u200eFlorence Caillon / Xavier Demerliac on Apple Music",
+            "url": "https://music.apple.com/us/artist/florence-caillon-xavier-demerliac/317426939"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Florence Caillon</em>'s 3 research works with 19 citations and 700 reads, including: Po\u00efkilodermie h\u00e9r\u00e9ditaire fibrosante, myopathie r\u00e9tractile et fibrose pulmonaire (POIKTMP): Une pathologie ...",
+            "timestamp": 1647897680,
+            "title": "Florence Caillon's research works | Ecole Centrale de ...",
+            "url": "https://www.researchgate.net/scientific-contributions/Florence-Caillon-2085150550"
+        },
+        {
+            "rank": 6,
+            "snippet": "Jul 28, 2015\u00a0\u00b7 <em>Florence Caillon</em> \u2013 Phon\u00e9tines IV (loop), from Phon\u00e9tines, children book+cassette, Flammarion, France (1992). Rhythm track on flute and saxophone. Rhythm track on flute and saxophone. (47:30)",
+            "timestamp": 1647897680,
+            "title": "Continuumix # 21 : Continuo : Free Download ... - Archive",
+            "url": "https://archive.org/details/Continuumix21"
+        },
+        {
+            "rank": 7,
+            "snippet": "Mar 01, 2022\u00a0\u00b7 Preview, buy and download high-quality music downloads of Musiques de Boulevard du Palais 1 by <em>Florence Caillon</em> from 7digital New Zealand - We have over 30 million high quality tracks in our store. Skip to the main navigation Skip to the main content Skip to search Skip to footer Skip to the main content Back to the top.",
+            "timestamp": 1647897680,
+            "title": "Musiques de Boulevard du Palais ... | Florence Caillon ...",
+            "url": "https://nz.7digital.com/artist/florence-caillon/release/musiques-de-boulevard-du-palais-1-317417"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Florence Caillon</em> Fanart. WE CURRENTLY HAVE 0 IMAGES IN THIS SECTION. Add album If there is an album missing from the list, find its release-group id from musicbrainz.org and add it here. HD ClearLOGO. Please login to make requests. Please login to upload images",
+            "timestamp": 1647897680,
+            "title": "Florence Caillon | Music fanart | fanart.tv",
+            "url": "https://fanart.tv/artist/3477ca0a-d452-42c9-9a2a-3d9a64f373fd/caillon-florence/"
+        }
+    ],
+    "timestamp": 1647897680,
+    "url": "https://www.bing.com/search?q=Florence+Caillon+bandcamp&qs=n&form=QBRE&=Search+%7B0%7D+for+%7B1%7D&=Search+work+for+%7B0%7D&=%25eManage+Your+Search+History%25E&sp=-1&pq=florence+caillon+bandcamp&sc=1-25&sk=&cvid=E5A3CCFC449440CABF3E217E535C5DD6"
+}

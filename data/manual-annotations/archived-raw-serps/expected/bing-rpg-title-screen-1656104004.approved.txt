@@ -1,0 +1,129 @@
+{
+    "interpreted_query": "RPG Title Screen",
+    "offset": null,
+    "page": null,
+    "query": "RPG Title Screen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "RPG Maker for Beginners: Customizi\u2026",
+            "url": "https://www.alteredgamer.com/rpg-maker/52410-vx-for-beginners-part-5-customizing-your-title-screen-and-your-character/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "RPG Maker Title Screens: Topic :: rpgmaker.net",
+            "url": "https://rpgmaker.net/forums/topics/10106/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "RPG Maker for Beginners: Customizi\u2026",
+            "url": "http://www.alteredgamer.com/rpg-maker/52410-vx-for-beginners-part-5-customizing-your-title-screen-and-your-character/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "RPG Maker MV - How to Make Custom Title Screen - YouTube",
+            "url": "https://www.youtube.com/watch?v=kNhRjYnZ5o4"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "RPG Maker Title Screens: Topic :: rpgmaker.net",
+            "url": "https://rpgmaker.net/forums/topics/10106/?post=337532"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Title screen question | RPG Maker Forums",
+            "url": "https://forums.rpgmakerweb.com/index.php?threads/title-screen-question.49965/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Cara Mengganti Title Screen RPG Maker XP ~ Games RPG Maker",
+            "url": "https://tipsmygame.blogspot.com/2017/11/mengganti-title-screen-rpg-maker-xp.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "RPG Maker Title Screens: Topic :: rpgmaker.net",
+            "url": "https://rpgmaker.net/forums/topics/10106/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Xenoblade Chronicles: Definitive Edition Review | TheGamer",
+            "url": "https://www.thegamer.com/xenoblade-chronicles-definitive-edition-review/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "ScreenShot image - I-RPG - Indie DB",
+            "url": "https://www.indiedb.com/games/i-rpg/images/screenshot"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Empires &amp; Puzzles: RPG Quest Gam\u2026",
+            "url": "http://www.download-free-games.com/mobile/empires-puzzles-rpg-quest"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "\u041d\u043e\u0432\u044b\u0435 \u0438\u0433\u0440\u044b \u0444\u0430\u0431\u0440\u0438\u043a\u0438 \u0438\u0433\u0440 Alawar \u0438\u044e\u043b\u044c 2016 \u0441\u043a\u0430\u0447\u0430\u0442\u044c \u0442\u043e\u0440\u0440\u0435\u043d\u0442 \u043d\u0430 P\u2026",
+            "url": "http://torrent-portal.ru/other/8304-novie-igri-fabriki-igr-alawar-iyul-2016-2016-pc.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Lineage 2: Goddess of Destruction \u0441\u043a\u0430\u0447\u0430\u0442\u044c \u0442\u043e\u0440\u0440\u0435\u043d\u0442 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u043d\u0430 PC",
+            "url": "https://torrent-portal.ru/games-2011/339-lineage-2-goddess-of-destruction.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Child of Light Launch Trailer and Screens | RPG Site",
+            "url": "https://www.rpgsite.net/news/3516-child-of-light-launch-trailer-and-screens"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Spintires 2014 \u0441\u043a\u0430\u0447\u0430\u0442\u044c \u0442\u043e\u0440\u0440\u0435\u043d\u0442 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u043d\u0430 PC",
+            "url": "http://torrent-portal.ru/gonki/1401-spintires-2014.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Luxor 3 \u0441\u043a\u0430\u0447\u0430\u0442\u044c \u0442\u043e\u0440\u0440\u0435\u043d\u0442 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u043d\u0430 PC",
+            "url": "http://torrent-portal.ru/logicheskie-igry/1934-luxor-3.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1656104004,
+            "title": "Need for Speed: Most Wanted (2005) \u0441\u043a\u0430\u0447\u0430\u0442\u044c \u0442\u043e\u0440\u0440\u0435\u043d\u0442 \u0431\u0435\u0441\u043f\u2026",
+            "url": "http://torrent-portal.ru/gonki/1003-need-for-speed-most-wanted-2005.html"
+        }
+    ],
+    "timestamp": 1656104004,
+    "url": "https://www.bing.com/images/search?q=RPG+Title+Screen&FORM=IRMHRS"
+}

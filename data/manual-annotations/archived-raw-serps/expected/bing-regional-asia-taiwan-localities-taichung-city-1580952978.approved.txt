@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Regional Asia Taiwan Localities Taichung City",
+    "offset": null,
+    "page": null,
+    "query": "Regional Asia Taiwan Localities Taichung City",
+    "results": [],
+    "timestamp": 1580952978,
+    "url": "https://www.bing.com/search?q=Regional+Asia+Taiwan+Localities+Taichung+City"
+}

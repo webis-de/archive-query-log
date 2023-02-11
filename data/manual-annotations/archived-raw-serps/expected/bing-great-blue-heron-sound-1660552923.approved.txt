@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "great blue heron sound",
+    "offset": null,
+    "page": null,
+    "query": "great blue heron sound",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Aug 12, 2022\u00a0\u00b7 The coniferous trees surrounding the upper Slate River house a <em>great blue heron</em> rookery, split into an upper and lower colony \u2014 possibly the highest elevation rookery in \u2026",
+            "timestamp": 1660552923,
+            "title": "Protecting a vulnerable <em>great blue heron</em> rookery",
+            "url": "https://www.hcn.org/articles/birds-protecting-a-vulnerable-great-blue-heron-rookery"
+        },
+        {
+            "rank": 2,
+            "snippet": "Aug 03, 2022\u00a0\u00b7 Indeed, Songs for the <em>Great Blue Heron</em> feels more indebted to that style, along with '70s folk rock, than anything in the jam band oeuvre. Sonically, it's a fabulous record.",
+            "timestamp": 1660552923,
+            "title": "Supraluke, 'Songs for the <em>Great Blue Heron</em>'",
+            "url": "https://www.sevendaysvt.com/vermont/supraluke-songs-for-the-great-blue-heron/Content?oid=36158903"
+        },
+        {
+            "rank": 3,
+            "snippet": "Jun 10, 2022\u00a0\u00b7 Nature <em>Great Blue Heron</em> cooling down: joelbolden: Post Your Photos! 8: 08-05-2021 09:44 PM: Nature Tree Swallow in flight, Green <em>Heron</em>, <em>Blue Heron</em>: Venom3300: Post Your Photos! 13: 05-12-2016 02:26 AM: Nature <em>heron</em> above the lake: dcmsox2004: Post Your Photos! 2: 07-19-2013 07:22 AM: Nature <em>Great</em> white egret above Victoria Lake (Uganda) EricR ...",
+            "timestamp": 1660552923,
+            "title": "<em>Great Blue Heron</em> Flying Above Lake - PentaxForums.com",
+            "url": "https://www.pentaxforums.com/forums/12-post-your-photos/442909-nature-great-blue-heron-flying-above-lake.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Le livre num\u00e9rique (en anglais : ebook ou e-book), aussi connu sous les noms de livre \u00e9lectronique et de livrel, est un livre \u00e9dit\u00e9 et diffus\u00e9 en version num\u00e9rique, disponible sous la forme de fichiers, qui peuvent \u00eatre t\u00e9l\u00e9charg\u00e9s et stock\u00e9s pour \u00eatre lus sur un \u00e9cran [1], [2] (ordinateur personnel, t\u00e9l\u00e9phone portable, liseuse, tablette tactile), sur une plage braille, un ...",
+            "timestamp": 1660552923,
+            "title": "Livre num\u00e9rique \u2014 Wikip\u00e9dia",
+            "url": "https://fr.wikipedia.org/wiki/Livre_num%C3%A9rique"
+        },
+        {
+            "rank": 5,
+            "snippet": "Please note: this guidance is of a general nature. Employers should consider the specific conditions of individual places of work and comply with \u2026",
+            "timestamp": 1660552923,
+            "title": "COVID-19: <em>cleaning in non-healthcare settings</em> outside the home - <em>GOV.UK</em>",
+            "url": "https://www.gov.uk/government/publications/covid-19-decontamination-in-non-healthcare-settings/covid-19-decontamination-in-non-healthcare-settings"
+        },
+        {
+            "rank": 6,
+            "snippet": "The elegant <em>Great</em> Egret is a dazzling sight in many a North American wetland. Slightly smaller and more svelte than a <em>Great Blue Heron</em>, these are still large birds with impressive wingspans. They hunt in classic <em>heron</em> fashion, standing immobile or wading through wetlands to capture fish with a deadly jab of their yellow bill. <em>Great</em> Egrets were hunted nearly to extinction for their \u2026",
+            "timestamp": 1660552923,
+            "title": "<em>Great</em> Egret Identification - <em>All About Birds</em>",
+            "url": "https://www.allaboutbirds.org/guide/great_egret/id"
+        },
+        {
+            "rank": 7,
+            "snippet": "Arts, entertainment, and media. Ubiquitous Synergy Seeker, a Canadian band, also known as USS or U.S.S.; Universal Studios Singapore, a theme park in Singapore; Businesses and organizations. Union of Sovereign States, the planned successor to the Soviet Union; Union Switch &amp; Signal, a supplier of railroad switching equipment; Union Syndicale Suisse, the Swiss \u2026",
+            "timestamp": 1660552923,
+            "title": "USS - <em>Wikipedia</em>",
+            "url": "https://en.wikipedia.org/wiki/USS"
+        },
+        {
+            "rank": 8,
+            "snippet": "Aug 03, 2022\u00a0\u00b7 The <em>Great Blue Heron</em> features in one Native American myth as a creature whose pride must not be insulted. According to an Algonquin story, the <em>Great Blue Heron</em> is a wise and cunning animal who takes <em>great</em> pride in his long slender body. ... I decide I should make a light swoosh <em>sound</em> and the <em>Heron</em> turned and gracefully leapt up over a 5\u2032 high ...",
+            "timestamp": 1660552923,
+            "title": "<em>Heron</em> Symbolism &amp; Meaning (+Totem, Spirit &amp; Omens) - World \u2026",
+            "url": "https://worldbirds.com/heron-symbolism/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Sep 23, 2018\u00a0\u00b7 The <em>great</em> tit is a member of the tit family, Paridae. Like its smaller relative, the <em>blue</em> tit, the <em>great</em> tit has a yellow breast and <em>blue</em>-grey wings. If you can remember that the <em>great</em> tit, as well as being larger, also has an all-black head with white cheeks, then you won\u2019t have any problem telling the two birds apart.",
+            "timestamp": 1660552923,
+            "title": "List of Common British Birds With Pictures &amp; Facts For Kids &amp; Adults",
+            "url": "https://www.activewild.com/common-british-birds/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Access a free guide of more than 800 species of North American birds; Discover the impacts of climate change on birds and their habitats; Learn more about the birds you love through audio clips, stunning photography, and in-depth text",
+            "timestamp": 1660552923,
+            "title": "Birds | <em>Audubon</em>",
+            "url": "https://www.audubon.org/birds"
+        }
+    ],
+    "timestamp": 1660552923,
+    "url": "https://www.bing.com/search?q=great+blue+heron+sound&FORM=QSRE1"
+}

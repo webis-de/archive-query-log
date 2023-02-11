@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "intel i7 chip",
+    "offset": null,
+    "page": null,
+    "query": "intel i7 chip",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Intel</em>\u00ae Extreme Tuning Utility software has been updated to provide a simplified process to overclock unlocked 12th Gen <em>Intel</em>\u00ae Core\u2122 desktop processors. Memory Overclocking: NEW <em>Intel</em>\u00ae Extreme Memory Profile 3.0 specification support for DDR5 enabling. NEW <em>Intel</em>\u00ae Dynamic Memory Boost and memory overclocking support.",
+            "timestamp": 1656625238,
+            "title": "<em>Intel\u00ae Core\u2122 i7 Processors</em>",
+            "url": "https://www.intel.com/content/www/us/en/products/details/processors/core/i7.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Some products can support AES New Instructions with a Processor Configuration update, in particular, <em>i7</em>-2630QM/<em>i7</em>-2635QM, <em>i7</em>-2670QM/<em>i7</em>-2675QM, i5-2430M/i5-2435M, i5-2410M/i5-2415M. Please contact OEM for the BIOS that includes the latest Processor configuration update.",
+            "timestamp": 1656625238,
+            "title": "<em>Intel</em>\u00ae Core\u2122 <em>i7</em>-7700HQ Processor",
+            "url": "https://www.intel.com/content/www/us/en/products/sku/97185/intel-core-i77700hq-processor-6m-cache-up-to-3-80-ghz/specifications.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Jul 10, 2021\u00a0\u00b7 <em>Intel</em> lists the Core <em>i7</em>-11700K with a 125W TDP, the same as the previous-gen 10700K, but this only encompasses the PL1 (Power Limit 1) level that occurs when the <em>chip</em> operates at its base frequency.",
+            "timestamp": 1656625238,
+            "title": "<em>Intel</em> Core <em>i7</em>-11700K Review: The <em>Chip</em> of Last Resort",
+            "url": "https://www.tomshardware.com/reviews/intel-core-i7-11700k-cpu-review"
+        },
+        {
+            "rank": 4,
+            "snippet": "Bus Speed. A bus is a subsystem that transfers data between computer components or between computers. Types include front-side bus (FSB), which carries data between the CPU and memory controller hub; direct media interface (DMI), which is a point-to-point interconnection between an <em>Intel</em> integrated memory controller and an <em>Intel</em> I/O controller hub on the computer\u2019s \u2026",
+            "timestamp": 1656625238,
+            "title": "<em>Intel</em>\u00ae Core\u2122 <em>i7</em>-<em>1165G7</em> Processor",
+            "url": "https://ark.intel.com/content/www/us/en/ark/products/208921/intel-core-i71165g7-processor-12m-cache-up-to-4-70-ghz-with-ipu.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Intel</em>\u00ae Clear Video HD Technology. <em>Intel</em>\u00ae Clear Video HD Technology, like its predecessor, <em>Intel</em>\u00ae Clear Video Technology, is a suite of image decode and processing technologies built into the integrated processor graphics that improve video playback, delivering cleaner, sharper images, more natural, accurate, and vivid colors, and a clear and stable video picture.",
+            "timestamp": 1656625238,
+            "title": "<em>Intel</em>\u00ae Core\u2122 <em>i7</em>-<em>8700K</em> Processor",
+            "url": "https://ark.intel.com/content/www/us/en/ark/products/126684/intel-core-i78700k-processor-12m-cache-up-to-4-70-ghz.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Feb 08, 2022\u00a0\u00b7 The Core <em>i7</em>-12700H is the lowest <em>chip</em> in the stack that still provides the full complement of CPU cores found in <em>Intel</em>'s H-series die, making it a compelling option. ... <em>Intel</em> Core <em>i7</em>-12700H ...",
+            "timestamp": 1656625238,
+            "title": "<em>Intel</em> Core <em>i7</em>-12700H Review: Alder Lake on the Go | <em>TechSpot</em>",
+            "url": "https://www.techspot.com/review/2410-intel-core-i7-12700h/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Intel</em> introduces Loihi 2, its second-generation neuromorphic research <em>chip</em>. First <em>chip</em> fabricated on their <em>Intel</em> 4 EUV process, Loihi 2 brings faster processing and synaptic operations, new algorithm support, and increases the neurons count to 1 million. ... <em>Intel</em> Core <em>i7 i7</em>-8550U (4/8) @ 1.8 GHz. 1,800 MHz 1,800,000 kHz <em>Intel</em> Core i9 i9-9980XE ...",
+            "timestamp": 1656625238,
+            "title": "<em>WikiChip</em> - <em>WikiChip</em>",
+            "url": "https://en.wikichip.org/wiki/WikiChip"
+        },
+        {
+            "rank": 8,
+            "snippet": "May 25, 2021\u00a0\u00b7 The <em>Intel</em> Core <em>i7</em>-11700K ($399 MSRP) is the eight-core, 16-thread desktop CPU that the Core i9-11900K should have been. ... Though we expected the <em>Intel chip</em> to trail the AMD, the other single ...",
+            "timestamp": 1656625238,
+            "title": "<em>Intel Core i7-11700K Review</em> | <em>PCMag</em>",
+            "url": "https://www.pcmag.com/reviews/intel-core-i7-11700k"
+        },
+        {
+            "rank": 9,
+            "snippet": "Price and performance details for the <em>Intel</em> Core <em>i7</em>-7700HQ @ 2.80GHz can be found below. This is made using thousands of PerformanceTest benchmark results and is updated daily.. The first graph shows the relative performance of the CPU compared to the 10 other common (single) CPUs in terms of PassMark CPU Mark.",
+            "timestamp": 1656625238,
+            "title": "PassMark - <em>Intel</em> Core <em>i7</em>-7700HQ @ 2.80GHz - Price performance \u2026",
+            "url": "https://www.cpubenchmark.net/cpu.php?cpu=Intel+Core+i7-7700HQ+%40+2.80GHz"
+        },
+        {
+            "rank": 10,
+            "snippet": "An <em>Intel</em> Core <em>i7</em> is better than an i5 for instance, going up to 8-cores from 6-cores. An entry-level PC built for basic tasks like web browsing and word processing would be well-suited by and <em>Intel</em> Core i3 processor. As you rise up the stack, gamers, content creators and power users will demand the higher performing <em>Intel</em> Core <em>i7</em> and i9 CPUs. ...",
+            "timestamp": 1656625238,
+            "title": "<em>Intel</em> Processors | <em>Intel</em> Core i3, i5, <em>i7</em> &amp; i9 CPUs | Ebuyer.com",
+            "url": "https://www.ebuyer.com/store/Components/cat/Processors-Intel"
+        }
+    ],
+    "timestamp": 1656625238,
+    "url": "https://www.bing.com/search?q=intel+i7+chip&lvl=1&FORM=PMETIS&filters=ans%3A%22cvns%22+level%3A%220%22+mcid%3A%229363152adf5f441aa0dd1d28d3cf21f2%22&idx=0"
+}

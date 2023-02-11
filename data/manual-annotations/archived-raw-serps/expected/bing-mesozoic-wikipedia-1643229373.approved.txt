@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "Mesozoic wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "Mesozoic wikipedia",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The <em>Mesozoic</em> is the middle of three eras since complex life evolved: the Paleozoic, the <em>Mesozoic</em>, and the Cenozoic. The era began in the wake of the Permian\u2013Triassic extinction event , the largest well-documented mass extinction in Earth's history, and ended with the Cretaceous\u2013Paleogene extinction event , another mass extinction whose ...",
+            "timestamp": 1643229373,
+            "title": "<em>Mesozoic - Wikipedia</em>",
+            "url": "https://en.wikipedia.org/wiki/Mesozoic"
+        },
+        {
+            "rank": 2,
+            "snippet": "During most of the Late Cretaceous (100.5 to 66 million years ago) the eastern half of North America formed Appalachia (named for the Appalachian Mountains), an island land mass separated from Laramidia to the west by the Western Interior Seaway.This seaway had split North America into two massive landmasses due to a multitude of factors such as tectonism and sea \u2026",
+            "timestamp": 1643229373,
+            "title": "Appalachia (landmass) - <em>Wikipedia</em>",
+            "url": "https://en.wikipedia.org/wiki/Appalachia_(landmass)"
+        },
+        {
+            "rank": 3,
+            "snippet": "Na escala de tempo geol\u00f3gico, o <em>Mesozoico</em> (pr\u00e9-AO 1990: Mesoz\u00f3ico) \u00e9 a era do \u00e9on Fanerozoico que est\u00e1 compreendida entre h\u00e1 251 milh\u00f5es de anos e 65,5 milh\u00f5es de anos, aproximadamente. <em>Mesozoico</em> significa \"vida m\u00e9dia\", que deriva do prefixo grego meso/\u03bc\u03b5\u03c3\u03bf- para \"entre\" e Zoon/\u03b6\u1ff7\u03bf\u03bd que significa \"animal\" ou \"ser vivo\".",
+            "timestamp": 1643229373,
+            "title": "<em>Mesozoico</em> \u2013 Wikip\u00e9dia, a enciclop\u00e9dia livre",
+            "url": "https://pt.wikipedia.org/wiki/Mesozoico"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Starfish</em>, or sea stars, are Echinoderms of the Class Asteroidea. p35. All live in the ocean, on the sea floor.Many <em>starfish</em> live in deep water, others in shallow water. Some live in the intertidal zone, between low and high tide. They have five or more arms and can be quite large. The Sunflower sea star (Pycnopodia helianthoides) is the largest: fully grown, its arm-span is about \u2026",
+            "timestamp": 1643229373,
+            "title": "<em>Starfish</em> - Simple English <em>Wikipedia</em>, the free encyclopedia",
+            "url": "https://simple.wikipedia.org/wiki/Starfish"
+        },
+        {
+            "rank": 5,
+            "snippet": "\u4e2d\u751f\u4ee3\uff08\u3061\u3085\u3046\u305b\u3044\u3060\u3044\u3001\u4ecf: M\u00e9sozo\u00efque \u3001\u82f1: <em>Mesozoic</em> era \uff09\u306f\u3001\u53e4\u751f\u4ee3\u30fb\u4e2d\u751f\u4ee3\u30fb\u65b0\u751f\u4ee3\u3068\u5206\u304b\u308c\u308b\u5730\u8cea\u6642\u4ee3\u306e\u5927\u304d\u306a\u533a\u5206\u306e\u4e00\u3064\u3067\u3042\u308b\u3002 \u7d042\u51045217\u4e07\u5e74\u524d\u304b\u3089\u7d046600\u4e07\u5e74\u524d \u306b\u76f8\u5f53\u3059\u308b\u3002. \u4e2d\u751f\u4ee3\u306f\u3001\u3055\u3089\u306b\u4ee5\u4e0b\u306e3\u3064\u306e\u7d00\u306b\u7d30\u5206\u3055\u308c\u308b\u3002",
+            "timestamp": 1643229373,
+            "title": "\u4e2d\u751f\u4ee3 - <em>Wikipedia</em>",
+            "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E7%94%9F%E4%BB%A3"
+        }
+    ],
+    "timestamp": 1643229373,
+    "url": "https://www.bing.com/search?q=Mesozoic+wikipedia&form=WIKIRE"
+}

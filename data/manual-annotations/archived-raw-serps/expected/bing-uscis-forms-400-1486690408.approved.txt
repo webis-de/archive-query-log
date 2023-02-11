@@ -1,0 +1,206 @@
+{
+    "interpreted_query": "USCIS Forms 400",
+    "offset": null,
+    "page": null,
+    "query": "USCIS Forms 400",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Updated N-400. Note the large bar code across the bottom, and the ...",
+            "timestamp": 1486690408,
+            "title": "bls-immigration.com",
+            "url": "http://bls-immigration.com/2014/04/reminder-updated-n-400-form-now-mandatory-for-naturalization-applications/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Us Citizenship Form N 400 by EchoMovement",
+            "timestamp": 1486690408,
+            "title": "docstoc.com",
+            "url": "http://docstoc.com/docs/14623971/us-citizenship-form-n-400"
+        },
+        {
+            "rank": 3,
+            "snippet": "Uscis Form N 400 Application For Naturalization Free | 2016 Car ...",
+            "timestamp": 1486690408,
+            "title": "www.2016carreleasedate.com",
+            "url": "http://www.2016carreleasedate.com/tag/uscis-form-n-400-application-for-naturalization-free-"
+        },
+        {
+            "rank": 4,
+            "snippet": "Form N 600K Application for Citizenship and Issuance of Certificate",
+            "timestamp": 1486690408,
+            "title": "appleeou.com",
+            "url": "http://appleeou.com/us-citizenship-application"
+        },
+        {
+            "rank": 5,
+            "snippet": "400 Pdf for Pinterest",
+            "timestamp": 1486690408,
+            "title": "pinstopin.com",
+            "url": "http://pinstopin.com/n-400-pdf"
+        },
+        {
+            "rank": 6,
+            "snippet": "is 328 form your prison break games crack free download form n-400 ...",
+            "timestamp": 1486690408,
+            "title": "meissenkeramik.de",
+            "url": "http://meissenkeramik.de/download-us-citizenship-application-form-n-400"
+        },
+        {
+            "rank": 7,
+            "snippet": "Form N-400, Application for Naturalization | CitizenPath",
+            "timestamp": 1486690408,
+            "title": "citizenpath.com",
+            "url": "https://citizenpath.com/n-400-naturalization-citizenship-application/"
+        },
+        {
+            "rank": 8,
+            "snippet": "n400 example form Fill Online, Printable, Fillable, Blank - PDFfiller",
+            "timestamp": 1486690408,
+            "title": "www.pdffiller.com",
+            "url": "http://www.pdffiller.com/100044878-n-400-instructions-Fillable-Instructions-N-400-Application-for-Naturalization-User-Forms"
+        },
+        {
+            "rank": 9,
+            "snippet": "Hajro v Barrett (USCIS-SFR) N-400 appeal granted 3-21-2012",
+            "timestamp": 1486690408,
+            "title": "www.slideshare.net",
+            "url": "http://www.slideshare.net/BigJoe5/hajro-v-barrett-uscissfr-n400-appeal-granted-3212012"
+        },
+        {
+            "rank": 10,
+            "snippet": "Download Form N-400 Application for Naturalization 1275 \u00b7 1650",
+            "timestamp": 1486690408,
+            "title": "www.shminhe.com",
+            "url": "http://www.shminhe.com/images/8644.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "uscis form i 864 affidavit of support pictures uscis immigration forms ...",
+            "timestamp": 1486690408,
+            "title": "autospost.com",
+            "url": "http://autospost.com/cat/n-400-form-citizenship-uscis.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Form N-400, Application for Naturalization - USCIS",
+            "timestamp": 1486690408,
+            "title": "culturevie.info",
+            "url": "http://culturevie.info/tag-us-citizenship-application-forms-to-print.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "400 Cover Letter Sample",
+            "timestamp": 1486690408,
+            "title": "www.scribd.com",
+            "url": "https://www.scribd.com/doc/103317285/N-400-Cover-Letter-Sample"
+        },
+        {
+            "rank": 14,
+            "snippet": "Searched Term: n 400",
+            "timestamp": 1486690408,
+            "title": "driverlayer.com",
+            "url": "http://driverlayer.com/img/n%20400/20/any"
+        },
+        {
+            "rank": 15,
+            "snippet": "Form N-336 Request for a Hearing on a Decision in Naturalization ...",
+            "timestamp": 1486690408,
+            "title": "formupack.com",
+            "url": "http://formupack.com/pdf-forms/Federal/USCIS-CitizenshipImmigrationServices/FederalUSCIS_n-336.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Form N-400 09/13/13 N Each and every question and instruction on this ...",
+            "timestamp": 1486690408,
+            "title": "ifhc.org.br",
+            "url": "http://ifhc.org.br/n400-citizenship-form.htm"
+        },
+        {
+            "rank": 17,
+            "snippet": "USCIS Immigration Forms, I-90, N-400, Citizenship Application",
+            "timestamp": 1486690408,
+            "title": "www.usimmigration.us",
+            "url": "https://www.usimmigration.us/immigration-forms/index.html?r=uscispt"
+        },
+        {
+            "rank": 18,
+            "snippet": "Persits Software, Inc. - Powerful ASP &amp; ASP.NET Components - What's ...",
+            "timestamp": 1486690408,
+            "title": "www.persits.com",
+            "url": "http://www.persits.com/new.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Back &gt; Galleries For &gt; N 400",
+            "timestamp": 1486690408,
+            "title": "galleryhip.com",
+            "url": "http://galleryhip.com/n-400.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "Immigration Naturalization Form N-400 1275 \u00b7 1650",
+            "timestamp": 1486690408,
+            "title": "www.shminhe.com",
+            "url": "http://www.shminhe.com/images/1095.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "Where To Get Citizenship Application Forms | Application Form",
+            "timestamp": 1486690408,
+            "title": "best-appformdownload.rhcloud.com",
+            "url": "http://best-appformdownload.rhcloud.com/2016/04/where-to-get-citizenship-application-forms.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "USCIS Will Accept Only the Current Version of Form N-400 Beginning May ...",
+            "timestamp": 1486690408,
+            "title": "uscis.gov",
+            "url": "http://uscis.gov/news/alerts/uscis-will-accept-only-current-version-form-n-400-beginning-may-5"
+        },
+        {
+            "rank": 23,
+            "snippet": "Form I-924 Application For Regional Center Under the Immigrant ...",
+            "timestamp": 1486690408,
+            "title": "theredish.com",
+            "url": "http://theredish.com/img/us%20citizenship%20application%20form%20download"
+        },
+        {
+            "rank": 24,
+            "snippet": "Applying for Citizenship: Tips for Completing Form N-400",
+            "timestamp": 1486690408,
+            "title": "hmrvisa.com",
+            "url": "http://hmrvisa.com/Newsletter/2015_December/N-400.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Alfa img - Showing &gt; N-400 Form.pdf",
+            "timestamp": 1486690408,
+            "title": "alfa-img.com",
+            "url": "http://alfa-img.com/show/n-400-formpdf.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "giordano.com.sg -",
+            "timestamp": 1486690408,
+            "title": "www.giordano.com.sg",
+            "url": "http://www.giordano.com.sg/conference/uscis-i-918-processing-time.shtml"
+        },
+        {
+            "rank": 27,
+            "snippet": "400 Sections 5 &amp; 6 - YouTube",
+            "timestamp": 1486690408,
+            "title": "www.youtube.com",
+            "url": "https://www.youtube.com/watch?v=D7t5l-DnYr4"
+        },
+        {
+            "rank": 28,
+            "snippet": "Cover Letter for Ging's Naturalization Application Package (N-400)",
+            "timestamp": 1486690408,
+            "title": "gingandcraig.weebly.com",
+            "url": "http://gingandcraig.weebly.com/cover-letter-n-400.html"
+        }
+    ],
+    "timestamp": 1486690408,
+    "url": "http://www.bing.com/images/search?q=USCIS+Forms+400&FORM=RESTAB"
+}
