@@ -1,6 +1,10 @@
+.DEFAULT_GOAL := build
+CEPH_DIR = /mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/
+
 install:
-	pip install pex
-build-pex: install
-	pex -v --python python3.8 --compressed --output-file notebooks.pex\
-	 	seaborn matplotlib fasttext-langdetect
-build: build-pex
+	python3.8 -m venv venv/
+	venv/bin/pip install --upgrade pip
+	venv/bin/pip install venv-pack seaborn matplotlib fasttext-langdetect pyspark pyarrow pandas
+
+build: install
+	venv/bin/venv-pack --prefix venv/ --output ${CEPH_DIR}/venv.tar.gz --force
