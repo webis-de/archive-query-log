@@ -1577,6 +1577,9 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     query_selector: input#sb_form_q
+  - url_pattern: ^https?://[^/]+/images/search\?
+    type: html_selector
+    query_selector: input#sb_form_q
   results_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
@@ -1584,6 +1587,17 @@
     url_selector: h2 > a
     title_selector: h2
     snippet_selector: p
+  - url_pattern: ^https?://[^/]+/images/search\?
+    type: html_selector
+    results_selector: div#mmComponent_images_2 ul.dgControl_list li div.isv
+    url_selector: div.imgpt div.img_info div.lnkw a
+    title_selector: div.infopt div.infnmpt div.infpd a
+  - url_pattern: ^https?://[^/]+/images/search\?
+    type: html_selector
+    results_selector: div#main div.content div.item, span#main div.content div.item
+    url_selector: a.tit
+    title_selector: a.tit
+    snippet_selector: div.des
   focused_url_prefixes:
   - /search?
   - /shop?
