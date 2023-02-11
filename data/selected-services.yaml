@@ -1821,8 +1821,26 @@
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/w/wholesale
+    type: html_selector
+    query_selector: input#search-key, input#SearchTextIdx
+  - url_pattern: ^https?://[^/]+/wholesale
+    type: html_selector
+    query_selector: input#search-key, input#SearchTextIdx
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/w/wholesale
+    type: html_selector
+    results_selector: div#hs-list-items ul li.list-item, ul#hs-list-items li.list-item, ul#list-items li.list-item
+    url_selector: div.info h3 a, div.detail h3 a
+    title_selector: div.info h3, div.detail h3
+    snippet_selector: div.detail span.brief
+  - url_pattern: ^https?://[^/]+/wholesale
+    type: html_selector
+    results_selector: div#hs-list-items ul li.list-item, ul#hs-list-items li.list-item, ul#list-items li.list-item
+    url_selector: div.info h3 a, div.detail h3 a
+    title_selector: div.info h3, div.detail h3
+    snippet_selector: div.detail span.brief
   focused_url_prefixes:
   - /w/wholesale
   - /wholesale
