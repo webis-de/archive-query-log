@@ -3870,6 +3870,7 @@
   search_div: true
   domains:
   - duckduckgo.com
+  - html.duckduckgo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
