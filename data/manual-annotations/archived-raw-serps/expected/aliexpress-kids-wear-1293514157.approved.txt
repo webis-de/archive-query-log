@@ -1,0 +1,262 @@
+{
+    "interpreted_query": "kids wear",
+    "offset": null,
+    "page": null,
+    "query": "kids wear",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Baby Gap Sleepwear Suit Children's Clothes Set <em>Kids</em> <em>Wear</em> Free Shipping.sale with mix size and patten...",
+            "timestamp": 1293514157,
+            "title": "Baby Gap Sleepwear Suit Children's Clothes Set <em>Kids</em> <em>Wear</em> 30sets Free Shipping",
+            "url": "http://www.aliexpress.com/product-fm/363247858-Baby-Gap-Sleepwear-Suit-Children-s-Clothes-Set-Kids-Wear-30sets-Free-Shipping-wholesalers.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Children suit,<em>kids</em> <em>wear</em>,,Chinese traditional garments,1.Unique design 2.Handmade craft3.High quality fabric 4.Fast delivery...",
+            "timestamp": 1293514157,
+            "title": "Children suit,<em>kids</em> <em>wear</em>,Chinese traditional garments T3102-C",
+            "url": "http://www.aliexpress.com/product-gs/285092926-Children-suit-kids-wear-Chinese-traditional-garments-T3102-C-wholesalers.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Factory outlets, fine workmanship, quality assurance, the lowest price. Fast delivery....",
+            "timestamp": 1293514157,
+            "title": "wholesale <em>kid's</em> <em>wear</em>,<em>kids</em> clothes , 6pcs/lot children's clothing C2283 Light blue boys long-sleeved T shirt",
+            "url": "http://www.aliexpress.com/product-fm/344286076-wholesale-kid-s-wear-kids-clothes-6pcs-lot-children-s-clothing-C2283-Light-blue-boys-long-wholesalers.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "1. Factory directly supply2. High quality,fashion design 3. Competitive Price and Good Service....",
+            "timestamp": 1293514157,
+            "title": "Wholesale 50pcs/lot childrens' home garment /B2W2 Set /children garments/<em>kids</em> clothes/<em>kids</em> <em>wear</em>",
+            "url": "http://www.aliexpress.com/product-fm/360373252-Wholesale-50pcs-lot-childrens-home-garment-B2W2-Set-children-garments-kids-clothes-kids-wear-wholesalers.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "We specialize in children's clothing, including pants, socks and clothes. We have our own manufacturing factory...",
+            "timestamp": 1293514157,
+            "title": "child <em>wear</em>, girl pants, <em>kids</em> <em>wear</em>.minimum price",
+            "url": "http://www.aliexpress.com/product-gs/254013946-child-wear-girl-pants-kids-wear-minimum-price-wholesalers.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Children suit,<em>kids</em> <em>wear</em>,,Chinese traditional garments,1.Unique design 2.Handmade craft3.High quality fabric 4.Fast delivery...",
+            "timestamp": 1293514157,
+            "title": "Children suit,<em>kids</em> <em>wear</em>,Chinese traditional garments T3102-A",
+            "url": "http://www.aliexpress.com/product-gs/285088799-Children-suit-kids-wear-Chinese-traditional-garments-T3102-A-wholesalers.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Factory outlets, fine workmanship, quality assurance, the lowest price. Fast delivery....",
+            "timestamp": 1293514157,
+            "title": "wholesale <em>kid's</em> <em>wear</em>,<em>kids</em> clothes , 5pcs/lot children's clothing TB006 Red boy",
+            "url": "http://www.aliexpress.com/product-fm/344565033-wholesale-kid-s-wear-kids-clothes-5pcs-lot-children-s-clothing-TB006-Red-boy-wholesalers.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "1. Factory directly supply2. High quality,fashion design 3. Competitive Price and Good Service....",
+            "timestamp": 1293514157,
+            "title": "Wholesale 20pcs/lot childrens' sport clothes /B2W2 Set /children garments/<em>kids</em> clothes/<em>kids</em> <em>wear</em>",
+            "url": "http://www.aliexpress.com/product-fm/360351026-Wholesale-20pcs-lot-childrens-sport-clothes-B2W2-Set-children-garments-kids-clothes-kids-wear-wholesalers.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Wholesale-popular baby clothes,baby clothing,child pyjamas ,2010 NEW <em>kids</em> <em>wear</em>,...",
+            "timestamp": 1293514157,
+            "title": "Wholesale-popular baby clothes,baby clothing,child pyjamas ,2010 NEW <em>kids</em> <em>wear</em>,",
+            "url": "http://www.aliexpress.com/product-fm/336004103-Wholesale-popular-baby-clothes-baby-clothing-child-pyjamas-2010-NEW-kids-wear--wholesalers.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Thomas child <em>wear</em> with first class quality!1. 65 % Polyerster 35 % Cotton 3. 180gm JerseyTC 4. Silk Screen Printing...",
+            "timestamp": 1293514157,
+            "title": "Thomas, child <em>wear</em>, <em>kids</em> <em>wear</em>, fashion t shirt, cartoon, 1-8 years old",
+            "url": "http://www.aliexpress.com/product-gs/384303964-Thomas-child-wear-kids-wear-fashion-t-shirt-cartoon-1-8-years-old-wholesalers.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "<em>kids</em> <em>wear</em> 1,100% cotton,2,cheap price ,good service3,good quality and best factory price...",
+            "timestamp": 1293514157,
+            "title": "wholesale NEW GAP <em>kids</em> <em>wear</em>,<em>kid's</em> <em>wear</em>,<em>kid</em> garment, children <em>wear</em>,100%cotton with pattern ,free shipping",
+            "url": "http://www.aliexpress.com/product-fm/383304893-wholesale-NEW-GAP-kids-wear-kid-s-wear-kid-garment-children-wear-100-cotton-with-pattern-wholesalers.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "fashion <em>kids</em> <em>wear</em>,<em>kid's</em> suit,children's suits1)high quality guaranteed2)reasonable price3)prompt delivery4)drop shipping...",
+            "timestamp": 1293514157,
+            "title": "wholesale fashion <em>kids</em> <em>wear</em>,<em>kid's</em> suits(lovely children's suits)",
+            "url": "http://www.aliexpress.com/product-fm/357140449-wholesale-fashion-kids-wear-kid-s-suits-lovely-children-s-suits--wholesalers.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "1.Good qualitykid's thicksuit2.size :,120,130,140...",
+            "timestamp": 1293514157,
+            "title": "Free shipping -wholesale 5sets/lot children's garment PO007# ,<em>kid</em> <em>wear</em> , <em>kid's</em> thick fleece suit",
+            "url": "http://www.aliexpress.com/product-fm/374892299-Free-shipping-wholesale-5sets-lot-children-s-garment-PO007-kid-wear-kid-s-thick-fleece-suit-wholesalers.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "we can make different style for your party.girl's' party dress ,girl's <em>wear</em>,<em>kid</em> <em>wear</em>,children's dress...",
+            "timestamp": 1293514157,
+            "title": "[Super Deal] girl's' party dress ,girl's <em>wear</em>,<em>kid</em> <em>wear</em>,children's dress 5988",
+            "url": "http://www.aliexpress.com/product-gs/242960020--Super-Deal-girl-s-party-dress-girl-s-wear-kid-wear-children-s-dress-5988-wholesalers.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "package 1 pcs/polybag.Mini order 4pcs for 4 size:2T 3T 4T 5T .All of my products are 100% same as the photos.100% Satisfaction...",
+            "timestamp": 1293514157,
+            "title": "666 <em>kid</em> <em>wear</em>",
+            "url": "http://www.aliexpress.com/product-gs/238714447-666-kid-wear-wholesalers.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "we provide top quality, competitive price, good communication, fast shipment and nice service...",
+            "timestamp": 1293514157,
+            "title": "Cute, Nice, B2W2 Girl Clothing Three Set jacket + t-shirt + jeans fashion <em>kids</em> clothes <em>kids</em> <em>wear</em> 8pcs/lot freeshpping",
+            "url": "http://www.aliexpress.com/product-fm/358377262-Cute-Nice-B2W2-Girl-Clothing-Three-Set-jacket-t-shirt-jeans-fashion-kids-clothes-kids-wear-wholesalers.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "size :1-3 80-98 fabric:100% cotton2010 children fashion sweater <em>kids</em> <em>wear</em> warm&amp;lovely...",
+            "timestamp": 1293514157,
+            "title": "2010 children fashion cotton sweater&amp;jacket <em>kids</em> <em>wear</em>",
+            "url": "http://www.aliexpress.com/product-gs/288669371-2010-children-fashion-cotton-sweater-jacket-kids-wear-wholesalers.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "twiset baby suits in cotton fabric very comfortable and soft...",
+            "timestamp": 1293514157,
+            "title": "Nissen little gentlemen baby suits toldder suits <em>kids</em> <em>wear</em> hot sale",
+            "url": "http://www.aliexpress.com/product-fm/298225105-Nissen-little-gentlemen-baby-suits-toldder-suits-kids-wear-hot-sale-wholesalers.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "We specialize in children's clothing, including pants, socks and clothes. We have our own manufacturing factory...",
+            "timestamp": 1293514157,
+            "title": "child <em>wear</em>,<em>kids</em> <em>wear</em>,boy pants, children's pant.minimum price",
+            "url": "http://www.aliexpress.com/product-gs/253599525-child-wear-kids-wear-boy-pants-children-s-pant-minimum-price-wholesalers.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "1.<em>kids</em> clothing with 100% cotton 2.Good quantity and Competitve price3.beautiful and lovely...",
+            "timestamp": 1293514157,
+            "title": "Free shipping <em>kids</em> Clothing/boys clothing /<em>kids</em> <em>wear</em>",
+            "url": "http://www.aliexpress.com/product-fm/334515408-Free-shipping-kids-Clothing-boys-clothing-kids-wear-wholesalers.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "pass oeko-tex100 standard, azo free, wool/poly kniting fabric+tpu film+polyester anti-fleece, water proof, windproof, breathable...",
+            "timestamp": 1293514157,
+            "title": "kniting fabric componding tpu film jackets <em>kids</em> <em>wear</em>",
+            "url": "http://www.aliexpress.com/product-fm/348565106-kniting-fabric-componding-tpu-film-jackets-kids-wear-wholesalers.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "Fabric Type: Taffeta Style of Length: Medium Design: Short Sleeve Age: 2-12 years min order: 2 pcs...",
+            "timestamp": 1293514157,
+            "title": "2010 newest girl's summer skirt /children's dress/<em>kids</em> <em>wear</em>/<em>kid's</em> clothes",
+            "url": "http://www.aliexpress.com/product-fm/325581648-2010-newest-girl-s-summer-skirt-children-s-dress-kids-wear-kid-s-clothes-wholesalers.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "color: red mini skirt with white poly fleece decoration and butterflybaby height from 85-135 cm; soft feel; high quantity...",
+            "timestamp": 1293514157,
+            "title": "Hot! FREE SHIPPING baby skirt children's clothing baby garment <em>kids</em> <em>wears</em>",
+            "url": "http://www.aliexpress.com/product-gs/364017163-Hot-FREE-SHIPPING-baby-skirt-children-s-clothing-baby-garment-kids-wears-wholesalers.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "brand quality,beatiful , 100% cotton,price lowGood and comfortable material which are reasonably priced...",
+            "timestamp": 1293514157,
+            "title": "children clothes , <em>kids</em> <em>wears</em>",
+            "url": "http://www.aliexpress.com/product-fm/335754426-children-clothes-kids-wears-wholesalers.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Free shipping! Wholesale <em>Kids</em>/ Children Hoodies Sweatshirt Fleece <em>Kids</em> <em>Wear</em> With Hood&amp; pockets...",
+            "timestamp": 1293514157,
+            "title": "Free shipping! Wholesale <em>Kids</em>/ Children Hoodies Sweatshirt Fleece <em>Kids</em> <em>Wear</em> With Hood&amp; pockets",
+            "url": "http://www.aliexpress.com/product-fm/359058172-Free-shipping-Wholesale-Kids-Children-Hoodies-Sweatshirt-Fleece-Kids-Wear-With-Hood-pockets-wholesalers.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "1.Excelletn Quality2.Fast Delivery3.Soft Touch4.Outstanding Color and design5.Name branded baby and <em>kids</em> dress...",
+            "timestamp": 1293514157,
+            "title": "Free shipping,Name branded baby and <em>kid's</em> <em>wear</em>,wholesale baby and <em>kid's</em> <em>wear</em>,baby and <em>kids</em> dress,dress",
+            "url": "http://www.aliexpress.com/product-fm/360177358-Free-shipping-Name-branded-baby-and-kid-s-wear-wholesale-baby-and-kid-s-wear-baby-wholesalers.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "2010 Newest style R-012 zhenzhen lovely <em>kid</em> <em>wear</em>/suit* can do customizes made* high quality of fabric* competitve price...",
+            "timestamp": 1293514157,
+            "title": "2010 Newest style R-012 zhenzhen lovely <em>kid</em> <em>wear</em>/suit",
+            "url": "http://www.aliexpress.com/product-gs/285121690-2010-Newest-style-R-012-zhenzhen-lovely-kid-wear-suit-wholesalers.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "<em>Kids</em> Pant's Hanger/Strap/Suspender Belt/Elastic Brace,<em>Kids</em> Bib Pants,<em>Kids</em> <em>Wear</em>...",
+            "timestamp": 1293514157,
+            "title": "<em>Kids</em> Pant's Hanger/Strap/Suspender Belt/Elastic Brace,<em>Kids</em> Bib Pants,<em>Kids</em> <em>Wear</em>",
+            "url": "http://www.aliexpress.com/product-fm/367365286-Kids-Pant-s-Hanger-Strap-Suspender-Belt-Elastic-Brace-Kids-Bib-Pants-Kids-Wear-wholesalers.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "<em>kids</em> gap <em>wear</em>Long sleeve t-shirt100% Cotton.super soft and comfortableVery cute colors and designsSize: 18/24M - 5T...",
+            "timestamp": 1293514157,
+            "title": "<em>kids</em> gap <em>wear</em> / 100% Cotton Long Sleeve T-Shirt Giil",
+            "url": "http://www.aliexpress.com/product-gs/358641381-kids-gap-wear-100-Cotton-Long-Sleeve-T-Shirt-Giil-wholesalers.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "EMS Free Shipping PP Pants, baby pp pants, baby <em>wear</em>, baby trousers, 2010 NEW <em>kids</em> <em>wear</em>, High quality!...",
+            "timestamp": 1293514157,
+            "title": "EMS Free Shipping PP Pants, baby pp pants,baby <em>wear</em>,baby trousers,2010 NEW <em>kids</em> <em>wear</em>, High quality!",
+            "url": "http://www.aliexpress.com/product-fm/362284795-EMS-Free-Shipping-PP-Pants-baby-pp-pants-baby-wear-baby-trousers-2010-NEW-kids-wear-wholesalers.html"
+        },
+        {
+            "rank": 31,
+            "snippet": "<em>kids</em> <em>wear</em>Material: 100% cottonSize: 90#,100#,110#,120#,130#Color optional: 2 colorsPacking: mix is available...",
+            "timestamp": 1293514157,
+            "title": "Korea <em>Kids</em> <em>wear</em> 100% cotton 10pcs/lot drop shipping",
+            "url": "http://www.aliexpress.com/product-fm/357805056-Korea-Kids-wear-100-cotton-10pcs-lot-drop-shipping-wholesalers.html"
+        },
+        {
+            "rank": 32,
+            "snippet": "PP Pants, baby pp pants,baby <em>wear</em>,baby trousers,2010 NEW <em>kids</em> <em>wear</em>...",
+            "timestamp": 1293514157,
+            "title": "PP Pants, baby pp pants,baby <em>wear</em>,baby trousers,2010 NEW <em>kids</em> <em>wear</em>",
+            "url": "http://www.aliexpress.com/product-fm/338374642-PP-Pants-baby-pp-pants-baby-wear-baby-trousers-2010-NEW-kids-wear-wholesalers.html"
+        },
+        {
+            "rank": 33,
+            "snippet": "Brand: B2W2, NO. BW 933Fabric: 100%Conton...",
+            "timestamp": 1293514157,
+            "title": "<em>kids</em> clothe/<em>kids</em> garment/<em>kids</em> <em>wear</em>/ <em>kids</em> B2w2 sets",
+            "url": "http://www.aliexpress.com/product-gs/316554261-kids-clothe-kids-garment-kids-wear-kids-B2w2-sets-wholesalers.html"
+        },
+        {
+            "rank": 34,
+            "snippet": "Unisex;Free Shipping(5pcs/lot)Size:S M L XL XXL...",
+            "timestamp": 1293514157,
+            "title": "wholesale fashion <em>Kids</em> clothing sets /<em>kids</em> coat/<em>kids</em> trousers <em>kids</em> <em>wear</em>,girls suits Free Shipping (5pcs)",
+            "url": "http://www.aliexpress.com/product-fm/377473680-wholesale-fashion-Kids-clothing-sets-kids-coat-kids-trousers-kids-wear-girls-suits-Free-Shipping-5pcs-wholesalers.html"
+        },
+        {
+            "rank": 35,
+            "snippet": "36 pcs Girl's &amp; Boy's Tshirt <em>Kids</em> Longsleeve T shirt Children Top Clothes <em>Kids</em>' <em>Wear</em> Baby's <em>Wear</em>...",
+            "timestamp": 1293514157,
+            "title": "36 pcs Girl's &amp; Boy's Tshirt <em>Kids</em> Longsleeve T shirt Children Top Clothes <em>Kids</em>' <em>Wear</em> Baby's <em>Wear</em>",
+            "url": "http://www.aliexpress.com/product-fm/376651624-36-pcs-Girl-s-Boy-s-Tshirt-Kids-Longsleeve-T-shirt-Children-Top-Clothes-Kids-Wear-wholesalers.html"
+        },
+        {
+            "rank": 36,
+            "snippet": "original brand quality, fashion design with competitive price,10pcs/lot...",
+            "timestamp": 1293514157,
+            "title": "children summer shorts,boy <em>wear</em>, <em>kids</em> <em>wear</em>,50%freight off",
+            "url": "http://www.aliexpress.com/product-fm/301546354-children-summer-shorts-boy-wear-kids-wear-50-freight-off-wholesalers.html"
+        }
+    ],
+    "timestamp": 1293514157,
+    "url": "http://www.aliexpress.com:80/wholesale?SearchText=kids+wear&CatId=0"
+}

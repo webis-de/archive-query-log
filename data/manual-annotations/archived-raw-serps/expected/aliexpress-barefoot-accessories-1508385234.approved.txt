@@ -1,0 +1,318 @@
+{
+    "interpreted_query": "barefoot accessories",
+    "offset": null,
+    "page": null,
+    "query": "barefoot accessories",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "imixlot 6 Style Simple Design Bell Star Heart Charms Anklet",
+            "url": "https://www.aliexpress.com/item/6-Style-Simple-Design-Bell-Star-Heart-Charms-Anklet-Chains-Barefoot-Sandal-Beach-Foot-Jewelry/32802190624.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-0&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "free wings Bohemian <em>Accessories</em> Rose Gold Anklets For Women",
+            "url": "https://www.aliexpress.com/item/B017-Trendy-Accessories-rose-gold-chromophous-anklets-female-jewelry-leglet-TE3-99-30D/659973666.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073-10050,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-1&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Dvacaman Ankle Bracelet Wedding <em>Barefoot</em> Sandals Beach",
+            "url": "https://www.aliexpress.com/item/Dvacaman-Ankle-Bracelet-Wedding-Barefoot-Sandals-Beach-Foot-Jewelry-Sexy-Leg-Chain-Female-Boho-Crystal-Anklet/32811305998.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073-10050,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-2&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Pinksee 1 Pc Bridal Crystal Beach <em>Barefoot</em> Sandals Women",
+            "url": "https://www.aliexpress.com/item/1-Pc-Bridal-Crystal-Beach-Barefoot-Sandals-Foot-Toe-Anklet-Bracelet-Women-Fashion-Ankle-Jewelry-Accessory/32801469940.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-3&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "ivory crochet wedding <em>barefoot</em> Sandals Nude shoes",
+            "url": "https://www.aliexpress.com/item/Beach-wedding-ivory-crochet-wedding-barefoot-Sandals-Nude-shoes-Foot-jewelry-Victorian-Lace-Bridal-anklet-beach/32592566309.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-4&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Vedawas 1 Pcs Facebook <em>Accessories</em> Women Sexy Rhinestone",
+            "url": "https://www.aliexpress.com/item/Vedawas-1-Pcs-Facebook-Hot-Anklet-Accessories-Women-Sexy-Rhinestone-Barefoot-Sandals-Crystal-Anklet-Beach-Foot/32790204037.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-5&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "BLUELANS Romantic Love Heart Star Wedding Sandal Beach",
+            "url": "https://www.aliexpress.com/item/Hot-Multi-pattern-Love-Heart-Star-Wedding-Sandal-Beach-Anklet-Chain-Foot-Jewelry-B02-1MJF/32759559530.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-6&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "BLUELANS anklets Sandals Foot Jewelry Beach Dancing Wedding",
+            "url": "https://www.aliexpress.com/item/1PC-Barefoot-anklets-Sandals-Foot-Jewelry-Beach-Dancing-Wedding-Ankle-Bracelet-Chain-018C/32759575159.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-7&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "BLUELANS Little Star Heart Flower Glow in the Dark Women's",
+            "url": "https://www.aliexpress.com/item/2017-Little-Star-Heart-Flower-Glow-in-the-Dark-Ankle-Bracelet-Anklet-Women-s-Jewelry/32822340548.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-8&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Bamos Unique Female Colorful Beach Constellation Anklets",
+            "url": "https://www.aliexpress.com/item/Bamos-Unique-Female-Colorful-Beach-Constellation-Anklets-Jewelry-Hyperbole-Geometric-Zircon-Rainbow-Barefoot-Accessories-SMT1259/32823716789.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-9&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Bamos Summer Beach Female <em>Barefoot</em> Anklets For Women",
+            "url": "https://www.aliexpress.com/item/Bamos-Fashion-Summer-Beach-Female-Barefoot-Accessories-Bohemian-Silver-Rhinestones-Flower-Butterfly-Tassel-Anklets-For-Women/32823925483.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-10&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "OATHYAN Bohemian Trendy Multilayer Anklet For Women",
+            "url": "https://www.aliexpress.com/item/OATHYAN-Bohemian-Trendy-Multilayer-Anklet-Bracelet-For-Women-Handmade-Gold-Color-Tassel-Foot-Jewelry-Barefoot-Sandals/32809991965.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-11&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Crochet Beach Wedding <em>Accessories</em> for Women",
+            "url": "https://www.aliexpress.com/item/Crochet-Beach-Shoes-Wedding-Accessories-Barefoot-Sandals-Nude-Shoes-Bridal-Shoes-Accossories-for-Women-Anklets/32601904807.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-12&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "8SEASONS Cotton Crochet Foot Jewelry <em>Accessories</em> Beach 1 PC",
+            "url": "https://www.aliexpress.com/item/8-SEASONS-Cotton-Crochet-Foot-Anklets-Foot-Jewelry-Accessories-Beach-Anklet-Wedding-Barefoot-Sandles-Black-White/32804764169.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-13&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Crazy Feng Ribbon Bowknot Anklet Figaro Chain for Women",
+            "url": "https://www.aliexpress.com/item/Ribbon-Bowknot-Anklet-Figaro-Chain-Ankle-Bracelet-Cheville-Sandals-Foot-Jewelry-for-Women-Sexy-Girl-Barefoot/32814885881.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-14&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Pinksee 1 Pc Bridal Crystal Beach Jewelry Summer",
+            "url": "https://www.aliexpress.com/item/1-Pc-Hot-Crystal-Bridal-Crystal-Beach-Anklet-Jewelry-Summer-Barefoot-Sandals-Foot-Toe-Anklet-Bracelet/32802113299.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-15&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Pinksee Chic Stone Beads Elephant Pendants Multilayer Rope",
+            "url": "https://www.aliexpress.com/item/Chic-Turquoise-Beads-Elephant-Pendants-Multilayer-Rope-Chain-Anklet-Bracelet-Foot-Jewelry-Barefoot-Sandal-Beach-Accessories/32803586106.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-16&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "maxgoods <em>Barefoot</em> Sandals Beach Anklet Wedding Bridal",
+            "url": "https://www.aliexpress.com/item/Barefoot-Sandals-Beach-Anklet-Jewelry-Wedding-Bridal-Foot-Jewelry-Knit-Ankle-Bracelet-Hot-Jewelry-Accessories/32814706028.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-17&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Crochet Beach Wedding <em>Accessories</em> for Women",
+            "url": "https://www.aliexpress.com/item/Beach-Wedding-Crochet-Beach-Shoes-Wedding-Accessories-Barefoot-Sandals-Nude-Shoes-Bridal-Shoes-Accossories-for-Women/32592549026.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-18&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "SONGDANWYF Lovely Girls Simulated-Pearl Flower Foot Band",
+            "url": "https://www.aliexpress.com/item/SONGDANWYF-Lovely-Girls-Simulated-Pearl-Flower-Foot-Band-Toe-Rings-Barefoot-Sandals-Anklets-Kids-Jewelry-Accessorie/32817146220.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-19&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "wj.yao Tassel Anklet Ceramic Bohemian Foot Beads Bells",
+            "url": "https://www.aliexpress.com/item/Tassel-Anklet-Ceramic-Bohemian-Foot-Chains-Beads-Bells-Pendant-Bracelets-For-Women-Female-Chains-Barefoot-Sandals/32819450376.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073-10052,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-20&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Lureme Beach Crystal Anklets Foot Jewelry for Women",
+            "url": "https://www.aliexpress.com/item/Lureme-Beach-Crystal-Anklets-Foot-Jewelry-Barefoot-Sandals-Bangles-Party-Accessories-for-Women-bl003395/32832459536.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-21&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Luoty 6 Design Ethinc Vintage Tibetan Silver Slave Women",
+            "url": "https://www.aliexpress.com/item/6-Design-Ethinc-Vintage-Tibetan-Silver-Ankle-Bracelet-Women-Summer-Toe-Barefoot-Anklets-Chain-Female-Foot/32705669262.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-22&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "wj.yao Hollow Leaves Charm Ankle Strap Weave Rope Women",
+            "url": "https://www.aliexpress.com/item/Hollow-Leaves-Charm-Ankle-Strap-Weave-Rope-Bracelets-Women-Ceramic-Beads-Foot-Jewelry-Barefoot-Sandals-Bohemia/32815072641.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-23&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "White crochet <em>barefoot</em> sandals/Nude shoes/Foot",
+            "url": "https://www.aliexpress.com/item/White-crochet-barefoot-sandals-Nude-shoes-Foot-jewelry-Bridesmaid-accessory-Beach-accessory-Beach-wedding-Belly-dance/32592973447.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-24&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Pinksee Baby Girls <em>Barefoot</em> Sandals Foot Jewelry Anklet",
+            "url": "https://www.aliexpress.com/item/Fashion-Baby-Girls-Barefoot-Sandals-Foot-Jewelry-Anklet-Bracelet-Summer-Imitation-Pearl-Ankles-for-Women-Toe/32692697415.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-25&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "2016 Beach Summer Style Gold Leaves Pendant Chains Anklets",
+            "url": "https://www.aliexpress.com/item/2016-new-Beach-Summer-Style-Gold-Leaves-Pendant-Chains-Anklets-Ankle-Foot-Jewelry-Barefoot-Foot-Accessories/32725563708.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073-10050_10111,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-26&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Pinksee 3 Styles Bend Alloy Butterfly Dance Women Girls",
+            "url": "https://www.aliexpress.com/item/3-Styles-Bend-Alloy-Butterfly-Dance-Pattern-Cubic-Zirconia-Foot-Chain-Barefoot-Sandals-Women-Girls-Anklets/32825801090.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-27&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Olsen Twins Exotic Bohemian Beach Style For Women",
+            "url": "https://www.aliexpress.com/item/Exotic-Bohemian-Beach-Style-Resin-Seed-Bead-Flower-Barefoot-Sandals-Ankle-Bracelet-For-Women-Summer-Accessories/32797269122.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-28&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "JINSE JShine Classic Design Bohemia Anklet Bracelet Women",
+            "url": "https://www.aliexpress.com/item/JShine-Classic-Design-Bohemia-Anklet-Bracelet-Silver-Gold-Color-Alloy-Imitation-Pearl-Women-Barefoot-Jewelry-Summer/32812673392.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-29&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "JUJIA Charm Women Rhinestone <em>Barefoot</em> Sandals Anklets Beach",
+            "url": "https://www.aliexpress.com/item/New-Charm-Women-Anklet-Rhinestone-Barefoot-Sandals-Anklets-Beach-Foot-Jewelry-Bridal-Bare-feet-Accessories/32800580792.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-30&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "SHIJIE Love Gold/Silver color Anklets for Women Sexy Beach",
+            "url": "https://www.aliexpress.com/item/Fashion-Gold-and-Silver-Circle-Anklets-for-women-Casual-Heels-Anklet-Foot-Bracelets-Anklets-2014-Barefoot/1961192231.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-31&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "AOMU 1 Pc Wedding Bridal Crystal Butterfly Beach Women",
+            "url": "https://www.aliexpress.com/item/AOMU-1-Pc-Wedding-Bridal-Crystal-Butterfly-Beach-Barefoot-Sandals-Foot-Toe-Anklet-Bracelet-Women-Ankle/32809508377.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-32&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "Bamos Simple Stainless Steel Cute Star Anklets For Women",
+            "url": "https://www.aliexpress.com/item/Bamos-Simple-Fashion-Stainless-Steel-Cute-Star-Foot-Anklets-For-Women-Gold-Silver-Color-Summer-Barefoot/32824432011.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-33&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "imixlot Feet Jewelry Crystal Beads Anklets For Women Ladies",
+            "url": "https://www.aliexpress.com/item/Feet-Jewelry-Crystal-Beads-Anklets-For-Women-Ladies-Leg-Ankle-Bracelet-Cute-Barefoot-Sandals-Summer-Vacation/32825665527.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-34&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "JUJIA <em>Accessories</em> Women Sexy Rhinestone <em>Barefoot</em> Sandals",
+            "url": "https://www.aliexpress.com/item/Hot-Anklet-Accessories-Women-Sexy-Rhinestone-Barefoot-Sandals-Crystal-Anklet-Beach-Foot-Jewelry/32808178483.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-35&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "colorful bling Simple Style Gold Silver Color Snake Ankle",
+            "url": "https://www.aliexpress.com/item/Fashion-Simple-Style-Gold-Silver-Color-Snake-Ankle-Chain-Bracelet-Barefoot-Foot-Fashion-Jewelry-Sandal-Beach/32814495304.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-36&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "OMENG crochet <em>barefoot</em> sandals Nude shoes Foot jewelry",
+            "url": "https://www.aliexpress.com/item/OMENG-crochet-barefoot-sandals-Nude-shoes-Foot-jewelry-Bridesmaid-accessory-Beach-accessory-Beach-Bellydance-AnkletOJL004/32696832069.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-37&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "AOMU 1pair Cute Baby Girl Infant Flower <em>Barefoot</em> Sandals",
+            "url": "https://www.aliexpress.com/item/1pair-Cute-Baby-Girl-Infant-Foot-Flower-Barefoot-Sandals-Elastic-Hairbands-Headbands-Accessories-Foot-Chain/32801762935.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-38&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "UODESIGN Bohemian Beach Style Resin Seed Bead For Women",
+            "url": "https://www.aliexpress.com/item/Bohemian-Beach-Style-Resin-Seed-Bead-Flower-Barefoot-Sandals-Ankle-Bracelet-For-Women-Summer-Accessories/32827972481.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-39&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "susenstone 1Pair Pearl Chiffon <em>Barefoot</em> Cute baby footbands",
+            "url": "https://www.aliexpress.com/item/susenstone-1Pair-Pearl-Chiffon-Barefoot-Cute-baby-footbands-with-flower-colorful-girls-kids-foot-bands-accessories/32814512528.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-40&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "wj.yao Ceramic Beads Mixed Color Stone Anklet Coffee Weave",
+            "url": "https://www.aliexpress.com/item/Ceramic-Beads-Mixed-Color-Stone-Anklet-Coffee-Weave-Rope-Chain-Bronze-Barefoot-Sandals-Foot-Accessories-For/32821363886.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073-10080,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-41&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 43,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "AOMU 2PCS Newborn Baby Girl's Flower <em>Barefoot</em> Sandal Sets",
+            "url": "https://www.aliexpress.com/item/2PCS-Newborn-Baby-Girl-s-Flower-Barefoot-Sandal-Sets-Foot-Suit-Hair-Accessories-for-Photography-Props/32802535429.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-42&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        },
+        {
+            "rank": 44,
+            "snippet": null,
+            "timestamp": 1508385234,
+            "title": "White crochet <em>barefoot</em> sandals/Nude shoes/Foot",
+            "url": "https://www.aliexpress.com/item/White-crochet-barefoot-sandals-Nude-shoes-Foot-jewelry-Bridesmaid-accessory-Beach-accessory-Beach-wedding-Belly-dance/32592973447.html?ws_ab_test=searchweb0_0,searchweb201602_4_10152_10065_10151_10130_10068_10344_10345_10342_10343_10340_10341_10540_10307_10060_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_10052_10053_10107_10050_10142_10051_10324_10325_10084_10083_10080_10082_10081_10178_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_24,ppcSwitch_5&btsid=12df7631-ecf3-4564-aa48-f3f1162fb56f&algo_expid=2775b41d-d1d0-472d-be4d-4ee128be5be4-24&algo_pvid=2775b41d-d1d0-472d-be4d-4ee128be5be4"
+        }
+    ],
+    "timestamp": 1508385234,
+    "url": "https://www.aliexpress.com/w/wholesale-barefoot-accessories.html?site=glo&g=y&SearchText=barefoot+accessories&pvId=200001034-361187&attrRel=or"
+}

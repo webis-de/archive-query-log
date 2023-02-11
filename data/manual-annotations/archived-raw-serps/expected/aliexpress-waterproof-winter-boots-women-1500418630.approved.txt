@@ -1,0 +1,171 @@
+{
+    "interpreted_query": "waterproof winter boots women",
+    "offset": null,
+    "page": null,
+    "query": "waterproof winter boots women",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Cute Pet Cat Dog Pattern <em>Women's</em> Warm Ankle <em>Boots</em> Vintage <em>Women</em> <em>Waterproof</em> <em>Winter</em> Cotton Rain <em>Boots</em> for Ladies Mujer",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Cute-Pet-Cat-Dog-Pattern-Women-s-Warm-Ankle-Boots-Vintage-Women-Waterproof-Winter-Cotton/32747947639.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-0&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS <em>Women's</em> <em>Waterproof</em> <em>Winter</em> Snow <em>Boots</em> Cute Animal Cat Dog Prints Rain <em>Boots</em> <em>Women</em> Flats For Ladies Female Cotton Shoe",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Women-s-Waterproof-Winter-Snow-Boots-Cute-Animal-Cat-Dog-Prints-Rain-Boots-Women-Flats/32756966264.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-1&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS <em>Women's</em> Warm Short Ankle Rain <em>Boots</em> Cute Pet Dog Pattern <em>Women</em> <em>Winter</em> <em>Waterproof</em> Snow <em>Boots</em> Flats Shoes Botas Mujer",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Women-s-Warm-Short-Ankle-Rain-Boots-Cute-Pet-Dog-Pattern-Women-Winter-Waterproof-Snow/32738211012.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-2&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Casual Autumn <em>Winter</em> Snow <em>Boots</em> <em>Women</em> <em>Waterproof</em> Short Ankle Warm Rain <em>Boots</em> Skull Flat <em>Winter</em> Cotton Shoes Zapatos",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Casual-Autumn-Winter-Snow-Boots-Women-Waterproof-Short-Ankle-Warm-Rain-Boots-Skull-Flat-Winter/32736425990.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-3&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "LIN KING New Design <em>Women</em> Snow <em>Boots</em> Solid PU Leather <em>Waterproof</em> Platform Ankle <em>Boots</em> <em>Winter</em> Thick Plush Warm Shoes Martin <em>Boots</em>",
+            "url": "https://www.aliexpress.com/item/LIN-KING-New-Design-Women-Snow-Boots-Solid-PU-Leather-Waterproof-Platform-Ankle-Boots-Winter-Thick/32763494968.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-4&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Fashion <em>Women's</em> <em>Winter</em> Snow <em>Boots</em> <em>Women</em> Cute Pet Dog Cat Pattern <em>Waterproof</em> Rain <em>Boots</em> For Ladies Warm Short <em>Boots</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Fashion-Women-s-Winter-Snow-Boots-Women-Cute-Pet-Dog-Cat-Pattern-Waterproof-Rain-Boots/32748969342.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-5&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS <em>Women's</em> <em>Winter</em> Snow <em>Boots</em> Sexy Lips Lady <em>Waterproof</em> Ankle <em>Boots</em> Woman Girls Non-Slip Cotton Shoes <em>Women</em> Rain <em>Boots</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Women-s-Winter-Snow-Boots-Sexy-Lips-Lady-Waterproof-Ankle-Boots-Woman-Girls-Non-Slip/32735658809.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-6&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Fashion Warm Ankle <em>Boots</em> for <em>Women</em> Cool Animal Wolf Pattern <em>Waterproof</em> Ladies Rain <em>Boots</em> <em>Women's</em> <em>Winter</em> Snow <em>Boots</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Fashion-Warm-Ankle-Boots-for-Women-Cool-Animal-Wolf-Pattern-Waterproof-Ladies-Rain-Boots-Women/32741339158.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-7&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Fashion <em>Women's</em> <em>Winter</em> Snow <em>Boots</em> <em>Women</em> Funny Big Eyes Print <em>Waterproof</em> Rain <em>Boots</em> For Ladies Warm Short Cotton Shoe",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Fashion-Women-s-Winter-Snow-Boots-Women-Funny-Big-Eyes-Print-Waterproof-Rain-Boots-For/32749013002.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-8&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Cute Sea Animal Print <em>Women's</em> <em>Winter</em> Snowboots Breathable <em>Women</em> Ladies Warm Cotton Shoes <em>Waterproof</em> Short Rain <em>Boot</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Cute-Sea-Animal-Print-Women-s-Winter-Snowboots-Breathable-Women-Ladies-Warm-Cotton-Shoes-Waterproof/32736488324.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-9&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Supreme <em>Women</em> <em>Winter</em> Snow <em>Boots</em> 3D Solid Flower Pattern Ladies Warm Ankle <em>Boots</em> Teenage Girls <em>Waterproof</em> Rain <em>Boots</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Supreme-Women-Winter-Snow-Boots-3D-Solid-Flower-Pattern-Ladies-Warm-Ankle-Boots-Teenage-Girls/32747753634.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-10&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Casual Cotton <em>Boots</em> <em>Women</em> 2016 Comouflage Prints <em>Waterproof</em> Rain <em>Boots</em> for Ladies <em>Women's</em> Warm <em>Winter</em> Snow <em>Boots</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Casual-Cotton-Boots-Women-2016-Comouflage-Prints-Waterproof-Rain-Boots-for-Ladies-Women-s-Warm/32738692215.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-11&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Luxury <em>Women's</em> Cotton <em>Boots</em> 3D Galaxy Space Star Pattern <em>Women</em> <em>Waterproof</em> Rain <em>Boots</em> For Ladies <em>Winter</em> Snow <em>Boots</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Luxury-Women-s-Cotton-Boots-3D-Galaxy-Space-Star-Pattern-Women-Waterproof-Rain-Boots-For/32754074628.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-12&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Casual Light Snow <em>Boots</em> <em>Women</em> 2016 Colorful Geometry Pattern <em>Women's</em> <em>Waterproof</em> Ladies Rain <em>Boots</em> Chaussure Femme",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Casual-Light-Snow-Boots-Women-2016-Colorful-Geometry-Pattern-Women-s-Waterproof-Ladies-Rain-Boots/32748691519.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-13&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Vintage <em>Women's</em> <em>Waterproof</em> Ankle Rain <em>Boots</em> Fashion Lace-up Warm Cotton Shoes <em>Women</em> <em>Winter</em> Snow <em>Boots</em> Zapatos Mujer",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Vintage-Women-s-Waterproof-Ankle-Rain-Boots-Fashion-Lace-up-Warm-Cotton-Shoes-Women-Winter/32738660078.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-14&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS <em>Women</em> <em>Winter</em> Warm Ankle <em>Boots</em> 3D Skull Graffiti Short Slip-on <em>Boots</em> for Female Ladies <em>Waterproof</em> Rain <em>Boots</em> Zapatos",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Women-Winter-Warm-Ankle-Boots-3D-Skull-Graffiti-Short-Slip-on-Boots-for-Female-Ladies/32739536674.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-15&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Supreme Ankle Snow <em>Boots</em> <em>Women</em> <em>Women's</em> Stripe Pattern Ladies <em>Waterproof</em> Rain <em>Boots</em> Casual Cotton Shoes Flats <em>Boots</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Supreme-Ankle-Snow-Boots-Women-Women-s-Stripe-Pattern-Ladies-Waterproof-Rain-Boots-Casual-Cotton/32745956655.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-16&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Supreme Casual <em>Boots</em> <em>Women</em> 2016 Pretty Flower Print <em>Women's</em> <em>Waterproof</em> Ankle <em>Boots</em> for Ladies Warm Cotton Shoes <em>Boot</em>",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Supreme-Casual-Boots-Women-2016-Pretty-Flower-Print-Women-s-Waterproof-Ankle-Boots-for-Ladies/32745853354.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-17&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS <em>Women's</em> <em>Winter</em> Snow <em>Boots</em> <em>Women</em> Fashion Cute Animal Cat Pattern Ankle Rain <em>Boots</em> For Ladies <em>Waterproof</em> Shoes Mujer",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Women-s-Winter-Snow-Boots-Women-Fashion-Cute-Animal-Cat-Pattern-Ankle-Rain-Boots-For/32756450353.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-18&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS <em>Women's</em> Ankle Warm <em>Boots</em> <em>Women</em> Solid Stripe Dot Print <em>Waterproof</em> Snow <em>Boots</em> Ladies Slip-on Cotton Rain <em>Boots</em> Shoes",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Women-s-Ankle-Warm-Boots-Women-Solid-Stripe-Dot-Print-Waterproof-Snow-Boots-Ladies-Slip/32744155421.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-19&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Cartoon Emoji <em>Women's</em> Snow <em>Boots</em> Warm <em>Women</em> Ankle <em>Winter</em> <em>Boots</em> <em>Waterproof</em> Rain <em>Boots</em> For Ladies Girl Chaussure Femme",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Cartoon-Emoji-Women-s-Snow-Boots-Warm-Women-Ankle-Winter-Boots-Waterproof-Rain-Boots-For/32760738157.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-20&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS <em>Women</em> <em>Winter</em> Snow <em>Boots</em> Dot Prints <em>Women's</em> Warm Ankle Cotton <em>Boots</em> <em>Waterproof</em> Ladies Rain <em>Boots</em> Casual Shoes Flats",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Women-Winter-Snow-Boots-Dot-Prints-Women-s-Warm-Ankle-Cotton-Boots-Waterproof-Ladies-Rain/32746862961.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-21&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1500418630,
+            "title": "FORUDESIGNS Warm Snow <em>Boots</em> 3D Chocolate Prints <em>Women</em> Ankle Cotton <em>Boots</em> Casual <em>Waterproof</em> Rain <em>Boots</em> Flats for Ladies Zapatos",
+            "url": "https://www.aliexpress.com/item/FORUDESIGNS-Warm-Snow-Boots-3D-Chocolate-Prints-Women-Ankle-Cotton-Boots-Casual-Waterproof-Rain-Boots-Flats/32743965259.html?ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10130_10084_10308_10083_10080_10082_10081_10110_10178_10137_10111_10060_10112_10113_10155_10114_9950_10154_438_10056_10055_10054_10182_10059_100031_10099_10078_10079_10103_10073_10102_10052_10053_10142_10107_10050_10051-9950,searchweb201603_5,ppcSwitch_7&btsid=ac1d09ce-7e78-4d5c-bc57-34c9c33c51e2&algo_expid=56e012b1-bf07-4e33-810a-83971d8f32c4-22&algo_pvid=56e012b1-bf07-4e33-810a-83971d8f32c4"
+        }
+    ],
+    "timestamp": 1500418630,
+    "url": "https://www.aliexpress.com/w/wholesale-waterproof-winter-boots-women.html?site=glo&g=y&SearchText=waterproof+winter+boots+women&pvId=200009123-1886&attrRel=or"
+}

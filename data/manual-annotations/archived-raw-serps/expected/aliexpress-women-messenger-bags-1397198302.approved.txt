@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "Women Messenger Bags",
+    "offset": null,
+    "page": null,
+    "query": "Women+Messenger+Bags",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1397198302,
+            "title": "2014 fashion leisure shoulder bag crocodile grain women messenger bag clutch",
+            "url": "http://www.aliexpress.com/item/2014-fashion-leisure-shoulder-bag-crocodile-grain-women-messenger-bag-clutch/1656465217.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1397198302,
+            "title": "Free shipping Genuine leather Tassel handbags shoulder bags messenger bag Day clutch Chain bag small bag women's clutches CN168",
+            "url": "http://www.aliexpress.com/item/Free-shipping-Tassel-bags-Genuine-leather-ladies-handbags-shoulder-messenger-bag-day-clutch-Chain-bag-CN168/1481188842.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1397198302,
+            "title": "2014 handbag Covered nails rivet punk style rivets big bag Leopard fashion casual shoulder women messenger bags priced wholesale",
+            "url": "http://www.aliexpress.com/item/2014-handbag-Covered-nails-rivet-punk-style-rivets-big-bag-Leopard-fashion-casual-shoulder-women-messenger/1755022224.html"
+        }
+    ],
+    "timestamp": 1397198302,
+    "url": "http://www.aliexpress.com/w/wholesale-Women-Messenger-Bags.html?g=y&SearchText=Women%2BMessenger%2BBags&CatId=100002612&pvId=200000329-200004094&shipCountry=us&initiative_id=SB_20130813182932"
+}

@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "sterling silver gemstone",
+    "offset": null,
+    "page": null,
+    "query": "sterling silver gemstone",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1384701071,
+            "title": "#RI100527 Designer Classic Stlye Wedding Bands for Women Fine jewelry CZ Zircon <em>Gemstone</em> Genuine 925 <em>Sterling</em> <em>Silver</em> Lady Ring",
+            "url": "http://www.aliexpress.com/item/mini-order-10-Zircon-gemstone-925-Sterling-Silver-Gemstone-Ring-Free-Shipping-Lady-Ring-RI100527-jewelry/634073869.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1384701071,
+            "title": "Heart-shaped wings Big lab <em>Gemstone</em> 925 <em>Sterling</em> <em>Silver</em> Platinum Plated Rings/High Quality Fashion/Classic Lovers jewelry",
+            "url": "http://www.aliexpress.com/item/Heart-shaped-wings-Big-Diamond-925-Sterling-Silver-Platinum-Plated-Rings-High-Quality-Fashion-Romantic-Classic/1129573636.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1384701071,
+            "title": "Fashion <em>Silver</em> jewelry Turquoise rings 925 stamp jewelry free shipping LR0607",
+            "url": "http://www.aliexpress.com/item/Fashion-Silver-jewelry-Turquoise-gemstone-rings-925-stamp-jewelry-free-shipping-LR0436/629682530.html"
+        }
+    ],
+    "timestamp": 1384701071,
+    "url": "http://www.aliexpress.com/wholesale?SearchText=sterling+silver+gemstone&initiative_id=RS_20131116203418"
+}

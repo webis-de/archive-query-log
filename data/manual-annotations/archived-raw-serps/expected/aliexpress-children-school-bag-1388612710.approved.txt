@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "CHILDREN SCHOOL BAG",
+    "offset": null,
+    "page": null,
+    "query": "CHILDREN+SCHOOL+BAG",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1388612710,
+            "title": "<em>Children</em> <em>School</em> <em>Bag</em> Baby Cartoon Backpack boys&amp;girls Animal <em>School</em> <em>Bag</em> 7Pcs/lot dropShipping 17315",
+            "url": "http://www.aliexpress.com/item/Children-School-Bag-Baby-Cartoon-Backpack-boys-girls-Animal-School-Bag-7Pcs-lot-dropShipping-17315/1430011888.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1388612710,
+            "title": "5pcs/lot, <em>Children</em> Kids Baby Backpack <em>School</em> backkpack, Free Shipping",
+            "url": "http://www.aliexpress.com/item/5pcs-lot-Children-Kids-Baby-Backpack-School-backkpack-Free-Shipping/513246934.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1388612710,
+            "title": "New <em>Children</em> <em>School</em> <em>Bag</em> Cartoon Animal Canvas <em>Bag</em> Backpacks Child <em>Bags</em> Toddler Shoulder <em>bag</em> Kindergarten Schoolbag 0284",
+            "url": "http://www.aliexpress.com/item/New-Children-School-Bag-Cartoon-Animal-Canvas-Bag-Backpacks-Child-Bags-Toddler-Shoulder-bag-Kindergarten-Schoolbag/1550209995.html"
+        }
+    ],
+    "timestamp": 1388612710,
+    "url": "http://www.aliexpress.com/w/wholesale-CHILDREN-SCHOOL-BAG.html?SearchText=CHILDREN%2BSCHOOL%2BBAG&CatId=380520&initiative_id=SB_20130923225029&SortType=total_weight_score_desc"
+}

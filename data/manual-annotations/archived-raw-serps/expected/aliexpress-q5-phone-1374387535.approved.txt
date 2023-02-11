@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "q5 phone",
+    "offset": null,
+    "page": null,
+    "query": "q5+phone",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1374387535,
+            "title": "2013 new 5 Inch MTK6589 Quad Core Q9000 <em>Q5</em> <em>phone</em> OS Android 4.2 Dual Camera Support GPS \\john",
+            "url": "http://www.aliexpress.com/item/2013-new-5-Inch-MTK6589-Quad-Core-Q9000-Q5-phone-OS-Android-4-2-Dual-Camera/953619514.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1374387535,
+            "title": "bluetooth fashion watch mobile <em>phone</em> <em>Q5</em> 1.5'touch screen watch <em>phone</em>,Free shipping",
+            "url": "http://www.aliexpress.com/item/bluetooth-fashion-watch-mobile-phone-Q5-1-5-touch-screen-watch-phone-Free-shipping/536928135.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1374387535,
+            "title": "bluetooth fashion watch mobile <em>phone</em> <em>Q5</em> 1.5'touch screen watch <em>phone</em>",
+            "url": "http://www.aliexpress.com/item/bluetooth-fashion-watch-mobile-phone-Q5-1-5-touch-screen-watch-phone/494063077.html"
+        }
+    ],
+    "timestamp": 1374387535,
+    "url": "http://www.aliexpress.com/wholesale/wholesale-q5-phone.html?SearchText=q5%2Bphone&CatId=0&SortType=total_weight_score_desc"
+}

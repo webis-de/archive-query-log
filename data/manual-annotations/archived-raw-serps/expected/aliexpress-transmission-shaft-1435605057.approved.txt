@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "transmission shaft",
+    "offset": null,
+    "page": null,
+    "query": "transmission+shaft",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1435605057,
+            "title": "Area RC Alloy middle <em>shaft</em> <em>transmission</em> bracket for LOSI DBXL",
+            "url": "http://www.aliexpress.com/item/Area-RC-Alloy-middle-shaft-transmission-bracket-for-LOSI-DBXL/32289476603.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1435605057,
+            "title": "AREA RC middle <em>shaft</em> <em>transmission</em> bracket for MCD RR5/XS-5",
+            "url": "http://www.aliexpress.com/item/AREA-RC-middle-shaft-transmission-bracket-for-MCD-RR5-XS-5/32326380999.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1435605057,
+            "title": "Area RC Alloy middle <em>shaft</em> <em>transmission</em> bracket for LOSI DBXL",
+            "url": "http://www.aliexpress.com/item/Area-RC-Alloy-middle-shaft-transmission-bracket-for-LOSI-DBXL/32324317680.html"
+        }
+    ],
+    "timestamp": 1435605057,
+    "url": "http://www.aliexpress.com/w/wholesale-transmission-shaft.html?SearchText=transmission%2Bshaft&CatId=0&pvId=200001211-2277&shipCountry=us"
+}

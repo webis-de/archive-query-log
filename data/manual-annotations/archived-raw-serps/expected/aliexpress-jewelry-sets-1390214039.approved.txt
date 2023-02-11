@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "Jewelry Sets",
+    "offset": null,
+    "page": null,
+    "query": "Jewelry+Sets",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1390214039,
+            "title": "jewelry set,agate setA1882",
+            "url": "http://www.aliexpress.com/item/jewelry-set-agate-setA1882/339908443.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1390214039,
+            "title": "Rare Black jade agate necklace bracelet jewelry set free shipping",
+            "url": "http://www.aliexpress.com/item/Rare-Black-jade-agate-necklace-bracelet-jewelry-set-free-shipping/487822033.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1390214039,
+            "title": "Fashion Agate Stone With Flower Shell Jewelry Neckace Set",
+            "url": "http://www.aliexpress.com/item/Fashion-Agate-Stone-With-Flower-Shell-Jewelry-Neckace-Set/326159587.html"
+        }
+    ],
+    "timestamp": 1390214039,
+    "url": "http://www.aliexpress.com/w/wholesale-Jewelry-Sets.html?g=y&SearchText=Jewelry%2BSets&CatId=100006750&pvId=200000785-200003778%2C20252-1551&initiative_id=SB_20130731213711"
+}
