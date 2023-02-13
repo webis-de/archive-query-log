@@ -1,0 +1,150 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "#Ecotourism",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "In the #<em>Backyard</em>. #<em>Permaculture</em> #<em><em>EcoTourism</em></em> #<em>AtlasChic</em>pic.twitter.com/rucgxqFK6M",
+            "timestamp": 1557315321,
+            "title": "<em>ATLAS Chic \u2d30\u2d5f\u2d4d\u2d30\u2d59 \u2d5b\u2d49\u2d3d</em>\u200f\u00a0@<em>iNegoce</em>",
+            "url": "https://twitter.com/iNegoce/status/1126088453052039168"
+        },
+        {
+            "rank": 2,
+            "snippet": "TOP 12 Environmentally friendly attractions in Norway https://nordenbladet.com/articles/70340-top-12-environmentally-friendly-attractions-in-norway\u00a0\u2026 #<em>travel</em> #<em>tourism</em> #<em>environment</em> #<em>eco</em> #<em><em>ecotourism</em></em> #<em>touristattractions</em> #<em>Norway</em> #<em>Scandinavia</em> #<em>NordenBladet</em>pic.twitter.com/nfdTnn6JnU",
+            "timestamp": 1557315321,
+            "title": "<em>Norden Bladet</em>\u200f\u00a0@<em>NordenBladet</em>",
+            "url": "https://twitter.com/NordenBladet/status/1126062740940914688"
+        },
+        {
+            "rank": 3,
+            "snippet": "Brazil celebrates today the #<em>NationalTourismDay</em>. Brazil's natural beauties fascinate tourists from all over the world. In addition to economic benefits, #<em><em>ecotourism</em></em> brings people closer to nature and contributes to increased environmental awarenesshttps://bit.ly/2PRkL0o\u00a0pic.twitter.com/cHel4Cd5wA",
+            "timestamp": 1557315321,
+            "title": "<em>Mission of Brazil EU</em>\u200f\u00a0@<em>BrazilMissionEU</em>",
+            "url": "https://twitter.com/BrazilMissionEU/status/1126042424126652416"
+        },
+        {
+            "rank": 4,
+            "snippet": "Why the Faroe islands is closed for maintenance to encourage sustainable tourism. \n#<em>sustainability</em>\n#<em><em>ecotourism</em></em>\n#<em>travelgood</em>https://www.theguardian.com/travel/2019/may/08/faroe-islands-closed-maintenanace-voluntourists-conservation?CMP=twt_a-environment_b-gdneco\u00a0\u2026",
+            "timestamp": 1557315321,
+            "title": "<em>Less</em>\u200f\u00a0@<em>letsgoless</em>",
+            "url": "https://twitter.com/letsgoless/status/1125999933469777920"
+        },
+        {
+            "rank": 5,
+            "snippet": "#<em><em>ecotourism</em></em> is the fastest growing segment of the tourism industry. But what is ecotourism? Our core courses will give a thorough understanding, and have been called \"Definitive\", \"Powerful\" and \"Best of the best\".\nRead about the courses on our site \nhttps://ecotourism.org/certificate-in-sustainable-tourism-management/\u00a0\u2026pic.twitter.com/xm4HVcdfFE",
+            "timestamp": 1557315321,
+            "title": "<em>TIES</em>\u200f\u00a0@<em>ecotravel</em>",
+            "url": "https://twitter.com/ecotravel/status/1125996603712724992"
+        },
+        {
+            "rank": 6,
+            "snippet": "Rose con vista mare (e ristorante)\nRoses with a view on the sea (and the restaurant)\n#<em>lafrancesca</em> #<em>lafrancescaresort</em> #<em>cinqueterre</em> #<em>bonassola</em> #<em>levanto</em>\n#<em>ecoturismo</em> #<em><em>ecotourism</em></em> #<em>rosadimare</em> #<em>rosadimarerestaurant</em> #<em>ristoranterosadimare</em> #<em>lamialiguria</em> #<em>ligurian</em>\u2026 http://bit.ly/2DV7SOi\u00a0pic.twitter.com/JQcDw907OR",
+            "timestamp": 1557315321,
+            "title": "<em>Resort La Francesca</em>\u200f\u00a0@<em>lafrancesca1961</em>",
+            "url": "https://twitter.com/lafrancesca1961/status/1125991087137525760"
+        },
+        {
+            "rank": 7,
+            "snippet": "By establishing honeybees in the area, we help provide pollination for local farming, flowers, &amp; native plant production. A bee-autiful thing!!  #<em>maunakeagolf</em> #<em>pollinators</em> #<em>honeybee</em> #<em><em>ecotourism</em></em> #<em>biodiversity</em>pic.twitter.com/zzx1E5HRWQ",
+            "timestamp": 1557315321,
+            "title": "<em>MaunaKeaResortGolf</em>\u200f\u00a0@<em>MaunaKeaGolf</em>",
+            "url": "https://twitter.com/MaunaKeaGolf/status/1125974168971825152"
+        },
+        {
+            "rank": 8,
+            "snippet": "A magnificent Silverback Mountain Gorilla in Rwanda's Virunga National Park.\n\nImage: Bisate Lodge\n#<em>wildlifephotography</em> #<em><em>ecotourism</em></em> pic.twitter.com/eqWL0Yk6pG",
+            "timestamp": 1557315321,
+            "title": "<em>CAPTURED IN AFRICA</em>\u200f\u00a0@<em>capinafrica</em>",
+            "url": "https://twitter.com/capinafrica/status/1125919507212591105"
+        },
+        {
+            "rank": 9,
+            "snippet": "#<em>offshorewind</em> farms are good for tourism. Who wouldn't want to check one out? #<em><em>ecotourism</em></em> #<em>oceans</em>https://twitter.com/gmatthewdrew/status/1125687370517446656\u00a0\u2026",
+            "timestamp": 1557315321,
+            "title": "<em>NYOWA</em>\u200f\u00a0@<em>NYOffshoreWind</em>",
+            "url": "https://twitter.com/NYOffshoreWind/status/1125788881050308608"
+        },
+        {
+            "rank": 10,
+            "snippet": "Quick peak inside our sustainably restored 17th Century thatched cottage at Cnoc Suain #<em>loveireland</em> #<em>WildAtlanticWay</em> #<em>galway</em> #<em>connemara</em> @<em>tourismireland</em> #<em><em>ecotourism</em></em> #<em>nature</em>pic.twitter.com/WzQ7rLQtvl",
+            "timestamp": 1557315321,
+            "title": "<em>Cnoc Suain Conamara</em>\u200f\u00a0@<em>cnocsuain</em>",
+            "url": "https://twitter.com/cnocsuain/status/1125781082304077825"
+        },
+        {
+            "rank": 11,
+            "snippet": "There are currently 5 chalets at this resort.\n\nChalets cost:\n$35 per night (International price)\n\n$25 per night (locals/Sierra Leonean price)\n\n#<em>sierraleone</em> #<em>SaloneTwitter</em> #<em><em>ecotourism</em></em> pic.twitter.com/sh3jfJ8cyL",
+            "timestamp": 1557315321,
+            "title": "<em>Yasmin TELLS</em>\u200f\u00a0@<em>yasmin_tells</em>",
+            "url": "https://twitter.com/yasmin_tells/status/1125304499017482240"
+        },
+        {
+            "rank": 12,
+            "snippet": "One glorious scene in Zimbabwe's Hwange National Park, as elephants get their fill of water in one of the local watering holes.\n\nLinkwasha Camp makes for an excellent safari option. Enquire - info@capturedinafrica.co.za  \n#<em>Africa</em> #<em>Safari</em> #<em><em>EcoTourism</em></em> pic.twitter.com/rbLqVvPcfD",
+            "timestamp": 1557315321,
+            "title": "<em>CAPTURED IN AFRICA</em>\u200f\u00a0@<em>capinafrica</em>",
+            "url": "https://twitter.com/capinafrica/status/1125275267155382273"
+        },
+        {
+            "rank": 13,
+            "snippet": "#<em>GreenGetaways</em>: #<em>Atlanta</em>, #<em>Georgia</em> \nHow is YOUR city #<em>Green</em>? Not only does Atlanta have the 1st #<em>Subway</em> in the #<em>South</em>, #<em>Bike</em> riding is encouraged. Look @ these #<em>Colorful</em> #<em>BikeRacks</em>!\n\n#<em>GreenCities</em>\n#<em>GreenTravel</em>\n#<em>EcoTravel</em>\n#<em><em>EcoTourism</em></em>\n#<em>Cycling</em>\n#<em>Art</em>\n#<em>BeautyAllAroundUs</em>\n#<em>GreenTwitter</em> pic.twitter.com/0ikJTbwrwt",
+            "timestamp": 1557315321,
+            "title": "<em>Soledad Haren</em>\u200f\u00a0@<em>Soledad_Haren</em>",
+            "url": "https://twitter.com/Soledad_Haren/status/1125155381490143238"
+        },
+        {
+            "rank": 14,
+            "snippet": "My kinda Sunday .. \nDid you know there is a Eco tourism camp on Tasso Island? We as Sierra Leoneans need to practice more of #<em>domestictourism</em> and enjoy the natural settings we are blessed with in #<em>sierraleone</em> #<em><em>ecotourism</em></em> #<em>travel</em> #<em>ecofriendly</em> #<em>WestAfrica</em> #<em>yasmintells</em>pic.twitter.com/fG5d1BCblk",
+            "timestamp": 1557315321,
+            "title": "<em>Yasmin TELLS</em>\u200f\u00a0@<em>yasmin_tells</em>",
+            "url": "https://twitter.com/yasmin_tells/status/1125120499749617664"
+        },
+        {
+            "rank": 15,
+            "snippet": "Edinburgh Napier University, MSc Wildlife Biology &amp; Conservation, MSc Ecotourism, field course kicked off this week. Follow this thread for more. #<em>EdinburghNapier</em> #<em>EdNapier</em> #<em>wildlife</em> #<em>conservation</em> #<em><em>ecotourism</em></em> #<em>fieldcourse</em> #<em>fieldtrip</em> #<em>MSc</em> #<em>Edinburgh</em> #<em>University</em> #<em>Scotland</em>pic.twitter.com/LgsrRxbXgo",
+            "timestamp": 1557315321,
+            "title": "<em>Jason Gilchrist</em>\u200f\u00a0@<em>jgilchrist13</em>",
+            "url": "https://twitter.com/jgilchrist13/status/1124699674890440704"
+        },
+        {
+            "rank": 16,
+            "snippet": "#<em>Tourism</em> means opportunities for all! \nTourism can integrate local communities, including underrepresented groups and help them enter the labour market! #<em>responsibletourism</em>, #<em><em>ecotourism</em></em>, #<em>beutifulpakistan</em>, #<em>GilgitBaltistan</em>, #<em>Pakistan</em>pic.twitter.com/NU0ACFocq8",
+            "timestamp": 1557315321,
+            "title": "<em>Trango Adventure</em>\u200f\u00a0@<em>TrangoAdventure</em>",
+            "url": "https://twitter.com/TrangoAdventure/status/1124448130798444544"
+        },
+        {
+            "rank": 17,
+            "snippet": "XXI National Day of the Greenways, May 12, 2019. \nLive the party of the #<em>Greenways</em> in #<em>Spain</em>!\nhttps://buff.ly/2LEmnqG\u00a0\n#<em>VisitSpain</em> #<em>SpainSport</em> #<em>fun</em> #<em>outdoors</em> #<em>trekking</em> #<em>adventure</em> #<em>cyclinglife</em> #<em>DNViasVerdes2019</em> #<em><em>ecotourism</em></em> #<em>different</em> #<em>experience</em> #<em>travellers</em>\n@<em>viasverdes_ffe</em>pic.twitter.com/1q3MumRbJX",
+            "timestamp": 1557315321,
+            "title": "<em>Spain in Switzerland</em>\u200fVerifizierter Account\u00a0@<em>Spain_in_CH</em>",
+            "url": "https://twitter.com/Spain_in_CH/status/1124358208267722752"
+        },
+        {
+            "rank": 18,
+            "snippet": "From the garden #<em><em>EcoTourism</em></em> #<em>VisitImider</em> #<em>Imider</em>pic.twitter.com/vD2cO6EHUF",
+            "timestamp": 1557315321,
+            "title": "<em>ATLAS Chic \u2d30\u2d5f\u2d4d\u2d30\u2d59 \u2d5b\u2d49\u2d3d</em>\u200f\u00a0@<em>iNegoce</em>",
+            "url": "https://twitter.com/iNegoce/status/1123995876752601090"
+        },
+        {
+            "rank": 19,
+            "snippet": "Slow but sure assimilation to culture and ecotourism of reintroduced scarlet macaws in Los Tuxtlas, Veracruz, Mexico, via Journal of Ecotourism / @<em>tandfonline</em>\n#<em>parrots</em> #<em>ParrotSci</em> #<em>ParrotScience</em> #<em><em>ecotourism</em></em> #<em>conservation</em> https://doi.org/10.1080/14724049.2019.1604716\u00a0\u2026pic.twitter.com/4UljymAJB4",
+            "timestamp": 1557315321,
+            "title": "<em>IOU Working Group For Parrots</em>\u200f\u00a0@<em>ParrotsGroup</em>",
+            "url": "https://twitter.com/ParrotsGroup/status/1123993511207014401"
+        },
+        {
+            "rank": 20,
+            "snippet": "Love living green? Come check out the greenhouse and hydroponic cultures at Coldwater Gardens. #<em>RelaxinNavarre</em> #<em><em>ecotourism</em></em>\n iger @seashellmichelle pic.twitter.com/WKYH00YHY1",
+            "timestamp": 1557315321,
+            "title": "<em>Relax in Navarre</em>\u200f\u00a0@<em>RelaxInNavarre</em>",
+            "url": "https://twitter.com/RelaxInNavarre/status/1123708735392747521"
+        }
+    ],
+    "timestamp": 1557315321,
+    "url": "https://twitter.com/search?q=%23Ecotourism"
+}

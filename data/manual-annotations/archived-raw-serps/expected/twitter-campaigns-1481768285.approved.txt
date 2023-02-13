@@ -1,0 +1,136 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "campaigns",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\"apa yang saya mampu tolong utk Syria?\"\n\nspread the words. spread the poster. join the <em>campaigns</em>. bantu sesama sedarkan ramai lagi orang. pic.twitter.com/sb1t5oLINT",
+            "timestamp": 1481768285,
+            "title": "<em>ed</em>\n\u200f@<em>Nrl_Ed</em>",
+            "url": "https://twitter.com/Nrl_Ed/status/808689201440952321"
+        },
+        {
+            "rank": 2,
+            "snippet": "exactly what I was thinking. All <em>campaigns</em> make mistakes; media being stooges for foreign power and rogue FBI is different https://twitter.com/DanaHoule/status/809030554817536000\u00a0\u2026",
+            "timestamp": 1481768285,
+            "title": "<em>Paul Krugman\n\uc778\uc99d\ub41c \uacc4\uc815\n</em>\n\u200f@<em>paulkrugman</em>",
+            "url": "https://twitter.com/paulkrugman/status/809111117461065728"
+        },
+        {
+            "rank": 3,
+            "snippet": "1) All <em>campaigns</em> make mistakes\n2) All losers are labeled idiots\n3) Clinton campaign made bad mistakes\n4) They would have won but for Comey",
+            "timestamp": 1481768285,
+            "title": "<em>Ian Millhiser\n\uc778\uc99d\ub41c \uacc4\uc815\n</em>\n\u200f@<em>imillhiser</em>",
+            "url": "https://twitter.com/imillhiser/status/809078784427249665"
+        },
+        {
+            "rank": 4,
+            "snippet": "Black model recreates famous fashion <em>campaigns</em> to highlight lack of diversity in fashion industry (9 Pics) http://thelightmedia.com/posts/28961-black-model-recreates-famous-fashion-campaigns-to-highlight-lack-of-diversity-in-fashion-industry\u00a0\u2026",
+            "timestamp": 1481768285,
+            "title": "<em>Why So Serious?</em>\n\u200f@<em>JustForFun7405</em>",
+            "url": "https://twitter.com/JustForFun7405/status/809004267717570561"
+        },
+        {
+            "rank": 5,
+            "snippet": "See all of the spring 2017 <em>campaigns</em> here! We'll keep updating this post with all the best ads of the season: http://trib.al/eH6QZ4Y",
+            "timestamp": 1481768285,
+            "title": "<em>Fashionista.com\n\uc778\uc99d\ub41c \uacc4\uc815\n</em>\n\u200f@<em>Fashionista_com</em>",
+            "url": "https://twitter.com/Fashionista_com/status/809128457720438786"
+        },
+        {
+            "rank": 6,
+            "snippet": "Great piece by @<em>sarahjeong</em> in WaPo today; online harassment and misinformation <em>campaigns</em> share the same ecosystem  https://www.washingtonpost.com/posteverything/wp/2016/12/14/if-we-took-gamergate-harassment-seriously-pizzagate-might-never-have-happened/?hpid=hp_no-name_opinion-card-a%3Ahomepage%2Fstory&amp;utm_term=.f9375ba5e19a\u00a0\u2026",
+            "timestamp": 1481768285,
+            "title": "<em>Trevor Knoblich</em>\n\u200f@<em>MobileTrevor</em>",
+            "url": "https://twitter.com/MobileTrevor/status/809092266165932032"
+        },
+        {
+            "rank": 7,
+            "snippet": "always have to read postmortems of losing <em>campaigns</em> w/ a grain of salt, bc there're always a million decisions to 2nd guess",
+            "timestamp": 1481768285,
+            "title": "<em>\u00a0\ud83c\uddfa\ud83c\uddf8</em>\n\u200f@<em>theshrillest</em>",
+            "url": "https://twitter.com/theshrillest/status/809077931913773056"
+        },
+        {
+            "rank": 8,
+            "snippet": "Clinton staffer: \"In most presidential <em>campaigns</em> the circle grows broader and broader, hers grew smaller and smaller.\u201d",
+            "timestamp": 1481768285,
+            "title": "<em>Jack Posobiec</em>\n\u200f@<em>JackPosobiec</em>",
+            "url": "https://twitter.com/JackPosobiec/status/809032055069769728"
+        },
+        {
+            "rank": 9,
+            "snippet": "Get Men On British Make-up <em>Campaigns</em> - Please sign this. https://www.change.org/p/makeup-revolution-get-men-on-british-make-up-campaigns\u00a0\u2026",
+            "timestamp": 1481768285,
+            "title": "<em>Georgie Aldous\n\uc778\uc99d\ub41c \uacc4\uc815\n</em>\n\u200f@<em>georgiealdous</em>",
+            "url": "https://twitter.com/georgiealdous/status/808759845759361024"
+        },
+        {
+            "rank": 10,
+            "snippet": "5 Tips for Creative Social Media <em>Campaigns</em> http://ow.ly/mx3F305aiLy\u00a0 #<em>SocialMedia</em>",
+            "timestamp": 1481768285,
+            "title": "<em>Strong Social</em>\n\u200f@<em>Strong_Social</em>",
+            "url": "https://twitter.com/Strong_Social/status/808729029830393856"
+        },
+        {
+            "rank": 11,
+            "snippet": "\"the best albums of 2016 that had a lot of money and PR <em>campaigns</em> behind them presented by music websites with paid advertising\"",
+            "timestamp": 1481768285,
+            "title": "<em>Lithuania</em>\n\u200f@<em>lithuaniaband</em>",
+            "url": "https://twitter.com/lithuaniaband/status/808669948008603648"
+        },
+        {
+            "rank": 12,
+            "snippet": "John McCain Says There Is No Doubt That Russia Hacked The <em>Campaigns</em> via @<em>politicususa</em> http://www.politicususa.com/2016/12/12/john-mccain-doubt-russia-hacked-campaigns.html\u00a0\u2026 #<em>p2</em> #<em>ctl</em>",
+            "timestamp": 1481768285,
+            "title": "<em>PoliticusUSA</em>\n\u200f@<em>politicususa</em>",
+            "url": "https://twitter.com/politicususa/status/808435435227717633"
+        },
+        {
+            "rank": 13,
+            "snippet": "Sen. John McCain: \"I don\u2019t think there\u2019s any doubt that the Russians hacked into the <em>campaigns</em>, probably both\" http://cnn.it/2hggmom",
+            "timestamp": 1481768285,
+            "title": "<em>CNN\n\uc778\uc99d\ub41c \uacc4\uc815\n</em>\n\u200f@<em>CNN</em>",
+            "url": "https://twitter.com/CNN/status/808421220299505664"
+        },
+        {
+            "rank": 14,
+            "snippet": "Graphic: Arsenal's first 15 PL games this season compared to recent <em>campaigns</em>. [Sky] #<em>afc</em>pic.twitter.com/wQEn2lj5Hc",
+            "timestamp": 1481768285,
+            "title": "<em>afcstuff</em>\n\u200f@<em>afcstuff</em>",
+            "url": "https://twitter.com/afcstuff/status/808309653742514176"
+        },
+        {
+            "rank": 15,
+            "snippet": "Please take a minute out of your day to help ensure the Great Barrier Reef's future. Coral, not coal! Act now http://bit.do/reefcampaign\u00a0pic.twitter.com/cFWX0TvvM4",
+            "timestamp": 1481768285,
+            "title": "<em>GPAP Campaigns</em>\n\u200f@<em>GreenpeaceAu</em>",
+            "url": "https://twitter.com/GreenpeaceAu/status/808250237382967296"
+        },
+        {
+            "rank": 16,
+            "snippet": "As part of Selena Gomez\u2019s \u2018supposed\u2019 deal with Coach, she is set to design her own line and star in ad <em>campaigns</em>! Who\u2019s excited?  pic.twitter.com/I5XeBEeb2D",
+            "timestamp": 1481768285,
+            "title": "<em>Selena Gomez News</em>\n\u200f@<em>LifeWithSelG</em>",
+            "url": "https://twitter.com/LifeWithSelG/status/808220173761187840"
+        },
+        {
+            "rank": 17,
+            "snippet": "TIMY's social media <em>campaigns</em> are lit hahaha\n\n#<em>TIMYTayoHanggangDulo</em>",
+            "timestamp": 1481768285,
+            "title": "<em>mama-san</em>\n\u200f@<em>fangirlhekate</em>",
+            "url": "https://twitter.com/fangirlhekate/status/808147908100919297"
+        },
+        {
+            "rank": 18,
+            "snippet": "\"Talk dirty to me\"\nMe: there is no contribution limit to Super PACs in support of political <em>campaigns</em> ;)",
+            "timestamp": 1481768285,
+            "title": "<em>juan botero</em>\n\u200f@<em>juanboteroooo</em>",
+            "url": "https://twitter.com/juanboteroooo/status/808141112099500032"
+        }
+    ],
+    "timestamp": 1481768285,
+    "url": "https://twitter.com/search?q=campaigns&lang=ko"
+}

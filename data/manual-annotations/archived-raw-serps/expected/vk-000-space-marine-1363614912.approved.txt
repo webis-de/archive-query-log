@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "000: Space Marine",
+    "offset": null,
+    "page": null,
+    "query": "000: Space Marine",
+    "results": [],
+    "timestamp": 1363614912,
+    "url": "http://vk.com/search?c%5Bq%5D=000%3A%20Space%20Marine&c%5Bsection%5D=people&offset=10640"
+}

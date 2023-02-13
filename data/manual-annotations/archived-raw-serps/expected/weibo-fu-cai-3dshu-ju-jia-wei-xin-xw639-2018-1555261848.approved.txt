@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u798f\u5f693d\u6570\u636e\u52a0\u5fae\u2605\u4fe1xw639-2018\u203b",
+    "offset": null,
+    "page": null,
+    "query": "\u798f\u5f693d\u6570\u636e\u52a0\u5fae\u2605\u4fe1xw639-2018\u203b",
+    "results": [],
+    "timestamp": 1555261848,
+    "url": "https://s.weibo.com/weibo/%E7%A6%8F%E5%BD%A93d%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%BE%AE%E2%98%85%E4%BF%A1xw639-2018%E2%80%BB"
+}

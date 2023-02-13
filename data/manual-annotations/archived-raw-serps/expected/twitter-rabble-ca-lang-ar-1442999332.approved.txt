@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "rabble.ca?lang=ar",
+    "offset": null,
+    "page": null,
+    "query": "rabble.ca?lang=ar",
+    "results": [],
+    "timestamp": 1442999332,
+    "url": "https://mobile.twitter.com/search?vertical=default&near=me&q=rabble.ca%3Flang%3Dar&locale=ro"
+}

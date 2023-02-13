@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "#FreeMariaButina",
+    "offset": null,
+    "page": null,
+    "query": "#FreeMariaButina",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Putin is a Pimp! #\u041f\u0443\u0442\u0438\u043d\u0441\u0443\u0442\u0435\u043d\u0435\u0440 #FreeMariaButina twitter.com/frogcycle/stat\u2026",
+            "timestamp": 1562498575,
+            "title": "<em>Louise Mensch</em>\n\n\n@LouiseMensch",
+            "url": "https://mobile.twitter.com/LouiseMensch/status/1020662867492732929?p=p"
+        },
+        {
+            "rank": 2,
+            "snippet": "#Zakharova: Despite our many requests, conditions in which Maria #Butina is being held remain harsh &amp; it has resulted in health issues. It seems like trying to complicate her life as much as possible in #US they'd like to force her to cooperate w/ investigation | #FreeMariaButina pic.twitter.com/b6H9BZEFCI",
+            "timestamp": 1562498575,
+            "title": "<em>MFA Russia \ud83c\uddf7\ud83c\uddfa</em>\n\n\n@mfa_russia",
+            "url": "https://mobile.twitter.com/mfa_russia/status/1029679587507294209?p=p"
+        },
+        {
+            "rank": 3,
+            "snippet": "I can clearly understand himanitarian reasons behind Maria #Butina\u2019s plea of being guilty, but I still can\u2019t see any crimes or even wrongdoings from her part. Not convincing at all.Seems like in US you can be jailed just for being Russian #FreeMariaButina bbc.co.uk/news/world-us-\u2026",
+            "timestamp": 1562498575,
+            "title": "<em>Dmitry Polyanskiy</em>\n\n\n@Dpol_un",
+            "url": "https://mobile.twitter.com/Dpol_un/status/1121825282443366400?p=p"
+        },
+        {
+            "rank": 4,
+            "snippet": "#FreeMariaButina  OK, but only if you take all of these\ud83d\udc47\ud83c\udffd pic.twitter.com/G4Z8z9WQuR",
+            "timestamp": 1562498575,
+            "title": "<em>Lillian Crosby</em>\n\n\n@lcros0608",
+            "url": "https://mobile.twitter.com/lcros0608/status/1020071731531264000?p=p"
+        },
+        {
+            "rank": 5,
+            "snippet": "And yet, you organized a #FreeMariaButina campaign across all your embassies\n\nWeird twitter.com/maxseddon/stat\u2026",
+            "timestamp": 1562498575,
+            "title": "<em>Louise Mensch</em>\n\n\n@LouiseMensch",
+            "url": "https://mobile.twitter.com/LouiseMensch/status/1072598397683675137?p=p"
+        },
+        {
+            "rank": 6,
+            "snippet": "Yesterday I said that it\u2019s likely there\u2019d be a hash tag &amp; RU bot participation for the Whelan - Butina trade. Sure enough here\u2019s the hashtags \ud83d\udc47 #FreePaulWhelan &amp; #FreeMariaButina pic.twitter.com/i5htoYqpbr",
+            "timestamp": 1562498575,
+            "title": "<em>Venture Capital</em>\n\n\n@kelly2277",
+            "url": "https://mobile.twitter.com/kelly2277/status/1081352331336257536?p=p"
+        },
+        {
+            "rank": 7,
+            "snippet": "Stalinist USSR also had a lot of methods to make people admit their guilt. Shameful case for the US legal system - extorting plea from fragile, innocent girl. Nothing to boast...and not convincing at all \ud83d\udc4e\ud83c\udffb\ud83d\udc4e\ud83c\udffb\ud83d\udc4e\ud83c\udffb #FreeMariaButina \u2066@RaviBatra\u2069  washingtonpost.com/local/legal-is\u2026",
+            "timestamp": 1562498575,
+            "title": "<em>Dmitry Polyanskiy</em>\n\n\n@Dpol_un",
+            "url": "https://mobile.twitter.com/Dpol_un/status/1073426427150782464?p=p"
+        },
+        {
+            "rank": 8,
+            "snippet": "Horrible injustice! #FreeMariaButina!!! twitter.com/GeorgeSzamuely\u2026",
+            "timestamp": 1562498575,
+            "title": "<em>Daniel McAdams</em>\n\n\n@DanielLMcAdams",
+            "url": "https://mobile.twitter.com/DanielLMcAdams/status/1121799440098967552?p=p"
+        },
+        {
+            "rank": 9,
+            "snippet": "#FreeMariaButina is a showcase that exposes all bias &amp; hypocrisy of #feminist agenda, actively promoted in some western countries \n\nWhen there's a real need for the mighty voices to speak up, we only have a deafening radio silence \n\nWomen's rights = human rights \n\n#MeToo someone? twitter.com/RusEmbUSA/stat\u2026",
+            "timestamp": 1562498575,
+            "title": "<em>Russia in Canada</em>\n\n\n@RussianEmbassyC",
+            "url": "https://mobile.twitter.com/RussianEmbassyC/status/1078106729953529857?p=p"
+        },
+        {
+            "rank": 10,
+            "snippet": "Vladimir Putin pimped out #FreeMariaButina and legalized domestic violence against Russian women - now Maria Butina\u2019s father and mother must read the sordid crimes Putin ordered her to commit  #\u041f\u0443\u0442\u0438\u043d\u0441\u0443\u0442\u0435\u043d\u0435\u0440 #PutinPimp pic.twitter.com/Ezt2hYhKuU",
+            "timestamp": 1562498575,
+            "title": "<em>Patribotics</em>\n\n\n@patribotics",
+            "url": "https://mobile.twitter.com/patribotics/status/1020667125281771521?p=p"
+        },
+        {
+            "rank": 11,
+            "snippet": "Ok, well done everybody - finishing it here - thanks for making sure the women of Russia know #\u041f\u0443\u0442\u0438\u043d\u0441\u0443\u0442\u0435\u043d\u0435\u0440 #PutinPimp #FreeMariaButina and the women of the FSB from United Russia using them! In an American jail, @Maria_butina can at least be respectable away from prostitution pic.twitter.com/25hKezc3yv",
+            "timestamp": 1562498575,
+            "title": "<em>Louise Mensch</em>\n\n\n@LouiseMensch",
+            "url": "https://mobile.twitter.com/LouiseMensch/status/1020702526482546688?p=p"
+        },
+        {
+            "rank": 12,
+            "snippet": "Extensive efforts by Russia to win Butina's release -- including six consular visits, four diplomatic notes, direct complaints by Lavrov and a #FreeMariaButina social media campaign -- suggest she ... might be a flight risk, prosecutors argue\n\nbloomberg.com/news/articles/\u2026",
+            "timestamp": 1562498575,
+            "title": "<em>Scott Rose</em>\n\n\n@rprose",
+            "url": "https://mobile.twitter.com/rprose/status/1038478176194908164?p=p"
+        },
+        {
+            "rank": 13,
+            "snippet": "#Zakharova: We strongly demand an immediate termination of the criminal prosecution of Maria #Butina, a victim of #US internal political squabbles &amp; her release. We will continue to press for the US authorities\u2019 observance of her rights and legitimate interests #FreeMariaButina pic.twitter.com/7IhBL91sFr",
+            "timestamp": 1562498575,
+            "title": "<em>MFA Russia \ud83c\uddf7\ud83c\uddfa</em>\n\n\n@mfa_russia",
+            "url": "https://mobile.twitter.com/mfa_russia/status/1027540557747372032?p=p"
+        },
+        {
+            "rank": 14,
+            "snippet": "We demand that #US government  #freeMariaButina, #freeViktorBout, #freeKonstantinYaroshenko and other Russian citizens illegally arrested by US authorities and wrongfully convicted by US courts. We urge US to stop hunting for Russians in third countries. It is shameful behavior! pic.twitter.com/f4htCLRj3Y",
+            "timestamp": 1562498575,
+            "title": "<em>MFA Russia \ud83c\uddf7\ud83c\uddfa</em>\n\n\n@mfa_russia",
+            "url": "https://mobile.twitter.com/mfa_russia/status/1032127778370609153?p=p"
+        },
+        {
+            "rank": 15,
+            "snippet": "You pimped her out to dozens of American men. @PutinRF is a Pimp and you support him. May the women of Russia rise up against you pimps and rapists #\u041f\u0443\u0442\u0438\u043d\u0441\u0443\u0442\u0435\u043d\u0435\u0440! #FreeMariaButina #PutinPimp pic.twitter.com/zHItu7pHMP",
+            "timestamp": 1562498575,
+            "title": "<em>Louise Mensch</em>\n\n\n@LouiseMensch",
+            "url": "https://mobile.twitter.com/LouiseMensch/status/1020667652841369600?p=p"
+        },
+        {
+            "rank": 16,
+            "snippet": "Our diplomats from @RusEmbUSA discovered that even after extorting \u2018plea\u2019 from Maria US authorities continue to treat her inhumanely and de-facto torture her by cold. Shame on US pretending to be advocates of #HumanRights elsewhere. Look in the mirror and #FreeMariaButina ! twitter.com/RusEmbUSA/stat\u2026",
+            "timestamp": 1562498575,
+            "title": "<em>Dmitry Polyanskiy</em>\n\n\n@Dpol_un",
+            "url": "https://mobile.twitter.com/Dpol_un/status/1078132085787906048?p=p"
+        },
+        {
+            "rank": 17,
+            "snippet": "#FreeMariaButina\n\nMaria Butina is a political prisoner, a victim of repressive #US\ud83c\uddfa\ud83c\uddf8 justice norms and a provocation masterminded by the U.S. special services.\nWe insist on our compatriot\u2019s innocence. We demand her immediate release.\n\n\u25b6\ufe0f facebook.com/RusEmbUSA/phot\u2026 \ud83d\udc48@statedeptspox pic.twitter.com/8fPCzUVoed",
+            "timestamp": 1562498575,
+            "title": "<em>Russia in USA \ud83c\uddf7\ud83c\uddfa</em>\n\n\n@RusEmbUSA",
+            "url": "https://mobile.twitter.com/RusEmbUSA/status/1121871521763528706?p=p"
+        },
+        {
+            "rank": 18,
+            "snippet": "Putin legalized domestic violence in Russia \ud83c\uddf7\ud83c\uddfa Russian women are used and abused by United Russia, the country of Catherine the Great reduced to this @mfa_russia #FreeMariaButina from #\u041f\u0443\u0442\u0438\u043d\u0441\u0443\u0442\u0435\u043d\u0435\u0440 #PutinPimp pic.twitter.com/oDsXt4VhUg",
+            "timestamp": 1562498575,
+            "title": "<em>Patribotics</em>\n\n\n@patribotics",
+            "url": "https://mobile.twitter.com/patribotics/status/1020671148525318144?p=p"
+        },
+        {
+            "rank": 19,
+            "snippet": "Appalling news of #US treatment of #MariaButina who is being held in custody without any plausible charge. Now American authorities like history\u2019s worst autoritarian regimes are obviously trying to break her will and humiliate her m.facebook.com/RusEmbUSA/phot\u2026 #FreeMariaButina pic.twitter.com/K21T4ZrDmh",
+            "timestamp": 1562498575,
+            "title": "<em>Dmitry Polyanskiy</em>\n\n\n@Dpol_un",
+            "url": "https://mobile.twitter.com/Dpol_un/status/1031072084406005762?p=p"
+        },
+        {
+            "rank": 20,
+            "snippet": "#Zakharova: We demand that Washington observe legal rights of Maria Butina &amp; release her as soon as possible. @RusEmbUSA provides the detained Russian citizen with all assistance &amp; support needed | #FreeMariaButina pic.twitter.com/n46OSwI10V",
+            "timestamp": 1562498575,
+            "title": "<em>MFA Russia \ud83c\uddf7\ud83c\uddfa</em>\n\n\n@mfa_russia",
+            "url": "https://mobile.twitter.com/mfa_russia/status/1073154770205065216?p=p"
+        }
+    ],
+    "timestamp": 1562498575,
+    "url": "https://mobile.twitter.com/search?vertical=default&locale=id&q=%23FreeMariaButina&f=tweets"
+}

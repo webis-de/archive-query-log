@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "robber",
+    "offset": null,
+    "page": null,
+    "query": "robber",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1248193170,
+            "title": "Nicole Banks and Flower Tucci fuck the Robber - Brazzers Vau",
+            "url": "http://www.xvideos.com/video139895/nicole_banks_and_flower_tucci_fuck_the_robber_brazzers_vault"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1248193170,
+            "title": "Big Cock fucks Big Ass",
+            "url": "http://www.xvideos.com/video34664/big_cock_fucks_big_ass"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1248193170,
+            "title": "Missy Stone reverses the role and fucks the robber and his b",
+            "url": "http://www.xvideos.com/video93322/missy_stone_reverses_the_role_and_fucks_the_robber_and_his_big_cock"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1248193170,
+            "title": "Missy Stone reverses the role and fucks the robber and his b",
+            "url": "http://www.xvideos.com/video95156/missy_stone_reverses_the_role_and_fucks_the_robber_and_his_big_cock"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1248193170,
+            "title": "Missy Stone reverses the role and fucks the robber and his b",
+            "url": "http://www.xvideos.com/video101618/missy_stone_reverses_the_role_and_fucks_the_robber_and_his_big_cock"
+        }
+    ],
+    "timestamp": 1248193170,
+    "url": "http://www.xvideos.com:80/?k=robber"
+}

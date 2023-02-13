@@ -1248,7 +1248,13 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/weibo/[^/]+
+    type: html_selector
+    query_selector: div.search-input input[type="text"]
+  - url_pattern: ^https?://[^/]+/weibo\?
+    type: html_selector
+    query_selector: div.search-input input[type="text"]
   results_parsers: []
   focused_url_prefixes:
   - /weibo?
@@ -1444,8 +1450,17 @@
     parameter: c[q]
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input#search_query
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: table#search_table td#results div.people_row
+    url_selector: div.name a
+    title_selector: div.name
+    snippet_selector: div.res-desc, p.res-desc
   focused_url_prefixes:
   - /search?
 - name: microsoft
@@ -1653,8 +1668,23 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input#q
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: ol#stream-items-id li.stream-item
+    url_selector: a.tweet-timestamp
+    title_selector: a.account-group
+    snippet_selector: p.tweet-text
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div.searches div.timeline table.tweet
+    url_selector: td.timestamp a
+    title_selector: td.user-info
+    snippet_selector: td.tweet-content div.tweet-text
   focused_url_prefixes:
   - /search?
 - name: twitch
@@ -2242,8 +2272,29 @@
     type: query_parameter
     parameter: p
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: input#q
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: form#xv-search-form input[name="k"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div#content div.thumb-block
+    url_selector: p.title a
+    title_selector: p.title
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div#content div.thumbBlock
+    url_selector: p a
+    title_selector: p
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: body#home div table tr td div table[bgcolor="#EEEDF1"] tr td
+    url_selector: a.miniature
+    title_selector: a.miniature span
   focused_url_prefixes:
   - /
 - name: github
