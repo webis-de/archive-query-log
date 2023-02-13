@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "flair:\"already posted https://redd.it/xamfzl\"",
+    "offset": null,
+    "page": null,
+    "query": "flair:\"already posted https://redd.it/xamfzl\"",
+    "results": [],
+    "timestamp": 1667030236,
+    "url": "https://old.reddit.com/search/?q=flair%3A%22already+posted+https%3A%2F%2Fredd.it%2Fxamfzl%22&sort=comments&type=comment"
+}

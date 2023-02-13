@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "german nebelmittelwurfanlage",
+    "offset": null,
+    "page": null,
+    "query": "german nebelmittelwurfanlage",
+    "results": [],
+    "timestamp": 1664557458,
+    "url": "https://www.reddit.com/search/?q=german+nebelmittelwurfanlage&sort=comments&t=all"
+}

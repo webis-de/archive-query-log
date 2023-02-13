@@ -1360,12 +1360,31 @@
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
     query_selector: input#header-search-bar
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: form#search input
   results_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
     results_selector: div[data-testid=posts-list] div[data-testid=post-container]
     url_selector: div[data-adclicklocation=title] a
     title_selector: div[data-testid=post-title]
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    results_selector: div#siteTable div.thing, div#siteTable div.link
+    url_selector: a.title
+    title_selector: p.title
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    results_selector: div.search-result-group div.search-result
+    url_selector: a.search-title
+    title_selector: a.search-title
+    snippet_selector: div.search-result-body
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    results_selector: div#AppRouter-main-content div.Post
+    url_selector: a[data-testid="post_timestamp"]
+    title_selector: a h3
   focused_url_prefixes:
   - /search
 - name: netflix

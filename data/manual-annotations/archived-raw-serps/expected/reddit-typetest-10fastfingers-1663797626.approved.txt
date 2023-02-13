@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "typetest 10fastfingers",
+    "offset": null,
+    "page": null,
+    "query": "typetest 10fastfingers",
+    "results": [],
+    "timestamp": 1663797626,
+    "url": "https://old.reddit.com/search?q=typetest+10fastfingers&restrict_sr=&sort=relevance&t=all"
+}

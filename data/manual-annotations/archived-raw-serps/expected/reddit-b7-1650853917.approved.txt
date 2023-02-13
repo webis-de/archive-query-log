@@ -1,0 +1,66 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "b7",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1650853917,
+            "title": "B7 generation RS4. 14 years old. A little upset they\u2019re so goddam expensive.",
+            "url": "https://www.reddit.com/r/Audi/comments/thmtqi/b7_generation_rs4_14_years_old_a_little_upset/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1650853917,
+            "title": "My new 2008 a4 b7. I\u2019m absolutely loving how it feels",
+            "url": "https://www.reddit.com/r/Audi/comments/tlwfxc/my_new_2008_a4_b7_im_absolutely_loving_how_it/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1650853917,
+            "title": "B7 S4 w/ 97k miles; too high? Looking to upgrade from a 2007 328i.",
+            "url": "https://www.reddit.com/r/Audi/comments/sogb64/b7_s4_w_97k_miles_too_high_looking_to_upgrade/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1650853917,
+            "title": "I just bought my first Audi! It's a '07 A4 B7 2.0 TDI S-Line, I'm so happy right now",
+            "url": "https://www.reddit.com/r/Audi/comments/tcj3zw/i_just_bought_my_first_audi_its_a_07_a4_b7_20_tdi/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1650853917,
+            "title": "Just got home from test driving a B7 A4 S-line. Elderly gentleman owned, super clean, and handles well. But there is a loud ticking/clacking combo going on in the head. The owner is an avid Audi enthusiast. He claims ALL B7 2.0 Audis had naturally loud ticking/clacking, and a rough vibration idle.",
+            "url": "https://www.reddit.com/r/Audi/comments/r1iui5/just_got_home_from_test_driving_a_b7_a4_sline/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1650853917,
+            "title": "\"I'm B11 I'm in love with B7.\"",
+            "url": "https://www.reddit.com/r/americandad/comments/u2m706/im_b11_im_in_love_with_b7/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1650853917,
+            "title": "Welp. I guess B7 is toast. On to B8!",
+            "url": "https://www.reddit.com/r/SpaceXMasterrace/comments/ua44dr/welp_i_guess_b7_is_toast_on_to_b8/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1650853917,
+            "title": "B7 has arrived at the luanch site!!! [photo @bocachicagal]",
+            "url": "https://www.reddit.com/r/SpaceXLounge/comments/tszqpq/b7_has_arrived_at_the_luanch_site_photo/"
+        }
+    ],
+    "timestamp": 1650853917,
+    "url": "https://www.reddit.com/search/?q=b7"
+}

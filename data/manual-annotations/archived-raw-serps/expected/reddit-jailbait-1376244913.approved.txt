@@ -1,0 +1,185 @@
+{
+    "interpreted_query": "jailbait",
+    "offset": null,
+    "page": null,
+    "query": "jailbait",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Anderson Cooper just bashed Reddit for /r/jailbait. What does Reddit think of this? (self.AskReddit)",
+            "url": "http://www.reddit.com/r/AskReddit/comments/kvzx4/anderson_cooper_just_bashed_reddit_for_rjailbait/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Should jailbait really be in the categories you see on reddits direct google link? Can we classy it up a little. (self.AskReddit)",
+            "url": "http://www.reddit.com/r/AskReddit/comments/f2xhp/should_jailbait_really_be_in_the_categories_you/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "In the aftermath of /r/jailbait being shut down for getting the site bad press, does anyone else feel like this entire dynamic is based on a fundamental confusion about the nature of the internet? (self.TrueReddit)",
+            "url": "http://www.reddit.com/r/TrueReddit/comments/l88c9/in_the_aftermath_of_rjailbait_being_shut_down_for/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Reddit on CNN RIGHT NOW. Regarding /r/jailbait (self.reddit.com)",
+            "url": "http://www.reddit.com/r/reddit.com/comments/kvvrd/reddit_on_cnn_right_now_regarding_rjailbait/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "In Defense of r/Jailbait (self.sex)",
+            "url": "http://www.reddit.com/r/sex/comments/kwu77/in_defense_of_rjailbait/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "/r/jailbait \"shut down due to threatening the structural integrity of the greater reddit community.\" (self.TheoryOfReddit)",
+            "url": "http://www.reddit.com/r/TheoryOfReddit/comments/l7qwq/rjailbait_shut_down_due_to_threatening_the/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "How Reddit responded to today's jailbait events is exactly how Congress will respond to the Protect Children from Online Pornographers Act. Good luck, internet. (self.politics)",
+            "url": "http://www.reddit.com/r/politics/comments/pmkv6/how_reddit_responded_to_todays_jailbait_events_is/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "/r/jailbait has been shut down. (i.imgur.com)",
+            "url": "http://i.imgur.com/JrieW.png"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "r/Jailbait got taken down...that's good, right? (self.TwoXChromosomes)",
+            "url": "http://www.reddit.com/r/TwoXChromosomes/comments/l7v97/rjailbait_got_taken_downthats_good_right/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Administrative editorial control: /r/jailbait and /r/catholic (self.Christianity)",
+            "url": "http://www.reddit.com/r/Christianity/comments/lc8zh/administrative_editorial_control_rjailbait_and/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "What is the most controversial thing to ever happen on reddit? (self.AskReddit)",
+            "url": "http://www.reddit.com/r/AskReddit/comments/yp1as/what_is_the_most_controversial_thing_to_ever/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "JAILBAIT REMOVED?! LETS ALL OCCUPY CHUCK-E-CHEESE (self.circlejerk)",
+            "url": "http://www.reddit.com/r/circlejerk/comments/l81xf/jailbait_removed_lets_all_occupy_chuckecheese/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Men's Rights compared to r/beatingwomen, r/jailbait and r/spacedicks. (self.MensRights)",
+            "url": "http://www.reddit.com/r/MensRights/comments/nssz5/mens_rights_compared_to_rbeatingwomen_rjailbait/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Heads up, ents. If we're not careful /r/trees could go the way of r/jailbait. (self.trees)",
+            "url": "http://www.reddit.com/r/trees/comments/l7v0g/heads_up_ents_if_were_not_careful_rtrees_could_go/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "manwithnostomach writes about the ethical issues surrounding jailbait and explains the closure of /r/jailbait[insightfulquestions] (reddit.com)",
+            "url": "http://www.reddit.com/r/InsightfulQuestions/comments/ybgrx/with_all_the_tools_for_illegal_copyright/c5u3ma4"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "found jailbait subreddit on bf's computer. what should i do??? (self.relationships)",
+            "url": "http://www.reddit.com/r/relationships/comments/o36kc/found_jailbait_subreddit_on_bfs_computer_what/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Has Reddit struck a nerve? Reddit character assassination by CNN's Anderson Cooper over /r/jailbait. Accuses Reddit of spreading child pornography. (self.conspiracy)",
+            "url": "http://www.reddit.com/r/conspiracy/comments/kwbj4/has_reddit_struck_a_nerve_reddit_character/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "[MOD POST] Amanda Todd's tits and why you shouldn't be posting them (self.ImGoingToHellForThis)",
+            "url": "http://www.reddit.com/r/ImGoingToHellForThis/comments/11fr51/mod_post_amanda_todds_tits_and_why_you_shouldnt/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "How do 'jailbait' subreddits' readers and mods react to the recent events? For one, they start 'teen fashion' subreddits (self.TheoryOfReddit)",
+            "url": "http://www.reddit.com/r/TheoryOfReddit/comments/pn99w/how_do_jailbait_subreddits_readers_and_mods_react/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Proposed: Removing r/jailbait was a good decision. (self.gue)",
+            "url": "http://www.reddit.com/r/gue/comments/l8i5b/proposed_removing_rjailbait_was_a_good_decision/"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "My boss looks at /r/jailbait.. (self.WTF)",
+            "url": "http://www.reddit.com/r/WTF/comments/e8u2l/my_boss_looks_at_rjailbait/"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "/r/jailbait admins officially decide to shut down for good. Opinions? (self.AskReddit)",
+            "url": "http://www.reddit.com/r/AskReddit/comments/l7rcs/rjailbait_admins_officially_decide_to_shut_down/"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Would Reddit be better off without r/jailbait, r/picsofdeadbabies, etc? What do you honestly think? (self.AskReddit)",
+            "url": "http://www.reddit.com/r/AskReddit/comments/kwfht/would_reddit_be_better_off_without_rjailbait/"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "Remember that Jailbait thread with users begging for CP that eventually got the subreddit shut down? Turns out it was a SomethingAwful Goon raid... (forums.somethingawful.com)",
+            "url": "http://forums.somethingawful.com/showthread.php?noseen=0&threadid=3440583"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1376244913,
+            "title": "After the r/jailbait, er, drama. isn't the 'Stop Censorship' message a tad hypocritical? (self.AskReddit)",
+            "url": "http://www.reddit.com/r/AskReddit/comments/me6ix/after_the_rjailbait_er_drama_isnt_the_stop/"
+        }
+    ],
+    "timestamp": 1376244913,
+    "url": "http://www.reddit.com/search?q=jailbait"
+}

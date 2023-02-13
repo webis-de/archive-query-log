@@ -1,0 +1,185 @@
+{
+    "interpreted_query": "3ds",
+    "offset": null,
+    "page": null,
+    "query": "3ds",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Just finished OoT for the first time on the 3DS, I must say I'm a bit disappointed.... (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/11gqmi/just_finished_oot_for_the_first_time_on_the_3ds_i/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "[UPDATE] Found a 3DS XL ... (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/19yjp6/update_found_a_3ds_xl/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "A list of all reddit's 3DS friend codes (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/hl8d2/a_list_of_all_reddits_3ds_friend_codes/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "An open letter to 3DS Owners. (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/w5ma4/an_open_letter_to_3ds_owners/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "/r/3DS is now more about pictures of the console and Street Pass hits than anything else. Something should be done about this. (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/18dae4/r3ds_is_now_more_about_pictures_of_the_console/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Curious to know the average age of people in r/3DS and what your first system was (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/16bmpv/curious_to_know_the_average_age_of_people_in_r3ds/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "What are Must Know 3DS Tips &amp; Tricks? (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/19ey1u/what_are_must_know_3ds_tips_tricks/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "What are some 3DS games that you're hoping will be made? Ports? Sequels? New original games? (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/t20kr/what_are_some_3ds_games_that_youre_hoping_will_be/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "To those of you on /r/3DS who also game on the PC... (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/15h2tg/to_those_of_you_on_r3ds_who_also_game_on_the_pc/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Nintendo debating a remake of Majora\u2019s Mask or A Link to the Past for 3DS (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/uzrwt/nintendo_debating_a_remake_of_majoras_mask_or_a/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Protip: If you have headphones that have an in-line mic plugged into your 3DS, the mic works as your 3DS's mic! (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/18vykw/protip_if_you_have_headphones_that_have_an_inline/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "How to be awesome, using a 3DS. (self.gaming)",
+            "url": "http://en.reddit.com/r/gaming/comments/103dnq/how_to_be_awesome_using_a_3ds/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Found a 3DS XL - any way to track down owner? (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/19i1m1/found_a_3ds_xl_any_way_to_track_down_owner/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "3DS gamers, how old are you? (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/19h41e/3ds_gamers_how_old_are_you/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Noob Friday Thread! Ask all of your noob questions about the 3DS here! (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/1atxqz/noob_friday_thread_ask_all_of_your_noob_questions/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Mutant Mudds is $8.99 for 3DS but $0.99 for iPhone... Does this bother anyone else? (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/181h8s/mutant_mudds_is_899_for_3ds_but_099_for_iphone/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "3DS Best Buy Clearance Sale (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/1agdm8/3ds_best_buy_clearance_sale/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Upcoming 3DS games (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/o0i9j/upcoming_3ds_games/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "r/3DS just to clarify something.. (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/k4bo1/r3ds_just_to_clarify_something/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "/r/3DS Game of the Year 2012 (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/1597be/r3ds_game_of_the_year_2012/"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "I can't help but wonder this /r/3DS (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/172372/i_cant_help_but_wonder_this_r3ds/"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "3DS situation in Japan (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/rstua/3ds_situation_in_japan/"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "Is there a reason to be hyped about 2013 for the 3ds? (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/15bw1a/is_there_a_reason_to_be_hyped_about_2013_for_the/"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "We're kicking off the new year with a /r/3DS community experiment (new submission rules). (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/nzgh4/were_kicking_off_the_new_year_with_a_r3ds/"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1364668924,
+            "title": "If you could recommend just one DS/3DS game to someone what would it be? (self.3DS)",
+            "url": "http://en.reddit.com/r/3DS/comments/saj69/if_you_could_recommend_just_one_ds3ds_game_to/"
+        }
+    ],
+    "timestamp": 1364668924,
+    "url": "http://en.reddit.com/search?q=3ds"
+}

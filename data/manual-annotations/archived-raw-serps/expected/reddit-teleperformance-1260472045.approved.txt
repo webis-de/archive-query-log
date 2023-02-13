@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "\"teleperformance\"",
+    "offset": null,
+    "page": null,
+    "query": "\"teleperformance\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1260472045,
+            "title": "One company is why Verizon, Apple, AT&amp;T, Sprint, AOL, Dell, and Microsoft phone support all suck (consumerist.com)",
+            "url": "http://consumerist.com/5113626/teleperformance-usa-call-center-of-customer-service-nightmares"
+        }
+    ],
+    "timestamp": 1260472045,
+    "url": "http://www.reddit.com:80/search?q=%22teleperformance%22&KeepThis=true&TB_iframe=true&height=550&width=800"
+}

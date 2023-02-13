@@ -1,0 +1,185 @@
+{
+    "interpreted_query": "touch meme",
+    "offset": null,
+    "page": null,
+    "query": "touch meme",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "My version of the touch meme, I saw this and so I wanted to try. ;-;",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xcvqsf/my_version_of_the_touch_meme_i_saw_this_and_so_i/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "My touch meme :D",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xdyslv/my_touch_meme_d/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Mom said it\u2019s my turn to do the touch meme (sorry for crappy coloring)",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xdxryc/mom_said_its_my_turn_to_do_the_touch_meme_sorry/"
+        },
+        {
+            "rank": 4,
+            "snippet": "So I\u2019m seeing this chart everywhere ig, and a lot of people don\u2019t like being touched by their family? I know it probably has something to do with trauma but it seems a little disproportionate. I like to have my head, shoulders, and arms rubbed by my parents when I don\u2019t feel good. Kinda like petting a cat but not creepy cuz it\u2019s my mom. I just don\u2019t like to be touched on my stomach (at all).",
+            "timestamp": 1663170731,
+            "title": "What\u2019s up with the \u201cimmediate family\u201d in the touch meme?",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xdaks3/whats_up_with_the_immediate_family_in_the_touch/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "I did the touch meme :)",
+            "url": "https://www.reddit.com/r/Asexual/comments/xe5d08/i_did_the_touch_meme/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "My touch meme... I don't know if its any different than others.",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xdvuny/my_touch_meme_i_dont_know_if_its_any_different/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Incredibly outdated and out of touch meme I just made",
+            "url": "https://www.reddit.com/r/Godzillamemes/comments/x2931f/incredibly_outdated_and_out_of_touch_meme_i_just/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Personal touch meme that totally isn\u2019t sad",
+            "url": "https://www.reddit.com/r/aspiememes/comments/xdtt3x/personal_touch_meme_that_totally_isnt_sad/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "touch meme",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xdyizj/touch_meme/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Template for touch meme\u2014sorry for forgetting template! (two pre drawn ones smashed together)",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xcuxqc/template_for_touch_memesorry_for_forgetting/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "I\u2019m late!Imlate!amlate!omelette! Touch meme.",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/uzy20i/im_lateimlateamlateomelette_touch_meme/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Since the touch meme is circulating again, I wanted to give a shoutout to the artist of the lineart used for it: K0MPY on DeviantArt. Their link is in the comments!",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xe63xi/since_the_touch_meme_is_circulating_again_i/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Kindly accept my touch meme that I probably was supposed to post months ago when it was trending.",
+            "url": "https://www.reddit.com/r/aspiememes/comments/xe1wvm/kindly_accept_my_touch_meme_that_i_probably_was/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Touch meme [I'm late but i really wanted to participate \ud83d\ude04]",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/uw8xg6/touch_meme_im_late_but_i_really_wanted_to/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "aaaaaaacccccccce | Image | \"Mom said it\u2019s my turn to do the touch meme (sorry for crappy coloring)\"",
+            "url": "https://www.reddit.com/r/TranscribersOfReddit/comments/xe12we/aaaaaaacccccccce_image_mom_said_its_my_turn_to_do/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Touch meme with an incredibly bored autistic arospec-ace (who has nothing else to do)",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xcuf66/touch_meme_with_an_incredibly_bored_autistic/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "aaaaaaacccccccce | Image | \"Since the touch meme is circulating again, I wanted to give a shoutout to the artist of the lineart used for it: K0MPY on DeviantArt. Their link is in the comments!\"",
+            "url": "https://www.reddit.com/r/TranscribersOfReddit/comments/xe7a6u/aaaaaaacccccccce_image_since_the_touch_meme_is/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "aaaaaaacccccccce | Image | \"My touch meme :D\"",
+            "url": "https://www.reddit.com/r/TranscribersOfReddit/comments/xdzzuq/aaaaaaacccccccce_image_my_touch_meme_d/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "May as well join the touch meme trend, was pretty fun and good reflection.",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xcbqip/may_as_well_join_the_touch_meme_trend_was_pretty/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Touch Meme bandwagon. I luvs huggies and headscritches :3",
+            "url": "https://www.reddit.com/r/ageregression/comments/xdb4th/touch_meme_bandwagon_i_luvs_huggies_and/"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "jumpin on the bandwagon, here is my touch meme :)",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xe29zw/jumpin_on_the_bandwagon_here_is_my_touch_meme/"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Joining the Touch Meme thing",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xcxf86/joining_the_touch_meme_thing/"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Touch Meme!",
+            "url": "https://www.reddit.com/r/aaaaaaacccccccce/comments/xcw4i4/touch_meme/"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1663170731,
+            "title": "Anybody else feel this? (Touch Meme)",
+            "url": "https://www.reddit.com/r/CPTSDmemes/comments/uskwro/anybody_else_feel_this_touch_meme/"
+        },
+        {
+            "rank": 25,
+            "snippet": "my family did not tech me that i could tell people not to touch me growing up. ive some what unlearned it, but i never developed the frustration some people have with being touched with out permission\n\naccept my neck, ill kill you\n\nhttps://preview.redd.it/4ttp2jrgntn91.png?width=1200&amp;format=png&amp;auto=webp&amp;s=76066fec7a07d572baa22e13f3153c5040ccf0dd",
+            "timestamp": 1663170731,
+            "title": "my touch meme",
+            "url": "https://www.reddit.com/r/aspiememes/comments/xe19zg/my_touch_meme/"
+        }
+    ],
+    "timestamp": 1663170731,
+    "url": "https://www.reddit.com/search/?q=touch%20meme&include_over_18=1&type=link"
+}
