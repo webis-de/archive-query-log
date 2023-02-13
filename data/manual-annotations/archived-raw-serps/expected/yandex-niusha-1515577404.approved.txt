@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u041d\u044e\u0448\u0430",
+    "offset": null,
+    "page": null,
+    "query": "\u041d\u044e\u0448\u0430",
+    "results": [],
+    "timestamp": 1515577404,
+    "url": "https://yandex.ru/video/search?text=%D0%9D%D1%8E%D1%88%D0%B0&source=oo&entref=0oCgpydXcyNDk5MjQzEg9ydXczOTUwNDctYXNzb2MYAt5s7-k&parent-reqid=1515552693812954-1072433413594552848811520-vla1-2341-V"
+}

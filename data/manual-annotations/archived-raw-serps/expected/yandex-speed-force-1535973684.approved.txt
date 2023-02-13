@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "speed force",
+    "offset": null,
+    "page": null,
+    "query": "speed force",
+    "results": [],
+    "timestamp": 1535973684,
+    "url": "https://yandex.ru/images/search?p=21&text=speed%20force&img_url=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fy2J5Bq71emM%2Fmqdefault.jpg&pos=648&rpt=simage"
+}

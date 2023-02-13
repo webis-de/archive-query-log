@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "virat swaroop",
+    "offset": null,
+    "page": null,
+    "query": "virat swaroop",
+    "results": [],
+    "timestamp": 1523992633,
+    "url": "https://yandex.ru/images/search?text=virat%20swaroop"
+}

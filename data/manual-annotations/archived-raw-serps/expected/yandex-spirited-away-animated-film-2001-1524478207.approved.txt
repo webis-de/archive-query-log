@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "spirited away animated film 2001",
+    "offset": null,
+    "page": null,
+    "query": "spirited away animated film 2001",
+    "results": [],
+    "timestamp": 1524478207,
+    "url": "https://yandex.ru/video/search?text=spirited%20away%20animated%20film%202001&source=recommendations&path=main&personal=false&autoplay=1"
+}

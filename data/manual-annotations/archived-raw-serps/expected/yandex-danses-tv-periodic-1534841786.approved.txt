@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "dances tv periodic",
+    "offset": null,
+    "page": null,
+    "query": "danses tv periodic",
+    "results": [],
+    "timestamp": 1534841786,
+    "url": "https://yandex.ru/video/search?text=danses%20tv%20periodic&source=recommendations&path=main&within=9&personal=false"
+}
