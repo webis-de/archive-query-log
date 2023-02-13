@@ -2423,9 +2423,9 @@
   domains:
   - tumblr.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/search/
+  - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   page_parsers: []
   offset_parsers: []
   interpreted_query_parsers: []
@@ -5778,7 +5778,7 @@
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
     type: path_segment
-    segment: 1
+    segment: 2
   - url_pattern: ^https?://[^/]+/product/[^/]+
     type: path_segment
     segment: 2
@@ -23553,6 +23553,7 @@
   results_parsers: []
   focused_url_prefixes: []
 - name: wapwon
+  note: "The query pattern seems to be too broad."
   public_suffix: com
   alexa_domain: wapwon.com
   alexa_rank: 40114
