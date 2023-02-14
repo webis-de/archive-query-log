@@ -1,0 +1,115 @@
+{
+    "interpreted_query": "[scala]",
+    "offset": null,
+    "page": null,
+    "query": "scala",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "I would like to define a red-black tree that contains elements which can be compared, but I can't seem to get the types correct.  The last line of this code \"x &lt; data\" fails to compile : \"value ...",
+            "timestamp": 1355718931,
+            "title": "Scala: How to specify that a collection contains ordered elements?",
+            "url": "http://stackoverflow.com/questions/13907786/scala-how-to-specify-that-a-collection-contains-ordered-elements"
+        },
+        {
+            "rank": 2,
+            "snippet": "Scenario\nThe DB for an application has gone down. This results in any actor responsible for committing important data to the DB failing to get a connection\n\nPreferred Behaviour\nThe important data is ...",
+            "timestamp": 1355718931,
+            "title": "Akka Actors: Handling DB Failures Without Losing Data",
+            "url": "http://stackoverflow.com/questions/13907764/akka-actors-handling-db-failures-without-losing-data"
+        },
+        {
+            "rank": 3,
+            "snippet": "I have a XML document representing my model that I need to parse and save in db. In some fields it may have NULL values indicated by xsi:nil. Like so\n\n&lt;quantity xsi:nil=\"true\"/&gt;\n\n\nFor parsing I ...",
+            "timestamp": 1355718931,
+            "title": "How to handle nil in scala XML parsing?",
+            "url": "http://stackoverflow.com/questions/13907344/how-to-handle-nil-in-scala-xml-parsing"
+        },
+        {
+            "rank": 4,
+            "snippet": "The following gist has the code for an idea I am playing with\n\npackage com.test1\n\nimport scala.language.implicitConversions\nimport shapeless._\nimport FromTraversable._\nimport Traversables._\nimport ...",
+            "timestamp": 1355718931,
+            "title": "Issue resolving arity of function args to drive list processing, using Shapeless",
+            "url": "http://stackoverflow.com/questions/13907108/issue-resolving-arity-of-function-args-to-drive-list-processing-using-shapeless"
+        },
+        {
+            "rank": 5,
+            "snippet": "I try to understand some how Slick works and what it requires.\n\nHere it an example:\n\npackage models\n\ncase class Bar(id: Option[Int] = None, name: String)\n\nobject Bars extends Table[Bar](\"bar\") {\n  def ...",
+            "timestamp": 1355718931,
+            "title": "scala slick method I can not understand so far",
+            "url": "http://stackoverflow.com/questions/13906684/scala-slick-method-i-can-not-understand-so-far"
+        },
+        {
+            "rank": 6,
+            "snippet": "Try to understand how I can use type in scala:\n\nobject TypeSample extends App {\n\n  type MyParams = Map[Int, String]\n\n  def showParams(params: MyParams) = {\n    params.foreach(x =&gt; x match { case ...",
+            "timestamp": 1355718931,
+            "title": "Scala type compilation error",
+            "url": "http://stackoverflow.com/questions/13905129/scala-type-compilation-error"
+        },
+        {
+            "rank": 7,
+            "snippet": "Okay I'm just about ready to give up on this.\n\nI would like to save the state of a continuation (done using shift). \nHowever, the caveat is that the code AFTER the reset should not be executed. ...",
+            "timestamp": 1355718931,
+            "title": "Scala Continuations: Suspend without wait/sleep()",
+            "url": "http://stackoverflow.com/questions/13904278/scala-continuations-suspend-without-wait-sleep"
+        },
+        {
+            "rank": 8,
+            "snippet": "Possible Duplicate:\n  Pattern match on a generic type  \n\n\n\n\nI have the below function:\n\ndef getInput[T &lt;: Elem](): List[Elem] = {\n  //code here\n}\n\n\nNow based upon the type T I want to return of ...",
+            "timestamp": 1355718931,
+            "title": "Pattern Matching of generic type [closed]",
+            "url": "http://stackoverflow.com/questions/13903359/pattern-matching-of-generic-type"
+        },
+        {
+            "rank": 9,
+            "snippet": "I have written a quicksort (method quicksortF()) that uses a Scala's Future to let the recursive sorting of the partitions be done concurrently. I also have implemented a regular quicksort (method ...",
+            "timestamp": 1355718931,
+            "title": "Quicksort using Future ends up in a deadlock",
+            "url": "http://stackoverflow.com/questions/13902644/quicksort-using-future-ends-up-in-a-deadlock"
+        },
+        {
+            "rank": 10,
+            "snippet": "Below I have:\n\ntrait Elem {\n  def compare: Int\n}\n\ncase class DiffElem(weight: Int, len: Int) extends Elem {\n  def compare = weight - len;\n}\n\n\nNow there can be many sub-classes of Elem, based on the ...",
+            "timestamp": 1355718931,
+            "title": "List as per the type of argument",
+            "url": "http://stackoverflow.com/questions/13901323/list-as-per-the-type-of-argument"
+        },
+        {
+            "rank": 11,
+            "snippet": "I am using built-in jerson with playframework 2, and all I want is to serialize map, containing values of different type:\n\nobject AppWriter extends Writes[Application] {\n    def writes(app: ...",
+            "timestamp": 1355718931,
+            "title": "Jerkson. Serializing map to JsValue",
+            "url": "http://stackoverflow.com/questions/13900037/jerkson-serializing-map-to-jsvalue"
+        },
+        {
+            "rank": 12,
+            "snippet": "I'm about to start a new project. I will be using the JVM (v1.7). I will be handling HTTP/S requests. In the past, I've use\n\n\nTomcat\nJetty\nGrizzly\n\n\nTomcat was great, but not embeddable (though I ...",
+            "timestamp": 1355718931,
+            "title": "What would you recommend as a lightweight JVM HTTP server? [closed]",
+            "url": "http://stackoverflow.com/questions/13899175/what-would-you-recommend-as-a-lightweight-jvm-http-server"
+        },
+        {
+            "rank": 13,
+            "snippet": "I made a mistake while implementing scala futures, or at least i think I did, and just noticed it however, when I fix the mistake it runs much slower than when I don't use futures. Can someone help me ...",
+            "timestamp": 1355718931,
+            "title": "Scala Futures - confused by CPU load and output of two approaches",
+            "url": "http://stackoverflow.com/questions/13898506/scala-futures-confused-by-cpu-load-and-output-of-two-approaches"
+        },
+        {
+            "rank": 14,
+            "snippet": "Possible Duplicate:\n  Load Scala file into interpreter to use functions?  \n\n\n\n\nI start the sbt console like this:\n\nalex@alex-K43U:~/projects$ sbt console\n[info] Set current project to ...",
+            "timestamp": 1355718931,
+            "title": "How to load a scala file in the sbt console? [closed]",
+            "url": "http://stackoverflow.com/questions/13898373/how-to-load-a-scala-file-in-the-sbt-console"
+        },
+        {
+            "rank": 15,
+            "snippet": "I currently have:\n\nclass X[+T: Numeric](val x: T)\nabstract class M[N: Numeric, T &lt;: X[N]] { // &lt;- I'd like to remove N.\n  def apply(x: Int): T\n  final def row = (1 to 10).map(this(_))\n}\n\n\nI use ...",
+            "timestamp": 1355718931,
+            "title": "How can I remove this extra type parameter?",
+            "url": "http://stackoverflow.com/questions/13897885/how-can-i-remove-this-extra-type-parameter"
+        }
+    ],
+    "timestamp": 1355718931,
+    "url": "http://stackoverflow.com/questions/tagged/scala"
+}

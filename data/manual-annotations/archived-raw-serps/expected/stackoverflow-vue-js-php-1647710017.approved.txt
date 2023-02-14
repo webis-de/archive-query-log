@@ -1,0 +1,360 @@
+{
+    "interpreted_query": "[vue.js] [php]",
+    "offset": null,
+    "page": null,
+    "query": "vue.js+php",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "how I can use settimeout() function  in a vuejs method?\n\nI have already tried something like this, but it doesn't work \n\nfetchHole: function () { \n    //get data\n},\n\naddHole: function () {\n    //my ...;",
+            "timestamp": 1647710017,
+            "title": "how to set timeout in a vueJs method",
+            "url": "https://stackoverflow.com/questions/37465289/how-to-set-timeout-in-a-vuejs-method"
+        },
+        {
+            "rank": 2,
+            "snippet": "How can I pass a value of a PHP variable to a Vue component in Laravel blade files?\n\nIn my example, I have an inline template client-details, I get this view from Laravel so now I want to pass the id ...;",
+            "timestamp": 1647710017,
+            "title": "How to pass a PHP variable to Vue component instance in Laravel blade?",
+            "url": "https://stackoverflow.com/questions/41520258/how-to-pass-a-php-variable-to-vue-component-instance-in-laravel-blade"
+        },
+        {
+            "rank": 3,
+            "snippet": "The dreaded CORS Error:\n  Cross-Origin Request Blocked: The Same Origin Policy disallows reading\n  the remote resource at http://localhost/mysite/api/test. (Reason: CORS\n  header 'Access-Control-...;",
+            "timestamp": 1647710017,
+            "title": "Laravel 5.2 CORS, GET not working with preflight OPTIONS",
+            "url": "https://stackoverflow.com/questions/34748981/laravel-5-2-cors-get-not-working-with-preflight-options"
+        },
+        {
+            "rank": 4,
+            "snippet": "THE SITUATION:\n\nFrontend: Vue. Backend: Laravel.\n\nInside the web app I need to let the user download certain pdf files:\nI need Laravel to take the file and return it as a response of an API GET ...;",
+            "timestamp": 1647710017,
+            "title": "Vue + Laravel: How to properly download a PDF file?",
+            "url": "https://stackoverflow.com/questions/50736657/vue-laravel-how-to-properly-download-a-pdf-file"
+        },
+        {
+            "rank": 5,
+            "snippet": "Question\nI want to know if there is an alternative syntax to output data in Vue.js, instead of the curly braces, like the ng-bind Angular directive.\nReading the docs, it seems that Vue.js accepts only ...;",
+            "timestamp": 1647710017,
+            "title": "Alternative binding syntax in Vue.js",
+            "url": "https://stackoverflow.com/questions/34404843/alternative-binding-syntax-in-vue-js"
+        },
+        {
+            "rank": 6,
+            "snippet": "I'm working on a social blog that has an editor built in JavaScript for creating a blog by a user. One of my biggest issues is uploading files and its limitations. Right now for auto-saving user posts,...;",
+            "timestamp": 1647710017,
+            "title": "best way for managing uploaded files in my editor?",
+            "url": "https://stackoverflow.com/questions/52734396/best-way-for-managing-uploaded-files-in-my-editor"
+        },
+        {
+            "rank": 7,
+            "snippet": "I'm building an app with laravel and VueJs and I was wondering how to pass a url parameter like the user slug  or the user id to vuejs in a proper way to be able to use that parameter for making ajax ...;",
+            "timestamp": 1647710017,
+            "title": "How to pass url parameters to Vuejs",
+            "url": "https://stackoverflow.com/questions/32560184/how-to-pass-url-parameters-to-vuejs"
+        },
+        {
+            "rank": 8,
+            "snippet": "Well i am playing with the new laravel 5.3 and vue.js and i want to do a GET call to some users i have in my DB\n\nIm using components btw. \n\nThis is my app.js\n\nrequire('./bootstrap');\n\nVue.component('...;",
+            "timestamp": 1647710017,
+            "title": "Laravel is not defined",
+            "url": "https://stackoverflow.com/questions/39137883/laravel-is-not-defined"
+        },
+        {
+            "rank": 9,
+            "snippet": "I currently learning combining laravel with vue. This page should be fetching post data from server and showing in user timeline. I am successfully get all data and display it. But i want to implement ...;",
+            "timestamp": 1647710017,
+            "title": "How to implement infinite scroll in my vue js",
+            "url": "https://stackoverflow.com/questions/43198442/how-to-implement-infinite-scroll-in-my-vue-js"
+        },
+        {
+            "rank": 10,
+            "snippet": "I've registered the Vue components as mentioned in the Laravel Passport documentation, and they also do show up in my app:\n\n&lt;passport-clients&gt;&lt;/passport-clients&gt;\n&lt;passport-authorized-...;",
+            "timestamp": 1647710017,
+            "title": "Laravel - Passport/SPA 401 Unauthorized",
+            "url": "https://stackoverflow.com/questions/52028658/laravel-passport-spa-401-unauthorized"
+        },
+        {
+            "rank": 11,
+            "snippet": "I need to post a File from client to server via Axios.\n\nHere is my Vuejs code :\n\nmethods: {\n    'successUpload': function (file) {\n        const config = { headers: { 'Content-Type': 'multipart/form-...;",
+            "timestamp": 1647710017,
+            "title": "How to send a file via Axios to Laravel",
+            "url": "https://stackoverflow.com/questions/42907747/how-to-send-a-file-via-axios-to-laravel"
+        },
+        {
+            "rank": 12,
+            "snippet": "Trying to create a small application to show some news, but can't figure this error out. What am I doing wrong?     \n\nI'am trying to show the news one at a time by visually \"sliding\" through the news. ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel and Vue - handler.call is not a function",
+            "url": "https://stackoverflow.com/questions/59659114/laravel-and-vue-handler-call-is-not-a-function"
+        },
+        {
+            "rank": 13,
+            "snippet": "I am new to Nextcloud app development and would like to create a simple app to play around. I saw that some apps are made with Vue.js, so I\u2019m asking if there is a guide out there?\n\nI generated an app ...;",
+            "timestamp": 1647710017,
+            "title": "App development setup with PHP and Vue.js",
+            "url": "https://stackoverflow.com/questions/56661217/app-development-setup-with-php-and-vue-js"
+        },
+        {
+            "rank": 14,
+            "snippet": "As you can see from the title I am trying out Laravel 5.3 and passport.\n\nSo I have gone through the  steps to install Laravel passport and as far as I can see everything is in place.\n\nI have put the ...;",
+            "timestamp": 1647710017,
+            "title": "Vue Components not showing up using passport in laravel 5.3",
+            "url": "https://stackoverflow.com/questions/39282363/vue-components-not-showing-up-using-passport-in-laravel-5-3"
+        },
+        {
+            "rank": 15,
+            "snippet": "I am very new in Laravel and vue.js.Please let me know what is the difference between npm run dev and npm run production.Is this something related with the environment?;",
+            "timestamp": 1647710017,
+            "title": "Difference between npm run dev and npm run production",
+            "url": "https://stackoverflow.com/questions/63133245/difference-between-npm-run-dev-and-npm-run-production"
+        },
+        {
+            "rank": 16,
+            "snippet": "My Mouse hover is not working when I am using it on Laravel.\n\nMy Vue file is stored in resources/js/Dashboard.vue\n\nWhat I tried so far is to change v-on:mouseover with @mouseover but it still not ...;",
+            "timestamp": 1647710017,
+            "title": "Mouse Hover in VueJS component implementation in Laravel",
+            "url": "https://stackoverflow.com/questions/58025504/mouse-hover-in-vuejs-component-implementation-in-laravel"
+        },
+        {
+            "rank": 17,
+            "snippet": "I am using Vuejs as my frontend and I would simply like to get the current logged in user's id from Laravel and display it. How would I do this?;",
+            "timestamp": 1647710017,
+            "title": "How to get current authenticated user id using Vuejs and Laravel?",
+            "url": "https://stackoverflow.com/questions/52703364/how-to-get-current-authenticated-user-id-using-vuejs-and-laravel"
+        },
+        {
+            "rank": 18,
+            "snippet": "Im new to API and Vue. \nIm working on Laravel 5.8 api.php and controllers and views and it only return 404 Not Found.\n\nthis is what ive tried\n\napi.php\n\n Route::group(['middleware' =&gt; 'api'], ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel API Routes Not Found",
+            "url": "https://stackoverflow.com/questions/55056114/laravel-api-routes-not-found"
+        },
+        {
+            "rank": 19,
+            "snippet": "I have a method for Vuejs component:\n\nasync submit () {\n        if (this.$refs.form.validate()) {\n          let formData = new FormData()\n          formData.append('userImage', this.avatarFile, this....;",
+            "timestamp": 1647710017,
+            "title": "POST file along with form data Vue + axios",
+            "url": "https://stackoverflow.com/questions/49478991/post-file-along-with-form-data-vue-axios"
+        },
+        {
+            "rank": 20,
+            "snippet": "I have a Vue component in my Laravel application.\n\nI want to retrieve a URL that is in a config (or the .env Laravel file) directly in my Vue component, instead of hardcoding it.\nIn webpack laravel ...;",
+            "timestamp": 1647710017,
+            "title": "Retrieve config and env variable in vue component",
+            "url": "https://stackoverflow.com/questions/48785826/retrieve-config-and-env-variable-in-vue-component"
+        },
+        {
+            "rank": 21,
+            "snippet": "I am building a single-page-app with Vue (2.5) using Laravel (5.5) as the backend. Everything works well, except for directly logging in again after having logged out. In this case, the call to /api/...;",
+            "timestamp": 1647710017,
+            "title": "Refreshing authentication tokens for a Vue.js SPA using Laravel for the backend",
+            "url": "https://stackoverflow.com/questions/47032871/refreshing-authentication-tokens-for-a-vue-js-spa-using-laravel-for-the-backend"
+        },
+        {
+            "rank": 22,
+            "snippet": "Building a Laravel app with a few Vue components\nWant to pass a PHP array onto a Vue component using props\nHere's an example of such PHP array:\n\n[\"Foo\" =&gt; 100, \"Bar\" =&gt; 50]\n\nGreat. Here's my ...;",
+            "timestamp": 1647710017,
+            "title": "Pass PHP array onto Vue component using props",
+            "url": "https://stackoverflow.com/questions/47213327/pass-php-array-onto-vue-component-using-props"
+        },
+        {
+            "rank": 23,
+            "snippet": "How to get an object value from vue-router's link? \nFor example 'id' in this link\nhttp://laravel.dev/#!/messages/1703\n\nSo with that id i can fetch specific data from database.\n\nMy code\n\nvar ...;",
+            "timestamp": 1647710017,
+            "title": "Get 'id' value from vue-router's link",
+            "url": "https://stackoverflow.com/questions/35379777/get-id-value-from-vue-routers-link"
+        },
+        {
+            "rank": 24,
+            "snippet": "I want to execute a simple function after an event is emitted from the child component. The problem is the child component emits data that I need as a parameter for my function. \n\nHow can I inject the ...;",
+            "timestamp": 1647710017,
+            "title": "Vue.js: anonymous function with parameter in v-on:event or @event",
+            "url": "https://stackoverflow.com/questions/46101328/vue-js-anonymous-function-with-parameter-in-v-onevent-or-event"
+        },
+        {
+            "rank": 25,
+            "snippet": "I have a PHP Script which successfully returns some simple Headers as well as a set-cookie header if called directly in the browser (or by postman). I can read the response-headers like that from ...;",
+            "timestamp": 1647710017,
+            "title": "Not Receiving Set-Cookie Header with axios post request",
+            "url": "https://stackoverflow.com/questions/54646733/not-receiving-set-cookie-header-with-axios-post-request"
+        },
+        {
+            "rank": 26,
+            "snippet": "I was using the Vue version (2.5), I ran that command npm install -g @vue/cli after that I check my vue version by using the command vue --versionand it shows me @vue/cli 4.1.2. but in my package.json ...;",
+            "timestamp": 1647710017,
+            "title": "How to upgrade Vue version",
+            "url": "https://stackoverflow.com/questions/59540900/how-to-upgrade-vue-version"
+        },
+        {
+            "rank": 27,
+            "snippet": "How can I force all users to be logged out in a SPA? I want it so that when I deploy a new version, all users automatically get logged out.\nI tried the following, but I'm not sure if it's the safest ...;",
+            "timestamp": 1647710017,
+            "title": "Force logout of all users in Laravel",
+            "url": "https://stackoverflow.com/questions/53527699/force-logout-of-all-users-in-laravel"
+        },
+        {
+            "rank": 28,
+            "snippet": "I hate repeating things in code. For now I am importing vue files like this in my main.js.\n\nimport Default     from '../../src/components/default.vue';\nimport Home        from '../../src/components/...;",
+            "timestamp": 1647710017,
+            "title": "Is it possible to import *.vue files in a folder?",
+            "url": "https://stackoverflow.com/questions/42199872/is-it-possible-to-import-vue-files-in-a-folder"
+        },
+        {
+            "rank": 29,
+            "snippet": "We are planning to develop a web application for job applications. In the first two years we expect the traffic to be about 3'000 - 6'000 visitors per day. At a later stage the traffic will grow up to ...;",
+            "timestamp": 1647710017,
+            "title": "Separation of frontend and backend with Laravel and Vue.js",
+            "url": "https://stackoverflow.com/questions/41955860/separation-of-frontend-and-backend-with-laravel-and-vue-js"
+        },
+        {
+            "rank": 30,
+            "snippet": "So it's been several hours I couldn't figure out the issue even reading through and trying any possible solution available on the internet. I'm using Laravel 7.x with Vue js and struggling with ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel 7.x Sanctum (SPA) with Vuejs always returns 401 Unauthorized",
+            "url": "https://stackoverflow.com/questions/62354802/laravel-7-x-sanctum-spa-with-vuejs-always-returns-401-unauthorized"
+        },
+        {
+            "rank": 31,
+            "snippet": "So I'm using Vue 2.0 and Laravel 5.3 to create an application. \n\nI've implemented my own sortable table with Vue, using the built-in pagination provided by Laravel. \n\nEverything's working perfect - ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel - query builder - left join polymorphic relationship, distinct only",
+            "url": "https://stackoverflow.com/questions/41492394/laravel-query-builder-left-join-polymorphic-relationship-distinct-only"
+        },
+        {
+            "rank": 32,
+            "snippet": "I want to send a POST request to a PHP script. I am using Axios:\n\naxios.post('inc/vote.php', {\n    id: this.selected,\n}) .then(function (response) {\n    console.log(response);\n});\nIn the PHP file I ...;",
+            "timestamp": 1647710017,
+            "title": "How to retrieve variables in php sent by axios post request [duplicate]",
+            "url": "https://stackoverflow.com/questions/49070403/how-to-retrieve-variables-in-php-sent-by-axios-post-request"
+        },
+        {
+            "rank": 33,
+            "snippet": "Here I meet a little problem with my code.\n\nWhat I do\n\nI have a laravel application in backend (on port 8000) in which I created a CORS middleware that allows me to make cross origin requests from my ...;",
+            "timestamp": 1647710017,
+            "title": "CORS Fails when uploading a file",
+            "url": "https://stackoverflow.com/questions/50144463/cors-fails-when-uploading-a-file"
+        },
+        {
+            "rank": 34,
+            "snippet": "I am creating a simple laravel and vuejs CRUD Application. Vue Routes are not working, I am pretty new to vuejs; please see the code\nBelow is the code for web.php\n\n    Route::get('/', function () {\n   ...;",
+            "timestamp": 1647710017,
+            "title": "How to combine laravel and vue routes",
+            "url": "https://stackoverflow.com/questions/54434534/how-to-combine-laravel-and-vue-routes"
+        },
+        {
+            "rank": 35,
+            "snippet": "I set up an event and new channel :\n\nclass TaskCreated implements shouldBroadcast\n {\nuse Dispatchable, InteractsWithSockets, SerializesModels;\npublic $task;\n\npublic function __construct(Task $task)\n{\n ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel Echo is not listening",
+            "url": "https://stackoverflow.com/questions/61646626/laravel-echo-is-not-listening"
+        },
+        {
+            "rank": 36,
+            "snippet": "I am currently trying to create a simple SPA using Vue and Laravel. I've got the basics to work - users can register and login. \n\nI just can't figure out how to create a logout function.\n\nThis is what ...;",
+            "timestamp": 1647710017,
+            "title": "Vue.js / Laravel - Handle logout correctly",
+            "url": "https://stackoverflow.com/questions/52021405/vue-js-laravel-handle-logout-correctly"
+        },
+        {
+            "rank": 37,
+            "snippet": "I have a form created in vue and added to a blade page.\n\napp.js\n\nnew Vue({\n    router,\n    components: {\n        'advice-form': AdviceForm,\n    }\n}).$mount('#app');\nblade.php\n\n&lt;div class=\"my-6\"&gt;...;",
+            "timestamp": 1647710017,
+            "title": "Vue-Laravel form Submission",
+            "url": "https://stackoverflow.com/questions/58621303/vue-laravel-form-submission"
+        },
+        {
+            "rank": 38,
+            "snippet": "I have this code for paste:\n\n\nnavigator.clipboard.readText().then(\n  clipText =&gt; document.querySelector(\"#Note\").innerText += clipText);\n\n\n\nBut It has this error:\n\nUncaught TypeError: ...;",
+            "timestamp": 1647710017,
+            "title": "navigator.clipboard.readText() is not working in js",
+            "url": "https://stackoverflow.com/questions/67440036/navigator-clipboard-readtext-is-not-working-in-js"
+        },
+        {
+            "rank": 39,
+            "snippet": "I have the following in my blade...\n\n&lt;div&gt;\n  &lt;contact-form&gt;&lt;/contact-form&gt;\n&lt;/div&gt;\nI want to test to ensure that the Vue.js component  is always mounted in my tests...\n\npublic ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel 5.5 &amp; Vue.js Blade Testing",
+            "url": "https://stackoverflow.com/questions/52643746/laravel-5-5-vue-js-blade-testing"
+        },
+        {
+            "rank": 40,
+            "snippet": "I am trying to transmit some data from a GUI done in Vue.js to a PHP file using Axios. I tried both with GET and POST parameters but it does not work:\n\nI type the data in this index.php form:\nindex....;",
+            "timestamp": 1647710017,
+            "title": "Passing data from Vue.js to PHP using Axios",
+            "url": "https://stackoverflow.com/questions/51828264/passing-data-from-vue-js-to-php-using-axios"
+        },
+        {
+            "rank": 41,
+            "snippet": "I have a login form in vue.js. I just have to login user with vue.js and laravel. Once login user will redirect to a dashboard which is already developed with laravel only. I am trying to login but it ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel auth()-&gt;guard() returns null using vue js",
+            "url": "https://stackoverflow.com/questions/55039495/laravel-auth-guard-returns-null-using-vue-js"
+        },
+        {
+            "rank": 42,
+            "snippet": "I am working on a Laravel 5.6 project which is stored on a VPS (we call it \"production\", despite there is no such created environment).\nWe also combined Plesk &amp; Github to deploy the web ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel + Vue + Axios issue with POST method",
+            "url": "https://stackoverflow.com/questions/50458911/laravel-vue-axios-issue-with-post-method"
+        },
+        {
+            "rank": 43,
+            "snippet": "I have a route in Laravel that requires an id as a parameter. \n\nRoute::get('/example/{id}', ExampleController@index)\nIf I had passed the data from the Laravel controller to the view value I would ...;",
+            "timestamp": 1647710017,
+            "title": "How to pass a vue.js value as a parameter to a route in blade",
+            "url": "https://stackoverflow.com/questions/40671700/how-to-pass-a-vue-js-value-as-a-parameter-to-a-route-in-blade"
+        },
+        {
+            "rank": 44,
+            "snippet": "I'm working on a WP theme using Vue.js, all data is being fetched through REST API. so far everything works perfectly in terms of displaying the data. \n\nI'm trying to implement a contact form plugin (...;",
+            "timestamp": 1647710017,
+            "title": "Wordpress + Vue.js : Contact Forms",
+            "url": "https://stackoverflow.com/questions/44954565/wordpress-vue-js-contact-forms"
+        },
+        {
+            "rank": 45,
+            "snippet": "I am novice in VueJs and As I am trying to implement the basic toggle class functionality using v-bind property of VueJs in my Laravel project. I am not getting the value of variable className while ...;",
+            "timestamp": 1647710017,
+            "title": "Vuejs dynamically toggle class is not working in Laravel Blade Template",
+            "url": "https://stackoverflow.com/questions/41375136/vuejs-dynamically-toggle-class-is-not-working-in-laravel-blade-template"
+        },
+        {
+            "rank": 46,
+            "snippet": "Its to my knowledge that a JWT based authorization system is usually reserved for SPA'S ( you know, one view, one React/Angular/Vue app, with one bloated app.js file), however I'm attempting to ...;",
+            "timestamp": 1647710017,
+            "title": "Laravel JWT Multi-Page Structure",
+            "url": "https://stackoverflow.com/questions/49432567/laravel-jwt-multi-page-structure"
+        },
+        {
+            "rank": 47,
+            "snippet": "I want to test a simple vue.js in laravel blade system, Here is my code in test.blade.php view file:\n\n&lt;div id=\"app\"&gt;\n   &lt;p&gt;{{message}}&lt;/p&gt;\n&lt;/div&gt;\n &lt;script src=\"{{url('/...;",
+            "timestamp": 1647710017,
+            "title": "Laravel undefined variable exception with vue.js",
+            "url": "https://stackoverflow.com/questions/35070185/laravel-undefined-variable-exception-with-vue-js"
+        },
+        {
+            "rank": 48,
+            "snippet": "i using laravel with vue js \ni want to show a image element in vue components but i cant use Laravel blades helpers !\n&lt;img src=\"{{asset('admin/images/users/avatar-1.jpg')}}\" width=\"...;",
+            "timestamp": 1647710017,
+            "title": "How can use laravel assets in vue component",
+            "url": "https://stackoverflow.com/questions/52576512/how-can-use-laravel-assets-in-vue-component"
+        },
+        {
+            "rank": 49,
+            "snippet": "I have Laravel 5.3 project with Vue.js integrated and I want to use CSRF-TOKEN in my form. Form html code is in Vue component file in\n\nresources / assets / js / bootstrap.js\n\nI have this:\n\nVue.http....;",
+            "timestamp": 1647710017,
+            "title": "Csrf token in vue component",
+            "url": "https://stackoverflow.com/questions/41409893/csrf-token-in-vue-component"
+        },
+        {
+            "rank": 50,
+            "snippet": "I registered component in my app.js like this:\n\nVue.component('navbar', require('./components/Navbar.vue'));\nNow I want to import that component: \n\n&lt;template&gt;\n&lt;nav class=\"navbar\"&gt;CODE ...;",
+            "timestamp": 1647710017,
+            "title": "How to use vue.js component in laravel blade?",
+            "url": "https://stackoverflow.com/questions/46070616/how-to-use-vue-js-component-in-laravel-blade"
+        }
+    ],
+    "timestamp": 1647710017,
+    "url": "https://stackoverflow.com/questions/tagged/vue.js+php"
+}

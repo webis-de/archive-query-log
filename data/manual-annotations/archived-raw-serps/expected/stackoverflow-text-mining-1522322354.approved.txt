@@ -1,0 +1,360 @@
+{
+    "interpreted_query": "[text-mining]",
+    "offset": null,
+    "page": null,
+    "query": "text-mining",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "I am just new to Python and it just happens to me that I need to extraction some information from a few science papers.\n\nIf given something plain text like:\nIntroduction\nsome long writings\n...",
+            "timestamp": 1522322354,
+            "title": "Science paper information extraction with Python?",
+            "url": "https://stackoverflow.com/questions/49542962/science-paper-information-extraction-with-python"
+        },
+        {
+            "rank": 2,
+            "snippet": "I'm trying to discover countries mentions in python, but when i run the code bellow, Paris is recognized as US not FR.\n\npositiveTag = pos_tag(poslist)\npositiveNouns = [word for word,pos in positiveTag ...",
+            "timestamp": 1522322354,
+            "title": "Python - Geotext didn't recognize Paris as France city",
+            "url": "https://stackoverflow.com/questions/49546121/python-geotext-didnt-recognize-paris-as-france-city"
+        },
+        {
+            "rank": 3,
+            "snippet": "I am trying to use the LDA function to evaluate a corpus of text in R. However, when I do so, it seems to use the row names of the observations rather than the actual words in the corpus. I can't find ...",
+            "timestamp": 1522322354,
+            "title": "LDA Returning numbers instead of words from Term Document Matrix",
+            "url": "https://stackoverflow.com/questions/49545100/lda-returning-numbers-instead-of-words-from-term-document-matrix"
+        },
+        {
+            "rank": 4,
+            "snippet": "Can someone please explain with example R/Python code to replace {\u201cbcz\u201d,u,thr} with {\u201cbecause\u201d,you,there} in whole text? (Text-ming)",
+            "timestamp": 1522322354,
+            "title": "How to replace {\u201cbcz\u201d,u,thr} with {\u201cbecause\u201d,you,there} in whole text? (Text-ming)",
+            "url": "https://stackoverflow.com/questions/49509786/how-to-replace-bcz-u-thr-with-because-you-there-in-whole-text-text-min"
+        },
+        {
+            "rank": 5,
+            "snippet": "I want to do textmining in R and stumbled across the spaCyr package which is a wrapper for the spacy python package. I followed the github page but as my knowledge of python is extremely limited, I ...",
+            "timestamp": 1522322354,
+            "title": "R package SpacyR does not recognize Anaconda python executable",
+            "url": "https://stackoverflow.com/questions/49535404/r-package-spacyr-does-not-recognize-anaconda-python-executable"
+        },
+        {
+            "rank": 6,
+            "snippet": "For example,\n\n1: Apples Apple and grapes\n\n2: apple apple apple\n\nFrequency Result: I want two apples and one grape to come out like this.\n\nThat is, one word is treated as one line.\n\nI thought I was ...",
+            "timestamp": 1522322354,
+            "title": "Word duplication, when using term frequency",
+            "url": "https://stackoverflow.com/questions/49533930/word-duplication-when-using-term-frequency"
+        },
+        {
+            "rank": 7,
+            "snippet": "I have a text file that contains obfuscated data with labels and I do not have the experience dealing with this kind of data type. the obfuscated data is represented as a long continuous string and ...",
+            "timestamp": 1522322354,
+            "title": "Predicting labels based on obfuscated text [on hold]",
+            "url": "https://stackoverflow.com/questions/49532359/predicting-labels-based-on-obfuscated-text"
+        },
+        {
+            "rank": 8,
+            "snippet": "I'm using gensim to do a LDA topic modeling work.\nMy data was pretreated by some other people. He gave me two things.\n\u2460the mmcorpus file(imported by gensim.corpora.MmCorpus function)\n\u2461the dictionary ...",
+            "timestamp": 1522322354,
+            "title": "How to remove a word in LDA analysis by gensim",
+            "url": "https://stackoverflow.com/questions/49532089/how-to-remove-a-word-in-lda-analysis-by-gensim"
+        },
+        {
+            "rank": 9,
+            "snippet": "I'm trying to do text mining on various html files. I want the user to be able to type in any word and a list of all the documents that contain that word. The problem now is that my tdm has replaced ...",
+            "timestamp": 1522322354,
+            "title": "Text mining with tm - replaces document names with numbers",
+            "url": "https://stackoverflow.com/questions/49531279/text-mining-with-tm-replaces-document-names-with-numbers"
+        },
+        {
+            "rank": 10,
+            "snippet": "I am trying to perform POS tagging to my text which are present in the dataframe. I tried using TextBlob, but I am not getting the desired result. My desired result is \"a new column should be created ...",
+            "timestamp": 1522322354,
+            "title": "POS Tagging in Dataframe pandas-Textblog",
+            "url": "https://stackoverflow.com/questions/49526009/pos-tagging-in-dataframe-pandas-textblog"
+        },
+        {
+            "rank": 11,
+            "snippet": "Is there any way (using any tools/medium etc) to make a dataset containing content on a particular topic from all the available resources?\n\nFor example, I want to collect question-answer pair for a ...",
+            "timestamp": 1522322354,
+            "title": "Creation of dataset",
+            "url": "https://stackoverflow.com/questions/49523628/creation-of-dataset"
+        },
+        {
+            "rank": 12,
+            "snippet": "I am using udpipe package in R to make some text mining. I have followed this tutorial : https://cran.r-project.org/web/packages/udpipe/vignettes/udpipe-usecase-postagging-lemmatisation.html#...",
+            "timestamp": 1522322354,
+            "title": "How to make \u201cwords clustering\u201d in R with udpipe package?",
+            "url": "https://stackoverflow.com/questions/49464904/how-to-make-words-clustering-in-r-with-udpipe-package"
+        },
+        {
+            "rank": 13,
+            "snippet": "I am trying to make text mining in Linkedin, lamentably most of the command for Rlinkedin library are disabled since 2 years. My code:\n\napp_name &lt;- \"xxx\"\nconsumer_key &lt;- \"xxx\"\nconsumer_secret &amp;...",
+            "timestamp": 1522322354,
+            "title": "Linkedin text mining [on hold]",
+            "url": "https://stackoverflow.com/questions/49522336/linkedin-text-mining"
+        },
+        {
+            "rank": 14,
+            "snippet": "I have a text corpus with about 100k text documents. (generated with the tmpackage).\n\nI searched possibly eligible documents for a specific topic using regex searches and found around 500 documents. \n\n...",
+            "timestamp": 1522322354,
+            "title": "find similar text documents to a group of text documents [on hold]",
+            "url": "https://stackoverflow.com/questions/49522028/find-similar-text-documents-to-a-group-of-text-documents"
+        },
+        {
+            "rank": 15,
+            "snippet": "I am having trouble understanding how scikit-learn's TfidVectorizer works. \n\nI have numerous documents which I ran through TfidVectorizer to come up with a dictionary of values along with their ...",
+            "timestamp": 1522322354,
+            "title": "Calcualte a \u201cdetermining\u201d value using tokenization in scikit-learn",
+            "url": "https://stackoverflow.com/questions/49521948/calcualte-a-determining-value-using-tokenization-in-scikit-learn"
+        },
+        {
+            "rank": 16,
+            "snippet": "I have a bunch of (DNA) sequences of each with length 10. DNA sequence can be A, C, G,T-- so if the sequence at each position is completely random the Shanon entropy of each position will be 2.  ...",
+            "timestamp": 1522322354,
+            "title": "Interpretation Shannon entropy as half of the maximum",
+            "url": "https://stackoverflow.com/questions/49498064/interpretation-shannon-entropy-as-half-of-the-maximum"
+        },
+        {
+            "rank": 17,
+            "snippet": "It is fixed now after following the comments.\n\nI'm following the tutorial given here - https://www.tidytextmining.com/ngrams.html.\n\nWhat I want to do is create a bigram network graph of review text ...",
+            "timestamp": 1522322354,
+            "title": "Bigram network graph using tidy text mining [r | ggraph | igraph]",
+            "url": "https://stackoverflow.com/questions/49509959/bigram-network-graph-using-tidy-text-mining-r-ggraph-igraph"
+        },
+        {
+            "rank": 18,
+            "snippet": "I'm trying to find the best way to compare two text documents using AI and machine learning methods. I've used the TF-IDF-Cosine Similarity and other similarity measures, but this compares the ...",
+            "timestamp": 1522322354,
+            "title": "Best way to compare meaning of text documents?",
+            "url": "https://stackoverflow.com/questions/49256079/best-way-to-compare-meaning-of-text-documents"
+        },
+        {
+            "rank": 19,
+            "snippet": "I'm currently facing a text mining problem where my goal is to identify clusters within a corpus of short texts. \nThe idea is, that these clusters represent some kind of technical/domain specific ...",
+            "timestamp": 1522322354,
+            "title": "using LDA for dimension reduction / clustering",
+            "url": "https://stackoverflow.com/questions/49498790/using-lda-for-dimension-reduction-clustering"
+        },
+        {
+            "rank": 20,
+            "snippet": "I am running a loop all day and during its execution, it saves different wordcloud graphs. I need to include or add the time in the graph bottom, footnote or even subtitle.\n\nHere is a basic example of ...",
+            "timestamp": 1522322354,
+            "title": "Add date and time to wordcloud plot",
+            "url": "https://stackoverflow.com/questions/49197347/add-date-and-time-to-wordcloud-plot"
+        },
+        {
+            "rank": 21,
+            "snippet": "I have using nltk packages and train a model using Naive Bayes. I have save the model to a file using pickle package. Now i wonder how can i use this model to test like a random text not in the ...",
+            "timestamp": 1522322354,
+            "title": "Text Categorization Test NLTK python",
+            "url": "https://stackoverflow.com/questions/49484820/text-categorization-test-nltk-python"
+        },
+        {
+            "rank": 22,
+            "snippet": "I am doing some text mining with tm package on PDFreports.The equations cause an error : \n  Error in chartr(\"\u00e0\u00e2\u00e9\u00e8\u00ea\u00f4\u00fb\", \"aaeeeou\", opinions2)\nwhere opinions2is the character vector containing the ...",
+            "timestamp": 1522322354,
+            "title": "remove equations for tm package [on hold]",
+            "url": "https://stackoverflow.com/questions/49468041/remove-equations-for-tm-package"
+        },
+        {
+            "rank": 23,
+            "snippet": "I have loaded a txt file that contains 6000 lines of sentences. I have tried to split(\"/n\") and word_tokenize the sentences, but I get the following error:\n\nTraceback (most recent call last):\n  File \"...",
+            "timestamp": 1522322354,
+            "title": "NLTK Python word_tokenize [duplicate]",
+            "url": "https://stackoverflow.com/questions/49475847/nltk-python-word-tokenize"
+        },
+        {
+            "rank": 24,
+            "snippet": "I want to build a model that can classification news into specific categorize. As i imagine that i will put all the selected train paper into specific label category then you word2vec for training and ...",
+            "timestamp": 1522322354,
+            "title": "Documentation topic classification using word2vec",
+            "url": "https://stackoverflow.com/questions/49470302/documentation-topic-classification-using-word2vec"
+        },
+        {
+            "rank": 25,
+            "snippet": "I request someone to provide link to learn Text Retrieval ( which covers almost every basic/advanced concept) using R.\n\nI tried to look for the same but got only some basic stuffs which did not cover ...",
+            "timestamp": 1522322354,
+            "title": "Text Retrieval in R [on hold]",
+            "url": "https://stackoverflow.com/questions/49468144/text-retrieval-in-r"
+        },
+        {
+            "rank": 26,
+            "snippet": "I have that csv file, containing 600k lines and 3 rows, first one containing a disease name, second one a gene, a third one a number something like that: i have roughly 4k disease and 16k genes so ...",
+            "timestamp": 1522322354,
+            "title": "creating a DTM from a 3 column CSV file with r",
+            "url": "https://stackoverflow.com/questions/49464617/creating-a-dtm-from-a-3-column-csv-file-with-r"
+        },
+        {
+            "rank": 27,
+            "snippet": "I am new to R. I have found the number of positive-negative words (953 negative, 458 positive) in my document, but I want to see these words. How can I do it? \n\nlibrary(readr)\nlibrary(tidyverse)\n...",
+            "timestamp": 1522322354,
+            "title": "text mining with R: how to see positive-negative sentiments in my document?",
+            "url": "https://stackoverflow.com/questions/49464958/text-mining-with-r-how-to-see-positive-negative-sentiments-in-my-document"
+        },
+        {
+            "rank": 28,
+            "snippet": "I am not able to pick up a few important words while creating a document-term matrix in R. I even tried removing all the filters on the corpus,i.e., tried dtm on the raw file but still I am not able ...",
+            "timestamp": 1522322354,
+            "title": "Losing on words in DTM matrix",
+            "url": "https://stackoverflow.com/questions/49447156/losing-on-words-in-dtm-matrix"
+        },
+        {
+            "rank": 29,
+            "snippet": "Currently I am working on projet to cluster 2 millions of Text Memos. My objective is to create a standard for these Memos (Actually, when I say Memo, I mean text containing the description of ...",
+            "timestamp": 1522322354,
+            "title": "Index based text clustering",
+            "url": "https://stackoverflow.com/questions/49447770/index-based-text-clustering"
+        },
+        {
+            "rank": 30,
+            "snippet": "So I am currently using the coreNLP package in R  to perform a sentiment analysis of comments, which I gathered from YouTube using the tuberpackage. My comments are stored in a data frame, where each ...",
+            "timestamp": 1522322354,
+            "title": "How to add punctuation at the end of each row in a data frame in R",
+            "url": "https://stackoverflow.com/questions/49446560/how-to-add-punctuation-at-the-end-of-each-row-in-a-data-frame-in-r"
+        },
+        {
+            "rank": 31,
+            "snippet": "I am creating a tree-like structure where every leaf node has 5 documents to it. To get the document of parent node all the documents of the child will be assigned to it. \n\nFor e.g. A is the parent ...",
+            "timestamp": 1522322354,
+            "title": "Creating a list from list of a list in python",
+            "url": "https://stackoverflow.com/questions/49377971/creating-a-list-from-list-of-a-list-in-python"
+        },
+        {
+            "rank": 32,
+            "snippet": "Im supposed to use OCR to identify text in legal documents, extract relevant keys and their values (around 40 attributes), and then store them in an excel sheet.\n\nI've already implemented the OCR part,...",
+            "timestamp": 1522322354,
+            "title": "Extracting key-value pairs from OCR text",
+            "url": "https://stackoverflow.com/questions/49442958/extracting-key-value-pairs-from-ocr-text"
+        },
+        {
+            "rank": 33,
+            "snippet": "I am trying to create a corpus from Java source code. \nI am following the preprocessing steps in this paper http://cs.queensu.ca/~sthomas/data/Thomas_2011_MSR.pdf \nBased on the section [2.1] the ...",
+            "timestamp": 1522322354,
+            "title": "Split Identifier and Method Names in Creating Source Code Corpus",
+            "url": "https://stackoverflow.com/questions/25953426/split-identifier-and-method-names-in-creating-source-code-corpus"
+        },
+        {
+            "rank": 34,
+            "snippet": "I have a wordcloud on climate change and there are two terms which are essentially the same: \"climatechange\" and \"climatechangeh\" - I am trying to delete \"h\" so I have larger frequency of the 1st word....",
+            "timestamp": 1522322354,
+            "title": "how do I edit a word in the wordcloud in R?",
+            "url": "https://stackoverflow.com/questions/49436432/how-do-i-edit-a-word-in-the-wordcloud-in-r"
+        },
+        {
+            "rank": 35,
+            "snippet": "I am working on Aspect Based Sentiment Analysis.In this project we collected data from twitter. After collecting data we performed text cleaning methods and create a corpus. After that we used this ...",
+            "timestamp": 1522322354,
+            "title": "Aspect Based Sentiment Analysis using python",
+            "url": "https://stackoverflow.com/questions/49434980/aspect-based-sentiment-analysis-using-python"
+        },
+        {
+            "rank": 36,
+            "snippet": "I am trying to remove the html tag from a corpus (docs) in R:\n\ntags : &lt;/P&gt;&lt;/TEXT&gt;  &lt;/BODY&gt; &lt;TRAILER&gt; NYT-06-22-98 1759EDT &amp;QL; &lt;/TRAILER&gt; &lt;/DOC&gt; \nThe code I am ...",
+            "timestamp": 1522322354,
+            "title": "Remove html tags from a corpus in R [duplicate]",
+            "url": "https://stackoverflow.com/questions/49402450/remove-html-tags-from-a-corpus-in-r"
+        },
+        {
+            "rank": 37,
+            "snippet": "I started having problems with extracting tweets with twitteR package: I don't get \"location\" (that's stated in user's profile) in the output anymore and I need it for my further analysis.\nI am using ...",
+            "timestamp": 1522322354,
+            "title": "twitteR package stopped returning location",
+            "url": "https://stackoverflow.com/questions/49391093/twitter-package-stopped-returning-location"
+        },
+        {
+            "rank": 38,
+            "snippet": "I have a corpus of 25 HTML document files and I wanted to create a function to loop through each of them, store the lines in a variable and remove the HTML and CSS tags. \"CleanAll\" is the name of the ...",
+            "timestamp": 1522322354,
+            "title": "For loop and reading files from a corpus and pre processing in R",
+            "url": "https://stackoverflow.com/questions/49380928/for-loop-and-reading-files-from-a-corpus-and-pre-processing-in-r"
+        },
+        {
+            "rank": 39,
+            "snippet": "Here is my code. \nI need to text mine this into a word cloud. Is there a way to get this code with the Spanish letters and symbols and such or is there a way after I am all finished to have the word ...",
+            "timestamp": 1522322354,
+            "title": "R: Producing word cloud using Spanish text",
+            "url": "https://stackoverflow.com/questions/49355379/r-producing-word-cloud-using-spanish-text"
+        },
+        {
+            "rank": 40,
+            "snippet": "So I performed a sentiment analysis using tidy principles. I would like to plot the results in a comparison cloud (positive VS negative sentiments).\n\nThis is my code: \n\nlibrary(reshape2)\nlibrary(...",
+            "timestamp": 1522322354,
+            "title": "Wordcloud titles not showing/rendering in R",
+            "url": "https://stackoverflow.com/questions/49361895/wordcloud-titles-not-showing-rendering-in-r"
+        },
+        {
+            "rank": 41,
+            "snippet": "I'm having trouble using a RegEx on a corpus.\n\nI read in a couple of text documents that I converted to a corpus. \nI want to display it in a TermDocumentMatrix after some pre-processing.\n\nFirst I want ...",
+            "timestamp": 1522322354,
+            "title": "Adding RegEx to specify character ngrams for a corpus in R",
+            "url": "https://stackoverflow.com/questions/49348265/adding-regex-to-specify-character-ngrams-for-a-corpus-in-r"
+        },
+        {
+            "rank": 42,
+            "snippet": "I'm trying to process text in German and Spanish languages. Working on English text is straight forward because of myriad NLP packages on this language. But it's not easy for other languages. I Found ...",
+            "timestamp": 1522322354,
+            "title": "Text Processing Tools for German and Spanish Languages",
+            "url": "https://stackoverflow.com/questions/49251361/text-processing-tools-for-german-and-spanish-languages"
+        },
+        {
+            "rank": 43,
+            "snippet": "I'm trying to extract data from tables inside some pdf reports.\n\nI've seen some examples using either pdftools and similar packages I was successful in getting the text, however, I just want to ...",
+            "timestamp": 1522322354,
+            "title": "Recognize PDF table using R",
+            "url": "https://stackoverflow.com/questions/44141160/recognize-pdf-table-using-r"
+        },
+        {
+            "rank": 44,
+            "snippet": "`import json\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom twitter2 import tweets_data\ntweets_data_path = \"d:\\\\twitter.txt\"\ntwitter_data=[]\ntweets_file = open(tweets_data_path,'r')\nfor line ...",
+            "timestamp": 1522322354,
+            "title": "need help in twitter data mining [closed]",
+            "url": "https://stackoverflow.com/questions/49345036/need-help-in-twitter-data-mining"
+        },
+        {
+            "rank": 45,
+            "snippet": "Converted large text file to list of strings (each row = one element in list) ['...','...','...']\nsample_data = ['2017-May-15 13:56:49.578  Event   Dispense     Sc 06mm Beschichtungsbreite ist: 5.99 ...",
+            "timestamp": 1522322354,
+            "title": "Error with dateutil.parser when iterating through list",
+            "url": "https://stackoverflow.com/questions/49300364/error-with-dateutil-parser-when-iterating-through-list"
+        },
+        {
+            "rank": 46,
+            "snippet": "I have an amazon reviews dataset which is as follows with 3 variables [user_id,product_id, review_text]\n\nhow many words in reviews have the stem word \"rec\" (say recommend, receive etc including their ...",
+            "timestamp": 1522322354,
+            "title": "How to count number of text instances for a word in python?",
+            "url": "https://stackoverflow.com/questions/49334139/how-to-count-number-of-text-instances-for-a-word-in-python"
+        },
+        {
+            "rank": 47,
+            "snippet": "I was able to authenticate my twitter account to this little Java program by using the Twitter4J API. \n\nI have got the code to print out the tweets of ONE twitter user, but I am currently struggling ...",
+            "timestamp": 1522322354,
+            "title": "Twitter4j - Get Followers' Tweets [closed]",
+            "url": "https://stackoverflow.com/questions/49338525/twitter4j-get-followers-tweets"
+        },
+        {
+            "rank": 48,
+            "snippet": "I am currently looking to perform some text mining on 25000 YouTube comments, which I gathered using the tuber package. I am very new to coding and with all these different information out there, this ...",
+            "timestamp": 1522322354,
+            "title": "Remove languages other than English from corpus or data frame in R",
+            "url": "https://stackoverflow.com/questions/49338549/remove-languages-other-than-english-from-corpus-or-data-frame-in-r"
+        },
+        {
+            "rank": 49,
+            "snippet": "I am working on .xls files after import data to a data frame with pandas, need to trim them. I have a lot of columns. Each data starting xxx: or yyy: and in a column\nfor example:\nxxx:abc yyy:def \\n\n...",
+            "timestamp": 1522322354,
+            "title": "Trim each column values at pandas",
+            "url": "https://stackoverflow.com/questions/49330627/trim-each-column-values-at-pandas"
+        },
+        {
+            "rank": 50,
+            "snippet": "I am newbie in text mining and R. I doing terms clustering using kmeans from a set of documents. In grouping the terms I used cosine formula. There are 57 terms of 839 document I want to cluster. But ...",
+            "timestamp": 1522322354,
+            "title": "Terms clustering and visualisation using cosine in R",
+            "url": "https://stackoverflow.com/questions/49325463/terms-clustering-and-visualisation-using-cosine-in-r"
+        }
+    ],
+    "timestamp": 1522322354,
+    "url": "https://stackoverflow.com/questions/tagged/text-mining"
+}

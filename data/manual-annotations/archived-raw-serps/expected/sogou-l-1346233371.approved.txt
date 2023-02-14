@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\u4e8f\u635f\u8fc7\u7684\u56fa\u5b9a\u6536\u76ca\u4fe1\u6258",
+    "offset": null,
+    "page": null,
+    "query": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0139\u0336\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1346233371,
+            "title": "\u6295\u8d44<em>\u56fa\u5b9a\u6536\u76ca\u4fe1\u6258</em>\u4ea7\u54c1\u6709\u54ea\u4e9b\u98ce\u9669\uff1f\u6700\u574f\u7684\u7ed3\u679c\u662f\u4ec0\u4e48\uff1f_\u767e\u5ea6\u77e5\u9053",
+            "url": "http://zhidao.baidu.com/question/418368157"
+        },
+        {
+            "rank": 2,
+            "snippet": "2012\u5e747\u670812\u65e5... \u2299\u8bb0\u8005 \u56e2\u5706 7\u67085\u65e5\u665a\u95f4\uff0c\u592e\u884c\u5ba3\u5e03\u5e74\u5185\u7b2c\u4e8c\u6b21\u964d\u606f\u3002\u968f\u7740\u964d\u606f\u7684\u4e0d\u65ad\u6f14\u8fdb\uff0c\u56fa\u5b9a\u6536\u76ca\u7c7b<em>\u4fe1\u6258</em>\u672a\u6765\u6536\u76ca\u7387\u8d70\u4f4e\u9010\u6e10\u786e\u7acb\u8d8b\u52bf\u3002\u4ece\u8fd1\u671f\u53d1\u884c<em>\u7684\u56fa\u5b9a\u6536\u76ca</em>\u7c7b<em>\u4fe1\u6258</em>\u4ea7\u54c1\u60c5...",
+            "timestamp": 1346233371,
+            "title": "<em>\u56fa\u5b9a\u6536\u76ca</em>\u7c7b<em>\u4fe1\u6258</em>\u6536\u76ca\u8d70\u52bf\u5206\u5316\u914d\u7f6e\u53ef\u4f9d\u6bd4\u4f8b\u9009\u62e9-\u641c\u72d0\u7406\u8d22",
+            "url": "http://money.sohu.com/20120712/n348008776.shtml"
+        },
+        {
+            "rank": 3,
+            "snippet": "2011\u5e748\u670812\u65e5... \uff02\u6536\u76ca\u7387\u8fdc\u8fdc\u8d85\u8fc7\u540c\u671f\u94f6\u884c\u5b9a\u5b58\uff0c\u800c\u4e14\u8fd1\u51e0\u5e74\u6211\u4eec\u4ee3\u7406<em>\u7684\u56fa\u5b9a\u6536\u76ca\u4fe1\u6258</em>\u4ea7\u54c1\u90fd\u5b9e... \u5c31\u7b97\u662f\u4ea7\u54c1\u51fa\u73b0<em>\u4e8f\u635f</em>\uff0c<em>\u4fe1\u6258</em>\u516c\u53f8\u8003\u8651\u5230\u81ea\u5df1\u7684\u4fe1\u8a89\u95ee\u9898\u4e5f\u4f1a\u7528\u81ea\u6709\u8d44\u91d1\u8d54\u4ed8\u6295\u8d44...",
+            "timestamp": 1346233371,
+            "title": "<em>\u56fa\u5b9a\u6536\u76ca\u4fe1\u6258</em>\uff1a\u98ce\u9669\u4ea6\u4e0d\u5bb9\u5ffd\u89c6\uff1a\uff1a\u5168\u666f\u7f51\u7edc",
+            "url": "http://www.p5w.net/money/xtlc/xtzx/201108/t3766951.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "2012\u5e748\u67087\u65e5... \u7528\u7406\u8d22\u8d44\u91d1\u7684\u90e8\u5206\u6295\u8d44\u6536\u76ca\u6765\u5f25\u8865\u4fe1\u8d37\u8d44\u4ea7\u7684<em>\u4e8f\u635f</em>\u3002 \u201c\u5dee\u4ef7\u201d\u8d85\u989d<em>\u6536\u76ca</em> \u5b9e\u9645\u4e0a... \u94f6\u884c\u5c06\u6b64\u7c7b<em>\u4fe1\u6258</em>\u4ea7\u54c1\u62c6\u5206\u3001\u5356\u7ed9\u6295\u8d44\u8005\u65f6\uff0c\u7ed9\u51fa<em>\u7684\u56fa\u5b9a\u6536\u76ca</em>\u4e00\u822c\u662f5%\u5de6\u53f3\u3002\u800c\u4fe1...",
+            "timestamp": 1346233371,
+            "title": "\u4e1a\u5185\u4eba\u58eb\u63ed\u7406\u8d22\u6f5c\u89c4\u5219\uff1a\u591a\u8d5a\u5f52\u94f6\u884c <em>\u4e8f\u635f</em>\u4e70\u8005\u625b_\u4e1a\u52a1\u4e0e\u4ea7\u54c1_\u65b0\u6d6a\u8d22...",
+            "url": "http://finance.sina.com.cn/money/bank/ywycp/20120807/011912773059.shtml"
+        },
+        {
+            "rank": 5,
+            "snippet": "\u4f46\u5176\u5b83 \u8bc1\u5377\u7c7b\u4fe1\u6258\u56e0\u4e3a\u62b5\u62bc\u4e0d\u5168,\u4f1a\u51fa<em>\u4e8f\u635f</em> <em>\u56fa\u5b9a\u6536\u76ca\u4fe1\u6258</em>\u4ea7\u54c1\u5206\u6210\u54ea\u51e0\u7c7b... <em>\u56fa\u5b9a\u6536\u76ca\u4fe1\u6258</em>\u5728\u8fd0\u4f5c\u4e2d\u5b9e\u9645\u6536\u76ca\u53ef\u80fd\u4f1a\u8d85\u8fc7\u9884\u671f\u6536\u76ca, \u4fe1\u6258\u516c\u53f8\u53ea\u4ee5\u8d85<em>\u8fc7\u7684</em>...",
+            "timestamp": 1346233371,
+            "title": "<em>\u56fa\u5b9a\u6536\u76ca</em>\u7c7b<em>\u4fe1\u6258</em>_\u767e\u5ea6\u6587\u5e93",
+            "url": "http://wenku.baidu.com/view/7796d90876c66137ee061969.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1346233371,
+            "title": "<em>\u4e8f\u635f\u8fc7\u7684\u56fa\u5b9a\u6536\u76ca\u4fe1\u6258</em>\u7684\u6700\u65b0\u76f8\u5173\u4fe1\u606f",
+            "url": "http://news.sogou.com/news?mode=1&sort=0&fixrank=1&query=%BF%F7%CB%F0%B9%FD%B5%C4%B9%CC%B6%A8%CA%D5%D2%E6%D0%C5%CD%D0&shid=cnc"
+        },
+        {
+            "rank": 7,
+            "snippet": "\u76ee\u524d\u6b63\u662f\u5e03\u5c40<em>\u56fa\u5b9a\u6536\u76ca</em>\u7684\u6700\u597d\u65f6\u673a\uff1a\u6536\u76ca\u7387\u9ad8\uff0c\u9009\u62e9\u9762\u5e7f\uff0c\u8d44\u4ea7\u8d28\u91cf\u597d\u3002 2011\u5e74\uff0c\u4f17\u591a\u7406\u8d22\u4ea7\u54c1\u4ee5<em>\u4e8f\u635f</em>\u6536\u573a\uff0c\u4e0e\u5b83\u4eec\u76f8\u6bd4\uff0c<em>\u56fa\u5b9a\u6536\u76ca</em>\u7c7b<em>\u4fe1\u6258</em>\u53ef\u8c13\u662f\u6700\u95ea\u4eae\u7684\u7406\u8d22\u4ea7\u54c1\u3002 \u4ece<em>\u56fa\u5b9a\u6536\u76ca</em>...",
+            "timestamp": 1346233371,
+            "title": "<em>\u56fa\u5b9a\u6536\u76ca</em>\u7c7b<em>\u4fe1\u6258</em>\u5e03\u5c40\u65f6\u673a\u6765\u4e34_\u7b2c\u4e00\u7406\u8d22\u7f51",
+            "url": "http://www.amoney.com.cn/News/96228.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1346233371,
+            "title": "2011\u5e74<em>\u56fa\u5b9a\u6536\u76ca</em>\u7c7b<em>\u4fe1\u6258</em>\u5e74\u5747\u6536\u76ca\u8d857% \u5e03\u5c40\u65f6\u673a\u6765\u4e34_\u73e0\u6d77\u6052\u5929\u8d22\u5bcc\u6768...",
+            "url": "http://blog.sina.com.cn/s/blog_554ae62701010lrv.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1346233371,
+            "title": "\u6295\u8d44\u8005\u53ef\u4ee5\u4ece\u54ea\u4e9b\u89d2\u5ea6\u9009\u62e9\u8d2d\u4e70<em>\u56fa\u5b9a\u6536\u76ca\u4fe1\u6258</em>\u4ea7\u54c1\uff1f_\u767e\u5ea6\u77e5\u9053",
+            "url": "http://zhidao.baidu.com/question/300915452"
+        },
+        {
+            "rank": 10,
+            "snippet": "7\u6708\u4efd\u671f\u95f4\u7ea69\u6210\u7684<em>\u4fe1\u6258</em>\u4ea7\u54c1\u5904\u4e8e<em>\u4e8f\u635f</em>\u72b6\u6001\uff0c<em>\u6536\u76ca</em>\u60c5\u51b5\u4e0d\u5bb9\u4e50\u89c2\u3002... \u76f4\u63a5\u4e0e\u4e8c\u7ea7\u5e02\u573a\u6302\u94a9... \u968f\u7740\u592e\u884c\u4eca\u5e74\u4ee5\u6765\u7684\u7b2c\u4e09\u6b21\u52a0\u606f\uff0c\u76ee\u524d\u4e00\u5e74\u671f\u5b58\u6b3e\u5229\u7387\u5df2\u8fbe3.50%\uff0c<em>\u56fa\u5b9a\u6536\u76ca</em>\u4ea7\u54c1\u7684\u5229\u606f...",
+            "timestamp": 1346233371,
+            "title": "17\u6b3e\u8bc1\u5238\u7c7b<em>\u4fe1\u6258</em>\u65e0\u4eba\u95ee\u6d25 9\u6210\u5904\u4e8e<em>\u4e8f\u635f</em>\u72b6\u6001 _<em>\u4fe1\u6258</em>\u8d44\u8baf_<em>\u56fa\u5b9a\u6536\u76ca</em>\u65b0\u95fb_...",
+            "url": "http://www.myfp.cn/news/1551627.html"
+        }
+    ],
+    "timestamp": 1346233371,
+    "url": "http://www.sogou.com:80/web?query=%BF%F7%CB%F0%B9%FD%B5%C4%B9%CC%B6%A8%CA%D5%D2%E6%D0%C5%CD%D0&p=02210102&fhintidx=7"
+}

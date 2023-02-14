@@ -1,0 +1,360 @@
+{
+    "interpreted_query": "[ruby-on-rails-plugins]",
+    "offset": null,
+    "page": null,
+    "query": "ruby-on-rails-plugins",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "I'm getting this error: \n  rake aborted!\n  Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs, \nI have already spent more hours searching google then I am willing to ...",
+            "timestamp": 1613971498,
+            "title": "execJs: 'Could not find a JavaScript runtime' but execjs AND therubyracer are in Gemfile",
+            "url": "https://stackoverflow.com/questions/9202324/execjs-could-not-find-a-javascript-runtime-but-execjs-and-therubyracer-are-in"
+        },
+        {
+            "rank": 2,
+            "snippet": "I'm upgrading to Rails 3.2, and running rake db:migrate gives me several errors of the form:\n  DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will ...",
+            "timestamp": 1613971498,
+            "title": "Rails 2.3-style plugins and deprecation warnings running task in Heroku",
+            "url": "https://stackoverflow.com/questions/9027403/rails-2-3-style-plugins-and-deprecation-warnings-running-task-in-heroku"
+        },
+        {
+            "rank": 3,
+            "snippet": "Can someone help me understand the differences between a Rails Engine and a Mountable app?  In Rails 3.1, you can create either one with the \"rails new plugin ___\" command.\n\nrails plugin new forum --...",
+            "timestamp": 1613971498,
+            "title": "Rails 3.1: Engine vs. Mountable App",
+            "url": "https://stackoverflow.com/questions/6118905/rails-3-1-engine-vs-mountable-app"
+        },
+        {
+            "rank": 4,
+            "snippet": "I've been looking into some rails admin plugins and came across these:\n\nhttps://github.com/gregbell/active_admin\n\nhttps://github.com/sferik/rails_admin\n\nhttps://github.com/thoughtbot/administrate (...",
+            "timestamp": 1613971498,
+            "title": "Rails Admin vs. ActiveAdmin [closed]",
+            "url": "https://stackoverflow.com/questions/6542075/rails-admin-vs-activeadmin"
+        },
+        {
+            "rank": 5,
+            "snippet": "I've recently installed Devise on a rails application, and I am wondering if it is possible to get an instance of the currently logged in user in either one of the other models or controllers, and if ...",
+            "timestamp": 1613971498,
+            "title": "Rails Devise: get object of the currently logged in user?",
+            "url": "https://stackoverflow.com/questions/4149326/rails-devise-get-object-of-the-currently-logged-in-user"
+        },
+        {
+            "rank": 6,
+            "snippet": "I have a plugin with many types of files, and its own tree structure (html, css, js, documentation, images, etc)\n\nRather than going through the plugin folder, and splitting all the css and js files ...",
+            "timestamp": 1613971498,
+            "title": "How to load vendor asset folder in Rails 4?",
+            "url": "https://stackoverflow.com/questions/25983283/how-to-load-vendor-asset-folder-in-rails-4"
+        },
+        {
+            "rank": 7,
+            "snippet": "I have seen many sites which provide the whole list of Rails plugins, Ruby libraries and Ruby gems, but we hardly use few of them and some may not suit our requirement and we spend a whole lot of time ...",
+            "timestamp": 1613971498,
+            "title": "Most useful Rails plugins, Ruby libraries and Ruby gems? [closed]",
+            "url": "https://stackoverflow.com/questions/1141998/most-useful-rails-plugins-ruby-libraries-and-ruby-gems"
+        },
+        {
+            "rank": 8,
+            "snippet": "I'm trying to get this up and running, but I see \"uninitialized constant ExceptionNotifier\" whenever I start my server. \n\nhttp://github.com/rails/exception_notification\n\nIn my Gemfile I have\n\ngem \"...",
+            "timestamp": 1613971498,
+            "title": "Exception Notification Gem and Rails 3",
+            "url": "https://stackoverflow.com/questions/3524127/exception-notification-gem-and-rails-3"
+        },
+        {
+            "rank": 9,
+            "snippet": "So Rails 3.1 comes with a little-known handy \"rails g plugin new\" generator, which gives you a skeleton suitable for a rails gem plugin. [http://guides.rubyonrails.org/plugins.html#or-generate-a-...",
+            "timestamp": 1613971498,
+            "title": "Rails 3.1 plugin gem, dummy test app, rspec",
+            "url": "https://stackoverflow.com/questions/8507798/rails-3-1-plugin-gem-dummy-test-app-rspec"
+        },
+        {
+            "rank": 10,
+            "snippet": "I'm trying to split my rails project in a front-end for regular users and a back-end for admins. Therefore i have created a namespace 'admin' so that i can easily control admin specific controller ...",
+            "timestamp": 1613971498,
+            "title": "Devise within namespace",
+            "url": "https://stackoverflow.com/questions/4500932/devise-within-namespace"
+        },
+        {
+            "rank": 11,
+            "snippet": "What are the available (best) ruby IP-based geolocation gem/plugins?\n\nHow do they compare to one another in terms of functionality, performance and ease of use (e.g. do they interact with a web ...",
+            "timestamp": 1613971498,
+            "title": "Ruby Geolocation Gem/Plugins [closed]",
+            "url": "https://stackoverflow.com/questions/1703511/ruby-geolocation-gem-plugins"
+        },
+        {
+            "rank": 12,
+            "snippet": "In the following scenario, I need to check the value of the object property in the fields_for loop.\n\n&lt;%= f.semantic_fields_for :review_details do |rd| %&gt;\n  &lt;%= rd.input :review_criteria_id, :...",
+            "timestamp": 1613971498,
+            "title": "Get a value of object field inside fields_for loop",
+            "url": "https://stackoverflow.com/questions/4535262/get-a-value-of-object-field-inside-fields-for-loop"
+        },
+        {
+            "rank": 13,
+            "snippet": "I'm working on a project that is considering using Cassandra as a database.  We would like to eventually migrate to Cassandra even if we use MySQL to start with, given its scalability.  I know that ...",
+            "timestamp": 1613971498,
+            "title": "Is Cassandra production ready for Ruby on Rails?",
+            "url": "https://stackoverflow.com/questions/2382436/is-cassandra-production-ready-for-ruby-on-rails"
+        },
+        {
+            "rank": 14,
+            "snippet": "Background\n\nI am creating a application that is made up of a core and several modules. The modules are rails engines, and provide the actual functionality as the core itself only acts as a host.\nThe ...",
+            "timestamp": 1613971498,
+            "title": "Render engine within application layout",
+            "url": "https://stackoverflow.com/questions/10615067/render-engine-within-application-layout"
+        },
+        {
+            "rank": 15,
+            "snippet": "how can i detect browser type and its version in Rails. I want to put check on the version of specific browser and if its not required browser version than ask user to upgrade it.. i use below ...",
+            "timestamp": 1613971498,
+            "title": "How to detect browser type and its version",
+            "url": "https://stackoverflow.com/questions/5787880/how-to-detect-browser-type-and-its-version"
+        },
+        {
+            "rank": 16,
+            "snippet": "I read a few documents on these arguments, but I did not understand clearly what they are, what are the differences between them and if one of them fits my needs.\nI need to write a piece of ...",
+            "timestamp": 1613971498,
+            "title": "Differences between railties and engines in Ruby On Rails 3",
+            "url": "https://stackoverflow.com/questions/6497834/differences-between-railties-and-engines-in-ruby-on-rails-3"
+        },
+        {
+            "rank": 17,
+            "snippet": "what plugin or gem do you recommened for tagging?\nThere are many of them, acts_as_taggable, acts_as_taggable_on_steroids, acts_as_taggable_on,...\n\nWhat do you say?",
+            "timestamp": 1613971498,
+            "title": "Best Rails Tagging Plugin/Gem [closed]",
+            "url": "https://stackoverflow.com/questions/1152477/best-rails-tagging-plugin-gem"
+        },
+        {
+            "rank": 18,
+            "snippet": "I'm using paperclip to handle image uploads to rails. it worked fine on my dev OSX machine, but now on my web server I get this error:\n\n[paperclip] /Users/marky/bin/identify '-format' '%wx%h' '/tmp/...",
+            "timestamp": 1613971498,
+            "title": "Paperclip image uploads in Rails - Paperclip::CommandNotFoundError",
+            "url": "https://stackoverflow.com/questions/3222273/paperclip-image-uploads-in-rails-paperclipcommandnotfounderror"
+        },
+        {
+            "rank": 19,
+            "snippet": "I'm writing a rails app that, by its nature, CANNOT require users to register, and thus cannot use authentication as the usual means to protect records. (I know, I know...)   User information here is ...",
+            "timestamp": 1613971498,
+            "title": "How to make model IDs in Rails unpredictable and random",
+            "url": "https://stackoverflow.com/questions/831746/how-to-make-model-ids-in-rails-unpredictable-and-random"
+        },
+        {
+            "rank": 20,
+            "snippet": "How can I convert the Forum application I've been developing into a Rails Engine, so that it may be embedded inside other applications?\n\nWhat should I add, keep, or remove? Should I offer a way to ...",
+            "timestamp": 1613971498,
+            "title": "How do I convert an existing Rails 3 Application into an Engine?",
+            "url": "https://stackoverflow.com/questions/6470430/how-do-i-convert-an-existing-rails-3-application-into-an-engine"
+        },
+        {
+            "rank": 21,
+            "snippet": "I'm writing a rails engine that has some dependencies.  I've specified the dependencies in the gemspec and the engine is finding them when I run bundle install (i.e. Gemfile.lock looks correct).  When ...",
+            "timestamp": 1613971498,
+            "title": "Dependency included in gemspec not added to asset pipeline in rails engine",
+            "url": "https://stackoverflow.com/questions/12256291/dependency-included-in-gemspec-not-added-to-asset-pipeline-in-rails-engine"
+        },
+        {
+            "rank": 22,
+            "snippet": "Can anyone recommend some RoR plugins and/or general sage that will help me with SEO?",
+            "timestamp": 1613971498,
+            "title": "Anyone got SEO tips for Ruby on Rails [closed]",
+            "url": "https://stackoverflow.com/questions/2556362/anyone-got-seo-tips-for-ruby-on-rails"
+        },
+        {
+            "rank": 23,
+            "snippet": "I am currently developing some plugins for Redmine, and I must say, I'm a bit disappointed with the lack of documentation available on this subject. \n\nNormally, If I am looking for explanations on ...",
+            "timestamp": 1613971498,
+            "title": "Good documentation for writing Redmine plugins",
+            "url": "https://stackoverflow.com/questions/6737035/good-documentation-for-writing-redmine-plugins"
+        },
+        {
+            "rank": 24,
+            "snippet": "As a Rails developer I feel a bit stupid asking this question but hopefully I will learn something new and someone can put me out of my misery! In my rails applications I use (other peoples) gems all ...",
+            "timestamp": 1613971498,
+            "title": "Building a ruby gem for Rails applications",
+            "url": "https://stackoverflow.com/questions/2072059/building-a-ruby-gem-for-rails-applications"
+        },
+        {
+            "rank": 25,
+            "snippet": "I am trying to create a gem with a generator for Rails 3 (beta 4). I followed these instructions, and but I couldn't get it running. The problem is that when I am defining a module in the generator ...",
+            "timestamp": 1613971498,
+            "title": "Creating a Ruby on Rails 3 gem with a generator (incl. namespace)",
+            "url": "https://stackoverflow.com/questions/3091909/creating-a-ruby-on-rails-3-gem-with-a-generator-incl-namespace"
+        },
+        {
+            "rank": 26,
+            "snippet": "As I understand it, plugins are not reloaded in Rails with each request in development mode.\nWhich makes sense, as generally you add plugins to your app and it's the app you're developing.\n\nBut if you ...",
+            "timestamp": 1613971498,
+            "title": "How can I force my plugin to reload with each request?",
+            "url": "https://stackoverflow.com/questions/4713066/how-can-i-force-my-plugin-to-reload-with-each-request"
+        },
+        {
+            "rank": 27,
+            "snippet": "Whenever two concurrent HTTP requests go to my Rails app, the second always returns the following error:\n  A copy of ApplicationController has been removed from the module tree but is still active!\n...",
+            "timestamp": 1613971498,
+            "title": "A copy of ApplicationController has been removed from the module tree but is still active",
+            "url": "https://stackoverflow.com/questions/1242559/a-copy-of-applicationcontroller-has-been-removed-from-the-module-tree-but-is-sti"
+        },
+        {
+            "rank": 28,
+            "snippet": "I am getting the following warning while installing any plugin in my rails application.\n\n/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/agnostics.rb:7: ...",
+            "timestamp": 1613971498,
+            "title": "Warning while installing the rails plugin",
+            "url": "https://stackoverflow.com/questions/2872680/warning-while-installing-the-rails-plugin"
+        },
+        {
+            "rank": 29,
+            "snippet": "I need an easy way to generate static web pages so that I can serve them up with Apache or Nginx. Currently I am using SproutCore's build tool (Abbot) to generate static pages but that is a little bit ...",
+            "timestamp": 1613971498,
+            "title": "Static web site generation",
+            "url": "https://stackoverflow.com/questions/7131503/static-web-site-generation"
+        },
+        {
+            "rank": 30,
+            "snippet": "Is there any \"like\" , \"dislike\" plugin for rails... \n\nI went through rating plugins... but all of them were 5 star rating plugins...",
+            "timestamp": 1613971498,
+            "title": "\u201cLike\u201d, \u201cDislike\u201d plugin for rails",
+            "url": "https://stackoverflow.com/questions/3703194/like-dislike-plugin-for-rails"
+        },
+        {
+            "rank": 31,
+            "snippet": "What are some of your favorite rails plugins that you would consider \"must haves\"?  \n\nThis entry lists some of my favorites that I use in a large majority of my rails applications: My favorite rails ...",
+            "timestamp": 1613971498,
+            "title": "Rails Plugins [closed]",
+            "url": "https://stackoverflow.com/questions/415215/rails-plugins"
+        },
+        {
+            "rank": 32,
+            "snippet": "Is there any open source (or example) code for Ruby on Rails which can filter, sort, and paginate a certain model?  Also, it would be great if the results could come back via Ajax.  A good example of ...",
+            "timestamp": 1613971498,
+            "title": "Any good Rails example/framework for sorting, filtering, pagination with Ajax",
+            "url": "https://stackoverflow.com/questions/5010215/any-good-rails-example-framework-for-sorting-filtering-pagination-with-ajax"
+        },
+        {
+            "rank": 33,
+            "snippet": "What is the best way to develop a rails application that has special views for different mobile devices?\nBasically I'm looking for something like this ASP.NET MVC solution: http://www.hanselman.com/...",
+            "timestamp": 1613971498,
+            "title": "Supporting Mobile Devices in Ruby on Rails",
+            "url": "https://stackoverflow.com/questions/1160331/supporting-mobile-devices-in-ruby-on-rails"
+        },
+        {
+            "rank": 34,
+            "snippet": "Hopefully I can explain this well enough, but please let me know if more information is needed!\n\nI'm building a form where a user can create an \"incident\".  This incident has the following ...",
+            "timestamp": 1613971498,
+            "title": "Filter chain halted as [:login_required] rendered_or_redirected",
+            "url": "https://stackoverflow.com/questions/2714537/filter-chain-halted-as-login-required-rendered-or-redirected"
+        },
+        {
+            "rank": 35,
+            "snippet": "We used to have a local hack of delayed_job in a Rails app, in vendor/plugins/delayed_job.  It was installed as a one-time event and checked into git in the main app repo.\n\nNow we decided to fork ...",
+            "timestamp": 1613971498,
+            "title": "switching a subdirectory managed by git to a submodule",
+            "url": "https://stackoverflow.com/questions/6528936/switching-a-subdirectory-managed-by-git-to-a-submodule"
+        },
+        {
+            "rank": 36,
+            "snippet": "We need a dead simple, but secure, admin plugin for Rails. We're on 2.x but are considering a port to 3.x.\n\nWhich admin plugin do you use, and why? What are the pros and cons of others? There are a ...",
+            "timestamp": 1613971498,
+            "title": "Which Ruby on Rails admin plugin do you use and why? What are the pros and cons of different admin gems?",
+            "url": "https://stackoverflow.com/questions/5410681/which-ruby-on-rails-admin-plugin-do-you-use-and-why-what-are-the-pros-and-cons"
+        },
+        {
+            "rank": 37,
+            "snippet": "I've got a rails model using Paperclip that looks like this:\n\n  has_attached_file :image, :styles =&gt; { :normal =&gt; ['857x392#', :png] },\n                    :url =&gt; '/assets/pages/:id/:...",
+            "timestamp": 1613971498,
+            "title": "Rails - Paperclip validating attachment size when it shouldn't be?",
+            "url": "https://stackoverflow.com/questions/2045212/rails-paperclip-validating-attachment-size-when-it-shouldnt-be"
+        },
+        {
+            "rank": 38,
+            "snippet": "We have to use delayed_job (or some other background-job processor) to run jobs in the background, but we're not allowed to change the boot scripts/boot-levels on the server. This means that the ...",
+            "timestamp": 1613971498,
+            "title": "Start or ensure that Delayed Job runs when an application/server restarts",
+            "url": "https://stackoverflow.com/questions/2580871/start-or-ensure-that-delayed-job-runs-when-an-application-server-restarts"
+        },
+        {
+            "rank": 39,
+            "snippet": "I want to use Apache Mahout in my project on Ruby on Rails for implementing recommendations and collaborative filtering. In Particular my requirements are:\nsuggesting related tags.\nsuggesting related ...",
+            "timestamp": 1613971498,
+            "title": "Mahout Plugin for ruby on rails",
+            "url": "https://stackoverflow.com/questions/2084131/mahout-plugin-for-ruby-on-rails"
+        },
+        {
+            "rank": 40,
+            "snippet": "my first entry here.\n\nI'm trying to add a comment system to our Posts model. However, I am not sure of the best way to go about it for a number of reasons. I'd like the comment system to be similar to ...",
+            "timestamp": 1613971498,
+            "title": "Rails 3 best way to create a comment system for posts",
+            "url": "https://stackoverflow.com/questions/7283570/rails-3-best-way-to-create-a-comment-system-for-posts"
+        },
+        {
+            "rank": 41,
+            "snippet": "I've found an old plugin called acts_as_habtm_list - but it's for Rails 1.0.0.\n\nIs this functionality built in acts_as_list now? I can't seem to find any information on it.\n\nBasically, I have an ...",
+            "timestamp": 1613971498,
+            "title": "acts_as_list with has_and_belongs_to_many relationship",
+            "url": "https://stackoverflow.com/questions/2274934/acts-as-list-with-has-and-belongs-to-many-relationship"
+        },
+        {
+            "rank": 42,
+            "snippet": "I found an example here showing how to install a Rails plugin. Their example shows this:\n\n./script/plugin install calendar_helper\nThis won't work for me because, confusingly, I don't have anything ...",
+            "timestamp": 1613971498,
+            "title": "Confused about how to install Rails plugins",
+            "url": "https://stackoverflow.com/questions/4693431/confused-about-how-to-install-rails-plugins"
+        },
+        {
+            "rank": 43,
+            "snippet": "In a model say Task, I have following validation\n\n validates_presence_of :subject, :project, :user, :status\nHow do I render error messages for these validations using some other controller.  \n\nInside ...",
+            "timestamp": 1613971498,
+            "title": "Rendering validation errors in Ruby on Rails",
+            "url": "https://stackoverflow.com/questions/10531762/rendering-validation-errors-in-ruby-on-rails"
+        },
+        {
+            "rank": 44,
+            "snippet": "I want to share a model between 2 (maybe more in the future) of my rails apps. I couldn't find any clear suggestions, but I picked up some of the questions and answers I've read and came to a ...",
+            "timestamp": 1613971498,
+            "title": "Sharing a mongoid model between 2 applications - using engine vs. plugin",
+            "url": "https://stackoverflow.com/questions/31322960/sharing-a-mongoid-model-between-2-applications-using-engine-vs-plugin"
+        },
+        {
+            "rank": 45,
+            "snippet": "I am simply trying to create a plugin migration generator without any parameters, like : $rails generate yaffle and this should copy the migration file (lib/generators/yaffle/template/create_yaffle.rb)...",
+            "timestamp": 1613971498,
+            "title": "generators and migrations in plugins (rails 3)",
+            "url": "https://stackoverflow.com/questions/4141739/generators-and-migrations-in-plugins-rails-3"
+        },
+        {
+            "rank": 46,
+            "snippet": "I have the restful_authentication plugin installed in a rails app, with a sessions_controller that has a destroy method like this:\n\ndef destroy\n  self.current_user.forget_me if logged_in?\n  cookies....",
+            "timestamp": 1613971498,
+            "title": "Logout with http basic authentication and restful_authentication plugin",
+            "url": "https://stackoverflow.com/questions/660155/logout-with-http-basic-authentication-and-restful-authentication-plugin"
+        },
+        {
+            "rank": 47,
+            "snippet": "Having finished Hartl's great Rails Tutorial I'm now working my way through the very good jQuery - Novice to Ninja by Castledine and Sharkie.  While I've able to include jquery.js and jquery-ui.js in ...",
+            "timestamp": 1613971498,
+            "title": "Using jQuery plugins in Rails 3",
+            "url": "https://stackoverflow.com/questions/5362597/using-jquery-plugins-in-rails-3"
+        },
+        {
+            "rank": 48,
+            "snippet": "I am looking for a rails flash graph/chart plugin, for drawing \nbar chart,\nstacked bar chart,\npie chart,\nstacked area chart,\nand line graphs\n\nwhich support the below criteria,\n1. Customizable tool tip....",
+            "timestamp": 1613971498,
+            "title": "rails flash graph/chart plugin",
+            "url": "https://stackoverflow.com/questions/910022/rails-flash-graph-chart-plugin"
+        },
+        {
+            "rank": 49,
+            "snippet": "The main goal: Allow plugins, gems to add additional form fields to predefined forms.\n\nFor example, application has a devise login form:\n&lt;%= form_for(resource, :as =&gt; resource_name, ...) do |f| %&gt;\n ...",
+            "timestamp": 1613971498,
+            "title": "How to add extra form fields outside the form declaration block",
+            "url": "https://stackoverflow.com/questions/9197109/how-to-add-extra-form-fields-outside-the-form-declaration-block"
+        },
+        {
+            "rank": 50,
+            "snippet": "I have 2 Models:\n\n# user.rb\nclass User &lt; ActiveRecord::Base\n  has_one :profile, :dependent =&gt; :destroy\nend\n\n# profile.rb\nclass Profile &lt; ActiveRecord::Base\n  belongs_to :user\n  ...",
+            "timestamp": 1613971498,
+            "title": "Factory_girl has_one relation with validates_presence_of",
+            "url": "https://stackoverflow.com/questions/3648699/factory-girl-has-one-relation-with-validates-presence-of"
+        }
+    ],
+    "timestamp": 1613971498,
+    "url": "https://stackoverflow.com/questions/tagged/ruby-on-rails-plugins"
+}

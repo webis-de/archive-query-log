@@ -1,0 +1,360 @@
+{
+    "interpreted_query": "[numpy-einsum]",
+    "offset": null,
+    "page": null,
+    "query": "numpy-einsum",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Consider ndarrays x0=np.ones((3,3)) and y0, which has y0.shape either (3,3) or (1,3). I want a single einsum command that computes the dot products of the rows of these two arrays; in the case that y0....",
+            "timestamp": 1516773912,
+            "title": "How does einsum interact with numpy broadcasting?",
+            "url": "https://stackoverflow.com/questions/48303063/how-does-einsum-interact-with-numpy-broadcasting"
+        },
+        {
+            "rank": 2,
+            "snippet": "i have to columns in a pandas dataframe format and want the output in the C  D column as below \n\n A   B   C             D\n 1   2   1*2           1*2\n 3   4   (1+3)*4       (1*2)+(3*4)\n 5   6   (1+3+5)*...",
+            "timestamp": 1516773912,
+            "title": "Python Pandas SUMPRODUCT and L Matrix caluclation",
+            "url": "https://stackoverflow.com/questions/48074166/python-pandas-sumproduct-and-l-matrix-caluclation"
+        },
+        {
+            "rank": 3,
+            "snippet": "Suppose I have a numpy matrix like this:\n\n[[   1    2    3]\n [  10  100 1000]]\nI would like to compute the inner product of each column with itself, so the result would be:\n\n[1*1 + 10*10    2*2 + 100*...",
+            "timestamp": 1516773912,
+            "title": "Using numpy einsum to compute inner product of column-vectors of a matrix",
+            "url": "https://stackoverflow.com/questions/48066890/using-numpy-einsum-to-compute-inner-product-of-column-vectors-of-a-matrix"
+        },
+        {
+            "rank": 4,
+            "snippet": "I have following four tensors\nH (h, r)\nA (a, r)\nD (d, r)\nT (a, t, r)\nFor each i in a, there is a corresponding T[i] of the shape (t, r).\n\nI need to do a np.einsum to produce the following result (...",
+            "timestamp": 1516773912,
+            "title": "Vectorising numpy.einsum",
+            "url": "https://stackoverflow.com/questions/47582442/vectorising-numpy-einsum"
+        },
+        {
+            "rank": 5,
+            "snippet": "I am working on a C++ library that relies on tensor contractions. I won't post the full application here, but I've distilled it down to the following.\n\nWe define a toy rank-4 tensor, which is nothing ...",
+            "timestamp": 1516773912,
+            "title": "What causes different results by interchanging the tensors in an Eigen::Tensor contraction?",
+            "url": "https://stackoverflow.com/questions/47556726/what-causes-different-results-by-interchanging-the-tensors-in-an-eigentensor-c"
+        },
+        {
+            "rank": 6,
+            "snippet": "I am trying to understand numpy.einsum() function but the documentation as well as this answer from stackoverflow still leave me with some questions.\n\nLet's take the einstein sum and the matrices ...",
+            "timestamp": 1516773912,
+            "title": "Additional information on numpy.einsum()",
+            "url": "https://stackoverflow.com/questions/47366812/additional-information-on-numpy-einsum"
+        },
+        {
+            "rank": 7,
+            "snippet": "How to transform 100 of 8 element vectors into 10 16 element vectors using 1000 different (8,16) weight matrices? Each of the 10 output vectors is a sum of 100 dot products:\n\nA = np.random.randn(100,8)...",
+            "timestamp": 1516773912,
+            "title": "Sum of dot products",
+            "url": "https://stackoverflow.com/questions/47317882/sum-of-dot-products"
+        },
+        {
+            "rank": 8,
+            "snippet": "Is it possible to use more than 26 lower case letters as indices in tf.einsum?\n\nNumpy allows for also using upper case letters i.e. np.einsum('zA,AB-&gt;zB',M1,M2) whereas tf.einsum returns an error.\n\n...",
+            "timestamp": 1516773912,
+            "title": "Using more than 26 indices in tf.einsum?",
+            "url": "https://stackoverflow.com/questions/46807559/using-more-than-26-indices-in-tf-einsum"
+        },
+        {
+            "rank": 9,
+            "snippet": "What is typically failing when numpy einsum throws the error:\n\nTraceback (most recent call last):\n  File \"rmse_iter.py\", line 30, in &lt;module&gt;\n    rmse_out = np.sqrt(np.einsum('ij,ij-&gt;i',diffs,...",
+            "timestamp": 1516773912,
+            "title": "Numpy einsum behaving badly. What to look out for?",
+            "url": "https://stackoverflow.com/questions/46440010/numpy-einsum-behaving-badly-what-to-look-out-for"
+        },
+        {
+            "rank": 10,
+            "snippet": "Given a 3d array and a 2d array,\n\na = np.arange(10*4*3).reshape((10,4,3))\nb = np.arange(30).reshape((10,3))\nHow can I run elementwise-multiplication across the final axis of each, resulting in c ...",
+            "timestamp": 1516773912,
+            "title": "Multiplying elementwise over final axis of two arrays",
+            "url": "https://stackoverflow.com/questions/45986897/multiplying-elementwise-over-final-axis-of-two-arrays"
+        },
+        {
+            "rank": 11,
+            "snippet": "I have two ndarray like\n\nn1 = np.array([1,2,3,4])\nn2 = np.array([1,2,3,4])\nWhile dot product of them can done easily with np.dot(n1, n2), which gives 30 as the right answer. What if I need the dot to ...",
+            "timestamp": 1516773912,
+            "title": "numpy dot product of sub array?",
+            "url": "https://stackoverflow.com/questions/45952043/numpy-dot-product-of-sub-array"
+        },
+        {
+            "rank": 12,
+            "snippet": "I noticed that np.einsum is faster when it reduces one dimension\n\nimport numpy as np\na = np.random.random((100,100,100))\nb = np.random.random((100,100,100))\n\n%timeit np.einsum('ijk,ijk-&gt;ijk',a,b)\n# ...",
+            "timestamp": 1516773912,
+            "title": "Speed difference in np.einsum",
+            "url": "https://stackoverflow.com/questions/45716517/speed-difference-in-np-einsum"
+        },
+        {
+            "rank": 13,
+            "snippet": "I have b 2d m x n greyscale images that I'm convolving with a p x q filter and then doing mean-pooling on. With pure numpy, I'd like to compute the derivative of the input image and the filter, but I'...",
+            "timestamp": 1516773912,
+            "title": "Pure NumPy 2D mean convolution derivative of input image",
+            "url": "https://stackoverflow.com/questions/45580013/pure-numpy-2d-mean-convolution-derivative-of-input-image"
+        },
+        {
+            "rank": 14,
+            "snippet": "I have a batch of b m x n images stored in an array x, and a convolutional filter f of size p x q that I'd like to apply to each image (then use sum pooling and store in an array y) in the batch, i.e. ...",
+            "timestamp": 1516773912,
+            "title": "Batch convolution 2d in numpy without scipy?",
+            "url": "https://stackoverflow.com/questions/45540000/batch-convolution-2d-in-numpy-without-scipy"
+        },
+        {
+            "rank": 15,
+            "snippet": "Currently I use\n\nNa = (3, 2, 4)\nNb = Na[1:]\nA = np.arange(np.prod(Na)).reshape(Na)\nb = np.arange(np.prod(Nb)).reshape(Nb)\nI want to calculate: \nr = np.empty((A.shape[0], A.shape[2])\nfor i in range(A....",
+            "timestamp": 1516773912,
+            "title": "numpy dot product for tensors (3d times 2d)",
+            "url": "https://stackoverflow.com/questions/45440984/numpy-dot-product-for-tensors-3d-times-2d"
+        },
+        {
+            "rank": 16,
+            "snippet": "I would like to perform the operation\nIf   had a regular shape, then I could use np.einsum, I believe the syntax would be \n\nnp.einsum('ijp,ipk-&gt;ijk',X, alpha)\nUnfortunately, my data X has a non ...",
+            "timestamp": 1516773912,
+            "title": "How to vectorize/tensorize operations in numpy with irregular array shapes",
+            "url": "https://stackoverflow.com/questions/45301319/how-to-vectorize-tensorize-operations-in-numpy-with-irregular-array-shapes"
+        },
+        {
+            "rank": 17,
+            "snippet": "I have a D dimensional point and vector, p and v, respectively, a positive number n, and a resolution.\n\nI want to get all points after successively adding vector v*resolution to point p n/resolution ...",
+            "timestamp": 1516773912,
+            "title": "Vectorized arange using np.einsum for raycast",
+            "url": "https://stackoverflow.com/questions/44838342/vectorized-arange-using-np-einsum-for-raycast"
+        },
+        {
+            "rank": 18,
+            "snippet": "I was planning to teach np.einsum to colleagues, by hoping to show how it would be reduced to multiplications and summations.\nSo, instead of numerical data, I thought to use alphabet chars. in the ...",
+            "timestamp": 1516773912,
+            "title": "Generating np.einsum evaluation graph",
+            "url": "https://stackoverflow.com/questions/44780195/generating-np-einsum-evaluation-graph"
+        },
+        {
+            "rank": 19,
+            "snippet": "In my benchmark using numpy 1.12.0, calculating dot products with float32 ndarrays is much faster than the other data types:\n\nIn [3]: f16 = np.random.random((500000, 128)).astype('float16')\nIn [4]: ...",
+            "timestamp": 1516773912,
+            "title": "Why does `numpy.einsum` work faster with `float32` than `float16` or `uint16`? [duplicate]",
+            "url": "https://stackoverflow.com/questions/44103815/why-does-numpy-einsum-work-faster-with-float32-than-float16-or-uint16"
+        },
+        {
+            "rank": 20,
+            "snippet": "I'm trying to write fast, optimized code based on matrices, and have recently discovered einsum as a tool for achieving significant speed-up. \n\nIs it possible to use this to set the diagonals of a ...",
+            "timestamp": 1516773912,
+            "title": "Fast way to set diagonals of an (M x N x N) matrix? Einsum / n-dimensional fill_diagonal?",
+            "url": "https://stackoverflow.com/questions/43990071/fast-way-to-set-diagonals-of-an-m-x-n-x-n-matrix-einsum-n-dimensional-fill"
+        },
+        {
+            "rank": 21,
+            "snippet": "I have two matrix , 5x4 and 3x2.\nI want to get a 5x3 matrix from them.\n\n&gt;&gt;&gt;theta_ic = np.random.randint(5,size=(5,4))\n&gt;&gt;&gt;psi_tr  = np.random.randint(5,size=(3,2))\nI can do this by \n\n...",
+            "timestamp": 1516773912,
+            "title": "numpy.einsum 'ij,kl-&gt;ik' how to do this by numpy.tensordot",
+            "url": "https://stackoverflow.com/questions/43823232/numpy-einsum-ij-kl-ik-how-to-do-this-by-numpy-tensordot"
+        },
+        {
+            "rank": 22,
+            "snippet": "In my current theano script the bottleneck is the following code:\n\nimport numpy as np\n\naxis = 0\nprob = np.random.random( ( 1, 1000, 50 ) )\ncases = np.random.random( ( 1000, 1000, 50 ) )\n\nstart = time....",
+            "timestamp": 1516773912,
+            "title": "Replace sequential product and sum with a faster matrix operation in 3D",
+            "url": "https://stackoverflow.com/questions/43800126/replace-sequential-product-and-sum-with-a-faster-matrix-operation-in-3d"
+        },
+        {
+            "rank": 23,
+            "snippet": "In tensorflow, the functions tf.einsum, tf.matmul, and tf.tensordot can all be used for the same tasks. (I realize that tf.einsum and tf.tensordot have more general definitions; I also realize that tf....",
+            "timestamp": 1516773912,
+            "title": "tensorflow einsum vs. matmul vs. tensordot",
+            "url": "https://stackoverflow.com/questions/43100679/tensorflow-einsum-vs-matmul-vs-tensordot"
+        },
+        {
+            "rank": 24,
+            "snippet": "I have a matrix-based problem which I think could be solved (computationally cheaply) in a single line of code using numpy (perhaps einsum?), but can't get to the solution. \n\nI wonder if anyone can ...",
+            "timestamp": 1516773912,
+            "title": "4d Array Processing (using einsum?)",
+            "url": "https://stackoverflow.com/questions/42999993/4d-array-processing-using-einsum"
+        },
+        {
+            "rank": 25,
+            "snippet": "a python question: I've got a np.einsum operation that I'm doing on a pair of 3d arrays:\n\nreturn np.einsum('ijk, ijk -&gt; ik', input_array, self._beta_array)\nProblem I'm having is the result is 2d; ...",
+            "timestamp": 1516773912,
+            "title": "How do I do an einsum that mimics 'keepdims'?",
+            "url": "https://stackoverflow.com/questions/42983474/how-do-i-do-an-einsum-that-mimics-keepdims"
+        },
+        {
+            "rank": 26,
+            "snippet": "What I have in the code I was given is something like:\n\nC = np.tensordot(B, A, axes = (0,0))\nA is a (20L, 50L) and B is (20L, 20L)\n\nI was supposed to change since someone told me it would be faster ...",
+            "timestamp": 1516773912,
+            "title": "How to go from np.tensordot to np.einsum",
+            "url": "https://stackoverflow.com/questions/42978762/how-to-go-from-np-tensordot-to-np-einsum"
+        },
+        {
+            "rank": 27,
+            "snippet": "I am trying to implement the Expectation Maximization Algorithm for Gaussian Mixture Model in python.\n\nI have following line to compute the gaussian probability p of my data X given the mean mu and ...",
+            "timestamp": 1516773912,
+            "title": "numpy: get rid of for loop by broadcasting",
+            "url": "https://stackoverflow.com/questions/42077890/numpy-get-rid-of-for-loop-by-broadcasting"
+        },
+        {
+            "rank": 28,
+            "snippet": "I have a list L of tensors (ndarray objects), with several indices each. I need to contract these indices according to a graph of connections. \n\nThe connections are encoded in a list of tuples in the ...",
+            "timestamp": 1516773912,
+            "title": "Efficient tensor contraction in python",
+            "url": "https://stackoverflow.com/questions/42034480/efficient-tensor-contraction-in-python"
+        },
+        {
+            "rank": 29,
+            "snippet": "I have 3 sparse tensors of dimensions A = P*N, B = Q*N and C = R*N. What is the efficient way to compute the product matrix A*B*C such that dimension of the product matrix is P*Q*R in tensorflow.? \n\nI ...",
+            "timestamp": 1516773912,
+            "title": "What is the efficient way of multiplying chain of tensors in tensorflow",
+            "url": "https://stackoverflow.com/questions/41986542/what-is-the-efficient-way-of-multiplying-chain-of-tensors-in-tensorflow"
+        },
+        {
+            "rank": 30,
+            "snippet": "I have a tensor3 with shape (3, 4, 5) and another tensor4 with shape (3, 4, 7, 5).\nIn numpy,\n\n result = np.einsum(\"ijk, ijmk-&gt;ijm\", tensor3, tensor4)\n print result.shape \n (3, 4, 7)\nbut in theano ,...",
+            "timestamp": 1516773912,
+            "title": "how to use batch_tensordot in theano like numpy.einsum",
+            "url": "https://stackoverflow.com/questions/40958983/how-to-use-batch-tensordot-in-theano-like-numpy-einsum"
+        },
+        {
+            "rank": 31,
+            "snippet": "I have a tensor a with an unknown number of axes (but at least one) and a square matrix M such that a.get_shape()[0] == M.get_shape()[0]==M.get_shape()[1].\n\nWhat I would like to do is \n\nR = tf.einsum(\"...",
+            "timestamp": 1516773912,
+            "title": "Tensor multiplication in tensorflow (with indetermined number of axes)",
+            "url": "https://stackoverflow.com/questions/40462972/tensor-multiplication-in-tensorflow-with-indetermined-number-of-axes"
+        },
+        {
+            "rank": 32,
+            "snippet": "I have another question which is related to my last problem( Python tensor product). There I found a mistake in my calculation. With np.tensordot I am calculating the following equation:\n\n&lt;..&gt; ...",
+            "timestamp": 1516773912,
+            "title": "Mean tensor product",
+            "url": "https://stackoverflow.com/questions/40059979/mean-tensor-product"
+        },
+        {
+            "rank": 33,
+            "snippet": "I have the following problem. For performance reasons I use numpy.tensordot and have thus my values stored in tensors and vectors. \nOne of my calculations look like this:\n&lt;w_j&gt; is the ...",
+            "timestamp": 1516773912,
+            "title": "Python tensor product",
+            "url": "https://stackoverflow.com/questions/40044714/python-tensor-product"
+        },
+        {
+            "rank": 34,
+            "snippet": "What is the best way to do array operations when there are some repeated indices which are summed over AND others which are not?  It seems like I may have to use einsum for these operations, but it ...",
+            "timestamp": 1516773912,
+            "title": "In Multi-dimensional array products, how do I align axes with and without summation?",
+            "url": "https://stackoverflow.com/questions/39961210/in-multi-dimensional-array-products-how-do-i-align-axes-with-and-without-summat"
+        },
+        {
+            "rank": 35,
+            "snippet": "I'm trying to compute the cross-products of many 3x1 vector pairs as fast as possible. This\nn = 10000\na = np.random.rand(n, 3)\nb = np.random.rand(n, 3)\nnumpy.cross(a, b)\ngives the correct answer, ...",
+            "timestamp": 1516773912,
+            "title": "cross products with einsums",
+            "url": "https://stackoverflow.com/questions/39662540/cross-products-with-einsums"
+        },
+        {
+            "rank": 36,
+            "snippet": "Looking to make the this calculation as quickly as possible. I have X as n x m numpy array. I want to define Y to be the following:\n\nY_11 = 1 / (exp(X_11-X_11) + exp(X_11-X_12) + ... exp(X_11 - X_1N) )...",
+            "timestamp": 1516773912,
+            "title": "Calculation/manipulation of numpy array",
+            "url": "https://stackoverflow.com/questions/39578974/calculation-manipulation-of-numpy-array"
+        },
+        {
+            "rank": 37,
+            "snippet": "I am trying to vectorize the following triple product operation on an N x N array called p below:\n\nfor j in range(len(p)):\n    for k in range(len(p)):\n        for l in range(len(p)):\n            h[j, ...",
+            "timestamp": 1516773912,
+            "title": "vectorize NumPy triple product on 2D array",
+            "url": "https://stackoverflow.com/questions/38427615/vectorize-numpy-triple-product-on-2d-array"
+        },
+        {
+            "rank": 38,
+            "snippet": "I have two n-by-k-by-3 arrays a and b, e.g.,\nimport numpy as np\n\na = np.array([\n    [\n        [1, 2, 3],\n        [3, 4, 5]\n    ],\n    [\n        [4, 2, 4],\n        [1, 4, 5]\n    ]\n    ])\nb = np.array([...",
+            "timestamp": 1516773912,
+            "title": "numpy einsum: nested dot products",
+            "url": "https://stackoverflow.com/questions/38413913/numpy-einsum-nested-dot-products"
+        },
+        {
+            "rank": 39,
+            "snippet": "I am using np.einsum to multiply probability tables like:\n\nnp.einsum('ijk,jklm-&gt;ijklm', A, B)\nThe issue is that I am dealing with more than 26 random variables (axes) overall, so if I assign each ...",
+            "timestamp": 1516773912,
+            "title": "Can I use more than 26 letters in `numpy.einsum`?",
+            "url": "https://stackoverflow.com/questions/37794245/can-i-use-more-than-26-letters-in-numpy-einsum"
+        },
+        {
+            "rank": 40,
+            "snippet": "Can someone please explain how broadcasting (ellipsis) works in the numpy.einsum() function?\n\nSome examples to show how and when it can be used would be greatly appreciated.\n\nI've checked the ...",
+            "timestamp": 1516773912,
+            "title": "Numpy einsum broadcasting",
+            "url": "https://stackoverflow.com/questions/37714462/numpy-einsum-broadcasting"
+        },
+        {
+            "rank": 41,
+            "snippet": "Ok, I know how to transpose a matrix, with for instance:\n\nA = np.arange(25).reshape(5, 5)\nprint A\narray([[ 0,  1,  2,  3,  4],\n   [ 5,  6,  7,  8,  9],\n   [10, 11, 12, 13, 14],\n   [15, 16, 17, 18, 19],...",
+            "timestamp": 1516773912,
+            "title": "Is it possible to use einsum to transpose everything?",
+            "url": "https://stackoverflow.com/questions/36840299/is-it-possible-to-use-einsum-to-transpose-everything"
+        },
+        {
+            "rank": 42,
+            "snippet": "I'm using numpy einsum to calculate the dot products of an array of column vectors pts, of shape (3,N), with itself, resulting on a matrix dotps, of shape (N,N), with all the dot products. This is the ...",
+            "timestamp": 1516773912,
+            "title": "Processing upper triangular elements only with NumPy einsum",
+            "url": "https://stackoverflow.com/questions/36599726/processing-upper-triangular-elements-only-with-numpy-einsum"
+        },
+        {
+            "rank": 43,
+            "snippet": "The equation is\n\n$C'_{ijkl} = Q_{im} Q_{jn} C_{mnop} (Q^{-1})_{ok} (Q^{-1})_{pl}$\nI was able to use \n\nnp.einsum('im,jn,mnop,ok,pl', Q, Q, C, Q_inv, Q_inv)\nto do the job, and also expect\n\nnp....",
+            "timestamp": 1516773912,
+            "title": "Perform a coordinate transformation of a 4th-order tensor with np.einsum and np.tensordot",
+            "url": "https://stackoverflow.com/questions/35776722/perform-a-coordinate-transformation-of-a-4th-order-tensor-with-np-einsum-and-np"
+        },
+        {
+            "rank": 44,
+            "snippet": "I have read through the einsum manual and ajcr's basic introduction\n\nI have zero experience with einstein summation in a non-coding context, although I have tried to remedy that with some internet ...",
+            "timestamp": 1516773912,
+            "title": "summing outer product of multiple vectors in einsum",
+            "url": "https://stackoverflow.com/questions/35549082/summing-outer-product-of-multiple-vectors-in-einsum"
+        },
+        {
+            "rank": 45,
+            "snippet": "I have written a numpy program which is very time consuming. After profiling it, I found that most of the time is spent in numpy.einsum. \n\nAlthough numpy is a wrapper of LAPACK or BLAS, I don't know ...",
+            "timestamp": 1516773912,
+            "title": "Is numpy.einsum efficient compared to fortran or C?",
+            "url": "https://stackoverflow.com/questions/35500925/is-numpy-einsum-efficient-compared-to-fortran-or-c"
+        },
+        {
+            "rank": 46,
+            "snippet": "I have a matrix A of shape (n, n) and another matrix b of shape (p, n). I need to get a matrix C such that \n\nC[i] = (A * b[i, np.newaxis, :]) * b[i, :, np.newaxis]\nI'm currently doing that by doing ...",
+            "timestamp": 1516773912,
+            "title": "Using einsum without explicit replication",
+            "url": "https://stackoverflow.com/questions/34918294/using-einsum-without-explicit-replication"
+        },
+        {
+            "rank": 47,
+            "snippet": "I have the following 3rd order tensors. Both tensors matrices the first tensor containing 100 10x9 matrices and the second containing 100 3x10 matrices (which I have just filled with ones for this ...",
+            "timestamp": 1516773912,
+            "title": "Multiplying tensors containing images in numpy",
+            "url": "https://stackoverflow.com/questions/34521845/multiplying-tensors-containing-images-in-numpy"
+        },
+        {
+            "rank": 48,
+            "snippet": "I have two 3dim numpy matrices and I want to do a dot product according to one axis without using a loop in theano. a numpy solution with sample data would be like:\n\na=[ [[ 0, 0, 1, 1, 0,  0,  0,  0,  ...",
+            "timestamp": 1516773912,
+            "title": "Theano version of a numpy einsum for two 3dim matrices",
+            "url": "https://stackoverflow.com/questions/34005271/theano-version-of-a-numpy-einsum-for-two-3dim-matrices"
+        },
+        {
+            "rank": 49,
+            "snippet": "I'm trying to use numpy.einsum to simplify a loop I have in my code.\n\nCurrently, my code looks something like this:\n\nk = 100 \nm = 50\nn = 10\nA = np.arange(k*m*n).reshape(k, m, n)\nB = np.arange(m*m)....",
+            "timestamp": 1516773912,
+            "title": "Simplifying double einsum",
+            "url": "https://stackoverflow.com/questions/33399981/simplifying-double-einsum"
+        },
+        {
+            "rank": 50,
+            "snippet": "For example,\n\nA = np.arange(24).reshape((2, 3, 4))\nprint np.einsum('ijk', A)\nthis is still A with no problem.\n\nBut if I do print np.einsum('kij', A) the shape is (3, 4, 2). Shouldn't it be (4, 2, 3)?\n...",
+            "timestamp": 1516773912,
+            "title": "How to understand the result of this np.einsum('kij',A)?",
+            "url": "https://stackoverflow.com/questions/33231928/how-to-understand-the-result-of-this-np-einsumkij-a"
+        }
+    ],
+    "timestamp": 1516773912,
+    "url": "https://stackoverflow.com/questions/tagged/numpy-einsum"
+}

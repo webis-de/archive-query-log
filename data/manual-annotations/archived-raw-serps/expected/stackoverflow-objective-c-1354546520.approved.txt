@@ -1,0 +1,115 @@
+{
+    "interpreted_query": "[objective-c]",
+    "offset": null,
+    "page": null,
+    "query": "objective-c",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "I mixed Cocoa, GLUT and OpenGL frameworks to draw a teapot.\nI usually do this in plain C but I need to mix up Cocoa buttons and stuffs with OpenGL, this is the corrispettive C code:  \n\n#import ...",
+            "timestamp": 1354546520,
+            "title": "Cocoa and OpenGL teapot not drawn correctly",
+            "url": "http://stackoverflow.com/questions/13686679/cocoa-and-opengl-teapot-not-drawn-correctly"
+        },
+        {
+            "rank": 2,
+            "snippet": "I need an method to knows when user change the orientation...\n\nI have tried \n\n-(BOOL) shouldAutorotate { //never called\n\nUIInterfaceOrientation toInterfaceOrientation = [[UIDevice currentDevice] ...",
+            "timestamp": 1354546520,
+            "title": "Interface Orientation check in iOS 6",
+            "url": "http://stackoverflow.com/questions/13686668/interface-orientation-check-in-ios-6"
+        },
+        {
+            "rank": 3,
+            "snippet": "I have to record an audio by mixing multiple audio file. For example, if three audio file are being played, so I have to mix the sound of all those playing audio and record it into a single audio ...",
+            "timestamp": 1354546520,
+            "title": "How to record an audio by mixing multiple audio in iphone?",
+            "url": "http://stackoverflow.com/questions/13686305/how-to-record-an-audio-by-mixing-multiple-audio-in-iphone"
+        },
+        {
+            "rank": 4,
+            "snippet": "I want to change the header text on a view depending on where it has come from (so depending on the parentViewController).\n\nIs there a way to say: if the parent view controller is viewControllerX?\n\n...",
+            "timestamp": 1354546520,
+            "title": "Compare ParentViewController",
+            "url": "http://stackoverflow.com/questions/13686105/compare-parentviewcontroller"
+        },
+        {
+            "rank": 5,
+            "snippet": "I uploaded my app on apple store two month ago.\n\nI developed new version the app. I changed build and version field on summary. When I run the application on my device, my new database doesn't load. ...",
+            "timestamp": 1354546520,
+            "title": "upload my app new version",
+            "url": "http://stackoverflow.com/questions/13686097/upload-my-app-new-version"
+        },
+        {
+            "rank": 6,
+            "snippet": "// ActivityOverlay.m //\n\noverlayAIV = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:..\n[overlayAIV setCenter:CGPointMake(self.center.x, self.frame.size.height-28.5)];\n[self ...",
+            "timestamp": 1354546520,
+            "title": "UIActivityOverlayView initializes with random origin",
+            "url": "http://stackoverflow.com/questions/13686056/uiactivityoverlayview-initializes-with-random-origin"
+        },
+        {
+            "rank": 7,
+            "snippet": "I have a problem here. My app saves some objects into a SQLite database and that database is the source for my UITableView. Everything works fine, except if a add a new object to my database at ...",
+            "timestamp": 1354546520,
+            "title": "Reload UITableView properly",
+            "url": "http://stackoverflow.com/questions/13685745/reload-uitableview-properly"
+        },
+        {
+            "rank": 8,
+            "snippet": "I'm little confused with memory leaking - when I have to release object, and when it will be released automatically in iOS, so please help me understood using following code.\nI have one method with ...",
+            "timestamp": 1354546520,
+            "title": "Do I have to release object in Objective-C",
+            "url": "http://stackoverflow.com/questions/13685635/do-i-have-to-release-object-in-objective-c"
+        },
+        {
+            "rank": 9,
+            "snippet": "I am trying to make a virtual scanner app that kind of looks like this\n\nhttps://itunes.apple.com/us/app/tinyscan-pro-pdf-scanner/id556500145?mt=8\n\nI will cut down the chase and ask exactly what I do ...",
+            "timestamp": 1354546520,
+            "title": "Virtual Scanner questions",
+            "url": "http://stackoverflow.com/questions/13685598/virtual-scanner-questions"
+        },
+        {
+            "rank": 10,
+            "snippet": "Is there any way to get notified when the desktop image changes? The simplest way would be through notifications but I haven't found any for this in particular.",
+            "timestamp": 1354546520,
+            "title": "Get notified when desktop image changes?",
+            "url": "http://stackoverflow.com/questions/13685534/get-notified-when-desktop-image-changes"
+        },
+        {
+            "rank": 11,
+            "snippet": "Newbie questions.\n\nI have UICollectionView with cells created in storyboard. I customized cell by adding to it UIImage. By tapping at image I want to show image preview (same image of bigger size). I ...",
+            "timestamp": 1354546520,
+            "title": "UIImage preview by tapping on collectionViewCell",
+            "url": "http://stackoverflow.com/questions/13685396/uiimage-preview-by-tapping-on-collectionviewcell"
+        },
+        {
+            "rank": 12,
+            "snippet": "I want to add Dissolve Filter effect on UIImage in my iPhone APP.\nhow can i do this.\n\nThanx",
+            "timestamp": 1354546520,
+            "title": "How to implement Disslove Filter effect on UIImage in iPhone SDK",
+            "url": "http://stackoverflow.com/questions/13685220/how-to-implement-disslove-filter-effect-on-uiimage-in-iphone-sdk"
+        },
+        {
+            "rank": 13,
+            "snippet": "I have an UITableView with 30 rows. I would like each row to have a date, a title and a name.\nRight now it's like this:\n\nOct 29 name title\n\n\nBut the names and titles change so I have something like ...",
+            "timestamp": 1354546520,
+            "title": "How to get columns in UITableView",
+            "url": "http://stackoverflow.com/questions/13684979/how-to-get-columns-in-uitableview"
+        },
+        {
+            "rank": 14,
+            "snippet": "In my splitview application i present a login dialog when no shared secret is stored inside the application settings. This requires the application to stop rotation for the time this dialog is ...",
+            "timestamp": 1354546520,
+            "title": "how to control interface orientation in splitview",
+            "url": "http://stackoverflow.com/questions/13684909/how-to-control-interface-orientation-in-splitview"
+        },
+        {
+            "rank": 15,
+            "snippet": "I'm trying to make an array of views to be scrollable with UIPageControl each of them containing UIImageView &amp; UIButton. The issue is that I have the view from the first viewController showing ...",
+            "timestamp": 1354546520,
+            "title": "Adding UIButtons in UIViewControllers inside UIScrollView controlled with UIPageControl",
+            "url": "http://stackoverflow.com/questions/13684906/adding-uibuttons-in-uiviewcontrollers-inside-uiscrollview-controlled-with-uipage"
+        }
+    ],
+    "timestamp": 1354546520,
+    "url": "http://stackoverflow.com/questions/tagged/objective-c"
+}

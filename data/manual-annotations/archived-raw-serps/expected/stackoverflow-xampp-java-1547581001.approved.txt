@@ -1,0 +1,360 @@
+{
+    "interpreted_query": "[xampp] [java]",
+    "offset": null,
+    "page": null,
+    "query": "xampp+java",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "static final String DATABASE_URL=\"jdbc:mysql://localhost/ims_db\";\npublic static void main(String[] args) {\n    Connection c = null;\n    try {\n        c = DriverManager.getConnection(DATABASE_URL,\"root\"...",
+            "timestamp": 1547581001,
+            "title": "i am trying to add record in mySQL database with XAMPP from java but its not adding any row/record",
+            "url": "https://stackoverflow.com/questions/54147754/i-am-trying-to-add-record-in-mysql-database-with-xampp-from-java-but-its-not-add"
+        },
+        {
+            "rank": 2,
+            "snippet": "So I have been trying to make an authentication feature on my app where the users can login. I am trying to send JSON objects to my Django REST API so tha my users can get tokens. \n\nHowever, whenever ...",
+            "timestamp": 1547581001,
+            "title": "Android studio - Localhost connection File not found?",
+            "url": "https://stackoverflow.com/questions/53954843/android-studio-localhost-connection-file-not-found"
+        },
+        {
+            "rank": 3,
+            "snippet": "I have Netbeans V8.2 with the latest version of Xampp installed on my mac. Successfully installed Xampp and created a database and also added My Sql connecter 8.0 to Netbeans but when I try to connect ...",
+            "timestamp": 1547581001,
+            "title": "I am not able to connect Netbeans to my Xampp(My Sql) Server. When I try to do so it shows \"Communication failure error",
+            "url": "https://stackoverflow.com/questions/53839225/i-am-not-able-to-connect-netbeans-to-my-xamppmy-sql-server-when-i-try-to-do-s"
+        },
+        {
+            "rank": 4,
+            "snippet": "This is my html code:\n\n    &lt;!DOCTYPE html&gt;\n    &lt;html&gt;\n    &lt;head&gt;\n    &lt;title&gt;Register&lt;/title&gt;\n    &lt;h3 align=\"center\"&gt;Registration&lt;/h3&gt;\n    &lt;meta charset=\"...",
+            "timestamp": 1547581001,
+            "title": "When insert all input and hit submit, I get a blank page",
+            "url": "https://stackoverflow.com/questions/53824898/when-insert-all-input-and-hit-submit-i-get-a-blank-page"
+        },
+        {
+            "rank": 5,
+            "snippet": "I am having problems connecting a java program using JDBC to my XAMPP mySql Database on localhost. This is my Java Code:\n\nimport java.sql.Connection;\nimport java.sql.SQLException;\nimport java.sql....",
+            "timestamp": 1547581001,
+            "title": "JDBC won't connect to XAMPP [duplicate]",
+            "url": "https://stackoverflow.com/questions/53791864/jdbc-wont-connect-to-xampp"
+        },
+        {
+            "rank": 6,
+            "snippet": "I'm trying to make my local XAMPP server to be automaticly traced back into the devices running on the same network for example under a name like \"http://webapp\".\nThese devices need to access an SQL ...",
+            "timestamp": 1547581001,
+            "title": "How to make a local XAMPP server traceable from the devices connected in same network",
+            "url": "https://stackoverflow.com/questions/53422811/how-to-make-a-local-xampp-server-traceable-from-the-devices-connected-in-same-ne"
+        },
+        {
+            "rank": 7,
+            "snippet": "My log in form only requires password in order to log in. When I type incorrect strings, it works but when i type space or leave it, it logs me in. what is the cause of this problem? Im also using ...",
+            "timestamp": 1547581001,
+            "title": "Why does my log in form connect with empty password field?",
+            "url": "https://stackoverflow.com/questions/53324194/why-does-my-log-in-form-connect-with-empty-password-field"
+        },
+        {
+            "rank": 8,
+            "snippet": "I have a very basic register script in Android but Android wont connect to my localhost phpmyadmin database (XAMPP).\n\nI was told it could be my XAMPP settings, or I'm using the wrong URL, or I need a ...",
+            "timestamp": 1547581001,
+            "title": "Android doesn't connect to local host or computer IP address",
+            "url": "https://stackoverflow.com/questions/53147346/android-doesnt-connect-to-local-host-or-computer-ip-address"
+        },
+        {
+            "rank": 9,
+            "snippet": "I have script here for a very basic register app. It doesn't seem to connect to the XAMPP localhost php folder. It throws this \"com.android.volley.NoConnectionError: java.io.EOFException.\"\n\nI dont ...",
+            "timestamp": 1547581001,
+            "title": "android studio com.android.volley.NoConnectionError: java.io.EOFException to localhost",
+            "url": "https://stackoverflow.com/questions/53138028/android-studio-com-android-volley-noconnectionerror-java-io-eofexception-to-loc"
+        },
+        {
+            "rank": 10,
+            "snippet": "I have a database called 'airplane' inside which there is a table named timetable . The timeatable table has a column fromcity of text type\n\n                    Connection conn0=null;\n                 ...",
+            "timestamp": 1547581001,
+            "title": "Java JDBC program throwing SQL syntax error when fetching particular rows from a table",
+            "url": "https://stackoverflow.com/questions/52920077/java-jdbc-program-throwing-sql-syntax-error-when-fetching-particular-rows-from-a"
+        },
+        {
+            "rank": 11,
+            "snippet": "I have a database called 'airplane' inside which there is a table named booking.\nThe booking table has the columns phone(int type) ,name(text type),address(text type),city(text type) destination(text ...",
+            "timestamp": 1547581001,
+            "title": "Java JDBC throwing an error for an SQL query asking to return details from only particular rows",
+            "url": "https://stackoverflow.com/questions/52912962/java-jdbc-throwing-an-error-for-an-sql-query-asking-to-return-details-from-only"
+        },
+        {
+            "rank": 12,
+            "snippet": "In my java programs , I am trying to do insertion ooperation in MySQL table using prepared statements .\n\nHere it my SQL query:\n\nPreparedStatement stmt = null;\n\nString sql=\"INSERT INTO registration\"+\"(...",
+            "timestamp": 1547581001,
+            "title": "SQL query in my JAVA program done using Prepared statement throwing error despite being correct [duplicate]",
+            "url": "https://stackoverflow.com/questions/52884867/sql-query-in-my-java-program-done-using-prepared-statement-throwing-error-despit"
+        },
+        {
+            "rank": 13,
+            "snippet": "This is the SQL query I am making :\n\nstmt = conn.createStatement();\n        String sql=\"INSERT INTO registration(phone,name,address,city,destination,date) VALUE (\"+phone[i]+\",'\"+name[i]+\"','\"+address[...",
+            "timestamp": 1547581001,
+            "title": "Java Array elements not getting inserted into MySQL table despite showing no error",
+            "url": "https://stackoverflow.com/questions/52879318/java-array-elements-not-getting-inserted-into-mysql-table-despite-showing-no-err"
+        },
+        {
+            "rank": 14,
+            "snippet": "I am taking values from the users such as : name , address, phone number, city , destination , date\n\nEach of these values is stored in their respective array . Before moving into the next iteration of ...",
+            "timestamp": 1547581001,
+            "title": "Java Array element mentioned in MySQL insertion query not getting inserted into table .Instead an error is being thrown",
+            "url": "https://stackoverflow.com/questions/52877677/java-array-element-mentioned-in-mysql-insertion-query-not-getting-inserted-into"
+        },
+        {
+            "rank": 15,
+            "snippet": "I have made a Java project where I am trying to make a Login page . My project has the following programs in \n* LoginController.c\n* RegisterController.c\n* login.fxml\n* register.fxml\n\nIn order for user ...",
+            "timestamp": 1547581001,
+            "title": "SQL Query not returning valid answer despite using proper SQL syntax",
+            "url": "https://stackoverflow.com/questions/52866925/sql-query-not-returning-valid-answer-despite-using-proper-sql-syntax"
+        },
+        {
+            "rank": 16,
+            "snippet": "This is the code I am tinkering with\nhttps://github.com/0xTanvir/uiuStudentRecordSystem\n\nI have linked the SQL database to the JavaFx program as told in the ReadMe yet I am not able to move beyond the ...",
+            "timestamp": 1547581001,
+            "title": "Error being thrown When I try to Login despite linking the SQL database to my JavaFx Program",
+            "url": "https://stackoverflow.com/questions/52850692/error-being-thrown-when-i-try-to-login-despite-linking-the-sql-database-to-my-ja"
+        },
+        {
+            "rank": 17,
+            "snippet": "So I have this Java project that is connected to mysql database and xampp as its localhost. At first I had an error about NULL EXCEPTION, then I added the code:\n\nif (con!=null) {\n            return;\n  ...",
+            "timestamp": 1547581001,
+            "title": "Java mysql xampp connection error: no data displayed from sql even though there was no error",
+            "url": "https://stackoverflow.com/questions/52406970/java-mysql-xampp-connection-error-no-data-displayed-from-sql-even-though-there"
+        },
+        {
+            "rank": 18,
+            "snippet": "public class DBDemo {\n\n    public static void main(String[] args) throws ClassNotFoundException, SQLException {\n        Class.forName(\"com.mysql.jdbc.Driver\");\n        Connection con = DriverManager....",
+            "timestamp": 1547581001,
+            "title": "MYSQL JDBC Connection refused in MAC [duplicate]",
+            "url": "https://stackoverflow.com/questions/52330268/mysql-jdbc-connection-refused-in-mac"
+        },
+        {
+            "rank": 19,
+            "snippet": "I'm first time using sql and i took connection error.\n\nI'm using java spring boot, xampp(for server) and MySQL workbrench.\n\nHave schema \"myappdb\", and users table in it.\n\nmy application.properties\n\n...",
+            "timestamp": 1547581001,
+            "title": "Spring Boot (Access denied for user ''@'localhost' to database 'myappdb')",
+            "url": "https://stackoverflow.com/questions/52200013/spring-boot-access-denied-for-user-localhost-to-database-myappdb"
+        },
+        {
+            "rank": 20,
+            "snippet": "I'm new to JSP. I'm trying to do a basic program of JSP &amp; MySQL connectivity using sublime and xwampp. On running the login.jsp page, I get the following:\nenter link description here",
+            "timestamp": 1547581001,
+            "title": "Class.forName(\u201ccom.mysql.jdbc.Driver\u201d) error jsp [duplicate]",
+            "url": "https://stackoverflow.com/questions/52113288/class-fornamecom-mysql-jdbc-driver-error-jsp"
+        },
+        {
+            "rank": 21,
+            "snippet": "I installed Xampp on my windows, and tried to install Tomcat on Xampp, but I keep getting the error on my Xampp control panel:\n  Service was NOT (uninstalled)!\nI found some similar posts - Can't ...",
+            "timestamp": 1547581001,
+            "title": "Tomcat unable to install error: Service was not (uninstalled)",
+            "url": "https://stackoverflow.com/questions/51805649/tomcat-unable-to-install-error-service-was-not-uninstalled"
+        },
+        {
+            "rank": 22,
+            "snippet": "I am making a Java app with a local database in localhost. Now, I want to make an executable program from my .jar but I want the user that will use my app, no need to open the xampp and turn on the ...",
+            "timestamp": 1547581001,
+            "title": "how to run another programm before run .jar",
+            "url": "https://stackoverflow.com/questions/51466318/how-to-run-another-programm-before-run-jar"
+        },
+        {
+            "rank": 23,
+            "snippet": "How can I ignore auto increment of ID when I insert data in Java?\n\n    Class.forName(\"com.mysql.jdbc.Driver\");\n    con = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/test\", \"root\", \"\");\n   ...",
+            "timestamp": 1547581001,
+            "title": "Can I ignore the auto increment id when I enter the data into database using java?",
+            "url": "https://stackoverflow.com/questions/51336068/can-i-ignore-the-auto-increment-id-when-i-enter-the-data-into-database-using-jav"
+        },
+        {
+            "rank": 24,
+            "snippet": "import java.sql.Connection; \n import java.sql.DriverManager; \n import javax.swing.JOptionPane;  \n  public class Database {      \n      public static Connection con = null;      \n      public static ...",
+            "timestamp": 1547581001,
+            "title": "How can I share my database using IP Address?",
+            "url": "https://stackoverflow.com/questions/51322779/how-can-i-share-my-database-using-ip-address"
+        },
+        {
+            "rank": 25,
+            "snippet": "Index.jsp:\n\n&lt;form action=\"stu_app_serv\" method=\"post\"&gt;\n                    &lt;table class=\"table\"&gt;                    \n                        &lt;%\n                            try {\n        ...",
+            "timestamp": 1547581001,
+            "title": "java.lang.NumberFormatException: null Error in servlet",
+            "url": "https://stackoverflow.com/questions/51114944/java-lang-numberformatexception-null-error-in-servlet"
+        },
+        {
+            "rank": 26,
+            "snippet": "I have configured apache for SSL like this-    \n\n&lt;VirtualHost *:443&gt;\n    ServerAdmin root@mysite.com\n    ServerName mysite.com\n    ServerAlias mysite.com  \n    ServerAlias www.mysite.com\n    ...",
+            "timestamp": 1547581001,
+            "title": "XAMPP SSL not working outside localhost",
+            "url": "https://stackoverflow.com/questions/51099773/xampp-ssl-not-working-outside-localhost"
+        },
+        {
+            "rank": 27,
+            "snippet": "This code is part of the app I am working on.This app was built on eclipse on lower version of android and I am now making it compatible for higher version of android(8) and I am using android studio ...",
+            "timestamp": 1547581001,
+            "title": "JNI error occured android studio",
+            "url": "https://stackoverflow.com/questions/50656242/jni-error-occured-android-studio"
+        },
+        {
+            "rank": 28,
+            "snippet": "The proccess of importing a .sql file from phpMyAdmin is easy. However even though I everything the right way and get a \"Successful import\" message, when I try to run my project in NetBeans I am ...",
+            "timestamp": 1547581001,
+            "title": "How to link .sql file with my netbeans project with XAMPP?",
+            "url": "https://stackoverflow.com/questions/50638859/how-to-link-sql-file-with-my-netbeans-project-with-xampp"
+        },
+        {
+            "rank": 29,
+            "snippet": "I want to create a connection between my Login Activity (email and password) and my local database (Xampp server) so I wrote this code.\n\nThe problem is that the application is not showing any errors ...",
+            "timestamp": 1547581001,
+            "title": "My application doesn't get inside the \u201cdoInBackground\u201d block and it stops in the emulator",
+            "url": "https://stackoverflow.com/questions/50538864/my-application-doesnt-get-inside-the-doinbackground-block-and-it-stops-in-the"
+        },
+        {
+            "rank": 30,
+            "snippet": "So I have this Java Server-Client Database program where I can insert, search and update the values.\n\nmy problem is when I search a value using the primary key (carId in my case)\nit retrieves all the ...",
+            "timestamp": 1547581001,
+            "title": "retrieving checkbox value from xamppp database and JDBC",
+            "url": "https://stackoverflow.com/questions/50168859/retrieving-checkbox-value-from-xamppp-database-and-jdbc"
+        },
+        {
+            "rank": 31,
+            "snippet": "Here is a method to get test cases from a test plan, I'm getting details and all test cases but I'm getting test suite id as \"null\". How to get test suite id? and what are the parameters to be passed ...",
+            "timestamp": 1547581001,
+            "title": "How to get testsuite id using getTestCasesForTestPlan method of testlink java api",
+            "url": "https://stackoverflow.com/questions/49892218/how-to-get-testsuite-id-using-gettestcasesfortestplan-method-of-testlink-java-ap"
+        },
+        {
+            "rank": 32,
+            "snippet": "I am storing a  picture with some information in the database. I am taking an image. It is not inserting data, showing that int.java.lang.stringlength() invoke virtual method. It was working the last ...",
+            "timestamp": 1547581001,
+            "title": "Code for inserting data into the database not working",
+            "url": "https://stackoverflow.com/questions/49478110/code-for-inserting-data-into-the-database-not-working"
+        },
+        {
+            "rank": 33,
+            "snippet": "I have already read and tried a lot posts on SO, but no one has solved this issue.\n\nI set to enviroment variables for JDK and JRE release. I have add the same values within both sections \"user's ...",
+            "timestamp": 1547581001,
+            "title": "Tomcat upon XAMPP doesn't launch for JAVA_HOME",
+            "url": "https://stackoverflow.com/questions/49287667/tomcat-upon-xampp-doesnt-launch-for-java-home"
+        },
+        {
+            "rank": 34,
+            "snippet": "My Entity:\n\npackage local.demo.models;\n\nimport java.io.Serializable;\n\nimport javax.persistence.Entity;\nimport javax.persistence.GeneratedValue;\nimport javax.persistence.GenerationType;\nimport javax....",
+            "timestamp": 1547581001,
+            "title": "How to pass the code (id) by my viwer using the thymeleaf and spring mvc for the controller?",
+            "url": "https://stackoverflow.com/questions/49285274/how-to-pass-the-code-id-by-my-viwer-using-the-thymeleaf-and-spring-mvc-for-the"
+        },
+        {
+            "rank": 35,
+            "snippet": "I'm trying to call jar file from a php script using XAMPP in windows. Like this \n\n    echo shell_exec(\"java -jar printhello.jar $hello);\nbut it's not printing anything on browser. From XAMPP shell i ...",
+            "timestamp": 1547581001,
+            "title": "How to execute a jar file in Xampp through php",
+            "url": "https://stackoverflow.com/questions/49012632/how-to-execute-a-jar-file-in-xampp-through-php"
+        },
+        {
+            "rank": 36,
+            "snippet": "here is my sale table in Database\nResultSet rs = s.executeQuery(\"SELECT TotAmount FROM (SELECT DISTINCT SONumber From sale \");\nI need to get Total Amount of TotAmount column for DISTINCT SONumber",
+            "timestamp": 1547581001,
+            "title": "Every derived table must have its own alias. How to add alias to sql code",
+            "url": "https://stackoverflow.com/questions/48812996/every-derived-table-must-have-its-own-alias-how-to-add-alias-to-sql-code"
+        },
+        {
+            "rank": 37,
+            "snippet": "I'm writing an app, which connects to the database, and sends a basic query. Till now I did all my tests on Android Studio Emulator and it worked fine, until I tried it on my phone, which can't ...",
+            "timestamp": 1547581001,
+            "title": "Android Studio Connection with the database on physical device via XAMPP",
+            "url": "https://stackoverflow.com/questions/48497602/android-studio-connection-with-the-database-on-physical-device-via-xampp"
+        },
+        {
+            "rank": 38,
+            "snippet": "So I am still learning programming, I am creating a simple application that can backup a database but the problem is when I click the button for backup, nothing happens, it does not even display the \"...",
+            "timestamp": 1547581001,
+            "title": "Backup a mysql [xampp] database in java",
+            "url": "https://stackoverflow.com/questions/47699781/backup-a-mysql-xampp-database-in-java"
+        },
+        {
+            "rank": 39,
+            "snippet": "When i redirect android app to my local xampp server i am getting expected output from server. like below\nProblem is when i redirect my app to a real ip or a domain server problem occurs. Here is my ...",
+            "timestamp": 1547581001,
+            "title": "How to solve server response issue for android apps",
+            "url": "https://stackoverflow.com/questions/47357775/how-to-solve-server-response-issue-for-android-apps"
+        },
+        {
+            "rank": 40,
+            "snippet": "i've tried several solutions both i found on stackoverflow/other forums/articles but none of them working.. \n\nBelow are solutions i've tried with xampp-tomcat \"return code 1\" problem:\n\n - Run as ...",
+            "timestamp": 1547581001,
+            "title": "xampp tomcat won't start, tried several solutions didn't work well",
+            "url": "https://stackoverflow.com/questions/46135317/xampp-tomcat-wont-start-tried-several-solutions-didnt-work-well"
+        },
+        {
+            "rank": 41,
+            "snippet": "Program and database connection was made in Netbeans, and I can access my database using localhost/phpMyadmin/.\n\nSince I need to put the program in a disc for a project, I made an installer for the ...",
+            "timestamp": 1547581001,
+            "title": "Will my database connection (connected using Netbeans and XAMPP) work on a different pc?",
+            "url": "https://stackoverflow.com/questions/46056049/will-my-database-connection-connected-using-netbeans-and-xampp-work-on-a-diffe"
+        },
+        {
+            "rank": 42,
+            "snippet": "I am making a website which requires a java program to run on the server (it is a ubuntu server). I want to achieve this by executing it from php. I tried 'shell_exec' and 'exec', but they both don't ...",
+            "timestamp": 1547581001,
+            "title": "How to open terminal window and execute command in php?",
+            "url": "https://stackoverflow.com/questions/45885238/how-to-open-terminal-window-and-execute-command-in-php"
+        },
+        {
+            "rank": 43,
+            "snippet": "I installed XAMPP and have trouble starting tomcat. Apache, MySQL, FileZilla start without problems when I click the \"Start\" button, while Tomcat writes Attempting to start Tomcat service... and seems ...",
+            "timestamp": 1547581001,
+            "title": "XAMPP: tomcat doesn't start from control panel, starts only from bat",
+            "url": "https://stackoverflow.com/questions/45246834/xampp-tomcat-doesnt-start-from-control-panel-starts-only-from-bat"
+        },
+        {
+            "rank": 44,
+            "snippet": "Below is the code I am trying to use restore a .sql dump to a MySQL database on a local XAMPP server. I just can't see what I am doing wrong. Can anyone help?\n\ntry {\n        String dbName = \"Database\";...",
+            "timestamp": 1547581001,
+            "title": "Restoring MySQL .sql dump not working when trying to local XAMPP MySQL server",
+            "url": "https://stackoverflow.com/questions/45129151/restoring-mysql-sql-dump-not-working-when-trying-to-local-xampp-mysql-server"
+        },
+        {
+            "rank": 45,
+            "snippet": "I have code:\n\nprivate void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {\n    // TODO add your handling code here:\n\n    try {\n        con = Connect.ConnectDB();\n        if (PatientID.getText(...",
+            "timestamp": 1547581001,
+            "title": "Error My SQL in Java Language (Netbeans)",
+            "url": "https://stackoverflow.com/questions/44345613/error-my-sql-in-java-language-netbeans"
+        },
+        {
+            "rank": 46,
+            "snippet": "I would like to ask why the data of my database didn't show in Jtable. I think, I follow properly the tutorial I watched.\n\npublic ArrayList&lt;helpdesk&gt; gethelpdeskList()             \n{\n     ...",
+            "timestamp": 1547581001,
+            "title": "How to view data from xampp to jtable in Java Netbeans",
+            "url": "https://stackoverflow.com/questions/44225591/how-to-view-data-from-xampp-to-jtable-in-java-netbeans"
+        },
+        {
+            "rank": 47,
+            "snippet": "I have dilemma with Java &amp; Laravel MySQL setup.\n  TLDR; How do I setup Java &amp; Laravel Development Environment?\nCan Laravel be done using XAMPP?\n\nCan Java be done using XAMPP?\n\nIf you already ...",
+            "timestamp": 1547581001,
+            "title": "JavaFX &amp; Laravel | XAMPP or MySQL Workbench or both?",
+            "url": "https://stackoverflow.com/questions/44194758/javafx-laravel-xampp-or-mysql-workbench-or-both"
+        },
+        {
+            "rank": 48,
+            "snippet": "I've installed the latest versions of XAMPP. When I run the Control Panel and try to start services, while Apache and MySQL start successfully, I get problems with Tomcat. It can't be started using ...",
+            "timestamp": 1547581001,
+            "title": "Apache: Tomcat doesn't start automatically; can't be uninstall either",
+            "url": "https://stackoverflow.com/questions/44169560/apache-tomcat-doesnt-start-automatically-cant-be-uninstall-either"
+        },
+        {
+            "rank": 49,
+            "snippet": "Firstly, should it be a jar file or a Java file ... secondly, where to place the file exactly if I am using xampp... I found lots of example on exec, shell_exec..but nothing worked.. i tried both as a ...",
+            "timestamp": 1547581001,
+            "title": "How to run a java program in php xampp",
+            "url": "https://stackoverflow.com/questions/43846724/how-to-run-a-java-program-in-php-xampp"
+        },
+        {
+            "rank": 50,
+            "snippet": "I am using XAMPP server and Eclipse IDE for running a hibernate program. But I am getting the following error:\n  **Apr 21, 2017 12:46:38 PM org.hibernate.Version logVersion\n      INFO: HHH000412: ...",
+            "timestamp": 1547581001,
+            "title": "Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] for XAMPP and Eclipse IDE",
+            "url": "https://stackoverflow.com/questions/43536455/unable-to-create-requested-service-org-hibernate-engine-jdbc-env-spi-jdbcenviro"
+        }
+    ],
+    "timestamp": 1547581001,
+    "url": "https://stackoverflow.com/questions/tagged/xampp+java"
+}

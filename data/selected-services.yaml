@@ -2127,12 +2127,24 @@
   - url_pattern: ^https?://[^/]+/questions/tagged
     type: query_parameter
     parameter: page
-  - url_pattern: ^https?://[^/]+/search\?
-    type: query_parameter
-    parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/questions/tagged
+    type: html_selector
+    query_selector: form#search input[name="q"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/questions/tagged
+    type: html_selector
+    results_selector: div#questions div.s-post-summary--content
+    url_selector: a.s-link
+    title_selector: h3.s-post-summary--content-title
+    snippet_selector: div.s-post-summary--content-excerpt
+  - url_pattern: ^https?://[^/]+/questions/tagged
+    type: html_selector
+    results_selector: div#questions div.summary
+    url_selector: a.question-hyperlink
+    title_selector: h3
+    snippet_selector: div.excerpt
   focused_url_prefixes:
   - /search?
   - /questions/tagged
@@ -2438,8 +2450,26 @@
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/sogou\?
+    type: html_selector
+    query_selector: input#upquery
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: input#upquery
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/sogou\?
+    type: html_selector
+    results_selector: div.results div.rb, div.results div.vrwrap
+    url_selector: h3 a
+    title_selector: h3
+    snippet_selector: div.ft, div.strBox div.str_info, div.fz-mid
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div.results div.rb, div.results div.vrwrap
+    url_selector: h3 a
+    title_selector: h3
+    snippet_selector: div.ft, div.strBox div.str_info, div.fz-mid
   focused_url_prefixes:
   - /web?
   - /sogou?

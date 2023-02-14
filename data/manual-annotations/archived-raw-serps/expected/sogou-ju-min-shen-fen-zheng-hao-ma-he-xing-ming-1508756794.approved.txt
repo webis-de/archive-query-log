@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\u5c45\u6c11\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d",
+    "offset": null,
+    "page": null,
+    "query": "\u5c45\u6c11\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d</em>\uff0c\u8eab\u4efd\u8bc1\u53f7\u7801\u5927\u5168\uff0c\u8eab\u4efd\u8bc1\u4e22\u4e86\u600e\u4e48\u529e\uff0c\u8eab\u4efd\u8bc1\u5927\u5168\u3002 <em>\u5c45\u6c11\u8eab\u4efd\u8bc1\u53f7\u7801</em>\u6309\u7167\u300a\u516c\u6c11\u8eab\u4efd\u8bc1\u53f7\u7801\u300b\u56fd\u5bb6\u6807\u51c6\u7f16\u5236\uff0c\u8eab\u4efd\u8bc1\u53f7\u7801\u753118\u4f4d\u6570\u5b57\u7ec4\u6210\uff1a\u524d6\u4f4d\u4e3a\u884c\u653f\u533a\u5212\u5206...",
+            "timestamp": 1508756794,
+            "title": "<em>\u8eab\u4efd\u8bc1</em>_<em>\u8eab\u4efd\u8bc1\u53f7\u7801</em>\u5927\u5168\u3001\u53f7\u7801\u67e5\u8be2\u3001<em>\u53f7\u7801\u548c</em>\u771f\u5b9e<em>\u59d3\u540d</em>_911\u67e5\u8be2",
+            "url": "http://idcard.911cha.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1508756794,
+            "title": "<em>\u8eab\u4efd\u8bc1\u53f7\u7801</em>\u67e5\u8be2,<em>\u8eab\u4efd\u8bc1\u53f7\u7801</em>\u5f52\u5c5e\u5730\u67e5\u8be2,<em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c</em>\u771f\u5b9e<em>\u59d3\u540d</em>\u67e5\u8be2",
+            "url": "http://tool.webmasterhome.cn/idcard.asp"
+        },
+        {
+            "rank": 3,
+            "snippet": "\u8eab\u4efd\u8bc1\u53f7\u7801\u5927\u5168 \u6e38\u620f\u6ce8\u518c\u672a\u4f7f\u7528\uff0c\u8eab\u4efd\u8bc1\u5927\u5168\uff0c\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u771f\u5b9e\u59d3\u540d\uff0c\u8eab\u4efd\u8bc1\u53f7\uff0c\u8eab\u4efd\u8bc1\u53f7\u7801\u67e5\u8be2\uff0c\u8eab\u4efd\u8bc1\u53f7\u7801\uff0c\u8eab\u4efd\u8bc1\u67e5\u8be2\uff0c<em>\u5c45\u6c11\u8eab\u4efd\u8bc1</em>\u53f7\uff0c<em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d</em>\uff0c\u8eab\u4efd\u8bc1\u53f7\u7801\u5927...",
+            "timestamp": 1508756794,
+            "title": "<em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c</em>\u771f\u5b9e<em>\u59d3\u540d</em>_\u8eab\u4efd\u8bc1\u53f7\u5927\u5168_\u8eab\u4efd\u8bc1\u5927\u5168<em>\u548c\u59d3\u540d</em>_\u8eab\u4efd\u8bc1\u53f7\u7801",
+            "url": "http://sfz.8684.cn/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1508756794,
+            "title": "<em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d</em>_\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u771f\u5b9e\u59d3\u540d\u5927\u5168_\u8eab\u4efd\u8bc1\u53f7\u7801\u5927\u5168...",
+            "url": "http://sfz.ckd.cc/"
+        },
+        {
+            "rank": 5,
+            "snippet": "\u65f6\u5c1a  \u6b21 \u8eab\u4efd\u8bc1\u53f7\u5927\u5168 <em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d</em>\u67e5\u8be2 \u8eab\u4efd\u8bc1\u53f7\u5927\u5168 \u97e9\u9e64\u8f69 522723198102145095 \u51e4\u5723\u6770 522723198905216475 \u6bb7\u5efa\u529f 522723198905151077 \u8303\u4f1f\u797a ...",
+            "timestamp": 1508756794,
+            "title": "<em>\u8eab\u4efd\u8bc1</em>\u53f7\u5927\u5168 <em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d</em>\u67e5\u8be2_\u65f6\u5c1a\u5929\u5730",
+            "url": "http://td.qsgct999.cn/life/shishang/3427.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1508756794,
+            "title": "<em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c</em>\u771f\u5b9e<em>\u59d3\u540d</em>\u5927\u5168\u67e5\u8be2_\u641c\u72d7\u6307\u5357",
+            "url": "http://zhinan.sogou.com/guide/detail/?id=1610014933"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1508756794,
+            "title": "<em>\u5c45\u6c11\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d</em>_\u641c\u72d7\u77e5\u8bc6\uff08\u5168\u90e8\u7ea618806\u6761\u7ed3\u679c\uff09",
+            "url": "http://www.sogou.com/sogou?query=%E5%B1%85%E6%B0%91%E8%BA%AB%E4%BB%BD%E8%AF%81%E5%8F%B7%E7%A0%81%E5%92%8C%E5%A7%93%E5%90%8D&ie=utf8&pid=sogou-wsse-926c11cc055de9b8&interation=196636&jhdid=60d2f4fe0275d790-7b87d5c4474ee9b4-c9d91ecb5ca5510fbb2a8eaa5022339d"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1508756794,
+            "title": "\u67e5<em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d</em>\uff08\u53ea\u6709<em>\u540d\u5b57</em>,\u8981\u8eab\u4efd\u8bc1\u53f7\uff09_\u641c\u72d7\u95ee\u95ee",
+            "url": "http://wenwen.sogou.com/z/q654073495.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1508756794,
+            "title": "<em>\u8eab\u4efd\u8bc1</em>\u67e5\u8be2_<em>\u8eab\u4efd\u8bc1\u53f7\u7801</em>\u67e5\u8be2_\u8eab\u4efd\u8bc1\u53f7\u5927\u5168\u548c\u771f\u5b9e<em>\u59d3\u540d</em>_\u8eab\u4efd\u8bc1\u5f52\u5c5e\u5730...",
+            "url": "http://qq.ip138.com/idsearch/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1508756794,
+            "title": "<em>\u8eab\u4efd\u8bc1</em>\u53f7\u5927\u5168_<em>\u8eab\u4efd\u8bc1\u53f7\u7801\u548c\u59d3\u540d</em>_\u8eab\u4efd\u8bc1\u53f7\u7801\u67e5\u8be2\u7cfb\u7edf_2345\u7f51\u5740\u5bfc\u822a-...",
+            "url": "http://tools.2345.com/shenfenzheng.htm"
+        }
+    ],
+    "timestamp": 1508756794,
+    "url": "http://www.sogou.com/sogou?user_ip=207.241.229.48&sourceid=hint&bh=1&hintidx=11&query=%E5%B1%85%E6%B0%91%E8%BA%AB%E4%BB%BD%E8%AF%81%E5%8F%B7%E7%A0%81%E5%92%8C%E5%A7%93%E5%90%8D&pid=sogou-site-d54ce9de9df77c57&duppid=1&w=01020600&interation=&interV=kKIOkrELjboLmLkEkLoTkKIMkrELjboImLkEk74TkKILmrELjb8TkKIKmrELjbkI_-1099283536&htdbg=idc%3Ebjdjt%7CdbgID%3E01%7Cabt%3E0%7Cmth%3E1&ie=utf8&s_from=hint_last"
+}

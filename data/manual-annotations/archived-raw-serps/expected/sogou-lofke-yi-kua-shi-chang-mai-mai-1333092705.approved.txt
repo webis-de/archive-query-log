@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "lof\u53ef\u4ee5\u8de8\u5e02\u573a\u4e70\u5356",
+    "offset": null,
+    "page": null,
+    "query": "lof\u53ef\u4ee5\u8de8\u5e02\u573a\u4e70\u5356",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1333092705,
+            "title": "<em>lof</em>\u57fa\u91d1,\u5982\u535a\u65f6\u4e3b\u9898,\u600e\u4e48\u6837\u8fdb\u884c<em>\u8de8\u5e02\u573a\u4e70\u5356</em>,\u800c\u83b7\u53d6\u5229\u6da6\uff1f_\u7231\u95ee\u77e5...",
+            "url": "http://iask.sina.com.cn/b/4432706.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "[\u6807\u7b7e\uff1a\u57fa\u91d1\u6280\u5de7 \u57fa\u91d1\u5165\u95e8] \u63d0\u95ee\u8005\uff1acaifu1001 \u6d4f\u89c8\u6b21\u6570\uff1a532 \u610f\u601d\u5c31\u662f\u4e0a\u5e02\u7684\u5f00\u653e\u5f0f\u57fa\u91d1\u5982\u4f55\u8fdb\u884c\u5957\u5229\uff0c\u6211\u60f3\u77e5\u9053\u5177\u4f53\u5982\u4f55\u64cd\u4f5c\uff0c\u591a\u8c22\u6307\u6559\u3002 \u56de\u7b54 ilovedog2009 \u7b49\u7ea7\uff1a ...",
+            "timestamp": 1333092705,
+            "title": "<em>lof</em>\u57fa\u91d1,\u5982\u535a\u65f6\u4e3b\u9898,\u600e\u4e48\u6837\u8fdb\u884c<em>\u8de8\u5e02\u573a\u4e70\u5356</em>,\u800c\u83b7\u53d6\u5229\u6da6\uff1f-\u5386\u53f2\u7248...",
+            "url": "http://baike.china.alibaba.com/doc/history/view.html?eid=354042"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1333092705,
+            "title": "<em>LOF</em>\u57fa\u91d1\uff08\u4e0a\u5e02\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u57fa\u91d1\uff09\u5982\u4f55<em>\u8de8\u5e02\u573a</em>\u5957\u5229\uff1f_\u3010\u7eaa\u5ff5\u3011_\u767e\u5ea6...",
+            "url": "http://hi.baidu.com/china50/blog/item/7c99a458e982a4dd9d820401.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1333092705,
+            "title": "<em>lof</em>\u57fa\u91d1<em>\u53ef\u4ee5</em>\u5f53\u65e5\u5728\u4e8c\u7ea7<em>\u5e02\u573a</em>\u4e70,\u5e76\u4e8e\u5f53\u65e5\u7533\u8bf7\u8d4e\u56de\u5417\uff1f_\u7231\u95ee\u77e5\u8bc6\u4eba",
+            "url": "http://iask.sina.com.cn/b/2943588.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "\u56de\u57fa\u91d1\u4efd\u989d\uff0c\u4e5f<em>\u53ef\u4ee5</em>\u5728\u6302\u724c\u7684\u4ea4\u6613\u6240<em>\u4e70\u5356</em>\u8be5\u57fa\u91d1\u6216\u8fdb\u884c\u57fa\u91d1\u4efd\u989d\u7684\u7533\u8d2d\u4e0e \u8d4e\u56de\u3002<em>LOF</em> \u57fa... \u5176\u4e2d\uff0c\u5c3d\u7ba1 <em>LOF</em> \u5957\u5229\u673a\u5236\u7684\u5b58\u5728\u6709\u52a9\u4e8e\u573a\u5185\u573a\u5916\u4efd\u989d \u7684\u76f8\u4e92\u6d41\u52a8\uff0c\u4f46\u5728<em>\u8de8\u5e02\u573a</em>\u8f6c\u6258\u7ba1...",
+            "timestamp": 1333092705,
+            "title": "\u2014\u2014<em>LOF</em><em>\u5e02\u573a</em>\u6e10\u5177\u89c4\u6a21,\u573a\u5185\u4ea4\u6613\u503c\u5f97\u5173\u6ce8_\u767e\u5ea6\u6587\u5e93",
+            "url": "http://wenku.baidu.com/view/ead98fa0b0717fd5360cdc2c.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "15:13\u8fdb\u884c\u573a\u5185\u4ea4\u6613\u65f6\uff0c<em>LOF\u53ef\u4ee5</em>\u6839\u636e\u516c\u5e03\u7684\u5b9e\u65f6\u4ef7\u683c\u8fdb\u884c<em>\u4e70\u5356</em>\uff0c\u53ea\u9700\u652f\u4ed8\u4e0d\u8d85\u8fc7\u5343\u5206... \u7535\u8bdd\u59d4\u6258\u3001\u7f51\u4e0a\u4ea4\u6613\u7684A\u80a1\u4ea4\u6613\u7cfb\u7edf\u529e\u7406\u3002\uff08\u4e09\uff09\u3001<em>\u8de8\u5e02\u573a</em>\u8f6c\u6258\u7ba1\u573a\u5185\u8f6c\u573a\u5916<em>\u8de8\u5e02\u573a</em>\u8f6c\u6258...",
+            "timestamp": 1333092705,
+            "title": "<em>LOF</em>\u57fa\u91d1<em>\u4e70\u5356</em>\u65b9\u6cd5\uff1f\u573a\u5185\u7684\u8d39\u7528\u600e\u4e48\u7b97\u7684\uff1f",
+            "url": "http://www.360doc.com/content/10/0127/10/447164_14486843.shtml"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1333092705,
+            "title": "\u5c01\u95ed\u671f\u5185,\u6295\u8d44\u8005\u53ef\u5728\u4e00\u7ea7<em>\u5e02\u573a</em>\u4e0a\u8fdb\u884c\u5c01\u95ed\u5f0f\u57fa\u91d1\u5728<em>\u4e70\u5356</em>\u3002\u662f\u5426\u6b63\u786e\uff1f...",
+            "url": "http://zhidao.baidu.com/question/340090712"
+        },
+        {
+            "rank": 8,
+            "snippet": "2012\u5e743\u670827\u65e5... \u5907\u53d7\u8d44\u672c\u5e02\u573a\u77a9\u76ee\u7684<em>\u8de8\u5e02\u573a</em>ETF\u2014\u2014\u6caa\u6df1300ETF\u7ec8\u4e8e\u201c\u5343\u547c\u4e07\u5524\u59cb\u51fa\u6765\u201d\uff0c... \u4e0e<em>LOF</em>\uff08\u4e0a\u5e02\u578b\u5f00\u653e\u5f0f\u57fa\u91d1\uff09\u7684\u533a\u522b\u5728\u4e8e\uff0c\u6295\u8d44\u8005<em>\u53ef\u4ee5</em>\u5728\u4e8c\u7ea7<em>\u5e02\u573a\u4e70\u5356</em>ETF\u4efd...",
+            "timestamp": 1333092705,
+            "title": "\u9996\u6279<em>\u8de8\u5e02\u573a</em>ETF\u83b7\u6279\uff08\u57fa\u91d1\u52a8\u5411\uff09_\u8d22\u7ecf_\u51e4\u51f0\u7f51",
+            "url": "http://finance.ifeng.com/roll/20120327/5808196.shtml"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>LOF</em>\u57fa\u91d1<em>\u53ef\u4ee5</em>\u8f6c<em>\u5e02\u573a</em>\u5957\u5229\u5417\uff1f <em>LOF</em>\u57fa\u91d1\uff0c\u82f1\u6587\u5168\u79f0\u662f\u201cListedOpen-EndedFund\u201d\uff0c\u6c49\u8bed... \u6295\u8d44\u8005\u65e2\u53ef\u5728\u6307\u5b9a\u7f51\u70b9\u7533\u8d2d\u4e0e\u8d4e\u56de\u57fa\u91d1\u4efd\u989d\uff0c\u4e5f<em>\u53ef\u4ee5</em>\u5728\u4ea4\u6613\u6240<em>\u4e70\u5356</em>\u8be5\u57fa\u91d1\u3002\u4e0d\u8fc7\u6295\u8d44\u8005\u5982...",
+            "timestamp": 1333092705,
+            "title": "<em>LOF</em>\u57fa\u91d1<em>\u53ef\u4ee5</em>\u8f6c<em>\u5e02\u573a</em>\u5957\u5229\u5417\uff1f - \u7cbe\u534e\u77e5\u8bc6 - \u641c\u641c\u95ee\u95ee",
+            "url": "http://wenwen.soso.com/z/q105633855.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1333092705,
+            "title": "\u503a\u5238<em>\u5e02\u573a</em>\u91cc\u7684,ETF\u548c<em>LOF</em>\u662f\u4ec0\u4e48\u610f\u601d,\u600e\u4e48\u533a\u522b,\u6709\u4ec0\u4e48\u5f02\u540c\uff1f - \u5df2...",
+            "url": "http://wenwen.soso.com/z/q155331886.htm"
+        }
+    ],
+    "timestamp": 1333092705,
+    "url": "http://www.sogou.com/web?query=lof%E5%8F%AF%E4%BB%A5%E8%B7%A8%E5%B8%82%E5%9C%BA%E4%B9%B0%E5%8D%96&p=02210102&fhintidx=7"
+}

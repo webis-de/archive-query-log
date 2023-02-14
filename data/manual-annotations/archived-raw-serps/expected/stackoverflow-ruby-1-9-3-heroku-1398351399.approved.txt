@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "[ruby-1.9.3] [heroku]",
+    "offset": null,
+    "page": null,
+    "query": "ruby-1.9.3+heroku",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Here is my heroku deployment log, can anyone help me whats going wrong ? I am deploying my first rails app. can anyone tell what is causing the app to crash ?\n\n(edited to format the log, updated log ...",
+            "timestamp": 1398351399,
+            "title": "Heroku deployment causing app to crash",
+            "url": "http://stackoverflow.com/questions/18020738/heroku-deployment-causing-app-to-crash"
+        },
+        {
+            "rank": 2,
+            "snippet": "I'm getting the following message when I push to Heroku:\n\nInvalid RUBY_VERSION specified: Unfortunately,-a-fatal-error-has-occurred.-Please\n  ...",
+            "timestamp": 1398351399,
+            "title": "Publify push to Heroku is rejected with invalid RUBY_VERSION",
+            "url": "http://stackoverflow.com/questions/16298490/publify-push-to-heroku-is-rejected-with-invalid-ruby-version"
+        },
+        {
+            "rank": 3,
+            "snippet": "I am using ruby 1.9.3\n\n$ rvm list\n\nrvm rubies\n\nruby-1.9.2-p290 [ x86_64 ] ruby-1.9.2-p320 [ x86_64 ] =&gt; ruby-1.9.3-p125 [ x86_64 ] ruby-1.9.3-p194 [ x86_64 ] ruby-1.9.3-p286 [ x86_64 ] * ...",
+            "timestamp": 1398351399,
+            "title": "heroku db:pull using wrong ruby version (1.8.7 instead of 1.9.3)",
+            "url": "http://stackoverflow.com/questions/14277979/heroku-dbpull-using-wrong-ruby-version-1-8-7-instead-of-1-9-3"
+        },
+        {
+            "rank": 4,
+            "snippet": "A few days ago, ruby 1.9.3p327 was released to handle  a possible DoS issue.\n\nIs there a way to upgrade ruby version in Heroku? right now I have ruby 1.9.3p286 (2012-10-12 revision 37165) ...",
+            "timestamp": 1398351399,
+            "title": "Ruby 1.9.3p327 in Heroku",
+            "url": "http://stackoverflow.com/questions/13360932/ruby-1-9-3p327-in-heroku"
+        },
+        {
+            "rank": 5,
+            "snippet": "I have a Rails 3.2.8 app running on Heroku Cedar with Ruby 1.9.3. The app runs fine when it launches but after a day or so of continuous use, I start to see R14 errors on my logs. Once the memory ...",
+            "timestamp": 1398351399,
+            "title": "How can I find a memory leak on Heroku?",
+            "url": "http://stackoverflow.com/questions/13311930/how-can-i-find-a-memory-leak-on-heroku"
+        },
+        {
+            "rank": 6,
+            "snippet": "I go to redeploy my heroku apps with a new gem in Gemfile and it crashes on startup \n\n/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.3/lib/active_support/dependencies.rb:251:in `require': ...",
+            "timestamp": 1398351399,
+            "title": "Heroku with ruby 1.9.3 causing many different crashes",
+            "url": "http://stackoverflow.com/questions/12886648/heroku-with-ruby-1-9-3-causing-many-different-crashes"
+        },
+        {
+            "rank": 7,
+            "snippet": "Upgrading to Mongoid 3 and Ruby 1.9.3. Trying to use Ruby 1.9.3 on Heroku Cedar Stack. I have added the below to the top of my Gemfile:\n\nsource 'http://rubygems.org'\nruby \"1.9.3\"\n\n\nPushing to Heroku, ...",
+            "timestamp": 1398351399,
+            "title": "Heroku not using the specified Ruby 1.9.3",
+            "url": "http://stackoverflow.com/questions/11943470/heroku-not-using-the-specified-ruby-1-9-3"
+        },
+        {
+            "rank": 8,
+            "snippet": "I have gotten the following errors using ruby 1.9.2-p320 with Heroku's Taps-using 'db' commands such as:\n\nheroku db:pull --app my-app\n\n\nWhich produces errors like:\n\nTaps Load Error: no such file to ...",
+            "timestamp": 1398351399,
+            "title": "Heroku db:pull Taps Load Error: no such file to load \u2014 pg",
+            "url": "http://stackoverflow.com/questions/11143561/heroku-dbpull-taps-load-error-no-such-file-to-load-pg"
+        },
+        {
+            "rank": 9,
+            "snippet": "When I try to push my app for the first time to Heroku (cedar), I get this error:\n\nInstalling rbx-require-relative (0.0.5) Unfortunately, a fatal error has occurred. Please report this error to the ...",
+            "timestamp": 1398351399,
+            "title": "Error Deploying To Heroku - rbx-require-relative",
+            "url": "http://stackoverflow.com/questions/9572103/error-deploying-to-heroku-rbx-require-relative"
+        },
+        {
+            "rank": 10,
+            "snippet": "I tried this tip: https://github.com/thoughtbot/laptop/pull/14#issuecomment-3192270 .\n\nOn deploy I see\n\n-----&gt; Using RUBY_VERSION: ruby-1.9.3-p0\n\n\nBut my logs show the environment variable is not ...",
+            "timestamp": 1398351399,
+            "title": "Is it possible to run my Rails app on Heroku with Ruby 1.9.3? If so, how?",
+            "url": "http://stackoverflow.com/questions/8784421/is-it-possible-to-run-my-rails-app-on-heroku-with-ruby-1-9-3-if-so-how"
+        }
+    ],
+    "timestamp": 1398351399,
+    "url": "http://stackoverflow.com/questions/tagged/ruby-1.9.3+heroku"
+}

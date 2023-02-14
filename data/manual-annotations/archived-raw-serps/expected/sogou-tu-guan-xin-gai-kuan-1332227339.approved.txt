@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\u9014\u89c2\u65b0\u6539\u6b3e",
+    "offset": null,
+    "page": null,
+    "query": "\u9014\u89c2\u65b0\u6539\u6b3e",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1332227339,
+            "title": "\u3010<em>Tiguan</em>\u3011\u6700\u65b0\u62a5\u4ef7_\u914d\u7f6e_\u8bc4\u4ef7_\u56fe\u7247_\u8f66\u53cb\u4f1a\u2013\u641c\u72d0\u6c7d\u8f66",
+            "url": "http://db.auto.sohu.com/model-1626.shtml"
+        },
+        {
+            "rank": 2,
+            "snippet": "2011\u5e743\u67081\u65e5... \u672c\u62a5\u8baf \u8fd1\u65e5\uff0c\u5927\u4f17\u6c7d\u8f66\u53d1\u5e03\u4e86\u6700<em>\u65b0\u6539\u6b3e</em><em>\u9014\u89c2</em>\uff08\u914d\u7f6e \u56fe\u5e93 \u53e3\u7891 \u8bba\u575b\uff09\u7684\u5b98\u65b9\u56fe\u7247\uff0c\u5e76\u516c\u5e03\u4e86\u4e00\u4e9b\u7ec6\u8282\u6d88\u606f\uff0c\u636e\u6089\u65b0\u8f66\u5373\u5c06\u4eae\u76f8\u4e8e\u4e0b\u6708\u521d\u5f00\u5e55\u7684\u65e5\u5185\u74e6\u56fd\u9645\u8f66...",
+            "timestamp": 1332227339,
+            "title": "\u6700<em>\u65b0\u6539\u6b3e</em><em>\u9014\u89c2</em>\u5b98\u65b9\u56fe\u53d1\u5e03 \u5916\u89c2\u5411\u65b0\u9014\u9510\u9760\u62e2_\u65b0\u6d6a\u6c7d\u8f66_\u65b0\u6d6a\u7f51",
+            "url": "http://auto.sina.com.cn/news/2011-03-01/0701725294.shtml"
+        },
+        {
+            "rank": 3,
+            "snippet": "\u8fd1\u65e5\uff0c\u65b0\u4e00\u671f\u7684\u73af\u4fdd\u76ee\u5f55\u53d1\u5e03\uff0c\u5728\u65b0\u7684\u76ee\u5f55\u91cc\u51fa\u73b0\u4e86\u4e0d\u5c11\u8fdb\u53e3\u8f66\u578b\uff0c\u5176\u4e2d\u5305\u62ec\u4e86\u5927\u4f17\u65b0Multivan\u3001\u6c83\u5c14\u6c83S60 1.6T\u7b49\u7b49\u3002\u53e6\u5916\u8fd8\u6709\u745e\u9e92M1\u548c\u7591\u4f3c<em>\u6539\u6b3e</em><em>\u9014\u89c2</em>\u7684\u51fa\u73b0\u3002 \u4f55\u8c13\u73af\u4fdd\u76ee\u5f55...",
+            "timestamp": 1332227339,
+            "title": "<em>\u9014\u89c2</em>\u5373\u5c06<em>\u6539\u6b3e</em>\uff1f\u65b0\u4e00\u671f\u73af\u4fdd\u76ee\u5f55\u65b0\u8f66\u89e3\u8bfb_\u6c83\u5c14\u6c83S60_\u6c7d\u8f66\u70b9\u8bc4\u7f51",
+            "url": "http://news.xgo.com.cn/15/150375.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "2011\u5e743\u670815\u65e5... \u5927\u4f17\u65d7\u4e0b\u62e5\u6709\u4f17\u591a\u8f66\u578b\uff0c\u7f16\u8f91\u5bf9\u8fd1\u671f\u6d77\u5916\u53d1\u5e03\u7684<em>\u6539\u6b3e</em>Tiguan\uff0c\u5927\u4f17Jteea GLI\uff0c\u9ad8\u5c14\u592b\u655e\u7bf7\u7248\u505a\u4e86\u8be6\u7ec6\u4ecb\u7ecd\uff0c\u53e6\u5916\u9488\u5bf9\u672a\u6765\u4e03\u5ea7SUV\uff0c\u65b0\u4e00\u4ee3\u5927\u4f17CC,Bulli\u6982\u5ff5...",
+            "timestamp": 1332227339,
+            "title": "<em>\u6539\u6b3e</em><em>\u9014\u89c2</em>/\u65b0Jetta\u9886\u8854 \u5927\u4f17\u54c1\u724c\u65b0\u8f66\u89c4\u5212\u524d\u77bb-\u6c7d\u8f66\u9891\u9053-\u91d1\u878d\u754c",
+            "url": "http://auto.jrj.com.cn/2011/03/1517079459494.shtml"
+        },
+        {
+            "rank": 5,
+            "snippet": "2011\u5e743\u67087\u65e5... \u5382\u5bb6\u6307\u5bfc\u4ef7\uff1a 34.00 - 41.65 \u4e07\u5143 \u770b\u8fc7 <em>\u9014\u89c2</em>\uff08\u8fdb\u53e3\uff09 \u7684\u4eba\u8fd8\u5173\u6ce8 \u552e\u4ef7\uff1a 5.39\u4e07\u8d77 48\u5c0f\u65f6\u70b9\u51fb\u6392\u884c\u699c \u672c\u5468\u8ddf\u8d34\u6392\u884c\u699c \u6807\u9898 \u70b9\u51fb\u6570",
+            "timestamp": 1332227339,
+            "title": "\u5916\u89c2\u8d8b\u8fd1\u56fd\u4ea7<em>\u9014\u89c2</em> \u5927\u4f17\u65b0Tiguan\u5c0f<em>\u6539\u6b3e</em>\u4eae\u76f8_\u7f51\u6613\u6c7d\u8f66",
+            "url": "http://auto.163.com/11/0307/08/6UHHE3UT00082H5T.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "2011\u5e741\u67088\u65e5... \u8fd1\u65e5\uff0c\u5927\u4f17\u5c0f<em>\u6539\u6b3e</em><em>\u9014\u89c2</em>\u6700\u65b0\u6548\u679c\u56fe\u66dd\u5149\uff0c\u4ece\u6548\u679c\u56fe\u6765\u770b\uff0c\u65b0\u6b3e<em>\u9014\u89c2</em>\u540c\u6837\u91c7\u7528\u6700\u65b0\u5bb6\u65cf\u9762\u5b54\uff0c\u770b\u8d77\u6765\u66f4\u4e3a\u9633\u521a\uff0c\u65b0\u8f66\u6709\u671b\u5728\u4eca\u5e74\u63a8\u51fa\u3002 \u6c7d\u8f66\u70b9\u8bc4\u7f511\u67088\u65e5\u62a5\u9053 ...",
+            "timestamp": 1332227339,
+            "title": "\u6709\u671b\u4eca\u5e74\u63a8\u51fa <em>\u6539\u6b3e</em><em>\u9014\u89c2</em>\u6700\u65b0\u6548\u679c\u56fe\u66dd\u5149_\u7f51\u6613\u6c7d\u8f66",
+            "url": "http://auto.163.com/11/0108/07/6PS2KMNE00084IJV.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "2011\u5e743\u67081\u65e5... \u672c\u62a5\u8baf \u8fd1\u65e5\uff0c\u5927\u4f17\u6c7d\u8f66\u53d1\u5e03\u4e86\u6700<em>\u65b0\u6539\u6b3e</em><em>\u9014\u89c2</em>\u7684\u5b98\u65b9\u56fe\u7247\uff0c\u5e76\u516c\u5e03\u4e86\u4e00\u4e9b\u7ec6\u8282\u6d88\u606f\uff0c\u636e\u6089\u65b0\u8f66\u5373\u5c06\u4eae\u76f8\u4e8e\u4e0b\u6708\u521d\u5f00\u5e55\u7684\u65e5\u5185\u74e6\u56fd\u9645\u8f66\u5c55\uff0c\u968f\u540e\u4e0a\u5e02\u9500\u552e\u3002\u636e\u4e86\u89e3...",
+            "timestamp": 1332227339,
+            "title": "\u6700<em>\u65b0\u6539\u6b3e</em><em>\u9014\u89c2</em>\u5b98\u56fe\u53d1\u5e03 \u5916\u89c2\u5411\u65b0\u9014\u9510\u9760\u62e2-\u641c\u72d0\u6c7d\u8f66",
+            "url": "http://auto.sohu.com/20110301/n303741791.shtml"
+        },
+        {
+            "rank": 8,
+            "snippet": "2011\u5e746\u670814\u65e5... 3\u3001\u8f66\u578b\u7f16\u53f7\uff1aS60 DRIVe \u8f66\u578b\u770b\u70b9\uff1a\u798f\u7279\u4ea71.6T\u53d1\u52a8\u673a\uff0c\u91c7\u7528DRIVe\u8282\u6cb9\u6280\u672f \u8fd9\u4e2a\u7f16\u53f7\u662f\u5168\u65b0\u7533\u8bf7\u7684\u7f16\u53f7\uff0c\u8fdb\u53e3\u8f66\u76ee\u5f55\u7f16\u53f7\u8d44\u6599\u53ef\u4ee5\u8fd9\u4e48\u8bf4\uff0c\u5229\u4e0e\u5f0a\u5e76...",
+            "timestamp": 1332227339,
+            "title": "<em>\u6539\u6b3e</em><em>\u9014\u89c2</em>\u9886\u8854 \u65b0\u4e00\u671f\u73af\u4fdd\u76ee\u5f55\u65b0\u8f66\u89e3\u8bfb_\u7231\u5361\u6c7d\u8f66",
+            "url": "http://info.xcar.com.cn/201106/news_246679_3.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1332227339,
+            "title": "\u3010\u56fe\u3011<em>\u6539\u6b3e</em>\u65b0<em>\u9014\u89c2</em>_<em>\u9014\u89c2</em>\u8bba\u575b_\u6c7d\u8f66\u4e4b\u5bb6",
+            "url": "http://club.autohome.com.cn/bbs/thread-c-874-13048602-1.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1332227339,
+            "title": "\u57ce\u5e02SUV\u738b\u8005\u4e4b\u6218 \u5168\u65b0CR-V\u4e0e<em>\u9014\u89c2</em>\u8d34\u8eab\u8089\u640f|\u6c7d\u8f66|\u534a\u5c9b\u7f51",
+            "url": "http://news.bandao.cn/news_html/201203/20120320/news_20120320_1851787.shtml"
+        }
+    ],
+    "timestamp": 1332227339,
+    "url": "http://www.sogou.com/web?query=%E9%80%94%E8%A7%82%E6%96%B0%E6%94%B9%E6%AC%BE&p=02210102&fhintidx=3"
+}

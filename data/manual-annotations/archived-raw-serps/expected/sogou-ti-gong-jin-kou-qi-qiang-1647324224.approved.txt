@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\u63d0\u4f9b\u8fdb\u53e3\u6c14\u67aa",
+    "offset": null,
+    "page": null,
+    "query": "\u63d0\u4f9b\u8fdb\u53e3\u6c14\u67aa",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "2018\u5e747\u670820\u65e5-\u7ecf\u53f0\u6e7e\u201c\u5211\u4e8b\u5c40\u201d\u521d\u6b65\u9274\u5b9a,\u670982\u628a\u7a7a<em>\u6c14\u67aa</em>\u5355\u4f4d\u9762\u79ef\u52a8\u80fd\u8fbe21-27\u7126\u8033/\u5e73\u65b9\u5398\u7c73,\u660e\u663e\u8d85\u8fc7\u53f0\u6e7e\u89c4\u5b9a\u6807\u51c6\u3002\u8fd9\u6279\u7a7a<em>\u6c14\u67aa</em>\u53ea\u8981\u88c5\u4e0a\u6c14\u4f53\u94a2\u74f6\u548c\u94a2\u73e0\u5f39\u5c31\u53ef\u51fb\u53d1,\u5177...",
+            "timestamp": 1647324224,
+            "title": "\u53f0\u6e7e504\u628a\u6709\u6740\u4f24\u529b<em>\u6c14\u67aa</em>\u9500\u5f80\u5fb7\u56fd\u906d\u9000\u8d27\u88ab\u8b66\u65b9\u67e5\u83b7-\u4e2d\u65b0\u7f51",
+            "url": "https://www.sogou.com/link?url=hedJjaC291Osj6fmiZw1ZvXUlQL07XXmGE95qGcU4mXghylvexw11GoyHo00P8ru59_LYbDRQcmt5pUc3zy0dg.."
+        },
+        {
+            "rank": 2,
+            "snippet": "2017\u5e743\u670829\u65e5-                                                             \u8fd9\u4e9b<em>\u6c14\u67aa</em>\u96f6\u4ef6\u548c1500\u53d1\u5b50\u5f39\u662f\u901a\u8fc7\u7f51\u7edc\u8d2d\u4e70\uff0c\u6839\u636e\u5356\u5bb6<em>\u63d0\u4f9b</em>\u7684\u7ec4\u88c5\u56fe\uff0c\u8fd9\u4e9b\u96f6\u4ef6\u5c06\u53d8\u6210\u4e00\u652f\u6740\u4f24\u529b\u8db3\u4ee5\u81f4\u547d\u7684\u67aa\u652f\u3002 \u4f59\u59da\u5e02\u59d4\u5e38\u59d4\u3001\u516c\u5b89\u5c40\u5c40\u957f\u4f59\u627f\u55e3\u4f5c...",
+            "timestamp": 1647324224,
+            "title": "\u8b66\u65b9\u7f34\u83b7\u5404\u7c7b<em>\u6c14\u67aa</em>\u53ca\u5f39\u836f\u8fd13\u5428__\u4e2d\u56fd\u9752\u5e74\u7f51",
+            "url": "https://www.sogou.com/link?url=6IqLFeTuIyiuyH1tDKnTot8fZPZ6Wr1kv8eb6m0jzn4e7MOMDqYxHO55gTNbTKTm9u3jWvSGoTU."
+        },
+        {
+            "rank": 3,
+            "snippet": "2012\u5e745\u670816\u65e5-\u4e0a\u4ea4\u4fdd\u5b5830\u5e74\u7684<em>\u6c14\u67aa</em>\uff0c\u770b\u5230\u672c\u62a5\u5173\u4e8e\u516c\u5b89\u90e8\u95e8\u6536\u7f34\u7559\u5b58\u67aa\u652f\u7684\u62a5\u9053\u540e\uff0c\u5e02\u6c11\u5f20\u5148\u751f\u5c06\u4e00\u628a<em>\u6c14\u67aa</em>\u548c\u4e00\u628a\u730e\u67aa\u7684\u96f6\u4ef6\u4e0a\u4ea4\u5230\u6d4e\u5357\u5e02\u516c\u5b89\u5c40\uff0c\u5176\u4e2d<em>\u6c14\u67aa</em>\u5df2\u7ecf\u4fdd\u5b5830\u5e74\u4e86...",
+            "timestamp": 1647324224,
+            "title": "\u4e0a\u4ea4\u4fdd\u5b5830\u5e74\u7684<em>\u6c14\u67aa</em>_\u65b0\u95fb\u53f0_\u4e2d\u56fd\u7f51\u7edc\u7535\u89c6\u53f0",
+            "url": "https://www.sogou.com/link?url=6IqLFeTuIyg_KJLOdn1g88X8yojpqBglbLWPijkV1lDsJxH71676_q4to0wa_Tif"
+        },
+        {
+            "rank": 4,
+            "snippet": "2013\u5e748\u67082\u65e5-\u6628\u65e5\uff0c\u8bb0\u8005\u4ece\u65fa\u82cd\u53bf\u516c\u5b89\u5c40\u83b7\u6089\uff0c\u65fa\u82cd\u53bf\u516c\u5b89\u5c40\u901a\u8fc7\u4e00\u8d77\u7f51\u8d2d\u9ad8\u538b<em>\u6c14\u67aa</em>\u6848\u4ef6\uff0c\u6210\u529f\u7834\u83b7\u4e86\u4e00\u6869\u6d89\u53ca\u5168\u56fd 20 \u4e2a\u7701\u5e02\u7684\u5236\u9020\u3001\u9500\u552e\u67aa\u68b0\u7684\u56e2\u4f19\u72af\u7f6a\u6848\u4ef6\u3002\u6210\u529f\u6293\u83b7\u72af...",
+            "timestamp": 1647324224,
+            "title": "\u67aa\u8d29\u7f51\u552e\u9ad8\u538b<em>\u6c14\u67aa</em> \u8d29\u67aa\u7f51\u7edc\u6d89\u53ca20\u4e2a\u7701\u533a\u5e02-\u4e2d\u65b0\u7f51",
+            "url": "https://www.sogou.com/link?url=DSOYnZeCC_rz88Xns-EirBVBXAc9_CZBhkv8ph8IKxW-TH4LYi2gKgmo9dBzl14Z0ztd7q5nl6o."
+        },
+        {
+            "rank": 5,
+            "snippet": "2011\u5e748\u67081\u65e5-\u8b66\u65b9\u4fa6\u7834\u7684\u4e00\u8d77\u8de8\u5883\u8d29\u5356\u9ad8\u6863<em>\u6c14\u67aa</em>\u6848\uff0c\u6240\u8d70\u79c1\u7684<em>\u6c14\u67aa</em>\u6bd4\u666e\u901a<em>\u6c14\u67aa</em>\u7684\u5a01\u529b\u66f4\u5f3a\u5927\u3002\u4e3b\u89d2\u662f\u4ee5\u4efb\u67d0\u67d0\u4e3a\u9996\u7684\u975e\u6cd5\u8d70\u79c1\u8d29\u5356\u67aa\u652f\u56e2\u4f19\u30025\u670816\u65e5\uff0c\u5e7f\u4e1c\u7701\u516c\u5b89\u5385\u53d1\u73b0\u8be5\u56e2...",
+            "timestamp": 1647324224,
+            "title": "\u5e7f\u4e1c\u8b66\u65b9\u7834\u6d89\u67aa\u6848\u903e700\u5b97 \u542b\u4e00\u8de8\u5883\u8d29\u5356\u9ad8\u6863<em>\u6c14\u67aa</em>\u6848 \u2014\u2014\u4e2d\u65b0\u7f51",
+            "url": "https://www.sogou.com/link?url=DSOYnZeCC_rz88Xns-EirBVBXAc9_CZBTuw1HjFW7sgWsQO1akBBlEkiBMr108x60ztd7q5nl6o."
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1647324224,
+            "title": "[\u89c6\u9891]\u6cf0\u56fd:\u4e25\u63a7<em>\u6c14\u67aa</em>\u751f\u4ea7 \u65b0\u516c\u544a\u9881\u5e03\u5728\u5373",
+            "url": "https://www.sogou.com/link?url=6IqLFeTuIyg_KJLOdn1g897u3z3YfAOD5txGmxcfG3aW2x7hmP4x3PrchZ9fDwVe"
+        },
+        {
+            "rank": 7,
+            "snippet": "2007\u5e748\u67081\u65e5-                                                             \u00a0\u00a0\u00a0 \u8fd1\u65e5\uff0c\u9996\u90fd\u673a\u573a\u6d77\u5173\u67e5\u83b7\u4eca\u5e74\u7b2c\u4e8c\u8d77\u4eff\u771f\u67aa\u68b0\u8fdd\u89c4\u8fdb\u51fa\u5883\u6848\u4ef6\uff0c\u67e5\u6263\u7531\u5883\u5916\u901a\u8fc7\u5feb\u9012\u6e20\u9053<em>\u8fdb\u53e3</em>\u7684\u4eff\u771f\u67aa82\u652f\u3002\uff08\u5c1a\u79c0\u83c1\u6444\u5f71\u62a5\u9053\uff09",
+            "timestamp": 1647324224,
+            "title": "\u9996\u90fd\u673a\u573a\u67e5\u6263\u7531\u5883\u5916\u901a\u8fc7\u5feb\u9012\u6e20\u9053<em>\u8fdb\u53e3</em>\u4eff\u771f\u67aa82\u652f",
+            "url": "https://www.sogou.com/link?url=DSOYnZeCC_qetJvTgG4Ehg2EuRiPc859KSiKWnaKZkWILtd0D0EDwz-NexlEt7RGFDz2xbOXdiA."
+        },
+        {
+            "rank": 8,
+            "snippet": "2017\u5e742\u670822\u65e5-\u8b66\u65b9\u6536\u7f34\u81ea\u5236\u67aa\u3001<em>\u6c14\u67aa</em>\u3001\u730e\u67aa\u7b49\u67aa\u652f,\u5c06\u5956\u52b15000\u5143\u81f310000\u5143\u3002\u5e0c\u671b\u5e7f\u5927\u7fa4\u4f17\u79ef\u6781\u5411\u516c\u5b89\u673a\u5173<em>\u63d0\u4f9b</em>\u7ebf\u7d22,\u5bf9\u4e3e\u62a5\u6709\u529f\u4eba\u5458,\u516c\u5b89\u673a\u5173\u5c06\u6309\u7167\u89c4\u5b9a\u4e88\u4ee5\u5956\u52b1\u3002\u540c...",
+            "timestamp": 1647324224,
+            "title": "\u7f51\u7edc\u8d29\u67aa\u62c6\u6210\u96f6\u4ef6\u51fa\u552e \u5f53\u9762\u4ea4\u8d27\u4e0d\u7559\u7535\u8bdd-\u65b0\u534e\u7f51",
+            "url": "https://www.sogou.com/link?url=6IqLFeTuIygbfDcGkokA_QK6STFJ80mmTf-qIWcOy5pOPwsls0UMwcL5AHcfmHEYxNADantvzacGRSeVEFF0Nw.."
+        },
+        {
+            "rank": 9,
+            "snippet": "2014\u5e745\u670819\u65e5-\u90ed\u67d0\u5728\u5176\u8bba\u575b\u53caQQ\u7a7a\u95f4\u4e2d\u53d1\u5e03\u67aa\u5f39\u3001\u914d\u4ef6<em>\u4f9b\u5e94</em>\u4fe1\u606f\u3002\u4e45\u800c\u4e45\u4e4b\uff0c\u90ed\u67d0\u62e5\u6709\u4e86\u5927\u91cf\u76f8\u5bf9\u56fa\u5b9a\u7684\u7f51\u4e0a\u4e70\u5bb6\u3002 \u636e\u90ed\u67d0\u4f9b\u8ff0\uff0c\u8d70\u79c1<em>\u8fdb\u53e3\u6c14\u67aa</em>\u3001\u94c5\u5f39\u53ca\u914d\u4ef6\u7684\u4e3b\u8981\u9014\u5f84\u662f...",
+            "timestamp": 1647324224,
+            "title": "\u957f\u6c99\u6d77\u5173\u7834\u83b7\u4e00\u8d77\u7f51\u7edc\u8d29\u67aa\u6848 \u6536\u7f3461\u652f\u5404\u7c7b\u67aa\u652f_\u4e2d\u56fd\u7ecf\u6d4e\u7f51\u2014\u2014\u56fd\u5bb6...",
+            "url": "https://www.sogou.com/link?url=WaeIF24cBDu3oVpWKJmXLThnWv3VYOFQsJlIq19KO0yJo0PR1mGu9LDSkRuIpIiVBV8Y25u-J-qa7xFdmtNKHtM7Xe6uZ5eq"
+        },
+        {
+            "rank": 10,
+            "snippet": "[ \u56fe\u6587 ]                                                            2015\u5e744\u67081\u65e5-                                                             \u7f51\u4e0a\u6709\u552e\u5356\u8f6f\u5f39<em>\u6c14\u67aa</em> \u6731\u5148\u751f\u544a\u8bc9\u8bb0\u8005\uff0c\u4ed6\u60f3\u7ed9\u513f\u5b50\u4e70\u4e00\u4e9b\u8d28\u91cf\u8f83\u597d\u7684<em>\u8fdb\u53e3</em>\u73a9\u5177\uff0c\u4e8e\u662f\u60f3\u5230\u4e9a\u9a6c\u900a\u7684\u4e2d\u6587\u6d77\u6dd8\u5e73\u53f0\u4e0a\u9009\u8d2d\u3002\u5728\u641c\u7d22\u8f6f\u5f39\u73a9\u5177\u67aa\u65f6\uff0c\u65e0\u610f\u4e2d\u53d1\u73b0...",
+            "timestamp": 1647324224,
+            "title": "\u6d77\u6dd8\u7adf\u53ef\u4e70\u5230\u201c\u67aa\u201d? \u4e9a\u9a6c\u900a\u7f51\u4e0a\u552e\u5356\u8f6f\u5f39<em>\u6c14\u67aa</em> -\u4e2d\u65b0\u7f51",
+            "url": "https://www.sogou.com/link?url=hedJjaC291Osj6fmiZw1ZvXUlQL07XXmK9RviMtjQQeEOSMmtlNAMMYaajA8yA7afVBpV1XyTCu2wKelUak-kA.."
+        }
+    ],
+    "timestamp": 1647324224,
+    "url": "https://www.sogou.com/web?query=%E6%8F%90%E4%BE%9B%E8%BF%9B%E5%8F%A3%E6%B0%94%E6%9E%AA&ie=utf8"
+}

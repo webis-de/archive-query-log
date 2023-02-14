@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\u6027\u7231\u6280\u5de7",
+    "offset": null,
+    "page": null,
+    "query": "\u6027\u7231\u6280\u5de7",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "<em>\u6027\u7231\u6280\u5de7</em> - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgdlfvVkq0wEdVy6JvJfJZBvCJC-1zdrX6u_GLXKtxwm7EEadsphr3c2-zDdqyVPTqY_9PXEcMdutJiyLauqgXbw.."
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "\u6027\u9ad8\u6f6e - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJggHuCVTRNVKOuCsIPhglAiq72NCRS-NvQ6E1wuKQtvUJpbYo9uL9GrP_PZegPIN6zreaVHN88tHY."
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "\u5341\u5927<em>\u6027\u7231\u6280\u5de7</em> - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgumC2pwOlyYBVy6JvJfJZBvCJC-1zdrX6udtcpCgNU38lz0Tsua-kp3rDpQditQ1ZfkAvqioyIz1HGiFI1hqm83x0ch5nC6pMbhK6obZb4eo."
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "<em>\u6027\u751f\u6d3b</em>\uff08\u6ee1\u8db3\u81ea\u5df1\u6027\u9700\u8981\u7684\u6027\u63a5\u89e6\uff09 - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgfqIZbB3FqxiuCsIPhglAiq72NCRS-NvQ6E1wuKQtvULtFCk1C0nVFdESG_MpFkbPreaVHN88tHY."
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "\u4e00\u751f\u4e00\u5b9a\u8981\u4eab\u53d7\u4e00\u6b21\uff1a\u56fe\u89e3201\u62db<em>\u6027\u7231\u6280\u5de7</em> - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgDAftPOEuj5xVy6JvJfJZBvCJC-1zdrX6pgWu5jo9OhGys4GOgpnid4JOMLwrYsReOJPaKABLKf-X6hOlKw34EKyspllGf-GN_4YYQ62SvW2m2Ebb5-NcD9ukAfpeGRQT9wW6DNlg3P80O-7iQtlkXB17NuaCw3JLzmEpKwiGusRZUYzWW5DsmvbALbIO_yiwu_GLXKtxwm7EEadsphr3c2-zDdqyVPTqY_9PXEcMdutJiyLauqgXbw.."
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "\u7ad9\u7acb\u5f0f - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgzOUYg6rqyS5Vy6JvJfJZBvCJC-1zdrX6n3actmeMNDFHKPUkzbHvFBqYUUSQtACJQ8Q2gnqZrsg."
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "<em>\u6027\u7231</em>-<em>\u6027\u7231\u6280\u5de7</em> - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgWKuiddXdkKz26FDhCNBXEMyyUtg79KV3EL61wI-irVWXhK1G7IWUvq3mlRzfPLR2"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "\u53e3\u4ea4 - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJg0eaPJFQ3pulVy6JvJfJZBvCJC-1zdrX61pbJGUfkMSiZ3FaeVb7eN95mObHy9TpR"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "<em>\u6027\u7231</em>\u59ff\u52bf - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgOMmFz3op99lVy6JvJfJZBvCJC-1zdrX6u_GLXKtxwm7EEadsphr3c4RAxdhVLhsdXlIMJqAtKdt17flI0Yv91w.."
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1576522689,
+            "title": "\u5341\u5927<em>\u6027\u7231</em>\u79d8\u8bc0 - \u641c\u72d7\u767e\u79d1",
+            "url": "https://www.sogou.com/link?url=DOb0bgH2eKjRiy6S-EyBciCDFRTZxEJgHx53AqzQ2ZBVy6JvJfJZBvCJC-1zdrX6udtcpCgNU38lz0Tsua-kp3rDpQditQ1ZfkAvqioyIz10z1EMo9O9tbeDgOa8zAQmLGeDH6xfr8c."
+        }
+    ],
+    "timestamp": 1576522689,
+    "url": "https://www.sogou.com/sogou?query=%E6%80%A7%E7%88%B1%E6%8A%80%E5%B7%A7&ie=utf8&insite=baike.sogou.com&pid=sogou-wsse-17737832ac17be52"
+}

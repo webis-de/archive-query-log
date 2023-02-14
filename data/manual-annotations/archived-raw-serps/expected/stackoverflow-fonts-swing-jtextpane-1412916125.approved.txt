@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "[fonts] [swing] [jtextpane]",
+    "offset": null,
+    "page": null,
+    "query": "fonts+swing+jtextpane",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "I'm finding the amount of helpful documentation/tutorials on the internet are lacking when it comes to the topic of JTextPanes. I'm trying to do a simple text processor, and I want it to be able to ...",
+            "timestamp": 1412916125,
+            "title": "How do I allow a user to change his font in a JTextPane using a JComboBox?",
+            "url": "http://stackoverflow.com/questions/10568649/how-do-i-allow-a-user-to-change-his-font-in-a-jtextpane-using-a-jcombobox"
+        },
+        {
+            "rank": 2,
+            "snippet": "I want to implement a JTextField with custom fonts.I came to know that we cannot do that in JTextField.  Now I am using JtextPane i have a problem How to make sure the carat doesn't go to the next ...",
+            "timestamp": 1412916125,
+            "title": "JtextPane of one Line",
+            "url": "http://stackoverflow.com/questions/6057939/jtextpane-of-one-line"
+        },
+        {
+            "rank": 3,
+            "snippet": "Thanks for your time. My question is regarding the display of different fonts within the one JTextPane. My client wishes to view a word in two different languages within the one field. They've ...",
+            "timestamp": 1412916125,
+            "title": "Loading custom fonts at runtime for use with JTextPane",
+            "url": "http://stackoverflow.com/questions/7800683/loading-custom-fonts-at-runtime-for-use-with-jtextpane"
+        },
+        {
+            "rank": 4,
+            "snippet": "I'm need to modify letter-spacing (font tracking) in a JTextPane, and I can't get it to work.\n\nWhen I'm using a JTextArea, I can just do:\n\nFont font = new Font(\"Courier New\", Font.PLAIN, 10);\nHashMap ...",
+            "timestamp": 1412916125,
+            "title": "How to modify letter-spacing in a JTextPane?",
+            "url": "http://stackoverflow.com/questions/5673281/how-to-modify-letter-spacing-in-a-jtextpane"
+        },
+        {
+            "rank": 5,
+            "snippet": "I have a JTextPane and when a user clicks a button, I want certain portions of the text to \"hide\"\n\nStyleConstants.setFontSize(style,0);\nStyleConstants.setForeground(style,textPane.getBackground());\n\n\n...",
+            "timestamp": 1412916125,
+            "title": "Setting font size to 0 causes CGAffineTransformInvert: singular matrix error",
+            "url": "http://stackoverflow.com/questions/24019481/setting-font-size-to-0-causes-cgaffinetransforminvert-singular-matrix-error"
+        }
+    ],
+    "timestamp": 1412916125,
+    "url": "http://stackoverflow.com/questions/tagged/fonts+swing+jtextpane"
+}

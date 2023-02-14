@@ -1,0 +1,360 @@
+{
+    "interpreted_query": "[remote-execution]",
+    "offset": null,
+    "page": null,
+    "query": "remote-execution",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "I have to run a local shell script (windows/Linux) on a remote machine.\nI have SSH configured on both machine A and B. My script is on machine A which will run some of my code on a remote machine, ...",
+            "timestamp": 1645839151,
+            "title": "How to use SSH to run a local shell script on a remote machine?",
+            "url": "https://stackoverflow.com/questions/305035/how-to-use-ssh-to-run-a-local-shell-script-on-a-remote-machine"
+        },
+        {
+            "rank": 2,
+            "snippet": "When I attempt to execute a command on a remote server with ssh, the ssh command hangs after the exec request accepted debug message, and eventually times out.\n\nThe failing command: ssh -v -v &lt;...",
+            "timestamp": 1645839151,
+            "title": "SSH Command Execution Hangs, although interactive shell functions fine",
+            "url": "https://stackoverflow.com/questions/5929552/ssh-command-execution-hangs-although-interactive-shell-functions-fine"
+        },
+        {
+            "rank": 3,
+            "snippet": "I'm trying to connect to machine one with ssh and then connect to another machine two with ssh. But get this error:\n\nssh user@computerone.com 'ssh otheruser@computertwo.com'\n\nstdin: is not a tty",
+            "timestamp": 1645839151,
+            "title": "SSH error when executing a remote command: \"stdin: is not a tty\"",
+            "url": "https://stackoverflow.com/questions/12480284/ssh-error-when-executing-a-remote-command-stdin-is-not-a-tty"
+        },
+        {
+            "rank": 4,
+            "snippet": "Is there a way to execute python code in a browser, other than using Jython and an applet?\n\nThe execution does not have to deal with anything related to graphics. For example, just sum all the digits ...",
+            "timestamp": 1645839151,
+            "title": "Execute python code inside browser without Jython",
+            "url": "https://stackoverflow.com/questions/1235629/execute-python-code-inside-browser-without-jython"
+        },
+        {
+            "rank": 5,
+            "snippet": "I would like to allow small user-defined regular expressions to be submitted for testing. However, there are many problems to consider from run-away server usage to more evil eval() usage.\n\nTo my ...",
+            "timestamp": 1645839151,
+            "title": "PHP - Is this a safe way to allow user-supplied regular expressions",
+            "url": "https://stackoverflow.com/questions/21842773/php-is-this-a-safe-way-to-allow-user-supplied-regular-expressions"
+        },
+        {
+            "rank": 6,
+            "snippet": "I am trying to execute an exe on a remote computer using invoke-command. Executing the exe on the remote machine after logging into the machine using remote desktop takes 1GB of memory and executes to ...",
+            "timestamp": 1645839151,
+            "title": "OutOfMemory Exception on remote execution using Powershell Invoke-Command",
+            "url": "https://stackoverflow.com/questions/9665981/outofmemory-exception-on-remote-execution-using-powershell-invoke-command"
+        },
+        {
+            "rank": 7,
+            "snippet": "I'm trying to create a construct in Python 3 that will allow me to easily execute a function on a remote machine.\nAssuming I've already got a python tcp server that will run the functions it receives, ...",
+            "timestamp": 1645839151,
+            "title": "How do I copy a python function to a remote machine and then execute it?",
+            "url": "https://stackoverflow.com/questions/2962531/how-do-i-copy-a-python-function-to-a-remote-machine-and-then-execute-it"
+        },
+        {
+            "rank": 8,
+            "snippet": "I am trying to partition an android application in order to execute it partially in on the phone, and partially on the server (the server could have an emulator run in it). I have read that RMIs are ...",
+            "timestamp": 1645839151,
+            "title": "Distributed Application in Android",
+            "url": "https://stackoverflow.com/questions/5890120/distributed-application-in-android"
+        },
+        {
+            "rank": 9,
+            "snippet": "Years ago I created a programming collaboratory in Diversity University MOO -- a room written in MOOcode that used TCP/IP to communicate with a perl server back at my campus to compile and execute C, ...",
+            "timestamp": 1645839151,
+            "title": "LSL communications",
+            "url": "https://stackoverflow.com/questions/103439/lsl-communications"
+        },
+        {
+            "rank": 10,
+            "snippet": "As part of an intricate BASH script, I'd like to execute a command on a remote system from within the script itself.\n\nRight now, I run the script which tailors files for the remote system and uploads ...",
+            "timestamp": 1645839151,
+            "title": "How do you execute a command on a remote system insde a BASH script?",
+            "url": "https://stackoverflow.com/questions/595002/how-do-you-execute-a-command-on-a-remote-system-insde-a-bash-script"
+        },
+        {
+            "rank": 11,
+            "snippet": "I have a script on my server named test.sh:\n\n#!/bin/bash\nread -p \"Select an option [1-4]: \" option\necho \"You have selected $option\"\nWhen I run it through ssh manually, I see this:\n\nme@me:~$ ssh root@...",
+            "timestamp": 1645839151,
+            "title": "ssh remote command not working as expected (problems with read)",
+            "url": "https://stackoverflow.com/questions/45838637/ssh-remote-command-not-working-as-expected-problems-with-read"
+        },
+        {
+            "rank": 12,
+            "snippet": "I'm using pycharm remote execution to run scripts on a remote server.\nI saw that bash_profile (or other start up scripts) aren't executed - is there a way to make this happen?\n\npreferably not in 'run ...",
+            "timestamp": 1645839151,
+            "title": "How can I make pycharm remote execution use the system environment variables?",
+            "url": "https://stackoverflow.com/questions/34586050/how-can-i-make-pycharm-remote-execution-use-the-system-environment-variables"
+        },
+        {
+            "rank": 13,
+            "snippet": "I am trying to pass 2 parameters to a PS script which will patch the SQL Server on a remote machine. Here is the code i used :\n\n$Patcher = \"\\\\remoteShareLocation\\SQLpatcher.ps1\"\n$ver = \"SQL2012\"\n$inst ...",
+            "timestamp": 1645839151,
+            "title": "how to pass parameters to Powershell script and run it on a remote computer",
+            "url": "https://stackoverflow.com/questions/28603718/how-to-pass-parameters-to-powershell-script-and-run-it-on-a-remote-computer"
+        },
+        {
+            "rank": 14,
+            "snippet": "I have a scenario where I need to construct a powershell path as $RemotePath = '$($env:USERPROFILE)\\Desktop\\Shell.lnk'. This variable gets passed to a remote machine where it needs to be executed. The ...",
+            "timestamp": 1645839151,
+            "title": "Expand string Variable stored via Single Quote in Powershell",
+            "url": "https://stackoverflow.com/questions/27226606/expand-string-variable-stored-via-single-quote-in-powershell"
+        },
+        {
+            "rank": 15,
+            "snippet": "I am trying to provision multiple Windows EC2 instance with Terraform's remote-exec provisioner using null_resource.\n$ terraform -v\nTerraform v0.12.6\nprovider.aws v2.23.0\nprovider.null v2.1.2\n...",
+            "timestamp": 1645839151,
+            "title": "Terraform stucks when instance_count is more than 2 while using remote-exec provisioner",
+            "url": "https://stackoverflow.com/questions/57368506/terraform-stucks-when-instance-count-is-more-than-2-while-using-remote-exec-prov"
+        },
+        {
+            "rank": 16,
+            "snippet": "I am trying to execute a selenium test case from a python file.\nI know that it can be done using subprocess module of python - but I want to explore the possibility of calling the testcase's functions ...",
+            "timestamp": 1645839151,
+            "title": "Execute a selenium test case from another python file",
+            "url": "https://stackoverflow.com/questions/13853473/execute-a-selenium-test-case-from-another-python-file"
+        },
+        {
+            "rank": 17,
+            "snippet": "I'm writing a script to automate the installation of BizTalk Server and then apply the configurations through the BizTalk \"configuration.exe\" utility. \nWhen I run the configuration.exe utility locally ...",
+            "timestamp": 1645839151,
+            "title": "BizTalk Configuration.exe remote execution error",
+            "url": "https://stackoverflow.com/questions/13707332/biztalk-configuration-exe-remote-execution-error"
+        },
+        {
+            "rank": 18,
+            "snippet": "I've noticed the MATLAB editor will often show quite helpful warnings for \".m\" files. As I tend to run my MATLAB code remotely I prefer not to use the MATLAB editor, instead keeping open a long ...",
+            "timestamp": 1645839151,
+            "title": "How to display static analysis warnings in MATLAB?",
+            "url": "https://stackoverflow.com/questions/56463066/how-to-display-static-analysis-warnings-in-matlab"
+        },
+        {
+            "rank": 19,
+            "snippet": "I need to access to multiple hosts through SSH, execute a specific command (show ms info) and capture the output to a file. I need to copy that file back to my linux machine\n\nI want to use ssh and ...",
+            "timestamp": 1645839151,
+            "title": "Executing remote command and saving input to file [closed]",
+            "url": "https://stackoverflow.com/questions/10701365/executing-remote-command-and-saving-input-to-file"
+        },
+        {
+            "rank": 20,
+            "snippet": "With ssh and bash, it is possible to run a local bash script on a remote server:\n\n$ ssh user@server \"bash -s\" -- &lt; ./example.bash \"--arg1\" \"arg2\"\n(from unix.stackexchange.com)\n\nAssuming fish is ...",
+            "timestamp": 1645839151,
+            "title": "How do I run a local fish script on a remote server?",
+            "url": "https://stackoverflow.com/questions/46546091/how-do-i-run-a-local-fish-script-on-a-remote-server"
+        },
+        {
+            "rank": 21,
+            "snippet": "my problem is as follows: I'm writing a script whose purpose is to run a certain scripts on different servers in parallel. I.e., I want to log into a remote server, enter the password (this is not ...",
+            "timestamp": 1645839151,
+            "title": "bash: parallel command execution over ssh [closed]",
+            "url": "https://stackoverflow.com/questions/21022584/bash-parallel-command-execution-over-ssh"
+        },
+        {
+            "rank": 22,
+            "snippet": "Just a shot in the dark, but do I need a local interface to call a remote stateless EJB?\n\nwhen I try call the bean remotely through Netbeans:\nNetbeans doesn't allow a remote call, or any call, on ...",
+            "timestamp": 1645839151,
+            "title": "selected bean is not in the same module or enterprise application",
+            "url": "https://stackoverflow.com/questions/25821480/selected-bean-is-not-in-the-same-module-or-enterprise-application"
+        },
+        {
+            "rank": 23,
+            "snippet": "I have a file \"test.ps1\" and its content is as below:\n\n$getRSDBName =\n{\n    Add-PSSnapIn Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue\n    $rsdb = Get-SPRSDatabase\n\n    return $rsdb\n}\n...",
+            "timestamp": 1645839151,
+            "title": "Why does PowerShell not work if I use WinRS?",
+            "url": "https://stackoverflow.com/questions/15727080/why-does-powershell-not-work-if-i-use-winrs"
+        },
+        {
+            "rank": 24,
+            "snippet": "How can I run command via SSH on remote device?\n\nI'm trying next ideas:\n\n1:\n\n[root@0400smarts-voip01 test]# ssh user@IP \"my command\"\nuser@IP's password:\nConnection to IP closed by remote host.\n2:\n\n[...",
+            "timestamp": 1645839151,
+            "title": "How can I run command via SSH on remote device? [closed]",
+            "url": "https://stackoverflow.com/questions/48475898/how-can-i-run-command-via-ssh-on-remote-device"
+        },
+        {
+            "rank": 25,
+            "snippet": "I am invoking a remote process using libcURLs libssh2. The remote server is a Linux (CentOS) and the client is an Windows XP. Also am using Qt 4.6 and C++.The processes are some third party ...",
+            "timestamp": 1645839151,
+            "title": "Obtaining status from a remote executed process",
+            "url": "https://stackoverflow.com/questions/4538142/obtaining-status-from-a-remote-executed-process"
+        },
+        {
+            "rank": 26,
+            "snippet": "Using salt on the command line, how can I get multiple grains from remote systems?\n\nFor example, I can get os and osrelease individually:\n\nsalt '*' grains.get os\nsalt '*' grains.get osrelease\nBut I ...",
+            "timestamp": 1645839151,
+            "title": "salt stack: how to get multiple grains on command line remote execution?",
+            "url": "https://stackoverflow.com/questions/48841992/salt-stack-how-to-get-multiple-grains-on-command-line-remote-execution"
+        },
+        {
+            "rank": 27,
+            "snippet": "Remote execution for setting physicalPath is erroring with the following message:\n  Cannot find drive. A drive with the name 'IIS' does not exist.\nWhat is wrong with the following?\n\n$site    = Read-...",
+            "timestamp": 1645839151,
+            "title": "Set-ItemProperty physicalPath",
+            "url": "https://stackoverflow.com/questions/46667717/set-itemproperty-physicalpath"
+        },
+        {
+            "rank": 28,
+            "snippet": "Given I have a JMeter test script that would have a constant throughput of 200 transactions (running threads) per minute,\nand I have two slaves controlled by the JMeter master that would execute that ...",
+            "timestamp": 1645839151,
+            "title": "How is throughput calculated when using JMeter slaves?",
+            "url": "https://stackoverflow.com/questions/46046281/how-is-throughput-calculated-when-using-jmeter-slaves"
+        },
+        {
+            "rank": 29,
+            "snippet": "I'm new to Nagios, and I've been trying to get Nagios to handle a few simple check_by_ssh commands. I'm at the point where I'm successfully able to run the command from the command line like so:\n\n#/...",
+            "timestamp": 1645839151,
+            "title": "Using check_by_ssh in Nagios Yielding Strange Behavior (and Remote Execution Failure)",
+            "url": "https://stackoverflow.com/questions/12753232/using-check-by-ssh-in-nagios-yielding-strange-behavior-and-remote-execution-fai"
+        },
+        {
+            "rank": 30,
+            "snippet": "I'm trying to build TensorFlow from-source using remote execution+caching with bazel-buildfarm. I have setup a bazel-buildfarm server and worker using example configuration files @ https://github.com/...",
+            "timestamp": 1645839151,
+            "title": "Building TensorFlow with bazel-buildfarm",
+            "url": "https://stackoverflow.com/questions/60419561/building-tensorflow-with-bazel-buildfarm"
+        },
+        {
+            "rank": 31,
+            "snippet": "I just need a hint. I am trying to run the following command from the GNU parallel tutorial (GNU Parallel tutorial):\n\nparallel -S $SERVER1,$SERVER2 echo ::: running on more hosts\nI replaced $SERVERX ...",
+            "timestamp": 1645839151,
+            "title": "GNU Parallel does not do anything using remote execution",
+            "url": "https://stackoverflow.com/questions/59773717/gnu-parallel-does-not-do-anything-using-remote-execution"
+        },
+        {
+            "rank": 32,
+            "snippet": "By default bazel produces UUID per invocation. \n\nSome of the tools we're using use this Id to link their entities to the specific bazel invocation.\n\nIs there a bazel flag to force our own Id instead ...",
+            "timestamp": 1645839151,
+            "title": "Set bazel invocation_id from command line",
+            "url": "https://stackoverflow.com/questions/52947778/set-bazel-invocation-id-from-command-line"
+        },
+        {
+            "rank": 33,
+            "snippet": "I am using psexec to execute commands on remote server. Here is my command,\n\nPsExec.exe\" -u user \\\\server -h run.bat\nI am entering the password manually. here I am using standard user account due to ...",
+            "timestamp": 1645839151,
+            "title": "Alternatives for PsExec which works in standard user",
+            "url": "https://stackoverflow.com/questions/37653518/alternatives-for-psexec-which-works-in-standard-user"
+        },
+        {
+            "rank": 34,
+            "snippet": "We have a business functionality which is exposed as a Remote EJB. We shared the remote interface with the client. Below is the Remote interface that we shared.\n\npublic interface EmployeeRemoteEJB {\n  ...",
+            "timestamp": 1645839151,
+            "title": "Intermittent issue with Remote EJB invocation on WAS 7.0",
+            "url": "https://stackoverflow.com/questions/22813038/intermittent-issue-with-remote-ejb-invocation-on-was-7-0"
+        },
+        {
+            "rank": 35,
+            "snippet": "We have a SQL server (Name: SQL) that launches an SSIS job with proxy credentials (a service account), consisting of multiple steps.  \n\nOne of these steps require files to be put in a local folder on ...",
+            "timestamp": 1645839151,
+            "title": "Use SSIS to launch powershell script that remotely launches a batch file without Administrator rights",
+            "url": "https://stackoverflow.com/questions/8000929/use-ssis-to-launch-powershell-script-that-remotely-launches-a-batch-file-without"
+        },
+        {
+            "rank": 36,
+            "snippet": "on each of our remote servers a scheduler task is created that calls an .exe program that shuts down the databases at 10:00:00 everyday (it create database backups)and start it up again at a specific ...",
+            "timestamp": 1645839151,
+            "title": "how to check if scheduler backups ran successfully",
+            "url": "https://stackoverflow.com/questions/3802994/how-to-check-if-scheduler-backups-ran-successfully"
+        },
+        {
+            "rank": 37,
+            "snippet": "I'm using the Ruby Net:SSH lib to do a ssh connection to a remote PC and then execute a remote cmd.\nWhen I start my SSH connection I have no issue but sometimes, not everywhere, when I use the exec! I ...",
+            "timestamp": 1645839151,
+            "title": "tput: No value for $TERM and no -T specified while using Ruby Net:SSH",
+            "url": "https://stackoverflow.com/questions/67470872/tput-no-value-for-term-and-no-t-specified-while-using-ruby-netssh"
+        },
+        {
+            "rank": 38,
+            "snippet": "Which is the better way to read output of a PowerShell script using C++ application. Tried with below code but couldn't get the output. It's perfectly ok to execute the same PowerShell script from a ...",
+            "timestamp": 1645839151,
+            "title": "Get PowerShell script output from C++ App",
+            "url": "https://stackoverflow.com/questions/62469810/get-powershell-script-output-from-c-app"
+        },
+        {
+            "rank": 39,
+            "snippet": "I am doing following on Azure cloud using Terraform,\nCreate a RHEL OS VM on Azure.\nCopy a setup.sh file to the new VM.\nUsing remote execution, I am running a setup.sh script as below.\n\nprovisioner \"...",
+            "timestamp": 1645839151,
+            "title": "Is there a way to remote exec a shell script as a root user through Terraform on Windows Azure",
+            "url": "https://stackoverflow.com/questions/60650189/is-there-a-way-to-remote-exec-a-shell-script-as-a-root-user-through-terraform-on"
+        },
+        {
+            "rank": 40,
+            "snippet": "I\u2019m looking for a framework/platform that would allow me to execute remote commands on a Windows machine and report back the results. \nThese machines would be public outside our company network, ...",
+            "timestamp": 1645839151,
+            "title": "Remote Execution platform",
+            "url": "https://stackoverflow.com/questions/57632765/remote-execution-platform"
+        },
+        {
+            "rank": 41,
+            "snippet": "I have three remote devices controlled by another one. What I want is those remote devices to execute a code in a syncronous way. I mean, all at the exact time.\n\nThis comes from the need to take ...",
+            "timestamp": 1645839151,
+            "title": "Synchronize remote code execution with Python in multiple devices",
+            "url": "https://stackoverflow.com/questions/52110930/synchronize-remote-code-execution-with-python-in-multiple-devices"
+        },
+        {
+            "rank": 42,
+            "snippet": "I am using remote-exec which uses the ssh2 npm package and I am getting the following error \n  Error: Timed out while waiting for handshake\nThe code which I am running is the following\n\nvar rexec = ...",
+            "timestamp": 1645839151,
+            "title": "nodejs - Error: Timed out while waiting for handshake",
+            "url": "https://stackoverflow.com/questions/44026882/nodejs-error-timed-out-while-waiting-for-handshake"
+        },
+        {
+            "rank": 43,
+            "snippet": "Regardless of why, I am trying to write a script that will let me send a command to various addresses.  There is a shared key for the user, so there is no need for logging in.  But this isn't working.\n...",
+            "timestamp": 1645839151,
+            "title": "Remote SSH commands not working in Linux",
+            "url": "https://stackoverflow.com/questions/29107705/remote-ssh-commands-not-working-in-linux"
+        },
+        {
+            "rank": 44,
+            "snippet": "I have copied a .vbs file to a remote machine which inturn invokes a local application.\n\nPlease suggest a way to invoke the remote vbs from the local machine.\n\nI tried with wmi. I need to have UI",
+            "timestamp": 1645839151,
+            "title": "How to invoke a remote vbs file from local machine?",
+            "url": "https://stackoverflow.com/questions/25182723/how-to-invoke-a-remote-vbs-file-from-local-machine"
+        },
+        {
+            "rank": 45,
+            "snippet": "So far my code will start a process (Install an application) with command line arguments on a target computer and wait for the process to finish, IF I copy the install files to that computer. \n\nMy ...",
+            "timestamp": 1645839151,
+            "title": "Remotely Install an Application from a FileShare using WMI",
+            "url": "https://stackoverflow.com/questions/20204768/remotely-install-an-application-from-a-fileshare-using-wmi"
+        },
+        {
+            "rank": 46,
+            "snippet": "Could anyone explain the general purpose of these two loaders?\n\nAnd what are the major differences between them?\n\nIn what typical scenarios are they used?",
+            "timestamp": 1645839151,
+            "title": "Scenarios of using RMIClassLoader and URLClassLoader?",
+            "url": "https://stackoverflow.com/questions/19778143/scenarios-of-using-rmiclassloader-and-urlclassloader"
+        },
+        {
+            "rank": 47,
+            "snippet": "I want to remotely execute commands on a machine from a host machine executing say a C#/C++/C type of application. The application is intended to control and execute the execution of commands on the ...",
+            "timestamp": 1645839151,
+            "title": "Remote execution of command",
+            "url": "https://stackoverflow.com/questions/7817225/remote-execution-of-command"
+        },
+        {
+            "rank": 48,
+            "snippet": "I have a python script on a linux server that I can SSH into and I want to run the script on the linux server( and pass it parameters entered by the user)  and get the output on an ASP.net webpage ...",
+            "timestamp": 1645839151,
+            "title": "Run a remote python script from ASP.Net",
+            "url": "https://stackoverflow.com/questions/1904320/run-a-remote-python-script-from-asp-net"
+        },
+        {
+            "rank": 49,
+            "snippet": "A very convenient way to execute a Python script on a remote server is to pipe it to ssh:\n\ncat script.py | ssh user@address.com python -\nwhere the - seems to be optional.\n\nHow can I execute other ...",
+            "timestamp": 1645839151,
+            "title": "Pipe Python script to ssh, but do other bash commands first",
+            "url": "https://stackoverflow.com/questions/27747265/pipe-python-script-to-ssh-but-do-other-bash-commands-first"
+        },
+        {
+            "rank": 50,
+            "snippet": "I am having one php script in remote linux server. I need to run that php from another linux machine without any kind of login.\n\nIn Linux Machine 1:\n\n$] /home/user/myScript.php\nIn Linux Machine 2:\n\n$]...",
+            "timestamp": 1645839151,
+            "title": "Run the remote script in linux without login",
+            "url": "https://stackoverflow.com/questions/22664645/run-the-remote-script-in-linux-without-login"
+        }
+    ],
+    "timestamp": 1645839151,
+    "url": "https://stackoverflow.com/questions/tagged/remote-execution"
+}
