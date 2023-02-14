@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "\uac70\ubd81\uc120",
+    "offset": null,
+    "page": null,
+    "query": "\uac70\ubd81\uc120",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1439284748,
+            "title": "\u3008<em>\uac70\ubd81\uc120</em>\u3009",
+            "url": "http://museum.navy.ac.kr/bor/bor_02.jsp"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1439284748,
+            "title": "<em>\uac70\ubd81\uc120</em> - Wikipedia",
+            "url": "https://ko.wikipedia.org/wiki/%EA%B1%B0%EB%B6%81%EC%84%A0"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1439284748,
+            "title": "<em>\uac70\ubd81\uc120</em> - \ud55c\uad6d\ucef4\ud4e8\ud130\uc120\uad50\ud68c",
+            "url": "http://kcm.kr/dic_view.php?nid=39584"
+        }
+    ],
+    "timestamp": 1439284748,
+    "url": "http://search.naver.com/search.naver?where=nexearch&query=%EA%B1%B0%EB%B6%81%EC%84%A0&sm=top_lve&ie=utf8"
+}

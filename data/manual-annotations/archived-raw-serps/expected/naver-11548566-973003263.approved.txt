@@ -1,0 +1,150 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "11548566",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.homepage114.com/health/diseases.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.homepage114.com/health/diseases.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uc815\ubcf4\ucc44\ub110(\uac74\uac15\uc815\ubcf4)",
+            "url": "http://211.61.71.21/theme/healthinfo.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uc815\ubcf4\ucc44\ub110(\uac74\uac15\uc815\ubcf4)",
+            "url": "http://211.61.71.21/theme/healthinfo.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uae08\uc735\uc815\ubcf4 - \ub274\uc2a4 - \ub3c4\uc6c0\ub9d0 - \uba54\uc77c",
+            "url": "http://www.pr2000.co.kr/sub/health/health.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uae08\uc735\uc815\ubcf4 - \ub274\uc2a4 - \ub3c4\uc6c0\ub9d0 - \uba54\uc77c",
+            "url": "http://www.pr2000.co.kr/sub/health/health.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uac74\uac15/\uc758\ud559",
+            "url": "http://www.netswin.com/htm/02-04.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uac74\uac15/\uc758\ud559",
+            "url": "http://www.netswin.com/htm/02-04.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\ubc8c\uc218\uc815 \ucc38\uc678\uc758 \uc720\ub798",
+            "url": "http://www.chamman.co.kr/indexban69.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\ubc8c\uc218\uc815 \ucc38\uc678\uc758 \uc720\ub798",
+            "url": "http://www.chamman.co.kr/indexban69.htm"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "health site",
+            "url": "http://www.daedong-v.co.kr/site.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "health site",
+            "url": "http://www.daedong-v.co.kr/site.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uc815\ub9d0 \ube60\ub974\ub2e4! \uace0\uc18d \ub9c1\ud06c\ud2b9\uae09",
+            "url": "http://www.esenclub.com/health-\uad00\ub828\uc0ac\uc774\ud2b8.htm"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uc815\ub9d0 \ube60\ub974\ub2e4! \uace0\uc18d \ub9c1\ud06c\ud2b9\uae09",
+            "url": "http://www.esenclub.com/health-\uad00\ub828\uc0ac\uc774\ud2b8.htm"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.doolos.co.kr/community/rehealth/health1.htm"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.doolos.co.kr/community/rehealth/health1.htm"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uac74\uac15.\uc758\ud559 / \uc77c\ubc18 \uac74\uac15",
+            "url": "http://www.nicehome.co.kr/health/general_health.htm"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "\uac74\uac15.\uc758\ud559 / \uc77c\ubc18 \uac74\uac15",
+            "url": "http://www.nicehome.co.kr/health/general_health.htm"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "<em>\uac74\uac15\uc0c1\uc2dd</em>",
+            "url": "http://www.sambong.co.kr/sambong04.htm"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 973003263,
+            "title": "<em>\uac74\uac15\uc0c1\uc2dd</em>",
+            "url": "http://www.sambong.co.kr/sambong04.htm"
+        }
+    ],
+    "timestamp": 973003263,
+    "url": "http://search.naver.com:80/search.naver?where=web&type=3&query=11548566"
+}

@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "\uc7a5\uc678 \ubc1c\ub9e4\uc18c",
+    "offset": null,
+    "page": null,
+    "query": "\ufffd\ufffd\ufffd \ufffd\u07f8\u017c\ufffd",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.snhorse.co.kr/news/new/9910-732.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.snhorse.co.kr/news/new/9910-732.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc720\uc885\uc218\uc758\uc6d0\uc758 \uc9c8\ubb38\uacfc \ub2f5\ubcc0",
+            "url": "http://www.malbab.co.kr/ins5-6.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc720\uc885\uc218\uc758\uc6d0\uc758 \uc9c8\ubb38\uacfc \ub2f5\ubcc0",
+            "url": "http://www.malbab.co.kr/ins5-6.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.malbab.co.kr/news7-21.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.malbab.co.kr/news7-21.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc2a4\ud3ec\uce20\uc870\uc120",
+            "url": "http://www.chosun.net/w21data/html/news/199811/19981127s240.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc2a4\ud3ec\uce20\uc870\uc120",
+            "url": "http://www.chosun.net/w21data/html/news/199811/19981127s240.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.snhorse.co.kr/news/newa/bk11.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.snhorse.co.kr/news/newa/bk11.htm"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\ub300\uc804\uc9c0\uc810\uac1c\uc7a5",
+            "url": "http://www.kra.co.kr/main1/sub/magazine/9907/\ub300\uc804\uc9c0\uc810\uac1c\uc7a5.htm"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\ub300\uc804\uc9c0\uc810\uac1c\uc7a5",
+            "url": "http://www.kra.co.kr/main1/sub/magazine/9907/\ub300\uc804\uc9c0\uc810\uac1c\uc7a5.htm"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.snhorse.co.kr/news/2004/004-676.htm"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc81c\ubaa9\uc5c6\uc74c",
+            "url": "http://www.snhorse.co.kr/news/2004/004-676.htm"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc0ac\ud68c",
+            "url": "http://210.106.60.5/text/society/s9111711.htm"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc0ac\ud68c",
+            "url": "http://210.106.60.5/text/society/s9111711.htm"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc2a4\ud3ec\uce20\uc870\uc120",
+            "url": "http://www.chosun.net/w21data/html/news/199902/19990205s181.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc2a4\ud3ec\uce20\uc870\uc120",
+            "url": "http://www.chosun.net/w21data/html/news/199902/19990205s181.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc0ac\ud68c",
+            "url": "http://210.106.60.5/text/society/s9060414.htm"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 974687640,
+            "title": "\uc0ac\ud68c",
+            "url": "http://210.106.60.5/text/society/s9060414.htm"
+        }
+    ],
+    "timestamp": 974687640,
+    "url": "http://search.naver.com:80/search.naver?where=nexearch&query=%C0%E5%BF%DC+%B9%DF%B8%C5%BC%D2"
+}

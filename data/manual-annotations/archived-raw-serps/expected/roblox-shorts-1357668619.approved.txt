@@ -1,0 +1,304 @@
+{
+    "interpreted_query": "shorts",
+    "offset": null,
+    "page": null,
+    "query": "shorts",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Green D&amp;C Shoes EPIC! *Back on sale!*",
+            "url": "http://www.roblox.com:80/Green-D-C-Shoes-EPIC-Back-on-sale-item?id=82939556"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=54287303"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=84551170"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=85272857"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=79655506"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=1819102"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=82919900"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=70169450"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=75439248"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Black Pants W/ White Belt [C]",
+            "url": "http://www.roblox.com:80/Black-Pants-W-White-Belt-C-item?id=78766486"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=90031568"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=78763611"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "short jeans",
+            "url": "http://www.roblox.com:80/short-jeans-item?id=83426632"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts.",
+            "url": "http://www.roblox.com:80/Shorts-item?id=66058645"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts!",
+            "url": "http://www.roblox.com:80/Shorts-item?id=65834759"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=73906761"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=1832475"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts!",
+            "url": "http://www.roblox.com:80/Shorts-item?id=96215120"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts!",
+            "url": "http://www.roblox.com:80/Shorts-item?id=92582553"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts.",
+            "url": "http://www.roblox.com:80/Shorts-item?id=102510733"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=99807094"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=62827610"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=97042177"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=84298215"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=84564134"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=91037828"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=81813229"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=78743279"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=51880082"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=1841149"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=95894979"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "SHORTS",
+            "url": "http://www.roblox.com:80/SHORTS-item?id=62917504"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=91707005"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=56673440"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=74988114"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=82358151"
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=93241794"
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=70195168"
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=94626967"
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts",
+            "url": "http://www.roblox.com:80/Shorts-item?id=1824636"
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "Shorts ^-^",
+            "url": "http://www.roblox.com:80/Shorts-item?id=85871051"
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1357668619,
+            "title": "shorts",
+            "url": "http://www.roblox.com:80/shorts-item?id=80765022"
+        }
+    ],
+    "timestamp": 1357668619,
+    "url": "http://www.roblox.com:80/catalog/browse.aspx?Subcategory=13&Keyword=shorts&LegendExpanded=true&Category=3"
+}

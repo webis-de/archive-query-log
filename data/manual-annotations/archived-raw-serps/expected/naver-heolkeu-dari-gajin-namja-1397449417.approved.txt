@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "\ud5d0\ud06c \ub2e4\ub9ac \uac00\uc9c4 \ub0a8\uc790",
+    "offset": null,
+    "page": null,
+    "query": "\ud5d0\ud06c \ub2e4\ub9ac \uac00\uc9c4 \ub0a8\uc790",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1397449417,
+            "title": "<em>\ud5d0\ud06c \ub2e4\ub9ac \uac00\uc9c4 \ub0a8\uc790</em> \ub2e4\ub9ac \ube44\uacb0\uc774\u2026\ucda9\uaca9",
+            "url": "http://www.nemopan.com/community_issue/8028629"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1397449417,
+            "title": "\ube44\uc815\uc0c1\uc801\uc778 <em>\ud5d0\ud06c \ub2e4\ub9ac \uac00\uc9c4 \ub0a8\uc790</em>",
+            "url": "http://www.ezday.co.kr/bbs/view_board.html?q_id_info=1288&q_sq_board=5689559"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1397449417,
+            "title": "<em>\ud5d0\ud06c \ub2e4\ub9ac \uac00\uc9c4 \ub0a8\uc790</em>, \u2018\uadfc\uc721 \uc7a5\ub09c \uc544\ub2c8\ub2e4!\u2019",
+            "url": "http://www.focus.co.kr/content.asp?aid=724aa3468c184a138cffb57dd56e43ef"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1397449417,
+            "title": "<em>\ud5d0\ud06c \ub2e4\ub9ac \uac00\uc9c4 \ub0a8\uc790</em>",
+            "url": "http://osblood.com/712319"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1397449417,
+            "title": "<em>\ud5d0\ud06c \ub2e4\ub9ac \uac00\uc9c4 \ub0a8\uc790</em> \"\uc0ac\uc774\ud074 \ud0c0\uba74 \ub2e4 \uc774\ub807\uac8c \ud2bc\uc2e4\ud574\uc838?\"",
+            "url": "http://www.newsjeju.net/news/articleView.html?idxno=163047"
+        }
+    ],
+    "timestamp": 1397449417,
+    "url": "http://search.naver.com/search.naver?where=nexearch&query=%ED%97%90%ED%81%AC+%EB%8B%A4%EB%A6%AC+%EA%B0%80%EC%A7%84+%EB%82%A8%EC%9E%90&ie=utf8&sm=nws_htk"
+}

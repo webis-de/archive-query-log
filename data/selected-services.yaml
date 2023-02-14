@@ -1854,8 +1854,37 @@
   - url_pattern: ^https?://[^/]+/search\.naver\?
     type: query_parameter
     parameter: start
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\.naver\?
+    type: html_selector
+    query_selector: input#nx_query
+  - url_pattern: ^https?://[^/]+/search\.naver\?
+    type: html_selector
+    query_selector: input[name="query"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\.naver\?
+    type: html_selector
+    results_selector: ul.lst_total li.bx
+    url_selector: a.total_tit
+    title_selector: a.total_tit
+    snippet_selector: a.total_dsc
+  - url_pattern: ^https?://[^/]+/search\.naver\?
+    type: html_selector
+    results_selector: div.webdoc ul li.sh_web_top
+    url_selector: a.sh_web_title
+    title_selector: a.sh_web_title
+    snippet_selector: div.sh_web_passage
+  - url_pattern: ^https?://[^/]+/search\.naver\?
+    type: html_selector
+    results_selector: div.blog ul li.sh_blog_top
+    url_selector: a.sh_blog_title
+    title_selector: a.sh_blog_title
+    snippet_selector: div.sh_blog_passage
+  - url_pattern: ^https?://[^/]+/search\.naver\?
+    type: html_selector
+    results_selector: body small ul table
+    url_selector: tr[valign="top"] td table tr td small a
+    title_selector: tr[valign="top"] td table tr td small a
   focused_url_prefixes:
   - /search.naver?
 - name: aliexpress
@@ -2080,8 +2109,29 @@
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    query_selector: input#searchInput
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    query_selector: form#search_form input[name="search"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    results_selector: ul#videoSearchResult li.videoblock
+    url_selector: span.title a
+    title_selector: span.title
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    results_selector: div.nf-videos ul.videos li.videoblock, ul.nf-videos li.videoblock
+    url_selector: span.title a, h5.title a
+    title_selector: span.title, h5.title
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    results_selector: div.video_box
+    url_selector: a
+    title_selector: a span.small
   focused_url_prefixes:
   - /video/search?
 - name: mail
@@ -2606,8 +2656,16 @@
     parameter: Keyword
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/(catalog\/browse.aspx\?|discover)
+    type: html_selector
+    query_selector: input#keywordTextbox
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/(catalog\/browse.aspx\?|discover)
+    type: html_selector
+    results_selector: div.CatalogItemOuter
+    url_selector: div.CatalogItemName a.name
+    title_selector: div.CatalogItemName
   focused_url_prefixes:
   - /catalog/browse.aspx?
   - /discover

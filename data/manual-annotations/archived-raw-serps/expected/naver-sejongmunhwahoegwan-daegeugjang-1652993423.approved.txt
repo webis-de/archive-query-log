@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\uc138\uc885\ubb38\ud654\ud68c\uad00 \ub300\uadf9\uc7a5",
+    "offset": null,
+    "page": null,
+    "query": "\uc138\uc885\ubb38\ud654\ud68c\uad00 \ub300\uadf9\uc7a5",
+    "results": [],
+    "timestamp": 1652993423,
+    "url": "https://search.naver.com/search.naver?where=image&sm=tab_jum&query=%EC%84%B8%EC%A2%85%EB%AC%B8%ED%99%94%ED%9A%8C%EA%B4%80+%EB%8C%80%EA%B7%B9%EC%9E%A5"
+}

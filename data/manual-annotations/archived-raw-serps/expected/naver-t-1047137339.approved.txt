@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\uc2a4\ud2b8\ub9bd\uc1fc\ubcf4\uc5ec\uc918",
+    "offset": null,
+    "page": null,
+    "query": "\ufffd\ufffd\u01ae\ufffd\ufffd\ufffd\ueeb8\ufffd\ufffd\ufffd\ufffd",
+    "results": [],
+    "timestamp": 1047137339,
+    "url": "http://search.naver.com:80/search.naver?where=nexearch&query=%bd%ba%c6%ae%b8%b3%bc%ee%ba%b8%bf%a9%c1%e0"
+}
