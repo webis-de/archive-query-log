@@ -5929,11 +5929,11 @@
     segment: 2
   page_parsers: []
   offset_parsers:
-  - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+-[0-9]+
+  - url_pattern: ^https?://[^/]+/search/[^/]+/[0-9]+-[^/]+
     type: path_segment
     segment: 3
     remove_patterns:
-    - -[0-9]+$
+    - -[^/]+$
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes:
