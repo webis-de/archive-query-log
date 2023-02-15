@@ -782,6 +782,7 @@
   search_div: null
   domains:
   - tmall.com
+  - list.tmall.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search_product
     type: query_parameter
