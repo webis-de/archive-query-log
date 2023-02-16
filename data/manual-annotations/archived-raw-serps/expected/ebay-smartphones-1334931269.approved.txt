@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "Smartphones",
+    "offset": null,
+    "page": null,
+    "query": "Smartphones",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1334931269,
+            "title": "AG Frei Internet-Flatrate 200 MB + 100 Minuten +100 SMS",
+            "url": "http://www.ebay.de/itm/All-in-M-Sim-Only-in-D-Netz-Qualitat-fur-3-95-Top-Handy-Vertrag-fur-Smartphones-/320879787679?pt=DE_Handy_s_SIM_only&hash=item4ab5ecfe9f"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1334931269,
+            "title": "Internet-Flatrate 500 MB + 100 Minuten + 100 SMS",
+            "url": "http://www.ebay.de/itm/All-in-M-Sim-Only-o2-Netz-fur-3-95-Top-Handy-Vertrag-fur-Smartphones-/320879791665?pt=DE_Handy_s_SIM_only&hash=item4ab5ed0e31"
+        }
+    ],
+    "timestamp": 1334931269,
+    "url": "http://www.ebay.de/sch/i.html?_nkw=Smartphones&_sacat=132286&rt=nc"
+}

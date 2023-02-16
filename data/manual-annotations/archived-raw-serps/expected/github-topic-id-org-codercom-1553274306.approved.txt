@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "topic:id org:codercom",
+    "offset": null,
+    "page": null,
+    "query": "topic:id org:codercom",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\ud83c\udd94 generation utilities",
+            "timestamp": 1553274306,
+            "title": "codercom/id",
+            "url": "https://github.com/codercom/id"
+        }
+    ],
+    "timestamp": 1553274306,
+    "url": "https://github.com/search?q=topic%3Aid+org%3Acodercom&type=Repositories"
+}

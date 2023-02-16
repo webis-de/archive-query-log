@@ -1,0 +1,52 @@
+{
+    "interpreted_query": "org:Zettlr ",
+    "offset": null,
+    "page": null,
+    "query": "org:Zettlr",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "A Markdown Editor for the 21st century.",
+            "timestamp": 1591675518,
+            "title": "Zettlr/Zettlr",
+            "url": "https://github.com/Zettlr/Zettlr"
+        },
+        {
+            "rank": 2,
+            "snippet": "This repository holds the official documentation of Zettlr",
+            "timestamp": 1591675518,
+            "title": "Zettlr/zettlr-docs",
+            "url": "https://github.com/Zettlr/zettlr-docs"
+        },
+        {
+            "rank": 3,
+            "snippet": "A small library helping to parse citations between Markdown and CSL JSON",
+            "timestamp": 1591675518,
+            "title": "Zettlr/Citr",
+            "url": "https://github.com/Zettlr/Citr"
+        },
+        {
+            "rank": 4,
+            "snippet": "Open Source Text Management and Collaborative Writing for the 21st Century",
+            "timestamp": 1591675518,
+            "title": "Zettlr/Davenport",
+            "url": "https://github.com/Zettlr/Davenport"
+        },
+        {
+            "rank": 5,
+            "snippet": "A lightweight Wiki-system that focuses on content and simplicity. Ideal for writers and academics.",
+            "timestamp": 1591675518,
+            "title": "Zettlr/Wiki",
+            "url": "https://github.com/Zettlr/Wiki"
+        },
+        {
+            "rank": 6,
+            "snippet": "Contains default contrib files for repositories",
+            "timestamp": 1591675518,
+            "title": "Zettlr/.github",
+            "url": "https://github.com/Zettlr/.github"
+        }
+    ],
+    "timestamp": 1591675518,
+    "url": "https://github.com/search?q=org%3AZettlr+"
+}

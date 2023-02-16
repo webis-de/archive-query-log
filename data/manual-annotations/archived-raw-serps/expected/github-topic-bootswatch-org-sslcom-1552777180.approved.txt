@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "topic:bootswatch org:SSLcom",
+    "offset": null,
+    "page": null,
+    "query": "topic:bootswatch org:SSLcom",
+    "results": [],
+    "timestamp": 1552777180,
+    "url": "https://github.com/search?q=topic%3Abootswatch+org%3ASSLcom&type=Wikis"
+}

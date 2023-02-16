@@ -1,0 +1,17 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "Gundula Rapsch",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1628094679,
+            "title": "Gundula Rapsch",
+            "url": "https://www.imdb.com/name/nm0710950/"
+        }
+    ],
+    "timestamp": 1628094679,
+    "url": "https://www.imdb.com/find?q=Gundula+Rapsch&s=nm"
+}

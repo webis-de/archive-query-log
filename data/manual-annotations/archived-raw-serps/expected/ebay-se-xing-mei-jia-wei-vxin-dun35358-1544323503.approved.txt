@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u8272\u6027\u59b9\u3010\u52a0\u5faev\u4fe1:dun35358\u3011\u2299",
+    "offset": null,
+    "page": null,
+    "query": "\u8272\u6027\u59b9\u3010\u52a0\u5faev\u4fe1:dun35358\u3011\u2299",
+    "results": [],
+    "timestamp": 1544323503,
+    "url": "https://www.ebay.ca/sch/i.html?_nkw=%E8%89%B2%E6%80%A7%E5%A6%B9%E3%80%90%E5%8A%A0%E5%BE%AEv%E4%BF%A1%3Adun35358%E3%80%91%E2%8A%99"
+}

@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "nv_sr_fn",
+    "offset": null,
+    "page": null,
+    "query": "Sam Claflin",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1472223834,
+            "title": "Sam Claflin",
+            "url": "http://www.imdb.com:80/name/nm3510471/?ref_=fn_nm_nm_1"
+        }
+    ],
+    "timestamp": 1472223834,
+    "url": "http://www.imdb.com:80/find?q=Sam%20Claflin&s=nm"
+}

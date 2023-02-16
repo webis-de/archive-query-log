@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "Origins/macy's",
+    "offset": null,
+    "page": null,
+    "query": "Origins/macy's",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "MUST be available weekends, the day after Thanksgiving, and the weekend before Christmas. Ability to travel to more than one location preferred....",
+            "timestamp": 1353165507,
+            "title": "<em>ORIGINS</em> HOLIDAY TEMPORARY POSITIONS",
+            "url": "http://www.indeed.com/rc/clk?cmp=ORIGINS%2FMacy%27s&ti=Origin+Holiday+Temporary+Position&jk=1d18874a576b6ae4"
+        }
+    ],
+    "timestamp": 1353165507,
+    "url": "http://www.indeed.com/jobs?q=Origins%2Fmacy%27s"
+}

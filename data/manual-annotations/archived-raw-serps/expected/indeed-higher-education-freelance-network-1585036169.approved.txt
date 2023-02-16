@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "Higher Education Freelance Network",
+    "offset": null,
+    "page": null,
+    "query": "Higher Education Freelance Network",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "P2: Requires knowledge and experience in own discipline; still acquiring higher-level knowledge and skills.\n\nUChicago Arts brings together all arts on campus to\u2026",
+            "timestamp": 1585036169,
+            "title": "Marketing and Communications Coordinator, UChicago Arts and...",
+            "url": "https://www.indeed.com/rc/clk?jk=09788484aac2a6e3&fccid=5cb727313a823dd6&vjs=3"
+        }
+    ],
+    "timestamp": 1585036169,
+    "url": "https://www.indeed.com/jobs?q=Higher+Education+Freelance+Network&rbc=The+University+of+Chicago&jcid=5cb727313a823dd6"
+}

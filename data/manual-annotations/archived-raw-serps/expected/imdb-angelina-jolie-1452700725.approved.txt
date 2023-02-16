@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "nv_sr_fn",
+    "offset": null,
+    "page": null,
+    "query": "Angelina Jolie",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1452700725,
+            "title": "Angelina Jolie",
+            "url": "http://www.imdb.com:80/name/nm0001401/?ref_=fn_al_nm_1"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1452700725,
+            "title": "Angelina Jolie",
+            "url": "http://www.imdb.com:80/character/ch0063558/?ref_=fn_al_ch_1"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1452700725,
+            "title": "Angelina Jolie",
+            "url": "http://www.imdb.com:80/title/tt0813097/?ref_=fn_al_tt_1"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1452700725,
+            "title": "Angelina Jolie",
+            "url": "http://www.imdb.com:80/title/tt0552847/?ref_=fn_al_tt_2"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1452700725,
+            "title": "Angelina Jolie",
+            "url": "http://www.imdb.com:80/title/tt0834678/?ref_=fn_al_tt_3"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1452700725,
+            "title": "Angelina Jolie",
+            "url": "http://www.imdb.com:80/title/tt2584740/?ref_=fn_al_tt_4"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1452700725,
+            "title": "Angelina Jolie",
+            "url": "http://www.imdb.com:80/title/tt1320647/?ref_=fn_al_tt_5"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1452700725,
+            "title": "angelina-jolie",
+            "url": "http://www.imdb.com:80/keyword/angelina-jolie/?ref_=fn_al_kw_1"
+        }
+    ],
+    "timestamp": 1452700725,
+    "url": "http://www.imdb.com:80/find?ref_=nv_sr_fn&q=Angelina+Jolie&s=all"
+}

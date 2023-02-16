@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u6770\u58eb\u5fb7\u7cbe\u5bc6\u5de5\u4e1a\u6709\u9650\u516c\u53f8",
+    "offset": null,
+    "page": null,
+    "query": "\u6770\u58eb\u5fb7\u7cbe\u5bc6\u5de5\u4e1a\u6709\u9650\u516c\u53f8",
+    "results": [],
+    "timestamp": 1597737683,
+    "url": "https://github.com/search?q=%E6%9D%B0%E5%A3%AB%E5%BE%B7%E7%B2%BE%E5%AF%86%E5%B7%A5%E4%B8%9A%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"
+}

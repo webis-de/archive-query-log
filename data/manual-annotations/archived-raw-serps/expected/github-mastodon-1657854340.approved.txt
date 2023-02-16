@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "mastodon",
+    "offset": null,
+    "page": null,
+    "query": "mastodon",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1657854340,
+            "title": "mastodon",
+            "url": "https://github.com/users/ikuradon/packages/container/package/mastodon"
+        },
+        {
+            "rank": 2,
+            "snippet": "jekyll-theme-mastodon is a Jekyll theme built from Mastodon, the open-source social media platform.",
+            "timestamp": 1657854340,
+            "title": "jekyll-theme-mastodon",
+            "url": "https://github.com/aerolution/jekyll-theme-mastodon/packages/1443358"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1657854340,
+            "title": "mastodon",
+            "url": "https://github.com/users/Madeorsk/packages/container/package/mastodon"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1657854340,
+            "title": "conda-forge/noarch/mastodon.py",
+            "url": "https://github.com/orgs/channel-mirrors/packages/container/package/conda-forge%2Fnoarch%2Fmastodon.py"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1657854340,
+            "title": "mastodon",
+            "url": "https://github.com/orgs/nineland/packages/container/package/mastodon"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1657854340,
+            "title": "mastodon-docker/mastodon-docker",
+            "url": "https://github.com/users/Doridian/packages/container/package/mastodon-docker%2Fmastodon-docker"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1657854340,
+            "title": "mastodon-nginx",
+            "url": "https://github.com/orgs/nineland/packages/container/package/mastodon-nginx"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1657854340,
+            "title": "mastodon",
+            "url": "https://github.com/orgs/rgst-io/packages/container/package/mastodon"
+        },
+        {
+            "rank": 9,
+            "snippet": "Crossposter to post statuses between Mastodon and Twitter",
+            "timestamp": 1657854340,
+            "title": "mastodon-twitter-poster/mastodon-twitter-poster",
+            "url": "https://github.com/users/Doridian/packages/container/package/mastodon-twitter-poster%2Fmastodon-twitter-poster"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1657854340,
+            "title": "conda-forge/osx-64/mastodon.py",
+            "url": "https://github.com/orgs/channel-mirrors/packages/container/package/conda-forge%2Fosx-64%2Fmastodon.py"
+        }
+    ],
+    "timestamp": 1657854340,
+    "url": "https://github.com/search?q=mastodon&type=registrypackages"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Customer Service",
+    "offset": null,
+    "page": null,
+    "query": "Customer Service",
+    "results": [
+        {
+            "rank": 4,
+            "snippet": "(-) Supports the administration of the pre-certification process in compliance with various laws and regulations, URAQ and/or NCQA standards, where applicable,...",
+            "timestamp": 1447983624,
+            "title": "<em>Customer</em> <em>Service</em> Representative (2nd shift)",
+            "url": "http://www.indeed.com/rc/clk?jk=c6886476faeb96a8"
+        },
+        {
+            "rank": 5,
+            "snippet": "Generally has more than 1 year of experience.*. - <em>Customer</em> Satisfaction (how you treat our <em>customers</em>)*....",
+            "timestamp": 1447983624,
+            "title": "<em>Customer</em> <em>Service</em> Representative II",
+            "url": "http://www.indeed.com/cmp/Large-financial-bank/jobs/Customer-Service-Representative-d458ec60c46e3410?r=1"
+        },
+        {
+            "rank": 6,
+            "snippet": "Welcome to the company that gives you the resources and incentives to redefine healthcare <em>services</em>, with a competitive benefits package and leadership to take...",
+            "timestamp": 1447983624,
+            "title": "Scheduling Rep Full Time (FCC) - Phoenix, AZ",
+            "url": "http://www.indeed.com/rc/clk?jk=510dbbae1a8ce65a"
+        },
+        {
+            "rank": 7,
+            "snippet": "While following a specific call flow, the agent will creatively resolve <em>customer</em> issues using available technology and data, input personal information into a...",
+            "timestamp": 1447983624,
+            "title": "<em>Customer</em> <em>Service</em> Representative",
+            "url": "http://www.indeed.com/rc/clk?jk=d5651c7de0185cc6"
+        },
+        {
+            "rank": 8,
+            "snippet": "If offered an interview and are successful, candidates will be invited to the Phoenix Reservations Office for the second phase of the interview process....",
+            "timestamp": 1447983624,
+            "title": "Agent - Reservations - Sales",
+            "url": "http://www.indeed.com/rc/clk?jk=05680ab976368217"
+        },
+        {
+            "rank": 9,
+            "snippet": "Candidates for this position must complete page 7 and sign the Driver Form on page 8 of the State of Arizona Application for Employment at the time of interview...",
+            "timestamp": 1447983624,
+            "title": "<em>CUSTOMER</em> <em>SERVICE</em> REPRESENTATIVE 2",
+            "url": "http://www.indeed.com/rc/clk?jk=534c1586051fe065"
+        },
+        {
+            "rank": 10,
+            "snippet": "To perform the job successfully, anindividual should demonstrate the following competencies:. Encouragescustomers to provide information to determine when and...",
+            "timestamp": 1447983624,
+            "title": "<em>Customer</em> <em>Services</em> Operations Specialist",
+            "url": "http://www.indeed.com/rc/clk?jk=6a3966aa36d615bf"
+        },
+        {
+            "rank": 11,
+            "snippet": "Encore Companies is a leading franchisee for European Wax Center, and we currently have an opening on our front desk team in the Desert Ridge/Paradise Valley...",
+            "timestamp": 1447983624,
+            "title": "Guest <em>Service</em> Associate",
+            "url": "http://www.indeed.com/cmp/Encore-Companies/jobs/Guest-Service-Associate-dbb1f8e0c218adba?r=1"
+        },
+        {
+            "rank": 12,
+            "snippet": "Once you\u2019ve become an experienced sales consultant and obtained your P&amp;C license, you\u2019ll begin training to take on inbound <em>service</em> calls from our <em>customers</em>....",
+            "timestamp": 1447983624,
+            "title": "<em>Customer</em> <em>Service</em> Call Center Representative",
+            "url": "http://www.indeed.com/rc/clk?jk=5bab8cd32d83ca5c"
+        },
+        {
+            "rank": 13,
+            "snippet": "Is looking for a mid-level data entry clerk/<em>customer</em> <em>service</em> representative to support Arizona Department of Health <em>Services</em>....",
+            "timestamp": 1447983624,
+            "title": "Date Entry II/<em>Customer</em> <em>Service</em>",
+            "url": "http://www.indeed.com/rc/clk?jk=1ff9f1b5498f6941"
+        }
+    ],
+    "timestamp": 1447983624,
+    "url": "http://www.indeed.com/jobs?q=Customer+Service&rbl=Phoenix,+AZ&jlid=b4ff2ac66b411fd8"
+}

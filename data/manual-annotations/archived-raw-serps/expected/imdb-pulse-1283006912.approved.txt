@@ -1,0 +1,654 @@
+{
+    "interpreted_query": "Pulse",
+    "offset": null,
+    "page": null,
+    "query": "Pulse",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/title/tt0454919/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/title/tt0286751/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "P.U.L.S.E. Live at Earls Court 20.10.94, London",
+            "url": "http://www.imdb.com:80/title/tt0110758/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Octane",
+            "url": "http://www.imdb.com:80/title/tt0323465/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Incubus",
+            "url": "http://www.imdb.com:80/title/tt0462359/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/title/tt0095924/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/title/tt0360907/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/title/tt1663666/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"Pulse\"",
+            "url": "http://www.imdb.com:80/title/tt0385458/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"Pulse\"",
+            "url": "http://www.imdb.com:80/title/tt0367393/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"Pulse\"",
+            "url": "http://www.imdb.com:80/title/tt0458283/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/title/tt1347082/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/title/tt1653051/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/title/tt1667427/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/character/ch0104115/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/company/co0131896/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse",
+            "url": "http://www.imdb.com:80/company/co0104617/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "pulse",
+            "url": "http://www.imdb.com:80/keyword/pulse/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse: A Stomp Odyssey",
+            "url": "http://www.imdb.com:80/title/tt0292631/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse: Afterlife and Invasion",
+            "url": "http://www.imdb.com:80/title/tt1038072/"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Stubbs the Zombie in 'Rebel Without a Pulse'",
+            "url": "http://www.imdb.com:80/title/tt0498128/"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse 3",
+            "url": "http://www.imdb.com:80/title/tt1323946/"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Condition: Critical",
+            "url": "http://www.imdb.com:80/title/tt0104001/"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Fatal Pulse",
+            "url": "http://www.imdb.com:80/title/tt0095140/"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Feel My Pulse",
+            "url": "http://www.imdb.com:80/title/tt0018882/"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Mobile Suit Z Gundam 3: A New Translation - Love Is the Pulse of the Stars",
+            "url": "http://www.imdb.com:80/title/tt0488584/"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Pounders",
+            "url": "http://www.imdb.com:80/title/tt0293905/"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"Pulse: The Desi Beat\"",
+            "url": "http://www.imdb.com:80/title/tt1204990/"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"The Pulse\"",
+            "url": "http://www.imdb.com:80/title/tt0329912/"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"America's Pulse\"",
+            "url": "http://www.imdb.com:80/title/tt1178693/"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Chi-Town Pulse",
+            "url": "http://www.imdb.com:80/title/tt1641971/"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Creating the Fear: Making of 'Pulse'",
+            "url": "http://www.imdb.com:80/title/tt1291522/"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Doctor, Feel My Pulse",
+            "url": "http://www.imdb.com:80/title/tt0036763/"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"Global Pulse\"",
+            "url": "http://www.imdb.com:80/title/tt1365193/"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Hand on the Pulse",
+            "url": "http://www.imdb.com:80/title/tt0387270/"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"Latin Pulse\"",
+            "url": "http://www.imdb.com:80/title/tt1331748/"
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse of a City: The Philadelphia Murder Epidemic",
+            "url": "http://www.imdb.com:80/title/tt1547958/"
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Steel Pulse: Door of No Return",
+            "url": "http://www.imdb.com:80/title/tt1179438/"
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "The Heart: Final Pulse",
+            "url": "http://www.imdb.com:80/title/tt1545490/"
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"The Pulse\"",
+            "url": "http://www.imdb.com:80/title/tt1417760/"
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "The Pulse of Life",
+            "url": "http://www.imdb.com:80/title/tt0008475/"
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "The Pulse of Madness",
+            "url": "http://www.imdb.com:80/title/tt0903945/"
+        },
+        {
+            "rank": 43,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "\"The Pulse of the City\"",
+            "url": "http://www.imdb.com:80/title/tt0899121/"
+        },
+        {
+            "rank": 44,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Two Hearts One Pulse",
+            "url": "http://www.imdb.com:80/title/tt1458688/"
+        },
+        {
+            "rank": 45,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Wipeout Pulse",
+            "url": "http://www.imdb.com:80/title/tt1297314/"
+        },
+        {
+            "rank": 46,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Fred Pulse",
+            "url": "http://www.imdb.com:80/name/nm0700484/"
+        },
+        {
+            "rank": 47,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "David Pulse",
+            "url": "http://www.imdb.com:80/name/nm0972055/"
+        },
+        {
+            "rank": 48,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Travis Pulse",
+            "url": "http://www.imdb.com:80/name/nm0401549/"
+        },
+        {
+            "rank": 49,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Latin Pulse Music",
+            "url": "http://www.imdb.com:80/name/nm3127014/"
+        },
+        {
+            "rank": 50,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Steel Pulse",
+            "url": "http://www.imdb.com:80/name/nm3092555/"
+        },
+        {
+            "rank": 51,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Phonso Martin",
+            "url": "http://www.imdb.com:80/name/nm0552914/"
+        },
+        {
+            "rank": 52,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Steve Nisbett",
+            "url": "http://www.imdb.com:80/name/nm0632611/"
+        },
+        {
+            "rank": 53,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Renee Pulse",
+            "url": "http://www.imdb.com:80/name/nm1156175/"
+        },
+        {
+            "rank": 54,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Selwyn Brown",
+            "url": "http://www.imdb.com:80/name/nm0114648/"
+        },
+        {
+            "rank": 55,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Basil Gabbidon",
+            "url": "http://www.imdb.com:80/name/nm2912979/"
+        },
+        {
+            "rank": 56,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Faction",
+            "url": "http://www.imdb.com:80/name/nm1864706/"
+        },
+        {
+            "rank": 57,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Twist &amp; Pulse",
+            "url": "http://www.imdb.com:80/name/nm3916584/"
+        },
+        {
+            "rank": 58,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "David Hinds",
+            "url": "http://www.imdb.com:80/name/nm0385578/"
+        },
+        {
+            "rank": 59,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "C. David Pulse",
+            "url": "http://www.imdb.com:80/name/nm3815685/"
+        },
+        {
+            "rank": 60,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Ronald McQueen",
+            "url": "http://www.imdb.com:80/name/nm0574361/"
+        },
+        {
+            "rank": 61,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pusle",
+            "url": "http://www.imdb.com:80/character/ch0053801/"
+        },
+        {
+            "rank": 62,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pusle Berg",
+            "url": "http://www.imdb.com:80/character/ch0050145/"
+        },
+        {
+            "rank": 63,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Tribal Pulse Productions",
+            "url": "http://www.imdb.com:80/company/co0001502/"
+        },
+        {
+            "rank": 64,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Entertainment",
+            "url": "http://www.imdb.com:80/company/co0162878/"
+        },
+        {
+            "rank": 65,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Films",
+            "url": "http://www.imdb.com:80/company/co0184791/"
+        },
+        {
+            "rank": 66,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Distribution",
+            "url": "http://www.imdb.com:80/company/co0191113/"
+        },
+        {
+            "rank": 67,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Creative",
+            "url": "http://www.imdb.com:80/company/co0072591/"
+        },
+        {
+            "rank": 68,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "City Pulse/CityTV",
+            "url": "http://www.imdb.com:80/company/co0088673/"
+        },
+        {
+            "rank": 69,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Films Inc.",
+            "url": "http://www.imdb.com:80/company/co0163934/"
+        },
+        {
+            "rank": 70,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Imaging",
+            "url": "http://www.imdb.com:80/company/co0176204/"
+        },
+        {
+            "rank": 71,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Pictures",
+            "url": "http://www.imdb.com:80/company/co0187521/"
+        },
+        {
+            "rank": 72,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Entertainment",
+            "url": "http://www.imdb.com:80/company/co0067422/"
+        },
+        {
+            "rank": 73,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Crew",
+            "url": "http://www.imdb.com:80/company/co0243538/"
+        },
+        {
+            "rank": 74,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Management",
+            "url": "http://www.imdb.com:80/company/co0027680/"
+        },
+        {
+            "rank": 75,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Model Management",
+            "url": "http://www.imdb.com:80/company/co0160726/"
+        },
+        {
+            "rank": 76,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Studios",
+            "url": "http://www.imdb.com:80/company/co0171768/"
+        },
+        {
+            "rank": 77,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse FX",
+            "url": "http://www.imdb.com:80/company/co0196989/"
+        },
+        {
+            "rank": 78,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Sci Fi Pulse",
+            "url": "http://www.imdb.com:80/company/co0220940/"
+        },
+        {
+            "rank": 79,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Studios",
+            "url": "http://www.imdb.com:80/company/co0247106/"
+        },
+        {
+            "rank": 80,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Starlight-Pulse Studios Solitude",
+            "url": "http://www.imdb.com:80/company/co0255554/"
+        },
+        {
+            "rank": 81,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Media",
+            "url": "http://www.imdb.com:80/company/co0263217/"
+        },
+        {
+            "rank": 82,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Motion Pictures",
+            "url": "http://www.imdb.com:80/company/co0286806/"
+        },
+        {
+            "rank": 83,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Media International",
+            "url": "http://www.imdb.com:80/company/co0295591/"
+        },
+        {
+            "rank": 84,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Pictures",
+            "url": "http://www.imdb.com:80/company/co0106587/"
+        },
+        {
+            "rank": 85,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "Pulse Films Inc.",
+            "url": "http://www.imdb.com:80/company/co0122092/"
+        },
+        {
+            "rank": 86,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "World Pulse Artists",
+            "url": "http://www.imdb.com:80/company/co0174304/"
+        },
+        {
+            "rank": 87,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "World Pulse Entertainment",
+            "url": "http://www.imdb.com:80/company/co0223923/"
+        },
+        {
+            "rank": 88,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "electro-magnetic-pulse",
+            "url": "http://www.imdb.com:80/keyword/electro-magnetic-pulse/"
+        },
+        {
+            "rank": 89,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "taking-pulse",
+            "url": "http://www.imdb.com:80/keyword/taking-pulse/"
+        },
+        {
+            "rank": 90,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "high-altitude-electromagnetic-pulse",
+            "url": "http://www.imdb.com:80/keyword/high-altitude-electromagnetic-pulse/"
+        },
+        {
+            "rank": 91,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "micro-pulse-bomb",
+            "url": "http://www.imdb.com:80/keyword/micro-pulse-bomb/"
+        },
+        {
+            "rank": 92,
+            "snippet": null,
+            "timestamp": 1283006912,
+            "title": "steel-pulse",
+            "url": "http://www.imdb.com:80/keyword/steel-pulse/"
+        }
+    ],
+    "timestamp": 1283006912,
+    "url": "http://www.imdb.com:80/find?s=all&q=Pulse"
+}

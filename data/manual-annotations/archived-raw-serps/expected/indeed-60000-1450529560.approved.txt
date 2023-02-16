@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "$60,000",
+    "offset": null,
+    "page": null,
+    "query": "$60,000",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Brand Protection Program Manager Location : United States-CA-Foster City Organization : Risk Job : Risk Management Job Number : 157089 Description Visa is",
+            "timestamp": 1450529560,
+            "title": "Brand Protection Program Manager Job",
+            "url": "http://www.indeed.com/rc/clk?jk=668939aae0555298"
+        },
+        {
+            "rank": 2,
+            "snippet": "The right person has a knack for problem solving, a get it done attitude, and thrives in a startup environment. As a Community Operations Associate you\u2019ll be",
+            "timestamp": 1450529560,
+            "title": "Community Operations Assosciate",
+            "url": "http://www.indeed.com/rc/clk?jk=7fc7f11eec6e6825"
+        },
+        {
+            "rank": 3,
+            "snippet": "invi is a rich media texting app, making your messaging experience beautiful, fast and fun.We are at a very exciting time for the company, backed by leading",
+            "timestamp": 1450529560,
+            "title": "Product Manager",
+            "url": "http://www.indeed.com/rc/clk?jk=ac5ae0cc8dc4ae37"
+        },
+        {
+            "rank": 4,
+            "snippet": "Responsibilities The Marketing Specialist is responsible for developing and executing customer acquisition programs for the direct channel team within the",
+            "timestamp": 1450529560,
+            "title": "Marketing Specialist",
+            "url": "http://www.indeed.com/rc/clk?jk=684cb8cdafb7da95"
+        },
+        {
+            "rank": 5,
+            "snippet": "Please click here to view a copy of our recruitment brochure. The first review of applications is September 21, 2015 . Applications received before this date",
+            "timestamp": 1450529560,
+            "title": "Building Inspector",
+            "url": "http://www.indeed.com/rc/clk?jk=83739829a5fed938"
+        },
+        {
+            "rank": 6,
+            "snippet": "Sling Media, an EchoStar company, is seeking a top-notch, highly technical Product Manager to join our team in Foster City, CA to participate in the",
+            "timestamp": 1450529560,
+            "title": "Product Manager",
+            "url": "http://www.indeed.com/rc/clk?jk=e118770ceb396500"
+        },
+        {
+            "rank": 7,
+            "snippet": "Facebook was built to help people connect and share, and over the last decade our tools have played a critical part in changing how people around the world",
+            "timestamp": 1450529560,
+            "title": "Product Growth Manager, Marketing Partnerships",
+            "url": "http://www.indeed.com/rc/clk?jk=4bc61bffff9572fb"
+        },
+        {
+            "rank": 8,
+            "snippet": "Position Title: Product Marketing Manager, Threat Intelligence 7014 Location: Milpitas, CA The Company: FireEye has invented a purpose-built, virtual",
+            "timestamp": 1450529560,
+            "title": "Product Marketing Manager, Threat Intelligence 7014",
+            "url": "http://www.indeed.com/rc/clk?jk=f3742f305c02aca8"
+        },
+        {
+            "rank": 9,
+            "snippet": "Manages 24-hour departments providing patient care services. Ensures staff provide high quality, accessible, cost effective care, and patient focused services",
+            "timestamp": 1450529560,
+            "title": "Department Manager Leader",
+            "url": "http://www.indeed.com/rc/clk?jk=f7fae7e5d391b260"
+        },
+        {
+            "rank": 10,
+            "snippet": "Manager of Mechanical Engineering -Optical Components Lumentum (NASDAQ: LITE) is a market-leading manufacturer of innovative optical and photonic products",
+            "timestamp": 1450529560,
+            "title": "Engineering Dev Manager",
+            "url": "http://www.indeed.com/rc/clk?jk=44a6398cf48ab0b1"
+        }
+    ],
+    "timestamp": 1450529560,
+    "url": "http://www.indeed.com/jobs?q=$60,000&l=Saratoga,+CA&sort=date"
+}

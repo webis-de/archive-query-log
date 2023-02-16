@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "storage and organization",
+    "offset": null,
+    "page": null,
+    "query": "storage and organization",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1632881953,
+            "title": "LABELS | linen closet organization labels | 2.5\" x 3.5\" card stock | storage closet labels | organization labels | home organization",
+            "url": "https://www.etsy.com/listing/927801042/labels-linen-closet-organization-labels?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=storage+and+organization&ref=sr_gallery-1-1&organic_search_click=1&frs=1&etp=1"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1632881953,
+            "title": "Custom made wooden book rack / bookshelf in Oak. The pins are also bookmarks.",
+            "url": "https://www.etsy.com/listing/95662481/custom-made-wooden-book-rack-bookshelf?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=storage+and+organization&ref=sr_gallery-1-2&organic_search_click=1&etp=1"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1632881953,
+            "title": "Pantry Labels (Minimal Collection) \u2022 Water Resistant \u2022 Custom Pantry Labels \u2022 Durable",
+            "url": "https://www.etsy.com/listing/830217119/pantry-labels-minimal-collection-water?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=storage+and+organization&ref=sr_gallery-1-3&organic_search_click=1&frs=1&etp=1"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1632881953,
+            "title": "Crochet Pattern - Raffia Crochet Belly Basket, Raffia Basket, Nursery Room Organization, Home Decor - The Selawik Raffia Basket",
+            "url": "https://www.etsy.com/listing/608562567/crochet-pattern-raffia-crochet-belly?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=storage+and+organization&ref=sr_gallery-1-4&organic_search_click=1"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1632881953,
+            "title": "3 Teardrop V Shelves | Teardrop Shelves",
+            "url": "https://www.etsy.com/listing/694746343/3-teardrop-v-shelves-teardrop-shelves?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=storage+and+organization&ref=sr_gallery-1-5&organic_search_click=1&frs=1&etp=1"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1632881953,
+            "title": "wall mounted bike rack, bicycle storage, wooden bike hook // BLACK WALNUT // COPPER",
+            "url": "https://www.etsy.com/listing/234629923/wall-mounted-bike-rack-bicycle-storage?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=storage+and+organization&ref=sr_gallery-1-6&organic_search_click=1&frs=1&etp=1"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1632881953,
+            "title": "DECORATIVE WALL HOOK, Brass Coat Rack Hook, Coat Wall Hooks For Bathroom, Farmhouse Wall Hooks For Towel Or Coat",
+            "url": "https://www.etsy.com/listing/906331956/decorative-wall-hook-brass-coat-rack?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=storage+and+organization&ref=sr_gallery-1-7&organic_search_click=1&frs=1&etp=1"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1632881953,
+            "title": "Ringholderset Wenge-Wood  Accessories  Jewelry Display Ring Organiser  Ringorganiser  Christmas Gift",
+            "url": "https://www.etsy.com/listing/231185634/ringholderset-wenge-wood-accessories?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=storage+and+organization&ref=sr_gallery-1-8&organic_search_click=1&frs=1&etp=1"
+        }
+    ],
+    "timestamp": 1632881953,
+    "url": "https://www.etsy.com/search?q=storage+and+organization&mosv=sese&moci=1040853552759&mosi=1027452046072&ref=hp_bubbles_Fall21_US_GB_CA_FR_DE&anchor_listing_id=830217119"
+}

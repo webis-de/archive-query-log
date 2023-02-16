@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "pendants",
+    "offset": null,
+    "page": null,
+    "query": "pendants",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1667648711,
+            "title": "Faceted Carnelian pendant/Virgo birthstone/ Stone that gives courage &amp; confidence",
+            "url": "https://www.etsy.com/listing/1222710088/faceted-carnelian-pendantvirgo?click_key=afd14633b720f8f2a94eaf249c13c56b1edda096%3A1222710088&click_sum=760a169e&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=pendants&ref=search_in_grid-1-1&cns=1&sts=1"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1667648711,
+            "title": "Handmade Fine Silver Dino Pendant, Unique Piece, Necklace",
+            "url": "https://www.etsy.com/listing/1312900660/handmade-fine-silver-dino-pendant-unique?click_key=f09e995873f1ef513d148f00cacf3d0155cb7a19%3A1312900660&click_sum=b20b465d&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=pendants&ref=search_in_grid-1-2&pro=1&frs=1"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1667648711,
+            "title": "CARNELIAN PENDANT, Orgone Carnelian Pendant,Carnelian Crystal Orgone Necklace with Copper Coil, Chakra Pendant, EmF Protection",
+            "url": "https://www.etsy.com/listing/701942894/carnelian-pendant-orgone-carnelian?click_key=364a613d42eb0766b1b9ff8b677bf00f3724bee4%3A701942894&click_sum=b3fa9c72&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=pendants&ref=search_in_grid-1-3&frs=1&sts=1"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1667648711,
+            "title": "Modernist Round Agate Pendant Sterling Silver Signed",
+            "url": "https://www.etsy.com/listing/800904842/modernist-round-agate-pendant-sterling?click_key=eb21b6a84df7fca52c0508294dab7c0baeccae2e%3A800904842&click_sum=bdb34e75&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=pendants&ref=search_in_grid-1-4&pro=1&frs=1"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1667648711,
+            "title": "18K Gold Filled Rectangle Evil Eye Pendant,CZ Micro Pave Evil Eye Charm Earrings Necklace for DIY Jewelry Making Supply",
+            "url": "https://www.etsy.com/listing/1229936698/18k-gold-filled-rectangle-evil-eye?click_key=420d2c7b37cc980409dca2876204e5597127b5b0%3A1229936698&click_sum=6cb0e168&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=pendants&ref=search_in_grid-1-5&pro=1"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1667648711,
+            "title": "20 metal bead with pendant loop, silver-plated, decorated, pendant, charm, jewelry bead, pearl, 11 x 5 mm, 03077",
+            "url": "https://www.etsy.com/listing/616926790/20-metal-bead-with-pendant-loop-silver?click_key=13c2b111a0903032c89f5923484c2a74df56948e%3A616926790&click_sum=7c4caf17&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=pendants&ref=search_in_grid-1-6&pro=1&sts=1"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1667648711,
+            "title": "Beige Calcite vase tube pendant charm 28 mm crafts jewelry making vintage",
+            "url": "https://www.etsy.com/listing/805195022/beige-calcite-vase-tube-pendant-charm-28?click_key=e70de6f463d1a1dd7868d0705a9ebdb6b3de77d5%3A805195022&click_sum=d2e11924&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=pendants&ref=search_in_grid-1-7"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1667648711,
+            "title": "Sterling Silver CZ Cross Necklace, sterling silver cross bead necklace, religious necklace, silver cross pendant, valentine",
+            "url": "https://www.etsy.com/listing/674488297/sterling-silver-cz-cross-necklace?click_key=11a48484777edfae83ee12b0391713622ae6b132%3A674488297&click_sum=9c7097b8&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=pendants&ref=search_in_grid-1-8&cns=1&sts=1"
+        }
+    ],
+    "timestamp": 1667648711,
+    "url": "https://www.etsy.com/search?locale_override=USD%7Cen-US%7CUS&explicit=1&q=pendants&anchor_listing_id=200491601&gf_type=interest"
+}

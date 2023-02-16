@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "licensing_gethhwid",
+    "offset": null,
+    "page": null,
+    "query": "licensing_gethhwid",
+    "results": [],
+    "timestamp": 1662581846,
+    "url": "https://github.com/search?q=licensing_gethhwid&type=repositories"
+}

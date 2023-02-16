@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "PepsiCo",
+    "offset": null,
+    "page": null,
+    "query": "PepsiCo",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "$13.00/hr Entry-level position that performs miscellaneous support tasks throughout the sales function. Primarily responsible for product merchandising...",
+            "timestamp": 1487893385,
+            "title": "General Labor - Sales - FT/Days",
+            "url": "http://www.indeed.com/rc/clk?jk=8463565b4517286a&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>PepsiCo</em> is an equal opportunity employer. Entry-level position that performs miscellaneous support tasks throughout the sales function....",
+            "timestamp": 1487893385,
+            "title": "General Labor - Sales (SEASONAL/FT/Days/$13.00/hr)",
+            "url": "http://www.indeed.com/rc/clk?jk=d70dc8069fb60eeb&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 3,
+            "snippet": "12.10 per hour Entry-level position that performs miscellaneous support tasks throughout the sales function. Primarily responsible for product merchandising...",
+            "timestamp": 1487893385,
+            "title": "General Labor - Sales (PT/Days/$12.10/hr) Morris Area - 5-10...",
+            "url": "http://www.indeed.com/rc/clk?jk=1262a61efaf2c2d1&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 4,
+            "snippet": "$13.00/hr Entry-level position that performs miscellaneous support tasks throughout the sales function. Primarily responsible for product merchandising...",
+            "timestamp": 1487893385,
+            "title": "General Labor - Sales - FT/Days (Seasonal)",
+            "url": "http://www.indeed.com/rc/clk?jk=c48eff8216ecc461&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>PepsiCo</em> is an equal opportunity employer. Entry-level position that performs miscellaneous support tasks throughout the sales function....",
+            "timestamp": 1487893385,
+            "title": "General Labor - Sales - FT/Days",
+            "url": "http://www.indeed.com/rc/clk?jk=a346e680ab9044a6&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>PepsiCo</em> is an equal opportunity employer. Entry-level position that performs miscellaneous support tasks throughout the sales function....",
+            "timestamp": 1487893385,
+            "title": "General Labor - Sales - FT/Days/Seasonal ($14.00/hr)",
+            "url": "http://www.indeed.com/rc/clk?jk=5a7d8a27402c23b7&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>PepsiCo</em> is an equal opportunity employer. Entry-level position that performs miscellaneous support tasks throughout the sales function....",
+            "timestamp": 1487893385,
+            "title": "General Labor - Sales (SEASONAL/FT/Days/$13.00/hr)",
+            "url": "http://www.indeed.com/rc/clk?jk=c36cf95ff169c39d&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>PepsiCo</em> is an equal opportunity employer Minorities/Females/People with Disabilities/Protected Veterans/Sexual Orientation/Gender Identity....",
+            "timestamp": 1487893385,
+            "title": "Global Procurement Manager",
+            "url": "http://www.indeed.com/rc/clk?jk=16360295a3906b5c&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>PepsiCo</em> is an equal opportunity employer. Entry-level position that performs miscellaneous support tasks throughout the sales function....",
+            "timestamp": 1487893385,
+            "title": "General Labor - Sales (PT/Days/$12.10/hr) Morris Area - 5-10...",
+            "url": "http://www.indeed.com/rc/clk?jk=8a74c8d48142a272&fccid=2973259ddc967948"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>PepsiCo</em> is an equal opportunity employer. Position performs diagnostic and repair work, including scheduled preventative maintenance and necessary repairs to...",
+            "timestamp": 1487893385,
+            "title": "Experienced Fleet Technician - FT/Evenings/CDL A or Permit R...",
+            "url": "http://www.indeed.com/rc/clk?jk=6492ab33578a27fe&fccid=2973259ddc967948"
+        }
+    ],
+    "timestamp": 1487893385,
+    "url": "http://www.indeed.com/jobs?q=PepsiCo&jt=contract"
+}

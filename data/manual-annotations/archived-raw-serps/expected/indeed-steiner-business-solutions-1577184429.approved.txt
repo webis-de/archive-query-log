@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "Steiner Business Solutions",
+    "offset": null,
+    "page": null,
+    "query": "Steiner Business Solutions",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Demonstrates sound decision-making ability for the best needs of the <em>business</em>, comes up with simple <em>solutions</em> to complex problems.\nSupervising ExperienceExperience supervising personnel in a professional setting.Bachelor's DegreeDegree awarded to students by universities or colleges at the completion of an undergraduate, post-high school course of study.Customer ServiceSkill or experience assisting customers before, during, and after purchases to satisfy customer needs.Microsoft OutlookEmail and calendar software developed by Microsoft. HolidaysA work schedule that may require work on holidays.Computer LiteracyBasic skill or experience in general computer use such as using a computer\u2019s operating system, using software and hardware, typing, sending and receiving email, and searching the Internet.+7 more\nHigh School Diploma or GEDDegree granted at the completion of academic schooling typically covering grades 9-12, or a degree granted at the completion of testing certifying academic attainment equivalent to a high school education.Computer SkillsKnowledge of or experience with computers.Communication SkillsExperience or skill effectively exchanging and understanding information, verbally or in writing.WeekendsA work schedule that may require work on weekends.Phone EtiquetteExperience practicing good manners when on the phone.PayrollExperience processing or auditing payroll with the use of software such as Excel, QuickBooks, PeopleSoft, ADP, Workday, Kronos, Ceridian, or Lawson.Esthetic Laser TreatmentSkill or experience performing cosmetic procedures, such as hair removal or skin smoothing, with an esthetic laser.",
+            "timestamp": 1577184429,
+            "title": "Operations Manager - Bliss 57 Spa",
+            "url": "https://www.indeed.com/rc/clk?jk=ad32ec6eb85dd044&fccid=f37e567d0cff8c3f&vjs=3"
+        },
+        {
+            "rank": 2,
+            "snippet": "Advanced degree in <em>business</em> or finance preferred.\nStay abreast of current <em>business</em> and economic developments relevant to <em>business</em> valuation issues and issues\u2026\nProject ManagementSkills or experience related to project management. Project management includes planning, executing, and monitoring projects in order to meet requirements while controlling budget, scope, and timeline.Microsoft WordWord processing software.Analysis SkillsSkill at using mental reasoning or research to gain insight into or solve problems.Finance DegreePostsecondary degree in finance.Leadership ExperienceExperience providing direction to individuals in any environment.ExcelSpreadsheet software developed by Microsoft.+6 more\nBachelor's DegreeDegree awarded to students by universities or colleges at the completion of an undergraduate, post-high school course of study.Mathematics DegreePostsecondary degree in mathematics, applied mathematics, probability, or number theory. CPAA license for accounting professionals offered by a state\u2019s board of accountancy. Requirements generally include completing a bachelor\u2019s degree with a curriculum in accounting and passing the CPA (Certified Public Accountant) exam.Communication SkillsExperience or skill effectively exchanging and understanding information, verbally or in writing.Business DegreePostsecondary degree in business, including degrees in business management, international business, business administration, and entrepreneurship.Microsoft PowerpointPresentation software.",
+            "timestamp": 1577184429,
+            "title": "Valuation Manager",
+            "url": "https://www.indeed.com/rc/clk?jk=c86da68195cb953f&fccid=813ec6bda8349be9&vjs=3"
+        },
+        {
+            "rank": 3,
+            "snippet": "Day or as <em>business</em> needs demand.\nRudolf <em>Steiner</em>, Waldorf pedagogy, child development, and the curriculum.\nExperienced in working out diplomatic <em>solutions</em> to\u2026\nTeaching ExperienceSkill or experience teaching or instructing others, typically students in a classroom setting. May occur in person or via remote modes of communication. Master's DegreeDegree awarded to students by universities or colleges at the completion of a post-bachelor's degree course of study. A Master's Degree is considered more advanced than a bachelor's degree. May be awarded as part of a PhD.Disability FriendlyIndividuals with disabilities are encouraged to apply.Communication SkillsExperience or skill effectively exchanging and understanding information, verbally or in writing.Time ManagementExperience or skill managing time in order to complete tasks quickly and efficiently. Bachelor's DegreeDegree awarded to students by universities or colleges at the completion of an undergraduate, post-high school course of study.+2 more\nTeaching CertificationA license to work as a teacher. Licensing requirements vary by state.Personal Injury LawKnowledge and experience in the area of civil law that deals with compensation for physical or emotional injury due to negligence or misconduct.",
+            "timestamp": 1577184429,
+            "title": "Director of Education",
+            "url": "https://www.indeed.com/rc/clk?jk=c67c6ebba29a4ba3&fccid=b9a779c4a5f7e070&vjs=3"
+        }
+    ],
+    "timestamp": 1577184429,
+    "url": "https://www.indeed.com/jobs?q=Steiner+Business+Solutions&explvl=mid_level"
+}

@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "JVM Lending",
+    "offset": null,
+    "page": null,
+    "query": "JVM Lending",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Drive innovative tech solutions adhering to iterative principles.\n\nOriginate, champion and execute on new ideas for projects.\n\nFirm-wide performance based bonus.",
+            "timestamp": 1586272513,
+            "title": "Senior Software Engineer",
+            "url": "https://www.indeed.com/company/Figure/jobs/Senior-Software-Engineer-1198f4f79ec30b22?fccid=bfe246c1b9fb02f3&vjs=3"
+        }
+    ],
+    "timestamp": 1586272513,
+    "url": "https://www.indeed.com/jobs?q=JVM+Lending&rbl=Salt+Lake+City,+UT&jlid=029db43e55e0cfca"
+}
