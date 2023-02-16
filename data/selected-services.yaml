@@ -2256,7 +2256,7 @@
   domains:
   - livejasmin.com
   query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/(girls|boys)/[^/]+
+  - url_pattern: ^https?://[^/]+/[a-z]+/(girls|boys)/[^/]+/.*Search
     type: path_segment
     segment: 3
   page_parsers: []
