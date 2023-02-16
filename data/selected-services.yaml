@@ -1622,6 +1622,12 @@
     url_selector: h2 > a
     title_selector: h2
     snippet_selector: p
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#results ul li
+    url_selector: div.sb_tlst h3 a
+    title_selector: div.sb_tlst h3
+    snippet_selector: p
   - url_pattern: ^https?://[^/]+/images/search\?
     type: html_selector
     results_selector: div#mmComponent_images_2 ul.dgControl_list li div.isv
@@ -1829,8 +1835,29 @@
     type: query_parameter
     parameter: _pgn
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    query_selector: input#gh-ac
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    query_selector: input#_fsb_nkw
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    results_selector: div#ResultSetItems ul#GalleryViewInner li.sresult
+    url_selector: h3 a
+    title_selector: h3
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    results_selector: ul.srp-results li.s-item
+    url_selector: a.s-item__link
+    title_selector: h3.s-item__title
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    results_selector: div.rs table.rsittlref tr
+    url_selector: td.dtl div.ittl a
+    title_selector: td.dtl div.sttl
   focused_url_prefixes:
   - /sch/i.html?
   - /i.html?
@@ -2018,7 +2045,13 @@
   page_parsers: []
   offset_parsers: []
   interpreted_query_parsers: []
-  results_parsers: []
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/(female|male|couples|trans|new-models)/tags/[^/]+
+    type: html_selector
+    results_selector: div#mls_container div#mls_models div.mls_models div.ls_thumb
+    url_selector: div.lst_info a
+    title_selector: div.lst_info a
+    snippet_selector: div.lst_topic
   focused_url_prefixes:
   - /female/tags/
   - /male/tags/
@@ -2240,8 +2273,27 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    query_selector: div#nb_search input
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    query_selector: input#navbar-query
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    query_selector: form[action="/find"] input[name="q"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    results_selector: table.findList tr.findResult
+    url_selector: td.result_text a
+    title_selector: td.result_text a
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    results_selector: div#main table tr:has(td[valign="top"])
+    url_selector: td[valign="top"]:nth-child(3) a
+    title_selector: td[valign="top"]:nth-child(3) a
   focused_url_prefixes:
   - /find
 - name: livejasmin
@@ -2380,8 +2432,29 @@
     type: query_parameter
     parameter: p
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: form.js-site-search-form input.header-search-input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: ul.repo-list li.repo-list-item
+    url_selector: h3 a
+    title_selector: h3
+    snippet_selector: p.d-inline-block.text-gray
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: ul.repo-list li.repo-list-item
+    url_selector: div.flex-auto div.d-flex a, div.mt-n1 div.text-normal a
+    title_selector: div.flex-auto div.d-flex a, div.mt-n1 div.text-normal a
+    snippet_selector: p[class]
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#package_search_results div.hx_hit-package
+    url_selector: a.h4
+    title_selector: a.h4
+    snippet_selector: p.mb-1
   focused_url_prefixes:
   - /search?
 - name: cnn
@@ -2429,8 +2502,29 @@
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input#search-query
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input#global-enhancements-search-query
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: ul.listings li.listing-card
+    url_selector: div.listing-title a.title
+    title_selector: div.listing-title a.title
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div.search-listings-group ul.responsive-listing-grid li
+    url_selector: a.listing-link
+    title_selector: a.listing-link h2, a.listing-link h3
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div[data-search-results] ul.wt-grid li.wt-list-unstyled
+    url_selector: a.listing-link
+    title_selector: a.listing-link h3
   focused_url_prefixes:
   - /search?
 - name: xhamster
@@ -2636,8 +2730,32 @@
   - url_pattern: ^https?://[^/]+/jobs\?
     type: query_parameter
     parameter: start
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    query_selector: input#text-input-what
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    query_selector: input#what
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    results_selector: td#resultsCol div.result, td#resultsCol div.row
+    url_selector: h2.jobtitle a
+    title_selector: h2.jobtitle
+    snippet_selector: span.summary
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    results_selector: td#resultsCol div.result
+    url_selector: div.title a
+    title_selector: div.title
+    snippet_selector: div.summary
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    results_selector: div#mosaic-zone-jobcards a.result
+    url_selector: :--self
+    title_selector: h2.jobTitle
+    snippet_selector: div.job-snippet
   focused_url_prefixes:
   - /jobs?
 - name: roblox
@@ -2687,7 +2805,11 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: span.search-term-text
+    query_text: true
   results_parsers: []
   focused_url_prefixes:
   - /search?
@@ -23699,12 +23821,11 @@
   results_parsers: []
   focused_url_prefixes: []
 - name: wapwon
-  note: "The query pattern seems to be too broad."
   public_suffix: com
   alexa_domain: wapwon.com
   alexa_rank: 40114
   category: null
-  notes: null
+  notes: "The query pattern seems to be too broad."
   input_field: false
   search_form: false
   search_div: true
@@ -25905,11 +26026,15 @@
     parameter: p
   offset_parsers: []
   interpreted_query_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: chatnoir
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    query_selector: input#SearchInput
   results_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: chatnoir
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    results_selector: section#SearchResults article.search-result
+    url_selector: h2 a
+    title_selector: h2
   focused_url_prefixes:
   - /?
 - name: chemrefer
