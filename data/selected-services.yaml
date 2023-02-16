@@ -4320,6 +4320,35 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
+- name: china
+  public_suffix: com.cn
+  alexa_domain: china.com.cn
+  alexa_rank: 153
+  category: governmental
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - china.com.cn
+  - query.china.com.cn
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/query
+    type: query_parameter
+    parameter: kw
+  - url_pattern: ^https?://[^/]+/news/query
+    type: query_parameter
+    parameter: kw
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/news/query
+    type: query_parameter
+    parameter: startPage
+  offset_parsers: []
+  interpreted_query_parsers: []
+  results_parsers: []
+  focused_url_prefixes:
+  - /query
+  - /news/query
 - name: varzesh3
   public_suffix: com
   alexa_domain: varzesh3.com
