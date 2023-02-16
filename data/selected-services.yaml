@@ -323,6 +323,11 @@
     url_selector: h3.gs_rt a
     title_selector: h3.gs_rt
     snippet_selector: dic.gs_rs
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: p[class="g"]
+    url_selector: a
+    title_selector: a
   focused_url_prefixes:
   - /search?
   - /scholar?

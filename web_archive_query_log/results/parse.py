@@ -80,7 +80,6 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
                 title_tag = result
             else:
                 title_tag = result.select_one(self.title_selector)
-            print(title_tag)
             if title_tag is None:
                 continue
             title = clean_html(title_tag)
