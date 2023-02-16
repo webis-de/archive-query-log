@@ -28,7 +28,6 @@ DATA_PATH = Path(
 
 SAMPLE_CORPUS_PATH = DATA_PATH / "sample-corpus"
 SAMPLE_QUERIES_PATH = SAMPLE_CORPUS_PATH / "queries"
-SAMPLE_DOCUMENTS_PATH = SAMPLE_CORPUS_PATH / "documents"
 
 WARCS_PATH = PROJECT_DIRECTORY_PATH / \
              "data/manual-annotations/archived-raw-serps/warcs/"
