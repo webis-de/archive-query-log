@@ -63,7 +63,10 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
             serp_url: str,
     ) -> Iterator[ArchivedSearchResultSnippet]:
         for index, result in enumerate(html.select(self.results_selector)):
-            url_tag = result.select_one(self.url_selector)
+            if self.url_selector == ":--self":
+                url_tag = result
+            else:
+                url_tag = result.select_one(self.url_selector)
             if url_tag is None:
                 continue
             if self.url_attribute not in url_tag.attrs:
@@ -72,15 +75,24 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
             if url is None:
                 continue
             url = urljoin(serp_url, url)
-            title_tag = result.select_one(self.title_selector)
+
+            if self.title_selector == ":--self":
+                title_tag = result
+            else:
+                title_tag = result.select_one(self.title_selector)
+            print(title_tag)
             if title_tag is None:
                 continue
             title = clean_html(title_tag)
             if len(title) == 0:
                 continue
+
             snippet = None
             if self.snippet_selector is not None:
-                snippet_tags = result.select(self.snippet_selector)
+                if self.snippet_selector == ":--self":
+                    snippet_tags = [result]
+                else:
+                    snippet_tags = result.select(self.snippet_selector)
                 if snippet_tags is not None and snippet_tags:
                     for snippet_candidate in snippet_tags:
                         snippet_candidate = clean_html(snippet_candidate)
@@ -126,17 +138,22 @@ class HtmlSelectorInterpretedQueryParser(HtmlInterpretedQueryParser):
     url_pattern: Pattern[str]
     query_selector: str
     query_attribute: str
+    query_text: bool = False
 
     def parse_html(self, html: Tag) -> str | None:
         search_field = html.select_one(self.query_selector)
         if search_field is None:
             return None
-        if self.query_attribute not in search_field.attrs:
-            return None
-        interpreted_query = search_field.attrs[self.query_attribute]
-        if interpreted_query is None or len(interpreted_query) == 0:
-            return None
-        return interpreted_query
+        if self.query_text:
+            interpreted_query = search_field.text
+            if interpreted_query is not None and len(interpreted_query) > 0:
+                return interpreted_query
+        if (self.query_attribute is not None and
+                self.query_attribute in search_field.attrs):
+            interpreted_query = search_field.attrs[self.query_attribute]
+            if interpreted_query is not None and len(interpreted_query) > 0:
+                return interpreted_query
+        return None
 
 
 class _CdxPage(NamedTuple):

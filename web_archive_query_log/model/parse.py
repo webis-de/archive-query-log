@@ -195,6 +195,11 @@ class InterpretedQueryParserField(Field):
                     if "query_attribute" in value
                     else "value"
                 ),
+                query_text=(
+                    value["query_text"]
+                    if "query_text" in value
+                    else False
+                ),
             )
         else:
             raise ValueError(f"Unknown parser type: {parser_type}")
