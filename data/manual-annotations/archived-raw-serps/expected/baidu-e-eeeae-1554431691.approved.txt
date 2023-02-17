@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\u8305\u8075\u9a74\u8305\u8061\u8066\u732b\u8079\u8075\u732b\u8078\u8078\u5fd9\u5364",
+    "offset": null,
+    "page": null,
+    "query": "\u00e9\u0098\u00bf\u00e9\u0087\u008c\u00e8\u009c\u0098\u00e8\u009b\u009b\u00e6\u00b1",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\u83bd\u9646\u806d<em>\u5fd9\u8075</em>\u806f\u6c13\u9646\u6f0f\u83bd\u697c\u7bd3  <em>\u5fd9\u8079</em>\u8063<em>\u8305</em>\u805b\u806f\u732b\u7089\u8067\u6c13\u805f\u8d42  <em>\u8305</em>\u805c\u5e90\u83bd\u5e90<em>\u5364</em>\u6c13...\u6c13\u7984\u8064\u6c13\u807a\u8064\u6c13\u9885\u8070<em>\u8305\u8078</em>\u8059\u6c13\u807c\u8068\u8117\u8def\u6c13\u9647\u6402\u6c13\u9885\u5a04<em>\u8305\u8061\u8066</em> -- \u5fd9\u8073\u63b3\u83bd\u6f0f...",
+            "timestamp": 1554431691,
+            "title": "...\u5fd9\u697c\u5f55\u83bd<em>\u8078\u8075\u732b</em>\u7089\u5a04\u5fd9\u805d\u805f_\u83bd\u9646\u806d<em>\u5fd9\u8075</em>\u806f\u5fd9\u8062<em>\u9a74</em>\u76f2\u6f5e\u6402\u6c13<em>\u8066</em>\u8074\u76f2...",
+            "url": "http://www.baidu.com/link?url=cL8rVDFswD978GPpDIdK8f5k4tN-E0lft9apqlfkFOK1BtmlovlyVsXHpziUCkCk"
+        },
+        {
+            "rank": 2,
+            "snippet": "\u641c\u7d22Tamy,<em>\u8061\u8066</em>,<em>\u9a74</em>,<em>\u8305</em>,<em>\u8078</em>,<em>\u8069</em>,<em>\u804d</em>,\u732b,\u5fd9,\u542c,<em>\u5364</em>,\u6b4c\u66f2\u8bd5\u542c,\u514d\u8d39\u4e0b\u8f7d,MP3\u4e0b\u8f7d,\u4f53\u9a8c\u5343\u5343\u97f3\u4e50\u9ad8\u54c1\u8d28\u4eab\u53d7\u3002 Tamy \u5355\u66f2:19\u9996 \u4e13\u8f91:3\u5f20 ...",
+            "timestamp": 1554431691,
+            "title": "Tamy_\u6b4c\u66f2\u5927\u5168_\u5343\u5343\u97f3\u4e50-\u542c\u89c1\u4e16\u754c",
+            "url": "http://www.baidu.com/link?url=8c0u62LIoJ3d9bmb3sSYr_bqBMRNhMZIPsSe5CuDkPFN3WvWKNHXn3uXaiURp-_E"
+        },
+        {
+            "rank": 3,
+            "snippet": "\u641c\u7d22\uc0b0\ub2e4\ub77c,<em>\u8061\u8066</em>,<em>\u9a74</em>,<em>\u8305</em>,<em>\u8078</em>,<em>\u8069</em>,<em>\u804d</em>,\u732b,\u5fd9,\u542c,<em>\u5364</em>,\u6b4c\u66f2\u8bd5\u542c,\u514d\u8d39\u4e0b\u8f7d,MP3\u4e0b\u8f7d,\u4f53\u9a8c\u5343\u5343\u97f3\u4e50\u9ad8\u54c1\u8d28\u4eab\u53d7\u3002  \u641c\u7d22\u201c\uc0b0\ub2e4\ub77c\u201d,\u627e\u5230\u76f8\u5173\u6b4c\u66f2\u517135\u9996\u3002  ...",
+            "timestamp": 1554431691,
+            "title": "\uc0b0\ub2e4\ub77c_\u6b4c\u66f2\u5927\u5168_\u5343\u5343\u97f3\u4e50-\u542c\u89c1\u4e16\u754c",
+            "url": "http://www.baidu.com/link?url=dGWrZqdMyWKWeu6oyibe_Q4Q9jzPJR3Rg4j6zl54k016mLUn6UCnopqdtYpe6h9-cO_YJX7iz6sLVeUaO-Z9OLOeDqrSIGMVZxGyG8OWd53"
+        },
+        {
+            "rank": 4,
+            "snippet": "\u6700\u4f73\u7b54\u6848: \u4f60\u6709\u6027\u611f\u6c99\u6ee9zero\u6216\u8005\u540c\u6821\u751f2\u7684\u4e1c\u4e1c\u5417\u66f4\u591a\u5173\u4e8e\u8305\u8075\u9a74\u8305\u8061\u8066\u732b\u8079\u8075\u732b\u8078\u8078\u5fd9\u5364\u7684\u95ee\u9898&gt;&gt;",
+            "timestamp": 1554431691,
+            "title": "\u732b\u8059\u805b\u83bd\u806a\u8def\u6c13\u9885\u6f0f\u76f2\u9e7f\u8065\u83bd<em>\u8066\u8078\u8305</em>\u622e\u8042<em>\u732b\u9a74\u8061\u5fd9\u5364</em>\u807c\u83bd\u806a\u788c\u6c13\u9646\u5364",
+            "url": "http://www.baidu.com/link?url=LCz1J3JzBMMXtAUtDE-Lf9z3CPXsfXjMW7I7yRcSIDwG1Be2fwyYla_yN1Za6lU6X-6yD3wE1fH2dFgGRTxF_o14gMh8u566GmfYJPqciOu"
+        },
+        {
+            "rank": 5,
+            "snippet": "\u5fd9\u805d\u8064\u83bd\u8068\u63b3\u5fd9\u8074 \u732b\u95fb\u806d\u83bd\u864f\u964b<em>\u8305</em>\u807a\u806e\u8302\u5f55\u8066\u6c13\u63b3\u5f55\u83bd\u8068<em>\u8078</em>\u83bd\u804c\u95fb<em>\u732b\u8061</em>\u964b\u6c13...\u5784\u8302\u5f55<em>\u8066\u732b\u9a74</em>\u8042\u6c13\u63b3<em>\u5364\u5fd9\u8069</em>\u7089\u76f2\u9646 \u732b\u62e2\u805f<em>\u8305</em>\u8059\u5f55\u83bd\u804c\u95fb\u732b\u788c\u95fb<em>\u5fd9\u804d</em>\u5362\u8302\u5f55\u807c...",
+            "timestamp": 1554431691,
+            "title": "\u8fd9\u4e2a\u8d31\u5973\u4eba\u5bb3\u8036\u8def\u6492\u51b7\u88ab\u5c60\u57ce\u4e86,\u3010\u50f5\u5c38\u4e16\u754c\u5927\u6218\u5427\u3011_\u767e\u5ea6\u8d34\u5427",
+            "url": "http://www.baidu.com/link?url=ke2pO_H9JQ69l6ORc05Oi6i7OWGNaQlMy_c4lgpwzysgMcFCyZTDC6D9fRJP6CYe"
+        },
+        {
+            "rank": 6,
+            "snippet": "2015\u5e743\u670823\u65e5\u00a0-\u00a0\u8305\u95fb\u8042\u76f2\u6f5e\u6f5e45 \u5fd9\u63b3\u806a\u6c13\u8064\u807c \u76f2\u8d42\u8059\u83bd<em>\u8078</em>\u9e93\u6c13\u8067\u58f0<em>\u5fd9\u804d</em>\u6f5e <em>\u5fd9\u5364</em>\u805c<em>\u732b\u9a74</em>\u8042...<em>\u804d</em>\u8065\u6c13\u8062\u63b3<em>\u732b\u9a74</em>\u8042\u6c13\u5e90\u807a\u732b\u9e93\u807a<em>\u5fd9\u804d</em>\u8063<em>\u5fd9\u804d</em>\u7bd3<em>\u5fd9\u804d</em>\u8063 <em>\u8305\u8069</em>\u807c<em>\u8305\u8061\u8066</em>\u6c13<em>\u804d</em>\u807c\u732b...",
+            "timestamp": 1554431691,
+            "title": "\u6c13\u8063\u806d\u83bd\u805b\u788c\u5427_\u767e\u5ea6\u8d34\u5427",
+            "url": "http://www.baidu.com/link?url=V0IrA4tuFsdeBHfTAS4t3ee-i9bSUB_7lwXR4uZtjlllAb4R8UDBy2brnED9gQGJlXms42GxkWH16fnkQ4pGt-s1Fro6tRx1Mm0lNoFnnpw2GOuiZgN1d00IUeTeQCMN"
+        },
+        {
+            "rank": 7,
+            "snippet": "\u641c\u7d22cub0to.54o2k.cn,<em>\u8061\u8066</em>,<em>\u9a74</em>,<em>\u8305</em>,<em>\u8078</em>,<em>\u8069</em>,<em>\u804d</em>,\u732b,\u5fd9,\u542c,<em>\u5364</em>,\u6b4c\u66f2\u8bd5\u542c,\u514d\u8d39\u4e0b\u8f7d,MP3\u4e0b\u8f7d,\u4f53\u9a8c\u5343\u5343\u97f3\u4e50\u9ad8\u54c1\u8d28\u4eab\u53d7\u3002 \u641c\u7d22\u201ccub0to.54o2k.cn\u201d,\u627e\u5230\u76f8\u5173\u6b4c\u66f2...",
+            "timestamp": 1554431691,
+            "title": "cub0to.54o2k.cn_\u6b4c\u66f2\u5927\u5168_\u5343\u5343\u97f3\u4e50-\u542c\u89c1\u4e16\u754c",
+            "url": "http://www.baidu.com/link?url=OgExbCLFzZ-hFIg_NQ2hKfOoGWpUMoytkllLud14z8uT4T2HsI407x44NEpBqE6MJYxb0sD4zWK6bycWe_UneK"
+        },
+        {
+            "rank": 8,
+            "snippet": "2014\u5e744\u670812\u65e5\u00a0-\u00a0<em>\u8305</em>\u864f\u805b<em>\u732b\u5364</em>\u82a6<em>\u5fd9\u8069</em>\u7089\u76f2\u8d42\u964b\u6c13\u697c\u8061\u6c13\u697c\u9c81\u6c13\u9885\u806c\u8302\u5f55<em>\u8066</em>\u6c13\u697c\u9e7f<em>\u8305\u8061\u8061\u732b</em>\u5e90<em>\u9a74\u732b\u9a74\u8061\u732b</em>\u8038\u95fb\u83bd\u8054<em>\u804d</em>\u83bd...\u8302\u5f55<em>\u8078\u8305\u8061\u8061\u732b</em>\u5e90<em>\u9a74\u732b\u9a74\u8061\u5fd9</em>\u807a\u8068\u6c13\u806b<em>\u8066\u5fd9\u5364</em>\u807c...",
+            "timestamp": 1554431691,
+            "title": "\u6211\u9760,\u79c0\u5a18\u88ab\u5e7b\u5883\u4e2d\u7684\u7537\u5b50\u7834\u4e86\u3010\u9b54\u5929\u8bb0\u5427\u3011_\u767e\u5ea6\u8d34\u5427",
+            "url": "http://www.baidu.com/link?url=h5navoKkFEQywQ2T9AMt0cKjfTo2MWYk3rX8jmU6c9ifFS7pvGWXzFjOC-0X2hw6"
+        },
+        {
+            "rank": 9,
+            "snippet": "\u641c\u7d22\u5b8b\u6f6e,<em>\u8061\u8066</em>,<em>\u9a74</em>,<em>\u8305</em>,<em>\u8078</em>,<em>\u8069</em>,<em>\u804d</em>,\u732b,\u5fd9,\u542c,<em>\u5364</em>,\u6b4c\u66f2\u8bd5\u542c,\u514d\u8d39\u4e0b\u8f7d,MP3\u4e0b\u8f7d,\u4f53\u9a8c\u5343\u5343\u97f3\u4e50\u9ad8\u54c1\u8d28\u4eab\u53d7\u3002 \u5b8b\u6f6e  \u5355\u66f2:5\u9996 \u4e13\u8f91:3\u5f20 \u5730\u533a:\u4e2d\u56fd  \u64ad\u653eTa \u7684...",
+            "timestamp": 1554431691,
+            "title": "\u5b8b\u6f6e_\u6b4c\u66f2\u5927\u5168_\u5343\u5343\u97f3\u4e50-\u542c\u89c1\u4e16\u754c",
+            "url": "http://www.baidu.com/link?url=Bv1CntIAxiJpgVDJtdmuQHZsQeTUASam6YG3O7WvGR_jXhSct9l1x7Wzkk9Ouw1Mra-nZuX91UGWYQOFBXUFza"
+        },
+        {
+            "rank": 10,
+            "snippet": "\u6c13\u805f\u5362\u6c13\u8078\u9885<em>\u8305\u8061\u8066</em>\u8302\u5f55\u8066\u6c13\u697c\u9e7f\u76f2\u8d42\u8059\u76f2\u8d42\u964b\u76f2\u6f5e\u6f5e\u8305\u7984<em>\u8069\u8305</em>\u7984<em>\u8069</em>\u6c13\u807a\u806c\u6c13...\u58f0\u9647\u8305\u805f\u806e\u8305\u697c\u5e90\u6c13\u63b3\u9646\u8302\u5f55\u8066 \u83bd\u8068\u7089\u8305\u9686\u622e\u6c13<em>\u8078\u8078</em>\u6c13\u806d\u7bd3<em>\u732b\u9a74\u8069\u5fd9\u804d</em>\u8063\u76f2...",
+            "timestamp": 1554431691,
+            "title": "\u90fd\u8bf4\u8bf4\u81ea\u5df1\u53eb\u5565 \u8001\u5f04\u4e0d\u6e05\u8c01\u662f\u8c01,\u3010\u90cf\u53bf\u7b2c\u4e00\u5b9e\u9a8c\u4e2d\u5b66\u5427\u3011_\u767e\u5ea6\u8d34\u5427",
+            "url": "http://www.baidu.com/link?url=rlkwVE1BzIVkktyc1_MEg7IwdHGQCGTYCCgETCZJUGauZNRkgbxzKtIFmoKAjQQ-"
+        }
+    ],
+    "timestamp": 1554431691,
+    "url": "https://www.baidu.com/s?wd=%C3%A9%C2%98%C2%BF%C3%A9%C2%87%C2%8C%C3%A8%C2%9C%C2%98%C3%A8%C2%9B%C2%9B%C3%A6%C2%B1"
+}

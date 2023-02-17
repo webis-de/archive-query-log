@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\u7f8e\u56fd\u7b7e\u8bc1",
+    "offset": null,
+    "page": null,
+    "query": "\u7f8e\u56fd\u7b7e\u8bc1",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\u60f3\u8981\u5165\u5883<em>\u7f8e\u56fd</em>\u7684\u5916\u56fd\u516c\u6c11\u901a\u5e38\u5fc5\u987b\u5148\u83b7\u5f97<em>\u7f8e\u56fd\u7b7e\u8bc1</em>,\u7b7e\u5728\u65c5\u884c\u8005\u7684\u56fd\u7c4d\u6240\u5c5e\u56fd\u7b7e\u53d1\u7684\u62a4\u7167\u5185\u3002 \u7279\u5b9a\u56fd\u9645\u65c5\u5ba2\u82e5\u7b26\u5408\u514d\u7b7e\u8bc1\u65c5\u884c\u7684\u89c4\u5b9a,\u53ef\u80fd\u5177\u5907\u514d\u7b7e\u5165\u5883\u7f8e\u56fd\u7684\u8d44\u683c\u3002\u672c\u7f51\u7ad9\u6709\u5173...",
+            "timestamp": 1579954288,
+            "title": "<em>\u7b7e\u8bc1</em>| <em>\u7f8e\u56fd</em>\u9a7b\u534e\u5927\u4f7f\u9986\u548c\u9886\u4e8b\u9986 \u5b98\u7f51",
+            "url": "https://www.so.com/link?m=axwYgRE9%2Bxe0JvgswNhYt3XdqKTQv4J4eL8xNV0e7KuGn5MlCtzZJeHN4T6mbw%2FDUBIj0zsVghFN2Z4o%2FVCMFaKd6DuAvCKqdJj9Shh%2B0GqaiYqBp5p1qWECzDJnV8CbvgPzcQqJJB4tMAyU60E%2FiQfCTarNMaz4a2oz1KIvMmaXY1ev%2Ft9lOKB6ZlGU%3D"
+        },
+        {
+            "rank": 2,
+            "snippet": "\u5bf9\u5c45\u4f4f\u5728\u4fc4\u7f57\u65af\u7684<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u7533\u8bf7\u4eba\u7684\u516c\u544a :\u901a\u5e38\u5728\u4fc4\u7f57\u65af\u5c45\u4f4f\u4f46\u6682\u65f6\u65e0\u6cd5\u53ca\u65f6\u7533\u8bf7<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u7684\u7533\u8bf7\u4eba,\u53ef\u4ee5\u5728\u4e2d\u56fd\u7684\u4efb\u4e00\u7f8e\u56fd\u4f7f\u9886\u9986\u9012\u4ea4\u4f60\u4eec\u7684\u7b7e\u8bc1\u7533\u8bf7\u3002\u7533\u8bf7\u4eba\u4e0d\u9700\u8981\u62e5\u6709\u4e2d\u56fd...",
+            "timestamp": 1579954288,
+            "title": "\u7533\u8bf7<em>\u7f8e\u56fd\u7b7e\u8bc1</em>| \u4e3b\u9875- China (English)",
+            "url": "https://www.so.com/link?m=aH4u05U4F5jt7V3uvuOV08FsUVLCk72re4qkbxXMESTIvnLKusi%2Fet4qVHEM4wlG9IAHNniJSW6qAzoPxouVF3mE5wDZVJQGWJcWZ3LIkKFvH%2FJ2GcqItflrrAPCr1tzTJz7ht5JeFKEgLoDvEj4mCDAy%2BtDtx9NgFlwb%2FQ%3D%3D"
+        },
+        {
+            "rank": 3,
+            "snippet": "\u6ce8\u610f:\u5982\u679c\u60a8\u662f14\u5c81\u4ee5\u4e0b\u6216\u8005\u662f80\u5c81\u4ee5\u4e0a\u7684\u7533\u8bf7\u4eba;\u6216\u8005\u60a8\u4e0a\u4e00\u4e2a<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u5931\u6548\u65e5\u671f\u672a\u8d85\u8fc712\u4e2a\u6708,\u5e76\u4e14\u60a8\u6b64\u6b21\u8d74\u7f8e\u4e0e\u4e0a\u6b21\u76ee\u7684\u76f8\u540c,\u90a3\u4e48\u4f60\u53ef\u4ee5\u901a\u8fc7\u514d\u9762\u8c08\u7eed\u7b7e\u670d\u52a1\u7533\u8bf7\u7b7e\u8bc1\u3002\u70b9...",
+            "timestamp": 1579954288,
+            "title": "\u7533\u8bf7<em>\u7f8e\u56fd\u7b7e\u8bc1</em>| \u7533\u8bf7\u7b7e\u8bc1- \u5728\u4e2d\u56fd",
+            "url": "https://www.ustraveldocs.com/cn_zh/cn-niv-visaapply.asp"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>\u7f8e\u56fd</em>\u56fd\u52a1\u9662\u9886\u4e8b\u4e8b\u52a1\u5c40\u7f51\u7ad9\u53ca\u9886\u4e8b\u9986\u7f51\u7ad9\u662f\u6709\u5173<em>\u7b7e\u8bc1</em>\u4fe1\u606f\u7684\u6743\u5a01\u6765\u6e90\u3002\u5982\u679c<em>\u7b7e\u8bc1</em>\u5185\u5bb9\u5b58\u5728\u5dee\u5f02,\u5e94\u4ee5\u4e0a\u8ff0\u7f51\u7ad9\u7684\u4fe1\u606f\u4e3a\u51c6\u3002",
+            "timestamp": 1579954288,
+            "title": "\u7533\u8bf7<em>\u7f8e\u56fd\u7b7e\u8bc1</em>| EVUS - \u5728\u4e2d\u56fd",
+            "url": "https://www.so.com/link?m=alDHrpbxsFg2t%2FGJmJc17AoZfl5YWd%2B1PmiMvDwOL%2BABxdh6%2BQ40tEDzN2rb8uJMvv3tiLXEpolrfXAK%2FESlQwgZOLKwXoVzCuvDV5Vv3gwlti4Jf%2Fv0v%2BjAhL8gd8AFQJUrFUa%2F2%2F6i6s%2Bi6Zit6%2BQXiXavdnORcVGUZF0rnoCGRxoZViFM6FSyEvz4%3D"
+        },
+        {
+            "rank": 6,
+            "snippet": "\u7533\u6167\u51fa\u5165\u5883\u516c\u53f8\u65d7\u4e0b\u7684<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u4e2d\u5fc3\u7f51\u7ad9\u4e3a\u7533\u8bf7\u4eba\u63d0\u4f9b\u5168\u9762\u548c\u6743\u5a01\u7684<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u7533\u8bf7\u653b\u7565,\u6d4f\u89c8\u672c\u7ad9,\u4f60\u5c06\u4f1a\u77e5\u9053\u5982\u4f55\u529e\u7406\u7f8e\u56fd\u65c5\u6e38\u3001\u5546\u52a1\u3001\u63a2\u4eb2\u3001\u7559\u5b66\u3001\u5de5\u4f5c\u3001\u8fc7\u5883\u3001\u4ea4\u6d41\u8bbf\u95ee...",
+            "timestamp": 1579954288,
+            "title": "<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u4e2d\u5fc3\u7f51\u7ad9-\u534f\u52a9\u7533\u8bf7<em>\u7f8e\u56fd\u7b7e\u8bc1</em>_\u767b\u8bb0EVUS_\u7533\u8bf7ESTA",
+            "url": "https://www.so.com/link?m=aqVSeGoTTny9CbyjQZdNRfVrgfA2QYWMRHw2cUIvnbITG4r3o9n0Eaz0eIzphwFAllaL%2BS8BX2725d%2F6T56xGDiLiCF6DCx%2F3WhxqV8KWk15sYRnMRj8W8w0sw9aJRfikfiyraZlUYNJhYT0J7fHWGl1AeSjeNMQT"
+        },
+        {
+            "rank": 7,
+            "snippet": "\u7533\u8bf7<em>\u7f8e\u56fd\u7b7e\u8bc1</em> \u5728\u4e2d\u56fd \u672c\u7f51\u7ad9\u7684\u5728\u7ebf\u8d44\u6e90\u80fd\u591f\u89e3\u7b54\u60a8\u6240\u6709\u5173\u4e8e\u7b7e\u8bc1\u7684\u95ee\u9898\u3002\u4e00\u65e6\u4f60\u786e\u5b9a\u4f60\u7684\u7b7e\u8bc1\u7c7b\u578b,\u4f60\u53ef\u4ee5\u5f97\u5230\u6240\u6709\u5728\u7ebf\u670d\u52a1\u3002 \u60a8\u6240\u7533\u8bf7\u7684\u7b7e\u8bc1\u7c7b\u578b:\u975e\u79fb\u6c11\u6216\u79fb\u6c11\u7b7e\u8bc1? \u975e\u79fb...",
+            "timestamp": 1579954288,
+            "title": "\u7533\u8bf7<em>\u7f8e\u56fd\u7b7e\u8bc1</em>| Steps - \u5728\u4e2d\u56fd",
+            "url": "https://www.so.com/link?m=aV%2BEQnNTEd9mjcDHneWyz2pFdydmCyF5b1xdHr27fxCpCQ3kQCgkxLugPFljJotxNnJGojxPD%2FkZNwOarZM2bnLtfmc0t6%2BOgHU1xMyG50F2N8oWMtMd7SldTP0TfNRFE6NQMNtMLAawEQorngEy6JhwDmQ4ftamzrDpK%2By6yRv2QzWLu4aChgA%3D%3D"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1579954288,
+            "title": "\u53bb<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u95ee\u9898_360\u95ee\u7b54",
+            "url": "http://wenda.so.com/q/1364251591064481?src=150&q=%E7%BE%8E%E5%9B%BD%E7%AD%BE%E8%AF%81"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u662f\u7f8e\u56fd\u5728\u672c\u56fd\u6216\u5916\u56fd\u516c\u6c11\u6240\u6301\u7684\u62a4\u7167\u6216\u5176\u4ed6\u65c5\u884c\u8bc1\u4ef6\u4e0a\u7684\u7b7e\u6ce8\uff0c\u4ee5\u8868\u793a\u5141\u8bb8\u6301\u6709\u8005\u63d0\u51fa\u8fdb\u5165\u7f8e\u56fd\u56fd\u5883\u7684\u7533\u8bf7\uff0c\u4e5f\u53ef\u4ee5\u8bf4\u662f\u9881\u53d1\u7ed9\u4ed6\u4eec\u7684\u4e00\u9879\u7b7e\u6ce8\u5f0f\u7684\u8bc1\u660e\u3002<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u53ef\u5206\u4e3a\u79fb\u6c11<em>\u7b7e\u8bc1</em>\u4e0e\u975e\u79fb\u6c11\u7b7e\u8bc1\u4e24\u5927\u7c7b\uff0c\u6bcf\u4e00\u5927\u7c7b\u53c8\u53ef\u5206\u4e3a\u8bb8\u591a\u5c0f\u7c7b\u3002\u6301\u6709<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u4e0d\u4e00\u5b9a... \u8be6\u60c5&gt;&gt;\u83b7\u5f97\u6761\u4ef6 - \u7533\u529e\u6d41\u7a0b - \u5e38\u89c1\u7b7e\u8bc1 - \u5168\u90e8",
+            "timestamp": 1579954288,
+            "title": "<em>\u7f8e\u56fd\u7b7e\u8bc1</em>_360\u767e\u79d1",
+            "url": "https://baike.so.com/doc/5333690-5569127.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "\u8bf7\u4e0d\u8981\u6253\u5370\u591a\u4efd\u540c\u6837\u7684<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u6536\u8d39\u5355\u3002\u6bcf\u4e00\u4f4d\u5bb6\u5ead\u6210\u5458\u6216\u56e2\u7ec4\u6210\u5458\u7684\u7b7e\u8bc1\u8d39\u7528\u5c06\u88ab\u89c6\u4e3a\u4e00\u7b14\u72ec\u7acb\u7684\u4ea4\u6613\u3002\u60a8\u5fc5\u987b\u4e3a\u6bcf\u4e00\u7b14\u4ea4\u6613\u6253\u5370\u552f\u4e00\u7684<em>\u7f8e\u56fd\u7b7e\u8bc1</em>\u6536\u8d39\u5355\u3002\u652f\u4ed8\u7b7e\u8bc1\u8d39\u65f6,\u8bf7...",
+            "timestamp": 1579954288,
+            "title": "\u7533\u8bf7<em>\u7f8e\u56fd\u7b7e\u8bc1</em>| \u94f6\u884c\u548c\u652f\u4ed8\u65b9\u5f0f/\u652f\u4ed8\u7b7e\u8bc1\u8d39- \u5728\u4e2d\u56fd",
+            "url": "https://www.ustraveldocs.com/cn_zh/cn-niv-paymentinfo.asp"
+        }
+    ],
+    "timestamp": 1579954288,
+    "url": "https://www.so.com/s?src=lm&ls=s521c48db9a&q=%E7%BE%8E%E5%9B%BD%E7%AD%BE%E8%AF%81&lmsid=30e88c9397a90e32&lm_extend=ctype%3A4%7Clmbid%3A203%7Cjt%3A2%7Cmaxbid%3A%7Csadspace%3A"
+}

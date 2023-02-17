@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Susan Boyle Make Me a Channel of Your Peace",
+    "offset": null,
+    "page": null,
+    "query": "Susan Boyle Make Me a Channel of Your Peace",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "Give Peace A Chance",
+            "url": "http://www.google.ca/search?sa=X&q=John+Lennon+Give+Peace+A+Chance&stick=H4sIAAAAAAAAAIWUPWzTQBTHnUBL6rZS4yKBMkAIDCUSJHb80bC0qAJU1KqodGGy4rPPjj_OH3c4thFCYu6EBIxITAwdmUBCqBIDFWJgQGKhiI0JBEsXKG0h9jHhyT-__3v3v_eeXBlpTLTMFo_bElFjHAjjgdEDRh37yMRbpX9ifzGUbE2TsFIgUAFSc7EsC6Gnb5Um95EHHW-AYxMM2UnVpNMVnCFDkoV8oqpD1hMvlKBlDtkWLS-DA684zcYSgcOwltpJRGyzsOo6uh3l1cUg5D0gFmHPDrr8MGxBWxtENqCyzUzSKLUqR1RtTzchzo-O5bbazoKcZ4EcmnFG3TzIXEJyL4KsA4zaxU0yy-LdonqMFNHKswVkaRYu-gLTtsh7WZGdaNBM6GKog4q2uEnYBVIetkLFyXhqoDIUipFJOIRQKTBKLCmkfIsISVLOFvHCLj87ZJM3Q7s7cCl9BIBMbQ9OM69DGUcEdvP58nroyiHdJQVJikwvW-JaRbGBZKv5DKAKBRQip1CLvLu_HblawAORahJI9Hw5NEURZuOOkLdcUdOuo3uUcT0B1NGZAyP8ufSqPD71ZefjdO15-d7G6_elp2V2asn3seGmq4bbI4a-5nNn2NFLiPRJytXYiVql5bXasmQHM0yNZXPi1kvs-HWDrPnLvt6HKXebu8WOLRueZkR4BXJrLLvgu64BSN9H3GW2UTvRAvmHVmQAP9L7yFSBexOTvZy98nX2P5rG0dUDA2Lkwj9vigjJhfJMueEI6rN3D96O3qjGb3Z3J4PF-drZJsceWcRLPui51Yefzr388OvrXHOaraz1Eh_5XlplDp5vc41TY6e_p4_WN7bnqj-aDLPdPzZ__FCdmWH4lZ2fdzbvn59vMndfPNkcPVwpTTETj0dOXvUtVF8yEPJR_Uo_NurXDn4-F-sLVg8B4zd7Fy9XnQQAAA&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQ-BZ6BAgMEAI"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "Susan Boyle - Make Me a Channel of Your Peace (Audio) - YouTube",
+            "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3D7mxO_dsvHew&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwCXoECAIQAQ&usg=AOvVaw3sDFmulY_WjL3_GfznceC6"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "Susan Boyle - Make me a Channel of Your Peace - YouTube",
+            "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3DPGHOtR-v4yQ&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwCnoECAkQAQ&usg=AOvVaw3pVYRKCDlXQk_cLt7J_QUv"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "239 Make Me a Channel Of Your Peace (Susan Boyle) - YouTube",
+            "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3DGcxg4XQgaGg&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwD3oECAQQAQ&usg=AOvVaw2o_qgaJDTXMFIWiFL0zf3H"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "Make Me A Channel Of Your Peace - Susan Boyle ... - YouTube",
+            "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3DgUI2EyYIEKs&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwEHoECAcQAQ&usg=AOvVaw3XKzVXR_okwW5x3nGsT3zJ"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "Make Me a Channel of Your Peace - YouTube",
+            "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3D9pR-ib1ZglE&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwEXoECAgQAQ&usg=AOvVaw0MxKuMhPNEmX1_lura6DOG"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "Susan Boyle: Make Me A Channel Of Your Peace (Lyrics) - YouTube",
+            "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3Dp8Jr2o7oewU&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwEnoECAMQAQ&usg=AOvVaw3YfRj0fCvO755ALdsnKq9M"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "Make Me A Channel of Your Peace - by Susan Boyle - YouTube",
+            "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3DpnxqC9Ed2_Q&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwE3oECAEQAQ&usg=AOvVaw3-_zXUJa9bgSS3XcQdYsPa"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "239 Make Me a Channel Of Your Peace (Susan Boyle) (+playlist ...",
+            "url": "http://www.google.ca/url?q=https://www.pinterest.com/pin/155796468334138177/&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQFjAUegQIChAB&usg=AOvVaw3kbX9tFK6S2RvOWj0lk5KL"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1607791072,
+            "title": "239 Make Me a Channel Of Your Peace (Susan Boyle) | Syco music ...",
+            "url": "http://www.google.ca/url?q=https://www.pinterest.com/pin/131308145358906661/&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQFjAVegQIBRAB&usg=AOvVaw2qobA-pRZQyfEaHRTXbtlv"
+        }
+    ],
+    "timestamp": 1607791072,
+    "url": "http://www.google.ca/search?sa=X&q=Susan+Boyle+Make+Me+a+Channel+of+Your+Peace&stick=H4sIAAAAAAAAAIVUPWjUYBjOnbZe0xZ6qaDcIPF0qBW9Sy4_PZcWi0KhpdLe0ikkX_Ill3z58vOld0lEBOdOgjoKTg4dnRRECg4WcXAQXKy4OSm6dNHaWvOzmSHkyfu8z_t87_vy1UaaEy2zxZG2SAIIZX7cN1RgsMTDJtmtZLFIGRD_HwxEW9NEIhcQKAArOVmS-MDVdyuTR5ADHXdIBibIsJMocafLOxmGURpwsaJkWI_dQISWmWFbsNwUDt2imk3ECGZhLbHjMLLNwipydDvM1QU_4FwgFGHX9rtcFragrQ1DG5SyzVTUSmxFCkvarm5CkpceSG2lnfo5ngNSYA7S0sn9FEVR7oWXdEBwuzhJalkcKtQHWBasPJvHlmaRoi8waQucmxbZsQbNuCyGO7hoC4qDLhDzsBXITsqVBipBvhjZ8ewLGMaWGJR8CxiLYo6tyA263FyGTc4M7O4QlfghAFJpe0iSup2ScRzBbj5fTg-QFJS7JGNRlsrLFiOrEBuKtpLPACqQxwF2CrbAoaPtyNk8GQqlJoFYz5dDk2V-btDh85bLStJ1dLdkXI9BqXTqwJB8qbyujk993f803XhRvb_95kPlWZWeWvY8YqBkzUBqZOg9j7lIj97AUT9KmAY90ai13FZbEm1_hmrQdI6YrQo9vm5EPW_F0_swYe4wt-mxFcPVjJCsQqZH04seQgaI-h5mbtLNxrkWyH-0QgN4od7HpgLQJokOcw7lWfo_nObptb8GhBDB4y9ZgNG16ky16fDK8_cP341u1AdvDw4m_aWFxqVZhj61RJY9oKL6o89XXn38_W1-dpqu9dTYw56b1Km_z_f55vmxCz-Sx1vbe_P1n7MUtdc_s3D2BEvNUNzq_q-7Ow-uLsxS914-3Rk9WatMURNPRi6vbxIVs9e9BBnsiuocvgxWZRctFWMDsR5kN7zNkL11dCP9AYhSBnypBAAA&ved=2ahUKEwixvarn35TtAhXC3J4KHZIqBmYQ-BZ6BAgSEEA"
+}

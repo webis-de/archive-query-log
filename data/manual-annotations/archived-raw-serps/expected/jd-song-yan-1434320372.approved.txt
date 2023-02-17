@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u7039\u5b2a\u6e85",
+    "offset": null,
+    "page": null,
+    "query": "\u5b8b\u5f66",
+    "results": [],
+    "timestamp": 1434320372,
+    "url": "http://search.jd.com/search?keyword=%E5%AE%8B%E5%BD%A6&cid=3267&book=y"
+}

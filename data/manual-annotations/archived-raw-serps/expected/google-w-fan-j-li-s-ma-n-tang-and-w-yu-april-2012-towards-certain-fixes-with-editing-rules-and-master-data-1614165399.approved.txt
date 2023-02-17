@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "W. Fan, J. Li, S. Ma, N. Tang, and W. Yu. April 2012. Towards certain fixes with editing rules and master data. The VLDB Journal, 21(2): 213--238. 297 10.1007/s00778-011-0253-7 ",
+    "offset": null,
+    "page": null,
+    "query": "W. Fan, J. Li, S. Ma, N. Tang, and W. Yu. April 2012. Towards certain fixes with editing rules and master data. The VLDB Journal, 21(2): 213--238. 297 10.1007/s00778-011-0253-7",
+    "results": [],
+    "timestamp": 1614165399,
+    "url": "https://scholar.google.com/scholar?hl=en&q=W.+Fan%2C+J.+Li%2C+S.+Ma%2C+N.+Tang%2C+and+W.+Yu.+April+2012.+Towards+certain+fixes+with+editing+rules+and+master+data.+The+VLDB+Journal%2C+21(2)%3A+213--238.+297+10.1007%2Fs00778-011-0253-7+"
+}

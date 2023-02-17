@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "telekwiaciarnia.pl",
+    "offset": null,
+    "page": null,
+    "query": "telekwiaciarnia.pl",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>TELEKWIACIARNIA.PL</em> DOSTARCZA KWIATY NA ZAM\u00d3WIENIE TYLKO NA TERENIE WYZNACZONYM W ZAK\u0141ADCE INFORMACJE. Je\u017celi chcesz wys\u0142a\u0107 kwiaty skorzystaj z odpowiedniej ...",
+            "timestamp": 1436841282,
+            "title": "Florystyczna poczta, Kwiatowa dostawa <em>...</em>",
+            "url": "http://www.telekwiaciarnia.pl/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Florystyczna Poczta, Kwiatowa Dostawa Szczecin. \u2605\u2605\u2605 Kwiaciarnia Nr 1 \u2605\u2605\u2605 w Szczecin. Dor\u0119czamy Kwiaty w 2h na Terenie Szczecina i Okolic.",
+            "timestamp": 1436841282,
+            "title": "Florystyczna poczta, kwiatowa dostawa Szczecin <em>...</em>",
+            "url": "http://www.szczecin.telekwiaciarnia.pl/"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Telekwiaciarnia.pl</em>, Gda\u0144sk. 82 likes. Zajmujemy si\u0119 szybk\u0105 i profesjonaln\u0105 wysy\u0142k\u0105 kwiat\u00f3w. Nasza strona: www.<em>telekwiaciarnia.pl</em>",
+            "timestamp": 1436841282,
+            "title": "<em><em>Telekwiaciarnia.pl</em></em> - Gda\u0144sk - Professional...",
+            "url": "https://www.facebook.com/telekwiaciarnia"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>TELEKWIACIARNIA.PL</em> DOSTARCZA KWIATY NA ZAM\u00d3WIENIE TYLKO NA TERENIE WYZNACZONYM W ZAK\u0141ADCE INFORMACJE. Dostawa kwiat\u00f3w \u0141\u00f3d\u017a: Telekwiaciarnia \u0141\u00f3d\u017a dostarcza ...",
+            "timestamp": 1436841282,
+            "title": "Florystyczna poczta, kwiatowa dostawa \u0141\u00f3d\u017a <em>...</em>",
+            "url": "http://www.lodz.telekwiaciarnia.pl/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Florystyczna poczta, Kwiatowa Dostawa Lublin. \u2605\u2605\u2605 Kwiaciarnia Nr 1 \u2605\u2605\u2605 w Lublinie. Dor\u0119czamy Kwiaty w 2h na Terenie Lublina i Okolic.",
+            "timestamp": 1436841282,
+            "title": "Florystyczna poczta, kwiatowa dostawa Lublin <em>...</em>",
+            "url": "http://www.lublin.telekwiaciarnia.pl/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Poczta z kwiatami Gda\u0144sk. Kwiaciarnia Nr 1 w Gda\u0144sku. Dor\u0119czamy Kwiaty w 2h!",
+            "timestamp": 1436841282,
+            "title": "Poczta i Kwiatowa dostawa Telekwiaciarnia Gda\u0144sk",
+            "url": "http://www.gdansk.telekwiaciarnia.pl/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>TELEKWIACIARNIA.PL</em> DOSTARCZA KWIATY NA ZAM\u00d3WIENIE TYLKO NA TERENIE WYZNACZONYM W ZAK\u0141ADCE INFORMACJE. Wysy\u0142ka kwiat\u00f3w Krak\u00f3w Stare Miasto, Grzeg\u00f3rzki, Pr\u0105dnik ...",
+            "timestamp": 1436841282,
+            "title": "Florystyczna poczta, kwiatowa dostawa Krak\u00f3w <em>...</em>",
+            "url": "http://www.krakow.telekwiaciarnia.pl/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Florystyczna Poczta, Kwiatowa Dostawa Bia\u0142ystok. \u2605\u2605\u2605 Kwiaciarnia Nr 1 \u2605\u2605\u2605 w Bia\u0142ymstoku. Dor\u0119czamy Kwiaty w 2h na Terenie Bia\u0142egostoku i Okolic.",
+            "timestamp": 1436841282,
+            "title": "Florystyczna poczta, kwiatowa dostawa Bia\u0142ystok <em>...</em>",
+            "url": "http://www.bialystok.telekwiaciarnia.pl/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Opinie Klient\u00f3w o <em>Telekwiaciarnia.pl</em> ... Nie mog\u0142am by\u0107 osobi\u015bcie na pogrzebie wi\u0119c szuka\u0142am jakiego\u015b sposobu, aby dostarczy\u0107 tam wieniec.",
+            "timestamp": 1436841282,
+            "title": "Opinie o <em><em>Telekwiaciarnia</em>.<em>pl</em></em>",
+            "url": "http://www.telekwiaciarnia.pl/opinions-photos.php"
+        },
+        {
+            "rank": 10,
+            "snippet": "Telekwiaciarnia Gda\u0144sk to bez w\u0105tpienia najlepsze przesy\u0142ki kwiatowe w Gda\u0144sku. Dostawa kwiatowa w 2h i zawsze \u015bwie\u017ce kwiaty. Florystyczna poczta nigdy Ci\u0119 nie ...",
+            "timestamp": 1436841282,
+            "title": "<em><em>Telekwiaciarnia</em>.<em>pl</em></em> - YouTube",
+            "url": "http://www.youtube.com/channel/UCq4Q9J80MwWh3ntvxotJTtA"
+        }
+    ],
+    "timestamp": 1436841282,
+    "url": "http://nl.search.yahoo.com/search?fr=yhs-invalid&p=telekwiaciarnia.pl"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "#CruzCrew",
+    "offset": null,
+    "page": null,
+    "query": "#CruzCrew",
+    "results": [],
+    "timestamp": 1459272010,
+    "url": "https://www.facebook.com/search/photos/?q=%23CruzCrew&ref=top_filter&_fb_noscript=1"
+}

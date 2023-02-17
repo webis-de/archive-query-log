@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Muhammed Rashid",
+    "offset": null,
+    "page": null,
+    "query": "Muhammed Rashid",
+    "results": [],
+    "timestamp": 1656890873,
+    "url": "https://scholar.google.com/scholar?q=Muhammed+Rashid"
+}

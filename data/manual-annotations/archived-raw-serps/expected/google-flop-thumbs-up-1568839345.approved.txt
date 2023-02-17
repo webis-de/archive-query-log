@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "flop thumbs up",
+    "offset": null,
+    "page": null,
+    "query": "flop thumbs up",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Jan 30, 2015 - <em>Thumbs</em> down to Fresno County Supervisor Debbie Poochigian for her inconsistent stands on subsidizing residential growth. You might recall that on Dec. 9 Poochigian voted to repeal Fresno County\u2019s Public Impact Fees, which are assessed to developers to pay for things such as ...",
+            "timestamp": 1568839345,
+            "title": "Thumbs up, thumbs down: Poochigian flip-flop, Fantasy ...",
+            "url": "https://www.fresnobee.com/opinion/editorials/article19532982.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>THUMBS UP</em> FOR FLIP <em>FLOP</em> FRIDAY     Final session this evening with a lot of laughs too Thanks to everyone who came along - have a good Easter.",
+            "timestamp": 1568839345,
+            "title": "THUMBS UP FOR FLIP FLOP FRIDAY    ... - Highland Bears ...",
+            "url": "https://www.facebook.com/HighlandBearsBasketballClub/photos/thumbs-up-for-flip-flop-fridayfinal-session-this-evening-with-a-lot-of-laughs-to/1970226443103728/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Flip-Flops Restobar: Flip <em>flop thumbs up</em> - See 108 traveler reviews, 60 candid photos, and great deals for Dumaguete City, Philippines, at TripAdvisor.",
+            "timestamp": 1568839345,
+            "title": "Flip flop thumbs up - Review of Flip-Flops Restobar ...",
+            "url": "https://www.tripadvisor.com/ShowUserReviews-g616032-d7131290-r409101478-Flip_Flops_Restobar-Dumaguete_City_Negros_Oriental_Negros_Island_Visayas.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Free delivery and returns on eligible orders. Buy <em>Thumbs Up</em> 893 FLIP <em>FLOP</em> CASE iPhone 4 Green at Amazon UK.",
+            "timestamp": 1568839345,
+            "title": "Thumbs Up 893 FLIP FLOP CASE iPhone 4 Green - Amazon UK",
+            "url": "https://www.amazon.co.uk/Thumbs-Up-FLIP-iPhone-Green/dp/B005VAUME8"
+        },
+        {
+            "rank": 5,
+            "snippet": "Thank you to everyone who gave my debut performance as a <em>FlipFlopFlyin</em>' columnist the mighty <em>thumbs up</em>. It sure makes a boy from Baltimore happy to know\u00a0...",
+            "timestamp": 1568839345,
+            "title": "Flip Flop Flyin' - Rave Hasselhoff",
+            "url": "http://www.flipflopflyin.com/ravehasselhoff/index.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Apr 16, 2015 - A month or so ago this article was bouncing around Facebook and I clicked on and read through it ~ Six Reasons Parents Should Not Watch\u00a0...",
+            "timestamp": 1568839345,
+            "title": "Thumbs Up | Flip Flop Follies",
+            "url": "http://flipflopfollies.com/thumbs-up-2/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Apr 14, 2017 - Trump gives <em>thumbs</em>-<em>up</em>. Jonathan Ernst / Reuters. Donald Trump is nothing if not flexible when it comes to his policy positions. He knows how\u00a0...",
+            "timestamp": 1568839345,
+            "title": "Where Will Trump Flip-Flop on Foreign Policy Next? - The ...",
+            "url": "https://www.theatlantic.com/international/archive/2017/04/trump-flip-flop-foreign-policy-tpp-russia-ukraine-sudan-japan-china/523008/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Apr 23, 2010 - We kept trying to hook up and missing. ... so gamely tussled with his flip-<em>flop</em>, won, and gave a good-natured double <em>thumbs</em>-<em>up</em> to celebrate the\u00a0...",
+            "timestamp": 1568839345,
+            "title": "Seeking: The Coachella Flip-Flop Guy - April 23, 2010 - SF ...",
+            "url": "http://www.sfweekly.com/music/seeking-the-coachella-flip-flop-guy/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Chris Barrett is raising funds for EzFlop Flip <em>Flops</em> - A 1st of Its Kind Recyclable ... Inexpensive patent-pending recyclable &amp; foldable flip <em>flops</em>. ... Two <em>thumbs up</em>!",
+            "timestamp": 1568839345,
+            "title": "EzFlop Flip Flops - A 1st of Its Kind Recyclable Flip Flop by ...",
+            "url": "https://www.kickstarter.com/projects/ezflop/ezflop-inexpensive-recyclable-flip-flops-that-fold/comments"
+        }
+    ],
+    "timestamp": 1568839345,
+    "url": "https://www.google.com/search?q=flop+thumbs+up&oq=flop+thumbs+up&aqs=chrome..69i57j69i60l2j69i61j69i65l2.3098j0j7&sourceid=chrome&ie=UTF-8"
+}

@@ -70,3 +70,73 @@ def test_parse_query_qq_hua_ze_xiang_cai_1408309927():
         "https://web.archive.org/web/20140817231207id_/http://v.qq.com//search.html?pagetype=3&ms_key=%E8%8A%B1%E6%B3%BD%E9%A6%99%E8%8F%9C",
         "qq",
     )
+
+
+def test_parse_query_qq_zhang_dong_jian_1446133153():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20151029163913id_/http://v.qq.com//search.html?pagetype=3&ms_key=%E5%BC%A0%E4%B8%9C%E5%81%A5",
+        "qq",
+    )
+
+
+def test_parse_query_qq_jin_xiu_long_1320298924():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20111103064204id_/http://v.qq.com/search.html?pagetype=3&ms_key=%E9%87%91%E7%A7%80%E9%BE%99",
+        "qq",
+    )
+
+
+def test_parse_query_qq_xing_xing_di_qiu_2_1582812539():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20200227150859id_/http://v.qq.com:80/search.html?ms_key=%E8%A1%8C%E6%98%9F%E5%9C%B0%E7%90%832",
+        "qq",
+    )
+
+
+def test_parse_query_qq_jin_cheng_wu_1319745059():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20111027215059id_/http://v.qq.com/search.html?pagetype=3&ms_key=%E9%87%91%E5%9F%8E%E6%AD%A6",
+        "qq",
+    )
+
+
+def test_parse_query_qq_turn_that_finger_around_1324266860():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20111219045420id_/http://v.qq.com:80/search.html?pagetype=3&ms_key=Turn+That+Finger+Around",
+        "qq",
+    )
+
+
+def test_parse_query_qq_statue_1536122094():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20180905063454id_/http://v.qq.com:80/search.html?pagetype=3&stj2=search.search&stag=txt.index&ms_key=statue",
+        "qq",
+    )
+
+
+def test_parse_query_qq_erin_1359911760():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20130203181600id_/http://v.qq.com//search.html?pagetype=3&ms_key=Erin",
+        "qq",
+    )
+
+
+def test_parse_query_qq_jin_cheng_wu_2_1319745059():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20111027215059id_/http://v.qq.com/search.html?pagetype=3&ms_key=%E9%87%91%E5%9F%8E%E6%AD%A6",
+        "qq",
+    )
+
+
+def test_parse_query_qq_tag_encode_1341871817():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20120710001017id_/http://v.qq.com/search.html?pagetype=3&ms_key=${tag|encode}",
+        "qq",
+    )
+
+
+def test_parse_query_qq_niamh_cusack_1319751306():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20111027233506id_/http://v.qq.com/search.html?pagetype=3&ms_key=Niamh+Cusack",
+        "qq",
+    )

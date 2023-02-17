@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "A. Tumeo, M. Branca, L. Camerini, \"A Dual-Priority RealTime Multiprocessor System on FPGA for Automotive Applications\", Design, Automation and Test in Europe (DATE) 2008, pages 1039--1044. 10.1145/1403375.1403625 ",
+    "offset": null,
+    "page": null,
+    "query": "A. Tumeo, M. Branca, L. Camerini, \"A Dual-Priority RealTime Multiprocessor System on FPGA for Automotive Applications\", Design, Automation and Test in Europe (DATE) 2008, pages 1039--1044. 10.1145/1403375.1403625",
+    "results": [],
+    "timestamp": 1614181186,
+    "url": "https://scholar.google.com/scholar?hl=en&q=A.+Tumeo%2C+M.+Branca%2C+L.+Camerini%2C+%22A+Dual-Priority+RealTime+Multiprocessor+System+on+FPGA+for+Automotive+Applications%22%2C+Design%2C+Automation+and+Test+in+Europe+(DATE)+2008%2C+pages+1039--1044.+10.1145%2F1403375.1403625+"
+}

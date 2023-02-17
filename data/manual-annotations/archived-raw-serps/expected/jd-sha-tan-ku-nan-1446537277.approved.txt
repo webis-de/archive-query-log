@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "\u6c99\u6ee9\u88e4 \u7537",
+    "offset": null,
+    "page": null,
+    "query": "\u6c99\u6ee9\u88e4 \u7537",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1446537277,
+            "title": "<em>Maro Homme\u7537\u58eb\u6c99\u6ee9\u88e4 \u590f\u5b63\u4e94\u5206\u88e4\u6f6e\u4f11\u95f2\u8fd0\u52a8\u5fae\u5f39\u901f\u5e72\u5bbd\u677e\u5927\u7801\u4f11\u95f2\u77ed\u88e4\u5370\u82b1\u4e2d\u88e4\u5927\u88e4\u8869 \u84dd\u8272\u65b9\u683c 3XL</em>\n<em></em>",
+            "url": "http://item.jd.com/1604332765.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1446537277,
+            "title": "<em>2015\u590f\u5b63\u65b0\u6b3e\u4f11\u95f2\u8ff7\u5f69\u77ed\u88e4\u7537\u519b\u65c5\u4e94\u5206\u88e4\u7eaf\u68c9\u7537\u58eb\u97e9\u7248\u76f4\u7b52\u4e2d\u88e4\u52a0\u80a5\u5927\u78015\u5206\u88e4\u6f6e\u6c99\u6ee9\u88e4 \u571f\u9ec4\u8272 XXXL</em>\n<em></em>",
+            "url": "http://item.jd.com/1600598481.html"
+        }
+    ],
+    "timestamp": 1446537277,
+    "url": "http://search.jd.com/search?keyword=%E6%B2%99%E6%BB%A9%E8%A3%A4%20%E7%94%B7&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&ev=exbrand_Maro%20Homme%40&uc=0"
+}

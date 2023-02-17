@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "\u6e56\u5317\u5feb\u4e09\u7f51\u6613\u5f00\u5956\u7ed3\u679c\u5fae\u4fe1weiwei776699\u5350",
+    "offset": null,
+    "page": null,
+    "query": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u05ff\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u03a2\ufffd\ufffdweiwei776699\ufffde",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u7f51\u6613\u4e25\u9009 \u7f51\u6613\u4e91\u97f3\u4e50 Type-C\u6570\u636e\u7ebf \u5b89\u5353\u6570\u636e\u7ebf2.4A\u5145\u7535\u7ebf \u9002\u7528\u534e\u4e3a/\u8363\u8000/\u5c0f\u7c73/\u4e09\u661f\u624b\u673a</em>\n<em>9\u670825\u65e5-9\u670828\u65e5\u8f66\u54c1\u82f1\u96c4\u4f1a\u4e0e\u4f60\u4e00\u8d77\u6362\u88c5\u5907\uff0c\u6ee1199\u51cf100\uff0c\u6ee1299\u51cf150\uff01\u70b9\u51fb\u524d\u5f80</em>",
+            "url": "http://item.jd.com/6252439.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u7f51\u6613\u4e25\u9009 \u61d2\u4eba\u62b9\u5e03 \u53bb\u6c61\u5438\u6c34\u5e72\u6e7f\u4e24\u7528\u4e00\u6b21\u6027\u6d17\u7897\u5e03\u6e05\u6d01\u5e03 \u5355\u4e2a\u88c5</em>\n<em>\u5438\u6c34\u5438\u6cb9\uff0c\u5e72\u6e7f\u4e24\u7528\uff0c\u7528\u5b8c\u5373\u6254\uff0c\u5929\u7136\u53ef\u964d\u89e3\uff0c\u73af\u4fdd\u4fbf\u5229\uff0c\u3010\u5bb6\u88c5\u8282\u3011\u90e8\u5206\u6ee1159\u51cf30/399\u51cf80/799\u51cf160\uff0c\u53e0\u52a0\u9886\u5238\u6ee1200\u62539\u6298\uff0c\u66f4\u591a\u4f18\u60e0\u70b9\u51fb\u67e5\u770b</em>",
+            "url": "http://item.jd.com/6333674.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u7f51\u6613\u8ddf\u8d34\u6708\u520a001</em>\n<em></em>",
+            "url": "http://item.jd.com/30379707.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u7f51\u6613\u8ddf\u8d34\u6708\u520a\uff08002\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/30388269.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u7f51\u6613\u8ddf\u8d34\u6708\u520a006</em>\n<em></em>",
+            "url": "http://item.jd.com/30402591.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u7f51\u6613\u8ddf\u8d34\u6708\u520a004</em>\n<em></em>",
+            "url": "http://item.jd.com/30391409.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u57b8\u91cc\u7684\u5973\u4eba\uff08\u7f51\u6613\u4eba\u95f4\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/30417331.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u7f51\u6613\u8ddf\u8d34\u6708\u520a\uff08\u603b\u7b2c005\u671f\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/30394056.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u4e0a\u5b66\u8def\u4e0a\uff08\u7f51\u6613\u4eba\u95f4\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/30417332.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u7f51\u6613\u8ddf\u8d34\u6708\u520a\uff08003\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/30388268.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u4e0e\u75c5\u9b54\u6297\u4e89\u7684\u90a3\u4e9b\u65e5\u5b50\uff08\u7f51\u6613\u4eba\u95f4\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/30431750.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u660e\u671d\u4e3a\u4ec0\u4e48\u706d\u4ea1\uff1f</em>\n<em></em>",
+            "url": "http://item.jd.com/30394342.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>X-\u9f99\u65f6\u4ee3\u6f2b\u753b\u5355\u884c\u672c13</em>\n<em>\u4f20\u7edf\u6587\u5316\u5468\u597d\u4e66\u949c\u60e0\uff01\u7545\u9500\u56fe\u4e66\u6bcf\u6ee1100\u51cf30\uff01\u7acb\u5373\u62a2\u8d2d&gt;</em>",
+            "url": "http://item.jd.com/12302347.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u65f6\u95f4\u7684\u5f62\u72b6\uff1a\u76f8\u5bf9\u8bba\u53f2\u8bdd\uff08\u5347\u7ea7\u7248\uff09</em>\n<em>\u7b2c\u516b\u5c4a\u56fd\u5bb6\u56fe\u4e66\u9986\u6587\u6d25\u5956\u83b7\u5956\u56fe\u4e66\uff1b\u559c\u9a6c\u62c9\u96c5\u3001\u873b\u8713\u3001\u7f51\u6613\u7b49\u7535\u53f0\u70ed\u95e8\u4e3b\u64ad\u6c6a\u6d01\uff0c\u5386\u7ecf\u4e94\u5e74\u5168\u65b0\u4fee\u8ba2\uff0c\u5f69\u56fe\u5347\u7ea7\uff1b\u8fd9\u4e0d\u662f\u4e00\u672c\u4e66\uff0c\u8fd9\u662f\u4e00\u4e2a\u5168\u65b0\u7684\u5b87\u5b99\u89c2\u3002</em>",
+            "url": "http://item.jd.com/30337736.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u81f4\u547d\u5192\u9669\uff1a\u95ea\u7c73\u7279\u9ec4\u6cb3\u5947\u5e7b\u6f02\u6d41</em>\n<em>\u6709\u5927\u5956\u7b49\u60a8\uff01\u8bf7\u89c1\u8be6\u60c5\u9875\uff01\u63a2\u9669\u5bb6\u95ea\u7c73\u7279\u529b\u4f5c\u9996\u53d1\uff0c\u5168\u7a0b\u8bb0\u5f55\u4ed6\u5212\u8fc7\u7684234\u5929\uff0c\u6f02\u6d41\u8fc75490\u5343\u7c73\u3002\u4eba\u6c11\u65e5\u62a5\u3001\u56fd\u5bb6\u5730\u7406\u3001\u51e4\u51f0\u7f51\u3001\u7f51\u6613\u3001\u77e5\u4e4e\u3001\u80cc\u5305\u5ba2\u3001\u63a2\u9669\u5e2e\u7b49\u5343\u4e07\u7c89\u4e1d\u7f51\u53cb\u4e3a\u4e4b\u611f\u52a8\uff01\u5c0f\u7c73\u6559\u7236\u96f7\u519b\u8bda\u631a\u4f5c\u5e8f!</em>",
+            "url": "http://item.jd.com/30360021.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u8840\u738b\u51a0\uff1a\u73ab\u7470\u6218\u4e89</em>\n<em>\u534e\u6587\u4e16\u754c\u9996\u90e8\u73ab\u7470\u6218\u4e89\u4f5c\u54c1 \u9002\u5408\u4e2d\u56fd\u6587\u5316\u80cc\u666f\u957f\u5927\u7684\u8bfb\u8005\u9605\u8bfb \u300a\u51b0\u4e0e\u706b\u4e4b\u6b4c\uff1a\u6743\u529b\u7684\u6e38\u620f\u300b\u539f\u578b\u3001\u838e\u58eb\u6bd4\u4e9a\u5386\u53f2\u5267\u91cd\u8981\u7d20\u6750\u5e93 \u5927\u8c61\u516c\u4f1a\u3001\u56fd\u5bb6\u4eba\u6587\u5386\u53f2\u3001\u51e4\u51f0\u5468\u520a\u3001\u7f51\u6613\u5386\u53f2\u3001</em>",
+            "url": "http://item.jd.com/30339446.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u4e03\u60c5\u96c6</em>\n<em>\u7f51\u6613\u3001\u641c\u72d0\u3001\u65b0\u6d6a\u7f51\u3001\u4e2d\u56fd\u6797\u4e1a\u65b0\u95fb\u7f51\u3001\u56fd\u5bb6\u6797\u4e1a\u5c40\u3001\u6d77\u539f\u6797\u4e1a\u5c40\u3001\u5b81\u590f\u6797\u4e1a\u3001\u65b0\u8521\u6797\u4e1a\u5c40\u3001\u6797\u4e1a\u5c40\u6c49\u4e30\u7f51\u3001\u6d77\u53e3\u70ed\u70b9\u65b0\u95fb\u7f51\u7b49\u5341\u4f59\u5bb6\u7f51\u7ad9\u5148\u540e\u8f6c\u8f7d</em>",
+            "url": "http://item.jd.com/30367405.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u671d\u9c9c\u4e03\u65e5</em>\n<em></em>",
+            "url": "http://item.jd.com/30406862.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u6697\u8bbf\u955c\u5934</em>\n<em></em>",
+            "url": "http://item.jd.com/30406858.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u5927\u8336\u5546</em>\n<em></em>",
+            "url": "http://item.jd.com/30206375.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u8d1d\u58f3</em>\n<em>\u6e29\u67d4\u6709\u529b\u7684\u6b63\u80fd\u91cf\u8bb2\u8ff0\u8005\u2014\u70df\u7f57\u5199\u4f5c\u5341\u4f59\u5e74\u9996\u672c\u7f8e\u6587\u968f\u8eab\u4e66\u300212\u4f4d\u7f51\u6613\u6444\u5f71\u5e0841\u5f20\u73af\u7403\u65c5\u62cd\u660e\u5a9a\u63d2\u56fe\u3002</em>",
+            "url": "http://item.jd.com/30398326.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u5728\u6d77\u6d1b\u56e0\u796d\u575b\u4e0a</em>\n<em></em>",
+            "url": "http://item.jd.com/30407145.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u4eba\u95f4\u76f8\u4eb2\u6545\u4e8b</em>\n<em></em>",
+            "url": "http://item.jd.com/30431769.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u521a\u679c\u91d1\u7684\u7ea2\u4e0e\u9ed1</em>\n<em></em>",
+            "url": "http://item.jd.com/30406880.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u6700\u540e\u7684\u6e38\u7267</em>\n<em></em>",
+            "url": "http://item.jd.com/30407150.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u6211\u4eec\u4e3a\u623f\u5b50\u75af\u4e86</em>\n<em></em>",
+            "url": "http://item.jd.com/30431770.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u8f7b\u677e\u5b66\u4f1a\u72ec\u7acb\u601d\u8003</em>\n<em>\u7f51\u6613\u4e91\u8bfe\u5802\u6709\u5f71\u54cd\u529b\u7684\u5728\u7ebf\u6559\u80b2\u4e13\u5bb6\uff0c\u7ee7\u300a\u4e0d\u8981\u7b49\u5230\u6bd5\u4e1a\u4ee5\u540e\u300b\u4e4b\u540e\u53c8\u4e00\u529b\u4f5c\uff0c\u5b66\u4f1a\u6279\u5224\u6027\u601d\u7ef4\uff0c\u6324\u6389\u5f53\u5e74\u8111\u5b50\u91cc\u8fdb\u7684\u6c34\uff01</em>",
+            "url": "http://item.jd.com/30204674.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u65e2\u7136\u5df2\u7ecf\u8d70\u4e86\u8fd9\u4e48\u8fdc\uff08\u589e\u8865\u7248\uff09</em>\n<em>\u589e\u52a011\u4e2a\u6545\u4e8b\u3002\u542c\u77e5\u4e4e\u3001\u8c46\u74e3\u3001\u864e\u6251\u3001\u7f51\u6613\u4e91\u9605\u8bfb\u3001\u6f8e\u6e43\u65b0\u95fb\u3001\u817e\u8baf\u5927\u5bb6\u2026\u2026\u7684\u5f20\u4f73\u73ae\uff0c\u8f7b\u58f0\u6696\u8bed\uff0c\u7ed9\u4f60\u8bb2\u6545\u4e8b\u3002\u5982\u679c\u4e24\u4e2a\u4eba\u770b\u4e86\u8fd9\u672c\u4e66\u8fd8\u6ca1\u611f\u89c9\uff0c\u90a3\u5c31\u653e\u5f03\u5427\u3002</em>",
+            "url": "http://item.jd.com/30351646.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u65e0\u591c\u8fb9\u5883\uff082\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/30412841.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1537978473,
+            "title": "<em>\u5029\u5973\u5e7d\u9b42\u4e4b\u503e\u4e16\u753b\u9b42\uff08\u7b2c\u58f9\u5377\uff09</em>\n<em>\u7f51\u6613\u8d85\u4eba\u6c14IP\u7384\u5e7b\u7f51\u6e38\u5927\u4f5c\u300a\u5029\u5973\u5e7d\u9b422\u300b\u6f14\u7ece\u6f2b\u753b\u70ed\u8840\u6765\u88ad</em>",
+            "url": "http://item.jd.com/11691442.html"
+        }
+    ],
+    "timestamp": 1537978473,
+    "url": "http://search.jd.com/search?keyword=%BA%FE%B1%B1%BF%EC%C8%FD%CD%F8%D2%D7%BF%AA%BD%B1%BD%E1%B9%FB%CE%A2%D0%C5weiwei776699%85e&qr=&qrst=UNEXPAND&et=&rt=1&ev=exprice_0-19%40&uc=0"
+}

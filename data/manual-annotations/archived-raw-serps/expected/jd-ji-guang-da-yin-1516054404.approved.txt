@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "\u6fc0\u5149\u6253\u5370",
+    "offset": null,
+    "page": null,
+    "query": "\u6fc0\u5149\u6253\u5370",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4f73\u80fd\uff08Canon\uff09iC MF4720w \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u65e0\u7ebf\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u65b0\u5e74\u65b0\u6c14\u8c61\uff0c\u6362\u65b0\u5927\u4f5c\u6218\uff0c\u9886\u5238\u4e0b\u5355\u5b9e\u60e0\u591a\u8fc5\u901f\u6765\u9886\u5238</em>",
+            "url": "http://item.jd.com/778781.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09M1136 \u591a\u529f\u80fd\u4e09\u5408\u4e00\u9ed1\u767d\u6fc0\u5149\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/216237.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09M126a\u9ed1\u767d\u591a\u529f\u80fd\u4e09\u5408\u4e00\u6fc0\u5149\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/1274471.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09 M1005 \u9ed1\u767d\u6fc0\u5149\u4e09\u5408\u4e00\u591a\u529f\u80fd\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/118340.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09M126nw\u9ed1\u767d\u6fc0\u5149\u65e0\u7ebf\u591a\u529f\u80fd\u4e00\u4f53\u673a\uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/1102495.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09M1216nfh \u591a\u529f\u80fd\u56db\u5408\u4e00\u9ed1\u767d\u6fc0\u5149\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf \u4f20\u771f\uff09</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/280217.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4e09\u661f\uff08SAMSUNG\uff09 SL-M2071 \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>20ppm\uff0c\u65b0\u65f6\u5c1a\u4e09\u5408\u4e00\uff0c\u5546\u7528\u5bb6\u7528\u4e24\u76f8\u5b9c\uff01\u91c7\u7528ReCP\u6280\u672f\uff0c\u7ec6\u8282\u5904\u7406\u66f4\u5f3a\uff01</em>",
+            "url": "http://item.jd.com/1145689.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09M1213nf \u9ed1\u767d\u56db\u5408\u4e00\u591a\u529f\u80fd\u6fc0\u5149\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf \u4f20\u771f\uff09</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/216238.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u8054\u60f3\uff08Lenovo\uff09\u5c0f\u65b0M7208W \u9ed1\u767d\u6fc0\u5149\u65e0\u7ebfWiFi\u4e09\u5408\u4e00\u591a\u529f\u80fd\u4e00\u4f53\u673a \u5b66\u751f\u6253\u5370 \u4f5c\u4e1a\u6253\u5370(\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u3010\u6253\u51fa\u65b0\u5e74\u65b0\u671f\u5f85\u3011\u5c0f\u65b0\u667a\u80fdWiFi\u4e09\u5408\u4e00\uff0c\u98a0\u8986\u6253\u5370\u65b0\u73a9\u6cd5\uff0c\u6652\u5355\u8bc4\u4ef7\u988630\u5143E\u5361\uff01\u70b9\u51fb\u67e5\u770b\u6d3b\u52a8\u8be6\u60c5&gt;&gt;</em>",
+            "url": "http://item.jd.com/2099985.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4f73\u80fd\uff08Canon\uff09iC MF3010 \u8d85\u503c\u7ecf\u6d4e\u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a\uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u65b0\u5e74\u65b0\u6c14\u8c61\uff0c\u6362\u65b0\u5927\u4f5c\u6218\uff0c\u9886\u5238\u4e0b\u5355\u5b9e\u60e0\u591a\u8fc5\u901f\u6765\u9886\u5238</em>",
+            "url": "http://item.jd.com/526169.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09LaserJet Pro MFP M128fn\u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a \u6253\u5370\u590d\u5370\u626b\u63cf\u4f20\u771f</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/1103405.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4f73\u80fd\uff08Canon\uff09iC MF4712 \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53 \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u65b0\u5e74\u65b0\u6c14\u8c61\uff0c\u6362\u65b0\u5927\u4f5c\u6218\uff0c\u9886\u5238\u4e0b\u5355\u5b9e\u60e0\u591a\u8fc5\u901f\u6765\u9886\u5238</em>",
+            "url": "http://item.jd.com/778786.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4f73\u80fd\uff08Canon\uff09iC MF4752 \u8d85\u503c\u7ecf\u6d4e\u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf \u4f20\u771f\uff09</em>\n<em>\u65b0\u5e74\u65b0\u6c14\u8c61\uff0c\u6362\u65b0\u5927\u4f5c\u6218\uff0c\u9886\u5238\u4e0b\u5355\u5b9e\u60e0\u591a\u8fc5\u901f\u6765\u9886\u5238</em>",
+            "url": "http://item.jd.com/778788.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u8054\u60f3\uff08Lenovo\uff09\u5c0f\u65b0M7208 \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a(\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u3010\u6253\u51fa\u65b0\u5e74\u65b0\u671f\u5f85\u3011\u5c0f\u5de7\u65f6\u5c1a\u5916\u89c2\uff0c\u7b80\u4fbf\u6613\u7528\uff0c\u6652\u5355\u8bc4\u4ef7\u988630\u5143E\u5361\uff01\u70b9\u51fb\u67e5\u770b\u6d3b\u52a8\u8be6\u60c5&gt;&gt;</em>",
+            "url": "http://item.jd.com/2100003.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09LaserJet Pro MFP M128fp\u9ed1\u767d\u6fc0\u5149\u4e00\u4f53\u673a \u6253\u5370\u590d\u5370\u626b\u63cf\u4f20\u771f \u7535\u8bdd\u624b\u67c4</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/1103406.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666eHP M226dw\u6253\u5370\u673a \u9ed1\u767d\u6fc0\u5149\u4e00\u4f53\u673a \u591a\u529f\u80fd\u590d\u5370\u626b\u63cf\u4f20\u771f \u5347\u7ea7\u7248\u60e0\u666e227fdw</em>\n<em>\u652f\u6301\u65e0\u7ebf\u6253\u5370\uff0c\u65e0\u7eb8\u6536\u53d1\u4f20\u771f\uff0cu\u76d8\u76f4\u63a5\u6253\u5370\u3002\u65b0\u6b3e\u9f13\u7c89\u5206\u79bb\u6b3e\u578b\u53f7227fdw</em>",
+            "url": "http://item.jd.com/1455488150.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09 \u6253\u5370\u673a M1005 A4\u9ed1\u767d\u6fc0\u5149\u6253\u5370\u673a\u4e00\u4f53\u673a \u591a\u529f\u80fd\u590d\u5370\u626b\u63cf\u4e00\u4f53\u6253\u5370\u673a</em>\n<em>\u6253\u5370\u590d\u5370\u626b\u63cf\u529e\u516c\u5bb6\u7528\u4e00\u4f53\u673a\uff0c\u63a8\u8350\u8f83\u9ad8\u7aef\u591a\u529f\u80fd\u4e00\u4f53\u673a227fdw</em>",
+            "url": "http://item.jd.com/1446809338.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4e09\u661f\uff08SAMSUNG\uff09SCX-3401 \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a\uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/656565.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666eHP M1136\u6253\u5370\u673a A4\u9ed1\u767d\u6fc0\u5149\u6253\u5370\u673a\u4e00\u4f53\u673a \u591a\u529f\u80fd\u590d\u5370\u626b\u63cf\u4e00\u4f53\u673a \u9ad8\u7248\u672c132a</em>\n<em>\u65b0\u54c1\u63a8\u8350 \u9f13\u7c89\u5206\u79bb\u6b3e\u673a\u578b132a</em>",
+            "url": "http://item.jd.com/1505928977.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09LaserJet Pro MFP M128fw\u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a \u65e0\u7ebf\u6253\u5370\u590d\u5370\u626b\u63cf\u4f20\u771f</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/1102494.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09 M277 M281fdw M180 M181 A4\u5f69\u8272\u6fc0\u5149\u6253\u5370\u673a\u4e00\u4f53\u673a M277DW(\u53cc\u9762\u6253\u5370+\u65e0\u7ebf)</em>\n<em>\u4e0b\u5355\u7acb\u51cf30\u5143,\u518d\u988650\u5143\u4f18\u60e0\u52b5\uff01\u8bc4\u4ef7\u8fd8\u8fd4\u7ea2\u5305\u54df\uff0c\u66f4\u9ad8\u6027\u80fd\u63a8\u5e7fM377</em>",
+            "url": "http://item.jd.com/1530559017.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09LaserJetM226dn \u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a\uff08\u6253\u5370\u3001\u590d\u5370\u3001\u626b\u63cf\u3001\u4f20\u771f\uff09\u4e91\u6253\u5370</em>\n<em>\u81ea\u52a8\u53cc\u9762\u6253\u5370 \u6709\u7ebf\u7f51\u7edc \u9ed1\u767d\u6fc0\u5149\u56db\u5408\u4e00   \u63a8\u8350\u66f4\u9ad8\u7aef\u673a\u578bM427\u7cfb\u5217</em>",
+            "url": "http://item.jd.com/1579929147.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09M277dw \u5f69\u8272\u65e0\u7ebf\u4e09\u5408\u4e00\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a \u6253\u5370\uff0c\u590d\u5370\uff0c\u626b\u63cf\uff08\u5347\u7ea7\u578b\u53f7\u4e3aM281fdw\uff09</em>\n<em>\u3010\u5e74\u8d27\u8d2d\u5927\u4fc3!\u4e70\u5373\u8d60\u54c1\u724c\u94a2\u7b14\u5957\u88c5!(\u4ee5\u6d3b\u52a8\u89c4\u5219\u4e3a\u51c6)\u3011\u8be6\u60c5\u731b\u6233\u8fd9\u91cc(\u6b64\u5546\u54c1\u4e0d\u53c2\u52a0\u4e0a\u8ff0\u6d3b\u52a8)</em>",
+            "url": "http://item.jd.com/1504116.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4e09\u661f\uff08SAMSUNG\uff09 SL-M2071\u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a \u6253\u5370\u590d\u5370\u626b\u63cf \u529e\u516c\u5bb6\u7528 \u5b98\u65b9\u6807\u914d</em>\n<em>\u4e09\u5408\u4e00\u529f\u80fd  \u6613\u7528 \u8f7b\u677e\u4fbf\u6377   \u6253\u5370   \u590d\u5370 \u5982\u9700\u65e0\u7ebf\u7f51\u7edc\u6253\u5370\u8bf7\u70b9\u51fb\u4e09\u661fM2071W</em>",
+            "url": "http://item.jd.com/1540137429.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4e09\u661f\uff08SAMSUNG\uff09SF-761P \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a\uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf \u4f20\u771f\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/682143.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4e09\u661f\uff08SAMSUNG\uff09 SL-M2071FH \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf \u4f20\u771f\uff09</em>\n<em>20ppm\uff0c\u65b0\u65f6\u5c1a\u56db\u5408\u4e00\uff0c\u5546\u7528\u5bb6\u7528\u4e24\u76f8\u5b9c\uff01\u91c7\u7528ReCP\u6280\u672f\uff0c\u7ec6\u8282\u5904\u7406\u66f4\u5f3a\uff01</em>",
+            "url": "http://item.jd.com/1144508.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09 M226dw/M227fdw \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a\u590d\u5370\u626b\u63cf\u4f20\u771f \u66ff1536 M226dw(\u65e0\u7ebf\u7f51\u7edc\u6253\u5370)</em>\n<em>\u81ea\u52a8\u53cc\u9762\u6253\u5370\u3001\u652f\u6301\u65e0\u7ebf\u6253\u5370\uff0cu\u76d8\u76f4\u63a5\u6253\u5370\uff0c\u9f13\u7c89\u5206\u79bb\u7248227fdw\u8bf7\u70b9\u51fb</em>",
+            "url": "http://item.jd.com/1503017586.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u60e0\u666e\uff08HP\uff09 MFP M128\u7cfb\u5217  \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a\u6253\u5370\u590d\u5370\u626b\u63cf\u4f20\u771f\u6253\u5370\u673a\u4e00\u4f53\u673a \u60e0\u666eM128fn(\u6709\u7ebf\u7f51\u7edc)</em>\n<em>\u7ecf\u6d4e\u5b9e\u60e0\u3001\u529f\u80fd\u9f50\u5168\uff0c\u53ef\u9009\u5177\u6709\u4f20\u771f\u624b\u67c4\u4e00\u4f53\u7684128FP A4\u4f20\u771f\u673a\u4e00\u4f53\u673a \u9ed1\u767d\u6fc0\u5149\u4e00\u4f53\u673a</em>",
+            "url": "http://item.jd.com/1471883729.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u4e09\u661f\uff08SAMSUNG\uff09SCX-4521HS \u9ed1\u767d\u6fc0\u5149\u591a\u529f\u80fd\u4e00\u4f53\u673a \uff08\u6253\u5370 \u590d\u5370 \u626b\u63cf \u4f20\u771f\uff09</em>\n<em>\u8fd1\u767e\u4e07\u4eba\u559c\u6b22\u7684\u4ea7\u54c1!</em>",
+            "url": "http://item.jd.com/701260.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1516054404,
+            "title": "<em>\u677e\u4e0b\uff08Panasonic\uff09KX-MB1663CNW \u591a\u529f\u80fd\u4e00\u4f53\u673a\uff08\u4f20\u771f \u6253\u5370 \u590d\u5370 \u626b\u63cf\uff09</em>\n<em>\u677e\u4e0b\u529e\u516c\u65b0\u5e74\u5927\u91c7\u8d2d\uff01\u70b9\u51fb\u67e5\u770b\u6d3b\u52a8\u8be6\u60c5&gt;&gt;</em>",
+            "url": "http://item.jd.com/1157919.html"
+        }
+    ],
+    "timestamp": 1516054404,
+    "url": "http://search.jd.com/search?keyword=%E6%BF%80%E5%85%89%E6%89%93%E5%8D%B0&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq=%E6%BF%80%E5%85%89%E6%89%93%E5%8D%B0&ev=5345_88976%40268435461_268466585%40&uc=0"
+}

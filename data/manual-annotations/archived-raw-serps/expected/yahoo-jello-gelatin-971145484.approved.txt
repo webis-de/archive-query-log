@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "jello gelatin",
+    "offset": null,
+    "page": null,
+    "query": "jello gelatin",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "<em>Jell-O</em>",
+            "url": "http://srd.yahoo.com/srct/2454823/jello+gelatin/1/1/*http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Food_and_Drink/Staples_and_Ingredients/Gelatin/Jell_O/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "<em>Jell-O</em> 100",
+            "url": "http://srd.yahoo.com/srst/2454825/jello+gelatin/1/8/*http://www.kraftfoods.com/jell-o/history/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "Fun with <em>Jell-O</em>",
+            "url": "http://srd.yahoo.com/srst/2454833/jello+gelatin/2/8/*http://www.madmartian.com/jello.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "Joys of <em>Jell-O</em>",
+            "url": "http://srd.yahoo.com/srst/2077963/jello+gelatin/3/8/*http://cascade.mit.edu/cookbook/jello/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "<em>Jello</em> Recipes Collected Over the Years",
+            "url": "http://srd.yahoo.com/srst/8895569/jello+gelatin/4/8/*http://members.amaonline.com/nrogers/Kitchen/jello.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "<em>Jello</em>phile - The <em>Jello</em>maniac's Manual",
+            "url": "http://srd.yahoo.com/srst/2454834/jello+gelatin/5/8/*http://www.geocities.com/NapaValley/2022/jello.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "Ode To <em>Jell-O</em>",
+            "url": "http://srd.yahoo.com/srst/2454831/jello+gelatin/6/8/*http://falcon.cc.ukans.edu/~vlassey/jello.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "Walking <em>Jello</em>",
+            "url": "http://srd.yahoo.com/srst/2454838/jello+gelatin/7/8/*http://www.eskimo.com/~baubo/jello.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 971145484,
+            "title": "<em>Jello</em> On My Fork",
+            "url": "http://srd.yahoo.com/srst/2454840/jello+gelatin/8/8/*http://www.vex.net/~smarry/yip/jello.html"
+        }
+    ],
+    "timestamp": 971145484,
+    "url": "http://search.yahoo.com:80/search?p=jello+gelatin"
+}

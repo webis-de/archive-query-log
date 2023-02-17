@@ -1,0 +1,45 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "Futurama",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1314932107,
+            "title": "<em>Futurama</em> (Animation, Comedy, 1998 - 2010)",
+            "url": "http://tv.yahoo.com:80/futurama/show/340"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1314932107,
+            "title": "<em>Futurama</em>: Into the Wild Green Yonder (Comedy, 2009 - 2010)",
+            "url": "http://tv.yahoo.com:80/futurama-into-the-wild-green-yonder/show/45194"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1314932107,
+            "title": "<em>Futurama</em>: <em>Futurama</em> Season 7 \n\t  - \n\t  \t    \"Lrrreconcilable Ndndifferences\"",
+            "url": "http://tv.yahoo.com:80/futurama/show/lrrreconcilable-ndndifferences/episode/247040"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1314932107,
+            "title": "<em>Futurama</em>: <em>Futurama</em> Season 7 \n\t  - \n\t  \t    \"A Prisoner of Benda\"",
+            "url": "http://tv.yahoo.com:80/futurama/show/a-prisoner-of-benda/episode/246544"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1314932107,
+            "title": "<em>Futurama</em>: <em>Futurama</em> Season 7 \n\t  - \n\t  \t    \"A Clockwork Origin\"",
+            "url": "http://tv.yahoo.com:80/futurama/show/a-clockwork-origin/episode/246041"
+        }
+    ],
+    "timestamp": 1314932107,
+    "url": "http://tv.yahoo.com:80/search?cs=bz&p=Futurama&fr=tv-tts"
+}

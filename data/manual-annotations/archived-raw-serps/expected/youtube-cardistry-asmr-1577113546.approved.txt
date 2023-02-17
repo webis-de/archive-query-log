@@ -1,0 +1,171 @@
+{
+    "interpreted_query": "cardistry asmr",
+    "offset": null,
+    "page": null,
+    "query": "cardistry asmr",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "I hope you guys enjoyed this installment of <em>Cardistry ASMR</em>. If you want to learn any of the moves you see in this video, be sure to\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR 3 // More Captivating Card-Shuffling - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 4:46",
+            "url": "https://www.youtube.com/watch?v=UZL5clll-YI"
+        },
+        {
+            "rank": 2,
+            "snippet": "Listen close to the sounds of some of my best <em>cardistry</em>! If you want to learn any of these moves, be sure to check below in the\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR 4 // Compelling Card-Shuffling Continued - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 5:34",
+            "url": "https://www.youtube.com/watch?v=UG84sa-8HEk"
+        },
+        {
+            "rank": 3,
+            "snippet": "Listen close as I show you some of my favorite card flourishes and the sounds they create. The cards I used in this video are\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR: The soothing sounds of complex card-shuffling - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 4:54",
+            "url": "https://www.youtube.com/watch?v=aRAeafDLiSA"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Cardistry ASMR</em> Captivating Card-Shuffling, Card Magic ASMR has become a viral, international phenomenon as it helps to relax\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR: Captivating Card Shuffling, Card Magic - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 15:34",
+            "url": "https://www.youtube.com/watch?v=L3urVF0aN0Y"
+        },
+        {
+            "rank": 5,
+            "snippet": "Back by popular demand... the sounds of shuffling. #<em>ASMR</em> The cards in the video are the Casual V2's. Giveaway winners\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR 2: Crispy and Complex Card-Manipulation - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 2:44",
+            "url": "https://www.youtube.com/watch?v=l7nKhMvLSoc"
+        },
+        {
+            "rank": 6,
+            "snippet": "I haven't bought myself some cards in a while... check out my latest haul and stick around for some satisfying <em>Cardistry ASMR</em>.",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR with David Blaine\u2019s BEST NEW Cards!! - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 9:21",
+            "url": "https://www.youtube.com/watch?v=YEP0KPBGB5I"
+        },
+        {
+            "rank": 7,
+            "snippet": "People were asking for card magic and I have given the people what they asked! Instagram:\u00a0...",
+            "timestamp": 1577113546,
+            "title": "ASMR Card Magic and Flourishes for Sleep - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 10:46",
+            "url": "https://www.youtube.com/watch?v=6kRzJ-ccjVw"
+        },
+        {
+            "rank": 8,
+            "snippet": "This #ASMRUnboxing is for the #CardistryTouch Origin playing cards printed by #CartaMundi. These playing cards, now hard to\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry Touch Playing Cards ASMR Unbox - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 6:48",
+            "url": "https://www.youtube.com/watch?v=aES7B3dwWSA"
+        },
+        {
+            "rank": 9,
+            "snippet": "Don't close your eyes...Welcome to an <em>ASMR</em> card magic video in high quality! Feel free to close your eyes and fall asleep to the\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Don't close YOUR eyes... [ASMR] Card Magic (4K) - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 20:07",
+            "url": "https://www.youtube.com/watch?v=YrC558tKzDI"
+        },
+        {
+            "rank": 10,
+            "snippet": "2 HOURS OF <em>ASMR</em> CARD MAGIC to help you relax, fall asleep fast, learn new magic, win a card deck giveaway and so much\u00a0...",
+            "timestamp": 1577113546,
+            "title": "99.99% OF YOU WLL SLEEP TO 2 HOURS OF ASMR CARD MAGIC - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 1:57:05",
+            "url": "https://www.youtube.com/watch?v=wfAKzNJB_pc"
+        },
+        {
+            "rank": 11,
+            "snippet": "https://gleam.io/GIPeF/bicycle-evolution-playing-card-giv... I have been exploring the internet lately, and I have seen a lot of\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Magicians ASMR Card Shuffling and Flourishing - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 19:27",
+            "url": "https://www.youtube.com/watch?v=VW3yioZmrZM"
+        },
+        {
+            "rank": 12,
+            "snippet": "Merhaba, ben Yi\u011fit Ya\u015far. Bug\u00fcnk\u00fc videoda Videoyu y\u00fckleyene kadar d\u00fcnyada bir ilk oldu\u011fumu d\u00fc\u015f\u00fcnd\u00fc\u011f\u00fcm bir video ile\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 2:40",
+            "url": "https://www.youtube.com/watch?v=M_u2ZzkVeyY"
+        },
+        {
+            "rank": 13,
+            "snippet": "Music:https://www.youtube.com/watch?v=DfwtlO2cVGY Cardist: Richard Turner:\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Art Of Cardistry - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 4:22",
+            "url": "https://www.youtube.com/watch?v=njstvj2M0WA"
+        },
+        {
+            "rank": 14,
+            "snippet": "That's Magic! 5 of the best magic card tricks on America's Got Talent Got Talent Global brings together the very best in worldwide\u00a0...",
+            "timestamp": 1577113546,
+            "title": "5 Best Magic Card Trick Auditions That Blew The Judges Minds On America's Got Talent - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 16:31",
+            "url": "https://www.youtube.com/watch?v=YnQiSZ8m5WM"
+        },
+        {
+            "rank": 15,
+            "snippet": "Over 50 varied &amp; relaxing <em>ASMR</em> triggers in 3 hours for your sleep &amp; tingles, using Binaural Bob, the 3Dio and the Rode NT1 mics!",
+            "timestamp": 1577113546,
+            "title": "ASMR 50+ Triggers over 3 Hours (NO TALKING) Ear Cleaning, Massage, Tapping, Peeling, Umbrella &amp; MORE - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 3:16:50",
+            "url": "https://www.youtube.com/watch?v=oXp0hTkXiks"
+        },
+        {
+            "rank": 16,
+            "snippet": "Instagram: https://www.instagram.com/ayyjonah/?h... Patreon: https://www.patreon.com/user?u=4794562 Disclaimer: *** This\u00a0...",
+            "timestamp": 1577113546,
+            "title": "don't close your eyes... | The Illusionist | ASMR 100% Card Magic Roleplay for Sleep - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 18:23",
+            "url": "https://www.youtube.com/watch?v=OUOABCwhHmg"
+        },
+        {
+            "rank": 17,
+            "snippet": "Turns out my <em>Cardistry ASMR</em> video from a few months back got featured on FBE's Oddly Satisfying Compilation Reaction video.",
+            "timestamp": 1577113546,
+            "title": "19 MILLION PEOPLE watched my CARDISTRY ASMR!?!  (my reaction) - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 11:25",
+            "url": "https://www.youtube.com/watch?v=kzhayRQ_cy0"
+        },
+        {
+            "rank": 18,
+            "snippet": "The <em>ASMR</em> Card Magic Illusionist roleplay is back to help you relax and fall asleep with his best card tricks! Many of you asked for\u00a0...",
+            "timestamp": 1577113546,
+            "title": "ASMR The Illusionist - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 25:53",
+            "url": "https://www.youtube.com/watch?v=dQz-cTpWTVE"
+        },
+        {
+            "rank": 19,
+            "snippet": "Welcome to my first try of #<em>asmr</em>, hope you enjoy this kind of video! Buy magic stuff here, with my promo code FTMAGIC19 that\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR // The sounds SHUFFLING a deck of cards! - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 2:00",
+            "url": "https://www.youtube.com/watch?v=fE79fJu-6RY"
+        },
+        {
+            "rank": 20,
+            "snippet": "Hello. In this video I will be opening a variety box of playing cards from Dan and Dave, tapping on the tuck cases, and ...",
+            "timestamp": 1577113546,
+            "title": "A Playing Card Variety Box - ASMR, Whispering, Tapping, and Light Crinkling - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 48:01",
+            "url": "https://www.youtube.com/watch?v=m0-2YrAxTo4"
+        },
+        {
+            "rank": 21,
+            "snippet": "Skid row: https://dokonalytrik.cz/skid-row-playing-cardsFACEBOOK \u25ba https://www.facebook.com/DejfPetrASK.FM \u25ba https://ask ...",
+            "timestamp": 1577113546,
+            "title": "ASMR cardistry //SKID ROW// recenze karet od cardistry zna\u010dky Gemini - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 10:39",
+            "url": "https://www.youtube.com/watch?v=no_GrhUjCbc"
+        },
+        {
+            "rank": 22,
+            "snippet": "Merhaba, ben Yi\u011fit Ya\u015far. Bug\u00fcnk\u00fc videoda daha \u00f6nce yapt\u0131\u011f\u0131m <em>cardistry ASMR</em> videosunun \u00e7ok be\u011fenilmesi nedeniyle 2. part\u0131n\u0131\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Cardistry ASMR 2 - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 5:57",
+            "url": "https://www.youtube.com/watch?v=sFCARrENmzo"
+        },
+        {
+            "rank": 23,
+            "snippet": "This card trick fools 99% of all people...Can you figure it out? Instagram: https://www.instagram.com/ayyjonah/?h... Patreon:\u00a0...",
+            "timestamp": 1577113546,
+            "title": "Don't close YOUR eyes.. [ASMR] Card Magic - \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c: 21:30",
+            "url": "https://www.youtube.com/watch?v=twCkSGrNTyE"
+        }
+    ],
+    "timestamp": 1577113546,
+    "url": "https://www.youtube.com/results?search_query=cardistry+asmr"
+}

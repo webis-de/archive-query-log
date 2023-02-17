@@ -1,0 +1,122 @@
+{
+    "interpreted_query": "the risks of prescription drugs",
+    "offset": null,
+    "page": null,
+    "query": "the risks of prescription drugs",
+    "results": [
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "The Risks of Prescription Drugs (A Columbia / SSRC Book (Privatization of Risk))",
+            "url": "https://www.amazon.com/Risks-Prescription-Drugs-Columbia-Privatization-ebook/dp/B007QXWACU/ref=sr_1_1?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-1&x=15&y=19"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Powerful Medicines: The Benefits, Risks, and Costs of Prescription Drugs",
+            "url": "https://www.amazon.com/Powerful-Medicines-Benefits-Risks-Prescription-ebook/dp/B001NJMBG8/ref=sr_1_2?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-2&x=15&y=19"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Diabetes Risks from Prescription and Nonprescription Drugs: Mechanisms and Approaches to Risk Reduction",
+            "url": "https://www.amazon.com/Diabetes-Risks-Prescription-Nonprescription-Drugs-ebook/dp/B01FT81STY/ref=sr_1_3?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-3&x=15&y=19"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Drugs During Pregnancy and Lactation: Handbook of prescription drugs and comparative risk assessment",
+            "url": "https://www.amazon.com/Drugs-During-Pregnancy-Lactation-prescription/dp/0444507639/ref=sr_1_4?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-4&x=15&y=19"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Powerful Medicine - from benefit-risk and cost of prescription drugs, I think it should be a medical (2012) ISBN: 4861865204 [Japanese Import]",
+            "url": "https://www.amazon.com/Powerful-Medicine-benefit-risk-prescription-4861865204/dp/4861865204/ref=sr_1_5?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-5&x=15&y=19"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Effect of Risk Disclosures on Prescription Drug Advertising: The Moderating Role of Need-For-Cognition, Involvement, and Dogmatism",
+            "url": "https://www.amazon.com/Effect-Disclosures-Prescription-Advertising-Cognition/dp/3639197550/ref=sr_1_6?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-6&x=15&y=19"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Counsels on the Dangers of Prescription Drugs: Including Simple Home Remedies for Replacing Many Medications",
+            "url": "https://www.amazon.com/Counsels-Dangers-Prescription-Drugs-Medications/dp/1484847393/ref=sr_1_7?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-7&x=15&y=19"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "2021 Lippincott Pocket Drug Guide for Nurses",
+            "url": "https://www.amazon.com/2021-Lippincott-Pocket-Guide-Nurses/dp/197515889X/ref=sr_1_8?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-8&x=15&y=19"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Bottle of Lies: The Inside Story of the Generic Drug Boom",
+            "url": "https://www.amazon.com/Bottle-of-Lies-Katherine-Eban-audiobook/dp/B07PY54RX9/ref=sr_1_9?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-9&x=15&y=19"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Brain benefits come with some prescription drugs.: An article from: Mind, Mood &amp; Memory",
+            "url": "https://www.amazon.com/Brain-benefits-come-prescription-drugs/dp/B0035ZGGL4/ref=sr_1_10?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-10&x=15&y=19"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Ototoxic Drugs Exposed (3rd Edition): The Shocking Truth About Prescription Drugs, Medications, Chemicals and Herbals That Can (and Do) Damage Our Ears",
+            "url": "https://www.amazon.com/Ototoxic-Drugs-Exposed-3rd-Prescription/dp/1935939009/ref=sr_1_11?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-11&x=15&y=19"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "HYPERTENSION/ HIGH BLOOD PRESSURE RISK: CAUSES, EFFECT, SIGNS, PREVENTIVE MEASURES, PRESCRIPTIONS, RISK AND DIET OF HYPERTENSION IN BOTH ADULTS AND CHILDREN WITH FAST AND PROVEN CURE.",
+            "url": "https://www.amazon.com/HYPERTENSION-HIGH-BLOOD-PRESSURE-RISK-ebook/dp/B09XNTMNQP/ref=sr_1_12?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-12&x=15&y=19"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Worried Sick: A Prescription for Health in an Overtreated America (H. Eugene and Lillian Youngs Lehman Series)",
+            "url": "https://www.amazon.com/Worried-Sick-Prescription-Overtreated-America/dp/0807831875/ref=sr_1_13?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-13&x=15&y=19"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "Reactive Drug Metabolites",
+            "url": "https://www.amazon.com/Reactive-Drug-Metabolites-Amit-Kalgutkar/dp/3527330852/ref=sr_1_14?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-14&x=15&y=19"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "PRESCRIPTION FOR DISASTER: THE HIDDEN DANGERS IN YOUR MEDICINE CABINET",
+            "url": "https://www.amazon.com/PRESCRIPTION-DISASTER-DANGERS-MEDICINE-CABINET/dp/0684829983/ref=sr_1_15?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-15&x=15&y=19"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1657820625,
+            "title": "My Life with Karma",
+            "url": "https://www.amazon.com/My-Life-Karma-Travis-Sackett-ebook/dp/B09DJ67MHK/ref=sr_1_16?keywords=the+risks+of+prescription+drugs&qid=1657827825&sr=8-16&x=15&y=19"
+        }
+    ],
+    "timestamp": 1657820625,
+    "url": "https://www.amazon.com/s?k=the+risks+of+prescription+drugs&x=15&y=19&ref=nb_sb_noss"
+}

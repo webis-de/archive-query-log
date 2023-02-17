@@ -305,6 +305,9 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     query_selector: form[name=gs] input[name=q]
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: form[action="/search"] input[name=q]
   results_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
@@ -323,6 +326,11 @@
     url_selector: h3.gs_rt a
     title_selector: h3.gs_rt
     snippet_selector: dic.gs_rs
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: li.g
+    url_selector: h3.r a.l
+    title_selector: h3.r
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     results_selector: p[class="g"]
@@ -590,6 +598,15 @@
   - url_pattern: ^https?://[^/]+/cse/site\?
     type: html_selector
     query_selector: input#kw
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: input#kw
+  - url_pattern: ^https?://[^/]+/f\?
+    type: html_selector
+    query_selector: div.search_form input.search_ipt
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    query_selector: form[action="/s"] input.i
   results_parsers:
   - url_pattern: ^https?://[^/]+/s\?
     type: html_selector
@@ -597,6 +614,17 @@
     url_selector: h3.t > a
     title_selector: h3.t
     snippet_selector: div.c-abstract
+  - url_pattern: ^https?://[^/]+/f\?
+    type: html_selector
+    results_selector: ul#thread_list li.j_thread_list
+    url_selector: div.threadlist_title a
+    title_selector: div.threadlist_title
+    snippet_selector: div.threadlist_text
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    results_selector: table tr td.f
+    url_selector: a:not(.m)
+    title_selector: a:not(.m)
   focused_url_prefixes:
   - /s?
   - /search
@@ -635,13 +663,12 @@
   - url_pattern: ^https?://[^/]+/x/search/\?
     type: html_selector
     query_selector: input#keywords
-  - url_pattern: ^https?://[^/]+/?/search\.html\?
-    type: html_selector
-    query_selector: input#iWord
-  - url_pattern: ^https?://[^/]+/?/search\.html\?
-    type: html_selector
-    query_selector: input#iWordMid
   results_parsers:
+  - url_pattern: ^https?://[^/]+/search/\?
+    type: html_selector
+    results_selector: div#search_container > div.wrapper > div.wrapper_main > div.result_item
+    url_selector: h2.result_title > a
+    title_selector: h2.result_title
   - url_pattern: ^https?://[^/]+/x/search/\?
     type: html_selector
     results_selector: div#search_container > div.wrapper > div.wrapper_main > div.result_item
@@ -751,6 +778,10 @@
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
     query_selector: form input[name="q"]
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: div#initial_browse_result h1
+    query_text: true
   results_parsers:
   - url_pattern: ^https?://[^/]+/search.php\?
     type: html_selector
@@ -1005,10 +1036,15 @@
     snippet_selector: div.abstr
   - url_pattern: ^https?://[^/]+/search/?\?
     type: html_selector
-    results_selector: div#results div#main div#web ol li div.algo-sr
+    results_selector: div#web ol li div.algo, div#web ol li div.algo-sr
     url_selector: h3.title a
     title_selector: h3.title
     snippet_selector: div.aAbs
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    results_selector: div.content div.nomod ol li
+    url_selector: h3 a
+    title_selector: h3
   - url_pattern: ^https?://[^/]+/search/?\?
     type: html_selector
     results_selector: table tr td font ol li

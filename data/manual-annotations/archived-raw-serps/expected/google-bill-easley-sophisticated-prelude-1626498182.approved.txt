@@ -1,0 +1,87 @@
+{
+    "interpreted_query": "bill easley sophisticated prelude",
+    "offset": null,
+    "page": null,
+    "query": "bill easley sophisticated prelude",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Love With A Proper Stranger",
+            "url": "https://www.google.com/search?sa=X&q=%E3%83%93%E3%83%AB%E3%83%BB%E3%82%A4%E3%83%BC%E3%82%BA%E3%83%AA%E3%83%BC+hearing+voices&stick=H4sIAAAAAAAAAONgFuLSz9U3MM4wNSspUeLVT9c3NMwyKUjLS8ky0hLLTrbSzy0tzkzWTywqySwusSrOz0svXsSq_rh58uPm1Y-bdz9uWvK4ec_jpl2Pm1cBGQoZqYlFmXnpCmX5mcmpxQBBXxh0XwAAAA&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQ-BZ6BAgLEAI"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Sophisticated Prelude - song by Bill Easley | Spotify",
+            "url": "https://www.google.com/url?q=https://open.spotify.com/track/6iE74Lm4C1OjiCrZtm5kEO&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjADegQIBhAB&usg=AOvVaw1CVL4XsTc9TsX0Ex_8rU-G"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Hearing Voices - Album by Bill Easley | Spotify",
+            "url": "https://www.google.com/url?q=https://open.spotify.com/album/7KCb9dV263TvSc5PKt5hTk&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjAEegQICBAB&usg=AOvVaw17JbrVFLltNWSKu9-1IbX6"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Sophisticated Prelude Lyrics - Hearing Voices - Bill Easley",
+            "url": "https://www.google.com/url?q=https://www.forgotlyrics.com/bill-easley/sophisticated-prelude&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjAFegQIBxAB&usg=AOvVaw2EcxA-9VyiuCEWa8nIbIiH"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Bill Easley - Sophisticated Prelude lyrics (Hearing ... - AZ Lyrics.az",
+            "url": "https://www.google.com/url?q=https://m.lyrics.az/bill-easley/hearing-voices/sophisticated-prelude.html&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjAGegQIBRAB&usg=AOvVaw1mi6nhEwf3O5-Cs9MmuMpp"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Bill Easley \u2013 Hearing Voices (2009, CD) - Discogs",
+            "url": "https://www.google.com/url?q=https://www.discogs.com/Bill-Easley-Hearing-Voices/release/10461223&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjAHegQIChAB&usg=AOvVaw2RUEcrUv_TXiKXYkdl7-at"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Hearing Voices - Bill Easley | Songs, Reviews, Credits | AllMusic",
+            "url": "https://www.google.com/url?q=https://www.allmusic.com/album/hearing-voices-mw0000822546&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjAIegQIARAB&usg=AOvVaw2WFLW30uSlxSnGglCxIrHS"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Bill Easley | Songs | AllMusic",
+            "url": "https://www.google.com/url?q=https://www.allmusic.com/artist/bill-easley-mn0000092754/songs&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjAJegQIAxAB&usg=AOvVaw0P1r2jNhf9Ib8os9S_5Hu6"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Bill Easley: Hearing Voices - American Showplace Music - SWMP ...",
+            "url": "https://www.google.com/url?q=http://www.hbdirect.com/album_detail.php%3Fpid%3D3034658&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjAKegQIBBAB&usg=AOvVaw14m7wttMfEd61xtoZXysjS"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Hearing voices - Bill Easley - Muziekweb",
+            "url": "https://www.google.com/url?q=https://www.muziekweb.nl/en/Link/JE31602/Hearing-voices&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjALegQIAhAB&usg=AOvVaw1sZoVuh7pw3FpLyFCZx3Fy"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1626498182,
+            "title": "Bill Easley Lyrics, Music, News and Biography | MetroLyrics",
+            "url": "https://www.google.com/url?q=https://www.metrolyrics.com/bill-easley-overview.html&sa=U&ved=2ahUKEwi65J_fxOnxAhWGt54KHcqqB4sQFjAMegQIABAB&usg=AOvVaw3zdL7ZTFyr3rNN8OrzrkC2"
+        }
+    ],
+    "timestamp": 1626498182,
+    "url": "https://www.google.com/search?q=bill+easley+sophisticated+prelude&stick=H4sIAAAAAAAAAONgFuLSz9U3MM4wNSspUeLVT9c3NMwyM8jJMCvI0xLLTrbSzy0tzkzWTywqySwusSrOz0svXsSqmJSZk6OQmlick1qpUJxfkAGUy0xOLElNUSgoSs0pTUkFAB_nXk9ZAAAA&sa=X&ved=2ahUKEwjr3cn27-PxAhUTHzQIHXLBBTAQri4wCnoECAoQVA"
+}

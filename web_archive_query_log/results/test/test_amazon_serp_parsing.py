@@ -70,3 +70,73 @@ def test_parse_query_amazon_gaming_monitor_1639065822():
         "https://web.archive.org/web/20211209170342id_/https://www.amazon.ca/s?k=Gaming+Monitor&_encoding=UTF8&camp=15121&creative=330641&linkCode=ur2&linkId=769e0014053b086f96c5e9f93948f632&tag=liquipedia07-20",
         "amazon",
     )
+
+
+def test_parse_query_amazon_the_risks_of_prescription_drugs_1657820625():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20220714194345id_/https://www.amazon.com/s?k=the+risks+of+prescription+drugs&x=15&y=19&ref=nb_sb_noss",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_eksa_1662208504():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20220903143504id_/https://www.amazon.in/s?k=eksa&ref=nb_sb_noss&tag=prosenjit0c-21",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_qian_lian_mo_hua_orizinarusaundotoratsuku_1657685343():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20220713060903id_/https://www.amazon.co.jp/s?k=%E5%8D%83%E6%81%8B%EF%BC%8A%E4%B8%87%E8%8A%B1+%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&ref=nb_sb_noss",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_zao_dian_jia_meng_pin_pai_www_baidu_com_aaaa_zv9_2018nian_8yue_21ri_17shi_49fen_4miao_1564430721():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190729220521id_/https://www.amazon.cn/s?k=%E6%97%A9%E7%82%B9%E5%8A%A0%E7%9B%9F%E5%93%81%E7%89%8C+www.baidu.com%2Faaaa+zv9+2018%E5%B9%B48%E6%9C%8821%E6%97%A517%E6%97%B649%E5%88%864%E7%A7%92",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_gym_mat_tile_1634791656():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20211021064736id_/https://www.amazon.com/s?k=gym+mat+tile&ref=nb_sb_noss_1",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_guang_huaiba_pawameta_1632443655():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210924023415id_/https://www.amazon.co.jp/s?k=%E5%85%89%E3%83%95%E3%82%A1%E3%82%A4%E3%83%90%E3%83%BC+%E3%83%91%E3%83%AF%E3%83%BC%E3%83%A1%E3%83%BC%E3%82%BF%E3%83%BC&ref=nb_sb_noss_2",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_omega_labyrinth_z_1616510370():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210323153930id_/https://www.amazon.com/s?k=omega+labyrinth+z",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_solefit_1663015835():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20220912225035id_/https://www.amazon.in/s?k=Solefit&bbn=1968024031&rh=n:1571271031,n:1968024031,n:1968120031,p_36:12700-&dc=&qid=1626028382&rnid=4595083031&linkCode=sl2&tag=couponguruj0b-21&linkId=16c64e11c927eb2d1115416374b80d53&language=en_IN&ref_=as_li_ss_tl",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_the_montells_you_can_t_make_me_1617199271():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210331160111id_/https://music.amazon.com/search/The+Montells+You+Can't+Make+Me",
+        "amazon",
+    )
+
+
+def test_parse_query_amazon_dnd_flash_mosquito_1633240377():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20211003075257id_/https://www.amazon.in/s?k=DND+Flash+Mosquito&i=lawngarden&rh=p_6:AT95IG9ONZD7S&s=price-asc-rank&dc=&linkCode=sl2&-21=&language=en_IN&ref_=as_li_ss_tl&tag=dealsnalert-21",
+        "amazon",
+    )
