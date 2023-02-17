@@ -5636,13 +5636,19 @@
     type: query_parameter
     parameter: offset
   interpreted_query_parsers:
-  - url_pattern: ^https?://[^/]+/search
+  - url_pattern: ^https?://[^/]+/w/index.php\?
     type: html_selector
-    query_selector: div#searchText > input
+    query_selector: input#searchText
+  - url_pattern: ^https?://[^/]+/w/index.php\?
+    type: html_selector
+    query_selector: div#searchText input
+  - url_pattern: ^https?://[^/]+/w/index.php\?
+    type: html_selector
+    query_selector: input#sdms-search-input__input
   results_parsers:
-  - url_pattern: ^https?://[^/]+/search
+  - url_pattern: ^https?://[^/]+/w/index.php\?
     type: html_selector
-    results_selector: ul.mw-search-results > li
+    results_selector: ul.mw-search-results li
     url_selector: div.mw-search-result-heading a
     title_selector: div.mw-search-result-heading
     snippet_selector: div.searchresult

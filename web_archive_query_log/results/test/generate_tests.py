@@ -18,16 +18,17 @@ from web_archive_query_log import PROJECT_DIRECTORY_PATH
 from web_archive_query_log.config import SERVICES
 from web_archive_query_log.model import Service, ArchivedQueryUrl
 
-NUM_SERVICES = 50
-NUM_QUERIES_PER_SERVICE = 5
+NUM_SERVICES = 10
+SERVICE_NAMES = None
+# SERVICE_NAMES = ["wikimedia"]
+NUM_QUERIES_PER_SERVICE = 10
 
 DATA_PATH = Path(
     "/mnt/ceph/storage/data-in-progress/data-research/"
     "web-search/web-archive-query-log/focused/"
 )
 
-SAMPLE_CORPUS_PATH = DATA_PATH / "sample-corpus"
-SAMPLE_QUERIES_PATH = SAMPLE_CORPUS_PATH / "queries"
+SAMPLE_QUERIES_PATH = DATA_PATH / "sample-corpus" / "queries-2023-02-17"
 
 WARCS_PATH = PROJECT_DIRECTORY_PATH / \
              "data/manual-annotations/archived-raw-serps/warcs/"
@@ -38,13 +39,16 @@ PATTERN_SPECIAL_CHARS = compile(r"[^0-9a-z]+")
 
 
 def main():
-    services: Iterable[Service] = SERVICES.values()
-    services = sorted(
-        services,
-        key=lambda s: s.alexa_rank if s.alexa_rank is not None else inf,
-    )
-    services = services[:NUM_SERVICES]
-    service_names = [s.name for s in services]
+    if SERVICE_NAMES is None:
+        services: Iterable[Service] = SERVICES.values()
+        services = sorted(
+            services,
+            key=lambda s: s.alexa_rank if s.alexa_rank is not None else inf,
+        )
+        services = services[:NUM_SERVICES]
+        service_names = [s.name for s in services]
+    else:
+        service_names = SERVICE_NAMES
 
     query_urls = defaultdict(list)
     for path in tqdm(list(SAMPLE_QUERIES_PATH.glob("part*.gz"))):
@@ -72,9 +76,12 @@ def main():
         for query_url in tqdm(
                 query_urls[service_name], desc=service_name
         ):
+            query = query_url["url_query"]
+            query = slugify(query)
+            query = query[:100]
             name = slugify(
                 f"{service_name}-"
-                f"{query_url['url_query']}-{query_url['timestamp']}"
+                f"{query}-{query_url['timestamp']}"
             )
             warc_path = WARCS_PATH / f"{name}.warc.gz"
             if warc_path.exists():
@@ -149,9 +156,11 @@ def main():
             for query_url in query_urls[service_name]:
                 wayback_raw_url = query_url["wayback_raw_url"]
 
+                query = query_url["url_query"]
+                query = slugify(query)
+                query = query[:100]
                 name = slugify(
-                    f"{service_name}-"
-                    f"{query_url['url_query']}-{query_url['timestamp']}",
+                    f"{service_name}_{query}_{query_url['timestamp']}",
                     separator="_",
                 )
                 wayback_raw_url_safe = wayback_raw_url.replace('"', '\\"')

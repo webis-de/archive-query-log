@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Nit\u01a1",
+    "offset": null,
+    "page": null,
+    "query": "Nit\u01a1",
+    "results": [],
+    "timestamp": 1655733503,
+    "url": "https://commons.wikimedia.org/w/index.php?title=Special%3AMediaSearch&search=Nit%C6%A1"
+}

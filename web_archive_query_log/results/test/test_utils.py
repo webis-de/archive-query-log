@@ -74,7 +74,10 @@ def _verify_archived_parsed_serp_results(
         actual = _schema.dump(archived_parsed_serp)
     else:
         actual = None
-    name = f"{archived_raw_serp.query}-{archived_raw_serp.timestamp}"
+    query = archived_raw_serp.query
+    query = slugify(query)
+    query = query[:100]
+    name = f"{query}-{archived_raw_serp.timestamp}"
     if service is not None:
         name = f"{service}-{name}"
     name = slugify(name)

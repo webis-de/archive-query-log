@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "(Group portrait on doorstep) Collins, Tudor Washington, 1898-1970, photographer 75426 (object number) haswbstatement:P195=Q758657",
+    "offset": null,
+    "page": null,
+    "query": "(Group portrait on doorstep) Collins, Tudor Washington, 1898-1970, photographer 75426 (object number) haswbstatement:P195=Q758657",
+    "results": [],
+    "timestamp": 1629837781,
+    "url": "https://www.wikidata.org/w/index.php?search=(Group+portrait+on+doorstep)+Collins,+Tudor+Washington,+1898-1970,+photographer+75426+(object+number)+haswbstatement:P195%3DQ758657&title=Special:Search&profile=advanced&fulltext=1&ns0=1"
+}

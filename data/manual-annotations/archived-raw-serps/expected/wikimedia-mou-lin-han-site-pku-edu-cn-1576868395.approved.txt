@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u725f\u6797\u7ff0 site:pku.edu.cn",
+    "offset": null,
+    "page": null,
+    "query": "\u725f\u6797\u7ff0 site:pku.edu.cn",
+    "results": [],
+    "timestamp": 1576868395,
+    "url": "https://en.wikipedia.org/w/index.php?title=Special%3ASearch&profile=images&search=%E7%89%9F%E6%9E%97%E7%BF%B0+site%3Apku.edu.cn&fulltext=1&ns0=1"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u65e9\u9910\u5305\u5b50\u52a0\u76df www.baidu.com/aaaa 4ws 2018\u5e748\u67084\u65e521\u65f619\u520639\u79d2",
+    "offset": null,
+    "page": null,
+    "query": "\u65e9\u9910\u5305\u5b50\u52a0\u76df www.baidu.com/aaaa 4ws 2018\u5e748\u67084\u65e521\u65f619\u520639\u79d2",
+    "results": [],
+    "timestamp": 1537939782,
+    "url": "https://zh.wikipedia.org/w/index.php?search=%E6%97%A9%E9%A4%90%E5%8C%85%E5%AD%90%E5%8A%A0%E7%9B%9F%20www.baidu.com/aaaa%204ws%202018%E5%B9%B48%E6%9C%884%E6%97%A521%E6%97%B619%E5%88%8639%E7%A7%92"
+}

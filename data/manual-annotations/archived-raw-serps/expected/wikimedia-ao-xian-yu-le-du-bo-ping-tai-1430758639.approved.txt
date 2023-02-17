@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u6fb3\u7ebf\u5a31\u4e50\u8d4c\u535a\u5e73\u53f0",
+    "offset": null,
+    "page": null,
+    "query": "\u6fb3\u7ebf\u5a31\u4e50\u8d4c\u535a\u5e73\u53f0",
+    "results": [],
+    "timestamp": 1430758639,
+    "url": "http://zh.wikipedia.org/w/index.php?search=%E6%BE%B3%E7%BA%BF%E5%A8%B1%E4%B9%90%E8%B5%8C%E5%8D%9A%E5%B9%B3%E5%8F%B0"
+}
