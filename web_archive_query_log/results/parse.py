@@ -240,6 +240,8 @@ class ArchivedParsedSerpParser:
         output_format_path = data_directory / "archived-parsed-serps"
 
         service_path = input_format_path / service.name
+        if not service_path.exists():
+            return []
 
         if domain is not None:
             domain_paths = [service_path / domain]
