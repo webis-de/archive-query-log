@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "#ineligible",
+    "offset": null,
+    "page": null,
+    "query": "#ineligible",
+    "results": [],
+    "timestamp": 1466870871,
+    "url": "https://www.facebook.com/search/people/?q=%23ineligible&ref=top_filter"
+}

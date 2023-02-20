@@ -3,8 +3,9 @@
   alexa_domain: google.com
   alexa_rank: 1
   category: search-engine
-  notes: Domains from https://www.google.com/supported_domains and from https://github.com/JamieFarrelly/Popular-Site-Subdomains
-    and from https://infogalactic.com/info/List_of_Google_domains.
+  notes: 'Domains from https://www.google.com/supported_domains
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains
+    and from https://infogalactic.com/info/List_of_Google_domains.'
   input_field: false
   search_form: false
   search_div: false
@@ -304,6 +305,9 @@
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     query_selector: form[name=gs] input[name=q]
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: form[action="/search"] input[name=q]
   results_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
@@ -322,6 +326,16 @@
     url_selector: h3.gs_rt a
     title_selector: h3.gs_rt
     snippet_selector: dic.gs_rs
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: li.g
+    url_selector: h3.r a.l
+    title_selector: h3.r
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: p[class="g"]
+    url_selector: a
+    title_selector: a
   focused_url_prefixes:
   - /search?
   - /scholar?
@@ -331,8 +345,9 @@
   alexa_domain: youtube.com
   alexa_rank: 2
   category: media-sharing
-  notes: Domains from https://stackoverflow.com/a/65375894 and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
-    SERPs rendered using JavaScript.
+  notes: 'Domains from https://stackoverflow.com/a/65375894
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+    SERPs rendered using JavaScript.'
   input_field: false
   search_form: false
   search_div: true
@@ -537,7 +552,7 @@
   alexa_domain: baidu.com
   alexa_rank: 3
   category: search-engine
-  notes: Domains from manually exploring https://baidu.com.
+  notes: 'Domains from manually exploring https://baidu.com.'
   input_field: false
   search_form: false
   search_div: true
@@ -583,6 +598,15 @@
   - url_pattern: ^https?://[^/]+/cse/site\?
     type: html_selector
     query_selector: input#kw
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: input#kw
+  - url_pattern: ^https?://[^/]+/f\?
+    type: html_selector
+    query_selector: div.search_form input.search_ipt
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    query_selector: form[action="/s"] input.i
   results_parsers:
   - url_pattern: ^https?://[^/]+/s\?
     type: html_selector
@@ -590,6 +614,17 @@
     url_selector: h3.t > a
     title_selector: h3.t
     snippet_selector: div.c-abstract
+  - url_pattern: ^https?://[^/]+/f\?
+    type: html_selector
+    results_selector: ul#thread_list li.j_thread_list
+    url_selector: div.threadlist_title a
+    title_selector: div.threadlist_title
+    snippet_selector: div.threadlist_text
+  - url_pattern: ^https?://[^/]+/s\?
+    type: html_selector
+    results_selector: table tr td.f
+    url_selector: a:not(.m)
+    title_selector: a:not(.m)
   focused_url_prefixes:
   - /s?
   - /search
@@ -601,7 +636,7 @@
   alexa_domain: qq.com
   alexa_rank: 4
   category: web-portal
-  notes: SERPs from qq.com rendered using JavaScript.
+  notes: 'SERPs from qq.com rendered using JavaScript.'
   input_field: null
   search_form: null
   search_div: null
@@ -628,13 +663,12 @@
   - url_pattern: ^https?://[^/]+/x/search/\?
     type: html_selector
     query_selector: input#keywords
-  - url_pattern: ^https?://[^/]+/?/search\.html\?
-    type: html_selector
-    query_selector: input#iWord
-  - url_pattern: ^https?://[^/]+/?/search\.html\?
-    type: html_selector
-    query_selector: input#iWordMid
   results_parsers:
+  - url_pattern: ^https?://[^/]+/search/\?
+    type: html_selector
+    results_selector: div#search_container > div.wrapper > div.wrapper_main > div.result_item
+    url_selector: h2.result_title > a
+    title_selector: h2.result_title
   - url_pattern: ^https?://[^/]+/x/search/\?
     type: html_selector
     results_selector: div#search_container > div.wrapper > div.wrapper_main > div.result_item
@@ -650,7 +684,7 @@
   alexa_domain: facebook.com
   alexa_rank: 5
   category: social-media
-  notes: Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: false
@@ -744,6 +778,10 @@
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
     query_selector: form input[name="q"]
+  - url_pattern: ^https?://[^/]+/search
+    type: html_selector
+    query_selector: div#initial_browse_result h1
+    query_text: true
   results_parsers:
   - url_pattern: ^https?://[^/]+/search.php\?
     type: html_selector
@@ -817,7 +855,7 @@
   alexa_domain: yahoo.com
   alexa_rank: 9
   category: web-portal
-  notes: Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: false
@@ -998,10 +1036,15 @@
     snippet_selector: div.abstr
   - url_pattern: ^https?://[^/]+/search/?\?
     type: html_selector
-    results_selector: div#results div#main div#web ol li div.algo-sr
+    results_selector: div#web ol li div.algo, div#web ol li div.algo-sr
     url_selector: h3.title a
     title_selector: h3.title
     snippet_selector: div.aAbs
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    results_selector: div.content div.nomod ol li
+    url_selector: h3 a
+    title_selector: h3
   - url_pattern: ^https?://[^/]+/search/?\?
     type: html_selector
     results_selector: table tr td font ol li
@@ -1019,8 +1062,8 @@
   alexa_domain: amazon.com
   alexa_rank: 10
   category: e-commerce
-  notes: Domains from https://amazon.de/customer-preferences/country (dropdown) and
-    https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://amazon.de/customer-preferences/country (dropdown)
+    and https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: true
   search_form: true
   search_div: true
@@ -1205,8 +1248,7 @@
     results_selector: div#main ul.result li.res-list
     url_selector: div.mh-cont a.mh-title-link
     title_selector: div.mh-cont a.mh-title-link
-    snippet_selector: div.mh-cont div.mh-abstract, div.mh-content-box div.mh-content-desc
-      span.mh-content-desc-info
+    snippet_selector: div.mh-cont div.mh-abstract, div.mh-content-box div.mh-content-desc span.mh-content-desc-info
   focused_url_prefixes:
   - /s?
   - /ns?
@@ -1269,7 +1311,8 @@
   alexa_domain: reddit.com
   alexa_rank: 17
   category: forum
-  notes: Domains from https://old.reddit.com/prefs/ (dropdown) and https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://old.reddit.com/prefs/ (dropdown)
+    and https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: true
@@ -1418,7 +1461,7 @@
   alexa_domain: instagram.com
   alexa_rank: 19
   category: social-media
-  notes: Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: null
   search_form: null
   search_div: null
@@ -1467,7 +1510,7 @@
   alexa_domain: microsoft.com
   alexa_rank: 21
   category: corporate
-  notes: Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: true
   search_form: true
   search_div: true
@@ -1562,7 +1605,7 @@
   alexa_domain: bing.com
   alexa_rank: 25
   category: search-engine
-  notes: Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: false
@@ -1620,6 +1663,12 @@
     url_selector: h2 > a
     title_selector: h2
     snippet_selector: p
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#results ul li
+    url_selector: div.sb_tlst h3 a
+    title_selector: div.sb_tlst h3
+    snippet_selector: p
   - url_pattern: ^https?://[^/]+/images/search\?
     type: html_selector
     results_selector: div#mmComponent_images_2 ul.dgControl_list li div.isv
@@ -1642,7 +1691,7 @@
   alexa_domain: twitter.com
   alexa_rank: 26
   category: social-media
-  notes: Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: null
   search_form: null
   search_div: null
@@ -1737,7 +1786,8 @@
   alexa_domain: ebay.com
   alexa_rank: 31
   category: e-commerce
-  notes: Domains from https://ebay.com/ (dropdown) and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://ebay.com/ (dropdown)
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: false
   search_form: false
   search_div: false
@@ -1826,8 +1876,29 @@
     type: query_parameter
     parameter: _pgn
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    query_selector: input#gh-ac
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    query_selector: input#_fsb_nkw
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    results_selector: div#ResultSetItems ul#GalleryViewInner li.sresult
+    url_selector: h3 a
+    title_selector: h3
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    results_selector: ul.srp-results li.s-item
+    url_selector: a.s-item__link
+    title_selector: h3.s-item__title
+  - url_pattern: ^https?://[^/]+/([^?]+/)?i\.html\?
+    type: html_selector
+    results_selector: div.rs table.rsittlref tr
+    url_selector: td.dtl div.ittl a
+    title_selector: td.dtl div.sttl
   focused_url_prefixes:
   - /sch/i.html?
   - /i.html?
@@ -1921,15 +1992,13 @@
   results_parsers:
   - url_pattern: ^https?://[^/]+/w/wholesale
     type: html_selector
-    results_selector: div#hs-list-items ul li.list-item, ul#hs-list-items li.list-item,
-      ul#list-items li.list-item
+    results_selector: div#hs-list-items ul li.list-item, ul#hs-list-items li.list-item, ul#list-items li.list-item
     url_selector: div.info h3 a, div.detail h3 a
     title_selector: div.info h3, div.detail h3
     snippet_selector: div.detail span.brief
   - url_pattern: ^https?://[^/]+/wholesale
     type: html_selector
-    results_selector: div#hs-list-items ul li.list-item, ul#hs-list-items li.list-item,
-      ul#list-items li.list-item
+    results_selector: div#hs-list-items ul li.list-item, ul#hs-list-items li.list-item, ul#list-items li.list-item
     url_selector: div.info h3 a, div.detail h3 a
     title_selector: div.info h3, div.detail h3
     snippet_selector: div.detail span.brief
@@ -2017,7 +2086,13 @@
   page_parsers: []
   offset_parsers: []
   interpreted_query_parsers: []
-  results_parsers: []
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/(female|male|couples|trans|new-models)/tags/[^/]+
+    type: html_selector
+    results_selector: div#mls_container div#mls_models div.mls_models div.ls_thumb
+    url_selector: div.lst_info a
+    title_selector: div.lst_info a
+    snippet_selector: div.lst_topic
   focused_url_prefixes:
   - /female/tags/
   - /male/tags/
@@ -2029,7 +2104,7 @@
   alexa_domain: apple.com
   alexa_rank: 39
   category: corporate
-  notes: Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: true
   search_form: true
   search_div: false
@@ -2239,8 +2314,27 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    query_selector: div#nb_search input
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    query_selector: input#navbar-query
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    query_selector: form[action="/find"] input[name="q"]
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    results_selector: table.findList tr.findResult
+    url_selector: td.result_text a
+    title_selector: td.result_text a
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    results_selector: div#main table tr:has(td[valign="top"])
+    url_selector: td[valign="top"]:nth-child(3) a
+    title_selector: td[valign="top"]:nth-child(3) a
   focused_url_prefixes:
   - /find
 - name: livejasmin
@@ -2379,8 +2473,29 @@
     type: query_parameter
     parameter: p
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: form.js-site-search-form input.header-search-input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: ul.repo-list li.repo-list-item
+    url_selector: h3 a
+    title_selector: h3
+    snippet_selector: p.d-inline-block.text-gray
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: ul.repo-list li.repo-list-item
+    url_selector: div.flex-auto div.d-flex a, div.mt-n1 div.text-normal a
+    title_selector: div.flex-auto div.d-flex a, div.mt-n1 div.text-normal a
+    snippet_selector: p[class]
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#package_search_results div.hx_hit-package
+    url_selector: a.h4
+    title_selector: a.h4
+    snippet_selector: p.mb-1
   focused_url_prefixes:
   - /search?
 - name: cnn
@@ -2428,8 +2543,29 @@
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input#search-query
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input#global-enhancements-search-query
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: ul.listings li.listing-card
+    url_selector: div.listing-title a.title
+    title_selector: div.listing-title a.title
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div.search-listings-group ul.responsive-listing-grid li
+    url_selector: a.listing-link
+    title_selector: a.listing-link h2, a.listing-link h3
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div[data-search-results] ul.wt-grid li.wt-list-unstyled
+    url_selector: a.listing-link
+    title_selector: a.listing-link h3
   focused_url_prefixes:
   - /search?
 - name: xhamster
@@ -2635,8 +2771,32 @@
   - url_pattern: ^https?://[^/]+/jobs\?
     type: query_parameter
     parameter: start
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    query_selector: input#text-input-what
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    query_selector: input#what
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    results_selector: td#resultsCol div.result, td#resultsCol div.row
+    url_selector: h2.jobtitle a
+    title_selector: h2.jobtitle
+    snippet_selector: span.summary
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    results_selector: td#resultsCol div.result
+    url_selector: div.title a
+    title_selector: div.title
+    snippet_selector: div.summary
+  - url_pattern: ^https?://[^/]+/jobs\?
+    type: html_selector
+    results_selector: div#mosaic-zone-jobcards a.result
+    url_selector: :--self
+    title_selector: h2.jobTitle
+    snippet_selector: div.job-snippet
   focused_url_prefixes:
   - /jobs?
 - name: roblox
@@ -2686,7 +2846,11 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: span.search-term-text
+    query_text: true
   results_parsers: []
   focused_url_prefixes:
   - /search?
@@ -2994,7 +3158,7 @@
   alexa_domain: stackexchange.com
   alexa_rank: 103
   category: question-and-answer
-  notes: Domains from https://stackexchange.com/sites.
+  notes: 'Domains from https://stackexchange.com/sites.'
   input_field: true
   search_form: true
   search_div: true
@@ -3245,7 +3409,7 @@
   alexa_domain: craigslist.org
   alexa_rank: 115
   category: e-commerce
-  notes: Domains from https://www.craigslist.org/about/sites.
+  notes: 'Domains from https://www.craigslist.org/about/sites.'
   input_field: true
   search_form: true
   search_div: true
@@ -4320,6 +4484,35 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
+- name: china
+  public_suffix: com.cn
+  alexa_domain: china.com.cn
+  alexa_rank: 153
+  category: governmental
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - china.com.cn
+  - query.china.com.cn
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/query
+    type: query_parameter
+    parameter: kw
+  - url_pattern: ^https?://[^/]+/news/query
+    type: query_parameter
+    parameter: kw
+  page_parsers:
+  - url_pattern: ^https?://[^/]+/news/query
+    type: query_parameter
+    parameter: startPage
+  offset_parsers: []
+  interpreted_query_parsers: []
+  results_parsers: []
+  focused_url_prefixes:
+  - /query
+  - /news/query
 - name: varzesh3
   public_suffix: com
   alexa_domain: varzesh3.com
@@ -4370,7 +4563,7 @@
   alexa_domain: quora.com
   alexa_rank: 168
   category: question-and-answer
-  notes: excluded; Excluded from Internet Archive.
+  notes: 'excluded; Excluded from Internet Archive.'
   input_field: null
   search_form: null
   search_div: null
@@ -4487,7 +4680,7 @@
   alexa_domain: steamcommunity.com
   alexa_rank: 206
   category: gaming
-  notes: excluded; Only user search; Hubs are not free text.
+  notes: 'excluded; Only user search; Hubs are not free text.'
   input_field: true
   search_form: true
   search_div: false
@@ -4504,7 +4697,7 @@
   alexa_domain: deepl.com
   alexa_rank: 224
   category: service
-  notes: exluded; No search
+  notes: 'exluded; No search'
   input_field: false
   search_form: false
   search_div: true
@@ -4563,8 +4756,8 @@
   alexa_domain: wikipedia.org
   alexa_rank: 247
   category: wiki
-  notes: Domains from https://commons.wikimedia.org/wiki/Data:Wikipedia_statistics/data.tab
-    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
+  notes: 'Domains from https://commons.wikimedia.org/wiki/Data:Wikipedia_statistics/data.tab
+    and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   input_field: true
   search_form: true
   search_div: true
@@ -5479,13 +5672,19 @@
     type: query_parameter
     parameter: offset
   interpreted_query_parsers:
-  - url_pattern: ^https?://[^/]+/search
+  - url_pattern: ^https?://[^/]+/w/index.php\?
     type: html_selector
-    query_selector: div#searchText > input
+    query_selector: input#searchText
+  - url_pattern: ^https?://[^/]+/w/index.php\?
+    type: html_selector
+    query_selector: div#searchText input
+  - url_pattern: ^https?://[^/]+/w/index.php\?
+    type: html_selector
+    query_selector: input#sdms-search-input__input
   results_parsers:
-  - url_pattern: ^https?://[^/]+/search
+  - url_pattern: ^https?://[^/]+/w/index.php\?
     type: html_selector
-    results_selector: ul.mw-search-results > li
+    results_selector: ul.mw-search-results li
     url_selector: div.mw-search-result-heading a
     title_selector: div.mw-search-result-heading
     snippet_selector: div.searchresult
@@ -5910,7 +6109,8 @@
   alexa_rank: 449
   category: e-commerce
   notes: 'TODO: Set correct query parser for https://shopping.rediff.com/?sc_cid=shopping_ushomesrch#!bracelet/30-60
-    Bracelet is the query term Currently no parser supports these queries and/or offsets:
+    Bracelet is the query term
+    Currently no parser supports these queries and/or offsets:
     - https://shopping.rediff.com/product/test?sc_cid=shopping_ushomesrch#!design/30-60
     - https://shopping.rediff.com/#!design/30-60'
   input_field: null
@@ -6000,7 +6200,7 @@
   alexa_domain: europa.eu
   alexa_rank: 504
   category: governmental
-  notes: excluded; Query not in URL.
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: false
@@ -6049,7 +6249,7 @@
   alexa_domain: news18.com
   alexa_rank: 688
   category: news-and-boulevard
-  notes: excluded; Query not in URL; Uses Google search (https://cse.google.com/).
+  notes: 'excluded; Query not in URL; Uses Google search (https://cse.google.com/).'
   input_field: false
   search_form: false
   search_div: true
@@ -6260,7 +6460,7 @@
   alexa_domain: commbank.com.au
   alexa_rank: 954
   category: corporate
-  notes: excluded; Query not in URL.
+  notes: 'excluded; Query not in URL.'
   input_field: false
   search_form: false
   search_div: true
@@ -6370,7 +6570,7 @@
   alexa_domain: 24h.com.vn
   alexa_rank: 1122
   category: news-and-boulevard
-  notes: excluded; Redirects to Google; Uses Google search (https://cse.google.com/).
+  notes: 'excluded; Redirects to Google; Uses Google search (https://cse.google.com/).'
   input_field: false
   search_form: false
   search_div: true
@@ -6387,7 +6587,7 @@
   alexa_domain: baskino.me
   alexa_rank: 1150
   category: download-streaming
-  notes: excluded; Query not in URL.
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: false
@@ -6798,7 +6998,8 @@
   alexa_domain: listindiario.com
   alexa_rank: 1380
   category: news-and-boulevard
-  notes: Uses Google search (https://cse.google.com/). Query not in URL.
+  notes: 'Uses Google search (https://cse.google.com/).
+    Query not in URL.'
   input_field: false
   search_form: false
   search_div: true
@@ -6839,7 +7040,7 @@
   alexa_domain: startpage.com
   alexa_rank: 1394
   category: search-engine
-  notes: excluded; Query not in URL.
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: false
@@ -7650,7 +7851,7 @@
   alexa_domain: gitlab.com
   alexa_rank: 1786
   category: service
-  notes: excluded; Query not in URL.
+  notes: 'excluded; Query not in URL.'
   input_field: false
   search_form: false
   search_div: true
@@ -8089,7 +8290,7 @@
   alexa_domain: republicworld.com
   alexa_rank: 1913
   category: news-and-boulevard
-  notes: excluded; Query not in URL.
+  notes: 'excluded; Query not in URL.'
   input_field: false
   search_form: false
   search_div: true
@@ -8105,7 +8306,7 @@
   public_suffix: com
   alexa_domain: mostaghelonline.com
   alexa_rank: 1917
-  category: news-and-boulevard
+  category: news
   notes: null
   input_field: true
   search_form: true
@@ -9020,7 +9221,7 @@
   alexa_domain: dy2018.com
   alexa_rank: 2239
   category: download-streaming
-  notes: excluded; Query not in URL.
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: true
@@ -10182,7 +10383,7 @@
   alexa_domain: win-rar.com
   alexa_rank: 2673
   category: service
-  notes: excluded; Query not in URL.
+  notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
   search_div: false
@@ -11249,7 +11450,7 @@
   alexa_domain: cima4u.tv
   alexa_rank: 3135
   category: download-streaming
-  notes: excluded; No search.
+  notes: 'excluded; No search.'
   input_field: false
   search_form: false
   search_div: true
@@ -12014,7 +12215,7 @@
   alexa_domain: loc.gov
   alexa_rank: 3591
   category: governmental
-  notes: Library of Congress.
+  notes: 'Library of Congress.'
   input_field: null
   search_form: null
   search_div: null
@@ -16653,7 +16854,7 @@
   alexa_domain: limestart.cn
   alexa_rank: 8239
   category: search-engine
-  notes: excluded; Redirects to Baidu; Uses Baidu search.
+  notes: 'excluded; Redirects to Baidu; Uses Baidu search.'
   input_field: false
   search_form: false
   search_div: true
@@ -23696,12 +23897,11 @@
   results_parsers: []
   focused_url_prefixes: []
 - name: wapwon
-  note: The query pattern seems to be too broad.
   public_suffix: com
   alexa_domain: wapwon.com
   alexa_rank: 40114
   category: download-streaming
-  notes: null
+  notes: "The query pattern seems to be too broad."
   input_field: false
   search_form: false
   search_div: true
@@ -25804,7 +26004,7 @@
   alexa_domain: evi.com
   alexa_rank: 284749
   category: question-and-answer
-  notes: excluded; Discontinued.
+  notes: 'excluded; Discontinued.'
   input_field: null
   search_form: null
   search_div: null
@@ -25862,7 +26062,7 @@
   alexa_domain: base-search.net
   alexa_rank: null
   category: search-engine
-  notes: Bielefeld Academic Search Engine (BASE)
+  notes: 'Bielefeld Academic Search Engine (BASE)'
   input_field: null
   search_form: null
   search_div: null
@@ -25902,11 +26102,15 @@
     parameter: p
   offset_parsers: []
   interpreted_query_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: chatnoir
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    query_selector: input#SearchInput
   results_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: chatnoir
+  - url_pattern: ^https?://[^/]+/video/search\?
+    type: html_selector
+    results_selector: section#SearchResults article.search-result
+    url_selector: h2 a
+    title_selector: h2
   focused_url_prefixes:
   - /?
 - name: chemrefer
@@ -25958,7 +26162,7 @@
   alexa_domain: findsounds.com
   alexa_rank: null
   category: search-engine
-  notes: excluded; Discontinued.
+  notes: 'excluded; Discontinued.'
   input_field: null
   search_form: null
   search_div: null
@@ -26081,7 +26285,7 @@
   alexa_domain: munax.com
   alexa_rank: null
   category: '-'
-  notes: excluded; Discontinued.
+  notes: 'excluded; Discontinued.'
   input_field: null
   search_form: null
   search_div: null
@@ -26218,7 +26422,7 @@
   alexa_domain: pixsta.com
   alexa_rank: null
   category: search-engine
-  notes: excluded; Reverse image search.
+  notes: 'excluded; Reverse image search.'
   input_field: null
   search_form: null
   search_div: null

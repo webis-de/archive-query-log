@@ -70,3 +70,73 @@ def test_parse_query_yahoo_region_de_coquimbo_970960857():
         "https://web.archive.org/web/20001008012057id_/http://search.yahoo.com:80/search?p=region+de+coquimbo",
         "yahoo",
     )
+
+
+def test_parse_query_yahoo_learn_to_focus_1619373855():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210425200415id_/https://search.yahoo.com/search?p=learn+to+focus&amp;fr2=sb-top&amp;sao=1",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_castle_heights_angeles_1611631735():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210126042855id_/http://search.yahoo.com/search?fr=sbcfp&p=%22castle+heights%22+angeles",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_dunwells_army_of_friends_1617218301():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210331211821id_/https://search.yahoo.com/search?p=dunwells+army+of+friends&fr=iphone&.tsrc=apple&pcarrier=AT&T&pmcc=310&pmnc=410",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_sam_bush_1016625678():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20020320130118id_/http://search.yahoo.com:80/search?p=Sam+Bush",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_telekwiaciarnia_pl_1436841282():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20150714043442id_/http://nl.search.yahoo.com/search?fr=yhs-invalid&p=telekwiaciarnia.pl",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_jello_gelatin_971145484():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20001010043804id_/http://search.yahoo.com:80/search?p=jello+gelatin",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_molly_shannon_1640079691():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20211221104131id_/https://search.yahoo.com/search?p=Molly%20Shannon",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_dating_sites_1647656764():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20220319032604id_/https://search.yahoo.com/search?ei=UTF-8&p=dating+sites&fr2=p%3As%2Cv%3Asfp%2Cm%3Aovncp&fr=sfp",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_metallurgi_1042532635():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20030114092355id_/http://search.yahoo.com:80/search?p=metallurgi",
+        "yahoo",
+    )
+
+
+def test_parse_query_yahoo_futurama_1314932107():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20110902045507id_/http://tv.yahoo.com:80/search?cs=bz&p=Futurama&fr=tv-tts",
+        "yahoo",
+    )

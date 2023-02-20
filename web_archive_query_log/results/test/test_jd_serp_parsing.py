@@ -70,3 +70,73 @@ def test_parse_query_jd_guan_yin_liao_1501752634():
         "https://web.archive.org/web/20170803113034id_/http://search.jd.com/search?keyword=%E9%A6%86%E9%A5%AE%E6%96%99&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq=%E9%A6%86%E9%A5%AE%E6%96%99&cid2=12202&stock=1&ev=2762_32941%40&uc=0",
         "jd",
     )
+
+
+def test_parse_query_jd_yang_hong_wei_1429640037():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20150421201357id_/http://search.jd.com/search?keyword=%E6%9D%A8%E5%AE%8F%E4%BC%9F&ev=&psort=2&book=y",
+        "jd",
+    )
+
+
+def test_parse_query_jd_weiwei776699e_1537978473():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20180926181433id_/http://search.jd.com/search?keyword=%BA%FE%B1%B1%BF%EC%C8%FD%CD%F8%D2%D7%BF%AA%BD%B1%BD%E1%B9%FB%CE%A2%D0%C5weiwei776699%85e&qr=&qrst=UNEXPAND&et=&rt=1&ev=exprice_0-19%40&uc=0",
+        "jd",
+    )
+
+
+def test_parse_query_jd_shlrwanh_uq_2179706936_1473350033():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20160908175353id_/http://search.jd.com/Search?keyword=%D5%E6%D5%FD%B1%ED%D1%DD%CA%D5%B7%D1%C5%E3%C1%C4%BA%C5%C2%EB%A1%BE%2B%F6%A6%5F%C5%AE%71%3A%32%31%37%39%37%30%36%39%33%36%A1%BF",
+        "jd",
+    )
+
+
+def test_parse_query_jd_sha_tan_ku_nan_1446537277():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20151103085437id_/http://search.jd.com/search?keyword=%E6%B2%99%E6%BB%A9%E8%A3%A4%20%E7%94%B7&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&ev=exbrand_Maro%20Homme%40&uc=0",
+        "jd",
+    )
+
+
+def test_parse_query_jd_ji_guang_da_yin_1516054404():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20180115231324id_/http://search.jd.com/search?keyword=%E6%BF%80%E5%85%89%E6%89%93%E5%8D%B0&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq=%E6%BF%80%E5%85%89%E6%89%93%E5%8D%B0&ev=5345_88976%40268435461_268466585%40&uc=0",
+        "jd",
+    )
+
+
+def test_parse_query_jd_dao_tian_1442736754():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20150920101234id_/http://search.jd.com/search?keyword=%E7%A8%BB%E7%94%B0&enc=utf-8&qrst=1&et=5&rt=1&stop=1&vt=2&ev=exbrand_%E7%A8%BB%E7%94%B0%EF%BC%88DENTSTAR%EF%BC%89%40&uc=0",
+        "jd",
+    )
+
+
+def test_parse_query_jd_song_yan_1434320372():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20150615001932id_/http://search.jd.com/search?keyword=%E5%AE%8B%E5%BD%A6&cid=3267&book=y",
+        "jd",
+    )
+
+
+def test_parse_query_jd_yxingaiujliu_xwcp198_1537926187():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20180926034307id_/http://search.jd.com/search?keyword=%C5%B7%C3%C0xingai%D3%B0%D2%F4%CF%C8%B7%E6%A1%BA%2B%CE%A2%D0%C5xwcp198%A1%BB%A1%D1&qr=&qrst=UNEXPAND&et=&rt=1&ev=exprice_0-19%40&uc=0",
+        "jd",
+    )
+
+
+def test_parse_query_jd_mo_yan_1516163665():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20180117053425id_/http://search.jd.com/search?keyword=%E8%8E%AB%E8%A8%80&enc=utf-8&qrst=1&rt=1&stop=1&book=y&vt=2&ev=publishers_%E4%B8%AD%E5%9B%BD%E5%8D%8E%E4%BE%A8%E5%87%BA%E7%89%88%E7%A4%BE%40package_%E5%B9%B3%E8%A3%85%40&uc=0",
+        "jd",
+    )
+
+
+def test_parse_query_jd_you_xi_1511265243():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20171121125403id_/http://search.jd.com/search?keyword=%E6%B8%B8%E6%88%8F&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&offset=3&wq=%E6%B8%B8%E6%88%8F&cid2=3287&ev=packstate_no%402562_22800%40&uc=0",
+        "jd",
+    )

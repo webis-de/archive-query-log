@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "HCA-Corporate",
+    "offset": null,
+    "page": null,
+    "query": "HCA-Corporate",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Regional Practice Manager - Physician ServicesHCA Physician Services has an immediate need for a Regional Practice Manager to oversee multiple practices in...",
+            "timestamp": 1334425152,
+            "title": "Regional Practice Manager - Physician Services",
+            "url": "http://www.indeed.com/rc/clk?jk=fd846e60ac2af357"
+        },
+        {
+            "rank": 2,
+            "snippet": "and <em>HCA</em> policies. Work effectively with <em>HCA</em> Physician... of qualified physicians in <em>HCA</em> markets. Participate as part of the <em>HCA</em> Physician Services team of...",
+            "timestamp": 1334425152,
+            "title": "Division Vice President - Healthcare",
+            "url": "http://www.indeed.com/rc/clk?jk=ccd4646b557d5e8f"
+        }
+    ],
+    "timestamp": 1334425152,
+    "url": "http://www.indeed.com/jobs?q=HCA-Corporate&l=Orlando,+FL"
+}

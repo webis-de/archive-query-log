@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\"Orlando bedoya\" -site:wikipedia.org -site:wikimedia.org",
+    "offset": null,
+    "page": null,
+    "query": "\"Orlando bedoya\" -site:wikipedia.org -site:wikimedia.org",
+    "results": [],
+    "timestamp": 1629326434,
+    "url": "https://www.google.com/search?safe=off&tbs=sur:fmc&tbm=isch&q=%22Orlando+bedoya%22+-site:wikipedia.org+-site:wikimedia.org"
+}

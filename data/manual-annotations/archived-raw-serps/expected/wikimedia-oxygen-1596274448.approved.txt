@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "Oxygen",
+    "offset": null,
+    "page": null,
+    "query": "Oxygen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "connected with Oxygen, see Category:Oxygen. [[Category:Oxygen {{{English qualify}}}| ]] ox\u00edgeno (es); s\u00farefni (is); Oksigen (ms); \u0422\u0443\u0430\u0433\u0433\u0443\u044b\u0440 (os); oxygen (en-gb);",
+            "timestamp": 1596274448,
+            "title": "Oxygen",
+            "url": "https://commons.wikimedia.org/wiki/Oxygen"
+        },
+        {
+            "rank": 2,
+            "snippet": "ox\u00edgeno (es); s\u00farefni (is); Oksigen (ms); \u0422\u0443\u0430\u0433\u0433\u0443\u044b\u0440 (os); oxygen (en-gb); \u0622\u06a9\u0633\u064a\u062c\u0646 (ps); Oksijen (tr); \u0622\u06a9\u0633\u06cc\u062c\u0646 (ur); kysl\u00edk (sk); oxig\u00e8n (oc); \u0428\u0430\u043f\u0430\u0444\u043d\u0438 (mdf);",
+            "timestamp": 1596274448,
+            "title": "Category:Oxygen",
+            "url": "https://commons.wikimedia.org/wiki/Category:Oxygen"
+        }
+    ],
+    "timestamp": 1596274448,
+    "url": "https://commons.wikimedia.org/w/index.php?title=Special:Search&search=Oxygen&ns0=1&ns6=1&ns12=1&ns14=1&ns100=1&ns106=1"
+}

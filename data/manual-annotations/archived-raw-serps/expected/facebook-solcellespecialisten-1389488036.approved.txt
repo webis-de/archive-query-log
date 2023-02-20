@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Solcellespecialisten",
+    "offset": null,
+    "page": null,
+    "query": "Solcellespecialisten",
+    "results": [],
+    "timestamp": 1389488036,
+    "url": "http://da-dk.facebook.com/search.php?q=Solcellespecialisten&_fb_noscript=1"
+}

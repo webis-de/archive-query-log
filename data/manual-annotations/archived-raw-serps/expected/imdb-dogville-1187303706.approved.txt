@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "dogville",
+    "offset": null,
+    "page": null,
+    "query": "dogville",
+    "results": [],
+    "timestamp": 1187303706,
+    "url": "http://www.imdb.com:80/find?s=all&q=dogville"
+}

@@ -5,56 +5,56 @@
     "query": "\"\" \"Agust",
     "results": [
         {
-            "rank": 2,
+            "rank": 1,
             "snippet": "<em>Agust</em> D is the debut mixtape by South Korean rapper <em>Agust</em> D, better known as Suga of boy-band BTS. It was released on August 15, 2016, by Big Hit Entertainment on SoundCloud.",
             "timestamp": 1614235489,
             "title": "Agust D - Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Agust_D"
         },
         {
-            "rank": 3,
+            "rank": 2,
             "snippet": "<em>Agust</em> definition is - a bast fiber derived from a southern Indian plant (Sesbania grandiflora).",
             "timestamp": 1614235489,
             "title": "Agust | Definition of Agust by Merriam-Webster",
             "url": "https://www.merriam-webster.com/dictionary/agust"
         },
         {
-            "rank": 4,
+            "rank": 3,
             "snippet": "Dec 27, 2020 - Explore Everyone Really's board \"<em>Agust</em>'D\", followed by 133 people on Pinterest. See more ideas about bts suga, bts yoongi, yoongi.",
             "timestamp": 1614235489,
             "title": "94 Agust'D ideas | bts suga, bts yoongi, yoongi - Pinterest",
             "url": "https://www.pinterest.com/sofiangel202015/agustd/"
         },
         {
-            "rank": 5,
+            "rank": 4,
             "snippet": "Feb 5, 2021 - Explore Niya's board \"<em>Agust</em> D\", followed by 218 people on Pinterest. See more ideas about <em>agust</em> d, bts suga, suga.",
             "timestamp": 1614235489,
             "title": "140 Agust D ideas in 2021 | agust d, bts suga, suga - Pinterest",
             "url": "https://www.pinterest.com/mievk7/agust-d/"
         },
         {
-            "rank": 6,
+            "rank": 5,
             "snippet": "View all on Spotify. <em>Agust</em> D is the alias of SUGA, a member of the global superstars BTS. The name was his stage name before his debut as BTS in the hip hop\u00a0...",
             "timestamp": 1614235489,
             "title": "Agust D | Spotify",
             "url": "https://open.spotify.com/artist/5RmQ8k4l3HZ8JoPb4mNsML"
         },
         {
-            "rank": 7,
+            "rank": 6,
             "snippet": "15 Sep 2020 \u2014 <em>Agust</em> D has made music history. This September, the BTS member (also known as Suga) became the first Korean solo artist to top the single\u00a0...",
             "timestamp": 1614235489,
             "title": "BTS' Agust D makes history as first Asian solo artist to hit #1 ...",
             "url": "https://www.bandwagon.asia/articles/bts-suga-agust-d-min-yoongi-makes-itunes-100-adele-hello-history-daechwita-d-2-2020"
         },
         {
-            "rank": 8,
+            "rank": 7,
             "snippet": "<em>Agust</em> D. 11207 likes \u00b7 202 talking about this. A page intended to share the wits and charms of Suga/<em>Agust</em> D.",
             "timestamp": 1614235489,
             "title": "Agust D - Home | Facebook",
             "url": "https://www.facebook.com/DTSuga.AgustD/"
         },
         {
-            "rank": 9,
+            "rank": 8,
             "snippet": "21 May 2020 \u2014 Or, perhaps, it was AD2, the long sought after follow up to the <em>Agust</em> D Mixtape released by Suga four years ago. Though he recently said we\u00a0...",
             "timestamp": 1614235489,
             "title": "Suga is the master of his own fate in Agust D 2 | by Jeanette ...",

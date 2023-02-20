@@ -70,3 +70,73 @@ def test_parse_query_facebook_mens_health_survival_of_the_fittest_1619473718():
         "https://web.archive.org/web/20210426234838id_/http://www.facebook.com/search/?q=mens+health+survival+of+the+fittest&amp;init=quick",
         "facebook",
     )
+
+
+def test_parse_query_facebook_www_9xcb_biz_webex_setup_was_unsuccessful_error_23_1404412853():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20140703204053id_/http://www.facebook.com/search.php?q=www.9xcb.biz/?WebEx+Setup+Was+Unsuccessful+Error+23",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_tag_someone_who_needs_this_1587554575():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20200422132255id_/https://www.facebook.com/search/videos/?q=tag%20someone%20who%20needs%20this&epa=FILTERS&filters=eyJycF9jcmVhdGlvbl90aW1lIjoie1wibmFtZVwiOlwiY3JlYXRpb25fdGltZVwiLFwiYXJnc1wiOlwie1xcXCJzdGFydF95ZWFyXFxcIjpcXFwiMjAyMFxcXCIsXFxcInN0YXJ0X21vbnRoXFxcIjpcXFwiMjAyMC0wNFxcXCIsXFxcImVuZF95ZWFyXFxcIjpcXFwiMjAyMFxcXCIsXFxcImVuZF9tb250aFxcXCI6XFxcIjIwMjAtMDRcXFwiLFxcXCJzdGFydF9kYXlcXFwiOlxcXCIyMDIwLTA0LTIwXFxcIixcXFwiZW5kX2RheVxcXCI6XFxcIjIwMjAtMDQtMjZcXFwifVwifSJ9",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_blog_post_334_bootload_1567494170():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190903090250id_/https://developers.facebook.com/search/?q=blog+post+334+bootload&notfound=0&search_filter_option=docs",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_rosy_20gupta_1494524363():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20170511193923id_/https://www.facebook.com/search/top/?q=rosy%2520gupta",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_social_plugins_boutons_jaime_envoyer_partager_et_citations_js_exec_je31_1567485463():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190903063743id_/https://developers.facebook.com/search/?q=social+plugins+boutons+jaime+envoyer+partager+et+citations+js+exec+Je31&notfound=1&search_filter_option=docs",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_greet_1623235952():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20210609125232id_/http://www.facebook.com/search/?q=Greet&o=2048&init=ffs",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_cruzcrew_1459272010():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20160329192010id_/https://www.facebook.com/search/photos/?q=%23CruzCrew&ref=top_filter&_fb_noscript=1",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_ineligible_1466870871():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20160625180751id_/https://www.facebook.com/search/people/?q=%23ineligible&ref=top_filter",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_solcellespecialisten_1389488036():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20140112015356id_/http://da-dk.facebook.com/search.php?q=Solcellespecialisten&_fb_noscript=1",
+        "facebook",
+    )
+
+
+def test_parse_query_facebook_blog_post_319_je31_1567459151():
+    verify_serp_parsing(
+        "https://web.archive.org/web/20190902231911id_/https://developers.facebook.com/search/?q=blog+post+319+Je31&notfound=1&search_filter_option=news",
+        "facebook",
+    )

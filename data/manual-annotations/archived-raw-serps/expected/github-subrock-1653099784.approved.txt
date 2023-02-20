@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "subrock",
+    "offset": null,
+    "page": null,
+    "query": "subrock",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "a 2012 rewrite for <em>subrocks</em>",
+            "timestamp": 1653099784,
+            "title": "the-real-sumsome/<em>subrocks</em>-2012",
+            "url": "https://github.com/the-real-sumsome/subrocks-2012"
+        },
+        {
+            "rank": 2,
+            "snippet": "dockerized <em>subrocks</em>",
+            "timestamp": 1653099784,
+            "title": "the-real-sumsome/<em>subrocks</em>",
+            "url": "https://github.com/the-real-sumsome/subrocks"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>SubRocks</em> Rewrite... 1nce again Tip",
+            "timestamp": 1653099784,
+            "title": "the-real-sumsome/<em>subrocks</em>-2011",
+            "url": "https://github.com/the-real-sumsome/subrocks-2011"
+        },
+        {
+            "rank": 4,
+            "snippet": "Tool for downloading <em>SubRocks</em> videos.",
+            "timestamp": 1653099784,
+            "title": "quique-gq/<em>subrocks</em>-dl",
+            "url": "https://github.com/quique-gq/subrocks-dl"
+        },
+        {
+            "rank": 5,
+            "snippet": "Video downloader for <em>SubRocks</em>",
+            "timestamp": 1653099784,
+            "title": "pixdoet/srdl",
+            "url": "https://github.com/pixdoet/srdl"
+        },
+        {
+            "rank": 6,
+            "snippet": "Reupload of <em>SubRock</em> 2012 repo, this isnt the OG bhief <em>subrocks</em>!",
+            "timestamp": 1653099784,
+            "title": "gladosb5/<em>subrock</em>-2012",
+            "url": "https://github.com/gladosb5/subrock-2012"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1653099784,
+            "title": "Pantelonius/<em>SubRocks</em>",
+            "url": "https://github.com/Pantelonius/SubRocks"
+        },
+        {
+            "rank": 8,
+            "snippet": "Scripts used for game jam project in unity.",
+            "timestamp": 1653099784,
+            "title": "Declan07/LudamDare47-<em>SubRocket</em>",
+            "url": "https://github.com/Declan07/LudamDare47-SubRocket"
+        },
+        {
+            "rank": 9,
+            "snippet": "A tool for creating download links and viewing videos from <em>SubRock</em> (or any <em>SubRocks</em> based fork)",
+            "timestamp": 1653099784,
+            "title": "rand0mgh/<em>subrock</em>-dl-gui",
+            "url": "https://github.com/rand0mgh/subrock-dl-gui"
+        },
+        {
+            "rank": 10,
+            "snippet": "This is a apache enchanced version of <em>SubRocks</em>.",
+            "timestamp": 1653099784,
+            "title": "Rix565/<em>Subrocks</em>-apache-enchanced",
+            "url": "https://github.com/Rix565/Subrocks-apache-enchanced"
+        }
+    ],
+    "timestamp": 1653099784,
+    "url": "https://github.com/search?q=subrock"
+}

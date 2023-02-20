@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\u516d\u5408\u5f69\u6302\u724c\u5b8c\u6574\u677f\u00b1\u3010\u5faev\u4fe1weiwei776699\u3011\u25c6",
+    "offset": null,
+    "page": null,
+    "query": "\u516d\u5408\u5f69\u6302\u724c\u5b8c\u6574\u677f\u00b1\u3010\u5faev\u4fe1weiwei776699\u3011\u25c6",
+    "results": [],
+    "timestamp": 1565563054,
+    "url": "https://www.ebay.com.sg/sch/i.html?_nkw=%e5%85%ad%e5%90%88%e5%bd%a9%e6%8c%82%e7%89%8c%e5%ae%8c%e6%95%b4%e6%9d%bf%c2%b1%e3%80%90%e5%be%aev%e4%bf%a1weiwei776699%e3%80%91%e2%97%86"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "Hola Games",
+    "offset": null,
+    "page": null,
+    "query": "Hola Games",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Want to have hundreds of games to choose from?Enter <em>Hola Games</em>! Play games, earn ... Try some of the games right now in your browser: 1024. Roll The Cube.",
+            "timestamp": 1552338270,
+            "title": "Hola Games",
+            "url": "http://www.holagames.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "\u2606Welcome to a universe filled with action, strategy, elimination games and more! <em>Hola Games</em> offers you the largest variety of high quality games in a unique\u00a0...",
+            "timestamp": 1552338270,
+            "title": "Hola Games - Apps on Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.holaverse.holagames&hl=en_US"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Hola Games</em>. 2 years ago; 127 views. Cats are known to be hyperactive animals\u2026 if given a toy. Help this poor kitty enhance his life by guiding yarn into his\u00a0...",
+            "timestamp": 1552338270,
+            "title": "Hola Games - YouTube",
+            "url": "https://www.youtube.com/channel/UCE-vdsTZ0sEju9uQB9e8yIw"
+        },
+        {
+            "rank": 4,
+            "snippet": "Download <em>Hola Games</em> apk 3.0.6 for Android. Get the most popular, app store featured mobile games in a single download!",
+            "timestamp": 1552338270,
+            "title": "Hola Games for Android - APK Download - APKPure.com",
+            "url": "https://apkpure.com/hola-games/com.holaverse.holagames"
+        },
+        {
+            "rank": 5,
+            "snippet": "Jul 2, 2016 - <em>Hola Games</em> is a free collection with more than 100 mini games inside. Get more than 100 free puzzles, casual, action &amp; strategy games here.",
+            "timestamp": 1552338270,
+            "title": "Hola Games-Free Casual Gamebox for Android - Free download and ...",
+            "url": "https://download.cnet.com/Hola-Games-Free-Casual-Gamebox/3000-2099_4-77340337.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Hola Games</em> content rating is Rated for 12+Moderate Violence, Gambling. This app is listed in Casual category of app store . You could visit Dataverse games's\u00a0...",
+            "timestamp": 1552338270,
+            "title": "Hola Games Apk Download latest version 3.0.6- com.holaverse ...",
+            "url": "https://www.apkmonk.com/app/com.holaverse.holagames/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Download <em>Hola Games</em> 1.2.6. A great variety of casual games to guarantee a good time any time.",
+            "timestamp": 1552338270,
+            "title": "Hola Games 1.2.6 for Android - Download",
+            "url": "https://hola-games.en.uptodown.com/android"
+        },
+        {
+            "rank": 8,
+            "snippet": "Playing casual <em>games</em> should be as simple as saying \"hello!\" So we've built <em>Hola Games</em>, your portal to variety of lightweight <em>games</em> to help you pass the free\u00a0...",
+            "timestamp": 1552338270,
+            "title": "Hola Games - TapTap",
+            "url": "https://www.taptap.com/app/2033?region=us"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Hola Games</em>. 38K likes. From the cradle of our celestial Holaverse we bring you <em>Hola Games</em>. Step into a portal of free casual gaming. 1 download, 100s of...",
+            "timestamp": 1552338270,
+            "title": "Hola Games - Home | Facebook",
+            "url": "https://www.facebook.com/holagames/"
+        }
+    ],
+    "timestamp": 1552338270,
+    "url": "https://www.google.com/search?q=Hola+Games&stick=H4sIAAAAAAAAAONgFuLSz9U3KE7PKCk2UOLVT9c3NEw3M801Kykr1lLOTrbSTy5L10_Ozy0oLUktii_LTEnNT0_MTbUqBrLKEyuLHzHGcQu8_HFPWCp00pqT1xj9uYjRJaTBxeaaV5JZUikkx8UnheQGDQYpHi4kPs8iVmGQ1mKFnMzsVIWSjFSFovz8XACNNlkjuQAAAA&sa=X&ved=0ahUKEwi839n-i_vgAhUGMt8KHUS9AjgQ-BYIUA"
+}

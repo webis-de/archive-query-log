@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "topic:deprecated org:Bandwidth fork:true",
+    "offset": null,
+    "page": null,
+    "query": "topic:deprecated org:Bandwidth fork:true",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "NodeJS Client library for Bandwidth Voice and Messaging APIs",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/node-bandwidth",
+            "url": "https://github.com/Bandwidth/node-bandwidth"
+        },
+        {
+            "rank": 2,
+            "snippet": "Bandwidth Voice and Messaging APIs (AKA Catapult, Application Platform) in GO",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/go-bandwidth",
+            "url": "https://github.com/Bandwidth/go-bandwidth"
+        },
+        {
+            "rank": 3,
+            "snippet": "Public API for interfacing with Bandwidth from Python",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/python-bandwidth",
+            "url": "https://github.com/Bandwidth/python-bandwidth"
+        },
+        {
+            "rank": 4,
+            "snippet": "PHP SDK for Bandwidth Voice and Messaging APIs",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/php-bandwidth",
+            "url": "https://github.com/Bandwidth/php-bandwidth"
+        },
+        {
+            "rank": 5,
+            "snippet": ".NET SDK for Bandwidth Voice and Messaging APIs",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/csharp-bandwidth",
+            "url": "https://github.com/Bandwidth/csharp-bandwidth"
+        },
+        {
+            "rank": 6,
+            "snippet": "Ruby client library for Bandwidth Voice and Messaging APIs",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/ruby-bandwidth",
+            "url": "https://github.com/Bandwidth/ruby-bandwidth"
+        },
+        {
+            "rank": 7,
+            "snippet": "Java SDK for use with the Bandwidth Voice and Messaging APIs",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/java-bandwidth",
+            "url": "https://github.com/Bandwidth/java-bandwidth"
+        },
+        {
+            "rank": 8,
+            "snippet": "\u26a0\ufe0f DEPRECATED\u26a0\ufe0f Examples on how to use the bandwidth php sdk",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/php-bandwidth-examples",
+            "url": "https://github.com/Bandwidth/php-bandwidth-examples"
+        },
+        {
+            "rank": 9,
+            "snippet": "DEPRECATED: Sample call center app using Node.js and Bandwidth WebRTC",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/webrtc-sample-call-center-node",
+            "url": "https://github.com/Bandwidth/webrtc-sample-call-center-node"
+        },
+        {
+            "rank": 10,
+            "snippet": "DEPRECATED: Bandwidth's WebRTC Browser SDK",
+            "timestamp": 1634361552,
+            "title": "Bandwidth/webrtc-browser-sdk",
+            "url": "https://github.com/Bandwidth/webrtc-browser-sdk"
+        }
+    ],
+    "timestamp": 1634361552,
+    "url": "https://github.com/search?q=topic%3Adeprecated+org%3ABandwidth+fork%3Atrue"
+}

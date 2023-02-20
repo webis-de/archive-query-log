@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "Sam Bush",
+    "offset": null,
+    "page": null,
+    "query": "Sam Bush",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1016625678,
+            "title": "<em>Sam Bush</em>",
+            "url": "http://srd.yahoo.com/srst/30964180/Sam+Bush/1/3/T=1016629280/F=7342bcbc95120307e6ecec45ff442956/*http://www.sambush.com/index.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1016625678,
+            "title": "<em>Sam Bush</em> with...",
+            "url": "http://srd.yahoo.com/srst/30964234/Sam+Bush/2/3/T=1016629280/F=69aa6237246b8fdb27c7c94183a454bb/*http://www.techpublishing.com/johnson/cj11.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1016625678,
+            "title": "SamLinks",
+            "url": "http://srd.yahoo.com/srst/30964200/Sam+Bush/3/3/T=1016629280/F=4a2382db1dc3a2be9c67783ec44bb150/*http://userweb.nashville.com/~wendell.norman/samlinks.htm"
+        }
+    ],
+    "timestamp": 1016625678,
+    "url": "http://search.yahoo.com:80/search?p=Sam+Bush"
+}

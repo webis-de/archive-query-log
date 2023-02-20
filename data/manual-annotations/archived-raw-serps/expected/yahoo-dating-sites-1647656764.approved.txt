@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "dating sites",
+    "offset": null,
+    "page": null,
+    "query": "dating sites",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Mar 08, 2022 \u00b7  Match is the best online dating site for singles who are serious about meeting someone special and don\u2019t want to mess around with too much superficial swiping and endless chatting. Best for Mobile:<em> Zoosk</em> If you\u2019re always busy and on your phone all the time, like most of us are, then we\u2019d highly recommend<em> Zoosk.</em>",
+            "timestamp": 1647656764,
+            "title": "www.datingadvice.com \u203a dating-sites9 Best Dating Sites of 2022 - (According to Experts)",
+            "url": "https://www.datingadvice.com/dating-sites"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Dating</em>.com is the Finest <em>Dating</em> Website With Over 10 Million Great Members. Connect With Singles And Start Your Online <em>Dating</em> Adventure! Enjoy <em>Dating</em> with Thrilling Online Chats And More",
+            "timestamp": 1647656764,
+            "title": "www.<em>dating</em>.comDating.com\u2122 Official Site \u2013 Dating, Love &amp; Match Online",
+            "url": "https://www.dating.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1647656764,
+            "title": "www.cnet.com \u203a best-dating-sitesBest dating sites for 2022 - CNET",
+            "url": "https://www.cnet.com/tech/services-and-software/best-dating-sites/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Single people, listen up: If you\u2019re looking for love, want to start <em>dating</em>, or just keep it casual, you need to be on Tinder. With over 55 billion matches made, it\u2019s the place to be to meet your next best match. Let\u2019s be real, the <em>dating</em> landscape looks very different today, as most people are meeting online.",
+            "timestamp": 1647656764,
+            "title": "tinder.comTinder | Dating, Make Friends &amp; Meet New People",
+            "url": "https://tinder.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>DATING</em> FOR EVERY SINGLE PERSON. OkCupid is the only <em>dating</em> app that matches you on what matters to you. You deserve to find who you\u2019re looking for. Meet them today! By clicking Join, you agree to our Terms.",
+            "timestamp": 1647656764,
+            "title": "www.okcupid.comOkCupid",
+            "url": "https://www.okcupid.com/"
+        }
+    ],
+    "timestamp": 1647656764,
+    "url": "https://search.yahoo.com/search?ei=UTF-8&p=dating+sites&fr2=p%3As%2Cv%3Asfp%2Cm%3Aovncp&fr=sfp"
+}

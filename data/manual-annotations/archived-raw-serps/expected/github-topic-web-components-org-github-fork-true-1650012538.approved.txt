@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "topic:web-components org:github fork:true",
+    "offset": null,
+    "page": null,
+    "query": "topic:web-components org:github fork:true",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Web component extensions to the standard &lt;time&gt; element.",
+            "timestamp": 1650012538,
+            "title": "github/time-elements",
+            "url": "https://github.com/github/time-elements"
+        },
+        {
+            "rank": 2,
+            "snippet": "GitHub's Web Component collection.",
+            "timestamp": 1650012538,
+            "title": "github/github-elements",
+            "url": "https://github.com/github/github-elements"
+        },
+        {
+            "rank": 3,
+            "snippet": "A modal dialog that's opened with &lt;details&gt;.",
+            "timestamp": 1650012538,
+            "title": "github/details-dialog-element",
+            "url": "https://github.com/github/details-dialog-element"
+        },
+        {
+            "rank": 4,
+            "snippet": "A menu opened with &lt;details&gt;.",
+            "timestamp": 1650012538,
+            "title": "github/details-menu-element",
+            "url": "https://github.com/github/details-menu-element"
+        },
+        {
+            "rank": 5,
+            "snippet": "A client-side includes tag.",
+            "timestamp": 1650012538,
+            "title": "github/include-fragment-element",
+            "url": "https://github.com/github/include-fragment-element"
+        },
+        {
+            "rank": 6,
+            "snippet": "Copy element text content or input values to the clipboard.",
+            "timestamp": 1650012538,
+            "title": "github/clipboard-copy-element",
+            "url": "https://github.com/github/clipboard-copy-element"
+        },
+        {
+            "rank": 7,
+            "snippet": "An accessible tab container element with keyboard support.",
+            "timestamp": 1650012538,
+            "title": "github/tab-container-element",
+            "url": "https://github.com/github/tab-container-element"
+        },
+        {
+            "rank": 8,
+            "snippet": "Auto-complete input values from server search results.",
+            "timestamp": 1650012538,
+            "title": "github/auto-complete-element",
+            "url": "https://github.com/github/auto-complete-element"
+        },
+        {
+            "rank": 9,
+            "snippet": "Markdown formatting buttons for text inputs.",
+            "timestamp": 1650012538,
+            "title": "github/markdown-toolbar-element",
+            "url": "https://github.com/github/markdown-toolbar-element"
+        },
+        {
+            "rank": 10,
+            "snippet": "A custom element for cropping a square image. Returns x, y, width, and height.",
+            "timestamp": 1650012538,
+            "title": "github/image-crop-element",
+            "url": "https://github.com/github/image-crop-element"
+        }
+    ],
+    "timestamp": 1650012538,
+    "url": "https://github.com/search?q=topic%3Aweb-components+org%3Agithub+fork%3Atrue"
+}

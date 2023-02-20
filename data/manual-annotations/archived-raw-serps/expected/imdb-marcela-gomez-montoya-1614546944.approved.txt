@@ -1,0 +1,24 @@
+{
+    "interpreted_query": null,
+    "offset": null,
+    "page": null,
+    "query": "Marcela G\u00f3mez Montoya",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1614546944,
+            "title": "Marcela G\u00f3mez Montoya",
+            "url": "http://www.imdb.com/name/nm5020671/?ref_=fn_al_nm_1"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1614546944,
+            "title": "Marcela G\u00f3mez Montoya",
+            "url": "http://www.imdb.com/name/nm4964862/?ref_=fn_al_nm_2"
+        }
+    ],
+    "timestamp": 1614546944,
+    "url": "http://www.imdb.com/find?q=Marcela%20G%C3%B3mez%20Montoya&exact=true"
+}

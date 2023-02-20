@@ -1,0 +1,528 @@
+{
+    "interpreted_query": "1 : 4 ",
+    "offset": null,
+    "page": null,
+    "query": "1 : 4",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED4x 6.35mm 1/4\" Mono Female Jack to RCA Male Plug Audio Adapter Cable Converter",
+            "url": "https://www.ebay.com/itm/4x-6-35mm-1-4-Mono-Female-Jack-to-RCA-Male-Plug-Audio-Adapter-Cable-Converter/112701697749?_trkparms=ispr%3D1&hash=item1a3d8b6ed5:g:H4EAAOSwnw9aOqp8&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qUjdws6C8Vi5BslGl5FuU%2BHeDlHNZUCkR4oiD8XD6z3frdmGYAMhZaNyHcGQHD3Odg2LjvMf6Z%2B58RGKzJw74niM09966DVlnlIEx3bBrk2kbbAR3HCiLtdS4s6Tk14XGsgAZihBv6XfsJZELKymzx9i5gfGvXxak7o6XPCTbe8Xxe9Si7BjthpdjN54k7hzJF5ptdxShFjKT9VuLbzUVD37j6rN9WtTePD6rnfJOJG96A2Dlu4S9GruN9RTwbR7O%2FSyOd%2BAjMMtKy721Y4lCXDPaQSmq9FlWD46pZ7qYw0DwgsMrsfyJ055SQhLrtJUTEhnBsgy%2B%2FgfshnW846RfFKUOZX2z4cMKbxKEQhwsRl%2BkdQTBoxrJWEd%2B57QPVZGTC9wQYaqEXYRDoLrU4w2rrszol5Wj5vEf6zW1WT5w8V6K0eGsT6RUkClL2X5lxk01Mi5iZtwaHY1HniCFCjSof2h0BYYNa%2ByZ%2BOIxm3mEGTQAdIMMEq8rcojFV87aqNVLBIv8kdhShi%2BxozbSCT2o4W%2FkWDNkdwRQ6sP%2FYF1oGOV53dez%2BSr9sSSRMjbOiixX7xuYMGm0h3AB%2F9win%2FHODr&checksum=112701697749cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "4x 6.35mm 1/4\" Mono Female Jack to RCA Male Plug Audio Adapter Cable Converter",
+            "url": "https://www.ebay.com/itm/4x-6-35mm-1-4-Mono-Female-Jack-to-RCA-Male-Plug-Audio-Adapter-Cable-Converter/112701697749?hash=item1a3d8b6ed5:g:H4EAAOSwnw9aOqp8"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "20 pack RCA female to 1/4\" male monaural audio converter adapters *USA Seller*",
+            "url": "https://www.ebay.com/itm/20-pack-RCA-female-to-1-4-male-monaural-audio-converter-adapters-USA-Seller/322996160863?hash=item4b3412495f:g:u6gAAOSwofFbfbE1:sc:USPSFirstClass!94118!US!-1"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED4x 6.35mm 1/4\" Mono Female Jack to RCA Male Plug Audio Adapter Cable Converter",
+            "url": "https://www.ebay.com/itm/4x-6-35mm-1-4-Mono-Female-Jack-to-RCA-Male-Plug-Audio-Adapter-Cable-Converter/292163427797?epid=20004062530&_trkparms=ispr%3D1&hash=item44064c1dd5:g:e9IAAOSwyltZUFp6&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qVyYL8afZEQ6a4z4j7DovKhf2TOGbZyfymEvYMpSB5EC1e3JtaEDZsIxxJP%2BthnsfGL6pdNr43qtVAJaIcKkKO2%2B5Z1e0aS5IuSNaXsg8bNrBZVwTh5QcLH%2F3WTZ7ox6TDRW05opemCYNXF%2FDzeP%2FyX9KZ4GS913MZRRlkxZWwRcJnWWVC%2FqVYfVh3xnkAvm%2BUaNYziWt7g1ods2C7L%2BzmR1SgaMtHDeOfO2q45t9NZIbhFCNLs9kTu2XNsaz3UVqBDaHvz2uhI7hV%2BaIKytuVvhpVqu4yu7VHYj8T9fRP84xKyiaUfhr3UIe%2Fn4LQ2zLPiGdtXulpFmOD36TPzXM94HsAtrLgSQ%2B1A5ENf%2BEu1fNIH%2B6FBSrEtVXgyK4TKVrQCckE1yrrK0M38bmasp0pwH5w1lT8o2hU%2FDZNdh1nTyc667eFw%2BMF6xlLXjXTcwx9ZbEZuCgB%2BVhoSSgaDy5fU835%2FRESeb3d6uMdlfSjlSYk3BYOcQZ495HtziMN3BusSmNoGpPapdYU2FebUKb7szGLilHotxc3OTNyXsW%2FYfuc9pSf3bRTaFd5rcocQ%2BvBn0PKogQ0lcxQqUq7MfWuE&checksum=292163427797cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED1/4\" 1/4 6.3mm Male Mono Phono Plug to 2 RCA Female Y Cable Splitter",
+            "url": "https://www.ebay.com/itm/1-4-1-4-6-3mm-Male-Mono-Phono-Plug-to-2-RCA-Female-Y-Cable-Splitter/152852360984?epid=1341072263&_trkparms=ispr%3D1&hash=item2396b5ef18:g:fNsAAOxyVaBS6ULi:sc:USPSFirstClass!94118!US!-1&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qWfrtHR2l%2B1rkuEnh2x70MmUd3wWaAw7duAmpd4iWM%2FO8f3DeVkGvfTnG9wFdCbBsdmjO5%2FbV5GMewL7hOPokNJPAnDAzCLFZrZfkQVJlPCR66cjxy%2FW9cU4yIXWYxPukYWXUwpOXo1AUsVioahscRJlF%2BtfPR9KlGlOe%2F9s9nijXU7eLXUnLHVPNpO5eBHgG%2BIs5dY%2BUOoqb4I75CEfYE%2BzulUPx1JxT5LjpD0zyDNmyXx03nOMPHu89GDTuqiMncqS25ZZpgyMsJjM0vHHvf47tBhPB64wBpzF3gisln7KrDX7%2B8DkdweZW3r4zotuv5XROycmo1q4JJYt5SQIteZT86y1fnio3dVZSN1gKJkUVvS5%2FNpmzYsIiAtzP%2BXi7aABAcWbVoe%2FvLxRNA4gr39LZCqtVF1t2nlyGZAZOMwYz1orReVcwhZd5OkqLuiu7Q44VVOgG8hzx59a6RjY6iO7aE4AHNNBmG05vtdgsOFX0CpUmIlr0Nm5GoNSy0mRySriio3ZcFRh9fwfUgXKasFu4opXg0ruo3HuP9r%2BGQas1BzsYcsTwJYHYJ8B6S%2BAFlOwQUwVjmTZZtl9cAIwPpc&checksum=152852360984cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "2pk RCA Male to 1/4\" Mono Female Jack Audio Adapter",
+            "url": "https://www.ebay.com/itm/2pk-RCA-Male-to-1-4-Mono-Female-Jack-Audio-Adapter/280733325940?hash=item415d029a74:g:PI4AAOSwB4NWznbt"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "4 pcs RCA Audio Y Splitter Plug Adapter 1 Male To 2 Female Connector E0522C USA",
+            "url": "https://www.ebay.com/itm/4-pcs-RCA-Audio-Y-Splitter-Plug-Adapter-1-Male-To-2-Female-Connector-E0522C-USA/183629405460?hash=item2ac12a5d14:g:xbEAAOSw~gRVsbnW:sc:USPSFirstClass!94118!US!-1"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "New ListingMonster Interlink I300 MKII Stereo RCA Cables 1M,2M,4M Lengths NIP Fast Shipping",
+            "url": "https://www.ebay.com/itm/Monster-Interlink-I300-MKII-Stereo-RCA-Cables-1M-2M-4M-Lengths-NIP-Fast-Shipping/202759639176?hash=item2f356a9088:g:8r4AAOSw2VJdWajc"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Monster Interlink 400MKII  Stereo RCA Cables 1M 2M or 4M NIP",
+            "url": "https://www.ebay.com/itm/Monster-Interlink-400MKII-Stereo-RCA-Cables-1M-2M-or-4M-NIP/273918812481?hash=item3fc6d56141:m:mct_bACoaJLMEcgDKMA5HZA"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "4 pcs RCA Plug to Double Jack Y Splitter 1 Male to 2 Female Connector E0522A USA",
+            "url": "https://www.ebay.com/itm/4-pcs-RCA-Plug-to-Double-Jack-Y-Splitter-1-Male-to-2-Female-Connector-E0522A-USA/182033197749?hash=item2a62062ab5:g:L-wAAOSwUuFWy~At:sc:USPSFirstClass!94118!US!-1"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Ancable 4-Pack 1/4 Inch 6.35mm TS Female to RCA Male Adaptor",
+            "url": "https://www.ebay.com/itm/Ancable-4-Pack-1-4-Inch-6-35mm-TS-Female-to-RCA-Male-Adaptor/153577521362?epid=7022372236&hash=item23c1ef00d2:g:4ogAAOSwe4FdNzBl"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6.35mm 1/4\" Female to 2 Phono RCA Y Splitter Male Aux Audio Cable Cord Adapter",
+            "url": "https://www.ebay.com/itm/6-35mm-1-4-Female-to-2-Phono-RCA-Y-Splitter-Male-Aux-Audio-Cable-Cord-Adapter/254180522229?hash=item3b2e56f8f5:g:lHYAAOSwLzFcnIC~"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Dual 1/4 Inch To Dual RCA Audio Cable 15FT Male 6.35mm 1/4\" Phono Mono to RCA",
+            "url": "https://www.ebay.com/itm/Dual-1-4-Inch-To-Dual-RCA-Audio-Cable-15FT-Male-6-35mm-1-4-Phono-Mono-to-RCA/183378196547?hash=item2ab2313843:g:ZdsAAOSwRFNc1T15"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "25ft Premier Series 1/4inch (TS or Mono Phono) Male to Male  Audio Cable  5499",
+            "url": "https://www.ebay.com/itm/25ft-Premier-Series-1-4inch-TS-or-Mono-Phono-Male-to-Male-Audio-Cable-5499/232912190085?hash=item363aa5fa85:g:yicAAOSwnNBXVkRb"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED20 pack RCA female to 1/4\" male monaural audio converter adapters *USA Seller*",
+            "url": "https://www.ebay.com/itm/20-pack-RCA-female-to-1-4-male-monaural-audio-converter-adapters-USA-Seller/322996160863?_trkparms=ispr%3D1&hash=item4b3412495f:g:u6gAAOSwofFbfbE1:sc:USPSFirstClass!94118!US!-1&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qXa2Yh6jEpLZ4snChnnK7Dn7hLSuEXtug8itXFONoaQhiNaBJG1d3xFgNlPvQhIsDbAjkTjk0vpttdeNhULEvfkOVViEpN%2FPeggSrjZLqbtg6pcBEN6rZlcG1eIIzQGEuUinvIFLsXxCUsj%2B8DmswIYUaAB8TrQuBhErz5CvFXj4%2FrH3VtC1rWhUrUxSt3pT0kflD1PoshENGfkb%2FRtEJirCW%2BV3sCy%2BB5jwKxugkcCIQ8Urhm1GKZA230SEs8hAZRsDNNLADaEveRNqZy7EWLsCTsYj%2B7wdVOlwRXz8Xiy8eDa0cXUsJtGf%2BlJiwoDN13zBjwrnodKMTDqN%2BzWeLzXWpljztT6Ty%2BxRms3LzC2wQYy1PDE4j1yBoKnPqTRSUdRSI1MWSEE07JKrzxiH%2BSiSmE7dteY%2FFv1xUjXuIr1TmaZhqd5%2FYDvn%2BUaIQOR71exOr3Y1zGs5ALAJwgoWXPJF6ztd2Fm5Ky8sWvx4EoY2Zsy%2FGU2P4h9lbPsItzXM44WtJuXCDT%2BqVkhxO%2FYUXGw2zljBvO2BYB1Zhx7xJpbt8G%2FRG7WTeJd2YLib8W80Ki55r25iYMB4INEwZ2Wq9o2&checksum=322996160863cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED2pk RCA Male to 1/4\" Mono Female Jack Audio Adapter",
+            "url": "https://www.ebay.com/itm/2pk-RCA-Male-to-1-4-Mono-Female-Jack-Audio-Adapter/280733325940?_trkparms=ispr%3D1&hash=item415d029a74:g:PI4AAOSwB4NWznbt&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qVJL71eXBJrePtwq3r8BCNV1%2FT9GNnLc2mIQUHINws5sgKM6dg89OpOTmq1B2IF2My83g%2FPM6bsAOMJWsVreE9u7jbt%2BFInyKdQxPA5YNV9Egz9uoBV%2BohZ0v5TmVbU9FTbmtrveHonjT5tmWoxFD%2BiobGB2VTdSVkffjGIX%2F3qN%2BoxENE55XL2gaQ7SJmaUMbZSFXcezEFtA1QvGAQDrrzS4qwJlRyKs1x9TzPLC8EJXsARTIgfFQvoqKc%2BaVRbzxpx8W9tIQtkHVn97ySgLiZIzWeIcv0%2B8aSvvyBJr6Bpx50%2BIqZIiNEhawYzVN5aVtw%2FZf%2FHqrWM%2BxQeVpgh5rdCE1bI72xBYRDKxWCa5lVxDZH7XNgfLmzBfTHcFQfIhc1Zy6DuXTYe%2Bc3gS7%2F36%2BJ8YMTWJFLk4Kpw2jpPwbeigTQxtmHL0ZeCUp6Orlh1Q5Leb%2BUg3UVw08NV8pMUFq8lfcrQKA0Y%2FYPih%2BpQk8mC7sOx1vJ8KAA6%2BFMotYjg%2FvIn2AnmnY1OUV597Lz0QWDmUacUSBT9OIEJbUfhIVNDgVwFZKCjRgmmSgvoL5tEm6%2BaQX1i7D8UMHOdTUctAqK&checksum=280733325940cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "15ft Premier Series 1/4inch (TRS or Stereo Phono) Male to Male 16AWG Cable 4795",
+            "url": "https://www.ebay.com/itm/15ft-Premier-Series-1-4inch-TRS-or-Stereo-Phono-Male-to-Male-16AWG-Cable-4795/332787482012?hash=item4d7badfd9c:g:OUgAAOSwbPxXQeae"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "1/4 Inch Mono Phono To Dual RCA Adapter, Male Female, 6 Home Audio \" Theater",
+            "url": "https://www.ebay.com/itm/1-4-Inch-Mono-Phono-To-Dual-RCA-Adapter-Male-Female-6-Home-Audio-Theater/254240015549?hash=item3b31e2c4bd:g:XogAAOSwJt1c5XaV"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "10ft Premier Series 1/4inch TS or Mono Phono Male to Male 16AWG Audio Cable 5497",
+            "url": "https://www.ebay.com/itm/10ft-Premier-Series-1-4inch-TS-or-Mono-Phono-Male-to-Male-16AWG-Audio-Cable-5497/253843334491?hash=item3b1a3de55b:g:2VIAAOSwnQhXoVJg"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "GHWL Dual 1/4 Inch to Dual RCA Audio Cable Male 6.35mm 1/4\" Phono Mono to RCA...",
+            "url": "https://www.ebay.com/itm/GHWL-Dual-1-4-Inch-to-Dual-RCA-Audio-Cable-Male-6-35mm-1-4-Phono-Mono-to-RCA/183921286003?hash=item2ad2901b73:g:xo8AAOSwxuRdVm9c"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "4x 6.35mm 1/4\" Mono Female Jack to RCA Male Plug Audio Adapter Cable Converter",
+            "url": "https://www.ebay.com/itm/4x-6-35mm-1-4-Mono-Female-Jack-to-RCA-Male-Plug-Audio-Adapter-Cable-Converter/292163427797?epid=20004062530&hash=item44064c1dd5:g:e9IAAOSwyltZUFp6"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6.35mm Dual 1/4 Inch TS Mono Plug To RCA Male AUX Audio Adapter 2DAY SHIP",
+            "url": "https://www.ebay.com/itm/6-35mm-Dual-1-4-Inch-TS-Mono-Plug-To-RCA-Male-AUX-Audio-Adapter-2DAY-SHIP/273816387108?hash=item3fc0ba7e24:g:9BwAAOSwze9cvL4q"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6.35mm Dual 1/4 Inch TS Mono Plug To RCA Male AUX Audio Convertor Adapter Cable,",
+            "url": "https://www.ebay.com/itm/6-35mm-Dual-1-4-Inch-TS-Mono-Plug-To-RCA-Male-AUX-Audio-Convertor-Adapter-Cable/223572007938?hash=item340dee1c02:g:YW0AAOSwhktdGeQM"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED5 Pcs 1/4\" Stereo to 3.5mm Mini Headphone Adapter",
+            "url": "https://www.ebay.com/itm/5-Pcs-1-4-Stereo-to-3-5mm-Mini-Headphone-Adapter/321568956014?_trkparms=ispr%3D1&hash=item4adf00de6e:g:z7gAAOSwBP9UUzvb&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qXP3npKzttiKL0s7o8u%2Fi8EmXRsIfFeH1TwwpBhGeH9Fvyz8bXjCMyqNo8XE%2B4ate%2FiuENdSLeFZFxfAUK1x4cXX6eSZK0I8JmcVa1Nlfy183GW6G69ODiu4CZ22em4BLfv4AlyfiBy38aUov84V%2FZa9jLKKG%2Fd9mC%2B9w%2FzHYQWZNsvcFh0COR0ow6y5EcRzhRCb00dNJU1Oq60Oiw3DIHmKfIb3ENjwB6dp9F2wMq8jtx0Sll1rJxNkD9mXk0sBc5Eqq%2BWZvJDooGztqYDtCdiXCqKvGxnCfUti7Z%2F7MOmoSAa%2F5zBNKwk9XnzvX%2BhRc2fZa%2BDjGArK7v3irEj7wRzuQS95XXD5n0ZzPqAwwrSfn8flp5aSe59fpjaSUQNwJs0ftoxSjvnET%2BaXS7yXqRI8tKGSn23TdzCTjKr6hhVsYGh1qvtxgAhRSCk98V9jPIL2pNvmS6mTzuTE1nXX20r3Kry2W6pPujWmJQDCAG3FJaF5Nqs527kOC5YoSXhWnOOOoEWGQ3vr50IJNRXUeyzsbmwOvrSezcTrdsWWu3epyHph%2BZxyq7xtiZwHyKOgei0CTSyTu0om3dX1w6OnXxa&checksum=321568956014cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED25ft Premier Series 1/4inch (TS or Mono Phono) Male to Male  Audio Cable  5499",
+            "url": "https://www.ebay.com/itm/25ft-Premier-Series-1-4inch-TS-or-Mono-Phono-Male-to-Male-Audio-Cable-5499/232912190085?_trkparms=ispr%3D1&hash=item363aa5fa85:g:yicAAOSwnNBXVkRb&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qXibARJNUHrCI4wyHkPerkG5b5v17xvKnr6yhZkMrGEDa9QKVmuFob8XhaXc5zOCZOnHE%2FYPKgnRGHdXMNDL%2F0iMhZtQCxSBAe4lVKXYXKgfe7wynjdkdgQfrJWrwtxCO4q7XewWjC3%2FWmOA8J1jRpUJgSZYZffgayvVtVu9lwxVQTlQwx56M2Aolcmpk0%2BvpTuVVjoMLZ3MijBw5J0NH%2B6cnjy4DHEDsrR35w7AIPxqockvFZ8cItmJi54R%2B6%2FPWeUS7kaqi8dg%2BjvWwMGB3KwvL81pSx%2FHr6C5saRovuOmOdj31KwacsYUTkeJwjnQHpKOQvxEe%2BfbvD66PCax31DfUPBoFZn6cimOsh9M2aSDw8W127NKO0L99xi2U6YNyTWIB0xLlk9FFp3OXuiR%2FDCphOCIsQC8aDJUyVbmcnRokPXEyrJe%2F%2BO7qr99uQX8aDAQ59GChlHKGvHhnGTSYlZer%2BsvDOgv3niImMgqAJSJArXR1HiAaBUcZv%2Fpw3xCIaq%2BiQT0HKk6m2%2Fe6vRfXVJv4Zm6GkLsYaMzqFywk3gpXVNSFhs4lL8zoVBllVQw26QmRZFvsWsrdLNI0Hn98UK&checksum=232912190085cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "5 Pcs 1/4\" Stereo to 3.5mm Mini Headphone Adapter",
+            "url": "https://www.ebay.com/itm/5-Pcs-1-4-Stereo-to-3-5mm-Mini-Headphone-Adapter/321568956014?hash=item4adf00de6e:g:z7gAAOSwBP9UUzvb"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6ft 1/4 inch (6.3mm) TRS Stereo Male to 2 x RCA Stereo Male Cable",
+            "url": "https://www.ebay.com/itm/6ft-1-4-inch-6-3mm-TRS-Stereo-Male-to-2-x-RCA-Stereo-Male-Cable/273365897102?hash=item3fa5e08f8e:g:gYAAAOSwPAtbUj-N"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "1/4\" 1/4 6.3mm Male Mono Phono Plug to 2 RCA Female Y Cable Splitter",
+            "url": "https://www.ebay.com/itm/1-4-1-4-6-3mm-Male-Mono-Phono-Plug-to-2-RCA-Female-Y-Cable-Splitter/152852360984?epid=1341072263&hash=item2396b5ef18:g:fNsAAOxyVaBS6ULi:sc:USPSFirstClass!94118!US!-1"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "8x 6.35mm 1/4 TRS Stereo Male to RCA Male Audio Adapter Connector Converter Gold",
+            "url": "https://www.ebay.com/itm/8x-6-35mm-1-4-TRS-Stereo-Male-to-RCA-Male-Audio-Adapter-Connector-Converter-Gold/223564286538?hash=item340d784a4a:g:ZK8AAOSwccFdEPb8"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "25ft Premier Series 1/4inch (TRS or Stereo Phono) Male to Male 16AWG Cable 4796",
+            "url": "https://www.ebay.com/itm/25ft-Premier-Series-1-4inch-TRS-or-Stereo-Phono-Male-to-Male-16AWG-Cable-4796/254326109533?hash=item3b3704755d:g:0L8AAOSwARZXnsQ1"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "35ft Premier Series 1/4inch TRS or Stereo Phono Male/Male 16AWG Cable Gold 4797",
+            "url": "https://www.ebay.com/itm/35ft-Premier-Series-1-4inch-TRS-or-Stereo-Phono-Male-Male-16AWG-Cable-Gold-4797/253843329226?hash=item3b1a3dd0ca:g:rgkAAOSw3xJXoAg2"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "STARAUDIO 6 FT 2 - 1/4in 6.3mm Mono Male To 2 RCA Male Audio Cable For DJ System",
+            "url": "https://www.ebay.com/itm/STARAUDIO-6-FT-2-1-4in-6-3mm-Mono-Male-To-2-RCA-Male-Audio-Cable-For-DJ-System/172252142052?hash=item281b0719e4:g:EHgAAOSwhH1cPY6m"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "CablesOnline 1.5ft Right-Angle 1/4\" Mono Plug to Single RCA Plug Audio Cable",
+            "url": "https://www.ebay.com/itm/CablesOnline-1-5ft-Right-Angle-1-4-Mono-Plug-to-Single-RCA-Plug-Audio-Cable/290876823901?hash=item43b99c195d:g:moIAAOSwll1WzndE"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6ft Premier Series 1/4inch TS or Mono Phono Male to Male 16AWG Audio Cable 5496",
+            "url": "https://www.ebay.com/itm/6ft-Premier-Series-1-4inch-TS-or-Mono-Phono-Male-to-Male-16AWG-Audio-Cable-5496/232912190131?epid=1402279996&hash=item363aa5fab3:g:TVUAAOSw03lY7Vun"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "AKAI 4 channel RCA to 1/4 inch patch cord (interconnect) 6 feet ORIGINAL Rare",
+            "url": "https://www.ebay.com/itm/AKAI-4-channel-RCA-to-1-4-inch-patch-cord-interconnect-6-feet-ORIGINAL-Rare/223483174818?hash=item3408a29fa2:g:N8gAAOSwZQRYh7Tr"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6.35mm 1/4 inch TRS Stereo Jack Male to 2 RCA Male Plug Y Adapter Golden Plated",
+            "url": "https://www.ebay.com/itm/6-35mm-1-4-inch-TRS-Stereo-Jack-Male-to-2-RCA-Male-Plug-Y-Adapter-Golden-Plated/253685490027?epid=22003087634&hash=item3b10d5616b:g:Wz0AAOSwJ-pbIAg6"
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "75ft Premier Series 1/4inch (TRS or Stereo Phono) Male to Male 16AWG Cable 4799",
+            "url": "https://www.ebay.com/itm/75ft-Premier-Series-1-4inch-TRS-or-Stereo-Phono-Male-to-Male-16AWG-Cable-4799/232912187478?epid=1400504136&hash=item363aa5f056:g:jnIAAOSwtnpXnsZx"
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "KK R1-B2-D1 4N OFC Speaker Wire Pair With RCA Male to 2 Pair Banana Plugs, 1 M",
+            "url": "https://www.ebay.com/itm/KK-R1-B2-D1-4N-OFC-Speaker-Wire-Pair-With-RCA-Male-to-2-Pair-Banana-Plugs-1-M/173435610208?hash=item2861916460:g:WwQAAOSwWkxdQQMs"
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED15ft Premier Series 1/4inch (TRS or Stereo Phono) Male to Male 16AWG Cable 4795",
+            "url": "https://www.ebay.com/itm/15ft-Premier-Series-1-4inch-TRS-or-Stereo-Phono-Male-to-Male-16AWG-Cable-4795/332787482012?_trkparms=ispr%3D1&hash=item4d7badfd9c:g:OUgAAOSwbPxXQeae&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qXtZA1MG6caZU2hV1bCV1%2BD4T999X73sq%2F%2Fh3NQtA%2Fxy%2B%2F4Uo6kmR9G9xmUjNw6vzfxEc0Mqg3w4HhVUJqOlB2EMDnVQH1bDXsAufGu5tscUQNlmSUynzMqFp2tk3YwKGA0I%2FJwU2WESL8bj2oi8MI%2FSP0v9L8%2B8pmvMJ4HiDLJx0IQrofVaVdMT4%2BM8PftUW87MwolTDny%2F7yLTbfGOT0t79F7%2FrEtQxrnt1%2Blq%2BgaNTd%2B%2Bw88ah8TFEfGaam%2FjC%2FUzyKiE%2FaWpeIcu1HCtT1mjjrq8Rbqt0VAMJVIh4ovomlteI5nZjgADWgWSh33dIsnHrT97XO7lRbYloLBU2I%2B59PnSvrtGKOxnQ28OrYSQBYmoiev9zmMIzpa8yquF8SeoVQseoIqUFBuiurVKkS77%2B2vFW%2BZMy8YF6qcp%2BRJ4bHeP3cySWbiPLJxDKB5UOpHm7byt8IMg2Dcuw4V8oDYXz9FS5iY%2Fjxvg8xiekdcx6208i0uM0XtvvnTN9yJJp%2Bzs%2BEmWSuzCr%2F1jL13E3jCY6dS%2BI%2F5RNvdQDz8k2M%2F7Xel9HbJZrkKnOP6UNkGfZgTqgZq1RhnpZKYZzEAJIsc&checksum=332787482012cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED10ft Premier Series 1/4inch TS or Mono Phono Male to Male 16AWG Audio Cable 5497",
+            "url": "https://www.ebay.com/itm/10ft-Premier-Series-1-4inch-TS-or-Mono-Phono-Male-to-Male-16AWG-Audio-Cable-5497/253843334491?_trkparms=ispr%3D1&hash=item3b1a3de55b:g:2VIAAOSwnQhXoVJg&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qUrcvb3jCLAyhahcOZnVsHork%2FRXQTSrg7JQ48Xuzvfbo4zYkm%2BKN3GvnlLco7C%2FN0crCAH67SSrFprcvM2hmBsjR1mHuGrJCOWVcn5LAtQUTAb8lo20ZChw6%2BNERD3dwLmni0xhqRRrnC7dYbM9SB7XqGcRWx433XzutGWlWq4JxGAh4uhE7cbXy%2FzzPtzqMIf3Nma3rRYv54UPukklRXlnd%2FWNixgktys%2FC%2FEW3M%2F%2FeQIHctsHDG4QZaw1ZKwbJGRlYiUkO0ApYRkYoW1CT%2Bn0PN5ezLmJHPR3MeNkgMRFtXkhhPMkPl68ZfSb91NpyDyKcnx7kQ8sqvyJdaPIafAeOKikz%2FWL4Bld%2FbC2Mv9IbSAfLtpmZN%2Bqi%2Fsk%2B%2Fnw04WcXpLwP3Y85vJKXE%2F6IJzyRzU3WZ4KdEpMdDB2RXJFRsyDCFxN6IvBO%2FpKVQgfXP34K%2Bm62yY3S5iI8frqka6uIKMBI0UwSv5PdmB1V7UJ6ihQJGqwdhwA8WOX181NnRuuDuyA2WFhhNBPwNERD%2FMsKaPYvT9EqKhtOX7NHUAuJIBaFsQfkKAIoJ0ZueKj4ZLlHoozY2FbEUDlUUxgK2S&checksum=253843334491cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "InstallerParts 10Ft 1/4\" Mono Male to RCA-Male Cable- Compatible With Amplifi...",
+            "url": "https://www.ebay.com/itm/InstallerParts-10Ft-1-4-Mono-Male-to-RCA-Male-Cable-Compatible-With-Amplifi/254193945473?epid=1163361312&hash=item3b2f23cb81:g:AZ0AAOSw4BhcrCND"
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Monster Interlink I300 MKII Stereo RCA Cables 1M,2M,4M Lengths NIP",
+            "url": "https://www.ebay.com/itm/Monster-Interlink-I300-MKII-Stereo-RCA-Cables-1M-2M-4M-Lengths-NIP/273918802885?hash=item3fc6d53bc5:m:mjsnXAAjM12gN7XdMK0lMtA"
+        },
+        {
+            "rank": 43,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "20pc 1/4\"  Phone Jack Audio Headphone Amplifier Output PCB Female 6pin Stereo",
+            "url": "https://www.ebay.com/itm/20pc-1-4-Phone-Jack-Audio-Headphone-Amplifier-Output-PCB-Female-6pin-Stereo/251038092672?epid=877268123&hash=item3a73094d80:g:9j4AAOxyJ-FRkFsM"
+        },
+        {
+            "rank": 44,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "TNP Premium Dual 1/4 Inch To Dual RCA Audio Cable 15FT - Male 6.35mm 1/4\" Pho...",
+            "url": "https://www.ebay.com/itm/TNP-Premium-Dual-1-4-Inch-To-Dual-RCA-Audio-Cable-15FT-Male-6-35mm-1-4-Pho/323873253027?hash=item4b6859a6a3:g:L3cAAOSwi7BdQfgW"
+        },
+        {
+            "rank": 45,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "20pcs 1/4\" Cliff Phone Jack 6.35 6pin PCB Headphone Audio Tube Amp Guitar Stereo",
+            "url": "https://www.ebay.com/itm/20pcs-1-4-Cliff-Phone-Jack-6-35-6pin-PCB-Headphone-Audio-Tube-Amp-Guitar-Stereo/400928468797?epid=25005619085&hash=item5d5932ef3d:g:a58AAMXQaOVRlE4r"
+        },
+        {
+            "rank": 46,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "4x 6.35mm 1/4 TRS Stereo Male to RCA Male Audio Adapter Connector Converter Gold",
+            "url": "https://www.ebay.com/itm/4x-6-35mm-1-4-TRS-Stereo-Male-to-RCA-Male-Audio-Adapter-Connector-Converter-Gold/223564286430?hash=item340d7849de:g:pvYAAOSw3tBdEPb1"
+        },
+        {
+            "rank": 47,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Philmore Fully Shielded 6-Ft Cable, Dual RCA Male to Dual 6.35mm 1/4\" Mono Male",
+            "url": "https://www.ebay.com/itm/Philmore-Fully-Shielded-6-Ft-Cable-Dual-RCA-Male-to-Dual-6-35mm-1-4-Mono-Male/272115679101?hash=item3f5b5bbf7d:g:amwAAOSw-zxWpmkT"
+        },
+        {
+            "rank": 48,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Vanco AD514 1/4\" stereo Phone Jack Adapter",
+            "url": "https://www.ebay.com/itm/Vanco-AD514-1-4-stereo-Phone-Jack-Adapter/172482290833?epid=2132311731&hash=item2828bee491:g:2x8AAOSwZQRYdbYM"
+        },
+        {
+            "rank": 49,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "1/4\u201d 6.3mm Phone (Phono) Female to RCA Male Adapter",
+            "url": "https://www.ebay.com/itm/1-4-6-3mm-Phone-Phono-Female-to-RCA-Male-Adapter/311643096315?hash=item488f6044fb:g:gWsAAMXQaBtQ9mcf:sc:USPSFirstClass!94118!US!-1"
+        },
+        {
+            "rank": 50,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6.35mm 1/4 inch Mono Jack Plugs to RCA Phono Male Plugs OFC Audio Cable",
+            "url": "https://www.ebay.com/itm/6-35mm-1-4-inch-Mono-Jack-Plugs-to-RCA-Phono-Male-Plugs-OFC-Audio-Cable/113670471633?hash=item1a7749bfd1:m:mIPMNnpsDa0DDapCpPJxjiA"
+        },
+        {
+            "rank": 51,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "UltraLink Contractor Series CS1-4M RCA Audio Interconnect Cables 4 meter pair",
+            "url": "https://www.ebay.com/itm/UltraLink-Contractor-Series-CS1-4M-RCA-Audio-Interconnect-Cables-4-meter-pair/263489784727?hash=item3d59370b97:g:3y4AAOSwlv9af2nN"
+        },
+        {
+            "rank": 52,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "PKG50 1/4\" Cliff Phone Jack PCB Headphone Amplifier New",
+            "url": "https://www.ebay.com/itm/PKG50-1-4-Cliff-Phone-Jack-PCB-Headphone-Amplifier-New/261000100625?epid=1446235261&hash=item3cc4d17b11:g:6eIAAOxydkZRjxBN"
+        },
+        {
+            "rank": 53,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Phono 1/4\" Male Plug / RCA Male Jack 6 Ft. Audio Cable",
+            "url": "https://www.ebay.com/itm/Phono-1-4-Male-Plug-RCA-Male-Jack-6-Ft-Audio-Cable/160426730669?hash=item255a2da4ad:m:mPMNXvuDtDhBg0SkoxHm8SA"
+        },
+        {
+            "rank": 54,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "KabelDirekt RCA Stereo Cable / Cord (25 ft / feet long, 1 RCA Male to 2 RCA M...",
+            "url": "https://www.ebay.com/itm/KabelDirekt-RCA-Stereo-Cable-Cord-25-ft-feet-long-1-RCA-Male-to-2-RCA-M/183787744949?epid=1738801016&hash=item2aca9a6eb5:g:57gAAOSwYipcwdSZ"
+        },
+        {
+            "rank": 55,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "STARAUDIO 2Pcs 8FT 2-1/4in (6.3mm) Mono Male To 2-RCA Male Audio Speaker Cables",
+            "url": "https://www.ebay.com/itm/STARAUDIO-2Pcs-8FT-2-1-4in-6-3mm-Mono-Male-To-2-RCA-Male-Audio-Speaker-Cables/322197652790?hash=item4b047a0536:g:IRcAAOSwARZXji-H"
+        },
+        {
+            "rank": 56,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "5 Pcs 1/4\" Stereo to 3.5mm Mini Headphone Adapter",
+            "url": "https://www.ebay.com/itm/5-Pcs-1-4-Stereo-to-3-5mm-Mini-Headphone-Adapter/111739473426?hash=item1a04310e12:g:J2kAAOSwu4BVx9jF"
+        },
+        {
+            "rank": 57,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "8x RCA Female to 6.3mm 1/4\" Stereo Male Audio Plug Adapter Gold Plated F/M",
+            "url": "https://www.ebay.com/itm/8x-RCA-Female-to-6-3mm-1-4-Stereo-Male-Audio-Plug-Adapter-Gold-Plated-F-M/222527509038?hash=item33cfac522e:g:Mp4AAOSwc2FaEfVG"
+        },
+        {
+            "rank": 58,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "4 FT SILVER PLATED 3.55 MM 1/8\" to DUAL RCA AUX AUDIOPHILE INTERCONNECT CABLE.",
+            "url": "https://www.ebay.com/itm/4-FT-SILVER-PLATED-3-55-MM-1-8-to-DUAL-RCA-AUX-AUDIOPHILE-INTERCONNECT-CABLE/121600616673?hash=item1c4ff628e1:g:iFkAAOSwqu9VC5mE"
+        },
+        {
+            "rank": 59,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Twin Dual 6.35mm MONO 1/4\" Jack to Dual RCA PHONO Male Plugs Audio Cable",
+            "url": "https://www.ebay.com/itm/Twin-Dual-6-35mm-MONO-1-4-Jack-to-Dual-RCA-PHONO-Male-Plugs-Audio-Cable/392248533685?hash=item5b53d5a2b5:m:miehTsRA0epvnUwxsBU8Rlw"
+        },
+        {
+            "rank": 60,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED20pc 1/4\"  Phone Jack Audio Headphone Amplifier Output PCB Female 6pin Stereo",
+            "url": "https://www.ebay.com/itm/20pc-1-4-Phone-Jack-Audio-Headphone-Amplifier-Output-PCB-Female-6pin-Stereo/251038092672?epid=877268123&_trkparms=ispr%3D1&hash=item3a73094d80:g:9j4AAOxyJ-FRkFsM&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qWAhtBorq4aG%2FBpNmp3%2FbxDgHRsRcH3BXIi1mUDksV5fhKGy4IHP3fxfYzRAH9mxSd%2BEybpJsrT5JY3XkjtXRDCWxH5KLJp0%2BIuSNw19P0Y1q6AOOlaUcIr4YDtLtCwiIHrMsmEcjUBkt%2BMK%2BdTVNF2NLBGjWcIBGgfuR%2FJy8jW%2BczDkv523NcTAu4hPpTW7kCN8GSDtc04Y2RhyryRFb6LjCTP25gkog7gEVf0Xu%2BLOEa9nTF9rxJsyaYffQPIWMihz7SgnVfUkeCq0nYW%2Bqw6XoQxEdVuByV8vHcnbw7sXsNMKZJtdgZgiHmuVT0e5HNwJtA597mcq8OOCsChqG8gLXZ4JIJwmiHh7PmpmxP20Fu8ozAADGvXAbT3Mv2Mtgxv3CSCXDFCu2JpIUoAgIV1DfbX497K18lJoYLqkBOCiCEaAynbwPbfZqX8wFlc4YySZiMirBaS%2FxhjmuLNdlcHOdGeFUuZJgbAhQgSLuQr3j61ynOUJc4JptsSoVwMniUiE6n%2B5Jh%2B9KPxm01uUrIoinaLhRvwMFbeoyq8TEf0LkXrBEzcWIfVzv8%2FslZtN8MwlYR5akvakijCOYJYxkzP&checksum=251038092672cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 61,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED25ft Premier Series 1/4inch (TRS or Stereo Phono) Male to Male 16AWG Cable 4796",
+            "url": "https://www.ebay.com/itm/25ft-Premier-Series-1-4inch-TRS-or-Stereo-Phono-Male-to-Male-16AWG-Cable-4796/254326109533?_trkparms=ispr%3D1&hash=item3b3704755d:g:0L8AAOSwARZXnsQ1&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qUPWqss%2BWWOE2vPaOfLmynFtN35rnIrQtas2XX5%2FvfiMM1Gl1o8DUEZAf04AvUGXtdbab3%2BXHrKaFUumH%2B3v9Y4NuW9KhGF7fzMYUamhMMNtqmzi8WJMgZ27B7NXXcNN12OPTp24h9FpdtUVRiS6kptHM8FeA4MkN0orL50xbey0a%2BSUkM2SpjW40oJXmdsbivCVnyEfAfNimc6YSxZs0eYZk1zj53ld9THbb3Kjnm%2F6J5oQzJqPOqiNpt75%2F%2B88M%2FP0WR71ACYTLdKSYaGobTpYGrxhiMmej6DkcsV7KPD6wagmFjdcv8NchYDuBjs9Cw3oWM0m%2BFuCwJgOInw78BS3DK3Y6oEs3KiJTZ9pozbKvWEyfLAr1ycgXRi%2F%2F4u3kxvMZuwLCIPh%2FwoWw6%2BrmF2ekj3YYQH%2BoYn73HtI90Op%2FlLKzBy98aP9piwpgWFZe%2FPXcOppR1edgvUAa4mzn0kprmSTp2Qlg16I%2B1%2BmgoPWbeamIkbE0TKJzCPzYTTYMXB2K%2FvwJmZDt7DVUnuxAxhjIqI1jQtx3Q%2Bafo08%2BMuAcGPzc0BQglV%2Fk9tiRKFJbOME2pnuYTlwUVL8qP7ax%2FR&checksum=254326109533cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 62,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED20pcs 1/4\" Cliff Phone Jack 6.35 6pin PCB Headphone Audio Tube Amp Guitar Stereo",
+            "url": "https://www.ebay.com/itm/20pcs-1-4-Cliff-Phone-Jack-6-35-6pin-PCB-Headphone-Audio-Tube-Amp-Guitar-Stereo/400928468797?epid=25005619085&_trkparms=ispr%3D1&hash=item5d5932ef3d:g:a58AAMXQaOVRlE4r&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qVrdzxeUOP%2F1i1KEAqSbLworresAI%2FlVWI8R3I9Q9Y%2BJmktu%2FDEADph40pH5aSXrgnI76zkdKkwdTjXILxFRyM%2BAcRTpWegsD25j%2F5DvOCgAOPXgYkNfIyybMviCL1pYO0T2cmFoP2dtZTGcZDZ91L%2B0uvkWWfWWKssdyaUbNAUBtSuZHOsVPFPaqWVrtLtE16%2FaUGWsAlUOaiV%2BDU5Edavrp4ETNyAaItNgvFi2mhQvyUR2Da%2F2hfzjbDKdO2QqFMy8UFAcSZQ%2BkIhHPAM8h754voNL9grs1LIFWy90YWEwYzr18l8ifWvdospBZMjwx0KTN9VFbRHXxN6h7bFr29C5BNgKgI4lPYleTmR7po7wjW6bvokoPgDgQh3LJyyb9Xk1NyDJd0myhUA7Gegqzmhny56pnRUUK9KFPIV8O5nH4NeDrEyyQv6H3Hlc%2FUjSY7w7%2B63J9Bdb5r3t8PZUenco4m7JCRb4PFXUrlP8x8u0Y3y1KrXNoAiqedVKJWcKKr8COdDgfg5dIfB5qfQUcZ28CUtY9DDpA906m7RuhfE0uqJ12O8CpqP2PKVeK%2Bf8e%2Fq3UrknLIPYTT5g6x4bjQJ&checksum=400928468797cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 63,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6x 6.35mm 1/4\" Mono Plug Male to RCA Phono Jack Female Audio Adapter Converter",
+            "url": "https://www.ebay.com/itm/6x-6-35mm-1-4-Mono-Plug-Male-to-RCA-Phono-Jack-Female-Audio-Adapter-Converter/223429792342?hash=item3405741256:g:ZYUAAOSwpZNceW3d"
+        },
+        {
+            "rank": 64,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "HOSA CYR-102 MONO 1/4\" PHONE (M) - TWO RCA (M), 2m (6.6 ft.)",
+            "url": "https://www.ebay.com/itm/HOSA-CYR-102-MONO-1-4-PHONE-M-TWO-RCA-M-2m-6-6-ft/202493118307?hash=item2f2587c763:g:dEEAAOSwTA9X7Yeu"
+        },
+        {
+            "rank": 65,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSOREDPKG50 1/4\" Cliff Phone Jack PCB Headphone Amplifier New",
+            "url": "https://www.ebay.com/itm/PKG50-1-4-Cliff-Phone-Jack-PCB-Headphone-Amplifier-New/261000100625?epid=1446235261&_trkparms=ispr%3D1&hash=item3cc4d17b11:g:6eIAAOxydkZRjxBN&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qU7sURjcjOjB7b382z2593Gr3sJWCwlhZcLI7XExgwIFKPEHhYJUPITNld4Y%2Fys30HD8sjgbj5iw%2B%2Fl7VKwvEizpUcdVwH%2BGQMMNuFTkhN%2FKsbCueVswJ8L3Y7a38y6qjACAPV8OVTEQGXqfkgnX7f2%2FzjmaY05ZvXoBqbaPfq3Yfzhz6TXv4w1jaigJza127q1tta7%2BdVZb%2Fyq9ifDLFnSIORcnOYG0qwpzMoZbcpy%2BDbOlEGwXzjLZd%2Fgt2FEF88d7jeY6aZq0cQnIQSJkJ5ZcO%2FLTQr%2FIvoHkv%2Fyf1b5Njl%2F9Znkoi6p8ViSs1JK7XyKq1hfOe%2BRSwk%2BEJVxG%2BCvqiTBn1rq2ffv9UIYpngereoyLE2yPvQHyklvQL4OKXxlSakYmjX5JWQujw2BZdXMg8O99B2JVVjCWXhF%2Bn7X%2B%2B3xuiq2BEZbZcPdqfNnzWqKUztGFFenHemd4ulg2qpA342pkWPLgY47tkoa%2B4hHfyIKCYeLLWgkYnL4vEpFj2mTamhjzhQPXSFqFBGJapwbhtd7%2Fm2C%2BKE4RYf4U1UQaBAi2B2MWDO3%2B5S7M%2BERAFQOMnq2QnVZEScX7MVwR%2BXo&checksum=261000100625cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 66,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "SPONSORED6.35mm Dual 1/4 Inch TS Mono Plug To RCA Male AUX Audio Adapter 2DAY SHIP",
+            "url": "https://www.ebay.com/itm/6-35mm-Dual-1-4-Inch-TS-Mono-Plug-To-RCA-Male-AUX-Audio-Adapter-2DAY-SHIP/273816387108?_trkparms=ispr%3D1&hash=item3fc0ba7e24:g:9BwAAOSwze9cvL4q&enc=AQAEAAAB0BPxNw%2BVj6nta7CKEs3N0qX15sDUZPQZdZLnURRwQTs%2FgG%2FziO61f1y340NKbfxVEKvczfhuT5wI37AjymP%2FT7u%2FuGvRLQIVPFZNPkIAob2e931nBmME7OR42raLnhz8Ss6alB2L40S7Q2hYFJ7p97TJztDunUMMvFgkE0hhCijz8sg1RFUDviCiJnWiAOOnDY1UQ1zux1RSOvtA%2B1UxCKEyrcgZMUdM7jtYXomsakeXSfz8jGLakxc4AedzV8RnKPEv5CRB9KExvmRLJlY97pC12a6%2BZR2Gms92qIkuMFjzfyS4tzXoEkBgesofQIhK7GGCVNNcLv%2Fd0PWf1Xc2GCPOf0uJJ1l3gHgOjkHws0w0x%2BEiCCARp%2FLTzwBvOCF3JkhsN1oUgRHNpc%2BYumhw0mnCnjQvLyCHkmkaBqjxm8dJI6n2Ep8DEBl%2Fl0icUocC9EAaLT%2BDvc1rFod1CrNxBS9yi3Dt7UI%2BU5OkjWxll8Wjmj34CNEDdjqF81a79cfIC94%2FCUTs57TrH1UAULAnYwGrHayv1qCROYKpXiL8XwFHgEZOJFK2Y%2FCz4gCki2BiFDUnJ6Ls2qbL4IuVcpwTSUMvuqDXfhjcrvfDCD%2BRza12&checksum=273816387108cd2cdc33210d4ffe9925542f25fecbf8"
+        },
+        {
+            "rank": 67,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6ft Premium Stereo 6.35mm 1/4\" inch TRS Male to M Audio Cable Gold Plated",
+            "url": "https://www.ebay.com/itm/6ft-Premium-Stereo-6-35mm-1-4-inch-TRS-Male-to-M-Audio-Cable-Gold-Plated/290980137828?hash=item43bfc48b64:g:~RIAAOxyjLNSOUF1"
+        },
+        {
+            "rank": 68,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "FURUTECH CF-102(R) Carbon Fiber  High-End grade RCA plug Original box",
+            "url": "https://www.ebay.com/itm/FURUTECH-CF-102-R-Carbon-Fiber-High-End-grade-RCA-plug-Original-box/323787505669?hash=item4b633d4005:m:mQWkPw-ogttmUbx3Fmaf86w"
+        },
+        {
+            "rank": 69,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "4pcs 2M/6.6FT BNC Male To 1/4\" 6.3mm Mono Male Plug Audio Adapter Cable Black",
+            "url": "https://www.ebay.com/itm/4pcs-2M-6-6FT-BNC-Male-To-1-4-6-3mm-Mono-Male-Plug-Audio-Adapter-Cable-Black/323297715738?hash=item4b460ba61a:g:e0UAAOSw1QpaAarT"
+        },
+        {
+            "rank": 70,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "6.35mm (1/4\") Mono Jack Plug to Phono (RCA) Male Audio Music Mixer AMP Lead 3m",
+            "url": "https://www.ebay.com/itm/6-35mm-1-4-Mono-Jack-Plug-to-Phono-RCA-Male-Audio-Music-Mixer-AMP-Lead-3m/253125901578?hash=item3aef7abd0a:g:9-IAAOSw-URZp9Ri"
+        },
+        {
+            "rank": 71,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Vanco AD530 3.5mm Mini Headphone Adapter",
+            "url": "https://www.ebay.com/itm/Vanco-AD530-3-5mm-Mini-Headphone-Adapter/172480870677?epid=2131043306&hash=item2828a93915:g:5D0AAOSwt5hYdCS1"
+        },
+        {
+            "rank": 72,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "Connectors &amp; Adapters Ancable 4-Pack 1/4 Inch 6.35mm TS Female RCA Male Adaptor",
+            "url": "https://www.ebay.com/itm/Connectors-Adapters-Ancable-4-Pack-1-4-Inch-6-35mm-TS-Female-RCA-Male-Adaptor/264164887685?hash=item3d81744c85:g:wsIAAOSwpppcTFor"
+        },
+        {
+            "rank": 73,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "3ft Premier Series 1/4inch (TRS or Stereo Phono) Male to Male 16AWG Cable 4792",
+            "url": "https://www.ebay.com/itm/3ft-Premier-Series-1-4inch-TRS-or-Stereo-Phono-Male-to-Male-16AWG-Cable-4792/290980137651?hash=item43bfc48ab3:g:~RIAAOxyjLNSOUF1"
+        },
+        {
+            "rank": 74,
+            "snippet": null,
+            "timestamp": 1566151598,
+            "title": "3ft Premier Series 1/4inch TS or Mono Phono Male to Male 16AWG Audio Cable 5495",
+            "url": "https://www.ebay.com/itm/3ft-Premier-Series-1-4inch-TS-or-Mono-Phono-Male-to-Male-16AWG-Audio-Cable-5495/232912187419?hash=item363aa5f01b:g:xgoAAOSwgApXCp15"
+        }
+    ],
+    "timestamp": 1566151598,
+    "url": "https://www.ebay.com/sch/i.html?rt=nc&_fsrp=1&_nkw=1+%3A+4+&_sacat=14964&Connector%2520A=RCA%252FPhono%2520Male"
+}

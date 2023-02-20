@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "dunwells army of friends",
+    "offset": null,
+    "page": null,
+    "query": "dunwells army of friends",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Brothers Joe and David, The <em>Dunwells</em> have 3 albums out and have been touring their own music around the US, UK and Europe for the past decade. Along with fes...",
+            "timestamp": 1617218301,
+            "title": "The Dunwells - Army of Friends (Lyric Video) - YouTube",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA2DlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fwww.youtube.com%2fwatch%3fv%3dvThf8Ir2Uy4/RK=2/RS=.P08ULsHdH8kLdH.G.MLgyveuUU-"
+        },
+        {
+            "rank": 2,
+            "snippet": "Produced by a group <em>of </em>loyal fans in response to the amazing commitment <em>of </em>the band during Covid19 lockdown. Thank you Joe and Dave for your music, laughter,...",
+            "timestamp": 1617218301,
+            "title": "The Dunwells - Army of Friends (Fan video) - YouTube",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA2jlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fwww.youtube.com%2fwatch%3fv%3d8Frxy1pjWEs/RK=2/RS=3iGWMsDiZudJAI4y7nca0LUrDDE-"
+        },
+        {
+            "rank": 3,
+            "snippet": "Army of Friends - Single by The Dunwells | Spotify.<em> Loader</em> Icon. A visual spinning<em> loader</em> indicating that the page is performing an action.",
+            "timestamp": 1617218301,
+            "title": "Army of Friends - Single by The Dunwells | Spotify",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA3DlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzMEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fopen.spotify.com%2falbum%2f78lNLt5au8QPxhtgNe2PtL/RK=2/RS=j_yU46h5rotshgzMZ7BfdrPRZqY-"
+        },
+        {
+            "rank": 4,
+            "snippet": "May 13, 2020 \u00b7  <em>Army of Friends</em> is a musical beacon from The<em> Dunwells</em> to your audience. The song has quickly become a staple part of Joe and David<em> Dunwell's</em> show, The<em> Dunwells</em> Daily LIVE. The show airs live, seven days a week on The<em> Dunwells'</em> Facebook and Youtube channels at. 10am/Pacific, Noon/Central, 1pm/Eastern, and 6pm/UK.",
+            "timestamp": 1617218301,
+            "title": "The Dunwells - Army of Friends - Daily Play MPE\u00ae",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA3jlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzQEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fdaily.plaympe.com%2fthe-dunwells-army-of-friends%2f/RK=2/RS=dXhvYGy58qLlNKJ0hcYK.kaB130-"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Army of Friends.</em> Artist: The<em> Dunwells.</em> Album:<em> Army of Friends</em> - Single, 2020. Brothers Joe and David, The Dunwells have 3 albums out and have been touring their own music around the US, UK and Europe for the past decade. Along with festival plays such as SXSW, Lollapalooza, Bonnaroo, Cornbury, Live at Leeds, Bos pop.",
+            "timestamp": 1617218301,
+            "title": "The Dunwells - Army of Friends - Listen on Online Radio Box",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA4DlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzUEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fonlineradiobox.com%2ftrack%2f2035246512735932952%2f/RK=2/RS=.JBSunVi3oAlqXVmPZU0LBZUdRM-"
+        },
+        {
+            "rank": 6,
+            "snippet": "Fans of The <em>Dunwells</em> March 15 at 3:29 PM \u00b7 If anyone is following this old page, please join the <em>Army</em> of <em>Friends</em> group (<em>Dunwells</em> Fans) for all the latest and greatest, and good times with the AoF Family \ud83d\udc99 :",
+            "timestamp": 1617218301,
+            "title": "Fans of The Dunwells - Home | Facebook",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA6DlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzYEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fwww.facebook.com%2fDunwells%2f%3f__xts__%255B0%255D%3d68.ARCZ7IHZLpbdtQs1jIvdkR0oMkXvrD1Cu1xRv4IkxFntk-GYrjN-dlVx_wDyrw4n5ptvAkxkfN_Wt___bGTvOq57Xh4__oJfV3MPgmKsE-ASgJUVavswtuVugo0NTKDWO98pPLCzsv3fCmkIpJ77dp2HdpNWz8mKfGt-J1s31LQDDhVJ7qZ8kUV9pAFg659193QBAa8iaPMDWZZIRJywrQ3FMvh6Ub7qPy9JRuQqiK1-DvpDxuRx5A4foCOAGragk43WoMHWqRSAXr2ivZfrhziIzMcaVHBydaloWNMbyzzYP_21SxQlA9QJ8RQKwaLbGJug5vGc_-A6mIIwANYTvPNbpyNF7_9aNfUGwPLKQXntiwQFZsqHEgn9HQsanYWbw64-YF6B_KGPVkTHh44ybT4C-tA39YL-TpI8W58kMvFoFIg/RK=2/RS=gqgLCdofMkUfc.34PeY6MgfVX2I-"
+        },
+        {
+            "rank": 7,
+            "snippet": "Please note that our catalog only lists songs that we've set up within our system; not every track from an album is displayed. You may request a song that's not in our catalog by using our request form. Album art and preview audio provided by iTunes ...",
+            "timestamp": 1617218301,
+            "title": "Army of Friends (single) by The Dunwells | Song Catalog | The ...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA6jlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzcEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fwww.thecurrent.org%2fplaylist%2fcatalog%2f384061/RK=2/RS=1OEuP35ONMh8i57FM4MMIYyejbc-"
+        },
+        {
+            "rank": 8,
+            "snippet": "Leeds-based folk-rock outfit the Dunwells feature a pair of siblings -- Joseph (vocals, guitar) and David Dunwell (vocal, piano, banjo, guitar) -- along with a pair of their school friends:<em> Rob Clayton</em> on bass and<em> Adam Taylor</em> on drums.",
+            "timestamp": 1617218301,
+            "title": "\u200eThe Dunwells on Apple Music",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA7DlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzgEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fmusic.apple.com%2fgb%2fartist%2fthe-dunwells%2f477805343/RK=2/RS=7f1JcWRTIZYEpoI7HSByLPqtPlw-"
+        },
+        {
+            "rank": 9,
+            "snippet": "The <em>Dunwells - Army</em> of <em>Friends</em> (Lyric Video) Playing In Traffic Records. April 24, 2020 \u00b7 New music from The Texas Gentlemen, Ley Line, Pike and Sutton, The <em>Dunwells</em> ...",
+            "timestamp": 1617218301,
+            "title": "Playing In Traffic Records - Posts | Facebook",
+            "url": "https://r.search.yahoo.com/_ylt=AwrEzecd52RgTBQA7jlXNyoA;_ylu=Y29sbwNiZjEEcG9zAzkEdnRpZAMEc2VjA3Ny/RV=2/RE=1617254302/RO=10/RU=https%3a%2f%2fwww.facebook.com%2fplayingintrafficrecords%2fposts%2f/RK=2/RS=Mnlqb4GokJzZ3IXFQJqyzvRHN3o-"
+        }
+    ],
+    "timestamp": 1617218301,
+    "url": "https://search.yahoo.com/search?p=dunwells+army+of+friends&fr=iphone&.tsrc=apple&pcarrier=AT&T&pmcc=310&pmnc=410"
+}

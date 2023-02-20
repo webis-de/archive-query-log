@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "\u6e38\u620f",
+    "offset": null,
+    "page": null,
+    "query": "\u6e38\u620f",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1511265243,
+            "title": "<em>\u4e2d\u6587Premiere Pro\u5f71\u89c6\u52a8\u753b\u975e\u7ebf\u6027\u7f16\u8f91\uff08\u9644\u8d60CD\u5149\u76d82\u5f20\uff09</em>\n<em></em>",
+            "url": "http://item.jd.com/10168833.html"
+        }
+    ],
+    "timestamp": 1511265243,
+    "url": "http://search.jd.com/search?keyword=%E6%B8%B8%E6%88%8F&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&offset=3&wq=%E6%B8%B8%E6%88%8F&cid2=3287&ev=packstate_no%402562_22800%40&uc=0"
+}

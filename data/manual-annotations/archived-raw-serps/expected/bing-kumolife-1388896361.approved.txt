@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "kumolife",
+    "offset": null,
+    "page": null,
+    "query": "kumolife",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Established in 1988, <em>Kumho Life</em> Insurance Co, Ltd. (hangul:\uae08\ud638\uc0dd\uba85) is a South Korean insurance company with headquarters in Sinmunro-1-ga Jongno-gu Seoul, Korea.",
+            "timestamp": 1388896361,
+            "title": "<em>Kumho Life</em> - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/Kumho_Life"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Kumho Life</em>; Kumho Investment Bank; Incheon Airport Energy; Kumho Trading Corporation; Kumho Asiana Cultural Foundation; Kumho Arthall; Marshal Tyres; Seoul \u2026",
+            "timestamp": 1388896361,
+            "title": "Kumho Tires - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/Kumho_Tires"
+        },
+        {
+            "rank": 9,
+            "snippet": "Korea National Pension Service is likely to join fund of KDB and Consus Asset to acquire <em>Kumho Life</em> Insurance South Korean National Pension Service would likely join ...",
+            "timestamp": 1388896361,
+            "title": "<em>Kumho Life</em> Insurance | PE Korea",
+            "url": "http://www.privateequitykorea.com/tag/kumho-life-insurance/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Followgram is the most complete web interface to enjoy your Instagram photos. This site uses the API of Instagram but is not certified by Instagram.",
+            "timestamp": 1388896361,
+            "title": "@<em>kumolife</em> Web Instagram User \u00bb Followgram",
+            "url": "http://followgram.me/kumolife"
+        },
+        {
+            "rank": 12,
+            "snippet": "Dec 29, 2013\u00a0\u00b7 KDB Life Insurance Co., Ltd. company research &amp; investing information. Find executives and the latest company news.",
+            "timestamp": 1388896361,
+            "title": "KDB Life Insurance Co., Ltd.: Private Company Information ...",
+            "url": "http://investing.businessweek.com/research/stocks/private/snapshot.asp?privcapId=1004772"
+        },
+        {
+            "rank": 13,
+            "snippet": "Opended <em>Kumho Life</em> &amp; Environmental Science Laboratory in Gwangju. Oct. 1994: Plastic compounding technology introduced ...",
+            "timestamp": 1388896361,
+            "title": "Welcome to KKPC",
+            "url": "http://www.kkpc.com/eng/corp/history.asp"
+        },
+        {
+            "rank": 14,
+            "snippet": "KDB, Consus Asset to buy <em>Kumho Life</em> Insurance A report in Korea's Yonhap News Wednesday, stated that Korea Development Bank (KDB) will take over <em>Kumho Life</em>",
+            "timestamp": 1388896361,
+            "title": "Second Life for Kumho Insurance | PE Korea",
+            "url": "http://www.privateequitykorea.com/ma-news/second-life-for-kumho-insurance/"
+        },
+        {
+            "rank": 15,
+            "snippet": "Mar 04, 2010\u00a0\u00b7 Free Online Library: S Korean regulator approves KDB-led fund's plan to buy 65.6% of <em>Kumho Life</em>. by \"Global Banking News (GBN)\"; News, opinion and ...",
+            "timestamp": 1388896361,
+            "title": "S Korean regulator approves KDB-led fund's plan to buy 65.6% ...",
+            "url": "http://www.thefreelibrary.com/S+Korean+regulator+approves+KDB-led+fund's+plan+to+buy+65.6%25+of+Kumho...-a0220240793"
+        }
+    ],
+    "timestamp": 1388896361,
+    "url": "http://www.bing.com/search?q=kumolife&form=MSSRPD"
+}

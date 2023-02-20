@@ -1,0 +1,290 @@
+{
+    "interpreted_query": "Sundress",
+    "offset": null,
+    "page": null,
+    "query": "Sundress",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "70s / 80s novelty print SUNDRESS with SAILBOATS and seagulls, size m -...",
+            "url": "http://www.etsy.com/listing/155765481/70s-80s-novelty-print-sundress-with?ref=&sref="
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Sundress - Baby - Watermelon Design - Crochet Pattern - PDF",
+            "url": "http://www.etsy.com/listing/78052148/sundress-baby-watermelon-design-crochet?ref=&sref="
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Boutique  Chevron Sundress Navy Hot Pink Yellow",
+            "url": "http://www.etsy.com/listing/124460740/boutique-chevron-sundress-navy-hot-pink?ref=&sref="
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Harleigh's Sundress pdf pattern, women &amp; teens sizes 0-18  INSTANT...",
+            "url": "http://www.etsy.com/listing/108563598/harleighs-sundress-pdf-pattern-women?ref=&sref="
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Mexican Embroidered Sundress Cotton Strapless In White With Lining",
+            "url": "http://www.etsy.com/listing/151793098/mexican-embroidered-sundress-cotton?ref=&sref="
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Lot of Three Vintage Gunne Sax Prairie Sundresses",
+            "url": "http://www.etsy.com/listing/122924942/lot-of-three-vintage-gunne-sax-prairie?ref=&sref="
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "New Long Sundress Gown Summer Women Beach Maxi Dress AP19 L XL",
+            "url": "http://www.etsy.com/listing/156515510/new-long-sundress-gown-summer-women?ref=&sref="
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Vintage 60s Sundress, Blue Floral 1960s Garden Party Dress, Peony Para...",
+            "url": "http://www.etsy.com/listing/156260240/vintage-60s-sundress-blue-floral-1960s?ref=&sref="
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Vintage 1950s Dress / 50s Sundress / 50s White Dress / Dove White",
+            "url": "http://www.etsy.com/listing/156790639/vintage-1950s-dress-50s-sundress-50s?ref=&sref="
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "1950s cotton sundress // 1950s KERRYBROOKE cobalt blue and white sundr...",
+            "url": "http://www.etsy.com/listing/154883460/1950s-cotton-sundress-1950s-kerrybrooke?ref=&sref="
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "BABY CLOTHES PATTERN / Sundress - Hat with Bow and Brim - Panties / Mi...",
+            "url": "http://www.etsy.com/listing/58732022/baby-clothes-pattern-sundress-hat-with?ref=&sref="
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "1950's 50's Halter Sundress Sun Dress Made in France",
+            "url": "http://www.etsy.com/listing/154577389/1950s-50s-halter-sundress-sun-dress-made?ref=&sref="
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Large Goose Sundress (Watermelon)",
+            "url": "http://www.etsy.com/listing/98054655/large-goose-sundress-watermelon?ref=&sref="
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Vintage 70s White Eyelet and Chambray Sundress (size small, medium)",
+            "url": "http://www.etsy.com/listing/151625944/vintage-70s-white-eyelet-and-chambray?ref=&sref="
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "SALE / vintage cotton sundress / LANZ print dress / tulip floral print...",
+            "url": "http://www.etsy.com/listing/152659045/sale-vintage-cotton-sundress-lanz-print?ref=&sref="
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Summer Sundress / Betty Barclay / 1950s dress / white openwork fabric ...",
+            "url": "http://www.etsy.com/listing/126276183/summer-sundress-betty-barclay-1950s?ref=&sref="
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "1950s sundress instructions PDF downloaded format",
+            "url": "http://www.etsy.com/listing/98758198/1950s-sundress-instructions-pdf?ref=&sref="
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "1980s Sundress/Lace-up back/ full skirt/ Geary Roark Kamisato/Floral D...",
+            "url": "http://www.etsy.com/listing/104344030/1980s-sundresslace-up-back-full-skirt?ref=&sref="
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "20% OFF SALE Vintage White Cotton Gauze Sundress with Embroidered Dais...",
+            "url": "http://www.etsy.com/listing/156202863/20-off-sale-vintage-white-cotton-gauze?ref=&sref="
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "summer dress. sundress. black dress. sleeveless",
+            "url": "http://www.etsy.com/listing/154464670/summer-dress-sundress-black-dress?ref=&sref="
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "70s vintage sundress - hibiscus flower pineapple print - hawaiian - op...",
+            "url": "http://www.etsy.com/listing/156786658/70s-vintage-sundress-hibiscus-flower?ref=&sref="
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Heartland Homespun PDF Knitting Pattern 46 Sundress and Bolero Jacket ...",
+            "url": "http://www.etsy.com/listing/154592248/heartland-homespun-pdf-knitting-pattern?ref=&sref="
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Boutique Custom Juvie Moon Designs ALIA Jumper Sundress PDF Pattern E ...",
+            "url": "http://www.etsy.com/listing/76301732/boutique-custom-juvie-moon-designs-alia?ref=&sref="
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "50s - brown and blue stripe sundress with metal zipper - size xs s",
+            "url": "http://www.etsy.com/listing/150791057/50s-brown-and-blue-stripe-sundress-with?ref=&sref="
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "1960s sundress / vintage peach tea dress Spring dress  (s/xs)",
+            "url": "http://www.etsy.com/listing/152628956/1960s-sundress-vintage-peach-tea-dress?ref=&sref="
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Gathered Sundress Pattern",
+            "url": "http://www.etsy.com/listing/73102801/gathered-sundress-pattern?ref=&sref="
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Vintage Yellow Dress -50s Style Cotton Sundress - The Annette",
+            "url": "http://www.etsy.com/listing/156308905/vintage-yellow-dress-50s-style-cotton?ref=&sref="
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "1950s cotton sundress 50s floral print day dress size medium Vintage 5...",
+            "url": "http://www.etsy.com/listing/155704530/1950s-cotton-sundress-50s-floral-print?ref=&sref="
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Vintage 1960's/1970's Malia Sundress - Bright Tropical Summer ...",
+            "url": "http://www.etsy.com/listing/105185116/vintage-1960s1970s-malia-sundress-bright?ref=&sref="
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Womens Long Maxi Dress Summer Sundress Beach Cover Up Casual Peacock",
+            "url": "http://www.etsy.com/listing/126045851/womens-long-maxi-dress-summer-sundress?ref=&sref="
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "1950s Vintage Dress - Cotton Sundress - Novelty Print Les Fleurs",
+            "url": "http://www.etsy.com/listing/153776033/1950s-vintage-dress-cotton-sundress?ref=&sref="
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "White Linen Sundress Made to Order",
+            "url": "http://www.etsy.com/listing/153223989/white-linen-sundress-made-to-order?ref=&sref="
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Vintage 1960s Sundress / 60s Bias Plaid Halter Dress Navy Blue Red Gre...",
+            "url": "http://www.etsy.com/listing/156442008/vintage-1960s-sundress-60s-bias-plaid?ref=&sref="
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Vintage 1940s Sundress Darted V Bust Full Skirt Chevron Print Cotton S...",
+            "url": "http://www.etsy.com/listing/155765256/vintage-1940s-sundress-darted-v-bust?ref=&sref="
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Big Hat Sundress Party Invitations - Bachelorette, Bridal Shower, Birt...",
+            "url": "http://www.etsy.com/listing/154579589/big-hat-sundress-party-invitations?ref=&sref="
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "vintage 50s/60s stripe sundress / circle skirt / summer dress / chevro...",
+            "url": "http://www.etsy.com/listing/153079151/vintage-50s60s-stripe-sundress-circle?ref=&sref="
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Vintage 90s SUNDRESS yellow gingham &amp; floral grunge mini dress S-M c85...",
+            "url": "http://www.etsy.com/listing/123712551/vintage-90s-sundress-yellow-gingham?ref=&sref="
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Girl Pirate Power toddler and girl sundress etsykids team",
+            "url": "http://www.etsy.com/listing/151900832/girl-pirate-power-toddler-and-girl?ref=&sref="
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "1950s Dress Pale Yellow Cotton Sundress Tiki Atomic Print 50s Day Dres...",
+            "url": "http://www.etsy.com/listing/152180611/1950s-dress-pale-yellow-cotton-sundress?ref=&sref="
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1374472455,
+            "title": "Teenage Mutant Ninja Turtles Dress OOAK Upcycled Sundress M L XL Plus ...",
+            "url": "http://www.etsy.com/listing/122690887/teenage-mutant-ninja-turtles-dress-ooak?ref=&sref="
+        }
+    ],
+    "timestamp": 1374472455,
+    "url": "http://www.etsy.com:80/search?includes[]=tags&q=Sundress"
+}

@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "DND Flash Mosquito",
+    "offset": null,
+    "page": null,
+    "query": "DND Flash Mosquito",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "DND Mosquito Repellent Refill | Liquid Vapouriser | 50% Extra Power | Pack of 6 - 45 ml Each",
+            "url": "https://www.amazon.in/DND-Mosquito-Refill-Pack-6/dp/B07QMN1QQL/ref=sr_1_1?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-1&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Bodyguard Herbal Mosquito Repellent Spray With Goodness Of Essential Oils And Aloe Vera Extracts - 100 Ml",
+            "url": "https://www.amazon.in/Bodyguard-Mosquito-Repellent-Goodness-Essential/dp/B071GR7CJS/ref=sr_1_2?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-2&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "DND Flash Refill Dual Pack Mosquito Repellent Liquid Vaporiser ( Pack of 2)",
+            "url": "https://www.amazon.in/DND-Flash-Refill-Dual-Pack/dp/B07QRYDWGL/ref=sr_1_3?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-3&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Good Knight Power Activ+, Mosquito Repellent Refill (Pack of 2)",
+            "url": "https://www.amazon.in/Good-knight-Activ-Liquid-Refill/dp/B01N6BMUBK/ref=sr_1_4?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-4&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "DND Nanosol Flying Insect Killer | Mosquito Repellent Aerosol Spray | Instant Kill Action | 12 hrs Protection | 60ml",
+            "url": "https://www.amazon.in/DND-Nanosol-Flying-Insect-Killer/dp/B073ZFN763/ref=sr_1_5?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-5&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "DND Flash Mosquito Repellent Refill | Liquid Vaporiser | 3X Turbo Power | Pack of 6-45ml Each",
+            "url": "https://www.amazon.in/DND-Mosquito-Repellent-Liquid-Refill/dp/B08MT3GKPK/ref=sr_1_6?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-6&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Good knight Naturals, 4 Refills \u2013 Neem Mosquito Repellent with 100% Natural Active Ingredients (Safe for Kids and Adults)",
+            "url": "https://www.amazon.in/Goodknight-Naturals-Mosquito-Repellent-Refill/dp/B07X11SCM3/ref=sr_1_7?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-7&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "DND Mosquito Repellent Refill, 45 ml",
+            "url": "https://www.amazon.in/DND-Mosquito-Repellent-Refill/dp/B07QPPJMBG/ref=sr_1_8?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-8&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Odomos Protect - Mosquito repellent Liquid Vaporiser Refill , 45ml each (Pack of 3)",
+            "url": "https://www.amazon.in/Odomos-Protect-Mosquito-repellent-Vaporiser/dp/B0982FPTQS/ref=sr_1_9?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-9&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Good knight Naturals, Machine + 3 Refills, Neem Mosquito Repellent with 100% Natural Active Ingredients (Safe for Kids and Adults), 4 Piece Combo Pack, Clear",
+            "url": "https://www.amazon.in/Goodknight-Naturals-Mosquito-Repellent-Machine/dp/B07X786SRG/ref=sr_1_10?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-10&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Godrej HIT Anti Roach Gel - Cockroach Killer (20g), Kitchen Safe, Odourless, Fast and Convenient",
+            "url": "https://www.amazon.in/HIT-Ant1RoachGel-Anti-Roach-Gel/dp/B00YUNKKP8/ref=sr_1_11?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-11&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Mortein Mosquito Killer Liquid Vaporizer Refill - Buy 4, Get 2 Free Pack",
+            "url": "https://www.amazon.in/Mortein-Liquid-Vaporizer-Refill-Free/dp/B07YY9N6TY/ref=sr_1_12?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&sr=1-12&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Mortein 2-in-1 Mosquito &amp; Cockroach Killer - 400ml with Insta5 Vaporizer Refill (35 ml) - Pack of 4 + 2",
+            "url": "https://www.amazon.in/Mortein-All-Insect-Killer-Vaporizer/dp/B089MSD4N3/ref=sr_1_13?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&smid=AT95IG9ONZD7S&sr=1-13&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1633240377,
+            "title": "Mortein 2-in-1 All Insect Killer - 600ml + Mortein Insta5 Vaporizer Refill - 35 ml (Pack of 4 + 2 Free)",
+            "url": "https://www.amazon.in/Mortein-All-Insect-Killer-Vaporizer/dp/B089MVM3LR/ref=sr_1_14?dchild=1&keywords=DND+Flash+Mosquito&linkCode=sl2&m=AT95IG9ONZD7S&qid=1633247577&qsid=261-7960319-7601501&refinements=p_6%3AAT95IG9ONZD7S&s=garden&smid=AT95IG9ONZD7S&sr=1-14&sres=B07QMN1QQL%2CB071GR7CJS%2CB07QRYDWGL%2CB01N6BMUBK%2CB073ZFN763%2CB08MT3GKPK%2CB07X11SCM3%2CB07QPPJMBG%2CB0982FPTQS%2CB07X786SRG%2CB00YUNKKP8%2CB07YY9N6TY%2CB089MSD4N3%2CB089MVM3LR"
+        }
+    ],
+    "timestamp": 1633240377,
+    "url": "https://www.amazon.in/s?k=DND+Flash+Mosquito&i=lawngarden&rh=p_6:AT95IG9ONZD7S&s=price-asc-rank&dc=&linkCode=sl2&-21=&language=en_IN&ref_=as_li_ss_tl&tag=dealsnalert-21"
+}

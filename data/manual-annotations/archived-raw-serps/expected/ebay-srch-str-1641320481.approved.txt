@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "{srch_str}",
+    "offset": null,
+    "page": null,
+    "query": "{srch_str}",
+    "results": [],
+    "timestamp": 1641320481,
+    "url": "https://www.ebay.com.sg/sch/i.html?_nkw={srch_str}&ssPageName=GSTL"
+}

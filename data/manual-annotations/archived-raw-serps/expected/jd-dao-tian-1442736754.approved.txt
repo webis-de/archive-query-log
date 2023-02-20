@@ -1,0 +1,38 @@
+{
+    "interpreted_query": "\u7a3b\u7530",
+    "offset": null,
+    "page": null,
+    "query": "\u7a3b\u7530",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1442736754,
+            "title": "\u65e5\u672c\u8fdb\u53e3DentStar\u513f\u7ae5\u7259\u5237 2\u5c81\u4ee5\u4e0a\u5b9d\u5b9d\u4f7f\u7528 \u9ec4\u8272",
+            "url": "http://item.jd.com/1336981496.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1442736754,
+            "title": "\u65e5\u672c\u8fdb\u53e3DentStar\u513f\u7ae5\u7259\u5237 2\u5c81\u4ee5\u4e0a\u5b9d\u5b9d\u4f7f\u7528 \u7eff\u8272",
+            "url": "http://item.jd.com/1336981497.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1442736754,
+            "title": "\u65e5\u672c\u8fdb\u53e3DentStar\u513f\u7ae5\u7259\u5237 2\u5c81\u4ee5\u4e0a\u5b9d\u5b9d\u4f7f\u7528 \u7c89\u7ea2\u8272",
+            "url": "http://item.jd.com/1336981495.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1442736754,
+            "title": "\u65e5\u672c\u8fdb\u53e3DentStar\u513f\u7ae5\u7259\u5237 2\u5c81\u4ee5\u4e0a\u5b9d\u5b9d\u4f7f\u7528 \u84dd\u8272",
+            "url": "http://item.jd.com/1336981494.html"
+        }
+    ],
+    "timestamp": 1442736754,
+    "url": "http://search.jd.com/search?keyword=%E7%A8%BB%E7%94%B0&enc=utf-8&qrst=1&et=5&rt=1&stop=1&vt=2&ev=exbrand_%E7%A8%BB%E7%94%B0%EF%BC%88DENTSTAR%EF%BC%89%40&uc=0"
+}

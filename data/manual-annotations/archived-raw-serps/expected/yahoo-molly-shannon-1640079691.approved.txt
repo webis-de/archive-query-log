@@ -1,0 +1,59 @@
+{
+    "interpreted_query": "Molly Shannon",
+    "offset": null,
+    "page": null,
+    "query": "Molly Shannon",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Molly</em> Helen <em>Shannon</em> (born September 16, 1964) is an American actress and comedian, who was a cast member on Saturday Night Live from 1995 to 2001. In 2017 she won the Film Independent Spirit Award for Best Supporting Actress for her role in the film Other People.",
+            "timestamp": 1640079691,
+            "title": "en.wikipedia.org \u203a wiki \u203a Molly_Shannon<em>Molly Shannon</em> - <em>Wikipedia</em>",
+            "url": "https://en.wikipedia.org/wiki/Molly_Shannon"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Molly Shannon</em>, Actress: Superstar. <em>Molly Shannon</em> spent six seasons as a member of the repertory company on Saturday Night Live (1995 - 2001), primarily known for the eclectic characters she created, such as Mary Katherine Gallagher, Sally O'Malley, Helen Madden: Licensed Joyologist, and Terry Rialto, the National Public Radio host for The Delicious Dish.",
+            "timestamp": 1640079691,
+            "title": "www.imdb.com \u203a name \u203a nm0788340<em>Molly Shannon</em> - <em>IMDb</em>",
+            "url": "https://www.imdb.com/name/nm0788340/"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Molly Shannon</em> spent six seasons as a member of the repertory company on Saturday Night Live (1995 - 2001), primarily known for the eclectic characters she created, such as Mary Katherine Gallagher, Sally O'Malley, Helen Madden: Licensed Joyologist, and Terry Rialto, the National Public Radio host for The Delicious Dish.",
+            "timestamp": 1640079691,
+            "title": "www.imdb.com \u203a name \u203a nm0788340<em>Molly Shannon</em> - <em>Biography</em> - <em>IMDb</em>",
+            "url": "https://www.imdb.com/name/nm0788340/bio"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Molly Shannon</em> beim Tribeca Film Festival 2008 <em>Molly</em> Helen <em>Shannon</em> (* 16. September 1964 in Shaker Heights , Ohio ) ist eine US-amerikanische Schauspielerin .",
+            "timestamp": 1640079691,
+            "title": "de.wikipedia.org \u203a wiki \u203a Molly_Shannon<em>Molly Shannon</em> \u2013 Wikipedia",
+            "url": "https://de.wikipedia.org/wiki/Molly_Shannon"
+        },
+        {
+            "rank": 5,
+            "snippet": "Dec 08, 2021 \u00b7  <em>Molly Shannon</em> opened The Hollywood Reporter\u2019s annual Women in Entertainment gala, presented by Lifetime, on Wednesday by celebrating the women who have created \u201ca sea change\u201d in the ...",
+            "timestamp": 1640079691,
+            "title": "www.hollywoodreporter.com \u203a news \u203a general-news<em>Molly Shannon</em> Celebrates Women in Hollywood Creating \u201cSea ...",
+            "url": "https://www.hollywoodreporter.com/news/general-news/molly-shannon-women-hollywood-change-1235059337/"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Molly</em>, a 2016 Australian miniseries; <em>Molly</em>, a 1973 Broadway musical; <em>Molly</em>, a character in Bubble Guppies; Music. Olga Seryabkina (born 1985), Russian singer-songwriter also known under her stage name as <em>Molly</em>; <em>Molly</em> Smitten-Downes (born 1987), English singer-songwriter known by the mononym <em>Molly</em> \"<em>Molly</em>\" (Bobby Goldsboro song)",
+            "timestamp": 1640079691,
+            "title": "en.wikipedia.org \u203a wiki \u203a Molly<em>Molly</em> - <em>Wikipedia</em>",
+            "url": "https://en.wikipedia.org/wiki/Molly"
+        },
+        {
+            "rank": 7,
+            "snippet": "Nov 22, 2021 \u00b7  <em>Molly Shannon</em> was active on SNL at the same time as Will Ferrell, and the two had a pretty close relationship as friends. Ferrell played in a lot of her Mary Katherine Gallagher skits as a priest ...",
+            "timestamp": 1640079691,
+            "title": "www.cinemablend.com \u203a television \u203a molly-shannon<em>Molly Shannon</em> Talks One SNL Character That Was Really Hard To ...",
+            "url": "https://www.cinemablend.com/television/molly-shannon-talks-one-snl-character-that-was-really-hard-to-get-on-the-show"
+        }
+    ],
+    "timestamp": 1640079691,
+    "url": "https://search.yahoo.com/search?p=Molly%20Shannon"
+}

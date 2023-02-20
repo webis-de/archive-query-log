@@ -8,6 +8,7 @@ from fastwarc import GZipStream, FileStream, ArchiveIterator, WarcRecordType, \
     WarcRecord
 from marshmallow import Schema
 
+from web_archive_query_log import LOGGER
 from web_archive_query_log.model import ArchivedQueryUrl, ArchivedRawSerp
 
 
@@ -51,11 +52,17 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
     def _archived_serp_url_schema(self) -> Schema:
         return ArchivedQueryUrl.schema()
 
-    def _read_serp_content(self, record: WarcRecord) -> ArchivedRawSerp:
+    def _read_serp_content(self, record: WarcRecord) -> ArchivedRawSerp | None:
         archived_serp_url: ArchivedQueryUrl
-        archived_serp_url = self._archived_serp_url_schema.loads(
-            record.headers["Archived-URL"]
-        )
+        record_url_header = record.headers["Archived-URL"]
+        try:
+            archived_serp_url = self._archived_serp_url_schema.loads(
+                record_url_header
+            )
+        except JSONDecodeError:
+            LOGGER.warning(f"Could not index {record_url_header} "
+                           f"from record {record.record_id}.")
+            return None
         content_type = record.http_charset
         if content_type is None:
             content_type = "utf8"
@@ -71,14 +78,16 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
 
     def __iter__(self) -> Iterator[ArchivedRawSerp]:
         for path, stream in self._streams():
+            failures = False
             for record in ArchiveIterator(
                     stream,
                     record_types=WarcRecordType.response,
                     parse_http=True,
             ):
-                try:
-                    yield self._read_serp_content(record)
-                except JSONDecodeError as e:
-                    print(f"Error decoding JSON "
-                          f"from record {record.record_id} at {path}.")
-                    raise e
+                serp = self._read_serp_content(record)
+                if serp is None:
+                    failures = True
+                    continue
+                yield serp
+            if failures:
+                LOGGER.warning(f"Failed to index some records from {path}.")

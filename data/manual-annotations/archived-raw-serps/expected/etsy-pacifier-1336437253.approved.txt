@@ -1,0 +1,318 @@
+{
+    "interpreted_query": "pacifier",
+    "offset": null,
+    "page": null,
+    "query": "pacifier",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Swinky Binky Girl Pacifier Clip",
+            "url": "http://www.etsy.com/listing/98873266/swinky-binky-girl-pacifier-clip?ref=sc_1&sref=sr_6d92562c317b326168cb7da55b015fa553f1c3135585e800a7e1aec60dc7aaec_1336444453_14250769_pacifier"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Little Monster Pacifier Clips",
+            "url": "http://www.etsy.com/listing/98131981/little-monster-pacifier-clips?ref=sc_2&sref=sr_c6da4c44f72a3ff335a6293ec098ce8c97d2ca48effa07786c51609f0b96081c_1336444453_14245206_pacifier"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Baby Blue Leopard Pacifier Clip",
+            "url": "http://www.etsy.com/listing/95685539/baby-blue-leopard-pacifier-clip?ref=sc_3&sref=sr_44297f15bd6d81780e3ab8788ba4973e9f00382961152e7abf0abea385067f17_1336444453_14225264_pacifier"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Burp Cloth Travel Wipes and Pacifier Clip Gift SET Blueberry Blue Retr...",
+            "url": "http://www.etsy.com/listing/95826774/burp-cloth-travel-wipes-and-pacifier?ref=sc_4&sref=sr_bf3ed09a3a6871fedd446a1e1064aa91a7481adb55d1cfa3e0f5bb12e6886673_1336444453_14227340_pacifier"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Pink OR Lavender Checked Ruffle Soothie/Pacifier Clip",
+            "url": "http://www.etsy.com/listing/94098080/pink-or-lavender-checked-ruffle?ref=&sref="
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "mustache pacifier",
+            "url": "http://www.etsy.com/listing/97517269/mustache-pacifier?ref=&sref="
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "BagEnvy Handbags' Pacifier Pouch - In Optic Blossom - Or Custom Ma...",
+            "url": "http://www.etsy.com/listing/91207019/bagenvy-handbags-pacifier-pouch-in-optic?ref=&sref="
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Pacifier - Toy -  Clip - Owls - Cream Elephants on Gray",
+            "url": "http://www.etsy.com/listing/85179220/pacifier-toy-clip-owls-cream-elephants?ref=&sref="
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Green Elephants PaciTail - Personalized Pacifier Clip",
+            "url": "http://www.etsy.com/listing/53551216/green-elephants-pacitail-personalized?ref=&sref="
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "PERSONALIZED Ribbon Tag Blankie with Pacifier Clip, Large 16 x 16 Cars...",
+            "url": "http://www.etsy.com/listing/66525047/personalized-ribbon-tag-blankie-with?ref=&sref="
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "10 Metal Pacifier Clips - 1\" or 2.5 cm Suspender / Pacifier / Bib...",
+            "url": "http://www.etsy.com/listing/60663793/10-metal-pacifier-clips-1-or-25-cm?ref=&sref="
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Pacifier Clip - Personalized",
+            "url": "http://www.etsy.com/listing/61524710/pacifier-clip-personalized?ref=&sref="
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Ready to Ship, Light Pink and Clear Bling Pacifier/Binky Clip",
+            "url": "http://www.etsy.com/listing/93484945/ready-to-ship-light-pink-and-clear-bling?ref=&sref="
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Soothie Pacifier Clips - Baby Boy or Girl Choose Any Five Paci Clips -...",
+            "url": "http://www.etsy.com/listing/81162644/soothie-pacifier-clips-baby-boy-or-girl?ref=&sref="
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Blue Zoo Pacifier Bib -Reversible White Minky Dot",
+            "url": "http://www.etsy.com/listing/54905105/blue-zoo-pacifier-bib-reversible-white?ref=&sref="
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Pacifier Clip // Ruffle Girl // White RUFFLE with Pink and Green. Fits...",
+            "url": "http://www.etsy.com/listing/60833955/pacifier-clip-ruffle-girl-white-ruffle?ref=&sref="
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Boutique Custom Monogrammed Personalized Pacifier Clip Leash",
+            "url": "http://www.etsy.com/listing/62738744/boutique-custom-monogrammed-personalized?ref=&sref="
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Universal Pacifier Clip gray with purple flower",
+            "url": "http://www.etsy.com/listing/99331075/universal-pacifier-clip-gray-with-purple?ref=&sref="
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Boy PACIFIER CLIP- Baby Paci Clip For Boy or Girl - Hedge Hog Binky Sa...",
+            "url": "http://www.etsy.com/listing/69325906/boy-pacifier-clip-baby-paci-clip-for-boy?ref=&sref="
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Design Stamp - BABY PACIFIER or BINKIE - 6mm stamped image by ImpressA...",
+            "url": "http://www.etsy.com/listing/69299155/design-stamp-baby-pacifier-or-binkie-6mm?ref=&sref="
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Goth Baby Pacifier Security Blanket Binky Holder Lovey (( SALE ))",
+            "url": "http://www.etsy.com/listing/70596080/goth-baby-pacifier-security-blanket?ref=&sref="
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Rose Gold Pacifier Necklace -  Big Baby Necklace",
+            "url": "http://www.etsy.com/listing/67550434/rose-gold-pacifier-necklace-big-baby?ref=&sref="
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "50 ENAMEL Paci Pacifier Mitten Suspender Clips LEAD FREE Round  1inch-...",
+            "url": "http://www.etsy.com/listing/81406295/50-enamel-paci-pacifier-mitten-suspender?ref=&sref="
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Orange &amp; Cream Floral Pacifier Clip for Baby",
+            "url": "http://www.etsy.com/listing/99326442/orange-cream-floral-pacifier-clip-for?ref=&sref="
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Adult Baby Pacifier Clip - Made to Order",
+            "url": "http://www.etsy.com/listing/80551623/adult-baby-pacifier-clip-made-to-order?ref=&sref="
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Beaded Pacifier/Binky Clip: \"Ella\"",
+            "url": "http://www.etsy.com/listing/84607527/beaded-pacifierbinky-clip-ella?ref=&sref="
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Pacifier Pyramid/Coin Purse/Jewelry Bag/Small Item/Gift PouchTriangle ...",
+            "url": "http://www.etsy.com/listing/77198947/pacifier-pyramidcoin-pursejewelry?ref=&sref="
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "AlligatorSnaps Custom Pacifier Clip/ Sophie Leash",
+            "url": "http://www.etsy.com/listing/86915117/alligatorsnaps-custom-pacifier-clip?ref=&sref="
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "The Pacifier Keeper - PDF Sewing Pattern with BONUS Fabric Guide Ruler",
+            "url": "http://www.etsy.com/listing/80040380/the-pacifier-keeper-pdf-sewing-pattern?ref=&sref="
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Baby Pacifier Clip - Cats - Free Shipping",
+            "url": "http://www.etsy.com/listing/99320262/baby-pacifier-clip-cats-free-shipping?ref=&sref="
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Pacifier Clip...Crochet Cotton",
+            "url": "http://www.etsy.com/listing/99313197/pacifier-clipcrochet-cotton?ref=&sref="
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Crocheted Mini Pacifier &amp; Bib set for your 5\" Berenguer or Simila...",
+            "url": "http://www.etsy.com/listing/99320120/crocheted-mini-pacifier-bib-set-for-your?ref=&sref="
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Universal Set of Reversible Pacifier Clips",
+            "url": "http://www.etsy.com/listing/99314513/universal-set-of-reversible-pacifier?ref=&sref="
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Monogram Pacifier Holder Baby Boy or Girl Personalized Soothie Clip No...",
+            "url": "http://www.etsy.com/listing/96790693/monogram-pacifier-holder-baby-boy-or?ref=&sref="
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Dark Pink Daisy Flower Polka Dot Pacifier Clip",
+            "url": "http://www.etsy.com/listing/99312859/dark-pink-daisy-flower-polka-dot?ref=&sref="
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Made To Order Baby Shower Party Favor Babycake- Pacifier Fake Cupcakes",
+            "url": "http://www.etsy.com/listing/91523566/made-to-order-baby-shower-party-favor?ref=&sref="
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Pacifier Clip - Pink and Black Leopard Print",
+            "url": "http://www.etsy.com/listing/79273690/pacifier-clip-pink-and-black-leopard?ref=&sref="
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Kissy Face- Hand Painted Custom Pacifier",
+            "url": "http://www.etsy.com/listing/82398755/kissy-face-hand-painted-custom-pacifier?ref=&sref="
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Beautiful Handmade Pacifier/ Princess/ Unique Gift/ Baby Shower/ Bling...",
+            "url": "http://www.etsy.com/listing/92163544/beautiful-handmade-pacifier-princess?ref=&sref="
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Black Mustache pacifier 0 to 6 months",
+            "url": "http://www.etsy.com/listing/90222860/black-mustache-pacifier-0-to-6-months?ref=&sref="
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Bubblegum Glitzy Bling Pacifier",
+            "url": "http://www.etsy.com/listing/94215477/bubblegum-glitzy-bling-pacifier?ref=&sref="
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Under the Sea Pacifier Snugglie",
+            "url": "http://www.etsy.com/listing/99315378/under-the-sea-pacifier-snugglie?ref=&sref="
+        },
+        {
+            "rank": 43,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Made to Order Pacifier Clip",
+            "url": "http://www.etsy.com/listing/99306699/made-to-order-pacifier-clip?ref=&sref="
+        },
+        {
+            "rank": 44,
+            "snippet": null,
+            "timestamp": 1336437253,
+            "title": "Swarovski Crystal Pacifier Clip - Multi Colored Owl Print",
+            "url": "http://www.etsy.com/listing/99304210/swarovski-crystal-pacifier-clip-multi?ref=&sref="
+        }
+    ],
+    "timestamp": 1336437253,
+    "url": "http://www.etsy.com:80/search?includes[]=tags&q=pacifier"
+}

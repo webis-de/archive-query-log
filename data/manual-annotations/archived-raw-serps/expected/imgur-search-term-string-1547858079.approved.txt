@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "{search_term_string}",
+    "offset": null,
+    "page": null,
+    "query": "{search_term_string}",
+    "results": [],
+    "timestamp": 1547858079,
+    "url": "https://imgur.com/search?q={search_term_string}"
+}

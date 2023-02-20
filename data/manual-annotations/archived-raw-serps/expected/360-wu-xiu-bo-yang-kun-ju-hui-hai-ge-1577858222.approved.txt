@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\u5434\u79c0\u6ce2\u6768\u5764\u805a\u4f1a\u55e8\u6b4c",
+    "offset": null,
+    "page": null,
+    "query": "\u5434\u79c0\u6ce2\u6768\u5764\u805a\u4f1a\u55e8\u6b4c",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u6df1\u60c5\u6295\u5165",
+            "url": "https://www.360kuai.com/pc/9c6ba23e252481fd1?cota=3&kuai_so=1&sign=360_57c3bbd1&refer_scene=so_1"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u6df1\u60c5\u6295\u5165_\u7f51\u6613\u5a31\u4e50",
+            "url": "https://www.so.com/link?m=aB24bnJ6DOTARkickLOKDUOp8f02wqBuLrwlxMjjHBn7fOdptKzDe4HQaevIkgskB986vDWW0wm3bZmOR5WV1crMJyv%2FaxV3XZnHDu8SuJkO%2BSWVjueqGtgYg9y2pw17I1sdCaFpererkBpM%2FthK5WjknS6SCeDT%2Fk3Gv95rU%2FVvuqVRdR%2BKT%2FZUm2f5drJRYFIh6GnWxJXydCeRHcaVPjQJDQwkkW0vX1GVCTBD2UmHkXeTplnXqWAprpCM%3D"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u6df1\u60c5\u6295\u5165--\u5e02\u573a\u5468\u520a\u6742\u5fd7\u793e\u5b98\u7f51",
+            "url": "https://www.so.com/link?m=ajjRwPppZ2xSawyZMMU2LowExIpqlCi%2BjYftkdQYls%2BZE2dwPhtiJRiz%2F2VyO8M6qsG7Vqy5CIvoXlamQxW5cLLvbX1jCLBPxh4rx40NhVMw0VzeIWKWbjN06FHnXu877FkF3fF3vLNrgiyCc7QZrETaxOfEiHhuRwHJbnC%2F%2BAl1Ubp2VKgfmO3SsRv7TNiaXVMk41LgIFEygvQSysScHlUAa1Ur%2BncKxEpM97Z8Gcgw%3D"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u6df1\u60c5\u6295\u5165_\u516b\u5366\u65b0\u95fb_\u725b\u7ad9",
+            "url": "https://www.niuzhan.com/Bago/143199.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u6df1\u60c5\u6295\u5165_\u8354\u679d\u7f51\u65b0\u95fb",
+            "url": "https://www.so.com/link?m=al1MVyCjc8plCbLHiP%2Bkr%2Bnxg99KSSf0HBENn4EJWNBR7PoVSQ4ue5B8gvsB0Ul2bpmLPXvM%2FvwqyGWhwaZEEfN3zwK6cKc9YS9VJVHy2QpHLXSBKKaxF8ryezxGKmsIFsiUD1kxMR2vg6OSzbX%2Bu9%2BshPR6AfldSKKenQIlxb%2BBzC6mBueWs1UuHLPRhhqITn9RwnWDzlPod9smMPUzPa36SfHBAA3eV3D2z8EF%2Fna1SwcCRH8XUAht2l3k%3D"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u5341\u5206\u6295\u5165-\u95fd\u5357\u7f51",
+            "url": "https://www.so.com/link?m=atLqApu6hEklhxzgE5EnqfjMOiMRwNqFz1jEIHmw2IUbCyrkgt1bPMcCUrcYf7SU8dqRSFJ7y8PIsvdxqduRwKxRfAWJ45dNPhNO8mlk95ymbPQ4LFPSldzFQUb8upoiJbDUSx1TdA7JWhJa2iredZ3B1KLobx00FfZK4lMIRSK2zNLVV311DCpoaYZ0eVQ0fkT%2BBeQp7cl7heXC7AtrpeZhSWT1oHfqQWRJ%2FlFxqEHk%3D"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u6df1\u60c5\u6295\u5165|<em>\u5434\u79c0\u6ce2|\u6768\u5764</em>-\u897f\u5a31\u8bb0_...",
+            "url": "https://www.so.com/link?m=a2B4KP4yrr5mwS5K7lnTIOAjxwtQdDwRk9jK3BxmnBWw73DeEuxG8S9cXSW5iDtcy1j7glTYmXhmgkpeep3VLNDuEK814fY04%2B%2Ffgzn2F5t3HQ5KBmBuAq9bnupNYtBsVavXaEbm4zfG7pAbggXuWUqE40NvA0gglZOoDLs8Va1Sg0zIvqAumYJXLB24Pb8KIXMp1OS1eBOpHIuAzyrLN0XasdbF%2BOw7dAfs4BL0JntFUSxCLvHIaeg%3D%3D"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u6df1\u60c5\u6295\u5165- \u5c01\u9762\u65b0\u95fb",
+            "url": "https://www.so.com/link?m=a5ampT4XCCOGo3ui%2FZH56h9SY%2F%2Bkez4%2FO%2FP6519%2BJYg%2Bol05A2Dnr%2BmF6CoPyFE7f7jB4en%2FPtC8MlDVY%2Bnv0Nu8RcRvw2td8hX5hxTKgXUstuR0OduuWWXNm59WYqsmg9zT91wZMw1CElqDxRcq%2F%2BvoOAsaJAdKk0p3f3qc9b%2FRz4%2FcejsdUa6Ny30ELvKRwRijdezKA1jDclJAkgTyak0ZCCH6mXYDr"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1577858222,
+            "title": "<em>\u5434\u79c0\u6ce2</em>\u4e0e<em>\u6768\u5764</em>KTV<em>\u805a\u4f1a\u55e8\u6b4c</em>\u8fb9\u5531\u8fb9\u8df3\u5341\u5206\u6295\u5165_\u6df1\u5733\u70ed\u7ebf",
+            "url": "https://www.so.com/link?m=a%2FS5jkhSxu8MFgpwB7%2BIMkJ9cCOdi6DAk05hofWu%2BPaV5GdZE%2BuBWHLGiK7Xws6YO6lgo0AJBnYqIw3r%2Fkfx%2F18QhwZoXyw7V8twEkYY%2BZemu4hylUTwdrMAaRcqKi7kc%2FZvKM9Ebulxs75Jlh60T7WSzAzNGXyrIMIzHTLYcIaPuam49c7aykBkaMq8Z7ZK4AtymO%2F%2BbMbFzZdFUeRV41jpxhz4Tkp7BmdYlrnFrVif9YJO5tm68uunc7N2TuCzA"
+        }
+    ],
+    "timestamp": 1577858222,
+    "url": "https://www.so.com/s?ie=utf-8&src=know_side_nlp_sohot_online&q=%E5%90%B4%E7%A7%80%E6%B3%A2%E6%9D%A8%E5%9D%A4%E8%81%9A%E4%BC%9A%E5%97%A8%E6%AD%8C&ob_ext=%7B%22rsv_cq%22%3A%22%5Cu4e2a%5Cu4eba%5Cu6570%5Cu636e%5Cu6cc4%5Cu9732%22%2C%22rt%22%3A%22%5Cu5b9e%5Cu65f6%5Cu70ed%5Cu641c%22%2C%22rclken%22%3Anull%7D"
+}

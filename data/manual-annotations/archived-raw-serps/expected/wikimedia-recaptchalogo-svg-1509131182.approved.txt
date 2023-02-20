@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "RecaptchaLogo.svg",
+    "offset": null,
+    "page": null,
+    "query": "RecaptchaLogo.svg",
+    "results": [],
+    "timestamp": 1509131182,
+    "url": "https://www.wikidata.org/w/index.php?title=Special:Search&profile=images&search=RecaptchaLogo.svg&fulltext=1"
+}

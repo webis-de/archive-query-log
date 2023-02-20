@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"castle heights\" angeles",
+    "offset": null,
+    "page": null,
+    "query": "\"castle heights\" angeles",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Castle Heights</em> is a neighborhood on the Westside of the city of <em>Los Angeles</em>, California. Founded in 1922, the neighborhood contains roughly 900 single-family residences, along with multi-family <em>apartments and condominiums</em> with a limited amount of commercial properties.",
+            "timestamp": 1611631735,
+            "title": "Castle Heights, Los Angeles - Wikipedia",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccA7j5XNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=https%3a%2f%2fen.wikipedia.org%2fwiki%2fCastle_Heights%2c_Los_Angeles/RK=2/RS=3Q8U44Jv7Pn3w1YzHFzVL0dR6KU-"
+        },
+        {
+            "rank": 2,
+            "snippet": "5,800 Sq. Ft. 3029 <em>Castle Heights </em>Ave, Los <em>Angeles</em>, CA 90034. 3029 <em>Castle Heights </em>Ave, Los <em>Angeles</em>, CA 90034. A sophisticated take on the classic modern farmhouse, gorgeous new construction built by one of Cheviot Hills most highly regarded builders, Bob Skibinski, no expense was spared in creating this stunning home.",
+            "timestamp": 1611631735,
+            "title": "Castle Heights, Los Angeles, CA Homes for Sale &amp; Real Estate ...",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccA9D5XNyoA;_ylu=Y29sbwNiZjEEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=https%3a%2f%2fwww.redfin.com%2fneighborhood%2f547463%2fCA%2fLos-Angeles%2fCastle-Heights/RK=2/RS=jVZ_CYZ1hAHwKFpact70Ec_4pC0-"
+        },
+        {
+            "rank": 3,
+            "snippet": "Browse 355 apartments for rent in Castle Heights Los <em>Angeles</em>, CA. Compare ratings, reviews, 3D floor plans, and high res images.",
+            "timestamp": 1611631735,
+            "title": "Castle Heights Apartments for Rent - Los Angeles, CA",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccA9j5XNyoA;_ylu=Y29sbwNiZjEEcG9zAzMEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=https%3a%2f%2fwww.apartmentguide.com%2fneighborhoods%2fCalifornia%2fLos-Angeles%2fCastle-Heights%2f/RK=2/RS=D8UQCcoFh4uvJmkqpUUTJEkQta0-"
+        },
+        {
+            "rank": 4,
+            "snippet": "Name and address for <em>Castle Heights</em> on 3325 <em>Castle Heights Ave</em>, <em>Los Angeles</em>, CA 90034 provided by ALN Apartment Data. This building is located in <em>Los Angeles in Los Angeles</em> County zip code 90034. <em>Boyle Heights and Cahuenga Pass</em> are nearby neighborhoods.",
+            "timestamp": 1611631735,
+            "title": "Castle Heights Apartment Rentals - Los Angeles, CA | Zillow",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccA.D5XNyoA;_ylu=Y29sbwNiZjEEcG9zAzQEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=https%3a%2f%2fwww.zillow.com%2fb%2fcastle-heights-los-angeles-ca-5Xk3Rh%2f/RK=2/RS=nmQ_u3vJ6adoLaS2QA5LgNUj1UU-"
+        },
+        {
+            "rank": 5,
+            "snippet": "Castle Heights Elementary School. <em>9755 Cattaraugus Avenue</em>. <em>Los Angeles CA 90034</em>. 310.839.4528 info@castleheightselementary.org",
+            "timestamp": 1611631735,
+            "title": "HOME | castleheights",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccA.j5XNyoA;_ylu=Y29sbwNiZjEEcG9zAzUEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=https%3a%2f%2fwww.castleheightselementary.org%2f/RK=2/RS=7uO.RS5_Dddc6uMCm5xsxEhPO4g-"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Castle Heights Apartments</em> is an apartment located in <em>Los Angeles County</em>, the 90034 ZIP Code, and the <em>Los Angeles Unified School District</em> attendance zone. Popular Searches Cities",
+            "timestamp": 1611631735,
+            "title": "Castle Heights Apartments - Los Angeles, CA | Apartments.com",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccA_D5XNyoA;_ylu=Y29sbwNiZjEEcG9zAzYEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=https%3a%2f%2fwww.apartments.com%2fcastle-heights-apartments-los-angeles-ca%2fjqk1rz4%2f/RK=2/RS=gr7ZLQWgrvMPeFDkinl_hgZz6rk-"
+        },
+        {
+            "rank": 7,
+            "snippet": "About <em>Castle Heights</em> The <em>Castle Heights neighborhood of L</em>.A.\u2019s <em>Westside</em> was established in 1922. Many of its family homes are dated between 1920 and 1940; and the architectural style is from the Spanish Revival era. Other homes and multi-family dwellings date from the early 60\u2019s when the last tract of houses was completed.",
+            "timestamp": 1611631735,
+            "title": "Castle Heights Homes For Sale - Castle Heights, Los Angeles CA",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccA_j5XNyoA;_ylu=Y29sbwNiZjEEcG9zAzcEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=https%3a%2f%2fwww.castleheightshomes.com%2f/RK=2/RS=UxPHgVmrVsSTHw3lkv_sXUgasHM-"
+        },
+        {
+            "rank": 8,
+            "snippet": "3029 Castle Heights Ave <em>,</em> Los <em>Angeles,</em> CA 90034-2727 is a single-family home listed for-sale at $5,250,000. The 5,800 sq. ft. home is a 6 bed, 8.0 bath property. Find 40 photos of the 3029 Castle Heights Ave home on <em>Zillow</em>. View more property details, sales history and Zestimate data on <em>Zillow</em>. MLS # 21680770",
+            "timestamp": 1611631735,
+            "title": "3029 Castle Heights Ave, Los Angeles, CA 90034 | MLS ...",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccAAD9XNyoA;_ylu=Y29sbwNiZjEEcG9zAzgEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=https%3a%2f%2fwww.zillow.com%2fhomedetails%2f3029-Castle-Heights-Ave-Los-Angeles-CA-90034%2f20495056_zpid%2f/RK=2/RS=ZBD2ndcFPpLd_NvXiNWFeHc9av0-"
+        },
+        {
+            "rank": 9,
+            "snippet": "3029 Castle Heights Ave, Los <em>Angeles</em>, CA 90034 . Welcome to THE RESORT: A jaw dropping, sophisticated ultra-modern residence with a stunning backyard oasis. This sleek home is an absolute entertainer\u2019s paradise, showcasing sharp lines, dramatic lighting and striking symmetry throughout.",
+            "timestamp": 1611631735,
+            "title": "3029 Castle Heights Ave Los Angeles, CA 90034",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKaCHmg9guccAAj9XNyoA;_ylu=Y29sbwNiZjEEcG9zAzkEdnRpZAMEc2VjA3Ny/RV=2/RE=1611664135/RO=10/RU=http%3a%2f%2f3029castleheights.com%2f/RK=2/RS=udIg9ZX_FTbASXqcBQwNvYMGeNw-"
+        }
+    ],
+    "timestamp": 1611631735,
+    "url": "http://search.yahoo.com/search?fr=sbcfp&p=%22castle+heights%22+angeles"
+}

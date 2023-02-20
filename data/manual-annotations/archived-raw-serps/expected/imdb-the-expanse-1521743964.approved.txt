@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "nv_sr_fn",
+    "offset": null,
+    "page": null,
+    "query": "the expanse",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "The Expanse",
+            "url": "http://www.imdb.com:80/title/tt3230854/?ref_=fn_al_tt_1"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "The Expanse",
+            "url": "http://www.imdb.com:80/title/tt0572254/?ref_=fn_al_tt_2"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "The Expanse: Expanded",
+            "url": "http://www.imdb.com:80/title/tt6583652/?ref_=fn_al_tt_3"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "Township Expansion",
+            "url": "http://www.imdb.com:80/name/nm2757416/?ref_=fn_al_nm_1"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "Expansion Strat\u00e9gie",
+            "url": "http://www.imdb.com:80/name/nm9696153/?ref_=fn_al_nm_2"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "expansion",
+            "url": "http://www.imdb.com:80/keyword/expansion/?ref_=fn_al_kw_1"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "trade-expansion",
+            "url": "http://www.imdb.com:80/keyword/trade-expansion/?ref_=fn_al_kw_2"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "Atlas and the Expanse",
+            "url": "http://www.imdb.com:80/company/co0664852/?ref_=fn_al_co_1"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1521743964,
+            "title": "Creative Expansions",
+            "url": "http://www.imdb.com:80/company/co0472134/?ref_=fn_al_co_2"
+        }
+    ],
+    "timestamp": 1521743964,
+    "url": "http://www.imdb.com:80/find?s=all&q=the+expanse"
+}

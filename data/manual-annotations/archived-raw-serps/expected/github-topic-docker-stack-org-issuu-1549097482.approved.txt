@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "topic:docker-stack org:issuu",
+    "offset": null,
+    "page": null,
+    "query": "topic:docker-stack org:issuu",
+    "results": [],
+    "timestamp": 1549097482,
+    "url": "https://github.com/search?q=topic%3Adocker-stack+org%3Aissuu&type=Users"
+}

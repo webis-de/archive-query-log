@@ -1,0 +1,115 @@
+{
+    "interpreted_query": "Concept Development Integration",
+    "offset": null,
+    "page": null,
+    "query": "Concept Development Integration",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Establishing data <em>integration</em> from on-prem to the cloud.\n\nEnd-to-end responsibility from the creation of the technical <em>concept</em> to the implementation.",
+            "timestamp": 1647187061,
+            "title": "Cloud &amp; Big Data Engineer (m/f/d)",
+            "url": "https://de.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0CAZ72ACI1wqdk3LnJmeWV3KCkZZoLuUV6hmK_RyhyQhvKvOuVFT6uCAeDeMNMwK1FGtq1ZapmWHUeUyr4bPmwdQBisJZCEm7MVGHNpHLZK--7lBcyWZRXrhNRI1VtQKx3_zVxlNcXMA9hyB5LJ9YQpHfe_XsqLZ0RV0VkHcCY9q9onmpkP7F4Zo68l3ZlUjAnphnFLIofQDdEx4eeKdJTv6gbgxZ-rOWC1PpBAP0WY8JjquMm-sSsD6lDU0EZ0nkifI7MEUyJOyUvsMliYujZPRMqtW6v8igXNyPMXgb48fcs_-YAPaWzG3PGIDuguzdhNqvhn-g39ND0aVjGlshxgr0UJSPYop15Y_xFJaFiVW9yeCa2KCgu6Bct5Z35xXr7qKjmu97ydCC-srN1A94p6uODeJ9F_LyUyVbJ7iJZw1VK4i-eLf6MhZ76M9kf0IlI-U1NyICfSGD9P0k8gBmgBnXGdkWLcRR9bQE_JxP7BxQZt1UeodP_JQC7nBbK9FrsWdsbauzFHn5B1EHdV1xxTFN3xej6Agz2BodSn_eq3mjJdl3LY0eIFT9K4BVNQuACxu-SZERFbPgMifH7aRsOOxINnlKTa578lFrlV67PTt0UJPc7IVjCXFPANB6OMdEPGnGXUpDrvFrX-vgAleps8izE_9SI6o7A=&p=0&fvj=0&vjs=3"
+        },
+        {
+            "rank": 2,
+            "snippet": "Write automatic tests and <em>integration</em> with existing systems or platforms.\n\nSupport the <em>development</em> and get to know all systems and processes.",
+            "timestamp": 1647187061,
+            "title": "Working Student (m/w/d) \u2013 JavaScript Development",
+            "url": "https://de.indeed.com/rc/clk?jk=c28fe28c57ba99f7&fccid=29d37d43c382c8fe&vjs=3"
+        },
+        {
+            "rank": 3,
+            "snippet": "&gt; Professional <em>development</em> <em>concept</em> including constant individual trainings.\n\n&gt; You are continuously expanding the existing test <em>concept</em>, test strategy and test\u2026",
+            "timestamp": 1647187061,
+            "title": "Test Engineer (w/m/d)",
+            "url": "https://de.indeed.com/company/Pixida-GmbH/jobs/Test-Engineer-13abe70867aa59f9?fccid=5c9ab3a830b65a22&vjs=3"
+        },
+        {
+            "rank": 4,
+            "snippet": "You are responsible for the targeted <em>integration</em> of the architectures into the overall systems, taking into account existing IT system landscapes.",
+            "timestamp": 1647187061,
+            "title": "Solution Architect (m/w/d)",
+            "url": "https://de.indeed.com/rc/clk?jk=e1f439f5ac2c751f&fccid=ea6bb53f0b18b8f2&vjs=3"
+        },
+        {
+            "rank": 5,
+            "snippet": "Take ownership of advanced proof of <em>concept</em> (PoC) testing in strategic accounts.\n\nProvide demos for strategic prospects and current accounts in all facets of\u2026",
+            "timestamp": 1647187061,
+            "title": "Prisma Cloud Solutions Architect - Global Accounts",
+            "url": "https://de.indeed.com/rc/clk?jk=cebf4fcb2f4d3fd9&fccid=0562f887e2bed9ea&vjs=3"
+        },
+        {
+            "rank": 6,
+            "snippet": "Good understanding of Basic Audio DSP HW/SW concept.\n\n3+ years of Android framework software <em>development</em> experience in production level.",
+            "timestamp": 1647187061,
+            "title": "Software Architect Audio (m/f/d)",
+            "url": "https://de.indeed.com/rc/clk?jk=cce687e25a4975c1&fccid=4faf342d2307e9ed&vjs=3"
+        },
+        {
+            "rank": 7,
+            "snippet": "In a proof of <em>concept</em>, you demonstrate your deep technical understanding and let your software <em>development</em> skills shine.",
+            "timestamp": 1647187061,
+            "title": "neuIoT Backend Developer",
+            "url": "https://de.indeed.com/rc/clk?jk=b49c1ab2f73639cc&fccid=963f2edbf71c4b4d&vjs=3"
+        },
+        {
+            "rank": 8,
+            "snippet": "JetBrains is best known for IntelliJ IDEA, the smartest IDE for Java and other programming languages, and ReSharper, the most popular extension for Microsoft\u2026",
+            "timestamp": 1647187061,
+            "title": "Desktop Developer (JetPack Compose)",
+            "url": "https://de.indeed.com/rc/clk?jk=3d75095e163f1282&fccid=f229b354f5d64873&vjs=3"
+        },
+        {
+            "rank": 9,
+            "snippet": "4-8 years of experience in ADAS and AD system <em>development</em>, hardware <em>development</em> or software <em>development</em> in automotive industry, and at least 2 years of\u2026",
+            "timestamp": 1647187061,
+            "title": "System Engineer (m/w/d)",
+            "url": "https://de.indeed.com/rc/clk?jk=df708cdcba315d0f&fccid=254ad00cf333484f&vjs=3"
+        },
+        {
+            "rank": 10,
+            "snippet": "Manage the <em>development</em> of entire automotive interior from early <em>concept</em> sketch through to production.\n\nResponsible for both <em>concept</em> and production interiors of\u2026",
+            "timestamp": 1647187061,
+            "title": "Automotive Interior Design Manager",
+            "url": "https://de.indeed.com/rc/clk?jk=89f6bcb5b67484b3&fccid=38c354bb9b09f488&vjs=3"
+        },
+        {
+            "rank": 11,
+            "snippet": "Experience in AUTOSAR software <em>development</em> or <em>integration</em> projects.\n\nSupporting customer evaluations and \u201cproofs of concept\u201d.",
+            "timestamp": 1647187061,
+            "title": "Application Engineer (m/f/d) Automotive - (EDAS&amp;MK ESA - SIS...",
+            "url": "https://de.indeed.com/rc/clk?jk=937723d76f11b564&fccid=ea6bb53f0b18b8f2&vjs=3"
+        },
+        {
+            "rank": 12,
+            "snippet": "Design and further <em>development</em> of a future-oriented tool environment for software developments.\n\nConsulting and support for the introduction and further\u2026",
+            "timestamp": 1647187061,
+            "title": "Software Developer | DevOps (m/f/d)",
+            "url": "https://de.indeed.com/rc/clk?jk=4df500f93b44810a&fccid=14d88d8688c936b9&vjs=3"
+        },
+        {
+            "rank": 13,
+            "snippet": "Holistic and agile data acquisition system &amp; measurement infrastructure <em>development</em>, including <em>concept</em>, design and documentation.\n\nYour role and your team: *.",
+            "timestamp": 1647187061,
+            "title": "Data Engineer (m/w/d)",
+            "url": "https://de.indeed.com/company/TempSearch-GmbH/jobs/Data-Engineer-429142a692f402d4?fccid=488c11e00501194a&vjs=3"
+        },
+        {
+            "rank": 14,
+            "snippet": "Good exposure to Agile software <em>development</em> and DevOps practices such as Infrastructure as Code (IaC), Continuous <em>Integration</em> and automated deployment.",
+            "timestamp": 1647187061,
+            "title": "neuCloud Application Architect",
+            "url": "https://de.indeed.com/rc/clk?jk=9c6ea6d3d8625959&fccid=fe2d21eef233e94a&vjs=3"
+        },
+        {
+            "rank": 15,
+            "snippet": "Working experience in embedded hardware and software <em>development</em> and <em>integration</em> of networked control units.\n\nDesign and construction of prototypes for proof of\u2026",
+            "timestamp": 1647187061,
+            "title": "System Engineer Hardware/Software (m/f/d) - Automotive",
+            "url": "https://de.indeed.com/rc/clk?jk=8ca76bd7f09c995a&fccid=44ec32abccf74dc9&vjs=3"
+        }
+    ],
+    "timestamp": 1647187061,
+    "url": "https://de.indeed.com/jobs?q=Concept+Development+Integration&l=M%C3%BCnchen"
+}

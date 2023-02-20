@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "learn to focus",
+    "offset": null,
+    "page": null,
+    "query": "learn to focus",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Jun 16, 2020 \u00b7  <em>Learn to Focus</em> Conscious<em> focus</em> of attention is a skill that can be learned through deliberate practice. The best proof comes from Hindu ascetics who do such astonishing things as voluntarily...",
+            "timestamp": 1619373855,
+            "title": "Learn How to Focus | Psychology Today",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMAvghXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fwww.psychologytoday.com%2fus%2fblog%2fmemory-medic%2f202006%2flearn-how-focus/RK=2/RS=x0stzEBUMwu7781xZ8x1QqPQJaY-"
+        },
+        {
+            "rank": 2,
+            "snippet": "The most powerful factor in<em> focus</em> is your state. If you\u2019re wondering how to increase<em> focus</em>, the first step is to honestly evaluate your state and<em> learn</em> what motivates you. Only then can you make the necessary changes to be able to get in the driver\u2019s seat of your life. You can also<em> learn</em> to elevate your standards.",
+            "timestamp": 1619373855,
+            "title": "How to Focus | Learn How to Improve Your Focus | Tony Robbins",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMAwAhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fwww.tonyrobbins.com%2fhow-to-focus%2f/RK=2/RS=eA918m7PgGZAS3oY1ZaGo758Dc8-"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Learning to focus</em> is no different. Invest time in mastering attention training, mindfulness or other types of meditation. These are great ways to practice taming distractions and improving<em> focus.</em>",
+            "timestamp": 1619373855,
+            "title": "Stop multitasking and learn how to focus - Mayo Clinic",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMAzAhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzMEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fwww.mayoclinic.org%2fhealthy-lifestyle%2fadult-health%2fexpert-answers%2fhow-to-focus%2ffaq-20058383/RK=2/RS=eRTkKAMcIMWKHUPr_QO7r.GoYJk-"
+        },
+        {
+            "rank": 4,
+            "snippet": "Jan 18, 2012 \u00b7  Before you turn your attention to a new task, shift your<em> focus</em> from your mind to your body. Go for a walk, climb stairs, do some deep breathing or stretches.",
+            "timestamp": 1619373855,
+            "title": "Train Your Brain to Focus - Harvard Business Review",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMA0whXNyoA;_ylu=Y29sbwNiZjEEcG9zAzQEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fhbr.org%2f2012%2f01%2ftrain-your-brain-to-focus/RK=2/RS=aPZiKikOLvZMT5kS1Gr9MDJLoAk-"
+        },
+        {
+            "rank": 5,
+            "snippet": "In order to<em> concentrate</em> on one thing you must, by default, ignore many other things. Here's a better way to put it:<em> Focus</em> can only occur when we have said yes to one option and no to all other options. In other words, elimination is a prerequisite for<em> focus.</em>",
+            "timestamp": 1619373855,
+            "title": "Focus: A Brief Guide on How to Improve Focus and Concentration",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMA1QhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzUEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fjamesclear.com%2ffocus/RK=2/RS=3fiQKYyBiFJGz1i5Ro2NrkehtRw-"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1619373855,
+            "title": "4 Proven Ways On How To Focus Better",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMA1whXNyoA;_ylu=Y29sbwNiZjEEcG9zAzYEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fblog.mindvalley.com%2fhow-to-focus%2f/RK=2/RS=QUzkeHUVNVvQ54lFg025jHopcU4-"
+        },
+        {
+            "rank": 7,
+            "snippet": "To<em> learn</em> well, you need to be like a scuba diver who goes down deep to find something of real value.\u201d\u2014Katie. \u201cA healthy mind lives in a healthy body. Eating healthful food helps me to<em> focus</em> better. It\u2019s also helpful when I get enough sleep, because then I\u2019m alert the next day and I can concentrate.\u201d\u2014Rogelio.",
+            "timestamp": 1619373855,
+            "title": "How Can I Learn to Focus? | Young People Ask",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMA2QhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzcEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fwww.jw.org%2fen%2fbible-teachings%2fteenagers%2fask%2flearn-to-focus%2f/RK=2/RS=Adg84R2sQZK2sXtUOjP2LwC0q8g-"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1619373855,
+            "title": "7 Useful Tips for Improving Your Mental Focus",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMA2whXNyoA;_ylu=Y29sbwNiZjEEcG9zAzgEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fwww.verywellmind.com%2fthings-you-can-do-to-improve-your-mental-focus-4115389/RK=2/RS=LxIAa8HjXq4AalIOvZ7GUFB1_Xc-"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1619373855,
+            "title": "How to Improve Focus: 7 Ways to Train Your Brain",
+            "url": "https://r.search.yahoo.com/_ylt=A0geKepAy4VgTLMA3QhXNyoA;_ylu=Y29sbwNiZjEEcG9zAzkEdnRpZAMEc2VjA3Ny/RV=2/RE=1619409856/RO=10/RU=https%3a%2f%2fwww.lifehack.org%2farticles%2fproductivity%2fhow-can-i-improve-my-focus.html/RK=2/RS=2ScRcKCUBP5fyYnlIiKFY7GcEvc-"
+        }
+    ],
+    "timestamp": 1619373855,
+    "url": "https://search.yahoo.com/search?p=learn+to+focus&amp;fr2=sb-top&amp;sao=1"
+}

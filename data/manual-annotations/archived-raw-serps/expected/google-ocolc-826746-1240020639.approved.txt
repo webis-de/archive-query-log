@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "(OCoLC)826746",
+    "offset": null,
+    "page": null,
+    "query": "(OCoLC)826746",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1240020639,
+            "title": "Hyenas [videorecording] / / produit par Pierre-Alain Meier et <em>...</em>",
+            "url": "http://siris-libraries.si.edu/ipac20/ipac.jsp?uri=full=3100001~!826746!0"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1240020639,
+            "title": "VTLS Chameleon iPortal MARC Record",
+            "url": "http://library.cn.huc.edu:8000/cgi-bin/gw/chameleon?sessionid=2008122218040107654&skin=LA&lng=en&inst=consortium&conf=.%2Fchameleon.conf&search=AUTHID&function=MARCSCR&sourcescreen=COPVOLSCR&scant1=Mizrachi%20Women's%20Organization%20of%20America.%20National%20Cultural%20Dept.&scanu1=1003&authid=2215216&authidu=1003&elementcount=1&t1=Mizrachi%20Women's%20Organization%20of%20America.%20National%20Cultural%20Dept.&u1=1003&pos=1&rootsearch=SCAN"
+        }
+    ],
+    "timestamp": 1240020639,
+    "url": "http://www.google.com/search?q=(OCoLC)826746&safe=vss&vss=1&sa=Google+Search"
+}

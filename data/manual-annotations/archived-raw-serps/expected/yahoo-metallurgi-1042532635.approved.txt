@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "metallurgi",
+    "offset": null,
+    "page": null,
+    "query": "metallurgi",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Avdelningen f\u2014r <em>Metallurgi</em>, Institutionen f\u2014r Material <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=1/K=metallurgi/H=0/T=1042536233/F=618f76080e4dd10b77ca6ab3950bd78a/*http://www.metallurgi.kth.se/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Institutionen f\u2014r Kemi och <em>Metallurgi</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=2/K=metallurgi/H=0/T=1042536233/F=0010dbbc4267defdbbff52c91e282b36/*http://www.km.luth.se/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "34 Metallindustri. <em>Metallurgi</em>. Verkstadsindustri",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=3/K=metallurgi/H=0/T=1042536233/F=745f398640b0f2cbb6041e6bcb3a7349/*http://vesa.lib.helsinki.fi/allars/ryhmat/ryhma34.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Velkommen til NTNU Metallurgisk Institutt",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=4/K=metallurgi/H=0/T=1042536233/F=e6f928b9e132041f15e6eacb737ce68b/*http://www.kme.chembio.ntnu.no/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Rapporter for hovedemne ??<em>metallurgi</em>??",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=5/K=metallurgi/H=0/T=1042536233/F=a00d336d41dc5c5e408af218dbc7037c/*http://www.sintef.no/rapporter/h-emner/metallurgi.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Institution",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=6/K=metallurgi/H=0/T=1042536233/F=93f10828161533fc3745b6c63e21e5c7/*http://www.kth.se/internt/utbildningsadministration/statistik/fofu/1998/mmt/v2mmt475.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Forskning: Nasjonal forskningsinformasjon - fag - <em>metallurgi</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=7/K=metallurgi/H=0/T=1042536233/F=b6905a85234e98a6da12bcbf0074d6ae/*http://www.nsd.uib.no/nfi/fag/browsefag.cfm?VelgFag=2166"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Googles kategoris\u2014kning - World &gt; Svenska &gt; Vetenskap &gt; <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=8/K=metallurgi/H=0/T=1042536233/F=cec2a61d15faa1a69012649bee3371d6/*http://directory.google.com/Top/World/Svenska/Vetenskap/Teknologi/Metallurgi/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "H\u2014gskolan Dalarna , utbildningsprogram - <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=9/K=metallurgi/H=0/T=1042536233/F=24136f61c56affe78bc1c429a6d09dbc/*http://www2.du.se/utbildning/visa_program.asp?Programkod=TMEBP"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Open Directory - World: Svenska: Vetenskap: Teknologi: <em>Metallurgi</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=10/K=metallurgi/H=0/T=1042536233/F=0a537144811d99fe804785ea0c9ffe2d/*http://dmoz.org/World/Svenska/Vetenskap/Teknologi/Metallurgi/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Brochurer",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=11/K=metallurgi/H=0/T=1042536233/F=ea05789b777ad10c50bb2d32ea8e95d8/*http://www.aga.dk/web/denmark/web.nsf/5dffe6fce3c4f6f84125658d004f1f1d/3a24874d6849927b4125658e004cc0c2?OpenDocument"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "<em>Metallurgi</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=12/K=metallurgi/H=0/T=1042536233/F=0f66d5dd5c99c6c6a80d1def5af795b8/*http://www.avestapolarit.com/template/Page____4165.asp"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "<em>Metallurgi</em> &amp; V\u00f0rmebehandling",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=13/K=metallurgi/H=0/T=1042536233/F=99e906bfee31fd7e952475f1b6a3d7dd/*http://www.se.airliquide.com/en/business/din_bransch/metallurgi_varmebeh/vi_erbjuder/smaltning.asp"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "<em>Metallurgi</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=14/K=metallurgi/H=0/T=1042536233/F=c293f63a63a12566749a4c7d3748bb1c/*http://se.slider.com/Vetenskap/Teknologi/Metallurgi.htm"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "St?ejerns <em>metallurgi</em> og lidt om kinesisk st?ejern",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=15/K=metallurgi/H=0/T=1042536233/F=962965b9939896bff4f03f99c713c54b/*http://www.staff.hum.ku.dk/dbwagner/kons/kons.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "H\u00bdgskoleingeni\u00bdr kjemi og <em>metallurgi</em>/materialteknikk",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=16/K=metallurgi/H=0/T=1042536233/F=0df7eb99e6ece814e2abf2a34f800d49/*http://www.hist.no/studier/studietilbud/kjemi/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "<em>Metallurgi</em> for ingeni\u00bdrer",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=17/K=metallurgi/H=0/T=1042536233/F=c726fe67d755b489ba56eb9124813899/*http://www.designinsite.dk/htmsider/r0510.htm"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "IFE avdelinger",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=18/K=metallurgi/H=0/T=1042536233/F=4510013d4801b50d7771db49f63c855e/*http://www.ife.no/avdelinger/avdeling_details.jsp?avdelingsId=3029&nav=1"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "<em>Metallurgi</em> och Materialteknik\n (PDF)",
+            "url": "http://www.bergsskolan.se/bku/pdf/kursmet+mat.pdf"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1042532635,
+            "title": "Teknologisk Institut - Industriel Produktion og Udvikling - <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=20/K=metallurgi/H=0/T=1042536233/F=86cf590b6b2f95fa972c8e77cd1b426a/*http://www.teknologisk.dk/produktion/6348"
+        }
+    ],
+    "timestamp": 1042532635,
+    "url": "http://search.yahoo.com:80/search?p=metallurgi"
+}
