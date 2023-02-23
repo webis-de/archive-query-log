@@ -94,7 +94,7 @@ class ArchivedUrlsFetcher:
             text = await response.text()
             try:
                 num_pages = int(text)
-            except:
+            except Exception:
                 num_pages = 0
         cache[params_hash] = num_pages
         return num_pages

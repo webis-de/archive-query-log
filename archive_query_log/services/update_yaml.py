@@ -1,14 +1,21 @@
-import yaml
-from typing import Mapping, Sequence
-from pandas import concat, DataFrame
-from archive_query_log.cli.external import load_services, load_domains, service_domains, load_url_prefixes, \
-    load_query_parsers, query_parser, load_page_offset_parsers, page_offset_parser_series
-from archive_query_log import DATA_DIRECTORY_PATH
+from typing import Sequence
+
 import pandas as pd
+import yaml
+from pandas import concat, DataFrame
+
+from archive_query_log import DATA_DIRECTORY_PATH
+from archive_query_log.cli.external import load_services, load_domains, \
+    service_domains, load_url_prefixes, \
+    load_query_parsers, query_parser, load_page_offset_parsers, \
+    page_offset_parser_series
 
 services_file = DATA_DIRECTORY_PATH / "selected-services_overwrite.yaml"
 
-def get_spreadsheet_data(first_service="google", last_service="hrblock") -> DataFrame:
+
+def get_spreadsheet_data(
+        first_service="google", last_service="hrblock"
+) -> DataFrame:
     """
     Get parser information from the Google spreadsheet as a dataframe
     :param first_service:   First service to obtain data for (including)
@@ -48,21 +55,28 @@ def get_spreadsheet_data(first_service="google", last_service="hrblock") -> Data
             load_page_offset_parsers()[["page_offset_parser"]]
         ],
         axis="columns")
-    services["page_parsers"] = page_offset_parser_series(page_offset_parsers, services, count="pages")
-    services["offset_parsers"] = page_offset_parser_series(page_offset_parsers, services, count="results")
+    services["page_parsers"] = page_offset_parser_series(
+        page_offset_parsers, services, count="pages")
+    services["offset_parsers"] = page_offset_parser_series(
+        page_offset_parsers, services, count="results")
 
     return services
 
 
-def update_yaml_file(first_service="google", last_service="hrblock", overwrite=False):
+def update_yaml_file(
+        first_service="google", last_service="hrblock", overwrite=False
+):
     """
     Update the local yaml file with the data from the Google spreadsheet
     :param first_service:   First service to update (including)
     :param last_service:    Last service to update (including)
-    :param overwrite:       False: Only add parsers for service that don't have one
-                            True:   Overwrite the yaml entries using the spreadsheet
+    :param overwrite:       False: Only add parsers for service
+                                that don't have one
+                            True:   Overwrite the yaml entries
+                                using the spreadsheet
     """
-    services = get_spreadsheet_data(first_service=first_service, last_service=last_service)
+    services = get_spreadsheet_data(
+        first_service=first_service, last_service=last_service)
     with open(services_file, "r") as stream:
         yaml_list = yaml.safe_load(stream)
     update_func = overwrite_parsers if overwrite else update_empty_parsers
@@ -73,7 +87,7 @@ def update_yaml_file(first_service="google", last_service="hrblock", overwrite=F
         if elem["name"] == first_service:
             start_update = True
         else:
-            i+=1
+            i += 1
 
     while True:
         elem = yaml_list[i]
@@ -100,18 +114,18 @@ def update_empty_parsers(service_elem: dict, services: DataFrame):
 
 
 def overwrite_parsers(service_elem: dict, services: DataFrame):
-   set_page_offset_parsers(service_elem=service_elem, services=services)
-   set_query_parsers(service_elem=service_elem, services=services)
+    set_page_offset_parsers(service_elem=service_elem, services=services)
+    set_query_parsers(service_elem=service_elem, services=services)
 
 
-
-def set_page_offset_parsers(service_elem: dict, services: DataFrame) -> Mapping:
+def set_page_offset_parsers(service_elem: dict, services: DataFrame) -> None:
     name = service_elem["name"]
     row = services.loc[services["name"] == name, :]
     service_elem.update({"page_parsers": row["page_parsers"].values[0],
                          "offset_parsers": row["offset_parsers"].values[0]})
 
-def set_query_parsers(service_elem: dict, services: DataFrame) -> Mapping:
+
+def set_query_parsers(service_elem: dict, services: DataFrame) -> None:
     name = service_elem["name"]
     row = services.loc[services["name"] == name, :]
     service_elem.update({"query_parsers": row["query_parsers"].values[0]})
@@ -122,13 +136,12 @@ def update_ranks(df: pd.DataFrame, yaml_list: Sequence[dict]):
         name = elem["name"]
         try:
             rank = int(df.loc[df["service"] == name, "rank"].values[0])
-        except:
+        except Exception:
             rank = 999999
         yaml_list[i]["alexa_rank"] = rank
 
     return yaml_list
 
+
 def sort_by_rank(yaml_list: Sequence[dict]):
     return sorted(yaml_list, key=lambda d: d['alexa_rank'])
-
-

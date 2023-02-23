@@ -275,7 +275,7 @@ def _build_search_result(
         .get(archived_search_result_snippet.id)
     # archived_parsed_search_result_loc = archived_parsed_search_result_index \
     #     .get(archived_search_result_snippet.id)
-    archived_parsed_search_result_loc = None
+    # archived_parsed_search_result_loc = None
     return CorpusSearchResult(
         id=archived_search_result_snippet.id,
         url=archived_search_result_snippet.url,

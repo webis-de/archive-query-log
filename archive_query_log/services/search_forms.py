@@ -98,10 +98,12 @@ class SearchFormIdentifier:
         # Look for elements with the pattern in them and save the snippets
         soup = BeautifulSoup(html, 'html.parser')
         found_input, input_snippets = find_input_tag(soup=soup)
-        found_search_form, form_snippets = find_search_tag(soup=soup, tag='form')
+        found_search_form, form_snippets = find_search_tag(
+            soup=soup, tag='form')
         found_search_div, div_snippets = find_search_tag(soup=soup, tag='div')
 
-        return found_input, found_search_form, found_search_div, input_snippets, form_snippets, div_snippets
+        return found_input, found_search_form, found_search_div, \
+            input_snippets, form_snippets, div_snippets
 
     def get_internet_archive_html(self, url: str, year=2022, byte_digits=4):
         """
@@ -170,12 +172,12 @@ def find_search_tag(soup: BeautifulSoup, tag='form'):
     return found, snippet_list
 
 
-
 if __name__ == "__main__":
     # Parse input
-    parser = argparse.ArgumentParser(prog='Search form identification',
-                                     description='Takes in a CSV-File of services and looks for search forms '
-                                                 'in their HTML')
+    parser = argparse.ArgumentParser(
+        prog='Search form identification',
+        description='Takes in a CSV-File of services '
+                    'and looks for search forms in their HTML')
     parser.add_argument('-f', '--csv_file', type=str)
     parser.add_argument('-o', '--outfile_num', type=str)
     parser.add_argument('-s', '--start_row', type=int)
@@ -183,11 +185,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Set/Update default values
-    csv_file = './alexa-top-1m-fused-domains-rrf-top-10000.csv' if args.csv_file is None else args.csv_file
+    csv_file = './alexa-top-1m-fused-domains-rrf-top-10000.csv' \
+        if args.csv_file is None else args.csv_file
     outfile_num = "0" if args.outfile_num is None else args.outfile_num
     start_row = 0 if args.start_row is None else args.start_row
     end_row = None if args.end_row is None else args.end_row
 
     # Run the search for specified services
-    identifier = SearchFormIdentifier(csv_file=csv_file, outfile_num=outfile_num, start_row=start_row, end_row=end_row)
+    identifier = SearchFormIdentifier(
+        csv_file=csv_file, outfile_num=outfile_num,
+        start_row=start_row, end_row=end_row
+    )
     identifier.process_services()

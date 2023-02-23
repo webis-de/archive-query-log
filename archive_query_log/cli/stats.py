@@ -204,11 +204,13 @@ def stats_command(
                     if document["archived_snippet_location"] is not None:
                         results[service_name]["archived-snippets"] += 1
                     if document[
-                        "archived_raw_search_result_location"] is not None:
+                        "archived_raw_search_result_location"
+                    ] is not None:
                         results[service_name][
                             "archived-raw-search-results"] += 1
                     if document[
-                        "archived_parsed_search_result_location"] is not None:
+                        "archived_parsed_search_result_location"
+                    ] is not None:
                         results[service_name][
                             "archived-parsed-search-results"] += 1
 

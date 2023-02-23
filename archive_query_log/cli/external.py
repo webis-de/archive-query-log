@@ -3,7 +3,6 @@ from math import nan
 from pathlib import Path
 from re import compile, escape
 from urllib.parse import quote
-from numpy import nan
 
 from click import argument
 from pandas import DataFrame, read_csv, Series, concat
@@ -19,6 +18,7 @@ sheet_domains = "Domains"
 sheet_url_prefixes = "URL Prefixes"
 sheet_query_parsers = "Query Parsers"
 sheet_page_parsers = "Page Parsers"
+
 
 @main.group("external")
 def external():
@@ -90,6 +90,7 @@ def load_query_parsers() -> DataFrame:
     df["query_parser"] = df["value"]
     return df[["name", "query_parser"]]
 
+
 def load_page_offset_parsers() -> DataFrame:
     df = from_sheets(sheet_page_parsers, transpose=True)
     df["value"].replace("NULL", "{}", inplace=True)
@@ -128,9 +129,12 @@ def query_parser(row: Series) -> dict:
     else:
         raise NotImplementedError()
 
+
 page_offset_parser_map = {"parameter": "query_parameter",
                           "suffix": "path_suffix",
                           "fragment": "fragment_parameter"}
+
+
 def page_offset_parser(row: Series, count="results") -> dict:
     row = row.to_dict()
     row.update(loads(row["page_offset_parser"]))
@@ -140,9 +144,10 @@ def page_offset_parser(row: Series, count="results") -> dict:
             "url_pattern": url_pattern,
             "type": page_offset_parser_map[row["type"]],
             "parameter": row["key"]
-            }
+        }
     else:
-        return NotImplementedError()
+        raise NotImplementedError()
+
 
 def page_offset_parser_series(page_offset_parsers, services, count):
     return [
@@ -151,11 +156,14 @@ def page_offset_parser_series(page_offset_parsers, services, count):
             for _, row in
             page_offset_parsers[
                 (page_offset_parsers["name"].str.fullmatch(service["name"])) &
-                (page_offset_parsers["page_offset_parser"].str.contains(f'"count": "{count}"'))
-            ].iterrows()
+                (page_offset_parsers["page_offset_parser"].str.contains(
+                    f'"count": "{count}"'
+                ))
+                ].iterrows()
         ), key=lambda pp: str(pp["url_pattern"]))
         for _, service in services.iterrows()
     ]
+
 
 @external.command("import-services")
 @argument(
@@ -200,8 +208,12 @@ def import_services(services_file: Path):
             load_page_offset_parsers()[["page_offset_parser"]]
         ],
         axis="columns")
-    services["page_parsers"] = page_offset_parser_series(page_offset_parsers, services, count="pages")
-    services["offset_parsers"] = page_offset_parser_series(page_offset_parsers, services, count="results")
+    services["page_parsers"] = page_offset_parser_series(
+        page_offset_parsers, services, count="pages"
+    )
+    services["offset_parsers"] = page_offset_parser_series(
+        page_offset_parsers, services, count="results"
+    )
     services["interpreted_query_parsers"] = [
         []
         for _, service in services.iterrows()

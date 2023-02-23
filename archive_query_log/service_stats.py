@@ -26,7 +26,8 @@ if __name__ == '__main__':
         for service in SERVICES.values()
     )
     print(
-        f"Number of interpreted query parsers: {num_interpreted_query_parsers}")
+        f"Number of interpreted query parsers: {num_interpreted_query_parsers}"
+    )
     num_results_parsers = sum(
         len(service.results_parsers)
         for service in SERVICES.values()

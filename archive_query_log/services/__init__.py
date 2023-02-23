@@ -6,7 +6,9 @@ from yaml import safe_load
 from archive_query_log.model import Service
 
 
-def read_services(path: Path, ignore_parsing_errors=True) -> Mapping[str, Service]:
+def read_services(
+        path: Path, ignore_parsing_errors=True
+) -> Mapping[str, Service]:
     with path.open("r") as file:
         services_dict = safe_load(file)
         services = []

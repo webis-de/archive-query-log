@@ -365,7 +365,7 @@ class WebArchiveWarcDownloader:
         if focused:
             pages = tqdm(
                 pages,
-                desc=f"Deduplicate query URLs",
+                desc="Deduplicate query URLs",
                 unit="page",
             )
 
