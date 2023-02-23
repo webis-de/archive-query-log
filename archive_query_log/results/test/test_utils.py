@@ -5,6 +5,7 @@ from approvaltests import verify_as_json, ApprovalException
 from approvaltests.core.options import Options
 from approvaltests.namer.cli_namer import CliNamer
 from slugify import slugify
+from tqdm.auto import tqdm
 
 from archive_query_log import PROJECT_DIRECTORY_PATH
 from archive_query_log.config import SERVICES
@@ -54,7 +55,18 @@ def verify_serp_parsing(
 
 
 def _find_archived_raw_serp(wayback_raw_url: str) -> ArchivedRawSerp:
-    for record in ArchivedRawSerps(path=Path(_warc_dir)):
+    num_files = sum(1 for _ in _warc_dir.glob("*.warc.gz"))
+    print(
+        f"Searching for record with URL {wayback_raw_url} in {_warc_dir} "
+        f"({num_files} files)"
+    )
+    records = ArchivedRawSerps(path=Path(_warc_dir))
+    records = tqdm(
+        records,
+        desc="Find record for URL",
+        unit="record",
+    )
+    for record in records:
         if record.raw_archive_url == wayback_raw_url:
             return record
 
