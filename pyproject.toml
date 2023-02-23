@@ -1,0 +1,81 @@
+[project]
+name = "archive-query-log"
+authors = [
+    {name = "Jan Heinrich Reimer", email = "heinrich.reimer@uni-jena.de"},
+    {name = "Sebastian Schmidt", email = "s.schmidt@uni-leipzig.de"},
+    {name = "Maik Fröbe", email = "maik.froebe@uni-jena.de"},
+    {name = "Lukas Gienapp", email = "lukas.gienapp@uni-leipzig.de"},
+    {name = "Harrisen Scells", email = "harry.scells@uni-leipzig.de"},
+    {name = "Benno Stein", email = "benno.stein@uni-weimar.de"},
+    {name = "Matthias Hagen", email = "matthias.hagen@uni-jena.de"},
+    {name = "Martin Potthast", email = "martin.potthast@uni-leipzig.de"},
+]
+description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "aiohttp~=3.8.4",
+    "aiohttp-retry~=2.8.3",
+    "apache-beam~=2.45.0",
+    "approvaltests~=8.2.0",
+    "asyncio-pool~=0.6.0",
+    "beautifulsoup4~=4.11.2",
+    "bleach~=6.0.0",
+    "click~=8.1.3",
+    "dataclasses-json~=0.5.7",
+    "diskcache~=5.4.0",
+    "fasttext-langdetect~=1.0.5",
+    "fastwarc~=0.13.7",
+    "flake8~=6.0.0",
+    "joblib~=1.2.0",
+    "jupyter~=1.0.0",
+    "marshmallow~=3.19.0",
+    "matplotlib~=3.7.0",
+    "pandas~=1.5.3",
+    "pex~=2.1.123",
+    "publicsuffixlist~=0.9.3",
+    "pylint~=2.16.2",
+    "pyspark~=3.3.2",
+    "pytest~=7.2.1",
+    "python-slugify~=8.0.0",
+    "pyyaml~=6.0",
+    "ranx~=0.3.6",
+    "requests~=2.28.2",
+    "requests-html~=0.10.0",
+    "seaborn~=0.12.2",
+    "tqdm~=4.64.1",
+    "unidecode~=1.3.6",
+    "urllib3~=1.26.14",
+    "warcio~=1.7.4",
+]
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools>=50", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "archive_query_log.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["archive_query_log"]
+namespaces = false
+
+[tool.setuptools.package-data]
+mypkg = ["*.txt", "*.md", "*.rst"]
+
+[tool.pytest.ini_options]
+log_cli = "True"
+filterwarnings = [
+    'ignore::DeprecationWarning',
+]
