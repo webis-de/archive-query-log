@@ -14,6 +14,7 @@ from uuid import UUID, uuid5, NAMESPACE_URL
 from dataclasses_json import DataClassJsonMixin
 from fastwarc import ArchiveIterator, FileStream, WarcRecord, \
     WarcRecordType
+# pylint: disable=no-name-in-module
 from fastwarc.stream_io import PythonIOStreamAdapter
 from marshmallow import Schema
 from tqdm.auto import tqdm

@@ -102,8 +102,7 @@ def main():
                 response = get(
                     wayback_raw_url,
                 )
-                if response.status_code != 200:
-                    raise
+                response.raise_for_status()
 
                 # noinspection PyProtectedMember
                 version = str(response.raw.version)

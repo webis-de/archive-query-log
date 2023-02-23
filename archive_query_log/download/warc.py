@@ -153,8 +153,7 @@ class WebArchiveWarcDownloader:
         }
         try:
             async with client.get(archive_url) as response:
-                if response.status != 200:
-                    raise
+                response.raise_for_status()
                 with TemporaryFile() as tmp_file:
                     writer = WARCWriter(tmp_file, gzip=True)
                     # noinspection PyProtectedMember
