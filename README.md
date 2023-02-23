@@ -100,7 +100,7 @@ The list of search providers should be stored in a single [YAML][yaml-spec] file
 - ...
 ```
 
-In the source code, a search provider corresponds to the Python class [`Service`](web_archive_query_log/model/__init__.py).
+In the source code, a search provider corresponds to the Python class [`Service`](archive_query_log/model/__init__.py).
 
 ### 2. Archived URLs
 
@@ -131,7 +131,7 @@ Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file with one arch
 }
 ```
 
-In the source code, an archived URL corresponds to the Python class [`ArchivedUrl`](web_archive_query_log/model/__init__.py).
+In the source code, an archived URL corresponds to the Python class [`ArchivedUrl`](archive_query_log/model/__init__.py).
 
 ### 3. Archived Query URLs
 
@@ -168,7 +168,7 @@ Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file with one arch
 }
 ```
 
-In the source code, an archived query URL corresponds to the Python class [`ArchivedQueryUrl`](web_archive_query_log/model/__init__.py).
+In the source code, an archived query URL corresponds to the Python class [`ArchivedQueryUrl`](archive_query_log/model/__init__.py).
 
 ### 4. Archived Raw SERPs
 
@@ -205,7 +205,7 @@ Each individual file is a GZIP-compressed [WARC][warc-spec] file with one WARC r
 }
 ```
 
-In the source code, an archived raw SERP corresponds to the Python class [`ArchivedRawSerp`](web_archive_query_log/model/__init__.py).
+In the source code, an archived raw SERP corresponds to the Python class [`ArchivedRawSerp`](archive_query_log/model/__init__.py).
 
 ### 5. Archived Parsed SERPs
 
@@ -255,14 +255,14 @@ Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file with one arch
 }
 ```
 
-In the source code, an archived parsed SERP corresponds to the Python class [`ArchivedParsedSerp`](web_archive_query_log/model/__init__.py).
+In the source code, an archived parsed SERP corresponds to the Python class [`ArchivedParsedSerp`](archive_query_log/model/__init__.py).
 
 ### Pro Tip: Specify a Custom Data Directory
 
 By default, the data directory is set to [`data/`](data). You can change this with the `--data-directory` option, e.g.:
 
 ```shell
-python -m web_archive_query_log make archived-urls --data-directory /mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/
+python -m archive_query_log make archived-urls --data-directory /mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/
 ```
 
 ### Pro Tip: Limit Scraping for Testing
@@ -270,7 +270,7 @@ python -m web_archive_query_log make archived-urls --data-directory /mnt/ceph/st
 If the search provider you're scraping queries for is very large and has many domains, testing your settings on a smaller sample from that search provider can be helpful. You can specify a single domain to scrape from like this:
 
 ```shell
-python -m web_archive_query_log make archived-urls <PROVIDER> <DOMAIN>
+python -m archive_query_log make archived-urls <PROVIDER> <DOMAIN>
 ```
 
 If a domain is very popular and therefore has many archived URLs,
@@ -280,7 +280,7 @@ from the Wayback Machine's
 [CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api):
 
 ```shell
-python -m web_archive_query_log make archived-urls <PROVIDER> <DOMAIN> <CDX_PAGE>
+python -m archive_query_log make archived-urls <PROVIDER> <DOMAIN> <CDX_PAGE>
 ```
 
 ## Development
