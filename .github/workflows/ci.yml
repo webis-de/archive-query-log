@@ -22,7 +22,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install .
-          pip install .[test]
+          pip install .[tests]
       - name: "🔍 Check Python code format"
         run: flake8 archive_query_log/
   lint:
@@ -43,7 +43,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install .
-          pip install .[test]
+          pip install .[tests]
       - name: "🔍 Lint Python code"
         run: pylint -E archive_query_log
   unit-tests:
@@ -64,7 +64,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install .
-          pip install .[test]
+          pip install .[tests]
       - name: "🧪 Test Python code"
         run: pytest --cov=./ --cov-report=xml archive_query_log/
       - name: "📤 Upload coverage to Codecov"
