@@ -11,11 +11,11 @@ jobs:
       - name: "📥 Check-out"
         uses: actions/checkout@v3
       - name: "🧰 Install Python"
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.10
           cache: pip
-          cache-dependency-path: setup.cfg
+          cache-dependency-path: pyproject.toml
       - name: "🧰 Install dependencies"
         run: |
           python -m pip install --upgrade pip
@@ -30,11 +30,11 @@ jobs:
       - name: "📥 Check-out"
         uses: actions/checkout@v2
       - name: "🧰 Install Python"
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.10
           cache: pip
-          cache-dependency-path: setup.cfg
+          cache-dependency-path: pyproject.toml
       - name: "🧰 Install dependencies"
         run: |
           python -m pip install --upgrade pip
@@ -49,11 +49,11 @@ jobs:
       - name: "📥 Check-out"
         uses: actions/checkout@v2
       - name: "🧰 Install Python"
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.10
           cache: pip
-          cache-dependency-path: setup.cfg
+          cache-dependency-path: pyproject.toml
       - name: "🧰 Install dependencies"
         run: |
           python -m pip install --upgrade pip
