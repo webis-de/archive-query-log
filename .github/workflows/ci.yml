@@ -6,20 +6,14 @@ on:
 jobs:
   code-format:
     name: "🔍 Python code format"
-    strategy:
-      matrix:
-        python:
-          - 3.7
-          - 3.8
-          - 3.9
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Check-out"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: "🧰 Install Python"
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python }}
+          python-version: 3.10
           cache: pip
           cache-dependency-path: setup.cfg
       - name: "🧰 Install dependencies"
@@ -31,12 +25,6 @@ jobs:
         run: flake8 archive_query_log/
   lint:
     name: "🔍 Python Lint"
-    strategy:
-      matrix:
-        python:
-          - 3.7
-          - 3.8
-          - 3.9
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Check-out"
@@ -44,7 +32,7 @@ jobs:
       - name: "🧰 Install Python"
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python }}
+          python-version: 3.10
           cache: pip
           cache-dependency-path: setup.cfg
       - name: "🧰 Install dependencies"
@@ -56,12 +44,6 @@ jobs:
         run: pylint -E archive_query_log
   unit-tests:
     name: "🧪 Python unit tests"
-    strategy:
-      matrix:
-        python:
-          - 3.7
-          - 3.8
-          - 3.9
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Check-out"
@@ -69,7 +51,7 @@ jobs:
       - name: "🧰 Install Python"
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python }}
+          python-version: 3.10
           cache: pip
           cache-dependency-path: setup.cfg
       - name: "🧰 Install dependencies"
