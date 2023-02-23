@@ -22,11 +22,9 @@ Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Yea
 ## Installation
 
 1. Install [Python 3.10](https://python.org/downloads/)
-2. Install [pipx](https://pipxproject.github.io/pipx/installation/#install-pipx)
-3. Install [Pipenv](https://pipenv.pypa.io/en/latest/install/#isolated-installation-of-pipenv-with-pipx).
 4. Install dependencies:
     ```shell
-    pipenv install
+    pipenv install -e .
     ```
 
 ## Usage
