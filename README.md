@@ -32,7 +32,7 @@ To quickly scrape a sample query log, jump to the [TL;DR](#tldr).
 
 If you want to learn more about each step here are some more detailed guides:
 
-1. [Search providers](#1-search providers)
+1. [Search providers](#1-search-providers)
 2. [Fetch archived URLs](#2-archived-urls)
 3. [Parse archived query URLs](#3-archived-query-urls)
 4. [Download archived raw SERPs](#4-archived-raw-serps)
