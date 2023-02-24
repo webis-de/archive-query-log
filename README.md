@@ -2,7 +2,6 @@
 [![Code coverage](https://img.shields.io/codecov/c/github/webis-de/archive-query-log?style=flat-square)](https://codecov.io/github/webis-de/archive-query-log/)
 [![Issues](https://img.shields.io/github/issues/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/issues)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/commits)
-[![Downloads](https://img.shields.io/pypi/dm/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/)
 [![License](https://img.shields.io/github/license/webis-de/archive-query-log?style=flat-square)](LICENSE)
 
 # 📜 The Archive Query Log
