@@ -67,6 +67,8 @@ def _find_archived_raw_serp(wayback_raw_url: str) -> ArchivedRawSerp:
         unit="record",
     )
     for record in records:
+        print(record.raw_archive_url)
+        print(wayback_raw_url)
         if record.raw_archive_url == wayback_raw_url:
             return record
 
