@@ -5,20 +5,20 @@ from archive_query_log.results.test.test_utils import verify_serp_parsing
 
 def test_parse_query_csdn_fifo_1663204137():
     verify_serp_parsing(
-        "https://web.archive.org/web/20220915030857id_/https://so.csdn.net/so/search?q=FIFO&spm=1001.2101.3001.7020",
+        "https://web.archive.org/web/20220915010857id_/https://so.csdn.net/so/search?q=FIFO&spm=1001.2101.3001.7020",
         "csdn",
     )
 
 
 def test_parse_query_csdn_rows_1665572662():
     verify_serp_parsing(
-        "https://web.archive.org/web/20221012130422id_/https://so.csdn.net/so/search?q=rows&spm=1001.2101.3001.7020",
+        "https://web.archive.org/web/20221012110422id_/https://so.csdn.net/so/search?q=rows&spm=1001.2101.3001.7020",
         "csdn",
     )
 
 
 def test_parse_query_csdn_android_studio_1660487187():
     verify_serp_parsing(
-        "https://web.archive.org/web/20220814162627id_/https://so.csdn.net/so/search?q=android%20studio",
+        "https://web.archive.org/web/20220814142627id_/https://so.csdn.net/so/search?q=android%20studio",
         "csdn",
     )

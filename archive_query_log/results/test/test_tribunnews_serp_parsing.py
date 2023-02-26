@@ -5,69 +5,69 @@ from archive_query_log.results.test.test_utils import verify_serp_parsing
 
 def test_parse_query_tribunnews_peringatan_dini_bmkg_kamis_18_februari_2021_1632679908():
     verify_serp_parsing(
-        "https://web.archive.org/web/20210926201148id_/https://www.tribunnews.com/search?q=peringatan+dini+bmkg+kamis+18+februari+2021",
+        "https://web.archive.org/web/20210926181148id_/https://www.tribunnews.com/search?q=peringatan+dini+bmkg+kamis+18+februari+2021",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_search_term_string_1607106977():
     verify_serp_parsing(
-        "https://web.archive.org/web/20201204193617id_/https://www.tribunnews.com/search?q={search_term_string}",
+        "https://web.archive.org/web/20201204183617id_/https://www.tribunnews.com/search?q={search_term_string}",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_search_term_string_1607225592():
     verify_serp_parsing(
-        "https://web.archive.org/web/20201206043312id_/https://www.tribunnews.com/search?q={search_term_string}",
+        "https://web.archive.org/web/20201206033312id_/https://www.tribunnews.com/search?q={search_term_string}",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_search_term_string_1607224881():
     verify_serp_parsing(
-        "https://web.archive.org/web/20201206042121id_/https://www.tribunnews.com/search?q={search_term_string}",
+        "https://web.archive.org/web/20201206032121id_/https://www.tribunnews.com/search?q={search_term_string}",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_search_term_string_1607130238():
     verify_serp_parsing(
-        "https://web.archive.org/web/20201205020358id_/https://www.tribunnews.com/search?q={search_term_string}",
+        "https://web.archive.org/web/20201205010358id_/https://www.tribunnews.com/search?q={search_term_string}",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_polsek_tallo_1663047668():
     verify_serp_parsing(
-        "https://web.archive.org/web/20220913074108id_/http://www.tribunnews.com/search?q=polsek+tallo",
+        "https://web.archive.org/web/20220913054108id_/http://www.tribunnews.com/search?q=polsek+tallo",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_ricky_natapradja_1663049121():
     verify_serp_parsing(
-        "https://web.archive.org/web/20220913080521id_/http://www.tribunnews.com/search?q=ricky+natapradja",
+        "https://web.archive.org/web/20220913060521id_/http://www.tribunnews.com/search?q=ricky+natapradja",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_pilgub_dki_jakarta_2017_1491952670():
     verify_serp_parsing(
-        "https://web.archive.org/web/20170412011750id_/http://www.tribunnews.com:80/search?q=pilgub+dki+jakarta+2017",
+        "https://web.archive.org/web/20170411231750id_/http://www.tribunnews.com:80/search?q=pilgub+dki+jakarta+2017",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_search_term_string_1607120098():
     verify_serp_parsing(
-        "https://web.archive.org/web/20201204231458id_/https://www.tribunnews.com/search?q={search_term_string}",
+        "https://web.archive.org/web/20201204221458id_/https://www.tribunnews.com/search?q={search_term_string}",
         "tribunnews",
     )
 
 
 def test_parse_query_tribunnews_linkid_js_1533168227():
     verify_serp_parsing(
-        "https://web.archive.org/web/20180802020347id_/http://www.tribunnews.com/search?q=linkid.js",
+        "https://web.archive.org/web/20180802000347id_/http://www.tribunnews.com/search?q=linkid.js",
         "tribunnews",
     )
