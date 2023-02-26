@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from functools import cached_property
 from hashlib import md5
 from pathlib import Path
@@ -67,7 +67,7 @@ class ArchivedUrl(DataClassJsonMixin):
         """
         Snapshot timestamp as a ``datetime`` object.
         """
-        return datetime.fromtimestamp(self.timestamp)
+        return datetime.fromtimestamp(self.timestamp, timezone.utc)
 
     @cached_property
     def archive_timestamp(self) -> str:
