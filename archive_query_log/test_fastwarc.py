@@ -17,6 +17,6 @@ def test_fastwarc_installed():
     from fastwarc import WarcRecord
     assert WarcRecord
 
+    # pylint: disable=no-name-in-module
     from fastwarc.stream_io import PythonIOStreamAdapter
     assert PythonIOStreamAdapter
-
