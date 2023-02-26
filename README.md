@@ -6,9 +6,11 @@
 
 # 📜 The Archive Query Log
 
-Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives.
+Mining Millions of Search Result Pages of Hundreds of Search Engines from 25&nbsp;Years of Web Archives.
 
 [Start now](#tldr) by scraping your own query log [here](#tldr).
+
+<img src="docs/queries-tsne.png" alt="Queries TSNE" style="width: 50%;">
 
 ## Contents
 
@@ -21,9 +23,14 @@ Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Yea
 ## Installation
 
 1. Install [Python 3.10](https://python.org/downloads/)
+2. Create and activate virtual environment:
+    ```shell
+    python3.10 -m venv venv/
+    source venv/bin/activate
+    ```
 4. Install dependencies:
     ```shell
-    pipenv install -e .
+    pip install -e .
     ```
 
 ## Usage
@@ -284,9 +291,9 @@ python -m archive_query_log make archived-urls <PROVIDER> <DOMAIN> <CDX_PAGE>
 
 Run tests:
 ```shell
-pipenv run flake8
-pipenv run pylint
-pipenv run pytest
+flake8 archive_query_log
+pylint -E archive_query_log
+pytest archive_query_log
 ```
 
 ## Contribute
