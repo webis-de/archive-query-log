@@ -138,6 +138,6 @@ def test_parse_query_qq_tag_encode_1341871817():
 
 def test_parse_query_qq_niamh_cusack_1319741306():
     verify_serp_parsing(
-        "https://web.archive.org/web/20111027223506id_/http://v.qq.com/search.html?pagetype=3&ms_key=Niamh+Cusack",
+        "https://web.archive.org/web/20111027213506id_/http://v.qq.com/search.html?pagetype=3&ms_key=Niamh+Cusack",
         "qq",
     )
