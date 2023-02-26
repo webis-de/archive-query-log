@@ -75,7 +75,9 @@ class ArchivedUrl(DataClassJsonMixin):
         Snapshot timestamp as a string in the format used
         by the Wayback Machine (``YYYYmmddHHMMSS``).
         """
-        return self.datetime.strftime("%Y%m%d%H%M%S")
+        return f"{self.datetime.year:04d}{self.datetime.month:02d}" \
+               f"{self.datetime.day:02d}{self.datetime.hour:02d}" \
+               f"{self.datetime.minute:02d}{self.datetime.second:02d}"
 
     @property
     def archive_url(self) -> str:
