@@ -2,7 +2,6 @@
 [![Code coverage](https://img.shields.io/codecov/c/github/webis-de/archive-query-log?style=flat-square)](https://codecov.io/github/webis-de/archive-query-log/)
 [![Issues](https://img.shields.io/github/issues/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/issues)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/commits)
-[![Downloads](https://img.shields.io/pypi/dm/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/)
 [![License](https://img.shields.io/github/license/webis-de/archive-query-log?style=flat-square)](LICENSE)
 
 # 📜 The Archive Query Log
@@ -33,7 +32,7 @@ To quickly scrape a sample query log, jump to the [TL;DR](#tldr).
 
 If you want to learn more about each step here are some more detailed guides:
 
-1. [Search providers](#1-search providers)
+1. [Search providers](#1-search-providers)
 2. [Fetch archived URLs](#2-archived-urls)
 3. [Parse archived query URLs](#3-archived-query-urls)
 4. [Download archived raw SERPs](#4-archived-raw-serps)
