@@ -66,7 +66,7 @@ jobs:
           pip install .
           pip install .[tests]
       - name: "🧪 Test Python code"
-        run: pytest --cov=./ --cov-report=xml --maxfail=10 archive_query_log/
+        run: pytest --cov=./ --cov-report=xml --maxfail=10 --capture=no archive_query_log/
       - name: "📤 Upload coverage to Codecov"
         uses: codecov/codecov-action@v2
         with:
