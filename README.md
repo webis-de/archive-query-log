@@ -287,6 +287,18 @@ from the Wayback Machine's
 python -m archive_query_log make archived-urls <PROVIDER> <DOMAIN> <CDX_PAGE>
 ```
 
+## Citation
+
+If you use the Archive Query Log dataset or the code to generate it in your research, please cite the following paper describing the AQL and its use-cases:
+
+> TODO
+
+You can use the following BibTeX entry for citation:
+
+```bibtex
+% TODO
+```
+
 ## Development
 
 Run tests:
@@ -309,6 +321,13 @@ If you're unsure about anything, post an [issue][repo-issues], or contact us:
 - [benno.stein@uni-weimar.de](mailto:benno.stein@uni-weimar.de)
 - [matthias.hagen@uni-jena.de](mailto:matthias.hagen@uni-jena.de)
 - [martin.potthast@uni-leipzig.de](mailto:martin.potthast@uni-leipzig.de)
+
+We're happy to help!
+
+## License
+
+This repository is released under the [MIT license](LICENSE). Files in the `data/` directory are exempt from this license.
+If you use the AQL in your research, we'd be glad if you'd [cite us](#citation).
 
 ## Abstract
 
