@@ -8,9 +8,9 @@
 
 Mining Millions of Search Result Pages of Hundreds of Search Engines from 25&nbsp;Years of Web Archives.
 
-[Start now](#tldr) by scraping your own query log [here](#tldr). Or look at our [example files](data/examples).
+[![Queries TSNE](docs/queries-tsne-teaser.png)](docs/queries-tsne.png)
 
-<img src="docs/queries-tsne.png" alt="Queries TSNE" style="width: 50%;">
+[Start now](#tldr) by scraping your own query log [here](#tldr). Or look at our [example files](data/examples).
 
 ## Contents
 
