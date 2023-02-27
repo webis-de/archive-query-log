@@ -1739,7 +1739,7 @@
   public_suffix: tv
   alexa_domain: twitch.tv
   alexa_rank: 28
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: null
   search_form: null
@@ -5920,7 +5920,7 @@
   public_suffix: net
   alexa_domain: sourceforge.net
   alexa_rank: 357
-  category: download-streaming
+  category: download
   notes: null
   input_field: null
   search_form: null
@@ -6586,7 +6586,7 @@
   public_suffix: me
   alexa_domain: baskino.me
   alexa_rank: 1150
-  category: download-streaming
+  category: streaming
   notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
@@ -6746,7 +6746,7 @@
   public_suffix: to
   alexa_domain: fmovies.to
   alexa_rank: 1311
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -9220,7 +9220,7 @@
   public_suffix: com
   alexa_domain: dy2018.com
   alexa_rank: 2239
-  category: download-streaming
+  category: streaming
   notes: 'excluded; Query not in URL.'
   input_field: true
   search_form: true
@@ -9450,7 +9450,7 @@
   public_suffix: com
   alexa_domain: igg-games.com
   alexa_rank: 2341
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -9634,7 +9634,7 @@
   public_suffix: live
   alexa_domain: doramatv.live
   alexa_rank: 2401
-  category: download-streaming
+  category: streaming
   notes: excluded; Query not in URL
   input_field: false
   search_form: false
@@ -9874,7 +9874,7 @@
   public_suffix: com
   alexa_domain: pc6.com
   alexa_rank: 2475
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -9922,7 +9922,7 @@
   public_suffix: org
   alexa_domain: opensubtitles.org
   alexa_rank: 2483
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -10099,7 +10099,7 @@
   public_suffix: com
   alexa_domain: all-free-download.com
   alexa_rank: 2556
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -11001,7 +11001,7 @@
   public_suffix: com
   alexa_domain: uptvs.com
   alexa_rank: 2947
-  category: download-streaming
+  category: streaming
   notes: excluded; Query not in URL
   input_field: false
   search_form: false
@@ -11449,7 +11449,7 @@
   public_suffix: tv
   alexa_domain: cima4u.tv
   alexa_rank: 3135
-  category: download-streaming
+  category: streaming
   notes: 'excluded; No search.'
   input_field: false
   search_form: false
@@ -11827,7 +11827,7 @@
   public_suffix: tv
   alexa_domain: 3isk.tv
   alexa_rank: 3322
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -12082,7 +12082,7 @@
   public_suffix: com
   alexa_domain: fosshub.com
   alexa_rank: 3527
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -13592,7 +13592,7 @@
   public_suffix: com
   alexa_domain: verycd.com
   alexa_rank: 4749
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -14772,7 +14772,7 @@
   public_suffix: com
   alexa_domain: iq.com
   alexa_rank: 5949
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -14946,7 +14946,7 @@
   public_suffix: com
   alexa_domain: brstej.com
   alexa_rank: 6065
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -14988,7 +14988,7 @@
   public_suffix: com
   alexa_domain: olevod.com
   alexa_rank: 6105
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -15404,7 +15404,7 @@
   public_suffix: ag
   alexa_domain: hdrezka.ag
   alexa_rank: 6544
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -15542,7 +15542,7 @@
   public_suffix: io
   alexa_domain: gidonline.io
   alexa_rank: 6739
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -15563,7 +15563,7 @@
   public_suffix: com
   alexa_domain: xitongcheng.com
   alexa_rank: 6773
-  category: download-streaming
+  category: download
   notes: excluded; Query not in URL
   input_field: true
   search_form: true
@@ -15581,7 +15581,7 @@
   public_suffix: co
   alexa_domain: subf2m.co
   alexa_rank: 6812
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -16119,7 +16119,7 @@
   public_suffix: tv
   alexa_domain: gimy.tv
   alexa_rank: 7264
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -16150,7 +16150,7 @@
   public_suffix: net
   alexa_domain: 0123movie.net
   alexa_rank: 7277
-  category: download-streaming
+  category: streaming
   notes: exclude; Page not loading
   input_field: false
   search_form: false
@@ -16402,7 +16402,7 @@
   public_suffix: to
   alexa_domain: moviesjoy.to
   alexa_rank: 7749
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -16518,7 +16518,7 @@
   public_suffix: com
   alexa_domain: dygang.com
   alexa_rank: 7817
-  category: download-streaming
+  category: streaming
   notes: Search ID instead of Query
   input_field: true
   search_form: true
@@ -16542,7 +16542,7 @@
   public_suffix: com
   alexa_domain: yts-subs.com
   alexa_rank: 7825
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -17122,7 +17122,7 @@
   public_suffix: al
   alexa_domain: joq.al
   alexa_rank: 8616
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -17751,7 +17751,7 @@
   public_suffix: com
   alexa_domain: buedemusica.com
   alexa_rank: 9920
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -17824,7 +17824,7 @@
   public_suffix: net
   alexa_domain: tvsubtitles.net
   alexa_rank: 10183
-  category: download-streaming
+  category: download
   notes: excluded; Query not in URL
   input_field: false
   search_form: false
@@ -18090,7 +18090,7 @@
   public_suffix: com
   alexa_domain: yupptv.com
   alexa_rank: 11051
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -18232,7 +18232,7 @@
   public_suffix: pw
   alexa_domain: 4movierulz.pw
   alexa_rank: 11383
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -18330,7 +18330,7 @@
   public_suffix: tv
   alexa_domain: movies2watch.tv
   alexa_rank: 11455
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -18398,7 +18398,7 @@
   public_suffix: com
   alexa_domain: weakstreams.com
   alexa_rank: 11721
-  category: download-streaming
+  category: streaming
   notes: excluded; No search
   input_field: false
   search_form: false
@@ -18524,7 +18524,7 @@
   public_suffix: onl
   alexa_domain: shahed4u.onl
   alexa_rank: 11931
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -19347,7 +19347,7 @@
   public_suffix: io
   alexa_domain: asianembed.io
   alexa_rank: 14338
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -19531,7 +19531,7 @@
   public_suffix: com
   alexa_domain: imovie-hd.com
   alexa_rank: 14849
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -20442,7 +20442,7 @@
   public_suffix: fun
   alexa_domain: 123movies.fun
   alexa_rank: 18227
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -20827,7 +20827,7 @@
   public_suffix: me
   alexa_domain: vid.me
   alexa_rank: 19623
-  category: download-streaming
+  category: streaming
   notes: excluded; No valid snaphshot
   input_field: true
   search_form: true
@@ -20965,7 +20965,7 @@
   public_suffix: co
   alexa_domain: putlockers.co
   alexa_rank: 19922
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: true
   search_form: true
@@ -21627,7 +21627,7 @@
   public_suffix: com
   alexa_domain: byrutor.com
   alexa_rank: 22621
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -21824,7 +21824,7 @@
   public_suffix: to
   alexa_domain: nflstreams.to
   alexa_rank: 23824
-  category: download-streaming
+  category: streaming
   notes: excluded; No archived SERP
   input_field: false
   search_form: false
@@ -22076,7 +22076,7 @@
   public_suffix: is
   alexa_domain: gostream.is
   alexa_rank: 25444
-  category: download-streaming
+  category: streaming
   notes: exclude; Page not loading
   input_field: false
   search_form: false
@@ -22446,7 +22446,7 @@
   public_suffix: tv
   alexa_domain: dunia21.tv
   alexa_rank: 27771
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -23269,7 +23269,7 @@
   public_suffix: tel
   alexa_domain: tamilrockers.tel
   alexa_rank: 33303
-  category: download-streaming
+  category: streaming
   notes: excluded; No valid snapshot
   input_field: false
   search_form: false
@@ -23834,7 +23834,7 @@
   public_suffix: com
   alexa_domain: filmstreaming2.com
   alexa_rank: 39135
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -23900,7 +23900,7 @@
   public_suffix: com
   alexa_domain: wapwon.com
   alexa_rank: 40114
-  category: download-streaming
+  category: streaming
   notes: "The query pattern seems to be too broad."
   input_field: false
   search_form: false
@@ -24052,7 +24052,7 @@
   public_suffix: com
   alexa_domain: jsoftj.com
   alexa_rank: 40975
-  category: download-streaming
+  category: download
   notes: null
   input_field: false
   search_form: false
@@ -24292,7 +24292,7 @@
   public_suffix: com
   alexa_domain: bdpcc.com
   alexa_rank: 42978
-  category: download-streaming
+  category: streaming
   notes: excluded; Query not in URL
   input_field: true
   search_form: true
@@ -24668,7 +24668,7 @@
   public_suffix: cr
   alexa_domain: watchseries.cr
   alexa_rank: 48915
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -24989,7 +24989,7 @@
   public_suffix: com
   alexa_domain: grumbleoh.com
   alexa_rank: 57798
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
@@ -25296,7 +25296,7 @@
   public_suffix: st
   alexa_domain: lo.st
   alexa_rank: 68521
-  category: download-streaming
+  category: download
   notes: null
   input_field: true
   search_form: true
@@ -25368,7 +25368,7 @@
   public_suffix: org
   alexa_domain: heroturko.org
   alexa_rank: 72258
-  category: download-streaming
+  category: download
   notes: null
   input_field: false
   search_form: false
@@ -25393,7 +25393,7 @@
   public_suffix: to
   alexa_domain: kino.to
   alexa_rank: 72424
-  category: download-streaming
+  category: streaming
   notes: null
   input_field: false
   search_form: false
