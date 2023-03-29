@@ -377,7 +377,7 @@ class WebArchiveWarcDownloader:
             archived_urls = self._deduplicate_urls(archived_urls, snippets)
             archived_urls = Random(0).sample(
                 archived_urls,
-                min(len(archived_urls), 50_000)
+                min(len(archived_urls), 75_000)
             )
 
         await self._download(archived_urls)
