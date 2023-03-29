@@ -31,7 +31,7 @@ dependencies = [
     "dataclasses-json~=0.5.7",
     "diskcache~=5.4",
     "fasttext-langdetect~=1.0",
-    "fastwarc~=0.13.7",
+    "fastwarc~=0.14.0",
     "flake8~=6.0",
     "joblib~=1.2",
     "jupyter~=1.0",
@@ -62,7 +62,7 @@ tests = [
     "flake8~=6.0",
     "pylint~=2.12",
     "pytest~=7.2",
-    "pytest-cov~=3.0",
+    "pytest-cov~=4.0",
 ]
 
 [build-system]

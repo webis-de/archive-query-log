@@ -2209,7 +2209,7 @@
     title_selector: a span.small
   focused_url_prefixes:
   - /video/search?
-- name: mail
+- name: mail-ru
   public_suffix: ru
   alexa_domain: mail.ru
   alexa_rank: 42
