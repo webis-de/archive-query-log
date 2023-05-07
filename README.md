@@ -24,7 +24,9 @@ Mining Millions of Search Result Pages of Hundreds of Search Engines from 25&nbs
 
 ## Running Your Custom Analysis/Experiment on The Archive Query Log
 
-The data in the archive query log is confidential (still, you can recrawl everything from the wayback machine, but the aggregated data is highly sensitive). For that reason, we ensure that custom experiments or analyisis can not leak sensitive data (please get in touch if you have have questions) by using [TIRA.io](https://tira.io) as platform for custom analysis and/or experiments. In TIRA, you submit a docker image that implements your analysis/experiment. Your software is then executed in sandbox mode (without internet connection) to ensure that your software does not leak confidential information. After your software execution finished, administrators review your submission and unblind it so that you can access the outputs
+The data in the archive query log is confidential (still, you can recrawl everything from the wayback machine, but the aggregated data is highly sensitive). For that reason, we ensure that custom experiments or analyisis can not leak sensitive data (please get in touch if you have have questions) by using [TIRA.io](https://tira.io) as platform for custom analysis and/or experiments. In TIRA, you submit a docker image that implements your analysis/experiment. Your software is then executed in sandbox mode (without internet connection) to ensure that your software does not leak confidential information. After your software execution finished, administrators review your submission and unblind it so that you can access the outputs.
+
+Please use the [dedicated TIRA tutorial](tira-tutorial) as starting point for your experiments.
 
 ## Installation
 
