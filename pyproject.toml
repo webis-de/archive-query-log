@@ -30,13 +30,13 @@ dependencies = [
     "dataclasses-json~=0.5.7",
     "diskcache~=5.4",
     "fasttext-langdetect~=1.0",
-    "fastwarc~=0.13.7",
+    "fastwarc~=0.14.0",
     "flake8~=6.0",
     "joblib~=1.2",
     "jupyter~=1.0",
     "marshmallow~=3.19",
     "matplotlib~=3.7",
-    "pandas~=1.5",
+    "pandas~=2.0",
     "pex~=2.1",
     "publicsuffixlist~=0.9.3",
     "pyarrow~=12.0.0",
@@ -62,7 +62,7 @@ tests = [
     "flake8~=6.0",
     "pylint~=2.12",
     "pytest~=7.2",
-    "pytest-cov~=3.0",
+    "pytest-cov~=4.0",
 ]
 
 [build-system]

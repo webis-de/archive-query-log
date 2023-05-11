@@ -1,5 +1,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/webis-de/archive-query-log/ci.yml?branch=main&style=flat-square)](https://github.com/webis-de/archive-query-log/actions/workflows/ci.yml)
 [![Code coverage](https://img.shields.io/codecov/c/github/webis-de/archive-query-log?style=flat-square)](https://codecov.io/github/webis-de/archive-query-log/)
+[![arXiv preprint](https://img.shields.io/badge/arXiv-2304.00413-blue?style=flat-square)](https://arxiv.org/abs/2304.00413)
+[![Papers with Code](https://img.shields.io/badge/papers%20with%20code-AQL--22-blue?style=flat-square)](https://paperswithcode.com/paper/the-archive-query-log-mining-millions-of)
 [![Issues](https://img.shields.io/github/issues/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/issues)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/commits)
 [![License](https://img.shields.io/github/license/webis-de/archive-query-log?style=flat-square)](LICENSE)
@@ -10,7 +12,7 @@ Mining Millions of Search Result Pages of Hundreds of Search Engines from 25&nbs
 
 [![Queries TSNE](docs/queries-tsne-teaser.png)](docs/queries-tsne.png)
 
-[Start now](#tldr) by scraping your own query log [here](#tldr). Or look at our [example files](data/examples).
+[Start now](#tldr) by running [your custom analysis/experiment](#running-your-custom-analysis-experiment-on-the-archive-query-log) scraping your own query log [here](#tldr). Or look at our [example files](data/examples).
 
 ## Contents
 
@@ -19,6 +21,12 @@ Mining Millions of Search Result Pages of Hundreds of Search Engines from 25&nbs
 - [Development](#development)
 - [Contribute](#contribute)
 - [Abstract](#abstract)
+
+## Running Your Custom Analysis/Experiment on The Archive Query Log
+
+The data in the archive query log is confidential (still, you can recrawl everything from the wayback machine, but the aggregated data is highly sensitive). For that reason, we ensure that custom experiments or analyisis can not leak sensitive data (please get in touch if you have have questions) by using [TIRA.io](https://tira.io) as platform for custom analysis and/or experiments. In TIRA, you submit a docker image that implements your analysis/experiment. Your software is then executed in sandbox mode (without internet connection) to ensure that your software does not leak confidential information. After your software execution finished, administrators review your submission and unblind it so that you can access the outputs.
+
+Please use the [dedicated TIRA tutorial](tira-tutorial) as starting point for your experiments.
 
 ## Installation
 
