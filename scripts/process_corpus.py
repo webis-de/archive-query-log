@@ -212,7 +212,8 @@ def _iter_results(
     for snippet in archived_parsed_serp["results"]:
         url = snippet["url"]
         domain = urlparse(url).hostname
-        public_suffix = public_suffix_list.publicsuffix(domain)
+        public_suffix = public_suffix_list.publicsuffix(domain) \
+            if domain is not None else None
         timestamp = archived_url["timestamp"]
         wayback_timestamp = \
             datetime.fromtimestamp(timestamp).strftime("%Y%m%d%H%M%S")
@@ -251,7 +252,8 @@ def relative_path_record_id_queries(
 
     url = archived_url["url"]
     domain = urlparse(url).hostname
-    public_suffix = public_suffix_list.publicsuffix(domain)
+    public_suffix = public_suffix_list.publicsuffix(domain) \
+        if domain is not None else None
     timestamp = archived_url["timestamp"]
     wayback_timestamp = \
         datetime.fromtimestamp(timestamp).strftime("%Y%m%d%H%M%S")
