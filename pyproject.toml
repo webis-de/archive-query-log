@@ -32,6 +32,7 @@ dependencies = [
     "fasttext-langdetect~=1.0",
     "fastwarc~=0.14.0",
     "flake8~=6.0",
+    "fasttext @ git+https://github.com/cfculhane/fastText.git@4a44513",
     "joblib~=1.2",
     "jupyter~=1.0",
     "marshmallow~=3.19",
