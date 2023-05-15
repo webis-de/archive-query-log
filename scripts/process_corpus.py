@@ -42,7 +42,7 @@ if SAMPLE_CORPUS:
     relative_paths = relative_paths[:1000]
 print(f"Found {len(relative_paths)} paths.")
 
-with Path("../data/selected-services.yaml").open("r") as file:
+with (global_data_dir / "selected-services.yaml").open("r") as file:
     services_dict = safe_load(file)
 services_list = [(service["name"], service) for service in services_dict]
 assert len({name for name, service in services_list}) == len(services_list)
