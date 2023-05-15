@@ -3,7 +3,6 @@ from gzip import GzipFile
 from json import loads, JSONDecodeError, dumps
 from pathlib import Path
 from random import shuffle
-from subprocess import call
 from typing import Optional, Iterator
 from urllib.parse import urlparse
 from uuid import uuid5, NAMESPACE_URL, UUID
@@ -339,7 +338,6 @@ def query_documents(query: dict) -> Iterator[dict]:
         }
 
 
-call(["hadoop", "fs", "-rm", "-r", "archive-query-log/serps/"])
 sc.parallelize(relative_paths) \
     .repartition(1_000) \
     .flatMap(relative_path_record_ids) \
@@ -351,7 +349,6 @@ sc.parallelize(relative_paths) \
                     compressionCodecClass=
                     "org.apache.hadoop.io.compress.GzipCodec")
 
-call(["hadoop", "fs", "-rm", "-r", "archive-query-log/results/"])
 sc.parallelize(relative_paths) \
     .repartition(1_000) \
     .flatMap(relative_path_record_ids) \

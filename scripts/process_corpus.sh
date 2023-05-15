@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+hdfs dfs -rm -r archive-query-log/serps/
+hdfs dfs -rm -r archive-query-log/results/
+
 PYSPARK_PYTHON=/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/venv/bin/python \
 spark-submit \
     --conf spark.yarn.submit.waitAppCompletion=false \
