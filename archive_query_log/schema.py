@@ -666,8 +666,8 @@ SERP_PARTITIONING = partitioning(
                 False,
                 metadata={
                     "description":
-                        "Public suffix (https://publicsuffix.org/) of the SERP "
-                        "domain.",
+                        "Public suffix (https://publicsuffix.org/) of the "
+                        "SERP domain.",
                 },
             ),
             field(
@@ -684,7 +684,8 @@ SERP_PARTITIONING = partitioning(
                 False,
                 metadata={
                     "description":
-                        "Year of the archived snapshot in the Wayback Machine.",
+                        "Year of the archived snapshot in the Wayback "
+                        "Machine.",
                 },
             ),
             field(
@@ -693,7 +694,8 @@ SERP_PARTITIONING = partitioning(
                 False,
                 metadata={
                     "description":
-                        "Month of the archived snapshot in the Wayback Machine.",
+                        "Month of the archived snapshot in the Wayback "
+                        "Machine.",
                 },
             ),
         ],
