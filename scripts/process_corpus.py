@@ -10,7 +10,6 @@ from uuid import uuid5, NAMESPACE_URL, UUID
 from fastwarc import FileStream, ArchiveIterator, WarcRecordType, WarcRecord
 from publicsuffixlist import PublicSuffixList
 from pyspark.sql import SparkSession
-from tqdm import tqdm
 from yaml import safe_load
 
 SAMPLE_CORPUS = False
@@ -30,11 +29,7 @@ relative_paths = [
     path
     .relative_to(data_dir / "archived-urls")
     .with_name(path.name[:-len(".jsonl.gz")])
-    for path in tqdm(
-        data_dir.glob("archived-urls/*/*/*.jsonl.gz"),
-        desc="Find paths",
-        unit="file",
-    )
+    for path in data_dir.glob("archived-urls/*/*/*.jsonl.gz")
 ]
 shuffle(relative_paths)
 if SAMPLE_CORPUS:
@@ -73,11 +68,7 @@ def relative_path_record_ids(relative_path: Path) -> Iterator[tuple]:
     if not jsonl_path.exists():
         return
     with GzipFile(jsonl_path, "r") as gzip_file:
-        for i, line in enumerate(tqdm(
-                gzip_file,
-                desc="Read IDs from JSONL",
-                mininterval=10,
-        )):
+        for i, line in enumerate(gzip_file):
             if SAMPLE_CORPUS and i > 100:
                 break
             try:
@@ -104,11 +95,7 @@ def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
     if jsonl_path.exists():
         try:
             with GzipFile(jsonl_path, "r") as gzip_file:
-                for line in tqdm(
-                        gzip_file,
-                        desc="Read archived URLs from JSONL",
-                        mininterval=10,
-                ):
+                for line in gzip_file:
                     try:
                         record = loads(line)
                     except:
@@ -130,11 +117,7 @@ def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
     if jsonl_path.exists():
         try:
             with GzipFile(jsonl_path, "r") as gzip_file:
-                for line in tqdm(
-                        gzip_file,
-                        desc="Read archived query URLs from JSONL",
-                        mininterval=10,
-                ):
+                for line in gzip_file:
                     try:
                         record = loads(line)
                     except:
@@ -164,11 +147,7 @@ def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
                     record_types=WarcRecordType.response,
                     parse_http=False,
                 )
-                for record in tqdm(
-                        records,
-                        desc="Read raw SERPs from WARC",
-                        mininterval=10,
-                ):
+                for record in records:
                     offset = record.stream_pos
                     record_url_header = record.headers["Archived-URL"]
                     try:
@@ -192,11 +171,7 @@ def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
     if jsonl_path.exists():
         try:
             with GzipFile(jsonl_path, "r") as gzip_file:
-                for line in tqdm(
-                        gzip_file,
-                        desc="Read parsed SERPs from JSONL",
-                        mininterval=10,
-                ):
+                for line in gzip_file:
                     try:
                         record = loads(line)
                     except:
