@@ -1,7 +1,6 @@
 from datetime import datetime
 from gzip import GzipFile
 from json import loads, JSONDecodeError, dumps
-from os import environ
 from pathlib import Path
 from random import shuffle
 from subprocess import call
@@ -23,7 +22,6 @@ research_dir = ceph_dir / "data-in-progress" / "data-research"
 global_data_dir = research_dir / "web-search" / "web-archive-query-log"
 data_dir = global_data_dir / "focused"
 
-environ["PYSPARK_PYTHON"] = str(global_data_dir / "venv/bin/python")
 session = SparkSession.builder.getOrCreate()
 
 sc = session.sparkContext

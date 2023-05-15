@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+PYSPARK_PYTHON=/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/venv/bin/python \
 spark-submit \
     --conf spark.yarn.submit.waitAppCompletion=false \
     --name web-archive-query-log-corpus \
