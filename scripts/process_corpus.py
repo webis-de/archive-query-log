@@ -73,7 +73,11 @@ def relative_path_record_ids(relative_path: Path) -> Iterator[tuple]:
     if not jsonl_path.exists():
         return
     with GzipFile(jsonl_path, "r") as gzip_file:
-        for i, line in enumerate(tqdm(gzip_file, desc="Read IDs from JSONL")):
+        for i, line in enumerate(tqdm(
+                gzip_file,
+                desc="Read IDs from JSONL",
+                mininterval=10,
+        )):
             if SAMPLE_CORPUS and i > 100:
                 break
             try:
@@ -82,6 +86,7 @@ def relative_path_record_ids(relative_path: Path) -> Iterator[tuple]:
                     NAMESPACE_URL,
                     f"{record['timestamp']}:{record['url']}"
                 )
+                print(f"Found record ID: {record_id}")
                 yield service, relative_path, record_id
             except:
                 print(f"Could not index {line} at {relative_path}.")
@@ -100,9 +105,10 @@ def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
         try:
             with GzipFile(jsonl_path, "r") as gzip_file:
                 for line in tqdm(
-                        gzip_file, desc="Read archived URLs from JSONL"
+                        gzip_file,
+                        desc="Read archived URLs from JSONL",
+                        mininterval=10,
                 ):
-                    offset = gzip_file.tell()
                     try:
                         record = loads(line)
                     except:
@@ -125,7 +131,9 @@ def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
         try:
             with GzipFile(jsonl_path, "r") as gzip_file:
                 for line in tqdm(
-                        gzip_file, desc="Read archived query URLs from JSONL"
+                        gzip_file,
+                        desc="Read archived query URLs from JSONL",
+                        mininterval=10,
                 ):
                     try:
                         record = loads(line)
@@ -156,7 +164,11 @@ def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
                     record_types=WarcRecordType.response,
                     parse_http=False,
                 )
-                for record in tqdm(records, desc="Read raw SERPs from WARC"):
+                for record in tqdm(
+                        records,
+                        desc="Read raw SERPs from WARC",
+                        mininterval=10,
+                ):
                     offset = record.stream_pos
                     record_url_header = record.headers["Archived-URL"]
                     try:
@@ -181,9 +193,10 @@ def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
         try:
             with GzipFile(jsonl_path, "r") as gzip_file:
                 for line in tqdm(
-                        gzip_file, desc="Read parsed SERPs from JSONL"
+                        gzip_file,
+                        desc="Read parsed SERPs from JSONL",
+                        mininterval=10,
                 ):
-                    offset = gzip_file.tell()
                     try:
                         record = loads(line)
                     except:
@@ -220,11 +233,13 @@ def _iter_results(
         wayback_url = f"https://web.archive.org/web/{wayback_timestamp}/{url}"
         wayback_raw_url = \
             f"https://web.archive.org/web/{wayback_timestamp}id_/{url}"
+        record_id = uuid5(
+            NAMESPACE_URL,
+            f"{snippet['rank']}:{snippet['timestamp']}:{snippet['url']}"
+        )
+        print(f"Yield result: {record_id}")
         yield {
-            "result_id": str(uuid5(
-                NAMESPACE_URL,
-                f"{snippet['rank']}:{snippet['timestamp']}:{snippet['url']}"
-            )),
+            "result_id": str(record_id),
             "result_url": url,
             "result_domain": domain,
             "result_domain_public_suffix": public_suffix,
@@ -246,7 +261,6 @@ def relative_path_record_id_queries(
         _relative_path_record_id_base(relative_path_record_id)
 
     if archived_query_url is None:
-        yield "empty"
         print(f"Archived query URL not found for ID {record_id}.")
         return
 
@@ -266,6 +280,7 @@ def relative_path_record_id_queries(
 
     documents = list(_iter_results(archived_url, archived_parsed_serp))
 
+    print(f"Yield SERP: {record_id}")
     yield {
         "serp_id": str(record_id),
         "serp_url": url,
@@ -302,6 +317,7 @@ def relative_path_record_id_queries(
 
 def query_documents(query: dict) -> Iterator[dict]:
     for result in query["serp_results"]:
+        print(f"Yield result: {result['result_id']}")
         yield {
             "result_id": result["result_id"],
             "result_url": result["result_url"],
