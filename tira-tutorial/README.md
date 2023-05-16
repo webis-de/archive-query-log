@@ -1,6 +1,6 @@
 # Running experiments on the Archive Query Log with TIRA
 
-The [Archive Query Log](..) is a comprehensive query log collected at the Internet Archive over the last 25 years. This version includes 357 million queries, 306 million search result pages, and 2.6 billion search results across 550 search providers. [TIRA](https://tira.io) allows to run arbitrary software on this dataset in a privacy preserving way: the results of executed software is blinded until they reviewed (both the output, and the software) to ensure that no sensitive data is leaked. In this tutorial, you'll learn how to develop a Docker image that can be executed in TIRA to run your experiment or evaluation.
+The [Archive Query Log](..) (AQL) is a comprehensive query log collected at the Internet Archive over the last 25 years. This version includes 357 million queries, 306 million search result pages, and 2.6 billion search results across 550 search providers. [TIRA](https://tira.io) allows to run arbitrary software on this dataset in a privacy preserving way: the results of executed software is blinded until they reviewed (both the output, and the software) to ensure that no sensitive data is leaked. In this tutorial, you'll learn how to develop a Docker image that can be executed in TIRA to run your experiment or evaluation.
 
 ## Installation
 
@@ -83,4 +83,9 @@ This should yield a result like this:
     ```
 4. Select the previously uploaded Docker image from the dropdown menu.
 5. Click <kbd>Add Container</kbd>.
-6. TODO
+6. A new tab will appear with a "random" name. Click on the tab to open the container.
+7. Select the "Validation" dataset from the dropdown menu.
+8. Click <kbd>Run Container</kbd> to start the experiment. 
+ 
+Congrats! You've successfully executed your experiment on the AQL with TIRA. 
+Our team will now review the outputs of your experiment and unblind it if it doesn't leak private data. You can check the status of your experiment on the TIRA website.
