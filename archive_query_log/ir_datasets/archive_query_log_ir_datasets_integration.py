@@ -3,7 +3,7 @@
    This file is intended to work inside the Docker image.
 """
 import ir_datasets
-from ir_datasets.formats import BaseDocs, BaseQrels, GenericDoc, TrecQueries, TrecQrels, TsvQueries
+from ir_datasets.formats import BaseDocs, BaseQueries, BaseQrels, GenericDoc, TrecQueries, TrecQrels, TsvQueries
 from typing import NamedTuple, Dict
 from ir_datasets.datasets.base import Dataset
 from ir_datasets.util import LocalDownload
@@ -25,9 +25,13 @@ def extract_non_empty_results(serp):
         ret += [result]
     return ret
 
-def parse_serps(path, min_results_on_serp = 3):
+def parse_serps(path, min_results_on_serp = 1):
     ret = pd.concat([pd.read_json(i, lines=True) for i in glob(f'{path}/serps/part*.gz')])
-    ret = ret[ret['serp_results'].map(lambda i: len(extract_non_empty_results({'serp_results': i}))) > min_results_on_serp]
+    original_length = len(ret)
+    ret = ret[ret['serp_results'].map(lambda i: len(extract_non_empty_results({'serp_results': i}))) >= min_results_on_serp]
+    
+    print(f'Processed {original_length} SERPs, finding {len(ret)} SERPs')
+    
     return ret
 
 class ArchiveQueryLogQuery(NamedTuple):
@@ -81,7 +85,7 @@ class ArchiveQueryLogQrels(BaseQrels):
     def qrels_defs(self):
         raise NotImplementedError()
 
-class ArchiveQueryLogQueries:
+class ArchiveQueryLogQueries(BaseQueries):
     def __init__(self, dlc, lang=None):
         serps = parse_serps(dlc)
         self.queries = []
