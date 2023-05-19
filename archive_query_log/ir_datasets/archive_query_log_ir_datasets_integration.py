@@ -50,7 +50,7 @@ class ArchiveQueryLogQrel(NamedTuple):
     lang: str
 
 class ArchiveQueryLogQrels(BaseQrels):
-    def __init__(self, dlc, lang='en'):
+    def __init__(self, dlc, lang=None):
         self.qrels = []
         serps = parse_serps(dlc)
 
@@ -65,7 +65,8 @@ class ArchiveQueryLogQrels(BaseQrels):
                                                    )
                               ]
 
-        self.qrels = [i for i in self.qrels if i.lang==lang]
+        if lang:
+            self.qrels = [i for i in self.qrels if i.lang==lang]
         print(f'Have {len(self.qrels)} qrels.')
 
     def qrels_iter(self):
@@ -81,7 +82,7 @@ class ArchiveQueryLogQrels(BaseQrels):
         raise NotImplementedError()
 
 class ArchiveQueryLogQueries:
-    def __init__(self, dlc, lang='en'):
+    def __init__(self, dlc, lang=None):
         serps = parse_serps(dlc)
         self.queries = []
         
@@ -94,8 +95,8 @@ class ArchiveQueryLogQueries:
                                                   search_provider_name= serp.search_provider_name, num_results=num_results
                                                   )
                             ]
-
-        self.queries = [i for i in self.queries if i.lang==lang]
+        if lang:
+            self.queries = [i for i in self.queries if i.lang==lang]
 
         print(f'Have {len(self.queries)} queries.')
 
