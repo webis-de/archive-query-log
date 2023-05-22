@@ -5,11 +5,12 @@ from pathlib import Path
 from random import shuffle
 from typing import Optional, Iterator
 from urllib.parse import urlparse
-from uuid import uuid5, NAMESPACE_URL, UUID
+from uuid import uuid5, NAMESPACE_URL
 
 from fastwarc import FileStream, ArchiveIterator, WarcRecordType, WarcRecord
 from publicsuffixlist import PublicSuffixList
 from pyspark.sql import SparkSession
+from tqdm.auto import tqdm
 from yaml import safe_load
 
 SAMPLE_CORPUS = False
@@ -60,135 +61,91 @@ def detect_language(text: str) -> Optional[str]:
 public_suffix_list = PublicSuffixList()
 
 
-def relative_path_record_ids(relative_path: Path) -> Iterator[tuple]:
-    service = relative_path.parts[0]
-
-    jsonl_path = data_dir / "archived-query-urls" / \
-                 relative_path.with_suffix(".jsonl.gz")
+def index_jsonl(path: Path, base_type: str) -> dict:
+    jsonl_path = data_dir / base_type / path.with_suffix(".jsonl.gz")
     if not jsonl_path.exists():
-        return
-    with GzipFile(jsonl_path, "r") as gzip_file:
-        for i, line in enumerate(gzip_file):
-            if SAMPLE_CORPUS and i > 100:
-                break
-            try:
-                record = loads(line)
+        return {}
+    index = {}
+    try:
+        with GzipFile(jsonl_path, "r") as gzip_file:
+            for line in tqdm(gzip_file, desc="Index JSONL"):
+                try:
+                    record = loads(line)
+                except:
+                    print(f"Could not index {line} at {path}.")
+                    continue
                 record_id = uuid5(
                     NAMESPACE_URL,
-                    f"{record['timestamp']}:{record['url']}"
+                    f"{record['timestamp']}:{record['url']}",
                 )
-                print(f"Found record ID: {record_id}")
-                yield service, relative_path, record_id
-            except:
-                print(f"Could not index {line} at {relative_path}.")
+                index[record_id] = record
+        return index
+    except:
+        print(f"Could not read JSONL file at {path}.")
+        return {}
 
 
-def _relative_path_record_id_base(relative_path_record_id: tuple) -> tuple:
-    service: str
-    relative_path: Path
-    record_id: UUID
-    service, relative_path, record_id = relative_path_record_id
-
-    archived_url: Optional[dict] = None
-    jsonl_path = data_dir / "archived-urls" / \
-                 relative_path.with_suffix(".jsonl.gz")
-    if jsonl_path.exists():
+def index_warc(path: Path, base_type: str) -> dict:
+    warc_path = data_dir / base_type / path
+    if not warc_path.exists():
+        return {}
+    index = {}
+    for warc_child_path in warc_path.iterdir():
+        if warc_child_path.name.startswith("."):
+            continue
         try:
-            with GzipFile(jsonl_path, "r") as gzip_file:
-                for line in gzip_file:
-                    try:
-                        record = loads(line)
-                    except:
-                        print(f"Could not read JSON record {line} "
-                              f"at {relative_path}.")
-                        continue
-                    if record_id == uuid5(
-                            NAMESPACE_URL,
-                            f"{record['timestamp']}:{record['url']}"
-                    ):
-                        archived_url = record
-                        break
-        except:
-            print(f"Could not read JSONL file at {relative_path}.")
-
-    archived_query_url: Optional[dict] = None
-    jsonl_path = data_dir / "archived-query-urls" / \
-                 relative_path.with_suffix(".jsonl.gz")
-    if jsonl_path.exists():
-        try:
-            with GzipFile(jsonl_path, "r") as gzip_file:
-                for line in gzip_file:
-                    try:
-                        record = loads(line)
-                    except:
-                        print(f"Could not read JSON record {line} "
-                              f"at {relative_path}.")
-                        continue
-                    if record_id == uuid5(
-                            NAMESPACE_URL,
-                            f"{record['timestamp']}:{record['url']}"
-                    ):
-                        archived_query_url = record
-                        break
-        except:
-            print(f"Could not read JSONL file at {relative_path}.")
-
-    archived_raw_serp_location: Optional[tuple] = None
-    warc_path = data_dir / "archived-raw-serps" / relative_path
-    if warc_path.exists():
-        for warc_child_path in warc_path.iterdir():
-            if warc_child_path.name.startswith("."):
-                continue
-            try:
-                stream = FileStream(str(warc_child_path.absolute()))
-                # noinspection PyTypeChecker
-                records: Iterator[WarcRecord] = ArchiveIterator(
-                    stream,
-                    record_types=WarcRecordType.response,
-                    parse_http=False,
+            stream = FileStream(str(warc_child_path.absolute()))
+            records = ArchiveIterator(
+                stream,
+                record_types=WarcRecordType.response,
+                parse_http=False,
+            )
+            for record in tqdm(records, desc="Index WARC"):
+                record: WarcRecord
+                offset = record.stream_pos
+                record_url_header = record.headers["Archived-URL"]
+                try:
+                    record_url = loads(record_url_header)
+                except JSONDecodeError:
+                    print(f"Could not index {record_url_header} at {path}.")
+                    continue
+                record_id = uuid5(
+                    NAMESPACE_URL,
+                    f"{record_url['timestamp']}:{record_url['url']}",
                 )
-                for record in records:
-                    offset = record.stream_pos
-                    record_url_header = record.headers["Archived-URL"]
-                    try:
-                        record_url = loads(record_url_header)
-                    except JSONDecodeError:
-                        print(f"Could not read WARC JSON "
-                              f"header {record_url_header} "
-                              f"at {relative_path}.")
-                        continue
-                    if record_id == uuid5(
-                            NAMESPACE_URL,
-                            f"{record_url['timestamp']}:{record_url['url']}"
-                    ):
-                        archived_raw_serp_location = (warc_child_path, offset)
-            except:
-                print(f"Could not read WARC file at {warc_child_path}.")
-
-    archived_parsed_serp: Optional[dict] = None
-    jsonl_path = data_dir / "archived-parsed-serps" / \
-                 relative_path.with_suffix(".jsonl.gz")
-    if jsonl_path.exists():
-        try:
-            with GzipFile(jsonl_path, "r") as gzip_file:
-                for line in gzip_file:
-                    try:
-                        record = loads(line)
-                    except:
-                        print(f"Could not read JSON record {line} "
-                              f"at {relative_path}.")
-                        continue
-                    if record_id == uuid5(
-                            NAMESPACE_URL,
-                            f"{record['timestamp']}:{record['url']}"
-                    ):
-                        archived_parsed_serp = record
-                        break
+                index[record_id] = (
+                    warc_child_path,
+                    offset,
+                )
         except:
-            print(f"Could not read JSONL file at {relative_path}.")
+            print(f"Could not read WARC file at {warc_child_path}.")
+            continue
+    return index
 
-    return service, relative_path, record_id, archived_url, \
-        archived_query_url, archived_raw_serp_location, archived_parsed_serp
+
+def relative_path_records(relative_path: Path) -> Iterator[tuple]:
+    service = relative_path.parts[0]
+
+    print(f"Reading files in {relative_path}.")
+    archived_urls_index = index_jsonl(relative_path, "archived-urls")
+    print("Finished reading archived URLs.")
+    archived_query_urls_index = index_jsonl(relative_path,
+                                            "archived-query-urls")
+    print("Finished reading archived query URLs.")
+    archived_raw_serps_index = index_warc(relative_path, "archived-raw-serps")
+    print("Finished reading archived raw SERPs (pointers).")
+    archived_parsed_serps_index = index_jsonl(relative_path,
+                                              "archived-parsed-serps")
+    print("Finished reading archived parsed SERPs.")
+
+    for record_id, archived_url in archived_urls_index.items():
+        archived_url = archived_urls_index[record_id]
+        archived_query_url = archived_query_urls_index.get(record_id, None)
+        archived_raw_serp_location = archived_raw_serps_index.get(record_id,
+                                                                  None)
+        archived_parsed_serp = archived_parsed_serps_index.get(record_id, None)
+
+        yield service, relative_path, record_id, archived_url, archived_query_url, archived_raw_serp_location, archived_parsed_serp
 
 
 def _iter_results(
@@ -229,11 +186,10 @@ def _iter_results(
 
 
 def relative_path_record_id_queries(
-        relative_path_record_id: tuple
+        relative_path_record: tuple
 ) -> Iterator[dict]:
     service, relative_path, record_id, archived_url, archived_query_url, \
-        archived_raw_serp_location, archived_parsed_serp = \
-        _relative_path_record_id_base(relative_path_record_id)
+        archived_raw_serp_location, archived_parsed_serp = relative_path_record
 
     if archived_query_url is None:
         print(f"Archived query URL not found for ID {record_id}.")
@@ -256,7 +212,7 @@ def relative_path_record_id_queries(
     documents = list(_iter_results(archived_url, archived_parsed_serp))
 
     print(f"Yield SERP: {record_id}")
-    yield {
+    yield dumps({
         "serp_id": str(record_id),
         "serp_url": url,
         "serp_domain": domain,
@@ -287,13 +243,14 @@ def relative_path_record_id_queries(
             services[service]["public_suffix"],
         "search_provider_alexa_rank": service_info["alexa_rank"],
         "search_provider_category": service_info["category"],
-    }
+    })
 
 
-def query_documents(query: dict) -> Iterator[dict]:
+def query_documents(query: str) -> Iterator[dict]:
+    query = loads(query)
     for result in query["serp_results"]:
         print(f"Yield result: {result['result_id']}")
-        yield {
+        yield dumps({
             "result_id": result["result_id"],
             "result_url": result["result_url"],
             "result_domain": result["result_domain"],
@@ -328,25 +285,22 @@ def query_documents(query: dict) -> Iterator[dict]:
                 query["search_provider_alexa_domain_public_suffix"],
             "search_provider_alexa_rank": query["search_provider_alexa_rank"],
             "search_provider_category": query["search_provider_category"],
-        }
+        })
 
 
 sc.parallelize(relative_paths) \
     .repartition(1_000) \
-    .flatMap(relative_path_record_ids) \
-    .repartition(1_000) \
-    .flatMap(relative_path_record_id_queries) \
-    .map(dumps) \
-    .repartition(100) \
+    .flatMap(relative_path_records) \
+    .map(relative_path_record_id_queries) \
     .saveAsTextFile("archive-query-log/serps/",
                     compressionCodecClass=
                     "org.apache.hadoop.io.compress.GzipCodec")
 
 sc.parallelize(relative_paths) \
     .repartition(1_000) \
-    .flatMap(relative_path_record_ids) \
+    .flatMap(relative_path_records) \
     .repartition(1_000) \
-    .flatMap(relative_path_record_id_queries) \
+    .map(relative_path_record_id_queries) \
     .flatMap(query_documents) \
     .map(dumps) \
     .repartition(100) \
