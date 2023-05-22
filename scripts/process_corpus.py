@@ -34,7 +34,7 @@ relative_paths = [
 ]
 shuffle(relative_paths)
 if SAMPLE_CORPUS:
-    relative_paths = relative_paths[:1000]
+    relative_paths = relative_paths[:100]
 print(f"Found {len(relative_paths)} paths.")
 
 with (global_data_dir / "selected-services.yaml").open("r") as file:
@@ -185,15 +185,15 @@ def _iter_results(
         }
 
 
-def relative_path_record_id_queries(
+def relative_path_record_id_query(
         relative_path_record: tuple
-) -> Iterator[dict]:
+) -> Optional[str]:
     service, relative_path, record_id, archived_url, archived_query_url, \
         archived_raw_serp_location, archived_parsed_serp = relative_path_record
 
     if archived_query_url is None:
         print(f"Archived query URL not found for ID {record_id}.")
-        return
+        return None
 
     url = archived_url["url"]
     domain = urlparse(url).hostname
@@ -291,7 +291,8 @@ def query_documents(query: str) -> Iterator[dict]:
 sc.parallelize(relative_paths) \
     .repartition(1_000) \
     .flatMap(relative_path_records) \
-    .map(relative_path_record_id_queries) \
+    .map(relative_path_record_id_query) \
+    .filter(lambda json: json is not None) \
     .saveAsTextFile("archive-query-log/serps/",
                     compressionCodecClass=
                     "org.apache.hadoop.io.compress.GzipCodec")
@@ -299,7 +300,7 @@ sc.parallelize(relative_paths) \
 sc.textFile("archive-query-log/serps/") \
     .flatMap(query_documents) \
     .map(dumps) \
-    .repartition(100) \
+    .repartition(1_000) \
     .saveAsTextFile("archive-query-log/results/",
                     compressionCodecClass=
                     "org.apache.hadoop.io.compress.GzipCodec")
