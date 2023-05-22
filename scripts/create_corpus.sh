@@ -30,4 +30,4 @@ PYSPARK_PYTHON=/mnt/ceph/storage/data-in-progress/data-research/web-search/web-a
   --conf spark.executor.memoryOverhead=8000 \
   --conf spark.driver.memoryOverhead=10000 \
   --conf spark.network.timeout=600 \
-  process_corpus.py $variant
+  create_corpus.py $variant
