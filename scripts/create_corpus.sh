@@ -14,8 +14,8 @@ else
 fi
 
 hdfs dfs -mkdir -p archive-query-log/$variant/
-hdfs dfs -rm -rf archive-query-log/$variant/serps/
-hdfs dfs -rm -rf archive-query-log/$variant/results/
+hdfs dfs -rm -r -f archive-query-log/$variant/serps/
+hdfs dfs -rm -r -f archive-query-log/$variant/results/
 
 PYSPARK_PYTHON=/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/venv/bin/python \
   spark-submit \
