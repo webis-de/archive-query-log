@@ -303,16 +303,16 @@ def main(variant: Literal["small", "medium", "full"]):
         .flatMap(_iter_relative_path_records) \
         .map(_record_to_query) \
         .filter(lambda json: json is not None) \
-        .saveAsTextFile("archive-query-log/serps/",
+        .saveAsTextFile(f"archive-query-log/{variant}/serps/",
                         compressionCodecClass=
                         "org.apache.hadoop.io.compress.GzipCodec")
 
     print("Export results.")
-    sc.textFile("archive-query-log/serps/") \
+    sc.textFile(f"archive-query-log/{variant}/serps/") \
         .flatMap(_iter_query_documents) \
         .map(dumps) \
         .repartition(1_000) \
-        .saveAsTextFile("archive-query-log/results/",
+        .saveAsTextFile(f"archive-query-log/{variant}/results/",
                         compressionCodecClass=
                         "org.apache.hadoop.io.compress.GzipCodec")
 
