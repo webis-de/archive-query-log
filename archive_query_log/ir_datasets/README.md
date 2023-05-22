@@ -42,6 +42,24 @@ docker run --rm -ti \
 
 ```
 docker run --rm -ti \
+    -v ${PWD}/../../tira-tutorial/random-10000-2023-05-14/:/data:rw \
+    -v ${PWD}/aql-corpus-for-tira:/output \
+    --entrypoint python3 \
+    mam10eks/archive-query-log-ir-datasets-integration:0.0.1 \
+    /usr/lib/python3.8/site-packages/ir_datasets/datasets_in_progress/archive_query_log_ir_datasets_integration.py
+```
+
+```
+docker run --rm -ti \
+    -v ${PWD}/../../tira-tutorial/random-10000-2023-05-14/:/data:rw \
+    -v ${PWD}/aql-corpus-for-tira:/output \
+    mam10eks/archive-query-log-ir-datasets-integration:0.0.1 \
+    --ir_datasets_id archive-query-log --rerank /data --output_dataset_path /outputs
+```
+
+
+```
+docker run --rm -ti \
     -v ${PWD}/../../tira-tutorial/random-10000-2023-05-14/:/data:ro \
     -v ${PWD}/tira-output:/tira-runs \
     --entrypoint sh \

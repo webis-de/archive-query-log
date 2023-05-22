@@ -11,9 +11,10 @@ from ir_datasets.indices import PickleLz4FullStore
 from pathlib import Path
 from glob import glob
 import pandas as pd
+from tqdm import tqdm
 from copy import deepcopy
 
-#parse_serps('tira-tutorial/validation-data/')
+DATA_DIR = '/data/'
 
 def extract_non_empty_results(serp):
     if 'serp_results' not in serp or not serp['serp_results']:
@@ -25,14 +26,27 @@ def extract_non_empty_results(serp):
         ret += [result]
     return ret
 
-def parse_serps(path, min_results_on_serp = 1):
-    ret = pd.concat([pd.read_json(i, lines=True) for i in glob(f'{path}/serps/part*.gz')])
+def parse_serps(path, min_results_on_serp = 3):
+    ret = pd.concat([pd.read_json(i, lines=True) for i in tqdm(glob(f'{path}/serps/part*.gz'), 'Load SERPs')])
     original_length = len(ret)
     ret = ret[ret['serp_results'].map(lambda i: len(extract_non_empty_results({'serp_results': i}))) >= min_results_on_serp]
     
     print(f'Processed {original_length} SERPs, finding {len(ret)} SERPs')
     
     return ret
+
+def persist_run_file(serps, lang="en"):
+    ret = []
+    for _, serp in serps.iterrows():
+        results = extract_non_empty_results(serp)
+        rank = 1
+        if serp['serp_query_text_url_language'] != lang:
+            continue
+        for result in results:
+            ret += [{'query': serp.serp_id, 'q0': 0, 'docid': result['result_id'], 'rank': rank, 'score': 1000 - rank, 'system': 'aql'}]
+            rank += 1
+    ret = pd.DataFrame(ret)
+    ret.to_csv(DATA_DIR + '/run.txt', sep=" ", header=False, index=False)
 
 class ArchiveQueryLogQuery(NamedTuple):
     query_id: str
@@ -54,9 +68,8 @@ class ArchiveQueryLogQrel(NamedTuple):
     lang: str
 
 class ArchiveQueryLogQrels(BaseQrels):
-    def __init__(self, dlc, lang=None):
+    def __init__(self, serps, lang="en"):
         self.qrels = []
-        serps = parse_serps(dlc)
 
         for _, serp in serps.iterrows():
             results = extract_non_empty_results(serp)
@@ -86,8 +99,7 @@ class ArchiveQueryLogQrels(BaseQrels):
         raise NotImplementedError()
 
 class ArchiveQueryLogQueries(BaseQueries):
-    def __init__(self, dlc, lang=None):
-        serps = parse_serps(dlc)
+    def __init__(self, serps, lang="en"):
         self.queries = []
         
         for _, serp in serps.iterrows():
@@ -108,11 +120,10 @@ class ArchiveQueryLogQueries(BaseQueries):
         return deepcopy(self.queries).__iter__()
 
 class ArchiveQueryLogDocs(BaseDocs):
-    def __init__(self, dlc):
-        self.df = parse_serps(dlc)
+    def __init__(self, serps):
         self.docs = []
 
-        for _, i in self.df.iterrows():
+        for _, i in serps.iterrows():
             for result in extract_non_empty_results(i):
                 self.docs += [GenericDoc(doc_id=result['result_id'], text=(result['result_snippet_title'] + ' ' + result['result_snippet_title']).strip())]
 
@@ -126,7 +137,7 @@ class ArchiveQueryLogDocs(BaseDocs):
 
     def docs_store(self):
         return PickleLz4FullStore(
-            path=f'{self._dlc.path(force=False)}.pklz4',
+            path=f'{DATA_DIR}/docs.pklz4',
             init_iter_fn=self.docs_iter,
             data_cls=self.docs_cls(),
             lookup_field='doc_id',
@@ -134,9 +145,16 @@ class ArchiveQueryLogDocs(BaseDocs):
         )
 
 
-dataset = Dataset(ArchiveQueryLogDocs('/data/'), ArchiveQueryLogQueries('/data/'), ArchiveQueryLogQrels('/data/'))
-ir_datasets.registry.register('archive-query-log', dataset)
+serps = parse_serps(DATA_DIR)
+dataset = Dataset(ArchiveQueryLogDocs(serps), ArchiveQueryLogQueries(serps), ArchiveQueryLogQrels(serps))
+try:
+    ir_datasets.registry.register('archive-query-log', dataset)
+except:
+    pass
 
 assert dataset.has_docs(), "dataset has no documents"
 assert dataset.has_queries(), "dataset has no queries"
+
+if __name__ == '__main__':
+    persist_run_file(serps)
 
