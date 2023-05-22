@@ -3,7 +3,7 @@ from gzip import GzipFile
 from json import loads, JSONDecodeError, dumps
 from pathlib import Path
 from random import shuffle
-from typing import Optional, Iterator
+from typing import Optional, Iterator, Literal
 from urllib.parse import urlparse
 from uuid import uuid5, NAMESPACE_URL
 
@@ -13,42 +13,31 @@ from pyspark.sql import SparkSession
 from tqdm.auto import tqdm
 from yaml import safe_load
 
-# SAMPLE_CORPUS = False
-SAMPLE_CORPUS = True
+_CEPH_DIR = Path("/mnt/ceph/storage")
+_RESEARCH_DIR = _CEPH_DIR / "data-in-progress" / "data-research"
+_GLOBAL_DATA_DIR = _RESEARCH_DIR / "web-search" / "web-archive-query-log"
+_DATA_DIR = _GLOBAL_DATA_DIR / "focused"
 
-ceph_dir = Path("/mnt/ceph/storage")
-research_dir = ceph_dir / "data-in-progress" / "data-research"
-global_data_dir = research_dir / "web-search" / "web-archive-query-log"
-data_dir = global_data_dir / "focused"
-
-session = SparkSession.builder.getOrCreate()
-
-sc = session.sparkContext
-print(sc)
-
-relative_paths = [
-    path
-    .relative_to(data_dir / "archived-urls")
-    .with_name(path.name[:-len(".jsonl.gz")])
-    for path in data_dir.glob("archived-urls/*/*/*.jsonl.gz")
-]
-shuffle(relative_paths)
-if SAMPLE_CORPUS:
-    relative_paths = relative_paths[:100]
-print(f"Found {len(relative_paths)} paths.")
-
-with (global_data_dir / "selected-services.yaml").open("r") as file:
-    services_dict = safe_load(file)
-services_list = [(service["name"], service) for service in services_dict]
-assert len({name for name, service in services_list}) == len(services_list)
-services = {
-    name: service
-    for name, service in services_list
-}
-print(f"Found {len(services)} services.")
+_PUBLIC_SUFFIX_LIST = PublicSuffixList()
 
 
-def detect_language(text: str) -> Optional[str]:
+def _load_services(path: Path) -> dict:
+    with path.open("r") as file:
+        services_dict = safe_load(file)
+    services_list = [(service["name"], service) for service in services_dict]
+    assert len({name for name, service in services_list}) == len(services_list)
+    services = {
+        name: service
+        for name, service in services_list
+    }
+    print(f"Found {len(services)} services.")
+    return services
+
+
+_SERVICES = _load_services(_GLOBAL_DATA_DIR / "selected-services.yaml")
+
+
+def _detect_language(text: str) -> Optional[str]:
     text = text.replace("\n", " ")
     from cld3 import get_language
     language_prediction = get_language(text)
@@ -58,18 +47,17 @@ def detect_language(text: str) -> Optional[str]:
         if language_prediction.is_reliable else None
 
 
-public_suffix_list = PublicSuffixList()
-
-
-def index_jsonl(path: Path, base_type: str) -> dict:
-    jsonl_path = data_dir / base_type / path.with_suffix(".jsonl.gz")
+def _read_jsonl(path: Path, base_type: str) -> dict:
+    jsonl_path = _DATA_DIR / base_type / path.with_suffix(".jsonl.gz")
     if not jsonl_path.exists():
         return {}
     index = {}
     try:
         with GzipFile(jsonl_path, "r") as gzip_file:
+            # noinspection PyTypeChecker
             for line in tqdm(gzip_file, desc="Index JSONL"):
                 try:
+                    # noinspection PyTypeChecker
                     record = loads(line)
                 except:
                     print(f"Could not index {line} at {path}.")
@@ -85,8 +73,8 @@ def index_jsonl(path: Path, base_type: str) -> dict:
         return {}
 
 
-def index_warc(path: Path, base_type: str) -> dict:
-    warc_path = data_dir / base_type / path
+def _index_warc(path: Path, base_type: str) -> dict:
+    warc_path = _DATA_DIR / base_type / path
     if not warc_path.exists():
         return {}
     index = {}
@@ -100,6 +88,7 @@ def index_warc(path: Path, base_type: str) -> dict:
                 record_types=WarcRecordType.response,
                 parse_http=False,
             )
+            # noinspection PyTypeChecker
             for record in tqdm(records, desc="Index WARC"):
                 record: WarcRecord
                 offset = record.stream_pos
@@ -123,18 +112,18 @@ def index_warc(path: Path, base_type: str) -> dict:
     return index
 
 
-def relative_path_records(relative_path: Path) -> Iterator[tuple]:
+def _iter_relative_path_records(relative_path: Path) -> Iterator[tuple]:
     service = relative_path.parts[0]
 
     print(f"Reading files in {relative_path}.")
-    archived_urls_index = index_jsonl(relative_path, "archived-urls")
+    archived_urls_index = _read_jsonl(relative_path, "archived-urls")
     print("Finished reading archived URLs.")
-    archived_query_urls_index = index_jsonl(relative_path,
+    archived_query_urls_index = _read_jsonl(relative_path,
                                             "archived-query-urls")
     print("Finished reading archived query URLs.")
-    archived_raw_serps_index = index_warc(relative_path, "archived-raw-serps")
+    archived_raw_serps_index = _index_warc(relative_path, "archived-raw-serps")
     print("Finished reading archived raw SERPs (pointers).")
-    archived_parsed_serps_index = index_jsonl(relative_path,
+    archived_parsed_serps_index = _read_jsonl(relative_path,
                                               "archived-parsed-serps")
     print("Finished reading archived parsed SERPs.")
 
@@ -157,7 +146,7 @@ def _iter_results(
     for snippet in archived_parsed_serp["results"]:
         url = snippet["url"]
         domain = urlparse(url).hostname
-        public_suffix = public_suffix_list.publicsuffix(domain) \
+        public_suffix = _PUBLIC_SUFFIX_LIST.publicsuffix(domain) \
             if domain is not None else None
         timestamp = archived_url["timestamp"]
         wayback_timestamp = \
@@ -185,9 +174,7 @@ def _iter_results(
         }
 
 
-def relative_path_record_id_query(
-        relative_path_record: tuple
-) -> Optional[str]:
+def _record_to_query(relative_path_record: tuple) -> Optional[str]:
     service, relative_path, record_id, archived_url, archived_query_url, \
         archived_raw_serp_location, archived_parsed_serp = relative_path_record
 
@@ -197,7 +184,7 @@ def relative_path_record_id_query(
 
     url = archived_url["url"]
     domain = urlparse(url).hostname
-    public_suffix = public_suffix_list.publicsuffix(domain) \
+    public_suffix = _PUBLIC_SUFFIX_LIST.publicsuffix(domain) \
         if domain is not None else None
     timestamp = archived_url["timestamp"]
     wayback_timestamp = \
@@ -206,8 +193,8 @@ def relative_path_record_id_query(
     wayback_raw_url = \
         f"https://web.archive.org/web/{wayback_timestamp}id_/{url}"
     query = archived_query_url["query"]
-    language = detect_language(query)
-    service_info = services[service]
+    language = _detect_language(query)
+    service_info = _SERVICES[service]
 
     documents = list(_iter_results(archived_url, archived_parsed_serp))
 
@@ -229,7 +216,7 @@ def relative_path_record_id_query(
             if archived_parsed_serp is not None else None
         ),
         "serp_warc_relative_path": (
-            str(archived_raw_serp_location[0].relative_to(global_data_dir))
+            str(archived_raw_serp_location[0].relative_to(_GLOBAL_DATA_DIR))
             if archived_raw_serp_location is not None else None
         ),
         "serp_warc_byte_offset": (
@@ -240,13 +227,13 @@ def relative_path_record_id_query(
         "search_provider_name": service,
         "search_provider_alexa_domain": service_info["alexa_domain"],
         "search_provider_alexa_domain_public_suffix":
-            services[service]["public_suffix"],
+            _SERVICES[service]["public_suffix"],
         "search_provider_alexa_rank": service_info["alexa_rank"],
         "search_provider_category": service_info["category"],
     })
 
 
-def query_documents(query: str) -> Iterator[dict]:
+def _iter_query_documents(query: str) -> Iterator[dict]:
     query = loads(query)
     for result in query["serp_results"]:
         print(f"Yield result: {result['result_id']}")
@@ -288,19 +275,44 @@ def query_documents(query: str) -> Iterator[dict]:
         })
 
 
-sc.parallelize(relative_paths) \
-    .repartition(1_000) \
-    .flatMap(relative_path_records) \
-    .map(relative_path_record_id_query) \
-    .filter(lambda json: json is not None) \
-    .saveAsTextFile("archive-query-log/serps/",
-                    compressionCodecClass=
-                    "org.apache.hadoop.io.compress.GzipCodec")
+def main(variant: Literal["small", "medium", "full"]):
+    session = SparkSession.builder.getOrCreate()
 
-sc.textFile("archive-query-log/serps/") \
-    .flatMap(query_documents) \
-    .map(dumps) \
-    .repartition(1_000) \
-    .saveAsTextFile("archive-query-log/results/",
-                    compressionCodecClass=
-                    "org.apache.hadoop.io.compress.GzipCodec")
+    sc = session.sparkContext
+
+    relative_paths = [
+        path
+        .relative_to(_DATA_DIR / "archived-urls")
+        .with_name(path.name[:-len(".jsonl.gz")])
+        for path in _DATA_DIR.glob("archived-urls/*/*/*.jsonl.gz")
+    ]
+    print(f"Found {len(relative_paths)} paths.")
+    shuffle(relative_paths)
+    if variant == "small":
+        relative_paths = relative_paths[:100]
+    elif variant == "medium":
+        relative_paths = relative_paths[:2500]
+    print(f"Selected {len(relative_paths)} paths for corpus creation.")
+
+    print("Start corpus creation.")
+
+    print("Export SERPs.")
+    sc.parallelize(relative_paths) \
+        .repartition(1_000) \
+        .flatMap(_iter_relative_path_records) \
+        .map(_record_to_query) \
+        .filter(lambda json: json is not None) \
+        .saveAsTextFile("archive-query-log/serps/",
+                        compressionCodecClass=
+                        "org.apache.hadoop.io.compress.GzipCodec")
+
+    print("Export results.")
+    sc.textFile("archive-query-log/serps/") \
+        .flatMap(_iter_query_documents) \
+        .map(dumps) \
+        .repartition(1_000) \
+        .saveAsTextFile("archive-query-log/results/",
+                        compressionCodecClass=
+                        "org.apache.hadoop.io.compress.GzipCodec")
+
+    print("Done.")
