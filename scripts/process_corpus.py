@@ -212,7 +212,7 @@ def relative_path_record_id_queries(
     documents = list(_iter_results(archived_url, archived_parsed_serp))
 
     print(f"Yield SERP: {record_id}")
-    yield dumps({
+    return dumps({
         "serp_id": str(record_id),
         "serp_url": url,
         "serp_domain": domain,
@@ -296,11 +296,7 @@ sc.parallelize(relative_paths) \
                     compressionCodecClass=
                     "org.apache.hadoop.io.compress.GzipCodec")
 
-sc.parallelize(relative_paths) \
-    .repartition(1_000) \
-    .flatMap(relative_path_records) \
-    .repartition(1_000) \
-    .map(relative_path_record_id_queries) \
+sc.textFile("archive-query-log/serps/") \
     .flatMap(query_documents) \
     .map(dumps) \
     .repartition(100) \
