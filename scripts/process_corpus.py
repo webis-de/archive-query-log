@@ -13,8 +13,8 @@ from pyspark.sql import SparkSession
 from tqdm.auto import tqdm
 from yaml import safe_load
 
-SAMPLE_CORPUS = False
-# SAMPLE_CORPUS = True
+# SAMPLE_CORPUS = False
+SAMPLE_CORPUS = True
 
 ceph_dir = Path("/mnt/ceph/storage")
 research_dir = ceph_dir / "data-in-progress" / "data-research"
