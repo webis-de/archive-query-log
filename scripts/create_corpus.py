@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from datetime import datetime
 from gzip import GzipFile
 from json import loads, JSONDecodeError, dumps
@@ -316,3 +317,31 @@ def main(variant: Literal["small", "medium", "full"]):
                         "org.apache.hadoop.io.compress.GzipCodec")
 
     print("Done.")
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser()
+    parser.add_argument(
+        "--small",
+        dest="variant",
+        action="store_const",
+        const="small",
+        default="full",
+    )
+    parser.add_argument(
+        "--medium",
+        dest="variant",
+        action="store_const",
+        const="medium",
+        default="full",
+    )
+    parser.add_argument(
+        "--full",
+        dest="variant",
+        action="store_const",
+        const="full",
+        default="full",
+    )
+    args = parser.parse_args()
+    print(f"Creating corpus (variant: {args.variant}).")
+    main(args.variant)
