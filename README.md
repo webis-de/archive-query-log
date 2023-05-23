@@ -12,21 +12,23 @@ Mining Millions of Search Result Pages of Hundreds of Search Engines from 25&nbs
 
 [![Queries TSNE](docs/queries-tsne-teaser.png)](docs/queries-tsne.png)
 
-[Start now](#tldr) by running [your custom analysis/experiment](#running-your-custom-analysis-experiment-on-the-archive-query-log) scraping your own query log [here](#tldr). Or look at our [example files](data/examples).
+Start now by running [your custom analysis/experiment](#integrations), scraping [your own query log](#tldr), or just look at [our example files](data/examples).
 
 ## Contents
 
+- [Integrations](#integrations)
 - [Installation](#installation)
 - [Usage](#tldr)
 - [Development](#development)
 - [Contribute](#contribute)
 - [Abstract](#abstract)
 
-## Running Your Custom Analysis/Experiment on The Archive Query Log
+## Integrations
 
-The data in the archive query log is confidential (still, you can recrawl everything from the wayback machine, but the aggregated data is highly sensitive). For that reason, we ensure that custom experiments or analyisis can not leak sensitive data (please get in touch if you have have questions) by using [TIRA.io](https://tira.io) as platform for custom analysis and/or experiments. In TIRA, you submit a docker image that implements your analysis/experiment. Your software is then executed in sandbox mode (without internet connection) to ensure that your software does not leak confidential information. After your software execution finished, administrators review your submission and unblind it so that you can access the outputs.
+### Running Experiments on the AQL
 
-Please use the [dedicated TIRA tutorial](tira-tutorial) as starting point for your experiments.
+The data in the Archive Query Log is highly sensitive (still, you can [re-crawl everything from the Wayback Machine](#usage)). For that reason, we ensure that custom experiments or analyises can not leak sensitive data (please [get in touch](#contribute) if you have questions) by using [TIRA](https://tira.io) as a platform for custom analyses/experiments. In TIRA, you submit a Docker image that implements your experiment. Your software is then executed in sandboxed mode (without internet connection) to ensure that your software does not leak sensitive information. After your software execution finished, administrators will review your submission and unblind it so that you can access the outputs.  
+Please refer to our [dedicated TIRA tutorial](integrations/tira/) as starting point for your experiments.
 
 ## Installation
 
