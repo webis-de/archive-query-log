@@ -1,10 +1,9 @@
-from argparse import ArgumentParser
 from datetime import datetime
 from gzip import GzipFile
 from json import loads, JSONDecodeError, dumps
 from pathlib import Path
 from random import shuffle
-from typing import Optional, Iterator, Literal
+from typing import Optional, Iterator
 from urllib.parse import urlparse
 from uuid import uuid5, NAMESPACE_URL
 
@@ -12,7 +11,6 @@ from fastwarc import FileStream, ArchiveIterator, WarcRecordType, WarcRecord
 from publicsuffixlist import PublicSuffixList
 from pyspark.sql import SparkSession
 from tqdm.auto import tqdm
-from yaml import safe_load
 
 _CEPH_DIR = Path("/mnt/ceph/storage")
 _RESEARCH_DIR = _CEPH_DIR / "data-in-progress" / "data-research"
