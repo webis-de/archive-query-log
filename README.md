@@ -318,6 +318,17 @@ pylint -E archive_query_log
 pytest archive_query_log
 ```
 
+Add new tests for parsers:
+
+```
+1. Select the number of tests to run per service and the number of services.
+2. Auto-generate unit tests and download WARCs with ./archive_query_log/results/test/generate_tests.py
+3. Run the tests.
+4. Failing tests will open a diff editor with the approval and a web browser tab with the Wayback URL.
+5. Use the web browser dev tools to find the query input field and search result CSS paths.
+6. Close diffs and tabs and re-run tests.
+```
+
 ## Contribute
 
 If you've found an important search provider to be missing from this query log, please suggest it by creating an [issue][repo-issues]. We also very gratefully accept [pull requests][repo-prs] for adding [search providers](#1-search-providers) or new parser configurations!
