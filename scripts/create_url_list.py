@@ -154,6 +154,7 @@ def main():
         .flatMap(_iter_relative_path_records) \
         .map(_record_to_query) \
         .filter(lambda json: json is not None) \
+        .repartition(1) \
         .saveAsTextFile(f"archive-query-log-urls/",
                         compressionCodecClass=
                         "org.apache.hadoop.io.compress.GzipCodec")
