@@ -320,14 +320,12 @@ pytest archive_query_log
 
 Add new tests for parsers:
 
-```
 1. Select the number of tests to run per service and the number of services.
-2. Auto-generate unit tests and download WARCs with ./archive_query_log/results/test/generate_tests.py
+2. Auto-generate unit tests and download WARCs with [generate_tests.py](archive_query_log/results/test/generate_tests.py)
 3. Run the tests.
 4. Failing tests will open a diff editor with the approval and a web browser tab with the Wayback URL.
 5. Use the web browser dev tools to find the query input field and search result CSS paths.
 6. Close diffs and tabs and re-run tests.
-```
 
 ## Contribute
 
