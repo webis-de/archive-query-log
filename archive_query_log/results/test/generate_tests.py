@@ -20,15 +20,15 @@ from archive_query_log.model import Service, ArchivedQueryUrl
 
 NUM_SERVICES = 11
 SERVICE_NAMES = None
-# SERVICE_NAMES = ["wikimedia"]
-NUM_QUERIES_PER_SERVICE = 10
+SERVICE_NAMES = ["google", "yahoo", "bing", "duckduckgo", "ask", "ecosia"]
+NUM_QUERIES_PER_SERVICE = 50
 
 DATA_PATH = Path(
     "/mnt/ceph/storage/data-in-progress/data-research/"
     "web-search/web-archive-query-log/focused/"
 )
 
-SAMPLE_QUERIES_PATH = DATA_PATH / "sample-corpus" / "queries-2023-02-17"
+SAMPLE_QUERIES_PATH = DATA_PATH / "corpus" / "medium" / "2023-05-22" / "serps"
 
 WARCS_PATH = PROJECT_DIRECTORY_PATH / \
              "data/manual-annotations/archived-raw-serps/warcs/"
@@ -51,15 +51,23 @@ def main():
         service_names = SERVICE_NAMES
 
     query_urls = defaultdict(list)
-    for path in tqdm(list(SAMPLE_QUERIES_PATH.glob("part*.gz"))):
+    for path in tqdm(
+        list(SAMPLE_QUERIES_PATH.glob("part*.gz")),
+        desc="Load service queries"
+    ):
         # noinspection PyTypeChecker
         with GzipFile(path, "rb") as gf, TextIOWrapper(gf) as f:
             for line in f:
-                if "\"archived_query_url_location\": {" not in line:
+                if "\"serp_query_text_url\": \"" not in line:
+                    continue
+                if "\"serp_warc_relative_path\": \"" not in line:
                     continue
                 query_url = loads(line)
-                query_urls[query_url["service"]].append(query_url)
+                if query_url["search_provider_name"] not in service_names:
+                    continue
+                query_urls[query_url["search_provider_name"]].append(query_url)
 
+    print(f"Found {sum(len(urls) for urls in query_urls.values())} SERPs.")
     query_urls = {
         service_name: Random(0).sample(
             query_urls[service_name], min(
@@ -69,6 +77,7 @@ def main():
         )
         for service_name in service_names
     }
+    print(f"Sampled {sum(len(urls) for urls in query_urls.values())} SERPs.")
 
     print("Generate WARC files.")
     schema = ArchivedQueryUrl.schema()
@@ -76,12 +85,12 @@ def main():
         for query_url in tqdm(
                 query_urls[service_name], desc=service_name
         ):
-            query = query_url["url_query"]
+            query = query_url["serp_query_text_url"]
             query = slugify(query)
             query = query[:100]
             name = slugify(
                 f"{service_name}-"
-                f"{query}-{query_url['timestamp']}"
+                f"{query}-{query_url['serp_timestamp']}"
             )
             warc_path = WARCS_PATH / f"{name}.warc.gz"
             if warc_path.exists():
@@ -89,16 +98,16 @@ def main():
             with warc_path.open("wb") as o:
                 writer = WARCWriter(o, gzip=True)
                 archived_query_url = ArchivedQueryUrl(
-                    url=query_url["url"],
-                    timestamp=int(query_url["timestamp"]),
-                    query=query_url["url_query"],
-                    page=query_url["url_page"],
-                    offset=query_url["url_offset"],
+                    url=query_url["serp_url"],
+                    timestamp=int(query_url["serp_timestamp"]),
+                    query=query_url["serp_query_text_url"],
+                    page=query_url["serp_page"],
+                    offset=query_url["serp_offset"],
                 )
                 url_headers = {
                     "Archived-URL": schema.dumps(archived_query_url),
                 }
-                wayback_raw_url = query_url["wayback_raw_url"]
+                wayback_raw_url = query_url["serp_wayback_raw_url"]
                 response = get(
                     wayback_raw_url,
                 )
@@ -162,13 +171,13 @@ def main():
             }
         with test_path.open("at") as o:
             for query_url in query_urls[service_name]:
-                wayback_raw_url = query_url["wayback_raw_url"]
+                wayback_raw_url = query_url["serp_wayback_raw_url"]
 
-                query = query_url["url_query"]
+                query = query_url["serp_query_text_url"]
                 query = slugify(query)
                 query = query[:100]
                 name = slugify(
-                    f"{service_name}_{query}_{query_url['timestamp']}",
+                    f"{service_name}_{query}_{query_url['serp_timestamp']}",
                     separator="_",
                 )
                 wayback_raw_url_safe = wayback_raw_url.replace('"', '\\"')
