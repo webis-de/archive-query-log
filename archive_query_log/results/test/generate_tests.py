@@ -21,16 +21,16 @@ from archive_query_log.model import Service, ArchivedQueryUrl
 
 NUM_SERVICES = 11
 # SERVICE_NAMES = None
-# SERVICE_NAMES = ["google", "yahoo", "bing", "duckduckgo", "ask", "ecosia"]
-SERVICE_NAMES = ["google"]
-NUM_QUERIES_PER_SERVICE = 10
+SERVICE_NAMES = ["google", "yahoo", "bing", "duckduckgo", "ask", "ecosia"]
+# SERVICE_NAMES = ["google"]
+NUM_QUERIES_PER_SERVICE = 50
 
 DATA_PATH = Path(
     "/mnt/ceph/storage/data-in-progress/data-research/"
     "web-search/web-archive-query-log/focused/"
 )
 
-SAMPLE_QUERIES_PATH = DATA_PATH / "corpus" / "small" / "2023-05-22" / "serps"
+SAMPLE_QUERIES_PATH = DATA_PATH / "corpus" / "medium" / "2023-05-22" / "serps"
 
 WARCS_PATH = PROJECT_DIRECTORY_PATH / \
              "data/manual-annotations/archived-raw-serps/warcs/"
