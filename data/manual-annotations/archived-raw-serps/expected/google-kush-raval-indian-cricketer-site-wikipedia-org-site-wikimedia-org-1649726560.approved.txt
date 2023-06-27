@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\"Kush Raval Indian Cricketer\" -site:wikipedia.org -site:wikimedia.org",
+    "offset": null,
+    "page": null,
+    "query": "\"Kush Raval Indian Cricketer\" -site:wikipedia.org -site:wikimedia.org",
+    "results": [],
+    "timestamp": 1649726560,
+    "url": "https://www.google.com/search?safe=off&tbs=sur:fmc&tbm=isch&q=%22Kush+Raval+Indian+Cricketer%22+-site:wikipedia.org+-site:wikimedia.org"
+}

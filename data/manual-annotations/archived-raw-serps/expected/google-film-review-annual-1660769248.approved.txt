@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Film Review (annual)\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Film Review (annual)\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Rating  5.0 \n (1) \n\nFilm Review Annual 2002: Films of 2001 ; Language. English ; Publisher. Jerome s Ozer Pub ; Publication date. December 30, 2005 ; Dimensions. 6.25 x 3.25 x 9.25\u00a0...\n\nPublisher: Jerome s Ozer PubPrint length: 1733 pagesPublication date: December 30, 2005Dimensions: 6.25 x 3.25 x 9.25 inches",
+            "timestamp": 1660769248,
+            "title": "Film Review Annual 2002: Films of 2001: Ozer, Jerome S. (ed)",
+            "url": "https://www.google.com/url?q=https://www.amazon.com/Film-Review-Annual-2002-Films/dp/089198156X&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAsQAg&usg=AOvVaw0fix8xXZJ2NMz6DOKTGpXM"
+        },
+        {
+            "rank": 3,
+            "snippet": "Rating  5.0 \n (1) \n\nFilm Review Annual, 1988 Hardcover \u2013 January 1, 1990 \u00b7 Product details \u00b7 Videos \u00b7 Customer reviews.",
+            "timestamp": 1660769248,
+            "title": "Film Review Annual, 1988: Ozer, Jerome S. (Editor) - Amazon.com",
+            "url": "https://www.google.com/url?q=https://www.amazon.com/Film-Review-Annual-Edited-Jerome/dp/0891981381&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAoQAg&usg=AOvVaw3vHt_ajCmlZA-g5JsB8eMZ"
+        },
+        {
+            "rank": 4,
+            "snippet": "A year in the dark : a year in the life of a film critic, 1968-1969 / Renata Adler. ... Film review annual. ... Film technique, and Film acting. 1958.",
+            "timestamp": 1660769248,
+            "title": "Film review annual. - Siena College - Ex Libris",
+            "url": "https://www.google.com/url?q=https://siena.primo.exlibrisgroup.com/permalink/01SC_INST/ptles1/alma991000022819706991&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAYQAg&usg=AOvVaw0gP6etoWZ4OktRfV58Ez6x"
+        },
+        {
+            "rank": 5,
+            "snippet": "Film review annual ...-journal.",
+            "timestamp": 1660769248,
+            "title": "Film review annual ... - University of Waterloo",
+            "url": "https://www.google.com/url?q=https://ocul-wtl.primo.exlibrisgroup.com/permalink/01OCUL_WTL/5ob3ju/alma999089333505162&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAkQAg&usg=AOvVaw3ZtEe3PtUX3tX8Lak4WmyE"
+        },
+        {
+            "rank": 6,
+            "snippet": "FILM REVIEW(ANNUAL) 1946. by F. MAURICE SPEED. Used; very good; hardcover. Condition: Very Good /Good; Seller. TARPAULIN BOOKS AND COMICS.",
+            "timestamp": 1660769248,
+            "title": "FILM REVIEW(ANNUAL) 1946 by F. MAURICE SPEED - Biblio.com",
+            "url": "https://www.google.com/url?q=https://www.biblio.com/book/film-reviewannual-1946-f-maurice-speed/d/1283215704&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAQQAg&usg=AOvVaw0Yr9gZq963-nIjReJU0gMG"
+        },
+        {
+            "rank": 7,
+            "snippet": "AbeBooks.com: Film Review Annual 1951-1952. Front Cover: Debra Paget &amp; Louis Jordan in Bird of Paradise: HARDBACK IN JACKET. 160 pages. Clean &amp; tight.",
+            "timestamp": 1660769248,
+            "title": "Film Review Annual 1951-1952. Front Cover: Debra Paget &amp; Louis",
+            "url": "https://www.google.com/url?q=https://www.abebooks.com/Film-Review-Annual-1951-1952-Front-Cover/22669171431/bd&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAEQAg&usg=AOvVaw3Uf-PUy5Cn9fjvLrLv5FZL"
+        },
+        {
+            "rank": 13,
+            "snippet": "Buy Film Review Annual Magazines and get the best deals at the lowest prices on eBay! Great Savings &amp; Free Delivery / Collection on many items.",
+            "timestamp": 1660769248,
+            "title": "Film Review Annual Magazines for sale - eBay",
+            "url": "https://www.google.com/url?q=https://www.ebay.co.uk/b/Film-Review-Annual-Magazines/280/bn_95784043&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAMQAg&usg=AOvVaw2qgJ0ji9vs4Fa783dUq4gm"
+        },
+        {
+            "rank": 14,
+            "snippet": "Film Review annual. 2006 - Present16 years. Commissioning and writing film reviews, copy editing, feature writing. Classical Source / Musical Theatre Review\u00a0...",
+            "timestamp": 1660769248,
+            "title": "Michael Darvell - Individual Contributor - Film Review Daily - LinkedIn",
+            "url": "https://www.google.com/url?q=https://uk.linkedin.com/in/michael-darvell-64466319&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAUQAg&usg=AOvVaw1VsnzwzNvbHhrg0IGeMWX7"
+        },
+        {
+            "rank": 15,
+            "snippet": "In addition to being the first book of its kind to cover an entire year of 'filmgoing', one of the most unique aspects of the Film Review annual was the\u00a0...",
+            "timestamp": 1660769248,
+            "title": "Contributors - FILM REVIEW DAILY",
+            "url": "https://www.google.com/url?q=https://www.filmreviewdaily.com/contributors&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAIQAg&usg=AOvVaw2zwa8Qq97MKs_Udnx-4ENq"
+        },
+        {
+            "rank": 16,
+            "snippet": "Film review annual. Available at Arts Library Arts Library Reference (PN1995 .F4885) and other locations. Send to. QR. Permalink. Email. Citation.",
+            "timestamp": 1660769248,
+            "title": "Film review annual. - University of California Los Angeles",
+            "url": "https://www.google.com/url?q=https://search.library.ucla.edu/permalink/01UCS_LAL/17p22dp/alma99209643606533&sa=U&ved=2ahUKEwj3yKyy-s75AhW7KkQIHTrqCsQQFnoECAgQAg&usg=AOvVaw2my6_QFordgdyJndLCuExy"
+        }
+    ],
+    "timestamp": 1660769248,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Film+Review+(annual)%22"
+}

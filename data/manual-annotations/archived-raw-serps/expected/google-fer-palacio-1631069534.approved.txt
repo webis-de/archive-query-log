@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Fer Palacio\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Fer Palacio\"",
+    "results": [
+        {
+            "rank": 4,
+            "snippet": "2020/12/23 \u00b7 Dale a Mostrar m\u00e1s \u2193\u00a1Si te gusto el v\u00eddeo no olvides suscribirte y darle a like!- - -PLAYLIST OFICIAL ...\u671f\u9593: 16:32\u6295\u7a3f: 2020/12/23",
+            "timestamp": 1631069534,
+            "title": "PREVIA Y CACHENGUE #36 - Fer Palacio (Racing Club) - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DglJlJapVTXs&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQtwJ6BAgJEAE&usg=AOvVaw0McOSsaTd_rjLLbXDryLMH"
+        },
+        {
+            "rank": 5,
+            "snippet": "2021/07/22 \u00b7 Dale a Mostrar m\u00e1s \u2193\u00a1Si te gusto el v\u00eddeo no olvides suscribirte y darle a like!- - -S I G A N M E - L ...\u671f\u9593: 15:29\u6295\u7a3f: 2021/07/22",
+            "timestamp": 1631069534,
+            "title": "PREVIA Y CACHENGUE #42 - Fer Palacio (Estudiantes de La Plata)",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3D5NMST63_-VI&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQtwJ6BAgCEAE&usg=AOvVaw1s0Y_EHNddckLyF_XEu-JH"
+        },
+        {
+            "rank": 6,
+            "snippet": "2021/08/19 \u00b7 Dale a Mostrar m\u00e1s \u2193\u00a1Si te gusto el v\u00eddeo no olvides suscribirte y darle a like!- - -S I G A N M E - L ...\u671f\u9593: 10:28\u6295\u7a3f: 2021/08/19",
+            "timestamp": 1631069534,
+            "title": "MIX ELECTRONICA - PREVIA Y CACHENGUE #44 - Fer Palacio",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DJWH16l71M5s&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQtwJ6BAgKEAE&usg=AOvVaw1996ZBqW5yYcMpt2nhnhbW"
+        },
+        {
+            "rank": 7,
+            "snippet": "2021/08/05 \u00b7 Dale a Mostrar m\u00e1s \u2193\u00a1Si te gusto el v\u00eddeo no olvides suscribirte y darle a like!- - -S I G A N M E - L ...\u671f\u9593: 14:10\u6295\u7a3f: 2021/08/05",
+            "timestamp": 1631069534,
+            "title": "MIX CUMBIA RETRO - PREVIA Y CACHENGUE #43 - Fer Palacio",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DnYNVVyDw7Ow&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQtwJ6BAgHEAE&usg=AOvVaw0wH3i-g9nq36M8-WOsE5GB"
+        },
+        {
+            "rank": 8,
+            "snippet": "2020/09/22 \u00b7 Set especial por el d\u00eda de la primavera junto a Monster Energy- - -S I G A N M E - L @ S - B U E N ...\u671f\u9593: 1:17:17\u6295\u7a3f: 2020/09/22",
+            "timestamp": 1631069534,
+            "title": "VIVO: NO FERPA NO PARTY #1 | #MonsterEnergyAr - Fer Palacio",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3D5lPPifyOWuA&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQtwJ6BAgBEAE&usg=AOvVaw1e9exLSNKFT9R2qYjcQkUb"
+        },
+        {
+            "rank": 9,
+            "snippet": "2021/01/08 \u00b7 Dale a Mostrar m\u00e1s \u2193\u00a1Si te gusto el v\u00eddeo no olvides suscribirte y darle a like!- - -PLAYLIST OFICIAL ...\u671f\u9593: 14:04\u6295\u7a3f: 2021/01/08",
+            "timestamp": 1631069534,
+            "title": "Fer Palacio - MIX REGGAETON VIEJO / LO NUEVO - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DQddAk0OGjz0&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQtwJ6BAgAEAE&usg=AOvVaw1a2FKE6azeaUsnAvIOHwgp"
+        },
+        {
+            "rank": 10,
+            "snippet": "2021/02/17 \u00b7 Dale a Mostrar m\u00e1s \u2193\u00a1Si te gusto el v\u00eddeo no olvides suscribirte y darle a like!- - -PLAYLIST OFICIAL ...\u671f\u9593: 14:07\u6295\u7a3f: 2021/02/17",
+            "timestamp": 1631069534,
+            "title": "Fer Palacio - MIX REGGAETON 2021 / LO NUEVO - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DuJPSYHXR4Z4&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQtwJ6BAgEEAE&usg=AOvVaw1YAwJs5-q_bzRtuOPAN3BT"
+        },
+        {
+            "rank": 11,
+            "snippet": "2020/08/28 \u00b7 Dale a Mostrar m\u00e1s \u2193\u00a1Si te gusto el v\u00eddeo no olvides suscribirte y darle a like!- - -S I G A N M E - L ...\u671f\u9593: 10:58\u6295\u7a3f: 2020/08/28",
+            "timestamp": 1631069534,
+            "title": "Fer Palacio - MIX REGGAETON 2020 / LO NUEVO - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DOecOQjPRJE0&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQtwJ6BAgDEAE&usg=AOvVaw18MXEX5-xNvfMO6kvU9Deq"
+        },
+        {
+            "rank": 12,
+            "snippet": "Listen to Fer Palacio on Spotify. Artist \u00b7 2M monthly listeners.",
+            "timestamp": 1631069534,
+            "title": "Fer Palacio | Spotify - Listen Free",
+            "url": "https://www.google.com/url?q=https://open.spotify.com/artist/4frBEXn8nhWzOVwfCSpuYB&sa=U&ved=2ahUKEwiGy-Cqyu7yAhWSoFsKHTifDkQQFnoECAYQAg&usg=AOvVaw31wrCljA49lLC3fpfDmmJu"
+        }
+    ],
+    "timestamp": 1631069534,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Fer+Palacio%22"
+}

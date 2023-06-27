@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Gnosticism\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Gnosticism\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Gnosticism</em> - <em>Gnosticism</em> - Influence: Although gnostic movements of various types flourished in the formative period of Christianity, they were likely a minority in\u00a0...",
+            "timestamp": 1615175612,
+            "title": "Gnosticism - Influence | Britannica",
+            "url": "https://www.britannica.com/topic/gnosticism/Influence"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>GNOSTICISM</em>. The term <em>gnosticism</em> is often used as a sort of umbrella term to cover the people that the leaders of the church don't like. It covers probably a huge\u00a0...",
+            "timestamp": 1615175612,
+            "title": "The Story Of The Storytellers - Gnostics And Other Heretics ...",
+            "url": "https://www.pbs.org/wgbh/pages/frontline/shows/religion/story/heretics.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "\u0661\u0665\u200f/\u0660\u0666\u200f/\u0662\u0660\u0660\u0669 \u2014 The word <em>Gnosticism</em> comes from the Greek word gnosis, meaning \"knowledge.\" The Gnostics believed there was a mysterious or secret\u00a0...",
+            "timestamp": 1615175612,
+            "title": "Mind Over Matter: The Heresy of Gnosticism both Then and Now",
+            "url": "https://www.insight.org/resources/article-library/individual/mind-over-matter-the-heresy-of-gnosticism-both-then-and-now"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>GNOSTICISM</em>, designates the beliefs held by a number of nonorthodox Christian sects flourishing in the first to second centuries C.E., which developed mystical\u00a0...",
+            "timestamp": 1615175612,
+            "title": "Gnosticism - Jewish Virtual Library",
+            "url": "https://www.jewishvirtuallibrary.org/gnosticism"
+        },
+        {
+            "rank": 5,
+            "snippet": "What we actually know about Christian <em>gnosticism</em> is limited. \u00b7 The inferior God created by Sophia's desire, also referred to as the Demiurge, is the Creator God of\u00a0...",
+            "timestamp": 1615175612,
+            "title": "Blood, Gender and Power in Christianity and Judaism",
+            "url": "https://www2.kenyon.edu/Depts/Religion/Projects/Reln91/Gender/Gnosticism.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "Within Gnostic myths and other Gnostic writings, we find other common tenets that explain and support the Gnostic salvation thesis. The Gnostics ?understood the\u00a0...",
+            "timestamp": 1615175612,
+            "title": "gnosticism and its cosmology - Vanderbilt University",
+            "url": "https://www.vanderbilt.edu/AnS/physics/astrocourses/ast203/gnostic_cosmology.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Gnosticism</em>, the doctrine of salvation by knowledge. This definition, based on the etymology of the word (gnosis \u201cknowledge\u201d, gnostikos, \u201cgood at knowing\u201d),\u00a0...",
+            "timestamp": 1615175612,
+            "title": "Gnosticism | Catholic Answers",
+            "url": "https://www.catholic.com/encyclopedia/gnosticism"
+        },
+        {
+            "rank": 8,
+            "snippet": "\u0660\u0661\u200f/\u0660\u0665\u200f/\u0662\u0660\u0661\u0668 \u2014 The issue of <em>Gnosticism</em> is particularly interesting, since we find two different interpretations at work. The CDF points to a general spiritual\u00a0...",
+            "timestamp": 1615175612,
+            "title": "Pope Francis: The Threat of Gnosticism within the Church ...",
+            "url": "https://projects.iq.harvard.edu/francisclooney/blog/pope-francis-gnosticism-inside-church"
+        },
+        {
+            "rank": 9,
+            "snippet": "Amazon.com: What Is <em>Gnosticism</em>? (9780674017627): King, Karen L.: Books.",
+            "timestamp": 1615175612,
+            "title": "What Is Gnosticism? (9780674017627): King ... - Amazon.com",
+            "url": "https://www.amazon.com/What-Gnosticism-Karen-L-King/dp/0674017625"
+        }
+    ],
+    "timestamp": 1615175612,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Gnosticism%22"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Compress Tube\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Compress Tube\" -wikipedia",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "... combination of the hypochlorite with the proteins , it is necessary to TUBE COMPRESS COMPRESS TUBE I 2 Fig . 116.\u2014 Arrangement of Carrel's tube for the instillation of Dakin's solution on a horizontal wound . ( Carrell and Dehelly . )\u00a0...",
+            "timestamp": 1644670761,
+            "title": "Plastic Surgery: Its Principles and Practice",
+            "url": "https://books.google.com/books?id=9-RpAAAAMAAJ&pg=PA142&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgBEAE"
+        },
+        {
+            "rank": 3,
+            "snippet": "... ( B ) compressing pulse tube gas to produce hot compressed pulse a cylinder and a piston operably installed therein to compress tube gas , cooling the hot compressed pulse tube gas by ambient air to pressurized air , said cylinder\u00a0...",
+            "timestamp": 1644670761,
+            "title": "Official Gazette of the United States Patent and Trademark ...",
+            "url": "https://books.google.com/books?id=LWkkmPsM23sC&pg=PA3524&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgIEAE"
+        },
+        {
+            "rank": 4,
+            "snippet": "... the tubes equal to that necessary to compress tube GD an amount GL , plus the amount caused by bending the tube through angle KDG , and similarly the middle tube will be compressed the amount KM , and be bent through the angle HDF .",
+            "timestamp": 1644670761,
+            "title": "The Kidwell Two-flow Ring-circuit Water Tube Boiler: ...",
+            "url": "https://books.google.com/books?id=65xTAAAAYAAJ&pg=PA134&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgHEAE"
+        },
+        {
+            "rank": 5,
+            "snippet": "This confirms that force P is large enough to close gaps and compress tube A an amount equal to x 2 s 5 0.078 mm. The self-weight of the tubes is small, so it is not included in this analysis. Hence, forces NA and NB are taken as\u00a0...",
+            "timestamp": 1644670761,
+            "title": "Statics and Mechanics of Materials",
+            "url": "https://books.google.com/books?id=dA9EDwAAQBAJ&pg=PA586&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgJEAE"
+        },
+        {
+            "rank": 6,
+            "snippet": "This confirms that k MN 200 S = = m A as B force P is large enough to close gap s and compress tube A an amount equal to x - s = 0.078 mm . The self - weight of the tubes is small , so it is not included in this analysis .",
+            "timestamp": 1644670761,
+            "title": "Mechanics of Materials, SI Edition",
+            "url": "https://books.google.com/books?id=wrHxDQAAQBAJ&pg=PA176&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgCEAE"
+        },
+        {
+            "rank": 7,
+            "snippet": "Thisconfirmsthat 200 MN m as force P is large enough to close gap s and compress tube A an amount equal to x 2 s 5 0.078 mm . The self-weight of the tubes is small, so it is not included in this analysis. Hence, forces NA and NB are\u00a0...",
+            "timestamp": 1644670761,
+            "title": "Mechanics of Materials, Enhanced Edition",
+            "url": "https://books.google.com/books?id=WQfFDwAAQBAJ&pg=PA172&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgDEAE"
+        },
+        {
+            "rank": 8,
+            "snippet": "This confirms that k MN 200 S = = m as force P is large enough to close gap s and compress tube A an amount equal to x - s = 0.078 mm . The self - weight of the tubes is small , so it is not included in this analysis .",
+            "timestamp": 1644670761,
+            "title": "Mechanics of Materials",
+            "url": "https://books.google.com/books?id=k_C5DQAAQBAJ&pg=PA172&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgGEAE"
+        },
+        {
+            "rank": 9,
+            "snippet": "Compress tube ( Q ) into slave cylinder ( K ) until holes in slave cylinder ( K ) aline with holes in tube ( Q ) . P N CAUTION To R. You must hold spring performing step 6 . 6. Using 1/2 inch wrench , install and tighten two screws ( R )\u00a0...",
+            "timestamp": 1644670761,
+            "title": "Direct Support and General Support, Maintenance: Combat ...",
+            "url": "https://books.google.com/books?id=n10YAAAAYAAJ&pg=SA8-PA19&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgEEAE"
+        },
+        {
+            "rank": 10,
+            "snippet": "Compress tube When ordinary milk feeding is resumed , say in a above by fingers and quickly withdraw , preventing week's time , one third the usual quantity is suffias far as possible the oil on top of tube from touch- cient , bearing\u00a0...",
+            "timestamp": 1644670761,
+            "title": "International Record of Medicine and General Practice Clinics",
+            "url": "https://books.google.com/books?id=o9g1AQAAMAAJ&pg=PA169&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgFEAE"
+        },
+        {
+            "rank": 11,
+            "snippet": "... Avail : US Patent Office CSCL 141 A means for ensuring precise control of the rupture press and a knife structure for rupturing the diaphragm are describ The shock tube consists of a low pressure tube and a compress tube separated\u00a0...",
+            "timestamp": 1644670761,
+            "title": "STAR",
+            "url": "https://books.google.com/books?id=mxBpPIk4JIcC&pg=RA2-PA20&dq=%22Compress+Tube%22+-wikipedia&hl=id&sa=X&ved=2ahUKEwip6cS4qfr1AhVuD0QIHeimANUQ6AF6BAgAEAE"
+        }
+    ],
+    "timestamp": 1644670761,
+    "url": "https://www.google.com/search?tbs=bks:1&q=%22Compress+Tube%22+-wikipedia"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Lige Gardner\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Lige Gardner\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Lige Gardner was a Texas gunfighter sketched in the book titled \"Pages from a Worker\"s Life\" by William Z. Foster.",
+            "timestamp": 1637042221,
+            "title": "Lige Gardner - World Biographical Encyclopedia - Prabook",
+            "url": "https://www.google.com/url?q=https://prabook.com/web/lige.gardner/2160980&sa=U&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQFnoECAIQAg&usg=AOvVaw22VWGrlup6ei3aW0B2n78_"
+        },
+        {
+            "rank": 3,
+            "snippet": "10 thg 10, 2021 \u00b7 Lige Gardner News: Latest and Breaking News on Lige Gardner. Explore Lige Gardner profile at Times of India for photos, videos and latest\u00a0...",
+            "timestamp": 1637042221,
+            "title": "Latest News, Videos and Photos of Lige Gardner | Times of India",
+            "url": "https://www.google.com/url?q=https://timesofindia.indiatimes.com/topic/Lige-Gardner&sa=U&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQFnoECAMQAg&usg=AOvVaw15A5MzzQ5N7TjTbvfyMoLH"
+        },
+        {
+            "rank": 4,
+            "snippet": "GEO Location. News; \u00bb; Lige Gardner; \u00bb; News. You have searched for. Lige Gardner. in the news | LAST UPDATED : Jun 27, 2021, 06:13 AM IST\u00a0...",
+            "timestamp": 1637042221,
+            "title": "Lige Gardner News | Latest News on Lige Gardner - Times of India",
+            "url": "https://www.google.com/url?q=https://timesofindia.indiatimes.com/topic/Lige-Gardner/news&sa=U&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQFnoECAcQAg&usg=AOvVaw10soQY7uRUpRpeLIM32MVE"
+        },
+        {
+            "rank": 5,
+            "snippet": "10 thg 6, 2011 \u00b7 Birth, 1846. Death, 1901 (aged 54\u201355). Burial, Unknown, Specifically: unknown. Memorial ID, 71155468 \u00b7 View Source\u00a0...Memorial ID: 71155468 \u00b7 View Source",
+            "timestamp": 1637042221,
+            "title": "Elijah \u201cLige\u201d Gardner (1846-1901) - Find A Grave Memorial",
+            "url": "https://www.google.com/url?q=https://www.findagrave.com/memorial/71155468/elijah-gardner&sa=U&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQFnoECAAQAg&usg=AOvVaw0spiXrm_nQu1vzM4jQ6fso"
+        },
+        {
+            "rank": 6,
+            "snippet": "How do you say lige for lige? Listen to the audio pronunciation of lige for lige on pronouncekiwi.",
+            "timestamp": 1637042221,
+            "title": "How To Pronounce lige for lige - pronouncekiwi",
+            "url": "https://www.google.com/url?q=https://www.pronouncekiwi.com/lige%2520for%2520lige&sa=U&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQFnoECAUQAg&usg=AOvVaw0n8BtLekeC2oZa-KB_WknB"
+        },
+        {
+            "rank": 7,
+            "snippet": "How do you say Lige Daniels? Listen to the audio pronunciation of Lige Daniels on pronouncekiwi.",
+            "timestamp": 1637042221,
+            "title": "How To Pronounce Lige Daniels - pronouncekiwi",
+            "url": "https://www.google.com/url?q=https://www.pronouncekiwi.com/Lige%2520Daniels&sa=U&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQFnoECAYQAg&usg=AOvVaw0higXIBSYohJwYAbBg4qB6"
+        },
+        {
+            "rank": 8,
+            "snippet": "Lige Gardner; Pat Garrett. John Joel Glanton; Crawford Goldsby. H. John Wesley Hardin; Pearl Hart; The Apache Kid; Marion Hedgepeth; Boone Helm; Wild Bill\u00a0...",
+            "timestamp": 1637042221,
+            "title": "Famous Gunslingers in the Old West - The History Junkie",
+            "url": "https://www.google.com/url?q=https://thehistoryjunkie.com/famous-gunslingers-in-the-old-west/&sa=U&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQFnoECAQQAg&usg=AOvVaw0QQSTlrHkE8FVc-NH2sGnH"
+        },
+        {
+            "rank": 9,
+            "snippet": "At a party, Sourdough tells Lige that he intends proposing to Letty. Lige explains he was planning to do the same. After the cyclone passes, Lige and Sourdough\u00a0...",
+            "timestamp": 1637042221,
+            "title": "lige in a sentence - Ichacha",
+            "url": "https://www.google.com/url?q=https://eng.ichacha.net/zaoju/lige.html&sa=U&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQFnoECAEQAg&usg=AOvVaw3frbC5rW9fUs8f-nIYl00b"
+        },
+        {
+            "rank": 10,
+            "snippet": "He says that John Edmons \u201c ) and one of Lige Gardner's sons were both dead . 42 He did not know whether W. M. Edmons was in the army or not .",
+            "timestamp": 1637042221,
+            "title": "The Stilwell Letters: A Georgian in Longstreet's Corps, Army of ...",
+            "url": "https://books.google.com/books?id=BOG4aif3MnQC&pg=PA134&lpg=PA134&dq=%22Lige+Gardner%22+-wikipedia&source=bl&ots=hu-CdS3Z_N&sig=ACfU3U20Z2nr-_yIbnYY3uQ7CWjbHOrAtQ&hl=vi&sa=X&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQ6AF6BAgJEAE"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1637042221,
+            "title": "Pobre Raza!: Violence, Justice, and Mobilization among M\u00e9xico ...",
+            "url": "https://books.google.com/books?id=khSCBAAAQBAJ&pg=PT144&lpg=PT144&dq=%22Lige+Gardner%22+-wikipedia&source=bl&ots=O9H-bEQzEB&sig=ACfU3U1L_3tOVq6YvtDbqeE_m3IHakKe-A&hl=vi&sa=X&ved=2ahUKEwjPyZn1ppz0AhXRoFsKHTA1B_gQ6AF6BAgIEAE"
+        }
+    ],
+    "timestamp": 1637042221,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Lige+Gardner%22"
+}

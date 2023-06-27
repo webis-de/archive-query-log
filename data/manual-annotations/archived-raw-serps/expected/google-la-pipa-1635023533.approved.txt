@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"LA PIPA\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"LA PIPA\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "LA PIPA is a space for imagination, an open innovation platform and home to some of the best talents in Europe. We blend disciplines such as artificial\u00a0...",
+            "timestamp": 1635023533,
+            "title": "LA PIPA",
+            "url": "https://www.google.com/url?q=https://lapipa.io/&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAIQAg&usg=AOvVaw3gb44XiGv2SQTsoRNxIdVp"
+        },
+        {
+            "rank": 3,
+            "snippet": "LA PIPA is new, different, curious and changes fast. An open innovation global home to interesting people, projects and companies who want to collaborate\u00a0...",
+            "timestamp": 1635023533,
+            "title": "ARTISTIC SCIENCE - LA PIPA",
+            "url": "https://www.google.com/url?q=https://lapipa.io/workhome&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAgQAg&usg=AOvVaw3qnI7sDIzOwZMxLHFm7MRo"
+        },
+        {
+            "rank": 4,
+            "snippet": "En la Pipa encuentra los mejores Televisores, Celulares, Electrodom\u00e9sticos y mas. \u00a1Ingresa ya! Env\u00edos a todo el Pa\u00eds. |",
+            "timestamp": 1635023533,
+            "title": "La Pipa Comercializadora: \u00a1Bienvenidos! Compra Online en WWW ...",
+            "url": "https://www.google.com/url?q=https://www.lapipa.com/&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAcQAg&usg=AOvVaw2Lg43ACSdSwxW6kkNA0m5n"
+        },
+        {
+            "rank": 5,
+            "snippet": "LA PIPA ES LA PIPA | 1149 followers on LinkedIn. Open source cosmic address &amp; science-driven creative engine of zaggers of newness who learn &amp; share.",
+            "timestamp": 1635023533,
+            "title": "LA PIPA ES LA PIPA Careers and Current Employee Profiles",
+            "url": "https://www.google.com/url?q=https://www.linkedin.com/company/la-pipa-somio/&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAoQAg&usg=AOvVaw0oFm0zKMqQcEyo0LsD7x45"
+        },
+        {
+            "rank": 6,
+            "snippet": "Check out La pipa (Original Mix) by Harry on Amazon Music. Stream ad-free or purchase CD's and MP3s now on Amazon.com.",
+            "timestamp": 1635023533,
+            "title": "La pipa (Original Mix) - Amazon.com",
+            "url": "https://www.google.com/url?q=https://www.amazon.com/La-pipa-Original-Mix/dp/B00NTODJ3O&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAUQAg&usg=AOvVaw1hlLV8hrRB-_6_bz5T9x5V"
+        },
+        {
+            "rank": 7,
+            "snippet": "Mar 20, 2021 \u00b7 DBL Cigars has created three different pipe-shaped cigars under the La Pipa name. The company describes the cigar as 6 7/8 x 56,\u00a0...",
+            "timestamp": 1635023533,
+            "title": "DBL Releases Pipe-Shaped La Pipa | halfwheel",
+            "url": "https://www.google.com/url?q=https://halfwheel.com/dbl-releases-pipe-shaped-la-pipa/391499/&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAEQAg&usg=AOvVaw3R3rr5AV4O9ea3d_CPCpcD"
+        },
+        {
+            "rank": 8,
+            "snippet": "Rating  4.0 \n (70)   \u00b7 $$ - $$$\n\nLa Pipa, Gijon: See 70 unbiased reviews of La Pipa, rated 4 of 5 on Tripadvisor and ranked #189 of 889 restaurants in Gijon.",
+            "timestamp": 1635023533,
+            "title": "LA PIPA, Gijon - Restaurant Reviews, Photos &amp; Phone Number",
+            "url": "https://www.google.com/url?q=https://www.tripadvisor.com/Restaurant_Review-g187451-d11650500-Reviews-La_Pipa-Gijon_Asturias.html&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAQQAg&usg=AOvVaw0KeS-DzMGSGKDUTd--bgs9"
+        },
+        {
+            "rank": 9,
+            "snippet": "635 Followers, 50 Following, 124 Posts - See Instagram photos and videos from La Pipa Dulce (@lapipadulce)",
+            "timestamp": 1635023533,
+            "title": "La Pipa Dulce (@lapipadulce) \u2022 Instagram photos and videos",
+            "url": "https://www.google.com/url?q=https://www.instagram.com/lapipadulce/%3Fhl%3Den&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAMQAg&usg=AOvVaw0-zCZguma3z2TwGZEgOani"
+        },
+        {
+            "rank": 10,
+            "snippet": "La Pipa. Visit website. Corso Nuova Italia, 33 03014 Fiuggi Italy. 0775 505193. a.garbetta@gmail.com. Monday: 10:00-13:00 16:00-20:00",
+            "timestamp": 1635023533,
+            "title": "La Pipa | SHOPenauer",
+            "url": "https://www.google.com/url?q=https://www.shopenauer.com/en/store/la-pipa&sa=U&ved=2ahUKEwiHq8OQ1OHzAhUcDzQIHakcAHwQFnoECAkQAg&usg=AOvVaw2xkiKBt8CG8X7HIGLIfU3B"
+        }
+    ],
+    "timestamp": 1635023533,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22LA+PIPA%22"
+}

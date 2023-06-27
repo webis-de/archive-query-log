@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Guntury\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Guntury\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "We present a GPU friendly strategy to bring coherency to shadow rays. We introduce indirect mapping of threads to rays to improve the performance of ray\u00a0...",
+            "timestamp": 1650179158,
+            "title": "sashidhar guntury - Senior Software Engineer - Chime | LinkedIn",
+            "url": "https://www.google.com/url?q=https://www.linkedin.com/in/sashidharguntury&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAAQAg&usg=AOvVaw1HxRSR7y1XEZ-g_XudIsZe"
+        },
+        {
+            "rank": 3,
+            "snippet": "This surname is most common in India, where it is held by 21 people, or 1 in 36,526,923. In India Guntury is most prevalent in: Andhra Pradesh, where 67 percent\u00a0...",
+            "timestamp": 1650179158,
+            "title": "Guntury Surname Origin, Meaning &amp; Last Name History - Forebears",
+            "url": "https://www.google.com/url?q=https://forebears.io/surnames/guntury&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAcQAg&usg=AOvVaw3IZ_OiQk-qyRKPLAsC-ZXF"
+        },
+        {
+            "rank": 4,
+            "snippet": "Description: The Author Profile Page initially collects all the professional information known about authors from the publications record as known by the\u00a0...",
+            "timestamp": 1650179158,
+            "title": "Sashidhar Guntury - Home - ACM Digital Library",
+            "url": "https://www.google.com/url?q=https://dl.acm.org/profile/81492654471&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAkQAg&usg=AOvVaw0U9mAI62-hL1DAsI9LBoQU"
+        },
+        {
+            "rank": 5,
+            "snippet": "Bhaskar Guntury serves as managing director at AGDelta. ... Bhaskar Guntury is the COO at AGDelta . AGDelta Logo. AGDelta COO 2010. Related Hubs.\n\nLinkedIn: View on LinkedIn",
+            "timestamp": 1650179158,
+            "title": "Bhaskar Guntury - COO @ AGDelta - Crunchbase Person Profile",
+            "url": "https://www.google.com/url?q=https://www.crunchbase.com/person/bhaskar-guntury&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAgQAg&usg=AOvVaw2P86-jWqdSNh-M5lg5kM8m"
+        },
+        {
+            "rank": 6,
+            "snippet": "View Shridhar Guntury's business profile as Chief Technology Officer and Head of Engineering at TheMathCompany. Find contact's direct phone number,\u00a0...",
+            "timestamp": 1650179158,
+            "title": "Shridhar Guntury - Chief Techno.. - TheMathCompany | ZoomInfo.com",
+            "url": "https://www.google.com/url?q=https://www.zoominfo.com/p/Shridhar-Guntury/2602452808&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAIQAg&usg=AOvVaw27GEveTAu751AoMeZC_1bg"
+        },
+        {
+            "rank": 7,
+            "snippet": "View Bhaskar Guntury's business profile as Chief Operating &amp; Technology Officer at AG Delta. Find contact's direct phone number, email address, work history\u00a0...",
+            "timestamp": 1650179158,
+            "title": "Bhaskar Guntury - Chief Operating &amp; T.. - AG Delta | ZoomInfo.com",
+            "url": "https://www.google.com/url?q=https://www.zoominfo.com/p/Bhaskar-Guntury/-1379990318&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAMQAg&usg=AOvVaw09hBkDp6GZMnrTTdfH_FZy"
+        },
+        {
+            "rank": 8,
+            "snippet": "Mar 25, 2022 \u00b7 View Shridhar Guntury's email address: gxxxxxxxxr@codx.ai &amp; phone: +1-870-xxx-xx47's profile as Chief Technology Officer at Co.dx,\u00a0...",
+            "timestamp": 1650179158,
+            "title": "Shridhar Guntury's email &amp; phone number - SignalHire",
+            "url": "https://www.google.com/url?q=https://www.signalhire.com/profiles/shridhar-guntury%2527s-email/121526768&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAEQAg&usg=AOvVaw2X6uyU_T_ozO4Yl2DEfcnR"
+        },
+        {
+            "rank": 9,
+            "snippet": "Sep 27, 2021 \u00b7 TheMathCompany, with its proprietary AI master engine, Co.dx, develops customized AI solutions for enterprises to solve complex issues fr.",
+            "timestamp": 1650179158,
+            "title": "Shridhar Guntury - Head Of Engineering at Themathcompany - Wiza",
+            "url": "https://www.google.com/url?q=https://wiza.co/d/themathcompany/a004/shridhar-guntury&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAQQAg&usg=AOvVaw3ZrqPfZbzVN1CAvsGKTfSQ"
+        },
+        {
+            "rank": 10,
+            "snippet": "Sir Radcliffe (who was responsible for drawing out the partition) was an unapologetically rational thinker. He would have done exactly what he did for muslim\u00a0...",
+            "timestamp": 1650179158,
+            "title": "Sashidhar Guntury - Quora",
+            "url": "https://www.google.com/url?q=https://www.quora.com/profile/Sashidhar-Guntury&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAYQAg&usg=AOvVaw1KWd4LJ3k06vRkuuhrZrAC"
+        },
+        {
+            "rank": 11,
+            "snippet": "481 Followers, 479 Following, 5 Posts - See Instagram photos and videos from Guntur Yohanes (@guntury)",
+            "timestamp": 1650179158,
+            "title": "Guntur Yohanes (@guntury) \u2022 Instagram photos and videos",
+            "url": "https://www.google.com/url?q=https://www.instagram.com/guntury/&sa=U&ved=2ahUKEwjF9b2d35r3AhUBEEQIHRf9BxgQFnoECAUQAg&usg=AOvVaw2voJY5Hj3m-a1mLj5VIdmy"
+        }
+    ],
+    "timestamp": 1650179158,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Guntury%22"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Continental Automotive Systems\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Continental Automotive Systems\" -wikipedia",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Alongside the three old divisions Passenger and Light Truck Tires, Commercial Vehicle Tires and ContiTech, the former Continental Automotive Systems division, which had already undergone numerous restructuring and reorganization\u00a0...",
+            "timestamp": 1651015350,
+            "title": "150 Years Continental: The Skill of Transformation",
+            "url": "https://books.google.com/books?id=EAVGEAAAQBAJ&pg=PA38&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgGEAE"
+        },
+        {
+            "rank": 3,
+            "snippet": "Continental, AG (2006) Continental Automotive Systems: 100 Years. Forward Thinking, Continental AG [online] Available at: www.contionline.com/generator/www.iplinicascaslthemes/press services hiddenlpress releases company economy slash\u00a0...",
+            "timestamp": 1651015350,
+            "title": "Automotive Global Value Chain: The Rise of Mega Suppliers",
+            "url": "https://books.google.com/books?id=gUIwDwAAQBAJ&pg=PA2016-IA40&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgHEAE"
+        },
+        {
+            "rank": 4,
+            "snippet": "Other products, manufactured by Continental Automotive Systems, include brake and traction control systems, sealing systems, vibration engineering products, diaphragm materials, hoses, air spring systems and tire-pressure monitoring\u00a0...",
+            "timestamp": 1651015350,
+            "title": "Plunkett's Automobile Industry Almanac 2007",
+            "url": "https://books.google.com/books?id=FLrwSGI1XB8C&pg=PT224&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgJEAE"
+        },
+        {
+            "rank": 5,
+            "snippet": "Other products, manufactured by Continental Automotive Systems, include brake and traction control systems, sealing systems, vibration engineering products, diaphragm materials, hoses, air spring systems and tire-pressure monitoring\u00a0...",
+            "timestamp": 1651015350,
+            "title": "Plunkett's Chemicals, Coatings &amp; Plastics Industry Almanac ...",
+            "url": "https://books.google.com/books?id=ZRqN6lPRClMC&pg=PT198&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgIEAE"
+        },
+        {
+            "rank": 6,
+            "snippet": "Other products, manufactured by Continental Automotive Systems, include brake and traction control systems, sealing systems, vibration engineering products, diaphragm materials, hoses, air spring systems and tire-pressure monitoring\u00a0...",
+            "timestamp": 1651015350,
+            "title": "Plunkett's Engineering &amp; Research Industry Almanac 2006: The ...",
+            "url": "https://books.google.com/books?id=ocNFM8TktVwC&pg=PT253&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgFEAE"
+        },
+        {
+            "rank": 7,
+            "snippet": "ISAD Partners We , Continental ISAD , are a part of the Continental Automotive Systems Group ( headquartered in Frankfurt ) of Continental AG . Continental TEVES is also based on the same site . Continental TEVES , with its global\u00a0...",
+            "timestamp": 1651015350,
+            "title": "The New Automotive 42V PowerNet: Preparing for Mass ...",
+            "url": "https://books.google.com/books?id=YR9-a2hY3ZMC&pg=PA262&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgCEAE"
+        },
+        {
+            "rank": 8,
+            "snippet": "CONTINENTAL AUTOMOTIVE SYSTEMS Industry Group Code: 336300 Ranks within this company's industry group: Sales: Profits: Industry Group Code: 541710E Ranks within this company's industry group: www.temic.de Health/Consumer: Biotechnology:\u00a0...",
+            "timestamp": 1651015350,
+            "title": "Plunkett's Nanotechnology &amp; Mems Industry Almanac 2008: ...",
+            "url": "https://books.google.com/books?id=51vSHNQEXMcC&pg=PT190&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgEEAE"
+        },
+        {
+            "rank": 9,
+            "snippet": "In the future , this Continental Automotive Systems President and CEO William Kozyra is an engineering alumnus of Michigan's UDM . The college is partnering with the supplier for an international engineering development program . could\u00a0...",
+            "timestamp": 1651015350,
+            "title": "Automotive Engineering International",
+            "url": "https://books.google.com/books?id=V1xKAQAAIAAJ&q=%22Continental+Automotive+Systems%22+-wikipedia&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgBEAE"
+        },
+        {
+            "rank": 10,
+            "snippet": "... braking systems Automotive Lighting Jihlava Italy 80 1997 Headlight systems Kostal CR Zdice Germany 70 2003 Electric interior modules Continental Automotive Systems Fren\u0161t\u00e1t pod Radho\u0161t\u011bm Germany 60 2006 Electronic systems, sensors,\u00a0...",
+            "timestamp": 1651015350,
+            "title": "Dependent Growth: Foreign Investment and the Development of ...",
+            "url": "https://books.google.com/books?id=T3yhDgAAQBAJ&pg=PA133&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgDEAE"
+        },
+        {
+            "rank": 11,
+            "snippet": "That year , the company established Continental Automotive Systems Group and began acquiring automotive suppliers with a wide variety of competencies and geographic attributes , such as TBA Belting ( UK ) , and ITT Brake and Chassis\u00a0...",
+            "timestamp": 1651015350,
+            "title": "Locating Global Advantage: Industry Dynamics in the ...",
+            "url": "https://books.google.com/books?id=xU-_P5GB3noC&pg=PA71&dq=%22Continental+Automotive+Systems%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwixrqelirP3AhWiD0QIHVJ7Ah0Q6AF6BAgAEAE"
+        }
+    ],
+    "timestamp": 1651015350,
+    "url": "https://www.google.com/search?tbs=bks:1&q=%22Continental+Automotive+Systems%22+-wikipedia"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Lucas Ruzin\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Lucas Ruzin\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Player Lucas Ruzin Pivatto. ... Lucas Ruzin Pivatto. Defence. Country: Brazil. Age: 31 years. Date of birth: 16 June 1991. Stats; Club info / Prize list.",
+            "timestamp": 1658326494,
+            "title": "Lucas Ruzin Pivatto - Player Profile - Football - Eurosport",
+            "url": "https://www.google.com/url?q=https://www.eurosport.com/football/lucas-ruzin-pivatto_prs343588/person.shtml&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAUQAg&usg=AOvVaw1jtMbsObEDYKXW3lnef17Y"
+        },
+        {
+            "rank": 3,
+            "snippet": "Read up on Lucas Ruzin's biography, career, awards and more on ESPN. ... LucasRuzin. Midfielder. Follow. Birthplace. Brazil. Stats. START (SUB). 1 (0).",
+            "timestamp": 1658326494,
+            "title": "Lucas Ruzin Biography | ESPN",
+            "url": "https://www.google.com/url?q=https://www.espn.com/soccer/player/bio/_/id/169151/lucas-ruzin&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAEQAg&usg=AOvVaw3O5rEWpGKv11q1y2p4FJhq"
+        },
+        {
+            "rank": 4,
+            "snippet": "Get the latest news, stats, videos, highlights and more about midfielder Lucas Ruzin on ESPN.",
+            "timestamp": 1658326494,
+            "title": "Lucas Ruzin Stats, News, Bio | ESPN",
+            "url": "https://www.google.com/url?q=https://www.espn.com/soccer/player/_/id/169151/lucas-ruzin&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAgQAg&usg=AOvVaw3bTS79drbcadag99o1irQg"
+        },
+        {
+            "rank": 5,
+            "snippet": "Full name: Lucas Ruzin Pivatto Date of birth: Jun 16, 1991 Age: 31 Height: 1,86 m Citizenship: Brazil Position: Defender Foot: both Current club: Without\u00a0...",
+            "timestamp": 1658326494,
+            "title": "Lucas Pivatto - Player profile | Transfermarkt",
+            "url": "https://www.google.com/url?q=https://www.transfermarkt.us/lucas-pivatto/profil/spieler/215053&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAMQAg&usg=AOvVaw2-mWwk1TrLZCDGCMP3WKfU"
+        },
+        {
+            "rank": 6,
+            "snippet": "NameLucas Ruzin Pivatto. Born1991-04-07(31 -yrs-old)Country of Birth. Brazil. Nationality. Brazil. BornCatanduva - PR. PositionDefender.",
+            "timestamp": 1658326494,
+            "title": "Lucas Ruzin Pivatto - soccerzz.com",
+            "url": "https://www.google.com/url?q=https://www.soccerzz.com/player.php%3Fid%3D250616%26epoca_id%3D140&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAQQAg&usg=AOvVaw36I85I-S4HQ1dMw8Y03fqn"
+        },
+        {
+            "rank": 7,
+            "snippet": "... Date of birth: 16 June 1991; Age: 31; Country of birth: Brazil; Position: Defender; Height: 186 cm; Weight: 82 kg; Foot: Both. Lucas Ruzin Pivatto\u00a0...",
+            "timestamp": 1658326494,
+            "title": "Lucas Pivatto - Profile with news, career statistics and history",
+            "url": "https://www.google.com/url?q=https://int.soccerway.com/players/lucas-ruzin/211368/&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAAQAg&usg=AOvVaw3AN3aFdjwW_d7K6aWRiH9J"
+        },
+        {
+            "rank": 8,
+            "snippet": "Ruzin football player Lucas Ruzin jersey numbers, tactics line-ups formations, scores and results, appearances, Most capped.",
+            "timestamp": 1658326494,
+            "title": "Lucas Ruzin - Football Lineups",
+            "url": "https://www.google.com/url?q=https://www.football-lineups.com/footballer/65620_Ruzin/&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAIQAg&usg=AOvVaw1yZ9UauiCPFSiwa--dfEw9"
+        },
+        {
+            "rank": 9,
+            "snippet": "Lucas Ruzin Pivatto - Defender of undefined: news, match, latest detailed stats including goals, assists, strengths &amp; weaknesses and match ratings\u00a0...",
+            "timestamp": 1658326494,
+            "title": "Lucas Ruzin Pivatto - Defender of undefined, 30 years old: news ...",
+            "url": "https://www.google.com/url?q=https://tribuna.com/en/persons/lucas-ruzin-pivatto/&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAcQAg&usg=AOvVaw1BTDPumr29j6ro37IdldhA"
+        },
+        {
+            "rank": 11,
+            "snippet": "Lucas Ruzin Pivatto - All info on the player: stats, career, transfers...",
+            "timestamp": 1658326494,
+            "title": "Lucas Ruzin Pivatto: Statistics and Goals - Football Today",
+            "url": "https://www.google.com/url?q=https://www.footballtoday.net/player/lucas-ruzin-pivatto&sa=U&ved=2ahUKEwjl06C27of5AhU6I0QIHULKBecQFnoECAYQAg&usg=AOvVaw0ZDJ29umx-Hr2FyedMOW76"
+        }
+    ],
+    "timestamp": 1658326494,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Lucas+Ruzin%22"
+}

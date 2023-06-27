@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Lucius Vibullius Rufus\" son-in-law of Herodes Atticus -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Lucius Vibullius Rufus\" son-in-law of Herodes Atticus",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Lucius Vibullius Rufus (son-in-law of Herodes Atticus). Collected from the entire web and summarized to include only the most important parts of it.",
+            "timestamp": 1642439444,
+            "title": "Lucius Vibullius Rufus (son-in-law of Herodes Atticus) - Summarized ...",
+            "url": "https://www.google.com/url?q=https://plex.page/Lucius_Vibullius_Rufus_(son-in-law_of_Herodes_Atticus)&sa=U&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQFnoECAgQAg&usg=AOvVaw3dik31C69PpUm99U4wkjwA"
+        },
+        {
+            "rank": 3,
+            "snippet": "Lucius Vibullius Rufus (son-in-law of Herodes Atticus). Descri\u00e7\u00e3o em Portugu\u00eas n\u00e3o encontrada, s\u00f3 temos uma descri\u00e7\u00e3o em ingl\u00eas: Lucius Vibullius Rufus\u00a0...",
+            "timestamp": 1642439444,
+            "title": "Quem se casou com Lucius Vibullius Rufus (son-in-law of Herodes ...",
+            "url": "https://www.google.com/url?q=https://pt.whomarried.com/lucius-vibullius-rufus-6697633&sa=U&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQFnoECAQQAg&usg=AOvVaw2x5zP3CHlBLYuau5pYmuZ-"
+        },
+        {
+            "rank": 4,
+            "snippet": "Lucius Vibullius Rufus: | Biography, Facts, Career, Wiki, Life | Lists. ... Lucius Vibullius Rufus (son-in-law of Herodes Atticus)\u00a0...",
+            "timestamp": 1642439444,
+            "title": "About Lucius Vibullius Rufus: | Biography, Facts, Career, Wiki, Life ...",
+            "url": "https://www.google.com/url?q=https://peoplepill.com/people/lucius-vibullius-rufus/lists&sa=U&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQFnoECAYQAg&usg=AOvVaw2FfVy6qtyCGb55Wqx_uv-9"
+        },
+        {
+            "rank": 5,
+            "snippet": "Tiberius Claudius Atticus Herodes (suffect consul 133). Consul of the Roman Empire ... Lucius Vibullius Rufus (son-in-law of Herodes Atticus)\u00a0...",
+            "timestamp": 1642439444,
+            "title": "About Publius Aelius Vibullius Rufus: | Biography, Facts, Career ...",
+            "url": "https://www.google.com/url?q=https://peoplepill.com/people/publius-aelius-vibullius-rufus/also-viewed/&sa=U&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQFnoECAMQAg&usg=AOvVaw2zoQV5sDkXKCgmaqS5Kc40"
+        },
+        {
+            "rank": 6,
+            "snippet": "Ti. Claudius Marcus Appius Atilius Bradua Regillus Atticus was born around 145, soon after Athenais. Neither Herodes' brother-in-law Bradua nor his son of\u00a0...",
+            "timestamp": 1642439444,
+            "title": "chapter 2 - De Gruyter",
+            "url": "https://www.google.com/url?q=https://www.degruyter.com/document/doi/10.4159/9780674042209-002/pdf&sa=U&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQFnoECAUQAg&usg=AOvVaw0TUpMQxRDYTZf9EeqkX-Y9"
+        },
+        {
+            "rank": 7,
+            "snippet": "Athenais married Lucius Vibullius Rufus. ... Neither Herodes' brother-in-law Bradua nor his son of the same name proved to be pleasing to him.",
+            "timestamp": 1642439444,
+            "title": "The Murder of Regilla: a case of domestic violence in antiquity",
+            "url": "https://books.google.com/books?id=UsUJS9g6qHgC&pg=PA48&lpg=PA48&dq=%22Lucius+Vibullius+Rufus%22+son-in-law+of+Herodes+Atticus+-wikipedia&source=bl&ots=WjbgXO7ez6&sig=ACfU3U2CbocmRc4hcP-F_meljkFc1OeaCQ&hl=it&sa=X&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQ6AF6BAgCEAE"
+        },
+        {
+            "rank": 8,
+            "snippet": "\u3044\u306b\u8ca2\u732e\u3067\u304d\u308b\u3053\u306e\u30aa\u30fc\u30c7\u30a3\u30aa\u306e\u767a\u97f3Lucius Vibullius Rufus (son-in-law of Herodes Atticus)HowToPronounce\u8f9e\u66f8\u3067\u8abf\u3079\u307e\u3057\u305f\u3002",
+            "timestamp": 1642439444,
+            "title": "Lucius Vibullius Rufus (son-in-law of Herodes Atticus) \u306e\u767a\u97f3\u306e\u4ed5\u65b9 ...",
+            "url": "https://www.google.com/url?q=https://ja.howtopronounce.com/lucius-vibullius-rufus-son-in-law-of-herodes-atticus-&sa=U&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQFnoECAEQAg&usg=AOvVaw1tbMpJPKE7S1WYBcHiIVav"
+        },
+        {
+            "rank": 9,
+            "snippet": "\u03a3\u03b1\u03c2 \u03b5\u03c5\u03c7\u03b1\u03c1\u03b9\u03c3\u03c4\u03ce \u03b3\u03b9\u03b1 \u03c4\u03b7 \u03c3\u03c5\u03bc\u03b2\u03bf\u03bb\u03ae \u03a3\u03c5\u03b3\u03c7\u03b1\u03c1\u03b7\u03c4\u03ae\u03c1\u03b9\u03b1! \u0388\u03c7\u03b5\u03b9\u03c2 \u03c4\u03b7\u03bd \u03c0\u03c1\u03bf\u03c6\u03bf\u03c1\u03ac \u03c4\u03bf\u03c5 Lucius Vibullius Rufus (son-in-law of Herodes Atticus) \u03b4\u03af\u03ba\u03b9\u03bf. \u03a3\u03c5\u03bc\u03b2\u03b1\u03b4\u03af\u03c3\u03b5\u03b9. \u039f\u03c5\u03c0\u03c2!",
+            "timestamp": 1642439444,
+            "title": "\u03a0\u03ce\u03c2 \u03bd\u03b1 \u03c0\u03c1\u03bf\u03c6\u03ad\u03c1\u03b5\u03b9 Lucius Vibullius Rufus (son-in-law of Herodes ...",
+            "url": "https://www.google.com/url?q=https://el.howtopronounce.com/lucius-vibullius-rufus-son-in-law-of-herodes-atticus-&sa=U&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQFnoECAcQAg&usg=AOvVaw1cr9c_DpjHfckNipnhaIbG"
+        },
+        {
+            "rank": 11,
+            "snippet": "H\u00e9rode Atticus (Claudii), Consul Romain 101-176 with. M Claudius (Claudii) 140-140; F ... Lucius Vibullius Rufus (Vibullii) ca 135-161/ with :.",
+            "timestamp": 1642439444,
+            "title": "Atilia Caucidia Tertulla (Atilii) : Family tree by Louis BRUN (zardoz)",
+            "url": "https://www.google.com/url?q=https://gw.geneanet.org/zardoz%3Flang%3Den%26n%3Datilii%26oc%3D0%26p%3Datilia%2Bcaucidia%2Btertulla&sa=U&ved=2ahUKEwj2gNWRsbn1AhWvJEQIHRiJDKkQFnoECAAQAg&usg=AOvVaw0Kv72h7-047f_DmMU1wr7o"
+        }
+    ],
+    "timestamp": 1642439444,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Lucius+Vibullius+Rufus%22+son-in-law+of+Herodes+Atticus"
+}
