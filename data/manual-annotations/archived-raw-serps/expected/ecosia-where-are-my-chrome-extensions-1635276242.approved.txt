@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "where are my chrome extensions",
+    "offset": null,
+    "page": null,
+    "query": "where are my chrome extensions",
+    "results": [
+        {
+            "rank": 4,
+            "snippet": "Manage your <em>extensions</em>. On your computer, open <em>Chrome</em>. At the top right, click More More tools <em>Extensions</em>.; Make your changes: Turn on/off: Turn the <em>extension</em> on or off. Allow incognito: On the <em>extension</em>, click Details.Turn on Allow in incognito.; Fix corruptions: Find a corrupted <em>extension</em> and click Repair.Confirm by clicking Repair <em>extension</em>.; Allow site access: On the <em>extension</em>, click Details.",
+            "timestamp": 1635276242,
+            "title": "Install and manage extensions - Chrome Web Store Help",
+            "url": "https://support.google.com/chrome_webstore/answer/2664769?hl=en"
+        },
+        {
+            "rank": 5,
+            "snippet": "Webgl <em>chrome</em> <em>extension</em> - How-To - Google <em>Chrome</em> This document, titled \u00ab How To Find Google <em>Chrome</em> <em>Extensions</em> \u00bb, is available under the Creative Commons license. Any copy, reuse, or modification of the content should be sufficiently credited to CCM ( ccm.net ).",
+            "timestamp": 1635276242,
+            "title": "How To Find Google Chrome Extensions - CCM",
+            "url": "https://ccm.net/faq/35291-google-chrome-where-are-the-extensions-stored"
+        },
+        {
+            "rank": 6,
+            "snippet": "Sometimes you are suspicious about a certain <em>chrome</em> <em>extension</em> being malicious or just curious about the files extracted. This guide will help you to find where <em>chrome extensions</em> are store in Windows 10. When you install any <em>Chrome</em> <em>extension</em>, its files are extracted into the following directory location: C:\\\\Users\\\\[User_Name]\\\\AppData\\\\Local\\\\Google\\\\<em>Chrome</em>\\\\User Data\\\\Default\\\\<em>Extensions</em> In ...",
+            "timestamp": 1635276242,
+            "title": "Where are Chrome Extensions Stored - MalwareFox",
+            "url": "https://www.malwarefox.com/chrome-extensions-storage/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Where are my</em> <em>extensions</em> in Google <em>Chrome</em>?Ever have your <em>extensions</em> disappear? Blog post - https://www.timetotalktech.com/2020/10/<em>where-are-my</em>-<em>extensions</em>-in-g...",
+            "timestamp": 1635276242,
+            "title": "Where are my extensions in Google Chrome? - YouTube",
+            "url": "https://www.youtube.com/watch?v=nVI8qAnlbTg"
+        },
+        {
+            "rank": 8,
+            "snippet": "I have installed Google <em>Chrome</em>'s <em>extension</em> <em>Chrome</em> Office Viewer (Beta) for open Excel, Word and Power Point documents in browser. And now I need to install this <em>extension</em> to others computers in local network. The problem is that the computers is not connected to the Internet.",
+            "timestamp": 1635276242,
+            "title": "Where are installed Google Chrome extensions stored ...",
+            "url": "https://stackoverflow.com/questions/21475866/where-are-installed-google-chrome-extensions-stored-locally"
+        },
+        {
+            "rank": 9,
+            "snippet": "Google Keep <em>Chrome</em> <em>Extension</em>. 7,484. Ad. Added. Easily create mathematical equations, formulas and quizzes. Intuitively type or handwrite, with no tricky math code to learn. EquatIO - Math made digital. 616.",
+            "timestamp": 1635276242,
+            "title": "My Extensions - Chrome Web Store",
+            "url": "https://chrome.google.com/webstore/detail/my-extensions/igejgfmbjjjjplnnlgnbejpkpdajkblm"
+        },
+        {
+            "rank": 10,
+            "snippet": "Once upon a time all <em>my</em> Google <em>Chrome extensions</em> were gone! I found many solutions out there, and finally found one that did it for me, but I\u2019m sharing everything I found at the time in this article. Jump to each solution: Restart the browser; Check potentially corrupted <em>extensions</em>; Verify Google <em>Chrome</em> sync \u00bb worked for 1 visitor (Jul 2021)",
+            "timestamp": 1635276242,
+            "title": "All Google Chrome extensions have disappeared. What now?",
+            "url": "https://pedrosaurus.com/troubleshooting/all-my-google-chrome-extensions-disappeared/"
+        },
+        {
+            "rank": 11,
+            "snippet": "When <em>extensions</em> are installed into <em>Chrome</em> they are extracted into the C:\\Users\\[login_name]\\AppData\\Local\\Google\\<em>Chrome</em>\\User Data\\Default\\<em>Extensions</em> folder. Each <em>extension</em> will be stored in its ...",
+            "timestamp": 1635276242,
+            "title": "How to Find &amp; View the Files Installed by a Chrome Extension",
+            "url": "https://www.bleepingcomputer.com/tutorials/how-to-view-files-installed-by-a-chrome-extension/"
+        }
+    ],
+    "timestamp": 1635276242,
+    "url": "https://www.ecosia.org/search?q=where+are+my+chrome+extensions"
+}

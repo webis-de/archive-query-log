@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "laughter stories",
+    "offset": null,
+    "page": null,
+    "query": "laughter stories",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Laughter</em> makes us feel good, releases pressure in a bad situation, gives us energy, and makes the most miserable situation bearable at times. In general, it gives us a sense of well-being and a sense of community. Doctor Madan Kataria, author of the book, <em>Laughter</em> Yoga, said, \"Children can laugh up to 400 times a day, but for adults, this ...",
+            "timestamp": 1640836502,
+            "title": "Laughter - Short Stories - Morning Coffee Beans",
+            "url": "https://www.morningcoffeebeans.com/laughter/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Doctors and Lawyers. <em>Laughter</em> in the courtroom and cockpit. Pilots, teachers, and even librarians have funny <em>stories</em>. Sometimes the funniest <em>stories</em> come from the workplace. Funny kids, parents, siblings, and families. Aren't families great? Families are like fudge. Mostly sweet with a few nuts.",
+            "timestamp": 1640836502,
+            "title": "A Time to Laugh, Funny and Inspirational Stories",
+            "url": "https://atimetolaugh.org/"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Stories</em> / <em>Laughter Stories</em> - The best reading on the web. Newest. Alvaro Follow. on Mar 27 2015 10:22 AM PST . Good sense of Humor. I once heard a rumor of a person with this sense of humor, makes a joke out no where, and makes the audience laugh off their lungs.",
+            "timestamp": 1640836502,
+            "title": "Laughter Stories - Modern Award-winning Laughter Short ...",
+            "url": "https://storywrite.com/stories/about/Laughter"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Laughter</em> and comedy has also been a tremendous outlet for people when navigating the storms of life. The focus of my blog today, is to do just that\u2026to give people some giggles, smiles, or <em>laughter</em> that (hopefully) will help brighten your day\u2026at least for a short time.",
+            "timestamp": 1640836502,
+            "title": "Laughter | My Good Time Stories",
+            "url": "https://mygoodtimestories.com/category/laughter/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Laughter</em> Is the Best Medicine. <em>Laughter</em> is the best medicine. This is an old saying, and it is used for a good reason. Many studies on <em>laughter</em> and its benefits to health have been made through the years all over the world. If you are interested, you can check here that the results are a positive read.",
+            "timestamp": 1640836502,
+            "title": "Laughter Is the Best Medicine - Inspirational Stories to ...",
+            "url": "https://www.inspirational-short-stories.com/laughter-is-the-best-medicine.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "The weakest <em>stories</em>, I think, are \"The Room in the Attic,\" which just asks for too much suspension of disbelief, and \"Dangerous <em>Laughter</em>.\" Both <em>stories</em> attempt to foreground character more but come off as too artificial--an amusing outcome for a book with so many fantastical conceits.",
+            "timestamp": 1640836502,
+            "title": "Dangerous Laughter: Thirteen Stories (Vintage ...",
+            "url": "https://www.amazon.com/Dangerous-Laughter-Thirteen-Stories-Contemporaries/dp/030738747X"
+        },
+        {
+            "rank": 7,
+            "snippet": "Great <em>story</em>/case study and the eye opener for many to understand the importance of laughing. Every one must cultivate the habit of laughing for few minutes every day.More you laugh, the more you enjoy life, and more people shall be attracted towards you.<em>Laughter</em> is indeed the best medicine, its now proved.",
+            "timestamp": 1640836502,
+            "title": "Laughter is The Best Medicine | Motivational Stories",
+            "url": "https://academictips.org/blogs/laughter-is-the-best-medicine/"
+        },
+        {
+            "rank": 8,
+            "snippet": "20 best absolutely real funny travel <em>stories</em> that will make you cry from <em>laughter</em> Some of the best memories from travel are about all the mishaps, hilarious <em>stories</em> and adventures. You may not remember famous statues or museums, but you will always remember accidentally getting locked, yelled at or proposed to by a stranger!",
+            "timestamp": 1640836502,
+            "title": "20 best absolutely real funny travel stories that will ...",
+            "url": "https://reveriechaser.com/20-best-absolutely-real-funny-travel-stories-that-will-make-you-cry-from-laughter/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Emergency <em>Laughter: Stories</em> of Humor Inside Ambulances and Operating Rooms shows why most health care professionals have such a twisted sense of humor and how critical <em>laughter</em> is to the survival of both patient and care giver. Previous page. Print length. 135 pages. Language. English. Publication date.",
+            "timestamp": 1640836502,
+            "title": "Emergency Laughter: Stories of Humor Inside Ambulances and ...",
+            "url": "https://www.amazon.com/Emergency-Laughter-Stories-Ambulances-Operating-ebook/dp/B00S3Q3EX8"
+        }
+    ],
+    "timestamp": 1640836502,
+    "url": "https://www.ecosia.org/search?q=laughter+stories&addon=chrome&addonversion=4.0.7&method=topbar"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "financial risk tolerance quiz",
+    "offset": null,
+    "page": null,
+    "query": "financial risk tolerance quiz",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Want to improve your personal<em> finances?</em> Start by taking this<em> quiz</em> to get an idea of your risk tolerance\u2013one of the fundamental issues to consider when planning your investment strategy, either alone or in consultation with a professional. Choose the response that best describes you\u2013there are no \"right\" or \"wrong\" answers. Just have fun!",
+            "timestamp": 1643759873,
+            "title": "Investment Risk Tolerance Assessment // Personal Financial ...",
+            "url": "https://pfp.missouri.edu/research/investment-risk-tolerance-assessment/"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Risk Tolerance Quiz</em> Our<em> risk tolerance quiz</em> \u2014 only 10 questions \u2014 is crucial in helping you identify your personality as it relates to risk. Each person is different and these questions will help you discover just how much risk you are comfortable with. After you figure out your<em> Risk Tolerance,</em> you're ready to Determine Your Asset Allocation.",
+            "timestamp": 1643759873,
+            "title": "Risk Tolerance Quiz - SMI - Financial Wisdom for Living ...",
+            "url": "https://soundmindinvesting.com/resources/calculators/risk-tolerance-quiz"
+        },
+        {
+            "rank": 3,
+            "snippet": "Investment <em>Risk Tolerance</em> <em>Quiz</em> 1 Do you want to improve your personal finances? Start by taking this <em>quiz</em> to get an idea of your investment <em>risk tolerance</em> \u2013 one of the fundamental issues to consider when planning your investment strategy, either alone or in consultation with a <em>financial</em> services professional.",
+            "timestamp": 1643759873,
+            "title": "Investment Risk Tolerance Quiz - Rutgers University",
+            "url": "https://njaes.rutgers.edu/money/assessment-tools/investment-risk-tolerance-quiz.pdf"
+        },
+        {
+            "rank": 4,
+            "snippet": "Discover the right investment strategy for you with the <em>Risk</em> <em>Tolerance</em> <em>Quiz</em> from Valorem <em>Financial</em>. With Valorem <em>Financial</em>, money doesn't have to be complicated.",
+            "timestamp": 1643759873,
+            "title": "Risk Tolerance Quiz \u2014 Financial Advisors \u2014 Valorem Financial",
+            "url": "https://www.valoremfinancial.com/risk-tolerance-quiz/"
+        },
+        {
+            "rank": 5,
+            "snippet": "START THE<em> RISK TOLERANCE QUIZ</em> Every Financial Move Involves Risk Taking a financial risk makes some people nervous. It should. Pretty much every financial move you make involves some level of risk. My girlfriend invests in cash. You might think that cash has no risk, but you would be wrong. Cash carries an inflationary risk.",
+            "timestamp": 1643759873,
+            "title": "Stress-Free Investing- Understanding Your Risk Tolerance Quiz",
+            "url": "https://nomadicfire.com/risk-tolerance-quiz"
+        },
+        {
+            "rank": 6,
+            "snippet": "Take this test to discover more about your personal<em> risk tolerance,</em> a key criteria in all investment decision-making. Your best friend says his uncle will give you a chance to invest in a gold property in northern BC. He says the<em> investment</em> will double before the end of the year. What do you do? Weigh the risks and decide not to invest.",
+            "timestamp": 1643759873,
+            "title": "Investment Risk Tolerance Test | BCSC InvestRight",
+            "url": "https://www.investright.org/informed-investing/know-yourself/test-your-risk-tolerance/"
+        },
+        {
+            "rank": 7,
+            "snippet": "In The Black <em>Financial</em> Wellness 1732 1st Ave #20206 New York, NY 10128",
+            "timestamp": 1643759873,
+            "title": "Risk Tolerance Quiz \u2013 Intheblackfinancialwellness",
+            "url": "https://www.intheblackfinancialwellness.com/risk-tolerance-quiz/"
+        },
+        {
+            "rank": 8,
+            "snippet": "The <em>Risk Tolerance</em> Questionnaire presented is available through a license agreement between Morningstar Investment Management LLC and Cetera <em>Financial</em> Group, Inc. and is provided for educational purposes only.",
+            "timestamp": 1643759873,
+            "title": "Risk Tolerance Questionnaire - Costanzo Financial Group",
+            "url": "https://www.ajcostanzo.com/wp-content/uploads/2017/10/RiskToleranceQuestionnaire.pdf"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Risk</em> <em>Tolerance</em> Questionnaire Name: Date Completed: A deep understanding of what you\u2019re investing for, how long you have to meet your goals and your comfort level with <em>risk</em> are all part of determining the right mix of investments for you. And knowing how you may react to the ups and downs of the market is important, because too",
+            "timestamp": 1643759873,
+            "title": "Risk Tolerance Questionnaire - Edward Jones",
+            "url": "https://www.edwardjones.com/sites/default/files/acquiadam/2021-02/risk-tolerance-questionnaire.pdf"
+        }
+    ],
+    "timestamp": 1643759873,
+    "url": "https://www.ecosia.org/search?q=financial+risk+tolerance+quiz"
+}
