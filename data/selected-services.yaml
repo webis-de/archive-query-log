@@ -311,7 +311,7 @@
   results_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
-    results_selector: div#search div#rso div.g:not(.g-blk), div#search div#ires div.g:not(.g-blk)
+    results_selector: div#search div#rso div.g:not(.g-blk), div#search div#ires div.g:not(.g-blk), div#search ol#rso li.g:not(.g-blk)
     url_selector: .r a, .rc a, h3 a, a
     title_selector: .r a h3, .rc a h3, h3, a h3
     snippet_selector: span.st, span
@@ -320,12 +320,18 @@
     results_selector: div#main div.xpd
     url_selector: a
     title_selector: a h3
+    snippet_selector: div div div div div div
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     results_selector: div#gs_res_ccl_mid > div.gs_r
     url_selector: h3.gs_rt a
     title_selector: h3.gs_rt
     snippet_selector: dic.gs_rs
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#search div#ires table.images_table tr td
+    url_selector: a
+    title_selector: :--self
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     results_selector: li.g
