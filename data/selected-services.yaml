@@ -6102,8 +6102,26 @@
     type: query_parameter
     parameter: p
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input.search-form__input
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input.search-form-input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: section.mainline div.mainline__result-wrapper article.result:not(.ad-result)
+    url_selector: header.result-title h2.result-title__heading a.result-title__link, div.result__header div.result__title a.result__link
+    title_selector: header.result-title h2.result-title__heading, div.result__header div.result__title
+    snippet_selector: div.result__columns div.result__description p.web-result__description
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: main.results-wrapper div.result
+    url_selector: h2.result-firstline-title a.result-title
+    title_selector: h2.result-firstline-title
+    snippet_selector: p.result-snippet
   focused_url_prefixes:
   - /search?
   - /images?
