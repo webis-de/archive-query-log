@@ -2,8 +2,7 @@
 
 hdfs dfs -rm -r -f archive-query-log-urls/
 
-PYSPARK_PYTHON=/mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/venv/bin/python \
-  spark-submit \
+spark-submit \
   --conf spark.yarn.submit.waitAppCompletion=false \
   --name archive-query-log-urls \
   --master yarn \
