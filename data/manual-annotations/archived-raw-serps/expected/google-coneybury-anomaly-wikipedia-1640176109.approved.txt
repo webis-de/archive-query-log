@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Coneybury Anomaly\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Coneybury Anomaly\" -wikipedia",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1640176109,
+            "title": "The Stonehenge Environs Project",
+            "url": "https://books.google.com/books?id=C3VnAAAAMAAJ&q=%22Coneybury+Anomaly%22+-wikipedia&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgAEAE"
+        },
+        {
+            "rank": 3,
+            "snippet": "An important example of isolated deposits of wild remains is the Coneybury Anomaly in Wiltshire, which Maltby (1990) found to contain an exceptionally high frequency of roe deer bones but also the remains of red deer,\u00a0...",
+            "timestamp": 1640176109,
+            "title": "Beastly Questions: Animal Answers to Archaeological Issues",
+            "url": "https://books.google.com/books?id=dooIBAAAQBAJ&pg=PA61&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgJEAE"
+        },
+        {
+            "rank": 4,
+            "snippet": "... to approach either Stonehenge's south entrance or its more grandiose northeast entrance. Coneybury henge, close to the Early Neolithic pit full of feasting debris known as the Coneybury anomaly, may be another example of a henge\u00a0...",
+            "timestamp": 1640176109,
+            "title": "Stonehenge: Exploring the Greatest Stone Age Mystery",
+            "url": "https://books.google.com/books?id=bBclCwAAQBAJ&pg=PA226&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgHEAE"
+        },
+        {
+            "rank": 5,
+            "snippet": "... to approach either Stonehenge's south entrance or its more grandiose northeast entrance. Coneybury henge, close to the Early Neolithic pit full of feasting debris known as the Coneybury anomaly, may be another example of a henge\u00a0...",
+            "timestamp": 1640176109,
+            "title": "Stonehenge - A New Understanding: Solving the Mysteries of ...",
+            "url": "https://books.google.com/books?id=s_YQysuGPLcC&pg=PA226&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgIEAE"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1640176109,
+            "title": "Hambledon Hill, Dorset, England: Excavation and survey of a ...",
+            "url": "https://books.google.com/books?id=-krnBAAAQBAJ&pg=PA555&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgEEAE"
+        },
+        {
+            "rank": 7,
+            "snippet": "The primary deposits within the early Neolithic 'Coneybury Anomaly', a substantial pit deposit containing pottery, flint and bone, near Stonehenge, Wiltshire (after Richards 1990). (Redrawn by the author). \u03bf M I.\u00b7,;......a = .= Fig.",
+            "timestamp": 1640176109,
+            "title": "Prehistoric Britain: The Ceramic Basis",
+            "url": "https://books.google.com/books?id=i9-vDgAAQBAJ&pg=PA25&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgBEAE"
+        },
+        {
+            "rank": 8,
+            "snippet": "... no henge other than Durrington Walls would have been visible , and also three long barrows , one of which was Sheer Barrow . The Cuckoo Stone , not surprisingly , would have been in view , and the Coneybury Anomaly , but not Robin\u00a0...",
+            "timestamp": 1640176109,
+            "title": "Stonehenge Landscapes: Journeys Through Real-and-imagined Worlds",
+            "url": "https://books.google.com/books?id=nCTXQfJASx8C&pg=PA59&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgCEAE"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1640176109,
+            "title": "Europe in the Neolithic: The Creation of New Worlds",
+            "url": "https://books.google.com/books?id=I91PZ6JVnR4C&pg=PA234&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgFEAE"
+        },
+        {
+            "rank": 10,
+            "snippet": "At the start of the period, the Coneybury Anomaly' was dug in a recent clearing, while the early Neolithic activity at Durrington Walls may have taken place on the edge of woodland. At the Lesser Cursus there was open grazed grassland.",
+            "timestamp": 1640176109,
+            "title": "Understanding the Neolithic",
+            "url": "https://books.google.com/books?id=MEyFAgAAQBAJ&pg=PA166&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgGEAE"
+        },
+        {
+            "rank": 11,
+            "snippet": "The Coneybury Anomaly assemblage suggests an important social episode such as a feast, but why had so much food been removed? It may be that part of the answer lies in a degree of cultural ambivalence over the killing and butchering of\u00a0...",
+            "timestamp": 1640176109,
+            "title": "Neolithic Britain: The Transformation of Social Worlds",
+            "url": "https://books.google.com/books?id=JANfDwAAQBAJ&pg=PA192&dq=%22Coneybury+Anomaly%22+-wikipedia&hl=fr&sa=X&ved=2ahUKEwjVpunHwff0AhXUCTQIHaoUBMoQ6AF6BAgDEAE"
+        }
+    ],
+    "timestamp": 1640176109,
+    "url": "https://www.google.com/search?tbs=bks:1&q=%22Coneybury+Anomaly%22+-wikipedia"
+}

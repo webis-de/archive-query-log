@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "virtual studio code download for windows 10",
+    "offset": null,
+    "page": null,
+    "query": "virtual studio code download for windows 10",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Download</em> Visual <em>Studio Code</em>. Free and built on open source. Integrated Git, debugging and extensions. <em>Windows</em> <em>Windows</em> 7, 8, <em>10</em>, 11. User Installer.",
+            "timestamp": 1642714491,
+            "title": "Download Visual Studio Code - Mac, Linux, Windows",
+            "url": "https://code.visualstudio.com/Download"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Download</em> Visual <em>Studio</em> IDE or VS <em>Code</em> for free. Try out Visual <em>Studio</em> Professional or Enterprise editions on <em>Windows</em>, Mac.",
+            "timestamp": 1642714491,
+            "title": "Download Visual Studio Tools - Install Free for Windows ...",
+            "url": "https://visualstudio.microsoft.com/downloads/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Visual <em>Studio</em> <em>Code</em> is a <em>code</em> editor redefined and optimized for building and debugging modern web and cloud applications. Visual <em>Studio</em> <em>Code</em> is free and available on your favorite platform - Linux, macOS, and <em>Windows</em>.",
+            "timestamp": 1642714491,
+            "title": "Visual Studio Code - Code Editing. Redefined",
+            "url": "https://code.visualstudio.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Visual <em>Studio</em> IDE Visual <em>Studio</em> for Mac Visual <em>Studio</em> <em>Code</em> To continue downloading, click here Scaricare Strumenti di Visual <em>Studio</em> \u2013 installazione gratuita per <em>Windows</em>, Mac e Linux 2021-12-03T10:53:09-08:00",
+            "timestamp": 1642714491,
+            "title": "Download degli strumenti di Visual Studio - installazione ...",
+            "url": "https://visualstudio.microsoft.com/it/downloads/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Latest version. 1.63.2. Dec 20th, 2021. Older versions. Advertisement. Visual <em>Studio Code</em> is a reduced version of the official Microsoft development environment focused exclusively on the <em>code</em> editor. It's cross-platform supports syntaxes for a large number of programming languages.",
+            "timestamp": 1642714491,
+            "title": "Visual Studio Code 1.63.2 for Windows - Download",
+            "url": "https://visual-studio-code.en.uptodown.com/windows"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Download</em> previous versions of Visual <em>Studio</em> Community, Professional, and Enterprise softwares. ... Visual <em>Studio</em> Express 2015 <em>for Windows</em> <em>10</em>. Visual <em>Studio</em> Express 2015 for Web. ... (By using Visual <em>Studio</em> <em>Code</em> you agree to its license and privacy statement)",
+            "timestamp": 1642714491,
+            "title": "Visual Studio Older Downloads - 2019, 2017, 2015 ...",
+            "url": "https://visualstudio.microsoft.com/vs/older-downloads/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Visual <em>Studio</em> 2022 has built-in support for Git version control to clone, create, and open your own repositories. The Git tool window has everything you need for committing and pushing changes to <em>code</em>, managing branches, and resolving merge conflicts. If you have a GitHub account, you can manage those repos directly within Visual <em>Studio</em>.",
+            "timestamp": 1642714491,
+            "title": "Visual Studio 2022 IDE - Programming Tool for Software ...",
+            "url": "https://visualstudio.microsoft.com/vs/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Whether you are developing apps for SharePoint, the web, <em>Windows</em> <em>10</em>, <em>Windows</em> Phone, and beyond, Visual <em>Studio</em> is your ultimate choice and all-in-one solution.Microsoft Visual <em>Studio</em> 2019 is a very powerful and efficient IDE that ensures quality <em>code</em> throughout the entire application lifecycle, from design stage to deployment.",
+            "timestamp": 1642714491,
+            "title": "Microsoft Visual Studio Free Download for Windows 10, 8, 7",
+            "url": "https://www.moosoft.com/software/microsoft-visual-studio/"
+        }
+    ],
+    "timestamp": 1642714491,
+    "url": "https://www.ecosia.org/search?q=virtual+studio+code+download+for+windows+10"
+}

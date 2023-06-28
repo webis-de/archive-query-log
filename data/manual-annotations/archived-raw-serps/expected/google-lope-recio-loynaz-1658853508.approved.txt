@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Lope Recio Loynaz\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Lope Recio Loynaz\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Lope Recio Loynaz. General de Divisi\u00f3n que se uni\u00f3 a las fuerzas del Mayor General M\u00e1ximo G\u00f3mez B\u00e1ez y luch\u00f3 adem\u00e1s bajo las ordenes del Mayor General\u00a0...",
+            "timestamp": 1658853508,
+            "title": "Lope Recio Loynaz - EcuRed",
+            "url": "https://www.google.com/url?q=https://www.ecured.cu/Lope_Recio_Loynaz&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAUQAg&usg=AOvVaw3rL5u9SY7xesJNJJaaEmjy"
+        },
+        {
+            "rank": 3,
+            "snippet": "24 mar 2022 \u00b7 El 24 de marzo de 1899 ocupar\u00eda el cargo de Gobernador Civil de Santa Mar\u00eda del Puerto del Pr\u00edncipe el General de Divisi\u00f3n Lope Recio Loynaz\u00a0...",
+            "timestamp": 1658853508,
+            "title": "L\u00f3pe Recio Loynaz, ejemplo de constancia | OHCC",
+            "url": "https://www.google.com/url?q=http://www.ohcamaguey.cu/lope-recio-loynaz-ejemplo-de-constancia/&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAEQAg&usg=AOvVaw0-g5kSJ_xqOA5NEqfn0aTr"
+        },
+        {
+            "rank": 4,
+            "snippet": "Reciben Distinci\u00f3n por la Educaci\u00f3n Cubana, docentes destacadas de la ESBU Lope Recio Loynaz. Para ellas todo el homenaje y el reconocimiento de trabajadores,\u00a0...",
+            "timestamp": 1658853508,
+            "title": "ESBU Lope Recio Loynaz-Florida - Posts | Facebook",
+            "url": "https://www.google.com/url?q=https://www.facebook.com/ESBU-Lope-Recio-Loynaz-Florida-100152061436679/posts&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAMQAg&usg=AOvVaw0bUwRRBoHdNmcBC5DXfWlI"
+        },
+        {
+            "rank": 5,
+            "snippet": "ESBU Lope Recio Loynaz-Florida. 539 likes \u00b7 2 talking about this. Education website.",
+            "timestamp": 1658853508,
+            "title": "ESBU Lope Recio Loynaz-Florida - Home | Facebook",
+            "url": "https://www.google.com/url?q=https://m.facebook.com/pages/ESBU-Lope-Recio-Loynaz-Florida/100152061436679&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAIQAg&usg=AOvVaw1ve3A4bGTwyIVw1x3Z4GUK"
+        },
+        {
+            "rank": 6,
+            "snippet": "Informaci\u00f3n Libre sobre Lope Recio Loynaz, \u00bfQu\u00e9 d\u00eda naci\u00f3?, \u00bfCu\u00e1ndo cumple a\u00f1os?, \u00bfQu\u00e9 hizo?, \u00bfQu\u00e9 es?, \u00bfAd\u00f3nde queda?. COMPARTE INFORMACI\u00d3N.",
+            "timestamp": 1658853508,
+            "title": "Lope Recio Loynaz \u25b7 Informaci\u00f3n, Historia, Biograf\u00eda y m\u00e1s. - Wikidat",
+            "url": "https://www.google.com/url?q=https://es.wikidat.com/info/lope-recio-loynaz&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAQQAg&usg=AOvVaw2gzsA8VhQPqWljlvdkJHAB"
+        },
+        {
+            "rank": 7,
+            "snippet": "GENERAL DE DIVISION LOPE RECIO LOYNAZ ... Lope Recio Loynaz naci\u00f3 en esta ciudad, el d\u00eda 23 de Agosto de 1860, falleciendo el 24 de Julio de 1927,\u00a0...",
+            "timestamp": 1658853508,
+            "title": "General de Divisi\u00f3n Lope Recio Loynaz - Camaguey, Cuba",
+            "url": "https://www.google.com/url?q=https://www.camagueycuba.org/glorioso/Recio.html&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAYQAg&usg=AOvVaw267ibG60Z9NeaJADU0o5Sq"
+        },
+        {
+            "rank": 8,
+            "snippet": "Descargar esta imagen: . Ingl\u00e9s: Lope Recio Loynaz . El 31 de marzo de 2018. 64 EcuRed Lope Recio Loynaz - P00FFM de la biblioteca de Alamy de millones de\u00a0...\n\nDimensiones: 1908 x 2620 px | 16,2 x 22,2 cm | 6,4 x 8,7 inches | 300dpiTama\u00f1o: 14,3 MB (214,6 KB Descarga comprimida)",
+            "timestamp": 1658853508,
+            "title": ". Ingl\u00e9s: Lope Recio Loynaz . El 31 de marzo de 2018. 64 EcuRed ...",
+            "url": "https://www.google.com/url?q=https://www.alamy.es/ingles-lope-recio-loynaz-el-31-de-marzo-de-2018-64-ecured-lope-recio-loynaz-image206536616.html&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAAQAg&usg=AOvVaw1FmaWGII1V0faWdn5bCIJy"
+        },
+        {
+            "rank": 9,
+            "snippet": "El General Lope Recio y Loynaz (1859-1927) // General Lope Recio Loynaz (1859-1927). Naci\u00f3 en Puerto Pr\u00edncipe en 1859. Era hijo de Jos\u00e9 Agust\u00edn Recio y\u00a0...",
+            "timestamp": 1658853508,
+            "title": "Eduardo Zayas-Baz\u00e1n Loret de Mola",
+            "url": "https://www.google.com/url?q=http://www.eduardozayas-bazan.com/personal/articulos/articulo.asp%3FPrensaID%3D12&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAgQAg&usg=AOvVaw3nMIDMqQgRa6_qntPwuf8d"
+        },
+        {
+            "rank": 10,
+            "snippet": "... D\u00edaz-Canel Berm\u00fadez se inici\u00f3 este jueves por la Escuela Secundaria B\u00e1sica Lope Recio Loynaz del municipio de Florida...... https://t.co/3u6k7KaU2z\"\u00a0...",
+            "timestamp": 1658853508,
+            "title": "\u062a\u0648\u064a\u062a\u0631 \\ Radio Florida, Cuba. \u0639\u0644\u0649 \u062a\u0648\u064a\u062a\u0631: \"La visita gubernamental ...",
+            "url": "https://www.google.com/url?q=https://mobile.twitter.com/radioflorida/status/1053050880264732678%3Flang%3Dar-x-fm&sa=U&ved=2ahUKEwigg_vZmZf5AhUUKUQIHfWrB28QFnoECAcQAg&usg=AOvVaw0CMRUSHUrk3wWHU8U-JuDx"
+        }
+    ],
+    "timestamp": 1658853508,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Lope+Recio+Loynaz%22"
+}

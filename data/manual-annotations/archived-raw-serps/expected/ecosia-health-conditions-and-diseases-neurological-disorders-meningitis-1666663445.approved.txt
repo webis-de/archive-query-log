@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "Health Conditions and Diseases Neurological Disorders Meningitis",
+    "offset": null,
+    "page": null,
+    "query": "Health Conditions and Diseases Neurological Disorders Meningitis",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Meningitis is a disease caused by an inflammation of the meninges, the membranes that surround the brain and spinal cord. It's usually caused by a virus, although it can be caused by bacteria, a fungus, or tuberculosis. Treatment for meningitis depends on the specific cause of the disease. Vaccinations can prevent or minimize the incidence of ...",
+            "timestamp": 1666663445,
+            "title": "Meningitis | Johns Hopkins Medicine",
+            "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/meningitis"
+        },
+        {
+            "rank": 2,
+            "snippet": "Meningitis is an infection of the meninges, the membranes that surround the brain and spinal cord. Encephalitis is inflammation of the brain itself. Anyone can get encephalitis or meningitis. Causes of encephalitis and meningitis include viruses, bacteria, fungus, and parasites. Anyone experiencing symptoms of meningitis or encephalitis should ...",
+            "timestamp": 1666663445,
+            "title": "Meningitis and Encephalitis | National Institute of Neurological ...",
+            "url": "https://www.ninds.nih.gov/health-information/disorders/meningitis-and-encephalitis"
+        },
+        {
+            "rank": 3,
+            "snippet": "Meningitis is an inflammation of the fluid and membranes (meninges) surrounding your brain and spinal cord. The swelling from meningitis typically triggers signs and symptoms such as headache, fever and a stiff neck. Most cases of meningitis in the United States are caused by a viral infection, but bacterial, parasitic and fungal infections are ...",
+            "timestamp": 1666663445,
+            "title": "Meningitis - Symptoms and causes - Mayo Clinic",
+            "url": "https://www.mayoclinic.org/diseases-conditions/meningitis/symptoms-causes/syc-20350508"
+        },
+        {
+            "rank": 4,
+            "snippet": "In extreme cases, these can cause brain damage, stroke, or even death. Inflammation of the meninges, the membranes that surround the brain and spinal cord, is called meningitis; inflammation of the brain itself is called encephalitis. Myelitis refers to inflammation of the spinal cord. When both the brain and the spinal cord are involved, the ...",
+            "timestamp": 1666663445,
+            "title": "Meningitis and Encephalitis Fact Sheet | National Institute of ...",
+            "url": "https://www.ninds.nih.gov/meningitis-and-encephalitis-fact-sheet"
+        },
+        {
+            "rank": 5,
+            "snippet": "Health Conditions and Diseases Neurological Disorders Meningitis . 16. ... Health Conditions and Diseases Neurologic\u00adal Disorders Infections ... Mission is to eliminate epidemic meningitis as a public health problem in sub-Saharan Africa through the development, testing, introduction, and widespread use of conjugate meningococcal vaccines. ...",
+            "timestamp": 1666663445,
+            "title": "Curlie - Health: Conditions and Diseases: Neurologic\u00adal Disorders ...",
+            "url": "https://curlie.org/Health/Conditions_and_Diseases/Neurological_Disorders/Meningitis"
+        },
+        {
+            "rank": 6,
+            "snippet": "Lumbar Disk Disease (Herniated Disk) Meningitis. Multiple Sclerosis. Muscular Dystrophy. Neurocutaneous Syndromes. Parkinson's Disease. Stroke (Brain Attack) Cluster Headaches. Tension Headaches. Migraine Headaches. How a Migraine Happens. Diagnosis and Treatment for Migraines. Encephalitis. Septicemia. Types of Muscular Dystrophy and ...",
+            "timestamp": 1666663445,
+            "title": "Neurological Disorders | Johns Hopkins Medicine",
+            "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/neurological-disorders"
+        },
+        {
+            "rank": 7,
+            "snippet": "Neurological Conditions We Treat. The nationally ranked neurologists and neurosurgeons at Cedars-Sinai diagnose, treat and provide second opinions on more than 150 conditions affecting the brain, nervous system, and mental and physical functioning. As a patient, you\u2019ll have access to advanced medical, surgical and minimally invasive options ...",
+            "timestamp": 1666663445,
+            "title": "Neurological Disorders, Diseases &amp; Conditions Treated | Cedars-Sinai",
+            "url": "https://www.cedars-sinai.org/programs/neurology-neurosurgery/conditions.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Neurological health refers to the overall state ... Below are some common neurological disorders and diseases and how they are identified. ... Meningitis is an acute condition that can be life ...",
+            "timestamp": 1666663445,
+            "title": "What to Know About Neurological Disorders and Brain Health | SELF",
+            "url": "https://www.self.com/health-conditions/neurological-health"
+        },
+        {
+            "rank": 9,
+            "snippet": "The information provided herein should not be used during any medical emergency or for the diagnosis or treatment of any medical condition. A licensed medical professional should be consulted for diagnosis and treatment of any and all medical conditions.",
+            "timestamp": 1666663445,
+            "title": "Conditions with Similar Symptoms as: Meningitis | Complementary and ...",
+            "url": "https://www.stlukes-stl.com/health-content/medicine/33/000469.htm"
+        }
+    ],
+    "timestamp": 1666663445,
+    "url": "https://www.ecosia.org/search?q=Health+Conditions+and+Diseases+Neurological+Disorders+Meningitis"
+}

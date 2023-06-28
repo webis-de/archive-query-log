@@ -1,4 +1,5 @@
 from collections import defaultdict
+from datetime import datetime, timezone
 from gzip import GzipFile
 from io import TextIOWrapper, BytesIO
 from json import loads
@@ -19,8 +20,9 @@ from archive_query_log.config import SERVICES
 from archive_query_log.model import Service, ArchivedQueryUrl
 
 NUM_SERVICES = 11
-SERVICE_NAMES = None
+# SERVICE_NAMES = None
 SERVICE_NAMES = ["google", "yahoo", "bing", "duckduckgo", "ask", "ecosia"]
+# SERVICE_NAMES = ["google"]
 NUM_QUERIES_PER_SERVICE = 50
 
 DATA_PATH = Path(
@@ -38,6 +40,15 @@ TESTS_PATH = PROJECT_DIRECTORY_PATH / \
 PATTERN_SPECIAL_CHARS = compile(r"[^0-9a-z]+")
 
 
+def warc_url(url: str, timestamp: float) -> str:
+    wayback_timestamp = datetime \
+        .fromtimestamp(timestamp, timezone.utc) \
+        .strftime("%Y%m%d%H%M%S")
+    wayback_raw_url = \
+        f"https://web.archive.org/web/{wayback_timestamp}id_/{url}"
+    return wayback_raw_url
+
+
 def main():
     if SERVICE_NAMES is None:
         services: Iterable[Service] = SERVICES.values()
@@ -52,8 +63,8 @@ def main():
 
     query_urls = defaultdict(list)
     for path in tqdm(
-        list(SAMPLE_QUERIES_PATH.glob("part*.gz")),
-        desc="Load service queries"
+            list(SAMPLE_QUERIES_PATH.glob("part*.gz")),
+            desc="Load service queries"
     ):
         # noinspection PyTypeChecker
         with GzipFile(path, "rb") as gf, TextIOWrapper(gf) as f:
@@ -61,6 +72,11 @@ def main():
                 if "\"serp_query_text_url\": \"" not in line:
                     continue
                 if "\"serp_warc_relative_path\": \"" not in line:
+                    continue
+                if not any(
+                        f"\"search_provider_name\": \"{service_name}" in line
+                        for service_name in service_names
+                ):
                     continue
                 query_url = loads(line)
                 if query_url["search_provider_name"] not in service_names:
@@ -107,7 +123,10 @@ def main():
                 url_headers = {
                     "Archived-URL": schema.dumps(archived_query_url),
                 }
-                wayback_raw_url = query_url["serp_wayback_raw_url"]
+                wayback_raw_url = warc_url(
+                    query_url["serp_url"],
+                    int(query_url["serp_timestamp"]),
+                )
                 response = get(
                     wayback_raw_url,
                 )
@@ -171,7 +190,10 @@ def main():
             }
         with test_path.open("at") as o:
             for query_url in query_urls[service_name]:
-                wayback_raw_url = query_url["serp_wayback_raw_url"]
+                wayback_raw_url = warc_url(
+                    query_url["serp_url"],
+                    int(query_url["serp_timestamp"]),
+                )
 
                 query = query_url["serp_query_text_url"]
                 query = slugify(query)

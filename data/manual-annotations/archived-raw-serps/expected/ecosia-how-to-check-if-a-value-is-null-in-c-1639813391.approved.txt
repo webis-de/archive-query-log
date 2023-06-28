@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "how to check if a value is null in C++",
+    "offset": null,
+    "page": null,
+    "query": "how to check if a value is null in C++",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The problem is that response can potentially contain white space. So comparing it exactly for <em>null</em> might be harder than you think. You need to <em>check</em> if response contains <em>null</em> but that anything else is simple white space.. But looking at nlohmann library the json::parse() function returns an object of type json.. json <em>value</em> = json::parse(response);",
+            "timestamp": 1639813391,
+            "title": "Check if string is \"null\" in C++ - Stack Overflow",
+            "url": "https://stackoverflow.com/questions/62604495/check-if-string-is-null-in-c"
+        },
+        {
+            "rank": 2,
+            "snippet": "This is a good point, I neglected to mention it and I'm improving my answer by suggesting it. ANSI C can have <em>NULL</em> defined as ((void *)0), <em>C++</em> defines <em>NULL</em> as 0. I haven't trawled the standard for this directly but my understanding is that <em>in C++</em> <em>NULL</em> can be 0 or 0L. \u2013",
+            "timestamp": 1639813391,
+            "title": "Checking for NULL pointer in C/C++ - Stack Overflow",
+            "url": "https://stackoverflow.com/questions/3825668/checking-for-null-pointer-in-c-c"
+        },
+        {
+            "rank": 3,
+            "snippet": "C <em>C++</em> Server Side Programming Programming. In C or <em>C++</em>, there is no special method for comparing <em>NULL</em> <em>values</em>. We can use if statements to <em>check</em> whether a variable <em>is null</em> or not. Here we will see one program. We will try to open a file in read mode, that is not present in the system. So the function will return <em>null</em> <em>value</em>.",
+            "timestamp": 1639813391,
+            "title": "How to check if a variable is NULL in C/C++?",
+            "url": "https://www.tutorialspoint.com/how-to-check-if-a-variable-is-null-in-c-cplusplus"
+        },
+        {
+            "rank": 4,
+            "snippet": "So there is no need to test for <em>NULL</em>. This is one of the reasons that references were introduced into <em>C++</em>. Note you can still write a function that takes a pointer. In this situation you still need to test for <em>NULL</em>. If the <em>value</em> <em>is NULL</em> then you return early just like in C. Note: You should not be using exceptions when a pointer <em>is NULL</em>.",
+            "timestamp": 1639813391,
+            "title": "Checking for a null object in C++ - ExceptionsHub",
+            "url": "https://exceptionshub.com/checking-for-a-null-object-in-c.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "If your array is not initialized then it contains randoms <em>values</em> and cannot be checked ! To initialize your array with 0 <em>values</em>: int array[5] = {0}; Then you can <em>check</em> if the <em>value</em> is 0: array[4] == 0; When you compare to <em>NULL</em>, it compares to 0 as the <em>NULL</em> is defined as integer <em>value</em> 0 or 0L.",
+            "timestamp": 1639813391,
+            "title": "c++ - Check array position for null/empty - Stack Overflow",
+            "url": "https://stackoverflow.com/questions/19132411/check-array-position-for-null-empty"
+        },
+        {
+            "rank": 6,
+            "snippet": "Oh okay. Unfortunately an int type cannot be <em>null</em>. It can store the <em>value</em> of zero, but zero is a <em>value</em> just like any other number. Sometimes in that situation people will give the int an initial <em>value</em> which is not valid for the program, e.g. -1 for your height and then complain if the <em>value</em> is still -1 later on.",
+            "timestamp": 1639813391,
+            "title": "Check if a variable is null - C++ Programming",
+            "url": "https://cboard.cprogramming.com/c-programming/162676-check-if-variable-null.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "In the above program, if we replace <em>NULL</em> with nullptr, we get the output as \u201cfun (char *)\u201d. nullptr is a keyword that can be used at all places where <em>NULL</em> is expected. Like <em>NULL</em>, nullptr is implicitly convertible and comparable to any pointer type. Unlike <em>NULL</em>, it is not implicitly convertible or comparable to integral types.",
+            "timestamp": 1639813391,
+            "title": "Understanding nullptr in C++ - GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/understanding-nullptr-c/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Set a pointer before checking for <em>NULL</em>. One common mistake is to assume that a newly created pointer has a <em>NULL</em> <em>value</em>. This is not true. An unassigned pointer still points to a memory address, just not one that you have specified.",
+            "timestamp": 1639813391,
+            "title": "How to Check Null in C: 7 Steps (with Pictures) - wikiHow",
+            "url": "https://www.wikihow.com/Check-Null-in-C"
+        }
+    ],
+    "timestamp": 1639813391,
+    "url": "https://www.ecosia.org/search?tt=e8eb07a6&q=how+to+check+if+a+value+is+null+in+C%2B%2B&addon=brave"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Kurabayashi\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Kurabayashi\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Professor, Mechanical Engineering Professor, Electrical Engineering and Computer Science. Individual Home Page. Address. 2658 GGB 2350 Hayward, Ann Arbor,\u00a0...",
+            "timestamp": 1643815267,
+            "title": "Katsuo Kurabayashi - Mechanical Engineering - University of Michigan",
+            "url": "https://www.google.com/url?q=https://me.engin.umich.edu/people/faculty/katsuo-kurabayashi/&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAEQAg&usg=AOvVaw0pdp1BuXV--3mu7GAMYfpL"
+        },
+        {
+            "rank": 3,
+            "snippet": "6 days ago \u00b7 His current research focuses on optofluidics, nanoplasmonic and biomolecular biosensing, and microsystems for immunology, clinical diagnosis,\u00a0...",
+            "timestamp": 1643815267,
+            "title": "Katsuo Kurabayashi, PhD \u2014 The Max Harry Weil Institute for Critical ...",
+            "url": "https://www.google.com/url?q=https://weilinstitute.med.umich.edu/members/katsuo-kurabayashi-phd&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAkQAg&usg=AOvVaw3lQt8bMlVl1GuwrOLmS25w"
+        },
+        {
+            "rank": 4,
+            "snippet": "Professor of Mechanical Engineering, University of Michigan. Verified email at umich.edu. BiosensorBioMEMSMicrosystems TechnologyMicroscale Mass &amp; Energy\u00a0...",
+            "timestamp": 1643815267,
+            "title": "\u202aKatsuo Kurabayashi\u202c - \u202aGoogle Scholar\u202c",
+            "url": "https://www.google.com/url?q=https://scholar.google.com/citations%3Fuser%3DisFesUQAAAAJ%26hl%3Den&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAcQAg&usg=AOvVaw1_2xbT1rJgm5wzx5bkcnZX"
+        },
+        {
+            "rank": 5,
+            "snippet": "Katsuo Kurabayashi, Ph.D., is Professor of Mechanical Engineering and Electrical Engineering and Computer Science at the University of Michigan, Ann Arbor. Prof\u00a0...",
+            "timestamp": 1643815267,
+            "title": "People - MSTS Lab",
+            "url": "https://www.google.com/url?q=http://katsuokurabayashi.com/index/%3Fpage_id%3D10&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAoQAg&usg=AOvVaw24StaseBB3cp-ELMHqEWqZ"
+        },
+        {
+            "rank": 6,
+            "snippet": "The Laboratory for Microsystems Technology and Science in the University of Michigan Department of Mechanical Engineering develops micro/nano engineering\u00a0...",
+            "timestamp": 1643815267,
+            "title": "MSTS Lab",
+            "url": "https://www.google.com/url?q=http://katsuokurabayashi.com/&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAgQAg&usg=AOvVaw0SihCPqCvzF8-tYgWWpxwE"
+        },
+        {
+            "rank": 7,
+            "snippet": "Katsuo Kurabayashi. Professor at University of Michigan, Fellow of ASME, RSC. University of MichiganStanford University. Ann Arbor,\u00a0...",
+            "timestamp": 1643815267,
+            "title": "Katsuo Kurabayashi - Member of College of Engineering Executive ...",
+            "url": "https://www.google.com/url?q=https://www.linkedin.com/in/katsuo-kurabayashi-3718b75&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAAQAg&usg=AOvVaw3CTR8b3rGh4YaPBKHU68G5"
+        },
+        {
+            "rank": 8,
+            "snippet": "Katsuo Kurabayashi is a professor in the Mechanical Engineering department at University of Michigan - see what their students are saying about them or\u00a0...",
+            "timestamp": 1643815267,
+            "title": "Katsuo Kurabayashi at University of Michigan - RateMyProfessors.com",
+            "url": "https://www.google.com/url?q=https://www.ratemyprofessors.com/ShowRatings.jsp%3Ftid%3D940887&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAMQAg&usg=AOvVaw1-IumQw0eqxP_tIxebHX2J"
+        },
+        {
+            "rank": 9,
+            "snippet": "Katsuo KURABAYASHI, Professor (Full) | Cited by 4575 | of University of Michigan, Ann Arbor (U-M) | Read 202 publications | Contact Katsuo KURABAYASHI.",
+            "timestamp": 1643815267,
+            "title": "Katsuo Kurabayashi University of Michigan | UM - ResearchGate",
+            "url": "https://www.google.com/url?q=https://www.researchgate.net/profile/Katsuo-Kurabayashi&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAQQAg&usg=AOvVaw2VSnL7MNJCFk0_FrhAVZ8k"
+        },
+        {
+            "rank": 10,
+            "snippet": "Affiliations: Department of Mechanical Engineering, 2350 Hayward St., University of Michigan, Ann Arbor, MI, 48109, U.S.A.. Author Bio: Katsuo Kurabayashi\u00a0...",
+            "timestamp": 1643815267,
+            "title": "Katsuo Kurabayashi | IEEE Xplore Author Details",
+            "url": "https://www.google.com/url?q=https://ieeexplore.ieee.org/author/37266746800&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAIQAg&usg=AOvVaw3stLxj93FnM1BDbR-3OquV"
+        },
+        {
+            "rank": 11,
+            "snippet": "Katsuo Kurabayashi is Professor of Mechanical Engineering and Electrical Engineering and Computer Science at the University of Michigan, Ann Arbor.",
+            "timestamp": 1643815267,
+            "title": "Biography-Katsuo Kurabayashi - Wireless Integrated MicroSensing ...",
+            "url": "https://www.google.com/url?q=https://wims2.clubexpress.com/content.aspx%3Fpage_id%3D22%26club_id%3D887280%26module_id%3D372306&sa=U&ved=2ahUKEwj338m9tuH1AhXYIEQIHRqtAHUQFnoECAUQAg&usg=AOvVaw0FJ-GVyxAw1igJMqSAsDug"
+        }
+    ],
+    "timestamp": 1643815267,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Kurabayashi%22"
+}

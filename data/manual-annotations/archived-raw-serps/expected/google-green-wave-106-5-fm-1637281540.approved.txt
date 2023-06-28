@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Green Wave 106.5 FM\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Green Wave 106.5 FM\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1637281540,
+            "title": "Greener Marketing: A Global Perspective on Greening ...",
+            "url": "https://books.google.com/books?id=7G1QDwAAQBAJ&pg=PA347&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgBEAE"
+        },
+        {
+            "rank": 3,
+            "snippet": "The leading ones were all commercial, such as the A-Time stations Radio Green Wave 106.5 FM, Hot Wave 91.5 FM, Radio Vote 93.5 FM and Radio No Problem 88 FM.73 A-Time was a subsidiary of Grammy, one of the largest music recording houses\u00a0...",
+            "timestamp": 1637281540,
+            "title": "Virtual Thailand: The Media and Cultural Politics in ...",
+            "url": "https://books.google.com/books?id=Qc9GV6gN1OAC&pg=PA105&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgJEAE"
+        },
+        {
+            "rank": 4,
+            "snippet": "Media: \"The feedback [from the single] was overwhelmingly positive; Peter has become a huge hit in no time,\" says Wichit Kawangsabye, the executive producer of Hot Wave 91.5 FM and Green Wave 106.5 FM, the major radio stations of A-Time\u00a0...",
+            "timestamp": 1637281540,
+            "title": "Billboard",
+            "url": "https://books.google.com/books?id=QQ0EAAAAMBAJ&pg=PA54-IA14&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgIEAE"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1637281540,
+            "title": "\u0e1b\u0e31\u0e08\u0e08\u0e31\u0e22\u0e17\u0e35\u0e48\u0e21\u0e35\u0e1c\u0e25\u0e15\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e1c\u0e31\u0e07\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23\u0e27\u0e34\u0e17\u0e22\u0e38\u0e02\u0e2d\u0e07\u0e1c\u0e31\u0e07\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23\u0e04\u0e25\u0e37\u0e48\u0e19 Green ...",
+            "url": "https://books.google.com/books?id=vh64oAEACAAJ&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgHEAE"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1637281540,
+            "title": "\u0e31\u0e1b\u0e08\u0e31\u0e08\u0e22\u0e35\u0e48\u0e17\u0e35\u0e21\u0e1c\u0e25\u0e48\u0e15\u0e2d\u0e01\u0e32\u0e23\u0e31\u0e08\u0e14\u0e31\u0e1c\u0e07\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23\u0e34\u0e27\u0e17\u0e38\u0e22\u0e02\u0e2d\u0e07\u0e31\u0e1c\u0e07\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23\u0e04\u0e37\u0e48\u0e25\u0e19 Green ...",
+            "url": "https://books.google.com/books?id=y6hMNQEACAAJ&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgGEAE"
+        },
+        {
+            "rank": 7,
+            "snippet": "\u0e52\u0e55\u0e52\u0e59-\u0e52\u0e55\u0e54\u0e50 \u0e04\u0e25\u0e37\u0e48\u0e19 ( \u0e2b\u0e19\u0e48\u0e27\u0e22 : \u0e53\u0e50 \u0e27\u0e34\u0e19\u0e32\u0e17\u0e35 / \u0e2a \u0e1b\u0e2d \u0e15 ) \u0e1c\u0e39\u0e49 \u0e1c\u0e25\u0e34\u0e15 \u0e2a\u0e16\u0e32\u0e19\u0e35 \u0e2d\u0e31\u0e15\u0e23\u0e32 \u0e04\u0e48\u0e32 \u0e42\u0e06\u0e29\u0e13\u0e32 \u0e52\u0e55\u0e53\u0e59 \u0e52\u0e55\u0e54\u0e50 \u0e51,\u0e58\u0e50\u0e50 \u0e52,000 \u0e51,\u0e59oo \u0e52,900 88.0 FM \u0e04\u0e25\u0e35 \u0e19 Radio No Problem 9 1.5 FM \u0e04\u0e25\u0e37\u0e48\u0e19 Hot Wave 93.5 FM \u0e04\u0e25\u0e37\u0e48\u0e19 Radio Vote Satellite 104.5 FM \u0e04\u0e25\u0e37\u0e48\u0e19 Green Wave 106.5 FM\u00a0...",
+            "timestamp": 1637281540,
+            "title": "\u0e23\u0e30\u0e1a\u0e1a\u0e27\u0e34\u0e17\u0e22\u0e38\u0e41\u0e25\u0e30\u0e42\u0e17\u0e23\u0e17\u0e31\u0e28\u0e19\u0e4c\u0e44\u0e17\u0e22: ...",
+            "url": "https://books.google.com/books?id=dy8WAQAAMAAJ&q=%22Green+Wave+106.5+FM%22&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgDEAE"
+        },
+        {
+            "rank": 8,
+            "snippet": "... \u0e19\u0e32\u0e16 \u0e13 \u0e1e\u0e31\u0e17\u0e25\u0e38\u0e07 ( \u0e40\u0e08\u0e49\u0e32\u0e02\u0e2d\u0e07 \u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d \u201c \u0e40\u0e02\u0e47\u0e21\u0e17\u0e34\u0e28 \u0e0a\u0e35\u0e27\u0e34\u0e15 \u201d ) \u0e2d . \u0e22\u0e34\u0e48\u0e07 \u0e28\u0e31\u0e01\u0e14\u0e34\u0e4c \u0e08\u0e07 \u0e40\u0e25\u0e34\u0e28 \u0e40\u0e08\u0e29\u0e0e\u0e32 \u0e27\u0e07\u0e28\u0e4c \u0e04\u0e38\u0e13 \u0e14\u0e31\u0e07 \u0e15\u0e24\u0e13 ( \u0e40\u0e08\u0e49\u0e32\u0e02\u0e2d\u0e07 \u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d \u0e40\u0e2a\u0e35\u0e22\u0e14\u0e32\u0e22 \u0e04\u0e19 \u0e15\u0e32\u0e22 \u0e44\u0e21\u0e48 \u0e44\u0e14\u0e49 \u0e2d\u0e48\u0e32\u0e19 ) \u0e04\u0e38\u0e13 \u0e15\u0e31\u0e19 \u0e42\u0e2d \u0e2d\u0e34 \u0e0a\u0e34 \u0e14\u0e23 . \u0e27\u0e23 \u0e11\u0e32 \u0e27\u0e31\u0e12\u0e19\u0e30 \u0e0a \u0e22\u0e31\u0e07 \u0e01\u0e39 \u0e23 Green wave 106.5 FM TY 1811 LIBRARIES.",
+            "timestamp": 1637281540,
+            "title": "\u0e04\u0e37\u0e19\u0e1e\u0e34\u0e40\u0e28\u0e29 \u0e04\u0e19\u0e1e\u0e34\u0e40\u0e28\u0e29 \u0e01\u0e31\u0e1a 6 \u0e0a\u0e35\u0e27\u0e34\u0e15 \u0e17\u0e35\u0e48\u0e2a\u0e30\u0e17\u0e49\u0e2d\u0e19\u0e2b\u0e25\u0e32\u0e01\u0e21\u0e38\u0e21\u0e43\u0e2b\u0e49\u0e04\u0e38\u0e13\u0e44\u0e14\u0e31\u0e40\u0e2b\u0e47\u0e19",
+            "url": "https://books.google.com/books?id=heduAAAAMAAJ&q=%22Green+Wave+106.5+FM%22&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgAEAE"
+        },
+        {
+            "rank": 9,
+            "snippet": "This is the ultimate collection of traditional hymns and modern worship songs for all churches, an invaluable resource for all musicians and worship leaders. * 1,250 hymns and songs in all, from long-standing classics to new favourites * ...",
+            "timestamp": 1637281540,
+            "title": "Complete Mission Praise: Music Edition",
+            "url": "https://books.google.com/books?id=aMBPPAAACAAJ&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgCEAE"
+        },
+        {
+            "rank": 10,
+            "snippet": "Ballet aficionados and aspiring performers of all ages will want to join Ringer behind the scenes as she shares her journey from student to star and candidly discusses both her struggle with an eating disorder and the media storm that ...",
+            "timestamp": 1637281540,
+            "title": "Dancing Through It: My Journey in the Ballet",
+            "url": "https://books.google.com/books?id=jUJKAAAAQBAJ&printsec=frontcover&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgEEAE"
+        },
+        {
+            "rank": 11,
+            "snippet": "This book will teach you how to formulate the correct answer the complex behavioral interview questions such as: \"Have you worked with someone you didn't like? If so, how did you handle it?",
+            "timestamp": 1637281540,
+            "title": "101 Questions and Answers for the Cabin Crew Interview",
+            "url": "https://books.google.com/books?id=TUSttAEACAAJ&dq=%22Green+Wave+106.5+FM%22&hl=en&sa=X&ved=2ahUKEwiHx7G5oqP0AhXjFjQIHbomB2YQ6AF6BAgFEAE"
+        }
+    ],
+    "timestamp": 1637281540,
+    "url": "http://www.google.com/search?tbo=p&tbm=bks&q=%22Green+Wave+106.5+FM%22"
+}
