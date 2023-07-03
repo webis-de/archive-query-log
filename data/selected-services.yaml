@@ -4211,7 +4211,10 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: div.header__content.header__search input#search_form_input
   results_parsers: []
   focused_url_prefixes:
   - /
