@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Names of Reggae Artists",
+    "offset": null,
+    "page": null,
+    "query": "Names of Reggae Artists",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Reggae</em> singles on vinyl for sale ... 351 Bunny Wailer / <em>Reggae</em> Burden / Solomonic ...",
+            "timestamp": 1173527903,
+            "title": "<em>Reggae</em> List Alphabetically by Artist",
+            "url": "http://www.the105store.homestead.com/AtoC.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Derrick Lara - Biography at <em>Reggae</em> Source ... Shedrock - Shedrock is a real roots, rock, <em>reggae artists</em>.  No jumping on a rhythm.",
+            "timestamp": 1173527903,
+            "title": "<em>Reggae Artists</em> - Jamaica",
+            "url": "http://www.ireggae.com/reggae1.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "[This is the answer to the question.]",
+            "timestamp": 1173527903,
+            "title": "<em>REGGAE artists names</em> starting with J",
+            "url": "http://www.kingsmancamp.com/reggae_j.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "One of the original (and also one of the largest) <em>reggae</em> sites on the web, with a wealth of information on <em>artists</em>, songs, tour schedules and ...",
+            "timestamp": 1173527903,
+            "title": "Jammin' <em>Reggae</em> Archives",
+            "url": "http://niceup.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Red Rat, Mr. Vegas, Daddy U-Roy, Frankie Paul, Chamillionaire and also other upcoming <em>reggae artists</em>. ... Dub Station <em>Reggae Artists</em> web ...",
+            "timestamp": 1173527903,
+            "title": "U.S. Bands",
+            "url": "http://www.ireggae.com/usbands.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "Releases from Half Pint, The Abyssinians, and Lee Perry. ... Blues | Classical | Dance | Folk | Jazz | New Age | <em>Reggae</em> ...",
+            "timestamp": 1173527903,
+            "title": "<em>Reggae Artists</em>",
+            "url": "http://www.artistsonly.com/reggae.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "RIP), noted <em>reggae</em> DJ, writer and founder of <em>Reggae</em> Ambassadors Worldwide (www.reggaeambassadors ... Letman Brown Hoony [8750 <em>Reggae</em> Band] ...",
+            "timestamp": 1173527903,
+            "title": "This list was originally compiled by Papa Pilgrim (RIP), noted",
+            "url": "http://niceup.com/stage_names"
+        },
+        {
+            "rank": 8,
+            "snippet": "... s Email List To Receive <em>Reggae</em> News, Free Prizes &amp; Discounts, &amp; Site Updates! ... This includes materials from <em>Artists</em>, Groups, Bands, ...",
+            "timestamp": 1173527903,
+            "title": "JamworldReggae.com - The All-Inclusive Caribbean/<em>Reggae</em> Resource ...",
+            "url": "http://www.jamworldreggae.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Live365 or listen to their <em>reggae</em> channels.   Some big <em>names</em> among international <em>reggae artists</em>: (Far from complete right now, sorry to whom I ...",
+            "timestamp": 1173527903,
+            "title": "INTERNATIONAL <em>REGGAE ARTISTS</em>",
+            "url": "http://www.irielion.com/irie/intart.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Densestuff.co.uk - <em>Reggae Artists - Reggae</em> Music and <em>Reggae Artists</em> List and Dancehall <em>Reggae</em> and <em>Reggae</em> Various <em>Artists</em> and <em>Names Of Reggae Artists</em>...",
+            "timestamp": 1173527903,
+            "title": "<em>Reggae Artists</em> - Densestuff.co.uk",
+            "url": "http://www.densestuff.co.uk/skiing/reggae_artists.html"
+        }
+    ],
+    "timestamp": 1173527903,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Names+of+Reggae+Artists"
+}

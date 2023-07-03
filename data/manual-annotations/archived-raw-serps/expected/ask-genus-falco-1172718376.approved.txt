@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Genus Falco",
+    "offset": null,
+    "page": null,
+    "query": "Genus Falco",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "... <em>genus Falco</em> explanation. Definition of <em>genus Falco</em> is provided by 1913 Webster's Dictionary, WordNet Lexical Database, Dictionary of ...",
+            "timestamp": 1172718376,
+            "title": "<em>genus Falco</em> - Definition of <em>genus Falco</em> by Webster's Online ...",
+            "url": "http://www.webster-dictionary.org/definition/genus%20Falco"
+        },
+        {
+            "rank": 2,
+            "snippet": "... <em>genus falco</em> - AudioEnglish.net dictionary ... \u2022 <em>GENUS FALCO</em> (noun)  The noun <em>GENUS FALCO</em> has 1 sense: ...",
+            "timestamp": 1172718376,
+            "title": "<em>GENUS FALCO</em> :: AudioEnglish.net dictionary",
+            "url": "http://www.audioenglish.net/dictionary/genus_falco.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "NatureServe Explorer Species Index Page 1 of <em>Genus Falco</em>.",
+            "timestamp": 1172718376,
+            "title": "NatureServe Explorer Species Index: <em>Genus Falco</em>",
+            "url": "http://www.natureserve.org/explorer/speciesIndex/Genus_Falco_100610_1.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "Rassegna dei Falconi del mondo - Uccelli rapaci diurni: <em>Genus FALCO</em>...",
+            "timestamp": 1172718376,
+            "title": "Birds: <em>Genus FALCO</em> - Index - by Alberto Masi\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://www.scricciolo.com/falco/genus_falco.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": "A systematic list of the species of the <em>genus Falco</em> (falcons) with links to the higher and lower classifications of living things.",
+            "timestamp": 1172718376,
+            "title": "<em>Genus Falco</em> (Falcons)",
+            "url": "http://romdap.com/rfalco_e.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "... <em>genus_Falco</em> - Spanish Dictionary Translation ...   Forum discussions with the word(s) '<em>genus_Falco</em>' in the title:  ...",
+            "timestamp": 1172718376,
+            "title": "<em>genus_Falco</em> - English-Spanish Dictionary - WordReference.com",
+            "url": "http://www.wordreference.com/es/translation.asp?tranword=genus%5FFalco"
+        },
+        {
+            "rank": 7,
+            "snippet": "We found 4 dictionaries with English definitions that include the word <em>genus falco</em>:  Tip: Click on the first link on a line below to go",
+            "timestamp": 1172718376,
+            "title": "<em>genus falco</em> - OneLook Dictionary Search",
+            "url": "http://onelook.com/?w=genus+falco&ls=a"
+        },
+        {
+            "rank": 8,
+            "snippet": "... <em>genus Falco</em> definition. Explain <em>genus Falco</em>. What is <em>genus Falco? genus Falco</em> meaning. <em>genus Falco</em> sense. <em>genus Falco</em> FAQ. <em>genus Falco</em> synonyms.",
+            "timestamp": 1172718376,
+            "title": "<em>genus Falco</em>",
+            "url": "http://www.wordthrill.com/define/genus+Falco/"
+        },
+        {
+            "rank": 9,
+            "snippet": "WordNet-Online dictionary. Definition, thesaurus and related words for '<em>genus falco</em>'. Synonyms, antonyms, hypernyms, hyponyms, meronyms, usage ...",
+            "timestamp": 1172718376,
+            "title": "<em>genus falco</em> - definition, thesaurus and related words from ...",
+            "url": "http://www.wordnet-online.com/genus_falco.shtml"
+        },
+        {
+            "rank": 10,
+            "snippet": "... <em>genus Falco</em> Definition from dictionary ... ... <em>genus</em> Fabiana  <em>genus</em> Fagopyrum  <em>genus</em> Fagus  <em>genus</em> Falcatifolium  <em>genus Falco  genus</em> ...",
+            "timestamp": 1172718376,
+            "title": "Definition of <em>genus Falco</em> - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/genus+Falco"
+        }
+    ],
+    "timestamp": 1172718376,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Genus+Falco"
+}

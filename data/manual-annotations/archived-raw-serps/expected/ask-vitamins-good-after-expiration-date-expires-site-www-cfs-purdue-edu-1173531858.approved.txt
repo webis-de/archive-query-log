@@ -1,0 +1,38 @@
+{
+    "interpreted_query": "vitamins good after expiration date expires site:www.cfs.purdue.edu",
+    "offset": null,
+    "page": null,
+    "query": "vitamins good after expiration date expires site:www.cfs.purdue.edu",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "... formulas, baby food, or <em>vitamins after</em> the <em>expiration date</em> - they may lose their effectiveness, and yeast, baking ...",
+            "timestamp": 1173531858,
+            "title": "Safe Food for the Hungry Newsletter - Winter 2000",
+            "url": "http://www.cfs.purdue.edu/safefood/newsletter/Winter2000issue.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Do not use or give out infant formulas, <em>vitamins</em>, or drugs <em>after</em> the <em>expiration date</em>. ... It means that <em>after</em> the quality <em>date</em> the food will ...",
+            "timestamp": 1173531858,
+            "title": "Safe Food for the Hungry Web Site",
+            "url": "http://www.cfs.purdue.edu/safefood/foodsafety/packagedates.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Do not use or give out infant formulas, <em>vitamins</em>, or drugs <em>after</em> the <em>expiration date</em>. ... It means that <em>after</em> the quality <em>date</em> the food will ...",
+            "timestamp": 1173531858,
+            "title": "Safe Food for the Hungry '97 Site Activity Guide-Reference-Food ...",
+            "url": "http://www.cfs.purdue.edu/safefood/1997/refsafe.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "... baby food, or  <em>vitamins after</em> the <em>expiration date</em>\u2013they may  lose their effectiveness, and ... spices.  Usually this food is of <em>good</em> ...",
+            "timestamp": 1173531858,
+            "title": "Winter 2000 issue.p65\n(PDF File)",
+            "url": "http://www.cfs.purdue.edu/safefood/newsletter/Winter2000issue.pdf"
+        }
+    ],
+    "timestamp": 1173531858,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=vitamins+good+after+expiration+date+expires+site:www.cfs.purdue.edu"
+}

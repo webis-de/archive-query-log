@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Old Fashioned Labels",
+    "offset": null,
+    "page": null,
+    "query": "Old Fashioned Labels",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Old-Fashioned</em> Luggage <em>Labels</em>  ... Color Fruit Crate <em>Labels</em> CD-ROM and Book  by Dover  92 brilliantly colored, royalty-free images that once ...",
+            "timestamp": 1172720557,
+            "title": "<em>Old-Fashioned</em> Luggage <em>Labels</em>",
+            "url": "http://store.yahoo.com/doverpublications/0486421945.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers)<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers) &lt;div&gt;Evocative of luxury ocean liners and steamer trunks packed ...",
+            "timestamp": 1172720557,
+            "title": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers):<em>Old-Fashioned</em> Luggage <em>Labels</em> ...",
+            "url": "http://www.softforall.com/store/P-0486421945.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Queer Pop Culture / Book / <em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers) ... <em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers)  by: Carol Belanger Grafton ...",
+            "timestamp": 1172720557,
+            "title": "Queer <em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers) Comments",
+            "url": "http://queerpopculture.com/entertainment/asinsearch_0486421945/"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers) Carol Belanger Grafton ... <em>Old</em>-Time Travel Posters and Luggage <em>Labels</em> CD-ROM and Book (Dover ...",
+            "timestamp": 1172720557,
+            "title": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers)",
+            "url": "http://content-management-directory.com/content-management-books/isbn0486421945.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Product Reviews:  <em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers) ...  Comments: I have purchased2books of these luggage <em>labels</em>,1to decorate an <em>old</em> ...",
+            "timestamp": 1172720557,
+            "title": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers) Product Reviews and Price ...",
+            "url": "http://www.interactivereviews.com/large/0486421945"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers) by: Carol Belanger Grafton published: 24 July, 2002...",
+            "timestamp": 1172720557,
+            "title": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers)",
+            "url": "http://thexden.org/books/isbn0486421945.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "This page lets you compare prices for <em>Old-Fashioned</em> Gift <em>Labels</em>: 33 Pressure-Sensitive Designs by Kate Maggie from the leading UK book stores ...",
+            "timestamp": 1172720557,
+            "title": "BookkooB : <em>Old-Fashioned</em> Gift <em>Labels</em> - Kate Maggie : Compare Book ...",
+            "url": "http://www.bookkoob.co.uk/book/0486277623.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers) by: published: 2002-07-24 ... <em>Old</em>-Time Fruit Crate <em>Labels</em> in Full Color (Dover Pictorial Archive ...",
+            "timestamp": 1172720557,
+            "title": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers)",
+            "url": "http://www.24hourtalk.com/books/isbn0486421945.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Old-Fashioned</em> Luggage <em>Labels</em> by Grafton (Editor) ... Top : Art : <em>Old-Fashioned</em> Luggage <em>Labels</em> ...",
+            "timestamp": 1172720557,
+            "title": "<em>Old-Fashioned</em> Luggage <em>Labels</em>",
+            "url": "http://www.railroadbookstore.com/rrbooks/Detailed/709.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers)",
+            "timestamp": 1172720557,
+            "title": "used <em>Old-Fashioned</em> Luggage <em>Labels</em> (Stickers)",
+            "url": "http://www.softforall.com/store/UsedNew-0486421945-All-1.html"
+        }
+    ],
+    "timestamp": 1172720557,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Old+Fashioned+Labels"
+}

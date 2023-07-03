@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "Interior Design Classes Online",
+    "offset": null,
+    "page": null,
+    "query": "Interior Design Classes Online",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "How Do Online Classes Work?\n\n\nIf you're thinking of signing up for an online class or even pursuing a degree online, we'll give you an overview of what you can expect.",
+            "timestamp": 1651218822,
+            "title": "How Do Online Classes Work?",
+            "url": "https://www.reference.com/world-view/online-classroom-7c23cfdc2d434fa6?utm_content=params%3Ao%3D740005%26ad%3DdirN%26qo%3DserpIndex"
+        },
+        {
+            "rank": 2,
+            "snippet": "Where Can I Find the Best Online Baking Classes?\n\n\nGrab your measuring cups and get ready to channel your inner pastry chef. Discover new culinary adventures when you try one of these online baking classes.",
+            "timestamp": 1651218822,
+            "title": "Where Can I Find the Best Online Baking Classes?",
+            "url": "https://www.questionsanswered.net/lifestyle/best-online-baking-classes?utm_content=params%3Ao%3D740012%26ad%3DdirN%26qo%3DserpIndex"
+        },
+        {
+            "rank": 3,
+            "snippet": "What Are Some Online Classes for New and Emerging Online Businesses?\n\n\nAre you looking to start or grow an online business or move your brick-and-mortar company into the ecommerce sphere? Taking online business classes can help you learn how to get started.",
+            "timestamp": 1651218822,
+            "title": "What Are Some Online Classes for New and Emerging Online Businesses?",
+            "url": "https://www.questionsanswered.net/tech/online-classes-resources?utm_content=params%3Ao%3D740012%26ad%3DdirN%26qo%3DserpIndex"
+        },
+        {
+            "rank": 4,
+            "snippet": "Dec 29, 2021 ... Our Top Picks \u00b7 The Interior Design Institute \u00b7 New York Institute of Art and Design \u00b7 British College of Interior Design \u00b7 Udemy \u00b7 MasterClass.",
+            "timestamp": 1651218822,
+            "title": "The Best Online Interior Design Courses of 2022 - Bob Vila",
+            "url": "https://www.bobvila.com/articles/best-online-interior-design-courses/"
+        },
+        {
+            "rank": 5,
+            "snippet": "This online interior design course will prepare you to become a professional interior designer. You will study design trends and history, furniture styles\u00a0...",
+            "timestamp": 1651218822,
+            "title": "Online Interior Design Course | Interior Design Class | NYIAD",
+            "url": "https://www.nyiad.edu/courses/interior-design"
+        },
+        {
+            "rank": 6,
+            "snippet": "Find what fascinates you as you explore these interior design classes. ; 1h 27m. 69,533 students. Interior Design Basics: Simple Steps to Your Perfect Space ; 1h.",
+            "timestamp": 1651218822,
+            "title": "Online Interior Design Classes | Start Learning for Free | Skillshare",
+            "url": "https://www.skillshare.com/browse/interior-design"
+        },
+        {
+            "rank": 7,
+            "snippet": "The Basic Interior Design certificate program is a great introduction to the field of interior design, with a series of self-paced classes on topics like\u00a0...",
+            "timestamp": 1651218822,
+            "title": "Online Learning - New York School of Interior Design",
+            "url": "https://www.nysid.edu/online-learning"
+        },
+        {
+            "rank": 8,
+            "snippet": "Jul 17, 2020 ... 2. Udemy Online Interior Design Courses \u00b7 3. Inchbald School of Design, Design Your Living Space Online Course \u00b7 4. Lynda Interior Design and\u00a0...",
+            "timestamp": 1651218822,
+            "title": "Top 10 Online Interior Design Courses for Beginners - Arch2O.com",
+            "url": "https://www.arch2o.com/top-10-online-interior-design-courses-for-beginners/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Feb 23, 2022 ... Top 15+ FREE Best Online Interior Design Courses 2022. 1. Interior Design Basics: Simple Steps to Your Perfect Space (Skillshare).",
+            "timestamp": 1651218822,
+            "title": "15+ Best Online Interior Design Courses 2022 [Free + Paid]",
+            "url": "https://skillscouter.com/best-free-online-interior-design-courses/"
+        },
+        {
+            "rank": 10,
+            "snippet": "May 10, 2021 ... Free Interior Design Online Courses and Certification \u00b7 1. Free Interior Design Classes Online (Skillshare) \u00b7 2. Best Free Interior Design Courses\u00a0...",
+            "timestamp": 1651218822,
+            "title": "Free Interior Design Online Courses and Certification - HomeLane",
+            "url": "https://www.homelane.com/blog/free-interior-design-online-courses/"
+        },
+        {
+            "rank": 11,
+            "snippet": "From a Udemy Interior Design student \u00b7 How to Design Your Dream Kitchen \u00b7 Use Minimalist Interior Design to Live your Best Life \u00b7 Design your Room Using Sketchup.",
+            "timestamp": 1651218822,
+            "title": "Top Interior Design Courses Online - Updated [April 2022] | Udemy",
+            "url": "https://www.udemy.com/topic/interior-design/"
+        },
+        {
+            "rank": 12,
+            "snippet": "The Best Free Online Interior Design Courses You Can Take \u00b7 1. MIT OpenCourseWare: Principles of Design \u00b7 2. DecoratingStudio: Design Fundamentals \u00b7 3. BetterHomes\u00a0...",
+            "timestamp": 1651218822,
+            "title": "The Best Free Online Interior Design Courses You Can Take",
+            "url": "https://www.makeuseof.com/tag/learn-interior-design-8-free-online-courses/"
+        },
+        {
+            "rank": 13,
+            "snippet": "Diploma Course \u00b7 High Definition Video Content \u00b7 24/7 Support \u00b7 Exclusive Facebook Group \u00b7 No Fixed Start Dates \u00b7 Payment Options \u00b7 Portfolio \u00b7 Online Workshops.",
+            "timestamp": 1651218822,
+            "title": "The Interior Design Institute - United States",
+            "url": "https://www.theinteriordesigninstitute.com/"
+        },
+        {
+            "rank": 14,
+            "snippet": "6 Best Interior Design Courses Online \u00b7 1. Interior Design Basics: Simples Steps to Your Perfect Space (Skillshare) \u00b7 2. How to Work with Interior Design Styles\u00a0...",
+            "timestamp": 1651218822,
+            "title": "6 Best Interior Design Courses Online (2022 Review) - The Career ...",
+            "url": "https://www.thecareerproject.org/blog/best-interior-design-courses-online/"
+        }
+    ],
+    "timestamp": 1651218822,
+    "url": "https://www.ask.com/web?q=Interior+Design+Classes+Online&qo=relatedSearchNarrow&o=21029&l=dis"
+}

@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "\"http://my-notes-on.blogspot.com/\"",
+    "offset": null,
+    "page": null,
+    "query": "\"http://my-notes-on.blogspot.com/\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Blogger is a blog-publishing service that allows private or multi-user blogs with time-stamped entries. It was created by Pyra Labs, which was bought by Google in 2003. Generally, the blogs are hosted by Google at a subdomain of blogspot.com..\n                                More&gt;&gt;",
+            "timestamp": 1401243816,
+            "title": "Go To:\nBlogger",
+            "url": "https://www.google.com/accounts/ServiceLogin?service=blogger&passive=1209600&continue=http%3A%2F%2Fwww.blogger.com%2Fhome&followup=http%3A%2F%2Fwww.blogger.com%2Fhome<mpl=start#s01"
+        }
+    ],
+    "timestamp": 1401243816,
+    "url": "http://www.ask.com/web?qsrc=2&o=ffx&l=dir&q=%22http%3A%2F%2Fmy-notes-on.blogspot.com%2F%22"
+}

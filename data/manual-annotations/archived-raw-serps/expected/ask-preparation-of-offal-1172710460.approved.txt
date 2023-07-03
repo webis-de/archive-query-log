@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Preparation of Offal",
+    "offset": null,
+    "page": null,
+    "query": "Preparation of Offal",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "... capable of provoking universal squeamishness (in this country, anyway) as <em>offal. ... Offal</em> is very nearly a whole class of food in ...",
+            "timestamp": 1172710460,
+            "title": "EAT THIS: <em>Offal</em> Good -- An Ode to Organ Meats",
+            "url": "http://www-tech.mit.edu/V122/N51/Eat_This_-_Offa.51a.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "... tracheas are inedible products and may be used as mink food or for the <em>preparation</em> of other animal food. ... 19.5.4 <em>Preparation of offal</em> ...",
+            "timestamp": 1172710460,
+            "title": "Canadian Food Inspection Agency - Meat Hygiene Manual of Procedures ...",
+            "url": "http://www.inspection.gc.ca/english/anima/meavia/mmopmmhv/chap19/19-2e.shtml"
+        },
+        {
+            "rank": 3,
+            "snippet": "4.8 <em>Preparation of offal</em> and other detached portions for edible purposes, for animal food, for pharmaceutical or research use ...",
+            "timestamp": 1172710460,
+            "title": "Canadian Food Inspection Agency - Meat Hygiene Manual of Procedures ...",
+            "url": "http://www.inspection.gc.ca/english/anima/meavia/mmopmmhv/chap4/4.8-9e.shtml"
+        },
+        {
+            "rank": 4,
+            "snippet": "... tripe usually requires lengthy <em>preparation</em> it has become customary for the restaurants of ... adventurous eaters are <em>offal</em> lovers.",
+            "timestamp": 1172710460,
+            "title": "Tripe, Tripe, Glorious Tripe. tripe recipes, <em>offal</em>, tripe history - ...",
+            "url": "http://www.tripesite.com/lore.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Health, 1989-96  3. Introduction of the ban on Specified Bovine <em>Offal  Preparation</em> of the SBO Regulations  The exemption for calves under 6 ...",
+            "timestamp": 1172710460,
+            "title": "Vol.6 - 3. Introduction of the ban on Specified Bovine <em>Offal</em>",
+            "url": "http://www.bseinquiry.gov.uk/report/volume6/chapt314.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "Volume 6: Human Health, 1989-96  3. Introduction of the ban on Specified Bovine <em>Offal  Preparation</em> of the SBO Regulations  Mesenteric fat  ...",
+            "timestamp": 1172710460,
+            "title": "Vol.6 - 3. Introduction of the ban on Specified Bovine <em>Offal</em>",
+            "url": "http://www.bseinquiry.gov.uk/report/volume6/chapt313.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "Work procedures, chemical <em>preparation</em> and application procedures and other sanitation ...",
+            "timestamp": 1172710460,
+            "title": "Canadian Food Inspection System - Proposed National Meat and Poultry ...",
+            "url": "http://www.cfis.agr.ca/english/regcode/nmprc/amnd2003/2nmprc_2e.shtml"
+        },
+        {
+            "rank": 8,
+            "snippet": "... bovine <em>offal</em> in the <em>preparation</em> of food for sale for human consumption.   (3) No person shall sell any specified bovine <em>offal</em> for use in ...",
+            "timestamp": 1172710460,
+            "title": "The Specified Bovine <em>Offal</em> Order 1995",
+            "url": "http://www.hmso.gov.uk/si/si1995/Uksi_19951928_en_2.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "Chitterlings pronounced CHIT-lins and sometimes spelled chitlins are the small intestine s of a pig that have been prepared as food They are ...",
+            "timestamp": 1172710460,
+            "title": "Chitterlings at AllExperts",
+            "url": "http://experts.about.com/e/c/ch/Chitterlings.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": "The trigger for the BSE epidemic in Britain seems to have come in the early 1980s, when the use of organic solvents for <em>preparation of offal</em> ...",
+            "timestamp": 1172710460,
+            "title": "Creutzfeldt-Jakob disease Encyclopedia of Medicine - Find Articles",
+            "url": "http://www.findarticles.com/cf_dls/g2601/0003/2601000381/p1/article.jhtml"
+        }
+    ],
+    "timestamp": 1172710460,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Preparation+of+Offal"
+}

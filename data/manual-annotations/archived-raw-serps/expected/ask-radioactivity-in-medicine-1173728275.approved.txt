@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Radioactivity in Medicine",
+    "offset": null,
+    "page": null,
+    "query": "Radioactivity in Medicine",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Nuclear <em>medicine</em> uses radiation to provide diagnostic information about the ... <em>in medicine</em> is technetium-99m, employed in some 80% of all ...",
+            "timestamp": 1173728275,
+            "title": "Radioisotopes <em>in Medicine</em>",
+            "url": "http://www.uic.com.au/nip26.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "ANSTO Information Sheet  <em>Radioactivity</em>, Isotopes and Radioisotopes from Nature, Nuclear Reactors and Cyclotrons for use in Nuclear <em>Medicine</em> ...",
+            "timestamp": 1173728275,
+            "title": "ANSTO Information Sheet. <em>Radioactivity</em>, Isotopes and Radioisotopes ...",
+            "url": "http://www.ansto.gov.au/info/reports/radboyd.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "List and describe uses of <em>radioactivity</em>/radiation. ... <em>Radioactivity</em> tracers are commonly used in the medical filed and also in the study of ...",
+            "timestamp": 1173728275,
+            "title": "Uses of <em>Radioactivity</em>",
+            "url": "http://www.ndt-ed.org/EducationResources/HighSchool/Radiography/usesradioactivity.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "Amazon.com: A Century of X-Rays and <em>Radioactivity in Medicine</em>: Books: R.F Mould by R.F Mould...",
+            "timestamp": 1173728275,
+            "title": "Amazon.com: A Century of X-Rays and <em>Radioactivity in Medicine</em>: ...",
+            "url": "http://www.amazon.com/exec/obidos/ASIN/0750302240/listenup"
+        },
+        {
+            "rank": 5,
+            "snippet": "Amazon.co.uk: A Century of X-rays and <em>Radioactivity in Medicine</em>: With Emphasis on Photographic Records of the Early Years: Books: R.F. Mould ...",
+            "timestamp": 1173728275,
+            "title": "Amazon.co.uk: A Century of X-rays and <em>Radioactivity in Medicine</em>: ...",
+            "url": "http://www.amazon.co.uk/exec/obidos/ASIN/0750302240/593"
+        },
+        {
+            "rank": 6,
+            "snippet": "The Office of Human Radiation Experiments, established in March 1994, leads the Department of Energy's efforts to tell the agency's Cold War ...",
+            "timestamp": 1173728275,
+            "title": "DOE Openness: Human Radiation Experiments",
+            "url": "http://tis.eh.doe.gov/ohre/roadmap/achre/intro_9_2.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "... approximately 235 words/page)  Uses of <em>radioactivity in medicine</em>   Uses of <em>radioactivity in medicine</em> Introduction Radiation is a potent ...",
+            "timestamp": 1173728275,
+            "title": "Essay on Uses of <em>radioactivity in medicine</em>",
+            "url": "http://www.dedicatedwriters.com/paper/Uses_of_radioactivity_in_medic-17202.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "The Impact of <em>Radioactivity</em> on <em>Medicine</em> Between 1900 and 1949 summary with 7 pages of encyclopedia entries, research information, and more.",
+            "timestamp": 1173728275,
+            "title": "BookRags: The Impact of <em>Radioactivity</em> on <em>Medicine</em> Between 1900 and ...",
+            "url": "http://www.bookrags.com/sciences/sciencehistory/the-impact-of-radioactivity-on-medi-scit-061234.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "A Century of X-Rays and <em>Radioactivity in Medicine</em>: With Emphasis on Photographic Records of the Early Years - Read and write book reviews",
+            "timestamp": 1173728275,
+            "title": "A Century of X-Rays and <em>Radioactivity in Medicine</em> - ...",
+            "url": "http://www.reviewscout.co.uk/0750302240"
+        },
+        {
+            "rank": 10,
+            "snippet": "... compare for  Century of X-Rays and <em>Radioactivity in Medicine</em>: With Emphasis on Photographic Records of the Early Years  by Author: Richard ...",
+            "timestamp": 1173728275,
+            "title": "AddALL.com - Century of X-Rays and <em>Radioactivity in Medicine</em>: With ...",
+            "url": "http://www.addall.com/detail/0750302240.html"
+        }
+    ],
+    "timestamp": 1173728275,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Radioactivity+in+Medicine"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Cure for Boredom",
+    "offset": null,
+    "page": null,
+    "query": "Cure for Boredom",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Bored? You weren't doing anything else anyway. Collecting interesting links, online games and other fun stuff for the bored.",
+            "timestamp": 1174210645,
+            "title": "Bored. <em>Cure</em> your <em>boredom</em>!",
+            "url": "http://bored.overnow.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Teens come and <em>cure</em> their <em>boredom</em> when there's nothing else to do on the web...",
+            "timestamp": 1174210645,
+            "title": "Are You A Bored Teen? - Teens Come And <em>Cure Boredom</em>",
+            "url": "http://www.bored-teens.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Created by steph218 and taken 14003 times on Bzoink  Click to view users that took this survey ... A Better <em>Cure For Boredom</em> ...",
+            "timestamp": 1174210645,
+            "title": "Bzoink - A Better <em>Cure For Boredom</em>",
+            "url": "http://www.bzoink.com/S27692/A_Better_Cure_For_Boredom.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "A website dedicated to games, images, videos, and much more entertainment content to <em>cure</em> your <em>boredom</em>!",
+            "timestamp": 1174210645,
+            "title": "The <em>Cure for Boredom</em> - For every bored moment!",
+            "url": "http://www.thecureforboredom.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Cure</em> your <em>boredom</em> with daily links to fun stuff!",
+            "timestamp": 1174210645,
+            "title": "RawMeat.com - The <em>Cure For Boredom</em>",
+            "url": "http://www.rawmeat.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Free Game Online - Are you looking for fun online? Fight boredness get some play with our collection of great arcade games...",
+            "timestamp": 1174210645,
+            "title": "Free Game Online - mySpace.com Games",
+            "url": "http://www.zpod.org/"
+        },
+        {
+            "rank": 7,
+            "snippet": "I had originally planned on blogging about our second day at the beach last weekend, including regaling you about how Captain Destructo tripped over",
+            "timestamp": 1174210645,
+            "title": "The <em>Cure for Boredom</em>",
+            "url": "http://warcrygirl.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Bored Net. A <em>cure</em> to being bored. Stop the <em>boredom</em>.",
+            "timestamp": 1174210645,
+            "title": "Bored Videos, Games &amp; Links - BoredNet.com <em>Cure</em> Your <em>Boredom</em>",
+            "url": "http://www.borednet.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Arcade Cow offers a huge mix of free flash arcade games. They are safe for kids and for work. It also has game codes for myspace, blogs, and ...",
+            "timestamp": 1174210645,
+            "title": "Arcade Cow - Flash Arcade Games, Myspace Game Codes, <em>Cure for</em> ...",
+            "url": "http://www.arcadecow.com/"
+        },
+        {
+            "rank": 10,
+            "snippet": "... me before  98. i've never been in love  99. this survey really did <em>cure</em> my <em>boredom</em>  100. i'm going to comment and subscribe to ...",
+            "timestamp": 1174210645,
+            "title": "<em>cure</em>_your_<em>boredom</em>_surveys's Xanga Site",
+            "url": "http://www.xanga.com/cure_your_boredom_surveys"
+        }
+    ],
+    "timestamp": 1174210645,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Cure+for+Boredom"
+}

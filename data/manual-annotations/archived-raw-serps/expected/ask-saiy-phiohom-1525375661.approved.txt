@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Saiy phiohom",
+    "offset": null,
+    "page": null,
+    "query": "Saiy phiohom",
+    "results": [],
+    "timestamp": 1525375661,
+    "url": "https://www.ask.com/web?q=Saiy+phiohom&x=49&y=0&qsrc=2300&o=1102&l=dir//"
+}

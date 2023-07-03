@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Apologist",
+    "offset": null,
+    "page": null,
+    "query": "Apologist",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Biblical Debates offers a forum for Christians to discuss the pressing issues of the present and past.",
+            "timestamp": 1172369538,
+            "title": "What is an <em>Apologist</em>? - Christian Heritage Center - Staunton ...",
+            "url": "http://www.biblicaldebates.com/explination.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "Date: Sun, 18 Aug 2002 17:04:01 +0200 -------- The cult <em>apologist</em> FAQ: exposing the cult's willing defenders In the last few years I had a look at",
+            "timestamp": 1172369538,
+            "title": "======== To: tilman@berlin.snafu.de Newsgroups: alt.religion.",
+            "url": "http://www.snafu.de/~tilman/faq-you/cult.apologists.txt"
+        },
+        {
+            "rank": 3,
+            "snippet": "Somewhere back in time, I had the suspicion that I was somehow misunderstanding most the bible's political implications.  Since a...",
+            "timestamp": 1172369538,
+            "title": "Random Observations",
+            "url": "http://tim.2wgroup.com/blog/"
+        },
+        {
+            "rank": 4,
+            "snippet": "... who engages in apologetics is called an <em>apologist</em> or an \"apologete\".The term comes from the Greek word apologia (\u03b1\u03c0\u03bf\u03bb\u03bf\u03b3\u03af\u03b1), meaning ...",
+            "timestamp": 1172369538,
+            "title": "Apologetics - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/Apologetics"
+        },
+        {
+            "rank": 5,
+            "snippet": "Promoting the works and thought of Francis Schaeffer: Quotes, photos, articles, email list, and links.",
+            "timestamp": 1172369538,
+            "title": "Schaeffer , Francis A.-The Shelter",
+            "url": "http://www.rationalpi.com/theshelter/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Articles, contact details for lectures or debates, and resource ordering information.",
+            "timestamp": 1172369538,
+            "title": "Horner, Michael",
+            "url": "http://www.michaelhorner.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "When the <em>apologist</em> comes to the subject of Christian revelation, he finds himself on much firmer ground.",
+            "timestamp": 1172369538,
+            "title": "Apologetics",
+            "url": "http://www.newadvent.org/cathen/01618a.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "It took 40 years, but today Pat Buchanan hit bottom on the slippery slope from Young Turk conservative columnist to Nazi <em>Apologist</em> troglodyte.",
+            "timestamp": 1172369538,
+            "title": "Vodkapundit - A Fisking",
+            "url": "http://vodkapundit.com/archives/007819.php"
+        },
+        {
+            "rank": 9,
+            "snippet": "A couple of my thoughts on things I.T. which catch my fancy.",
+            "timestamp": 1172369538,
+            "title": "Cory Doctorow - O\u2019Reilly <em>apologist</em> \u00bb at Tom Raftery\u2019s I.T. ...",
+            "url": "http://www.tomrafteryit.net/cory-doctorow-oreilly-apologist/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Biography of Dr. William A. Dembski as well as a collection of his articles.",
+            "timestamp": 1172369538,
+            "title": "Dembski, William A.",
+            "url": "http://www.facultylinc.com/personal/facoffice.nsf/AllStaffbyStaffID/wdembski?OpenDocument"
+        }
+    ],
+    "timestamp": 1172369538,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Apologist"
+}

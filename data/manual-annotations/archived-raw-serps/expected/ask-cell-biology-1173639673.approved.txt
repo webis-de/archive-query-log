@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Cell Biology",
+    "offset": null,
+    "page": null,
+    "query": "Cell Biology",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Interactive tutorial for learning the fundamentals of <em>cell biology</em>. Includes <em>cell</em> cycle, mitosis, meiosis, and organelles with tests.",
+            "timestamp": 1173639673,
+            "title": "<em>Cell Biology</em>",
+            "url": "http://www.biology.arizona.edu/cell_bio/cell_bio.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "A human red <em>cell</em> has no nucleus and is responsible for carrying oxygen to the tissues.",
+            "timestamp": 1173639673,
+            "title": "CELLS Alive!",
+            "url": "http://www.cellsalive.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "A plant <em>cell</em> from the leaf  of a poplar tree ... the <em>cell</em>.  At the center of the <em>cell</em> is the <em>cell</em> nucleus.",
+            "timestamp": 1173639673,
+            "title": "The <em>Cell</em>",
+            "url": "http://web.jjay.cuny.edu/~acarpi/NSC/13-cells.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "Biweekly publication of exceptional research articles in areas including molecular <em>biology</em>, biochemistry, cancer research, <em>cell biology</em>, ...",
+            "timestamp": 1173639673,
+            "title": "<em>Cell</em>",
+            "url": "http://www.cell.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Cell</em> and Molecular <em>Biology</em> Online, an informational resource for <em>cell</em> and molecular biologists. Features resources for <em>biology</em> research and ...",
+            "timestamp": 1173639673,
+            "title": "<em>Cell</em> and Molecular <em>Biology</em> Online",
+            "url": "http://www.cellbio.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": "An online Dictionary for <em>cell</em> and molecular <em>biology</em> ... It is also much more up-to-date!  JM Lackie &amp; JAT Dow (1999) \"The Dictionary of <em>Cell</em> ...",
+            "timestamp": 1173639673,
+            "title": "Dictionary of <em>Cell Biology</em>",
+            "url": "http://www.mblab.gla.ac.uk/dictionary/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Vote now in the election of the century   Recommend this page to a friend...",
+            "timestamp": 1173639673,
+            "title": "Animal &amp; Plant Cells",
+            "url": "http://www.purchon.com/biology/cells.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Cell</em> Structure and Processes Unit Membrane Chloroplast  <em>Cell</em> Membrane Centriole ... <em>Cell</em> Membrane Centriole  <em>Cell</em> Wall Endoplasmic Reticulum  ...",
+            "timestamp": 1173639673,
+            "title": "<em>Cell</em> Structure and Functions",
+            "url": "http://www.tvdsb.on.ca/westmin/science/sbi3a1/Cells/cells.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "This organization is very similar to a standard <em>Cell Biology</em> text book, and we think it is most appropiate for a web site dealing with <em>Cell Biology</em>.",
+            "timestamp": 1173639673,
+            "title": "<em>Cell</em> Structure and Function",
+            "url": "http://www.nmsu.edu/~molbio/cell/Page1.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Cell Biology</em> - School and University - graphics ... Molecular <em>Cell Biology</em> fourth edition, edited by Harvey Lodish (2000) published by W. H.",
+            "timestamp": 1173639673,
+            "title": "<em>Cell biology</em> - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/Cell_biology"
+        }
+    ],
+    "timestamp": 1173639673,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Cell+Biology"
+}

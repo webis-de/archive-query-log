@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Caring",
+    "offset": null,
+    "page": null,
+    "query": "Caring",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Caring</em> ... Are your five adjectives descriptive of a <em>caring</em> nurse?",
+            "timestamp": 1173637789,
+            "title": "<em>Caring</em>",
+            "url": "http://faculty.mc3.edu/rbenfiel/NUR109/NUR109Caring/index.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "CLICK HERE to go to the FORUM discussion group at CHARACTER COUNTS!  ... RESOURCES \u2014 QUOTES  <em>Caring</em>, Compassion,  Generosity, Forgiveness ...",
+            "timestamp": 1173637789,
+            "title": "Quotes to Inspire -- <em>Caring</em>, Compassion, Generosity, Forgiveness",
+            "url": "http://www.josephsoninstitute.org/quotes/quotecaring.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "Trustworthiness, Respect, Responsibility, Fairness, <em>Caring</em>, Citizenship. CHARACTER COUNTS! Six Pillars.",
+            "timestamp": 1173637789,
+            "title": "The Six Pillars of Character - Respect, Fairness, <em>Caring</em>, ...",
+            "url": "http://www.charactercounts.org/defsix.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "Forest Service national headquarters   web site. Gateway to all Forest Service webs.",
+            "timestamp": 1173637789,
+            "title": "USDA Forest Service - <em>Caring</em> for the land and serving people.",
+            "url": "http://www.fs.fed.us/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Caring</em> Connections...",
+            "timestamp": 1173637789,
+            "title": "Home - <em>Caring</em> Connections",
+            "url": "http://www.partnershipforcaring.org/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Formed in 1865 as Connecticut General, CIGNA is an employee benefits company in the U.S. and in selected markets around the world.",
+            "timestamp": 1173637789,
+            "title": "CIGNA - A Business of <em>Caring</em>",
+            "url": "http://www.cigna.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "All Kids Are Our Kids What Communities Must Do to Raise <em>Caring</em> and Responsible Children and Adolescents, Second Edition by Peter L. Benson ...",
+            "timestamp": 1173637789,
+            "title": "Search Institute Home",
+            "url": "http://www.search-institute.org/"
+        },
+        {
+            "rank": 8,
+            "snippet": "A-Side \"Skool-ology (Ain't No Strain) - Extended Version\" B-Side Skool-ology (Ain't No Strain) - Extended Instrumental Version...",
+            "timestamp": 1173637789,
+            "title": "<em>Caring</em> (album) - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/Caring_(album)"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Caring</em> quotes, Searchable and browsable database of quotations with author and subject indexes. Quotes from famous political leaders, authors, ...",
+            "timestamp": 1173637789,
+            "title": "<em>Caring</em> Quotes",
+            "url": "http://www.worldofquotes.com/topic/caring/index.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Plant Trees Now  . . . . . . . . . . . . . . . . .  American Forests works to protect, restore and enhance the natural capital of trees and ...",
+            "timestamp": 1173637789,
+            "title": "American Forests",
+            "url": "http://www.americanforests.org/"
+        }
+    ],
+    "timestamp": 1173637789,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Caring"
+}

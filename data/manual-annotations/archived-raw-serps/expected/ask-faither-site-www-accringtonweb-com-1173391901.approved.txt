@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "faither  site:www.accringtonweb.com",
+    "offset": null,
+    "page": null,
+    "query": "faither  site:www.accringtonweb.com",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "[smiley=ello.gif] &amp;amp;nbsp;Hello <em>faither</em> and welcome. Hope you enjoy yourself on here. ;D...",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - View Single Post - all reet",
+            "url": "http://www.accringtonweb.com/forum/31357-post4.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Hiya <em>faither</em>, &amp;amp;nbsp;[smiley=ello.gif] welcome to accy web.",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - View Single Post - all reet",
+            "url": "http://www.accringtonweb.com/forum/31356-post3.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "... hi <em>Faither</em> &amp;amp;nbsp; &amp;amp;nbsp; &amp;amp;nbsp; &amp;amp;nbsp; &amp;amp;nbsp; &amp;amp;nbsp; &amp;amp;nbsp;it IS a good site and welcome hope you enjoy it...",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - View Single Post - all reet",
+            "url": "http://www.accringtonweb.com/forum/31355-post2.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "... this was posted twice in error ... Last edited by <em>FAITHER</em> : 16-06-2004 at 12:34. Reason: posted twice ...",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - View Single Post - potholers wanted",
+            "url": "http://www.accringtonweb.com/forum/63016-post1.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "I am looking for about 10 people to take part in a 1 hour sponsored pothole event in the yorkshie dales on friday evening 16th july to help ...",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - View Single Post - Potholers wanted",
+            "url": "http://www.accringtonweb.com/forum/63018-post1.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "... just found this site. looks good ! I went to St Johns then on to Chris's in the 60's 70's have been living up in Stanhill for the past 23 ...",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - View Single Post - all reet",
+            "url": "http://www.accringtonweb.com/forum/31354-post1.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "... hi <em>Faither</em>  &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;it IS a good site and welcome hope you enjoy it ...",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - all reet",
+            "url": "http://www.accringtonweb.com/forum/f65/2088-all-reet-print.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "I am looking for about 10 people to take part in a 1 hour sponsored pothole event ... <em>FAITHER</em> 16-06-2004 11:46 ... <em>FAITHER</em> 24-06-2004 08:27 ...",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - Potholers wanted",
+            "url": "http://www.accringtonweb.com/forum/f69/4553-potholers-wanted-print.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "-  -  potholers wanted (http://www.accringtonweb.com/forum/f69 ...  ... <em>FAITHER</em> 16-06-2004 11:32 ...",
+            "timestamp": 1173391901,
+            "title": "Accrington Web - potholers wanted",
+            "url": "http://www.accringtonweb.com/forum/f69/4552-potholers-wanted-print.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Introduce Yourself, Page 33 - New to the forum? Introduce yourself here and get talking. Everyone is welcome here at Accrington Web!",
+            "timestamp": 1173391901,
+            "title": "Introduce Yourself - Page 33 - Accrington Web",
+            "url": "http://www.accringtonweb.com/forum/f65/index33.html"
+        }
+    ],
+    "timestamp": 1173391901,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=0&l=dir&q=faither++site:www.accringtonweb.com"
+}

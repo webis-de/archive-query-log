@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "Are alkali metals lighter than water?",
+    "offset": null,
+    "page": null,
+    "query": "Are alkali metals lighter than water?",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "As far as I know, there is only one more metal which is lighter than water: Lithium, \nand it also reacts with water. Calcium and especially mercury are heavier than\u00a0...",
+            "timestamp": 1619387309,
+            "title": "Which metal is lighter than water, sodium, mercury, potassium, or ...",
+            "url": "https://www.quora.com/Which-metal-is-lighter-than-water-sodium-mercury-potassium-or-calcium"
+        },
+        {
+            "rank": 2,
+            "snippet": "Lithium is in fact less dense than water (534 kg/cubic metre, as against 1000 kg/\ncubic metre). So it does indeed float. However it also undergoes a rather rapid\u00a0...",
+            "timestamp": 1619387309,
+            "title": "Lithium is one of the lightest elements - lighter than oxygen - but is a ...",
+            "url": "https://www.theguardian.com/notesandqueries/query/0,5753,-7911,00.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "The metals in this series are relatively light\u2014\u200blithium, sodium, and potassium are \nless dense than water (less than 1 g\u00a0...",
+            "timestamp": 1619387309,
+            "title": "Group 1: Properties of Alkali Metals - Chemistry LibreTexts",
+            "url": "https://chem.libretexts.org/Bookshelves/Inorganic_Chemistry/Modules_and_Websites_%28Inorganic_Chemistry%29/Descriptive_Chemistry/Elements_Organized_by_Block/1_s-Block_Elements/Group__1:_The_Alkali_Metals/1Group_1:_Physical_Properties_of_Alkali_Metals"
+        },
+        {
+            "rank": 4,
+            "snippet": "However, as we discuss later, the lighter group 1 elements also ... For instance, \nwhen alkali metals burn in air, the ... The presence of water vapor, the other \nproduct of\u00a0...",
+            "timestamp": 1619387309,
+            "title": "21.3: The Alkali Metals (Group 1) - Chemistry LibreTexts",
+            "url": "https://chem.libretexts.org/Bookshelves/General_Chemistry/Book:_Chemistry_%28Averill_and_Eldredge%29/21:_Periodic_Trends_and_the_s-Block_Elements/21.3:_The_Alkali_Metals_%28Group_1%29"
+        },
+        {
+            "rank": 5,
+            "snippet": "Soft, silvery-white alkali lithium is the lightest metal and the lightest solid element. \nHighly reactive and flammable, lithium has to be stored in mineral oil. Industrial\u00a0...",
+            "timestamp": 1619387309,
+            "title": "Alkali Metals - - Diamond Light Source",
+            "url": "https://www.diamond.ac.uk/default/Campaigns/2019/Year-of-the-Periodic-Table/Alkali-Metals.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Group 1A (or IA) of the periodic table are the alkali metals: hydrogen (H), lithium (\nLi) ... Salts of the Group 1A elements tend to be extremely soluble in water. ... \nHydrogen is lighter than air, and was used in balloons and dirigibles (...",
+            "timestamp": 1619387309,
+            "title": "1A - Alkali Metals - The Parts of the Periodic Table",
+            "url": "https://www.angelo.edu/faculty/kboudrea/periodic/periodic_main1.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "Rubidium is denser than water and so sinks. It reacts violently and immediately, \nwith everything spitting out of the container again. Rubidium hydroxide solution\u00a0...",
+            "timestamp": 1619387309,
+            "title": "Reactions of the Group 1 elements with water - Chemguide",
+            "url": "https://www.chemguide.co.uk/inorganic/group1/reacth2o.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Lithium, sodium and potassium are lighter than water. Potassium has the lowest \ndensity among alkali metals. Electropositive Metallic Character and Ionization\u00a0...",
+            "timestamp": 1619387309,
+            "title": "Alkali Metals - Properties, Electronic Configuration, Periodic Trends ...",
+            "url": "https://byjus.com/jee/alkali-metals/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Lithium, sodium, and potassium have low densities and float on water. Rubidium \nand Caesium are denser and sink in water. Lithium has a density of 0.53 g/cc it\u00a0...",
+            "timestamp": 1619387309,
+            "title": "Name the metal which floats on the water without any class 12 ...",
+            "url": "https://www.vedantu.com/question-answer/name-the-metal-which-floats-on-the-water-without-class-12-chemistry-cbse-5f30ef40f22476109650e8da"
+        }
+    ],
+    "timestamp": 1619387309,
+    "url": "https://www.ask.com/web?q=Are+alkali+metals+lighter+than+water%3F&search=search&qsrc=178&o=ffx&l=dir"
+}
