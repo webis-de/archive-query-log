@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Avnon, Dan, 1998, Martin Buber. The Hidden Dialogue, Lanham, Boulder, New York, Oxford: Rowman & Littlefield.",
+    "offset": null,
+    "page": null,
+    "query": "Avnon, Dan, 1998, Martin Buber. The Hidden Dialogue, Lanham, Boulder, New York, Oxford: Rowman & Littlefield.",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em>, <em>by</em> <em>Dan</em> <em>Avnon</em>. <em>Rowman</em> &amp; <em>Littlefield</em>, <em>1998</em>. 277 pp. $63.00. As a philosopher of <em>dialogue</em>, a representative Jew addressing public figures like Mahatma Gandhi and Rabindranath Tagore, and a political figure active in Zionism and in opposing Israel's first prime ...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue, by Dan Avnon. Rowman ...",
+            "url": "https://www.jstor.org/stable/42943302"
+        },
+        {
+            "rank": 2,
+            "snippet": "In <em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em>, <em>Dan</em> <em>Avnon</em> analyzes and reconstructs <em>Buber</em>'s corpus of mature writings. <em>Avnon</em>'s novel reading of <em>Buber</em>'s diverse writings on the Bible, Christianity, Judaism, philosophy, socialism, Zionism, and the Jewish-Arab conflict is based on his discovery of a \"<em>hidden</em>\" ...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue - Dan Avnon - Google Books",
+            "url": "https://books.google.com/books/about/Martin_Buber.html?id=7zgQAQAAIAAJ"
+        },
+        {
+            "rank": 3,
+            "snippet": "In <em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em>, <em>Dan</em> <em>Avnon</em> analyzes and reconstructs <em>Buber</em>'s corpus of mature writings. <em>Avnon</em>'s novel reading of Bub...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue by Dan Avnon",
+            "url": "https://www.goodreads.com/en/book/show/6961044-martin-buber"
+        },
+        {
+            "rank": 4,
+            "snippet": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel &amp; accessories, shoes, jewelry, tools &amp; hardware, housewares, furniture, sporting goods, beauty &amp; personal care, groceries &amp; just about anything else.",
+            "timestamp": 1649576842,
+            "title": "[(Martin Buber: The Hidden Dialogue)] [Author: Dan Avnon ...",
+            "url": "https://www.amazon.com/Martin-Buber-Hidden-Dialogue-published/dp/B00Y2RIRP2"
+        },
+        {
+            "rank": 5,
+            "snippet": "The item <em>Martin</em> <em>Buber</em> : <em>the</em> <em>hidden</em> <em>dialogue</em>, <em>Dan</em> <em>Avnon</em> represents a specific, individual, material embodiment of a distinct intellectual or artistic creation found in University of Missouri Libraries. This item is available to borrow from 1 library branch.",
+            "timestamp": 1649576842,
+            "title": "Martin Buber : the hidden dialogue, Dan Avnon",
+            "url": "http://link.library.missouri.edu/portal/Martin-Buber--the-hidden-dialogue-Dan/bm-jNEVcOmU/"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em> <em>by</em> <em>Avnon</em>, <em>Dan</em> <em>and</em> <em>Buber</em>, <em>Martin</em> available in Hardcover on Powells.com, also read synopsis and reviews. In <em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em>, <em>Dan</em> <em>Avnon</em> analyzes and reconstructs <em>Buber</em>'s corpus of mature...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue: Avnon, Dan and Buber ...",
+            "url": "https://www.powells.com/book/martin-buber-9780847686872"
+        },
+        {
+            "rank": 7,
+            "snippet": "Chapter 1 Preface Chapter 2 Introduction Chapter 3 Biography: From Mysticism to <em>Dialogue</em> to Attentive Silence Chapter 4 Bible: <em>The</em> <em>Hidden</em> Hermeneutics Chapter 5 <em>Hidden</em> History: The \"Two Stream\" of Adam Chapter 6 Dialogical Philosophy: Between the Words of Texts and the Content of Thought Chapter ...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue | Semantic Scholar",
+            "url": "https://www.semanticscholar.org/paper/Martin-Buber:-The-Hidden-Dialogue-Avnon/64fdca40c813ed50a35c5652761b1cb8771e9376"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em> <em>by</em> <em>Avnon</em>, <em>Dan</em> available in Trade Paperback on Powells.com, also read synopsis and reviews. In <em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em>, <em>Dan</em> <em>Avnon</em> analyzes and reconstructs <em>Buber</em>'s corpus of mature...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue: Avnon, Dan: Trade ...",
+            "url": "https://www.powells.com/book/martin-buber-9780847686889"
+        },
+        {
+            "rank": 9,
+            "snippet": "The item <em>Martin</em> <em>Buber</em> : <em>the</em> <em>hidden</em> <em>dialogue</em>, <em>Dan</em> <em>Avnon</em> represents a specific, individual, material embodiment of a distinct intellectual or artistic creation found in Colby College Libraries. This item is available to borrow from 1 library branch.",
+            "timestamp": 1649576842,
+            "title": "Martin Buber : the hidden dialogue - Colby College Libraries",
+            "url": "http://link.colby.edu/portal/Martin-Buber--the-hidden-dialogue-Dan/bm-jNEVcOmU/"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Rowman</em> &amp; <em>Littlefield</em>, <em>Lanham</em>, <em>1998</em>. First Edition . Softcover. Very Good Condition. Size: 8vo. x + 277pp. Internally clean. Binding firm, spine creased. Edges very ...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue by Dan Avnon - Paperback ...",
+            "url": "https://www.biblio.com/book/martin-buber-hidden-dialogue-dan-avnon/d/1317657395"
+        },
+        {
+            "rank": 11,
+            "snippet": "Buy <em>Martin</em> <em>Buber</em> <em>The</em> <em>Hidden</em> <em>Dialogue</em> <em>by</em> <em>Dan</em> <em>Avnon</em> at TextbookX.com. ISBN/UPC: 9780847686872. Save an average of 50% on the marketplace.",
+            "timestamp": 1649576842,
+            "title": "Martin Buber The Hidden Dialogue by Dan Avnon, ISBN ...",
+            "url": "https://www.textbookx.com/book/9780847686872/"
+        },
+        {
+            "rank": 12,
+            "snippet": "<em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em> : <em>Avnon</em>, <em>Dan</em>: Amazon.com.au: Books. Skip to main content.com.au. Hello Select your address Books. Hello, Sign in. Account &amp; Lists Returns &amp; Orders. Cart ... Best Sellers Customer Service <em>New</em> Releases Prime Fashion Electronics Books ...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue : Avnon, Dan: Amazon.com ...",
+            "url": "https://www.amazon.com.au/Martin-Buber-Dialogue-Dan-Avnon/dp/0847686876"
+        },
+        {
+            "rank": 13,
+            "snippet": "<em>Martin</em> <em>Buber</em> | In <em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em>, <em>Dan</em> <em>Avnon</em> analyzes and reconstructs <em>Buber</em>'s corpus of mature writings, revealing the radical nature of <em>Buber</em>'s responses to the most fundamental questions of human existence.",
+            "timestamp": 1649576842,
+            "title": "Martin Buber : The Hidden Dialogue by Dan Avnon",
+            "url": "https://www.booksamillion.com/p/Martin-Buber/Dan-Avnon/9780847686872"
+        },
+        {
+            "rank": 14,
+            "snippet": "AbeBooks.com: <em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em> (20th Century Political Thinkers) (9780847686889) by <em>Avnon</em>, <em>Dan</em> and a great selection of similar <em>New</em>, Used and Collectible Books available now at great prices.",
+            "timestamp": 1649576842,
+            "title": "9780847686889: Martin Buber: The Hidden Dialogue (20th Century ...",
+            "url": "https://www.abebooks.com/9780847686889/Martin-Buber-Hidden-Dialogue-20th-0847686884/plp"
+        },
+        {
+            "rank": 15,
+            "snippet": "<em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em> : <em>Avnon</em>, <em>Dan</em>: Amazon.sg: Books ... Customer Service Best Sellers Prime Electronics <em>New</em> Releases Books Today's Deals Food &amp; Grocery Home Computers Toys &amp; Games Home Improvement Gift Ideas Health &amp; Personal Care Sports &amp; Outdoors Gift Cards Beauty &amp; personal ...",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue : Avnon, Dan: Amazon.sg ...",
+            "url": "https://www.amazon.sg/Martin-Buber-Dialogue-Dan-Avnon/dp/0847686876"
+        },
+        {
+            "rank": 16,
+            "snippet": "In <em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em>, <em>Dan</em> <em>Avnon</em> analyzes and reconstructs <em>Buber</em>'s corpus of mature writings.<em>Avnon</em>'s novel reading of <em>Buber</em>'s diverse writings on the Bible, Christianity, Judaism, philosophy, socialism, Zionism, and the Jewish-Arab conflict is based on his discovery of a \"<em>hidden</em>\" ...",
+            "timestamp": 1649576842,
+            "title": "9780847686872: Martin Buber - AbeBooks - Avnon, Dan: 0847686876",
+            "url": "https://www.abebooks.com/9780847686872/Martin-Buber-Avnon-Dan-0847686876/plp"
+        },
+        {
+            "rank": 17,
+            "snippet": "<em>Martin</em> <em>Buber</em> <em>by</em> <em>Avnon</em>, <em>Dan</em> Seller Mediaoutletdeal1 Published <em>1998</em>-05-01 Condition Like <em>New</em> ISBN 9780847686872 Item Price $ 127.91. Show Details. Description: <em>Rowman</em> &amp; <em>Littlefield</em> Publishers, <em>1998</em>-05-01. Hardcover. Like <em>New</em>.",
+            "timestamp": 1649576842,
+            "title": "Martin Buber by Avnon, Dan",
+            "url": "https://www.biblio.com/martin-buber-by-avnon-dan/work/1502018"
+        },
+        {
+            "rank": 18,
+            "snippet": "<em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em> von <em>Avnon</em>, <em>Dan</em> - Jetzt online bestellen portofrei schnell zuverl\u00e4ssig kein Mindestbestellwert individuelle Rechnung 20 Millionen Titel Merkliste Die Merkliste ist leer.",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue - Hugendubel ...",
+            "url": "https://www.hugendubel.info/detail/ISBN-9780847686872/Avnon-Dan/Martin-Buber-The-Hidden-Dialogue"
+        },
+        {
+            "rank": 19,
+            "snippet": "<em>Rowman</em> &amp;amp; <em>Littlefield</em> Publishers, <em>1998</em>. Hardcover. <em>New</em>. 9.24 x 6.24 cm....",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue by Dan Avnon - Hardcover ...",
+            "url": "https://biblio.co.uk/book/martin-buber-hidden-dialogue-avnon-dan/d/1371892415"
+        },
+        {
+            "rank": 20,
+            "snippet": "Find many great <em>new</em> &amp; used options and get the best deals for <em>Martin</em> <em>Buber</em>: <em>The</em> <em>Hidden</em> <em>Dialogue</em> <em>by</em> <em>Dan</em> <em>Avnon</em> (Paperback, <em>1998</em>) at the best online prices at eBay!",
+            "timestamp": 1649576842,
+            "title": "Martin Buber: The Hidden Dialogue by Dan Avnon (Paperback ...",
+            "url": "https://www.ebay.com.au/p/95692123"
+        }
+    ],
+    "timestamp": 1649576842,
+    "url": "https://search.brave.com/search?q=Avnon%2C+Dan%2C+1998%2C+Martin+Buber.+The+Hidden+Dialogue%2C+Lanham%2C+Boulder%2C+New+York%2C+Oxford%3A+Rowman+%26+Littlefield."
+}

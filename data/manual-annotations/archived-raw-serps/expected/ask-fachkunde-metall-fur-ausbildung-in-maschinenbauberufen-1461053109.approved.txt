@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "Fachkunde Metall f\u00fcr Ausbildung in Maschinenbauberufen",
+    "offset": null,
+    "page": null,
+    "query": "Fachkunde Metall f\u00fcr Ausbildung in Maschinenbauberufen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Die Fachkunde Metall dient der Ausbildung und der Weiterbildung in den \nMaschinenbauberufen. Zielgruppen. \u2022 Industriemechaniker. \u2022 \nFeinwerkmechaniker.",
+            "timestamp": 1461053109,
+            "title": "Fachkunde Metall - Europa-Lehrmittel",
+            "url": "http://www.europa-lehrmittel.de/downloads-leseproben/10129-57/1149.pdf/"
+        },
+        {
+            "rank": 2,
+            "snippet": "11 0955 \u2013 Das Tabellenbuch Metall ist ein unentbehrliches Nachschla- gewerk \nf\u00fcr alle ... die Bildungspl\u00e4ne und Ausbildungsordnungen abgestimmt.",
+            "timestamp": 1461053109,
+            "title": "Datenblatt - Hoffmann Group",
+            "url": "https://www.hoffmann-group.com/medias/sys_master/root/h32/h5b/8870704480286/110950.pdf"
+        },
+        {
+            "rank": 3,
+            "snippet": "1. Jan. 2009 ... Herstellung von Metallwaren production of metal parts. Werkzeug- ..... \nAusbildung der nichtmartensitischen Rand- schicht ..... Mit CD \u201eBilder zur \nFachkunde Metall\u201c ... reich der Weiterbildung von Maschinenbauberufen. Die.",
+            "timestamp": 1461053109,
+            "title": "Bildungschancen jetzt nutzen - Werkstofftechnik",
+            "url": "https://www.werkstofftechnik.com/fileadmin/_dr.sommer_werkstofftechnik/pdf/fachzeitschrift/fachartikel/de/wbm2009_1.pdf"
+        }
+    ],
+    "timestamp": 1461053109,
+    "url": "http://www.ask.com:80/web?l=dir&qsrc=0&o=ffx&q=Fachkunde+Metall+f%C3%BCr+Ausbildung+in+Maschinenbauberufen"
+}

@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "house building cost estimate",
+    "offset": null,
+    "page": null,
+    "query": "house building cost estimate",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "July 26, 2022 -\n            Once you've purchased your chosen <em>house</em> plan, give the \"bid set\" to your builder. The bid set consists of all relevant plans, including elevations, wall sections, and floor plans. Based on this, your local construction manager can give you an accurate \"<em>cost</em> <em>to</em> <em>build</em>\" <em>estimate</em>.",
+            "timestamp": 1664320455,
+            "title": "<em></em>Learn how much it costs to Build a House - Compose: SEO.",
+            "url": "https://www.homeadvisor.com/cost/architects-and-engineers/build-a-house/"
+        },
+        {
+            "rank": 2,
+            "snippet": "This website uses cookies or similar technologies, to enhance your browsing experience and provide personalized recommendations. By continuing to use our website, you agree to our Privacy Policy",
+            "timestamp": 1664320455,
+            "title": "<em></em>House Cost Estimator | Cost to Build a Home",
+            "url": "https://costtobuild.net/calculator.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "December 20, 2021 -\n            The chart below gives <em>cost</em> <em>estimates</em> <em>to</em> <em>build</em> <em>a</em> <em>house</em> across a range of sizes, using a low-end <em>cost</em> of $100 per square foot, an average modern <em>build</em> at $155 per square foot, and a high-end custom <em>builds</em> at $400 per square foot.",
+            "timestamp": 1664320455,
+            "title": "<em></em>2022 Cost To Build A House | New Home Construction Cost (Per Sq Ft)",
+            "url": "https://homeguide.com/costs/cost-to-build-a-house"
+        },
+        {
+            "rank": 4,
+            "snippet": "February 7, 2022 -\n            <em>House</em> <em>Building</em> <em>Cost</em> <em>Estimator</em> calculate the <em>cost</em> <em>to</em> <em>build</em> a 1,500, 2,000 or 3,000 square foot <em>house</em>. <em>Estimate</em> <em>the</em> <em>cost</em> of new construction based on the size of the <em>house</em>, number of levels, number of bathrooms, type of roofing, siding, windows, flooring, trim and finish.",
+            "timestamp": 1664320455,
+            "title": "<em></em>House Building Calculator | Estimate Construction Cost",
+            "url": "https://www.remodelingcalculator.org/house-building-calculator/"
+        },
+        {
+            "rank": 5,
+            "snippet": "July 6, 2022 -\n            The average <em>cost</em> <em>to</em> <em>build</em> <em>a</em> <em>house</em> is about $300,000, not including the <em>cost</em> of land. With <em>housing</em> trends ranging from upcycled shipping containers and self-sustaining homes to sophisticated smart <em>houses</em> with luxurious tubs, it\u2019s no surprise that new <em>builds</em> range from $30,000 to several million.",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost to Build a House? \u2013 Forbes Advisor",
+            "url": "https://www.forbes.com/advisor/home-improvement/cost-to-build-a-house/"
+        },
+        {
+            "rank": 6,
+            "snippet": "October 1, 2020 -\n            The average <em>cost</em> <em>to</em> <em>build</em> <em>a</em> <em>house</em> in Texas depends on a wide range of factors, including: size, location, design and materials. Here are some quick tips to give you a ballpark <em>estimate</em> of what you can expect to pay.",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost to Build a Home on Your Lot in Texas?",
+            "url": "https://www.hedgefield.com/custom-home-cost-north-texas"
+        },
+        {
+            "rank": 7,
+            "snippet": "August 12, 2020 -\n            The <em>cost</em> <em>to</em> <em>build</em> a new <em>house</em> will have a lot of variables. Use our tips to get an <em>estimate</em>, including the <em>cost</em> per square foot for your new home!",
+            "timestamp": 1664320455,
+            "title": "<em></em>How to Estimate New Home Construction Costs [5 Tips]",
+            "url": "https://chinburg.com/5-helpful-hints-to-estimating-what-your-new-home-costs/"
+        },
+        {
+            "rank": 8,
+            "snippet": "June 3, 2022 -\n            How much does it <em>cost</em> <em>to</em> <em>build</em> <em>a</em> <em>house</em>? We break down all of the <em>costs</em>, from foundation to roof, so you can make an educated decision.",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost to Build a House? Breaking Down the Expenses",
+            "url": "https://www.homelight.com/blog/buyer-how-much-does-it-cost-to-build-a-house/"
+        },
+        {
+            "rank": 9,
+            "snippet": "August 15, 2022 -\n            Keep in mind that all these construction <em>costs</em> are averages, so when you\u2019re coming up with your <em>building</em> budget, you should take care to do your research and get <em>estimates</em> for all the jobs that will need to be done to get your <em>house</em> built.",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost To Build A House? | Rocket Mortgage",
+            "url": "https://www.rocketmortgage.com/learn/how-much-does-it-cost-to-build-a-house"
+        },
+        {
+            "rank": 10,
+            "snippet": "April 30, 2021 -\n            If you\u2019re interested in <em>building</em> <em>a</em> <em>house</em> in Texas, here are some quick tips to give you a ballpark <em>estimate</em> of what you can expect.",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Will It Cost You To Build A House In Texas",
+            "url": "https://www.viprealtyinfo.com/blog/how-much-will-it-cost-you-to-build-a-house-in-texas.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "August 8, 2022 -\n            Before <em>building</em> your new <em>house</em>, you\u2019ll need to obtain all the right permits. On average, HomeAdvisor <em>estimates</em> that people spend $1,200-2,000 on permits when <em>building</em> a home \u2014 but <em>costs</em> can vary widely depending on local regulations.",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost to Build a House in Texas?",
+            "url": "https://listwithclever.com/real-estate-blog/how-much-does-it-cost-to-build-a-house-in-texas/"
+        },
+        {
+            "rank": 12,
+            "snippet": "September 15, 2020 -\n            High-end furnishings, finishes and appliances have high price tags. Because prices can vary greatly, it's important to work with a contractor or <em>house</em> builder near you to figure out an accurate <em>estimate</em> for your new <em>house</em>. Read this guide to learn more about the <em>costs</em> involved in <em>building</em> <em>a</em> <em>house</em>.",
+            "timestamp": 1664320455,
+            "title": "<em></em>2022 Cost to Build a House | Sq Ft and Lot Prices",
+            "url": "https://www.thumbtack.com/p/home-building-cost-by-sqft"
+        },
+        {
+            "rank": 13,
+            "snippet": "October 31, 2018 -\n            How much does it <em>cost</em> <em>to</em> <em>build</em> a home? Find out with Resi-<em>Cost</em> Instant! Our construction <em>estimating</em> software can find the <em>cost</em> per square foot. Click now!",
+            "timestamp": 1664320455,
+            "title": "<em></em>Cost to Build a Home: Home Construction Cost per Square Foot",
+            "url": "https://app.home-cost.com/construction-cost-per-sf.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "1 week ago -\n            The average <em>cost</em> <em>to</em> <em>build</em> <em>a</em> <em>house</em> is just a little over $485,000.1 That <em>estimate</em> is based on a nearly 2,600 square-foot, single-family <em>house</em>. Now before you rush off to the bank, hang on! The <em>cost</em> <em>to</em> <em>build</em> <em>a</em> <em>house</em> is based on changing factors like size, location, labor, materials and current ...",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost to Build a House? | RamseySolutions.com",
+            "url": "https://www.ramseysolutions.com/real-estate/how-much-does-it-cost-to-build-a-house"
+        },
+        {
+            "rank": 15,
+            "snippet": "August 3, 2022 -\n            Clearly, there\u2019s a lot to take into account when deciding whether to <em>build</em> your own home. However, there\u2019s plenty of information out there, including real estate calculators that can give you a more specific <em>estimate</em> <em>of</em> <em>cost</em>-per-square-foot to <em>build</em> in individual zip codes.",
+            "timestamp": 1664320455,
+            "title": "<em></em>Cost to Build a House (2022) - This Old House",
+            "url": "https://www.thisoldhouse.com/home-finances/21722334/cost-to-build-a-house"
+        },
+        {
+            "rank": 16,
+            "snippet": "January 25, 2022 -\n            Once you\u2019ve bought your land, you\u2019ll need to hire professionals to draw up floor plans for the <em>house</em>. You might pay about $2,000 to $8,000 for the plans, which you\u2019ll hand to your builder. They\u2019ll use the plans to give you a \u201c<em>cost</em> <em>to</em> <em>build</em>\u201d <em>estimate</em>.",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost to Build a House in 2022? | Credible",
+            "url": "https://www.credible.com/blog/mortgages/how-much-does-it-cost-to-build-a-house/"
+        },
+        {
+            "rank": 17,
+            "snippet": "1 week ago -\n            The average <em>cost</em> <em>to</em> <em>build</em> <em>a</em> <em>house</em> is just a little over $485,000.1 That <em>estimate</em> is based on a nearly 2,600 square-foot, single-family <em>house</em>. Now before you rush off to the bank, hang on! The <em>cost</em> <em>to</em> <em>build</em> <em>a</em> <em>house</em> is based on changing factors like size, location, labor, materials and current ...",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost to Build a House? | DaveRamsey.com",
+            "url": "https://www.daveramsey.com/blog/how-much-does-it-cost-to-build-a-house"
+        },
+        {
+            "rank": 18,
+            "snippet": "Determine the <em>cost</em> <em>to</em> <em>build</em> your next home \u00b7 Determine the <em>cost</em> <em>to</em> <em>build</em> a Garage",
+            "timestamp": 1664320455,
+            "title": "<em></em>House Cost Estimator | Cost to Build a Home",
+            "url": "https://www.costtobuild.net/"
+        },
+        {
+            "rank": 19,
+            "snippet": "August 25, 2022 -\n            According to HomeAdvisor.com, the ... average <em>cost</em> of $281,220. That works out to about $100 \u2013 $200 per square foot. In 2022, material prices are expected to fluctuate due to higher demand and manufacturing delays. HomeAdvisor also has a calculator to help you <em>estimate</em> home <em>building</em> <em>costs</em> in your ...",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much Does It Cost To Build A House? | Rocket Homes",
+            "url": "https://www.rockethomes.com/blog/home-buying/how-much-does-it-cost-to-build-a-house"
+        },
+        {
+            "rank": 20,
+            "snippet": "April 9, 2022 -\n            To figure out the total <em>cost</em> <em>of</em> <em>building</em> <em>a</em> <em>house</em>, you need to multiply the <em>estimated</em> square footage by the average price per square foot for your area. If we use $125 as the <em>cost</em> per square foot, you will get the figures below.",
+            "timestamp": 1664320455,
+            "title": "<em></em>How Much it Costs to Build a House and the Average Building Costs",
+            "url": "https://thelendersnetwork.com/how-much-does-it-cost-to-build-a-house/"
+        }
+    ],
+    "timestamp": 1664320455,
+    "url": "https://search.brave.com/search?q=house%20building%20cost%20estimate"
+}

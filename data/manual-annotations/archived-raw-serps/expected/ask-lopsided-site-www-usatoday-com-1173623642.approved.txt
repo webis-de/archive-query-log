@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "lopsided site:www.usatoday.com",
+    "offset": null,
+    "page": null,
+    "query": "lopsided site:www.usatoday.com",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Acie Law IV scored 19 points and freshman Donald Sloan added 15 as No. 9 Texas A&amp;M handed Oklahoma State its most <em>lopsided</em> home defeat in ...",
+            "timestamp": 1173623642,
+            "title": "Aggies give Oklahoma State its most <em>lopsided</em> home defeat in nearly ...",
+            "url": "http://www.usatoday.com/sports/college/mensbasketball/games/2007-02-21-aggies-okst_x.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "Canada scored five points in the first end against the Americans on Tuesday and coasted to an 11-5 victory that left the U.S. winless after two ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - Canada skips past U.S. women 11-5",
+            "url": "http://www.usatoday.com/sports/olympics/torino/curling/2006-02-14-us-canada-women_x.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "The Chicago Fire gave up six second-half goals, an MLS record, in Sunday's 6-2 ... Chicago unfazed by <em>lopsided</em> loss in regular-season finale ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - Chicago unfazed by <em>lopsided</em> loss in regular-season ...",
+            "url": "http://www.usatoday.com/sports/soccer/mls/2003-10-29-fire-united_x.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "Traditional pensions are disappearing, and unlike the ivory-billed woodpecker, they probably ... In 401(k)s, watch out for <em>lopsided</em> ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - In 401(k)s, watch out for <em>lopsided</em> portfolios",
+            "url": "http://www.usatoday.com/money/perfi/columnist/block/2005-05-16-401-k_x.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": "When you've stared at a 3-0 playoff deficit against the Yankees, you've earned the ... Red Sox upbeat despite <em>lopsided</em> setback, series ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - Red Sox upbeat despite <em>lopsided</em> setback, series ...",
+            "url": "http://www.usatoday.com/sports/baseball/al/redsox/2005-10-04-bosox-deficit_x.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "Samuel Peter won a unanimous decision over Robert Hawkins in a heavyweight bout ... Thursday recap: Peter wins <em>lopsided</em> bout over Hawkins ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - Thursday recap: Peter wins <em>lopsided</em> bout over Hawkins",
+            "url": "http://www.usatoday.com/sports/boxing/2005-12-16-thursday-roundup_x.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "DeMarcus Chop Chop Corley successfully defended his WBO junior welterweight title, ... Corley cruises to <em>lopsided</em> decision over Bailey ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - Corley cruises to <em>lopsided</em> decision over Bailey",
+            "url": "http://www.usatoday.com/sports/boxing/2003-01-05-corley-bailey_x.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "BALTIMORE 26, TENNESSEE 7 Ravens stifle Titans on way to <em>lopsided</em> victory By David Ginsburg, The Associated Press BALTIMORE \u2014 While the ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - Ravens stifle Titans on way to <em>lopsided</em> victory",
+            "url": "http://www.usatoday.com/sports/nfl/games/2001-10-07-bal-ten.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "Kentucky just wasn't the same without a healthy Keith Bogans.  ... Bogans, Kentucky fall short in <em>lopsided</em> loss to Marquette ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - Bogans, Kentucky fall short in <em>lopsided</em> loss to ...",
+            "url": "http://www.usatoday.com/sports/college/mensbasketball/tourney03/2003-03-29-kentucky-bogans_x.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": "Coming off last year's two compelling seven-game thrillers in the league ... Despite <em>lopsided</em> ALCS, Fox team finds ways to entertain ...",
+            "timestamp": 1173623642,
+            "title": "USATODAY.com - Despite <em>lopsided</em> ALCS, Fox team finds ways to ...",
+            "url": "http://www.usatoday.com/sports/columnist/martzke/2004-10-17-martzke_x.htm"
+        }
+    ],
+    "timestamp": 1173623642,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=0&l=dir&q=lopsided+site:www.usatoday.com"
+}

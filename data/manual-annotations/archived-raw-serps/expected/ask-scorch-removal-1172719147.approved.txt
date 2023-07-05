@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Scorch Removal",
+    "offset": null,
+    "page": null,
+    "query": "Scorch Removal",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "How to remove <em>scorch</em> mark stains from washable fabrics, non washable, carpets and furnishings...",
+            "timestamp": 1172719147,
+            "title": "Stain <em>Removal </em>&gt;<em> Scorch</em> Marks",
+            "url": "http://www.diynot.com/pages/st/st063.php"
+        },
+        {
+            "rank": 2,
+            "snippet": "... that I have at least 6 <em>scorch</em> spots (on the  lightest colored fabric, of course). ... had  mentioned ways to remove <em>scorch</em> marks from ...",
+            "timestamp": 1172719147,
+            "title": "crafts - OT-sort of - <em>Scorch removal</em> help",
+            "url": "http://www.craftbanter.com/q-t_36526-OT-sort-of-Scorch-removal-help.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Scorch</em> marks occur when your iron is too hot for your fabric, or when you leave the ... If the <em>scorch</em> is not too bad, there are a couple of ...",
+            "timestamp": 1172719147,
+            "title": "Household Hints",
+            "url": "http://lonestar.texas.net/~fitch/hints/hints.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "\"<em>Scorch</em> Marks <em>Removal</em> from Clothing\" is one of the many Cleaning tips at LifeTips. Find related Cleaning advice in the \"Stain <em>Removal</em> from ...",
+            "timestamp": 1172719147,
+            "title": "<em>Scorch</em> Marks <em>Removal</em> from Clothing - Stain <em>Removal</em> from Clothes - ...",
+            "url": "http://cleaning.lifetips.com/tip/80933/stain-removal-from-clothes/non-food-stains-and-odors/scorch-marks-removal-from-clothing.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "SewingQA from Sew News Magazine - I accidentally scorched a pair of pants. Can I remove the iron <em>scorch</em> marks?",
+            "timestamp": 1172719147,
+            "title": "Iron <em>Scorch</em> Marks - Sew News Magazine",
+            "url": "http://sewing.about.com/library/sewnews/qa/aaqa0302a.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "... treatment from the Stain <em>Removal</em> Chart using a small amount of the cleansing ... recommended on the Stain <em>Removal</em> Chart) remove excess ...",
+            "timestamp": 1172719147,
+            "title": "Stain <em>Removal</em> Guide",
+            "url": "http://www.woolfurnishings.com/inforoom/stainremoval/infostain.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Rust <em>removal</em> (clothing) Lemon juice + salt + sunlight ... Rusty bolt/nut <em>removal</em> Carbonated beverage ...",
+            "timestamp": 1172719147,
+            "title": "Stain <em>Removal</em>",
+            "url": "http://earthhome.tripod.com/stains.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Scorch</em> Out Removes the <em>scorch</em> look from T-shirts ... <em>Scorch</em> Out  A Liquid for <em>removal</em> of <em>scorch</em> marks from fabric ...",
+            "timestamp": 1172719147,
+            "title": "Ink Out: <em>Scorch</em> out, Degreaser, ink remover, spiff, citrus cleaner, ...",
+            "url": "http://www.ryanrss.com/2ChemicalDisplay.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "The fabric stain <em>removal</em> guide offers you solutions to common fabric stain problems. These are suggestions you can tackle at home.",
+            "timestamp": 1172719147,
+            "title": "Stain <em>Removal</em> Guide ~ <em>Scorch</em> to Wood Sap",
+            "url": "http://www.chemistry.co.nz/_framed/stain_inf6.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": "How to remove stains, stain <em>removal</em> from fabrics, clothes, furntiure and carpets...",
+            "timestamp": 1172719147,
+            "title": "Stain <em>Removal</em>",
+            "url": "http://www.diynot.com/pages/st"
+        }
+    ],
+    "timestamp": 1172719147,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Scorch+Removal"
+}

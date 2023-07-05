@@ -4211,7 +4211,10 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: div.header__content.header__search input#search_form_input
   results_parsers: []
   focused_url_prefixes:
   - /
@@ -4632,8 +4635,50 @@
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: input#js-top-q
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: form#ft input#q, form#ft input[name=q]
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: form#lrform input#q
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: div.PartialSearchBox-container input.PartialSearchBox-input
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: div.PartialSearchBoxRounded-container input.PartialSearchBoxRounded-input
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: div#searchBox input#top_q_comm.ac_input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div.l-web-results div.web-result
+    url_selector: a.sa_headline, h2.web-result-title a, div.web-result-title a
+    title_selector: a.sa_headline, h2.web-result-title, div.web-result-title
+    snippet_selector: div.sa_abstract, p.web-result-description, div.web-result-description  
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div#teoma-results div.pad.pl10.pr10, div#webr div.mb16, div#webr div.m10_0_16
+    url_selector: div[id^=r_t] a
+    title_selector: div[id^=r_t]
+    snippet_selector: div.T1
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div.PartialSearchResults-results div.PartialSearchResults-item
+    url_selector: div.PartialSearchResults-item-title a
+    title_selector: div.PartialSearchResults-item-title
+    snippet_selector: div.PartialSearchResults-item-details
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div#teoma-results div.wresult div.sa
+    url_selector: div.sa_headline_block a
+    title_selector: div.sa_headline_block
+    snippet_selector: div.sa_content_block
   focused_url_prefixes:
   - /web?
 - name: intuit
@@ -14699,8 +14744,17 @@
     type: query_parameter
     parameter: offset
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers: 
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: form#searchform input#searchbox
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#results div.snippet
+    url_selector: a.result-header
+    title_selector: span.snippet-title
+    snippet_selector: div.snippet-content, p.snippet-description, div.text-sm.text-gray, div.description.text-sm
   focused_url_prefixes:
   - /search?
 - name: thenextweb

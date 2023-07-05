@@ -1,0 +1,136 @@
+{
+    "interpreted_query": "bivoks trebehandling",
+    "offset": null,
+    "page": null,
+    "query": "bivoks trebehandling",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "We're sorry but R\u00f8verk\u00f8b.dk doesn't work properly without JavaScript enabled. Please enable it to continue",
+            "timestamp": 1654325149,
+            "title": "Faxe Bivoks flydende 500ml - R\u00f8verk\u00f8b Farvehandel",
+            "url": "https://www.roverkob.dk/faxe-bivoks-flydende-500ml"
+        },
+        {
+            "rank": 2,
+            "snippet": "Pinotex <em>Bivoks</em> til m\u00f8bler anvendes typisk til egetr\u00e6sm\u00f8bler, men kan ogs\u00e5 anvendes til andre ubehandlede, bejdsede eller ludbehandlede tr\u00e6m\u00f8bler. F\u00e5s i Hvid og Natur. Pinotex <em>Bivoks</em> Flydende anvendes til grundbehandling, men bruges ogs\u00e5 til vedligeholdelse af m\u00f8bler, der i forvejen ...",
+            "timestamp": 1654325149,
+            "title": "Bivoks - s\u00e5dan voksbehandler du tr\u00e6m\u00f8bler | Pinotex",
+            "url": "https://www.pinotex.dk/sadan-gor-du/indendors/voksbehandling/"
+        },
+        {
+            "rank": 3,
+            "snippet": "January 8, 2018 -\n            <em>Bivoks</em> - Voks til behandling af indend\u00f8rs m\u00f8bler <em>Bivoks</em> 250ml. 69,00 DKK Flydende <em>bivoks</em> til pleje og grundbehandling af indvendigt tr\u00e6v\u00e6rk som f.eks. m\u00f8bler. Et naturligt produkt til sk\u00e5nsom behandling af ubehandlet tr\u00e6. Tilf\u00f8j til kurv Kategori: Pleje og reng\u00f8ring",
+            "timestamp": 1654325149,
+            "title": "Bivoks - Voks til behandling af indend\u00f8rs m\u00f8bler",
+            "url": "https://malingshoppen.dk/shop/bivoks-250ml/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Vi sender din billige <em>bivoks</em> lige til d\u00f8ren - det er sikkert, billigt nemt og lynhurtigt. Lagervarer leveres inden for 1 til 3 hverdage. Vi har b\u00e5de flydende <em>bivoks</em> og ren <em>bivoks</em> blok i vores sortiment, foruden plader med <em>bivoks</em> i forskellige farver, der er lette at bruge til lynhurtige ...",
+            "timestamp": 1654325149,
+            "title": "Bivoks \u00bb K\u00f8b billig Bivoks til lys, tr\u00e6 og beton",
+            "url": "https://www.grafical.dk/bivoks/"
+        },
+        {
+            "rank": 5,
+            "snippet": "May 16, 2020 -\n            <em>Bivoks</em> er et 100% rent bivoksprodukt tilsat planteolier for at opn\u00e5 sm\u00f8rbarhed. <em>Bivoks</em> beskytter det du holder af, og skaber en perfekt finish. <em>Bivoks</em> beskytter effektivt en lang r\u00e6kke overflader som l\u00e6der, vinyl, tr\u00e6, metal, plastik, gummi og sten. Sm\u00f8r nemt din l\u00e6dertr\u00e5d ind med <em>bivoks</em>, ...",
+            "timestamp": 1654325149,
+            "title": "Bivoks - RensA M\u00f8belpleje",
+            "url": "https://rensogpleje.dk/?product=bivoks"
+        },
+        {
+            "rank": 6,
+            "snippet": "Bruk av bivokslys er helsemessig betre enn parafin- og stearinlys. Han vert ogs\u00e5 brukt til impregnering av l\u00e6r og treverk. <em>Bivoksen</em> vert selt i muffins-st\u00f8rrelse \u00e0 50 g. <em>Bivoks</em> er eit fast feittstoff som smeltar ved 61-65 grader. <em>Bivoks</em> harsknar ikkje som anna feittstoff, og det vert difor ...",
+            "timestamp": 1654325149,
+            "title": "Bivoks \u00f8kologisk | Salome",
+            "url": "https://salome.no/products/okologisk-bivoks"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Bivoks</em> balsam anvendes til at voksbehandle ubehandlede, bejdsede eller ludbehandlede tr\u00e6m\u00f8bler og andet inventar uanset tr\u00e6sort. Voksbehandlingen hj\u00e6lper tr\u00e6m\u00f8blerne med at afvise smuds, og den fremh\u00e6ver samtidig tr\u00e6ets naturlige \u00e5rer og gl\u00f8d. Voksen er",
+            "timestamp": 1654325149,
+            "title": "Trip Trap bivoks balsam 250 ml | BAUHAUS",
+            "url": "https://www.bauhaus.dk/trip-trap-bivoks-balsam-250-ml"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Bivoks</em> Balsam anbefales til voksbehandling af ubehandlede, bejdsede eller ludbehandlede tr\u00e6m\u00f8bler og andet inventar, uanset tr\u00e6sort.",
+            "timestamp": 1654325149,
+            "title": "Bivoks Balsam",
+            "url": "https://www.triptrapwoodcare.dk/shop/product/bivoks-balsam"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Bivoks</em> Balsam anbefales til voksbehandling af ubehandlede, bejdsede eller ludbehandlede tr\u00e6m\u00f8bler og andet inventar, uanset tr\u00e6sort. Voksbehandlingen g\u00f8r tr\u00e6et modstandsdygtigt overfor tilsmudsning og fremh\u00e6ver tr\u00e6ets \u00e5rer og gl\u00f8d. <em>Bivoks</em> Balsam indeholder ingen opl\u00f8sningsmiddel.",
+            "timestamp": 1654325149,
+            "title": "TRIP TRAP Bivoks balsam - K\u00f8b Tr\u00e6pleje &amp; grundbehandling online ...",
+            "url": "https://www.silvan.dk/trip-trap-bivoks-balsam-250-ml?id=2862-5886083"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Bivoks</em> fremstillet af naturprodukter. Kan anvendes til at voksebehandle fyr, gran, ask, b\u00f8g, eg. mahogni, teak, ludbehandlet og olieret tr\u00e6. Produktet tilf\u00f8rer tr\u00e6et n\u00e6ring og en dybere gl\u00f8d, og beskytter ogs\u00e5 mod udt\u00f8rring. Genveje: Specifikationer Inspirationsbrochure Produktbeskrivelse ...",
+            "timestamp": 1654325149,
+            "title": "Bivoks",
+            "url": "https://mobler.dk/produkt/bivoks"
+        },
+        {
+            "rank": 11,
+            "snippet": "Sidst, men ikke mindst, har <em>bivoks</em> faktisk ogs\u00e5 en naturligt antibakteriel virkning. F\u00e5 p\u00e6ne tr\u00e6overflader med <em>bivoks</em> <em>Bivoks</em> kan ogs\u00e5 bruges til behandling af tr\u00e6 overflader, og derfor tilbyder vi naturligvis ogs\u00e5 milj\u00f8venligt <em>bivoks</em> til tr\u00e6. Det er s\u00e6rdeles brugervenligt, idet du blot skal gnide bivoksen ind i tr\u00e6et med en t\u00f8r klud.",
+            "timestamp": 1654325149,
+            "title": "K\u00f8b Bivoks til alle form\u00e5l 100% Naturlig Voks fra Bier - Hedenhus",
+            "url": "https://hedenhus.dk/shop-forside/14-bivoks/"
+        },
+        {
+            "rank": 12,
+            "snippet": "<em>Bivoks</em> Balsam anbefales til voksbehandling af ubehandlede, bejdsede eller ludbehandlede tr\u00e6m\u00f8bler og andet inventar, uanset tr\u00e6sort.",
+            "timestamp": 1654325149,
+            "title": "Trip Trap Bivoks Balsam",
+            "url": "https://www.triptrapwoodcare.dk/shop/product/trip-trap-bivoks-balsam"
+        },
+        {
+            "rank": 13,
+            "snippet": "Se her hvordan du bedst opfrisker og vedligeholder til ubehandlede tr\u00e6v\u00e6rk.",
+            "timestamp": 1654325149,
+            "title": "S\u00e5dan bruger du Tr\u00e6 Voks - YouTube",
+            "url": "https://www.youtube.com/watch?v=VOnrpMaXHBU"
+        },
+        {
+            "rank": 14,
+            "snippet": "Tibberup H\u00f8kerens Linolievoks\u00a9 er ideel til efterbehandling af malede flader f.eks. m\u00f8bler, der har f\u00e5et et mat og \u2018tr\u00e6t\u2019 udseende og derfor tr\u00e6nger til \u2018lidt vitaminer\u2019 og en genopfriskning. Normalt er der ingen vej tilbage, n\u00e5r man har behandlet en overflade med <em>bivoks</em>.",
+            "timestamp": 1654325149,
+            "title": "Bivoks - hvordan og hvad kan det bruges til? - Tibberup H\u00f8keren",
+            "url": "https://tibberuphoekeren.dk/blog/bivoks/"
+        },
+        {
+            "rank": 15,
+            "snippet": "Overfladebehandling af tr\u00e6plader er en stor del af en tr\u00e6plade. Se her hvordan en tr\u00e6plade kommer til at se ud med forskellige overfladebehandlinger.",
+            "timestamp": 1654325149,
+            "title": "Overfladebehandling af tr\u00e6plader med olie, tr\u00e6s\u00e6be og voks",
+            "url": "https://mifapladen.dk/overfladebehandling-trae"
+        },
+        {
+            "rank": 16,
+            "snippet": "I denne video viser Natacha, hvordan du kan forvandle dit t\u00f8rre og kedelige sk\u00e6rebr\u00e6t. Det eneste du skal bruge er <em>Bivoks</em> til tr\u00e6 fra Hedenhus og et sk\u00e6rebr\u00e6...",
+            "timestamp": 1654325149,
+            "title": "Bivoks til tr\u00e6 fra Hedenhus - Nemt og naturlig pleje til tr\u00e6 - YouTube",
+            "url": "https://www.youtube.com/watch?v=2cege1Gqy4E"
+        },
+        {
+            "rank": 17,
+            "snippet": "July 12, 2020 -\n            Linolievoks er perfekt til efterbehandling af malede eller olieret overflader. Linolien i voksen g\u00f8r at den er nem at sm\u00f8re p\u00e5 m\u00f8bler og ander overflader",
+            "timestamp": 1654325149,
+            "title": "Linolievoks er perfekt til overfladebehanding af m\u00f8bler, nem at ...",
+            "url": "https://tibberuphoekeren.dk/webshop/olie-tjaere-vaerk-lak-lim-voks/lak-lim-voks/linolievoks/"
+        },
+        {
+            "rank": 18,
+            "snippet": "Beskyt dine tr\u00e6m\u00f8bler med Bivoks Balsam Vil du gerne sikre dig, at dine tr\u00e6m\u00f8bler og andet inventar er naturligt beskyttet og modstandsdygtigt overfor tilsmudsning? S\u00e5 kan Bivoks Balsam anbefales til brug til voksbehandling af ubehandlede, bejdsede eller ludbehandlede tr\u00e6m\u00f8bler \u2013 uanset tr\u00e6sort. Bivoksen vil ogs\u00e5 sikre, at tr\u00e6et f\u00e5r fremh\u00e6vet sine \u00e5rer og dets smukke gl\u00f8d. Bivoks Balsam fra Trip Trap indeholder ingen opl\u00f8sningsmidler.  P\u00e5f\u00f8ring af Bivoks Balsam  Inden du begynder p\u00e5f\u00f8ring af bivoks Balsam, skal tr\u00e6et v\u00e6re helt rent og t\u00f8rt. Du p\u00e5f\u00f8rer Bivoks Balsam i et tyndt og ensartet lag m",
+            "timestamp": 1654325149,
+            "title": "Trip Trap, Bivoks Balsam, Natur, 0,25 L - K\u00f8b Tr\u00e6pleje ... - SILVAN",
+            "url": "https://www.silvan.dk/trip-trap-bivoks-balsam?id=2862-5886083"
+        }
+    ],
+    "timestamp": 1654325149,
+    "url": "https://search.brave.com/search?q=bivoks+trebehandling"
+}

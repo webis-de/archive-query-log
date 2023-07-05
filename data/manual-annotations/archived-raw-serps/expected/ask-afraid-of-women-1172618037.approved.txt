@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Afraid of Women",
+    "offset": null,
+    "page": null,
+    "query": "Afraid of Women",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Reasons why a single guy shouldn't be <em>afraid of women ... Women</em> need men - heterosexual <em>women</em> anyways ...",
+            "timestamp": 1172618037,
+            "title": "Reasons why a single guy shouldn't be <em>afraid of women</em>",
+            "url": "http://www.alovelinksplus.com/advice/afraid_of_women.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Women</em> clergy in Virginia receive from $1,475 to $10,164 less than male clergy.  (2) What\u2019s going on?  Are men <em>afraid of women</em>, and the ...",
+            "timestamp": 1172618037,
+            "title": "Are Men <em>Afraid Of Women</em>",
+            "url": "http://members.tripod.com/mzlaura/Sermon94/7-31-94.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Women Afraid</em> to Eat:  Breaking Free in Today's Weight-Obsessed World   This book empowers all <em>women</em> to cope with today's weight obsession.",
+            "timestamp": 1172618037,
+            "title": "Healthy Weight Network",
+            "url": "http://www.healthyweight.net/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Beautiful <em>women</em>- Meeting <em>women</em>...",
+            "timestamp": 1172618037,
+            "title": "AskMen.com - Beautiful <em>women</em>",
+            "url": "http://askmen.com/dating/curtsmith/57_dating_advice.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "... lot of <em>women</em> feel that men are clamoring to get ahead of them, but on the other hand, I know that a lot of men are <em>afraid</em> that <em>women</em> will ...",
+            "timestamp": 1172618037,
+            "title": "Instapundit.com -",
+            "url": "http://instapundit.com/archives/021742.php"
+        },
+        {
+            "rank": 6,
+            "snippet": "Mac Geek Gab Podcast: Learn the difference between 32 and 64 bit in the Core 2 Duo, and why it matters!",
+            "timestamp": 1172618037,
+            "title": "MW Tokyo Round Up - The Coolest FireWire Hub Ever, The Godzilla Hub ...",
+            "url": "http://www.macobserver.com/exporeport/2002/03/25.2.shtml"
+        },
+        {
+            "rank": 7,
+            "snippet": "Who's <em>Afraid of Women</em>'s Equality? ... You are here: About&gt;News &amp; Issues&gt;<em>Women</em>'s Issues ... <em>Women</em>'s HistorySingle ParentsChild CareWomen's ...",
+            "timestamp": 1172618037,
+            "title": "Who's <em>Afraid of Women</em>'s Equality?",
+            "url": "http://womensissues.about.com/b/a/257381.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "Copyright \u00a9 2003  Ryan S. Kaluzny    \"You mean you don't know who she is?\"   \"Not really.",
+            "timestamp": 1172618037,
+            "title": "&amp; Guest (And I Will Not be <em>Afraid of Women</em>) A Novel By Ryan S. ...",
+            "url": "http://www.ryankaluzny.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "What Islamic terrorists are really <em>afraid</em> of is <em>women</em>  ... You may not believe it, but the Turks gave <em>women</em> the vote before the British did.",
+            "timestamp": 1172618037,
+            "title": "WHAT ISLAMIC TERRORISTS ARE REALLY <em>AFRAID</em> OF IS <em>WOMEN</em>",
+            "url": "http://www.papillonsartpalace.com/whatI.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": "... emotions to cause ourselves to FAIL with <em>women</em> rather than SUCCEED with <em>women</em>. ... Fear of <em>women</em> can actually become a HABIT that leads ...",
+            "timestamp": 1172618037,
+            "title": "Are you <em>afraid</em> of approaching <em>women</em>?",
+            "url": "http://www.bullz-eye.com/relationships/double_your_dating/2006/020206.htm"
+        }
+    ],
+    "timestamp": 1172618037,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Afraid+of+Women"
+}

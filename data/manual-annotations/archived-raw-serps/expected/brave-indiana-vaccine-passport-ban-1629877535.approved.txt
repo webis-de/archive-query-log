@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Indiana vaccine passport ban",
+    "offset": null,
+    "page": null,
+    "query": "Indiana vaccine passport ban",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "1 week ago -\n            <em>Vaccine</em> <em>passport</em> policies &amp; requirements for attending technology conferences worldwide. Legislation &amp; debates across the United States, Europe, Asia &amp; more.",
+            "timestamp": 1629877535,
+            "title": "Vaccine Passport Policies and Technology Conferences: United States, ...",
+            "url": "https://www.channele2e.com/news/covid-19-vaccine-passports-status-updates/"
+        },
+        {
+            "rank": 2,
+            "snippet": "2 weeks ago -\n            \u2191 Idaho State Journal, \"Idaho governor <em>bans</em> mandated COVID-19 \u2018<em>vaccine</em> <em>passports</em>\u2019,\" April 8, 2021 \u00b7 \u2191 The Center Square, \"<em>Indiana</em>, local governments cannot require <em>vaccine</em> <em>passports</em>,\" April 26, 2021",
+            "timestamp": 1629877535,
+            "title": "State government policies about vaccine requirements (vaccine ...",
+            "url": "https://ballotpedia.org/State_government_policies_about_proof-of-vaccination_(vaccine_passport)_requirements"
+        },
+        {
+            "rank": 3,
+            "snippet": "3 weeks ago -\n            As the nation continues its COVID-19 <em>vaccination</em> rollout, discussion over the potential use of digital proof of coronavirus <em>vaccination</em>, known as \"<em>vaccine</em> <em>passports</em>,\" has left many concerned about their health privacy.",
+            "timestamp": 1629877535,
+            "title": "Vaccine passports: 50 states with bans, limitations &amp; green lights",
+            "url": "https://www.beckershospitalreview.com/digital-transformation/vaccine-passports-10-states-with-bans-limitations-green-lights.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "3 weeks ago -\n            <em>Indiana</em>: Lawmakers passed a <em>ban</em> <em>on</em> <em>vaccine</em> <em>passports</em> on April 22. The legislation, HB 1405, forbids the state or local governments from issuing or requiring the documents. (Source: WFYI Indianapolis)",
+            "timestamp": 1629877535,
+            "title": "Your guide to what's happening with vaccine passports in the US ...",
+            "url": "https://www.technologyreview.com/2021/07/01/1027768/us-vaccine-passport-guide/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Jun 22, 2021 -\n            Editor\u2019s note: This is a recurring post, regularly updated with new information and offers.",
+            "timestamp": 1629877535,
+            "title": "Some states are rolling out vaccine passports \u2014 here's what you ...",
+            "url": "https://thepointsguy.com/guide/state-vaccine-passports/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Jun 05, 2021 -\n            US News ranks the Best States. See rankings, charts, data, news and analysis that list the best states based on 71 metrics in health, economy and more.",
+            "timestamp": 1629877535,
+            "title": "Which States Have Banned Vaccine Passports? - USNews.com",
+            "url": "https://www.usnews.com/news/best-states/articles/which-states-have-banned-vaccine-passports"
+        },
+        {
+            "rank": 7,
+            "snippet": "Jun 04, 2021 -\n            Several states have <em>banned</em> the use of <em>vaccine</em> <em>passports</em> and several more are considering such <em>bans</em> stating that it is a person\u2019s choice to get <em>vaccinated</em>.",
+            "timestamp": 1629877535,
+            "title": "Which states are banning vaccine passports and why? - AS.com",
+            "url": "https://en.as.com/en/2021/06/03/latest_news/1622756193_791208.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "May 25, 2021 -\n            Sorry, this content is not available in your region",
+            "timestamp": 1629877535,
+            "title": "Indiana vaccine passport law - FOX59.com",
+            "url": "https://fox59.com/indianapolitics/what-does-indianas-new-vaccine-passport-law-do/"
+        },
+        {
+            "rank": 9,
+            "snippet": "May 25, 2021 -",
+            "timestamp": 1629877535,
+            "title": "What does Indiana's new vaccine passport law do? | WGN-TV",
+            "url": "https://wgntv.com/news/what-does-indianas-new-vaccine-passport-law-do/"
+        },
+        {
+            "rank": 10,
+            "snippet": "May 24, 2021 -\n            Rain and storms likely. Some strong to severe \u00b7 Rain. Thunder possible. Low 54F. Winds WSW at 10 to 20 mph. Chance of rain 90%",
+            "timestamp": 1629877535,
+            "title": "Lawmakers say Indiana's ban on government vaccine ...",
+            "url": "https://www.wdrb.com/news/lawmakers-say-indianas-ban-on-government-vaccine-passports-does-not-apply-to-universities-businesses/article_ddcb37a6-bcdd-11eb-9406-733eaac0d245.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "May 21, 2021 -\n            Governor Kim Reynolds has signed a bill into law that will prevent the use of \"<em>vaccine</em> <em>passports</em>\" for proof of COVID-19 <em>vaccination</em>, something she has pushed for since April.",
+            "timestamp": 1629877535,
+            "title": "Gov. Reynolds signs bill banning vaccine passports in Iowa",
+            "url": "https://kwwl.com/2021/05/20/gov-reynolds-signs-bill-banning-vaccine-passports-in-iowa/"
+        },
+        {
+            "rank": 12,
+            "snippet": "Republicans across the country portray them as a heavy-handed intrusion into personal freedom and private health choices.",
+            "timestamp": 1629877535,
+            "title": "Indiana bill approved to ban government vaccine passports - Chicago ...",
+            "url": "https://www.chicagotribune.com/suburbs/post-tribune/ct-ptb-indiana-vaccine-passport-st-0423-20210422-24f3crcurjcedaz2ox32mu4nky-story.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "May 13, 2021 -\n            The state of <em>Indiana</em> has already passed a law <em>banning</em> the government from mandating <em>vaccine</em> <em>passports</em>.",
+            "timestamp": 1629877535,
+            "title": "Kentucky lawmaker takes steps to ban vaccine passports",
+            "url": "https://www.wave3.com/2021/05/13/kentucky-lawmaker-takes-steps-ban-vaccine-passports/"
+        },
+        {
+            "rank": 14,
+            "snippet": "State or local governments in <em>Indiana</em> will be prohibited from issuing or requiring COVID-19 <em>vaccine</em> <em>passports</em> under a bill approved by state lawmakers.",
+            "timestamp": 1629877535,
+            "title": "Indiana bill approved to ban government vaccine passports",
+            "url": "https://www.wlfi.com/content/news/Indiana-bill-approved-to-ban-government-vaccine-passports-574264301.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "May 05, 2021 -\n            US News ranks the Best States. See rankings, charts, data, news and analysis that list the best states based on 71 metrics in health, economy and more.",
+            "timestamp": 1629877535,
+            "title": "These States Are Banning COVID-19 Vaccine Requirements",
+            "url": "https://www.usnews.com/news/best-states/articles/2021-04-30/these-states-are-banning-covid-19-vaccine-requirements"
+        },
+        {
+            "rank": 16,
+            "snippet": "May 03, 2021 -\n            No groups representing businesses or local governments have publicly come out in opposition to the bill yet or indicated they plan to challenge it. But the idea of <em>vaccine</em> <em>passports</em>, or a <em>ban</em> on them, does present legal questions, said Mark Kende, a Drake University law professor and director ...",
+            "timestamp": 1629877535,
+            "title": "How would Iowa's proposed ban on 'vaccine passports' work? We broke ...",
+            "url": "https://eu.desmoinesregister.com/story/news/politics/2021/05/03/covid-19-iowa-coronavirus-shot-vaccine-passports-ban-bill-why-kim-reynolds-pat-grassley/4853989001/"
+        },
+        {
+            "rank": 17,
+            "snippet": "May 02, 2021 -\n            Six states, all led by Republican governors, have <em>banned</em> covid-19 <em>vaccine</em> <em>passports</em>. Three (Florida, Texas, and Montana) even prevent private businesses from requiring proof of <em>vaccination</em>. <em>These</em> <em>bans</em> may be politically advantageous for Republicans catering to a base angered by mask mandates ...",
+            "timestamp": 1629877535,
+            "title": "Republicans want to ban businesses from requiring proof of ...",
+            "url": "https://www.economist.com/united-states/2021/05/01/republicans-want-to-ban-businesses-from-requiring-proof-of-vaccination"
+        },
+        {
+            "rank": 18,
+            "snippet": "Apr 29, 2021 -\n            With a key lawmaker saying he recognizes that <em>vaccine</em> hesitancy is \u201creal and understandable,\u201d the Florida House on Wednesday approved a measure that would limit local emergency orders and make permanent Gov. Ron DeSantis\u2019 executive order barring COVID-19 <em>vaccine</em> \u201c<em>passports</em>.\u201d",
+            "timestamp": 1629877535,
+            "title": "Vaccine 'passport' ban clears Florida House - WWSB",
+            "url": "https://www.mysuncoast.com/2021/04/28/vaccine-passport-ban-clears-florida-house/"
+        },
+        {
+            "rank": 19,
+            "snippet": "Apr 29, 2021 -\n            The Florida House on Wednesday approved a measure that would limit local emergency orders and make permanent Gov. Ron DeSantis\u2019 executive order barring COVID-19 <em>vaccine</em> \u201c<em>passports</em>.\u201d",
+            "timestamp": 1629877535,
+            "title": "Florida House passes bill to permanently ban COVID-19 'vaccine ...",
+            "url": "https://www.fox13news.com/news/florida-house-passes-bill-to-permanently-ban-covid-19-vaccine-passports"
+        },
+        {
+            "rank": 20,
+            "snippet": "Apr 24, 2021 -\n            State or local governments in <em>Indiana</em> will be prohibited from issuing or requiring COVID-19 <em>vaccine</em> <em>passports</em> under a bill approved by state lawmakers.",
+            "timestamp": 1629877535,
+            "title": "Indiana Bill Approved to Ban Government Vaccine Passports \u2013 NBC ...",
+            "url": "https://www.nbcchicago.com/news/coronavirus/indiana-bill-approved-to-ban-government-vaccine-passports/2493837/"
+        }
+    ],
+    "timestamp": 1629877535,
+    "url": "https://search.brave.com/search?q=Indiana+vaccine+passport+ban"
+}

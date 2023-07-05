@@ -1,0 +1,143 @@
+{
+    "interpreted_query": "67 degrees C static atmosphere",
+    "offset": null,
+    "page": null,
+    "query": "67 degrees C static atmosphere",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "How hot is <em>67</em> <em>degrees</em> Celsius? How cold? Convert between Fahrenheit and Celsius. More temperatures starting with <em>67</em> <em>degrees</em> in Celsius Note: results are rounded. <em>67</em>.00 \u00b0<em>C</em> = 152.60 \u00b0F: <em>67</em>.30 \u00b0<em>C</em> = 153.14 \u00b0F: <em>67</em>.60 \u00b0<em>C</em> = 153.68 \u00b0F: <em>67</em>.90 \u00b0<em>C</em> = 154.22 \u00b0F: <em>67</em>.01 \u00b0<em>C</em> = 152.62 \u00b0F:",
+            "timestamp": 1665006071,
+            "title": "<em></em>Convert 67 Celsius to Fahrenheit",
+            "url": "https://www.dollartimes.com/calculate/temperature/c/67"
+        },
+        {
+            "rank": 2,
+            "snippet": "August 8, 2022 -\n            <em>Atmospheric</em> temperature is a measure of temperature at different levels of the Earth's <em>atmosphere</em>.It is governed by many factors, including incoming solar radiation, humidity and altitude.When discussing surface air temperature, the annual <em>atmospheric</em> temperature range at any geographical location ...",
+            "timestamp": 1665006071,
+            "title": "<em></em>Atmospheric temperature - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Atmospheric_temperature"
+        },
+        {
+            "rank": 3,
+            "snippet": "You can always figure out the conversion by considering how the two scales meet up at the freezing temperature of water, i.e. 0 <em>degrees</em> <em>C</em> and 32 <em>degrees</em> F and the boiling point of water, i.e. 100 deg. <em>C</em> and 212 deg. F. There is a linear relationship between the two temperature scales.",
+            "timestamp": 1665006071,
+            "title": "<em></em>What is 67 degrees celsius converted into Fahrenheit? - Answers",
+            "url": "https://math.answers.com/Q/What_is_67_degrees_celsius_converted_into_Fahrenheit"
+        },
+        {
+            "rank": 4,
+            "snippet": "How many <em>degrees</em> Celsius is <em>67</em> <em>degrees</em> Fahrenheit? Convert <em>67</em> F to <em>C</em> and F to <em>C</em> with this calculator. How many Celsius? How much in Fahrenheit? How hot is it? How cold? What's the conversion? What's the amount? 67F = 19.44C: <em>67</em>.01F = 19.45C: <em>67</em>.02F = 19.46C: <em>67</em>.03F = 19.46C ...",
+            "timestamp": 1665006071,
+            "title": "<em></em>Convert 67 Degrees Fahrenheit to Celsius - Metric Temperature ...",
+            "url": "https://www.carinsurancedata.org/calculators/fahrenheit/67"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>67</em> <em>degrees</em> Fahrenheit = 19.44 <em>degrees</em> Celsius Use this calculator to convert <em>67</em>\u00b0f to Celsius. How many <em>degrees</em> Celsius in <em>67</em>\u00b0<em>f</em>? <em>67</em>\u00b0f to <em>degrees</em> Celsius is 19.44\u00b0<em>c</em>. How hot is <em>67</em>\u00b0f in Celsius? How cold? Type the information into the input boxes and the <em>degrees</em> in Celsius will update ...",
+            "timestamp": 1665006071,
+            "title": "<em></em>67 degrees Fahrenheit to Celsius - Temperature Conversion - ...",
+            "url": "https://www.vacations.info/metric/f-to-c.php?f=67"
+        },
+        {
+            "rank": 6,
+            "snippet": "July 18, 2022 -\n            You can discuss your specific skin or hair condition at our clinic. We will provide you customised solution specifically for you. Call 778-929-5580 and 778-917-7839",
+            "timestamp": 1665006071,
+            "title": "<em></em>Conditions - 67 Degrees Cosmetic Clinic",
+            "url": "https://67degrees.com/conditions/"
+        },
+        {
+            "rank": 7,
+            "snippet": "The F to <em>C</em> formula is (F \u2212 32) \u00d7 5/9 = <em>C</em>. When we enter <em>67</em> for F in the formula, we get (<em>67</em> \u2212 32) \u00d7 5/9 = <em>C</em>. To solve (<em>67</em> \u2212 32) \u00d7 5/9, we first subtract 32 from <em>67</em>, then we multiply the difference by 5, and then finally we divide the product by 9 to get the answer.",
+            "timestamp": 1665006071,
+            "title": "<em></em>67 F to C (67 Fahrenheit to Celsius)",
+            "url": "https://convertermaniacs.com/fahrenheit-to-celsius/67-f-to-c.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "May 18, 2021 -\n            How to Convert <em>67</em> F to <em>C</em> (Fahrenheit to Celsius) The general equation to convert F to <em>C</em> is to subtract F by 32 and then divide by 1.8 (or 9/5). Alternately you can subtract F by 32 and then multiply by 5/9 to also get <em>C</em>. F to <em>C</em> calculation: Conversion factor: 1 F to <em>C</em>.",
+            "timestamp": 1665006071,
+            "title": "<em></em>67 F to C Conversion Calculator (Fahrenheit to Celsius)",
+            "url": "https://www.fiscalflamingo.com/67-f-to-c-conversion/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Here we will show you how to convert <em>67</em> <em>C</em> to F so you know how hot or cold <em>67</em> <em>degrees</em> Celsius is in Fahrenheit. The <em>C</em> to F formula is (<em>C</em> \u00d7 9/5) + 32 = F. When we enter <em>67</em> <em>for</em> <em>C</em> in the formula, we get (<em>67</em> \u00d7 9/5) + 32 = F. To solve (<em>67</em> \u00d7 9/5) + 32 = F, we first multiply 9 by <em>67</em>, then we divide ...",
+            "timestamp": 1665006071,
+            "title": "<em></em>67 C to F (67 Celsius to Fahrenheit)",
+            "url": "https://convertermaniacs.com/celsius-to-fahrenheit/67-c-to-f.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "How many <em>degrees</em> Fahrenheit is -<em>67</em> <em>degrees</em> Celsius? Convert -<em>67</em> <em>C</em> to F and F to <em>C</em> with this calculator. How many Celsius? How much in Fahrenheit? How hot is it? How cold? What's the conversion? What's the amount? Temperature Table-67C = -88.6F -66.99C = -88.582F-66.98C = -88.564F ...",
+            "timestamp": 1665006071,
+            "title": "<em></em>Convert -67 Degrees Celsius to Fahrenheit - Metric Temperature ...",
+            "url": "https://www.carinsurancedata.org/calculators/celsius/-67"
+        },
+        {
+            "rank": 11,
+            "snippet": "August 4, 2022 -\n            For the calculator method, the reader needs to know the formula for converting Fahrenheit to Celsius, which is <em>C</em> = (F \u2013 32) / 1.8. Plugging in <em>67</em> for F and solving, the answer is 19.44444 Celsius. For the online converter method, the reader simply needs to go to Google and type in \u201c<em>67</em> <em>degrees</em> ...",
+            "timestamp": 1665006071,
+            "title": "<em></em>67 Degrees Fahrenheit To Celsius",
+            "url": "https://flixexpo.net/67-degrees-fahrenheit-to-celsius/"
+        },
+        {
+            "rank": 12,
+            "snippet": "March 20, 2022 -\n            Calculate the saturation vapor pressure at given temperature T using the formula p\u2081 = 6.1078 * 10^ [7.5*T / (T + 237.3)], where T is measured in <em>degrees</em> Celsius. Saturation vapor pressure is the vapor pressure at 100% relative humidity (our calculator uses a more accurate, but also way more ...",
+            "timestamp": 1665006071,
+            "title": "<em></em>Air Density Calculator | What is Air's Density?",
+            "url": "https://www.omnicalculator.com/physics/air-density"
+        },
+        {
+            "rank": 13,
+            "snippet": "The calculator below can be used to calculate the air thermal conductivity at given temperatures and pressure. The output conductivity is given as mW/ (m K), Btu (IT)/ (h ft \u00b0F) and kcal (IT)/ (h m K). Temperature. Choose the actual unit of temperature: \u00b0<em>C</em> \u00b0F K \u00b0R.",
+            "timestamp": 1665006071,
+            "title": "<em></em>Air - Thermal Conductivity vs. Temperature and Pressure",
+            "url": "https://www.engineeringtoolbox.com/air-properties-viscosity-conductivity-heat-capacity-d_1509.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "TH-<em>67</em> Physics and <em>atmosphere</em> - flight support academics. STUDY. Flashcards. Learn. Write. Spell. Test. PLAY. Match. Gravity. Created by. sf49ersnwbrdr. ... 29.92\" what is standard sea level temperature in <em>degrees</em> Celsius. 15 <em>C</em>. what is the standard temperature lapse rate with altitude.",
+            "timestamp": 1665006071,
+            "title": "<em></em>TH-67 Physics and atmosphere - flight support academics",
+            "url": "https://quizlet.com/34896501/th-67-physics-and-atmosphere-flight-support-academics-flash-cards/"
+        },
+        {
+            "rank": 15,
+            "snippet": "What is dew point? Dew point is defined as the temperature at which a given volume of air at a certain <em>atmospheric</em> pressure is saturated with water vapor, causing condensation and the formation of dew. Dew is the condensed water that a person often sees on flowers and grass early in the morning.",
+            "timestamp": 1665006071,
+            "title": "<em></em>Dew Point Calculator",
+            "url": "https://www.calculator.net/dew-point-calculator.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "June 18, 2019 -\n            How to convert <em>67</em> Fahrenheit to Celsius. 0 <em>degrees</em> Fahrenheit is equal to -17.77778 <em>degrees</em> Celsius: 0 \u00b0F = -17.77778 \u00b0<em>C</em>. The temperature T in <em>degrees</em> Celsius (\u00b0<em>C</em>) is equal to <em>67</em> <em>degrees</em> Fahrenheit (\u00b0F) minus 32, times 5/9. To convert <em>67</em> Fahrenheit to Celsius we can use the formula below: ...",
+            "timestamp": 1665006071,
+            "title": "<em></em>67 Fahrenheit to Celsius | 67 \u00b0F to \u00b0C - Convertilo",
+            "url": "https://convertilo.com/67-fahrenheit-to-celsius"
+        },
+        {
+            "rank": 17,
+            "snippet": "Free convection; vertical plate in air with 30\u00b0<em>C</em> temperature difference : 5 . Boiling Water: 3.000 to 100.000 . Water fowing in tubes : 500 to 1200 : Condensing Water Vapor: 5.0 - 100.0: Water in free convection : 100 to 1200 . Oil in free convection : 50 to 350 .",
+            "timestamp": 1665006071,
+            "title": "<em></em>Convective Heat Transfer Coefficients Table Chart",
+            "url": "https://www.engineersedge.com/heat_transfer/convective_heat_transfer_coefficients__13378.htm"
+        },
+        {
+            "rank": 18,
+            "snippet": "April 6, 2022 -\n            With this vapor pressure of water calculator, you can find the vapor pressure at a particular temperature according to five different formulas. This calculator does not only work for standard 0-100 \u00b0<em>C</em> range but also for temperatures above 100 \u00b0<em>C</em> and below the freezing point. Awesome!",
+            "timestamp": 1665006071,
+            "title": "<em></em>Vapor Pressure of Water. Calculator | Definition | Formulas",
+            "url": "https://www.omnicalculator.com/chemistry/vapour-pressure-of-water"
+        },
+        {
+            "rank": 19,
+            "snippet": "How to convert <em>67</em>.8 celsius to fahrenheit. What is the formula to convert <em>67</em>.8 from \u00b0<em>C</em> to \u00b0F? How many <em>degrees</em> Fahrenheit are in <em>67</em>.8 Celsius?",
+            "timestamp": 1665006071,
+            "title": "<em></em>67.8 celsius to fahrenheit. Convert 67.8 celsius to fahrenheit",
+            "url": "https://convertsumo.com/67-8-celsius-to-fahrenheit/"
+        }
+    ],
+    "timestamp": 1665006071,
+    "url": "https://search.brave.com/search?q=67%20degrees%20C%20static%20atmosphere"
+}

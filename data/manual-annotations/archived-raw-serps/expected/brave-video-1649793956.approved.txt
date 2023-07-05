@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Video",
+    "offset": null,
+    "page": null,
+    "query": "Video",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "2 days ago -\n            Enjoy the <em>videos</em> and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+            "timestamp": 1649793956,
+            "title": "YouTube",
+            "url": "https://www.youtube.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Search the world's information, including webpages, images, <em>videos</em> and more. Google has many special features to help you find exactly what you're looking for.",
+            "timestamp": 1649793956,
+            "title": "Google Video",
+            "url": "https://video.google.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "3 days ago -\n            <em>Video</em> is an electronic medium for the recording, copying, playback, broadcasting, and display of moving visual media. <em>Video</em> was first developed for mechanical television systems, which were quickly replaced by cathode-ray tube (CRT) systems which were later replaced by flat panel displays of ...",
+            "timestamp": 1649793956,
+            "title": "Video - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Video"
+        },
+        {
+            "rank": 4,
+            "snippet": "1 week ago -\n            Watch breaking news <em>videos</em>, viral <em>videos</em> and original <em>video</em> clips on CNN.com.",
+            "timestamp": 1649793956,
+            "title": "Video News - CNN",
+            "url": "https://www.cnn.com/videos"
+        },
+        {
+            "rank": 5,
+            "snippet": "2 weeks ago -\n            These features are only available to partners who use YouTube Studio Content Manager. When you\u2019re watching a <em>video</em> that contains music, there may be a section in the <em>video</em>\u2019s description",
+            "timestamp": 1649793956,
+            "title": "Music in this video - YouTube Help",
+            "url": "https://support.google.com/youtube/answer/7680188?hl=en"
+        },
+        {
+            "rank": 6,
+            "snippet": "18 hours ago -\n            Trust AP News for full coverage on <em>videos</em> <em>and</em> <em>video</em> news. Stay up to date with the latest trending <em>videos</em>.",
+            "timestamp": 1649793956,
+            "title": "Videos | Latest Video News &amp; Trending Videos | AP News",
+            "url": "https://apnews.com/hub/videos"
+        },
+        {
+            "rank": 7,
+            "snippet": "2 weeks ago -\n            Ukrainian authorities investigate a <em>video</em> apparently showing Russian PoWs being shot in the legs.",
+            "timestamp": 1649793956,
+            "title": "Does video show Russian prisoners being shot? - BBC News",
+            "url": "https://www.bbc.com/news/60907259"
+        },
+        {
+            "rank": 8,
+            "snippet": "Def Leppard - \"Kick\" (Official Music <em>Video</em>)Pre-order the new album, Diamond Star Halos, Out May 27: https://defleppard.lnk.to/DiamondStarHalos <em>Video</em> Director...",
+            "timestamp": 1649793956,
+            "title": "Def Leppard - Kick (Official Music Video) - YouTube",
+            "url": "https://www.youtube.com/watch?v=kFIkLxB_grA"
+        },
+        {
+            "rank": 9,
+            "snippet": "Search millions of <em>videos</em> from across the web",
+            "timestamp": 1649793956,
+            "title": "Google Videos",
+            "url": "https://www.google.com/videohp"
+        },
+        {
+            "rank": 10,
+            "snippet": "1 month ago -\n            Jacobs scored a team-high 19 points and had 10 rebounds in Kent State's win over Ohio in the semifinals Friday night. After the game, the four players filmed a <em>video</em> in their locker room and posted it on Snapchat. In the clip, which was also shared on Twitter, one of the players is using profane ...",
+            "timestamp": 1649793956,
+            "title": "Malique Jacobs to miss first half of MAC title game as four Kent ...",
+            "url": "https://www.espn.com/mens-college-basketball/story/_/id/33485842/malique-jacobs-miss-first-half-mac-title-game-four-kent-state-players-disciplined-anti-akron-snapchat-video"
+        },
+        {
+            "rank": 11,
+            "snippet": "3 weeks ago -\n            The officer, a member of the Kenosha Police Department in Wisconsin, has resigned from his school security job.",
+            "timestamp": 1649793956,
+            "title": "Off-Duty Officer Shown on Video Putting Knee on Girl's Neck - The ...",
+            "url": "https://www.nytimes.com/2022/03/19/us/kenosha-officer-kneel-neck-girl.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "1 month ago -\n            Wolverines are elusive animals that are rarely spotted by humans, but a group of tourists at Yellowstone National Park saw one up close on a tour this week.",
+            "timestamp": 1649793956,
+            "title": "Rare wolverine sighting in Yellowstone was captured on video - CNN",
+            "url": "https://edition.cnn.com/2022/03/10/us/wolverine-sighting-yellowstone-scn/index.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "Summer Walker, SZA, &amp; Cardi B - No Love (Extended Version)Listen: https://SummerWalker.lnk.to/NoLoveExtendedSpotify: https://SummerWalker.lnk.to/NoLoveExtend",
+            "timestamp": 1649793956,
+            "title": "Summer Walker, SZA, &amp; Cardi B - No Love (Extended Version) [Official ...",
+            "url": "https://www.youtube.com/watch?v=VmB0Q7qkweM"
+        },
+        {
+            "rank": 14,
+            "snippet": "W3Schools offers free online tutorials, references and exercises in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many, many more.",
+            "timestamp": 1649793956,
+            "title": "HTML Video",
+            "url": "https://www.w3schools.com/html/html5_video.asp"
+        },
+        {
+            "rank": 15,
+            "snippet": "3 weeks ago -\n            Powerful <em>video</em> editing app with music, transition effects, stickers and more",
+            "timestamp": 1649793956,
+            "title": "Vimeo Create - Video Editor - Apps on Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.vimeocreate.videoeditor.moviemaker&hl=en_US&gl=US"
+        },
+        {
+            "rank": 16,
+            "snippet": "5 days ago -\n            Following the withdrawal of Russian forces from a Kyiv suburb, officials examined and documented the bodies of those who were killed in the war \u00b7 Thousands of people were reportedly at the station in the city of Kramatorsk when it was attacked on Friday. In recent days, officials had encouraged ...",
+            "timestamp": 1649793956,
+            "title": "Video - The New York Times",
+            "url": "https://www.nytimes.com/video"
+        },
+        {
+            "rank": 17,
+            "snippet": "1 day ago -\n            The Minnesota Bureau of Criminal Apprehension has released all investigative materials, including additional body-worn camera <em>video</em>, related to the Minneapolis police deadly shooting of Amir Locke during a no-knock raid in February.",
+            "timestamp": 1649793956,
+            "title": "Amir Locke shooting: More bodycam video released by Minnesota BCA",
+            "url": "https://www.fox9.com/news/amir-locke-minneapolis-police-shooting-body-camera-footage-bca"
+        },
+        {
+            "rank": 18,
+            "snippet": "7 hours ago -\n            Police in Santa Ana, Calif., were playing Disney songs loudly at night in an apparent attempt to keep a <em>video</em> of them from being uploaded to YouTube.",
+            "timestamp": 1649793956,
+            "title": "Santa Ana police under investigation for playing Disney songs in ...",
+            "url": "https://www.washingtonpost.com/nation/2022/04/12/santa-ana-police-disney-music/"
+        },
+        {
+            "rank": 19,
+            "snippet": "4 days ago -\n            A <em>video</em> has emerged which purports to show Ukrainian forces shooting a captive Russian soldier.",
+            "timestamp": 1649793956,
+            "title": "Video appears to show killing of captive Russian soldier - BBC News",
+            "url": "https://www.bbc.com/news/61025388"
+        },
+        {
+            "rank": 20,
+            "snippet": "March 11, 2022 -\n            Sting says his 1985 song \"Russians\" is more relevant than ever due to the war in Ukraine.",
+            "timestamp": 1649793956,
+            "title": "Sting posts video of himself singing his 1985 song 'Russians' amid ...",
+            "url": "https://edition.cnn.com/2022/03/06/entertainment/sting-russians-song/index.html"
+        }
+    ],
+    "timestamp": 1649793956,
+    "url": "https://search.brave.com/search?q=Video"
+}

@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "AMOLED",
+    "offset": null,
+    "page": null,
+    "query": "AMOLED",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>AMOLED</em> (active-matrix organic light-emitting diode, /\u02c8\u00e6mo\u028a\u02ccl\u025bd/) is a type of OLED display device technology. OLED describes a specific type of thin-film-display technology in which organic compounds form the electroluminescent material, and active matrix refers to the technology behind ...",
+            "timestamp": 1646168352,
+            "title": "AMOLED - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/AMOLED"
+        },
+        {
+            "rank": 2,
+            "snippet": "October 13, 2021 -\n            Experience Super <em>AMOLED</em>, Samsung\u2019s most advanced display ever.",
+            "timestamp": 1646168352,
+            "title": "What is AMOLED? - The Official Samsung Galaxy Site",
+            "url": "https://www.samsung.com/global/galaxy/what-is/amoled/"
+        },
+        {
+            "rank": 3,
+            "snippet": "August 13, 2021 -\n            Virtually all high-end smartphones use <em>AMOLED</em> display technology, but how is it different from the traditional LCD display?",
+            "timestamp": 1646168352,
+            "title": "AMOLED vs LCD: All the key differences explained - Android Authority",
+            "url": "https://www.androidauthority.com/amoled-vs-lcd-differences-572859/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Looking for what is <em>AMOLED</em> screen? A display technology used in laptops, smartphone devices, pc monitors &amp; televisions for viewing a bigger &amp; better experience.",
+            "timestamp": 1646168352,
+            "title": "What Is AMOLED Screen? | Benefits &amp; Differences | Lenovo US",
+            "url": "https://www.lenovo.com/us/en/faqs/pc-life-faqs/what-is-amoled-screen-display/"
+        },
+        {
+            "rank": 5,
+            "snippet": "January 23, 2022 -\n            The differences between an iPhone display and a Samsung display are quite wild. We skim the surface about LCD and <em>AMOLED</em> Display Technologies.",
+            "timestamp": 1646168352,
+            "title": "AMOLED vs LCD - A Tale of Two Screens - Gophermods",
+            "url": "https://www.gophermods.com/amoled-vs-lcd-tale-two-screens/"
+        },
+        {
+            "rank": 6,
+            "snippet": "September 17, 2019 -\n            Active-matrix organic light-emitting diode or <em>AMOLED</em> is a new display device technology used across many of today\u2019s devices learn more in our HP\u00ae Tech Takes article.",
+            "timestamp": 1646168352,
+            "title": "What Is An AMOLED Display | HP\u00ae Tech Takes",
+            "url": "https://www.hp.com/us-en/shop/tech-takes/what-is-amoled-display"
+        },
+        {
+            "rank": 7,
+            "snippet": "May 4, 2017 -\n            <em>AMOLED</em> displays today are used in many applications - and are most common in smartphones. Samsung for example uses <em>AMOLED</em> displays in most of its high-end phones, including the latest Galaxy S9 and S9 Plus and the Note 9. Apple's new iPhones, SmarthWatches, and the MacBook Pro's Touch Bar are ...",
+            "timestamp": 1646168352,
+            "title": "AMOLED - introduction and market status | OLED-Info",
+            "url": "https://www.oled-info.com/amoled"
+        },
+        {
+            "rank": 8,
+            "snippet": "1 week ago -\n            <em>AMOLED</em> and OLED displays are two types of LED display panels available for smartphones. Here's a complete difference comparing <em>AMOLED</em> vs OLED.",
+            "timestamp": 1646168352,
+            "title": "AMOLED vs OLED: Which Is Better And Why? | Cashify Blog",
+            "url": "https://www.cashify.in/amoled-vs-oled-which-is-better-and-why"
+        },
+        {
+            "rank": 9,
+            "snippet": "Although not prominently advertised as OLED displays, there are multiple variants of OLEDs that have been in the market for many years. One of those is <em>AMOLED</em>, the active-matrix organic light emitting diode, often seen specifically in the smartphones that several Americans have today. It is ...",
+            "timestamp": 1646168352,
+            "title": "AMOLED \u2013 BCA Chemistry",
+            "url": "https://bcachemistry.wordpress.com/tag/amoled/"
+        },
+        {
+            "rank": 10,
+            "snippet": "February 8, 2021 -\n            Measure multiple layers of LCD, LED, OLED and <em>AMOLED</em> displays. All layers can be measured at once, in real time.",
+            "timestamp": 1646168352,
+            "title": "LCD, LED, OLED, AMOLED Displays | Optical Thickness Gauge Applications",
+            "url": "https://www.bristol-inst.com/displays/"
+        },
+        {
+            "rank": 11,
+            "snippet": "The thinner, brighter future of display technology When applied to the portable and wearable markets, <em>AMOLEDs</em> offer tremendous benefits. Smartwatches, for example, are a booming trend within the consumer market. <em>AMOLED</em> benefits include: - Excellent viewing angles - High contrast - True blacks: ...",
+            "timestamp": 1646168352,
+            "title": "AMOLED Products | US Micro Products",
+            "url": "https://www.usmicroproducts.com/amoled-products"
+        },
+        {
+            "rank": 12,
+            "snippet": "Shop for mobile phones with <em>amoled</em> display at Best Buy. Find low everyday prices and buy online for delivery or in-store pick-up.",
+            "timestamp": 1646168352,
+            "title": "Mobile Phones With Amoled Display - Best Buy",
+            "url": "https://www.bestbuy.com/site/shop/mobile-phones-with-amoled-display"
+        },
+        {
+            "rank": 13,
+            "snippet": "<em>Amoled</em> Live Wallpaper for save battery and phone display!",
+            "timestamp": 1646168352,
+            "title": "Amoled - Apps on Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.maxelus.livewallpaper.amoled&hl=en_US&gl=US"
+        },
+        {
+            "rank": 14,
+            "snippet": "3 weeks ago -\n            What is Super <em>AMOLED</em>, what makes it different from any other type of display and how does it benefit a Samsung smartphone?",
+            "timestamp": 1646168352,
+            "title": "What is a Super AMOLED display?",
+            "url": "https://www.trustedreviews.com/news/what-is-a-super-amoled-display-4208003"
+        },
+        {
+            "rank": 15,
+            "snippet": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel &amp; accessories, shoes, jewelry, tools &amp; hardware, housewares, furniture, sporting goods, beauty &amp; personal care, groceries &amp; just about anything else.",
+            "timestamp": 1646168352,
+            "title": "amoled phone - Amazon.com",
+            "url": "https://www.amazon.com/amoled-phone/s?k=amoled phone"
+        },
+        {
+            "rank": 16,
+            "snippet": "What does <em>AMOLED</em> actually mean? Find out inside PCMag's comprehensive tech and computer-related encyclopedia.",
+            "timestamp": 1646168352,
+            "title": "Definition of AMOLED | PCMag",
+            "url": "https://www.pcmag.com/encyclopedia/term/amoled"
+        },
+        {
+            "rank": 17,
+            "snippet": "October 25, 2020 -\n            What does <em>AMOLED</em> screen mean? What is the difference between OLED and <em>AMOLED</em>? <em>Is</em> <em>AMOLED</em> better than LCD? <em>AMOLED</em> vs. IPS LCD. The benefits of <em>AMOLED</em>.",
+            "timestamp": 1646168352,
+            "title": "Simple questions: What is an AMOLED screen? What does AMOLED mean?",
+            "url": "https://www.digitalcitizen.life/what-is-amoled/"
+        },
+        {
+            "rank": 18,
+            "snippet": "August 12, 2021 -\n            You\u2019ve probably seen the term \u201cSuper <em>AMOLED</em>\u201d display being used in smartphone marketing material in recent years. These displays are more popular than ever, so what exactly does <em>AMOLED</em> stand for, and what makes them different from regular old OLEDs?",
+            "timestamp": 1646168352,
+            "title": "What Is a Super AMOLED Display?",
+            "url": "https://www.howtogeek.com/741386/what-is-a-super-amoled-display/"
+        },
+        {
+            "rank": 19,
+            "snippet": "An <em>AMOLED</em> (Active-Matrix OLED) is a thin-film-display technology that contains a layer of organic compounds that light up when hit with an electrical current. They are self-emissive, meaning they don\u2019t need a backlight. <em>AMOLEDs</em> consume less power than PMOLEDs, have faster refresh rates and ...",
+            "timestamp": 1646168352,
+            "title": "AMOLED | US Micro Products",
+            "url": "https://www.usmicroproducts.com/displays/custom-amoled-displays"
+        },
+        {
+            "rank": 20,
+            "snippet": "What does <em>amoled</em> mean? (Active Matrix OLED) An OLED display technology widely used for smartphone, tablet and TV screens. As with all active ma...",
+            "timestamp": 1646168352,
+            "title": "Amoled Meaning | Best 1 Definitions of Amoled",
+            "url": "https://www.yourdictionary.com/amoled"
+        }
+    ],
+    "timestamp": 1646168352,
+    "url": "https://search.brave.com/search?q=AMOLED"
+}

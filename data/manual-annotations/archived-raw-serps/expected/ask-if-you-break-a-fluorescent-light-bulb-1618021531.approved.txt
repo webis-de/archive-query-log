@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "if you break a fluorescent light bulb",
+    "offset": null,
+    "page": null,
+    "query": "if you break a fluorescent light bulb",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "During the 1800s, many inventions revolutionized the United States and the world. One of these was the light bulb. With the invention of the light bulb, people began altering their homes with electricity and using the light bulb instead of ...",
+            "timestamp": 1618021531,
+            "title": "How Did the Light Bulb Change the World?",
+            "url": "https://www.reference.com/history/did-light-bulb-change-world-674f0957107c4c65?ad=dirN&qo=serpIndex&o=740005"
+        },
+        {
+            "rank": 2,
+            "snippet": "Whether you want efficient lighting or lighting to change the mood of a room, it\u2019s hard to know which light bulbs are the best to choose from with so many available options. Check the fixture you need, what shape you prefer, whether you wan...",
+            "timestamp": 1618021531,
+            "title": "Mood Lighting: The Best Light Bulbs For Your Home",
+            "url": "https://www.consumersearch.com/home-garden/best-light-bulbs?ad=dirN&qo=serpIndex&o=740007"
+        },
+        {
+            "rank": 3,
+            "snippet": "Light bulbs are not a one-size-fits-all affair. From wattage to bases and the overall shape and size of the glass or plastic bulb, it's important to know specifically what you need. Whether you're dealing with incandescent or LED light bulb...",
+            "timestamp": 1618021531,
+            "title": "Understanding Light Bulb Sizes",
+            "url": "https://www.questionsanswered.net/article/understanding-light-bulb-sizes?ad=dirN&qo=serpIndex&o=740012"
+        },
+        {
+            "rank": 4,
+            "snippet": "HGTVRemodels' Lighting Planning Guide breaks down the different types of light bulbs on HGTV.com. Holding different light bulbs Photo by: Thinkstock Images Thinkstock Images The speed with which lighting technology is changing is particular...",
+            "timestamp": 1618021531,
+            "title": "Light Bulb Types | HGTV",
+            "url": "https://www.hgtv.com/design/remodel/mechanical-systems/light-bulb-types"
+        },
+        {
+            "rank": 5,
+            "snippet": "Not all light bulbs are alike. Some have smart home features, others are energy sippers. Some can be controlled by Wi-Fi, and others change colors. This week, we want to know which ones you think are the best, or are on your smart home wish...",
+            "timestamp": 1618021531,
+            "title": "What's The Best Light Bulb?",
+            "url": "https://lifehacker.com/whats-the-best-light-bulb-1715262175"
+        },
+        {
+            "rank": 6,
+            "snippet": "Whether you're at the office or at home, it's always helpful to know about the lighting you live with. Here's all you need to know about fluorescents. Whether you're at the office or at home, it's always helpful to know about...",
+            "timestamp": 1618021531,
+            "title": "Fluorescent Lights | Better Homes &amp; Gardens",
+            "url": "https://www.bhg.com/home-improvement/lighting/guide-to-fluorescent-lighting/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Argon is a commonly used gas used to fill incandescent light bulbs. It increases bulb life by preventing the tungsten filaments from deteriorating too quic Argon is a commonly used gas used to fill incandescent light bulbs. It increases bul...",
+            "timestamp": 1618021531,
+            "title": "Which Gas Is Used in Light Bulbs?",
+            "url": "https://www.reference.com/science/gas-used-light-bulbs-5e51d315ea2ee793"
+        },
+        {
+            "rank": 8,
+            "snippet": "The light bulb hasn't changed a whole lot in its 120 years -- the original design was just that good. Learn all about the light bulb. Advertisement Before the invention of the light bulb, illuminating the world after the sun went down was a...",
+            "timestamp": 1618021531,
+            "title": "How Light Bulbs Work | HowStuffWorks",
+            "url": "https://home.howstuffworks.com/light-bulb.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "Are fluorescent bulbs really more efficient than normal light bulbs? Find out in this article from HowStuffWorks. Advertisement A \"normal light bulb\" is also known as an incandescent light bulb. These bulbs have a very thin tungsten filamen...",
+            "timestamp": 1618021531,
+            "title": "Are fluorescent bulbs really more efficient? | HowStuffWorks",
+            "url": "https://home.howstuffworks.com/question236.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": "Want the best light bulbs for the job? HouseLogic explains how to buy the best new energy efficient bulbs to get the light you want. We decipher light bulb labels so you\u2019ll know exactly what you\u2019re getting in terms of brightness, color, and...",
+            "timestamp": 1618021531,
+            "title": "Best Light Bulbs | Different Types of Light Bulbs | HouseLogic",
+            "url": "https://www.houselogic.com/remodel/painting-lighting/which-light-bulbs-are-best/"
+        }
+    ],
+    "timestamp": 1618021531,
+    "url": "https://www.ask.com/web?q=if+you+break+a+fluorescent+light+bulb&qsrc=19&o=101881&l=dis"
+}

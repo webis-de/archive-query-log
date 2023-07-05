@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Boxer Ear Crop",
+    "offset": null,
+    "page": null,
+    "query": "Boxer Ear Crop",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "It depends on the <em>crop</em>, the quality of the dogs <em>ear</em> leather, and your persistance in keeping the <em>ear</em> taped!",
+            "timestamp": 1173516809,
+            "title": "To <em>Crop</em> or Not to <em>Crop</em>?",
+            "url": "http://www.cinemaboxers.com/croppinginfo.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "... your puppies <em>crop</em> makes a HUGE difference in how your adult <em>boxer</em> will look.  A bad <em>ear crop</em> can ruin a beautiful dog.",
+            "timestamp": 1173516809,
+            "title": "<em>Ear</em> Posting Tutorial - Cinema Boxers",
+            "url": "http://www.cinemaboxers.com/tutorials/ears/"
+        },
+        {
+            "rank": 3,
+            "snippet": "... proven reasons to <em>crop</em> ears.  Some say that it prevents <em>ear</em> infections, but veterinarians see plenty of ...",
+            "timestamp": 1173516809,
+            "title": "<em>Ear</em> cropping",
+            "url": "http://www.briarleabouvier.com/ear_cropping.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "... most puppies returning home from an <em>ear crop</em> will be eating normally and playing just as they did before surgery ...",
+            "timestamp": 1173516809,
+            "title": "<em>Boxer</em> Mailing List - Cropping &amp;Docking Boxers",
+            "url": "http://iupucbio2.iupui.edu/bml/cropdock.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Ear</em> cropping in dogs.  There are so many choices and decisions to be made ... pinna is too thin to support the weight of the <em>ear</em> The <em>ear</em> ...",
+            "timestamp": 1173516809,
+            "title": "<em>Ear</em> Cropping of Dogs at ThePetCenter.com.",
+            "url": "http://www.thepetcenter.com/gen/earc.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Ear</em> cropping is done on a select group of dogs for cosmetic purposes only. ... Rottweiler, Doberman pincer, <em>Boxer</em>, Schnauzer, Miniature ...",
+            "timestamp": 1173516809,
+            "title": "Cosmetic Surgery for Pets: Declawing, <em>Ear</em> Cropping, Tail Docking, ...",
+            "url": "http://www.vet4petz.com/articles/cosmetic_surgery.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "All the frequently asked questions about <em>boxer</em> dog ... The <em>boxer</em> is a German breed, developed in the late 1800s from mastiff-type dogs known ...",
+            "timestamp": 1173516809,
+            "title": "<em>Boxer</em> FAQ - Meet the <em>boxer</em> - The <em>boxer</em> is a German breed",
+            "url": "http://www.boxerworld.com/faq/"
+        },
+        {
+            "rank": 8,
+            "snippet": "In other countries it is illegal to <em>crop</em> dogs' ears.  I live in New Zealand where ... side of the <em>ear</em> touching the skull.",
+            "timestamp": 1173516809,
+            "title": "Natural Ears",
+            "url": "http://www.geocities.com/apexboxers/ears.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Links to <em>boxer</em> information on the web. ... <em>Boxer</em> Links - from <em>Boxer</em> Rescue Los Angeles.",
+            "timestamp": 1173516809,
+            "title": "Links to <em>Boxer</em> information on the web.",
+            "url": "http://www.kateconnick.com/links_boxer.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "... contract and proof of spay or neuter must be provided to Lone Star <em>Boxer</em> Rescue). ... with a deaf male <em>boxer</em> and a large female <em>boxer</em>, ...",
+            "timestamp": 1173516809,
+            "title": "Lone Star <em>Boxer</em> Rescue",
+            "url": "http://www.lonestarboxerrescue.com/rescue.shtml"
+        }
+    ],
+    "timestamp": 1173516809,
+    "url": "http://www.ask.com:80/web?o=8002&qsrc=6&l=dir&q=Boxer+Ear+Crop"
+}

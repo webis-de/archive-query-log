@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Smirnoff Label",
+    "offset": null,
+    "page": null,
+    "query": "Smirnoff Label",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "A description and a collection of drink recipes for <em>Smirnoff</em>&amp;reg; Blue <em>Label</em> vodka, with it's origin, ingredients, alcohol content, and ...",
+            "timestamp": 1173377085,
+            "title": "Smirnoff\u00ae Blue <em>Label</em> vodka information",
+            "url": "http://www.drinksmixer.com/desc880.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Smirnoff</em> Red <em>Label</em> Vodka Single Gift for 26.99 from eDirectory.co.uk online shop...",
+            "timestamp": 1173377085,
+            "title": "<em>Smirnoff</em> Red <em>Label</em> Vodka Single Gift by <em>Smirnoff</em> from ...",
+            "url": "http://www.edirectory.co.uk/pf/880/mia/d/smirnoff+red+label+vodka+single+gift/pid/3544857"
+        },
+        {
+            "rank": 3,
+            "snippet": "11/30/01: <em>Smirnoff</em> Black <em>Label</em>.",
+            "timestamp": 1173377085,
+            "title": "11/30/01: <em>Smirnoff</em> Black <em>Label</em>.",
+            "url": "http://www.mrcranky.com/movies/outcold/12/0.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "One of the web's largest collections of <em>Smirnoff</em> Blue <em>Label</em> Vodka long drinks, with a list of the most popular drink recipes in this section.",
+            "timestamp": 1173377085,
+            "title": "<em>Smirnoff</em> Blue <em>Label</em> Vodka long drinks",
+            "url": "http://www.drinksmixer.com/cat/6500/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Smirnoff</em> Red <em>Label</em> Vodka and Luxury Chocolate Gift for 46.99 from eDirectory.co.uk online shop...",
+            "timestamp": 1173377085,
+            "title": "<em>Smirnoff</em> Red <em>Label</em> Vodka and Luxury Chocolate Gift by <em>Smirnoff</em> from ...",
+            "url": "http://www.edirectory.co.uk/pf/880/mia/d/smirnoff+red+label+vodka+luxury+chocolate+gift/pid/3544906"
+        },
+        {
+            "rank": 6,
+            "snippet": "Use keywords to find the product you are looking for.  Avancerad s\u00f6kning...",
+            "timestamp": 1173377085,
+            "title": "<em>Smirnoff</em> Red <em>Label</em>",
+            "url": "http://www.vinosprit.de/Spritdrycker/Vodka/Flavoured-Vodka/Smirnoff-Red-Label-6.805.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Food, Drink And Tobacco, Drinks, Spirits @ Online Shopping Ideas ... ... vodka honours the return of <em>Smirnoff</em> to Russia where they were ...",
+            "timestamp": 1173377085,
+            "title": "<em>Smirnoff</em> Black <em>Label</em> Gift @ Online Shopping Ideas",
+            "url": "http://www.onlineshoppingideas.com/products/363261.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "USA - <em>SMIRNOFF</em> BLUE <em>LABEL</em>...",
+            "timestamp": 1173377085,
+            "title": "USA - <em>Smirnoff</em> Blue <em>Label</em>",
+            "url": "http://www.star-drinks.de/test_site/shop/w/wodka/50108196600c04c2e.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Epinions has the best comparison shopping information on <em>Smirnoff</em> Black <em>Label</em> Vodka. Compare prices from across the web and read reviews from ...",
+            "timestamp": 1173377085,
+            "title": "Compare Prices and Read Reviews on <em>Smirnoff</em> Black <em>Label</em> Vodka at ...",
+            "url": "http://www.epinions.com/content_77621726852"
+        },
+        {
+            "rank": 10,
+            "snippet": "Just Miniatures <em>Smirnoff</em> Red <em>Label</em> Vodka Miniature [VODKA00038] - English Vodka37.5% abvBottle - Plastic This product forms part of our Top ...",
+            "timestamp": 1173377085,
+            "title": "<em>Smirnoff</em> Red <em>Label</em> Vodka Miniature [VODKA00038] - \u00a31.59 : Just ...",
+            "url": "http://www.justminiatures.co.uk/pages-productinfo/product-4542/smirnoff-red-label-vodka-miniature.html"
+        }
+    ],
+    "timestamp": 1173377085,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Smirnoff+Label"
+}

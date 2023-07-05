@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "new fold 4",
+    "offset": null,
+    "page": null,
+    "query": "new fold 4",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "4 days ago -\n            One interesting rumor that popped up recently is about the type of storage \u2014 reportedly, the Z <em>Fold</em> <em>4</em> and Z Flip <em>4</em> will be the first Samsung phones with <em>new</em> UFS <em>4</em>.0 chips. Those are supposed to be twice as fast as the currently-used UFS 3.1 chips, by providing 23.2 Gbps per lane.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4: everything you need to know - PhoneArena",
+            "url": "https://www.phonearena.com/galaxy-z-fold-4-release-date-price-features-news"
+        },
+        {
+            "rank": 2,
+            "snippet": "6 days ago -\n            The good news is that the company seems to be doing that, as the Samsung Galaxy Z <em>Fold</em> 3 was a little cheaper than the Samsung Galaxy Z <em>Fold</em> 2, so hopefully Samsung will repeat that trick with the Galaxy Z <em>Fold</em> <em>4</em>.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4: here's everything we know so far | TechRadar",
+            "url": "https://www.techradar.com/news/samsung-galaxy-z-fold-4"
+        },
+        {
+            "rank": 3,
+            "snippet": "1 month ago -\n            Both the design and specs of the Galaxy Z <em>Fold</em> <em>4</em> have leaked in recent days, so we can expect Samsung to make an official announcement soon. In the meantime, here's everything we know about the Samsung Galaxy Z <em>Fold</em> <em>4</em>, along with every feature we hope Samsung adds to its <em>new</em> foldable phone.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4: Everything we know so far | Android Central",
+            "url": "https://www.androidcentral.com/phones/samsung-galaxy-z-fold-4"
+        },
+        {
+            "rank": 4,
+            "snippet": "June 10, 2022 -\n            The Snapdragon 8+ Gen 1 will power ... likely choice for the Galaxy Z <em>Fold</em> <em>4</em>, where it could be paired with 512GB of storage alongside 12GB of RAM. Samsung is also working on a more expensive, much larger storage option at 1TB. It\u2019s not <em>new</em> for a phone now; Apple already opened ...",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4: Release date, price, leaks and more | ...",
+            "url": "https://www.digitaltrends.com/mobile/samsung-galaxy-z-fold-4-release-date-price-leaks/"
+        },
+        {
+            "rank": 5,
+            "snippet": "June 3, 2022 -\n            Rumors and reports suggest Samsung's ... Samsung hasn't made any announcements about what's in store for the Galaxy Z <em>Fold</em> <em>4</em> or other future phones, but the company typically makes <em>new</em> product announcements in August....",
+            "timestamp": 1657628120,
+            "title": "<em></em>Galaxy Z Fold 4 Rumors: A Galaxy S22-Like Camera and Slimmer Design ...",
+            "url": "https://www.cnet.com/tech/mobile/samsung-galaxy-z-fold-4-rumors/"
+        },
+        {
+            "rank": 6,
+            "snippet": "May 5, 2022 -\n            Samsung is leading the way in the next era for smartphones, and now <em>new</em> details have leaked for its most ambitious Galaxy smartphone yet. Thanks to the dedicated sleuths at GalaxyClub, we now know the battery capacity for Samsung's class-leading Galaxy Z <em>Fold</em> <em>4</em> (potentially 'Galaxy <em>Fold</em> <em>4</em>') ...",
+            "timestamp": 1657628120,
+            "title": "<em></em>Interesting Galaxy Fold 4 Leak Reveals Familiar Battery In Slimmer ...",
+            "url": "https://www.forbes.com/sites/gordonkelly/2022/04/30/samsungs-galaxy-z-fold-4-battery-life-design-release-leak/"
+        },
+        {
+            "rank": 7,
+            "snippet": "3 weeks ago -\n            It has been said we can expect a 10 to 20 per cent battery improvement for the <em>new</em> device. Initial rumours claimed the battery would be a combined battery capacity of 4270mAh, with a 2002mAh battery and a 2268mAh battery. More recent rumours have said there would be a 4400mAh battery. The Z <em>Fold</em> <em>4</em> ...",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4 rumours and everything we know so far",
+            "url": "https://www.pocket-lint.com/phones/news/samsung/160742-samsung-galaxy-z-fold-4-rumours-release-date-features-price-specs"
+        },
+        {
+            "rank": 8,
+            "snippet": "June 1, 2022 -\n            /PRNewswire/ -- Mask mandates may be lifting, but some of our pandemic-fueled habits are here to stay, including our \"<em>new</em> normal\" for screen time. In fact,...",
+            "timestamp": 1657628120,
+            "title": "<em></em>The New Normal: Phone Use is Up Nearly 4-Fold Since 2019, According ...",
+            "url": "https://www.prnewswire.com/news-releases/the-new-normal-phone-use-is-up-nearly-4-fold-since-2019-according-to-tech-care-company-asurion-301558858.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "June 10, 2022 -\n            According to a fresh rumor, Samsung will release its Galaxy Z <em>Fold</em> <em>4</em> with a revamped multitasking system, headlined by a <em>new</em> gesture.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Galaxy Z Fold 4 apparently set to update multitasking with new gesture",
+            "url": "https://9to5google.com/2022/06/09/galaxy-z-fold-4-multitasking/"
+        },
+        {
+            "rank": 10,
+            "snippet": "3 days ago -\n            Dark Red could join the mix of Galaxy Z <em>Fold</em> <em>4</em> colors, as Samsung's foldable takes a color cue from the Galaxy S22 Ultra.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4 just tipped for surprise new color | Tom's ...",
+            "url": "https://www.tomsguide.com/news/samsung-galaxy-z-fold-4-just-tipped-for-surprise-color"
+        },
+        {
+            "rank": 11,
+            "snippet": "4 days ago -\n            Unlike last year's Z <em>Fold</em> 3, the Samsung Galaxy Z <em>Fold</em> <em>4</em> could come in a potentially flashy \"Dark Red\" color soon in addition to three or four other more boring-sounding hues.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung's Galaxy Z Fold 4 is coming in a snazzy new color in ...",
+            "url": "https://www.phonearena.com/news/samsung-galaxy-z-fold-4-dark-red-snazzy-new-color-limited-numbers_id141236"
+        },
+        {
+            "rank": 12,
+            "snippet": "May 12, 2022 -\n            Here's how the Samsung Galaxy Z <em>Fold</em> <em>4</em> looks. Leaked renders show the foldable phone has redesigned cameras, but not much else.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4 renders unpacked in new leak",
+            "url": "https://www.androidauthority.com/samsung-galaxy-z-fold-4-design-3163600/"
+        },
+        {
+            "rank": 13,
+            "snippet": "May 12, 2022 -\n            It seems that the Galaxy Z <em>Fold</em> <em>4</em> will offer iterative improvements over its predecessors. That means a tougher screen, a newer processor, and if you cross your fingers, an integrated S Pen. Here\u2019s everything we know about the Samsung Galaxy Z <em>Fold</em> <em>4</em> so far.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4: Everything We Know So Far \u2013 Review Geek",
+            "url": "https://www.reviewgeek.com/114684/samsung-galaxy-fold-4/"
+        },
+        {
+            "rank": 14,
+            "snippet": "April 19, 2022 -\n            Samsung is tipped to equip the Galaxy Z Fold4 with an S-Pen slot accompanied by a <em>new</em>, thinner stylus to fit into the phone's slim chassis. That <em>new</em> S-Pen now looks to have entered production, four months away from the Galaxy Z Fold4's expected debut.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold4: New S-Pen production begins ahead of launch ...",
+            "url": "https://www.notebookcheck.net/Samsung-Galaxy-Z-Fold4-New-S-Pen-production-begins-ahead-of-launch.614348.0.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "3 weeks ago -\n            Every <em>new</em> Samsung flagship phone that hits the market ships with a <em>new</em> wallpaper design and often a <em>new</em> interpretation of the iconic Over the Horizon ringtone.The upcoming Galaxy Z <em>Fold</em> <em>4</em> and Gala",
+            "timestamp": 1657628120,
+            "title": "<em></em>New Galaxy Z Fold 4 / Flip 4 wallpaper design spotted in One UI ...",
+            "url": "https://www.sammobile.com/news/new-galaxy-z-fold-4-flip-wallpaper-design-spotted-one-ui-watch-beta/"
+        },
+        {
+            "rank": 16,
+            "snippet": "2 weeks ago -\n            Top Stories: Google Home app gets <em>new</em> Feed, early Pixel 6a hands-on video, preview of the Galaxy Z <em>Fold</em> <em>4</em> display crease, more.",
+            "timestamp": 1657628120,
+            "title": "<em></em>This week's top stories: New Google Home Feed, Pixel 6a hands-on, ...",
+            "url": "https://9to5google.com/2022/06/25/top-stories-google-home-feed/"
+        },
+        {
+            "rank": 17,
+            "snippet": "6 days ago -\n            But, we have seen reports that the <em>new</em> <em>Fold</em> will follow the pattern of earlier models. This makes it likely that we should see the Galaxy Z <em>Fold</em> <em>4</em> around the end of August or the start of September 2022 \u2013 almost certainly alongside the Galaxy Z Flip <em>4</em>.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4 Release Date, Price &amp; Specs Rumours | Tech ...",
+            "url": "https://www.techadvisor.com/article/745477/samsung-galaxy-z-fold-4-everything-you-need-to-know.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "1 month ago -\n            Today, we take a closer look at the Galaxy Z <em>Fold</em> 3 and the Galaxy Z <em>Fold</em> <em>4</em>, and see if you should buy the current flagship, or wait for the upcoming <em>Fold</em> <em>4</em> to be announced later this year. The <em>new</em> Samsung foldable flagships are expected to be announced sometime in August.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Should you buy the Galaxy Z Fold 3 now or wait for Galaxy Fold 4?",
+            "url": "https://pocketnow.com/should-you-buy-galaxy-z-fold-3-or-galaxy-z-fold-4"
+        },
+        {
+            "rank": 19,
+            "snippet": "1 month ago -\n            A <em>new</em> listing on Geekbench claims to show benchmarks for the US model of the forthcoming Samsung Galaxy Z <em>Fold</em> <em>4</em>. Here's what it tells us.",
+            "timestamp": 1657628120,
+            "title": "<em></em>Samsung Galaxy Z Fold 4 benchmarks may have just leaked early | Stuff",
+            "url": "https://www.stuff.tv/news/samsung-galaxy-z-fold-4-benchmarks-may-have-just-leaked-early/"
+        },
+        {
+            "rank": 20,
+            "snippet": "June 2, 2022 -\n            A leaker has posted <em>new</em> specs of the Galaxy Z Flip <em>4</em> on Twitter. What do the <em>new</em> specs of the foldable tell us?",
+            "timestamp": 1657628120,
+            "title": "<em></em>New rumor shows that the Galaxy Z Fold 4 could be really boring!",
+            "url": "https://www.nextpit.com/new-rumor-galaxy-z-fold-4-could-be-really-boring"
+        }
+    ],
+    "timestamp": 1657628120,
+    "url": "https://search.brave.com/search?q=new+fold+4&source=web"
+}

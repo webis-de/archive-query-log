@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "What Words Rhyme with Afraid?",
+    "offset": null,
+    "page": null,
+    "query": "What Words Rhyme with Afraid?",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "... pink lemonade.   3) In math, I got a passing grade.      Some other <em>words</em> that <em>rhyme with</em> Shade:   <em>afraid</em>, braid, blade, jade, made, maid, ...",
+            "timestamp": 1173540494,
+            "title": "A Lazy Afternoon   I think I'll spend the day  just relaxing in",
+            "url": "http://www.angelfire.com/md/byme/finish/fiolazy.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "This unit gives out everything you ever wanted to know about 'technical' poetry <em>words</em> but were too <em>afraid</em> to ask.",
+            "timestamp": 1173540494,
+            "title": "THE BUZZ <em>WORDS</em> IN POETRY",
+            "url": "http://www.englishresources.co.uk/workunits/ks4/poetry/buzzwords.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "... jade frayed prayed stayed sprayed swayed suede neighed weighed <em>afraid</em> band-aid ...",
+            "timestamp": 1173540494,
+            "title": "Welcome to Adobe GoLive 5",
+            "url": "http://aslp.byu.edu/BCulatta/projectcall/rhymewordslist.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Find <em>words</em> within the letters oybnu...",
+            "timestamp": 1173540494,
+            "title": "Find <em>words</em> within the letters 'oybnu'",
+            "url": "http://www.morewords.com/combo/oybnu/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Making and Writing <em>Words</em>: A Variation on Making <em>Words</em> ... write three <em>words</em> that belong to the an word family.  Remember, all an <em>words</em> will ...",
+            "timestamp": 1173540494,
+            "title": "Reading Online - Articles: Making and Writing <em>Words</em>",
+            "url": "http://www.readingonline.org/articles/words/rasinski.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "No time to talk.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;Just need someone to study with.&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;I ... Even the wrong <em>words</em> seem to <em>rhyme</em> - ...",
+            "timestamp": 1173540494,
+            "title": "Even the wrong <em>words</em> seem to <em>rhyme</em>",
+            "url": "http://www.greatestjournal.com/users/_turnip/data/rss"
+        },
+        {
+            "rank": 7,
+            "snippet": "General Discussion &amp; Chat: KendraSue's Poetry Contest.....or, Some Right Perty <em>Words</em>, Some Even <em>Rhyme! ... Afraid</em> of a little competition?",
+            "timestamp": 1173540494,
+            "title": "Gardening Forums: General Discussion &amp; Chat: KendraSue's Poetry ...",
+            "url": "http://davesgarden.com/t/131397/"
+        },
+        {
+            "rank": 8,
+            "snippet": "\"I like <em>words</em> that almost <em>rhyme with</em> cheese.\" ... moves and all round skullduggery, I'm <em>afraid</em> Herc just doesn't quite shape up!",
+            "timestamp": 1173540494,
+            "title": "Hercules Action Game Reviews - Hercules Action Game Player Reviews - ...",
+            "url": "http://www.gamefaqs.com/console/psx/review/R15125.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "... note on pronunciation the <em>words</em> `Bythe' and `Bythian' <em>rhyme with</em> `python', more or less th ... What is she most <em>afraid</em> of?' genesis ...",
+            "timestamp": 1173540494,
+            "title": "note on pronunciation the <em>words</em> `Bythe' and `Bythian' <em>rhyme with</em> ...",
+            "url": "http://www.skepticfiles.org/en002/search.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": "... just a breath away Painted <em>words</em> are whispered It's no prayer Whispering <em>words</em> Are drifting ...",
+            "timestamp": 1173540494,
+            "title": "All About Eve - Lyrics \"Winter <em>Words</em>\"",
+            "url": "http://www.goony.nl/aae/lyrics/l_rarety.htm"
+        }
+    ],
+    "timestamp": 1173540494,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=What+Words+Rhyme+with+Afraid%3F"
+}

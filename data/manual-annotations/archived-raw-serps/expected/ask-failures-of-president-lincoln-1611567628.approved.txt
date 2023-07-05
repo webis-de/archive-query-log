@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Failures of President Lincoln",
+    "offset": null,
+    "page": null,
+    "query": "Failures of President Lincoln",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Lincoln's \"Failures\"? Below is one version of the so-called \"Lincoln failures\" list, \nshown in bold type. It's often used to inspire people to overcome life's difficulties\u00a0...",
+            "timestamp": 1611567628,
+            "title": "Abraham Lincoln's \"Failures\" and \"Successes\"",
+            "url": "http://www.abrahamlincolnonline.org/lincoln/education/failures.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "Lincoln's failures. Created / Published: Christian H. McIntire, Evanston, Illinois, \nn. d.; Subject Headings: - Lincoln, Abraham, 1809-1865: - Lincoln\u00a0...",
+            "timestamp": 1611567628,
+            "title": "Lincoln's failures. | Library of Congress",
+            "url": "https://www.loc.gov/resource/lprbscsm.scsm0363/"
+        },
+        {
+            "rank": 3,
+            "snippet": "17 Jan 2019 ... Lincoln's Great Recovery. According to the Small Business Association 30% of \nnew businesses fail during their first two years, 50% during the first\u00a0...",
+            "timestamp": 1611567628,
+            "title": "Lessons In Conquering Failure From Abraham Lincoln - Forbes",
+            "url": "https://www.forbes.com/sites/bryancollinseurope/2019/01/17/lessons-in-conquering-failure-from-abraham-lincoln/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Failed in an effort to become vice-president at age 47. Lost a senatorial race at \nage 47. Was elected PRESIDENT of the United States at age 52!",
+            "timestamp": 1611567628,
+            "title": "Abraham Lincoln Overcoming Failure",
+            "url": "https://www.championshipcoachesnetwork.com/public/426.cfm"
+        },
+        {
+            "rank": 5,
+            "snippet": "10 Nov 2017 ... At the age of 23, Lincoln bought a general store in New Salem, IL in 1832. The \nbusiness wasn't successful and he went bankrupt; it took years for\u00a0...",
+            "timestamp": 1611567628,
+            "title": "Abraham Lincoln brings lessons about succeeding after failure ...",
+            "url": "https://www.hfcc.edu/news/2017/abraham-lincoln-brings-lessons-about-succeeding-after-failure"
+        },
+        {
+            "rank": 6,
+            "snippet": "Legend: Abraham Lincoln endured a steady stream of failure and defeat before \nbecoming President of the United States. \u00b7 1816: His family was forced out of their\n\u00a0...",
+            "timestamp": 1611567628,
+            "title": "FACT CHECK: Abraham Lincoln and Failure - Snopes.com",
+            "url": "https://www.snopes.com/fact-check/abraham-lincoln-failure/"
+        },
+        {
+            "rank": 7,
+            "snippet": "So you have suffered a setback? You are not the only one to have failed. \nAbraham Lincoln is, in my and many other people's opinion, the greatest public \nfigure\u00a0...",
+            "timestamp": 1611567628,
+            "title": "Lincoln \"Failures\" List",
+            "url": "https://rjgeib.com/thoughts/friend/lincoln-failures.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "This page includes information about the failures of President Abraham Lincoln \nas well as information on the Bixby Letter.",
+            "timestamp": 1611567628,
+            "title": "Abraham Lincoln's Failures and a Striking Example of his ...",
+            "url": "https://rogerjnorton.com/Lincoln42.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "22 Apr 2020 ... Maybe it's the fear of simply trying something new for you or your business, and \nfailing. President Abraham Lincoln is known by most as being\u00a0...",
+            "timestamp": 1611567628,
+            "title": "How Abraham Lincoln's Failures Can Help Your Real Estate Business",
+            "url": "https://bankerstitlemn.com/2020/04/how-abraham-lincolns-failures-can-help-your-real-estate-business/"
+        },
+        {
+            "rank": 10,
+            "snippet": "1832 - Lost his job \u00b7 1832 - Defeated for legislature \u00b7 1833 - Failed in business \u00b7 \n1835 - Sweetheard (Ann Rutledge) died \u00b7 1836 - Suffered nervous breakdown \u00b7 \n1838 -\u00a0...",
+            "timestamp": 1611567628,
+            "title": "Abraham Lincoln's Failures and Success - welcome to seabass.org",
+            "url": "http://www.seabass.org/lincoln/failure_success.html"
+        }
+    ],
+    "timestamp": 1611567628,
+    "url": "https://www.ask.com/web?q=Failures+of+President+Lincoln&qsrc=2384&o=tb&l=zn"
+}

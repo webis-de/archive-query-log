@@ -1,0 +1,136 @@
+{
+    "interpreted_query": "how tot ell if tail recurssive",
+    "offset": null,
+    "page": null,
+    "query": "how tot ell if tail recurssive",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "March 10, 2016 -\n            I know the general concept of recursion. I came across the concept of <em>tail</em> recursion while studying the quicksort algorithm. In this video of quick sort algorithm from MIT at 18:30 seconds the",
+            "timestamp": 1658814198,
+            "title": "<em></em>algorithms - What is tail recursion? - Computer Science Stack Exchange",
+            "url": "https://cs.stackexchange.com/questions/6230/what-is-tail-recursion"
+        },
+        {
+            "rank": 2,
+            "snippet": "Definition of <em>tail</em> recursion, possibly with links to more information and implementations.",
+            "timestamp": 1658814198,
+            "title": "<em></em>tail recursion",
+            "url": "https://xlinux.nist.gov/dads/HTML/tailRecursion.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "January 3, 2019 -\n                C Programming: Types of Recursion in C Language.Topics discussed:1) Tail recursion.2) Example of tail recursion.3) Non-tail recursion.4) Example of non-tail ...",
+            "timestamp": 1658814198,
+            "title": "<em></em>Types of Recursion (Part 2) | Tail &amp; Non-tail Recursion - YouTube",
+            "url": "https://www.youtube.com/watch?v=HIt_GPuD7wk"
+        },
+        {
+            "rank": 4,
+            "snippet": "August 8, 2017 -\n                AboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy &amp; SafetyHow YouTube worksTest new features \u00b7 \u00a9 2022 Google LLC",
+            "timestamp": 1658814198,
+            "title": "<em></em>Tail recursion - YouTube",
+            "url": "https://www.youtube.com/watch?v=2bRGmoZbK_Y"
+        },
+        {
+            "rank": 5,
+            "snippet": "April 13, 2021 -\n            Something went wrong. Wait a moment and try again",
+            "timestamp": 1658814198,
+            "title": "<em></em>Is there any algorithm to check if a function is tail recursive?",
+            "url": "https://www.quora.com/Is-there-any-algorithm-to-check-if-a-function-is-tail-recursive"
+        },
+        {
+            "rank": 6,
+            "snippet": "August 4, 2021 -\n            This site uses features not available in older browsers",
+            "timestamp": 1658814198,
+            "title": "<em></em>Hegelian Dialectic - Wiki",
+            "url": "https://wiki.c2.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "February 28, 2022 -\n            A Computer Science portal for geeks. It contains well written, well thought and well explained computer science and programming articles, quizzes and practice/competitive programming/company interview Questions.",
+            "timestamp": 1658814198,
+            "title": "<em></em>Tail Recursion - GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/tail-recursion/"
+        },
+        {
+            "rank": 8,
+            "snippet": "August 27, 2019 -\n            <em>Tail</em> Recursion in Data Structures - Here we will see what is <em>tail</em> recursion. The <em>tail</em> recursion is basically using the recursive function as the last statement ...",
+            "timestamp": 1658814198,
+            "title": "<em></em>Tail Recursion in Data Structures",
+            "url": "https://www.tutorialspoint.com/tail-recursion-in-data-structures"
+        },
+        {
+            "rank": 9,
+            "snippet": "August 24, 2018 -\n            <em>Tail</em> Recursion Elimination is a very interesting feature available in Functional Programming languages, like Haskell and Scala. It makes recursive function calls almost as fast as looping. In my\u2026",
+            "timestamp": 1658814198,
+            "title": "<em></em>How Functional Programming can be Awesome: Tail ...",
+            "url": "https://towardsdatascience.com/what-is-tail-recursion-elimination-or-why-functional-programming-can-be-awesome-43091d76915e"
+        },
+        {
+            "rank": 10,
+            "snippet": "Mixing of <em>tail</em> calls and non-<em>tail</em> calls is not possible. The compiler will complain <em>if</em> some recursive calls cannot be handled.",
+            "timestamp": 1658814198,
+            "title": "<em></em>TailRecursive (groovy 3.0.7 API)",
+            "url": "https://docs.groovy-lang.org/3.0.7/html/gapi/groovy/transform/TailRecursive.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "We help companies engineer FrontEnd and Mobile apps using Javascript",
+            "timestamp": 1658814198,
+            "title": "<em></em>TailRecursive",
+            "url": "https://www.tailrecursive.co/"
+        },
+        {
+            "rank": 12,
+            "snippet": "November 8, 2011 -\n            An easy way to tell if a recursive function is a <em>tail</em> recursive is if it returns a concrete value in the base case. Meaning that it doesn't return 1 or true or anything like that. It will more than likely return some variant of one of the method parameters.",
+            "timestamp": 1658814198,
+            "title": "<em></em>algorithm - What is tail recursion? - Stack Overflow",
+            "url": "https://stackoverflow.com/questions/33923/what-is-tail-recursion"
+        },
+        {
+            "rank": 13,
+            "snippet": "The way that languages (especially functional ones) deal with this issue is to make the following pact: if the programmer writes a recursive function that is <em>tail</em> recursive, then the language compiler promises to evaluate the function in constant stack space (rather than linear in the number ...",
+            "timestamp": 1658814198,
+            "title": "<em></em>Tail Recursion",
+            "url": "https://www.classes.cs.uchicago.edu/archive/2020/spring/22300-1/lectures/TailRecursion/index.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Improve the efficiency of recursive code by re-writing it to be <em>tail</em> recursive. Professor Graham Hutton explains. EXTRA BITS: https://youtu.be/eoi3s_4mAAc ht...",
+            "timestamp": 1658814198,
+            "title": "<em></em>Tail Recursion Explained - Computerphile - YouTube",
+            "url": "https://www.youtube.com/watch?v=_JtPhF8MshA"
+        },
+        {
+            "rank": 15,
+            "snippet": "<em>Tail</em> recursion is a situation where ... (for a procedure) returns no result. A compiler can recognize <em>tail</em> recursion and replace it by a more efficient implementation. (Generally, though, compilers only do that if you request that they optimize.)...",
+            "timestamp": 1658814198,
+            "title": "<em></em>Tail recursion",
+            "url": "http://www.cs.ecu.edu/karl/3300/spr16/Notes/Algorithm/tail.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "December 17, 2017 -\n            The <em>tail</em> recursion optimisation happens when a compiler decides that instead of performing recursive function call (and add new entry to the execution stack) it is possible to use loop-like approach and just jump to the beginning of the function. Typically it happens when the compiler is smart, ...",
+            "timestamp": 1658814198,
+            "title": "<em></em>F#: How to check that tail recursion calls are optimised",
+            "url": "https://alexatnet.com/fsharp-how-to-check-that-tail-recursion-calls-are-optimised/"
+        },
+        {
+            "rank": 17,
+            "snippet": "April 13, 2021 -\n            Answer (1 of 2): <em>Tail</em> call elimination can turn certain function calls into jumps which don't use the stack, making them more efficient and preventing stack overflows. <em>Tail</em> Position A compiler can eliminate a function call if it's in <em>tail</em> position (regardless of whether the call is recursive or...",
+            "timestamp": 1658814198,
+            "title": "<em></em>How does compiler know whether the recursion is a tail recursion ...",
+            "url": "https://www.quora.com/How-does-compiler-know-whether-the-recursion-is-a-tail-recursion-or-not-and-how-does-it-optimize-tail-recursion"
+        },
+        {
+            "rank": 18,
+            "snippet": "This site uses features not available in older browsers",
+            "timestamp": 1658814198,
+            "title": "<em></em>Tail Recursion - C2 wiki",
+            "url": "https://wiki.c2.com/?TailRecursion"
+        }
+    ],
+    "timestamp": 1658814198,
+    "url": "https://search.brave.com/search?q=how+tot+ell+if+tail+recurssive"
+}

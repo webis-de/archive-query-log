@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Whelped Definition",
+    "offset": null,
+    "page": null,
+    "query": "Whelped Definition",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Whelping and breeding tips are presented for dog breeders.",
+            "timestamp": 1173526805,
+            "title": "Whelping and Breeding Dogs... Tips for Breeders from ...",
+            "url": "http://www.thepetcenter.com/gen/whelping.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Definition</em> of <em>whelped</em> in the Online Dictionary. Multiple meanings, detailed information and synonyms for <em>whelped</em>.",
+            "timestamp": 1173526805,
+            "title": "<em>whelped - definition</em> of <em>whelped</em> by the Online Dictionary from ...",
+            "url": "http://onlinedictionary.datasegment.com/word/whelped"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Definition</em> of <em>whelped - definition</em> of <em>whelped</em> . Meaning of <em>whelped - definition</em> of <em>whelped</em> . What does <em>whelped - definition</em> of <em>whelped</em> mean?",
+            "timestamp": 1173526805,
+            "title": "<em>whelped - definition</em> of <em>whelped</em> by the Free Multilingual Dictionary ...",
+            "url": "http://www.vietdictionary.com/poswn/151000.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Boston Terrier, Dog Breed Information Center\u00ae, Dog Breeders, Dogs, Puppies, Boston Terriers...",
+            "timestamp": 1173526805,
+            "title": "Boston Terrier Information, Boston Terriers",
+            "url": "http://www.dogbreedinfo.com/bostonterrier.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": "WordNet-Online dictionary. <em>Definition</em>, thesaurus and related words for '<em>whelped</em>'. Synonyms, antonyms, hypernyms, hyponyms, meronyms, usage ...",
+            "timestamp": 1173526805,
+            "title": "<em>whelped - definition</em>, thesaurus and related words from ...",
+            "url": "http://www.wordnet-online.com/whelped.shtml"
+        },
+        {
+            "rank": 6,
+            "snippet": "... <em>whelped</em> explanation. <em>Definition</em> of <em>whelped</em> is provided by 1913 Webster's Dictionary, WordNet Lexical Database, Dictionary of Computing, ...",
+            "timestamp": 1173526805,
+            "title": "<em>whelped - Definition</em> of <em>whelped</em> by Webster's Online Dictionary",
+            "url": "http://www.webster-dictionary.org/definition/whelped"
+        },
+        {
+            "rank": 7,
+            "snippet": "Meaning of <em>Whelped</em>: of Whelp",
+            "timestamp": 1173526805,
+            "title": "<em>Definition: Whelped</em> (Meaning of <em>Whelped</em>)",
+            "url": "http://ardictionary.com/Whelped"
+        },
+        {
+            "rank": 8,
+            "snippet": "... <em>whelped Definition</em> from dictionary ... No titles with the word(s) '<em>whelped</em>'.For other meanings: ...",
+            "timestamp": 1173526805,
+            "title": "<em>Definition</em> of <em>whelped</em> - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/whelped"
+        },
+        {
+            "rank": 9,
+            "snippet": "... <em>whelped definition</em>. Explain <em>whelped</em>. What is <em>whelped? whelped</em> meaning. <em>whelped</em> sense. <em>whelped</em> FAQ. <em>whelped</em> synonyms.",
+            "timestamp": 1173526805,
+            "title": "<em>whelped</em>",
+            "url": "http://www.wordthrill.com/define/whelped/"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Whelped - Definition</em> of the word : <em>Whelped</em> , Online Dictionary, Free Thesaurus, English dictionary, Webster dictionary, Dictionary of acronyms ...",
+            "timestamp": 1173526805,
+            "title": "<em>Whelped - Definition</em> of the word : <em>Whelped</em> By The Free Online ...",
+            "url": "http://dictionary.oxid.ro/Definition/Whelped/index.html"
+        }
+    ],
+    "timestamp": 1173526805,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Whelped+Definition"
+}

@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "import esbuild from \"esbuild\";        ^^^^^^^  SyntaxError: Unexpected identifier",
+    "offset": null,
+    "page": null,
+    "query": "import esbuild from \"esbuild\";        ^^^^^^^  SyntaxError: Unexpected identifier",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "This small, but mighty package allows you to use either <em>import</em> or require. Install esm in your project $ npm install --save esm Update your Node Start Script to use esm node -r esm app.js esm just works. I wasted a TON of time with .mjs and --experimental-modules only to find out a .mjs file ...",
+            "timestamp": 1652662700,
+            "title": "Node.js - SyntaxError: Unexpected token import",
+            "url": "https://stackoverflow.com/questions/39436322/node-js-syntaxerror-unexpected-token-import"
+        },
+        {
+            "rank": 2,
+            "snippet": "Angular app causes Uncaught <em>SyntaxError</em>: <em>Unexpected</em> <em>identifier</em> <em>on</em> <em>import</em>-<em>from</em> in JavaScript. Related. 141. ReactJS: \"Uncaught <em>SyntaxError</em>: <em>Unexpected</em> token &lt;\" 1204. Using Node.js require vs. ES6 <em>import</em>/export. 1010. When should I use curly braces for ES6 <em>import</em>? 510.",
+            "timestamp": 1652662700,
+            "title": "ES6 module Import giving \"Uncaught SyntaxError: Unexpected identifier\"",
+            "url": "https://stackoverflow.com/questions/47632562/es6-module-import-giving-uncaught-syntaxerror-unexpected-identifier"
+        },
+        {
+            "rank": 3,
+            "snippet": "Uncaught <em>SyntaxError</em>: <em>Unexpected</em> token ':' on <em>esbuild</em> 0.6.22 #332. Closed ngbinh opened this issue Aug 14, 2020 \u00b7 3 comments Closed Uncaught <em>SyntaxError</em>: <em>Unexpected</em> token ':' on <em>esbuild</em> 0.6.22 #332. ngbinh opened this issue Aug 14, 2020 \u00b7 3 comments Comments. Copy link",
+            "timestamp": 1652662700,
+            "title": "Uncaught SyntaxError: Unexpected token ':' on esbuild 0.6.22 \u00b7 ...",
+            "url": "https://github.com/evanw/esbuild/issues/332"
+        },
+        {
+            "rank": 4,
+            "snippet": "If so, it could be that you could get it to work by changing how you are invoking it perhaps (no ideas for what to try, sorry), or by using <em>esbuild</em>'s JavaScript API instead of the command-line interface. You could also consider using a different package manager if that still doesn't work.",
+            "timestamp": 1652662700,
+            "title": "esbuild error on WSL (Ubuntu 20.04.1 LTS - Windows 10) / via yarn ...",
+            "url": "https://github.com/evanw/esbuild/issues/467"
+        },
+        {
+            "rank": 5,
+            "snippet": "But although <em>esbuild</em> has some heuristics that make isolatedModules: false work in some situations, it's still not actually supported by <em>esbuild</em> because full support would require replicating TypeScript's type system which is out of scope for <em>esbuild</em>. The heuristics could clearly be improved ...",
+            "timestamp": 1652662700,
+            "title": "Error when importing an exported namespace \u00b7 Issue #1550 \u00b7 ...",
+            "url": "https://github.com/evanw/esbuild/issues/1550"
+        },
+        {
+            "rank": 6,
+            "snippet": "This question is a continuation of #622. What I'm trying to do is to transpile .ts file to .js using <em>esbuild</em> as a transpiler and use esm modules instead of cjs in Node.js 16. However, I don&amp;#39...",
+            "timestamp": 1652662700,
+            "title": "[Question] Missing file extension in import statements in transpiled ...",
+            "url": "https://github.com/evanw/esbuild/issues/1505"
+        },
+        {
+            "rank": 7,
+            "snippet": "I'm using <em>esbuild</em>'s Transform API in a browser-based editor, allowing users to write a script using ES Modules. The script executes in the browser, without access to any filesystem or npm, and allows only a set of npm packages known in advance. Example input: <em>import</em> A, {B, C as D} from ...",
+            "timestamp": 1652662700,
+            "title": "Replace import with identifier, in Transform API #1377",
+            "url": "https://github.com/evanw/esbuild/issues/1377"
+        },
+        {
+            "rank": 8,
+            "snippet": "I am new to js and also node.js. I get <em>unexpected</em> <em>identifier</em> error when I try to start the server with the \"nodemon server.js\" command. express is installed. Here is the server.js file: i...",
+            "timestamp": 1652662700,
+            "title": "node.js - Unexpected identifier when importing express - Stack ...",
+            "url": "https://stackoverflow.com/questions/66446324/unexpected-identifier-when-importing-express"
+        },
+        {
+            "rank": 9,
+            "snippet": "First, download and install the <em>esbuild</em> command locally. A prebuilt native executable can be installed using npm (which is automatically installed when you install the node JavaScript runtime): npm install <em>esbuild</em> This should have installed <em>esbuild</em> in your local node_modules folder.",
+            "timestamp": 1652662700,
+            "title": "esbuild - Getting Started",
+            "url": "https://esbuild.github.io/getting-started/"
+        },
+        {
+            "rank": 10,
+            "snippet": "First, let's start by adding an executable file. The easiest way will be: $ touch build.js (no output) $ chmod +x build.js (no output) To make the file executable with node, we have to start the file with: #!/usr/bin/env node. We can add a simple console.log to see if it works as expected: ...",
+            "timestamp": 1652662700,
+            "title": "How to configure esbuild with a build script",
+            "url": "https://how-to.dev/how-to-configure-esbuild-with-a-build-script"
+        },
+        {
+            "rank": 11,
+            "snippet": "Need help buying the domain? Contact us on chat click here \u00b7 How to buy a domain on the marketplace? Will I receive a VAT invoice for the domain? See all help topics",
+            "timestamp": 1652662700,
+            "title": "facebooksex.pl",
+            "url": "http://facebooksex.pl/jest-monorepo-cannot-find-module.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Had an issue with zeit/pkg because the generated files (in the dist folder) still had the @/dir/to/your/file references, which pkg could not handle. co Mar 09, 2017 \u00b7 TS, lerna monorepo and",
+            "timestamp": 1652662700,
+            "title": "cis-bud.pl",
+            "url": "http://cis-bud.pl/jest-monorepo-cannot-find-module.htm"
+        },
+        {
+            "rank": 13,
+            "snippet": "Jest monorepo cannot find module",
+            "timestamp": 1652662700,
+            "title": "nakielskibazarek.pl",
+            "url": "http://nakielskibazarek.pl/jest-monorepo-cannot-find-module.htm"
+        },
+        {
+            "rank": 14,
+            "snippet": "how to use modules in js. ^^^^^^ <em>syntaxerror</em>: cannot use <em>import</em> statement outside a module. uncaught <em>syntaxerror</em>: cannot use <em>import</em> statement outside a module at &lt;anonymous&gt;:1:1. parsing error: cannot use <em>import</em> statement outside a module\". knex cannot use <em>import</em> statement outside a module. ...",
+            "timestamp": 1652662700,
+            "title": "esbuild:uncaught syntaxerror: cannot use import statement outside ...",
+            "url": "https://www.codegrepper.com/code-examples/javascript/frameworks/dist/esbuild:uncaught+syntaxerror:+cannot+use+import+statement+outside+a+module+esbuild"
+        }
+    ],
+    "timestamp": 1652662700,
+    "url": "https://search.brave.com/search?q=import+esbuild+from+%22esbuild%22%3B++++++++%5E%5E%5E%5E%5E%5E%5E++SyntaxError%3A+Unexpected+identifier"
+}

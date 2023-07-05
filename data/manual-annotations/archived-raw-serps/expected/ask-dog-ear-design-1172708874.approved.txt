@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Dog Ear Design",
+    "offset": null,
+    "page": null,
+    "query": "Dog Ear Design",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Dog Ear Design</em> -- Website <em>Design</em>...",
+            "timestamp": 1172708874,
+            "title": "<em>Dog Ear Design</em>",
+            "url": "http://www.dogear.ca/"
+        },
+        {
+            "rank": 2,
+            "snippet": "A <em>dog</em> can hear sounds 250 yards away that most people cannot hear beyond 25 yards.  The human <em>ear</em> can detect ...",
+            "timestamp": 1172708874,
+            "title": "<em>Dog</em> Facts",
+            "url": "http://www.zuzu.org/dfacts.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1172708874,
+            "title": "Welcome to <em>Dog Ear Design</em>",
+            "url": "http://www.dogearonline.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "This was a tricky project.  MRH designs lighting for rock concerts and television programs,  ... Moody Ravitz Hollingsworth Lighting <em>Design</em>, Inc.",
+            "timestamp": 1172708874,
+            "title": "<em>Dog Ear Design</em>: Moody Ravitz Hollingsworth - Logo Identity",
+            "url": "http://www.dogearonline.com/identity3.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "What you need to know about thr anatomy of the <em>dog</em> ... The color of a <em>dog</em>'s coat, or hair cover, also ranges widely, even within a breed.",
+            "timestamp": 1172708874,
+            "title": "Information and facts on the anatomy of the <em>dog</em>",
+            "url": "http://www.lookd.com/dogs/anatomy.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Dog Ear Design</em> LA Canada Fltrdg CA ... 1313 Foothill Blvd Ste 6, LA Canada Fltrdg, CA 91011-2160 (818) 790-2268",
+            "timestamp": 1172708874,
+            "title": "<em>Dog Ear Design</em> LA Canada Fltrdg CA",
+            "url": "http://losangeles.citysearch.com/profile/230134"
+        },
+        {
+            "rank": 7,
+            "snippet": "... the <em>dog</em>'s <em>ear</em> canal is anatomically different than that of the human <em>ear</em>.  Unlike the human <em>ear</em>, the <em>dog</em>'s <em>ear</em> ...",
+            "timestamp": 1172708874,
+            "title": "The Canine <em>Ear</em>",
+            "url": "http://www.workingdogs.com/doc0079.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "Lab shakes her head, scratches her <em>ear</em>...",
+            "timestamp": 1172708874,
+            "title": "<em>Dog Ear</em> Problems",
+            "url": "http://www.petloveshack.com/ears.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "... you ever seen a <em>dog</em> prick up its ears?  <em>Dog</em> ears are more mobile than ours are, and ... are more mobile than ours are, and a <em>dog</em> can ...",
+            "timestamp": 1172708874,
+            "title": "Dogs &gt; Form and Function &gt; Hearing",
+            "url": "http://www.nhm.org/exhibitions/dogs/formfunction/hearing.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "What is <em>dog ear</em> infection? ... A <em>dog</em> with an <em>ear</em> infection is uncomfortable;  his <em>ear</em> canals are sensitive.  He shakes his head trying to ...",
+            "timestamp": 1172708874,
+            "title": "What is <em>dog ear</em> infection?",
+            "url": "http://www.easterncorner.com/interior-design/What-is-dog-ear-infection.htm"
+        }
+    ],
+    "timestamp": 1172708874,
+    "url": "http://www.ask.com:80/web?o=8002&qsrc=6&l=dir&q=Dog+Ear+Design"
+}

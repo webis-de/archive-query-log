@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Rhino Records",
+    "offset": null,
+    "page": null,
+    "query": "Rhino Records",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Specializing in reissues, including collections and box sets of classic Albert King, Elmore James, John Lee Hooker, Buddy Guy and Junior Wells ...",
+            "timestamp": 1173555865,
+            "title": "<em>Rhino Records</em>",
+            "url": "http://www.rhino.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Forever Changing: The Golden Age Of Elektra <em>Records</em> 1963-1973 ... news &amp; notes :: store :: about <em>rhino</em> :: fun stuff :: help :: my cart :: ...",
+            "timestamp": 1173555865,
+            "title": "<em>Rhino Records</em> - Your One Stop Pop Culture Shop",
+            "url": "http://www.rhino.com/index.lasso"
+        },
+        {
+            "rank": 3,
+            "snippet": "Forever Changing: The Golden Age Of Elektra <em>Records</em> 1963-1973 ... with Larry Hardy of In The Red <em>Records</em> and Peter Jesperson of New West ...",
+            "timestamp": 1173555865,
+            "title": "<em>Rhino Records</em> - Your One Stop Pop Culture Shop",
+            "url": "http://www.rhinorecords.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "... news &amp; notes :: store :: about <em>rhino</em> :: fun stuff :: help :: my cart :: privacy policy ...",
+            "timestamp": 1173555865,
+            "title": "<em>Rhino</em>- Soundtracks Store",
+            "url": "http://www.rhinorecords.com/store/soundtracks_genre.lasso"
+        },
+        {
+            "rank": 5,
+            "snippet": "The legendary Del-Fi <em>records</em> label for Ritchie Valens, Bobby Fuller, Frank Zappa, Barry White, Johnny Crawford, great Surf and Rock &amp; Roll...",
+            "timestamp": 1173555865,
+            "title": "Del-Fi <em>Records</em>",
+            "url": "http://www.del-fi.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Download the new Robbers on High Street track \"The Fatalist\" for free here!   ... \u00a9 2004-2007 Mad-<em>Rhino</em>, Inc.",
+            "timestamp": 1173555865,
+            "title": "<em>Rhino Records</em>; http://www.rhinorecords.cc",
+            "url": "http://www.rhinorecords.cc/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Releases by such artists as Hallucinogen, the Infinity Project, Shakta and G.N.O.T.R.. An always innovative label.",
+            "timestamp": 1173555865,
+            "title": "Dragonfly <em>Records</em>",
+            "url": "http://www.dragonflyrecords.co.uk/"
+        },
+        {
+            "rank": 8,
+            "snippet": "... agreement with Capitol <em>Records</em>.  In 1989 <em>Rhino</em> and Capitol\u2019s parent EMI made a deal to jointly acquire Roulette <em>Records</em>;",
+            "timestamp": 1173555865,
+            "title": "<em>Rhino</em> Entertainment - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/Rhino_Entertainment"
+        },
+        {
+            "rank": 9,
+            "snippet": "Film &amp; Television Stars Give Extraordinary Performances on <em>Rhino Records</em>'",
+            "timestamp": 1173555865,
+            "title": "Film &amp; Television Stars Give Extraordinary Performances on <em>Rhino</em> ...",
+            "url": "http://biz.yahoo.com/iw/060127/0107650.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Rhino Records</em> and Verizon Wireless, the nation\u2019s leading wireless provider, today announced the debut of the <em>Rhino</em> Retro Club, a new service ...",
+            "timestamp": 1173555865,
+            "title": "<em>Rhino Records</em> and Verizon Wireless Launch <em>Rhino</em> Retro Club",
+            "url": "http://news.vzw.com/news/2004/06/pr2004-06-07f.html"
+        }
+    ],
+    "timestamp": 1173555865,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Rhino+Records"
+}

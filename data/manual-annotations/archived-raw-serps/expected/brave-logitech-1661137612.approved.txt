@@ -1,0 +1,143 @@
+{
+    "interpreted_query": "logitech",
+    "offset": null,
+    "page": null,
+    "query": "logitech",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "3 weeks ago -\n            Discover the innovative world of <em>Logitech</em> and shop everything MX, Keyboards, Mice, Webcams, Headsets, Software, Video Conferencing, and more",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech | Defy Logic - Tools to Create a Better Tomorrow",
+            "url": "https://www.logitech.com/en-us"
+        },
+        {
+            "rank": 2,
+            "snippet": "Shop Wireless and Wired Mice. Visit <em>Logitech</em> to find the perfect wireless or wired computer mice to enhance your productivity or unleash your creativity.",
+            "timestamp": 1661137612,
+            "title": "Mice",
+            "url": "https://www.logitech.com/en-us/products/mice.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Shop keyboard and mouse combos for PC and Mac. Compare features and find the perfect combo for you. Great for basic computing and productivity work.",
+            "timestamp": 1661137612,
+            "title": "Combos",
+            "url": "https://www.logitech.com/en-us/products/combos.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Shop Webcams. High quality webcams with crystal clear 4k or 1080p or 720p video for all your meeting &amp; video calling needs. Webcams for Business, Gaming &amp; Home.",
+            "timestamp": 1661137612,
+            "title": "Webcams",
+            "url": "https://www.logitech.com/en-us/products/webcams.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Shop Keyboards. Browse <em>Logitech</em>'s range of keywords that include wireless, bluetooth, mechanical, ergonomic, compact, portable, productivity, and connected TV.",
+            "timestamp": 1661137612,
+            "title": "Keyboards",
+            "url": "https://www.logitech.com/en-us/products/keyboards.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Logitech</em> G obsesses over every detail to give you the best gaming experience. From our award-winning PRO series to our newest LIGHTSPEED wireless collection, our gaming mice and keyboards, will take your gaming to the next level",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech G | Advanced Gaming Experiences for All",
+            "url": "https://www.logitechg.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "The latest tweets from <em>Logitech</em> (@<em>Logitech</em>)",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech (@Logitech) \u00b7 Twitter",
+            "url": "https://twitter.com/Logitech"
+        },
+        {
+            "rank": 8,
+            "snippet": "15 hours ago -\n            Make sure you're ready for the new school year with tech that will help get your work done fast. These back-to-school deals will save you money too.",
+            "timestamp": 1661137612,
+            "title": "<em></em>Optimize Your Savings With these Back-to-School Deals from TP-Link, ...",
+            "url": "https://futurism.com/back-to-school-deals"
+        },
+        {
+            "rank": 9,
+            "snippet": "1 week ago -\n            <em>Logitech</em> International S.A. (/\u02c8l\u0252d\u0292\u026at\u025bk/ LOJ-i-tek; often shortened to Logi) is a Swiss-American multinational manufacturer of computer peripherals and software, with headquarters in Lausanne, Switzerland and Newark, California. The company has offices throughout Europe, Asia, Oceania, ...",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Logitech"
+        },
+        {
+            "rank": 10,
+            "snippet": "1 day ago -\n            Should you buy the <em>Logitech</em> Rugged Folio instead of the Combo Touch? read this comparison between <em>Logitech</em> Rugged Folio and Combo Touch and see which iPad keyboard should you buy.",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech Rugged Folio vs Combo Touch: Which iPad Keyboard Should ...",
+            "url": "https://www.guidingtech.com/logitech-rugged-folio-vs-combo-touch-ipad-keyboard-comparison/"
+        },
+        {
+            "rank": 11,
+            "snippet": "See Instagram photos and videos from #DEFYLOGIC (@<em>logitech</em>)",
+            "timestamp": 1661137612,
+            "title": "<em></em>#DEFYLOGIC (@logitech) \u2022 Instagram photos and videos",
+            "url": "https://www.instagram.com/logitech/"
+        },
+        {
+            "rank": 12,
+            "snippet": "1 day ago -\n            The <em>Logitech</em> Chorus headphones hover close to your ears without actually touching, similar to the Valve Index.",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech Reveals $100 Off-Ear Headphones For Quest 2 - VRScout",
+            "url": "https://vrscout.com/news/logitech-reveals-100-off-ear-headphones-for-quest-2/"
+        },
+        {
+            "rank": 13,
+            "snippet": "You can search for your product by name, model number or part number. Or, locate your product using the categories below \u00b7 Want to ask other users with the same product a question? Join the conversation",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech Support + Download",
+            "url": "https://support.logi.com/hc/en-us"
+        },
+        {
+            "rank": 14,
+            "snippet": "April 19, 2022 -\n            See posts, photos and more on Facebook",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech - Home | Facebook",
+            "url": "https://www.facebook.com/Logitech/"
+        },
+        {
+            "rank": 15,
+            "snippet": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel &amp; accessories, shoes, jewelry, tools &amp; hardware, housewares, furniture, sporting goods, beauty &amp; personal care, groceries &amp; just about anything else.",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech HD Pro Webcam C920, Widescreen Video ...",
+            "url": "https://www.amazon.com/Logitech-Widescreen-Calling-Recording-Desktop/dp/B006JH8T3S"
+        },
+        {
+            "rank": 16,
+            "snippet": "4 weeks ago -\n            The Aurora Collection from <em>Logitech</em> features mechanical keyboards, a wireless headset and gaming mouse, and a Yeti microphone \u2014 along with a cloud-shaped palmrest and some adorable cable clips.",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech new Aurora PC gear line is a pastel lover\u2019s dream - Polygon",
+            "url": "https://www.polygon.com/23278966/logitech-g-aurora-collection-keyboard-mouse-cloud-wrist-rest-yeti-mic"
+        },
+        {
+            "rank": 17,
+            "snippet": "3 days ago -\n            750 million+ members | Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech - LinkedIn",
+            "url": "https://www.linkedin.com/company/logitech"
+        },
+        {
+            "rank": 18,
+            "snippet": "We cannot provide a description for this page right now",
+            "timestamp": 1661137612,
+            "title": "<em></em>:: Logitech - Hotsale ::",
+            "url": "https://www.logitechstore.com.ar/"
+        },
+        {
+            "rank": 19,
+            "snippet": "<em>Logitech</em>\u2019s G735 wireless gaming headset features a beautiful pastel design with subtle RGB lighting and support for two simultaneous audio streams. Whether you\u2019re gaming, watching movies, or listening to your favorite song, this pair of headphones has you covered.",
+            "timestamp": 1661137612,
+            "title": "<em></em>Logitech G735 Review - IGN",
+            "url": "https://www.ign.com/articles/logitech-g735-review"
+        }
+    ],
+    "timestamp": 1661137612,
+    "url": "https://search.brave.com/search?q=logitech&source=web"
+}

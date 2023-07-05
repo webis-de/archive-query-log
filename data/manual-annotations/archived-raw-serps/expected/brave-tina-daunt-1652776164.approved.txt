@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "tina daunt",
+    "offset": null,
+    "page": null,
+    "query": "tina daunt",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Tina</em> <em>Daunt</em> is a long-time journalist based in Los Angeles whose reporting experience spans the spectrum from the County Sheriff's Department to the mayor's office, from national political conventions to Hollywood's celebrity fund-raising circuit. She is also the creator of the books and style ...",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt | HuffPost",
+            "url": "https://www.huffpost.com/author/tina-daunt"
+        },
+        {
+            "rank": 2,
+            "snippet": "Bluehost - Top rated web hosting provider - Free 1 click installs For blogs, shopping carts, and more. Get a free domain name, real NON-outsourced 24/7 support, and superior speed. web hosting provider php hosting cheap web hosting, Web hosting, domain names, front page hosting, email hosting.",
+            "timestamp": 1652776164,
+            "title": "Welcome tina-daunt.com - BlueHost.com",
+            "url": "http://tina-daunt.com/about/"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Tina</em> <em>Daunt</em> is a Los Angeles-based journalist with years of experience covering politics, social justice, philanthropy and the entertainment industry. In the lead-up to the 2008 presidential election, <em>Daunt</em> wrote the Los Angeles Times\u2019 popular Cause Celebre column, the first regular newspaper ...",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt",
+            "url": "https://www.good.is/contributors/tina-daunt"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Tina</em> <em>Daunt</em> is a reporter covering the 2020 campaign for the Los Angeles Times.",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt - Los Angeles Times",
+            "url": "https://www.latimes.com/people/tina-daunt"
+        },
+        {
+            "rank": 5,
+            "snippet": "June 7, 2019 -\n            <em>Tina</em> <em>Daunt</em> is a former staff writer for the Los Angeles Times.",
+            "timestamp": 1652776164,
+            "title": "Behind the story: What did it take to get the scoop on the Bob ...",
+            "url": "https://www.latimes.com/columnone/la-me-col1-bob-hope-house-behind-story-20190606-story.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "See Instagram photos and videos from <em>Tina</em> <em>Daunt</em> (@tinadaunt)",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt (@tinadaunt) \u2022 Instagram photos and videos",
+            "url": "https://www.instagram.com/tinadaunt/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Skip to main content \u00b7 Politics \u00b7 Sports \u00b7 Things To Do \u00b7 Business \u00b7 Communities \u00b7 Opinion \u00b7 Obituaries \u00b7 About Us \u00b7 Travel",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt | The Desert Sun - Des Moines Register",
+            "url": "https://www.desmoinesregister.com/staff/10059674/tina-daunt/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Whitepages - Search, Find, Know | The largest and most trusted online directory with contact information, background checks powered by SmartCheck, and public records for over 90% of US adults.",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt - Phone, Address, Background info | Whitepages",
+            "url": "https://www.whitepages.com/name/Tina-Daunt"
+        },
+        {
+            "rank": 9,
+            "snippet": "June 7, 2019 -\n            <em>Tina</em> <em>Daunt</em> is a former staff writer for the Los Angeles Times.",
+            "timestamp": 1652776164,
+            "title": "Bob Hope house in Palm Springs, long an architectural footnote, ...",
+            "url": "https://www.latimes.com/columnone/la-me-col1-bob-hope-house-20190606-htmlstory.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Search FREE for Reputation Profiles &amp; Scores in the U.S. - See Court Records | Background Details | Photos | Phone, Address &amp; Email | Reviews | Net Worth",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt (M), 53 - Palm Springs, CA Has Court or Arrest Records at ...",
+            "url": "https://www.mylife.com/tina-daunt/e157671484326"
+        },
+        {
+            "rank": 11,
+            "snippet": "Find <em>Tina</em> <em>Daunt</em>'s articles, email address, contact information, Twitter and more",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt | Freelance Journalist | Muck Rack",
+            "url": "https://muckrack.com/tinadaunt"
+        },
+        {
+            "rank": 12,
+            "snippet": "Find <em>Tina</em> <em>Daunt</em>'s articles, email address, contact information, Twitter and more",
+            "timestamp": 1652776164,
+            "title": "Interview with Tina Daunt | Muck Rack",
+            "url": "https://muckrack.com/tinadaunt/interview"
+        },
+        {
+            "rank": 13,
+            "snippet": "December 8, 1990 -\n            By <em>TINA</em> <em>DAUNT</em> Dec. 8, 1990 12 AM PT",
+            "timestamp": 1652776164,
+            "title": "49 Years Later, 3 Survivors Relive the Bombing of Pearl Harbor ...",
+            "url": "https://www.latimes.com/archives/la-xpm-1990-12-08-me-5175-story.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "November 13, 2003 -\n            By <em>Tina</em> <em>Daunt</em> Nov. 13, 2003 12 AM PT",
+            "timestamp": 1652776164,
+            "title": "Against all elements - Los Angeles Times",
+            "url": "https://www.latimes.com/style/la-hm-fireproofhouse13nov13-story.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Skip to main content \u00b7 Register Log in \u00b7 California Aggie, Volume 111, Number 99, 6 July 1992 \u00b7 Issue PDF (16.08 MB) \u00b7 Issue \u00b7 Article \u00b7 Text Comments Tags \u00b7 Contents \u00b7 Select an article in the document viewer \u00b7 Comments",
+            "timestamp": 1652776164,
+            "title": "California Aggie 6 July 1992 \u2014 California Digital Newspaper ...",
+            "url": "https://cdnc.ucr.edu/?a=d&d=UCD19920706.2.34"
+        },
+        {
+            "rank": 16,
+            "snippet": "Sign in \u00b7 Books \u00b7 Try the new Google Books \u00b7 Check out the new look and enjoy easier access to your favorite features \u00b7 Try it now \u00b7 No thanks \u00b7 My library \u00b7 Advanced Book Search",
+            "timestamp": 1652776164,
+            "title": "On the Rim: Looking for the Grand Canyon - Mark Neumann - Google Books",
+            "url": "https://books.google.com/books?id=vQkc_eRZYF0C&pg=PA359&lpg=PA359&dq=tina+daunt+arizona&source=bl&ots=KRrMjL86ta&sig=ACfU3U0c0atxx2zVig6MkOmZWE7yf7LvZQ&hl=en&sa=X&ved=2ahUKEwiTg7TZ3JP0AhXBFjQIHdNvDRQQ6AF6BAghEAM"
+        },
+        {
+            "rank": 17,
+            "snippet": "July 6, 1992 -\n            FLAGSTAFF, Ariz. - A brazen escaped convict who stole cars, took hostages at gunpoint and tormented tourists as he led police on a seven-week chase across the wilderness near Grand Canyon National Park, was captured early yesterday \u00b7 Danny Ray Horning, 33, who was serving four life terms for ...",
+            "timestamp": 1652776164,
+            "title": "Arizona's Largest Manhunt Comes To End -- `Rambo' Fugitive Captured ...",
+            "url": "https://archive.seattletimes.com/archive/?date=19920706&slug=1500785"
+        },
+        {
+            "rank": 18,
+            "snippet": "This encyclopedia covers American right-wing extremist groups and extremism from the 1930s to the present day, including neo-Nazis, the Ku Klux Klan, and various anti-government organizations.",
+            "timestamp": 1652776164,
+            "title": "Encyclopedia of Right-Wing Extremism In Modern American History ...",
+            "url": "https://books.google.com/books?id=X7ad8GzRf0QC&pg=PA304&lpg=PA304&dq=tina+daunt+arizona&source=bl&ots=XwBVlVCQHf&sig=ACfU3U2p4-TIopL5iIe3BV9tLnXVrv5OUw&hl=en&sa=X&ved=2ahUKEwiTg7TZ3JP0AhXBFjQIHdNvDRQQ6AF6BAgiEAM"
+        },
+        {
+            "rank": 19,
+            "snippet": "Digital newsstand featuring 7000+ of the world\u2019s most popular newspapers &amp; magazines. Enjoy unlimited reading on up to 5 devices with 7-day free trial.",
+            "timestamp": 1652776164,
+            "title": "TINA DAUNT - PressReader",
+            "url": "https://www.pressreader.com/usa/los-angeles-times/20081031/284292475827027"
+        },
+        {
+            "rank": 20,
+            "snippet": "The latest tweets from <em>Tina</em> <em>Daunt</em> (@tinadaunt)",
+            "timestamp": 1652776164,
+            "title": "Tina Daunt (@tinadaunt) | \u0422\u0432\u0456\u0442\u0442\u0435\u0440 - Twitter",
+            "url": "https://twitter.com/tinadaunt"
+        }
+    ],
+    "timestamp": 1652776164,
+    "url": "https://search.brave.com/search?q=tina+daunt"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "What should I wear on the first day of school? ",
+    "offset": null,
+    "page": null,
+    "query": "What should I wear on the first day of school?",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Each year, the first day of school is fresh start. It provides a yearly opportunity for reinvention. If you want to change the way teachers and other students see you, the first day gives you that chance. It allows you to redefine the way you present...\nMore \u00bb",
+            "timestamp": 1442349823,
+            "title": "What to Wear on the First Day of School",
+            "url": "http://www.ehow.com/way_5617111_wear-first-day-school.html?ref=Track2&utm_source=ask"
+        },
+        {
+            "rank": 2,
+            "snippet": "It's the last day of summer. You pile all of your back to school clothes onto your \nbed and try to decide what to wear for your first day back. What does your pile\u00a0...",
+            "timestamp": 1442349823,
+            "title": "Quiz! What's Your Back to School Style - Kidzworld",
+            "url": "http://www.kidzworld.com/quiz/quiz-whats-your-back-to-school-style"
+        },
+        {
+            "rank": 3,
+            "snippet": "Find out what outfit fits your personality!!!!! Take this quiz! Where are you happiest\n? Where do you shop most often? Out of the list below which is the song.",
+            "timestamp": 1442349823,
+            "title": "Personality Quiz: What should you wear on the first day of school?",
+            "url": "http://www.quibblo.com/quiz/2cyjInH/What-should-you-wear-on-the-first-day-of-school"
+        },
+        {
+            "rank": 4,
+            "snippet": "Lazy day outfit / I wouldn't wear the hoodie / And I would just change the \nbackpack with a vs pink .... First Day Of High School Outfit Ideas by samsus on \nPolyvore.",
+            "timestamp": 1442349823,
+            "title": "High School Outfits on Pinterest | School Outfits Teens, Middle ...",
+            "url": "https://www.pinterest.com/explore/high-school-outfits/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Aug 13, 2012 ... It's the night before the first day of school. How do ... Pick out something easy and \nbreezy to wear--my biggest concern is makeup and hair! c.",
+            "timestamp": 1442349823,
+            "title": "What's your perfect first-day outfit? - GirlsLife.com - Quiz",
+            "url": "http://www.girlslife.com/quiz/2012/08/13/Whats-your-perfect-first-day-outfit.aspx"
+        },
+        {
+            "rank": 6,
+            "snippet": "... title, retard! If you want to know what stereotype you would be in high school, \nclick here to find out! ... Question 6: What do you wear to the first day of school?",
+            "timestamp": 1442349823,
+            "title": "What High School Stereotype Are You? - AllTheTests.com",
+            "url": "http://www.allthetests.com/quiz08/dasquiztd.php3?testid=1083100809"
+        },
+        {
+            "rank": 7,
+            "snippet": "We can't make the first day of school jitters go away, but we can promise you an \nawesome outfit. From button-downs and oords to maxi-skirts and statement belts\n\u00a0...",
+            "timestamp": 1442349823,
+            "title": "15 First Day of School Outfit Ideas | Teen Vogue",
+            "url": "http://www.teenvogue.com/gallery/first-day-of-school-style"
+        },
+        {
+            "rank": 8,
+            "snippet": "Aug 17, 2012 ... Here is my first back to school video for fall 2012. Although I don't start school for \nanother month, I know most of you are heading back to school\u00a0...",
+            "timestamp": 1442349823,
+            "title": "What To Wear On The First Day Of School: Casual Outfit (Makeup ...",
+            "url": "http://www.ask.com/youtube?q=What+should+I+wear+on+the+first+day+of+school%3F&v=SfJMBZc9z0I&qsrc=472"
+        },
+        {
+            "rank": 9,
+            "snippet": "Aug 14, 2013 ... Also please tell me which one you think I should wear! I would love to see your \nfirst day of school outfit too, so if you have a instagram please\u00a0...",
+            "timestamp": 1442349823,
+            "title": "First day of school outfit ideas, makeup and hair. - YouTube",
+            "url": "http://www.ask.com/youtube?q=What+should+I+wear+on+the+first+day+of+school%3F&v=KUTCEhv5sGU&qsrc=472"
+        },
+        {
+            "rank": 10,
+            "snippet": "Jul 30, 2012 ... If you're wondering what to wear for your first day, wear something that .... Is it OK \nto wear a skirt on the first day of school I know I'm gonna stick\u00a0...",
+            "timestamp": 1442349823,
+            "title": "First Day of School: What to Expect, Wear, etc. - YouTube",
+            "url": "http://www.ask.com/youtube?q=What+should+I+wear+on+the+first+day+of+school%3F&v=7OFQz-fSv-Q&qsrc=472"
+        }
+    ],
+    "timestamp": 1442349823,
+    "url": "http://www.ask.com/web?qsrc=1&o=ffx&l=dir&q=What+should+I+wear+on+the+first+day+of+school%3F+"
+}

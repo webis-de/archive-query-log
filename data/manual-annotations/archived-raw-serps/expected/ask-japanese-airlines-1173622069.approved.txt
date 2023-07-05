@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Japanese Airlines",
+    "offset": null,
+    "page": null,
+    "query": "Japanese Airlines",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "ANA, All Nippon Airways web site of the Americas provide travelers to Japan and Asia with online reservations, ANA Mileage Club (AMC) mileage ...",
+            "timestamp": 1173622069,
+            "title": "All Nippon Airways",
+            "url": "http://www.fly-ana.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Message to JAL/Travelocity Users Who Have Booked Travel Prior to 1/24/07.",
+            "timestamp": 1173622069,
+            "title": "JAPAN <em>AIRLINES</em> / American Region",
+            "url": "http://www.japanair.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Go to Area/Country Sellection...",
+            "timestamp": 1173622069,
+            "title": "JAPAN <em>AIRLINES</em>",
+            "url": "http://www.jal.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "RESERVATION PANES...",
+            "timestamp": 1173622069,
+            "title": "JAPAN <em>AIRLINES</em>",
+            "url": "http://www.jal.co.jp/en/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Japanese airlines</em> and airports in Japan - cheap airfare to Japan. ... JapanJapan Weather / GeographyRestaurants / <em>Japanese</em> FoodJapan History ...",
+            "timestamp": 1173622069,
+            "title": "Japan Air Travel - <em>Japanese airlines</em> and airports in Japan - cheap ...",
+            "url": "http://gojapan.about.com/library/bltspair.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Japanese airlines</em> conduct in-flight Y2K test ... U.S. State Department: Bureau of Consular Affairs  Japan <em>Airlines</em> ...",
+            "timestamp": 1173622069,
+            "title": "TravelGuide  <em>Japanese airlines</em> conduct inflight Y2K test",
+            "url": "http://www.cnn.com/TRAVEL/NEWS/9909/16/japan.Y2k/index.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Japanese Airlines</em> offers MSX games during flight! (General discussion MSX Fora)",
+            "timestamp": 1173622069,
+            "title": "<em>Japanese Airlines</em> offers MSX games during flight! (General ...",
+            "url": "http://nl.msx.org/forumtopic1069.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Japanese airlines</em> to get DBJ loans as ANA seeks term loan.  (Deals News).(the Development Bank of Japan) ...",
+            "timestamp": 1173622069,
+            "title": "<em>Japanese airlines</em> to get DBJ loans as ANA seeks term loan. | ...",
+            "url": "http://www.accessmylibrary.com/coms2/summary_0286-4146608_ITM"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Japanese airlines</em> regret Boeing snapping Internet connection ... The <em>Japanese airlines</em> have invested heavily in in-flight entertainment in ...",
+            "timestamp": 1173622069,
+            "title": "<em>Japanese airlines</em> regret Boeing snapping Internet connection (AFP) ...",
+            "url": "http://sfwlink.com/out/28931.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "9202.TK All Nippon Airways C <em>Japanese airlines</em> eye fare hikes on intl routes due to high fuel costs -report...",
+            "timestamp": 1173622069,
+            "title": "All Nippon Airways C <em>Japanese airlines</em> eye fare hikes on intl routes ...",
+            "url": "http://www.advfn.com/news_japanese-airlines-eye-fare-hikes-on-intl-routes-due-to-high-fuel-costs--report_8870687.html"
+        }
+    ],
+    "timestamp": 1173622069,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Japanese+Airlines"
+}

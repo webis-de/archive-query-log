@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "advanced-search-query",
+    "offset": null,
+    "page": null,
+    "query": "advanced-search-query",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Content Explorer &gt; <em>search</em> <em>query</em> &gt; \u201cAND [infographic]\u201d \u00b7 As you can see, you can also use <em>advanced</em> operators in CE to <em>search</em> for multiple terms at once. The <em>search</em> above finds results containing \u201cSEO,\u201d \u201ckeyword research,\u201d or \u201clink building\u201d in the title tag, plus \u201c[infographic].\u201d",
+            "timestamp": 1667410105,
+            "title": "<em></em>Google Search Operators: The Complete List (42 Advanced Operators)",
+            "url": "https://ahrefs.com/blog/google-advanced-search-operators/"
+        },
+        {
+            "rank": 2,
+            "snippet": "For more <em>search</em> options, to the right of the <em>search</em> bar, click Settings <em>Advanced</em> <em>search</em>. Important: <em>Search</em> <em>query</em> fields can vary across <em>Advanced</em> <em>Search</em> pages.",
+            "timestamp": 1667410105,
+            "title": "<em></em>Do an Advanced Search on Google - Computer - Google Search Help",
+            "url": "https://support.google.com/websearch/answer/35890"
+        },
+        {
+            "rank": 3,
+            "snippet": "May 30, 2019 -\n            <em>Search</em> for news, events, etc. ... A <em>query</em> is broken up into terms and operators. There are two types of terms: Single Terms and Phrases.",
+            "timestamp": 1667410105,
+            "title": "<em></em>ADVANCED SEARCH SYNTAX",
+            "url": "https://hubblesite.org/search-results/advanced-search-syntax"
+        },
+        {
+            "rank": 4,
+            "snippet": "April 1, 2022 -\n            You can use symbols or words in your <em>search</em> to make your <em>search</em> results more precise. Google <em>Search</em> usually ignores punctuation that isn\u2019t part of a <em>search</em> operator. Don\u2019t put spaces between",
+            "timestamp": 1667410105,
+            "title": "<em></em>Refine web searches - Google Search Help",
+            "url": "https://support.google.com/websearch/answer/2466433?hl=en"
+        },
+        {
+            "rank": 5,
+            "snippet": "July 15, 2020 -\n            On your Android phone or tablet, go to <em>Advanced</em> <em>Search</em>: google.com/<em>advanced</em>_<em>search</em>. Under \u201cFind pages with,\u201d choose the <em>query</em> field/s to:",
+            "timestamp": 1667410105,
+            "title": "<em></em>Do an Advanced Search on Google - Android - Google Search Help",
+            "url": "https://support.google.com/websearch/answer/35890?hl=en&co=GENIE.Platform=Android"
+        },
+        {
+            "rank": 6,
+            "snippet": "January 28, 2022 -\n            <em>Advanced</em> Google <em>search</em> operators can deliver powerful insights to inform your content strategy, SEO audits, and more. Use this for quick reference.",
+            "timestamp": 1667410105,
+            "title": "<em></em>An SEO Guide to Google Advanced Search Operators",
+            "url": "https://www.searchenginejournal.com/google-search-operators-commands/215331/"
+        },
+        {
+            "rank": 7,
+            "snippet": "1 month ago -\n            This ultimate guide contains all of Google's <em>search</em> string parameters. you can also build your own <em>advanced</em> saerch using google's <em>advanced</em> <em>search</em> form. ... Google's URL. You'll see it if you look at the address bar, or Chrome omnibar. ... The <em>query</em> string. Words are separated by + signs.",
+            "timestamp": 1667410105,
+            "title": "<em></em>What are Search Operators? List Of Major Search Operators - Moz",
+            "url": "https://moz.com/learn/seo/search-operators"
+        },
+        {
+            "rank": 8,
+            "snippet": "January 28, 2022 -\n            The hyphen (like a minus sign) helps you exclude words from your <em>search</em> <em>queries</em>. For example, you can <em>search</em> for \u201cSEO California\u201d but exclude \u201cLA\u201d if you don\u2019t want results from that city. ... The asterisk tells Google to \u201cfill in the blank\u201d. Similar to the more <em>advanced</em> AROUND(X) ...",
+            "timestamp": 1667410105,
+            "title": "<em></em>Google Advanced Search Operators: 52 Google Search Commands [2022]",
+            "url": "https://www.spyfu.com/blog/google-search-operators/"
+        },
+        {
+            "rank": 9,
+            "snippet": "July 29, 2022 -\n            <em>Advanced</em> <em>Search</em> - Twitter",
+            "timestamp": 1667410105,
+            "title": "<em></em>Advanced Search - Twitter",
+            "url": "https://twitter.com/search-advanced"
+        },
+        {
+            "rank": 10,
+            "snippet": "October 5, 2021 -\n            Here are 6 of the simplest google <em>advanced</em> <em>search</em> operators to know: Inurl: this restricts <em>search</em> results to documents containing that word in the URL \u00b7 Allinurl: this restricts results to pages containing all of the <em>query</em> terms you specify in the URL",
+            "timestamp": 1667410105,
+            "title": "<em></em>How to Use Google Advanced Search Operators question - Semrush ...",
+            "url": "https://www.semrush.com/kb/831-how-to-use-google-advanced-search-operators"
+        },
+        {
+            "rank": 11,
+            "snippet": "December 10, 2020 -\n            Google <em>advanced</em> <em>search</em> is a way ... and commands, these <em>advanced</em> Google <em>search</em> instructions tell Google that you don\u2019t want to <em>search</em> the entire internet, front to back and top to bottom, and are instead interested in more specific <em>queries</em>....",
+            "timestamp": 1667410105,
+            "title": "<em></em>Google Advanced Search: Tips and Operators for Better Searches",
+            "url": "https://www.oberlo.com/blog/google-advanced-search"
+        },
+        {
+            "rank": 12,
+            "snippet": "June 26, 2020 -\n            Another parser for <em>advanced</em> <em>search</em> <em>query</em> syntax.. Latest version: 5.1.1, last published: 2 years ago. Start using <em>advanced</em>-<em>search</em>-<em>query</em> in your project by running `npm i <em>advanced</em>-<em>search</em>-<em>query</em>`. There are no other projects in the npm registry using <em>advanced</em>-<em>search</em>-<em>query</em>.",
+            "timestamp": 1667410105,
+            "title": "<em></em>advanced-search-query - npm",
+            "url": "https://www.npmjs.com/package/advanced-search-query"
+        },
+        {
+            "rank": 13,
+            "snippet": "January 27, 2021 -\n            Use the <em>Advanced</em> <em>Search</em> field to enter an Ariel <em>Query</em> Language (AQL) that specifies the fields that you want and how you want to group them to run a <em>query</em>.",
+            "timestamp": 1667410105,
+            "title": "<em></em>Advanced search options - IBM",
+            "url": "https://www.ibm.com/docs/SSKMKU/com.ibm.qradar.doc/c_qradar_ug_search_bar.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "October 9, 2021 -\n            The <em>Advanced</em> <em>Query</em> Syntax (AQS) is used by Microsoft Windows Desktop <em>Search</em> (WDS) to help users and programmers better define and narrow their <em>searches</em>.",
+            "timestamp": 1667410105,
+            "title": "<em></em>Advanced Query Syntax - Win32 apps | Microsoft Docs",
+            "url": "https://docs.microsoft.com/en-us/windows/win32/lwef/-search-2x-wds-aqsreference"
+        },
+        {
+            "rank": 15,
+            "snippet": "August 25, 2021 -\n            <em>Advanced</em> <em>Query</em> Syntax (AQS) is the default <em>query</em> syntax used by Windows <em>Search</em> <em>to</em> <em>query</em> the index and to refine and narrow <em>search</em> parameters.",
+            "timestamp": 1667410105,
+            "title": "<em></em>Using Advanced Query Syntax Programmatically - Win32 apps | Microsoft ...",
+            "url": "https://learn.microsoft.com/en-us/windows/win32/search/-search-3x-advancedquerysyntax"
+        },
+        {
+            "rank": 16,
+            "snippet": "May 1, 2019 -\n            We arrive at our final lesson in our Windows <em>Search</em> series, and logically we\u2019re ending on what we\u2019ve been building up to the whole time: <em>Advanced</em> <em>Query</em> Syntax, namely AQS parameters. Understanding these parameters and how to use them will give your <em>searches</em> that extra oomph they\u2019ve been ...",
+            "timestamp": 1667410105,
+            "title": "<em></em>Learning Windows Search: Use Advanced Query Syntax to Find Everything",
+            "url": "https://www.howtogeek.com/school/learning-windows-search/lesson5/"
+        },
+        {
+            "rank": 17,
+            "snippet": "March 27, 2010 -\n            <em>Search</em> is a pervasive feature of Windows 7, but few really know how to use it \u2026",
+            "timestamp": 1667410105,
+            "title": "<em></em>Mastering Windows Search using Advanced Query Syntax | Ars Technica",
+            "url": "https://arstechnica.com/information-technology/2010/03/mastering-windows-search-using-advanced-query-syntax/"
+        },
+        {
+            "rank": 18,
+            "snippet": "April 25, 2012 -\n            Using <em>Advanced</em> <em>Query</em> Syntax (AQS) unlocks the true power of Windows <em>search</em>. With AQS your <em>searches</em> can be extremely efficient in locating your files and e-mails in Windows 7, Vista or Windows XP. AQS lets you to quickly define and narrow your <em>searches</em>.",
+            "timestamp": 1667410105,
+            "title": "<em></em>Part 5 of 5 Advanced options and the Advanced Query Syntax with ...",
+            "url": "http://www.ancsite.com/windows-search-advanced-tips-part-5"
+        },
+        {
+            "rank": 19,
+            "snippet": "AQS is a syntax used for creating complex <em>search</em> <em>queries</em> using the <em>Search</em> feature of Windows 7",
+            "timestamp": 1667410105,
+            "title": "<em></em>Advanced Query Syntax - Windows 7 Tutorial",
+            "url": "https://sourcedaddy.com/windows-7/advanced-query-syntax.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "March 17, 2021 -\n            Looking for Windows <em>Search</em> tips and tricks? Enhance Windows 10/8/7/Vista/XP <em>Search</em> using these <em>Advanced</em> <em>Queries</em>, Syntax, Tips, Tricks",
+            "timestamp": 1667410105,
+            "title": "<em></em>Windows Desktop Search Tips, Tricks, Advanced Query Syntax for ...",
+            "url": "https://www.thewindowsclub.com/windows-search-advanced-query-syntax"
+        }
+    ],
+    "timestamp": 1667410105,
+    "url": "https://search.brave.com/search?q=advanced-search-query"
+}

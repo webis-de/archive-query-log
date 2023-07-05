@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "batman movie",
+    "offset": null,
+    "page": null,
+    "query": "batman movie",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The fictional character Batman, a comic book superhero featured in DC Comics \npublications and created by Bob Kane and Bill Finger, has appeared in various\u00a0...",
+            "timestamp": 1467834503,
+            "title": "Batman in film",
+            "url": "https://en.wikipedia.org/wiki/Batman_in_film"
+        },
+        {
+            "rank": 2,
+            "snippet": "Own the Dark Knight Rises on Blu-ray Combo Pack and Digital Download \nDecember 4.",
+            "timestamp": 1467834503,
+            "title": "The Dark Knight Rises",
+            "url": "http://www.thedarkknightrises.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Directed by Leslie H. Martinson. With Adam West, Burt Ward, Lee Meriwether, \nCesar Romero. The Dynamic Duo faces four super-villains who plan to hold the\u00a0...",
+            "timestamp": 1467834503,
+            "title": "Batman: The Movie (1966) - IMDb",
+            "url": "http://www.imdb.com/title/tt0060153/"
+        },
+        {
+            "rank": 4,
+            "snippet": "A new rumor is saying that a Batman solo film written by Christ Terrio and \ndirected by Ben Affleck is on the way in 2018. Here are the five things that need \nto be\u00a0...",
+            "timestamp": 1467834503,
+            "title": "5 Things Ben Affleck's Solo Batman Movie Has To Have ...",
+            "url": "http://www.cinemablend.com/new/5-Things-Ben-Affleck-Solo-Batman-Movie-Has-Have-72218.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Quality; 720p; 540p; 360p; 270p; 180p; Auto. Published on Apr 10. 2016. A movie \nso big, it needs two videos. Here's another teaser for the #LEGOBatmanMovie\u00a0...",
+            "timestamp": 1467834503,
+            "title": "Batman Movie - BatmanMovie LEGO.com",
+            "url": "http://www.lego.com/en-us/batmanmovie"
+        },
+        {
+            "rank": 6,
+            "snippet": "Jun 2, 2016 ... Ben Affleck has revealed that his upcoming Batman film will probably tell a \ncompletely \u201coriginal story\u201d, and not be based on an existing comic.",
+            "timestamp": 1467834503,
+            "title": "Ben Affleck's Batman film will be 'original story' independent of ...",
+            "url": "https://www.theguardian.com/film/2016/jun/02/ben-affleck-batman-movie-original-story-comics"
+        },
+        {
+            "rank": 7,
+            "snippet": "Apr 13, 2016 ... Oscar-winning actor will aim to resurrect the caped crusader's big screen fortunes \nfollowing critical derision for Batman v Superman: Dawn of\u00a0...",
+            "timestamp": 1467834503,
+            "title": "Ben Affleck confirmed to direct and star in solo Batman movie | Film ...",
+            "url": "https://www.theguardian.com/film/2016/apr/13/ben-affleck-batman-confirmed-direct-star-in-solo-movie"
+        },
+        {
+            "rank": 8,
+            "snippet": "Jun 21, 2016 ... We heard the rumors that Ben Affleck would direct a Batman movie. Warner Bros \npresident Kevin Tsujihara off-handedly said that Affleck would\u00a0...",
+            "timestamp": 1467834503,
+            "title": "Ben Affleck Confirms He Is Directing A Batman Movie | Birth.Movies ...",
+            "url": "http://birthmoviesdeath.com/2016/06/21/ben-affleck-confirms-he-is-directing-a-batman-movie"
+        },
+        {
+            "rank": 9,
+            "snippet": "May 1, 2016 ... A new rumor reveals that the Ben Affleck Batman movie villain line-up will bring a \nbunch of The Dark Knight's iconic bad guys to the big screen.",
+            "timestamp": 1467834503,
+            "title": "Rumor: The Ben Affleck Batman Movie Villain Roster Will Be Huge",
+            "url": "http://www.slashfilm.com/ben-affleck-batman-movie-villain/"
+        },
+        {
+            "rank": 10,
+            "snippet": "The #1 BATMAN movie site on the net. Since 1998, BOF had been bringing you \nthe latest news and rumor about the BATMAN movie franchise. We are THE site\u00a0...",
+            "timestamp": 1467834503,
+            "title": "When it comes to Batman on film, the only choice is BATMAN-ON ...",
+            "url": "http://www.batman-on-film.com/"
+        }
+    ],
+    "timestamp": 1467834503,
+    "url": "http://www.ask.com/web?q=batman+movie&qsrc=0&o=0&l=dir%2C+tr_uid&qo=homepageSearchBox"
+}

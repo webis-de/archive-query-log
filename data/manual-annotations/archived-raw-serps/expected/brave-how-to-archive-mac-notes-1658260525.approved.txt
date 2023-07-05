@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "how to archive mac notes",
+    "offset": null,
+    "page": null,
+    "query": "how to archive mac notes",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "March 19, 2018 -\n            The <em>Archive</em> is the new best plain text <em>notes</em> app for the <em>Mac</em>, and a perfect alternative to nvAlt. If you love Notational Velocity and its spinoff, nvAlt, but hate using abandonware, then The <em>Archive</em> is for you.",
+            "timestamp": 1658260525,
+            "title": "<em></em>The Archive is the best plain-text notes app on the Mac | Cult of Mac",
+            "url": "https://www.cultofmac.com/535825/the-archive-is-the-best-plain-text-notes-app-on-the-mac/"
+        },
+        {
+            "rank": 2,
+            "snippet": "June 29, 2018 -\n            Here's how <em>to</em> <em>archive</em> <em>your</em> <em>notes</em> <em>in</em> <em>Notes</em> on both macOS and iOS.",
+            "timestamp": 1658260525,
+            "title": "<em></em>How to Archive Mac, iOS Notes by Exporting Them as PDFs",
+            "url": "https://blog.macsales.com/45096-how-to-archive-notes-by-exporting-them-as-pdfs/"
+        },
+        {
+            "rank": 3,
+            "snippet": "April 1, 2020 -\n                https://macmost.com/e-2141 In Mac Notes you can only export one note at a time as a PDF file. With the help of a script, you can quickly and easily export al...",
+            "timestamp": 1658260525,
+            "title": "<em></em>Export From the Notes App Using a Script - YouTube",
+            "url": "https://www.youtube.com/watch?v=4eW-AaZ4V7U"
+        },
+        {
+            "rank": 4,
+            "snippet": "November 22, 2018 -\n                Check out today\u2019s Tech news headlines at https://TechCoreNews.comHere I go over the best method I used to export iCloud notes. This way you can easily import",
+            "timestamp": 1658260525,
+            "title": "<em></em>Export Apple Notes: How To (2018) - YouTube",
+            "url": "https://www.youtube.com/watch?v=iRaI8nuCvyU"
+        },
+        {
+            "rank": 5,
+            "snippet": "June 11, 2019 -\n            Hi! I love the Apple <em>notes</em> feature. As a result I have some 400+ <em>notes</em> with some PDF files attached (30 gb+). Would like <em>to</em> <em>archive</em> some of the old <em>notes</em> which I might refer later sometime. Is there a way <em>to</em> <em>archive</em> <em>them</em>? <em>Notes</em> are on iCloud already. Basically I am looking at someway in which ...",
+            "timestamp": 1658260525,
+            "title": "<em></em>Archiving old apple notes to maintain spe\u2026 - Apple Community",
+            "url": "https://discussions.apple.com/thread/250415407"
+        },
+        {
+            "rank": 6,
+            "snippet": "September 30, 2021 -\n            Here's how <em>to</em> <em>archive</em> <em>your</em> <em>notes</em> <em>in</em> <em>Notes</em> on both macOS and iOS. macOS. 1) Launch <em>Notes</em> on your <em>Mac</em>. 2) Select the <em>Note</em> that you wish <em>to</em> <em>archive</em> as",
+            "timestamp": 1658260525,
+            "title": "<em></em>How Do I Archive In Apple Notes - Seniorcare2",
+            "url": "https://www.seniorcare2.com/how-do-i-archive-in-apple-notes/"
+        },
+        {
+            "rank": 7,
+            "snippet": "April 24, 2019 -\n            I have a lot of <em>Notes</em> on my machine which I don't want to loose. It's not logical to export them one by one. Is there any way to export them in one go, which would make me either use them on my new...",
+            "timestamp": 1658260525,
+            "title": "<em></em>How to export/backup Notes in macOS in one go - Ask Different",
+            "url": "https://apple.stackexchange.com/questions/357495/how-to-export-backup-notes-in-macos-in-one-go"
+        },
+        {
+            "rank": 8,
+            "snippet": "Bear allows you <em>to</em> <em>archive</em> <em>notes</em> in a special <em>Archive</em> sidebar item. The <em>archive</em> is useful for those <em>notes</em> you no longer want to edit but you want to keep for the future.",
+            "timestamp": 1658260525,
+            "title": "<em></em>Hide notes with the Archive | FAQ &amp; Support - Bear App",
+            "url": "https://bear.app/faq/Hide notes with the Archive/"
+        },
+        {
+            "rank": 9,
+            "snippet": "March 22, 2018 -\n            Think you know Apple <em>Notes</em>? These tricks will help you supercharge your <em>note</em>-taking with <em>Notes</em> on your iPhone, iPad, or <em>Mac</em>.",
+            "timestamp": 1658260525,
+            "title": "<em></em>10 Hidden Apple Notes Features You Should Know About",
+            "url": "https://www.makeuseof.com/tag/hidden-apple-notes-features/"
+        },
+        {
+            "rank": 10,
+            "snippet": "April 14, 2020 -\n            The <em>Archive</em> blends the power and simplicity of nvALT with the elegance and efficacy of a digital Zettelkasten system to bring order and clarity to your <em>note</em>-taking system. \u2014macosxguru, in a review at Bicycle For Your Mind",
+            "timestamp": 1658260525,
+            "title": "<em></em>The Archive (macOS) \u2022 Zettelkasten Method",
+            "url": "https://zettelkasten.de/the-archive/"
+        },
+        {
+            "rank": 11,
+            "snippet": "March 18, 2021 -\n            Want to access <em>Notes</em> data on your <em>Mac</em>? Wondering where <em>Notes</em> are stored on the <em>Mac</em>? This article will show you where <em>Notes</em> are stored locally on a <em>Mac</em> and how to access that data. This of course as\u2026",
+            "timestamp": 1658260525,
+            "title": "<em></em>Where are Notes Stored on Mac?",
+            "url": "https://osxdaily.com/2020/01/15/where-notes-stored-locally-mac/"
+        },
+        {
+            "rank": 12,
+            "snippet": "May 31, 2019 -\n            Probably a bad habit, but I use the MacOS X \u201cStickies\u201d app to track data and ideas when I\u2019m working. When I\u2019m done with a project, however, I need an easy way <em>to</em> <em>archive</em> it without exporting <em>note</em>-<em>by</em>-<em>note</em>. Doable?",
+            "timestamp": 1658260525,
+            "title": "<em></em>How Can I Export and Archive Mac Stickies Notes? - Ask Dave Taylor",
+            "url": "https://www.askdavetaylor.com/export-archive-mac-stickies-notes-how-to/"
+        },
+        {
+            "rank": 13,
+            "snippet": "June 24, 2013 -\n            If you've got a clutter of Stickies on your <em>Mac</em> desktop and you want <em>to</em> <em>archive</em> them all in one fell swoop, here's a kludge jury-rigged from Print to PDF:",
+            "timestamp": 1658260525,
+            "title": "<em></em>Archive All Your Mac Sticky Notes by Converting to PDF - Lifehacker",
+            "url": "https://lifehacker.com/5087807/archive-all-your-mac-sticky-notes-by-converting-to-pdf"
+        },
+        {
+            "rank": 14,
+            "snippet": "May 4, 2013 -\n            Sandro Cuccia continues his exploration of free apps preinstalled by Apple. This time it's the newest version of the previously maligned <em>Notes</em> app. Now, <em>Notes</em> comes to Mountain Lion. Its key feature: iCloud integration for syncing to iOS devices. Guess what\u2026it works.",
+            "timestamp": 1658260525,
+            "title": "<em></em>How to Effectively Use the Notes App in iOS &amp; OS X \u2013 The Mac ...",
+            "url": "https://www.macobserver.com/tmo/article/how-to-effectively-use-the-notes-app-in-ios-and-os-x"
+        },
+        {
+            "rank": 15,
+            "snippet": "In <em>Notes</em> on your <em>Mac</em>, learn about folders and how to organize your <em>notes</em>.",
+            "timestamp": 1658260525,
+            "title": "<em></em>About folders in Notes on Mac - Apple Support",
+            "url": "https://support.apple.com/guide/notes/about-folders-notc3b2d538b/mac"
+        },
+        {
+            "rank": 16,
+            "snippet": "February 1, 2022 -\n            In <em>Notes</em> on your <em>Mac</em>, import text files as <em>notes</em>, and export your <em>notes</em> as PDF files.",
+            "timestamp": 1658260525,
+            "title": "<em></em>Import and export notes on Mac - Apple Support",
+            "url": "https://support.apple.com/guide/notes/import-and-export-notes-not201900c07/mac"
+        },
+        {
+            "rank": 17,
+            "snippet": "July 29, 2012 -\n            I thought about that, but emailing myself a bunch of individual <em>notes</em> doesn't seem like a very practical solution. I'm hoping to find either 1) an export feature that I'm just not seeing (there are export functions in the other applications) or 2) the location of the data on my <em>Mac</em> so that I ...",
+            "timestamp": 1658260525,
+            "title": "<em></em>How do you backup Notes? - Apple Community",
+            "url": "https://discussions.apple.com/thread/4154985"
+        },
+        {
+            "rank": 18,
+            "snippet": "March 2, 2022 -\n            Have you ever wanted to export <em>notes</em> as a PDF on your <em>Mac</em>? Here is a handy tip that allows you to export your <em>Notes</em> as PDF in macOS.",
+            "timestamp": 1658260525,
+            "title": "<em></em>How to Export Notes as a PDF on Mac - iGeeksBlog",
+            "url": "https://www.igeeksblog.com/export-notes-in-mac-os-x/"
+        },
+        {
+            "rank": 19,
+            "snippet": "April 11, 2016 -\n            Answer (1 of 5): While the answer seems large, it is relatively simple. The cool thing about this is, all your text formatting is going to be preserved unlike when you retrieve <em>notes</em> data from the apple id page of Apple by going to https://appleid.apple.com/#!&amp;page=signin and then clicking ...",
+            "timestamp": 1658260525,
+            "title": "<em></em>What are the ways to back up OSX 'Notes'? If so, where are they ...",
+            "url": "https://www.quora.com/What-are-the-ways-to-back-up-OSX-Notes-If-so-where-are-they-stored"
+        },
+        {
+            "rank": 20,
+            "snippet": "May 4, 2016 -\n            I'm using the <em>Notes</em> app that comes with my <em>Mac</em>, but I can't find where the <em>notes</em> are getting saved in the Finder. Where can I find these files?",
+            "timestamp": 1658260525,
+            "title": "<em></em>notes.app - Where do my notes written in the Notes application ...",
+            "url": "https://apple.stackexchange.com/questions/111633/where-do-my-notes-written-in-the-notes-application-on-my-mac-get-saved"
+        }
+    ],
+    "timestamp": 1658260525,
+    "url": "https://search.brave.com/search?q=how+to+archive+mac+notes&source=desktop"
+}

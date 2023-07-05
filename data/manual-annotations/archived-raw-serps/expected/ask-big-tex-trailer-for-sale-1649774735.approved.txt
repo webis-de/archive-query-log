@@ -1,0 +1,87 @@
+{
+    "interpreted_query": "Big Tex Trailer for Sale",
+    "offset": null,
+    "page": null,
+    "query": "Big Tex Trailer for Sale",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Big Tex Trailers is America's #1 professional-grade trailer manufacturer. With over 450 dealers nationwide, your next trailer is closer than you think.",
+            "timestamp": 1649774735,
+            "title": "Big Tex Trailers | America's #1 Professional Grade Trailers",
+            "url": "https://www.bigtextrailers.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Results 1 - 25 of 115 ... Big Tex Trailers \u00b7 (2010) Diamond-C 7 x 18 Landscape Utility Trailer \u2013 Rear Ramp Gate \u00b7 (2021) Big Tex 8.5 x 40 Gooseneck Equipment Trailer \u2013\u00a0...",
+            "timestamp": 1649774735,
+            "title": "Big Tex Trailers For Sale",
+            "url": "https://www.trailersuperstore.com/product-category/big-tex-trailers/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Big Tex Trailer World is the largest retail utility, gooseneck, flatbed, dump bed, cargo, enclosed, and heavy duty trailers in the United States.",
+            "timestamp": 1649774735,
+            "title": "Clearance Price - Big Tex Trailer World",
+            "url": "https://www.bigtextrailerworld.com/search-results"
+        },
+        {
+            "rank": 4,
+            "snippet": "Big Tex Trailer World has more options than anyone, so find a utility trailer for sale near you and get to work. Largest variety of trailers. Deepest available\u00a0...",
+            "timestamp": 1649774735,
+            "title": "Big Tex Utility Trailers For Sale Near You",
+            "url": "https://www.bigtextrailerworld.com/utility-trailers"
+        },
+        {
+            "rank": 5,
+            "snippet": "Items 1 - 30 of 37 ... Price: $6,875.00 | For sale in ACAMPO, CA. NEW 2022 Big Tex Trailers 70ST-16 81X16' 7K GVW Single Axle Tilt Equipment Trailer For\u00a0...",
+            "timestamp": 1649774735,
+            "title": "Big Tex Trailers | TheTrailerSpecialist | Horse, Dump, Flatbed, Utility ...",
+            "url": "https://www.thetrailerspecialist.com/brands/big-tex-trailers"
+        },
+        {
+            "rank": 6,
+            "snippet": "Equipment trailers must offer versatility and convenience. Find everything from lightweight pipe-rails to heavy-duty rugged lowboy models that can get\u00a0...",
+            "timestamp": 1649774735,
+            "title": "Big Tex Equipment Trailers for sale in San Jose, CA - Orlandi Trailer ...",
+            "url": "https://www.orlanditrailer.com/categories/trailers/equipment-trailers"
+        },
+        {
+            "rank": 7,
+            "snippet": "Big Tex Trailers For Sale in California: 131903 Equipment Near You - Find Big Tex Trailers on Equipment Trader.",
+            "timestamp": 1649774735,
+            "title": "Big Tex Trailers For Sale - California - Equipment Trader",
+            "url": "https://www.equipmenttrader.com/California-Big-Tex-Trailers/equipment-for-sale?make=BIG+TEX+TRAILERS%7C1674379&state=California%7CCA"
+        },
+        {
+            "rank": 8,
+            "snippet": "Big Tex Trailers For Sale in California: 135819 Trucks Near You - Find Big Tex Trailers on Commercial Truck Trader.",
+            "timestamp": 1649774735,
+            "title": "California - Big Tex Trailers For Sale - Commercial Truck Trader",
+            "url": "https://www.commercialtrucktrader.com/California-Big-Tex-Trailers/trucks-for-sale?make=BIG+TEX+TRAILERS%7C79717534&state=California%7CCA"
+        },
+        {
+            "rank": 9,
+            "snippet": "TrailerTrader.com has a huge selection of trailers by Big Tex Trailers for Sale . With over 150000 trailers for sale, you can find the trailer you need\u00a0...",
+            "timestamp": 1649774735,
+            "title": "TRAILERS BY BIG TEX TRAILERS FOR SALE | NEAR ME - Trailer ...",
+            "url": "https://www.trailertrader.com/trailers-for-sale?manufacturer=Big+Tex+Trailers"
+        },
+        {
+            "rank": 10,
+            "snippet": "Items 1 - 15 of 60 ... 2017 Big Tex 7x20 Utility Trailer. Price: $3,200.00 \u00b7 Utility Trailer for sale near Mountain View, CA in Hurricane, UT ; 2020 Big Tex 102x25+5\u00a0...",
+            "timestamp": 1649774735,
+            "title": "Used Big tex trailers for sale",
+            "url": "https://www.bigtextrailerclassifieds.com/used-big-tex-trailers"
+        },
+        {
+            "rank": 11,
+            "snippet": "Northern California Trailer Giant has been serving Chico with utility, landscape, cargo, gooseneck and pre-owned trailers for several years.",
+            "timestamp": 1649774735,
+            "title": "Northern California Trailer Giant: Big Tex Trailers in Chico",
+            "url": "https://northerncaliforniatrailergiant.com/"
+        }
+    ],
+    "timestamp": 1649774735,
+    "url": "https://www.ask.com/web?q=Big+Tex+Trailer+for+Sale&qo=relatedSearchNarrow&o=1526&l=dis"
+}
