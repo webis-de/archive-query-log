@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "foot to centimeter",
+    "offset": null,
+    "page": null,
+    "query": "foot to centimeter",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "In 1959 the international yard and pound agreement (between the United States and countries of the Commonwealth of Nations) defined a yard as being exactly 0.9144 metres, which in turn defined the foot as being exactly <em>0.3048 metres (304.8 mm</em>). Feet to Centimeters formula",
+            "timestamp": 1612629786,
+            "title": "Feet to Centimeters conversion - Metric Conversion charts ...",
+            "url": "https://www.metric-conversions.org/length/feet-to-centimeters.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "How to convert <em>feet</em> to <em>centimeters</em>. 1 <em>foot</em> is equal to 30.48 <em>centimeters</em>: 1 ft = 30.48 <em>cm</em>. The distance d in <em>centimeters</em> (<em>cm</em>) is equal to the distance d in <em>feet</em> (ft) times 30.48:. d (<em>cm</em>) = d (ft) \u00d7 30.48. Example. Convert 2 <em>feet</em> to <em>centimeters</em>: d (<em>cm</em>) = 2ft \u00d7 30.48 = 60.96cm. <em>Feet</em> to <em>centimeters</em> conversion table",
+            "timestamp": 1612629786,
+            "title": "Feet to Centimeters (ft to cm) conversion calculator",
+            "url": "https://www.rapidtables.com/convert/length/feet-to-cm.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Use this page to learn how to convert between <em>feet</em> and <em>centimetres</em>. Type in your own numbers in the form to convert the units! \u203a\u203a Quick conversion chart of <em>foot</em> to <em>centimeter</em>. 1 <em>foot</em> to <em>centimeter</em> = 30.48 <em>centimeter</em>. 2 <em>foot</em> to <em>centimeter</em> = 60.96 <em>centimeter</em>. 3 <em>foot</em> to <em>centimeter</em> = 91.44 <em>centimeter</em>. 4 <em>foot</em> to <em>centimeter</em> = 121.92 <em>centimeter</em>",
+            "timestamp": 1612629786,
+            "title": "Convert foot to centimeter - Conversion of Measurement Units",
+            "url": "https://www.convertunits.com/from/foot/to/centimeter"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>feet</em> or <em>cm</em> The SI base unit for length is the metre. 1 metre is equal to 3.2808398950131 <em>feet</em>, or 100 <em>cm</em>. Note that rounding errors may occur, so always check the results. Use this page to learn how to convert between <em>feet</em> and <em>centimetres</em>. Type in your own numbers in the form to convert the units! \u203a\u203a Quick conversion chart of <em>feet</em> to <em>cm</em>",
+            "timestamp": 1612629786,
+            "title": "Convert feet to cm - Conversion of Measurement Units",
+            "url": "https://www.convertunits.com/from/feet/to/cm"
+        },
+        {
+            "rank": 5,
+            "snippet": "The international <em>foot</em> corresponds to human <em>feet</em> with shoe size 13 (UK), 14 (US male), 15.5 (US female), or 46 (EU). <em>Centimeter</em>. Definition: A <em>centimeter</em> (symbol: <em>cm</em>) is a unit of length in the International System of Units (SI), the current form of the metric system. It is defined as 1/100 meters.",
+            "timestamp": 1612629786,
+            "title": "Convert feet to cm - Unit Converter",
+            "url": "https://www.unitconverters.net/length/feet-to-cm.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "Convert height of 5 <em>feet</em> 2 inches to <em>centimeters</em>. First, convert 5 <em>feet</em> to inches: 5 <em>feet</em> \u00d7 12 inches/<em>foot</em> = 60 inches; Add up our inches: 60 + 2 = 62 inches; Convert inches to <em>cm</em>: 62 inches \u00d7 2.54 <em>cm</em>/inch = 157.48 <em>cm</em>; Convert Metric units to Imperial and US units. Convert height of 144.5 <em>centimeters</em> to inches. Convert <em>cm</em> to in; 144.5 <em>cm</em> \u00d7 0 ...",
+            "timestamp": 1612629786,
+            "title": "Height Converter ft to cm and cm to in - CalculatorSoup",
+            "url": "https://www.calculatorsoup.com/calculators/conversions/heightftcm.php"
+        },
+        {
+            "rank": 7,
+            "snippet": "1 <em>Foot</em> = 30.48 <em>Centimeter</em> | <em>Foot</em> to <em>Centimeter</em> conversion allows you to convert value between <em>Foot</em> to <em>Centimeter</em> easily. Visit here for more details",
+            "timestamp": 1612629786,
+            "title": "Foot to Centimeter Conversion | 1 Foot = 30.48 Centimeter",
+            "url": "https://calculationcalculator.com/foot-to-centimeter"
+        },
+        {
+            "rank": 8,
+            "snippet": "The <em>distance d in centimeters (cm) is equal to the distance d in feet (ft) times 30.48</em> plus the distance d in inches (in) times 2.54: d(<em>cm) = d(ft) \u00d7 30.48</em> + d(in) \u00d7 2.54",
+            "timestamp": 1612629786,
+            "title": "Feet+inches to cm (ft+in to cm) converter",
+            "url": "https://www.rapidtables.com/convert/length/feet-inch-to-cm.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Conversion Factors for Units of Length. 1 inch = 2.54 <em>centimeters</em> 1 <em>foot</em> = 0.305 meter 1 yard = 0.914 meter 1 mile = 1.609 kilometers 1 <em>centimeter</em> = 0.39 inch",
+            "timestamp": 1612629786,
+            "title": "Foot and inch to centimeter calculator - coolconversion.com",
+            "url": "https://coolconversion.com/lenght/feet-inches-to-cm/"
+        }
+    ],
+    "timestamp": 1612629786,
+    "url": "https://www.ecosia.org/search?q=foot+to+centimeter"
+}

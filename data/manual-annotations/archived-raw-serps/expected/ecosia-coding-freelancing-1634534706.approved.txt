@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "coding freelancing",
+    "offset": null,
+    "page": null,
+    "query": "coding freelancing",
+    "results": [
+        {
+            "rank": 4,
+            "snippet": "This will increase <em>freelance</em> <em>coding</em> jobs at a fast pace. On top of that, being a <em>freelancer</em> now is a lot easier than 10 years ago; there are many available tools to manage your career. If you are a <em>freelancer</em> or just starting in the software development world, this is the perfect time to further your career.",
+            "timestamp": 1634534706,
+            "title": "11 Freelance Coding Jobs Sites to Find Coding Clients in 2021",
+            "url": "https://millo.co/freelance-coding-jobs"
+        },
+        {
+            "rank": 5,
+            "snippet": "check php <em>coding</em> errors , hourly rate website design php <em>coding</em> , matlab <em>coding</em> job , mq4 <em>coding</em> service , <em>freelance</em> <em>coding</em> siteexperts exchangecom , <em>coding</em> backlinking , slicing <em>coding</em> , program bluegiga <em>coding</em> , psd templates <em>coding</em> service , easy money com <em>coding</em> skills , <em>coding</em> <em>freelancers</em> , <em>coding</em> banners , simple flash <em>coding</em> , game ...",
+            "timestamp": 1634534706,
+            "title": "Coding Jobs for October 2021 | Freelancer",
+            "url": "https://www.freelancer.com/jobs/coding/"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Linas</em> R. I can do the following: 1) Manage assets with API keys for profit share. $2000 setup fee, monthly fixed fee of $1000 and profit share depending on capital size. (Low risk fund 1-3%+/month performance, High risk fund 10%+/month performance). You can start with as low as $1000 in capital.",
+            "timestamp": 1634534706,
+            "title": "27 Best Freelance Coders For Hire In October 2021 - Upwork\u2122",
+            "url": "https://www.upwork.com/hire/coders/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Freelancing</em> sites are the best places to find <em>freelance</em> <em>coding</em> work. Companies and individual business owners go there when they are looking for <em>freelancers</em> in particular. As a member <em>freelancer</em>, you can apply for postings, submit proposals, and bid for projects, for instance, depending on how the platform works.",
+            "timestamp": 1634534706,
+            "title": "How to Get Your Start in Freelance Coding (+ 17 Job Sites ...",
+            "url": "https://millo.co/freelance-coding"
+        },
+        {
+            "rank": 8,
+            "snippet": "#8 Do What You Love - <em>Freelance</em> Coder. So, you love <em>coding</em>, and you would like to be a <em>freelancer</em>. <em>Freelancing</em> gives you the opportunity to do this and make a lot of money. There is no better work to do than the one you love. Instead of grumbling as you head to work every day, <em>freelancing</em> can offer you a solution.",
+            "timestamp": 1634534706,
+            "title": "Learn How to Code to Become a Freelance Programmer",
+            "url": "https://www.codebrainer.com/blog/10-reasons-why-you-should-learn-how-to-code"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Freelancing</em> offers a wealth of opportunities to learn, grow, and meet people. And equally importantly, it gives you a way to see what different work environments are like before you settle down. But I do understand that when you\u2019re fresh out of school, it may be even harder to get <em>freelance</em> than it is to get a regular job.",
+            "timestamp": 1634534706,
+            "title": "How to Get Freelance Programming Work (With No Experience ...",
+            "url": "https://mikecavaliere.com/how-to-get-freelance-programming-work-with-no-experience/"
+        },
+        {
+            "rank": 10,
+            "snippet": "30 jobs found, pricing in USD. 1. Need English scripts for C++<em> programming</em> videos in Hindi 6 days left. VERIFIED. Need English scripts for 16 hours of Hindi C++<em> programming</em> videos. A candidate with<em> programming</em> knowledge is preferred. English (UK)<em> Programming</em> Translation. $102 (Avg Bid) $102 Avg Bid.",
+            "timestamp": 1634534706,
+            "title": "Programming Jobs for October 2021 | Freelancer",
+            "url": "https://www.freelancer.com/jobs/programming/"
+        },
+        {
+            "rank": 11,
+            "snippet": "However, <em>freelance</em> work isn\u2019t about being a genius or knowing a lot. It\u2019s about using knowledge that your client doesn\u2019t have to help them. To a lot of people, even the most basic lines of <em>code</em> can seem like quantum physics. And that\u2019s alright - everyone has their own strengths. Maybe one of theirs isn\u2019t programming.",
+            "timestamp": 1634534706,
+            "title": "How students (or anyone) can make extra ... - Learn to Code",
+            "url": "https://www.freecodecamp.org/news/how-students-or-anyone-can-make-extra-money-through-software-freelancing-4c802c43d1a1/"
+        }
+    ],
+    "timestamp": 1634534706,
+    "url": "https://www.ecosia.org/search?tt=e8eb07a6&q=coding+freelancing&addon=brave"
+}

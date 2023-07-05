@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "fudanshi",
+    "offset": null,
+    "page": null,
+    "query": "fudanshi",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Boys who enjoy yaoi (a genre in Japan that contains sexual and/or romantic relations between two men); literally translates to \"rotten boy\"; corresponding female : fujoshi",
+            "timestamp": 1655238275,
+            "title": "Urban Dictionary: fudanshi",
+            "url": "https://www.urbandictionary.com/define.php?term=fudanshi"
+        },
+        {
+            "rank": 2,
+            "snippet": "What is a Fujoshi/Fudanshi? \u201cFujoshi\u201d is a term for women who enjoy any media or works depicting romantic relationships between men and \u201cfudanshi\u201d is the male-gendered version of it. The word used to have negative connotations meant to degrade people who enjoy consuming media with male/male romance. However, fans have since reclaimed it ...",
+            "timestamp": 1655238275,
+            "title": "What is a Fujoshi/Fudanshi? - futekiya Blog",
+            "url": "https://futekiya.com/what-is-fujoshi-fudanshi/"
+        },
+        {
+            "rank": 3,
+            "snippet": "The High School Life of a Fudanshi (\u8150\u7537\u5b50\u9ad8\u6821\u751f\u6d3b, Fudanshi K\u014dk\u014d Seikatsu) is a Japanese yonkoma manga series written and drawn by Michinoku Atami. The manga is published online in Ichijinsha's Zero-Sum Online with first tank\u014dbon format released on September 25, 2015. The manga is licensed in North America by Seven Seas Entertainment.This work parodies BL's cliche and fandom, but is ...",
+            "timestamp": 1655238275,
+            "title": "The High School Life of a Fudanshi - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/The_High_School_Life_of_a_Fudanshi"
+        },
+        {
+            "rank": 4,
+            "snippet": "Fudanshi is a byproduct of a morphing entertainment and media industry; a niche market that exists, and will continue to exist for the coming years. If you consider yourself a fujoshi or fudanshi, don\u2019t be afraid to be out and loud about it. Go on and collect any relevant item, merchandise, and collectibles, and have no shame in talking about ...",
+            "timestamp": 1655238275,
+            "title": "Fudanshi: Men and the Consumption of Gay Themes in Manga and Anime",
+            "url": "http://yabai.com/p/2725"
+        },
+        {
+            "rank": 5,
+            "snippet": "Complete list of fudanshi anime, and watch online. These anime feature Fudanshi (\u8150\u7537\u5b50). Translated as \"rotten boy\", the term describes men who are obsessed with men in homosexual relationships. Their preferred fiction is anything to do with Yaoi or Boys' Love (BL).",
+            "timestamp": 1655238275,
+            "title": "Fudanshi Anime | Anime-Planet",
+            "url": "https://www.anime-planet.com/anime/tags/fudanshi"
+        },
+        {
+            "rank": 6,
+            "snippet": "Check out our fudanshi selection for the very best in unique or custom, handmade pieces from our pins &amp; pinback buttons shops.",
+            "timestamp": 1655238275,
+            "title": "Fudanshi | Etsy",
+            "url": "https://www.etsy.com/market/fudanshi"
+        },
+        {
+            "rank": 7,
+            "snippet": "Fudanshi Koukou Seikatsu is a charming, inoffensive and hilarious series, something that is evidently lost on the joyless, humourless losers who seem to think they're being oppressed by cartoon characters. Fragile little faeries with hair trigger emotions and a victimhood fetish this is evidently not for you.",
+            "timestamp": 1655238275,
+            "title": "Fudanshi Koukou Seikatsu (The Highschool Life of a Fudanshi ...",
+            "url": "https://myanimelist.net/anime/33222/Fudanshi_Koukou_Seikatsu"
+        },
+        {
+            "rank": 8,
+            "snippet": "The Daily Life of a Fudanshi High School Student Viewers Also Liked. AIURA 13 Videos Urawa no Usagi-chan 12 Videos Senryu Girl 12 Videos SKET Dance 78 Videos About the Show. Sakaguchi is a regular ...",
+            "timestamp": 1655238275,
+            "title": "The Highschool Life of a Fudanshi - Watch on Crunchyroll",
+            "url": "https://www.crunchyroll.com/the-highschool-life-of-a-fudanshi"
+        },
+        {
+            "rank": 9,
+            "snippet": "Here's a test you can take to find out! There are 20 questions in all. Answer truthfully and find out if you have earned the right to call yourself a true Fujoshi or Fudanshi! blankspace (89699) 101 days ago. even though i read shoujo or some shounen i still ship crazy... i watched naruto with the mentally that they must kiss again\ud83d\ude02.",
+            "timestamp": 1655238275,
+            "title": "Are You A True Fujoshi/Fudanshi? Quiz - Test yourself",
+            "url": "https://www.allthetests.com/personality-tests/are-you-this-star-figure/cartoons-mangas-animes-character/other-cartoons-mangas-animes-character/quiz36/1554752674/are-you-a-true-fujoshi-fudanshi-quiz-test-yourself"
+        }
+    ],
+    "timestamp": 1655238275,
+    "url": "https://www.ecosia.org/search?q=fudanshi"
+}
