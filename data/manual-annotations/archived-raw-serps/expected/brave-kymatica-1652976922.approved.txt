@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Kymatica",
+    "offset": null,
+    "page": null,
+    "query": "Kymatica",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Kymatica</em>: Directed by Benjamin Stewart. With Bruce Lipton, Henrik Palmgren, Benjamin Stewart. We may be quick to blame secret organizations, corporations and corrupt politicians for the state of the environment. The harsh truth is that the world is in its current state because humanity is evolving ...",
+            "timestamp": 1652976922,
+            "title": "Kymatica (2009) - IMDb",
+            "url": "https://www.imdb.com/title/tt2469524/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Join me on Facebook https://www.facebook.com/SentientmindA movie by Ben Stewart, please visit his website:http://talismanicidols.org/The questions that have",
+            "timestamp": 1652976922,
+            "title": "Kymatica - FULL MOVIE - YouTube",
+            "url": "https://www.youtube.com/watch?v=14Bn3uYqaXA"
+        },
+        {
+            "rank": 3,
+            "snippet": "Evolution is a term to define only one organism and that's the self. The self is the universe, the self is the alpha and omega, god, and infinity, and...",
+            "timestamp": 1652976922,
+            "title": "Kymatica - Top Documentary Films",
+            "url": "https://topdocumentaryfilms.com/kymatica/"
+        },
+        {
+            "rank": 4,
+            "snippet": "The movie focuses on human and universal consciousness and points out psyche disease that mankind has induced by creating insane illusion, which is the main cause of pain and suffer.",
+            "timestamp": 1652976922,
+            "title": "Kymatica (2009) | MUBI",
+            "url": "https://mubi.com/films/kymatica"
+        },
+        {
+            "rank": 5,
+            "snippet": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel &amp; accessories, shoes, jewelry, tools &amp; hardware, housewares, furniture, sporting goods, beauty &amp; personal care, groceries &amp; just about anything else.",
+            "timestamp": 1652976922,
+            "title": "Watch Kymatica | Prime Video - Amazon.com",
+            "url": "https://www.amazon.com/Kymatica-Ben-Stewart/dp/B00Y9Z4I0K"
+        },
+        {
+            "rank": 6,
+            "snippet": "Jonatan Liljedahl at <em>Kymatica</em> AB makes iOS music apps, electronic music, and a little bit of audio hardware.",
+            "timestamp": 1652976922,
+            "title": "Kymatica.com | Jonatan Liljedahl at Kymatica AB makes iOS music ...",
+            "url": "http://kymatica.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Follow - Twitter",
+            "timestamp": 1652976922,
+            "title": "Follow - Twitter",
+            "url": "https://twitter.com/j_liljedahl"
+        },
+        {
+            "rank": 8,
+            "snippet": "Javascript is required to view this website",
+            "timestamp": 1652976922,
+            "title": "Kymatica (2015) Movie - hoopla",
+            "url": "https://www.hoopladigital.com/title/11338041"
+        },
+        {
+            "rank": 9,
+            "snippet": "Download apps by <em>Kymatica</em> AB, including AU3FX:1-4, SECTOR, AU3FX:PeakQ, and many more.",
+            "timestamp": 1652976922,
+            "title": "\u200eKymatica AB Apps on the App Store",
+            "url": "https://apps.apple.com/us/developer/kymatica-ab/id522046659"
+        },
+        {
+            "rank": 10,
+            "snippet": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel &amp; accessories, shoes, jewelry, tools &amp; hardware, housewares, furniture, sporting goods, beauty &amp; personal care, groceries &amp; just about anything else.",
+            "timestamp": 1652976922,
+            "title": "Kymatica : Movies &amp; TV - Amazon.com",
+            "url": "https://www.amazon.com/Kymatica/dp/B00AAMIRTE"
+        },
+        {
+            "rank": 11,
+            "snippet": "<em>Kymatica</em> is a Documentary directed by Benjamin Stewart, Daniel Stewart. Year: 2009. Original title: <em>Kymatica</em>: The Film. Synopsis:",
+            "timestamp": 1652976922,
+            "title": "Kymatica (2009) - FilmAffinity",
+            "url": "https://www.filmaffinity.com/en/film204032.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Listen to <em>Kymatica</em> on Spotify. Artist \u00b7 37 monthly listeners.",
+            "timestamp": 1652976922,
+            "title": "Kymatica | Spotify",
+            "url": "https://open.spotify.com/artist/4bEe9oFpYmf8aWemoV9LuS"
+        },
+        {
+            "rank": 13,
+            "snippet": "There are 22 videos about \u201c<em>kymatica</em>\u201d on Vimeo, the home for high quality videos and the people who love them.",
+            "timestamp": 1652976922,
+            "title": "Videos about \u201ckymatica\u201d on Vimeo",
+            "url": "https://vimeo.com/tag:kymatica"
+        },
+        {
+            "rank": 14,
+            "snippet": "When you think the end is near, the apocalypse, Armageddon, and when you think we as a species are doomed, it is not they, it is you that brought this about, and for a very good reason. You are evolving. Stop blaming everybody and everything else. Quit panicking about global tyranny and natural ...",
+            "timestamp": 1652976922,
+            "title": "Kymatica | Watch Documentary Online for Free",
+            "url": "https://www.documentarystorm.com/kymatica/"
+        },
+        {
+            "rank": 15,
+            "snippet": "November 30, 2019 -\n            The masterpiece \"<em>Kymatica</em>\" Documentary by Ben Stewart. \"Evolution is a term to define only one organism and that's the self. The self is the universe,...",
+            "timestamp": 1652976922,
+            "title": "The masterpiece \"Kymatica\"... - Light is Consciousness",
+            "url": "https://www.facebook.com/lightisconsciousness/videos/the-masterpiece-kymatica-documentary-by-ben-stewartevolution-is-a-term-to-define/465609117485569/"
+        },
+        {
+            "rank": 16,
+            "snippet": "Documentary on DOC: \"<em>Kymatica</em>\" is the most profound and insightful piece of art to explore the root cause of all corruption, deceit, evil, and war in our world si...",
+            "timestamp": 1652976922,
+            "title": "Kymatica | Watch Documentaries Online | Promote Documentary Film",
+            "url": "https://www.cultureunplugged.com/documentary/watch-online/filmedia/play/2594/kymatica"
+        },
+        {
+            "rank": 17,
+            "snippet": "See posts, photos and more on Facebook",
+            "timestamp": 1652976922,
+            "title": "\u202a#\u200ekymatica\u202c - Explore | Facebook",
+            "url": "https://m.facebook.com/hashtag/kymatica"
+        },
+        {
+            "rank": 18,
+            "snippet": "Evolution is a term to define only one organism and that\u2019s the self. The self is the universe, the self is the alpha and omega, god, and infinity, and",
+            "timestamp": 1652976922,
+            "title": "Kymatica | Documentary Heaven",
+            "url": "https://documentaryheaven.com/kymatica/"
+        },
+        {
+            "rank": 19,
+            "snippet": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel &amp; accessories, shoes, jewelry, tools &amp; hardware, housewares, furniture, sporting goods, beauty &amp; personal care, groceries &amp; just about anything else.",
+            "timestamp": 1652976922,
+            "title": "Kymatica \u203a Customer reviews - Amazon.com",
+            "url": "https://www.amazon.com/Kymatica/product-reviews/B00AAMIRTE?reviewerType=all_reviews"
+        },
+        {
+            "rank": 20,
+            "snippet": "See Instagram photos and videos from Ben Stewart (@<em>kymatica</em>.one)",
+            "timestamp": 1652976922,
+            "title": "Ben Stewart (@kymatica.one) \u2022 Instagram photos and videos",
+            "url": "https://www.instagram.com/kymatica.one/"
+        }
+    ],
+    "timestamp": 1652976922,
+    "url": "https://search.brave.com/search?q=Kymatica"
+}

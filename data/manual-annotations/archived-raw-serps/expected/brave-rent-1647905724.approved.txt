@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Rent",
+    "offset": null,
+    "page": null,
+    "query": "Rent",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "August 31, 2020 -\n            Search millions of apartments for <em>rent</em> and houses for <em>rent</em> with the <em>Rent</em>.com. <em>Rent</em> homes, cheap apartments, condos, and townhouses.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent - Apartment Finder | Rent.com",
+            "url": "https://www.rent.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "1 month ago -\n            <em>Rent</em> is a rock musical with music, lyrics, and book by Jonathan Larson, loosely based on Giacomo Puccini's 1896 opera La Boh\u00e8me. It tells the story of a group of impoverished young artists struggling to survive and create a life in Lower Manhattan's East Village in the thriving days of bohemian ...",
+            "timestamp": 1647905724,
+            "title": "Rent (musical) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Rent_(musical)"
+        },
+        {
+            "rank": 3,
+            "snippet": "Zillow has 348 single family rental listings in Oklahoma City OK. Use our detailed filters to find the perfect place, then get in touch with the landlord.",
+            "timestamp": 1647905724,
+            "title": "Houses For Rent in Oklahoma City OK - 348 Homes | Zillow",
+            "url": "https://www.zillow.com/oklahoma-city-ok/rent-houses/"
+        },
+        {
+            "rank": 4,
+            "snippet": "May 21, 2019 -\n            See all 3,752 apartments in Oklahoma City, OK currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Oklahoma City OK | Apartments.com",
+            "url": "https://www.apartments.com/oklahoma-city-ok/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Rent</em>: Directed by Chris Columbus. With Anthony Rapp, Adam Pascal, Rosario Dawson, Jesse L. Martin. This is the film version of the Pulitzer and Tony Award winning musical about Bohemians in the East Village of New York City struggling with life, love and AIDS, and the impacts they have on America.",
+            "timestamp": 1647905724,
+            "title": "Rent (2005) - IMDb",
+            "url": "https://www.imdb.com/title/tt0294870/"
+        },
+        {
+            "rank": 6,
+            "snippet": "See all 5,646 apartments in Baltimore, MD currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Baltimore MD | Apartments.com",
+            "url": "https://www.apartments.com/baltimore-md/"
+        },
+        {
+            "rank": 7,
+            "snippet": "See all 1,502 apartments in Tustin, CA currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Tustin CA | Apartments.com",
+            "url": "https://www.apartments.com/tustin-ca/"
+        },
+        {
+            "rank": 8,
+            "snippet": "See all 229 apartments in Broken Arrow, OK currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Broken Arrow OK | Apartments.com",
+            "url": "https://www.apartments.com/broken-arrow-ok/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Find the best studio, 1, 2 &amp; 3+ bedroom Apartments for <em>rent</em> in Hampton, VA -- cheap, luxury, pet friendly, and utility included Apartments in Hampton, Virginia.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Hampton, VA | ForRent.com",
+            "url": "https://www.forrent.com/find/VA/metro-Hampton+Roads/Hampton"
+        },
+        {
+            "rank": 10,
+            "snippet": "See all 5,452 apartments in New York, NY currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in New York NY | Apartments.com",
+            "url": "https://www.apartments.com/new-york-ny/"
+        },
+        {
+            "rank": 11,
+            "snippet": "See all 308 apartments in Newhall, CA currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Newhall CA | Apartments.com",
+            "url": "https://www.apartments.com/newhall-ca/"
+        },
+        {
+            "rank": 12,
+            "snippet": "January 31, 2020 -\n            See all 6,028 apartments in San Diego, CA currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in San Diego CA | Apartments.com",
+            "url": "https://www.apartments.com/san-diego-ca/"
+        },
+        {
+            "rank": 13,
+            "snippet": "See all 13,032 apartments in Seattle, WA currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Seattle WA | Apartments.com",
+            "url": "https://www.apartments.com/seattle-wa/"
+        },
+        {
+            "rank": 14,
+            "snippet": "See all 666 apartments and houses for <em>rent</em> in Lubbock, TX, including cheap, affordable, luxury and pet-friendly rentals. View floor plans, photos, prices and find the perfect rental today.",
+            "timestamp": 1647905724,
+            "title": "Lubbock, TX Rentals - Apartments and Houses for Rent | realtor.com\u00ae",
+            "url": "https://www.realtor.com/apartments/Lubbock_TX"
+        },
+        {
+            "rank": 15,
+            "snippet": "See all 490 apartments in Kettering, OH currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Kettering OH | Apartments.com",
+            "url": "https://www.apartments.com/kettering-oh/"
+        },
+        {
+            "rank": 16,
+            "snippet": "Search 16 apartments for <em>rent</em> in East Wenatchee, WA. Find detailed apartment listings including photos all on realtor.com\u00ae.",
+            "timestamp": 1647905724,
+            "title": "East Wenatchee, WA Apartments for Rent - realtor.com\u00ae",
+            "url": "https://www.realtor.com/apartments/East-Wenatchee_WA"
+        },
+        {
+            "rank": 17,
+            "snippet": "See all 384 apartments in Petersburg, VA currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Petersburg VA | Apartments.com",
+            "url": "https://www.apartments.com/petersburg-va/"
+        },
+        {
+            "rank": 18,
+            "snippet": "See all 594 apartments in Woodstock, GA currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Woodstock GA | Apartments.com",
+            "url": "https://www.apartments.com/woodstock-ga/"
+        },
+        {
+            "rank": 19,
+            "snippet": "February 14, 2020 -\n            See all 3,630 apartments in Tempe, AZ currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Tempe AZ | Apartments.com",
+            "url": "https://www.apartments.com/tempe-az/"
+        },
+        {
+            "rank": 20,
+            "snippet": "See all 1,530 apartments in Hollywood, FL currently available for <em>rent</em>. Each Apartments.com listing has verified availability, rental rates, photos, floor plans and more.",
+            "timestamp": 1647905724,
+            "title": "Apartments for Rent in Hollywood FL | Apartments.com",
+            "url": "https://www.apartments.com/hollywood-fl/"
+        }
+    ],
+    "timestamp": 1647905724,
+    "url": "https://search.brave.com/search?q=Rent"
+}

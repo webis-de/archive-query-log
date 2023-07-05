@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "\ufffdmetaverse",
+    "offset": null,
+    "page": null,
+    "query": "\ufffdmetaverse",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "March 10, 2022 -\n            Tech companies like Meta and Epic Games insist it\u2019s the future of the internet, but the <em>metaverse</em> has been around in the form of video games and virtual worlds for decades \u2014 and it\u2019s not taking over our lives yet",
+            "timestamp": 1650224042,
+            "title": "The metaverse, explained: what it is, and why tech companies love ...",
+            "url": "https://www.polygon.com/22959860/metaverse-explained-video-games"
+        },
+        {
+            "rank": 2,
+            "snippet": "November 29, 2021 -\n            Everything you never wanted to know about the future of talking about the future.",
+            "timestamp": 1650224042,
+            "title": "What Is the Metaverse, Exactly? | WIRED",
+            "url": "https://www.wired.com/story/what-is-the-metaverse/"
+        },
+        {
+            "rank": 3,
+            "snippet": "March 16, 2022 -\n            A <em>metaverse</em> is a network of 3D virtual worlds focused on social connection. In futurism and science fiction, it is often described as a hypothetical iteration of the Internet as a single, universal virtual world that is facilitated by the use of virtual and augmented reality headsets.",
+            "timestamp": 1650224042,
+            "title": "Metaverse - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Metaverse"
+        },
+        {
+            "rank": 4,
+            "snippet": "5 days ago -\n            The concept \u2013 and promises \u2013 of the <em>metaverse</em> can be hard to grasp, even for technophiles. But the effects are already being felt in the real world.",
+            "timestamp": 1650224042,
+            "title": "The metaverse is coming, whether you like it or not - CSMonitor.com",
+            "url": "https://www.csmonitor.com/Technology/2022/0411/The-metaverse-is-coming.-But-what-is-it"
+        },
+        {
+            "rank": 5,
+            "snippet": "2 weeks ago -\n            Facebook, Microsoft and a host of other companies are jockeying to define the next iteration of the internet.",
+            "timestamp": 1650224042,
+            "title": "The Metaverse Is on the Way: Here's What You Need to Know - CNET",
+            "url": "https://www.cnet.com/tech/services-and-software/the-metaverse-is-on-the-way-heres-what-you-need-to-know/"
+        },
+        {
+            "rank": 6,
+            "snippet": "November 18, 2021 -\n            Once a niche concept, the idea of a centralized virtual world has careened into the mainstream landscape this year. Here's what to know",
+            "timestamp": 1650224042,
+            "title": "What is the Metaverse? Here's Why It Matters | Time",
+            "url": "https://time.com/6116826/what-is-the-metaverse/"
+        },
+        {
+            "rank": 7,
+            "snippet": "February 15, 2022 -\n            See posts, photos and more on Facebook",
+            "timestamp": 1650224042,
+            "title": "Log in or sign up to view",
+            "url": "https://about.facebook.com/meta"
+        },
+        {
+            "rank": 8,
+            "snippet": "March 16, 2022 -\n            Is it just a buzzword, the next internet, a video game, or an idea? We asked experts to break it down for us.",
+            "timestamp": 1650224042,
+            "title": "The Metaverse, Explained for People Who Still Don\u2019t Get It",
+            "url": "https://www.vice.com/en/article/93bmyv/what-is-the-metaverse-internet-technology-vr"
+        },
+        {
+            "rank": 9,
+            "snippet": "January 25, 2022 -\n            Facebook, Microsoft and a host of other companies are jockeying to define the next iteration of the internet.",
+            "timestamp": 1650224042,
+            "title": "The metaverse is just getting started: Here's what you need to ...",
+            "url": "https://www.cnet.com/tech/services-and-software/the-metaverse-is-everywhere-heres-what-you-need-to-know/"
+        },
+        {
+            "rank": 10,
+            "snippet": "January 23, 2022 -\n            Microsoft cited the <em>metaverse</em> as a reason for buying Activision Blizzard for $68.7 billion. Let\u2019s break down what that really means.",
+            "timestamp": 1650224042,
+            "title": "What\u2019s All the Hype About the Metaverse? - The New York Times",
+            "url": "https://www.nytimes.com/2022/01/18/technology/personaltech/metaverse-gaming-definition.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "January 14, 2020 -\n            There\u2019s a reason every Big Tech CEO has a well-worn copy of \u201cSnow Crash\u201d in their office.",
+            "timestamp": 1650224042,
+            "title": "The Metaverse: What It Is, Where to Find it, and Who Will Build ...",
+            "url": "https://www.matthewball.vc/all/themetaverse"
+        },
+        {
+            "rank": 12,
+            "snippet": "February 23, 2022 -\n            Here's how to navigate the immersive virtual world that\u2019s still mostly conceptual but manages to generate billions of visits and dollars.",
+            "timestamp": 1650224042,
+            "title": "The Metaverse, Explained: Everything You Wanted to Know\u2014But ...",
+            "url": "https://robbreport.com/shelter/art-collectibles/everything-you-wanted-to-know-about-the-metaverse-1234662485/"
+        },
+        {
+            "rank": 13,
+            "snippet": "December 29, 2021 -\n            The <em>metaverse</em> is coming, so here are the terms you need to know",
+            "timestamp": 1650224042,
+            "title": "Everything you need to know to understand the metaverse \u2014 Quartz",
+            "url": "https://qz.com/2089665/everything-you-need-to-know-to-understand-the-metaverse/"
+        },
+        {
+            "rank": 14,
+            "snippet": "January 21, 2022 -\n            Walmart appears to be venturing into the <em>metaverse</em> with plans to create its own cryptocurrency and collection of NFTs.",
+            "timestamp": 1650224042,
+            "title": "Walmart is quietly preparing to enter the metaverse",
+            "url": "https://www.cnbc.com/2022/01/16/walmart-is-quietly-preparing-to-enter-the-metaverse.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "January 9, 2022 -\n            In addition to the technical requirements, the <em>metaverse</em> will include various user experiences including, but not limited to, entertainment, gaming, commerce, social interactions, education, and research.",
+            "timestamp": 1650224042,
+            "title": "What Is the Metaverse: Where We Are and Where We\u2019re Headed | ATD",
+            "url": "https://www.td.org/atd-blog/what-is-the-metaverse-where-we-are-and-where-were-headed"
+        },
+        {
+            "rank": 16,
+            "snippet": "February 12, 2022 -\n            To continue, please click the box below to let us know you're not a robot \u00b7 Please make sure your browser supports JavaScript and cookies and that you are not blocking them from loading. For more information you can review our Terms of Service and Cookie Policy",
+            "timestamp": 1650224042,
+            "title": "The Metaverse Makes No Sense and Here's Why - Bloomberg",
+            "url": "https://www.bloomberg.com/news/newsletters/2022-02-11/the-metaverse-makes-no-sense-and-here-s-why"
+        },
+        {
+            "rank": 17,
+            "snippet": "November 15, 2021 -\n            The <em>metaverse</em> has been a hot topic\u00a0recently with Facebook and Microsoft planting flags in virtual space. But what is the <em>metaverse</em> and is it here?",
+            "timestamp": 1650224042,
+            "title": "Everyone wants to own the metaverse including Facebook and Microsoft.",
+            "url": "https://eu.usatoday.com/story/tech/2021/11/10/metaverse-what-is-it-explained-facebook-microsoft-meta-vr/6337635001/"
+        },
+        {
+            "rank": 18,
+            "snippet": "January 28, 2022 -\n            The tech world has been overtaken by the seductive idea of a virtual utopia, but what\u2019s on offer looks more like a late-capitalist technocratic nightmare",
+            "timestamp": 1650224042,
+            "title": "I\u2019ve seen the metaverse \u2013 and I don\u2019t want it | Games | The ...",
+            "url": "https://www.theguardian.com/games/2022/jan/25/ive-seen-the-metaverse-and-i-dont-want-it"
+        },
+        {
+            "rank": 19,
+            "snippet": "January 9, 2022 -\n            People may think of the <em>metaverse</em> as virtual, but the harm terrorists and extremists could do is very real.",
+            "timestamp": 1650224042,
+            "title": "The metaverse offers a future full of potential \u2013 for terrorists ...",
+            "url": "https://theconversation.com/the-metaverse-offers-a-future-full-of-potential-for-terrorists-and-extremists-too-173622"
+        },
+        {
+            "rank": 20,
+            "snippet": "November 4, 2021 -\n            The <em>metaverse</em> is a popular encapsulation of trends found in Fortnite, Roblox, Facebook Horizon, and other virtual worlds \u2014 but also an inspirational term for the future of the internet.",
+            "timestamp": 1650224042,
+            "title": "What is the metaverse, and do I have to care? - The Verge",
+            "url": "https://www.theverge.com/22701104/metaverse-explained-fortnite-roblox-facebook-horizon"
+        }
+    ],
+    "timestamp": 1650224042,
+    "url": "https://search.brave.com/search?q=%EF%BF%BDmetaverse"
+}

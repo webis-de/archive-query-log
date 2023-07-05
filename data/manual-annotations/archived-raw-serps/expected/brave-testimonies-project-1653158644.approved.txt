@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "testimonies project",
+    "offset": null,
+    "page": null,
+    "query": "testimonies project",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "February 9, 2022 -\n            Das <em>Testimonies</em> Projekt - Erfahrungsberichte nach der Impfung Das <em>Testimonies</em> <em>Project</em> wurde ins Leben gerufen, um allen Betroffenen eine Plattform zu bieten, nachdem sie die Covid-19-Impfstoffe erhalten hatten, und um sicherzustellen, dass ihre Stimmen geh\u00f6rt werden, da sie in den israelischen ...",
+            "timestamp": 1653158644,
+            "title": "Das Testimonies Projekt | Erfahrungsberichte nach der Impfung",
+            "url": "https://www.vaxtestimonies.org/de/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Sieh dir auf Facebook Beitr\u00e4ge, Fotos und vieles mehr an.",
+            "timestamp": 1653158644,
+            "title": "Testimony Project - Startseite | Facebook",
+            "url": "https://de-de.facebook.com/testimonyproject/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Those providing <em>testimony</em> were asked to describe their lives before, during, and after the Holocaust, and in many cases shared pictures and artifacts related to their experiences. Additional information about the interview process can be found on the USC Shoah Foundation\u2019s website.",
+            "timestamp": 1653158644,
+            "title": "USC Shoah Foundation Testimonies \u2014 United States Holocaust Memorial ...",
+            "url": "https://www.ushmm.org/collections/ask-a-research-question/tools-for-research/shoah-foundation"
+        },
+        {
+            "rank": 4,
+            "snippet": "The <em>Testimonies</em> <em>Project</em> was created to provide a platform for all those who were affected after getting the covid-19 vaccines, and to make sure their voices are heard, since they are not heard in the",
+            "timestamp": 1653158644,
+            "title": "Click Here to Support The testimonies project",
+            "url": "https://my.israelgives.org/en/campaign/Testimonies"
+        },
+        {
+            "rank": 5,
+            "snippet": "The European Holocaust Research Infrastructure Online Portal",
+            "timestamp": 1653158644,
+            "title": "EHRI - Phillip Maisel Testimonies Project",
+            "url": "https://portal.ehri-project.eu/units/au-006378-phillip_maisel_testimonies_project"
+        },
+        {
+            "rank": 6,
+            "snippet": "Paul-List-Stra\u00dfe 27, Haus 4.1 04103 Leipzig \u00b7 Liebigstra\u00dfe 20a, Haus 6 04103 Leipzig",
+            "timestamp": 1653158644,
+            "title": "TESTIMONY \u2013 Erfahrungen in DDR-Kinderheimen. Bew\u00e4ltigung und ...",
+            "url": "https://www.uniklinikum-leipzig.de/einrichtungen/medizinische-psychologie/Seiten/psychotraumatologie-testimony.aspx"
+        },
+        {
+            "rank": 7,
+            "snippet": "The \u2018Stolen Generations\u2019 <em>Testimonies</em>\u2019 <em>project</em> is an initiative to record on film the personal <em>testimonies</em> of Australia\u2019s Stolen Generations Survivors and share them online.",
+            "timestamp": 1653158644,
+            "title": "STOLEN GENERATIONS' TESTIMONIES - Testimonies",
+            "url": "https://www.stolengenerationstestimonies.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Donated to the United States Holocaust Memorial Museum by Phillip Maisel, <em>Project</em> Coordinator with the Holocaust <em>Testimonies</em> <em>Project</em>, Jewish Holocaust Museum &amp; Research Centre in Melbourne, Victoria, Australia.",
+            "timestamp": 1653158644,
+            "title": "Holocaust Survivors and Victims Database -- List of oral testimonies ...",
+            "url": "https://www.ushmm.org/online/hsv/source_view.php?SourceId=32140"
+        },
+        {
+            "rank": 9,
+            "snippet": "December 20, 2021 -\n            Since amassing more than 50,000 <em>testimonies</em> of Holocaust survivors during the 1990s, the organization that became USC Shoah Foundation \u2013 The Institute for Visual History and Education continues to collect <em>testimonies</em> from the Holocaust and other genocides.",
+            "timestamp": 1653158644,
+            "title": "Collecting Testimonies | USC Shoah Foundation",
+            "url": "https://sfi.usc.edu/collecting"
+        },
+        {
+            "rank": 10,
+            "snippet": "June 24, 2021 -\n            User Storys sind Systemanforderungen, die oft als \"Kundentyp + Anforderung + Zweck\" formuliert werden. Erfahre, wie du agile Programme mit Storys voranbringen und wie du loslegen kannst.",
+            "timestamp": 1653158644,
+            "title": "User Storys | Beispiele und Vorlage | Atlassian",
+            "url": "https://www.atlassian.com/de/agile/project-management/user-stories"
+        },
+        {
+            "rank": 11,
+            "snippet": "Donated to the United States Holocaust Memorial Museum by Phillip Maisel, <em>Project</em> Coordinator with the Holocaust <em>Testimonies</em> <em>Project</em>, Jewish Holocaust Museum &amp; Research Centre in Melbourne, Victoria, Australia.",
+            "timestamp": 1653158644,
+            "title": "Holocaust Survivors and Victims Database -- List of video testimonies ...",
+            "url": "https://www.ushmm.org/online/hsv/source_view.php?SourceId=32103"
+        },
+        {
+            "rank": 12,
+            "snippet": "An interdisciplinary team is engaged both in the development of the <em>testimonies</em> as well as the transdisciplinary study of them employing the design-based research methodology. Holocaust survivors Abba Naor and Eva Umlauf participated in the <em>project</em> \u2018Learning with digital <em>testimonies</em>\u2019.",
+            "timestamp": 1653158644,
+            "title": "Munich Project 'LediZ' - Learning with digital testimonies (LediZ) ...",
+            "url": "https://www.en.lediz.uni-muenchen.de/projekt-lediz/index.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "4 weeks ago -\n            Our storytelling <em>projects</em> are both based on and inspired by the more than 55,000 <em>testimonies</em> in the Institute\u2019s archive. They offer a deeper look into the emotional complexities of our survivor stories and told through the written word, video, audio and photography.",
+            "timestamp": 1653158644,
+            "title": "USC Shoah Foundation |",
+            "url": "https://sfi.usc.edu/"
+        },
+        {
+            "rank": 14,
+            "snippet": "December 2, 2016 -\n            USC Shoah Foundation\u2019s Dimensions in <em>Testimony</em> enables people to ask questions that prompt real-time responses from pre-recorded video interviews with Holocaust survivors and other witnesses to genocide. The pioneering <em>project</em> integrates advanced filming techniques, specialized display ...",
+            "timestamp": 1653158644,
+            "title": "Dimensions in Testimony | USC Shoah Foundation",
+            "url": "https://sfi.usc.edu/dit"
+        },
+        {
+            "rank": 15,
+            "snippet": "Zwischen November 2018 und April 2020 entwickeln die Projektpartner gemeinsam mit dem Bundesministerium f\u00fcr Inneres (BMI) als Bedarfstr\u00e4ger neue Instrumente und Materialien f\u00fcr die polizeiliche Fr\u00fch-Pr\u00e4vention gegen Radikalisierung. Der Fokus des Pr\u00e4ventionsportfolios liegt dabei auf ...",
+            "timestamp": 1653158644,
+            "title": "CounterStories | Pr\u00e4vention gegen Radikalisierung",
+            "url": "https://www.counterstories.at/"
+        },
+        {
+            "rank": 16,
+            "snippet": "March 24, 2022 -\n            From 1982 to 2008, the Fortunoff Archive provided consultative services, including interviewer training, to Holocaust <em>testimony</em> <em>projects</em> on three continents. In return, these <em>projects</em> donated copies of their videotaped interviews to the Archive.",
+            "timestamp": 1653158644,
+            "title": "Affiliate Projects - Fortunoff Video Archive for Holocaust Testimonies",
+            "url": "https://fortunoff.library.yale.edu/about-us/affiliate-projects/"
+        },
+        {
+            "rank": 17,
+            "snippet": "December 20, 2021 -\n            The Fortunoff Archive\u2019s collection consists of over 4,400 <em>testimonies</em> of Holocaust survivors, witnesses and liberators. Learn how to search the collection for materials relevant to your research. Includes step by step instructions on how to register in Aviary and access the collection.",
+            "timestamp": 1653158644,
+            "title": "Home - Fortunoff Video Archive for Holocaust Testimonies",
+            "url": "https://fortunoff.library.yale.edu/"
+        },
+        {
+            "rank": 18,
+            "snippet": "How has the women's movement grown and changed over your lifetime?",
+            "timestamp": 1653158644,
+            "title": "Rise Up L.A. Oral Stories Project | Natural History Museum",
+            "url": "https://nhm.org/rise-la-oral-stories-project"
+        },
+        {
+            "rank": 19,
+            "snippet": "Document ead/mss0986.xml;query=;brand=default is not available. Please check that you have typed the address correctly or that the referring page does not have an error in its link \u00b7 Document ID: ead/mss0986.xml;query=;brand=default",
+            "timestamp": 1653158644,
+            "title": "Manuscript and Archival Collection Finding Aids - University of ...",
+            "url": "https://library.udel.edu/special/findaids/view?docId=ead/mss0986.xml%3Bquery%3D%3Bbrand%3Ddefault"
+        },
+        {
+            "rank": 20,
+            "snippet": "May 5, 2021 -\n            The <em>testimonies</em>\u2019 <em>project</em> began in the 1980s as the Melbourne Oral History <em>Project</em>, established by Sandra Cowan and Jenny Wajsenberg and later co-ordinated by the late Anne Bernhaut. They conducted over 200 audio recordings of Holocaust survivors.",
+            "timestamp": 1653158644,
+            "title": "Survivor Testimonies - Jewish Holocaust Centre",
+            "url": "https://jhc.org.au/museum/collections/survivor-testimonies/"
+        }
+    ],
+    "timestamp": 1653158644,
+    "url": "https://search.brave.com/search?q=testimonies+project&source=desktop"
+}

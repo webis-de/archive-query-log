@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "apple t3 chip",
+    "offset": null,
+    "page": null,
+    "query": "apple t3 chip",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The <em>Apple</em> T2 (<em>Apple</em>'s internal name is T8012) security <em>chip</em> is a system on a <em>chip</em> \"SoC\" tasked with providing security and controller features to <em>Apple</em>'s Intel based Macintosh computers. It is a 64-bit ARMv8 <em>chip</em> and runs bridgeOS 2.0. T2 has its own RAM and is essentially a computer of its ...",
+            "timestamp": 1651405075,
+            "title": "Apple T2 - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Apple_T2"
+        },
+        {
+            "rank": 2,
+            "snippet": "December 11, 2018 -\n            Last month, <em>Apple</em> introduced the new MacBook Air and a revamped Mac mini. Both computers, like the newest MacBook Pro and last year\u2019s iMac Pro, come equipped with <em>Apple</em>\u2019s security-focused T2 <em>chip</em>, which has renewed concerns that <em>Apple</em> is trying to further lock down its devices from third-party ...",
+            "timestamp": 1651405075,
+            "title": "Apple confirms its T2 security chip blocks some third-party repairs ...",
+            "url": "https://www.theverge.com/2018/11/12/18077166/apple-macbook-air-mac-mini-t2-chip-security-repair-replacement-tool"
+        },
+        {
+            "rank": 3,
+            "snippet": "July 29, 2020 -\n            In the short-term, we might see a \u201c<em>T3</em>\u201d revision, as the silicon is iterated upon in future models. However, <em>Apple</em> is shifting its Mac range to custom ARM-based processors, like those in the iPhone and iPad. At present, the T2 is a custom <em>chip</em> that sits alongside the Intel CPUs the company ...",
+            "timestamp": 1651405075,
+            "title": "What Does Apple\u2019s T2 \u201cSecurity Chip\u201d Do in Your Mac?",
+            "url": "https://www.howtogeek.com/677167/what-does-apples-t2-security-chip-do-in-your-mac/"
+        },
+        {
+            "rank": 4,
+            "snippet": "October 11, 2020 -\n            Turns out my 2017 MacBook Pro does not have the T2 <em>chip</em>. Cool. I can easily wait to replace it until <em>Apple</em> has a <em>T3</em> solution (or whatever).",
+            "timestamp": 1651405075,
+            "title": "Apple\u2019s T2 security chip has an unfixable flaw | Ars Technica",
+            "url": "https://arstechnica.com/information-technology/2020/10/apples-t2-security-chip-has-an-unfixable-flaw/?comments=1"
+        },
+        {
+            "rank": 5,
+            "snippet": "August 29, 2019 -\n            <em>Apple</em> says the T2 is a security <em>chip</em>, and if all it did were keep your data more secure, it would be worth it. Yet this little processor does so much else, and it has a startling effect on performance.",
+            "timestamp": 1651405075,
+            "title": "What Apple's T2 chip does in your new MacBook Air or MacBook Pro ...",
+            "url": "https://appleinsider.com/articles/19/07/29/what-apples-t2-chip-does-in-your-new-macbook-air-or-macbook-pro"
+        },
+        {
+            "rank": 6,
+            "snippet": "November 6, 2021 -\n            <em>Apple</em> is taking the PC world by storm with its first debut of <em>Apple</em> Silicon <em>chips</em> inside of Macs, taking what it learned from developing the iPhone and iPad A-series of <em>chips</em> and bringing that architecture to laptops and desktops. Today, The Information said that <em>Apple</em> has no intent of slowing ...",
+            "timestamp": 1651405075,
+            "title": "3nm Mac and iPhone chips coming as soon as 2023, Apple Silicon ...",
+            "url": "https://9to5mac.com/2021/11/05/mac-iphone-apple-silicon-future/"
+        },
+        {
+            "rank": 7,
+            "snippet": "October 14, 2020 -\n            <em>Apple</em> Silicon Macs will not need T2 (or <em>T3</em>) <em>chips</em> because it will be presumably built in to the <em>apple</em> <em>chips</em>. And what are we gonna do until then? If this is an unfixable, unpatchable possible exploit, isn't it grounds for a mass product recall?",
+            "timestamp": 1651405075,
+            "title": "Apple's T2 Security Chip Vulnerable to Attack Via USB-C - MacRumors",
+            "url": "https://www.macrumors.com/2020/10/13/apples-t2-security-chip-vulnerable-to-usb-attack/"
+        },
+        {
+            "rank": 8,
+            "snippet": "February 28, 2022 -\n            At any time, <em>Apple</em> can release a <em>chip</em> with more cores, more threads, more power, more speed. It can say, as The Man in Black did: \"I'm not left-handed either.\" ... Matt is <em>T3</em>'s master of all things audiovisual, running our TV, speakers and headphones coverage.",
+            "timestamp": 1651405075,
+            "title": "Intel's MacBook Pro-beating chip just shows why Apple had to ditch ...",
+            "url": "https://www.t3.com/us/news/intels-macbook-pro-beating-chip-just-shows-why-apple-had-to-ditch-intel"
+        },
+        {
+            "rank": 9,
+            "snippet": "March 10, 2021 -\n            <em>Apple</em> silicon is a series of system on a <em>chip</em> (SoC) and system in a package (SiP) processors designed by <em>Apple</em> Inc., mainly using the ARM architecture. It is the basis of most new Mac computers as well as iPhone, iPad, <em>Apple</em> TV, and <em>Apple</em> Watch, and of products such as AirPods, HomePod and ...",
+            "timestamp": 1651405075,
+            "title": "Apple silicon - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Apple-designed_processors"
+        },
+        {
+            "rank": 10,
+            "snippet": "March 19, 2019 -\n            I'm going back and forth between MacMini and new iMac. Use of Mac is email,web browsing, some MS Office, nothing intensive. Weighing various factors..... How much weight show I give to the iMac not having the T2 <em>Chip</em>, and the Mini does? Does the T2 help protect against hackers, etc? And/or...",
+            "timestamp": 1651405075,
+            "title": "How important is Apple T2 Security Chip ? | MacRumors Forums",
+            "url": "https://forums.macrumors.com/threads/how-important-is-apple-t2-security-chip.2173984/"
+        },
+        {
+            "rank": 11,
+            "snippet": "August 5, 2019 -\n            It's not hard to imagine a future Mac OS X to absolutely require that it be executed in the context of security tokens generated by a T2 <em>chip</em>. Or maybe it will be a <em>T3</em> <em>chip</em> by that time?",
+            "timestamp": 1651405075,
+            "title": "Apple possibly preparing to eliminate hackintoshing via T2 Security ...",
+            "url": "https://techsparx.com/blog/2019/08/apple-hackintosh.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "January 31, 2022 -\n            Learn which Mac computers have the <em>Apple</em> T2 Security <em>Chip</em>.",
+            "timestamp": 1651405075,
+            "title": "Mac models with the Apple T2 Security Chip - Apple Support",
+            "url": "https://support.apple.com/en-us/HT208862"
+        },
+        {
+            "rank": 13,
+            "snippet": "August 10, 2018 -\n            I agree that the T1 and T2 are the start of a move to integrate and consolidate third party silicon into <em>Apple</em>'s own silicon, that may ultimately result in <em>Apple</em> being able to replace the GPU and CPU fairly transparently in the future. I expect the <em>T3</em>, T4, etc to integrate more features as ...",
+            "timestamp": 1651405075,
+            "title": "Everything you need to know about Apple's T2 chip in the 2018 Mac ...",
+            "url": "https://appleinsider.com/articles/18/08/08/everything-you-need-to-know-about-apples-t2-chip-in-the-2018-macbook-pro"
+        },
+        {
+            "rank": 14,
+            "snippet": "If you own an iMac Pro, or a Mac mini, MacBook Air, or MacBook Pro model introduced in 2018 or later, your Mac has one of <em>Apple</em>\u2019s T2 security <em>chips</em> inside. On the whole, having a T2 <em>chip</em> in your Mac is a good thing, thanks to significantly increased security and other benefits, but there ...",
+            "timestamp": 1651405075,
+            "title": "What Does Having a T2 Chip in Your Mac Mean to You? \u2013 Simply ...",
+            "url": "https://www.simply.ca/blogs/news/what-does-having-a-t2-chip-in-your-mac-mean-to-you"
+        },
+        {
+            "rank": 15,
+            "snippet": "August 23, 2021 -\n            An overview about T2 security <em>chip</em>, including which Mac models with T2 <em>chip</em>, what is it, how does it work. Differences between T2 <em>chip</em> and M1 <em>chip</em>.",
+            "timestamp": 1651405075,
+            "title": "Apple T2 Chip: What does it do, T2 Chip VS M1 Chip",
+            "url": "https://iboysoft.com/wiki/apple-t2-chip.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "November 6, 2020 -\n            The Checkm8 vulnerability that exposed years of iPhones to jailbreaking has finally been exploited in Macs as well.",
+            "timestamp": 1651405075,
+            "title": "Apple's T2 Security Chip Has an Unfixable Flaw | WIRED",
+            "url": "https://www.wired.com/story/apple-t2-chip-unfixable-flaw-jailbreak-mac/"
+        },
+        {
+            "rank": 17,
+            "snippet": "February 18, 2022 -\n            A company selling password-cracking tools says that a newly-discovered T2 Mac security vulnerability allows it to crack passwords on the ...",
+            "timestamp": 1651405075,
+            "title": "T2 Mac security vulnerability: Passwords can now be cracked - 9to5Mac",
+            "url": "https://9to5mac.com/2022/02/17/t2-mac-security-vulnerability-passware/"
+        },
+        {
+            "rank": 18,
+            "snippet": "Everything you need to know about the T2 security <em>chip</em> <em>by</em> <em>Apple</em>. Its various uses and drawbacks and the list of models that use the T2 <em>chip</em>. <em>The</em> <em>chip</em> enhances security and performance",
+            "timestamp": 1651405075,
+            "title": "Everything You Need to Know About the T2 Chip",
+            "url": "https://recoverit.wondershare.com/mac-tips/mac-t2-chip.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "March 24, 2022 -\n            Solution to recover lost data from MacBook 2018, 2019 with T2 <em>chip</em>. You can recover deleted files from T2-secured MacBook and get files off when Mac won\u2019t turn on.",
+            "timestamp": 1651405075,
+            "title": "How to recover lost data from T2-secured MacBook Pro/Air",
+            "url": "https://iboysoft.com/mac-data-recovery/apple-t2-chip-data-recovery.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "November 14, 2020 -\n            If <em>Apple</em> is going to include Face ID in future Macs, which seems inevitable at this point, it would require, at the very least, a <em>T3</em> <em>chip</em> based on A11 or later, with a neural engine block, and then that opens the door to all sorts of accelerated artificial intelligence, machine learning, natural ...",
+            "timestamp": 1651405075,
+            "title": "How the Mac will go ARM | iMore",
+            "url": "https://www.imore.com/how-mac-will-go-arm"
+        }
+    ],
+    "timestamp": 1651405075,
+    "url": "https://search.brave.com/search?q=apple+t3+chip"
+}

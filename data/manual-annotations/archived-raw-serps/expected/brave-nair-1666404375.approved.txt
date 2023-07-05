@@ -1,0 +1,178 @@
+{
+    "interpreted_query": "nair",
+    "offset": null,
+    "page": null,
+    "query": "nair",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "March 3, 2022 -\n            <em>Nair</em>\u2122 Hair Remover products help provide smooth, stunning skin for all people and all parts of the body, without the hassle of shaving. Try yours today!",
+            "timestamp": 1666404375,
+            "title": "<em></em>#1 Hair Removal Cream, Wax &amp; Depilatory Brand for Every Body | Nair\u2122",
+            "url": "https://www.naircare.com/en"
+        },
+        {
+            "rank": 2,
+            "snippet": "Explore <em>Nair</em>\u2122 products created specifically with men in mind. These hair removing sprays and creams have a masculine scent you'll love.",
+            "timestamp": 1666404375,
+            "title": "MEN'S NAIR\u2122",
+            "url": "https://www.naircare.com/en/men"
+        },
+        {
+            "rank": 3,
+            "snippet": "Have questions about <em>Nair</em>\u2122 and hair removal? We've got answers to help you in your hair removal journey.",
+            "timestamp": 1666404375,
+            "title": "Faqs",
+            "url": "https://www.naircare.com/en/faqs"
+        },
+        {
+            "rank": 4,
+            "snippet": "Explore easy hair removal options with <em>Nair</em>\u2122. You'll have silky-smooth skin in no time with our hair removal creams, leg masks, at-home waxes and more.",
+            "timestamp": 1666404375,
+            "title": "Products",
+            "url": "https://www.naircare.com/en/products"
+        },
+        {
+            "rank": 5,
+            "snippet": "Learn about the active ingredients in <em>Nair</em>\u2122 hair removal creams and how they work to painlessly remove hair. <em>Nair</em>\u2122 products are safe and easy to use at home.",
+            "timestamp": 1666404375,
+            "title": "How Nair\u2122 Works",
+            "url": "https://www.naircare.com/en/how-nair-hair-remover-works"
+        },
+        {
+            "rank": 6,
+            "snippet": "I will never use anything else. I suffer from ingrown hairs. I thought using an epilator would help and have been doing that for about a year with little improvement. I decided, on a whim, to try <em>Nair</em>. I am SO happy! Reading the reviews, I'm convinced everyone is different.",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair Hair Remover Cocoa Butter, 9 Ounce (Pack of 3)",
+            "url": "https://www.amazon.com/Nair-Remover-Butter-Removal-Lotion/dp/B001G7PTWU"
+        },
+        {
+            "rank": 7,
+            "snippet": "August 31, 2022 -\n            Explore the full range of high-quality, easy-to-use <em>Nair</em> hair removal products. <em>Nair</em> gently removes hair &amp; leaves your skin silky smooth.",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair Hair Removal Cream &amp; Wax Products | Nair\u2122 Australia",
+            "url": "https://nair.com.au/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Shop Walmart.com today for Every Day Low Prices. Join Walmart+ for unlimited free delivery from your store &amp; free shipping with no order minimum. Start your free 30-day trial now!",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair Hair Removal Body Cream with Softening Baby Oil ...",
+            "url": "https://www.walmart.com/ip/Nair-Hair-Removal-Body-Cream-with-Softening-Baby-Oil-Leg-and-Body-Hair-Remover/10295661"
+        },
+        {
+            "rank": 9,
+            "snippet": "2 days ago -\n            \u00a9 The Online Citizen Asia 2022 All Rights Reserved",
+            "timestamp": 1666404375,
+            "title": "<em></em>Retrenched expat defended by MP Vikram Nair loses $1.4m suit",
+            "url": "https://www.theonlinecitizen.com/2022/10/20/retrenched-expat-defended-by-mp-vikram-nair-loses-1-4m-suit-he-sues-firm-over-not-being-considered-for-other-roles/"
+        },
+        {
+            "rank": 10,
+            "snippet": "1 week ago -\n            Navya <em>Nair</em> is celebrating her 37th birthday today. Did you know that acting was never on the cards for Navya until she started taking part in school youth festivals? She rose to popularity after her photo appeared on the cover page of a leading weekly magazine.",
+            "timestamp": 1666404375,
+            "title": "<em></em>Happy Birthday Navya Nair: A Look at The Actresses' Personal and ...",
+            "url": "https://eng.bharattimes.co.in/happy-birthday-navya-nair-a-look-at-the-actresses-personal-and-professional-life/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Get smooth skin on your chest, back, legs and arms with <em>Nair</em> Men Hair Removal Body Cream. Works on thick, dark hair in only four minutes. Tested by dermatologists, this hair removal cream stays on while you shower and will keep your skin silky smooth for",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair Care Nair Men Hair Removal Body Cream, 13oz | Rite Aid",
+            "url": "https://www.riteaid.com/shop/nair-care-nair-men-hair-removal-body-cream-13oz-0354186"
+        },
+        {
+            "rank": 12,
+            "snippet": "July 19, 2022 -\n            <em>Nair</em> is a chemical hair depilatory. It is a good, economical hair removal option. Here's how it works to break down hair and how to use it.",
+            "timestamp": 1666404375,
+            "title": "<em></em>How Does Nair Work to Remove Unwanted Body Hair?",
+            "url": "https://www.healthline.com/health/how-does-nair-work"
+        },
+        {
+            "rank": 13,
+            "snippet": "August 18, 2022 -\n            The <em>Nair</em> /\u02c8na\u026a\u0259r/, also known as Nayar, are a group of Indian Hindu castes, described by anthropologist Kathleen Gough as \"not a unitary group but a named category of castes\". The <em>Nair</em> include several castes and many subdivisions, not all of whom historically bore the name '<em>Nair</em>'.",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Nair"
+        },
+        {
+            "rank": 14,
+            "snippet": "<em>Nair</em> and the <em>Nair</em> Logo are trademarks of CHURCH &amp; DWIGHT CO., INC. The Best New Product Awards logo is a trademark of BrandSpark International, used under license. City &amp; Logo are trademarks of Rogers Broadcasting Ltd., used with permission. <em>Nair</em> is not tested on animals.",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair\u2122 - #1 Hair Removal &amp; Depilatory Brand",
+            "url": "https://www.naircare.ca/en/"
+        },
+        {
+            "rank": 15,
+            "snippet": "Explore Twitter's latest discussions on <em>nair</em>",
+            "timestamp": 1666404375,
+            "title": "<em></em>nair on Twitter",
+            "url": "https://twitter.com/search?q=nair"
+        },
+        {
+            "rank": 16,
+            "snippet": "Shop Target for a wide assortment of <em>Nair</em>. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair : Target",
+            "url": "https://www.target.com/b/nair/-/N-5ng7d"
+        },
+        {
+            "rank": 17,
+            "snippet": "<em>Nair</em> Nourish Skin Renewal Face Hair Remover Cream Reviews | 4.2 out of 5 | Join Home Tester Club for free product tests and 1,000s of product reviews.",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair Nourish Skin Renewal Face Hair Remover Cream Reviews | Home ...",
+            "url": "https://www.hometesterclub.com/us/en/reviews/nair-nourish-skin-renewal-face-hair-remover-cream"
+        },
+        {
+            "rank": 18,
+            "snippet": "November 11, 2021 -\n            Our hair removal expert tried the <em>Nair</em> Shower Power Moisturizing Hair Removal Cream and shares her thoughts on whether she prefers it to shaving.",
+            "timestamp": 1666404375,
+            "title": "<em></em>Does Nair Shower Power Hair Removal Cream Live Up to Its Name?",
+            "url": "https://www.byrdie.com/nair-shower-power-moisturizing-1716981"
+        },
+        {
+            "rank": 19,
+            "snippet": "March 6, 2019 -\n            This product seems like it will be very convenient but it\u2019s the opposite. The cream is supposed to be applied before you get in the shower and then once you\u2019re ...",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair Shower Power Max Cream Hair Remover Reviews 2022",
+            "url": "https://www.influenster.com/reviews/nair-shower-power-max-cream-hair-remover"
+        },
+        {
+            "rank": 20,
+            "snippet": "{{^ibPublic}} Private {{/ibPublic}} {{#ibPublic}} Public {{/ibPublic}} \u00b7 {{#isPrivate}} Private {{/isPrivate}} {{^isPrivate}} Public {{/isPrivate}}",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair - Harmon Face Values",
+            "url": "https://www.harmonfacevalues.com/store/brand/nair/4456"
+        },
+        {
+            "rank": 21,
+            "snippet": "Hair Removal Lotion with Aloe &amp; Lanolin \u00b7 Charcoal Brighten &amp; Smooth Leg Mask",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair | Ulta Beauty",
+            "url": "https://www.ulta.com/brand/nair"
+        },
+        {
+            "rank": 22,
+            "snippet": "August 23, 2022 -\n            <em>Nair</em> is a hair-removal product manufactured by Church &amp; Dwight. It was purchased from Carter-Wallace in 2001 via a partnership with Kelso. Also in 2001 <em>Nair</em> introduced its line of men's products. <em>Nair</em> is a portmanteau of \"No hair.\" The brand is mainly known for its depilatories that work by ...",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair (hair removal) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Nair_(hair_removal)"
+        },
+        {
+            "rank": 23,
+            "snippet": "See real customer reviews for <em>Nair</em> Hair Remover Bladeless Shave Whipped Creme Infused with Lavender Oil, 5oz at CVS pharmacy. See all reviews and shop with confidence!",
+            "timestamp": 1666404375,
+            "title": "<em></em>Customer Reviews: Nair Hair Remover Bladeless Shave Whipped Creme ...",
+            "url": "https://www.cvs.com/shop/nair-hair-remover-bladeless-shave-whipped-creme-infused-with-lavender-oil-5oz-prodid-3010332-reviews?skuId=691144"
+        },
+        {
+            "rank": 24,
+            "snippet": "<em>Nair</em> Hair Leg And Body Removal Body Cream With Aloe And Water Lily Bottle - 9 Oz",
+            "timestamp": 1666404375,
+            "title": "<em></em>Nair Hair Leg And Body Removal Body Cream With Aloe And Water Lily ...",
+            "url": "https://www.safeway.com/shop/product-details.960034427.html"
+        }
+    ],
+    "timestamp": 1666404375,
+    "url": "https://search.brave.com/search?q=nair"
+}

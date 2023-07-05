@@ -1,0 +1,129 @@
+{
+    "interpreted_query": "CubeCraft Skyblock pig farm",
+    "offset": null,
+    "page": null,
+    "query": "CubeCraft Skyblock pig farm",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "July 2, 2020 -\n            Hey guys! I've heard a lot of talk over the past few weeks on afk <em>farms</em>, specifically <em>pigs</em> and put together a quick video on ours and how to make one similar. Some of you have some pretty large <em>pig</em> <em>farms</em> from what I've heard so it would be...",
+            "timestamp": 1664124008,
+            "title": "<em></em>AFK Pig Farm Designs. Share yours! | CubeCraft Games",
+            "url": "https://www.cubecraft.net/threads/afk-pig-farm-designs-share-yours.260587/"
+        },
+        {
+            "rank": 2,
+            "snippet": "In this video you'll learn how to easily make an AFK <em>pig</em> <em>farm</em> that will give you millions of coins in cooked porkchops in just a couple hours. This build is ...",
+            "timestamp": 1664124008,
+            "title": "<em></em>Super Easy AFK Pig Farm Tutorial - CubeCraft Skyblock (Bedrock ...",
+            "url": "https://www.youtube.com/watch?v=h7iyje5e6qc"
+        },
+        {
+            "rank": 3,
+            "snippet": "Today we do some nether quests, make a auto slime <em>farm</em>, and make a huge <em>pig</em> <em>farm</em> <em>in</em> <em>Cubecraft</em> <em>Skyblock</em>!Hope you enjoyed!Fractalcake: https://www.youtube.com/...",
+            "timestamp": 1664124008,
+            "title": "<em></em>Automating Farms + Nether Quests! Cubecraft Skyblock Ep. 16 - YouTube",
+            "url": "https://www.youtube.com/watch?v=ZSTUtgJLbqc"
+        },
+        {
+            "rank": 4,
+            "snippet": "Hey All! Check out today's video to get a step by step breakdown on how to build my new and improved <em>pig</em> dropper to maximize your coins on <em>CubeCraft</em> <em>Skyblock</em>...",
+            "timestamp": 1664124008,
+            "title": "<em></em>NEW AFK Pig Dropper 2.0 Tutorial - CubeCraft Skyblock Fast Coins!",
+            "url": "https://www.youtube.com/watch?v=5RUJDA8Ikm4"
+        },
+        {
+            "rank": 5,
+            "snippet": "Hey everyone, So this is the most efficient <em>pig</em> <em>farm</em> u can make on <em>skyblock</em>, till date. If u have any problem with the design or the <em>farm</em> itself, i will reco...",
+            "timestamp": 1664124008,
+            "title": "<em></em>How To Make A Pig Farm | Cubecraft Skyblock - YouTube",
+            "url": "https://www.youtube.com/watch?v=nlpnrAvwetY"
+        },
+        {
+            "rank": 6,
+            "snippet": "\u25ba MINECRAFT Video: The most EFFICIENT <em>PIG</em> <em>FARM</em> design (hypixel <em>skyblock</em>)\u25ba Server IP: mc.hypixel.netIf you're reading this comment \"#<em>PIG</em>\" in the comments!MAK",
+            "timestamp": 1664124008,
+            "title": "<em></em>The most EFFICIENT PIG FARM design (hypixel skyblock) - YouTube",
+            "url": "https://www.youtube.com/watch?v=ulcTgVx_MTk"
+        },
+        {
+            "rank": 7,
+            "snippet": "Today we look back on all of our <em>farms</em> <em>in</em> <em>cubecraft</em> <em>skyblock</em> and show how they work!Hope you enjoyed!TIMESTAMPS!1:08 How Spawners work2:45 Auto Cow Farm5:27 ...",
+            "timestamp": 1664124008,
+            "title": "<em></em>The Ultimate Guide to Cubecraft Skyblock Farms! - YouTube",
+            "url": "https://www.youtube.com/watch?v=ewRzmPivEsQ"
+        },
+        {
+            "rank": 8,
+            "snippet": "January 6, 2021 -\n            FractalCake on Twitter: \"New video today! We have a new <em>pig</em> ...",
+            "timestamp": 1664124008,
+            "title": "<em></em>FractalCake on Twitter: \"New video today! We have a new pig ...",
+            "url": "https://mobile.twitter.com/fractalcake/status/1346610743978803201"
+        },
+        {
+            "rank": 9,
+            "snippet": "In this episode we make a <em>farm</em> that's going to get us a lot of money in <em>Cubecraft</em> Sykblock!Hope you enjoyed!Fractalcake's <em>Pig</em> <em>Farm</em>:https://www.youtube.com/wa...",
+            "timestamp": 1664124008,
+            "title": "<em></em>Making a HUGE Creeper Farm in Cubecraft Skyblock! Ep. 43 - YouTube",
+            "url": "https://www.youtube.com/watch?v=Nw3WOd_Cl0E"
+        },
+        {
+            "rank": 10,
+            "snippet": "Time for a new <em>pig</em> <em>farm</em> design and some savannah quest progression! **Episode 9 Livestream**: https://youtu.be/tnH59DoeJO8?t=2818**Discord Link**: https://di",
+            "timestamp": 1664124008,
+            "title": "<em></em>New PIG Farm Design! Episode 11 (CubeCraft Skyblock Let's Play) ...",
+            "url": "https://www.youtube.com/watch?v=nFXC63IvETI"
+        },
+        {
+            "rank": 11,
+            "snippet": "August 8, 2020 -\n            JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding \u00b7 You are using an out of date browser. It may not display this or other websites correctly. You should upgrade or use an alternative browser \u00b7 Founded in 2012, we're now one of the ...",
+            "timestamp": 1664124008,
+            "title": "<em></em>Basic automatic cow farm | CubeCraft Games",
+            "url": "https://www.cubecraft.net/threads/basic-automatic-cow-farm.266266/"
+        },
+        {
+            "rank": 12,
+            "snippet": "April 4, 2022 -\n            Cocoa beans can grow on the sides of any jungle log, regardless of light level, requiring 1 empty air block in the space it will occupy. The jungle log does not need to be attached to a living tree, only any harvested jungle log, therefore it is easy to create large <em>farms</em> for cocoa beans by ...",
+            "timestamp": 1664124008,
+            "title": "<em></em>Tutorials/Cocoa bean farming \u2013 Minecraft Wiki",
+            "url": "https://minecraft.fandom.com/wiki/Tutorials/Cocoa_bean_farming"
+        },
+        {
+            "rank": 13,
+            "snippet": "May 24, 2014 -\n            Monster Spawners Monster spawners (also known as mob spawners) are the only way to get mobs spawned into <em>Skyblock</em> without the use of a spawn egg (or if...",
+            "timestamp": 1664124008,
+            "title": "<em></em>Skyblock Official Site | Skyblock",
+            "url": "https://skyblock.net/threads/monster-spawner-info.48633/"
+        },
+        {
+            "rank": 14,
+            "snippet": "December 9, 2020 -\n            I\u2019m not sure how to make an auto <em>farm</em> can some one help me it can be for chickens,cows , or crops like potatoes etc...",
+            "timestamp": 1664124008,
+            "title": "<em></em>Auto farm | CubeCraft Games",
+            "url": "https://www.cubecraft.net/threads/auto-farm.275616/"
+        },
+        {
+            "rank": 15,
+            "snippet": "April 5, 2021 -\n            1.5k members in the cubecraftgames community. This community is for <em>Cubecraft</em> games, a Minecraft Bedrock and Java community! This is the server for \u2026",
+            "timestamp": 1664124008,
+            "title": "<em></em>r/cubecraftgames - How do you make money on Cubecraft Skyblock?",
+            "url": "https://www.reddit.com/r/cubecraftgames/comments/mkp8sg/how_do_you_make_money_on_cubecraft_skyblock/"
+        },
+        {
+            "rank": 16,
+            "snippet": "Emeralds. You may be surprised because they are used for optimizing and XP but they are the best thing to sell in <em>Cubecraft</em> <em>skyblock</em> ... 2. Melons. Melons are easily the best source of money if you have huge <em>farms</em> but many people on <em>Cubecraft</em> <em>skyblock</em> have no melons.",
+            "timestamp": 1664124008,
+            "title": "<em></em>Make Money Fast Skyblock - Survival Mode - Minecraft: Java Edition ...",
+            "url": "https://www.minecraftforum.net/forums/minecraft-java-edition/survival-mode/3071869-make-money-fast-skyblock"
+        },
+        {
+            "rank": 17,
+            "snippet": "February 18, 2020 -\n            Good video. Do you recommend a huge sugarcane <em>farm</em> for money too or should I just stick to <em>pigs</em>? ... Omg, your island is incredible, you must be so happy whit that island! Congrats and keep it going! ... Good video. Do you recommend a huge sugarcane <em>farm</em> for money too or should I just stick to <em>pigs</em>?",
+            "timestamp": 1664124008,
+            "title": "<em></em>*How to get money &amp; Xp QUICK* video! pls watch :) | CubeCraft Games",
+            "url": "https://www.cubecraft.net/threads/how-to-get-money-xp-quick-video-pls-watch.229416/"
+        }
+    ],
+    "timestamp": 1664124008,
+    "url": "https://search.brave.com/search?q=CubeCraft+Skyblock+pig+farm&source=desktop"
+}
