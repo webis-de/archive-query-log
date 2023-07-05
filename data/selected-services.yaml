@@ -14744,8 +14744,17 @@
     type: query_parameter
     parameter: offset
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers: 
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: form#searchform input#searchbox
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#results div.snippet
+    url_selector: a.result-header
+    title_selector: span.snippet-title
+    snippet_selector: div.snippet-content, p.snippet-description, div.text-sm.text-gray, div.description.text-sm
   focused_url_prefixes:
   - /search?
 - name: thenextweb
