@@ -1,0 +1,87 @@
+{
+    "interpreted_query": "\"Festival Coraz\u00f3n latino\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Festival Coraz\u00f3n latino\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Festival Corazon Latino septembre 2022 Bordeaux. Tout un week-end consacr\u00e9 \u00e0 la danse, la musique et la sensualit\u00e9 !!! Un programme \u00e9poustouflant avec une kyrielle de grands danseurs qui viendront des 4 coins du monde dans un lieu de r\u00eave pour ce type d\u2019\u00e9v\u00e8nement, le Rocher Palmer \u00e0 Cenon.",
+            "timestamp": 1644332358,
+            "title": "FestivalCorazonLatino",
+            "url": "http://festivalcorazonlatino.com/accueil/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Festival Corazon Latino September 2022 Bordeaux. A whole weekend dedicated to dance, music and sensuality! An amazing program with a lot of great dancers who come from all over the world in a dream location for this type of event, the Rocher Palmer at Cenon. Concerts, Shows, 2 days workshops and 3 amazing parties.",
+            "timestamp": 1644332358,
+            "title": "FestivalCorazonLatino",
+            "url": "http://festivalcorazonlatino.com/home/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Festival Corazon Latino. 4,088 likes \u00b7 6 talking about this \u00b7 6,914 were here. Un Festival de danse et de musique Haute Qualit\u00e9 ! - Un lieu fantastique - Le top des enseignants, danseurs et Djs - Des...",
+            "timestamp": 1644332358,
+            "title": "Festival Corazon Latino - Home | Facebook",
+            "url": "https://www.facebook.com/pg/FestivalCorazonLatino"
+        },
+        {
+            "rank": 4,
+            "snippet": "Festival Corazon Latino 2021 (9th edition) This event is already finished Find other zouk festivals in France festival zouk kompa salsa kizomba bachata semba chacha ladystyle. By Festival Corazon Latino. English - fran\u00e7ais - espa\u00f1ol. A Festival of High Quality Dance and Music! a dream place for this type of event, the Palmer Rock 2 major ...",
+            "timestamp": 1644332358,
+            "title": "Festival Corazon Latino 2021 (9th edition) in Cenon ...",
+            "url": "https://mapdance.com/e/Festival-Corazon-Latino-2021-9th-edition-Cenon-4100465535837?lang=en"
+        },
+        {
+            "rank": 5,
+            "snippet": "9\u00e8me \u00e9dition du FESTIVAL CORAZON LATINO 4 salles de danses pour les soir\u00e9es / 5 salles de cours. EN. OPENING SALES SUNDAY 15th DECEMBER AT 03:00 PM. THE NEW FULL PASS PRICES WILL BE AVAILABLE WHEN THIS ONES WILL BE SOLD OUT. 9th edition of CORAZON LATINO FESTIVAL. 4 party rooms / 5 workshops rooms",
+            "timestamp": 1644332358,
+            "title": "Billetterie : FESTIVAL CORAZON LATINO BORDEAUX 2022",
+            "url": "https://www.weezevent.com/festival-corazon-latino-bordeaux-2020"
+        },
+        {
+            "rank": 6,
+            "snippet": "The 8th edition of the Coraz\u00f3n Latino Festival was great. Returning to Bordeaux was synonymous of meeting new and old friends, tasting some grape juice (very...",
+            "timestamp": 1644332358,
+            "title": "Festival Coraz\u00f3n Latino 2019 - Saturday Night Social - YouTube",
+            "url": "https://www.youtube.com/watch?v=nUXgGQ6OdrQ"
+        },
+        {
+            "rank": 7,
+            "snippet": "modifier. Hall du Rocher de Palmer, lieu du festival. Corazon Latino est un festival organis\u00e9 par l\u2019association Republica latina qui se tient au Rocher Palmer \u00e0 Cenon ( Gironde ), commune limitrophe de Bordeaux, en septembre, qui propose des concerts de salsa, des shows, stages et initiations gratuites (au parc Palmer) de danses, 3 grandes ...",
+            "timestamp": 1644332358,
+            "title": "Corazon Latino \u2014 Wikip\u00e9dia",
+            "url": "https://fr.wikipedia.org/wiki/Corazon_Latino"
+        },
+        {
+            "rank": 8,
+            "snippet": "Coraz\u00f3n Latino estar\u00e1 presente en Los Dells Festival compartiendo informaci\u00f3n sobre Leave No Trace Center for Outdoor Ethics y #polinizadores . Coraz\u00f3n Latino will be a Los Dells Festival sharing information about #LeaveNoTrace a",
+            "timestamp": 1644332358,
+            "title": "Coraz\u00f3n Latino en Los Dells Festival \u2014 Coraz\u00f3n Latino",
+            "url": "https://www.corazonlatino.us/events/2019/8/31/corazn-latino-en-los-dells-festival"
+        },
+        {
+            "rank": 9,
+            "snippet": "Festival Corazon Latino. \u00c9v\u00e9nement pass\u00e9. F\u00eate - Festival. L\u2019association Republica Latina organise la 8\u00e8me \u00e9dition du festival Corazon Latino, pour un week-end aux rythmes latino endiabl\u00e9s!",
+            "timestamp": 1644332358,
+            "title": "Festival Corazon Latino | Mairie de Cenon",
+            "url": "https://www.cenon.fr/a-la-une/agenda/festival-corazon-latino"
+        },
+        {
+            "rank": 10,
+            "snippet": "\" Festival Corazon Latino \"\" Stage \u2022 Remise \u00e0 niveau\" Salsa &amp; Bachata\" Demi-Finale Bachatastars\" Prestations : Workshops intensifs rattrapages. Comp\u00e9tition : Demi-finale France en improvisation. Vision d'ensemble : Mon Calendrier. WE 30, 1, 2 \u2022 BERLIN. WE 15, 16 \u2022 LYON (FR)",
+            "timestamp": 1644332358,
+            "title": "International activities | Isa - Bachata Salsa",
+            "url": "https://www.isabelle-manzanares.com/et-dans-l-international"
+        },
+        {
+            "rank": 11,
+            "snippet": "Tickets On Sale Today And Selling Fast, Secure Your Seats Now. USA Tickets 2022",
+            "timestamp": 1644332358,
+            "title": "Latino Fest | Tickets 2022 - Tickets On Sale Available Now",
+            "url": "https://www.bing.com/aclick?ld=e8Ah15w89p1rsGzsa552Q6FzVUCUzhPd-SInyfNaSPpwk_8nSe731RRdHaqyh6DCypJBVyW4aaGmPGZabmQZwAtT_9CakSswlC3Eo1qXrDZZhMxa5nHs1Kj61qwdjr98OAenFnZxevH3EWwXbFy9Ue1d2gZjRVg1jPYZo1K2mJ36w_MjMb&u=aHR0cCUzYSUyZiUyZnd3dy52aWFnb2dvLmNvbSUyZl9DLTEyMzkyOCUzZkFmZmlsaWF0ZUlEJTNkNDklMjZMQ0lEJTNkMjA1NyUyNlBDSUQlM2RQU1VTQklORkVTTEFUSU40NUUxRTRBNUU1JTI2QWRJRCUzZDgzMzU2OTI3MjM1NDAzJTI2Z2NsaWQlM2Q0OGEzNGZmY2IyNTkxMDcyY2MzYTJkZmUyMTBlMjkxNSUyNnBzX3AlM2QxJTI2cHNfYWclM2QxMzMzNzA3ODg2NTc3NDU5JTI2cHNfdGclM2Rrd2QtODMzNTY5MDY4OTYzMjAlM2Fsb2MtMTkwJTI2cHMlM2QlMjZwc19wJTNkMSUyNnBzX2MlM2QzNTU1Nzg4MzIlMjZwc19hZyUzZDEzMzM3MDc4ODY1Nzc0NTklMjZwc190ZyUzZGt3ZC04MzM1NjkwNjg5NjMyMCUzYWxvYy0xOTAlMjZwc19hZCUzZDgzMzU2OTI3MjM1NDAzJTI2cHNfbiUzZHMlMjZwc19kJTNkYyUyNmdjbGlkJTNkNDhhMzRmZmNiMjU5MTA3MmNjM2EyZGZlMjEwZTI5MTU&rlid=48a34ffcb2591072cc3a2dfe210e2915"
+        }
+    ],
+    "timestamp": 1644332358,
+    "url": "https://www.qwant.com/?q=%22Festival+Coraz%C3%B3n+latino%22&t=all"
+}

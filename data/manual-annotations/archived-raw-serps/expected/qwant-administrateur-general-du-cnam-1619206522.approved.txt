@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Administrateur g\u00e9n\u00e9ral du Cnam\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Administrateur g\u00e9n\u00e9ral du Cnam\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "L'administrateur g\u00e9n\u00e9ral du Cnam dirige le Conservatoire national des arts et m\u00e9tiers [1], \u00e9tablissements publics \u00e0 caract\u00e8re scientifique, culturel et professionnel ayant statut de grand \u00e9tablissement.Il exerce les fonctions de chef d'\u00e9tablissement au sens d\u00e9fini par le Minist\u00e8re de l'enseignement sup\u00e9rieur et de la recherche auquel le Cnam se rattache.",
+            "timestamp": 1619206522,
+            "title": "Administrateur g\u00e9n\u00e9ral du Cnam \u2014 Wikip\u00e9dia",
+            "url": "https://fr.wikipedia.org/wiki/Administrateur_g%C3%A9n%C3%A9ral_du_Cnam"
+        },
+        {
+            "rank": 2,
+            "snippet": "Olivier Faron, administrateur g\u00e9n\u00e9ral du Cnam \"Le Cnam a aujourd\u2019hui une plus grande importance encore, vu la pression que le nouveau gouvernement met sur la mont\u00e9e en comp\u00e9tences sur les territoires\"",
+            "timestamp": 1619206522,
+            "title": "Olivier Faron, administrateur g\u00e9n\u00e9ral du Cnam",
+            "url": "https://www.lenouveleconomiste.fr/olivier-faron-administrateur-general-du-cnam-73408/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Olivier Faron, Administrateur g\u00e9n\u00e9ral du Cnam, a pr\u00e9sent\u00e9 ses v\u0153ux aux personnels de l\u2019\u00e9tablissement public et des centres Cnam en r\u00e9gion. Olivier Faron a salu\u00e9 le plan de continuit\u00e9 p\u00e9dagogique qui a r\u00e9v\u00e9l\u00e9, en 2020, toute la stabilit\u00e9 de notre institution.",
+            "timestamp": 1619206522,
+            "title": "Cnam - Pr\u00e9sentation - V\u0153ux aux personnels du Cnam",
+            "url": "https://presentation.cnam.fr/histoire-projet/v-ux-aux-personnels-du-cnam-1228171.kjsp"
+        },
+        {
+            "rank": 4,
+            "snippet": "Admissibilit\u00e9. Bonjour, Cet article vise \u00e0 cr\u00e9er la fonction d'administrateur g\u00e9n\u00e9ral du Cnam dans Wikip\u00e9dia. La fonction d'administrateur g\u00e9n\u00e9ral du Cnam est analogue \u00e0 la fonction d'administrateur g\u00e9n\u00e9ral de la com\u00e9die fran\u00e7aise ou du ch\u00e2teau de Versailles, deux autres institution ayant un statut de grands \u00e9tablissements mais elle est unique dans sa d\u00e9finition et pr\u00e9vu par ...",
+            "timestamp": 1619206522,
+            "title": "Discussion:Administrateur g\u00e9n\u00e9ral du Cnam \u2014 Wikip\u00e9dia",
+            "url": "https://fr.wikipedia.org/wiki/Discussion:Administrateur_g%C3%A9n%C3%A9ral_du_Cnam"
+        },
+        {
+            "rank": 5,
+            "snippet": "Nous devons r\u00e9ussir le formidable pari de l\u2019apprentissage. Pour l\u2019Administrateur g\u00e9n\u00e9ral du Conservatoire national des Arts et M\u00e9tiers \u2013 plus gros organisme de formation professionnelle public avec 80 000 personnes form\u00e9es par an \u2013 la formation, notamment l\u2019apprentissage, et les territoires sont les cl\u00e9s pour sortir de cette crise et faire na\u00eetre le monde d\u2019\u00ab apr\u00e8s \u00bb.",
+            "timestamp": 1619206522,
+            "title": "Olivier Faron, Administrateur G\u00e9n\u00e9ral du Cnam | Institut ...",
+            "url": "https://www.institut-entreprise.fr/olivier-faron-administrateur-general-du-cnam"
+        },
+        {
+            "rank": 6,
+            "snippet": "Directeur de cabinet de l'Administrateur g\u00e9n\u00e9ral du Cnam Paris 03, \u00cele-de-France, France 270 relations. Inscrivez-vous pour entrer en relation Cnam (Conservatoire national des arts et m\u00e9tiers) Signaler ce profil Activit\u00e9 Le hasard d\u00e9crypt\u00e9 par Myriam Chopin et Olivier Faron rendez-vous dimanche 14 mars \u00e0 21h TimeworldEvent Editions ...",
+            "timestamp": 1619206522,
+            "title": "Guillaume BAUDET - Directeur de cabinet de l ...",
+            "url": "https://fr.linkedin.com/in/guillaume-baudet-8117ab66"
+        },
+        {
+            "rank": 7,
+            "snippet": "Niort, Cherbourg, Chalon-sur-Sa\u00f4ne : Olivier Faron, administrateur g\u00e9n\u00e9ral du Cnam, pr\u00e9sente des formations adapt\u00e9es aux besoins de ces villes du programme Action C\u0153ur de Ville. Le Cnam va lancer un deuxi\u00e8me appel \u00e0 manifestation d\u2019int\u00e9r\u00eat (AMI).",
+            "timestamp": 1619206522,
+            "title": "Olivier Faron, administrateur g\u00e9n\u00e9ral du Cnam | Agence ...",
+            "url": "https://agence-cohesion-territoires.gouv.fr/olivier-faron-administrateur-general-du-cnam-93"
+        },
+        {
+            "rank": 8,
+            "snippet": "L'Administrateur g\u00e9n\u00e9ral du Cnam \u00e9tait-il \u00e0 Cuba lors de la visite officielle de Fran\u00e7ois Hollande ? A Cuba, on n'est jamais s\u00fbr de rien. Certains ont annonc\u00e9 plusieurs fois la mort du Leader Maximo, Fidel Castro, jusqu'au moment o\u00f9 une s\u00e9rie de photos ou une rencontre officielle sont venues discr\u00e9diter les rumeurs.",
+            "timestamp": 1619206522,
+            "title": "L'Administrateur g\u00e9n\u00e9ral du Cnam \u00e9tait-il \u00e0 Cuba lors de ...",
+            "url": "https://sudcnam.blogs.com/sud_cnam/2015/05/second-d%C3%A9barquement-%C3%A0-cuba-.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "L'ami am\u00e9ricain ? Frank Aloski nous a fait parvenir sa candidature au poste d'Administrateur g\u00e9n\u00e9ral du Cnam pour la mandature 2018-2023. La communication par Sud de ce document n'exprime en aucun cas un soutien quelconque \u00e0 cette initiative. La cr\u00e9ation r\u00e9cente du compte Linkedin de ce professeur du MIT, sp\u00e9cialiste en intelligence artificielle et en robotique, \u00e0 la veille de son ...",
+            "timestamp": 1619206522,
+            "title": "SUD \u00c9ducation Cnam - Solidaires: Frank Aloski, candidat au ...",
+            "url": "https://sudcnam.blogs.com/sud_cnam/2018/04/frank-aloski-candidat-au-poste-dadministrateur-g%C3%A9n%C3%A9ral-du-cnam.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "La Fondation du Cnam est administr\u00e9e par un conseil de gestion compos\u00e9 de 15 membres r\u00e9partis en 3 coll\u00e8ges : le coll\u00e8ge des fondateurs (3 membres), le coll\u00e8ge des personnalit\u00e9s qualifi\u00e9es (7 membres) et le coll\u00e8ge des repr\u00e9sentants du Cnam (5 membres). Le conseil de gestion se r\u00e9unit au minimum 2 fois par an et r\u00e8gle, par d\u00e9lib\u00e9rations, les affaires de la Fondation. ll d\u00e9signe ...",
+            "timestamp": 1619206522,
+            "title": "Cnam - Fondation du Cnam - Gouvernance de la Fondation du Cnam",
+            "url": "https://fondation.cnam.fr/gouvernance-de-la-fondation-du-cnam-665773.kjsp"
+        }
+    ],
+    "timestamp": 1619206522,
+    "url": "https://www.qwant.com/?q=%22Administrateur+g%C3%A9n%C3%A9ral+du+Cnam%22&t=all"
+}

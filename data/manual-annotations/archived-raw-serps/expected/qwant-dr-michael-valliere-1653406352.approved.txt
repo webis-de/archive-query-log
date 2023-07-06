@@ -1,0 +1,122 @@
+{
+    "interpreted_query": "dr michael valliere",
+    "offset": null,
+    "page": null,
+    "query": "dr michael valliere",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Get the NPI number of any doctor. NPI lookup that's fast, free &amp; easy. Get the NPI number of any doctor, physician or health care provider.",
+            "timestamp": 1653406352,
+            "title": "Npi Lookup - Find Providers By Name",
+            "url": "https://www.bing.com/aclick?ld=e88sG6CyspVKrKXrzCOSIkgTVUCUxNb7v8bEcXgrXt2pEBzbyYb6948LAjAdK3iwkKk462CkWnMtDx_sSq-bcBVuv7YAVgAit-Msp72HtkqZUrfWF3sgE40gxoKvLDYQECtXVMKQbnp6UQsKyocmQPUbSRrHZyQs8kca4ku5ZijB0Xk4Pw&u=aHR0cHMlM2ElMmYlMmZucGlkYi5vcmclMmZucGktbG9va3VwJTJm&rlid=2fcc462eb8231ed4a03824a3ae92bec1"
+        },
+        {
+            "rank": 2,
+            "snippet": "Michael Valliere, MD joined The Iowa Clinic because of our positive and collaborative atmosphere and focus on optimal care for every patient. General surgery affords Dr. Valliere the opportunity to treat a wide variety of patients and diseases, as well as work among a multi-specialty group.",
+            "timestamp": 1653406352,
+            "title": "Michael Valliere, MD - General Surgery - Methodist Medical ...",
+            "url": "https://www.iowaclinic.com/doctors/d757/michael-valliere/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Dr. Michael Valliere, MD - Des Moines, IA - General Surgery Start a new search About Expertise About Michael Valliere Specialties General Surgery Gender Male Age Groups Seen Adults Adults Over 65 Languages Spoken English Office Hours",
+            "timestamp": 1653406352,
+            "title": "Dr. Michael Valliere, MD - Des Moines, IA - General Surgery",
+            "url": "https://doctors.unitypoint.org/provider/Michael+Valliere/1168365"
+        },
+        {
+            "rank": 4,
+            "snippet": "Dr. Michael J. Valliere is a General Surgeon in Des Moines, IA. Find Dr. Valliere's phone number, address and more.",
+            "timestamp": 1653406352,
+            "title": "Dr. Michael J. Valliere, MD | Des Moines, IA | General ...",
+            "url": "https://health.usnews.com/doctors/michael-valliere-1174321"
+        },
+        {
+            "rank": 5,
+            "snippet": "General Surgery \u2022 Male \u2022 Age 34 Dr. Michael Valliere, MD is a General Surgery Specialist in Des Moines, IA. His office accepts new patients. 5 (4 ratings) Leave a review The Iowa Clinic - General Surgery 1212 Pleasant St Ste 211 Des Moines, IA 50309 ( directions ) Accepting new patients Make an Appointment (515) 283-1541 Share Save",
+            "timestamp": 1653406352,
+            "title": "Dr. Michael Valliere, MD | Des Moines, IA | Healthgrades",
+            "url": "https://www.healthgrades.com/physician/dr-michael-valliere-xyll7qf"
+        },
+        {
+            "rank": 6,
+            "snippet": "1212 Pleasant Street, Des Moines, IOWA, 50309 (515) 875-9770 Overview Ratings &amp; Reviews Locations Experience Insurance OVERVIEW Michael Valliere, MD joined The Iowa Clinic because of our positive...",
+            "timestamp": 1653406352,
+            "title": "Michael Valliere General Surgery. Des Moines IOWA - WebMD",
+            "url": "https://doctor.webmd.com/doctor/michael-valliere-13f704ed-9aaa-4b1c-8cfc-634b72ac5af3-overview"
+        },
+        {
+            "rank": 7,
+            "snippet": "MichaelJamesValliereMD General Surgery \u2022 Des Moines, IA Physician Join to view full profile Office 1212 Pleasant St Ste 211 Des Moines, IA 50309 Phone(515) 283-1541 Fax(515) 283-0473 Is this information wrong? Summary Dr. Michael Valliere, MD is a general surgeon in Des Moines, Iowa. He is currently licensed to practice medicine in Iowa.",
+            "timestamp": 1653406352,
+            "title": "Dr. Michael Valliere, MD \u2013 Des Moines, IA | General Surgery",
+            "url": "https://www.doximity.com/pub/michael-valliere-md"
+        },
+        {
+            "rank": 8,
+            "snippet": "Dr. Michael Valliere General Surgeon #90 of 92 General Surgeons in Des Moines, Iowa Male The Iowa Clinic Methodist Medical Center Plaza I View Phone Number View Map &amp; Address Visit Website Credentials Top Hospitals in Des Moines, IA Iowa Methodist Medical Center 2 reviews VA Central Iowa Health Care Syst 1 review Broadlawns Medical Center 5 reviews",
+            "timestamp": 1653406352,
+            "title": "Dr. Michael Valliere - Des Moines, IA - General Surgeon ...",
+            "url": "https://www.ratemds.com/doctor-ratings/dr-michael-valliere-des-moines-ia-us/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Dr. Michael James Valliere is a General Surgery Specialist in Des Moines, Iowa. He graduated with honors from University Of Iowa, Rj &amp; L Carver College Of Medicine in 2014. Having more than 8 years of diverse experiences, especially in GENERAL SURGERY, Dr. Michael James Valliere affiliates with Iowa Methodist Medical Center, cooperates with ...",
+            "timestamp": 1653406352,
+            "title": "Dr. Michael James Valliere - General Surgery, Des Moines IA",
+            "url": "https://www.healthcare4ppl.com/physician/iowa/des-moines/michael-james-valliere-1700291291.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Dr. Michael Valliere, MD is a general surgery specialist in Des Moines, IA. Dr. Valliere completed a residency at Iowa Methodist Medical Center. He currently practices at The Iowa Clinic - General Surgery. He accepts multiple insurance plans.",
+            "timestamp": 1653406352,
+            "title": "Dr. Michael Valliere, MD, General Surgery Specialist - Des ...",
+            "url": "https://www.sharecare.com/doctor/dr-michael-valliere-xyll7qf"
+        },
+        {
+            "rank": 11,
+            "snippet": "Dr. Michael J. Valliere MD Dr. Michael J. Valliere MD. Surgeon Resident Des Moines, IA Accepting New Patients Dr. Valliere is a surgeon in Des Moines, IA and may see patients with Peptic Ulcer, Heart Disease, Cyst, and more. Learn More About Dr. Valliere. Make an Appointment Write a Review Compare Surgeons Overview;",
+            "timestamp": 1653406352,
+            "title": "Dr. Michael J. Valliere MD - Surgeon - Des Moines, IA",
+            "url": "https://www.caredash.com/doctors/michael-valliere-jfz16"
+        },
+        {
+            "rank": 12,
+            "snippet": "Find Doctors In My Area. Search for health information from across the web with discoverhealthinfo.com.",
+            "timestamp": 1653406352,
+            "title": "Doctors In My Area - Find Doctors In My Area.",
+            "url": "https://www.bing.com/aclick?ld=e8WxqEnLWjFT9VXAGpRHOguzVUCUzrwbbFQqaOGgLGuuOA_9aE1Zx8FMtZbe0CcibMDLUvaVdt2ouUphRbi_DBKydGselliTmF31c3hZf2JaBsTAosDHctDM9zWfXXTQVbKkBn81a55_p1Hml20JgGdgxYhCH3KGfQGUQcR8q68ke0GSJE&u=aHR0cHMlM2ElMmYlMmZ3d3cuZGlzY292ZXJoZWFsdGhpbmZvLmNvbSUyZnNscCUzZiUyNnElM2Rkb2N0b3JzJTJiaW4lMmJteSUyYmFyZWElMjZzaWQlM2Q2MWZlODI0OS0zNTk3LTQ5MDQtYmVjYi0xMWRlY2IwMmRjOTgtMC1kaV9tc2IlMjZrd2lkJTNkZHIlMjUyMG1pY2hhZWwlMjUyMHZhbGxpZXJlJTI2Y2lkJTNkODE3NzYyNjMxNDUyNzclMjZtc2Nsa2lkJTNkY2QxOTJkNjM4ZjE2MTE1OTZjM2I0ZmVlOTlhNzA1NGI&rlid=cd192d638f1611596c3b4fee99a7054b"
+        },
+        {
+            "rank": 13,
+            "snippet": "Get the NPI number of any doctor. NPI lookup that's fast, free &amp; easy. Get the NPI number of any doctor, physician or health care provider.",
+            "timestamp": 1653406352,
+            "title": "Npi Lookup - Find Providers By Name",
+            "url": "https://www.bing.com/aclick?ld=e88sG6CyspVKrKXrzCOSIkgTVUCUxNb7v8bEcXgrXt2pEBzbyYb6948LAjAdK3iwkKk462CkWnMtDx_sSq-bcBVuv7YAVgAit-Msp72HtkqZUrfWF3sgE40gxoKvLDYQECtXVMKQbnp6UQsKyocmQPUbSRrHZyQs8kca4ku5ZijB0Xk4Pw&u=aHR0cHMlM2ElMmYlMmZucGlkYi5vcmclMmZucGktbG9va3VwJTJm&rlid=2fcc462eb8231ed4a03824a3ae92bec1"
+        },
+        {
+            "rank": 14,
+            "snippet": "Search All Doctors in my area Near You With LuckySearch\u00a9 Doctors. Don't Overpay For Doctors. Find now Affordable Doctors in my area at LuckySearch\u00a9",
+            "timestamp": 1653406352,
+            "title": "Doctors In My Area Finder - Doctors In My Area Local Pricing",
+            "url": "https://www.bing.com/aclick?ld=e8r32yRIV9fc66G7O2NQwckzVUCUxIF0KqRpsfXE_Prq9qKSlqUKgP-9QA7HC8AsWRjSm522oMuAwLMqyW8dPVLoYR1ZJ4JO2CzdKT4Kuv2UfIYTyNFT3U2oAfAyoaOuJSySGZ4AHaFOS1mY8PXOreHhUO4r8rCEkCEuuOMfFNr80z8g5r&u=aHR0cHMlM2ElMmYlMmZzZWFyY2gubHVja3lzcmNoLmNvbSUyZnNlcnAlM2ZzZWdtZW50JTNkbHVjazIlMjZxJTNkZG9jdG9ycyUyNTIwaW4lMjUyMG15JTI1MjBhcmVhJTI2Z2QlM2RBUDEwMDUxNzglMjZoeWFpZCUzZC0xJTI2Y2ZleHQlM2RnaWQlMjU1QiUyNTNCJTI1NURBUDEwMDUxNzglMjU1QiUyNTJDJTI1NURjZnN1YmlkJTI1NUIlMjUzQiUyNTVEYzcxNjhmM2JiNzM5MTY4MTY2MGFlZGI2YTE4ODEwMjYlMjU1QiUyNTJDJTI1NURtYnBiJTI1NUIlMjUzQiUyNTVEYzcxNjhmM2JiNzM5MTY4MTY2MGFlZGI2YTE4ODEwMjYlMjU1QiUyNTJDJTI1NURzZXNzaW9uaWQlMjU1QiUyNTNCJTI1NURkaWRpJTI1NUIlMjUyQyUyNTVEcSUyNTVCJTI1M0IlMjU1RGRvY3RvcnMlMjUyMGluJTI1MjBteSUyNTIwYXJlYSUyNmh5Y2lkJTNkMTE2MTA4NTM0ODMwNzY4NiUyNm1zY2xraWQlM2RjNzE2OGYzYmI3MzkxNjgxNjYwYWVkYjZhMTg4MTAyNiUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZEJTX0RvY3RvcnNfREtfVVNfMVYxNzUyMDIyX0JSX1NQX0xLUyUyNnV0bV90ZXJtJTNkZG9jdG9ycyUyNTIwaW4lMjUyMG15JTI1MjBhcmVhJTI2dXRtX2NvbnRlbnQlM2Rkb2N0b3JzJTI1MjBpbiUyNTIwbXklMjUyMGFyZWE&rlid=c7168f3bb7391681660aedb6a1881026"
+        },
+        {
+            "rank": 15,
+            "snippet": "Fast, convenient healthcare. Doctors available to see you at anytime.",
+            "timestamp": 1653406352,
+            "title": "See a doctor now - Telehealth doctor 24 / 7",
+            "url": "https://www.bing.com/aclick?ld=e8hBKBxBgTAxzzDwZS1QN6cjVUCUzBns6emhdk_4mYkiyTmmusptvwbefbwb-MZJ1VJv9NUi1zZzNZpqB8l8FwosXYowyaslGB6JVzbSSgjYbE8ZNbrsIJOD739bJDJUrmFLDFC-CsJl9N1L7uh6lCbYpdmQjfzSEig5b-2ydyISIozGLV&u=aHR0cHMlM2ElMmYlMmZ3d3cuc2t5bWQuY29t&rlid=310712d0feeb1f6da972705de85a4bcb"
+        },
+        {
+            "rank": 16,
+            "snippet": "Our Doctors Are Dedicated To Providing You High-Quality, Comprehensive Care. Learn More. Browse Our Online Doctor Profiles And Choose The Doctor Who Is Right For You.",
+            "timestamp": 1653406352,
+            "title": "Kaiser Permanente\u00ae - Search All Of Our Doctors",
+            "url": "https://www.bing.com/aclick?ld=e8BtqfpC3PPJQBanYKBC3stjVUCUwL1kE2Xt7pdJQKsGwa6VCQn-AZE85E3MHKS-EJa0BuwEipaOO_IfpvS63cRExpXZlglYfDX46Qouuz_FUiZ6dmpCG05jpVaOTHr6Mn7AqE2Vw1ACIDZjUWnPwCaHzDjZWKwAuYJc8719qcjcLh_cGs&u=aHR0cHMlM2ElMmYlMmZjbGlja3NlcnZlLmRhcnRzZWFyY2gubmV0JTJmbGluayUyZmNsaWNrJTNmbGlkJTNkNDM3MDAwNjM2ODExNjIwODclMjZkc19zX2t3Z2lkJTNkNTg3MDAwMDcwNzc0NDM0MTglMjZkc19hX2NpZCUzZDU5MzI1NTIwOSUyNmRzX2FfY2FpZCUzZDEzMDg1ODA4NjQyJTI2ZHNfYV9hZ2lkJTNkMTE3NDE2MjAzMTMwJTI2ZHNfYV9saWQlM2Rrd2QtMTcyMjQyOTIlMjYlMjZkc19lX2FkaWQlM2Q4MTg0NDk3ODY5NDY5MyUyNmRzX2VfdGFyZ2V0X2lkJTNka3dkLTgxODQ1MDc0MjQ3MDkzJTNhbG9jLTE5MCUyNiUyNmRzX2VfbmV0d29yayUzZHMlMjZkc191cmxfdiUzZDIlMjZkc19kZXN0X3VybCUzZGh0dHBzJTNhJTJmJTJmdGhyaXZlLmthaXNlcnBlcm1hbmVudGUub3JnJTJmY2FyZS1uZWFyLW9yZWdvbi1zb3V0aHdlc3Qtd2FzaGluZ3RvbiUyZmZpbmQtYS1kb2N0b3IlM2ZXVC5tY19pZCUzZCUyNldULnNlZ18xJTNkQmluZy16enpUSFJWenp6LU5XX09SLWMtLXAtZG9jdG9yJTI1MjBpbmZvcm1hdGlvbi00ZjYyNTA5M2Y0NTcxMDQ2ZjAxNDMyMWVlMmU2ODRmMiUyNldULnNyY2glM2QxJTI2V1QudHNyYyUzZHBzJTI2V1Quc2VnXzIlM2QlMjZjaWQlM2QlMjZnY2xpZCUzZDRmNjI1MDkzZjQ1NzEwNDZmMDE0MzIxZWUyZTY4NGYyJTI2Z2Nsc3JjJTNkM3AuZHMlMjYlMjZtc2Nsa2lkJTNkNGY2MjUwOTNmNDU3MTA0NmYwMTQzMjFlZTJlNjg0ZjIlMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2RLUF9CTkRfVEhSVl9QU19CSU5HX1BDTldfT1JfTk9OX0NPUl9OT05fTk9OX05CQ19OT05fTk9OX1BocmFzZV9FTkdfQ2FyZSUyNnV0bV90ZXJtJTNkZG9jdG9yJTI1MjBpbmZvcm1hdGlvbiUyNnV0bV9jb250ZW50JTNkRG9jdG9y&rlid=4f625093f4571046f014321ee2e684f2"
+        }
+    ],
+    "timestamp": 1653406352,
+    "url": "https://www.qwant.com/?q=dr+michael+valliere&t=all"
+}

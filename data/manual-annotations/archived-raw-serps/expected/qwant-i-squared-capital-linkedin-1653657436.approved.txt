@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "i squared capital linkedin",
+    "offset": null,
+    "page": null,
+    "query": "i squared capital linkedin",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "I Squared Capital is an independent global infrastructure investment manager focusing on energy, utilities, telecom and transport in North America, Europe, and select high growth economies. The...",
+            "timestamp": 1653657436,
+            "title": "I Squared Capital | LinkedIn",
+            "url": "https://www.linkedin.com/company/i-squared-capital"
+        },
+        {
+            "rank": 2,
+            "snippet": "I Squared | LinkedIn I Squared Semiconductors San Jose, CA 306 followers Providing innovative sales solutions for our industry leading semiconductor and systems partners See jobs Follow View all 29...",
+            "timestamp": 1653657436,
+            "title": "I Squared | LinkedIn",
+            "url": "https://www.linkedin.com/company/i-squared"
+        },
+        {
+            "rank": 3,
+            "snippet": "I Squared Capital Feb 2020 - Present2 years 3 months Miami, Florida Global Credit Investments Principal Upwell LLC Oct 2018 - Jan 20201 year 4 months Greater New York City Area Private investment...",
+            "timestamp": 1653657436,
+            "title": "Rishi Patel - Principal - I Squared Capital | LinkedIn",
+            "url": "https://www.linkedin.com/in/rishi-patel-3a98ba8"
+        },
+        {
+            "rank": 4,
+            "snippet": "Ross Berger - Vice President - I Squared Capital | LinkedIn Ross Berger Investor at I Squared Capital Greater Boston500+ connections Join to connect I Squared Capital Harvard Business School...",
+            "timestamp": 1653657436,
+            "title": "Ross Berger - Vice President - I Squared Capital | LinkedIn",
+            "url": "https://www.linkedin.com/in/rossberger"
+        },
+        {
+            "rank": 5,
+            "snippet": "Associate at I Squared Capital Miami, FL. Sadek Wahba Chairman &amp; Managing Partner Miami, FL. Edward Casserley Principal at Stonepeak ...",
+            "timestamp": 1653657436,
+            "title": "Mark Clark - Principal - I Squared Capital | LinkedIn",
+            "url": "https://www.linkedin.com/in/dclark11"
+        },
+        {
+            "rank": 6,
+            "snippet": "I Squared Capital 9 years Managing Partner May 2019 - Present3 years Miami, Florida Founding Partner 2013 - Present9 years Global Infrastructure Fund Morgan Stanley Investment Management 7 years...",
+            "timestamp": 1653657436,
+            "title": "Gautam Bhandari - Managing Partner - I Squared Capital | LinkedIn",
+            "url": "https://www.linkedin.com/in/gautam-bhandari-3731565"
+        },
+        {
+            "rank": 7,
+            "snippet": "Everest Capital LLC. Sergey was a Senior Risk Analyst at a $3Bn AUM global macro hedge fund dedicated to equity/FX/fixed income securities in emerging and frontier markets. \u2022 Monitored FX ...",
+            "timestamp": 1653657436,
+            "title": "Sergey Yevseyev, CFA, CPA, FRM - Controller - I Squared Capital | LinkedIn",
+            "url": "https://www.linkedin.com/in/sergey-yevseyev-cfa-cpa-frm-b172ba17"
+        },
+        {
+            "rank": 8,
+            "snippet": "Assistant Controller. I Squared Capital. Oct 2015 - Mar 20182 years 6 months.",
+            "timestamp": 1653657436,
+            "title": "Anthony Fonte - Controller - I Squared Capital | LinkedIn",
+            "url": "https://www.linkedin.com/in/anthony-fonte-b0a50423"
+        },
+        {
+            "rank": 9,
+            "snippet": "London, England, United Kingdom500+ connections Join to connect I Squared Capital University of Oxford Activity I was asked to write an article for The Lawyer on my #infertility and #pregnancyloss...",
+            "timestamp": 1653657436,
+            "title": "Charlotte Dixon - Associate General Counsel - I Squared Capital | LinkedIn",
+            "url": "https://uk.linkedin.com/in/charlotte-dixon-651158b0"
+        },
+        {
+            "rank": 10,
+            "snippet": "Alpha Squared Capital. Stanford University. Report this profile About Senior partner of venture capital, focusing on medical technology, biotechnology, with years of global venture capital ...",
+            "timestamp": 1653657436,
+            "title": "Jun Mu - Senior Partner - Alpha Squared Capital | LinkedIn",
+            "url": "https://www.linkedin.com/in/jun-mu-116a9b236"
+        }
+    ],
+    "timestamp": 1653657436,
+    "url": "https://www.qwant.com/?q=i+squared+capital+linkedin&t=all"
+}
