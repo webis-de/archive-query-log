@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "grady white ce 251",
+    "offset": null,
+    "page": null,
+    "query": "grady white ce 251",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "251 CE. The 251 Coastal Explorer is aptly named. Built on Grady\u2019s SeaV\u00b2 \u00ae hull, the 251 offers more offshore capability and performance than any other inshore fishing boat. With built-in rod storage, bow and stern fishing platforms, and a d\u2026",
+            "timestamp": 1636884788,
+            "title": "Grady-White | 251 CE Coastal Explorer Center Console",
+            "url": "https://www.gradywhite.com/models/coastal-explorer/251-ce/"
+        },
+        {
+            "rank": 2,
+            "snippet": "The Grady-White 251 CE. The Grady-White 251 CE is the first model in the Coastal Explorer series that is specifically designed for the millions of people who live near large bodies of water and want to go boating both in protected water and\u2026",
+            "timestamp": 1636884788,
+            "title": "Grady-White 251 CE (2015-) | BoatTEST",
+            "url": "https://www.boattest.com/review/grady-white/3272_251-ce"
+        },
+        {
+            "rank": 3,
+            "snippet": "Grady-White 251 CE en venta en Naples Estados Unidos. Ver fotos y detalles de este barco o buscar m\u00e1s barcos Grady-White en venta en boats.com.",
+            "timestamp": 1636884788,
+            "title": "2022 Grady-White 251 CE, Naples Estados Unidos - boats.com",
+            "url": "https://es.boats.com/barcos-a-motor/2022-grady-white-251-ce-8090176/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Grady-White 251 Coastal Explorer. Call for Price. 25 ft / 2022. Seabrook, Texas, United States. MarineMax Houston. Request Info. Price Drop: US$5,000 ( Nov 1) Grady-White 251 Coastal Explorer. US$134,900 *.",
+            "timestamp": 1636884788,
+            "title": "Grady White 251 Coastal Explorer boats for sale - YachtWorld",
+            "url": "https://www.yachtworld.com/boats-for-sale/make-grady-white/model-251-coastal-explorer/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Grady\u00adWhite created a good looking helm for the 251 CE and we also appreciated the ergonomics. Note that the supports for the optional T\u00adtop are affixed to the side of the console and not mounted to the deck where they will stub toes and ta\u2026",
+            "timestamp": 1636884788,
+            "title": "Grady\u00adWhite 251 CE (2015\u00ad)",
+            "url": "https://gradywhite.blob.core.windows.net/media/21029/grady-white-251-ce-2015-captains-report-2.pdf"
+        },
+        {
+            "rank": 6,
+            "snippet": "Grady-White 251 coastal explorer. A powerboat built by Grady-White, the 251 coastal explorer is a bay vessel. Grady-White 251 coastal explorer boats are typically used for saltwater-fishing, day-cruising and freshwater-fishing.",
+            "timestamp": 1636884788,
+            "title": "Grady-White 251 Coastal Explorer boats for sale - Boat Trader",
+            "url": "https://www.boattrader.com/boats/make-grady-white/model-251-coastal-explorer/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Grady-White 251 coastal explorer. A powerboat built by Grady-White, the 251 coastal explorer is a bay vessel. Grady-White 251 coastal explorer boats are typically used for saltwater-fishing, freshwater-fishing and day-cruising.",
+            "timestamp": 1636884788,
+            "title": "Grady-White 251 Coastal Explorer boats for sale - Boat Trader",
+            "url": "https://www.boattrader.com/boats/make-grady--white/model-251-coastal-explorer/"
+        },
+        {
+            "rank": 8,
+            "snippet": "25' 2015 Grady-white 251 Coastal Explorer Pensacola FL United States Legendary Marine Power Gas Single ... 12 days. This is a super clean low hour Grady White 251 CE. This boat can handle it all. If you like to fish inshore but also go offs\u2026",
+            "timestamp": 1636884788,
+            "title": "2015 Grady-white 251 Coastal Explorer 25ft",
+            "url": "https://www.yachtbuddha.com/view.php?id=920713"
+        },
+        {
+            "rank": 9,
+            "snippet": "Grady White boats offer a wide range of perks that have become the industry standard. Between their durable swimming deck to the double console design, Grady White boats are versatile and full of high-end options. \u201cNot only did it do everyt\u2026",
+            "timestamp": 1636884788,
+            "title": "4 Most-Common Problems With Grady White Boats",
+            "url": "https://www.godownsize.com/common-problems-grady-white-boats/"
+        }
+    ],
+    "timestamp": 1636884788,
+    "url": "https://www.ecosia.org/search?q=grady+white+ce+251"
+}

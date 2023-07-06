@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "can you show smoking on tv",
+    "offset": null,
+    "page": null,
+    "query": "can you show smoking on tv",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The Government banned cigarette commercials on<em> television</em> in 1970 after the 1964 Surgeon General\u2019s report found that<em> smoking cigarettes</em> increased your chances of getting lung cancer. This was a big deal, considering the strong<em> smoking</em> culture in the United States at the time. However, this ban didn\u2019t stop<em> smoking</em> on<em> television.</em>",
+            "timestamp": 1624555764,
+            "title": "Does Smoking on TV Influence You? | NIDA Archives",
+            "url": "https://archives.drugabuse.gov/blog/post/does-smoking-tv-influence-you"
+        },
+        {
+            "rank": 2,
+            "snippet": "Yes \u2014 but characters on<em> TV</em> programs still continue to<em> smoke.</em> Not too long ago, cigarette companies were some of<em> television\u2019s</em> biggest advertisers with<em> tobacco</em> products featured prominently on screen. The very first prime-time<em> television</em> news program was said to be sponsored by Camel cigarettes.",
+            "timestamp": 1624555764,
+            "title": "Smoking on Network TV? Isn't That Taboo These Days?",
+            "url": "https://blog.mtbakervapor.com/smoking-on-network-tv/"
+        },
+        {
+            "rank": 3,
+            "snippet": "The short answer: Because it<em> can.</em> For nearly 50 years,<em> cigarette advertising</em> has been banned from<em> TV</em> and radio. But electronic<em> cigarettes</em> \u2014 those battery-operated devices that often resemble...",
+            "timestamp": 1624555764,
+            "title": "Cigarettes Can't Be Advertised On TV. Should Juul Ads Be ...",
+            "url": "https://www.npr.org/sections/health-shots/2019/08/20/752553108/cigarettes-cant-be-advertised-on-tv-should-juul-ads-be-permitted"
+        },
+        {
+            "rank": 4,
+            "snippet": "The Federal Communications Commission (FCC)<em> does</em> not regulate<em> drug</em> use on<em> television,</em> and cable networks are immune from indecency regulations altogether.",
+            "timestamp": 1624555764,
+            "title": "FACT CHECK: Can You Smoke Marijuana On TV?",
+            "url": "https://checkyourfact.com/2018/01/04/fact-check-can-you-smoke-marijuana-on-tv/"
+        },
+        {
+            "rank": 5,
+            "snippet": "The pooled adjusted odds ratio for not smoking in the TV media only condition compared to controls was 1.53 (95% confidence intervals (CI) 1.02 to 2.29, p\u2009=\u20090.04), and for TV media + LTCN versus controls, 1.67 (95% CI 1.0 to 2.8, p\u2009=\u20090.05).",
+            "timestamp": 1624555764,
+            "title": "Can anti-smoking television advertising affect smoking ...",
+            "url": "https://tobaccocontrol.bmj.com/content/9/3/273"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Smoking</em> on screen is a fairly contentious issue; while most people are in agreement that smoking is bad for<em> you,</em> on-screen depictions have caused a split in opinion when it comes to characters enjoying tobacco, leading to a decrease in<em> smoking</em> characters.",
+            "timestamp": 1624555764,
+            "title": "What Do Actors Really Smoke on Screen? - CutPrintFilm",
+            "url": "http://cutprintfilm.com/features/editorials/what-do-actors-really-smoke-on-screen/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Research from the U.S. Department of Health and Human Services<em> shows</em> that young people exposed<em> to smoking</em> in film and<em> TV</em> are twice as likely<em> to</em> become<em> smokers.</em>",
+            "timestamp": 1624555764,
+            "title": "TV study: Where there's smoke, there's streaming",
+            "url": "https://www.usatoday.com/story/life/tv/2018/03/15/exclusive-tv-study-where-theres-smoke-theres-streaming/414424002/"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Smoking</em> used<em> to</em> be significant, especially on film and<em> TV.</em> It is now even more so. At first, it was a prop; famously, or so<em> it</em> was said, a way of giving actors something<em> to do</em> with their hands. I...",
+            "timestamp": 1624555764,
+            "title": "The smoking ban 10 years on: what\u2019s changed on page and ...",
+            "url": "https://www.theguardian.com/books/2017/jul/07/smoking-ban-movie-cigarettes-legislation-work-public-tobacco"
+        }
+    ],
+    "timestamp": 1624555764,
+    "url": "https://www.ecosia.org/search?q=can+you+show+smoking+on+tv&addon=chrome&addonversion=3.4.0&method=topbar"
+}

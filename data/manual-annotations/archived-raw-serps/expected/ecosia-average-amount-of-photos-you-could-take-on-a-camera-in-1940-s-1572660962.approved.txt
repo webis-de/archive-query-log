@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "average amount of photos you could take on a camera in 1940's",
+    "offset": null,
+    "page": null,
+    "query": "average amount of photos you could take on a camera in 1940's",
+    "results": [],
+    "timestamp": 1572660962,
+    "url": "https://www.ecosia.org/search?q=average+amount+of+photos+you+could+take+on+a+camera+in+1940%27s&addon=chrome&addonversion=2.1.0"
+}

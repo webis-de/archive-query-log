@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "dall e",
+    "offset": null,
+    "page": null,
+    "query": "dall e",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "DALL\u00b7E 2 DALL\u00b7E 2 can make realistic edits to existing images from a natural language caption. It can add and remove elements while taking shadows, reflections, and textures into account. Original Image Select location to add a flamingo right DALL\u00b7E 2 Edits DALL\u00b7E 2 can take an image and create different variations of it inspired by the original.",
+            "timestamp": 1654952788,
+            "title": "DALL\u00b7E",
+            "url": "https://labs.openai.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "What is DALL-E? DALL-E is an AI (Artificial Intelligence) system that has been designed and trained to generate images. The system can generate an image from a text prompt, like \"A bowl of soup that is a portal to another dimension\" (above).",
+            "timestamp": 1654952788,
+            "title": "DALL-E AI Image Generator - The Next Generation Text-To-Image AI",
+            "url": "https://creator.nightcafe.studio/dall-e-ai-image-generator"
+        },
+        {
+            "rank": 3,
+            "snippet": "They\u2019re coming from once specific site that people have started using, known as Dall-E Mini (get it? Dali ?). So let\u2019s break this all down and explain what those images and the site are all about:...",
+            "timestamp": 1654952788,
+            "title": "Dall-E Mini: What is the AI image generator to make weird photos?",
+            "url": "https://ftw.usatoday.com/lists/dall-e-ai-image-generator-twitter-what-is-it"
+        },
+        {
+            "rank": 4,
+            "snippet": "DALL-E \u2014 a portmanteau of the surrealist Salvador Dal\u00ed and Pixar\u2019s WALL-E \u2014 takes text prompts and generates images from them. In January 2021, the company introduced the first version of the tool,...",
+            "timestamp": 1654952788,
+            "title": "How DALL-E could power a creative revolution - The Verge",
+            "url": "https://www.theverge.com/23162454/openai-dall-e-image-generation-tool-creative-revolution"
+        },
+        {
+            "rank": 5,
+            "snippet": "A neural network called DALL\u00b7E that creates images from text captions for a wide range of concepts expressible in natural language. DALL\u00b7E is a 12-billion parameter version of GPT-3 trained to generate images from text descriptions, using a dataset of text\u2013image pairs.",
+            "timestamp": 1654952788,
+            "title": "DALL\u00b7E by OpenAI | GPT-3 Demo",
+            "url": "https://gpt3demo.com/apps/openai-dall-e"
+        },
+        {
+            "rank": 6,
+            "snippet": "DALL-E (stylized as DALL\u00b7E) is an artificial intelligence program that creates images from textual descriptions.",
+            "timestamp": 1654952788,
+            "title": "DALL-E - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/DALL-E"
+        },
+        {
+            "rank": 7,
+            "snippet": "That's because Dall-E Mini, a groundbreaking text-to-image AI app, is making what was once the stuff of dreams, a digital reality. It could not be simpler to use either. Just head to the website...",
+            "timestamp": 1654952788,
+            "title": "Dall-E Mini App Sparks New Internet Picture Trend",
+            "url": "https://www.newsweek.com/dall-e-mini-app-new-internet-picture-trend-artificial-intelligence-1713849"
+        },
+        {
+            "rank": 8,
+            "snippet": "Well, DALL-E, an artificial intelligence(AI) system has achieved just that. DALL-E is a new neural network AI system that can generate kitschy photos and paintings, just using the text prompts that a user might feed it. Not only that, it can alter a finished painting and generate numerous iterations, again, based on the textual prompts.",
+            "timestamp": 1654952788,
+            "title": "Meet DALL-E, The AI \u201cArtist\u201d That Can Literally Generate Paintings ...",
+            "url": "https://www.firstpost.com/tech/science/artificial-intelligence-system-dall-e-creates-realistic-photos-and-paintings-10556431.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "An open AI program called DALL-E mini has overtaken Twitter in the last week, churning out a surreal stream of warped art. DALL-E mini is developer Boris Dayma\u2019s take on the the separate DALL-E...",
+            "timestamp": 1654952788,
+            "title": "DALL-E Mini Memes Go Viral As the Site Crashes",
+            "url": "https://www.dailydot.com/unclick/dall-e-mini-memes/"
+        }
+    ],
+    "timestamp": 1654952788,
+    "url": "https://www.ecosia.org/search?tt=e8eb07a6&q=dall+e&addon=brave"
+}

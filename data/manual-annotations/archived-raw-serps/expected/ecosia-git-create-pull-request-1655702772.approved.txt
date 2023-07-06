@@ -1,0 +1,59 @@
+{
+    "interpreted_query": "git create pull request",
+    "offset": null,
+    "page": null,
+    "query": "git create pull request",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Congratulations, you\u2019ve just created a pull request using Git and GitHub! To recap, the steps you need to follow to create a pull request are: Create a fork (if you don\u2019t have one already) Create a local copy of a repository. Create a new branch and make changes. Push your code. Create a pull request in GitHub.",
+            "timestamp": 1655702772,
+            "title": "Git Pull Request: How to Create a Pull Request - Career Karma",
+            "url": "https://careerkarma.com/blog/git-pull-request/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Then, you run this command: git request-pull v1.0 https://git.ko.xz/project master. which will produce a request to the upstream, summarizing the changes between the v1.0 release and your master, to pull it from your public repository. If you pushed your change to a branch whose name is different from the one you have locally, e.g.",
+            "timestamp": 1655702772,
+            "title": "Git - git-request-pull Documentation",
+            "url": "https://www.git-scm.com/docs/git-request-pull"
+        },
+        {
+            "rank": 3,
+            "snippet": "Above the list of files, click Pull request . Use the base branch dropdown menu to select the branch you'd like to merge your changes into, then use the compare branch drop-down menu to choose the topic branch you made your changes in. Type a title and description for your pull request. To create a pull request that is ready for review, click ...",
+            "timestamp": 1655702772,
+            "title": "Creating a pull request - GitHub Docs",
+            "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"
+        },
+        {
+            "rank": 4,
+            "snippet": "An interesting thing to know and remember. Pull requests are not actually a core feature of Git. They are commonplace because they work as an essential function when teams are working with open-source projects. What You Need in Place to Perform a Git Pull Request. In order to even create a Git pull request, you need to have three main things in ...",
+            "timestamp": 1655702772,
+            "title": "How To Make a Pull Request in Git - GreenGeeks",
+            "url": "https://www.greengeeks.com/tutorials/make-a-pull-request-in-git/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Switched to branch 'new-branch' Alternatively, you can condense the above two commands, creating and switching to a new branch, with the following command and -b flag:. git checkout -b new-branch. If you want to switch back to main, you\u2019ll use the checkout command with the name of the main branch:. git checkout main . The checkout command will allow you to switch between multiple branches ...",
+            "timestamp": 1655702772,
+            "title": "How To Create a Pull Request on GitHub | DigitalOcean",
+            "url": "https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github"
+        },
+        {
+            "rank": 6,
+            "snippet": "Create a Git repository Copy your Git repository and add files Pull changes from your Git repository on Bitbucket Cloud Use a Git branch to merge a file. ... Mary can create the pull request through her Bitbucket account by navigating to her forked repository and clicking the Pull request button in the top-right corner. The resulting form ...",
+            "timestamp": 1655702772,
+            "title": "Pull Requests | Atlassian Git Tutorial",
+            "url": "https://www.atlassian.com/git/tutorials/making-a-pull-request"
+        },
+        {
+            "rank": 7,
+            "snippet": "Create a PR from the Pull requests page. You can create PRs for any branch from your project's Pull requests page on the web. On the Repos &gt; Pull requests page, select New pull request at upper right. Select the branch with the changes and the branch you want to merge the changes into, such as the main branch.",
+            "timestamp": 1655702772,
+            "title": "Create a pull request to review and merge code - Azure Repos",
+            "url": "https://docs.microsoft.com/en-us/azure/devops/repos/git/pull-requests"
+        }
+    ],
+    "timestamp": 1655702772,
+    "url": "https://www.ecosia.org/search?q=git+create+pull+request"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "vasectomy reversal success rate%23yt",
+    "offset": null,
+    "page": null,
+    "query": "vasectomy reversal success rate%23yt",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "From 3-8 years from the time of the<em> vasectomy</em> before the<em> reversal,</em> 88% achieved sperm in the semen and 53% achieved pregnancy with their significant other. Of those whose<em> reversals</em> occurred between 9-14 years from the<em> vasectomy,</em> 79% had sperm in the semen and 44% achieved pregnancy with their partner.",
+            "timestamp": 1623229800,
+            "title": "What is the Success Rate for a Vasectomy Reversal ...",
+            "url": "https://www.arizona-urology.com/blog/what-is-the-success-rate-for-a-vasectomy-reversal"
+        },
+        {
+            "rank": 2,
+            "snippet": "Pregnancy<em> rates</em> after<em> vasectomy reversal</em> will range from about 30% to over 90%, depending on the type of procedure. Many factors affect whether a<em> reversal</em> is<em> successful</em> in achieving pregnancy, including time since a<em> vasectomy,</em> partner age, surgeon experience and training, and whether you had fertility issues before your<em> vasectomy.</em>",
+            "timestamp": 1623229800,
+            "title": "Vasectomy reversal - Mayo Clinic - Mayo Clinic",
+            "url": "https://www.mayoclinic.org/tests-procedures/vasectomy-reversal/about/pac-20384537"
+        },
+        {
+            "rank": 3,
+            "snippet": "However, a newer (but smaller) study, using more modern microsurgical techniques, found that the<em> success rates</em> were the same for<em> reversals</em> done within 15 years of the original<em> vasectomy,</em> ranging from 82 to 89 percent. After 15 years, however, pregnancy<em> rates</em> dropped to 44 percent.",
+            "timestamp": 1623229800,
+            "title": "Vasectomy Reversal Success Rates: Will It Work?",
+            "url": "https://www.vasectomy.com/article/vasectomy-reversal/faq/vasectomy-reversal-success-rates-will-it-work"
+        },
+        {
+            "rank": 4,
+            "snippet": "Your<em> chances</em> of getting your partner pregnant after<em> reversing</em> a<em> vasectomy</em> can range from 30 to 70 percent. Your<em> chances</em> of a<em> successful reversal</em> may be lower if it\u2019s been over 10 years since your...",
+            "timestamp": 1623229800,
+            "title": "Vasectomy Reversal: Success Rate, Risks, Cost and More",
+            "url": "https://www.healthline.com/health/vasectomy-reversal"
+        },
+        {
+            "rank": 5,
+            "snippet": "After a successful<em> vasectomy reversal,</em> sperm are present in the semen and you may be able to achieve pregnancy with your partner.<em> Pregnancy success rates</em> following a<em> vasectomy reversal</em> range from 60-70%. Other factors that will affect<em> success rates</em> include age and fertility of both partners, as well as the number of years since time of<em> vasectomy</em>.",
+            "timestamp": 1623229800,
+            "title": "Vasectomy Reversal - Success Rates, Recovery, Costs ...",
+            "url": "https://waurology.com/men/vasectomy-reversal/"
+        },
+        {
+            "rank": 6,
+            "snippet": "By Robert Preidt, HealthDay Reporter. WEDNESDAY, Dec. 23, 2020 (HealthDay News) -- <em>Vasectomy</em> <em>reversal</em> is as viable in men over 50 as in those who are younger, a new study says. About 20% of ...",
+            "timestamp": 1623229800,
+            "title": "Vasectomy Reversal Just as Successful in Men Over 50 ...",
+            "url": "https://www.usnews.com/news/health-news/articles/2020-12-23/vasectomy-reversal-just-as-successful-in-men-over-50"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Vasectomy</em> <em>reversals</em> are performed in a hospital or clinic. You\u2019ll be given anesthesia so you\u2019re not awake and don\u2019t feel anything during the procedure. It usually takes about 2 to 4 hours ...",
+            "timestamp": 1623229800,
+            "title": "Vasectomy Reversal: Risks, Success Rate, &amp; Results",
+            "url": "https://www.webmd.com/infertility-and-reproduction/guide/reversing-a-vasectomy"
+        },
+        {
+            "rank": 8,
+            "snippet": "Between 6 and 10 percent of<em> vasectomy</em> patients change their minds and undergo a<em> reversal.</em> Life circumstances often spur the decision: a new marriage, a couple simply deciding they want children (or more children), or the death of a child. Here Dr. Vij explains what men need to know about this increasingly common surgical procedure. 1.",
+            "timestamp": 1623229800,
+            "title": "Vasectomy Reversal: 5 Facts Men Need to Know \u2013 Health ...",
+            "url": "https://health.clevelandclinic.org/vasectomy-reversal-5-facts-men-need-to-know-2/"
+        },
+        {
+            "rank": 9,
+            "snippet": "New York, NY (February 19, 2004) -- Debunking a popular myth about <em>vasectomy</em>, a new study by physician-scientists at NewYork-Presbyterian Hospital/Weill Cornell Medical Center finds that <em>vasectomy reversal</em> is highly effective, even 15 years or more after the vas deferens, the tube that carries sperm, is blocked. The study, published in the January Journal of Urology, documents the highest ...",
+            "timestamp": 1623229800,
+            "title": "Vasectomy reversal highly effective, even after 15 years ...",
+            "url": "https://news.cornell.edu/stories/2004/02/vasectomy-reversal-highly-effective-even-after-15-years"
+        }
+    ],
+    "timestamp": 1623229800,
+    "url": "https://www.ecosia.org/search?q=vasectomy+reversal+success+rate%2523yt"
+}

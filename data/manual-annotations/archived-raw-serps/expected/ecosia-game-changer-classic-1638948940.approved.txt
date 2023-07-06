@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "game changer classic",
+    "offset": null,
+    "page": null,
+    "query": "game changer classic",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Before your next season make the FREE UPGRADE to GameChanger Team Manager! GC <em>Classic</em> provides simple - yet powerful - free scorekeeping tools, advanced statistics, live updates and team management solutions for baseball and softball teams. We calculate stats, generate a scorebook, and stream live play-by-play and audio to parents and fans.",
+            "timestamp": 1638948940,
+            "title": "GameChanger Classic",
+            "url": "https://gc.com/home/gc-classic"
+        },
+        {
+            "rank": 2,
+            "snippet": "GameChanger is beta testing solutions to establish authenticity of teams so fans can easily trust that the teams they follow will provide consistent <em>game</em> data. Official GameChanger teams will be marked with an official tag in search results and on team home pages.",
+            "timestamp": 1638948940,
+            "title": "Sign In to GC Classic - Sign In | GameChanger",
+            "url": "https://gc.com/login"
+        },
+        {
+            "rank": 3,
+            "snippet": "This channel is for looking at <em>games</em>, and particularly <em>classic</em> <em>games</em>, in a new way, by Rich. Included are how to play videos and commentary. For more information on Rich and his <em>games</em>, visit: http ...",
+            "timestamp": 1638948940,
+            "title": "The Game Changer Channel: Classic Games Redefined - YouTube",
+            "url": "https://www.youtube.com/channel/UC7vIrQRM7qu3PuSskDCNK0g"
+        },
+        {
+            "rank": 4,
+            "snippet": "After creating a Team Manager account, choose the Import GameChanger Teams option. If you already have a Team Manager account, tap the \"+\" option to create a new team. When prompted, sign in to your GameChanger Admin account. The import process will begin. Most teams import within a few minutes, but a full sync could take up to 72 hours.",
+            "timestamp": 1638948940,
+            "title": "Import Your GameChanger Classic Teams To ... - Team Manager",
+            "url": "https://teammanager.zendesk.com/hc/en-us/articles/360043985251-Import-Your-GameChanger-Classic-Teams-To-GameChanger-Team-Manager-"
+        },
+        {
+            "rank": 5,
+            "snippet": "MORGANTOWN \u2014 The Greenbrier Resort in White Sulphur Springs will host the first <em>Game</em> <em>Changer</em> Golf <em>Classic</em> and Opioid and Substance Misuse Prevention Education Luncheon on May 26-27. Alabama head ...",
+            "timestamp": 1638948940,
+            "title": "Game Changers to hold Golf Classic and Opioid Prevention ...",
+            "url": "https://www.dominionpost.com/2021/04/07/game-changers-to-hold-golf-classic-and-opioid-prevention-education-luncheon-at-the-greenbrier-alabama-football-coach-to-attend/"
+        },
+        {
+            "rank": 6,
+            "snippet": "A UFC fighter learns everything he'd been taught about protein was a lie.The <em>Game Changers</em> hits digital worldwide 10/1 &amp; is available for preorder on iTunes ...",
+            "timestamp": 1638948940,
+            "title": "The Game Changers | Official Trailer - YouTube",
+            "url": "https://www.youtube.com/watch?v=iSpglxHTJVM"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Game</em> <em>Changer</em> is built with a steel hull and aluminium superstructure. Powered by 4 x MTU engines, she comfortably cruises at 15 knots, reaches a maximum speed of 20 knots with a range of up to 4,155 nautical miles from her 340,000 litre fuel tanks at cruising speed. <em>Game</em> <em>Changer</em> features at-anchor stabilizers providing exceptional comfort levels.",
+            "timestamp": 1638948940,
+            "title": "GAME CHANGER Yacht Charter Price - Damen Yachting Luxury ...",
+            "url": "https://www.yachtcharterfleet.com/luxury-charter-yacht-49988/game-changer.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "Get plant based recipes from The <em>Game Changers</em>\u2019 all-star athletes. Healthy breakfasts, protein-packed smoothies, <em>classic</em> comfort foods, desserts and more.",
+            "timestamp": 1638948940,
+            "title": "Plant Based Recipes | The Game Changers",
+            "url": "https://gamechangersmovie.com/food/recipes/"
+        },
+        {
+            "rank": 9,
+            "snippet": "The perfect addition to your sauce repertoire. This versatile sweet <em>vanilla</em> cream is delicious poured on fresh fruit, waffles and pancakes.",
+            "timestamp": 1638948940,
+            "title": "Vanilla Cream | The Game Changers",
+            "url": "https://gamechangersmovie.com/recipes/vanilla-cream/"
+        }
+    ],
+    "timestamp": 1638948940,
+    "url": "https://www.ecosia.org/search?q=game+changer+classic"
+}

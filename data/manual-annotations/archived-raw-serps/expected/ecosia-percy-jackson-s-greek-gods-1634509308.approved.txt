@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "percy jackson's greek gods",
+    "offset": null,
+    "page": null,
+    "query": "percy jackson's greek gods",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Praise for <em>Percy Jackson's Greek </em>Gods \"<em>Percy</em>\u2019s gift, which is no great secret, is to breathe new life into the <em>gods</em>. Closest attention is paid to the Olympians, but Riordan has a sure touch when it comes to fitting much into a small space\u2015as does Rocco\u2019s artwork, which smokes and writhes on the page as if hit by lightning. . .",
+            "timestamp": 1634509308,
+            "title": "Percy Jackson's Greek Gods: Riordan, Rick, Rocco, John ...",
+            "url": "https://www.amazon.com/Percy-Jacksons-Greek-Gods-Riordan/dp/1484712374"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Percy Jackson\u2019s Greek Gods</em> is a collection of stories from <em>Greek</em> <em>mythology</em> told from the demigod <em>Percy</em> <em>Jackson </em>'s point of view. The book talks about the origins of the Olympian <em>gods</em> (and of their ancestors, the Titans and the Protogenoi) and other stories from their lives. The book was released on August 19th, 2014.",
+            "timestamp": 1634509308,
+            "title": "Percy Jackson's Greek Gods | Riordan Wiki | Fandom",
+            "url": "https://riordan.fandom.com/wiki/Percy_Jackson%27s_Greek_Gods"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Percy Jackson's Greek </em>Gods by Rick Riordan. Topics Mythological, Fantasy, Entertainment Collection opensource Language English. In this book, <em>Percy</em> <em>Jackson</em> tells of all the <em>gods</em> and certain myths on them. (Book contains sexual content.) Addeddate 2017-10-30 12:11:24 Identifier <em>PercyJacksonsGreekGods</em>",
+            "timestamp": 1634509308,
+            "title": "Percy Jackson's Greek Gods : Rick Riordan : Free Download ...",
+            "url": "https://archive.org/details/PercyJacksonsGreekGods"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Percy Jackson's Greek </em>Gods. <em>Percy Jackson's Greek </em>Gods is a collection of short stories about <em>Greek</em> <em>mythology</em> as narrated by <em>Percy</em> <em>Jackson</em>. It was written by Rick Riordan and was released on August 19, 2014. It features <em>Percy</em> <em>Jackson</em> giving his own take on the <em>Greek</em> myths in a humorous way.",
+            "timestamp": 1634509308,
+            "title": "Percy Jackson's Greek Gods - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Percy_Jackson%27s_Greek_Gods"
+        },
+        {
+            "rank": 5,
+            "snippet": "This article is about the pantheon of <em>gods</em>. You may be looking for the book, <em>Percy Jackson's Greek </em>Gods. The <em>Greek Gods</em> are a race of immortal beings who control the forces of nature and human endeavors. The majority are the descendants and relatives of the Elder Titans, their chief enemies. There are currently twelve major <em>gods</em>, the Olympians, who rule over the universe, all of whom are under ...",
+            "timestamp": 1634509308,
+            "title": "Greek Gods | Riordan Wiki | Fandom",
+            "url": "https://riordan.fandom.com/wiki/Greek_Gods"
+        },
+        {
+            "rank": 6,
+            "snippet": "DOWNLOAD. Other files ( 1) <em>Percy Jackson's Greek </em>Gods.epub. DMCA. \u00d7. Claim the \"<em>Percy Jackson's Greek </em>Gods.epub\". Email. I have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or law. A statement, made under penalty of perjury, that the above information is accurate ...",
+            "timestamp": 1634509308,
+            "title": "PERCY JACKSON'S GREEK GODS Read Online Free Without ...",
+            "url": "https://www.readanybook.com/online/705996"
+        },
+        {
+            "rank": 7,
+            "snippet": "This item: <em>Percy Jackson</em> and the <em>Greek Gods</em>. Unknown Binding. $21.75. In Stock. Ships from and sold by Book Depository US. FREE Shipping. <em>Percy</em> <em>Jackson</em>'s <em>Greek</em> Heroes. by Rick Riordan Paperback. $10.29.",
+            "timestamp": 1634509308,
+            "title": "Percy Jackson and the Greek Gods: 9780141358680: Amazon ...",
+            "url": "https://www.amazon.com/Percy-Jackson-Greek-Gods-2015/dp/B076ZQY8BD"
+        },
+        {
+            "rank": 8,
+            "snippet": "Disney-Hyperion Books \"<em>Percy</em> <em>Jackson</em>'s <em>Greek</em> Heroes\" is a big, beautiful book about <em>Greek</em> <em>mythology</em> told from <em>Percy</em>'s perspective. <em>Percy</em> puts a contemporary spin on the traditional tales of 12 <em>Greek</em> heroes; Perseus, Psyche, Phaethon, Otrera, Daedalus, Theseus, Atalanta, Bellerophon, Cyrene, Orpheus, Hercules, and Jason.",
+            "timestamp": 1634509308,
+            "title": "Percy Jackson's \"Greek Gods\" and 'Greek Heroes'",
+            "url": "https://www.thoughtco.com/percy-jacksons-greek-gods-and-heroes-627569"
+        }
+    ],
+    "timestamp": 1634509308,
+    "url": "https://www.ecosia.org/search?tt=e8eb07a6&q=percy+jackson%27s+greek+gods&addon=brave"
+}
