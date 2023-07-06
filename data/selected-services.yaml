@@ -11351,8 +11351,56 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers: 
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: div[class^=SearchBar-module] input[type=search]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: form#headsearchform input#headsearchbar
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: form[class^=SearchBar-module] input[type=search]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: form#search-form input#search-input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=Stack-module] div[class^=WebResult-module__container]
+    url_selector: div[class^=WebResult-module__subContainer] a
+    title_selector: div[class^=WebResult-module__subContainer] a h2[class^="Text-module"], div[class^=WebResult-module__subContainer] a[class^="external Text-module__typo"]
+    snippet_selector: div[class^=Text-module]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=SER-module__subContainer] div[class^=Stack-module__VerticalStack] div[class*=HeaderContainer]
+    url_selector: div[class^="Stack-module__VerticalStack"] a
+    title_selector: div[class^="Stack-module__VerticalStack"]
+    snippet_selector: div[class^="Text-module"] span
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=SER-module__subContainer]
+    url_selector: a[class*=SER-module__title]
+    title_selector: a[class*=SER-module__title]
+    snippet_selector: p[class*=SER-module__description], div[class*=SER-module__description], div[class*=SER-module__domain]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=SER-module__subContainer]
+    url_selector: a
+    title_selector: a
+    snippet_selector: div[class^="Text"]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div#contenerresults div.result
+    url_selector: span.title a
+    title_selector: span.title
+    snippet_selector: p:not(.url)
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=Videos-module__VideosList] a[data-testid="videoResult"]
+    url_selector: :--self
+    title_selector: div[class*=VideoCardTitle]
+    snippet_selector: div[class*=VideoCardDescription]
   focused_url_prefixes:
   - /?
 - name: thairath
