@@ -603,5 +603,4 @@ cython_debug/
 
 # Custom exclusions
 *.lop
-reimer*.pdf
-cd-cover.pdf
+config.override.yml
