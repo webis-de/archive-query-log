@@ -26588,3 +26588,24 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
+- name: dblp
+  public_suffix: org
+  alexa_domain: dblp.org
+  alexa_rank: null
+  category:
+  notes: ""
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - dblp.org
+  - dblp.uni-trier.de
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: query_parameter
+    parameter: q
+  page_parsers: []
+  offset_parsers: []
+  interpreted_query_parsers: []
+  results_parsers: []
+  focused_url_prefixes: []
