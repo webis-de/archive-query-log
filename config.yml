@@ -1,0 +1,254 @@
+es_host: elasticsearch.srv.webis.de
+es_port: 9200
+es_username: null
+es_password: null
+es_index_archives:
+  name: aql_archives
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      id:
+        type: keyword
+      domain:
+        type: keyword
+      description:
+        type: keyword
+      cdx_api_url:
+        type: keyword
+      memento_api_url:
+        type: keyword
+      last_modified:
+        type: date
+        format: strict_date_time_no_millis
+es_index_providers:
+  name: aql_providers
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      id:
+        type: keyword
+      name:
+        type: keyword
+      public_suffix:
+        type: keyword
+      alexa_domain:
+        type: keyword
+      alexa_rank:
+        type: integer
+      category:
+        type: keyword
+      description:
+        type: text
+        analyzer: english
+      notes:
+        type: text
+        analyzer: english
+      interface_annotations:
+        type: object
+        properties:
+          has_input_field:
+            type: boolean
+          has_search_form:
+            type: boolean
+          has_search_div:
+            type: boolean
+      domains:
+        type: string
+      url_path_prefixes:
+        type: string
+es_index_filters:
+  name: aql_filters
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      archive:
+        type: object
+        properties:
+          id:
+            type: keyword
+          cdx_api_url:
+            type: keyword
+          memento_api_url:
+            type: keyword
+      provider:
+        type: object
+        properties:
+          id:
+            type: keyword
+          domain:
+            type: string
+          url_path_prefix:
+            type: string
+      last_downloaded_captures:
+        type: date
+        format: strict_date_time_no_millis
+es_index_captures:
+  name: aql_captures
+  settings:
+    number_of_shards: 10
+    number_of_replicas: 2
+  mapping: {} # TODO
+es_index_serps:
+  name: aql_serps
+  settings:
+    number_of_shards: 10
+    number_of_replicas: 2
+  mapping: {} # TODO
+es_index_results:
+  name: aql_results
+  settings:
+    number_of_shards: 20
+    number_of_replicas: 2
+  mapping: {} # TODO
+es_index_url_query_parsers:
+  name: aql_url_query_parsers
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      url_filter_regex:
+        type: keyword
+      parser_type:
+        type: keyword
+      parameter:
+        type: keyword
+      segment:
+        type: integer
+      replacements:
+        type: object
+        properties:
+          search:
+            type: keyword
+          replace:
+            type: keyword
+es_index_url_page_parsers:
+  name: aql_url_page_parsers
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      url_filter_regex:
+        type: keyword
+      parser_type:
+        type: keyword
+      parameter:
+        type: keyword
+      segment:
+        type: integer
+      replacements:
+        type: object
+        properties:
+          search:
+            type: keyword
+          replace:
+            type: keyword
+es_index_url_offset_parsers:
+  name: aql_url_offset_parsers
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      url_filter_regex:
+        type: keyword
+      parser_type:
+        type: keyword
+      parameter:
+        type: keyword
+      segment:
+        type: integer
+      replacements:
+        type: object
+        properties:
+          search:
+            type: keyword
+          replace:
+            type: keyword
+es_index_url_language_parsers:
+  name: aql_url_language_parsers
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      url_filter_regex:
+        type: keyword
+      parser_type:
+        type: keyword
+      parameter:
+        type: keyword
+      segment:
+        type: integer
+      replacements:
+        type: object
+        properties:
+          search:
+            type: keyword
+          replace:
+            type: keyword
+es_index_serp_query_parsers:
+  name: aql_serp_query_parsers
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      url_filter_regex:
+        type: keyword
+      parser_type:
+        type: keyword
+      html_selector:
+        type: keyword
+      html_attribute:
+        type: keyword
+      html_text:
+        type: boolean
+      replacements:
+        type: object
+        properties:
+          search:
+            type: keyword
+          replace:
+            type: keyword
+es_index_serp_snippets_parsers:
+  name: aql_serp_snippets_parsers
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      url_filter_regex:
+        type: keyword
+      parser_type:
+        type: keyword
+      html_selector:
+        type: keyword
+      html_selector_url:
+        type: keyword
+      html_attribute_url:
+        type: keyword
+      html_selector_title:
+        type: keyword
+      html_selector_text:
+        type: keyword
+es_index_serp_direct_answer_parsers:
+  name:  aql_serp_direct_answer_parsers
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 2
+  mapping:
+    properties:
+      url_filter_regex:
+        type: keyword
+      parser_type:
+        type: keyword
+      html_selector:
+        type: keyword
