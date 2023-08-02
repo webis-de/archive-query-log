@@ -11,10 +11,10 @@ es_index_archives:
     properties:
       id:
         type: keyword
-      domain:
-        type: keyword
+      name:
+        type: text
       description:
-        type: keyword
+        type: text
       cdx_api_url:
         type: keyword
       memento_api_url:
@@ -32,7 +32,7 @@ es_index_providers:
       id:
         type: keyword
       name:
-        type: keyword
+        type: text
       public_suffix:
         type: keyword
       alexa_domain:
@@ -43,7 +43,6 @@ es_index_providers:
         type: keyword
       description:
         type: text
-        analyzer: english
       notes:
         type: text
         analyzer: english
