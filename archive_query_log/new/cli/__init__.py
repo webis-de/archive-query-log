@@ -20,7 +20,7 @@ def print_version(
 @group()
 @option("-V", "--version", is_flag=True, callback=print_version,
         expose_value=False, is_eager=True)
-def cli():
+def cli() -> None:
     pass
 
 
