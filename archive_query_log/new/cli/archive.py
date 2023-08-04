@@ -19,16 +19,16 @@ def archive():
 
 @archive.command()
 @argument("name", type=str)
-@option("-c", "--cdx-api-url", help="url", type=str, required=True,
-        prompt="CDX API URL")
-@option("-m", "--memento-api-url", type=str, required=True,
-        prompt="Memento API URL")
 @option("-d", "--description", type=str)
+@option("-c", "--cdx-api-url", type=str, required=True,
+        prompt="CDX API URL", metavar="URL")
+@option("-m", "--memento-api-url", type=str, required=True,
+        prompt="Memento API URL", metavar="URL")
 def add(
         name: str,
+        description: str | None,
         cdx_api_url: str,
         memento_api_url: str,
-        description: str | None,
 ) -> None:
     create_index(CONFIG.es_index_archives)
     archive_id = str(uuid5(NAMESPACE_ARCHIVE, name))
@@ -51,19 +51,30 @@ def add(
     echo("Done.")
 
 
+ARCHIVE_IT_METADATA_FIELDS = [
+    "Title",
+    "Description",
+    "Subject",
+    "Coverage",
+    "Language",
+    "Collector",
+    "Creator",
+    "Publisher",
+    "Date",
+    "Identifier",
+    "Rights",
+]
+
+
 @archive.command()
 @option("--api-url", type=str, required=True,
-        default="https://partner.archive-it.org")
+        default="https://partner.archive-it.org", metavar="URL")
 @option("--wayback-url", type=str, required=True,
-        default="https://wayback.archive-it.org")
+        default="https://wayback.archive-it.org", metavar="URL")
 @option("--page-size", type=IntRange(min=1), required=True,
         default=100)
 def add_archive_it_collections(api_url: str, wayback_url: str,
                                page_size: int) -> None:
-    metadata_fields = ["Title", "Description", "Subject", "Coverage",
-                       "Language", "Collector", "Creator", "Publisher",
-                       "Date", "Identifier", "Rights"]
-
     echo("Load Archive-It collections.")
     collections_api_url = urljoin(api_url, "/api/collection")
     response = session.get(collections_api_url,
@@ -86,7 +97,7 @@ def add_archive_it_collections(api_url: str, wayback_url: str,
 
             description_parts = []
             metadata = item["metadata"]
-            for metadata_field in metadata_fields:
+            for metadata_field in ARCHIVE_IT_METADATA_FIELDS:
                 if metadata_field in metadata:
                     for title in metadata[metadata_field]:
                         description_parts.append(
