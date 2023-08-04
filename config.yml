@@ -33,19 +33,12 @@ es_index_providers:
         type: keyword
       name:
         type: text
-      public_suffix:
-        type: keyword
-      alexa_domain:
-        type: keyword
-      alexa_rank:
-        type: integer
-      category:
-        type: keyword
       description:
         type: text
-      notes:
-        type: text
-        analyzer: english
+      website_type:
+        type: keyword
+      content_type:
+        type: keyword
       interface_annotations:
         type: object
         properties:
@@ -56,9 +49,12 @@ es_index_providers:
           has_search_div:
             type: boolean
       domains:
-        type: string
+        type: keyword
       url_path_prefixes:
-        type: string
+        type: keyword
+      last_modified:
+        type: date
+        format: strict_date_time_no_millis
 es_index_filters:
   name: aql_filters
   settings:
