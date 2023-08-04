@@ -4,6 +4,7 @@ from click import group, Context, Parameter, echo, option
 
 from archive_query_log import __version__
 from archive_query_log.new.cli.archive import archive
+from archive_query_log.new.cli.provider import provider
 
 
 def print_version(
@@ -25,3 +26,4 @@ def cli() -> None:
 
 
 cli.add_command(archive)
+cli.add_command(provider)
