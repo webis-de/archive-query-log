@@ -4675,23 +4675,28 @@
   results_parsers: []
   focused_url_prefixes:
   - /search
-- name: steamcommunity
+- name: steam
   public_suffix: com
   alexa_domain: steamcommunity.com
   alexa_rank: 206
   category: gaming
-  notes: 'excluded; Only user search; Hubs are not free text.'
+  notes: 'steamcommunity.com excluded; Only user search; Hubs are not free text.'
   input_field: true
   search_form: true
   search_div: false
   domains:
   - steamcommunity.com
-  query_parsers: []
+  - steampowered.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: term
   page_parsers: []
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /search
 - name: deepl
   public_suffix: com
   alexa_domain: deepl.com
@@ -5741,27 +5746,6 @@
   results_parsers: []
   focused_url_prefixes:
   - /search?
-- name: steampowered
-  public_suffix: com
-  alexa_domain: steampowered.com
-  alexa_rank: 274
-  category: gaming
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - steampowered.com
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/search
-    type: query_parameter
-    parameter: term
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes:
-  - /search
 - name: investopedia
   public_suffix: com
   alexa_domain: investopedia.com
@@ -7582,10 +7566,14 @@
   search_form: true
   search_div: true
   domains:
+  - excite.com
   - excite.co.jp
   - results.excite.com
   - websearch.excite.co.jp
   query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: q
   - url_pattern: ^https?://[^/]+/serp\?
     type: query_parameter
     parameter: q
@@ -7602,7 +7590,7 @@
   focused_url_prefixes:
   - /serp?
   - /?
-- name: 9anime
+- name: aniwave
   public_suffix: id
   alexa_domain: 9anime.id
   alexa_rank: 1687
@@ -7612,6 +7600,7 @@
   search_form: false
   search_div: true
   domains:
+  - aniwave.to
   - 9anime.gs
   - 9anime.id
   - 9anime.to
@@ -8076,6 +8065,7 @@
   search_div: true
   domains:
   - xm.com
+  - xmtrading.com
   query_parsers: []
   page_parsers: []
   offset_parsers: []
@@ -9470,24 +9460,6 @@
   results_parsers: []
   focused_url_prefixes:
   - /?
-- name: xmtrading
-  public_suffix: com
-  alexa_domain: xmtrading.com
-  alexa_rank: 2343
-  category: '-'
-  notes: excluded; No search
-  input_field: false
-  search_form: false
-  search_div: true
-  domains:
-  - xmtrading.com
-  - xm.com
-  query_parsers: []
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes: []
 - name: ubuntu
   public_suffix: com
   alexa_domain: ubuntu.com
