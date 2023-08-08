@@ -2419,6 +2419,7 @@
   search_div: true
   domains:
   - xvideos.com
+  - xvideos2.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
@@ -13171,30 +13172,6 @@
   results_parsers: []
   focused_url_prefixes:
   - /catalogsearch/result?
-- name: xvideos2
-  public_suffix: com
-  alexa_domain: xvideos2.com
-  alexa_rank: 4445
-  category: pornography
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - xvideos2.com
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: query_parameter
-    parameter: k
-  page_parsers:
-  - url_pattern: ^https?://[^/]+/\?
-    type: query_parameter
-    parameter: p
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes:
-  - /?
 - name: dhl
   public_suffix: de
   alexa_domain: dhl.de
