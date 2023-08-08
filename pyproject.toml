@@ -1,14 +1,14 @@
 [project]
 name = "archive-query-log"
 authors = [
-    {name = "Jan Heinrich Reimer", email = "heinrich.reimer@uni-jena.de"},
-    {name = "Sebastian Schmidt", email = "s.schmidt@uni-leipzig.de"},
-    {name = "Maik Fröbe", email = "maik.froebe@uni-jena.de"},
-    {name = "Lukas Gienapp", email = "lukas.gienapp@uni-leipzig.de"},
-    {name = "Harrisen Scells", email = "harry.scells@uni-leipzig.de"},
-    {name = "Benno Stein", email = "benno.stein@uni-weimar.de"},
-    {name = "Matthias Hagen", email = "matthias.hagen@uni-jena.de"},
-    {name = "Martin Potthast", email = "martin.potthast@uni-leipzig.de"},
+    { name = "Jan Heinrich Reimer", email = "heinrich.reimer@uni-jena.de" },
+    { name = "Sebastian Schmidt", email = "s.schmidt@uni-leipzig.de" },
+    { name = "Maik Fröbe", email = "maik.froebe@uni-jena.de" },
+    { name = "Lukas Gienapp", email = "lukas.gienapp@uni-leipzig.de" },
+    { name = "Harrisen Scells", email = "harry.scells@uni-leipzig.de" },
+    { name = "Benno Stein", email = "benno.stein@uni-weimar.de" },
+    { name = "Matthias Hagen", email = "matthias.hagen@uni-jena.de" },
+    { name = "Martin Potthast", email = "martin.potthast@uni-leipzig.de" },
 ]
 description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives."
 readme = "README.md"
@@ -17,6 +17,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Operating System :: OS Independent",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering",
@@ -72,15 +73,23 @@ tests = [
     "pytest-cov~=4.0",
 ]
 
+[project.urls]
+"Homepage" = "https://github.com/webis-de/archive-query-log"
+"Bug Tracker" = "https://github.com/webis-de/archive-query-log/issues"
+
+[project.scripts]
+archive_query_log = "archive_query_log"
+archive-query-log = "archive_query_log"
+
 [build-system]
-requires = ["setuptools>=50", "wheel"]
+requires = ["setuptools>=50", "setuptools_scm[toml]>=6.2", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 include-package-data = true
 
 [tool.setuptools.dynamic]
-version = {attr = "archive_query_log.__version__"}
+version = { attr = "archive_query_log.__version__" }
 
 [tool.setuptools.packages.find]
 include = ["archive_query_log"]
@@ -94,3 +103,5 @@ log_cli = "True"
 filterwarnings = [
     'ignore::DeprecationWarning',
 ]
+
+[tool.setuptools_scm]
