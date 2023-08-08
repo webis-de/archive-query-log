@@ -10,7 +10,8 @@ authors = [
     {name = "Matthias Hagen", email = "matthias.hagen@uni-jena.de"},
     {name = "Martin Potthast", email = "martin.potthast@uni-leipzig.de"},
 ]
-description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives"
+description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives."
+readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
