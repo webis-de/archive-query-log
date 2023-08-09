@@ -14256,6 +14256,7 @@
   search_div: true
   domains:
   - belgium.be
+  - fgov.be
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search\?
     type: query_parameter
@@ -16473,8 +16474,9 @@
   search_form: true
   search_div: false
   domains:
-  - dygang.cc
   - dygang.com
+  - dygang.cc
+  - dygang.net
   - so.dygang.com
   - dygod.net
   query_parsers:
@@ -16581,9 +16583,10 @@
   search_div: true
   domains:
   - diagrams.net
+  - drawio.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
-    type: query_parameter
+    type: query_paraПовар.руmeter
     parameter: search
   page_parsers: []
   offset_parsers: []
@@ -17078,6 +17081,7 @@
   search_div: false
   domains:
   - joq.al
+  - joq-albania.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
     type: query_parameter
@@ -17950,12 +17954,18 @@
   search_div: true
   domains:
   - 18comic.vip
-  query_parsers: []
+  - jmcomic.asia
+  - jmcomic.mobi
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/search
+    type: query_parameter
+    parameter: search_query
   page_parsers: []
   offset_parsers: []
   interpreted_query_parsers: []
   results_parsers: []
-  focused_url_prefixes: []
+  focused_url_prefixes:
+  - /search
 - name: moretify
   public_suffix: com
   alexa_domain: moretify.com
@@ -18056,30 +18066,6 @@
   results_parsers: []
   focused_url_prefixes:
   - /search
-- name: fgov
-  public_suffix: be
-  alexa_domain: fgov.be
-  alexa_rank: 11153
-  category: governmental
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - fgov.be
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/search\?
-    type: query_parameter
-    parameter: keywords
-  page_parsers:
-  - url_pattern: ^https?://[^/]+/[a-z]+/search\?
-    type: query_parameter
-    parameter: page
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes:
-  - /en/search?
 - name: searchengineland
   public_suffix: com
   alexa_domain: searchengineland.com
@@ -18192,6 +18178,7 @@
   - 4movierulz.pl
   - 4movierulz.pw
   - 4movierulz.tv
+  - 5movierulz.ac
   - 5movierulz.tc
   - 5movierulz.tv
   - 6movierulz.com
@@ -19303,6 +19290,7 @@
   search_div: true
   domains:
   - asianembed.io
+  - asianhdplay.pro
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.html\?
     type: query_parameter
@@ -19714,6 +19702,7 @@
   domains:
   - zk.fm
   - z2.fm
+  - z3.fm
   query_parsers:
   - url_pattern: ^https?://[^/]+/mp3/search\?
     type: query_parameter
@@ -20048,6 +20037,8 @@
   search_form: true
   search_div: true
   domains:
+  - javdb.com
+  - javdb36.com
   - javdb39.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -21050,28 +21041,6 @@
   results_parsers: []
   focused_url_prefixes:
   - /search/site/
-- name: jmcomic
-  public_suffix: asia
-  alexa_domain: jmcomic.asia
-  alexa_rank: 20700
-  category: pornography
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - jmcomic.asia
-  - jmcomic.mobi
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/search
-    type: query_parameter
-    parameter: search_query
-  page_parsers: []
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes:
-  - /search
 - name: bestblackfriday
   public_suffix: com
   alexa_domain: bestblackfriday.com
@@ -21097,30 +21066,6 @@
   results_parsers: []
   focused_url_prefixes:
   - /search-results?
-- name: javdb36
-  public_suffix: com
-  alexa_domain: javdb36.com
-  alexa_rank: 20847
-  category: pornography
-  notes: null
-  input_field: true
-  search_form: true
-  search_div: true
-  domains:
-  - javdb36.com
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/search\?
-    type: query_parameter
-    parameter: q
-  page_parsers:
-  - url_pattern: ^https?://[^/]+/search\?
-    type: query_parameter
-    parameter: page
-  offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
-  focused_url_prefixes:
-  - /search?
 - name: download-adblock
   public_suffix: com
   alexa_domain: download-adblock.com
@@ -21796,8 +21741,8 @@
   search_form: true
   search_div: false
   domains:
-  - apherald.com
   - indiaherald.com
+  - apherald.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[a-z]+/[^/]+
     type: path_segment
@@ -21818,8 +21763,8 @@
   search_form: true
   search_div: false
   domains:
-  - teamliquid.net
   - tl.net
+  - teamliquid.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/search\.php\?
     type: query_parameter
