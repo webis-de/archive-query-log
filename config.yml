@@ -35,6 +35,12 @@ es_index_providers:
         type: text
       description:
         type: text
+      exclusion_reason:
+        type: text
+      notes:
+        type: text
+      excluded_reason:
+        type: text
       website_type:
         type: keyword
       content_type:
