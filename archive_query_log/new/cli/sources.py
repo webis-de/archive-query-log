@@ -5,7 +5,8 @@ from uuid import uuid5
 from click import group, echo
 from elasticsearch.helpers import parallel_bulk
 from elasticsearch_dsl import Search
-from elasticsearch_dsl.query import Range, Exists
+from elasticsearch_dsl.function import RandomScore
+from elasticsearch_dsl.query import Range, Exists, FunctionScore
 from elasticsearch_dsl.response import Response
 from tqdm.auto import tqdm
 
@@ -114,8 +115,10 @@ def build() -> None:
         last_provider_time = (
             last_provider_response[0].last_built_sources)
 
-    echo(f"Generating sources for archives since {last_archive_time} "
-         f"and providers since {last_provider_time}.")
+    echo(f"Generating sources for archives "
+         f"since {last_archive_time.astimezone().strftime('%c')} "
+         f"and providers "
+         f"since {last_provider_time.astimezone().strftime('%c')}.")
 
     archives_search: Search = Archive.search()
     num_archives = (
@@ -125,8 +128,13 @@ def build() -> None:
     new_archives_search: Search = (
         archives_search
         .query(
-            ~Exists(field="last_built_sources") |
-            Range(last_built_filters={"gt": last_archive_time})
+            FunctionScore(
+                query=(
+                        ~Exists(field="last_built_sources") |
+                        Range(last_built_filters={"gt": last_archive_time})
+                ),
+                functions=[RandomScore()]
+            )
         )
     )
     num_new_archives = (
@@ -141,8 +149,13 @@ def build() -> None:
     new_providers_search: Search = (
         Provider.search()
         .query(
-            ~Exists(field="last_built_filters") |
-            Range(last_built_filters={"gt": last_provider_time})
+            FunctionScore(
+                query=(
+                        ~Exists(field="last_built_filters") |
+                        Range(last_built_filters={"gt": last_provider_time})
+                ),
+                functions=[RandomScore()]
+            )
         )
     )
     num_new_providers = (
@@ -158,7 +171,7 @@ def build() -> None:
     actions = _iter_sources(
         archives=new_archives_search.scan,
         num_archives=num_new_archives,
-        providers=providers_search.scan,
+        providers=new_providers_search.scan,
         num_providers=num_providers,
         start_time=start_time,
     )
