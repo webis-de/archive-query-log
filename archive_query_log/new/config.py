@@ -22,9 +22,6 @@ class Config(DataClassJsonMixin):
     es_port: 9200
     es_username: str
     es_password: str
-    es_index_archives: EsIndex
-    es_index_providers: EsIndex
-    es_index_filters: EsIndex
     es_index_captures: EsIndex
     es_index_serps: EsIndex
     es_index_results: EsIndex
