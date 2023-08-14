@@ -12,8 +12,8 @@ def create_index(es_index: EsIndex) -> None:
                 "settings": es_index.settings,
             },
         )
-    echo(f"Set index mapping for {CONFIG.es_index_archives.name}.")
+    echo(f"Set index mapping for {es_index.name}.")
     CONFIG.es.indices.put_mapping(
-        index=CONFIG.es_index_archives.name,
-        body=CONFIG.es_index_archives.mapping,
+        index=es_index.name,
+        body=es_index.mapping,
     )
