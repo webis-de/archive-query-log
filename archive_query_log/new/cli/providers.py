@@ -13,12 +13,12 @@ from whois.parser import PywhoisError
 from yaml import safe_load
 
 from archive_query_log import DATA_DIRECTORY_PATH
-from archive_query_log.new.cli.validation import validate_split_domains
+from archive_query_log.new.cli.util import validate_split_domains
 from archive_query_log.new.orm import Provider, InterfaceAnnotations
 
 
 @group()
-def provider():
+def providers():
     pass
 
 
@@ -57,7 +57,7 @@ CHOICES_WEBSITE_TYPE = [
     "wiki",
 ]
 CHOICES_CONTENT_TYPE = [
-    "accomodation",
+    "accommodation",
     "argument",
     "article",
     "audio",
@@ -71,7 +71,7 @@ CHOICES_CONTENT_TYPE = [
     "game",
     "image",
     "job-listing",
-    "multicontent",
+    "multi-content",
     "post",
     "presentation",
     "product",
@@ -189,7 +189,7 @@ def _add_provider(
     provider.save()
 
 
-@provider.command()
+@providers.command()
 @option("--name", type=str)
 @option("--description", type=str)
 @option("--notes", type=str)
@@ -284,7 +284,7 @@ def _provider_name(i: int, main_domain: str,
     return provider_name
 
 
-@provider.command("import")
+@providers.command("import")
 @option("-s", "--services-file", "services_path",
         type=PathType(path_type=Path, exists=True, file_okay=True,
                       dir_okay=False, readable=True, resolve_path=True,

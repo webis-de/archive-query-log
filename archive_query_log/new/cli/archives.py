@@ -12,7 +12,7 @@ from archive_query_log.new.orm import Archive
 
 
 @group()
-def archive():
+def archives():
     pass
 
 
@@ -76,7 +76,7 @@ def _add_archive(
     archive.save()
 
 
-@archive.command()
+@archives.command()
 @argument("name", type=str)
 @option("-d", "--description", type=str)
 @option("-c", "--cdx-api-url", type=str, required=True,
@@ -100,7 +100,7 @@ def add(
     Archive().index.refresh()
 
 
-@archive.group("import")
+@archives.group("import")
 def import_():
     pass
 
