@@ -1,18 +1,20 @@
-from datetime import datetime
 from pathlib import Path
 from typing import Sequence, MutableMapping
 from uuid import uuid4
 
 from click import group, option, echo, Choice, Path as PathType, prompt
 from diskcache import Index
+from elasticsearch_dsl import Search
+from elasticsearch_dsl.query import Terms
+from elasticsearch_dsl.response import Response
+from tqdm.auto import tqdm
 from whois import whois
 from whois.parser import PywhoisError
 from yaml import safe_load
 
 from archive_query_log import DATA_DIRECTORY_PATH
 from archive_query_log.new.cli.validation import validate_split_domains
-from archive_query_log.new.config import CONFIG
-from archive_query_log.new.utils.es import create_index
+from archive_query_log.new.orm import Provider, InterfaceAnnotations
 
 
 @group()
@@ -98,27 +100,33 @@ def _add_provider(
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
-    existing_provider_result = CONFIG.es.search(
-        index=CONFIG.es_index_providers.name,
-        query={
-            "terms": {
-                "domains.keyword": list(domains)
-            }
-        }
+    changed = False
+    existing_provider_search: Search = (
+        Provider.search()
+        .query(Terms(domains=list(domains)))
     )
-
-    existing_provider_hits = existing_provider_result["hits"]
-    if existing_provider_hits["total"]["value"] > 0:
-        existing_provider = existing_provider_hits["hits"][0]["_source"]
-        existing_provider_domains = set(existing_provider["domains"])
-        domains_intersection = existing_provider_domains & domains
-        echo(f"Provider {existing_provider['id']} already exists with "
-             f"conflicting domains: {', '.join(domains_intersection)}")
+    existing_provider_response: Response = existing_provider_search.execute()
+    if existing_provider_response.hits.total.value >= 0:
         if no_merge:
             return
+        existing_provider: Provider = existing_provider_response[0]
+        existing_domains = set(existing_provider.domains)
+        existing_url_path_prefixes = set(
+            existing_provider.url_path_prefixes)
+        provider_id = existing_provider.meta.id
         if auto_merge:
             should_merge = True
         else:
+            intersecting_domains = existing_domains & domains
+            first_intersecting_domains = sorted(intersecting_domains)[:5]
+            intersecting_domains_text = ", ".join(first_intersecting_domains)
+            num_more_intersecting_domains = (len(intersecting_domains) -
+                                             len(first_intersecting_domains))
+            if num_more_intersecting_domains > 0:
+                intersecting_domains_text += \
+                    f" (+{num_more_intersecting_domains} more)"
+            echo(f"Provider {provider_id} already exists with "
+                 f"conflicting domains: {intersecting_domains_text}")
             add_to_existing = prompt("Merge with existing provider? "
                                      "[y/N]", type=str, default="n",
                                      show_default=False)
@@ -126,56 +134,58 @@ def _add_provider(
         if not should_merge:
             return
 
-        provider_id = existing_provider["id"]
-        interface_annotations = existing_provider["interface_annotations"]
+        interface_annotations = existing_provider.interface_annotations
         if name is None:
-            name = existing_provider["name"]
+            name = existing_provider.name
         if description is None:
-            description = existing_provider["description"]
+            description = existing_provider.description
         if notes is None:
-            notes = existing_provider["notes"]
+            notes = existing_provider.notes
         if exclusion_reason is None:
-            exclusion_reason = existing_provider["exclusion_reason"]
+            exclusion_reason = existing_provider.exclusion_reason
         if website_type is None:
-            website_type = existing_provider["website_type"]
+            website_type = existing_provider.website_type
         if content_type is None:
-            content_type = existing_provider["content_type"]
+            content_type = existing_provider.content_type
         if has_input_field is None:
-            has_input_field = interface_annotations["has_input_field"]
+            has_input_field = interface_annotations.has_input_field
         if has_search_form is None:
-            has_search_form = interface_annotations["has_search_form"]
+            has_search_form = interface_annotations.has_search_form
         if has_search_div is None:
-            has_search_div = interface_annotations["has_search_div"]
-        domains = domains | existing_provider_domains
-        url_path_prefixes = (
-                url_path_prefixes | existing_provider["url_path_prefixes"])
-        print(f"Update provider {provider_id}.")
-    else:
-        provider_id = str(uuid4())
-        print(f"Add new provider {provider_id}.")
+            has_search_div = interface_annotations.has_search_div
+        domains = domains | existing_domains
+        url_path_prefixes = url_path_prefixes | existing_url_path_prefixes
 
-    document = {
-        "id": provider_id,
-        "name": name,
-        "description": description,
-        "notes": notes,
-        "exclusion_reason": exclusion_reason,
-        "website_type": website_type,
-        "content_type": content_type,
-        "interface_annotations": {
-            "has_input_field": has_input_field,
-            "has_search_form": has_search_form,
-            "has_search_div": has_search_div,
-        },
-        "domains": list(domains),
-        "url_path_prefixes": list(url_path_prefixes),
-        "last_modified": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
-    }
-    CONFIG.es.index(
-        index=CONFIG.es_index_providers.name,
-        id=provider_id,
-        document=document,
+        if (domains | existing_domains != domains or
+                url_path_prefixes | existing_url_path_prefixes !=
+                url_path_prefixes):
+            changed = True
+        if not auto_merge:
+            echo(f"Update provider {provider_id}.")
+    else:
+        changed = True
+        provider_id = str(uuid4())
+        if not no_merge and not auto_merge:
+            echo(f"Add new provider {provider_id}.")
+
+    provider = Provider(
+        meta={"id": provider_id},
+        name=name,
+        description=description,
+        notes=notes,
+        exclusion_reason=exclusion_reason,
+        website_type=website_type,
+        content_type=content_type,
+        interface_annotations=InterfaceAnnotations(
+            has_input_field=has_input_field,
+            has_search_form=has_search_form,
+            has_search_div=has_search_div,
+        ),
+        domains=list(domains),
+        url_path_prefixes=list(url_path_prefixes),
+        last_built_sources="" if changed else None,
     )
+    provider.save()
 
 
 @provider.command()
@@ -208,7 +218,8 @@ def add(
         domains: list[str],
         url_path_prefixes: list[str],
 ) -> None:
-    create_index(CONFIG.es_index_providers)
+    Provider.init()
+    Provider().index.refresh()
     _add_provider(
         name=name,
         description=description,
@@ -222,9 +233,7 @@ def add(
         domains=set(domains),
         url_path_prefixes=set(url_path_prefixes),
     )
-    echo(f"Refresh index {CONFIG.es_index_providers.name}.")
-    CONFIG.es.indices.refresh(index=CONFIG.es_index_providers.name)
-    echo("Done.")
+    Provider().index.refresh()
 
 
 def _provider_name(i: int, main_domain: str,
@@ -274,7 +283,7 @@ def _provider_name(i: int, main_domain: str,
     return provider_name
 
 
-@provider.command()
+@provider.command("import")
 @option("-s", "--services-file", "services_path",
         type=PathType(path_type=Path, exists=True, file_okay=True,
                       dir_okay=False, readable=True, resolve_path=True,
@@ -288,10 +297,11 @@ def _provider_name(i: int, main_domain: str,
 @option("--review", type=int)
 @option("--no-merge", is_flag=True, default=False, type=bool)
 @option("--auto-merge", is_flag=True, default=False, type=bool)
-def import_providers(services_path: Path, cache_path: Path,
-                     review: int | None, no_merge: bool,
-                     auto_merge: bool) -> None:
-    create_index(CONFIG.es_index_providers)
+def import_(services_path: Path, cache_path: Path,
+            review: int | None, no_merge: bool,
+            auto_merge: bool) -> None:
+    Provider.init()
+    Provider().index.refresh()
 
     echo("Load providers from services file.")
     with services_path.open("r") as file:
@@ -300,10 +310,13 @@ def import_providers(services_path: Path, cache_path: Path,
 
     provider_names: MutableMapping[str, str] = Index(str(cache_path))
 
+    if auto_merge or no_merge:
+        services = tqdm(services, desc="Import providers", unit="provider")
+
     ask_for_name = True
     for i, service in enumerate(services):
         if "domains" not in service:
-            raise ValueError(f"Service #{i} from {services_path} "
+            raise ValueError(f"Service definition #{i} from {services_path} "
                              f"has no domains: {service}")
 
         if ("query_parsers" not in service or
@@ -345,6 +358,4 @@ def import_providers(services_path: Path, cache_path: Path,
             no_merge=no_merge,
             auto_merge=auto_merge,
         )
-        CONFIG.es.indices.refresh(index=CONFIG.es_index_providers.name)
-
-    echo("Done.")
+        Provider().index.refresh()
