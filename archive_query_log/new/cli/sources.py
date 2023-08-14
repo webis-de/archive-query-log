@@ -1,13 +1,15 @@
 from datetime import datetime
-from typing import Iterable, Callable
+from typing import Iterable, Callable, Iterator, Any
 from uuid import uuid5
 
 from click import group, echo
+from elasticsearch.helpers import parallel_bulk
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import Range, Exists
 from elasticsearch_dsl.response import Response
 from tqdm.auto import tqdm
 
+from archive_query_log.new.config import CONFIG
 from archive_query_log.new.namespaces import NAMESPACE_SOURCE
 from archive_query_log.new.orm import (
     Archive, Provider, Source, SourceArchive, SourceProvider)
@@ -19,11 +21,10 @@ def sources():
     pass
 
 
-def _save_sources_inner(
+def _iter_sources_inner(
         archive: Archive,
         provider: Provider,
-        progress: tqdm,
-) -> None:
+) -> Iterator[dict]:
     for domain in provider.domains:
         for url_path_prefix in provider.url_path_prefixes:
             filter_components = (
@@ -49,36 +50,31 @@ def _save_sources_inner(
                     url_path_prefix=url_path_prefix,
                 )
             )
-            source.save()
-
-    progress.update(1)
+            yield source.to_dict(include_meta=True)
 
 
-def _save_sources(
+def _iter_sources(
         archives: Callable[[], Iterable[Archive]],
         num_archives: int,
         providers: Callable[[], Iterable[Provider]],
         num_providers: int,
         start_time: datetime,
-        progress: tqdm,
-) -> None:
+) -> Iterator[dict]:
     if num_archives >= num_providers:
         for archive in archives():
             for provider in providers():
-                _save_sources_inner(
+                yield from _iter_sources_inner(
                     archive,
                     provider,
-                    progress,
                 )
                 provider.update(last_built_sources=start_time)
             archive.update(last_built_sources=start_time)
     else:
         for provider in providers():
             for archive in archives():
-                _save_sources_inner(
+                yield from _iter_sources_inner(
                     archive,
                     provider,
-                    progress,
                 )
                 archive.update(last_built_sources=start_time)
             provider.update(last_built_sources=start_time)
@@ -158,16 +154,26 @@ def build() -> None:
     else:
         num_items = (num_new_archives * num_providers +
                      num_archives * num_new_providers)
-    progress = tqdm(total=num_items, desc="Build filters", unit="archive")
 
-    _save_sources(
+    actions = _iter_sources(
         archives=new_archives_search.scan,
         num_archives=num_new_archives,
         providers=providers_search.scan,
         num_providers=num_providers,
         start_time=start_time,
-        progress=progress,
     )
+
+    responses: Iterable[tuple[bool, Any]] = parallel_bulk(
+        client=CONFIG.es,
+        actions=actions,
+        ignore_status=[409],
+    )
+    # noinspection PyTypeChecker
+    responses = tqdm(responses, total=num_items, desc="Build sources",
+                     unit="source")
+
+    for success, info in responses:
+        if not success:
+            raise RuntimeError(f"Indexing error: {info}")
+
     Source().index.refresh()
-
-

@@ -1,12 +1,19 @@
 from datetime import datetime
 
 from elasticsearch_dsl import Document, Keyword, Text, Date, InnerDoc, \
-    Object, Boolean
+    Object, Boolean, Index
 
 from archive_query_log.new.config import CONFIG
 
 
-class Archive(Document):
+class _BaseDocument(Document):
+
+    @property
+    def index(self) -> Index:
+        return self._index
+
+
+class Archive(_BaseDocument):
     name: str = Text()
     description: str = Text()
     cdx_api_url: str = Keyword()
@@ -31,7 +38,7 @@ class InterfaceAnnotations(InnerDoc):
     has_search_div: bool = Boolean()
 
 
-class Provider(Document):
+class Provider(_BaseDocument):
     name: str = Text()
     description: str = Text()
     exclusion_reason: str = Text()
@@ -67,7 +74,7 @@ class SourceProvider(InnerDoc):
     url_path_prefix: str = Keyword()
 
 
-class Source(Document):
+class Source(_BaseDocument):
     archive: SourceArchive = Object(SourceArchive)
     provider: SourceProvider = Object(SourceProvider)
 
