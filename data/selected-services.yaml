@@ -3441,8 +3441,12 @@
 - domains:
   - duckduckgo.com
   - html.duckduckgo.com
+  - links.duckduckgo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/d\.js\?
     type: query_parameter
     parameter: q
   focused_url_prefixes:
