@@ -100,13 +100,13 @@ def _add_provider(
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
-    changed = False
+    last_built_sources = None
     existing_provider_search: Search = (
         Provider.search()
         .query(Terms(domains=list(domains)))
     )
     existing_provider_response: Response = existing_provider_search.execute()
-    if existing_provider_response.hits.total.value >= 0:
+    if existing_provider_response.hits.total.value > 0:
         if no_merge:
             return
         existing_provider: Provider = existing_provider_response[0]
@@ -153,17 +153,18 @@ def _add_provider(
             has_search_form = interface_annotations.has_search_form
         if has_search_div is None:
             has_search_div = interface_annotations.has_search_div
+
+        if (domains | existing_domains == domains and
+                url_path_prefixes | existing_url_path_prefixes ==
+                url_path_prefixes):
+            last_built_sources = existing_provider.last_built_sources
+
         domains = domains | existing_domains
         url_path_prefixes = url_path_prefixes | existing_url_path_prefixes
 
-        if (domains | existing_domains != domains or
-                url_path_prefixes | existing_url_path_prefixes !=
-                url_path_prefixes):
-            changed = True
         if not auto_merge:
             echo(f"Update provider {provider_id}.")
     else:
-        changed = True
         provider_id = str(uuid4())
         if not no_merge and not auto_merge:
             echo(f"Add new provider {provider_id}.")
@@ -183,7 +184,7 @@ def _add_provider(
         ),
         domains=list(domains),
         url_path_prefixes=list(url_path_prefixes),
-        last_built_sources="" if changed else None,
+        last_built_sources=last_built_sources,
     )
     provider.save()
 
