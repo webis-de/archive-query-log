@@ -31,7 +31,8 @@ dependencies = [
     "click~=8.1",
     "dataclasses-json~=0.5.7",
     "diskcache~=5.4",
-    "elasticsearch~=7.17",
+    "elasticsearch~=7.0",
+    "elasticsearch-dsl~=7.0",
     "fasttext-langdetect~=1.0",
     "fastwarc~=0.14.0",
     "flake8~=6.0",
@@ -78,8 +79,8 @@ tests = [
 "Bug Tracker" = "https://github.com/webis-de/archive-query-log/issues"
 
 [project.scripts]
-archive_query_log = "archive_query_log"
-archive-query-log = "archive_query_log"
+archive_query_log = "archive_query_log.new.cli:cli"
+archive-query-log = "archive_query_log.new.cli:cli"
 
 [build-system]
 requires = ["setuptools>=50", "setuptools_scm[toml]>=6.2", "wheel"]
