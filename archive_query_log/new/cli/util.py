@@ -3,18 +3,6 @@ from typing import Sequence
 from click import Parameter, Context, BadParameter
 
 
-def validate_domain(
-        _context: Context,
-        _parameter: Parameter,
-        value: str,
-) -> str:
-    if not value.islower():
-        raise ValueError("Domain must be lowercase.")
-    if "." not in value:
-        raise ValueError("Not a valid domain.")
-    return value
-
-
 def validate_split_domains(
         _context: Context,
         _parameter: Parameter,
