@@ -18,7 +18,7 @@ class CdxCapture:
     url_key: str
     timestamp: datetime
     mimetype: str
-    statuscode: int
+    status_code: int
     digest: str
     filename: str | None
     offset: int | None
@@ -59,7 +59,7 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
     if "urlkey" in line:
         url_key = line.pop("urlkey")
     else:
-        raise ValueError(f"Missing urlkey in CDX line: {line}")
+        raise ValueError(f"Missing URL key in CDX line: {line}")
     if "timestamp" in line:
         timestamp = datetime.strptime(
             line.pop("timestamp"),
@@ -80,9 +80,13 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
     else:
         raise ValueError(f"Missing mime type in CDX line: {line}")
     if "statuscode" in line:
-        statuscode = int(line.pop("statuscode"))
+        statuscode_string = line.pop("statuscode")
+        status_code = int(statuscode_string) \
+            if statuscode_string is not None else None
     elif "status" in line:
-        statuscode = int(line.pop("status"))
+        statuscode_string = line.pop("status")
+        status_code = int(statuscode_string) \
+            if statuscode_string is not None else None
     else:
         raise ValueError(f"Missing status code in CDX line: {line}")
     if "digest" in line:
@@ -126,7 +130,7 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
         url_key=url_key,
         timestamp=timestamp,
         mimetype=mimetype,
-        statuscode=statuscode,
+        status_code=status_code,
         digest=digest,
         filename=filename,
         offset=offset,
@@ -204,11 +208,6 @@ class CdxApi:
                 )
             url = url[:-1]
 
-        for b in ("veebiarhiiv.digar.ee", "webarchive.org.uk",
-                  "vefsafn.is", "swap.stanford.edu"):
-            if b in self.api_url:
-                return
-
         print(f"Parsing {self.api_url}?url={url}&matchType={match_type.value}")
         params = [
             ("url", url),
@@ -242,7 +241,11 @@ class CdxApi:
         if num_pages is not None:
             pages = range(num_pages)
             if num_pages > 10:
-                pages = tqdm(pages)  # TODO
+                pages = tqdm(
+                    pages,
+                    desc="Read CDX pages",
+                    unit="page",
+                )
             for page in pages:
                 response = self.session.get(
                     url=self.api_url,
