@@ -3,14 +3,12 @@ from datetime import datetime
 from elasticsearch_dsl import Document, Keyword, Text, Date, InnerDoc, \
     Object, Boolean, Index
 
-from archive_query_log.new.config import CONFIG
-
 
 class _BaseDocument(Document):
 
-    @property
-    def index(self) -> Index:
-        return self._index
+    @classmethod
+    def index(cls) -> Index:
+        return cls._index
 
 
 class Archive(_BaseDocument):
@@ -29,7 +27,6 @@ class Archive(_BaseDocument):
             "number_of_shards": 1,
             "number_of_replicas": 2,
         }
-        using = CONFIG.es
 
 
 class InterfaceAnnotations(InnerDoc):
@@ -59,7 +56,6 @@ class Provider(_BaseDocument):
             "number_of_shards": 1,
             "number_of_replicas": 2,
         }
-        using = CONFIG.es
 
 
 class SourceArchive(InnerDoc):
@@ -84,4 +80,3 @@ class Source(_BaseDocument):
             "number_of_shards": 5,
             "number_of_replicas": 2,
         }
-        using = CONFIG.es

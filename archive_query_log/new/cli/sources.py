@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Iterable, Callable, Iterator, Any
 from uuid import uuid5
 
-from click import group, echo
+from click import group, echo, Context, pass_context, pass_obj
 from elasticsearch.helpers import parallel_bulk
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
@@ -10,7 +10,7 @@ from elasticsearch_dsl.query import Range, Exists, FunctionScore
 from elasticsearch_dsl.response import Response
 from tqdm.auto import tqdm
 
-from archive_query_log.new.config import CONFIG
+from archive_query_log.new.config import Config
 from archive_query_log.new.namespaces import NAMESPACE_SOURCE
 from archive_query_log.new.orm import (
     Archive, Provider, Source, SourceArchive, SourceProvider)
@@ -18,8 +18,10 @@ from archive_query_log.new.utils.time import EPOCH, current_time
 
 
 @group()
-def sources():
-    pass
+@pass_obj
+@pass_context
+def sources(context: Context, config: Config):
+    context.obj = config
 
 
 def _iter_sources_inner(
@@ -55,6 +57,7 @@ def _iter_sources_inner(
 
 
 def _iter_sources(
+        config: Config,
         archives: Callable[[], Iterable[Archive]],
         num_archives: int,
         providers: Callable[[], Iterable[Provider]],
@@ -68,8 +71,14 @@ def _iter_sources(
                     archive,
                     provider,
                 )
-                provider.update(last_built_sources=start_time)
-            archive.update(last_built_sources=start_time)
+                provider.update(
+                    using=config.es,
+                    last_built_sources=start_time,
+                )
+            archive.update(
+                using=config.es,
+                last_built_sources=start_time,
+            )
     else:
         for provider in providers():
             for archive in archives():
@@ -77,22 +86,29 @@ def _iter_sources(
                     archive,
                     provider,
                 )
-                archive.update(last_built_sources=start_time)
-            provider.update(last_built_sources=start_time)
+                archive.update(
+                    using=config.es,
+                    last_built_sources=start_time,
+                )
+            provider.update(
+                using=config.es,
+                last_built_sources=start_time,
+            )
 
 
 @sources.command()
-def build() -> None:
-    Archive.init()
-    Archive().index.refresh()
-    Provider.init()
-    Provider().index.refresh()
-    Source.init()
+@pass_obj
+def build(config: Config) -> None:
+    Archive.init(using=config.es)
+    Archive.index().refresh(using=config.es)
+    Provider.init(using=config.es)
+    Provider.index().refresh(using=config.es)
+    Source.init(using=config.es)
 
     start_time = current_time()
 
     last_archive_search: Search = (
-        Archive.search()
+        Archive.search(using=config.es)
         .query(Exists(field="last_built_sources"))
         .sort("-last_built_sources")
     )
@@ -104,7 +120,7 @@ def build() -> None:
             last_archive_response[0].last_built_sources)
 
     last_provider_search: Search = (
-        Provider.search()
+        Provider.search(using=config.es)
         .query(Exists(field="last_built_sources"))
         .sort("-last_built_sources")
     )
@@ -120,7 +136,7 @@ def build() -> None:
          f"and providers "
          f"since {last_provider_time.astimezone().strftime('%c')}.")
 
-    archives_search: Search = Archive.search()
+    archives_search: Search = Archive.search(using=config.es)
     num_archives = (
         archives_search.extra(track_total_hits=True).execute()
         .hits.total.value
@@ -141,7 +157,7 @@ def build() -> None:
         new_archives_search.extra(track_total_hits=True).execute()
         .hits.total.value
     )
-    providers_search: Search = Provider.search()
+    providers_search: Search = Provider.search(using=config.es)
     num_providers = (
         providers_search.extra(track_total_hits=True).execute()
         .hits.total.value
@@ -169,6 +185,7 @@ def build() -> None:
                      num_archives * num_new_providers)
 
     actions = _iter_sources(
+        config=config,
         archives=new_archives_search.scan,
         num_archives=num_new_archives,
         providers=new_providers_search.scan,
@@ -177,7 +194,7 @@ def build() -> None:
     )
 
     responses: Iterable[tuple[bool, Any]] = parallel_bulk(
-        client=CONFIG.es,
+        client=config.es,
         actions=actions,
         ignore_status=[409],
     )
@@ -189,4 +206,4 @@ def build() -> None:
         if not success:
             raise RuntimeError(f"Indexing error: {info}")
 
-    Source().index.refresh()
+    Source.index().refresh(using=config.es)

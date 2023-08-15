@@ -3,10 +3,6 @@ from functools import cached_property
 
 from dataclasses_json import DataClassJsonMixin
 from elasticsearch import Elasticsearch
-from mergedeep import merge, Strategy
-from yaml import safe_load
-
-from archive_query_log import PROJECT_DIRECTORY_PATH
 
 
 @dataclass(frozen=True)
@@ -40,16 +36,3 @@ class Config(DataClassJsonMixin):
             http_auth=(self.es_username, self.es_password),
         )
 
-
-CONFIG_PATHS = [
-    PROJECT_DIRECTORY_PATH / "config.yml",
-    PROJECT_DIRECTORY_PATH / "config.override.yml",
-]
-CONFIG_DICT = {}
-for config_path in CONFIG_PATHS:
-    if config_path.exists():
-        with config_path.open("rb") as config_file:
-            config_dict = safe_load(config_file)
-        merge(CONFIG_DICT, config_dict, strategy=Strategy.REPLACE)
-
-CONFIG: Config = Config.from_dict(CONFIG_DICT)

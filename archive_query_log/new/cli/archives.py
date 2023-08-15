@@ -1,22 +1,27 @@
 from urllib.parse import urljoin
 from uuid import uuid4
 
-from click import group, argument, option, echo, IntRange, prompt
+from click import group, argument, option, echo, IntRange, prompt, pass_obj, \
+    pass_context, Context
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import Term
 from elasticsearch_dsl.response import Response
 from tqdm.auto import tqdm
 
+from archive_query_log.new.config import Config
 from archive_query_log.new.http import session
 from archive_query_log.new.orm import Archive
 
 
 @group()
-def archives():
-    pass
+@pass_obj
+@pass_context
+def archives(context: Context, config: Config):
+    context.obj = config
 
 
 def _add_archive(
+        config: Config,
         name: str | None,
         description: str | None,
         cdx_api_url: str,
@@ -26,7 +31,7 @@ def _add_archive(
 ) -> None:
     last_built_sources = None
     existing_archive_search: Search = (
-        Archive.search()
+        Archive.search(using=config.es)
         .query(
             Term(cdx_api_url=cdx_api_url) |
             Term(memento_api_url=memento_api_url)
@@ -73,7 +78,7 @@ def _add_archive(
         memento_api_url=memento_api_url,
         last_built_sources=last_built_sources,
     )
-    archive.save()
+    archive.save(using=config.es)
 
 
 @archives.command()
@@ -83,21 +88,24 @@ def _add_archive(
         prompt="CDX API URL", metavar="URL")
 @option("-m", "--memento-api-url", type=str, required=True,
         prompt="Memento API URL", metavar="URL")
+@pass_obj
 def add(
+        config: Config,
         name: str,
         description: str | None,
         cdx_api_url: str,
         memento_api_url: str,
 ) -> None:
-    Archive.init()
-    Archive().index.refresh()
+    Archive.init(using=config.es)
+    Archive.index().refresh(using=config.es)
     _add_archive(
+        config=config,
         name=name,
         description=description,
         cdx_api_url=cdx_api_url,
         memento_api_url=memento_api_url,
     )
-    Archive().index.refresh()
+    Archive.index().refresh(using=config.es)
 
 
 @archives.group("import")
@@ -129,10 +137,17 @@ ARCHIVE_IT_METADATA_FIELDS = [
         default=100)
 @option("--no-merge", is_flag=True, default=False, type=bool)
 @option("--auto-merge", is_flag=True, default=False, type=bool)
-def archive_it(api_url: str, wayback_url: str, page_size: int, no_merge: bool,
-               auto_merge: bool) -> None:
-    Archive.init()
-    Archive().index.refresh()
+@pass_obj
+def archive_it(
+        config: Config,
+        api_url: str,
+        wayback_url: str,
+        page_size: int,
+        no_merge: bool,
+        auto_merge: bool,
+) -> None:
+    Archive.init(using=config.es)
+    Archive.index().refresh(using=config.es)
 
     echo("Load Archive-It collections.")
     collections_api_url = urljoin(api_url, "/api/collection")
@@ -166,6 +181,7 @@ def archive_it(api_url: str, wayback_url: str, page_size: int, no_merge: bool,
             cdx_api_url = urljoin(wayback_url, f"{archive_it_id}/timemap/cdx")
             memento_api_url = urljoin(wayback_url, f"{archive_it_id}")
             _add_archive(
+                config=config,
                 name=name,
                 description=description,
                 cdx_api_url=cdx_api_url,
@@ -174,4 +190,4 @@ def archive_it(api_url: str, wayback_url: str, page_size: int, no_merge: bool,
                 auto_merge=auto_merge,
             )
             progress.update(1)
-    Archive().index.refresh()
+    Archive.index().refresh(using=config.es)

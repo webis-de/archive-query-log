@@ -2,7 +2,8 @@ from pathlib import Path
 from typing import Sequence, MutableMapping
 from uuid import uuid4
 
-from click import group, option, echo, Choice, Path as PathType, prompt
+from click import group, option, echo, Choice, Path as PathType, prompt, \
+    Context, pass_context, pass_obj
 from diskcache import Index
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import Terms
@@ -14,12 +15,15 @@ from yaml import safe_load
 
 from archive_query_log import DATA_DIRECTORY_PATH
 from archive_query_log.new.cli.util import validate_split_domains
+from archive_query_log.new.config import Config
 from archive_query_log.new.orm import Provider, InterfaceAnnotations
 
 
 @group()
-def providers():
-    pass
+@pass_obj
+@pass_context
+def providers(context: Context, config: Config):
+    context.obj = config
 
 
 CHOICES_WEBSITE_TYPE = [
@@ -86,6 +90,7 @@ CHOICES_CONTENT_TYPE = [
 
 
 def _add_provider(
+        config: Config,
         name: str | None,
         description: str | None,
         notes: str | None,
@@ -102,7 +107,7 @@ def _add_provider(
 ) -> None:
     last_built_sources = None
     existing_provider_search: Search = (
-        Provider.search()
+        Provider.search(using=config.es)
         .query(Terms(domains=list(domains)))
     )
     existing_provider_response: Response = existing_provider_search.execute()
@@ -186,7 +191,7 @@ def _add_provider(
         url_path_prefixes=list(url_path_prefixes),
         last_built_sources=last_built_sources,
     )
-    provider.save()
+    provider.save(using=config.es)
 
 
 @providers.command()
@@ -206,7 +211,9 @@ def _add_provider(
         required=True, callback=validate_split_domains)
 @option("--url-path-prefixes", "--url-path-prefix", type=str,
         multiple=True, required=True, metavar="PREFIXES")
+@pass_obj
 def add(
+        config: Config,
         name: str | None,
         description: str | None,
         notes: str | None,
@@ -219,9 +226,10 @@ def add(
         domains: list[str],
         url_path_prefixes: list[str],
 ) -> None:
-    Provider.init()
-    Provider().index.refresh()
+    Provider.init(using=config.es)
+    Provider.index().refresh(using=config.es)
     _add_provider(
+        config=config,
         name=name,
         description=description,
         notes=notes,
@@ -234,12 +242,15 @@ def add(
         domains=set(domains),
         url_path_prefixes=set(url_path_prefixes),
     )
-    Provider().index.refresh()
+    Provider.index().refresh(using=config.es)
 
 
-def _provider_name(i: int, main_domain: str,
-                   provider_names: MutableMapping[str, str],
-                   review: bool) -> str | None:
+def _provider_name(
+        i: int,
+        main_domain: str,
+        provider_names: MutableMapping[str, str],
+        review: bool,
+) -> str | None:
     if main_domain in provider_names:
         if not review:
             return provider_names[main_domain]
@@ -298,11 +309,17 @@ def _provider_name(i: int, main_domain: str,
 @option("--review", type=int)
 @option("--no-merge", is_flag=True, default=False, type=bool)
 @option("--auto-merge", is_flag=True, default=False, type=bool)
-def import_(services_path: Path, cache_path: Path,
-            review: int | None, no_merge: bool,
-            auto_merge: bool) -> None:
-    Provider.init()
-    Provider().index.refresh()
+@pass_obj
+def import_(
+        config: Config,
+        services_path: Path,
+        cache_path: Path,
+        review: int | None,
+        no_merge: bool,
+        auto_merge: bool,
+) -> None:
+    Provider.init(using=config.es)
+    Provider.index().refresh(using=config.es)
 
     echo("Load providers from services file.")
     with services_path.open("r") as file:
@@ -345,6 +362,7 @@ def import_(services_path: Path, cache_path: Path,
         url_path_prefixes = set(service["focused_url_prefixes"])
 
         _add_provider(
+            config=config,
             name=name,
             description=description,
             notes=notes,
@@ -359,4 +377,4 @@ def import_(services_path: Path, cache_path: Path,
             no_merge=no_merge,
             auto_merge=auto_merge,
         )
-        Provider().index.refresh()
+        Provider.index().refresh(using=config.es)
