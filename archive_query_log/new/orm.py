@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from elasticsearch_dsl import Document, Keyword, Text, Date, InnerDoc, \
-    Object, Boolean, Index
+    Object, Boolean, Index, Integer
 
 
 class _BaseDocument(Document):
@@ -58,25 +58,57 @@ class Provider(_BaseDocument):
         }
 
 
-class SourceArchive(InnerDoc):
+class InnerArchive(InnerDoc):
     id: str = Keyword()
     cdx_api_url: str = Keyword()
     memento_api_url: str = Keyword()
 
 
-class SourceProvider(InnerDoc):
+class InnerProvider(InnerDoc):
     id: str = Keyword()
     domain: str = Keyword()
     url_path_prefix: str = Keyword()
 
 
 class Source(_BaseDocument):
-    archive: SourceArchive = Object(SourceArchive)
-    provider: SourceProvider = Object(SourceProvider)
+    archive: InnerArchive = Object(InnerArchive)
+    provider: InnerProvider = Object(InnerProvider)
+    last_fetched_captures: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
 
     class Index:
         name = "aql_sources"
         settings = {
             "number_of_shards": 5,
+            "number_of_replicas": 2,
+        }
+
+
+class Capture(_BaseDocument):
+    archive: InnerArchive = Object(InnerArchive)
+    provider: InnerProvider = Object(InnerProvider)
+    url: str = Keyword()
+    url_key: str = Keyword()
+    timestamp: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+    mimetype: str = Keyword()
+    statuscode: int = Integer()
+    digest: str = Keyword()
+    filename: str | None = Keyword()
+    offset: int | None = Integer()
+    length: int | None = Integer()
+    flags: list[str] | None = Keyword()
+    collection: str | None = Keyword()
+    source: str | None = Keyword()
+    source_collection: str | None = Keyword()
+
+    class Index:
+        name = "aql_captures"
+        settings = {
+            "number_of_shards": 10,
             "number_of_replicas": 2,
         }

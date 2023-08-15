@@ -14,7 +14,7 @@ from tqdm.auto import tqdm
 from archive_query_log.new.config import Config
 from archive_query_log.new.namespaces import NAMESPACE_SOURCE
 from archive_query_log.new.orm import (
-    Archive, Provider, Source, SourceArchive, SourceProvider)
+    Archive, Provider, Source, InnerArchive, InnerProvider)
 from archive_query_log.new.utils.time import EPOCH, current_time
 
 
@@ -29,7 +29,7 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
     batch = []
     for domain in provider.domains:
         for url_path_prefix in provider.url_path_prefixes:
-            filter_components = (
+            filter_id_components = (
                 archive.cdx_api_url,
                 archive.memento_api_url,
                 domain,
@@ -37,16 +37,16 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
             )
             filter_id = str(uuid5(
                 NAMESPACE_SOURCE,
-                ":".join(filter_components),
+                ":".join(filter_id_components),
             ))
             source = Source(
                 meta={"id": filter_id},
-                archive=SourceArchive(
+                archive=InnerArchive(
                     id=archive.meta.id,
                     cdx_api_url=archive.cdx_api_url,
                     memento_api_url=archive.memento_api_url,
                 ),
-                provider=SourceProvider(
+                provider=InnerProvider(
                     id=provider.meta.id,
                     domain=domain,
                     url_path_prefix=url_path_prefix,
