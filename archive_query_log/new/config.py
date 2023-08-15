@@ -3,7 +3,12 @@ from functools import cached_property
 
 from dataclasses_json import DataClassJsonMixin
 from elasticsearch import Elasticsearch
+from pyrate_limiter import Limiter, RequestRate, Duration
+from requests import Session
+from requests_ratelimiter import LimiterAdapter
+from urllib3 import Retry
 
+from archive_query_log import __version__ as version
 
 @dataclass(frozen=True)
 class EsIndex(DataClassJsonMixin):
@@ -35,4 +40,27 @@ class Config(DataClassJsonMixin):
             f"https://{self.es_host}:{self.es_port}",
             http_auth=(self.es_username, self.es_password),
         )
+
+    @cached_property
+    def http_session(self) -> Session:
+        session = Session()
+        session.headers.update({
+            "User-Agent": f"AQL/{version} (Webis group)",
+        })
+        _retries = Retry(
+            total=5,
+            backoff_factor=1,
+            status_forcelist=[502, 503, 504],
+        )
+        _limiter = Limiter(
+            RequestRate(1, Duration.SECOND * 10),
+        )
+        _adapter = LimiterAdapter(
+            max_retries=_retries,
+            limiter=_limiter,
+        )
+        # noinspection HttpUrlsUsage
+        session.mount("http://", _adapter)
+        session.mount("https://", _adapter)
+        return session
 

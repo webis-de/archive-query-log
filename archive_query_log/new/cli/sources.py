@@ -139,8 +139,8 @@ def build(
                              .execute().hits.total.value)
         num_batches = num_changed_archives * num_all_providers
         if num_batches > 0:
-            echo(f"Generating sources for {num_changed_archives} "
-                 f"changed archives "
+            echo(f"Building sources for {num_changed_archives} "
+                 f"new/changed archives "
                  f"since {last_archive_time.astimezone().strftime('%c')}.")
             action_batches: Iterator[
                 list[dict]] = _iter_sources_batches_changed_archives(
@@ -161,7 +161,7 @@ def build(
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
         else:
-            echo(f"No changed archives "
+            echo(f"No new/changed archives "
                  f"since {last_archive_time.astimezone().strftime('%c')}.")
 
     if not skip_providers:
@@ -191,8 +191,8 @@ def build(
         num_batches = num_changed_providers * num_all_archives
         if num_batches > 0:
             echo(
-                f"Generating sources for {num_changed_providers} "
-                f"changed providers "
+                f"Building sources for {num_changed_providers} "
+                f"new/changed providers "
                 f"since {last_provider_time.astimezone().strftime('%c')}.")
             action_batches: Iterator[
                 list[dict]] = _iter_sources_batches_changed_providers(
@@ -213,7 +213,7 @@ def build(
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
         else:
-            echo(f"No changed providers "
+            echo(f"No new/changed providers "
                  f"since {last_provider_time.astimezone().strftime('%c')}.")
     Archive.index().refresh(using=config.es)
     Provider.index().refresh(using=config.es)

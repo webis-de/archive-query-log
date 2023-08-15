@@ -9,7 +9,6 @@ from elasticsearch_dsl.response import Response
 from tqdm.auto import tqdm
 
 from archive_query_log.new.config import Config
-from archive_query_log.new.http import session
 from archive_query_log.new.orm import Archive
 
 
@@ -151,7 +150,7 @@ def archive_it(
 
     echo("Load Archive-It collections.")
     collections_api_url = urljoin(api_url, "/api/collection")
-    response = session.get(collections_api_url,
+    response = config.http_session.get(collections_api_url,
                            params={"limit": 0, "format": "json"})
     num_collections = int(response.headers["Total-Row-Count"])
     echo(f"Found {num_collections} collections on Archive-It.")
@@ -161,7 +160,7 @@ def archive_it(
                     unit="archives", disable=not auto_merge and not no_merge)
     offset_range = range(0, num_collections, page_size)
     for offset in offset_range:
-        response = session.get(collections_api_url,
+        response = config.http_session.get(collections_api_url,
                                params={"limit": page_size, "offset": offset,
                                        "format": "json"})
         response_list = response.json()
