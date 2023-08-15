@@ -58,7 +58,7 @@ def _add_archive(
         if description is None:
             description = existing_archive.description
 
-        if cdx_api_url == existing_archive.cdx_api_url or \
+        if cdx_api_url == existing_archive.cdx_api_url and \
                 memento_api_url == existing_archive.memento_api_url:
             last_built_sources = existing_archive.last_built_sources
 
@@ -78,10 +78,16 @@ def _add_archive(
         last_built_sources=last_built_sources,
     )
     archive.save(using=config.es)
+    if last_built_sources is None:
+        archive.update(
+            using=config.es,
+            script='ctx._source.remove("last_built_sources")',
+        )
 
 
 @archives.command()
-@argument("name", type=str)
+@option("-n", "--name", type=str, required=True,
+        prompt="Name")
 @option("-d", "--description", type=str)
 @option("-c", "--cdx-api-url", type=str, required=True,
         prompt="CDX API URL", metavar="URL")

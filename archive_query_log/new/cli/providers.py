@@ -192,6 +192,11 @@ def _add_provider(
         last_built_sources=last_built_sources,
     )
     provider.save(using=config.es)
+    if last_built_sources is None:
+        provider.update(
+            using=config.es,
+            script='ctx._source.remove("last_built_sources")',
+        )
 
 
 @providers.command()
