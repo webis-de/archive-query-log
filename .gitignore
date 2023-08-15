@@ -603,4 +603,5 @@ cython_debug/
 
 # Custom exclusions
 *.lop
+.idea/kubernetes-settings.xml
 config.override.yml
