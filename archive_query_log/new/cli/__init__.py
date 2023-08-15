@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Any
 
 from click import group, Context, Parameter, echo, option, pass_context, \
-    Path as PathType, get_current_context
+    Path as PathType
 from mergedeep import merge, Strategy
 from yaml import safe_load
 
