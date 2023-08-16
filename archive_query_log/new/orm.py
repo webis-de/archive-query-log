@@ -96,7 +96,7 @@ class Capture(_BaseDocument):
         format="strict_date_time_no_millis",
     )
     mimetype: str = Keyword()
-    statuscode: int = Integer()
+    status_code: int = Integer()
     digest: str = Keyword()
     filename: str | None = Keyword()
     offset: int | None = Integer()
