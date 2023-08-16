@@ -145,8 +145,6 @@ class WebArchiveWarcDownloader:
             if progress is not None:
                 progress.update()
             return True
-        # FIXME: This won't work for snippet URLs. Instead,
-        #  we need to fetch the closest archived URL if any.
         archive_url = url.archived_url.raw_archive_url
         url_headers = {
             "Archived-URL": url.archived_url.schema().dumps(url.archived_url),

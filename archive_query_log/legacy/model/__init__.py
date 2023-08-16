@@ -251,8 +251,6 @@ class ArchivedParsedSearchResult(ArchivedSearchResultSnippet,
     """
     Plaintext of the archived SERP's snapshot content.
     """
-    # TODO
-    pass
 
 
 # flake8: noqa: E402
