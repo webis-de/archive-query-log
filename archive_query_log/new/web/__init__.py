@@ -7,6 +7,7 @@ from flask import Flask, render_template
 from archive_query_log import __name__ as app_name
 from archive_query_log.new.config import Config
 from archive_query_log.new.orm import Archive, Provider, Source, Capture
+from archive_query_log.new.utils.time import utc_now
 
 
 class Statistics(NamedTuple):
@@ -143,6 +144,7 @@ def flask_app(config: Config) -> Flask:
             "home.html",
             count_stages=statistics_list,
             progress_stages=progress_stages,
+            year=utc_now().year,
         )
 
     return app

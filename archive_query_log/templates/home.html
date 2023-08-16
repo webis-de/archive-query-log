@@ -1,59 +1,98 @@
 <!doctype html>
 <head>
     <title>Archive Query Log</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        :root {
+            --accent: rgb(0, 35, 80);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --accent: rgba(0, 129, 152, 1);
+            }
+        }
+    </style>
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
 </head>
 <body>
-<h1>Archive Query Log</h1>
-<section>
-    <h2>Stats</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Count</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for count in count_stages %}
-            <tr>
-                <td>{{ count.name }}</td>
-                <td>{% if count.description %}{{ count.description }}{% else %}—{% endif %}</td>
-                <td style="text-align: right">{{ count.total }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</section>
-<section>
-    <h2>Progress</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Stage</th>
-            <th>Description</th>
-            <th>Processed</th>
-            <th>Unprocessed</th>
-            <th>Progress</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for progress in progress_stages %}
-            <tr>
-                <td>{{ progress.name }}</td>
-                <td>
-                    {% if progress.description %}{{ progress.description }}{% else %}—{% endif %}</td>
-                <td>{{ progress.current }}</td>
-                <td>{{ progress.total - progress.current }}</td>
-                <td>
-                    <progress max="{{ progress.total }}" value="{{ progress.current }}">
-                        {{ progress.current / progress.total * 100 }}%
-                    </progress>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</section>
+<header>
+    <h1>Archive Query Log</h1>
+    <p>The Archive Query Log monitoring interface.</p>
+    <nav>
+        <a href="/">Home</a>
+        <a href="https://github.com/webis-de/archive-query-log" target="_blank">GitHub</a>
+        <a href="https://github.com/webis-de/archive-query-log" target="_blank">TIRA</a>
+        <a href="https://webis.de/publications.html?q=archive#reimer_2023">Paper</a>
+        <a href="https://webis.de/" target="_blank">Webis</a>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Stats</h2>
+        <figure>
+            <table>
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Count</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for count in count_stages %}
+                    <tr>
+                        <td>{{ count.name }}</td>
+                        <td>{% if count.description %}{{ count.description }}{% else %}—{% endif %}</td>
+                        <td style="text-align: right">{{ count.total }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </figure>
+    </section>
+    <section>
+        <h2>Progress</h2>
+        <figure>
+            <table>
+                <thead>
+                <tr>
+                    <th>Stage</th>
+                    <th>Description</th>
+                    <th>Processed</th>
+                    <th>Unprocessed</th>
+                    <th>Progress</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for progress in progress_stages %}
+                    <tr>
+                        <td>{{ progress.name }}</td>
+                        <td>
+                            {% if progress.description %}{{ progress.description }}{% else %}—{% endif %}</td>
+                        <td>{{ progress.current }}</td>
+                        <td>{{ progress.total - progress.current }}</td>
+                        <td>
+                            <progress max="{{ progress.total }}" value="{{ progress.current }}">
+                                {{ progress.current / progress.total * 100 }}%
+                            </progress>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </figure>
+    </section>
+</main>
+<footer>
+    <p>
+        © {{ year }} Webis Group
+        •
+        <a href="https://webis.de/people.html" target="_blank">Contact</a>
+        •
+        <a href="https://webis.de/legal.html" target="_blank">Imprint</a>
+        •
+        <a href="https://webis.de/legal.html" target="_blank">Privacy</a>
+    </p>
+</footer>
 </body>
