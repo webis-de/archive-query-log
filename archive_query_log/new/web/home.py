@@ -2,6 +2,7 @@ from typing import NamedTuple, Type
 
 from elasticsearch_dsl import Document
 from elasticsearch_dsl.query import Script, Exists
+from expiringdict import ExpiringDict
 from flask import render_template
 
 from archive_query_log.new.config import Config
@@ -22,7 +23,10 @@ class Progress(NamedTuple):
     current: int
 
 
-_statistics_cache: dict[str, Statistics] = {}
+_statistics_cache: dict[str, Statistics] = ExpiringDict(
+    max_len=100,
+    max_age_seconds=60,
+)
 
 
 def _get_statistics(
@@ -44,7 +48,10 @@ def _get_statistics(
     return statistics
 
 
-_progress_cache: dict[str, Progress] = {}
+_progress_cache: dict[str, Progress] = ExpiringDict(
+    max_len=100,
+    max_age_seconds=60,
+)
 
 
 def _get_progress(
