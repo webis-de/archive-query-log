@@ -2,7 +2,7 @@ from typing import Sequence
 
 from click import Parameter, Context, BadParameter, make_pass_decorator
 
-from archive_query_log.new.config import Config
+from archive_query_log.config import Config
 
 
 def validate_split_domains(

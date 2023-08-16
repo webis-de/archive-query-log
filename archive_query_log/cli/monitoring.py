@@ -3,9 +3,9 @@ from pathlib import Path
 from click import group, option
 from werkzeug import run_simple
 
-from archive_query_log.new.cli.util import pass_config
-from archive_query_log.new.config import Config
-from archive_query_log.new.web import flask_app
+from archive_query_log.cli.util import pass_config
+from archive_query_log.config import Config
+from archive_query_log.web import flask_app
 
 
 @group()

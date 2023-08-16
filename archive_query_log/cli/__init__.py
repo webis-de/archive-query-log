@@ -7,14 +7,14 @@ from mergedeep import merge, Strategy
 from yaml import safe_load
 
 from archive_query_log import __version__
-from archive_query_log.new.cli.archives import archives
-from archive_query_log.new.cli.captures import captures
-from archive_query_log.new.cli.monitoring import monitoring
-from archive_query_log.new.cli.providers import providers
-from archive_query_log.new.cli.sources import sources
-from archive_query_log.new.cli.util import pass_config
-from archive_query_log.new.config import Config
-from archive_query_log.new.orm import Archive, Provider, Source, Capture
+from archive_query_log.cli.archives import archives
+from archive_query_log.cli.captures import captures
+from archive_query_log.cli.monitoring import monitoring
+from archive_query_log.cli.providers import providers
+from archive_query_log.cli.sources import sources
+from archive_query_log.cli.util import pass_config
+from archive_query_log.config import Config
+from archive_query_log.orm import Archive, Provider, Source, Capture
 
 
 def print_version(

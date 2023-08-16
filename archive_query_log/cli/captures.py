@@ -12,13 +12,12 @@ from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import Exists, FunctionScore, Script
 from tqdm.auto import tqdm
 
-from archive_query_log.new.cdx import CdxApi, CdxMatchType
-from archive_query_log.new.cli.util import pass_config
-from archive_query_log.new.config import Config
-from archive_query_log.new.namespaces import NAMESPACE_CAPTURE
-from archive_query_log.new.orm import (
-    Source, Capture)
-from archive_query_log.new.utils.time import utc_now
+from archive_query_log.cdx import CdxApi, CdxMatchType
+from archive_query_log.cli.util import pass_config
+from archive_query_log.config import Config
+from archive_query_log.namespaces import NAMESPACE_CAPTURE
+from archive_query_log.orm import     Source, Capture
+from archive_query_log.utils.time import utc_now
 
 
 @group()

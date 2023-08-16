@@ -5,9 +5,9 @@ from elasticsearch_dsl.query import Script, Exists
 from expiringdict import ExpiringDict
 from flask import render_template
 
-from archive_query_log.new.config import Config
-from archive_query_log.new.orm import Archive, Provider, Source, Capture
-from archive_query_log.new.utils.time import utc_now
+from archive_query_log.config import Config
+from archive_query_log.orm import Archive, Provider, Source, Capture
+from archive_query_log.utils.time import utc_now
 
 
 class Statistics(NamedTuple):

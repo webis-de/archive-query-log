@@ -12,10 +12,10 @@ from whois import whois
 from whois.parser import PywhoisError
 from yaml import safe_load
 
-from archive_query_log.new.cli.util import validate_split_domains, pass_config
-from archive_query_log.new.config import Config
-from archive_query_log.new.orm import Provider, InterfaceAnnotations
-from archive_query_log.new.utils.time import utc_now
+from archive_query_log.cli.util import validate_split_domains, pass_config
+from archive_query_log.config import Config
+from archive_query_log.orm import Provider, InterfaceAnnotations
+from archive_query_log.utils.time import utc_now
 
 
 @group()

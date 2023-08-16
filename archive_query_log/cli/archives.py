@@ -7,10 +7,10 @@ from elasticsearch_dsl.query import Term
 from elasticsearch_dsl.response import Response
 from tqdm.auto import tqdm
 
-from archive_query_log.new.cli.util import pass_config
-from archive_query_log.new.config import Config
-from archive_query_log.new.orm import Archive
-from archive_query_log.new.utils.time import utc_now
+from archive_query_log.cli.util import pass_config
+from archive_query_log.config import Config
+from archive_query_log.orm import Archive
+from archive_query_log.utils.time import utc_now
 
 
 @group()
