@@ -129,7 +129,6 @@ def fetch(config: Config) -> None:
             )
         )
         .query(FunctionScore(functions=[RandomScore()]))
-        .params(preserve_order=True)
     )
     num_changed_sources = (
         changed_sources_search.extra(track_total_hits=True)
@@ -137,7 +136,8 @@ def fetch(config: Config) -> None:
     if num_changed_sources > 0:
         echo(f"Fetching captures for {num_changed_sources} "
              f"new/changed sources.")
-        changed_sources: Iterator[Source] = changed_sources_search.scan()
+        changed_sources: Iterator[Source] = (
+            changed_sources_search        .params(preserve_order=True).scan())
         # noinspection PyTypeChecker
         changed_sources = tqdm(changed_sources, total=num_changed_sources,
                                desc="Fetching captures", unit="source")

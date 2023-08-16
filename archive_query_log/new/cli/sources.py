@@ -63,8 +63,9 @@ def _iter_sources_batches_changed_archives(
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
-    for archive in changed_archives_search.scan():
-        for provider in all_providers_search.scan():
+    for archive in changed_archives_search.params(preserve_order=True).scan():
+        for provider in (all_providers_search.params(preserve_order=True)
+                .scan()):
             yield _sources_batch(
                 archive,
                 provider,
@@ -84,8 +85,9 @@ def _iter_sources_batches_changed_providers(
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
-    for provider in changed_providers_search.scan():
-        for archive in all_archives_search.scan():
+    for provider in (changed_providers_search.params(preserve_order=True)
+            .scan()):
+        for archive in all_archives_search.params(preserve_order=True).scan():
             yield _sources_batch(
                 archive,
                 provider,
@@ -128,13 +130,11 @@ def build(
                 )
             )
             .query(FunctionScore(functions=[RandomScore()]))
-            .params(preserve_order=True)
         )
         num_changed_archives = (
             changed_archives_search.extra(track_total_hits=True)
             .execute().hits.total.value)
-        all_providers_search: Search = (
-            Provider.search(using=config.es).params(preserve_order=True))
+        all_providers_search: Search = Provider.search(using=config.es)
         num_all_providers = (all_providers_search.extra(track_total_hits=True)
                              .execute().hits.total.value)
         num_batches = num_changed_archives * num_all_providers
@@ -176,13 +176,11 @@ def build(
                 )
             )
             .query(FunctionScore(functions=[RandomScore()]))
-            .params(preserve_order=True)
         )
         num_changed_providers = (
             changed_providers_search.extra(track_total_hits=True)
             .execute().hits.total.value)
-        all_archives_search: Search = (
-            Archive.search(using=config.es).params(preserve_order=True))
+        all_archives_search: Search = Archive.search(using=config.es)
         num_all_archives = (all_archives_search.extra(track_total_hits=True)
                             .execute().hits.total.value)
         num_batches = num_changed_providers * num_all_archives
