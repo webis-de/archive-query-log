@@ -3,6 +3,7 @@ from functools import cached_property
 
 from dataclasses_json import DataClassJsonMixin
 from elasticsearch import Elasticsearch
+from elasticsearch.helpers import streaming_bulk, parallel_bulk, bulk
 from pyrate_limiter import Limiter, RequestRate, Duration
 from requests import Session
 from requests_ratelimiter import LimiterAdapter
@@ -19,12 +20,62 @@ class EsIndex(DataClassJsonMixin):
 
 
 @dataclass(frozen=True)
+class EsConfig(DataClassJsonMixin):
+    host: str
+    port: 9200
+    username: str
+    password: str
+    max_retries: int = 5
+    bulk_chunk_size: int = 500
+    bulk_max_chunk_bytes: int = 100 * 1024 * 1024
+
+    @cached_property
+    def client(self) -> Elasticsearch:
+        return Elasticsearch(
+            hosts=f"https://{self.host}:{self.port}",
+            http_auth=(self.username, self.password),
+            timeout=60,
+            max_retries=self.max_retries,
+            retry_on_status=(502, 503, 504),
+            retry_on_timeout=True,
+        )
+
+    def streaming_bulk(self, actions, *args, **kwargs):
+        return streaming_bulk(
+            client=self.client,
+            actions=actions,
+            chunk_size=self.bulk_chunk_size,
+            max_chunk_bytes=self.bulk_max_chunk_bytes,
+            max_retries=self.max_retries,
+            *args,
+            **kwargs,
+        )
+
+    def bulk(self, actions, *args, **kwargs):
+        return bulk(
+            client=self.client,
+            actions=actions,
+            chunk_size=self.bulk_chunk_size,
+            max_chunk_bytes=self.bulk_max_chunk_bytes,
+            max_retries=self.max_retries,
+            *args,
+            **kwargs,
+        )
+
+    def parallel_bulk(self, actions, *args, **kwargs):
+        return parallel_bulk(
+            client=self.client,
+            actions=actions,
+            chunk_size=self.bulk_chunk_size,
+            max_chunk_bytes=self.bulk_max_chunk_bytes,
+            *args,
+            **kwargs,
+        )
+
+
+@dataclass(frozen=True)
 class Config(DataClassJsonMixin):
-    es_host: str
-    es_port: 9200
-    es_username: str
-    es_password: str
-    es_index_captures: EsIndex
+    es: EsConfig
     es_index_serps: EsIndex
     es_index_results: EsIndex
     es_index_url_query_parsers: EsIndex
@@ -34,17 +85,6 @@ class Config(DataClassJsonMixin):
     es_index_serp_query_parsers: EsIndex
     es_index_serp_snippets_parsers: EsIndex
     es_index_serp_direct_answer_parsers: EsIndex
-
-    @cached_property
-    def es(self) -> Elasticsearch:
-        return Elasticsearch(
-            hosts=f"https://{self.es_host}:{self.es_port}",
-            http_auth=(self.es_username, self.es_password),
-            timeout=60,
-            max_retries=5,
-            retry_on_status=(502, 503, 504),
-            retry_on_timeout=True,
-        )
 
     @cached_property
     def http_session(self) -> Session:

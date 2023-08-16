@@ -1,13 +1,8 @@
-es_host: elasticsearch.srv.webis.de
-es_port: 9200
-es_username: null
-es_password: null
-es_index_captures:
-  name: aql_captures
-  settings:
-    number_of_shards: 10
-    number_of_replicas: 2
-  mapping: {} # TODO
+es:
+  host: elasticsearch.srv.webis.de
+  port: 9200
+  username: null
+  password: null
 es_index_serps:
   name: aql_serps
   settings:

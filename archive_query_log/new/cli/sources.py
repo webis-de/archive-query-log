@@ -2,8 +2,10 @@ from datetime import datetime
 from itertools import chain
 from typing import Iterable, Iterator, Any
 from uuid import uuid5
+from warnings import warn
 
 from click import group, echo, option
+from elasticsearch import ConnectionTimeout
 from elasticsearch.helpers import bulk
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
@@ -71,7 +73,7 @@ def _iter_sources_batches_changed_archives(
                 provider,
             )
         archive.update(
-            using=config.es,
+            using=config.es.client,
             retry_on_conflict=3,
             last_built_sources=start_time,
         )
@@ -93,7 +95,7 @@ def _iter_sources_batches_changed_providers(
                 provider,
             )
         provider.update(
-            using=config.es,
+            using=config.es.client,
             retry_on_conflict=3,
             last_built_sources=start_time,
         )
@@ -108,17 +110,17 @@ def build(
         skip_archives: bool,
         skip_providers: bool,
 ) -> None:
-    Archive.init(using=config.es)
-    Archive.index().refresh(using=config.es)
-    Provider.init(using=config.es)
-    Provider.index().refresh(using=config.es)
-    Source.init(using=config.es)
+    Archive.init(using=config.es.client)
+    Archive.index().refresh(using=config.es.client)
+    Provider.init(using=config.es.client)
+    Provider.index().refresh(using=config.es.client)
+    Source.init(using=config.es.client)
 
     start_time = utc_now()
 
     if not skip_archives:
         changed_archives_search: Search = (
-            Archive.search(using=config.es)
+            Archive.search(using=config.es.client)
             .filter(
                 ~Exists(field="last_modified") |
                 ~Exists(field="last_built_sources") |
@@ -134,7 +136,7 @@ def build(
         num_changed_archives = (
             changed_archives_search.extra(track_total_hits=True)
             .execute().hits.total.value)
-        all_providers_search: Search = Provider.search(using=config.es)
+        all_providers_search: Search = Provider.search(using=config.es.client)
         num_all_providers = (all_providers_search.extra(track_total_hits=True)
                              .execute().hits.total.value)
         num_batches = num_changed_archives * num_all_providers
@@ -152,10 +154,16 @@ def build(
             action_batches = tqdm(action_batches, total=num_batches,
                                   desc="Build sources", unit="batch")
             actions = chain.from_iterable(action_batches)
-            responses: Iterable[tuple[bool, Any]] = bulk(
-                client=config.es,
-                actions=actions,
-            )
+            try:
+                responses: Iterable[
+                    tuple[bool, Any]] = config.es.streaming_bulk(
+                    actions=actions,
+                )
+            except ConnectionTimeout:
+                warn(RuntimeWarning(
+                    "Connection timeout while indexing captures."))
+                return
+
             for success, info in responses:
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
@@ -164,7 +172,7 @@ def build(
 
     if not skip_providers:
         changed_providers_search: Search = (
-            Provider.search(using=config.es)
+            Provider.search(using=config.es.client)
             .filter(
                 ~Exists(field="last_modified") |
                 ~Exists(field="last_built_sources") |
@@ -180,7 +188,7 @@ def build(
         num_changed_providers = (
             changed_providers_search.extra(track_total_hits=True)
             .execute().hits.total.value)
-        all_archives_search: Search = Archive.search(using=config.es)
+        all_archives_search: Search = Archive.search(using=config.es.client)
         num_all_archives = (all_archives_search.extra(track_total_hits=True)
                             .execute().hits.total.value)
         num_batches = num_changed_providers * num_all_archives
@@ -200,7 +208,7 @@ def build(
                                   desc="Build sources", unit="batch")
             actions = chain.from_iterable(action_batches)
             responses: Iterable[tuple[bool, Any]] = bulk(
-                client=config.es,
+                client=config.es.client,
                 actions=actions,
             )
             for success, info in responses:
@@ -208,6 +216,6 @@ def build(
                     raise RuntimeError(f"Indexing error: {info}")
         else:
             echo(f"No new/changed providers.")
-    Archive.index().refresh(using=config.es)
-    Provider.index().refresh(using=config.es)
-    Source.index().refresh(using=config.es)
+    Archive.index().refresh(using=config.es.client)
+    Provider.index().refresh(using=config.es.client)
+    Source.index().refresh(using=config.es.client)

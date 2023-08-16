@@ -29,7 +29,7 @@ def _add_archive(
 ) -> None:
     last_modified = utc_now()
     existing_archive_search: Search = (
-        Archive.search(using=config.es)
+        Archive.search(using=config.es.client)
         .query(
             Term(cdx_api_url=cdx_api_url) |
             Term(memento_api_url=memento_api_url)
@@ -76,7 +76,7 @@ def _add_archive(
         memento_api_url=memento_api_url,
         last_modified=last_modified,
     )
-    archive.save(using=config.es)
+    archive.save(using=config.es.client)
 
 
 @archives.command()
@@ -95,8 +95,8 @@ def add(
         cdx_api_url: str,
         memento_api_url: str,
 ) -> None:
-    Archive.init(using=config.es)
-    Archive.index().refresh(using=config.es)
+    Archive.init(using=config.es.client)
+    Archive.index().refresh(using=config.es.client)
     _add_archive(
         config=config,
         name=name,
@@ -104,7 +104,7 @@ def add(
         cdx_api_url=cdx_api_url,
         memento_api_url=memento_api_url,
     )
-    Archive.index().refresh(using=config.es)
+    Archive.index().refresh(using=config.es.client)
 
 
 @archives.group("import")
@@ -145,8 +145,8 @@ def archive_it(
         no_merge: bool,
         auto_merge: bool,
 ) -> None:
-    Archive.init(using=config.es)
-    Archive.index().refresh(using=config.es)
+    Archive.init(using=config.es.client)
+    Archive.index().refresh(using=config.es.client)
 
     echo("Load Archive-It collections.")
     collections_api_url = urljoin(api_url, "/api/collection")
@@ -190,4 +190,4 @@ def archive_it(
                 auto_merge=auto_merge,
             )
             progress.update(1)
-    Archive.index().refresh(using=config.es)
+    Archive.index().refresh(using=config.es.client)

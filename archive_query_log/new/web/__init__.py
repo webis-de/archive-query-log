@@ -34,7 +34,7 @@ def _get_statistics(
 ) -> Statistics:
     if name in _statistics_cache:
         return _statistics_cache[name]
-    search = document.search(using=config.es)
+    search = document.search(using=config.es.client)
     total = search.extra(track_total_hits=True).execute().hits.total.value
     statistics = Statistics(
         name=name,
@@ -58,7 +58,7 @@ def _get_progress(
     if name in _progress_cache:
         return _progress_cache[name]
 
-    search = document.search(using=config.es)
+    search = document.search(using=config.es.client)
     total = search.extra(track_total_hits=True).execute().hits.total.value
     search_processed = search.filter(
         Exists(field="last_modified") &

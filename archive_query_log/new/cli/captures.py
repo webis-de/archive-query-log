@@ -2,10 +2,11 @@ from datetime import datetime
 from typing import Iterable, Iterator, Any
 from urllib.parse import urljoin
 from uuid import uuid5
+from warnings import warn
 
 from click import group, echo
 from dateutil.tz import UTC
-from elasticsearch.helpers import parallel_bulk
+from elasticsearch import ConnectionTimeout
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import Exists, FunctionScore, Script
@@ -80,7 +81,7 @@ def _add_captures(
 
     # Refresh source.
     source = Source.get(
-        using=config.es,
+        using=config.es.client,
         id=source.meta.id,
     )
 
@@ -94,16 +95,22 @@ def _add_captures(
         capture.to_dict(include_meta=True)
         for capture in captures_iter
     )
-    responses: Iterable[tuple[bool, Any]] = parallel_bulk(
-        client=config.es,
-        actions=actions,
-    )
+    try:
+        responses: Iterable[tuple[bool, Any]] = config.es.streaming_bulk(
+            actions=actions,
+            initial_backoff=2,
+            max_backoff=600,
+        )
+    except ConnectionTimeout:
+        warn(RuntimeWarning("Connection timeout while indexing captures."))
+        return
+
     for success, info in responses:
         if not success:
             raise RuntimeError(f"Indexing error: {info}")
 
     source.update(
-        using=config.es,
+        using=config.es.client,
         retry_on_conflict=3,
         last_fetched_captures=start_time,
     )
@@ -112,12 +119,12 @@ def _add_captures(
 @captures.command()
 @pass_config
 def fetch(config: Config) -> None:
-    Source.init(using=config.es)
-    Source.index().refresh(using=config.es)
-    Capture.init(using=config.es)
+    Source.init(using=config.es.client)
+    Source.index().refresh(using=config.es.client)
+    Capture.init(using=config.es.client)
 
     changed_sources_search: Search = (
-        Source.search(using=config.es)
+        Source.search(using=config.es.client)
         .filter(
             ~Exists(field="last_modified") |
             ~Exists(field="last_fetched_captures") |
@@ -137,7 +144,7 @@ def fetch(config: Config) -> None:
         echo(f"Fetching captures for {num_changed_sources} "
              f"new/changed sources.")
         changed_sources: Iterator[Source] = (
-            changed_sources_search        .params(preserve_order=True).scan())
+            changed_sources_search.params(preserve_order=True).scan())
         # noinspection PyTypeChecker
         changed_sources = tqdm(changed_sources, total=num_changed_sources,
                                desc="Fetching captures", unit="source")
@@ -146,5 +153,5 @@ def fetch(config: Config) -> None:
     else:
         echo(f"No changed sources.")
 
-    Source.index().refresh(using=config.es)
-    Capture.index().refresh(using=config.es)
+    Source.index().refresh(using=config.es.client)
+    Capture.index().refresh(using=config.es.client)
