@@ -8,6 +8,7 @@ from yaml import safe_load
 
 from archive_query_log import __version__, PROJECT_DIRECTORY_PATH
 from archive_query_log.new.cli.archives import archives
+from archive_query_log.new.cli.captures import captures
 from archive_query_log.new.cli.providers import providers
 from archive_query_log.new.cli.sources import sources
 from archive_query_log.new.config import Config
@@ -52,3 +53,4 @@ def cli(context: Context, config_paths: list[Path]) -> None:
 cli.add_command(archives)
 cli.add_command(providers)
 cli.add_command(sources)
+cli.add_command(captures)
