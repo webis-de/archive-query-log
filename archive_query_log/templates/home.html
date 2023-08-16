@@ -44,7 +44,7 @@
                     <tr>
                         <td>{{ count.name }}</td>
                         <td>{% if count.description %}{{ count.description }}{% else %}—{% endif %}</td>
-                        <td style="text-align: right">{{ count.total }}</td>
+                        <td style="text-align: right">{{ "{:,.0f}".format(count.total) }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -70,11 +70,11 @@
                         <td>{{ progress.name }}</td>
                         <td>
                             {% if progress.description %}{{ progress.description }}{% else %}—{% endif %}</td>
-                        <td>{{ progress.current }}</td>
-                        <td>{{ progress.total - progress.current }}</td>
+                        <td style="text-align: right">{{ "{:,.0f}".format(progress.current) }}</td>
+                        <td style="text-align: right">{{ "{:,.0f}".format(progress.total - progress.current) }}</td>
                         <td>
                             <progress max="{{ progress.total }}" value="{{ progress.current }}">
-                                {{ progress.current / progress.total * 100 }}%
+                                {{ "{:.0f}".format(progress.current / progress.total * 100) }}%
                             </progress>
                         </td>
                     </tr>
