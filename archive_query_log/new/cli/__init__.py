@@ -12,7 +12,9 @@ from archive_query_log.new.cli.captures import captures
 from archive_query_log.new.cli.monitoring import monitoring
 from archive_query_log.new.cli.providers import providers
 from archive_query_log.new.cli.sources import sources
+from archive_query_log.new.cli.util import pass_config
 from archive_query_log.new.config import Config
+from archive_query_log.new.orm import Archive, Provider, Source, Capture
 
 
 def print_version(
@@ -49,6 +51,14 @@ def cli(context: Context, config_paths: list[Path]) -> None:
             merge(config_dict, next_config_dict, strategy=Strategy.REPLACE)
     config: Config = Config.from_dict(config_dict)
     context.obj = config
+
+@cli.command()
+@pass_config
+def init(config: Config) -> None:
+    Archive.init(using=config.es)
+    Provider.init(using=config.es)
+    Source.init(using=config.es)
+    Capture.init(using=config.es)
 
 
 cli.add_command(archives)
