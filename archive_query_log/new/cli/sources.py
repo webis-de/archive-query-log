@@ -7,8 +7,7 @@ from click import group, echo, option
 from elasticsearch.helpers import parallel_bulk
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Range, Exists, FunctionScore
-from elasticsearch_dsl.response import Response
+from elasticsearch_dsl.query import FunctionScore, Script, Bool
 from tqdm.auto import tqdm
 
 from archive_query_log.new.cli.util import pass_config
@@ -16,7 +15,7 @@ from archive_query_log.new.config import Config
 from archive_query_log.new.namespaces import NAMESPACE_SOURCE
 from archive_query_log.new.orm import (
     Archive, Provider, Source, InnerArchive, InnerProvider)
-from archive_query_log.new.utils.time import EPOCH, current_time
+from archive_query_log.new.utils.time import utc_now
 
 
 @group()
@@ -49,7 +48,8 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
                     id=provider.meta.id,
                     domain=domain,
                     url_path_prefix=url_path_prefix,
-                )
+                ),
+                last_modified=utc_now(),
             )
             batch.append(source.to_dict(include_meta=True))
     return batch
@@ -110,24 +110,22 @@ def build(
     Provider.index().refresh(using=config.es)
     Source.init(using=config.es)
 
-    start_time = current_time()
+    start_time = utc_now()
 
     if not skip_archives:
-        last_archive_response: Response = (
-            Archive.search(using=config.es)
-            .query(Exists(field="last_built_sources"))
-            .sort("-last_built_sources")
-            .execute()
-        )
-        if last_archive_response.hits.total.value == 0:
-            last_archive_time = EPOCH
-        else:
-            last_archive_time = last_archive_response[0].last_built_sources
         changed_archives_search: Search = (
             Archive.search(using=config.es)
             .query(FunctionScore(
-                query=~Range(last_built_sources={"lte": last_archive_time}),
-                functions=[RandomScore()]
+                query=Bool(
+                    filter=Script(
+                        script="doc['last_modified'].value.isAfter("
+                               "doc['last_built_sources'].value)",
+                    )
+                ),
+                functions=[RandomScore(
+                    seed=int(utc_now().timestamp()),
+                    field="_seq_no",
+                )]
             ))
         )
         num_changed_archives = (
@@ -139,8 +137,7 @@ def build(
         num_batches = num_changed_archives * num_all_providers
         if num_batches > 0:
             echo(f"Building sources for {num_changed_archives} "
-                 f"new/changed archives "
-                 f"since {last_archive_time.astimezone().strftime('%c')}.")
+                 f"new/changed archives.")
             action_batches: Iterator[
                 list[dict]] = _iter_sources_batches_changed_archives(
                 config=config,
@@ -160,25 +157,22 @@ def build(
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
         else:
-            echo(f"No new/changed archives "
-                 f"since {last_archive_time.astimezone().strftime('%c')}.")
+            echo(f"No new/changed archives.")
 
     if not skip_providers:
-        last_provider_response: Response = (
-            Provider.search(using=config.es)
-            .query(Exists(field="last_built_sources"))
-            .sort("-last_built_sources")
-            .execute()
-        )
-        if last_provider_response.hits.total.value == 0:
-            last_provider_time = EPOCH
-        else:
-            last_provider_time = last_provider_response[0].last_built_sources
         changed_providers_search: Search = (
             Provider.search(using=config.es)
             .query(FunctionScore(
-                query=~Range(last_built_sources={"lte": last_provider_time}),
-                functions=[RandomScore()]
+                query=Bool(
+                    filter=Script(
+                        script="doc['last_modified'].value.isAfter("
+                               "doc['last_built_sources'].value)",
+                    )
+                ),
+                functions=[RandomScore(
+                    seed=int(utc_now().timestamp()),
+                    field="_seq_no",
+                )]
             ))
         )
         num_changed_providers = (
@@ -191,8 +185,7 @@ def build(
         if num_batches > 0:
             echo(
                 f"Building sources for {num_changed_providers} "
-                f"new/changed providers "
-                f"since {last_provider_time.astimezone().strftime('%c')}.")
+                f"new/changed providers.")
             action_batches: Iterator[
                 list[dict]] = _iter_sources_batches_changed_providers(
                 config=config,
@@ -212,8 +205,7 @@ def build(
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
         else:
-            echo(f"No new/changed providers "
-                 f"since {last_provider_time.astimezone().strftime('%c')}.")
+            echo(f"No new/changed providers.")
     Archive.index().refresh(using=config.es)
     Provider.index().refresh(using=config.es)
     Source.index().refresh(using=config.es)
