@@ -2,11 +2,11 @@ from pathlib import Path
 from typing import Any
 
 from click import group, Context, Parameter, echo, option, pass_context, \
-    Path as PathType
+    Path as PathType, UsageError
 from mergedeep import merge, Strategy
 from yaml import safe_load
 
-from archive_query_log import __version__, PROJECT_DIRECTORY_PATH
+from archive_query_log import __version__
 from archive_query_log.new.cli.archives import archives
 from archive_query_log.new.cli.captures import captures
 from archive_query_log.new.cli.monitoring import monitoring
@@ -28,10 +28,13 @@ def print_version(
     context.exit()
 
 
-_DEFAULT_CONFIG_PATHS = [
-    PROJECT_DIRECTORY_PATH / "config.yml",
-    PROJECT_DIRECTORY_PATH / "config.override.yml",
-]
+_DEFAULT_CONFIG_PATH = Path("config.yml")
+_DEFAULT_CONFIG_OVERRIDE_PATH = Path("config.override.yml")
+_DEFAULT_CONFIG_PATHS = []
+if _DEFAULT_CONFIG_PATH.exists():
+    _DEFAULT_CONFIG_PATHS.append(_DEFAULT_CONFIG_PATH)
+if _DEFAULT_CONFIG_OVERRIDE_PATH.exists():
+    _DEFAULT_CONFIG_PATHS.append(_DEFAULT_CONFIG_OVERRIDE_PATH)
 
 
 @group()
@@ -44,6 +47,8 @@ _DEFAULT_CONFIG_PATHS = [
         default=_DEFAULT_CONFIG_PATHS, multiple=True, required=True)
 @pass_context
 def cli(context: Context, config_paths: list[Path]) -> None:
+    if len(config_paths) == 0:
+        raise UsageError("No config file specified.")
     config_dict = {}
     for config_path in config_paths:
         with config_path.open("rb") as config_file:

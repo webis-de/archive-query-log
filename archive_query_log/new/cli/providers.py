@@ -12,7 +12,6 @@ from whois import whois
 from whois.parser import PywhoisError
 from yaml import safe_load
 
-from archive_query_log import DATA_DIRECTORY_PATH
 from archive_query_log.new.cli.util import validate_split_domains, pass_config
 from archive_query_log.new.config import Config
 from archive_query_log.new.orm import Provider, InterfaceAnnotations
@@ -298,12 +297,12 @@ def _provider_name(
         type=PathType(path_type=Path, exists=True, file_okay=True,
                       dir_okay=False, readable=True, resolve_path=True,
                       allow_dash=False),
-        default=DATA_DIRECTORY_PATH / "selected-services.yaml")
+        default=Path("data") / "selected-services.yaml")
 @option("-c", "--cache-dir", "cache_path",
         type=PathType(path_type=Path, exists=False, file_okay=False,
                       dir_okay=True, readable=True, writable=True,
                       resolve_path=True, allow_dash=False),
-        default=DATA_DIRECTORY_PATH / "provider-names")
+        default=Path("data") / "cache" / "provider-names")
 @option("--review", type=int)
 @option("--no-merge", is_flag=True, default=False, type=bool)
 @option("--auto-merge", is_flag=True, default=False, type=bool)
