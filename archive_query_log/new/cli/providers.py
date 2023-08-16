@@ -16,6 +16,7 @@ from archive_query_log import DATA_DIRECTORY_PATH
 from archive_query_log.new.cli.util import validate_split_domains, pass_config
 from archive_query_log.new.config import Config
 from archive_query_log.new.orm import Provider, InterfaceAnnotations
+from archive_query_log.new.utils.time import utc_now
 
 
 @group()
@@ -102,7 +103,7 @@ def _add_provider(
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
-    last_built_sources = None
+    last_modified = utc_now()
     existing_provider_search: Search = (
         Provider.search(using=config.es)
         .query(Terms(domains=list(domains)))
@@ -156,10 +157,10 @@ def _add_provider(
         if has_search_div is None:
             has_search_div = interface_annotations.has_search_div
 
-        if (domains | existing_domains == domains and
+        if (domains | existing_domains == existing_domains and
                 url_path_prefixes | existing_url_path_prefixes ==
-                url_path_prefixes):
-            last_built_sources = existing_provider.last_built_sources
+                existing_url_path_prefixes):
+            last_modified = existing_provider.last_modified
 
         domains = domains | existing_domains
         url_path_prefixes = url_path_prefixes | existing_url_path_prefixes
@@ -186,14 +187,9 @@ def _add_provider(
         ),
         domains=list(domains),
         url_path_prefixes=list(url_path_prefixes),
-        last_built_sources=last_built_sources,
+        last_modified=last_modified,
     )
     provider.save(using=config.es)
-    if last_built_sources is None:
-        provider.update(
-            using=config.es,
-            script='ctx._source.remove("last_built_sources")',
-        )
 
 
 @providers.command()

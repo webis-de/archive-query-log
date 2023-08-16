@@ -10,6 +10,7 @@ from tqdm.auto import tqdm
 from archive_query_log.new.cli.util import pass_config
 from archive_query_log.new.config import Config
 from archive_query_log.new.orm import Archive
+from archive_query_log.new.utils.time import utc_now
 
 
 @group()
@@ -26,7 +27,7 @@ def _add_archive(
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
-    last_built_sources = None
+    last_modified = utc_now()
     existing_archive_search: Search = (
         Archive.search(using=config.es)
         .query(
@@ -58,7 +59,7 @@ def _add_archive(
 
         if cdx_api_url == existing_archive.cdx_api_url and \
                 memento_api_url == existing_archive.memento_api_url:
-            last_built_sources = existing_archive.last_built_sources
+            last_modified = existing_archive.last_modified
 
         if not auto_merge:
             echo(f"Update archive {archive_id}.")
@@ -73,14 +74,9 @@ def _add_archive(
         description=description,
         cdx_api_url=cdx_api_url,
         memento_api_url=memento_api_url,
-        last_built_sources=last_built_sources,
+        last_modified=last_modified,
     )
     archive.save(using=config.es)
-    if last_built_sources is None:
-        archive.update(
-            using=config.es,
-            script='ctx._source.remove("last_built_sources")',
-        )
 
 
 @archives.command()
