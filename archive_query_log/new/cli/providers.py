@@ -2,8 +2,7 @@ from pathlib import Path
 from typing import Sequence, MutableMapping
 from uuid import uuid4
 
-from click import group, option, echo, Choice, Path as PathType, prompt, \
-    Context, pass_context, pass_obj
+from click import group, option, echo, Choice, Path as PathType, prompt
 from diskcache import Index
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import Terms
@@ -14,16 +13,14 @@ from whois.parser import PywhoisError
 from yaml import safe_load
 
 from archive_query_log import DATA_DIRECTORY_PATH
-from archive_query_log.new.cli.util import validate_split_domains
+from archive_query_log.new.cli.util import validate_split_domains, pass_config
 from archive_query_log.new.config import Config
 from archive_query_log.new.orm import Provider, InterfaceAnnotations
 
 
 @group()
-@pass_obj
-@pass_context
-def providers(context: Context, config: Config):
-    context.obj = config
+def providers():
+    pass
 
 
 CHOICES_WEBSITE_TYPE = [
@@ -216,7 +213,7 @@ def _add_provider(
         required=True, callback=validate_split_domains)
 @option("--url-path-prefixes", "--url-path-prefix", type=str,
         multiple=True, required=True, metavar="PREFIXES")
-@pass_obj
+@pass_config
 def add(
         config: Config,
         name: str | None,
@@ -314,7 +311,7 @@ def _provider_name(
 @option("--review", type=int)
 @option("--no-merge", is_flag=True, default=False, type=bool)
 @option("--auto-merge", is_flag=True, default=False, type=bool)
-@pass_obj
+@pass_config
 def import_(
         config: Config,
         services_path: Path,

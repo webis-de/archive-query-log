@@ -2,7 +2,7 @@ from typing import Iterable, Iterator, Any
 from urllib.parse import urljoin
 from uuid import uuid5
 
-from click import group, echo, Context, pass_context, pass_obj
+from click import group, echo
 from dateutil.tz import UTC
 from elasticsearch.helpers import parallel_bulk
 from elasticsearch_dsl import Search
@@ -12,6 +12,7 @@ from elasticsearch_dsl.response import Response
 from tqdm.auto import tqdm
 
 from archive_query_log.new.cdx import CdxApi, CdxMatchType
+from archive_query_log.new.cli.util import pass_config
 from archive_query_log.new.config import Config
 from archive_query_log.new.namespaces import NAMESPACE_CAPTURE
 from archive_query_log.new.orm import (
@@ -20,10 +21,8 @@ from archive_query_log.new.utils.time import EPOCH, current_time
 
 
 @group()
-@pass_obj
-@pass_context
-def captures(context: Context, config: Config):
-    context.obj = config
+def captures():
+    pass
 
 
 def _iter_captures(config: Config, source: Source) -> Iterator[Capture]:
@@ -93,7 +92,7 @@ def _add_captures(
 
 
 @captures.command()
-@pass_obj
+@pass_config
 def fetch(config: Config) -> None:
     Source.init(using=config.es)
     Source.index().refresh(using=config.es)

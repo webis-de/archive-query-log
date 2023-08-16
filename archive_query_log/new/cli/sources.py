@@ -3,7 +3,7 @@ from itertools import chain
 from typing import Iterable, Iterator, Any
 from uuid import uuid5
 
-from click import group, echo, Context, pass_context, pass_obj, option
+from click import group, echo, option
 from elasticsearch.helpers import parallel_bulk
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
@@ -11,6 +11,7 @@ from elasticsearch_dsl.query import Range, Exists, FunctionScore
 from elasticsearch_dsl.response import Response
 from tqdm.auto import tqdm
 
+from archive_query_log.new.cli.util import pass_config
 from archive_query_log.new.config import Config
 from archive_query_log.new.namespaces import NAMESPACE_SOURCE
 from archive_query_log.new.orm import (
@@ -19,10 +20,8 @@ from archive_query_log.new.utils.time import EPOCH, current_time
 
 
 @group()
-@pass_obj
-@pass_context
-def sources(context: Context, config: Config):
-    context.obj = config
+def sources():
+    pass
 
 
 def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
@@ -99,7 +98,7 @@ def _iter_sources_batches_changed_providers(
 @sources.command()
 @option("--skip-archives", is_flag=True)
 @option("--skip-providers", is_flag=True)
-@pass_obj
+@pass_config
 def build(
         config: Config,
         skip_archives: bool,
