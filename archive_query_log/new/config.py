@@ -40,6 +40,7 @@ class Config(DataClassJsonMixin):
         return Elasticsearch(
             hosts=f"https://{self.es_host}:{self.es_port}",
             http_auth=(self.es_username, self.es_password),
+            timeout=60,
             max_retries=5,
             retry_on_status=(502, 503, 504),
             retry_on_timeout=True,
