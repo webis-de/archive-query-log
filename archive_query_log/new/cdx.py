@@ -13,18 +13,33 @@ from requests import Session, Response
 from tqdm.auto import tqdm
 
 
+class CdxFlag(Enum):
+    """
+    See:
+    https://github.com/iipc/openwayback/blob/98bbc1a6e03f8cb44f00e7505f0e29bccef87abf/wayback-core/src/main/java/org/archive/wayback/core/CaptureSearchResult.java#L97-L120
+    """
+    PASSWORD_PROTECTED = "P"
+    NO_FOLLOW = "F"
+    NO_INDEX = "I"
+    NO_ARCHIVE = "A"
+    IGNORE = "G"
+    BLOCKED = "X"
+
+
 @dataclass(frozen=True)
 class CdxCapture:
     url: str
     url_key: str
     timestamp: datetime
-    mimetype: str
     status_code: int
     digest: str
+    mimetype: str | None
     filename: str | None
     offset: int | None
     length: int | None
-    flags: set[str] | None
+    access: str | None
+    redirect_url: str | None
+    flags: set[CdxFlag] | None
     collection: str | None
     source: str | None
     source_collection: str | None
@@ -52,6 +67,22 @@ class _CdxResponse(NamedTuple):
     json: list[dict]
 
 
+
+def _parse_cdx_flags(flags_string: str) -> set[CdxFlag]:
+    flags = set()
+    for flag_string in flags_string.split():
+        flag_string = flag_string.strip()
+        flag = None
+        for candidate_flag in CdxFlag:
+            if candidate_flag.value == flag_string:
+                flag = candidate_flag
+                break
+        if flag is not None:
+            flags.add(flag)
+        else:
+            warn(RuntimeWarning(f"Unrecognized CDX flag: {flag_string}"))
+    return flags
+
 def _parse_cdx_line(line: dict) -> CdxCapture:
     line = {
         key: value if value != "-" else None
@@ -74,12 +105,6 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
         url = line.pop("original")
     else:
         raise ValueError(f"Missing url in CDX line: {line}")
-    if "mimetype" in line:
-        mimetype = line.pop("mimetype")
-    elif "mime" in line:
-        mimetype = line.pop("mime")
-    else:
-        raise ValueError(f"Missing mime type in CDX line: {line}")
     if "statuscode" in line:
         statuscode_string = line.pop("statuscode")
         status_code = int(statuscode_string) \
@@ -94,6 +119,12 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
         digest = line.pop("digest")
     else:
         raise ValueError(f"Missing digest in CDX line: {line}")
+    if "mimetype" in line:
+        mimetype = line.pop("mimetype")
+    elif "mime" in line:
+        mimetype = line.pop("mime")
+    else:
+        mimetype = None
     if "filename" in line:
         filename = line.pop("filename")
     else:
@@ -108,8 +139,22 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
         length = int(length_string) if length_string is not None else None
     else:
         length = None
+    if "access" in line:
+        access = line.pop("access")
+    else:
+        access = None
+    if "redirect" in line:
+        redirect_url = line.pop("redirect")
+    else:
+        redirect_url = None
     if "flags" in line:
-        flags = set(line.pop("flags").split())
+        flags_string = line.pop("flags")
+        flags = _parse_cdx_flags(flags_string) \
+            if flags_string is not None else None
+    elif "robotflags" in line:
+        flags_string = line.pop("robotflags")
+        flags = _parse_cdx_flags(flags_string) \
+            if flags_string is not None else None
     else:
         flags = None
     if "collection" in line:
@@ -125,19 +170,21 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
     else:
         source_collection = None
 
-    # TODO: Unparsed fields in CDX line: {'redirect': None, 'robotflags': None, 'load_url': '', 'access': 'allow'}
+    # TODO: Unparsed fields in CDX line: {'load_url': ''}
     if len(line) > 0:
         warn(RuntimeWarning(f"Unparsed fields in CDX line: {line}"))
     return CdxCapture(
         url=url,
         url_key=url_key,
         timestamp=timestamp,
-        mimetype=mimetype,
         status_code=status_code,
         digest=digest,
+        mimetype=mimetype,
         filename=filename,
         offset=offset,
         length=length,
+        access=access,
+        redirect_url=redirect_url,
         flags=flags,
         collection=collection,
         source=source,

@@ -107,12 +107,14 @@ class Capture(_BaseDocument):
         default_timezone="UTC",
         format="strict_date_time_no_millis",
     )
-    mimetype: str = Keyword()
     status_code: int = Integer()
     digest: str = Keyword()
+    mimetype: str | None= Keyword()
     filename: str | None = Keyword()
     offset: int | None = Integer()
     length: int | None = Integer()
+    access: str | None = Keyword()
+    redirect_url: str | None = Keyword()
     flags: list[str] | None = Keyword()
     collection: str | None = Keyword()
     source: str | None = Keyword()
