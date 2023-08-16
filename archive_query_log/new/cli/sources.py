@@ -4,10 +4,10 @@ from typing import Iterable, Iterator, Any
 from uuid import uuid5
 
 from click import group, echo, option
-from elasticsearch.helpers import parallel_bulk
+from elasticsearch.helpers import bulk
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import FunctionScore, Script, Bool
+from elasticsearch_dsl.query import FunctionScore, Script, Exists
 from tqdm.auto import tqdm
 
 from archive_query_log.new.cli.util import pass_config
@@ -71,6 +71,7 @@ def _iter_sources_batches_changed_archives(
             )
         archive.update(
             using=config.es,
+            retry_on_conflict=3,
             last_built_sources=start_time,
         )
 
@@ -91,6 +92,7 @@ def _iter_sources_batches_changed_providers(
             )
         provider.update(
             using=config.es,
+            retry_on_conflict=3,
             last_built_sources=start_time,
         )
 
@@ -115,23 +117,24 @@ def build(
     if not skip_archives:
         changed_archives_search: Search = (
             Archive.search(using=config.es)
-            .query(FunctionScore(
-                query=Bool(
-                    filter=Script(
-                        script="doc['last_modified'].value.isAfter("
-                               "doc['last_built_sources'].value)",
-                    )
-                ),
-                functions=[RandomScore(
-                    seed=int(utc_now().timestamp()),
-                    field="_seq_no",
-                )]
-            ))
+            .filter(
+                ~Exists(field="last_modified") |
+                ~Exists(field="last_built_sources") |
+                Script(
+                    script="!doc['last_modified'].isEmpty() && "
+                           "!doc['last_built_sources'].isEmpty() && "
+                           "!doc['last_modified'].value.isBefore("
+                           "doc['last_built_sources'].value)",
+                )
+            )
+            .query(FunctionScore(functions=[RandomScore()]))
+            .params(preserve_order=True)
         )
         num_changed_archives = (
             changed_archives_search.extra(track_total_hits=True)
             .execute().hits.total.value)
-        all_providers_search: Search = Provider.search(using=config.es)
+        all_providers_search: Search = (
+            Provider.search(using=config.es).params(preserve_order=True))
         num_all_providers = (all_providers_search.extra(track_total_hits=True)
                              .execute().hits.total.value)
         num_batches = num_changed_archives * num_all_providers
@@ -149,7 +152,7 @@ def build(
             action_batches = tqdm(action_batches, total=num_batches,
                                   desc="Build sources", unit="batch")
             actions = chain.from_iterable(action_batches)
-            responses: Iterable[tuple[bool, Any]] = parallel_bulk(
+            responses: Iterable[tuple[bool, Any]] = bulk(
                 client=config.es,
                 actions=actions,
             )
@@ -162,23 +165,24 @@ def build(
     if not skip_providers:
         changed_providers_search: Search = (
             Provider.search(using=config.es)
-            .query(FunctionScore(
-                query=Bool(
-                    filter=Script(
-                        script="doc['last_modified'].value.isAfter("
-                               "doc['last_built_sources'].value)",
-                    )
-                ),
-                functions=[RandomScore(
-                    seed=int(utc_now().timestamp()),
-                    field="_seq_no",
-                )]
-            ))
+            .filter(
+                ~Exists(field="last_modified") |
+                ~Exists(field="last_built_sources") |
+                Script(
+                    script="!doc['last_modified'].isEmpty() && "
+                           "!doc['last_built_sources'].isEmpty() && "
+                           "!doc['last_modified'].value.isBefore("
+                           "doc['last_built_sources'].value)",
+                )
+            )
+            .query(FunctionScore(functions=[RandomScore()]))
+            .params(preserve_order=True)
         )
         num_changed_providers = (
             changed_providers_search.extra(track_total_hits=True)
             .execute().hits.total.value)
-        all_archives_search: Search = Archive.search(using=config.es)
+        all_archives_search: Search = (
+            Archive.search(using=config.es).params(preserve_order=True))
         num_all_archives = (all_archives_search.extra(track_total_hits=True)
                             .execute().hits.total.value)
         num_batches = num_changed_providers * num_all_archives
@@ -197,7 +201,7 @@ def build(
             action_batches = tqdm(action_batches, total=num_batches,
                                   desc="Build sources", unit="batch")
             actions = chain.from_iterable(action_batches)
-            responses: Iterable[tuple[bool, Any]] = parallel_bulk(
+            responses: Iterable[tuple[bool, Any]] = bulk(
                 client=config.es,
                 actions=actions,
             )

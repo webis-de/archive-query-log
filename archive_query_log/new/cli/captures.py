@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Iterable, Iterator, Any
 from urllib.parse import urljoin
 from uuid import uuid5
@@ -7,8 +8,7 @@ from dateutil.tz import UTC
 from elasticsearch.helpers import parallel_bulk
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Range, Exists, FunctionScore
-from elasticsearch_dsl.response import Response
+from elasticsearch_dsl.query import Exists, FunctionScore, Script
 from tqdm.auto import tqdm
 
 from archive_query_log.new.cdx import CdxApi, CdxMatchType
@@ -17,7 +17,7 @@ from archive_query_log.new.config import Config
 from archive_query_log.new.namespaces import NAMESPACE_CAPTURE
 from archive_query_log.new.orm import (
     Source, Capture)
-from archive_query_log.new.utils.time import EPOCH, current_time
+from archive_query_log.new.utils.time import utc_now
 
 
 @group()
@@ -25,7 +25,11 @@ def captures():
     pass
 
 
-def _iter_captures(config: Config, source: Source) -> Iterator[Capture]:
+def _iter_captures(
+        config: Config,
+        source: Source,
+        start_time: datetime,
+) -> Iterator[Capture]:
     cdx_api = CdxApi(
         api_url=source.archive.cdx_api_url,
         session=config.http_session,
@@ -64,6 +68,7 @@ def _iter_captures(config: Config, source: Source) -> Iterator[Capture]:
             collection=cdx_capture.collection,
             source=cdx_capture.source,
             source_collection=cdx_capture.source_collection,
+            last_modified=start_time,
         )
 
 
@@ -71,9 +76,20 @@ def _add_captures(
         config: Config,
         source: Source,
 ) -> None:
-    # TODO: Re-check if fetching captures is necessary.
-    start_time = current_time()
-    captures_iter = _iter_captures(config, source)
+    start_time = utc_now()
+
+    # Refresh source.
+    source = Source.get(
+        using=config.es,
+        id=source.meta.id,
+    )
+
+    # Re-check if fetching captures is necessary.
+    if (source.last_fetched_captures is not None and
+            source.last_fetched_captures > source.last_modified):
+        return
+
+    captures_iter = _iter_captures(config, source, start_time)
     actions = (
         capture.to_dict(include_meta=True)
         for capture in captures_iter
@@ -85,8 +101,10 @@ def _add_captures(
     for success, info in responses:
         if not success:
             raise RuntimeError(f"Indexing error: {info}")
+
     source.update(
         using=config.es,
+        retry_on_conflict=3,
         last_fetched_captures=start_time,
     )
 
@@ -98,30 +116,27 @@ def fetch(config: Config) -> None:
     Source.index().refresh(using=config.es)
     Capture.init(using=config.es)
 
-    last_source_response: Response = (
-        Source.search(using=config.es)
-        .query(Exists(field="last_fetched_captures"))
-        .sort("-last_fetched_captures")
-        .execute()
-    )
-    if last_source_response.hits.total.value == 0:
-        last_source_time = EPOCH
-    else:
-        last_source_time = last_source_response[0].last_fetched_captures
     changed_sources_search: Search = (
         Source.search(using=config.es)
-        .query(FunctionScore(
-            query=~Range(last_fetched_captures={"lte": last_source_time}),
-            functions=[RandomScore()]
-        ))
+        .filter(
+            ~Exists(field="last_modified") |
+            ~Exists(field="last_fetched_captures") |
+            Script(
+                script="!doc['last_modified'].isEmpty() && "
+                       "!doc['last_fetched_captures'].isEmpty() && "
+                       "!doc['last_modified'].value.isBefore("
+                       "doc['last_fetched_captures'].value)",
+            )
+        )
+        .query(FunctionScore(functions=[RandomScore()]))
+        .params(preserve_order=True)
     )
     num_changed_sources = (
         changed_sources_search.extra(track_total_hits=True)
         .execute().hits.total.value)
     if num_changed_sources > 0:
         echo(f"Fetching captures for {num_changed_sources} "
-             f"new/changed sources "
-             f"since {last_source_time.astimezone().strftime('%c')}.")
+             f"new/changed sources.")
         changed_sources: Iterator[Source] = changed_sources_search.scan()
         # noinspection PyTypeChecker
         changed_sources = tqdm(changed_sources, total=num_changed_sources,
@@ -129,8 +144,7 @@ def fetch(config: Config) -> None:
         for source in changed_sources:
             _add_captures(config, source)
     else:
-        echo(f"No changed sources "
-             f"since {last_source_time.astimezone().strftime('%c')}.")
+        echo(f"No changed sources.")
 
     Source.index().refresh(using=config.es)
     Capture.index().refresh(using=config.es)
