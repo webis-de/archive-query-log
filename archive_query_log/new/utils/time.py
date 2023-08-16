@@ -7,3 +7,7 @@ EPOCH = datetime.fromtimestamp(0)
 
 def current_time() -> datetime:
     return datetime.now(tz=UTC).replace(microsecond=0)
+
+
+def current_timestamp() -> float:
+    return current_time().timestamp()
