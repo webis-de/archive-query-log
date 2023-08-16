@@ -1,6 +1,8 @@
 from typing import Sequence
 
-from click import Parameter, Context, BadParameter
+from click import Parameter, Context, BadParameter, make_pass_decorator
+
+from archive_query_log.new.config import Config
 
 
 def validate_split_domains(
@@ -18,3 +20,6 @@ def validate_split_domains(
                 raise BadParameter(f"Not a valid domain: {domain}")
             valid_domains.append(domain)
     return valid_domains
+
+
+pass_config = make_pass_decorator(Config)
