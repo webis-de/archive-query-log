@@ -28,6 +28,7 @@ dependencies = [
     "asyncio-pool~=0.6.0",
     "beautifulsoup4~=4.12",
     "bleach~=6.0",
+    "certifi~=2023.7",
     "click~=8.1",
     "dataclasses-json~=0.5.14",
     "diskcache~=5.6",
