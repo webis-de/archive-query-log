@@ -7,6 +7,7 @@ from typing import Iterator, NamedTuple
 from urllib.parse import urlsplit
 from warnings import warn
 
+from click import echo
 from dateutil.tz import UTC
 from requests import Session, Response
 from tqdm.auto import tqdm
@@ -123,6 +124,8 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
         source_collection = line.pop("source-coll")
     else:
         source_collection = None
+
+    # TODO: Unparsed fields in CDX line: {'redirect': None, 'robotflags': None, 'load_url': '', 'access': 'allow'}
     if len(line) > 0:
         warn(RuntimeWarning(f"Unparsed fields in CDX line: {line}"))
     return CdxCapture(
@@ -208,7 +211,7 @@ class CdxApi:
                 )
             url = url[:-1]
 
-        print(f"Parsing {self.api_url}?url={url}&matchType={match_type.value}")
+        echo(f"Parsing {self.api_url}?url={url}&matchType={match_type.value}")
         params = [
             ("url", url),
             ("output", "json"),
