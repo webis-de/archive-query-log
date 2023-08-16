@@ -26,6 +26,13 @@ def sources():
 
 
 def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
+    if provider.exclusion_reason is not None:
+        warn(
+            f"Skipping provider {provider.meta.id} "
+            f"because it is excluded: {provider.exclusion_reason}"
+        )
+        return []
+
     batch = []
     for domain in provider.domains:
         for url_path_prefix in provider.url_path_prefixes:
@@ -136,7 +143,9 @@ def build(
         num_changed_archives = (
             changed_archives_search.extra(track_total_hits=True)
             .execute().hits.total.value)
-        all_providers_search: Search = Provider.search(using=config.es.client)
+        all_providers_search: Search = (
+            Provider.search(using=config.es.client)
+            .filter(~Exists(field="exclusion_reason")))
         num_all_providers = (all_providers_search.extra(track_total_hits=True)
                              .execute().hits.total.value)
         num_batches = num_changed_archives * num_all_providers
@@ -174,13 +183,16 @@ def build(
         changed_providers_search: Search = (
             Provider.search(using=config.es.client)
             .filter(
-                ~Exists(field="last_modified") |
-                ~Exists(field="last_built_sources") |
-                Script(
-                    script="!doc['last_modified'].isEmpty() && "
-                           "!doc['last_built_sources'].isEmpty() && "
-                           "!doc['last_modified'].value.isBefore("
-                           "doc['last_built_sources'].value)",
+                ~Exists(field="exclusion_reason") &
+                (
+                        ~Exists(field="last_modified") |
+                        ~Exists(field="last_built_sources") |
+                        Script(
+                            script="!doc['last_modified'].isEmpty() && "
+                                   "!doc['last_built_sources'].isEmpty() && "
+                                   "!doc['last_modified'].value.isBefore("
+                                   "doc['last_built_sources'].value)",
+                        )
                 )
             )
             .query(FunctionScore(functions=[RandomScore()]))
