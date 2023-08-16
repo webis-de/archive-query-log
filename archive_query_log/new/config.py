@@ -10,6 +10,7 @@ from urllib3 import Retry
 
 from archive_query_log import __version__ as version
 
+
 @dataclass(frozen=True)
 class EsIndex(DataClassJsonMixin):
     name: str
@@ -37,8 +38,11 @@ class Config(DataClassJsonMixin):
     @cached_property
     def es(self) -> Elasticsearch:
         return Elasticsearch(
-            f"https://{self.es_host}:{self.es_port}",
+            hosts=f"https://{self.es_host}:{self.es_port}",
             http_auth=(self.es_username, self.es_password),
+            max_retries=5,
+            retry_on_status=(502, 503, 504),
+            retry_on_timeout=True,
         )
 
     @cached_property
@@ -63,4 +67,3 @@ class Config(DataClassJsonMixin):
         session.mount("http://", _adapter)
         session.mount("https://", _adapter)
         return session
-
