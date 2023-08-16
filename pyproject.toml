@@ -36,6 +36,7 @@ dependencies = [
     "elasticsearch-dsl~=7.0",
     "fastwarc~=0.14.5",
     "flake8~=6.0",
+    "flask~=2.3",
     "importlib-metadata~=6.0",
     "joblib~=1.3",
     "marshmallow~=3.20",
