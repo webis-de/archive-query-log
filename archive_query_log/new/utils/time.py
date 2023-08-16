@@ -5,9 +5,7 @@ from dateutil.tz import UTC
 EPOCH = datetime.fromtimestamp(0)
 
 
-def current_time() -> datetime:
+def utc_now() -> datetime:
     return datetime.now(tz=UTC).replace(microsecond=0)
 
 
-def current_timestamp() -> float:
-    return current_time().timestamp()

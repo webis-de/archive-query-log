@@ -55,6 +55,7 @@ def cli(context: Context, config_paths: list[Path]) -> None:
 @cli.command()
 @pass_config
 def init(config: Config) -> None:
+    echo("Initialize Elasticsearch indices.")
     Archive.init(using=config.es)
     Provider.init(using=config.es)
     Source.init(using=config.es)
