@@ -37,6 +37,7 @@
                     <th>Type</th>
                     <th>Description</th>
                     <th>Count</th>
+                    <th>Size</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,6 +46,7 @@
                         <td>{{ count.name }}</td>
                         <td>{% if count.description %}{{ count.description }}{% else %}—{% endif %}</td>
                         <td style="text-align: right">{{ "{:,.0f}".format(count.total) }}</td>
+                        <td style="text-align: right">{{ count.disk_size }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>

@@ -4,14 +4,14 @@ from elasticsearch_dsl import Document, Keyword, Text, Date, InnerDoc, \
     Object, Boolean, Index, Integer
 
 
-class _BaseDocument(Document):
+class BaseDocument(Document):
 
     @classmethod
     def index(cls) -> Index:
         return cls._index
 
 
-class Archive(_BaseDocument):
+class Archive(BaseDocument):
     name: str = Text()
     description: str = Text()
     cdx_api_url: str = Keyword()
@@ -39,7 +39,7 @@ class InterfaceAnnotations(InnerDoc):
     has_search_div: bool = Boolean()
 
 
-class Provider(_BaseDocument):
+class Provider(BaseDocument):
     name: str = Text()
     description: str = Text()
     exclusion_reason: str = Text()
@@ -78,7 +78,7 @@ class InnerProvider(InnerDoc):
     url_path_prefix: str = Keyword()
 
 
-class Source(_BaseDocument):
+class Source(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
     last_modified: datetime = Date(
@@ -98,7 +98,7 @@ class Source(_BaseDocument):
         }
 
 
-class Capture(_BaseDocument):
+class Capture(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
     url: str = Keyword()

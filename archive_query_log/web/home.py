@@ -6,7 +6,8 @@ from expiringdict import ExpiringDict
 from flask import render_template
 
 from archive_query_log.config import Config
-from archive_query_log.orm import Archive, Provider, Source, Capture
+from archive_query_log.orm import Archive, Provider, Source, Capture, \
+    BaseDocument
 from archive_query_log.utils.time import utc_now
 
 
@@ -14,6 +15,7 @@ class Statistics(NamedTuple):
     name: str
     description: str
     total: str
+    disk_size: str
 
 
 class Progress(NamedTuple):
@@ -29,20 +31,29 @@ _statistics_cache: dict[str, Statistics] = ExpiringDict(
 )
 
 
+def _convert_bytes(bytes_count: int) -> str:
+    step_unit = 1000.0
+    for unit in ["B", "KB", "MB", "GB", "TB", "PB"]:
+        if bytes_count < step_unit:
+            return f"{bytes_count:3.1f} {unit}"
+        bytes_count /= step_unit
+
+
 def _get_statistics(
         config: Config,
         name: str,
         description: str,
-        document: Type[Document],
+        document: Type[BaseDocument],
 ) -> Statistics:
     if name in _statistics_cache:
         return _statistics_cache[name]
-    search = document.search(using=config.es.client)
-    total = search.extra(track_total_hits=True).execute().hits.total.value
+    stats = document.index().stats(using=config.es.client)
     statistics = Statistics(
         name=name,
         description=description,
-        total=total,
+        total=stats["_all"]["total"]["docs"]["count"],
+        disk_size=_convert_bytes(
+            stats["_all"]["total"]["store"]["size_in_bytes"]),
     )
     _statistics_cache[name] = statistics
     return statistics
@@ -121,21 +132,21 @@ def home(config: Config) -> str:
     progress_stages: list[Progress] = []
     progress_stages.append(_get_progress(
         config=config,
-        name="Archives → Sources",
+        name="Archives → Sources",
         description="Build sources for all archives.",
         document=Archive,
         processed_timestamp_field="last_built_sources",
     ))
     progress_stages.append(_get_progress(
         config=config,
-        name="Providers → Sources",
+        name="Providers → Sources",
         description="Build sources for all search providers.",
         document=Provider,
         processed_timestamp_field="last_built_sources",
     ))
     progress_stages.append(_get_progress(
         config=config,
-        name="Sources → Captures",
+        name="Sources → Captures",
         description="Fetch CDX captures for all domains and "
                     "prefixes in the sources.",
         document=Source,
