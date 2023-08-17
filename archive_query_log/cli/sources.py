@@ -210,8 +210,10 @@ def build(
             changed_providers_search.extra(track_total_hits=True)
             .execute().hits.total.value)
         all_archives_search: Search = Archive.search(using=config.es.client)
-        num_all_archives = (all_archives_search.extra(track_total_hits=True)
-                            .execute().hits.total.value)
+        num_all_archives_search: Search = (
+            all_archives_search.extra(track_total_hits=True))
+        num_all_archives = (
+            num_all_archives_search.execute().hits.total.value)
         num_batches = num_changed_providers * num_all_archives
         if num_batches > 0:
             echo(
