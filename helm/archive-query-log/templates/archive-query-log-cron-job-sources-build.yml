@@ -1,0 +1,43 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ $.Release.Name }}-cronjob-sources-build
+  namespace: {{ $.Release.Namespace }}
+  annotations:
+    checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
+    checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.k8s.yaml") . | sha256sum }}
+spec:
+  schedule: {{ $.Values.schedules.sources }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: {{ $.Release.Name }}-cronjob-sources-build
+            image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+            imagePullPolicy: IfNotPresent
+            resources:
+              requests:
+                memory: 4Gi
+            command:
+            - /bin/sh
+            - -c
+            - archive-query-log -f /workspace/config.config-map.yml -f /workspace/config.secret.yml sources build
+            volumeMounts:
+            - name: {{ $.Release.Name }}-config-map
+              mountPath: /workspace/config.config-map.yml
+              readOnly: true
+              subPath: config.yml
+            - name: {{ $.Release.Name }}-secret
+              mountPath: /workspace/config.secret.yml
+              readOnly: true
+              subPath: config.yml
+          restartPolicy: OnFailure
+          volumes:
+          - name: {{ $.Release.Name }}-config-map
+            configMap:
+              name: {{ $.Release.Name }}-config-map
+          - name: {{ $.Release.Name }}-secret
+            secret:
+              secretName: {{ $.Release.Name }}-secret
+

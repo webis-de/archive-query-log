@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $.Release.Name }}-config-map
+  namespace: {{ $.Release.Namespace }}
+data:
+  config.yml: |
+    es:
+      host: {{ $.Values.elasticsearch.host }}
+      port: {{ $.Values.elasticsearch.port }}

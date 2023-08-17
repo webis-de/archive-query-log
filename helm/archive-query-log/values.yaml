@@ -1,0 +1,14 @@
+image: ghcr.io/webis-de/archive-query-log
+
+initialCompletions:
+  sources: 5
+  captures: 10
+schedules:
+  sources: "0 0 * * *"
+  captures: "0 0 * * *"
+
+elasticsearch:
+  host: elasticsearch.srv.webis.de
+  port: 9200
+  username: null # Override username with `--set elasticsearch.username=EXAMPLE` Helm option.
+  password: null # Override username with `--set elasticsearch.password=EXAMPLE` Helm option.
