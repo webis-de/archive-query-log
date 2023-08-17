@@ -1,4 +1,5 @@
-- notes: 'Domains from https://google.com/supported_domains
+- name: google
+  notes: 'Domains from https://google.com/supported_domains
     and from https://github.com/JamieFarrelly/Popular-Site-Subdomains
     and from https://infogalactic.com/info/List_of_Google_domains.'
   domains:
@@ -255,7 +256,8 @@
     title_selector: a
   focused_url_prefixes:
   - /search?
-- domains:
+- name: google-scholar
+  domains:
   - scholar.google.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/scholar\?
@@ -281,7 +283,13 @@
   focused_url_prefixes:
   - /scholar?
   - /citations?
-- notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains
+- name: google-translate
+  domains:
+  - translate.google.com
+  focused_url_prefixes:
+  - /?
+- name: google-other 
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains
     and from https://infogalactic.com/info/List_of_Google_domains.'
   domains:
   - answers.google.com
@@ -335,11 +343,8 @@
   - store.google.com
   - support.google.com
   - talkgadget.google.com
-- domains:
-  - translate.google.com
-  focused_url_prefixes:
-  - /?
-- notes: 'Domains from https://stackoverflow.com/a/65375894
+- name: youtube
+  notes: 'Domains from https://stackoverflow.com/a/65375894
     and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.
     SERPs rendered using JavaScript.'
   domains:
@@ -536,7 +541,8 @@
     snippet_selector: div.yt-lockup-description
   focused_url_prefixes:
   - /results?
-- notes: 'Domains from manually exploring https://baidu.com.'
+- name: baidu
+  notes: 'Domains from manually exploring https://baidu.com.'
   domains:
   - baidu.com
   - ai.baidu.com
@@ -611,7 +617,8 @@
   - /sf/vsearch?
   - /f?
   - /cse/site?
-- notes: 'SERPs from qq.com rendered using JavaScript.'
+- name: qq
+  notes: 'SERPs from qq.com rendered using JavaScript.'
   domains:
   - qq.com
   - v.qq.com
@@ -650,7 +657,8 @@
   - /search.html?
   - //search.html?
   - /x/search/?
-- notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
+- name: facebook
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - facebook.com
   - about.facebook.com
@@ -768,7 +776,8 @@
     title_selector: div.TextTitle
   focused_url_prefixes:
   - /search
-- domains:
+- name: tmall
+  domains:
   - tmall.com
   - list.tmall.com
   query_parsers:
@@ -777,7 +786,8 @@
     parameter: q
   focused_url_prefixes:
   - /search_product
-- domains:
+- name: taobao
+  domains:
   - taobao.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -785,7 +795,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
+- name: yahoo
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - yahoo.com
   - about.yahoo.com
@@ -982,7 +993,8 @@
     title_selector: a
   focused_url_prefixes:
   - /search
-- notes: 'Domains from https://amazon.de/customer-preferences/country (dropdown)
+- name: amazon
+  notes: 'Domains from https://amazon.de/customer-preferences/country (dropdown)
     and https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - amazon.com
@@ -1076,7 +1088,8 @@
   focused_url_prefixes:
   - /s?
   - /search
-- domains:
+- name: jd
+  domains:
   - jd.com
   - search.jd.com
   query_parsers:
@@ -1104,7 +1117,8 @@
     title_selector: div.p-name
   focused_url_prefixes:
   - /search?
-- domains:
+- name: '360'
+  domains:
   - 360.cn
   - so.com
   - 360kan.com
@@ -1151,7 +1165,8 @@
   - /ns?
   - /search
   - /i?
-- domains:
+- name: weibo
+  domains:
   - weibo.com
   - s.weibo.com
   query_parsers:
@@ -1191,7 +1206,8 @@
   - /video?
   - /pic?
   - /topic?
-- notes: 'Domains from https://old.reddit.com/prefs/ (dropdown)
+- name: reddit
+  notes: 'Domains from https://old.reddit.com/prefs/ (dropdown)
     and https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - reddit.com
@@ -1310,7 +1326,8 @@
     title_selector: a h3
   focused_url_prefixes:
   - /search
-- domains:
+- name: netflix
+  domains:
   - netflix.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -1318,12 +1335,14 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
+- name: instagram
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - instagram.com
   - developers.instagram.com
   - help.instagram.com
-- domains:
+- name: vk
+  domains:
   - vk.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -1342,7 +1361,8 @@
     snippet_selector: div.res-desc, p.res-desc
   focused_url_prefixes:
   - /search?
-- notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
+- name: microsoft
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - microsoft.com
   - advertising.microsoft.com
@@ -1405,7 +1425,8 @@
     parameter: skip
   focused_url_prefixes:
   - ^\/[a-z]+-[a-z]+\/search
-- domains:
+- name: csdn
+  domains:
   - csdn.net
   - so.csdn.net
   query_parsers:
@@ -1414,7 +1435,8 @@
     parameter: q
   focused_url_prefixes:
   - /so/search?
-- notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
+- name: bing
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - bing.com
   - be.bing.com
@@ -1492,7 +1514,8 @@
   - /news/search?
   - /images/search?
   - /videos/search?
-- notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
+- name: twitter
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - twitter.com
   - business.twitter.com
@@ -1530,7 +1553,8 @@
     snippet_selector: td.tweet-content div.tweet-text
   focused_url_prefixes:
   - /search?
-- domains:
+- name: twitch
+  domains:
   - twitch.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -1538,7 +1562,8 @@
     parameter: term
   focused_url_prefixes:
   - /search?
-- domains:
+- name: zoom
+  domains:
   - zoom.us
   - explore.zoom.us
   query_parsers:
@@ -1551,7 +1576,8 @@
     parameter: first
   focused_url_prefixes:
   - /en/search
-- notes: 'Domains from https://ebay.com/ (dropdown)
+- name: ebay
+  notes: 'Domains from https://ebay.com/ (dropdown)
     and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - ebay.com
@@ -1662,7 +1688,8 @@
   focused_url_prefixes:
   - /sch/i.html?
   - /i.html?
-- domains:
+- name: naver
+  domains:
   - naver.com
   - search.naver.com
   query_parsers:
@@ -1706,7 +1733,8 @@
     title_selector: tr[valign="top"] td table tr td small a
   focused_url_prefixes:
   - /search.naver?
-- domains:
+- name: aliexpress
+  domains:
   - aliexpress.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/w/wholesale
@@ -1745,7 +1773,8 @@
   focused_url_prefixes:
   - /w/wholesale
   - /wholesale
-- domains:
+- name: yandex
+  domains:
   - yandex.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/images/search
@@ -1772,7 +1801,8 @@
   - /search
   - /images/search
   - /video/search
-- domains:
+- name: linkedin
+  domains:
   - linkedin.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -1784,7 +1814,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: bongacams
+  domains:
   - bongacams.com
   - en.bongacams.com
   query_parsers:
@@ -1804,7 +1835,8 @@
   - /couples/tags/
   - /trans/tags/
   - /new-models/tags/
-- notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
+- name: apple
+  notes: 'Domains from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - apple.com
   - advertising.apple.com
@@ -1858,7 +1890,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: pornhub
+  domains:
   - pornhub.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/video/search\?
@@ -1893,7 +1926,8 @@
     title_selector: a span.small
   focused_url_prefixes:
   - /video/search?
-- domains:
+- name: mail-ru
+  domains:
   - mail.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -1901,7 +1935,8 @@
     parameter: text
   focused_url_prefixes:
   - /search?
-- domains:
+- name: stackoverflow
+  domains:
   - stackoverflow.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/questions/tagged/[^/]+
@@ -1934,7 +1969,8 @@
   focused_url_prefixes:
   - /search?
   - /questions/tagged
-- domains:
+- name: tribunnews
+  domains:
   - tribunnews.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -1946,7 +1982,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: imdb
+  domains:
   - imdb.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/find\?
@@ -1975,7 +2012,8 @@
     title_selector: td[valign="top"]:nth-child(3) a
   focused_url_prefixes:
   - /find
-- domains:
+- name: livejasmin
+  domains:
   - livejasmin.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/(girls|boys)/[^/]+/.*Search
@@ -1984,7 +2022,8 @@
   focused_url_prefixes:
   - /en/girls/
   - /en/boys/
-- domains:
+- name: chaturbate
+  domains:
   - chaturbate.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -1996,7 +2035,8 @@
     parameter: page
   focused_url_prefixes:
   - /
-- domains:
+- name: ok
+  domains:
   - ok.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/dk\?
@@ -2008,7 +2048,8 @@
   focused_url_prefixes:
   - /dk?
   - /music/search/tracks/
-- domains:
+- name: xvideos
+  domains:
   - xvideos.com
   - xvideos2.com
   query_parsers:
@@ -2044,7 +2085,8 @@
     title_selector: a.miniature span
   focused_url_prefixes:
   - /
-- domains:
+- name: github
+  domains:
   - github.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -2079,7 +2121,8 @@
     snippet_selector: p.mb-1
   focused_url_prefixes:
   - /search?
-- domains:
+- name: cnn
+  domains:
   - cnn.com
   - edition.cnn.com
   query_parsers:
@@ -2092,7 +2135,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: etsy
+  domains:
   - etsy.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -2127,7 +2171,8 @@
     title_selector: a.listing-link h3
   focused_url_prefixes:
   - /search?
-- domains:
+- name: xhamster
+  domains:
   - xhamster.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -2139,7 +2184,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: sogou
+  domains:
   - sogou.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/pics\?
@@ -2200,7 +2246,8 @@
   - /result?
   - /weixin?
   - /v?
-- domains:
+- name: canva
+  domains:
   - canva.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/design/play\?
@@ -2208,7 +2255,8 @@
     parameter: layoutQuery
   focused_url_prefixes:
   - /design/play?
-- domains:
+- name: tumblr
+  domains:
   - tumblr.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -2216,7 +2264,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: espn
+  domains:
   - espn.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/_/q/[^/]+
@@ -2224,7 +2273,8 @@
     segment: 4
   focused_url_prefixes:
   - /search
-- domains:
+- name: instructure
+  domains:
   - instructure.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -2236,7 +2286,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: indeed
+  domains:
   - indeed.com
   - de.indeed.com
   query_parsers:
@@ -2275,7 +2326,8 @@
     snippet_selector: div.job-snippet
   focused_url_prefixes:
   - /jobs?
-- domains:
+- name: roblox
+  domains:
   - roblox.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/(catalog\/browse.aspx\?|discover)
@@ -2294,7 +2346,8 @@
   focused_url_prefixes:
   - /catalog/browse.aspx?
   - /discover
-- domains:
+- name: imgur
+  domains:
   - imgur.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -2307,7 +2360,8 @@
     query_text: true
   focused_url_prefixes:
   - /search?
-- domains:
+- name: flipkart
+  domains:
   - flipkart.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -2319,7 +2373,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: fandom
+  domains:
   - fandom.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -2335,7 +2390,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: bbc
+  domains:
   - bbc.co.uk
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -2347,7 +2403,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: detik
+  domains:
   - detik.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -2359,7 +2416,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: booking
+  domains:
   - booking.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/searchresults
@@ -2371,7 +2429,8 @@
     parameter: offset
   focused_url_prefixes:
   - /searchresults
-- domains:
+- name: cnblogs
+  domains:
   - cnblogs.com
   - zzk.cnblogs.com
   query_parsers:
@@ -2412,7 +2471,8 @@
   - /s/question?
   - /s/kb?
   - /s/blogpost?
-- domains:
+- name: walmart
+  domains:
   - walmart.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -2424,7 +2484,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: alibaba
+  domains:
   - alibaba.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/trade/search\?
@@ -2436,7 +2497,8 @@
     parameter: page
   focused_url_prefixes:
   - /trade/search?
-- domains:
+- name: freepik
+  domains:
   - freepik.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -2448,7 +2510,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: nih
+  domains:
   - nih.gov
   - search.nih.gov
   query_parsers:
@@ -2461,7 +2524,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: salesforce
+  domains:
   - salesforce.com
   - force.com
   query_parsers:
@@ -2474,7 +2538,8 @@
     parameter: first
   focused_url_prefixes:
   - /search
-- notes: 'Domains from https://stackexchange.com/sites.'
+- name: stackexchange
+  notes: 'Domains from https://stackexchange.com/sites.'
   domains:
   - stackexchange.com
   - 3dprinting.stackexchange.com
@@ -2664,7 +2729,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: daum
+  domains:
   - daum.net
   - 100.daum.net
   - search.daum.net
@@ -2678,7 +2744,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: udemy
+  domains:
   - udemy.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/courses/.*search\-query
@@ -2690,7 +2757,8 @@
     parameter: p
   focused_url_prefixes:
   - /courses
-- notes: 'Domains from https://craigslist.org/about/sites.'
+- name: craigslist
+  notes: 'Domains from https://craigslist.org/about/sites.'
   domains:
   - craigslist.org
   - auburn.craigslist.org
@@ -3417,7 +3485,8 @@
     parameter: s
   focused_url_prefixes:
   - /search
-- domains:
+- name: avito
+  domains:
   - avito.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+\?
@@ -3429,7 +3498,8 @@
     parameter: p
   focused_url_prefixes:
   - /
-- notes: Uses Google search
+- name: grid
+  notes: Uses Google search
   domains:
   - grid.id
   query_parsers:
@@ -3438,7 +3508,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: duckduckgo
+  domains:
   - duckduckgo.com
   - html.duckduckgo.com
   - links.duckduckgo.com
@@ -3451,7 +3522,8 @@
     parameter: q
   focused_url_prefixes:
   - /
-- domains:
+- name: aliyun
+  domains:
   - aliyun.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -3463,7 +3535,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: tiktok
+  domains:
   - tiktok.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -3471,7 +3544,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: shutterstock
+  domains:
   - shutterstock.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -3485,7 +3559,8 @@
   - /editorial/search/
   - /video/search/
   - /music/search/
-- domains:
+- name: xnxx
+  domains:
   - xnxx.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -3493,7 +3568,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: gome
+  domains:
   - gome.com.cn
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -3501,7 +3577,8 @@
     parameter: question
   focused_url_prefixes:
   - /search?
-- domains:
+- name: w3schools
+  domains:
   - w3schools.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/.*#gsc
@@ -3513,7 +3590,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /
-- domains:
+- name: researchgate
+  domains:
   - researchgate.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -3525,7 +3603,8 @@
     parameter: offset
   focused_url_prefixes:
   - /search
-- domains:
+- name: tokopedia
+  domains:
   - tokopedia.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -3537,7 +3616,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: youm7
+  domains:
   - youm7.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/(H|h)ome/Search\?
@@ -3552,7 +3632,8 @@
   focused_url_prefixes:
   - /home/Search?
   - /Home/Search?
-- domains:
+- name: globo
+  domains:
   - globo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/busca
@@ -3560,7 +3641,8 @@
     parameter: q
   focused_url_prefixes:
   - /busca
-- domains:
+- name: slideshare
+  domains:
   - slideshare.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -3572,10 +3654,12 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- excluded: Redirects to Daum search
+- name: tistory
+  excluded: Redirects to Daum search
   domains:
   - tistory.com
-- domains:
+- name: china
+  domains:
   - china.com.cn
   - query.china.com.cn
   query_parsers:
@@ -3592,7 +3676,8 @@
   focused_url_prefixes:
   - /query
   - /news/query
-- domains:
+- name: varzesh3
+  domains:
   - varzesh3.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -3600,7 +3685,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: wikihow
+  domains:
   - wikihow.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/wikiHowTo\?
@@ -3612,10 +3698,12 @@
     parameter: start
   focused_url_prefixes:
   - /wikiHowTo?
-- excluded: Excluded from Internet Archive
+- name: quora
+  excluded: Excluded from Internet Archive
   domains:
   - quora.com
-- domains:
+- name: bukalapak
+  domains:
   - bukalapak.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/products/s/[^/]+
@@ -3634,7 +3722,8 @@
   focused_url_prefixes:
   - /products?
   - /products/
-- domains:
+- name: ask
+  domains:
   - ask.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/web\?
@@ -3646,7 +3735,8 @@
     parameter: page
   focused_url_prefixes:
   - /web?
-- domains:
+- name: intuit
+  domains:
   - intuit.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -3654,7 +3744,8 @@
     parameter: search_term
   focused_url_prefixes:
   - /search
-- domains:
+- name: usps
+  domains:
   - usps.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -3666,7 +3757,8 @@
     parameter: PNO
   focused_url_prefixes:
   - /search
-- excluded: Only user search, Hubs are not free text
+- name: steam
+  excluded: Only user search, Hubs are not free text
   domains:
   - steamcommunity.com
   - steampowered.com
@@ -3676,10 +3768,12 @@
     parameter: term
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: deepl
+  excluded: No search
   domains:
   - deepl.com
-- domains:
+- name: airbnb
+  domains:
   - airbnb.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/s/[^/]+
@@ -3687,7 +3781,8 @@
     segment: 2
   focused_url_prefixes:
   - /s
-- domains:
+- name: bankofamerica
+  domains:
   - bankofamerica.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/global-search-public
@@ -3695,7 +3790,8 @@
     parameter: state
   focused_url_prefixes:
   - /global-search-public
-- notes: 'Domains from https://commons.wikimedia.org/wiki/Data:Wikipedia_statistics/data.tab
+- name: wikimedia
+  notes: 'Domains from https://commons.wikimedia.org/wiki/Data:Wikipedia_statistics/data.tab
     and from https://github.com/JamieFarrelly/Popular-Site-Subdomains.'
   domains:
   - wikimedia.org
@@ -4625,7 +4721,8 @@
     snippet_selector: div.searchresult
   focused_url_prefixes:
   - /w/index.php?
-- domains:
+- name: blackboard
+  domains:
   - blackboard.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/site-search\?
@@ -4637,7 +4734,8 @@
     parameter: first
   focused_url_prefixes:
   - /site-search?
-- domains:
+- name: rambler
+  domains:
   - rambler.ru
   - nova.rambler.ru
   - images.rambler.ru
@@ -4652,7 +4750,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: investopedia
+  domains:
   - investopedia.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -4664,7 +4763,8 @@
     parameter: offset
   focused_url_prefixes:
   - /search?
-- domains:
+- name: 9gag
+  domains:
   - 9gag.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -4672,7 +4772,8 @@
     parameter: query
   focused_url_prefixes:
   - /search?
-- domains:
+- name: chegg
+  domains:
   - chegg.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -4684,7 +4785,8 @@
     parameter: p
   focused_url_prefixes:
   - /search\?
-- domains:
+- name: kakao
+  domains:
   - kakao.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -4698,7 +4800,8 @@
     - 'page:'
   focused_url_prefixes:
   - /search
-- domains:
+- name: glassdoor
+  domains:
   - glassdoor.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/Search/
@@ -4718,7 +4821,8 @@
   - /Search
   - /Job
   - /Salaries
-- domains:
+- name: naukri
+  domains:
   - naukri.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+-jobs\?
@@ -4732,7 +4836,8 @@
     - ^[^/]+-jobs-
   focused_url_prefixes:
   - /
-- domains:
+- name: sourceforge
+  domains:
   - sourceforge.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/(directory|software)
@@ -4745,7 +4850,8 @@
   focused_url_prefixes:
   - /directory
   - /software
-- domains:
+- name: webmd
+  domains:
   - webmd.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/search_results
@@ -4757,7 +4863,8 @@
     parameter: page
   focused_url_prefixes:
   - /search/search_results
-- domains:
+- name: youdao
+  domains:
   - youdao.com
   - ke.youdao.com
   query_parsers:
@@ -4770,7 +4877,8 @@
   focused_url_prefixes:
   - /result\?
   - /search
-- domains:
+- name: dbs
+  domains:
   - dbs.com.sg
   query_parsers:
   - url_pattern: ^https?://[^/]+/searchresults\.page
@@ -4778,7 +4886,8 @@
     parameter: q
   focused_url_prefixes:
   - /searchresults.page
-- domains:
+- name: seznam
+  domains:
   - seznam.cz
   - search.seznam.cz
   query_parsers:
@@ -4794,7 +4903,8 @@
   - /obrazky/?
   - /videa/?
   - /clanky/?
-- domains:
+- name: chinaz
+  domains:
   - chinaz.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.aspx\?
@@ -4802,7 +4912,8 @@
     parameter: keyword
   focused_url_prefixes:
   - /search.aspx?
-- domains:
+- name: ecosia
+  domains:
   - ecosia.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/images\?
@@ -4832,7 +4943,8 @@
   - /images?
   - /news?
   - /videos?
-- notes: 'TODO: Set correct query parser for https://shopping.rediff.com/?sc_cid=shopping_ushomesrch#!bracelet/30-60
+- name: rediff
+  notes: 'TODO: Set correct query parser for https://shopping.rediff.com/?sc_cid=shopping_ushomesrch#!bracelet/30-60
     Bracelet is the query term
     Currently no parser supports these queries and/or offsets:
     - https://shopping.rediff.com/product/test?sc_cid=shopping_ushomesrch#!design/30-60
@@ -4856,7 +4968,8 @@
   focused_url_prefixes:
   - /?
   - /product
-- domains:
+- name: goo
+  domains:
   - goo.ne.jp
   - search.goo.ne.jp
   - dictionary.goo.ne.jp
@@ -4877,7 +4990,8 @@
   focused_url_prefixes:
   - /web.jsp?
   - /search.php?
-- domains:
+- name: turkiye
+  domains:
   - turkiye.gov.tr
   query_parsers:
   - url_pattern: ^https?://[^/]+/arama\?
@@ -4889,10 +5003,12 @@
     parameter: sf
   focused_url_prefixes:
   - /arama?
-- excluded: Query not in URL
+- name: europa
+  excluded: Query not in URL
   domains:
   - europa.eu
-- domains:
+- name: dcinside
+  domains:
   - dcinside.com
   - search.dcinside.com
   query_parsers:
@@ -4912,11 +5028,12 @@
   focused_url_prefixes:
   - /combine
   - /post
-- excluded: Query not in URL
-  notes: Uses Google search
+- name: news18
+  excluded: Query not in URL
   domains:
   - news18.com
-- domains:
+- name: gov
+  domains:
   - gov.gov.uk
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/all\?
@@ -4928,7 +5045,8 @@
     parameter: page
   focused_url_prefixes:
   - /search/all?
-- domains:
+- name: elfagr
+  domains:
   - elfagr.com
   - elfagr.org
   query_parsers:
@@ -4941,7 +5059,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: bandcamp
+  domains:
   - bandcamp.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -4953,7 +5072,8 @@
     parameter: p
   focused_url_prefixes:
   - /search
-- domains:
+- name: allrecipes
+  domains:
   - allrecipes.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -4965,7 +5085,8 @@
     parameter: offset
   focused_url_prefixes:
   - /search?
-- domains:
+- name: 123rf
+  domains:
   - 123rf.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/stock-photo/[^/]\.html
@@ -4988,7 +5109,8 @@
   focused_url_prefixes:
   - /stock-photo
   - /lizenzfreie-bilder
-- domains:
+- name: fivethirtyeight
+  domains:
   - fivethirtyeight.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -5000,7 +5122,8 @@
     segment: 2
   focused_url_prefixes:
   - /
-- domains:
+- name: stanford
+  domains:
   - stanford.edu
   - google.stanford.edu
   - itservices.stanford.edu
@@ -5025,10 +5148,12 @@
   - /?
   - /service/websearch?
   - /linux?
-- excluded: Query not in URL
+- name: commbank
+  excluded: Query not in URL
   domains:
   - commbank.com.au
-- domains:
+- name: smartsheet
+  domains:
   - smartsheet.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -5040,7 +5165,8 @@
     parameter: first
   focused_url_prefixes:
   - /search
-- domains:
+- name: caf
+  domains:
   - caf.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/allocataires/recherche\?
@@ -5048,7 +5174,8 @@
     parameter: search
   focused_url_prefixes:
   - /allocataires/recherche?
-- domains:
+- name: 4shared
+  domains:
   - 4shared.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/web/q
@@ -5060,7 +5187,8 @@
     parameter: offset
   focused_url_prefixes:
   - /web/q
-- domains:
+- name: lifewire
+  domains:
   - lifewire.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5072,13 +5200,16 @@
     parameter: offset
   focused_url_prefixes:
   - /search?
-- excluded: Redirects to Google search
+- name: 24h
+  excluded: Redirects to Google search
   domains:
   - 24h.com.vn
-- excluded: Query not in URL
+- name: baskino
+  excluded: Query not in URL
   domains:
   - baskino.me
-- domains:
+- name: tdameritrade
+  domains:
   - tdameritrade.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search-results\.html\?
@@ -5090,7 +5221,8 @@
     parameter: pageNumber
   focused_url_prefixes:
   - /search-results.html?
-- excluded: No search
+- name: sfgate
+  excluded: No search
   domains:
   - sfgate.com
   query_parsers:
@@ -5103,7 +5235,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: gob
+  domains:
   - gob.mx
   query_parsers:
   - url_pattern: ^https?://[^/]+/busqueda\?
@@ -5115,7 +5248,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /busqueda?
-- domains:
+- name: etrade
+  domains:
   - etrade.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5123,7 +5257,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: vectorstock
+  domains:
   - vectorstock.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/(royalty-free-vectors|free-vectors)/[^/]+-vectors(-page_[0-9]+)?
@@ -5143,10 +5278,12 @@
   focused_url_prefixes:
   - /royalty-free-vectors
   - /free-vectors
-- excluded: No search
+- name: csod
+  excluded: No search
   domains:
   - csod.com
-- domains:
+- name: fmovies
+  domains:
   - fmovies.to
   - fmovies.wtf
   query_parsers:
@@ -5166,7 +5303,8 @@
   focused_url_prefixes:
   - /search?
   - /ajax/film/search?
-- domains:
+- name: biggo
+  domains:
   - biggo.com.tw
   query_parsers:
   - url_pattern: ^https?://[^/]+/s
@@ -5178,7 +5316,8 @@
     parameter: p
   focused_url_prefixes:
   - /s
-- domains:
+- name: sagepub
+  domains:
   - sagepub.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/[a-z]+/(content|events|product)/[^/]+
@@ -5192,10 +5331,12 @@
   - /product
   - /event
   - /content
-- excluded: Excluded from the Internet Archive
+- name: pochta
+  excluded: Excluded from the Internet Archive
   domains:
   - pochta.ru
-- domains:
+- name: tasnimnews
+  domains:
   - tasnimnews.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/fa/search\?
@@ -5207,7 +5348,8 @@
     parameter: page
   focused_url_prefixes:
   - /fa/search?
-- domains:
+- name: cyberleninka
+  domains:
   - cyberleninka.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5219,7 +5361,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: hangseng
+  domains:
   - hangseng.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+-[a-z]+/search
@@ -5229,7 +5372,8 @@
   - /en-hk/search
   - /zh-hk/search
   - /zh-cn/search
-- domains:
+- name: lg
+  domains:
   - lg.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/br/search
@@ -5273,7 +5417,8 @@
   - /search/result?
   - /br/search
   - /cl/search
-- domains:
+- name: semanticscholar
+  domains:
   - semanticscholar.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5285,11 +5430,13 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- excluded: Query not in URL
+- name: listindiario
+  excluded: Query not in URL
   notes: Uses Google search
   domains:
   - listindiario.com
-- domains:
+- name: nsw
+  domains:
   - nsw.gov.au
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5301,10 +5448,12 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- excluded: 'Query not in URL.'
+- name: startpage
+  excluded: Query not in URL
   domains:
   - startpage.com
-- domains:
+- name: zdf
+  domains:
   - zdf.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/suche\?
@@ -5312,7 +5461,8 @@
     parameter: q
   focused_url_prefixes:
   - /suche?
-- domains:
+- name: postermywall
+  domains:
   - postermywall.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/index\.php/posters/search\?
@@ -5320,7 +5470,8 @@
     parameter: s
   focused_url_prefixes:
   - /index.php/posters/search?
-- domains:
+- name: jagranjosh
+  domains:
   - jagranjosh.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -5328,7 +5479,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: berkeley
+  domains:
   - berkeley.edu
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -5336,7 +5488,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: gotporn
+  domains:
   - gotporn.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+
@@ -5354,7 +5507,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: dailypost
+  domains:
   - dailypost.ng
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -5362,7 +5516,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: psu
+  domains:
   - psu.edu
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -5374,7 +5529,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /search
-- domains:
+- name: akhbarelyom
+  domains:
   - akhbarelyom.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/News/Search
@@ -5382,7 +5538,8 @@
     parameter: query
   focused_url_prefixes:
   - /News/Search
-- domains:
+- name: prensalibre
+  domains:
   - prensalibre.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -5395,7 +5552,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: indosport
+  domains:
   - indosport.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5403,7 +5561,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: iz
+  domains:
   - iz.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5415,7 +5574,8 @@
     parameter: from
   focused_url_prefixes:
   - /search?
-- domains:
+- name: worldstarhiphop
+  domains:
   - worldstarhiphop.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/videos/search\.php
@@ -5427,16 +5587,20 @@
     parameter: start
   focused_url_prefixes:
   - /videos/search.php
-- excluded: Query no in URL
+- name: guru99
+  excluded: Query no in URL
   domains:
   - guru99.com
-- excluded: No search
+- name: suumo
+  excluded: No search
   domains:
   - suumo.jp
-- excluded: Query not in URL
+- name: calculator
+  excluded: Query not in URL
   domains:
   - calculator.net
-- domains:
+- name: virgilio
+  domains:
   - virgilio.it
   query_parsers:
   - url_pattern: ^https?://[^/]+/ricerca\?
@@ -5444,7 +5608,8 @@
     parameter: qs
   focused_url_prefixes:
   - /ricerca?
-- notes: Uses Google search
+- name: sapo
+  notes: Uses Google
   domains:
   - sapo.pt
   query_parsers:
@@ -5457,7 +5622,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /pesquisa
-- domains:
+- name: idealo
+  domains:
   - idealo.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/preisvergleich/MainSearchProductCategory(/100I16-[0-9]+)?\.html\?
@@ -5472,7 +5638,8 @@
     - \.html$
   focused_url_prefixes:
   - /preisvergleich/MainSearchProductCategory.html?
-- domains:
+- name: thebalancecareers
+  domains:
   - thebalancecareers.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5484,7 +5651,8 @@
     parameter: offset
   focused_url_prefixes:
   - /search?
-- domains:
+- name: dpreview
+  domains:
   - dpreview.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -5504,7 +5672,8 @@
   - /search
   - /products/search
   - /videos
-- domains:
+- name: tim
+  domains:
   - tim.it
   query_parsers:
   - url_pattern: ^https?://[^/]+/\#searchPage\|
@@ -5513,7 +5682,8 @@
     delimiter: '|'
   focused_url_prefixes:
   - /#searchPage
-- domains:
+- name: tnaflix
+  domains:
   - tnaflix.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.php\?
@@ -5525,7 +5695,8 @@
     parameter: page
   focused_url_prefixes:
   - /search.php?
-- domains:
+- name: las2orillas
+  domains:
   - las2orillas.co
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -5533,7 +5704,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: excite
+  domains:
   - excite.com
   - excite.co.jp
   - results.excite.com
@@ -5555,7 +5727,8 @@
   focused_url_prefixes:
   - /serp?
   - /?
-- domains:
+- name: 9anime
+  domains:
   - aniwave.to
   - 9anime.gs
   - 9anime.id
@@ -5570,10 +5743,12 @@
     parameter: page
   focused_url_prefixes:
   - /filter?
-- excluded: Only autocomplete search
+- name: windy
+  excluded: Only autocomplete search
   domains:
   - windy.com
-- domains:
+- name: wetter
+  domains:
   - wetter.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/suche
@@ -5581,7 +5756,8 @@
     parameter: q
   focused_url_prefixes:
   - /suche
-- domains:
+- name: techtudo
+  domains:
   - techtudo.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/busca
@@ -5589,7 +5765,8 @@
     parameter: q
   focused_url_prefixes:
   - /busca
-- domains:
+- name: books
+  domains:
   - books.com.tw
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -5601,7 +5778,8 @@
     segment: 16
   focused_url_prefixes:
   - /search
-- domains:
+- name: kaiserpermanente
+  domains:
   - kaiserpermanente.org
   - healthy.kaiserpermanente.org
   query_parsers:
@@ -5610,7 +5788,8 @@
     parameter: query
   focused_url_prefixes:
   - /pages/search?
-- domains:
+- name: le360
+  domains:
   - le360.ma
   query_parsers:
   - url_pattern: ^https?://[^/]+/recherche/[^/]+
@@ -5622,7 +5801,8 @@
     parameter: page
   focused_url_prefixes:
   - /recherche
-- domains:
+- name: euronews
+  domains:
   - euronews.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5634,13 +5814,16 @@
     parameter: p
   focused_url_prefixes:
   - /search?
-- notes: No search
+- name: itau
+  notes: No search
   domains:
   - itau.com.br
-- excluded: Query not in URL
+- name: wiocha
+  excluded: Query not in URL
   domains:
   - wiocha.pl
-- domains:
+- name: utoronto
+  domains:
   - utoronto.ca
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5659,10 +5842,12 @@
   focused_url_prefixes:
   - /search?
   - /news/searchnews?
-- excluded: Query not in URL
+- name: gitlab
+  excluded: Query not in URL
   domains:
   - gitlab.com
-- domains:
+- name: commentcamarche
+  domains:
   - commentcamarche.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/s/[^/]+
@@ -5674,7 +5859,8 @@
     parameter: page
   focused_url_prefixes:
   - /s
-- domains:
+- name: biglobe
+  domains:
   - biglobe.ne.jp
   - cgi.search.biglobe.ne.jp
   query_parsers:
@@ -5687,12 +5873,15 @@
     parameter: start
   focused_url_prefixes:
   - /cgi-bin/search
-- excluded: Domain parking
+- name: jf71qh5v14
+  excluded: Domain parking
   domains:
   - jf71qh5v14.com
-- domains:
+- name: glosbe
+  domains:
   - glosbe.com
-- domains:
+- name: eluniversal
+  domains:
   - eluniversal.com.mx
   query_parsers:
   - url_pattern: ^https?://[^/]+/resultados-busqueda/[^/]+
@@ -5700,7 +5889,8 @@
     segment: 2
   focused_url_prefixes:
   - /resultados-busqueda/
-- domains:
+- name: akurat
+  domains:
   - akurat.co
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5712,7 +5902,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: monster
+  domains:
   - monster.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/jobs/search\?
@@ -5724,7 +5915,8 @@
     parameter: page
   focused_url_prefixes:
   - /jobs/search\?
-- domains:
+- name: sportzwiki
+  domains:
   - sportzwiki.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -5737,7 +5929,8 @@
   focused_url_prefixes:
   - /
   - /page
-- domains:
+- name: arabi21
+  domains:
   - arabi21.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[A-z]+\/*.Search\?
@@ -5750,10 +5943,12 @@
   focused_url_prefixes:
   - /Stories/Search
   - /Story/AdvancedSearch
-- domains:
+- name: xm
+  domains:
   - xm.com
   - xmtrading.com
-- domains:
+- name: rei
+  domains:
   - rei.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5765,7 +5960,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: ci123
+  domains:
   - ci123.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/all/[^/]+
@@ -5826,13 +6022,16 @@
   - /qq
   - /zhishi
   - /ping
-- excluded: Search blocked (Requires login?)
+- name: adyen
+  excluded: Search blocked (Requires login?)
   domains:
   - adyen.com
-- excluded: Query not in URL
+- name: b2b168
+  excluded: Query not in URL
   domains:
   - b2b168.com
-- domains:
+- name: thoughtco
+  domains:
   - thoughtco.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -5844,7 +6043,8 @@
     parameter: offset
   focused_url_prefixes:
   - /search
-- domains:
+- name: iefimerida
+  domains:
   - iefimerida.gr
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5852,7 +6052,8 @@
     parameter: search
   focused_url_prefixes:
   - /search?
-- domains:
+- name: wa
+  domains:
   - wa.gov
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/
@@ -5867,10 +6068,12 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /search
-- excluded: Query not in URL
+- name: republicworld
+  excluded: Query not in URL
   domains:
   - republicworld.com
-- domains:
+- name: mostaghelonline
+  domains:
   - mostaghelonline.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/newsstudios/archive/
@@ -5882,7 +6085,8 @@
     parameter: curp
   focused_url_prefixes:
   - /newsstudios/archive/
-- domains:
+- name: elyamnelaraby
+  domains:
   - elyamnelaraby.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -5894,7 +6098,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: beauty321
+  domains:
   - beauty321.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5902,10 +6107,12 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- excluded: Query not in URL
+- name: popbela
+  excluded: Query not in URL
   domains:
   - popbela.com
-- domains:
+- name: finn
+  domains:
   - finn.no
   query_parsers:
   - url_pattern: ^https?://[^/]+/bap/forsale/search\.html\?
@@ -5917,7 +6124,8 @@
     parameter: page
   focused_url_prefixes:
   - /bap/forsale/search.html?
-- domains:
+- name: acfun
+  domains:
   - acfun.cn
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -5929,7 +6137,8 @@
     parameter: pCursor
   focused_url_prefixes:
   - /search?
-- domains:
+- name: arzdigital
+  domains:
   - arzdigital.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -5941,7 +6150,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: bd-pratidin
+  domains:
   - bd-pratidin.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/home/search\?
@@ -5949,7 +6159,8 @@
     parameter: q
   focused_url_prefixes:
   - /home/search?
-- domains:
+- name: doc88
+  domains:
   - doc88.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/tag/[^/]+
@@ -5957,7 +6168,8 @@
     segment: 2
   focused_url_prefixes:
   - /tag
-- domains:
+- name: masrawy
+  domains:
   - masrawy.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/0/[^/]+
@@ -5965,7 +6177,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: php
+  domains:
   - php.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/manual-lookup\.php\?
@@ -5973,7 +6186,8 @@
     parameter: pattern
   focused_url_prefixes:
   - /manual-lookup.php?
-- domains:
+- name: taroot-rangi
+  domains:
   - taroot-rangi.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -5989,7 +6203,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: amarujala
+  domains:
   - amarujala.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6001,7 +6216,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: yixiin
+  domains:
   - yixiin.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/sell/search\.php\?
@@ -6009,10 +6225,12 @@
     parameter: kw
   focused_url_prefixes:
   - /sell/search.php?
-- excluded: Query not in URL
+- name: xataka
+  excluded: Query not in URL
   domains:
   - xataka.com
-- domains:
+- name: julian-fashion
+  domains:
   - julian-fashion.com
   query_parsers:
   - url_pattern: https?://[^/]+/[a-z]+-[a-z]+/products/search\?
@@ -6027,10 +6245,12 @@
   - /en-US/products/search?
   - /en-CN/products/search?
   - /en-IN/products/search?
-- excluded: Query not in URL
+- name: onliner
+  excluded: Query not in URL
   domains:
   - onliner.by
-- domains:
+- name: licindia
+  domains:
   - licindia.in
   query_parsers:
   - url_pattern: ^https?://[^/]+/Search-Results\?
@@ -6042,7 +6262,8 @@
     parameter: page
   focused_url_prefixes:
   - /Search-Results
-- domains:
+- name: to10
+  domains:
   - to10.gr
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6054,7 +6275,8 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- domains:
+- name: nbg
+  domains:
   - nbg.gr
   query_parsers:
   - url_pattern: ^https?://[^/]+/el/idiwtes/search-results\?
@@ -6062,7 +6284,8 @@
     parameter: q
   focused_url_prefixes:
   - /el/idiwtes/search-results?
-- domains:
+- name: acs
+  domains:
   - acs.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6074,13 +6297,16 @@
     parameter: start
   focused_url_prefixes:
   - /?
-- excluded: Only autocomplete search
+- name: filmibeat
+  excluded: Only autocomplete search
   domains:
   - filmibeat.com
-- excluded: Query not in URL
+- name: usembassy
+  excluded: Query not in URL
   domains:
   - usembassy.gov
-- domains:
+- name: nifty
+  domains:
   - nifty.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/websearch/search\?
@@ -6092,7 +6318,8 @@
     parameter: stpos
   focused_url_prefixes:
   - /websearch/search?
-- domains:
+- name: skynewsarabia
+  domains:
   - skynewsarabia.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6104,7 +6331,8 @@
     parameter: offset
   focused_url_prefixes:
   - /search?
-- domains:
+- name: agenziaentrate
+  domains:
   - agenziaentrate.gov.it
   query_parsers:
   - url_pattern: ^https?://[^/]+/portale/ricerca\?
@@ -6112,7 +6340,8 @@
     parameter: _it_smc_sogei_search_web_SogeiAdvancedSearchPortlet_keywords
   focused_url_prefixes:
   - /portale/ricerca?
-- domains:
+- name: knowyourmeme
+  domains:
   - knowyourmeme.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6124,7 +6353,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: filgoal
+  domains:
   - filgoal.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/filter\?
@@ -6132,10 +6362,12 @@
     parameter: keyword
   focused_url_prefixes:
   - /search/filter?
-- excluded: Query not in URL
+- name: donanimhaber
+  excluded: Query not in URL
   domains:
   - donanimhaber.com
-- domains:
+- name: ashemaletube
+  domains:
   - ashemaletube.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -6147,7 +6379,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: ixxx
+  domains:
   - ixxx.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+
@@ -6162,7 +6395,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: programiz
+  domains:
   - programiz.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -6170,7 +6404,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: careers360
+  domains:
   - careers360.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/qna\?
@@ -6182,7 +6417,8 @@
     parameter: page
   focused_url_prefixes:
   - /qna?
-- domains:
+- name: myfonts
+  domains:
   - myfonts.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6197,7 +6433,8 @@
     parameter: product_data[page]
   focused_url_prefixes:
   - /search?
-- domains:
+- name: monografias
+  domains:
   - monografias.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6205,7 +6442,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: worldbank
+  domains:
   - worldbank.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search\?
@@ -6217,7 +6455,8 @@
     parameter: currentTab
   focused_url_prefixes:
   - /en/search?
-- domains:
+- name: zulily
+  domains:
   - zulily.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6225,7 +6464,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: klix
+  domains:
   - klix.ba
   query_parsers:
   - url_pattern: ^https?://[^/]+/pretraga\?
@@ -6237,7 +6477,8 @@
     parameter: str
   focused_url_prefixes:
   - /pretraga?
-- domains:
+- name: ew
+  domains:
   - ew.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -6245,7 +6486,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: warcraftlogs
+  domains:
   - warcraftlogs.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -6253,7 +6495,8 @@
     parameter: term
   focused_url_prefixes:
   - /search
-- domains:
+- name: yellowpages
+  domains:
   - yellowpages.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6265,10 +6508,12 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- excluded: Query not in URL
+- name: dy2018
+  excluded: Query not in URL
   domains:
   - dy2018.com
-- domains:
+- name: vlive
+  domains:
   - vlive.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/vstore/search\?
@@ -6276,7 +6521,8 @@
     parameter: query
   focused_url_prefixes:
   - /vstore/search?
-- domains:
+- name: answers
+  domains:
   - answers.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6284,7 +6530,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: ilfattoquotidiano
+  domains:
   - ilfattoquotidiano.it
   query_parsers:
   - url_pattern: ^https?://[^/]+/risultati-di-ricerca
@@ -6292,7 +6539,8 @@
     parameter: q
   focused_url_prefixes:
   - /risultati-di-ricerca
-- domains:
+- name: thumbzilla
+  domains:
   - thumbzilla.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/tags/[^/]+
@@ -6304,7 +6552,8 @@
     parameter: page
   focused_url_prefixes:
   - /tags
-- domains:
+- name: arynews
+  domains:
   - arynews.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6316,10 +6565,12 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- excluded: No SERP
+- name: wetteronline
+  excluded: No SERP
   domains:
   - wetteronline.de
-- domains:
+- name: sportbox
+  domains:
   - sportbox.ru
   - news.sportbox.ru
   query_parsers:
@@ -6328,7 +6579,8 @@
     parameter: keys
   focused_url_prefixes:
   - /search-content?
-- domains:
+- name: '19888'
+  domains:
   - 19888.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/provide/title_[^/]+
@@ -6355,7 +6607,8 @@
   focused_url_prefixes:
   - /chanpin
   - /provide
-- domains:
+- name: info
+  domains:
   - info.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/serp\?
@@ -6367,7 +6620,8 @@
     parameter: page
   focused_url_prefixes:
   - /serp?
-- domains:
+- name: igg-games
+  domains:
   - igg-games.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6379,7 +6633,8 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- domains:
+- name: ubuntu
+  domains:
   - ubuntu.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6391,7 +6646,8 @@
     parameter: start
   focused_url_prefixes:
   - /search?
-- domains:
+- name: nyc
+  domains:
   - nyc.gov
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/index\.page\?
@@ -6399,7 +6655,8 @@
     parameter: search-terms
   focused_url_prefixes:
   - /search/index.page?
-- domains:
+- name: nikkansports
+  domains:
   - nikkansports.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/index\.html\?
@@ -6407,7 +6664,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: navyfederal
+  domains:
   - navyfederal.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.html\?
@@ -6419,7 +6677,8 @@
     parameter: skipFrom
   focused_url_prefixes:
   - /search.html
-- domains:
+- name: filmweb
+  domains:
   - filmweb.pl
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6435,7 +6694,8 @@
   focused_url_prefixes:
   - /films/search?
   - /search?
-- domains:
+- name: docker
+  domains:
   - docker.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -6447,10 +6707,12 @@
     parameter: sf_paged
   focused_url_prefixes:
   - /search
-- excluded: Query not in URL
+- name: doramatv
+  excluded: Query not in URL
   domains:
   - doramatv.live
-- domains:
+- name: watanserb
+  domains:
   - watanserb.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6462,7 +6724,8 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- domains:
+- name: movieweb
+  domains:
   - movieweb.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -6470,7 +6733,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: leagueofgraphs
+  domains:
   - leagueofgraphs.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -6478,10 +6742,12 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- excluded: Page not loading
+- name: channelmyanmar
+  excluded: Page not loading
   domains:
   - channelmyanmar.org
-- domains:
+- name: besoccer
+  domains:
   - besoccer.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -6489,7 +6755,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: razer
+  domains:
   - razer.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -6497,7 +6764,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: royanews
+  domains:
   - royanews.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6509,7 +6777,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: ulta
+  domains:
   - ulta.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/ulta/a/_/Ntt-[^/]+
@@ -6533,7 +6802,8 @@
   - /shop
   - /ulta/a/_/
   - /brand
-- domains:
+- name: meteofrance
+  domains:
   - meteofrance.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/recherche/[^/]+
@@ -6541,9 +6811,11 @@
     segment: 2
   focused_url_prefixes:
   - /recherche
-- domains:
+- name: khabarfarsi
+  domains:
   - khabarfarsi.com
-- domains:
+- name: pc6
+  domains:
   - pc6.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/cse/search\?
@@ -6555,7 +6827,8 @@
     parameter: entry
   focused_url_prefixes:
   - /cse/search?
-- domains:
+- name: haibunda
+  domains:
   - haibunda.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search(/[0-9]+)\?
@@ -6567,7 +6840,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: opensubtitles
+  domains:
   - opensubtitles.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search2/sublanguageid-[a-z]+/moviename-[^/]+
@@ -6583,17 +6857,21 @@
     - offset-
   focused_url_prefixes:
   - /en/search2
-- excluded: No search
+- name: ampproject
+  excluded: No search
   domains:
   - ampproject.org
-- excluded: Query not in URL
+- name: citibank
+  excluded: Query not in URL
   domains:
   - citibank.co.in
   - online.citibank.co.in
-- excluded: Only autocomplete
+- name: leo
+  excluded: Only autocomplete
   domains:
   - leo.org
-- domains:
+- name: thomann
+  domains:
   - thomann.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z+]/search_dir\.html\?
@@ -6605,11 +6883,13 @@
     parameter: pg
   focused_url_prefixes:
   - /search_dir.html?
-- excluded: Query not in URL
+- name: alarab
+  excluded: Query not in URL
   notes: Uses Google search
   domains:
   - alarab.com
-- domains:
+- name: corporatefinanceinstitute
+  domains:
   - corporatefinanceinstitute.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6625,7 +6905,8 @@
   focused_url_prefixes:
   - /?
   - /resources
-- domains:
+- name: 01net
+  domains:
   - 01net.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6641,7 +6922,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: all-free-download
+  domains:
   - all-free-download.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/(free-vector|free-photos|font)/[^/]+\.html
@@ -6655,10 +6937,12 @@
   - /free-vector
   - /free-photos
   - /font
-- notes: No search
+- name: mydailymagazine
+  notes: No search
   domains:
   - mydailymagazine.com
-- domains:
+- name: sworld
+  domains:
   - sworld.co.uk
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6666,7 +6950,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: alanba
+  domains:
   - alanba.com.kw
   query_parsers:
   - url_pattern: ^https?://[^/]+/newspaper/search
@@ -6674,7 +6959,8 @@
     parameter: search
   focused_url_prefixes:
   - /newspaper/search
-- domains:
+- name: pornhd
+  domains:
   - pornhd.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+
@@ -6689,7 +6975,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: naijaloaded
+  domains:
   - naijaloaded.com.ng
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6705,7 +6992,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: wenxuecity
+  domains:
   - wenxuecity.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -6717,7 +7005,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: storyblocks
+  domains:
   - storyblocks.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/search/[^/]+
@@ -6732,7 +7021,8 @@
   - /video/search
   - /audio/search
   - /images/search
-- domains:
+- name: sbnation
+  domains:
   - sbnation.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6744,7 +7034,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: milenio
+  domains:
   - milenio.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6756,7 +7047,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: fajar
+  domains:
   - fajar.co.id
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6764,7 +7056,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: walla
+  domains:
   - walla.co.il
   - search.walla.co.il
   query_parsers:
@@ -6773,10 +7066,12 @@
     parameter: q
   focused_url_prefixes:
   - /?
-- excluded: Query not in URL
+- name: win-rar
+  excluded: Query not in URL
   domains:
   - win-rar.com
-- domains:
+- name: islcollective
+  domains:
   - islcollective.com
   - en.islcollective.com
   query_parsers:
@@ -6791,7 +7086,8 @@
   - /english-esl-worksheets/search
   - /english-esl-powerpoints/search
   - /english-esl-video-lessons/search
-- domains:
+- name: thebalance
+  domains:
   - thebalance.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6799,7 +7095,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: usmagazine
+  domains:
   - usmagazine.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search-results/\?
@@ -6807,13 +7104,16 @@
     parameter: _s
   focused_url_prefixes:
   - /search-results
-- excluded: Excluded from the Internet Archive
+- name: weheartit
+  excluded: Excluded from the Internet Archive
   domains:
   - weheartit.com
-- excluded: No search
+- name: fitbit
+  excluded: No search
   domains:
   - fitbit.com
-- domains:
+- name: domestika
+  domains:
   - domestika.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6821,7 +7121,8 @@
     parameter: query
   focused_url_prefixes:
   - /?
-- domains:
+- name: careerbuilder
+  domains:
   - careerbuilder.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/jobs\?
@@ -6833,10 +7134,12 @@
     parameter: page_number
   focused_url_prefixes:
   - /jobs
-- excluded: Redirects to Google search
+- name: financialexpress
+  excluded: Redirects to Google search
   domains:
   - financialexpress.com
-- domains:
+- name: colorado
+  domains:
   - colorado.edu
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6844,7 +7147,8 @@
     parameter: cse
   focused_url_prefixes:
   - /search?
-- domains:
+- name: clubic
+  domains:
   - clubic.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/rechercher/\?
@@ -6852,7 +7156,8 @@
     parameter: q
   focused_url_prefixes:
   - /rechercher/?
-- domains:
+- name: searchmulty
+  domains:
   - searchmulty.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6860,7 +7165,8 @@
     parameter: q
   focused_url_prefixes:
   - /?
-- domains:
+- name: 20minutes
+  domains:
   - 20minutes.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6868,7 +7174,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: thespruce
+  domains:
   - thespruce.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6880,7 +7187,8 @@
     parameter: offset
   focused_url_prefixes:
   - /search?
-- domains:
+- name: npmjs
+  domains:
   - npmjs.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6892,7 +7200,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: arstechnica
+  domains:
   - arstechnica.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -6900,16 +7209,20 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- excluded: No SERP
+- name: whois
+  excluded: No SERP
   domains:
   - whois.com
-- excluded: Query not in URL
+- name: ufreegames
+  excluded: Query not in URL
   domains:
   - ufreegames.com
-- excluded: Only autocomplete search
+- name: bseindia
+  excluded: Only autocomplete search
   domains:
   - bseindia.com
-- notes: Query is encoded
+- name: proquest
+  notes: Query is encoded
   domains:
   - proquest.com
   query_parsers:
@@ -6922,7 +7235,8 @@
     segment: 3
   focused_url_prefixes:
   - /results
-- domains:
+- name: balenciaga
+  domains:
   - balenciaga.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/search\?
@@ -6931,7 +7245,8 @@
   focused_url_prefixes:
   - /en-us/search?
   - /de-de/search?
-- domains:
+- name: boyfriendtv
+  domains:
   - boyfriendtv.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -6943,7 +7258,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: deutsche-bank
+  domains:
   - deutsche-bank.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/pk/service-und-kontakt/kontakt/suche\.html\?
@@ -6951,7 +7267,8 @@
     parameter: query
   focused_url_prefixes:
   - /pk/service-und-kontakt/kontakt/suche.html?
-- domains:
+- name: slidesgo
+  domains:
   - slidesgo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6963,7 +7280,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: puma
+  domains:
   - puma.com
   - us.puma.com
   - eu.puma.com
@@ -6978,7 +7296,8 @@
   focused_url_prefixes:
   - /us/en/search?
   - /de/de/search?
-- domains:
+- name: nudevista
+  domains:
   - nudevista.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -6990,7 +7309,8 @@
     parameter: start
   focused_url_prefixes:
   - /?
-- domains:
+- name: uspto
+  domains:
   - uspto.gov
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -6998,7 +7318,8 @@
     parameter: query
   focused_url_prefixes:
   - /search?
-- domains:
+- name: sketchfab
+  domains:
   - sketchfab.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7006,7 +7327,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: vodafone
+  domains:
   - vodafone.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/suche\.html\?
@@ -7018,10 +7340,12 @@
   focused_url_prefixes:
   - /privat/suche.html?
   - /global-search-results?
-- excluded: Query not in URL
+- name: uptvs
+  excluded: Query not in URL
   domains:
   - uptvs.com
-- domains:
+- name: pornhat
+  domains:
   - pornhat.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -7033,10 +7357,12 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- excluded: Query not in URL
+- name: societegenerale
+  excluded: Query not in URL
   domains:
   - societegenerale.fr
-- domains:
+- name: furaffinity
+  domains:
   - furaffinity.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -7044,7 +7370,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: netacad
+  domains:
   - netacad.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/node/[^/]+
@@ -7056,7 +7383,8 @@
     parameter: page
   focused_url_prefixes:
   - search/node/
-- domains:
+- name: nipic
+  domains:
   - nipic.com
   - soso.nipic.com
   query_parsers:
@@ -7069,7 +7397,8 @@
     parameter: page
   focused_url_prefixes:
   - /?
-- domains:
+- name: check24
+  domains:
   - check24.de
   - kredit.check24.de
   query_parsers:
@@ -7090,7 +7419,8 @@
   - /suche?
   - /vergleich?
   - /strom/vergleich
-- domains:
+- name: fashionnova
+  domains:
   - fashionnova.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/pages/search-results/[^/]+
@@ -7102,7 +7432,8 @@
     parameter: page
   focused_url_prefixes:
   - /pages/search-results
-- domains:
+- name: playground
+  domains:
   - playground.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -7110,7 +7441,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: virgool
+  domains:
   - virgool.io
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7118,10 +7450,12 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- excluded: Query not in URL
+- name: marieclaire
+  excluded: Query not in URL
   domains:
   - marieclaire.com.tw
-- domains:
+- name: joemonster
+  domains:
   - joemonster.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.php\?
@@ -7133,7 +7467,8 @@
     parameter: pageID
   focused_url_prefixes:
   - /search.php?
-- domains:
+- name: qwant
+  domains:
   - qwant.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -7141,7 +7476,8 @@
     parameter: q
   focused_url_prefixes:
   - /?
-- domains:
+- name: thairath
+  domains:
   - thairath.co.th
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -7149,7 +7485,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: powerschool
+  domains:
   - powerschool.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -7165,7 +7502,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: pearsonvue
+  domains:
   - pearsonvue.com
   - home.pearsonvue.com
   query_parsers:
@@ -7178,7 +7516,8 @@
     parameter: page
   focused_url_prefixes:
   - /Search.aspx?
-- domains:
+- name: denverpost
+  domains:
   - denverpost.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -7186,10 +7525,12 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- excluded: No search
+- name: uefa
+  excluded: No search
   domains:
   - uefa.com
-- domains:
+- name: celine
+  domains:
   - celine.com
   - celine.cn
   query_parsers:
@@ -7206,14 +7547,17 @@
   - /en-il/search?
   - /es-mx/search?
   - /en-ng/search?
-- excluded: Query not in URL
+- name: tcs
+  excluded: Query not in URL
   domains:
   - tcs.com
-- excluded: No search
+- name: cima4u
+  excluded: No search
   domains:
   - cima4u.tv
   - cima4u.life
-- domains:
+- name: sbi
+  domains:
   - sbi.co.in
   query_parsers:
   - url_pattern: ^https?://[^/]+/web/personal-banking
@@ -7225,13 +7569,16 @@
     parameter: _com_liferay_portal_search_web_portlet_SearchPortlet_cur
   focused_url_prefixes:
   - /web/personal-banking
-- excluded: Redirects to DuckDuckGo search
+- name: w3
+  excluded: Redirects to DuckDuckGo search
   domains:
   - w3.org
-- excluded: No search
+- name: shippingchina
+  excluded: No search
   domains:
   - shippingchina.com
-- domains:
+- name: secnews
+  domains:
   - secnews.gr
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -7247,10 +7594,12 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: No search
+- name: tsite
+  excluded: No search
   domains:
   - tsite.jp
-- domains:
+- name: interieur
+  domains:
   - interieur.gouv.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/recherche\?
@@ -7262,7 +7611,8 @@
     parameter: page
   focused_url_prefixes:
   - /recherche?
-- domains:
+- name: gib
+  domains:
   - gib.gov.tr
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/node/[^/]+
@@ -7274,11 +7624,13 @@
     parameter: page
   focused_url_prefixes:
   - /search/node/
-- excluded: Query not in URL
+- name: aglasem
+  excluded: Query not in URL
   notes: Uses Google search
   domains:
   - aglasem.com
-- domains:
+- name: zalando
+  domains:
   - zalando.de
   - en.zalando.de
   query_parsers:
@@ -7296,7 +7648,8 @@
   - /sports-women
   - /sports-men
   - /sports-kids
-- domains:
+- name: jbhifi
+  domains:
   - jbhifi.com.au
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7308,7 +7661,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: chefkoch
+  domains:
   - chefkoch.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
@@ -7322,7 +7676,8 @@
     - s
   focused_url_prefixes:
   - /rs/s
-- domains:
+- name: microcenter
+  domains:
   - microcenter.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/search_results\.aspx
@@ -7334,10 +7689,12 @@
     parameter: page
   focused_url_prefixes:
   - /search/search_results.aspx
-- excluded: No search
+- name: yourdailysportfix
+  excluded: No search
   domains:
   - yourdailysportfix.com
-- domains:
+- name: sec
+  domains:
   - sec.gov
   - secsearch.sec.gov
   query_parsers:
@@ -7350,7 +7707,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: dim
+  domains:
   - dim.gov.az
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -7362,7 +7720,8 @@
     parameter: PAGEN_1
   focused_url_prefixes:
   - /?
-- domains:
+- name: tv9telugu
+  domains:
   - tv9telugu.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7370,7 +7729,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: 3isk
+  domains:
   - 3isk.tv
   - 3isk.video
   query_parsers:
@@ -7381,7 +7741,8 @@
     - \+
   focused_url_prefixes:
   - /search
-- domains:
+- name: sciencemag
+  domains:
   - science.org
   - sciencemag.org
   query_parsers:
@@ -7394,7 +7755,8 @@
     parameter: startPage
   focused_url_prefixes:
   - /action/doSearch?
-- domains:
+- name: dicio
+  domains:
   - dicio.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/pesquisa\.php\?
@@ -7402,7 +7764,8 @@
     parameter: q
   focused_url_prefixes:
   - /pesquisa.php?
-- domains:
+- name: bunshun
+  domains:
   - bunshun.jp
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7414,7 +7777,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: sedo
+  domains:
   - sedo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/
@@ -7422,7 +7786,8 @@
     parameter: keyword
   focused_url_prefixes:
   - /search
-- domains:
+- name: fzg360
+  domains:
   - fzg360.com
   - gz.fzg360.com
   query_parsers:
@@ -7440,7 +7805,8 @@
     - \.html$
   focused_url_prefixes:
   - /news/lists
-- domains:
+- name: simplilearn
+  domains:
   - simplilearn.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7448,7 +7814,8 @@
     parameter: tag
   focused_url_prefixes:
   - /search?
-- domains:
+- name: tovima
+  domains:
   - tovima.gr
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -7456,7 +7823,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: redwap
+  domains:
   - redwap.me
   query_parsers:
   - url_pattern: ^https?://[^/]+/to/[^/]+
@@ -7466,7 +7834,8 @@
     - '-'
   focused_url_prefixes:
   - /to
-- domains:
+- name: manualslib
+  domains:
   - manualslib.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/[^/]+.html
@@ -7478,7 +7847,8 @@
     parameter: page
   focused_url_prefixes:
   - /brand
-- domains:
+- name: groww
+  domains:
   - groww.in
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7486,7 +7856,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: fosshub
+  domains:
   - fosshub.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -7494,7 +7865,8 @@
     parameter: search-query
   focused_url_prefixes:
   - /?
-- domains:
+- name: tineye
+  domains:
   - tineye.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -7506,7 +7878,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: ixl
+  domains:
   - ixl.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7514,7 +7887,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: investors
+  domains:
   - investors.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search-results/
@@ -7522,7 +7896,8 @@
     parameter: query
   focused_url_prefixes:
   - /search-results
-- domains:
+- name: javbus
+  domains:
   - javbus.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -7534,7 +7909,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: ilna
+  domains:
   - ilna.news
   query_parsers:
   - url_pattern: ^https?://[^/]+/fa/newsstudios/search
@@ -7542,7 +7918,8 @@
     parameter: q
   focused_url_prefixes:
   - /fa/newsstudios/search
-- notes: 'Library of Congress.'
+- name: loc
+  notes: 'Library of Congress.'
   domains:
   - loc.gov
   query_parsers:
@@ -7564,7 +7941,8 @@
   - /newspapers
   - /photos
   - /web-archives
-- domains:
+- name: bradesco
+  domains:
   - bradesco.com.br
   - banco.bradesco
   query_parsers:
@@ -7573,7 +7951,8 @@
     parameter: termsearched
   focused_url_prefixes:
   - /html/classic/resultado-busca/
-- domains:
+- name: thefappeningblog
+  domains:
   - thefappeningblog.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -7581,7 +7960,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: msdmanuals
+  domains:
   - msdmanuals.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/.*SearchResults\?
@@ -7595,7 +7975,8 @@
   - /SearchResults?
   - /professional/SearchResults?
   - /home/SearchResults?
-- domains:
+- name: fuq
+  domains:
   - fuq.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+
@@ -7610,7 +7991,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: sarvgyan
+  domains:
   - sarvgyan.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -7626,7 +8008,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: anyporn
+  domains:
   - anyporn.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -7634,7 +8017,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: simplyhired
+  domains:
   - simplyhired.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7646,7 +8030,8 @@
     parameter: pn
   focused_url_prefixes:
   - /search?
-- domains:
+- name: xhamsterpremium
+  domains:
   - xhamsterpremium.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/(c|p)/(amateur|xhamster-category)/(videos|click)\?
@@ -7659,13 +8044,16 @@
   - /c/amateur/videos?
   - /categories?
   - /p/xhamster-category/click?
-- excluded: Query not in URL
+- name: diretta
+  excluded: Query not in URL
   domains:
   - diretta.it
-- excluded: Only autocomplete search
+- name: coolmathgames
+  excluded: Only autocomplete search
   domains:
   - coolmathgames.com
-- domains:
+- name: podbean
+  domains:
   - podbean.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/site/search/index\?
@@ -7673,7 +8061,8 @@
     parameter: v
   focused_url_prefixes:
   - /site/search/index?
-- domains:
+- name: newgrounds
+  domains:
   - newgrounds.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -7681,7 +8070,8 @@
     parameter: terms
   focused_url_prefixes:
   - /search
-- domains:
+- name: tebyan
+  domains:
   - tebyan.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/newindex\.aspx\?
@@ -7693,13 +8083,16 @@
     parameter: pi
   focused_url_prefixes:
   - /newindex.aspx?
-- excluded: Excluded from the Internet Archive
+- name: paheal
+  excluded: Excluded from the Internet Archive
   domains:
   - paheal.net
-- excluded: No search
+- name: sportzbonanza
+  excluded: No search
   domains:
   - sportzbonanza.com
-- domains:
+- name: dailypakistan
+  domains:
   - dailypakistan.com.pk
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?cx
@@ -7707,10 +8100,12 @@
     parameter: q
   focused_url_prefixes:
   - /?cx
-- excluded: Query not in URL
+- name: edf
+  excluded: Query not in URL
   domains:
   - edf.fr
-- domains:
+- name: bigbasket
+  domains:
   - bigbasket.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/ps/\?
@@ -7722,7 +8117,8 @@
     parameter: '!page'
   focused_url_prefixes:
   - /ps
-- domains:
+- name: iwank
+  domains:
   - iwank.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -7734,10 +8130,12 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: coolors
+  excluded: No search
   domains:
   - coolors.co
-- domains:
+- name: instant-gaming
+  domains:
   - instant-gaming.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/\?
@@ -7749,13 +8147,16 @@
     parameter: page
   focused_url_prefixes:
   - /en/search
-- excluded: Query not in URL
+- name: ovh
+  excluded: Query not in URL
   domains:
   - ovh.com
-- excluded: No search
+- name: jiayuan
+  excluded: No search
   domains:
   - jiayuan.com
-- domains:
+- name: kongfz
+  domains:
   - kongfz.com
   - search.kongfz.com
   query_parsers:
@@ -7768,7 +8169,8 @@
     parameter: pagenum
   focused_url_prefixes:
   - /product_result?
-- domains:
+- name: babyshop
+  domains:
   - babyshop.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/searchbytext\?
@@ -7780,13 +8182,16 @@
     parameter: page
   focused_url_prefixes:
   - /search/searchbytext?
-- excluded: Redirects to Baidu search
+- name: '18183'
+  excluded: Redirects to Baidu search
   domains:
   - 18183.com
-- excluded: Only autocomplete search
+- name: 3bmeteo
+  excluded: Only autocomplete search
   domains:
   - 3bmeteo.com
-- domains:
+- name: e621
+  domains:
   - e621.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/posts\?
@@ -7798,7 +8203,8 @@
     parameter: page
   focused_url_prefixes:
   - /posts?
-- domains:
+- name: interactivebrokers
+  domains:
   - interactivebrokers.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/en/search/index\.php\?
@@ -7810,7 +8216,8 @@
     parameter: page
   focused_url_prefixes:
   - /en/search/index.php?
-- domains:
+- name: bottegaveneta
+  domains:
   - bottegaveneta.com
   - bottegaveneta.cn
   query_parsers:
@@ -7825,10 +8232,12 @@
   - /en-en/search?
   - /en-us/search?
   - /de-de/search?
-- excluded: No search
+- name: arvancloud
+  excluded: No search
   domains:
   - arvancloud.com
-- domains:
+- name: movistarplus
+  domains:
   - movistarplus.es
   - atencionalcliente.movistar.es
   query_parsers:
@@ -7837,7 +8246,8 @@
     parameter: q
   focused_url_prefixes:
   - /?
-- domains:
+- name: club-k
+  domains:
   - club-k.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/index
@@ -7849,13 +8259,16 @@
     parameter: limitstart
   focused_url_prefixes:
   - /index.php
-- excluded: Only autocomplete search
+- name: bina
+  excluded: Only autocomplete search
   domains:
   - bina.az
-- excluded: Query not in URL
+- name: upmedia
+  excluded: Query not in URL
   domains:
   - upmedia.mg
-- domains:
+- name: travelermaster
+  domains:
   - travelermaster.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -7871,7 +8284,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: elecfans
+  domains:
   - elecfans.com
   - s.elecfans.com
   query_parsers:
@@ -7884,7 +8298,8 @@
     parameter: page
   focused_url_prefixes:
   - /s?
-- domains:
+- name: tailorbrands
+  domains:
   - tailorbrands.com
   - support.tailorbrands.com
   query_parsers:
@@ -7897,7 +8312,8 @@
     parameter: page
   focused_url_prefixes:
   - /hc/en-us/search?
-- domains:
+- name: russianfood
+  domains:
   - russianfood.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/simple/index\.php\?
@@ -7909,7 +8325,8 @@
     parameter: page
   focused_url_prefixes:
   - /search/simple/index.php?
-- domains:
+- name: life
+  domains:
   - life.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7917,7 +8334,8 @@
     parameter: search
   focused_url_prefixes:
   - /search?
-- domains:
+- name: tuasaude
+  domains:
   - tuasaude.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/busca/\?
@@ -7925,7 +8343,8 @@
     parameter: s
   focused_url_prefixes:
   - /busca
-- domains:
+- name: iconfinder
+  domains:
   - iconfinder.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7933,7 +8352,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: themoviedb
+  domains:
   - themoviedb.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -7945,7 +8365,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: jiomart
+  domains:
   - jiomart.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/catalogsearch/result\?
@@ -7953,7 +8374,8 @@
     parameter: q
   focused_url_prefixes:
   - /catalogsearch/result?
-- domains:
+- name: dhl
+  domains:
   - dhl.com
   - dhl.de
   query_parsers:
@@ -7962,7 +8384,8 @@
     parameter: q
   focused_url_prefixes:
   - /de/privatkunden/suche.html?
-- domains:
+- name: duosecurity
+  domains:
   - duosecurity.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7970,7 +8393,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: pcworld
+  domains:
   - pcworld.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -7982,7 +8406,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: jiwu
+  domains:
   - jiwu.com
   - foshan.jiwu.com
   query_parsers:
@@ -7994,7 +8419,8 @@
     - \.html$
   focused_url_prefixes:
   - /loupan
-- domains:
+- name: afternic
+  domains:
   - afternic.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8002,7 +8428,8 @@
     parameter: k
   focused_url_prefixes:
   - /search?
-- domains:
+- name: notebookcheck
+  domains:
   - notebookcheck.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/Google-Search
@@ -8010,7 +8437,8 @@
     parameter: q
   focused_url_prefixes:
   - /Google-Search
-- domains:
+- name: altibbi
+  domains:
   - altibbi.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/questions\?
@@ -8022,10 +8450,12 @@
     parameter: page
   focused_url_prefixes:
   - /search/questions
-- excluded: No search
+- name: planetsuzy
+  excluded: No search
   domains:
   - planetsuzy.org
-- domains:
+- name: zaful
+  domains:
   - zaful.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -8037,10 +8467,12 @@
     parameter: pn
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: po-kaki-to
+  excluded: No search
   domains:
   - po-kaki-to.com
-- domains:
+- name: ig
+  domains:
   - ig.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/buscar
@@ -8052,7 +8484,8 @@
     parameter: p
   focused_url_prefixes:
   - /buscar
-- domains:
+- name: focus
+  domains:
   - focus.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/suche
@@ -8060,7 +8493,8 @@
     parameter: q
   focused_url_prefixes:
   - /suche
-- notes: Search results are flight connections, query is the destination
+- name: latam
+  notes: Search results are flight connections, query is the destination
   domains:
   - latam.com
   query_parsers:
@@ -8071,7 +8505,8 @@
   - /gb/en/flight-offers?
   - /de/de/flugangebote?
   - /mx/es/ofertas-vuelos?
-- domains:
+- name: anysex
+  domains:
   - anysex.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -8086,7 +8521,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: geihui
+  domains:
   - geihui.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/searchlog\?
@@ -8094,7 +8530,8 @@
     parameter: k
   focused_url_prefixes:
   - /searchlog?
-- domains:
+- name: patagonia
+  domains:
   - patagonia.com
   - eu.patagonia.com
   - patagonia-ar.com
@@ -8116,7 +8553,8 @@
   - /search/?
   - /de/de/search/?
   - /gb/en/search/?
-- domains:
+- name: verycd
+  domains:
   - verycd.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/
@@ -8124,7 +8562,8 @@
     parameter: kw
   focused_url_prefixes:
   - /search
-- domains:
+- name: steamdb
+  domains:
   - steamdb.info
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -8132,7 +8571,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: animixplay
+  domains:
   - animixplay.to
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8140,7 +8580,8 @@
     parameter: q
   focused_url_prefixes:
   - /?
-- domains:
+- name: bonanza
+  domains:
   - bonanza.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/items/search\?
@@ -8152,7 +8593,8 @@
     parameter: q[page]
   focused_url_prefixes:
   - /items/search?
-- domains:
+- name: mql5
+  domains:
   - mql5.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search
@@ -8164,7 +8606,8 @@
     parameter: page
   focused_url_prefixes:
   - /it/search
-- domains:
+- name: keezmovies
+  domains:
   - keezmovies.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/video\?
@@ -8172,7 +8615,8 @@
     parameter: search
   focused_url_prefixes:
   - /video?
-- domains:
+- name: 9to5mac
+  domains:
   - 9to5mac.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8188,7 +8632,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: usa
+  domains:
   - usa.gov
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8200,7 +8645,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: etudiant
+  domains:
   - etudiant.gouv.fr
   query_parsers:
   - url_pattern: ^https?://[a-z]+/recherche\?
@@ -8208,7 +8654,8 @@
     parameter: keywords
   focused_url_prefixes:
   - /fr/recherche?
-- domains:
+- name: al-maraabimedias
+  domains:
   - al-maraabimedias.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8222,7 +8669,8 @@
     parameter: paged
   focused_url_prefixes:
   - /?
-- domains:
+- name: justice
+  domains:
   - justice.gov
   - search.justice.gov
   query_parsers:
@@ -8235,7 +8683,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: alison
+  domains:
   - alison.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/(courses|careers-search)\?
@@ -8248,7 +8697,8 @@
   focused_url_prefixes:
   - /courses?
   - /careers-search?
-- domains:
+- name: darty
+  domains:
   - darty.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/nav/recherche/[^/]+
@@ -8265,7 +8715,8 @@
     parameter: o
   focused_url_prefixes:
   - /nav/recherche
-- domains:
+- name: theringer
+  domains:
   - theringer.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8277,7 +8728,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: tueren-fachhandel
+  domains:
   - tueren-fachhandel.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/catalogsearch/result\?
@@ -8289,7 +8741,8 @@
     parameter: p
   focused_url_prefixes:
   - /catalogsearch/result\?
-- domains:
+- name: nesn
+  domains:
   - nesn.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8297,7 +8750,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: zimbio
+  domains:
   - zimbio.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8309,7 +8763,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: niksalehi
+  domains:
   - niksalehi.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8317,7 +8772,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: ehow
+  domains:
   - ehow.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8329,7 +8785,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: pornmd
+  domains:
   - pornmd.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/(gay|straight|tranny)/[^/]+
@@ -8341,7 +8798,8 @@
   - /straight
   - /gay
   - /tranny
-- domains:
+- name: 2ch-c
+  domains:
   - 2ch-c.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8353,10 +8811,12 @@
     parameter: pn
   focused_url_prefixes:
   - /?
-- excluded: Query not in URL
+- name: mtv
+  excluded: Query not in URL
   domains:
   - mtv.com
-- domains:
+- name: setareparsi
+  domains:
   - setareparsi.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/newsstudios/archive/\?
@@ -8364,7 +8824,8 @@
     parameter: query
   focused_url_prefixes:
   - /newsstudios/archive
-- domains:
+- name: tweaktown
+  domains:
   - tweaktown.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/cse/\?
@@ -8372,7 +8833,8 @@
     parameter: q
   focused_url_prefixes:
   - /cse/?
-- domains:
+- name: softfamous
+  domains:
   - softfamous.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8380,7 +8842,8 @@
     parameter: s
   focused_url_prefixes:
   - /?s
-- domains:
+- name: hsbianma
+  domains:
   - hsbianma.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[Ss]earch
@@ -8393,7 +8856,8 @@
   focused_url_prefixes:
   - /search?
   - /Search/
-- domains:
+- name: zaobao
+  domains:
   - zaobao.com
   - zaobao.com.sg
   query_parsers:
@@ -8406,7 +8870,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: givemesport
+  excluded: No search
   domains:
   - givemesport.com
   query_parsers:
@@ -8423,7 +8888,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: internshala
+  domains:
   - internshala.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/(internships|jobs)/keywords-[^/]+/
@@ -8440,7 +8906,8 @@
   focused_url_prefixes:
   - /internships
   - /jobs
-- domains:
+- name: jogos360
+  domains:
   - jogos360.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.php\?
@@ -8452,7 +8919,8 @@
     parameter: p
   focused_url_prefixes:
   - /search.php?
-- domains:
+- name: belgium
+  domains:
   - belgium.be
   - fgov.be
   query_parsers:
@@ -8468,7 +8936,8 @@
   - /nl/search?
   - /fr/search?
   - /de/search?
-- domains:
+- name: todayhumor
+  domains:
   - todayhumor.co.kr
   query_parsers:
   - url_pattern: ^https?://[^/]+/board/list\.php\?
@@ -8480,7 +8949,8 @@
     parameter: page
   focused_url_prefixes:
   - /board/list.php?
-- domains:
+- name: dice
+  domains:
   - dice.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/jobs\?
@@ -8492,10 +8962,12 @@
     parameter: page
   focused_url_prefixes:
   - /jobs?
-- excluded: Query not in URL
+- name: tubegalore
+  excluded: Query not in URL
   domains:
   - tubegalore.com
-- domains:
+- name: nationwide
+  domains:
   - nationwide.co.uk
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -8503,7 +8975,8 @@
     parameter: term
   focused_url_prefixes:
   - /search
-- domains:
+- name: sunporno
+  domains:
   - sunporno.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -8511,7 +8984,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: serebii
+  domains:
   - serebii.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.shtml\?
@@ -8519,7 +8993,8 @@
     parameter: q
   focused_url_prefixes:
   - search.shtml?
-- domains:
+- name: irrawaddy
+  domains:
   - irrawaddy.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8527,7 +9002,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- excluded: Query not in URL
+- name: khabarvarzeshi
+  excluded: Query not in URL
   domains:
   - khabarvarzeshi.com
   query_parsers:
@@ -8540,7 +9016,8 @@
     parameter: pi
   focused_url_prefixes:
   - /search?
-- domains:
+- name: arca
+  domains:
   - arca.live
   query_parsers:
   - url_pattern: ^https?://[^/]+/b/breaking\?
@@ -8552,10 +9029,12 @@
     parameter: p
   focused_url_prefixes:
   - /b/breaking?
-- excluded: Query not in URL
+- name: soccer24
+  excluded: Query not in URL
   domains:
   - soccer24.com
-- domains:
+- name: javhdporn
+  domains:
   - javhdporn.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -8567,7 +9046,8 @@
     segment: 4
   focused_url_prefixes:
   - /search
-- domains:
+- name: letpub
+  domains:
   - letpub.com.cn
   query_parsers:
   - url_pattern: ^https?://[^/]+/index\.php\?
@@ -8579,7 +9059,8 @@
     parameter: currentsearchpage
   focused_url_prefixes:
   - /index.php?
-- domains:
+- name: areavip
+  domains:
   - areavip.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8591,7 +9072,8 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- domains:
+- name: eztv
+  domains:
   - eztv.re
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -8599,7 +9081,8 @@
     parameter: q1
   focused_url_prefixes:
   - /search
-- domains:
+- name: opendns
+  domains:
   - opendns.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -8611,7 +9094,8 @@
     parameter: cludopage
   focused_url_prefixes:
   - /search
-- domains:
+- name: brave
+  domains:
   - brave.com
   - search.brave.com
   query_parsers:
@@ -8624,10 +9108,12 @@
     parameter: offset
   focused_url_prefixes:
   - /search?
-- excluded: Query not in URL
+- name: thenextweb
+  excluded: Query not in URL
   domains:
   - thenextweb.com
-- domains:
+- name: dreamhost
+  domains:
   - dreamhost.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/domains/\?
@@ -8635,7 +9121,8 @@
     parameter: domain
   focused_url_prefixes:
   - /domains/?
-- domains:
+- name: ck365
+  domains:
   - ck365.cn
   query_parsers:
   - url_pattern: ^https?://[^/]+/news/search(-xzg-)?kw-[^-]-\.html
@@ -8653,7 +9140,8 @@
     - (-page-[0-9])?-?\.html$
   focused_url_prefixes:
   - /news/search
-- domains:
+- name: thegospelcoalition
+  domains:
   - thegospelcoalition.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8661,7 +9149,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: iq
+  domains:
   - iq.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8669,7 +9158,8 @@
     parameter: query
   focused_url_prefixes:
   - /search?
-- domains:
+- name: wgu
+  domains:
   - wgu.edu
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.html
@@ -8681,7 +9171,8 @@
     parameter: cludopage
   focused_url_prefixes:
   - /search.html
-- domains:
+- name: levi
+  domains:
   - levi.com
   - levi.com.cn
   - levi.in
@@ -8708,10 +9199,12 @@
   - /DE/de_DE/search
   - /search/result?
   - /search?
-- excluded: No search
+- name: hochi
+  excluded: No search
   domains:
   - hochi.news
-- domains:
+- name: yalla-shoot-new
+  domains:
   - yalla-shoot-new.com
   - cup.yalla-shoot-new.com
   query_parsers:
@@ -8724,7 +9217,8 @@
     parameter: start
   focused_url_prefixes:
   - /search?
-- domains:
+- name: radiotimes
+  domains:
   - radiotimes.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -8740,7 +9234,8 @@
   focused_url_prefixes:
   - /search/?
   - /search/news/page
-- domains:
+- name: dev
+  domains:
   - dev.to
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8748,7 +9243,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: brstej
+  domains:
   - brstej.com
   - s.brstej.net
   query_parsers:
@@ -8761,10 +9257,12 @@
     parameter: page
   focused_url_prefixes:
   - /search.php?
-- excluded: Page not loading
+- name: thisav
+  excluded: Page not loading
   domains:
   - thisav.com
-- domains:
+- name: olevod
+  domains:
   - olevod.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/index\.php/[^/]+/search.html\?
@@ -8781,7 +9279,8 @@
     segment: 5
   focused_url_prefixes:
   - /index.php/
-- domains:
+- name: kinsta
+  domains:
   - kinsta.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8793,7 +9292,8 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- domains:
+- name: aftodioikisi
+  domains:
   - aftodioikisi.gr
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8809,7 +9309,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: stardewvalleywiki
+  domains:
   - stardewvalleywiki.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/mediawiki/index\.php\?
@@ -8817,7 +9318,8 @@
     parameter: search
   focused_url_prefixes:
   - /mediawiki/index.php?
-- domains:
+- name: thomasnet
+  domains:
   - thomasnet.com
   - news.thomasnet.com
   query_parsers:
@@ -8833,7 +9335,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: dafiti
+  domains:
   - dafiti.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/catalog/\?
@@ -8852,10 +9355,12 @@
   focused_url_prefixes:
   - /catalog/?
   - /?
-- excluded: Only autocomplete search
+- name: letyshops
+  excluded: Only autocomplete search
   domains:
   - letyshops.com
-- domains:
+- name: linkvertise
+  domains:
   - linkvertise.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -8867,7 +9372,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: '999'
+  domains:
   - 999.md
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8879,7 +9385,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: ac-versailles
+  domains:
   - ac-versailles.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/recherche
@@ -8892,9 +9399,11 @@
   focused_url_prefixes:
   - /recherche?
   - /recherche/type/actualites?
-- domains:
+- name: exey
+  domains:
   - exey.io
-- domains:
+- name: manganato
+  domains:
   - manganato.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/story/[^/]+
@@ -8906,7 +9415,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: hrblock
+  domains:
   - hrblock.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -8918,7 +9428,8 @@
     parameter: firstResult
   focused_url_prefixes:
   - /search
-- domains:
+- name: kizi
+  domains:
   - kizi.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -8930,7 +9441,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: jobartis
+  domains:
   - jobartis.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/vagas-emprego/[^/]+
@@ -8945,7 +9457,8 @@
     parameter: page
   focused_url_prefixes:
   - /vagas-emprego
-- domains:
+- name: ap
+  domains:
   - ap.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.wz\?
@@ -8953,7 +9466,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: photokade
+  domains:
   - photokade.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -8969,7 +9483,8 @@
   focused_url_prefixes:
   - /
   - /page
-- domains:
+- name: hdrezka
+  domains:
   - hdrezka.ag
   - hdrezka.me
   query_parsers:
@@ -8982,7 +9497,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: actblue
+  domains:
   - actblue.com
   - secure.actblue.com
   query_parsers:
@@ -8995,7 +9511,8 @@
     parameter: page
   focused_url_prefixes:
   - /directory
-- domains:
+- name: letmejerk
+  domains:
   - letmejerk.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/se/[^/]+
@@ -9007,10 +9524,12 @@
     parameter: p
   focused_url_prefixes:
   - /se
-- excluded: Page not loading
+- name: pardot
+  excluded: Page not loading
   domains:
   - pardot.com
-- domains:
+- name: cjdropshipping
+  domains:
   - cjdropshipping.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -9024,7 +9543,8 @@
     parameter: pageNum
   focused_url_prefixes:
   - /search
-- domains:
+- name: chittorgarh
+  domains:
   - chittorgarh.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.asp\?
@@ -9032,7 +9552,8 @@
     parameter: text
   focused_url_prefixes:
   - /search.asp?
-- domains:
+- name: gidonline
+  domains:
   - gidonline.io
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9040,11 +9561,13 @@
     parameter: s
   focused_url_prefixes:
   - /?s
-- excluded: Query not in URL
+- name: xitongcheng
+  excluded: Query not in URL
   domains:
   - xitongcheng.com
   - s.xitongcheng.com
-- domains:
+- name: subf2m
+  domains:
   - subf2m.co
   query_parsers:
   - url_pattern: ^https?://[^/]+/subtitles/searchbytitle\?
@@ -9052,10 +9575,12 @@
     parameter: query
   focused_url_prefixes:
   - /subtitles/searchbytitle?
-- excluded: No search
+- name: plesk
+  excluded: No search
   domains:
   - plesk.com
-- domains:
+- name: tigerdirect
+  domains:
   - tigerdirect.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/applications/(C|c)ategory
@@ -9072,7 +9597,8 @@
   - /applications/category
   - /applications/Category
   - /applications/SearchTools
-- domains:
+- name: fatosdesconhecidos
+  domains:
   - fatosdesconhecidos.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9080,7 +9606,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: dmhy
+  domains:
   - dmhy.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/topics/list\?
@@ -9088,7 +9615,8 @@
     parameter: keyword
   focused_url_prefixes:
   - /topics/list?
-- domains:
+- name: ants
+  domains:
   - ants.gouv.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/rechercher\?
@@ -9096,7 +9624,8 @@
     parameter: q
   focused_url_prefixes:
   - /rechercher
-- excluded: No search
+- name: moniban
+  excluded: No search
   domains:
   - moniban.news
   query_parsers:
@@ -9109,7 +9638,8 @@
     parameter: curp
   focused_url_prefixes:
   - /newsstudios/archive/
-- domains:
+- name: letour
+  domains:
   - letour.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/en/search/[^/]+
@@ -9129,7 +9659,8 @@
   - /fr/rechercher
   - /de/suche
   - /es/busqueda
-- domains:
+- name: empflix
+  domains:
   - empflix.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9141,7 +9672,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: asurascans
+  domains:
   - asurascans.com
   - asura.gg
   query_parsers:
@@ -9154,10 +9686,12 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- excluded: Excluded from the Internet Archive
+- name: luxuretv
+  excluded: Excluded from the Internet Archive
   domains:
   - luxuretv.com
-- domains:
+- name: hi
+  domains:
   - hi.gt
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9169,7 +9703,8 @@
   focused_url_prefixes:
   - /?
   - /search
-- domains:
+- name: kuai8
+  domains:
   - kuai8.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -9181,7 +9716,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: nsfc
+  domains:
   - nsfc.gov.cn
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.htm\?
@@ -9189,7 +9725,8 @@
     parameter: q
   focused_url_prefixes:
   - /search.htm?
-- excluded: No valid snapshot
+- name: ftc
+  excluded: No valid snapshot
   domains:
   - ftc.gov
   - search.ftc.gov
@@ -9203,16 +9740,20 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- excluded: Query not in URL
+- name: websiteseochecker
+  excluded: Query not in URL
   domains:
   - websiteseochecker.com
-- excluded: No search
+- name: shiprocket
+  excluded: No search
   domains:
   - shiprocket.in
-- excluded: No search
+- name: powerapp
+  excluded: No search
   domains:
   - powerapp.download
-- domains:
+- name: al-marsd
+  domains:
   - al-marsd.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9220,7 +9761,8 @@
     parameter: query
   focused_url_prefixes:
   - /search?
-- domains:
+- name: peardeck
+  domains:
   - peardeck.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9228,7 +9770,8 @@
     parameter: query
   focused_url_prefixes:
   - /search?
-- domains:
+- name: wikimapia
+  domains:
   - wikimapia.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/
@@ -9236,7 +9779,8 @@
     parameter: search
   focused_url_prefixes:
   - /
-- domains:
+- name: discovercard
+  domains:
   - discovercard.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -9244,7 +9788,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: aldar
+  domains:
   - aldar.ma
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9252,12 +9797,15 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- excluded: Domain parking
+- name: 5i8xkqjmqubv
+  excluded: Domain parking
   domains:
   - 5i8xkqjmqubv.top
-- domains:
+- name: searchdimension
+  domains:
   - searchdimension.com
-- domains:
+- name: gimy
+  domains:
   - gimy.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -9276,13 +9824,16 @@
     - ([^0-9.])
   focused_url_prefixes:
   - /search
-- excluded: Page not loading
+- name: 0123movie
+  excluded: Page not loading
   domains:
   - 0123movie.net
-- excluded: Query not in URL
+- name: influencermarketinghub
+  excluded: Query not in URL
   domains:
   - influencermarketinghub.com
-- domains:
+- name: jra
+  domains:
   - jra.go.jp
   - jra.jp
   query_parsers:
@@ -9295,10 +9846,12 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: 2checkout
+  excluded: No search
   domains:
   - 2checkout.com
-- domains:
+- name: imna
+  domains:
   - imna.ir
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9306,7 +9859,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: bauhaus
+  domains:
   - bauhaus.info
   query_parsers:
   - url_pattern: ^https?://[^/]+/suche/produkte\?
@@ -9318,7 +9872,8 @@
     parameter: shownProducts
   focused_url_prefixes:
   - /suche/produkte?
-- domains:
+- name: jamaran
+  domains:
   - jamaran.news
   query_parsers:
   - url_pattern: ^https?://[^/]+/newsstudios/search\?
@@ -9328,7 +9883,8 @@
     - \+
   focused_url_prefixes:
   - /newsstudios/search?
-- domains:
+- name: senate
+  domains:
   - senate.gov
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/search
@@ -9340,7 +9896,8 @@
     parameter: start
   focused_url_prefixes:
   - /general/search
-- domains:
+- name: hunter
+  domains:
   - hunter.io
   query_parsers:
   - url_pattern: ^https?://[^/]+/try/search/[^/]+
@@ -9348,7 +9905,8 @@
     segment: 3
   focused_url_prefixes:
   - /try/search
-- notes: exclude
+- name: educacao
+  notes: exclude
   domains:
   - educacao.mg.gov.br
   - www2.educacao.mg.gov.br
@@ -9358,7 +9916,8 @@
     parameter: all
   focused_url_prefixes:
   - /component/search
-- domains:
+- name: webcrawler
+  domains:
   - webcrawler.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/serp\?
@@ -9370,10 +9929,12 @@
     parameter: page
   focused_url_prefixes:
   - /serp?
-- excluded: No search
+- name: kooora365
+  excluded: No search
   domains:
   - kooora365.com
-- domains:
+- name: moviesjoy
+  domains:
   - moviesjoy.to
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -9381,7 +9942,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: 17zwd
+  domains:
   - 17zwd.com
   - gz.17zwd.com
   query_parsers:
@@ -9394,7 +9956,8 @@
     parameter: spage
   focused_url_prefixes:
   - /sks.htm?
-- domains:
+- name: prweb
+  domains:
   - prweb.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.aspx\?
@@ -9410,7 +9973,8 @@
   focused_url_prefixes:
   - /search.aspx?
   - /Search.aspx?
-- domains:
+- name: almashhad-alyemeni
+  domains:
   - almashhad-alyemeni.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/section
@@ -9418,7 +9982,8 @@
     parameter: keyword
   focused_url_prefixes:
   - /section
-- domains:
+- name: fortinet
+  domains:
   - fortinet.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -9426,7 +9991,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- notes: Search ID instead of Query
+- name: dygang
+  notes: Search ID instead of Query
   domains:
   - dygang.com
   - dygang.cc
@@ -9439,7 +10005,8 @@
     parameter: searchid
   focused_url_prefixes:
   - /e/search/result?
-- domains:
+- name: yts-subs
+  domains:
   - yts-subs.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -9451,7 +10018,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: activecampaign
+  domains:
   - activecampaign.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9459,10 +10027,12 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- excluded: No search
+- name: loveplanet
+  excluded: No search
   domains:
   - loveplanet.ru
-- domains:
+- name: upworthy
+  domains:
   - upworthy.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -9470,7 +10040,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: diagrams
+  domains:
   - diagrams.net
   - drawio.com
   query_parsers:
@@ -9479,7 +10050,8 @@
     parameter: search
   focused_url_prefixes:
   - /search?
-- domains:
+- name: povar
+  domains:
   - povar.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/xmlsearch\?
@@ -9491,10 +10063,12 @@
     parameter: page
   focused_url_prefixes:
   - /xmlsearch?
-- excluded: No search
+- name: shayanews
+  excluded: No search
   domains:
   - shayanews.com
-- domains:
+- name: santander
+  domains:
   - santander.co.uk
   - search.santander.co.uk
   query_parsers:
@@ -9507,7 +10081,8 @@
     parameter: start_rank
   focused_url_prefixes:
   - /s/search.html?
-- domains:
+- name: pingone
+  domains:
   - pingone.com
   - pingidentity.com
   query_parsers:
@@ -9520,7 +10095,8 @@
     parameter: first
   focused_url_prefixes:
   - /en/search-results.html
-- domains:
+- name: ntv
+  domains:
   - ntv.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/finder/\?
@@ -9532,10 +10108,12 @@
     parameter: pn
   focused_url_prefixes:
   - /finder/
-- notes: exclude
+- name: ssl2anyone3
+  notes: exclude
   domains:
   - ssl2anyone3.com
-- domains:
+- name: investorplace
+  domains:
   - investorplace.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -9547,7 +10125,8 @@
     parameter: pg
   focused_url_prefixes:
   - /search
-- domains:
+- name: freeones
+  domains:
   - freeones.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/(search|suche)\?
@@ -9569,10 +10148,12 @@
   - /babes?
   - /videos?
   - /cams?
-- excluded: Redirects to Baidu search
+- name: limestart
+  excluded: Redirects to Baidu search
   domains:
   - limestart.cn
-- domains:
+- name: agemys
+  domains:
   - agemys.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9584,7 +10165,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: gogoanime
+  domains:
   - gogoanime.sk
   - gogoanime.ai
   - gogoanime.ar
@@ -9601,7 +10183,8 @@
     parameter: page
   focused_url_prefixes:
   - /search.html?
-- domains:
+- name: legifrance
+  domains:
   - legifrance.gouv.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -9613,7 +10196,8 @@
     parameter: page
   focused_url_prefixes:
   - /search/
-- domains:
+- name: rozee
+  domains:
   - rozee.pk
   query_parsers:
   - url_pattern: ^https?://[^/]+/job/jsearch/q/[^/]+
@@ -9625,7 +10209,8 @@
     segment: 6
   focused_url_prefixes:
   - /job/jsearch/q
-- domains:
+- name: gaymaletube
+  domains:
   - gaymaletube.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/a/[^/]+\?
@@ -9637,7 +10222,8 @@
     parameter: page
   focused_url_prefixes:
   - /search/a
-- domains:
+- name: sciencealert
+  domains:
   - sciencealert.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9645,7 +10231,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: vavel
+  domains:
   - vavel.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search\?
@@ -9657,7 +10244,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: bestjavporn
+  domains:
   - bestjavporn.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -9669,7 +10257,8 @@
     segment: 4
   focused_url_prefixes:
   - /search
-- domains:
+- name: vijesti
+  domains:
   - vijesti.ba
   query_parsers:
   - url_pattern: ^https?://[^/]+/pretraga\?
@@ -9681,13 +10270,16 @@
     parameter: od_
   focused_url_prefixes:
   - /pretraga?
-- excluded: No search
+- name: everydaykoala
+  excluded: No search
   domains:
   - everydaykoala.com
-- excluded: Query not in URL
+- name: codelist
+  excluded: Query not in URL
   domains:
   - codelist.cc
-- domains:
+- name: joq
+  domains:
   - joq.al
   - joq-albania.com
   query_parsers:
@@ -9696,7 +10288,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: wowprogress
+  domains:
   - wowprogress.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9708,7 +10301,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: yoo7
+  domains:
   - yoo7.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/tag/.+
@@ -9729,7 +10323,8 @@
     - ^/tag/.+/p
   focused_url_prefixes:
   - /tag
-- domains:
+- name: elmwatin
+  domains:
   - elmwatin.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/list\.aspx\?
@@ -9741,7 +10336,8 @@
     parameter: Page
   focused_url_prefixes:
   - /list.aspx?
-- notes: Search results are flight connections, query is the destination
+- name: decolar
+  notes: Search results are flight connections, query is the destination
   domains:
   - decolar.com
   query_parsers:
@@ -9750,7 +10346,8 @@
     segment: 6
   focused_url_prefixes:
   - /shop/flights/results/roundtrip
-- domains:
+- name: yummly
+  domains:
   - yummly.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/recipes\?
@@ -9758,10 +10355,12 @@
     parameter: q
   focused_url_prefixes:
   - /recipes?
-- notes: exclude
+- name: yt5s
+  notes: exclude
   domains:
   - yt5s.com
-- domains:
+- name: hongkiat
+  domains:
   - hongkiat.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9777,10 +10376,12 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: Page not loading
+- name: divxtotal3
+  excluded: Page not loading
   domains:
   - divxtotal3.net
-- domains:
+- name: mybookie
+  domains:
   - mybookie.ag
   query_parsers:
   - url_pattern: ^https?://[^/]+/sportsbook/\?
@@ -9788,7 +10389,8 @@
     parameter: sportsbook_search_term
   focused_url_prefixes:
   - /sportsbook/?
-- domains:
+- name: mangaraw
+  domains:
   - mangaraw.co
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9800,7 +10402,8 @@
     parameter: page
   focused_url_prefixes:
   - /?
-- domains:
+- name: gazetadopovo
+  domains:
   - gazetadopovo.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/busca
@@ -9812,10 +10415,12 @@
     parameter: page
   focused_url_prefixes:
   - /busca
-- excluded: Not archived
+- name: tax
+  excluded: Not archived
   domains:
   - tax.gov.uk
-- domains:
+- name: 6park
+  domains:
   - 6park.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.php\?
@@ -9827,7 +10432,8 @@
     parameter: p
   focused_url_prefixes:
   - /search.php?
-- domains:
+- name: perezhilton
+  domains:
   - perezhilton.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9843,7 +10449,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: smashingmagazine
+  domains:
   - smashingmagazine.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -9851,7 +10458,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: ero-video
+  domains:
   - ero-video.net
   - en.ero-video.net
   query_parsers:
@@ -9864,10 +10472,12 @@
     parameter: page
   focused_url_prefixes:
   - /?
-- notes: exclude
+- name: y2meta
+  notes: exclude
   domains:
   - y2meta.com
-- domains:
+- name: iflscience
+  domains:
   - iflscience.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9879,7 +10489,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: porntube
+  domains:
   - porntube.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9891,7 +10502,8 @@
     parameter: p
   focused_url_prefixes:
   - /search?
-- domains:
+- name: spyfu
+  domains:
   - spyfu.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/overview/domain\?
@@ -9899,9 +10511,11 @@
     parameter: query
   focused_url_prefixes:
   - /overview/domain?
-- domains:
+- name: launchpage
+  domains:
   - launchpage.org
-- domains:
+- name: aps
+  domains:
   - aps.org
   - search.aps.org
   query_parsers:
@@ -9910,7 +10524,8 @@
     parameter: q
   focused_url_prefixes:
   - /?
-- domains:
+- name: americanmilitarynews
+  domains:
   - americanmilitarynews.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9926,10 +10541,12 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: No search
+- name: btctrademart
+  excluded: No search
   domains:
   - btctrademart.com
-- domains:
+- name: alot
+  domains:
   - alot.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -9941,7 +10558,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: voachinese
+  domains:
   - voachinese.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/s\?
@@ -9953,7 +10571,8 @@
     parameter: pp
   focused_url_prefixes:
   - /s?
-- domains:
+- name: eanswers
+  domains:
   - eanswers.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/results/v0/search\?
@@ -9961,7 +10580,8 @@
     parameter: q
   focused_url_prefixes:
   - /results/v0/search?
-- domains:
+- name: buedemusica
+  domains:
   - buedemusica.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -9977,7 +10597,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: archlinux
+  domains:
   - archlinux.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/packages
@@ -9989,7 +10610,8 @@
     parameter: page
   focused_url_prefixes:
   - /packages
-- domains:
+- name: insideevs
+  domains:
   - insideevs.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/
@@ -9997,10 +10619,12 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- excluded: Query not in URL
+- name: tvsubtitles
+  excluded: Query not in URL
   domains:
   - tvsubtitles.net
-- domains:
+- name: pornhdvideos
+  domains:
   - pornhdvideos.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -10008,7 +10632,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: seoclerk
+  domains:
   - seoclerk.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/marketplace\?
@@ -10024,7 +10649,8 @@
   focused_url_prefixes:
   - /marketplace?
   - /search
-- domains:
+- name: bkrs
+  domains:
   - bkrs.info
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.php\?
@@ -10032,13 +10658,16 @@
     parameter: q
   focused_url_prefixes:
   - /search.php?
-- excluded: No search
+- name: openai
+  excluded: No search
   domains:
   - openai.com
-- excluded: Query not in URL
+- name: natro
+  excluded: Query not in URL
   domains:
   - natro.com
-- domains:
+- name: rvcj
+  domains:
   - rvcj.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10046,7 +10675,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: ccn
+  domains:
   - ccn.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10062,7 +10692,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: No search
+- name: 18comic
+  excluded: No search
   domains:
   - 18comic.vip
   - jmcomic.asia
@@ -10073,7 +10704,8 @@
     parameter: search_query
   focused_url_prefixes:
   - /search
-- domains:
+- name: moretify
+  domains:
   - moretify.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10081,7 +10713,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: pornez
+  domains:
   - pornez.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10093,13 +10726,16 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- excluded: No valid snapshot
+- name: yyets
+  excluded: No valid snapshot
   domains:
   - yyets.com
-- excluded: No search
+- name: cashstar
+  excluded: No search
   domains:
   - cashstar.com
-- domains:
+- name: yupptv
+  domains:
   - yupptv.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -10107,7 +10743,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: searchengineland
+  domains:
   - searchengineland.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10123,7 +10760,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: pronto
+  domains:
   - pronto.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/shopping\?
@@ -10135,7 +10773,8 @@
     parameter: page
   focused_url_prefixes:
   - /shopping?
-- domains:
+- name: ucloud
+  domains:
   - ucloud.cn
   query_parsers:
   - url_pattern: ^https?://[^/]+/site/search\.html\?
@@ -10143,7 +10782,8 @@
     parameter: k
   focused_url_prefixes:
   - /site/search.html?
-- domains:
+- name: rolloid
+  domains:
   - rolloid.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10155,7 +10795,8 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- domains:
+- name: 4movierulz
+  domains:
   - 4movierulz.pw
   - 1movierulz.com
   - 3movierulz.sx
@@ -10180,10 +10821,12 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- excluded: No search
+- name: playjunkie
+  excluded: No search
   domains:
   - playjunkie.com
-- domains:
+- name: goodporn
+  domains:
   - goodporn.to
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -10191,7 +10834,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: wkzf
+  domains:
   - wkzf.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/esf/[^/]+$
@@ -10202,7 +10846,8 @@
   - /chengdu/esf
   - /dezhou/esf
   - /guangzhou/esf
-- domains:
+- name: movies2watch
+  domains:
   - movies2watch.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -10214,7 +10859,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: auchan
+  domains:
   - auchan.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/recherche\?
@@ -10228,13 +10874,16 @@
   - /boissons-sans-alcool/
   - /oeufs-produits-laitiers
   - /epicerie-sucree
-- excluded: Query not in URL
+- name: pianshen
+  excluded: Query not in URL
   domains:
   - pianshen.com
-- excluded: No search
+- name: weakstreams
+  excluded: No search
   domains:
   - weakstreams.com
-- domains:
+- name: futebolplayhd
+  domains:
   - futebolplayhd.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/buscar/[^/]+
@@ -10242,7 +10891,8 @@
     segment: 2
   focused_url_prefixes:
   - /buscar
-- domains:
+- name: yingjiesheng
+  domains:
   - yingjiesheng.com
   - s.yingjiesheng.com
   query_parsers:
@@ -10255,7 +10905,8 @@
     parameter: start
   focused_url_prefixes:
   - /search.php?
-- domains:
+- name: kat
+  domains:
   - kat.cr
   query_parsers:
   - url_pattern: ^https?://[^/]+/usearch/[^/]+
@@ -10263,7 +10914,8 @@
     segment: 2
   focused_url_prefixes:
   - /usearch
-- domains:
+- name: bank-zone
+  domains:
   - bank-zone.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -10271,7 +10923,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: ic
+  domains:
   - ic.net.cn
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.php\?
@@ -10279,7 +10932,8 @@
     parameter: key
   focused_url_prefixes:
   - /search.php?
-- domains:
+- name: shahed4u
+  domains:
   - shahed4u.onl
   - shahed4u.land
   query_parsers:
@@ -10288,7 +10942,8 @@
     parameter: s
   focused_url_prefixes:
   - /search?
-- domains:
+- name: rule34video
+  domains:
   - rule34video.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -10296,7 +10951,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: gaoding
+  domains:
   - gaoding.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/contents/[^/]+
@@ -10312,9 +10968,11 @@
     - ^.*_pn
   focused_url_prefixes:
   - /contents
-- domains:
+- name: watchfreejavonline
+  domains:
   - watchfreejavonline.co
-- domains:
+- name: thevintagenews
+  domains:
   - thevintagenews.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10330,7 +10988,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: orient
+  domains:
   - orient.tm
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -10342,10 +11001,12 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- excluded: Query not in URL
+- name: folkd
+  excluded: Query not in URL
   domains:
   - folkd.com
-- domains:
+- name: salesloft
+  domains:
   - salesloft.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10353,7 +11014,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: kbhgames
+  domains:
   - kbhgames.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10369,7 +11031,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: schema
+  domains:
   - schema.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/docs/search_results\.html\?
@@ -10377,10 +11040,12 @@
     parameter: q
   focused_url_prefixes:
   - /docs/search_results.html?
-- excluded: No search
+- name: etheplatinum
+  excluded: No search
   domains:
   - etheplatinum.com
-- domains:
+- name: kmart
+  domains:
   - kmart.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -10388,7 +11053,8 @@
     parameter: search
   focused_url_prefixes:
   - /search
-- domains:
+- name: infocert
+  domains:
   - infocert.it
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10400,7 +11066,8 @@
     parameter: start
   focused_url_prefixes:
   - /?
-- domains:
+- name: fanpop
+  domains:
   - fanpop.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -10412,7 +11079,8 @@
     parameter: page_num
   focused_url_prefixes:
   - /seach?
-- domains:
+- name: sexbjcam
+  domains:
   - sexbjcam.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10420,7 +11088,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: hearthstonetopdecks
+  domains:
   - hearthstonetopdecks.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10440,7 +11109,8 @@
   - /?
   - /cards/?
   - /decks/?
-- domains:
+- name: nios
+  domains:
   - nios.ac.in
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.aspx\?
@@ -10448,7 +11118,8 @@
     parameter: q
   focused_url_prefixes:
   - /search.aspx?
-- domains:
+- name: mostkbal
+  domains:
   - mostkbal.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/Search\?
@@ -10460,7 +11131,8 @@
     parameter: page
   focused_url_prefixes:
   - /Search?
-- domains:
+- name: searchlock
+  domains:
   - searchlock.com
   - results.searchlock.com
   query_parsers:
@@ -10473,10 +11145,12 @@
     parameter: apgn
   focused_url_prefixes:
   - /search
-- excluded: No valid snapshot
+- name: news19
+  excluded: No valid snapshot
   domains:
   - news19.biz
-- domains:
+- name: tagdiv
+  domains:
   - tagdiv.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10492,7 +11166,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: livingsocial
+  domains:
   - livingsocial.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/browse/[^/]+\?
@@ -10504,10 +11179,12 @@
     parameter: page
   focused_url_prefixes:
   - /browse
-- excluded: No search
+- name: bestmining
+  excluded: No search
   domains:
   - bestmining.top
-- domains:
+- name: znzmo
+  domains:
   - znzmo.com
   - 3d.znzmo.com
   - su.znzmo.com
@@ -10532,7 +11209,8 @@
   - /wenben
   - /xgt
   - /searchCase
-- domains:
+- name: unza
+  domains:
   - unza.zm
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/node\?
@@ -10544,10 +11222,12 @@
     parameter: page
   focused_url_prefixes:
   - /search/node?
-- excluded: No search
+- name: newsd
+  excluded: No search
   domains:
   - newsd.co
-- domains:
+- name: futemax
+  domains:
   - futemax.live
   - futemax.app
   query_parsers:
@@ -10556,7 +11236,8 @@
     segment: 2
   focused_url_prefixes:
   - /buscar
-- domains:
+- name: sexkbj
+  domains:
   - sexkbj.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10572,7 +11253,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: angola24horas
+  domains:
   - angola24horas.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/mais/[^/]+/pesquisar\?
@@ -10584,7 +11266,8 @@
     parameter: start
   focused_url_prefixes:
   - /mais
-- domains:
+- name: 51pla
+  domains:
   - 51pla.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/buyinfo/search\?
@@ -10624,7 +11307,8 @@
   - /buyinfo/search?
   - /price/search?
   - /spec/search?
-- domains:
+- name: mcls
+  domains:
   - mcls.xyz
   query_parsers:
   - url_pattern: ^https?://[^/]+/results\.php\?
@@ -10632,7 +11316,8 @@
     parameter: wd
   focused_url_prefixes:
   - /results.php?
-- domains:
+- name: jacquielawson
+  domains:
   - jacquielawson.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -10644,16 +11329,20 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- excluded: Page not loading
+- name: higherperspectives
+  excluded: Page not loading
   domains:
   - higherperspectives.com
-- excluded: No search
+- name: news-sphere
+  excluded: No search
   domains:
   - news-sphere.com
-- excluded: No search
+- name: beautifultrendstoday
+  excluded: No search
   domains:
   - beautifultrendstoday.com
-- domains:
+- name: asianembed
+  domains:
   - asianembed.io
   - asianhdplay.pro
   query_parsers:
@@ -10662,7 +11351,8 @@
     parameter: keyword
   focused_url_prefixes:
   - /search.html\?
-- domains:
+- name: notjustok
+  domains:
   - notjustok.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10670,7 +11360,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: pptvhd36
+  domains:
   - pptvhd36.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -10678,10 +11369,12 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- excluded: No valid snaphshot
+- name: bestdealfor28
+  excluded: No valid snaphshot
   domains:
   - bestdealfor28.life
-- domains:
+- name: sidereel
+  domains:
   - sidereel.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/[^/]+
@@ -10689,7 +11382,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: sopitas
+  domains:
   - sopitas.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10697,7 +11391,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: searchalgo
+  domains:
   - searchalgo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.html\?
@@ -10705,7 +11400,8 @@
     parameter: q
   focused_url_prefixes:
   - /search.html?
-- domains:
+- name: healthdata
+  domains:
   - healthdata.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -10717,10 +11413,12 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- excluded: Query not in URL
+- name: limetorrents
+  excluded: Query not in URL
   domains:
   - limetorrents.pro
-- domains:
+- name: imovie-hd
+  domains:
   - imovie-hd.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10728,10 +11426,12 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- excluded: Domain parking
+- name: nqrkzcd7ixwr
+  excluded: Domain parking
   domains:
   - nqrkzcd7ixwr.com
-- domains:
+- name: pishnahadevizheh
+  domains:
   - pishnahadevizheh.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/fa/newsstudios/archive/\?
@@ -10747,9 +11447,11 @@
   focused_url_prefixes:
   - /fa
   - /newsstudios/
-- domains:
+- name: largeporntube
+  domains:
   - largeporntube.com
-- domains:
+- name: mojnews
+  domains:
   - mojnews.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/fa/newsstudios/search\?
@@ -10761,7 +11463,8 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /fa/newsstudios/search?
-- domains:
+- name: workercn
+  domains:
   - workercn.cn
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/result.shtml\?
@@ -10769,7 +11472,8 @@
     parameter: query
   focused_url_prefixes:
   - /search
-- domains:
+- name: weaplay
+  domains:
   - weaplay.com
   - weadown.com
   - gbfile.com
@@ -10787,7 +11491,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: hentaihaven
+  domains:
   - hentaihaven.xxx
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -10795,7 +11500,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- notes: No query put searchid saved
+- name: webhostingtalk
+  notes: No query put searchid saved
   domains:
   - webhostingtalk.com
   query_parsers:
@@ -10808,7 +11514,8 @@
     parameter: page
   focused_url_prefixes:
   - /search.php
-- domains:
+- name: dontorrent
+  domains:
   - dontorrent.net
   - dontorrent.fun
   - dontorrent.lol
@@ -10818,7 +11525,8 @@
     segment: 2
   focused_url_prefixes:
   - /buscar
-- domains:
+- name: zk
+  domains:
   - zk.fm
   - z2.fm
   - z3.fm
@@ -10832,7 +11540,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: her-news
+  domains:
   - her-news.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/list\.aspx\?
@@ -10844,10 +11553,12 @@
     parameter: Page
   focused_url_prefixes:
   - /list.aspx?
-- excluded: Query not in URL
+- name: programmersought
+  excluded: Query not in URL
   domains:
   - programmersought.com
-- domains:
+- name: khoondanionline
+  domains:
   - khoondanionline.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/fa/newsstudios/archive/\?
@@ -10865,13 +11576,16 @@
   focused_url_prefixes:
   - /fa/newsstudios/archive
   - /newsstudios/archive
-- excluded: Query not in URL
+- name: torrent9
+  excluded: Query not in URL
   domains:
   - torrent9.blue
   - torrent9.nz
-- domains:
+- name: diguver
+  domains:
   - diguver.com
-- domains:
+- name: pirateproxy
+  domains:
   - pirateproxy.lat
   query_parsers:
   - url_pattern: ^https?://[^/]+/s
@@ -10883,7 +11597,8 @@
     parameter: page
   focused_url_prefixes:
   - /s
-- domains:
+- name: aufeminin
+  domains:
   - aufeminin.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/
@@ -10895,16 +11610,20 @@
     parameter: p
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: hotpoptoday
+  excluded: No search
   domains:
   - hotpoptoday.com
-- excluded: Domain parking
+- name: 64p3am9x95ct
+  excluded: Domain parking
   domains:
   - 64p3am9x95ct.com
-- excluded: No valid snaphshot
+- name: quicklisti
+  excluded: No valid snaphshot
   domains:
   - quicklisti.com
-- domains:
+- name: alriyadh
+  domains:
   - alriyadh.news
   - elriyadh.news
   query_parsers:
@@ -10913,10 +11632,12 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- excluded: No valid snaphshot
+- name: resumersvo
+  excluded: No valid snaphshot
   domains:
   - resumersvo.fun
-- domains:
+- name: lassuranceretraite
+  domains:
   - lassuranceretraite.fr
   query_parsers:
   - url_pattern: ^https?://[^/]+/.*/resultat-de-recherche\.html\?
@@ -10925,7 +11646,8 @@
   focused_url_prefixes:
   - /portail-info/hors-menu/recherche/resultat-de-recherche.html?
   - /portail-info/sites/pub/hors-menu/recherche/resultat-de-recherche.html?
-- excluded: No valid snaphshot
+- name: in
+  excluded: No valid snaphshot
   domains:
   - in.com
   query_parsers:
@@ -10934,7 +11656,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: jp
+  domains:
   - jp.sharp
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/index\.html
@@ -10946,7 +11669,8 @@
     parameter: page
   focused_url_prefixes:
   - /search/index.html
-- domains:
+- name: javdb39
+  domains:
   - javdb.com
   - javdb36.com
   - javdb39.com
@@ -10960,7 +11684,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: pornerbros
+  domains:
   - pornerbros.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -10972,7 +11697,8 @@
     parameter: p
   focused_url_prefixes:
   - /search
-- domains:
+- name: 1plus1
+  domains:
   - 1plus1.video
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/
@@ -10980,7 +11706,8 @@
     parameter: query
   focused_url_prefixes:
   - /search
-- domains:
+- name: pornmedium
+  domains:
   - pornmedium.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -10988,7 +11715,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: search-ch
+  domains:
   - search.ch
   - web.search.ch
   query_parsers:
@@ -11001,7 +11729,8 @@
     parameter: pages
   focused_url_prefixes:
   - /?
-- domains:
+- name: bjeea
+  domains:
   - bjeea.cn
   - search.bjeea.cn
   query_parsers:
@@ -11016,7 +11745,8 @@
     parameter: PageNo
   focused_url_prefixes:
   - /plus/search.php?
-- domains:
+- name: agadirinfo
+  domains:
   - agadirinfo.ma
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11024,7 +11754,8 @@
     parameter: s
   focused_url_prefixes:
   - /?s
-- domains:
+- name: hibasport
+  domains:
   - hibasport.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/?
@@ -11034,7 +11765,8 @@
     - \+
   focused_url_prefixes:
   - /?
-- domains:
+- name: dogpile
+  domains:
   - dogpile.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/serp\?
@@ -11046,7 +11778,8 @@
     parameter: page
   focused_url_prefixes:
   - /serp?
-- domains:
+- name: amateur8
+  domains:
   - amateur8.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -11054,7 +11787,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: pron
+  domains:
   - pron.tv
   - mypron.tv
   query_parsers:
@@ -11063,7 +11797,8 @@
     segment: 3
   focused_url_prefixes:
   - /videos/search
-- domains:
+- name: justporno
+  domains:
   - justporno.tv
   - cams.justporno.tv
   query_parsers:
@@ -11074,16 +11809,20 @@
   - /en/girls
   - /en/boys
   - /en/tranny
-- excluded: No search
+- name: mybeautyland
+  excluded: No search
   domains:
   - mybeautyland.shop
-- excluded: Domain parking
+- name: d72gb9oukw3j
+  excluded: Domain parking
   domains:
   - d72gb9oukw3j.com
-- excluded: No search
+- name: bmony
+  excluded: No search
   domains:
   - bmony.space
-- domains:
+- name: ligueimovel
+  domains:
   - ligueimovel.ao
   query_parsers:
   - url_pattern: ^https?://[^/]+/pesqusiar-imovel/\?
@@ -11091,7 +11830,8 @@
     parameter: keyword
   focused_url_prefixes:
   - /pesqusiar-imovel
-- domains:
+- name: 123movies
+  domains:
   - 123movies.fun
   - 123movies.co
   query_parsers:
@@ -11100,7 +11840,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: maturetubehere
+  domains:
   - maturetubehere.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/\?
@@ -11108,7 +11849,8 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- domains:
+- name: porntop
+  domains:
   - porntop.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -11120,7 +11862,8 @@
     parameter: p
   focused_url_prefixes:
   - /search
-- domains:
+- name: khabarnama
+  domains:
   - khabarnama.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11128,13 +11871,16 @@
     parameter: s
   focused_url_prefixes:
   - /s
-- notes: exclude
+- name: mxss
+  notes: exclude  # TODO
   domains:
   - mxss.xyz
-- excluded: Query not in URL
+- name: freesion
+  excluded: Query not in URL
   domains:
   - freesion.com
-- domains:
+- name: naijanews
+  domains:
   - naijanews.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11150,10 +11896,12 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: Domain parking
+- name: ws1xr1u2b4
+  excluded: Domain parking
   domains:
   - ws1xr1u2b4.top
-- domains:
+- name: sexseq
+  domains:
   - sexseq.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/trends/[^/]+
@@ -11165,7 +11913,8 @@
     segment: 3
   focused_url_prefixes:
   - /trends
-- domains:
+- name: gamingwonderland
+  domains:
   - gamingwonderland.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -11173,7 +11922,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: jomys
+  domains:
   - jomys.xyz
   query_parsers:
   - url_pattern: ^https?://[^/]+/index\.php\?
@@ -11189,10 +11939,12 @@
   focused_url_prefixes:
   - /search?
   - /index.php?
-- excluded: Redirects to Yahoo! search
+- name: maktoob
+  excluded: Redirects to Yahoo! search
   domains:
   - maktoob.com
-- domains:
+- name: chinaso
+  domains:
   - chinaso.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/newssearch/all
@@ -11250,7 +12002,8 @@
   - /newssearch/young?
   - /newssearch/block
   - /newssearch/game
-- domains:
+- name: comicat
+  domains:
   - comicat.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.php\?
@@ -11262,16 +12015,20 @@
     parameter: page
   focused_url_prefixes:
   - /search.php?
-- excluded: Query not in URL
+- name: faithtap
+  excluded: Query not in URL
   domains:
   - faithtap.com
-- excluded: Redirects to Baidu search
+- name: mmbang
+  excluded: Redirects to Baidu search
   domains:
   - mmbang.com
-- excluded: No valid snapshot
+- name: vid
+  excluded: No valid snapshot
   domains:
   - vid.me
-- domains:
+- name: mangafox
+  domains:
   - mangafox.me
   - fanfox.net
   query_parsers:
@@ -11284,7 +12041,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: hellporno
+  domains:
   - hellporno.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -11299,10 +12057,12 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: falafelandcaviar
+  excluded: No search
   domains:
   - falafelandcaviar.com
-- domains:
+- name: sarcasm
+  domains:
   - sarcasm.co
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11314,7 +12074,8 @@
     segment: 2
   focused_url_prefixes:
   - /?
-- domains:
+- name: oreno-erohon
+  domains:
   - oreno-erohon.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11330,7 +12091,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: putlockers
+  domains:
   - putlockers.co
   - w2.putlockers.co
   query_parsers:
@@ -11339,13 +12101,16 @@
     parameter: s
   focused_url_prefixes:
   - /search?
-- excluded: No valid snapshot
+- name: freefilefillableforms
+  excluded: No valid snapshot
   domains:
   - freefilefillableforms.com
-- excluded: Query not in URL
+- name: metbugat
+  excluded: Query not in URL
   domains:
   - metbugat.gov.tm
-- domains:
+- name: moe
+  domains:
   - moe.gov.cn
   - so.moe.gov.cn
   query_parsers:
@@ -11354,13 +12119,16 @@
     parameter: qt
   focused_url_prefixes:
   - /s?
-- excluded: No search
+- name: slashgear
+  excluded: No search
   domains:
   - slashgear.com
-- excluded: Redirects to Baidu search
+- name: dilidili
+  excluded: Redirects to Baidu search
   domains:
   - dilidili.name
-- domains:
+- name: ibtimes
+  domains:
   - ibtimes.co.uk
   - ibtimes.com
   query_parsers:
@@ -11376,7 +12144,8 @@
     parameter: page
   focused_url_prefixes:
   - /search/site/
-- domains:
+- name: bestblackfriday
+  domains:
   - bestblackfriday.com
   - blackfriday.com
   query_parsers:
@@ -11389,10 +12158,12 @@
     parameter: page
   focused_url_prefixes:
   - /search-results?
-- excluded: No search
+- name: download-adblock
+  excluded: No search
   domains:
   - download-adblock.com
-- domains:
+- name: fanli
+  domains:
   - fanli.com
   - fun.fanli.com
   query_parsers:
@@ -11401,10 +12172,12 @@
     parameter: keyword
   focused_url_prefixes:
   - /client/search
-- excluded: Page not loading
+- name: covid-19-testingkit
+  excluded: Page not loading
   domains:
   - covid-19-testingkit.com
-- domains:
+- name: ces
+  domains:
   - ces.tech
   query_parsers:
   - url_pattern: ^https?://[^/]+/search-results\.apsx\?
@@ -11412,7 +12185,8 @@
     parameter: searchtext
   focused_url_prefixes:
   - /search-results.apsx?
-- domains:
+- name: espnfc
+  domains:
   - espnfc.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/_/q/[^/]+
@@ -11420,7 +12194,8 @@
     segment: 4
   focused_url_prefixes:
   - /search
-- domains:
+- name: westernjournalism
+  domains:
   - westernjournalism.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11433,7 +12208,8 @@
   focused_url_prefixes:
   - /?s
   - /page
-- domains:
+- name: aswaqinformation
+  domains:
   - aswaqinformation.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/section
@@ -11441,7 +12217,8 @@
     parameter: keyword
   focused_url_prefixes:
   - /section
-- domains:
+- name: fanpage
+  domains:
   - fanpage.gr
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -11453,7 +12230,8 @@
     segment: 4
   focused_url_prefixes:
   - /search
-- domains:
+- name: elitetorrent
+  domains:
   - elitetorrent.io
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11461,9 +12239,11 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: trovi
+  domains:
   - trovi.com
-- domains:
+- name: hostgator
+  domains:
   - hostgator.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/busca\?
@@ -11471,7 +12251,8 @@
     parameter: s
   focused_url_prefixes:
   - /busca
-- domains:
+- name: stagram
+  domains:
   - stagram.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11479,7 +12260,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: sfwaa
+  domains:
   - sfwaa.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/section
@@ -11487,7 +12269,8 @@
     parameter: keyword
   focused_url_prefixes:
   - /section
-- domains:
+- name: mmamania
+  domains:
   - mmamania.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -11499,10 +12282,12 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- excluded: Domain parking
+- name: q6idnawboy7g
+  excluded: Domain parking
   domains:
   - q6idnawboy7g.com
-- domains:
+- name: asg
+  domains:
   - asg.to
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -11514,7 +12299,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: blackberry
+  domains:
   - blackberry.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/[a-z]+/search#q
@@ -11529,7 +12315,8 @@
   - /ja/jp/search
   - /la/es/search
   - /fr/fr/search
-- domains:
+- name: bloodyelbow
+  domains:
   - bloodyelbow.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -11541,7 +12328,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: plugrush
+  domains:
   - plugrush.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11557,7 +12345,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: seobook
+  domains:
   - seobook.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/sitesearch/
@@ -11565,7 +12354,8 @@
     parameter: q
   focused_url_prefixes:
   - /sitesearch
-- domains:
+- name: byrutor
+  domains:
   - byrutor.com
   - s1.byrutor.com
   query_parsers:
@@ -11574,7 +12364,8 @@
     parameter: story
   focused_url_prefixes:
   - /?
-- domains:
+- name: justindianporn
+  domains:
   - justindianporn.me
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11586,7 +12377,8 @@
     parameter: p
   focused_url_prefixes:
   - /?
-- domains:
+- name: musicasparamissa
+  domains:
   - musicasparamissa.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -11594,7 +12386,8 @@
     parameter: q
   focused_url_prefixes:
   - /search/?
-- domains:
+- name: recommendationletters
+  domains:
   - recommendationletters.pro
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -11602,7 +12395,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: 123greetings
+  domains:
   - 123greetings.com
   - search.123greetings.com
   query_parsers:
@@ -11611,10 +12405,12 @@
     parameter: query
   focused_url_prefixes:
   - /cgi-bin/search/search.pl?
-- excluded: Empty page
+- name: betterex
+  excluded: Empty page
   domains:
   - betterex.xyz
-- domains:
+- name: kwork
+  domains:
   - kwork.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -11626,7 +12422,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: er
+  domains:
   - er.ru
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -11641,15 +12438,18 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- excluded: Page not loading
+- name: unblocked
+  excluded: Page not loading
   domains:
   - unblocked.llc
   - unblocked.dk
   - unblocked.nz
-- excluded: No archived SERP
+- name: nflstreams
+  excluded: No archived SERP
   domains:
   - nflstreams.to
-- domains:
+- name: apherald
+  domains:
   - apherald.com
   - indiaherald.com
   query_parsers:
@@ -11658,7 +12458,8 @@
     segment: 3
   focused_url_prefixes:
   - /search
-- domains:
+- name: teamliquid
+  domains:
   - teamliquid.net
   - tl.net
   query_parsers:
@@ -11667,10 +12468,12 @@
     parameter: q
   focused_url_prefixes:
   - /forum/search.php?
-- excluded: No search
+- name: browserquote
+  excluded: No search
   domains:
   - browserquote.com
-- domains:
+- name: jobstreet
+  domains:
   - jobstreet.com.sg
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/job-search/[^/]+
@@ -11693,7 +12496,8 @@
   - /en/job-search
   - /en/companies/browse-reviews?
   - /career-resources/search
-- domains:
+- name: angovagas
+  domains:
   - angovagas.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11709,10 +12513,12 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: Query not in URL
+- name: covidvisualizer
+  excluded: Query not in URL
   domains:
   - covidvisualizer.com
-- domains:
+- name: searchengines
+  domains:
   - searchengines.ru
   - searchengines.guru
   query_parsers:
@@ -11722,7 +12528,8 @@
   focused_url_prefixes:
   - /en/search
   - /ru/search
-- domains:
+- name: cooch
+  domains:
   - cooch.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/en/search/[^/]+/[0-9]+\.html
@@ -11736,7 +12543,8 @@
     - \.html$
   focused_url_prefixes:
   - /en/search
-- domains:
+- name: canaltutorial
+  domains:
   - canaltutorial.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11752,13 +12560,16 @@
   focused_url_prefixes:
   - /?
   - /page
-- notes: exclude
+- name: ilividnewtab
+  notes: exclude
   domains:
   - ilividnewtab.com
-- excluded: Page not loading
+- name: gostream
+  excluded: Page not loading
   domains:
   - gostream.is
-- domains:
+- name: hentai-time
+  domains:
   - hentai-time.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11774,13 +12585,16 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: Query not in URL
+- name: pudding
+  excluded: Query not in URL
   domains:
   - pudding.cool
-- excluded: No valid snapshot
+- name: dyndns
+  excluded: No valid snapshot
   domains:
   - dyndns.org
-- domains:
+- name: wn
+  domains:
   - wn.com
   - search.wn.com
   query_parsers:
@@ -11793,7 +12607,8 @@
     parameter: pagenum
   focused_url_prefixes:
   - /?
-- domains:
+- name: shodan
+  domains:
   - shodan.io
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -11805,7 +12620,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: woothemes
+  domains:
   - woothemes.com
   - woocommerce.com
   query_parsers:
@@ -11818,13 +12634,16 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: filesonic
+  excluded: No search
   domains:
   - filesonic.com
-- excluded: Query not in URL
+- name: tennessean
+  excluded: Query not in URL
   domains:
   - tennessean.com
-- domains:
+- name: opensiteexplorer
+  domains:
   - opensiteexplorer.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/links
@@ -11836,7 +12655,8 @@
     parameter: page
   focused_url_prefixes:
   - /links
-- domains:
+- name: xxxhdvideo
+  domains:
   - xxxhdvideo.mobi
   query_parsers:
   - url_pattern: ^https?://[^/]+/sex/[^/]+
@@ -11844,7 +12664,8 @@
     segment: 2
   focused_url_prefixes:
   - /sex
-- domains:
+- name: ctitv
+  domains:
   - ctitv.com.tw
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11860,7 +12681,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: turkmenistanhabar
+  domains:
   - turkmenistanhabar.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11868,7 +12690,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: liftable
+  domains:
   - liftable.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11884,7 +12707,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: imzog
+  domains:
   - imzog.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+
@@ -11896,10 +12720,12 @@
     segment: 4
   focused_url_prefixes:
   - /en/search
-- excluded: No valid snapshot
+- name: thoughclassifiedjeff
+  excluded: No valid snapshot
   domains:
   - thoughclassifiedjeff.com
-- domains:
+- name: 4udear
+  domains:
   - 4udear.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/se/search\?
@@ -11907,7 +12733,8 @@
     parameter: query
   focused_url_prefixes:
   - /se/search?
-- domains:
+- name: dunia21
+  domains:
   - dunia21.tv
   - dunia21.com
   - dunia21.net
@@ -11918,12 +12745,15 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: probux
+  domains:
   - probux.com
-- excluded: Query not in URL
+- name: inis
+  excluded: Query not in URL
   domains:
   - inis.ao
-- domains:
+- name: majesticseo
+  domains:
   - majesticseo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/reports/site-explorer\?
@@ -11931,10 +12761,12 @@
     parameter: q
   focused_url_prefixes:
   - /reports/site-explorer?
-- excluded: Domain parking
+- name: guj5
+  excluded: Domain parking
   domains:
   - guj5.xyz
-- domains:
+- name: viralnova
+  domains:
   - viralnova.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11950,7 +12782,8 @@
   focused_url_prefixes:
   - /?
   - page
-- domains:
+- name: metacrawler
+  domains:
   - metacrawler.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/serp\?
@@ -11962,13 +12795,16 @@
     parameter: page
   focused_url_prefixes:
   - /serp?
-- excluded: No search
+- name: mycricketlive
+  excluded: No search
   domains:
   - mycricketlive.live
-- excluded: Empty page
+- name: ukcontentdelivery
+  excluded: Empty page
   domains:
   - ukcontentdelivery.info
-- domains:
+- name: tickld
+  domains:
   - tickld.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+
@@ -11976,13 +12812,16 @@
     segment: 2
   focused_url_prefixes:
   - /search
-- excluded: No valid snaphshot
+- name: injuredcandy
+  excluded: No valid snaphshot
   domains:
   - injuredcandy.com
-- excluded: Not archived
+- name: podregarddomicile
+  excluded: Not archived
   domains:
   - podregarddomicile.com
-- domains:
+- name: websta
+  domains:
   - websta.me
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -11998,7 +12837,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: xgap
+  domains:
   - xgap.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/en/search/[^/]+/[0-9]+\.html
@@ -12012,7 +12852,8 @@
     - \.html$
   focused_url_prefixes:
   - /en/search
-- domains:
+- name: anahwa
+  domains:
   - anahwa.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/section
@@ -12020,10 +12861,12 @@
     parameter: keyword
   focused_url_prefixes:
   - /section
-- excluded: Redirects to Google search
+- name: pretagteam
+  excluded: Redirects to Google search
   domains:
   - pretagteam.com
-- domains:
+- name: mbank
+  domains:
   - mbank.com.pl
   query_parsers:
   - url_pattern: ^https?://[^/]+/szukaj
@@ -12035,7 +12878,8 @@
     parameter: pag
   focused_url_prefixes:
   - /szukaj
-- domains:
+- name: sergey-mavrodi
+  domains:
   - sergey-mavrodi.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/spage/\?
@@ -12043,7 +12887,8 @@
     parameter: search_q
   focused_url_prefixes:
   - /spage/?
-- domains:
+- name: nhadatso
+  domains:
   - nhadatso.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -12055,7 +12900,8 @@
     parameter: p
   focused_url_prefixes:
   - /search
-- domains:
+- name: skat
+  domains:
   - skat.dk
   query_parsers:
   - url_pattern: ^https?://[^/]+/data\.aspx\?
@@ -12067,12 +12913,15 @@
     parameter: cludopage
   focused_url_prefixes:
   - /data.aspx?
-- domains:
+- name: yeus
+  domains:
   - yeus.xyz
-- excluded: Domain parking
+- name: cr447
+  excluded: Domain parking
   domains:
   - cr447.xyz
-- domains:
+- name: forosdelweb
+  domains:
   - forosdelweb.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/misc\.php\?
@@ -12080,7 +12929,8 @@
     parameter: q
   focused_url_prefixes:
   - /misc.php?
-- domains:
+- name: seb
+  domains:
   - seb.se
   query_parsers:
   - url_pattern: ^https?://[^/]+/systemsidor/sok\?
@@ -12092,7 +12942,8 @@
     parameter: o
   focused_url_prefixes:
   - /systemsidor/sok?
-- domains:
+- name: kiddle
+  domains:
   - kiddle.co
   query_parsers:
   - url_pattern: ^https?://[^/]+/s\.php\?
@@ -12104,10 +12955,12 @@
     parameter: gsc.page
   focused_url_prefixes:
   - /s.php?
-- excluded: No valid snaphshot
+- name: pussl18
+  excluded: No valid snaphshot
   domains:
   - pussl18.com
-- domains:
+- name: ecrater
+  domains:
   - ecrater.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/filter\.php\?
@@ -12119,10 +12972,12 @@
     parameter: srn
   focused_url_prefixes:
   - /filter.php?
-- excluded: No valid snapshot
+- name: localgirldating
+  excluded: No valid snapshot
   domains:
   - localgirldating.com
-- domains:
+- name: eurovision
+  domains:
   - eurovision.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -12134,7 +12989,8 @@
     parameter: page
   focused_url_prefixes:
   - /search?
-- domains:
+- name: sportsala
+  domains:
   - sportsala.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12150,7 +13006,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: egotastic
+  domains:
   - egotastic.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12158,7 +13015,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: ah-me
+  domains:
   - ah-me.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/[^/]+/page[0-9]+\.html
@@ -12180,16 +13038,20 @@
   focused_url_prefixes:
   - /search
   - /pics/search
-- excluded: Domain parking
+- name: exceptingincludedelivering
+  excluded: Domain parking
   domains:
   - exceptingincludedelivering.com
-- excluded: No valid snapshot
+- name: onlyfreetoonporn
+  excluded: No valid snapshot
   domains:
   - onlyfreetoonporn.com
-- excluded: Only one snapshot
+- name: fillsitsy
+  excluded: Only one snapshot
   domains:
   - fillsitsy.cam
-- domains:
+- name: uploading
+  domains:
   - uploading.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12197,7 +13059,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: sxc
+  domains:
   - sxc.hu
   query_parsers:
   - url_pattern: ^https?://[^/]+/browse\.phtml\?
@@ -12209,7 +13072,8 @@
     parameter: p
   focused_url_prefixes:
   - /browse.phtml?
-- domains:
+- name: ellechina
+  domains:
   - ellechina.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -12217,13 +13081,16 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- excluded: No valid snapshot
+- name: masslistener
+  excluded: No valid snapshot
   domains:
   - masslistener.com
-- excluded: No valid snapshot
+- name: tamilrockers
+  excluded: No valid snapshot
   domains:
   - tamilrockers.tel
-- domains:
+- name: lycos
+  domains:
   - lycos.com
   - search.lycos.com
   query_parsers:
@@ -12236,9 +13103,11 @@
   focused_url_prefixes:
   - /?
   - /web/?
-- domains:
+- name: anightsregalia
+  domains:
   - anightsregalia.cam
-- domains:
+- name: ebi
+  domains:
   - ebi.ac.uk
   query_parsers:
   - url_pattern: ^https?://[^/]+/ebisearch/search
@@ -12246,7 +13115,8 @@
     parameter: query
   focused_url_prefixes:
   - /ebisearch/search
-- domains:
+- name: mayoclinic
+  domains:
   - mayoclinic.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/search-results\?
@@ -12258,15 +13128,19 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- excluded: No valid snapshot
+- name: grella
+  excluded: No valid snapshot
   domains:
   - grella.click
-- domains:
+- name: technorati
+  domains:
   - technorati.com
-- excluded: Domain parking
+- name: understandingharmoniousillegal
+  excluded: Domain parking
   domains:
   - understandingharmoniousillegal.com
-- domains:
+- name: shopping
+  domains:
   - shopping.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.html\?
@@ -12278,7 +13152,8 @@
     parameter: page
   focused_url_prefixes:
   - /search.html?
-- domains:
+- name: manga9
+  domains:
   - manga9.co
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12286,10 +13161,12 @@
     parameter: s
   focused_url_prefixes:
   - /?s
-- excluded: No valid snapshot
+- name: lauriegrowingdrops
+  excluded: No valid snapshot
   domains:
   - lauriegrowingdrops.com
-- domains:
+- name: hyves
+  domains:
   - hyves.nl
   query_parsers:
   - url_pattern: ^https?://[^/]+/zoeken/\?
@@ -12297,7 +13174,8 @@
     parameter: s
   focused_url_prefixes:
   - /zoeken
-- domains:
+- name: citeab
+  domains:
   - citeab.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/antibodies/search\?
@@ -12321,7 +13199,8 @@
   - /experimental-models
   - /kits/search?
   - /proteins/search?
-- domains:
+- name: porn24
+  domains:
   - porn24.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+/[0-9]+\.html
@@ -12335,15 +13214,19 @@
     - \.html$
   focused_url_prefixes:
   - /search
-- excluded: No valid snapshot
+- name: admtpmp127
+  excluded: No valid snapshot
   domains:
   - admtpmp127.com
-- domains:
+- name: default-search
+  domains:
   - default-search.net
-- excluded: No valid snapshot
+- name: reptilefightearn
+  excluded: No valid snapshot
   domains:
   - reptilefightearn.com
-- domains:
+- name: pornhost
+  domains:
   - pornhost.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.html\?
@@ -12355,7 +13238,8 @@
     parameter: start
   focused_url_prefixes:
   - /search.html
-- domains:
+- name: tuberel
+  domains:
   - tuberel.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/search/[^/]+
@@ -12367,7 +13251,8 @@
     segment: 4
   focused_url_prefixes:
   - /en/search
-- domains:
+- name: alsbbora
+  domains:
   - alsbbora.com
   - alsbbora.info
   query_parsers:
@@ -12380,10 +13265,12 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- excluded: No search
+- name: ryzex
+  excluded: No search
   domains:
   - ryzex.net
-- domains:
+- name: nyaa
+  domains:
   - nyaa.eu
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12391,7 +13278,8 @@
     parameter: term
   focused_url_prefixes:
   - /?
-- domains:
+- name: govome
+  domains:
   - govome.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12399,7 +13287,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: forexmetatradexdx
+  domains:
   - forexmetatradexdx.info
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12407,7 +13296,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: yhdmw
+  domains:
   - yhdmw.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+search
@@ -12415,10 +13305,12 @@
     parameter: wd
   focused_url_prefixes:
   - /comicsearch
-- excluded: No valid snapshot
+- name: mobfactory
+  excluded: No valid snapshot
   domains:
   - mobfactory.info
-- domains:
+- name: 100ppi
+  domains:
   - 100ppi.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/mprice/\?
@@ -12426,7 +13318,8 @@
     parameter: terms
   focused_url_prefixes:
   - /mprice/?
-- domains:
+- name: filmstreaming2
+  domains:
   - filmstreaming2.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.json\?
@@ -12438,7 +13331,8 @@
   focused_url_prefixes:
   - /search.json?
   - /?
-- domains:
+- name: ct10000
+  domains:
   - ct10000.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/s\.html\?
@@ -12450,9 +13344,11 @@
     parameter: page
   focused_url_prefixes:
   - /s
-- domains:
+- name: pleasedbeginparish
+  domains:
   - pleasedbeginparish.com
-- notes: "The query pattern seems to be too broad."
+- name: wapwon
+  notes: "The query pattern seems to be too broad."
   domains:
   - wapwon.com
   query_parsers:
@@ -12461,10 +13357,12 @@
     segment: 1
   focused_url_prefixes:
   - /
-- excluded: No valid snapshot
+- name: twindiversity
+  excluded: No valid snapshot
   domains:
   - twindiversity.com
-- domains:
+- name: avaxhome
+  domains:
   - avaxhome.ws
   query_parsers:
   - url_pattern: ^https?://[^/]+/avaxhome_search\?
@@ -12472,7 +13370,8 @@
     parameter: q
   focused_url_prefixes:
   - /avaxhome_search?
-- domains:
+- name: royal
+  domains:
   - royal.uk
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -12480,13 +13379,16 @@
     parameter: tags[]
   focused_url_prefixes:
   - /search?
-- excluded: No search
+- name: cryptoplace
+  excluded: No search
   domains:
   - cryptoplace.pro
-- excluded: No valid snapshot
+- name: snickgainfulmuch
+  excluded: No valid snapshot
   domains:
   - snickgainfulmuch.com
-- domains:
+- name: how01
+  domains:
   - how01.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -12494,10 +13396,12 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- excluded: Only autocomplete search
+- name: basketball24
+  excluded: Only autocomplete search
   domains:
   - basketball24.com
-- domains:
+- name: jsoftj
+  domains:
   - jsoftj.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12505,7 +13409,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: tv-links
+  domains:
   - tv-links.eu
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12513,7 +13418,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: slideplayer
+  domains:
   - slideplayer.com.br
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/\?
@@ -12525,7 +13431,8 @@
     parameter: page
   focused_url_prefixes:
   - /search
-- domains:
+- name: leninetudo
+  domains:
   - leninetudo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12533,7 +13440,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: zooplus
+  domains:
   - zooplus.com
   - zoohit.cz
   - zoohit.si
@@ -12569,7 +13477,8 @@
     parameter: p
   focused_url_prefixes:
   - /search/results?
-- domains:
+- name: autoproyecto
+  domains:
   - autoproyecto.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12585,7 +13494,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: markosweb
+  domains:
   - markosweb.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/s
@@ -12597,7 +13507,8 @@
     parameter: qsc.page
   focused_url_prefixes:
   - /s
-- domains:
+- name: parsijoo
+  domains:
   - parsijoo.ir
   query_parsers:
   - url_pattern: ^https?://[^/]+/*.\?
@@ -12612,7 +13523,8 @@
   - /?
   - /bazaar?
   - /autocomplete/Search?
-- domains:
+- name: m5zn
+  domains:
   - m5zn.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12628,7 +13540,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: oomall
+  domains:
   - oomall.com
   - s.oomall.com
   query_parsers:
@@ -12637,10 +13550,12 @@
     parameter: q
   focused_url_prefixes:
   - /search.php?
-- excluded: Query not in URL
+- name: bdpcc
+  excluded: Query not in URL
   domains:
   - bdpcc.com
-- domains:
+- name: kelkoo
+  domains:
   - kelkoo.com
   - kelkoo.co.uk
   - kelkoo.de
@@ -12658,13 +13573,16 @@
   focused_url_prefixes:
   - /search?
   - /suche?
-- excluded: Domain parking
+- name: molodgytot
+  excluded: Domain parking
   domains:
   - molodgytot.biz
-- excluded: Domain parking
+- name: bhj1
+  excluded: Domain parking
   domains:
   - bhj1.xyz
-- domains:
+- name: shentai
+  domains:
   - shentai.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12680,7 +13598,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: hotsale
+  domains:
   - hotsale.com.ar
   query_parsers:
   - url_pattern: ^https?://[^/]+/ofertas
@@ -12692,7 +13611,8 @@
     segment: 2
   focused_url_prefixes:
   - /ofertas
-- domains:
+- name: misrjournal
+  domains:
   - misrjournal.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search/node\?
@@ -12700,7 +13620,8 @@
     parameter: keys
   focused_url_prefixes:
   - /search/node?
-- domains:
+- name: shopzilla
+  domains:
   - shopzilla.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/products/[^/]+
@@ -12719,7 +13640,8 @@
     parameter: start
   focused_url_prefixes:
   - /
-- domains:
+- name: pricegrabber
+  domains:
   - pricegrabber.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[^/]+/products/
@@ -12734,7 +13656,8 @@
     parameter: start
   focused_url_prefixes:
   - /
-- domains:
+- name: blinkx
+  domains:
   - blinkx.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/videos/[^/]+
@@ -12746,7 +13669,8 @@
     segment: 3
   focused_url_prefixes:
   - /videos
-- domains:
+- name: tu
+  domains:
   - tu.tv
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12754,7 +13678,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: globalspec
+  domains:
   - globalspec.com
   - insights.globalspec.com
   - reference.globalspec.com
@@ -12782,7 +13707,8 @@
   - /article/search
   - /search/all
   - /search/reference
-- domains:
+- name: petalsearch
+  domains:
   - petalsearch.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -12794,10 +13720,12 @@
     parameter: pn
   focused_url_prefixes:
   - /search?
-- excluded: No search
+- name: lollipop-network
+  excluded: No search
   domains:
   - lollipop-network.com
-- domains:
+- name: suite101
+  domains:
   - suite101.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.cfm\?
@@ -12805,10 +13733,12 @@
     parameter: q
   focused_url_prefixes:
   - /search.cfm?
-- excluded: No valid snapshot
+- name: 3file
+  excluded: No valid snapshot
   domains:
   - 3file.info
-- domains:
+- name: watchseries
+  domains:
   - watchseries.cr
   - watchseries.sk
   query_parsers:
@@ -12817,7 +13747,8 @@
     parameter: s
   focused_url_prefixes:
   - /search?
-- domains:
+- name: cp
+  domains:
   - cp.pt
   query_parsers:
   - url_pattern: ^https?://[^/]+/passageiros/pt/resultados-pesquisa\?
@@ -12829,13 +13760,16 @@
     parameter: p
   focused_url_prefixes:
   - /passageiros/pt/resultados-pesquisa?
-- excluded: Domain parking
+- name: molebeagleheadless
+  excluded: Domain parking
   domains:
   - molebeagleheadless.com
-- excluded: Domain parking
+- name: surveyflsh
+  excluded: Domain parking
   domains:
   - surveyflsh.click
-- domains:
+- name: badjojo
+  domains:
   - badjojo.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12847,16 +13781,20 @@
     parameter: p
   focused_url_prefixes:
   - /?
-- excluded: No valid snapshot
+- name: astercom
+  excluded: No valid snapshot
   domains:
   - astercom.top
-- excluded: Query not in URL
+- name: mocah
+  excluded: Query not in URL
   domains:
   - mocah.org
-- excluded: No search
+- name: statmyweb
+  excluded: No search
   domains:
   - statmyweb.com
-- domains:
+- name: 1001jogos
+  domains:
   - 1001jogos.pt
   query_parsers:
   - url_pattern: ^https?://[^/]+/procurar
@@ -12864,7 +13802,8 @@
     parameter: q
   focused_url_prefixes:
   - /procurar
-- domains:
+- name: icij
+  domains:
   - icij.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12880,7 +13819,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: textile
+  domains:
   - textile.gov.tm
   query_parsers:
   - url_pattern: ^https?://[^/]+/site/search\?
@@ -12888,7 +13828,8 @@
     parameter: SearchForm[title]
   focused_url_prefixes:
   - /site/search?
-- domains:
+- name: earthday
+  domains:
   - earthday.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12896,7 +13837,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: adzuna
+  domains:
   - adzuna.co.uk
   query_parsers:
   - url_pattern: ^https?://[^/]+/jobs/search\?
@@ -12908,16 +13850,20 @@
     parameter: p
   focused_url_prefixes:
   - /jobs/search?
-- excluded: No search
+- name: foxcdn
+  excluded: No search
   domains:
   - foxcdn.life
-- excluded: No valid snapshot
+- name: deferscoop
+  excluded: No valid snapshot
   domains:
   - deferscoop.com
-- excluded: No search
+- name: mediaoffers
+  excluded: No search
   domains:
   - mediaoffers.click
-- domains:
+- name: grumbleoh
+  domains:
   - grumbleoh.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/watch.[0-9]+\.js\?
@@ -12925,10 +13871,12 @@
     parameter: kw
   focused_url_prefixes:
   - /watch
-- excluded: Domain parking
+- name: 1xbet-164837
+  excluded: Domain parking
   domains:
   - 1xbet-164837.top
-- domains:
+- name: mybeautylands
+  domains:
   - mybeautylands.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -12936,7 +13884,8 @@
     parameter: search_query
   focused_url_prefixes:
   - /search?
-- domains:
+- name: pricerunner
+  domains:
   - pricerunner.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/results\?
@@ -12944,10 +13893,12 @@
     parameter: q
   focused_url_prefixes:
   - /results?
-- excluded: No valid snapshot
+- name: torrentwiz1
+  excluded: No valid snapshot
   domains:
   - torrentwiz1.com
-- domains:
+- name: you
+  domains:
   - you.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -12955,10 +13906,12 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- excluded: No archived SERP
+- name: trafficunit
+  excluded: No archived SERP
   domains:
   - trafficunit.in
-- domains:
+- name: business
+  domains:
   - business.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -12966,16 +13919,20 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- excluded: Not archived
+- name: neosportek8
+  excluded: Not archived
   domains:
   - neosportek8.com
-- excluded: No valid snapshot
+- name: andcareyo
+  excluded: No valid snapshot
   domains:
   - andcareyo.biz
-- excluded: Query not in URL
+- name: onemanga
+  excluded: Query not in URL
   domains:
   - onemanga.com
-- domains:
+- name: vietxx
+  domains:
   - vietxx.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12983,7 +13940,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: thegudda
+  domains:
   - thegudda.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -12999,16 +13957,20 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: No search
+- name: coulderlyy
+  excluded: No search
   domains:
   - coulderlyy.website
-- excluded: No valid snapshot
+- name: velsoftwa
+  excluded: No valid snapshot
   domains:
   - velsoftwa.club
-- excluded: No valid snapshot
+- name: letassigne
+  excluded: No valid snapshot
   domains:
   - letassigne.club
-- domains:
+- name: lo
+  domains:
   - lo.st
   query_parsers:
   - url_pattern: ^https?://[^/]+/cgi-bin/eolost\.cgi\?
@@ -13016,16 +13978,20 @@
     parameter: x_query
   focused_url_prefixes:
   - /cgi-bin/eolost.cgi?
-- excluded: No valid snapshot
+- name: eadingenered
+  excluded: No valid snapshot
   domains:
   - eadingenered.pro
-- excluded: Domain parking
+- name: sufficulumcu
+  excluded: Domain parking
   domains:
   - sufficulumcu.top
-- excluded: Not archived
+- name: giggsyunited
+  excluded: Not archived
   domains:
   - giggsyunited.com
-- domains:
+- name: heroturko
+  domains:
   - heroturko.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/[0-9]+/[^/]+
@@ -13036,7 +14002,8 @@
   - /031
   - /047
   - /057
-- domains:
+- name: kino
+  domains:
   - kino.to
   query_parsers:
   - url_pattern: ^https?://[^/]+/Search\.html\?
@@ -13044,7 +14011,8 @@
     parameter: q
   focused_url_prefixes:
   - /Search.html?
-- domains:
+- name: sourcecodester
+  domains:
   - sourcecodester.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -13052,13 +14020,16 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- excluded: Domain parking
+- name: anentryle
+  excluded: Domain parking
   domains:
   - anentryle.club
-- excluded: Excluded from the Internet Archive
+- name: football3
+  excluded: Excluded from the Internet Archive
   domains:
   - football3.ir
-- domains:
+- name: xxxcomics
+  domains:
   - xxxcomics.org
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -13066,13 +14037,16 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- excluded: No valid snapshot
+- name: messyster
+  excluded: No valid snapshot
   domains:
   - messyster.biz
-- excluded: No search
+- name: gobookee
+  excluded: No search
   domains:
   - gobookee.net
-- domains:
+- name: btcmanager
+  domains:
   - btcmanager.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -13080,10 +14054,12 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- excluded: No valid snapshot
+- name: oureviewi
+  excluded: No valid snapshot
   domains:
   - oureviewi.club
-- domains:
+- name: jetboobs
+  domains:
   - jetboobs.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/en/[0-9]+/[^/]+/[0-9]+\.html
@@ -13097,7 +14073,8 @@
     - \.html$
   focused_url_prefixes:
   - /en/
-- domains:
+- name: wazap
+  domains:
   - wazap.com
   - jp.wazap.com
   query_parsers:
@@ -13110,7 +14087,8 @@
     parameter: p
   focused_url_prefixes:
   - /search.wz?
-- domains:
+- name: trendymalldeals
+  domains:
   - trendymalldeals.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -13118,22 +14096,28 @@
     parameter: query
   focused_url_prefixes:
   - /search?
-- excluded: No valid snapshot
+- name: maandhave
+  excluded: No valid snapshot
   domains:
   - maandhave.biz
-- excluded: No valid snapshot
+- name: eyourcom
+  excluded: No valid snapshot
   domains:
   - eyourcom.fun
-- excluded: Domain parking
+- name: taskthesa
+  excluded: Domain parking
   domains:
   - taskthesa.club
-- excluded: No valid snapshot
+- name: lenglishiam
+  excluded: No valid snapshot
   domains:
   - lenglishiam.biz
-- excluded: No valid snapshot
+- name: fishcod
+  excluded: No valid snapshot
   domains:
   - fishcod.com
-- domains:
+- name: mychicconsulting
+  domains:
   - mychicconsulting.es
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -13149,16 +14133,20 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: No valid snapshot
+- name: sandmyre
+  excluded: No valid snapshot
   domains:
   - sandmyre.club
-- excluded: No valid snapshot
+- name: ficanportio
+  excluded: No valid snapshot
   domains:
   - ficanportio.biz
-- excluded: No search
+- name: soverthlaest
+  excluded: No search
   domains:
   - soverthlaest.space
-- domains:
+- name: picsearch
+  domains:
   - picsearch.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/index\.cgi\?
@@ -13166,13 +14154,16 @@
     parameter: q
   focused_url_prefixes:
   - /index.cgi?
-- excluded: No valid snapshot
+- name: distemshu
+  excluded: No valid snapshot
   domains:
   - distemshu.biz
-- excluded: No valid snapshot
+- name: tronglyre
+  excluded: No valid snapshot
   domains:
   - tronglyre.club
-- domains:
+- name: kidzsearch
+  domains:
   - kidzsearch.com
   - search.kidzsearch.com
   query_parsers:
@@ -13195,7 +14186,8 @@
   - /kznewssearch.php?
   - /kzgamesearch.php?
   - /kzappsearch.php?
-- domains:
+- name: najdi
+  domains:
   - najdi.si
   query_parsers:
   - url_pattern: ^https?://[^/]+/najdi/[^/]+
@@ -13203,7 +14195,8 @@
     segment: 2
   focused_url_prefixes:
   - /najdi
-- domains:
+- name: metager
+  domains:
   - metager.de
   - metager.org
   query_parsers:
@@ -13216,7 +14209,8 @@
     parameter: next
   focused_url_prefixes:
   - /meta.ger3?
-- domains:
+- name: omgili
+  domains:
   - omgili.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -13224,7 +14218,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: gigablast
+  domains:
   - gigablast.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -13236,7 +14231,8 @@
     parameter: s
   focused_url_prefixes:
   - /search?
-- domains:
+- name: mojeek
+  domains:
   - mojeek.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -13248,9 +14244,11 @@
     parameter: s
   focused_url_prefixes:
   - /search?
-- domains:
+- name: evi
+  domains:
   - evi.com
-- domains:
+- name: args
+  domains:
   - args.me
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.html\?
@@ -13262,10 +14260,12 @@
     parameter: page
   focused_url_prefixes:
   - /search.html?
-- excluded: No valid snapshot
+- name: askmenow
+  excluded: No valid snapshot
   domains:
   - askmenow.com
-- domains:
+- name: base-search
+  domains:
   - base-search.net
   query_parsers:
   - url_pattern: ^https?://[^/]+/Search/Results\?
@@ -13277,7 +14277,8 @@
     parameter: page
   focused_url_prefixes:
   - /Search/Results?
-- domains:
+- name: chatnoir
+  domains:
   - chatnoir.eu
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -13299,7 +14300,8 @@
     title_selector: h2
   focused_url_prefixes:
   - /?
-- domains:
+- name: chemrefer
+  domains:
   - chemrefer.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -13307,7 +14309,8 @@
     parameter: s
   focused_url_prefixes:
   - /?
-- domains:
+- name: egerin
+  domains:
   - egerin.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -13317,10 +14320,12 @@
   - /search/?
   - /search-images/?
   - /search-videos/?
-- excluded: Query not in URL
+- name: findsounds
+  excluded: Query not in URL
   domains:
   - findsounds.com
-- domains:
+- name: fireball
+  domains:
   - fireball.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -13332,7 +14337,8 @@
   focused_url_prefixes:
   - /search?
   - /de/search?
-- domains:
+- name: genieknows
+  domains:
   - genieknows.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -13348,7 +14354,8 @@
   focused_url_prefixes:
   - /?
   - /page
-- domains:
+- name: leit
+  domains:
   - leit.is
   query_parsers:
   - url_pattern: ^https?://[^/]+/(leita|company_search)\?
@@ -13361,7 +14368,8 @@
   focused_url_prefixes:
   - /leita?
   - /company_search?
-- domains:
+- name: miner
+  domains:
   - miner.hu
   query_parsers:
   - url_pattern: ^https?://[^/]+/\?
@@ -13377,10 +14385,12 @@
   focused_url_prefixes:
   - /?
   - /page
-- excluded: No search
+- name: munax
+  excluded: No search
   domains:
   - munax.com
-- notes: none
+- name: mysimon
+  notes: none
   domains:
   - mysimon.com
   query_parsers:
@@ -13393,7 +14403,8 @@
     parameter: p
   focused_url_prefixes:
   - /shopping?
-- notes: National Library of Medicine
+- name: ncbi
+  notes: National Library of Medicine
   domains:
   - ncbi.nlm.nih.gov
   query_parsers:
@@ -13405,7 +14416,8 @@
   - /books
   - /gene
   - /protein
-- notes: News&Moods
+- name: newsandmoods
+  notes: News&Moods
   domains:
   - newsandmoods.com
   query_parsers:
@@ -13418,7 +14430,8 @@
     parameter: start
   focused_url_prefixes:
   - /news/search?
-- domains:
+- name: newslookup
+  domains:
   - newslookup.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/results\?
@@ -13430,7 +14443,8 @@
     parameter: p
   focused_url_prefixes:
   - /results?
-- domains:
+- name: nextag
+  domains:
   - nextag.de
   query_parsers:
   - url_pattern: ^https?://[^/]+/shopping\/products\?
@@ -13442,10 +14456,12 @@
     parameter: page
   focused_url_prefixes:
   - /shopping/products?
-- excluded: Reverse image search
+- name: pixsta
+  excluded: Reverse image search
   domains:
   - pixsta.com
-- domains:
+- name: podscope
+  domains:
   - podscope.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\.php\?
@@ -13453,7 +14469,8 @@
     parameter: q
   focused_url_prefixes:
   - /search.php?
-- domains:
+- name: qmamu
+  domains:
   - qmamu.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
@@ -13461,7 +14478,8 @@
     parameter: q
   focused_url_prefixes:
   - /search?
-- domains:
+- name: recipebridge
+  domains:
   - recipebridge.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/r/[^/]+
@@ -13479,10 +14497,12 @@
   focused_url_prefixes:
   - /r
   - /recipes?
-- excluded: Query not in URL.
+- name: seeqpod
+  excluded: Query not in URL.
   domains:
   - seeqpod.com
-- domains:
+- name: songza
+  domains:
   - songza.fm
   query_parsers:
   - url_pattern: ^https?://[^/]+/search
@@ -13490,7 +14510,8 @@
     parameter: q
   focused_url_prefixes:
   - /search
-- domains:
+- name: swisscows
+  domains:
   - swisscows.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/[a-z]+/(web|news|video|music)\?
@@ -13505,11 +14526,13 @@
   - /news?
   - /video?
   - /music?
-- excluded: No search
+- name: veveo
+  excluded: No search
   domains:
   - veveo.net
   - corporate.veveo.net
-- domains:
+- name: dblp
+  domains:
   - dblp.org
   - dblp.uni-trier.de
   query_parsers:
