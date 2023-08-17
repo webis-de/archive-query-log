@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
 from functools import cached_property
-from json import loads
+from json import loads, JSONDecodeError
 from typing import Iterator, NamedTuple
 from urllib.parse import urlsplit
 from warnings import warn
@@ -209,7 +209,12 @@ def _read_response(response: Response) -> _CdxResponse:
         # Internet Archive style JSON CDX.
         json = response.json()
     else:
-        json = [loads(line) for line in lines]
+        try:
+            json = [loads(line) for line in lines]
+        except JSONDecodeError as e:
+            raise RuntimeError(
+                f"Failed to parse CDX response as JSON: {response.text}"
+            ) from e
 
     if isinstance(json[0], list):
         # Internet Archive style JSON CDX.
