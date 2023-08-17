@@ -27,7 +27,7 @@ class Progress(NamedTuple):
 
 _statistics_cache: dict[str, Statistics] = ExpiringDict(
     max_len=100,
-    max_age_seconds=60,
+    max_age_seconds=10,
 )
 
 
@@ -51,7 +51,7 @@ def _get_statistics(
     statistics = Statistics(
         name=name,
         description=description,
-        total=stats["_all"]["total"]["docs"]["count"],
+        total=stats["_all"]["primaries"]["docs"]["count"],
         disk_size=_convert_bytes(
             stats["_all"]["total"]["store"]["size_in_bytes"]),
     )
@@ -61,7 +61,7 @@ def _get_statistics(
 
 _progress_cache: dict[str, Progress] = ExpiringDict(
     max_len=100,
-    max_age_seconds=60,
+    max_age_seconds=10,
 )
 
 
