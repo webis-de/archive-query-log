@@ -66,10 +66,10 @@ def test_parse_query_google_zombie_apocalypse_1565114134():
     )
 
 
-def test_parse_query_google_w_fan_j_li_s_ma_n_tang_and_w_yu_april_2012_towards_certain_fixes_with_editing_rules_and_master_data_the_vldb_journal_21_2_213_238_297_10_1007_s00778_011_0253_7_1614165399():
+def test_parse_query_google_scholar_w_fan_j_li_s_ma_n_tang_and_w_yu_april_2012_towards_certain_fixes_with_editing_rules_and_master_data_the_vldb_journal_21_2_213_238_297_10_1007_s00778_011_0253_7_1614165399():
     verify_serp_parsing(
         "https://web.archive.org/web/20210224111639id_/https://scholar.google.com/scholar?hl=en&q=W.+Fan%2C+J.+Li%2C+S.+Ma%2C+N.+Tang%2C+and+W.+Yu.+April+2012.+Towards+certain+fixes+with+editing+rules+and+master+data.+The+VLDB+Journal%2C+21(2)%3A+213--238.+297+10.1007%2Fs00778-011-0253-7+",
-        "google",
+        "google-scholar",
     )
 
 
@@ -80,17 +80,17 @@ def test_parse_query_google_susan_boyle_make_me_a_channel_of_your_peace_16077910
     )
 
 
-def test_parse_query_google_muhammed_rashid_1656890873():
+def test_parse_query_google_scholar_muhammed_rashid_1656890873():
     verify_serp_parsing(
         "https://web.archive.org/web/20220703232753id_/https://scholar.google.com/scholar?q=Muhammed+Rashid",
-        "google",
+        "google-scholar",
     )
 
 
-def test_parse_query_google_a_tumeo_m_branca_l_camerini_a_dual_priority_realtime_multiprocessor_system_on_fpga_for_automotive_ap_1614181186():
+def test_parse_query_google_scholar_a_tumeo_m_branca_l_camerini_a_dual_priority_realtime_multiprocessor_system_on_fpga_for_automotive_ap_1614181186():
     verify_serp_parsing(
         "https://web.archive.org/web/20210224153946id_/https://scholar.google.com/scholar?hl=en&q=A.+Tumeo%2C+M.+Branca%2C+L.+Camerini%2C+%22A+Dual-Priority+RealTime+Multiprocessor+System+on+FPGA+for+Automotive+Applications%22%2C+Design%2C+Automation+and+Test+in+Europe+(DATE)+2008%2C+pages+1039--1044.+10.1145%2F1403375.1403625+",
-        "google",
+        "google-scholar",
     )
 
 
