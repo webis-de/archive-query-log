@@ -147,9 +147,10 @@ def build(
             )
             .query(FunctionScore(functions=[RandomScore()]))
         )
+        num_changed_archives_search: Search = (
+            changed_archives_search.extra(track_total_hits=True))
         num_changed_archives = (
-            changed_archives_search.extra(track_total_hits=True)
-            .execute().hits.total.value)
+            num_changed_archives_search.execute().hits.total.value)
         all_providers_search: Search = (
             Provider.search(using=config.es.client)
             .filter(~Exists(field="exclusion_reason")))
@@ -206,9 +207,10 @@ def build(
             )
             .query(FunctionScore(functions=[RandomScore()]))
         )
+        num_changed_providers_search: Search = (
+            changed_providers_search.extra(track_total_hits=True))
         num_changed_providers = (
-            changed_providers_search.extra(track_total_hits=True)
-            .execute().hits.total.value)
+            num_changed_providers_search.execute().hits.total.value)
         all_archives_search: Search = Archive.search(using=config.es.client)
         num_all_archives_search: Search = (
             all_archives_search.extra(track_total_hits=True))
