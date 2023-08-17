@@ -10,7 +10,6 @@ jobs:
       matrix:
         python:
         - "3.10"
-        - "3.11"
     runs-on: ubuntu-latest
     steps:
     - name: "📥 Check-out"
@@ -31,7 +30,7 @@ jobs:
       run: twine check dist/*
     - name: "📤 Upload Python wheels"
       uses: actions/upload-artifact@v3
-      if: matrix.python == '3.9'
+      if: matrix.python == '3.10'
       with:
         name: wheels
         path: dist
@@ -41,7 +40,6 @@ jobs:
       matrix:
         python:
         - "3.10"
-        - "3.11"
     runs-on: ubuntu-latest
     steps:
     - name: "📥 Check-out"
@@ -64,7 +62,6 @@ jobs:
       matrix:
         python:
         - "3.10"
-        - "3.11"
     runs-on: ubuntu-latest
     steps:
     - name: "📥 Check-out"
@@ -87,7 +84,6 @@ jobs:
       matrix:
         python:
         - "3.10"
-        - "3.11"
     runs-on: ubuntu-latest
     steps:
     - name: "📥 Check-out"
@@ -106,7 +102,7 @@ jobs:
       run: pytest --cov --cov-report=xml archive_query_log
     - name: "📤 Upload coverage to Codecov"
       uses: codecov/codecov-action@v3
-      if: matrix.python == '3.11'
+      if: matrix.python == '3.10'
       with:
         fail_ci_if_error: true
         token: ${{ secrets.CODECOV_TOKEN }}
