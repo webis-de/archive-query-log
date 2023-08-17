@@ -31,13 +31,13 @@ or just look at [our example files](data/examples).
 ### Running Experiments on the AQL
 
 The data in the Archive Query Log is highly sensitive (still, you
-can [re-crawl everything from the Wayback Machine](#usage)). For that reason, we ensure that custom experiments or
-analyises can not leak sensitive data (please [get in touch](#contribute) if you have questions) by
+can [re-crawl everything from the Wayback Machine](#crawling)). For that reason, we ensure that custom experiments or
+analyses can not leak sensitive data (please [get in touch](#contribute) if you have questions) by
 using [TIRA](https://tira.io) as a platform for custom analyses/experiments. In TIRA, you submit a Docker image that
 implements your experiment. Your software is then executed in sandboxed mode (without internet connection) to ensure
 that your software does not leak sensitive information. After your software execution finished, administrators will
 review your submission and unblind it so that you can access the outputs.  
-Please refer to our [dedicated TIRA tutorial](integrations/tira/) as starting point for your experiments.
+Please refer to our [dedicated TIRA tutorial](integrations/tira/README.md) as starting point for your experiments.
 
 ## Crawling
 
@@ -239,7 +239,7 @@ You can use the following BibTeX entry for citation:
 
 ## Development
 
-Refer to the local [Python installation](#installation-python-from-source) instructions to setup the development
+Refer to the local [Python installation](#installation-python-from-source) instructions to set up the development
 environment and install the dependencies.
 
 After having implemented a new feature, you should the check code format, inspect common LINT errors, 
@@ -257,7 +257,7 @@ At the moment, our workflow for adding new tests for parsers goes like this:
 
 1. Select the number of tests to run per service and the number of services.
 2. Auto-generate unit tests and download WARCs
-   with [generate_tests.py](archive_query_log/results/test/generate_tests.py)
+   with [generate_tests.py](archive_query_log/legacy/results/test/generate_tests.py)
 3. Run the tests.
 4. Failing tests will open a diff editor with the approval and a web browser tab with the Wayback URL.
 5. Use the web browser dev tools to find the query input field and search result CSS paths.
