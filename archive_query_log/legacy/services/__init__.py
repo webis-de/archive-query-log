@@ -15,12 +15,12 @@ def read_services(
 
         for service_dict in services_dict:
             try:
-                service = Service.schema().load(service_dict)
+                service = Service.schema(unknown="exclude").load(service_dict)
                 services += [(service.name, service)]
             except Exception as exception:
                 if not ignore_parsing_errors:
                     raise ValueError(
-                        f"Could not parse service {service_dict['name']}",
+                        f"Could not parse service {service_dict}",
                         exception
                     )
         if not ignore_parsing_errors:

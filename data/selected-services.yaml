@@ -9475,7 +9475,7 @@
   - drawio.com
   query_parsers:
   - url_pattern: ^https?://[^/]+/search\?
-    type: query_paraПовар.руmeter
+    type: query_parameter
     parameter: search
   focused_url_prefixes:
   - /search?

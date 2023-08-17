@@ -9,6 +9,7 @@ from uuid import UUID, uuid5, NAMESPACE_URL
 
 from dataclasses_json import DataClassJsonMixin, config
 from marshmallow.fields import List, Nested, String, Field
+from publicsuffixlist import PublicSuffixList
 
 from archive_query_log.legacy.model.highlight import HighlightedText
 from archive_query_log.legacy.util.serialization import HighlightedTextField
@@ -259,6 +260,8 @@ from archive_query_log.legacy.model.parse import QueryParser, \
     ResultsParserField, InterpretedQueryParserField, InterpretedQueryParser, \
     ResultsParser
 
+_public_suffix_list = PublicSuffixList()
+
 
 @dataclass(frozen=True, slots=True)
 class Service(DataClassJsonMixin):
@@ -269,57 +272,46 @@ class Service(DataClassJsonMixin):
     Input of: service URLs, query extraction
     """
 
-    name: str
+    @cached_property
+    def name(self) -> str:
+        """
+        Service name (corresponds to ``alexa_domain`` without
+        the ``alexa_public_suffix``).
+        """
+        domains = self.domains
+        domain = domains[0]
+        return domain
+
     """
     Service name (corresponds to ``alexa_domain`` without
     the ``alexa_public_suffix``).
-    """
-    public_suffix: str
-    """
-    Public suffix (https://publicsuffix.org/) of ``alexa_domain``.
-    """
-    alexa_domain: str
-    """
-    Domain as it appears in Alexa top-1M ranks.
-    """
-    alexa_rank: int | None
-    """
-    Rank from fused Alexa top-1M rankings.
-    """
-    category: str | None
-    """
-    Category of the service (manual annotation).
-    """
-    notes: str | None
-    """
-    Notes about the service (manual annotation).
-    """
-    input_field: bool | None
-    """
-    Whether the service has an input field.
-    """
-    search_form: bool | None
-    """
-    Whether the service has a search form element.
-    """
-    search_div: bool | None
-    """
-    Whether the service has a search div element.
     """
     domains: Sequence[str] = field(
         metadata=config(
             decoder=tuple,
             mm_field=List(String())
-        )
+        ),
     )
     """
     Known domains of the service, including the main domain.
+    """
+    focused_url_prefixes: Sequence[str] = field(
+        metadata=config(
+            decoder=tuple,
+            mm_field=List(String())
+        ),
+        default=(),
+    )
+    """
+    URL prefixes for a more focused pipeline which might miss some queries
+    but executes faster.
     """
     query_parsers: Sequence[QueryParser] = field(
         metadata=config(
             decoder=tuple,
             mm_field=List(QueryParserField())
-        )
+        ),
+        default=(),
     )
     """
     Query parsers in order of precedence.
@@ -328,7 +320,8 @@ class Service(DataClassJsonMixin):
         metadata=config(
             decoder=tuple,
             mm_field=List(PageOffsetParserField())
-        )
+        ),
+        default=(),
     )
     """
     Page number parsers in order of precedence.
@@ -337,7 +330,8 @@ class Service(DataClassJsonMixin):
         metadata=config(
             decoder=tuple,
             mm_field=List(PageOffsetParserField())
-        )
+        ),
+        default=(),
     )
     """
     Page number parsers in order of precedence.
@@ -346,7 +340,8 @@ class Service(DataClassJsonMixin):
         metadata=config(
             decoder=tuple,
             mm_field=List(InterpretedQueryParserField())
-        )
+        ),
+        default=(),
     )
     """
     Interpreted query parsers in order of precedence.
@@ -360,20 +355,11 @@ class Service(DataClassJsonMixin):
         metadata=config(
             decoder=tuple,
             mm_field=List(ResultsParserField())
-        )
+        ),
+        default=(),
     )
     """
     SERP parsers in order of precedence.
-    """
-    focused_url_prefixes: Sequence[str] = field(
-        metadata=config(
-            decoder=tuple,
-            mm_field=List(String())
-        )
-    )
-    """
-    URL prefixes for a more focused pipeline which might miss some queries
-    but executes faster.
     """
 
 

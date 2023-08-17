@@ -2,12 +2,10 @@ from collections import defaultdict
 from gzip import GzipFile
 from io import TextIOWrapper, BytesIO
 from json import loads
-from math import inf
 from pathlib import Path
 from random import Random
 from re import compile
 from textwrap import dedent
-from typing import Iterable
 
 from requests import get
 from slugify import slugify
@@ -15,8 +13,7 @@ from tqdm import tqdm
 from warcio import WARCWriter, StatusAndHeaders
 
 from archive_query_log.legacy import PROJECT_DIRECTORY_PATH
-from archive_query_log.legacy.config import SERVICES
-from archive_query_log.legacy.model import Service, ArchivedQueryUrl
+from archive_query_log.legacy.model import ArchivedQueryUrl
 
 NUM_SERVICES = 11
 SERVICE_NAMES = ["google", "yahoo", "bing", "duckduckgo", "ask", "ecosia"]
@@ -38,21 +35,12 @@ PATTERN_SPECIAL_CHARS = compile(r"[^0-9a-z]+")
 
 
 def main():
-    if SERVICE_NAMES is None:
-        services: Iterable[Service] = SERVICES.values()
-        services = sorted(
-            services,
-            key=lambda s: s.alexa_rank if s.alexa_rank is not None else inf,
-        )
-        services = services[:NUM_SERVICES]
-        service_names = [s.name for s in services]
-    else:
-        service_names = SERVICE_NAMES
+    service_names = SERVICE_NAMES
 
     query_urls = defaultdict(list)
     for path in tqdm(
-        list(SAMPLE_QUERIES_PATH.glob("part*.gz")),
-        desc="Load service queries"
+            list(SAMPLE_QUERIES_PATH.glob("part*.gz")),
+            desc="Load service queries"
     ):
         # noinspection PyTypeChecker
         with GzipFile(path, "rb") as gf, TextIOWrapper(gf) as f:
