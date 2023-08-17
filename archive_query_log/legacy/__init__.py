@@ -1,7 +1,7 @@
 from logging import getLogger
 from pathlib import Path
 
-PROJECT_DIRECTORY_PATH = Path(__file__).parent.parent
+PROJECT_DIRECTORY_PATH = Path(__file__).parent.parent.parent
 DATA_DIRECTORY_PATH = PROJECT_DIRECTORY_PATH / "data"
 
 CDX_API_URL = "https://web.archive.org/cdx/search/cdx"
