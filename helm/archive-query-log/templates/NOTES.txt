@@ -6,10 +6,11 @@ Authenticating Elasticsearch with user {{ $.Values.elasticsearch.username }}.
 Authentication for Elasticsearch is not configured. Configure credentials with the `--set elasticsearch.username=EXAMPLE --set elasticsearch.password=EXAMPLE` options for the `helm` command, if you need to access a restricted Elasticsearch cluster.
 {{ end }}
 
-Jobs started:
-- Build sources: {{ $.Values.initialCompletions.sources }}x
-- Fetch : {{ $.Values.initialCompletions.captures }}x
+- Build sources: {{ $.Values.parallelism.sources }}x
+- Fetch : {{ $.Values.parallelism.captures }}x
 
 Cronjobs scheduled:
 - Build sources: {{ $.Values.schedules.sources }}
 - Build sources: {{ $.Values.schedules.captures }}
+
+Jobs started:

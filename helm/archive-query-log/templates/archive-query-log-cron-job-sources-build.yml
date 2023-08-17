@@ -5,7 +5,7 @@ metadata:
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
-    checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.k8s.yaml") . | sha256sum }}
+    checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
 spec:
   schedule: {{ $.Values.schedules.sources }}
   jobTemplate:
@@ -20,9 +20,15 @@ spec:
               requests:
                 memory: 4Gi
             command:
-            - /bin/sh
-            - -c
-            - archive-query-log -f /workspace/config.config-map.yml -f /workspace/config.secret.yml sources build
+            - /venv/bin/python
+            - -m
+            - archive_query_log
+            - -f
+            - /workspace/config.config-map.yml
+            - -f
+            - /workspace/config.secret.yml
+            - sources
+            - build
             volumeMounts:
             - name: {{ $.Release.Name }}-config-map
               mountPath: /workspace/config.config-map.yml

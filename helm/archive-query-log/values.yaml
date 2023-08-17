@@ -1,8 +1,8 @@
 image: ghcr.io/webis-de/archive-query-log
 
-initialCompletions:
+parallelism:
   sources: 5
-  captures: 10
+  captures: 20
 schedules:
   sources: "0 0 * * *"
   captures: "0 0 * * *"
