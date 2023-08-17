@@ -78,8 +78,9 @@ examples = [
 "Bug Tracker" = "https://github.com/webis-de/archive-query-log/issues"
 
 [project.scripts]
-archive_query_log = "archive_query_log.new.cli:cli"
-archive-query-log = "archive_query_log.new.cli:cli"
+archive_query_log = "archive_query_log.cli:cli"
+archive-query-log = "archive_query_log.cli:cli"
+aql = "archive_query_log.cli:cli"
 
 [build-system]
 requires = ["setuptools>=50", "setuptools_scm[toml]>=6.2", "wheel"]

@@ -25,8 +25,8 @@ RUN \
     --mount=type=cache,target=/root/.cache/pip \
     SETUPTOOLS_SCM_PRETEND_VERSION=${PSEUDO_VERSION} \
     /venv/bin/pip install -e .
-#ADD archive_query_log/__init__.py archive_query_log/__init__.py
 
+ADD .git .git
 RUN \
     --mount=source=.git,target=.git,type=bind \
     --mount=type=cache,target=/root/.cache/pip \
@@ -34,4 +34,4 @@ RUN \
 
 ADD . .
 
-ENTRYPOINT ["/venv/bin/python", "-m", "archive_query_log.new"]
+ENTRYPOINT ["/venv/bin/python", "-m", "archive_query_log"]
