@@ -184,7 +184,7 @@ def build(
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
         else:
-            echo(f"No new/changed archives.")
+            echo("No new/changed archives.")
 
     if not skip_providers:
         changed_providers_search: Search = (
@@ -235,4 +235,4 @@ def build(
                     raise RuntimeError(f"Indexing error: {info}")
             Source.index().refresh(using=config.es.client)
         else:
-            echo(f"No new/changed providers.")
+            echo("No new/changed providers.")

@@ -11,4 +11,5 @@ NAMESPACE_url_offset_parser = uuid5(NAMESPACE_AQL, "url_offset_parser")
 NAMESPACE_url_language_parser = uuid5(NAMESPACE_AQL, "url_language_parser")
 NAMESPACE_serp_query_parser = uuid5(NAMESPACE_AQL, "serp_query_parser")
 NAMESPACE_serp_snippets_parser = uuid5(NAMESPACE_AQL, "serp_snippets_parser")
-NAMESPACE_serp_direct_answer_parser = uuid5(NAMESPACE_AQL, "serp_direct_answer_parser")
+NAMESPACE_serp_direct_answer_parser = uuid5(
+    NAMESPACE_AQL, "serp_direct_answer_parser")

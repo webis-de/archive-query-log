@@ -109,7 +109,7 @@ class Capture(BaseDocument):
     )
     status_code: int = Integer()
     digest: str = Keyword()
-    mimetype: str | None= Keyword()
+    mimetype: str | None = Keyword()
     filename: str | None = Keyword()
     offset: int | None = Integer()
     length: int | None = Integer()

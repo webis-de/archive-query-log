@@ -5,7 +5,8 @@ import yaml
 from pandas import concat, DataFrame
 
 from archive_query_log.legacy import DATA_DIRECTORY_PATH
-from archive_query_log.legacy.cli.external import load_services, load_domains, \
+from archive_query_log.legacy.cli.external import \
+    load_services, load_domains, \
     service_domains, load_url_prefixes, \
     load_query_parsers, query_parser, load_page_offset_parsers, \
     page_offset_parser_series

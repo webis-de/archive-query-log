@@ -155,4 +155,4 @@ def fetch(config: Config) -> None:
         for source in changed_sources:
             _add_captures(config, source)
     else:
-        echo(f"No changed sources.")
+        echo("No new/changed sources.")

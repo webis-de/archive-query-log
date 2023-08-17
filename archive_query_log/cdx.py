@@ -67,7 +67,6 @@ class _CdxResponse(NamedTuple):
     json: list[dict]
 
 
-
 def _parse_cdx_flags(flags_string: str) -> set[CdxFlag]:
     flags = set()
     for flag_string in flags_string.split():
@@ -82,6 +81,7 @@ def _parse_cdx_flags(flags_string: str) -> set[CdxFlag]:
         else:
             warn(RuntimeWarning(f"Unrecognized CDX flag: {flag_string}"))
     return flags
+
 
 def _parse_cdx_line(line: dict) -> CdxCapture:
     line = {

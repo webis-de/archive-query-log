@@ -3,8 +3,8 @@ from typing import Sequence, Protocol, runtime_checkable, Any, Mapping, Union
 
 from marshmallow.fields import Field
 
-from archive_query_log.legacy.model import ArchivedUrl, ArchivedSearchResultSnippet, \
-    ArchivedRawSerp
+from archive_query_log.legacy.model import (
+    ArchivedUrl, ArchivedSearchResultSnippet, ArchivedRawSerp)
 
 
 @runtime_checkable
