@@ -33,7 +33,7 @@ def _iter_captures(
 ) -> Iterator[Capture]:
     cdx_api = CdxApi(
         api_url=source.archive.cdx_api_url,
-        session=config.http_session,
+        session=config.http.session,
     )
     url = f"https://{source.provider.domain}"
     url = urljoin(url, source.provider.url_path_prefix)

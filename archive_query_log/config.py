@@ -13,13 +13,6 @@ from archive_query_log import __version__ as version
 
 
 @dataclass(frozen=True)
-class EsIndex(DataClassJsonMixin):
-    name: str
-    mapping: dict
-    settings: dict
-
-
-@dataclass(frozen=True)
 class EsConfig(DataClassJsonMixin):
     host: str
     port: 9200
@@ -74,20 +67,11 @@ class EsConfig(DataClassJsonMixin):
 
 
 @dataclass(frozen=True)
-class Config(DataClassJsonMixin):
-    es: EsConfig
-    es_index_serps: EsIndex
-    es_index_results: EsIndex
-    es_index_url_query_parsers: EsIndex
-    es_index_url_page_parsers: EsIndex
-    es_index_url_offset_parsers: EsIndex
-    es_index_url_language_parsers: EsIndex
-    es_index_serp_query_parsers: EsIndex
-    es_index_serp_snippets_parsers: EsIndex
-    es_index_serp_direct_answer_parsers: EsIndex
+class HttpConfig(DataClassJsonMixin):
+    max_retries: int = 5
 
     @cached_property
-    def http_session(self) -> Session:
+    def session(self) -> Session:
         session = Session()
         session.headers.update({
             "User-Agent": f"AQL/{version} (Webis group)",
@@ -108,3 +92,9 @@ class Config(DataClassJsonMixin):
         session.mount("http://", _adapter)
         session.mount("https://", _adapter)
         return session
+
+
+@dataclass(frozen=True)
+class Config(DataClassJsonMixin):
+    es: EsConfig
+    http: HttpConfig = HttpConfig()

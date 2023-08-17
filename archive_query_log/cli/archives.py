@@ -148,7 +148,7 @@ def archive_it(
 
     echo("Load Archive-It collections.")
     collections_api_url = urljoin(api_url, "/api/collection")
-    response = config.http_session.get(
+    response = config.http.session.get(
         collections_api_url,
         params={"limit": 0, "format": "json"})
     num_collections = int(response.headers["Total-Row-Count"])
@@ -159,7 +159,7 @@ def archive_it(
                     unit="archives", disable=not auto_merge and not no_merge)
     offset_range = range(0, num_collections, page_size)
     for offset in offset_range:
-        response = config.http_session.get(
+        response = config.http.session.get(
             collections_api_url,
             params={"limit": page_size, "offset": offset, "format": "json"})
         response_list = response.json()
