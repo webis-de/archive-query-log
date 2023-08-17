@@ -76,8 +76,9 @@
                         <td style="text-align: right">{{ "{:,.0f}".format(progress.total - progress.current) }}</td>
                         <td>
                             <progress max="{{ progress.total }}" value="{{ progress.current }}">
-                                {{ "{:.0f}".format(progress.current / progress.total * 100) }}%
+                                {{ "{:,.0f}".format(progress.current) }}/{{ "{:,.0f}".format(progress.total) }}
                             </progress>
+                            {{ "{:.0f}".format(progress.current / progress.total * 100) }}%
                         </td>
                     </tr>
                 {% endfor %}
