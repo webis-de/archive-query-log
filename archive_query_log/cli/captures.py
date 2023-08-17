@@ -16,7 +16,8 @@ from archive_query_log.cdx import CdxApi, CdxMatchType
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_CAPTURE
-from archive_query_log.orm import     Source, Capture
+from archive_query_log.orm import Source, Capture
+from archive_query_log.utils.es import safe_iter_scan
 from archive_query_log.utils.time import utc_now
 
 
@@ -110,19 +111,19 @@ def _add_captures(
     for success, info in responses:
         if not success:
             raise RuntimeError(f"Indexing error: {info}")
+    Capture.index().refresh(using=config.es.client)
 
     source.update(
         using=config.es.client,
         retry_on_conflict=3,
         last_fetched_captures=start_time,
+        refresh=True,
     )
 
 
 @captures.command()
 @pass_config
 def fetch(config: Config) -> None:
-    Source.init(using=config.es.client)
-    Source.index().refresh(using=config.es.client)
     Capture.init(using=config.es.client)
 
     changed_sources_search: Search = (
@@ -147,6 +148,7 @@ def fetch(config: Config) -> None:
              f"new/changed sources.")
         changed_sources: Iterator[Source] = (
             changed_sources_search.params(preserve_order=True).scan())
+        changed_sources = safe_iter_scan(changed_sources)
         # noinspection PyTypeChecker
         changed_sources = tqdm(changed_sources, total=num_changed_sources,
                                desc="Fetching captures", unit="source")
@@ -154,6 +156,3 @@ def fetch(config: Config) -> None:
             _add_captures(config, source)
     else:
         echo(f"No changed sources.")
-
-    Source.index().refresh(using=config.es.client)
-    Capture.index().refresh(using=config.es.client)

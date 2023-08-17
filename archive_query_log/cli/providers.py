@@ -102,6 +102,7 @@ def _add_provider(
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
+    Provider.index().refresh(using=config.es.client)
     last_modified = utc_now()
     existing_provider_search: Search = (
         Provider.search(using=config.es.client)
@@ -188,7 +189,7 @@ def _add_provider(
         url_path_prefixes=list(url_path_prefixes),
         last_modified=last_modified,
     )
-    provider.save(using=config.es.client)
+    provider.save(using=config.es.client, refresh=True)
 
 
 @providers.command()
@@ -224,7 +225,6 @@ def add(
         url_path_prefixes: list[str],
 ) -> None:
     Provider.init(using=config.es.client)
-    Provider.index().refresh(using=config.es.client)
     _add_provider(
         config=config,
         name=name,
@@ -239,7 +239,6 @@ def add(
         domains=set(domains),
         url_path_prefixes=set(url_path_prefixes),
     )
-    Provider.index().refresh(using=config.es.client)
 
 
 def _provider_name(
@@ -316,7 +315,6 @@ def import_(
         auto_merge: bool,
 ) -> None:
     Provider.init(using=config.es.client)
-    Provider.index().refresh(using=config.es.client)
 
     echo("Load providers from services file.")
     with services_path.open("r") as file:
@@ -374,4 +372,3 @@ def import_(
             no_merge=no_merge,
             auto_merge=auto_merge,
         )
-        Provider.index().refresh(using=config.es.client)

@@ -17,6 +17,7 @@ from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_SOURCE
 from archive_query_log.orm import (
     Archive, Provider, Source, InnerArchive, InnerProvider)
+from archive_query_log.utils.es import safe_iter_scan
 from archive_query_log.utils.time import utc_now
 
 
@@ -72,9 +73,13 @@ def _iter_sources_batches_changed_archives(
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
-    for archive in changed_archives_search.params(preserve_order=True).scan():
-        for provider in (all_providers_search.params(preserve_order=True)
-                .scan()):
+    changed_archives = (changed_archives_search.params(preserve_order=True)
+                        .scan())
+    changed_archives = safe_iter_scan(changed_archives)
+    all_providers = all_providers_search.params(preserve_order=True).scan()
+    all_providers = safe_iter_scan(all_providers)
+    for archive in changed_archives:
+        for provider in all_providers:
             yield _sources_batch(
                 archive,
                 provider,
@@ -83,6 +88,7 @@ def _iter_sources_batches_changed_archives(
             using=config.es.client,
             retry_on_conflict=3,
             last_built_sources=start_time,
+            refresh=True,
         )
 
 
@@ -94,9 +100,13 @@ def _iter_sources_batches_changed_providers(
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
-    for provider in (changed_providers_search.params(preserve_order=True)
-            .scan()):
-        for archive in all_archives_search.params(preserve_order=True).scan():
+    changed_providers = (changed_providers_search.params(preserve_order=True)
+                         .scan())
+    changed_providers = safe_iter_scan(changed_providers)
+    all_archives = all_archives_search.params(preserve_order=True).scan()
+    all_archives = safe_iter_scan(all_archives)
+    for provider in changed_providers:
+        for archive in all_archives:
             yield _sources_batch(
                 archive,
                 provider,
@@ -105,6 +115,7 @@ def _iter_sources_batches_changed_providers(
             using=config.es.client,
             retry_on_conflict=3,
             last_built_sources=start_time,
+            refresh=True,
         )
 
 
@@ -117,10 +128,6 @@ def build(
         skip_archives: bool,
         skip_providers: bool,
 ) -> None:
-    Archive.init(using=config.es.client)
-    Archive.index().refresh(using=config.es.client)
-    Provider.init(using=config.es.client)
-    Provider.index().refresh(using=config.es.client)
     Source.init(using=config.es.client)
 
     start_time = utc_now()
@@ -226,8 +233,6 @@ def build(
             for success, info in responses:
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
+            Source.index().refresh(using=config.es.client)
         else:
             echo(f"No new/changed providers.")
-    Archive.index().refresh(using=config.es.client)
-    Provider.index().refresh(using=config.es.client)
-    Source.index().refresh(using=config.es.client)
