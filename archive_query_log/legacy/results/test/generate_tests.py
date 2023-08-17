@@ -19,7 +19,6 @@ from archive_query_log.legacy.config import SERVICES
 from archive_query_log.legacy.model import Service, ArchivedQueryUrl
 
 NUM_SERVICES = 11
-SERVICE_NAMES = None
 SERVICE_NAMES = ["google", "yahoo", "bing", "duckduckgo", "ask", "ecosia"]
 NUM_QUERIES_PER_SERVICE = 50
 

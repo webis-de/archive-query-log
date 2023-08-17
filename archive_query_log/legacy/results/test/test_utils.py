@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Iterable
 from webbrowser import open_new_tab
 
 from approvaltests import verify_as_json, ApprovalException
@@ -60,7 +61,8 @@ def _find_archived_raw_serp(wayback_raw_url: str) -> ArchivedRawSerp:
         f"Searching for record with URL {wayback_raw_url} in {_warc_dir} "
         f"({num_files} files)"
     )
-    records = ArchivedRawSerps(path=Path(_warc_dir))
+    records: Iterable[ArchivedRawSerp] = ArchivedRawSerps(path=Path(_warc_dir))
+    # noinspection PyTypeChecker
     records = tqdm(
         records,
         desc="Find record for URL",
