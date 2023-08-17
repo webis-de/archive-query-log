@@ -272,16 +272,7 @@ class Service(DataClassJsonMixin):
     Input of: service URLs, query extraction
     """
 
-    @cached_property
-    def name(self) -> str:
-        """
-        Service name (corresponds to ``alexa_domain`` without
-        the ``alexa_public_suffix``).
-        """
-        domains = self.domains
-        domain = domains[0]
-        return domain
-
+    name: str
     """
     Service name (corresponds to ``alexa_domain`` without
     the ``alexa_public_suffix``).
