@@ -32,7 +32,7 @@ def alexa():
     default=DATA_DIRECTORY_PATH / "alexa-top-1m-archived-urls.jsonl"
 )
 def archived_urls(api_url: str, output_path: Path) -> None:
-    from archive_query_log.services.alexa import AlexaTop1MArchivedUrls
+    from archive_query_log.legacy.services.alexa import AlexaTop1MArchivedUrls
     AlexaTop1MArchivedUrls(
         output_path=output_path,
         cdx_api_url=api_url,
@@ -64,7 +64,7 @@ def archived_urls(api_url: str, output_path: Path) -> None:
     default=1000,
 )
 def domains(data_dir: Path, api_url: str, depth: int) -> None:
-    from archive_query_log.services.alexa import AlexaTop1MFusedDomains
+    from archive_query_log.legacy.services.alexa import AlexaTop1MFusedDomains
     AlexaTop1MFusedDomains(
         data_directory_path=data_dir,
         cdx_api_url=api_url,

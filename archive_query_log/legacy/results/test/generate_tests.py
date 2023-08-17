@@ -14,7 +14,7 @@ from slugify import slugify
 from tqdm import tqdm
 from warcio import WARCWriter, StatusAndHeaders
 
-from archive_query_log import PROJECT_DIRECTORY_PATH
+from archive_query_log.legacy import PROJECT_DIRECTORY_PATH
 from archive_query_log.legacy.config import SERVICES
 from archive_query_log.legacy.model import Service, ArchivedQueryUrl
 

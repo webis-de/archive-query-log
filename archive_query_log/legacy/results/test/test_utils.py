@@ -7,7 +7,7 @@ from approvaltests.namer.cli_namer import CliNamer
 from slugify import slugify
 from tqdm.auto import tqdm
 
-from archive_query_log import PROJECT_DIRECTORY_PATH
+from archive_query_log.legacy import PROJECT_DIRECTORY_PATH
 from archive_query_log.legacy.config import SERVICES
 from archive_query_log.legacy.download.iterable import ArchivedRawSerps
 from archive_query_log.legacy.model import ArchivedParsedSerp, ArchivedRawSerp

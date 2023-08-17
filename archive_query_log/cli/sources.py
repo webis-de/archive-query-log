@@ -153,8 +153,10 @@ def build(
         all_providers_search: Search = (
             Provider.search(using=config.es.client)
             .filter(~Exists(field="exclusion_reason")))
-        num_all_providers = (all_providers_search.extra(track_total_hits=True)
-                             .execute().hits.total.value)
+        num_all_providers_search: Search = (
+            all_providers_search.extra(track_total_hits=True))
+        num_all_providers = (
+            num_all_providers_search.execute().hits.total.value)
         num_batches = num_changed_archives * num_all_providers
         if num_batches > 0:
             echo(f"Building sources for {num_changed_archives} "
