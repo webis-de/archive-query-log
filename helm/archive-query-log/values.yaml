@@ -2,16 +2,24 @@ image: ghcr.io/webis-de/archive-query-log
 
 buildSources:
   schedule: "0/10 * * * *"
-  completions: 3
-  parallelism: 3
-  backoffLimit: 5
-  concurrencyPolicy: Forbid
+  completions: 50
+  parallelism: 50
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
 fetchCaptures:
-  schedule: "0/10 * * * *"
-  completions: 6
-  parallelism: 6
-  backoffLimit: 10
-  concurrencyPolicy: Forbid
+  schedule: "1/10 * * * *"
+  completions: 100
+  parallelism: 100
+  backoffLimit: 50
+  ttlMinutesAfterFinished: 5
+
+monitoring:
+  ingressClassName: nginx
+  host: aql-monitoring.srv.webis.de
+  path: /
+  replicas: 2
+  forceSslRedirect: true
 
 elasticsearch:
   host: elasticsearch.srv.webis.de

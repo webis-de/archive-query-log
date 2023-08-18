@@ -1,15 +1,13 @@
 Installed {{ $.Chart.Name }} (release name: {{ $.Release.Name }}{{ with $.Values.namespace }}, namespace: {{ . }}{{ end }}).
-Accessing Elasticsearch {{ $.Values.elasticsearch.host }}:{{ $.Values.elasticsearch.port }}
-{{ if and $.Values.elasticsearch.username $.Values.elasticsearch.password }}
-Authenticating Elasticsearch with user {{ $.Values.elasticsearch.username }}.
-{{ else }}
-Authentication for Elasticsearch is not configured. Configure credentials with the `--set elasticsearch.username=EXAMPLE --set elasticsearch.password=EXAMPLE` options for the `helm` command, if you need to access a restricted Elasticsearch cluster.
-{{ end }}
 
-Cronjobs started:
+Accessing Elasticsearch {{ $.Values.elasticsearch.host }}:{{ $.Values.elasticsearch.port }} (authenticating with user {{ $.Values.elasticsearch.username }}).
+
+Started cron jobs:
 - Build sources:
   Scheduled at {{ $.Values.buildSources.schedule }}.
-  Running {{ $.Values.buildSources.completions }}x (parallelism: {{ $.Values.buildSources.parallelism }}, backoff limit: {{ $.Values.buildSources.backoffLimit }})
+  Running {{ $.Values.buildSources.completions }}x (parallelism: {{ $.Values.buildSources.parallelism }}, backoff limit: {{ $.Values.buildSources.backoffLimit }}).
 - Fetch captures:
   Scheduled at {{ $.Values.fetchCaptures.schedule }}.
-  Running {{ $.Values.fetchCaptures.completions }}x (parallelism: {{ $.Values.fetchCaptures.parallelism }}, backoff limit: {{ $.Values.fetchCaptures.backoffLimit }})
+  Running {{ $.Values.fetchCaptures.completions }}x (parallelism: {{ $.Values.fetchCaptures.parallelism }}, backoff limit: {{ $.Values.fetchCaptures.backoffLimit }}).
+
+Serving monitoring web interface at {{ if $.Values.monitoring.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.monitoring.host }}{{ $.Values.monitoring.path }}.

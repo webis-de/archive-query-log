@@ -1,23 +1,24 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ $.Release.Name }}-cronjob-sources-build
+  name: {{ $.Release.Name }}-build-sources
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
     checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
 spec:
   schedule: {{ $.Values.buildSources.schedule }}
-  concurrencyPolicy: {{ $.Values.buildSources.concurrencyPolicy }}
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       completions: {{ $.Values.buildSources.completions }}
       parallelism: {{ $.Values.buildSources.parallelism }}
       backoffLimit: {{ $.Values.buildSources.backoffLimit }}
+      ttlSecondsAfterFinished: {{ mul 60 $.Values.buildSources.ttlMinutesAfterFinished }}
       template:
         spec:
           containers:
-          - name: {{ $.Release.Name }}-cronjob-sources-build
+          - name: {{ $.Release.Name }}-build-sources
             image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
             imagePullPolicy: IfNotPresent
             resources:
@@ -50,4 +51,3 @@ spec:
           - name: {{ $.Release.Name }}-secret
             secret:
               secretName: {{ $.Release.Name }}-secret
-
