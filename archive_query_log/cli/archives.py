@@ -41,7 +41,7 @@ def _add_archive(
         if no_merge:
             return
         existing_archive: Archive = existing_archive_response[0]
-        archive_id = existing_archive.meta.id
+        archive_id = existing_archive.id
         if auto_merge:
             should_merge = True
         else:

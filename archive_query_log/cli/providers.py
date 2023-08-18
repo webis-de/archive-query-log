@@ -116,7 +116,7 @@ def _add_provider(
         existing_domains = set(existing_provider.domains)
         existing_url_path_prefixes = set(
             existing_provider.url_path_prefixes)
-        provider_id = existing_provider.meta.id
+        provider_id = existing_provider.id
         if auto_merge:
             should_merge = True
         else:

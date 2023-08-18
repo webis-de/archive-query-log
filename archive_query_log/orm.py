@@ -14,6 +14,14 @@ class BaseDocument(Document):
     def index(cls) -> Index:
         return cls._index
 
+    @property
+    def id(self) -> str:
+        return self.meta.id
+
+    @id.setter
+    def id(self, value: str):
+        self.meta.id = value
+
 
 class Archive(BaseDocument):
     name: str = Text()

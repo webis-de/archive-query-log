@@ -29,7 +29,7 @@ def sources():
 def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
     if provider.exclusion_reason is not None:
         warn(
-            f"Skipping provider {provider.meta.id} "
+            f"Skipping provider {provider.id} "
             f"because it is excluded: {provider.exclusion_reason}"
         )
         return []
@@ -50,12 +50,12 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
             source = Source(
                 meta={"id": filter_id},
                 archive=InnerArchive(
-                    id=archive.meta.id,
+                    id=archive.id,
                     cdx_api_url=archive.cdx_api_url,
                     memento_api_url=archive.memento_api_url,
                 ),
                 provider=InnerProvider(
-                    id=provider.meta.id,
+                    id=provider.id,
                     domain=domain,
                     url_path_prefix=url_path_prefix,
                 ),

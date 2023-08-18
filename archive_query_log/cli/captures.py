@@ -85,7 +85,7 @@ def _add_captures(
     # Refresh source.
     source = Source.get(
         using=config.es.client,
-        id=source.meta.id,
+        id=source.id,
     )
 
     # Re-check if fetching captures is necessary.
