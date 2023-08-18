@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from elasticsearch_dsl import Document, Keyword, Text, Date, InnerDoc, \
-    Object, Boolean, Index, Integer
+from elasticsearch_dsl import Document, Keyword, Text, Date, \
+    InnerDoc as InnerDocument, Object, Boolean, Index, Integer
 
 
 class BaseDocument(Document):
@@ -33,7 +33,7 @@ class Archive(BaseDocument):
         }
 
 
-class InterfaceAnnotations(InnerDoc):
+class InterfaceAnnotations(InnerDocument):
     has_input_field: bool = Boolean()
     has_search_form: bool = Boolean()
     has_search_div: bool = Boolean()
@@ -62,13 +62,13 @@ class Provider(BaseDocument):
         }
 
 
-class InnerArchive(InnerDoc):
+class InnerArchive(InnerDocument):
     id: str = Keyword()
     cdx_api_url: str = Keyword()
     memento_api_url: str = Keyword()
 
 
-class InnerProvider(InnerDoc):
+class InnerProvider(InnerDocument):
     id: str = Keyword()
     domain: str = Keyword()
     url_path_prefix: str = Keyword()
