@@ -14,7 +14,8 @@ from archive_query_log.cli.providers import providers
 from archive_query_log.cli.sources import sources
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
-from archive_query_log.orm import Archive, Provider, Source, Capture
+from archive_query_log.orm import (
+    Archive, Provider, Source, Capture, Serp, Result)
 
 
 def print_version(
@@ -66,6 +67,8 @@ def init(config: Config) -> None:
     Provider.init(using=config.es.client)
     Source.init(using=config.es.client)
     Capture.init(using=config.es.client)
+    Serp.init(using=config.es.client)
+    Result.init(using=config.es.client)
 
 
 cli.add_command(archives)

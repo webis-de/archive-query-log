@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from elasticsearch_dsl import Document, Keyword, Text, Date, \
-    InnerDoc as InnerDocument, Object, Boolean, Index, Integer
+    InnerDoc as InnerDocument, Object, Boolean, Index, Integer, Nested
 
 
 class BaseDocument(Document):
@@ -124,5 +124,93 @@ class Capture(BaseDocument):
         name = "aql_captures"
         settings = {
             "number_of_shards": 10,
+            "number_of_replicas": 2,
+        }
+
+
+class InnerCapture(InnerDocument):
+    id: str = Keyword()
+    url: str = Keyword()
+    timestamp: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+    status_code: int = Integer()
+    digest: str = Keyword()
+    mimetype: str | None = Keyword()
+
+
+class InnerParser(InnerDocument):
+    id: str = Keyword()
+    last_parsed: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+
+
+class InnerDownloader(InnerDocument):
+    id: str = Keyword()
+    last_downloaded: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+
+
+class WarcLocation(InnerDocument):
+    file: str = Keyword()
+    offset: int = Integer()
+
+
+class Snippet(InnerDocument):
+    url: str = Keyword()
+    rank: int | None = Integer()
+    title: str | None = Keyword()
+    text: str | None = Keyword()
+
+
+class Serp(BaseDocument):
+    archive: InnerArchive = Object(InnerArchive)
+    provider: InnerProvider = Object(InnerProvider)
+    capture: InnerCapture = Object(InnerCapture)
+    url_query: str = Keyword()
+    url_query_parser: InnerParser | None = Object(InnerParser)
+    url_page: int | None = Integer()
+    url_page_parser: InnerParser | None = Object(InnerParser)
+    url_offset: int | None = Integer()
+    url_offset_parser: InnerParser | None = Object(InnerParser)
+    # url_language: str | None = Keyword()
+    # url_language_parser: InnerParser | None = Object(InnerParser)
+    warc_location: WarcLocation | None = Object(WarcLocation)
+    warc_downloader: InnerDownloader | None = Object(InnerDownloader)
+    # rendered_warc_location: WarcLocation | None = Object(WarcLocation)
+    # rendered_warc_downloader: InnerDownloader | None = (
+    #     Object(InnerDownloader))
+    serp_query: str | None = Keyword()
+    serp_query_parser: InnerParser | None = Object(InnerParser)
+    serp_snippets: list[Snippet] | None = Nested(Snippet)
+    serp_snippets_parser: InnerParser | None = Object(InnerParser)
+
+    class Index:
+        name = "aql_serps"
+        settings = {
+            "number_of_shards": 10,
+            "number_of_replicas": 2,
+        }
+
+
+class InnerSerp(InnerDocument):
+    id: str = Keyword()
+
+
+class Result(BaseDocument):
+    archive: InnerArchive = Object(InnerArchive)
+    provider: InnerProvider = Object(InnerProvider)
+    serp: InnerSerp = Object(InnerSerp)
+    url: str = Keyword()
+
+    class Index:
+        name = "aql_results"
+        settings = {
+            "number_of_shards": 20,
             "number_of_replicas": 2,
         }
