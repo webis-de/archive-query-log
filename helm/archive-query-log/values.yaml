@@ -1,11 +1,17 @@
 image: ghcr.io/webis-de/archive-query-log
 
-parallelism:
-  sources: 5
-  captures: 20
-schedules:
-  sources: "0 0 * * *"
-  captures: "0 0 * * *"
+buildSources:
+  schedule: "0/10 * * * *"
+  completions: 3
+  parallelism: 3
+  backoffLimit: 5
+  concurrencyPolicy: Forbid
+fetchCaptures:
+  schedule: "0/10 * * * *"
+  completions: 6
+  parallelism: 6
+  backoffLimit: 10
+  concurrencyPolicy: Forbid
 
 elasticsearch:
   host: elasticsearch.srv.webis.de

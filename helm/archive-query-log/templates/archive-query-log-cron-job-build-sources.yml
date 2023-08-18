@@ -7,9 +7,13 @@ metadata:
     checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
     checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
 spec:
-  schedule: {{ $.Values.schedules.sources }}
+  schedule: {{ $.Values.buildSources.schedule }}
+  concurrencyPolicy: {{ $.Values.buildSources.concurrencyPolicy }}
   jobTemplate:
     spec:
+      completions: {{ $.Values.buildSources.completions }}
+      parallelism: {{ $.Values.buildSources.parallelism }}
+      backoffLimit: {{ $.Values.buildSources.backoffLimit }}
       template:
         spec:
           containers:
