@@ -7,7 +7,7 @@ from flask import render_template, Response, make_response
 
 from archive_query_log.config import Config
 from archive_query_log.orm import Archive, Provider, Source, Capture, \
-    BaseDocument
+    BaseDocument, Serp, Result
 from archive_query_log.utils.time import utc_now
 
 
@@ -42,10 +42,12 @@ _statistics_cache: dict[DocumentType, Statistics] = ExpiringDict(
 
 def _convert_bytes(bytes_count: int) -> str:
     step_unit = 1000.0
-    for unit in ["B", "KB", "MB", "GB", "TB", "PB"]:
-        if bytes_count < step_unit:
-            return f"{bytes_count:3.1f} {unit}"
-        bytes_count /= step_unit
+    bytes_count_decimal: float = bytes_count
+    for unit in ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB", "RB"]:
+        if bytes_count_decimal < step_unit:
+            return f"{bytes_count_decimal:3.1f} {unit}"
+        bytes_count_decimal /= step_unit
+    return f"{bytes_count_decimal:3.1f} QB"
 
 
 def _get_statistics(
@@ -87,12 +89,12 @@ _progress_cache: dict[DocumentType, Progress] = ExpiringDict(
 )
 
 
-def _get_progress(
+def _get_processed_progress(
         config: Config,
         name: str,
         description: str,
         document: DocumentType,
-        processed_timestamp_field: str,
+        timestamp_field: str,
 ) -> Progress:
     if document in _progress_cache:
         return _progress_cache[document]
@@ -101,10 +103,10 @@ def _get_progress(
     total = search.extra(track_total_hits=True).execute().hits.total.value
     search_processed = search.filter(
         Exists(field="last_modified") &
-        Exists(field=processed_timestamp_field) &
+        Exists(field=timestamp_field) &
         Script(
             script=f"doc['last_modified'].value.isBefore("
-                   f"doc['{processed_timestamp_field}'].value)",
+                   f"doc['{timestamp_field}'].value)",
         )
     )
     total_processed = (search_processed.extra(track_total_hits=True).execute()
@@ -149,32 +151,45 @@ def home(config: Config) -> str | Response:
             description="Captures matching from the archives "
                         "that match domain and URL prefixes.",
             document=Capture,
-        )
+        ),
+        _get_statistics(
+            config=config,
+            name="SERPs",
+            description="Search engine result pages that have been "
+                        "identified among the captures.",
+            document=Serp,
+        ),
+        _get_statistics(
+            config=config,
+            name="Results",
+            description="Search result from the SERPs.",
+            document=Result,
+        ),
     ]
 
     progress_list: list[Progress] = [
-        _get_progress(
+        _get_processed_progress(
             config=config,
             name="Archives → Sources",
             description="Build sources for all archives.",
             document=Archive,
-            processed_timestamp_field="last_built_sources",
+            timestamp_field="last_built_sources",
         ),
-        _get_progress(
+        _get_processed_progress(
             config=config,
             name="Providers → Sources",
             description="Build sources for all search providers.",
             document=Provider,
-            processed_timestamp_field="last_built_sources",
+            timestamp_field="last_built_sources",
         ),
-        _get_progress(
+        _get_processed_progress(
             config=config,
             name="Sources → Captures",
             description="Fetch CDX captures for all domains and "
                         "prefixes in the sources.",
             document=Source,
-            processed_timestamp_field="last_fetched_captures",
-        )
+            timestamp_field="last_fetched_captures",
+        ),
     ]
 
     etag = str(hash((
