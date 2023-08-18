@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import NamedTuple, Type
 
 from elasticsearch_dsl.query import Script, Exists
@@ -17,6 +17,12 @@ class Statistics(NamedTuple):
     total: str
     disk_size: str
     last_modified: datetime | None
+
+    @property
+    def last_modified_delta(self) -> timedelta | None:
+        if self.last_modified is None:
+            return None
+        return utc_now() - self.last_modified
 
 
 class Progress(NamedTuple):
