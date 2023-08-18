@@ -77,7 +77,7 @@ jobs:
     - name: "🧰 Install dependencies"
       run: pip install .[tests]
     - name: "🔍 Lint Python code"
-      run: pylint -E archive_query_log
+      run: pylint archive_query_log
   python-test:
     name: "🧪 Test Python code"
     strategy:

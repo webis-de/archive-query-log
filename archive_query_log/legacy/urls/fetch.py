@@ -92,6 +92,8 @@ class ArchivedUrlsFetcher:
         url = f"{self.cdx_api_url}?{urlencode(num_pages_params)}"
         async with client.get(url) as response:
             text = await response.text()
+            # noinspection PyBroadException
+            # pylint: disable=broad-except
             try:
                 num_pages = int(text)
             except Exception:

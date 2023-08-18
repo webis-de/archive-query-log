@@ -76,14 +76,17 @@ class SearchFormIdentifier:
         # in the internet archive
         try:
             response = self.session.get(url, timeout=10)
+        # pylint: disable=broad-except
         except Exception:
             try:
                 response = self.get_internet_archive_html(url=url)
+            # pylint: disable=broad-except
             except Exception:
                 return None, None, None
 
         try:
             html = response.html.html
+        # pylint: disable=broad-except
         except Exception:
             return None, None, None
 
@@ -92,6 +95,7 @@ class SearchFormIdentifier:
             try:
                 response.html.render(timeout=10)
                 html = response.html.html
+            # pylint: disable=broad-except
             except Exception:
                 return None, None, None
 
@@ -132,9 +136,9 @@ class SearchFormIdentifier:
             # Request the corresponding HTML
             ia_url = f'https://web.archive.org/web/{timestamp}/{url}/'
             return self.session.get(ia_url, timeout=10)
-        except Exception:
+        except Exception as e:
             raise RuntimeError(
-                'Failed to request an internet archive snapshot')
+                'Failed to request an internet archive snapshot') from e
 
     def services_no_search(self):
         return self.out_df[(self.out_df['input'] is False) & (
@@ -172,7 +176,7 @@ def find_search_tag(soup: BeautifulSoup, tag='form'):
     return found, snippet_list
 
 
-if __name__ == "__main__":
+def main():
     # Parse input
     parser = argparse.ArgumentParser(
         prog='Search form identification',
@@ -197,3 +201,7 @@ if __name__ == "__main__":
         start_row=start_row, end_row=end_row
     )
     identifier.process_services()
+
+
+if __name__ == "__main__":
+    main()

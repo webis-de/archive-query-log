@@ -78,7 +78,7 @@ def update_yaml_file(
     """
     services = get_spreadsheet_data(
         first_service=first_service, last_service=last_service)
-    with open(services_file, "r") as stream:
+    with open(services_file, "r", encoding="utf8") as stream:
         yaml_list = yaml.safe_load(stream)
     update_func = overwrite_parsers if overwrite else update_empty_parsers
     i = 0
@@ -135,9 +135,10 @@ def set_query_parsers(service_elem: dict, services: DataFrame) -> None:
 def update_ranks(df: pd.DataFrame, yaml_list: Sequence[dict]):
     for i, elem in enumerate(yaml_list):
         name = elem["name"]
-        try:
-            rank = int(df.loc[df["service"] == name, "rank"].values[0])
-        except Exception:
+        rank_df = df.loc[df["service"] == name, "rank"]
+        if len(rank_df) > 0:
+            rank = int(rank_df.values[0])
+        else:
             rank = 999999
         yaml_list[i]["alexa_rank"] = rank
 

@@ -57,6 +57,7 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
                 *self._params,
                 ("showNumPages", True),
             ],
+            timeout=10 * 60  # 10 minutes
         )
         return int(num_pages_response.text)
 
@@ -126,7 +127,7 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
         """
         Merge queries from all pages.
         """
-        with self.output_path.open("wt") as file:
+        with self.output_path.open("wt", encoding="utf8") as file:
             for page in tqdm(
                     range(self.num_pages),
                     desc="Merge urls",
@@ -158,13 +159,13 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
 
     def __len__(self) -> int:
         self.fetch()
-        with self.output_path.open("rt") as file:
+        with self.output_path.open("rt", encoding="utf8") as file:
             return sum(1 for _ in file)
 
     def __iter__(self) -> Iterator[ArchivedUrl]:
         self.fetch()
         schema = ArchivedUrl.schema()
-        with self.output_path.open("rt") as file:
+        with self.output_path.open("rt", encoding="utf8") as file:
             for line in file:
                 yield schema.loads(line)
 
@@ -255,8 +256,8 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
                                 domain: 1_000_000 - index
                                 for index, domain in enumerate(domains)
                             }
-                            run = Run({"_": scores})
-                            runs.append(run)
+                            alexa_run = Run({"_": scores})
+                            runs.append(alexa_run)
         print(f"Fusing {len(runs)} rankings.")
         combined_run = fuse(
             runs=runs,

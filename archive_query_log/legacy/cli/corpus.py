@@ -71,10 +71,6 @@ def corpus_command(
         queries: bool,
         output_directory: Path,
 ) -> None:
-    from archive_query_log.legacy.index import ArchivedUrlIndex, \
-        ArchivedQueryUrlIndex, ArchivedRawSerpIndex, ArchivedParsedSerpIndex, \
-        ArchivedSearchResultSnippetIndex, ArchivedRawSearchResultIndex
-
     output_path: Path
     if output_directory is not None:
         output_path = output_directory

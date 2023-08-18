@@ -236,7 +236,7 @@ class CdxApi:
 
     @cached_property
     def api_type(self) -> _CdxApiType | None:
-        scheme, netloc, path, query, fragment = urlsplit(self.api_url)
+        _, netloc, _, _, _ = urlsplit(self.api_url)
         if netloc in _API_TYPE_LOOKUP_NETLOC:
             return _API_TYPE_LOOKUP_NETLOC[netloc]
         return None

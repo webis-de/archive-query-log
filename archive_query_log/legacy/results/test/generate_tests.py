@@ -4,7 +4,7 @@ from io import TextIOWrapper, BytesIO
 from json import loads
 from pathlib import Path
 from random import Random
-from re import compile
+from re import compile as pattern
 from textwrap import dedent
 
 from requests import get
@@ -31,7 +31,7 @@ WARCS_PATH = PROJECT_DIRECTORY_PATH / \
 TESTS_PATH = PROJECT_DIRECTORY_PATH / \
              "archive_query_log/results/test/"
 
-PATTERN_SPECIAL_CHARS = compile(r"[^0-9a-z]+")
+PATTERN_SPECIAL_CHARS = pattern(r"[^0-9a-z]+")
 
 
 def main():
@@ -97,6 +97,7 @@ def main():
                 wayback_raw_url = query_url["serp_wayback_raw_url"]
                 response = get(
                     wayback_raw_url,
+                    timeout=60 * 4,
                 )
                 response.raise_for_status()
 

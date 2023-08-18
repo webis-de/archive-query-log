@@ -1,7 +1,7 @@
 from json import loads
 from math import nan
 from pathlib import Path
-from re import compile, escape
+from re import compile as pattern, escape
 from urllib.parse import quote
 
 from click import argument
@@ -75,7 +75,7 @@ def url_prefix_pattern(url_prefix: str) -> str | None:
     return f"^https?://[^/]+/{escape(url_prefix)}"
 
 
-compile(r"[^/]+/images/search\?")
+pattern(r"[^/]+/images/search\?")
 
 
 def load_url_prefixes() -> DataFrame:

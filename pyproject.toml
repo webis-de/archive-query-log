@@ -96,6 +96,14 @@ namespaces = false
 [tool.setuptools.package-data]
 mypkg = ["*.txt", "*.md", "*.rst"]
 
+[tool.pylint.messages_control]
+disable = [
+    "C",
+    "R",
+    "fixme",
+    "logging-fstring-interpolation"
+]
+
 [tool.pytest.ini_options]
 log_cli = "True"
 filterwarnings = [

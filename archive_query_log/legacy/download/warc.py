@@ -155,6 +155,7 @@ class WebArchiveWarcDownloader:
                 with TemporaryFile() as tmp_file:
                     writer = WARCWriter(tmp_file, gzip=True)
                     # noinspection PyProtectedMember
+                    # pylint: disable=protected-access
                     version = client._client.version
                     protocol = f"HTTP/{version[0]}.{version[1]}"
                     request_record = writer.create_warc_record(

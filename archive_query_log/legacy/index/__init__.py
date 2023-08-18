@@ -145,12 +145,9 @@ class _MetaIndex:
                 ))
                 offset = gzip_file.tell()
 
-        try:
-            with index_path.open("wt") as index_file:
-                index_writer = writer(index_file)
-                index_writer.writerows(index)
-        except Exception as e:
-            LOGGER.error(e)
+        with index_path.open("wt") as index_file:
+            index_writer = writer(index_file)
+            index_writer.writerows(index)
 
     def _index_warc(self, dir_path: Path) -> None:
         if not dir_path.exists():
@@ -196,12 +193,9 @@ class _MetaIndex:
                     str(offset),
                 ))
 
-        try:
-            with index_path.open("wt") as index_file:
-                index_writer = writer(index_file)
-                index_writer.writerows(index)
-        except Exception as e:
-            LOGGER.error(e)
+        with index_path.open("wt") as index_file:
+            index_writer = writer(index_file)
+            index_writer.writerows(index)
 
     def _index_jsonl_snippets(self, path: Path) -> None:
         if not path.exists():
@@ -239,12 +233,9 @@ class _MetaIndex:
                     ))
                 offset = gzip_file.tell()
 
-        try:
-            with index_path.open("wt") as index_file:
-                index_writer = writer(index_file)
-                index_writer.writerows(index)
-        except Exception as e:
-            LOGGER.error(e)
+        with index_path.open("wt") as index_file:
+            index_writer = writer(index_file)
+            index_writer.writerows(index)
 
     def _index(self, path: Path) -> None:
         if self.base_type == "archived-urls":

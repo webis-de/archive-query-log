@@ -247,7 +247,7 @@ and run all unit tests with the following commands:
 
 ```shell
 flake8 archive_query_log
-pylint -E archive_query_log
+pylint archive_query_log
 pytest archive_query_log
 ```
 
