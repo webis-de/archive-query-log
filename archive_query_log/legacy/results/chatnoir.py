@@ -26,7 +26,7 @@ class ChatNoirResultsParser(HtmlResultsParser):
         results_iter = results.find_all("article", class_="search-result")
         for index, result in enumerate(results_iter):
             header: Tag = result.find("header")
-            url = header.find("a", class_="link")["href"]
+            url: str = header.find("a", class_="link")["href"]
             url = urljoin(serp_url, url)
             title = clean_html(header.find("h2"))
             # Remove header. Only the snippet will be left.

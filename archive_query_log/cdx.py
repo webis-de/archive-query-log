@@ -3,7 +3,7 @@ from datetime import datetime
 from enum import Enum
 from functools import cached_property
 from json import loads, JSONDecodeError
-from typing import Iterator, NamedTuple
+from typing import Iterator, NamedTuple, Any, Iterable
 from urllib.parse import urlsplit
 from warnings import warn
 
@@ -64,7 +64,7 @@ _API_TYPE_LOOKUP_NETLOC = {
 
 class _CdxResponse(NamedTuple):
     resume_key: str | None
-    json: list[dict]
+    json: list[Any]
 
 
 def _parse_cdx_flags(flags_string: str) -> set[CdxFlag]:
@@ -107,12 +107,10 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
         raise ValueError(f"Missing url in CDX line: {line}")
     if "statuscode" in line:
         statuscode_string = line.pop("statuscode")
-        status_code = int(statuscode_string) \
-            if statuscode_string is not None else None
+        status_code = int(statuscode_string)
     elif "status" in line:
         statuscode_string = line.pop("status")
-        status_code = int(statuscode_string) \
-            if statuscode_string is not None else None
+        status_code = int(statuscode_string)
     else:
         raise ValueError(f"Missing status code in CDX line: {line}")
     if "digest" in line:
@@ -244,7 +242,7 @@ class CdxApi:
     def iter_captures(
             self,
             url: str,
-            match_type: CdxMatchType | None = None,
+            match_type: CdxMatchType,
             from_timestamp: datetime | None = None,
             to_timestamp: datetime | None = None,
     ) -> Iterator[CdxCapture]:
@@ -294,8 +292,9 @@ class CdxApi:
                 num_pages = int(num_pages_text)
 
         if num_pages is not None:
-            pages = range(num_pages)
+            pages: Iterable[int] = range(num_pages)
             if num_pages > 10:
+                # noinspection PyTypeChecker
                 pages = tqdm(
                     pages,
                     desc="Read CDX pages",

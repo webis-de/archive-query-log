@@ -11,7 +11,8 @@ from tqdm.auto import tqdm
 from archive_query_log.legacy import PROJECT_DIRECTORY_PATH
 from archive_query_log.legacy.config import SERVICES
 from archive_query_log.legacy.download.iterable import ArchivedRawSerps
-from archive_query_log.legacy.model import ArchivedParsedSerp, ArchivedRawSerp
+from archive_query_log.legacy.model import ArchivedParsedSerp, ArchivedRawSerp, \
+    ResultsParser, InterpretedQueryParser, Service
 from archive_query_log.legacy.results.parse import ArchivedParsedSerpParser
 
 _expected_dir = PROJECT_DIRECTORY_PATH / \
@@ -26,13 +27,14 @@ def verify_serp_parsing(
         wayback_raw_url: str,
         service_name: str | None = None,
 ) -> None:
+    services: Iterable[Service]
     if service_name is None:
         services = SERVICES.values()
     else:
         services = [SERVICES[service_name]]
 
-    result_parsers = []
-    interpreted_query_parsers = []
+    result_parsers: list[ResultsParser] = []
+    interpreted_query_parsers: list[InterpretedQueryParser] = []
     for service in services:
         result_parsers += service.results_parsers
         interpreted_query_parsers += service.interpreted_query_parsers

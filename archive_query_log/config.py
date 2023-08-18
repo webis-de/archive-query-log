@@ -15,7 +15,7 @@ from archive_query_log import __version__ as version
 @dataclass(frozen=True)
 class EsConfig(DataClassJsonMixin):
     host: str
-    port: 9200
+    port: int
     username: str
     password: str
     max_retries: int = 5

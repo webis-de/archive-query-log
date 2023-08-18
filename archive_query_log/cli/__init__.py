@@ -50,7 +50,7 @@ if _DEFAULT_CONFIG_OVERRIDE_PATH.exists():
 def cli(context: Context, config_paths: list[Path]) -> None:
     if len(config_paths) == 0:
         raise UsageError("No config file specified.")
-    config_dict = {}
+    config_dict: dict = {}
     for config_path in config_paths:
         with config_path.open("rb") as config_file:
             next_config_dict = safe_load(config_file)

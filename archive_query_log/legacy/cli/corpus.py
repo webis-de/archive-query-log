@@ -216,7 +216,7 @@ def _build_query_url(
         archived_parsed_serp_loc: LocatedRecord[
                                       CorpusJsonlLocation, ArchivedParsedSerp
                                   ] | None,
-) -> CorpusQueryUrl | None:
+) -> CorpusQueryUrl:
     archived_url = archived_url_loc.record
     return CorpusQueryUrl(
         id=archived_url.id,

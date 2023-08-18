@@ -324,6 +324,7 @@ class WebArchiveWarcDownloader:
             focused: bool,
             snippets: bool,
     ) -> Iterable[_CdxUrl]:
+        urls: Iterable[_CdxUrl]
         if snippets:
             urls = (
                 _CdxUrl(url, page.output_path)
