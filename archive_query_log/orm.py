@@ -5,6 +5,10 @@ from elasticsearch_dsl import Document, Keyword, Text, Date, InnerDoc, \
 
 
 class BaseDocument(Document):
+    last_modified: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
 
     @classmethod
     def index(cls) -> Index:
@@ -16,10 +20,6 @@ class Archive(BaseDocument):
     description: str = Text()
     cdx_api_url: str = Keyword()
     memento_api_url: str = Keyword()
-    last_modified: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
     last_built_sources: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
@@ -49,10 +49,6 @@ class Provider(BaseDocument):
     interface_annotations: InterfaceAnnotations = Object(InterfaceAnnotations)
     domains: list[str] = Keyword()
     url_path_prefixes: list[str] = Keyword()
-    last_modified: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
     last_built_sources: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
@@ -81,10 +77,6 @@ class InnerProvider(InnerDoc):
 class Source(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
-    last_modified: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
     last_fetched_captures: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
@@ -119,10 +111,6 @@ class Capture(BaseDocument):
     collection: str | None = Keyword()
     source: str | None = Keyword()
     source_collection: str | None = Keyword()
-    last_modified: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
 
     class Index:
         name = "aql_captures"

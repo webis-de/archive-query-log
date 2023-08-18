@@ -57,15 +57,21 @@
                     <th>Description</th>
                     <th>Count</th>
                     <th>Size</th>
+                    <th>Last modified</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for count in count_stages %}
+                {% for statistics in statistics_list %}
                     <tr>
-                        <td>{{ count.name }}</td>
-                        <td>{% if count.description %}{{ count.description }}{% else %}—{% endif %}</td>
-                        <td style="text-align: right">{{ "{:,.0f}".format(count.total) }}</td>
-                        <td style="text-align: right">{{ count.disk_size }}</td>
+                        <td>{{ statistics.name }}</td>
+                        <td>{% if statistics.description %}{{ statistics.description }}{% else %}—{% endif %}</td>
+                        <td style="text-align: right">{{ "{:,.0f}".format(statistics.total) }}</td>
+                        <td style="text-align: right">{{ statistics.disk_size }}</td>
+                        <td>
+                            <time datetime="{{ statistics.last_modified.isoformat() }}">
+                                {{ statistics.last_modified.strftime("%c") }}
+                            </time>
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -86,7 +92,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for progress in progress_stages %}
+                {% for progress in progress_list %}
                     <tr>
                         <td>{{ progress.name }}</td>
                         <td>
