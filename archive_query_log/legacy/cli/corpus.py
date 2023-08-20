@@ -150,6 +150,7 @@ def corpus_command(
             else:
                 archived_ids = set(archived_url_index)
 
+            # noinspection PyTypeChecker
             archived_ids = tqdm(
                 archived_ids,
                 desc="Build corpus",

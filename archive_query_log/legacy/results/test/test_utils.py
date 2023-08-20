@@ -11,8 +11,8 @@ from tqdm.auto import tqdm
 from archive_query_log.legacy import PROJECT_DIRECTORY_PATH
 from archive_query_log.legacy.config import SERVICES
 from archive_query_log.legacy.download.iterable import ArchivedRawSerps
-from archive_query_log.legacy.model import ArchivedParsedSerp, ArchivedRawSerp, \
-    ResultsParser, InterpretedQueryParser, Service
+from archive_query_log.legacy.model import ArchivedParsedSerp, \
+    ArchivedRawSerp, ResultsParser, InterpretedQueryParser, Service
 from archive_query_log.legacy.results.parse import ArchivedParsedSerpParser
 
 _expected_dir = PROJECT_DIRECTORY_PATH / \

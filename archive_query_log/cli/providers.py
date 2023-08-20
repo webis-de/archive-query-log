@@ -326,7 +326,12 @@ def import_(
     provider_names: MutableMapping[str, str] = Index(str(cache_path))
 
     if auto_merge or no_merge:
-        services = tqdm(services, desc="Import providers", unit="provider")
+        # noinspection PyTypeChecker
+        services = tqdm(
+            services,
+            desc="Import providers",
+            unit="provider",
+        )
 
     ask_for_name = True
     for i, service in enumerate(services):
