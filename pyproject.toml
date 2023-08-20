@@ -62,6 +62,7 @@ dynamic = ["version"]
 [project.optional-dependencies]
 tests = [
     "approvaltests~=8.4",
+    "bandit[toml]~=1.7",
     "flake8~=6.1",
     "mypy~=1.5",
     "pandas-stubs~=2.0",
@@ -121,6 +122,9 @@ disable = [
     "fixme",
     "logging-fstring-interpolation"
 ]
+
+[tool.bandit.assert_used]
+skips = ["**/test_*.py"]
 
 [tool.pytest.ini_options]
 log_cli = "True"

@@ -18,7 +18,7 @@ class CdxFlag(Enum):
     See:
     https://github.com/iipc/openwayback/blob/98bbc1a6e03f8cb44f00e7505f0e29bccef87abf/wayback-core/src/main/java/org/archive/wayback/core/CaptureSearchResult.java#L97-L120
     """
-    PASSWORD_PROTECTED = "P"
+    PASSWORD_PROTECTED = "P"  # nosec: 259
     NO_FOLLOW = "F"
     NO_INDEX = "I"
     NO_ARCHIVE = "A"

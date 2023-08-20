@@ -61,7 +61,7 @@ class ArchivedUrl(DataClassJsonMixin):
         """
         MD5 hash of the original URL.
         """
-        return md5(self.url.encode()).hexdigest()
+        return md5(self.url.encode(), usedforsecurity=False).hexdigest()
 
     @cached_property
     def datetime(self) -> datetime:

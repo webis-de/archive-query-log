@@ -102,7 +102,7 @@ class WebArchiveRawDownloader:
         if file_path.exists():
             return file_path
         url = archived_url.raw_archive_url
-        await sleep(1.0 * random())
+        await sleep(1.0 * random())  # nosec: 330
         try:
             async with client.get(url) as response:
                 response.raise_for_status()

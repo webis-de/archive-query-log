@@ -97,7 +97,7 @@ def main():
                 wayback_raw_url = query_url["serp_wayback_raw_url"]
                 response = get(
                     wayback_raw_url,
-                    timeout=60 * 4,
+                    timeout=60 * 4,  # nosec: 400
                 )
                 response.raise_for_status()
 

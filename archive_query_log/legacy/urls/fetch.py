@@ -180,7 +180,9 @@ class ArchivedUrlsFetcher:
         output_format_path = data_directory / "archived-urls"
         output_format_path.mkdir(parents=True, exist_ok=True)
         if cdx_page is not None:
-            assert domain is not None
+            if domain is None:
+                raise RuntimeError(
+                    "Domain must be specified when page is specified.")
             service_path = output_format_path / service.name
             domain_path = service_path / quote(domain, safe="")
             cdx_page_path = domain_path / f"{cdx_page:010}.jsonl.gz"

@@ -280,8 +280,12 @@ class ArchivedQueryUrlParser:
                 ]
 
         if cdx_page is not None:
-            assert domain is not None
-            assert len(domain_paths) == 1
+            if domain is None:
+                raise RuntimeError(
+                    "Domain must be specified when page is specified.")
+            if len(domain_paths) < 1:
+                raise RuntimeError(
+                    "There must be exactly one domain path.")
             cdx_page_paths = [domain_paths[0] / f"{cdx_page:010}.jsonl.gz"]
         else:
             cdx_page_paths = [

@@ -57,7 +57,8 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
                 *self._params,
                 ("showNumPages", True),
             ],
-            timeout=10 * 60  # 10 minutes
+            # 10 minutes
+            timeout=10 * 60  # nosec: 400
         )
         return int(num_pages_response.text)
 
@@ -69,7 +70,8 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
         path = self._page_cache_path(page)
         if path.exists():
             # Page was already downloaded, skip it.
-            assert path.is_file()
+            if not path.is_file():
+                raise RuntimeError(f"Path must be a file: {path}")
             return path
 
         session = backoff_session()
@@ -141,7 +143,8 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
 
     def fetch(self) -> None:
         if self.output_path.exists():
-            assert self.output_path.is_file()
+            if not self.output_path.is_file():
+                raise RuntimeError(f"Path must be a file: {self.output_path}")
             return
         print(f"Storing temporary files at: {self._cache_path}")
         self._fetch_pages()
@@ -280,7 +283,8 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
 
     def fetch(self) -> None:
         if self._result_path.exists():
-            assert self._result_path.is_file()
+            if not self._result_path.is_file():
+                raise RuntimeError(f"Path must be a file: {self._result_path}")
             return
         print(f"Storing temporary files at: {self._cache_path}")
         self._fetch_rankings()
