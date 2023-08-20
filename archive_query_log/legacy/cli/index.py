@@ -2,18 +2,17 @@ from concurrent.futures import ThreadPoolExecutor
 from contextlib import ExitStack
 from pathlib import Path
 
-from click import option, BOOL
+from click import option, BOOL, command
 from tqdm.auto import tqdm
 
 from archive_query_log.legacy import DATA_DIRECTORY_PATH
-from archive_query_log.legacy.cli import main
 from archive_query_log.legacy.cli.util import PathParam
 from archive_query_log.legacy.index import ArchivedRawSerpIndex, \
     ArchivedUrlIndex, ArchivedQueryUrlIndex, ArchivedParsedSerpIndex, \
     ArchivedSearchResultSnippetIndex, ArchivedRawSearchResultIndex
 
 
-@main.command(
+@command(
     "index",
     help="Generate helper indices.",
 )

@@ -1,13 +1,12 @@
 from pathlib import Path
 
-from click import option, Path as PathParam, argument, IntRange
+from click import option, Path as PathParam, argument, IntRange, group
 
 from archive_query_log.legacy import DATA_DIRECTORY_PATH, CDX_API_URL
-from archive_query_log.legacy.cli.main import main
 from archive_query_log.legacy.cli.util import URL
 
 
-@main.group("alexa")
+@group("alexa")
 def alexa():
     pass
 

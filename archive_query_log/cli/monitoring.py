@@ -25,12 +25,17 @@ def run(
         port: int,
 ):
     app = flask_app(config)
-    template_dir_path = Path(app.root_path) / app.template_folder
-    template_file_paths = [
-        template_dir_path / template
-        for template in app.jinja_env.list_templates()
-    ]
-    template_file_names = [str(template) for template in template_file_paths]
+    if app.template_folder is None:
+        template_file_names = []
+    else:
+        template_dir_path: Path = Path(app.root_path) / app.template_folder
+        template_file_paths = [
+            template_dir_path / template
+            for template in app.jinja_env.list_templates()
+        ]
+        template_file_names = [
+            str(template) for template in template_file_paths
+        ]
     run_simple(
         hostname=host,
         port=port,

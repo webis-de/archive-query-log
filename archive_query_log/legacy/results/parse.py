@@ -1,9 +1,8 @@
 from abc import abstractmethod, ABC
 from dataclasses import dataclass
 from gzip import GzipFile
-from io import TextIOWrapper
 from pathlib import Path
-from typing import Sequence, NamedTuple, Iterator, Pattern
+from typing import Sequence, NamedTuple, Iterator, Pattern, Iterable
 from urllib.parse import quote, urljoin
 
 from bs4 import Tag, BeautifulSoup
@@ -14,6 +13,7 @@ from archive_query_log.legacy.model import ArchivedRawSerp, \
     ArchivedSearchResultSnippet, ResultsParser, InterpretedQueryParser, \
     ArchivedParsedSerp, Service, HighlightedText
 from archive_query_log.legacy.util.html import clean_html
+from archive_query_log.legacy.util.text import text_io_wrapper
 
 
 class HtmlResultsParser(ResultsParser, ABC):
@@ -63,6 +63,7 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
             serp_url: str,
     ) -> Iterator[ArchivedSearchResultSnippet]:
         for index, result in enumerate(html.select(self.results_selector)):
+            url_tag: Tag | None
             if self.url_selector == ":--self":
                 url_tag = result
             else:
@@ -76,13 +77,14 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
                 continue
             url = urljoin(serp_url, url)
 
+            title_tag: Tag | None
             if self.title_selector == ":--self":
                 title_tag = result
             else:
                 title_tag = result.select_one(self.title_selector)
             if title_tag is None:
                 continue
-            title = clean_html(title_tag)
+            title = HighlightedText(clean_html(title_tag))
             if len(title) == 0:
                 continue
 
@@ -93,11 +95,12 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
                 else:
                     snippet_tags = result.select(self.snippet_selector)
                 if snippet_tags is not None and snippet_tags:
-                    for snippet_candidate in snippet_tags:
-                        snippet_candidate = clean_html(snippet_candidate)
+                    for snippet_candidate_tag in snippet_tags:
+                        snippet_candidate = HighlightedText(
+                            clean_html(snippet_candidate_tag)
+                        )
 
-                        if (snippet_candidate and
-                                len(snippet_candidate) > 0 and
+                        if (len(snippet_candidate) > 0 and
                                 (not snippet or
                                  len(snippet_candidate) > len(snippet))):
                             snippet = snippet_candidate
@@ -106,8 +109,8 @@ class HtmlSelectorResultsParser(HtmlResultsParser):
                 rank=index + 1,
                 url=url,
                 timestamp=timestamp,
-                title=HighlightedText(title),
-                snippet=HighlightedText(snippet),
+                title=title,
+                snippet=snippet,
             )
 
 
@@ -171,27 +174,28 @@ class ArchivedParsedSerpParser:
         if output_path.exists() and not self.overwrite:
             return
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        archived_serp_contents = ArchivedRawSerps(input_path)
+        archived_serp_contents: Iterable[ArchivedRawSerp] = (
+            ArchivedRawSerps(input_path))
         if self.verbose:
+            # noinspection PyTypeChecker
             archived_serp_contents = tqdm(
                 archived_serp_contents,
                 desc="Parse SERP WARC records",
                 unit="record",
             )
-        archived_parsed_serps = (
+        archived_parsed_serps_nullable = (
             self.parse_single(archived_serp_content)
             for archived_serp_content in archived_serp_contents
         )
         archived_parsed_serps = (
             archived_serp
-            for archived_serp in archived_parsed_serps
+            for archived_serp in archived_parsed_serps_nullable
             if archived_serp is not None
         )
         output_schema = ArchivedParsedSerp.schema()
-        # noinspection PyTypeChecker
         with output_path.open("wb") as file, \
                 GzipFile(fileobj=file, mode="wb") as gzip_file, \
-                TextIOWrapper(gzip_file) as text_file:
+                text_io_wrapper(gzip_file) as text_file:
             for archived_parsed_serp in archived_parsed_serps:
                 text_file.write(output_schema.dumps(archived_parsed_serp))
                 text_file.write("\n")
@@ -201,14 +205,15 @@ class ArchivedParsedSerpParser:
             archived_serp_content: ArchivedRawSerp
     ) -> ArchivedParsedSerp | None:
         results: Sequence[ArchivedSearchResultSnippet] | None = None
-        for parser in self.results_parsers:
-            results = parser.parse(archived_serp_content)
+        for results_parser in self.results_parsers:
+            results = results_parser.parse(archived_serp_content)
             if results is not None:
                 break
 
         interpreted_query: str | None = None
-        for parser in self.interpreted_query_parsers:
-            interpreted_query = parser.parse(archived_serp_content)
+        for interpreted_query_parser in self.interpreted_query_parsers:
+            interpreted_query = interpreted_query_parser.parse(
+                archived_serp_content)
             if interpreted_query is not None:
                 break
 
@@ -299,7 +304,7 @@ class ArchivedParsedSerpParser:
             domain: str | None = None,
             cdx_page: int | None = None,
     ):
-        pages = self._service_pages(
+        pages_list: Sequence[_CdxPage] = self._service_pages(
             data_directory=data_directory,
             focused=focused,
             service=service,
@@ -307,10 +312,12 @@ class ArchivedParsedSerpParser:
             cdx_page=cdx_page,
         )
 
-        if len(pages) == 0:
+        if len(pages_list) == 0:
             return
 
-        if len(pages) > 1:
+        pages: Iterable[_CdxPage] = pages_list
+        if len(pages_list) > 1:
+            # noinspection PyTypeChecker
             pages = tqdm(
                 pages,
                 desc="Parse archived SERP URLs",

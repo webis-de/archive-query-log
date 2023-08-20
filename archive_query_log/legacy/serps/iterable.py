@@ -1,11 +1,10 @@
 from dataclasses import dataclass
 from gzip import GzipFile
-from io import TextIOWrapper
 from pathlib import Path
-from typing import Sized, Iterable, Iterator, IO
+from typing import Sized, Iterable, Iterator
 
 from archive_query_log.legacy.model import ArchivedParsedSerp
-from archive_query_log.legacy.util.text import count_lines
+from archive_query_log.legacy.util.text import count_lines, text_io_wrapper
 
 
 @dataclass(frozen=True)
@@ -29,16 +28,17 @@ class ArchivedParsedSerps(Sized, Iterable[ArchivedParsedSerp]):
             )
 
     def __len__(self) -> int:
-        with self.path.open("rb") as file:
-            with GzipFile(fileobj=file, mode="rb") as gzip_file:
-                gzip_file: IO[bytes]
-                return count_lines(gzip_file)
+        with (self.path.open("rb") as file,
+              GzipFile(fileobj=file, mode="rb") as gzip_file):
+            return count_lines(gzip_file)
 
     def __iter__(self) -> Iterator[ArchivedParsedSerp]:
         schema = ArchivedParsedSerp.schema()
-        with self.path.open("rb") as file:
-            with GzipFile(fileobj=file, mode="rb") as gzip_file:
-                gzip_file: IO[bytes]
-                with TextIOWrapper(gzip_file) as text_file:
-                    for line in text_file:
-                        yield schema.loads(line)
+        with (self.path.open("rb") as file,
+              GzipFile(fileobj=file, mode="rb") as gzip_file,
+              text_io_wrapper(gzip_file) as text_file):
+            for line in text_file:
+                serp = schema.loads(line, many=True)
+                if isinstance(serp, list):
+                    raise ValueError(f"Expected one SERP per line: {line}")
+                yield serp

@@ -133,7 +133,7 @@ def build(
     start_time = utc_now()
 
     if not skip_archives:
-        changed_archives_search: Search = (
+        changed_archives_search = (
             Archive.search(using=config.es.client)
             .filter(
                 ~Exists(field="last_modified") |
@@ -147,51 +147,55 @@ def build(
             )
             .query(FunctionScore(functions=[RandomScore()]))
         )
-        num_changed_archives_search: Search = (
+        num_changed_archives_search = (
             changed_archives_search.extra(track_total_hits=True))
         num_changed_archives = (
             num_changed_archives_search.execute().hits.total.value)
-        all_providers_search: Search = (
+        all_providers_search = (
             Provider.search(using=config.es.client)
             .filter(~Exists(field="exclusion_reason")))
         num_all_providers_search = (
             all_providers_search.extra(track_total_hits=True))
-        num_all_providers_search: Search
         num_all_providers = (
             num_all_providers_search.execute().hits.total.value)
-        num_batches = num_changed_archives * num_all_providers
-        if num_batches > 0:
+        num_batches_archives = num_changed_archives * num_all_providers
+        if num_batches_archives > 0:
             echo(f"Building sources for {num_changed_archives} "
                  f"new/changed archives.")
-            action_batches: Iterator[
-                list[dict]] = _iter_sources_batches_changed_archives(
-                config=config,
-                changed_archives_search=changed_archives_search,
-                all_providers_search=all_providers_search,
-                start_time=start_time,
-            )
+            action_batches_archives: Iterable[list[dict]] = (
+                _iter_sources_batches_changed_archives(
+                    config=config,
+                    changed_archives_search=changed_archives_search,
+                    all_providers_search=all_providers_search,
+                    start_time=start_time,
+                ))
             # noinspection PyTypeChecker
-            action_batches = tqdm(action_batches, total=num_batches,
-                                  desc="Build sources", unit="batch")
-            actions = chain.from_iterable(action_batches)
+            action_batches_archives = tqdm(
+                action_batches_archives,
+                total=num_batches_archives,
+                desc="Build sources",
+                unit="batch",
+            )
+            actions_archives = chain.from_iterable(action_batches_archives)
             try:
-                responses: Iterable[
+                responses_archives: Iterable[
                     tuple[bool, Any]] = config.es.streaming_bulk(
-                    actions=actions,
+                    actions=actions_archives,
                 )
             except ConnectionTimeout:
                 warn(RuntimeWarning(
                     "Connection timeout while indexing captures."))
                 return
 
-            for success, info in responses:
+            for success, info in responses_archives:
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
+            Source.index().refresh(using=config.es.client)
         else:
             echo("No new/changed archives.")
 
     if not skip_providers:
-        changed_providers_search: Search = (
+        changed_providers_search = (
             Provider.search(using=config.es.client)
             .filter(
                 ~Exists(field="exclusion_reason") &
@@ -208,37 +212,41 @@ def build(
             )
             .query(FunctionScore(functions=[RandomScore()]))
         )
-        num_changed_providers_search: Search = (
+        num_changed_providers_search = (
             changed_providers_search.extra(track_total_hits=True))
         num_changed_providers = (
             num_changed_providers_search.execute().hits.total.value)
-        all_archives_search: Search = Archive.search(using=config.es.client)
+        all_archives_search = Archive.search(using=config.es.client)
         num_all_archives_search = (
             all_archives_search.extra(track_total_hits=True))
-        num_all_archives_search: Search
+        # pylint: disable=no-member
         num_all_archives = (
             num_all_archives_search.execute().hits.total.value)
-        num_batches = num_changed_providers * num_all_archives
-        if num_batches > 0:
+        num_batches_providers = num_changed_providers * num_all_archives
+        if num_batches_providers > 0:
             echo(
                 f"Building sources for {num_changed_providers} "
                 f"new/changed providers.")
-            action_batches: Iterator[
-                list[dict]] = _iter_sources_batches_changed_providers(
-                config=config,
-                changed_providers_search=changed_providers_search,
-                all_archives_search=all_archives_search,
-                start_time=start_time,
-            )
+            action_batches_providers: Iterable[list[dict]] = (
+                _iter_sources_batches_changed_providers(
+                    config=config,
+                    changed_providers_search=changed_providers_search,
+                    all_archives_search=all_archives_search,
+                    start_time=start_time,
+                ))
             # noinspection PyTypeChecker
-            action_batches = tqdm(action_batches, total=num_batches,
-                                  desc="Build sources", unit="batch")
-            actions = chain.from_iterable(action_batches)
-            responses: Iterable[tuple[bool, Any]] = bulk(
-                client=config.es.client,
-                actions=actions,
+            action_batches_providers = tqdm(
+                action_batches_providers,
+                total=num_batches_providers,
+                desc="Build sources",
+                unit="batch",
             )
-            for success, info in responses:
+            actions_providers = chain.from_iterable(action_batches_providers)
+            responses_providers: Iterable[tuple[bool, Any]] = bulk(
+                client=config.es.client,
+                actions=actions_providers,
+            )
+            for success, info in responses_providers:
                 if not success:
                     raise RuntimeError(f"Indexing error: {info}")
             Source.index().refresh(using=config.es.client)

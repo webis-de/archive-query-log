@@ -1,8 +1,7 @@
 from dataclasses import dataclass
 from gzip import GzipFile
-from io import TextIOWrapper
 from pathlib import Path
-from typing import Sequence, NamedTuple, Pattern
+from typing import Sequence, NamedTuple, Pattern, Iterable
 from urllib.parse import parse_qsl, unquote, quote
 
 from tqdm.auto import tqdm
@@ -10,6 +9,7 @@ from tqdm.auto import tqdm
 from archive_query_log.legacy.model import ArchivedQueryUrl, \
     ArchivedUrl, PageParser, QueryParser, OffsetParser, Service
 from archive_query_log.legacy.urls.iterable import ArchivedUrls
+from archive_query_log.legacy.util.text import text_io_wrapper
 
 
 @dataclass(frozen=True)
@@ -180,27 +180,27 @@ class ArchivedQueryUrlParser:
         if output_path.exists() and not self.overwrite:
             return
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        archived_urls = ArchivedUrls(input_path)
+        archived_urls: Iterable[ArchivedUrl] = ArchivedUrls(input_path)
         if self.verbose:
+            # noinspection PyTypeChecker
             archived_urls = tqdm(
                 archived_urls,
                 desc="Parse SERP URLs",
                 unit="URL",
             )
-        archived_serp_urls = (
+        archived_serp_urls_nullable = (
             self._parse_single(archived_url, focused)
             for archived_url in archived_urls
         )
         archived_serp_urls = (
             archived_serp_url
-            for archived_serp_url in archived_serp_urls
+            for archived_serp_url in archived_serp_urls_nullable
             if archived_serp_url is not None
         )
         output_schema = ArchivedQueryUrl.schema()
-        # noinspection PyTypeChecker
-        with output_path.open("wb") as file, \
-                GzipFile(fileobj=file, mode="wb") as gzip_file, \
-                TextIOWrapper(gzip_file) as text_file:
+        with (output_path.open("wb") as file,
+              GzipFile(fileobj=file, mode="wb") as gzip_file,
+              text_io_wrapper(gzip_file) as text_file):
             for archived_serp_url in archived_serp_urls:
                 text_file.write(output_schema.dumps(archived_serp_url))
                 text_file.write("\n")
@@ -211,8 +211,8 @@ class ArchivedQueryUrlParser:
             focused: bool,
     ) -> ArchivedQueryUrl | None:
         query: str | None = None
-        for parser in self.query_parsers:
-            query = parser.parse(archived_url)
+        for query_parser in self.query_parsers:
+            query = query_parser.parse(archived_url)
             if query is not None:
                 break
 
@@ -220,8 +220,8 @@ class ArchivedQueryUrlParser:
             return None
 
         page: int | None = None
-        for parser in self.page_parsers:
-            page = parser.parse(archived_url)
+        for page_parser in self.page_parsers:
+            page = page_parser.parse(archived_url)
             if page is not None:
                 break
 
@@ -229,8 +229,8 @@ class ArchivedQueryUrlParser:
             return None
 
         offset: int | None = None
-        for parser in self.offset_parsers:
-            offset = parser.parse(archived_url)
+        for offset_parser in self.offset_parsers:
+            offset = offset_parser.parse(archived_url)
             if offset is not None:
                 break
 
@@ -317,7 +317,7 @@ class ArchivedQueryUrlParser:
             domain: str | None = None,
             cdx_page: int | None = None,
     ):
-        pages = self._service_pages(
+        pages_list: Sequence[_CdxPage] = self._service_pages(
             data_directory=data_directory,
             focused=focused,
             service=service,
@@ -325,10 +325,12 @@ class ArchivedQueryUrlParser:
             cdx_page=cdx_page,
         )
 
-        if len(pages) == 0:
+        if len(pages_list) == 0:
             return
 
-        if len(pages) > 1:
+        pages: Iterable[_CdxPage] = pages_list
+        if len(pages_list) > 1:
+            # noinspection PyTypeChecker
             pages = tqdm(
                 pages,
                 desc="Parse archived SERP URLs",

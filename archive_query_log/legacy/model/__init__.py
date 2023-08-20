@@ -361,7 +361,7 @@ class PathField(Field):
         return str(value)
 
     def _deserialize(
-            self, value: str, attr: str, data: Any, **kwargs: Any
+            self, value: str, attr: str | None, data: Any, **kwargs: Any
     ) -> Path:
         return Path(value)
 

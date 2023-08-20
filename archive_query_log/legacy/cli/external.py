@@ -4,12 +4,11 @@ from pathlib import Path
 from re import compile as pattern, escape
 from urllib.parse import quote
 
-from click import argument
+from click import argument, group
 from pandas import DataFrame, read_csv, Series, concat
 from yaml import dump
 
 from archive_query_log.legacy import DATA_DIRECTORY_PATH
-from archive_query_log.legacy.cli import main
 from archive_query_log.legacy.cli.util import PathParam
 
 sheets_id = "1LnIJYFBYQtZ32rxnT6RPGMOvuRIUQMoEx7tOS0z7Mi8"
@@ -20,7 +19,7 @@ sheet_query_parsers = "Query Parsers"
 sheet_page_parsers = "Page Parsers"
 
 
-@main.group("external")
+@group("external")
 def external():
     pass
 
@@ -105,26 +104,26 @@ def service_domains(domains: DataFrame, service: Series) -> list[str]:
 
 
 def query_parser(row: Series) -> dict:
-    row = row.to_dict()
-    row.update(loads(row["query_parser"]))
-    url_pattern = "" if row["pattern"] is None else row["pattern"]
-    if row["type"] == "qp":
+    row_dict = row.to_dict()
+    row_dict.update(loads(row_dict["query_parser"]))
+    url_pattern = "" if row_dict["pattern"] is None else row_dict["pattern"]
+    if row_dict["type"] == "qp":
         return {
             "url_pattern": url_pattern,
             "type": "query_parameter",
-            "parameter": row["key"]
+            "parameter": row_dict["key"]
         }
-    elif row["type"] == "fp":
+    elif row_dict["type"] == "fp":
         return {
             "url_pattern": url_pattern,
             "type": "fragment_parameter",
-            "parameter": row["key"]
+            "parameter": row_dict["key"]
         }
-    elif row["type"] == "ps":
+    elif row_dict["type"] == "ps":
         return {
             "url_pattern": url_pattern,
             "type": "path_suffix",
-            "path_prefix": row["key"]
+            "path_prefix": row_dict["key"]
         }
     else:
         raise NotImplementedError()
@@ -136,14 +135,15 @@ page_offset_parser_map = {"parameter": "query_parameter",
 
 
 def page_offset_parser(row: Series, count="results") -> dict:
-    row = row.to_dict()
-    row.update(loads(row["page_offset_parser"]))
-    if row["count"] == count:
-        url_pattern = "" if row["pattern"] is None else row["pattern"]
+    row_dict = row.to_dict()
+    row_dict.update(loads(row_dict["page_offset_parser"]))
+    if row_dict["count"] == count:
+        url_pattern = "" if row_dict["pattern"] is None \
+            else row_dict["pattern"]
         return {
             "url_pattern": url_pattern,
-            "type": page_offset_parser_map[row["type"]],
-            "parameter": row["key"]
+            "type": page_offset_parser_map[row_dict["type"]],
+            "parameter": row_dict["key"]
         }
     else:
         raise NotImplementedError()

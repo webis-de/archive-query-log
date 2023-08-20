@@ -3,7 +3,6 @@ from datetime import datetime
 from enum import Enum
 from functools import cached_property
 from gzip import GzipFile
-from io import TextIOWrapper
 from itertools import chain
 from pathlib import Path
 from typing import AbstractSet, Sequence, Any, Iterable, Iterator, NamedTuple
@@ -19,6 +18,7 @@ from tqdm.auto import tqdm
 from archive_query_log.legacy import CDX_API_URL
 from archive_query_log.legacy.model import ArchivedUrl, Service
 from archive_query_log.legacy.util.archive_http import archive_http_client
+from archive_query_log.legacy.util.text import text_io_wrapper
 
 
 class UrlMatchScope(Enum):
@@ -125,7 +125,7 @@ class ArchivedUrlsFetcher:
             client: RetryClient,
             progress: tqdm | None = None,
     ) -> None:
-        if page.path.exists() and not self.overwrite:
+        if page.path.exists() and not self.overwrite and progress is not None:
             progress.update()
             return
         params = [
@@ -143,10 +143,9 @@ class ArchivedUrlsFetcher:
                     schema,
                 )
                 page.path.parent.mkdir(parents=True, exist_ok=True)
-                # noinspection PyTypeChecker
                 with page.path.open("wb") as file, \
                         GzipFile(fileobj=file, mode="wb") as gzip_file, \
-                        TextIOWrapper(gzip_file) as text_file:
+                        text_io_wrapper(gzip_file) as text_file:
                     for line in lines:
                         text_file.write(line)
                         text_file.write("\n")
@@ -228,7 +227,7 @@ class ArchivedUrlsFetcher:
                     for url_prefix in service.focused_url_prefixes
                 ]
             else:
-                suffix_free_domains = []
+                suffix_free_domains: list[str] = []
                 for domain in sorted(domains, key=len):
                     if not any(
                             domain.endswith(suffix)

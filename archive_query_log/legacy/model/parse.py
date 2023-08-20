@@ -43,12 +43,11 @@ class ResultsParser(Protocol):
 class QueryParserField(Field):
     def _deserialize(
             self,
-            value: Any,
+            value: Mapping[str, Any],
             attr: str | None,
             data: Mapping[str, Any] | None,
             **kwargs,
     ) -> QueryParser:
-        value: Mapping[str, Any]
         parser_type = value["type"]
         if parser_type == "query_parameter":
             from archive_query_log.legacy.queries.parse import \
@@ -72,16 +71,16 @@ class QueryParserField(Field):
                 segment=value["segment"],
                 remove_patterns=(
                     [
-                        pattern(pattern, IGNORECASE)
-                        for pattern in value["remove_patterns"]
+                        pattern(remove_pattern, IGNORECASE)
+                        for remove_pattern in value["remove_patterns"]
                     ]
                     if "remove_patterns" in value
                     else []
                 ),
                 space_patterns=(
                     [
-                        pattern(pattern, IGNORECASE)
-                        for pattern in value["space_patterns"]
+                        pattern(space_pattern, IGNORECASE)
+                        for space_pattern in value["space_patterns"]
                     ]
                     if "space_patterns" in value
                     else []
@@ -95,16 +94,16 @@ class QueryParserField(Field):
                 segment=value["segment"],
                 remove_patterns=(
                     [
-                        pattern(pattern, IGNORECASE)
-                        for pattern in value["remove_patterns"]
+                        pattern(remove_pattern, IGNORECASE)
+                        for remove_pattern in value["remove_patterns"]
                     ]
                     if "remove_patterns" in value
                     else []
                 ),
                 space_patterns=(
                     [
-                        pattern(pattern, IGNORECASE)
-                        for pattern in value["space_patterns"]
+                        pattern(space_pattern, IGNORECASE)
+                        for space_pattern in value["space_patterns"]
                     ]
                     if "space_patterns" in value
                     else []
@@ -117,12 +116,11 @@ class QueryParserField(Field):
 class PageOffsetParserField(Field):
     def _deserialize(
             self,
-            value: Any,
+            value: Mapping[str, Any],
             attr: str | None,
             data: Mapping[str, Any] | None,
             **kwargs,
     ) -> Union[PageParser | OffsetParser]:
-        value: Mapping[str, Any]
         parser_type = value["type"]
         if parser_type == "query_parameter":
             from archive_query_log.legacy.queries.parse import \
@@ -147,8 +145,8 @@ class PageOffsetParserField(Field):
                 delimiter=value["delimiter"] if "delimiter" in value else "/",
                 remove_patterns=(
                     [
-                        pattern(pattern, IGNORECASE)
-                        for pattern in value["remove_patterns"]
+                        pattern(remove_pattern, IGNORECASE)
+                        for remove_pattern in value["remove_patterns"]
                     ]
                     if "remove_patterns" in value
                     else []
@@ -163,8 +161,8 @@ class PageOffsetParserField(Field):
                 delimiter=value["delimiter"] if "delimiter" in value else "/",
                 remove_patterns=(
                     [
-                        pattern(pattern, IGNORECASE)
-                        for pattern in value["remove_patterns"]
+                        pattern(remove_pattern, IGNORECASE)
+                        for remove_pattern in value["remove_patterns"]
                     ]
                     if "remove_patterns" in value
                     else []
@@ -177,12 +175,11 @@ class PageOffsetParserField(Field):
 class InterpretedQueryParserField(Field):
     def _deserialize(
             self,
-            value: Any,
+            value: Mapping[str, Any],
             attr: str | None,
             data: Mapping[str, Any] | None,
             **kwargs,
     ) -> InterpretedQueryParser:
-        value: Mapping[str, Any]
         parser_type = value["type"]
         if parser_type == "html_selector":
             from archive_query_log.legacy.results.parse import \
@@ -208,12 +205,11 @@ class InterpretedQueryParserField(Field):
 class ResultsParserField(Field):
     def _deserialize(
             self,
-            value: Any,
+            value: Mapping[str, Any],
             attr: str | None,
             data: Mapping[str, Any] | None,
             **kwargs,
     ) -> ResultsParser:
-        value: Mapping[str, Any]
         parser_type = value["type"]
         if parser_type == "html_selector":
             from archive_query_log.legacy.results.parse import \

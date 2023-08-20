@@ -26,7 +26,7 @@ def get_spreadsheet_data(
     services = load_services()
     idx_first = services["name"].ne(first_service).idxmin()
     idx_last = services["name"].ne(last_service).idxmin()
-    services = services.loc[idx_first:idx_last, :]
+    services = services.loc[idx_first:idx_last, :]  # type: ignore
 
     domains = load_domains()
     services["domains"] = [

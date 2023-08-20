@@ -8,7 +8,7 @@ from itertools import islice
 from math import floor, log10
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Sized, Iterable, Any, Iterator, Mapping, Set
+from typing import Sized, Iterable, Any, Iterator, Mapping, Set, NamedTuple
 from zipfile import ZipFile
 
 from publicsuffixlist import PublicSuffixList
@@ -66,13 +66,13 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
         num_digits = floor(log10(self.num_pages)) + 1
         return self._cache_path / f"page_{page:{num_digits}}.jsonl"
 
-    def _fetch_page(self, page: int) -> Path | None:
+    def _fetch_page(self, page: int) -> None:
         path = self._page_cache_path(page)
         if path.exists():
             # Page was already downloaded, skip it.
             if not path.is_file():
                 raise RuntimeError(f"Path must be a file: {path}")
-            return path
+            return
 
         session = backoff_session()
         try:
@@ -106,11 +106,14 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
         """
         Fetch queries from each individual page.
         """
-        for page in tqdm(
-                range(self.num_pages),
-                desc="Fetch urls",
-                unit="page",
-        ):
+        pages: Iterable[int] = range(self.num_pages)
+        # noinspection PyTypeChecker
+        pages = tqdm(
+            pages,
+            desc="Fetch urls",
+            unit="page",
+        )
+        for page in pages:
             self._fetch_page(page)
 
     def _missing_pages(self) -> set[int]:
@@ -130,11 +133,14 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
         Merge queries from all pages.
         """
         with self.output_path.open("wt", encoding="utf8") as file:
-            for page in tqdm(
-                    range(self.num_pages),
-                    desc="Merge urls",
-                    unit="page",
-            ):
+            pages: Iterable[int] = range(self.num_pages)
+            # noinspection PyTypeChecker
+            pages = tqdm(
+                pages,
+                desc="Merge urls",
+                unit="page",
+            )
+            for page in pages:
                 path = self._page_cache_path(page)
                 with path.open("rt") as page_file:
                     lines = page_file
@@ -170,11 +176,37 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
         schema = ArchivedUrl.schema()
         with self.output_path.open("rt", encoding="utf8") as file:
             for line in file:
-                yield schema.loads(line)
+                url = schema.loads(line, many=True)
+                if isinstance(url, list):
+                    raise ValueError(f"Expected one URL per line: {line}")
+                yield url
+
+
+def _iter_deduplicated(domains: Iterable[str]) -> Iterator[str]:
+    public_suffix_list = PublicSuffixList()
+    second_level_domains = set()
+    for domain in domains:
+        public_suffix = public_suffix_list.publicsuffix(domain)
+        second_level_domain = public_suffix_list.subdomain(domain, 0)
+        if second_level_domain is None:
+            second_level_domain = public_suffix
+        second_level_domain = second_level_domain.removesuffix(
+            f".{public_suffix}"
+        )
+        if second_level_domain in second_level_domains:
+            continue
+        second_level_domains.add(second_level_domain)
+        yield domain
+
+
+class AlexaTop1MDomain(NamedTuple):
+    rank: int
+    domain: str
+    public_suffix: str
 
 
 @dataclass(frozen=True)
-class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
+class AlexaTop1MFusedDomains(Sized, Iterable[AlexaTop1MDomain]):
     """
     Fuse the rop-1000 of all archived Alexa top-1M rankings.
     """
@@ -218,38 +250,28 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
             raise RuntimeError("Some downloads were unsuccessful. Try again.")
         return paths.values()
 
-    def _iter_deduplicated(self, domains: Iterable[str]) -> Iterator[str]:
-        public_suffix_list = PublicSuffixList()
-        second_level_domains = set()
-        for domain in domains:
-            public_suffix = public_suffix_list.publicsuffix(domain)
-            second_level_domain = public_suffix_list.subdomain(domain, 0)
-            if second_level_domain is None:
-                second_level_domain = public_suffix
-            second_level_domain = second_level_domain.removesuffix(
-                f".{public_suffix}"
-            )
-            if second_level_domain in second_level_domains:
-                continue
-            second_level_domains.add(second_level_domain)
-            yield domain
-
     def _fuse_cached_rankings(self) -> None:
         runs: list[Run] = []
         num_runs = sum(1 for _ in self._cache_path.iterdir())
-        for path in tqdm(
-                self._cache_path.iterdir(),
-                total=num_runs,
-                desc="Read ranking",
-                unit="ranking",
-        ):
+        paths: Iterable[Path] = self._cache_path.iterdir()
+        # noinspection PyTypeChecker
+        paths = tqdm(
+            paths,
+            total=num_runs,
+            desc="Fuse rankings",
+            unit="ranking",
+        )
+        for path in paths:
             with path.open("rb") as file:
                 with ZipFile(file) as zip_file:
                     with zip_file.open("top-1m.csv", "r") as csv_file:
                         with TextIOWrapper(csv_file) as lines:
-                            domains = (line[1] for line in reader(lines))
+                            domains: Iterable[str] = (
+                                line[1]
+                                for line in reader(lines)
+                            )
                             if self.deduplicate_per_ranking:
-                                domains = self._iter_deduplicated(domains)
+                                domains = _iter_deduplicated(domains)
                             if self.max_domains_per_ranking is not None:
                                 domains = islice(
                                     domains,
@@ -272,12 +294,12 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
             key=lambda item: item[1],
             reverse=True,
         )
-        domains = (domain for domain, _ in items)
+        fused_domains: Iterable[str] = (domain for domain, _ in items)
         if self.deduplicate_fused_ranking and not self.deduplicate_per_ranking:
-            domains = self._iter_deduplicated(domains)
+            fused_domains = _iter_deduplicated(fused_domains)
         public_suffix_list = PublicSuffixList(only_icann=True)
         with self._result_path.open("wt") as file:
-            for index, domain in enumerate(domains):
+            for index, domain in enumerate(fused_domains):
                 public_suffix = public_suffix_list.publicsuffix(domain)
                 file.write(f"{index + 1},{domain},{public_suffix}\n")
 
@@ -298,9 +320,9 @@ class AlexaTop1MFusedDomains(Sized, Iterable[Path]):
         with self._result_path.open("rt") as file:
             return sum(1 for _ in file)
 
-    def __iter__(self) -> Iterator[ArchivedUrl]:
+    def __iter__(self) -> Iterator[AlexaTop1MDomain]:
         self.fetch()
-        schema = ArchivedUrl.schema()
         with self._result_path.open("rt") as file:
             for line in file:
-                yield schema.loads(line)
+                index, domain, public_suffix = line.split(",")
+                yield AlexaTop1MDomain(int(index), domain, public_suffix)

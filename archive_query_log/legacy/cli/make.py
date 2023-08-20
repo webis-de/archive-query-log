@@ -1,14 +1,13 @@
 from asyncio import run
 from pathlib import Path
 
-from click import option, argument, STRING, IntRange, BOOL
+from click import option, argument, STRING, IntRange, BOOL, group
 
 from archive_query_log.legacy import DATA_DIRECTORY_PATH, CDX_API_URL, LOGGER
-from archive_query_log.legacy.cli import main
 from archive_query_log.legacy.cli.util import PathParam, ServiceChoice
 
 
-@main.group("make")
+@group("make")
 def make_group():
     pass
 

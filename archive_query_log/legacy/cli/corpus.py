@@ -7,11 +7,10 @@ from pathlib import Path
 from typing import Collection
 from uuid import UUID
 
-from click import option, BOOL
+from click import option, BOOL, command
 from tqdm.auto import tqdm
 
 from archive_query_log.legacy import DATA_DIRECTORY_PATH
-from archive_query_log.legacy.cli import main
 from archive_query_log.legacy.cli.util import PathParam
 from archive_query_log.legacy.index import ArchivedRawSerpIndex, \
     ArchivedUrlIndex, ArchivedQueryUrlIndex, ArchivedParsedSerpIndex, \
@@ -23,7 +22,7 @@ from archive_query_log.legacy.model import ArchivedUrl, CorpusQueryUrl, \
     ArchivedQueryUrl, ArchivedParsedSerp, CorpusQuery, CorpusSearchResult
 
 
-@main.command(
+@command(
     "corpus",
     help="Generate corpus.",
 )
@@ -265,8 +264,8 @@ def _build_search_result(
         # archived_parsed_search_result_index: ArchivedParsedSearchResultIndex,
         archived_search_result_snippet: ArchivedSearchResultSnippet,
 ) -> CorpusSearchResult:
-    archived_snippet_loc = archived_search_result_snippet_index \
-        .get(archived_search_result_snippet.id)
+    archived_snippet_loc = archived_search_result_snippet_index[
+        archived_search_result_snippet.id]
     archived_raw_search_result_loc = archived_raw_search_result_index \
         .get(archived_search_result_snippet.id)
     # archived_parsed_search_result_loc = archived_parsed_search_result_index \

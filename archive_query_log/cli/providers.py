@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Sequence, MutableMapping
+from typing import Sequence, MutableMapping, Iterable
 from uuid import uuid4
 
 from click import group, option, echo, Choice, Path as PathType, prompt
@@ -247,6 +247,7 @@ def _provider_name(
         provider_names: MutableMapping[str, str],
         review: bool,
 ) -> str | None:
+    provider_name_suggest: str | None
     if main_domain in provider_names:
         if not review:
             return provider_names[main_domain]
@@ -259,7 +260,7 @@ def _provider_name(
             main_domain_info = None
         if main_domain_info is not None:
             main_org: str | list[str] | None = main_domain_info.org
-            if type(main_org) is list:
+            if isinstance(main_org, list):
                 main_org = main_org[0]
             if main_org is not None:
                 for restricted_phrase in ["redacted", "privacy",
@@ -318,9 +319,10 @@ def import_(
 
     echo("Load providers from services file.")
     with services_path.open("r") as file:
-        services: Sequence[dict] = safe_load(file)
-    echo(f"Found {len(services)} service definitions.")
+        services_list: Sequence[dict] = safe_load(file)
+    echo(f"Found {len(services_list)} service definitions.")
 
+    services: Iterable[dict] = services_list
     provider_names: MutableMapping[str, str] = Index(str(cache_path))
 
     if auto_merge or no_merge:

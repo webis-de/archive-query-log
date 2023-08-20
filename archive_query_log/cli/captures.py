@@ -146,7 +146,7 @@ def fetch(config: Config) -> None:
     if num_changed_sources > 0:
         echo(f"Fetching captures for {num_changed_sources} "
              f"new/changed sources.")
-        changed_sources: Iterator[Source] = (
+        changed_sources: Iterable[Source] = (
             changed_sources_search.params(preserve_order=True).scan())
         changed_sources = safe_iter_scan(changed_sources)
         # noinspection PyTypeChecker

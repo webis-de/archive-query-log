@@ -1,4 +1,5 @@
 from contextlib import asynccontextmanager
+from typing import AsyncIterator
 
 from aiohttp import ClientSession, TCPConnector, ClientTimeout, \
     ClientConnectorError, ServerTimeoutError, ClientPayloadError
@@ -6,7 +7,9 @@ from aiohttp_retry import RetryClient, JitterRetry
 
 
 @asynccontextmanager
-async def archive_http_session(limit: int = 10) -> ClientSession:
+async def archive_http_session(
+        limit: int = 10,
+) -> AsyncIterator[ClientSession]:
     # The Wayback Machine doesn't seem to support more than 10
     # parallel connections from the same IP.
     connector = TCPConnector(
@@ -26,7 +29,7 @@ async def archive_http_session(limit: int = 10) -> ClientSession:
 
 
 @asynccontextmanager
-async def archive_http_client(limit: int = 10) -> RetryClient:
+async def archive_http_client(limit: int = 10) -> AsyncIterator[RetryClient]:
     retry_options = JitterRetry(
         attempts=10,
         start_timeout=10,  # 10 seconds

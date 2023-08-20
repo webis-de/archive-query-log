@@ -21,23 +21,21 @@ class ChatNoirResultsParser(HtmlResultsParser):
             serp_url: str,
     ) -> Iterator[ArchivedSearchResultSnippet]:
         results = html.find("section", id="SearchResults")
-        if results is None:
+        if results is None or not isinstance(results, Tag):
             return
         results_iter = results.find_all("article", class_="search-result")
         for index, result in enumerate(results_iter):
-            header: Tag = result.find("header")
+            header = result.find("header")
             url: str = header.find("a", class_="link")["href"]
             url = urljoin(serp_url, url)
-            title = clean_html(header.find("h2"))
+            title = HighlightedText(clean_html(header.find("h2")))
             # Remove header. Only the snippet will be left.
             header.decompose()
-            snippet = clean_html(result)
-            if len(snippet) == 0:
-                snippet = None
+            snippet = HighlightedText(clean_html(result))
             yield ArchivedSearchResultSnippet(
                 rank=index + 1,
                 url=url,
                 timestamp=timestamp,
-                title=HighlightedText(title),
-                snippet=HighlightedText(snippet),
+                title=title,
+                snippet=snippet if len(snippet) > 0 else None,
             )

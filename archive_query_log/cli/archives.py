@@ -150,7 +150,11 @@ def archive_it(
     collections_api_url = urljoin(api_url, "/api/collection")
     response = config.http.session.get(
         collections_api_url,
-        params={"limit": 0, "format": "json"})
+        params=[
+            ("limit", 0),
+            ("format", "json"),
+        ],
+    )
     num_collections = int(response.headers["Total-Row-Count"])
     echo(f"Found {num_collections} collections on Archive-It.")
 
@@ -161,7 +165,12 @@ def archive_it(
     for offset in offset_range:
         response = config.http.session.get(
             collections_api_url,
-            params={"limit": page_size, "offset": offset, "format": "json"})
+            params=[
+                ("limit", page_size),
+                ("offset", offset),
+                ("format", "json"),
+            ],
+        )
         response_list = response.json()
         for item in response_list:
             name = f"Archive-It {item['name']}"

@@ -3,12 +3,12 @@ from csv import writer
 from dataclasses import dataclass
 from functools import cached_property
 from gzip import GzipFile
-from io import TextIOWrapper
 from json import loads, JSONDecodeError
 from pathlib import Path
 from shelve import open as shelf_open, Shelf  # nosec: 502
 from shutil import copyfileobj
-from typing import Iterator, TypeVar, Generic, Type, IO, final, ContextManager
+from typing import Iterator, TypeVar, Generic, Type, final, \
+    ContextManager, Iterable
 from uuid import UUID, uuid5, NAMESPACE_URL
 
 from dataclasses_json import DataClassJsonMixin
@@ -24,7 +24,7 @@ from archive_query_log.legacy.model import ArchivedUrl, ArchivedQueryUrl, \
     ArchivedParsedSerp, ArchivedSearchResultSnippet, ArchivedRawSerp, \
     ArchivedRawSearchResult, CorpusJsonlLocation, CorpusJsonlSnippetLocation, \
     CorpusWarcLocation
-from archive_query_log.legacy.util.text import count_lines
+from archive_query_log.legacy.util.text import count_lines, text_io_wrapper
 
 
 @dataclass(frozen=True)
@@ -126,9 +126,9 @@ class _MetaIndex:
 
         offset = 0
         index: list[tuple[str, str, str]] = []
-        with GzipFile(path, mode="r") as gzip_file:
-            gzip_file: IO[str]
-            for line in gzip_file:
+        with (GzipFile(path, mode="rb") as gzip_file,
+              text_io_wrapper(gzip_file) as file):
+            for line in file:
                 try:
                     record = loads(line)
                 except JSONDecodeError:
@@ -171,8 +171,8 @@ class _MetaIndex:
                 record_types=WarcRecordType.response,
                 parse_http=False,
             )
+            record: WarcRecord
             for record in records:
-                record: WarcRecord
                 offset = record.stream_pos
                 try:
                     record_url = loads(record.headers["Archived-URL"])
@@ -212,9 +212,9 @@ class _MetaIndex:
 
         offset = 0
         index: list[tuple[str, str, str, str]] = []
-        with GzipFile(path, mode="r") as gzip_file:
-            gzip_file: IO[str]
-            for line in gzip_file:
+        with (GzipFile(path, mode="rb") as gzip_file,
+              text_io_wrapper(gzip_file) as file):
+            for line in file:
                 try:
                     record = loads(line)
                 except JSONDecodeError:
@@ -280,21 +280,25 @@ class _MetaIndex:
 
     def index(self) -> None:
         # Index each path individually.
-        indexed_paths = []
+        indexable_paths: Iterable[Path]
+        # noinspection PyTypeChecker
         indexable_paths = tqdm(
             self._indexable_paths(),
             total=sum(1 for _ in self._indexable_paths()),
             desc="Index paths",
             unit="path",
         )
+        indexed_paths_list: list[Path] = []
         for indexable_path in indexable_paths:
             self._index(indexable_path)
-            indexed_paths.append(indexable_path)
+            indexed_paths_list.append(indexable_path)
+        indexed_paths: Iterable[Path] = indexed_paths_list
 
         # Merge all indexes into a single index.
         path = self.path
         num_lines = 0
         with path.open("wb") as aggregated_index_file:
+            # noinspection PyTypeChecker
             indexed_paths = tqdm(
                 indexed_paths,
                 desc="Merge indices",
@@ -415,9 +419,8 @@ class _JsonLineIndex(_Index[CorpusJsonlLocation, _RecordType]):
     def _read_record(self, location: CorpusJsonlLocation) -> _RecordType:
         path = self.data_directory / location.relative_path
         with GzipFile(path, "rb") as gzip_file:
-            gzip_file: IO[bytes]
             gzip_file.seek(location.byte_offset)
-            with TextIOWrapper(gzip_file) as text_file:
+            with text_io_wrapper(gzip_file) as text_file:
                 line = text_file.readline()
                 return self._schema.loads(line)
 
@@ -431,7 +434,7 @@ class _WarcIndex(_Index[CorpusWarcLocation, _RecordType]):
             byte_offset=int(csv_line[2]),
         )
 
-    def _read_record(self, location: CorpusJsonlLocation) -> _RecordType:
+    def _read_record(self, location: CorpusWarcLocation) -> _RecordType:
         path = self.data_directory / location.relative_path
         with path.open("rb") as file:
             file.seek(location.byte_offset)
@@ -471,9 +474,10 @@ class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
     focused: bool = False
 
     def _read_warc_record(self, record: WarcRecord) -> ArchivedRawSerp:
-        archived_url: ArchivedQueryUrl = self.schema.loads(
-            record.headers["Archived-URL"]
-        )
+        header = record.headers["Archived-URL"]
+        archived_url = self.schema.loads(record.headers["Archived-URL"])
+        if isinstance(archived_url, list):
+            raise ValueError(f"Expected one URL in the header: {header}")
         content_type = record.http_charset
         if content_type is None:
             content_type = "utf8"
@@ -520,14 +524,15 @@ class ArchivedSearchResultSnippetIndex(
     def _read_record(
             self,
             location: CorpusJsonlSnippetLocation
-    ) -> _RecordType:
+    ) -> ArchivedSearchResultSnippet:
         path = self.data_directory / location.relative_path
         with GzipFile(path, "rb") as gzip_file:
-            gzip_file: IO[bytes]
             gzip_file.seek(location.byte_offset)
-            with TextIOWrapper(gzip_file) as text_file:
+            with text_io_wrapper(gzip_file) as text_file:
                 line = text_file.readline()
-                record: ArchivedParsedSerp = self.schema.loads(line)
+                record = self.schema.loads(line)
+                if isinstance(record, list):
+                    raise ValueError(f"Expected one result per line: {line}")
                 return record.results[location.index]
 
 
@@ -540,9 +545,10 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
     focused: bool = False
 
     def _read_warc_record(self, record: WarcRecord) -> ArchivedRawSearchResult:
-        archived_url: ArchivedSearchResultSnippet = self.schema.loads(
-            record.headers["Archived-URL"]
-        )
+        header = record.headers["Archived-URL"]
+        archived_url = self.schema.loads(header)
+        if isinstance(archived_url, list):
+            raise ValueError(f"Expected one URL in the header: {header}")
         content_type = record.http_charset
         if content_type is None:
             content_type = "utf8"

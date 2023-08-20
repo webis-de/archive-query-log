@@ -1,4 +1,4 @@
-from typing import Iterator, TypeVar
+from typing import Iterator, TypeVar, Iterable
 from warnings import warn
 
 from elasticsearch import NotFoundError
@@ -7,7 +7,7 @@ from elasticsearch_dsl import Document
 DocumentType = TypeVar("DocumentType", bound=Document)
 
 
-def safe_iter_scan(it: Iterator[DocumentType]) -> Iterator[DocumentType]:
+def safe_iter_scan(it: Iterable[DocumentType]) -> Iterator[DocumentType]:
     try:
         for doc in it:
             yield doc

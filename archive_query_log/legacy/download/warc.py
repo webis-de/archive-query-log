@@ -13,7 +13,8 @@ from asyncio_pool import AioPool
 from tqdm.auto import tqdm
 from warcio import WARCWriter, StatusAndHeaders
 
-from archive_query_log.legacy.model import ArchivedUrl, Service
+from archive_query_log.legacy.model import ArchivedUrl, Service, \
+    ArchivedQueryUrl
 from archive_query_log.legacy.queries.iterable import ArchivedQueryUrls
 from archive_query_log.legacy.serps.iterable import ArchivedParsedSerps
 from archive_query_log.legacy.util.archive_http import archive_http_client
@@ -89,6 +90,7 @@ class WebArchiveWarcDownloader:
                 file_size = path.stat().st_size
                 if file_size + buffer_size <= self.max_file_size:
                     return path
+        raise RuntimeError("All available file paths are filled.")
 
     async def _download(
             self,
@@ -173,6 +175,9 @@ class WebArchiveWarcDownloader:
                         warc_headers_dict={**url_headers},
                     )
                     writer.write_record(request_record)
+
+                    protocol = f"HTTP/{response.version}"
+                    reason = str(response.reason)
                     response_record = writer.create_warc_record(
                         uri=str(response.url),
                         record_type="response",
@@ -180,7 +185,7 @@ class WebArchiveWarcDownloader:
                             statusline=" ".join((
                                 protocol,
                                 str(response.status),
-                                response.reason,
+                                reason,
                             )),
                             headers=response.headers,
                             protocol=protocol
@@ -309,13 +314,22 @@ class WebArchiveWarcDownloader:
     ) -> list[_CdxUrl]:
         if snippets:
             return list(urls)
+        if not all(
+            isinstance(url.archived_url, ArchivedQueryUrl)
+            for url in urls
+        ):
+            return list(urls)
         urls = sorted(
             urls,
-            key=lambda url: url.archived_url.query
+            key=lambda url: (
+                url.archived_url.query
+                if isinstance(url.archived_url, ArchivedQueryUrl) else "")
         )
         grouped_query_urls = groupby(
             urls,
-            key=lambda url: url.archived_url.query
+            key=lambda url: (
+                url.archived_url.query
+                if isinstance(url.archived_url, ArchivedQueryUrl) else "")
         )
         return [
             WebArchiveWarcDownloader._canonical_url(urls)
@@ -353,7 +367,7 @@ class WebArchiveWarcDownloader:
             cdx_page: int | None = None,
             snippets: bool = False,
     ):
-        pages = self._service_pages(
+        pages_list: Sequence[_CdxPage] = self._service_pages(
             data_directory=data_directory,
             focused=focused,
             service=service,
@@ -362,26 +376,27 @@ class WebArchiveWarcDownloader:
             snippets=snippets,
         )
 
-        if len(pages) == 0:
+        if len(pages_list) == 0:
             return
 
+        pages: Iterable[_CdxPage] = pages_list
         if focused:
+            # noinspection PyTypeChecker
             pages = tqdm(
                 pages,
                 desc="Deduplicate query URLs",
                 unit="page",
             )
 
-        archived_urls = chain.from_iterable(
+        cdx_urls: Sequence[_CdxUrl] = list(chain.from_iterable(
             self._page_urls(page, focused, snippets)
             for page in pages
-        )
+        ))
 
         if focused:
-            archived_urls = self._deduplicate_urls(archived_urls, snippets)
-            archived_urls = Random(0).sample(
-                archived_urls,
-                min(len(archived_urls), 75_000)
-            )
+            archived_urls_list = self._deduplicate_urls(
+                cdx_urls, snippets)
+            sample_size = min(len(cdx_urls), 75_000)
+            cdx_urls = Random(0).sample(archived_urls_list, sample_size)
 
-        await self._download(archived_urls)
+        await self._download(cdx_urls)
