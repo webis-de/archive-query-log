@@ -246,9 +246,11 @@ After having implemented a new feature, you should the check code format, inspec
 and run all unit tests with the following commands:
 
 ```shell
-flake8 archive_query_log
-pylint archive_query_log
-pytest archive_query_log
+flake8 archive_query_log  # Code format
+pylint archive_query_log  # LINT errors
+mypy archive_query_log  # Static typing
+bandit -c pyproject.toml -r archive_query_log  # Security
+pytest archive_query_log  # Unit tests
 ```
 
 ### Add new tests for parsers

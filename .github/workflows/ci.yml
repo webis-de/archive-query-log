@@ -78,6 +78,50 @@ jobs:
       run: pip install .[tests]
     - name: "🔍 Lint Python code"
       run: pylint archive_query_log
+  python-typing:
+    name: "🔍 Check Python static typing"
+    strategy:
+      matrix:
+        python:
+        - "3.10"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "📥 Check-out"
+      uses: actions/checkout@v3
+    - name: "🧰 Install Protoc"
+      run: sudo apt install protobuf-compiler
+    - name: "🧰 Install Python"
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python }}
+        cache: pip
+        cache-dependency-path: pyproject.toml
+    - name: "🧰 Install dependencies"
+      run: pip install .[tests]
+    - name: "🔍 Check Python static typing"
+      run: mypy archive_query_log
+  python-security:
+    name: "🔍 Check Python code security"
+    strategy:
+      matrix:
+        python:
+        - "3.10"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "📥 Check-out"
+      uses: actions/checkout@v3
+    - name: "🧰 Install Protoc"
+      run: sudo apt install protobuf-compiler
+    - name: "🧰 Install Python"
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python }}
+        cache: pip
+        cache-dependency-path: pyproject.toml
+    - name: "🧰 Install dependencies"
+      run: pip install .[tests]
+    - name: "🔍 Check Python code security"
+      run: bandit -c pyproject.toml -r archive_query_log
   python-test:
     name: "🧪 Test Python code"
     strategy:
