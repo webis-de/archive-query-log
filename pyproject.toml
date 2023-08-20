@@ -123,7 +123,7 @@ skips = ["**/test_*.py"]
 [tool.pytest.ini_options]
 log_cli = "True"
 filterwarnings = [
-    "ignore::RemovedInMarshmallow4Warning",
+    "ignore::marshmallow.warnings.RemovedInMarshmallow4Warning",
 ]
 
 [tool.setuptools_scm]
