@@ -98,6 +98,13 @@ class Source(BaseDocument):
         }
 
 
+class InnerParser(InnerDocument):
+    id: str = Keyword()
+    last_parsed: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+
 class Capture(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
@@ -119,6 +126,7 @@ class Capture(BaseDocument):
     collection: str | None = Keyword()
     source: str | None = Keyword()
     source_collection: str | None = Keyword()
+    url_query_parser: InnerParser | None = Object(InnerParser)
 
     class Index:
         name = "aql_captures"
@@ -140,12 +148,6 @@ class InnerCapture(InnerDocument):
     mimetype: str | None = Keyword()
 
 
-class InnerParser(InnerDocument):
-    id: str = Keyword()
-    last_parsed: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
 
 
 class InnerDownloader(InnerDocument):
