@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from functools import cached_property
 from json import loads, JSONDecodeError
@@ -8,7 +8,6 @@ from urllib.parse import urlsplit
 from warnings import warn
 
 from click import echo
-from dateutil.tz import UTC
 from requests import Session, Response
 from tqdm.auto import tqdm
 
@@ -31,8 +30,8 @@ class CdxCapture:
     url: str
     url_key: str
     timestamp: datetime
-    status_code: int
     digest: str
+    status_code: int | None
     mimetype: str | None
     filename: str | None
     offset: int | None
@@ -88,89 +87,83 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
         key: value if value != "-" else None
         for key, value in line.items()
     }
-    if "urlkey" in line:
+    if "urlkey" in line and line["urlkey"] is not None:
         url_key = line.pop("urlkey")
     else:
         raise ValueError(f"Missing URL key in CDX line: {line}")
-    if "timestamp" in line:
+    if "timestamp" in line and line["timestamp"] is not None:
         timestamp = datetime.strptime(
-            line.pop("timestamp"),
-            "%Y%m%d%H%M%S"
+            # Important to add the UTC timezone explicitly.
+            f"{line.pop('timestamp')}+0000",
+            "%Y%m%d%H%M%S%z"
         )
     else:
         raise ValueError(f"Missing timestamp in CDX line: {line}")
-    if "url" in line:
+    if "url" in line and line["url"] is not None:
         url = line.pop("url")
-    elif "original" in line:
+    elif "original" in line and line["original"] is not None:
         url = line.pop("original")
     else:
         raise ValueError(f"Missing url in CDX line: {line}")
-    if "statuscode" in line:
-        statuscode_string = line.pop("statuscode")
-        status_code = int(statuscode_string)
-    elif "status" in line:
-        statuscode_string = line.pop("status")
-        status_code = int(statuscode_string)
-    else:
-        raise ValueError(f"Missing status code in CDX line: {line}")
-    if "digest" in line:
+    if "digest" in line and line["digest"] is not None:
         digest = line.pop("digest")
     else:
         raise ValueError(f"Missing digest in CDX line: {line}")
-    if "mimetype" in line:
+    if "statuscode" in line and line["statuscode"] is not None:
+        status_code = int(line.pop("statuscode"))
+    elif "status" in line and line["status"] is not None:
+        status_code = int(line.pop("status"))
+    else:
+        status_code = None
+    if "mimetype" in line and line["mimetype"] is not None:
         mimetype = line.pop("mimetype")
-    elif "mime" in line:
+    elif "mime" in line and line["mime"] is not None:
         mimetype = line.pop("mime")
     else:
         mimetype = None
-    if "filename" in line:
+    if "filename" in line and line["filename"] is not None:
         filename = line.pop("filename")
     else:
         filename = None
-    if "offset" in line:
-        offset_string = line.pop("offset")
-        offset = int(offset_string) if offset_string is not None else None
+    if "offset" in line and line["offset"] is not None:
+        offset = int(line.pop("offset"))
     else:
         offset = None
-    if "length" in line:
-        length_string = line.pop("length")
-        length = int(length_string) if length_string is not None else None
+    if "length" in line and line["length"] is not None:
+        length = int(line.pop("length"))
     else:
         length = None
-    if "access" in line:
+    if "access" in line and line["access"] is not None:
         access = line.pop("access")
     else:
         access = None
-    if "redirect" in line:
+    if "redirect" in line and line["redirect"] is not None:
         redirect_url = line.pop("redirect")
     else:
         redirect_url = None
-    if "flags" in line:
-        flags_string = line.pop("flags")
-        flags = _parse_cdx_flags(flags_string) \
-            if flags_string is not None else None
-    elif "robotflags" in line:
-        flags_string = line.pop("robotflags")
-        flags = _parse_cdx_flags(flags_string) \
-            if flags_string is not None else None
+    if "flags" in line and line["flags"] is not None:
+        flags = _parse_cdx_flags(line.pop("flags"))
+    elif "robotflags" in line and line["robotflags"] is not None:
+        flags = _parse_cdx_flags(line.pop("robotflags"))
     else:
         flags = None
-    if "collection" in line:
+    if "collection" in line and line["collection"] is not None:
         collection = line.pop("collection")
     else:
         collection = None
-    if "source" in line:
+    if "source" in line and line["source"] is not None:
         source = line.pop("source")
     else:
         source = None
-    if "source-coll" in line:
+    if "source-coll" in line and line["source-coll"] is not None:
         source_collection = line.pop("source-coll")
     else:
         source_collection = None
 
     # TODO: Unparsed fields in CDX line: {'load_url': ''}
     if len(line) > 0:
-        warn(RuntimeWarning(f"Unparsed fields in CDX line: {line}"))
+        raise RuntimeError(f"Unparsed fields in CDX line: {line}")
+        # warn(RuntimeWarning(f"Unparsed fields in CDX line: {line}"))
     return CdxCapture(
         url=url,
         url_key=url_key,
@@ -269,10 +262,10 @@ class CdxApi:
         if match_type is not None:
             params.append(("matchType", match_type.value))
         if from_timestamp is not None:
-            params.append(("from", from_timestamp.astimezone(UTC)
+            params.append(("from", from_timestamp.astimezone(timezone.utc)
                            .strftime("%Y%m%d%H%M%S")))
         if to_timestamp is not None:
-            params.append(("to", to_timestamp.astimezone(UTC)
+            params.append(("to", to_timestamp.astimezone(timezone.utc)
                            .strftime("%Y%m%d%H%M%S")))
 
         num_pages = None
