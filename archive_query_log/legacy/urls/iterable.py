@@ -38,7 +38,7 @@ class ArchivedUrls(Sized, Iterable[ArchivedUrl]):
               GzipFile(fileobj=file, mode="rb") as gzip_file,
               text_io_wrapper(gzip_file) as text_file):
             for line in text_file:
-                url = schema.loads(line, many=True)
+                url = schema.loads(line)
                 if isinstance(url, list):
                     raise ValueError(f"Expected one URL per line: {line}")
                 yield url
