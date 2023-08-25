@@ -1,6 +1,7 @@
 image: ghcr.io/webis-de/archive-query-log
 
 buildSources:
+  active: true
   schedule: "0/10 * * * *"
   completions: 50
   parallelism: 50
@@ -8,6 +9,7 @@ buildSources:
   ttlMinutesAfterFinished: 5
 
 fetchCaptures:
+  active: false
   schedule: "1/10 * * * *"
   completions: 100
   parallelism: 100
