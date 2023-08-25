@@ -94,6 +94,24 @@ class HttpConfig(DataClassJsonMixin):
         return session
 
 
+    @cached_property
+    def session_no_retry(self) -> Session:
+        session = Session()
+        session.headers.update({
+            "User-Agent": f"AQL/{version} (Webis group)",
+        })
+        _limiter = Limiter(
+            RequestRate(1, Duration.SECOND * 10),
+        )
+        _adapter = LimiterAdapter(
+            limiter=_limiter,
+        )
+        # noinspection HttpUrlsUsage
+        session.mount("http://", _adapter)
+        session.mount("https://", _adapter)
+        return session
+
+
 @dataclass(frozen=True)
 class Config(DataClassJsonMixin):
     es: EsConfig
