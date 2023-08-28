@@ -1,0 +1,54 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ $.Release.Name }}-import-captures-aql-22
+  namespace: {{ $.Release.Namespace }}
+  annotations:
+    checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
+    checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
+spec:
+  completions: {{ $.Values.importCapturesAql22.completions }}
+  parallelism: {{ $.Values.importCapturesAql22.parallelism }}
+  backoffLimit: {{ $.Values.importCapturesAql22.backoffLimit }}
+  ttlSecondsAfterFinished: {{ mul 60 $.Values.importCapturesAql22.ttlMinutesAfterFinished }}
+  completionMode: Indexed
+  template:
+    spec:
+      containers:
+      - name: {{ $.Release.Name }}-import-captures-aql-22
+        image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 4Gi
+        command:
+        - /venv/bin/python
+        - -m
+        - archive_query_log
+        - -f
+        - /workspace/config.config-map.yml
+        - -f
+        - /workspace/config.secret.yml
+        - captures
+        - import
+        - aql-22
+        - --no-check-memento
+        - --search-provider-index
+        - $JOB_COMPLETION_INDEX
+        volumeMounts:
+        - name: {{ $.Release.Name }}-config-map
+          mountPath: /workspace/config.config-map.yml
+          readOnly: true
+          subPath: config.yml
+        - name: {{ $.Release.Name }}-secret
+          mountPath: /workspace/config.secret.yml
+          readOnly: true
+          subPath: config.yml
+      restartPolicy: OnFailure
+      volumes:
+      - name: {{ $.Release.Name }}-config-map
+        configMap:
+          name: {{ $.Release.Name }}-config-map
+      - name: {{ $.Release.Name }}-secret
+        secret:
+          secretName: {{ $.Release.Name }}-secret

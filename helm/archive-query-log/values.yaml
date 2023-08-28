@@ -16,6 +16,13 @@ fetchCaptures:
   backoffLimit: 50
   ttlMinutesAfterFinished: 5
 
+importCapturesAql22:
+  dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
+  completions: 729  # The number of search providers.
+  parallelism: 50
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
 monitoring:
   ingressClassName: nginx
   host: aql-monitoring.srv.webis.de
