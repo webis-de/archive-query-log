@@ -105,6 +105,7 @@ class InnerParser(InnerDocument):
         format="strict_date_time_no_millis",
     )
 
+
 class Capture(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
@@ -146,8 +147,6 @@ class InnerCapture(InnerDocument):
     status_code: int = Integer()
     digest: str = Keyword()
     mimetype: str | None = Keyword()
-
-
 
 
 class InnerDownloader(InnerDocument):

@@ -93,7 +93,6 @@ class HttpConfig(DataClassJsonMixin):
         session.mount("https://", _adapter)
         return session
 
-
     @cached_property
     def session_no_retry(self) -> Session:
         session = Session()
