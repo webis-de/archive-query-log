@@ -1,7 +1,7 @@
 image: ghcr.io/webis-de/archive-query-log
 
 buildSources:
-  active: true
+  enabled: true
   schedule: "0/10 * * * *"
   completions: 50
   parallelism: 50
@@ -9,7 +9,7 @@ buildSources:
   ttlMinutesAfterFinished: 5
 
 fetchCaptures:
-  active: false
+  enabled: true
   schedule: "1/10 * * * *"
   completions: 100
   parallelism: 100
@@ -17,11 +17,11 @@ fetchCaptures:
   ttlMinutesAfterFinished: 5
 
 importCapturesAql22:
+  enabled: true
   dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
   completions: 729  # The number of search providers.
   parallelism: 50
   backoffLimit: 25
-  ttlMinutesAfterFinished: 5
 
 monitoring:
   ingressClassName: nginx

@@ -3,11 +3,21 @@ Installed {{ $.Chart.Name }} (release name: {{ $.Release.Name }}{{ with $.Values
 Accessing Elasticsearch {{ $.Values.elasticsearch.host }}:{{ $.Values.elasticsearch.port }} (authenticating with user {{ $.Values.elasticsearch.username }}).
 
 Started cron jobs:
+{{- if $.Values.buildSources.enabled }}
 - Build sources:
   Scheduled at {{ $.Values.buildSources.schedule }}.
   Running {{ $.Values.buildSources.completions }}x (parallelism: {{ $.Values.buildSources.parallelism }}, backoff limit: {{ $.Values.buildSources.backoffLimit }}).
+{{- end }}
+{{- if $.Values.fetchCaptures.enabled }}
 - Fetch captures:
   Scheduled at {{ $.Values.fetchCaptures.schedule }}.
   Running {{ $.Values.fetchCaptures.completions }}x (parallelism: {{ $.Values.fetchCaptures.parallelism }}, backoff limit: {{ $.Values.fetchCaptures.backoffLimit }}).
+{{- end }}
+
+One-off jobs:
+{{- if $.Values.importCapturesAql22.enabled }}
+- Import captures from AQL-22:
+  Running {{ $.Values.importCapturesAql22.completions }}x (search providers: {{ $.Values.importCapturesAql22.completions }}, parallelism: {{ $.Values.importCapturesAql22.parallelism }}, backoff limit: {{ $.Values.importCapturesAql22.backoffLimit }}).
+{{- end }}
 
 Serving monitoring web interface at {{ if $.Values.monitoring.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.monitoring.host }}{{ $.Values.monitoring.path }}.

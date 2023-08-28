@@ -7,10 +7,10 @@ metadata:
     checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
     checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
 spec:
+  suspend: {{ not $.Values.importCapturesAql22.enabled }}
   completions: {{ $.Values.importCapturesAql22.completions }}
   parallelism: {{ $.Values.importCapturesAql22.parallelism }}
   backoffLimit: {{ $.Values.importCapturesAql22.backoffLimit }}
-  ttlSecondsAfterFinished: {{ mul 60 $.Values.importCapturesAql22.ttlMinutesAfterFinished }}
   completionMode: Indexed
   template:
     spec:
@@ -33,8 +33,12 @@ spec:
         - import
         - aql-22
         - --no-check-memento
-        - --search-provider-index
-        - $JOB_COMPLETION_INDEX
+        - /workspace/data/
+        env:
+        - name: SEARCH_PROVIDER_INDEX
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.annotations['batch.kubernetes.io/job-completion-index']
         volumeMounts:
         - name: {{ $.Release.Name }}-config-map
           mountPath: /workspace/config.config-map.yml
@@ -44,6 +48,9 @@ spec:
           mountPath: /workspace/config.secret.yml
           readOnly: true
           subPath: config.yml
+        - name: {{ $.Release.Name }}-data
+          mountPath: /workspace/data/
+          readOnly: true
       restartPolicy: OnFailure
       volumes:
       - name: {{ $.Release.Name }}-config-map
@@ -52,3 +59,8 @@ spec:
       - name: {{ $.Release.Name }}-secret
         secret:
           secretName: {{ $.Release.Name }}-secret
+      - name: {{ $.Release.Name }}-data
+        hostPath:
+          path: {{ $.Values.importCapturesAql22.dataDir }}
+          type: Directory
+
