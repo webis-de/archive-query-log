@@ -26,7 +26,6 @@ RUN \
     SETUPTOOLS_SCM_PRETEND_VERSION=${PSEUDO_VERSION} \
     /venv/bin/pip install -e .
 
-ADD .git .git
 RUN \
     --mount=source=.git,target=.git,type=bind \
     --mount=type=cache,target=/root/.cache/pip \
