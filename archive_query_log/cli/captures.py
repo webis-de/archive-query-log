@@ -18,6 +18,7 @@ from archive_query_log.cdx import CdxApi, CdxMatchType
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.legacy.model import ArchivedUrl
+from archive_query_log.legacy.urls.iterable import ArchivedUrls
 from archive_query_log.namespaces import NAMESPACE_CAPTURE
 from archive_query_log.orm import Source, Capture, Archive, Provider, \
     InnerProvider, InnerArchive
@@ -240,9 +241,6 @@ def _import_aql22_path(
         importable_path: _Aql22ImportablePath,
         check_memento: bool = True,
 ) -> None:
-    from archive_query_log.legacy.model import ArchivedUrl
-    from archive_query_log.legacy.urls.iterable import ArchivedUrls
-
     echo(f"Importing captures from {importable_path.path} to "
          f"archive {importable_path.archive.id} and "
          f"provider {importable_path.provider.id}.")
@@ -276,7 +274,7 @@ def _import_aql22_path(
         desc="Importing captures",
         unit="capture",
     )
-    captures = _iter_aql22_captures(
+    captures_iter = _iter_aql22_captures(
         config=config,
         importable_path=importable_path,
         last_modified=oldest_modification_time,
@@ -288,7 +286,7 @@ def _import_aql22_path(
             **capture.to_dict(include_meta=True),
             "_op_type": "create",
         }
-        for capture in captures
+        for capture in captures_iter
     )
     try:
         responses: Iterable[tuple[bool, Any]] = config.es.streaming_bulk(
