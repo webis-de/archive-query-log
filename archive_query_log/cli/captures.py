@@ -323,8 +323,9 @@ _DEFAULT_DATA_DIR = (
                         resolve_path=True, allow_dash=False),
           metavar="DATA_DIR", required=True, default=_DEFAULT_DATA_DIR)
 @option("--check-memento/--no-check-memento", default=True)
-@option("--search-provider", type=str)
-@option("--search-provider-index", type=int)
+@option("--search-provider", type=str, envvar="SEARCH_PROVIDER")
+@option("--search-provider-index", type=int,
+        envvar="SEARCH_PROVIDER_INDEX")
 @pass_config
 def aql_22(
         config: Config,
