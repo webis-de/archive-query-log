@@ -310,8 +310,12 @@ def _import_aql22_path(
     Capture.index().refresh(using=config.es.client)
 
 
-_DEFAULT_DATA_DIR = Path("/mnt/ceph/storage/data-in-progress/data-research/"
-                         "web-search/archive-query-log/focused/")
+_CEPH_DIR = Path("/mnt/ceph/storage/")
+_DEFAULT_DATA_DIR = (
+    _CEPH_DIR / "data-in-progress/data-research/web-search/"
+                "archive-query-log/focused/"
+    if _CEPH_DIR.is_mount() and _CEPH_DIR.exists()
+    else None)
 
 
 @import_.command(help="Import captures from the AQL-22 dataset.")
@@ -319,7 +323,7 @@ _DEFAULT_DATA_DIR = Path("/mnt/ceph/storage/data-in-progress/data-research/"
           type=PathType(path_type=Path, exists=True, file_okay=False,
                         dir_okay=True, readable=True, writable=False,
                         resolve_path=True, allow_dash=False),
-          metavar="DATA_DIR", default=_DEFAULT_DATA_DIR)
+          metavar="DATA_DIR", required=True, default=_DEFAULT_DATA_DIR)
 @option("--check-memento/--no-check-memento", default=True)
 @option("--search-provider", type=str)
 @option("--search-provider-index", type=int)
