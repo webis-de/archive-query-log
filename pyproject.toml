@@ -62,7 +62,7 @@ dynamic = ["version"]
 tests = [
     "approvaltests~=8.2",
     "flake8~=6.0",
-    "pylint~=2.12",
+    "pylint~=3.0",
     "pytest~=7.2",
     "pytest-cov~=4.0",
 ]
