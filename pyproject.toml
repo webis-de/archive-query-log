@@ -42,7 +42,6 @@ dependencies = [
     "publicsuffixlist~=0.9.3",
     "pyarrow~=13.0.0",
     "pycld3~=0.22.0",
-    "pylint~=2.16",
     "pyspark~=3.0",
     "pyspark-stubs~=3.0",
     "python-slugify~=8.0",
