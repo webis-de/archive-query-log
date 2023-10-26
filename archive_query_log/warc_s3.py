@@ -1,21 +1,19 @@
 from configparser import ConfigParser
 from dataclasses import dataclass
 from functools import cached_property
+from gzip import open as gzip_open, GzipFile
 from itertools import chain
 from pathlib import Path
-from shutil import copyfileobj
 from tempfile import TemporaryFile
 from types import TracebackType
 from typing import ContextManager, IO, NamedTuple, Iterable, Iterator, \
     Generator
-from gzip import open as gzip_open, GzipFile
-from uuid import UUID, uuid4
+from uuid import uuid4, uuid5, NAMESPACE_URL
 from warnings import warn
 
 from boto3 import Session
-from fastwarc import (
-    WarcRecord as FastwarcWarcRecord,
-    ArchiveIterator as FastwarcArchiveIterator, WarcRecord)
+from fastwarc import WarcRecord as FastwarcWarcRecord, \
+    ArchiveIterator as FastwarcArchiveIterator
 from more_itertools import spy
 from mypy_boto3_s3 import S3Client
 from tqdm.auto import tqdm
@@ -113,13 +111,23 @@ def _write_records(
     return records
 
 
+# TODO: Remove this test function.
+def _test_iterator() -> Iterator[WarcRecord]:
+    repetitions = 100000
+    for i in range(repetitions):
+        with gzip_open(
+                "/home/heinrich/Repositories/archive-query-log/data/manual-annotations/archived-raw-serps/warcs/google-does-steve-has-a-beard-1601705030.warc.gz",
+                "rb") as file:
+            yield from FastwarcArchiveIterator(file)
+            yield from WarcioArchiveIterator(file)
+
+
 @dataclass(frozen=True)
 class WarcS3Store(ContextManager):
     bucket_name: str
     endpoint_url: str | None = None
     access_key: str | None = None
     secret_key: str | None = None
-    # max_file_size: int = 1_000_000_000  # 1GB
     max_file_size: int = 10_000_000  # 10MB
     """
     Maximum number of bytes to write to a single WARC file.
@@ -164,28 +172,30 @@ class WarcS3Store(ContextManager):
             except self.client.exceptions.BucketAlreadyExists:
                 pass
 
-    def _get_key(self, record: WarcRecord) -> str:
-        # record_id_raw: str
-        # if isinstance(record, FastwarcWarcRecord):
-        #     record_id_raw = record.record_id
-        # elif isinstance(record, WarcioArcWarcRecord):
-        #     record_id_raw = record.rec_headers.get_header("WARC-Record-ID")
-        # else:
-        #     raise ValueError(f"Unknown WARC record type: {type(record)}")
-        # record_id_raw = record_id_raw.removesuffix(">").removeprefix("<")
-        # record_id = UUID(record_id_raw)
-        record_id = uuid4()
-        return f"{record_id.hex}.warc.gz"
+    def _exists_object(self, key: str) -> bool:
+        try:
+            self.client.head_object(
+                Bucket=self.bucket_name,
+                Key=key,
+            )
+        except self.client.exceptions.ClientError as e:
+            if e.response["Error"]["Code"] == "404":
+                return False
+            raise e
+        return True
 
-    def store(self, records: WarcIterable) -> Iterator[WarcS3Location]:
+    def write(self, records: WarcIterable) -> Iterator[WarcS3Location]:
+        records = iter(records)
         head: list[WarcRecord]
         head, records = spy(records)
-        if len(head) == 0:
-            return
-
         while len(head) > 0:
             with TemporaryFile() as tmp_file:
-                key: str = self._get_key(head[0])
+                # Find next available key.
+                key: str = f"{uuid4().hex}.warc.gz"
+                while self._exists_object(key):
+                    key: str = f"{uuid4().hex}.warc.gz"
+
+                # Write records to buffer.
                 offsets: Iterable[int] = _write_records(
                     records=records,
                     file=tmp_file,
@@ -198,27 +208,27 @@ class WarcS3Store(ContextManager):
                     desc="Write WARC records to buffer"
                 )
                 try:
-                    for offset in offsets:
-                        yield WarcS3Location(
-                            endpoint_url=self.endpoint_url,
-                            bucket=self.bucket_name,
-                            key=key,
-                            offset=offset,
-                        )
+                    offsets = list(offsets)
                 except StopIteration as e:
                     records = e.value
+                tmp_file.flush()
+                tmp_file.seek(0)
+
                 print("Uploading buffer to S3: ", key)
-                # with open(key, "wb") as file:
-                #     copyfileobj(tmp_file, file)
-                self.client.put_object(
-                    Bucket=self.bucket_name,
-                    Key=key,
-                                       )
+                if self._exists_object(key):
+                    raise RuntimeError(f"Key already exists: {key}")
                 self.client.upload_fileobj(
                     Fileobj=tmp_file,
                     Bucket=self.bucket_name,
                     Key=key,
                 )
+                for offset in offsets:
+                    yield WarcS3Location(
+                        endpoint_url=self.endpoint_url,
+                        bucket=self.bucket_name,
+                        key=key,
+                        offset=offset,
+                    )
             head, records = spy(records)
 
     def __exit__(
@@ -227,24 +237,15 @@ class WarcS3Store(ContextManager):
             _exc_value: BaseException | None,
             _traceback: TracebackType | None
     ) -> bool | None:
-        pass
+        self.client.close()
+        return True
 
-    def _test_iterator(self) -> Iterator[WarcRecord]:
-        repetitions = 100000
-        for i in range(repetitions):
-            with gzip_open(
-                    "/home/heinrich/Repositories/archive-query-log/data/manual-annotations/archived-raw-serps/warcs/google-does-steve-has-a-beard-1601705030.warc.gz",
-                    "rb") as file:
-                yield from FastwarcArchiveIterator(file)
-                yield from WarcioArchiveIterator(file)
-
+    # TODO: Remove this test function.
     def test(self):
         self._create_bucket_if_needed()
-        x = self.client.list_objects(Bucket=self.bucket_name)
-        print(x.items())
-        iterator = self._test_iterator()
-        locations = self.store(iterator)
-        for location in tqdm(locations):
+        iterator = _test_iterator()
+        locations = self.write(iterator)
+        for _ in locations:
             pass
 
 
