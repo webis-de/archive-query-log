@@ -8,7 +8,7 @@ from tempfile import TemporaryFile
 from types import TracebackType
 from typing import ContextManager, IO, NamedTuple, Iterable, Iterator, \
     Generator
-from uuid import uuid4, uuid5, NAMESPACE_URL
+from uuid import uuid4
 from warnings import warn
 
 from boto3 import Session
