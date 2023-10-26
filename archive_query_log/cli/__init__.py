@@ -6,7 +6,7 @@ from click import group, Context, Parameter, echo, option, pass_context, \
 from mergedeep import merge, Strategy
 from yaml import safe_load
 
-from archive_query_log import __version__
+from archive_query_log import __version__ as app_version
 from archive_query_log.cli.archives import archives
 from archive_query_log.cli.captures import captures
 from archive_query_log.cli.monitoring import monitoring
@@ -25,7 +25,7 @@ def print_version(
 ) -> None:
     if not value or context.resilient_parsing:
         return
-    echo(__version__)
+    echo(app_version)
     context.exit()
 
 
