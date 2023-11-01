@@ -4215,7 +4215,12 @@
   - url_pattern: ^https?://[^/]+/\?
     type: html_selector
     query_selector: div.header__content.header__search input#search_form_input
-  results_parsers: []
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div#links div.result
+    url_selector: div.result__body h2.result__title a.result__a
+    title_selector: div.result__body h2.result__title
   focused_url_prefixes:
   - /
 - name: aliyun
