@@ -26608,8 +26608,17 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/Search\?
+    type: html_selector
+    query_selector: div.SEARCH_LHN form#SEARCH_LHN_form input#mainSearch
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/Search\?
+    type: html_selector
+    results_selector: div#SEARCH_RESULTS div.searchResult
+    url_selector: div.srHead a
+    title_selector: div.srHead
+    snippet_selector: div.srSnippet
   focused_url_prefixes:
   - /Search?
   - /SearchForums?
