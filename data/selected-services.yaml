@@ -26724,3 +26724,37 @@
   interpreted_query_parsers: []
   results_parsers: []
   focused_url_prefixes: []
+- name: tripadvisor
+  public_suffix: net
+  alexa_domain: tripadvisor.com
+  alexa_rank: null
+  category: search-engine
+  notes: null
+  input_field: null
+  search_form: null
+  search_div: null
+  domains:
+  - tripadvisor.com
+  query_parsers:
+  - url_pattern: ^https?://[^/]+/Search\?
+    type: query_parameter
+    parameter: q
+  - url_pattern: ^https?://[^/]+/SearchForums\?
+    type: query_parameter
+    parameter: q
+  page_parsers: []
+  offset_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/Search\?
+    type: html_selector
+    query_selector: div.SEARCH_LHN form#SEARCH_LHN_form input#mainSearch
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/Search\?
+    type: html_selector
+    results_selector: div#SEARCH_RESULTS div.searchResult
+    url_selector: div.srHead a
+    title_selector: div.srHead
+    snippet_selector: div.srSnippet
+  focused_url_prefixes:
+  - /Search?
+  - /SearchForums?

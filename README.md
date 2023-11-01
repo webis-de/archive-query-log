@@ -59,10 +59,10 @@ If you want to learn more about each step here are some more detailed guides:
 
 Let's start with a small example and construct a query log for the [ChatNoir](https://chatnoir.eu) search engine:
 
-1. `python -m web_archive_query_log make archived-urls chatnoir`
-2. `python -m web_archive_query_log make archived-query-urls chatnoir`
-3. `python -m web_archive_query_log make archived-raw-serps chatnoir`
-4. `python -m web_archive_query_log make archived-parsed-serps chatnoir`
+1. `python -m archive_query_log make archived-urls chatnoir`
+2. `python -m archive_query_log make archived-query-urls chatnoir`
+3. `python -m archive_query_log make archived-raw-serps chatnoir`
+4. `python -m archive_query_log make archived-parsed-serps chatnoir`
 
 Got the idea? Now you're ready to scrape your own query logs! To scale things up and understand the data, just keep on reading. For more details on how to add more search providers, see [below](#contribute).
 
@@ -123,7 +123,7 @@ Fetch all archived URLs for a search provider from the Internet Archive's Waybac
 You can run this step with the following command line, where `<PROVIDER>` is the name of the search provider you want to fetch archived URLs from:
 
 ```shell:
-python -m web_archive_query_log make archived-urls <PROVIDER>
+python -m archive_query_log make archived-urls <PROVIDER>
 ```
 
 This will create multiple files in the `archived-urls` subdirectory under the [data directory](#pro-tip--specify-a-custom-data-directory), based on the search provider's name (`<PROVIDER>`), domain (`<DOMAIN>`), and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`) from which the URLs were originally fetched:
@@ -154,7 +154,7 @@ Parse and filter archived URLs that contain a query and may point to a search en
 You can run this step with the following command line, where `<PROVIDER>` is the name of the search provider you want to parse query URLs from:
 
 ```shell:
-python -m web_archive_query_log make archived-query-urls <PROVIDER>
+python -m archive_query_log make archived-query-urls <PROVIDER>
 ```
 
 This will create multiple files in the `archived-query-urls` subdirectory under the [data directory](#pro-tip--specify-a-custom-data-directory), based on the search provider's name (`<PROVIDER>`), domain (`<DOMAIN>`), and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`) from which the URLs were originally fetched:
@@ -191,7 +191,7 @@ Download the raw HTML content of archived search engine result pages (SERPs).
 You can run this step with the following command line, where `<PROVIDER>` is the name of the search provider you want to download raw SERP HTML contents from:
 
 ```shell:
-python -m web_archive_query_log make archived-raw-serps <PROVIDER>
+python -m archive_query_log make archived-raw-serps <PROVIDER>
 ```
 
 This will create multiple files in the `archived-urls` subdirectory under the [data directory](#pro-tip--specify-a-custom-data-directory), based on the search provider's name (`<PROVIDER>`), domain (`<DOMAIN>`), and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`) from which the URLs were originally fetched. Archived raw SERPs are stored as 1GB-sized WARC chunk files, that is, WARC chunks are "filled" sequentially up to a size of 1GB each. If a chunk is full, a new chunk is created.
@@ -228,7 +228,7 @@ Parse and filter archived SERPs from raw contents.
 You can run this step with the following command line, where `<PROVIDER>` is the name of the search provider you want to parse SERPs from:
 
 ```shell:
-python -m web_archive_query_log make archived-parsed-serps <PROVIDER>
+python -m archive_query_log make archived-parsed-serps <PROVIDER>
 ```
 
 This will create multiple files in the `archived-serps` subdirectory under the [data directory](#pro-tip--specify-a-custom-data-directory), based on the search provider's name (`<PROVIDER>`), domain (`<DOMAIN>`), and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`) from which the URLs were originally fetched:
