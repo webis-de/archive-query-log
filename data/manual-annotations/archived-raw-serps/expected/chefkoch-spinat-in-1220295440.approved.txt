@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "spinat in",
+    "offset": null,
+    "page": 0,
+    "query": "spinat+in",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Spinat in K\u00e4secreme - Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/302111110276197/Spinat-in-Kaesecreme-Sauce.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Tortellini in Spinat - Thunfisch",
+            "url": "http://www.chefkoch.de:80/rezepte/542091151565551/Tortellini-in-Spinat-Thunfisch.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Spinat mal anders...",
+            "timestamp": 1220295440,
+            "title": "Spinat - Mangosalat",
+            "url": "http://www.chefkoch.de:80/rezepte/1092611215265433/Spinat-Mangosalat.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "spinaci con salsa di noci",
+            "timestamp": 1220295440,
+            "title": "Spinat in Walnusssauce",
+            "url": "http://www.chefkoch.de:80/rezepte/170141073824859/Spinat-in-Walnusssauce.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Spinat - Fettuccine in Champignonsauce",
+            "url": "http://www.chefkoch.de:80/rezepte/627901163151291/Spinat-Fettuccine-in-Champignonsauce.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Spaghetti in Spinat - Ricotta - Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/552081152857701/Spaghetti-in-Spinat-Ricotta-Sauce.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Nudeln in Spinat - Feta Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/282291106491147/Nudeln-in-Spinat-Feta-Sauce.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Spinat - Maultaschen in Tomatensauce",
+            "url": "http://www.chefkoch.de:80/rezepte/770801179931420/Spinat-Maultaschen-in-Tomatensauce.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "H\u00e4hnchenbrustfilets unter Spinat in Gorgonzolasauce",
+            "url": "http://www.chefkoch.de:80/rezepte/219251091272044/Haehnchenbrustfilets-unter-Spinat-in-Gorgonzolasauce.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Sehr schnell",
+            "timestamp": 1220295440,
+            "title": "Lachs mit Spinat und Mozzarella in Alufolie",
+            "url": "http://www.chefkoch.de:80/rezepte/466441140034438/Lachs-mit-Spinat-und-Mozzarella-in-Alufolie.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Bandnudeln in Lachs - Spinat Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/171181074182872/Bandnudeln-in-Lachs-Spinat-Sauce.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Penne in Spinat - Gorgonzola - Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/575451156308345/Penne-in-Spinat-Gorgonzola-Sauce.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Gnocchi mit getrockneten Tomaten in Spinat",
+            "url": "http://www.chefkoch.de:80/rezepte/673531169648731/Gnocchi-mit-getrockneten-Tomaten-in-Spinat.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "In Italien - Farben eingeschichtet",
+            "timestamp": 1220295440,
+            "title": "Zucchini - Spinat - Lasagne",
+            "url": "http://www.chefkoch.de:80/rezepte/684551170943127/Zucchini-Spinat-Lasagne.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Pasta mit Schinken und Spinat in Thymiansauce",
+            "url": "http://www.chefkoch.de:80/rezepte/597371159368161/Pasta-mit-Schinken-und-Spinat-in-Thymiansauce.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Rigatoni in Spinat - Tomaten Sahneso\u00dfe mit Champignons",
+            "url": "http://www.chefkoch.de:80/rezepte/238691096898124/Rigatoni-in-Spinat-Tomaten-Sahnesosse-mit-Champignons.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "lecker - und in 10 min auf dem Tisch",
+            "timestamp": 1220295440,
+            "title": "Gnocchi in Spinatk\u00e4seso\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/553641153064956/Gnocchi-in-Spinatkaesesosse.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "an buntem Blattsalat und Spinat - Kartoffelstangen",
+            "timestamp": 1220295440,
+            "title": "Schweinefiletmedaillons in roter Chilisauce",
+            "url": "http://www.chefkoch.de:80/rezepte/1049361209895804/Schweinefiletmedaillons-in-roter-Chilisauce.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Italienischer Spinat",
+            "url": "http://www.chefkoch.de:80/rezepte/748681177401615/Italienischer-Spinat.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Schneller Spinat - Kartoffel - Topf",
+            "url": "http://www.chefkoch.de:80/rezepte/789051182249818/Schneller-Spinat-Kartoffel-Topf.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Schweinefilet in Schinkenmantel mit Spinat - Pilz - Mozarellaf\u00fcllung in Bl\u00e4tterteig",
+            "url": "http://www.chefkoch.de:80/rezepte/827021187349048/Schweinefilet-in-Schinkenmantel-mit-Spinat-Pilz-Mozarellafuellung-in-Blaetterteig.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Lachs in Zitronensauce mit Spinat und Kartoffeln",
+            "url": "http://www.chefkoch.de:80/rezepte/211871088759631/Lachs-in-Zitronensauce-mit-Spinat-und-Kartoffeln.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Spaghetti mit Spinat",
+            "url": "http://www.chefkoch.de:80/rezepte/321831114117106/Spaghetti-mit-Spinat.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Kartoffel - Spinat - Suppe",
+            "url": "http://www.chefkoch.de:80/rezepte/440961136233237/Kartoffel-Spinat-Suppe.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Rezept kommt urspr\u00fcnglich aus Kanada",
+            "timestamp": 1220295440,
+            "title": "Tanja's Spinat - Dip",
+            "url": "http://www.chefkoch.de:80/rezepte/624061162721540/Tanja-s-Spinat-Dip.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "Topfen hei\u00dft bei uns in \u00d6sterreich der Quark",
+            "timestamp": 1220295440,
+            "title": "Topfenpaunzen mit Spinat",
+            "url": "http://www.chefkoch.de:80/rezepte/655081167207154/Topfenpaunzen-mit-Spinat.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "Deutschland trifft Indien - auf meine Art",
+            "timestamp": 1220295440,
+            "title": "Urmelis Bratwurstb\u00e4llchen in Spinat - Curry - Kokos - Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/909491196154661/Urmelis-Bratwurstbaellchen-in-Spinat-Curry-Kokos-Sauce.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Ravioli mit Spinat - Ricotta in Salbei - Butter",
+            "url": "http://www.chefkoch.de:80/rezepte/1050421209984853/Ravioli-mit-Spinat-Ricotta-in-Salbei-Butter.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1220295440,
+            "title": "Spinat - Toast",
+            "url": "http://www.chefkoch.de:80/rezepte/103101042029003/Spinat-Toast.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "wunderbar zu  Spargel, Spinat oder Ziegenk\u00e4se",
+            "timestamp": 1220295440,
+            "title": "Vinaigrette mit Pinienkernen und Korinthen in Karamell",
+            "url": "http://www.chefkoch.de:80/rezepte/1033791208509518/Vinaigrette-mit-Pinienkernen-und-Korinthen-in-Karamell.html"
+        }
+    ],
+    "timestamp": 1220295440,
+    "url": "http://www.chefkoch.de:80/rs/s0/spinat+in/Rezepte.html"
+}

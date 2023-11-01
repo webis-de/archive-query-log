@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "spaghettie mit garnelen",
+    "offset": null,
+    "page": 0,
+    "query": "spaghettie+mit+garnelen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "(Spaghetti con gamberi al curry)",
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Garnelen in Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/939171199552415/Spaghetti-mit-Garnelen-in-Curry.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Scharfe Spaghetti mit Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/379661124274330/Scharfe-Spaghetti-mit-Garnelen.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/731081175792346/Spaghetti-mit-Garnelen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Blitzschnelles Gericht f\u00fcr den Sommer",
+            "timestamp": 1206750318,
+            "title": "Feurige Spaghetti mit Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/732201175867149/Feurige-Spaghetti-mit-Garnelen.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "WW 5,5 P",
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/877691193209666/Spaghetti-mit-Garnelen.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Garnelen - Tomatensauce",
+            "url": "http://www.chefkoch.de:80/rezepte/944441200032317/Spaghetti-mit-Garnelen-Tomatensauce.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/781721181287016/Spaghetti-mit-Garnelen.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Garnelen und M\u00f6hren",
+            "url": "http://www.chefkoch.de:80/rezepte/629261163413317/Spaghetti-mit-Garnelen-und-Moehren.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Zitronensahne und Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/303661110584722/Spaghetti-mit-Zitronensahne-und-Garnelen.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "mit leckeren karamellisierten Kirschtomaten und Kr\u00e4utern",
+            "timestamp": 1206750318,
+            "title": "Gelbe Spaghetti mit Salicorn, Garnelen und Surimi",
+            "url": "http://www.chefkoch.de:80/rezepte/913941196700510/Gelbe-Spaghetti-mit-Salicorn-Garnelen-und-Surimi.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "Spaghetti neri con sugo di scampi",
+            "timestamp": 1206750318,
+            "title": "Schwarze Spaghetti mit Scampisugo",
+            "url": "http://www.chefkoch.de:80/rezepte/286041107217179/Schwarze-Spaghetti-mit-Scampisugo.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti in Marsalaso\u00dfe mit Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/436281135234113/Spaghetti-in-Marsalasosse-mit-Garnelen.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "SABO - Spaghetti mit Auberginen und  Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/165821072007923/SABO-Spaghetti-mit-Auberginen-und-Garnelen.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Radicchio und gebratenen Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/562001154414711/Spaghetti-mit-Radicchio-und-gebratenen-Garnelen.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Garnelen (Black Tiger Prawns)",
+            "url": "http://www.chefkoch.de:80/rezepte/544281151917941/Spaghetti-mit-Garnelen-Black-Tiger-Prawns.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Chili, Knoblauch und Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/758781178630614/Spaghetti-mit-Chili-Knoblauch-und-Garnelen.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Spaghetti einmal ganz im Thai - Style",
+            "timestamp": 1206750318,
+            "title": "Thai - Spaghetti mit King Prawns",
+            "url": "http://www.chefkoch.de:80/rezepte/491811143443589/Thai-Spaghetti-mit-King-Prawns.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Tomaten - Pinienso\u00dfe und Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/506531145829912/Spaghetti-mit-Tomaten-Piniensosse-und-Garnelen.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Bratnudeln mit Garnelen und Feta",
+            "url": "http://www.chefkoch.de:80/rezepte/535611150532805/Bratnudeln-mit-Garnelen-und-Feta.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit scharfer Garnelen - Sahne - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/698841172424522/Spaghetti-mit-scharfer-Garnelen-Sahne-Sosse.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Asiatisch angehauchte Spaghetti mit Garnelen und Mango",
+            "url": "http://www.chefkoch.de:80/rezepte/827231187353757/Asiatisch-angehauchte-Spaghetti-mit-Garnelen-und-Mango.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Schwarze Spaghetti mit Garnelen - Tomaten - Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/916091197019067/Schwarze-Spaghetti-mit-Garnelen-Tomaten-Sauce.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti zu Tomaten - Mango - Sauce mit Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/691521171700341/Spaghetti-zu-Tomaten-Mango-Sauce-mit-Garnelen.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Garnelen, Spinat und Champignons",
+            "url": "http://www.chefkoch.de:80/rezepte/845061189845008/Spaghetti-mit-Garnelen-Spinat-und-Champignons.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Frittata con i gamberetti",
+            "timestamp": 1206750318,
+            "title": "Nudelomelette mit Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/57191020756496/Nudelomelette-mit-Garnelen.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "nat\u00fcrlich kann man auch normalgro\u00dfe Garnelen nehmen",
+            "timestamp": 1206750318,
+            "title": "Riesengarnelen in Tomatensauce mit Spaghetti",
+            "url": "http://www.chefkoch.de:80/rezepte/899651195380064/Riesengarnelen-in-Tomatensauce-mit-Spaghetti.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Krabben",
+            "url": "http://www.chefkoch.de:80/rezepte/16811001077179/Spaghetti-mit-Krabben.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Spaghetti mit Crevetten",
+            "url": "http://www.chefkoch.de:80/rezepte/78191029920284/Spaghetti-mit-Crevetten.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Spaghetti mit Garnelen, Spinat und Gorgonzola",
+            "timestamp": 1206750318,
+            "title": "Spaghetti con spinacci, gorgonzola e scampi",
+            "url": "http://www.chefkoch.de:80/rezepte/156171068541844/Spaghetti-con-spinacci-gorgonzola-e-scampi.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1206750318,
+            "title": "Zucchini - Spaghetti mit Krabben",
+            "url": "http://www.chefkoch.de:80/rezepte/212471088930865/Zucchini-Spaghetti-mit-Krabben.html"
+        }
+    ],
+    "timestamp": 1206750318,
+    "url": "http://www.chefkoch.de:80/rs/s0/spaghettie+mit+garnelen/Rezepte.html"
+}

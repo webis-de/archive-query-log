@@ -1,0 +1,171 @@
+{
+    "interpreted_query": "tempura*",
+    "offset": null,
+    "page": 0,
+    "query": "tempura*",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Frittierte Garnelen in Teigh\u00fclle",
+            "timestamp": 1213419780,
+            "title": "Tempura Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/784471181717396/Tempura-Garnelen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Garnelen - Tempura",
+            "url": "http://www.chefkoch.de:80/rezepte/141831061123030/Garnelen-Tempura.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Ideal zum Frittieren von Gem\u00fcse oder Fisch",
+            "timestamp": 1213419780,
+            "title": "Tempura - Teig",
+            "url": "http://www.chefkoch.de:80/rezepte/866191192088775/Tempura-Teig.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Tempura mit Sesamso\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1485992872048/Tempura-mit-Sesamsosse.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Gef\u00fcllte Zucchinibl\u00fcten im Tempurateig",
+            "url": "http://www.chefkoch.de:80/rezepte/84991033313185/Gefuellte-Zucchiniblueten-im-Tempurateig.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Melonensalat mit Garnelen ? Tempura",
+            "url": "http://www.chefkoch.de:80/rezepte/820901186577632/Melonensalat-mit-Garnelen-Tempura.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Gambas im Tempurateig",
+            "url": "http://www.chefkoch.de:80/rezepte/827181187350684/Gambas-im-Tempurateig.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Gambas im Tempurateig",
+            "url": "http://www.chefkoch.de:80/rezepte/879901193382585/Gambas-im-Tempurateig.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Tempura - Variante",
+            "timestamp": 1213419780,
+            "title": "Backh\u00e4hnchen aus dem Wok",
+            "url": "http://www.chefkoch.de:80/rezepte/1032511208417162/Backhaehnchen-aus-dem-Wok.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "ganz sch\u00f6n pfiffig",
+            "timestamp": 1213419780,
+            "title": "Eierschwammerl in Tempura mit Chilivinaigrette",
+            "url": "http://www.chefkoch.de:80/rezepte/546891152195072/Eierschwammerl-in-Tempura-mit-Chilivinaigrette.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "und S\u00fc\u00dfholz - Krebs - Tempura - Spie\u00df",
+            "timestamp": 1213419780,
+            "title": "K\u00fcrbis - Kokosnuss - S\u00fcppchen mit Rote Bete - Schaum",
+            "url": "http://www.chefkoch.de:80/rezepte/1009401206083341/Kuerbis-Kokosnuss-Sueppchen-mit-Rote-Bete-Schaum.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "und gr\u00fcnem Spargel - Tempura",
+            "timestamp": 1213419780,
+            "title": "Wei\u00dfe Spargelsuppe mit Basilikum\u00f6l, Rote Bete - Gelee",
+            "url": "http://www.chefkoch.de:80/rezepte/1024661207641805/Weisse-Spargelsuppe-mit-Basilikumoel-Rote-Bete-Gelee.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "und Tempura von blauen Weinbeeren",
+            "timestamp": 1213419780,
+            "title": "Blockmalz - Eis aus Quitten - Bananenso\u00dfe, Amaranth - Veilchenwurzel - Popies",
+            "url": "http://www.chefkoch.de:80/rezepte/1008261205925782/Blockmalz-Eis-aus-Quitten-Bananensosse-Amaranth-Veilchenwurzel-Popies.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Schaumsuppe vom frischen Knoblauch mit Crevetten und Perilla - Tempura",
+            "url": "http://www.chefkoch.de:80/rezepte/1011611206345322/Schaumsuppe-vom-frischen-Knoblauch-mit-Crevetten-und-Perilla-Tempura.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "in Tempurateig ausgebacken - schmeckt herrlich frisch nach Sommer",
+            "timestamp": 1213419780,
+            "title": "Gef\u00fcllte und frittierte Zucchinibl\u00fcten",
+            "url": "http://www.chefkoch.de:80/rezepte/714941174284372/Gefuellte-und-frittierte-Zucchiniblueten.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "mit gef\u00fcllten K\u00fcrbisbl\u00fcten, Mini - Rote Bete und Tempura von Salbei, Goldmelisse und Chrysanthemen",
+            "timestamp": 1213419780,
+            "title": "Salat vom Hirschhornwegerich, Rucola und Rote Bete - Bl\u00e4ttern",
+            "url": "http://www.chefkoch.de:80/rezepte/1003731205586828/Salat-vom-Hirschhornwegerich-Rucola-und-Rote-Bete-Blaettern.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Gung Ramp\u00e4n",
+            "timestamp": 1213419780,
+            "title": "Gebackene Garnelen",
+            "url": "http://www.chefkoch.de:80/rezepte/750421177588868/Gebackene-Garnelen.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Gebackene Eier im Honigsud",
+            "url": "http://www.chefkoch.de:80/rezepte/309471111495102/Gebackene-Eier-im-Honigsud.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "Gebackene Chili - Bananen",
+            "url": "http://www.chefkoch.de:80/rezepte/185031079601617/Gebackene-Chili-Bananen.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "asiatisch, einfach und schnell",
+            "timestamp": 1213419780,
+            "title": "H\u00e4hnchenfleisch s\u00fc\u00df - sauer",
+            "url": "http://www.chefkoch.de:80/rezepte/750781177601652/Haehnchenfleisch-suess-sauer.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "serviert mit Bambussprossen und Paprika",
+            "timestamp": 1213419780,
+            "title": "Asiatisches H\u00e4hnchenfleisch s\u00fc\u00df - sauer",
+            "url": "http://www.chefkoch.de:80/rezepte/755611178359942/Asiatisches-Haehnchenfleisch-suess-sauer.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "( ca. 6-8 Personen )",
+            "timestamp": 1213419780,
+            "title": "Asia - Pfanne in Borkum",
+            "url": "http://www.chefkoch.de:80/rezepte/890921194600868/Asia-Pfanne-in-Borkum.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1213419780,
+            "title": "H\u00fchnerbrust s\u00fc\u00df - sauer",
+            "url": "http://www.chefkoch.de:80/rezepte/720081174732269/Huehnerbrust-suess-sauer.html"
+        }
+    ],
+    "timestamp": 1213419780,
+    "url": "http://www.chefkoch.de:80/rs/s0/tempura%2A/Rezepte.html"
+}

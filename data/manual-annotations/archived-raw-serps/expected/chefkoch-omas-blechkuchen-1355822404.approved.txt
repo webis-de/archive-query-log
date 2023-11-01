@@ -1,0 +1,52 @@
+{
+    "interpreted_query": ", omas blechkuchen",
+    "offset": null,
+    "page": 0,
+    "query": ",+omas+blechkuchen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Blechkuchen",
+            "timestamp": 1355822404,
+            "title": "Omas Schoko - Kirschkuchen",
+            "url": "http://www.chefkoch.de/rezepte/1268331232037726/Omas-Schoko-Kirschkuchen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Blechkuchen",
+            "timestamp": 1355822404,
+            "title": "Obstkuchen Omas Art",
+            "url": "http://www.chefkoch.de/rezepte/829311187588586/Obstkuchen-Omas-Art.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "f\u00fcr Blechkuchen",
+            "timestamp": 1355822404,
+            "title": "Omas Schokoguss",
+            "url": "http://www.chefkoch.de/rezepte/1679901276084505/Omas-Schokoguss.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Blechkuchen super saftig und super einfach",
+            "timestamp": 1355822404,
+            "title": "Apfelstreuselkuchen  nach Omas Rezept",
+            "url": "http://www.chefkoch.de/rezepte/2096781338404947/Apfelstreuselkuchen-nach-Omas-Rezept.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Omas bester slowakischer Blechkuchen",
+            "timestamp": 1355822404,
+            "title": "Lond\u00fdnske Rezy",
+            "url": "http://www.chefkoch.de/rezepte/1382841243444833/Lond-nske-Rezy.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Schlupfkuchen - Tassenkuchen - Blechkuchen",
+            "timestamp": 1355822404,
+            "title": "Apfelkuchen nach Omas Art mit Butterstreusel",
+            "url": "http://www.chefkoch.de/rezepte/774941180440320/Apfelkuchen-nach-Omas-Art-mit-Butterstreusel.html"
+        }
+    ],
+    "timestamp": 1355822404,
+    "url": "http://www.chefkoch.de/rs/s0/%2C+omas+blechkuchen/Rezepte.html"
+}

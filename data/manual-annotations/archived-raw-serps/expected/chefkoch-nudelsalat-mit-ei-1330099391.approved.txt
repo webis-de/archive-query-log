@@ -1,0 +1,80 @@
+{
+    "interpreted_query": ",nudelsalat mit ei",
+    "offset": null,
+    "page": 0,
+    "query": ",nudelsalat+mit+ei",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "vegan - mit Sojajoghurt und Mayonaise ohne Ei",
+            "timestamp": 1330099391,
+            "title": "Frischer Nudelsalat",
+            "url": "http://www.chefkoch.de:80/rezepte/955891201168437/Frischer-Nudelsalat.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Die Nudeln nach Packungsanleitung kochen, absch\u00fctten und unter kaltem Wasser abschrecken. Zwiebel sch\u00e4len. ...",
+            "timestamp": 1330099391,
+            "title": "Bunter Nudelsalat mit Bacon",
+            "url": "http://www.chefkoch.de:80/rezepte/803921184216720/Bunter-Nudelsalat-mit-Bacon.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Die Nudeln im Salzwasser garen, abschrecken. Inzwischen die Zwiebel sch\u00e4len und in d\u00fcnne Ringe schneiden. ...",
+            "timestamp": 1330099391,
+            "title": "Nudelsalat mit Kichererbsen",
+            "url": "http://www.chefkoch.de:80/rezepte/1408041245602554/Nudelsalat-mit-Kichererbsen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Nudeln in Salzwasser bissfest garen. Danach abschrecken und abtropfen lassen. ...",
+            "timestamp": 1330099391,
+            "title": "Pikanter Nudelsalat mit Gem\u00fcse",
+            "url": "http://www.chefkoch.de:80/rezepte/70641026140201/Pikanter-Nudelsalat-mit-Gemuese.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Saftiger Salat mit Ei und Fleischwurst",
+            "timestamp": 1330099391,
+            "title": "Nudelsalat nach Oma Liese",
+            "url": "http://www.chefkoch.de:80/rezepte/1686201276867395/Nudelsalat-nach-Oma-Liese.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "super Partysalat",
+            "timestamp": 1330099391,
+            "title": "Pastasalat mit Thunfisch und Ei",
+            "url": "http://www.chefkoch.de:80/rezepte/1723881281518611/Pastasalat-mit-Thunfisch-und-Ei.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Reis garen. Erbsen zum Schluss kurz mit erhitzen. Eier hart kochen, abschrecken und sch\u00e4len. ...",
+            "timestamp": 1330099391,
+            "title": "Thunfisch - Reis - Salat mit Pute und Ei",
+            "url": "http://www.chefkoch.de:80/rezepte/513061147052272/Thunfisch-Reis-Salat-mit-Pute-und-Ei.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "mit Ei und Paprika, fettarm",
+            "timestamp": 1330099391,
+            "title": "Reis-Thunfisch-Salat",
+            "url": "http://www.chefkoch.de:80/rezepte/2015621326456204/Reis-Thunfisch-Salat.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Reis nach Packungsangabe garen. W\u00e4hrenddessen Paprika, Schinken und Pilze in kleine W\u00fcrfel schneiden. ...",
+            "timestamp": 1330099391,
+            "title": "Reissalat mit Mandeln",
+            "url": "http://www.chefkoch.de:80/rezepte/1980321321348220/Reissalat-mit-Mandeln.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Fruchtig-sauer, mit W\u00fcrstchen",
+            "timestamp": 1330099391,
+            "title": "Reissalat",
+            "url": "http://www.chefkoch.de:80/rezepte/772671180166523/Reissalat.html"
+        }
+    ],
+    "timestamp": 1330099391,
+    "url": "http://www.chefkoch.de:80/rs/s0/%2Cnudelsalat+mit+ei/Rezepte.html"
+}

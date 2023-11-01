@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "thai- curry",
+    "offset": null,
+    "page": 0,
+    "query": "thai-+curry",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/357011121109288/Thai-Curry.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1115091217581686/Thai-Curry.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1310151235807321/Thai-Curry.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1398301244792656/Thai-Curry.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Pikantes Thai - Curry mit Rind und Kokosmilch",
+            "timestamp": 1246123954,
+            "title": "Thai - Curry \u00e0 la Rita",
+            "url": "http://www.chefkoch.de:80/rezepte/1098431215846662/Thai-Curry-la-Rita.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "King Curry",
+            "timestamp": 1246123954,
+            "title": "Thai Massaman Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/563641154677227/Thai-Massaman-Curry.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Thai Curry Gem\u00fcse",
+            "timestamp": 1246123954,
+            "title": "Curry Gem\u00fcse",
+            "url": "http://www.chefkoch.de:80/rezepte/49401017152124/Curry-Gemuese.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai - Gem\u00fcse - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/60711022159474/Thai-Gemuese-Curry.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Originalrezept aus Thailand",
+            "timestamp": 1246123954,
+            "title": "Rotes Thai Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/856361191075294/Rotes-Thai-Curry.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai - Curry mit Putenbrust",
+            "url": "http://www.chefkoch.de:80/rezepte/596761159343225/Thai-Curry-mit-Putenbrust.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "ein leichtes und schnell zubereitetes Gericht, das man gut vorbereiten kann und dann einfach schnell alles zusammen in den WoK schmei\u00dft",
+            "timestamp": 1246123954,
+            "title": "Thai Curry ala Stephy",
+            "url": "http://www.chefkoch.de:80/rezepte/1407621245578777/Thai-Curry-ala-Stephy.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Buntes Thai - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/822041186734009/Buntes-Thai-Curry.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai - Curry mit Schweinefleisch",
+            "url": "http://www.chefkoch.de:80/rezepte/410891130943527/Thai-Curry-mit-Schweinefleisch.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "vergetarisch, nur leicht scharf und besonders w\u00fcrzig durch Hot Mango Pickles",
+            "timestamp": 1246123954,
+            "title": "Rotes Thai Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/990131204265264/Rotes-Thai-Curry.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Rindfleisch Thai-Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/30981008409558/Rindfleisch-Thai-Curry.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Gelbes Thai Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/155141068193775/Gelbes-Thai-Curry.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai Tofu Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/170761073986589/Thai-Tofu-Curry.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai - Spinat Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/227601093442591/Thai-Spinat-Curry.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "sehr scharf",
+            "timestamp": 1246123954,
+            "title": "Thai Green Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/434441134694503/Thai-Green-Curry.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai Lychee Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/539821151232192/Thai-Lychee-Curry.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Thai - Gefl\u00fcgel - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/550141152623208/Thai-Gefluegel-Curry.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "scharf und sehr simpel",
+            "timestamp": 1246123954,
+            "title": "Gr\u00fcnes Thai - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1268681232043913/Gruenes-Thai-Curry.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Gefl\u00fcgel - Thai - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1304361235472884/Gefluegel-Thai-Curry.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "Thai Red Curry",
+            "timestamp": 1246123954,
+            "title": "Scharfe Thai Cocos - Suppe",
+            "url": "http://www.chefkoch.de:80/rezepte/53631018951677/Scharfe-Thai-Cocos-Suppe.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Gaeng Kiau Wahn Gai - nach Dorry",
+            "timestamp": 1246123954,
+            "title": "Gr\u00fcnes Thai - Curry mit Huhn",
+            "url": "http://www.chefkoch.de:80/rezepte/1061491211449145/Gruenes-Thai-Curry-mit-Huhn.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "superleckeres Thaicurry ohne Zitronengras!!!",
+            "timestamp": 1246123954,
+            "title": "Gr\u00fcnes Thai - Curry mit H\u00fchnchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1005221205736066/Gruenes-Thai-Curry-mit-Huehnchen.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1246123954,
+            "title": "Gr\u00fcnes Thai - Curry mit Hackb\u00e4llchen",
+            "url": "http://www.chefkoch.de:80/rezepte/473611141053020/Gruenes-Thai-Curry-mit-Hackbaellchen.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "Rezept stammt aus S\u00fcd-Thailand (Ko Samui). Ist in S\u00fcd-Thailand sehr beliebt",
+            "timestamp": 1246123954,
+            "title": "Sweet Green Thai Chicken Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/231481094832652/Sweet-Green-Thai-Chicken-Curry.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Kochkursrezept",
+            "timestamp": 1246123954,
+            "title": "Rotes Thai - Curry mit H\u00e4hnchen",
+            "url": "http://www.chefkoch.de:80/rezepte/554401153143426/Rotes-Thai-Curry-mit-Haehnchen.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "Curry mit Suchtfaktor - eine feurige Delikatesse",
+            "timestamp": 1246123954,
+            "title": "Rindfleischcurry mit Thai - Basilikum",
+            "url": "http://www.chefkoch.de:80/rezepte/1159991222150618/Rindfleischcurry-mit-Thai-Basilikum.html"
+        }
+    ],
+    "timestamp": 1246123954,
+    "url": "http://www.chefkoch.de:80/rs/s0/thai-+curry/Rezepte.html"
+}

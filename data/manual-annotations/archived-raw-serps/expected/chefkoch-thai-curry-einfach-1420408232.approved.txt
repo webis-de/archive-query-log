@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "thai curry einfach",
+    "offset": null,
+    "page": 0,
+    "query": "thai+curry+einfach",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai - Curry einfach und schnell",
+            "url": "http://www.chefkoch.de:80/rezepte/1796431290249928/Thai-Curry-einfach-und-schnell.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai Curry ala Stephy",
+            "url": "http://www.chefkoch.de:80/rezepte/1407621245578777/Thai-Curry-ala-Stephy.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/2418301381760304/Thai-Curry.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Gr\u00fcnes Curry \u00e0 la \"Haushalt\" mit H\u00fchnchenbrust",
+            "url": "http://www.chefkoch.de:80/rezepte/2469401389014848/Gruenes-Curry-la-Haushalt-mit-Huehnchenbrust.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai - Red - Curry f\u00fcr mehrere Variationen",
+            "url": "http://www.chefkoch.de:80/rezepte/992101204469611/Thai-Red-Curry-fuer-mehrere-Variationen.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai Green Curry Chicken",
+            "url": "http://www.chefkoch.de:80/rezepte/1412871246169628/Thai-Green-Curry-Chicken.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Dickes rotes Thai - Curry mit Schweinebauch und gr\u00fcnem Pfeffer",
+            "url": "http://www.chefkoch.de:80/rezepte/862721191838213/Dickes-rotes-Thai-Curry-mit-Schweinebauch-und-gruenem-Pfeffer.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Rotes Thai Curry mit H\u00e4hnchen und Gem\u00fcse",
+            "url": "http://www.chefkoch.de:80/rezepte/1002271205478524/Rotes-Thai-Curry-mit-Haehnchen-und-Gemuese.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Rotes Thai - Curry mit Crevetten",
+            "url": "http://www.chefkoch.de:80/rezepte/1657251273650507/Rotes-Thai-Curry-mit-Crevetten.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Rotes Thai - Curry mit Lachs und frischer Ananas",
+            "url": "http://www.chefkoch.de:80/rezepte/1086041214484335/Rotes-Thai-Curry-mit-Lachs-und-frischer-Ananas.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1115091217581686/Thai-Curry.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai - Curry mit Putenbrust",
+            "url": "http://www.chefkoch.de:80/rezepte/596761159343225/Thai-Curry-mit-Putenbrust.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Fruchtig - scharfes, gr\u00fcnes Thai - Curry mit H\u00e4hnchen oder Pute",
+            "url": "http://www.chefkoch.de:80/rezepte/1199881225873309/Fruchtig-scharfes-gruenes-Thai-Curry-mit-Haehnchen-oder-Pute.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Rotes Thai Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/990131204265264/Rotes-Thai-Curry.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai Red Chicken Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/2149421345215060/Thai-Red-Chicken-Curry.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Reispfanne mit gr\u00fcnem Thai Curry und Estragon",
+            "url": "http://www.chefkoch.de:80/rezepte/1682651276494317/Reispfanne-mit-gruenem-Thai-Curry-und-Estragon.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Gr\u00fcnes Thai Gefl\u00fcgel-Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/2197651352630400/Gruenes-Thai-Gefluegel-Curry.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai Curry - Chicken",
+            "url": "http://www.chefkoch.de:80/rezepte/1575101265104361/Thai-Curry-Chicken.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "K\u00f6ttbullar mit Thai - Curry - Tomatensauce",
+            "url": "http://www.chefkoch.de:80/rezepte/1664191274529204/Koettbullar-mit-Thai-Curry-Tomatensauce.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Gr\u00fcnes Thai - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1268681232043913/Gruenes-Thai-Curry.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Bandnudeln mit Thai Curry So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/2232141357573102/Bandnudeln-mit-Thai-Curry-Sosse.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "K\u00fcrbissuppe mit Thai Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1790761289387367/Kuerbissuppe-mit-Thai-Curry.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "H\u00e4hnchen Thai - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1418211246694743/Haehnchen-Thai-Curry.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Thai - Curry mit Erdn\u00fcssen",
+            "url": "http://www.chefkoch.de:80/rezepte/1685351276773957/Thai-Curry-mit-Erdnuessen.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Garnelen - Curry mit Vanille und Zuckerschoten",
+            "url": "http://www.chefkoch.de:80/rezepte/1408191245654421/Garnelen-Curry-mit-Vanille-und-Zuckerschoten.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Curry Gem\u00fcse",
+            "url": "http://www.chefkoch.de:80/rezepte/49401017152124/Curry-Gemuese.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Rindfleischcurry mit Thai - Basilikum",
+            "url": "http://www.chefkoch.de:80/rezepte/1159991222150618/Rindfleischcurry-mit-Thai-Basilikum.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Green Chicken Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1619641269157789/Green-Chicken-Curry.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Geschnetzeltes Camaju",
+            "url": "http://www.chefkoch.de:80/rezepte/1901971309959250/Geschnetzeltes-Camaju.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1420408232,
+            "title": "Linsensuppe asiatisch",
+            "url": "http://www.chefkoch.de:80/rezepte/1737991282805729/Linsensuppe-asiatisch.html"
+        }
+    ],
+    "timestamp": 1420408232,
+    "url": "http://www.chefkoch.de:80/rs/s0/thai+curry+einfach/Rezepte.html"
+}

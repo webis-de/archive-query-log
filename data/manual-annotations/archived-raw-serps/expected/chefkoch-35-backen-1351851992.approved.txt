@@ -1,0 +1,220 @@
+{
+    "interpreted_query": ",35 backen",
+    "offset": null,
+    "page": 0,
+    "query": ",35+backen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "ohne Backen, f\u00fcr 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Hafercrossies",
+            "url": "http://www.chefkoch.de:80/rezepte/1229501228037135/Hafercrossies.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "ohne Backen, ergibt ca. 35 Cookies",
+            "timestamp": 1351851992,
+            "title": "Schoko - Erdnuss - Cookies",
+            "url": "http://www.chefkoch.de:80/rezepte/1014091206616234/Schoko-Erdnuss-Cookies.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Orangenkr\u00e4nze",
+            "url": "http://www.chefkoch.de:80/rezepte/1224481227724913/Orangenkraenze.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Zitronen - Spritzgeb\u00e4ck",
+            "url": "http://www.chefkoch.de:80/rezepte/425291133446754/Zitronen-Spritzgebaeck.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "35 Minuten Kuchen",
+            "timestamp": 1351851992,
+            "title": "Becherkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/884551194071384/Becherkuchen.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "F\u00fcr 35 - 40 T\u00f6rtchen",
+            "timestamp": 1351851992,
+            "title": "Vanillet\u00f6rtchen mit Schokoglasur",
+            "url": "http://www.chefkoch.de:80/rezepte/1790851289387875/Vanilletoertchen-mit-Schokoglasur.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Schneckennudeln mit Nussf\u00fcllung",
+            "url": "http://www.chefkoch.de:80/rezepte/1490231254129056/Schneckennudeln-mit-Nussfuellung.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Schokozungen mit Anis von Sarah",
+            "url": "http://www.chefkoch.de:80/rezepte/1633641270996852/Schokozungen-mit-Anis-von-Sarah.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "ergibt ca. 35 Kekse",
+            "timestamp": 1351851992,
+            "title": "Sandige Matcha - Tee - Kekse",
+            "url": "http://www.chefkoch.de:80/rezepte/1570521264576623/Sandige-Matcha-Tee-Kekse.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "ergibt  ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Super leckere Schneeb\u00e4lle",
+            "url": "http://www.chefkoch.de:80/rezepte/1256731231154690/Super-leckere-Schneebaelle.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "ergibt ca. 35 Cookies",
+            "timestamp": 1351851992,
+            "title": "Coconut - Cookies",
+            "url": "http://www.chefkoch.de:80/rezepte/1049481209904885/Coconut-Cookies.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "ergibt 35 Waffelh\u00f6rnchen",
+            "timestamp": 1351851992,
+            "title": "Eis - H\u00f6rnchen \u00e0 la tasmia",
+            "url": "http://www.chefkoch.de:80/rezepte/1012501206443381/Eis-Hoernchen-la-tasmia.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Vanillecookies mit Rosinen",
+            "url": "http://www.chefkoch.de:80/rezepte/1302601235323749/Vanillecookies-mit-Rosinen.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "ergibt ca. 35 Herzchen",
+            "timestamp": 1351851992,
+            "title": "Schoko - Herzchen",
+            "url": "http://www.chefkoch.de:80/rezepte/567781155371250/Schoko-Herzchen.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Gew\u00fcrzkekse mit Mandeln",
+            "url": "http://www.chefkoch.de:80/rezepte/2169941348222996/Gewuerzkekse-mit-Mandeln.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "ergibt ca. 35 Kekse",
+            "timestamp": 1351851992,
+            "title": "Chili - Kekse",
+            "url": "http://www.chefkoch.de:80/rezepte/1600141267210778/Chili-Kekse.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "ergibt ca. 35 Kekse",
+            "timestamp": 1351851992,
+            "title": "M\u00fcrbeteigkekse mit Zuckerguss und Streusel",
+            "url": "http://www.chefkoch.de:80/rezepte/1593621266649399/Muerbeteigkekse-mit-Zuckerguss-und-Streusel.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "ergibt ca. 35 Pl\u00e4tzchen",
+            "timestamp": 1351851992,
+            "title": "Eierlik\u00f6rsterne",
+            "url": "http://www.chefkoch.de:80/rezepte/1590181266390580/Eierlikoersterne.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "ergibt ca. 35 Pl\u00e4tzchen",
+            "timestamp": 1351851992,
+            "title": "Sesamh\u00e4ufchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1583301265806033/Sesamhaeufchen.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "ergibt ca. 35 Pl\u00e4tzchen",
+            "timestamp": 1351851992,
+            "title": "Gef\u00fcllte Nusskreise",
+            "url": "http://www.chefkoch.de:80/rezepte/1550721262335833/Gefuellte-Nusskreise.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "ergibt 25-35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Kirsch - Schoko - T\u00f6rtchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1227811227946198/Kirsch-Schoko-Toertchen.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "f\u00fcr 35 - 40 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Zitronensterne 'Wichtel'",
+            "url": "http://www.chefkoch.de:80/rezepte/1157411221918315/Zitronensterne-Wichtel.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Linzer T\u00f6rtchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1152341221481511/Linzer-Toertchen.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Himmlische Nuss - Schokoli",
+            "url": "http://www.chefkoch.de:80/rezepte/1115991217686295/Himmlische-Nuss-Schokoli.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Schnelle Lebkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1017641206973542/Schnelle-Lebkuchen.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Mandelpl\u00e4tzchen",
+            "url": "http://www.chefkoch.de:80/rezepte/986021204015519/Mandelplaetzchen.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "ergibt ca. 35 Kekse",
+            "timestamp": 1351851992,
+            "title": "Schoko - Haferflocken - Pl\u00e4tzchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1850511299827605/Schoko-Haferflocken-Plaetzchen.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "f\u00fcr 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Pistazien - Kokos - Makronen",
+            "url": "http://www.chefkoch.de:80/rezepte/1846691299100285/Pistazien-Kokos-Makronen.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "ergibt ca. 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Schwarz - wei\u00df Geb\u00e4ck",
+            "url": "http://www.chefkoch.de:80/rezepte/1763921286267519/Schwarz-weiss-Gebaeck.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "F\u00fcr 35 St\u00fcck",
+            "timestamp": 1351851992,
+            "title": "Knusper Knusper",
+            "url": "http://www.chefkoch.de:80/rezepte/1315741236259753/Knusper-Knusper.html"
+        }
+    ],
+    "timestamp": 1351851992,
+    "url": "http://www.chefkoch.de:80/rs/s0/%2C35+backen/Rezepte.html"
+}

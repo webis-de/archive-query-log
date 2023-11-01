@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "eierlik\u00f6r mit kirsch",
+    "offset": null,
+    "page": 0,
+    "query": "eierlik\ufffdr+mit+kirsch",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Kirsch - Eierlik\u00f6r - Blechkuchen mit Schmand - Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/906281195892954/Kirsch-Eierlikoer-Blechkuchen-mit-Schmand-Sahne.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Kirsch - Eierlik\u00f6r - Schnitten mit Mandelstreuseln",
+            "url": "http://www.chefkoch.de:80/rezepte/780691181144336/Kirsch-Eierlikoer-Schnitten-mit-Mandelstreuseln.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Muffins",
+            "url": "http://www.chefkoch.de:80/rezepte/1619571269154527/Eierlikoer-Kirsch-Muffins.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Kirsch - Eierlik\u00f6r - Muffins",
+            "url": "http://www.chefkoch.de:80/rezepte/817061186230100/Kirsch-Eierlikoer-Muffins.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Marmor - Eierlik\u00f6r - Kuchen mit Kirschen und Nougat",
+            "url": "http://www.chefkoch.de:80/rezepte/1804171291801371/Marmor-Eierlikoer-Kuchen-mit-Kirschen-und-Nougat.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Kuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/972391202848040/Eierlikoer-Kirsch-Kuchen.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Vanille - Kirsch - Speise mit Eierlik\u00f6r",
+            "url": "http://www.chefkoch.de:80/rezepte/726371175429756/Vanille-Kirsch-Speise-mit-Eierlikoer.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Kirsch - Eierlik\u00f6r - Nachtisch",
+            "url": "http://www.chefkoch.de:80/rezepte/754281178194635/Kirsch-Eierlikoer-Nachtisch.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Muffins",
+            "url": "http://www.chefkoch.de:80/rezepte/1055191210659509/Eierlikoer-Kirsch-Muffins.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Kirsch - Kokoskuchen mit Eierlik\u00f6r",
+            "url": "http://www.chefkoch.de:80/rezepte/1078491213533030/Kirsch-Kokoskuchen-mit-Eierlikoer.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/1414991246383512/Eierlikoer-Kirsch-Torte.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/565141154868264/Eierlikoer-Kirsch-Torte.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r-Schoko-Kirsch-Kuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1986531322004749/Eierlikoer-Schoko-Kirsch-Kuchen.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Kirsch - Eierlik\u00f6r - Napfkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/937551199433559/Kirsch-Eierlikoer-Napfkuchen.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/1020761207303281/Eierlikoer-Kirsch-Torte.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Nusskuchen mit Kirschen und Eierlik\u00f6r - Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/675851169909681/Nusskuchen-mit-Kirschen-und-Eierlikoer-Sahne.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Dessert",
+            "url": "http://www.chefkoch.de:80/rezepte/1662231274341244/Eierlikoer-Kirsch-Dessert.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Mascarponecreme mit Eierlik\u00f6r und Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/1042391209240404/Mascarponecreme-mit-Eierlikoer-und-Kirschen.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Marmorkuchen mit Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/764091179229505/Eierlikoer-Marmorkuchen-mit-Kirschen.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "SABO - Eierlik\u00f6r - Kirsch - Eiscremt\u00f6rtchen mit Kirschsahne",
+            "url": "http://www.chefkoch.de:80/rezepte/118471050394109/SABO-Eierlikoer-Kirsch-Eiscremtoertchen-mit-Kirschsahne.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/495311144112958/Eierlikoer-Kirsch-Torte.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Creme",
+            "url": "http://www.chefkoch.de:80/rezepte/1254381230711374/Eierlikoer-Kirsch-Creme.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Mascarponecreme mit Kirschen und Eierlik\u00f6r",
+            "url": "http://www.chefkoch.de:80/rezepte/1659581274092199/Mascarponecreme-mit-Kirschen-und-Eierlikoer.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Vanille - Kirsch Speise mit Eierlik\u00f6r",
+            "url": "http://www.chefkoch.de:80/rezepte/920241197448539/Vanille-Kirsch-Speise-mit-Eierlikoer.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/459411139044713/Eierlikoer-Kirsch-Torte.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r - Kirsch - Schnitten von Sarah",
+            "url": "http://www.chefkoch.de:80/rezepte/1588521266244004/Eierlikoer-Kirsch-Schnitten-von-Sarah.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Vanille - Kirsch Dessert",
+            "url": "http://www.chefkoch.de:80/rezepte/604511160211618/Vanille-Kirsch-Dessert.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Waldbeer - Eierlik\u00f6r - Schnitten",
+            "url": "http://www.chefkoch.de:80/rezepte/1666021274776091/Waldbeer-Eierlikoer-Schnitten.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Eierlik\u00f6r",
+            "url": "http://www.chefkoch.de:80/rezepte/590461158587587/Eierlikoer.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1375310772,
+            "title": "Maronidessert im Glas",
+            "url": "http://www.chefkoch.de:80/rezepte/1348831239700324/Maronidessert-im-Glas.html"
+        }
+    ],
+    "timestamp": 1375310772,
+    "url": "http://www.chefkoch.de:80/rs/s0/eierlik%F6r+mit+kirsch/Rezepte.html"
+}

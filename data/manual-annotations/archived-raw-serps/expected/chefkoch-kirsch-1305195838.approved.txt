@@ -1,0 +1,220 @@
+{
+    "interpreted_query": ", kirsch",
+    "offset": null,
+    "page": 0,
+    "query": ",+kirsch",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "aus FRISCHEN Kirschen",
+            "timestamp": 1305195838,
+            "title": "Amarena - Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/1420201246873623/Amarena-Kirschen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "italienische Amarena Kirschen",
+            "timestamp": 1305195838,
+            "title": "Amarena Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/1123581218647084/Amarena-Kirschen.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Kirsch - R\u00fchrkurchen mit Streuseln",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Br\u00f6ckeli",
+            "url": "http://www.chefkoch.de:80/rezepte/1604841267693751/Kirsch-Broeckeli.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Haselnussbiskuit, Kirschen mit Gl\u00fchwein - Tortenguss",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Gl\u00fchweintorte",
+            "url": "http://www.chefkoch.de:80/rezepte/896211195057225/Kirsch-Gluehweintorte.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "f\u00fcr viele Verwendungsm\u00f6glichkeiten",
+            "timestamp": 1305195838,
+            "title": "Kandierte Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/905821195826753/Kandierte-Kirschen.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "herrlich erfrischend",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Aperitif",
+            "url": "http://www.chefkoch.de:80/rezepte/1446441249562822/Kirsch-Aperitif.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "mit Marzipan verfeinert",
+            "timestamp": 1305195838,
+            "title": "Dessertsauce Kirsche",
+            "url": "http://www.chefkoch.de:80/rezepte/1863361301984442/Dessertsauce-Kirsche.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "mit Amaretto, eine Dessert - Sauce",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/1696141277971405/Kirsch-Sahne.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Pumpernickel grob reiben und mit dem Lik\u00f6r vermischen. 1 Std. ziehen lassen. Sahne steif schlagen. ...",
+            "timestamp": 1305195838,
+            "title": "Kirschen - Dessert",
+            "url": "http://www.chefkoch.de:80/rezepte/715071174291603/Kirschen-Dessert.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Butter und Zucker schaumig r\u00fchren, Eier nach und nach zugeben, Zitronenschale unterr\u00fchren. ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Sandkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/36641012309481/Kirsch-Sandkuchen.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "Entsteinte Kirschen mit dem Zucker erw\u00e4rmen - nicht kochen - bis die Kirschen Saft ziehen. ...",
+            "timestamp": 1305195838,
+            "title": "Amarena - Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/38981013091267/Amarena-Kirschen.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Die Butter wird flaumig abgetrieben und mit Zucker, Dotter und erweichter Schokolade schaumig ger\u00fchrt. ...",
+            "timestamp": 1305195838,
+            "title": "Kirschen - Schokoladeschnitten",
+            "url": "http://www.chefkoch.de:80/rezepte/204321086085491/Kirschen-Schokoladeschnitten.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "Mehl, Eier und Zucker verr\u00fchren, die Milch langsam dazugeben, Salz zuf\u00fcgen. Kirschen abtropfen lassen und unterr\u00fchren. ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/219081091266221/Kirsch-Auflauf.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Kirschen entkernen. ...",
+            "timestamp": 1305195838,
+            "title": "Schwarzw\u00e4lder Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/240851097417125/Schwarzwaelder-Kirschen.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Eier, Vanillezucker und Zucker schaumig r\u00fchren und N\u00fcsse und Backpulver unterheben. ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Eierlik\u00f6rtorte",
+            "url": "http://www.chefkoch.de:80/rezepte/288591107680271/Kirsch-Eierlikoertorte.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Alle Zutaten, au\u00dfer Rum und Kandis, in ein verschlie\u00dfbares Gef\u00e4\u00df geben. ...",
+            "timestamp": 1305195838,
+            "title": "Lustige Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/935681199027391/Lustige-Kirschen.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Kirschen entsteinen und abtropfen lassen. Eier schaumig schlagen. ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Pfannkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1074981213184956/Kirsch-Pfannkuchen.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Gelatine in kaltem Wasser einweichen. Kuvert\u00fcre zerkleinern und im hei\u00dfem Wasserbad sanft schmelzen. ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Schokotella",
+            "url": "http://www.chefkoch.de:80/rezepte/1313071236025218/Kirsch-Schokotella.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Kirschen abtropfen lassen, den Saft auffangen. ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/1402201245158335/Kirsch-Gugelhupf.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "perfekter Begleiter zu Wildgerichten",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Sabayone",
+            "url": "http://www.chefkoch.de:80/rezepte/1420551246894407/Kirsch-Sabayone.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "super saftig",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Nusskuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1497561255180388/Kirsch-Nusskuchen.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "Champagner - Cocktail",
+            "timestamp": 1305195838,
+            "title": "Frostie Kirsche",
+            "url": "http://www.chefkoch.de:80/rezepte/1521191257329320/Frostie-Kirsche.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "Ein tolles Weihnachtsgeschenk!",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Gl\u00fchweinkonfit\u00fcre",
+            "url": "http://www.chefkoch.de:80/rezepte/1550151261926216/Kirsch-Gluehweinkonfituere.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "Ein Longdrinkglas zur H\u00e4lfte mit gesto\u00dfenem Eis (crushed Ice) f\u00fcllen, Kirschwasser und Kirschsirup darauf geben, kurz umr\u00fchren ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Cobbler",
+            "url": "http://www.chefkoch.de:80/rezepte/1629011270106450/Kirsch-Cobbler.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Alles au\u00dfer den Kirschen und der St\u00e4rke in einen Topf geben. ...",
+            "timestamp": 1305195838,
+            "title": "Eingelegte Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/440721136222762/Eingelegte-Kirschen.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "wahlweise auch Schwarzbeeren - Schmarrn",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Schmarrn",
+            "url": "http://www.chefkoch.de:80/rezepte/1014641206648122/Kirsch-Schmarrn.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "Schweizerisches Fasnachtsgeb\u00e4ck",
+            "timestamp": 1305195838,
+            "title": "Kirschen - Schenkeli",
+            "url": "http://www.chefkoch.de:80/rezepte/1644631272091015/Kirschen-Schenkeli.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "Kirschen in einem Sieb gut abtropfen lassen. Fett, Salz, Vanillinzucker und Zucker mit dem Handr\u00fchrger\u00e4t cremig r\u00fchren. ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - Partyhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/1803661291708767/Kirsch-Partyhupf.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Die Kirschen gr\u00fcndlich waschen und abtropfen lassen. Dann entstielen und \u00fcber einer Sch\u00fcssel entsteinen. ...",
+            "timestamp": 1305195838,
+            "title": "Amaretto-Kirschen",
+            "url": "http://www.chefkoch.de:80/rezepte/27821006775239/Amaretto-Kirschen.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "Mehl, Zucker, Eigelb und Butter zu einem glatten Teig verkneten und eine Stunden im K\u00fchlschrank ruhen lassen. ...",
+            "timestamp": 1305195838,
+            "title": "Kirsch - K\u00fcchlein",
+            "url": "http://www.chefkoch.de:80/rezepte/36621012294918/Kirsch-Kuechlein.html"
+        }
+    ],
+    "timestamp": 1305195838,
+    "url": "http://www.chefkoch.de:80/rs/s0/%2C+kirsch/Rezepte.html"
+}
