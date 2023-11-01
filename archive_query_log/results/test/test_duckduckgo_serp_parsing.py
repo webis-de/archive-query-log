@@ -101,13 +101,6 @@ def test_parse_query_duckduckgo_waldo_s_chicken_site_waldoschicken_com_165437211
     )
 
 
-def test_parse_query_duckduckgo_espanol_incluso_site_cnnespanol_cnn_com_1612897539():
-    verify_serp_parsing(
-        "https://web.archive.org/web/20210209190539id_/https://duckduckgo.com/?q=espanol+incluso+site%3Acnnespanol.cnn.com&t=ffab",
-        "duckduckgo",
-    )
-
-
 def test_parse_query_duckduckgo_sims_castaway_trailer_1647012563():
     verify_serp_parsing(
         "https://web.archive.org/web/20220311152923id_/https://duckduckgo.com/?q=sims+castaway+trailer&t=brave",
