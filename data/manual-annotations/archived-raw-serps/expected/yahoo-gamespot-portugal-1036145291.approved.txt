@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "gamespot portugal",
+    "offset": null,
+    "page": null,
+    "query": "gamespot portugal",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "<em>GameSpot</em> <em>Portugal</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=1/K=gamespot+portugal/T=1036148892/F=62118542a53697740d21e735c32c7967/*http://www.gamespot.pt/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "<em>GameSpot</em> <em>Portugal</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=2/K=gamespot+portugal/T=1036148892/F=42fe01f04ad7b359186919d04094319d/*http://gamespot.zdnet.pt/sony/metalgear2/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "<em>Gamespot</em> - Not\u00edcia",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=3/K=gamespot+portugal/T=1036148892/F=352fcbecaced8f78a59ec030011d2e62/*http://www.zdnet.pt/zdnn/gamespot/2002-10-11_112521.shtml"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "<em>GameSpot</em>: <em>GameSpot</em> Global Network",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=4/K=gamespot+portugal/T=1036148892/F=8fdec9256f7e5520ad66cd765cf65bc5/*http://www.zdnet.com/gamespot/misc/international/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "<em>GameSpot</em> Global Network",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=5/K=gamespot+portugal/T=1036148892/F=f7f858871c68d787404fdb69d01f84d5/*http://gamespot.zdnet.co.kr/world.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "ZDNet Not\u00edcias",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=6/K=gamespot+portugal/T=1036148892/F=a251a59c94c59bee0bf216198121a88c/*http://zdnn.zdnet.pt/noticias/-nivel1/?s=10"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "<em>GameSpot</em> Global Network",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=7/K=gamespot+portugal/T=1036148892/F=e217f6d0788802ee38dc8e11d4bbd7eb/*http://www.gamespot.com/global/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "Livra <em>Portugal</em> - Opini\u0151es de <em>Gamespot</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=8/K=gamespot+portugal/T=1036148892/F=f5f9fc3229648b3d93338432fcc85d8c/*http://pt.livra.com/topic.asp?To=4689"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "Elektor - Revista mensal de electr\u00f3nica",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=9/K=gamespot+portugal/T=1036148892/F=cf9d55ce80326e4f1dccde39684db7a3/*http://www.xl.pt/elektor/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "Rotas &amp; Destinos",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=10/K=gamespot+portugal/T=1036148892/F=4906931b5ef4b32f1ac84141ae407c01/*http://www.rotasedestinos.pt/forum/messages/949.shtml"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "Yahoo! Regional&gt;Pa\u00edses&gt;<em>Portugal</em>&gt;Esportes e Lazer&gt;Jogos&gt;Jogos de <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=11/K=gamespot+portugal/T=1036148892/F=02a5d01d4b2f48a51930c2bf372250a3/*http://br.yahoo.com/Regional/Paises/Portugal/Esportes_e_Lazer/Jogos/Jogos_de_Computador/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "AutoMotor - Microsites - Seguro Directo",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=12/K=gamespot+portugal/T=1036148892/F=afdd74836e0b5dbe38968e35b5d1ae21/*http://www.fbnet.pt/aut/microsites/segurodirecto/index.shtml"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "AutoMotor - Passatempo - Blaupunkt",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=13/K=gamespot+portugal/T=1036148892/F=2e2ebeea5eedc41f893071e0e4f0664a/*http://automotor.xl.pt/aut/passatempo/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "[ PT - XBOX ] - A sua consola de jogos aqui em <em>Portugal</em> :::",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=14/K=gamespot+portugal/T=1036148892/F=9d91cc87aae27cfde70a3e7ea2dd58b8/*http://www.ptxbox.com/entrevista.asp"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "Championship Manager - <em>Portugal</em>: site de Pesquisa Oficial",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=15/K=gamespot+portugal/T=1036148892/F=65914a5b0458ea9cb5a5157c01a037fa/*http://fscked.itsari.org/cmportugal/especiais_cmimprensa.php"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "Sa\u00fadeMais",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=16/K=gamespot+portugal/T=1036148892/F=bd5f4cfd6cfdf1dfb30f7f18c81e927c/*http://www.saudemais.pt/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "Zdnet PT - Opini\u0151es de <em>Gamespot</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=17/K=gamespot+portugal/T=1036148892/F=4855d21c56c5a2048d9a534dbe1f32fa/*http://pt.zdnet.livra.com/topic.asp?To=4689"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "PCGuia - Suplemento - Os 150 melhores sites nacionais: Viagens - <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=18/K=gamespot+portugal/T=1036148892/F=7effa810dde15f02e31c5f3e2610a686/*http://pcguia.xl.pt/pcg/1101/suplemento/a01-47-00.shtml"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "ZDNet <em>Portugal</em> - Onde a tecnologia o leva",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=19/K=gamespot+portugal/T=1036148892/F=9817e342ec5dee10abb6f9aea90004cd/*http://www.silenter.com/cgi-bin/nph-go.cgi/11110/687474702f63686b70742e7a646e65742e636f6d2f63686b70742f7a646870776f726c642f687474703a2f2f7777772e7a646e65742e7074"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1036145291,
+            "title": "http://www.cheatcc.com/xb/sg/halo.txt",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=20/K=gamespot+portugal/T=1036148892/F=b1f41ce409af134887794d21b66d4c39/*http://www.cheatcc.com/xb/sg/halo.txt"
+        }
+    ],
+    "timestamp": 1036145291,
+    "url": "http://search.yahoo.com:80/search?p=gamespot+portugal"
+}

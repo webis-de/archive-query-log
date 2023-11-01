@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Georgia Restaurant Association",
+    "offset": null,
+    "page": null,
+    "query": "Georgia Restaurant Association",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/2070184/Georgia+Restaurant+Association/1/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Metropolitan_Areas/Atlanta_Metro/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9633331/Georgia+Restaurant+Association/2/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Atlanta/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9719935/Georgia+Restaurant+Association/3/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Decatur/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/876134/Georgia+Restaurant+Association/4/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Savannah/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Georgia</em>",
+            "url": "http://srd.yahoo.com/srct/2826508/Georgia+Restaurant+Association/5/30/*http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Food_and_Drink/Dining/By_Region/U_S__States/Georgia/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9633096/Georgia+Restaurant+Association/6/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Athens/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9829077/Georgia+Restaurant+Association/7/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Roswell/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9342789/Georgia+Restaurant+Association/8/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Metropolitan_Areas/Augusta_Metro/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9830977/Georgia+Restaurant+Association/9/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Marietta/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/26735166/Georgia+Restaurant+Association/10/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Columbus/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9499214/Georgia+Restaurant+Association/11/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Metropolitan_Areas/Savannah_Metro/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9709549/Georgia+Restaurant+Association/12/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Macon/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/206521/Georgia+Restaurant+Association/13/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Augusta/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9900899/Georgia+Restaurant+Association/14/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Cities/Atlanta/Business_and_Shopping/Business_to_Business/Food_and_Beverage/Restaurants/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Georgia</em>",
+            "url": "http://srd.yahoo.com/srct/20320441/Georgia+Restaurant+Association/15/30/*http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Food_and_Drink/Dining/Bars__Pubs__and_Clubs/Lesbian__Gay__and_Bisexual/By_Region/U_S__States/Georgia/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/8102489/Georgia+Restaurant+Association/16/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Metropolitan_Areas/Atlanta_Metro/Business_and_Shopping/Business_to_Business/Food_and_Beverage/Restaurants/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Georgia</em>",
+            "url": "http://srd.yahoo.com/srct/2822258/Georgia+Restaurant+Association/17/30/*http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Food_and_Drink/Dining/By_Region/Countries/Georgia/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9888762/Georgia+Restaurant+Association/18/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Counties_and_Regions/Gwinnett_County/Entertainment_and_Arts/Restaurants/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9850370/Georgia+Restaurant+Association/19/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Counties_and_Regions/Fulton_County/Business_and_Shopping/Business_to_Business/Food_and_Beverage/Restaurants/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 970314665,
+            "title": "<em>Restaurant</em>s",
+            "url": "http://srd.yahoo.com/srct/9719937/Georgia+Restaurant+Association/20/30/*http://dir.yahoo.com/Regional/U_S__States/Georgia/Counties_and_Regions/DeKalb_County/Entertainment_and_Arts/Restaurants/"
+        }
+    ],
+    "timestamp": 970314665,
+    "url": "http://search.yahoo.com:80/search?p=Georgia+Restaurant+Association"
+}

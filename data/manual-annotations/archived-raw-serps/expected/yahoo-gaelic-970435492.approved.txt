@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Gaelic",
+    "offset": null,
+    "page": null,
+    "query": "Gaelic",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/751090/Gaelic/1/19/*http://dir.yahoo.com/Recreation/Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Irish <em>Gaelic</em>",
+            "url": "http://srd.yahoo.com/srct/254023/Gaelic/2/19/*http://dir.yahoo.com/Social_Science/Linguistics_and_Human_Languages/Languages/Specific_Languages/Irish_Gaelic/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "<em>Gaelic</em>",
+            "url": "http://srd.yahoo.com/srct/254020/Gaelic/3/19/*http://dir.yahoo.com/Social_Science/Linguistics_and_Human_Languages/Languages/Specific_Languages/Gaelic/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Scots <em>Gaelic</em>",
+            "url": "http://srd.yahoo.com/srct/1099134/Gaelic/4/19/*http://dir.yahoo.com/Social_Science/Linguistics_and_Human_Languages/Languages/Specific_Languages/Scots_Gaelic/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Manx <em>Gaelic</em>",
+            "url": "http://srd.yahoo.com/srct/344311/Gaelic/5/19/*http://dir.yahoo.com/Social_Science/Linguistics_and_Human_Languages/Languages/Specific_Languages/Manx_Gaelic/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "<em>Gaelic</em> Athletic Association",
+            "url": "http://srd.yahoo.com/srct/726928/Gaelic/6/19/*http://dir.yahoo.com/Regional/Countries/Ireland/Recreation_and_Sports/Sports/Organizations/Gaelic_Athletic_Association/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/727661/Gaelic/7/19/*http://dir.yahoo.com/Regional/Countries/Ireland/Recreation_and_Sports/Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/16553164/Gaelic/8/19/*http://dir.yahoo.com/Regional/Countries/Ireland/Counties_and_Regions/Kildare/Recreation_and_Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "<em>Gaelic</em>",
+            "url": "http://srd.yahoo.com/srct/22685513/Gaelic/9/19/*http://dir.yahoo.com/Regional/Countries/Canada/Social_Science/Linguistics_and_Human_Languages/Languages/Specific_Languages/Gaelic/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "<em>Gaelic</em>",
+            "url": "http://srd.yahoo.com/srct/23769967/Gaelic/10/19/*http://dir.yahoo.com/Regional/Countries/Ireland/Social_Science/Linguistics_and_Human_Languages/Languages/Specific_Languages/Gaelic/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/27612912/Gaelic/11/19/*http://dir.yahoo.com/Regional/Countries/Singapore/Recreation_and_Sports/Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/16876562/Gaelic/12/19/*http://dir.yahoo.com/Regional/Countries/Ireland/Counties_and_Regions/Waterford/Recreation_and_Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/32783107/Gaelic/13/19/*http://dir.yahoo.com/Regional/Countries/United_Kingdom/Northern_Ireland/Recreation_and_Sports/Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/6588878/Gaelic/14/19/*http://dir.yahoo.com/Regional/Countries/United_Kingdom/Recreation_and_Sports/Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/15634684/Gaelic/15/19/*http://dir.yahoo.com/Regional/Countries/Australia/Recreation_and_Sports/Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/20223245/Gaelic/16/19/*http://dir.yahoo.com/Regional/Countries/Australia/States_and_Territories/Victoria/Recreation_and_Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/16721974/Gaelic/17/19/*http://dir.yahoo.com/Regional/Countries/Australia/States_and_Territories/Queensland/Cities_and_Regions/Brisbane/Recreation_and_Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/18945889/Gaelic/18/19/*http://dir.yahoo.com/Regional/Countries/Australia/States_and_Territories/New_South_Wales/Metropolitan_Areas/Sydney_Metro/Recreation_and_Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "Football (<em>Gaelic</em>)",
+            "url": "http://srd.yahoo.com/srct/9879984/Gaelic/19/19/*http://dir.yahoo.com/Regional/U_S__States/California/Cities/San_Francisco/Recreation_and_Sports/Football__Gaelic_/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 970435492,
+            "title": "<em>Gaelic</em> Athletic Association",
+            "url": "http://srd.yahoo.com/srst/155551/Gaelic/1/145/*http://www.gaa.ie/"
+        }
+    ],
+    "timestamp": 970435492,
+    "url": "http://search.yahoo.com:80/search?p=Gaelic"
+}

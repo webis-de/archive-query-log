@@ -1,0 +1,115 @@
+{
+    "interpreted_query": "freeware",
+    "offset": null,
+    "page": null,
+    "query": "freeware",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Only <em>Freeware</em>",
+            "url": "http://freeware.intrastar.net/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Astronomy <em>Freeware</em>",
+            "url": "http://www.cvc.org/astronomy/freeware.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Andrew's <em>Freeware</em> Delphi Component Reviews",
+            "url": "http://www.ajdcomp.demon.co.uk/delphi/freeware.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "<em>Freeware</em> Hall of Fame",
+            "url": "http://www.freewarehof.org"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Free Yourself <em>Freeware</em> Site",
+            "url": "http://www.freewarenet.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "TuDragons - AD&amp;D <em>Freeware</em> and Shareware",
+            "url": "http://tudragons.iwarp.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Ranson's <em>Freeware</em> and Shareware",
+            "url": "http://freewarenet.com/home.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "<em>Freeware</em> HTTP Server for Windows NT",
+            "url": "http://emwac.ed.ac.uk/html/internet_toolchest/https/CONTENTS.HTM"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Prime Time <em>Freeware</em>",
+            "url": "http://www.ptf.com/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Solaris <em>Freeware</em>",
+            "url": "http://www.sunfreeware.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "OpenVMS <em>Freeware</em> Archive",
+            "url": "http://narnia.memphis.edu/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Sanford, Herbert - Shareware and <em>Freeware</em>",
+            "url": "http://www.geocities.com/BourbonStreet/6727/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "<em>Freeware</em> for Windows",
+            "url": "http://www.concentric.net/~sbarnold/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Shareware and <em>Freeware</em> Programs by Timothy C. Barmann",
+            "url": "http://www.cybertalk.com/~tim/software/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 936293306,
+            "title": "Maximizer Lite <em>Freeware</em>",
+            "url": "http://www.maximizer.com"
+        }
+    ],
+    "timestamp": 936293306,
+    "url": "http://search.yahoo.com:80/search?p=freeware"
+}

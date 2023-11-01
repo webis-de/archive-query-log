@@ -1,0 +1,136 @@
+{
+    "interpreted_query": "Goddess",
+    "offset": null,
+    "page": null,
+    "query": "Goddess",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "<em>Goddess</em> Wear",
+            "url": "http://www.goddess-wear.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Green <em>Goddess</em>",
+            "url": "http://www.the-green-goddess.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Green <em>Goddess</em>",
+            "url": "http://www.the-green-goddess.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Shrine of the <em>Goddess</em> Athena",
+            "url": "http://www.goddess-athena.org"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "<em>Goddess</em> Of Desire",
+            "url": "http://www.goddess-of-desire.com"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "alt.religion.<em>goddess</em>",
+            "url": "news:alt.religion.goddess"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Felice, Melissa - Aislan's <em>Goddess</em> Site",
+            "url": "http://php.iupui.edu/~mfharbri/goddess/gotindex.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "<em>Goddess</em> Of Desire",
+            "url": "http://www.goddess-of-desire.com"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "<em>Goddess</em> Design Limited",
+            "url": "http://www.goddess.ndirect.co.uk"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Tanya's <em>Goddess</em> Power",
+            "url": "http://www.goddesspower.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Tanya's <em>Goddess</em> Power",
+            "url": "http://www.goddesspower.com/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Amar Chitra Katha: Tales of <em>Goddess</em> Durga",
+            "url": "http://www.freeindia.org/ack/durga_tales.shtml"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Rajesh Kumar Banka's Indian <em>Goddess</em> Maa Kali's page",
+            "url": "http://members.tripod.com/~rajeshbanka/kali.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Sarawati: The <em>Goddess</em> of Knowledge",
+            "url": "http://www.mantraonnet.com/saraswati.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Presence of the <em>Goddess</em>, The",
+            "url": "http://www.balcorman.com/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Ah! My <em>Goddess</em> [Suen, Leonardo]",
+            "url": "http://www.geocities.com/Tokyo/Towers/2760/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "<em>Goddess</em> Project",
+            "url": "http://www.geocities.com/Tokyo/Flats/4215/index.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 955975798,
+            "title": "Helper <em>Goddess</em> Office",
+            "url": "http://www.geocities.com/Tokyo/4324/"
+        }
+    ],
+    "timestamp": 955975798,
+    "url": "http://search.yahoo.com:80/search?p=Goddess"
+}

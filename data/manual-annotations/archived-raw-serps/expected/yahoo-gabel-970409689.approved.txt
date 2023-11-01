@@ -1,0 +1,122 @@
+{
+    "interpreted_query": "gabel",
+    "offset": null,
+    "page": null,
+    "query": "gabel",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>li Asset Management",
+            "url": "http://srd.yahoo.com/srct/61573/gabel/1/1/*http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Financial_Services/Investment_Services/Mutual_Funds/Fund_Families/Gabelli_Asset_Management/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em> Group",
+            "url": "http://srd.yahoo.com/srst/341225/gabel/1/15/*http://www.gabel.net/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em> Dodd/Energysoft",
+            "url": "http://srd.yahoo.com/srst/1089434/gabel/2/15/*http://www.energysoft.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "Catlin <em>Gabel</em> School",
+            "url": "http://srd.yahoo.com/srst/229162/gabel/3/15/*http://www.catlin.edu/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em> Family",
+            "url": "http://srd.yahoo.com/srst/585235/gabel/4/15/*http://www.salinas.net/~gwhiz/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>, Glen &amp; Tammy",
+            "url": "http://srd.yahoo.com/srst/445455/gabel/5/15/*http://www.salinas.net/~gwhiz/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>, Jeffrey",
+            "url": "http://srd.yahoo.com/srst/2002878/gabel/6/15/*http://www.law-immigration.com"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>, Harvey - RE/MAX Eastbay Group",
+            "url": "http://srd.yahoo.com/srst/2034157/gabel/7/15/*http://www.ebol.com/gabel/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "Anthem",
+            "url": "http://srd.yahoo.com/srst/2355815/gabel/8/15/*http://www.zeitgeistfilm.com/current/anthem/anthem.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>li Asset Management Home Page",
+            "url": "http://srd.yahoo.com/srst/16698796/gabel/9/15/*http://www.gabelli.com"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>ein,, Stan",
+            "url": "http://srd.yahoo.com/srst/11948054/gabel/10/15/*http://www.stangabelein.com"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>er, Battocchi &amp; Griggs, LLC",
+            "url": "http://srd.yahoo.com/srst/746884/gabel/11/15/*http://home.erols.com/gabeler/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "Investment Gurus: Investing Advice from the World's Best Money Managers",
+            "url": "http://srd.yahoo.com/srst/4601751/gabel/12/15/*http://www.bluechipbooks.com"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>lini Associates",
+            "url": "http://srd.yahoo.com/srst/26040297/gabel/13/15/*http://www.gabelliniassociates.com/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "<em>Gabel</em>li, Joe - Hoe's Pittsburgh Sports Page",
+            "url": "http://srd.yahoo.com/srst/945391/gabel/14/15/*http://www.geocities.com/Colosseum/6948/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 970409689,
+            "title": "Andr\u00e1s, <em>Gabel</em>ics - AKG - MultiMedia",
+            "url": "http://srd.yahoo.com/srst/1049442/gabel/15/15/*http://www.akg.hu/~gebe/"
+        }
+    ],
+    "timestamp": 970409689,
+    "url": "http://search.yahoo.com:80/search?p=gabel"
+}

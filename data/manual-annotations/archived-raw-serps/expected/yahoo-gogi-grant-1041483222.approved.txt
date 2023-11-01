@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Gogi Grant",
+    "offset": null,
+    "page": null,
+    "query": "Gogi Grant",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Free Music Download, MP3 Music, Music Chat, Music Video, Music CD <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=1/K=Gogi+Grant/H=0/T=1041486823/F=6dc9c1f810e69106db3a42c8fa398219/*http://www.artistdirect.com/music/artist/card/0,,437746,00.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "<em>GOGI</em> <em>GRANT</em>, \"Torch Time\"",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=2/K=Gogi+Grant/H=0/T=1041486823/F=655951f4359b09888123e6167749b006/*http://www.cdmo.com/cgi-bin/cdmo/83785-10622-"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Lycos Music | <em>Gogi</em> <em>Grant</em> Profile",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=3/K=Gogi+Grant/H=0/T=1041486823/F=7c99424cda4b4ffad8843730c16adf47/*http://music.lycos.com/default.asp?QW=Gogi%20Grant"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "The Covers Project : <em>Gogi</em> <em>Grant</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=4/K=Gogi+Grant/H=0/T=1041486823/F=12c0d0bcb45358390c73e007bca3216e/*http://covers.wiw.org/artist.php/5251"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Our Profile Search The Shop Contact Us Back Home",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=5/K=Gogi+Grant/H=0/T=1041486823/F=87bd06c1aff9d0544d4dcf4e41aaa0c3/*http://www.rockinrooster.com.au/search.php?q=1380&artist=G"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Top40db - Songs by <em>Gogi</em> <em>Grant</em> (and their lyrics)",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=6/K=Gogi+Grant/H=0/T=1041486823/F=91dac031378a7de31ab2187b0611dfe9/*http://www.top40db.net/ArtistList/_Artist2.asp?Index=31"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Yahoo! Shopping Music - <em>Gogi</em> <em>Grant</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=7/K=Gogi+Grant/H=0/T=1041486823/F=6c291182a9747fd405d555fa108518b2/*http://shopping.yahoo.com/shop?d=product&id=1927020175"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "This Day In Music History: Detail View for <em>Gogi</em> <em>Grant</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=8/K=Gogi+Grant/H=0/T=1041486823/F=83fbcf3808623cacc24966d84d534a91/*http://datadragon.com/cgi-bin/detail.pl?m=Gogi%20Grant&t=p"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "UK Chart Entries 1952-1961 ; G (Judy Garland - <em>Gogi</em> <em>Grant</em>)",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=9/K=Gogi+Grant/H=0/T=1041486823/F=bbc803532b633e7c9d9ea2474fab7ae3/*http://www.btinternet.com/~johnandlizhancock/tobias/CE50_G.HTM"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Suddenly There's a Valley - <em>Gogi</em> <em>Grant</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=10/K=Gogi+Grant/H=0/T=1041486823/F=b60272421bbad3ec7d432f4147c113be/*http://www.webfitz.com/lyrics/Lyrics/1955/551955.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Greg Purcott Productions, Inc. - Acts - <em>Gogi</em> <em>Grant</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=11/K=Gogi+Grant/H=0/T=1041486823/F=29e2bea3a0ba78f55a5313232fb590c3/*http://www.gpproductions.com/acts/grant.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "<em>Gogi</em> <em>Grant</em> b",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=12/K=Gogi+Grant/H=0/T=1041486823/F=2ded8b6343c672ca292a2718456f56fc/*http://www.centrohd.com/biogra/g1/gogi_grant_b.htm"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "<em>gogi</em> <em>grant</em> - WWW Music Database",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=13/K=Gogi+Grant/H=0/T=1041486823/F=b4ca4f3461cb45dc2def797d4b741875/*http://www.roadkill.com/MDB/artist.phtml/6976"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "<em>Gogi</em> <em>Grant</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=14/K=Gogi+Grant/H=0/T=1041486823/F=de07df5837c8435021b94cf739e22324/*http://www.musical-genre.com/gogi_grant.htm"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Theatre West",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=15/K=Gogi+Grant/H=0/T=1041486823/F=88df11c42625f99f39cd89cc2e06b9b4/*http://www.theatrewest.org/archives/freud.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "<em>GOGI</em> <em>GRANT</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=16/K=Gogi+Grant/H=0/T=1041486823/F=558bc7176b039813dd40fe569bed7e15/*http://www.bigbandmusic.com/femalevocals/femaleg/grantgogi.htm"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "??????? ???? <em>GOGI</em> <em>GRANT</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=17/K=Gogi+Grant/H=0/T=1041486823/F=83c1e5e1fb12fe504129ee2d44d841f2/*http://www2.odn.ne.jp/km-osaka/audio/soft_db/vocal/gogi_gra.htm"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "<em>Gogi</em> <em>Grant</em> Used CDs - Spun.com",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=18/K=Gogi+Grant/H=0/T=1041486823/F=3b4e3a36238499dab5edd93e7c4c41a5/*http://artists.spun.com/gogi_grant"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "Buy <em>Gogi</em> <em>Grant</em> Music CDs at Songsearch",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=19/K=Gogi+Grant/H=0/T=1041486823/F=2a55af5b12d9f3fb05f670580e5d46c1/*http://catalog.songsearch.net/catalog/g/gogi_grant.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1041483222,
+            "title": "<em>Gogi</em> <em>Grant</em> - 1 Songtext(e) | by goLyr.de",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=20/K=Gogi+Grant/H=0/T=1041486823/F=3bf64691a47979c2fa0691e8f0647428/*http://www.golyr.de/artist.php?artist_id=5160"
+        }
+    ],
+    "timestamp": 1041483222,
+    "url": "http://search.yahoo.com:80/search?p=Gogi+Grant"
+}

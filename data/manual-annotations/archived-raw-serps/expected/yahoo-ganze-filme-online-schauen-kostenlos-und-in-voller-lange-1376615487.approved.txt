@@ -1,0 +1,87 @@
+{
+    "interpreted_query": "Ganze Filme online schauen kostenlos und in voller L\u00e4nge",
+    "offset": null,
+    "page": null,
+    "query": "Ganze Filme online schauen kostenlos und in voller L\u00e4nge",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Schau dir gratis <em>ganze</em> <em>Filme</em> im Internet <em>online</em> an. Hier kannst du <em>kostenlos</em> <em>Filme</em> <em>schauen</em> legal <em>und</em> <em>in voller</em> <em>L\u00e4nge</em>.",
+            "timestamp": 1376615487,
+            "title": "<em>Ganze</em> <em>Filme</em> <em>online</em> <em>schauen</em> | <em>Kostenlos</em> <em>Filme</em> gucken",
+            "url": "http://www.ganzefilme.de/"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Ganze</em> Folgen <em>online</em> <em>sehen</em> <em>kostenlos</em>. Folge verpasst? Bei den folgenden Fernsehsendern ist dies kein Problem, einfach die verpasste Folge <em>online</em> <em>und</em> <em>in voller</em> <em>L\u00e4nge</em> ...",
+            "timestamp": 1376615487,
+            "title": "Folge verpasst? <em>Ganze</em> TV Folgen <em>online</em> <em>sehen</em>!",
+            "url": "http://www.ganzefilme.de/fernsehen.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Schau dir gratis <em>ganze</em> <em>Filme</em> im Internet <em>online</em> an. Hier kannst du <em>kostenlos</em> <em>Filme</em> <em>schauen</em> legal <em>und</em> <em>in voller</em> ... <em>ganze</em> <em>filme</em> <em>in voller</em> <em>L\u00e4nge</em> <em>online</em> <em>sehen</em> ...",
+            "timestamp": 1376615487,
+            "title": "Informationen \u00fcber ganzefilme.de: <em>Ganze</em> <em>Filme</em> <em>online</em> <em>schauen</em> ...",
+            "url": "http://topwebseiten.de/ganzefilme.de"
+        },
+        {
+            "rank": 4,
+            "snippet": "ganzefilme.de bei Time2online.Schau dir gratis <em>ganze</em> <em>Filme</em> im Internet <em>online</em> an. Hier kannst du <em>kostenlos</em> <em>Filme</em> <em>schauen</em> legal <em>und</em> <em>in voller</em> <em>L\u00e4nge</em>.",
+            "timestamp": 1376615487,
+            "title": "ganzefilme.de bei Time2online. <em>Ganze</em> <em>Filme</em> <em>online</em> <em>schauen</em> ...",
+            "url": "http://www.time2online.de/info/ganzefilme.de"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1376615487,
+            "title": "<em>Ganze Filme Online Schauen Kostenlos Und In Voller </em>L\u00e4nge - Video Results",
+            "url": "http://video.search.yahoo.com/search/video?p=Ganze+Filme+online+schauen+kostenlos+und+in+voller+L%C3%A4nge"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Filme</em> jetzt <em>kostenlos</em> <em>und</em> legal auf MyVideo anschauen. ... jede Menge Kinofilme gratis <em>und</em> <em>in voller</em> <em>L\u00e4nge</em> <em>online</em> ... kann sich durchaus <em>sehen</em> lassen. <em>Kostenlos</em> ...",
+            "timestamp": 1376615487,
+            "title": "MyVideo <em>Filme</em> - <em>Filme</em> <em>kostenlos</em> <em>online</em> legal anschauen - MyVideo",
+            "url": "http://www.myvideo.de/Filme"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Ganze</em> <em>Filme</em> <em>Kostenlos</em> Anschauen wurde bei ... Schau dir gratis <em>ganze</em> <em>Filme</em> im Internet <em>online</em> an. Hier kannst du <em>kostenlos</em> <em>Filme</em> <em>schauen</em> legal <em>und</em> <em>in voller</em> <em>L\u00e4nge</em>.",
+            "timestamp": 1376615487,
+            "title": "<em>Ganze</em> <em>Filme</em> <em>Kostenlos</em> Anschauen bei Time2online",
+            "url": "http://www.time2online.de/suchen/Ganze_Filme_Kostenlos_Anschauen"
+        },
+        {
+            "rank": 8,
+            "snippet": "Titel: <em>Ganze Filme online schauen kostenlos und in voller L\u00e4nge</em>: Beschreibung: J eder der <em>online</em> <em>kostenlos</em> <em>filme</em> <em>schauen</em> m\u00f6chte kommt hier voll <em>und</em> ganz auf seine ...",
+            "timestamp": 1376615487,
+            "title": "<em>Ganze Filme online schauen kostenlos und in voller L\u00e4nge</em> ...",
+            "url": "http://www.bambooh-webkatalog.de/details/3364-Ganze-Filme-online-schauen-kostenlos-und-in-voller-Laenge/"
+        },
+        {
+            "rank": 9,
+            "snippet": "... <em>Ganze</em> <em>Filme</em> <em>online</em> <em>schauen</em> | <em>Kostenlos</em> <em>Filme</em> ... gratis <em>ganze</em> <em>Filme</em> im Internet <em>online</em> an. Hier kannst du <em>kostenlos</em> <em>Filme</em> <em>schauen</em> legal <em>und</em> <em>in voller</em> <em>L\u00e4nge</em>.",
+            "timestamp": 1376615487,
+            "title": "ganzefilme.de - <em>Ganze</em> <em>Filme</em>. <em>Ganze</em> <em>Filme</em> <em>online</em> <em>schauen</em> ...",
+            "url": "http://who.pho.to/ganzefilme.de"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1376615487,
+            "title": "<em>Filme</em> <em>KOSTENLOS</em> <em>und</em> <em>in VOLLER</em> <em>L\u00c4NGE</em> <em>online</em> <em>schauen</em>! - YouTube",
+            "url": "http://www.youtube.com/watch?v=pUufXs2oR7k"
+        },
+        {
+            "rank": 11,
+            "snippet": "<em>Ganze</em> <em>Filme</em> <em>online</em> <em>schauen</em> | <em>Kostenlos</em> ... Schau dir gratis <em>ganze</em> <em>Filme</em> im Internet <em>online</em> an. Hier kannst du <em>kostenlos</em> <em>Filme</em> <em>schauen</em> legal <em>und</em> <em>in voller</em> <em>L\u00e4nge</em> ...",
+            "timestamp": 1376615487,
+            "title": "ganzefilme.de <em>Ganze</em> <em>Filme</em> <em>online</em> <em>schauen</em> | <em>Kostenlos</em> <em>Filme</em> gucken",
+            "url": "http://www.coolsocial.net/sites/www/ganzefilme.de.html"
+        }
+    ],
+    "timestamp": 1376615487,
+    "url": "http://search.yahoo.com/search?p=Ganze+Filme+online+schauen+kostenlos+und+in+voller+L%C3%A4nge"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "Bill Callahan (American football)",
+    "offset": null,
+    "page": null,
+    "query": "Bill Callahan (American football)",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Bill Callahan</em> (American football) Not to be confused with Bill Callihan. William E. Callahan (born July 31, 1956) is an American football coach who is the offensive line coach for the Cleveland Browns of the National Football League (NFL).",
+            "timestamp": 1636808341,
+            "title": "en.wikipedia.org \u203a wiki \u203a Bill_Callahan_(American_football)Bill Callahan (American football) - Wikipedia",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AArF0L5gt.;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2fen.wikipedia.org%2fwiki%2fBill_Callahan_%28American_football%29/RK=2/RS=hvy6hu2.eUjTvpHN95why9hMthw-"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1636808341,
+            "title": "americanfootball.fandom.com \u203a wiki \u203a Bill_CallahanBill Callahan | American Football Wiki | Fandom",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AAt10L5gt.;_ylu=Y29sbwNncTEEcG9zAzIEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2famericanfootball.fandom.com%2fwiki%2fBill_Callahan/RK=2/RS=2BVsXVb523sNJkPbNnAYIOnO7o8-"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1636808341,
+            "title": "americanfootballdatabase.fandom.com \u203a wiki \u203a Bill_CallahanBill Callahan (American football) | American Football Database |...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AAvF0L5gt.;_ylu=Y29sbwNncTEEcG9zAzMEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2famericanfootballdatabase.fandom.com%2fwiki%2fBill_Callahan_%28American_football%29/RK=2/RS=PLt4brNEmuVVdWbCXiC_Te9rPOs-"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Bill Callahan</em> is an<em> American football</em> coach who is currently the assistant head coach and offensive line coach for the Washington Redskins of the National Football League (NFL). He was formerly the head coach of the Oakland Raiders for the 2002 and 2003 seasons and led them to Super Bowl XXXVII.",
+            "timestamp": 1636808341,
+            "title": "factualideas.com \u203a bill-callahan-footballerBill Callahan (American football) Bio, Age, Wife, Net worth,...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AAxF0L5gt.;_ylu=Y29sbwNncTEEcG9zAzQEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2ffactualideas.com%2fbill-callahan-footballer%2f/RK=2/RS=MwNway7nUB9uM44X1bvgOuEwny8-"
+        },
+        {
+            "rank": 5,
+            "snippet": "29/9/2020 \u00b7  William E.<em> Callahan</em> (born July 31, 1956) is an<em> American football</em> coach who is the offensive line coach for the Cleveland Browns of the National Football League (NFL). He was formerly the head coach of the Oakland Raiders for the 2002 and 2003 seasons and led them to Super Bowl XXXVII. He was also th",
+            "timestamp": 1636808341,
+            "title": "wikimili.com \u203a en \u203a Bill_Callahan_(American_football)Bill Callahan (American football) - WikiMili, The Best Wikipedia...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AAxl0L5gt.;_ylu=Y29sbwNncTEEcG9zAzUEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2fwikimili.com%2fen%2fBill_Callahan_%28American_football%29/RK=2/RS=i0QcvJ9BNTOulb68wXysj1ZWBs0-"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Bill Callahan</em>. William Timothy <em>Callahan</em>. Position: DB. 6-0 , 200lb (183cm, 90kg) Born: April 11 , 1964 (Age: 57-202d) in Natrona Heights, PA. College: Pittsburgh ( College Stats ) Weighted Career AV (100-95-...): 0 (16637th overall since 1960) High School: Valley ( PA )",
+            "timestamp": 1636808341,
+            "title": "www.pro-<em>football</em>-reference.com \u203a players \u203a CBill Callahan Stats | Pro-Football-Reference.com",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AAyF0L5gt.;_ylu=Y29sbwNncTEEcG9zAzYEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2fwww.pro-football-reference.com%2fplayers%2fC%2fCallBi20.htm/RK=2/RS=51sFVqmn7mzjHZJv33yjwAqPU1s-"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Bill Callahan (American football</em>) Wiki, Biography, Age as Wikipedia. <em>Bill Callahan (American football</em>) is an <em>American</em> <em>football</em> coach who is the offensive line coach for the Cleveland Browns of the National <em>Football</em> League (NFL). He was formerly the head coach of the Oakland Raiders for the 2002 and 2003 seasons and led them to Super Bowl XXXVII.",
+            "timestamp": 1636808341,
+            "title": "wikitrusted.com \u203a bill-callahan-american-football-wikipediaBill Callahan (American football) Wiki, Biography, Age, Career...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AAyl0L5gt.;_ylu=Y29sbwNncTEEcG9zAzcEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2fwikitrusted.com%2fbill-callahan-american-football-wikipedia%2f/RK=2/RS=qGmCJcXjkTz6il3gpVq2iU4JfwY-"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1636808341,
+            "title": "fampeople.com \u203a cat-bill-callahan-american-footballBill Callahan (American football) - Interesting stories about...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AAzF0L5gt.;_ylu=Y29sbwNncTEEcG9zAzgEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2ffampeople.com%2fcat-bill-callahan-american-football/RK=2/RS=ktri.7EVrhyL4TaOHR48YNGWmzQ-"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Bill Callahan (American football</em>) net worth Sep, 2021. William E. <em>Callahan</em> (born July 31, 1956) is an <em>American</em> <em>football</em> coach who is the offensive line coach for the Cleveland Browns of the National <em>Football</em> League (NFL). He was formerly the head coach of the Oakland Raiders for the 2002 and 2003 seasons and led them to Super Bowl XXXVII.",
+            "timestamp": 1636808341,
+            "title": "peopleai.com \u203a fame \u203a identitiesFame | Bill Callahan (American football) net worth and salary...",
+            "url": "https://r.search.yahoo.com/_ylt=AwrgEa6nxI9hE8AA0V0L5gt.;_ylu=Y29sbwNncTEEcG9zAzkEdnRpZANTQTEwMzNfMQRzZWMDc3I-/RV=2/RE=1636840743/RO=10/RU=https%3a%2f%2fpeopleai.com%2ffame%2fidentities%2fbill-callahan-american-football/RK=2/RS=4yFBZd8KDiiAmvGrz.RRoPdYWus-"
+        }
+    ],
+    "timestamp": 1636808341,
+    "url": "http://au.search.yahoo.com/search?p=Bill+Callahan+(American+football)&ei=UTF-8&d=%7B%22dn%22%3A%22yk%22%2C%22ykid%22%3A%22d9b7247f-1d93-4148-a7cc-d7447903c37a%22+%7D&fr2=p%3As%2Cv%3Aw%2Cm%3Akg-pasf%2Cct%3AGetPersonInfo&fr=fp-tts"
+}
