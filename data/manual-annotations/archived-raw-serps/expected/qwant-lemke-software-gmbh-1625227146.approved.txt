@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "lemke software gmbh",
+    "offset": null,
+    "page": null,
+    "query": "lemke software gmbh",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Search for Instant Quality Results at Helping.com. Whatever You Need, Whatever You Want, Whatever You Desire, We Provide",
+            "timestamp": 1625227146,
+            "title": "Wat is software - Wat is software",
+            "url": "https://www.bing.com/aclick?ld=e8-QFJOSqmYi7skT6dXRQWDjVUCUzzpLq_XnAzOZe_TRYIdaXrlAxWfO5hWDouUF4y4WhcywdbyXDtW5sENsz6bSh2smE730wx3BTkYZDs6tWT2SJAbNIAvP0kSGCEwOT_fTDW5NL1Rp7LT3OG-GvV8dV2GKbbeNfs_Pjigt-a56KvVX4Z&u=aHR0cHMlM2ElMmYlMmZ3d3cuaGVscGluZy5jb20lMmZ2ZXJ0aWNhbCUzZnNfcHQlM2Rzb3VyY2UyJTI2dHlwZSUzZGNvbnRlbnQlMjZzX2l0JTNkY29udGVudCUyNnNfZ2wlM2R1cyUyNnNfZHRvJTNkZCUyNnNfY2huJTNkNDAwNzEwMTc3JTI2cSUzZHdhdCtpcytzb2Z0d2FyZQ&rlid=3f0c9b13536b17fe85f1fbcc48c01776"
+        },
+        {
+            "rank": 2,
+            "snippet": "Another way to learn about software. Read more about software.",
+            "timestamp": 1625227146,
+            "title": "Qamelto - About software",
+            "url": "https://www.bing.com/aclick?ld=e88AhsgT8EQS7DQIDeHTpZ6DVUCUwWD8zsAfwcypRVQQOAJ4N949NVfLLN1Hgi91OqWn-nv7ISfPNqC8s2XVorHw2Vx4NhsPTsAN8p5WW7eEkA1KHf6Wj6tXm9WlWbDvfrVLRE1rd3mJ-1VpgFDCd1KHG3WNEwt4HttfEmag7RdIsVrWo0&u=aHR0cHMlM2ElMmYlMmZ3d3cucWFtZWx0by5jb20lM2Ztc2Nsa2lkJTNkODcwMjE1Mzk1MzRjMTllNjAxYTE3NWU2NDhlN2JkYTElMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2RXZWIlMjUyMGdhc3Ryb25vbXklMjUyMGFkcyUyNnV0bV90ZXJtJTNkc29mdHdhcmUlMjZ1dG1fY29udGVudCUzZEdhc3Ryb25vbXklMjUyMHByb21vdGlvbg&rlid=87021539534c19e601a175e648e7bda1"
+        },
+        {
+            "rank": 3,
+            "snippet": "Read Customer Reviews &amp; Find Best Sellers. Free 2-Day Shipping w/Amazon Prime.",
+            "timestamp": 1625227146,
+            "title": "Buy Software on Amazon - Low Prices for Software",
+            "url": "https://www.bing.com/aclick?ld=e8J09EW_l32A9JWwIUfO8WuDVUCUywQKC6aWFO4uys00PZSC2Reco9exGEojI8pmvBAD1GD1iq_Bmd3IEYi7VIGX5ynHbGZKD7cLtz2Aonh7BWXtAKke8KxPoD9IEYhp-Fhg8Hcg8w7Y7sbcMrs4WOjLURqdle1iTIBj9K5P2WvDhgH8xc&u=aHR0cCUzYSUyZiUyZnd3dy5hbWF6b24uY29tJTJmcyUyZiUzZmllJTNkVVRGOCUyNmtleXdvcmRzJTNkc29mdHdhcmUlMjZ0YWclM2RtaDBiLTIwJTI2aW5kZXglM2Rzb2Z0d2FyZSUyNmh2YWRpZCUzZDc4NDc3NzYyMzg3MDgyJTI2aHZxbXQlM2RwJTI2aHZibXQlM2RiYiUyNmh2ZGV2JTNkYyUyNnJlZiUzZHBkX3NsXzV2aGNxbDAyemhfYg&rlid=268e7e2ac12a1c17ad071ef5da817216"
+        },
+        {
+            "rank": 4,
+            "snippet": "Over 100 of the Best PC Programs. Download Free for PC and Mac. Award winning popular programs. See the programs trusted by millions. Try free downloads.",
+            "timestamp": 1625227146,
+            "title": "Best Software of 2020 - Download Popular Software Free",
+            "url": "https://www.bing.com/aclick?ld=e8yVH28_X1vRNFPZH8tWDiDDVUCUzsgsptbCHppz8NLsWasYsNpcjTtgcrM_cOB5WJE8MpLvZ7ABZkC5rgkLDZEg_4FJv9mq79s2sSsWkxl75D-iW2ytLylSrdfamhDE7tbcnMyFGKQ5xHgpoU0eCwSTyEwlaaoiTprHSL1P6jzbhh08Z-&u=aHR0cHMlM2ElMmYlMmZ3d3cubmNoc29mdHdhcmUuY29tJTJmc2VsZWN0JTJmaW5kZXguaHRtbCUzZm1zY2xraWQlM2QxNzg2NTQwYTNhMWExNjUyODkwYjM0ZDUyMWIxZDdmYSUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZEVOLUMxJTI2dXRtX3Rlcm0lM2Rzb2Z0d2VhciUyNnV0bV9jb250ZW50JTNkU29mdHdhcmUlMjUyMERvd25sb2Fk&rlid=1786540a3a1a1652890b34d521b1d7fa"
+        },
+        {
+            "rank": 5,
+            "snippet": "Lemke Software GmbH Zum Rohkamp 5e D-31228 Peine E-Mail support@lemkesoft.com fon +49 (0) 5171. 72200 fax +49 (0) 5171. 72201 skype: lemkesoftgmbh. Kontakt. Postanschrift Lemke Software GmbH Zum Rohkamp 5e D-31228 Peine. Support support@lemkesoft.com. Netzwerke XING LINKEDIN. SOCIAL NETWORK. LemkeSoft. Bestellung; Support; Presse;",
+            "timestamp": 1625227146,
+            "title": "Lemke Software: Mac Fotobearbeitung, Mac Diashow, Mac ...",
+            "url": "https://www.lemkesoft.de/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Contact Direct address: Lemke Software GmbH Zum Rohkamp 5e D-31228 Peine E-Mail support@lemkesoft.com fon +49 (0) 5171. 72200 fax +49 (0) 5171. 72201 skype: lemkesoftgmbh",
+            "timestamp": 1625227146,
+            "title": "Lemke Software: Lemkesoft",
+            "url": "https://www.lemkesoft.de/en/lemkesoft/"
+        },
+        {
+            "rank": 7,
+            "snippet": "GraphicConverter. Full version: just $39.95 / \u20ac34.95 *. Upgrade: just $25.95 / \u20ac23.95 *. (*) The prices may vary in the Mac App Store due to exchange rate fluctuations. The prices apply exactly for orders through FastSpring and via PayPal. (**) The family license can be used on up to five computers in one household for non-commercial purposes.",
+            "timestamp": 1625227146,
+            "title": "Lemke Software: GraphicConverter",
+            "url": "https://www.lemkesoft.de/en/products/graphicconverter/"
+        },
+        {
+            "rank": 8,
+            "snippet": "\u200eDownload apps by Lemke Software GmbH, including GraphicConverter, GraphicConverter 9, GraphicConverter 10, and many more.",
+            "timestamp": 1625227146,
+            "title": "\u200eLemke Software GmbH Apps on the App Store",
+            "url": "https://apps.apple.com/us/developer/lemke-software-gmbh/id408364643"
+        },
+        {
+            "rank": 9,
+            "snippet": "Lemke Software GmbH - Aktuell. Lemke Software GmbH. Please choose a language to visit our official website. Bitte w\u00e4hlen Sie eine Sprache um zu unserer Webseite zu gelangen: English. Deutsch. Click here to visit the Lemke Software board/forum.",
+            "timestamp": 1625227146,
+            "title": "Lemke Software GmbH - Aktuell",
+            "url": "https://www.lemkesoft.info/"
+        },
+        {
+            "rank": 10,
+            "snippet": "GraphicConverter 11. GraphicConverter 11 is now available. It offers a lot of new features like record and save macros, RAW images, unpack archives, wide equalization and much more. Try it for free and see the great features. [more] Full version: just $39.95 / \u20ac 34.95 *. Upgrade: just $25.95 / 23.95 *.",
+            "timestamp": 1625227146,
+            "title": "Lemke Software: Image Editing, Slideshow, Browser, Batch ...",
+            "url": "https://www.lemkesoft.de/en/image-editing-slideshow-browser-batch-conversion-metadata-and-more-on-your-mac/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Lemke Software GmbH Zum Rohkamp 5e D-31228 Peine E-Mail support@lemkesoft.com fon +49 (0) 5171. 72200 fax +49 (0) 5171. 72201 skype: lemkesoftgmbh. Contact. Postal address: Lemke Software GmbH Zum Rohkamp 5e D-31228 Peine. Support support@lemkesoft.com. Networks XING LINKEDIN. SOCIAL NETWORK. LemkeSoft. Order; Support; Press;",
+            "timestamp": 1625227146,
+            "title": "Lemke Software: CADintosh",
+            "url": "https://www.lemkesoft.de/en/products/cadintosh/"
+        },
+        {
+            "rank": 12,
+            "snippet": "See more of Lemke Software GmbH on Facebook. Log In. Forgot account? or. Create New Account. Not Now. Lemke Software GmbH. Software Company in Peine, Germany. 5. 5 out of 5 stars. Community See All. 379 people like this. 400 people follow this. About See All. Zum Rohkamp 5e (4,069.55 mi) Peine, Germany, 31228.",
+            "timestamp": 1625227146,
+            "title": "Lemke Software GmbH - Home | Facebook",
+            "url": "https://www.facebook.com/Lemkesoft/?__xts__%5B2%5D=68.ARDemIulcC2J81udC5sdXGPnfyv9jTJIi3Tybq85IvEkj8x3EJikOatccl-y9xg1kffEwGweal5hO2elVKhCB3QPRaRz192V3k_3LgFVk8pFZhMJGxhVuPV2I_T2b13wrWy89Mkn7YduzXTA61bnXzpSRDB7irkNFo7ES2aO5SwCKDujRakT2VC-ohKnWp7FKP78UUczQf8RrE26i8Mrk6eVdw4xDJNwqEu6rZef8RpErZMzlWg6M6y2UR0K6KLPpaAl16jL5wM4W4w4gv-dGSvSyo1V1WAsp1mfCnHjEPJh_8-6XYJx5z1D4Vgh2BSXUBmrjwNxdsaMwqYz&__xts__%5B3%5D=68.ARAXbEwWYsagWUvdbHIdbuCSx24NSLe_rf3Au3CYsbP-ctRf7GxvgDaTvJlsROJs-VXi_EaSih_VjprRb6Xvy85XPJPsHkKCEyv3f8PU5R_liPC1aeJTxcS7vZtcuhMUwNUYo91lokTPSS-AceT74ix-Ruau5fDtNEqVb0Spx2MuXAooSm1x5nKR7TrODcybJoSwmuQ0bCugt7ymvFfU6pVZmm_VAbAQg3GlLO4tP0v8UwYD4ZZDEZsOFGMV5lXE22H-KI9tzhE7bFqq3BIRK_rL5INI_MJlYt4mJuCqrxwyzHK_zWgf9uhjHqXOBcjTeWugQp3MJrjWeTIk"
+        },
+        {
+            "rank": 13,
+            "snippet": "Lemke Software. We develop shareware software for the Apple Macintosh since 1992. Our most famous product is GraphicConverter. The software can convert more than 200 graphic file formats, has a ...",
+            "timestamp": 1625227146,
+            "title": "Lemke Software - CNET Download",
+            "url": "https://download.cnet.com/developer/lemke-software/i-840"
+        },
+        {
+            "rank": 14,
+            "snippet": "July 22, 2012 in Image Editing (E) [prMac.com] Peine, Germany - Longtime Macintosh developer and publisher, Lemke Software GmbH today is pleased to announce GraphicConverter 8.2, an important update to its popular image utility for Mac OS X. GraphicConverter 8 has been completely rewritten and now supports 64-bit and 32-bit Intel-based Apple computers.",
+            "timestamp": 1625227146,
+            "title": "Lemke Software Releases GraphicConverter 8.2 for Mac OS X",
+            "url": "https://prmac.com/release/45626"
+        }
+    ],
+    "timestamp": 1625227146,
+    "url": "https://www.qwant.com/?q=lemke+software+gmbh&t=all"
+}

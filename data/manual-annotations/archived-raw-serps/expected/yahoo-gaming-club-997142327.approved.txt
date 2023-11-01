@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "gaming club",
+    "offset": null,
+    "page": null,
+    "query": "gaming club",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Clubs and Pools",
+            "url": "http://srd.yahoo.com/srct/47363431/gaming+club/1/5/*http://dir.yahoo.com/Regional/U_S__States/California/Recreation_and_Sports/Gambling/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Clubs and Pools",
+            "url": "http://srd.yahoo.com/srct/12781817/gaming+club/2/5/*http://dir.yahoo.com/Regional/U_S__States/Texas/Recreation_and_Sports/Gambling/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Historical Miniatures <em>Gaming</em> Society (HMGS)",
+            "url": "http://srd.yahoo.com/srct/150540/gaming+club/3/5/*http://dir.yahoo.com/Recreation/Hobbies/Collecting/Miniatures_and_Figurines/Wargame_Miniatures/Clubs_and_Organizations/Historical_Miniatures_Gaming_Society__HMGS_/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Clubs and Pools",
+            "url": "http://srd.yahoo.com/srct/680091/gaming+club/4/5/*http://dir.yahoo.com/Recreation/Gambling/Lotteries/Clubs_and_Pools/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "London Clubs International",
+            "url": "http://srd.yahoo.com/srct/30991346/gaming+club/5/5/*http://dir.yahoo.com/Regional/Countries/United_Kingdom/England/Counties_and_Regions/Greater_London/Recreation_and_Sports/Gambling/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Darkstar - The Science Fiction &amp; <em>Gaming Club</em> at UCSD",
+            "url": "http://srd.yahoo.com/srst/22183850/gaming+club/1/98/*http://darkstar.ucsd.edu/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "<em>Gaming Club</em> Casino",
+            "url": "http://srd.yahoo.com/srst/46132023/gaming+club/2/98/*http://www.gamingclub.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "<em>Gaming Club</em>",
+            "url": "http://srd.yahoo.com/srst/230686/gaming+club/3/98/*http://www.contrib.andrew.cmu.edu/usr/gc00/gc00"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "CMU <em>Gaming Club</em>",
+            "url": "http://srd.yahoo.com/srst/148439/gaming+club/4/98/*http://www.contrib.andrew.cmu.edu/usr/gc00/gc00"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "UMass Grenadier and <em>Gaming</em> Society",
+            "url": "http://srd.yahoo.com/srst/148449/gaming+club/5/98/*http://www.umass.edu/rso/gameclub/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "SVEROK -  Swedish Roleplaying and Conflict <em>Gaming</em> Federation",
+            "url": "http://srd.yahoo.com/srst/149903/gaming+club/6/98/*http://www.lysator.liu.se/sverok/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "CAGE - Chicago Area <em>Gaming</em> Enthusiasts",
+            "url": "http://srd.yahoo.com/srst/767705/gaming+club/7/98/*http://www.cage.org/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Chess and <em>Gaming Club</em>",
+            "url": "http://srd.yahoo.com/srst/212182/gaming+club/8/98/*http://www.tulane.edu/~sports/text/Chess.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Computer <em>Gaming Club</em>",
+            "url": "http://srd.yahoo.com/srst/8744670/gaming+club/9/98/*http://www.auburn.edu/student_info/computer_gaming/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Miami of Ohio Strategy <em>Gaming Club</em>",
+            "url": "http://srd.yahoo.com/srst/826022/gaming+club/10/98/*http://miavx1.acs.muohio.edu/~sgccwis/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Auburn University's Computer <em>Gaming Club</em>",
+            "url": "http://srd.yahoo.com/srst/16321357/gaming+club/11/98/*http://www.auburn.edu/student_info/computer_gaming/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "PSXtreme <em>Gaming Club</em>",
+            "url": "http://srd.yahoo.com/srst/941076/gaming+club/12/98/*http://www.geocities.com/TimesSquare/Arcade/2320/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Grenadier and <em>Gaming</em> Society",
+            "url": "http://srd.yahoo.com/srst/214029/gaming+club/13/98/*http://www.umass.edu/rso/gameclub/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Philippine Computer <em>Gaming</em> League (PCGL)",
+            "url": "http://srd.yahoo.com/srst/43600572/gaming+club/14/98/*http://www.pcgl.com.ph/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 997142327,
+            "title": "Historical Miniatures <em>Gaming</em> Society (HMGS)",
+            "url": "http://srd.yahoo.com/srst/2065068/gaming+club/15/98/*http://www.erinet.com/bp/hmgs.html"
+        }
+    ],
+    "timestamp": 997142327,
+    "url": "http://search.yahoo.com:80/search?p=gaming+club"
+}

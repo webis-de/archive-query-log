@@ -1,0 +1,115 @@
+{
+    "interpreted_query": "CopyQ",
+    "offset": null,
+    "page": null,
+    "query": "CopyQ",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>CopyQ</em> is advanced clipboard manager with editing and scripting features.",
+            "timestamp": 1665902945,
+            "title": "<em></em>CopyQ",
+            "url": "https://hluk.github.io/CopyQ/"
+        },
+        {
+            "rank": 2,
+            "snippet": "3 weeks ago -\n            Download <em>CopyQ</em> for free. Clipboard manager with advanced features. <em>CopyQ</em> is advanced clipboard manager with searchable and editable history with support for image formats, command line control and more.",
+            "timestamp": 1665902945,
+            "title": "<em></em>CopyQ download | SourceForge.net",
+            "url": "https://sourceforge.net/projects/copyq/"
+        },
+        {
+            "rank": 3,
+            "snippet": "July 6, 2022 -\n            Clipboard manager with advanced features. Contribute to hluk/<em>CopyQ</em> development by creating an account on GitHub.",
+            "timestamp": 1665902945,
+            "title": "<em></em>GitHub - hluk/CopyQ: Clipboard manager with advanced features",
+            "url": "https://github.com/hluk/CopyQ"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>CopyQ</em> is clipboard manager \u2013 a desktop application which stores content of the system clipboard whenever it changes and allows to search the history and copy it back to the system clipboard or paste it directly to other applications.",
+            "timestamp": 1665902945,
+            "title": "<em></em>Welcome to CopyQ's documentation! \u2014 CopyQ documentation",
+            "url": "https://copyq.readthedocs.io/"
+        },
+        {
+            "rank": 5,
+            "snippet": "3 weeks ago -\n            Download the latest version of <em>CopyQ</em> for Mac for free. Read 3 user reviews and compare with similar apps on MacUpdate.",
+            "timestamp": 1665902945,
+            "title": "<em></em>Download CopyQ for Mac | MacUpdate",
+            "url": "https://www.macupdate.com/app/mac/62394/copyq"
+        },
+        {
+            "rank": 6,
+            "snippet": "3 weeks ago -\n            <em>CopyQ</em> free download: Clipboard management software for Windows. Safe PC download for Windows 32-bit and 64-bit, latest version.",
+            "timestamp": 1665902945,
+            "title": "<em></em>CopyQ - Download",
+            "url": "https://copyq.en.lo4d.com/windows"
+        },
+        {
+            "rank": 7,
+            "snippet": "Find and install hundreds of apps and games for Linux. Enjoy GIMP, GNU Octave, Spotify, Steam and many more!",
+            "timestamp": 1665902945,
+            "title": "<em></em>CopyQ\u2014Linux Apps on Flathub",
+            "url": "https://flathub.org/apps/details/com.github.hluk.copyq"
+        },
+        {
+            "rank": 8,
+            "snippet": "3 weeks ago -\n            <em>CopyQ</em> is an advanced clipboard software for Windows. It allows you to save more than the default one item into clipboard which is the limit for Windows. Each time that you copy...",
+            "timestamp": 1665902945,
+            "title": "<em></em>CopyQ Download (2022 Latest)",
+            "url": "https://www.filehorse.com/download-copyq/"
+        },
+        {
+            "rank": 9,
+            "snippet": "To start <em>CopyQ</em>, double-click the program icon or run command <em>copyq</em>. This starts the graphical interface which can be accessed from the tray (NOTE: on OS X the tray defaults to the top-right of the screen and is not to be confused with Launchpad). Click the tray icon to show application window ...",
+            "timestamp": 1665902945,
+            "title": "<em></em>Basic Usage \u2014 CopyQ documentation",
+            "url": "https://copyq.readthedocs.io/en/latest/basic-usage.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "August 10, 2010 -\n            <em>CopyQ</em> is advanced clipboard manager with editing and scripting features. It monitors system clipboard and saves its content in customized tabs. Saved clipboard can be later copied and pasted directly into any application.",
+            "timestamp": 1665902945,
+            "title": "<em></em>Ubuntu Manpage: CopyQ - Clipboard Manager with Advanced Features",
+            "url": "https://manpages.ubuntu.com/manpages/bionic/man1/copyq.1.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "February 28, 2022 -\n            If you find yourself repeatedly copying and pasting text, URLs, or images, consider installing a clipboard manager like <em>CopyQ</em> on your Linux desktop.",
+            "timestamp": 1665902945,
+            "title": "<em></em>How to Manage Your Linux Clipboard Effectively Using CopyQ",
+            "url": "https://www.makeuseof.com/manage-linux-clipboard-using-copyq/"
+        },
+        {
+            "rank": 12,
+            "snippet": "June 17, 2021 -\n            <em>CopyQ</em> monitors system clipboard and saves its content in customized tabs. Saved clipboard can be later copied and pasted directly into any application. Store text, HTML, images or any other custom formats. Quickly browse and filter items in clipboard history.",
+            "timestamp": 1665902945,
+            "title": "<em></em>CopyQ Portable (clipboard manager) | PortableApps.com",
+            "url": "https://portableapps.com/apps/utilities/copyq-portable"
+        },
+        {
+            "rank": 13,
+            "snippet": "July 6, 2022 -\n            Clipboard manager with advanced features. Contribute to hluk/<em>CopyQ</em> development by creating an account on GitHub.",
+            "timestamp": 1665902945,
+            "title": "<em></em>Releases \u00b7 hluk/CopyQ \u00b7 GitHub",
+            "url": "https://github.com/hluk/CopyQ/releases"
+        },
+        {
+            "rank": 14,
+            "snippet": "June 21, 2018 -\n            <em>CopyQ</em> is an advanced, cross-platform and open source clipboard manager that has functions such as history, search and edit",
+            "timestamp": 1665902945,
+            "title": "<em></em>CopyQ: a clipboard manager with advanced features | From Linux",
+            "url": "https://blog.desdelinux.net/en/copyq-un-administrador-de-portapapeles-con-funciones-avanzadas/"
+        },
+        {
+            "rank": 15,
+            "snippet": "May 14, 2020 -\n            Ever been in a situation where you had a text copied and then you copy another and then realize you needed the text you copied earlier? <em>CopyQ</em> could help you.",
+            "timestamp": 1665902945,
+            "title": "<em></em>CopyQ Clipboard Manager for Keeping a Track of Clipboard History",
+            "url": "https://itsfoss.com/copyq-clipboard-manager/"
+        }
+    ],
+    "timestamp": 1665902945,
+    "url": "https://search.brave.com/search?q=CopyQ"
+}

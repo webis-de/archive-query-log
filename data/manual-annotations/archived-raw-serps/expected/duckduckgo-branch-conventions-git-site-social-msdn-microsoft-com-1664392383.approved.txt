@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "branch conventions git site:social.msdn.microsoft.com",
+    "offset": null,
+    "page": null,
+    "query": "branch conventions git site:social.msdn.microsoft.com",
+    "results": [],
+    "timestamp": 1664392383,
+    "url": "https://duckduckgo.com/?q=branch%20conventions%20git+site:social.msdn.microsoft.com&t=ffab"
+}

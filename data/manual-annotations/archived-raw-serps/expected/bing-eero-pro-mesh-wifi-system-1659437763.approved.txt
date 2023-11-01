@@ -1,0 +1,52 @@
+{
+    "interpreted_query": "eero pro mesh wifi system",
+    "offset": null,
+    "page": null,
+    "query": "eero pro mesh wifi system",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Mesh</em> network - Powered by proprietary TrueMesh technology, the <em>eero mesh WiFi</em> network leverages multiple wireless access points to create an incredibly dependable internet experience, all on a single <em>mesh WiFi system</em>. Quick &amp; easy setup - Replacing your old <em>WiFi</em> router has never been easier than with the <em>eero Pro mesh WiFi system</em>.",
+            "timestamp": 1659437763,
+            "title": "Amazon <em>eero Pro mesh WiFi system</em> (1 <em>Pro</em> + 1 Beacon)",
+            "url": "https://www.amazon.com/eero-Home-WiFi-System-Beacon/dp/B071HHK2PN"
+        },
+        {
+            "rank": 2,
+            "snippet": "Premium <em>Wi-Fi</em> 6 performance - <em>eero Pro</em> 6 covers up to 6,000 sq. ft. with support for <em>wifi</em> speeds up to a gigabit. Say goodbye to dead spots and buffering - <em>eero</em>\u2019s <em>mesh wifi</em> technology optimizes for your space\u2014so you can confidently stream 4K \u2026",
+            "timestamp": 1659437763,
+            "title": "Amazon.com: Amazon <em>eero Pro</em> 6 tri-band <em>mesh Wi-Fi</em> 6 <em>system</em> \u2026",
+            "url": "https://www.amazon.com/Amazon-eero-pro-6-3-pack/dp/B085VNCZHZ"
+        },
+        {
+            "rank": 3,
+            "snippet": "Whole-home <em>Wi-Fi</em> 6 coverage - <em>eero</em> covers up to 1,500 sq. ft. with <em>wifi</em> and supports <em>wifi</em> speeds up to 900 Mbps. Say goodbye to dead spots and buffering - Our TrueMesh technology intelligently routes traffic to reduce drop-offs so you can confidently stream \u2026",
+            "timestamp": 1659437763,
+            "title": "<em>Eero</em> 6 <em>mesh Wifi</em> router - <em>amazon</em>.com",
+            "url": "https://www.amazon.com/Eero-6-Router/dp/B085VM9ZDD"
+        },
+        {
+            "rank": 4,
+            "snippet": "This bundle includes one Amazon <em>eero Pro mesh WiFi</em> router and two Amazon <em>eero</em> Beacon <em>mesh WiFi</em> range extender (add-on to <em>eero WiFi</em> systems). Whole-home <em>WiFi system</em> - The Amazon <em>eero Pro mesh WiFi system</em> (1 <em>eero Pro</em> + 2 <em>eero</em> Beacon) replaces the traditional <em>WiFi</em> router, <em>WiFi</em> extender, and internet booster by covering a 2-4 bedroom home with fast and \u2026",
+            "timestamp": 1659437763,
+            "title": "Amazon <em>eero Pro mesh WiFi system</em> (1 <em>Pro</em> + 2 Beacons) - brown \u2026",
+            "url": "https://www.amazon.com/Amazon-eero-mesh-system-Beacons/dp/B09M71XXN3"
+        },
+        {
+            "rank": 5,
+            "snippet": "Shop <em>eero Pro Mesh Wi-Fi</em> 5 <em>System (3 eeros), 2nd Generation</em> White at <em>Best Buy</em>. Find low everyday prices and buy online for delivery or in-store pick-up. Price Match Guarantee. ... The <em>eero Pro WiFi System</em> (3-pack) comes with three eeros and is made for homes with 3-5+ bedrooms. Each <em>eero</em> is tri-band and uses TrueMesh technology to enable great ...",
+            "timestamp": 1659437763,
+            "title": "<em>eero</em> - <em>Pro Mesh Wi-Fi</em> 5 <em>System (3 eeros), 2nd Generation</em>",
+            "url": "https://www.bestbuy.com/site/eero-pro-mesh-wi-fi-5-system-3-eeros-2nd-generation-white/5873518.p"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Eero Pro</em> router/extender - The Amazon <em>eero Pro mesh</em> router replaces your traditional <em>WiFi</em> router. A single <em>eero Pro</em> is a perfect start for any home and can be paired with another <em>eero Pro</em> or <em>eero</em> Beacon to quickly add coverage as needed. <em>eero Pro</em> is backwards compatible with 1st generation <em>eero</em> routers.",
+            "timestamp": 1659437763,
+            "title": "Amazon <em>eero Pro mesh WiFi</em> router - brown box packaging",
+            "url": "https://www.amazon.com/Amazon-eero-mesh-WiFi-router/dp/B07DPNSW6P"
+        }
+    ],
+    "timestamp": 1659437763,
+    "url": "https://www.bing.com/search?q=eero+pro+mesh+wifi+system&FORM=QSRE6"
+}

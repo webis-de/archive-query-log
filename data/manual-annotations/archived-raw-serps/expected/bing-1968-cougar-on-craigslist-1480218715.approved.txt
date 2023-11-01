@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "1968 cougar on craigslist",
+    "offset": null,
+    "page": null,
+    "query": "1968 cougar on craigslist",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Find <em>1968 Mercury Cougars for Sale</em> on Oodle Marketplace. Join millions of people using Oodle to find unique used cars for sale, certified pre-owned car listings, and ...",
+            "timestamp": 1480218715,
+            "title": "<em>1968 Mercury Cougars for Sale</em> | Used on Oodle Marketplace",
+            "url": "http://cars.oodle.com/1968-mercury-cougar/for-sale/"
+        },
+        {
+            "rank": 2,
+            "snippet": "There are 10 <em>1968 Mercury Cougar</em> vehicles for sale today on <em>ClassicCars.com</em>.",
+            "timestamp": 1480218715,
+            "title": "<em>1968 Mercury Cougar For Sale</em> on <em>ClassicCars.com</em> - 10 \u2026",
+            "url": "https://classiccars.com/listings/find/1968/mercury/cougar"
+        },
+        {
+            "rank": 3,
+            "snippet": "Search <em>1968 Mercury Cougar for sale</em> on <em>Carsforsale.com</em>. With millions of cars for sale, you\u2019ll find the best local deal.",
+            "timestamp": 1480218715,
+            "title": "<em>1968 Mercury Cougar For Sale</em> - <em>Carsforsale.com</em>",
+            "url": "https://www.carsforsale.com/1968-mercury-cougar-for-sale-C1056738"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Cougar Wrecks 1968</em> ^ <em>1968 Mercury Cougar</em> that I painted for a used car lot in 1989. It sat under this carport for 5 or 6 years before a tornado came ...",
+            "timestamp": 1480218715,
+            "title": "<em>Cougar Wrecks 1968</em> - Ford Mercury <em>Cougar</em> XR7",
+            "url": "http://www.fordmercurycougarxr7.com/pages/CougarWrecks/1968.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Certified Pre-Owned: No Transmission: Automatic Color: Green Description: Used <em>1968 Mercury Cougar for sale</em> - $13,900, 616 miles . Avg. Dealer Rating ...",
+            "timestamp": 1480218715,
+            "title": "<em>1968 Mercury Cougar For Sale - CarGurus</em>",
+            "url": "https://www.cargurus.com/Cars/l-Used-1968-Mercury-Cougar-c8675"
+        },
+        {
+            "rank": 6,
+            "snippet": "Find <em>1968 Mercury Cougar Classic Cars for</em> Sale on Oodle Marketplace. Join millions of people using Oodle to find unique used cars for sale, certified pre-owned car ...",
+            "timestamp": 1480218715,
+            "title": "<em>1968 Mercury Cougar Classic Cars for</em> Sale | Used Cars on ...",
+            "url": "http://cars.oodle.com/1968-mercury-cougar/for-sale/antique-classic-cars/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>1968 Mercury Cougar XR7</em>-G A little history about this car.....The year 1967 was sensational for Lin... - Classified ads for <em>1968 Mercury Cougar Xr7</em>. 15 ads found.",
+            "timestamp": 1480218715,
+            "title": "Used <em>1968 Mercury Cougar Xr7</em> For Sale <em>on craigslist</em>",
+            "url": "http://www.getusedvehicles.com/craigslist_1968-mercury-cougar-xr7"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>1968</em> at <em>West Coast Classic Cougar :: Specializing in</em> 1967, <em>1968</em>, 1969, 1970, 1971, ... <em>1968 Cougar</em> Electric Headlight Door conversion kit with USED MOTORS.",
+            "timestamp": 1480218715,
+            "title": "<em>1968</em> at <em>West Coast Classic Cougar :: Specializing in</em> 1967 ...",
+            "url": "http://www2.cougarpartscatalog.com/19681.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Find great deals on eBay for <em>1968 Mercury Cougar</em> in <em>Cougar</em>. Shop with confidence.",
+            "timestamp": 1480218715,
+            "title": "<em>1968 Mercury Cougar</em> | eBay",
+            "url": "http://www.ebay.com/bhp/1968-mercury-cougar"
+        },
+        {
+            "rank": 10,
+            "snippet": "Find great deals on eBay for <em>1968 cougar</em> and 1967 <em>cougar</em>. Shop with confidence.",
+            "timestamp": 1480218715,
+            "title": "<em>1968 cougar</em> | eBay",
+            "url": "http://www.ebay.com/sch/i.html?_nkw=1968+cougar"
+        }
+    ],
+    "timestamp": 1480218715,
+    "url": "http://www.bing.com/search?q=1968+cougar+on+craigslist&form=QBRE"
+}

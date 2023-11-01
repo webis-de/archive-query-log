@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "united reformed churches in north america",
+    "offset": null,
+    "page": null,
+    "query": "united reformed churches in north america",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1446324275,
+            "title": "<em>United Reformed Churches in North America</em>Your browser indicates if you've visited this link",
+            "url": "http://www.urcna.org"
+        }
+    ],
+    "timestamp": 1446324275,
+    "url": "https://duckduckgo.com/?q=united+reformed+churches+in+north+america"
+}

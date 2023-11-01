@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "dark brown mushrooms that melt in to the ground",
+    "offset": null,
+    "page": null,
+    "query": "dark brown mushrooms that melt in to the ground",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "19 TYPES OF <em>MUSHROOMS</em> <em>TO</em> KNOW 1. Portobello <em>Mushrooms</em> These massive, <em>brown</em> umbrellas are native <em>to</em> <em>the</em> grasslands of Europe and North America. They\u2019re extremely thick and have an earthy-yet-meaty...",
+            "timestamp": 1657827723,
+            "title": "<em></em>18 Types of Mushrooms to Look For, Whether You're into ... - Yahoo!",
+            "url": "https://www.yahoo.com/lifestyle/18-types-mushrooms-look-whether-130000517.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "19 TYPES OF <em>MUSHROOMS</em> <em>TO</em> KNOW 1. Portobello <em>Mushrooms</em> These massive, <em>brown</em> umbrellas are native to the grasslands of Europe and North America. They\u2019re extremely thick and have an earthy-yet-meaty...",
+            "timestamp": 1657827723,
+            "title": "<em></em>18 Types of Mushrooms to Look For, Whether You're into Foraging the ...",
+            "url": "https://sg.news.yahoo.com/18-types-mushrooms-look-whether-130000517.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "April 20, 2021 -\n            When I was a kid we used to go to the Hunan Garden in Rochester, MN whenever we wanted to eat out. The dish we loved best was the egg rolls. They would always serve them with the neon-orange sweet and sour sauce, that tannish-yellow hot mustard, and some kind of chili oil.",
+            "timestamp": 1657827723,
+            "title": "<em></em>How to Make Ground Venison and Wild Mushroom Egg Rolls | Outdoor Life",
+            "url": "https://www.outdoorlife.com/blogs/cast-iron-chef/how-make-ground-venison-egg-rolls/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Amanita porphyria, also knows as Grey veiled amanita, is a medium to large, fleshy agaric that has a greyish <em>brown</em> cap, sometimes with grey patches, white gills, ring and a broad, abrupt bulb at the base. <em>The</em> <em>mushroom</em> grows scattered on <em>the</em> <em>ground</em> under conifers and less commonly in mixed ...",
+            "timestamp": 1657827723,
+            "title": "<em></em>Poisonous mushrooms - Mushroom World",
+            "url": "https://www.mushroom.world/mushrooms/poisonous?page=1"
+        },
+        {
+            "rank": 5,
+            "snippet": "Little <em>brown</em> <em>mushrooms</em> are found in spring, summer and fall, in all habitats. Poisonous LBMS may grow on soil or wood and may appear in lawns, pastures or forests. The bright-orange is well named. Not only is it pumpkin-colored and found in the fall- it also glows in <em>the</em> <em>dark</em>.",
+            "timestamp": 1657827723,
+            "title": "<em></em>Poisonous Mushrooms",
+            "url": "https://projects.ncsu.edu/project/bio183de/Black/protista/protista_news/poisonous.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "November 15, 2014 -\n            Agaricus Family Field <em>Mushroom</em> (Agaricus Campestris) Found: As the name suggests, in fields normally after a rainy, warm summer. Description: Has a round cap that expands to 10cm in diameter, the colour of which is white at first, but then becomes cream/<em>brown</em>.",
+            "timestamp": 1657827723,
+            "title": "<em></em>Edible British Mushrooms | EveryoneLovesAFungi",
+            "url": "https://everyonelovesafungi.wordpress.com/profiles/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Put your chocolate in the crock pot and let it start <em>to</em> <em>melt</em> down as your prepping everything else. I usually turn the temp on low and then turn down to keep warm as it starts <em>to</em> <em>melt</em>. Be sure to also mix every so often so it <em>melts</em> evenly and doesn\u2019t burn. DO NOT GET WATER IN THE CHOCOLATE.",
+            "timestamp": 1657827723,
+            "title": "<em></em>Delicious chocolate treats for the pickiest mushroom eaters",
+            "url": "https://www.reddit.com/r/shrooms/comments/v5robh/delicious_chocolate_treats_for_the_pickiest/"
+        },
+        {
+            "rank": 8,
+            "snippet": "May 18, 2022 -\n            The appearance of black mold can vary depending on the species, but it is usually a black <em>to</em> <em>dark</em> <em>brown</em> or greenish-black slimy film that grows on organic matter. It is often found in damp and <em>dark</em> places such as basements, bathrooms, and crawlspaces. It\u2019s easy to confuse black mold with ...",
+            "timestamp": 1657827723,
+            "title": "<em></em>Black Mold - Pictures, Causes and Signs (Ultimate Guide)",
+            "url": "https://www.bustmold.com/resources/about-mold/types-of-mold/black-mold/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Listed below are some (but certainly ... of a <em>brown</em>-spored <em>mushroom</em> growing terrestrially in the woods, with a cap under 5 cm, not clearly eliminated by the choices in the key above--together with references to technical literature that may (or may not) help you. Some <em>dark</em>-spored Little ...",
+            "timestamp": 1657827723,
+            "title": "<em></em>Key to Dark-Spored, Gilled Mushrooms (MushroomExpert.Com)",
+            "url": "https://www.mushroomexpert.com/gilled_dark.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Find out more about the edible wild <em>mushrooms</em> (fungi) and their poisonous lookalikes in this <em>mushroom</em> (fungi) foraging guide created by The Foraging Course Company",
+            "timestamp": 1657827723,
+            "title": "<em></em>Mushroom Foraging Guides | UK Fungi Foraging Guide",
+            "url": "https://www.foragingcoursecompany.co.uk/mushroom-foraging-guide"
+        },
+        {
+            "rank": 11,
+            "snippet": "Cyclocybe erebia, <em>Dark</em> Fieldcap <em>mushroom</em>: identification pictures (images), habitat, edible or poisonous; taxonomy, etymology, synonyms, similar species",
+            "timestamp": 1657827723,
+            "title": "<em></em>Cyclocybe erebia, Dark Fieldcap mushroom",
+            "url": "https://www.first-nature.com/fungi/cyclocybe-erebia.php"
+        },
+        {
+            "rank": 12,
+            "snippet": "Click the images below to learn more about common urban <em>mushroom</em> species \u00b7 Agaricus arvensis Horse <em>Mushroom</em>",
+            "timestamp": 1657827723,
+            "title": "<em></em>What Mushroom is growing in MY Yard?! | Urban Mushrooms",
+            "url": "http://urbanmushrooms.com/index.php?id=6"
+        },
+        {
+            "rank": 13,
+            "snippet": "Set aside until <em>the</em> <em>mushrooms</em> are tender, about 5 minutes. Keep the broth warm over very low heat. <em>Melt</em> <em>the</em> butter in a heavy large saucepan over medium heat. Add olive oil. Add the onions and saute until tender, about 8 minutes. Add the white <em>mushrooms</em> and garlic.",
+            "timestamp": 1657827723,
+            "title": "<em></em>Mad about Mushrooms . . .: April 2017",
+            "url": "https://www.madaboutmushrooms.com/mad_about_mushrooms/2017/04/"
+        },
+        {
+            "rank": 14,
+            "snippet": "March 12, 2020 -\n            Wipe <em>the</em> <em>mushrooms</em> with a damp cloth and remove the stems. Get out 2 pounds (0.91 kg) of <em>mushrooms</em> and dip a paper towel in water. Wring out the water and wipe <em>the</em> <em>mushrooms</em> with the damp cloth to remove dirt and grit. Then pop off the stems from each <em>mushroom</em> and discard them.",
+            "timestamp": 1657827723,
+            "title": "<em></em>How to Roast Mushrooms: 12 Steps (with Pictures) - wikiHow",
+            "url": "https://www.wikihow.com/Roast-Mushrooms"
+        },
+        {
+            "rank": 15,
+            "snippet": "December 29, 2018 -\n            Chaga (Inonotus obliquus) is a medicinal <em>mushroom</em> <em>that</em> grows on birch trees in the northern hemisphere. Known as the \u2018King of <em>Mushrooms</em>\u2019, Chaga stimulates and supports the health of the immune system, helping wounds heal and effectively reducing the severity of allergies.",
+            "timestamp": 1657827723,
+            "title": "<em></em>NEW Superfood Chocolate Bars - Light Cellar Blog",
+            "url": "https://blog.lightcellar.ca/new-superfood-chocolate-bars/"
+        },
+        {
+            "rank": 16,
+            "snippet": "What It Looks Like: Hard <em>brown</em> discs, tablets, capsules How it's Administered: Discs are chewed, swallowed or smoked. Tablets and capsules are taken orally. Effects on User: Same as LSD. Psilocybin Other Names: Magic <em>Mushrooms</em>, 'shrooms What It Looks Like: Fresh or dried <em>mushrooms</em> How it's ...",
+            "timestamp": 1657827723,
+            "title": "<em></em>Illegal Drugs Identification Chart: What They Look Like &amp; How to ...",
+            "url": "http://www.sixwise.com/newsletters/05/04/05/illegal-drugs-identification-chart-what-they-look-like--amp-how-to-recognize-their-effects.htm"
+        },
+        {
+            "rank": 17,
+            "snippet": "December 2, 2020 -\n            A large bag will typically make a 5 lb fruiting block, including the weight of your spawn. The bag allows you to easily mix your spawn after inoculation, and the filter patch allows your <em>mushroom</em> culture to breath while it grows throughout the sawdust. Once your <em>mushrooms</em> have fully colonized ...",
+            "timestamp": 1657827723,
+            "title": "<em></em>Mushroom Grow Bags: The Ultimate Guide - FreshCap Mushrooms",
+            "url": "https://learn.freshcap.com/growing/mushroom-grow-bags-the-ultimate-guide/"
+        },
+        {
+            "rank": 18,
+            "snippet": "April 2, 2019 -\n            Directions Step 1 In a medium bowl, mix together the cream cheese and 1 cup of butter until well blended. Mix in the flour until fully incorporated. Pat into a ball, and refrigerate while you make the filling. Step 2 <em>Melt</em> 2 tablespoons of butter in a large skillet.",
+            "timestamp": 1657827723,
+            "title": "<em></em>Mushroom Turnovers Recipe | Allrecipes",
+            "url": "https://www.allrecipes.com/recipe/76343/mushroom-turnovers/"
+        },
+        {
+            "rank": 19,
+            "snippet": "November 1, 2021 -\n            Here's a look at the different types of edible <em>mushrooms</em> used in various recipes. Learn more and see pictures of the different fungi.",
+            "timestamp": 1657827723,
+            "title": "<em></em>9 Edible Mushroom Varieties - The Spruce Eats",
+            "url": "https://www.thespruceeats.com/edible-mushroom-varieties-1807698"
+        },
+        {
+            "rank": 20,
+            "snippet": "August 20, 2004 -\n            Step 4. Cut <em>mushrooms</em> into 1/4-inch-thick slices. in a large skillet heat remaining 2 tablespoons each of oil and butter over moderately high heat until foam begins to subside and saut\u00e9 <em>mushrooms</em> ...",
+            "timestamp": 1657827723,
+            "title": "<em></em>Osso Buco with Mushroom Sauce Recipe | Epicurious",
+            "url": "https://www.epicurious.com/recipes/food/views/osso-buco-with-mushroom-sauce-11391"
+        }
+    ],
+    "timestamp": 1657827723,
+    "url": "https://search.brave.com/search?q=dark+brown+mushrooms+that+melt+in+to+the+ground"
+}

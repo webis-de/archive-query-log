@@ -1,0 +1,59 @@
+{
+    "interpreted_query": "what is a description",
+    "offset": null,
+    "page": null,
+    "query": "what is a description",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The descriptions that we associate with names routinely do not describe the individuals that we intend to refer to. Asked to come up with a description to substitute for the name \u2018Einstein\u2019, many people would write \u2018The inventor of the atom bomb\u2019 (which of course he was not).",
+            "timestamp": 1655190914,
+            "title": "Descriptions (Stanford Encyclopedia of Philosophy)",
+            "url": "https://plato.stanford.edu/entries/descriptions/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Noun. ( en noun ) (semantics) A statement of the meaning of a word or word group or a sign or symbol (dictionary definitions). A statement expressing the essential nature of something; formulation. The action or process of defining.",
+            "timestamp": 1655190914,
+            "title": "Definition vs Description - What's the difference? | WikiDiff",
+            "url": "https://wikidiff.com/definition/description"
+        },
+        {
+            "rank": 3,
+            "snippet": "1. Good description is carefully worded. While you need to name someone or something directly and give correct terms for people, places, or events being described, \"good description goes beyond accuracy and precision to include the musical qualities of language.\"Good description is sensory.",
+            "timestamp": 1655190914,
+            "title": "What is a description for kids?",
+            "url": "https://mikra.scottexteriors.com/what-is-a-description-for-kids"
+        },
+        {
+            "rank": 4,
+            "snippet": "Noun. A sketch or account of anything in words; a portraiture or representation in language; an enumeration of the essential qualities of a thing or species. The act of describing; a delineation by marks or signs. A set of characteristics by which someone or something can be recognized.",
+            "timestamp": 1655190914,
+            "title": "Description vs Explanation - What's the difference? | WikiDiff",
+            "url": "https://wikidiff.com/description/explanation"
+        },
+        {
+            "rank": 5,
+            "snippet": "What is a product description? A product description is a piece of writing that conveys the features and benefits of a product, ranging from basic facts to stories that make a product compelling to an ideal buyer. Product descriptions commonly include\u2026 Physical product details and features; Styles; Colors; Weights ; Dimensions; Images; Technical specifications",
+            "timestamp": 1655190914,
+            "title": "What Is a Product Description? - ClearVoice Blog",
+            "url": "https://www.clearvoice.com/blog/what-is-a-product-description/"
+        },
+        {
+            "rank": 6,
+            "snippet": "A technical description is a document for end-users that describes an object in terms of its parts, functions, organization, design, key details, etc. Technical description can be a separate ...",
+            "timestamp": 1655190914,
+            "title": "What Is a Technical Description? - Medium",
+            "url": "https://medium.com/technical-writing-is-easy/what-is-technical-description-63f02c0dfe28"
+        },
+        {
+            "rank": 7,
+            "snippet": "A snippet is the description or summary part of search result on Google Search and other properties (for example, Google News). Google uses a number of different sources to automatically determine the appropriate snippet, including descriptive information in the meta description tag for each page.",
+            "timestamp": 1655190914,
+            "title": "How to Write Meta Descriptions | Google Search Central | Documentation ...",
+            "url": "https://developers.google.com/search/docs/advanced/appearance/snippet"
+        }
+    ],
+    "timestamp": 1655190914,
+    "url": "https://www.ecosia.org/search?q=what+is+a+description"
+}

@@ -6,70 +6,70 @@
     "results": [
         {
             "rank": 3,
-            "snippet": null,
+            "snippet": "Situated on our 1st floor, our spacious Taikoo tea lounge serves as a chic spot for casual gatherings at Mandarin Oriental, Guangzhou.",
             "timestamp": 1652086766,
             "title": "The Taikoo Lounge | Mandarin Oriental Hotel, Guangzhou",
             "url": "https://www.google.com/url?q=https://www.mandarinoriental.com/guangzhou/tianhe/fine-dining/lounges/the-taikoo-lounge&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAUQAg&usg=AOvVaw0dX6JG4zKS59iXCAaxnu6e"
         },
         {
             "rank": 4,
-            "snippet": null,
+            "snippet": "Mandarin Oriental, Guangzhou. Known historically as Canton or Kwangchow, Guangzhou is the third largest city in China and the largest city in southern China\u00a0...",
             "timestamp": 1652086766,
             "title": "Taikoo Hui Guangzhou-Living",
             "url": "https://www.google.com/url?q=http://www.taikoohui.com/en/Hotel&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAoQAg&usg=AOvVaw0WVe0xkJgOeA4YoNJUOX2M"
         },
         {
             "rank": 5,
-            "snippet": null,
+            "snippet": "\u041e\u0446\u0435\u043d\u043a\u0430  8,9/10 \n (116)   \u00b7 \u0426\u0435\u043d\u044b \u043d\u0430 \u043f\u0440\u0435\u0434\u0441\u0442\u043e\u044f\u0449\u0438\u0435 \u0434\u0430\u0442\u044b \u043e\u0442 15 082 \u0440\u0443\u0431. \u0437\u0430 \u043d\u043e\u0447\u044c (\u041c\u044b \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u043c \u0440\u0430\u0437\u043d\u0438\u0446\u0443 \u0432 \u0446\u0435\u043d\u0435)\n\nGreat location. Spacious room. Attentive service. Unique spa. ... The hotel is attached to a new shopping mall which is nice. ... Same as other Mandarin Oriental.",
             "timestamp": 1652086766,
             "title": "\u041e\u0442\u0435\u043b\u044c Mandarin Oriental Guangzhou - \u0413\u0443\u0430\u043d\u0447\u0436\u043e\u0443 - Booking.com",
             "url": "https://www.google.com/url?q=https://www.booking.com/hotel/cn/taikoo-hui-guangzhou-development-company-limited-mandarin-oriental.ru.html&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAsQAg&usg=AOvVaw2jfrVFpRUirggABV1o2HTf"
         },
         {
             "rank": 6,
-            "snippet": null,
+            "snippet": "Other names the building has commonly been known as, including former names, common informal names, local names, etc. Taikoo Hui Guangzhou Cultural Plaza Hotel\u00a0...",
             "timestamp": 1652086766,
             "title": "Taikoo Hui Mandarin Oriental Hotel - The Skyscraper Center",
             "url": "https://www.google.com/url?q=https://www.skyscrapercenter.com/building/taikoo-hui-mandarin-oriental-hotel/9065&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAgQAg&usg=AOvVaw3-C__rzZJx-9fuBj2h8e3X"
         },
         {
             "rank": 7,
-            "snippet": null,
+            "snippet": "\u041e\u0446\u0435\u043d\u043a\u0430  5,0 \n (5\u00a0179)   \u00b7 14 217 \u0440\u0443\u0431 - 26 689 \u0440\u0443\u0431 (\u041d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u0441\u0440\u0435\u0434\u043d\u0435\u0433\u043e \u0442\u0430\u0440\u0438\u0444\u0430 \u0434\u043b\u044f \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u043e\u0433\u043e \u043d\u043e\u043c\u0435\u0440\u0430)\n\n\u0411\u043b\u0438\u0436\u0430\u0439\u0448\u0438\u0435 \u0434\u043e\u0441\u0442\u043e\u043f\u0440\u0438\u043c\u0435\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438: Taikoo Hui (0,09 \u043a\u043c), OneLink Walk (0,2 \u043a\u043c) \u0438 Fortune Plaza (East Sports Road) (0,5 \u043a\u043c). \u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0432\u0441\u0435 \u0431\u043b\u0438\u0436\u0430\u0439\u0448\u0438\u0435\u00a0...",
             "timestamp": 1652086766,
             "title": "MANDARIN ORIENTAL, GUANGZHOU 5* (\u0413\u0443\u0430\u043d\u0447\u0436\u043e\u0443) - TripAdvisor",
             "url": "https://www.google.com/url?q=https://www.tripadvisor.ru/Hotel_Review-g298555-d2547883-Reviews-Mandarin_Oriental_Guangzhou-Guangzhou_Guangdong.html&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAkQAg&usg=AOvVaw1n5ZG3v2USiTqdxBBQa6QI"
         },
         {
             "rank": 8,
-            "snippet": null,
+            "snippet": "Mandarin Oriental, Guangzhou is a stunning five-star hotel in the midst of one of ... business and leisure travellers immediate access to all of TaiKoo Hui,\u00a0...",
             "timestamp": 1652086766,
             "title": "Mandarin Oriental, Guangzhou | Swire Properties",
             "url": "https://www.google.com/url?q=https://www.swireproperties.com/en/portfolio/current-developments/taikoo-hui-guangzhou/mandarin-oriental-guangzhou&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAcQAg&usg=AOvVaw0vrRI-37mHKJ1FBeiSZHbd"
         },
         {
             "rank": 9,
-            "snippet": null,
+            "snippet": "Location Guangzhou, China ; Type Cultural, Financial, Hospitality, Master Planning, Mixed-Use, Office, Public / Government, Retail / Entertainment,\u00a0...",
             "timestamp": 1652086766,
             "title": "Taikoo Hui + Mandarin Oriental Hotel and Residences - Arquitectonica",
             "url": "https://www.google.com/url?q=https://arquitectonica.com/architecture/project/taikoo-hui-and-mandarin-oriental-hotel-residences/&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAIQAg&usg=AOvVaw0BJStK8f3QeR3N_Wh7_try"
         },
         {
             "rank": 10,
-            "snippet": null,
+            "snippet": "Taikoo Hui Mandarin Oriental Hotel is a 28-story skyscraper in Guangzhou, Guangdong, China. View a detailed profile of the structure 280391 including\u00a0...",
             "timestamp": 1652086766,
             "title": "Taikoo Hui Mandarin Oriental Hotel, Guangzhou | 280391 | EMPORIS",
             "url": "https://www.google.com/url?q=https://www.emporis.com/buildings/280391/taikoo-hui-mandarin-oriental-hotel-guangzhou-china&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAMQAg&usg=AOvVaw0Lohc7YvzdzY9mXwx34uAT"
         },
         {
             "rank": 11,
-            "snippet": null,
+            "snippet": "... the first Mandarin Oriental Hotel in Guangzhou and serviced apartments. Designed by the world-acclaimed architect Arquitectonica, Taikoo Hui Guangzhou\u00a0...",
             "timestamp": 1652086766,
             "title": "Taikoo Hui (Guangzhou, China) - Hager Group",
             "url": "https://www.google.com/url?q=https://www.hagergroup.com/en/detail/taikoo-hui/e75784/%3Fbackpageid%3D3313%26backblockid%3D74935519&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAQQAg&usg=AOvVaw2Ldap2ylRXvGVPEpx-fukP"
         },
         {
             "rank": 12,
-            "snippet": null,
+            "snippet": "\u041e\u0446\u0435\u043d\u043a\u0430  4,7 \n (193) \n\nExplore the area \u00b7 Tianhe Stadium8 min walk \u00b7 Grandview Mall9 min walk \u00b7 Taikoo Hui8 min drive \u00b7 Guangzhou (CAN-Baiyun Intl.)28 min drive\u00a0...",
             "timestamp": 1652086766,
             "title": "Mandarin Oriental Guangzhou - Expedia",
             "url": "https://www.google.com/url?q=https://www.expedia.com/Guangzhou-Hotels-Mandarin-Oriental-Guangzhou.h5628172.Hotel-Information&sa=U&ved=2ahUKEwjd-oLQodL3AhXeEEQIHagZBI8QFnoECAYQAg&usg=AOvVaw3FGvNd95JT0Rw4eSDzYegT"

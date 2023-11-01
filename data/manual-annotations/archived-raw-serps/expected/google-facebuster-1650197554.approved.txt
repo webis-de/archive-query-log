@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\"Facebuster\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Facebuster\"",
+    "results": [],
+    "timestamp": 1650197554,
+    "url": "https://www.google.com/search?&q=%22Facebuster%22&tbs=bkt:s&tbm=bks"
+}

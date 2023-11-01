@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "We acknowledge the Traditional Custodians of the land on which our office stands, The Wurundjeri people of the Kulin Nation, and pay our respects to Elders past, present and emerging. site:www.sandyps.vic.edu.au",
+    "offset": null,
+    "page": null,
+    "query": "We acknowledge the Traditional Custodians of the land on which our office stands, The Wurundjeri people of the Kulin Nation, and pay our respects to Elders past, present and emerging. site:www.sandyps.vic.edu.au",
+    "results": [],
+    "timestamp": 1654920640,
+    "url": "https://duckduckgo.com/?q=We+acknowledge+the+Traditional+Custodians+of+the+land+on+which+our+office+stands%2C+The+Wurundjeri+people+of+the+Kulin+Nation%2C+and+pay+our+respects+to+Elders+past%2C+present+and+emerging.+site%3Awww.sandyps.vic.edu.au&t=opera"
+}

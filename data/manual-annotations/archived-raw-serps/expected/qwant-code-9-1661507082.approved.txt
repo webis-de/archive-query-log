@@ -1,0 +1,94 @@
+{
+    "interpreted_query": "\"Code 9\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Code 9\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Code: 9: Created by Mark Herwick, Dan Sachoff, Glenn Meehan. With Wesley Dening, Joe Dalo, Danielle Stewart, Peyton Clark. The series involves a family pulling a prank with their unsuspecting parents.",
+            "timestamp": 1661507082,
+            "title": "Code: 9 (TV Series 2012) - IMDb",
+            "url": "https://www.imdb.com/title/tt2307145/"
+        },
+        {
+            "rank": 2,
+            "snippet": "The Code 9 Project Provides PTSD And Suicide Prevention Resources For First Responders And Veterans",
+            "timestamp": 1661507082,
+            "title": "The Code 9 Project | You Are Not Alone",
+            "url": "https://thecode9project.org/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Code 9 is used as an alarm while texting friends / BF/GF. While texting type 9 at the sight of parent/ guardian, notifying the person you text that a parent is near and immediately talk about school/work. To notify said parent/guardian is away, type 9 or Code 9.",
+            "timestamp": 1661507082,
+            "title": "Urban Dictionary: Code 9",
+            "url": "https://www.urbandictionary.com/define.php?term=Code%209"
+        },
+        {
+            "rank": 4,
+            "snippet": "CODE9 focus on providing the highest level of support and service. Our relationships with clients are equally important. We aim to deliver a personable service team with professionalism and experience. ABOUT US KEEPING THE REAL ESTATE INDUSTRY CONNECTED We have extensive experience servicing the Real Estate industry. OUR SERVICES",
+            "timestamp": 1661507082,
+            "title": "Code 9 \u2013 I.T. Business Solutions",
+            "url": "https://code9.com.au/"
+        },
+        {
+            "rank": 5,
+            "snippet": "In a time when emotions are running high between law enforcement and civilians regarding racism, unnecessary violence, and attacks on Police Officers, the documentary Code 9 - Officer Needs...",
+            "timestamp": 1661507082,
+            "title": "CODE 9 - Official Trailer - YouTube",
+            "url": "https://www.youtube.com/watch?v=G2X4dOvF6cA"
+        },
+        {
+            "rank": 6,
+            "snippet": "Code 9 Security has declared a Climate Emergency. There is no doubt that time is running out for us to act if we want to make a meaningful impact on climate change. The threat climate change has on each and every one of us is very real, and this is why in September 2021, Code 9 Security formally declared a Climate Emergency.",
+            "timestamp": 1661507082,
+            "title": "Code 9 Security Ltd - SIA Licensed Security Professionals",
+            "url": "https://www.code9security.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "\u201cCode nine\u201d could mean \u201cSend everyone and their brothers!\u201d or it could mean \u201cThe aliens are friendly and brought a book \u2014 How To Serve Humans \u2014 with them.\u201d You might be able to look up your local police codes on their web page. You might find them on any number of scanner-fan web pages along the 'net.",
+            "timestamp": 1661507082,
+            "title": "What does a police 'code 9' mean? - Quora",
+            "url": "https://www.quora.com/What-does-a-police-code-9-mean"
+        },
+        {
+            "rank": 8,
+            "snippet": "Welcome to CODE-9! LOGIN Zkz",
+            "timestamp": 1661507082,
+            "title": "Welcome to CODE-9!",
+            "url": "https://www.code9technologies.com/login"
+        },
+        {
+            "rank": 9,
+            "snippet": "This award winning powerful documentary (available on http://www.thecode9film.com/ ) explores the darker side of law enforcement as it tells the stories of ...",
+            "timestamp": 1661507082,
+            "title": "Code 9 - Officer Needs Assistance Video - YouTube",
+            "url": "https://www.youtube.com/watch?v=jO01Qeg15KU"
+        },
+        {
+            "rank": 10,
+            "snippet": "CODE 9 IT Solutions is the premier Murphy, Wylie, Sachse, Plano area computer repair and virus removal support center. Our trained technicians are fully CompTia A+ with additional industry-recognized certifications. We offer complete diagnostic services and competitive Flat Rate Services Virus Removal $49.99 Flat Rate",
+            "timestamp": 1661507082,
+            "title": "Dallas Computer Repair - CODE 9 IT",
+            "url": "http://code9it.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Find discounts on Icd 9. Search &amp; Save Online Today!",
+            "timestamp": 1661507082,
+            "title": "Icd 9 - Compare Prices",
+            "url": "https://www.bing.com/aclick?ld=e8hCh9qON2teQSU4ZmVOB8tjVUCUzxGajYyOJnQEWI3xaWlKuU5tzETXLqz1HRjT0m0Am7NE1hQSfoAtaH1-f04lvHdREsbVXmivBT45VEob3X3DTzVoBum8fm4GRU53i6qPeoF3qn93lkCNjESs1kGQI317yOoRxS2vcetnonRcdtFZcm&u=aHR0cHMlM2ElMmYlMmZzaG9wLmFsd2F5c3Jldmlldy5jb20lMmZhbHdheXNyZXZpZXcyMyUyZmljZCUyYjklM2Z1dG1fc291cmNlJTNkQmluZyUyNnJtZ2NpZCUzZDMxNjcxMTMxNSUyNnJtZ2FnaWQlM2QxMzYzMzk0ODQ5NDI0NTc0JTI2cm1na2lkJTNkNjBkMzAyOWIxMTMyMWQzMmM2NWU2MTkzYTMxOTBlYzIlMjZtc2Nsa2lkJTNkNjBkMzAyOWIxMTMyMWQzMmM2NWU2MTkzYTMxOTBlYzI&rlid=60d3029b11321d32c65e6193a3190ec2"
+        },
+        {
+            "rank": 12,
+            "snippet": "ICD10.PracticeTestGeeks.com/ICD-10/Testing",
+            "timestamp": 1661507082,
+            "title": "Icd 9 - Icd 9",
+            "url": "https://www.bing.com/aclick?ld=e8AXj4JTvF5VRofoZGU_ov0DVUCUwErsgSq9Lcb48lLZ91BP6_vOQ1e6IbQqKwMoyyjiCYt8mtj8r29TlorLT04EWKoM1Y3SfvVX4a42wTlTCkS2vDu4aw0mb0wYoyRY4Ts0ZimaA2B3k5yEuU1ztTO8KGKjDy6UAVHbaRNMlTpHZB3Ktx&u=aHR0cHMlM2ElMmYlMmZJQ0QxMC5QcmFjdGljZVRlc3RHZWVrcy5jb20lMmZpY2QtMTAtcHJhY3RpY2UtdGVzdC1leGFtJTJmJTNmbXNjbGtpZCUzZDNjMTgwYjgzYzVmNzFiMGQ4N2RjNjg4Yjc3ZGNhNDQxJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkSUNEJTI1MjAxMCUyNnV0bV90ZXJtJTNkaWNkJTI1MjA5JTI2dXRtX2NvbnRlbnQlM2RJQ0QlMjUyMDEw&rlid=3c180b83c5f71b0d87dc688b77dca441"
+        }
+    ],
+    "timestamp": 1661507082,
+    "url": "https://www.qwant.com/?q=%22Code+9%22&t=all"
+}

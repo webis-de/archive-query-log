@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "froggy pool",
+    "offset": null,
+    "page": null,
+    "query": "froggy pool",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "By Request: Make this Fabulous Doll <em>Pool</em> today!#DIY#Crafts#Learn#HowTo#HowtoMake#DIYSwimmingPool#DIYPool#MiniaturePool#DollPoolCheck out our Instagram @myfr...",
+            "timestamp": 1651139840,
+            "title": "How to Make a Doll Swimming Pool - Doll Crafts - YouTube",
+            "url": "https://www.youtube.com/watch?v=kdVSXVtDoaA"
+        },
+        {
+            "rank": 2,
+            "snippet": "by request: Check out this updated version of our most popular video XDLink to our Free Printables: http://myfroggystuff.blogspot.com/2013/07/free-nature-pr...",
+            "timestamp": 1651139840,
+            "title": "DIY - How to Make: Doll Swimming Pool 2 - Handmade - Doll - Crafts ...",
+            "url": "https://www.youtube.com/watch?v=_nFhIixYHP0"
+        },
+        {
+            "rank": 3,
+            "snippet": "29 reviews of <em>Froggy</em>'<em>s</em> <em>Pool</em> Services \"Carlos came out to give me an estimate on an acid wash. I was extremely happy with his honesty. He saved me over $350 letting me know I really did not need one. He gave me all the information I needed to get my <em>pool</em> back in shape.",
+            "timestamp": 1651139840,
+            "title": "FROGGY\u2019S POOL SERVICES - 29 Reviews - Pool &amp; Hot Tub Service ...",
+            "url": "https://www.yelp.com/biz/froggys-pool-services-anaheim"
+        },
+        {
+            "rank": 4,
+            "snippet": "B\u00f9i \"<em>Froggy</em>\" H\u1ea3i Minh is a League of Legends esports player, currently mid laner for Saigon Buffalo. 1 Biography 2 Trivia 3 Tournament Results 4 Media 4.1 Post-Match Interviews 4.2 Redirects 4.3 References Has a wide champion <em>pool</em> and plays unusual mid-laners such as Rammus and Shyvana. Won a...",
+            "timestamp": 1651139840,
+            "title": "Froggy - Leaguepedia | League of Legends Esports Wiki",
+            "url": "https://lol.gamepedia.com/Froggy"
+        },
+        {
+            "rank": 5,
+            "snippet": "by request: We hope you're ready for a EXTREME CRAFT!!! Thats right, <em>Froggy</em> is back at it with another Fabsome Extreme Craft! Craft along with <em>Froggy</em> as sh...",
+            "timestamp": 1651139840,
+            "title": "DIY - How to Make: Doll Pool 4 | EXTREME CRAFT | Working Pool | ...",
+            "url": "https://www.youtube.com/watch?v=KqnRX-Ajpjg"
+        },
+        {
+            "rank": 6,
+            "snippet": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel &amp; accessories, shoes, jewelry, tools &amp; hardware, housewares, furniture, sporting goods, beauty &amp; personal care, groceries &amp; just about anything else.",
+            "timestamp": 1651139840,
+            "title": "JED Pool Tools 10-455 Froggy Chlorinator for Swimming Pool",
+            "url": "https://www.amazon.com/JED-Pool-Tools-10-455-Chlorinator/dp/B004P5M1DK"
+        },
+        {
+            "rank": 7,
+            "snippet": "by request: Today at My <em>Froggy</em> Stuff SCHOOL is officially out!! And it's time for the Darbie sisters to move into the <em>Pool</em> house! Craft along with <em>Froggy</em> a...",
+            "timestamp": 1651139840,
+            "title": "DIY - How to Make: Furnished Doll Pool House Apartment | Home Office ...",
+            "url": "https://www.youtube.com/watch?v=u8-GnIA2DSY"
+        },
+        {
+            "rank": 8,
+            "snippet": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel &amp; accessories, shoes, jewelry, tools &amp; hardware, housewares, furniture, sporting goods, beauty &amp; personal care, groceries &amp; just about anything else.",
+            "timestamp": 1651139840,
+            "title": "Intex Recreation Froggy Fun Baby Pool, Age 1-3: Toys ... - Amazon.com",
+            "url": "https://www.amazon.com/Intex-Recreation-Froggy-Baby-Pool/dp/B002V1H0Y0"
+        },
+        {
+            "rank": 9,
+            "snippet": "Get directions, reviews and information for Frogtown <em>Froggy</em> Museum in Toledo, OH.",
+            "timestamp": 1651139840,
+            "title": "Frogtown Froggy Museum 1610 Pool St Toledo, OH - MapQuest",
+            "url": "https://www.mapquest.com/us/ohio/frogtown-froggy-museum-413012380"
+        },
+        {
+            "rank": 10,
+            "snippet": "Activate and hold the button to confirm that you\u2019re human. Thank You \u00b7 \u00a92021 Walmart Stores, Inc",
+            "timestamp": 1651139840,
+            "title": "Intex Froggy Friend Shaded Canopy Baby Kiddie ... - Walmart",
+            "url": "https://www.walmart.com/ip/Intex-Froggy-Friend-Shaded-Canopy-Baby-Kiddie-Pool-Floating-Raft-56584EP/48994517"
+        },
+        {
+            "rank": 11,
+            "snippet": "I show how to install a new grid system in a DE type fool filter. <em>Pool</em> and filter maintenance is critical with these type systems or damage can result to the...",
+            "timestamp": 1651139840,
+            "title": "Pool filter replacing a DE grid filter system by froggy - YouTube",
+            "url": "https://www.youtube.com/watch?v=3Cjxz1DN0kc"
+        },
+        {
+            "rank": 12,
+            "snippet": "June 28, 2021 -\n            To learn more about the APA visit https://poolplayers.com/ Gambling is not allowed. Come test your knowledge with every Monday and Tuesday night to win fabulous prizes and gift certificates. <em>Froggy</em> and Jeffro\u2019s hosts both traditional-style trivia as well as a Family Feud style called Opinionary.",
+            "timestamp": 1651139840,
+            "title": "Entertainment - Froggy and Jeffro's",
+            "url": "https://www.froggyandjeffros.com/entertainment/"
+        },
+        {
+            "rank": 13,
+            "snippet": "by request: Summer is around the corner and <em>Pool</em> Season is in!! ... Now your Dolls can relax by the <em>pool</em> in their very own Fabsome Doll <em>Pool</em> Lounge Chairs!Su...",
+            "timestamp": 1651139840,
+            "title": "DIY - How to Make: Doll Pool Lounge Chair - Handmade - Crafts - ...",
+            "url": "https://www.youtube.com/watch?v=uqfvBQDaQ5I"
+        },
+        {
+            "rank": 14,
+            "snippet": "AboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy &amp; SafetyHow YouTube worksTest new features \u00b7 \u00a9 2021 Google LLC",
+            "timestamp": 1651139840,
+            "title": "How to Make a Doll Swimming Pool 3 Doll Floaties Doll Fire Pit ...",
+            "url": "https://www.youtube.com/watch?v=wnkBG8r4S4I"
+        },
+        {
+            "rank": 15,
+            "snippet": "by request: Nothing says Summer Time like a dip in the <em>pool</em>!! ... Check out this Fun and easy Doll Swimming <em>Pool</em> craft, perfect for the Dollhouse Backyard!! ...",
+            "timestamp": 1651139840,
+            "title": "DIY - How to Make: Doll Swimming Pool 3: Doll Floaties | Doll Fire ...",
+            "url": "https://www.youtube.com/watch?v=_B2YUcgV2aQ"
+        },
+        {
+            "rank": 16,
+            "snippet": "https://rdy.cr/540f19 click the link to make this fabsome craft today!by request: make a hot tub / jacuzzi... or even alter it into a <em>pool</em> just in time for s...",
+            "timestamp": 1651139840,
+            "title": "How to Make a Doll Jacuzzi / Hot Tub - Doll Crafts - YouTube",
+            "url": "https://www.youtube.com/watch?v=jYOK1629TEg"
+        },
+        {
+            "rank": 17,
+            "snippet": "In this video I am showing you how I made a doll <em>pool</em> that you can put real water into so your dolls can go for a real swim!!! Enjoy :D",
+            "timestamp": 1651139840,
+            "title": "How to make a Doll Pool with real Water #1 - YouTube",
+            "url": "https://www.youtube.com/watch?v=N8WDQJI5QcA"
+        },
+        {
+            "rank": 18,
+            "snippet": "<em>Froggie</em>'<em>s</em> <em>Pool</em> Tournaments. 166 likes \u00b7 13 talking about this. We work hand in hand with local <em>pool</em> halls &amp; cooperate in running Billiards Tournaments! All of our 2nd Day events are open to ANY...",
+            "timestamp": 1651139840,
+            "title": "Froggie's Pool Tournaments - Home | Facebook",
+            "url": "https://www.facebook.com/FroggiesPoolTournaments/"
+        },
+        {
+            "rank": 19,
+            "snippet": "Set up your custom <em>pools</em> for the NCAA Basketball Tournament.",
+            "timestamp": 1651139840,
+            "title": "Tournament Pools: Pool Hosting for March Madness",
+            "url": "https://www.tournamentpools.com/tours.cfm?pageno=7&tourid=7"
+        },
+        {
+            "rank": 20,
+            "snippet": "List of <em>Froggie</em>'<em>s</em> <em>Pool</em> Tournaments upcoming events. Sports Events by <em>Froggie</em>'<em>s</em> <em>Pool</em> Tournaments. Events - Northern New England Ladies 8 Ball Shootout.",
+            "timestamp": 1651139840,
+            "title": "Froggie's Pool Tournaments - Sports Events in Somersworth | ...",
+            "url": "https://allevents.in/org/froggies-pool-tournaments/18000810"
+        }
+    ],
+    "timestamp": 1651139840,
+    "url": "https://search.brave.com/search?q=froggy+pool&source=desktop"
+}

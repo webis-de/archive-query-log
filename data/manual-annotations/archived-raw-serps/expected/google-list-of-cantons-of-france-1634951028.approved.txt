@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"List of cantons of France\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"List of cantons of France\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "The cantons of France are territorial subdivisions of the French Republic's departments and arrondissements. Apart from their role as organizational units\u00a0...",
+            "timestamp": 1634951028,
+            "title": "Cantons of France - stringfixer.com",
+            "url": "https://www.google.com/url?q=https://stringfixer.com/en/Canton_in_France&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAsQAg&usg=AOvVaw1V3Kqrg9fALTkEBv79LLFT"
+        },
+        {
+            "rank": 3,
+            "snippet": "The canton is an administrative division of France. They are subdivisions of arrondissements and d\u00e9partements of France, grouping several municipalities (\u00a0...",
+            "timestamp": 1634951028,
+            "title": "Canton in France - Academic Kids",
+            "url": "https://www.google.com/url?q=http://academickids.com/encyclopedia/index.php/Canton_in_France&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAgQAg&usg=AOvVaw0p4DhJJnt88SM1RKZAQa3U"
+        },
+        {
+            "rank": 4,
+            "snippet": "The following is a list of the 11 cantons of the Corse-du-Sud department, in France, following the French canton reorganisation which came into effect in\u00a0...",
+            "timestamp": 1634951028,
+            "title": "Corse-du-Sud 100% (1/1) - Hyperleap",
+            "url": "https://www.google.com/url?q=https://hyperleap.com/topic/Cantons_of_the_Corse-du-Sud_department&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAkQAg&usg=AOvVaw2HPiYQmSL-3Mg_ngnTuQhj"
+        },
+        {
+            "rank": 6,
+            "snippet": "List of 1992 Winter Olympics medal wi .. List of the busiest airports in France \u00b7 List of French art works in the Natio .. List of cantons of France\u00a0...",
+            "timestamp": 1634951028,
+            "title": "France-related lists - freejournal",
+            "url": "https://www.google.com/url?q=https://amp.ww.en.freejournal.org/2361738/1/france-related-lists.html&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAoQAg&usg=AOvVaw2N5BFnMQ1u8-USUJsQoz3E"
+        },
+        {
+            "rank": 7,
+            "snippet": "... list of cantons of france: daftar kanton di prancis; list of catholic dioceses in france: daftar keuskupan di prancis; list of companies of france:\u00a0...",
+            "timestamp": 1634951028,
+            "title": "list of marshals of france artinya - IChaCha",
+            "url": "https://www.google.com/url?q=https://id.ichacha.net/inggris-indonesia/list%2520of%2520marshals%2520of%2520france.html&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAcQAg&usg=AOvVaw1Fh6iJG-9a4w9uUbbFTy_g"
+        },
+        {
+            "rank": 8,
+            "snippet": "... list of ambassadors of israel to france: daftar duta besar israel untuk prancis; list of cantons of france: daftar kanton di prancis; list of catholic\u00a0...",
+            "timestamp": 1634951028,
+            "title": "list of islands of france artinya - iChaCha",
+            "url": "https://www.google.com/url?q=https://id.ichacha.net/inggris-indonesia/list%2520of%2520islands%2520of%2520france.html&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAMQAg&usg=AOvVaw3E9TuhFSQvKaK5_4upgkgE"
+        },
+        {
+            "rank": 9,
+            "snippet": "List of cantons of France Forum \u2022 Julie Tippetts Forum \u2022 Saint-Nicolas-du-Chardonnet Forum \u2022 Miltogramminae Forum \u2022 Juan Gabriel Con El Mariachi Vargas De\u00a0...",
+            "timestamp": 1634951028,
+            "title": "Interesting Forums Page #454 - Forum Jar",
+            "url": "https://www.google.com/url?q=http://www.forumjar.com/list/454&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAEQAg&usg=AOvVaw3iZR7xYaKTykdzziXEpWC-"
+        },
+        {
+            "rank": 10,
+            "snippet": "... des cantons fran\u00e7ais n'ont quasiment pas \u00e9t\u00e9 modifi\u00e9s depuis 1801Les r\u00e8gles de red\u00e9coupage suivantes sont donc appliqu\u00e9es : List of cantons of France.",
+            "timestamp": 1634951028,
+            "title": "nombre de cantons en france",
+            "url": "https://www.google.com/url?q=http://semeia.org.br/mapadasparcerias/adm/archive/docs/febf0e-nombre-de-cantons-en-france&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAIQAg&usg=AOvVaw0cUaC2GD7QSVTconVI_MHi"
+        },
+        {
+            "rank": 11,
+            "snippet": "The following is a list of cantons of France, within each department : #. ... Liste de cantons fran\u00e7ais\u200e \u2013 111 P Wikip\u00e9dia:\u00e9bauche canton fran\u00e7ais\u200e \u2013 2318 P\u00a0...",
+            "timestamp": 1634951028,
+            "title": "liste de canton france - Bretagne Football Vacances",
+            "url": "https://www.google.com/url?q=https://www.bretagnefootvacances.fr/blog/liste-de-canton-france-c25385&sa=U&ved=2ahUKEwj4m8aDxt_zAhU2GDQIHYewAjAQFnoECAAQAg&usg=AOvVaw3GKomdqsj3u_8k7E0_SI62"
+        }
+    ],
+    "timestamp": 1634951028,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22List+of+cantons+of+France%22"
+}

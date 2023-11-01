@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Barnes ",
+    "offset": null,
+    "page": null,
+    "query": "Barnes",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "BARNES Espa\u00f1a. Madrid. L\u00edder del sector inmobiliario de lujo, BARNES Madrid y su equipo ponen a su disposici\u00f3n su cartera de exclusivas propiedades, en venta o en alquiler en su agencia. Con una s\u00f3lida red internacional, los consultores de \u2026",
+            "timestamp": 1636235793,
+            "title": "BARNES Espa\u00f1a - Inmobiliaria de lujo en Espa\u00f1a",
+            "url": "https://www.barnes-spain.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "BARNES INMOBILIARIA DE LUJO - Las m\u00e1s bellas propiedades exclusivas y apartamentos de lujo Vis\u00edtenos en nuestras oficinas y conf\u00edenos sus proyectos de inversi\u00f3n. BARNES, agencia inmobiliaria de lujo especializada en bienes de gama alta en F\u2026",
+            "timestamp": 1636235793,
+            "title": "BARNES, l\u00edder del sector inmobiliario de lujo a nivel ...",
+            "url": "https://www.barnes-international.com/es/"
+        },
+        {
+            "rank": 3,
+            "snippet": "New BARNES Magazine, Spring-Summer 2021. The new Spring-Summer 2021 edition of our BARNES magazine has just been published and pays tribute, on the cover, to the remarkable career of Alain-Dominique Perrin, President of the Cartier Foundati\u2026",
+            "timestamp": 1636235793,
+            "title": "BARNES, a major player in luxury property on the ...",
+            "url": "https://www.barnes-international.com/en/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Barnes, agencia inmobiliaria de lujo en Barcelona y Costa Brava especializada en la venta y el alquiler de casas y pisos de alto standing. \u00a1Cons\u00faltenos!",
+            "timestamp": 1636235793,
+            "title": "BARNES Barcelona, agencia inmobiliaria de lujo en ...",
+            "url": "https://www.barnes-barcelona.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "BARNES se instala en Espa\u00f1a y ofrece un servicio inmobiliario de primera en los lugares m\u00e1s bellos de la Pen\u00ednsula Ib\u00e9rica. Le ofrecemos apartamentos, villas y casas en venta y alquiler en varias ciudades residenciales y tur\u00edsticas: en Madr\u2026",
+            "timestamp": 1636235793,
+            "title": "BARNES Madrid - Inmobiliaria de lujo en Madrid",
+            "url": "https://www.barnes-madrid.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Julian Barnes. Julian Patrick Barnes ( Leicester; 19 de enero de 1946) es un novelista brit\u00e1nico, ganador del Premio Booker 2011 por El sentido de un final.",
+            "timestamp": 1636235793,
+            "title": "Julian Barnes - Wikipedia, la enciclopedia libre",
+            "url": "https://es.wikipedia.org/wiki/Julian_Barnes"
+        },
+        {
+            "rank": 7,
+            "snippet": "Barnes &amp; Noble\u2019s online bookstore for books, NOOK ebooks &amp; magazines. Shop music, movies, toys &amp; games, too. Receive free shipping with your Barnes &amp; Noble Membership.",
+            "timestamp": 1636235793,
+            "title": "Barnes &amp; Noble\u00ae - Online Bookstore: Books, NOOK ebooks ...",
+            "url": "https://www.barnesandnoble.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Barnes de Colombia es un fabricante de bombas para agua y sistemas de presi\u00f3n con origen y tecnolog\u00eda estadounidense. Su presencia en Colombia se remonta al a\u00f1o 1961. Actualmente exportamos a Centro y Sur Am\u00e9rica y tenemos plantas instalada\u2026",
+            "timestamp": 1636235793,
+            "title": "Barnes de Colombia S.A. | Bombas de agua",
+            "url": "https://www.barnes.com.co/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Barnes and Noble hours, location, products and services :",
+            "timestamp": 1636235793,
+            "title": "Barnes and Noble in San Francisco.com",
+            "url": "https://www.sanfrancisco.org/places/barnes-and-noble"
+        },
+        {
+            "rank": 10,
+            "snippet": "Find Anthony Barnes in San Francisco, California for free! Get current address, cell phone number, email address, relatives, friends and a lot more. We're 100% free for everything!",
+            "timestamp": 1636235793,
+            "title": "Anthony Barnes in San Francisco, California",
+            "url": "https://www.truepeoplesearch.com/find/barnes/anthony/area/ca/san_francisco"
+        }
+    ],
+    "timestamp": 1636235793,
+    "url": "https://www.ecosia.org/search?+Noble=&amp=&filters=sid%3A%22dd4a6430-b264-14e7-06d4-0c88211ae6fa%22&q=Barnes+"
+}

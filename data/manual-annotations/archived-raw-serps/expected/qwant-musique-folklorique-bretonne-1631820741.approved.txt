@@ -1,0 +1,87 @@
+{
+    "interpreted_query": "musique folklorique bretonne",
+    "offset": null,
+    "page": null,
+    "query": "musique folklorique bretonne",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Shop Devices, Apparel, Books, Music &amp; More. Free Shipping on Qualified Orders.",
+            "timestamp": 1631820741,
+            "title": "Save on Folkloresque - Amazon\u00ae Official Site",
+            "url": "https://www.bing.com/aclick?ld=e8xG5uViad3JJ5Rq2F2XsI8DVUCUyK1iA2mOJOE8xpAc1HXArNtwjKKZqlL38iELqlwYXlJw9WiE-OUYw5aVzy_ewwEC1-RLKvKzesi6wXAYJj2ZtroFgElgeFG2bXp3rHumNhj2m7OZZcW19NnB2oa_0N8zfRu776p8a9EeQ_m55Ppr_h&u=aHR0cCUzYSUyZiUyZnd3dy5hbWF6b24uY29tJTJmcyUyZiUzZmllJTNkVVRGOCUyNmtleXdvcmRzJTNkZm9sa2xvcmVzcXVlJTI2dGFnJTNkbWgwYi0yMCUyNmluZGV4JTNkYXBzJTI2aHZhZGlkJTNkNzg1NDY0Mjg0MjgzNjIlMjZodnFtdCUzZHAlMjZodmJtdCUzZGJiJTI2aHZkZXYlM2RjJTI2cmVmJTNkcGRfc2xfOXQyZTZyc282OF9i&rlid=09871357807916ba98c17214379fc803"
+        },
+        {
+            "rank": 2,
+            "snippet": "\ud83c\udfb5 D\u00e9couvrez les chants traditionnels des Pyr\u00e9n\u00e9es ici: https://bit.ly/3yQhbsI\u2611\ufe0f T\u00e9l\u00e9chargez ces titres : http://bit.ly/BretagneDeezer / http://bit.ly ...",
+            "timestamp": 1631820741,
+            "title": "Bretagne: Les plus belles chansons du peuple Breton (Fils ...",
+            "url": "https://www.youtube.com/watch?v=dNm2vO_3vo8"
+        },
+        {
+            "rank": 3,
+            "snippet": "Une s\u00e9lection de chansons ou de musiques insumentale de folklore celtique et de rock de la r\u00e9gion ouest de la France, une r\u00e9gion appell\u00e9e Bretagne, les natif...",
+            "timestamp": 1631820741,
+            "title": "1 heure de musique folklorique et rock breton - YouTube",
+            "url": "https://www.youtube.com/watch?v=RtVt4B7Q4oA"
+        },
+        {
+            "rank": 4,
+            "snippet": "Denez Prigent, Soldat Louis, Les ramoneurs de menhir, Gilles Servat, Hamon Martin Quintet, Aziliz Manrow, Ampouailh, Rozenn Talec, Yann-Fa\u00f1ch Kemener...Ecou...",
+            "timestamp": 1631820741,
+            "title": "Musique bretonne - Musique celtique: Envie de Bretagne ...",
+            "url": "https://www.youtube.com/watch?v=00fnuHkOprQ"
+        },
+        {
+            "rank": 5,
+            "snippet": "La musique bretonne est originaire du monde bardique et celtique. En effet, la musique bretonne est tr\u00e8s ancienne, elles puisent ses origines depuis les temps qu\u2019existe un peuple breton. L\u2019histoire et le d\u00e9veloppement \u00e9conomique et social de la p\u00e9ninsule est \u00e9troitement li\u00e9e \u00e0 l\u2019\u00e9volution des pratiques musicales de la Bretagne.",
+            "timestamp": 1631820741,
+            "title": "Chansons Bretagne - Les 50 plus belles chansons bretonnes",
+            "url": "https://visiter-voyager.info/chansons-bretonnes-populaires/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Archive du 13-05-1999 - Ropal CelticMusique instrumentale traditionnelle",
+            "timestamp": 1631820741,
+            "title": "Musique Bretonne - Kas ha Barh - tadukli.org - YouTube",
+            "url": "https://www.youtube.com/watch?v=sguIwav-M90"
+        },
+        {
+            "rank": 7,
+            "snippet": "Musique Folk et Vari\u00e9t\u00e9 Bretonne. La musique de bagad ( bagado\u00f9 au pluriel) est n\u00e9e dans les ann\u00e9es trente, \u00e0 Paris, mais essentiellement en Bretagne \u00e0 partir de 1943 et plus particuli\u00e8rement des ann\u00e9es cinquante. Le revival breton. Cr\u00e9\u00e9, par Polig Monjarret, \u00e0 travers le Bodadeg ar Sonerion, le bagad prend son essor au lendemain de ...",
+            "timestamp": 1631820741,
+            "title": "bagad style musical de musique bretonne et celtique en ...",
+            "url": "https://www.musiquesbretonnes.com/les-styles-bretons-bagad.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "A la crois\u00e9e des chemins entre chants de marins et musique bretonne, ce dernier CD repr\u00e9sente bien la nouvelle orientation du groupe : le fest-noz chant\u00e9 ! Vous d\u00e9couvrirez des chansons originales \u00e0 la sauce Sacr\u00e9e Bord\u00e9e. Du rythme, de l'\u00e9nergie, de l'humour, du celtique et l'amour du pays breton, voila le cocktail \u00e0 danser sur nos ...",
+            "timestamp": 1631820741,
+            "title": "Chant de marin, Chants de marins",
+            "url": "http://www.sacreebordee.com/chantsmarins-sacreebordee.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "Des partitions gratuites et MP3 gratuits de musique celtique, de musique bretonne, de musique \u00e9cossaise, de musique irlandaise et de musiques du monde pour violon, fl\u00fbte, cornemuse \u00e9cossaise, bombarde, piano et guitare \u00e0 t\u00e9l\u00e9charger",
+            "timestamp": 1631820741,
+            "title": "Breizh Partitions \u2212 Partitions gratuites de musique ...",
+            "url": "http://www.partitions.bzh/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Les festivals 2021. Gouelio\u00f9 Breizh regroupe une quarantaine de f\u00eates et festivals de culture bretonne, situ\u00e9s sur la Bretagne \u00e0 5 d\u00e9partements, et effectuant une promotion qualitative de la culture bretonne sous toutes ses formes d\u2019expression artistique, parmi lesquels : C\u00f4tes d\u2019Armor : Festival de la Saint-Loup de Guingamp.",
+            "timestamp": 1631820741,
+            "title": "Les festivals Gouelio\u00f9 Breizh - L'Agenda des festivals bretons",
+            "url": "https://www.gouelioubreizh.bzh/goueliou-pxl-291.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "Reportage sur la danse folklorique proven\u00e7ale.",
+            "timestamp": 1631820741,
+            "title": "Danse folklorique proven\u00e7ale. - YouTube",
+            "url": "https://www.youtube.com/watch?v=VlsWIe5-Kyk"
+        }
+    ],
+    "timestamp": 1631820741,
+    "url": "https://www.qwant.com/?q=musique+folklorique+bretonne&t=all"
+}

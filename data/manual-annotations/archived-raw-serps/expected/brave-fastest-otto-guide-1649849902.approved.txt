@@ -1,0 +1,143 @@
+{
+    "interpreted_query": "fastest otto guide",
+    "offset": null,
+    "page": null,
+    "query": "fastest otto guide",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "How to Get the 6th Builder Full <em>Guide</em>! This is the <em>Fastest</em> Way to Unlock <em>OTTO</em> in Clash of ClansVideo Chapters:0:00 Introduction0:34 6th Builder Unlocked2:04 ...",
+            "timestamp": 1649849902,
+            "title": "How to Get the 6th Builder Full Guide! This is the Fastest Way ...",
+            "url": "https://www.youtube.com/watch?v=Et0PGE7Nqm0"
+        },
+        {
+            "rank": 2,
+            "snippet": "April 10, 2019 -\n            Cannon Cart 18 is required for <em>OTTO</em> but they\u2019re awful as standalone troops and ground comps got nerfed with the new Lava Launcher defense. Minions and Baby Drags can both be spammed without any other troops to stupidly high success. After getting one of these to 18 you can focus CC18 and BM30.",
+            "timestamp": 1649849902,
+            "title": "r/ClashOfClans - [Builder] fastest way to get otto",
+            "url": "https://www.reddit.com/r/ClashOfClans/comments/cdbbzv/builder_fastest_way_to_get_otto/"
+        },
+        {
+            "rank": 3,
+            "snippet": "O.T.T.O is a robot invented by the Master Builder. It is located inside the O.T.T.O Hut. Once the O.T.T.O Hut is upgraded to level 5, it will allow O.T.T.O to replace the Master Builder as permanent builder in the Builder Base, and allow the Master Builder to travel between the Home Village ...",
+            "timestamp": 1649849902,
+            "title": "O.T.T.O | Clash of Clans Wiki | Fandom",
+            "url": "https://clashofclans.fandom.com/wiki/O.T.T.O"
+        },
+        {
+            "rank": 4,
+            "snippet": "September 27, 2019 -\n            Last updated: Finally, your rush has come to an end, temporarily. The main reason you want to rush so quickly here is to progress in the builder base faster. The faster progress then translates into faster unlocking of the <em>OTTO</em> builder which is the 6th builder in your main base.",
+            "timestamp": 1649849902,
+            "title": "BH9 Guide (Unlocking the OTTO) \u2013 Clash Guides With Dusk",
+            "url": "https://clashguideswithdusk.net/2019/09/27/bh9-guide-unlocking-the-otto/"
+        },
+        {
+            "rank": 5,
+            "snippet": "How to reach <em>otto</em>'s grotto for clue scrolls/fishing",
+            "timestamp": 1649849902,
+            "title": "Guide to Reaching Otto the Godblessed - YouTube",
+            "url": "https://www.youtube.com/watch?v=1Tcq82Uxm4A"
+        },
+        {
+            "rank": 6,
+            "snippet": "March 31, 2020 -\n            In your lab upgrade your Cannon Carts (for <em>OTTO</em>) and either Barbs or Giants to go with them. Gold then gets split between Mortar to 8 for gear up, Archer Tower to 6 for gear up and Cannon 5 for gear up (only 1 of each needed.) Start your Battle Machine after your Carts and barb/giants are maxed, ...",
+            "timestamp": 1649849902,
+            "title": "r/ClashOfClans - [ASK] Best way to rush Builder Base for Otto?",
+            "url": "https://www.reddit.com/r/ClashOfClans/comments/e11v98/ask_best_way_to_rush_builder_base_for_otto/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Otto</em>'s Grotto is an area west of Baxtorian Falls and where players can start Barbarian Training. To get here, rub a games necklace, or use the Barbarian Assault minigame teleport, and head south-west. In addition, the Fishing cape can be used to teleport here an unlimited amount of times.",
+            "timestamp": 1649849902,
+            "title": "Otto's Grotto - OSRS Wiki",
+            "url": "https://oldschool.runescape.wiki/w/Otto's_Grotto"
+        },
+        {
+            "rank": 8,
+            "snippet": "February 13, 2021 -\n            \"Home and charging dock for Master Builder's latest invention! Once fully upgraded, O.T.T.O becomes an additional builder in Builder Base and enables the Master Builder to freely travel between...",
+            "timestamp": 1649849902,
+            "title": "O.T.T.O Hut | Clash of Clans Wiki | Fandom",
+            "url": "https://clashofclans.fandom.com/wiki/O.T.T.O_Hut"
+        },
+        {
+            "rank": 9,
+            "snippet": "The <em>fastest</em> way to level up Fishing to level 99 is Barbarian Fishing combined with tick manipulation. You can start fishing there at 15 Strength and 15 Agility, but in order to be efficient, you need to have 30 Strength and 30 Agility. Complete <em>Otto</em>\u2019s Grotto quest to be rewarded the Barbarian Rod.",
+            "timestamp": 1649849902,
+            "title": "OSRS Fishing Training Guide From Level 1 To 99",
+            "url": "https://probemas.com/blog/osrs-fishing-guide"
+        },
+        {
+            "rank": 10,
+            "snippet": "August 13, 2019 -\n            Any tips and tricks in builder hall on how to get <em>Otto</em> fast appreciated. I'm only bh6 at the moment and really need that 6th builder. Should I rush my th? And maybe an upgrade priority?",
+            "timestamp": 1649849902,
+            "title": "General How to get Otto fast?",
+            "url": "https://forum.supercell.com/showthread.php/1841623-How-to-get-Otto-fast"
+        },
+        {
+            "rank": 11,
+            "snippet": "When <em>Otto</em>'s friends are in danger, will he find the courage to save them? Li'l <em>Otto</em> has found his way to Calico Grotto, a stunning, unspoiled habitat that seems perfect for the little octopus. As he learns to adapt to his colorful new surroundings, he quickly makes friends and begins to feel ...",
+            "timestamp": 1649849902,
+            "title": "The Adventures of Li'l Otto in Calico Grotto - Randy Krenek - Google ...",
+            "url": "https://books.google.com/books?id=yqZxvjBRcYAC&pg=PA88&lpg=PA88&dq=fastest+way+to+otto's+grotto&source=bl&ots=GvaEeERWvA&sig=ACfU3U1UnfE8rCp1_SfPCb9qR7AiNaoRug&hl=en&sa=X&ved=2ahUKEwjT4u3A6qfxAhURpp4KHQNaDioQ6AEwFXoECBMQAw"
+        },
+        {
+            "rank": 12,
+            "snippet": "<em>Otto</em> Godblessed, a barbarian warrior interested in the cultural history of his people, will offer to teach eligible players about Barbarian Skills, and will give them the book Barbarian skills and My notes for keeping ancient pages from the Ancient Cavern. He may be found in his house to the ...",
+            "timestamp": 1649849902,
+            "title": "Otto Godblessed | RuneScape Wiki | Fandom",
+            "url": "https://runescape.fandom.com/wiki/Otto_Godblessed"
+        },
+        {
+            "rank": 13,
+            "snippet": "May 26, 2020 -\n            Stone of Experience Using these stones are the <em>fastest</em> method of leveling. You will be instantly granted 2 million XP, + any XP bonuses that you have active. You can only use one of these per life. The heroic one is used up to level 20, and the Epic version has to be used after level 20.",
+            "timestamp": 1649849902,
+            "title": "DDO Leveling Guide 1-20 and Epic Leveling 20-30",
+            "url": "https://www.mmorpgtips.com/ddo-leveling-guide/"
+        },
+        {
+            "rank": 14,
+            "snippet": "To reach <em>Otto</em>'s Grotto you can teleport to Barbarian Outpost using a Games necklace. After teleporting go south-west along the lake until you reach his house. He teaches players abilities such as how to make hastae, fish with their hands and light fires without a tinderbox. Talk to him to start.",
+            "timestamp": 1649849902,
+            "title": "Otto Godblessed - OSRS Wiki",
+            "url": "https://oldschool.runescape.wiki/w/Otto_Godblessed"
+        },
+        {
+            "rank": 15,
+            "snippet": "Will fashion mogul and ball-busing achiever, Kathryn Delacorte trade her glittering dreams for a chance at reclaiming a broken past?Kathryn Delacorte is a ball-busting achiever, outshining even her wildest entrepreneurial aspirations as a fashion industry mogul at the helm of High Stylemagazine.",
+            "timestamp": 1649849902,
+            "title": "Pop! Flash! - Jamie Collins - Google Books",
+            "url": "https://books.google.com/books?id=EBTmDwAAQBAJ&pg=PT29&lpg=PT29&dq=fastest+way+to+otto's+grotto&source=bl&ots=yCeRpT_4gg&sig=ACfU3U3TH8EuQF17z4XGI4k9N5vnYSJmSA&hl=en&sa=X&ved=2ahUKEwjT4u3A6qfxAhURpp4KHQNaDioQ6AEwFnoECBQQAw"
+        },
+        {
+            "rank": 16,
+            "snippet": "<em>Otto</em> Godblessed, a barbarian warrior interested in the cultural history of his people, will offer eligible players Barbarian Training, and will give them the book Barbarian skills and My notes for keeping ancient pages from the Ancient Cavern. He can convert the Zamorakian spear into the Zamorakian ...",
+            "timestamp": 1649849902,
+            "title": "Otto Godblessed | Old School RuneScape Wiki | Fandom",
+            "url": "https://oldschoolrunescape.fandom.com/wiki/Otto_Godblessed"
+        },
+        {
+            "rank": 17,
+            "snippet": "<em>Otto</em>'s Grotto is an area west of Baxtorian Falls where players can start Barbarian Training. To get here, rub a games necklace and head south-west. Also near here is the entrance to the Ancient Cavern, a large whirpool at the end of a dock. Another way, through the Tree Gnome Stronghold, requires ...",
+            "timestamp": 1649849902,
+            "title": "Otto's Grotto | RuneScape Wiki | Fandom",
+            "url": "https://runescape.fandom.com/wiki/Otto's_Grotto"
+        },
+        {
+            "rank": 18,
+            "snippet": "35.87 second (s) Where Japan (Nagoya) When 13 October 2014 The <em>fastest</em> time to hang up five towels is 35.87 seconds and was achieved by Natsuko Koguchi (Japan) at Oasis 21, in Nagoya, Aichi, Japan, on 13 October 2014. All records listed on our website are current and up-to-date.",
+            "timestamp": 1649849902,
+            "title": "Fastest time to hang up five towels - Guinness World Records",
+            "url": "https://www.guinnessworldrecords.com/world-records/115019-fastest-time-to-hang-up-five-towels"
+        },
+        {
+            "rank": 19,
+            "snippet": "This is the official page of that <em>Guide</em> to Fast Living project. History of the <em>Guide</em> to Fast Living In 1994 <em>Otto</em>'s Revenge was in the studio (2 Relaxed Studios) recording its newest release when once again a band member (bass player Paul Sontheimer) decided to quit, stalling the project.",
+            "timestamp": 1649849902,
+            "title": "Guide to Fast Living St. Louis Compilation Series - Alien ...",
+            "url": "https://alienfeedings.com/pages/guide-to-fast-fast-living-compilation-series"
+        }
+    ],
+    "timestamp": 1649849902,
+    "url": "https://search.brave.com/search?q=fastest+otto+guide&source=desktop"
+}

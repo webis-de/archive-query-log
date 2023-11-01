@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "emoji pedia site:www.youtube.com",
+    "offset": null,
+    "page": null,
+    "query": "emoji pedia site:www.youtube.com",
+    "results": [],
+    "timestamp": 1590838578,
+    "url": "https://duckduckgo.com/?q=emoji%20pedia+site:www.youtube.com&t=ffab"
+}

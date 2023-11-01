@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Week Names",
+    "offset": null,
+    "page": null,
+    "query": "Week Names",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "A short history of the <em>week</em> and each day of the <em>week</em>. ... The history of the days of the <em>week</em> is an interesting and peculiarly human one.",
+            "timestamp": 1173639143,
+            "title": "How The Days of the <em>Week</em> Got Their <em>Names</em>",
+            "url": "http://www.indepthinfo.com/weekdays/index.shtml"
+        },
+        {
+            "rank": 2,
+            "snippet": "Tennis <em>Week</em>: best known by those who know tennis best. ...   Photo By Andy Jacobs By Tennis <em>Week</em>  02/17/2007   ...",
+            "timestamp": 1173639143,
+            "title": "Tennis <em>Week</em>",
+            "url": "http://www.sportsmediainc.com/tennisweek/"
+        },
+        {
+            "rank": 3,
+            "snippet": "What Do the <em>Names</em> of the Days of the <em>Week</em> Mean? ... As we saw in the previous section, the planets have given the <em>week</em> days their <em>names</em> ...",
+            "timestamp": 1173639143,
+            "title": "History &amp; info - the days of the <em>week</em>",
+            "url": "http://webexhibits.org/calendars/week.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Domain <em>Names</em> for Business: Drive Traffic, Revenues\u00a0 Attract customers and ...",
+            "timestamp": 1173639143,
+            "title": "Steve Jobs: He Thinks Different",
+            "url": "http://www.businessweek.com/magazine/content/04_44/b3906025_mz072.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": "The days of the <em>week</em> got their <em>names</em> from German gods and objects in the sky.",
+            "timestamp": 1173639143,
+            "title": "How the Days of the <em>Week</em> Got Their <em>Names</em>",
+            "url": "http://www.socialstudiesforkids.com/funfacts/daysoftheweek.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "Business <em>Week names</em> Jobs Best Leader ... According to Business <em>Week</em>, that's enough to put Steve Jobs among their \"Best ...",
+            "timestamp": 1173639143,
+            "title": "Business <em>Week names</em> Jobs Best Leader - The Unofficial Apple Weblog ...",
+            "url": "http://www.tuaw.com/2005/12/09/business-week-names-jobs-best-leader/"
+        },
+        {
+            "rank": 7,
+            "snippet": "The Babylonians marked time with lunar months.   ... The Seven-Day <em>Week</em> and the  Meanings of the <em>Names</em> of the Days ...",
+            "timestamp": 1173639143,
+            "title": "The Seven-Day <em>Week</em> and the Meanings of the <em>Names</em> of the Days",
+            "url": "http://www.crowl.org/Lawrence/time/days.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Linguistic geography, The countries of the world in their local languages and scripts, with official <em>names</em>, capitals, flags, administrative ...",
+            "timestamp": 1173639143,
+            "title": "GEONAMES - Days of the <em>Week</em>",
+            "url": "http://www.geonames.de/days.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "21 November 2005 | Business <em>Week names</em> Traction Customer IJIS to Web Smart 50 ...",
+            "timestamp": 1173639143,
+            "title": "Traction Software, Inc. | Public481: 21 November 2005 | Business ...",
+            "url": "http://traction.tractionsoftware.com/traction/permalink/Public481"
+        },
+        {
+            "rank": 10,
+            "snippet": "Business <em>Week Names</em> Check Point Software  #10 In \"Information Technology 100\" ...",
+            "timestamp": 1173639143,
+            "title": "Check Point Software:Business <em>Week Names</em> Check Point Software #10 In ...",
+            "url": "http://www.checkpoint.com/press/2001/busweek061201.html"
+        }
+    ],
+    "timestamp": 1173639143,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Week+Names"
+}

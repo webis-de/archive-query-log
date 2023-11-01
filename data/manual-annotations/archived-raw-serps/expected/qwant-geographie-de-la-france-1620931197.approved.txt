@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "geographie de la france",
+    "offset": null,
+    "page": null,
+    "query": "geographie de la france",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "La g\u00e9ographie de la France consiste en l'\u00e9tude du territoire de la France, pays d'une superficie de 551 500 km 2 (675 417 km 2 avec l'outre-mer), s'\u00e9tendant sur 1 000 km du nord au sud et d'est en ouest (plus grande distance du nord au sud : Bray-Dunes \u00e0 Cerb\u00e8re).La France est le troisi\u00e8me plus grand pays d'Europe, apr\u00e8s la Russie et l'Ukraine (le deuxi\u00e8me en comptant l'outre-mer).",
+            "timestamp": 1620931197,
+            "title": "G\u00e9ographie de la France \u2014 Wikip\u00e9dia",
+            "url": "https://fr.wikipedia.org/wiki/G%C3%A9ographie_de_la_France"
+        },
+        {
+            "rank": 2,
+            "snippet": "La geographie de la France (French Edition) (French) Paperback \u2013 January 1, 1997 by G\u00e9rard Labrune (Author)",
+            "timestamp": 1620931197,
+            "title": "La geographie de la France (French Edition): G\u00e9rard ...",
+            "url": "https://www.amazon.com/geographie-France-French/dp/2091767891"
+        },
+        {
+            "rank": 3,
+            "snippet": "La g\u00e9ographie de la France - Rep\u00e8res pratiques num\u00e9ro 5 - 2020 (French Edition) $29.00 Only 1 left in stock - order soon. Rep\u00e8res Pratiques Retenir l'essentiel Gr\u00e2ce aux ouvrages de la collection Rep\u00e8res Pratiques : - Faites le point sur les connaissances essentielles \u00e0 ma\u00eetriser.",
+            "timestamp": 1620931197,
+            "title": "La g\u00e9ographie de la France Rep\u00e8res pratiques (French ...",
+            "url": "https://www.amazon.com/La-g%C3%A9ographie-de-la-France/dp/2091630764"
+        },
+        {
+            "rank": 4,
+            "snippet": "The geography of France consists of a terrain that is mostly flat plains or gently rolling hills in the north and west and mountainous in the south (including the Massif Central and the Pyrenees) and the east (the highest points being in the Alps). Metropolitan France has a total size of 551,695 km 2 (213,011 sq mi) (Europe only). It is the third largest country in Europe after Russia and Ukraine",
+            "timestamp": 1620931197,
+            "title": "Geography of France - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Geography_of_France"
+        },
+        {
+            "rank": 5,
+            "snippet": "La G\u00e9ographie de la France This worksheet is an interactive overview of the regions and cities of France. ID: 1061355 Language: French School subject: G\u00e9ographie Grade/level: beginner-inter Age: 10-17 Main content: Regions and cities of France Other contents: Add to my workbooks (3)",
+            "timestamp": 1620931197,
+            "title": "La G\u00e9ographie de la France worksheet",
+            "url": "https://www.liveworksheets.com/nu1061355eb"
+        },
+        {
+            "rank": 6,
+            "snippet": "G\u00e9ographie. La France m\u00e9tropolitaine couvre une superficie de 551 500 km2 (675 417 km2 avec l'outre mer), et s'\u00e9tend sur 1000 km du nord au sud et d'est en ouest.",
+            "timestamp": 1620931197,
+            "title": "Climat et g\u00e9ographie - France.fr",
+            "url": "https://www.france.fr/fr/avant-de-partir/climat-geographie"
+        },
+        {
+            "rank": 7,
+            "snippet": "G\u00e9ographie de la France 1. G\u00c9OGRAPHIE DE LA FRANCE 2. L\u00b4HEXAGONE D\u00b4une superficie de 551.500 km2, la France s\u00b4\u00e9tend sur 1000 km du nord au sud et sur 950 km de l\u00b4est \u00e0... 3. C\u00d4T\u00c9S MARITIMES Les c\u00f4t\u00e9s maritimes sont: \u2022 Au nord: la Manche et la mer du Nord \u2022 \u00c0 l\u00b4ouest: l\u00b4oc\u00e9an Atlantique. \u2022... 4. ...",
+            "timestamp": 1620931197,
+            "title": "G\u00e9ographie de la France - SlideShare",
+            "url": "https://www.slideshare.net/ProfPapillon/gographie-de-la-france"
+        },
+        {
+            "rank": 8,
+            "snippet": "Start studying La Geographie de la France. Learn vocabulary, terms, and more with flashcards, games, and other study tools.",
+            "timestamp": 1620931197,
+            "title": "La Geographie de la France Flashcards | Quizlet",
+            "url": "https://quizlet.com/294181296/la-geographie-de-la-france-flash-cards/"
+        },
+        {
+            "rank": 9,
+            "snippet": "la g\u00e9ographie de France. Terms in this set (42) la Seine. la Loire. le Rh\u00f4ne. la Garonne. les Vosges. les Alpes. les Pyr\u00e9n\u00e9es. le Massif Central. Paris. La capitale. la Grande-Bretagne. la Belgique. l'Allemagne (f) le Luxembourg. la Suisse. l'Italie (f) l'Espagne (f) l'Oc\u00e9an Atlantique. la Manche. la Mer M\u00e9diterran\u00e9e. Le Nord. l'\u00eele de ...",
+            "timestamp": 1620931197,
+            "title": "g\u00e9ographie de la France Flashcards | Quizlet",
+            "url": "https://quizlet.com/260031655/geographie-de-la-france-flash-cards/"
+        },
+        {
+            "rank": 10,
+            "snippet": "G\u00e9ographie de la France, Vincent Adoumi\u00e9, Christian Daudel, Didier Doix, Hachette Superieur. Des milliers de livres avec la livraison chez vous en 1 jour ou en magasin avec -5% de r\u00e9duction ou t\u00e9l\u00e9chargez la version eBook.",
+            "timestamp": 1620931197,
+            "title": "G\u00e9ographie de la France - broch\u00e9 - Vincent Adoumi\u00e9 ...",
+            "url": "https://livre.fnac.com/a13090735/Vincent-Adoumie-Geographie-de-la-France"
+        }
+    ],
+    "timestamp": 1620931197,
+    "url": "https://www.qwant.com/?q=geographie+de+la+france&t=all"
+}

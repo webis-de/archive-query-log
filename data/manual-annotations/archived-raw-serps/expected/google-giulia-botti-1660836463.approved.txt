@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Giulia Botti\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Giulia Botti\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "1036 Followers, 664 Following, 130 Posts - See Instagram photos and videos from Giulia Botti (@giupy22)",
+            "timestamp": 1660836463,
+            "title": "Giulia Botti (@giupy22) \u2022 Instagram photos and videos",
+            "url": "https://www.google.com/url?q=https://www.instagram.com/giupy22/%3Fhl%3Den&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAYQAg&usg=AOvVaw2G3xS_CNjraeHCPsYWzUcD"
+        },
+        {
+            "rank": 3,
+            "snippet": "102 Followers, 228 Following, 0 Posts - See Instagram photos and videos from Giulia Botti (@igiulaia)",
+            "timestamp": 1660836463,
+            "title": "Giulia Botti (@igiulaia) \u2022 Instagram photos and videos",
+            "url": "https://www.google.com/url?q=https://www.instagram.com/igiulaia/%3Fhl%3Den&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAAQAg&usg=AOvVaw3FDs9vroWRJcZ7b8yYWQvJ"
+        },
+        {
+            "rank": 4,
+            "snippet": "Giulia Botti is on Facebook. Join Facebook to connect with Giulia Botti and others you may know. Facebook gives people the power to share and makes the...",
+            "timestamp": 1660836463,
+            "title": "Giulia Botti | Facebook",
+            "url": "https://www.google.com/url?q=https://www.facebook.com/giulia.botti.33&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAcQAg&usg=AOvVaw0ZBD_F5WAHqjx5e5sVjcq4"
+        },
+        {
+            "rank": 5,
+            "snippet": "View the profiles of professionals named \"Giulia Botti\" on LinkedIn. There are 10+ professionals named \"Giulia Botti\", who use LinkedIn to exchange\u00a0...",
+            "timestamp": 1660836463,
+            "title": "10+ \"Giulia Botti\" profiles | LinkedIn",
+            "url": "https://www.google.com/url?q=https://www.linkedin.com/pub/dir/Giulia/Botti&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAgQAg&usg=AOvVaw3JUWbxg-5-rY0e6O75PC5y"
+        },
+        {
+            "rank": 6,
+            "snippet": "Maria Giulia Botti. Engineering Project Manager. Piacenza. Amazon, +2 more. Politecnico di Milano \u00b7 Giulia Maria Botti. Studente presso G. D. Rom. Greater\u00a0...",
+            "timestamp": 1660836463,
+            "title": "2 \"Giulia Maria Botti\" profiles - LinkedIn",
+            "url": "https://www.google.com/url?q=https://www.linkedin.com/pub/dir/Giulia%2BMaria/Botti%3Ftrk%3Dpublic_profile_samename-see-all&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAMQAg&usg=AOvVaw0DNVKqqpFQdY8Ca8fqmu8_"
+        },
+        {
+            "rank": 7,
+            "snippet": "Visit Giulia Botti's (Italy) World Triathlon profile for athlete results, stats, photos, videos, news, and more.",
+            "timestamp": 1660836463,
+            "title": "Giulia Botti (ITA) \u2022 World Triathlon",
+            "url": "https://www.google.com/url?q=https://www.triathlon.org/athletes/profile/73161/giulia_botti&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAIQAg&usg=AOvVaw1d96t7wwritngagvYclGxO"
+        },
+        {
+            "rank": 8,
+            "snippet": "Giulia Botti verified_user. Running \u00b7 Trail running \u00b7 Skyrunning. Follow. Followers: | Following: MENU. HOME; INFORMATION; PHOTOS; ACTIVITIES; INTERESTS\u00a0...",
+            "timestamp": 1660836463,
+            "title": "Giulia Botti | ENDU",
+            "url": "https://www.google.com/url?q=https://www.endu.net/giulia.botti&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAEQAg&usg=AOvVaw2CQED7fzZgreLS5rsvz5qC"
+        },
+        {
+            "rank": 9,
+            "snippet": "Giulia Botti. Athlete ranking: N/A. Date of birth. Not provided. Nationality. Not provided. Place of birth. Not provided. Weight. Not provided.",
+            "timestamp": 1660836463,
+            "title": "Giulia Botti - SkiMo Stats",
+            "url": "https://www.google.com/url?q=https://www.skimostats.com/athlete/giulia-botti&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAQQAg&usg=AOvVaw19nSzPCXISFsjonJoECvgi"
+        },
+        {
+            "rank": 11,
+            "snippet": "Giulia BOTTI 's UTMB\u00ae Index is 630. She runs for the - team. She finished 11th in the Ferriere Trail Festival 2022 - CTR, Carevolo Trail Race, 31km.",
+            "timestamp": 1660836463,
+            "title": "Giulia BOTTI - Her Trail results and UTMB\u00ae Index",
+            "url": "https://www.google.com/url?q=https://utmb.world/runner/241143.giulia.botti&sa=U&ved=2ahUKEwizzdHk9ND5AhVhLUQIHQsSD8YQFnoECAUQAg&usg=AOvVaw3WlxmWu0fbGH7ZrWYkpc2-"
+        }
+    ],
+    "timestamp": 1660836463,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Giulia+Botti%22"
+}

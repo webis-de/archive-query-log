@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "sheets site:www.kohls.com",
+    "offset": null,
+    "page": null,
+    "query": "sheets site:www.kohls.com",
+    "results": [],
+    "timestamp": 1642928572,
+    "url": "https://duckduckgo.com/?q=sheets+site%3Awww.kohls.com"
+}

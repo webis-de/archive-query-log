@@ -311,7 +311,7 @@
   results_parsers:
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
-    results_selector: div#search div#rso div.g:not(.g-blk), div#search div#ires div.g:not(.g-blk)
+    results_selector: div#search div#rso div.g:not(.g-blk), div#search div#ires div.g:not(.g-blk), div#search ol#rso li.g:not(.g-blk)
     url_selector: .r a, .rc a, h3 a, a
     title_selector: .r a h3, .rc a h3, h3, a h3
     snippet_selector: span.st, span
@@ -320,12 +320,18 @@
     results_selector: div#main div.xpd
     url_selector: a
     title_selector: a h3
+    snippet_selector: div div div div div div
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     results_selector: div#gs_res_ccl_mid > div.gs_r
     url_selector: h3.gs_rt a
     title_selector: h3.gs_rt
     snippet_selector: dic.gs_rs
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#search div#ires table.images_table tr td
+    url_selector: a
+    title_selector: :--self
   - url_pattern: ^https?://[^/]+/search\?
     type: html_selector
     results_selector: li.g
@@ -1053,6 +1059,11 @@
   - url_pattern: ^https?://[^/]+/search/?\?
     type: html_selector
     results_selector: dl dd li
+    url_selector: a
+    title_selector: a
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    results_selector: ul[type="disc"] li
     url_selector: a
     title_selector: a
   focused_url_prefixes:
@@ -4205,8 +4216,16 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: div.header__content.header__search input#search_form_input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div#links div.result
+    url_selector: div.result__body h2.result__title a.result__a
+    title_selector: div.result__body h2.result__title
   focused_url_prefixes:
   - /
 - name: aliyun
@@ -4626,8 +4645,50 @@
     type: query_parameter
     parameter: page
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: input#js-top-q
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: form#ft input#q, form#ft input[name=q]
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: form#lrform input#q
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: div.PartialSearchBox-container input.PartialSearchBox-input
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: div.PartialSearchBoxRounded-container input.PartialSearchBoxRounded-input
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    query_selector: div#searchBox input#top_q_comm.ac_input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div.l-web-results div.web-result
+    url_selector: a.sa_headline, h2.web-result-title a, div.web-result-title a
+    title_selector: a.sa_headline, h2.web-result-title, div.web-result-title
+    snippet_selector: div.sa_abstract, p.web-result-description, div.web-result-description  
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div#teoma-results div.pad.pl10.pr10, div#webr div.mb16, div#webr div.m10_0_16
+    url_selector: div[id^=r_t] a
+    title_selector: div[id^=r_t]
+    snippet_selector: div.T1
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div.PartialSearchResults-results div.PartialSearchResults-item
+    url_selector: div.PartialSearchResults-item-title a
+    title_selector: div.PartialSearchResults-item-title
+    snippet_selector: div.PartialSearchResults-item-details
+  - url_pattern: ^https?://[^/]+/web\?
+    type: html_selector
+    results_selector: div#teoma-results div.wresult div.sa
+    url_selector: div.sa_headline_block a
+    title_selector: div.sa_headline_block
+    snippet_selector: div.sa_content_block
   focused_url_prefixes:
   - /web?
 - name: intuit
@@ -6096,8 +6157,26 @@
     type: query_parameter
     parameter: p
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input.search-form__input
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: input.search-form-input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: section.mainline div.mainline__result-wrapper article.result:not(.ad-result)
+    url_selector: header.result-title h2.result-title__heading a.result-title__link, div.result__header div.result__title a.result__link
+    title_selector: header.result-title h2.result-title__heading, div.result__header div.result__title
+    snippet_selector: div.result__columns div.result__description p.web-result__description
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: main.results-wrapper div.result
+    url_selector: h2.result-firstline-title a.result-title
+    title_selector: h2.result-firstline-title
+    snippet_selector: p.result-snippet
   focused_url_prefixes:
   - /search?
   - /images?
@@ -11282,8 +11361,56 @@
     parameter: q
   page_parsers: []
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers: 
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: div[class^=SearchBar-module] input[type=search]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: form#headsearchform input#headsearchbar
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: form[class^=SearchBar-module] input[type=search]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    query_selector: form#search-form input#search-input
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=Stack-module] div[class^=WebResult-module__container]
+    url_selector: div[class^=WebResult-module__subContainer] a
+    title_selector: div[class^=WebResult-module__subContainer] a h2[class^="Text-module"], div[class^=WebResult-module__subContainer] a[class^="external Text-module__typo"]
+    snippet_selector: div[class^=Text-module]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=SER-module__subContainer] div[class^=Stack-module__VerticalStack] div[class*=HeaderContainer]
+    url_selector: div[class^="Stack-module__VerticalStack"] a
+    title_selector: div[class^="Stack-module__VerticalStack"]
+    snippet_selector: div[class^="Text-module"] span
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=SER-module__subContainer]
+    url_selector: a[class*=SER-module__title]
+    title_selector: a[class*=SER-module__title]
+    snippet_selector: p[class*=SER-module__description], div[class*=SER-module__description], div[class*=SER-module__domain]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=SER-module__subContainer]
+    url_selector: a
+    title_selector: a
+    snippet_selector: div[class^="Text"]
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div#contenerresults div.result
+    url_selector: span.title a
+    title_selector: span.title
+    snippet_selector: p:not(.url)
+  - url_pattern: ^https?://[^/]+/\?
+    type: html_selector
+    results_selector: div[class^=Videos-module__VideosList] a[data-testid="videoResult"]
+    url_selector: :--self
+    title_selector: div[class*=VideoCardTitle]
+    snippet_selector: div[class*=VideoCardDescription]
   focused_url_prefixes:
   - /?
 - name: thairath
@@ -14675,8 +14802,17 @@
     type: query_parameter
     parameter: offset
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers: 
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    query_selector: form#searchform input#searchbox
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/search\?
+    type: html_selector
+    results_selector: div#results div.snippet
+    url_selector: a.result-header
+    title_selector: span.snippet-title
+    snippet_selector: div.snippet-content, p.snippet-description, div.text-sm.text-gray, div.description.text-sm
   focused_url_prefixes:
   - /search?
 - name: thenextweb

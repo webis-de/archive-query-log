@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Five Phases of Mitosis",
+    "offset": null,
+    "page": null,
+    "query": "Five Phases of Mitosis",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Phases of Mitosis</em> Slide 5 of 15 ...",
+            "timestamp": 1173539024,
+            "title": "<em>Phases of Mitosis</em>",
+            "url": "http://www.northern.wvnet.edu/~tdanford/bioc9-10/slide5.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "All images are copyrighted 2001 by Dale M. Benham.  However these images may be used for educational, non-profit endeavors ... Plant <em>Mitosis</em> ...",
+            "timestamp": 1173539024,
+            "title": "<em>Mitosis</em> Review",
+            "url": "http://biology.nebrwesleyan.edu/benham/mitosis/"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Mitosis</em> is a process of cell division which results in the production of two daughter ... In a typical animal cell, <em>mitosis</em> can be divided ...",
+            "timestamp": 1173539024,
+            "title": "<em>Mitosis</em>",
+            "url": "http://www.accessexcellence.org/AB/GG/mitosis.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "The <em>five</em> major <em>phases</em> of plant <em>mitosis</em>.  Unlike animals cells, plant cells do not have centrioles or asters.  During telophase, a partition or ...",
+            "timestamp": 1173539024,
+            "title": "Lab Manual Exercise #2",
+            "url": "http://waynesword.palomar.edu/lmexer2.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": "The 5 <em>phases of mitosis</em> are points at which \"we stop the clock\"  when there are significant changes in ...",
+            "timestamp": 1173539024,
+            "title": "<em>Mitosis</em>",
+            "url": "http://www.troy.k12.ny.us/thsbiology/skinny/skinny_mitosis.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Sidwell Friends School (SFS) is a PK-12, co-educational Quaker day school with campuses in Washington, DC and Bethesda, MD. Founded in 1883, ...",
+            "timestamp": 1173539024,
+            "title": "Sidwell Friends School: Login \u00bb 404",
+            "url": "http://www.sidwell.edu/us/science/vlb/mitosis/"
+        },
+        {
+            "rank": 7,
+            "snippet": "This exercise is designed to introduce you to the events that occur in the cell cycle and the process of <em>mitosis</em> that divides the duplicated genetic",
+            "timestamp": 1173539024,
+            "title": "The Cell Cycle &amp; <em>Mitosis</em> Tutorial",
+            "url": "http://www.biology.arizona.edu/cell_bio/tutorials/cell_cycle/main.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Mitosis</em> is nuclear division plus cytokinesis, and produces two identical daughter ... performing its prepare for <em>mitosis</em> (the next four ...",
+            "timestamp": 1173539024,
+            "title": "The Cell Cycle &amp; <em>Mitosis</em> Tutorial",
+            "url": "http://www.biology.arizona.edu/cell_bio/tutorials/cell_cycle/cells3.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "The rest of cell cycle is broken down into <em>five phases</em> called <em>MITOSIS</em>.  The first of these <em>phases</em> is called PROPHASE.",
+            "timestamp": 1173539024,
+            "title": "celltools.html",
+            "url": "http://www.udayton.edu/~cj/academics/GSPAGES/mitosis.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "SWBAT identify the <em>five phases of mitosis</em>. ... Review the <em>five phases of mitosis</em> (interphase, prophase, metaphase, anaphase, and telophase).",
+            "timestamp": 1173539024,
+            "title": "Macaroni <em>Mitosis</em>",
+            "url": "http://csmstu01.csm.edu/st03/sfurstenau/macaroni_mitosis.htm"
+        }
+    ],
+    "timestamp": 1173539024,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Five+Phases+of+Mitosis"
+}

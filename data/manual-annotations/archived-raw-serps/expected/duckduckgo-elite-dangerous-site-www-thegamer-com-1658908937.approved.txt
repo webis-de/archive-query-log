@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Elite: Dangerous site:www.thegamer.com",
+    "offset": null,
+    "page": null,
+    "query": "Elite: Dangerous site:www.thegamer.com",
+    "results": [],
+    "timestamp": 1658908937,
+    "url": "https://duckduckgo.com/?q=Elite%3A+Dangerous+site%3Awww.thegamer.com&t=ffab"
+}

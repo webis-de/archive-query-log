@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Who framed roger rabbit",
+    "offset": null,
+    "page": null,
+    "query": "Who framed roger rabbit",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Who Framed Roger Rabbit is a 1988 American live-action/animated fantasy \ncomedy film directed by Robert Zemeckis, produced by Frank Marshall and \nRobert\u00a0...",
+            "timestamp": 1473167643,
+            "title": "Who Framed Roger Rabbit",
+            "url": "https://en.wikipedia.org/wiki/Who_Framed_Roger_Rabbit"
+        },
+        {
+            "rank": 2,
+            "snippet": "Animation \u00b7 A toon-hating detective is a cartoon rabbit's only hope to prove his \ninnocence when he is accused of murder.",
+            "timestamp": 1473167643,
+            "title": "Who Framed Roger Rabbit (1988) - IMDb",
+            "url": "http://www.imdb.com/title/tt0096438/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Jan 17, 2009 ... Trailer for Who Framed Roger Rabbit. ... If Roger Rabbit was released by the \nDisney Label then the swear words the toons say should've been\u00a0...",
+            "timestamp": 1473167643,
+            "title": "Movie Trailer - 1988 - Who Framed Roger Rabbit - YouTube",
+            "url": "http://www.ask.com/youtube?q=Who+framed+roger+rabbit&v=OFCIaMyMORg&qsrc=472"
+        },
+        {
+            "rank": 4,
+            "snippet": "Who Framed Roger Rabbit is a 1988 fantasy-comedy film directed by Robert \nZemeckis, produced by Steven Spielberg and based on Gary K. Wolf's novel Who\n\u00a0...",
+            "timestamp": 1473167643,
+            "title": "Who Framed Roger Rabbit - Disney Wiki - Wikia",
+            "url": "http://disney.wikia.com/wiki/Who_Framed_Roger_Rabbit"
+        },
+        {
+            "rank": 5,
+            "snippet": "Editorial Reviews. On Blu-ray for the first time ever, this digitally remastered \nedition of WHO FRAMED ROGER RABBIT practically jumps off the screen with its\n\u00a0...",
+            "timestamp": 1473167643,
+            "title": "Amazon.com: Who Framed Roger Rabbit: 25th Anniversary Edition ...",
+            "url": "http://www.amazon.com/dp/B00AO686MY/ref=asc_df_B00AO686MY4499681/?tag=askcom05el-20&creative=394997&creativeASIN=B00AO686MY&linkCode=df4"
+        },
+        {
+            "rank": 6,
+            "snippet": "Mar 14, 2013 ... 25 years on, it's widely forgotten that \u201cWho Framed Roger Rabbit\u201d (and it should \nbe noted that the film doesn't have a question mark in the title:\u00a0...",
+            "timestamp": 1473167643,
+            "title": "5 Things You Might Not Know About 'Who Framed Roger Rabbit ...",
+            "url": "http://www.indiewire.com/2013/03/5-things-you-might-not-know-about-who-framed-roger-rabbit-100740/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Editorial Reviews. Product Description. It's 1947 Hollywood, and Eddie Valiant (\nBob Hoskins), a down-on-his-luck detective, is hired to find proof that Marvin\u00a0...",
+            "timestamp": 1473167643,
+            "title": "Amazon.com: Who Framed Roger Rabbit (Vista Series): Bob ...",
+            "url": "https://www.amazon.com/Who-Framed-Roger-Rabbit-Vista/dp/B00007AJGH"
+        },
+        {
+            "rank": 8,
+            "snippet": "Who Framed Roger Rabbit (1988) is a technically-marvelous film blending \nanimated, ink-and-paint cartoon characters and flesh-and-blood live actors, in a\u00a0...",
+            "timestamp": 1473167643,
+            "title": "Who Framed Roger Rabbit (1988) - Greatest Films",
+            "url": "http://www.filmsite.org/whof.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Watch online and download cartoon Who Framed Roger Rabbit Movie in high \nquality. Various formats from 240p to 720p HD (or even 1080p). HTML5 available\n\u00a0...",
+            "timestamp": 1473167643,
+            "title": "Who Framed Roger Rabbit Movie - KissCartoon",
+            "url": "http://kisscartoon.me/Cartoon/Who-Framed-Roger-Rabbit/Movie?id=3276"
+        },
+        {
+            "rank": 10,
+            "snippet": "BABY HERMAN AND ROGER RABBIT are in a playpen when TWO FEMALE \nLEGS in high heels walk INTO FRAME. The VOICE belonging to the legs talks\u00a0...",
+            "timestamp": 1473167643,
+            "title": "Who Framed Roger Rabbit?, by Jeffrey Price and Peter S. Seaman",
+            "url": "http://www.dailyscript.com/scripts/roger-rabbit.html"
+        }
+    ],
+    "timestamp": 1473167643,
+    "url": "http://www.ask.com/web?q=Who+framed+roger+rabbit&qsrc=0&o=0&l=dir%2C+gset&qo=homepageSearchBox"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "Games Video Games Developers and Publishers Croteam",
+    "offset": null,
+    "page": null,
+    "query": "Games Video Games Developers and Publishers Croteam",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Croteam</em> | Top Developed <em>Video</em> <em>Games</em>. Serious Sam 4 (PC) Serious Sam: The First Encounter (PC) Serious Sam: The Second Encounter (PC) Serious Sam 2 (PC) Serious Sam 3: BFE (PC) Serious Sam HD: The First Encounter (PC)",
+            "timestamp": 1624838167,
+            "title": "Croteam | game developer | game publisher | gamepressure.com",
+            "url": "https://www.gamepressure.com/games/game-company.asp?ID=4213"
+        },
+        {
+            "rank": 2,
+            "snippet": "Made by some of the standout <em>Croteam</em> veterans who worked on The Talos Principle, and written by Jonas and Verena Kyratzes, The Hand of Merlin blends Arthurian legend with sci-fi horror. The <em>game</em> is a tactical masterpiece if we do say so myself, but don\u2019t trust our word on it, check it out for yourself as it\u2019s available in Steam Early Access now.",
+            "timestamp": 1624838167,
+            "title": "Official website - Croteam",
+            "url": "https://www.croteam.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1624838167,
+            "title": "Croteam",
+            "url": "https://www.croteam.com/press/"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Croteam</em> is a<em> Croatian video game developer</em> based in Zagreb. The company was established by Davor Hunski, Damir Perovi\u0107, Roman Ribari\u0107 and Dean Sekuli\u0107, four former classmates, in late August 1992.<em> Croteam</em> is best known for Serious Sam, a series of first-person shooters introduced with Serious Sam: The First Encounter in 2001. The company also developed the 2014 puzzle<em> game</em> The Talos Principle.<em> Croteam</em> employed approximately 40 people in 2020 and was acquired by its long-time<em> publishing</em> ...",
+            "timestamp": 1624838167,
+            "title": "Croteam - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Croteam_VR"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1624838167,
+            "title": "Croteam | Serious Sam Wiki | Fandom",
+            "url": "https://serioussam.fandom.com/wiki/Croteam"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Croteam</em>, Zagreb, Croatia. 15,855 likes \u00b7 8 talking about this. Croatian <em>game</em> <em>developer</em>, makers of award winning Serious Sam series and first person philosophical puzzler The Talos Principle.",
+            "timestamp": 1624838167,
+            "title": "Croteam - Home | Facebook",
+            "url": "https://www.facebook.com/croteam/?__xts__=68.ARCVrSmWj4N-64XFtE9mGcd6F7Tl_YfnhLOLUrZbwkit62YZtBj2Pd_dZcxSS-OHMsDH8nV0BnH1cxiloVUAicGYLoHNeAkEgmzJonr9CBrB4Y6nlCGhUeG8wyDIP3lKD9Za9iFAm6i6uf9Cvg-Lwkya3Fs1l_6esDL_6NJ69miCljMg8EqZP1lG_RG2kFMLvgylb9vTTrNcT1b8rqOi6wQ"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Croteam</em>, Zagreb, Croatia. 15,850 likes \u00b7 3 talking about this. Croatian <em>game</em> <em>developer</em>, makers of award winning Serious Sam series and first person philosophical puzzler The Talos Principle.",
+            "timestamp": 1624838167,
+            "title": "Croteam - Home | Facebook",
+            "url": "https://www.facebook.com/croteam/?__xts__%5Bobject+1%5D=68.A"
+        },
+        {
+            "rank": 8,
+            "snippet": "Oct 22, 2020 \u00b7  <em>Croteam </em>began as a small group of friends looking to get into the gaming business. The team started with sports titles, but eventually created a demo that would become Serious Sam .",
+            "timestamp": 1624838167,
+            "title": "Devolver Digital Buys Serious Sam Developer | Game Rant",
+            "url": "https://gamerant.com/devolver-digital-croteam-serious-sam/"
+        },
+        {
+            "rank": 9,
+            "snippet": "The original Serious Sam games were published by Gathering of<em> Developers,</em> and<em> Croteam</em> had continued working with Wilson and his partners while at Gamecock Media Group. [4] [5] Since<em> Croteam's</em> deal with Gathering of<em> Developers</em> allowed<em> Croteam</em> to retain the rights to the series, they were able to work with Devolver Digital on further titles beyond the ownership of Gathering of<em> Developers'</em> assets.",
+            "timestamp": 1624838167,
+            "title": "Devolver Digital - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Eitr_(video_game)"
+        }
+    ],
+    "timestamp": 1624838167,
+    "url": "https://search.yahoo.com/search?p=Games+Video+Games+Developers+and+Publishers+Croteam"
+}

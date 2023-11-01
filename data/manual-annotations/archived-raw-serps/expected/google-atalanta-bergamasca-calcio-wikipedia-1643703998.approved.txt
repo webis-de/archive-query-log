@@ -6,70 +6,70 @@
     "results": [
         {
             "rank": 2,
-            "snippet": null,
+            "snippet": "WELCOME TO THE OFFICIAL YOUTUBE CHANNEL ATALANTA BERGAMASCA CALCIO. Since 1907 Bergamo's Team.#ForzaAtalanta#ABC1907.",
             "timestamp": 1643703998,
             "title": "Atalanta Bergamasca Calcio - YouTube",
             "url": "https://www.google.com/url?q=https://www.youtube.com/channel/UC0R-isVeRhMDe3vFTWP5Spg&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQFnoECAYQAQ&usg=AOvVaw0hjzaA58idNDmD7MKQ5_KZ"
         },
         {
             "rank": 3,
-            "snippet": null,
+            "snippet": "Jul 10, 2017 \u00b7 The Atalanta Bergamasca Calcio, better known as Atalanta is the new Italian soccer team that ...Duration: 0:21Posted: Jul 10, 2017",
             "timestamp": 1643703998,
             "title": "Atalanta Bergamasca Calcio | JOMA \u00ae",
             "url": "https://www.google.com/url?q=https://www.joma-sport.com/en/sponsor/atalanta-bergamasca-calcio&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQtwJ6BAgJEAE&usg=AOvVaw0p-dGZjDVeQVx5vW95PsWw"
         },
         {
             "rank": 4,
-            "snippet": null,
+            "snippet": "Nov 27, 2021 \u00b7 Atalanta Bergamasca Calcio. 70.9K subscribers. Subscribe. L'Atalanta esce con un ...Duration: 2:09Posted: Nov 27, 2021",
             "timestamp": 1643703998,
             "title": "#UCL MD5 | Young Boys-Atalanta 3-3 | Highlights - YouTube",
             "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3D8ep-haI7NEk&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQtwJ6BAgHEAE&usg=AOvVaw1aZWYXv4YObv72IPOHc01R"
         },
         {
             "rank": 5,
-            "snippet": null,
+            "snippet": "Aug 3, 2021 \u00b7 NameAtalanta Bergamasca Calcio S.p.A.. Nickname(s)Orobici. Foundation Year1907-10 ...Duration: 2:31Posted: Aug 3, 2021",
             "timestamp": 1643703998,
             "title": "Atalanta Bergamasca Calcio SpA :: Statistics :: Titles - playmakerstats.com",
             "url": "https://www.google.com/url?q=https://www.playmakerstats.com/equipa.php%3Fid%3D57&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQtwJ6BAgIEAE&usg=AOvVaw1aIMg1Y57xOfTJLFKC3Ysg"
         },
         {
             "rank": 6,
-            "snippet": null,
+            "snippet": "15 hours ago \u00b7 Atalanta Bergamasca Calcio. 70.9K subscribers. Subscribe. Life is unpredictable. It ...Duration: 2:50Posted: 15 hours ago",
             "timestamp": 1643703998,
             "title": "Valentin Mihaila, dichiarazioni nerazzurre - YouTube",
             "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3D2lWuSwX_aTo%26vl%3Den&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQtwJ6BAgDEAE&usg=AOvVaw34OajdqasDqItrW3GaKtmA"
         },
         {
             "rank": 7,
-            "snippet": null,
+            "snippet": "WELCOME TO THE OFFICIAL YOUTUBE CHANNEL ATALANTA BERGAMASCA CALCIO. Since 1907 Bergamo's Team.#ForzaAtalanta#ABC1907.",
             "timestamp": 1643703998,
             "title": "Atalanta Bergamasca Calcio - YouTube",
             "url": "https://www.google.com/url?q=https://www.youtube.com/user/atalantabc1907&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQFnoECAAQAQ&usg=AOvVaw0cbkew0iQkSUkfjbMKLodC"
         },
         {
             "rank": 8,
-            "snippet": null,
+            "snippet": "2 days ago \u00b7 Official profile of Atalanta Bergamasca Calcio Bergamo Gewiss Stadium ...Duration: 0:41Posted: 2 days ago",
             "timestamp": 1643703998,
             "title": "#atalanta - Twitter Search / Twitter",
             "url": "https://www.google.com/url?q=https://twitter.com/hashtag/atalanta&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQtwJ6BAgEEAE&usg=AOvVaw0atKw1t6fcyrhsQpWSEgdk"
         },
         {
             "rank": 9,
-            "snippet": null,
+            "snippet": "Jan 22, 2022 \u00b7 Atalanta Bergamasca Calcio. 70.9K subscribers. Subscribe. L'11 titolare di Lazio ...Duration: 0:53Posted: Jan 22, 2022",
             "timestamp": 1643703998,
             "title": "23\u00aa #SerieATIM | Lazio-Atalanta | La videoformazione nerazzurra - YouTube",
             "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DTB6DRtL2EBE&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQtwJ6BAgFEAE&usg=AOvVaw1Tx6rvvXCalHnsINO8JASF"
         },
         {
             "rank": 10,
-            "snippet": null,
+            "snippet": "6 days ago \u00b7 Official profile of Atalanta Bergamasca Calcio Bergamo Gewiss Stadium ...Posted: 6 days ago",
             "timestamp": 1643703998,
             "title": "#ATALANTA - Twitter Search / Twitter",
             "url": "https://www.google.com/url?q=https://mobile.twitter.com/search%3Fq%3D%2523ATALANTA&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQtwJ6BAgBEAE&usg=AOvVaw08vdxuTo7HJgj0TKjefUAg"
         },
         {
             "rank": 11,
-            "snippet": null,
+            "snippet": "Jan 9, 2022 \u00b7 NameAtalanta Bergamasca Calcio S.p.A.. Nickname(s)Orobici. Foundation Year1907-10 ...Duration: 3:21Posted: Jan 9, 2022",
             "timestamp": 1643703998,
             "title": "Atalanta Bergamasca Calcio SpA :: Statistics :: Titles - playmakerstats.com",
             "url": "https://www.google.com/url?q=https://www.playmakerstats.com/equipa.php%3Fid%3D57%26epoca_id%3D148&sa=U&ved=2ahUKEwjuqpf8l971AhXdJ0QIHaOTCrMQtwJ6BAgCEAE&usg=AOvVaw1MAGhl8CmaHYXgHd08UIeV"

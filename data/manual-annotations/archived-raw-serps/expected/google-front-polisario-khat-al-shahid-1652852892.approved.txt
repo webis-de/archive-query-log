@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Front Polisario Khat al-Shahid\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Front Polisario Khat al-Shahid\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Front Polisario Khat Al Shahid : Russell Jesse: Amazon.es: Libros.",
+            "timestamp": 1652852892,
+            "title": "Front Polisario Khat Al Shahid : Russell Jesse: Amazon.es: Libros",
+            "url": "https://www.google.com/url?q=https://www.amazon.es/Front-Polisario-Khat-Al-Shahid/dp/5513769816&sa=U&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQFnoECAgQAg&usg=AOvVaw0B1EWRiMW-F6RFypm5T1Bu"
+        },
+        {
+            "rank": 3,
+            "snippet": "Front Polisario Khat Al Shahid - 9785513769811 - Livros na Amazon Brasil. ... Front Polisario Khat Al Shahid Capa comum. por Russell Jesse (Autor)\u00a0...",
+            "timestamp": 1652852892,
+            "title": "Front Polisario Khat Al Shahid - Livros na Amazon Brasil - Amazon",
+            "url": "https://www.google.com/url?q=https://www.amazon.com.br/Front-Polisario-Khat-Al-Shahid/dp/5513769816&sa=U&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQFnoECAAQAg&usg=AOvVaw1qOVzw07MAnvMWmWARzOCl"
+        },
+        {
+            "rank": 4,
+            "snippet": "Find link is a tool written by Edward Betts. searching for Front Polisario Khat al-Shahid 0 found (5 total)",
+            "timestamp": 1652852892,
+            "title": "Front Polisario Khat al-Shahid - Find link - Edward Betts",
+            "url": "https://www.google.com/url?q=https://edwardbetts.com/find_link/Front_Polisario_Khat_al-Shahid&sa=U&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQFnoECAQQAg&usg=AOvVaw0D2MZcyZgNfi6lfqmptJKM"
+        },
+        {
+            "rank": 5,
+            "snippet": "front polisario khat al-shahid French translation\uff1akhat achahid.... click for more detailed French translation, definition, pronunciation and example\u00a0...",
+            "timestamp": 1652852892,
+            "title": "front polisario khat al-shahid meaning in French - translation ...",
+            "url": "https://www.google.com/url?q=http://m.translation-dictionary.net/ef/front%2520polisario%2520khat%2520al-shahid&sa=U&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQFnoECAcQAg&usg=AOvVaw3X4fGeZk1YfChi-6QFrvr2"
+        },
+        {
+            "rank": 7,
+            "snippet": "12. front polisario khat al-shahid 13. front polisario khat al shahid 14. gor-e-shahid eidgah maidan 15. gor e shahid eidgah maidan 16. haafiz shahid",
+            "timestamp": 1652852892,
+            "title": "Words that match the pattern \"**shahid**\" - OneLook Dictionary Search",
+            "url": "https://www.google.com/url?q=https://www.onelook.com/%3Flang%3Dall%26w%3D**shahid**%26scwo%3D0%26sswo%3D0&sa=U&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQFnoECAMQAg&usg=AOvVaw3x3D1o16xO2DgM6znWoi5q"
+        },
+        {
+            "rank": 8,
+            "snippet": "... Rif Independence Movement (RIM), Rifland Independence, September 18 Movement for the Independence of the Rif SAHARAWI: Front Polisario Khat al-Shahid,\u00a0...",
+            "timestamp": 1652852892,
+            "title": "Encyclopedia of Stateless Nations: Ethnic and National Groups ...",
+            "url": "https://books.google.com/books?id=pGClDAAAQBAJ&pg=PA530&lpg=PA530&dq=%22Front+Polisario+Khat+al-Shahid%22+-wikipedia&source=bl&ots=cmB7VzE_IW&sig=ACfU3U3ykhgzZCUQrxsL5fX-LU-8PC_uNg&hl=ca&sa=X&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQ6AF6BAgBEAE"
+        },
+        {
+            "rank": 9,
+            "snippet": "... sweden kenya zu-23 front polisario khat al-shahid panhard aml eland mk7 ratel ifv sk-105 k\u00fcrassier vietminh mujahideen anti-colonialism armored car ee-9\u00a0...",
+            "timestamp": 1652852892,
+            "title": "'polisario' related words: algeria mauritania [183 more]",
+            "url": "https://www.google.com/url?q=https://relatedwords.org/relatedto/polisario&sa=U&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQFnoECAYQAg&usg=AOvVaw0451AGuIvGsd4OPJ5cBMtH"
+        },
+        {
+            "rank": 10,
+            "snippet": "... halftracks brahim gali mahfoud ali beiba sa-6 sa-7 sa-8 sa-9 zpu-2 zu-23 fretilin front polisario khat al-shahid romanization of arabic spanish language\u00a0...",
+            "timestamp": 1652852892,
+            "title": "'polisario movement' related words: self-determination [124 more]",
+            "url": "https://www.google.com/url?q=https://relatedwords.org/relatedto/polisario%2520movement&sa=U&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQFnoECAUQAg&usg=AOvVaw2f2a5MwdO5iu_bkZhDMISW"
+        },
+        {
+            "rank": 11,
+            "snippet": "In 2004, an anti-ceasefire and anti-Abdelaziz opposition fraction, the Front Polisario Khat al-Shahid announced its existence, in the first break with the\u00a0...",
+            "timestamp": 1652852892,
+            "title": "Polisario Front \u0907\u0924\u093f\u0939\u093e\u0938 \u0926\u0947\u0916\u0947\u0902 \u0905\u0930\u094d\u0925 \u0914\u0930 \u0938\u093e\u092e\u0917\u094d\u0930\u0940 - hmoob.in",
+            "url": "https://www.google.com/url?q=https://www.hmoob.in/wiki/Polisario&sa=U&ved=2ahUKEwjmrqfVx-j3AhUlK0QIHebsChYQFnoECAkQAg&usg=AOvVaw2BUvdZ7nFmZat1MSWGbuiv"
+        }
+    ],
+    "timestamp": 1652852892,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Front+Polisario+Khat+al-Shahid%22"
+}

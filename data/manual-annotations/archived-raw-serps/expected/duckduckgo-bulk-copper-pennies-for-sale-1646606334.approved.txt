@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "bulk copper pennies for sale",
+    "offset": null,
+    "page": null,
+    "query": "bulk copper pennies for sale",
+    "results": [],
+    "timestamp": 1646606334,
+    "url": "https://duckduckgo.com/?q=bulk+copper+pennies+for+sale&t=opera"
+}

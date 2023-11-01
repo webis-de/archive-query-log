@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Fatmira Bre\u00e7ani\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Fatmira Bre\u00e7ani\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Jul 16, 2022 \u00b7 ONIMA - http://smarturl.it/ONIMAhttps://fanlink.to/OjDashniGold AG ft. Fatmira Bre\u00e7ani - Oj ...Duration: 2:51Posted: Jul 16, 2022",
+            "timestamp": 1662136538,
+            "title": "Gold AG ft. Fatmira Bre\u00e7ani - Oj dashni - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3D_rtXlzIylLE&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQtwJ6BAgIEAE&usg=AOvVaw0acdNfDOPtzK3ZAu-lCTqJ"
+        },
+        {
+            "rank": 3,
+            "snippet": "Aug 25, 2021 \u00b7 Fatmira Brecani - Live Songs. 4,848 views4.8K views. Aug 25, 2021. 42. Dislike. Share. Save ...Duration: 3:31Posted: Aug 25, 2021",
+            "timestamp": 1662136538,
+            "title": "Fatmira Brecani - Live Songs - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DlZ9wxziGDWU&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQtwJ6BAgDEAE&usg=AOvVaw09qCAc_fLZxeExhILl1BWY"
+        },
+        {
+            "rank": 4,
+            "snippet": "Listen to Fatmira Brecani on Spotify. Artist \u00b7 11.6K monthly listeners.",
+            "timestamp": 1662136538,
+            "title": "Fatmira Brecani - Spotify \u2013 Web Player",
+            "url": "https://www.google.com/url?q=https://open.spotify.com/artist/3U62pAMZioYeYixSQtS5A3&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQFnoECAAQAg&usg=AOvVaw0GrMZHmgTldxQwsjWfW-mp"
+        },
+        {
+            "rank": 5,
+            "snippet": "Fatmira Brecani is a popular Albanian artist/band. Explore Fatmira Brecani's net worth &amp; salary in 2022. Learn more details about Fatmira Brecani's height, real\u00a0...",
+            "timestamp": 1662136538,
+            "title": "Fatmira Brecani's Net Worth And Earnings In 2022 - Popnable",
+            "url": "https://www.google.com/url?q=https://popnable.com/albania/artists/10924-fatmira-brecani/net-worth&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQFnoECAUQAg&usg=AOvVaw13LE_4yduIJgyqhE6AeFbJ"
+        },
+        {
+            "rank": 6,
+            "snippet": "View the profiles of people named Fatmira Brecani. Join Facebook to connect with Fatmira Brecani and others you may know. Facebook gives people the power...",
+            "timestamp": 1662136538,
+            "title": "fatmira-brecani Profiles - Facebook",
+            "url": "https://www.google.com/url?q=https://www.facebook.com/public/Fatmira-Brecani&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQFnoECAEQAg&usg=AOvVaw2dtwv_PVuPAKBZpOeFZZro"
+        },
+        {
+            "rank": 7,
+            "snippet": "Fatmira Bre\u00e7ani lyrics with translations: Xinxilushe, Moj Lulja E Blinit, Dola ne penxhere, Kaperceva Erenikun.",
+            "timestamp": 1662136538,
+            "title": "Fatmira Bre\u00e7ani lyrics with translations",
+            "url": "https://www.google.com/url?q=https://lyricstranslate.com/en/fatmira-brecani-lyrics.html&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQFnoECAcQAg&usg=AOvVaw3BY8nzTQEiwWZrahOQ_Xmn"
+        },
+        {
+            "rank": 8,
+            "snippet": "Sign up for Deezer for free and listen to Fatmira Brecani: discography, top tracks and playlists.",
+            "timestamp": 1662136538,
+            "title": "Fatmira Brecani: albums, songs, playlists | Listen on Deezer",
+            "url": "https://www.google.com/url?q=https://www.deezer.com/us/artist/8301228&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQFnoECAIQAg&usg=AOvVaw0o_jVyxQPeFHg1E7LK3yIZ"
+        },
+        {
+            "rank": 9,
+            "snippet": "Fatmira Brecani. Play on TIDAL. Open in Web App. Open in Desktop App. Share. Top Tracks. Qefi Qefi (feat. Fatmira Brecani) \u00b7 Bes KallakuFatmira Brecani.",
+            "timestamp": 1662136538,
+            "title": "Fatmira Brecani on TIDAL",
+            "url": "https://www.google.com/url?q=https://tidal.com/browse/artist/10944454&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQFnoECAYQAg&usg=AOvVaw28g22In8ww-tUrTLK_7wCX"
+        },
+        {
+            "rank": 10,
+            "snippet": "Discover short videos related to Fatmira brecani on TikTok. Watch popular content from the following creators: Fatmira brecani(@fatmirabrecaniofficial),\u00a0...",
+            "timestamp": 1662136538,
+            "title": "Discover Fatmira brecani 's popular videos - TikTok",
+            "url": "https://www.google.com/url?q=https://www.tiktok.com/discover/Fatmira-brecani%3Flang%3Den&sa=U&ved=2ahUKEwiryPz43_b5AhVmKUQIHaUqBvQQFnoECAQQAg&usg=AOvVaw1y2Ry0pqJhJM-M80qhkKN9"
+        }
+    ],
+    "timestamp": 1662136538,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Fatmira+Bre%C3%A7ani%22"
+}

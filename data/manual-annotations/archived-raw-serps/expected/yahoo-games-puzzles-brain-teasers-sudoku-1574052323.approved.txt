@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Games Puzzles Brain Teasers Sudoku",
+    "offset": null,
+    "page": null,
+    "query": "Games Puzzles Brain Teasers Sudoku",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Easy Puzzles, Brain Teasers &amp; Games: With Word Searches, Spot the Odd One Out, Mazes, <em>Sudoku</em>, Find the Differences, Memory Games, Riddles, Trivia Matching and More [Editor of Puzzles &amp; Games] on Amazon.com. *FREE* shipping on qualifying offers. This easy, fun puzzle book is perfect for seniors! In particular, it has large-print and clear images for an enjoyable solving experience.",
+            "timestamp": 1574052323,
+            "title": "Easy Puzzles, Brain Teasers &amp; Games: With Word Searches, Spot ...",
+            "url": "https://www.amazon.com/Easy-Puzzles-Brain-Teasers-Games/dp/1981196013"
+        },
+        {
+            "rank": 2,
+            "snippet": "Created as Number Place in the 1970s, this logic puzzle gained mass popularity in Japan in the 1980s. <em>Sudoku</em>, or <em>Su Doku</em>, is Japanese for number singly. In 2005 it gained great appeal in the United Kingdom and is rapidly expanding to the rest of the Western Hemisphere.",
+            "timestamp": 1574052323,
+            "title": "Curlie - Games: Puzzles: Brain Teasers: Sudoku",
+            "url": "https://curlie.org/Games/Puzzles/Brain_Teasers/Sudoku"
+        },
+        {
+            "rank": 3,
+            "snippet": "BrainBashers\u2122 is a collection of brain teasers, puzzles, riddles and optical illusions. There is a wide selection of things to do every single day, so BrainBashers\u2122 is the place to spend a long, boring Tuesday using your brain.",
+            "timestamp": 1574052323,
+            "title": "BrainBashers - Puzzles and Brain Teasers",
+            "url": "https://brainbashers.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Brain teasers are the favorite type of puzzles for many people. They are fun, clever, and challenge your problem solving skills in unique ways. Below you will find a large collection with some of the finest brain teasers, carefully selected by our team.You can filter the puzzles either by difficulty \u2013 ranked from Easy to Expert, or by topic.",
+            "timestamp": 1574052323,
+            "title": "Brain Teasers - Puzzle Prime",
+            "url": "https://www.puzzleprime.com/brain-teasers/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Play the best free Mind <em>Games </em>online with <em>brain</em>, math, puzzle and word <em>games</em>, sudokus and memory <em>games</em>. The <em>games </em>are playable on desktop, tablet and mobile (Android, iOS, Windows Mobile).",
+            "timestamp": 1574052323,
+            "title": "Free Online Mind Games",
+            "url": "https://www.mindgames.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Online shopping for Books from a great selection of <em>Sudoku</em>, Puzzles, Video &amp; Computer Games, Trivia, Logic &amp; Brain Teasers, Word Games &amp; more at everyday low prices.",
+            "timestamp": 1574052323,
+            "title": "Amazon.com: Puzzles &amp; Games: Books: Sudoku, Puzzles, Video ...",
+            "url": "https://www.amazon.com/Puzzles-Games-Entertainment-Books/b?node=4402"
+        },
+        {
+            "rank": 7,
+            "snippet": "Wrap your <em>brain </em>around these manipulative <em>puzzles </em>and <em>games </em>for all difficulty levels and all ages. Improve manual dexterity, memory, and logic Grab a few for a gift basket or to take on the road",
+            "timestamp": 1574052323,
+            "title": "Puzzles &amp; Brain Teasers | ToysGamesPuzzles",
+            "url": "https://toysgamespuzzles.com/collections/puzzles-brain-teasers"
+        },
+        {
+            "rank": 8,
+            "snippet": "Online Puzzles,<em></em> Brain Teasers,<em></em> Games. Puzzles are the most fun loving as well productive game platform for almost all age groups. Its best choice to spare some time alone but still to engage the mind. If you are crazy about solving an easy to hard intrinsic puzzles, then this is the right place for you.",
+            "timestamp": 1574052323,
+            "title": "Online Puzzles, Brain Teasers, Games",
+            "url": "https://www.puzzles.pics/"
+        },
+        {
+            "rank": 9,
+            "snippet": "As a Braingle user you can submit riddles, rate <em>puzzles</em>, make quizzes, keep track of <em>brain teasers </em>and play some of our exclusive <em>games</em>. With our active community frequently adding new <em>brain </em>teaser and quizzes your <em>brain </em>will never get bored!",
+            "timestamp": 1574052323,
+            "title": "Braingle \u00bb Brain Teasers, Puzzles, Riddles, Trivia and Games",
+            "url": "https://www.braingle.com/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Challenging puzzles and brain teasers for when you\u2019re bored of <em>Sudoku</em>. ... One way to find out is to break away from popular games like crosswords and <em>Sudoku</em>. Do things like manipulate metal and ...",
+            "timestamp": 1574052323,
+            "title": "Challenging puzzles and brain teasers for when you\u2019re bored ...",
+            "url": "https://www.popsci.com/puzzles-brain-teasers/"
+        }
+    ],
+    "timestamp": 1574052323,
+    "url": "https://search.yahoo.com/search?p=Games+Puzzles+Brain+Teasers+Sudoku"
+}

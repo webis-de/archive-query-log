@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Grasshopper Design Pvt. Ltd.\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Grasshopper Design Pvt. Ltd.\"",
+    "results": [
+        {
+            "rank": 3,
+            "snippet": "Grasshopper Design Pvt. Ltd. | 86 followers on LinkedIn. GRASSHOPPER Design Pvt. Ltd is a creative design agency. We only concentrate on infinite creativity\u00a0...",
+            "timestamp": 1640249780,
+            "title": "Grasshopper Design Pvt. Ltd. | LinkedIn",
+            "url": "https://www.google.com/url?q=https://in.linkedin.com/company/grasshopper-design-pvt-ltd&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAcQAg&usg=AOvVaw1s3UiFfHLydt6Dg2KTr5jj"
+        },
+        {
+            "rank": 4,
+            "snippet": "Beoordeling  4,8 \n (128) \n\nGrasshopper Design Pvt Ltd Catalogue listing range of products and services offered by Grasshopper Design Pvt Ltd in Jp Nagar 8th Phase, Bangalore.",
+            "timestamp": 1640249780,
+            "title": "Grasshopper Design Pvt Ltd in Jp Nagar 8th Phase, Bangalore",
+            "url": "https://www.google.com/url?q=https://www.justdial.com/Bangalore/Grasshopper-Design-Pvt-Ltd-Near-Bus-Stand-Jp-Nagar-8th-Phase/080PXX80-XX80-170717123022-G1C7_BZDET&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAoQAg&usg=AOvVaw07omYRh_Aan38OrR-O1TSv"
+        },
+        {
+            "rank": 5,
+            "snippet": "Grasshopper Design Pvt Ltd - email id &amp; phone of 2 top management contacts like Founder, CEO, CFO, CMO, CTO, Marketing or HR or Finance head &amp; all company\u00a0...Founder: Anupriya Sasikumar",
+            "timestamp": 1640249780,
+            "title": "Grasshopper Design Pvt Ltd - Email &amp; Phone of top management ...",
+            "url": "https://www.google.com/url?q=https://www.easyleadz.com/company/grasshopper-design&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAgQAg&usg=AOvVaw0djVxYkn64SLIs8RftRM4T"
+        },
+        {
+            "rank": 6,
+            "snippet": "Contact and general information about Grasshopper Design Pvt Ltd company, headquarter location in Bengalore, Karnataka. Email formats &amp; phone numbers of\u00a0...",
+            "timestamp": 1640249780,
+            "title": "Grasshopper Design Pvt Ltd Email Formats &amp; Employee Phones",
+            "url": "https://www.google.com/url?q=https://www.signalhire.com/companies/grasshopper-design-pvt-ltd&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAEQAg&usg=AOvVaw341kNiSd8VV1KsOHyKwW78"
+        },
+        {
+            "rank": 7,
+            "snippet": "Beoordeling  4,0 \n (2) \n\nBengaluru, Karnataka 560076, Jumbo Sawari, Royal County, 8th Phase JP Nagar, #47 1st floor, 2nd main, Gottigere Kengeri Rd,.",
+            "timestamp": 1640249780,
+            "title": "Grasshopper Design Pvt. Ltd. - Bangalore - Nicelocal.in",
+            "url": "https://www.google.com/url?q=https://nicelocal.in/bangalore/business/grasshopper_design_pvt_ltd/&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAYQAg&usg=AOvVaw3HYTCLCwPbJ-wcU9tJ6McR"
+        },
+        {
+            "rank": 8,
+            "snippet": "Grasshopper Design. Design Agency. Grasshopper Design Pvt Ltd. https://grasshopperdesign.in/ \u00b7 Bangalore, India. Follow. Message.",
+            "timestamp": 1640249780,
+            "title": "Grasshopper Design on Behance",
+            "url": "https://www.google.com/url?q=https://www.behance.net/grasshodesign&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAQQAg&usg=AOvVaw3BocZBdbJcDkeH4lr78qOw"
+        },
+        {
+            "rank": 9,
+            "snippet": "Beoordeling  5,0 \n (21) \n\nGrasshopper Design Pvt. Ltd. Address, #47 1st floor, 2nd main, Gottigere Kengeri Rd,, Jumbo Sawari, Royal County, 8th Phase JP Nagar\u00a0...",
+            "timestamp": 1640249780,
+            "title": "Grasshopper Design Pvt. Ltd. - Business Directory India - indiapl.com",
+            "url": "https://www.google.com/url?q=https://indiapl.com/karnataka/grasshopper-design-pvt-ltd-498881&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAMQAg&usg=AOvVaw0LAWNhfeIeSnaYTat6mi9c"
+        },
+        {
+            "rank": 10,
+            "snippet": "Beoordeling  5,0 \n (1) \n\nGRASSHOPPER DESIGN PRIVATE LIMITED BANGALORE KARNATAKA Company Overview, information, business information, directors/partners details, director/partners\u00a0...",
+            "timestamp": 1640249780,
+            "title": "grasshopper design private limited - 99Corporates.com",
+            "url": "https://www.google.com/url?q=https://www.99corporates.com/Company-Overview/GRASSHOPPER-DESIGN-PRIVATE-LIMITED/CIN/U74999KA2017PTC103661&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAIQAg&usg=AOvVaw2bl3xe9Gnp-eEgFHxqCaVV"
+        },
+        {
+            "rank": 11,
+            "snippet": "13 mrt. 2020 \u00b7 Website : https://grasshopperdesign.inSubscribe &amp; Follow us:Facebook : https://www.facebook ...Duur: 0:20Geplaatst: 13 mrt. 2020",
+            "timestamp": 1640249780,
+            "title": "Helmet Awareness | 2D Animation | Grasshopper Design Pvt. Ltd",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DNPy0yrXWqrQ&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QtwJ6BAgFEAE&usg=AOvVaw2v43jYyaZ10wKt_Z5dUXJZ"
+        },
+        {
+            "rank": 12,
+            "snippet": "Beoordeling  5,0 \n (1) \n\nGrasshopper Design Pvt Ltd. Jp Nagar 8th Phase. 4.8. App Digital. Kodichikanahalli. 5.0. Cadlinc Infotech. Btm Layout.",
+            "timestamp": 1640249780,
+            "title": "Catalogue - Bhat in Bannerghatta Road, Bangalore - JdMart",
+            "url": "https://www.google.com/url?q=https://www.jdmart.com/Bangalore/Bhat-Bannerghatta-Road/080P5996716_BZDET/catalogue%3Fsrcterm%3DBhat%26predocid%3D080PK010800&sa=U&ved=2ahUKEwitpvWA1Pn0AhWDJzQIHaxIDQ0QFnoECAkQAg&usg=AOvVaw3RzMGPOL3efksGp0-Id_9R"
+        }
+    ],
+    "timestamp": 1640249780,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Grasshopper+Design+Pvt.+Ltd.%22"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "crow names",
+    "offset": null,
+    "page": null,
+    "query": "crow names",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "60+ Best Crow And Raven Names With Meanings by Kidadl",
+            "timestamp": 1608438374,
+            "title": "60+ Best Crow And Raven Names With Meanings by Kidadl",
+            "url": "https://www.kidadl.com/articles/best-crow-and-raven-names-with-meanings"
+        },
+        {
+            "rank": 2,
+            "snippet": "A <em>crow</em> is a bird of the genus Corvus, or more broadly a synonym for all of Corvus. The word \"<em>crow</em>\" is used as part of the common <em>name</em> of species including:.",
+            "timestamp": 1608438374,
+            "title": "Crow - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Crow"
+        },
+        {
+            "rank": 3,
+            "snippet": "BELASKO: Basque <em>name</em> meaning \"raven.\" \u00b7 BELTR\u00c1N: Spanish form of Old High German Berhtram, meaning \"bright raven.\" \u00b7 BERAHTHRABEN: Old High German\u00a0...",
+            "timestamp": 1608438374,
+            "title": "Crow Names, Raven Names, page 1 of ... - 20000-NAMES.COM",
+            "url": "http://www.20000-names.com/animal_crow_names_raven_names.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Crow</em> Origin and Meaning. The <em>name Crow</em> is a boy's <em>name</em> of origin. From Haruki Murakami's Kafka on the Shore, the story of a boy named Kafka -- <em>crow</em> in\u00a0...",
+            "timestamp": 1608438374,
+            "title": "Crow: Name Meaning, Popularity, and Similar Names ...",
+            "url": "https://nameberry.com/babyname/Crow"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Crow Names</em>, Raven Names, page 1 of 1--meaning, origin, etymology. November 2020. Names that mean crow, raven or blackbird. Crow- and raven-related\u00a0...",
+            "timestamp": 1608438374,
+            "title": "Names that mean crow, raven or blackbird. Crow- and raven ...",
+            "url": "https://www.pinterest.com/pin/485685141057835027/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Mar 22, 2020 - <em>Crows</em> are one of the most popular birds around the world. If you're looking for <em>names</em> for them, here are some cute and funny <em>names</em> for <em>crows</em>\u00a0...",
+            "timestamp": 1608438374,
+            "title": "Cute and Funny Crow Names - Pinterest",
+            "url": "https://www.pinterest.com/pin/604256474992151989/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Swiped from The Simpsons: Russell <em>Crow</em>, Cameron <em>Crow</em>, <em>Crow</em> Diddley, Hume Crownin, Gregory Peck. In the same vein: Gwyneth Palcrow, Crownan O'Brien,\u00a0...",
+            "timestamp": 1608438374,
+            "title": "Best name for a pet crow? : AskReddit",
+            "url": "https://www.reddit.com/r/AskReddit/comments/ozptd/best_name_for_a_pet_crow/"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Crow</em>, (genus Corvus), any of various glossy black birds found in most parts of the ... known as <em>crows</em>, and the <em>name</em> has been applied to other, unrelated birds.",
+            "timestamp": 1608438374,
+            "title": "Crow | bird | Britannica",
+            "url": "https://www.britannica.com/animal/crow-bird"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Crow Name</em> Meaning. English: from Middle English crow, Old English crawa, applied as a nickname for someone with dark hair or a dark complexion or\u00a0...",
+            "timestamp": 1608438374,
+            "title": "Crow Name Meaning &amp; Crow Family History at Ancestry.com\u00ae",
+            "url": "https://www.ancestry.com/name-origin?surname=crow"
+        },
+        {
+            "rank": 10,
+            "snippet": "Male <em>Crow Names</em>. Jon Snow: If you're familiar with American Television, you must've heard the name, Jon Snow. If you haven'\u00a0...",
+            "timestamp": 1608438374,
+            "title": "219 Cute and Famous Crow Names - Animal Hype",
+            "url": "https://animalhype.com/birds/crow-names/"
+        }
+    ],
+    "timestamp": 1608438374,
+    "url": "https://www.google.com/search?q=crow+names&rlz=1C1GCEA_enCA828CA828&oq=crow+name&aqs=chrome.0.0i457j69i57j0l6.1630j0j7&sourceid=chrome&ie=UTF-8"
+}

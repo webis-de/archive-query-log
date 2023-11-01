@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "google play store",
+    "offset": null,
+    "page": null,
+    "query": "google play store",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "October 26, 2020 -\n            Enjoy millions of the latest Android apps, games, music, movies, TV, books, magazines &amp; more. Anytime, anywhere, across your devices.",
+            "timestamp": 1649985658,
+            "title": "Google Play",
+            "url": "https://play.google.com/store?hl=en_US&gl=US"
+        },
+        {
+            "rank": 2,
+            "snippet": "December 11, 2021 -\n            Enjoy millions of the latest Android apps, games, music, movies, TV, books, magazines &amp; more. Anytime, anywhere, across your devices.",
+            "timestamp": 1649985658,
+            "title": "Android Apps on Google Play",
+            "url": "https://play.google.com/store/apps"
+        },
+        {
+            "rank": 3,
+            "snippet": "August 5, 2019 -\n            You can get apps, games, and digital content for your device using the <em>Google</em> <em>Play</em> <em>Store</em> app. The <em>Play</em> <em>Store</em> app comes pre-installed on Android devices that support <em>Google</em> <em>Play</em>, and can be downlo",
+            "timestamp": 1649985658,
+            "title": "Find the Google Play Store app - Google Play Help",
+            "url": "https://support.google.com/googleplay/answer/190860?hl=en"
+        },
+        {
+            "rank": 4,
+            "snippet": "1 day ago -\n            Windows 11 supports Android apps, but you\u2019re limited to using the Amazon Appstore\u2014or are you? With a little work, it\u2019s possible to get the <em>Google</em> <em>Play</em> <em>Store</em> up and running on your Windows 11 PC.",
+            "timestamp": 1649985658,
+            "title": "How to Install the Google Play Store on Windows 11",
+            "url": "https://www.howtogeek.com/765131/how-to-install-the-google-play-store-on-windows-11/"
+        },
+        {
+            "rank": 5,
+            "snippet": "January 9, 2021 -\n            <em>Google</em> <em>Play</em>, also branded as the <em>Google</em> <em>Play</em> <em>Store</em> and formerly Android Market, is a digital distribution service operated and developed by <em>Google</em>. It serves as the official app <em>store</em> for certified devices running on the Android operating system and its derivatives as well as Chrome OS, allowing ...",
+            "timestamp": 1649985658,
+            "title": "Google Play - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Google_Play"
+        },
+        {
+            "rank": 6,
+            "snippet": "2 days ago -\n            In an effort to increase Android security, <em>Google</em> will hide thousands of old <em>Play</em> <em>Store</em> apps on November 1st of 2022. If an app\u2019s \u201ctarget API level\u201d is more than two years old, it will not show up in <em>Play</em> <em>Store</em> searches.",
+            "timestamp": 1649985658,
+            "title": "Old Apps Will Soon Disappear from the Google Play Store \u2013 Review ...",
+            "url": "https://www.reviewgeek.com/114661/old-apps-will-soon-disappear-from-the-google-play-store/"
+        },
+        {
+            "rank": 7,
+            "snippet": "5 days ago -\n            While it's unclear why these other apps are unnamed, <em>Google</em> did apparently do the right thing across the board after being informed of the \"issue\" back in October 2021. Specifically, all the (named and unnamed) Android apps found to be spying on their users were reportedly deleted from the official <em>Play</em> <em>Store</em> ...",
+            "timestamp": 1649985658,
+            "title": "Millions of Android users should delete these 11 apps after Google ...",
+            "url": "https://www.phonearena.com/news/millions-android-users-delete-apps-removed-from-google-play-store_id139477"
+        },
+        {
+            "rank": 8,
+            "snippet": "1 week ago -\n            From November 1st, all existing apps in the <em>Google</em> <em>Play</em> <em>Store</em> will need to target an API level within two years of the latest major Android OS release. If they don\u2019t, <em>Google</em> says it\u2019ll place limits on which users are able to download.",
+            "timestamp": 1649985658,
+            "title": "Google Play Store cracks down on outdated apps - The Verge",
+            "url": "https://www.theverge.com/2022/4/7/23014518/google-play-store-cracks-down-on-outdated-apps"
+        },
+        {
+            "rank": 9,
+            "snippet": "3 weeks ago -\n            There were around 2.6 million available apps in the <em>Google</em> <em>Play</em> <em>Store</em> in December 2021. The number of apps has visibly fluctuated in recent years.",
+            "timestamp": 1649985658,
+            "title": "\u2022 Google Play Store: number of apps 2021 | Statista",
+            "url": "https://www.statista.com/statistics/266210/number-of-available-applications-in-the-google-play-store/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Partner Marketing Hub is the go-to resource to help bring your partnership with <em>Google</em> to life \u2013 brand guidelines, messaging opportunities, tools, and more.",
+            "timestamp": 1649985658,
+            "title": "The Google Play Store - Partner Marketing Hub",
+            "url": "https://partnermarketinghub.withgoogle.com/brands/google-play/overview/the-google-play-store/"
+        },
+        {
+            "rank": 11,
+            "snippet": "<em>Google</em> <em>Play</em> gives you one place to find, enjoy, &amp; share Apps, Music, Movies &amp; Books - instantly anywhere across the web &amp; android devices. <em>Google</em> <em>Play</em> is your entertainment hub.",
+            "timestamp": 1649985658,
+            "title": "Sign in - Google Store",
+            "url": "https://store.google.com/account"
+        },
+        {
+            "rank": 12,
+            "snippet": "August 17, 2021 -\n            Official <em>Google</em> <em>Play</em> Help Center where you can find tips and tutorials on using <em>Google</em> <em>Play</em> and other answers to frequently asked questions.",
+            "timestamp": 1649985658,
+            "title": "Google Play Help",
+            "url": "https://support.google.com/googleplay/?hl=en"
+        },
+        {
+            "rank": 13,
+            "snippet": "2 weeks ago -\n            The <em>Google</em> <em>Play</em> <em>Store</em> is one of the biggest and most important parts of Android. Learn all of the ins and outs with this definitive guide.",
+            "timestamp": 1649985658,
+            "title": "Google Play Store: A definitive guide for beginners - Android ...",
+            "url": "https://www.androidauthority.com/google-play-store-1093442/"
+        },
+        {
+            "rank": 14,
+            "snippet": "August 20, 2021 -\n            Let\u2019s GO! _______________ Notes: - This app is free-to-<em>play</em> and offers in-game purchases. It is optimized for smartphones, not tablets. - Compatible with Android devices that have 2GB RAM or more and have Android Version 6.0\u201310.0+ installed. - Compatibility is not guaranteed for devices ...",
+            "timestamp": 1649985658,
+            "title": "Pok\u00e9mon GO - Apps on Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo"
+        },
+        {
+            "rank": 15,
+            "snippet": "1 week ago -\n            <em>Google</em> is preparing to clear its <em>Play</em> <em>Store</em> of outdated apps. The company warned Android app developers that starting on November 1, 2022, it will hide apps and block their installation to users\u2019 devices if developers haven\u2019t kept up with the latest Android OS releases.",
+            "timestamp": 1649985658,
+            "title": "Google Play will hide and block downloads for outdated apps starting ...",
+            "url": "https://techcrunch.com/2022/04/06/google-play-will-hide-and-block-downloads-for-outdated-apps-starting-later-this-year/"
+        },
+        {
+            "rank": 16,
+            "snippet": "1 week ago -\n            Right on cue, <em>Google</em> has published its changes for your phone that don't involve waiting for a delayed monthly patch. Along with a handful of critical fixes for all of the company's platforms, some basic changes to the <em>Play</em> <em>Store</em> are on their way, although it's unclear if you'll even notice.",
+            "timestamp": 1649985658,
+            "title": "Google Play's system updates for April aim to enhance your Play ...",
+            "url": "https://www.androidpolice.com/google-play-system-updates-april/"
+        },
+        {
+            "rank": 17,
+            "snippet": "October 1, 2020 -\n            You can install apps, games, and digital content on your device from the <em>Google</em> <em>Play</em> <em>Store</em>. Sometimes you can also use instant apps that don\u2019t require installation. Some content is available at no c",
+            "timestamp": 1649985658,
+            "title": "Get Android apps &amp; digital content from the Google Play Store - ...",
+            "url": "https://support.google.com/googleplay/answer/113409?hl=en"
+        },
+        {
+            "rank": 18,
+            "snippet": "1 week ago -\n            Starting in November, apps that haven't been updated in two years will be hidden.",
+            "timestamp": 1649985658,
+            "title": "Google will soon hide neglected apps in the Play Store | Ars Technica",
+            "url": "https://arstechnica.com/gadgets/2022/04/google-will-soon-hide-neglected-apps-in-the-play-store/"
+        },
+        {
+            "rank": 19,
+            "snippet": "1 week ago -\n            <em>Google</em> will start hiding outdated apps and games on the <em>Play</em> <em>Store</em> on newer devices, starting November 1, 2022. Read what that means here.",
+            "timestamp": 1649985658,
+            "title": "Google Play Store will soon prevent you from downloading outdated apps",
+            "url": "https://www.xda-developers.com/google-play-store-outdated-apps-policy/"
+        },
+        {
+            "rank": 20,
+            "snippet": "September 2, 2021 -\n            See posts, photos and more on Facebook",
+            "timestamp": 1649985658,
+            "title": "Google Play - Home | Facebook",
+            "url": "https://www.facebook.com/GooglePlay/"
+        }
+    ],
+    "timestamp": 1649985658,
+    "url": "https://search.brave.com/search?q=google+play+store&source=web"
+}

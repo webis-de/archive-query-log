@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "encountered conflicts when cherry picking commit",
+    "offset": null,
+    "page": null,
+    "query": "encountered conflicts when cherry picking commit",
+    "results": [],
+    "timestamp": 1618189582,
+    "url": "https://duckduckgo.com/?q=encountered+conflicts+when+cherry+picking+commit&t=ffab"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "deaf community",
+    "offset": null,
+    "page": null,
+    "query": "deaf community",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "With a commitment to serving more <em>Deaf</em> and Hard-of-Hearing adults and children, we look forward to expanding our services to more Bay Area counties at the request of their County Behavioral Health Services (CBHS). We recognize that the <em>Deaf</em> and Hard-of-Hearing <em>community</em> is as diverse as the greater <em>community</em>-at-large.",
+            "timestamp": 1626760345,
+            "title": "Deaf Community Counseling Services (DCCS) | Felton Institute",
+            "url": "https://felton.org/social-services/adult/dccs/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Being a Part of the <em>Deaf Community</em>. Many people assume that there\u2019s one <em>deaf community</em>, which isn\u2019t the case. There are subsets based on racial or ethnic identities, such as Black and <em>Deaf</em>. There\u2019s the <em>Deaf community</em>, the speaking <em>deaf community</em>, etc. Online <em>Deaf Community</em> Such as HearingLikeMe",
+            "timestamp": 1626760345,
+            "title": "Deaf Community and Deaf Culture | Hearing Like Me",
+            "url": "https://www.hearinglikeme.com/deaf-community-and-deaf-culture/"
+        },
+        {
+            "rank": 4,
+            "snippet": "The <em>Deaf Community</em> (TDC) is an ad hoc volunteer group establishd in 2011 and inspired by the opportunity to work together for all of our <em>deaf community</em> as opposed to splintering it. We have come together to form an organization to redefine what The <em>Deaf Community</em> really is and what it means to be <em>deaf</em> in today's world.",
+            "timestamp": 1626760345,
+            "title": "The Deaf Community (TDC) - Welcome",
+            "url": "https://thedeafcommunity.org/"
+        },
+        {
+            "rank": 5,
+            "snippet": "The <em>deaf</em> and hard of hearing <em>community</em> is diverse. There are variations in how a person becomes <em>deaf</em> or hard of hearing, level of hearing, age of onset, educational background, communication methods, and cultural identity.",
+            "timestamp": 1626760345,
+            "title": "Community and Culture - National Association of the Deaf - NAD",
+            "url": "https://www.nad.org/resources/american-sign-language/community-and-culture-frequently-asked-questions/"
+        },
+        {
+            "rank": 6,
+            "snippet": "All <em>Deaf</em> is the world's largest <em>community</em> for the <em>deaf</em>, hard of hearing, and ASL students. Topics discussed include sign language, hearing aids, and more.",
+            "timestamp": 1626760345,
+            "title": "Deaf Community",
+            "url": "https://www.alldeaf.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "We advocate, educate and serve as partners within our <em>community</em> to achieve full access and inclusion of, by and for <em>Deaf</em>, Hard of Hearing, DeafBlind and Late Deafened people. Resources. CAD CalFresh Food Council de Manos Energy Upgrade CA NAD NBDA OWV SCADA SDG&amp;E TEAM/CHANGES HKNC (DeafBlind)",
+            "timestamp": 1626760345,
+            "title": "Deaf Community Services of San Diego \u2013 Promoting the full ...",
+            "url": "https://deafcommunityservices.org/"
+        },
+        {
+            "rank": 8,
+            "snippet": "The people of the <em>deaf community</em> living in the same area and providing services to meet the needs of <em>deaf</em> children, adults, and seniors. The <em>deaf community</em> is a society of <em>deaf</em> people, e.g., <em>Deaf</em> school, club, agency, they celebrate <em>deaf</em> events. They also include their family members who are able to hear properly.",
+            "timestamp": 1626760345,
+            "title": "Deaf Culture And Community: Top Aspects, Value &amp; Importance",
+            "url": "https://www.hearingsol.com/articles/importance-of-deaf-culture/"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Deaf</em> Californians Civil, Human, and Linguistic Rights <em>Deaf</em> Ecosystem <em>Deaf</em> Senior Citizens Serving 363,508 <em>Deaf</em> Adults <em>Deaf</em> Education <em>Deaf</em> Schools <em>Deaf</em> Youth Preserve, Protect, and Promote Welcome to California Association of the <em>Deaf</em> ... Check our Calendar of Events happening in the <em>community</em> and by CAD.",
+            "timestamp": 1626760345,
+            "title": "Welcome to CAD - California Association for the Deaf",
+            "url": "https://cad1906.org/"
+        },
+        {
+            "rank": 10,
+            "snippet": "We found 2572 results for <em>Deaf Community</em> in or near Stockton, CA. They also appear in other related business categories including Social Service Organizations, Retirement Communities, and Assisted Living Facilities. The businesses listed also serve surrounding cities and neighborhoods including San Francisco CA, Sacramento CA, and Oakland CA.",
+            "timestamp": 1626760345,
+            "title": "Best 30 Deaf Community in Stockton, CA with Reviews - YP.com",
+            "url": "https://www.yellowpages.com/stockton-ca/deaf-community"
+        }
+    ],
+    "timestamp": 1626760345,
+    "url": "https://www.ecosia.org/search?q=deaf+community&addon=chrome&addonversion=3.4.0&method=topbar"
+}

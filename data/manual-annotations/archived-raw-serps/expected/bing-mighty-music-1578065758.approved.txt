@@ -1,0 +1,143 @@
+{
+    "interpreted_query": "Mighty Music",
+    "offset": null,
+    "page": null,
+    "query": "Mighty Music",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "BABA YETU - Mighty Joe Young montage edit. - YouTube",
+            "timestamp": 1578065758,
+            "title": "www.youtube.com",
+            "url": "https://www.youtube.com/watch?v=doyhG2jbqww"
+        },
+        {
+            "rank": 2,
+            "snippet": "Smithsonian Folkways - Drums of Passion: The Beat",
+            "timestamp": 1578065758,
+            "title": "folkways.si.edu",
+            "url": "http://folkways.si.edu/babatunde-olatunji/drums-of-passion-the-beat/world/music/album/smithsonian"
+        },
+        {
+            "rank": 3,
+            "snippet": "Blue Blink - Wikipedia",
+            "timestamp": 1578065758,
+            "title": "en.wikipedia.org",
+            "url": "https://en.wikipedia.org/wiki/Aoi_Blink"
+        },
+        {
+            "rank": 4,
+            "snippet": "Welcome To Hell - Black Metal's First Wave (Mighty ...",
+            "timestamp": 1578065758,
+            "title": "lambchopmobile.blogspot.com",
+            "url": "http://lambchopmobile.blogspot.com/2012/07/welcome-to-hell-black-metals-first-wave.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Noel Fielding - Wikiquote",
+            "timestamp": 1578065758,
+            "title": "en.wikiquote.org",
+            "url": "https://en.wikiquote.org/wiki/Noel_fielding"
+        },
+        {
+            "rank": 6,
+            "snippet": "Portal 2 Aperture Sentry Turret Statue | at Mighty Ape NZ",
+            "timestamp": 1578065758,
+            "title": "www.mightyape.co.nz",
+            "url": "https://www.mightyape.co.nz/product/portal-2-aperture-sentry-turret-statue/21013091"
+        },
+        {
+            "rank": 7,
+            "snippet": "RA: Mein Haus Am See - Berlin nightclub",
+            "timestamp": 1578065758,
+            "title": "residentadvisor.net",
+            "url": "http://residentadvisor.net/club.aspx?id=32136"
+        },
+        {
+            "rank": 8,
+            "snippet": "C-119 Flying Boxcar Interior | Flickr - Photo Sharing!",
+            "timestamp": 1578065758,
+            "title": "www.flickr.com",
+            "url": "http://www.flickr.com/photos/mightyboybrian/3211185337/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Buy Wreck This Journal at Mighty Ape NZ",
+            "timestamp": 1578065758,
+            "title": "www.mightyape.co.nz",
+            "url": "https://www.mightyape.co.nz/product/wreck-this-journal/20986061"
+        },
+        {
+            "rank": 10,
+            "snippet": "Pogba and girlfriend 3 - QED.NG",
+            "timestamp": 1578065758,
+            "title": "www.qed.ng",
+            "url": "https://www.qed.ng/pogba-steps-out-with-girlfriend-after-birth-of-first-child/pogba-and-girlfriend-3/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Vryheid Harlem Shake - YouTube",
+            "timestamp": 1578065758,
+            "title": "www.youtube.com",
+            "url": "http://www.youtube.com/watch?v=WxC2dI30RwY"
+        },
+        {
+            "rank": 12,
+            "snippet": "Sonic.EXE Mania Abyss [Sonic Mania] [Mods]",
+            "timestamp": 1578065758,
+            "title": "gamebanana.com",
+            "url": "https://gamebanana.com/gamefiles/6060"
+        },
+        {
+            "rank": 13,
+            "snippet": "Hejji - Wikipedia",
+            "timestamp": 1578065758,
+            "title": "en.wikipedia.org",
+            "url": "https://en.wikipedia.org/wiki/Hejji"
+        },
+        {
+            "rank": 14,
+            "snippet": "Woodstock Logo | Rockin Pins",
+            "timestamp": 1578065758,
+            "title": "www.rockinpins.com",
+            "url": "https://www.rockinpins.com/product/woodstock-logo"
+        },
+        {
+            "rank": 15,
+            "snippet": "Ashley Sky Photos Photos - Ashley Sky Hosts a Party in Las ...",
+            "timestamp": 1578065758,
+            "title": "www.zimbio.com",
+            "url": "http://www.zimbio.com/photos/Ashley+Sky/Ashley+Sky+Hosts+Party+Las+Vegas/JeQHtHf7BKl"
+        },
+        {
+            "rank": 16,
+            "snippet": "Def Leppard Enamel Pin | Rockin Pins",
+            "timestamp": 1578065758,
+            "title": "www.rockinpins.com",
+            "url": "https://www.rockinpins.com/product/def-leppard"
+        },
+        {
+            "rank": 17,
+            "snippet": "Life of Crime (film) - Wikipedia",
+            "timestamp": 1578065758,
+            "title": "en.wikipedia.org",
+            "url": "https://en.wikipedia.org/wiki/Life_of_Crime_(film)"
+        },
+        {
+            "rank": 18,
+            "snippet": "Disco Era Detritus: Odds &amp; Ends from 1979 - Flashbak",
+            "timestamp": 1578065758,
+            "title": "flashbak.com",
+            "url": "https://flashbak.com/disco-era-detritus-odds-ends-from-1979-31083/"
+        },
+        {
+            "rank": 19,
+            "snippet": "A Christmas Eve Order of Worship",
+            "timestamp": 1578065758,
+            "title": "michaelmilton.org",
+            "url": "https://michaelmilton.org/2017/12/19/a-christmas-eve-order-of-worship/"
+        }
+    ],
+    "timestamp": 1578065758,
+    "url": "https://www.bing.com/images/search?q=Mighty+Music&FORM=HDRSC2"
+}

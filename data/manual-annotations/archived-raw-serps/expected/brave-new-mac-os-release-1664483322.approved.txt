@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "new mac os release",
+    "offset": null,
+    "page": null,
+    "query": "new mac os release",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "1 week ago -\n            Unveiled at the 2021 Worldwide Developers Conference on June 7, macOS Monterey is the latest update to Apple's macOS operating system.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS Monterey: All the New Features Detailed",
+            "url": "https://www.macrumors.com/roundup/macos-12/"
+        },
+        {
+            "rank": 2,
+            "snippet": "4 days ago -\n            Apple will <em>release</em> the next <em>Mac</em> update in October. Find out about the latest beta, when the final version of Ventura will be available, the <em>new</em> features and everything else.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS Ventura: Everything you need to know about macOS 13",
+            "url": "https://www.macworld.com/article/678251/macos-13-update.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "2 weeks ago -\n            macOS Monterey. Connect like never before. Exciting FaceTime updates. An all-<em>new</em> Safari. Powerful <em>new</em> ways to work across devices. And much more.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS Monterey - Apple",
+            "url": "https://www.apple.com/macos/monterey/"
+        },
+        {
+            "rank": 4,
+            "snippet": "2 days ago -\n            With the <em>release</em> of the macOS 11 Big Sur in 2020, Apple gave the <em>Mac</em> software a nice redesign. With a neo-skeuomorphic UI, macOS Big Sur introduced a <em>new</em> Control Center and Notification Center, revamped Safari and iMessage apps, and more.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS 13 Ventura: New features, compatibility, release date",
+            "url": "https://9to5mac.com/guides/macos-13/"
+        },
+        {
+            "rank": 5,
+            "snippet": "1 week ago -\n            The first <em>release</em> of the <em>new</em> <em>OS</em> \u2014 <em>Mac</em> <em>OS</em> X Server 1.0 \u2014 used a modified version of the <em>Mac</em> <em>OS</em> GUI, but all client versions starting with <em>Mac</em> <em>OS</em> X Developer Preview 3 used a <em>new</em> theme known as Aqua. Aqua was a substantial departure from the <em>Mac</em> <em>OS</em> 9 interface, which had evolved with little ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS version history - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/MacOS_version_history"
+        },
+        {
+            "rank": 6,
+            "snippet": "1 month ago -\n            macOS 13 Ventura is the next major <em>release</em> for the <em>Mac</em>, with Stage Manager and the Weather app coming from iOS.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS 13 Ventura: new features, suported Macs, everything we know ...",
+            "url": "https://www.techradar.com/news/macos-13"
+        },
+        {
+            "rank": 7,
+            "snippet": "2 weeks ago -\n            Apple could stop supporting Intel-based <em>Macs</em> in the near future with its transition to Apple Silicon almost complete, but we don\u2019t see it happening anytime soon, especially as Apple itself has committed to <em>releasing</em> <em>new</em> versions of macOS for Intel-based <em>Macs</em> \u201cfor years to come\u201d. However, ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS Ventura: Release Date, Beta &amp; Features | Tech Advisor",
+            "url": "https://www.techadvisor.com/article/745327/macos-13-mammoth-everything-there-is-to-know-so-far.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "1 day ago -\n            Apple will <em>release</em> the next <em>Mac</em> update in October. Find out about the latest beta, when the final version of Ventura will be available, the <em>new</em> features and everything else.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS 13 Ventura: Release Date, Name, Features, Compatibility | ...",
+            "url": "https://www.macworld.com/article/678251/macos-13-ventura-beta-features-compatibility-how-to-update.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "2 weeks ago -\n            With Apple's popularity at a low, the makers of several classic <em>Mac</em> applications such as FrameMaker and PageMaker declined to develop <em>new</em> versions of their software for <em>Mac</em> <em>OS</em> X. Ars Technica columnist John Siracusa, who reviewed every major <em>OS</em> <em>X</em> <em>release</em> up to 10.10, described the early <em>releases</em> ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/MacOS"
+        },
+        {
+            "rank": 10,
+            "snippet": "2 weeks ago -\n            Use About This <em>Mac</em> to check the version of <em>Mac</em> operating system installed, and find out whether it's the latest (newest, most recent) version.",
+            "timestamp": 1664483322,
+            "title": "<em></em>Find out which macOS your Mac is using - Apple Support",
+            "url": "https://support.apple.com/en-us/HT201260"
+        },
+        {
+            "rank": 11,
+            "snippet": "macOS Ventura, the latest version of the world\u2019s most advanced desktop operating system, takes the <em>Mac</em> experience to a whole <em>new</em> level",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS Ventura brings powerful productivity tools, new Continuity ...",
+            "url": "https://www.apple.com/uk/newsroom/2022/06/macos-ventura-brings-powerful-productivity-tools-new-continuity-features-to-mac/"
+        },
+        {
+            "rank": 12,
+            "snippet": "November 27, 2021 -\n            This could prove to be one of the most useful <em>new</em> features in macOS 12 Monterey. Apple has confirmed that the feature, and SharePlay will be coming in a future update to Monterey. But if you have an iOS device, you can use SharePlay now, which has returned in the <em>release</em> of iOS 15.1.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS 12 Monterey features and everything you need to know | TechRadar",
+            "url": "https://www.techradar.com/news/macos-12"
+        },
+        {
+            "rank": 13,
+            "snippet": "2 weeks ago -\n            The successor to macOS Big Sur, ... by macOS Ventura, which was announced at WWDC 2022 on June 6, 2022. The operating system is named after Monterey Bay, continuing the trend of <em>releases</em> named after California locations since 2013's 10.9 Mavericks. Monterey introduced several <em>new</em> features and ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS Monterey - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/MacOS_Monterey"
+        },
+        {
+            "rank": 14,
+            "snippet": "March 14, 2022 -\n            Read about what's coming in macOS 12.3, which will finally introduce Universal Control. Apple has been running a Apple Beta Software Program for Monterey since it was first announced back in June 2021. The beta program allows developers and public beta testers to try out the <em>new</em> software before it is <em>released</em> ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS 12 Monterey: Latest Version, Problems And Fixes - Macworld UK",
+            "url": "https://www.macworld.co.uk/news/macos-12-release-date-3800739/"
+        },
+        {
+            "rank": 15,
+            "snippet": "June 6, 2022 -\n            Mammoth might seem like a random ... desktop <em>OS</em> after US national parks, but there is a Mammoth Lake and Mammoth Mountain in California, situated nearby Sierra, Yosemite and El Capitan. It could also be a \u2018mammoth\u2019 update to macOS, focused on getting the most out of the <em>new</em> Apple silicon ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS 13 Mammoth: Release Date, Name &amp; Feature Rumours",
+            "url": "https://www.techadvisor.com/news/apple/macos-13-release-date-3811405/"
+        },
+        {
+            "rank": 16,
+            "snippet": "October 26, 2021 -\n            Apple announced a ton of <em>new</em> details at the October Apple event, including <em>new</em> M1 chips, several faster refresh rates for the MacBook Pro and <em>new</em> <em>OS</em> features that launched with iOS 15 last month. For more from Apple's October event, including announcements about AirPods 3, MacBooks and Apple's ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>MacOS Monterey release date: Apple launches its new OS today - CNET",
+            "url": "https://www.cnet.com/tech/services-and-software/macos-monterey-release-date-apple-launches-its-new-os/"
+        },
+        {
+            "rank": 17,
+            "snippet": "Apple introduces macOS Monterey, with <em>new</em> ways to connect with friends and family, Shortcuts and tools to get work done, and Continuity features.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS Monterey introduces powerful features to get more done - Apple",
+            "url": "https://www.apple.com/newsroom/2021/06/macos-monterey-introduces-powerful-features-to-get-more-done/"
+        },
+        {
+            "rank": 18,
+            "snippet": "January 31, 2022 -\n            Whichever version of macOS you are running you should always keep it up-to-date with Apple's latest updates and security fixes. Apple <em>releases</em> various updates to the <em>OS</em> throughout the year, so you can expect updates from time to time. Once Monterey is out we'll maintain a latest version of ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>Complete List of macOS Versions and the Latest macOS - Macworld UK",
+            "url": "https://www.macworld.co.uk/feature/os-x-macos-versions-3662757/"
+        },
+        {
+            "rank": 19,
+            "snippet": "June 27, 2022 -\n            The Photos app has expanded editing capabilities with a <em>new</em> Retouch tool powered by machine learning, and Apple Music has been overhauled with a <em>new</em> Listen Now section housing <em>new</em> <em>releases</em>, artist interviews, and personalized playlists.",
+            "timestamp": 1664483322,
+            "title": "<em></em>macOS Big Sur: Features and Tips, Available Now!",
+            "url": "https://www.macrumors.com/roundup/macos-big-sur/"
+        },
+        {
+            "rank": 20,
+            "snippet": "2 weeks ago -\n            This is to keep the version numbers ... an older <em>OS</em> received an update after a major <em>new</em> <em>release</em> came out. This has happened a few times over the years. Some random notes, updated from the original post: Starting with the Public Beta and up through 12.6, there have been 172 macOS <em>releases</em>, ...",
+            "timestamp": 1664483322,
+            "title": "<em></em>A full history of macOS (OS X) release dates and rates | The ...",
+            "url": "https://robservatory.com/a-full-history-of-macos-os-x-release-dates-and-rates/"
+        }
+    ],
+    "timestamp": 1664483322,
+    "url": "https://search.brave.com/search?q=new%20mac%20os%20release"
+}

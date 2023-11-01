@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Tye Dye Instructions",
+    "offset": null,
+    "page": null,
+    "query": "Tye Dye Instructions",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Dying allows you to put your personal mark on fabric items. Tie-dying requires little skill to produce a creative and satisfying design. The process is simple enough for a child to master, but there are enough variations that even an experienced fabric...\nMore \u00bb",
+            "timestamp": 1446417925,
+            "title": "Instructions for Tye-Dyeing",
+            "url": "http://www.ehow.com/how_6656411_instructions-tye_dyeing.html?ref=Track2&utm_source=ask"
+        },
+        {
+            "rank": 2,
+            "snippet": "Tie Dye Instructions. We teach the modern \"direct application\" method of tie dye. \nIn direct application tie dye, you make small, concentrated solutions of dye and\u00a0...",
+            "timestamp": 1446417925,
+            "title": "Tie-Dye Instructions",
+            "url": "https://www.bestdye.com/Tie-Dye-Instructions.php"
+        },
+        {
+            "rank": 3,
+            "snippet": "Complete Tie-Dye instructions in five easy steps so you can have a successful \nTie-Dye project!",
+            "timestamp": 1446417925,
+            "title": "Tie-Dye Instructions - Dharma Trading Co.",
+            "url": "http://www.dharmatrading.com/techniques/tiedye/tie-dye-instructions.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "How to Tie-Dye Using the Bucket Method. Tie-dyeing is based on the traditional \nart of folding or tying fabric to create resists that stop the dye from being\u00a0...",
+            "timestamp": 1446417925,
+            "title": "How to Tie-Dye Using the Bucket Method #RitDye - The Rit Studio",
+            "url": "https://www.ritstudio.com/techniques/creative-techniques/how-to-tie-dye-using-the-bucket-method/"
+        },
+        {
+            "rank": 5,
+            "snippet": "How to Tie Dye a Shirt. Tie dying is a long-practiced pastime of hippies, counter-\nculture members, and people who simply love colorful clothing. Now you want to\n\u00a0...",
+            "timestamp": 1446417925,
+            "title": "3 Ways to Tie Dye a Shirt - wikiHow",
+            "url": "http://www.wikihow.com/Tie-Dye-a-Shirt"
+        },
+        {
+            "rank": 6,
+            "snippet": "Tie dye shirts are almost as American as apple pie. It's impossible to be sad while \nwearing tie dye colors \u2014 especially if you accessorize with your favorite\u00a0...",
+            "timestamp": 1446417925,
+            "title": "How to Tie Dye an Old White Shirt - Instructables",
+            "url": "http://www.instructables.com/id/How-to-tie-dye-an-old-white-shirt-or-a-new-shirt-/"
+        },
+        {
+            "rank": 7,
+            "snippet": "From tie dye inspiration and techniques to videos, Tulip product information and \nprize giveaways, find everything you need for tie dye summer fun here.",
+            "timestamp": 1446417925,
+            "title": "Tie Dye Your Summer | Tie-Dye Techniques",
+            "url": "http://tiedyeyoursummer.com/get-inspired.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "From tie dye inspiration and techniques to videos, Tulip product information and \nprize giveaways, find everything you need for tie dye summer fun here.",
+            "timestamp": 1446417925,
+            "title": "Tie Dye Your Summer | Tie Dye Stripes Technique",
+            "url": "http://tiedyeyoursummer.com/tech-stripes.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Aug 9, 2009 ... A couple of weeks ago, I tie-dyed t-shirts with my son as an afternoon time-killer. \nWe had a lot of fun doing it because it was easy (no seriously\u00a0...",
+            "timestamp": 1446417925,
+            "title": "Tie Dye Tutorial: 6 Tie Dye Shirts to Make with Kids this Summer ...",
+            "url": "http://wendolonia.com/blog/2009/08/09/tie-dye-tutorial/"
+        },
+        {
+            "rank": 10,
+            "snippet": "May 23, 2012 ... Here's a quick and easy guide to washing out the tie-dye you made at Your \nCreation Station. We use professional grade, cold-water, fiber\u00a0...",
+            "timestamp": 1446417925,
+            "title": "Washing Out Your Tie-Dye Instructions - Your Creation Station",
+            "url": "http://yourcreationstation.com/washing-out-your-tie-dye/"
+        }
+    ],
+    "timestamp": 1446417925,
+    "url": "http://www.ask.com/web?q=Tye+Dye+Instructions&qsrc=466&o=13194&l=sem&qo=relatedSearchNarrow"
+}

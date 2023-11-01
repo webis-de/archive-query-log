@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Libyan Syrian Union",
+    "offset": null,
+    "page": null,
+    "query": "Libyan Syrian Union",
+    "results": [],
+    "timestamp": 1643642965,
+    "url": "https://www.bing.com/search?q=Libyan+Syrian+Union"
+}

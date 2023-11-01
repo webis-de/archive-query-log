@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "n\u00e9onazis en France",
+    "offset": null,
+    "page": null,
+    "query": "n\u00e9onazis en France",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Mediapart r\u00e9v\u00e8le une cinquantaine de nouveaux cas de militaires n\u00e9onazis. Des hommes qui n'h\u00e9sitent plus \u00e0 afficher leurs ...",
+            "timestamp": 1663085614,
+            "title": "Une fili\u00e8re n\u00e9onazie au sein de l\u2019arm\u00e9e fran\u00e7aise",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3AMJrfVZ7PGdc"
+        },
+        {
+            "rank": 2,
+            "snippet": "L'expulsion de Fabio hier soir contre le PSG (0-3) a rappel\u00e9 que le FC Nantes avait une grosse carence au poste de lat\u00e9ral droit.#FCNantes #Mercato #joker #approcheapr\u00e8sFootball Club FC Nantes - Informations MAIS! : Marcelo Bielsa ne laisse pas Moses SimonD\u00e9j\u00e0 d\u00e9s\u00e9quilibr\u00e9 en raison du dopage financier exploit\u00e9 par le Qatar, le parti entre FC Nantes et PSG a chang\u00e9 hier par rapport \u00e0 la 24e minute apr\u00e8s l'expulsion de Fabio. Le Br\u00e9silien a perdu son intervention \u00e0 Vittinha, qui a \u00e9galement bless\u00e9. Ce geste mal ex\u00e9cut\u00e9 se souvient que les Canaries n'ont pas le c\u00f4t\u00e9 droit du niveau de Quentin Merlin \u00e0 gauche alors qu'ils ont quatre joueurs pour le poste. \u00c0 l'int\u00e9rieur d'Emmanuel Merceron, ce serait l'occasion de relancer la piste de Fabien Centonze, le c\u00f4t\u00e9 droit de Metz avec lequel la maison jaune \u00e9tait en contact pendant la fen\u00eatre de transfert. Certes, la Ligue Europa ne pourrait pas jouer car les clubs doivent communiquer leurs effectifs \u00e0 l'UEFA ce dimanche, mais il pourrait toujours fournir un service fier aux \u00eeles Canaries de la ligue. Ces derni\u00e8res semaines, ils avaient tent\u00e9 la chance avec un pr\u00eat avec la possibilit\u00e9 d'acheter, mais le Lorrain Club voulait une compensation.",
+            "timestamp": 1663085614,
+            "title": "FC Nantes - Mercato: Joker s'approche apr\u00e8s le hoquet du PSG?",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3Ax8di410"
+        },
+        {
+            "rank": 3,
+            "snippet": "Un militaire n\u00e9onazi, dont le cas avait \u00e9t\u00e9 \u00e9voqu\u00e9 il y a huit mois par Mediapart, a \u00e9t\u00e9 interpell\u00e9 en novembre par des douaniers.",
+            "timestamp": 1663085614,
+            "title": "N\u00e9onazis dans l'arm\u00e9e : l\u2019insupportable laisser-faire du minist\u00e8re",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3ATK8AN3jrjl4"
+        },
+        {
+            "rank": 4,
+            "snippet": "Cyclone, d\u00e9pression ou temp\u00eate, Danielle aura des cons\u00e9quences dans des conditions climatiques dans le pays. Explications.#CycloneDanielle #pourquoi #coupchaleur #Francepr\u00e9voirCyclone, d\u00e9pression ou temp\u00eate, Danielle aura des cons\u00e9quences sur les conditions climatiques dans le pays. Le cyclone Danielle fait couler beaucoup d'encre. N\u00e9 \u00e0 des latitudes anormalement \u00e9lev\u00e9es, le cyclone pourrait atteindre la c\u00f4te atlantique fran\u00e7aise aux alentours du dimanche 11 septembre prochain. Non pas sous la forme d'un cyclone, vu qu'il devrait perdre en intensit\u00e9  \u00e0 mesure qu'il se rapproche de l'Europe. Mais plut\u00f4t sous la forme d'une d\u00e9pression voire d'une temp\u00eate dans le pire des cas. : Temp\u00eate Danielle : M\u00e9t\u00e9o France confirme le risque en France et en Espagne \"autour du 11 septembre\"Montagnes russesN\u00e9anmoins, selon certains pr\u00e9visionnistes fran\u00e7ais et espagnols, Danielle aura des cons\u00e9quences sur les conditions climatiques en France. En effet, une goutte froide irlandaise doit rythmer la m\u00e9t\u00e9o cette semaine avec au programme orages et rafra\u00eechissement d'ici le week-end. Une goutte froide qui a d'abord refoul\u00e9 de l'air chaud sur le territoire en \"moulinant\" au large. Ce que devrait \u00e9galement faire Danielle dans un second temps, en envoyant de l'air chaud tropical sur le pays \u00e0 son tour et ainsi provoquer une hausse des temp\u00e9ratures dans la foul\u00e9e. En passant par un temps instable et vent\u00e9 dans le Nord-Ouest. Des temp\u00e9ratures qui pourraient ainsi remonter ce week-end avant de chuter assez rapidement en milieu de semaine prochaine.",
+            "timestamp": 1663085614,
+            "title": "Cyclone Danielle: Pourquoi le coup chaud en France est-il attendu?",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3Ax8di6vg"
+        },
+        {
+            "rank": 5,
+            "snippet": "Sur Twitter via #telematin. Un rendez-vous r\u00e9veil-matin ponctu\u00e9 d'une page d'information toutes les demi-heures. Deux flashs info ...",
+            "timestamp": 1663085614,
+            "title": "Sans fronti\u00e8res - Les festivals n\u00e9o-nazis",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3AzcWUrolGM9Y"
+        },
+        {
+            "rank": 6,
+            "snippet": "Plus d'une semaine apr\u00e8s le message de Mathias Pogba, qui met le feu \u00e0 la poussi\u00e8re sur les r\u00e9seaux sociaux, le probl\u00e8me de Paul Pogba secoue toujours le football fran\u00e7ais. Bien que l'enqu\u00eate ait \u00e9t\u00e9 confi\u00e9e \u00e0 deux juges enqu\u00eats, nous savons chaque jour un peu plus sur la tentative d'extorsion que le milieu de terrain de la Juventus n'aurait \u00e9t\u00e9 une victime. Suivez toutes les derni\u00e8res nouvelles sur RMC Sport.#ENDIRECT #\u00c9quipe #France #Pogbatr\u00e8sLes informations de France ont obtenu le deuxi\u00e8me public de Paul Pogba en ao\u00fbt dernier. Selon le joueur, sa m\u00e8re a subi une pression \u00e0 la maison pendant l'\u00e9t\u00e9. Cela aurait eu lieu en juillet lorsque plusieurs personnes sont apparues dans le d\u00e9partement de Yeo Moriba qui pr\u00e9tendaient avoir prot\u00e9g\u00e9 leur fils Paul pendant plusieurs ann\u00e9es \"contre les personnes qui voulaient qu'ils endommagent\". Ensuite, ils ont demand\u00e9 la c\u00e9l\u00e8bre somme de 13 millions d'euros sous la peine de r\u00e9v\u00e9ler un enregistrement qui a montr\u00e9 que Paul avait pay\u00e9 un marabout pour lancer un sort \u00e0 Kylian Mbapp\u00e9. Ce coup d'\u00c9tat \u00e0 pression a pouss\u00e9 le joueur \u00e0 demander une protection contre la m\u00e8re de l'agent de s\u00e9curit\u00e9 de l'\u00e9quipe fran\u00e7aise. Les chercheurs ont \u00e9cout\u00e9 le chef de la s\u00e9curit\u00e9 de l'\u00e9quipe Blues.",
+            "timestamp": 1663085614,
+            "title": "Live - \u00c9quipe fran\u00e7aise: Pogba est tr\u00e8s susceptible d'\u00eatre restaur\u00e9 pour la Coupe du monde 2022",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3Ax8di1je"
+        },
+        {
+            "rank": 7,
+            "snippet": "Lors d'une manifestation d'extr\u00eame-droite \u00e0 Paris, le 15 janvier, au m\u00eame moment qu'une manifestation anti-passe vaccinal, des ...",
+            "timestamp": 1663085614,
+            "title": "Qui sont ces militants n\u00e9onazis qui s'affichent sans complexes dans les manifestations \u00e0 Paris ?",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3Aft4B_qhRSBQ"
+        },
+        {
+            "rank": 8,
+            "snippet": "Luka Doncic spielt gro\u00df auf: Beim 88:82 seiner Slowenen gegen Frankreich erzielt der Profi der Dallas Mavericks sagenhafte 47 Punkte \u2013 die zweith\u00f6chste Ausbeute in der Geschichte der Eurobasket.",
+            "timestamp": 1663085614,
+            "title": "Highlights: NBA-Star Doncic w\u00e4chst \u00fcber sich hinaus",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3Ax8djkes"
+        },
+        {
+            "rank": 9,
+            "snippet": "Abonnez-vous \u00e0 notre cha\u00eene sur YouTube : http://f24.my/youtube Une nouvelle organisation de l'extr\u00eame droite radicale en ...",
+            "timestamp": 1663085614,
+            "title": "ALLEMAGNE - Les n\u00e9onazis allemands recrutent chez les hooligans",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3AhsLxa0ODvxA"
+        },
+        {
+            "rank": 10,
+            "snippet": "\u00c0 seulement 30 ans, l'international fran\u00e7ais du Racing 92 a \u00e9t\u00e9 interdit de poursuivre sa carri\u00e8re par la commission m\u00e9dicale de la LNR.#XVFrance #Virimi #Vakatawacontraint #mettreterme\u00c0 l'\u00e2ge de 30 ans, les joueurs internationaux fran\u00e7ais de Racing 92 ont \u00e9t\u00e9 interdits de poursuivre sa carri\u00e8re par le Comit\u00e9 m\u00e9dical LNR. Le Center for XV French et 92 Vimatawa Vakatawa Racing ont \u00e9t\u00e9 contraints d'arr\u00eater sa carri\u00e8re en tant que joueur de rugby \u00e0 l'\u00e2ge de 30 ans pour des raisons m\u00e9dicales, le club Top 14 a \u00e9t\u00e9 annonc\u00e9 dans un communiqu\u00e9. \"La course 92 vient d'\u00eatre inform\u00e9e de la d\u00e9cision du Comit\u00e9 m\u00e9dical LNR d'interdire Vimatawa Vimatawa avec la continuation de la carri\u00e8re de ses joueurs de rugby professionnels en France\", a d\u00e9clar\u00e9 Racing 92, sans donner plus de pr\u00e9cision. Le point de presse aura lieu mardi apr\u00e8s-midi devant les joueurs, le pr\u00e9sident Ile -de -France Club, Jacky Lorenzettti, et le directeur du rugby, Laurent Travers. L'entra\u00eeneur fran\u00e7ais XV, Fabien Galk\u00e9, sera \u00e9galement pr\u00e9sent selon RMC Sport. Nous nous souvenons du cas des prostitu\u00e9es de Christopher Tolofua, qui ont le pouvoir de jouer dans le championnat britannique, mais il est interdit de porter des t-shirts du XV fran\u00e7ais, victimes de probl\u00e8mes pour le col, qui sont class\u00e9es comme contre-indications absolues \u00e0 la pratique du rugby par FFR. En op\u00e9rant avec succ\u00e8s, il a rejoint RC Toulon. \"Surtout se battre avec cette terrible nouvelle, Racing 92 fournit un soutien total \u00e0 la vision et appliquer imm\u00e9diatement tous les arrangements pour soutenir les joueurs du symbole du mieux possible \u00e0 ce moment-l\u00e0 - \u00e0 des moments tr\u00e8s difficiles.\" Ce centre, est arriv\u00e9 \u00e0 la course 92 en 2009, \u00e0 l'\u00e2ge de 17 ans, avait pass\u00e9 toute sa carri\u00e8re au club d'Ile -de -France, \u00e0 l'exception de trois supports de saison qui ont \u00e9t\u00e9 consacr\u00e9s \u00e0 l'\u00e9quipe de rugby fran\u00e7aise \u00e0 l'\u00e2ge de 7 ans 2016. En 2016 en 2016., un joueur des Fidji respecte son premier choix avec XV France. Apr\u00e8s avoir rat\u00e9 le tournoi des Six Nations, il a \u00e9t\u00e9 titulaire du Blues en juillet dernier lors d'une tourn\u00e9e au Japon.",
+            "timestamp": 1663085614,
+            "title": "XV de France: Virimi Vakatawa a oblig\u00e9 \u00e0 mettre fin \u00e0 sa carri\u00e8re",
+            "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3Ax8di2sz"
+        }
+    ],
+    "timestamp": 1663085614,
+    "url": "https://www.qwant.com/?client=brz-moz&t=videos&q=n%C3%A9onazis+en+France&o=0%3AMJrfVZ7PGdc"
+}

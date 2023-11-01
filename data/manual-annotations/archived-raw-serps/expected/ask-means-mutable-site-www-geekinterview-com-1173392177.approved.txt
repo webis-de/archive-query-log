@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "means mutable site:www.geekinterview.com",
+    "offset": null,
+    "page": null,
+    "query": "means mutable site:www.geekinterview.com",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Mutable</em> string <em>means</em> we can append to that string.example StringBuffer object is <em>mutable</em> string.String is immutable objectwhen we declre String=",
+            "timestamp": 1173392177,
+            "title": "Answer Detail: RE: What is <em>mutable</em> and immutable in Strings?",
+            "url": "http://www.geekinterview.com/answerdetail/6180"
+        },
+        {
+            "rank": 2,
+            "snippet": "J2EE Core Java Interview Questions: What is <em>mutable</em> and immutable in Strings? <em>Mutable</em> string <em>means</em> we can append to that string.example ...",
+            "timestamp": 1173392177,
+            "title": "Core Java : What is <em>mutable</em> and immutable in Strings?",
+            "url": "http://www.geekinterview.com/question_details/17036"
+        },
+        {
+            "rank": 3,
+            "snippet": "String buffer is a <em>mutable</em> string object. String is a non - <em>mutable</em> object. When we say <em>mutable means</em> which can be changed anytime.",
+            "timestamp": 1173392177,
+            "title": "Answer Detail: RE: What is the difference between String and ...",
+            "url": "http://www.geekinterview.com/answerdetail/17877"
+        },
+        {
+            "rank": 4,
+            "snippet": "J2EE Java Interview Questions: Can some one pls tell me the exact difference between <em>mutable</em> and immutable ? muttable <em>means</em> you can change the ...",
+            "timestamp": 1173392177,
+            "title": "Java : Can some one pls tell me the exact difference between <em>mutable</em> ...",
+            "url": "http://www.geekinterview.com/question_details/31254"
+        },
+        {
+            "rank": 5,
+            "snippet": "String buffer is a <em>mutable</em> string object.  String is a non - <em>mutable</em> object.  When we say <em>mutable means</em> which can be changed anytime.",
+            "timestamp": 1173392177,
+            "title": "Core Java : What is the difference between String and StringBuffer? ...",
+            "url": "http://www.geekinterview.com/question_details/17744"
+        },
+        {
+            "rank": 6,
+            "snippet": "... why string objects are immutable and string buffer objects are <em>mutable</em>?   ... can not change the value <em>means</em> its content,if want make ...",
+            "timestamp": 1173392177,
+            "title": "Java : why string objects are immutable and string buffer objects ...",
+            "url": "http://www.geekinterview.com/question_details/25429"
+        },
+        {
+            "rank": 7,
+            "snippet": "J2EE Core Java Interview Questions: which on is best string or string buffer?which one is <em>mutable</em> and immutable? String types are immutable and ...",
+            "timestamp": 1173392177,
+            "title": "Core Java : which on is best string or string buffer?which one is ...",
+            "url": "http://www.geekinterview.com/question_details/29732"
+        },
+        {
+            "rank": 8,
+            "snippet": "A class is said to be designed for <em>Mutable</em> objects if the class provides public attributes that can be directly changed or public methods that ...",
+            "timestamp": 1173392177,
+            "title": "Answer Detail: RE: Can some one pls tell me the exact difference ...",
+            "url": "http://www.geekinterview.com/answerdetail/46959"
+        },
+        {
+            "rank": 9,
+            "snippet": "... that Strings are immutable..which <em>means</em> once u initialize the value for this..it can not ... where as Stringbuffer are <em>mutable</em>..u can ...",
+            "timestamp": 1173392177,
+            "title": "Java : what is difference between string and stringBuffer with ...",
+            "url": "http://www.geekinterview.com/question_details/25052"
+        },
+        {
+            "rank": 10,
+            "snippet": "String - ImmutableStringBuffer - <em>Mutable</em> ... A string buffer implements a <em>mutable</em> sequence of characters.  A string buffer is like a String ...",
+            "timestamp": 1173392177,
+            "title": "Java : Difference between String &amp; StringBuffer",
+            "url": "http://www.geekinterview.com/question_details/14355"
+        }
+    ],
+    "timestamp": 1173392177,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=means+mutable+site:www.geekinterview.com"
+}

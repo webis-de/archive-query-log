@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Universal Logs Checker 1.1.0 site:cracking.org",
+    "offset": null,
+    "page": null,
+    "query": "Universal Logs Checker 1.1.0 site:cracking.org",
+    "results": [],
+    "timestamp": 1656559962,
+    "url": "https://duckduckgo.com/?q=Universal+Logs+Checker+1.1.0+site%3Acracking.org&t=ffcm"
+}

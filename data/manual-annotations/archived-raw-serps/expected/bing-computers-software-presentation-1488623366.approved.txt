@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Computers Software Presentation",
+    "offset": null,
+    "page": null,
+    "query": "Computers Software Presentation",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Presentation software</em> helps the user communicate with an audience using a combination of words and pictures. <em>Presentation software</em> shares some of the \u2026",
+            "timestamp": 1488623366,
+            "title": "DMOZ - <em>Computers: Software: Presentation</em> \u2026",
+            "url": "http://www.dmoz.org/Computers/Software/Presentation/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Sells <em>PowerPoint</em> template and background designs, photos, fonts, background music, sound effects, and custom <em>presentation</em> services.",
+            "timestamp": 1488623366,
+            "title": "DMOZ - <em>Computers: Software:</em> \u2026",
+            "url": "http://www.dmoz.org/Computers/Software/Presentation/Microsoft_PowerPoint/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Welcome to <em>Prezi</em>, the <em>presentation software</em> that uses motion, zoom, and spatial relationships to bring your ideas to life and make you a great presenter.",
+            "timestamp": 1488623366,
+            "title": "<em>Prezi</em> - Official Site",
+            "url": "https://prezi.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "At CustomShow, we decided to list some <em>powerpoint</em> alternatives that could help solve your overall <em>presentation software</em> problems. Thes programs serve many purposes.",
+            "timestamp": 1488623366,
+            "title": "31 <em>Presentation Software</em> &amp; <em>Powerpoint</em> \u2026",
+            "url": "https://www.customshow.com/best-powerpoint-alternatives-presentation-programs/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Download the <em>Prezi</em> Desktop for Windows app or the <em>Prezi</em> Desktop for Mac app to edit, store, sync, and present prezis anywhere, online or offline.",
+            "timestamp": 1488623366,
+            "title": "<em>Prezi</em> Desktop | Downloadable app for \u2026",
+            "url": "https://prezi.com/desktop/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Video indlejret\u00a0\u00b7 <em>Computer software</em> : <em>Computer software Computer software</em>, or just <em>software</em>, is a general term primarily used for digitally stored data such as computer \u2026",
+            "timestamp": 1488623366,
+            "title": "<em>Computer Software</em> |authorSTREAM - \u2026",
+            "url": "http://www.authorstream.com/Presentation/sachinkhandelwal41-406846-computer-software-system-application-education-ppt-powerpoint/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Create drama in your <em>presentation</em> with over 30 cinematic ... and Numbers for Mac are free on the Mac App Store for qualifying Mac <em>computers</em> purchased on ...",
+            "timestamp": 1488623366,
+            "title": "<em>Keynote</em> - Apple",
+            "url": "http://www.apple.com/keynote/"
+        },
+        {
+            "rank": 8,
+            "snippet": "A <em>presentation</em> using a <em>presentation program</em>. ... <em>presentation</em> graphics <em>software</em> ran on ... In the mid-1980s developments in the world of <em>computers</em> changed the way ...",
+            "timestamp": 1488623366,
+            "title": "<em>Presentation program</em> - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Presentation_program"
+        },
+        {
+            "rank": 9,
+            "snippet": "The most common <em>software</em> currently being used for office ... and <em>presentation software</em> like ... Some companies may prefer Apple <em>software</em> and Mac <em>computers</em>, ...",
+            "timestamp": 1488623366,
+            "title": "Best Answers for Interview Questions - \u2026",
+            "url": "https://www.thebalance.com/computer-skills-interview-questions-2062683"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>emaze</em> is the next generation of online <em>presentation software</em>. Select any of the professionally designed free templates to create amazing presentations.",
+            "timestamp": 1488623366,
+            "title": "<em>emaze</em> - Online <em>Presentation Software</em> \u2013 \u2026",
+            "url": "https://www.emaze.com/"
+        }
+    ],
+    "timestamp": 1488623366,
+    "url": "https://www.bing.com/search?q=Computers+Software+Presentation"
+}

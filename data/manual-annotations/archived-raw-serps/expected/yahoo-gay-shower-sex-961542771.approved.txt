@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "gay shower sex",
+    "offset": null,
+    "page": null,
+    "query": "gay shower sex",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 961542771,
+            "title": "Power Exchange",
+            "url": "http://www.PowerExchange.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 961542771,
+            "title": "Power Exchange",
+            "url": "http://www.PowerExchange.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 961542771,
+            "title": "Power Exchange",
+            "url": "http://www.PowerExchange.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 961542771,
+            "title": "Power Exchange",
+            "url": "http://www.PowerExchange.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 961542771,
+            "title": "<em>Shower</em>Room.com",
+            "url": "http://www.showerroom.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 961542771,
+            "title": "StudBoys Cam",
+            "url": "http://www.studboyscam.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 961542771,
+            "title": "MuscleGuys.com",
+            "url": "http://www.muscleguys.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 961542771,
+            "title": "uSpyOnMe Cam",
+            "url": "http://www.uspyonme.com/"
+        }
+    ],
+    "timestamp": 961542771,
+    "url": "http://search.yahoo.com:80/search?p=gay+shower+sex"
+}

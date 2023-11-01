@@ -1,0 +1,52 @@
+{
+    "interpreted_query": "european cannibalism",
+    "offset": null,
+    "page": null,
+    "query": "european cannibalism",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Europe</em>\u2019s Hypocritical History of <em>Cannibalism</em> From prehistory to the present with many episodes in between, the region has a surprisingly meaty history of humans eating humans",
+            "timestamp": 1591185526,
+            "title": "Europe\u2019s Hypocritical History of Cannibalism | History ...",
+            "url": "https://www.smithsonianmag.com/history/europes-hypocritical-history-of-cannibalism-42642371/"
+        },
+        {
+            "rank": 2,
+            "snippet": "05/02/2010\u00a0\u00b7 <em>Cannibalism</em> is not simply something bad that others do: its practice and imagery wend through romance and history into the very fabric of <em>Europe</em>'s own sense of itself.",
+            "timestamp": 1591185526,
+            "title": "Europe and its cannibals | openDemocracy",
+            "url": "https://www.opendemocracy.net/en/europe-and-its-cannibals/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Cannibalism is the act of consuming another individual of the same species as food. Cannibalism is a common ecological  interaction in the animal kingdom and has been recorded in more than 1,500 species.  Human cannibalism  is well documented, both in ancient and in recent times.  The rate of cannibalism increases in nutritionally poor environments as individuals turn to conspecifics as an additional food source.  Cannibalism regulates population numbers, whereby resources such as food\u2026",
+            "timestamp": 1591185526,
+            "title": "Cannibalism - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Cannibalism"
+        },
+        {
+            "rank": 4,
+            "snippet": "11/03/2015\u00a0\u00b7 50+ videos Play all Mix - Kroll Show - The <em>European</em>'s Guide to <em>Cannibalism</em> YouTube Kroll Show - Pawnsylvania - Destination Wedding (ft. Derek Waters) - Duration: 3:53. Comedy Central 852,930 views",
+            "timestamp": 1591185526,
+            "title": "Kroll Show - The European's Guide to Cannibalism - YouTube",
+            "url": "https://www.youtube.com/watch?v=oYtCmYcYBoU"
+        },
+        {
+            "rank": 5,
+            "snippet": "Europeans indulged in <em>cannibalism</em> until the 1900s, two new books claim. By Eddie Wrenn for <em>MailOnline</em>. Published: 09:40 EDT, 9 May 2012 | Updated: 13:18 EDT, 17 May 2012",
+            "timestamp": 1591185526,
+            "title": "Europeans saw nothing wrong with cannibalism until the ...",
+            "url": "https://www.dailymail.co.uk/sciencetech/article-2141858/Tough-news-swallow-Europeans-saw-wrong-cannibalism-1900s-new-books-claim.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "The 800,000-year-old butchered bones from the cave, called Gran Dolina, indicate <em>cannibalism</em> was rife among members of western <em>Europe</em>'s first known human species, Homo antecessor.",
+            "timestamp": 1591185526,
+            "title": "Human Meat Just Another Meal for Early Europeans?",
+            "url": "https://www.nationalgeographic.com/news/2010/9/100831-cannibalism-cannibal-cavemen-human-meat-science/"
+        }
+    ],
+    "timestamp": 1591185526,
+    "url": "https://www.bing.com/search?q=european+cannibalism&FORM=QSRE6"
+}

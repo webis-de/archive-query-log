@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\"Green Capital Energy\" -site:wikipedia.org -site:wikimedia.org",
+    "offset": null,
+    "page": null,
+    "query": "\"Green Capital Energy\" -site:wikipedia.org -site:wikimedia.org",
+    "results": [],
+    "timestamp": 1657756151,
+    "url": "https://www.google.com/search?safe=off&tbs=sur:fmc&tbm=isch&q=%22Green+Capital+Energy%22+-site:wikipedia.org+-site:wikimedia.org&spell=1&sa=X&ved=2ahUKEwie4oTthrz1AhWTHTQIHbsuDQ8QBXoECAAQAQ"
+}

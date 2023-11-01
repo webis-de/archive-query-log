@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Forced labor in California\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Forced labor in California\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Freedom Denied: Forced Labor in California ... Forced labor is a serious and pervasive problem in the United States. At any given time ten thousand or more people\u00a0...",
+            "timestamp": 1635373615,
+            "title": "Freedom Denied: Forced Labor in California - eScholarship",
+            "url": "https://www.google.com/url?q=https://escholarship.org/uc/item/1q46h64w&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAsQAg&usg=AOvVaw2Fps5Z9dNZvrNztloofOqf"
+        },
+        {
+            "rank": 4,
+            "snippet": "Feb 2, 2005 \u00b7 This report lays out the problem of forced labor in California and calls on lawmakers in Sacramento to adopt legislation that will increase\u00a0...",
+            "timestamp": 1635373615,
+            "title": "[PDF] FORCED LABOR IN CALIFORNIA - Berkeley Law",
+            "url": "https://www.google.com/url?q=https://www.law.berkeley.edu/files/FreedomDenied.pdf&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAkQAg&usg=AOvVaw21T-LZh5Fn-0aZ-87wFbVy"
+        },
+        {
+            "rank": 5,
+            "snippet": "Feb 1, 2005 \u00b7 Freedom Denied: Forced Labor in California. Abstract: California is hardly a stranger to the issue of forced labor\u2014especially because forced\u00a0...",
+            "timestamp": 1635373615,
+            "title": "Freedom Denied: Forced Labor in California | Human Rights Center",
+            "url": "https://www.google.com/url?q=https://humanrights.berkeley.edu/publications/freedom-denied-forced-labor-california&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAgQAg&usg=AOvVaw39aovSvur22mcfXXVvHsD0"
+        },
+        {
+            "rank": 6,
+            "snippet": "Human trafficking is a growing problem in the US \u2013 and around the world. California, with its large immigrant communities, the world's 9th largest economy\u00a0...",
+            "timestamp": 1635373615,
+            "title": "[PDF] California Human Trafficking Fact Sheet",
+            "url": "https://www.google.com/url?q=http://www.htcourts.org/wp-content/uploads/CA-HT-Fact-Sheet-2.27.13.pdf%3FFactsheet%3DHT-CA&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAoQAg&usg=AOvVaw08AeRIObNSeZGLtTh3_X6x"
+        },
+        {
+            "rank": 7,
+            "snippet": "SAN FRANCISCO (AP) \u2014 At least a dozen immigrant workers who were forced to live in squalid conditions and to work construction jobs for\u00a0...",
+            "timestamp": 1635373615,
+            "title": "Prosecutors: Workers rescued from forced labor in ... - AP News",
+            "url": "https://www.google.com/url?q=https://apnews.com/20fc0e07b20e4b40a4c318508f30be78/Prosecutors:-Workers-rescued-from-forced-labor-in-California&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAcQAg&usg=AOvVaw2XsatiXJxuWV3LZ14dxoxY"
+        },
+        {
+            "rank": 8,
+            "snippet": "Prosecutors: Workers rescued from forced labor in California. published on August 30, 2017 - 12:57 PM Written by Associated Press. 0 shares.",
+            "timestamp": 1635373615,
+            "title": "Prosecutors: Workers rescued from forced labor in California",
+            "url": "https://www.google.com/url?q=https://thebusinessjournal.com/prosecutors-workers-rescued-forced-labor-california/%3Futm_source%3Drss%26utm_medium%3Drss%26utm_campaign%3Dprosecutors-workers-rescued-forced-labor-california&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAMQAg&usg=AOvVaw0q8-pz_Pt8uNUTd_T_4ufm"
+        },
+        {
+            "rank": 9,
+            "snippet": "Freedom Denied: Forced Labor in California \u00b7 L. Fletcher \u00b7 Published 2005 \u00b7 Political Science.",
+            "timestamp": 1635373615,
+            "title": "Freedom Denied: Forced Labor in California | Semantic Scholar",
+            "url": "https://www.google.com/url?q=https://www.semanticscholar.org/paper/Freedom-Denied%253A-Forced-Labor-in-California-Fletcher/a9fdbf37b5db13d513421afa002b7cb867d30368&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAIQAg&usg=AOvVaw28Qr-Yh5qyMm8QLBIfBtfn"
+        },
+        {
+            "rank": 10,
+            "snippet": "Feb 3, 2020 \u00b7 Call on California to revise SB477. Thousands of temporary workers are being trafficked into forced labor in California under threat of\u00a0...",
+            "timestamp": 1635373615,
+            "title": "Protect Migrant Workers from Exploitation - Cast LA",
+            "url": "https://www.google.com/url?q=https://www.castla.org/protect-migrant-workers-from-exploitation/&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAAQAg&usg=AOvVaw3zhUiQJriiNyMzrNfRQ-gX"
+        },
+        {
+            "rank": 11,
+            "snippet": "[Freedom Denied: Forced Labor in California, Human Rights Center, UC Berkeley, February 2005, citing data reported in Hidden Slaves: Forced Labor in the\u00a0...",
+            "timestamp": 1635373615,
+            "title": "AB 22 Assembly Bill - Bill Analysis - Leginfo.ca.gov",
+            "url": "https://www.google.com/url?q=http://www.leginfo.ca.gov/pub/05-06/bill/asm/ab_0001-0050/ab_22_cfa_20050714_111630_sen_comm.html&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAEQAg&usg=AOvVaw1Q4HUG8AjVm8IJG-LJtb12"
+        },
+        {
+            "rank": 12,
+            "snippet": "Mar 20, 2019 \u00b7 Job Torres could be sentenced to 10 years for the count of harboring undocumented immigrants and 20 years for the forced labor count.",
+            "timestamp": 1635373615,
+            "title": "California Man Convicted of Using Undocumented Immigrants for ...",
+            "url": "https://www.google.com/url?q=https://www.newsweek.com/california-man-convicted-using-unodcumented-immigrants-forced-labor-1369539&sa=U&ved=2ahUKEwix7eGk7OvzAhWnCjQIHUQtAXcQFnoECAQQAg&usg=AOvVaw2RNPk9P_K6ymoCiYR0rSnH"
+        }
+    ],
+    "timestamp": 1635373615,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Forced+labor+in+California%22"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "gamefaq",
+    "offset": null,
+    "page": null,
+    "query": "gamefaq",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "<em>GameFAQ</em>s",
+            "url": "http://srd.yahoo.com/srst/7717135/gamefaq/1/10/*http://www.gamefaqs.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "<em>GameFAQ</em>s",
+            "url": "http://srd.yahoo.com/srst/29991362/gamefaq/2/10/*http://www.gamefaqs.com/console/psx/game/26065.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "<em>GameFAQ</em>s: Legend of Zelda DX",
+            "url": "http://srd.yahoo.com/srst/28738706/gamefaq/3/10/*http://www.gamefaqs.com/portable/gbcolor/game/22807.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "<em>GameFAQ</em>s: Tech Romancer",
+            "url": "http://srd.yahoo.com/srst/28490943/gamefaq/4/10/*http://www.gamefaqs.com/coinop/arcade/game/22720.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "<em>GameFAQ</em>s: Star Gladiator",
+            "url": "http://srd.yahoo.com/srst/27221533/gamefaq/5/10/*http://www.gamefaqs.com/console/psx/game/20345.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "GamesFAQs: Dead or Alive 2",
+            "url": "http://srd.yahoo.com/srst/28486606/gamefaq/6/10/*http://www.gamefaqs.com/console/dreamcast/game/25789.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "GamesFAQs: Resident Evil 3: Nemesis",
+            "url": "http://srd.yahoo.com/srst/26284365/gamefaq/7/10/*http://www.gamefaqs.com/console/psx/game/24727.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "FAQ - Quest 64",
+            "url": "http://srd.yahoo.com/srst/27781467/gamefaq/8/10/*http://www.gamefaqs.com/console/n64/file/quest_64.txt"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "FAQ - Rygar",
+            "url": "http://srd.yahoo.com/srst/26276322/gamefaq/9/10/*http://www.gamefaqs.com/coinop/arcade/file/rygar.txt"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970449707,
+            "title": "FAQ - Super Punch Out",
+            "url": "http://srd.yahoo.com/srst/8643589/gamefaq/10/10/*http://www.gamefaqs.com/console/snes/file/super_punch_out_b.txt"
+        }
+    ],
+    "timestamp": 970449707,
+    "url": "http://search.yahoo.com:80/search?p=gamefaq"
+}

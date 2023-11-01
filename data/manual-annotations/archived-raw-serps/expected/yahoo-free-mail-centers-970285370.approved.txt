@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "FREE MAIL CENTERS",
+    "offset": null,
+    "page": null,
+    "query": "FREE MAIL CENTERS",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970285370,
+            "title": "Direct Marketing World Job Center",
+            "url": "http://srd.yahoo.com/srst/60176/FREE+MAIL+CENTERS/1/2/*http://www.dmworld.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970285370,
+            "title": "arab-american.com",
+            "url": "http://srd.yahoo.com/srst/20775101/FREE+MAIL+CENTERS/2/2/*http://arab-american.com"
+        }
+    ],
+    "timestamp": 970285370,
+    "url": "http://search.yahoo.com:80/search?p=FREE+MAIL+CENTERS"
+}

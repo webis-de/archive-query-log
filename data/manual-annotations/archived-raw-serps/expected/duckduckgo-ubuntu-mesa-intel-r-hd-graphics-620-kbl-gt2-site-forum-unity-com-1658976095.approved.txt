@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "ubuntu Mesa Intel(R) HD Graphics 620 (KBL GT2) site:forum.unity.com",
+    "offset": null,
+    "page": null,
+    "query": "ubuntu Mesa Intel(R) HD Graphics 620 (KBL GT2) site:forum.unity.com",
+    "results": [],
+    "timestamp": 1658976095,
+    "url": "https://duckduckgo.com/?q=ubuntu+Mesa+Intel%28R%29+HD+Graphics+620+%28KBL+GT2%29+site%3Aforum.unity.com&t=ffab"
+}

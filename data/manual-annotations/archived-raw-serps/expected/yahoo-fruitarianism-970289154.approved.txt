@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "fruitarianism",
+    "offset": null,
+    "page": null,
+    "query": "fruitarianism",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970289154,
+            "title": "Fruitarians",
+            "url": "http://srd.yahoo.com/srct/2783181/fruitarianism/1/1/*http://dir.yahoo.com/Society_and_Culture/Cultures_and_Groups/Vegetarians/Fruitarians/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970289154,
+            "title": "FAQ - <em>Fruitarianism</em>",
+            "url": "http://srd.yahoo.com/srst/2783179/fruitarianism/1/1/*http://www.student.nada.kth.se/~f95-mwi/fun/faq.html"
+        }
+    ],
+    "timestamp": 970289154,
+    "url": "http://search.yahoo.com:80/search?p=fruitarianism"
+}

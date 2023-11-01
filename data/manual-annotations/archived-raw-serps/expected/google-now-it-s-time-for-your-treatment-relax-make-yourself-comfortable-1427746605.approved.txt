@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "\"Now, it's time for your treatment. Relax, make yourself comfortable.\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Now, it's time for your treatment. Relax, make yourself comfortable.\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Sep 7, 2014 - \"<em>Now, it's time for your treatment. Relax, make yourself comfortable</em>. OK, so--look, pay attention. OK, now listen here. I want you to imagine a\u00a0...",
+            "timestamp": 1427746605,
+            "title": "EVERYTHING REALLY IS THAT APPALLING : TumblrInAction",
+            "url": "http://www.reddit.com/r/TumblrInAction/comments/2fr43q/everything_really_is_that_appalling/"
+        }
+    ],
+    "timestamp": 1427746605,
+    "url": "https://www.google.com/search?q=%22Now%2C+it%27s+time+for+your+treatment.+Relax%2C+make+yourself+comfortable.%22&oq=%22Now%2C+it%27s+time+for+your+treatment.+Relax%2C+make+yourself+comfortable.%22&aqs=chrome.0.69i59.536j0j9&sourceid=chrome&es_sm=0&ie=UTF-8"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"George W. Summers\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"George W. Summers\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Jun 26, 2020 \u00b7 Born in 1804, George Summers emerged as a prominent Whig politician in antebellum western Virginia. Championing the interests of that\u00a0...",
+            "timestamp": 1637786317,
+            "title": "George W. Summers Historic Marker - Clio - TheClio",
+            "url": "https://www.google.com/url?q=https://www.theclio.com/entry/96421&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAkQAg&usg=AOvVaw1Ab2xPqk9kSABdbZPgn8b9"
+        },
+        {
+            "rank": 3,
+            "snippet": "Nov 10, 2021 \u00b7 Speech of Hon. George W. Summers, on federal relations in the Virginia convention, delivered March 11, 1861. \u00b7 Creation InformationBookmark this\u00a0...Summers, George W. (George... \u00b7 Sam Lanham Collection - Civil...",
+            "timestamp": 1637786317,
+            "title": "Speech of Hon. George W. Summers, on federal relations in the ...",
+            "url": "https://www.google.com/url?q=https://texashistory.unt.edu/ark:/67531/metapth497717/&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAMQAg&usg=AOvVaw19ivQhEsl_gQDyxzlx9yXr"
+        },
+        {
+            "rank": 4,
+            "snippet": "George Summers served four terms in the Virginia General Assembly (1830-35), and two terms in the U.S. House of Representatives (1841-45). On February, 14, 1833\u00a0...",
+            "timestamp": 1637786317,
+            "title": "George William Summers II | glenwood-foundation",
+            "url": "https://www.google.com/url?q=https://www.historicglenwoodfoundation.org/george-william-summers-ii&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAgQAg&usg=AOvVaw1ieAMUKaO7uHTgI48Gmme8"
+        },
+        {
+            "rank": 5,
+            "snippet": "SUMMERS, George William, a Representative from Virginia; born near Alexandria, Va., March 4, 1804; attended school at Charleston, Va. (now West Virginia) and\u00a0...",
+            "timestamp": 1637786317,
+            "title": "Candidate - George W. Summers - Our Campaigns",
+            "url": "https://www.google.com/url?q=https://www.ourcampaigns.com/CandidateDetail.html%3FCandidateID%3D76018&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAcQAg&usg=AOvVaw0AwgCnL3yqwzy4ouL8O924"
+        },
+        {
+            "rank": 6,
+            "snippet": "View George W Summers's 1940 US census record to find family members, occupation details &amp; more. Access is free so discover George W Summers's story today.",
+            "timestamp": 1637786317,
+            "title": "George W Summers in the 1940 Census | Ancestry\u00ae",
+            "url": "https://www.google.com/url?q=https://www.ancestry.com/1940-census/usa/Virginia/George-W-Summers_l0z17&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAIQAg&usg=AOvVaw1h8w7hwLFqNIhn5_-8T2aC"
+        },
+        {
+            "rank": 7,
+            "snippet": "Apr 11, 2021 \u00b7 Born in Fairfax County in 1804, he came to Kanawha Valley as a child. Secured reforms benefitting western Virginia at 1850~51 Constitutional\u00a0...",
+            "timestamp": 1637786317,
+            "title": "George W. Summers - West Virginia Historical Markers on ...",
+            "url": "https://www.google.com/url?q=https://www.waymarking.com/waymarks/wm144AZ_George_W_Summers&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAEQAg&usg=AOvVaw2Kb-TTh8HuA9xJO68UNlnD"
+        },
+        {
+            "rank": 8,
+            "snippet": "Statesman George William Summers (March 4, 1804-September 19, 1868) was born in Fairfax County, Virginia. The Summers family moved to Walnut Grove in present\u00a0...",
+            "timestamp": 1637786317,
+            "title": "George William Summers - e-WV",
+            "url": "https://www.google.com/url?q=https://www.wvencyclopedia.org/print/Article/626&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAYQAg&usg=AOvVaw3Di4e_73NXbROJSWBvMx7Q"
+        },
+        {
+            "rank": 9,
+            "snippet": "Obituary for George W. Summers Sr. | George W. Summers, age 82 Passed away on June 3, 2021. Loving husband of Betty Jo Summers; treasured father of George\u00a0...",
+            "timestamp": 1637786317,
+            "title": "Obituary for George W. Summers Sr. | E.F. Boyd &amp; Son, Inc.",
+            "url": "https://www.google.com/url?q=https://www.efboyd.com/obituary/George-SummersSr&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAUQAg&usg=AOvVaw1sUXfUpBnrJ6ffxzRJfzjm"
+        },
+        {
+            "rank": 10,
+            "snippet": "... federal relations in the Virginia convention, delivered March 11, 1861.. [George W Summers; Confederate States of America Collection (Library of Congress)]Author: George W Summers; Confederate States of America Collection (Library of Congress)",
+            "timestamp": 1637786317,
+            "title": "Speech of Hon. George W. Summers, on federal ... - WorldCat",
+            "url": "https://www.google.com/url?q=https://www.worldcat.org/title/speech-of-hon-george-w-summers-on-federal-relations-in-the-virginia-convention-delivered-march-11-1861/oclc/11422806&sa=U&ved=2ahUKEwi9nfbx-rH0AhVyCTQIHTiBAdYQFnoECAAQAg&usg=AOvVaw2frsn4P0fiuhi1i-eiVaOf"
+        }
+    ],
+    "timestamp": 1637786317,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22George+W.+Summers%22"
+}

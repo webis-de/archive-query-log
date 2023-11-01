@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Evan Colborne\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Evan Colborne\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\u203a team-evan-colborne",
+            "timestamp": 1647984326,
+            "title": "Team - Evan Colborne - Cosmos Sports &amp; Entertainment",
+            "url": "https://www.cosmossports.com/team-evan-colborne/"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Evan Colborne</em> \u00b7 Manager of Marketing &amp; Communications, Department of Athletics &amp; Recreation at Wilfrid Laurier University \u00b7 About \u00b7 Articles by Evan \u00b7 Activity.",
+            "timestamp": 1647984326,
+            "title": "Evan Colborne - Manager of Marketing &amp; Communications ...",
+            "url": "https://ca.linkedin.com/in/evancolborne"
+        },
+        {
+            "rank": 3,
+            "snippet": "Get the latest news, stats, videos, highlights and more about place kicker <em>Evan Colborne</em> on ESPN.",
+            "timestamp": 1647984326,
+            "title": "Evan Colborne Stats, News, Bio | ESPN",
+            "url": "https://www.espn.com/college-football/player/_/id/484143"
+        },
+        {
+            "rank": 4,
+            "snippet": "\u203a evancolborne",
+            "timestamp": 1647984326,
+            "title": "Evan Colborne (@evancolborne) / Twitter",
+            "url": "https://mobile.twitter.com/evancolborne"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Evan Colborne</em> (9) Placekicker - As A Sophomore (2010) - played in 10 games ... completed 27 of 33 point-after attempts ... was 6-8 in field goals\u00a0...",
+            "timestamp": 1647984326,
+            "title": "Evan Colborne - Football - Colgate University Athletics",
+            "url": "https://colgateathletics.com/sports/football/roster/evan-colborne/3072"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Evan Colborne's</em> profile - \u2745\u2745\u2745\u2745\u2745@cosmossports.com email address, phone number, address and contact information | get free emails&amp;phones\u00a0...",
+            "timestamp": 1647984326,
+            "title": "Evan Colborne - Director, Marketing &amp; Strategy - Datanyze",
+            "url": "https://www.datanyze.com/people/Evan-Colborne/1595506814"
+        },
+        {
+            "rank": 7,
+            "snippet": "Get the latest on <em>Evan Colborne</em> including news, stats, videos, and more on CBSSports.com.",
+            "timestamp": 1647984326,
+            "title": "Evan Colborne, , - News, Stats, Bio - CBSSports.com",
+            "url": "https://www.cbssports.com/college-football/players/1686788/evan-colborne/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Hosted by <em>Evan Colborne</em>, The Cosmos Podcast explores the business of sports and entertainment in Canada while The Rookies Podcast, hosted by Olivia Sala,\u00a0...",
+            "timestamp": 1647984326,
+            "title": "Cosmos Sports Entertainment",
+            "url": "https://sportmanagementhub.com/podcast/cosmos-sports-entertainment/"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Evan Colborne</em> is on Facebook. Join Facebook to connect with <em>Evan Colborne</em> and others you may know. Facebook gives people the power to share and makes the...",
+            "timestamp": 1647984326,
+            "title": "Evan Colborne | Facebook",
+            "url": "https://www.facebook.com/evan.colborne.3"
+        },
+        {
+            "rank": 10,
+            "snippet": "\u203a experience",
+            "timestamp": 1647984326,
+            "title": "Experience \u2013 Evan Colborne",
+            "url": "https://evancolborne.com/experience/"
+        }
+    ],
+    "timestamp": 1647984326,
+    "url": "https://www.google.com/search?q=%22Evan+Colborne%22&rlz=1C1GCEB_enCA943CA943&oq=%22Evan+Colborne%22&aqs=chrome..69i57j0i30.3299j0j7&sourceid=chrome&ie=UTF-8"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "how to be more generous",
+    "offset": null,
+    "page": null,
+    "query": "how to be more generous",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Sometimes, the most important step you can take to become <em>more generous</em> is to spend <em>more</em> time thinking about what you already possess and less time thinking about what you don\u2019t. Once you start intentionally thinking that way, you may be surprised just how good you already have it\u2026 and become <em>more</em> apt to share your life with others. 3.",
+            "timestamp": 1590871266,
+            "title": "10 Little Ways to Become More Generous - Becoming Minimalist",
+            "url": "https://www.becomingminimalist.com/10-simple-ways-to-become-a-more-generous-person/"
+        },
+        {
+            "rank": 2,
+            "snippet": "The fact is, generosity is first and foremost an attitude, a way of being in the world, and a commitment to follow through on our desire to give and share with others. Here are six ways you can become a <em>more generous</em> person\u2026 1. Commit to doing one <em>generous</em> act per day. Every day, make a point to do one truly <em>generous</em> thing.",
+            "timestamp": 1590871266,
+            "title": "6 Ways to Be a More Generous Person - Dynamic Catholic",
+            "url": "https://dynamiccatholic.com/everyday-life/6-ways-to-be-a-more-generous-person"
+        },
+        {
+            "rank": 3,
+            "snippet": "Know that being <em>generous</em> will make you happier. Though you shouldn't be <em>generous</em> for the sake of furthering your own needs, you should know that people who are <em>generous</em> are known to be happier than those who are not: Being <em>generous</em> helps people feel <em>more</em> compassionate towards others, gives a stronger sense of community, and to establishes a higher self-image.",
+            "timestamp": 1590871266,
+            "title": "How to Be Generous (with Pictures) - wikiHow",
+            "url": "https://www.wikihow.com/Be-Generous"
+        },
+        {
+            "rank": 4,
+            "snippet": "If someone else sees us do something kind or <em>generous</em>, it actually makes them <em>more</em> likely to be <em>generous</em> too. Even saying a simple, \u201cThank you,\u201d can inspire both of you, and those watching, to ...",
+            "timestamp": 1590871266,
+            "title": "What Is Generosity? (And How to Be a More Generous Person ...",
+            "url": "https://www.psychologytoday.com/us/blog/click-here-happiness/201902/what-is-generosity-and-how-be-more-generous-person"
+        },
+        {
+            "rank": 5,
+            "snippet": "Being <em>generous</em> can have profound effects on people. When you give, you can greatly help others, and you feel better too. One awesome example of giving is by the world\u2019s wealthiest people who participate in The Giving Pledge, a pledge to give most of their wealth to philantrophy.",
+            "timestamp": 1590871266,
+            "title": "8 Simple And Easy Ways To Become More Generous",
+            "url": "https://www.lifehack.org/341716/8-simple-and-easy-ways-become-more-generous"
+        },
+        {
+            "rank": 6,
+            "snippet": "Practice gratitude. The benefits of gratitude are many, but it will help you become <em>more</em> patient, <em>generous</em> and altruistic. Start incorporating a small dose of gratitude to your day.",
+            "timestamp": 1590871266,
+            "title": "6 Steps To A More Generous 2018 - Forbes",
+            "url": "https://www.forbes.com/sites/toriutley/2017/12/31/6-steps-to-a-more-generous-2018/"
+        },
+        {
+            "rank": 7,
+            "snippet": "According to psychology, <em>generous</em> people say they\u2019re happier, healthier, and <em>more</em> content with life than those who don\u2019t give. And generosity benefits your mental health in even <em>more</em> ways because it can bring about a sense of pleasure, connection to others, and deeper feelings of trust.",
+            "timestamp": 1590871266,
+            "title": "How to Be More Generous \u2014 Always Well Within",
+            "url": "https://www.alwayswellwithin.com/blog/be-more-generous"
+        },
+        {
+            "rank": 8,
+            "snippet": "I realized \u2014 many years ago \u2014 that when I behave generously, I feel rich. And I like to feel rich. So I choose to be <em>generous</em>. But \"behaving generously\" doesn't necessarily mean \"donating money\" or \"giving away your last cookie.\" You can share knowledge freely, instead of hoarding it. You can send a hand-written note, instead of a text message. You can make eye contact, instead of checking ...",
+            "timestamp": 1590871266,
+            "title": "50 ways to be ridiculously generous \u2014 and feel ...",
+            "url": "http://www.alexandrafranzen.com/2013/09/05/50-ways-to-be-ridiculously-generous/"
+        },
+        {
+            "rank": 9,
+            "snippet": "If you want to be <em>more</em> <em>generous</em>, understand that you have <em>more</em> than enough and start giving some away now, not when you think that you are rich enough to afford it. A person who is not <em>generous</em> when they have no money will not suddenly become <em>generous</em> when they have money.",
+            "timestamp": 1590871266,
+            "title": "How to be More Generous | Better Life Coaching Blog",
+            "url": "https://betterlifecoachingblog.com/2010/05/18/how-to-be-more-generous/"
+        },
+        {
+            "rank": 10,
+            "snippet": "How to Be <em>Generous</em> on a Limited Budget. Many of us want to give to others. We see others in need and deeply desire to reach out and help them. We want to give to the charities we care about and to other causes. Many people want to give to...",
+            "timestamp": 1590871266,
+            "title": "How to Be Generous on a Limited Budget: 7 Steps (with ...",
+            "url": "https://www.wikihow.com/Be-Generous-on-a-Limited-Budget"
+        }
+    ],
+    "timestamp": 1590871266,
+    "url": "https://www.ecosia.org/search?q=how+to+be+more+generous&addon=chrome&addonversion=3.2.0&method=topbar"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "website sitemap finder site:seositecheckup.com",
+    "offset": null,
+    "page": null,
+    "query": "website sitemap finder site:seositecheckup.com",
+    "results": [],
+    "timestamp": 1614287233,
+    "url": "https://duckduckgo.com/?q=website+sitemap+finder+site%3Aseositecheckup.com&t=brave"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Kutuklui Affair",
+    "offset": null,
+    "page": null,
+    "query": "Kutuklui Affair",
+    "results": [],
+    "timestamp": 1643643819,
+    "url": "https://www.bing.com/search?q=Kutuklui+Affair"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "means mutable site:www.geek interview.comrview.com",
+    "offset": null,
+    "page": null,
+    "query": "means mutable site:www.geek interview.comrview.com",
+    "results": [],
+    "timestamp": 1173713625,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=19&l=dir&q=means+mutable+site%3Awww.geek+interview.comrview.com"
+}

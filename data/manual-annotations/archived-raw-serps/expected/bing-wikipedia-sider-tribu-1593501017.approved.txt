@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "-wikipedia \"Sider (tribu)\"",
+    "offset": null,
+    "page": null,
+    "query": "-wikipedia \"Sider (tribu)\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Auteurs : Ji-Elle, Gzen92, Bloody-libu, ZetudBot, PAC2, Ir4ubot, Trex, MathsPoetry, Vsider, Belabaci. Ji-Elle, Gzen92, Bloody-libu, ZetudBot, PAC2, Ir4ubot, Trex ...",
+            "timestamp": 1593501017,
+            "title": "Sider (tribu) - Wikimonde",
+            "url": "https://wikimonde.com/article/Sider_%28tribu%29"
+        },
+        {
+            "rank": 2,
+            "snippet": "Photo about Cape Tribulation, Queensland Australia, 06/10/2013, Golden Orb spider arachnid , hanging in a web in a tropical forest, cape tribulation. Image of orange, large, dangerous - 64093018",
+            "timestamp": 1593501017,
+            "title": "Cape Tribulation, Queensland Australia, \u2026",
+            "url": "https://www.dreamstime.com/stock-photo-cape-tribulation-queensland-australia-golden-orb-spider-arachnid-hanging-web-tropical-forest-cape-tribu-image64093018"
+        },
+        {
+            "rank": 3,
+            "snippet": "Manutti_official | 1,191 f\u00f8lgere p\u00e5 LinkedIn | Redefining Outdoor Luxury | Manutti is a designer and manufacturer of exclusive outdoor furniture with a \"Made in Belgium\" design. The Manutti range is vast and diversified: chairs, armchairs, loungers, modular sofas, tables, parasols and garden accessories. The models range from the traditional style to the contemporary style.",
+            "timestamp": 1593501017,
+            "title": "Manutti_official | LinkedIn",
+            "url": "https://dk.linkedin.com/company/manutti_official"
+        },
+        {
+            "rank": 4,
+            "snippet": "\u00c0 propos de Quincaillerie Pro. Comme son nom l'indique, Quincaillerie Pro est un site de commercialisation de quincaillerie, fourniture industrielle, fixation, visserie boulonnerie et bien d'autres produits du m\u00eame secteur Fourniture R\u00e9gie QUINCAILLERIE MARCHAL 33800 40 000,00 09/02/2011 Fourniture R\u00e9gie QUINCAILLERIE SIDER 33884 40 000,00 09/02/2011 Fourniture R\u00e9gie \u2026",
+            "timestamp": 1593501017,
+            "title": "Sider quincaillerie - droguerie - quincaillerie ...",
+            "url": "http://nou-durf.pw/2017/07/24/2721-sider-quincaillerie/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Chamoy Creative | 580 f\u00f8lgere p\u00e5 LinkedIn | Chamoy Creative is a millennial creative agency with digital at its core. Our agency runs under a millennial innovative mindset: Confident, decisive, trend setting, and limitless. We know we can and WE WILL make a positive impact in \u2026",
+            "timestamp": 1593501017,
+            "title": "Chamoy Creative | LinkedIn",
+            "url": "https://dk.linkedin.com/company/chamoy-creative"
+        },
+        {
+            "rank": 6,
+            "snippet": "Articles de la cat\u00e9gorie \u00ab Tribu de Kabylie \u00bb (35) * Tribus de la Kabylie; A. Abi Youcef; A\u00eft Abbas; Ait Aidel; A\u00eft A\u00efssi; A\u00eft Akerma",
+            "timestamp": 1593501017,
+            "title": "Cat\u00e9gorie Tribu de Kabylie - Wikimonde",
+            "url": "https://wikimonde.com/cat%C3%A9gorie/Tribu_de_Kabylie"
+        },
+        {
+            "rank": 7,
+            "snippet": "Abbassides 191 Abdelkader, Emir 2, 34 n Abdelkrim 198 aberrah : h\u00e9rault 268, 269, 270, 274-276 abuhari (pl. ibuhariyen) : ignorant 69, 104, 117 achour 177, 223, 237 ...",
+            "timestamp": 1593501017,
+            "title": "Honneur et baraka - Index - \u00c9ditions de la Maison \u2026",
+            "url": "https://books.openedition.org/editionsmsh/15331"
+        },
+        {
+            "rank": 8,
+            "snippet": "SUPERNOVA ESTUDIOS. 1,9 tusind Synes godt om. Estudio de grabaci\u00f3n y producci\u00f3n de audio / spots / jingles / audiologos / discos / bandas sonoras. Para lista de equipos y backline disponible, ver...",
+            "timestamp": 1593501017,
+            "title": "SUPERNOVA ESTUDIOS - Startside | Facebook",
+            "url": "https://da-dk.facebook.com/SUPERNOVA-ESTUDIOS-363679937966/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Vincenza Ferrari ist bei Facebook. Tritt Facebook bei, um dich mit Vincenza Ferrari und anderen Nutzern, die du kennst, zu vernetzen. Facebook gibt Menschen die M\u00f6glichkeit, Inhalte zu teilen und die...",
+            "timestamp": 1593501017,
+            "title": "Vincenza Ferrari | Facebook",
+            "url": "https://de-de.facebook.com/vincenza.ferrari.3"
+        },
+        {
+            "rank": 10,
+            "snippet": "Gana Dinero en Internet con Alex Berezowsky. 28 tusind Synes godt om. Aprende c\u00f3mo ganar dinero en Internet desde tu casa con Alex Berezowsky.",
+            "timestamp": 1593501017,
+            "title": "Gana Dinero en Internet con Alex Berezowsky - \u2026",
+            "url": "https://da-dk.facebook.com/conectaconalex/"
+        }
+    ],
+    "timestamp": 1593501017,
+    "url": "https://www.bing.com/search?q=-wikipedia+%22Sider+(tribu)%22"
+}

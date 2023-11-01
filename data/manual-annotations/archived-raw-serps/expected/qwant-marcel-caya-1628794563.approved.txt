@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Marcel Caya\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Marcel Caya\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Marcel Caya was Deputy Secretary General of ICA from September 2000 to 2007, after serving as editor of the ICA Bulletin from 1992 to 2000. He first came to ICA as the Canadian Member of the Managing Board of the SPA from 1983 to 1992, becoming Chairman from 1988 to 1992.",
+            "timestamp": 1628794563,
+            "title": "Marcel Caya | International Council on Archives",
+            "url": "https://www.ica.org/en/marcel-caya"
+        },
+        {
+            "rank": 2,
+            "snippet": "Marcel Caya is responsible for the Records Management and Archives program at the Universit\u00e9 du Qu\u00e9bec \u00e0 Montr\u00e9al and is one of the founding members of the B...",
+            "timestamp": 1628794563,
+            "title": "ACA Oral History - Marcel Caya - YouTube",
+            "url": "https://www.youtube.com/watch?v=jmnyV0N4tIs"
+        },
+        {
+            "rank": 3,
+            "snippet": "View the profiles of professionals named \"Marcel Caya\" on LinkedIn. There are 2 professionals named \"Marcel Caya\", who use LinkedIn to exchange information, ideas, and opportunities.",
+            "timestamp": 1628794563,
+            "title": "2 \"Marcel Caya\" profiles | LinkedIn",
+            "url": "https://www.linkedin.com/pub/dir/Marcel/Caya"
+        },
+        {
+            "rank": 4,
+            "snippet": "Dr. Marcel Caya is a retired professor from the Department of History of the Universit\u00e9 du Qu\u00e9bec \u00e0 Montr\u00e9al, where he was professor of Archival Studies from 1994 to 2011. From 1977 to 1994, he was General Director of Archives at McGill University and, from 1984 to 1988, was Director of the McCord Museum of Canadian History.",
+            "timestamp": 1628794563,
+            "title": "Canadian History Hall\u2019s Advisory Committees | Canadian ...",
+            "url": "https://www.historymuseum.ca/canadian-history-halls-advisory-committees/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Interview with Marcel Caya, first of the ICA Fellows Speech from Jean Favier, Director of the French Archives, XXIInd CITRA, Bratislava, Czechoslovakia, 17-20 October 1983. Marcel Caya, awarded the title of ICA Fellow, 40th CITRA, Qu\u00e9bec, Canada, 2007, picture published in Flash n14, January 2008. FLASH SEPTEMBER 2018 N 36 6",
+            "timestamp": 1628794563,
+            "title": "ISSN 1728-533X Flash N\u00b0 36 September 2018",
+            "url": "https://www.ica.org/sites/default/files/flash-36-en.pdf"
+        },
+        {
+            "rank": 6,
+            "snippet": "Marcel Caya (Photograph by Katherine Sorrell Kirkpatrick) Fran\u00e7ois Dansereau\u2014Senior Archivist at the Archive of the Jesuits in Canada\u2014followed Caya with his presentation on \u201cThe \u2018Personal\u2019 in Institutional Archives: Or How Personal Photo Albums Open Up Narratives.\u201d Using a case study from the McGill University Health Centre ...",
+            "timestamp": 1628794563,
+            "title": "Association of Canadian Archivists - \u201cArchiving the ...",
+            "url": "https://archivists.ca/Blog/8982007"
+        },
+        {
+            "rank": 7,
+            "snippet": "Marcel Caya, Director and University Archivist 1977-1996 Gordon Burr; Robert Michel, Interim Directors 1996 - 1997 Johanne Pelletier, Director and University Archivist 1997- 2007",
+            "timestamp": 1628794563,
+            "title": "Programme History &gt; About the University Archives",
+            "url": "http://www.archives.mcgill.ca/about/about_history.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "Marcel Caya \u2013 Henry Caldwell, army and militia officer, politician, seigneur, landowner, businessman and office holder. Benedict Arnold\u2019s campaign during the American invasion of 1775-76 severely affected Caldwell\u2019s property near Qu\u00e9bec: his house in Sainte-Foy was used as the rebel\u2019s headquarters and was burned along",
+            "timestamp": 1628794563,
+            "title": "Quebec During the American Invasion, 1775-1776",
+            "url": "https://genealogyensemble.files.wordpress.com/2020/09/quebec-during-the-american-invasion-1775-1776-3.pdf"
+        },
+        {
+            "rank": 9,
+            "snippet": "Albert CAYA was born 1 July 1882 in Montr\u00e9al, Qu\u00e9bec, Canada . Albert CAYA was the child of Isaie-Jean CAYA and Julia MAINVILLE and the grandchild of: (paternal) Joseph CAYA and Elisabeth HOUDE (HOULE) LECLAIR (maternal) Jean-Baptiste-Francois MAINVILLE and Ang\u00e9lique LAUZON. Albert married Alexina BOURDON 12 May 1902 in Montr\u00e9al, Qu\u00e9bec ...",
+            "timestamp": 1628794563,
+            "title": "Albert CAYA (1 July 1882-1970) G\u00e9n\u00e9alogie Qu\u00e9bec ...",
+            "url": "https://greenerpasture.com/Ancestors/Details/6223"
+        },
+        {
+            "rank": 10,
+            "snippet": "Policies Terms of Reference and legal framework for Archives Programme history The establishment of the McGill University Archives was announced in 1962 along with the appointment of McGill\u2019s first University Archivist, Mr. Alan Ridge. The initiative toward an archives programme can be traced to an exchange of correspondence in the late 1950s between Professor John Irwin Cooper (Department ...",
+            "timestamp": 1628794563,
+            "title": "About McGill University Archives | McGill Library - McGill ...",
+            "url": "https://www.mcgill.ca/library/branches/mua/about"
+        }
+    ],
+    "timestamp": 1628794563,
+    "url": "https://www.qwant.com/?q=%22Marcel+Caya%22&t=all"
+}

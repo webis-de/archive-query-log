@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "hisotry of tomato in india%23yt",
+    "offset": null,
+    "page": null,
+    "query": "hisotry of tomato in india%23yt",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "The origin <em>of tomatoes</em> Countries across the world use <em>tomatoes</em> as a key ingredient in their dishes, but this wasn\u2019t always the case. For instance, the people of Florence, Italy used <em>tomatoes</em> as mere tabletop decoration until the late 17th century....",
+            "timestamp": 1591696836,
+            "title": "Was tomato natively grown in India or introduced from ...",
+            "url": "https://www.quora.com/Was-tomato-natively-grown-in-India-or-introduced-from-south-America-How-was-Indian-food-before-tomatoes"
+        },
+        {
+            "rank": 3,
+            "snippet": "The <em>tomato</em> is the edible, often red, berry of the plant Solanum lycopersicum, commonly known as a <em>tomato</em> plant. The species originated in western South America and Central America. The Nahuatl (the language used by the Aztecs) word tomatl gave rise to the Spanish word tomate, from which the English word <em>tomato</em> derived. Its domestication and use as a cultivated food may have originated with the ...",
+            "timestamp": 1591696836,
+            "title": "Tomato - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Tomato"
+        },
+        {
+            "rank": 4,
+            "snippet": "The <em>tomato</em> had made steady progress through the 19th century, so that by the 1870s or 80s, seed catalogues often offered several varieties <em>of tomatoes</em>. When Campbell came out with condensed <em>tomato</em> soup in 1897, the <em>tomato</em>\u2019s place in American culinary <em>history</em> was assured. Fruit or Vegetable?",
+            "timestamp": 1591696836,
+            "title": "Tomato History: From Poison to Obsession | Planet Natural",
+            "url": "https://www.planetnatural.com/tomato-gardening-guru/history/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Tomatoes</em> can be cut a number of ways: diced, into rings, sliced, or halved and de-fleshed. Use a sharp, serrated knife for best results. To dice, use a low-pulp <em>tomato</em> like the beefsteak. Cut in half and gently squeeze the juice from the <em>tomato</em>. Then, cut the halves into quarters, and then line the slices together skin-side down. Cut into small ...",
+            "timestamp": 1591696836,
+            "title": "The Earth of India: All About Tomato",
+            "url": "https://theindianvegan.blogspot.com/2013/03/all-about-tomato.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Tomato</em> is a vegetable whose road through <em>history</em> was not easy and filled with numerous misconceptions and roadblocks. Finally in the last few centuries this South American plant managed to spread all across the world, becoming one of the best know food ingredients and one of the most beloved vegetables (even though technically its classified as a fruit).",
+            "timestamp": 1591696836,
+            "title": "Tomato History - Origin and History of Tomatoes",
+            "url": "http://www.vegetablefacts.net/vegetable-history/history-of-tomatoes/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Tomato History</em>, English Course, teacher english, for beginners, america, fruits and vegetable, cook,",
+            "timestamp": 1591696836,
+            "title": "Tomato History - YouTube",
+            "url": "https://www.youtube.com/watch?v=d9U7Y_nXLiY"
+        },
+        {
+            "rank": 8,
+            "snippet": "Current <em>tomato</em> Indeterminate Regular leaf Ostensibly from the original wild <em>tomato</em> from Mexico. They are smaller than most cherry <em>tomato</em> types. Micro Tom red 50\u201360 1oz. round Determinate regular leaf Considered world's smallest <em>tomato</em>, Micro Tom is a cultivar used mainly in laboratory experiments Moneymaker Red 80 Heirloom Medium Standard",
+            "timestamp": 1591696836,
+            "title": "List of tomato cultivars - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/List_of_heirloom_tomato_cultivars"
+        },
+        {
+            "rank": 9,
+            "snippet": "Until the late 1800's the <em>tomato</em> was classified as a fruit to avoid taxation, but this was changed after a Supreme Court ruling that the <em>tomato</em> is a vegetable and should be taxed accordingly. When it is all said and done, the <em>history</em> of the <em>tomato</em> has classified as a poisonous beautiful plant, a tax-avoiding fruit, and a taxable vegetable.",
+            "timestamp": 1591696836,
+            "title": "Tomato History | A Brief History Lesson about the Tomato",
+            "url": "https://www.tomato-cages.com/tomato-history.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>History of tomatoes</em> would not be complete without this info The Latin Name for the <em>tomato</em> is Lysopersicon Esculentum (eventually renamed to Solanum Lycopersicum). A renowned French Botanist by the name of Joseph Pitton de Tournefort gave it the original latin name.",
+            "timestamp": 1591696836,
+            "title": "History Of Tomatoes | History of Tomatoes - Healing Tomato",
+            "url": "https://www.healingtomato.com/history-of-tomatoes/"
+        },
+        {
+            "rank": 11,
+            "snippet": "<em>tomato</em> prices <em>in</em> india <em>Tomato</em> in Delhi plunges to Rs 1-2 a kg, onion to Rs 8 <em>Tomato</em> prices have crashed to Rs 1-2 per kg while onions have fallen to about Rs 8 per kg in Delhi\u2019s wholesale market because of weak demand and strong supply in the harvest season, which will keep prices low, traders said.",
+            "timestamp": 1591696836,
+            "title": "tomato prices in india: Latest News &amp; Videos, Photos about ...",
+            "url": "https://economictimes.indiatimes.com/topic/tomato-prices-in-india"
+        }
+    ],
+    "timestamp": 1591696836,
+    "url": "https://www.ecosia.org/search?q=hisotry+of+tomato+in+india%2523yt"
+}

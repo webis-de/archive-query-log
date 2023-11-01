@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "lombocruralgie francais",
+    "offset": null,
+    "page": null,
+    "query": "lombocruralgie francais",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "La lombocruralgie d\u00e9signe une douleur d'origine nerveuse d\u00e9butant dans le bas du dos et se propageant le long d'une jambe. Elle se distingue de la lombosciatique par la racine nerveuse atteinte, mais les causes et m\u00e9canismes \u00e0 l'origine de ces deux types de douleurs sont identiques.",
+            "timestamp": 1656441384,
+            "title": "Lombocruralgie : dur\u00e9e, sympt\u00f4mes, traitement - Journal des Femmes",
+            "url": "https://sante.journaldesfemmes.fr/fiches-sante-du-quotidien/2749591-lombocruralgie-definition-gauche-droite-bilaterale-duree-symptomes-traitement/"
+        },
+        {
+            "rank": 2,
+            "snippet": "La lombocruralgie est une douleur nerveuse commen\u00e7ant dans le bas du dos, et se propageant le long d\u2019une jambe, le plus souvent devant la hanche, l\u2019aine, l\u2019avant de la cuisse et le genou. Il s\u2019agit donc d\u2019une lombalgie, accompagn\u00e9e d\u2019une cruralgie.",
+            "timestamp": 1656441384,
+            "title": "Lombocruralgie : d\u00e9finition et traitement naturel pour se soigner",
+            "url": "https://toutpourmasante.fr/lombocruralgie/"
+        },
+        {
+            "rank": 3,
+            "snippet": "La lombocruralgie est une n\u00e9vralgie qui r\u00e9unit les sympt\u00f4mes de la lombalgie et de la cruralgie. Elle se diff\u00e9rencie de la cruralgie car la douleur n\u2019est pas uniquement projet\u00e9e dans la fesse, la cuisse, voire la jambe. Le mal prend ici naissance d\u00e8s la colonne lombaire.",
+            "timestamp": 1656441384,
+            "title": "Lombocruralgie : traitement naturel et efficace! - Duvamat",
+            "url": "https://www.duvamat.fr/lombocruralgie/"
+        },
+        {
+            "rank": 4,
+            "snippet": "La lombocruralgie est li\u00e9 \u00e0 la compression d\u2019un nerf dans les vert\u00e8bres lombaires (ou inflammation). Contrairement \u00e0 la cruralgie, la douleur n\u2019est pas uniquement pr\u00e9sente dans les fesses, cuisses ou les jambes, en effet, la douleur dans ce cas prend naissance dans la colonne lombaire. Table des mati\u00e8res afficher &gt; Qu\u2019est-ce que la lombocruralgie ?",
+            "timestamp": 1656441384,
+            "title": "Lombocruralgie : D\u00e9finiton et Traitement naturel pour la douleur",
+            "url": "https://fleuralia.fr/lombocruralgie/"
+        },
+        {
+            "rank": 5,
+            "snippet": "La lombocruralgie d\u00e9signe une douleur d\u2019origine nerveuse d\u00e9butant dans le bas du dos et se propageant le long d\u2019une jambe. Elle se distingue de la lombosciatique par la racine nerveuse atteinte, mais les causes et m\u00e9canismes \u00e0 l\u2019origine de ces deux types de douleurs sont identiques.",
+            "timestamp": 1656441384,
+            "title": "Lombocruralgie : dur\u00e9e, sympt\u00f4mes, traitement - Un Sujet",
+            "url": "https://unsujet.com/lombocruralgie-duree-symptomes-traitement/"
+        },
+        {
+            "rank": 6,
+            "snippet": "I can't find any translation for this term, much less have it confirmed. Here's the context: \"La lombocruralgie d\u00e9signe une douleur d'origine nerveuse d\u00e9butant dans le bas du dos et se propageant le long d'une jambe.\" I found this on Wikipedia: \"une lombocruralgie lorsque les racines L3 ou L4 sont atteintes,\" in the article Hernie discale.",
+            "timestamp": 1656441384,
+            "title": "lombocruralgie | WordReference Forums",
+            "url": "https://forum.wordreference.com/threads/lombocruralgie.2746798/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Lombocruralgie . Dossier . Preuves de l'immunosurveillance antitumorale chez l'homme et strat\u00e9gies d'immunoth\u00e9rapie . \u00c0 travers des exemples, chez l'humain, issus de la recherche fondamentale et de transfert, et d'essais cliniques, l'objectif de cet article est d'illustrer l'importance de la r\u00e9ponse immune dans le contr\u00f4le de la ...",
+            "timestamp": 1656441384,
+            "title": "lombocruralgie - Edimark",
+            "url": "https://www.edimark.fr/lombocruralgie"
+        },
+        {
+            "rank": 8,
+            "snippet": "La lombocruralgie ou la cruralgie est une douleur qui prend naissance dans la colonne lombaire et qui suit tout le parcours du nerf f\u00e9moral (nervus cruralis ou femoralis). Elle est similaire \u00e0 la lombalgie, mais affecte le nerf f\u00e9moral plut\u00f4t que le nerf sciatique. Ainsi, les sympt\u00f4mes se manifestent dans plusieurs parties du corps :",
+            "timestamp": 1656441384,
+            "title": "La cruralgie : causes, sympt\u00f4mes et traitements - Ma Clinique",
+            "url": "https://ma-clinique.fr/cruralgie-causes-symptomes-traitements"
+        },
+        {
+            "rank": 9,
+            "snippet": "Clinique Tivoli-Ducos 91 Rue de Rivi\u00e8re, 33000 Bordeaux 05 56 11 60 00. Acc\u00e8s; Glossaire; Qui sommes nous; RAAC",
+            "timestamp": 1656441384,
+            "title": "Lombocruralgie - Ipos",
+            "url": "https://www.ipos-tivoli.fr/pathology/lombocruralgie/"
+        },
+        {
+            "rank": 10,
+            "snippet": "La cruralgie est une douleur \u00e0 la cuisse li\u00e9e \u00e0 la compression du nerf crural (aussi appel\u00e9 nerf f\u00e9moral) ou \u00e0 la compression d'une ou plusieurs de ses racines. Ce nerf part du rachis entre la...",
+            "timestamp": 1656441384,
+            "title": "D\u00e9finition | Cruralgie - Lombocruralgie | Futura Sant\u00e9",
+            "url": "https://www.futura-sciences.com/sante/definitions/medecine-cruralgie-18485/"
+        }
+    ],
+    "timestamp": 1656441384,
+    "url": "https://www.qwant.com/?q=lombocruralgie+francais&t=all"
+}

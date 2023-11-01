@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "harry styles siblings",
+    "offset": null,
+    "page": null,
+    "query": "harry styles siblings",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Complete Name: Harry Edward Styles. Date of Birth: February 1, 1994. Birth Place: Redditch, Worcestershire, England, UK. Occupation: Singer. Father Name: Desmond Styles. Mother Name: Anne Cox. Siblings: Gemma Styles (Older Sister) Harry Sty\u2026",
+            "timestamp": 1634695267,
+            "title": "Harry Styles Family Tree Father, Mother and Sister Name ...",
+            "url": "https://celebrityinside.com/family-tree/harry-styles-family-tree-father-mother-sister-name-pictures/"
+        },
+        {
+            "rank": 2,
+            "snippet": "How many brothers and sisters do Harry Styles, Louis Tomlinson, Niall Horan, Liam Payne and Zayn Malik have? Here's what we know about One Direction's siblings, from their ages to their jobs.",
+            "timestamp": 1634695267,
+            "title": "One Direction Siblings: Harry Styles, Louis Tomlinson ...",
+            "url": "https://www.capitalfm.com/artists/one-direction/harry-niall-louis-liam-zayn-brother-sister-age-job/"
+        },
+        {
+            "rank": 3,
+            "snippet": "He has an older sister: Gemma Styles (born: December 3, 1990) And he has a step-brother called Mike Twist. (Mike is the son of Robin Twist, Anne's (Harry's mother) new husband. Hope it helped.",
+            "timestamp": 1634695267,
+            "title": "Does Harry have brothers or sisters????? - Harry Styles ...",
+            "url": "https://www.fanpop.com/clubs/harry-styles/answers/show/198629/does-harry-brothers-sisters"
+        },
+        {
+            "rank": 4,
+            "snippet": "Harry Styles siblings. Gemma Styles (sister born to same parents) Date of Birth: December 3, 1990. Zodiac Sign: Sagittarius. Being the celebrity\u2019s older sister, Gemma works as a journalist. She studied at Sheffield Hallam University. Gemma \u2026",
+            "timestamp": 1634695267,
+            "title": "Facts about Harry Styles' Family and Girlfriends - BHW",
+            "url": "https://bodyheightweight.com/harry-styles-family/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Harry Styles's siblings: Harry Styles's sister is Gemma Styles Harry Styles's step-brother is Mike Twist Harry Styles's step-sister is Amy Twist Harry Styles's grandparents:",
+            "timestamp": 1634695267,
+            "title": "Harry Styles Family Tree &amp; History, Ancestry &amp; Genealogy ...",
+            "url": "https://www.famechain.com/family-tree/7239/harry-styles"
+        },
+        {
+            "rank": 6,
+            "snippet": "Harry Styles Sister and Brother: He has only a beloved elder sister Gemma Styles and has no brother. He loves his elder sister and always shares his happy moments of Joy with his elder sister.",
+            "timestamp": 1634695267,
+            "title": "Harry Styles Family Photos, Wife, Daughter, Age, Height ...",
+            "url": "https://www.chicksinfo.com/harry-styles-family-photos-wife-daughter-age-height-sister-brother/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Harry Styles - Sibling Imagine. [Your english is just fine, no worries! I hope you enjoy. I love Gemma so much, I want to be her friend. lol] You loved your big brother being home from tour. You were so close to him so to get to spend so mu\u2026",
+            "timestamp": 1634695267,
+            "title": "the unreal world i wish was reality \u2022 Harry Styles ...",
+            "url": "https://4everinsane.tumblr.com/post/147999040004/harry-styles-sibling-imagine"
+        },
+        {
+            "rank": 8,
+            "snippet": "Harry Edward Styles (born 1 February 1994) is an English singer, songwriter and actor. His musical career began in 2010 as a solo contestant on the British music competition series The X Factor.Following his elimination early on, he was bro\u2026",
+            "timestamp": 1634695267,
+            "title": "Harry Styles - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Harry_Styles"
+        }
+    ],
+    "timestamp": 1634695267,
+    "url": "https://www.ecosia.org/search?q=harry+styles+siblings"
+}

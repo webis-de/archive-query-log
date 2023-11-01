@@ -1,0 +1,94 @@
+{
+    "interpreted_query": "gender discrimination ",
+    "offset": null,
+    "page": null,
+    "query": "gender discrimination",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Americans Against <em>Discrimination</em> and Preferences (AADAP)",
+            "url": "http://srd.yahoo.com/srst/8801581/gender+discrimination+/1/12/*http://www.aadap.org/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Gay &amp; Lesbian Alliance Against Defamation",
+            "url": "http://srd.yahoo.com/srst/507024/gender+discrimination+/2/12/*http://www.glaad.org/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "American Association for Affirmative Action",
+            "url": "http://srd.yahoo.com/srst/26837749/gender+discrimination+/3/12/*http://www.affirmativeaction.org"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Equal Opportunities Commission",
+            "url": "http://srd.yahoo.com/srst/8124503/gender+discrimination+/4/12/*http://www.eoc.org.uk/index.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Men's Defense Association",
+            "url": "http://srd.yahoo.com/srst/258170/gender+discrimination+/5/12/*http://www.mensdefense.org"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Equal Rights Commission",
+            "url": "http://srd.yahoo.com/srst/24754859/gender+discrimination+/6/12/*http://www.state.nv.us/detr/nerc/index.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Diversity Conferences of Alberta Society",
+            "url": "http://srd.yahoo.com/srst/30495942/gender+discrimination+/7/12/*http://www.ualberta.ca/~cbidwell/eses/eses.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Steps Beyond Enterprises",
+            "url": "http://srd.yahoo.com/srst/2081425/gender+discrimination+/8/12/*http://www.stepsbeyond.com"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Girls Incorporated of Hamblen County, Tennessee",
+            "url": "http://srd.yahoo.com/srst/4522142/gender+discrimination+/9/12/*http://www.kidsurf.net/girlsinc/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Hamblen County, Tennessee",
+            "url": "http://srd.yahoo.com/srst/4522143/gender+discrimination+/10/12/*http://www.kidsurf.net/girlsinc/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "Women in Science",
+            "url": "http://srd.yahoo.com/srst/8719100/gender+discrimination+/11/12/*http://www.geocities.com/Wellesley/4340/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970694307,
+            "title": "New Jersey Lesbian and Gay Coalition",
+            "url": "http://srd.yahoo.com/srst/574023/gender+discrimination+/12/12/*http://qrd.tcp.com/QRD/www/usa/nj/NJLGC/"
+        }
+    ],
+    "timestamp": 970694307,
+    "url": "http://search.yahoo.com:80/search?p=gender+discrimination+"
+}

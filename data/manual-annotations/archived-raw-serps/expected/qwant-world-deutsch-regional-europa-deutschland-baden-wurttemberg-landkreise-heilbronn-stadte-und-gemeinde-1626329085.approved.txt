@@ -1,0 +1,101 @@
+{
+    "interpreted_query": "World Deutsch Regional Europa Deutschland Baden-W\u00fcrttemberg Landkreise Heilbronn St\u00e4dte und Gemeinden W\u00fcstenrot",
+    "offset": null,
+    "page": null,
+    "query": "World Deutsch Regional Europa Deutschland Baden-W\u00fcrttemberg Landkreise Heilbronn St\u00e4dte und Gemeinden W\u00fcstenrot",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Jetzt neu oder gebraucht kaufen.",
+            "timestamp": 1626329085,
+            "title": "Deutschland Und Europa u.a. bei eBay - Tolle Angebote auf Deutschland Und Europa",
+            "url": "https://www.bing.com/aclick?ld=e86lC8luymVEWAkcZunpxApDVUCUxWYuEXheELtcsjgHE3KM8nfoV0vT93T1u_8Z_UMyPjBzJD1wYN5mRlOjR-LEdleoA9gFo_LpIw5DvHaUAQEemMNM9ven6rBmbFteWf9ufIq5f3EXePq-prlf-y1zl-LQ-i9J6sSb8pBdMDvDQZJ-jW&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWJheS5kZSUyZnNjaCUyZmkuaHRtbCUzZl9ua3clM2RkZXV0c2NobGFuZCUyNTIwdW5kJTI1MjBldXJvcGElMjZub3JvdmVyJTNkMSUyNm1rZXZ0JTNkMSUyNm1rcmlkJTNkNzA3LTIyMzkwOC0yNzk1OS0wJTI2bWtjaWQlM2QyJTI2a2V5d29yZCUzZGRldXRzY2hsYW5kJTI1MjB1bmQlMjUyMGV1cm9wYSUyNmNybHAlM2RfNDk5NyUyNk1UX0lEJTNkJTI2Z2VvX2lkJTNkJTI2cmxzYXRhcmdldCUzZGt3ZC03OTA5NjQ4NjgwNDIxOCUzYWxvYy03MiUyNmFkcG9zJTNkJTI2ZGV2aWNlJTNkYyUyNm1rdHlwZSUzZCUyNmxvYyUzZDg3NTQyJTI2cG9pJTNkMTIwNTA0JTI2YWJjSWQlM2QlMjZjbXBnbiUzZDM3NjM5NTEwMyUyNnNpdGVsbmslM2QlMjZhZGdyb3VwaWQlM2QxMjY1NTM4NDg1ODYyNjkzJTI2bmV0d29yayUzZHMlMjZtYXRjaHR5cGUlM2RwJTI2bXNjbGtpZCUzZDc5ODg5NWIxN2FlYTE0M2VjMDFkZjU1ZTk2ZjQ1MGQ2&rlid=798895b17aea143ec01df55e96f450d6"
+        },
+        {
+            "rank": 2,
+            "snippet": "Top-Preise Sofortversand Harrows Colette Shafts short und medium rot-blau-schwarz. Harrows Colette Sch\u00e4fte - taggleicher Versand zum Bestpreis! rot, blau, schwarz",
+            "timestamp": 1626329085,
+            "title": "Toppreis Harrows Sch\u00e4fte - Harrows Colette Bestpreis",
+            "url": "https://www.bing.com/aclick?ld=e8TmThhLiR4V6vc3oN6eMjZjVUCUwRWBQGioRjaaIkRnTrRwl-iQa66B_JmQtn2qUvT81A12fedzjS0h3HWEVTKCI7GZGBQukLEDYPk2fAnt1Ui6ZMrcOfyhCvwro2kbafTRoPMdYnhg58VHBGPP6swT4rWbLDvtURrkwwH_f07uHJQxU2&u=aHR0cHMlM2ElMmYlMmZ3d3cudGhvci1zcG9ydHMuZGUlMmZEYXJ0cyUzYSUzYSUzYTEuaHRtbCUzZm1zY2xraWQlM2RmMWEwMGJjODEwYjcxMzFiNzYwYjZiMjdmY2E5NjM0Zg&rlid=f1a00bc810b7131b760b6b27fca9634f"
+        },
+        {
+            "rank": 3,
+            "snippet": "Besuche unsere Studienberatung. Dein Studienplatz an der Universit\u00e4t Greifswald.",
+            "timestamp": 1626329085,
+            "title": "Studium Greifswald - Jetzt Informieren",
+            "url": "https://www.bing.com/aclick?ld=e8W90_nBjTZyijXZasdTBTdTVUCUwd9uVZNeB4fnp8YNMcZg6sanTbLZi-IRS7MlkxbfxJ7tn1tmII3HifkAISNNvxewI33Kw19Jy0YC4Me9x5r8gspR5glmgM5Gsp-d6QKzcUQF2_0xnmbF3dwpx7UD-_heoLLA-P7ptNMY6YISn4KLXt&u=aHR0cHMlM2ElMmYlMmZ3d3cudW5pLWdyZWlmc3dhbGQuZGUlMmZzdHVkaXVtJTJm&rlid=199007786209119b8ef267978e17d1ca"
+        },
+        {
+            "rank": 4,
+            "snippet": "Regional Europa Deutschland Baden-W\u00fcrttemberg Landkreise Heilbronn St\u00e4dte und Gemeinden Neckarwestheim . 9. Mehr Informationen. Siehe auch: 1. Freizeit Essen und Trinken Getr\u00e4nke Wein Deutschlan\u00add W\u00fcrttember\u00adg W\u00fcrttember\u00adgisch-Unterland . 67. Seiten 9 Nach Pr\u00fcfdatum sortiert Alphabetisch sortiert.",
+            "timestamp": 1626329085,
+            "title": "Curlie - Regional: Europa: Deutschlan\u00add: Baden-W\u00fcrttember ...",
+            "url": "https://curlie.org/World/Deutsch/Regional/Europa/Deutschland/Baden-W%C3%BCrttemberg/Landkreise/Heilbronn/St%C3%A4dte_und_Gemeinden/Neckarwestheim/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Regional Europa Deutschland Baden-W\u00fcrttemberg Landkreise Heilbronn St\u00e4dte und Gemeinden Zaberfeld . 9. Mehr Informationen. ... Siehe auch: 1. Freizeit Essen und Trinken Getr\u00e4nke Wein Deutschlan\u00add W\u00fcrttember\u00adg W\u00fcrttember\u00adgisch-Unterland . 67. Seiten 1 Nach Pr\u00fcfdatum sortiert Alphabetisch sortiert. TSV Michelbach.",
+            "timestamp": 1626329085,
+            "title": "Curlie - Regional: Europa: Deutschlan\u00add: Baden-W\u00fcrttember ...",
+            "url": "https://curlie.org/World/Deutsch/Regional/Europa/Deutschland/Baden-W%C3%BCrttemberg/Landkreise/Heilbronn/St%C3%A4dte_und_Gemeinden/Zaberfeld/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Regional Europa Deutschland Baden-W\u00fcrttemberg Landkreise Hohenlohekreis . 123. Mehr Informationen. Unterkategorien 1. St\u00e4dte und Gemeinden 105 Siehe auch: 4. Regional Europa ... Regional Europa Deutschlan\u00add Baden-W\u00fcrttember\u00adg Verwaltung\u00adsregionen Heilbronn-Franken . 5.",
+            "timestamp": 1626329085,
+            "title": "Curlie - Regional: Europa: Deutschlan\u00add: Baden-W\u00fcrttember ...",
+            "url": "https://curlie.org/World/Deutsch/Regional/Europa/Deutschland/Baden-W%C3%BCrttemberg/Landkreise/Hohenlohekreis/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Regional Europa Deutschland Baden-W\u00fcrttemberg Landkreise Heilbronn St\u00e4dte und Gemeinden Neudenau . 3. Mehr Informationen. ... Neudenau, Kocher. Offizielle Seite der Gemeinde mit Informationen \u00fcber \u00c4mter, Kultur und Freizeit, Vereine und Wirtschaft. Autohaus Lott GmbH. Ford Service und Verkauf. ...",
+            "timestamp": 1626329085,
+            "title": "Curlie - Regional: Europa: Deutschlan\u00add: Baden-W\u00fcrttember ...",
+            "url": "https://curlie.org/World/Deutsch/Regional/Europa/Deutschland/Baden-W%C3%BCrttemberg/Landkreise/Heilbronn/St%C3%A4dte_und_Gemeinden/Neudenau/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Regional Europa Deutschland Baden-W\u00fcrttemberg Landkreise Heilbronn St\u00e4dte und Gemeinden Bad Wimpfen . 12. Mehr Informationen. Unterkategorien 1. Wirtschaft 5 Seiten 7 Nach Pr\u00fcfdatum ... Er informiert \u00fcber seine S\u00e4nger, seinen Dirigenten und aktuelle Auftrittstermine.",
+            "timestamp": 1626329085,
+            "title": "Curlie - Regional: Europa: Deutschlan\u00add: Baden-W\u00fcrttember ...",
+            "url": "https://curlie.org/World/Deutsch/Regional/Europa/Deutschland/Baden-W%C3%BCrttemberg/Landkreise/Heilbronn/St%C3%A4dte_und_Gemeinden/Bad_Wimpfen/"
+        },
+        {
+            "rank": 9,
+            "snippet": "10.-12.Mai 2021. Das Statistische Landesamt Baden-W\u00fcrttemberg ver\u00f6ffentlicht eine Vielzahl von Informationen aus allen Bildungsbereichen. Aus Anlass der didacta \u2013 die Bildungsmesse DIGITAL bieten wir an dieser Stelle einen zentralen Zugang zu unseren vielf\u00e4ltigen online verf\u00fcgbaren Angeboten mit Zahlen und Fakten zum Bildungswesen.",
+            "timestamp": 1626329085,
+            "title": "Statistisches Landesamt Baden-W\u00fcrttemberg",
+            "url": "https://www.statistik-bw.de/"
+        },
+        {
+            "rank": 10,
+            "snippet": "St\u00e4dte/Landkreise. Hier finden Sie Kennzahlen f\u00fcr \u00fcber 400 St\u00e4dte und Landkreise. zu St\u00e4dten &amp; Landkreisen +++ RKI-Werte f\u00fcr Deutschland am 12.07.2021: 324 Neuinfektionen ++ 2 neue Todesf\u00e4lle ++ 6,4 Inzidenzwert ++ 58,45% Impfquote (Erstimpfung) ++ 42,61% Impfquote (vollst\u00e4ndig) +++ Letzte Aktualisierungen: Globale Kennzahlen am 12.07.2021 ++ Zahlen f\u00fcr alle Bundesl\u00e4nder am 12.07 ...",
+            "timestamp": 1626329085,
+            "title": "Corona-in-Zahlen f\u00fcr Deutschland und weltweit - aktuelle ...",
+            "url": "https://www.corona-in-zahlen.de/"
+        },
+        {
+            "rank": 11,
+            "snippet": "World: Deutsch: Kultur: Fotografie: Fotografen: Anonyme Seiten Foto Kuhn Das Portr\u00e4tstudio mit Schwerpunkt auf Hochzeit-, Schwangerschafts- und Aktfotografie erl\u00e4utert die Dienstleistungen.",
+            "timestamp": 1626329085,
+            "title": "Aktfotografie",
+            "url": "http://www.branchen-domain.de/branchen/branchenverzeichnis/branche-57_aktfotografie.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "World: Deutsch: Regional: Europa: Deutschland: Baden-W\u00fcrttemberg: St\u00e4dte und Gemeinden: H: Heilbronn: Wirtschaft: Dienstleistungen Hays Ascena AG Das Sourcing-Unternehmen ist Anbieter spezialisierter Personaldienstleistungen mit Kernkompetenz in Rekrutierung und Matching von hochqualifizierten Experten in den Bereichen IT und Ingenieurwesen.",
+            "timestamp": 1626329085,
+            "title": "Personaldienstleistungen - Branchen-Domain.de",
+            "url": "http://www.branchen-domain.de/branchen/branchenverzeichnis/branche-2799_personaldienstleistungen.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "H\u00f6he \u00fcber dem Meeresspiegel (auch See-oder Meeresh\u00f6he) bezeichnet den lotrechten Abstand eines bestimmten Punktes in Bezug auf ein festgelegtes Meeresniveau. Als Nullniveau dieser geod\u00e4tischen H\u00f6henangaben wird dabei ein mittlerer Meeresspiegel angegeben, der aus lokalen Messungen von K\u00fcstenpegelstationen ermittelt sein kann oder per Definition festgelegt wird.",
+            "timestamp": 1626329085,
+            "title": "H\u00f6he \u00fcber dem Meeresspiegel \u2013 Wikipedia",
+            "url": "https://de.wikipedia.org/wiki/H%C3%B6he_%C3%BCber_dem_Meeresspiegel"
+        }
+    ],
+    "timestamp": 1626329085,
+    "url": "https://www.qwant.com/?q=World+Deutsch+Regional+Europa+Deutschland+Baden-W%C3%BCrttemberg+Landkreise+Heilbronn+St%C3%A4dte+und+Gemeinden+W%C3%BCstenrot"
+}

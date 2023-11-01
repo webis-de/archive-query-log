@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "webassembly browser support list",
+    "offset": null,
+    "page": null,
+    "query": "webassembly browser support list",
+    "results": [],
+    "timestamp": 1653198525,
+    "url": "https://duckduckgo.com/?q=webassembly+browser+support+list&t=ffab"
+}

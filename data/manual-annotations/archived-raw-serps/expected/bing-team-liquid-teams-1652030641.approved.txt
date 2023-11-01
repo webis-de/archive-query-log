@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Team Liquid teams",
+    "offset": null,
+    "page": null,
+    "query": "Team Liquid teams",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Team Liquid</em>'s turning point happened in January 2015, when it merged with <em>Team</em> Curse under the <em>Liquid</em> banner, bringing on former Curse <em>teams</em> and staff, including Steve \"LiQuiD112\" Arhancet. Over the years, <em>Team Liquid</em> has entered many esports disciplines and had more than 20 rosters by the early 2020s. The organisation currently holds an ...",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> - Esports <em>Team</em> Summary :: Esports Earnings",
+            "url": "https://www.esportsearnings.com/teams/102-team-liquid"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Team Liquid</em> is a multi-regional professional esports organization based in the Netherlands that was founded in 2000. With the release of StarCraft II: Wings of Liberty, <em>Team Liquid</em> signed their first professional players.. In 2012, <em>Team Liquid</em> acquired a North American Dota 2 <em>team</em>, marking their first venture into multi-genre management. In January 2015, <em>Team Liquid</em> \u2026",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> - <em>Wikipedia</em>",
+            "url": "https://en.wikipedia.org/wiki/Team_Liquid"
+        },
+        {
+            "rank": 3,
+            "snippet": "Mar 02, 2022\u00a0\u00b7 <em>Team Liquid</em> is a professional <em>team</em>, founded in the Netherlands in 2000. Originally a Brood War clan, the <em>team</em> switched to StarCraft II during the SC2 Beta in 2010, and became one of the most successful foreign <em>teams</em>. On August 6th, 2017, it was announced that the <em>team</em> had formed a PlayerUnknown's Battlegrounds division. <em>Team Liquid</em> is also strongly \u2026",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> - Liquipedia PUBG Wiki",
+            "url": "https://liquipedia.net/pubg/Team_Liquid"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Team Liquid</em> is a professional esports organization founded in the Netherlands in 2000. Originally a Brood War clan, the <em>team</em> switched to StarCraft II during the SC2 Beta in 2010, and became one of the most successful foreign <em>teams</em>. On August 7, 2020, <em>Team Liquid</em> entered VALORANT by signing fish123.",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> - Liquipedia VALORANT Wiki",
+            "url": "https://liquipedia.net/valorant/Team_Liquid"
+        },
+        {
+            "rank": 5,
+            "snippet": "Feb 25, 2011\u00a0\u00b7 Winners of the Intel Grand Slam \ud83c\udfc6\ud83c\udfc6\ud83c\udfc6\ud83c\udfc6 Home of top athletes across eighteen premier esports titles \u2022 #LetsGoLiquid https://t.co/3HwRUGQE93",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> (@<em>TeamLiquid</em>) / <em>Twitter</em>",
+            "url": "https://twitter.com/TeamLiquid"
+        },
+        {
+            "rank": 6,
+            "snippet": "Running an esports <em>team</em> requires more than just <em>teams</em> of players; there is a whole ecosystem of supporting staff and managers that make an organization tick. ... 1UP Studios is <em>Team Liquid</em>\u2019s video production <em>team</em>. Over the past 2 years, 1UP has become one of the leading content producers in esports, with acclaimed titles such as \u2018Breaking ...",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> Headquarters",
+            "url": "https://www.teamliquid.com/tlhqla/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Apr 28, 2017\u00a0\u00b7 <em>Team Liquid Academy</em> is the sister <em>team</em> of <em>Team Liquid</em>.. History []. After merging with <em>Team</em> Curse, <em>Team Liquid</em> formed a second <em>team</em> to compete in the 2015 Spring NACS qualifier.The initial lineup included zig, beibei, Ennui, KEITHMCBRIEF (who switched back to AD carry from support), and JoJo. Nyjacky also joined the <em>team</em>, as a streamer and also as \u2026",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid Academy</em> - League of Legends Esports Wiki",
+            "url": "https://lol.fandom.com/wiki/Team_Liquid_Academy"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Team Liquid</em> is a leading worldwide professional esports organization. Our players compete at the highest level in StarCraft 2, League of Legends, Dota 2, Hearthstone, CS:GO, Heroes of the Storm, Street Fighter, PUBG, Rainbow Six and Smash. ... we have an interview with the winners of the tournament and one of the fastest-rising <em>teams</em> in the ...",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> - Professional Esports Organization",
+            "url": "https://www.teamliquid.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Team Liquid</em> is a multi-gaming <em>team</em> organization that was founded in the Netherlands in 2000 as a StarCraft: Brood War <em>team</em>. In January 2015, they merged with <em>Team</em> Curse (not the Curse Gaming organization). This page contains information about their primary League of Legends <em>team</em>, formerly known as <em>Team</em> Curse.",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> - Leaguepedia | League of Legends Esports Wiki",
+            "url": "https://lol.fandom.com/wiki/Team_Liquid"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Team Liquid</em> is a professional <em>team</em>, founded in the Netherlands in 2000. Originally a Brood War clan, the <em>team</em> switched to StarCraft II during the SC2 Beta in 2010, and became one of the most successful western <em>teams</em>. On December 6, 2012, it was announced that the <em>team</em> had formed a Dota 2 division. <em>Team Liquid</em> is also strongly associated with its website, TL.net. Launched on \u2026",
+            "timestamp": 1652030641,
+            "title": "<em>Team Liquid</em> - Liquipedia Dota 2 Wiki",
+            "url": "https://liquipedia.net/dota2/Team_Liquid"
+        }
+    ],
+    "timestamp": 1652030641,
+    "url": "https://www.bing.com/search?FORM=SNAPST&q=Team+Liquid+teams&filters=ufn%3A%22team+liquid+apex+legends%22+sid%3A%22fb8246be-afdd-9186-3fb4-757eae77b365%22+catguid%3A%224cfd7f5f-fec1-e5d7-15c6-9c6539ed366d_6848f442%22+segment%3A%22generic.carousel%22+gsexp%3A%224cfd7f5f-fec1-e5d7-15c6-9c6539ed366d_bXNvL3Nwb3J0cy5sZWFndWUudGVhbXN8VHJ1ZXxtc28vc3BvcnRzLmxlYWd1ZV9wYXJ0aWNpcGF0aW9uLnRlYW18VHJ1ZQ..%22"
+}

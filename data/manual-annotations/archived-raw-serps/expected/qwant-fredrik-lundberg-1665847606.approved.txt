@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "fredrik lundberg",
+    "offset": null,
+    "page": null,
+    "query": "fredrik lundberg",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Ad1) <em>Fredrik</em>'s Phone 2) Address 3) Age &amp; More. Try Searching Now!",
+            "timestamp": 1665847606,
+            "title": "We Found Fredrik - Discover Public Records",
+            "url": "https://www.bing.com/aclick?ld=e8-QV4bSwawophgG4HgJSd8TVUCUz0XjqOqlWWLlvEaM9Xjb9MfaZgcUkrEB53agE0MtMwmE73Jo6cHGfLwkgSGq-gkTmu3oakI60oljiIlN4Nv7fkGrOiW9WGKjdhoQkpuntTDzPb9czdZBhEXaKMQMF52_3K9tlvGGQsa0-_rbnaJICRIPNzIdXskQdGWOwL56aCkpHo_iUwAUeXg1cmSl12ch4Ar03nkDGhuFDgkjDaMGNafkB68hc25ZnkDikoUNFv1hEMjjGrwf3WUStFx4IPgHPemfLxV5dvbHF393MhxHowGYZtgzbuSk1K1f7au1KsfLvmSGsune0p7JzPLv50iZEFLYkm8ZRMkdOzjF1S4pqoCp4i0S1yta1K-Hg4MoZN1Sd-bK3AWTGH9egtVBpSTs0&u=aHR0cHMlM2ElMmYlMmZ3d3cucGVvcGxlbG9va2VyLmNvbSUyZiUzZmZuJTNkZnJlZHJpayUyNm1uJTI2bG4lM2RsdW5kYmVyZyUyNmNpdHklMjZzdGF0ZSUyNmFnZSUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZFBMX0JfTmFtZXNfRiUyNnV0bV90ZXJtJTNkJTI1MkJGUkVEUklLJTI1MjAlMjUyQkxVTkRCRVJHJTI2dXRtX2NvbnRlbnQlM2QlMjZtYXRjaHR5cGUlM2RlJTI2YWRncm91cCUzZE5hbWVzJTJiZnJvbSUyYkZyZWRyaWNrJTJiUmVueiUyNmRldmljZSUzZGMlMjZtc2Nsa2lkJTNkNTZlOTk4NDYzMzdlMTMyOWZjNmNmYjBjZGUyOTlhOWE&rlid=56e99846337e1329fc6cfb0cde299a9a"
+        },
+        {
+            "rank": 2,
+            "snippet": "AdReputation Profiles include free contact info &amp; photos + criminal &amp; court records. See your own Reputation &amp; Score, too - Profiles are shown over 300 million times monthly.",
+            "timestamp": 1665847606,
+            "title": "Free Public Reputation Profile - For Fredrick Lundberg",
+            "url": "https://www.bing.com/aclick?ld=e8MybM_sUbeP_mJhbg2OCCzzVUCUzldOwctzTLVrN52J38rMqdSXUkph3r7NhDTgnjHxIKW9sziv7YQgzCuc9NqQk6Bc-awXHn_ZfOlgZgBkDqNIhjSKA3etj1MSMgs_EFctmMv7JZSfv6gRGFMlX0ZkZAyoI1JPR3km-Sac2PdROpIAhq_AzMRFd5zM4pnIHOJ2klpTV8e-xth2TT0aW8KDzrr59NLcS2XlauTv0i58Tg-7IMEK5aB6uQvXni1QDLFtiDVLWE68JIeIs-i3167oPvBpGMOeSDfyGOrOCmIrupg5eYPcCPetVf2RvmYvQiH7GEgSRTgpcgJBCVyR-5BkEHlHWaBxtuf9qlzFZIq8jxVspx3OQZ_SxvN9J48PBxZp_Hi1rdlA9zRfCFpe8O1fkqhNE&u=aHR0cHMlM2ElMmYlMmZ3d3cubXlsaWZlLmNvbSUyZnNpdGUlMmZvYiUyZmluaXQlMmZwcy1iZ2MucHVidmlldyUzZm9iRmlyc3ROYW1lJTNkRnJlZHJpY2slMjZvYkxhc3ROYW1lJTNkTHVuZGJlcmclMjZvYkFnZSUzZCUyNm9iQ2l0eSUzZCUyNm9iU3RhdGUlM2QlMjZvYlppcCUyNm1zY2xraWQlM2QyMzdiNTAwMmUwOGYxYmQzOTJjMTMzNDgwZGQ4NDJkMSUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDAxOC1HUi1OQU1FJTI1MjBTRUFSQ0hFUy05MzclMjUyMC0lMjUyMEJNTSUyNnV0bV90ZXJtJTNkJTI1MkJGcmVkcmljayUyNTIwJTI1MkJMdW5kYmVyZyUyNnV0bV9jb250ZW50JTNkRnJlZHJpY2slMjUyMEx1bmRiZXJn&rlid=237b5002e08f1bd392c133480dd842d1"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Fredrik</em> <em>Lundberg</em> is CEO and chairman of L.E. <em>Lundberg</em>foretagen AB, founded by his father Lars in 1944 as a construction outfit. <em>Fredrik</em> took over management of the firm in 1981. Today it's a...",
+            "timestamp": 1665847606,
+            "title": "Fredrik Lundberg - Forbes",
+            "url": "https://www.forbes.com/profile/fredrik-lundberg/"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Fredrik</em> <em>Lundberg</em> (born 5 August 1951) is a Swedish businessman. His father was Lars Erik <em>Lundberg</em> (1920-2001) founder of L E <em>Lundberg</em>f\u00f6retagen. <em>Fredrik</em> <em>Lundberg</em> is president and CEO of L E <em>Lundberg</em>f\u00f6retagen, of which he inherited a controlling stake from his father.",
+            "timestamp": 1665847606,
+            "title": "Fredrik Lundberg - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Fredrik_Lundberg"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Fredrik</em> <em>Lundberg</em> \u00e4r son till byggm\u00e4staren Lars Erik <em>Lundberg</em>. Han avlade ekonomexamen vid Handelsh\u00f6gskolan i Stockholm samt civilingenj\u00f6rsexamen vid KTH . Han \u00e4r VD i investmentf\u00f6retaget L E <em>Lundberg</em>f\u00f6retagen i vilket hans, hans familjs och hans bolags innehav uppg\u00e5r till \u00f6ver h\u00e4lften av kapitalet och omkring 90 procent av r\u00f6sterna.",
+            "timestamp": 1665847606,
+            "title": "Fredrik Lundberg (finansman) \u2013 Wikipedia",
+            "url": "https://sv.wikipedia.org/wiki/Fredrik_Lundberg_(finansman)"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Fredrik</em> <em>Lundberg</em> , Sommelier and Restaurateur Interview, 28 July 2022 Stockholm based sommelier and restaurateur <em>Fredrik</em> <em>Lundberg</em> sat down with us to share his favorite wine destinations, why climate change is redrawing the map of wine making \u2013 and what his ideal getaway with friends would look like.",
+            "timestamp": 1665847606,
+            "title": "FREDRIK LUNDBERG &amp;#8211; SOMMELLIER &amp;#038; RESTAURATEUR - CQP",
+            "url": "https://c-qp.com/interviews/fredrik-lundberg-sommelier-and-restaurateur/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Shareholding in Skanska as of May 4, 2022. 6,032,000 A-shares and 16,350,000 B-shares through L E <em>Lundberg</em>f\u00f6retagen AB. 1,150,000 B-shares through privately owned company. 5,376 A-shares and 1,100,000 B-shares privately.",
+            "timestamp": 1665847606,
+            "title": "Fredrik Lundberg | Skanska - Global corporate website",
+            "url": "https://group.skanska.com/corporate-governance/board-of-directors/board-members/fredrik-lundberg/"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Fredrik</em> <em>Lundberg</em> Vice Chairman, Svenska Handelsbanken CURRENT POSITION Vice Chairman, Svenska Handelsbanken TENURE AT CURRENT POSITION 4/2008-PRESENT PREVIOUS POSITION -- EDUCATION Stockholm School...",
+            "timestamp": 1665847606,
+            "title": "Fredrik Lundberg, Svenska Handelsbanken: Profile and Biography",
+            "url": "https://www.bloomberg.com/profile/person/1410518"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Fredrik</em> <em>Lundberg</em> ser heller ingen ny fastighetskris framf\u00f6r sig, \u201dInte fr\u00e5ga om en krasch \u00e0 la 90-talet\u201d, s\u00e4ger han till Di. Han vilar dock p\u00e5 hanen med f\u00f6rv\u00e4rv och aktiek\u00f6p i fastighetssektorn till v\u00e4rderingarna blir mer lockande.",
+            "timestamp": 1665847606,
+            "title": "Fredrik Lundberg: Vi m\u00e5ste stoppa kriminaliteten - Dagens PS",
+            "url": "https://www.dagensps.se/foretag/fredrik-lundberg-vi-maste-stoppa-kriminaliteten/"
+        },
+        {
+            "rank": 10,
+            "snippet": "View <em>Fredrik</em> <em>Lundberg</em>\u2019s profile on LinkedIn, the world\u2019s largest professional community. <em>Fredrik</em> has 1 job listed on their profile. See the complete profile on LinkedIn and discover <em>Fredrik</em> ...",
+            "timestamp": 1665847606,
+            "title": "Fredrik Lundberg - Columbus, Ohio Metropolitan Area | Professional ...",
+            "url": "https://www.linkedin.com/in/fredrik-lundberg-1a4b33127"
+        },
+        {
+            "rank": 11,
+            "snippet": "<em>Fredrik</em> <em>Lundberg</em>, one of Sweden's most powerful tycoons, and former finance minister Anders Borg have been questioned by prosecutors as suspects in a bribery probe.",
+            "timestamp": 1665847606,
+            "title": "Swedish ex-finance minister and tycoon named suspects in ... - Reuters",
+            "url": "https://www.reuters.com/article/us-sweden-corruption-idUSKBN15B2AY"
+        },
+        {
+            "rank": 12,
+            "snippet": "<em>Fredrik</em> <em>Lundberg</em> EVP, Transactions and Loan Operations +47 22 87 94 24 +47 41 44 53 35 <em>lundberg</em>@nordictrustee.com <em>Fredrik</em> joined Nordic Trustee in 2009, where he is responsible for all bond and direct lending transactions in Norway plus loan operations across the Nordics.",
+            "timestamp": 1665847606,
+            "title": "About \u2013 Nordic Trustee",
+            "url": "https://nordictrustee.com/about/"
+        },
+        {
+            "rank": 13,
+            "snippet": "Ad1) <em>Fredrik</em>'s Phone 2) Address 3) Age &amp; More. Try Searching Now!",
+            "timestamp": 1665847606,
+            "title": "We Found Fredrik - Discover Public Records",
+            "url": "https://www.bing.com/aclick?ld=e8-QV4bSwawophgG4HgJSd8TVUCUz0XjqOqlWWLlvEaM9Xjb9MfaZgcUkrEB53agE0MtMwmE73Jo6cHGfLwkgSGq-gkTmu3oakI60oljiIlN4Nv7fkGrOiW9WGKjdhoQkpuntTDzPb9czdZBhEXaKMQMF52_3K9tlvGGQsa0-_rbnaJICRIPNzIdXskQdGWOwL56aCkpHo_iUwAUeXg1cmSl12ch4Ar03nkDGhuFDgkjDaMGNafkB68hc25ZnkDikoUNFv1hEMjjGrwf3WUStFx4IPgHPemfLxV5dvbHF393MhxHowGYZtgzbuSk1K1f7au1KsfLvmSGsune0p7JzPLv50iZEFLYkm8ZRMkdOzjF1S4pqoCp4i0S1yta1K-Hg4MoZN1Sd-bK3AWTGH9egtVBpSTs0&u=aHR0cHMlM2ElMmYlMmZ3d3cucGVvcGxlbG9va2VyLmNvbSUyZiUzZmZuJTNkZnJlZHJpayUyNm1uJTI2bG4lM2RsdW5kYmVyZyUyNmNpdHklMjZzdGF0ZSUyNmFnZSUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZFBMX0JfTmFtZXNfRiUyNnV0bV90ZXJtJTNkJTI1MkJGUkVEUklLJTI1MjAlMjUyQkxVTkRCRVJHJTI2dXRtX2NvbnRlbnQlM2QlMjZtYXRjaHR5cGUlM2RlJTI2YWRncm91cCUzZE5hbWVzJTJiZnJvbSUyYkZyZWRyaWNrJTJiUmVueiUyNmRldmljZSUzZGMlMjZtc2Nsa2lkJTNkNTZlOTk4NDYzMzdlMTMyOWZjNmNmYjBjZGUyOTlhOWE&rlid=56e99846337e1329fc6cfb0cde299a9a"
+        },
+        {
+            "rank": 14,
+            "snippet": "AdReputation Profiles include free contact info &amp; photos + criminal &amp; court records. See your own Reputation &amp; Score, too - Profiles are shown over 300 million times monthly.",
+            "timestamp": 1665847606,
+            "title": "Free Public Reputation Profile - For Fredrick Lundberg",
+            "url": "https://www.bing.com/aclick?ld=e8MybM_sUbeP_mJhbg2OCCzzVUCUzldOwctzTLVrN52J38rMqdSXUkph3r7NhDTgnjHxIKW9sziv7YQgzCuc9NqQk6Bc-awXHn_ZfOlgZgBkDqNIhjSKA3etj1MSMgs_EFctmMv7JZSfv6gRGFMlX0ZkZAyoI1JPR3km-Sac2PdROpIAhq_AzMRFd5zM4pnIHOJ2klpTV8e-xth2TT0aW8KDzrr59NLcS2XlauTv0i58Tg-7IMEK5aB6uQvXni1QDLFtiDVLWE68JIeIs-i3167oPvBpGMOeSDfyGOrOCmIrupg5eYPcCPetVf2RvmYvQiH7GEgSRTgpcgJBCVyR-5BkEHlHWaBxtuf9qlzFZIq8jxVspx3OQZ_SxvN9J48PBxZp_Hi1rdlA9zRfCFpe8O1fkqhNE&u=aHR0cHMlM2ElMmYlMmZ3d3cubXlsaWZlLmNvbSUyZnNpdGUlMmZvYiUyZmluaXQlMmZwcy1iZ2MucHVidmlldyUzZm9iRmlyc3ROYW1lJTNkRnJlZHJpY2slMjZvYkxhc3ROYW1lJTNkTHVuZGJlcmclMjZvYkFnZSUzZCUyNm9iQ2l0eSUzZCUyNm9iU3RhdGUlM2QlMjZvYlppcCUyNm1zY2xraWQlM2QyMzdiNTAwMmUwOGYxYmQzOTJjMTMzNDgwZGQ4NDJkMSUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDAxOC1HUi1OQU1FJTI1MjBTRUFSQ0hFUy05MzclMjUyMC0lMjUyMEJNTSUyNnV0bV90ZXJtJTNkJTI1MkJGcmVkcmljayUyNTIwJTI1MkJMdW5kYmVyZyUyNnV0bV9jb250ZW50JTNkRnJlZHJpY2slMjUyMEx1bmRiZXJn&rlid=237b5002e08f1bd392c133480dd842d1"
+        }
+    ],
+    "timestamp": 1665847606,
+    "url": "https://www.qwant.com/?q=fredrik+lundberg&client=opensearch&t=web"
+}

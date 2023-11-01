@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "george foreman boxer",
+    "offset": null,
+    "page": null,
+    "query": "george foreman boxer",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "<em>George</em> <em>Foreman</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=1/K=george+foreman+boxer/OCS=158897/H=0/T=1040480317/F=32ad527a9f00d481b514d34e071d9f94/*http://www.infoplease.com/ipsa/A0109191.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Who2 Profile: <em>George Foreman</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=2/K=george+foreman+boxer/SS=42882330/H=0/T=1040480317/F=fc0a2de646614c0a4ff61c5187911c7d/*http://www.who2.com/georgeforeman.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "<em>GEORGE</em> <em>FOREMAN</em> GRILL",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=3/K=george+foreman+boxer/OCS=39777/H=0/T=1040480317/F=b7fe6b5be070734f7d6a903c392427d6/*http://www.globalnetexec.com/georgeforemangrill.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "<em>Boxer</em> Info - <em>George</em> <em>Foreman</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=4/K=george+foreman+boxer/H=0/T=1040480317/F=efc905244409fa128f087f4406ca214c/*http://www.boxingbets.co.uk/boxer/05.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "fore",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=5/K=george+foreman+boxer/H=0/T=1040480317/F=3c5f363c5c35c38248cb140fab51148b/*http://www.float-like-a-butterfly.de/fore.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Limerick Leader - April 10th, 1999 - Front Page - <em>George</em> <em>Foreman</em> <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=6/K=george+foreman+boxer/H=0/T=1040480317/F=e2176abea90e8e39fe81a6ed8454adc5/*http://www.limerick-leader.ie/issues/19990410/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Creative Quotations from <em>George</em> <em>Foreman</em> (1949-____)",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=7/K=george+foreman+boxer/H=0/T=1040480317/F=b58fdaa5ab624f30aac40510ccd796c8/*http://www.creativequotations.com/one/987.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Jo Sports Inc.",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=8/K=george+foreman+boxer/H=0/T=1040480317/F=488f22c801ca9adea13d37b540f48bbc/*http://www.josportsinc.com/catalog/view.php?boxer=1&cat=Boxer%20-%20George%20Foreman"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Happy Endings <em>George</em> <em>Foreman</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=9/K=george+foreman+boxer/H=0/T=1040480317/F=74c513b849810cd64a082e20ecce39ce/*http://www.boxer-rescue-la.com/Library/happy_ending/george_foreman_happy.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Fool.com: TMF Interview: <em>George</em> <em>Foreman</em> [Special] June 13, 2002",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=10/K=george+foreman+boxer/H=0/T=1040480317/F=9f863c156c7fb3720dabc1bc3c5131a4/*http://www.fool.com/Specials/2002/02061300sp.htm"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "WHAT'S MY STYLE \u2014 <em>George</em> <em>Foreman</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=11/K=george+foreman+boxer/H=0/T=1040480317/F=08f7cb5304bbc04a47916e99782da288/*http://personal.ansir.com/wms/george.htm"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Billy Boy Thompson - <em>Boxer</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=12/K=george+foreman+boxer/H=0/T=1040480317/F=c53f517a0b18e0a91465170190acae2a/*http://www.cityofjoliet.com/halloffame/athletes/billyboy.htm"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "<em>George</em> - Yesterdayland Prime Time",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=13/K=george+foreman+boxer/H=0/T=1040480317/F=5769b0e18911dd951737f46c996c279b/*http://www.yesterdayland.com/popopedia/shows/primetime/pt1122.php"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "<em>George</em> <em>Foreman</em> Body, 1995",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=14/K=george+foreman+boxer/H=0/T=1040480317/F=ae39d7dac8907e831a9a4a932eb0370d/*http://cbs.sportsline.com/b/member/playboy/9512_b0.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "<em>George</em> in the Media",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=15/K=george+foreman+boxer/H=0/T=1040480317/F=3845643227cd8660c6a383aeae09559a/*http://www.biggeorge.com/fanclub/3-6-00_grill.htm"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Flak Magazine: Review of <em>George</em> <em>Foreman</em> grill, 08-17-01",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=16/K=george+foreman+boxer/H=0/T=1040480317/F=484874f020afa839b9f072b71d1ef1fc/*http://flakmag.com/misc/foreman.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "<em>George</em> <em>Foreman</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=17/K=george+foreman+boxer/H=0/T=1040480317/F=82995d63e840105980ce9ff357530883/*http://factmonster.com/ipka/A0761060.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Compare Prices and Read Reviews on <em>George</em> <em>Foreman</em> Champ Grill <em>...</em>",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=18/K=george+foreman+boxer/H=0/T=1040480317/F=284bfc29a395774f0c2888af659e8ea2/*http://www.epinions.com/content_38936874628"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "RateItAll - The Opinion Network",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=19/K=george+foreman+boxer/H=0/T=1040480317/F=6b85f3cc40b5ba88d8a2897af7a20f55/*http://www.rateitall.com/item.asp?i=7499C421-5DF7-4E14-83DF-A31AA24A0141"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1040476713,
+            "title": "Former World Heavyweight Champion <em>George</em> <em>Foreman</em> In South Africa",
+            "url": "http://srd.yahoo.com/S=2766679:WS1/R=20/K=george+foreman+boxer/H=0/T=1040480317/F=69abb5735ef733d3afc51a6ef1cf5d88/*http://ca.sports.yahoo.com/021018/5/pobp.html"
+        }
+    ],
+    "timestamp": 1040476713,
+    "url": "http://search.yahoo.com:80/search?p=george+foreman+boxer"
+}

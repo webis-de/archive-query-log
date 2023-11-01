@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Kostiantyn Magaletskyi\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Kostiantyn Magaletskyi\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Track the AUM, funds, and holdings for Horizon Capital Advisors LLC over time. View the latest funds and 13F holdings. Compare against similar firms.",
+            "timestamp": 1638351261,
+            "title": "Horizon Capital Advisors LLC | AUM 13F",
+            "url": "https://www.google.com/url?q=https://aum13f.com/firm/horizon-capital-advisors-llc&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAAQAg&usg=AOvVaw3CFArsQj5jDaepwi81PTYZ"
+        },
+        {
+            "rank": 3,
+            "snippet": "EEGF III Netherlands, L.P. - Most recent fund raising on July 6, 2018 raised $10073406 in Equity.",
+            "timestamp": 1638351261,
+            "title": "EEGF III Netherlands, L.P. - fund raising filing - FormDs.com",
+            "url": "https://www.google.com/url?q=https://www.formds.com/issuers/eegf-iii-netherlands-l-p&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAcQAg&usg=AOvVaw0HVrnH3oAvaxeVffHEoHjD"
+        },
+        {
+            "rank": 4,
+            "snippet": "Kostiantyn MAGALETSKYI. Questa \u00e8 la mia pagina dei risultati. Nazionalit\u00e0. Ucraina. Categoria. M40-44. Indice di Performance\u00a0...",
+            "timestamp": 1638351261,
+            "title": "Kostiantyn MAGALETSKYI - UTMB\u00ae World Series",
+            "url": "https://www.google.com/url?q=https://utmb.world/it/runner/626485.kostiantyn.magaletskyi&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAgQAg&usg=AOvVaw1EiFJwL3cHoyFCRGnvjt-M"
+        },
+        {
+            "rank": 5,
+            "snippet": "Key People in EEGF III Netherlands, L.P.: - Horizon Capital GP III, LLC Jeffrey Neal Vasile Tofan Kostiantyn Magaletskyi - Horizon Capital Associates III,\u00a0...",
+            "timestamp": 1638351261,
+            "title": "EEGF III Netherlands, L.P. - Who is raising money? | SEC filings of ...",
+            "url": "https://www.google.com/url?q=https://www.whoisraisingmoney.com/eegf-iii-netherlands-l-p&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAkQAg&usg=AOvVaw2ib51zYmm1LrWri-0KpX1K"
+        },
+        {
+            "rank": 6,
+            "snippet": "... Kostiantyn Magaletskyi, Partner of Horizon Capital; Oleh Marchenko, Partner in Marchenko Danevych company, Head of the resolving disputes practice.",
+            "timestamp": 1638351261,
+            "title": "The supremacy of law is the beacon that will bring investment to the ...",
+            "url": "https://www.google.com/url?q=https://arricano.com/en/press-center/news/straight-talk-verhovenstvo-prava-tot-maak-kotoryj-privedet-v-stranu-investicii&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAQQAg&usg=AOvVaw2E9TIglrCbG07-iX4Hwo4p"
+        },
+        {
+            "rank": 7,
+            "snippet": "Timepoint, Time, Split Time, Male Overall, Male 35-39. Swim, 1:39:00, 1:39:00, 1822, 368. T1, 1:46:52, 7:53, 1809, 365. Bike Lap 1 Turn 1, 3:03:01, 1:16:10\u00a0...",
+            "timestamp": 1638351261,
+            "title": "Kostiantyn Magaletskyi - Ironman Barcelona 2015 - EvoChip Hungary",
+            "url": "https://www.google.com/url?q=https://www.evochip.hu/results/result.php%3Feventid%3DIronmanBarcelona15EAr%26category%3DM35-39%26timepoint%3DTimeTZB_1%26pid%3D1093185128%26lang%3Den%26css%3Devochip.css%26iframe%3D0%26distance%3D%26mobile%3D1%26viewport%3D450&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAIQAg&usg=AOvVaw1EGxiYfeWQXVQ0Zf68SlOZ"
+        },
+        {
+            "rank": 8,
+            "snippet": "Arrow left icon. Header top by city. Icon trophy 100K CLUB. Arrow right icon. Arrow left icon. w5cxmr5smf's Podcast. By Kostiantyn Magaletskyi. 0 Episodes.",
+            "timestamp": 1638351261,
+            "title": "w5cxmr5smf's Podcast - Podomatic",
+            "url": "https://www.google.com/url?q=https://www.podomatic.com/profile/w5cxmr5smf&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAYQAg&usg=AOvVaw27RoA8l0jslFd0htO5aWGB"
+        },
+        {
+            "rank": 9,
+            "snippet": "... Brian Brosnan, Hannah L Sorenson, Kostiantyn Magaletskyi, Merlin J Huff, Mike Kuehnel, Yishen Zhang, Amanda M Briseno, Daniel F Mertz, Diane L McCann,\u00a0...",
+            "timestamp": 1638351261,
+            "title": "Michael J Casey, Age 45 - Lives in Chicago, IL, (207) 552-4864",
+            "url": "https://www.google.com/url?q=https://www.truepeoplesearch.com/find/person/px400606r2486lu08u8r9&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAEQAg&usg=AOvVaw3cq-n92zayjH6UA4o95pEK"
+        },
+        {
+            "rank": 10,
+            "snippet": "... associates and current/previous roommates for Brian. Andrea Gloria Toro \u00b7 Hannah L Sorenson \u00b7 Kostiantyn Magaletskyi \u00b7 Merlin J Huff \u00b7 Michael J Casey.",
+            "timestamp": 1638351261,
+            "title": "Search People FREE with the Name Brian Brosnan",
+            "url": "https://www.google.com/url?q=https://www.searchpeoplefree.com/find/brian-a-brosnan&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAMQAg&usg=AOvVaw3bXHw21rxgknjNYeMSiG7I"
+        },
+        {
+            "rank": 11,
+            "snippet": "... associates and current/previous roommates for Yishen. Andrea Gloria Toro \u00b7 Brian Brosnan \u00b7 Hannah L Sorenson \u00b7 Kostiantyn Magaletskyi \u00b7 Merlin J Huff.",
+            "timestamp": 1638351261,
+            "title": "Search People FREE with the Name Yishen Zhang",
+            "url": "https://www.google.com/url?q=https://www.searchpeoplefree.com/find/yishen-zhang&sa=U&ved=2ahUKEwiOsb28s8L0AhXUOn0KHXtTAUEQFnoECAUQAg&usg=AOvVaw1H83_1OihPgYiNczENTR4D"
+        }
+    ],
+    "timestamp": 1638351261,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Kostiantyn+Magaletskyi%22"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "free grammer test for employment",
+    "offset": null,
+    "page": null,
+    "query": "free grammer test for employment",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Free Practice Tests for learners of English ... This test contains grammar and \nvocabulary questions and your test result will help you choose a level to practise \nat. ... At the end of the test your level will be assessed at a CEF level (A2 to C2).",
+            "timestamp": 1443411312,
+            "title": "Test your level of English Grammar and Vocabulary - How well do ...",
+            "url": "http://www.examenglish.com/leveltest/grammar_level_test.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "Are you looking for a sample pre-employment clerical test? These types of tests \ntypically ... Printable Grammar, Proofreading and Math Tests. LoveToKnow has\u00a0...",
+            "timestamp": 1443411312,
+            "title": "Free Pre Employment Clerical Test - Jobs &amp; Careers - LoveToKnow",
+            "url": "http://jobs.lovetoknow.com/Free_Pre_Employment_Clerical_Test"
+        },
+        {
+            "rank": 3,
+            "snippet": "Free practice Verbal Aptitude tests for the best preparation for your employment \naptitude test or school entrance exam.",
+            "timestamp": 1443411312,
+            "title": "Spelling &amp; Grammar Test - Free Aptitude Test Online - Aptitude-Test ...",
+            "url": "http://www.aptitude-test.com/spelling-grammar.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Free online English grammar lessons and tests. Glossary of grammatical terms \nand common grammar errors.",
+            "timestamp": 1443411312,
+            "title": "Free English Grammar Lessons and Tests",
+            "url": "http://www.grammar-monster.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "For the first three months of your employment with the firm you will be under the \ncare .... free word and sentence translation, grammar structures and much more.",
+            "timestamp": 1443411312,
+            "title": "Test: Employment and Training",
+            "url": "http://www.english-test.net/esl/learn/english/grammar/ai024/esl-test.php"
+        },
+        {
+            "rank": 6,
+            "snippet": "Nov 3, 2011 ... Practice English grammar exercises online for free with thousand questions ... \nCheck your English level \u00b7 Test your employee's English level \u00b7 Effect or Affect ... \nBasic grammar tests contain explanations of correct answers.",
+            "timestamp": 1443411312,
+            "title": "Free English grammar exercises and tests online - Free English Tests",
+            "url": "http://englishteststore.net/index.php?option=com_content&view=article&id=11387:free-english-grammar-exercises-and-tests-online&catid=1:latest&Itemid=427"
+        },
+        {
+            "rank": 7,
+            "snippet": "Don't let Grammar questions ruin your test score. Brush up with our free Grammar \npractice questions and skyrocket your exam score. No registration necessary.",
+            "timestamp": 1443411312,
+            "title": "Grammar Practice Online Questions - Help your Grammar Exam Score",
+            "url": "http://www.testprepreview.com/modules/grammarpart1.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "GrammarBook.com Site Map; Home \u00b7 Order the Book \u00b7 English Rules \u00b7 English \nUsage Videos \u00b7 FREE Quizzes \u00b7 Subscription Quizzes \u00b7 Grammar Blog \u00b7 About\u00a0...",
+            "timestamp": 1443411312,
+            "title": "Grammar Mastery Test | The Blue Book of Grammar and Punctuation",
+            "url": "http://www.grammarbook.com/grammar_quiz/grammar_mastery.asp"
+        },
+        {
+            "rank": 9,
+            "snippet": "English Grammar Tenses (Short Entrance Test) 5 Questions | 6767 Attempts \nTOEFL-iBT, IELTS, CAT, GRE, GMAT, Verbal Ability, Listening, Speaking, Writing,\n\u00a0...",
+            "timestamp": 1443411312,
+            "title": "Free Grammar Online Practice Tests - WizIQ",
+            "url": "https://www.wiziq.com/tests/grammar"
+        },
+        {
+            "rank": 10,
+            "snippet": "Grammar might not be the most exciting of the topics, but you sure need to master \nthe basics of it. Test your skills with the 20 questions below! 1.",
+            "timestamp": 1443411312,
+            "title": "Grammar Test 1 - Daily Writing Tips",
+            "url": "http://www.dailywritingtips.com/grammar-test-1/"
+        }
+    ],
+    "timestamp": 1443411312,
+    "url": "http://www.ask.com:80/web?qsrc=1&o=15145&l=sem&q=free+grammer+test+for+employment"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "form 1694 instructions",
+    "offset": null,
+    "page": null,
+    "query": "form 1694 instructions",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "DD FORM 1694, REQUEST FOR DEVIATION/WAIVER (RFD/RFW) - INSTRUCTIONS (AUG-1996) [SUPERSEDED BY DD FORM 1694 (MAR-2013)]., See MIL-STD-973, Appendix E, which establishes uniform requirements for the preparation of the DD Form 1694, \\\"Request \u2026",
+            "timestamp": 1635977208,
+            "title": "DD FORM 1694 INSTRUCTIONS REQUEST DEVIATION/WAIVER",
+            "url": "http://everyspec.com/DoD/DoD-FORMS/DD_FORM_1694_INSTRUCTIONS_30982/"
+        },
+        {
+            "rank": 2,
+            "snippet": "This document contains official instructions for DD Form 1694, Request for Variance, a military form released by the U.S. Department of Defense (DoD).An up-to-date fillable DD Form 1694 is available for download through this link.. Instruct\u2026",
+            "timestamp": 1635977208,
+            "title": "Download Instructions for DD Form 1694 Request for ...",
+            "url": "https://www.templateroller.com/template/1727962/request-variance.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "E.4.1 DD Form 1694. DD Form 1694, Figure 10, is not a requirement of this standard, and is provided for reference only. RFDs/RFWs shall be prepared in contractor format, containing the information required by this Appendix in Block Number s\u2026",
+            "timestamp": 1635977208,
+            "title": "APPENDIX E INSTRUCTIONS FOR THE PREPARATION OF REQUEST FOR ...",
+            "url": "http://everyspec.com/DoD/DoD-FORMS/download.php?spec=DD_FORM_1694_INSTRUCTIONS.030982.pdf"
+        },
+        {
+            "rank": 4,
+            "snippet": "DD FORM 1694, INSTRUCTIONS FOR PREPARATION OF REQUEST FOR VARIANCE (RFV) UTILIZING DD FORM 1694 (APR-2017)., This instruction establishes the uniform requirements for the preparation of DD From 1694, \"Request for Variance\".",
+            "timestamp": 1635977208,
+            "title": "DD FORM 1694 INSTRUCTIONS APR2017 INSTRUCTIONS REQUEST",
+            "url": "http://everyspec.com/DoD/DoD-FORMS/DD_FORM_1694_INSTRUCTIONS_APR2017_55716/"
+        },
+        {
+            "rank": 5,
+            "snippet": "dd form 1694, request for variance (rfv) - pdf template (apr-2017) The provisions of this instruction apply whenever DD Form 1694 is utilized to request a variance. DD FORM 1694 Rev. APR2017",
+            "timestamp": 1635977208,
+            "title": "DD FORM 1694 APR2017 REQUEST VARIANCE PDF TEMPLATE",
+            "url": "http://everyspec.com/DoD/DoD-FORMS/DD_FORM_1694_APR2017_55715/"
+        },
+        {
+            "rank": 6,
+            "snippet": "DD FORM 1694, REQUEST FOR VARIANCE (RFV) - PDF TEMPLATE (APR-2015)., This instruction establishes uniform requirements for the preparation of the DD Form 1694, \u201cRequest for Variance (RFV)\". The provisions of this instruction apply whenever \u2026",
+            "timestamp": 1635977208,
+            "title": "DD FORM 1694 APR2015 REQUEST VARIANCE PDF TEMPLATE",
+            "url": "http://everyspec.com/DoD/DoD-FORMS/DD_FORM_1694_APR2015_55516/"
+        },
+        {
+            "rank": 7,
+            "snippet": "dd form 1694, aug 96 (eg) previous edition may be used. Designed using Perform Pro, WHS/DIOR, Aug 96 The public reporting burden for this collection of information is estimated to average 2 hours per response, including the time for reviewi\u2026",
+            "timestamp": 1635977208,
+            "title": "REQUEST FOR DEVIATION/WAIVER (RFD/RFW) (YYYYMMDD) Form ...",
+            "url": "https://www.dcma.mil/Portals/31/Documents/NPP/Forms/dd1694.pdf"
+        },
+        {
+            "rank": 8,
+            "snippet": "These instructions do not need to be included when submitting the form. The SA1410 form and its instructions are replications of DD Form 1694 titled Request for Deviation/Waiver and the Mil-Std-973 Appendix E\u2019s instructions.",
+            "timestamp": 1635977208,
+            "title": "REQUEST FOR DEVIATION / WAIVER (RFD/RFW)",
+            "url": "https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/documents/sikorsky-suppliers-and-licensing/SA1410.doc"
+        },
+        {
+            "rank": 9,
+            "snippet": "INSTRUCTION . Effective Control of Nonconforming Material ... with DOD adaptation of DD Form 1694, \u201cRequest for Variance,\u201d and DI-SESS-80640, \u201cRequest for Deviation,\u201d which prescribes, when in the contract, the documentation contractors are\u2026",
+            "timestamp": 1635977208,
+            "title": "Effective Control of Nonconforming Material",
+            "url": "https://www.dcma.mil/Portals/31/Documents/Policy/DCMA-INST-1207.pdf"
+        },
+        {
+            "rank": 10,
+            "snippet": "DOD Forms Management Program. Office of Personnel Management (OPM) Forms including standard, optional, OPM, Retirement &amp; Insurance, Investigations and Group Life Insurance forms. General Services ...",
+            "timestamp": 1635977208,
+            "title": "Forms, Directives, Instructions - U.S. Department of Defense",
+            "url": "https://www.defense.gov/Resources/Forms-Directives-Instructions/"
+        }
+    ],
+    "timestamp": 1635977208,
+    "url": "https://www.ecosia.org/search?q=form+1694+instructions"
+}

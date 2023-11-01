@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "3rd party twitch chat",
+    "offset": null,
+    "page": null,
+    "query": "3rd party twitch chat",
+    "results": [],
+    "timestamp": 1642095474,
+    "url": "https://duckduckgo.com/?q=3rd+party+twitch+chat&t=brave"
+}

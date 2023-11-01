@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "h\u00f6velhof",
+    "offset": null,
+    "page": null,
+    "query": "h\u00f6velhof",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>H\u00f6velhof</em> ist eine Gemeinde in Nordrhein-Westfalen, Deutschland und geh\u00f6rt zum Kreis Paderborn. Seit dem 14. M\u00e4rz 2012 darf <em>H\u00f6velhof</em> den offiziellen Zusatz ...",
+            "timestamp": 1461470750,
+            "title": "<em>H\u00f6velhof</em> \u2013 Wikipedia",
+            "url": "https://de.wikipedia.org/wiki/H%C3%B6velhof"
+        },
+        {
+            "rank": 2,
+            "snippet": "Geography . <em>H\u00f6velhof</em> is located in the Senne area, the eastern part of the Westf\u00e4lische Bucht, approx. 10 km northwest of Paderborn. Neighbouring municipalities ...",
+            "timestamp": 1461470750,
+            "title": "<em>H\u00f6velhof</em> - Wikipedia, the free encyclopedia",
+            "url": "https://en.wikipedia.org/wiki/H%C3%B6velhof"
+        },
+        {
+            "rank": 3,
+            "snippet": "Nachrichten aus <em>H\u00f6velhof</em> und Umgebung Hier finden Sie aktuelle Nachrichten aus <em>H\u00f6velhof</em> und Umgebung. Maibaum- und Radelfest f\u00fcr die ganze Familie am 24.",
+            "timestamp": 1461470750,
+            "title": "Internetauftritt Gemeinde <em>H\u00f6velhof</em> - Startseite",
+            "url": "http://www.hoevelhof.de/"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>H\u00f6velhof</em> is een gemeente in de Duitse deelstaat Noordrijn-Westfalen, gelegen in het Kreis Paderborn. De gemeente telt 15.922 inwoners. Plaatsen in de gemeente ...",
+            "timestamp": 1461470750,
+            "title": "<em>H\u00f6velhof</em> - Wikipedia",
+            "url": "https://nl.wikipedia.org/wiki/H%C3%B6velhof"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>H\u00f6velhof</em> este o comun\u0103 din landul Renania de Nord-Westfalia, Germania. Informa\u021bii bibliotecare: GND: 4025447-1; VIAF: 238980491",
+            "timestamp": 1461470750,
+            "title": "<em>H\u00f6velhof</em> - Wikipedia",
+            "url": "https://ro.wikipedia.org/wiki/H%C3%B6velhof"
+        },
+        {
+            "rank": 6,
+            "snippet": "Great savings on hotels in <em>H\u00f6velhof</em>, Germany online. Good availability and great rates. Read hotel reviews and choose the best hotel deal for your stay.",
+            "timestamp": 1461470750,
+            "title": "8 Hotels in <em>H\u00f6velhof</em>, Germany - Best Price Guarantee ...",
+            "url": "http://www.booking.com/city/de/hovelhof.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Media in category \"<em>H\u00f6velhof</em>\" The following 18 files are in this category, out of 18 total.",
+            "timestamp": 1461470750,
+            "title": "Category:<em>H\u00f6velhof</em> - Wikimedia Commons",
+            "url": "http://commons.wikimedia.org/wiki/Category:H%C3%B6velhof"
+        },
+        {
+            "rank": 8,
+            "snippet": "Find the best <em>H\u00f6velhof</em>, DE lighting designers and suppliers. Compare prices and browse portfolios, ratings, recommendations and reviews to find the top local ...",
+            "timestamp": 1461470750,
+            "title": "<em>H\u00f6velhof</em>, DE Lighting Designers &amp; Suppliers - houzz.com",
+            "url": "http://www.houzz.com/professionals/lighting/c/H%C3%B6velhof--DE"
+        },
+        {
+            "rank": 9,
+            "snippet": "The water from the springs of the River Ems in <em>H\u00f6velhof</em> is fresh and crystal clear; it is just as refreshing as <em>H\u00f6velhof</em> itself; a community comprising ...",
+            "timestamp": 1461470750,
+            "title": "<em>H\u00f6velhof</em> - Paderborner Land - Startseite",
+            "url": "http://www.visitpaderborn.com/eng/paderborner-land/orte/hoevelhof.php"
+        },
+        {
+            "rank": 10,
+            "snippet": "Located between Bielefeld, G\u00fctersloh and Paderborn, Hotel Victoria in <em>H\u00f6velhof</em> awaits your visit with a modern ambience.",
+            "timestamp": 1461470750,
+            "title": "Hotel Victoria, <em>H\u00f6velhof</em>, Germany - Booking.com",
+            "url": "http://www.booking.com/hotel/de/viktoria.html"
+        }
+    ],
+    "timestamp": 1461470750,
+    "url": "https://www.qwant.com/?q=h%C3%B6velhof"
+}
