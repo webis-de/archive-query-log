@@ -23,6 +23,8 @@ from warcio.recordloader import ArcWarcRecord as WarcioArcWarcRecord, \
 
 _S3CFG_PATH = Path("~/.s3cfg").expanduser()
 
+_DEFAULT_MAX_FILE_SIZE = 1_000_000_000  # 1GB
+
 WarcRecord = FastwarcWarcRecord | WarcioArcWarcRecord
 ArchiveIterator = FastwarcArchiveIterator | WarcioArchiveIterator
 
@@ -113,7 +115,7 @@ def _write_records(
 
 # TODO: Remove this test function.
 def _test_iterator() -> Iterator[WarcRecord]:
-    repetitions = 100000
+    repetitions = 10000
     for i in range(repetitions):
         with gzip_open(
                 "/home/heinrich/Repositories/archive-query-log/data/manual-annotations/archived-raw-serps/warcs/google-does-steve-has-a-beard-1601705030.warc.gz",
@@ -128,7 +130,7 @@ class WarcS3Store(ContextManager):
     endpoint_url: str | None = None
     access_key: str | None = None
     secret_key: str | None = None
-    max_file_size: int = 10_000_000  # 10MB
+    max_file_size: int = _DEFAULT_MAX_FILE_SIZE
     """
     Maximum number of bytes to write to a single WARC file.
     """
