@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Corner App",
+    "offset": null,
+    "page": null,
+    "query": "Corner App",
+    "results": [],
+    "timestamp": 1618998889,
+    "url": "https://www.bing.com/search?q=Corner+App"
+}

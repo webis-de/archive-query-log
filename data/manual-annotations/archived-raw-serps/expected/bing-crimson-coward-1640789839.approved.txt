@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Crimson Coward",
+    "offset": null,
+    "page": null,
+    "query": "Crimson Coward",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Crimson Coward</em> just opened in the spring of 2019 but has been making waves since opening day. <em>Crimson Coward</em> has become a destination for Nashville hot chicken fans throughout California. Guests have visited from as far as San Diego &amp; Glendale! We love our <em>Crimson Coward</em> fans and they can\u2019t get enough of The <em>Crimson</em>.",
+            "timestamp": 1640789839,
+            "title": "<em>Crimson Coward</em>",
+            "url": "https://www.crimsoncoward.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Crimson Hero</em> (\u7d05\u8272HERO, ... When Yushin rejects her, she unexpectedly tells Yushin that he is a <em>coward</em> and that she doesn't want him to do anything. She is also aware that Keisuke likes her, but does not reciprocate his feelings and tries to maintain her relationship with him as friends.",
+            "timestamp": 1640789839,
+            "title": "<em>Crimson Hero</em> - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Crimson_Hero"
+        },
+        {
+            "rank": 3,
+            "snippet": "Floren, the most renowned realm of all realms, yet forgotten by all. The soul of a person from Earth accidentally crashed into this unexplored realm, ending up in a dragon egg. Transforming into a <em>crimson</em> dragon with the mindset of a human, Claudius was different from other dragons. He only wished to live an easy life, enjoying his lifespan of thousands of years to its fullest.",
+            "timestamp": 1640789839,
+            "title": "<em>The Crimson Dragon</em> - Novel Updates",
+            "url": "https://www.novelupdates.com/series/the-crimson-dragon/"
+        },
+        {
+            "rank": 4,
+            "snippet": "26/11/2021\u00a0\u00b7 I plan to be the next Amazon selling our <em>crimson</em> gold! Quoting: Anonymous <em>Coward</em> 48597627 I recently had a small outpatient surgery and they asked me if I would accept blood, if needed, from the US Blood supply.",
+            "timestamp": 1640789839,
+            "title": "ALEX BERENSON: A Frightening New Potential Explanation For ...",
+            "url": "https://www.godlikeproductions.com/forum1/message4965463/pg1"
+        },
+        {
+            "rank": 5,
+            "snippet": "Whenever Olivia, <em>Crimson</em> Bride attacks, return target creature card from your graveyard tapped and attacking. It gains \"When you don't control a legendary Vampire, exile this creature.\" Her grand wedding had one goal: to unite the vampire bloodlines under her rule. illus. Anna Steinbauer # 245/277.",
+            "timestamp": 1640789839,
+            "title": "Innistrad: <em>Crimson</em> Vow - Spoilers - MTG Salvation",
+            "url": "https://www.mtgsalvation.com/spoilers/261-innistrad-crimson-vow"
+        },
+        {
+            "rank": 6,
+            "snippet": "25/11/2021\u00a0\u00b7 In the midst of the Daryl Morey-China-Hong Kong controversy, Nets owner Joe Tsai made the unbelievable claim that 1.4 billion Chinese citizens agree on\u2026 well, anything.",
+            "timestamp": 1640789839,
+            "title": "Enes Kanter calls Nets owner Joe Tsai a <em>coward</em> and puppet ...",
+            "url": "https://sports.yahoo.com/enes-kanter-calls-nets-owner-193049969.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "The <em>Coward</em>'s TrialCursed Crypt MapMap Level: 80Map Tier: 13Guild Character: \u00c5Contains waves of MonstersContains additional waves of Undead MonstersFor his sins he was hunted in his sleep,judgement wrought of twisted nightmare.The <em>Coward</em> bound his dreams to stone, awaitinganother to walk the path of true atonement.Travel to this Map by using it in a personal \u2026",
+            "timestamp": 1640789839,
+            "title": "<em>The Coward's Trial</em> - Official Path of Exile Wiki",
+            "url": "https://pathofexile.fandom.com/wiki/The_Coward%27s_Trial"
+        },
+        {
+            "rank": 8,
+            "snippet": "21/11/2021\u00a0\u00b7 is there an ending or event where she kill the kidnapper boss and silver haired <em>coward</em> boy? V. Vuongs Newbie. Aug 24, 2017 65 43. Nov 19, 2021 #270 cuoly said: ... Not that it matters much, but just for factuality's sake: Botan in 2017, this (<em>Crimson</em> Colosseum) ...",
+            "timestamp": 1640789839,
+            "title": "[RPGM] - [Completed] - <em>Crimson</em> Colosseum [v1.02] [Enokippu ...",
+            "url": "https://f95zone.to/threads/crimson-colosseum-v1-02-enokippu-kagura-games.11584/page-14"
+        },
+        {
+            "rank": 9,
+            "snippet": "Grupo: <em>CRiMSON</em> Versi\u00f3n: HDTV x264 450 MB Grupo: <em>CRiMSON</em> Versi\u00f3n: HDTV x264 720p ... Yellowstone (2018) [S04E08] - No Kindness for the <em>Coward</em> Grupo: PECULATE Versi\u00f3n: WEB H264 720p 1.4 GB Grupo: PECULATE Versi\u00f3n: WEB H264 1080p 3.1 GB Grupo: ...",
+            "timestamp": 1640789839,
+            "title": "aRGENTeaM \u2022 Busqueda",
+            "url": "https://argenteam.net/search?offset=45&max=15"
+        },
+        {
+            "rank": 10,
+            "snippet": "01/12/2012\u00a0\u00b7 \u201cBoth the brave man and the <em>coward</em> feel the same. The only difference between them is that the brave man faces his fear, does not run.\u201d <em>Malice</em> is the first book in the epic fantasy series of The Faithful and the Falle For some incredibly exciting news regarding <em>Malice</em> and The Faithful and the Fallen, check out this video announcement from The Broken Binding  \u2026",
+            "timestamp": 1640789839,
+            "title": "<em>Malice</em> (The Faithful and the Fallen, #1) by John Gwynne",
+            "url": "https://www.goodreads.com/book/show/15750692-malice"
+        }
+    ],
+    "timestamp": 1640789839,
+    "url": "https://www.bing.com/search?q=Crimson+Coward"
+}

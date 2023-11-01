@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Dash Investment Foundation",
+    "offset": null,
+    "page": null,
+    "query": "Dash Investment Foundation",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "10/01/2022\u00a0\u00b7 Kolkata: The Michael &amp; Susan Dell <em>Foundation</em> has led a $2.5 million equity <em>investment</em> in Mumbai-based fintech startup Arthan Finance, which offers loans to tiny entrepreneurs. This is the first institutional <em>investment</em> in the firm, which in June 2019 received a licence from the central bank to operate as a non-banking finance company, its founders said.",
+            "timestamp": 1644415217,
+            "title": "Dell <em>Foundation</em> leads $2.5 million <em>investment</em> in Arthan ...",
+            "url": "https://economictimes.indiatimes.com/tech/funding/dell-foundation-leads-2-5-million-investment-in-arthan-finance/articleshow/88811270.cms"
+        },
+        {
+            "rank": 2,
+            "snippet": "IOTA <em>foundation</em> token MIOTA gains 9.48% in 24 hours, a signal for Investors to buy MIOTA Smart city project partnership unites IOTA <em>foundation</em>, South Korean observer, and Tanglehub Iota scales to the second phase of the European Union Blockchain Project...",
+            "timestamp": 1644415217,
+            "title": "World, US, China, India Economy, <em>Investment</em>, Finance ...",
+            "url": "https://www.economywatch.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "\"<em>Mapbox Dash</em> delivers an efficient and smooth customizable <em>foundation</em> for our digital location ecosystem and enabled us to launch Maps+ within months with an over-the-air update to the car. With <em>Mapbox Dash</em> we can create a customized navigation experience, by creating a completely GM specific design and integrating a vehicle-specific voice assistant, streaming music, and \u2026",
+            "timestamp": 1644415217,
+            "title": "<em>Mapbox Dash</em>",
+            "url": "https://www.mapbox.com/dash"
+        },
+        {
+            "rank": 4,
+            "snippet": "01/02/2022\u00a0\u00b7 VIDEO | Rescue <em>dash</em> as rudderless cargo ship hits <em>foundation</em> at giant North Sea wind farm ... The wind farm is being built without subsidies from the Dutch government and has attracted <em>investment</em> from chemicals giant BASF and insurer Allianz in deals that valued the project at more than \u20ac3bn ($3.4bn).",
+            "timestamp": 1644415217,
+            "title": "VIDEO | Rescue <em>dash</em> as rudderless cargo ship hits ...",
+            "url": "https://www.rechargenews.com/wind/video-rescue-dash-as-rudderless-cargo-ship-hits-foundation-at-giant-north-sea-wind-farm/2-1-1160591"
+        },
+        {
+            "rank": 5,
+            "snippet": "BECA <em>Foundation</em> will encourage and empower aspiring Latino students to pursue higher education through financial and moral support. BECA believes that every San Diego County Latino high school graduate who has the desire to attend an institution of higher learning, be provided an opportunity.",
+            "timestamp": 1644415217,
+            "title": "BECA <em>Foundation</em> | Home",
+            "url": "https://www.becafoundation.org/"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Dash</em>'s attorney released a statement that <em>Dash</em> released the music on fair grounds. In 2014, <em>Dash</em> was ordered to pay Linda Williams, the mother of his son Boogie, $50,000 for causing her to be prosecuted on harassment charges in \u2026",
+            "timestamp": 1644415217,
+            "title": "<em>Damon Dash</em> - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Damon_Dash"
+        },
+        {
+            "rank": 7,
+            "snippet": "18/11/2021\u00a0\u00b7 <em>Dash</em> (<em>DASH</em>) prices - Nasdaq offers cryptocurrency prices &amp; market activity data for US and global markets.",
+            "timestamp": 1644415217,
+            "title": "<em>Dash</em> (<em>DASH</em>) Latest Prices, Charts &amp; Data | Nasdaq",
+            "url": "https://www.nasdaq.com/market-activity/cryptocurrency/dash"
+        },
+        {
+            "rank": 8,
+            "snippet": "06/01/2022\u00a0\u00b7 Looking at options trading activity among components of the Russell 3000 index, there is noteworthy activity today in DoorDash Inc (Symbol: <em>DASH</em>), where a total volume of 29,610 contracts has been ...",
+            "timestamp": 1644415217,
+            "title": "Notable Thursday Option Activity: <em>DASH</em>, DVN, VZ | Nasdaq",
+            "url": "https://www.nasdaq.com/articles/notable-thursday-option-activity%3A-dash-dvn-vz"
+        },
+        {
+            "rank": 9,
+            "snippet": "The Agua Hedionda Lagoon <em>Foundation</em> operates the Discovery Center. The Discovery Center in Carlsbad California is an extraordinaire collection of hands-on exhibits, gardens, and live animal ambassadors allowing visitors to \u201ctaste nature\u201d.",
+            "timestamp": 1644415217,
+            "title": "Discovery Center | Agua Hedionda Lagoon <em>Foundation</em> ...",
+            "url": "https://www.aguahedionda.org/"
+        },
+        {
+            "rank": 10,
+            "snippet": "21/01/2022\u00a0\u00b7 <em>Dash</em> Living, Asia's leading serviced co-living community, today announced that it has signed an agreement to take over the management of Travelodge (soon-to-be <em>Dash</em> Living on Hollywood) on ...",
+            "timestamp": 1644415217,
+            "title": "<em>Dash</em> Living Signs Management Agreement To Convert ...",
+            "url": "https://finance.yahoo.com/news/dash-living-signs-management-agreement-030000669.html"
+        }
+    ],
+    "timestamp": 1644415217,
+    "url": "https://www.bing.com/search?q=Dash+Investment+Foundation"
+}

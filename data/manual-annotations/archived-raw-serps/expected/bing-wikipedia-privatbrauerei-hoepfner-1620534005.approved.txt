@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "-wikipedia \"Privatbrauerei Hoepfner\"",
+    "offset": null,
+    "page": null,
+    "query": "-wikipedia \"Privatbrauerei Hoepfner\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Privatbrauerei Hoepfner Haid-und-Neu-Str. 18 76131 Karlsruhe Tel. 0721 61 83 -0 info@hoepfner.de ...",
+            "timestamp": 1620534005,
+            "title": "Vorschaltseite: Hoepfner",
+            "url": "https://www.hoepfner.de/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Privatbrauerei Hoepfner Haid-und-Neu-Str. 18 76131 Karlsruhe Tel. 0721 61 83 -0 info@hoepfner.de ...",
+            "timestamp": 1620534005,
+            "title": "Startseite: Hoepfner",
+            "url": "https://www.hoepfner.de/startseite.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Explore Privatbrauerei Hoepfner from Karlsruhe, Baden-W\u00fcrttemberg on Untappd. Find ratings, reviews, and where to find beers from this brewery.",
+            "timestamp": 1620534005,
+            "title": "Privatbrauerei Hoepfner - Karlsruhe, Baden \u2026",
+            "url": "https://untappd.com/w/privatbrauerei-hoepfner/8807"
+        },
+        {
+            "rank": 4,
+            "snippet": "17/11/2013\u00a0\u00b7 Cerveja Hoepfner Porter, estilo Porter, produzida por Privatbrauerei Hoepfner, Alemanha. 5.8% ABV de \u00e1lcool.",
+            "timestamp": 1620534005,
+            "title": "Cerveja Hoepfner Porter - Privatbrauerei Hoepfner",
+            "url": "https://www.brejas.com.br/cerveja/alemanha/hoepfner-porter/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Hoepfner Porter is a Porter - American style beer brewed by Privatbrauerei Hoepfner in Karlsruhe, Germany. Score: 86 with 13 ratings and reviews. Last update: 04-05-2021.",
+            "timestamp": 1620534005,
+            "title": "Hoepfner Porter | Privatbrauerei Hoepfner | \u2026",
+            "url": "https://www.beeradvocate.com/beer/profile/2506/8048/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Hefe Weizen is a Wheat Beer - <em>Hefeweizen</em> style beer brewed by Privatbrauerei Hoepfner in Karlsruhe, Germany. Score: n/a with 5 ratings and reviews. Last update: 11-20-2019.",
+            "timestamp": 1620534005,
+            "title": "Hefe Weizen | Privatbrauerei Hoepfner | BeerAdvocate",
+            "url": "https://www.beeradvocate.com/beer/profile/2506/39020/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Company profile page for Privatbrauerei Hoepfner GmbH including stock price, company news, press releases, executives, board members, and contact information",
+            "timestamp": 1620534005,
+            "title": "Privatbrauerei Hoepfner GmbH - Company Profile \u2026",
+            "url": "https://www.bloomberg.com/profile/company/7108293Z:GR"
+        },
+        {
+            "rank": 8,
+            "snippet": "Beer coasters (beer mats) collection from brewery - Brewery - Privatbrauerei Hoepfner :: City - Karlsruhe :: Germany Beer coasters (beer mats) collection from brewery Privatbrauerei Hoepfner.",
+            "timestamp": 1620534005,
+            "title": "Beer coasters (beer mats) collection from brewery ...",
+            "url": "https://www.beer-coasters.eu/en/beer-coasters-from-brewery-Privatbrauerei%20Hoepfner.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Privatbrauerei Hoepfner.<em></em> Todas as cervejas cadastradas no BREJAS para a cervejaria ou microcervejaria Privatbrauerei Hoepfner",
+            "timestamp": 1620534005,
+            "title": "Privatbrauerei Hoepfner - Todas as cervejas da cervejaria",
+            "url": "https://www.brejas.com.br/brejas/tag/cervejaria/privatbrauerei-hoepfner"
+        },
+        {
+            "rank": 10,
+            "snippet": "Brewery - Privatbrauerei Hoepfner :: City - Karlsruhe :: Germany New beer coasters (beermats) in my collection from brewery Privatbrauerei Hoepfner.",
+            "timestamp": 1620534005,
+            "title": "Brewery - Privatbrauerei Hoepfner :: City - Karlsruhe ...",
+            "url": "https://www.beer-coasters.eu/en/new-beer-coasters-from-brewery-Privatbrauerei%20Hoepfner.html"
+        }
+    ],
+    "timestamp": 1620534005,
+    "url": "https://www.bing.com/search?q=-wikipedia+%22Privatbrauerei+Hoepfner%22"
+}

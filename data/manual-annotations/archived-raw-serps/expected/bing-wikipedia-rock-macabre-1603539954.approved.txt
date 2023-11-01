@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "-wikipedia \"Rock macabre\"",
+    "offset": null,
+    "page": null,
+    "query": "-wikipedia \"Rock macabre\"",
+    "results": [],
+    "timestamp": 1603539954,
+    "url": "https://www.bing.com/search?q=-wikipedia+%22Rock+macabre%22"
+}

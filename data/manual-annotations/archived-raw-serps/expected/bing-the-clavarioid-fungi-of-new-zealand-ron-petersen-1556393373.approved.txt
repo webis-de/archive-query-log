@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "The clavarioid fungi of New Zealand Ron Petersen",
+    "offset": null,
+    "page": null,
+    "query": "The clavarioid fungi of New Zealand Ron Petersen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "01.05.1988\u00a0\u00b7 The Clavarioid Fungi of New Zealand by Ronald H Petersen, 9780477025140, available at Book Depository with free delivery worldwide.",
+            "timestamp": 1556393373,
+            "title": "The Clavarioid Fungi of New Zealand : Ronald H \u2026",
+            "url": "https://www.bookdepository.com/Clavarioid-Fungi-New-Zealand-Ronald-H-Petersen/9780477025140"
+        },
+        {
+            "rank": 2,
+            "snippet": "AbeBooks.com: The <em>Clavarioid Fungi</em> of <em>New Zealand</em> (DSIR bulletin) (9780477025140) by Ronald H. <em>Petersen</em> and a great selection of similar <em>New</em>, Used and Collectible Books available now at great prices.",
+            "timestamp": 1556393373,
+            "title": "9780477025140: The Clavarioid Fungi of New \u2026",
+            "url": "https://www.abebooks.com/9780477025140/Clavarioid-Fungi-New-Zealand-DSIR-0477025145/plp"
+        },
+        {
+            "rank": 3,
+            "snippet": "Title: The <em>clavarioid fungi</em> of <em>New Zealand</em> Volume 236 of DSIR bulletin Volume 236 of Fauna of <em>New Zealand</em> Issue 236 of Bulletin, <em>New Zealand</em> Department of Scientific and Industrial Research",
+            "timestamp": 1556393373,
+            "title": "The clavarioid fungi of New Zealand - Ronald H. \u2026",
+            "url": "https://books.google.com/books/about/The_clavarioid_fungi_of_New_Zealand.html?id=RYkhAQAAIAAJ"
+        },
+        {
+            "rank": 4,
+            "snippet": "Enter your mobile number or email address below and we'll send you a link to download the free Kindle App. Then you can start reading Kindle books on your smartphone, tablet, or computer - \u2026",
+            "timestamp": 1556393373,
+            "title": "Amazon.com: The Clavarioid Fungi of New \u2026",
+            "url": "https://www.amazon.com/Clavarioid-Fungi-Zealand-DSIR-bulletin/dp/0477025145"
+        },
+        {
+            "rank": 5,
+            "snippet": "These clavarioid fungi have simple (i.e., unbranching) basidiomata, which is a relatively uncommon phenotypic feature for the genus Clavulina. Macromorphological, micromorphological, and habitat data are provided for each taxon, and nuclear ribosomal DNA sequences of the 28S subunit and internal transcribed spacer region were obtained for each holotype collection.",
+            "timestamp": 1556393373,
+            "title": "New Clavulina species from the Pakaraima \u2026",
+            "url": "https://link.springer.com/article/10.1007/s11557-006-0140-6"
+        },
+        {
+            "rank": 6,
+            "snippet": "The <em>clavarioid fungi</em> of <em>New Zealand</em>. [Ronald H <em>Petersen</em>; <em>New Zealand</em>. Department of Scientific and Industrial Research.] Home. WorldCat Home About WorldCat Help. Search . Search for Library Items Search for Lists Search for Contacts Search for a Library. Create ...",
+            "timestamp": 1556393373,
+            "title": "The clavarioid fungi of New Zealand (Book, 1988) \u2026",
+            "url": "https://www.worldcat.org/title/clavarioid-fungi-of-new-zealand/oclc/18552181"
+        },
+        {
+            "rank": 7,
+            "snippet": "Petersen, R.H. 1965. Notes on clavarioid fungi. IV. Nomenclature and synonymy of Clavulinopsis pulchra and Clavaria laeticolor. Mycologia 57: 521\u2013523. Petersen, R.H. 1988. The clavarioid fungi of New Zealand. DSIR Bulletin 236: 1\u2013170. Petersen, R.H. 2000.",
+            "timestamp": 1556393373,
+            "title": "Notes on rare clavarioid species (Fungi: \u2026",
+            "url": "https://www.biotaxa.org/cl/article/view/11.2.1612"
+        },
+        {
+            "rank": 8,
+            "snippet": "Amazon.in - Buy The <em>Clavarioid Fungi</em> of <em>New Zealand</em> book online at best prices in India on Amazon.in. Read The <em>Clavarioid Fungi</em> of <em>New Zealand</em> book reviews &amp; author details and more at Amazon.in. Free delivery on qualified orders.",
+            "timestamp": 1556393373,
+            "title": "The Clavarioid Fungi of New Zealand Paperback - \u2026",
+            "url": "https://www.amazon.in/Clavarioid-Fungi-New-Zealand/dp/0477025145"
+        },
+        {
+            "rank": 9,
+            "snippet": "Clavaria was, however, still widely used for the majority of the basidiomycetous species until Corner published his world monograph of the clavarioid fungi in 1950, introducing the modern concept of \u2026",
+            "timestamp": 1556393373,
+            "title": "Clavaria - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Clavaria"
+        },
+        {
+            "rank": 10,
+            "snippet": "Open Library is an initiative of the Internet Archive, a 501(c)(3) non-profit, building a digital library of Internet sites and other cultural artifacts in digital form.",
+            "timestamp": 1556393373,
+            "title": "The clavarioid fungi of New Zealand | Open Library",
+            "url": "https://openlibrary.org/works/OL4831859W/The_clavarioid_fungi_of_New_Zealand"
+        }
+    ],
+    "timestamp": 1556393373,
+    "url": "https://www.bing.com/search?q=The+clavarioid+fungi+of+New+Zealand+Ron+Petersen&filters=ufn%3a%22The+clavarioid+fungi+of+New+Zealand+Ron+Petersen%22+sid%3a%220b30c0ac-f55d-3966-3df7-6c37ffc7e507%22+catguid%3a%229d080d55-a2a0-4c60-debe-b536d8a0aa82_c0bcbbc4%22+segment%3a%22generic.carousel%22&FORM=SNAPST"
+}

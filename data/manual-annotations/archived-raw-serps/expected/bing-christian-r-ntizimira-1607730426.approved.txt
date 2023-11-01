@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Christian R. Ntizimira",
+    "offset": null,
+    "page": null,
+    "query": "Christian R. Ntizimira",
+    "results": [],
+    "timestamp": 1607730426,
+    "url": "https://www.bing.com/search?q=Christian+R.+Ntizimira"
+}

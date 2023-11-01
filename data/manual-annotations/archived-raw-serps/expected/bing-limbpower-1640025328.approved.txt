@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "LimbPower",
+    "offset": null,
+    "page": null,
+    "query": "LimbPower",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>LimbPower</em> support amputees, individuals with limb difference and their families to bridge the gap between hospital rehabilitation and community and school engagement to rebuild lives and improve physical, social and mental well-being.",
+            "timestamp": 1640025328,
+            "title": "<em>LimbPower</em> :: Home",
+            "url": "https://limbpower.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>LimbPower</em> supports amputees and people with limb impairments to find the right sport or leisure activity for their needs and ability. Find out more about \u2018<em>LimbPower</em>\u2019 Special Olympics Great Britain. Special Olympics Great Britain provides year-round sports programme for children and adults with learning ...",
+            "timestamp": 1640025328,
+            "title": "National Disability Sports Organisations | Activity Alliance",
+            "url": "https://www.activityalliance.org.uk/together/ndsos"
+        },
+        {
+            "rank": 3,
+            "snippet": "The Douglas Bader Foundation is a charity founded by the family of RAF hero, Sir Douglas Bader to help people affected by limb loss and other disabilities",
+            "timestamp": 1640025328,
+            "title": "The Douglas Bader Foundation",
+            "url": "https://www.douglasbaderfoundation.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Welcome to <em>Building Futures</em> \u2013 our \u00a31 million scheme to support children's health, sport and education &amp; arts. Persimmon Homes, with the support of Team GB, has given away over \u00a31 million in 2021 to help projects for young people aged under 18 \u2026",
+            "timestamp": 1640025328,
+            "title": "Persimmon <em>Building Futures</em>",
+            "url": "https://www.persimmonhomes.com/building-futures"
+        },
+        {
+            "rank": 5,
+            "snippet": "13/12/2021\u00a0\u00b7 For kids to lead a healthy lifestyle they need to move as much as possible. Being active for at least 60 minutes each day helps keep their hearts healthy and their bones strong \u2013 and if they have additional needs, this is just as important. Many of the activities we suggest for non-disabled ...",
+            "timestamp": 1640025328,
+            "title": "Disabled sports activities - Kids' activities - Healthier ...",
+            "url": "https://www.nhs.uk/healthier-families/activities/accessible-activities/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Congratulations to all our 2021 Building Futures <em>finalists</em>. Each plays an important role in their local community and Persimmon is proud to support them.",
+            "timestamp": 1640025328,
+            "title": "<em>Finalists</em> - Persimmon Homes",
+            "url": "https://www.persimmonhomes.com/building-futures/finalists"
+        },
+        {
+            "rank": 7,
+            "snippet": "Details of our <em>Join the Movement</em> campaign that's encouraging people to keep or get active as we live under restrictions on movement during the coronavirus (COVID-19) pandemic.",
+            "timestamp": 1640025328,
+            "title": "<em>Join the Movement</em> | <em>Sport England</em>",
+            "url": "https://www.sportengland.org/jointhemovement"
+        },
+        {
+            "rank": 8,
+            "snippet": "Loving having @<em>limbpower</em> with me this weekend at @silverstonecircuit, massively inspired by all of you S/o to @thebrdc for their hospitality too \ud83d\ude4c\ud83c\udffc #BillyWhizz. Sep 7, 2019. View Post &gt; This is some text inside of a div block. | This is some text inside of a div block.",
+            "timestamp": 1640025328,
+            "title": "Billy Monger | BillyWhizz Double Amputee British Racing Driver",
+            "url": "https://www.billymongerracing.co.uk/"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>LimbPower</em> \u2013 supporting amputees and people with limb impairments to reach their sporting potential. Mencap Sport \u2013 supporting people with a learning difficulty. Metro Blind Sport. Special Olympics GB \u2013 supporting people with learning disabilities. Transplant Sport. UK Deaf Sport. UK Sports Association for People with Learning Disability",
+            "timestamp": 1640025328,
+            "title": "<em>Get active with a disability</em> - NHS",
+            "url": "https://www.nhs.uk/live-well/exercise/get-active-with-a-disability/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Sports Surgery Clinic is delighted to welcome you back to our 2021 International Annual Sports Medicine Conference \u2013 Injury and Performance in Elite Sport. The SSC Sports Medicine Department is one of the largest in Europe and is unique in its application of 3D biomechanical analysis as the centre piece of our RTP testing and rehabilitation processes publishing our \u2026",
+            "timestamp": 1640025328,
+            "title": "SSC Digital Conference: \u2018Injury and Peak Perfomance in ...",
+            "url": "https://sscsportsmedconference.com/"
+        }
+    ],
+    "timestamp": 1640025328,
+    "url": "https://www.bing.com/search?q=LimbPower"
+}

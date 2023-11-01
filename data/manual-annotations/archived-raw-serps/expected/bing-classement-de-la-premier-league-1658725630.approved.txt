@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "classement de la premier league",
+    "offset": null,
+    "page": null,
+    "query": "classement de la premier league",
+    "results": [],
+    "timestamp": 1658725630,
+    "url": "https://www.bing.com/search?q=classement+de+la+premier+league&FORM=RS1208"
+}
