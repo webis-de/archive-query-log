@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "rob diamond movies",
+    "offset": null,
+    "page": null,
+    "query": "rob diamond movies",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Watch Popular TV Shows and Movies Without Downloading.No Payment Necessary. All Movies And TV Shows You Like. Start 30 Day Free Trial Now.",
+            "timestamp": 1626693763,
+            "title": "Watch Free Movies No Signup - Free Full Movies Watch Online",
+            "url": "https://www.bing.com/aclick?ld=e8zCVKP2_nIu15Wca8mTvI-TVUCUwwibKjd-RhtHHa164nekaHU_RuPPbBwscn1CFIBz-lQf-LvXomb9DNADSQ14c-3k1hRBKL3y6nte9ffiXB57mMBzbwfsP9VPu2oZ3nOOUIwLeiKXG16Q8VBz3rU4rfD3yJIQL5GJE010W0WZDGIUFw&u=aHR0cCUzYSUyZiUyZnd3dy55ZXNmbGlja3MuY29tJTJmbWFpbnBhZ2UlMmYlM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9jYW1wYWlnbklkJTNkNDE4NTU4NzY5JTI2dXRtX2FkZ3JvdXBpZCUzZDEzMzcwMDcwNTk2OTE2MjIlMjZ1dG1fa2V5d29yZCUzZG1vdmllcyUyNTIwbW92aWVzJTI1MjBtb3ZpZXMlMjUyMG1vdmllcyUyNTIwbW92aWVzJTI2dXRtX3F1ZXJ5JTNkcm9iJTI1MjBkaWFtb25kJTI1MjBtb3ZpZXMlMjZ1dG1fZGV2aWNlJTNkYyUyNnV0bV9tYXRjaHR5cGUlM2RwJTI2dXRtX2tleXdvcmRJZCUzZGt3ZC04MzU2MzUzNDI2NDc1NyUzYWxvYy0xOTAlMjZwbGFjZW1lbnQlM2QlMjZ0YXJnZXQlM2QlMjZtc2Nsa2lkJTNkMTY1NWU4OGFmMTY4MTBjOWFiMTA4ODdmOGRjYzhiZTg&rlid=1655e88af16810c9ab10887f8dcc8be8"
+        },
+        {
+            "rank": 2,
+            "snippet": "Find Your Favorite Movies &amp; Shows On Demand. Watch Movies &amp; TV Shows Online Now!",
+            "timestamp": 1626693763,
+            "title": "Watch Free Movies Online - Find Free Movies Instantly",
+            "url": "https://www.bing.com/aclick?ld=e8lUyHAeA-sKRWFIsPm6TyTjVUCUxIvJnaqkc1sEecN0B6_9NDbmy23pb58xoeYZR45Q6vQXIPXzeVrPhci07-EDVpL-QjtrNDoI5ljhkPZtXt9EXHrQhAtxr43rhNgJ9YkrJTHdsEFqAjufk_Ola9ByqwGD73wGr38R2CoVpPaqhG_oYT&u=aHR0cHMlM2ElMmYlMmZ3d3cueWlkaW8uY29tJTJmbW92aWVzJTJmZmlsdGVyJTJmZnJlZSUzZnV0bV9zb3VyY2UlM2RCaW5nJTI2dXRtX21lZGl1bSUzZHNlYXJjaCUyNnRfc291cmNlJTNkNjQlMjZ1dG1fY2FtcGFpZ24lM2QxOTkxJTI2bXNjbGtpZCUzZDkxMWUxYzkzYTkxNjE2MzYzMGRmN2M2NmQ1YjI1ZWJl&rlid=911e1c93a916163630df7c66d5b25ebe"
+        },
+        {
+            "rank": 3,
+            "snippet": "Stream new releases and favorite movies on all of your devices. Play now.",
+            "timestamp": 1626693763,
+            "title": "Movies on Google Play - Watch movies on Google Play",
+            "url": "https://www.bing.com/aclick?ld=e8zG3mTvc4_k3nuEviSmRR7DVUCUy7AOIBqEt1rM3ifXt5heRFprDekKpLs5yYucibOJrFv_1EhU06HY5x6yK9XfDKTI-G5OizeqYj_zC3MwN2zp3BvttrVQL-_s0LDM_VU81IiCfY59AJVTqGObdV_s1nGaqwd6bbx_akjZlPyN7IHD7M&u=aHR0cHMlM2ElMmYlMmZjbGlja3NlcnZlLmRhcnRzZWFyY2gubmV0JTJmbGluayUyZmNsaWNrJTNmbGlkJTNkNDM3MDAwNTc2MTk0OTQ1MjUlMjZkc19zX2t3Z2lkJTNkNTg3MDAwMDI0MDg2MzY2MzIlMjZkc19hX2NpZCUzZDY2NjcyNTkzMyUyNmRzX2FfY2FpZCUzZDEyNDcyOTY2Mjk2JTI2ZHNfYV9hZ2lkJTNkMTIxNTUyOTc3MTA3JTI2ZHNfYV9saWQlM2Rrd2QtMzE5NTU4NDA0NDM0JTI2JTI2ZHNfZV9hZGlkJTNkNzQxNDg1MzIyOTUwMjklMjZkc19lX3RhcmdldF9pZCUzZGt3ZC03NDE0ODQ5ODgyOTg2NiUzYWxvYy0xOTAlMjYlMjZkc191cmxfdiUzZDIlMjZkc19kZXN0X3VybCUzZGh0dHBzJTNhJTJmJTJmcGxheS5nb29nbGUuY29tJTJmc3RvcmUlMmZtb3ZpZXMlM2Z1dG1fc291cmNlJTNkbmFfTWVkJTI2dXRtX21lZGl1bSUzZG9mZnNlbSUyNnV0bV9jb250ZW50JTNkTm92MTMyMCUyNnV0bV9jYW1wYWlnbiUzZEV2ZXJncmVlbiUyNnBjYW1wYWlnbmlkJTNkTUtULUVEUi1uYS11cy0xMDAwMTg5LU1lZC1vZmZzZW0tbW8tRXZlcmdyZWVuLU5vdjEzMjAtVGV4dF9TZWFyY2hfU0tXUy1pZF8xMDAyNTZfJTdjUEhSJTdjT0ZGU0VNX2t3aWRfNDM3MDAwNTc2MTk0OTQ1MjUlMjZnY2xpZCUzZGVmNTU1MzJhNTE0ODExYzA0NTEwMzNkZjJkZWMzMzcxJTI2Z2Nsc3JjJTNkM3AuZHMlMjY&rlid=ef55532a514811c0451033df2dec3371"
+        },
+        {
+            "rank": 4,
+            "snippet": "Order today with free shipping. Get the Deals now!",
+            "timestamp": 1626693763,
+            "title": "Robert Dimond - up to 75% OFF - Lowest price on Robert Dimond.",
+            "url": "https://www.bing.com/aclick?ld=e8xYZpRbLW8fzG7mAMxuAjuTVUCUzInS7cF_Ekxke_NwLYmknqfc4lIA6aILi8lFog7waZBWakG7RZFhCj12txRJiJDO6N6A7--SKLyxW7aXkNKHPHZvpUI-1uUMOhkFDPEyDRQY4LNOjxqabdJHLNIL-IY8Kzg0PC_PVr6dc0bp4k7Fk3&u=aHR0cHMlM2ElMmYlMmZkaXNjb3VudDk5LnVzJTJmcm9iZXJ0JTI1MjBkaW1vbmQlMmYlM2ZwJTNkYmNzJTI2Z2NsaWQlM2RhYzFlMmM1NTZiMDkxZWY5M2UyNTRjYTAxN2FkYTgzNyUyNm1zY2xraWQlM2RhYzFlMmM1NTZiMDkxZWY5M2UyNTRjYTAxN2FkYTgzNyUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZGNhbXBhaWduJTI1MjAlMjU1QjAxMyUyNTVEJTI2dXRtX3Rlcm0lM2Ryb2JlcnQlMjUyMGRpbW9uZCUyNnV0bV9jb250ZW50JTNkYWRncm91cCUyNTIwJTI1NUIxMyUyNTdDdzIlMjU3Q2IlMjU1RCUyNTNBJTI1MjAlMjU3QjYtcm8lMjU3RA&rlid=ac1e2c556b091ef93e254ca017ada837"
+        },
+        {
+            "rank": 5,
+            "snippet": "Rob Diamond, Producer: Lucy Shimmers and the Prince of Peace. Rob Diamond is an award winning filmmaker. He's been writing, directing and producing feature films since 1998. His movies have been distributed worldwide. \"Wayward: The Prodigal Son\" which he wrote, directed, produced and starred in was released nationally into select theaters in 2014. \"The Last Straw\" starring Corbin Bernsen was ...",
+            "timestamp": 1626693763,
+            "title": "Rob Diamond - IMDb",
+            "url": "https://www.imdb.com/name/nm1070766/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Rob Diamond is an award-winning filmmaker. He\u2019s been writing, directing and producing feature films since 1998. His movies have been distributed worldwide. \u201cWayward: The Prodigal Son\u201d which he wrote, directed, produced and starred in was released nationally into select theaters in 2014. \u201cThe Last Straw\u201d starring Corbin Bernsen was ...",
+            "timestamp": 1626693763,
+            "title": "ROB DIAMOND \u2013 Rob Diamond Agency",
+            "url": "https://robdiamondagency.com/rob-diamond/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Rob Diamond is an award winning filmmaker who directs, writes and produces feature films. Contact (801) 244-4317 for more info or email: robdiamondfilms@gmail.com. You may also inquire about Rob ...",
+            "timestamp": 1626693763,
+            "title": "Rob Diamond - YouTube",
+            "url": "https://www.youtube.com/channel/UCpHeDUs91mhDqtTFl4A0P6w"
+        },
+        {
+            "rank": 8,
+            "snippet": "Our Father's Keeper: Directed by Rob Diamond. With Kyler Steven Fisher, Shayla McCaffrey, Craig Lindquist, Tara Berrett. Our Father's Keeper is a story that tests the limits of a family when tragedy strikes, and a film that encourages viewers to grow in love and understanding for one another.",
+            "timestamp": 1626693763,
+            "title": "Our Father's Keeper (2020) - IMDb",
+            "url": "https://www.imdb.com/title/tt9354118/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Watch Rob Diamond movies and tv shows on The Roku Channel. Catch hit movies, popular shows, live news, sports &amp; more the web or on your Roku device.",
+            "timestamp": 1626693763,
+            "title": "Rob Diamond Movies &amp; TV Shows | The Roku Channel | Roku",
+            "url": "https://therokuchannel.roku.com/person/a8817ead2d8b5ac6bceae5a8126f7957/rob-diamond"
+        },
+        {
+            "rank": 10,
+            "snippet": "Bobby Diamond, Actor: The Twilight Zone. Bobby Diamond was born on August 23, 1943 in Los Angeles, California, USA as Robert LeRoy Diamond. He was an actor and producer, known for The Twilight Zone (1959), Westinghouse Playhouse (1961) and Scream (1981). He was married to Tara Lynn Parker. He died on May 15, 2019 in Thousand Oaks, California.",
+            "timestamp": 1626693763,
+            "title": "Bobby Diamond - IMDb",
+            "url": "https://www.imdb.com/name/nm0224593/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Elizabeth's Gift: Directed by Rob Diamond. With Kari Hawker-Diaz, Paul D. Hunt, Savanna Kylie Lewis, Brianna Pattison. When a precious little girl dies tragically of a rare heart condition, her loving parents are left to pick up the pieces of their once perfect life. In a sequence of miracles, an angel guides their way to another little homeless girl on the streets and the fight to get her ...",
+            "timestamp": 1626693763,
+            "title": "Elizabeth's Gift (2012) - IMDb",
+            "url": "https://www.imdb.com/title/tt1943696/"
+        },
+        {
+            "rank": 12,
+            "snippet": "Rob Diamond Agency is owned and operated by award-winning Filmmaker and Acting coach, Rob Diamond. The vision for Rob Diamond Agency is to continue to help Actors grow and achieve their dreams by helping them get work. Contact Information. 9487 S 500 W Sandy, Utah (801) 244-4317. info@robdiamondagency.com.",
+            "timestamp": 1626693763,
+            "title": "Rob Diamond Agency \u2013 For Actors &amp; Voice Over Artists",
+            "url": "https://robdiamondagency.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": "Movies about the actual diamond business, however, aren\u2019t as common. But there certainly have been a few. The little-seen 2000 indie Diamond Men featured Donnie Wahlberg and Robert Forster as two gem salesmen on the road. It is unique among the films here as it doesn\u2019t involve any kind of gem theft. Of course, we had to mention Blood Diamond.",
+            "timestamp": 1626693763,
+            "title": "5 Movies About the Diamond Industry \u2013 JCK",
+            "url": "https://www.jckonline.com/editorial-article/5-movies-about-the-diamond-industry/"
+        },
+        {
+            "rank": 14,
+            "snippet": "The movie features one of the most famous scenes in movie history: In a 28-minute sequence, the robbers break into a jewelry store and steal diamonds in total silence.",
+            "timestamp": 1626693763,
+            "title": "Best Heist Movies | Time",
+            "url": "https://time.com/4895598/the-25-best-heist-movies/"
+        }
+    ],
+    "timestamp": 1626693763,
+    "url": "https://www.qwant.com/?q=rob+diamond+movies&t=all"
+}

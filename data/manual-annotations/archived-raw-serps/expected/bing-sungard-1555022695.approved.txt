@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "SunGard",
+    "offset": null,
+    "page": null,
+    "query": "SunGard",
+    "results": [],
+    "timestamp": 1555022695,
+    "url": "https://www.bing.com/search?q=SunGard&filters=ufn%3a%22SunGard%22+sid%3a%22c066bda2-94db-d8c0-eb7a-2ddf1fb005e6%22&FORM=SNAPST"
+}

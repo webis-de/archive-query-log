@@ -1,0 +1,143 @@
+{
+    "interpreted_query": "safemoon",
+    "offset": null,
+    "page": null,
+    "query": "safemoon",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "1 day ago -\n            Get the latest <em>SafeMoon</em> price, <em>SAFEMOON</em> market cap, trading pairs, charts and data today from the world\u2019s number one cryptocurrency price-tracking website",
+            "timestamp": 1653585598,
+            "title": "SafeMoon price today, SAFEMOON to USD live, marketcap and chart ...",
+            "url": "https://coinmarketcap.com/currencies/safemoon/"
+        },
+        {
+            "rank": 2,
+            "snippet": "The official home of <em>SafeMoon</em>. <em>The</em> <em>SafeMoon</em> Protocol is a community driven, fair launched DeFi Token. Three simple functions occur during each trade: Reflection, LP Acquisition, and Burn.",
+            "timestamp": 1653585598,
+            "title": "Home | SafeMoon Protocol",
+            "url": "https://safemoon.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "1 month ago -\n            The latest tweets from <em>SafeMoon</em> \ud83d\ude4c (@<em>safemoon</em>)",
+            "timestamp": 1653585598,
+            "title": "SafeMoon \ud83d\ude4c (@safemoon) \u00b7 Twitter",
+            "url": "https://twitter.com/safemoon"
+        },
+        {
+            "rank": 4,
+            "snippet": "1 day ago -\n            View <em>SafeMoon</em> crypto price and chart live, SFM market cap, 24-hour trading volume, circulating supply, latest news and more.",
+            "timestamp": 1653585598,
+            "title": "SafeMoon price, SFM chart, and market cap | CoinGecko",
+            "url": "https://www.coingecko.com/en/coins/safemoon"
+        },
+        {
+            "rank": 5,
+            "snippet": "2 weeks ago -\n            May 23, 2022 - The current price of <em>SafeMoon</em> is $0.00 per (<em>SAFEMOON</em> / USD). <em>SafeMoon</em> is 100.00% below the all time high of $7.97. The current circulating supply is 562,232,835,617,419.56 <em>SAFEMOON</em>. Discover new cryptocurrencies to add to your portfolio.",
+            "timestamp": 1653585598,
+            "title": "SafeMoon (SAFEMOON) Price, Charts, and News | Coinbase: safemoon ...",
+            "url": "https://www.coinbase.com/price/safemoon"
+        },
+        {
+            "rank": 6,
+            "snippet": "2 weeks ago -\n            <em>SafeMoon</em> was promoted by celebrities, but now its price has crashed 85% as it pivots to wind turbines and expansion in Africa amid lawsuits.",
+            "timestamp": 1653585598,
+            "title": "What Happened to SafeMoon, the Hyped-Up Crypto That Promised Riches?",
+            "url": "https://www.vice.com/en/article/wxdmj9/what-happened-to-safemoon-the-hyped-up-crypto-that-promised-riches"
+        },
+        {
+            "rank": 7,
+            "snippet": "3 weeks ago -\n            Spend some time following crypto online and chances are you\u2019ll hear people talk about a cryptocurrency that\u2019s \u201cgoing to the moon.\u201d <em>SafeMoon</em> has built its brand on this popular turn of phrase, although there are quirks to this crypto token that make it more challenging to buy (and ...",
+            "timestamp": 1653585598,
+            "title": "How To Buy Safemoon \u2013 Forbes Advisor",
+            "url": "https://www.forbes.com/advisor/investing/cryptocurrency/how-to-buy-safemoon/"
+        },
+        {
+            "rank": 8,
+            "snippet": "April 7, 2022 -\n            Your all-in-one gateway to the decentralized world.",
+            "timestamp": 1653585598,
+            "title": "SafeMoon - Apps on Google Play",
+            "url": "https://play.google.com/store/apps/details?id=net.safemoon.androidwallet&hl=en_US&gl=US"
+        },
+        {
+            "rank": 9,
+            "snippet": "March 29, 2022 -\n            Read reviews, compare customer ratings, see screenshots, and learn more about <em>SafeMoon</em>. Download <em>SafeMoon</em> and enjoy it on your iPhone, iPad, and iPod touch.",
+            "timestamp": 1653585598,
+            "title": "\u200eSafeMoon on the App Store",
+            "url": "https://apps.apple.com/us/app/safemoon/id1579735495"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>safemoon</em> on Twitter",
+            "timestamp": 1653585598,
+            "title": "safemoon on Twitter",
+            "url": "https://twitter.com/search?q=safemoon"
+        },
+        {
+            "rank": 11,
+            "snippet": "1 week ago -\n            Creators of the <em>SafeMoon</em> crypto-token are facing a third class action complaint alleging they defrauded investors by artificially inflating the price of the tokens through false statements about the digital asset\u2019s financial safety.",
+            "timestamp": 1653585598,
+            "title": "SafeMoon Crypto Investors Bring Another Class Action Fraud Suit",
+            "url": "https://news.bloomberglaw.com/class-action/safemoon-crypto-investors-bring-another-class-action-fraud-suit"
+        },
+        {
+            "rank": 12,
+            "snippet": "1 day ago -\n            r/<em>SafeMoon</em>: <em>SafeMoon</em> is a human-focused technology and innovation business expanding blockchain technologies for a brighter tomorrow.",
+            "timestamp": 1653585598,
+            "title": "r/SafeMoon",
+            "url": "https://www.reddit.com/r/SafeMoon/"
+        },
+        {
+            "rank": 13,
+            "snippet": "5 hours ago -\n            <em>SafeMoon</em> (<em>SAFEMOON</em>) price is back amongst the living after being in the dark for so long. Since the launch of the second version around December last",
+            "timestamp": 1653585598,
+            "title": "SafeMoon is about to enter its biggest bullish rally ever",
+            "url": "https://www.fxstreet.com/cryptocurrencies/news/safemoon-is-about-to-enter-its-biggest-bullish-rally-ever-202205231423"
+        },
+        {
+            "rank": 14,
+            "snippet": "April 17, 2022 -\n            \"How to buy <em>SafeMoon</em>\" is the question of the hour. <em>SafeMoon</em> is the newest crypto making waves on social media. Some believe it could be the next Dogecoin; others are skeptical. Either way, here\u2019s a",
+            "timestamp": 1653585598,
+            "title": "How to buy SafeMoon \u2014 the easiest way to buy the lunar-inspired ...",
+            "url": "https://www.laptopmag.com/how-to/how-to-buy-safemoon"
+        },
+        {
+            "rank": 15,
+            "snippet": "April 16, 2022 -\n            As the bitcoin market matures and digital assets generate interest, widespread pump and dump tactics proliferate. One example is <em>Safemoon</em>.",
+            "timestamp": 1653585598,
+            "title": "Former Safemoon Marketing Chief Accused Of Running $12 Million ...",
+            "url": "https://bitcoinist.com/former-safemoon-marketing-chief/"
+        },
+        {
+            "rank": 16,
+            "snippet": "We are investment experts with vast experience in all areas of cryptocurrency finances. In order to help every investor to get familiar with small-caps effectively, we created this guide. It comprises all vital steps one has to undertake to keep a portfolio of small-caps healthy and sustainably ...",
+            "timestamp": 1653585598,
+            "title": "Ultimate Guide to your Small-cap Investing - Moon Hunters - Google ...",
+            "url": "https://books.google.com/books?id=sdI3EAAAQBAJ&pg=PT27&lpg=PT27&dq=safemoon&source=bl&ots=LjjO_UvRWK&sig=ACfU3U3AykBVpleNbqfR13-jIgK8X7KiAQ&hl=en&sa=X&ved=2ahUKEwjv-7XbmPv2AhVkcDwKHZnyDaMQ6AF6BAgEEAM"
+        },
+        {
+            "rank": 17,
+            "snippet": "April 13, 2022 -\n            \"What is <em>SafeMoon</em>?\" is one of the most popular questions on Google as the lunar-inspired crypto takes over social media. This is an easy-to-understand explainer on <em>SafeMoon</em>.",
+            "timestamp": 1653585598,
+            "title": "What is SafeMoon? Where to buy it and more | Laptop Mag",
+            "url": "https://www.laptopmag.com/features/what-is-safemoon-the-new-crypto-craze-explained-like-youre-5"
+        },
+        {
+            "rank": 18,
+            "snippet": "3 weeks ago -\n            The litigation Tracker contains any case development related to the U.S. SEC, CFTC, the DOJ and class action/private litigation.",
+            "timestamp": 1653585598,
+            "title": "New crypto litigation tracker highlights 300 cases from SafeMoon ...",
+            "url": "https://cointelegraph.com/news/new-crypto-litigation-tracker-highlights-300-cases-from-safemoon-to-pepe-the-frog"
+        },
+        {
+            "rank": 19,
+            "snippet": "The Library Volume 16 in the Draoithe SagaProfessor Raddick Bain is a bit more than an absent-minded professor. He is a red dragon cockatrice in disguise. When the magic calls him to serve Draoithe, he drops everything to go east for a chance to be his dragon once more.",
+            "timestamp": 1653585598,
+            "title": "The Library: Volume 16 in the Draoithe Saga - Ophelia Kee - Google ...",
+            "url": "https://books.google.com/books?id=nbdMEAAAQBAJ&pg=PT185&lpg=PT185&dq=safemoon&source=bl&ots=Gg1KFZSH2n&sig=ACfU3U2huU_M84nVh6XppR05u3TutNU44w&hl=en&sa=X&ved=2ahUKEwjv-7XbmPv2AhVkcDwKHZnyDaMQ6AF6BAgDEAM"
+        }
+    ],
+    "timestamp": 1653585598,
+    "url": "https://search.brave.com/search?q=safemoon"
+}

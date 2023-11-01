@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Common use facilities",
+    "offset": null,
+    "page": null,
+    "query": "Common use facilities",
+    "results": [],
+    "timestamp": 1643636012,
+    "url": "https://www.bing.com/search?q=Common+use+facilities"
+}

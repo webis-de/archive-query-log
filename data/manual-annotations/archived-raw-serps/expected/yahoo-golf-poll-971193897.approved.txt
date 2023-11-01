@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "golf poll",
+    "offset": null,
+    "page": null,
+    "query": "golf poll",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 971193897,
+            "title": "1999 Harley-Davidson and Callaway <em>Golf</em> Club Raffle",
+            "url": "http://srd.yahoo.com/srst/22119666/golf+poll/1/1/*http://www.homefields.org"
+        }
+    ],
+    "timestamp": 971193897,
+    "url": "http://search.yahoo.com:80/search?p=golf+poll"
+}

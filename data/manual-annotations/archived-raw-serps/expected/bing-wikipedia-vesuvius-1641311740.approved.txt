@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "-wikipedia \"Vesuvius\"",
+    "offset": null,
+    "page": null,
+    "query": "-wikipedia \"Vesuvius\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "01/01/2022\u00a0\u00b7 <em>Vesuvius</em> in eruption, August 1779. This eruption was produced a spectacular lava fountains rising several km above the summit, and devastating tephra falls northeast of the volcano. Note the large glowing bombs in the fallout! (Image from Alfano and Friedlaender, 1928, La storia del Vesuvio. Napoli: K Holm, 71p.)",
+            "timestamp": 1641311740,
+            "title": "Earthquakes Today: latest earthquakes near <em>Vesuvius</em> ...",
+            "url": "https://www.volcanodiscovery.com/vesuvius-earthquakes.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Vesuvius</em> deliver solutions to our customers worldwide, improving their efficiency. The services we offer encompass design, engineering, products and operations management. Read more. Careers Join a talented team. The dedication and professionalism of our people is the most significant contributor to <em>Vesuvius</em>\u2019 asset.",
+            "timestamp": 1641311740,
+            "title": "<em>Vesuvius</em>",
+            "url": "https://www.vesuvius.com/en/index.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Mount <em>Vesuvius</em> is one of only two active volcanos in Continental Europe and stands about 1281 meters tall, with a symmetrical central cone and steep wooden slopes. The whole of the Mount <em>Vesuvius</em> National Park is both beautiful and productive, dotted with small farms and wineries planted with heirloom varietals boasting a unique terroir.",
+            "timestamp": 1641311740,
+            "title": "Mount <em>Vesuvius</em> - Tours and Day Trips to <em>Vesuvius</em>",
+            "url": "https://www.visitpompeiivesuvius.com/en/vesuvius"
+        },
+        {
+            "rank": 4,
+            "snippet": "Mount <em>Vesuvius</em> (Vesuvio), active volcano near Naples, Italy, famous for its eruption in 79 CE that destroyed the Roman cities of Pompeii, Stabiae, and Herculaneum. Scientific study of the volcano began in the late 18th century. Read here to learn more about Mount <em>Vesuvius</em>.",
+            "timestamp": 1641311740,
+            "title": "<em>Vesuvius</em> | Facts, Location, &amp; Eruptions | Britannica",
+            "url": "https://www.britannica.com/place/Vesuvius"
+        },
+        {
+            "rank": 5,
+            "snippet": "04/04/2016\u00a0\u00b7 Mount <em>Vesuvius</em> Introduction. <em>Vesuvius</em> is the only active volcano in mainland Europe, and has produced some of the continent's largest volcanic eruptions.Located on Italy's west coast, it overlooks the Bay and City of Naples and sits \u2026",
+            "timestamp": 1641311740,
+            "title": "<em>Mount Vesuvius, Italy</em>: Map, Facts, Eruption Pictures, Pompeii",
+            "url": "https://geology.com/volcanoes/vesuvius/"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Vesuvius</em> offers delicious pizza, sandwiches and burgers in Salem, MA. Our restaurant is located in the Vinnin Square area on the Salem and Swampscott line. We are at 2 Paradise Road, Salem, at the intersection of Paradise Road and Loring Avenue (Route 1A). We\u2019re right at the lights where the streets merge.",
+            "timestamp": 1641311740,
+            "title": "<em>Vesuvius</em>",
+            "url": "https://www.vesuviusalem.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "20/12/2017\u00a0\u00b7 Mount <em>Vesuvius</em> facts. <em>Vesuvius</em> in 2013 was 4,203 feet (1,281 meters) tall. After each eruption, the size of the cone changes, according to \u2026",
+            "timestamp": 1641311740,
+            "title": "Mount <em>Vesuvius</em> &amp; Pompeii: Facts &amp; History | Live Science",
+            "url": "https://www.livescience.com/27871-mount-vesuvius-pompeii.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "De <em>Vesuvius</em> is een van de bekendste vulkanen ter wereld. Hij ligt in Itali\u00eb, bij de stad Napels en hij heeft een doorsnede van 8 kilometer en is 1281 meter hoog. Hij is onder andere in 79, 1794, 1826, 1872, 1906, 1913, 1926, 1929 en 1944 uitgebarsten. Hij is ontstaan doordat de Afrikaanse aardplaat onder de Euraziatische aardplaat schoof.",
+            "timestamp": 1641311740,
+            "title": "<em>Vesuvius</em> - Wikikids",
+            "url": "https://wikikids.nl/Vesuvius"
+        },
+        {
+            "rank": 9,
+            "snippet": "26/12/2021\u00a0\u00b7 Spider-Man No Way Home, verso il miliardo di incassi: tutti i dati Tutti i dati sul nuovo film della Marvel (Via Screenshot) Il film conclusivo della \u2018Home Trilogy\u2018, ma non l\u2019ultimo in cui reciter\u00e0 Tom Holland, diventer\u00e0 l\u2019unico probabilmente ad entrare nel \u2018club dei miliardari\u2018.Inoltre va detto anche che il 2021 non \u00e8 stato un anno facilissimo per le sale cinematografiche che ...",
+            "timestamp": 1641311740,
+            "title": "Spiderman: No Way Home, un miliardo solo nel ... - <em>vesuvius</em>.it",
+            "url": "https://www.vesuvius.it/2021/12/26/spiderman-no-way-home-miliardo-record-incassi/"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Vesuvius</em> terminal is located on the northwest side of Salt Spring Island. Sailings departing from <em>Vesuvius</em> provide service to Crofton on Vancouver Island. Boarding is based on order of arrival at the terminal. Check-in closes: 3 minutes prior to the scheduled sailing for foot passengers; 5 minutes prior to the scheduled sailing for vehicles",
+            "timestamp": 1641311740,
+            "title": "Salt Spring Island (<em>Vesuvius</em> Bay) - Crofton | BC Ferries",
+            "url": "https://www.bcferries.com/routes-fares/schedules/daily/VES-CFT"
+        }
+    ],
+    "timestamp": 1641311740,
+    "url": "https://www.bing.com/search?q=-wikipedia+%22Vesuvius%22"
+}

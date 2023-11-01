@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "We Will Rock You%23yt",
+    "offset": null,
+    "page": null,
+    "query": "We Will Rock You%23yt",
+    "results": [],
+    "timestamp": 1587407460,
+    "url": "https://www.ecosia.org/search?q=We+Will+Rock+You%2523yt"
+}

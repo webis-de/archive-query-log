@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "newest call of duty game",
+    "offset": null,
+    "page": null,
+    "query": "newest call of duty game",
+    "results": [],
+    "timestamp": 1653477001,
+    "url": "https://duckduckgo.com/?q=newest+call+of+duty+game&t=ffab&atb=v325-4"
+}

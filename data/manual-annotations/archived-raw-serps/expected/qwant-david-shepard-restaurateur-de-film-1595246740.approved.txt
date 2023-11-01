@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\"David Shepard (restaurateur de film)\"",
+    "offset": null,
+    "page": null,
+    "query": "\"David Shepard (restaurateur de film)\"",
+    "results": [],
+    "timestamp": 1595246740,
+    "url": "https://www.qwant.com/?q=%22David+Shepard+(restaurateur+de+film)%22&t=all"
+}

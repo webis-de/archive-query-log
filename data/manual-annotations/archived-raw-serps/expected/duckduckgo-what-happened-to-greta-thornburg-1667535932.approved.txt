@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "what happened to greta thornburg",
+    "offset": null,
+    "page": null,
+    "query": "what happened to greta thornburg",
+    "results": [],
+    "timestamp": 1667535932,
+    "url": "https://duckduckgo.com/?q=what%20happened%20to%20greta%20thornburg&t=ffab"
+}

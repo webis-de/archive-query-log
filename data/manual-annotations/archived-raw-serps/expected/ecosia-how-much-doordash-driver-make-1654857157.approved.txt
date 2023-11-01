@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "how much doordash driver make",
+    "offset": null,
+    "page": null,
+    "query": "how much doordash driver make",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "In 2021, DoorDash drivers made an average of $15.60/hour (see chart below) from September 2020 to August 2021. But as any driver knows, the answer to earnings isn\u2019t that simple. While that\u2019s the average earnings for drivers to date, to understand how much you can potentially make with DoorDash, we need to consider the other factors that ...",
+            "timestamp": 1654857157,
+            "title": "2021 Update: How much do DoorDash drivers make? | Gridwise",
+            "url": "https://gridwise.io/2021-update-how-much-do-doordash-drivers-make"
+        },
+        {
+            "rank": 2,
+            "snippet": "DoorDash, after the tip and delivery fee debacle, raised the absolute minimum pay for a delivery from $1 to $2. Depending on how far the drives are, how long they take, and how much is in the order, some deliveries can be as much as $10 minimum. In 2019, DoorDash claimed drivers could earn around $18.50 per hour, but as you\u2019ll see from our ...",
+            "timestamp": 1654857157,
+            "title": "How much do DoorDash drivers make? | Gridwise",
+            "url": "https://gridwise.io/how-much-do-doordash-drivers-make"
+        },
+        {
+            "rank": 3,
+            "snippet": "Average DoorDash Pay. On average, you can expect to make roughly $15 to $25 an hour. DoorDash mentions drivers make an average of around $20 per hour, which is relatively accurate for most regular drivers who work for DoorDash. With enough commitment, you can easily earn up to $25 per hour.",
+            "timestamp": 1654857157,
+            "title": "How Much Does DoorDash Pay? Average, Hourly, and Monthly Income",
+            "url": "https://www.ridester.com/how-much-does-doordash-pay/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Ways DoorDash Drivers Make Money. Now, let\u2019s take a look at how DoorDash Drivers make money. Per Delivery. Dashers earn a set amount of money per delivery, which DoorDash calculates based on the delivery location. The app display how much the job will pay. Base pay per delivery depends on time, distance, and desirability. Base pay ranges from ...",
+            "timestamp": 1654857157,
+            "title": "How Much Do DoorDash Drivers Make? - Student Debt Relief",
+            "url": "https://www.studentdebtrelief.us/side-hustle/how-much-do-doordash-drivers-make/"
+        },
+        {
+            "rank": 5,
+            "snippet": "The following factors determine how much drivers make delivering for Doordash: The Doordash base pay or delivery fee; Doordash incentives such as Peak Pay; Customer tips; Market conditions where you deliver; Time; Expenses; The Doordash delivery fee. Doordash pays a delivery fee for each delivery. By their description, base pay ranges between ...",
+            "timestamp": 1654857157,
+            "title": "How Much Does Doordash Pay its Dashers? Understanding the Pay Model",
+            "url": "https://entrecourier.com/delivery/gig-delivery-platforms/doordash/doordash-strategies/how-much-does-doordash-pay/"
+        },
+        {
+            "rank": 6,
+            "snippet": "It\u2019s based on three factors: Base Pay: DoorDash\u2019s base contribution for each order. It ranges from $2 to $10, and it\u2019s a function of time, distance, and desirability of the order. If you get a call that\u2019s not-so-popular among drivers, your pay will be higher.",
+            "timestamp": 1654857157,
+            "title": "This is how much DoorDash drivers are making amid COVID-19",
+            "url": "https://gridwise.io/blog/rideshare/this-is-how-much-doordash-drivers-are-making-amid-covid-19/"
+        },
+        {
+            "rank": 7,
+            "snippet": "DoorDash drivers in Philadelphia, PA report earnings of about $15 \u2013 $25 per hour, which includes tips. Drivers in Philadelphia recommend driving in the Northern parts, where there are more suburban areas. Drivers recommend the suburbs since you deal with much less traffic, allowing you to complete more orders in a timely manner.",
+            "timestamp": 1654857157,
+            "title": "Doordash Driver Pay \u2013 Per Hour/Week/Month, Expenses, &amp; More",
+            "url": "https://therideshareguy.com/doordash-pay/"
+        },
+        {
+            "rank": 8,
+            "snippet": "DoorDash drivers make $15-$25/hour while on delivery. DoorDash pays drivers weekly, and you can pick the days and hours you work. Depending on the market, customers can use the DoorDash app to order: One of the things that many drivers like about DoorDash is that it\u2019s one of the more flexible food delivery services.",
+            "timestamp": 1654857157,
+            "title": "DoorDash Driver Review | How Much Can You Make?",
+            "url": "https://millennialmoneyman.com/doordash-driver-review/"
+        }
+    ],
+    "timestamp": 1654857157,
+    "url": "https://www.ecosia.org/search?q=how+much+doordash+driver+make"
+}

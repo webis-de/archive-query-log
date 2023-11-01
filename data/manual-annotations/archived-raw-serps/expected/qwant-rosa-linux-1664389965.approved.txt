@@ -1,0 +1,87 @@
+{
+    "interpreted_query": "\"ROSA Linux\"",
+    "offset": null,
+    "page": null,
+    "query": "\"ROSA Linux\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "ROSA Linux is a Linux operating system distribution, developed by the Russian company 'LLC NTC IT ROSA'. It is available in three different editions: ROSA Desktop Fresh, ROSA Enterprise Desktop, and ROSA Enterprise Linux Server, with the latter two aiming at commercial users. Its desktop computer editions come bundled with closed-source ...",
+            "timestamp": 1664389965,
+            "title": "ROSA Linux - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/ROSA_Linux"
+        },
+        {
+            "rank": 2,
+            "snippet": "Download Rosa Linux for free. Linux based operation system . ROSA is glad to announce a new release of its distribution for the Linux community - ROSA Desktop Fresh R1. ROSA Desktop Fresh R1 is a new name distributions based on the ROSA Fresh platform.",
+            "timestamp": 1664389965,
+            "title": "Rosa Linux download | SourceForge.net",
+            "url": "https://sourceforge.net/projects/rosalinux/"
+        },
+        {
+            "rank": 3,
+            "snippet": "\u041d\u0422\u0426 \u0418\u0422 \u0420\u041e\u0421\u0410 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u043d\u043e\u0432\u0443\u044e \u0432\u0435\u0440\u0441\u0438\u044e \u043e\u0442\u0435\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0441\u0440\u0435\u0434\u043e\u0439 \u0432\u0438\u0440\u0442\u0443\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438 ROSA Virtualization 2.1, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0430 \u0434\u043b\u044f \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u043d\u044b\u043c\u0438 \u0433\u0438\u043f\u0435\u0440\u0432\u0438\u0437\u043e\u0440\u0430\u043c\u0438 KVM \u0438 ...",
+            "timestamp": 1664389965,
+            "title": "\u041d\u0422\u0426 \u0418\u0422 \u0420\u041e\u0421\u0410 \u2014 \u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u0430\u044f \u0441\u0438\u0441\u0442\u0435\u043c\u0430",
+            "url": "https://www.rosalinux.ru/"
+        },
+        {
+            "rank": 4,
+            "snippet": "ROSA Linux is a Linux operating system and distribution, developed by Russian company LLC NTC IT ROSA. It is available in three different editions: ROSA Desktop Fresh, ROSA Enterprise Desktop, and ROSA Enterprise Linux Server, with the latter two aiming at commercial users. Its desktop editions come bundled with closed-source software such as ...",
+            "timestamp": 1664389965,
+            "title": "ROSA Linux: App Reviews, Features, Pricing &amp; Download - AlternativeTo",
+            "url": "https://alternativeto.net/software/rosa-linux/about/"
+        },
+        {
+            "rank": 5,
+            "snippet": "ROSA Linux is an RPM based Linux distribution that was forked from Mandriva Linux. ROSA is a Russian company that is developing a multiple Linux-based solutions of which ROSA Desktop is its flagship product. For their latest version ROSA Fresh R10, they offer Plasma 5, LXQt and curiously, Plasma 4. It is also this weeks\u2026",
+            "timestamp": 1664389965,
+            "title": "ROSA Linux | Review from an openSUSE User \u2013 CubicleNate's Techpad",
+            "url": "https://cubiclenate.com/2019/01/26/rosa-linux-review-from-an-opensuse-user/"
+        },
+        {
+            "rank": 6,
+            "snippet": "The LLC NTC IT ROSA company presents X4 (RED X4), a new version of the home made commercial Linux distribution ROSA Enterprise Desktop. This new version of OS benefits from all the advanced features of our well-known community-driven distribution ROSA Fresh: compliance with a waste range of hardware configurations; extremely easy to install and ...",
+            "timestamp": 1664389965,
+            "title": "A new platform for the ROSA Enterprise Desktop \u2014 \u041d\u0422\u0426 \u0418\u0422 \u0420\u041e\u0421\u0410",
+            "url": "https://www.rosalinux.ru/a-new-platform-for-the-rosa-enterprise-desktop/"
+        },
+        {
+            "rank": 7,
+            "snippet": "ROSA is a Russian company developing a variety of Linux-based solutions. Its flagship product, ROSA Desktop, is a Linux distribution featuring a highly customised KDE desktop and a number of modifications designed to enhance the user-friendliness of the working environment. The company also develops an \"Enterprise Server\" edition of ROSA which ...",
+            "timestamp": 1664389965,
+            "title": "DistroWatch.com: ROSA",
+            "url": "https://distrowatch.com/table.php?distribution=rosa"
+        },
+        {
+            "rank": 8,
+            "snippet": "ROSA Linux is described as 'Linux operating system and distribution, developed by Russian company LLC NTC IT ROSA.It is available in three different editions: ROSA Desktop Fresh (GNOME and KDE), ROSA Enterprise Desktop, and ROSA Enterprise Linux Server' and is a operating system in the os &amp; utilities category. There are more than 100 alternatives to ROSA Linux for a variety of platforms ...",
+            "timestamp": 1664389965,
+            "title": "ROSA Linux Alternatives: 25+ Operating Systems and Linux Distros ...",
+            "url": "https://alternativeto.net/software/rosa-linux/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Rosa is a Russian company with a variety of Linux-based solutions. Its flagship product, Rosa Desktop, is a Linux distribution featuring a highly customized KDE desktop and a number of modifications designed to enhance the user-friendliness of the working environment. The company also develops an Enterprise Server edition of Rosa, which is ...",
+            "timestamp": 1664389965,
+            "title": "Rosa Is a Real Powerhouse | LinuxInsider",
+            "url": "https://www.linuxinsider.com/story/rosa-is-a-real-powerhouse-83087.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "ROSA caught my attention, as the versions of gcc, glibc, X11 et cetera look quite old, like in enterprise linux. However, it is Russian. I recently tried ALT linux, also Russian and that is hopeless if you don't speak Russian. ROSA at least has an English-language forum, although not a lot of activity. 4 comments.",
+            "timestamp": 1664389965,
+            "title": "any experience with ROSA linux? : linuxquestions - reddit",
+            "url": "https://www.reddit.com/r/linuxquestions/comments/k6z4d1/any_experience_with_rosa_linux/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Viable Open Source Technology with Numerous Tools, Resources, and a Robust Ecosystem. Build Mission-Critical Intelligent Edge Systems that Require Safety Security &amp; Reliability",
+            "timestamp": 1664389965,
+            "title": "Wind River Linux OS - Embedded Operating System",
+            "url": "https://www.bing.com/aclick?ld=e8LBDDnGNxButCUQTeX3ZRwTVUCUzAR4uR03kNdjsV8IiNSnTXFPdN7_Jr1LJDNlTjXCtdgs9UYziwdWlGBggux0gBRkZO28WxdYqG4SpvuAdKGowW0wD5fTjU6HIhmULQMsxyWyrRunGeUloGbJe1gRJfRSkcaT5jBeFMbkyt4Ycrn_ak&u=aHR0cHMlM2ElMmYlMmZ3d3cud2luZHJpdmVyLmNvbSUyZnByb2R1Y3RzJTJmbGludXglMmYlM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RzZW0lMjZ1dG1fY2FtcGFpZ24lM2R2cC1kZy1hbWVyLXZocy1zZW0tbGludXgtZXhhY3QtYnJhbmQtMTAwMTIwMjFodHRwcyUzYSUyZiUyZnd3dy53aW5kcml2ZXIuY29tJTJmcHJvZHVjdHMlMmZsaW51eCUyZiUzZnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZHNlbSUyNnV0bV9jYW1wYWlnbiUzZHZwLWRnLWFtZXItdmhzLXNlbS1saW51eC1waHJhc2UtYnJhbmQtMTAwMTIwMjElMjZtc2Nsa2lkJTNkMDIyMDA2ZDdkZDFmMWVkODg1ZWQ2NWUzNzI3MWJmNDIlMjZ1dG1fdGVybSUzZGxpbnV4JTI1MjBvcyUyNnV0bV9jb250ZW50JTNkQU1FUi1MSU5VWC1QSFJBU0UtQi1PUw&rlid=022006d7dd1f1ed885ed65e37271bf42"
+        }
+    ],
+    "timestamp": 1664389965,
+    "url": "https://www.qwant.com/?q=%22ROSA+Linux%22&t=all"
+}

@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "masi uno riser chain cover",
+    "offset": null,
+    "page": null,
+    "query": "masi uno riser chain cover",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "April 8, 2020 -\n            <em>Masi</em> <em>Uno</em> <em>Riser</em> \u2013 Cycle Analysis (541) 899-9190 110 N Fifth St, Jacksonville, OR 97530 info@cycleanalysis.net Tues-Fri 10-6 &amp; Sat 10-4 Home / Shop / <em>Masi</em> / Urban Steel / <em>Masi</em> <em>Uno</em> <em>Riser</em> <em>Masi</em> <em>Uno</em> <em>Riser</em> $ 469.99 &lt;h4&gt;&lt;strong&gt;Uno Riser&lt;/strong&gt;&lt;/h4&gt; The perfect bike for no-handed skids, weekend ...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser \u2013 Cycle Analysis",
+            "url": "https://www.cycleanalysis.net/shop/masi/urban-steel/masi-uno-riser/"
+        },
+        {
+            "rank": 2,
+            "snippet": "\u2022 Frame : Fixed <em>Riser</em> | Tig welded steel | 1.125\u2033 head tube | 68mm BSA threaded bottom bracket | Horizontal track dropouts \u2022 Fork : <em>Masi</em> Fixie | Chromoly straight blades | 1.125\u2033 steer tube \u2022 Crankset : Alloy 44T | 1/8\u2033 Chainring \u2022 Pedals : Nylon Test Ride \u2022 <em>Chain</em> : KMC Z410 ...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser \u2013 Black \u2013 Pop A Wheelie",
+            "url": "http://www.popawheelie.ca/product/masi-uno-riser-black/"
+        },
+        {
+            "rank": 3,
+            "snippet": "September 6, 2012 -\n            Frame: <em>Masi</em> 100% crmo Fork: <em>Masi</em> straight leg crmo Cranks: Brev. M Retro alloy, 46t chainring Pedals: Wellgo plastic platform <em>Chain</em>: Taya 410B Bottom Bracket: FASA square taper Freewheel/Cassette: 16t fixed cog w/ lock ring &amp; 16t freewheel Tires: Brev. M Slittata 28c Wheels/Rims: Weinmann LP18 ...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi \u2013 Fixed Uno Riser | The iNDi Bike Shop",
+            "url": "https://indibikeshop.wordpress.com/2012/09/06/masi-fixed-uno-riser/"
+        },
+        {
+            "rank": 4,
+            "snippet": "The <em>Uno</em> <em>Riser</em> does it all with effortless style and a smile. Now more that ever Fixed is about more options and few limitations, that's why its equipped with a flip flop hub that allows you to go from fixed gear to freewheel and back again. The <em>riser</em> handlebar delivers stellar handling and ...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Haro Bikes - Masi - Uno Riser 2019",
+            "url": "https://archive.harobikes.com/masi/2019-masi/uno-riser-2019"
+        },
+        {
+            "rank": 5,
+            "snippet": "The <em>Masi</em> <em>Uno</em> <em>Riser</em> Urban Bike '15 does it all, with effortless style and a smile. Now more than ever, Fixed is about more options and fewer limitations. The addition of a <em>riser</em> handlebar creates a new dynamic between rider and machine. Live and learn about the endless possibilities of a single gear; you won\u0092t regret it.",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser Urban Bike '15 - Sun &amp; Ski Sports",
+            "url": "https://www.sunandski.com/p/7720056651500/masi-uno-riser-urban-bike"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Masi</em> really knows how to build bikes for the urban environment, and the Fixed <em>Uno</em> <em>Riser</em> is born from that experience. This light, lively chromoly machine gets up to speed with ease and handles the...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser | Orange - redbike",
+            "url": "https://www.redbike.ca/product/masi-uno-riser-orange-795.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "Fixed <em>Uno</em> <em>Riser</em> . Year: 2013; MSRP: $599.99 * ... Weight: 21.9 lbs; FEATURES. <em>Masi</em> 100% crmo frame with <em>Masi</em> track dropouts; <em>Masi</em> 100% crmo fork; Alloy Retro crankset 46T with sealed cartridge BB; 16T cog w/ Lida freewheel included; Brev. M alloy <em>riser</em> bar / Brev.",
+            "timestamp": 1658006343,
+            "title": "<em></em>Haro Bikes - Masi - Fixed Uno Riser 2013",
+            "url": "https://archive.harobikes.com/masi/2013-masi/fixed-uno-riser-2013"
+        },
+        {
+            "rank": 8,
+            "snippet": "A 700c steel frame hipster bike with rim brakes, one of two builds in the <em>Uno</em> model range.",
+            "timestamp": 1658006343,
+            "title": "<em></em>2019 Masi Uno Riser \u2013 Specs, Comparisons, Reviews \u2013 99 Spokes",
+            "url": "https://99spokes.com/bikes/masi/2019/uno-riser"
+        },
+        {
+            "rank": 9,
+            "snippet": "The perfect bike for no-handed skids, weekend bike polo or just ripping the city streets. The <em>Uno</em> <em>Riser</em> does it all with effortless style and a smile.",
+            "timestamp": 1658006343,
+            "title": "<em></em>MASI UNO RISER GLOSS BLACK - Ride Away Bikes T1",
+            "url": "https://www.rideawaybikes.ca/masi-uno-riser-gloss-black.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "April 18, 2020 -\n            The perfect bike for no-handed skids, weekend bike polo or just ripping the city streets. The <em>Uno</em> <em>Riser</em> does it all with effortless style and a smile. Now more that ever Fixed is about more options and few limitations, that\u2019s why its equipped with a flip flop hub that allows you to go from ...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser \u2013 Joe Mamma Cycles",
+            "url": "https://www.joemammacycles.com/products/maxi-uno-riser"
+        },
+        {
+            "rank": 11,
+            "snippet": "MSRP: $569.99 * Sizes: 49cm, 51cm, 53cm, 56cm, 58cm, 60cm Colors: Burnt Orange Weight: 22.7 lbs The perfect bike for no-handed skids, weekend Bike Polo or just ripping the city streets. The <em>Uno</em> <em>Riser</em> does it all, with effortless style and a smile. Now more than ever, Fixed is about more options ...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Haro Bikes - Masi - Fixed Uno Riser 2016",
+            "url": "https://archive.harobikes.com/masi/2016-masi/fixed-uno-riser-2016"
+        },
+        {
+            "rank": 12,
+            "snippet": "<em>UNO</em> <em>RISER</em> - GLOSS BLACK 2021 \u2022 Frame : Fixed <em>Riser</em> | Tig welded steel | 1.125\" head tube | 68mm BSA threaded bottom bracket | Horizontal track dropouts\u2022 Fork : <em>Masi</em> Fixie | Chromoly straight blades | 1.125\" steer tube\u2022 Crankset : Alloy 44T | 1/8\" Chainring\u2022 Pedals : Nylon Test Ride\u2022 ...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser Single Speed \u2013 Brockton Cyclery",
+            "url": "https://www.brocktoncyclery.com/products/masi-uno-riser-single-speed"
+        },
+        {
+            "rank": 13,
+            "snippet": "September 3, 2014 -\n            Singlespeed &amp; Fixed Gear - Opinions of the <em>Masi</em> Fixed <em>Uno</em> <em>Riser</em> - I'm kicking around buying a 2014 <em>Masi</em> Fixed <em>Uno</em> <em>Riser</em> and would appreciate feedback and the opinions of any forum members who have one.",
+            "timestamp": 1658006343,
+            "title": "<em></em>Opinions of the Masi Fixed Uno Riser - Bike Forums",
+            "url": "https://www.bikeforums.net/singlespeed-fixed-gear/969822-opinions-masi-fixed-uno-riser.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Track/Fixed-gear bike with 5 sizes. Find your ideal bike using bike-on-bike geometry comparisons with diagrams, powerful search tools, and category analysis.",
+            "timestamp": 1658006343,
+            "title": "<em></em>2019 Masi Bikes Uno Riser - Bike Insights",
+            "url": "https://bikeinsights.com/bikes/5ebe30e9dd51830017c37a70-masi-bikes-uno?build=riser&version=2019"
+        },
+        {
+            "rank": 15,
+            "snippet": "October 18, 2021 -\n            <em>Masi</em> <em>Uno</em> <em>Riser</em> 2018 - View specs, geometry, related models &amp; in-depth analysis.",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser 2018 | Bikes.fan",
+            "url": "https://bikes.fan/masi-uno-riser-2018/"
+        },
+        {
+            "rank": 16,
+            "snippet": "<em>Masi</em> <em>Uno</em> <em>Riser</em> \u2013 Black $ 650.00 The perfect bike for no-handed skids, weekend bike polo, or just ripping the city streets. The <em>Uno</em> <em>Riser</em> does it all with effortless style and a smile.",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser \u2013 Black \u2013 Wheels of Lakeshore",
+            "url": "https://www.wheelsoflakeshore.com/product/masi-uno-riser-black/"
+        },
+        {
+            "rank": 17,
+            "snippet": "The perfect bike for no-handed skids, weekend Bike Polo or just ripping the city streets. The Uno Riser does it all, with effortless style and a smile. Now more than ever, Fixed is about more options and fewer limitations. The addition of a riser handlebar creates a new dynamic between rider and machine. Live and learn about the endless possibilities of a single gear; you won\u2019t regret it. \u00b7 Features: \u00b7 Masi 100% chromoly frame w/ Masi track dropouts \u00b7 Masi straight leg chromoly fork \u00b7 Alloy Retro crankset 46t w/ sealed BB \u00b7 Brev. M alloy riser bar &amp; Brev. M alloy flip/flop stem \u00b7 Brev. M no fl",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Fixed Uno Riser - Greenstreet Cycles",
+            "url": "https://greenstreetcycles.com/products/masi-fixed-uno-riser"
+        },
+        {
+            "rank": 18,
+            "snippet": "The perfect bike for no-handed skids, weekend bike polo, or just ripping the city streets. The <em>Uno</em> <em>Riser</em> does it all with effortless style and a smile. Now more that ever Fixed is about more...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser - - Capitol Cyclery",
+            "url": "https://www.capitolcyclery.com/product/masi-uno-riser-352054-1.htm"
+        },
+        {
+            "rank": 19,
+            "snippet": "The <em>riser</em> handlebar delivers stellar handling and control, while a wider rim profile accommodates more rubber and superior grip. Live and learn about the endless possibilities of a single gear and take your riding to the next level. - Constructed from chromoly TIG welded tubing with track dropouts ...",
+            "timestamp": 1658006343,
+            "title": "<em></em>Masi Uno Riser - Don's Bicycles | Rialto &amp; Redlands, CA",
+            "url": "https://www.donsbikeshop.com/product/masi-uno-riser-352054-1.htm"
+        },
+        {
+            "rank": 20,
+            "snippet": "The perfect bike for no-handed skids, weekend bike polo or just ripping the city streets. The Uno Riser does it all with effortless style and a smile. Now more that ever Fixed is about more options and few limitations, that's why its equipped with a flip flop hub that allows you to go from fixed gear to freewheel and back again. The riser handlebar delivers stellar handling and control while a wider rim profile accommodates more rubber and superior grip. Live and learn about the endless possibilities of a single gear and take your riding to the next level.\nFEATURES\n\nConstructed from chromoly t",
+            "timestamp": 1658006343,
+            "title": "<em></em>MASI Uno Riser Black \u2013 Ride Away Bikes",
+            "url": "https://rideawaybikes.ca/collections/current-favourites/products/masi-uno-riser-black"
+        }
+    ],
+    "timestamp": 1658006343,
+    "url": "https://search.brave.com/search?q=masi+uno+riser+chain+cover"
+}

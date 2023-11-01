@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "trouv\u00e9 arc bf4",
+    "offset": null,
+    "page": null,
+    "query": "trouv\u00e9 arc bf4",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Free 2-Day Shipping on Millions of Items. No Membership Fee. Shop Now!",
+            "timestamp": 1625314405,
+            "title": "Video Games at Walmart\u00ae - Save On Quality Video Games",
+            "url": "https://www.bing.com/aclick?ld=e8Iol5uRDWRtgd0qG8aGJ4HjVUCUweH_sNOmeiCI6hKesWDrCX1534Cd2Qq7_2nmw_jHounnfU-T1UhRkZEX3kx2CI46NY-kF4tzyyRx_bsz8jFeOpXVuBYhi4BMiRSwRdU0hY1wpdylZmvnrKCHKA9V0_8ccf-lpdoGU0leOGW1LIFnqs&u=aHR0cCUzYSUyZiUyZmNsaWNrc2VydmUuZGFydHNlYXJjaC5uZXQlMmZsaW5rJTJmY2xpY2slM2ZsaWQlM2Q0MzcwMDA2MTI3NTExOTIxMSUyNmRzX3Nfa3dnaWQlM2Q1ODcwMDAwNjc2MTkzODMwNCUyNmRzX2FfY2lkJTNkNjYyNTg3MTQ4JTI2ZHNfYV9jYWlkJTNkMTI0MjA0MTIzMDIlMjZkc19hX2FnaWQlM2QxMjE5NDQzMTA3MjclMjZkc19hX2xpZCUzZGt3ZC0xMTg1ODY5OTM4NzM5JTI2JTI2ZHNfZV9hZGlkJTNkMTAzODM5NjA2MTklMjZkc19lX3RhcmdldF9pZCUzZGt3ZC02NDAwNjQzODAwNiUzYWxvYy0xOTAlMjYlMjZkc191cmxfdiUzZDIlMjZkc19kZXN0X3VybCUzZGh0dHBzJTNhJTJmJTJmd3d3LndhbG1hcnQuY29tJTJmc2VhcmNoJTJmJTNmcXVlcnklM2RjYWxsJTJib2YlMmJkdXR5JTJiYmF0dGxlZmllbGQlMmI0JTI2YWRpZCUzZDIyMjIyMjIyMjI0MzEzMzM3ODA5JTI2d21sc3BhcnRuZXIlM2R3bXRsYWJzJTI2d2wwJTNkcCUyNndsMSUzZHMlMjZ3bDIlM2RjJTI2d2wzJTNkMTAzODM5NjA2MTklMjZ3bDQlM2Rrd2QtNjQwMDY0MzgwMDYlM2Fsb2MtMTkwJTI2d2w1JTNkNzEzMjYlMjZ3bDYlM2QlMjZ3bDclM2QlMjZ3bDE0JTNkdHJvdXYlYzMlYTklMjUyMGFyYyUyNTIwYmY0JTI2dmVoJTNkc2VtJTI2Z2NsaWQlM2Q3MTY4YzI2NGMyZTMxMzI0ZTI4ZGEyODRiMjY1MWRiMyUyNmdjbHNyYyUzZDNwLmRzJTI2JTI2bXNjbGtpZCUzZDcxNjhjMjY0YzJlMzEzMjRlMjhkYTI4NGIyNjUxZGIz&rlid=7168c264c2e31324e28da284b2651db3"
+        },
+        {
+            "rank": 2,
+            "snippet": "Discover Savings on Video Games &amp; More. Shop Video Games &amp; More. Get Great Deals at Target\u2122 Today.",
+            "timestamp": 1625314405,
+            "title": "Find Video Games Now - Target\u2122 - Official Site",
+            "url": "https://www.bing.com/aclick?ld=e8_9cN7aHV-inATmnHXuXp5TVUCUxFF6xZkPdBcUevc1MHBmqbYMfJf-4h30uN6Yr9GDzYV0WdF8U_0vu_4RmZm7gl65Wc0Hqh8D1h1cGsh4tTQHDnGPVZrtntt32eepaSNKMISu4lC-jw3V8x4AxQeU6Egj46liUJIMQu0eBomc0CY3YT&u=aHR0cHMlM2ElMmYlMmZjbGlja3NlcnZlLmRhcnRzZWFyY2gubmV0JTJmbGluayUyZmNsaWNrJTNmbGlkJTNkNDM3MDAwMTU5ODcwMDQxNDMlMjZkc19zX2t3Z2lkJTNkNTg3MDAwMDIwMzkzODg5NjYlMjZkc19hX2NpZCUzZDQwNTUyNDU5NCUyNmRzX2FfY2FpZCUzZDkyMjQzMzE1OTIlMjZkc19hX2FnaWQlM2Q5MzczMzc4NzczNSUyNmRzX2FfbGlkJTNka3dkLTI5NjY0NDY1MjA0NSUyNiUyNmRzX2VfYWRpZCUzZDgxMjk1MjEyNTczNDcyJTI2ZHNfZV90YXJnZXRfaWQlM2Rrd2QtNzI1OTk0MDQ3OTIlM2Fsb2MtMTkwJTI2JTI2ZHNfdXJsX3YlM2QyJTI2ZHNfZGVzdF91cmwlM2RodHRwcyUzYSUyZiUyZnd3dy50YXJnZXQuY29tJTJmcyUyZnBsYXlzdGF0aW9uJTJiNCUyYmJhdHRsZWZpZWxkJTJiNCUzZnJlZiUzZHRndF9hZHZfWFMwMDAwMDAlMjZBRklEJTNkbXNuJTI2Zm5kc3JjJTNkdGd0YW8lMjZERkElM2Q3MTcwMDAwMDAxMjUxOTUyMiUyNkNQTkclM2RWaWRlbyUyNTJCR2FtZXNfQ29uc29sZSUyYkdhbWVzJTI1N0NWaWRlbyUyNTJCR2FtZXNfRWNvbW1fSGFyZGxpbmVzJTI2YWRncm91cCUzZFZpZGVvJTJiR2FtZSUyYi0lMmJDb25zb2xlJTJiR2FtZXNfNSUyNkxJRCUzZDcwMDAwMDAwMTE3NjMxMCUyNkxOTSUzZHBsYXlzdGF0aW9uJTJiNCUyYmJhdHRsZWZpZWxkJTJiNCUyNk1UJTNkcCUyNm5ldHdvcmslM2RzJTI2ZGV2aWNlJTNkYyUyNmxvY2F0aW9uJTNkNzEzMjYlMjZ0YXJnZXRpZCUzZGt3ZC03MjU5OTQwNDc5MiUzYWxvYy0xOTAlMjZnY2xpZCUzZGQzMjNiZGQzNjdmNjE4OTY3ZThjZGQzMzE3NzA2YzAxJTI2Z2Nsc3JjJTNkM3AuZHMlMjZkc19ybCUzZDEyNDY5NzglMjZkc19ybCUzZDEyNDgwOTklMjZtc2Nsa2lkJTNkZDMyM2JkZDM2N2Y2MTg5NjdlOGNkZDMzMTc3MDZjMDE&rlid=d323bdd367f618967e8cdd3317706c01"
+        },
+        {
+            "rank": 3,
+            "snippet": "Read Customer Reviews &amp; Find Best Sellers. Free 2-Day Shipping w/Amazon Prime.",
+            "timestamp": 1625314405,
+            "title": "Battlefield 4 Hardline - Shop Low Prices &amp; Top Brands",
+            "url": "https://www.bing.com/aclick?ld=e8m46Fu7Srwby1oZNI4wlCmDVUCUy6SRCacfus-TN0S8vLVIEP65qey-557MLPFV7KfKIyRbW_ZgNsO1e4txdhx-d-VlrHNLs7DCW3WOCHCTAfTu1PR1zDtqeK2hkM1LXa0WF00kTaBdPNH1ei4oVSdXqnmjuhxlxkq_ZdOSh1gYQr75bx&u=aHR0cCUzYSUyZiUyZnd3dy5hbWF6b24uY29tJTJmcyUyZiUzZmllJTNkVVRGOCUyNmtleXdvcmRzJTNkYmF0dGxlZmllbGQlMmI0JTJiaGFyZGxpbmUlMjZ0YWclM2RtaDBiLTIwJTI2aW5kZXglM2RhcHMlMjZodmFkaWQlM2Q3NzY1MzA2MjEyNDAzNSUyNmh2cW10JTNkcCUyNmh2Ym10JTNkYmIlMjZodmRldiUzZGMlMjZyZWYlM2RwZF9zbF80YzBqM2VmZGJ3X2I&rlid=d450e7f26c9313dc754187121c15a456"
+        },
+        {
+            "rank": 4,
+            "snippet": "Find Battlefield 4: Shop a large selection &amp; find incredible deals at BEST-DEAL.com! Get Best Deals online and save - Find all Brands &amp; Top Shops at BEST-DEAL.com!",
+            "timestamp": 1625314405,
+            "title": "Now Cheap Battlefield 4 Deals - Find great bargains online now",
+            "url": "https://www.bing.com/aclick?ld=e8aS9kDKglujneqEAad9WS3jVUCUyb2CHqlrMN9zrh-tbDng-KYzkvv5gkY4eUal0KDa9YkbA2H-Qslu1hIxcnpb9ZjG8vDrA2Cm_XM5ltc50IJE2RECWnU-hIfXA45r7DIV0sOgQwFNrE3lvXEkXr8slXlVvxF0URM6f3aiJpMaJB0kIA&u=aHR0cHMlM2ElMmYlMmZ3d3cuYmVzdC1kZWFsLmNvbSUyZnNlYXJjaCUyZmxhbmRpbmclMmZxdWVyeSUyZmJhdHRsZWZpZWxkJTJiNCUyZnMlMmZ5YWhvbyUyZiUzZm1zY2xraWQlM2Q0YmQ4ZjNkMDM4NTMxOGZjZmJhNzkzMzA0OGQ1YzEzZiUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZFRveXMlMjUyMCUyNTI2JTI1MjBHYW1lcyUyNTIwLSUyNTIwRGVsdGElMjUyMEdvb2dsZSUyNTIwMSUyNnV0bV90ZXJtJTNkYmF0dGxlZmllbGQlMjUyMDQlMjZ1dG1fY29udGVudCUzZGJhdHRsZWZpZWxkJTI1MjA0&rlid=4bd8f3d0385318fcfba7933048d5c13f"
+        },
+        {
+            "rank": 5,
+            "snippet": "Battlefield 4 : D\u00e9bloquer l\u2019arc. Pour les courageux voulant se balader sur le champ de bataille avec un arc, voici un petit guide. Avant tout, sachez que l'arc est r\u00e9serv\u00e9 aux joueurs Premium . Si vous n'avez pas connaissance des missions Phantom, rendez vous dans le leaderbord du battlelog. En bas \u00e0 gauche de l'\u00e9cran vous verrez un ...",
+            "timestamp": 1625314405,
+            "title": "Battlefield 4 : D\u00e9bloquer l'arc - Game-Guide",
+            "url": "https://game-guide.fr/133971-battlefield-4-debloquer-larc/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Final Stand, le nouveau DLC de Battlefield 4, vient de sortir. Parmi les nouvelles armes qu'il propose, l'arc Phantom est sans doute l'une des plus puissantes, et l&amp;\u2026",
+            "timestamp": 1625314405,
+            "title": "Battlefield 4 : le guide pour d\u00e9bloquer l'arc Phantom sur ...",
+            "url": "https://gaming.gentside.com/battlefield-4/battlefield-4-le-guide-pour-debloquer-l-arc-phantom-sur-final-stand_art2958.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Par contre j'ai d\u00e9couvert apr\u00e8s sur youtube qu'il faut activer la mission phantom dans la pi\u00e8ce o\u00f9 se trouve l'arc :/ Du coup j doit y retourner :/ 04.20h ce matin , j'y suis retourner pour activ\u00e9 la derni\u00e8re mission phantom , pareil , sur un serveur au pif , on est descendu \u00e0 5 ! ! ! 4 sniper et 1 ing\u00e9nieur !",
+            "timestamp": 1625314405,
+            "title": "De l'aide pour r\u00e9cup - Forum - Battlelog / Battlefield 4",
+            "url": "http://battlelog.battlefield.com/bf4/fr/forum/threadview/2955064787047160484/"
+        },
+        {
+            "rank": 8,
+            "snippet": "voici une petite vid\u00e9o dans la quel je vous pr\u00e9sente l'arc, j'ai \u00e9t\u00e9 d\u00e9\u00e7us de cette arme qui ma pris beaucoup de temps a d\u00e9bloquer elle n'est pas pr\u00e9cise a longue port\u00e9e, ne tue pas en ...",
+            "timestamp": 1625314405,
+            "title": "Battlefield 4 Xbox one PHANTOM BOW gameplay HD - YouTube",
+            "url": "https://www.youtube.com/watch?v=qG1c0Xuepkg"
+        },
+        {
+            "rank": 9,
+            "snippet": "Trouv\u00e9 dans le BF4 CTE (2\u00e8me b\u00eata de Final Stand) que si vous explosez le Hover Tank les parties du tank auront un code QR. Fichier du jeu trouv\u00e9 par RadGamerDan : Ce QRCode renvoie la valeur 42. Cela peut-\u00eatre: \u2022 BF2142 ou BF1942 \u2022 kevinsimpson1942 \u2022 42, la r\u00e9ponse \u00e0 la question de l'univers, etc...",
+            "timestamp": 1625314405,
+            "title": "BF4 PP4 Recherche MDP - Google Docs",
+            "url": "https://docs.google.com/document/d/16kV9vv0N3NBwUfmeiesEOrzJhovakID6eJyqaWVazqc/edit#!"
+        },
+        {
+            "rank": 10,
+            "snippet": "La version PC de Battlefield 4 vient de recevoir une mise \u00e0 jour substantielle pour am\u00e9liorer la stabilit\u00e9 du jeu et faire la chasse aux bugs. Le patch sera accompagn\u00e9 de temps d'arr\u00eat des serveurs, et les joueurs risquent donc de rencontrer quelques soucis de connexions dans les heures \u00e0 venir. Niveau contenu, le patch inclut les corrections pour les sons manquants et les murs ...",
+            "timestamp": 1625314405,
+            "title": "BF4 : Un patch PC pour am\u00e9liorer les performances",
+            "url": "https://www.zeden.net/actu/21657-BF4-Un-patch-PC-pour-ameliorer-les-performances"
+        },
+        {
+            "rank": 11,
+            "snippet": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+            "timestamp": 1625314405,
+            "title": "YouTube",
+            "url": "https://www.youtube.com/"
+        },
+        {
+            "rank": 12,
+            "snippet": "Family Owned + Operated for Over 40 Years. It's All About Family. From our humble start in Don Kotula\u2019s garage back in 1981, all the way to our current status as the ultimate destination for hard-working do-it-yourselfers and professionals, Northern Tool + Equipment has always been a family-owned and operated business that puts the customer first.",
+            "timestamp": 1625314405,
+            "title": "Northern Tool - Quality Tools for Serious Work",
+            "url": "https://www.northerntool.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": "The Steam Summer Sale is on now! Find great deals on thousands of games! Plus, visit genre pages to earn stickers and a special badge while completing your Forge Your Fate story book.",
+            "timestamp": 1625314405,
+            "title": "Welcome to Steam",
+            "url": "https://store.steampowered.com/"
+        },
+        {
+            "rank": 14,
+            "snippet": "Find out the latest Ragnarok info in our iRO / kRO item database, monster database, skill database, guide database, map database and creation database. Read and write reviews on RO Private Servers. Play with our skill simulator. Download BGM Remixes mp3, RO tools and even RO midis!",
+            "timestamp": 1625314405,
+            "title": "RateMyServer.Net :: RO Database &amp; Server Reviews",
+            "url": "https://ratemyserver.net/"
+        }
+    ],
+    "timestamp": 1625314405,
+    "url": "https://www.qwant.com/?q=trouv%C3%A9+arc+bf4&client=brz-brave"
+}

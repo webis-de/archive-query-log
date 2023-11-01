@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Future Planning\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Future Planning\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Learn more about The Arc and about how the Center for Future Planning\u00ae is supporting and encouraging families to plan for the future.",
+            "timestamp": 1648480487,
+            "title": "The Arc's Center for Future Planning",
+            "url": "https://www.google.com/url?q=https://futureplanning.thearc.org/&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAEQAg&usg=AOvVaw3WM4248xyTY3IZt3o9Yn5q"
+        },
+        {
+            "rank": 8,
+            "snippet": "Planning for the future is important for all families. You can't do it just once. It's an ongoing process.The Build Your Plan \u00ae tool helps people with\u00a0...",
+            "timestamp": 1648480487,
+            "title": "AboutContact UsLoginEn Espa\u00f1ol - The Arc's Center for Future ...",
+            "url": "https://www.google.com/url?q=https://futureplanning.thearc.org/landing&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAoQAg&usg=AOvVaw24gmJWsPcwg1q3BUj3ImUZ"
+        },
+        {
+            "rank": 9,
+            "snippet": "INTRODUCTION. This workbook can be used alone to help you explore your interests, dreams and goals or in preparation for a formal planning meeting.",
+            "timestamp": 1648480487,
+            "title": "[PDF] My Future Planning Workbook - URMC",
+            "url": "https://www.google.com/url?q=https://www.urmc.rochester.edu/MediaLibraries/URMCMedia/strong-center-developmental-disabilities/documents/pcp-future-planning-workbook-1-26-17.pdf&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAAQAg&usg=AOvVaw1H4VaSkUdUBYcp5VXBUp8A"
+        },
+        {
+            "rank": 10,
+            "snippet": "Future Planning Associates, Inc. provides consulting, administration and actuarial services for qualified retirement plans and cafeteria plan services.",
+            "timestamp": 1648480487,
+            "title": "Contact Us - Future Planning Associates, Inc.",
+            "url": "https://www.google.com/url?q=http://futureplanningassoc.com/contact.htm&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAgQAg&usg=AOvVaw13cSXUqwRAf9KjsV3SUimi"
+        },
+        {
+            "rank": 11,
+            "snippet": "Future Planning \u00b7 Begin planning when your child is identified as having a disability and revise your plan as your child grows into adulthood. \u00b7 The individual\u00a0...",
+            "timestamp": 1648480487,
+            "title": "Future Planning | The Arc of Indiana",
+            "url": "https://www.google.com/url?q=https://www.arcind.org/future-planning/&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAcQAg&usg=AOvVaw36psB3zh0sAprn6c7cplDz"
+        },
+        {
+            "rank": 12,
+            "snippet": "Future Planning. moveout2 The Arc works with families to plan for the future of their loved ones. Planning for the future is important for everyone,\u00a0...",
+            "timestamp": 1648480487,
+            "title": "Future Planning - The Arc Prince George's County, Maryland",
+            "url": "https://www.google.com/url?q=https://www.thearcofpgc.org/resources/future-planning/&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAIQAg&usg=AOvVaw2PIed8iM8a18RWgzNNKwz4"
+        },
+        {
+            "rank": 13,
+            "snippet": "Oct 12, 2021 \u00b7 The Future Planning project provides education and financial assistance to set up accounts to support members after the death of a primary\u00a0...",
+            "timestamp": 1648480487,
+            "title": "Future Planning | Trillium Health Resources",
+            "url": "https://www.google.com/url?q=http://www.trilliumhealthresources.org/future-planning&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAkQAg&usg=AOvVaw3Am73u7FhR5GQSc99vG-ss"
+        },
+        {
+            "rank": 14,
+            "snippet": "Planning for the Future of a Loved One with a Disability: Is Your Family Prepared? Future Planning Workbook: A Roadmap of Our Futures, Our Wishes A grant\u00a0...",
+            "timestamp": 1648480487,
+            "title": "Future Planning Workbook: A Roadmap of Our Futures, Our Wishes",
+            "url": "https://www.google.com/url?q=https://addpc.az.gov/future-planning-workbook-roadmap-our-futures-our-wishes&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAMQAg&usg=AOvVaw0Vn0FK4gBhYWQdpcslBN7b"
+        },
+        {
+            "rank": 15,
+            "snippet": "... disability planning for the future can be overwhelming. Achieva Future Planning can connect your family to a network of resources, education, and guidance.",
+            "timestamp": 1648480487,
+            "title": "Future Planning - Achieva",
+            "url": "https://www.google.com/url?q=https://www.achieva.info/future-planning&sa=U&ved=2ahUKEwjrg6eYp-n2AhU4D0QIHWdRDWgQFnoECAUQAg&usg=AOvVaw2zGTxYF8sbGrZhz89M243q"
+        }
+    ],
+    "timestamp": 1648480487,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Future+Planning%22"
+}

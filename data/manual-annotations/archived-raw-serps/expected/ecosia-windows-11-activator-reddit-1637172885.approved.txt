@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "windows 11 activator reddit",
+    "offset": null,
+    "page": null,
+    "query": "windows 11 activator reddit",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Windows 11 Activator Download 32bit/64bit 2021 (Permanently) Windows 11 Activator Download 32bit/64bit Today We are Sharing a Windows 11 Activator Download Link for 32bit/64bit OS. After the release of Windows 11 leaked ISO, many people hav\u2026",
+            "timestamp": 1637172885,
+            "title": "Windows 11 Activator Download 32bit/64bit 2021 ...",
+            "url": "https://www.reddit.com/user/ram1482800/comments/oa5383/windows_11_activator_download_32bit64bit_2021/"
+        },
+        {
+            "rank": 2,
+            "snippet": "MAS 1.4 also works on Windows 11 build 22000.51! If you used MAS on the machine before, it would be activated anyway. Piracy is bad, mkay?",
+            "timestamp": 1637172885,
+            "title": "MAS 1.4 also works on Windows 11 build 22000.51! : Piracy",
+            "url": "https://www.reddit.com/r/Piracy/comments/oa9ix2/mas_14_also_works_on_windows_11_build_2200051/"
+        },
+        {
+            "rank": 3,
+            "snippet": "WINDOWS 10/LTSB/LTSC INSTALLATION AND ACTIVATION . Note: Some people may recommend buying cheap keys elsewhere. This is not recommended, as these are grey-market keys, gathered from MSDN channels, each key sold multiple times (extra reading\u2026",
+            "timestamp": 1637172885,
+            "title": "guides/win10upgrade_activation - Piracy - reddit",
+            "url": "https://www.reddit.com/r/Piracy/wiki/guides/win10upgrade_activation"
+        },
+        {
+            "rank": 4,
+            "snippet": "4. Type slmgr /ato and press Enter to activate Windows 11. Create a Windows 11 Activator Txt. There is another way to activate Windows 11 and it is to use a batch file. The steps are below: 1. Firstly, turn off Windows Defender. 2. Right-cl\u2026",
+            "timestamp": 1637172885,
+            "title": "How to Activate Windows 11? Try 3 Ways Here Now!",
+            "url": "https://www.minitool.com/news/activate-windows-11.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "How to Activate Windows 11 For Free Forever#HowtoActivateWindows11#ActivateWindows11#ActivateWindows11Free#HowtoActivateWindows11Free#HowtoActivateWindows11T...",
+            "timestamp": 1637172885,
+            "title": "How to Activate Windows 11 For Free - Activate Permanently ...",
+            "url": "https://www.youtube.com/watch?v=gPEJbQbNZQc"
+        },
+        {
+            "rank": 6,
+            "snippet": "If you're also new to the windows 11 family or you want to download and install it online then you can visit the Microsoft official page to know how to go about it, our discus for today will be on how to activate it. You can also learn How \u2026",
+            "timestamp": 1637172885,
+            "title": "How to Permanently Activate Windows 11 Using CMD Free",
+            "url": "https://www.blogarama.com/technology-blogs/1298745-lukastech-blog/40065013-permanently-activate-windows-using-cmd-free"
+        },
+        {
+            "rank": 7,
+            "snippet": "https://drive.google.com/file/d/1Ub1sMB_RNSU-XuiEdm1YiF5A08FtHU6K/view?usp=sharingPass: TechTokinsDo Subscribe to my channel for latest upload wazzup mga kaM...",
+            "timestamp": 1637172885,
+            "title": "Windows 11 activator permanent - YouTube",
+            "url": "https://www.youtube.com/watch?v=KSR3SluIb_Q"
+        },
+        {
+            "rank": 8,
+            "snippet": "Windows 11 Professional 32/64 Bit Activation Key - DIGI WORLD \u203a Most Popular Images Newest at www.digiworld4u.in Images. Posted: (1 day ago) Windows 11 Professional 32/64 Bit Activation Key. \u20b9 4999 \u20b9 450.First check weather your pc supports\u2026",
+            "timestamp": 1637172885,
+            "title": "Windows 11 Pro Activation Key 64 Bit",
+            "url": "https://www.imageslink.org/image/windows-11-pro-activation-key-64-bit"
+        },
+        {
+            "rank": 9,
+            "snippet": "Activate the Windows-11, 10 offline, over Phone-System! 1. Start the command prompt in admin mode. in the cmd.exe execute \"SLUI 4\". After you select this option, you are prompted to select your country or region! 4. And then you will be see\u2026",
+            "timestamp": 1637172885,
+            "title": "Windows 11 activation from windows 10 - site-stats.org",
+            "url": "https://site-stats.org/details/windows-11-activation-from-windows-10/"
+        }
+    ],
+    "timestamp": 1637172885,
+    "url": "https://www.ecosia.org/search?q=windows+11+activator+reddit"
+}

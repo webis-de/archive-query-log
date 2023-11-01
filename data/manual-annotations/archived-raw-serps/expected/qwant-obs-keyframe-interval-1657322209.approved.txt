@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "obs keyframe interval",
+    "offset": null,
+    "page": null,
+    "query": "obs keyframe interval",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The keyframe interval value of 0 means that the stream is set to automatic instead of 0 seconds. The value of 0 or automatic is usually around 8 seconds. This value is not good for streaming, for streaming a keyframe interval value should be set according to the frame rate and bitrate of the stream.",
+            "timestamp": 1657322209,
+            "title": "Obs keyframe interval - Tips For Efficiency",
+            "url": "https://tipsforefficiency.com/obs-keyframe-interval/"
+        },
+        {
+            "rank": 2,
+            "snippet": "I typically go for a 5 second keyframe interval on my recordings. If you see \"keyframe pumping\" like Suslik says, then use a smaller interval, but I've never seen this at 5 seconds @ 60 fps which is more than the default (300 frames vs default of 250).",
+            "timestamp": 1657322209,
+            "title": "Question / Help - Keyframe Intervall 0 or 2? - OBS Forums",
+            "url": "https://obsproject.com/forum/threads/keyframe-intervall-0-or-2.86017/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Changing the Keyframe interval on OBS Studio has been streamlined since OBS Classic, however, some users may experience issues finding the new setting. 1. Open OBS Studio 2. Choose \"Settings\" from the bottom Right 3. Choose \"Output\" from the settings window, and then set the output mode to \"Advanced\" 4.",
+            "timestamp": 1657322209,
+            "title": "How to change the Keyframe interval on OBS Studio - Restream",
+            "url": "https://support.restream.io/en/articles/359123-how-to-change-the-keyframe-interval-on-obs-studio"
+        },
+        {
+            "rank": 4,
+            "snippet": "When the difference is too big, a few keyframes is sent. Keyframes are also periodically send so the compression doesnt look too bad after a while. Having a lower keyframes interval means that you will sent more framerate and this needs more bitrate and upload rate. Finding the optimal setting depends on the type of game you stream/record. 3",
+            "timestamp": 1657322209,
+            "title": "Whats Keyframe interval? : Twitch - reddit",
+            "url": "https://www.reddit.com/r/Twitch/comments/5crtgk/whats_keyframe_interval/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Setting a keyframe interval can make it much easier to skim through your recorded content when you edit it safer the fact. I set a keyframe interval of 8 when I record level 2 Op \u00b7 2 yr. ago Does it have any effect on visual quality though? Continue this thread More posts from the obs community Continue browsing in r/obs",
+            "timestamp": 1657322209,
+            "title": "Question about keyframe interval : obs - reddit",
+            "url": "https://www.reddit.com/r/obs/comments/gp4pnp/question_about_keyframe_interval/"
+        },
+        {
+            "rank": 6,
+            "snippet": "We go into much more detail about how to determine your ideal bitrate in this article about BPP or bits per pixel. Keyframe Interval: For live streaming you will want to set your keyframe interval to 2. What this means is that a full video frame will be rendered every 2 seconds. If you want to learn more about keyframes, head over here.",
+            "timestamp": 1657322209,
+            "title": "The Best OBS Settings for Live Streaming - StreamShark",
+            "url": "https://streamshark.io/blog/the-best-obs-settings-for-live-streaming/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Keyframe is one of OBS\u2019 advanced settings. The keyframe interval is the delay a new viewer will have when he connects to your streaming. If the keyframe interval is 2, it will take him 2 seconds to catch up with the streaming. To access the keyframe settings, you need to select the Advanced option in the output mode.",
+            "timestamp": 1657322209,
+            "title": "What Should My OBS Settings Be? 2021 Guide - TheStudioGenie",
+            "url": "https://thestudiogenie.com/obs-settings/"
+        },
+        {
+            "rank": 8,
+            "snippet": "The Automatic setting 0 keyframe intervals is a default setting of 250 frames (about 8.5 seconds) before it updates with a full frame image. Twitch wants to guarantee a certain level of image quality across the platform. \u201cIs this something only for Twitch?\u201d No. Your keyframes are universal across any streaming software.",
+            "timestamp": 1657322209,
+            "title": "Understanding Your Streaming Software: Keyframe Intervals",
+            "url": "https://visuals-by-impulse--1.drift.help/article/understanding-your-streaming-software:-keyframe-intervals/"
+        },
+        {
+            "rank": 9,
+            "snippet": "The Keyframe Interval is set to 18 by default. How do I know if I should change this? I have Perceptually Lossless quality set. Will Blender adjust Keyframe Interval as needed or do I need to figure out what the best setting for my needs are? How do I figure out what is best for me needs?",
+            "timestamp": 1657322209,
+            "title": "How do I select the best Keyframe Interval for video encoding?",
+            "url": "https://blender.stackexchange.com/questions/140913/how-do-i-select-the-best-keyframe-interval-for-video-encoding"
+        },
+        {
+            "rank": 10,
+            "snippet": "Another important parameter we recommend you adjust is the Keyframe Interval. To find this parameter, select Advanced in the Output Mode drop-down box. We suggest changing the value of the Keyframe Interval to 2, meaning every two seconds, a frame with a higher amount of data is sent, which acts as a base for small changes of the upcoming frames.",
+            "timestamp": 1657322209,
+            "title": "Best Live Streaming Settings for OBS Studio | Restream Integrations",
+            "url": "https://restream.io/integrations/obs-studio/the-best-obs-settings-for-streaming/"
+        }
+    ],
+    "timestamp": 1657322209,
+    "url": "https://www.qwant.com/?q=obs+keyframe+interval&client=ext-firefox-sb&t=web"
+}

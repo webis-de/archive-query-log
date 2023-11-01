@@ -1,0 +1,136 @@
+{
+    "interpreted_query": "Vintage Pittsburgh Steelers Steel Curtain",
+    "offset": null,
+    "page": null,
+    "query": "Vintage Pittsburgh Steelers Steel Curtain",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Pittsburgh Steelers NFL Steel Curtain Team Magnet Set | eBay",
+            "timestamp": 1497160668,
+            "title": "www.ebay.com",
+            "url": "http://www.ebay.com/itm/Pittsburgh-Steelers-NFL-Steel-Curtain-Team-Magnet-Set-/231343822872"
+        },
+        {
+            "rank": 2,
+            "snippet": "STEEL CURTAIN PITTSBURGH STEELERS 8X10 PHOTO (K) | eBay",
+            "timestamp": 1497160668,
+            "title": "www.ebay.com",
+            "url": "http://www.ebay.com/itm/STEEL-CURTAIN-PITTSBURGH-STEELERS-8X10-PHOTO-K-/360538871101"
+        },
+        {
+            "rank": 3,
+            "snippet": "... steelers throwback folsom steelers steelers baby vintage nfl vintage",
+            "timestamp": 1497160668,
+            "title": "www.pinterest.com",
+            "url": "https://www.pinterest.com/rurankar/pittsburgh-steelers-steel-curtain-1960-1980s/"
+        },
+        {
+            "rank": 4,
+            "snippet": "s-l1000.jpg",
+            "timestamp": 1497160668,
+            "title": "www.ebay.com",
+            "url": "http://www.ebay.com/itm/Steel-Curtain-Pittsburgh-Steelers-w-Sport-Card-Plaque-8-x-10-Black-Board/122166220660"
+        },
+        {
+            "rank": 5,
+            "snippet": "PITTSBURGH-STEELERS-T-SHIRT-STEELERS-T-SHIRT-SKULL-T-SHIRT-PITTSBURGH ...",
+            "timestamp": 1497160668,
+            "title": "www.ebay.com",
+            "url": "http://www.ebay.com/itm/PITTSBURGH-STEELERS-T-SHIRT-STEELERS-T-SHIRT-SKULL-T-SHIRT-PITTSBURGH-STEELERS-/172261531808"
+        },
+        {
+            "rank": 6,
+            "snippet": "Pittsburgh Steelers Shirts Steelers T Shirts Nike Nike Pittsburgh ...",
+            "timestamp": 1497160668,
+            "title": "pinstake.com",
+            "url": "http://pinstake.com/pittsburgh-steelers-shirts-steelers-t-shirts-nike-nike-pittsburgh"
+        },
+        {
+            "rank": 7,
+            "snippet": "Pittsburgh Steelers Shirts Steelers T Shirts Nike Nike Pittsburgh ...",
+            "timestamp": 1497160668,
+            "title": "pinstake.com",
+            "url": "http://pinstake.com/pittsburgh-steelers-shirts-steelers-t-shirts-nike-nike-pittsburgh"
+        },
+        {
+            "rank": 8,
+            "snippet": "Home \u00bb Pittsburgh Steelers Steelers Gold 2007 Nfl Replica Full Size ...",
+            "timestamp": 1497160668,
+            "title": "mattressessale.eu",
+            "url": "http://mattressessale.eu/tag/-pittsburgh-steelers-steelers-gold-2007-nfl-replica-full-size-helmet"
+        },
+        {
+            "rank": 9,
+            "snippet": "Vintage Pittsburgh Steelers Homemade Schicks Terrible Towel 70s Super ...",
+            "timestamp": 1497160668,
+            "title": "www.fishing4christmas.com",
+            "url": "http://www.fishing4christmas.com/triple-r-2013/70-pittsburgh-steelers.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Terry Bradshaw Pittsburgh Steelers Unsigned 8x10 Photo | Short News ...",
+            "timestamp": 1497160668,
+            "title": "shortnewsposter.com",
+            "url": "http://shortnewsposter.com/terry/terry-bradshaw-pittsburgh-steelers-unsigned-8x10-photo.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "... By Joe Greene 8x10 Photo Vikings Steelers Steel Curtain | eBay",
+            "timestamp": 1497160668,
+            "title": "www.ebay.com",
+            "url": "http://www.ebay.com/itm/Fran-Tarkenton-Pressured-By-Joe-Greene-8x10-Photo-Vikings-Steelers-Steel-Curtain-/160878655945"
+        },
+        {
+            "rank": 12,
+            "snippet": "Pittsburgh Steelers 'MEAN' JOE GREENE Glossy 8x10 Photo 4-Rings ...",
+            "timestamp": 1497160668,
+            "title": "www.ebay.com",
+            "url": "http://www.ebay.com/itm/Pittsburgh-Steelers-039-MEAN-039-JOE-GREENE-Glossy-8x10-Photo-4-Rings-Football-Print-/201520953150"
+        },
+        {
+            "rank": 13,
+            "snippet": "PITTSBURGH STEELERS Reversible Polyester/Wool Jacket BLACK S, M, 6X ...",
+            "timestamp": 1497160668,
+            "title": "www.ebay.com",
+            "url": "http://www.ebay.com/itm/PITTSBURGH-STEELERS-Reversible-Polyester-Wool-Jacket-BLACK-S-M-6X-Retail-199-/281906127306"
+        },
+        {
+            "rank": 14,
+            "snippet": "Vintage Playboy Magazine featuring Madonna Nude by vintagebaron",
+            "timestamp": 1497160668,
+            "title": "www.etsy.com",
+            "url": "https://www.etsy.com/uk/listing/193332252/vintage-playboy-magazine-featuring"
+        },
+        {
+            "rank": 15,
+            "snippet": "... #17 Steeler on Pinterest | About Page, Pittsburgh Steelers and Cards",
+            "timestamp": 1497160668,
+            "title": "www.pinterest.com",
+            "url": "https://www.pinterest.com/jimlarson167/andy-russell-17-steeler/"
+        },
+        {
+            "rank": 16,
+            "snippet": "Details about Riverview Park amusement 1949 Chicago IL License plate",
+            "timestamp": 1497160668,
+            "title": "www.ebay.com",
+            "url": "http://www.ebay.com/itm/Riverview-Park-amusement-1949-Chicago-IL-License-plate-/370469492889"
+        },
+        {
+            "rank": 17,
+            "snippet": "... on Pinterest | Nfl history, Pittsburgh steelers and Vintage football",
+            "timestamp": 1497160668,
+            "title": "www.pinterest.com",
+            "url": "https://www.pinterest.com/maww2214/75-thanks-mean-joe/"
+        },
+        {
+            "rank": 18,
+            "snippet": "The Top 5 Greatest Quarterbacks Of All Time",
+            "timestamp": 1497160668,
+            "title": "hallicino.hubpages.com",
+            "url": "http://hallicino.hubpages.com/hub/the_5_greatest_quarterbacks_of_all_time"
+        }
+    ],
+    "timestamp": 1497160668,
+    "url": "https://www.bing.com/images/search?q=Vintage+Pittsburgh+Steelers+Steel+Curtain&FORM=RESTAB"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Jeanne d'Arc site:id.wikipedia.org",
+    "offset": null,
+    "page": null,
+    "query": "Jeanne d'Arc site:id.wikipedia.org",
+    "results": [],
+    "timestamp": 1655183773,
+    "url": "https://duckduckgo.com/?q=Jeanne+d%27Arc+site%3Aid.wikipedia.org&t=ffab&atb=v325-7"
+}

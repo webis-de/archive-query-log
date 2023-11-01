@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "allovercr",
+    "offset": null,
+    "page": null,
+    "query": "allovercr",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\u2022 E-mail: contacto@<em>allovercr</em>.com Or info@<em>allovercr</em>.com \u2022 www.<em>allovercr</em>.com <em>All Over Costa Rica</em>.Corp 2014 &amp; 2015.\u00a9 All Rights Reserved. Mapa del Sitio : Inicio ...",
+            "timestamp": 1423275634,
+            "title": "Directorio Comercial Por Todo Costa Rica.",
+            "url": "http://www.allovercr.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "The latest Tweets from <em>AllOverCostaRica</em> (@<em>allovercr</em>). Desde el a\u00f1o 2000. Costa Rica",
+            "timestamp": 1423275634,
+            "title": "<em>AllOverCostaRica</em> (@<em>allovercr</em>) | <em>Twitter</em> - Welcome to ...",
+            "url": "https://twitter.com/allovercr"
+        },
+        {
+            "rank": 3,
+            "snippet": "\u2022 E-mail: contacto@<em>allovercr</em>.com and info@<em>allovercr</em>.com \u2022 www.<em>allovercr</em>.com <em>All Over Costa Rica</em>.Corp 2014 &amp; 2015.\u00a9 All Rights Reserved. Mapa del Sitio:",
+            "timestamp": 1423275634,
+            "title": "Directorio de Heredia en Costa Rica. Por Todo Costa Rica",
+            "url": "http://www.allovercr.com/heredia.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "http://www.<em>allovercr</em>.com/ Industry. Marketing and Advertising. Type. Self-Employed Headquarters. Curridabat Hacienda vieja Curridabat, Sab Jose 11801 Costa Rica ...",
+            "timestamp": 1423275634,
+            "title": "<em>All Over Costa Rica</em> S.A. | LinkedIn",
+            "url": "https://www.linkedin.com/company/all-over-costa-rica-s.a."
+        },
+        {
+            "rank": 5,
+            "snippet": "Whois data for <em>allovercr</em>.com: whois history, name servers, domain info, seo advice and much more.",
+            "timestamp": 1423275634,
+            "title": "<em>Allovercr</em>.com - Whois Data",
+            "url": "http://www.whoismind.com/whois/allovercr.com.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Email Summary: 1 domain is linked to <em>allovercr</em>.com owner's email . Phone Summary: 1 domain is linked to <em>allovercr</em>.com owner's phone . Name Summary: 1 domain is \u2026",
+            "timestamp": 1423275634,
+            "title": "<em>Allovercr</em>.com Domain Stats",
+            "url": "http://www.webboar.com/www/allovercr.com"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>All Over Costa Rica</em> - Por todo Costa Rica - <em>All Over Costa Rica</em> S.A. - C103, Curridabat, ... <em>allovercr</em>.com. 1. Add a comment... In his circles. 18 people. josh tra\u00f1a.",
+            "timestamp": 1423275634,
+            "title": "<em>All Over Costa Rica</em> - Google+",
+            "url": "https://plus.google.com/+AllOverCostaRica"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>All Over Costa Rica (Por todo Costa Rica</em>) www.<em>allovercr</em>.com. 8,723 views. About Posts Photos Videos. Stream. ... www.<em>allovercr</em>.com. Links. <em>All Over Costa Rica</em> - \u2026",
+            "timestamp": 1423275634,
+            "title": "<em>All Over Costa Rica (Por todo Costa Rica</em>) - Google+",
+            "url": "https://plus.google.com/113274491997542469232"
+        }
+    ],
+    "timestamp": 1423275634,
+    "url": "http://www.bing.com/search?q=allovercr&go=Enviar+consulta&qs=ds&form=QBRE"
+}

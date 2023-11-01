@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "spigot",
+    "offset": null,
+    "page": null,
+    "query": "spigot",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "3 weeks ago -\n            The home of <em>Spigot</em> a high performance, no lag customized CraftBukkit Minecraft server API, and BungeeCord, the cloud server proxy.",
+            "timestamp": 1660718390,
+            "title": "<em></em>SpigotMC - High Performance Minecraft",
+            "url": "https://www.spigotmc.org/"
+        },
+        {
+            "rank": 2,
+            "snippet": "April 24, 2019 -\n            Leading multi-platform application development, focused on building highly effective digital offerings that maximize value for advertisers and publishers.",
+            "timestamp": 1660718390,
+            "title": "<em></em>Spigot Inc.",
+            "url": "https://spigot.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "June 8, 2022 -\n            Download the latest version of <em>Spigot</em> for your Minecraft server!",
+            "timestamp": 1660718390,
+            "title": "<em></em>Get Bukkit | Download CraftBukkit 1.19.2 | Download Spigot 1.19.2",
+            "url": "https://getbukkit.org/download/spigot"
+        },
+        {
+            "rank": 4,
+            "snippet": "April 25, 2022 -\n            The meaning of <em>SPIGOT</em> is spile. How to use <em>spigot</em> in a sentence.",
+            "timestamp": 1660718390,
+            "title": "<em></em>Spigot Definition &amp; Meaning - Merriam-Webster",
+            "url": "https://www.merriam-webster.com/dictionary/spigot"
+        },
+        {
+            "rank": 5,
+            "snippet": "April 4, 2022 -\n            If you want to install an unmodified (\"Vanilla\") Minecraft Server, please refer to Tutorials/Setting up a server. If you want a server with more customization features to use, and an easy to setup and use interface. You can try <em>Spigot</em>. This page will show you how to easily set up a server and ...",
+            "timestamp": 1660718390,
+            "title": "<em></em>Tutorials/Setting up a Spigot server \u2013 Minecraft Wiki",
+            "url": "https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_Spigot_server"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Spigot</em> definition, a small peg or plug for stopping the vent of a cask. See more.",
+            "timestamp": 1660718390,
+            "title": "<em></em>Spigot Definition &amp; Meaning | Dictionary.com",
+            "url": "https://www.dictionary.com/browse/spigot"
+        },
+        {
+            "rank": 7,
+            "snippet": "Location of the cylinders is, of course, effected by <em>spigoting</em> their lower ends into the holes in the crankcase. Similarly, the cylinder heads are located by <em>spigoting</em> the upper ends of the cylinders into them.",
+            "timestamp": 1660718390,
+            "title": "<em></em>spigot - Wiktionary",
+            "url": "https://en.wiktionary.org/wiki/spigot"
+        },
+        {
+            "rank": 8,
+            "snippet": "1 week ago -\n            <em>spigot</em> meaning: 1. a device used to control the flow of liquid from something such as a barrel 2. a tap, especially\u2026. Learn more.",
+            "timestamp": 1660718390,
+            "title": "<em></em>SPIGOT | definition in the Cambridge English Dictionary",
+            "url": "https://dictionary.cambridge.org/us/dictionary/english/spigot"
+        },
+        {
+            "rank": 9,
+            "snippet": "If you want to splash in a giant puddle, just leave the <em>spigot</em> open in your backyard. A <em>spigot</em> is a faucet, a device to turn water on and off. If you leave a <em>spigot</em> open, the water will keep flowing.",
+            "timestamp": 1660718390,
+            "title": "<em></em>Spigot - Definition, Meaning &amp; Synonyms | Vocabulary.com",
+            "url": "https://www.vocabulary.com/dictionary/spigot"
+        },
+        {
+            "rank": 10,
+            "snippet": "November 9, 2021 -\n            Professional website design and SEO services for small businesses and nonprofit organizations. Based in Park City, Utah and helping clients nationwide.",
+            "timestamp": 1660718390,
+            "title": "<em></em>Spigot Design - Web Design and Digital Marketing from Park City, Utah",
+            "url": "https://spigotdesign.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": "3 weeks ago -\n            Paper extends and improves the Bukkit and <em>Spigot</em> APIs so that you and your developers have more features and functionality at your fingertips. All the meanwhile, Paper retains compatibility with plugins written for <em>Spigot</em> and Bukkit.archiveUse our API integration_instructionsLearn about our API",
+            "timestamp": 1660718390,
+            "title": "<em></em>PaperMC \u2013 The High Performance Fork",
+            "url": "https://papermc.io/"
+        },
+        {
+            "rank": 12,
+            "snippet": "Best <em>spigot</em> freelance services online. Outsource your <em>spigot</em> project and get it quickly done and delivered remotely online",
+            "timestamp": 1660718390,
+            "title": "<em></em>24 Best spigot Services To Buy Online | Fiverr",
+            "url": "https://www.fiverr.com/gigs/spigot"
+        },
+        {
+            "rank": 13,
+            "snippet": "1 month ago -\n            Now, you do not know how to use these plug-ins? With an API like Minecraft <em>Spigot</em>, you expand the possibilities to customize Minecraft on the server side and provide a smoother gameplay experience along the way. In General: What Is Minecraft <em>Spigot</em>? <em>Spigot</em> is a Minecraft API (Application ...",
+            "timestamp": 1660718390,
+            "title": "<em></em>Minecraft Spigot \u27a4 An overview of Spigot | GPORTAL Wiki",
+            "url": "https://www.g-portal.com/wiki/en/minecraft-spigot/"
+        },
+        {
+            "rank": 14,
+            "snippet": "November 9, 2013 -\n            Just as a heads-up, I will wait until java-runtime-headless&gt;=16 hits the stable Arch repositories before publishing the next release of <em>spigot</em> to the AUR. Please be patient until then.",
+            "timestamp": 1660718390,
+            "title": "<em></em>AUR (en) - spigot",
+            "url": "https://aur.archlinux.org/packages/spigot"
+        },
+        {
+            "rank": 15,
+            "snippet": "June 6, 2022 -\n            Also, <em>spigot</em> is \u2018streaming\u2019 in the sense that if you tell it to do computations on a number you've previously stored in a file (perhaps to very high precision) or a number it's reading from a pipe, then it will begin producing output as soon as it's read enough of the input to know how ...",
+            "timestamp": 1660718390,
+            "title": "<em></em>spigot: a command-line exact real calculator",
+            "url": "https://www.chiark.greenend.org.uk/~sgtatham/spigot/"
+        },
+        {
+            "rank": 16,
+            "snippet": "Create your own Minecraft <em>Spigot</em> server! By purchasing a Minecraft Hosting from us and following several steps you can host a Minecraft <em>Spigot</em> server.",
+            "timestamp": 1660718390,
+            "title": "<em></em>Minecraft Spigot Server Hosting Rental",
+            "url": "https://scalacube.com/store/minecraft/tags/spigot"
+        },
+        {
+            "rank": 17,
+            "snippet": "Binary patcher for distribution of <em>Spigot</em> and related updates.",
+            "timestamp": 1660718390,
+            "title": "<em></em>SpigotMC \u00b7 GitHub",
+            "url": "https://github.com/SpigotMC"
+        },
+        {
+            "rank": 18,
+            "snippet": "Create your own Minecraft server instantly! Several modpack options available. Hosting plans from $3.00/GB!",
+            "timestamp": 1660718390,
+            "title": "<em></em>Spigot Servers | GGServers",
+            "url": "https://ggservers.com/spigot-server"
+        },
+        {
+            "rank": 19,
+            "snippet": "In this episode, I show you how to create your first plugin using the <em>Spigot</em> API and the Minecraft plugin for the IntelliJ IDEA. #<em>Spigot</em> #SpigotPlugin #MCCod...",
+            "timestamp": 1660718390,
+            "title": "<em></em>Spigot Plugin Development - 1 - Your First Plugin - YouTube",
+            "url": "https://www.youtube.com/watch?v=dem7dujCDvg"
+        },
+        {
+            "rank": 20,
+            "snippet": "So I'm lunching a Minecraft server and need someone with experience to help me setup kb to be like the one from minemen.club. I'm willing to pay good money and/or buy custom <em>spigot</em> needed to achieve wanted results. But tips to how I can achieve that are very welcome also:) Some info...",
+            "timestamp": 1660718390,
+            "title": "<em></em>spigot | MC-Market",
+            "url": "https://www.mc-market.org/tags/spigot/"
+        }
+    ],
+    "timestamp": 1660718390,
+    "url": "https://search.brave.com/search?q=spigot"
+}

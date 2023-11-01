@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "weather report for 22903",
+    "offset": null,
+    "page": null,
+    "query": "weather report for 22903",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1489829020,
+            "title": "Current weather in <em>Charlottesville, VA 22903</em>",
+            "url": "http://www.weather.com/wx/today/?lat=38.035491&lon=-78.501393&locationstring=Charlottesville, VA 22903&locale=en_US&par=ask_smartbox&temp=f"
+        },
+        {
+            "rank": 2,
+            "snippet": "Hourly Local Weather Forecast, weather conditions, precipitation, dew point, \nhumidity, wind from Weather.com and ... Charlottesville, VA (22903) Hourly \nWeather.",
+            "timestamp": 1489829020,
+            "title": "Hourly Weather Forecast for Charlottesville, VA (22903) - The ...",
+            "url": "https://weather.com/weather/hourbyhour/l/Charlottesville+VA+22903:4:US"
+        },
+        {
+            "rank": 3,
+            "snippet": "Be prepared with the most accurate 10-day forecast for Charlottesville, VA with \nhighs, lows, chance of precipitation from The Weather Channel and Weather.com\n.",
+            "timestamp": 1489829020,
+            "title": "Charlottesville, VA 10-Day Weather Forecast - The Weather ...",
+            "url": "https://weather.com/weather/tenday/l/Charlottesville+VA+USVA0143:1:US"
+        },
+        {
+            "rank": 4,
+            "snippet": "Today's and tonight's Charlottesville, VA (22901) weather forecast, weather \nconditions and Doppler radar from The Weather Channel and Weather.com.",
+            "timestamp": 1489829020,
+            "title": "Charlottesville, VA (22901) Weather Forecast and Conditions - The ...",
+            "url": "https://weather.com/weather/today/l/Charlottesville+VA+22901:4:US"
+        },
+        {
+            "rank": 5,
+            "snippet": "Get the Charlottesville weather forecast. Access hourly, 10 day and 15 day \nforecasts along with up to the minute reports and videos for Charlottesville, VA \n22902\u00a0...",
+            "timestamp": 1489829020,
+            "title": "Charlottesville Weather - AccuWeather Forecast for VA 22902",
+            "url": "http://www.accuweather.com/en/us/charlottesville-va/22902/weather-forecast/331243"
+        },
+        {
+            "rank": 6,
+            "snippet": "Get the Charlottesville hour-by-hour weather forecast including temperature, \nRealFeel and chance of precipitation for Charlottesville, VA 22902 from\u00a0...",
+            "timestamp": 1489829020,
+            "title": "Charlottesville Hourly Weather - AccuWeather Forecast for VA 22902",
+            "url": "http://www.accuweather.com/en/us/charlottesville-va/22902/hourly-weather-forecast/331243"
+        },
+        {
+            "rank": 7,
+            "snippet": "Charlottesville, VA, local weather including current conditions, extended \nforecasts ... Charlottesville, Virginia, Weather Forecasts - Metric Units ... Forecast \nDetails\u00a0...",
+            "timestamp": 1489829020,
+            "title": "Charlottesville Virginia Local Weather Forecasts and Conditions ...",
+            "url": "http://www.weatherforyou.com/reports/index.php?pands=Charlottesville%2CVA"
+        },
+        {
+            "rank": 8,
+            "snippet": "News Headlines. SKYWARN class schedule &amp; registration - classes late March \nthrough all of April! Improved Point Forecast Webpages Coming April 4th (date\u00a0...",
+            "timestamp": 1489829020,
+            "title": "Charlottesville, VA - National Weather Service",
+            "url": "http://forecast.weather.gov/MapClick.php?lat=38.02930816200046&lon=-78.47667870799967"
+        },
+        {
+            "rank": 9,
+            "snippet": "Find the most current and reliable 7 day weather forecasts, storm alerts, reports \nand information for Charlottesville, VA, US with The Weather Network.",
+            "timestamp": 1489829020,
+            "title": "Charlottesville, Virginia 7 Day Weather Forecast - The Weather ...",
+            "url": "https://www.theweathernetwork.com/us/weather/virginia/charlottesville"
+        },
+        {
+            "rank": 10,
+            "snippet": "Tomorrow is forecast to be nearly the same temperature as today. Today. High 48 \n| Low 25 \u00b0F. 0% Chance of Precip. Yesterday. High 44.6 | Low 24.8 \u00b0F. Precip.",
+            "timestamp": 1489829020,
+            "title": "Charlottesville, VA (22903) Forecast | Weather Underground",
+            "url": "https://www.wunderground.com/cgi-bin/findweather/getForecast?query=22903"
+        }
+    ],
+    "timestamp": 1489829020,
+    "url": "http://www.ask.com/web?q=weather+report+for+22903&qsrc=257&o=10285&l=iac"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "-wikipedia \"Orb (univers de fiction)\"",
+    "offset": null,
+    "page": null,
+    "query": "-wikipedia \"Orb (univers de fiction)\"",
+    "results": [],
+    "timestamp": 1643880033,
+    "url": "https://www.bing.com/search?q=-wikipedia+%22Orb+(univers+de+fiction)%22"
+}

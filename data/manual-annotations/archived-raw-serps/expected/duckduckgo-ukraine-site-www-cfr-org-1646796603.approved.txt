@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Ukraine site:www.cfr.org",
+    "offset": null,
+    "page": null,
+    "query": "Ukraine site:www.cfr.org",
+    "results": [],
+    "timestamp": 1646796603,
+    "url": "https://duckduckgo.com/?q=Ukraine+site%3Awww.cfr.org&t=opera"
+}

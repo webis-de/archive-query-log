@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"OUAT - Once Upon A Train\"",
+    "offset": null,
+    "page": null,
+    "query": "\"OUAT - Once Upon A Train\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "OUAT - Once Upon A Train vous invite donc \u00e0 d\u00e9couvrir les 4 \u00e9pisodes (pour le moment 3 sont disponibles patience patience) qui vont vous faire voyager de l'Europe \u00e0 l'Asie, \u00e0 moyenne ou \u00e0 ...",
+            "timestamp": 1643380520,
+            "title": "OUAT - Once Upon A Train | LinkedIn",
+            "url": "https://www.linkedin.com/company/ouat-once-upon-a-train"
+        },
+        {
+            "rank": 2,
+            "snippet": "OUAT - Once upon a train. 1,199 likes \u00b7 92 talking about this. Prenons le temps, prenons le train.",
+            "timestamp": 1643380520,
+            "title": "OUAT - Once upon a train - Home - Facebook",
+            "url": "https://www.facebook.com/ouat.train/"
+        },
+        {
+            "rank": 3,
+            "snippet": "A railway odyssey from Paris to Tokyo, through the forests of Siberia and the memories of the Aral Sea. A cry of resilience, an invitation to slow down for deeper connection. Wanna come on board ...",
+            "timestamp": 1643380520,
+            "title": "OUAT - Once Upon A Train - YouTube",
+            "url": "https://www.youtube.com/channel/UCUDDNDJvQh_bT88X3HsgMrA"
+        },
+        {
+            "rank": 4,
+            "snippet": "At @ [303283383887451:274:OUAT-Once upon a train], we are delighted to announce the sale of tickets for the Stockholm - Berlin night train, scheduled for launch on June 11, 2021 via the Swedish website .. The service will run with daily departures starting at 49 euros.",
+            "timestamp": 1643380520,
+            "title": "OUAT - Once upon a train - Posts | Facebook",
+            "url": "https://www.facebook.com/ouat.train/posts/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Faites un don \u00e0 ouat - once upon a train. Je donne Je fais un don \u00e0 OUAT Once Upon A Train Partager cette action Facebook Twitter LinkedIn Email Copier l'URL D\u00e9couvrir nos services 2 Paiement mensuel 12 echeances. En cas de paiement refuse suite a perte ou changement de carte bancaire ...",
+            "timestamp": 1643380520,
+            "title": "OUAT Once Upon A Train | HelloAsso",
+            "url": "https://www.helloasso.com/associations/ouat-once-upon-a-train"
+        },
+        {
+            "rank": 6,
+            "snippet": "OUAT - ONCE UPON A TRAIN Activit\u00e9 Projet port\u00e9. organisation et promotion de voyages responsables, notamment sur rail. Ce projet s'inscrit de mani\u00e8re plus g\u00e9n\u00e9rale dans le th\u00e8me : pollutions, assainissement - Les associations de ce domaine dans le d\u00e9partement. Adresse",
+            "timestamp": 1643380520,
+            "title": "OUAT - ONCE UPON A TRAIN (W751253752) - Assoce.fr",
+            "url": "https://assoce.fr/waldec/W751253752/OUAT-ONCE-UPON-A-TRAIN"
+        },
+        {
+            "rank": 7,
+            "snippet": "Ouat - once upon a train association Promotion rail Paris. Informations et situation de l'association Ouat - once upon a train Pollutions, assainissement dans la ville de Paris. th\u00e8mes : Promotion,rail. 11 Rue Jacques Kabl\u00e9 75018 Paris Paris. E-mail.",
+            "timestamp": 1643380520,
+            "title": "Ouat - once upon a train association Promotion rail Paris",
+            "url": "https://www.gralon.net/mairies-france/paris/association-ouat-once-upon-a-train-paris_W751253752.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "(en vrai, le site OUAT - Once Upon A Train est actuellement en construction, restez dans les parages pour le d\u00e9couvrir bient\u00f4t !) Love &amp; wagon bar, La Team OUAT . Twitter - Instagram - LinkedIn-YouTube - Facebook",
+            "timestamp": 1643380520,
+            "title": "Error 404",
+            "url": "http://ouat-train.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Cotisation organis\u00e9\u00b7e par OUAT Once Upon A Train - HelloAsso est une entreprise solidaire d'utilit\u00e9 sociale. Nous fournissons nos technologies de paiement gratuitement, sans frais ni commissions, \u00e0 plus de 100 000 associations fran\u00e7aises. Les contributions volontaires que nous laissent les internautes sont notre unique source de revenus.",
+            "timestamp": 1643380520,
+            "title": "Tu viens chez ouat ? - OUAT Once Upon A Train",
+            "url": "https://www.helloasso.com/associations/ouat-once-upon-a-train/adhesions/tu-viens-chez-ouat"
+        },
+        {
+            "rank": 10,
+            "snippet": "NOS CONF\u00c9RENCES _____ Places limit\u00e9es, inscription gratuite ici Samedi 18 septembre : 13h45 - Pr\u00e9sentation de l'association OUAT - Once Upon a train \u2605 Conf\u00e9rence \"Epop\u00e9es ferroviaires\" Part. 1 de 14h \u00e0 14h45 David Medioni, auteur du livre \"\u00catre en train : R\u00e9cits sur les rails\" Barthelemy Roustalan - membre OUAT - Pr\u00eatre grand ...",
+            "timestamp": 1643380520,
+            "title": "Des Rails &amp; Vous - Le Festival qui vous veut du train, Le ...",
+            "url": "https://stayhappening.com/e/des-rails-andamp-vous-le-festival-qui-vous-veut-du-train-E2ISTRB1WCN"
+        }
+    ],
+    "timestamp": 1643380520,
+    "url": "https://www.qwant.com/?q=%22OUAT+-+Once+Upon+A+Train%22&t=all"
+}

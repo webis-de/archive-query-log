@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "agent 077 mission bloody mary movie",
+    "offset": null,
+    "page": null,
+    "query": "agent 077 mission bloody mary movie",
+    "results": [],
+    "timestamp": 1593376539,
+    "url": "https://www.bing.com/search?q=agent+077+mission+bloody+mary+movie&FORM=HDRSC1"
+}

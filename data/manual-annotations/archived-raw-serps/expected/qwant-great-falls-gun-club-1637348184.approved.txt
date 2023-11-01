@@ -1,0 +1,94 @@
+{
+    "interpreted_query": "great falls gun club",
+    "offset": null,
+    "page": null,
+    "query": "great falls gun club",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "sportsmansguide.com/Shooting",
+            "timestamp": 1637348184,
+            "title": "Best Brands &amp; Highest Quality - Join The Buyer's Club Now",
+            "url": "https://www.bing.com/aclick?ld=e8xwuepYciMCw3P6c2LvvTWzVUCUzBHtcyZJcbIiaDTIidVpd3tAsCz_CGcDRZepLWB__BQcqR7hobx7bsa2tyHBSyTRT82xFtwGQwZrLol8k2rCr7QjJ3I-AdYlHl7bEei9EqqQA44oFZZnM_SQ0GBl7M0go5LTYlISmfkpTXDv__4zJG&u=aHR0cHMlM2ElMmYlMmZ0cmFja2luZy5kZWVwc2VhcmNoLmFkbHVjZW50LmNvbSUyZmFkbHVjZW50JTJmUmVkaXJlY3RvciUzZmt3aWQlM2Rrd2QtNzgwNjU1NDUwNzQ3NjUlM2Fsb2MtMTkweDEyNDkwNDUzMzA4OTczNjZ4MjgzMjM3MjkxJTI2YWRpZCUzZDc4MDY1NDYzMjk1MzA1JTI2ZGV2aWNlJTNkYyUyNmxvY2F0aW9uJTNkODc1NDIlMjZyZXRhaWxlciUzZHNwb3J0c21hbnNndWlkZSUyNnVybCUzZGh0dHBzJTNhJTJmJTJmd3d3LnNwb3J0c21hbnNndWlkZS5jb20lMmZzcGxhc2glM2ZrZXklM2RyYW5nZXN1cHBsaWVzMiUyNmFkbGNsaWQlM2Q0ZjM3MDczMWE5YzkxNjExYzYxMzY2YTlhOGEwZDUzYiUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDI4MzIzNzI5MSUyNm1zY2xraWQlM2Q0ZjM3MDczMWE5YzkxNjExYzYxMzY2YTlhOGEwZDUzYg&rlid=4f370731a9c91611c61366a9a8a0d53b"
+        },
+        {
+            "rank": 2,
+            "snippet": "No walk-ins will be allowed. Anyone needing the orientation will have to make a reservation. No exception will be made! You will need to call Jon Saxton at 406-761-9925 to register. To help prevent the spread of this virus, if you are ill or showing any signs of illness, you are asked to stay at home! Only 9 people will be allowed inside at any ...",
+            "timestamp": 1637348184,
+            "title": "Great Falls Shooting Sports Complex | GFSSC",
+            "url": "http://gfssc.org/"
+        },
+        {
+            "rank": 3,
+            "snippet": "New members: You Must attend Orientation class, (SEE BELOW), to get access to the ranges and your club materials. Memberships are processed by John Sprague 868-6635 grizzsprague@yahoo.com (Life memberships $1,000.00) or (Charter memberships $500.00 10 years) are available contact John Sprague Treasurer 868-6635.",
+            "timestamp": 1637348184,
+            "title": "Great Falls Shooting Sports Complex | APPLICATION",
+            "url": "http://gfssc.org/application/"
+        },
+        {
+            "rank": 4,
+            "snippet": "9 Lit Fields. Rife and Pistol Range (100-300 yards) 60 Camping Hook-ups (water and electric) Wobble Trap. Leagues (spring, summer, fall) White Flyer Targets. Available for Corporate/Private Events. Hours: Sunday's 11 am - 4 pm; Wednesday's 11 am - 7pm. Weather permitting, call prior.",
+            "timestamp": 1637348184,
+            "title": "GF Trap and Skeet Club - Home",
+            "url": "https://www.greatfallstrapandskeet.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Great Falls, MT. Sun River Skeet Club. Great Falls, MT. Great Falls Shooting Sports Complex. Great Falls, MT. Missouri River Shooters Association. Great Falls, MT. Great Falls Trap &amp; Skeet Club. Great Falls, MT. Carter Rifle Club Junior and Senior Div. Carter, MT. Williams Creek Hunting Preserve. Raynesford, MT. Perry Hunts and Adventures. Fort ...",
+            "timestamp": 1637348184,
+            "title": "Shooting Sports and Ranges around Great Falls - Where to ...",
+            "url": "https://stepoutside.org/great-falls-mt/shooting-sports/"
+        },
+        {
+            "rank": 6,
+            "snippet": "1 review of Great Falls Trap and Skeet Club \"On Wednesdays you can go shoot skeet. Otherwise they have a rifle range that has 100 yd, 200 yd, and a 300 yd pull out. We usually shoot our black powder guns (cap and ball pistol and our musket) along with our 260, .22, and 9mm. It's $10 per person. Located out by Ulm. Beautiful out there. They have a plywood fence in a metal frame that you can ...",
+            "timestamp": 1637348184,
+            "title": "GREAT FALLS TRAP AND SKEET CLUB - Gun/Rifle Ranges - 183 N ...",
+            "url": "https://www.yelp.com/biz/great-falls-trap-and-skeet-club-ulm"
+        },
+        {
+            "rank": 7,
+            "snippet": "Great Falls \u2013 Great Falls Trap &amp; Skeet Club, 183 No. Ulm Frontage Rd., Great Falls, MT 59404. Phone: 406-453-5032 Facilities include: Outdoor Pistol (100 yds), Outdoor Rifle (300 yds), Rifle Silhouette, Pistol Silhouette, Trap, Sporting Clays Range Access: Private Montana Gun Club Click here for a map to the range: Great Falls \u2013 Missouri ...",
+            "timestamp": 1637348184,
+            "title": "Montana Shooting Ranges &amp; Gun Clubs - TradersCreek.com",
+            "url": "https://traderscreek.com/montana-shooting-ranges-gun-clubs/"
+        },
+        {
+            "rank": 8,
+            "snippet": "GREAT FALLS \u2014 Joshua Philip Allen has been charged with assault with a weapon and criminal endangerment after he allegedly fired a gun outside of the Alumni Club in Great Falls. Court documents ...",
+            "timestamp": 1637348184,
+            "title": "Man charged with firing a gun outside of the Alumni Club",
+            "url": "https://www.krtv.com/news/crime-and-courts/man-charged-with-firing-a-gun-outside-alumni-club"
+        },
+        {
+            "rank": 9,
+            "snippet": "Check our new page web at Great Falls Trap and Skeet Club.com for starting times and dates. This year we have installed two new Pat Trap, trap machines (we stepped back from 4 machines due to loss of revenue due to Covid 19).",
+            "timestamp": 1637348184,
+            "title": "GF Trap and Skeet Club - Events - Great Falls TRAP AND SKEET",
+            "url": "https://www.greatfallstrapandskeet.com/events"
+        },
+        {
+            "rank": 10,
+            "snippet": "\"Indoor Gun Range &amp; Gun Shop\" Contact Us (406)452-6981 or come in and see us at 205 9th ave South suite 200 great falls mt customer@highwoodcreekoutfitters.com Click Here &gt;&gt;&gt; Online Inventory! Over 100,000 guns!",
+            "timestamp": 1637348184,
+            "title": "Home Page [site.highwoodcreekoutfitters.com]",
+            "url": "https://site.highwoodcreekoutfitters.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": "GreatFallsRacing.com. Hello, World! Your H2 subheadline here. Welcome to the home of Montana Region 105 Sports Car Club of America (SCCA). We hold AutoCross and RallyCross races in Great Falls and Helena throughout the year on local, closed-course sites. Do you have a driver's license and a vehicle in a safe, mechanically sound condition?",
+            "timestamp": 1637348184,
+            "title": "GreatFallsRacing.com",
+            "url": "https://greatfallsracing.com/"
+        },
+        {
+            "rank": 12,
+            "snippet": "sportsmansguide.com/Shooting",
+            "timestamp": 1637348184,
+            "title": "Best Brands &amp; Highest Quality - Join The Buyer's Club Now",
+            "url": "https://www.bing.com/aclick?ld=e8xwuepYciMCw3P6c2LvvTWzVUCUzBHtcyZJcbIiaDTIidVpd3tAsCz_CGcDRZepLWB__BQcqR7hobx7bsa2tyHBSyTRT82xFtwGQwZrLol8k2rCr7QjJ3I-AdYlHl7bEei9EqqQA44oFZZnM_SQ0GBl7M0go5LTYlISmfkpTXDv__4zJG&u=aHR0cHMlM2ElMmYlMmZ0cmFja2luZy5kZWVwc2VhcmNoLmFkbHVjZW50LmNvbSUyZmFkbHVjZW50JTJmUmVkaXJlY3RvciUzZmt3aWQlM2Rrd2QtNzgwNjU1NDUwNzQ3NjUlM2Fsb2MtMTkweDEyNDkwNDUzMzA4OTczNjZ4MjgzMjM3MjkxJTI2YWRpZCUzZDc4MDY1NDYzMjk1MzA1JTI2ZGV2aWNlJTNkYyUyNmxvY2F0aW9uJTNkODc1NDIlMjZyZXRhaWxlciUzZHNwb3J0c21hbnNndWlkZSUyNnVybCUzZGh0dHBzJTNhJTJmJTJmd3d3LnNwb3J0c21hbnNndWlkZS5jb20lMmZzcGxhc2glM2ZrZXklM2RyYW5nZXN1cHBsaWVzMiUyNmFkbGNsaWQlM2Q0ZjM3MDczMWE5YzkxNjExYzYxMzY2YTlhOGEwZDUzYiUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZDI4MzIzNzI5MSUyNm1zY2xraWQlM2Q0ZjM3MDczMWE5YzkxNjExYzYxMzY2YTlhOGEwZDUzYg&rlid=4f370731a9c91611c61366a9a8a0d53b"
+        }
+    ],
+    "timestamp": 1637348184,
+    "url": "https://www.qwant.com/?q=great+falls+gun+club&client=ext-firefox-sb&t=web"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Conflict: Middle East\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Conflict: Middle East\" -wikipedia",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Addresses the inter-Arab dimension of Middle East politics and its impact on the Palestinian conflict.",
+            "timestamp": 1636797028,
+            "title": "Decline of the Arab-Israeli Conflict, The: Middle East ...",
+            "url": "https://books.google.com/books?id=SxaDsuKUKp8C&printsec=frontcover&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgAEAE"
+        },
+        {
+            "rank": 3,
+            "snippet": "The starting point of this innovative book is that it is unsatisfactory either to consider conflict within a singular concept or alternatively to consider each conflict as entirely distinct and unique; Narrating Conflict in the Middle East ...",
+            "timestamp": 1636797028,
+            "title": "Narrating Conflict in the Middle East: Discourse, Image and ...",
+            "url": "https://books.google.com/books?id=fI7gDwAAQBAJ&printsec=frontcover&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgJEAE"
+        },
+        {
+            "rank": 4,
+            "snippet": "This volume explores the role of water in the Middle East's current economic, political and environmental transformations, which are set to continue in the near future.",
+            "timestamp": 1636797028,
+            "title": "Water and Conflict in the Middle East",
+            "url": "https://books.google.com/books?id=fcngwgEACAAJ&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgIEAE"
+        },
+        {
+            "rank": 5,
+            "snippet": "War and Conflict in the Middle East and North Africa will be an essential resource for students of peace and security studies and MENA politics, and anyone wanting to move beyond headlines and soundbites to understand the historical and ...",
+            "timestamp": 1636797028,
+            "title": "War and Conflict in the Middle East and North Africa",
+            "url": "https://books.google.com/books?id=YD4AEAAAQBAJ&printsec=frontcover&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgHEAE"
+        },
+        {
+            "rank": 6,
+            "snippet": "Delsamlingen inneh\u00e5ller: brev, utkast till \u00f6verenskommelser, minnesanteckningar.",
+            "timestamp": 1636797028,
+            "title": "Middle East conflict - Middle East Development Funds",
+            "url": "https://books.google.com/books?id=12yGtQEACAAJ&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgBEAE"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1636797028,
+            "title": "Proceedings from the Conference on Beyond the Arab-Israeli ...",
+            "url": "https://books.google.com/books?id=39h_AAAACAAJ&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgGEAE"
+        },
+        {
+            "rank": 8,
+            "snippet": "This book forms a complete reference to both the hydrological as well as the social, economic, political and legal issues in the region and shows how water shortages threaten the renewal of military conflicts and disruption in the area.",
+            "timestamp": 1636797028,
+            "title": "Water Resources and Conflict in the Middle East",
+            "url": "https://books.google.com/books?id=IRGxvz1B8p8C&printsec=frontcover&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgEEAE"
+        },
+        {
+            "rank": 9,
+            "snippet": "Based on his own field research and the ethnographic reports of other scholars, anthropologist Salzman presents an analysis of Middle Eastern culture that goes a long way toward explaining the gulf between Western and Middle Eastern ...",
+            "timestamp": 1636797028,
+            "title": "Culture and Conflict in the Middle East",
+            "url": "https://books.google.com/books?id=FFOBAAAAMAAJ&q=%22Conflict:+Middle+East%22+-wikipedia&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgCEAE"
+        },
+        {
+            "rank": 10,
+            "snippet": "Examines the history behind the longest war of the twentieth century, which raged between Iran and Iraq in the 1980s, and looks at its ongoing ramifications.",
+            "timestamp": 1636797028,
+            "title": "The Iran-Iraq War",
+            "url": "https://books.google.com/books?id=jpwiJZ8T_cAC&printsec=frontcover&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgFEAE"
+        },
+        {
+            "rank": 11,
+            "snippet": "Explores the history of television news stations and programs involvement and influence in times of war, from the Vietnam Conflict to the War on Terrorism.",
+            "timestamp": 1636797028,
+            "title": "The Media War",
+            "url": "https://books.google.com/books?id=x-oDqCDzQWgC&printsec=frontcover&dq=%22Conflict:+Middle+East%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwihhpTAlZX0AhVF6Z4KHWLDBs4Q6AF6BAgDEAE"
+        }
+    ],
+    "timestamp": 1636797028,
+    "url": "https://www.google.com/search?tbs=bks:1&q=%22Conflict:+Middle+East%22+-wikipedia"
+}

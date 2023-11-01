@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Kothuru\" Assembly constituency -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Kothuru\" Assembly constituency",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Kothuru is a legislative assembly constituency in Andhra Pradesh. Election results of Kothuru assembly constituency seat is given below in a table that also\u00a0...",
+            "timestamp": 1631384737,
+            "title": "Kothuru Assembly Constituency Election Result",
+            "url": "https://www.google.com/url?q=https://resultuniversity.com/election/kothuru-andhra-pradesh-assembly-constituency&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAcQAg&usg=AOvVaw17ftxwgAoBvH6ZU3AxMbcC"
+        },
+        {
+            "rank": 3,
+            "snippet": "Kothuru Assembly constituency was a ST constituency of the Andhra Pradesh Legislative Assembly, India until 2008 in Srikakulam district.",
+            "timestamp": 1631384737,
+            "title": "Kothuru (ST) (Assembly constituency) | owlapps",
+            "url": "https://www.google.com/url?q=https://www.owlapps.net/owlapps_apps/articles%3Fid%3D58409733%26lang%3Den&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAAQAg&usg=AOvVaw1Ari9gm2UCA0C5qrsislxn"
+        },
+        {
+            "rank": 4,
+            "snippet": "Kothuru Assembly Constituency 1967 Andhra Pradesh MLA Election Winner, Election Voter data, candidates their political parties data and fact sheet.",
+            "timestamp": 1631384737,
+            "title": "Kothuru 1967 Assembly MLA Election Andhra Pradesh - Entranceindia",
+            "url": "https://www.google.com/url?q=https://entranceindia.com/election-and-politics/kothuru-constituency-andhra-pradesh-assembly-election-1967-results-mla-voters-political-parties-data/&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAkQAg&usg=AOvVaw1obCFvmPJmx1wi55ng03vO"
+        },
+        {
+            "rank": 5,
+            "snippet": "List Of Winning Candidates. Year, Voters In 1000, Voter Turnout (% age), Winner, Runner-up. Candidate Name, %age, Party, Candidate Name, %age, Party.",
+            "timestamp": 1631384737,
+            "title": "State Elections 2004 - Partywise Comparision for 7-Kothuru ...",
+            "url": "https://www.google.com/url?q=http://affidavitarchive.nic.in/Affidavit/archive/March2004/pollupd/ac/states/S01/Partycomp07.htm&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAgQAg&usg=AOvVaw3FQZMIcvG3wKTN5r4njOd7"
+        },
+        {
+            "rank": 6,
+            "snippet": "Kothuru is a Village located in the Taluka of Kothuru, in the district of Srikakulam district, in the state of Andhra Pradesh state with a total population\u00a0...",
+            "timestamp": 1631384737,
+            "title": "Kothuru Village Polpulation - Ourhero.In",
+            "url": "https://www.google.com/url?q=https://ourhero.in/villages/kothuru-580107&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAEQAg&usg=AOvVaw022rogccWp01V_YW3xykvs"
+        },
+        {
+            "rank": 7,
+            "snippet": "Kothuru is a Village located in the Taluka of Rambilli, in the district of Visakhapatnam district, in the state of Andhra Pradesh state with a total\u00a0...",
+            "timestamp": 1631384737,
+            "title": "Kothuru, Rambilli Village Polpulation and Location | Ourhero.In",
+            "url": "https://www.google.com/url?q=https://ourhero.in/villages/kothuru-586498&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAYQAg&usg=AOvVaw1Q8nCcsN7BKru02EsdEEL4"
+        },
+        {
+            "rank": 8,
+            "snippet": "Kothuru Village Map. Kothuru Pin code. Kothuru Schools and colleges . Kothuru population.Kothuru is a Village in Wazeed Mandal in Khammam District of\u00a0...\n\nAssembly constituency: Bhadrachalam assembly constituency\nKothuru Live Weather: --&gt;; r&gt; Temperature: 34.1 \u00b0C\nLok Sabha constituency: Mahabubabad parliamentary constituency\nAssembly MLA: podem veeraiah",
+            "timestamp": 1631384737,
+            "title": "Kothuru Village , Wazeed Mandal , Khammam District - Onefivenine",
+            "url": "https://www.google.com/url?q=http://www.onefivenine.com/india/villages/Khammam/Wazeed/Kothuru&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAQQAg&usg=AOvVaw1BOAK7UDDAeHJthLlBn57I"
+        },
+        {
+            "rank": 9,
+            "snippet": "Kothuru Village Map. Kothuru Pin code. Kothuru Schools and colleges . Kothuru population.Kothuru is a Village in Pedavegi Mandal in West Godavari District\u00a0...",
+            "timestamp": 1631384737,
+            "title": "Kothuru Village , Pedavegi Mandal , West Godavari District",
+            "url": "https://www.google.com/url?q=http://www.onefivenine.com/india/villages/West-Godavari/Pedavegi/Kothuru&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAMQAg&usg=AOvVaw1oAz3ZNUsF2RLccH902cLP"
+        },
+        {
+            "rank": 10,
+            "snippet": "Assembly Constituency at a Glance | Features of Assembly as per. Delimitation Commission of India (2008). 2. Location and Political Maps.",
+            "timestamp": 1631384737,
+            "title": "[PDF] Pathapatnam Assembly Andhra Pradesh Factbook - Datanet India",
+            "url": "https://www.google.com/url?q=https://www.indiastatpublications.com/pdf_Samples/assembly_factbook/Andhra_Pradesh/Srikakulam/Pathapatnam.pdf&sa=U&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQFnoECAIQAg&usg=AOvVaw34iPgmPYYrO-qjwhkZdHwM"
+        },
+        {
+            "rank": 11,
+            "snippet": "PART B - ASSEMBLY CONSTITUENCIES Serial no . , name and extent of constituency ... Patapatnam taluk ( excluding Sarvakota , Kothuru and Baleru firkas ) .",
+            "timestamp": 1631384737,
+            "title": "Delimitation of Parliamentary and Assembly Constituencies Order, 1976",
+            "url": "https://books.google.com/books?id=MpO2AAAAIAAJ&pg=PA11&lpg=PA11&dq=%22Kothuru%22+Assembly+constituency+-wikipedia&source=bl&ots=WgREoktkdo&sig=ACfU3U1gzyahJ3N5HAFUjjkggw1T-ajBew&hl=en&sa=X&ved=2ahUKEwjxkbzH4PfyAhXUPn0KHbQkAtgQ6AF6BAgFEAE"
+        }
+    ],
+    "timestamp": 1631384737,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Kothuru%22+Assembly+constituency"
+}

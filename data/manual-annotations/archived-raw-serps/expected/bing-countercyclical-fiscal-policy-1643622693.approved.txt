@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Countercyclical fiscal policy",
+    "offset": null,
+    "page": null,
+    "query": "Countercyclical fiscal policy",
+    "results": [],
+    "timestamp": 1643622693,
+    "url": "https://www.bing.com/search?q=Countercyclical+fiscal+policy"
+}

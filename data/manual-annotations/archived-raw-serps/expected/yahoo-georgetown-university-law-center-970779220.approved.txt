@@ -1,0 +1,94 @@
+{
+    "interpreted_query": "Georgetown University Law Center",
+    "offset": null,
+    "page": null,
+    "query": "Georgetown University Law Center",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "<em>Law</em> School",
+            "url": "http://srd.yahoo.com/srct/241015/Georgetown+University+Law+Center/1/2/*http://dir.yahoo.com/Regional/U_S__States/Washington__D_C_/Education/College_and_University/Private/Georgetown_University/Departments_and_Programs/Law_School/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "<em>Law</em>",
+            "url": "http://srd.yahoo.com/srct/15005125/Georgetown+University+Law+Center/2/2/*http://dir.yahoo.com/Regional/U_S__States/Texas/Cities/Georgetown/Business_and_Shopping/Shopping_and_Services/Law/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "<em>Georgetown</em> <em>University</em> <em>Law</em> Library",
+            "url": "http://srd.yahoo.com/srst/315478/Georgetown+University+Law+Center/1/10/*http://www.ll.georgetown.edu/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "South Carolina Environmental <em>Law</em> Project (SCELP)",
+            "url": "http://srd.yahoo.com/srst/27389032/Georgetown+University+Law+Center/2/10/*http://www.scelp.org/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "<em>Georgetown</em> International Environmental <em>Law</em> Review",
+            "url": "http://srd.yahoo.com/srst/364719/Georgetown+University+Law+Center/3/10/*http://www.law.georgetown.edu/journals/gielr/index.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "<em>Law</em> School",
+            "url": "http://srd.yahoo.com/srst/7001170/Georgetown+University+Law+Center/4/10/*http://www.law.georgetown.edu"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "Equal Justice Foundation",
+            "url": "http://srd.yahoo.com/srst/7001169/Georgetown+University+Law+Center/5/10/*http://www.geocities.com/CapitolHill/Lobby/2263"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "Edward Bennett Williams <em>Law</em> Library",
+            "url": "http://srd.yahoo.com/srst/315477/Georgetown+University+Law+Center/6/10/*http://www.ll.georgetown.edu/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "<em>Georgetown</em> Group, The",
+            "url": "http://srd.yahoo.com/srst/26944478/Georgetown+University+Law+Center/7/10/*http://www.georgetowngroup.com/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "Finkel &amp; Altman, LLC",
+            "url": "http://srd.yahoo.com/srst/15547715/Georgetown+University+Law+Center/8/10/*http://www.finkellaw.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "Sergovic &amp; Ellis, P.A.",
+            "url": "http://srd.yahoo.com/srst/7700965/Georgetown+University+Law+Center/9/10/*http://www.sergovic-ellis.com"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970779220,
+            "title": "Second Amendment: Toward an Afro-Americanist Reconsideration",
+            "url": "http://srd.yahoo.com/srst/2722080/Georgetown+University+Law+Center/10/10/*http://www.2ndLawLib.org/journals/cd-recon.html"
+        }
+    ],
+    "timestamp": 970779220,
+    "url": "http://search.yahoo.com:80/search?p=Georgetown+University+Law+Center"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Leo de la Strehaia\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Leo de la Strehaia\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Cu stana de oii \u0219i gr\u0103tarul la Mitel acas\u0103 \u274c Leo de la Strehaia \u0219i Patroana \u274c. \u2022. 35,133 views 3 months ago. Cu oaia \u0219i gr\u0103tarul.",
+            "timestamp": 1633884656,
+            "title": "Leo de la Strehaia - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/c/LeodelaStrehaia&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQFnoECAkQAg&usg=AOvVaw3OPpRSftcJwPTu87Mq7n1X"
+        },
+        {
+            "rank": 3,
+            "snippet": "1 day ago \u00b7 Am venit la vizita la Tata Leo in penitenciarul Severin. 1 view1 view. Oct 9, 2021. 2. 0 ...Duration: 12:26Posted: 1 day ago",
+            "timestamp": 1633884656,
+            "title": "Am venit la vizita la Tata Leo in penitenciarul Severin - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DLx_e0Dlc_y4&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQtwJ6BAgDEAE&usg=AOvVaw2a0Ca2_Gp5OpkZ89Q0iTGN"
+        },
+        {
+            "rank": 4,
+            "snippet": "21 minutes ago \u00b7 BUCATARUL LUI LEO DE LA STREHAIA la casuta din povesti \u00b7 This is the MOST DELICIOUS I ...Duration: 25:08Posted: 21 minutes ago",
+            "timestamp": 1633884656,
+            "title": "BUCATARUL LUI LEO DE LA STREHAIA DUPA OAIE - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DTXUqVZX406U&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQtwJ6BAgEEAE&usg=AOvVaw3ydu0P9-j_qQ9rBPInpDnd"
+        },
+        {
+            "rank": 5,
+            "snippet": "Aici puteti viziona toate filmuletele noastre!",
+            "timestamp": 1633884656,
+            "title": "Leo de la Strehaia - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/c/LeodelaStrehaia/playlists&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQFnoECAgQAg&usg=AOvVaw2onTJQf-y6-j2GhbYnoc3e"
+        },
+        {
+            "rank": 6,
+            "snippet": "LEO De La STREHAIA. 10779 likes \u00b7 1 talking about this. Oficial https://www.facebook.com/leo.delastrehaia.",
+            "timestamp": 1633884656,
+            "title": "LEO De La STREHAIA - Videos | Facebook",
+            "url": "https://www.google.com/url?q=https://www.facebook.com/LEOdelaStrehaiaTV/videos/&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQFnoECAoQAg&usg=AOvVaw1Ic8SfCh9KNc0JQaXQhwdk"
+        },
+        {
+            "rank": 7,
+            "snippet": "See photos, profile pictures and albums from Leo de la strehaia.",
+            "timestamp": 1633884656,
+            "title": "Leo de la strehaia - Photos | Facebook",
+            "url": "https://www.google.com/url?q=https://www.facebook.com/Leo-de-la-strehaia-1657136104560450/photos/&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQFnoECAIQAg&usg=AOvVaw0ztwhHhUkdpkGAZsjhbRkq"
+        },
+        {
+            "rank": 8,
+            "snippet": "Loredana Chivu \u015fi-a luat b\u0103taie de la familia lui Leo de la Strehaia Hot. Zoojam. 74 followers. More information. Hot Blonde Girls \u00b7 Blonde Women.",
+            "timestamp": 1633884656,
+            "title": "Pin on Thong Head Whales Master - Pinterest",
+            "url": "https://www.google.com/url?q=https://www.pinterest.com/pin/717550153099256070/&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQFnoECAAQAg&usg=AOvVaw09g82cMrBj4Kx7Zni_qzMh"
+        },
+        {
+            "rank": 9,
+            "snippet": "56 Followers, 260 Following, 3 Posts - See Instagram photos and videos from Leo de la Strehaia (@strehaialeodela)",
+            "timestamp": 1633884656,
+            "title": "Leo de la Strehaia (@strehaialeodela) \u2022 Instagram photos and videos",
+            "url": "https://www.google.com/url?q=https://www.instagram.com/strehaialeodela/&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQFnoECAUQAg&usg=AOvVaw1bWd0kSegjkAMQ9sS375s1"
+        },
+        {
+            "rank": 10,
+            "snippet": "Discover short videos related to Leo de la Strehaia on TikTok. Watch popular content from the following creators: Leo de la\u00a0...",
+            "timestamp": 1633884656,
+            "title": "Discover Leo de la Strehaia 's popular videos | TikTok",
+            "url": "https://www.google.com/url?q=https://www.tiktok.com/discover/Leo-de-la-Strehaia%3Flang%3Dmr-IN&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQFnoECAEQAg&usg=AOvVaw2ln0IqnnmaoUIUbcZfE97V"
+        },
+        {
+            "rank": 11,
+            "snippet": "Sep 30, 2021 \u00b7 UPDATE ora 23.14: Leo de la Strehaia and the other convicted people in the case were picked up from their homes and taken to the place of\u00a0...",
+            "timestamp": 1633884656,
+            "title": "Leo De La Strehaia and His Mother, Sentenced to Execution in a ...",
+            "url": "https://www.google.com/url?q=https://www.world-today-news.com/leo-de-la-strehaia-and-his-mother-sentenced-to-execution-in-a-tax-evasion-case-how-much-each-one-took/&sa=U&ved=2ahUKEwjmzvO9wcDzAhUYvJ4KHal-AHkQFnoECAcQAg&usg=AOvVaw3177XJ0BOM91g7JyIYMtga"
+        }
+    ],
+    "timestamp": 1633884656,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Leo+de+la+Strehaia%22"
+}

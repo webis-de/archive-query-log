@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Perfect First Date",
+    "offset": null,
+    "page": null,
+    "query": "Perfect First Date",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Spice up your <em>first</em> dates and love life with dating tips, <em>first date</em> ideas, dating advice and <em>first date</em> tips! Romantic ideas for <em>first</em> dates ...",
+            "timestamp": 1180217842,
+            "title": "<em>First Date</em> Ideas, <em>First Date</em> Tips, Dating Tips, <em>First</em> Dates",
+            "url": "http://www.links2love.com/dating_first_date.htm"
+        },
+        {
+            "rank": 2,
+            "snippet": "Love, relationship and dating quizzes - including the - YOUR <em>FIRST DATE</em> IQ test - find out if you REALLY know what to say, where to go and ...",
+            "timestamp": 1180217842,
+            "title": "<em>Perfect First Date</em> Quiz - Conversation Tips",
+            "url": "http://www.links2love.com/quizzes/perfect_first_date_4.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "Gotta love Scrubs!",
+            "timestamp": 1180217842,
+            "title": "YouTube - Scrubs Scene - <em>Perfect First-Date</em>",
+            "url": "http://www.youtube.com/watch?v=NcqlOjjREhk&mode=related&search="
+        },
+        {
+            "rank": 4,
+            "snippet": "Golf: The <em>Perfect First Date</em>.  Golfmates is the world's premier online dating service designed specifically for the golfing community.",
+            "timestamp": 1180217842,
+            "title": "Golf: The <em>perfect first date</em>. The best place for singles golf dating ...",
+            "url": "http://www.golfmates.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "According to a release issued around the company's <em>first</em> swing back in May, its philosophy is to bring people together for \"the <em>perfect first</em> ...",
+            "timestamp": 1180217842,
+            "title": "Golf: The <em>perfect first date</em>. The best place for singles golf dating ...",
+            "url": "http://www.golfmates.com/news.php"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>First Date</em> Ideas ... ... movie together provides the <em>perfect</em> atmosphere to just get used to them without ...",
+            "timestamp": 1180217842,
+            "title": "<em>First Date</em> Ideas",
+            "url": "http://acmelove.com/dating/first-date-ideas.php"
+        },
+        {
+            "rank": 7,
+            "snippet": "And even if you've been together awhile it doesn't  mean you can't have a '<em>first' date</em> again! ... Share your <em>first date</em> story with us, we may ...",
+            "timestamp": 1180217842,
+            "title": "Inspiration Point Romance and Love",
+            "url": "http://www.inspirationpoint.com/ipfirstd.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>First date</em> tips- <em>first</em> tips - Make the <em>first date</em> successful ... ... on the <em>first date</em> to losing a video game?",
+            "timestamp": 1180217842,
+            "title": "AskMen.com - <em>First date</em>",
+            "url": "http://www.askmen.com/dating/heidi/heidi1.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Perfect First-Date</em> Ideas   By Tom Blake   Once you've agreed to go out on that elusive <em>first date</em>, where should you g...",
+            "timestamp": 1180217842,
+            "title": "Love &amp; Passion Newsletter - <em>Perfect First-Date</em> Ideas",
+            "url": "http://www.thirdage.com/news/archive/ALT03020308-03.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "The <em>Perfect First Date</em> Meal For the Culinary Illiterate ... <em>First</em> impressions are everything and the proper aroma can set the tone for a ...",
+            "timestamp": 1180217842,
+            "title": "Best Of The Home Articles &amp; Projects - The <em>Perfect First Date</em> Meal ...",
+            "url": "http://www.bestofthehome.com/articles/first_date_meal.html"
+        }
+    ],
+    "timestamp": 1180217842,
+    "url": "http://www.ask.com:80/web?o=1159&qsrc=6&l=zr&q=Perfect+First+Date"
+}

@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "wheatstone bridge",
+    "offset": null,
+    "page": null,
+    "query": "wheatstone bridge",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "A<em> Wheatstone bridge</em> is an electrical circuit used to measure an unknown electrical resistance by balancing two legs of a<em> bridge circuit</em>, one leg of which includes the unknown component. The primary benefit of the circuit is its ability to provide extremely accurate measurements (in contrast with something like a simple voltage divider).",
+            "timestamp": 1613009822,
+            "title": "Wheatstone bridge - Wikipedia",
+            "url": "https://r.search.yahoo.com/_ylt=Awr9J.2uoSRgiCAA3j0L5gt.;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1613042223/RO=10/RU=https%3a%2f%2fen.wikipedia.org%2fwiki%2fWheatstone_bridge/RK=2/RS=yPyzmSln0X4DyHas44tCDUSGJ5g-"
+        },
+        {
+            "rank": 2,
+            "snippet": "The<em> Wheatstone Bridge</em> is the name given to a combination of four resistances connected to give a null center value The<em> Wheatstone Bridge</em> was originally developed by Charles<em> Wheatstone</em> to measure unknown resistance values and as a means of calibrating measuring instruments, voltmeters, ammeters, etc, by the use of a long resistive slide wire.",
+            "timestamp": 1613009822,
+            "title": "Wheatstone Bridge Circuit and Theory of Operation",
+            "url": "https://r.search.yahoo.com/_ylt=Awr9J.2uoSRgiCAA4D0L5gt.;_ylu=Y29sbwNncTEEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1613042223/RO=10/RU=https%3a%2f%2fwww.electronics-tutorials.ws%2fblog%2fwheatstone-bridge.html/RK=2/RS=wLFQfpJCO8h2ycaTPIgq2U5VUm4-"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Wheatstone bridge</em>, also known as the resistance <em>bridge</em>, is used to calculate the unknown resistance by balancing two legs of the <em>bridge </em>circuit, of which one leg includes the component of unknown resistance. It was invented by Samuel Hunter Christie in the year 1833, which was later popularized by Sir Charles <em>Wheatstone </em>in 1843.",
+            "timestamp": 1613009822,
+            "title": "Wheatstone Bridge - Working Principle, Formula, Derivation,...",
+            "url": "https://r.search.yahoo.com/_ylt=Awr9J.2uoSRgiCAA6D0L5gt.;_ylu=Y29sbwNncTEEcG9zAzMEdnRpZAMEc2VjA3Ny/RV=2/RE=1613042223/RO=10/RU=https%3a%2f%2fbyjus.com%2fphysics%2fwheatstone-bridge%2f/RK=2/RS=epJsdCVfHd6P9aofb9ZqVmcYnMU-"
+        },
+        {
+            "rank": 4,
+            "snippet": "15/5/2019 \u00b7  The<em> Wheatstone bridge</em> is used for measuring the very low resistance values precisely.<em> Wheatstone bridge</em> along with operational amplifier is used to measure the physical parameters like temperature, strain, light, etc. We can also measure the quantities capacitance, inductance and impedance using the variations on the<em> Wheatstone bridge</em>.",
+            "timestamp": 1613009822,
+            "title": "Wheatstone Bridge Circuit | Theory, Example and Applications",
+            "url": "https://r.search.yahoo.com/_ylt=Awr9J.2uoSRgiCAA6j0L5gt.;_ylu=Y29sbwNncTEEcG9zAzQEdnRpZAMEc2VjA3Ny/RV=2/RE=1613042223/RO=10/RU=https%3a%2f%2fwww.electronicshub.org%2fwheatstone-bridge%2f/RK=2/RS=o67ztM7ACHYy5dPHFevIH3yyjto-"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1613009822,
+            "title": "What is Wheatstone Bridge? Circuit, Theory, Principle &amp;...",
+            "url": "https://r.search.yahoo.com/_ylt=Awr9J.2uoSRgiCAA7D0L5gt.;_ylu=Y29sbwNncTEEcG9zAzUEdnRpZAMEc2VjA3Ny/RV=2/RE=1613042223/RO=10/RU=https%3a%2f%2fcircuitdigest.com%2farticle%2fwhat-is-wheatstone-bridge%2f/RK=2/RS=35gm336jd6YgMRsYBbYcWz.s33Q-"
+        },
+        {
+            "rank": 6,
+            "snippet": "The<em> Wheatstone bridge</em> works on the principle of null deflection, i.e. the ratio of their resistances are equal, and no current flows through the galvanomete r. The bridge is very reliable and gives an accurate result. In normal condition, the bridge remains in the unbalanced condition, i.e. the current flow through the galvanometer.",
+            "timestamp": 1613009822,
+            "title": "What is Wheatstone Bridge? - Definition, Construction, Working...",
+            "url": "https://r.search.yahoo.com/_ylt=Awr9J.2uoSRgiCAA8z0L5gt.;_ylu=Y29sbwNncTEEcG9zAzYEdnRpZAMEc2VjA3Ny/RV=2/RE=1613042223/RO=10/RU=https%3a%2f%2fcircuitglobe.com%2fwheatstone-bridge.html/RK=2/RS=1WggxhflwcJz1_PwrfZUdQXS.BY-"
+        },
+        {
+            "rank": 7,
+            "snippet": "Definition: <em>Wheatstone bridge </em>is a type of dc <em>bridge </em>that is used for the measurement of unknown resistance. It is a series-parallel combination of 4 resistances that provides zero difference voltage at the balanced condition.",
+            "timestamp": 1613009822,
+            "title": "What is Wheatstone Bridge? Construction, operational theory ...",
+            "url": "https://r.search.yahoo.com/_ylt=Awr9J.2uoSRgiCAA9T0L5gt.;_ylu=Y29sbwNncTEEcG9zAzcEdnRpZAMEc2VjA3Ny/RV=2/RE=1613042223/RO=10/RU=https%3a%2f%2felectronicscoach.com%2fwheatstone-bridge.html/RK=2/RS=eFys575UadrY7rUmzvrDqtfrSGM-"
+        },
+        {
+            "rank": 8,
+            "snippet": "A typical<em> Wheatstone bridge circuit</em> consists of a simple network of four resistors of equal resistances connected end to end to form a square as shown in the below figure. Across one pair of diagonal corners of the circuit, an excitation voltage is applied and across the other pair, the output of the bridge is measured.",
+            "timestamp": 1613009822,
+            "title": "Understanding a Wheatstone Bridge Strain Gauge Circuit - Bestech...",
+            "url": "https://r.search.yahoo.com/_ylt=Awr9J.2uoSRgiCAA_z0L5gt.;_ylu=Y29sbwNncTEEcG9zAzgEdnRpZAMEc2VjA3Ny/RV=2/RE=1613042223/RO=10/RU=https%3a%2f%2fwww.bestech.com.au%2fblogs%2funderstanding-a-wheatstone-bridge-strain-gauge-circuit%2f/RK=2/RS=fo3GBwhn6ni0_aSYfQCIQ7OtGvE-"
+        }
+    ],
+    "timestamp": 1613009822,
+    "url": "https://au.search.yahoo.com/search?p=wheatstone+bridge&fr=my_top"
+}

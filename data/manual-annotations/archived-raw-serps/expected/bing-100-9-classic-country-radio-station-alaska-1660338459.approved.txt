@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "100.9 classic country radio station alaska",
+    "offset": null,
+    "page": null,
+    "query": "100.9 classic country radio station alaska",
+    "results": [],
+    "timestamp": 1660338459,
+    "url": "https://www.bing.com/search?q=100.9+classic+country+radio+station+alaska&FORM=QSRE6"
+}

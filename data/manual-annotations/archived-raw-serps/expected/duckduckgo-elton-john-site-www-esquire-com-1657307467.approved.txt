@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "elton john site:www.esquire.com",
+    "offset": null,
+    "page": null,
+    "query": "elton john site:www.esquire.com",
+    "results": [],
+    "timestamp": 1657307467,
+    "url": "https://duckduckgo.com/?q=elton+john+site%3Awww.esquire.com&t=ffcm"
+}

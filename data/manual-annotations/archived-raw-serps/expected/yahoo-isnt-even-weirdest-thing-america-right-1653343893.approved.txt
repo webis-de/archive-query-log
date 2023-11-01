@@ -1,0 +1,52 @@
+{
+    "interpreted_query": "isnt even weirdest thing america right",
+    "offset": null,
+    "page": null,
+    "query": "isnt even weirdest thing america right",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Bret: Whatever happens to Liz Cheney \u2014 and<em> things don\u2019t</em> look great for her<em> right</em> now \u2014 she\u2019s earned her own chapter in some future sequel to John F. Kennedy\u2019s \u201cProfiles in Courage.\u201d After the...",
+            "timestamp": 1653343893,
+            "title": "www.nytimes.com \u203a 2022/05/23 \u203a opinionOpinion | The Depp-Heard Trial Isn\u2019t Even the Weirdest Thing ...",
+            "url": "https://www.nytimes.com/2022/05/23/opinion/heard-depp-trial.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Bret:<em> Sure and</em> sure. Gail: However relating to problems with bodily abuse, a lady deserves quick consideration, partly simply out of concern for her security.And since we\u2019re attempting to show round an extended human historical past through which violence in opposition to a sexual companion wasn\u2019t seen as severe as violence in opposition to anyone else.",
+            "timestamp": 1653343893,
+            "title": "yaflix.com \u203a news \u203a opinion-the-depp-heard-trialOpinion | The Depp-Heard Trial Isn\u2019t Even the Weirdest Thing ...",
+            "url": "https://yaflix.com/news/opinion-the-depp-heard-trial-isnt-even-the-weirdest-thing-about-america-right-now/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Well, maybe it is. But there<em> is a</em> lot to choose from.",
+            "timestamp": 1653343893,
+            "title": "iconsdaily.com \u203a the-depp-heard-trial-isnt-evenThe Depp-Heard Trial Isn\u2019t Even the Weirdest Thing About ...",
+            "url": "https://iconsdaily.com/the-depp-heard-trial-isnt-even-the-weirdest-thing-about-america-right-now"
+        },
+        {
+            "rank": 4,
+            "snippet": "The Depp-Heard Trial <em>Isn't</em> <em>Even</em> the <em>Weirdest</em> <em>Thing</em> About <em>America</em> <em>Right</em> Now The New York Times - 23 May 2022 11:00",
+            "timestamp": 1653343893,
+            "title": "www.15minutenews.com \u203a article \u203a 2022/05/23The Depp-Heard Trial Isn't Even the Weirdest Thing About ...",
+            "url": "https://www.15minutenews.com/article/2022/05/23/215810580/the-depp-heard-trial-isnt-even-the-weirdest-thing-about-america-right-now/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Must Read . Kim Kardashian flaunts her killer dance moves... admin May 23, 2022 0 0",
+            "timestamp": 1653343893,
+            "title": "dailydose.pk \u203a the-depp-heard-trial-isnt-even-theThe Depp-Heard Trial Isn\u2019t Even the Weirdest Thing About ...",
+            "url": "https://dailydose.pk/the-depp-heard-trial-isnt-even-the-weirdest-thing-about-america-right-now"
+        },
+        {
+            "rank": 6,
+            "snippet": "The sixth week of Johnny Depp's $50 million defamation trial began with an expert witness, an orthopedic surgeon who cast doubt on the actor's claim of how he severed his finger in March, 2015 ...",
+            "timestamp": 1653343893,
+            "title": "deadline.com \u203a 2022 \u203a 05Expert Witness Challenges Johnny Depp\u2019s Claim Of Severed ...",
+            "url": "https://deadline.com/2022/05/johnny-depp-amber-heard-trial-severed-finger-1235030279/"
+        }
+    ],
+    "timestamp": 1653343893,
+    "url": "https://search.yahoo.com/search?p=isnt+even+weirdest+thing+america+right&ei=UTF-8&fr2=time&age=1d&btf=d&fr=sfp"
+}

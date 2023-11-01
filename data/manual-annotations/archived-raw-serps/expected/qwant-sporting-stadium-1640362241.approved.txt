@@ -1,0 +1,115 @@
+{
+    "interpreted_query": "sporting stadium",
+    "offset": null,
+    "page": null,
+    "query": "sporting stadium",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "stubhub.com/Tickets",
+            "timestamp": 1640362241,
+            "title": "StubHub Official Site. - Buy &amp; sell tickets.",
+            "url": "https://www.bing.com/aclick?ld=e8CJ7Tv4f65gNVCFZgKawHozVUCUzUBj0LfgjhMvohB6n7aMLhvqRX1PoafrkZHKXdXNTfwhdKlHj2gJ1lkRAkyAUTO9Ja4CEbE0nZACqpFnP8s5aww5-5snRXbOz_C-C8czOoSxKRgnYd75PV4gAUnK8flH2WyVG9w9l1mYWg89YLRd4G&u=aHR0cHMlM2ElMmYlMmZjbGlja3NlcnZlLmRhcnRzZWFyY2gubmV0JTJmbGluayUyZmNsaWNrJTNmbGlkJTNkNDM3MDAwNjYzMDM1MTIzOTUlMjZkc19zX2t3Z2lkJTNkNTg3MDAwMDczOTcwMTU2NzAlMjZkc19hX2NpZCUzZDY2NjczOTYyMiUyNmRzX2FfY2FpZCUzZDE0NTk4OTk3ODkxJTI2ZHNfYV9hZ2lkJTNkMTI3OTA0NjIxOTE4JTI2ZHNfYV9saWQlM2Rrd2QtODkxMTQ3NjElMjYlMjZkc19lX2FkaWQlM2Q4MTc3NjI2NzQ4NDY0MSUyNmRzX2VfdGFyZ2V0X2lkJTNka3dkLTgxNzc2Mzc5MzA2OTY5JTNhbG9jLTE5MCUyNiUyNmRzX2VfbmV0d29yayUzZHMlMjZkc191cmxfdiUzZDIlMjZkc19kZXN0X3VybCUzZGh0dHBzJTNhJTJmJTJmd3d3LnN0dWJodWIuY29tJTJmJTNmZ2NpZCUzZEMxMjI4OVgwMjElMjZrZXl3b3JkJTNkY3BpZC00MDE2MjM1OTlfYWdpZC0xMzA4NDE5MTY3NTE1ODA0X2t3ZC04MTc3NjM3OTMwNjk2OSUzYWxvYy0xOTBfYyUyNmNyZWF0aXZlJTNkODE3NzYyNjc0ODQ2NDElMjZ1dG1fa3hjb25maWQlM2RzMnJzaHNibXYlMjZ1dG1fY2FtcGFpZ24lM2Q0MDE2MjM1OTklMjZhcCUzZCUyNnBsb2MlM2Q4NzU0MiUyNmlsb2MlM2QlMjZtdCUzZGIlMjZrdyUzZHN0dWJodWIlMjZrd3QlM2R0bSUyNmdjbGlkJTNkYmYyZWY0YWE2YTdhMWQ1MDNjNTY5NTZmOTU2OTVlMDIlMjZnY2xzcmMlM2QzcC5kcyUyNmRzX3JsJTNkMTI1Mzk0NCUyNmRzX3JsJTNkMTI1MzMwOCUyNmRzX3JsJTNkMTI2MjAzMiUyNm1zY2xraWQlM2RiZjJlZjRhYTZhN2ExZDUwM2M1Njk1NmY5NTY5NWUwMg&rlid=bf2ef4aa6a7a1d503c56956f95695e02"
+        },
+        {
+            "rank": 2,
+            "snippet": "ticketsales.com",
+            "timestamp": 1640362241,
+            "title": "See Us Bank Stadium Tickets - Cheaper Than StubHub",
+            "url": "https://www.bing.com/aclick?ld=e8vxbGKQLG5W4NK7WKyFLmiDVUCUzKXV_yuWevXiRQzxGiODsmd3mMPASr4JpjyyWJViiAtgz1TyLYqRCtdIRqKW3EMVIjGVnDqQrQiaQKp3y4e0NZGpTAREMXnU2viRMA7AAplUMfPZ29XGO6VXMFsrq8emGHVu1Zhb6IU_aXjtJmKxo0&u=aHR0cHMlM2ElMmYlMmZ3d3cudGlja2V0c2FsZXMuY29tJTJmdXMtYmFuay1zdGFkaXVtLXRpY2tldHMlMmZ2ZW51ZSUzZm1zY2xraWQlM2Q5OWIzMjM4OWY3ZWIxN2NlMGVjZDQyNGMwOGY4NTk5NCUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZER5bmFtaWMlMjZ1dG1fdGVybSUzZCUyNTJGdXMtYmFuay1zdGFkaXVtLXRpY2tldHMlMjUyRiUyNnV0bV9jb250ZW50JTNkKHYxNDc3OCklMjUyMCUyNTdDJTI1MjBVUyUyNTIwQmFuayUyNTIwU3RhZGl1bSUyNTIwJTI1N0MlMjUyME1pbm5lYXBvbGlzJTI1MjAlMjU3QyUyNTIwRFNB&rlid=99b32389f7eb17ce0ecd424c08f85994"
+        },
+        {
+            "rank": 3,
+            "snippet": "Plan family and budget friendly trip ideas on our Trip Ideas page.",
+            "timestamp": 1640362241,
+            "title": "Sporting/Stadium \u2013 Meetings - Visit San Antonio",
+            "url": "https://www.bing.com/aclick?ld=e8j-yaWRkgdGv1UfaUQiDfojVUCUyUJV4fOaNWAuG8PDGoaYs-fPtVJ1H1d8_t-bBDfpS1SLdv6eaENSvlRDKbhDzTaBKLIQMp4Eo_Npy4jVT7D3ZdDTBNYx-lwbu_PvveicXCHcYRWk73auCoIESrpJS-IwtAOkbj_ZBuPTiM9HLMOrxe&u=aHR0cHMlM2ElMmYlMmZtZWV0aW5ncy52aXNpdHNhbmFudG9uaW8uY29tJTJmZWYtdHlwZXMlMmZzcG9ydGluZy1zdGFkaXVtJTJmJTNmdXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkVEFHLVZTQS1UUElELUZZMjItU0VNLUR5bmFtaWMtRE1BLVNwZWNpZmljJTI2dXRtX3Rlcm0lM2R1bml0ZWQlMjUyMHN0YXRlcyUyNTIwdGV4YXMlMjZ1dG1fY29udGVudCUzZFNBJTI1MjBEeW5hbWljLSUyNTIwQWN0aXZpdGllcw&rlid=995c79bfc4fb12b12bae187a3be83a02"
+        },
+        {
+            "rank": 4,
+            "snippet": "Sporting Stadium also is known as Jos\u00e9 Alvalade Stadium. It\u2019s situated in Lisbon, the capital city of Portugal. It is only 7 kilometers from Lisbon\u2019s historic center and about 3 kilometers from the Benfica Stadium (Est\u00e1dio da Luz). How to get there? Sporting\u2019s stadium is quite central and easily accessible by both public and private transportation.",
+            "timestamp": 1640362241,
+            "title": "Sporting Stadium, One Of Europe's Elite And Finest Stadiums",
+            "url": "https://beportugal.com/sporting-stadium/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Children's Mercy Park home to Sporting Kansas City, is known for providing personalized and unforgettable experiences to our fans.",
+            "timestamp": 1640362241,
+            "title": "Children's Mercy Park | Sporting Kansas City",
+            "url": "https://www.sportingkc.com/stadium/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Stadium Recap: Sporting suffers last-gasp playoff loss to Real Salt Lake. Sporting Kansas City suffered a last-gasp 2-1 loss to rivals Real Salt Lake on Sunday afternoon in the Western Conference Semifinals of the Audi 2021 MLS Cup Playoffs at Children\u2019s Mercy Park. Captain Johnny Russell fired Sporting ahead from the penalty spot in the ...",
+            "timestamp": 1640362241,
+            "title": "Stadium | Sporting Kansas City",
+            "url": "https://www.sportingkc.com/news/topics/stadium/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Stadiums and Sporting Events. Flying drones in and around stadiums is prohibited starting one hour before and ending one hour after the scheduled time of any of the following events: Specifically, UAS operations are prohibited within a radius of three nautical miles of the stadium or venue. The FAA and SMA have developed a toolbox for stadium ...",
+            "timestamp": 1640362241,
+            "title": "Stadiums and Sporting Events",
+            "url": "https://www.faa.gov/uas/recreational_fliers/where_can_i_fly/airspace_restrictions/sports_stadiums/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Only stadiums with a capacity of 40,000 or more are included in this list. Stadiums that are defunct or closed, or those that no longer serve as competitive sports venues (such as Strahov Stadium, which was the largest in the world and held around 220,000 spectators), are not included.",
+            "timestamp": 1640362241,
+            "title": "List of stadiums by capacity - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/List_of_stadiums_by_capacity"
+        },
+        {
+            "rank": 9,
+            "snippet": "RFK Stadium in D.C. was a perfect place for the Hogs and hailing to the now former Redskins. Washington really mailed it in with FedEx Field, located in a once made-up city in Maryland.",
+            "timestamp": 1640362241,
+            "title": "Ranking all 30 NFL stadiums, from worst to best | Sporting ...",
+            "url": "https://www.sportingnews.com/us/nfl/list/ranking-nfl-stadiums-from-worst-to-best/dky07jdst5w1mcy7cgsm7q6s"
+        },
+        {
+            "rank": 10,
+            "snippet": "Children's Mercy Park is a soccer-specific stadium in Kansas City, Kansas, United States, and is the home of Sporting Kansas City. The stadium is located near Kansas Speedway, on the far west side of Wyandotte County, Kansas. It opened during the 2011 season of Major League Soccer on June 9, 2011 with a match against the Chicago Fire.",
+            "timestamp": 1640362241,
+            "title": "Children's Mercy Park - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Children%27s_Mercy_Park"
+        },
+        {
+            "rank": 11,
+            "snippet": "Sporting Clube de Portugal ComC MHIH OM (Portuguese pronunciation: [\u02c8sp\u0254\u027et\u0129\u0261(\u0268) \u02c8klu\u03b2(\u0268) \u00f0\u0268 pu\u027etu\u02c8\u0263al]), otherwise known simply as Sporting (particularly in Portugal), as Sporting CP, or often as Sporting Lisbon abroad, is a club based in Lisbon.. Founded on 1 July 1906, Sporting is one of the \"Tr\u00eas Grandes\" football clubs in Portugal, along with rivals S.L. Benfica and FC Porto ...",
+            "timestamp": 1640362241,
+            "title": "Sporting CP - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Sporting_CP"
+        },
+        {
+            "rank": 12,
+            "snippet": "Official site for Sporting Kansas City, with news, photos, highlights, tickets, roster, schedule, and more.",
+            "timestamp": 1640362241,
+            "title": "Sporting Kansas City",
+            "url": "https://www.sportingkc.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": "Stadium 24/7 Schedule Where to Watch American Cornhole Baseball Stories Cal Ripken World Series Change The Game Change in Play IFL NBA Draft Online Combine Running with the Pack Back; Networks ACC Digital Network Mountain West Network WCC Network Back",
+            "timestamp": 1640362241,
+            "title": "Stadium - Your source for sports news and information.",
+            "url": "https://watchstadium.com/"
+        },
+        {
+            "rank": 14,
+            "snippet": "stubhub.com/Tickets",
+            "timestamp": 1640362241,
+            "title": "StubHub Official Site. - Buy &amp; sell tickets.",
+            "url": "https://www.bing.com/aclick?ld=e8CJ7Tv4f65gNVCFZgKawHozVUCUzUBj0LfgjhMvohB6n7aMLhvqRX1PoafrkZHKXdXNTfwhdKlHj2gJ1lkRAkyAUTO9Ja4CEbE0nZACqpFnP8s5aww5-5snRXbOz_C-C8czOoSxKRgnYd75PV4gAUnK8flH2WyVG9w9l1mYWg89YLRd4G&u=aHR0cHMlM2ElMmYlMmZjbGlja3NlcnZlLmRhcnRzZWFyY2gubmV0JTJmbGluayUyZmNsaWNrJTNmbGlkJTNkNDM3MDAwNjYzMDM1MTIzOTUlMjZkc19zX2t3Z2lkJTNkNTg3MDAwMDczOTcwMTU2NzAlMjZkc19hX2NpZCUzZDY2NjczOTYyMiUyNmRzX2FfY2FpZCUzZDE0NTk4OTk3ODkxJTI2ZHNfYV9hZ2lkJTNkMTI3OTA0NjIxOTE4JTI2ZHNfYV9saWQlM2Rrd2QtODkxMTQ3NjElMjYlMjZkc19lX2FkaWQlM2Q4MTc3NjI2NzQ4NDY0MSUyNmRzX2VfdGFyZ2V0X2lkJTNka3dkLTgxNzc2Mzc5MzA2OTY5JTNhbG9jLTE5MCUyNiUyNmRzX2VfbmV0d29yayUzZHMlMjZkc191cmxfdiUzZDIlMjZkc19kZXN0X3VybCUzZGh0dHBzJTNhJTJmJTJmd3d3LnN0dWJodWIuY29tJTJmJTNmZ2NpZCUzZEMxMjI4OVgwMjElMjZrZXl3b3JkJTNkY3BpZC00MDE2MjM1OTlfYWdpZC0xMzA4NDE5MTY3NTE1ODA0X2t3ZC04MTc3NjM3OTMwNjk2OSUzYWxvYy0xOTBfYyUyNmNyZWF0aXZlJTNkODE3NzYyNjc0ODQ2NDElMjZ1dG1fa3hjb25maWQlM2RzMnJzaHNibXYlMjZ1dG1fY2FtcGFpZ24lM2Q0MDE2MjM1OTklMjZhcCUzZCUyNnBsb2MlM2Q4NzU0MiUyNmlsb2MlM2QlMjZtdCUzZGIlMjZrdyUzZHN0dWJodWIlMjZrd3QlM2R0bSUyNmdjbGlkJTNkYmYyZWY0YWE2YTdhMWQ1MDNjNTY5NTZmOTU2OTVlMDIlMjZnY2xzcmMlM2QzcC5kcyUyNmRzX3JsJTNkMTI1Mzk0NCUyNmRzX3JsJTNkMTI1MzMwOCUyNmRzX3JsJTNkMTI2MjAzMiUyNm1zY2xraWQlM2RiZjJlZjRhYTZhN2ExZDUwM2M1Njk1NmY5NTY5NWUwMg&rlid=bf2ef4aa6a7a1d503c56956f95695e02"
+        },
+        {
+            "rank": 15,
+            "snippet": "ticketsales.com",
+            "timestamp": 1640362241,
+            "title": "See Us Bank Stadium Tickets - Cheaper Than StubHub",
+            "url": "https://www.bing.com/aclick?ld=e8vxbGKQLG5W4NK7WKyFLmiDVUCUzKXV_yuWevXiRQzxGiODsmd3mMPASr4JpjyyWJViiAtgz1TyLYqRCtdIRqKW3EMVIjGVnDqQrQiaQKp3y4e0NZGpTAREMXnU2viRMA7AAplUMfPZ29XGO6VXMFsrq8emGHVu1Zhb6IU_aXjtJmKxo0&u=aHR0cHMlM2ElMmYlMmZ3d3cudGlja2V0c2FsZXMuY29tJTJmdXMtYmFuay1zdGFkaXVtLXRpY2tldHMlMmZ2ZW51ZSUzZm1zY2xraWQlM2Q5OWIzMjM4OWY3ZWIxN2NlMGVjZDQyNGMwOGY4NTk5NCUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZER5bmFtaWMlMjZ1dG1fdGVybSUzZCUyNTJGdXMtYmFuay1zdGFkaXVtLXRpY2tldHMlMjUyRiUyNnV0bV9jb250ZW50JTNkKHYxNDc3OCklMjUyMCUyNTdDJTI1MjBVUyUyNTIwQmFuayUyNTIwU3RhZGl1bSUyNTIwJTI1N0MlMjUyME1pbm5lYXBvbGlzJTI1MjAlMjU3QyUyNTIwRFNB&rlid=99b32389f7eb17ce0ecd424c08f85994"
+        }
+    ],
+    "timestamp": 1640362241,
+    "url": "https://www.qwant.com/?q=sporting+stadium&t=all"
+}

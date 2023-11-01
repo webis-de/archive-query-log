@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "+Sacred Age Odysseria",
+    "offset": null,
+    "page": null,
+    "query": "+Sacred Age Odysseria",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "These are the characters in the Sacred Age Odysselya.. All items (4) # A; B; C; D; E; F; G; H; I; J; K; L; M; N; O; P; Q; R; S; T; U; V; W; X; Y; Z; Other; E",
+            "timestamp": 1652523638,
+            "title": "Category:Sacred Age Odysselya characters | Fictional ...",
+            "url": "https://characters.fandom.com/wiki/Category:Sacred_Age_Odysselya_characters"
+        },
+        {
+            "rank": 2,
+            "snippet": "Find many great new &amp; used options and get the best deals for Sacred Age Odysseria 2 Super NES Unused at the best online prices at eBay! Free shipping for many products!",
+            "timestamp": 1652523638,
+            "title": "Sacred Age Odysseria 2 Super NES Unused | eBay",
+            "url": "https://www.ebay.com/itm/284654111813"
+        },
+        {
+            "rank": 3,
+            "snippet": "Find many great new &amp; used options and get the best deals for Big Tokai Shvc-Ol Sacred Age Odysseria at the best online prices at eBay! Free shipping for many products!",
+            "timestamp": 1652523638,
+            "title": "Big Tokai Shvc-Ol Sacred Age Odysseria | eBay",
+            "url": "https://www.ebay.com/itm/373878192872"
+        },
+        {
+            "rank": 4,
+            "snippet": "Find many great new &amp; used options and get the best deals for Sfc Sacred Age Odysseria Letter Pack Yu Limited at the best online prices at eBay! Free shipping for many products!",
+            "timestamp": 1652523638,
+            "title": "Sfc Sacred Age Odysseria Letter Pack Yu Limited | eBay",
+            "url": "https://www.ebay.com/itm/363768088076"
+        },
+        {
+            "rank": 5,
+            "snippet": "Find many great new &amp; used options and get the best deals for Sfc Super Nes Sacred Age Odysseria With Box Theory at the best online prices at eBay! Free shipping for many products!",
+            "timestamp": 1652523638,
+            "title": "Sfc Super Nes Sacred Age Odysseria With Box Theory | eBay",
+            "url": "https://www.ebay.com/itm/353873775821"
+        },
+        {
+            "rank": 6,
+            "snippet": "Odyssey by Homer 15th-century manuscript of Book I written by scribe John Rhosos (British Museum) Written c. 8th century BCE Language Homeric Greek Genre(s) Epic poetry Published in English 1614 Lines 12,109 Read online Odyssey at Wikisource Metre Dactylic hexameter The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is one of the oldest extant works of literature ...",
+            "timestamp": 1652523638,
+            "title": "Odyssey - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Odyssey"
+        },
+        {
+            "rank": 7,
+            "snippet": "New Nintendo Super Famicom soft condition New. We would very much appreciate if you could leave us one, too!",
+            "timestamp": 1652523638,
+            "title": "Nintendo Super Famicom Sacred Age Odysseria 2 Super NES ...",
+            "url": "https://www.ebay.com.au/itm/275285792123"
+        },
+        {
+            "rank": 8,
+            "snippet": "Get all the lyrics to songs by Sacred Age and join the Genius community of music scholars to learn the meaning behind the lyrics.",
+            "timestamp": 1652523638,
+            "title": "Sacred Age Lyrics, Songs, and Albums | Genius",
+            "url": "https://genius.com/artists/Sacred-age"
+        },
+        {
+            "rank": 9,
+            "snippet": "Advanced Search . Click here to search products using title name,author name and keywords.",
+            "timestamp": 1652523638,
+            "title": "Return of the Sacred in an Age of Terror | David Tacey ...",
+            "url": "https://www.taylorfrancis.com/chapters/mono/10.4324/9780429260872-10/return-sacred-age-terror-david-tacey"
+        },
+        {
+            "rank": 10,
+            "snippet": "Artist: Stone Poets (GodCloud, Sacred Age, Hemera, Maxi K) Track Title: Cosmic Prophecies Prod: Space N Veda Genre: Hip Hop Year: 2012",
+            "timestamp": 1652523638,
+            "title": "Sacred Age (Rapper/Poet): 2012",
+            "url": "https://sacredage.blogspot.com/2012/"
+        }
+    ],
+    "timestamp": 1652523638,
+    "url": "https://www.qwant.com/?q=%2BSacred+Age+Odysseria&client=ext-firefox-sb&t=web"
+}

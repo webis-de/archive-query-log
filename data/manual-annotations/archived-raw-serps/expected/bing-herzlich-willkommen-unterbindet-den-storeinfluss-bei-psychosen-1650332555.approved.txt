@@ -1,0 +1,59 @@
+{
+    "interpreted_query": "\"Herzlich willkommen !\" unterbindet den St\u00f6reinfluss bei Psychosen",
+    "offset": null,
+    "page": null,
+    "query": "\"Herzlich willkommen !\" unterbindet den St\u00f6reinfluss bei Psychosen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "In einem Artikel f\u00fcr die Dezember Ausgabe des British Journal of Psychiatry (2014) schreiben Crawford et al, dass die Lebenserwartung von Menschen mit einer <em>Psychose</em> um 20% niedriger ist als in der Allgemeinbev\u00f6lkerung.",
+            "timestamp": 1650332555,
+            "title": "Lebenserwartung bei Psychosen deutlich reduziert",
+            "url": "https://www.drclaassen.de/index.php/en/herzlich-willkommen-2/11-blog/11-lebenserwartung-bei-psychosen-deutlich-reduziert"
+        },
+        {
+            "rank": 2,
+            "snippet": "18.12.2020\u00a0\u00b7 <em>Herzlich willkommen</em> ... ansprechen die es tats\u00e4chlich gibt aber wo man anderseits diese \u00c4ngste von Seiten der Industrie und anderen eben <em>unterbinden</em> m\u00f6chte , wenn man mal Thema Impfungen und so sich anschaut zum Beispiel. ... in der <em>Psychose</em> nimmt man quasi das was der Mainstream sagt wahr aber auch so unterschwellige \u00c4ngste und ...",
+            "timestamp": 1650332555,
+            "title": "Kann wer helfen? - Psychose bei bestimmtem Thema, sonst ...",
+            "url": "https://schizophrenie-forum.com/psychose/beitraege/kann-wer-helfen-psychose-bei-bestimmtem-thema-sonst-nicht.524/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Dies betrifft weniger schizophrene <em>Psychosen</em> und die manische Hochstimmung, mehr Depressionen, Angstst\u00f6rungen, Alkohol-, Medikamenten- und Rauschdrogen-Abh\u00e4ngigkeit. Ist das Leiden erst einmal fortgeschritten, mag das Beschwerdebild immer eindeutiger und die Diagnose immer sicherer werden, f\u00fcr eine rechtzeitige Behandlung hat man aber bereits (zu) \u2026",
+            "timestamp": 1650332555,
+            "title": "PSYCHIATRIE HEUTE. Seelische St\u00f6rungen erkennen, verstehen ...",
+            "url": "https://docplayer.org/74003824-Psychiatrie-heute-seelische-stoerungen-erkennen-verstehen-verhindern-behandeln-prof-dr-med-volker-faust.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "trendaffe - 3X <em>Herzlich Willkommen</em> oder Bitte Nicht st\u00f6ren - Kostenloser Versand ab 29\u20ac. Jetzt bei Amazon.de bestellen!",
+            "timestamp": 1650332555,
+            "title": "trendaffe - 3X Herzlich Willkommen oder Bitte Nicht st\u00f6ren ...",
+            "url": "https://www.amazon.de/trendaffe-Herzlich-Willkommen-Bitte-st%C3%B6ren/dp/B08MTHCLTG"
+        },
+        {
+            "rank": 5,
+            "snippet": "trendaffe - 10x <em>Herzlich Willkommen</em> oder Bitte Nicht st\u00f6ren - Kostenloser Versand ab 29\u20ac. Jetzt bei Amazon.de bestellen!",
+            "timestamp": 1650332555,
+            "title": "trendaffe - 10x Herzlich Willkommen oder Bitte Nicht ...",
+            "url": "https://www.amazon.de/trendaffe-Herzlich-Willkommen-Bitte-st%C3%B6ren/dp/B08MTP1V2T"
+        },
+        {
+            "rank": 6,
+            "snippet": "12.09.2021\u00a0\u00b7 <em>Herzlich willkommen</em> \ufe0f. Das Schizophrenie-Forum ist da f\u00fcr Diskussionen rund um das Thema <em>Psychose</em>. Hier findest Du individuelle Beratung und Hilfe. Registriere Dich, um alle Vorteile und individuelle Beratung nutzen zu k\u00f6nnen! Die Diskussionen sollen auch dabei helfen, unverarbeitete Themen in der <em>Psychose</em> besser verarbeiten zu k\u00f6nnen ...",
+            "timestamp": 1650332555,
+            "title": "Therapien &amp; Unterst\u00fctzung | Psychose - Schizophrenie Forum ...",
+            "url": "https://schizophrenie-forum.com/psychose/foren/therapien-unterstuetzung.18/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Herzlich Willkommen</em>! Auf den folgenden Seiten finden Sie Informationen \u00fcber mich, meine Praxis und mein Therapieangebot. Ich hoffe, Ihnen hiermit erste Fragen zu beantworten und Ihnen einen ersten Eindruck zu vermitteln.",
+            "timestamp": 1650332555,
+            "title": "Herzlich Willkommen!",
+            "url": "http://www.praxisniemann.de/praxisniemann.de/Willkommen.html"
+        }
+    ],
+    "timestamp": 1650332555,
+    "url": "https://www.bing.com/search?q=%22Herzlich+willkommen+!%22+unterbindet+den+St%C3%B6reinfluss+bei+Psychosen&go=Suche&qs=ds&form=QBRE"
+}

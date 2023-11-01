@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "erik erikson's theory site:positivepsychology.com",
+    "offset": null,
+    "page": null,
+    "query": "erik erikson's theory site:positivepsychology.com",
+    "results": [],
+    "timestamp": 1654620203,
+    "url": "https://duckduckgo.com/?q=erik+erikson%27s+theory+site%3Apositivepsychology.com&t=ffab"
+}

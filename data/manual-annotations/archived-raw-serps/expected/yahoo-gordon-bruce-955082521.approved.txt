@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "Gordon Bruce",
+    "offset": null,
+    "page": null,
+    "query": "Gordon Bruce",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 955082521,
+            "title": "<em>Bruce</em> <em>Gordon</em> Cycles",
+            "url": "http://www.bgcycles.com"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 955082521,
+            "title": "<em>Bruce</em> <em>Gordon</em> Cycles",
+            "url": "http://www.bgcycles.com"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 955082521,
+            "title": "<em>Bruce</em>, Malcolm",
+            "url": "http://www.scotlibdems.org.uk/lp/gordon/brucemp.htm"
+        }
+    ],
+    "timestamp": 955082521,
+    "url": "http://search.yahoo.com:80/search?p=Gordon+Bruce"
+}

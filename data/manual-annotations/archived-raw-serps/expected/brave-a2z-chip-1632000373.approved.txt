@@ -1,0 +1,143 @@
+{
+    "interpreted_query": "A2Z chip",
+    "offset": null,
+    "page": null,
+    "query": "A2Z chip",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Jul 10, 2020 -\n            Industry veteran <em>Chip</em> Perry to helm <em>A2Z</em> Sync. July 10, 2020 11:05 AM. Lindsay VanHulle. <em>Chip</em> Perry, an auto retail veteran who steered vehicle listings sites AutoTrader and TrueCar, is jumping ...",
+            "timestamp": 1632000373,
+            "title": "Industry veteran Chip Perry to helm A2Z Sync | Automotive News",
+            "url": "https://www.autonews.com/retail/industry-veteran-chip-perry-helm-a2z-sync"
+        },
+        {
+            "rank": 2,
+            "snippet": "Apple M1. The Apple A12Z Bionic is a 64-bit ARM-based system on a <em>chip</em> (SoC) designed by Apple Inc. The <em>chip</em> was unveiled on March 18, 2020, as part of a press release for the iPad Pro (2020), the first device to use it. Apple officials touted the <em>chip</em> as faster than most Windows laptops of ...",
+            "timestamp": 1632000373,
+            "title": "Apple A12Z - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Apple_A12Z"
+        },
+        {
+            "rank": 3,
+            "snippet": "The famous tale of the origin of the potato <em>chip</em> is that in 1853, a chef from New York named George Crum served up a meal for Cornelius Vanderbilt, who didn\u2019t like the thick fries and sent them back to the kitchen. In response, Crum fried up some super-thin potato shavings, almost as a slap ...",
+            "timestamp": 1632000373,
+            "title": "The Unknown History of Potato Chips \u2013 History A2Z",
+            "url": "https://www.history-a2z.com/the-unknown-history-of-potato-chips/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Industry Veteran <em>Chip</em> Perry Named CEO of <em>A2Z</em> Sync. DENVER, July 10, 2020 --. <em>A2Z</em> Sync, a software and dealer-services company that enables dealers to modernize and transform the car-buying ...",
+            "timestamp": 1632000373,
+            "title": "Industry Veteran Chip Perry Named CEO of A2Z Sync",
+            "url": "https://www.theautochannel.com/news/2020/07/10/831186-industry-veteran-chip-perry-named-ceo-a2z-sync.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Industry Veteran <em>Chip</em> Perry Named CEO of <em>A2Z</em> Sync. DENVER, July 10, 2020 /PRNewswire/ --. <em>A2Z</em> Sync, a software and dealer-services company that enables dealers to modernize and transform the car ...",
+            "timestamp": 1632000373,
+            "title": "Industry Veteran Chip Perry Named CEO of A2Z Sync",
+            "url": "https://www.prnewswire.com/news-releases/industry-veteran-chip-perry-named-ceo-of-a2z-sync-301091389.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Chip</em> Perry CEO &amp; President. Joining the <em>A2Z</em> Sync team is a natural progression in my automotive career. After leading AutoTrader.com, TrueCar and many other ventures \u2013 I now have the chance to work on the biggest and most important opportunity in automotive retail: helping dealers improve ...",
+            "timestamp": 1632000373,
+            "title": "Sell Cars. Simply. \u2014 A2Z Sync | The Power of One\u00ae",
+            "url": "https://a2zsync.com/about/"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>A2Z</em> BIZTECH \u2013 IT Marketing Services Company. An incredible business transformation awaits here. <em>A2Z</em> BIZTECH is a one-stop-shop, assuring high-quality mission-critical Information Technology Products and Services. We assist our customers in navigating through disruptive situations, that\u2019s hindering progress!",
+            "timestamp": 1632000373,
+            "title": "A2Z BIZTECH \u2013 IT Marketing Services Company",
+            "url": "https://www.a2zbiztech.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": "TOSHIBA LED BAR LJ64-03514A FOR 40L5200U. CAD $59.99. SONY KDL-50EX645 LED BACK-LIGHT BAR -2pc. CAD $59.99. 3M SCOTCH DOUBLE SIDED TAPE 50MTS. CAD $29.99. Hisense 186005 Main Board for 65H7B. CAD $114.99. Hisense 180525 / 176728 Main Board / Power Supply for 40H5B.",
+            "timestamp": 1632000373,
+            "title": "TV Parts, Boards, DLP Chips, Lamps | A2ZElectronicparts.com",
+            "url": "https://www.a2zelectronicparts.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "The A14 <em>chip</em> is a part of the upcoming iPad Air 4 model released wuite recently. Here is a comparison between A14 or A12Z Bionic <em>chip</em>. Know which one is better.",
+            "timestamp": 1632000373,
+            "title": "A14 vs A12Z Bionic chip: Which chip-set processor is better?",
+            "url": "https://www.republicworld.com/technology-news/gadgets/a14-vs-a12z-bionic-chip-which-chip-set-processor-is-better.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Sep 16, 2020 -\n            Related: A14 Bionic Explained: What Apple\u2019s Most Advanced <em>Chip</em> Brings To iPad Air. With the iPad Air 4, Apple unveiled the A14 Bionic processor, its latest and most advanced design. Some may have been startled that Apple's mid-range tablet received the height of Apple's microprocessor design ...",
+            "timestamp": 1632000373,
+            "title": "A14 Bionic Vs. A12Z: Apple's iPad Air 4 &amp; iPad Pro Chips Compared",
+            "url": "https://screenrant.com/apple-a14-bionic-vs-a12z-ipad-air-4-ipad-pro-chips-compared/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Semiconductor <em>Chip</em> Handlers Market research report is the new statistical data source added by <em>A2Z</em> Market Research. \u201cSemiconductor <em>Chip</em> Handlers Market is growing at a High CAGR during the ...",
+            "timestamp": 1632000373,
+            "title": "Semiconductor Chip Handlers Market to Witness Robust ...",
+            "url": "https://www.openpr.com/news/2386598/semiconductor-chip-handlers-market-to-witness-robust-expansion"
+        },
+        {
+            "rank": 12,
+            "snippet": "<em>Chip</em> Perry, CEO &amp; President. Joining the <em>A2Z</em> Sync team is a natural progression in my automotive career. After leading AutoTrader.com, TrueCar and many other ventures \u2013 I now have the chance to work on the biggest and most important opportunity in automotive retail: helping dealers improve ...",
+            "timestamp": 1632000373,
+            "title": "A2Z Sync | The Power of One\u00ae",
+            "url": "https://www.a2zsync.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": "Yash Tripathi. A12z <em>CHIP</em> vs M1 <em>CHIP</em>. With the launch of the new Apple iPad Pro and iPad Air, the organisation has introduced its latest Apple M1 <em>chip</em> in the market. The new M1 <em>chip</em> is Apple's most powerful Soc which is highly optimised for Apple devices. The organisation has also claimed that ...",
+            "timestamp": 1632000373,
+            "title": "A12z vs M1 Chip - Which Apple chipset is better? A complete comparison",
+            "url": "https://www.republicworld.com/technology-news/gadgets/a12z-vs-m1-chip-which-apple-chipset-is-better-a-complete-comparison.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Intel Is Reducing Server <em>Chip</em> Pricing in Attempt to Stem the AMD Tide. According to DigiTimes, Intel has pivoted on its server strategy, in order to fight a supply-constrained\u2026. Technology.",
+            "timestamp": 1632000373,
+            "title": "A2Z Facts \u2013 All the news you need and more",
+            "url": "https://a2zfacts.net/"
+        },
+        {
+            "rank": 15,
+            "snippet": "Intel Is Reducing Server <em>Chip</em> Pricing in Attempt to Stem the AMD Tide. According to DigiTimes, Intel has pivoted on its server strategy, in order to fight a supply-constrained AMD. It\u2019s reportedly flooding the market with <em>chips</em> at discount pricing, rather than sticking to MSRP.",
+            "timestamp": 1632000373,
+            "title": "Intel Is Reducing Server Chip Pricing in Attempt to Stem the AMD ...",
+            "url": "https://a2zfacts.net/articles/intel-is-reducing-server-chip-pricing-in-attempt-to-stem-the-amd-tide/"
+        },
+        {
+            "rank": 16,
+            "snippet": "<em>A2Z</em> Computer Shop is one of the leading laptop service providers in Chennai. Our specialties are reliable services and timely delivery at affordable prices. We focus on quality service to all types of laptops, irrespective of their make and model. ... Laptop motherboard <em>chip</em> level service Laptop motherboard bga rework Data recovery services.",
+            "timestamp": 1632000373,
+            "title": "A2Z Computer Shop",
+            "url": "https://a2zcomputershop.in/"
+        },
+        {
+            "rank": 17,
+            "snippet": "Press release - <em>A2Z</em> Market Research - Microarrays and Lab-on-a-<em>Chip</em> Industry Market to Witness Stunning Growth - Danaher Corporation, Bio-Rad Laboratories, Abbott Laboratories, F. Hoffmann-La ...",
+            "timestamp": 1632000373,
+            "title": "Microarrays and Lab-on-a-Chip Industry Market to Witness",
+            "url": "https://www.openpr.com/news/2316492/microarrays-and-lab-on-a-chip-industry-market-to-witness"
+        },
+        {
+            "rank": 18,
+            "snippet": "The Apple A4 is a 32-bit package on package (PoP) system on a <em>chip</em> (SoC) designed by Apple Inc. and manufactured by Samsung. It was the first SoC Apple designed in-house. The first product to feature the A4 was the first-generation iPad, followed by the iPhone 4, fourth-generation iPod Touch, ...",
+            "timestamp": 1632000373,
+            "title": "Apple A4 - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Apple_A4"
+        },
+        {
+            "rank": 19,
+            "snippet": "Feb 13, 2021 -\n            Learn which Mac computers have the Apple T2 Security <em>Chip</em>.",
+            "timestamp": 1632000373,
+            "title": "Mac models with the Apple T2 Security Chip - Apple Support",
+            "url": "https://support.apple.com/en-us/HT208862"
+        }
+    ],
+    "timestamp": 1632000373,
+    "url": "https://search.brave.com/search?q=A2Z+chip"
+}

@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "eric singer drums",
+    "offset": null,
+    "page": null,
+    "query": "eric singer drums",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "More Musicians Get Their Gear From Sweetwater Than From Any Other Online Music Store! Discover The Sweetwater Difference! Unmatched Customer Service &amp; Free Shipping.",
+            "timestamp": 1621083357,
+            "title": "Drums &amp; Percussion - Best Online Instrument Store",
+            "url": "https://www.bing.com/aclick?ld=e8j02nwWsZQrm0N-gqzLVzKzVUCUxxQYwubVOEfOm_3CpqGvAOc3COW6qw5Uf0jFyr6CF37EdZthbu1iRWOlm8K4i8o79HyK8m08PBcVtry9e6hVSB3dLjzxoLaqjQS5b2XZI5nJ4CjVVFC8co-lA8cJ2nPwL_oULGXwY_FLcjIqWLJd8V&u=aHR0cHMlM2ElMmYlMmZjbGlja3NlcnZlLmRhcnRzZWFyY2gubmV0JTJmbGluayUyZmNsaWNrJTNmbGlkJTNkNDM3MDAwNDY3NDY5ODk3NDUlMjZkc19zX2t3Z2lkJTNkNTg3MDAwMDUyODMyOTc2MTAlMjZkc19hX2NpZCUzZDQwNTUyNzkyMSUyNmRzX2FfY2FpZCUzZDkyMzkwODk0MDclMjZkc19hX2FnaWQlM2Q5NzM2NTk3NjQ0MSUyNmRzX2FfbGlkJTNka3dkLTI5NzU2NzYwOTA0OCUyNiUyNmRzX2VfYWRpZCUzZDc3NzIxODc3NzcxODg5JTI2ZHNfZV90YXJnZXRfaWQlM2Rrd2QtNzc3MjE5Njc5MzY1NTglM2Fsb2MtNDA5NSUyNiUyNmRzX3VybF92JTNkMiUyNmRzX2Rlc3RfdXJsJTNkaHR0cHMlM2ElMmYlMmZhZC5hdGRtdC5jb20lMmZzJTJmZ28lM2JhZHYlM2QxMTI3MjIwMTI2NjU1MCUzYmVjJTNkMTEyNzIyMDIzODE5NTAlM2JjLmElM2QyODM2MzA5MTMlM2JzLmElM2RiaW5nJTNicC5hJTNkMjgzNjMwOTEzJTNiYXMuYSUzZDEyNDM1NDgwNjA3OTk4MDklM2JjLm4lM2RhYVRleHQlMjUyMC0lMjUyMERydW1zJTI1MjAlMjUyNiUyNTIwUGVyY3Vzc2lvbiUyNTIwLSUyNTIwJTI1NUJCTU0lMjU1RCUzYnAubiUzZGFhVGV4dCUyNTIwLSUyNTIwRHJ1bXMlMjUyMCUyNTI2JTI1MjBQZXJjdXNzaW9uJTI1MjAtJTI1MjAlMjU1QkJNTSUyNTVEJTNiYXMubiUzZERydW1zJTI1MjAlMjUyNiUyNTIwUGVyY3Vzc2lvbiUzYnFwYiUzZDElM2IlM2ZiaWRrdyUzZCUyNTJCZHJ1bXMlMjZkdmMlM2RjJTI2aCUzZGh0dHBzJTI1M0ElMjUyRiUyNTJGd3d3LnN3ZWV0d2F0ZXIuY29tJTI1MkZzaG9wJTI1MkZkcnVtcy1wZXJjdXNzaW9uJTI1MkYlMjUzRnV0bV9zb3VyY2UlMjUzRE1TTiUyNTI2dXRtX21lZGl1bSUyNTNEUFBDJTI1MjZtcmtnYWRpZCUyNTNEMzM0MDk3OTAyMiUyNTI2bXJrZ2NsJTI1M0QyOCUyNTI2bXJrZ2VuJTI1M0RtdGV4dCUyNTI2bXJrZ2JmbGFnJTI1M0QwJTI1MjZtcmtnY2F0JTI1M0RkcnVtcyUyNTI2cGVyY3Vzc2lvbiUyNTI2JTI1MjZhY2N0aWQlMjUzRDIxNzAwMDAwMDAxNjQ1Mzg4JTI1MjZkc2tleXdvcmRpZCUyNTNENDM3MDAwNDY3NDY5ODk3NDUlMjUyNmxpZCUyNTNENDM3MDAwNDY3NDY5ODk3NDUlMjUyNmRzX3Nfa3dnaWQlMjUzRDU4NzAwMDA1MjgzMjk3NjEwJTI1MjZkc19hX2NpZCUyNTNENDA1NTI3OTIxJTI1MjZkc19hX2NhaWQlMjUzRDkyMzkwODk0MDclMjUyNmRzX2FfYWdpZCUyNTNEOTczNjU5NzY0NDElMjUyNmRzX2FfbGlkJTI1M0Rrd2QtMjk3NTY3NjA5MDQ4JTI1MjZkZXZpY2UlMjUzRGMlMjUyNm5ldHdvcmslMjUzRHMlMjUyNm1hdGNodHlwZSUyNTNEcCUyNTI2bG9jYXRpb25pZCUyNTNEMTAyOTk0JTI1MjZjcmVhdGl2ZSUyNTNEJTI1MjZ0YXJnZXRpZCUyNTNEa3dkLTc3NzIxOTY3OTM2NTU4JTI1M0Fsb2MtNDA5NSUyNTI2Y2FtcGFpZ25pZCUyNTNEMjgzNjMwOTEzJTI1MjZhZGdyb3VwaWQlMjUzRDEyNDM1NDgwNjA3OTk4MDklMjUyNmdjbGlkJTI1M0Q5YjcyNDZmNmMwZjMxZGNkMDQzYzI2NjkyMDBkNDNjMyUyNTI2Z2Nsc3JjJTI1M0QzcC5kcyUyNTI2JTI2Z2NsaWQlM2Q5YjcyNDZmNmMwZjMxZGNkMDQzYzI2NjkyMDBkNDNjMyUyNmdjbHNyYyUzZDNwLmRzJTI2bXNjbGtpZCUzZDliNzI0NmY2YzBmMzFkY2QwNDNjMjY2OTIwMGQ0M2Mz&rlid=9b7246f6c0f31dcd043c2669200d43c3"
+        },
+        {
+            "rank": 2,
+            "snippet": "Lots of Drum Music Set to Choose From. Orders $35+ Ship Free. Get the Latest in Drum Music Set.",
+            "timestamp": 1621083357,
+            "title": "Find Drum Music Set Now - Drum Music Set Deals",
+            "url": "https://www.bing.com/aclick?ld=e8o0NIGitySrhVoYhoEqxN9DVUCUwK73gcFIJi0WknCQP8ib4UlVuw5PMp46qrcU0h-tQcne0O3xwBUjCPX1V-WbbjQIvj2K1S8N3cdGHrutt1SHMlGKfRhFpo1MRqRD9_AEp5p9LyFIzC9Wy77jH-Y0wyf8QzZffFelehFvhcNhYT3W_2&u=aHR0cHMlM2ElMmYlMmZjbGlja3NlcnZlLmRhcnRzZWFyY2gubmV0JTJmbGluayUyZmNsaWNrJTNmbGlkJTNkNDM3MDAwMTYwMDMxMzUzOTglMjZkc19zX2t3Z2lkJTNkNTg3MDAwMDEwMzgzODIxNzglMjZkc19hX2NpZCUzZDQwNTUwNzU1NiUyNmRzX2FfY2FpZCUzZDkyMjQ4ODIzMTYlMjZkc19hX2FnaWQlM2Q5MTc5MDYyOTg4NSUyNmRzX2FfbGlkJTNka3dkLTMwMTYyNjc0NzQ4MiUyNiUyNmRzX2VfYWRpZCUzZDgxNjM4ODA5OTA3Mjc2JTI2ZHNfZV90YXJnZXRfaWQlM2Rrd2QtNzI2MDExNjIyNDklM2Fsb2MtMTkwJTI2JTI2ZHNfdXJsX3YlM2QyJTI2ZHNfZGVzdF91cmwlM2RodHRwcyUzYSUyZiUyZnd3dy50YXJnZXQuY29tJTJmcyUyZmRydW0lMmJtdXNpYyUyYnNldCUzZnJlZiUzZHRndF9hZHZfWFMwMDAwMDAlMjZBRklEJTNkbXNuJTI2Zm5kc3JjJTNkdGd0YW8lMjZERkElM2Q3MTcwMDAwMDAxMjQ5Mzc0NyUyNkNQTkclM2RUb3lzX011c2ljYWwlMmJUb3lzJTI1N0NUb3lzX0Vjb21tX0hhcmRsaW5lcyUyNmFkZ3JvdXAlM2RNdXNpY2FsJTJiVG95c18xJTI2TElEJTNkNzAwMDAwMDAxMTc1NzA3JTI2TE5NJTNkZHJ1bSUyYm11c2ljJTJic2V0JTI2TVQlM2RiJTI2bmV0d29yayUzZHMlMjZkZXZpY2UlM2RjJTI2bG9jYXRpb24lM2QxMDI5OTQlMjZ0YXJnZXRpZCUzZGt3ZC03MjYwMTE2MjI0OSUzYWxvYy0xOTAlMjZnY2xpZCUzZDQ5YTI4YjQ3NTgzODE2ODNkYzY3ZWJkOGI4YzZkYTZhJTI2Z2Nsc3JjJTNkM3AuZHMlMjZkc19ybCUzZDEyNDY5NzglMjZkc19ybCUzZDEyNDgwOTklMjZtc2Nsa2lkJTNkNDlhMjhiNDc1ODM4MTY4M2RjNjdlYmQ4YjhjNmRhNmE&rlid=49a28b4758381683dc67ebd8b8c6da6a"
+        },
+        {
+            "rank": 3,
+            "snippet": "Get Singer Eric Drum With Fast and Free Shipping on eBay. Looking For Singer Eric Drum? We Have Almost Everything on eBay.",
+            "timestamp": 1621083357,
+            "title": "Singer Eric Drum - Singer Eric Drum On eBay",
+            "url": "https://www.bing.com/aclick?ld=e8KVvCo1OBep84wKcMkEWjlDVUCUxy6rl8tIoIK05EaxPzFiZqFG5GPPLRQfnaWz0BG5ahY0pGtlYIW32NaxaH2wXOIMaZj6cDevvVi6Fq55yE0mrPA_NFZxxyuORqVRkAqC_yzXptzzuAOxHeLIwnZSAAvQ1SUEmmbh5uB_Z1PQu4qeIJ&u=aHR0cCUzYSUyZiUyZnd3dy5lYmF5LmNvbSUyZnVsayUyZnNjaCUyZiUzZl9ua3clM2RzaW5nZXIlMjUyMGVyaWMlMjUyMGRydW0lMjZub3JvdmVyJTNkMSUyNm1rZXZ0JTNkMSUyNm1rcmlkJTNkNzExLTM0MDAwLTEzMDc4LTAlMjZta2NpZCUzZDIlMjZrZXl3b3JkJTNkc2luZ2VyJTI1MjBlcmljJTI1MjBkcnVtJTI2Y3JscCUzZF8yMDE5MDcwOCUyNk1UX0lEJTNkJTI2Z2VvX2lkJTNkJTI2cmxzYXRhcmdldCUzZGt3ZC03NzM3ODI2MzY5NzE4NiUzYWxvYy0xOTAlMjZhZHBvcyUzZCUyNmRldmljZSUzZGMlMjZta3R5cGUlM2QlMjZsb2MlM2QxMDI5OTQlMjZwb2klM2QlMjZhYmNJZCUzZCUyNmNtcGduJTNkMzI5ODUxODMyJTI2c2l0ZWxuayUzZCUyNmFkZ3JvdXBpZCUzZDEyMzgwNTAyNDQ5MjM0NjglMjZuZXR3b3JrJTNkcyUyNm1hdGNodHlwZSUzZGUlMjZtc2Nsa2lkJTNkOTVkZTYyZjdkYmUyMWQ4YzIwOWQwMjY4M2IxY2Y5Njc&rlid=95de62f7dbe21d8c209d02683b1cf967"
+        },
+        {
+            "rank": 4,
+            "snippet": "Get super cheap Drums deals and save big with BEST-DEAL.com - the shop expert! BEST-DEAL.com: Shop now for great Deals. Find best offers &amp; unbeatable prices!",
+            "timestamp": 1621083357,
+            "title": "Shop for cheap Drums online - Drums for sale at BEST-DEAL",
+            "url": "https://www.bing.com/aclick?ld=e8i8uCYhF1Sz-9JeRStRVnzzVUCUzHo28qeB5Q99T-70GTYc8V5-LyPQvSyszRf_umGME8VuZTyvUP_hbE7rbhnFlw5Sf7QBw2kS4zSKDWUR7wSvoWxdwO4CM7KU-Z_7EQg-k4lcILlMeWTmxgoEkaDLhuNCnx47XWkKUJPo6D36qspHj4&u=aHR0cHMlM2ElMmYlMmZ3d3cuYmVzdC1kZWFsLmNvbSUyZnNlYXJjaCUyZmxhbmRpbmclMmZxdWVyeSUyZmRydW1zJTJmcyUyZnlhaG9vJTJmJTNma2xpY2tpZCUzZGZmZGEyZDliMzZlNDE0N2M0ZmNkNGQwNGQ2MWE4MmY5JTI2bXNjbGtpZCUzZGZmZGEyZDliMzZlNDE0N2M0ZmNkNGQwNGQ2MWE4MmY5JTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkTXVzaWNhbCUyNTIwSW5zdHJ1bWVudHNfR29vZ2xlS1dzJTI2dXRtX3Rlcm0lM2RkcnVtcyUyNnV0bV9jb250ZW50JTNkRHJ1bXM&rlid=ffda2d9b36e4147c4fcd4d04d61a82f9"
+        },
+        {
+            "rank": 5,
+            "snippet": "Eric Singer Stage-Played Drums Own snare drums and drumsticks played live by Eric Singer on stage with KISS at the show of your choice! Meet Eric backstage on KISS\u2019 End of the Road Tour and have your drum personalized just for you! Each drum comes with a pair of concert-used drumsticks!",
+            "timestamp": 1621083357,
+            "title": "Eric Singer Drums - Official Eric Singer Stage-Played Drums",
+            "url": "https://ericsingerdrums.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Eric Singer (born Eric Doyle Mensinger) was born in Cleveland, Ohio, on May 12th, 1958. He is an American hard rock and heavy metal drummer, best known as the drummer of the legendary Kiss, where he portrayed The Catman that was originally played by Peter Criss.",
+            "timestamp": 1621083357,
+            "title": "Eric Singer",
+            "url": "https://www.eric-singer.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "KISS drummer, Eric Singer, has always liked watches, but he really stepped up his collecting in the early 1990s. It was at this time he began to take note of Zodiac. While doing internet searches and following online auctions, he became aware of some Zodiac pieces from the 1960's and early 1970's.",
+            "timestamp": 1621083357,
+            "title": "Eric-Singer.com ** The official Website",
+            "url": "http://www.eric-singer.de/"
+        },
+        {
+            "rank": 8,
+            "snippet": "It's no wonder that Eric Singer is one of rock's most sought after drummers when you consider the vast amount of work he's been involved in. Coming from a musical family, he practiced along with recordings from Mitch Mitchell to Ringo Starr and everything in between.",
+            "timestamp": 1621083357,
+            "title": "Eric Singer | Pearl Drums -Official site-",
+            "url": "https://pearldrum.com/en/artist/eric-singer"
+        },
+        {
+            "rank": 9,
+            "snippet": "Young Eric began playing drums from an early age, and was inspired by bands such as Humble Pie, The Who, Led Zeppelin, Black Sabbath, The Beatles and Queen and drummers such as John Bonham, Keith Moon, Cozy Powell, Roger Taylor, Bill Ward, and Buddy Rich. Eric worked at King Musical instruments before becoming a professional drummer.",
+            "timestamp": 1621083357,
+            "title": "Eric Singer - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Eric_Singer"
+        },
+        {
+            "rank": 10,
+            "snippet": "Eric Singer Although drummer Eric Singer was a member of Kiss for only a few years, he was present for the band's important early-90's 're-focused' period, when the group set their sites on becoming a true heavy metal force once more.",
+            "timestamp": 1621083357,
+            "title": "Eric Singer - DRUMMERWORLD",
+            "url": "https://www.drummerworld.com/drummers/Eric_Singer.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "In terms of his KISS bandmate Eric Singer handling the drums in Soul Station, Stanley indicated (with slight edits): \u201cWith Eric, it would have been ridiculous if we just said, \u201cHey, let\u2019s go get so-and-so. This metal drummer or this hard rock drummer.\u201d",
+            "timestamp": 1621083357,
+            "title": "Paul Stanley explains why drummer Eric Singer was included ...",
+            "url": "https://sleazeroxx.com/paul-stanley-explains-why-drummer-eric-singer-was-included-in-his-new-project-soul-station/"
+        },
+        {
+            "rank": 12,
+            "snippet": "KISS. As The Catman: Drums, Percussion, Vocals (1991-1996, 2001-2002, 2004-present)",
+            "timestamp": 1621083357,
+            "title": "Eric Singer - Encyclopaedia Metallum: The Metal Archives",
+            "url": "https://www.metal-archives.com/artists/Eric_Singer/6875"
+        },
+        {
+            "rank": 13,
+            "snippet": "Bajate el recital completo de KISS en Argentina en:Get the Complete concert @:http://www.weloveitloud.ipbfree.comhttp://www.weloveitloud.ipbfree.comhttp://ww...",
+            "timestamp": 1621083357,
+            "title": "Kiss - Eric Singer Drum Solo (Live Argentina 2009) - YouTube",
+            "url": "https://www.youtube.com/watch?v=PD1gT_OBNTw"
+        },
+        {
+            "rank": 14,
+            "snippet": "Aside from a section dedicated to the band\u2019s founding drummer Peter Criss\u2019 1976 Destroyer set-up, Crash features a ten-page spread featuring three of Eric Singer\u2019s most legendary drum kits. Singer...",
+            "timestamp": 1621083357,
+            "title": "KISS Drummer Eric Singer Talks Drum Kit History And Design ...",
+            "url": "https://www.forbes.com/sites/derekscancarelli/2019/01/23/kiss-drummer-eric-singer-talks-drum-kit-history-and-design-with-crash-author-david-frangioni/"
+        }
+    ],
+    "timestamp": 1621083357,
+    "url": "https://www.qwant.com/?q=eric+singer+drums&t=all"
+}

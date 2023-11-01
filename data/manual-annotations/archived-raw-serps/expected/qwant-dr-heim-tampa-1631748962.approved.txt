@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "dr heim tampa",
+    "offset": null,
+    "page": null,
+    "query": "dr heim tampa",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Find Dr heim tampa on Fastquicksearch.com for Tampa. Results for Dr heim tampa in Tampa",
+            "timestamp": 1631748962,
+            "title": "Find info in Tampa - Information for your search",
+            "url": "https://www.bing.com/aclick?ld=e8BCk24jW6qDkxfuG0ndF4WzVUCUwsK4PFIsmmmFYR0CqOROvmTWIO_ZRKHCz856RnxMOPxE0lV-jCHyC1OxK9z68742KTBJD2z1U4IATdb4ynuSqSr6NZLY58oXRMG1kcJdUcRI0vZ_mInLo3LhFVM7jd7kNvVNxIZz79xCmUaj0_LA8u&u=aHR0cHMlM2ElMmYlMmZ3d3cuZmFzdHF1aWNrc2VhcmNoLmNvbSUyZmFyJTNmcSUzZGRyJTI1MjBoZWltJTI1MjB0YW1wYSUyNm8lM2QxMjE4OTM1JTI2cmNoJTNkaW50bDQyNSUyNnJ0YiUzZCUyNmNsaWQlM2Rhai1mYXF0b2lkcy1pbnRsMiUyNnV0bV9zb3VyY2UlM2RiJTI2dXRtX21lZGl1bSUzZGJjcGMlMjZjdCUzZCUyNmNhbXBhaWduaWQlM2QzOTIyODQ0MzMlMjZhZ2lkJTNkMTMxMzkxNzQ4MTczODgxNyUyNmFkaWQlM2Q4MjEyMDAxMTQ0NjAwMCUyNmt3aWQlM2Rrd2QtODIxMjAyOTM2MjU3MDAlM2Fsb2MtNDA4NCUyNmNsaWNraWQlM2RmNjlmNTIzNGVjYTQxZDU2NTlhZDMzNzY3MzI3M2RiMiUyNm1zY2xraWQlM2RmNjlmNTIzNGVjYTQxZDU2NTlhZDMzNzY3MzI3M2RiMg&rlid=f69f5234eca41d5659ad337673273db2"
+        },
+        {
+            "rank": 2,
+            "snippet": "Find Dr heim tampa on Top10Answers.com for Tampa. Results for Dr heim tampa in Tampa",
+            "timestamp": 1631748962,
+            "title": "Find Dr heim tampa in Tampa - Dr heim tampa",
+            "url": "https://www.bing.com/aclick?ld=e8O3o6PpATZRfSyvDUWOW_oTVUCUwfx9xiJEodZeQlevisLxV_WKt0qnLeY48tno3zm_cIRj_KU2JSUNvPxJPbubLbjW78sJp17eLtJbAO--RCohRcohYxGA5PtHSlinyado5Xzq6W_QE8d1dObXK2qbzyf8Wq3q4EEFhcDB8YeqHy5Y4m&u=aHR0cHMlM2ElMmYlMmZ3d3cudG9wMTBhbnN3ZXJzLmNvbSUyZmFyJTNmcSUzZGRyJTJiaGVpbSUyYnRhbXBhJTI2byUzZDc4Mzc0OCUyNnJjaCUzZHVzMjQ5JTI2cnRiJTNkJTI2Y2xpZCUzZGFqLWF1dG9zcGF0aC11cyUyNnV0bV9zb3VyY2UlM2RiJTI2dXRtX21lZGl1bSUzZGJjcGMlMjZjdCUzZCUyNmNhbXBhaWduaWQlM2QzODYxNTQ2NDYlMjZhZ2lkJTNkMTIxNjA2MDI0NDcxMTAwMCUyNmFkaWQlM2Q3NjAwMzg3NzExNzAyMiUyNmt3aWQlM2Rrd2QtNzYwMDQwNDQxMTE3NzYlM2Fsb2MtMTkwJTI2Y2xpY2tpZCUzZDU3YWRmMGRiOWI1MTExYmJkZTk5OTE5OTA0ZDIzMTkyJTI2bXNjbGtpZCUzZDU3YWRmMGRiOWI1MTExYmJkZTk5OTE5OTA0ZDIzMTky&rlid=57adf0db9b5111bbde99919904d23192"
+        },
+        {
+            "rank": 3,
+            "snippet": "Find Doctor In Tampa Fl. Get Doctor In Tampa Fl",
+            "timestamp": 1631748962,
+            "title": "Doctor In Tampa Fl - Doctor In Tampa Fl",
+            "url": "https://www.bing.com/aclick?ld=e8yfasDLRqpCcjdTkvHiv7aDVUCUwqWeXhVXpq9H1oofTx558soJKIPBaS_1xE_HAZGYZTHUe6KoMPa6DGtz3MPhBil3g0KqasDVaxAxorG185LXwZkhXk8sz-3vJ6CAbvJjo899HKhzl8OQ43w9VOb2dQsWGA374hUWcrlMeblwgJfT7d&u=aHR0cHMlM2ElMmYlMmZ3d3cudG9wd2VhbHRoaW5mby5jb20lMmZhciUzZnElM2REb2N0b3IlMjUyMEluJTI1MjBUYW1wYSUyNTIwRmwlMjZvJTNkMTQ3MzE0MyUyNnJjaCUzZHVzMTA3MSUyNmNpZCUzZDQxNDQwNjczOSUyNmFnaWQlM2QxMzI4MjExMjU3NDYyNTkwJTI2bXNjbGtpZCUzZGRmMjdlODQyMDI4YzE4YmI1MjJkODkwMDlkMGZiYTM0&rlid=df27e842028c18bb522d89009d0fba34"
+        },
+        {
+            "rank": 4,
+            "snippet": "Looking for doctors in this area? Search now! Content updated daily for doctors in this area",
+            "timestamp": 1631748962,
+            "title": "Doctors In This Area - Results Updated Daily",
+            "url": "https://www.bing.com/aclick?ld=e83SRkWiOCMz3EQOKyibwd6zVUCUxwXM5tnOP5caRRJO8CE4f2z_JZfbw36v6xsD3-DiSMmMBo0ce7oNTTtuk0E8qkb36QX6cUMPWoEvaXazFO8Bech4ctgJXz2YPuoBv5UdIQGNganHFlArkGlHHXyqM2kXJfRCtj2BaigwcUvKDukB0k&u=aHR0cHMlM2ElMmYlMmZ3d3cuYWxsaW5mb3NlYXJjaC5jb20lMmZzbHAlM2YlMjZxJTNkZG9jdG9ycyUyYmluJTJidGhpcyUyYmFyZWElMjZzaWQlM2QxMTUwZTkwNy1mMGMzLTQ4YWUtOGIxZC01MjQ3NzI1YjgwM2MtMC1haV9tc20lMjZrd2lkJTNkZHIlMjUyMGhlaW0lMjUyMHRhbXBhJTI2Y2lkJTNkODQ4MDAxNzM5MjEzMTIlMjZtc2Nsa2lkJTNkOTdlYzNhZGQ5YzExMTczZTBlZGI1YjlmMDM5MjVlNDQ&rlid=97ec3add9c11173e0edb5b9f03925e44"
+        },
+        {
+            "rank": 5,
+            "snippet": "Heim Regenerative Medicine Center. Tampa Bay\u2019s one stop shop for Anti-Aging and Regenerative Medicine. Providing cutting edge treatments to optimize your health and \u2026",
+            "timestamp": 1631748962,
+            "title": "Tampa Hormone Replacement Therapy Anti Aging Clinic",
+            "url": "https://tampahealthcenter.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Dr. Michael Heim completed his undergraduate degree in Nutrition and Exercise Science at Florida State University in 1992. Following his undergraduate studies, he \u2026",
+            "timestamp": 1631748962,
+            "title": "Dr. Michael Heim Family Medicine. Tampa FL",
+            "url": "https://doctor.webmd.com/doctor/michael-heim-59a05ed6-6e72-4977-bd20-d85ba16924ae-overview"
+        },
+        {
+            "rank": 7,
+            "snippet": "Injections. Heim Regenerative Medicine offers a full line of designer injectables for boosting immunity, mood, metabolism and energy, as well as enhancing exercise \u2026",
+            "timestamp": 1631748962,
+            "title": "Tampa Injections - Dr. Heim",
+            "url": "https://tampahealthcenter.com/services/injections/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Dr. Heim takes the time to develop a meaningful physician - patient relationship to better understand your specific health needs for the best primary care. 608 \u2026",
+            "timestamp": 1631748962,
+            "title": "Tampa Primary Care Physician Dr. Michael Heim",
+            "url": "https://tampahealthcenter.com/services/primary-care/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Dr. Michael P. Heim, D.O. owns Heim Regenrative Medicine Center in Tampa, Florida. Read reviews about Dr. Heim and leave your own by clicking here.",
+            "timestamp": 1631748962,
+            "title": "Dr. Michael P. Heim, D.O. - Tampa, Florida - Review Dr. Heim",
+            "url": "https://www.regenerativemedicinenow.com/doctor/dr-michael-p-heim-d-o/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Dr Heim is knowledgeable in a wide range of subjects but open to new and constantly traveling to learn the newest cutting edge. Oh and he is an iron man. And \u2026",
+            "timestamp": 1631748962,
+            "title": "Heim Regenerative Medicine Center - Tampa, Florida - Dr. Heim",
+            "url": "https://www.regenerativemedicinenow.com/clinic/florida/heim-regenerative-medicine-center-tampa/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Dr. Carissa H. Stone (Heim) is an anesthesiologist in Tampa, Florida and is affiliated with multiple hospitals in the area, including St. Petersburg General \u2026",
+            "timestamp": 1631748962,
+            "title": "Dr. Carissa H. Stone (Heim), MD | Tampa, FL ...",
+            "url": "https://health.usnews.com/doctors/carissa-stone-443118"
+        },
+        {
+            "rank": 12,
+            "snippet": "Dr Heim is knowledgeable in a wide range of subjects but open to new and constantly traveling to learn the newest cutting edge. Oh and he is an iron man. And \u2026",
+            "timestamp": 1631748962,
+            "title": "Heim Regenerative Medicine Center - Tampa, FL",
+            "url": "https://www.yelp.com/biz/heim-regenerative-medicine-center-tampa-2"
+        },
+        {
+            "rank": 13,
+            "snippet": "Tampa Bay\u2019s one-stop shop for Anti-Aging and Regenerative Medicine. Providing cutting-edge treatments to optimize your health and well-being. The center is led by \u2026",
+            "timestamp": 1631748962,
+            "title": "Michael Heim | Stem Cell Physicians Network",
+            "url": "https://stemcelldocs.net/michael-heim/"
+        },
+        {
+            "rank": 14,
+            "snippet": "Dr. Michael Heim, DO is a Family Medicine Specialist in Tampa, FL and has over 19 years of experience in the medical field. He graduated from Nova Southeastern \u2026",
+            "timestamp": 1631748962,
+            "title": "Dr. Michael Heim, DO | Tampa, FL | Healthgrades",
+            "url": "https://www.healthgrades.com/physician/dr-michael-heim-23cn9"
+        }
+    ],
+    "timestamp": 1631748962,
+    "url": "https://www.qwant.com/?q=dr+heim+tampa&t=all"
+}

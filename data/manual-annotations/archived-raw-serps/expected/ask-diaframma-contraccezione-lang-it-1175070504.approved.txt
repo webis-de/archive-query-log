@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "diaframma contraccezione lang:IT",
+    "offset": null,
+    "page": null,
+    "query": "diaframma contraccezione lang:IT",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "In ottica e in fotografia, il <em>diaframma</em> \u00e8 l'elemento ottico che determina il diametro dell'apertura ... <em>Diaframma</em> \u00e8 anche il nome di un ...",
+            "timestamp": 1175070504,
+            "title": "<em>Diaframma</em> - Wikipedia\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://it.wikipedia.org/wiki/Diaframma"
+        },
+        {
+            "rank": 2,
+            "snippet": "Il profilattico, chiamato spesso preservativo, \u00e8 un particolare strumento di <em>contraccezione</em> che ha anche funzioni di protezione nei confronti di",
+            "timestamp": 1175070504,
+            "title": "Profilattico - Wikipedia\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://it.wikipedia.org/wiki/Profilattico"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Contraccezione</em> : il <em>diaframma - Contraccezione ... Contraccezione</em> : il <em>diaframma - Contraccezione</em> ... il <em>diaframma</em>, avvisandomi pero...",
+            "timestamp": 1175070504,
+            "title": "<em>Contraccezione</em> : il <em>diaframma - Contraccezione</em> - alFemminile.com\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://www.alfemminile.com/m/coppia/contraccezione-il-diaframma.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Essere innamorati  Divorzio  Erotismo  Fantasia, \u2026  Posizioni del missionario  Clitoride  Posizioni del camasutra  <em>Contraccezione</em> : ...",
+            "timestamp": 1175070504,
+            "title": "Matrimonio - Tutti i messaggi - 11/06 (6) - Forums alFemminile.com\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://www.alfemminile.com/forum/showbestof/36/1106/6.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "... flessibile del <em>diaframma</em> stesso.  Per adottare il <em>diaframma</em> occorre un visita ginecologica ... tenere il <em>diaframma</em> a testa ingi\u00f9, come ...",
+            "timestamp": 1175070504,
+            "title": "Ginecologia, sessuologia, <em>contraccezione</em>, mezzi di barriera, ...\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://www.dica33.it/argomenti/ginecologia/contraccezione/contraccezione2.asp"
+        },
+        {
+            "rank": 6,
+            "snippet": "... di usare il <em>diaframma</em> come metodo di <em>contraccezione</em>.  Le seguenti istruzioni sono fornite per aiutarvi a decidere se un <em>diaframma</em> possa ...",
+            "timestamp": 1175070504,
+            "title": "Le FAQ: il <em>Diaframma</em>\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://isd.olografix.org/faq/faq_diaframma.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "... leggi bene il foglietto illustrativo ti dice che la copertura \u00e8 assicurata se il ritardo non supera le 12 ore, quindi sei coperta.",
+            "timestamp": 1175070504,
+            "title": "Se : Forum alFemminile - 19 nov\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://forum.alfemminile.com/forum/contra/__f3959_r19826_contra-Se.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "... a me gli occhi..ecco adesso sprofonderete in un lungo coma onirico..    e al vostro risveglio solo e quando ve lo dir IO...",
+            "timestamp": 1175070504,
+            "title": "Oggi vi ipnotizzo : Forum alFemminile - 6 dic\n\t                \n\n                        \n                        \n                            \n                            \n                        [Translate this page]",
+            "url": "http://forum.alfemminile.com/forum/infidel/__f4968_infidel-Oggi-vi-ipnotizzo.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "... interr.  calendario impianto altri metodi  pillola  <em>diaframma</em>  14. <em>Contraccezione</em> raccomandata  12. Settimane di gravidanza  13. Luogo ...",
+            "timestamp": 1175070504,
+            "title": "NuovoFormIVG.xls\n(PDF File)",
+            "url": "http://www.ti.ch/DSS/DSP/UfFMC/documenti/circolari/LE/2005/nuovoformIVG.pdf"
+        },
+        {
+            "rank": 10,
+            "snippet": "MATERNO  <em>CONTRACCEZIONE  CONTRACCEZIONE</em> MECCANICA  <em>DIAFRAMMA</em>  SPERMICIDA  BENZALKONIUM  NONOXYNOL 9  SPUGNA VAGINALE  SPIRALE  <em>CONTRACCEZIONE</em> ...",
+            "timestamp": 1175070504,
+            "title": "Thesaurus multilingue europeo  sull\u2019AIDS e l\u2019infezione da HIV\n(PDF File)",
+            "url": "http://edoa.bdsp.tm.fr/TMES/adobe/italian/PHiera.pdf"
+        }
+    ],
+    "timestamp": 1175070504,
+    "url": "http://www.ask.com:80/web?tt=1&q=diaframma+contraccezione+lang:IT&qsrc=23&nw=False&u=10"
+}

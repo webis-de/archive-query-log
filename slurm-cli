@@ -12,5 +12,5 @@ srun \
   --pty \
   sh -c "
   cd /workspace
-  python -m pipenv run python -m web_archive_query_log $*
+  python -m pipenv run python -m archive_query_log $*
   "

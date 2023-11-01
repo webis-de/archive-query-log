@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "\"Bouncing Hero\" \"switch\" site:easyallies.com",
+    "offset": null,
+    "page": null,
+    "query": "\"Bouncing Hero\" \"switch\" site:easyallies.com",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Let's Go was essentially a test for the Switch, this is THE mainline console ... saw that wasn't the case from the state of Little Town Hero's release.",
+            "timestamp": 1633303267,
+            "title": "Pokemon Sword/Shield (Switch) | Easy Allies Forums",
+            "url": "https://www.google.com/url?q=https://forums.easyallies.com/topic/5281/pokemon-sword-shield-switch%3Fpage%3D11%3Fpage%3D11&sa=U&ved=2ahUKEwjqufvRy6_zAhUiM30KHTnkAU8QFnoECAEQAg&usg=AOvVaw3mzcLCr75Kgd_yiVNNHUfJ"
+        },
+        {
+            "rank": 3,
+            "snippet": "Available on PC, PlayStation 4, Switch, and Xbox One ... On paper, constantly bouncing on balls while avoiding hazards and enemies sounds like a nightmare.\n\nMancanti:  Hero\" | Deve includere:Hero\"",
+            "timestamp": 1633303267,
+            "title": "Easy Allies",
+            "url": "https://www.google.com/url?q=https://easyallies.com/%23!/review/mega-man-11&sa=U&ved=2ahUKEwjqufvRy6_zAhUiM30KHTnkAU8QFnoECAMQAg&usg=AOvVaw3Sy4r6_wOGtRCbAAzsBihQ"
+        },
+        {
+            "rank": 4,
+            "snippet": "In the Pokemon option you can switch the Pokemon in battle. ... Bouncing from planet to planet, Mario must collect Star Bits and coins, using his usual jump\u00a0...",
+            "timestamp": 1633303267,
+            "title": "The EZA Top 100 Videogames! | Easy Allies Forums",
+            "url": "https://www.google.com/url?q=https://forums.easyallies.com/topic/1751/the-eza-top-100-videogames-countdown/582&sa=U&ved=2ahUKEwjqufvRy6_zAhUiM30KHTnkAU8QFnoECAIQAg&usg=AOvVaw22B1rOr8NcVrcvG9Yh3bEQ"
+        }
+    ],
+    "timestamp": 1633303267,
+    "url": "https://www.google.com/search?q=%22Bouncing%20Hero%22+%22switch%22+site:easyallies.com"
+}

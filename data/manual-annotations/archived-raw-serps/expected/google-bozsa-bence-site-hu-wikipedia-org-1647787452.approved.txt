@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "\"Bozsa Bence\" site:hu.wikipedia.org",
+    "offset": null,
+    "page": null,
+    "query": "\"Bozsa Bence\" site:hu.wikipedia.org",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Bozsa Bence \u00b7 Verraszt D\u00e1vid, 7:29,05, Dunaferr-DVSI F\u00fczesy D\u00e1vid \u00b7 Szab\u00f3 Attila \u00b7 Sincki \u00c1d\u00e1m \u00b7 Tak\u00e1cs Kriszti\u00e1n, 7:46,07. 4 \u00d7 100 m vegyes v\u00e1lt\u00f3\u00a0...",
+            "timestamp": 1647787452,
+            "title": "2009-es magyar \u00fasz\u00f3bajnoks\u00e1g - Wikip\u00e9dia",
+            "url": "https://www.google.com/url?q=https://hu.wikipedia.org/wiki/2009-es_magyar_%25C3%25BAsz%25C3%25B3bajnoks%25C3%25A1g&sa=U&ved=2ahUKEwivzfKChNX2AhX3I0QIHSxXBKgQFnoECAAQAg&usg=AOvVaw3ZHE48e25B_8UYTc9Og0_F"
+        }
+    ],
+    "timestamp": 1647787452,
+    "url": "https://www.google.com/search?q=%22Bozsa+Bence%22+site:hu.wikipedia.org"
+}

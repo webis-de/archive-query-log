@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Focusrite\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Focusrite\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Record your guitar. Record you. \u00b7 The essential audio interface. \u00b7 Studio-quality sound for all your instruments. \u00b7 For the hardware music maker. \u00b7 Get the band\u00a0...",
+            "timestamp": 1641240556,
+            "title": "USB Interfaces | Focusrite",
+            "url": "https://www.google.com/url?q=https://focusrite.com/en/usb-interfaces&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAAQAg&usg=AOvVaw0UxiXHyhUNhXy4khcyxqR6"
+        },
+        {
+            "rank": 8,
+            "snippet": "Skip to main content. Downloads. Home. Downloads. Pick your brand. Ampify, Focusrite, Focusrite Pro, Novation. Pick your product by range.Focusrite Control 3.6.0 \u00b7 Software \u00b7 Scarlett 18i8 \u00b7 Novation USB Driver 2.22",
+            "timestamp": 1641240556,
+            "title": "Downloads | Customer Portal",
+            "url": "https://www.google.com/url?q=https://customer.focusrite.com/downloads&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAcQAg&usg=AOvVaw1q3ypYha991ufPrQAZPiKo"
+        },
+        {
+            "rank": 9,
+            "snippet": "Scarlett's most compact interface \u2013 thousands of guitar players use Solo to capture studio-quality sound every day. Capture your music anywhere by simply\u00a0...",
+            "timestamp": 1641240556,
+            "title": "Scarlett Solo | Focusrite",
+            "url": "https://www.google.com/url?q=https://focusrite.com/en/audio-interface/scarlett/scarlett-solo&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAQQAg&usg=AOvVaw1N3C6gzeUULx5_VoF1r14F"
+        },
+        {
+            "rank": 10,
+            "snippet": "Whether recording vocals and instruments or composing in the box, Clarett+ 2Pre is the pure-sounding, bus-powered* USB-C interface for PC and Mac to take with\u00a0...",
+            "timestamp": 1641240556,
+            "title": "Clarett+ 2Pre | Focusrite",
+            "url": "https://www.google.com/url?q=https://focusrite.com/en/usb-c-audio-interface/clarett-plus/clarett-plus-2pre&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAgQAg&usg=AOvVaw2xg-4j-6dgo-zmuAT4pDXy"
+        },
+        {
+            "rank": 11,
+            "snippet": "Create studio quality vocals, powerful guitars, luscious keys and huge drums, then mix and master with iconic Focusrite studio hardware \u2013 all in the box\u00a0...",
+            "timestamp": 1641240556,
+            "title": "Software | Focusrite",
+            "url": "https://www.google.com/url?q=https://focusrite.com/en/software&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAkQAg&usg=AOvVaw0R8VrPIb0z7T_l1J0w7QS5"
+        },
+        {
+            "rank": 12,
+            "snippet": "When you register any Focusrite hardware you gain access to the most innovative music software brands on the market. Plug-in Collective keeps you up to date\u00a0...",
+            "timestamp": 1641240556,
+            "title": "Plug-in Collective | Focusrite",
+            "url": "https://www.google.com/url?q=https://focusrite.com/en/plugin-collective&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAMQAg&usg=AOvVaw1K_mdgy_fwS7RLNbONifKJ"
+        },
+        {
+            "rank": 13,
+            "snippet": "Items 1 - 42 of 45 \u00b7 From everyday audio interfaces to full system designs, if you want Focusrite gear, Sweetwater has you covered. Click to learn more about\u00a0...",
+            "timestamp": 1641240556,
+            "title": "Focusrite | Sweetwater",
+            "url": "https://www.google.com/url?q=https://www.sweetwater.com/store/manufacturer/Focusrite&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAYQAg&usg=AOvVaw1E0XQ5-2HYq_LMg1MsWAnV"
+        },
+        {
+            "rank": 14,
+            "snippet": "Scarlett has options for the songwriter and the recording studio. The Focusrite Scarlett series of audio interfaces offer solutions for everyone from solo\u00a0...",
+            "timestamp": 1641240556,
+            "title": "Focusrite Scarlett | Sweetwater",
+            "url": "https://www.google.com/url?q=https://www.sweetwater.com/focusrite-scarlett/series&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAEQAg&usg=AOvVaw2-reoOA8Mli0IQku0nBPwW"
+        },
+        {
+            "rank": 15,
+            "snippet": "230 matches \u00b7 From professional-grade microphone preamps, audio interfaces and even entire recording bundles, Focusrite has the quality gear you deserve.",
+            "timestamp": 1641240556,
+            "title": "Focusrite | Guitar Center",
+            "url": "https://www.google.com/url?q=https://www.guitarcenter.com/Focusrite/&sa=U&ved=2ahUKEwjZqcv3vpb1AhXRXc0KHfCsADUQFnoECAIQAg&usg=AOvVaw02bn0qNDcKYPeELFNFdKnw"
+        }
+    ],
+    "timestamp": 1641240556,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Focusrite%22"
+}

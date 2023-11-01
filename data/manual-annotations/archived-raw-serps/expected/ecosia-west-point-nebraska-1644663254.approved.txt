@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "west point nebraska",
+    "offset": null,
+    "page": null,
+    "query": "west point nebraska",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>West</em> <em>Point</em> was first founded in the spring of 1857, when Omaha businessmen formed the <em>Nebraska</em> Settlement Association in order to find suitable townsites in the Elkhorn Valley. Uriah, John, and Andrew Bruner (three brothers originally from Pennsylvania), and William Sexauer chose the present location on a bend along a river, which they called New Philadelphia. [6]",
+            "timestamp": 1644663254,
+            "title": "West Point, Nebraska - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/West_Point,_Nebraska"
+        },
+        {
+            "rank": 2,
+            "snippet": "Application form is online at the City\u2019s website www.ci.<em>west</em>-<em>point</em>.ne.us or contact the City Office at 402-372-2466 for an application. Return resumes and applications to the City of <em>West</em> <em>Point</em>, 444 S. Main Street, P.O. Box 327, <em>West</em> <em>Point</em>, NE 68788 or email to cityclerk@westpointne.gov. The City of <em>West Point, Nebraska</em>, is accepting ...",
+            "timestamp": 1644663254,
+            "title": "West Point, Nebraska: Official City of West Point Nebraska ...",
+            "url": "http://www.ci.west-point.ne.us/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Segui i suggerimenti del progetto di riferimento. / \ufeff 41.839722\u00b0N 96.711389\u00b0W 41.839722; -96.711389 \ufeff ( <em>West</em> <em>Point</em>) / \ufeff 41.839722\u00b0N 96.711389\u00b0W 41.839722; -96.711389 \ufeff ( <em>West</em> <em>Point</em>) <em>West</em> <em>Point</em> \u00e8 un comune degli Stati Uniti d'America, situato in <em>Nebraska</em>, nella contea di Cuming .",
+            "timestamp": 1644663254,
+            "title": "West Point (Nebraska) - Wikipedia",
+            "url": "https://it.wikipedia.org/wiki/West_Point_(Nebraska)"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>West Point</em> is a city in and the county seat of Cuming County, <em>Nebraska</em>, United States. The population was 3,660 at the 2000 census. <em>West Point</em> was first founded in the spring of 1857, when Omaha businessmen formed the <em>Nebraska</em> Settlement Association in order to find suitable townsites in the Elkhorn Valley.",
+            "timestamp": 1644663254,
+            "title": "West Point, NE - West Point, Nebraska Map &amp; Directions ...",
+            "url": "https://www.mapquest.com/us/nebraska/west-point-ne-282030545"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>West</em> <em>Point</em> Community Theatre. 237 North Main Street. <em>West</em> <em>Point</em>, NE 68788. Theatres. Visit Website.",
+            "timestamp": 1644663254,
+            "title": "West Point | VisitNebraska.com",
+            "url": "https://visitnebraska.com/west-point"
+        },
+        {
+            "rank": 6,
+            "snippet": "Experience <em>West Point, Nebraska</em> Mission Aggressively promote economic, educational, and cultural resources of the community to insure the continued growth and prosperity of the <em>West</em> <em>Point</em> area. Chamber Board Dr. Chelsie Thor, President Creekwood Chiropractic Scott Eisenmenger, Past President <em>West</em>",
+            "timestamp": 1644663254,
+            "title": "West Point Chamber of Commerce \u2013 West Point, Nebraska Chamber",
+            "url": "https://www.westpointchamber.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "View 27 homes for sale in <em>West</em> <em>Point</em>, NE at a median listing home price of $214,000. See pricing and listing details of <em>West</em> <em>Point</em> real estate for sale.",
+            "timestamp": 1644663254,
+            "title": "West Point, NE Real Estate - West Point Homes for Sale ...",
+            "url": "https://www.realtor.com/realestateandhomes-search/West-Point_NE"
+        },
+        {
+            "rank": 8,
+            "snippet": "HOME; VISITORS.<em> Nielsen Community Center;</em> Lodging; Camping; Restaurants; Maps; Events; News; Parks; RESIDENTS. Utilities; New Residents; Health Care; Schools ...",
+            "timestamp": 1644663254,
+            "title": "West Point, Nebraska Map",
+            "url": "http://www.ci.west-point.ne.us/map2.html"
+        }
+    ],
+    "timestamp": 1644663254,
+    "url": "https://www.ecosia.org/search?q=west+point+nebraska"
+}

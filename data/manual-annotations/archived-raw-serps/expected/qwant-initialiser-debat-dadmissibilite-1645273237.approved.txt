@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\"Initialiser D\u00e9bat d&#39;admissibilit\u00e9\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Initialiser D\u00e9bat d&#39;admissibilit\u00e9\"",
+    "results": [],
+    "timestamp": 1645273237,
+    "url": "https://www.qwant.com/?q=%22Initialiser+D%C3%A9bat+d%26%2339%3Badmissibilit%C3%A9%22&t=all"
+}

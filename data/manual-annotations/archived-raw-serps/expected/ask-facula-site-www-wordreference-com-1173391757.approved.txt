@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "facula site:www.wordreference.com",
+    "offset": null,
+    "page": null,
+    "query": "facula site:www.wordreference.com",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "... <em>facula</em> Definition from dictionary ... No titles with the word(s) '<em>facula</em>'.For other meanings: ...",
+            "timestamp": 1173391757,
+            "title": "Definition of <em>facula</em> - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/facula"
+        },
+        {
+            "rank": 2,
+            "snippet": "... <em>facula</em> - Spanish Dictionary Translation ...   Forum discussions with the word(s) '<em>facula</em>' in the title:  ...",
+            "timestamp": 1173391757,
+            "title": "<em>facula</em> - English-Spanish Dictionary - WordReference.com",
+            "url": "http://www.wordreference.com/es/translation.asp?tranword=facula"
+        },
+        {
+            "rank": 3,
+            "snippet": "... <em>facula</em> - Anglais Dictionnaire Fran\u00e7ais ... We found no English translation for '<em>facula</em>' in our French to English Dictionary.",
+            "timestamp": 1173391757,
+            "title": "<em>facula</em> - Dictionnaire Fran\u00e7ais-Anglais WordReference.com",
+            "url": "http://www.wordreference.com/fren/facula"
+        },
+        {
+            "rank": 4,
+            "snippet": "... <em>facula</em> - French Dictionary Translation ... We found no French translation for '<em>facula</em>' in our English to French Dictionary.",
+            "timestamp": 1173391757,
+            "title": "<em>facula</em> - English-French Dictionary - WordReference.com",
+            "url": "http://www.wordreference.com/enfr/facula"
+        },
+        {
+            "rank": 5,
+            "snippet": "... faddily Definition from dictionary...",
+            "timestamp": 1173391757,
+            "title": "Definition of faddily - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/faddily"
+        },
+        {
+            "rank": 6,
+            "snippet": "... fad diet Definition from dictionary...",
+            "timestamp": 1173391757,
+            "title": "Definition of fad diet - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/fad+diet"
+        },
+        {
+            "rank": 7,
+            "snippet": "... faddish Definition from dictionary...",
+            "timestamp": 1173391757,
+            "title": "Definition of faddish - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/faddish"
+        },
+        {
+            "rank": 8,
+            "snippet": "... fad_diet Definition from dictionary...",
+            "timestamp": 1173391757,
+            "title": "Definition of fad_diet - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/fad%5Fdiet"
+        },
+        {
+            "rank": 9,
+            "snippet": "... facultative Definition from dictionary...",
+            "timestamp": 1173391757,
+            "title": "Definition of facultative - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/facultative"
+        },
+        {
+            "rank": 10,
+            "snippet": "... facts of life Definition from dictionary ...",
+            "timestamp": 1173391757,
+            "title": "Definition of facts of life - WordReference.com Dictionary",
+            "url": "http://www.wordreference.com/definition/facts+of+life"
+        }
+    ],
+    "timestamp": 1173391757,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=0&l=dir&q=facula+site:www.wordreference.com"
+}

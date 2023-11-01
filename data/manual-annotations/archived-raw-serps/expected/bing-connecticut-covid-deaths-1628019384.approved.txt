@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "Connecticut covid deaths",
+    "offset": null,
+    "page": null,
+    "query": "Connecticut covid deaths",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Jul 30, 2021\u00a0\u00b7 COVID-19 cases, rate per 100,000, and associated<em> deaths</em> are by county of residence. Hospitalization data are collected by<em> CT</em> Hospital Association and represent the number of patients currently hospitalized by location of the hospital and not the patient residence.",
+            "timestamp": 1628019384,
+            "title": "Connecticut COVID-19 Data Tracker",
+            "url": "https://portal.ct.gov/Coronavirus/COVID-19-Data-Tracker"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Deaths</em> reported to either the Office of the Chief Medical Examiner or DPH are included in the daily COVID-19 update. COVID-19 Cases, Hospitalizations,<em> Deaths</em> and Tests Over Time In<em> Connecticut</em> during the early months of this pandemic, it became increasingly clear that it would be necessary to track probable COVID-19 cases and<em> deaths,</em> in addition to laboratory-confirmed (e.g. RT-PCR) cases and<em> deaths.</em>",
+            "timestamp": 1628019384,
+            "title": "COVID-19 Daily Report | Connecticut Data",
+            "url": "https://data.ct.gov/stories/s/COVID-19-Daily-Report/q5as-kyim/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Skip to Main Content<em> Sign In.</em> Search Search",
+            "timestamp": 1628019384,
+            "title": "COVID-19 Tests, Cases, and Deaths (By Town) | Connecticut Data",
+            "url": "https://data.ct.gov/Health-and-Human-Services/COVID-19-Tests-Cases-and-Deaths-By-Town-/28fr-iqnx"
+        },
+        {
+            "rank": 4,
+            "snippet": "5 rows\u00a0\u00b7 See dashboards on topics relating to <em>COVID</em>-19 using the buttons below. The Daily Public Health ...",
+            "timestamp": 1628019384,
+            "title": "COVID-19 data | Connecticut Data",
+            "url": "https://data.ct.gov/stories/s/COVID-19-data/wa3g-tfvc/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Jul 31, 2021\u00a0\u00b7 In<em> Connecticut,</em> there were 339 newly reported<em> COVID-19 cases</em> and 5 newly reported<em> COVID-19 deaths</em> on Jul 29, 2021",
+            "timestamp": 1628019384,
+            "title": "Connecticut coronavirus cases and deaths | USAFacts",
+            "url": "https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/state/connecticut"
+        },
+        {
+            "rank": 6,
+            "snippet": "May 15, 2020\u00a0\u00b7 <em>Connecticut COVID</em>-19 <em>Coronavirus</em> update by county with statistics and graphs: total and new cases, <em>deaths</em> per day, current active cases, recoveries, historical data, trends, projections, and \u2026",
+            "timestamp": 1628019384,
+            "title": "Connecticut COVID: 354,335 Cases and 8,293 Deaths ...",
+            "url": "https://www.worldometers.info/coronavirus/usa/Connecticut"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>COVID</em>-19 Cases and <em>Deaths</em> by Age Group | <em>Connecticut</em> Data. Skip to Main Content.",
+            "timestamp": 1628019384,
+            "title": "COVID-19 Cases and Deaths by Age Group | Connecticut Data",
+            "url": "https://data.ct.gov/Health-and-Human-Services/COVID-19-Cases-and-Deaths-by-Age-Group/ypz6-8qyf"
+        },
+        {
+            "rank": 8,
+            "snippet": "Jul 08, 2021\u00a0\u00b7 There have been 8,278<em> deaths</em> linked to the<em> coronavirus</em> since the start of the pandemic, according to Wednesday\u2019s report. That is one fewer<em> death</em> than the office has reported since July 1, \u2026",
+            "timestamp": 1628019384,
+            "title": "Connecticut to stop reporting of COVID-19 deaths",
+            "url": "https://nypost.com/2021/07/07/connecticut-to-stop-reporting-of-covid-19-deaths/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Jan 06, 2021\u00a0\u00b7 The names of more than 6,000<em> Connecticut</em> residents who have<em> died</em> with COVID-19. Last name.",
+            "timestamp": 1628019384,
+            "title": "The names of more than 6,000 Connecticut residents who ...",
+            "url": "https://www.ctpost.com/projects/2021/covid-deaths-ct/"
+        }
+    ],
+    "timestamp": 1628019384,
+    "url": "https://www.bing.com/search?q=Connecticut+covid+deaths"
+}

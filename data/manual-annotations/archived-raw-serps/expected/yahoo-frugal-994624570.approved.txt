@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Frugal",
+    "offset": null,
+    "page": null,
+    "query": "Frugal",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "Thrift",
+            "url": "http://srd.yahoo.com/srct/980740/Frugal/1/1/*http://dir.yahoo.com/Business_and_Economy/Finance_and_Investment/Reference_and_Guides/Budget_Management/Thrift/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Squirrel for Patriots, Survivalists, and Gun Owners",
+            "url": "http://srd.yahoo.com/srst/7805804/Frugal/1/42/*http://www.netside.com/~lcoble/index.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Living/Mindful Living",
+            "url": "http://srd.yahoo.com/srst/784929/Frugal/2/42/*http://www.econet.org/frugal/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Moms",
+            "url": "http://srd.yahoo.com/srst/27860487/Frugal/3/42/*http://www.frugal-moms.com"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Cook, The",
+            "url": "http://srd.yahoo.com/srst/27325334/Frugal/4/42/*http://www.thefrugalcook.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Family Network",
+            "url": "http://srd.yahoo.com/srst/9020510/Frugal/5/42/*http://www.frugalfamilynetwork.com"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Corner",
+            "url": "http://srd.yahoo.com/srst/535540/Frugal/6/42/*http://www.best.com/~piner/frugal.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Tip of the Week",
+            "url": "http://srd.yahoo.com/srst/535546/Frugal/7/42/*http://www.brightok.net/~neilmayo/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Gazette, The",
+            "url": "http://srd.yahoo.com/srst/700489/Frugal/8/42/*http://www.frugalgazette.com"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Rewards",
+            "url": "http://srd.yahoo.com/srst/30996870/Frugal/9/42/*http://www.frugalrewards.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Camping Tips",
+            "url": "http://srd.yahoo.com/srst/27619356/Frugal/10/42/*http://members.aol.com/frugally4u/campingtips.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Web Sites",
+            "url": "http://srd.yahoo.com/srst/31266618/Frugal/11/42/*http://www.frugalwebsites.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Flyer",
+            "url": "http://srd.yahoo.com/srst/7808517/Frugal/12/42/*http://www.frugalflyer.com/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Knitting Haus",
+            "url": "http://srd.yahoo.com/srst/271186/Frugal/13/42/*http://www.frugalhaus.com/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Flower",
+            "url": "http://srd.yahoo.com/srst/26683814/Frugal/14/42/*http://www.frugalflower.com/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Bride",
+            "url": "http://srd.yahoo.com/srst/29347996/Frugal/15/42/*http://www.frugalbride.com/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Yankee Coffin Company",
+            "url": "http://srd.yahoo.com/srst/28798235/Frugal/16/42/*http://www.frugalyankeecoffins.com/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "Bigger, Alan - The <em>Frugal</em> Housekeeper",
+            "url": "http://srd.yahoo.com/srst/21475670/Frugal/17/42/*http://www.nd.edu/~abigger"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em> Mover",
+            "url": "http://srd.yahoo.com/srst/13011193/Frugal/18/42/*http://www.frugalmover.com"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 994624570,
+            "title": "<em>Frugal</em>s, The",
+            "url": "http://srd.yahoo.com/srst/16742880/Frugal/19/42/*http://members.nbci.com/thefrugals/"
+        }
+    ],
+    "timestamp": 994624570,
+    "url": "http://search.yahoo.com:80/search?p=Frugal"
+}

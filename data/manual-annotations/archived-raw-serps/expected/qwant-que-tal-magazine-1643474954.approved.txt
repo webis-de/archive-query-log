@@ -1,0 +1,115 @@
+{
+    "interpreted_query": "que tal magazine",
+    "offset": null,
+    "page": null,
+    "query": "que tal magazine",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Teach Spanish 1 With Que Tal\u00ae, The Teen-Friendly Classroom Magazine. Try It Now!",
+            "timestamp": 1643474954,
+            "title": "Scholastic Magazines+ - Try Que Tal\u00ae Free",
+            "url": "https://www.bing.com/aclick?ld=e8CFGlQsgjAibZNlnvPcD45TVUCUwO0epvIpEfPnk7QXGDa5Xev1-lUY1OdlhhcjIZbny4ZeXLG2NooSmQdeJb2CFmwGINrjUEuuXqydp5kB6VSHcgqoGqmLmwgsUUaDk8eD4hLfKF9voz-RcZKg5A96G6TtrrNhoE89zbCly-lNNWO1i2&u=aHR0cCUzYSUyZiUyZjUwMjMueGc0a2VuLmNvbSUyZnRyayUyZnYxJTNmcHJvZiUzZDQwMSUyNmNhbXAlM2Q5OTU0JTI2YWZmY29kZSUzZGt3Mzg0NjEwJTI2a2N0JTNkbXNuJTI2a2NoaWQlM2QxNTIwMTIxMDElMjZjaWQlM2Q3ODIwMjg2ODM3MjQ2NCUyNnF1ZXJ5U3RyJTNkcXVlJTI1MjB0YWwlMjUyMG1hZ2F6aW5lJTI2a2R2JTNkYyUyNmNyaXRlcmlhaWQlM2Rrd2QtNzgyMDI5NDg4MDc5MDglM2Fsb2MtMTkwJTI2YWRncm91cGlkJTNkMTI1MTI0NDUwNjY4NzE2MCUyNmNhbXBhaWduaWQlM2QyODMzOTk3NTIlMjZsb2NwaHklM2Q4NzU0MiUyNnVybCUzZGh0dHBzJTNhJTJmJTJmY2xhc3Nyb29tbWFnYXppbmVzLnNjaG9sYXN0aWMuY29tJTJmc3BhbmlzaC5odG1sJTNmcHNjaCUzZENNJTJmcHMlMmYyMDE3JTJmQmluZyUyZnR4dGwlMmZRdWUlMjUyMFRhbCUyZkNNJTdjQnJhbmQlN2NNYWdhemluZXMlN2NFeGFjdCUyZnNjaG9sYXN0aWMlMjUyMHF1ZSUyNTIwdGFsJTI1MjBtYWclMmYxMjUxMjQ0NTA2Njg3MTYwJTJmZSUyZkRlZGljYXRlZEhlYWRsaW5lJTJmU2Nob2xhc3RpYyUyNTIwSW5jJTI1MjAtJTI1MjBDbGFzc3Jvb20lMjUyME1hZ2F6aW5lcyUyNTIwRjEyMVo3WkIlMmYlMjZrX2NsaWNraWQlM2Rfa2Vuc2hvb19jbGlja2lkXyUyNnByb21vX2NvZGUlM2QzMTU2JTI2bXNjbGtpZCUzZGNkMjBhYzc2ZDRiNjEyN2U0OGFjY2Q4M2FhYWQzMzM0&rlid=cd20ac76d4b6127e48accd83aaad3334"
+        },
+        {
+            "rank": 2,
+            "snippet": "Search info on Helpwire.com. See yourself. Que tal magazine",
+            "timestamp": 1643474954,
+            "title": "Que tal magazine - We have it on our website",
+            "url": "https://www.bing.com/aclick?ld=e8uUVk6rrzzm4xcJJMkg9QFzVUCUxvoOc2so2-hgR3fb8UvXLIbvyD8ARWNo_R0ptX6tyiupyHHsDCXzPSbOKz9K4H_76b-dcSiRmtryozIWpuqtJtQiou3rWqqSfKyBVxv587Tns3tmhrosZUVQkXKX68osmJLpNnrJMjGaFABYSFbcxm&u=aHR0cHMlM2ElMmYlMmZ3d3cuaGVscHdpcmUuY29tJTJmc2VlayUzZnElM2RxdWUlMjUyMHRhbCUyNTIwbWFnYXppbmUlMjZ0cyUzZGIlMjZhZ2lkJTNkMTMzNzAwNjUzNzY3NzQ2MiUyNmt3aWQlM2Rrd2QtODM1NjMxNTc0NjcyMDElM2Fsb2MtNDA4NCUyNm4lM2RzJTI2cXNyYyUzZDAlMjZzcmMlM2RqbyUyNmdjaCUzZFQwMDAwMTM3JTI2YXUlM2QxMTcxMDAyMiUyNnR0JTNkJTI2Y2xpY2tpZCUzZGNiOTA4YzljZDg5ZjFkOGI2MGUwZWQ2OWE2ODQ1ZjY1JTI2bWt0JTNkVVNBJTI2ZGV2JTNkYyUyNmFkaWQlM2Q4MzU2Mjk1NTgzNTEyOSUyNnV0bV9zb3VyY2UlM2RiJTI2dXRtX21lZGl1bSUzZGJjcGMlMjZtc2Nsa2lkJTNkY2I5MDhjOWNkODlmMWQ4YjYwZTBlZDY5YTY4NDVmNjU&rlid=cb908c9cd89f1d8b60e0ed69a6845f65"
+        },
+        {
+            "rank": 3,
+            "snippet": "Check Out Magazine On eBay. Fill Your Cart With Color Today!",
+            "timestamp": 1643474954,
+            "title": "Magazine Sold Direct On eBay - Fantastic Prices On Magazine",
+            "url": "https://www.bing.com/aclick?ld=e8b4eMX43EN9me9mqSm1HSczVUCUy87OCSw_uweBE4iMY1feJTJcYDer0ws0UA7UCxqQOZjQ374oahsWmbV55v02qkcq2iBa8KtclGtPzYnpUQVKOgmzE3bzPnOF5K1dXdc4lJRw1ymR9_bz4wjcSLrqGIjE3SuqxJQVsnTEfH6Bmjh-7r&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWJheS5jb20lMmZ1bGslMmZzY2glMmYlM2Zfbmt3JTNkbWFnYXppbmUlMjZub3JvdmVyJTNkMSUyNm1rZXZ0JTNkMSUyNm1rcmlkJTNkNzExLTM0MDAyLTEzMDc4LTAlMjZta2NpZCUzZDIlMjZrZXl3b3JkJTNkbWFnYXppbmUlMjZjcmxwJTNkXzIwMTgwMyUyNk1UX0lEJTNkJTI2Z2VvX2lkJTNkJTI2cmxzYXRhcmdldCUzZGt3ZC03Njg5NzIyNjczODQyMyUzYWxvYy0xOTAlMjZhZHBvcyUzZCUyNmRldmljZSUzZGMlMjZta3R5cGUlM2QlMjZsb2MlM2Q4NzU0MiUyNnBvaSUzZCUyNmFiY0lkJTNkJTI2Y21wZ24lM2QzMjk4NTE4ODAlMjZzaXRlbG5rJTNkJTI2YWRncm91cGlkJTNkMTIzMDM1MzY2NDA2NzY4NSUyNm5ldHdvcmslM2RzJTI2bWF0Y2h0eXBlJTNkcCUyNm1zY2xraWQlM2Q5OTJlM2E0MWZhOTUxMDQ0MmM0ZDViYjQ4NDhlZWQ2ZA&rlid=992e3a41fa9510442c4d5bb4848eed6d"
+        },
+        {
+            "rank": 4,
+            "snippet": "\u00bfQu\u00e9 Tal? Beginner, A1 A fun and accessible introduction to Spanish that will excite and engage beginners of all abilities and interests! Introduces functional vocabulary and grammar to build first stepping stones in language. Vibrant and visual magazines packed with short articles, infographics, quizzes, interviews and cultural features.",
+            "timestamp": 1643474954,
+            "title": "\u00bfQu\u00e9 Tal? - Mary Glasgow Magazines",
+            "url": "https://maryglasgowplus.com/subscribe/spanish/que-tal"
+        },
+        {
+            "rank": 5,
+            "snippet": "Qu\u00e9 Tal - Magazine. 1,128 likes \u00b7 1 talking about this. LIMA REVISTA Y MEDIO DE COMUNICACION PARA LA FAMILIA ....",
+            "timestamp": 1643474954,
+            "title": "Qu\u00e9 Tal - Magazine - Home | Facebook",
+            "url": "https://www.facebook.com/QueTalMagazineRevista"
+        },
+        {
+            "rank": 6,
+            "snippet": "\" Este sitio web y sus p\u00e1ginas, son propiedad de Asesoria Potosina a la Publicidad S.C. Parte del contenido que aparece en \u00e9l, incluyendo algunos textos, gr\u00e1ficos, datos, im\u00e1genes fotogr\u00e1ficas, im\u00e1genes en movimiento, sonido, ilustraciones, software y la selecci\u00f3n y disposici\u00f3n de los mismos, son propiedad de Asesoria Potosina a la Publicidad, S.C., de sus colaboradores, reporteros ...",
+            "timestamp": 1643474954,
+            "title": "Que Tal Virtual | Revista Sociales San Luis Potos\u00ed, S.L.P.",
+            "url": "http://quetalvirtual.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "\u00bfQu\u00e9 Tal? Revista de espa\u00f1ol \u2013 Principiante (A1) enero - febrero 2022 noviembre - diciembre 2021",
+            "timestamp": 1643474954,
+            "title": "\u00bfQu\u00e9 Tal? - Mary Glasgow Magazines",
+            "url": "https://es.maryglasgowplus.com/magazines/Que-Tal-78122"
+        },
+        {
+            "rank": 8,
+            "snippet": "Immerse beginners in the language and culture of Spanish-speaking countries. Using engaging topics and research-based scaffolding activities, \u00bfQu\u00e8 Tal? helps your students develop speaking, listening and comprehension skills. Each issue comes with Teacher's Guides with complete lesson plans that help you use the magazine effectively.",
+            "timestamp": 1643474954,
+            "title": "\u00bfQu\u00e9 Tal? by",
+            "url": "https://shop.scholastic.com/teachers-ecommerce/teacher/books/que-tal-165264.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "\u00bfQu\u00e9 Tal? Magazine en fran\u00e7ais \u2013 Principiante (A1) enero - febrero 2022 noviembre - diciembre 2021",
+            "timestamp": 1643474954,
+            "title": "\u00bfQu\u00e9 Tal? - Mary Glasgow Magazines",
+            "url": "https://fr.maryglasgowplus.com/magazines/Que-Tal-78122"
+        },
+        {
+            "rank": 10,
+            "snippet": "\u00bfQue Tal? noviembre - diciembre 2017 Ver todos los n\u00fameros. Ahora Preintermedio Revista actual. enero - febrero 2022 noviembre - diciembre 2021 septiembre - octubre 2021 abril - mayo 2021 marzo 2021 enero - febrero 2021 noviembre - diciembre 2020 septiembre - octubre 2020 ...",
+            "timestamp": 1643474954,
+            "title": "Revistas - Mary Glasgow Magazines",
+            "url": "https://es.maryglasgowplus.com/magazines"
+        },
+        {
+            "rank": 11,
+            "snippet": "Each magazine covers a variety of fun, up-to-date topics to keep teens engaged and each article focuses on a particular aspect of language learning, from simple descriptive vocabulary in beginner-level \u00bfQu\u00e9 Tal? , to complex debate topics in advanced-level El Sol .",
+            "timestamp": 1643474954,
+            "title": "Mary Glasgow Magazines - Spanish Magazines",
+            "url": "https://maryglasgowplus.com/subscribe/spanish"
+        },
+        {
+            "rank": 12,
+            "snippet": "\u00bfQu\u00e9 tal? (Ages 12+, Beginner Spanish) \u00bfQu\u00e9 tal? is a magazine written specifically for beginning Spanish language learners in middle school and above. It includes timely current events and cultural articles and is great for the older language learners, since its written at a level that will challenge (but not discourage) them.",
+            "timestamp": 1643474954,
+            "title": "Fun French and Spanish Language Magazines for Kids ...",
+            "url": "https://languagelearningathome.com/blog/spanish-french-magazines-for-kids"
+        },
+        {
+            "rank": 13,
+            "snippet": "Con el tiempo cada integrante de la familia empez\u00f3 a tener su propio televisor con reproductor de cintas o discos y los contenidos se comenzaron a diversificar de tal forma que los padres empezaron a tener problemas para identificar lo que sus hijos ve\u00edan.",
+            "timestamp": 1643474954,
+            "title": "quemagazineaz.com - Inicio",
+            "url": "http://quemagazineaz.com/"
+        },
+        {
+            "rank": 14,
+            "snippet": "Teach Spanish 1 With Que Tal\u00ae, The Teen-Friendly Classroom Magazine. Try It Now!",
+            "timestamp": 1643474954,
+            "title": "Scholastic Magazines+ - Try Que Tal\u00ae Free",
+            "url": "https://www.bing.com/aclick?ld=e8CFGlQsgjAibZNlnvPcD45TVUCUwO0epvIpEfPnk7QXGDa5Xev1-lUY1OdlhhcjIZbny4ZeXLG2NooSmQdeJb2CFmwGINrjUEuuXqydp5kB6VSHcgqoGqmLmwgsUUaDk8eD4hLfKF9voz-RcZKg5A96G6TtrrNhoE89zbCly-lNNWO1i2&u=aHR0cCUzYSUyZiUyZjUwMjMueGc0a2VuLmNvbSUyZnRyayUyZnYxJTNmcHJvZiUzZDQwMSUyNmNhbXAlM2Q5OTU0JTI2YWZmY29kZSUzZGt3Mzg0NjEwJTI2a2N0JTNkbXNuJTI2a2NoaWQlM2QxNTIwMTIxMDElMjZjaWQlM2Q3ODIwMjg2ODM3MjQ2NCUyNnF1ZXJ5U3RyJTNkcXVlJTI1MjB0YWwlMjUyMG1hZ2F6aW5lJTI2a2R2JTNkYyUyNmNyaXRlcmlhaWQlM2Rrd2QtNzgyMDI5NDg4MDc5MDglM2Fsb2MtMTkwJTI2YWRncm91cGlkJTNkMTI1MTI0NDUwNjY4NzE2MCUyNmNhbXBhaWduaWQlM2QyODMzOTk3NTIlMjZsb2NwaHklM2Q4NzU0MiUyNnVybCUzZGh0dHBzJTNhJTJmJTJmY2xhc3Nyb29tbWFnYXppbmVzLnNjaG9sYXN0aWMuY29tJTJmc3BhbmlzaC5odG1sJTNmcHNjaCUzZENNJTJmcHMlMmYyMDE3JTJmQmluZyUyZnR4dGwlMmZRdWUlMjUyMFRhbCUyZkNNJTdjQnJhbmQlN2NNYWdhemluZXMlN2NFeGFjdCUyZnNjaG9sYXN0aWMlMjUyMHF1ZSUyNTIwdGFsJTI1MjBtYWclMmYxMjUxMjQ0NTA2Njg3MTYwJTJmZSUyZkRlZGljYXRlZEhlYWRsaW5lJTJmU2Nob2xhc3RpYyUyNTIwSW5jJTI1MjAtJTI1MjBDbGFzc3Jvb20lMjUyME1hZ2F6aW5lcyUyNTIwRjEyMVo3WkIlMmYlMjZrX2NsaWNraWQlM2Rfa2Vuc2hvb19jbGlja2lkXyUyNnByb21vX2NvZGUlM2QzMTU2JTI2bXNjbGtpZCUzZGNkMjBhYzc2ZDRiNjEyN2U0OGFjY2Q4M2FhYWQzMzM0&rlid=cd20ac76d4b6127e48accd83aaad3334"
+        },
+        {
+            "rank": 15,
+            "snippet": "Search info on Helpwire.com. See yourself. Que tal magazine",
+            "timestamp": 1643474954,
+            "title": "Que tal magazine - We have it on our website",
+            "url": "https://www.bing.com/aclick?ld=e8uUVk6rrzzm4xcJJMkg9QFzVUCUxvoOc2so2-hgR3fb8UvXLIbvyD8ARWNo_R0ptX6tyiupyHHsDCXzPSbOKz9K4H_76b-dcSiRmtryozIWpuqtJtQiou3rWqqSfKyBVxv587Tns3tmhrosZUVQkXKX68osmJLpNnrJMjGaFABYSFbcxm&u=aHR0cHMlM2ElMmYlMmZ3d3cuaGVscHdpcmUuY29tJTJmc2VlayUzZnElM2RxdWUlMjUyMHRhbCUyNTIwbWFnYXppbmUlMjZ0cyUzZGIlMjZhZ2lkJTNkMTMzNzAwNjUzNzY3NzQ2MiUyNmt3aWQlM2Rrd2QtODM1NjMxNTc0NjcyMDElM2Fsb2MtNDA4NCUyNm4lM2RzJTI2cXNyYyUzZDAlMjZzcmMlM2RqbyUyNmdjaCUzZFQwMDAwMTM3JTI2YXUlM2QxMTcxMDAyMiUyNnR0JTNkJTI2Y2xpY2tpZCUzZGNiOTA4YzljZDg5ZjFkOGI2MGUwZWQ2OWE2ODQ1ZjY1JTI2bWt0JTNkVVNBJTI2ZGV2JTNkYyUyNmFkaWQlM2Q4MzU2Mjk1NTgzNTEyOSUyNnV0bV9zb3VyY2UlM2RiJTI2dXRtX21lZGl1bSUzZGJjcGMlMjZtc2Nsa2lkJTNkY2I5MDhjOWNkODlmMWQ4YjYwZTBlZDY5YTY4NDVmNjU&rlid=cb908c9cd89f1d8b60e0ed69a6845f65"
+        }
+    ],
+    "timestamp": 1643474954,
+    "url": "https://www.qwant.com/?q=que+tal+magazine&t=all"
+}

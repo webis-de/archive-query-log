@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "free nude pics of Brittney Spears",
+    "offset": null,
+    "page": null,
+    "query": "free nude pics of Brittney Spears",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "<em>Spears</em>, Britney",
+            "url": "http://srd.yahoo.com/srct/14173031/free+nude+pics+of+Brittney+Spears/1/2/*http://dir.yahoo.com/Entertainment/Music/Artists/By_Genre/Rock_and_Pop/Spears__Britney/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Anti-Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srct/17738235/free+nude+pics+of+Brittney+Spears/2/2/*http://dir.yahoo.com/Entertainment/Music/Artists/By_Genre/Rock_and_Pop/Spears__Britney/Anti_Britney_Spears/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srst/14173042/free+nude+pics+of+Brittney+Spears/1/26/*http://www.peeps.com/britney/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Britney <em>Spears</em> Portal",
+            "url": "http://srd.yahoo.com/srst/28649593/free+nude+pics+of+Brittney+Spears/2/26/*http://www.britney-spears-portal.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Society <em>of</em> Future Husbands <em>of</em> Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srst/18683596/free+nude+pics+of+Brittney+Spears/3/26/*http://www.sfhbs.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Britney <em>Spears</em> to You",
+            "url": "http://srd.yahoo.com/srst/20140666/free+nude+pics+of+Brittney+Spears/4/26/*http://www.britney-spears.to/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Sonicnet: Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srst/20385435/free+nude+pics+of+Brittney+Spears/5/26/*http://britneyspears.sonicnet.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Vicky's Britney <em>Spears</em> Site",
+            "url": "http://srd.yahoo.com/srst/20077278/free+nude+pics+of+Brittney+Spears/6/26/*http://vicky.britneyzone.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Britney <em>Spears</em> Cafe",
+            "url": "http://srd.yahoo.com/srst/16008918/free+nude+pics+of+Brittney+Spears/7/26/*http://www.britneyspearscafe.com"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Britney <em>Spears</em> 2K",
+            "url": "http://srd.yahoo.com/srst/8832084/free+nude+pics+of+Brittney+Spears/8/26/*http://www.britney-spears.fsnet.co.uk/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Britney <em>Spears</em> Image Archive",
+            "url": "http://srd.yahoo.com/srst/19838390/free+nude+pics+of+Brittney+Spears/9/26/*http://www.bsia.cjb.net/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Wall <em>of</em> Sound: Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srst/15652175/free+nude+pics+of+Brittney+Spears/10/26/*http://wallofsound.go.com/artists/britneyspears/home.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Abacus Presents: Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srst/26559234/free+nude+pics+of+Brittney+Spears/11/26/*http://www.abacuspresents.com/celebrities/html/britney/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "101 Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srst/21009946/free+nude+pics+of+Brittney+Spears/12/26/*http://www.101britney.com/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Britney <em>Spears</em> UK Web Site",
+            "url": "http://srd.yahoo.com/srst/29040331/free+nude+pics+of+Brittney+Spears/13/26/*http://www.britney-spears.freewire.co.uk/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Absolutes.Net: Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srst/16520444/free+nude+pics+of+Brittney+Spears/14/26/*http://www.absolutes2.net/celebrities/s/spears_britney/index.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Mr. T vs. Britney <em>Spears</em>",
+            "url": "http://srd.yahoo.com/srst/21521721/free+nude+pics+of+Brittney+Spears/15/26/*http://www.angelfire.com/ca3/tfiles/britney.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Alex's Britney <em>Spears</em> Bashing Page",
+            "url": "http://srd.yahoo.com/srst/19168805/free+nude+pics+of+Brittney+Spears/16/26/*http://clik.to/britneygrease"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "All Britney <em>Spears</em> Lyrics",
+            "url": "http://srd.yahoo.com/srst/31251720/free+nude+pics+of+Brittney+Spears/17/26/*http://www.all-britney-spears-lyrics.pair.com/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 970473571,
+            "title": "Britney Jean Spear's World: Lyrics",
+            "url": "http://srd.yahoo.com/srst/28640108/free+nude+pics+of+Brittney+Spears/18/26/*http://www.geocities.com/britneyworldn/blyrics.html"
+        }
+    ],
+    "timestamp": 970473571,
+    "url": "http://search.yahoo.com:80/search?p=free+nude+pics+of+Brittney+Spears"
+}

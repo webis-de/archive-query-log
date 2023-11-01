@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Unification (album)\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Unification (album)\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Unification. (album) Unification is the second studio album by the German power metal band Iron Savior. It continues the science fiction story that began on the first album Iron Savior. It is the only album to feature former Gamma Ray and Freedom Call drummer Dan Zimmermann .",
+            "timestamp": 1626264528,
+            "title": "Unification (album) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Unification_(album)"
+        },
+        {
+            "rank": 2,
+            "snippet": "Listen to Unification on Spotify. Mark Cupidore \u00b7 Album \u00b7 2020 \u00b7 14 songs.",
+            "timestamp": 1626264528,
+            "title": "Unification - Album by Mark Cupidore | Spotify",
+            "url": "https://open.spotify.com/album/0xQlRCXNpSqel6OtjNXVBH"
+        },
+        {
+            "rank": 3,
+            "snippet": "View credits, reviews, tracks and shop for the 1998 CD release of \"Unification\" on Discogs.",
+            "timestamp": 1626264528,
+            "title": "Black Uhuru \u2013 Unification (1998, CD) - Discogs",
+            "url": "https://www.discogs.com/Black-Uhuru-Unification/release/2937850"
+        },
+        {
+            "rank": 4,
+            "snippet": "View credits, reviews, tracks and shop for the 1996 Vinyl release of \"Unification\" on Discogs.",
+            "timestamp": 1626264528,
+            "title": "Bindemittel \u2013 Unification (1996, Vinyl) - Discogs",
+            "url": "https://www.discogs.com/Bindemittel-Unification/release/1068190"
+        },
+        {
+            "rank": 5,
+            "snippet": "Twins In Fear \u2013 Unification (Album \u2013 Scanner / Dark Dimensions) By Inferno Sound Diaries Jan 9,2021. Genre/Influences: Experimental, Electronic, Punk-Pop, EBM. Format: Digital. Background/Info: We welcome the Ukrainian-Swiss project Twins In Fear. The female duo driven by Maria and Lena, was previously active as background singers and ...",
+            "timestamp": 1626264528,
+            "title": "Twins In Fear \u2013 Unification (Album \u2013 Scanner / Dark ...",
+            "url": "https://www.side-line.com/twins-in-fear-unification-album-scanner-dark-dimensions/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Black Uhuru. Album name: Unification. Link: Black Uhuru - Unification. Derrick 'Duckie' Simpson, Jenifah Nyah and Andrew Bees. First album after Garth Dennis and Don Carlos left the group. Andrew Bees is now at lead vocal.",
+            "timestamp": 1626264528,
+            "title": "Black Uhuru | Unification (1998) | United Reggae",
+            "url": "https://unitedreggae.com/discographies/1998/black-uhuru-unification%3b477/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Grand Unification is the debut studio album by British post-hardcore band Fightstar, released on 13 March 2006 through Island Records.Based upon the Neon Genesis Evangelion franchise, Grand Unification was produced by Colin Richardson and is considered a concept album. The track \"Lost Like Tears in Rain\" contains the line \"It's Neon Genesis\" to support the band's interest in the anime series.",
+            "timestamp": 1626264528,
+            "title": "Grand Unification (album) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Grand_Unification_(album)"
+        },
+        {
+            "rank": 8,
+            "snippet": "Title: Coming HomeAlbum: UnificationArtist: Iron Savior",
+            "timestamp": 1626264528,
+            "title": "Iron Savior - 01 Coming Home (Unification) - YouTube",
+            "url": "https://www.youtube.com/watch?v=Ku9TMud5q70"
+        },
+        {
+            "rank": 9,
+            "snippet": "DOWNLOAD/ DESCARGA FULL ALBUM HERE, MEGA - https://gamedready.blogspot.com/2020/11/blog-post_46.html Please make your donation by: https://www.patreon.com/Gr...",
+            "timestamp": 1626264528,
+            "title": "Black Uhuru - Unification 1998 - YouTube",
+            "url": "https://www.youtube.com/playlist?list=PLJK04Gk9vAyLoX072HL8DK0vIT4cOWRQu"
+        },
+        {
+            "rank": 10,
+            "snippet": "Unification (logic), the act of identifying two terms with a suitable substitution. Unification (graph theory), the computation of the most general graph that subsumes one or more argument graphs (if such a graph exists) Han unification, an orthographic issue dealt with by Unicode.",
+            "timestamp": 1626264528,
+            "title": "Unification - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Unifying_theory"
+        }
+    ],
+    "timestamp": 1626264528,
+    "url": "https://www.qwant.com/?q=%22Unification+(album)%22&t=all"
+}

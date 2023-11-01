@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "\"List of crossings of the James River\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"List of crossings of the James River\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "... Virginia Reservoir Amtrak Northeast Regional Boulevard Bridge List of crossings of the James River (Virginia) Hampton Roads Port of Richmond (Virginia)\u00a0...",
+            "timestamp": 1662064377,
+            "title": "James River - mixi.wiki",
+            "url": "https://www.google.com/url?q=https://51.222.228.198/blog/pl/James_River_(Virginia)&sa=U&ved=2ahUKEwj38_aP0_T5AhVCLkQIHcpYBlYQFnoECAEQAg&usg=AOvVaw0Tj0zyB787wNd_6muQIlKH"
+        },
+        {
+            "rank": 3,
+            "snippet": "8 days ago \u00b7 ... Works Belle Isle (Richmond, Virginia) List of crossings of the James River (Virginia) Google Google Maps Geographic coordinate system.",
+            "timestamp": 1662064377,
+            "title": "Robert E. Lee Memorial Bridge - mixi.wiki",
+            "url": "https://www.google.com/url?q=https://51.222.228.198/blog/nl/Robert_E._Lee_Memorial_Bridge&sa=U&ved=2ahUKEwj38_aP0_T5AhVCLkQIHcpYBlYQFnoECAAQAg&usg=AOvVaw33YFO0I9O_V1Ny8ahfKHim"
+        }
+    ],
+    "timestamp": 1662064377,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22List+of+crossings+of+the+James+River%22"
+}

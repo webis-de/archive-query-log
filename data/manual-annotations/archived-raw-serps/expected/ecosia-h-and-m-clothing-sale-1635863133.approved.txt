@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "h and m clothing sale",
+    "offset": null,
+    "page": null,
+    "query": "h and m clothing sale",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Discover discounted clothing, shoes, bags, accessories, swimwear, underwear and loungewear. Shop our clothes sale for stylish and functional sportswear. Not to mention brilliant beauty and grooming products for both women and men, as well a\u2026",
+            "timestamp": 1635863133,
+            "title": "Clothes sale | Discount on clothing | H&amp;M US",
+            "url": "https://www2.hm.com/en_us/sale.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Discover discounted clothing, shoes, bags, accessories, swimwear, underwear and loungewear. Shop our clothes sale for stylish and functional sportswear. Not to mention brilliant beauty and grooming products for both women and men, as well a\u2026",
+            "timestamp": 1635863133,
+            "title": "Clothes sale | Discount on clothing | H&amp;M GB",
+            "url": "https://www2.hm.com/en_gb/sale.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Welcome to H&amp;M, your shopping destination for fashion online. We offer fashion and quality at the best price in a more sustainable way.",
+            "timestamp": 1635863133,
+            "title": "H&amp;M offers fashion and quality at the best price",
+            "url": "http://www.hm.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "H&amp;M Sale. Shop the sale online at H&amp;M and stock up on lots of great deals! Discover new marked-down favourites from all departments: women's, men's, kids' and home. Find everything from sharp office staples and casual looks to on-trend fash\u2026",
+            "timestamp": 1635863133,
+            "title": "Sale | H&amp;M CA",
+            "url": "https://www2.hm.com/en_ca/sale.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "H&amp;M | Online Fashion, Homeware &amp; Kids Clothes | H&amp;M GB. Free standard delivery and Click &amp; Collect for Members. Sale is on! Up to 50% off. Valid in-store and online at hm.com while stocks last. Stock and prices may vary. Open.",
+            "timestamp": 1635863133,
+            "title": "H&amp;M | Online Fashion, Homeware &amp; Kids Clothes | H&amp;M GB",
+            "url": "https://www2.hm.com/en_gb/index.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "H&amp;M Sale. Discover incredible deals and shop our selection of fashionable clothing to stylish home d\u00e9cor at H&amp;M. With pieces up to 70% off for the whole family, what\u2019s not to love? Uncover a ton of deals and discounts on our range of dresse\u2026",
+            "timestamp": 1635863133,
+            "title": "Shop fashion discounts and deals up to 70% | H&amp;M KSA",
+            "url": "https://sa.hm.com/en/shop-sale/"
+        },
+        {
+            "rank": 7,
+            "snippet": "That commitment means H&amp;M embraces WCAG guidelines and supports assistive technologies such as screen readers. If you are using a screen reader, magnifier, or other assistive technologies and are experiencing difficulties using this website\u2026",
+            "timestamp": 1635863133,
+            "title": "H&amp;M | Online Fashion, Homeware &amp; Kids Clothes | H&amp;M US",
+            "url": "https://www2.hm.com/en_us/index.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "H&amp;M Sale. Discover incredible deals and shop our selection of fashionable clothing to stylish home d\u00e9cor at H&amp;M. With pieces up to 70% off for the whole family, what\u2019s not to love? Uncover a ton of deals and discounts on our range of dresse\u2026",
+            "timestamp": 1635863133,
+            "title": "Shop fashion discounts and deals up to 70% | H&amp;M Kuwait",
+            "url": "https://kw.hm.com/en/shop-sale/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Shop Sale Men 2021 sale from H&amp;M Kuwait. Explore our 2021 luxury and high-quality Men for Sale offers online in Kuwait City and whole Kuwait. Enjoy Free Returns and Cash on Delivery!",
+            "timestamp": 1635863133,
+            "title": "Sale Men 2021 Sale | H&amp;M Kuwait",
+            "url": "https://kw.hm.com/en/shop-sale/men/"
+        }
+    ],
+    "timestamp": 1635863133,
+    "url": "https://www.ecosia.org/search?q=h+and+m+clothing+sale"
+}

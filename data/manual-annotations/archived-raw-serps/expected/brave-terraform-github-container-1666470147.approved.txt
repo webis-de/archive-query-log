@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "terraform github container",
+    "offset": null,
+    "page": null,
+    "query": "terraform github container",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "April 22, 2021 -\n            <em>Terraform</em> module to create a docker <em>container</em> registry in Azure - <em>GitHub</em> - avinor/<em>terraform</em>-azurerm-<em>container</em>-registry: <em>Terraform</em> module to create a docker <em>container</em> registry in Azure",
+            "timestamp": 1666470147,
+            "title": "<em></em>GitHub - avinor/terraform-azurerm-container-registry: Terraform ...",
+            "url": "https://github.com/avinor/terraform-azurerm-container-registry"
+        },
+        {
+            "rank": 2,
+            "snippet": "May 26, 2022 -\n            <em>Terraform</em> module to create Azure <em>Container</em> Registry with optional scope-map, token, webhook, Network ACLs, encryption and Private endpoints. - <em>GitHub</em> - kumarvna/<em>terraform</em>-azurerm-<em>container</em>-registry: <em>Terraform</em> module to create Azure <em>Container</em> Registry with optional scope-map, token, webhook, ...",
+            "timestamp": 1666470147,
+            "title": "<em></em>GitHub - kumarvna/terraform-azurerm-container-registry: Terraform ...",
+            "url": "https://github.com/kumarvna/terraform-azurerm-container-registry"
+        },
+        {
+            "rank": 3,
+            "snippet": "September 16, 2020 -\n            <em>Terraform</em> module for Azure <em>Container</em> Registry. Contribute to claranet/<em>terraform</em>-azurerm-acr development by creating an account on <em>GitHub</em>.",
+            "timestamp": 1666470147,
+            "title": "<em></em>GitHub - claranet/terraform-azurerm-acr: Terraform module for Azure ...",
+            "url": "https://github.com/claranet/terraform-azurerm-acr"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Terraform</em> module for Azure <em>Container</em> Registry with webhooks if required - <em>GitHub</em> - DanielMabbett/<em>terraform</em>-azurerm-<em>container</em>-registry: <em>Terraform</em> module for Azure <em>Container</em> Registry with webhooks if...",
+            "timestamp": 1666470147,
+            "title": "<em></em>GitHub - DanielMabbett/terraform-azurerm-container-registry: ...",
+            "url": "https://github.com/DanielMabbett/terraform-azurerm-container-registry"
+        },
+        {
+            "rank": 5,
+            "snippet": "Azure <em>Container</em> Registry module for Cloud Adoption Framework for Azure landing zones - <em>GitHub</em> - aztfmod/<em>terraform</em>-azurerm-caf-<em>container</em>-registry: Azure <em>Container</em> Registry module for Cloud Adoption ...",
+            "timestamp": 1666470147,
+            "title": "<em></em>GitHub - aztfmod/terraform-azurerm-caf-container-registry: Azure ...",
+            "url": "https://github.com/aztfmod/terraform-azurerm-caf-container-registry"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Terraform</em> module to create a docker <em>container</em> registry in Azure - <em>terraform</em>-azurerm-<em>container</em>-registry/variables.tf at master \u00b7 avinor/<em>terraform</em>-azurerm-<em>container</em>-registry",
+            "timestamp": 1666470147,
+            "title": "<em></em>terraform-azurerm-container-registry/variables.tf at master \u00b7 ...",
+            "url": "https://github.com/avinor/terraform-azurerm-container-registry/blob/master/variables.tf"
+        },
+        {
+            "rank": 7,
+            "snippet": "January 26, 2022 -\n            I am going to show using an Azure DevOps Pipeline and <em>Terraform</em> how you can deploy to your Azure <em>Container</em> Instance and setting up the pipeline to build a new Image and enabling CI/CD when you push to the repository - the pipeline will build a new image and deploy the updated image to the\u2026",
+            "timestamp": 1666470147,
+            "title": "<em></em>Deploy to Azure Container Instance from Azure Container Registry ...",
+            "url": "https://thomasthornton.cloud/2022/01/26/deploy-to-azure-container-instance-from-azure-container-registry-using-a-ci-cd-azure-devops-pipeline-and-terraform/"
+        },
+        {
+            "rank": 8,
+            "snippet": "August 12, 2022 -\n            Having a basic understanding of the AzAPI provider, we can explore how to deploy an actual workload to ACA using <em>Terraform</em>. The entire source code shown in this article is located in my Azure <em>Container</em> Apps samples repository on <em>GitHub</em> (011-deploy-aca-with-<em>terraform</em>).",
+            "timestamp": 1666470147,
+            "title": "<em></em>How to Deploy Azure Container Apps with Terraform \u00b7 Thorsten Hans' ...",
+            "url": "https://www.thorsten-hans.com/deploy-azure-container-apps-with-terraform/"
+        },
+        {
+            "rank": 9,
+            "snippet": "June 1, 2022 -\n            The following <em>Terraform</em> files <em>contains</em> all resources you need, including an AzureAD application, and injects all necessary information as secrets into <em>GitHub</em> organization and repository for the build and deployment to work.",
+            "timestamp": 1666470147,
+            "title": "<em></em>Setting up Backstage.io on Azure App Services with Github Actions, ...",
+            "url": "https://www.asystad.net/setting-up-backstage-io-on-azure-app-services-with-terraform-and-azure-container-registry/"
+        },
+        {
+            "rank": 10,
+            "snippet": "November 5, 2021 -\n            Azure Storage Account <em>Terraform</em> Module resources are supported Module Usage Resource Group BlockBlobStorage accounts FileStorage accounts <em>Containers</em> SMB File Shares Soft delete for Blobs or <em>Containers</em> Configure Azure Storage firewalls and virtual networks Manage the Azure Blob storage lifecycle ...",
+            "timestamp": 1666470147,
+            "title": "<em></em>GitHub - kumarvna/terraform-azurerm-storage: Terraform Module to ...",
+            "url": "https://github.com/kumarvna/terraform-azurerm-storage"
+        },
+        {
+            "rank": 11,
+            "snippet": "May 18, 2021 -\n            <em>Terraform</em> 0.14 or higher. ... module my_cloud_run_service { source = \"garbetjie/cloud-run/google\" version = \"~&gt; 2\" # Required parameters name = \"my-cloud-run-service\" image = \"us-docker.pkg.dev/cloudrun/<em>container</em>/hello\" location = \"europe-west4\" # Optional parameters allow_public_access = true ...",
+            "timestamp": 1666470147,
+            "title": "<em></em>GitHub - garbetjie/terraform-google-cloud-run: Terraform module ...",
+            "url": "https://github.com/garbetjie/terraform-google-cloud-run"
+        },
+        {
+            "rank": 12,
+            "snippet": "March 11, 2021 -\n            This was originally posted as a comment on closed issue #125 but as this is a different problem problem a new issue would make more sense. Running this module past v0.50.0 results in: Error: Error ...",
+            "timestamp": 1666470147,
+            "title": "<em></em>secrets_as_map causing issues with sensitive values \u00b7 Issue #128 ...",
+            "url": "https://github.com/cloudposse/terraform-aws-ecs-container-definition/issues/128"
+        },
+        {
+            "rank": 13,
+            "snippet": "1 month ago -\n            Is there an existing issue for this? I have searched the existing issues Community Note Please vote on this issue by adding a \ud83d\udc4d reaction to the original issue to help the community and maintainers ...",
+            "timestamp": 1666470147,
+            "title": "<em></em>Cannot destroy, planing after create container, share in private ...",
+            "url": "https://github.com/hashicorp/terraform-provider-azurerm/issues/18506"
+        },
+        {
+            "rank": 14,
+            "snippet": "January 15, 2021 -\n            Community Note Please vote on this issue by adding a \ud83d\udc4d reaction to the original issue to help the community and maintainers prioritize this request Please do not leave \"+1\" or oth...",
+            "timestamp": 1666470147,
+            "title": "<em></em>New Feature: Launch AWS Marketplace produccts (AMIs, containers) ...",
+            "url": "https://github.com/hashicorp/terraform-provider-aws/issues/17146"
+        },
+        {
+            "rank": 15,
+            "snippet": "January 24, 2022 -\n            A <em>Terraform</em> module for configuring GKE clusters. Contribute to <em>terraform</em>-google-modules/<em>terraform</em>-google-kubernetes-engine development by creating an account on <em>GitHub</em>.",
+            "timestamp": 1666470147,
+            "title": "<em></em>GitHub - terraform-google-modules/terraform-google-kubernetes-engine: ...",
+            "url": "https://github.com/terraform-google-modules/terraform-google-kubernetes-engine"
+        },
+        {
+            "rank": 16,
+            "snippet": "I know you don't accept contributions and this is more of a PoC provider - this fixes #3 this PR <em>contains</em> changes you don't want (<em>github</em> actions config) - so you may close this PR, I published the fork on the <em>Terraform</em> registry for people facing #3",
+            "timestamp": 1666470147,
+            "title": "<em></em>Fix os.Rename() error \"invalid cross-device link\" for Docker ...",
+            "url": "https://github.com/sethvargo/terraform-provider-filesystem/pull/4/files"
+        },
+        {
+            "rank": 17,
+            "snippet": "February 10, 2022 -\n            If you are new to using <em>Terraform</em> for Google Cloud, see the Get Started - Google Cloud page on the HashiCorp website.",
+            "timestamp": 1666470147,
+            "title": "<em></em>Creating and managing repositories with Terraform - Google ...",
+            "url": "https://cloud.google.com/artifact-registry/docs/integrate-terraform"
+        },
+        {
+            "rank": 18,
+            "snippet": "October 13, 2020 -\n            Because <em>Terraform</em> itself is already offered in a Docker <em>container</em>, it is very easy to run <em>Terraform</em> in a Codefresh pipeline. ... You can see the example project at https://<em>github</em>.com/codefresh-contrib/<em>terraform</em>-sample-app. The repository <em>contains</em> a simple <em>Terraform</em> definition that creates a ...",
+            "timestamp": 1666470147,
+            "title": "<em></em>Deploy with Terraform \u00b7 Codefresh | Docs",
+            "url": "https://codefresh.io/docs/docs/yaml-examples/examples/terraform/"
+        },
+        {
+            "rank": 19,
+            "snippet": "August 18, 2021 -\n            Registry \u00b7 Please enable Javascript to use this application",
+            "timestamp": 1666470147,
+            "title": "<em></em>integrations/github - Terraform Registry",
+            "url": "https://registry.terraform.io/providers/integrations/github/latest"
+        },
+        {
+            "rank": 20,
+            "snippet": "March 22, 2022 -\n            This file <em>contains</em> your access credentials. Note: This tutorial will provision resources that qualify under the AWS free-tier. If your account doesn't qualify under the AWS free-tier, we're not responsible for any charges that you may incur. The <em>GitHub</em> Action you create will connect to <em>Terraform</em> ...",
+            "timestamp": 1666470147,
+            "title": "<em></em>Automate Terraform with GitHub Actions | Terraform - HashiCorp Learn",
+            "url": "https://learn.hashicorp.com/tutorials/terraform/github-actions"
+        }
+    ],
+    "timestamp": 1666470147,
+    "url": "https://search.brave.com/search?q=terraform%20github%20container"
+}

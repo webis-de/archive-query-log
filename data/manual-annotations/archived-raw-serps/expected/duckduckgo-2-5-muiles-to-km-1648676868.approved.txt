@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "2.5 muiles to km",
+    "offset": null,
+    "page": null,
+    "query": "2.5 muiles to km",
+    "results": [],
+    "timestamp": 1648676868,
+    "url": "https://duckduckgo.com/?t=ffab&q=2.5+muiles+to+km"
+}

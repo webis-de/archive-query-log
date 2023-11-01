@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "1137CE",
+    "offset": null,
+    "page": null,
+    "query": "1137CE",
+    "results": [],
+    "timestamp": 1639788231,
+    "url": "http://www.bing.com/search?q=1137CE"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "sims castaway trailer",
+    "offset": null,
+    "page": null,
+    "query": "sims castaway trailer",
+    "results": [],
+    "timestamp": 1647012563,
+    "url": "https://duckduckgo.com/?q=sims+castaway+trailer&t=brave"
+}

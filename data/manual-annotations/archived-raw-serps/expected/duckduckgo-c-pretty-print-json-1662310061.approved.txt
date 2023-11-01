@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "c# pretty print json",
+    "offset": null,
+    "page": null,
+    "query": "c# pretty print json",
+    "results": [],
+    "timestamp": 1662310061,
+    "url": "https://duckduckgo.com/?q=c%23%20pretty%20print%20json&t=ffab"
+}

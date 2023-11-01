@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "meaning of integral site:www.elook.org",
+    "offset": null,
+    "page": null,
+    "query": "meaning of integral site:www.elook.org",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Provides a definition of definite <em>integral</em> ... [noun] the <em>integral</em> of a function over a definite interval   ...",
+            "timestamp": 1174247342,
+            "title": "DEFINITE <em>INTEGRAL Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/definite-integral.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Provides a definition of indefinite <em>integral</em> ...",
+            "timestamp": 1174247342,
+            "title": "INDEFINITE <em>INTEGRAL Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/indefinite-integral.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Provides a definition of <em>integral</em> ... F(x) is the <em>integral</em> of f(x) if dF/dx = f(x)   ... \"a local motion keepeth bodies <em>integral</em>\"- Bacon;  ...",
+            "timestamp": 1174247342,
+            "title": "<em>INTEGRAL Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/integral.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Provides a definition of <em>integral</em> calculus ... Search for synonyms for <em>INTEGRAL</em> CALCULUS ...",
+            "timestamp": 1174247342,
+            "title": "<em>INTEGRAL</em> CALCULUS <em>Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/integral-calculus.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "\"a local motion keepeth bodies <em>integral</em>\"- Bacon;  \"was able to keep the collection ... \"fought to keep the union intact\"  Synonyms: <em>integral</em>, ...",
+            "timestamp": 1174247342,
+            "title": "INTACT <em>Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/intact.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "\"a local motion keepeth bodies <em>integral</em>\"- Bacon;  \"was able to keep the collection ... \"fought to keep the union intact\"  Synonyms: <em>integral</em>, ...",
+            "timestamp": 1174247342,
+            "title": "ENTIRE <em>Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/entire.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "[noun] the act of combining into an <em>integral</em> whole; ... operation used in the calculus whereby the <em>integral</em> of a function is determined ...",
+            "timestamp": 1174247342,
+            "title": "INTEGRATION <em>Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/integration.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Provides a definition of operator ...",
+            "timestamp": 1174247342,
+            "title": "OPERATOR <em>Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/operator.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Provides a definition of build in ... [verb] make something an <em>integral</em> part of something else;  \"we can build in a special ...",
+            "timestamp": 1174247342,
+            "title": "BUILD IN <em>Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/build-in.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Provides a definition of the calculus...",
+            "timestamp": 1174247342,
+            "title": "THE CALCULUS <em>Meaning</em> and Definition - Dictionary - eLook.org",
+            "url": "http://www.elook.org/dictionary/the-calculus.html"
+        }
+    ],
+    "timestamp": 1174247342,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=meaning+of+integral+site:www.elook.org"
+}

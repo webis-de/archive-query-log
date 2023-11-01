@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "trans texas corridor",
+    "offset": null,
+    "page": null,
+    "query": "trans texas corridor",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The<em> Trans-Texas Corridor</em> (TTC) was a proposal for a transportation network in the U.S. State of Texas that was conceived to be composed of a new kind of transportation modality known as supercorridors. The TTC was initially proposed in 2001 and after considerable controversy was discontinued by 2010 in the planning and early construction stages.",
+            "timestamp": 1613259804,
+            "title": "Trans-Texas Corridor - Wikipedia",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAax0L5gt.;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2fen.wikipedia.org%2fwiki%2fTrans-Texas_Corridor/RK=2/RS=fq5jcUbTmkNRqwwt0XenUdctLfo-"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Trans Texas Corridor</em> or (TTC) - a superhighway that's a 4,000 mile network of toll roads (auto and truck lanes), railway and utility lines, that will take an estimated 580,000 acres of private Texans' land that was promised NOT to use taxpayer money but the State Auditor uncovered that it could cost taxpayers up to $18 billion.",
+            "timestamp": 1613259804,
+            "title": "Trans Texas Corridor (TTC) - TURF",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAbR0L5gt.;_ylu=Y29sbwNncTEEcG9zAzIEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2fwww.texasturf.org%2fresources%2fglossary%2f62-trans-texas-corridor-ttc/RK=2/RS=ApLDSG2Db3fhEaaAIkUNkBy1IPM-"
+        },
+        {
+            "rank": 3,
+            "snippet": "The Trans-Texas <em>Corridor</em> (TTC) was a proposal for a transportation network in the U.S. State of Texas that was conceived to be composed of a new kind of transportation modality known as supercorridors. The TTC was initially proposed in 2001 and after considerable controversy was discontinued by 2010 in the planning and early construction stages.",
+            "timestamp": 1613259804,
+            "title": "Trans-Texas Corridor \u2014 Wikipedia Republished // WIKI 2",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAdh0L5gt.;_ylu=Y29sbwNncTEEcG9zAzMEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2fwiki2.org%2fen%2fTrans-Texas_Corridor/RK=2/RS=dwp0AUqX1UKSaI1N2mvHrdzC.2w-"
+        },
+        {
+            "rank": 4,
+            "snippet": "30/8/2005 \u00b7  The<em> Trans Texas Corridor (TTC)</em> has brought into sharp focus the difficult challenge Texas faces with respect to its transportation infrastructure.",
+            "timestamp": 1613259804,
+            "title": "Trans Texas Corridor - Texas County Progress",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAeB0L5gt.;_ylu=Y29sbwNncTEEcG9zAzQEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2fcountyprogress.com%2ftrans-texas-corridor%2f/RK=2/RS=fxuwBX9FuO80gDnpnISabRhJ.jU-"
+        },
+        {
+            "rank": 5,
+            "snippet": "24/10/2019 \u00b7  <em>Trans Texas Corridor</em> Map has a variety pictures that joined to locate out the most recent pictures of<em> Trans Texas Corridor</em> Map here, and as a consequence you can acquire the pictures through our best<em> trans texas corridor</em> map collection.",
+            "timestamp": 1613259804,
+            "title": "Trans Texas Corridor Map | secretmuseum",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAgB0L5gt.;_ylu=Y29sbwNncTEEcG9zAzUEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2fwww.secretmuseum.net%2ftrans-texas-corridor-map%2f/RK=2/RS=SMr34.yz1ls0vZeULpxYhsmBjTM-"
+        },
+        {
+            "rank": 6,
+            "snippet": "Please visit: http://www.CorridorWatch.org http://www.TexasTurf.org",
+            "timestamp": 1613259804,
+            "title": "The Trans-Texas Corridor - YouTube",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAgh0L5gt.;_ylu=Y29sbwNncTEEcG9zAzYEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2fwww.youtube.com%2fwatch%3fv%3dbtewqYiom_o/RK=2/RS=rsi6UIr3izU9BwwVlaJdgL_Rk78-"
+        },
+        {
+            "rank": 7,
+            "snippet": "CorridorWatch.org - Challenging the Wisdom of the<em> Trans-Texas Corridor.</em> National Coalition Formed to Oppose Privatization of Toll Roads New coalition of highway user groups will combat the growing trend toward the privatization or leasing of toll facilities to private investors.",
+            "timestamp": 1613259804,
+            "title": "CorridorWatch.org - Challenging the Wisdom of the Trans-Texas...",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAhB0L5gt.;_ylu=Y29sbwNncTEEcG9zAzcEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=http%3a%2f%2fstall.net%2fttc%2f/RK=2/RS=tHTSQWB8wAYt20Ge.1c7y5vpV_I-"
+        },
+        {
+            "rank": 8,
+            "snippet": "29/4/2008 \u00b7  According to the<em> Trans-Texas Corridor</em> Executive Summary produced by TxDOT, the<em> Trans-Texas Corridor</em> is an all-Texas transportation network of corridors up to 1,200 feet wide. The 4,000-mile corridor will include separate highway lanes for passenger vehicles and trucks, high-speed passenger rail, and commuter and freight rail.",
+            "timestamp": 1613259804,
+            "title": "Trans-Texas Corridor",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAhh0L5gt.;_ylu=Y29sbwNncTEEcG9zAzgEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2ffreerepublic.com%2ffocus%2ff-news%2f2008559%2fposts/RK=2/RS=0uHdRYknH45088Q4v7gPdKJYb.o-"
+        },
+        {
+            "rank": 9,
+            "snippet": "8/4/2012 \u00b7  It was the enabling legislation that made the nightmarish Trans-Texas <em>Corridor</em> possible. The bill would demolish property rights and suck the life out of rural communities. So far, few Texans really know about the Trans-Texas <em>Corridor</em>.",
+            "timestamp": 1613259804,
+            "title": "Trans Texas Corridor",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAiB0L5gt.;_ylu=Y29sbwNncTEEcG9zAzkEdnRpZANDMTYzNl8xBHNlYwNzcg--/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2ftranstexascorridor.blogspot.com%2f/RK=2/RS=_rACyxBi5QizBbu2QVQuAJZE.IQ-"
+        },
+        {
+            "rank": 10,
+            "snippet": "For rural Texas, it will make the<em> Trans-Texas Corridor</em> battle look like a walk in the park. I ran some numbers back in the early nineties, when the idea of a bullet train was first floated, and to...",
+            "timestamp": 1613259804,
+            "title": "Trans-Texas corridor Articles \u2013 Texas Monthly",
+            "url": "https://r.search.yahoo.com/_ylt=Awr4xK8scihg6RYAih0L5gt.;_ylu=Y29sbwNncTEEcG9zAzEwBHZ0aWQDQzE2MzZfMQRzZWMDc3I-/RV=2/RE=1613292205/RO=10/RU=https%3a%2f%2fwww.texasmonthly.com%2ftag%2ftrans-texas-corridor%2f/RK=2/RS=XfRUV9Xk5p5NAKU0kcgYqCfntaQ-"
+        }
+    ],
+    "timestamp": 1613259804,
+    "url": "https://au.search.yahoo.com/search?p=trans+texas+corridor&fr=ush-groups"
+}

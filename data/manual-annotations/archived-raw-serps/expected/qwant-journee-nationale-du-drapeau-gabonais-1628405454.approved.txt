@@ -1,0 +1,101 @@
+{
+    "interpreted_query": "\"Journ\u00e9e nationale du drapeau gabonais\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Journ\u00e9e nationale du drapeau gabonais\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Compare Deals on Bonariensis Verbena &amp; Save Up to 70%. Shop Now!",
+            "timestamp": 1628405454,
+            "title": "Bonariensis Verbena Clearance - New Deals Every Day - Home",
+            "url": "https://www.bing.com/aclick?ld=e8VOJgJW2LQk6ACnGsISv3vzVUCUxdixX3wQOgN3TUSLSaZ6pYdu5Ogeb_eCTo2v7N6Z2c-NeePYO44zgQVCRQCgtAkswenNPDFrcob9jNbt9Imr9BHTE2cWfbFmzxPyxtJy-NN0uUdw2MQTVTtAN0NYXmKwUtllS2k6yMwLxEQ3wEI29P&u=aHR0cHMlM2ElMmYlMmZ0cmFjazA5LmNvbSUyZmdvJTJmc2VhcmNoJTNmdXJsJTNkaHR0cCUyNTNBJTI1MkYlMjUyRnd3dy5maW5kc2ltaWxhci5jb20lMjUyRnNlYXJjaCUyNTJGJTI1M0ZxJTI1M0Rib25hcmllbnNpcyUyNTJCdmVyYmVuYSUyNmNhbXBhaWduaWQlM2QzNzAyODg2MjIlMjZjaWQlM2Q4Njc2JTI2Y2FtcGFpZ24lM2RTZWFyY2glMjUyMChEVCklMjUyMC0lMjUyMEhvbWUtMTMyNiUyNTIwLSUyNTIwQlIlMjUyMC0lMjUyMEVEVCUyNmFkZ3JvdXBfaWQlM2QxMzIxNjE0MDUzNzE5ODE2JTI2YWRncm91cCUzZDE2NjUwNzI0JTI2a2V5d29yZCUzZGt3ZC04MjYwMTMyMzM1MjYwNSUzYWxvYy0xOTAlMjZkZXZpY2UlM2RjJTI2bWF0Y2h0eXBlJTNkcCUyNmJpZG1hdGNodHlwZSUzZGJiJTI2bmV0d29yayUzZHMlMjZxdWVyeXN0cmluZyUzZEpvdXJuJWMzJWE5ZSUyNTIwbmF0aW9uYWxlJTI1MjBkdSUyNTIwZHJhcGVhdSUyNTIwZ2Fib25haXMlMjZrZXl3b3JkaWQlM2Q4MjYwMTMyMzM1MjYwNSUyNmFkaWQlM2Q4MjYwMTA0MzEwNzIyNyUyNmxvY19waHlzaWNhbF9tcyUzZDg3NTQyJTI2bG9jX2ludGVyZXN0X21zJTNkJTI2bXNjbGtpZCUzZGRlZTQ0ZjNmOTMzMjFkOGI2NDQyMmUzMDA5ZGRjNjdhJTI2dXRtX3NvdXJjZSUzZGJpbmclMjZ1dG1fbWVkaXVtJTNkY3BjJTI2dXRtX2NhbXBhaWduJTNkU2VhcmNoJTI1MjAoRFQpJTI1MjAtJTI1MjBIb21lLTEzMjYlMjUyMC0lMjUyMEJSJTI1MjAtJTI1MjBFRFQlMjZ1dG1fdGVybSUzZCUyNTJCYm9uYXJpZW5zaXMlMjUyMCUyNTJCdmVyYmVuYSUyNnV0bV9jb250ZW50JTNkMTY2NTA3MjQ&rlid=dee44f3f93321d8b64422e3009ddc67a"
+        },
+        {
+            "rank": 2,
+            "snippet": "eBay Is Here For You with Money Back Guarantee and Easy Return. Get Your Journeys Today! Get Journeys With Fast and Free Shipping on eBay.",
+            "timestamp": 1628405454,
+            "title": "Journeys - Great Prices On Journeys",
+            "url": "https://www.bing.com/aclick?ld=e8OQTKKkZcFEPXQG1CaCIybDVUCUwVYeMCpKqJqiaMpEVCWFhWXM4DoVKInZv9pBAC0p6kJurifEc3rpHAlSmukXNzryqLHJDQG1D3qA3SrMENdtZ5Z9e_93fySCzGYtF1d_qX9tTf2pxPMxNc8WGUs0Y8DEg9Q7bV5ZIoJjeXTadzwdZF&u=aHR0cCUzYSUyZiUyZnd3dy5lYmF5LmNvbSUyZnNjaCUyZmkuaHRtbCUzZl9ua3clM2Rqb3VybmV5cyUyNm5vcm92ZXIlM2QxJTI2bWtldnQlM2QxJTI2bWtyaWQlM2Q3MTEtMzQwMDAtMTMwNzgtMCUyNm1rY2lkJTNkMiUyNmtleXdvcmQlM2Rqb3VybmV5cyUyNmNybHAlM2RfJTI2TVRfSUQlM2QlMjZnZW9faWQlM2QlMjZybHNhdGFyZ2V0JTNka3dkLTc2NjkxMTQ2NjExODA2JTNhbG9jLTE5MCUyNmFkcG9zJTNkJTI2ZGV2aWNlJTNkYyUyNm1rdHlwZSUzZCUyNmxvYyUzZDg3NTQyJTI2cG9pJTNkJTI2YWJjSWQlM2QlMjZjbXBnbiUzZDQxODgwNDA0MSUyNnNpdGVsbmslM2QlMjZhZGdyb3VwaWQlM2QxMjI3MDU1MjE0OTY3NzQ2JTI2bmV0d29yayUzZHMlMjZtYXRjaHR5cGUlM2RwJTI2bXNjbGtpZCUzZDIyNWYzZTZlYjUzOTEzN2E4NTViNWY2MTJmZDY3ZmMy&rlid=225f3e6eb539137a855b5f612fd67fc2"
+        },
+        {
+            "rank": 3,
+            "snippet": "Discover hundreds of ways to save on your favorite products. Get the Deals now!",
+            "timestamp": 1628405454,
+            "title": "Verbena Bonariensis -75% - Now: Verbena Bonariensis",
+            "url": "https://www.bing.com/aclick?ld=e8MPIM84IWceP6zB_0LqFjjzVUCUwXGCUvgZIjoNgEdsPbnEJWggR7k77GYabvr8RBfiCObg1eIk80Aw4J7O-WIP8eNS3aOinmjWIEawDmJMjgFzN7SpKGPuMKTu0M0ptTpm2KNdtbsZWucAF2R926AAzdkhVDkIo-dL6vh9j5UwAnChky&u=aHR0cHMlM2ElMmYlMmZkaXNjb3VudDk5LnVzJTJmdmVyYmVuYSUyNTIwYm9uYXJpZW5zaXMlMmYlM2ZwJTNkYmNzJTI2Z2NsaWQlM2Q1ZjA4ZGExNjIzMDExOGI0Y2E5N2JiMTliOWVlY2JmMyUyNm1zY2xraWQlM2Q1ZjA4ZGExNjIzMDExOGI0Y2E5N2JiMTliOWVlY2JmMyUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZGNhbXBhaWduJTI1MjAlMjU1QjAxOSUyNTVEJTI2dXRtX3Rlcm0lM2R2ZXJiZW5hJTI1MjBib25hcmllbnNpcyUyNnV0bV9jb250ZW50JTNkYWRncm91cCUyNTIwJTI1NUIxOSUyNTdDdzIlMjU3Q2IlMjU1RCUyNTNBJTI1MjAlMjU3QjctdmUlMjU3RA&rlid=5f08da16230118b4ca97bb19b9eecbf3"
+        },
+        {
+            "rank": 4,
+            "snippet": "Organis\u00e9e depuis l\u2019accession du pr\u00e9sident Ali Bongo Ondimba \u00e0 la magistrature supr\u00eame en 2009, la journ\u00e9e nationale du drapeau, dont la deuxi\u00e8me \u00e9dition aura lieu ce 9 ao\u00fbt, est l\u2019occasion pour la population gabonaise de manifester son attachement au symbole majeur de sa patrie.",
+            "timestamp": 1628405454,
+            "title": "Journ\u00e9e nationale du Drapeau: ce qu\u2019en pensent les Gabonais",
+            "url": "https://www.gabonreview.com/journee-nationale-du-drapeau-ce-quen-pensent-les-gabonais/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Gabon : Tout savoir sur la journ\u00e9e nationale du drapeau. par Focus Groupe media 8 ao\u00fbt 2019. 8 ao\u00fbt 2019. Le ministre de la Culture, des Sports, charg\u00e9 de la Jeunesse et de la Vie associative, organise la 10\u00e8me \u00e9dition de la journ\u00e9e nationale du drapeau. Une manifestation r\u00e9publicaine sous le th\u00e8me \u00ab\u00e9thique, conscience patriotique et ...",
+            "timestamp": 1628405454,
+            "title": "Gabon : Tout savoir sur la journ\u00e9e nationale du drapeau ...",
+            "url": "https://www.focusgroupemedia.com/gabon-tout-savoir-sur-la-journee-nationale-du-drapeau/"
+        },
+        {
+            "rank": 6,
+            "snippet": "La 11e \u00e9dition de la journ\u00e9e du drapeau va \u00eatre clairement victime de la crise sanitaire que traverse le Gabon depuis mars dernier. C\u00e9l\u00e9br\u00e9e ce dimanche 9 ao\u00fbt, aucune manifestation officielle n\u2019est cependant pr\u00e9vue par les autorit\u00e9s gabonaises. Pour marquer le coup,c\u2019est au ministre de la Culture, Michel Menga M\u2019Essonne que reviendra l\u2019insigne honneur de prononcer un discours ...",
+            "timestamp": 1628405454,
+            "title": "Journ\u00e9e nationale du drapeau gabonais : pas de ...",
+            "url": "https://info241.com/journee-du-drapeau-gabonais-pas-de-manifestation-ce-dimanche,5303"
+        },
+        {
+            "rank": 7,
+            "snippet": "Cette ann\u00e9e, pour des raisons li\u00e9e \u00e0 la crise sanitaire due au Covid-19, il n\u2019y aura pas d\u2019all\u00e9geance au drapeau mais surtout, pas de c\u00e9r\u00e9monie relative \u00e0 la c\u00e9l\u00e9bration de la Journ\u00e9e nationale du drapeau institu\u00e9e en 2009 par Ali Bongo.",
+            "timestamp": 1628405454,
+            "title": "Journ\u00e9e nationale du drapeau : Ali Bongo appelle les ...",
+            "url": "https://www.gabonreview.com/journee-nationale-du-drapeau-ali-bongo-appelle-les-gabonais-a-honorer-leur-drapeau/"
+        },
+        {
+            "rank": 8,
+            "snippet": "La 11e \u00e9dition de la journ\u00e9e du drapeau va \u00eatre clairement victime de la crise sanitaire que traverse le Gabon depuis mars dernier. C\u00e9l\u00e9br\u00e9e ce dimanche 9 ao\u00fbt, aucune manifestation officielle n\u2019est cependant pr\u00e9vue par les autorit\u00e9s gabonaises. Pour marquer le coup,c\u2019est au ministre de la Culture, Michel Menga M\u2019Essonne que reviendra l\u2019insigne honneur de [\u2026]",
+            "timestamp": 1628405454,
+            "title": "Journ\u00e9e nationale du drapeau gabonais : pas de ...",
+            "url": "https://afriveille.com/journee-nationale-du-drapeau-gabonais-pas-de-manifestation-ce-dimanche/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Alors que lors des 7 pr\u00e9c\u00e9dentes \u00e9ditions, la journ\u00e9e du drapeau institu\u00e9e par Ali Bongo, a toujours \u00e9t\u00e9 ponctu\u00e9e par une c\u00e9r\u00e9monie d\u2019all\u00e9geance, l\u2019\u00e9dition 2017 aura d\u00e9rog\u00e9 \u00e0 cette r\u00e8gle tacitement \u00e9tablie. Exit donc cette s\u00e9ance ultime d\u2019all\u00e9geance controvers\u00e9e o\u00f9 des hauts fonctionnaires et autres autorit\u00e9s minist\u00e9rielles et institutionnelles se couchaient pour ...",
+            "timestamp": 1628405454,
+            "title": "La journ\u00e9e gabonaise du drapeau c\u00e9l\u00e9br\u00e9e sans sa ...",
+            "url": "https://info241.com/la-journee-gabonaise-du-drapeau-celebree-sans-sa-traditionnelle,3003"
+        },
+        {
+            "rank": 10,
+            "snippet": "GABON : LA JOURNEE DU DRAPEAU, PLUS POPULAIRE QUE JAMAIS. Institu\u00e9e depuis l\u2019accession d\u2019Ali Bongo Ondimba, \u00e0 la magistrature supr\u00eame, le Gabon s\u2019appr\u00eate \u00e0 c\u00e9l\u00e9brer le 10\u00e8me anniversaire de la Journ\u00e9e nationale du drapeau, le 9 ao\u00fbt 2019. Apr\u00e8s 9 pr\u00e9c\u00e9dentes \u00e9ditions pass\u00e9es dans les salons feutr\u00e9s de la pr\u00e9sidence de la ...",
+            "timestamp": 1628405454,
+            "title": "LA JOURNEE DU DRAPEAU, PLUS POPULAIRE QUE JAMAIS - MEDIAS241",
+            "url": "https://medias241.com/actualites/gabon-la-journee-du-drapeau-plus-populaire-que-jamais/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Pour la 11e ann\u00e9e cons\u00e9cutive, la Journ\u00e9e nationale du drapeau est c\u00e9l\u00e9br\u00e9e ce dimanche 9 ao\u00fbt 2020, sous le th\u00e8me \"Citoyennet\u00e9 nationale, civisme et sant\u00e9 publique\".",
+            "timestamp": 1628405454,
+            "title": "Journ\u00e9e du drapeau : citoyennet\u00e9, civisme et sant\u00e9 ...",
+            "url": "https://www.union.sonapresse.com/gabon-politique/journee-du-drapeau-citoyennete-civisme-et-sante-publique-22471"
+        },
+        {
+            "rank": 12,
+            "snippet": "(Gabonews) : La c\u00e9r\u00e9monie pr\u00e9sid\u00e9e ce 9 ao\u00fbt 2019 \u00e0 la place de l\u2019ind\u00e9pendance de Ndend\u00e9 par le pr\u00e9fet du d\u00e9partement de la Dola, Alphonse Ndem\u00e9 se situe dans la foul\u00e9e de la journ\u00e9e nationale du drapeau Gabonais.Cet acte d\u2019all\u00e9geance a pour objectif magnifier l\u2019un des symboles r\u00e9publicains : le drapeau.",
+            "timestamp": 1628405454,
+            "title": "Le Gabon magnifie son drapeau - GABONEWS",
+            "url": "https://m.gabonews.com/fr/actus/societe/article/le-gabon-magnifie-son-drapeau"
+        },
+        {
+            "rank": 13,
+            "snippet": "9 Ao\u00fbt 2019. Journ\u00e9e Nationale du Drapeau Gabonais. \u2600\ufe0f \u2600\ufe0f \u2600\ufe0f 100 % Naturels \u2600\ufe0f \u2600\ufe0f \u2600\ufe0f \ud83d\udc99 \ud83d\udc9a \ud83d\udc9b Made in GABON \ud83d\udc9a \ud83d\udc9b \ud83d\udc99 # Ndossy # Beauty # Cosmetics # MadeInGabon # CentpourCentNaturels # Gabon # Libreville # PortGentil # Africa # Drapeau # JourneeNationale \ud83d\udcf1: +241 06 48 37 24... \ud83d\udce7: ndossicosmetique ...",
+            "timestamp": 1628405454,
+            "title": "Ndossy Beauty &amp; Cosmetics | Facebook",
+            "url": "https://www.facebook.com/Ndossy-Beauty-Cosmetics-1329359940537924/posts/"
+        }
+    ],
+    "timestamp": 1628405454,
+    "url": "https://www.qwant.com/?q=%22Journ%C3%A9e+nationale+du+drapeau+gabonais%22&t=all"
+}

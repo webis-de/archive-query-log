@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "correct way to wash hair oily scalp",
+    "offset": null,
+    "page": null,
+    "query": "correct way to wash hair oily scalp",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "How To <em>Wash</em> Your <em>Hair</em> The <em>Right Way</em> in 6 Simple Steps. ... the best <em>way</em> to <em>wash</em> <em>hair</em> <em>way</em> may include not <em>washing</em> it much at all. 2. Use Filtered, Luke Warm Water ... If you've got <em>oily</em> <em>hair</em> ...",
+            "timestamp": 1588676008,
+            "title": "How To Wash Your Hair The Right Way in 6 Simple Steps ...",
+            "url": "https://www.teenvogue.com/story/washing-your-hair-wrong"
+        },
+        {
+            "rank": 2,
+            "snippet": "25 <em>Ways</em> to Fix <em>Oily Hair</em>. ... <em>Wash</em> more often. People with really <em>oily hair</em> may need to shampoo up to once a day ... you can <em>wash</em> your <em>hair</em> incorrectly and end up with an <em>oily</em> <em>scalp</em> and damaged <em>hair</em>.",
+            "timestamp": 1588676008,
+            "title": "Oily Hair Remedy: 25 Natural Ways to Get Rid of Greasy Hair",
+            "url": "https://www.healthline.com/health/oily-hair-remedy"
+        },
+        {
+            "rank": 3,
+            "snippet": "Julyne Derrick is a freelance beauty writer and contributing writer for Byrdie. How to properly shampoo fine <em>hair</em>. Digital Vision / Getty Images. Fine <em>hair</em> can often mean <em>oily</em> <em>hair</em>. Because of this, you should avoid creamy shampoos. Gentle shampoos marked for volume and daily or frequent <em>washing</em> are good bets.",
+            "timestamp": 1588676008,
+            "title": "How to Shampoo Fine Hair Correctly - LiveAbout",
+            "url": "https://www.byrdie.com/how-to-shampoo-fine-hair-correctly-345623"
+        },
+        {
+            "rank": 4,
+            "snippet": "Whatever the cause, your <em>oily</em> <em>scalp</em> is caught in a vicious cycle that some remedies actually make worse. For example, you might think that frequent <em>hair</em> <em>washing</em> is the <em>way</em> to zap the oil. As logical as that approach might seem, you're probably making your <em>hair</em> greasier.",
+            "timestamp": 1588676008,
+            "title": "How to Prevent (and Manage) Oily Hair - LiveAbout",
+            "url": "https://www.byrdie.com/how-to-prevent-and-manage-greasy-oily-hair-3517787"
+        },
+        {
+            "rank": 5,
+            "snippet": "#1 <em>Wash</em> your <em>hair</em> thrice a week. <em>Washing</em> your <em>hair</em> is the key step to get rid of an <em>oily</em> <em>scalp</em>. Your pores secrete oil from your glands and make your <em>scalp</em> greasy and <em>oily</em>. Regularly <em>washing</em> your <em>hair</em> with a suitable product will prevent your <em>scalp</em> from excessive oil build-up and keep your <em>hair</em> healthy. Rinse your <em>hair</em> 2-3 times a week.",
+            "timestamp": 1588676008,
+            "title": "8 Simple Ways To Get Rid Of An Oily Scalp",
+            "url": "https://www.bebeautiful.in/all-things-hair/hair-concerns/ways-to-cure-an-oily-scalp"
+        },
+        {
+            "rank": 6,
+            "snippet": "How often you <em>wash</em> your <em>hair</em> depends on your <em>hair</em> type, too. If you have <em>oily</em> or fine <em>hair</em>, you may need to shampoo daily. Normal or dry <em>hair</em> can lather up closer to three times a week.",
+            "timestamp": 1588676008,
+            "title": "How to Wash Your Hair | StyleCaster",
+            "url": "https://stylecaster.com/beauty/how-to-wash-your-hair/"
+        },
+        {
+            "rank": 7,
+            "snippet": "How to Shampoo Your <em>Hair</em>. It's hard to believe, but there is a <em>right</em> and a wrong <em>way</em> to shampoo your <em>hair</em>. Shampooing your <em>hair</em> correctly can leave it feeling and looking healthy and shiny, and this article will show you how! Select a...",
+            "timestamp": 1588676008,
+            "title": "How to Shampoo Your Hair (with Pictures) - wikiHow",
+            "url": "https://www.wikihow.com/Shampoo-Your-Hair"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Oily</em> <em>hair</em> is the arch nemesis of <em>hair</em> goals. Greasy <em>hair</em> can throw off your whole appearance, turning your freshly washed <em>hair</em> into a sad and droopy mess, before you even walk out the door! Aside from being an eyesore, greasy <em>hair</em> feels yucky and if left untreated, will only make matters worse. Luckily, with this guide, you\u2019ll learn what ...",
+            "timestamp": 1588676008,
+            "title": "Oily Hair Guide: Everything to Know About Greasy Hair | It ...",
+            "url": "https://itsa10haircare.com/blogs/hair-guides/oily-hair-guide"
+        },
+        {
+            "rank": 9,
+            "snippet": "Shampooing your <em>hair</em> seems like a simple task, but there are a lot of little mistakes you could be making that harm your <em>hair</em> and <em>scalp</em>. We're breaking down how to <em>wash</em> your <em>hair</em> with tips for ...",
+            "timestamp": 1588676008,
+            "title": "How to Shampoo Your Hair Correctly | Beauty How To - YouTube",
+            "url": "https://www.youtube.com/watch?v=myyZyIMEZrY"
+        }
+    ],
+    "timestamp": 1588676008,
+    "url": "https://www.ecosia.org/search?q=correct+way+to+wash+hair+oily+scalp&addon=chrome&addonversion=3.1.2"
+}

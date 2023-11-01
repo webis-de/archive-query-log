@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "saltpeter beds",
+    "offset": null,
+    "page": null,
+    "query": "saltpeter beds",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "The saltpeter <em>bed</em> will also need to be absolutely protected from rain. Rain water will wash away all of the salts that you are trying to collect and you want as little sunlight as possible. Here is one very good method for manufacturing saltpeter <em>beds</em>. Collect a good supply of animal excrement. To make the <em>bed</em> you need a floor as stated earlier.",
+            "timestamp": 1643653808,
+            "title": "How To Make Saltpeter - Survival Manual",
+            "url": "https://www.survival-manual.com/saltpeter.php"
+        },
+        {
+            "rank": 3,
+            "snippet": "The method of preparing and making saltpetre-<em>beds</em> is precisely the most approved method of making the best manure, and all the labor and pains necessary for the preparation of black earth, and the construction of saltpetre-<em>beds</em>, and which I hope to induce my fellow-countrymen to undertake under the noble impulse of patriotism, ought to be ...",
+            "timestamp": 1643653808,
+            "title": "Joseph Leconte, 1823-1901. Instructions for the ...",
+            "url": "https://docsouth.unc.edu/imls/lecontesalt/leconte.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "The method of preparing and making saltpetre-<em>beds</em> is precisely the most approved method of making the best manure, and all the labor and pains necessary for the preparation of black earth, and the construction of saltpetre-<em>beds</em>, and which I hope to induce my fellow-countrymen to undertake under the noble impulse of patriotism, ought to be ...",
+            "timestamp": 1643653808,
+            "title": "The History of Saltpeter - firearmshistory.blogspot.com",
+            "url": "https://firearmshistory.blogspot.com/2016/03/the-history-of-saltpeter-vi.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Dunes, hills, waterholes, and saltpeter <em>beds</em>: Attractors for human populations in western Pampa, Argentina. Monica A Ber\u00f3n. Download Download PDF.",
+            "timestamp": 1643653808,
+            "title": "(PDF) Dunes, hills, waterholes, and saltpeter beds ...",
+            "url": "https://www.academia.edu/27705741/Dunes_hills_waterholes_and_saltpeter_beds_Attractors_for_human_populations_in_western_Pampa_Argentina"
+        },
+        {
+            "rank": 6,
+            "snippet": "Removing efflorescencefrom stablewalls and Erdstall tunnelwalls- built specially to collect seeping salt brines below the stables and other potential Nitre <em>beds</em> - Saltpeter gathering as it was probably done in the Nabatean and Byzantium towns since the time of the Roman Conquest and the Middle Ages when incendiary and gunpowders became critical ...",
+            "timestamp": 1643653808,
+            "title": "SALTPETER the secret salt - Salt made the world go round",
+            "url": "http://www.salt.org.il/frame_saltpet.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "The nitre <em>beds</em> were large rectangles of rotted manure and straw, moistened weekly with urine, \u201cdung water,\u201d and liquid from privies, cesspools and drains, and turned over regularly. The process was designed to yield saltpeter, an ingredient of gunpowder, which the Confederate army needed during the Civil War.",
+            "timestamp": 1643653808,
+            "title": "Potassium nitrate - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Potassium_nitrate"
+        },
+        {
+            "rank": 8,
+            "snippet": "Initially, saltpeter was scraped from the walls of stables, but this source quickly proved to be insufficient, so people started collecting urine and dung to access the valuable nitrates. To extract saltpeter from urine historically, gunpowder manufacturers set up \u201cniter <em>beds</em>\u201d of straw, filtering the urine through the straw, which would ...",
+            "timestamp": 1643653808,
+            "title": "Can You Really Make Gunpowder from Urine? (with pictures)",
+            "url": "https://www.infobloom.com/can-you-really-make-gunpowder-from-urine.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "Niter or nitre, also known as saltpeter or saltpetre, is the mineral form of potassium nitrate, KNO 3.It is a soft, white, highly soluble mineral found primarily in arid climates or cave deposits. Historically, the term niter was not well differentiated from natron, both of which have been very vaguely defined but generally refer to compounds of sodium or potassium joined with carbonate or ...",
+            "timestamp": 1643653808,
+            "title": "Niter - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Niter"
+        },
+        {
+            "rank": 10,
+            "snippet": "Gunpowder From Urine,<em></em> Fighting A Gorn. [Cody] has a nice little ranch in the middle of nowhere, a rifle, and a supply of ammunition. That\u2019s just fine for the zombie apocalypse, but he doesn\u2019t ...",
+            "timestamp": 1643653808,
+            "title": "Gunpowder From Urine, Fighting A Gorn - Hackaday",
+            "url": "https://hackaday.com/2015/06/15/gunpowder-from-urine-fighting-a-gorn/"
+        }
+    ],
+    "timestamp": 1643653808,
+    "url": "https://www.ecosia.org/search?q=saltpeter+beds&addon=chrome&addonversion=4.0.7&method=topbar"
+}

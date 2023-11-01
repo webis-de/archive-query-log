@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "h&m home",
+    "offset": null,
+    "page": null,
+    "query": "h&m home",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Transform your living space with our <em>home</em> d\u00e9cor collection. Find furniture, bedding, lighting, <em>home</em> storage and more at <em>H</em>&amp;<em>M</em> online. Shop now.",
+            "timestamp": 1664916031,
+            "title": "<em></em>Home d\u00e9cor | Furniture, Bedding &amp; decorations | H&amp;M US",
+            "url": "https://www2.hm.com/en_us/home.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "February 25, 2022 -\n            Transform your living space with our <em>home</em> d\u00e9cor collection. Find furniture, bedding, lighting, <em>home</em> storage and more at <em>H</em>&amp;<em>M</em> online. Shop now.",
+            "timestamp": 1664916031,
+            "title": "<em></em>Home d\u00e9cor | Furniture, Bedding &amp; decorations | H&amp;M IN",
+            "url": "https://www2.hm.com/en_in/home.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Create your own interior design dream with items from our <em>H</em>&amp;<em>M</em> <em>home</em> collection! Whether you are looking for a fresh look for your living room, kitchen or your bathroom, the <em>H</em>&amp;<em>M</em> <em>Home</em> collection offers it all. Choose your favourite additions to your interior and assemble them easily at <em>home</em>, if needed.",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M Home",
+            "url": "https://www2.hm.com/en_gb/customer-service/h-m-home.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "January 18, 2022 -\n            Welcome to <em>H</em>&amp;<em>M</em>, your shopping destination for fashion online. We offer fashion and quality at the best price in a more sustainable way.",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M offers fashion and quality at the best price",
+            "url": "https://www.hm.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Can you explain your role as head designer of <em>H</em>&amp;<em>M</em> <em>Home</em>? The head of design role is a creative leader role. It is about encouraging and inspiring other d...",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M HOME | H&amp;M GB",
+            "url": "https://www2.hm.com/en/home.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "6 days ago -\n            <em>H</em>&amp;<em>M</em> <em>Home</em> is Branching Out Into Collectible Design: The brand's Head of Design Evelina Kravaev S\u00f6derberg explains why now is the time for high street to go high-end.",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M Home is Branching Into Collectible Design | HYPEBEAST",
+            "url": "https://hypebeast.com/2022/9/h-m-home-design-lab-collection-furniture-homeware"
+        },
+        {
+            "rank": 7,
+            "snippet": "See Instagram photos and videos from <em>H</em>&amp;<em>M</em> <em>HOME</em> (@hmhome)",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M HOME (@hmhome) \u2022 Instagram photos and videos",
+            "url": "https://www.instagram.com/hmhome/"
+        },
+        {
+            "rank": 8,
+            "snippet": "1 week ago -\n            <em>H</em>&amp;<em>M</em> will open the doors to its first local standalone <em>H</em>&amp;<em>M</em> <em>Home</em> store at Sandton City on 24 November...",
+            "timestamp": 1664916031,
+            "title": "<em></em>First standalone H&amp;M Home store to open in South Africa",
+            "url": "https://www.bizcommunity.com/Article/196/182/231873.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Update your <em>home</em> with the latest interior trends and new interior design. Discover our new arrivals online or in you favourite store.",
+            "timestamp": 1664916031,
+            "title": "<em></em>New Arrivals H&amp;M Home - Latest Interior Trends | H&amp;M GB",
+            "url": "https://www2.hm.com/en_gb/home/new-arrivals/new-products.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "2 weeks ago -\n            LAKESIDE, one of the UK's most popular retail and leisure destinations, owned by property company SGS, is pleased to announce that <em>H</em>&amp;<em>M</em> has signed on a new unit at the centre, as part of an expansion and re-model, which will see the launch of <em>H</em>&amp;<em>M</em> <em>HOME</em>.",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M expands at Lakeside \u2013 with launch of HOME offer - Your Thurrock",
+            "url": "https://www.yourthurrock.com/2022/09/21/hm-expands-at-lakeside-with-launch-of-home-offer/"
+        },
+        {
+            "rank": 11,
+            "snippet": "February 25, 2022 -\n            Transform your living space with our <em>home</em> decor collection. Find furniture, bedding, lighting, <em>home</em> storage and more at <em>H</em>&amp;<em>M</em> online. Shop now.",
+            "timestamp": 1664916031,
+            "title": "<em></em>Home D\u00e9cor | Furniture, Bedding &amp; Decorations | H&amp;M GB",
+            "url": "https://www2.hm.com/en_gb/home.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Transform your living space with our <em>home</em> decor collection. Find furniture, bedding, lighting, <em>home</em> storage and more at <em>H</em>&amp;<em>M</em> online. Shop now.",
+            "timestamp": 1664916031,
+            "title": "<em></em>Home D\u00e9cor | Furniture, Bedding &amp; Decorations | H&amp;M",
+            "url": "https://www2.hm.com/en_asia5/home.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "See posts, photos and more on Facebook",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M HOME - Facebook",
+            "url": "https://www.facebook.com/HmHomeOfficial/"
+        },
+        {
+            "rank": 14,
+            "snippet": "6 days ago -\n            <em>H</em>&amp;<em>M</em> <em>HOME</em> is a design-driven global interior brand within <em>H</em>&amp;<em>M</em> Group, offering contemporary decor and <em>home</em> accessories for every style and room. It was first launched online as a <em>home</em>-textile concept in 2009 and has since been extended in many markets through shop-in-shops and online, and in ...",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M HOME - H&amp;M Group",
+            "url": "https://hmgroup.com/brands/hm-home/"
+        },
+        {
+            "rank": 15,
+            "snippet": "Transform your living space with our <em>home</em> decor collection. Find furniture, bedding, lighting, <em>home</em> storage and more at <em>H</em>&amp;<em>M</em> online. Shop now.",
+            "timestamp": 1664916031,
+            "title": "<em></em>Home D\u00e9cor | Furniture, Bedding &amp; Decorations | H&amp;M IE",
+            "url": "https://www2.hm.com/en_ie/home.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "New York Market Center",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M Home Designs Inc - 230 Fifth Avenue : 230 Fifth Avenue",
+            "url": "https://230fifthave.com/showrooms/hm-home-designs-inc/"
+        },
+        {
+            "rank": 17,
+            "snippet": "Welcome to <em>H</em>&amp;<em>M</em> <em>HOME</em> Image Gallery. Here you will find press photos and films for editorial use of upcoming and current collections.",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M Home",
+            "url": "https://about.hm.com/gallery/home.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Back at it again with another <em>home</em> video! So excited to show you what I bought at the <em>H</em>&amp;<em>M</em> <em>Home</em> Store in NYC (Herald Square). I'll be taking more trips to the...",
+            "timestamp": 1664916031,
+            "title": "<em></em>H&amp;M Home Haul Fall 2020 &amp; a peek of the H&amp;M Home Store in NYC! ...",
+            "url": "https://www.youtube.com/watch?v=NHxjvCRTEsM"
+        },
+        {
+            "rank": 19,
+            "snippet": "Transform your living space with our <em>home</em> decor collection. Find furniture, bedding, lighting, <em>home</em> storage and more at <em>H</em>&amp;<em>M</em> online. Shop now.",
+            "timestamp": 1664916031,
+            "title": "<em></em>Home D\u00e9cor | Furniture, Bedding &amp; Decorations | H&amp;M MY",
+            "url": "https://www2.hm.com/en_my/home.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "Jun 16, 2019 - Interior collections and decorating favorites for every <em>home</em>.",
+            "timestamp": 1664916031,
+            "title": "<em></em>900+ Best H&amp;M HOME ideas",
+            "url": "https://www.pinterest.com/hm/hm-home/"
+        }
+    ],
+    "timestamp": 1664916031,
+    "url": "https://search.brave.com/search?q=h%26m%20home&spellcheck=0"
+}

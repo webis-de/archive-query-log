@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Kolex\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Kolex\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "The KOLex scholarship award ceremony was held. Gabriel Lee was selected and given a Certificate of Scholarship and scholarship money.",
+            "timestamp": 1645947964,
+            "title": "Korean-American Organization of Lexington",
+            "url": "https://www.google.com/url?q=https://working.kolex.org/&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAEQAg&usg=AOvVaw2R8GhYi19FmI0dKipbCsLI"
+        },
+        {
+            "rank": 3,
+            "snippet": "Kolex has developed the most advanced and feature complete platform for creating, distributing and trading NFT's at scale. Find out why some of the largest\u00a0...",
+            "timestamp": 1645947964,
+            "title": "Kolex",
+            "url": "https://www.google.com/url?q=https://kolex.gg/&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAgQAg&usg=AOvVaw25ZvGBlLrF4Af-ShJRLFY3"
+        },
+        {
+            "rank": 4,
+            "snippet": "Powering Epics NFT collectibles and Kolectiv NFTs. Kolex has developed the most advanced and feature complete platform for creating, distributing and\u00a0...",
+            "timestamp": 1645947964,
+            "title": "The Official Kolex Store",
+            "url": "https://www.google.com/url?q=https://shop.kolex.gg/&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAcQAg&usg=AOvVaw15gpqG3BNLgOtpU3abcIgD"
+        },
+        {
+            "rank": 5,
+            "snippet": "At Kolex Collision Center,. Our Mission is to provide the highest quality, hassle-free collision repair experience to our customers. We understand an accident\u00a0...\n\nAbout us \u00b7 Services \u00b7 Certifications \u00b7 Authorization",
+            "timestamp": 1645947964,
+            "title": "KOLEX \u2013 Collision Center",
+            "url": "https://www.google.com/url?q=https://kolex-collision.com/&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAkQAg&usg=AOvVaw1QEuuFvmK6rhnR7uoD1kg8"
+        },
+        {
+            "rank": 6,
+            "snippet": "Rating  5.0 \n (1)   \u00b7 $\n\nFamily owned and operated, we here at Kolex Collision strive to give our costumers the repairs and... 8180 Newington Rd., Lorton, VA 22079.",
+            "timestamp": 1645947964,
+            "title": "Kolex Collision - Home | Facebook",
+            "url": "https://www.google.com/url?q=https://www.facebook.com/kolexcollision/&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAoQAg&usg=AOvVaw1z4UDaNay25FvtOL5PggQL"
+        },
+        {
+            "rank": 7,
+            "snippet": "Mar 14, 2020 \u00b7 Medical information for Kolex including its dosage, uses, side, effects, interactions, pictures and warnings.",
+            "timestamp": 1645947964,
+            "title": "Kolex : Uses, Side Effects, Interactions, Dosage / Pillintrip",
+            "url": "https://www.google.com/url?q=https://pillintrip.com/medicine/kolex&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAQQAg&usg=AOvVaw10ItbqKJJbz6g_yMPmb0SX"
+        },
+        {
+            "rank": 8,
+            "snippet": "Rating  5.0 \n (2)   \u00b7 $$\n\nKolex Service Center is a family owned auto repair business that has been serving the community since 1985. Our goal is to provide high quality repairs on a\u00a0...",
+            "timestamp": 1645947964,
+            "title": "Kolex Collision Center in Lorton, VA, 22079 | Auto Body Shops",
+            "url": "https://www.google.com/url?q=https://www.carwise.com/auto-body-shops/kolex-collision-center-lorton-va-22079/548591&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAAQAg&usg=AOvVaw3gT_zMZVE33Ebac7po-8wE"
+        },
+        {
+            "rank": 9,
+            "snippet": "KOLEX 2 Quart Nonstick Saucepan With Glass Lid\uff0cMultipurpose Sauce Pan Granite Coating,Small Soup Pot Milk Pan,Pour Spouts,Comfortable Wooden Handle,Easy to\u00a0...",
+            "timestamp": 1645947964,
+            "title": "KOLEX Nonstick Saucepan easy to cleaning and pouring",
+            "url": "https://www.google.com/url?q=https://www.amazon.com/vdp/0047274f8bb24bf08aa5a9c63fe3d01e&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAUQAg&usg=AOvVaw2ArAgKwfIoGj9CFyIJb8TK"
+        },
+        {
+            "rank": 10,
+            "snippet": "Shop KOLEX at the Amazon Cookware store. Free Shipping on eligible items. Everyday low prices, save up to 50%.",
+            "timestamp": 1645947964,
+            "title": "KOLEX 2 Quart Nonstick Saucepan With Glass Lid - Amazon.com",
+            "url": "https://www.google.com/url?q=https://www.amazon.com/KOLEX-Nonstick-Saucepan-Lid%25EF%25BC%258CMultipurpose-Comfortable/dp/B09372GWYF&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAMQAg&usg=AOvVaw3gBfj-rSjf8NJ7nW7QOmzm"
+        },
+        {
+            "rank": 11,
+            "snippet": "Kolex is looking to hire a Community Manager (NFTs) to join their team. This is a full-time position that is 100% remote with no geographical restrictions.",
+            "timestamp": 1645947964,
+            "title": "Community Manager (NFTs) at Kolex - Cryptocurrency Jobs",
+            "url": "https://www.google.com/url?q=https://cryptocurrencyjobs.co/marketing/kolex-community-manager-nfts/&sa=U&ved=2ahUKEwjju76yv5_2AhV4FjQIHRj6BDEQFnoECAIQAg&usg=AOvVaw39L-P4_XyZvpHbwYsmmb0B"
+        }
+    ],
+    "timestamp": 1645947964,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Kolex%22"
+}

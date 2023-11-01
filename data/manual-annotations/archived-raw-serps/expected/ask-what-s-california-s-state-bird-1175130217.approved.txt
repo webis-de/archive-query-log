@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "What's California's State Bird",
+    "offset": null,
+    "page": null,
+    "query": "What's California's State Bird",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "This map identifies the location of <em>California</em> on a world map and provides information about the <em>State</em>. ... <em><em>California's State bird</em> is the <em>California</em> Valley Quail. </em>... <em>California's State</em> song is \"I Love You, <em>California</em>\".",
+            "timestamp": 1175130217,
+            "title": "<em>What's California's State Bird</em>\n\u00a0[Web Answer]",
+            "url": "http://www.pickatrail.com/jupiter/location/north_america/usa/california.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>California</em> Quail  Lophortyx californicus ... Description: Plump <em>bird</em> with blue chest,  black face and forward curving plume  [teardrop ...",
+            "timestamp": 1175130217,
+            "title": "<em>California's State Bird</em>",
+            "url": "http://www.mschloe.com/ranch/calquail.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "The <em>California</em> quail (Lophortyx californica), also known as the valley quail, became the official <em>state bird</em> in 1931. A widely distributed and ...",
+            "timestamp": 1175130217,
+            "title": "<em>California State Bird - California</em> Valley Quail",
+            "url": "http://www.50states.com/bird/quail.htm"
+        },
+        {
+            "rank": 4,
+            "snippet": "... approximately 235 words/page)  <em>California's</em> Tourist Attractions, <em>State Bird, State</em> Flower, <em>State</em> Flag, Climate, Topography, Population, ...",
+            "timestamp": 1175130217,
+            "title": "Research Papers on <em>California's</em> Tourist Attractions, <em>State Bird</em>, ...",
+            "url": "http://www.researchover.com/termpaper/Californias_Tourist_Attractio-139252.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "... approximately 235 words/page)  <em>California's</em> Tourist Attractions, <em>State Bird, State</em> Flower, <em>State</em> Flag, Climate, Topography, Population, ...",
+            "timestamp": 1175130217,
+            "title": "Essay on <em>California's</em> Tourist Attractions, <em>State Bird, State</em> Flower, ...",
+            "url": "http://www.dedicatedwriters.com/paper/Californias_Tourist_Attractio-139252.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "The <em>California</em> quail, also known as the valley quail, became the official <em>state bird</em> in 1931. Plump, gray-colored and smaller than a pigeon, the",
+            "timestamp": 1175130217,
+            "title": "<em>California</em> Quail",
+            "url": "http://www.ss.ca.gov/museum/quail.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>California</em> Poppy pictures - photos of Calif.'s <em>State</em> Flower in Gorman, CA. ... Gorman, <em>California</em>.  Gorman is a small town along the 5 ...",
+            "timestamp": 1175130217,
+            "title": "Poppies! <em>California</em> Poppy photos - <em>California's State</em> flower. Gorman ...",
+            "url": "http://www.bearclover.net/hwy101/poppies.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>California</em> also has many coastal redwood forests.  The redwood tree, <em>California's state</em> tree, is the tallest tree in ...",
+            "timestamp": 1175130217,
+            "title": "<em>California State</em> Geography",
+            "url": "http://www.kidport.com/RefLib/UsaGeography/Facts/California.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "... official <em>state bird, state</em> song, <em>state</em> flower, <em>state</em> tree, and <em>state</em> nickname?  For example Florida's <em>state bird</em> is the ...",
+            "timestamp": 1175130217,
+            "title": "Triplofusus giganteus - The Official Florida <em>State</em> Shell",
+            "url": "http://www.jaxshells.org/pleuropl.htm"
+        },
+        {
+            "rank": 10,
+            "snippet": "... the U.S. Army, and adopted at the Constitutional Convention of 1849 before <em>California</em> became a <em>state</em> in June 1850. At ...",
+            "timestamp": 1175130217,
+            "title": "<em>California State</em> Seal - <em>California State</em> Symbols and Emblems",
+            "url": "http://www.netstate.com/states/symb/seals/ca_seal.htm"
+        }
+    ],
+    "timestamp": 1175130217,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=What%27s+California%27s+State+Bird"
+}

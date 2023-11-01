@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "-wikipedia \"Port de Gennevilliers (m\u00e9tro de Paris)\"",
+    "offset": null,
+    "page": null,
+    "query": "-wikipedia \"Port de Gennevilliers (m\u00e9tro de Paris)\"",
+    "results": [],
+    "timestamp": 1604443017,
+    "url": "https://www.bing.com/search?q=-wikipedia+%22Port+de+Gennevilliers+(m%C3%A9tro+de+Paris)%22"
+}

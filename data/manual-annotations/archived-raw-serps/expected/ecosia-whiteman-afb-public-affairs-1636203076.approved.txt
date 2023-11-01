@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "whiteman afb public affairs",
+    "offset": null,
+    "page": null,
+    "query": "whiteman afb public affairs",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "For questions or information, call (660) 687-5727 or email 509bw.public.affairs@us.af.mil. Customer Service hours are Monday - Friday, 9 a.m. to 4:00 p.m. The Public Affairs office is located in the 509th Bomb Wing headquarters building, 50\u2026",
+            "timestamp": 1636203076,
+            "title": "Public Affairs - Whiteman AFB Home Page",
+            "url": "https://www.whiteman.af.mil/PAO/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Whiteman AFB Units Whiteman Air Force Base, Mo, is the joint-service home of the 509th Bomb Wing, the world's only B-2 Spirit stealth bomber unit. The 509th Operations Group and 509th Maintenance Group are responsible for the flying mission\u2026",
+            "timestamp": 1636203076,
+            "title": "Whiteman AFB Units",
+            "url": "https://www.whiteman.af.mil/Units/Public-Affairs/"
+        },
+        {
+            "rank": 3,
+            "snippet": "For more information, call the Whiteman AFB Public Affairs office at 660-687-5727. Editorial Policy. The Whiteman AFB's Public website is the commander's primary communication tool to transmit information to the base community. The followin\u2026",
+            "timestamp": 1636203076,
+            "title": "Whiteman Air Force Base &gt; Connect &gt; Public Affairs ...",
+            "url": "https://www.whiteman.af.mil/Connect/Public-Affairs/Editorial-Policy/"
+        },
+        {
+            "rank": 4,
+            "snippet": "View Whiteman Air Force Base\u2019s profile on LinkedIn, the world\u2019s largest professional community. Whiteman has 1 job listed on their profile. ... Public Affairs Officer",
+            "timestamp": 1636203076,
+            "title": "Whiteman Air Force Base - Public Affairs Officer - United ...",
+            "url": "https://www.linkedin.com/in/whiteman-air-force-base-02b8b7181"
+        },
+        {
+            "rank": 5,
+            "snippet": "Whiteman Retiree Activities Office School Liaison Officer. School Liaison Officer FAQ Wings Over Whiteman. Event Map Careers Connect. Directory &amp; Phonebook Ask a Question Tell your story Leadership Link Public Affairs. Newsroom. Super Bowl \u2026",
+            "timestamp": 1636203076,
+            "title": "Whiteman Air Force Base &gt; Connect &gt; Public Affairs ...",
+            "url": "https://www.whiteman.af.mil/Connect/Public-Affairs/Security-Policy-Review/"
+        },
+        {
+            "rank": 6,
+            "snippet": "509th Bomb Wing Public Affairs 509 Spirit Blvd. Bldg. 509 Suite 116 Whiteman AFB, MO 65305 Comm: (660) 687-6126 DSN: 975-6126 Fax: (660) 687-7948 Base information: (660) 687-1110",
+            "timestamp": 1636203076,
+            "title": "Whiteman AFB Environmental - Whiteman Air Force Base &gt; Units",
+            "url": "https://www.whiteman.af.mil/environment/"
+        },
+        {
+            "rank": 7,
+            "snippet": "509th Bomb Wing Public Affairs BROLL. ... Joint leaders at Whiteman AFB sit down to discuss the most influential reads, past and present on their bookshelf ...",
+            "timestamp": 1636203076,
+            "title": "DVIDS - 509th Bomb Wing Public Affairs",
+            "url": "https://www.dvidshub.net/unit/509BWPA-WAFB"
+        },
+        {
+            "rank": 8,
+            "snippet": "442FW Public Affairs. This site is managed by the 442d Fighter Wing Public Affairs office. To contact us, call 660-687-5918 or send us an email.",
+            "timestamp": 1636203076,
+            "title": "442d Fighter Wing &gt; Home - AF",
+            "url": "https://www.442fw.afrc.af.mil/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Public Affairs. Newsroom. Super Bowl Flyover Press Kit Official Studio Photography Security &amp; Policy Review Whiteman Warrior Mobile App FOIA ... 18.June 2016 \u2013 March 2017, Director of Operations, 13th Bomb Squadron, Whiteman AFB, Mo. 19.Mar\u2026",
+            "timestamp": 1636203076,
+            "title": "Display - Whiteman AFB Home Page",
+            "url": "https://www.whiteman.af.mil/About/Biographies/Display/Article/2240773/colonel-keith-j-butler/"
+        },
+        {
+            "rank": 10,
+            "snippet": "AETC\u2019s Detachment 62 leading Agility Prime\u2019s training effort. Coalition forces strengthen close air support capabilities. AFIMSC Ventures accelerates change across installation, mission support enterprise. DAF COVID-19 Statistics - Oct. 25,\u2026",
+            "timestamp": 1636203076,
+            "title": "Home [www.osi.af.mil]",
+            "url": "https://www.osi.af.mil/"
+        }
+    ],
+    "timestamp": 1636203076,
+    "url": "https://www.ecosia.org/search?q=whiteman+afb+public+affairs"
+}

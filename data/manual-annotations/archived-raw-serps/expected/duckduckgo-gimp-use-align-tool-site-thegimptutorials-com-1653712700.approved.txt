@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "gimp use align tool site:thegimptutorials.com",
+    "offset": null,
+    "page": null,
+    "query": "gimp use align tool site:thegimptutorials.com",
+    "results": [],
+    "timestamp": 1653712700,
+    "url": "https://duckduckgo.com/?q=gimp+use+align+tool+site%3Athegimptutorials.com&t=ffab&atb=v325-7"
+}

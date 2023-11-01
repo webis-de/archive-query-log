@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Mehmet Oz Florida hunting license",
+    "offset": null,
+    "page": null,
+    "query": "Mehmet Oz Florida hunting license",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "22 hours ago\u00a0\u00b7 Television personality Mehmet Oz spent months in a Pennsylvania Senate race touting a history of hunting in Florida. But the state Fish and Wildlife Conservation Commission has confirmed Oz never...",
+            "timestamp": 1657728564,
+            "title": "<em>Mehmet Oz</em> bragged about <em>hunting</em> in <em>Florida</em>, but he\u2019s never held a <em>license</em>",
+            "url": "https://floridapolitics.com/archives/538507-mehmet-oz-bragged-about-hunting-in-florida-but-hes-never-held-a-license/"
+        },
+        {
+            "rank": 2,
+            "snippet": "21 hours ago\u00a0\u00b7 Television personality Mehmet Oz spent months in a Pennsylvania Senate race touting a history of hunting in Florida. But the state Fish and Wildlife Conservation Commission has confirmed Oz never...",
+            "timestamp": 1657728564,
+            "title": "Despite bragging about <em>hunting</em> in <em>Florida</em>, <em>Mehmet Oz</em> has \u2026",
+            "url": "https://www.cltampa.com/news/despite-bragging-about-hunting-in-florida-mehmet-oz-has-never-held-a-license-13785959"
+        },
+        {
+            "rank": 3,
+            "snippet": "Jul 12, 2022\u00a0\u00b7 television personality Mehmet Oz spent months in a Pennsylvania Senate race touting a hunting history in Florida. But the state Fish and Wildlife Conservation Commission confirmed that Oz never had a license to hunt legally in the Sunshine State. The vast majority of property Oz owns in the state of Florida remains unsuitable for hunting.",
+            "timestamp": 1657728564,
+            "title": "<em>Mehmet Oz</em> bragged that he hunted in <em>Florida</em>, but he never held a <em>license</em>",
+            "url": "https://batcages.com/mehmet-oz-bragged-that-he-hunted-in-florida-but-he-never-held-a-license/"
+        },
+        {
+            "rank": 4,
+            "snippet": "16 hours ago\u00a0\u00b7 July 12, 2022 at 9:15 pm EDT By Taegan Goddard Leave a Comment Mehmet Oz (R) \u201cspent months in a Pennsylvania Senate race touting a history of hunting in Florida. But the state Fish and Wildlife Conservation Commission has confirmed Oz never had a license to legally hunt in the Sunshine State,\u201d Florida Politics reports.",
+            "timestamp": 1657728564,
+            "title": "Dr. <em>Oz</em> Bragged About <em>Hunting</em> But Had No <em>License</em>",
+            "url": "https://politicalwire.com/2022/07/12/dr-oz-bragged-about-hunting-but-had-no-license/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Jul 13, 2022\u00a0\u00b7 <em>Florida</em> Politics: \u201c<em>Mehmet Oz</em> Bragged About <em>Hunting</em> In <em>Florida</em>, But He\u2019s Never Held A <em>License</em>\u201d. PENNSYLVANIA \u2013 While New Jersey fraud <em>Mehmet Oz</em> bragged about <em>hunting</em> in <em>Florida</em> during the primary, new reporting from <em>Florida</em> Politics revealed that <em>Oz</em> never had a <em>hunting license</em> in the sunshine state. Pennsylvania Democratic Party spokesperson \u2026",
+            "timestamp": 1657728564,
+            "title": "PA DEMS STATEMENT ON NEW REPORTING THAT <em>OZ</em> LIED ABOUT <em>HUNTING</em> IN <em>FLORIDA</em>",
+            "url": "https://www.padems.com/pa-dems-statement-on-new-reporting-that-oz-lied-about-hunting-in-florida/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Jul 13, 2022\u00a0\u00b7 <em>Mehmet Oz</em> (R) \u201cspent months in a Pennsylvania Senate race touting a history of <em>hunting</em> in <em>Florida</em>. But the state Fish and Wildlife Conservation Commission has confirmed <em>Oz</em> never had a <em>license</em> to legally hunt in the Sunshine State,\u201d <em>Florida</em> Politics reports. \u201cThe vast majority of property <em>Oz</em> owns in the state of <em>Florida</em> remains",
+            "timestamp": 1657728564,
+            "title": "Dr. <em>Oz</em> Bragged About <em>Hunting</em> But Had No <em>License</em> - Rodina News",
+            "url": "https://rodinanews.co.uk/news/dr-oz-bragged-about-hunting-but-had-no-license/47688/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Mehmet Oz bragged about hunting in Florida, but he\u2019s never held a license floridapolitics.com/archiv... Politics 6 comments 91% Upvoted Sort by: best level 1 \u00b7 14 hr. ago He sucks. 25 level 1 \u00b7 14 hr. ago The guy that voted in the Turkish election, has a home in New Jersey, and brags about being a PA guy? He wouldn't do that. Would he? shitbag. 23",
+            "timestamp": 1657728564,
+            "title": "<em>Mehmet Oz</em> bragged about <em>hunting</em> in <em>Florida</em>, but he\u2019s never held a <em>license</em>",
+            "url": "https://www.reddit.com/r/florida/comments/vxrd3m/mehmet_oz_bragged_about_hunting_in_florida_but/"
+        },
+        {
+            "rank": 8,
+            "snippet": "He also claimed to own a hunting ranch in Florida. Television personality Mehmet Oz spent months in a Pennsylvania Senate race touting a history of hunting in Florida. But the state Fish \u2026",
+            "timestamp": 1657728564,
+            "title": "<em>Mehmet Oz</em> bragged... - Coral Springs, FL Local - News Break",
+            "url": "https://www.facebook.com/100570828060845/posts/mehmet-oz-bragged-about-hunting-in-florida-but-hes-never-held-a-license/776382100479711/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Mehmet Oz bragged about hunting in Florida, but he\u2019s never held a license \u2014 The News Each Day Florida Politics Mehmet Oz bragged about hunting in Florida, but he\u2019s never held a license He also claimed to own a hunting ranch in Florida. July 12 \u2022 Jacob Ogles \ud83d\udd17 floridapolitics.com Loading tweets\u2026",
+            "timestamp": 1657728564,
+            "title": "<em>Mehmet Oz</em> bragged about <em>hunting</em> in <em>Florida</em>, but he\u2019s never held a <em>license</em>",
+            "url": "https://www.thenewseachday.com/comments/63437"
+        },
+        {
+            "rank": 10,
+            "snippet": "Jul 12, 2022\u00a0\u00b7 Mehmet Oz spent months in a Pennsylvania Senate race touting a history of hunting in Florida. But the state Fish and Wildlife Conservation Commission has confirmed Oz \u2026",
+            "timestamp": 1657728564,
+            "title": "Yashar Ali \ud83d\udc18 on Twitter: \"<em>Mehmet Oz</em> spent months in a \u2026",
+            "url": "https://twitter.com/yashar/status/1547004800838930432"
+        }
+    ],
+    "timestamp": 1657728564,
+    "url": "http://www.bing.com/search?q=Mehmet+Oz+Florida+hunting+license&FORM=HDRSC1"
+}

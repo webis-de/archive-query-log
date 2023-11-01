@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "llanelly carmarthenshire wales",
+    "offset": null,
+    "page": null,
+    "query": "llanelly carmarthenshire wales",
+    "results": [],
+    "timestamp": 1655261859,
+    "url": "https://duckduckgo.com/?q=llanelly+carmarthenshire+wales&t=ffab&atb=v325-7"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "phantasialand",
+    "offset": null,
+    "page": null,
+    "query": "phantasialand",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The theme park <em>Phantasialand</em> next to Cologne offers fun and adventure for the whole family with its unique attractions and shows.",
+            "timestamp": 1461344566,
+            "title": "Theme park <em>Phantasialand</em> in the Cologne area - <em>Phantasialand</em>",
+            "url": "http://www.phantasialand.de/en/home/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Book your tickets online for <em>Phantasialand</em>, Bruhl: See 1,047 reviews, articles, and 521 photos of <em>Phantasialand</em>, ranked No.1 on TripAdvisor among 8 attractions in Bruhl.",
+            "timestamp": 1461344566,
+            "title": "<em>Phantasialand</em> (Bruhl, Germany): Address, Phone Number ...",
+            "url": "https://www.tripadvisor.co.uk/Attraction_Review-g679041-d735577-Reviews-Phantasialand-Bruhl_North_Rhine_Westphalia.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Der Freizeitpark <em>Phantasialand</em> in Br\u00fchl bei K\u00f6ln (NRW) mit seinen mehrfach ausgezeichneten Attraktionen und Shows bietet grenzenlosen Spa\u00df, Action und Abenteuer ...",
+            "timestamp": 1461344566,
+            "title": "Freizeitpark <em>Phantasialand</em> in Br\u00fchl bei K\u00f6ln (NRW)",
+            "url": "http://www.phantasialand.de/de/"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Phantasialand</em> is a theme park in Br\u00fchl, North Rhine-Westphalia, Germany that attracts approximately 1.75 million visitors annually. The park was opened in 1967 by ...",
+            "timestamp": 1461344566,
+            "title": "<em>Phantasialand</em> - Wikipedia, the free encyclopedia",
+            "url": "https://en.wikipedia.org/wiki/Phantasialand"
+        },
+        {
+            "rank": 5,
+            "snippet": "Das <em>Phantasialand</em> steht f\u00fcr ausgezeichnete Unterhaltung: In sechs einzigartigen Themenbereichen warten weltweit einmalige Attraktionen, preisgekr\u00f6nte Shows u...",
+            "timestamp": 1461344566,
+            "title": "<em>Phantasialand</em> - YouTube",
+            "url": "http://www.youtube.com/user/Phantasialand"
+        },
+        {
+            "rank": 6,
+            "snippet": "Find hotels near <em>Phantasialand</em>, Germany online. Good availability and great rates. Book online, pay at the hotel. No reservation costs.",
+            "timestamp": 1461344566,
+            "title": "91 Hotels near <em>Phantasialand</em>, Br\u00fchl, Germany. Book your ...",
+            "url": "http://www.booking.com/landmark/de/phantasialand.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>PHANTASIALAND</em> Germany Park News - (6/23/15) In a shocking news story, the <em>Phantasialand</em> theme park was the ...",
+            "timestamp": 1461344566,
+            "title": "<em>Phantasialand</em> - Screamscape",
+            "url": "http://www.screamscape.com/html/phantasialand.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "Looking for statistics on the fastest, tallest or longest roller coasters? Find it all and much more with the interactive Roller Coaster Database.",
+            "timestamp": 1461344566,
+            "title": "<em>Phantasialand</em> (Br\u00fchl, North Rhine-Westphalia, Germany)",
+            "url": "http://rcdb.com/4872.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Phantasialand</em>. Situated in Br\u00fchl near Cologne in the heart of the Rhineland in Germany, <em>Phantasialand</em> is a fascinating world of adventure and excitement.",
+            "timestamp": 1461344566,
+            "title": "<em>Phantasialand</em> Hotels | Germany | Fred.\\ Holidays",
+            "url": "http://www.fredholidays.co.uk/destinations/germany/phantasialand"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Phantasialand</em> Bruhl, Germany Official Web Site: http://www.<em>phantasialand</em>.de Theme Park Review's Spain/Mini-Europe 2007 Tour! Spain 2007 Tour Isla Magica Parque de ...",
+            "timestamp": 1461344566,
+            "title": "<em>Phantasialand</em>, Germany - Theme Park Review",
+            "url": "http://www.themeparkreview.com/minieurope2007/phantasialand/phantasialand01.htm"
+        }
+    ],
+    "timestamp": 1461344566,
+    "url": "https://www.qwant.com/?q=phantasialand"
+}

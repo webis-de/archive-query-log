@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Full Speed",
+    "offset": null,
+    "page": null,
+    "query": "Full Speed",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "<em>Full Speed</em> Ahead!",
+            "url": "http://srd.yahoo.com/srst/294075/Full+Speed/1/39/T=1011207411/F=c6a94acff08d36e798006253cc4dd33b/*http://www.fullspeedahead.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "<em>Full Speed</em> Ahead",
+            "url": "http://srd.yahoo.com/srst/8945024/Full+Speed/2/39/T=1011207411/F=606bb028f0b107d87749811db137cbf0/*http://www.geocities.com/SunsetStrip/Bar/2741/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "<em>Full Speed</em> Computers",
+            "url": "http://srd.yahoo.com/srst/37387135/Full+Speed/3/39/T=1011207411/F=2e0098b076b45c5af4d3548f6da67027/*http://www.barcode-barcode-scanner-barcode-software-barcode.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "SBC Communications",
+            "url": "http://srd.yahoo.com/srst/57055/Full+Speed/4/39/T=1011207411/F=a223c2e32f0b78ee393b35045b43f32a/*http://www.sbc.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "High <em>Speed</em> Design Inc.",
+            "url": "http://srd.yahoo.com/srst/23975129/Full+Speed/5/39/T=1011207411/F=350eddc6d2d90bcfc10652715449ee20/*http://www.hsdpcb1.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Mirror Image Internet. Inc.",
+            "url": "http://srd.yahoo.com/srst/2010623/Full+Speed/6/39/T=1011207411/F=5e2e1a534237198be18b19a728254df2/*http://www.mirror-image.com"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Internet Access Center - IAC",
+            "url": "http://srd.yahoo.com/srst/596423/Full+Speed/7/39/T=1011207411/F=5d789010ad8ac70adc288470b5627982/*http://www.iac.co.jp/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "ResNet",
+            "url": "http://srd.yahoo.com/srst/164041/Full+Speed/8/39/T=1011207411/F=c76bd2c07f20f5c5fbefbda87ae83f15/*http://www.resnet.ubc.ca/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "MidWest Communications, Inc.",
+            "url": "http://srd.yahoo.com/srst/210833/Full+Speed/9/39/T=1011207411/F=44fabb017fc5d113951df21e98483fb1/*http://www.mwci.net/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Dunord Technologies Inc.",
+            "url": "http://srd.yahoo.com/srst/2154556/Full+Speed/10/39/T=1011207411/F=f30283c116450928ec3d15ee46a736f1/*http://www.dunord.com"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Learning Strategies Corporation",
+            "url": "http://srd.yahoo.com/srst/38063504/Full+Speed/11/39/T=1011207411/F=4fe04ca8bb45760bf821aa52c3242b03/*http://www.learningstrategies.com/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Offshore Systems International, Inc.",
+            "url": "http://srd.yahoo.com/srst/8210653/Full+Speed/12/39/T=1011207411/F=ebb3b2e1dec8b839462d4f5bfec44f34/*http://www.osl.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "J.R. Printing &amp; Copy Center",
+            "url": "http://srd.yahoo.com/srst/18370179/Full+Speed/13/39/T=1011207411/F=df69ad4e29f9b6f0138403b06ffb60ed/*http://www.jrprinting.com/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Wisconsin CyberLynk",
+            "url": "http://srd.yahoo.com/srst/242164/Full+Speed/14/39/T=1011207411/F=40ec145e76e3036f6f7ada536c64ed61/*http://www.cyberlynk.net/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "LaserCopy Docutech &amp; DocuCOLOR Publishing",
+            "url": "http://srd.yahoo.com/srst/2104925/Full+Speed/15/39/T=1011207411/F=94ffac3b2c88647316f48b9ac677ef8f/*http://www.lasercopy.com"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Partner Industrial Products",
+            "url": "http://srd.yahoo.com/srst/2720524/Full+Speed/16/39/T=1011207411/F=6794dc13611a4261f3a266012251f70a/*http://www.partnerusa.com"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Redshift Internet Services",
+            "url": "http://srd.yahoo.com/srst/22398838/Full+Speed/17/39/T=1011207411/F=869ae1e9fe069e069e06817e42147cda/*http://corp.redshift.com"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Interaccess",
+            "url": "http://srd.yahoo.com/srst/519086/Full+Speed/18/39/T=1011207411/F=7d55cac9422c1466edb1d902dfbf51a3/*http://www.ia.cl/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Exact Imaging, Inc",
+            "url": "http://srd.yahoo.com/srst/51235/Full+Speed/19/39/T=1011207411/F=49cfb91b1c9299f568c178fb356227b0/*http://www.exactimaging.com"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1011203807,
+            "title": "Silicon Group, Inc., The",
+            "url": "http://srd.yahoo.com/srst/7407708/Full+Speed/20/39/T=1011207411/F=30f585caadb0ba3cb200d2bbcde501ee/*http://www.sgroup.com"
+        }
+    ],
+    "timestamp": 1011203807,
+    "url": "http://search.yahoo.com:80/search?p=Full+Speed"
+}

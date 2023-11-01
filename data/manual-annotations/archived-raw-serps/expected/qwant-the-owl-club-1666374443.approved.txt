@@ -1,0 +1,87 @@
+{
+    "interpreted_query": "the owl club",
+    "offset": null,
+    "page": null,
+    "query": "the owl club",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "If <em>the</em>re isn\u2019t anyone using <em>the</em> site, it doesn\u2019t matter how many benefits it has. That\u2019s why mentioning us in chat groups, recommending <em>the</em> show to your friends, showing our watermark in <em>the</em> content you create with our files, and taking part in our community is what has made <em>The</em> <em>Owl</em> <em>Club</em>, what it is today.",
+            "timestamp": 1666374443,
+            "title": "theowlclub.net \u203a support#SaveTheOwlClub: We need your help \u2013 The Owl Club",
+            "url": "https://www.theowlclub.net/support/"
+        },
+        {
+            "rank": 2,
+            "snippet": "\u00bfQu\u00e9 es <em>The</em> <em>Owl</em> <em>Club</em>? Es una comunidad de fans de la serie <em>The</em> <em>Owl</em> House. Subtitulamos los episodios en espa\u00f1ol apenas se estrenan oficialmente, y gestionamos comunidades en Facebook y Discord con una moderaci\u00f3n preparada para hacerlos lugares c\u00f3modos. El proyecto no tiene fines de lucro, y no integramos anuncios. \u00bfQui\u00e9nes forman parte?",
+            "timestamp": 1666374443,
+            "title": "theowlclub.net \u203a sobre-the-owl-clubSobre The Owl Club \u2013 The Owl Club",
+            "url": "https://www.theowlclub.net/sobre-the-owl-club/"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>The</em> <em>Owl</em> <em>Club</em> raises money through memberships, concession sales and through merchandise sales from <em>the</em> Spirit Store. <em>The</em> Spirit Store is located on <em>the</em> main campus next to <em>the</em> Library and is open throughout <em>the</em> year. Our online store is always open at: www.<em>the</em>oakridgeschool.org/spiritstore .",
+            "timestamp": 1666374443,
+            "title": "theoakridgeschool.org \u203a getinvolved \u203a theowlclubThe Owl Club | The Oakridge School | Best CoEd College-Prep Private ...",
+            "url": "https://www.theoakridgeschool.org/getinvolved/theowlclub"
+        },
+        {
+            "rank": 4,
+            "snippet": "Join <em>The</em> <em>Owl</em> <em>Club</em> <em>Owl</em> <em>Club</em> Membership * Required MEMBERSHIP LEVELS - Gift certificates are valid only for <em>the</em> 2022 - 2023 school year. <em>Owl</em> Platinum Member $500 + Receives a $75 Gift Certificate for <em>the</em> Spirit Store <em>Owl</em> Gold Member $250 - $499 Receives a $50 Gift Certificate for <em>the</em> Spirit Store <em>Owl</em> Silver Member $100 - $249",
+            "timestamp": 1666374443,
+            "title": "theoakridgeschool.org \u203a getinvolved \u203a theowlclub \u203a join-the-owl-clubJoin The Owl Club | The Oakridge School | Best CoEd College-Prep ...",
+            "url": "https://www.theoakridgeschool.org/getinvolved/theowlclub/join-the-owl-club"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>The</em> <em>Owl</em> <em>Club</em> (@<em>The</em><em>Owl</em><em>Club</em>Net) / Twitter <em>The</em> <em>Owl</em> <em>Club</em> @<em>The</em><em>Owl</em><em>Club</em>Net \u00a1Bienvenido al Twitter de <em>The</em> <em>Owl</em> <em>Club</em>! Ac\u00e1 encontrar\u00e1s las novedades de la serie de Disney \"<em>The</em> <em>Owl</em> House\" (cuenta no oficial) Administra: @LooperLane Islas Hirvientes <em>the</em><em>owl</em><em>club</em>.net Joined August 2020 181 Following 33.4K Followers Tweets Tweets &amp; replies Media Likes Pinned Tweet",
+            "timestamp": 1666374443,
+            "title": "twitter.com \u203a TheOwlClubNetThe Owl Club - 15/10 \ud83e\udd21\ud83d\udc4d (@TheOwlClubNet) / Twitter",
+            "url": "https://twitter.com/TheOwlClubNet"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>THE</em> <em>OWL</em> <em>CLUB</em> - 62 Photos &amp; 48 Reviews - 109 Church St, Roseville, CA - Yelp <em>The</em> <em>Owl</em> <em>Club</em> 48 reviews Unclaimed $$ Bars, Music Venues, Venues &amp; Event Spaces Closed See 62 photos Opera House Saloon <em>The</em> Glass Turtle <em>The</em> Trocadero West House Bar 101 Eats &amp; Drinks Platinum Wine Lounge Roseville Taproom Boxing Donkey Irish Pub Impact Axe",
+            "timestamp": 1666374443,
+            "title": "yelp.com \u203a biz \u203a the-owl-club-rosevilleTHE OWL CLUB - 62 Photos &amp; 48 Reviews - Yelp",
+            "url": "https://www.yelp.com/biz/the-owl-club-roseville?start=40"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>The</em> area 236 S Scott Ave, Tucson, AZ 85701-1924 Best nearby Restaurants 475 within 3 miles HUB Restaurant &amp; Ice Creamery 701 0.3 mi$$ - $$$ \u2022 Dessert \u2022 American \u2022 Vegetarian Friendly Cup Cafe in Hotel Congress 933 0.3 mi$$ - $$$ \u2022 American \u2022 Bar \u2022 Cafe <em>The</em> Coronet 175 0.2 mi$$ - $$$ \u2022 American \u2022 International \u2022 Vegetarian Friendly See all",
+            "timestamp": 1666374443,
+            "title": "tripadvisor.com \u203a Attraction_Review-g60950-d561993-Reviews-Owls_Club-Tucson...Owls Club (Tucson) - All You Need to Know BEFORE You Go - Tripadvisor",
+            "url": "https://www.tripadvisor.com/Attraction_Review-g60950-d561993-Reviews-Owls_Club-Tucson_Arizona.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Temple <em>Owl</em> <em>Club</em>. Toggle navigation. ABOUT. Mission; Ways to Support; Meet <em>the</em> Staff; <em>Owl</em> <em>Club</em> Board of Directors; NCAA Compliance; <em>OWL</em> <em>CLUB</em> ANNUAL FUND. Student-Athlete Commitment; Membership Overview; Graduate <em>Owl</em> <em>Club</em>; Football Pledge Per Win; Priority Points Program; Important Deadlines; Upcoming Events; Join Now;",
+            "timestamp": 1666374443,
+            "title": "templeowlclub.comTemple Owl Club",
+            "url": "https://www.templeowlclub.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>The</em> <em>Owl</em> <em>Club</em>. 18,978 likes \u00b7 7,818 talking about this. P\u00e1gina de la comunidad de <em>The</em> <em>Owl</em> <em>Club</em>, fans de la serie \"<em>The</em> <em>Owl</em> House\" (La Casa B\u00faho). Capturas de los episodios, transmisiones en vivo y m\u00e1s...",
+            "timestamp": 1666374443,
+            "title": "facebook.com \u203a TheOwlClubNetThe Owl Club - Home - Facebook",
+            "url": "https://www.facebook.com/TheOwlClubNet/"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>The</em> <em>Owl</em> <em>Club</em> (ES/EN) es el servidor para fans de la serie \"<em>The</em> <em>Owl</em> House\". Esperamos que te diviertas con nosotros :) | 62,152 members",
+            "timestamp": 1666374443,
+            "title": "discord.com \u203a invite \u203a theowlclubThe Owl Club: Thanks to Them - Discord",
+            "url": "https://discord.com/invite/theowlclub"
+        },
+        {
+            "rank": 11,
+            "snippet": "Looking For <em>Owl</em> <em>Club</em>? We Have Almost Everything On eBay. But Did You Check eBay? Check Out <em>Owl</em> <em>Club</em> On eBay.",
+            "timestamp": 1666374443,
+            "title": "ebay.comOwl Club - Great Prices On Owl Club",
+            "url": "https://www.bing.com/aclick?ld=e8YqKpRtDuglYGyD9qGIUCDDVUCUx4L8ocWMTP-QAnBrlCktRxCMm84Kqk57QDbAUqgXlxbsT661YkSiFayBgzKgtoQ-gfRVGH-X9cYJ2QFnn7-2FI7PbOU9h_G_yQFBYjEkxX__cHtd3fPV2-LvZPDJjrzveoWZ3hVcmCSxZnheH7SiwE&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWJheS5jb20lMmZzY2glMmZpLmh0bWwlM2Zfbmt3JTNkb3dsJTI1MjBjbHViJTI2bm9yb3ZlciUzZDElMjZta2V2dCUzZDElMjZta3JpZCUzZDcxMS0zNDAwMi0xMzA3OC0wJTI2bWtjaWQlM2QyJTI2bWtzY2lkJTNkMTAyJTI2a2V5d29yZCUzZG93bCUyNTIwY2x1YiUyNmNybHAlM2RfJTI2TVRfSUQlM2QlMjZnZW9faWQlM2QlMjZybHNhdGFyZ2V0JTNka3dkLTc3Mzc4MzA4MTg5NTkyJTNhbG9jLTE5MCUyNmFkcG9zJTNkJTI2ZGV2aWNlJTNkYyUyNm1rdHlwZSUzZCUyNmxvYyUzZDg3NTQyJTI2cG9pJTNkJTI2YWJjSWQlM2QlMjZjbXBnbiUzZDM5NTQwOTU0MCUyNnNpdGVsbmslM2QlMjZhZGdyb3VwaWQlM2QxMjM4MDUwMjk5OTM1NTMyJTI2bmV0d29yayUzZHMlMjZtYXRjaHR5cGUlM2RlJTI2bXNjbGtpZCUzZGM1YTNhZjg4ZjM0ODE2MjQ2NjBmY2NkYTA0MDMxYzQw&rlid=c5a3af88f3481624660fccda04031c40"
+        }
+    ],
+    "timestamp": 1666374443,
+    "url": "https://www.qwant.com/?q=the+owl+club&client=ext-firefox-sb&t=web"
+}

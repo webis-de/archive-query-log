@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "what does God do to tratorirs",
+    "offset": null,
+    "page": null,
+    "query": "what does God do to tratorirs",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Remind them of these things, and charge them before <em>God</em> not to quarrel about words, which <em>does</em> no good, but only ruins the hearers. <em>Do</em> your best to present yourself to <em>God</em> as one approved, a worker who has no need to be ashamed, rightly handling the word of truth.",
+            "timestamp": 1590883066,
+            "title": "What Does the Bible Say About Traitor?",
+            "url": "https://www.openbible.info/topics/traitor"
+        },
+        {
+            "rank": 3,
+            "snippet": "2 Timothy 3:1-5 ESV / 4 helpful votes Helpful Not Helpful. But understand this, that in the last days there will come times of difficulty. For people will be lovers of self, lovers of money, proud, arrogant, abusive, disobedient to their parents, ungrateful, unholy, heartless, unappeasable, slanderous, without self-control, brutal, not loving good, treacherous, reckless, swollen with conceit ...",
+            "timestamp": 1590883066,
+            "title": "What Does the Bible Say About Traitors?",
+            "url": "https://www.openbible.info/topics/traitors"
+        },
+        {
+            "rank": 4,
+            "snippet": "Treason against the king was known as high treason and treason against a lesser superior was petty treason. As jurisdictions around the world abolished petty treason, \"treason\" came to refer to what was historically known as high treason. At times, the term <em>traitor</em> has been used as a political epithet, regardless of any verifiable treasonable ...",
+            "timestamp": 1590883066,
+            "title": "Treason - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Traitor"
+        },
+        {
+            "rank": 5,
+            "snippet": "The <em>Traitor</em> Lord is a main boss in Hollow Knight.He blocks the path to the White Lady in the Queen's Gardens.. Lore. The <em>Traitor</em> Lord was one of the leaders of the Mantis Tribe along with his sisters, and particularly resented the kingdom of Hallownest. Similarly, he despised the relationship of his daughter with the Grey Mourner.. When he and his followers embraced the Infection to become ...",
+            "timestamp": 1590883066,
+            "title": "Traitor Lord | Hollow Knight Wiki | Fandom",
+            "url": "https://hollowknight.fandom.com/wiki/Traitor_Lord"
+        },
+        {
+            "rank": 6,
+            "snippet": "In <em>God</em>'s <em>Traitors</em>, Jessie Childs tells the fascinating story of one Catholic family, the Vauxes of Harrowden Hall, from the foundation of the Church of England in the 1530s to the Gunpowder Plot of 1605, and their struggle to keep the faith in Protestant England. Few Elizabethans would have disputed that obedience was a Christian duty, but ...",
+            "timestamp": 1590883066,
+            "title": "God's Traitors: Terror and Faith in Elizabethan England ...",
+            "url": "https://www.amazon.com/Gods-Traitors-Terror-Elizabethan-England/dp/0199392358"
+        },
+        {
+            "rank": 7,
+            "snippet": "Luke 6:27-38 - But I say unto you which hear, Love your enemies, <em>do</em> good to them which hate you, (Read More...) Psalms 1:1 - Blessed [is] the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.. Topics and verses are auto-generated from user searches. If a verse or topic <em>does</em> not belong, please contact us.",
+            "timestamp": 1590883066,
+            "title": "BIBLE VERSES ABOUT TRAITOR - King James Version",
+            "url": "https://www.kingjamesbibleonline.org/Bible-Verses-About-Traitor/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Black's Law Dictionary defines \"treason\" as\u201d attempting to overthrow the government of the state to which one owes allegiance, either by making war against the state or by materially supporting its enemies.\" Submitted here are ten people who did their level best to see that America couldn\u2019t celebrate her official 234th birthday this week. And yes, this list is \u201ctoo American.\u201d",
+            "timestamp": 1590883066,
+            "title": "Top 10 Traitors In US History - Listverse",
+            "url": "https://listverse.com/2010/07/04/top-10-traitors-in-us-history/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Our disobedience to <em>God</em> is betrayal to him. We disobey when we <em>do</em> something <em>God</em>\u2019s Word tells us not to <em>do</em>, or when we don\u2019t <em>do</em> something <em>God</em>\u2019s Word tells us to <em>do</em>. Numbers 5:6. . . \u201cGive these instructions to the people of Israel: If any of the people-men or women-betray the Lord by doing wrong to another person, they are guilty.\u201d",
+            "timestamp": 1590883066,
+            "title": "God's Words on Betrayal ~ by His Kingdom Prophecy",
+            "url": "https://www.hiskingdomprophecy.com/gods-word-betrayal/"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Do</em> not think that you are wiser than you really are. <em>Do</em> not pay anyone back evil for evil, but focus your thoughts on what is right in the sight of all people. If possible, so far as it depends on you, live in peace with all people. <em>Do</em> not take revenge, dear friends, but leave room for <em>God</em>\u2019s wrath. For it is written, \u201cVengeance belongs to me.",
+            "timestamp": 1590883066,
+            "title": "25 Important Bible Verses About Betrayal",
+            "url": "https://biblereasons.com/betrayal/"
+        },
+        {
+            "rank": 11,
+            "snippet": "trai\u00b7tor (tr\u0101\u2032t\u0259r) n. One who betrays one's country, a cause, or a trust, especially one who commits treason. [Middle English, from Old French, from Latin tr\u0101ditor, from tr\u0101ditus, past participle of tr\u0101dere, to betray; see tradition.] <em>traitor</em> (\u02c8tre\u026at\u0259) n a person who is guilty of treason or treachery, in betraying friends, country, a cause or ...",
+            "timestamp": 1590883066,
+            "title": "Traitor - definition of traitor by The Free Dictionary",
+            "url": "https://www.thefreedictionary.com/traitor"
+        }
+    ],
+    "timestamp": 1590883066,
+    "url": "https://www.ecosia.org/search?q=what+does+God+do+to+tratorirs&addon=chrome&addonversion=3.2.0&method=topbar"
+}

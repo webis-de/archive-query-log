@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "broken reality steam site:www.huntmar.com",
+    "offset": null,
+    "page": null,
+    "query": "broken reality steam site:www.huntmar.com",
+    "results": [],
+    "timestamp": 1597289631,
+    "url": "https://duckduckgo.com/?q=broken+reality+steam+site%3Awww.huntmar.com&t=ffab"
+}

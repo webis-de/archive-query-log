@@ -1,0 +1,143 @@
+{
+    "interpreted_query": "pekara fontana nik\u0161i\u0107",
+    "offset": null,
+    "page": null,
+    "query": "pekara fontana nik\u0161i\u0107",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Pekara</em>, Niksic: See 123 unbiased reviews of <em>Pekara</em>, rated 4.5 of 5 on Tripadvisor and ranked #2 of 35 restaurants in Niksic.",
+            "timestamp": 1649235416,
+            "title": "PEKARA, Niksic - Restaurant Reviews, Photos &amp; Phone Number - ...",
+            "url": "https://www.tripadvisor.com/Restaurant_Review-g635649-d7739543-Reviews-Pekara-Niksic_Niksic_Municipality.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Pekara</em> <em>is</em> <em>Pekara</em> - Restaurant in <em>Nik\u0161i\u0107</em>, Montenegro. Top-Rated.online <em>Pekara</em>. <em>It</em>'<em>s</em> 09:53 right now, with scattered clouds and the temperature of 7.81\u00b0<em>C</em> (46.058\u00b0F) in <em>Nik\u0161i\u0107</em>. <em>Pekara</em> - Restaurant in <em>Nik\u0161i\u0107</em>, Montenegro $ Cosy. Open on Google Maps \ud83c\udfc6 Trophies.",
+            "timestamp": 1649235416,
+            "title": "Pekara - Restaurant in Nik\u0161i\u0107, Montenegro | Top-Rated.Online",
+            "url": "https://www.top-rated.online/cities/Nik\u0161i\u0107/place/p/4040639/Pekara"
+        },
+        {
+            "rank": 3,
+            "snippet": "This restauranty restaurant (as opposed to one of <em>Nik\u0161i\u0107</em>'<em>s</em> many cafes, bakeries or bars with food) is accessed by an unlikely corridor leading from the main street. The usual national specialities come in massive...Read MoreSave",
+            "timestamp": 1649235416,
+            "title": "Pekara | Nik\u0161i\u0107, Montenegro Restaurants - Lonely Planet",
+            "url": "https://www.lonelyplanet.com/montenegro/niksic/restaurants/pekara/a/poi-eat/1543617/1326322"
+        },
+        {
+            "rank": 4,
+            "snippet": "Where is <em>Pekara</em> Pizzeria &amp; Caffe? <em>Pekara</em> Pizzeria &amp; Caffe is located at: Marka Miljanova, Niksic, Montenegro. What is the phone number of <em>Pekara</em> Pizzeria &amp; Caffe? You can try to dialing this number: +38267267943 Where are the coordinates of the <em>Pekara</em> Pizzeria &amp; Caffe?",
+            "timestamp": 1649235416,
+            "title": "Pekara Pizzeria &amp; Caffe, Nik\u0161i\u0107 (+38267267943)",
+            "url": "https://vymaps.com/ME/Pekara-Pizzeria-Caffe-185954922047270/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Pekara</em> <em>Fontana</em>. 61 likes \u00b7 4 talking about this. Product/Service",
+            "timestamp": 1649235416,
+            "title": "Pekara Fontana - Home | Facebook",
+            "url": "https://www.facebook.com/Pekara-Fontana-662685213925809/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Address Podgoricki put, 81400 <em>Nik\u0161i\u0107</em> . Phone +382 40 353 323 . Website(<em>s</em>) www.uniprompekara.com Categories Industrial Company, Wholesale Bakery . Facebook rating 5.00 / 7 votes / 787 like(<em>s</em>).. GPS Coordinates 42.77395,18.93725",
+            "timestamp": 1649235416,
+            "title": "Uniprom Pekara - Nik\u0161i\u0107 \ud83c\uddf2\ud83c\uddea - WorldPlaces",
+            "url": "https://montenegro.worldplaces.me/review/100638351-uniprom-pekara.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Pekara</em> <em>C</em>'est la vie, Bulevar 13. jula bb, <em>Nik\u0161i\u0107</em>. Prona\u0111ite druge pekare u Nik\u0161i\u0107u na PlanPlus.rs.",
+            "timestamp": 1649235416,
+            "title": "C'EST LA VIE - Pekare - Bulevar 13. jula bb, Nik\u0161i\u0107 ...",
+            "url": "https://www.planplus.rs/crna-gora/pekara-c-est-la-vie/76407"
+        },
+        {
+            "rank": 8,
+            "snippet": "1. Miranis Sweet. Savnicka bb, 81400 Niksic, Montenegro Coordinate: 42.74566, 18.95372 Phone: 068 077 225 2. Uniprom <em>Pekara</em> Podgoricki put, 81400 <em>Nik\u0161i\u0107</em>, Montenegro",
+            "timestamp": 1649235416,
+            "title": "Pekara Trend, Nik\u0161i\u0107",
+            "url": "https://vymaps.com/ME/Pekara-Trend-916474/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Pogledajte atmosferu sa promocije prvog Proteini.si bar koncepta u Crnoj Gori! Na\u0161i doma\u0107ini - <em>Pekara</em> Caffe &amp; Bistro <em>Nik\u0161i\u0107</em>! Posjetioci su imali priliku da p...",
+            "timestamp": 1649235416,
+            "title": "Promocija Proteini.si bar koncepta - Pekara Caffe &amp; Bistro ...",
+            "url": "https://www.youtube.com/watch?v=Ec7zbFFs1e4"
+        },
+        {
+            "rank": 10,
+            "snippet": "September 24, 2020 -\n            <em>Pekara</em> \"Migado\", vlasni\u0161tvo porodice Krivokapi\u0107 iz Nik\u0161i\u0107a, za sedam dana tri puta je bila na meti vandala. Samo \u0161to zamijene polomljena stakla na objektu u koja se nalazi u Ulici VI crnogorske, prema rije\u010dima Dragana Krivokapi\u0107a, vandali ponovo do\u0111u i ista razbiju tokom no\u0107i.",
+            "timestamp": 1649235416,
+            "title": "Pekara u Nik\u0161i\u0107u na meti vandala tri puta za sedam dana",
+            "url": "https://www.vijesti.me/vijesti/crna-hronika/472071/pekara-u-niksicu-na-meti-vandala-tri-puta-za-sedam-dana"
+        },
+        {
+            "rank": 11,
+            "snippet": "Telefon: +382 40 253 323 | +382 40 253 305. Adresa: Podgori\u010dki put bb, 81400 <em>Nik\u0161i\u0107</em>, Crna Gora. Email: [email protected]",
+            "timestamp": 1649235416,
+            "title": "Kontakt - Pekara Uniprom",
+            "url": "https://uniprompekara.com/kontakt/"
+        },
+        {
+            "rank": 12,
+            "snippet": "Information on Officers for \"<em>PEKARA</em>\" AKCIONARSKO DRU\u0160TVO - <em>NIK\u0160I\u0106</em> (Montenegro) :: Page 1",
+            "timestamp": 1649235416,
+            "title": "Officers for \"PEKARA\" AKCIONARSKO DRU\u0160TVO - NIK\u0160I\u0106 ...",
+            "url": "https://opencorporates.com/companies/me/40005954/officers"
+        },
+        {
+            "rank": 13,
+            "snippet": "The Chamber of Economy of Montenegro - business association with rich tradition, independent,",
+            "timestamp": 1649235416,
+            "title": "\"Uniprom pekara\" dru\u0161tvo za proizvodnju, trgovinu i usluge d.o.o.",
+            "url": "https://www.privrednakomora.me/en/sadrzaj/uniprom-pekara-drustvo-za-proizvodnju-trgovinu-i-usluge-doo-niksic"
+        },
+        {
+            "rank": 14,
+            "snippet": "<em>PEKARA</em> - STUDENT. Vi Crnogorske bb. 81400 <em>Nik\u0161i\u0107</em>. Crna Gora. Delatnost (klasifikacija delatnosti): 1071 Proizvodnja hljeba, svje\u017eeg peciva i kola\u010da. Mati\u010dni broj privrednog subjekta: 02911353. Nadopunite, uredite ili obrisite podatke za <em>PEKARA</em> - STUDENT.",
+            "timestamp": 1649235416,
+            "title": "PEKARA - STUDENT",
+            "url": "https://www.firme-cg.com/pekara-student/"
+        },
+        {
+            "rank": 15,
+            "snippet": "UNIPROM <em>PEKARA</em>. Podgori\u010dki put bb, <em>Nik\u0161i\u0107</em>. T: +382 (0)40 253 323. T: +382 (0)40 253 305. uniprompekara@t-com.me.",
+            "timestamp": 1649235416,
+            "title": "Pekare Crna Gora | PORTAL CRNA GORA",
+            "url": "https://www.portal-crnagora.com/ugostiteljstvo/pekare/"
+        },
+        {
+            "rank": 16,
+            "snippet": "<em>Nik\u0161i\u0107</em> Pekare <em>Pekara</em> Trend. Doru\u010dak u pekari jedna je od naj\u010de\u0161\u0107ih navika gradske populacije. Ako ste od onih koji u\u017eivaju u ukusu i mirisu vru\u0107eg hleba i sve\u017eeg peciva, ili ste me\u0111u onima koji burek i jogurt smatraju najpo\u017eeljnijim jutarnjim obrokom, na pravom ste mestu.",
+            "timestamp": 1649235416,
+            "title": "Pekara Trend, Pekare Nik\u0161i\u0107 | PlanPlus.rs",
+            "url": "https://www.planplus.rs/crna-gora/niksic/pekare/pekara-trend/3332"
+        },
+        {
+            "rank": 17,
+            "snippet": "Address: Bani 100 10010 Zagreb, CRO Tel: +385 1 660 80 30 Fax: +385 1 660 80 40 E-mail: timzip@timzip.hr",
+            "timestamp": 1649235416,
+            "title": "Reference list bakery and pastry \u2013 TIM ZIP",
+            "url": "https://www.timzip.hr/en/reference-list/"
+        },
+        {
+            "rank": 18,
+            "snippet": "Log in \u00b7 Bosanski \u00b7 \"<em>PEKARA</em> <em>FONTANA</em>\", Br\u010dko, vl. Arljinda Krasni\u010di, <em>s</em>.p \u00b7 Order credit report \u00b7 Report sample \u00b7 Go to solutions \u00b7 Bisnode Bosnia and Herzegovina \u00b7 About us \u00b7 Products and solutions \u00b7 Contact",
+            "timestamp": 1649235416,
+            "title": "\"PEKARA FONTANA\", Br\u010dko, vl. Arljinda Krasni\u010di, s.p. - Bisnode",
+            "url": "https://search.bisnode.ba/ba/272554/pekara-fontana-brcko-vl-arljinda-krasnici-s-p/?l=en-US"
+        },
+        {
+            "rank": 19,
+            "snippet": "Our systems have detected unusual traffic from your computer network \u00b7 Please verify that you are human",
+            "timestamp": 1649235416,
+            "title": "Pekara \"Fontana\", Cerik - Restaurant Guru",
+            "url": "https://restaurantguru.com/Pekara-Fontana-Cerik-Brcko-Distrikt"
+        }
+    ],
+    "timestamp": 1649235416,
+    "url": "https://search.brave.com/search?q=pekara+fontana+nik%C5%A1i%C4%87"
+}

@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "warren hunt",
+    "offset": null,
+    "page": null,
+    "query": "warren hunt",
+    "results": [],
+    "timestamp": 1635806147,
+    "url": "https://duckduckgo.com/?t=ffab&q=warren+hunt"
+}

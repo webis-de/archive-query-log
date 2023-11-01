@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "FUNNY",
+    "offset": null,
+    "page": null,
+    "query": "FUNNY",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Cars",
+            "url": "http://srd.yahoo.com/srct/723708/FUNNY/1/2/*http://dir.yahoo.com/Recreation/Sports/Auto_Racing/Drag_Racing/Funny_Cars/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Thing Happened on the Way to the Forum, A",
+            "url": "http://srd.yahoo.com/srct/25664950/FUNNY/2/2/*http://dir.yahoo.com/Arts/Performing_Arts/Theater/Musicals/Shows/Funny_Thing_Happened_on_the_Way_to_the_Forum__A/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em>",
+            "url": "http://srd.yahoo.com/srst/2365508/FUNNY/1/592/*http://www.funny.co.uk/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "Rec.humor.<em>funny</em> page",
+            "url": "http://srd.yahoo.com/srst/295325/FUNNY/2/592/*http://www.netfunny.com/rhf/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Bone!, The",
+            "url": "http://srd.yahoo.com/srst/33340105/FUNNY/3/592/*http://www.thefunnybone.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em>: The Internet's Comedy Web Directory",
+            "url": "http://srd.yahoo.com/srst/2365509/FUNNY/4/592/*http://www.funny.co.uk/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Stuff of the Day",
+            "url": "http://srd.yahoo.com/srst/6549417/FUNNY/5/592/*http://www.mit.edu/people/mnoel/stuff.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Times",
+            "url": "http://srd.yahoo.com/srst/71060/FUNNY/6/592/*http://www.funnytimes.com"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Pages, The",
+            "url": "http://srd.yahoo.com/srst/92627/FUNNY/7/592/*http://funnies.paco.to/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> or Not?",
+            "url": "http://srd.yahoo.com/srst/5273980/FUNNY/8/592/*http://members.home.net/daughters/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Town",
+            "url": "http://srd.yahoo.com/srst/572626/FUNNY/9/592/*http://www.funnytown.com/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Bone",
+            "url": "http://srd.yahoo.com/srst/92626/FUNNY/10/592/*http://www.funnybone.com"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "Debbie's <em>Funny</em> Page",
+            "url": "http://srd.yahoo.com/srst/15108935/FUNNY/11/592/*http://www.thefunnypage.com"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "Cars Can be <em>Funny</em> Too",
+            "url": "http://srd.yahoo.com/srst/17060894/FUNNY/12/592/*http://www.web-cars.com/humor/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Bone Comedy Club",
+            "url": "http://srd.yahoo.com/srst/9207458/FUNNY/13/592/*http://www.funnybonelive.com"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Bone Comedy Club - Pittsburgh, PA",
+            "url": "http://srd.yahoo.com/srst/9207512/FUNNY/14/592/*http://www.funnybonelive.com"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Name Server",
+            "url": "http://srd.yahoo.com/srst/20792308/FUNNY/15/592/*http://www.funnyname.com"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Firm",
+            "url": "http://srd.yahoo.com/srst/92942/FUNNY/16/592/*http://members.aol.com/funnyfirm/funny.htm"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Pictures Gallery",
+            "url": "http://srd.yahoo.com/srst/22708673/FUNNY/17/592/*http://www.pics4fun.com/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 970842855,
+            "title": "<em>Funny</em> Bunny Trail",
+            "url": "http://srd.yahoo.com/srst/343624/FUNNY/18/592/*http://www.usacitylink.com/easter/"
+        }
+    ],
+    "timestamp": 970842855,
+    "url": "http://search.yahoo.com:80/search?p=FUNNY"
+}

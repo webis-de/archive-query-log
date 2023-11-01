@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "golson",
+    "offset": null,
+    "page": null,
+    "query": "golson",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1017320115,
+            "title": "Clifford Brown - Peer Commentary",
+            "url": "http://srd.yahoo.com/srst/35626430/golson/1/1/T=1017323716/F=6814576b1ca29a60922ee5bc7042086c/*http://www.shout.net/~jmh/articles/clifford.html"
+        }
+    ],
+    "timestamp": 1017320115,
+    "url": "http://search.yahoo.com:80/search?p=golson"
+}

@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos\"",
+    "results": [
+        {
+            "rank": 3,
+            "snippet": "Bienvenue au lyc\u00e9e. Fran\u00e7ais Louis Pasteur de Lagos \u00b7 Nous formons les dirigeants de demain \u00b7 Nous entra\u00eenons les futurs champions olympiques \u00b7 Nous faisons na\u00eetre\u00a0...",
+            "timestamp": 1638831028,
+            "title": "HOME | LFLP",
+            "url": "https://www.google.com/url?q=https://lflp-lagos.com/%3Flang%3Dfr&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQFnoECAMQAg&usg=AOvVaw02hfCW2X5N3AlhtV-ACh_d"
+        },
+        {
+            "rank": 4,
+            "snippet": "May 7, 2021 \u00b7 Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos. 235 subscribers. Subscribe. LFLP-FRENCH ...Duration: 0:43Posted: May 7, 2021",
+            "timestamp": 1638831028,
+            "title": "LFLP PROMO ENGLISH ONLY - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DX_jyfT6Sc8o&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQtwJ6BAgGEAE&usg=AOvVaw38kWZ1cjbzSVVhx1DDb_Fb"
+        },
+        {
+            "rank": 5,
+            "snippet": "Share your videos with friends, family, and the world.",
+            "timestamp": 1638831028,
+            "title": "Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/channel/UCHCbVKMOopwTQJhDLj3Z08w&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQFnoECAcQAg&usg=AOvVaw25MFxXuRfeljN-rOFrPH7t"
+        },
+        {
+            "rank": 6,
+            "snippet": "Realtime driving directions to Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos, Younis Bashorun Street, 16, Lagos, based on live traffic updates and road conditions\u00a0...",
+            "timestamp": 1638831028,
+            "title": "Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos - Waze",
+            "url": "https://www.google.com/url?q=https://www.waze.com/et/live-map/directions/nigeria/lagos/lagos/lycee-francais-louis-pasteur-de-lagos%3Fto%3Dplace.ChIJu_DpLSP1OxARiExQymJdqj0&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQFnoECAgQAg&usg=AOvVaw1TfLlkTaCbnkBxNaYzF64L"
+        },
+        {
+            "rank": 7,
+            "snippet": "Rating  4.0 \n (1) \n\nJun 19, 2020 \u00b7 Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos, Lagos, customer reviews, location map, phone numbers, working hours.",
+            "timestamp": 1638831028,
+            "title": "Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos - Business listings and ...",
+            "url": "https://www.google.com/url?q=https://ng.africabz.com/lagos/lycee-francais-louis-pasteur-232667&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQFnoECAkQAg&usg=AOvVaw14ExWVUkMkjzZFrWPHKuCb"
+        },
+        {
+            "rank": 8,
+            "snippet": "Feb 5, 2018 - Bienvenue sur le site officiel du lyc\u00e9e fran\u00e7ais Louis Pasteur de Lagos - Lyc\u00e9e fran\u00e7ais Louis Pasteur de Lagos.",
+            "timestamp": 1638831028,
+            "title": "Pin on voyage - Pinterest",
+            "url": "https://www.google.com/url?q=https://www.pinterest.com/pin/612911830510750708/&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQFnoECAAQAg&usg=AOvVaw3M89TPjZwAArZgz28BnSMi"
+        },
+        {
+            "rank": 9,
+            "snippet": "Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos, 16 Younis Bashorun Street, Eti-Osa, Lagos, Nigeria, Private School in the city Ojota, state Lagos.",
+            "timestamp": 1638831028,
+            "title": "Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos - Nigeria",
+            "url": "https://www.google.com/url?q=https://ng.infoaboutcompanies.com/Catalog/Lagos/Ojota/Private-School/Lyc%25C3%25A9e-Fran%25C3%25A7ais-Louis-Pasteur-de-Lagos&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQFnoECAQQAg&usg=AOvVaw3NqCawaEG1SWhxZ-hU7xmZ"
+        },
+        {
+            "rank": 10,
+            "snippet": "Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos, 16 Younis Bashorun Street, Eti-Osa, Lagos, Nigeria, Middle School in the city Lagos, state Lagos.",
+            "timestamp": 1638831028,
+            "title": "Lyc\u00e9e Fran\u00e7ais Louis Pasteur de Lagos - Nigeria",
+            "url": "https://www.google.com/url?q=https://ng.infoaboutcompanies.com/Catalog/Lagos/Lagos/Middle-School/Lyc%25C3%25A9e-Fran%25C3%25A7ais-Louis-Pasteur-de-Lagos&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQFnoECAEQAg&usg=AOvVaw1mlkE0Yz5Q8Cd6Tap_6BGU"
+        },
+        {
+            "rank": 11,
+            "snippet": "lyc\u00e9e Fran\u00e7ais louis pasteur de lagos. Lagos, Lagos, Nigeria ... Education. lyc\u00e9e Fran\u00e7ais louis pasteur de lagos Graphic\u00a0...",
+            "timestamp": 1638831028,
+            "title": "Maryline dovonou - lyc\u00e9e Fran\u00e7ais louis pasteur de lagos - LinkedIn ...",
+            "url": "https://www.google.com/url?q=https://ng.linkedin.com/in/maryline-dovonou-9b46441a4&sa=U&ved=2ahUKEwjhyIXfrtD0AhUVLX0KHflxChUQFnoECAIQAg&usg=AOvVaw1ARNtc7n9NUav1CezSh3av"
+        }
+    ],
+    "timestamp": 1638831028,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Lyc%C3%A9e+Fran%C3%A7ais+Louis+Pasteur+de+Lagos%22"
+}

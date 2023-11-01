@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "\"Pareques\" site:hu.wikipedia.org",
+    "offset": null,
+    "page": null,
+    "query": "\"Pareques\" site:hu.wikipedia.org",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "Paranibea semiluctuosa (Cuvier, 1830). Pareques - 7 faj; Pennahia - 5 faj; Pentheroscion - 1 faj. Pentheroscion mbizi (Poll, 1950). Petilipinnis - 1 faj.",
+            "timestamp": 1647941362,
+            "title": "\u00c1rny\u00e9khalf\u00e9l\u00e9k - Wikip\u00e9dia",
+            "url": "https://www.google.com/url?q=https://hu.wikipedia.org/wiki/%25C3%2581rny%25C3%25A9khalf%25C3%25A9l%25C3%25A9k&sa=U&ved=2ahUKEwjs0_qwwdn2AhWBIkQIHdOaCL4QFnoECAEQAg&usg=AOvVaw32va3kxzoxEdsLEwh5xIJE"
+        },
+        {
+            "rank": 3,
+            "snippet": "... Collichthys - Megalonibea - Pareques \u00b7 Umbrina - Elattarchus - Corvula - Menticirrhus \u00b7 Pennahia - Ctenosciaena - Micropogon \u00b7 Pentheroscion - Cynoscion\u00a0...",
+            "timestamp": 1647941362,
+            "title": "S\u00fcg\u00e9ralkat\u00faak - Wikip\u00e9dia",
+            "url": "https://www.google.com/url?q=https://hu.wikipedia.org/wiki/S%25C3%25BCg%25C3%25A9ralkat%25C3%25BAak&sa=U&ved=2ahUKEwjs0_qwwdn2AhWBIkQIHdOaCL4QFnoECAAQAg&usg=AOvVaw0CExCUBYR8ldzl_tsFNwtY"
+        }
+    ],
+    "timestamp": 1647941362,
+    "url": "https://www.google.com/search?q=%22Pareques%22+site:hu.wikipedia.org"
+}

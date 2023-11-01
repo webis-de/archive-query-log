@@ -1,0 +1,157 @@
+{
+    "interpreted_query": "OpenOffice",
+    "offset": null,
+    "page": null,
+    "query": "OpenOffice",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Publish in Portable Document Format (.pdf) to guarantee that what you write is what your reader sees. The PDF export feature in Apache <em>OpenOffice</em> provides a huge set of formatting and security options; so that PDF files can be customized for many different scenarios, including ISO standard ...",
+            "timestamp": 1667290210,
+            "title": "<em></em>Apache OpenOffice - Official Site - The Free and Open Productivity ...",
+            "url": "http://www.openoffice.org/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Join the <em>OpenOffice</em> revolution, the free office productivity suite with over 330 million trusted downloads.",
+            "timestamp": 1667290210,
+            "title": "Official Download",
+            "url": "https://www.openoffice.org/download/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Apache, <em>OpenOffice</em>, <em>OpenOffice</em>.org and the seagull logo are registered trademarks of The Apache Software Foundation. The Apache feather logo is a trademark of The Apache Software Foundation. Other names appearing on the site may be trademarks of their respective owners.",
+            "timestamp": 1667290210,
+            "title": "For MacOS X",
+            "url": "https://www.openoffice.org/porting/mac/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Apache, <em>OpenOffice</em>, <em>OpenOffice</em>.org and the seagull logo are registered trademarks of The Apache Software Foundation. The Apache feather logo is a trademark of The Apache Software Foundation. Other names appearing on the site may be trademarks of their respective owners.",
+            "timestamp": 1667290210,
+            "title": "Calc",
+            "url": "https://www.openoffice.org/product/calc.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Publish in Portable Document Format (.pdf) to guarantee that what you write is what your reader sees. The PDF export feature in Apache <em>OpenOffice</em> provides a huge set of formatting and security options; so that PDF files can be customized for many different scenarios, including ISO standard ...",
+            "timestamp": 1667290210,
+            "title": "Writer",
+            "url": "http://www.openoffice.org/product/writer.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "August 17, 2022 -\n            Download Apache <em>OpenOffice</em> for free. The free and Open Source productivity suite. Free alternative for Office productivity tools: Apache <em>OpenOffice</em> - formerly known as <em>OpenOffice</em>.org - is an open-source office productivity software suite containing word processor, spreadsheet, presentation, ...",
+            "timestamp": 1667290210,
+            "title": "<em></em>Apache OpenOffice download | SourceForge.net",
+            "url": "https://sourceforge.net/projects/openofficeorg.mirror/"
+        },
+        {
+            "rank": 7,
+            "snippet": "September 27, 2022 -\n            <em>OpenOffice</em>.org (OOo), commonly known as <em>OpenOffice</em>, is an open-source office suite. It was an open-sourced version of the earlier StarOffice, which Sun Microsystems acquired in 1999 for internal use. Sun open-sourced the <em>OpenOffice</em> suite in July 2000 as a competitor to Microsoft Office, releasing ...",
+            "timestamp": 1667290210,
+            "title": "<em></em>OpenOffice.org - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/OpenOffice.org"
+        },
+        {
+            "rank": 8,
+            "snippet": "June 9, 2022 -\n            Apache <em>OpenOffice</em> Portable is a full-featured office suite that's compatible with Microsoft Office, Word Perfect, Lotus and other office applications. It's easy-to-use and feature-rich, performing nearly all of the functions you'd expect in an office suite, but at no cost.",
+            "timestamp": 1667290210,
+            "title": "<em></em>Apache OpenOffice Portable (full-featured office suite) | ...",
+            "url": "https://portableapps.com/apps/office/openoffice_portable"
+        },
+        {
+            "rank": 9,
+            "snippet": "2 weeks ago -\n            Free office suite \u2013 the evolution of <em>OpenOffice</em>. Compatible with Microsoft .doc, .docx, .xls, .xlsx, .ppt, .pptx. Updated regularly, community powered.",
+            "timestamp": 1667290210,
+            "title": "<em></em>Home | LibreOffice - Free Office Suite - Based on OpenOffice - ...",
+            "url": "https://www.libreoffice.org/"
+        },
+        {
+            "rank": 10,
+            "snippet": "Apache <em>OpenOffice</em>. Contribute to apache/<em>openoffice</em> development by creating an account on GitHub.",
+            "timestamp": 1667290210,
+            "title": "<em></em>GitHub - apache/openoffice: Apache OpenOffice",
+            "url": "https://github.com/apache/openoffice"
+        },
+        {
+            "rank": 11,
+            "snippet": "January 4, 2013 -\n            Download <em>OpenOffice</em> for Windows for free. Powerful and full-featureed free office suite. It's not only Microsoft that offers a full featured application pack...",
+            "timestamp": 1667290210,
+            "title": "<em></em>OpenOffice for Windows - Download it from Uptodown for free",
+            "url": "https://openoffice.en.uptodown.com/windows"
+        },
+        {
+            "rank": 12,
+            "snippet": "July 29, 2022 -\n            A comparison of two of the most popular open source office software. The article explains the similarities and differences between LibreOffice and <em>OpenOffice</em>.",
+            "timestamp": 1667290210,
+            "title": "<em></em>LibreOffice vs OpenOffice: What's the Difference?",
+            "url": "https://itsfoss.com/libreoffice-vs-openoffice/"
+        },
+        {
+            "rank": 13,
+            "snippet": "September 2, 2022 -\n            In simple terms, regular expressions are a clever way to find &amp; replace text (similar to 'wildcards'). Regular expressions can be both powerful and complex, and it is easy for inexperienced users to make mistakes. We describe the use of Apache <em>OpenOffice</em> regular expressions aiming to be clear ...",
+            "timestamp": 1667290210,
+            "title": "<em></em>Documentation/How Tos/Regular Expressions in Writer - Apache ...",
+            "url": "https://wiki.openoffice.org/wiki/Documentation/How_Tos/Regular_Expressions_in_Writer"
+        },
+        {
+            "rank": 14,
+            "snippet": "January 4, 2010 -\n            Download Apache <em>OpenOffice</em> for Windows now from Softonic: 100% safe and virus free. More than 10258 downloads this month. Download Apache <em>OpenOffice</em> l",
+            "timestamp": 1667290210,
+            "title": "<em></em>Download Apache OpenOffice - free - latest version",
+            "url": "https://openoffice.en.softonic.com/download"
+        },
+        {
+            "rank": 15,
+            "snippet": "October 15, 2020 -\n            Many people, the letter says, are unaware of LibreOffice because the <em>OpenOffice</em> brand is still so strong, despite the lack of significant updates over the past six years. To remedy the situation, LibreOffice is asking its competitor for an endorsement.",
+            "timestamp": 1667290210,
+            "title": "<em></em>LibreOffice rains on OpenOffice's 20th anniversary parade, tells ...",
+            "url": "https://www.theregister.com/2020/10/15/libreoffice_openoffice_taunts/"
+        },
+        {
+            "rank": 16,
+            "snippet": "September 9, 2022 -\n            A full functionality editor for <em>OpenOffice</em> / LibreOffice documents",
+            "timestamp": 1667290210,
+            "title": "<em></em>AndrOpen Office - Apps on Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.andropenoffice&hl=en_US&gl=US"
+        },
+        {
+            "rank": 17,
+            "snippet": "5 days ago -\n            Apache <em>OpenOffice</em> (AOO) is an open-source office productivity software suite. It is one of the successor projects of <em>OpenOffice</em>.org and the designated successor of IBM Lotus Symphony. It is a close cousin of LibreOffice and NeoOffice. It contains a word processor (Writer), a spreadsheet (Calc), ...",
+            "timestamp": 1667290210,
+            "title": "<em></em>Apache OpenOffice - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Apache_OpenOffice"
+        },
+        {
+            "rank": 18,
+            "snippet": "September 16, 2022 -\n            Note: Official support for Apache <em>OpenOffice</em> was dropped in favor of LibreOffice, the \"Document Foundation\" fork of the project, which also includes enhancements and additional features. See Dropping Oracle <em>OpenOffice</em> (arch-general).",
+            "timestamp": 1667290210,
+            "title": "<em></em>Apache OpenOffice - ArchWiki",
+            "url": "https://wiki.archlinux.org/title/Apache_OpenOffice"
+        },
+        {
+            "rank": 19,
+            "snippet": "July 15, 2022 -\n            Apache <em>OpenOffice</em>, free and safe download. Apache <em>OpenOffice</em> latest version: Free open-source office suite. The Apache Software Foundation received th",
+            "timestamp": 1667290210,
+            "title": "<em></em>Apache OpenOffice - Download",
+            "url": "https://openoffice.en.softonic.com"
+        },
+        {
+            "rank": 20,
+            "snippet": "September 7, 2016 -\n            Yes, <em>OpenOffice</em> is dying. So what? Its successor, LibreOffice, is doing better than ever.",
+            "timestamp": 1667290210,
+            "title": "<em></em>\u200bOpenOffice is dead. Long live LibreOffice | ZDNET",
+            "url": "https://www.zdnet.com/article/openoffice-is-dead-long-live-libreoffice/"
+        },
+        {
+            "rank": 21,
+            "snippet": "Download <em>OpenOffice</em> and get an open-source alternative to Office 365. It comes with Writer, Calc, Impress, and more.",
+            "timestamp": 1667290210,
+            "title": "<em></em>OpenOffice Download for Free - 2022 Latest Version",
+            "url": "https://www.wizcase.com/download/open-office/"
+        }
+    ],
+    "timestamp": 1667290210,
+    "url": "https://search.brave.com/search?q=OpenOffice"
+}

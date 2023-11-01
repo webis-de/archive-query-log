@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Date Guy Fawkes Death",
+    "offset": null,
+    "page": null,
+    "query": "Date Guy Fawkes Death",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "What happened to <em>Guy Fawkes</em> and the other conspirators?  All the co-conspirators ... Does the cellar where <em>Guy Fawkes</em> tried to blow up the ...",
+            "timestamp": 1173527460,
+            "title": "UK Parliament - gunpowder plot",
+            "url": "http://www.parliament.uk/faq/gunpowder_plot.cfm"
+        },
+        {
+            "rank": 2,
+            "snippet": "Scans of The Weekely Newes, 31 Jan 1606, containing an account of the trial and execution of <em>Guy Fawkes</em>.",
+            "timestamp": 1173527460,
+            "title": "The Execution Of <em>Guy Fawkes</em>.",
+            "url": "http://www.adelpha.com/~davidco/History/fawkes1.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "... the arrest, imprisonment, torture and <em>death</em> of <em>Guy Fawkes</em> and the gunpowder plotters.   Visitors are also presented with some ...",
+            "timestamp": 1173527460,
+            "title": "lastminute.com: the best events happening around the world - ...",
+            "url": "http://www.whatsonwhen.com/partners/lm/viewevent.asp?id=113856"
+        },
+        {
+            "rank": 4,
+            "snippet": "The Arraignment and Execution of <em>Guy Fawkes</em> ... The papers in the collection that <em>date</em> from the 1700's are acid based, and are becoming ...",
+            "timestamp": 1173527460,
+            "title": "Original Historical Texts",
+            "url": "http://www.adelpha.com/~davidco/History/histinde.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": "Until 1959, it was illegal not to celebrate the <em>date</em> of <em>Guy Fawkes</em> arrest in England... <em>Guy Fawkes</em> and the Gunpowder plot of 1605 ...",
+            "timestamp": 1173527460,
+            "title": "<em>Guy Fawkes</em>, The Gunpowder Plot, Bonfire Night, November 5th.",
+            "url": "http://www.guy-fawkes.com/FactsBehindTheLegend.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "(1) <em>Guy Fawkes</em> was arrested on the 4 November, 1605. After being tortured in the ... the Tower of London, <em>Guy Fawkes</em> confessed to planning ...",
+            "timestamp": 1173527460,
+            "title": "Gunpowder Plot",
+            "url": "http://www.spartacus.schoolnet.co.uk/STUgunpowderP.htm"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Fawkes</em>, a member of a prominent Yorkshire family, converted to Roman Catholicism and ... to enlist the aid of <em>Fawkes</em> in his scheme, the ...",
+            "timestamp": 1173527460,
+            "title": "This <em>Date</em> in Medieval History - January 31",
+            "url": "http://historymedren.about.com/library/date/bl0131.htm"
+        },
+        {
+            "rank": 8,
+            "snippet": "... terrorism in our history.  <em>Guy Fawkes</em> and his 36 barrels of gunpowder may sound ... order.  The plotter, of whom <em>Guy Fawkes</em> was by no ...",
+            "timestamp": 1173527460,
+            "title": "<em>Guy Fawkes</em> and Terrorism",
+            "url": "http://www.bcpl.net/~cbladey/guy/html/review.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "2002  Horses of the  <em>Guy Fawkes</em> River  National Park  Report of the  Heritage Working ... Value of Horses in <em>Guy Fawkes</em> National Park  22nd ...",
+            "timestamp": 1173527460,
+            "title": "<em>Guy Fawkes</em> River National Park - horses report Vol 2 (PDF 355 KB)\n(PDF File)",
+            "url": "http://www.nationalparks.nsw.gov.au/PDFs/guy_fawkes_horses_v2.pdf"
+        },
+        {
+            "rank": 10,
+            "snippet": "... stood close inside the door of the house, and went outside to face their <em>death</em>. ... We will keep everyone up to <em>date</em> on the developments ...",
+            "timestamp": 1173527460,
+            "title": "Holbeche House",
+            "url": "http://www.britannia.com/history/holbeche.html"
+        }
+    ],
+    "timestamp": 1173527460,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Date+Guy+Fawkes+Death"
+}

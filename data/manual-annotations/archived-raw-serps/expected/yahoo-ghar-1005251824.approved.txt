@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "Ghar",
+    "offset": null,
+    "page": null,
+    "query": "Ghar",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1005251824,
+            "title": "Kahaani <em>Ghar Ghar</em> Kii",
+            "url": "http://srd.yahoo.com/srst/49259554/Ghar/1/5/*http://starplus.indya.com/kahaani/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1005251824,
+            "title": "Jalsa <em>Ghar</em>",
+            "url": "http://srd.yahoo.com/srst/50518978/Ghar/2/5/*http://www.jalsaghar.co.uk/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1005251824,
+            "title": "Anand Furniture",
+            "url": "http://srd.yahoo.com/srst/39820673/Ghar/3/5/*http://www.anandfurniture.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1005251824,
+            "title": "Sharma, Amit Kumar",
+            "url": "http://srd.yahoo.com/srst/7792150/Ghar/4/5/*http://welcome.to/Amit_ka_Ghar"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1005251824,
+            "title": "Sarode Gharanas of India, The",
+            "url": "http://srd.yahoo.com/srst/32312425/Ghar/5/5/*http://www.aoe.vt.edu/~boppe/MUSIC/GHAR/sarod.html"
+        }
+    ],
+    "timestamp": 1005251824,
+    "url": "http://search.yahoo.com:80/search?p=Ghar"
+}

@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "german pen pals",
+    "offset": null,
+    "page": null,
+    "query": "german pen pals",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "<em>Pen</em> <em>Pals</em>",
+            "url": "http://dir.yahoo.com/Social_Science/Communications/Writing/Correspondence/Pen_Pals/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Prison <em>Pen</em> <em>Pals</em>",
+            "url": "http://dir.yahoo.com/Social_Science/Communications/Writing/Correspondence/Pen_Pals/Prison_Pen_Pals/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "<em>Pen</em> <em>Pals</em>",
+            "url": "http://dir.yahoo.com/Business_and_Economy/Classifieds/Personals/Pen_Pals/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "<em>Pen</em> <em>Pals</em>",
+            "url": "http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Children/Pen_Pals/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "<em>Pen</em> <em>Pals</em>",
+            "url": "http://events.yahoo.com/Net_Events/Chat_Rooms/Society_and_Culture/Relationships/Pen_Pals/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "<em>Pen</em> <em>Pals</em>",
+            "url": "http://dir.yahoo.com/Regional/Countries/Australia/Business_and_Economy/Classifieds/Personals/Pen_Pals/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "<em>Pen</em> <em>Pals</em>",
+            "url": "http://events.yahoo.com/Net_Events/Society_and_Culture/Romance_and_Relationships/Pen_Pals/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "World <em>Pen</em> <em>Pals</em>",
+            "url": "http://www.world-pen-pals.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Soap Opera <em>Pen</em> <em>Pals</em>",
+            "url": "http://members.juara.com/sopp/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Tips for Making <em>Pen</em> <em>Pals</em> All Over the World",
+            "url": "http://amifriend.virtualave.net/penpal/eindex.htm"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "<em>Pen</em>-<em>pals</em>.net",
+            "url": "http://www.global-homebiz.com/ipf.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Lesbian Gay and Bi <em>Pen</em> <em>Pals</em>",
+            "url": "http://www.angelfire.com/in/horwich/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Snooky's Philipine <em>Pen</em>-<em>Pals</em>",
+            "url": "http://www.snookys-video.com/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Soap Opera <em>Pen</em> <em>Pals</em>",
+            "url": "http://members.juara.com/sopp/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "SG's Prison <em>Pen</em> <em>Pals</em>",
+            "url": "http://regional-site.net/jail/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Prison <em>Pen</em> <em>Pals</em>",
+            "url": "http://www.prisonpenpals.com"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Kids <em>Pen</em> <em>Pals</em>",
+            "url": "http://kidspenpals.about.com/mpchat.htm"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Naylor, Andrew - Andrew's <em>Pen</em> <em>Pals</em>, Letters, and other Artistic Means",
+            "url": "http://www.Naylor.Net/andrew/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Lesbian Gay and Bi <em>Pen</em> <em>Pals</em>",
+            "url": "http://www.angelfire.com/in/horwich/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 961119166,
+            "title": "Boston MatchMaker <em>Pen</em>-<em>Pals</em> Network",
+            "url": "http://www.boston.email.net/"
+        }
+    ],
+    "timestamp": 961119166,
+    "url": "http://search.yahoo.com:80/search?p=german+pen+pals"
+}

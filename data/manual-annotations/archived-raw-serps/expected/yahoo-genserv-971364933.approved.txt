@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "genserv",
+    "offset": null,
+    "page": null,
+    "query": "genserv",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 971364933,
+            "title": "<em>GenServ</em> Genealogical GEDCOM Server System",
+            "url": "http://srd.yahoo.com/srst/3411/genserv/1/2/*http://www.genserv.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 971364933,
+            "title": "Genealogical Services",
+            "url": "http://srd.yahoo.com/srst/352027/genserv/2/2/*http://www.genservices.com/"
+        }
+    ],
+    "timestamp": 971364933,
+    "url": "http://search.yahoo.com:80/search?p=genserv"
+}

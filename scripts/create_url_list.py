@@ -8,7 +8,6 @@ from urllib.parse import urlparse
 from uuid import uuid5, NAMESPACE_URL
 
 from fastwarc import FileStream, ArchiveIterator, WarcRecordType, WarcRecord
-from publicsuffixlist import PublicSuffixList
 from pyspark.sql import SparkSession
 from tqdm.auto import tqdm
 
@@ -17,7 +16,6 @@ _RESEARCH_DIR = _CEPH_DIR / "data-in-progress" / "data-research"
 _GLOBAL_DATA_DIR = _RESEARCH_DIR / "web-search" / "web-archive-query-log"
 _DATA_DIR = _GLOBAL_DATA_DIR / "focused"
 
-_PUBLIC_SUFFIX_LIST = PublicSuffixList()
 
 
 
@@ -114,8 +112,6 @@ def _record_to_query(relative_path_record: tuple) -> Optional[str]:
 
     url = archived_query_url["url"]
     domain = urlparse(url).hostname
-    public_suffix = _PUBLIC_SUFFIX_LIST.publicsuffix(domain) \
-        if domain is not None else None
     timestamp = archived_query_url["timestamp"]
     wayback_timestamp = \
         datetime.fromtimestamp(timestamp).strftime("%Y%m%d%H%M%S")
@@ -144,13 +140,11 @@ def main():
     ]
     print(f"Found {len(relative_paths)} paths.")
     shuffle(relative_paths)
-    relative_paths = relative_paths[:100]
     print(f"Selected {len(relative_paths)} paths "
           f"for finding downloadable SERP URLs.")
 
     print("Export downloadable SERP URL list at archive-query-log-urls/.")
-    sc.parallelize(relative_paths) \
-        .repartition(1_000) \
+    sc.parallelize(relative_paths, 100) \
         .flatMap(_iter_relative_path_records) \
         .map(_record_to_query) \
         .filter(lambda json: json is not None) \

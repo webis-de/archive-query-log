@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Obama Speech",
+    "offset": null,
+    "page": null,
+    "query": "Obama Speech",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Over 100 <em><em>speeches</em></em> by Barack <em>Obama</em>. Constantly updated. Complete and full text of each <em><em>speech</em></em>.",
+            "timestamp": 1274497739,
+            "title": "The Complete Text Transcripts of Over 100 Barack <em>Obama</em> <em><em>Speeches</em></em>",
+            "url": "http://obamaspeeches.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Barack <em>Obama</em> speaks in Philadelphia, PA at Constitution Center, on matters not just of race and recent remarks but of the fundamental path by which America c...",
+            "timestamp": 1274497739,
+            "title": "YouTube - <em>Obama</em> <em><em>Speech</em></em>: 'A More Perfect Union'",
+            "url": "http://www.youtube.com/watch?v=pWe7wTVbLUU"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Obama</em> victory <em><em>speech</em></em> ... Wednesday, November 05, 2008",
+            "timestamp": 1274497739,
+            "title": "Barack <em>Obama</em>'s Victory <em><em>Speech</em></em> - Election Results 2008 - The New York ...",
+            "url": "http://elections.nytimes.com/2008/results/president/speeches/obama-victory-speech.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "THE WHITE HOUSE Office of the First Lady For Immediate Release May 5, 2010 REMARKS BY THE FIRST LADY AT USAID AGENCY VISIT U.S. Agency for International Development Washington, D.C ...",
+            "timestamp": 1274497739,
+            "title": "Michelle <em>Obama</em> <em><em>speech</em></em> USAID agency",
+            "url": "http://www.examiner.com/x-19673-Michelle-Obama-Examiner~y2010m5d5-Michelle-Obama-speech-USAID-agency"
+        },
+        {
+            "rank": 5,
+            "snippet": "UPDATES: Barack <em>Obama</em> Big News Page Remarks of Senator Barack <em>Obama</em>\"A More Perfect Union\"Constitution CenterPhiladelphia, Pennsylvania",
+            "timestamp": 1274497739,
+            "title": "<em>Obama</em> Race <em><em>Speech</em></em>: Read The Full Text",
+            "url": "http://www.huffingtonpost.com/2008/03/18/obama-race-speech-read-th_n_92077.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "November 4, 2008. Remarks of President-Elect Barack <em>Obama</em> : Election Night. If there is anyone out there who still doubts that America is a place where all things are possible; who ...",
+            "timestamp": 1274497739,
+            "title": "Organizing for America | BarackObama.com | Barack <em>Obama</em> <em><em>Speeches</em></em> | In ...",
+            "url": "http://www.barackobama.com/speeches/index.php"
+        },
+        {
+            "rank": 7,
+            "snippet": "Building on the movement that elected President <em>Obama</em> by empowering communities across the country to bring about an agenda of change. Includes articles on issues, a blog and ...",
+            "timestamp": 1274497739,
+            "title": "Organizing for America | BarackObama.com",
+            "url": "http://www.barackobama.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Barack <em>Obama</em> <em><em>Speeches</em></em> - 2002-2009 Free Searchable Version - UPDATED 07/15/2009. Search the full text transcripts of more than 200 <em><em>speeches</em></em> by United States President and ...",
+            "timestamp": 1274497739,
+            "title": "Barack <em>Obama</em> <em><em>Speeches</em></em> 2002-2009 - Free, Searchable Database",
+            "url": "http://www.asksam.com/ebooks/obama%2Dspeeches/"
+        },
+        {
+            "rank": 9,
+            "snippet": "\"A New Beginning\" is the name of a <em><em>speech</em></em> delivered by United States President Barack <em>Obama</em> on June 4, 2009, from the Major Reception Hall at Cairo University in Cairo, Egypt.",
+            "timestamp": 1274497739,
+            "title": "A New Beginning - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/Barack_Obama_speech_at_Cairo_University,_2009"
+        },
+        {
+            "rank": 14,
+            "snippet": "It continues to illustrate the arrogant attitude of <em>Obama</em>. The GOP was told to keep their mouth shut and respect <em>Obama</em> during the <em><em>speech</em></em> but <em>Obama</em> can blindside the Supreme Court ...",
+            "timestamp": 1274497739,
+            "title": "msnbc.com politics - Was it appropriate for President <em>Obama</em> to ...",
+            "url": "http://politics.newsvine.com/_question/2010/01/28/3822426-was-it-appropriate-for-president-obama-to-publicly-scold-the-supreme-court-for-its-recent-decision-on-campaign-finance-reform"
+        }
+    ],
+    "timestamp": 1274497739,
+    "url": "http://www.bing.com:80/search?q=Obama+Speech&FORM=QSRE4"
+}
