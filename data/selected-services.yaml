@@ -1061,6 +1061,11 @@
     results_selector: dl dd li
     url_selector: a
     title_selector: a
+  - url_pattern: ^https?://[^/]+/search/?\?
+    type: html_selector
+    results_selector: ul[type="disc"] li
+    url_selector: a
+    title_selector: a
   focused_url_prefixes:
   - /search
 - name: amazon
