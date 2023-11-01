@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "25 C to F site:www.metric-conversions.org",
+    "offset": null,
+    "page": null,
+    "query": "25 C to F site:www.metric-conversions.org",
+    "results": [],
+    "timestamp": 1655636638,
+    "url": "https://duckduckgo.com/?q=25+C+to+F+site%3Awww.metric-conversions.org&t=ffab"
+}

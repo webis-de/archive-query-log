@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "equation of dissociation of sulfuric acid site:www.sciencedirect.com",
+    "offset": null,
+    "page": null,
+    "query": "equation of dissociation of sulfuric acid site:www.sciencedirect.com",
+    "results": [],
+    "timestamp": 1649296927,
+    "url": "https://duckduckgo.com/?q=equation+of+dissociation+of+sulfuric+acid+site%3Awww.sciencedirect.com&t=ffab"
+}

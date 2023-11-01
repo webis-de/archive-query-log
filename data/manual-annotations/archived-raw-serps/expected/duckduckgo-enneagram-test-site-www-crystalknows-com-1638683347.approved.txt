@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "enneagram test site:www.crystalknows.com",
+    "offset": null,
+    "page": null,
+    "query": "enneagram test site:www.crystalknows.com",
+    "results": [],
+    "timestamp": 1638683347,
+    "url": "https://duckduckgo.com/?q=enneagram+test+site%3Awww.crystalknows.com"
+}

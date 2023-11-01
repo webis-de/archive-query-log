@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "buck showalter seinfeld",
+    "offset": null,
+    "page": null,
+    "query": "buck showalter seinfeld",
+    "results": [],
+    "timestamp": 1654420295,
+    "url": "https://duckduckgo.com/?q=buck+showalter+seinfeld&t=ffab"
+}

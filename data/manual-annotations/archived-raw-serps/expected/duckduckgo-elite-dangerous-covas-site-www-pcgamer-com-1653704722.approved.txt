@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "elite dangerous covas site:www.pcgamer.com",
+    "offset": null,
+    "page": null,
+    "query": "elite dangerous covas site:www.pcgamer.com",
+    "results": [],
+    "timestamp": 1653704722,
+    "url": "https://duckduckgo.com/?q=elite+dangerous+covas+site%3Awww.pcgamer.com&t=ffab"
+}

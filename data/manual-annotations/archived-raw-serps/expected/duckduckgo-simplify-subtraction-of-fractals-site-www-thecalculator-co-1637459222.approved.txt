@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "simplify subtraction of fractals site:www.thecalculator.co",
+    "offset": null,
+    "page": null,
+    "query": "simplify subtraction of fractals site:www.thecalculator.co",
+    "results": [],
+    "timestamp": 1637459222,
+    "url": "https://duckduckgo.com/?q=simplify+subtraction+of+fractals+site%3Awww.thecalculator.co&t=brave"
+}

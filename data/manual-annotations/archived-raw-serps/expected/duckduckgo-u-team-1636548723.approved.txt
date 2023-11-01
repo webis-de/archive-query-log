@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "u team",
+    "offset": null,
+    "page": null,
+    "query": "u team",
+    "results": [],
+    "timestamp": 1636548723,
+    "url": "https://duckduckgo.com/?q=u+team"
+}

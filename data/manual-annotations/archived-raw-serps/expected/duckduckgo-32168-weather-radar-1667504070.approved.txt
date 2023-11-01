@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "32168 weather radar",
+    "offset": null,
+    "page": null,
+    "query": "32168 weather radar",
+    "results": [],
+    "timestamp": 1667504070,
+    "url": "https://duckduckgo.com/?q=32168%20weather%20radar&t=ffab"
+}

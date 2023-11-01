@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Sheydim site:www.sefaria.org",
+    "offset": null,
+    "page": null,
+    "query": "Sheydim site:www.sefaria.org",
+    "results": [],
+    "timestamp": 1664233097,
+    "url": "https://duckduckgo.com/?q=Sheydim+site:www.sefaria.org&t=ffcm"
+}

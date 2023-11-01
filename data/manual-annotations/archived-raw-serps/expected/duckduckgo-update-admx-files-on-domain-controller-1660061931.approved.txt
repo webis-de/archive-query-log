@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "update admx files on domain controller",
+    "offset": null,
+    "page": null,
+    "query": "update admx files on domain controller",
+    "results": [],
+    "timestamp": 1660061931,
+    "url": "https://duckduckgo.com/?q=update%20admx%20files%20on%20domain%20controller&t=ffab"
+}

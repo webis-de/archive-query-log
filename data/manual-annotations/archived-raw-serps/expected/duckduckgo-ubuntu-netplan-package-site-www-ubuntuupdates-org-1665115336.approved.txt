@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "ubuntu netplan package site:www.ubuntuupdates.org",
+    "offset": null,
+    "page": null,
+    "query": "ubuntu netplan package site:www.ubuntuupdates.org",
+    "results": [],
+    "timestamp": 1665115336,
+    "url": "https://duckduckgo.com/?q=ubuntu%20netplan%20package+site:www.ubuntuupdates.org&t=ffab"
+}

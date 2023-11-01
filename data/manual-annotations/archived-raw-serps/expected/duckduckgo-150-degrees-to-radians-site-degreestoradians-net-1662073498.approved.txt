@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "150 degrees to radians site:degreestoradians.net",
+    "offset": null,
+    "page": null,
+    "query": "150 degrees to radians site:degreestoradians.net",
+    "results": [],
+    "timestamp": 1662073498,
+    "url": "https://duckduckgo.com/?q=150%20degrees%20to%20radians+site:degreestoradians.net&t=ffab"
+}

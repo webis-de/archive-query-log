@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "40 mile creek trail site:www.arizonahighways.com",
+    "offset": null,
+    "page": null,
+    "query": "40 mile creek trail site:www.arizonahighways.com",
+    "results": [],
+    "timestamp": 1657173375,
+    "url": "https://duckduckgo.com/?q=40+mile+creek+trail+site%3Awww.arizonahighways.com&t=ffab"
+}
