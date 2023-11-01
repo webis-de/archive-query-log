@@ -1,0 +1,66 @@
+{
+    "interpreted_query": ", speckbohnen mit kartoffeln",
+    "offset": null,
+    "page": 0,
+    "query": ",+speckbohnen+mit+kartoffeln",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "an Speckbohnen und Kr\u00e4utersp\u00e4tzle",
+            "timestamp": 1352170361,
+            "title": "Hirschr\u00fcckenfilet mit Birnen - Kartoffeln - Preiselbeer - Kruste",
+            "url": "http://www.chefkoch.de:80/rezepte/801431183888295/Hirschrueckenfilet-mit-Birnen-Kartoffeln-Preiselbeer-Kruste.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "mit Kartoffelp\u00fcree und Speckbohnen",
+            "timestamp": 1352170361,
+            "title": "Roastbeef mit K\u00e4se \u00fcberbacken",
+            "url": "http://www.chefkoch.de:80/rezepte/1863551302072159/Roastbeef-mit-Kaese-ueberbacken.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Fleisch anbraten, w\u00fcrzen und im vorgeheizten Ofen bei 170\u00b0C ca. 20 Minuten garen. Gegebenenfalls Fleisch einmal drehen. ...",
+            "timestamp": 1352170361,
+            "title": "<em>Chateaubriand mit Speckbohnen, Macaire - Kartoffeln und Sauce B\u00e9arnaise</em>",
+            "url": "http://www.chefkoch.de:80/rezepte/1196521225381730/Chateaubriand-mit-Speckbohnen-Macaire-Kartoffeln-und-Sauce-B-arnaise.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "H\u00e4hnchen waschen, trockentupfen, von innen mit Pfeffer und Salz w\u00fcrzen und mit angedr\u00fcckten Knoblauchzehen sowie Thymian- und ...",
+            "timestamp": 1352170361,
+            "title": "Bio - Maish\u00e4hnchen mit Speckbohnen, Schmortomaten und Kartoffel - Speck - Kohlrabispie\u00dfen",
+            "url": "http://www.chefkoch.de:80/rezepte/718521174513389/Bio-Maishaehnchen-mit-Speckbohnen-Schmortomaten-und-Kartoffel-Speck-Kohlrabispiessen.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Strudel mit Bratkartoffeln, als Beilage Speckbohnen",
+            "timestamp": 1352170361,
+            "title": "Kartoffelstrudel mit gr\u00fcnen Bohnen",
+            "url": "http://www.chefkoch.de:80/rezepte/1990951322587733/Kartoffelstrudel-mit-gruenen-Bohnen.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Ofen auf 160\u00b0C (Ober-/Unterhitze) vorheizen. Das parierte Fleisch salzen und pfeffern. Das Gem\u00fcse in grobe W\u00fcrfel schneiden. ...",
+            "timestamp": 1352170361,
+            "title": "Geschmortes Rindfleisch mit Kartoffelcreme und gr\u00fcnen Speckbohnen",
+            "url": "http://www.chefkoch.de:80/rezepte/1998661323716975/Geschmortes-Rindfleisch-mit-Kartoffelcreme-und-gruenen-Speckbohnen.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Filet de Canard Sauvage \u00e0 la Sauce au Vin Rouge avec Haricots au Bacon et Pommes de Terre au Rosmarin",
+            "timestamp": 1352170361,
+            "title": "Wildentenbrust mit Rotweinso\u00dfe, Speckbohnen und Rosmarinkartoffeln",
+            "url": "http://www.chefkoch.de:80/rezepte/1327691237628010/Wildentenbrust-mit-Rotweinsosse-Speckbohnen-und-Rosmarinkartoffeln.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Die Kartoffeln s\u00e4ubern und in Spalten schneiden. In einer Mischung aus Oliven\u00f6l, Meersalz und Paprika edels\u00fc\u00df w\u00e4lzen. ...",
+            "timestamp": 1352170361,
+            "title": "Kentucky French Chicken an knusprigen Kartoffelspalten mit gr\u00fcnen Speckbohnen",
+            "url": "http://www.chefkoch.de:80/rezepte/1103321216291211/Kentucky-French-Chicken-an-knusprigen-Kartoffelspalten-mit-gruenen-Speckbohnen.html"
+        }
+    ],
+    "timestamp": 1352170361,
+    "url": "http://www.chefkoch.de:80/rs/s0/,+speckbohnen+mit+kartoffeln/Rezepte.html"
+}

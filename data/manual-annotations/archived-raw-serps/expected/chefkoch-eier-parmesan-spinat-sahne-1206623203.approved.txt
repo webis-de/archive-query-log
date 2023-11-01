@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "eier parmesan spinat sahne",
+    "offset": null,
+    "page": 0,
+    "query": "eier+parmesan+spinat+sahne",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "auch als Cannelloni machbar",
+            "timestamp": 1206623203,
+            "title": "Lasagne mit Spinat - Parmesan - F\u00fcllung",
+            "url": "http://www.chefkoch.de:80/rezepte/616911161756031/Lasagne-mit-Spinat-Parmesan-Fuellung.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Italienischer Spinat",
+            "url": "http://www.chefkoch.de:80/rezepte/748681177401615/Italienischer-Spinat.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Spargel mit Spinat und K\u00e4se",
+            "url": "http://www.chefkoch.de:80/rezepte/1352991211803/Spargel-mit-Spinat-und-Kaese.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Nudelauflauf mit Parmaschinken und Spinat",
+            "url": "http://www.chefkoch.de:80/rezepte/75061028470604/Nudelauflauf-mit-Parmaschinken-und-Spinat.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Spinat - B\u00e4rlauch Gratin",
+            "url": "http://www.chefkoch.de:80/rezepte/457371138813714/Spinat-Baerlauch-Gratin.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Seezunge mit Spinat",
+            "url": "http://www.chefkoch.de:80/rezepte/137341059383829/Seezunge-mit-Spinat.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Spinat - Pinien - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/756971178465920/Spinat-Pinien-Torte.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Gef\u00fcllte Cannelloni mit Spinat und Ricotta",
+            "url": "http://www.chefkoch.de:80/rezepte/216251090402664/Gefuellte-Cannelloni-mit-Spinat-und-Ricotta.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Zutaten und Mengen sind leicht variierbar",
+            "timestamp": 1206623203,
+            "title": "Bl\u00e4tterteig - Pie mit Hackfleisch - Spinat F\u00fcllung",
+            "url": "http://www.chefkoch.de:80/rezepte/323071114331436/Blaetterteig-Pie-mit-Hackfleisch-Spinat-Fuellung.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Auflauf nach italienischem Vorbild mal anders....alla Casa M*",
+            "timestamp": 1206623203,
+            "title": "Canneloni mit Puten - Spinat - Lauchf\u00fcllung",
+            "url": "http://www.chefkoch.de:80/rezepte/950871200589725/Canneloni-mit-Puten-Spinat-Lauchfuellung.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "selbst gemachte Pasta mit Spinat - Mozzarella - F\u00fcllung",
+            "timestamp": 1206623203,
+            "title": "Tortellini ripieni di mozzarella e spinaci",
+            "url": "http://www.chefkoch.de:80/rezepte/895831195046760/Tortellini-ripieni-di-mozzarella-e-spinaci.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Spinatquiche \u00e1 la Karin",
+            "url": "http://www.chefkoch.de:80/rezepte/321141114008927/Spinatquiche-la-Karin.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "S\u00fcdtiroler Spinatspatzen",
+            "url": "http://www.chefkoch.de:80/rezepte/259481101549051/Suedtiroler-Spinatspatzen.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Makkaroniauflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/339391117756233/Makkaroniauflauf.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Gratinierter Gem\u00fcseauflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/754751178266493/Gratinierter-Gemueseauflauf.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "mit Fleisch- und Spinatf\u00fcllung und mit B\u00e9chamel-Sauce \u00fcberbacken",
+            "timestamp": 1206623203,
+            "title": "Lasagne - Pastete",
+            "url": "http://www.chefkoch.de:80/rezepte/572271155890499/Lasagne-Pastete.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Spinatravioli mit Champignonsauce",
+            "url": "http://www.chefkoch.de:80/rezepte/541131151415094/Spinatravioli-mit-Champignonsauce.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Cannelloni - Pastete",
+            "url": "http://www.chefkoch.de:80/rezepte/558021153819763/Cannelloni-Pastete.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Albertos Mezzelune mit Pistazienf\u00fcllung und Safranso\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/642681165331067/Albertos-Mezzelune-mit-Pistazienfuellung-und-Safransosse.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1206623203,
+            "title": "Quarkravioli mit brauner Butter",
+            "url": "http://www.chefkoch.de:80/rezepte/754771178267043/Quarkravioli-mit-brauner-Butter.html"
+        }
+    ],
+    "timestamp": 1206623203,
+    "url": "http://www.chefkoch.de:80/rs/s0/eier+parmesan+spinat+sahne/Rezepte.html"
+}

@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "suppen oder eint\u00f6pfe",
+    "offset": null,
+    "page": 0,
+    "query": "suppen+oder+eint\ufffdpfe",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Eintopf aus der T\u00fcrkei",
+            "timestamp": 1256106491,
+            "title": "Sultan - Suleiman - Suppe",
+            "url": "http://www.chefkoch.de:80/rezepte/196721083399748/Sultan-Suleiman-Suppe.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Lecker als Suppe oder EIntopf",
+            "timestamp": 1256106491,
+            "title": "Bohnensuppe nach Omas Art",
+            "url": "http://www.chefkoch.de:80/rezepte/1426331247550020/Bohnensuppe-nach-Omas-Art.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Gem\u00fcse Suppe Eintopf light",
+            "timestamp": 1256106491,
+            "title": "Stra\u00dfburger Gem\u00fcsetopf",
+            "url": "http://www.chefkoch.de:80/rezepte/1154671221715068/Strassburger-Gemuesetopf.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Einlage in diverse Suppen und Eint\u00f6pfe",
+            "timestamp": 1256106491,
+            "title": "Mehlkl\u00f6\u00dfe / Mehlkl\u00fctschen",
+            "url": "http://www.chefkoch.de:80/rezepte/531911150030328/Mehlkloesse-Mehlkluetschen.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "ein Eintopf, entweder als eine Art Gulasch mit Nudeln oder als Suppe",
+            "timestamp": 1256106491,
+            "title": "Pfeffertopf",
+            "url": "http://www.chefkoch.de:80/rezepte/752081177858063/Pfeffertopf.html"
+        }
+    ],
+    "timestamp": 1256106491,
+    "url": "http://www.chefkoch.de:80/rs/s0/suppen+oder+eint%F6pfe/Rezepte.html"
+}

@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "eier, milch, k\u00e4se, kartoffeln",
+    "offset": null,
+    "page": 0,
+    "query": "eier,+milch,+k\ufffdse,+kartoffeln",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "zur Verwertung von Kartoffelresten",
+            "timestamp": 1318228714,
+            "title": "Kartoffelnester",
+            "url": "http://www.chefkoch.de:80/rezepte/1816901294646712/Kartoffelnester.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Die Kartoffeln kochen, pellen und durch die Presse dr\u00fccken. Den Schinken w\u00fcrfeln. ...",
+            "timestamp": 1318228714,
+            "title": "K\u00e4se - Kartoffel - Pudding",
+            "url": "http://www.chefkoch.de:80/rezepte/366681122193245/Kaese-Kartoffel-Pudding.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Die gekochten Kartoffeln (Menge nach Hunger) durch sie Kartoffelpresse geben. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - K\u00e4se - Pl\u00e4tzchen",
+            "url": "http://www.chefkoch.de:80/rezepte/97531038658930/Kartoffel-Kaese-Plaetzchen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Den Backofen auf 200 Grad vorheizen. Die Kartoffeln waschen und sch\u00e4len. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - K\u00e4se Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/237351096549132/Kartoffel-Kaese-Auflauf.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Backrohr auf 210\u00b0C vorheizen. Blech einfetten. ...",
+            "timestamp": 1318228714,
+            "title": "K\u00e4se - Kartoffel - Kekse",
+            "url": "http://www.chefkoch.de:80/rezepte/688881171367057/Kaese-Kartoffel-Kekse.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Pellkartoffeln kochen und abk\u00fchlen lassen. W\u00e4hrenddessen die Zwiebeln sch\u00e4len und w\u00fcrfeln. ...",
+            "timestamp": 1318228714,
+            "title": "Mett - K\u00e4se - Kartoffeln",
+            "url": "http://www.chefkoch.de:80/rezepte/894131194939338/Mett-Kaese-Kartoffeln.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "aus dem Ofen",
+            "timestamp": 1318228714,
+            "title": "K\u00e4se - Mett - Kartoffeln",
+            "url": "http://www.chefkoch.de:80/rezepte/885771194177331/Kaese-Mett-Kartoffeln.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "leckere als Beilage oder als Hauptgericht mit Salat",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - K\u00e4se - Souffl\u00e9",
+            "url": "http://www.chefkoch.de:80/rezepte/1192681225054751/Kartoffel-Kaese-Souffl.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Die Kartoffel- und Zucchinischeiben in eine gefettete Auflaufform schichten, jede Lage mit etwas K\u00e4se bestreuen und mit Salz und ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - K\u00e4se - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/175391076671063/Kartoffel-Kaese-Auflauf.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Brot toasten, die Knoblauchzehen auf der knusprigen Schnittfl\u00e4che verreiben und Brot in kleine W\u00fcrfel schneiden. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - K\u00e4se - K\u00fcchlein vom Backblech",
+            "url": "http://www.chefkoch.de:80/rezepte/122811052814741/Kartoffel-Kaese-Kuechlein-vom-Backblech.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "Die Kartoffeln waschen, sch\u00e4len und in 2 mm dicke Scheiben hobeln bzw. schneiden. Mit einem K\u00fcchentuch gut trocken tupfen. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Tortilla",
+            "url": "http://www.chefkoch.de:80/rezepte/991341204357603/Kartoffel-Tortilla.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Zwiebeln in der Margarine in einer Pfanne anbraten. Kartoffeln (wie Bratkartoffeln) hineinschneiden. ...",
+            "timestamp": 1318228714,
+            "title": "Eier - Kartoffel - Auflauf mit Tomaten",
+            "url": "http://www.chefkoch.de:80/rezepte/186471079880817/Eier-Kartoffel-Auflauf-mit-Tomaten.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "schneller und leckerer Auflauf",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Eier - Auflauf mit Frankfurter W\u00fcrstchen, mit  K\u00e4se \u00fcberbacken",
+            "url": "http://www.chefkoch.de:80/rezepte/1855251300727231/Kartoffel-Eier-Auflauf-mit-Frankfurter-Wuerstchen-mit-Kaese-ueberbacken.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Die gesch\u00e4lten Kartoffeln in einem Topf mit Salzwasser nicht ganz durchgaren. ...",
+            "timestamp": 1318228714,
+            "title": "Gef\u00fcllte Kartoffeln",
+            "url": "http://www.chefkoch.de:80/rezepte/1757581285505548/Gefuellte-Kartoffeln.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Eine flache Auflaufform einfetten. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/1004771205672773/Kartoffel-Auflauf.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Kartoffelgratin auf franz\u00f6sische Art",
+            "timestamp": 1318228714,
+            "title": "Franz\u00f6sische Kartoffeln",
+            "url": "http://www.chefkoch.de:80/rezepte/1005711205747592/Franzoesische-Kartoffeln.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "mit Zucchini und Tomaten",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Gratin in K\u00e4se - Sahne - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1655701273471664/Kartoffel-Gratin-in-Kaese-Sahne-Sosse.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Die Eier mit der Milch, den Gew\u00fcrzen und den Kr\u00e4utern verr\u00fchren. Die Eiermasse in eine ausgefettete Pfanne gie\u00dfen. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Frittata mit Schinken, K\u00e4se und Porree",
+            "url": "http://www.chefkoch.de:80/rezepte/1426301247503942/Kartoffel-Frittata-mit-Schinken-Kaese-und-Porree.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Zucchini und Kartoffeln sch\u00e4len, beides in Scheiben schneiden. Abwechselnd in eine Auflaufform schichten. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Zucchini - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/57681021219227/Kartoffel-Zucchini-Auflauf.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "Oeufs au nid",
+            "timestamp": 1318228714,
+            "title": "Eier im Nest",
+            "url": "http://www.chefkoch.de:80/rezepte/392411127343590/Eier-im-Nest.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "Kartoffeln sch\u00e4len, in Scheiben schneiden. Brokkoli waschen, in mundgerechte Portionen teilen. Kartoffeln etwa 5 Minuten kochen. ...",
+            "timestamp": 1318228714,
+            "title": "Hack - Kartoffel - Brokkoli - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/436801135375198/Hack-Kartoffel-Brokkoli-Auflauf.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "Kartoffel kochen. In der Zwischenzeit die H\u00fchnerfilets in mundgerechte St\u00fccke schneiden. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - H\u00fchnerfilet - Gratin",
+            "url": "http://www.chefkoch.de:80/rezepte/491661143425013/Kartoffel-Huehnerfilet-Gratin.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "Die Kartoffeln sch\u00e4len, in Scheiben und in kochendem Salzwasser 3-4 Minuten garen. Dann abgie\u00dfen und kurz abschrecken. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Apfel - Gratin",
+            "url": "http://www.chefkoch.de:80/rezepte/827541187418486/Kartoffel-Apfel-Gratin.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "Die H\u00e4lfte des Sauerkrauts in eine gefettete feuerfeste Form geben. Die Kartoffeln waschen, sch\u00e4len und in Scheiben schneiden. ...",
+            "timestamp": 1318228714,
+            "title": "Sauerkraut - Kartoffel - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/1121571218441893/Sauerkraut-Kartoffel-Auflauf.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Die Kartoffeln waschen, sch\u00e4len, in Scheiben schneiden und in Salzwasser ca. 10 Minuten kochen, dann abgie\u00dfen. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Hack - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/1357341240485090/Kartoffel-Hack-Auflauf.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "Brokkoli waschen, zerkleinern und in kochendes Wasser geben. Kartoffeln sch\u00e4len, w\u00fcrfeln und einige Minuten mikochen. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel-Brokkoli-Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/1945691316636170/Kartoffel-Brokkoli-Auflauf.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "Als vegetarisches Hauptgericht oder als Beilage zu gegrilltem Fleisch oder Fisch.",
+            "timestamp": 1318228714,
+            "title": "Auberginen - Kartoffel - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/37221012484783/Auberginen-Kartoffel-Auflauf.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "Kartoffeln und Rote Bete getrennt vorgaren, etwas abk\u00fchlen lassen, sch\u00e4len und in Scheiben schneiden. Zwiebel in Ringe schneiden. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Rote Bete - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/182281078666714/Kartoffel-Rote-Bete-Auflauf.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Die Kartoffeln gar kochen und anschlie\u00dfend sch\u00e4len. ...",
+            "timestamp": 1318228714,
+            "title": "Kartoffel - Paprika - Tomaten - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/454651138149795/Kartoffel-Paprika-Tomaten-Auflauf.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "Vegetarisch",
+            "timestamp": 1318228714,
+            "title": "Teigwaren - Kartoffel - Gem\u00fcseauflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/464521139673410/Teigwaren-Kartoffel-Gemueseauflauf.html"
+        }
+    ],
+    "timestamp": 1318228714,
+    "url": "http://www.chefkoch.de:80/rs/s0/eier%2C+milch%2C+k%E4se%2C+kartoffeln/Rezepte.html"
+}

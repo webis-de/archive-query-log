@@ -1,0 +1,220 @@
+{
+    "interpreted_query": ",roulade braten",
+    "offset": null,
+    "page": 0,
+    "query": ",roulade+braten",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "mit einer F\u00fcllung aus gekochtem Schinken und Banane",
+            "timestamp": 1355445937,
+            "title": "Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/1607801267960039/Rouladen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Jedes Schnitzel mit 1 Scheibe Schinken, K\u00e4se und Salbeiblatt belegen, w\u00fcrzen, zu einer Rolle formen und mit einem Faden oder ...",
+            "timestamp": 1355445937,
+            "title": "K\u00e4se - Roulade",
+            "url": "http://www.chefkoch.de:80/rezepte/140711060695592/Kaese-Roulade.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "gef\u00fcllt mit Rahmspinat, Parmesan und Schwarzw\u00e4lder Schinken",
+            "timestamp": 1355445937,
+            "title": "Puten - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/492731143559657/Puten-Rouladen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "gesund und lecker",
+            "timestamp": 1355445937,
+            "title": "Rouladen \"indonesisch\"",
+            "url": "http://www.chefkoch.de:80/rezepte/1995501323208705/Rouladen-indonesisch.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Niedertemperatur",
+            "timestamp": 1355445937,
+            "title": "Riesen - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/372281122934838/Riesen-Rouladen.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "pa\u00dft zu Penne mit Wodka - Tomatenso\u00dfe",
+            "timestamp": 1355445937,
+            "title": "Italienische Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/76811029332116/Italienische-Rouladen.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "glutenfrei + eifrei + milchfrei + eigenes Rezept",
+            "timestamp": 1355445937,
+            "title": "Putenbrust Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/787471182089625/Putenbrust-Rouladen.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "mit Ziegenk\u00e4se",
+            "timestamp": 1355445937,
+            "title": "Schnitzel - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/1276941233073400/Schnitzel-Rouladen.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Die Rouladen salzen, pfeffern und mit dem Sahnemeerrettich bestreichen. ...",
+            "timestamp": 1355445937,
+            "title": "Meerrettich-Roulade",
+            "url": "http://www.chefkoch.de:80/rezepte/2026581328625258/Meerrettich-Roulade.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Roulade mal anders",
+            "timestamp": 1355445937,
+            "title": "Gurken - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/774811180428173/Gurken-Rouladen.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "die etwas andere Roulade",
+            "timestamp": 1355445937,
+            "title": "Kaiser - Roulade",
+            "url": "http://www.chefkoch.de:80/rezepte/1240921228931274/Kaiser-Roulade.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "WW - tauglich, 7 P.",
+            "timestamp": 1355445937,
+            "title": "Saftige Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/826031187256833/Saftige-Rouladen.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "Die Rouladen salzen, pfeffern und mit Paprikapulver w\u00fcrzen. ...",
+            "timestamp": 1355445937,
+            "title": "Griechische Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/1307751235658226/Griechische-Rouladen.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "f\u00fcr Partys oder viele G\u00e4ste",
+            "timestamp": 1355445937,
+            "title": "Rouladen - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/693541171952247/Rouladen-Auflauf.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Fleisch salzen, pfeffern und mit Senf bestreichen. ...",
+            "timestamp": 1355445937,
+            "title": "Rouladen Toskans",
+            "url": "http://www.chefkoch.de:80/rezepte/216191090398290/Rouladen-Toskans.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Die vorbereiteten Gem\u00fcse und Gew\u00fcrze mit Rotwein, Rotweinessig und 200 ml Wasser in einer flachen Arbeitsschale mischen. ...",
+            "timestamp": 1355445937,
+            "title": "Sauerbraten Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/106121044719380/Sauerbraten-Rouladen.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Die Schnitzel sehr d\u00fcnn klopfen. Spinat verlesen, waschen und in kochendem Salzwasser 1-2 Minuten blanchieren. ...",
+            "timestamp": 1355445937,
+            "title": "Fleischwurst - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/432191134400654/Fleischwurst-Rouladen.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Scheibletten - K\u00e4se auf den Fleischk\u00e4se legen. Paprika in feine Streifen schneiden. Ca. 4 Streifen auf den K\u00e4se legen. ...",
+            "timestamp": 1355445937,
+            "title": "Falsche Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/212351088863437/Falsche-Rouladen.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Schweinerouladen mit Pilzf\u00fcllung",
+            "timestamp": 1355445937,
+            "title": "Pilz - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/761181178862377/Pilz-Rouladen.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "Die Schnitzel d\u00fcnn und gro\u00df klopfen, mit Salz und Pfeffer einreiben. ...",
+            "timestamp": 1355445937,
+            "title": "D\u00e4nische Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/849721190383825/Daenische-Rouladen.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "Als erstes die Schnitzel flach klopfen und trocken tupfen. Leicht salzen und pfeffern. ...",
+            "timestamp": 1355445937,
+            "title": "Saltimbocca - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/1374981242386925/Saltimbocca-Rouladen.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "Rouladen waschen, trockentupfen und vorsichtig flach klopfen. ...",
+            "timestamp": 1355445937,
+            "title": "Feine Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/554251153134349/Feine-Rouladen.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "Die Rouladen mit Salz und Pfeffer w\u00fcrzen und mit Senf einstreichen. Auf jede Roulade eine Schinkenscheibe legen. ...",
+            "timestamp": 1355445937,
+            "title": "Pikante Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/1317381236431185/Pikante-Rouladen.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "die So\u00dfe macht's!",
+            "timestamp": 1355445937,
+            "title": "Heykos Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/1641901271801473/Heykos-Rouladen.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Die Bratwurstmasse in eine Sch\u00fcssel dr\u00fccken und mit den Erbsen vermengen. ...",
+            "timestamp": 1355445937,
+            "title": "Schinken - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/484281142502355/Schinken-Rouladen.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "ein schnelles, au\u00dfergew\u00f6hnliches Festessen",
+            "timestamp": 1355445937,
+            "title": "Hasenfilet - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/727541175520606/Hasenfilet-Rouladen.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "Pilze putzen und fein w\u00fcrfeln, Speck ebenfalls w\u00fcrfeln. Mit Ei, Paniermehl, K\u00e4se und Kr\u00e4utern vermischen und mit Pfeffer w\u00fcrzen. ...",
+            "timestamp": 1355445937,
+            "title": "Pilz - Kr\u00e4uter - Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/460281139149629/Pilz-Kraeuter-Rouladen.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "Die Schweinelende-Scheiben mit Salz, Pfeffer, Cayennepfeffer und Zucker von beiden Seiten w\u00fcrzen. ...",
+            "timestamp": 1355445937,
+            "title": "Gorgonzola - Rouladen mit Maisso\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/244361098266007/Gorgonzola-Rouladen-mit-Maissosse.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Die Saiblingfilets entgr\u00e4ten, je nach Vorliebe die Haut entfernen. ...",
+            "timestamp": 1355445937,
+            "title": "Roulade vom Bachsaibling",
+            "url": "http://www.chefkoch.de:80/rezepte/2119061341388214/Roulade-vom-Bachsaibling.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "Den Rucola waschen, trocken tupfen und von den Stielen zupfen und in Streifen schneiden. ...",
+            "timestamp": 1355445937,
+            "title": "Schinken-K\u00e4se-Rucola Rouladen",
+            "url": "http://www.chefkoch.de:80/rezepte/1903141310191373/Schinken-Kaese-Rucola-Rouladen.html"
+        }
+    ],
+    "timestamp": 1355445937,
+    "url": "http://www.chefkoch.de:80/rs/s0/%2Croulade+braten/Rezepte.html"
+}

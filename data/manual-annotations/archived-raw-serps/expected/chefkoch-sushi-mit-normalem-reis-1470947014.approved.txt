@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "sushi mit normalem reis",
+    "offset": null,
+    "page": 0,
+    "query": "sushi+mit+normalem+reis",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "vollwertiger als normal, weil anstelle von Reis mit Buchweizen gearbeitet wird.",
+            "timestamp": 1470947014,
+            "title": "Buchweizen-Sushi",
+            "url": "http://www.chefkoch.de:80/rezepte/3053341457945224/Buchweizen-Sushi.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "vegetarische Bratlinge mit Reis und Nori, geeignet bei Histaminintoleranz",
+            "timestamp": 1470947014,
+            "title": "'Sushi'-Bratlinge",
+            "url": "http://www.chefkoch.de:80/rezepte/2351971373971226/Sushi-Bratlinge.html"
+        }
+    ],
+    "timestamp": 1470947014,
+    "url": "http://www.chefkoch.de:80/rs/s0/sushi+mit+normalem+reis/Rezepte.html"
+}

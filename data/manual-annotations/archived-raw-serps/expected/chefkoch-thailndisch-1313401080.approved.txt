@@ -1,0 +1,220 @@
+{
+    "interpreted_query": ",thail\u00e4ndisch",
+    "offset": null,
+    "page": 0,
+    "query": ",thail\ufffdndisch",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "Reis mit Bohnen",
+            "url": "http://www.chefkoch.de:80/rezepte/1697171278071993/Reis-mit-Bohnen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "(Thailand)",
+            "timestamp": 1313401080,
+            "title": "Lamm mit Tamarind",
+            "url": "http://www.chefkoch.de:80/rezepte/51611018172091/Lamm-mit-Tamarind.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "Tintenfisch aus dem Wok",
+            "url": "http://www.chefkoch.de:80/rezepte/193481082017959/Tintenfisch-aus-dem-Wok.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "H\u00fchnchensuppe mit Kokosmilch",
+            "url": "http://www.chefkoch.de:80/rezepte/1041751209194944/Huehnchensuppe-mit-Kokosmilch.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "Fischcurry",
+            "url": "http://www.chefkoch.de:80/rezepte/1041821209198146/Fischcurry.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "Gem\u00fcsesuppe mit Omelettstreifen",
+            "url": "http://www.chefkoch.de:80/rezepte/1057431211006970/Gemuesesuppe-mit-Omelettstreifen.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "Gem\u00fcsecurry",
+            "url": "http://www.chefkoch.de:80/rezepte/1057441211007487/Gemuesecurry.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "Gr\u00fcner Papaya Salat",
+            "url": "http://www.chefkoch.de:80/rezepte/1178281223973855/Gruener-Papaya-Salat.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "Huhn in Kokosmilch",
+            "url": "http://www.chefkoch.de:80/rezepte/1193831225181243/Huhn-in-Kokosmilch.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Thailand",
+            "timestamp": 1313401080,
+            "title": "Siamesische Koteletts",
+            "url": "http://www.chefkoch.de:80/rezepte/1376131242649301/Siamesische-Koteletts.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "Auberginen - Bohnen - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1382921243450092/Auberginen-Bohnen-Curry.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "thail\u00e4ndisch",
+            "timestamp": 1313401080,
+            "title": "H\u00e4hnchen - Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/1657271273651713/Haehnchen-Curry.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "Tolle Beilage zu allen thail\u00e4ndischen Gerichten",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndischer Gurkensalat",
+            "url": "http://www.chefkoch.de:80/rezepte/862461191825370/Thailaendischer-Gurkensalat.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Die Zutaten f\u00fcr thail\u00e4ndische Currys werden traditionell in Kokosmilch gegart",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndisches Garnelencurry",
+            "url": "http://www.chefkoch.de:80/rezepte/665201168422267/Thailaendisches-Garnelencurry.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Den Lachs waschen, trocken tupfen, ggf. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndischer Lachssalat",
+            "url": "http://www.chefkoch.de:80/rezepte/826661187335556/Thailaendischer-Lachssalat.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Alle Zutaten in eine Sch\u00fcssel geben und 15 Min. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndisches Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/354641120742487/Thailaendisches-Dressing.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Larp Muh",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndischer Schweinehackfleischsalat",
+            "url": "http://www.chefkoch.de:80/rezepte/566801155129380/Thailaendischer-Schweinehackfleischsalat.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "mit Reis und Sauce",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndische Hackb\u00e4llchen",
+            "url": "http://www.chefkoch.de:80/rezepte/949761200500003/Thailaendische-Hackbaellchen.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Poularde in einen gro\u00dfen Topf geben. So viel Wasser zugeben, da\u00df die Poularde gut bedeckt ist. Aufkochen. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndische H\u00fchnersuppe",
+            "url": "http://www.chefkoch.de:80/rezepte/34971011710173/Thailaendische-Huehnersuppe.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "Paprika waschen, entkernen und fein w\u00fcrfeln. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndische Spaghetti",
+            "url": "http://www.chefkoch.de:80/rezepte/80671031404979/Thailaendische-Spaghetti.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "Die Erdn\u00fcsse mahlen und in einer Pfanne ohne Fett leicht anr\u00f6sten. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndische Erdnussso\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/122401052205762/Thailaendische-Erdnusssosse.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "H\u00fchnchen mit Wasser bedecken dazu M\u00f6hren, Knoblauch, Zwiebel, Chilischoten, Limettenbl\u00e4tter, Koriander, Ingwer, Pfeffer, Salz und ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndische H\u00fchnersuppe",
+            "url": "http://www.chefkoch.de:80/rezepte/141071060851302/Thailaendische-Huehnersuppe.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "Ananas halbieren, Fruchtfleisch herausnehmen und klein schneiden. Schinken und Zwiebeln fein w\u00fcrfeln. ...",
+            "timestamp": 1313401080,
+            "title": "Bratreis - thail\u00e4ndisch",
+            "url": "http://www.chefkoch.de:80/rezepte/141631061035254/Bratreis-thailaendisch.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "Steaks in der Pfanne oder auf dem Grill rosa braten. 10 - 15 Min. ruhen lassen. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndischer Rindfleischsalat",
+            "url": "http://www.chefkoch.de:80/rezepte/159611069776241/Thailaendischer-Rindfleischsalat.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "H\u00fchnerbrustfilet, Rindfleisch oder Lamm waschen und in kleine St\u00fccke schneiden, leicht salzen und pfeffern. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndisches Curry",
+            "url": "http://www.chefkoch.de:80/rezepte/206051086449619/Thailaendisches-Curry.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "auch zum dippen geeignet",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndische Salatso\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/207641086946885/Thailaendische-Salatsosse.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "WW: 7 Points",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndisches Chickencurry",
+            "url": "http://www.chefkoch.de:80/rezepte/222101092058941/Thailaendisches-Chickencurry.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "Zwiebel in W\u00fcrfel schneiden und glasig anbraten, Knoblauch hinzugeben und das in W\u00fcrfel geschnittene Fleisch ebenfalls ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndisches Putencurrygericht",
+            "url": "http://www.chefkoch.de:80/rezepte/233981095857194/Thailaendisches-Putencurrygericht.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Die Poularde halbieren, gr\u00fcndlich waschen und trocken tupfen. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndisches Pfefferhuhn",
+            "url": "http://www.chefkoch.de:80/rezepte/237521096618002/Thailaendisches-Pfefferhuhn.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "Das H\u00fchnchen in feine St\u00fccke schneiden. Knoblauch, Schalotten und Fr\u00fchlingszwiebeln fein Hacken. ...",
+            "timestamp": 1313401080,
+            "title": "Thail\u00e4ndische Currysuppe",
+            "url": "http://www.chefkoch.de:80/rezepte/243201097939767/Thailaendische-Currysuppe.html"
+        }
+    ],
+    "timestamp": 1313401080,
+    "url": "http://www.chefkoch.de:80/rs/s0/%2Cthail%E4ndisch/Rezepte.html"
+}

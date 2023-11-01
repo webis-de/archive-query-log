@@ -1,0 +1,220 @@
+{
+    "interpreted_query": ",walnuss\u00f6l dressing",
+    "offset": null,
+    "page": 0,
+    "query": ",walnuss\ufffdl+dressing",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Apfel-Walnuss\u00f6l Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/2087651337194925/Apfel-Walnussoel-Dressing.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Aromatisches Dressing mit Hanf- und Walnuss\u00f6l",
+            "url": "http://www.chefkoch.de:80/rezepte/1024261207584021/Aromatisches-Dressing-mit-Hanf-und-Walnussoel.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Feldsalat mit Orangen - Grapefruit - Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/796251183270232/Feldsalat-mit-Orangen-Grapefruit-Dressing.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Dressing f\u00fcr den Feldsalat",
+            "url": "http://www.chefkoch.de:80/rezepte/972131202832477/Dressing-fuer-den-Feldsalat.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Himbeeressig - Dressing zu Blattsalaten und K\u00e4se",
+            "url": "http://www.chefkoch.de:80/rezepte/1136931219989867/Himbeeressig-Dressing-zu-Blattsalaten-und-Kaese.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Feldsalat mit Orangen - Senf - Dressing sowie H\u00fchnerleber mit roten Portweinzwiebeln",
+            "url": "http://www.chefkoch.de:80/rezepte/1549491261833591/Feldsalat-mit-Orangen-Senf-Dressing-sowie-Huehnerleber-mit-roten-Portweinzwiebeln.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Senf-Honig-Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/2373871376504907/Senf-Honig-Dressing.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Rucola mit Walnuss-Balsamico Dressing, Parmesan und Lachs",
+            "url": "http://www.chefkoch.de:80/rezepte/2468161388857742/Rucola-mit-Walnuss-Balsamico-Dressing-Parmesan-und-Lachs.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Bunter Salat mit Walnuss - Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/1471461251980700/Bunter-Salat-mit-Walnuss-Dressing.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Salat mit gebratenen Garnelen und Tomaten - Wermut - Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/382121124720482/Salat-mit-gebratenen-Garnelen-und-Tomaten-Wermut-Dressing.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Lavendulas s\u00e4miges Dressing f\u00fcr Blattsalate",
+            "url": "http://www.chefkoch.de:80/rezepte/1481501253359725/Lavendulas-saemiges-Dressing-fuer-Blattsalate.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "G\u00e4nsebrustscheiben mit Feldsalat an Birnenmost - Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/833671188128345/Gaensebrustscheiben-mit-Feldsalat-an-Birnenmost-Dressing.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Shrimps auf Chicoree - Fenchel - Salat an Orangen - Walnuss - Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/724901175237188/Shrimps-auf-Chicoree-Fenchel-Salat-an-Orangen-Walnuss-Dressing.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Frischer Herbstsalat \"Special\" mit Himbeer-Walnuss-Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/2445401385323571/Frischer-Herbstsalat-Special-mit-Himbeer-Walnuss-Dressing.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Orangen - Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/1651101272894723/Orangen-Dressing.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Spinatsalat mit Sahne-Nuss-Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/2410221380717014/Spinatsalat-mit-Sahne-Nuss-Dressing.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Feldsalat mit w\u00fcrzigem Honig - Senf - Dressing",
+            "url": "http://www.chefkoch.de:80/rezepte/1741401283104689/Feldsalat-mit-wuerzigem-Honig-Senf-Dressing.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Traumhaftes Dressing f\u00fcr Blattsalate",
+            "url": "http://www.chefkoch.de:80/rezepte/1163041222428216/Traumhaftes-Dressing-fuer-Blattsalate.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Salat - Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/1432901248185978/Salat-Sauce.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Feldsalat mit Fr\u00fchlingsm\u00f6hren",
+            "url": "http://www.chefkoch.de:80/rezepte/1677141275732078/Feldsalat-mit-Fruehlingsmoehren.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Super - Salatdressing",
+            "url": "http://www.chefkoch.de:80/rezepte/500501144767705/Super-Salatdressing.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Salatdressing nach Art des Hauses",
+            "url": "http://www.chefkoch.de:80/rezepte/1205811226321203/Salatdressing-nach-Art-des-Hauses.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Vinaigrette mit Himbeeressig",
+            "url": "http://www.chefkoch.de:80/rezepte/814051185711204/Vinaigrette-mit-Himbeeressig.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Zuckerschoten - Salat",
+            "url": "http://www.chefkoch.de:80/rezepte/347291119354488/Zuckerschoten-Salat.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Feldsalat mit Orangenschnitzeln und Waln\u00fcssen",
+            "url": "http://www.chefkoch.de:80/rezepte/859631191483376/Feldsalat-mit-Orangenschnitzeln-und-Walnuessen.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Nutella - Vinaigrette",
+            "url": "http://www.chefkoch.de:80/rezepte/255601100823603/Nutella-Vinaigrette.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Vinaigrette",
+            "url": "http://www.chefkoch.de:80/rezepte/403991129680228/Vinaigrette.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Salatdressing",
+            "url": "http://www.chefkoch.de:80/rezepte/214821089909531/Salatdressing.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Tuelles Salatdressing",
+            "url": "http://www.chefkoch.de:80/rezepte/1630891270628582/Tuelles-Salatdressing.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1403236002,
+            "title": "Bunter Reissalat",
+            "url": "http://www.chefkoch.de:80/rezepte/635781164292211/Bunter-Reissalat.html"
+        }
+    ],
+    "timestamp": 1403236002,
+    "url": "http://www.chefkoch.de:80/rs/s0/,walnuss%F6l+dressing/Rezepte.html"
+}

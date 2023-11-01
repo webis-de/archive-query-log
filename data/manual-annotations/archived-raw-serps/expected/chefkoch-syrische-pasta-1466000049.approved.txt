@@ -1,0 +1,38 @@
+{
+    "interpreted_query": "syrische pasta",
+    "offset": null,
+    "page": 0,
+    "query": "syrische+pasta",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Zwiebeln w\u00fcrfeln und anbraten, Gehacktes dazu geben und mit Salz und Pfeffer anraten. Mit Tomatensaft l\u00f6schen und die Haseln\u00fcsse u...",
+            "timestamp": 1466000049,
+            "title": "Nudelauflauf syrisch",
+            "url": "http://www.chefkoch.de:80/rezepte/281481106322631/Nudelauflauf-syrisch.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Die Spaghetti bissfest kochen. Backofen auf 225 Grad vorheizen. In der Zwischenzeit die gehackte Zwiebel in 3 EL \u00d6l glasig braten....",
+            "timestamp": 1466000049,
+            "title": "Syrischer Spaghettiauflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/170421073899945/Syrischer-Spaghettiauflauf.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Zwiebeln sch\u00e4len und fein hacken. In 3 EL erhitztem \u00d6l glasig and\u00fcnsten. Danach passierte Tomaten und Tomatenmark ,das Hackfleisch...",
+            "timestamp": 1466000049,
+            "title": "Syrischer Nudelauflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/772041180072196/Syrischer-Nudelauflauf.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "syrischer Spaghetti - Auflauf",
+            "timestamp": 1466000049,
+            "title": "Nudelauflauf mit Hackfleisch und Waln\u00fcssen",
+            "url": "http://www.chefkoch.de:80/rezepte/184471079353250/Nudelauflauf-mit-Hackfleisch-und-Walnuessen.html"
+        }
+    ],
+    "timestamp": 1466000049,
+    "url": "http://www.chefkoch.de:80/rs/s0/syrische+pasta/Rezepte.html"
+}
