@@ -35,7 +35,7 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
     def _streams(self) -> Iterator[tuple[Path, IO[bytes]]]:
         files = self.path.glob("*.warc.gz")
         for file in files:
-            with file.open( "rb") as stream:
+            with file.open("rb") as stream:
                 yield file, stream
 
     def __len__(self) -> int:
