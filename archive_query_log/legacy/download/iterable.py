@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from functools import cached_property
-from gzip import open as gzip_open
 from json import JSONDecodeError
 from pathlib import Path
 from typing import Sized, Iterable, Iterator, IO
@@ -36,17 +35,14 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
     def _streams(self) -> Iterator[tuple[Path, IO[bytes]]]:
         files = self.path.glob("*.warc.gz")
         for file in files:
-            with gzip_open(file, "rb") as stream:
+            with file.open( "rb") as stream:
                 yield file, stream
 
     def __len__(self) -> int:
         return sum(
             1
             for _, stream in self._streams()
-            for record in ArchiveIterator(
-                stream,
-                no_record_parse=True,
-            )
+            for record in ArchiveIterator(stream, no_record_parse=True)
             if record.rec_type == "response"
         )
 
@@ -73,6 +69,7 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
         content_type = record.http_headers.get_header("Content-Type")
         if content_type is None:
             content_type = "utf8"
+        print(record_url_header)
         return ArchivedRawSerp(
             url=archived_serp_url.url,
             timestamp=archived_serp_url.timestamp,

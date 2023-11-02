@@ -6,7 +6,7 @@ from gzip import GzipFile
 from itertools import chain
 from pathlib import Path
 from tempfile import TemporaryFile
-from typing import IO, NamedTuple, Iterable, Iterator, ContextManager
+from typing import IO, NamedTuple, Iterable, Iterator
 from uuid import uuid4
 from warnings import warn
 
@@ -166,7 +166,7 @@ class WarcS3Store(AbstractContextManager):
                 # Find next available key.
                 key: str = f"{uuid4().hex}.warc.gz"
                 while self._exists_object(key):
-                    key: str = f"{uuid4().hex}.warc.gz"
+                    key = f"{uuid4().hex}.warc.gz"
 
                 # Write records to buffer.
                 offset_records: Iterable[_WarcS3Record] = _write_records(
@@ -185,7 +185,8 @@ class WarcS3Store(AbstractContextManager):
                     lambda record: record.location is not None,
                     offset_records,
                 )
-                saved_records = list(saved_records)
+                # Consume iterator to write records to buffer.
+                saved_records = iter(list(saved_records))
                 tmp_file.flush()
                 tmp_file.seek(0)
 
@@ -199,6 +200,8 @@ class WarcS3Store(AbstractContextManager):
                     Key=key,
                 )
             for offset_record in saved_records:
+                if offset_record.location is None:
+                    raise RuntimeError("Expected location to be set.")
                 yield WarcS3Record(
                     record=offset_record.record,
                     location=offset_record.location,
@@ -210,7 +213,7 @@ class WarcS3Store(AbstractContextManager):
             head, records = spy(records)
 
     @contextmanager
-    def read(self, location: WarcS3Location) -> ContextManager[WarcRecord]:
+    def read(self, location: WarcS3Location) -> Iterator[WarcRecord]:
         end_offset = location.offset + location.length - 1
         response = self.client.get_object(
             Bucket=self.bucket_name,

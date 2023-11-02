@@ -34,28 +34,26 @@ class MementoApi:
     @overload
     def load_capture(
             self,
-            url: str,
-            timestamp: datetime | None = ...,
+            url_or_cdx_capture: str,
+            timestamp: datetime | None = None,
     ) -> Response:
         """
         Load a captured document from the Memento API.
-        :param url: The original URL of the document.
+        :param url_or_cdx_capture: The original URL of the document.
         :param timestamp: Timestamp of the capture.
         :return: HTTP response.
         """
-        pass
 
     @overload
     def load_capture(
             self,
-            cdx_capture: CdxCapture,
+            url_or_cdx_capture: CdxCapture,
     ) -> Response:
         """
         Load a captured document from the Memento API.
-        :param cdx_capture: The CDX record describing the capture.
+        :param url_or_cdx_capture: The CDX record describing the capture.
         :return: HTTP response.
         """
-        pass
 
     def load_capture(
             self,
@@ -69,6 +67,13 @@ class MementoApi:
         :param timestamp: Timestamp of the capture.
         :return: HTTP response.
         """
+        return self._load_capture(url_or_cdx_capture, timestamp)
+
+    def _load_capture(
+            self,
+            url_or_cdx_capture: str | CdxCapture,
+            timestamp: datetime | None,
+    ) -> Response:
         if not (isinstance(url_or_cdx_capture, str) or
                 isinstance(url_or_cdx_capture, CdxCapture)):
             raise TypeError("URL must be a string or CdxCapture.")
@@ -91,30 +96,28 @@ class MementoApi:
     @overload
     def load_capture_warc(
             self,
-            url: str,
-            timestamp: datetime | None = ...,
+            url_or_cdx_capture: str,
+            timestamp: datetime | None = None,
     ) -> Iterator[ArcWarcRecord]:
         """
         Load a captured document from the Memento API and
         capture the HTTP request and response as WARC records.
-        :param url: The original URL of the document.
+        :param url_or_cdx_capture: The original URL of the document.
         :param timestamp: Timestamp of the capture.
         :return: Iterator over request and response WARC records.
         """
-        pass
 
     @overload
     def load_capture_warc(
             self,
-            cdx_capture: CdxCapture,
+            url_or_cdx_capture: CdxCapture,
     ) -> Iterator[ArcWarcRecord]:
         """
         Load a captured document from the Memento API and
         capture the HTTP request and response as WARC records.
-        :param cdx_capture: The CDX record describing the capture.
+        :param url_or_cdx_capture: The CDX record describing the capture.
         :return: Iterator over request and response WARC records.
         """
-        pass
 
     def load_capture_warc(
             self,
@@ -130,5 +133,5 @@ class MementoApi:
         :return: Iterator over request and response WARC records.
         """
         with capture_http() as writer:
-            self.load_capture(url_or_cdx_capture, timestamp)
+            self._load_capture(url_or_cdx_capture, timestamp)
             yield from ArchiveIterator(writer.get_stream())
