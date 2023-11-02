@@ -242,12 +242,12 @@ def build(
                 unit="batch",
             )
             actions_providers = chain.from_iterable(action_batches_providers)
-            success, info = bulk(
+            success, errors = bulk(
                 client=config.es.client,
                 actions=actions_providers,
             )
-            if not success:
-                raise RuntimeError(f"Indexing error: {info}")
+            if len(errors) > 0:
+                raise RuntimeError(f"Indexing error: {errors}")
             Source.index().refresh(using=config.es.client)
         else:
             echo("No new/changed providers.")
