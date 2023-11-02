@@ -6,7 +6,6 @@ from warnings import warn
 
 from click import group, echo, option
 from elasticsearch import ConnectionTimeout
-from elasticsearch.helpers import bulk
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Script, Exists
@@ -242,12 +241,20 @@ def build(
                 unit="batch",
             )
             actions_providers = chain.from_iterable(action_batches_providers)
-            success, errors = bulk(
-                client=config.es.client,
-                actions=actions_providers,
-            )
-            if len(errors) > 0:
-                raise RuntimeError(f"Indexing error: {errors}")
+            try:
+                responses: Iterable[tuple[bool, Any]] = (
+                    config.es.streaming_bulk(
+                        actions=actions_providers,
+                        initial_backoff=2,
+                        max_backoff=600,
+                    ))
+            except ConnectionTimeout:
+                warn(RuntimeWarning(
+                    "Connection timeout while indexing captures."))
+                return
+            for success, info in responses:
+                if not success:
+                    raise RuntimeError(f"Indexing error: {info}")
             Source.index().refresh(using=config.es.client)
         else:
             echo("No new/changed providers.")
