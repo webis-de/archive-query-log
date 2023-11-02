@@ -1,18 +1,17 @@
 from configparser import ConfigParser
+from contextlib import AbstractContextManager, contextmanager
 from dataclasses import dataclass
 from functools import cached_property
-from gzip import open as gzip_open, GzipFile
+from gzip import GzipFile
 from itertools import chain
 from pathlib import Path
 from tempfile import TemporaryFile
-from types import TracebackType
-from typing import ContextManager, IO, NamedTuple, Iterable, Iterator, \
-    Generator
+from typing import IO, NamedTuple, Iterable, Iterator, ContextManager
 from uuid import uuid4
 from warnings import warn
 
 from boto3 import Session
-from more_itertools import spy
+from more_itertools import spy, before_and_after
 from mypy_boto3_s3 import S3Client
 from tqdm.auto import tqdm
 from warcio import ArchiveIterator, WARCWriter
@@ -24,36 +23,37 @@ _DEFAULT_MAX_FILE_SIZE = 1_000_000_000  # 1GB
 
 
 class WarcS3Location(NamedTuple):
-    endpoint_url: str
-    bucket: str
     key: str
     offset: int
+    length: int
+
+
+class WarcS3Record(NamedTuple):
+    record: WarcRecord
+    location: WarcS3Location
+
+
+class _WarcS3Record(NamedTuple):
+    record: WarcRecord
+    location: WarcS3Location | None
 
 
 def _write_records(
         records: Iterable[WarcRecord],
         file: IO[bytes],
-        file_name: str,
+        key: str,
         max_size: int,
-) -> Generator[int, None, Iterator[WarcRecord]]:
+) -> Iterator[_WarcS3Record]:
     # Write WARC info record.
     with GzipFile(fileobj=file, mode="wb") as gzip_file:
         writer = WARCWriter(gzip_file, gzip=False)
         warc_info_record: WarcRecord = writer.create_warcinfo_record(
-            filename=file_name, info={})
+            filename=key, info={})
         writer.write_record(warc_info_record)
 
     # Warn about low max file size.
     if file.tell() * 2 > max_size:
         warn(UserWarning(f"Very low max file size: {max_size} bytes"))
-
-    # Peek at first record.
-    head: list[WarcRecord]
-    head, records = spy(records)
-
-    # No records to write.
-    if len(head) == 0:
-        return records
 
     for record in records:
         offset = file.tell()
@@ -63,32 +63,33 @@ def _write_records(
                 writer = WARCWriter(tmp_gzip_file, gzip=False)
                 writer.write_record(record)
             tmp_file.flush()
-            tmp_size = tmp_file.tell()
+            length = tmp_file.tell()
             tmp_file.seek(0)
 
-            # Check if record fits into file.
-            if offset + tmp_size > max_size:
+            # Check if record does not into file.
+            if offset + length > max_size:
                 records = chain([record], records)
                 break
 
             # Write temporary file to file.
             file.write(tmp_file.read())
-            yield offset
 
-    return records
+            rec = _WarcS3Record(
+                record=record,
+                location=WarcS3Location(
+                    key=key,
+                    offset=offset,
+                    length=length,
+                ),
+            )
+            yield rec
+
+    for record in records:
+        yield _WarcS3Record(record=record, location=None)
 
 
-# TODO: Remove this test function.
-def _test_iterator() -> Iterator[WarcRecord]:
-    repetitions = 10000
-    for i in range(repetitions):
-        with gzip_open(
-                "/home/heinrich/Repositories/archive-query-log/data/manual-annotations/archived-raw-serps/warcs/google-does-steve-has-a-beard-1601705030.warc.gz",
-                "rb") as file:
-            yield from ArchiveIterator(file)
-
-dataclass(frozen=True)
-class WarcS3Store(ContextManager):
+@dataclass(frozen=True)
+class WarcS3Store(AbstractContextManager):
     bucket_name: str
     endpoint_url: str | None = None
     access_key: str | None = None
@@ -97,6 +98,13 @@ class WarcS3Store(ContextManager):
     """
     Maximum number of bytes to write to a single WARC file.
     """
+    quiet: bool = False
+    """
+    Suppress logging and progress bars.
+    """
+
+    def __post_init__(self):
+        self._create_bucket_if_needed()
 
     @cached_property
     def config(self) -> ConfigParser:
@@ -149,7 +157,7 @@ class WarcS3Store(ContextManager):
             raise e
         return True
 
-    def write(self, records: Iterable[WarcRecord]) -> Iterator[WarcS3Location]:
+    def write(self, records: Iterable[WarcRecord]) -> Iterator[WarcS3Record]:
         records = iter(records)
         head: list[WarcRecord]
         head, records = spy(records)
@@ -161,25 +169,28 @@ class WarcS3Store(ContextManager):
                     key: str = f"{uuid4().hex}.warc.gz"
 
                 # Write records to buffer.
-                offsets: Iterable[int] = _write_records(
+                offset_records: Iterable[_WarcS3Record] = _write_records(
                     records=records,
                     file=tmp_file,
-                    file_name=key,
+                    key=key,
                     max_size=self.max_file_size
                 )
                 # noinspection PyTypeChecker
-                offsets = tqdm(
-                    offsets,
-                    desc="Write WARC records to buffer"
+                offset_records = tqdm(
+                    offset_records,
+                    desc="Write WARC records to buffer",
+                    disable=self.quiet,
                 )
-                try:
-                    offsets = list(offsets)
-                except StopIteration as e:
-                    records = e.value
+                saved_records, unsaved_records = before_and_after(
+                    lambda record: record.location is not None,
+                    offset_records,
+                )
+                saved_records = list(saved_records)
                 tmp_file.flush()
                 tmp_file.seek(0)
 
-                print("Uploading buffer to S3: ", key)
+                if not self.quiet:
+                    print("Uploading buffer to S3: ", key)
                 if self._exists_object(key):
                     raise RuntimeError(f"Key already exists: {key}")
                 self.client.upload_fileobj(
@@ -187,38 +198,28 @@ class WarcS3Store(ContextManager):
                     Bucket=self.bucket_name,
                     Key=key,
                 )
-                for offset in offsets:
-                    yield WarcS3Location(
-                        endpoint_url=self.endpoint_url,
-                        bucket=self.bucket_name,
-                        key=key,
-                        offset=offset,
-                    )
+            for offset_record in saved_records:
+                yield WarcS3Record(
+                    record=offset_record.record,
+                    location=offset_record.location,
+                )
+            records = (
+                offset_record.record
+                for offset_record in unsaved_records
+            )
             head, records = spy(records)
 
-    def __exit__(
-            self,
-            _exc_type: type[BaseException] | None,
-            _exc_value: BaseException | None,
-            _traceback: TracebackType | None
-    ) -> bool | None:
+    @contextmanager
+    def read(self, location: WarcS3Location) -> ContextManager[WarcRecord]:
+        end_offset = location.offset + location.length - 1
+        response = self.client.get_object(
+            Bucket=self.bucket_name,
+            Key=location.key,
+            Range=f"bytes={location.offset}-{end_offset}",
+        )
+        with GzipFile(fileobj=response["Body"], mode="rb") as gzip_file:
+            iterator = ArchiveIterator(gzip_file)
+            yield next(iterator)
+
+    def __exit__(self, *_exc_details):
         self.client.close()
-        return True
-
-    # TODO: Remove this test function.
-    def test(self):
-        self._create_bucket_if_needed()
-        iterator = _test_iterator()
-        locations = self.write(iterator)
-        for _ in locations:
-            pass
-
-
-if __name__ == "__main__":
-    store = WarcS3Store(
-        endpoint_url="https://s3.dw.webis.de",
-        access_key="KFL4B8B3KCCHU0E58SXX",
-        secret_key="Bfnchgz0B1C8ie3UJcvfUSlMeXtvFMG6lm5sMZ2t",
-        bucket_name="archive-query-log",
-    )
-    store.test()
