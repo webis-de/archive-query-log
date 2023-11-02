@@ -36,7 +36,6 @@ dependencies = [
     "elasticsearch~=7.0",
     "elasticsearch-dsl~=7.0",
     "expiringdict~=1.2",
-    "fastwarc~=0.14.5",
     "flask~=2.3",
     "importlib-metadata~=6.0",
     "joblib~=1.3",

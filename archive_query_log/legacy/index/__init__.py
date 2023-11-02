@@ -12,12 +12,10 @@ from typing import Iterator, TypeVar, Generic, Type, final, \
 from uuid import UUID, uuid5, NAMESPACE_URL
 
 from dataclasses_json import DataClassJsonMixin
-from fastwarc import ArchiveIterator, FileStream, WarcRecord, \
-    WarcRecordType
-# pylint: disable=no-name-in-module
-from fastwarc.stream_io import PythonIOStreamAdapter
 from marshmallow import Schema
 from tqdm.auto import tqdm
+from warcio.archiveiterator import ArchiveIterator
+from warcio.recordloader import ArcWarcRecord
 
 from archive_query_log.legacy import DATA_DIRECTORY_PATH, LOGGER
 from archive_query_log.legacy.model import ArchivedUrl, ArchivedQueryUrl, \
@@ -166,32 +164,32 @@ class _MetaIndex:
         for path in dir_path.iterdir():
             if path.name.startswith("."):
                 continue
-            records = ArchiveIterator(
-                FileStream(str(path), "rb"),
-                record_types=WarcRecordType.response,
-                parse_http=False,
-            )
-            record: WarcRecord
-            for record in records:
-                offset = record.stream_pos
-                try:
-                    record_url = loads(record.headers["Archived-URL"])
-                except JSONDecodeError:
-                    LOGGER.error(
-                        f"Could not index "
-                        f"{record.headers['Archived-URL']} "
-                        f"at {path}."
+            with path.open("rb") as file:
+                records = ArchiveIterator(file, no_record_parse=True)
+                record: ArcWarcRecord
+                for record in records:
+                    if record.rec_type != "response":
+                        continue
+                    offset = record.raw_stream.tell()
+                    try:
+                        record_url = loads(
+                            record.rec_headers.get_header("Archived-URL")               )
+                    except JSONDecodeError:
+                        LOGGER.error(
+                            f"Could not index "
+                            f"{record.rec_headers.get_header('Archived-URL')} "
+                            f"at {path}."
+                        )
+                        return
+                    record_id = uuid5(
+                        NAMESPACE_URL,
+                        f"{record_url['timestamp']}:{record_url['url']}",
                     )
-                    return
-                record_id = uuid5(
-                    NAMESPACE_URL,
-                    f"{record_url['timestamp']}:{record_url['url']}",
-                )
-                index.append((
-                    str(record_id),
-                    str(path.relative_to(self.data_directory)),
-                    str(offset),
-                ))
+                    index.append((
+                        str(record_id),
+                        str(path.relative_to(self.data_directory)),
+                        str(offset),
+                    ))
 
         with index_path.open("wt") as index_file:
             index_writer = writer(index_file)
@@ -438,12 +436,11 @@ class _WarcIndex(_Index[CorpusWarcLocation, _RecordType]):
         path = self.data_directory / location.relative_path
         with path.open("rb") as file:
             file.seek(location.byte_offset)
-            stream = PythonIOStreamAdapter(file)
-            record: WarcRecord = next(ArchiveIterator(stream))
+            record: ArcWarcRecord = next(ArchiveIterator(file))
             return self._read_warc_record(record)
 
     @abstractmethod
-    def _read_warc_record(self, record: WarcRecord) -> _RecordType:
+    def _read_warc_record(self, record: ArcWarcRecord) -> _RecordType:
         pass
 
 
@@ -473,12 +470,13 @@ class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
 
-    def _read_warc_record(self, record: WarcRecord) -> ArchivedRawSerp:
-        header = record.headers["Archived-URL"]
-        archived_url = self.schema.loads(record.headers["Archived-URL"])
+    def _read_warc_record(self, record: ArcWarcRecord) -> ArchivedRawSerp:
+        header = record.rec_headers.get_header("Archived-URL")
+        archived_url = self.schema.loads(
+            record.rec_headers.get_header("Archived-URL"))
         if isinstance(archived_url, list):
             raise ValueError(f"Expected one URL in the header: {header}")
-        content_type = record.http_charset
+        content_type = record.http_headers.get_header("Content-Type")
         if content_type is None:
             content_type = "utf8"
         return ArchivedRawSerp(
@@ -487,7 +485,7 @@ class ArchivedRawSerpIndex(_WarcIndex[ArchivedRawSerp]):
             query=archived_url.query,
             page=archived_url.page,
             offset=archived_url.offset,
-            content=record.reader.read(),
+            content=record.content_stream().read(),
             encoding=content_type,
         )
 
@@ -544,12 +542,12 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
 
-    def _read_warc_record(self, record: WarcRecord) -> ArchivedRawSearchResult:
-        header = record.headers["Archived-URL"]
+    def _read_warc_record(self, record: ArcWarcRecord) -> ArchivedRawSearchResult:
+        header = record.rec_headers.get_header("Archived-URL")
         archived_url = self.schema.loads(header)
         if isinstance(archived_url, list):
             raise ValueError(f"Expected one URL in the header: {header}")
-        content_type = record.http_charset
+        content_type = record.http_headers.get_header("Content-Type")
         if content_type is None:
             content_type = "utf8"
         return ArchivedRawSearchResult(
@@ -558,6 +556,6 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
             rank=archived_url.rank,
             title=archived_url.title,
             snippet=archived_url.snippet,
-            content=record.reader.read(),
+            content=record.content_stream().read(),
             encoding=content_type,
         )

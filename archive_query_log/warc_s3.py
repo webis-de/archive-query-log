@@ -12,23 +12,15 @@ from uuid import uuid4
 from warnings import warn
 
 from boto3 import Session
-from fastwarc import WarcRecord as FastwarcWarcRecord, \
-    ArchiveIterator as FastwarcArchiveIterator
 from more_itertools import spy
 from mypy_boto3_s3 import S3Client
 from tqdm.auto import tqdm
-from warcio import ArchiveIterator as WarcioArchiveIterator, WARCWriter
-from warcio.recordloader import ArcWarcRecord as WarcioWarcRecord
+from warcio import ArchiveIterator, WARCWriter
+from warcio.recordloader import ArcWarcRecord as WarcRecord
 
 _S3CFG_PATH = Path("~/.s3cfg").expanduser()
 
 _DEFAULT_MAX_FILE_SIZE = 1_000_000_000  # 1GB
-
-WarcRecord = FastwarcWarcRecord | WarcioWarcRecord
-ArchiveIterator = FastwarcArchiveIterator | WarcioArchiveIterator
-
-WarcIterable = (
-        Iterable[WarcRecord] | FastwarcArchiveIterator | WarcioArchiveIterator)
 
 
 class WarcS3Location(NamedTuple):
@@ -47,7 +39,7 @@ def _write_records(
     # Write WARC info record.
     with GzipFile(fileobj=file, mode="wb") as gzip_file:
         writer = WARCWriter(gzip_file, gzip=False)
-        warc_info_record: WarcioWarcRecord = writer.create_warcinfo_record(
+        warc_info_record: WarcRecord = writer.create_warcinfo_record(
             filename=file_name, info={})
         writer.write_record(warc_info_record)
 
@@ -63,51 +55,25 @@ def _write_records(
     if len(head) == 0:
         return records
 
-    # Using FastWARC.
-    if isinstance(head[0], FastwarcWarcRecord):
-        for record in records:
-            offset = file.tell()
-            with TemporaryFile() as tmp_file:
-                # Write record to temporary file.
-                with GzipFile(fileobj=tmp_file, mode="wb") as tmp_gzip_file:
-                    record.write(tmp_gzip_file)
-                tmp_file.flush()
-                tmp_size = tmp_file.tell()
-                tmp_file.seek(0)
+    for record in records:
+        offset = file.tell()
+        with TemporaryFile() as tmp_file:
+            # Write record to temporary file.
+            with GzipFile(fileobj=tmp_file, mode="wb") as tmp_gzip_file:
+                writer = WARCWriter(tmp_gzip_file, gzip=False)
+                writer.write_record(record)
+            tmp_file.flush()
+            tmp_size = tmp_file.tell()
+            tmp_file.seek(0)
 
-                # Check if record fits into file.
-                if offset + tmp_size > max_size:
-                    records = chain([record], records)
-                    break
+            # Check if record fits into file.
+            if offset + tmp_size > max_size:
+                records = chain([record], records)
+                break
 
-                # Write temporary file to file.
-                file.write(tmp_file.read())
-                yield offset
-
-    # Using warcio.
-    elif isinstance(head[0], WarcioWarcRecord):
-        for record in records:
-            offset = file.tell()
-            with TemporaryFile() as tmp_file:
-                # Write record to temporary file.
-                with GzipFile(fileobj=tmp_file, mode="wb") as tmp_gzip_file:
-                    writer = WARCWriter(tmp_gzip_file, gzip=False)
-                    writer.write_record(record)
-                tmp_file.flush()
-                tmp_size = tmp_file.tell()
-                tmp_file.seek(0)
-
-                # Check if record fits into file.
-                if offset + tmp_size > max_size:
-                    records = chain([record], records)
-                    break
-
-                # Write temporary file to file.
-                file.write(tmp_file.read())
-                yield offset
-
-    else:
-        raise ValueError(f"Unknown WARC record type: {type(head[0])}")
+            # Write temporary file to file.
+            file.write(tmp_file.read())
+            yield offset
 
     return records
 
@@ -119,11 +85,9 @@ def _test_iterator() -> Iterator[WarcRecord]:
         with gzip_open(
                 "/home/heinrich/Repositories/archive-query-log/data/manual-annotations/archived-raw-serps/warcs/google-does-steve-has-a-beard-1601705030.warc.gz",
                 "rb") as file:
-            yield from FastwarcArchiveIterator(file)
-            yield from WarcioArchiveIterator(file)
+            yield from ArchiveIterator(file)
 
-
-@dataclass(frozen=True)
+dataclass(frozen=True)
 class WarcS3Store(ContextManager):
     bucket_name: str
     endpoint_url: str | None = None
@@ -185,7 +149,7 @@ class WarcS3Store(ContextManager):
             raise e
         return True
 
-    def write(self, records: WarcIterable) -> Iterator[WarcS3Location]:
+    def write(self, records: Iterable[WarcRecord]) -> Iterator[WarcS3Location]:
         records = iter(records)
         head: list[WarcRecord]
         head, records = spy(records)

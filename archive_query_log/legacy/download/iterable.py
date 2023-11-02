@@ -1,12 +1,13 @@
 from dataclasses import dataclass
 from functools import cached_property
+from gzip import open as gzip_open
 from json import JSONDecodeError
 from pathlib import Path
-from typing import Sized, Iterable, Iterator
+from typing import Sized, Iterable, Iterator, IO
 
-from fastwarc import GZipStream, FileStream, ArchiveIterator, WarcRecordType, \
-    WarcRecord
 from marshmallow import Schema
+from warcio.archiveiterator import ArchiveIterator
+from warcio.recordloader import ArcWarcRecord
 
 from archive_query_log.legacy import LOGGER
 from archive_query_log.legacy.model import ArchivedQueryUrl, ArchivedRawSerp
@@ -32,38 +33,44 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
                 f"Raw SERPs path must be a directory: {self.path}"
             )
 
-    def _streams(self) -> Iterator[tuple[Path, GZipStream]]:
+    def _streams(self) -> Iterator[tuple[Path, IO[bytes]]]:
         files = self.path.glob("*.warc.gz")
         for file in files:
-            yield file, GZipStream(FileStream(str(file), "rb"))
+            with gzip_open(file, "rb") as stream:
+                yield file, stream
 
     def __len__(self) -> int:
         return sum(
             1
             for _, stream in self._streams()
-            for _ in ArchiveIterator(
+            for record in ArchiveIterator(
                 stream,
-                record_types=WarcRecordType.response,
-                parse_http=False,
+                no_record_parse=True,
             )
+            if record.rec_type == "response"
         )
 
     @cached_property
     def _archived_serp_url_schema(self) -> Schema:
         return ArchivedQueryUrl.schema()
 
-    def _read_serp_content(self, record: WarcRecord) -> ArchivedRawSerp | None:
+    def _read_serp_content(
+            self,
+            record: ArcWarcRecord,
+    ) -> ArchivedRawSerp | None:
         archived_serp_url: ArchivedQueryUrl
-        record_url_header = record.headers["Archived-URL"]
+        record_url_header = record.rec_headers.get_header("Archived-URL")
         try:
             archived_serp_url = self._archived_serp_url_schema.loads(
                 record_url_header
             )
         except JSONDecodeError:
-            LOGGER.warning(f"Could not index {record_url_header} "
-                           f"from record {record.record_id}.")
+            LOGGER.warning(
+                f"Could not index {record_url_header} from record "
+                f"{record.rec_headers.get_header('WARC-Record-ID')}."
+            )
             return None
-        content_type = record.http_charset
+        content_type = record.http_headers.get_header("Content-Type")
         if content_type is None:
             content_type = "utf8"
         return ArchivedRawSerp(
@@ -72,18 +79,16 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
             query=archived_serp_url.query,
             page=archived_serp_url.page,
             offset=archived_serp_url.offset,
-            content=record.reader.read(),
+            content=record.content_stream().read(),
             encoding=content_type,
         )
 
     def __iter__(self) -> Iterator[ArchivedRawSerp]:
         for path, stream in self._streams():
             failures = False
-            for record in ArchiveIterator(
-                    stream,
-                    record_types=WarcRecordType.response,
-                    parse_http=True,
-            ):
+            for record in ArchiveIterator(stream):
+                if record.rec_type != "response":
+                    continue
                 serp = self._read_serp_content(record)
                 if serp is None:
                     failures = True
