@@ -11835,8 +11835,37 @@
     remove_patterns:
     - s
   offset_parsers: []
-  interpreted_query_parsers: []
-  results_parsers: []
+  interpreted_query_parsers:
+  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
+    type: html_selector
+    query_selector: input#inputfield_quicksearch
+  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
+    type: html_selector
+    query_selector: div#schnellsuche form[action*="suche.php"] input.input_schnellsuche_text
+  results_parsers:
+  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
+    type: html_selector
+    results_selector: ul.search-list li.search-list-item
+    url_selector: a:has(> div.search-list-item-content)
+    title_selector: a > div.search-list-item-content > div.search-list-item-title
+    snippet_selector: a > div.search-list-item-content > p.search-list-item-subtitle
+  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
+    type: html_selector
+    results_selector: table.search-result-table tr.rowclick
+    url_selector: a.search-result-title
+    title_selector: a.search-result-title
+  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
+    type: html_selector
+    results_selector: table.result tr[onclick]:has(td.name > div > span.s)
+    url_selector: td.name > a
+    title_selector: td.name > a
+    snippet_selector: td.name > div > span.s
+  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
+    type: html_selector
+    results_selector: table.result tr[onclick]:has(td.name > span.s)
+    url_selector: td.name > a
+    title_selector: td.name > a
+    snippet_selector: td.name > span.s
   focused_url_prefixes:
   - /rs/s
 - name: microcenter

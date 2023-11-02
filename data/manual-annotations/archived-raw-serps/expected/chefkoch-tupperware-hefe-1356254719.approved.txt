@@ -1,0 +1,31 @@
+{
+    "interpreted_query": ", tupperware hefe",
+    "offset": null,
+    "page": 0,
+    "query": ",+tupperware+hefe",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Tupperware",
+            "timestamp": 1356254719,
+            "title": "Lachsgugelhupf",
+            "url": "http://www.chefkoch.de/rezepte/1163591222506767/Lachsgugelhupf.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "im Tupperware Ultra Pro, ohne Sauerteig",
+            "timestamp": 1356254719,
+            "title": "Dinkel - Roggen - Brot",
+            "url": "http://www.chefkoch.de/rezepte/1627221269932352/Dinkel-Roggen-Brot.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "gut im 5 L Ultra von Tupperware zu backen",
+            "timestamp": 1356254719,
+            "title": "Wei\u00dfbrot \u00e0 la Zuckermaus64",
+            "url": "http://www.chefkoch.de/rezepte/1411551246010019/Weissbrot-la-Zuckermaus64.html"
+        }
+    ],
+    "timestamp": 1356254719,
+    "url": "http://www.chefkoch.de/rs/s0/%2C+tupperware+hefe/Rezepte.html"
+}

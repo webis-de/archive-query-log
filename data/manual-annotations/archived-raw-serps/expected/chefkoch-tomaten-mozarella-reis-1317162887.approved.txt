@@ -1,0 +1,220 @@
+{
+    "interpreted_query": ", tomaten mozarella reis",
+    "offset": null,
+    "page": 0,
+    "query": ",+tomaten+mozarella+reis",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\u00d6l erhitzen, Reis und Zwiebeln darin glasig anbraten. ...",
+            "timestamp": 1317162887,
+            "title": "Tomaten - Mozzarella - Risotto",
+            "url": "http://www.chefkoch.de:80/rezepte/1151481221398359/Tomaten-Mozzarella-Risotto.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "ein Hit bei Gro\u00df und Klein.",
+            "timestamp": 1317162887,
+            "title": "Tomaten - Reis - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/1304841235486805/Tomaten-Reis-Auflauf.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Paprika, Tomate und das Hackfleisch in \u00d6l anbraten, bis das hackfleisch kr\u00fcmelig und braun ist, salzen und pfeffern und nach ...",
+            "timestamp": 1317162887,
+            "title": "Mozzarella - Reis - Topf",
+            "url": "http://www.chefkoch.de:80/rezepte/1344271239193318/Mozzarella-Reis-Topf.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "schmeckt mit oder ohne Fleisch",
+            "timestamp": 1317162887,
+            "title": "Leichter Tomaten - Gem\u00fcse - Reis",
+            "url": "http://www.chefkoch.de:80/rezepte/1680461276150415/Leichter-Tomaten-Gemuese-Reis.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "mit Champignons, Paprika, Tomaten. Zwiebeln und Bambussprossen",
+            "timestamp": 1317162887,
+            "title": "\u00dcberbackener Reis",
+            "url": "http://www.chefkoch.de:80/rezepte/1364411241256041/Ueberbackener-Reis.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Die Br\u00fche in einem Topf zum Kochen bringen und warm halten. ...",
+            "timestamp": 1317162887,
+            "title": "Tomaten - Basilikum - Risotto mit Mozzarella",
+            "url": "http://www.chefkoch.de:80/rezepte/1155651221801806/Tomaten-Basilikum-Risotto-mit-Mozzarella.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "lecker mediterran, schnell zubereitet und gut an Sommertagen",
+            "timestamp": 1317162887,
+            "title": "\u00dcberbackene Zucchini mit Mozzarella an Reis",
+            "url": "http://www.chefkoch.de:80/rezepte/1110421217079764/Ueberbackene-Zucchini-mit-Mozzarella-an-Reis.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "unter 500 kcal, fettarm",
+            "timestamp": 1317162887,
+            "title": "Gef\u00fcllte Zucchini mit Mozzarella und Tomate",
+            "url": "http://www.chefkoch.de:80/rezepte/1470731251882257/Gefuellte-Zucchini-mit-Mozzarella-und-Tomate.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Single - Kochen",
+            "timestamp": 1317162887,
+            "title": "Putenschnitzel Italia mit klassischem Tomaten - Mozzarella - Salat",
+            "url": "http://www.chefkoch.de:80/rezepte/309591111532390/Putenschnitzel-Italia-mit-klassischem-Tomaten-Mozzarella-Salat.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Den Reis in kochendes Salzwasser geben, zum Kochen bringen und nach Packungsanleitung ausquellen lassen. ...",
+            "timestamp": 1317162887,
+            "title": "Reis - Gem\u00fcse Gratin",
+            "url": "http://www.chefkoch.de:80/rezepte/1771681287168127/Reis-Gemuese-Gratin.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "Den Reis in Salzwasser garen. Getrocknete Tomaten in W\u00fcrfel schneiden und an die Seite legen. ...",
+            "timestamp": 1317162887,
+            "title": "Mediterrane Puten-Reis Pfanne",
+            "url": "http://www.chefkoch.de:80/rezepte/1944621316530615/Mediterrane-Puten-Reis-Pfanne.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Das \u00d6l in einer gro\u00dfen Pfanne erhitzen. Die Zwiebel darin anbraten, bis sie leicht Farbe bekommt. ...",
+            "timestamp": 1317162887,
+            "title": "Rucola - Tomaten - Risotto",
+            "url": "http://www.chefkoch.de:80/rezepte/1365681241442318/Rucola-Tomaten-Risotto.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "Risottoreis mit doppelter Wassermenge kochen. Ei verschlagen. Mozzarella reiben. ...",
+            "timestamp": 1317162887,
+            "title": "Gem\u00fcse - Reis - Pizza",
+            "url": "http://www.chefkoch.de:80/rezepte/398951128813902/Gemuese-Reis-Pizza.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Den Reis in Salzwasser oder Gem\u00fcsebr\u00fche k\u00f6rnig kochen und anschlie\u00dfend abgie\u00dfen. ...",
+            "timestamp": 1317162887,
+            "title": "H\u00e4hnchen - Reis - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/1658361273905420/Haehnchen-Reis-Auflauf.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Zun\u00e4chst den Reis mit etwas Gem\u00fcsebr\u00fche und Salz garen. ...",
+            "timestamp": 1317162887,
+            "title": "Reis-Hackfleisch Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/1938691315666217/Reis-Hackfleisch-Auflauf.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Das Hackfleisch in eine Sch\u00fcssel geben. ...",
+            "timestamp": 1317162887,
+            "title": "Tomaten - Hackfleisch - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/1510161256334428/Tomaten-Hackfleisch-Auflauf.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "mit Reis und K\u00e4se",
+            "timestamp": 1317162887,
+            "title": "Gef\u00fcllte Paprikaschoten",
+            "url": "http://www.chefkoch.de:80/rezepte/1566261264077436/Gefuellte-Paprikaschoten.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Die Fischfilets vorbereiten, kalt abbrausen, trocken tupfen, mit Zitronensaft betr\u00e4ufeln, salzen und pfeffern. ...",
+            "timestamp": 1317162887,
+            "title": "\u00dcberbackener Pangasius mit Pesto und Mozzarella",
+            "url": "http://www.chefkoch.de:80/rezepte/1643881272007944/Ueberbackener-Pangasius-mit-Pesto-und-Mozzarella.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Den Backofen auf 200\u00b0C vorheizen. Die M\u00f6hren sch\u00e4len, waschen und in d\u00fcnne St\u00fcckchen schneiden. ...",
+            "timestamp": 1317162887,
+            "title": "Einfache H\u00fchnerbr\u00fcste mit Tomaten aus dem Ofen",
+            "url": "http://www.chefkoch.de:80/rezepte/1863761302090858/Einfache-Huehnerbrueste-mit-Tomaten-aus-dem-Ofen.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "lecker, schnell, einfach, nach Belieben vergetarisch",
+            "timestamp": 1317162887,
+            "title": "So\u00dfe zu Nudeln oder Reis",
+            "url": "http://www.chefkoch.de:80/rezepte/1685251276771178/Sosse-zu-Nudeln-oder-Reis.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "eines der Leibgerichte der Familie",
+            "timestamp": 1317162887,
+            "title": "Kartoffel - Reis - Auflauf \u00e0 la Luigi",
+            "url": "http://www.chefkoch.de:80/rezepte/1809081292927787/Kartoffel-Reis-Auflauf-la-Luigi.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "Eigenkreation",
+            "timestamp": 1317162887,
+            "title": "\u00dcberbackene Spinat - Feta - Reis - Zucchini",
+            "url": "http://www.chefkoch.de:80/rezepte/653061166793152/Ueberbackene-Spinat-Feta-Reis-Zucchini.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "Die Auberginen putzen, waschen und l\u00e4ngs in Scheiben schneiden. ...",
+            "timestamp": 1317162887,
+            "title": "\u00dcberbackene Auberginenrouladen mit Hackfleischf\u00fcllung auf Reis",
+            "url": "http://www.chefkoch.de:80/rezepte/1227671227901499/Ueberbackene-Auberginenrouladen-mit-Hackfleischfuellung-auf-Reis.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "Rissotto: Reis mit 400 ml Wasser aufkochen. Zugedeckt bei kleinster Hitze 15 Min. ...",
+            "timestamp": 1317162887,
+            "title": "Reisb\u00e4llchen mit Mozarellaf\u00fcllung und Tomaten",
+            "url": "http://www.chefkoch.de:80/rezepte/120061051084977/Reisbaellchen-mit-Mozarellafuellung-und-Tomaten.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Den Reis mit dem Wasser und dem Salz aufkochen, die Hitze auf die allerkleinste Stufe zur\u00fcckdrehen und den Reis ca. 20 min. ...",
+            "timestamp": 1317162887,
+            "title": "Mangoldr\u00f6llchen mit Hackfleisch im Tomaten - Paprikabett",
+            "url": "http://www.chefkoch.de:80/rezepte/837021188485696/Mangoldroellchen-mit-Hackfleisch-im-Tomaten-Paprikabett.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "Risotto: Reis mit 400 ml Wasser aufkochen. Zugedeckt bei kleinster Hitze 15 Min. quellen lassen (od. ...",
+            "timestamp": 1317162887,
+            "title": "Reisb\u00e4llchen mit Mozzarellaf\u00fcllung und Tomaten",
+            "url": "http://www.chefkoch.de:80/rezepte/1353991220227/Reisbaellchen-mit-Mozzarellafuellung-und-Tomaten.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "Die Zucchini in der Mitte teilen und aush\u00f6hlen. ...",
+            "timestamp": 1317162887,
+            "title": "Gef\u00fcllte Zucchini mit Tomatenso\u00dfe und Reis",
+            "url": "http://www.chefkoch.de:80/rezepte/1439061248702592/Gefuellte-Zucchini-mit-Tomatensosse-und-Reis.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "Auberginen mit Hackfleisch in Tomatenso\u00dfe auf Reis",
+            "timestamp": 1317162887,
+            "title": "Auberginen - Rouladen \u00fcberbacken",
+            "url": "http://www.chefkoch.de:80/rezepte/1329571237811444/Auberginen-Rouladen-ueberbacken.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Meine schnellere Alternative zu gef\u00fcllten Paprikaschoten mit Reis",
+            "timestamp": 1317162887,
+            "title": "Hackfleischpaprikarisotto",
+            "url": "http://www.chefkoch.de:80/rezepte/1922731313567749/Hackfleischpaprikarisotto.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "Als erstes Zwiebel klein schneiden und in einer Pfanne leicht anschwitzen und zwar mit den Gew\u00fcrzen und der Br\u00fche(aber vorsicht ...",
+            "timestamp": 1317162887,
+            "title": "W\u00fcrzige Tomatensuppe",
+            "url": "http://www.chefkoch.de:80/rezepte/1296441234799066/Wuerzige-Tomatensuppe.html"
+        }
+    ],
+    "timestamp": 1317162887,
+    "url": "http://www.chefkoch.de:80/rs/s0/%2C+tomaten+mozarella+reis/Rezepte.html"
+}

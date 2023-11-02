@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "speck zucchini eier sahne",
+    "offset": null,
+    "page": 0,
+    "query": "speck+zucchini+eier+sahne",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1222747904,
+            "title": "Kartoffelauflauf mit Zucchini, Karotten und Speck",
+            "url": "http://www.chefkoch.de:80/rezepte/634691164190603/Kartoffelauflauf-mit-Zucchini-Karotten-und-Speck.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "auch ideal zum Einfrieren",
+            "timestamp": 1222747904,
+            "title": "Gem\u00fcse - Speck - Tarte",
+            "url": "http://www.chefkoch.de:80/rezepte/593481158999183/Gemuese-Speck-Tarte.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1222747904,
+            "title": "Ofenschlupfer",
+            "url": "http://www.chefkoch.de:80/rezepte/229781094392728/Ofenschlupfer.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1222747904,
+            "title": "Quiche Loirraine",
+            "url": "http://www.chefkoch.de:80/rezepte/84871033306806/Quiche-Loirraine.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1222747904,
+            "title": "Tortelliniauflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/934291198840110/Tortelliniauflauf.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1222747904,
+            "title": "Gem\u00fcsegratin",
+            "url": "http://www.chefkoch.de:80/rezepte/99661039870806/Gemuesegratin.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "\u00e0 la Helmut",
+            "timestamp": 1222747904,
+            "title": "Mangoldwickerl",
+            "url": "http://www.chefkoch.de:80/rezepte/708111173433518/Mangoldwickerl.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1222747904,
+            "title": "Gem\u00fcsetarte in Bl\u00e4tterteig",
+            "url": "http://www.chefkoch.de:80/rezepte/457041138795702/Gemuesetarte-in-Blaetterteig.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1222747904,
+            "title": "Zucchiniquiche",
+            "url": "http://www.chefkoch.de:80/rezepte/937401199375864/Zucchiniquiche.html"
+        }
+    ],
+    "timestamp": 1222747904,
+    "url": "http://www.chefkoch.de:80/rs/s0/speck+zucchini+eier+sahne/Rezepte.html"
+}

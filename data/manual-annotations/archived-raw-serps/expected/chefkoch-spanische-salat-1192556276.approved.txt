@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "spanische salat",
+    "offset": null,
+    "page": 0,
+    "query": "spanische+salat",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1192556276,
+            "title": "Spanischer Salat",
+            "url": "http://www.chefkoch.de:80/rezepte/659281167743429/Spanischer-Salat.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "spanischer Tapas Salat",
+            "timestamp": 1192556276,
+            "title": "Ensalada rusa",
+            "url": "http://www.chefkoch.de:80/rezepte/705961173191758/Ensalada-rusa.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Spanischer Kartoffel - Mayonnaise - Salat",
+            "timestamp": 1192556276,
+            "title": "Ensaladilla rusa",
+            "url": "http://www.chefkoch.de:80/rezepte/107791045312722/Ensaladilla-rusa.html"
+        }
+    ],
+    "timestamp": 1192556276,
+    "url": "http://www.chefkoch.de:80/rs/s0/spanische+salat/Rezepte.html"
+}

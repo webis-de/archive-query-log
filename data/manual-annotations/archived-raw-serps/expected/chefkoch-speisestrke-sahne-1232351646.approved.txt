@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "speisest\u00e4rke sahne",
+    "offset": null,
+    "page": 0,
+    "query": "speisest\ufffdrke+sahne",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Viel Sahne, wenig Zucker - einfach lecker",
+            "timestamp": 1232351646,
+            "title": "Himbeer - Schoko - Sahne - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/878801193295750/Himbeer-Schoko-Sahne-Torte.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Holland's Lieblingsnachspeise",
+            "timestamp": 1232351646,
+            "title": "Vla mit Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/378011124058202/Vla-mit-Sahne.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "schnell und lecker",
+            "timestamp": 1232351646,
+            "title": "Sahne - Waffeln",
+            "url": "http://www.chefkoch.de:80/rezepte/650101166432264/Sahne-Waffeln.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "auf Toast, als Dip oder zum Fondue",
+            "timestamp": 1232351646,
+            "title": "Sahne - Champignons",
+            "url": "http://www.chefkoch.de:80/rezepte/552241152877891/Sahne-Champignons.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "so wie bei Oma zu hause!",
+            "timestamp": 1232351646,
+            "title": "Sahne - Waffeln",
+            "url": "http://www.chefkoch.de:80/rezepte/1105731216657109/Sahne-Waffeln.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "mit Vanille verfeinert",
+            "timestamp": 1232351646,
+            "title": "Kokos - Sahne - Kipferl",
+            "url": "http://www.chefkoch.de:80/rezepte/160401070111280/Kokos-Sahne-Kipferl.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "einfach und lecker",
+            "timestamp": 1232351646,
+            "title": "Maracuja - Sahne - Creme",
+            "url": "http://www.chefkoch.de:80/rezepte/988271204124332/Maracuja-Sahne-Creme.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Ein leckerer Nachtisch.",
+            "timestamp": 1232351646,
+            "title": "Kirsch - Sahne - Gr\u00fctze",
+            "url": "http://www.chefkoch.de:80/rezepte/75491028714540/Kirsch-Sahne-Gruetze.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Pfirsich - K\u00e4se - Sahne - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/600861159859350/Pfirsich-Kaese-Sahne-Torte.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "D\u00e4nische Rote Gr\u00fctze mit Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/687601171269424/Daenische-Rote-Gruetze-mit-Sahne.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "mit Sahne",
+            "timestamp": 1232351646,
+            "title": "Kirsch - Schoko - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/912511196425714/Kirsch-Schoko-Torte.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Lachs - Sahne Gratin",
+            "url": "http://www.chefkoch.de:80/rezepte/1256981231159532/Lachs-Sahne-Gratin.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "ganz flott auf einem Obstboden",
+            "timestamp": 1232351646,
+            "title": "Kirsch - Sahne - Kuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1266531231849946/Kirsch-Sahne-Kuchen.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "erfrischend und fruchtig",
+            "timestamp": 1232351646,
+            "title": "Saure Sahne - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/1100311216010877/Saure-Sahne-Torte.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Himbeer - Sahne - Rolle",
+            "url": "http://www.chefkoch.de:80/rezepte/88901034682917/Himbeer-Sahne-Rolle.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Mandarinen - Sahne - Kuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/459061138981151/Mandarinen-Sahne-Kuchen.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Erdbeertorte \u00e0 la Dennis",
+            "timestamp": 1232351646,
+            "title": "Erbeer - Pudding - Sahne Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/476771141654915/Erbeer-Pudding-Sahne-Torte.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "K\u00e4se - Sahne - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/602011159953922/Kaese-Sahne-Torte.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "oder anders herum",
+            "timestamp": 1232351646,
+            "title": "Erdbeeren mit Weinschaum - Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/1029991208187117/Erdbeeren-mit-Weinschaum-Sahne.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Biskuitroulade mit Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/1084751214305515/Biskuitroulade-mit-Sahne.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Schoko - Sahne - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/1174511223575027/Schoko-Sahne-Torte.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Sahne - Apfel - Rolle",
+            "url": "http://www.chefkoch.de:80/rezepte/548111152368262/Sahne-Apfel-Rolle.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Biskuitschnitten mit Haselnuss - Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/756401178437167/Biskuitschnitten-mit-Haselnuss-Sahne.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "Wenn Schwaben schlemmen...",
+            "timestamp": 1232351646,
+            "title": "Maultaschen in Champignon - Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/275531105063605/Maultaschen-in-Champignon-Sahne.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1232351646,
+            "title": "Sauerkirschkuchen mit saurer Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/309921111590511/Sauerkirschkuchen-mit-saurer-Sahne.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "Der Klassiker im Sommer",
+            "timestamp": 1232351646,
+            "title": "Erdbeer - Sahne - Rolle",
+            "url": "http://www.chefkoch.de:80/rezepte/383981124968384/Erdbeer-Sahne-Rolle.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "Stockfisch mit Sahne",
+            "timestamp": 1232351646,
+            "title": "Bacalhau com natas",
+            "url": "http://www.chefkoch.de:80/rezepte/636521164375642/Bacalhau-com-natas.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "frische, fruchtige Sommertorte",
+            "timestamp": 1232351646,
+            "title": "Charlies Erdbeer - Sahne - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/684941171007260/Charlies-Erdbeer-Sahne-Torte.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Giottotorte",
+            "timestamp": 1232351646,
+            "title": "Haselnuss - Sahne - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/821851186722713/Haselnuss-Sahne-Torte.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "nicht di\u00e4tgeeignet",
+            "timestamp": 1232351646,
+            "title": "Speck - Sahne - Sauce",
+            "url": "http://www.chefkoch.de:80/rezepte/1065011211814851/Speck-Sahne-Sauce.html"
+        }
+    ],
+    "timestamp": 1232351646,
+    "url": "http://www.chefkoch.de:80/rs/s0/speisest%E4rke+sahne/Rezepte.html"
+}

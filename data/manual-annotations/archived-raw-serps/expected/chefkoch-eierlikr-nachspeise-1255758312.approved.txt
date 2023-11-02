@@ -1,0 +1,38 @@
+{
+    "interpreted_query": "eierlik\u00f6r nachspeise",
+    "offset": null,
+    "page": 0,
+    "query": "eierlik\ufffdr+nachspeise",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Schicht-Nachspeise",
+            "timestamp": 1255758312,
+            "title": "Vanille - Kirsch - Speise mit Eierlik\u00f6r",
+            "url": "http://www.chefkoch.de:80/rezepte/726371175429756/Vanille-Kirsch-Speise-mit-Eierlikoer.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1255758312,
+            "title": "Kirsch - Quark - Nachspeise",
+            "url": "http://www.chefkoch.de:80/rezepte/902101195554588/Kirsch-Quark-Nachspeise.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "leckere Nachspeise",
+            "timestamp": 1255758312,
+            "title": "Schmandmousse",
+            "url": "http://www.chefkoch.de:80/rezepte/799391183557976/Schmandmousse.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "leckere Nachspeise mit Quark, Sahne und Kirschen",
+            "timestamp": 1255758312,
+            "title": "Dumm und D\u00e4mlich",
+            "url": "http://www.chefkoch.de:80/rezepte/1037131208845436/Dumm-und-Daemlich.html"
+        }
+    ],
+    "timestamp": 1255758312,
+    "url": "http://www.chefkoch.de:80/rs/s0/eierlik%F6r+nachspeise/Rezepte.html"
+}

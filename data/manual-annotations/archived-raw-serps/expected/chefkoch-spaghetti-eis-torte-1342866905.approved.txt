@@ -1,0 +1,24 @@
+{
+    "interpreted_query": ",spaghetti eis torte",
+    "offset": null,
+    "page": 0,
+    "query": ",spaghetti+eis+torte",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "sieht aus wie Spaghetti-Eis",
+            "timestamp": 1342866905,
+            "title": "Spaghetti-Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/1911061311519563/Spaghetti-Torte.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "mal eine etwas andere Torte",
+            "timestamp": 1342866905,
+            "title": "Spaghetti - Eis - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/1440961248938234/Spaghetti-Eis-Torte.html"
+        }
+    ],
+    "timestamp": 1342866905,
+    "url": "http://www.chefkoch.de:80/rs/s0/,spaghetti+eis+torte/Rezepte.html"
+}

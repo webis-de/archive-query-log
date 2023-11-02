@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "speck n dicken",
+    "offset": null,
+    "page": 0,
+    "query": "speck+n+dicken",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen mit Speck und Salzkartoffeln",
+            "url": "http://www.chefkoch.de/rezepte/974021203003041/Dicke-Bohnen-mit-Speck-und-Salzkartoffeln.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen mit Speck",
+            "url": "http://www.chefkoch.de/rezepte/937331199373162/Dicke-Bohnen-mit-Speck.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen und Kartoffeln untereinander mit durchwachsenem Speck",
+            "url": "http://www.chefkoch.de/rezepte/1532631258976499/Dicke-Bohnen-und-Kartoffeln-untereinander-mit-durchwachsenem-Speck.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen mit Speck",
+            "url": "http://www.chefkoch.de/rezepte/1387371243792947/Dicke-Bohnen-mit-Speck.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Grassis Sauerkraut mit Speck und dicker R\u00e4ucherrippe",
+            "url": "http://www.chefkoch.de/rezepte/1342661239093774/Grassis-Sauerkraut-mit-Speck-und-dicker-Raeucherrippe.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Westf\u00e4lisches Schnitzel mit selbst gemachten Pommes und dicken Bohnen mit Speck",
+            "url": "http://www.chefkoch.de/rezepte/814151185718030/Westfaelisches-Schnitzel-mit-selbst-gemachten-Pommes-und-dicken-Bohnen-mit-Speck.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen mit Speck und Knoblauch",
+            "url": "http://www.chefkoch.de/rezepte/897571195196943/Dicke-Bohnen-mit-Speck-und-Knoblauch.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Axels Dicke Bohnen mit Speck",
+            "url": "http://www.chefkoch.de/rezepte/938821199536904/Axels-Dicke-Bohnen-mit-Speck.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen Eintopf",
+            "url": "http://www.chefkoch.de/rezepte/2258371361219791/Dicke-Bohnen-Eintopf.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Rippe mit dicken Bohnen",
+            "url": "http://www.chefkoch.de/rezepte/1632601270841438/Dicke-Rippe-mit-dicken-Bohnen.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Favas \u00e0 Portuguesa",
+            "url": "http://www.chefkoch.de/rezepte/617401161775644/Favas-Portuguesa.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Gudruns Apfel - Speck - Ziegenk\u00e4se T\u00fcrmchen mit Honig und Thymian",
+            "url": "http://www.chefkoch.de/rezepte/813841185701217/Gudruns-Apfel-Speck-Ziegenkaese-Tuermchen-mit-Honig-und-Thymian.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen",
+            "url": "http://www.chefkoch.de/rezepte/867171192168468/Dicke-Bohnen.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Birnen, Bohnen und Speck",
+            "url": "http://www.chefkoch.de/rezepte/1026281207810607/Birnen-Bohnen-und-Speck.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen in Specksauce",
+            "url": "http://www.chefkoch.de/rezepte/28861007224554/Dicke-Bohnen-in-Specksauce.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen westf\u00e4lische Art",
+            "url": "http://www.chefkoch.de/rezepte/515341147604138/Dicke-Bohnen-westfaelische-Art.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Bohnen mit Speck",
+            "url": "http://www.chefkoch.de/rezepte/314501112920589/Bohnen-mit-Speck.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen, mal anders",
+            "url": "http://www.chefkoch.de/rezepte/569511155630177/Dicke-Bohnen-mal-anders.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Wei\u00dfe Bohnen mit Speck",
+            "url": "http://www.chefkoch.de/rezepte/2316321369296972/Weisse-Bohnen-mit-Speck.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Bohnen mit Speck",
+            "url": "http://www.chefkoch.de/rezepte/1013981206610740/Bohnen-mit-Speck.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Leberk\u00e4se - Pfanne mit dicken Bohnen",
+            "url": "http://www.chefkoch.de/rezepte/436601135348511/Leberkaese-Pfanne-mit-dicken-Bohnen.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Penne mit dicken Bohnen und Sauerampferpesto",
+            "url": "http://www.chefkoch.de/rezepte/660741167900149/Penne-mit-dicken-Bohnen-und-Sauerampferpesto.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen mit Bauchspeck",
+            "url": "http://www.chefkoch.de/rezepte/937341199373641/Dicke-Bohnen-mit-Bauchspeck.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen in Specksauce",
+            "url": "http://www.chefkoch.de/rezepte/403921129675206/Dicke-Bohnen-in-Specksauce.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke - Bohnen - Suppe",
+            "url": "http://www.chefkoch.de/rezepte/76301029227951/Dicke-Bohnen-Suppe.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Crostini mit K\u00e4se und Speck",
+            "url": "http://www.chefkoch.de/rezepte/1680451276148858/Crostini-mit-Kaese-und-Speck.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Bohnen mit Mettendchen",
+            "url": "http://www.chefkoch.de/rezepte/588371158217486/Dicke-Bohnen-mit-Mettendchen.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicke Rippe mit Sauerkraut",
+            "url": "http://www.chefkoch.de/rezepte/1592931266591473/Dicke-Rippe-mit-Sauerkraut.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Dicker Hannes",
+            "url": "http://www.chefkoch.de/rezepte/1970701319984317/Dicker-Hannes.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1370169101,
+            "title": "Feldsalat mit sautierten Steinpilzen und Speck",
+            "url": "http://www.chefkoch.de/rezepte/2226501356535632/Feldsalat-mit-sautierten-Steinpilzen-und-Speck.html"
+        }
+    ],
+    "timestamp": 1370169101,
+    "url": "http://www.chefkoch.de/rs/s0/speck+n+dicken/Rezepte.html"
+}

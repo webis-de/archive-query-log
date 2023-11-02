@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "spaghetti h\u00e4hnchen",
+    "offset": null,
+    "page": 0,
+    "query": "spaghetti+h\ufffdhnchen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1192740442,
+            "title": "Spaghetti mit H\u00e4hnchen",
+            "url": "http://www.chefkoch.de:80/rezepte/692021171786839/Spaghetti-mit-Haehnchen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1192740442,
+            "title": "Scharfe H\u00e4hnchen - Spaghetti Pfanne",
+            "url": "http://www.chefkoch.de:80/rezepte/236461096379943/Scharfe-Haehnchen-Spaghetti-Pfanne.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1192740442,
+            "title": "Spaghetti mit H\u00e4hnchen",
+            "url": "http://www.chefkoch.de:80/rezepte/415631131966624/Spaghetti-mit-Haehnchen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1192740442,
+            "title": "Spaghetti - H\u00e4hnchen - Auflauf",
+            "url": "http://www.chefkoch.de:80/rezepte/187351080125826/Spaghetti-Haehnchen-Auflauf.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1192740442,
+            "title": "SABO - Spaghetti mit H\u00e4hnchen, Tomaten und Paprikasauce",
+            "url": "http://www.chefkoch.de:80/rezepte/141081060851953/SABO-Spaghetti-mit-Haehnchen-Tomaten-und-Paprikasauce.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1192740442,
+            "title": "H\u00e4hnchen Veroneser Art",
+            "url": "http://www.chefkoch.de:80/rezepte/478661141837391/Haehnchen-Veroneser-Art.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1192740442,
+            "title": "Tagliatelle Boscaiola dopo Clarissa",
+            "url": "http://www.chefkoch.de:80/rezepte/449361137206689/Tagliatelle-Boscaiola-dopo-Clarissa.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "H\u00fchnchen mit Nudeln",
+            "timestamp": 1192740442,
+            "title": "Massas com frango",
+            "url": "http://www.chefkoch.de:80/rezepte/631491163772288/Massas-com-frango.html"
+        }
+    ],
+    "timestamp": 1192740442,
+    "url": "http://www.chefkoch.de:80/rs/s0/spaghetti+h%E4hnchen/Rezepte.html"
+}

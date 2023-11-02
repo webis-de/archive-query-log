@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "thermomix gef\u00fcllten",
+    "offset": null,
+    "page": 0,
+    "query": "thermomix+gef\ufffdllten",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1390802313,
+            "title": "Profiteroles-gef\u00fcllte Windbeutel",
+            "url": "http://www.chefkoch.de:80/rezepte/2082621336379569/Profiteroles-gefuellte-Windbeutel.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1390802313,
+            "title": "Bl\u00e4tterteig gef\u00fcllt mit Oliven - Schafsk\u00e4se - Creme",
+            "url": "http://www.chefkoch.de:80/rezepte/1673231275336172/Blaetterteig-gefuellt-mit-Oliven-Schafskaese-Creme.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1390802313,
+            "title": "Gef\u00fcllte Brotrolle",
+            "url": "http://www.chefkoch.de:80/rezepte/1803861291710333/Gefuellte-Brotrolle.html"
+        }
+    ],
+    "timestamp": 1390802313,
+    "url": "http://www.chefkoch.de:80/rs/s0/thermomix+gef%FCllten/Rezepte.html"
+}

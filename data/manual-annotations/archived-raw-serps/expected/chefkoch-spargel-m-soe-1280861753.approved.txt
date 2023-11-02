@@ -1,0 +1,171 @@
+{
+    "interpreted_query": "spargel m. so\u00dfe",
+    "offset": null,
+    "page": 0,
+    "query": "spargel+m.+so\ufffde",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Spargel mit kalter  So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1080231213704773/Spargel-mit-kalter-Sosse.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Spargel mit Gorgonzola - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1520351257254509/Spargel-mit-Gorgonzola-Sosse.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Dickmilchso\u00dfe mit Ei und Kresse",
+            "timestamp": 1280861753,
+            "title": "Erfrischende So\u00dfe zu Spargel",
+            "url": "http://www.chefkoch.de:80/rezepte/273951104744933/Erfrischende-Sosse-zu-Spargel.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Kr\u00e4uter - So\u00dfe zum Spargel",
+            "url": "http://www.chefkoch.de:80/rezepte/878761193294348/Kraeuter-Sosse-zum-Spargel.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "mit einer Butter-Eier-So\u00dfe",
+            "timestamp": 1280861753,
+            "title": "Spargel fl\u00e4misch",
+            "url": "http://www.chefkoch.de:80/rezepte/1620911269337994/Spargel-flaemisch.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "lecker zu Spargel und gekochtem Fleisch oder Bratenresten",
+            "timestamp": 1280861753,
+            "title": "Pietras Bozner So\u00dfe zu Spargel",
+            "url": "http://www.chefkoch.de:80/rezepte/759701178709656/Pietras-Bozner-Sosse-zu-Spargel.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Spargel - Speck - So\u00dfe zu Nudeln",
+            "url": "http://www.chefkoch.de:80/rezepte/664311168339894/Spargel-Speck-Sosse-zu-Nudeln.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Besonders f\u00fcr Diabetiker geeignet ,3 BE",
+            "timestamp": 1280861753,
+            "title": "Spargel mit Schinken - Pilz - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/396961128504440/Spargel-mit-Schinken-Pilz-Sosse.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Spaghetti in Spargel - Wei\u00dfwein - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1042491209277443/Spaghetti-in-Spargel-Weisswein-Sosse.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "schmeckt herrlich zu Spargel",
+            "timestamp": 1280861753,
+            "title": "Bozner (Bozener) So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/446941136946137/Bozner-Bozener-Sosse.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "So\u00dfe f\u00fcr 1 1/2 - 2 kg Spargel",
+            "timestamp": 1280861753,
+            "title": "Brennessel - Ei - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/390761126510892/Brennessel-Ei-Sosse.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "passt besonders gut zu Spargel",
+            "timestamp": 1280861753,
+            "title": "Orangen - Curry - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1175591223725815/Orangen-Curry-Sosse.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Gr\u00fcner Spargel mit Zitronen - Pfeffer - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/687911171276878/Gruener-Spargel-mit-Zitronen-Pfeffer-Sosse.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Spargel mit leichter Kr\u00e4uter - Joghurt - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1141571220439375/Spargel-mit-leichter-Kraeuter-Joghurt-Sosse.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "LF30 + WW-tauglich",
+            "timestamp": 1280861753,
+            "title": "Spargel mit Krabben",
+            "url": "http://www.chefkoch.de:80/rezepte/260261101721866/Spargel-mit-Krabben.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Bl\u00e4tterteig - Strudel mit Spargel und Putenfarce an Kr\u00e4uter - Joghurt - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1152971221551838/Blaetterteig-Strudel-mit-Spargel-und-Putenfarce-an-Kraeuter-Joghurt-Sosse.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Spargelgem\u00fcse mit Rucola - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/147401063633093/Spargelgemuese-mit-Rucola-Sosse.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Spargel mit Schwarzw\u00e4lder Schinken",
+            "url": "http://www.chefkoch.de:80/rezepte/796691183297678/Spargel-mit-Schwarzwaelder-Schinken.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "gr\u00fcner Spargel in Dinkelnudelr\u00f6llchen mit Veloute So\u00dfe",
+            "timestamp": 1280861753,
+            "title": "Spargelkrapfen",
+            "url": "http://www.chefkoch.de:80/rezepte/1367601241605947/Spargelkrapfen.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "kalte, leichte So\u00dfe zu Spargel oder Gegrilltem",
+            "timestamp": 1280861753,
+            "title": "Joghurt - Kr\u00e4uter - Dip",
+            "url": "http://www.chefkoch.de:80/rezepte/1367401241600111/Joghurt-Kraeuter-Dip.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1280861753,
+            "title": "Nudeln mit Thunfisch - Sahne - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/339341117754746/Nudeln-mit-Thunfisch-Sahne-Sosse.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "und gebratenem Gr\u00fcnen Spargel mit Balsamico - Butter - So\u00dfe",
+            "timestamp": 1280861753,
+            "title": "Lammfilet - B\u00e4rlauch - Filo - Strudel mit Knoblauch - Mandel - P\u00fcree",
+            "url": "http://www.chefkoch.de:80/rezepte/1021671207384321/Lammfilet-Baerlauch-Filo-Strudel-mit-Knoblauch-Mandel-Pueree.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "nach Art des Fletchers",
+            "timestamp": 1280861753,
+            "title": "Tournedos exquisit",
+            "url": "http://www.chefkoch.de:80/rezepte/1712441280064454/Tournedos-exquisit.html"
+        }
+    ],
+    "timestamp": 1280861753,
+    "url": "http://www.chefkoch.de:80/rs/s0/spargel+m.+so%DFe/Rezepte.html"
+}
