@@ -68,11 +68,9 @@
                         <td style="text-align: right">{{ "{:,.0f}".format(statistics.total) }}</td>
                         <td style="text-align: right">{{ statistics.disk_size }}</td>
                         <td>
-                            {% if statistics.last_modified and statistics.last_modified_delta %}
+                            {% if statistics.last_modified %}
                             <time datetime="{{ statistics.last_modified.isoformat() }}">
-                                {{ statistics.last_modified_delta }} ago
-                                <br>
-                                <small>{{ statistics.last_modified.strftime("%c") }}</small>
+                                {{ statistics.last_modified.strftime("%c") }}
                             </time>
                             {% else %}
                             —
