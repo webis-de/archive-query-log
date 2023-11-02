@@ -18,14 +18,13 @@ from more_itertools import spy
 from mypy_boto3_s3 import S3Client
 from tqdm.auto import tqdm
 from warcio import ArchiveIterator as WarcioArchiveIterator, WARCWriter
-from warcio.recordloader import ArcWarcRecord as WarcioArcWarcRecord, \
-    ArcWarcRecord
+from warcio.recordloader import ArcWarcRecord as WarcioWarcRecord
 
 _S3CFG_PATH = Path("~/.s3cfg").expanduser()
 
 _DEFAULT_MAX_FILE_SIZE = 1_000_000_000  # 1GB
 
-WarcRecord = FastwarcWarcRecord | WarcioArcWarcRecord
+WarcRecord = FastwarcWarcRecord | WarcioWarcRecord
 ArchiveIterator = FastwarcArchiveIterator | WarcioArchiveIterator
 
 WarcIterable = (
@@ -48,7 +47,7 @@ def _write_records(
     # Write WARC info record.
     with GzipFile(fileobj=file, mode="wb") as gzip_file:
         writer = WARCWriter(gzip_file, gzip=False)
-        warc_info_record: ArcWarcRecord = writer.create_warcinfo_record(
+        warc_info_record: WarcioWarcRecord = writer.create_warcinfo_record(
             filename=file_name, info={})
         writer.write_record(warc_info_record)
 
@@ -86,7 +85,7 @@ def _write_records(
                 yield offset
 
     # Using warcio.
-    elif isinstance(head[0], WarcioArcWarcRecord):
+    elif isinstance(head[0], WarcioWarcRecord):
         for record in records:
             offset = file.tell()
             with TemporaryFile() as tmp_file:
