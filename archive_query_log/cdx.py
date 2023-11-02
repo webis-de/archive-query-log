@@ -188,63 +188,87 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
     else:
         raise ValueError(f"Missing digest in CDX line: {line}")
     # Parse HTTP status code from 'statuscode' or 'status' field.
-    if "statuscode" in line and line["statuscode"] is not None:
-        status_code = int(line.pop("statuscode"))
-    elif "status" in line and line["status"] is not None:
-        status_code = int(line.pop("status"))
+    if "statuscode" in line:
+        status_code_string = line.pop("statuscode")
+        if status_code_string is None:
+            status_code = None
+        else:
+            status_code = int(status_code_string)
+    elif "status" in line:
+        status_code_string = line.pop("status")
+        if status_code_string is None:
+            status_code = None
+        else:
+            status_code = int(status_code_string)
     else:
         status_code = None
     # Parse mime type guess from 'mimetype' or 'mime' field.
-    if "mimetype" in line and line["mimetype"] is not None:
+    if "mimetype" in line:
         mimetype = line.pop("mimetype")
-    elif "mime" in line and line["mime"] is not None:
+    elif "mime" in line:
         mimetype = line.pop("mime")
     else:
         mimetype = None
     # Parse filename from 'filename' field.
-    if "filename" in line and line["filename"] is not None:
+    if "filename" in line:
         filename = line.pop("filename")
     else:
         filename = None
     # Parse Gzip envelope offset from 'offset' field.
-    if "offset" in line and line["offset"] is not None:
-        offset = int(line.pop("offset"))
+    if "offset" in line:
+        offset_string = line.pop("offset")
+        if offset_string is None:
+            offset = None
+        else:
+            offset = int(offset_string)
     else:
         offset = None
     # Parse Gzip envelope length from 'length' field.
-    if "length" in line and line["length"] is not None:
-        length = int(line.pop("length"))
+    if "length" in line:
+        length_string = line.pop("length")
+        if length_string is None:
+            length = None
+        else:
+            length = int(length_string)
     else:
         length = None
     # Parse access policy from 'access' field.
-    if "access" in line and line["access"] is not None:
+    if "access" in line:
         access = line.pop("access")
     else:
         access = None
     # Parse redirect URL from 'redirect' field.
-    if "redirect" in line and line["redirect"] is not None:
+    if "redirect" in line:
         redirect_url = line.pop("redirect")
     else:
         redirect_url = None
     # Parse flags from 'flags' or 'robotflags' field.
-    if "flags" in line and line["flags"] is not None:
-        flags = _parse_cdx_flags(line.pop("flags"))
-    elif "robotflags" in line and line["robotflags"] is not None:
-        flags = _parse_cdx_flags(line.pop("robotflags"))
+    if "flags" in line:
+        flags_string = line.pop("flags")
+        if flags_string is None:
+            flags = None
+        else:
+            flags = _parse_cdx_flags(flags_string)
+    elif "robotflags" in line:
+        flags_string = line.pop("robotflags")
+        if flags_string is None:
+            flags = None
+        else:
+            flags = _parse_cdx_flags(flags_string)
     else:
         flags = None
     # Parse collection from 'collection' field.
-    if "collection" in line and line["collection"] is not None:
+    if "collection" in line:
         collection = line.pop("collection")
     else:
         collection = None
     # Parse source from 'source' field.
-    if "source" in line and line["source"] is not None:
+    if "source" in line:
         source = line.pop("source")
     else:
         source = None
     # Parse source collection from 'source-coll' field.
-    if "source-coll" in line and line["source-coll"] is not None:
+    if "source-coll" in line:
         source_collection = line.pop("source-coll")
     else:
         source_collection = None
