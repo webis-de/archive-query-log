@@ -1,72 +1,142 @@
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
-from functools import cached_property
 from json import loads, JSONDecodeError
 from typing import Iterator, NamedTuple, Any, Iterable
-from urllib.parse import urlsplit
+from urllib.parse import urlencode, urljoin
 from warnings import warn
 
-from click import echo
 from requests import Session, Response
 from tqdm.auto import tqdm
 
 
 class CdxFlag(Enum):
     """
-    See:
-    https://github.com/iipc/openwayback/blob/98bbc1a6e03f8cb44f00e7505f0e29bccef87abf/wayback-core/src/main/java/org/archive/wayback/core/CaptureSearchResult.java#L97-L120
+    Flags indicating robot instructions found in an HTML page
+    or password protection.
+
+    See: https://noarchive.net/
     """
     PASSWORD_PROTECTED = "P"  # nosec: 259
+    """
+    Non-standard robot flag indicating that the capture is password protected.
+    """
     NO_FOLLOW = "F"
+    """
+    Robot flag indicating that links from the capture should not be followed.
+    """
     NO_INDEX = "I"
+    """
+    Robot flag indicating that the capture should not be indexed.
+    """
     NO_ARCHIVE = "A"
+    """
+    Robot flag indicating that the capture should not be archived/cached.
+    """
     IGNORE = "G"
     BLOCKED = "X"
+    """
+    Non-standard robot flag indicating the capture is soft-blocked 
+    (not available for direct replay, but available as the original 
+    for revisits).
+    """
 
 
 @dataclass(frozen=True)
 class CdxCapture:
+    """
+    Single captured document.
+    """
     url: str
+    """
+    Original URL of the captured document.
+    """
     url_key: str
+    """
+    Canonical (lookup key) form of the captured document's URL.
+    """
     timestamp: datetime
+    """
+    Timestamp when the document was captured.
+    """
     digest: str
+    """
+    Some form of document fingerprint. This represents the HTTP payload 
+    only for HTTP captured resources. It may represent an MD5, a SHA1, and 
+    may be a fragment of the full representation of the digest.
+    """
     status_code: int | None
+    """
+    HTTP response code (3-digit integer). May be '0' in some 
+    fringe conditions, old ARCs, bug in crawler, etc.
+    """
     mimetype: str | None
+    """
+    Best guess at the MIME type of the document's content.
+    """
     filename: str | None
+    """
+    Basename of the WARC/ARC file containing the capture.
+    """
     offset: int | None
+    """
+    Compressed byte offset within WARC/ARC file where 
+    this document's Gzip envelope begins.
+    """
     length: int | None
+    """
+    Compressed length of the document's Gzip envelope.
+    """
     access: str | None
     redirect_url: str | None
+    """
+    URL that this document redirected to.
+    """
     flags: set[CdxFlag] | None
+    """
+    Flags indicating robot instructions found in an HTML page 
+    or password protection.
+    """
     collection: str | None
     source: str | None
     source_collection: str | None
 
 
 class CdxMatchType(Enum):
+    """
+    URL matching scope to relax matching of the URL.
+    """
     EXACT = "exact"
+    """
+    Match only the exact URL.
+    """
     PREFIX = "prefix"
+    """
+    Match URLs that start with the given URL.
+    """
     HOST = "host"
+    """
+    Match URLs from the same host as the given URL.
+    """
     DOMAIN = "domain"
-
-
-class _CdxApiType(Enum):
-    INTERNET_ARCHIVE = "internet_archive"
-    PYWB = "pywb"
-
-
-_API_TYPE_LOOKUP_NETLOC = {
-    "web.archive.org": _CdxApiType.INTERNET_ARCHIVE,
-}
+    """
+    Match URLs from the same host or a subhost of the given URL.
+    """
 
 
 class _CdxResponse(NamedTuple):
+    """
+    Internal representation of a CDX API response,
+    optionally including a resume key.
+    """
     resume_key: str | None
     json: list[Any]
 
 
 def _parse_cdx_flags(flags_string: str) -> set[CdxFlag]:
+    """
+    Parse CDX flags from a string of flags.
+    """
     flags = set()
     for flag_string in flags_string.split():
         flag_string = flag_string.strip()
@@ -83,14 +153,20 @@ def _parse_cdx_flags(flags_string: str) -> set[CdxFlag]:
 
 
 def _parse_cdx_line(line: dict) -> CdxCapture:
+    """
+    Parse a single CDX line represented as a JSON dict.
+    """
+    # Convert "-" to None.
     line = {
         key: value if value != "-" else None
         for key, value in line.items()
     }
+    # Parse capture key from 'urlkey' field.
     if "urlkey" in line and line["urlkey"] is not None:
         url_key = line.pop("urlkey")
     else:
         raise ValueError(f"Missing URL key in CDX line: {line}")
+    # Parse capture timestamp from 'timestamp' field.
     if "timestamp" in line and line["timestamp"] is not None:
         timestamp = datetime.strptime(
             # Important to add the UTC timezone explicitly.
@@ -99,71 +175,82 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
         )
     else:
         raise ValueError(f"Missing timestamp in CDX line: {line}")
+    # Parse original URL from 'url' or 'original' field.
     if "url" in line and line["url"] is not None:
         url = line.pop("url")
     elif "original" in line and line["original"] is not None:
         url = line.pop("original")
     else:
         raise ValueError(f"Missing url in CDX line: {line}")
+    # Parse capture digest from 'digest' field.
     if "digest" in line and line["digest"] is not None:
         digest = line.pop("digest")
     else:
         raise ValueError(f"Missing digest in CDX line: {line}")
+    # Parse HTTP status code from 'statuscode' or 'status' field.
     if "statuscode" in line and line["statuscode"] is not None:
         status_code = int(line.pop("statuscode"))
     elif "status" in line and line["status"] is not None:
         status_code = int(line.pop("status"))
     else:
         status_code = None
+    # Parse mime type guess from 'mimetype' or 'mime' field.
     if "mimetype" in line and line["mimetype"] is not None:
         mimetype = line.pop("mimetype")
     elif "mime" in line and line["mime"] is not None:
         mimetype = line.pop("mime")
     else:
         mimetype = None
+    # Parse filename from 'filename' field.
     if "filename" in line and line["filename"] is not None:
         filename = line.pop("filename")
     else:
         filename = None
+    # Parse Gzip envelope offset from 'offset' field.
     if "offset" in line and line["offset"] is not None:
         offset = int(line.pop("offset"))
     else:
         offset = None
+    # Parse Gzip envelope length from 'length' field.
     if "length" in line and line["length"] is not None:
         length = int(line.pop("length"))
     else:
         length = None
+    # Parse access policy from 'access' field.
     if "access" in line and line["access"] is not None:
         access = line.pop("access")
     else:
         access = None
+    # Parse redirect URL from 'redirect' field.
     if "redirect" in line and line["redirect"] is not None:
         redirect_url = line.pop("redirect")
     else:
         redirect_url = None
+    # Parse flags from 'flags' or 'robotflags' field.
     if "flags" in line and line["flags"] is not None:
         flags = _parse_cdx_flags(line.pop("flags"))
     elif "robotflags" in line and line["robotflags"] is not None:
         flags = _parse_cdx_flags(line.pop("robotflags"))
     else:
         flags = None
+    # Parse collection from 'collection' field.
     if "collection" in line and line["collection"] is not None:
         collection = line.pop("collection")
     else:
         collection = None
+    # Parse source from 'source' field.
     if "source" in line and line["source"] is not None:
         source = line.pop("source")
     else:
         source = None
+    # Parse source collection from 'source-coll' field.
     if "source-coll" in line and line["source-coll"] is not None:
         source_collection = line.pop("source-coll")
     else:
         source_collection = None
-
-    # TODO: Unparsed fields in CDX line: {'load_url': ''}
     if len(line) > 0:
+        # Fail fast if any fields are left unparsed.
         raise RuntimeError(f"Unparsed fields in CDX line: {line}")
-        # warn(RuntimeWarning(f"Unparsed fields in CDX line: {line}"))
     return CdxCapture(
         url=url,
         url_key=url_key,
@@ -184,11 +271,20 @@ def _parse_cdx_line(line: dict) -> CdxCapture:
 
 
 def _parse_cdx_lines(json: list[dict]) -> Iterator[CdxCapture]:
+    """
+    Parse CDX lines represented as a list of JSON dicts.
+    """
     for line in json:
         yield _parse_cdx_line(line)
 
 
 def _read_response(response: Response) -> _CdxResponse:
+    """
+    Read a raw HTTP response from the CDX API and
+    return an internal representation of the response
+    after parsing an optional resume key.
+    Also unifies the response lines to JSON dicts.
+    """
     response.raise_for_status()
 
     lines: list[str] = response.text.splitlines()
@@ -222,15 +318,22 @@ def _read_response(response: Response) -> _CdxResponse:
 
 @dataclass(frozen=True)
 class CdxApi:
+    """
+    Client to list captured documents from a web archive's CDX API.
+    """
     api_url: str
-    session: Session
-
-    @cached_property
-    def api_type(self) -> _CdxApiType | None:
-        _, netloc, _, _, _ = urlsplit(self.api_url)
-        if netloc in _API_TYPE_LOOKUP_NETLOC:
-            return _API_TYPE_LOOKUP_NETLOC[netloc]
-        return None
+    """
+    URL of the CDX API endpoint (e.g. https://web.archive.org/cdx/search/cdx).
+    """
+    session: Session = Session()
+    """
+    HTTP session to use for requests.
+    (Useful for setting headers, proxies, rate limits, etc.)
+    """
+    quiet: bool = False
+    """
+    Suppress all output and progress bars.
+    """
 
     def iter_captures(
             self,
@@ -239,6 +342,18 @@ class CdxApi:
             from_timestamp: datetime | None = None,
             to_timestamp: datetime | None = None,
     ) -> Iterator[CdxCapture]:
+        """
+        Query and iterate captures of a URL from the CDX API.
+        The returned iterator automatically handles pagination.
+        Consuming the iterator eagerly is discouraged.
+        :param url: The captured URL (pattern).
+        :param match_type: Matching scope to relax URL matching.
+        :param from_timestamp: Lower bound for capture timestamps.
+        :param to_timestamp: Upper bound for capture timestamps.
+        :return: Iterator yielding all captures of the URL.
+        """
+        # Canonicalize URL and check if the implicit match type
+        # matches the explicit match type.
         if url.startswith("*."):
             if match_type != CdxMatchType.DOMAIN:
                 raise RuntimeError(
@@ -254,7 +369,7 @@ class CdxApi:
                 )
             url = url[:-1]
 
-        echo(f"Parsing {self.api_url}?url={url}&matchType={match_type.value}")
+        # Build query parameters.
         params = [
             ("url", url),
             ("output", "json"),
@@ -267,7 +382,13 @@ class CdxApi:
         if to_timestamp is not None:
             params.append(("to", to_timestamp.astimezone(timezone.utc)
                            .strftime("%Y%m%d%H%M%S")))
+        if not self.quiet:
+            params_encoded = urlencode(params)
+            url_joined = urljoin(self.api_url, f"?{params_encoded}")
+            print(f"Parsing {url_joined}")
 
+        # Query number of available pages from the CDX API.
+        # (This is only available for some CDX API implementations.)
         num_pages = None
         num_pages_response = self.session.get(
             url=self.api_url,
@@ -283,10 +404,11 @@ class CdxApi:
                 num_pages_text = num_pages_text.splitlines()[0]
             if num_pages_text.isnumeric():
                 num_pages = int(num_pages_text)
-
         if num_pages is not None:
+            # Number of pages is known, so we can iterate over all pages
+            # (and show a progress bar).
             pages: Iterable[int] = range(num_pages)
-            if num_pages > 10:
+            if num_pages > 10 and not self.quiet:
                 # noinspection PyTypeChecker
                 pages = tqdm(
                     pages,
@@ -304,6 +426,9 @@ class CdxApi:
                 _, json = _read_response(response)
                 yield from _parse_cdx_lines(json)
         else:
+            # Number of pages is unknown, so we request a full list
+            # of captures and paginate using the resume key if
+            # that is available.
             response = self.session.get(
                 url=self.api_url,
                 params=[
