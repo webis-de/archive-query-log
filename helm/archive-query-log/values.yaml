@@ -2,11 +2,11 @@ image: ghcr.io/webis-de/archive-query-log
 
 buildSources:
   enabled: true
-  schedule: "0/10 * * * *"
+  schedule: "0 4 * * 2,4"
   completions: 50
-  parallelism: 50
+  parallelism: 25
   backoffLimit: 25
-  ttlMinutesAfterFinished: 5
+  ttlMinutesAfterFinished: 15
 
 fetchCaptures:
   enabled: true
