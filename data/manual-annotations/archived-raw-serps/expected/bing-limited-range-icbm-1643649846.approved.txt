@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Limited Range ICBM",
+    "offset": null,
+    "page": null,
+    "query": "Limited Range ICBM",
+    "results": [],
+    "timestamp": 1643649846,
+    "url": "https://www.bing.com/search?q=Limited+Range+ICBM"
+}

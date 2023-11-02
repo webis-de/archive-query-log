@@ -1,0 +1,220 @@
+{
+    "interpreted_query": ",kohlroulade gem\u00fcse",
+    "offset": null,
+    "page": 0,
+    "query": ",kohlroulade+gem\ufffdse",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Mit einem scharfen Messer den Stunk raus schneiden und die Kohlbl\u00e4tterbl\u00e4tter vorsichtig abl\u00f6sen. ...",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/349701120164456/Kohlrouladen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "zum Einfrieren geeignet",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1973581320503312/Kohlrouladen.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "norddeutsches Hausfrauenrezept der Familie Waechter",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/962481201798932/Kohlrouladen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "etwas anders",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/567311155206736/Kohlrouladen.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Den Wei\u00dfkohl in einem gro\u00dfen Topf ca. 15 Min. ...",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1818871295019746/Kohlrouladen.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Vorsichtig 12 Bl\u00e4tter vom Wei\u00dfkohl abtrennen und diese kurz in Wasser kochen, den Rest hacken. ...",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/741621176758091/Kohlrouladen.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "echte polnische Golabki, wie meine Oma sie zubereitet hat",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/745821177149129/Kohlrouladen.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Den Wirsing vorsichtig zerteilen, die Bl\u00e4tter m\u00fcssen dabei ganz bleiben. ...",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/43051014733574/Kohlrouladen.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "mit Hackfleisch - Gabelspaghetti - F\u00fcllung",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1089661214978403/Kohlrouladen.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "...perfekt, wie aus Omas Zeiten",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1094261215440310/Kohlrouladen.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "geeignet als Abendmahlzeit f\u00fcr Insulin-Trennkost",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1322541237135342/Kohlrouladen.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Das Br\u00f6tchen in hei\u00dfer Milch einweichen. ...",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen mit Gem\u00fcse - K\u00e4se - F\u00fcllung",
+            "url": "http://www.chefkoch.de/rezepte/1245121229420217/Kohlrouladen-mit-Gemuese-Kaese-Fuellung.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "Kohlrouladen",
+            "timestamp": 1328779105,
+            "title": "Leonas Japraci",
+            "url": "http://www.chefkoch.de/rezepte/365931122055605/Leonas-Japraci.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Beilage f\u00fcr Kohlrouladen oder H\u00e4hnchenschenkel",
+            "timestamp": 1328779105,
+            "title": "Omas Wei\u00dfkohl - Sahne - Gem\u00fcse",
+            "url": "http://www.chefkoch.de/rezepte/1641071271743091/Omas-Weisskohl-Sahne-Gemuese.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Kohlrouladen mal anders",
+            "timestamp": 1328779105,
+            "title": "W\u00fcrzige Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1052171210223386/Wuerzige-Kohlrouladen.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Wei\u00dfkohl grob schneiden in gro\u00dfe St\u00fccke. Butter auslassen in einem gro\u00dfen Topf und das Gehackte darin anbraten. ...",
+            "timestamp": 1328779105,
+            "title": "Falsche Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/174321076165366/Falsche-Kohlrouladen.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Vegetarisches Weihnachtsgericht",
+            "timestamp": 1328779105,
+            "title": "Vegetarische Kohlroulade",
+            "url": "http://www.chefkoch.de/rezepte/1032291208409959/Vegetarische-Kohlroulade.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Reis in reichlich Salzwasser gut 15 Minuten garen. Der Reis muss trocken sein. ...",
+            "timestamp": 1328779105,
+            "title": "Polnische Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/361701121638243/Polnische-Kohlrouladen.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Vom Kohlkopf die \u00e4u\u00dferen Bl\u00e4tter (2 - 3) entfernen und den Kopf in einem Topf mit Wasser ansetzen. ...",
+            "timestamp": 1328779105,
+            "title": "Andis Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/894461194949132/Andis-Kohlrouladen.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "Einen gro\u00dfen Topf mit Wasser aufsetzen, zum Kochen bringen. ...",
+            "timestamp": 1328779105,
+            "title": "Rosinenkinds Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/981091203592378/Rosinenkinds-Kohlrouladen.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "Den Strunk abschneiden und den Kohlkopf in kochendes Salzwassser legen. Wenn die \u00e4u\u00dferen Bl\u00e4tter gar sind, abl\u00f6sen. ...",
+            "timestamp": 1328779105,
+            "title": "Kohlrouladen vegetarisch",
+            "url": "http://www.chefkoch.de/rezepte/1589771266345616/Kohlrouladen-vegetarisch.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "mit Bulgur",
+            "timestamp": 1328779105,
+            "title": "Vegetarische Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/932501198678111/Vegetarische-Kohlrouladen.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "Kohlbl\u00e4tter abbrausen und in kochendem Salzwasser ca. 5 Minuten blanchieren, abschrecken, trocken tupfen, Rippen flach schneiden. ...",
+            "timestamp": 1328779105,
+            "title": "McMoes Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1438731248695763/McMoes-Kohlrouladen.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "Den Reis mit dem Wasser und 1 TL Salz aufkochen lassen und bei kleiner Hitze ausquellen lassen. ...",
+            "timestamp": 1328779105,
+            "title": "Vegetarische Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1515701256806078/Vegetarische-Kohlrouladen.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "Den Wei\u00dfkohl vierteln und in kleine Fleckchen von ca. 2x2 cm schneiden. ...",
+            "timestamp": 1328779105,
+            "title": "Geplatzte Kohlroulade",
+            "url": "http://www.chefkoch.de/rezepte/313531112791455/Geplatzte-Kohlroulade.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "Acht sch\u00f6ne Bl\u00e4tter vom Kohl abl\u00f6sen und blanchieren. In Eiswasser abschrecken und mit einem K\u00fcchentuch etwas trocknen. ...",
+            "timestamp": 1328779105,
+            "title": "Omas Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/426431133556910/Omas-Kohlrouladen.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "Bl\u00e4tter vom Wei\u00dfkohl l\u00f6sen, Strunk heraustrennen und die Bl\u00e4tter dann kurz in hei\u00dfes Wasser geben, damit sie sch\u00f6n biegsam ...",
+            "timestamp": 1328779105,
+            "title": "Bienes Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/676791169997142/Bienes-Kohlrouladen.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "schnelle Variante des Klassikers",
+            "timestamp": 1328779105,
+            "title": "Gesprengte Kohlroulade",
+            "url": "http://www.chefkoch.de/rezepte/773351180191935/Gesprengte-Kohlroulade.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Die H\u00fchnerbrust in kleine W\u00fcrfel schneiden, mit dem Eiklar, Zitronensaft und einer Prise Salz vermischen und f\u00fcr 10 Minuten kalt ...",
+            "timestamp": 1328779105,
+            "title": "Eierschwammerl - Kohlrouladen",
+            "url": "http://www.chefkoch.de/rezepte/1115491217603991/Eierschwammerl-Kohlrouladen.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "Hackr\u00f6llchen gef\u00fcllt mit Rosenkohl und als Variante eine Tomaten - K\u00e4se - F\u00fcllung",
+            "timestamp": 1328779105,
+            "title": "Kohlroulade verkehrt",
+            "url": "http://www.chefkoch.de/rezepte/1427301247644298/Kohlroulade-verkehrt.html"
+        }
+    ],
+    "timestamp": 1328779105,
+    "url": "http://www.chefkoch.de/rs/s0/%2Ckohlroulade+gem%FCse/Rezepte.html"
+}

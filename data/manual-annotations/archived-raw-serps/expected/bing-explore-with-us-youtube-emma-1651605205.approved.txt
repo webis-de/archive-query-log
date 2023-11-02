@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "explore with us youtube emma",
+    "offset": null,
+    "page": null,
+    "query": "explore with us youtube emma",
+    "results": [],
+    "timestamp": 1651605205,
+    "url": "https://www.bing.com/search?q=explore+with+us+youtube+emma&FORM=QSRE6"
+}

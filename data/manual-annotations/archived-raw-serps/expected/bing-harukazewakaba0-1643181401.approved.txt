@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "harukazewakaba0",
+    "offset": null,
+    "page": null,
+    "query": "harukazewakaba0",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Jan 19, 2022\u00a0\u00b7 The latest tweets from @harukazewakaba0",
+            "timestamp": 1643181401,
+            "title": "@harukazewakaba0 | Twitter",
+            "url": "https://twitter.com/harukazewakaba0"
+        },
+        {
+            "rank": 2,
+            "snippet": "Wakaba, going to do it all!Wakaba before her performance Wakaba Harukaze (\u6625\u98a8\u308f\u304b\u3070, Wakaba Harukaze) is one of the main characters of the Aikatsu Friends! Brilliant Jewel series. Wakaba is a cute-type idol whose preferred brand is Humming Leaf. Wakaba has green, downward slanted eyes with skinny spread-out lashes. Her long, navel-length dark cordovan hair is worn loose with short ...",
+            "timestamp": 1643181401,
+            "title": "Wakaba Harukaze | Aikatsu Friends! Wiki | Fandom",
+            "url": "https://aikatsu-friends.fandom.com/wiki/Wakaba_Harukaze"
+        },
+        {
+            "rank": 3,
+            "snippet": "Wakaba, going to do it all!Wakaba before her performance Wakaba Harukaze is the main characters of the Aikatsu Friends! series. Wakaba is a cute-type idol whose preferred brand is Humming Leaf. She is voiced by Rin Aira, who also Raki Kiseki from the Aikatsu on Parade! series. Wakaba has green, downward slanted eyes with skinny spread-out lashes. Her long, navel-length dark \u2026",
+            "timestamp": 1643181401,
+            "title": "Wakaba Harukaze | Heroes Wiki | Fandom",
+            "url": "https://hero.fandom.com/wiki/Wakaba_Harukaze"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1643181401,
+            "title": "Wakaba Harukaze | All Aikatsu! Wiki | Fandom",
+            "url": "https://all-aikatsu.fandom.com/wiki/Wakaba_Harukaze"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>instagram.com</em>",
+            "timestamp": 1643181401,
+            "title": "instagram.com",
+            "url": "https://instagram.com/harukazewakaba0/"
+        }
+    ],
+    "timestamp": 1643181401,
+    "url": "https://www.bing.com/search?q=harukazewakaba0&FORM=HDRSC1"
+}

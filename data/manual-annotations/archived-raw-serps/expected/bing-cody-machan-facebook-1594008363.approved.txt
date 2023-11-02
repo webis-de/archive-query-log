@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "cody machan facebook",
+    "offset": null,
+    "page": null,
+    "query": "cody machan facebook",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Cody Machan</em> is on <em>Facebook</em>. To connect with Cody, sign up for <em>Facebook</em> today.",
+            "timestamp": 1594008363,
+            "title": "Cody Machan | Facebook",
+            "url": "https://www.facebook.com/people/Cody-Machan/100008812381885"
+        },
+        {
+            "rank": 2,
+            "snippet": "View the profiles of people named <em>Cody</em> Machen. Join <em>Facebook</em> to connect with <em>Cody</em> Machen and others you may know. <em>Facebook</em> gives people the power to...",
+            "timestamp": 1594008363,
+            "title": "Cody Machen Profiles | Facebook",
+            "url": "https://www.facebook.com/public/Cody-Machen"
+        },
+        {
+            "rank": 3,
+            "snippet": "We would like to introduce <em>Cody Machan</em> who will be our featured senior on 2020 NHS Senior Spotlight this evening. Name: <em>Cody</em> Allen <em>Machan</em>. Family: Parents: Gregg and Beth <em>Machan</em> Siblings: John and Nathan <em>Machan</em>. Future plans: To attend The Ohio State University and major in Computer/Information Science. Activities: Band- 4 years",
+            "timestamp": 1594008363,
+            "title": "We would like to introduce Cody Machan ... - Facebook",
+            "url": "https://www.facebook.com/NCTHighSchool/posts/2581661788712557"
+        },
+        {
+            "rank": 4,
+            "snippet": "View the profiles of people named John <em>Machan</em>. Join <em>Facebook</em> to connect with John <em>Machan</em> and others you may know. <em>Facebook</em> gives people the power to...",
+            "timestamp": 1594008363,
+            "title": "John Machan Profiles | Facebook",
+            "url": "https://www.facebook.com/public/John-Machan"
+        },
+        {
+            "rank": 5,
+            "snippet": "\ud835\udc7a\ud835\udc90 \ud835\udc89\ud835\udc86\ud835\udc93\ud835\udc86'\ud835\udc94 \ud835\udc90\ud835\udc96\ud835\udc93 \ud835\udc8a\ud835\udc94\ud835\udc90\ud835\udc8d\ud835\udc82\ud835\udc95\ud835\udc8a\ud835\udc90\ud835\udc8f \ud835\udc84\ud835\udc90\ud835\udc97\ud835\udc86\ud835\udc93 \ud835\udc95\ud835\udc89\ud835\udc82\ud835\udc95 \ud835\udc98\ud835\udc86'\ud835\udc97\ud835\udc86 \ud835\udc83\ud835\udc86\ud835\udc86\ud835\udc8f \ud835\udc98\ud835\udc90\ud835\udc93\ud835\udc8c\ud835\udc8a\ud835\udc8f\ud835\udc88 \ud835\udc90\ud835\udc8f...\n\nCome Together by The Beatles\n\nAudio mixed by \ud835\udc09\ud835\udc22\ud835\udc26\ud835\udc22 \ud835\udc01\ud835\udc25\ud835\udc1a\ud835\udc24 ...\nVideo edited by \ud835\udc09\ud835\udc22\ud835\udc26\ud835\udc22 \ud835\udc01\ud835\udc25\ud835\udc1a\ud835\udc24",
+            "timestamp": 1594008363,
+            "title": "Cody Feechan - Home | Facebook",
+            "url": "https://www.facebook.com/CodyFeechanMusic"
+        },
+        {
+            "rank": 6,
+            "snippet": "View the profiles of people named Mcdonalds Machu. Join <em>Facebook</em> to connect with Mcdonalds Machu and others you may know. <em>Facebook</em> gives people the power...",
+            "timestamp": 1594008363,
+            "title": "Mcdonalds Machu Profiles | Facebook",
+            "url": "https://en-gb.facebook.com/public/Mcdonalds-Machu"
+        },
+        {
+            "rank": 7,
+            "snippet": "View the profiles of people named Tom Meehan Sr. Join <em>Facebook</em> to connect with Tom Meehan Sr. and others you may know. <em>Facebook</em> gives people the power to...",
+            "timestamp": 1594008363,
+            "title": "Tom Meehan Sr. Profiles | Facebook",
+            "url": "https://en-gb.facebook.com/public/Tom-Meehan-Sr."
+        },
+        {
+            "rank": 8,
+            "snippet": "View the profiles of people named Meghan Cadets. Join <em>Facebook</em> to connect with Meghan Cadets and others you may know. <em>Facebook</em> gives people the power to...",
+            "timestamp": 1594008363,
+            "title": "Meghan Cadets Profiles | Facebook",
+            "url": "https://en-gb.facebook.com/public/Meghan-Cadets"
+        },
+        {
+            "rank": 9,
+            "snippet": "Pavel Mach\u00e1\u0148 is on <em>Facebook</em>. Join <em>Facebook</em> to connect with Pavel Mach\u00e1\u0148 and others you may know. <em>Facebook</em> gives people the power to share and makes the...",
+            "timestamp": 1594008363,
+            "title": "Pavel Mach\u00e1\u0148 | Facebook",
+            "url": "https://www.facebook.com/pavel.machan.5"
+        },
+        {
+            "rank": 10,
+            "snippet": "09/12/2019\u00a0\u00b7 Joshua <em>Machan</em> is on <em>Facebook</em>. To connect with Joshua, sign up for <em>Facebook</em> today. Log In. or. Sign Up. About Joshua <em>Machan</em>. Work. Mercy Medical Center Canton Ohio. Radiologic Technologist (RT) \u00b7 December 9, 2019 to present \u00b7 Canton, Ohio. Cleveland Clinic Union Hospital. Radiographic Technologist R.T.(R) \u00b7 September 2016 to November 2019 \u00b7 Dover, Ohio. United States \u2026",
+            "timestamp": 1594008363,
+            "title": "Joshua Machan | Facebook",
+            "url": "https://www.facebook.com/joshua.machan"
+        }
+    ],
+    "timestamp": 1594008363,
+    "url": "https://www.bing.com/search?q=cody+machan+facebook&FORM=QSRE6"
+}

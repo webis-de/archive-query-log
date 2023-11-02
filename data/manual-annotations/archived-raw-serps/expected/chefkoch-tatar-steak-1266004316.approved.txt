@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "tatar steak",
+    "offset": null,
+    "page": 0,
+    "query": "tatar+steak",
+    "results": [],
+    "timestamp": 1266004316,
+    "url": "http://www.chefkoch.de:80/rs/s0/tatar+steak/Rezepte.html"
+}

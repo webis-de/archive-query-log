@@ -94,13 +94,6 @@ def test_parse_query_qq_xing_xing_di_qiu_2_1582812539():
     )
 
 
-def test_parse_query_qq_jin_cheng_wu_1319745059():
-    verify_serp_parsing(
-        "https://web.archive.org/web/20111027195059id_/http://v.qq.com/search.html?pagetype=3&ms_key=%E9%87%91%E5%9F%8E%E6%AD%A6",
-        "qq",
-    )
-
-
 def test_parse_query_qq_turn_that_finger_around_1324266860():
     verify_serp_parsing(
         "https://web.archive.org/web/20111219035420id_/http://v.qq.com:80/search.html?pagetype=3&ms_key=Turn+That+Finger+Around",

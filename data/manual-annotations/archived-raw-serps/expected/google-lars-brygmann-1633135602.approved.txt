@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"Lars Brygmann\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Lars Brygmann\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "5893 Followers, 11 Following, 22 Posts - See Instagram photos and videos from Lars Brygmann (@lars.brygmann)",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann (@lars.brygmann) \u2022 Instagram photos and videos",
+            "url": "https://www.google.com/url?q=https://www.instagram.com/lars.brygmann/%3Fhl%3Den&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQFnoECAoQAg&usg=AOvVaw35LyT1cA3gC97mXB4fkuYK"
+        },
+        {
+            "rank": 3,
+            "snippet": "Lars Brygmann was born on February 17, 1957 in Copenhagen, Denmark. He is an actor, known for Riders of Justice (2020), Dicte (2013) and Rembrandt (2003).",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann - Biography - IMDb",
+            "url": "https://www.google.com/url?q=https://www.imdb.com/name/nm0117368/bio&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQFnoECAcQAg&usg=AOvVaw2C3tgfOSS4q0wmoInrrzBB"
+        },
+        {
+            "rank": 4,
+            "snippet": "Brother of actor Martin Brygmann and actor/composer Jens Brygmann. He has a daughter Fernanda Brygmann Salomon and a son Carlo Brygmann Salomon with Katrine\u00a0...",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann - IMDb",
+            "url": "https://www.google.com/url?q=https://m.imdb.com/name/nm0117368/trivia&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQFnoECAQQAg&usg=AOvVaw3ivlj1bdlX3Vp1WONko3Zx"
+        },
+        {
+            "rank": 6,
+            "snippet": "Lars Brygmann was born on February 17, 1957 in Copenhagen, Denmark. He is an actor, known for Riders of Justice (2020), Dicte (2013) and Rembrandt (2003).",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann: Movies, TV, and Bio - Amazon.com",
+            "url": "https://www.google.com/url?q=https://www.amazon.com/prime-video/actor/Lars-Brygmann/nm0117368/&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQFnoECAgQAg&usg=AOvVaw2fHp4H2IR3Fo1YyCFx9sCz"
+        },
+        {
+            "rank": 7,
+            "snippet": "Born: February 17, 1957; Country: Denmark; Comments: Actor; Family: Martin Brygmann Brother. Meta. Added by hounddogman \u00b7 Highlights \u00b7 Covers 2 \u00b7 Releases 2\u00a0...",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann | SecondHandSongs",
+            "url": "https://www.google.com/url?q=https://secondhandsongs.com/artist/46576&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQFnoECAIQAg&usg=AOvVaw18j_2NhXV_M0S3cfFqp6ND"
+        },
+        {
+            "rank": 8,
+            "snippet": "2 days ago \u00b7 LRM Online's Gig Patta spoke with actor Lars Brygmann for the drama film Powder Keg.Based ...Duration: 12:44Posted: 2 days ago",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann Interview for Powder Keg - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3D_bFsgubIwTU&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQtwJ6BAgBEAE&usg=AOvVaw3FD23dL8e1MwUwR21FjIZC"
+        },
+        {
+            "rank": 9,
+            "snippet": "See Lars Brygmann full list of movies and tv shows from their career. Find where to watch Lars Brygmann's latest movies and tv shows.",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann - TV Guide",
+            "url": "https://www.google.com/url?q=https://www.tvguide.com/celebrities/lars-brygmann/credits/3000400613/&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQFnoECAAQAg&usg=AOvVaw231CCSpHaQEEvc0sYpMTnt"
+        },
+        {
+            "rank": 10,
+            "snippet": "Read all about Lars Brygmann with TV Guide's exclusive biography including their list of awards, celeb facts and more at TV Guide.",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann Biography, Celebrity Facts and Awards - TV Guide",
+            "url": "https://www.google.com/url?q=https://www.tvguide.com/celebrities/lars-brygmann/bio/3000400613/&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQFnoECAMQAg&usg=AOvVaw1kxS66CbTiw7UweAlGyy3y"
+        },
+        {
+            "rank": 11,
+            "snippet": "Rotten Tomatoes, home of the Tomatometer, is the most trusted measurement of quality for Movies &amp; TV. The definitive site for Reviews, Trailers, Showtimes,\u00a0...",
+            "timestamp": 1633135602,
+            "title": "Lars Brygmann - Rotten Tomatoes",
+            "url": "https://www.google.com/url?q=https://www.rottentomatoes.com/celebrity/lars_brygmann&sa=U&ved=2ahUKEwiP1f2E26rzAhVpGDQIHbE5DrgQFnoECAkQAg&usg=AOvVaw32ZSUWhgMjULxJhKB7mPGl"
+        }
+    ],
+    "timestamp": 1633135602,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Lars+Brygmann%22"
+}

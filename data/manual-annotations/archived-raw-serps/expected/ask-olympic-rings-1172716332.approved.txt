@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Olympic Rings",
+    "offset": null,
+    "page": null,
+    "query": "Olympic Rings",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "According to most accounts, the <em>rings</em> were adopted by Baron Pierre de Coubertin (founder of the modern <em>Olympic</em> Movement) in 1913 after he saw a ...",
+            "timestamp": 1172716332,
+            "title": "The <em>Olympic Rings</em>",
+            "url": "http://www.janecky.com/olympics/rings.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "... the games is the five interlocking <em>rings</em>.  The <em>Olympic</em> symbol, made in 1913, has <em>rings</em> of all different colors representing the continents ...",
+            "timestamp": 1172716332,
+            "title": "<em>Olympic Rings</em>",
+            "url": "http://www.mcps.k12.md.us/schools/forestknollses/projects/olympics/olympicrings.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Official site offers photos, news, video clips, a look at life in the <em>Olympic</em> Village, and explanations of major sports and events.",
+            "timestamp": 1172716332,
+            "title": "International <em>Olympic</em> Committee",
+            "url": "http://www.olympic.org/uk/index_uk.asp"
+        },
+        {
+            "rank": 4,
+            "snippet": "The flag of the <em>Olympic</em> Games has five interlocking <em>rings</em> (blue, yellow, black, green, and red) on a white ground.",
+            "timestamp": 1172716332,
+            "title": "Olympics Flag Printout- EnchantedLearning.com",
+            "url": "http://www.enchantedlearning.com/olympics/printouts/Flag.shtml"
+        },
+        {
+            "rank": 5,
+            "snippet": "... the <em>Olympic</em> Games:  The flag of the <em>Olympic</em> Games has five interlocking <em>rings</em> (blue, yellow, black, green, and red) on a white ground.",
+            "timestamp": 1172716332,
+            "title": "EnchantedLearning: Olympics",
+            "url": "http://www.enchantedlearning.com/olympics/"
+        },
+        {
+            "rank": 6,
+            "snippet": "EFTel is an Australian Internet Service Provider ISP. EFTel range of services: Broadband ADSL and dial-up Internet, web hosting and telephony ...",
+            "timestamp": 1172716332,
+            "title": "EFTel \u2013 Australian Internet Service Provider ISP, Broadband ADSL",
+            "url": "http://www.southcom.com.au/~jennifert/Games/rings.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "National <em>Olympic</em> Commit\u00adtees  (NOCs), and Organising Com-mittees for the <em>Olympic</em> Games (OCOGs) all have an emblem fea-turing the <em>Olympic</em> ...",
+            "timestamp": 1172716332,
+            "title": "Symboles_angl\n(PDF File)",
+            "url": "http://multimedia.olympic.org/pdf/en_report_672.pdf"
+        },
+        {
+            "rank": 8,
+            "snippet": "What does each ring stand for? ... Report on the <em>Olympic Rings</em> ... What are the <em>Olympic Rings</em>?",
+            "timestamp": 1172716332,
+            "title": "abcteach Printable Worksheet: Report on <em>Olympic Rings</em>",
+            "url": "http://www.abcteach.com/Olympics/rings.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "The five <em>Olympic rings</em> were designed in 1913, adopted in 1914 and debuted at the Games at Antwerp, 1920. ... The <em>Olympic</em> emblem: the emblem ...",
+            "timestamp": 1172716332,
+            "title": "<em>Olympic</em> symbols - Wikipedia, the free encyclopedia",
+            "url": "http://en.wikipedia.org/wiki/Olympic_symbols"
+        },
+        {
+            "rank": 10,
+            "snippet": "Lesson Title: Drawing the <em>Olympic Rings</em> Logo ... Show the completed <em>Olympic rings</em> on a poster, board or handout.  The <em>rings</em> are 11 blocks ...",
+            "timestamp": 1172716332,
+            "title": "<em>Olympic Rings</em> plan",
+            "url": "http://www.geocities.com/SoHo/Museum/4140/olympic.htm"
+        }
+    ],
+    "timestamp": 1172716332,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=6&l=dir&q=Olympic+Rings"
+}

@@ -1,0 +1,192 @@
+{
+    "interpreted_query": "eierlik\u00f6r gugelhupf,",
+    "offset": null,
+    "page": 0,
+    "query": "eierlik\ufffdr+gugelhupf,",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r-Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/1170989311730/Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/230771094651820/Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/21051005315060/Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/362411121711093/Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/812711185454967/Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/602211159960523/Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "superlecker!",
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/560461154092231/Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Schoko - Eierlik\u00f6r Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/212031088841902/Schoko-Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Omis Eierlik\u00f6r - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/389231126168624/Omis-Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Gugelhupf mit Eierlik\u00f6r",
+            "url": "http://www.chefkoch.de:80/rezepte/234561095945864/Gugelhupf-mit-Eierlikoer.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r - Schoko - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/919971197381961/Eierlikoer-Schoko-Gugelhupf.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r - Mandel - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/509021146385739/Eierlikoer-Mandel-Gugelhupf.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Knusper - Eierlik\u00f6r - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/515631147677255/Knusper-Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Himbeer - Eierlik\u00f6r - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/938021199460689/Himbeer-Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Oster - Eierlik\u00f6r - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/981181203594663/Oster-Eierlikoer-Gugelhupf.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "knusprig und einfach lecker",
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6r - Gugelhupf mit Knusperh\u00fclle",
+            "url": "http://www.chefkoch.de:80/rezepte/755941178372023/Eierlikoer-Gugelhupf-mit-Knusperhuelle.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "LF30",
+            "timestamp": 1203899612,
+            "title": "Gugelhupf mit Eierlik\u00f6r oder Baileys",
+            "url": "http://www.chefkoch.de:80/rezepte/242661097844578/Gugelhupf-mit-Eierlikoer-oder-Baileys.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Gugelhupf",
+            "timestamp": 1203899612,
+            "title": "Eierlik\u00f6rkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/586441157875714/Eierlikoerkuchen.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Schokoeis - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/292801108459638/Schokoeis-Gugelhupf.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Geburtstags-Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/30041008084928/Geburtstags-Gugelhupf.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Brownie - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/353971120670746/Brownie-Gugelhupf.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "schmeckt sch\u00f6n weihnachtlich!",
+            "timestamp": 1203899612,
+            "title": "Dominostein - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/577441156504175/Dominostein-Gugelhupf.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Knusper - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/588201158155770/Knusper-Gugelhupf.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Erdbeer - Creme - Gugelhupf",
+            "url": "http://www.chefkoch.de:80/rezepte/133751057577893/Erdbeer-Creme-Gugelhupf.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1203899612,
+            "title": "Gugelhupf mit Raps\u00f6l",
+            "url": "http://www.chefkoch.de:80/rezepte/489781143083059/Gugelhupf-mit-Rapsoel.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "megasaftiger und schneller Gugelhupf",
+            "timestamp": 1203899612,
+            "title": "Der Unwiderstehliche",
+            "url": "http://www.chefkoch.de:80/rezepte/403581129641784/Der-Unwiderstehliche.html"
+        }
+    ],
+    "timestamp": 1203899612,
+    "url": "http://www.chefkoch.de:80/rs/s0/eierlik%F6r+gugelhupf%2C/Rezepte.html"
+}

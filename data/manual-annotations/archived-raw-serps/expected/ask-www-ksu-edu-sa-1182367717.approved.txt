@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "www.ksu.edu.sa",
+    "offset": null,
+    "page": null,
+    "query": "www.ksu.edu.sa",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\u062c\u0627\u0621\u062a \u0641\u0643\u0631\u0629 \u0625\u0646\u0634\u0627\u0621 \u0623\u0648\u0644 \u062c\u0627\u0645\u0639\u0629 \u0641\u064a \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 \u0627\u0633\u062a\u062c\u0627\u0628\u0629 \u0637\u0628\u064a\u0639\u064a\u0629 \u0644\u0644\u0646\u0647\u0636\u0629 ...",
+            "timestamp": 1182367717,
+            "title": "\u062c\u0627\u0645\u0639\u0629 \u0627\u0644\u0645\u0644\u0643 \u0633\u0639\u0648\u062f - King Saud University",
+            "url": "http://www.ksu.edu.sa/"
+        },
+        {
+            "rank": 2,
+            "snippet": "The major aim of this curriculum is basically to impart scientific knowledge in the field of Computer Science and to keep students up-to-date with",
+            "timestamp": 1182367717,
+            "title": "New Page 1",
+            "url": "http://www.ksu.edu.sa/english/colleges/ccis.htm"
+        },
+        {
+            "rank": 3,
+            "snippet": "Abdul Aziz University  Official website of the King Abdul Aziz University, Saudi Arabia.  Domain: www.kaau.<em>edu.sa</em> ...",
+            "timestamp": 1182367717,
+            "title": "King Saud University - <em>ksu.edu.sa</em> - Arab",
+            "url": "http://www.araboo.com/site/saudi-ksu-edu-sa-28240"
+        },
+        {
+            "rank": 4,
+            "snippet": "Also prints in Beirut for local distribution.  Domain: www.asharqalawsat.com ...",
+            "timestamp": 1182367717,
+            "title": "Resalat Al-Jamiaah - <em>ksu.edu.sa</em> - Arab",
+            "url": "http://www.araboo.com/site/saudi-ksu-edu-sa-28388"
+        },
+        {
+            "rank": 5,
+            "snippet": "Unable to get site information for <em>edu.sa</em>.  Only sites with Alexa information can be traded.",
+            "timestamp": 1182367717,
+            "title": "alexadex.com",
+            "url": "http://www.alexadex.com/ad/url/www.ksu.edu.sa"
+        },
+        {
+            "rank": 6,
+            "snippet": "Homepage of the Saudi Geographical Society, including information on the aims and activities of the society, membership info and tables of ...",
+            "timestamp": 1182367717,
+            "title": "Al-Jam\u02bf\u012byah al-Jughr\u0101f\u012byah al-Sa\u02bf\u016bd\u012byah = Saudi Geographical ...",
+            "url": "http://ssgdoc.bibliothek.uni-halle.de/vlib/ssgfi/infodata/001052.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Studies Programs  http://www.sas.upenn.<em>edu</em>/African_Studie ... ... http://www.colorado.<em>edu</em>/geography/virtd ...",
+            "timestamp": 1182367717,
+            "title": "AWG - links",
+            "url": "http://users.fmg.uva.nl/vmamadouh/awg/links.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "A registry  has been a great resource in determining the prevalence rate of the disease in the country and to control it.",
+            "timestamp": 1182367717,
+            "title": "Welcome to National Diabetes Registry",
+            "url": "http://www.diabetes.org.sa/Diabetes/Frames.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "My URLs : www.kaau.<em>edu.sa</em>/ajuma www.docguide.com/dgc.nsf/o/Abdullah.Jum ...",
+            "timestamp": 1182367717,
+            "title": "www.kaau.<em>edu.sa</em>/ajuma/index.htm",
+            "url": "http://www.kaau.edu.sa/ajuma"
+        },
+        {
+            "rank": 10,
+            "snippet": "... implemented a pilot project whereby some dial-up connections were made available to KACST staff and faculty at the King Saud University ...",
+            "timestamp": 1182367717,
+            "title": "National Security and the Internet in the Persian Gulf: Saudi Arabia",
+            "url": "http://www.georgetown.edu/research/arabtech/pgi98-9.html"
+        }
+    ],
+    "timestamp": 1182367717,
+    "url": "http://www.ask.com:80/web?o=1215&l=dis&q=www.ksu.edu.sa"
+}

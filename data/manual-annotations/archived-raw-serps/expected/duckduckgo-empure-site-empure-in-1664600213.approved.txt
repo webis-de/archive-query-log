@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "empure site:empure.in",
+    "offset": null,
+    "page": null,
+    "query": "empure site:empure.in",
+    "results": [],
+    "timestamp": 1664600213,
+    "url": "https://duckduckgo.com/?q=empure+site:empure.in&t=opera"
+}

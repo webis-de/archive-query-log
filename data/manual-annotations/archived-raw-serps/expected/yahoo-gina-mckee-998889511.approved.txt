@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "Gina McKee",
+    "offset": null,
+    "page": null,
+    "query": "Gina McKee",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 998889511,
+            "title": "IMDb: Wonderland (1999)",
+            "url": "http://srd.yahoo.com/srst/31267211/Gina+McKee/1/1/*http://us.imdb.com/Title?0171865"
+        }
+    ],
+    "timestamp": 998889511,
+    "url": "http://search.yahoo.com:80/search?p=Gina+McKee"
+}

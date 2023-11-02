@@ -1,0 +1,115 @@
+{
+    "interpreted_query": ",h\u00e4hnchen warme",
+    "offset": null,
+    "page": 0,
+    "query": ",h\ufffdhnchen+warme",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "lecker und leicht",
+            "timestamp": 1303285108,
+            "title": "Warme Rotkohlpfanne mit H\u00e4hnchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1541161260364987/Warme-Rotkohlpfanne-mit-Haehnchen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "glyxtauglich und lecker",
+            "timestamp": 1303285108,
+            "title": "Warmer Linsensalat mit Huhn",
+            "url": "http://www.chefkoch.de:80/rezepte/1630571270556537/Warmer-Linsensalat-mit-Huhn.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Warmer Reissalat",
+            "timestamp": 1303285108,
+            "title": "Curry - H\u00e4hnchen - Reissalat",
+            "url": "http://www.chefkoch.de:80/rezepte/871841192604505/Curry-Haehnchen-Reissalat.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Mini - Rouladen am Stiel, kalt und warm ein Genuss",
+            "timestamp": 1303285108,
+            "title": "H\u00e4hnchen - Involtini",
+            "url": "http://www.chefkoch.de:80/rezepte/1220321227471785/Haehnchen-Involtini.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "geht auch mit Spaghetti",
+            "timestamp": 1303285108,
+            "title": "Warmer Nudelsalat mit Huhn nach Szechuan Art",
+            "url": "http://www.chefkoch.de:80/rezepte/1083231214115609/Warmer-Nudelsalat-mit-Huhn-nach-Szechuan-Art.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "f\u00fcr den Thermomix TM 21 und 31",
+            "timestamp": 1303285108,
+            "title": "H\u00e4hnchen in fruchtiger Curryso\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1795801290147027/Haehnchen-in-fruchtiger-Currysosse.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Kabsa't Dajaj, Rezept aus Saudi Arabien",
+            "timestamp": 1303285108,
+            "title": "H\u00e4hnchen Kabsa auf Reis",
+            "url": "http://www.chefkoch.de:80/rezepte/1308201235665372/Haehnchen-Kabsa-auf-Reis.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "traditionelle polnische K\u00fcche",
+            "timestamp": 1303285108,
+            "title": "Gef\u00fclltes H\u00fchnchen auf polnische Art",
+            "url": "http://www.chefkoch.de:80/rezepte/1259011231332709/Gefuelltes-Huehnchen-auf-polnische-Art.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "ideal f\u00fcr warme Tage",
+            "timestamp": 1303285108,
+            "title": "Fruchtiger Nudelsalat",
+            "url": "http://www.chefkoch.de:80/rezepte/135821058710962/Fruchtiger-Nudelsalat.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "meine Variante von Zereshk Polo",
+            "timestamp": 1303285108,
+            "title": "Berberitzen - Reis mit H\u00e4hnchen Ras el Hanout",
+            "url": "http://www.chefkoch.de:80/rezepte/1458501250775799/Berberitzen-Reis-mit-Haehnchen-Ras-el-Hanout.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "Pizzateig - H\u00fchnchen - Barbecue - rote Zwiebeln",
+            "timestamp": 1303285108,
+            "title": "Barbecue Chicken Pizza",
+            "url": "http://www.chefkoch.de:80/rezepte/1844171298749832/Barbecue-Chicken-Pizza.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Pack die Fertigt\u00fcte weg! Jetzt wird selbst gekocht!",
+            "timestamp": 1303285108,
+            "title": "Pasta mit Tomaten - Spinat - K\u00e4se - So\u00dfe und H\u00e4hnchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1253731230633222/Pasta-mit-Tomaten-Spinat-Kaese-Sosse-und-Haehnchen.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1303285108,
+            "title": "Mafe vom Perlhuhn",
+            "url": "http://www.chefkoch.de:80/rezepte/802211183986512/Mafe-vom-Perlhuhn.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Piroschki, Teig-  bzw. Grundrezept",
+            "timestamp": 1303285108,
+            "title": "Gebackene Piroggen",
+            "url": "http://www.chefkoch.de:80/rezepte/493781143737705/Gebackene-Piroggen.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1303285108,
+            "title": "Schmorhuhn mit buntem P\u00fcree",
+            "url": "http://www.chefkoch.de:80/rezepte/1469421251727639/Schmorhuhn-mit-buntem-Pueree.html"
+        }
+    ],
+    "timestamp": 1303285108,
+    "url": "http://www.chefkoch.de:80/rs/s0/%2Ch%E4hnchen+warme/Rezepte.html"
+}

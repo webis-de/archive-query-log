@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "hm 219c",
+    "offset": null,
+    "page": null,
+    "query": "hm 219c",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Final Rule HM-219C Miscellaneous Petitions to Reduce Regulatory Burdens. SUMMARY: The Pipeline and Hazardous Materials Safety Administration (PHMSA) is amending the Hazardous Materials Regulations in response to 24 petitions for rulemaking \u2026",
+            "timestamp": 1637494750,
+            "title": "Final Rule HM-219C Miscellaneous Petitions to Reduce ...",
+            "url": "https://ihmm.org/final-rule-hm-219c-miscellaneous-petitions-to-reduce-regulatory-burdens/"
+        },
+        {
+            "rank": 2,
+            "snippet": "PHMSA HM-219C Petitions Final Rule. 12/1/2020. On November 25, 2020, PHMSA published the Final Rule on Docket HM-219C in the Federal Register. The effective date of the Final Rule is December 28, 2020. The Final Rule is in response to 24 pe\u2026",
+            "timestamp": 1637494750,
+            "title": "PHMSA HM-219C Petitions Final Rule - AllTranstek",
+            "url": "https://www.alltranstek.com/news/phmsa-hm-219c-petitions-final-rule"
+        },
+        {
+            "rank": 3,
+            "snippet": "November 25, 2020: (FR)(HM-219C) Hazardous Materials \u2013 Adoption of Misc. Petitions to Reduce Regulatory Burdens by Wendy Buckley - December 2, 2020 PHMSA has issued a final rule in response to 24 petitions the agency received between Februa\u2026",
+            "timestamp": 1637494750,
+            "title": "November 25, 2020: (FR)(HM-219C) Hazardous Materials ...",
+            "url": "https://starshazmat.com/2020/12/02/november-25-2020-frhm-219c-hazardous-materials-adoption-of-misc-petitions-to-reduce-regulatory-burdens/"
+        },
+        {
+            "rank": 4,
+            "snippet": "HM-219C will allow Class 1 devices to use the exceptions in 173.166 just like class 9 devices. Reports for cargo tank manufacturers \u2013 HM-219C will allow alternative reports for manufacturers of cargo tanks made after 1995 by removing the wo\u2026",
+            "timestamp": 1637494750,
+            "title": "New Final Rule HM-219C from US DOT Makes Various Changes ...",
+            "url": "https://www.thecompliancecenter.com/new-final-rule-hm-219c-from-us-dot-makes-various-changes/"
+        },
+        {
+            "rank": 5,
+            "snippet": "HM-219C updates, clarifies, or provides relief from various regulatory requirements without adversely affecting safety. As of the effective date of this final rule, PHMSA also withdraws its September 28, 2017 enforcement discretion regardin\u2026",
+            "timestamp": 1637494750,
+            "title": "2020-57 October 23, 2020 PHMSA Issues Final Rule HM-219C ...",
+            "url": "https://www.hazmatship.com/hazmat-alerts/24--sp-887/sp-471/36004-2020-57-october-23,-2020-phmsa-issues-final-rule-hm-219c-adoption-of-miscellaneous-petitions-to-reduce-regulatory-burdens"
+        },
+        {
+            "rank": 6,
+            "snippet": "Docket No. PHMSA-2017-0120 (HM-219C) RIN: 2137-AF33 Document Number: 2019-16675. Document Details. Document Statistics. Document page views are updated periodically throughout the day and are cumulative counts for this document.",
+            "timestamp": 1637494750,
+            "title": "Federal Register :: Hazardous Materials: Adoption of ...",
+            "url": "https://www.federalregister.gov/documents/2019/08/14/2019-16675/hazardous-materials-adoption-of-miscellaneous-petitions-to-reduce-regulatory-burdens"
+        },
+        {
+            "rank": 7,
+            "snippet": "HM-219. HAND MICROPHONE. SM-30. DESKTOP MICROPHONE. SM-50. DESKTOP MICROPHONE. Close. Ingress Protection (IP) Code. Ingress Protection (IP) ratings define the level of protection provided by enclosures to prevent the ingress of foreign obje\u2026",
+            "timestamp": 1637494750,
+            "title": "HM-219 | Products | Icom Inc.",
+            "url": "https://www.icomjapan.com/lineup/options/HM-219/"
+        },
+        {
+            "rank": 8,
+            "snippet": "PHMSA received comments to the HM-219C NPRM from AAR, The Dow Chemical Company, Chemours, and a joint comment from ACC, CI, and TFI in support of this proposal. These commenters noted that by re-designating the HM-246 specifications as perm\u2026",
+            "timestamp": 1637494750,
+            "title": "Federal Register :: Hazardous Materials: Adoption of ...",
+            "url": "https://www.federalregister.gov/documents/2020/11/25/2020-23712/hazardous-materials-adoption-of-miscellaneous-petitions-to-reduce-regulatory-burdens"
+        },
+        {
+            "rank": 9,
+            "snippet": "Incl btw\u20ac 34,95. Per. 1 St. + in winkelwagen. Alle prijzen zijn excl. verzendkosten. Artikel aanbevelen aan bekende. Download deze info als PDF. De ICOM HM-219 is een vervangende handmicrofoon met up/down voor een groot aantal Icom HF basis\u2026",
+            "timestamp": 1637494750,
+            "title": "ICOM HM-219 HM-36 Handmicrofoon basistransceivers met",
+            "url": "https://www.classicinternational.eu/toebehoren-apparatuur/audio/microfoons-oortjes/icom-hm-219/"
+        }
+    ],
+    "timestamp": 1637494750,
+    "url": "https://www.ecosia.org/search?q=hm+219c"
+}

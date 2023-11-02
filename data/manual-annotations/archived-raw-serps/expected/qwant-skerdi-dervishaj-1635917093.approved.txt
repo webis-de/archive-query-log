@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Skerdi Dervishaj\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Skerdi Dervishaj\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Skerdi Dervishaj coach, Lyon. 112 likes. Coach U17 FC Gerland et recruter pro FBMANAGEMENT . Trajner i U17 FC Gerland dhe scout pro FBManagement.",
+            "timestamp": 1635917093,
+            "title": "Skerdi Dervishaj coach - Home | Facebook",
+            "url": "https://business.facebook.com/skerdidervishajcoach/?business_id=135983543493477"
+        },
+        {
+            "rank": 2,
+            "snippet": "Share your videos with friends, family, and the world",
+            "timestamp": 1635917093,
+            "title": "Skerdi Dervishaj - YouTube",
+            "url": "https://www.youtube.com/channel/UCjsOhbjHBOI5O4oOZch2kYw"
+        },
+        {
+            "rank": 3,
+            "snippet": "Skerdi Dervishaj. FIL D'ACTU. R\u00c9SULTATS. TOUT. Kassim ALI est devenu membre 11 jours. Manga Momo est devenu membre 1 mois. venez nombreux et en finale : nouvelles photos 1 mois. venez nombreux et en finale 1 mois. DAVI Louren\u00e7o SOARES EUGENIO est devenu membre 1 mois.",
+            "timestamp": 1635917093,
+            "title": "Skerdi Dervishaj - Dirigeants - club Football Football ...",
+            "url": "https://fc-gerland.footeo.com/dirigeants/skerdi-dervishaj.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "SKERDI DERVISHAJ. Mobile personnel : 06 19 61 27 23. Email principal : dervishajskerdi@gmail.com. SENIORS F - RESPONSABLE TECHNIQUE CATEGORIE. MARA GUEDON. Mobile travail : 0690904110. Email principal : maraguedon@gmail.com",
+            "timestamp": 1635917093,
+            "title": "F\u00e9d\u00e9ration Fran\u00e7aise de Football - FFF",
+            "url": "https://www.fff.fr/competition/club/533109-f-c-gerland-lyon/information.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "@fbm.footballmanagament: \u201cWe are Proud to announce that @cachisrivera a @fbm.footballmanagament client For Europe Midfilder\u2026\u201d",
+            "timestamp": 1635917093,
+            "title": "FBM on Instagram: \u201cWe are Proud to announce that ...",
+            "url": "https://www.instagram.com/p/CPyghXPF5Ot/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Skerdi Dervishaj + Rionegro \u00c1guila Liga DIMAYOR II League level: First Tier Joined: Aug 19, 2021 Contract until:- \u20ac 100 Th. Last update: Jun 30, 2021. \u2261 Sub Menu. Close Menu ...",
+            "timestamp": 1635917093,
+            "title": "Jhon Fredy Miranda - Player profile 2021 | Transfermarkt",
+            "url": "https://www.transfermarkt.com/jhon-fredy-miranda/profil/spieler/334373"
+        },
+        {
+            "rank": 7,
+            "snippet": "M. le Dirigeant : Skerdi DERVISHAJ Munis de leurs li en es ou pi\u00e8 es d\u2019identit\u00e9 Un memre de la ommission de Dis ipline Nous vous pr\u00e9isons que la pr\u00e9sente onvoation vous est adress\u00e9e en onformit\u00e9 des presriptions du R\u00e8glement Dis-iplinaire annex\u00e9 aux R\u00e8glements G\u00e9n\u00e9raux de la F.F.F. notamment de l'artile 3.4.2.",
+            "timestamp": 1635917093,
+            "title": "OMMISSION DAPPEL - FFF",
+            "url": "https://lyon-rhone.fff.fr/wp-content/uploads/sites/105/bsk-pdf-manager/d1e7eb36f12a7512b2a1cc7ab677cfd1.pdf"
+        },
+        {
+            "rank": 8,
+            "snippet": "M. le Dirigeant : Skerdi DERVISHAJ Munis de leurs li en es ou pi\u00e8 es d\u2019identit\u00e9 POUR LE LU ET.S. TRINITE LYON M. le Pr\u00e9sident : G\u00e9rard GIUDIE ou son repr\u00e9sentant M. le Dirigeant : Hiham KADIRI M. le Dirigeant : Damien MONNI M. l\u2019Eduateur : Ismail LAROUSSI GRAINE",
+            "timestamp": 1635917093,
+            "title": "OMMISSION D\u2019APPEL - FFF",
+            "url": "https://lyon-rhone.fff.fr/wp-content/uploads/sites/105/bsk-pdf-manager/523b4d0ef6800a9a382555ffdab72878.pdf"
+        },
+        {
+            "rank": 9,
+            "snippet": "Skerdi Dervishaj + Rionegro \u00c1guila Liga DIMAYOR II Livello: Primo livello Nella rosa dal: 19/ago/2021 Scadenza contratto:- 100 mila \u20ac Aggiornato al: 30/giu/2021. \u2261 Sub-Navigazione ...",
+            "timestamp": 1635917093,
+            "title": "Jhon Fredy Miranda - Profilo giocatore 2021 | Transfermarkt",
+            "url": "https://www.transfermarkt.it/jhon-fredy-miranda/profil/spieler/334373"
+        },
+        {
+            "rank": 10,
+            "snippet": "Skerdi Dervishaj + Rionegro \u00c1guila Liga DIMAYOR II Lig seviyesi: 1.Lig 19 A\u011fu 2021 'den itibaren takimda 'den itibaren takimda-",
+            "timestamp": 1635917093,
+            "title": "Jhon Fredy Miranda - Oyuncu profili 2021 | Transfermarkt",
+            "url": "https://www.transfermarkt.com.tr/jhon-fredy-miranda/profil/spieler/334373"
+        }
+    ],
+    "timestamp": 1635917093,
+    "url": "https://www.qwant.com/?q=%22Skerdi+Dervishaj%22&t=all"
+}

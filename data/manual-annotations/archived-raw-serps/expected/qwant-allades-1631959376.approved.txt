@@ -1,0 +1,108 @@
+{
+    "interpreted_query": "\"Allad\u00e8s\"",
+    "offset": null,
+    "page": null,
+    "query": "\"Allad\u00e8s\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Buy Top Quality Neodymium Magnets. Great Selection &amp; Prices. Shop Now!",
+            "timestamp": 1631959376,
+            "title": "K&amp;J Magnetics Neo Magnets - K J Magnetics",
+            "url": "https://www.bing.com/aclick?ld=e84aV9bsrl9db1yHapqwiY2jVUCUyRnVUsTkDbpLw4bDs71v_Ny3r4-ymrtyrGNNuxZ6d3CGU6clBNFt0zIoaXn3zegL8qCT3jc21FPM7R8Ose1LZSpZyuqoIY4mdg_d9JWaMUM1Kh4uOQUNEDsgJbaLTwGJIAR5XYXC3i-8rTgink71xY&u=aHR0cHMlM2ElMmYlMmZ3d3cua2ptYWduZXRpY3MuY29tJTJmY2F0ZWdvcmllcy5hc3AlM2Ztc2Nsa2lkJTNkYzRlOGY1ZjQ0MjU3MTgxNjdhNzc5NGIxOTcyNjFlYmQ&rlid=c4e8f5f4425718167a7794b197261ebd"
+        },
+        {
+            "rank": 2,
+            "snippet": "Free Shipping &amp; Return, SHEIN Offers Teen Clothes to Fit Your Style Needs. Free Return, Stylish &amp; Trendy Teen Clothes, Register And Get 10% Off, Shop Now!",
+            "timestamp": 1631959376,
+            "title": "Trendy teen clothes stores Online - Buy Now, Pay Later - SHEIN",
+            "url": "https://www.bing.com/aclick?ld=e8dqRVSbjzB1pVgiORA8iPEjVUCUxVLYDVF4tFUrfsFcnJiwSmFMbcw1u7FHm-RT8dkJeXQtYo32b3nJ4GxRqst1GsJXgbPbU0wLxzl5XQ2mRuJLPb1v_tPodTY3M0zlYB08cVS5beBXC6_IzfSirG9P1Ykl4_on2co3sdXZk3QzbpqKOp&u=aHR0cHMlM2ElMmYlMmZ1cy5zaGVpbi5jb20lMmZDbG90aGluZy1jLTIwMzUuaHRtbCUzZnVybF9mcm9tJTNkdXNiaW5nc2VhcmNoMDlfc3JzYV90ZWVuY2xvdGgwMV8yMDIxMDEyOSUyNm1zY2xraWQlM2RlNGYyNmQ0MDVmNmYxY2U2NDI4ZjBjMDU4YTFlMzY2YQ&rlid=e4f26d405f6f1ce6428f0c058a1e366a"
+        },
+        {
+            "rank": 3,
+            "snippet": "All You Need to Keep Warm and Stay Stylish This Season. Shop the #LFC Autumn/Winter Range. The Official Liverpool FC Store. The Place to go for Your LFC Fashion &amp; Merchandise.",
+            "timestamp": 1631959376,
+            "title": "Liverpool FC Hoodies - Autumn/Winter \u201921 Collection",
+            "url": "https://www.bing.com/aclick?ld=e8jB93AAnS3tdlJiPOsUKo1zVUCUybWAP60T-HjO7jv2eqtTKDJDkyGms6xJcd3Z3At7ss8YmIN6rsTqAWnVLZb3v6dzv8Zvejo3w--EXBZzAUP-VsYtmpUt82XJ1O4Sx_eY0cn78Lo3yDv-LiuBlxsfqHuoTTC9LjGD8iidI3v0AYQSMT&u=aHR0cHMlM2ElMmYlMmZzdG9yZS5saXZlcnBvb2xmYy5jb20lMmZmYXNoaW9uJTJma2lkcyUyZnRvcHMtamFja2V0cyUzZm1zY2xraWQlM2RkMzhiYjUyNmQxOWMxMmEzNTBiY2Q0NjMwNGVkYTExNyUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZFNMJTI1M0UlMjUzRUxGQyUyNTNFJTI1M0VVUyUyNTNFJTI1M0VGYXNoaW9uJTI1M0UlMjUzRUhlYWQlMjZ1dG1fdGVybSUzZGxpdmVycG9vbCUyNTIwZmMlMjUyMGhvb2RpZSUyNnV0bV9jb250ZW50JTNkRmFzaGlvbiUyNTNFJTI1M0VIb29keQ&rlid=d38bb526d19c12a350bcd46304eda117"
+        },
+        {
+            "rank": 4,
+            "snippet": "Obt\u00e9n actualizaci\u00f3n de vacuna COVID-19 disponibles en tu area. Reg\u00edstrate hoy. Te enviaremos email cuando la vacuna de COVID-19 est\u00e9 disponible en tu area.",
+            "timestamp": 1631959376,
+            "title": "Walgreens - Vacuna COVID-19",
+            "url": "https://www.bing.com/aclick?ld=e8JMDpvVO955v5qGgSHS_1qTVUCUxN7Mm1_pEEhhUMD_iKMorYsc7iW8mxtePyZuP-X3NFToVYyhga2xEZxksz2FMRuuPZkrvGvydOaSw6XqE-Z90rU5Yfic9O6Mb1qYdRhcLuOiC8ctr50WJaNBZ6wzHpq7RAzOlD71gIUqQSRuh-mAVA&u=aHR0cHMlM2ElMmYlMmZjbGlja3NlcnZlLmRhcnRzZWFyY2gubmV0JTJmbGluayUyZmNsaWNrJTNmbGlkJTNkNDM3MDAwNjU5NzMwNDAzODElMjZkc19zX2t3Z2lkJTNkNTg3MDAwMDczNjc2MDMxMTQlMjZkc19hX2NpZCUzZDY2MjMyNDUzNiUyNmRzX2FfY2FpZCUzZDE0NDA4NzgyMjI3JTI2ZHNfYV9hZ2lkJTNkMTI2MTA0MzQ5NzMzJTI2ZHNfYV9saWQlM2Rrd2QtMTAyMzA5OTk0MDA0NSUyNiUyNmRzX2VfYWRpZCUzZDg0MDQ0MTQ1NjkzNzcyJTI2ZHNfZV90YXJnZXRfaWQlM2Rrd2QtODQwNDQ3MzU5OTk2NTMlM2Fsb2MtMTkwJTI2JTI2ZHNfdXJsX3YlM2QyJTI2ZHNfZGVzdF91cmwlM2RodHRwcyUzYSUyZiUyZnRwdC5tZWRpYXBsZXguY29tJTJmZXZlbnQlMmZldGMlMmZjbGljayUzZnZuZHJfaWQlM2QxMzc4JTI2dm5kcl9uYW1lJTNkR29vZ2xlJTI1MjBTZWFyY2glMjUyME5ldHdvcmslMjZjb21wX2lkJTNkMjYyMyUyNmNhbXBhaWduX2lkJTNkMTAwMjc2JTI2ZHZjX2lkJTNkJTI2Z2dsX3BsYXlfaWQlM2QlMjZpZGZhJTNkJTI2YWRfZ3JvdXAlM2QxMzQ0NzAzODUxMjc4MTQxJTI2Y3JlYXRpdmVfaWQlM2QlMjZwYWlkX3NlYXJjaF9rZXl3b3JkJTNkdmFjdW5hJTI1MjBjb3ZpZDE5JTI2cGxhY2VtZW50X2lkJTNkJTI2cmRjdF91cmwlM2RodHRwcyUyNTNBJTI1MkYlMjUyRnd3dy53YWxncmVlbnMuY29tJTI1MkZ0b3BpYyUyNTJGcHJvbW90aW9uJTI1MkZjb3ZpZC12YWNjaW5lLWVzcGFub2wuanNwJTI1M0ZleHQlMjUzRG1zbkZZMjJfVVNIX0NPVklEJTI1MkJWYWNjaW5lX05CX0Jyb2FkVVNIX0h5cGVybG9jYWwlMjUyQkNPVklEJTI1MkJWYWNjaW5lX05CX0NPVklEJTI1MkJWYWNjaW5lX0Jyb2FkX3ZhY3VuYSUyNTI1MjBjb3ZpZDE5JTI1MjZnY2xpZCUyNTNEN2ZmNTMxNzAxNGE5MTkxMWMxNmE1MDM1YzFkODdiYjYlMjUyNmdjbHNyYyUyNTNEM3AuZHMlMjUyNiUyNmdjbGlkJTNkN2ZmNTMxNzAxNGE5MTkxMWMxNmE1MDM1YzFkODdiYjYlMjZnY2xzcmMlM2QzcC5kcw&rlid=7ff5317014a91911c16a5035c1d87bb6"
+        },
+        {
+            "rank": 5,
+            "snippet": "11.Allad\u00e8s ou Romulus Silvius, fils de Agrippa, roi de -864 de -845 (meurt foudroy\u00e9) ; 12.Aventinus, roi de -845 \u00e0 -808; \u00e9lu par les nobles. Procas Silvius fils du Roi Aventinus, est le treizi\u00e8me des Rois de la descendance d' Ascagne. Il r\u00e9gna sur la cit\u00e9 de Alba la Longue entre -808 \u00e0 -794. Il eut deux fils Numitor et Amulius.",
+            "timestamp": 1631959376,
+            "title": "Fondation de Rome par Romulus - Arkadias",
+            "url": "https://www.arkadias.fr/3-rome-la-fondationde-ascagne-aux-gents-romaines.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Allad\u00e8s ou Romulus Silvius, fils du pr\u00e9c\u00e9dent, roi de -864 de -845 (meurt foudroy\u00e9) ; Aventinus, roi de -845 \u00e0 -808 ; Procas, roi de -808 \u00e0 -794 ; Numitor, fils a\u00een\u00e9 du pr\u00e9c\u00e9dent, roi en -794 et de -754 \u00e0 -735, p\u00e8re de Rh\u00e9a Silvia, la m\u00e8re de R\u00e9mus et Romulus ; Amulius, fr\u00e8re cadet du pr\u00e9c\u00e9dent, roi de -794 \u00e0 -754 ;",
+            "timestamp": 1631959376,
+            "title": "Albe-la-Longue : d\u00e9finition de Albe-la-Longue et synonymes ...",
+            "url": "http://dictionnaire.sensagent.leparisien.fr/Albe-la-Longue/fr-fr/"
+        },
+        {
+            "rank": 7,
+            "snippet": "9 oct. 2020 - Explorez le tableau \u00ab Zelda \u00bb de Allad\u00e8s, auquel 114 utilisateurs de Pinterest sont abonn\u00e9s. Voir plus d'id\u00e9es sur le th\u00e8me zelda, la l\u00e9gende de zelda, dessin zelda.",
+            "timestamp": 1631959376,
+            "title": "500+ id\u00e9es de Zelda | zelda, la l\u00e9gende de zelda, dessin zelda",
+            "url": "https://www.pinterest.fr/allads6193/zelda/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Albe la Longue est la principale ville d'une alliance regroupant une trentaine de villes [16] et qui composent la Ligue latine.Les rassemblements de la ligue se d\u00e9roulent au printemps des Ferentines dans la vall\u00e9e entre le lac d'Albano et Marino, en Italie [17].Les sacrifices de la ligue sont offerts sur les monts Albains, d'o\u00f9 l'on peut voir tout le pays du Latium.",
+            "timestamp": 1631959376,
+            "title": "Albe la Longue - Wikimonde",
+            "url": "https://wikimonde.com/article/Albe_la_Longue"
+        },
+        {
+            "rank": 9,
+            "snippet": "Tout savoir sur le patronyme LATIUM Fr\u00e9quence du patronyme LATIUM: Ce patronyme est pr\u00e9sent 3 303 fois sur Geneanet ! Variantes du nom de famille. L'orthographe des noms de famille a parfois \u00e9volu\u00e9 au cours des si\u00e8cles.",
+            "timestamp": 1631959376,
+            "title": "LATIUM : Origine du nom, g\u00e9n\u00e9alogie, popularit\u00e9 du nom ...",
+            "url": "https://www.geneanet.org/genealogie/latium/LATIUM"
+        },
+        {
+            "rank": 10,
+            "snippet": "Quiz La lign\u00e9e d'\u00c9n\u00e9e (11) : D\u00e9couvrons les rois qui ont suivi le h\u00e9ros \u00c9n\u00e9e (Indice : un descendant d'\u00c9n\u00e9e s'appelle lui aussi \u00c9n\u00e9e). - Q1: Qui est le p\u00e8re d'\u00c9n\u00e9e ? Jupiter, Anchise, Priam,...",
+            "timestamp": 1631959376,
+            "title": "Quiz La lign\u00e9e d'\u00c9n\u00e9e (11) - Mythologie, Grece, Troie",
+            "url": "https://www.quizz.biz/quizz-412422.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "MYTHOLOGIE GR\u00c9CO-ROMAINE, avec Romulus Silvius Allad\u00e8s MYTHOLOGIE GR\u00c9CO-ROMAINE. MYTHOLOGIE GR\u00c9CO-ROMAINE, avec Agrippa du LATIUM. MYTHOLOGIE GR\u00c9CO-ROMAINE, avec Tib\u00e9rinus Silvius du LATIUM. MYTHOLOGIE GR\u00c9CO-ROMAINE, avec Calp\u00e9tus Cap\u00e9tus MYTHOLOGIE GR\u00c9CO-ROMAINE. MYTHOLOGIE GR\u00c9CO-ROMAINE, avec Capys MYTHOLOGIE GR\u00c9CO-ROMAINE.",
+            "timestamp": 1631959376,
+            "title": "Guy Herveleu - Geneanet",
+            "url": "https://gw.geneanet.org/gherveleu?lang=fr&m=P&v=ne"
+        },
+        {
+            "rank": 12,
+            "snippet": "Mar 16, 2020 - Despues de los acontecimientos de Nanatsu no Taizai eres llamado por tu maestro Tony Stark el multimillonario para entrenarte para enfrentarte junto a unos ali...",
+            "timestamp": 1631959376,
+            "title": "Male Nelfilim Alumno de Iron man x Azur Lane | Character ...",
+            "url": "https://www.pinterest.com/pin/434104851585629342/"
+        },
+        {
+            "rank": 13,
+            "snippet": "Due to a planned power outage, our services will be reduced today (June 15) starting at 8:30am PDT until the work is complete. We apologize for the inconvenience.",
+            "timestamp": 1631959376,
+            "title": "Full text of \"Dictionnaire classique des noms propres de l ...",
+            "url": "https://archive.org/stream/DictionnaireClassiqueDesNomsPropres/Dictionnaire_classique_des_noms_propres_djvu.txt"
+        },
+        {
+            "rank": 14,
+            "snippet": "An icon used to represent a menu that can be toggled by interacting with this icon.",
+            "timestamp": 1631959376,
+            "title": "Full text of \"Bulletin du bibliophile\"",
+            "url": "http://archive.org/stream/bulletindubibli15nodigoog/bulletindubibli15nodigoog_djvu.txt"
+        }
+    ],
+    "timestamp": 1631959376,
+    "url": "https://www.qwant.com/?q=%22Allad%C3%A8s%22&t=all"
+}

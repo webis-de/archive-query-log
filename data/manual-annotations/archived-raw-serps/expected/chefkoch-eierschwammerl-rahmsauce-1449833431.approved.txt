@@ -1,0 +1,38 @@
+{
+    "interpreted_query": "eierschwammerl rahmsauce",
+    "offset": null,
+    "page": 0,
+    "query": "eierschwammerl+rahmsauce",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1449833431,
+            "title": "Semmelkn\u00f6del mit Pfifferling - Rahmsauce",
+            "url": "http://www.chefkoch.de/rezepte/722181174991320/Semmelknoedel-mit-Pfifferling-Rahmsauce.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1449833431,
+            "title": "H\u00e4hnchenschnitzel mit Pfifferlingen in Rahmsauce",
+            "url": "http://www.chefkoch.de/rezepte/1717631280436367/Haehnchenschnitzel-mit-Pfifferlingen-in-Rahmsauce.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1449833431,
+            "title": "Kalbsnierenrollbraten in Pfifferlingrahmso\u00dfe",
+            "url": "http://www.chefkoch.de/rezepte/2880581440331831/Kalbsnierenrollbraten-in-Pfifferlingrahmsosse.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1449833431,
+            "title": "Leberpfanne vom Huhn",
+            "url": "http://www.chefkoch.de/rezepte/1218971227373372/Leberpfanne-vom-Huhn.html"
+        }
+    ],
+    "timestamp": 1449833431,
+    "url": "http://www.chefkoch.de/rs/s0/eierschwammerl+rahmsauce/Rezepte.html"
+}

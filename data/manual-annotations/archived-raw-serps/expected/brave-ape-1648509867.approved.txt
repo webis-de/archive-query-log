@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "Ape",
+    "offset": null,
+    "page": null,
+    "query": "Ape",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Apes</em> (collectively Hominoidea /h\u0252m\u026a\u02c8n\u0254\u026adi.\u0259/) are a branch of Old World tailless simians native to Africa and Southeast Asia. They are the sister group of the Old World monkeys, together forming the catarrhine clade. They are distinguished from other primates by a wider degree of freedom ...",
+            "timestamp": 1648509867,
+            "title": "Ape - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Ape"
+        },
+        {
+            "rank": 2,
+            "snippet": "December 28, 2021 -\n            <em>ape</em>, (superfamily Hominoidea), any tailless primate of the families Hylobatidae (gibbons) and Hominidae (chimpanzees, bonobos, orangutans, gorillas, and human beings). <em>Apes</em> are found in the tropical forests of western and central Africa and Southeast Asia. <em>Apes</em> are distinguished from monkeys ...",
+            "timestamp": 1648509867,
+            "title": "ape | Definition &amp; Facts | Britannica",
+            "url": "https://www.britannica.com/animal/ape"
+        },
+        {
+            "rank": 3,
+            "snippet": "February 14, 2022 -\n            The meaning of <em>APE</em> is any of various large tailless semi-erect primates of Africa and southeastern Asia (such as the chimpanzee, gorilla, orangutan, or gibbon) \u2014called also anthropoid, anthropoid <em>ape</em>. How to use <em>ape</em> in a sentence. Synonym Discussion of <em>Ape</em>.",
+            "timestamp": 1648509867,
+            "title": "Ape Definition &amp; Meaning - Merriam-Webster",
+            "url": "https://www.merriam-webster.com/dictionary/ape"
+        },
+        {
+            "rank": 4,
+            "snippet": "4 days ago -\n            Get the latest ApeCoin price, <em>APE</em> market cap, trading pairs, charts and data today from the world\u2019s number one cryptocurrency price-tracking website",
+            "timestamp": 1648509867,
+            "title": "ApeCoin price today, APE to USD live, marketcap and chart | ...",
+            "url": "https://coinmarketcap.com/currencies/apecoin-ape/"
+        },
+        {
+            "rank": 5,
+            "snippet": "August 5, 2007 -\n            The present study aimed to contrast ... of association between signals and specific behavioral contexts, comparing groups of both the same and different <em>ape</em> species....",
+            "timestamp": 1648509867,
+            "title": "Ape gestures and language evolution | PNAS",
+            "url": "https://www.pnas.org/content/104/19/8184"
+        },
+        {
+            "rank": 6,
+            "snippet": "4 days ago -\n            One of the most famous web3 projects is the Bored <em>Ape</em> Yacht Club (BAYC), a collection of whimsical NFTs created by a company called Yuga Labs. It just raised $450 million \u2014 and almost simultaneously, created billions more out of thin air.",
+            "timestamp": 1648509867,
+            "title": "There\u2019s something off about ApeCoin - The Verge",
+            "url": "https://www.theverge.com/22992086/bored-ape-yacht-club-apecoin-venture-capital-yuga-labs-money"
+        },
+        {
+            "rank": 7,
+            "snippet": "About <em>Apes</em> <em>Apes</em> are primates. Primates are mammals that share the following characteristics: hair instead of fur fingernails instead of claws opposable thumbs higher brain-to-body size ratio, high level of intelligence prehensility (ability to grasp with fingers and/or toes) padded digits",
+            "timestamp": 1648509867,
+            "title": "About Apes - Center for Great Apes",
+            "url": "https://centerforgreatapes.org/about-apes/"
+        },
+        {
+            "rank": 8,
+            "snippet": "4 days ago -\n            March 27, 2022 - The current price of ApeCoin is $14.256 per (<em>APE</em> / USD). ApeCoin is 48.17% below the all time high of $27.505332. The current circulating supply is 277,500,000 <em>APE</em>. Discover new cryptocurrencies to add to your portfolio.",
+            "timestamp": 1648509867,
+            "title": "APEcoin (APE) Price, Charts, and News | Coinbase: ape token, ape ...",
+            "url": "https://www.coinbase.com/price/apecoin"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Ape</em> definition, any member of the superfamily Hominoidea, the two extant branches of which are the lesser <em>apes</em> (gibbons) and the great <em>apes</em> (humans, chimpanzees, gorillas, and orangutans). See more.",
+            "timestamp": 1648509867,
+            "title": "Ape Definition &amp; Meaning | Dictionary.com",
+            "url": "https://www.dictionary.com/browse/ape"
+        },
+        {
+            "rank": 10,
+            "snippet": "6 days ago -\n            <em>ape</em> meaning: 1. an animal like a large monkey with no tail, that uses its arms to move through trees: 2. to\u2026. Learn more.",
+            "timestamp": 1648509867,
+            "title": "APE | definition in the Cambridge English Dictionary",
+            "url": "https://dictionary.cambridge.org/us/dictionary/english/ape"
+        },
+        {
+            "rank": 11,
+            "snippet": "Learn more about orangutans Learn more about siamangs Read <em>Ape</em> Blog",
+            "timestamp": 1648509867,
+            "title": "Ape Cam | San Diego Zoo",
+            "url": "https://zoo.sandiegozoo.org/cams/ape-cam"
+        },
+        {
+            "rank": 12,
+            "snippet": "1 week ago -\n            ApeCoin rebounded to over $15 after lows of $6.48 on its first day of trading.",
+            "timestamp": 1648509867,
+            "title": "Bored Ape Yacht Club\u2019s ApeCoin Surges 90% on Second Day of Trading",
+            "url": "https://www.coindesk.com/markets/2022/03/18/bored-ape-yacht-clubs-apecoin-surges-90-in-second-day-of-trading/"
+        },
+        {
+            "rank": 13,
+            "snippet": "WCS is leading the effort to stabilize existing populations, working directly to conserve 18 of 22 <em>ape</em> species, including all four subspecies of gorilla and three of four chimpanzee subspecies. We are active in much of the north of the Republic of Congo, where perhaps half of all wild gorillas ...",
+            "timestamp": 1648509867,
+            "title": "Apes - WCS.org",
+            "url": "https://www.wcs.org/our-work/wildlife/apes"
+        },
+        {
+            "rank": 14,
+            "snippet": "1 week ago -\n            Even among the fastest-growing crypto startups, Yuga Labs has had a particularly explosive year. The startup is behind the NFT project Bored <em>Apes</em> Yacht Club (BAYC), which only launched in April of last year but has quickly grown to become the most valuable NFT project by market cap. The price ...",
+            "timestamp": 1648509867,
+            "title": "Bored Apes NFT project gets official \u2018ApeCoin\u2019 token \u2013 ...",
+            "url": "https://techcrunch.com/2022/03/16/bored-apes-nft-project-gets-official-apecoin-token/"
+        },
+        {
+            "rank": 15,
+            "snippet": "Moreover, the <em>ape</em> appears to lack both the kind of inductive capacity that enables the child to arrive at the rules of a linguistic grammar and the syntactic categories, such as \u201cnoun phrase\u201d and \u201cverb phrase,\u201d which according to a consensus among linguists, are necessary for the ...",
+            "timestamp": 1648509867,
+            "title": "Ape - an overview | ScienceDirect Topics",
+            "url": "https://www.sciencedirect.com/topics/immunology-and-microbiology/ape"
+        },
+        {
+            "rank": 16,
+            "snippet": "From Middle English <em>ape</em>, from Old English apa (\u201c<em>ape</em>, monkey\u201d), from Proto-West Germanic *ap\u014d, from Proto-Germanic *ap\u00f4 (\u201cmonkey, <em>ape</em>\u201d), possibly derived from Proto-Indo-European *h\u2082ep- (\u201cwater\u201d), compare Proto-Celtic *ab\u016b (\u201criver\u201d), if the word originally referred to a ...",
+            "timestamp": 1648509867,
+            "title": "ape - Wiktionary",
+            "url": "https://en.wiktionary.org/wiki/ape"
+        },
+        {
+            "rank": 17,
+            "snippet": "Humans are classified in the sub-group of primates known as the Great <em>Apes</em>.",
+            "timestamp": 1648509867,
+            "title": "Humans are apes \u2013 \u2018Great Apes\u2019 - The Australian Museum",
+            "url": "https://australian.museum/learn/science/human-evolution/humans-are-apes-great-apes/"
+        },
+        {
+            "rank": 18,
+            "snippet": "In both Africa and Asia, great <em>apes</em> \u2013 bonobos, eastern and western gorillas, chimpanzees and orangutans \u2013 are rapidly losing much of their forest habitat to human activities such as agriculture, mining, and commercial logging. Many African great <em>ape</em> populations are found in areas where ...",
+            "timestamp": 1648509867,
+            "title": "Great apes | WWF",
+            "url": "https://wwf.panda.org/discover/knowledge_hub/endangered_species/great_apes/"
+        },
+        {
+            "rank": 19,
+            "snippet": "December 28, 2021 -\n            Monkeys and <em>apes</em> are both primates, which means they\u2019re both part of the human family tree. As distinguished relatives, we should probably be able to tell them apart. But when you look at a gibbon or a marmoset, how do you know which is a monkey and which is an <em>ape</em>?",
+            "timestamp": 1648509867,
+            "title": "What\u2019s the Difference Between Monkeys and Apes? | Britannica",
+            "url": "https://www.britannica.com/story/whats-the-difference-between-monkeys-and-apes"
+        },
+        {
+            "rank": 20,
+            "snippet": "The <em>Ape</em> Initiative is the only research facility in the world dedicated to the study and conservation of the species most closely related to humans \u2013 the endangered bonobo. The <em>Ape</em> Initiative is a federally-recognized non-profit organization - 501(c)(3) - and accredited by the Association ...",
+            "timestamp": 1648509867,
+            "title": "Ape Initiative",
+            "url": "https://www.apeinitiative.org/"
+        }
+    ],
+    "timestamp": 1648509867,
+    "url": "https://search.brave.com/search?q=Ape"
+}

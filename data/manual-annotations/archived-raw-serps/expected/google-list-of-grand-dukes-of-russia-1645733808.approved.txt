@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"List of grand dukes of Russia\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"List of grand dukes of Russia\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "List of Grand Dukes of Russia. This is a list of those members of the Russian Imperial Family who bore the title Velikiy Knjaz (usually translated into\u00a0...",
+            "timestamp": 1645733808,
+            "title": "36 List of Grand Dukes of Russia ideas - Pinterest",
+            "url": "https://www.google.com/url?q=https://www.pinterest.com/ericlcurry1976/list-of-grand-dukes-of-russia/&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAoQAg&usg=AOvVaw0e2torgmQNcot0-JhRRcQR"
+        },
+        {
+            "rank": 3,
+            "snippet": "Aug 13, 2015 - Grand Duke Alexei Mikhailovich of Russia (Russian: \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u0438\u0447) (28 December 1875 \u2013 2 March 1895) was the youngest son of Grand Duke\u00a0...",
+            "timestamp": 1645733808,
+            "title": "Pin on List of Grand Dukes of Russia - Pinterest",
+            "url": "https://www.google.com/url?q=https://www.pinterest.com/pin/752734525210929683/&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAcQAg&usg=AOvVaw2mLh4AJzhjcWVznQZUZofx"
+        },
+        {
+            "rank": 4,
+            "snippet": "Romanov impostors; Ancestors of Nicholas II of Russia; List of Grand Duchesses of Russia; List of Grand Dukes of Russia; List of films about the Romanovs\u00a0...",
+            "timestamp": 1645733808,
+            "title": "House of Romanov | owlapps",
+            "url": "https://www.google.com/url?q=http://www.owlapps.net/owlapps_apps/articles%3Fid%3D26240%26lang%3Den&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAkQAg&usg=AOvVaw3winXmGG0g90LsR7ghy2Ap"
+        },
+        {
+            "rank": 10,
+            "snippet": "Explore: List of grand dukes of Russia\u00a0...",
+            "timestamp": 1645733808,
+            "title": "Prince Dimitri of Russia - PICRYL Public Domain Search",
+            "url": "https://www.google.com/url?q=https://picryl.com/media/prince-dimitri-of-russia&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAgQAg&usg=AOvVaw2qMaiwgSp-wDtrEE_2XSmN"
+        },
+        {
+            "rank": 11,
+            "snippet": "Explore: List of grand dukes of Russia ... Album General-Field Marshal Grand Duke Nikolai Nikolaevich senior. ... Album General-Field Marshal Grand Duke Nikolai\u00a0...",
+            "timestamp": 1645733808,
+            "title": "Duke Alexis - PICRYL Public Domain Search - Collections",
+            "url": "https://www.google.com/url?q=https://jenikirbyhistory.getarchive.net/media/duke-alexis%3Faction%3Dupgrade&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAAQAg&usg=AOvVaw0PlDPzBTRlGA8Phr5p7lRp"
+        },
+        {
+            "rank": 12,
+            "snippet": "... List of Russian Language Novelists, List of Russian Americans, List of Grand Dukes of Russia, List of Russian Ballet Dancers, List of Grand Duchesses of\u00a0...",
+            "timestamp": 1645733808,
+            "title": "Lists of Russian People - Amazon.in",
+            "url": "https://www.google.com/url?q=https://www.amazon.in/Lists-Russian-People-Explorers-Scientists/dp/1157711561&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAQQAg&usg=AOvVaw0AYqd5SUTD4jscwviOjQKG"
+        },
+        {
+            "rank": 13,
+            "snippet": "Romanov impostors \u00b7 Ancestors of Nicholas II of Russia \u00b7 List of Grand Duchesses of Russia \u00b7 List of Grand Dukes of Russia \u00b7 List of films about the\u00a0...",
+            "timestamp": 1645733808,
+            "title": "Sat\u0131\u015f proqram\u0131, anbar proqram\u0131 - Cyproterone_acetate - Tacir.PRO",
+            "url": "https://www.google.com/url?q=https://tacir.pro/view.php%3Fmodule%3DCyproterone_acetate&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAEQAg&usg=AOvVaw2hvfaEXsNfwpRB0THzO5yy"
+        },
+        {
+            "rank": 14,
+            "snippet": "List of Grand Dukes of Russia \u00b7 E I Sweden-Norway \u00b7 E I Pavlovsk, Saint Petersburg \u00b7 E I Order of Saint Stephen of Hungary.",
+            "timestamp": 1645733808,
+            "title": "Pavel Ivanovich Melnikov - WikiDigraph",
+            "url": "https://www.google.com/url?q=http://wikidigraph.com/index.php/graph/Pavel%2520Ivanovich%2520Melnikov&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAMQAg&usg=AOvVaw2qXiJbx3sanjwP-JcfDQIY"
+        },
+        {
+            "rank": 15,
+            "snippet": "... Leo Tolstoy \u00b7 Leopold, Grand Duke of Baden \u00b7 Likani \u00b7 List of Grand Dukes of Russia \u00b7 Louise of Mecklenburg-Strelitz \u00b7 Margrave Charles Louis of Baden\u00a0...",
+            "timestamp": 1645733808,
+            "title": "Grand Duke Nicholas Mikhailovich of Russia - Students.com",
+            "url": "https://www.google.com/url?q=https://students.com/Grand%2520Duke%2520Nicholas%2520Mikhailovich%2520of%2520Russia&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAIQAg&usg=AOvVaw0OfCOA2E_DbYZctuu_ME2A"
+        },
+        {
+            "rank": 16,
+            "snippet": "... 2.21104402256231e-07 -6.71504613575158e-05 593194 List of Grand Dukes of Russia 4482 340288 3.60205207720882e-07 -6.71473039781562e-05 736661 Frederika\u00a0...",
+            "timestamp": 1645733808,
+            "title": "linear_pumprank_NA.txt - Quantware",
+            "url": "https://www.google.com/url?q=http://www.quantware.ups-tlse.fr/QWLIB/lirgomax/linear_pumprank_NA.txt&sa=U&ved=2ahUKEwjZqojNoZn2AhW_I0QIHX8MCQIQFnoECAUQAg&usg=AOvVaw3xI2g5FhO6LLO3UcfDWnY7"
+        }
+    ],
+    "timestamp": 1645733808,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22List+of+grand+dukes+of+Russia%22"
+}

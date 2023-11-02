@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "watch tv series%23g",
+    "offset": null,
+    "page": null,
+    "query": "watch tv series%23g",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Japanese Guy <em>TV</em> 20,385 views. 19:48. ... Shot 801 0 <em>Series 23g</em> Darts Review by Perfectdarts - Duration: 1:10. ... Sign in to add this to <em>Watch</em> Later Add to",
+            "timestamp": 1602851877,
+            "title": "Showtime Darts Revolver 23g darts review - YouTube",
+            "url": "https://www.youtube.com/watch?v=QcNFpg9SN6c"
+        },
+        {
+            "rank": 2,
+            "snippet": "pdp <em>tv</em> manufacturer/supplier, China pdp <em>tv</em> manufacturer &amp; factory list, find qualified Chinese pdp <em>tv</em> manufacturers, suppliers, factories, exporters &amp; wholesalers quickly on Made-in-China.com.",
+            "timestamp": 1602851877,
+            "title": "Pdp tv Manufacturers &amp; Suppliers, China pdp tv ...",
+            "url": "https://www.made-in-china.com/manufacturers/pdp-tv.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Get <em>YouTube</em> <em>TV</em> Best of <em>YouTube</em> Music ... Shot 801 0 <em>Series 23g</em> Darts Review by Perfectdarts - Duration: 70 seconds. ... Sign in to add this to <em>Watch</em> Later",
+            "timestamp": 1602851877,
+            "title": "Perfectdarts.com - YouTube",
+            "url": "https://www.youtube.com/user/Perfectdarts1/videos"
+        },
+        {
+            "rank": 4,
+            "snippet": "Looking for pdp monitor factory direct sale? You can buy factory price pdp monitor from a great list of reliable China pdp monitor manufacturers, suppliers, traders or plants verified by a third-party inspector. Source with confidence.",
+            "timestamp": 1602851877,
+            "title": "Pdp Monitor Factory, Custom Pdp Monitor OEM/ODM ...",
+            "url": "https://www.made-in-china.com/factory/pdp-monitor.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Bought of eBay, 48g darts thought I\u2019d try these out, just a bit of fun. Glad nothing got broken REMEMBER TO CLICK LIKE AND DON\u2019T FORGET TO SUBSCRIBE.",
+            "timestamp": 1602851877,
+            "title": "HT Darts 48g darts review \ud83e\udd26\ud83c\udffb - YouTube",
+            "url": "https://www.youtube.com/watch?v=QewchePL26A"
+        },
+        {
+            "rank": 6,
+            "snippet": "This video is unavailable. <em>Watch</em> Queue Queue. <em>Watch</em> Queue Queue",
+            "timestamp": 1602851877,
+            "title": "1 July Raffle - YouTube",
+            "url": "https://www.youtube.com/watch?v=Mc8CbHxFbJ4"
+        },
+        {
+            "rank": 7,
+            "snippet": "Products of this store will be shipped directly from the US to your country. Products of this store will be shipped directly from the UK to your country. Products of this store wi",
+            "timestamp": 1602851877,
+            "title": "www.lebanon.ubuy.com",
+            "url": "https://www.lebanon.ubuy.com/en/search/?q=Darts+%26+Equipment"
+        },
+        {
+            "rank": 8,
+            "snippet": "Products of this store will be shipped directly from the US to your country. Products of this store will be shipped directly from the UK to your country. Products of this store wi",
+            "timestamp": 1602851877,
+            "title": "www.u-buy.com.au",
+            "url": "https://www.u-buy.com.au/search/?q=Darts+%26+Equipment"
+        },
+        {
+            "rank": 9,
+            "snippet": "Products of this store will be shipped directly from the US to your country. Products of this store will be shipped directly from the UK to your country. Products of this store wi",
+            "timestamp": 1602851877,
+            "title": "Darts &amp; Equipment - ubuy.co.in",
+            "url": "https://www.ubuy.co.in/search/?q=Darts+%26+Equipment"
+        },
+        {
+            "rank": 10,
+            "snippet": "Buy Exterior Badges &amp; Emblems for Alpina and get the best deals at the lowest prices on eBay! Great Savings &amp; Free Delivery / Collection on many items",
+            "timestamp": 1602851877,
+            "title": "Exterior Badges &amp; Emblems for Alpina for sale | eBay",
+            "url": "https://www.ebay.co.uk/b/Exterior-Badges-Emblems-for-Alpina/64901/bn_7013162045"
+        }
+    ],
+    "timestamp": 1602851877,
+    "url": "https://www.ecosia.org/search?q=watch+tv+series%2523g"
+}

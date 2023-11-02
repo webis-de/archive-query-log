@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "macglauglin",
+    "offset": null,
+    "page": null,
+    "query": "macglauglin",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "J.<em>McLaughlin</em> is a destination for defining style. Our collection of women's and men's clothing and accessories reflects our casual, classic style peppered with a dose of wit.",
+            "timestamp": 1640487447,
+            "title": "Shop Clothing for Women and Men | JMcLaughlin.com",
+            "url": "https://www.jmclaughlin.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>McLaughlin</em> has made 15-of-21 field goals this season, including 4-of-4 from 50-plus yards. But he\u2019s struggled mightily from the all-important 40-49-yard range, from where most kicks are attempted.",
+            "timestamp": 1640487447,
+            "title": "Browns\u2019 embattled kicker Chase McLaughlin tests positive ...",
+            "url": "https://www.cleveland.com/browns/2021/12/browns-kicker-chase-mclaughlin-goes-on-covid-19-reserve-kicker-chris-naggar-promoted-from-practice-squad.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>McLaughlin</em> is a leader in trenchless technologies. From utility boring to vacuum excavation, we provide workable solutions for the underground industry. (864) 277-5870 Email",
+            "timestamp": 1640487447,
+            "title": "McLaughlin Group Utility Boring Vacuum Excavation",
+            "url": "https://mclaughlinunderground.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>McLaughlin</em> Mine Project Homestake Mining Company of California Background The <em>McLaughlin</em> Mine operated between 1985 and 2002, producing 3.5 million ounces of gold over its 17-year life. Napa, Lake, and Yolo Counties, along with the BLM, approved the <em>McLaughlin</em> Mine Plan of Operations and the Reclamation Plan in the early 1980s. In Lake County, Homestake placed approximately 38",
+            "timestamp": 1640487447,
+            "title": "McLaughlin Mine Project - Benchmark Resources",
+            "url": "http://benchmarkresources.com/projects/mclaughlin-mine-project/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Patrick Augustine <em>Mclaughlin</em>, 67. Resides in Summerland, CA. Lived In Santa Ynez CA, San Francisco CA, Elizabeth CO, Denver CO. Related To Amy <em>Mclaughlin</em>. Also known as Patrick A <em>Mc Laughlin</em>, Laughlin Pat A Mc, P <em>Mclaughlin</em>. Includes Address (11) Phone (6) Email (3) See Results. Patrick <em>Mclaughlin</em>, 64. Resides in Novato, CA.",
+            "timestamp": 1640487447,
+            "title": "Patrick Mclaughlin in San Francisco, California | Phone ...",
+            "url": "https://www.spokeo.com/Patrick-Mclaughlin/California/San-Francisco"
+        },
+        {
+            "rank": 7,
+            "snippet": "Pam <em>Mclaughlin</em> in California. 22 people named Pam <em>Mclaughlin</em> found in Los Angeles-Riverside-Orange County, San Francisco-Oakland-San Jose and 7 other cities. Click a location below to find Pam more easily. Browse Locations.",
+            "timestamp": 1640487447,
+            "title": "Pam Mclaughlin, California (22 matches): Phone Number ...",
+            "url": "https://www.spokeo.com/Pam-Mclaughlin/California"
+        },
+        {
+            "rank": 8,
+            "snippet": "Movement for a People's Party proudly endorsed Gayle <em>McLaughlin</em> for California Lieutenant Governor. She was a two-term Mayor and served the City of Richmond...",
+            "timestamp": 1640487447,
+            "title": "Gayle McLaughlin for California Lieutenant Governor 2018 ...",
+            "url": "https://www.youtube.com/watch?v=tG8LUq8VYOY"
+        },
+        {
+            "rank": 9,
+            "snippet": "Rachel <em>Mclaughlin</em> in California We found 17 records for Rachel <em>Mclaughlin</em> in San Francisco, Lompoc and 14 other cities in California. Select the best result to find their address, phone number, relatives, and public records.",
+            "timestamp": 1640487447,
+            "title": "Rachel Mclaughlin in California (CA) | 17 records found ...",
+            "url": "https://www.whitepages.com/name/Rachel-Mclaughlin/CA"
+        },
+        {
+            "rank": 10,
+            "snippet": "Kevin <em>McLaughlin</em> is 53 years old and was born on 04/01/1968. Before moving to Kevin's current city of San Francisco, CA, Kevin lived in Sonoma CA. Kevin J <em>Mclaughlin</em> and Kevin J P <em>Mclaughlin</em> are some of the alias or nicknames that Kevin has used.",
+            "timestamp": 1640487447,
+            "title": "Kevin McLaughlin, 53 - San Francisco | Free Public ...",
+            "url": "https://www.mylife.com/kevin-mclaughlin/e526062341130"
+        },
+        {
+            "rank": 11,
+            "snippet": "Ashley <em>McLaughlin</em>, MS, MFT. Licensed psychotherapist and clinical supervisor with over 10 years of experience in the mental health field. California Board of Behavioral Sciences (BBS) Certified and California Association of Marriage and Family Therapists (CAMFT) member.",
+            "timestamp": 1640487447,
+            "title": "Ashley McLaughlin, MFT - Licensed Marriage &amp; Family ...",
+            "url": "https://ashleymclaughlin.com/"
+        }
+    ],
+    "timestamp": 1640487447,
+    "url": "https://www.ecosia.org/search?q=macglauglin&addon=chrome&addonversion=4.0.7&method=topbar"
+}

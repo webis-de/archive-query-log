@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "quit telnet site:www.codegrepper.com",
+    "offset": null,
+    "page": null,
+    "query": "quit telnet site:www.codegrepper.com",
+    "results": [],
+    "timestamp": 1665105234,
+    "url": "https://duckduckgo.com/?q=quit%20telnet+site:www.codegrepper.com&t=ffab&atb=v325-1"
+}

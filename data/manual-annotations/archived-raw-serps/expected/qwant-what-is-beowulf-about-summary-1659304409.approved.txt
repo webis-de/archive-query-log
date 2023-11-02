@@ -1,0 +1,115 @@
+{
+    "interpreted_query": "what is beowulf about summary",
+    "offset": null,
+    "page": null,
+    "query": "what is beowulf about summary",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "study.com/Beowulf/Eulogy",
+            "timestamp": 1659304409,
+            "title": "Beowulf Eulogy - Summary &amp; Analysis",
+            "url": "https://www.bing.com/aclick?ld=e80UxByJGOj-QadxcgXNlCRTVUCUwbXWGpf8zf9X4ZRcAZsJ30b9HJ7GmNiZ4_gf6_muYhGj-OkJ_kl33g7NFrIEVc1RNoUnSMc4rgXsrxbwAoMFFKSw4SuEX9s3Aba-9KzwVDHY5oDTkRhVs42nE3RkJ500-34Cz2u8pWHU-hg6JZwYTC&u=aHR0cHMlM2ElMmYlMmZzdHVkeS5jb20lMmZhY2FkZW15JTJmbGVzc29uJTJmYmVvd3VsZi1ldWxvZ3ktc3VtbWFyeS1hbmFseXNpcy5odG1sJTNmc3JjJTNkcHBjX2Jpbmdfbm9uYnJhbmQlMjZyY250eHQlM2Rhd3MlMjZjcnQlM2QlMjZrd2QlM2RTRU8tUFBDLUFMTCUyNmt3aWQlM2RkYXQtMjMyOTA0MDUwNTY2OTQ4MSUzYWxvYy0xOTAlMjZhZ2lkJTNkMTIzNTg1MTMwMjU5Njc0NiUyNm10JTNkYiUyNmRldmljZSUzZGMlMjZuZXR3b3JrJTNkcyUyNl9jYW1wYWlnbiUzZFNlb1BQQyUyNm1zY2xraWQlM2RlYTZkM2QwMGNiNjAxYTgzN2RjMjVmZTdkZTlhZTk2ZQ&rlid=ea6d3d00cb601a837dc25fe7de9ae96e"
+        },
+        {
+            "rank": 2,
+            "snippet": "christianbook.com/Books/Beowulf",
+            "timestamp": 1659304409,
+            "title": "Beowulf - Christianbook.com",
+            "url": "https://www.bing.com/aclick?ld=e89RS4nsL_Ac9sWBKDjFNYoDVUCUxZ6YOiLr6Ywe1-7t7DjkC1kfSP1ybQKn-dFYW_meMRy22H_MYy3lJn1tGhBvUBB7sPdOYDOZKVvKTcuAeZxM9YxIGHZ_l6e3Mr4q2BA1Da3_QbGu28wyoh5lNNpnC8VPmqBU2SpZ4GJXHGmrG5JYB4&u=aHR0cHMlM2ElMmYlMmZ3d3cuY2hyaXN0aWFuYm9vay5jb20lMmZhcHBzJTJmZWFzeWZpbmQlM2ZOJTNkNTE1MSUyNk50ayUzZGtleXdvcmRzJTI2TnR0JTNkYmVvd3VsZiUyNmt3JTNkMTIzNTg1MTE1MzkzMzg2NiUyNm10JTNkYiUyNmR2JTNkYyUyNmV2ZW50JTNkUFBDU1JDJTI2cCUzZDEyMTU5MDQlMjZtc2Nsa2lkJTNkNGFkMjdhM2U1ZTAwMTE4ZWRmMWUxOGQ5NGJmYWU0ZjElMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2REeW5hbWljJTI1MjBTZWFyY2glMjUyMEFkcyUyNnV0bV90ZXJtJTNkY2hyaXN0aWFuYm9vayUyNnV0bV9jb250ZW50JTNkQWxsJTI1MjBQYWdlcw&rlid=4ad27a3e5e00118edf1e18d94bfae4f1"
+        },
+        {
+            "rank": 3,
+            "snippet": "Summary Read a brief summary of this topic Beowulf, heroic poem, the highest achievement of Old English literature and the earliest European vernacular epic. The work deals with events of the early 6th century, and, while the date of its composition is uncertain, some scholars believe that it was written in the 8th century.",
+            "timestamp": 1659304409,
+            "title": "Beowulf | Summary, Poem, Characters, Monster, Analysis, &amp; Facts",
+            "url": "https://www.britannica.com/topic/Beowulf"
+        },
+        {
+            "rank": 4,
+            "snippet": "Beowulf is an Old English epic poem depicting the life and feats of Beowulf. He is a brave legendary warrior who conquers beasts and helps people in need throughout the story. Beowulf is considered to be one of the most significant pieces of Old English literature.",
+            "timestamp": 1659304409,
+            "title": "Summary of the Epic Poem \u201cBeowulf\u201d | EssayPro",
+            "url": "https://essaypro.com/blog/beowulf-summary"
+        },
+        {
+            "rank": 5,
+            "snippet": "Beowulf departs after a sorrowful goodbye to Hrothgar, who has treated him like a son. He returns to Geatland, where he and his men are reunited with their king and queen, Hygelac and Hygd, to whom Beowulf recounts his adventures in Denmark. Beowulf then hands over most of his treasure to Hygelac, who, in turn, rewards him.",
+            "timestamp": 1659304409,
+            "title": "Beowulf: Full Book Summary | SparkNotes",
+            "url": "https://www.sparknotes.com/lit/beowulf/summary/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Beowulf , Heroic poem considered the highest achievement of Old English literature and the earliest European vernacular epic.It deals with events of the early 6th century and was probably composed c. 700\u2013750. It tells the story of the Scandinavian hero Beowulf, who gains fame as a young man by vanquishing the monster Grendel and Grendel\u2019s mother; later, as an aging king, he kills a dragon ...",
+            "timestamp": 1659304409,
+            "title": "Beowulf summary | Britannica",
+            "url": "https://www.britannica.com/summary/Beowulf"
+        },
+        {
+            "rank": 7,
+            "snippet": "Beowulf is a young warrior in Geatland, who comes to the aid of the Scyldings. Hrothgar is the Danish king and he and his people have been terrorized by a monster. Beowulf brings 14 of his finest...",
+            "timestamp": 1659304409,
+            "title": "What is a short summary of the epic poem Beowulf? - eNotes",
+            "url": "https://www.enotes.com/homework-help/what-is-a-short-summary-of-the-epic-poem-beowulf-295725"
+        },
+        {
+            "rank": 8,
+            "snippet": "Summary With loyalty and heroism in mind, Beowulf comes to the rescue of the Danes and King Hrothgar. They have suffered at the hands of an evil monster, Grendel, who has pillaged their kingdom for more than 12 years and killed many men. Beowulf, nephew to the king of the Geats, sails across the seas to try to defeat the beast.",
+            "timestamp": 1659304409,
+            "title": "Beowulf Plot Summary | Course Hero",
+            "url": "https://www.coursehero.com/lit/Beowulf/plot-summary/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Beowulf is a heroic poem that marks the epitome of old English literature. It discusses events of early 6th century believed to have been written between 700 and 750 A.D. originally, the poem was unnamed but later named after a Scandinavian hero by the name Beowulf. This is because his character and exploits are closely connected to the theme.",
+            "timestamp": 1659304409,
+            "title": "Brief Summary of Beowulf - SummaryStory",
+            "url": "https://summarystory.com/beowulf/short-summary-of-beowulf/"
+        },
+        {
+            "rank": 10,
+            "snippet": "When was Beowulf written? This is a matter of some conjecture, with guesses ranging anywhere between the eighth century and the first half of the eleventh century. Critics can\u2019t even agree on what the first line of the poem means. In the following post, we offer a short summary of Beowulf, and an introduction to its main themes.",
+            "timestamp": 1659304409,
+            "title": "What Happens in Beowulf? An Interesting Summary",
+            "url": "https://interestingliterature.com/2015/01/what-happens-in-beowulf-an-interesting-summary/"
+        },
+        {
+            "rank": 11,
+            "snippet": "Beowulf is a poem that praises a warrior culture. Courage and valour are required. Beowulf is the epitome of bravery and valor in all of its manifestations. Vengeance. Another example is that the Danes and the Geats are members of a warrior civilization. Generosity and hospitality are highly valued.",
+            "timestamp": 1659304409,
+            "title": "What Is The Summary Of Beowulf? - Summary and sketches",
+            "url": "https://indieadjuster.org/resume-tips/what-is-the-summary-of-beowulf.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "\u201cBeowulf\u201d is a poem that describes events that happen to Danish King Hrothgar and his great hall, Heorot. King Hrothgar and his people are plagued by Grendel, a monster who attacks Heorot every night to pillage and kill Hrothgar\u2019s men. Beowulf is a foreigner from Geatland who travels to aid King Hrothgar by protecting his people and his hall.",
+            "timestamp": 1659304409,
+            "title": "What Is a Short Summary of \"Beowulf\"? - Reference.com",
+            "url": "https://www.reference.com/world-view/short-summary-beowulf-2a950b6680b70be2"
+        },
+        {
+            "rank": 13,
+            "snippet": "study.com/Beowulf/Eulogy",
+            "timestamp": 1659304409,
+            "title": "Beowulf Eulogy - Summary &amp; Analysis",
+            "url": "https://www.bing.com/aclick?ld=e80UxByJGOj-QadxcgXNlCRTVUCUwbXWGpf8zf9X4ZRcAZsJ30b9HJ7GmNiZ4_gf6_muYhGj-OkJ_kl33g7NFrIEVc1RNoUnSMc4rgXsrxbwAoMFFKSw4SuEX9s3Aba-9KzwVDHY5oDTkRhVs42nE3RkJ500-34Cz2u8pWHU-hg6JZwYTC&u=aHR0cHMlM2ElMmYlMmZzdHVkeS5jb20lMmZhY2FkZW15JTJmbGVzc29uJTJmYmVvd3VsZi1ldWxvZ3ktc3VtbWFyeS1hbmFseXNpcy5odG1sJTNmc3JjJTNkcHBjX2Jpbmdfbm9uYnJhbmQlMjZyY250eHQlM2Rhd3MlMjZjcnQlM2QlMjZrd2QlM2RTRU8tUFBDLUFMTCUyNmt3aWQlM2RkYXQtMjMyOTA0MDUwNTY2OTQ4MSUzYWxvYy0xOTAlMjZhZ2lkJTNkMTIzNTg1MTMwMjU5Njc0NiUyNm10JTNkYiUyNmRldmljZSUzZGMlMjZuZXR3b3JrJTNkcyUyNl9jYW1wYWlnbiUzZFNlb1BQQyUyNm1zY2xraWQlM2RlYTZkM2QwMGNiNjAxYTgzN2RjMjVmZTdkZTlhZTk2ZQ&rlid=ea6d3d00cb601a837dc25fe7de9ae96e"
+        },
+        {
+            "rank": 14,
+            "snippet": "christianbook.com/Books/Beowulf",
+            "timestamp": 1659304409,
+            "title": "Beowulf - Christianbook.com",
+            "url": "https://www.bing.com/aclick?ld=e89RS4nsL_Ac9sWBKDjFNYoDVUCUxZ6YOiLr6Ywe1-7t7DjkC1kfSP1ybQKn-dFYW_meMRy22H_MYy3lJn1tGhBvUBB7sPdOYDOZKVvKTcuAeZxM9YxIGHZ_l6e3Mr4q2BA1Da3_QbGu28wyoh5lNNpnC8VPmqBU2SpZ4GJXHGmrG5JYB4&u=aHR0cHMlM2ElMmYlMmZ3d3cuY2hyaXN0aWFuYm9vay5jb20lMmZhcHBzJTJmZWFzeWZpbmQlM2ZOJTNkNTE1MSUyNk50ayUzZGtleXdvcmRzJTI2TnR0JTNkYmVvd3VsZiUyNmt3JTNkMTIzNTg1MTE1MzkzMzg2NiUyNm10JTNkYiUyNmR2JTNkYyUyNmV2ZW50JTNkUFBDU1JDJTI2cCUzZDEyMTU5MDQlMjZtc2Nsa2lkJTNkNGFkMjdhM2U1ZTAwMTE4ZWRmMWUxOGQ5NGJmYWU0ZjElMjZ1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2REeW5hbWljJTI1MjBTZWFyY2glMjUyMEFkcyUyNnV0bV90ZXJtJTNkY2hyaXN0aWFuYm9vayUyNnV0bV9jb250ZW50JTNkQWxsJTI1MjBQYWdlcw&rlid=4ad27a3e5e00118edf1e18d94bfae4f1"
+        },
+        {
+            "rank": 15,
+            "snippet": "Find discounts on Beowulf book online. Search &amp; Save Online Today!",
+            "timestamp": 1659304409,
+            "title": "Beowulf book online - Compare Prices",
+            "url": "https://www.bing.com/aclick?ld=e8oBQ3zIev-_lIE3_pRAWQNjVUCUyDyxfeBvMF1jP6vJAuY6Q30tvO01udVcE4IERDmWsGKhYMe-xPouBGolxWmvAZPD9LeQLR8XP-TZZxkNNiM7HSa3PNspe5X_TTs5CelkedHR-gRPzDshk5PMpLDY4rTzRniMzLfF1wUUHLfOlPxHjK&u=aHR0cHMlM2ElMmYlMmZzaG9wLmFsd2F5c3Jldmlldy5jb20lMmZhbHdheXNyZXZpZXc5NCUyZmJlb3d1bGYlMmJib29rJTJib25saW5lJTNmdXRtX3NvdXJjZSUzZEJpbmclMjZybWdjaWQlM2Q0MDc3MjAwMDglMjZybWdhZ2lkJTNkMTM0OTEwMTQyNDQ5NzI2NSUyNnJtZ2tpZCUzZDgxZTE1MWMzMmE0NDEzNTgwNDRjMzMyNDNmYmVmN2U1JTI2bXNjbGtpZCUzZDgxZTE1MWMzMmE0NDEzNTgwNDRjMzMyNDNmYmVmN2U1&rlid=81e151c32a441358044c33243fbef7e5"
+        }
+    ],
+    "timestamp": 1659304409,
+    "url": "https://www.qwant.com/?q=what+is+beowulf+about+summary&client=ext-chrome-sb&t=web"
+}

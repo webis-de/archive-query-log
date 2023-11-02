@@ -1,0 +1,52 @@
+{
+    "interpreted_query": "General's Daughter, The",
+    "offset": null,
+    "page": null,
+    "query": "General's Daughter, The",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970749419,
+            "title": "<em>General's</em> <em>Daughter</em>, <em>The</em>",
+            "url": "http://srd.yahoo.com/srct/17727357/General%27s+Daughter%2c+The/1/1/*http://dir.yahoo.com/Entertainment/Movies_and_Film/Titles/Drama/General_s_Daughter__The/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970749419,
+            "title": "<em>General's</em> <em>Daughter</em>, <em>The</em>",
+            "url": "http://srd.yahoo.com/srst/20154684/General%27s+Daughter%2c+The/1/5/*http://www.generalsdaughter.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970749419,
+            "title": "Yahoo! Movies: <em>The</em> <em>General's</em> <em>Daughter</em>",
+            "url": "http://srd.yahoo.com/srst/20154711/General%27s+Daughter%2c+The/2/5/*http://movies.yahoo.com/movies/guide/the_general_s_daughter.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970749419,
+            "title": "Rotten Tomatoes: <em>The</em> <em>General's</em> <em>Daughter</em>",
+            "url": "http://srd.yahoo.com/srst/20154685/General%27s+Daughter%2c+The/3/5/*http://www.rotten-tomatoes.com/general_s_daughter.asp"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970749419,
+            "title": "<em>General's</em> <em>Daughter</em>",
+            "url": "http://srd.yahoo.com/srst/986989/General%27s+Daughter%2c+The/4/5/*http://sterba.com/sonoma/general/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970749419,
+            "title": "Mulligan, Dave - Rhiannon's Page",
+            "url": "http://srd.yahoo.com/srst/9047773/General%27s+Daughter%2c+The/5/5/*http://www.scruznet.com/~mulligan/"
+        }
+    ],
+    "timestamp": 970749419,
+    "url": "http://search.yahoo.com:80/search?p=General's+Daughter,+The"
+}

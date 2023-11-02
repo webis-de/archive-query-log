@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "waldo's chicken site:waldoschicken.com",
+    "offset": null,
+    "page": null,
+    "query": "waldo's chicken site:waldoschicken.com",
+    "results": [],
+    "timestamp": 1654372116,
+    "url": "https://duckduckgo.com/?q=waldo%27s+chicken+site%3Awaldoschicken.com&t=ffab"
+}

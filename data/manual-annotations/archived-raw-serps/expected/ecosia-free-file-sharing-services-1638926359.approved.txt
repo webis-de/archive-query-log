@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "free file sharing services",
+    "offset": null,
+    "page": null,
+    "query": "free file sharing services",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "WeTransfer is the simplest way to send your <em>files</em> around the world. Share large <em>files</em> and photos. Transfer up to 2GB <em>free</em>. <em>File</em> <em>sharing</em> made easy!",
+            "timestamp": 1638926359,
+            "title": "WeTransfer - Send Large Files &amp; Share Photos Online - Up ...",
+            "url": "https://wetransfer.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "8. Mediafire. Whether you\u2019re <em>sharing</em> photos, videos, audio, or docs, MediaFire can simplify your workflow. A <em>file</em> storage and <em>sharing</em> tool, Mediafire provides 10GB storage space for <em>free</em> and a 4GB <em>file</em> upload limit. After uploading your <em>files</em>, you can then easily share through email, link, or any social network.",
+            "timestamp": 1638926359,
+            "title": "11 Secure File Sharing Sites to Upload, Store &amp; Transfer ...",
+            "url": "https://blog.bit.ai/free-file-sharing-sites/"
+        },
+        {
+            "rank": 3,
+            "snippet": "The best <em>file-sharing</em> <em>services</em> are essential to ensure that your videos, photos and images are available always and everywhere. I have created a list of 11 best <em>file sharing</em> <em>service</em> options that are reliable and convenient and allow you to store data for <em>free</em>.",
+            "timestamp": 1638926359,
+            "title": "11 Best File Sharing Services in 2021 - FixThePhoto",
+            "url": "https://fixthephoto.com/best-file-sharing-services.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "The Best 10 <em>Free</em> and Open Source <em>File Sharing</em> Software. Find below a comparison list of the 10 <em>Free</em> and Open Source <em>File Sharing</em> Software. It can quickly help you understand the software at a glance. #1 FileZilla. FileZilla is one of the most reliable and feature-rich cross-platform <em>File</em> <em>Sharing</em> Software.",
+            "timestamp": 1638926359,
+            "title": "Best 10 Free &amp; Open Source File Sharing Software",
+            "url": "https://www.goodfirms.co/blog/best-free-open-source-file-sharing-software"
+        },
+        {
+            "rank": 5,
+            "snippet": "So, guys, these are the \u201cbest <em>free file sharing</em> websites\u201c. However, most of the websites offer cloud storage and <em>file</em>-<em>sharing</em> <em>services</em>. But, some <em>file</em> transfer websites allow to send huge <em>files</em> up to 10GB. So, you can choose the best site as per your requirements. Also, almost all websites give an option to buy their premium <em>services</em>.",
+            "timestamp": 1638926359,
+            "title": "20 Best Free File Sharing Websites | 2021 - oTechWorld",
+            "url": "https://otechworld.com/best-free-file-sharing-sites/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Share <em>files</em> for <em>free</em>,anywhere in the world. Uploadfiles deploys a wide range of data centres located in various regions across the world. This enables us to ensure lightning fast <em>file</em> <em>sharing</em> capabilities to our customers at all times. Whether you have <em>files</em> for download, or just want to upload and share, you can rely on us 24/7, 365 days a year.",
+            "timestamp": 1638926359,
+            "title": "Ufile.io - Upload files for free &amp; share them without ...",
+            "url": "https://ufile.io/"
+        },
+        {
+            "rank": 7,
+            "snippet": "If <em>free</em> <em>file</em> hosting is in your sights and nothing else will do, never fear: We\u2019ve vetted dozens of no-cost platforms and extended <em>free</em> trials to deliver our list of helpful, reliable, and secure hosting providers. Read on for in-depth descriptions of the features, advantages, and drawbacks associated with each <em>file</em> hosting <em>service</em>. 3. MediaFire",
+            "timestamp": 1638926359,
+            "title": "8 Best \u201cFree File Hosting\u201d Services (2021): Unlimited ...",
+            "url": "https://www.hostingadvice.com/how-to/free-file-hosting-services/"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>File</em> <em>Sharing</em> Deliver your work at the speed of light. Drag <em>files</em> to the Jumpshare menu bar icon and a shareable link will be copied to your clipboard. Instantly showcase your work to clients by previewing over 200 <em>file</em> formats online.",
+            "timestamp": 1638926359,
+            "title": "Jumpshare: Free File Sharing - Send Large Files, Videos ...",
+            "url": "https://jumpshare.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Gofile is a <em>free</em> <em>file</em> <em>sharing</em> and storage platform. You can store and share data of all types. There is no limit and everything is <em>free</em>.",
+            "timestamp": 1638926359,
+            "title": "Gofile - Free file sharing and storage platform",
+            "url": "https://gofile.io/"
+        }
+    ],
+    "timestamp": 1638926359,
+    "url": "https://www.ecosia.org/search?q=free+file+sharing+services"
+}

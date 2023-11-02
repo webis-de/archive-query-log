@@ -1,0 +1,101 @@
+{
+    "interpreted_query": "metal slug foo",
+    "offset": null,
+    "page": null,
+    "query": "metal slug foo",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Free Shipping Available. Buy on eBay. Money Back Guarantee!",
+            "timestamp": 1624572900,
+            "title": "Metal slug gba on eBay - Seriously, We have EVERYTHING",
+            "url": "https://www.bing.com/aclick?ld=e87qC2VqXlEwJ2gZdpT7F4-jVUCUw4qxnMACOG4iLjrZSGLE_rDDlhLXvA8Aq3JsCCCpVEwSkuKiCghRSjgmKQgKYQMw0VTk9JtedmZBn4Ok0STdLEg1ecUzLarhBOJgP40oGcLToBNvBQQb4lxtY0Bsc7blgkP7cY4csMBBqy1GE-fN6P&u=aHR0cHMlM2ElMmYlMmZ3d3cuZWJheS5jb20lMmZ1bGslMmZzY2glMmYlM2Zfbmt3JTNkbWV0YWwlMjUyMHNsdWclMjUyMGdiYSUyNm5vcm92ZXIlM2QxJTI2bWtldnQlM2QxJTI2bWtyaWQlM2Q3MTEtMzQwMDItMTMwNzgtMCUyNm1rY2lkJTNkMiUyNmtleXdvcmQlM2RtZXRhbCUyNTIwc2x1ZyUyNTIwZ2JhJTI2Y3JscCUzZF8yMDE4MDIlMjZNVF9JRCUzZCUyNmdlb19pZCUzZCUyNnJsc2F0YXJnZXQlM2Rrd2QtNzY5NjU5NDY1OTkyODklM2Fsb2MtMTkwJTI2YWRwb3MlM2QlMjZkZXZpY2UlM2RjJTI2bWt0eXBlJTNkJTI2bG9jJTNkODc1NDIlMjZwb2klM2QlMjZhYmNJZCUzZCUyNmNtcGduJTNkMzI5ODUxODgyJTI2c2l0ZWxuayUzZCUyNmFkZ3JvdXBpZCUzZDEyMzE0NTMxNzQ3MjgyMzAlMjZuZXR3b3JrJTNkcyUyNm1hdGNodHlwZSUzZHAlMjZtc2Nsa2lkJTNkZjYwYzFkYmFmODg5MTBmNzVhYmU3ZDZmZDg4ZDAzZGM&rlid=f60c1dbaf88910f75abe7d6fd88d03dc"
+        },
+        {
+            "rank": 2,
+            "snippet": "Search Store Inventories for Neo Geo Metal Slug and Compare Prices. Over 160 Million Product Prices. Find Better Deals Today!",
+            "timestamp": 1624572900,
+            "title": "Neo Geo Metal Slug - Search Many Stores At Once",
+            "url": "https://www.bing.com/aclick?ld=e8eDJVlwvGczswZZxVKPQbujVUCUxaJUPcACay5MigeEtE93myxK9Qe5SLa4lqBqovD5ZrqwLn2se9v8sGzHV6swvQE7-CxzIdH5hTVeVy1RhNWz08rXFNsaHw4XGBpR2uYoBMPtJhRSKaqI5i4sDa9w_KzeN1BqWy3xUee1VQ8QNzphMA&u=aHR0cHMlM2ElMmYlMmZmaW5kZXJzY2hlYXBlcnMuY29tJTJmU2VhcmNoLmFzcHglM2ZrdyUzZE5lbyUyYkdlbyUyYk1ldGFsJTJiU2x1ZyUyNnZmbXQlM2R0JTI2Y2huJTNkNjEzMTE3MDc3MyUyNmFud3JrJTNkMiUyNmFpZCUzZEJQQVJUN2MzMWQ4ZjRiNjFiOTRmOWYzYTcxMjMwZmFkJTI2YW5xcF9tYXRjaFR5cGUlM2RwJTI2YW5xcF9uZXR3b3JrJTNkcyUyNmFucXBfZGV2aWNlJTNkYyUyNmFucXBfYWRDbGlja0lkJTNkYmFmYjBhMGJlY2ZjMTVkYzAxNTM2YWRlY2NmODUxN2YlMjZhbnFwX3F1ZXJ5U3RyaW5nJTNkbWV0YWwlMjUyMHNsdWclMjUyMGZvbw&rlid=bafb0a0becfc15dc01536adeccf8517f"
+        },
+        {
+            "rank": 3,
+            "snippet": "Discover hundreds of ways to save on your favorite products. Get the Deals now!",
+            "timestamp": 1624572900,
+            "title": "Metal Slug Game -75% - Now: Metal Slug Game",
+            "url": "https://www.bing.com/aclick?ld=e8s1lkKj5pM68LC2caDOYbojVUCUxUJQreMEEjHANUqauOqrrPh9Bs6MvfbNclV9BL6glpU_-KV2OmesjxaoLmSZgwOReEVwDPrRsGm0LsQ9wj8dgtf7LZAGHJeyiiWLksIH2JuWoDhGSq3tF-zBGF52NfRA-TEvW16doNYo8d9cmQU0U2&u=aHR0cHMlM2ElMmYlMmZkaXNjb3VudDk5LnVzJTJmbWV0YWwlMjUyMHNsdWclMjUyMGdhbWUlMmYlM2ZwJTNkYmNzJTI2Z2NsaWQlM2Q4ODFlYjkyZDY0ZTUxN2U2MzE1YmQ5Zjg0NGUxYTUzZCUyNm1zY2xraWQlM2Q4ODFlYjkyZDY0ZTUxN2U2MzE1YmQ5Zjg0NGUxYTUzZCUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZGNhbXBhaWduJTI1MjAlMjU1QjAxNSUyNTVEJTI2dXRtX3Rlcm0lM2RtZXRhbCUyNTIwc2x1ZyUyNTIwZ2FtZSUyNnV0bV9jb250ZW50JTNkYWRncm91cCUyNTIwJTI1NUIxNSUyNTdDdzMlMjU3Q2IlMjU1RCUyNTNBJTI1MjAlMjU3QjUtbWUlMjU3RA&rlid=881eb92d64e517e6315bd9f844e1a53d"
+        },
+        {
+            "rank": 4,
+            "snippet": "The Foo Fighters are ready to rock the road to reopening at Madison Square Garden. ... Metal Slug Tactics Is Metal Slug, But With Turn-Based Tactics Kotaku \"CBS Evening News\" headlines for ...",
+            "timestamp": 1624572900,
+            "title": "Foo Fighters Set To Perform For Full MSG",
+            "url": "https://www.msn.com/en-us/entertainment/news/foo-fighters-set-to-perform-for-full-msg/vi-AAKQ1sC"
+        },
+        {
+            "rank": 5,
+            "snippet": "twitter.com/atticusfoo/status/1403183967247892480",
+            "timestamp": 1624572900,
+            "title": "Atticus Foo on Twitter: \"Metal Slug Tactics looks like the ...",
+            "url": "https://twitter.com/atticusfoo/status/1403183967247892480"
+        },
+        {
+            "rank": 6,
+            "snippet": "Original vs. Recolor series!Bronze Halloween Alice vs. Silver Alice!!----- Thanks Tins37 for help with the video...",
+            "timestamp": 1624572900,
+            "title": "Metal Slug Attack | Alice vs. Halloween Alice | 3 Rounds ...",
+            "url": "https://www.youtube.com/watch?v=FEltYtE3foo"
+        },
+        {
+            "rank": 7,
+            "snippet": "Metal Slug 2 - Hold You Still -Vocal version-",
+            "timestamp": 1624572900,
+            "title": "Metal Slug Anthology - Hold You Still -Vocal- - YouTube",
+            "url": "https://www.youtube.com/watch?v=1IFvDEfooaY"
+        },
+        {
+            "rank": 8,
+            "snippet": "Chrysomallon squamiferum, commonly known as the scaly-foot gastropod, scaly-foot snail, or sea pangolin, is a species of deep-sea hydrothermal-vent snail, a marine gastropod mollusc in the family Peltospiridae. This vent-endemic gastropod is known only from deep-sea hydrothermal vents in the Indian Ocean, where it has been found at depths of about 2,400\u20132,900 m (1.5\u20131.8 mi).",
+            "timestamp": 1624572900,
+            "title": "Scaly-foot gastropod - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Scaly-foot_gastropod"
+        },
+        {
+            "rank": 9,
+            "snippet": "Metal Slug X - Super Vehicle-001. Filename: mslugx.zip learn what (U), [!], and other rom codes mean. MAME. 27.2 MB. (122) To play this rom, the following roms are required as well: Neo-Geo. To play MAME roms, an emulator is required. Popular MAME emulators include MAME32 v0.90 for Windows, Nebula v2.23c for Windows, Kawaks v1.63 for Windows.",
+            "timestamp": 1624572900,
+            "title": "Metal Slug X - Super Vehicle-001 Rom Download for MAME at ...",
+            "url": "https://www.romnation.net/srv/roms/24008/mame/Metal-Slug-X-Super-Vehicle-001.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "PACHISLO SLOT MACHINE DETAILED INFORMATION. Welcome to the Pachislo Machine Database. We currently have 2257 machines in the database. Click on any machine listed below to see the details that we have for that machine or use the above menus to narrow down the list. Don't see your machine in the database the CLICK HERE to add it.",
+            "timestamp": 1624572900,
+            "title": "Pachislo Database - Machine Database",
+            "url": "https://www.pachislodb.com/database.php"
+        },
+        {
+            "rank": 11,
+            "snippet": "The Forest Footwear is a community-created cosmetic item for the Scout.It is a pair of black combat boots with metal plates strapped onto the shin area of the boots and metal covers on the toe-end.. The Forest Footwear was contributed to the Steam Workshop.",
+            "timestamp": 1624572900,
+            "title": "Forest Footwear - Official TF2 Wiki | Official Team ...",
+            "url": "https://wiki.teamfortress.com/wiki/Forest_Footwear"
+        },
+        {
+            "rank": 12,
+            "snippet": "Play retro games from NES, SNES, GB, GBC, GBA, SEGA Genesis and Classic Arcade Games in your browser.",
+            "timestamp": 1624572900,
+            "title": "RetroGames.cc - Play retro games online in your browser",
+            "url": "https://www.retrogames.cc/"
+        },
+        {
+            "rank": 13,
+            "snippet": "Jenchun Foo is on Facebook. Join Facebook to connect with Jenchun Foo and others you may know. Facebook gives people the power to share and makes the...",
+            "timestamp": 1624572900,
+            "title": "Jenchun Foo | Facebook",
+            "url": "https://www.facebook.com/jenchun.foo"
+        }
+    ],
+    "timestamp": 1624572900,
+    "url": "https://www.qwant.com/?q=metal+slug+foo&client=brz-brave"
+}

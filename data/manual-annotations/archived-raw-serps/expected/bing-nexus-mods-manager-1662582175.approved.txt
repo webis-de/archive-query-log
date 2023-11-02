@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "nexus mods manager",
+    "offset": null,
+    "page": null,
+    "query": "nexus mods manager",
+    "results": [],
+    "timestamp": 1662582175,
+    "url": "https://www.bing.com/search?q=nexus+mods+manager&FORM=QSRE4"
+}

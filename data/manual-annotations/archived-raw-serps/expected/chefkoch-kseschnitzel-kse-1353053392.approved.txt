@@ -1,0 +1,143 @@
+{
+    "interpreted_query": ",k\u00e4seschnitzel k\u00e4se",
+    "offset": null,
+    "page": 0,
+    "query": ",k\ufffdseschnitzel+k\ufffdse",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "K\u00e4sescheiben in verquirlten Eiern und Paniermehl zweimal panieren. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/1622999855028/Kaeseschnitzel.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Mehl, verquirlte Eier und Semmelbr\u00f6sel jeweils in drei Gef\u00e4\u00dfe zum Panieren geben. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/1451311250027969/Kaeseschnitzel.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Schnitzel nach Belieben spicken, salzen, in Mehl wenden, in hei\u00dfem Fett leicht anbr\u00e4unen, wenden und weiterbr\u00e4unen. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/832988117879/Kaeseschnitzel.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Die Putenbrust in Schnitzel schneiden, die Schnitzel salzen und pfeffern. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/308531111332086/Kaeseschnitzel.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Die Schnitzel klopfen, salzen, pfeffern. Die Eier mit den Kr\u00e4utern verschlagen. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/2025671328525644/Kaeseschnitzel.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Schnitzel \u00fcberbacken mit K\u00e4se",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel mit Obers - Safterl",
+            "url": "http://www.chefkoch.de:80/rezepte/299261109643912/Kaeseschnitzel-mit-Obers-Safterl.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Lauchzwiebeln fein schneiden. Im hei\u00dfen Fett and\u00fcnsten, Reis mit anschwitzen. Mit 400 ml Wasser abl\u00f6schen, Br\u00fche einr\u00fchren. ...",
+            "timestamp": 1353053392,
+            "title": "Scharfe K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/173811075914555/Scharfe-Kaeseschnitzel.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "mal etwas anderes!",
+            "timestamp": 1353053392,
+            "title": "Mettas K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/1292571234529010/Mettas-Kaeseschnitzel.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "1 Scheibe Schinken, darauf 1 Scheibe K\u00e4se, 1 Scheibe Schinken, 1 Scheibe K\u00e4se, 1 Scheibe Schinken. ...",
+            "timestamp": 1353053392,
+            "title": "Schinken - K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/427561133778230/Schinken-Kaeseschnitzel.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Die Schnitzel werden gew\u00fcrzt, paniert und in der Pfanne gebraten. ...",
+            "timestamp": 1353053392,
+            "title": "Holtseer K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/50111017479856/Holtseer-Kaeseschnitzel.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "f\u00fcr Pasta, gebratene H\u00fchnerbrust oder Putenbrust oder paniertes K\u00e4seschnitzel",
+            "timestamp": 1353053392,
+            "title": "Tomaten - K\u00e4se - So\u00dfe",
+            "url": "http://www.chefkoch.de:80/rezepte/1653331273143715/Tomaten-Kaese-Sosse.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Eine Glasform mit \u00d6l bepinseln, Schnitzel hineinlegen mit Vegeta gro\u00dfz\u00fcgig w\u00fcrzen u. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel \u00fcberbacken",
+            "url": "http://www.chefkoch.de:80/rezepte/206991086776386/Kaeseschnitzel-ueberbacken.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "Die Schnitzel klopfen, mit Salz und Pfeffer w\u00fcrzen, in Butter anbraten, auf ein Blech legen. ...",
+            "timestamp": 1353053392,
+            "title": "Feine K\u00e4seschnitzel",
+            "url": "http://www.chefkoch.de:80/rezepte/105081044431878/Feine-Kaeseschnitzel.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "Schnell und einfach",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel vom Blech",
+            "url": "http://www.chefkoch.de:80/rezepte/1842191298537226/Kaeseschnitzel-vom-Blech.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Eine Auflaufform mit Schnitzel auslegen, mit Vegeta bestreuen, mit K\u00e4se dick belegen und mit Obers (Sahne) und Wasser \u00fcbergie\u00dfen. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel \u00e1 la Linda",
+            "url": "http://www.chefkoch.de:80/rezepte/252051100273165/Kaeseschnitzel-la-Linda.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Die Schweineschnitzel etwas flach klopfen, pfeffern und vorsichtig salzen, da der Schinken auch sehr salzig sein kann. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel einer Hexe",
+            "url": "http://www.chefkoch.de:80/rezepte/1939461315818271/Kaeseschnitzel-einer-Hexe.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "traditionelles Wienerschnitzel mal anders",
+            "timestamp": 1353053392,
+            "title": "Panierte K\u00e4seschnitzel, superlecker",
+            "url": "http://www.chefkoch.de:80/rezepte/908951196087323/Panierte-Kaeseschnitzel-superlecker.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Paprikaschoten klein w\u00fcrfeln. Basmati in Salzwasser garen. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel mit buntem Basmatireis",
+            "url": "http://www.chefkoch.de:80/rezepte/442901136433096/Kaeseschnitzel-mit-buntem-Basmatireis.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Eine Form mit Butter ausfetten. Diese mit den Tomatenscheiben auslegen. ...",
+            "timestamp": 1353053392,
+            "title": "K\u00e4seschnitzel auf Tomaten",
+            "url": "http://www.chefkoch.de:80/rezepte/1049101209883085/Kaeseschnitzel-auf-Tomaten.html"
+        }
+    ],
+    "timestamp": 1353053392,
+    "url": "http://www.chefkoch.de:80/rs/s0/%2Ck%E4seschnitzel+k%E4se/Rezepte.html"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Peter Krogh Photographer",
+    "offset": null,
+    "page": null,
+    "query": "Peter Krogh Photographer",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Peter Krogh</em>'s Photography Portfolio is a comprehensive look at a very versatile <em>photographer</em>. He shoots for major magazines, Advertising ...",
+            "timestamp": 1184320758,
+            "title": "<em>Peter Krogh</em>'s Photography Portfolio: Digital Corporate, Advertising, ...",
+            "url": "http://www.peterkrogh.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": "... overview of Digital Asset Management techniques for the professional <em>photographer</em>.",
+            "timestamp": 1184320758,
+            "title": "Digital Photography Storage and Archiving Seminar, Digital Asset ...",
+            "url": "http://www.peterkrogh.com/Pages/digital/digital_asset_management_seminar.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Peter Krogh photographer , - Peter Krogh photographer</em> ...",
+            "timestamp": 1184320758,
+            "title": "<em>Peter Krogh photographer</em>",
+            "url": "http://peterkroghphotographer.billsextoninvestigations.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Halloween Photographs by <em>photographer Peter Krogh. ...   Photographer Peter Krogh</em> has spent years documenting the rituals and events of this ...",
+            "timestamp": 1184320758,
+            "title": "Halloween by <em>Peter Krogh</em>",
+            "url": "http://journale.com/stories/halloween/index.lasso"
+        },
+        {
+            "rank": 5,
+            "snippet": "This week we bring you three interviews from three different conferences. From MacWorld, <em>photographer Peter Krogh</em> talks about the first things ...",
+            "timestamp": 1184320758,
+            "title": "O'Reilly Network -- Tales from Three Conferences",
+            "url": "http://www.oreillynet.com/pub/a/network/2006/05/22/distributing-the-future.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "Author <em>Peter Krogh</em> (The DAM Book: Digital Asset Management for Photographers) gives a three-hour comprehensive overview of Digital Asset ...",
+            "timestamp": 1184320758,
+            "title": "<em>Peter Krogh</em> at ASMP Pixel Cash Central Florida",
+            "url": "http://www.oreillynet.com/pub/e/495"
+        },
+        {
+            "rank": 7,
+            "snippet": "As professional <em>photographer</em> and author <em>Peter Krogh</em> sees it, \"your DAM system is fundamental to the way your images are known, both to you and ...",
+            "timestamp": 1184320758,
+            "title": "Amazon.com: The DAM Book: Digital Asset Management for Photographers ...",
+            "url": "http://www.amazon.com/exec/obidos/ASIN/0596100183/"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Peter Krogh</em>, author of The DAM Book: Digital Asset Management for Photographers, was recently in the ... How long have you been a pro <em>photographer</em>?",
+            "timestamp": 1184320758,
+            "title": "Jeff Tranberry's Photoshop Crawlspace: DAM: It's <em>Peter Krogh</em>",
+            "url": "http://blogs.adobe.com/crawlspace/2006/04/dam_its_peter_k.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Feb. 26 - Mar. 1, OCCC, Orlando, Florida   <em>Peter Krogh</em>, professional <em>photographer</em>, DAM guru and author of The DAM Book: Digital Asset ...",
+            "timestamp": 1184320758,
+            "title": "iView Weblog | iView Multimedia | iView at PMA: <em>Peter Krogh</em> ...",
+            "url": "http://news.iview-multimedia.com/weblog.php?id=P200"
+        },
+        {
+            "rank": 10,
+            "snippet": "Professional <em>photographer</em> and leading Digital Asset Management guru <em>Peter Krogh</em> has put together a program especially for digital photographers ...",
+            "timestamp": 1184320758,
+            "title": "iView Weblog | iView Multimedia | <em>Peter Krogh</em> brings his DAM ...",
+            "url": "http://news.iview-multimedia.com/weblog.php?id=P243"
+        }
+    ],
+    "timestamp": 1184320758,
+    "url": "http://www.ask.com:80/web?q=Peter+Krogh+Photographer&o=0&qsrc=19&o=0"
+}

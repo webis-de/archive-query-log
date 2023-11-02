@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "anna sottilotta",
+    "offset": null,
+    "page": null,
+    "query": "anna sottilotta",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Bijoux \u00e9dit\u00e9s en petites s\u00e9ries et pi\u00e8ces uniques de haute qualit\u00e9 dans un style multi-culturel. Fabriqu\u00e9s \u00e0 la main en France, \u00e0 Paris.",
+            "timestamp": 1630417705,
+            "title": "Anna Sottilotta | Bijoux marque cr\u00e9ateur Paris \u2013 Anna ...",
+            "url": "https://www.annasottilotta.fr/"
+        },
+        {
+            "rank": 2,
+            "snippet": "1,992 Followers, 869 Following, 315 Posts - See Instagram photos and videos from ANNA SOTTILOTTA (@annasottilottajewelry)",
+            "timestamp": 1630417705,
+            "title": "ANNA SOTTILOTTA (@annasottilottajewelry) is on Instagram",
+            "url": "https://www.instagram.com/annasottilottajewelry/"
+        },
+        {
+            "rank": 3,
+            "snippet": "Anna Sottilotta Jewelry is in Paris, France. November 16, 2020 \u00b7. Bagues \ud83d\udda4 E-shop : link in bio @annasottilottajewelry \ud83d\udcf7 @sarahmangeret #ringringring #bagues #whomademyjewelry #bijouxcreateur #bijoux #bijoufaitsmain #paris #bordeaux. 1313.",
+            "timestamp": 1630417705,
+            "title": "Anna Sottilotta Jewelry - Posts | Facebook",
+            "url": "https://www.facebook.com/annasottilotta/posts/"
+        },
+        {
+            "rank": 4,
+            "snippet": "SORTIR - Saison 2021 Cultural Season 2021. Anna Sottilotta Jewelry 2 Photography Collection Galactica. Tupperware SS21 Catalogue Printemps/ \u00c9t\u00e9 2021. Wecasa Photography. Beurk Magazine Photography. Galerie Tam\u00e9naga Graphic Design. Monsieur Moutarde Summer 2021 Photography. Anna Sottilotta Jewelry 3 Photography Collection Galactica Blue.",
+            "timestamp": 1630417705,
+            "title": "Anna Sottilotta Jewelry - MPA - Madame Polare",
+            "url": "https://www.madamepolare.com/work/anna-sottilotta-jewelry"
+        },
+        {
+            "rank": 5,
+            "snippet": "Anna Sottilotta Jewelry is at Rue de Paradis. May 24 \u00b7 Paris, France \u00b7. VOGA / Serie Amalfitana @annasottilottajewelry Available online for pre-order. La s\u00e9rie Amalfitana et ses boucles Voga sont disponibles en pre-commande sur le site.",
+            "timestamp": 1630417705,
+            "title": "Anna Sottilotta Jewelry - Home | Facebook",
+            "url": "https://www.facebook.com/pages/Anna-Sottilotta-Bijouterie/209579621412"
+        },
+        {
+            "rank": 6,
+            "snippet": "Anna Sottilotta Jewelry 3 Photography Collection Galactica Blue. Bail Art Web Design. Alexandre Chocolatier Packshot. By Art Graphic Design. Anna Sottilotta Jewelry Photography Collection Luna. Picasso - EVASION Exhibition Design. Sur Place - A Emporter Graphic Design. Feed Trio CD Cover.",
+            "timestamp": 1630417705,
+            "title": "Anna Sottilotta Jewelry 2 - MPA - madamepolare.com",
+            "url": "https://www.madamepolare.com/work/anna-sottilotta-jewelry-2"
+        },
+        {
+            "rank": 7,
+            "snippet": "Anna expertly selects the materials and artisans with whom she works. From the responsibly sourced Brazilian Tourmaline which ornate her pendants, to the Parisian metal smith who applies the finishing touches, her whole collection is the result of a meticulous and passionate work. Her jewellery is both eco-friendly and timeless.",
+            "timestamp": 1630417705,
+            "title": "Anna Sottilotta fine golden jewellery - delika.eu",
+            "url": "https://www.delika.eu/gb/12_anna-sottilotta"
+        },
+        {
+            "rank": 8,
+            "snippet": "Anna SOTTILOTTA \u00c9galement disponible PARIS HAUSSMANN; RECEVEZ NOS NEWSLETTERS. Les soci\u00e9t\u00e9s Printemps SAS, Printemps.com et BPCP (Printemps du Louvre) traitent, en tant que coresponsables, les donn\u00e9es recueillies pour g\u00e9rer votre inscription \u00e0 nos newsletters, pour vous adresser nos offres marketing et promotionnelles Printemps et ...",
+            "timestamp": 1630417705,
+            "title": "Anna SOTTILOTTA | Printemps",
+            "url": "https://www.printempsfrance.com/marques/anna-sottilotta"
+        },
+        {
+            "rank": 9,
+            "snippet": "Photography Collection Galactica. Anna Sottilotta Jewelry 2 Photography Collection Galactica. Tupperware SS21. Catalogue Printemps/ \u00c9t\u00e9 2021. Tupperware SS21 Catalogue Printemps/ \u00c9t\u00e9 2021. Beurk Magazine. Photography. Beurk Magazine Photography. Galerie Tam\u00e9naga.",
+            "timestamp": 1630417705,
+            "title": "Work - MPA",
+            "url": "https://www.madamepolare.com/"
+        },
+        {
+            "rank": 10,
+            "snippet": "\u3010DISCOUNTS UP TO 85%\u3011Discover on Micolet a selection of ANNA SOTTILOTTA items almost news| New arrivals of the best brands every day!",
+            "timestamp": 1630417705,
+            "title": "Buy Online ANNA SOTTILOTTA clothes for the best price ...",
+            "url": "https://www.micolet.co.uk/ana-sottilotta"
+        }
+    ],
+    "timestamp": 1630417705,
+    "url": "https://www.qwant.com/?q=anna+sottilotta&t=all"
+}

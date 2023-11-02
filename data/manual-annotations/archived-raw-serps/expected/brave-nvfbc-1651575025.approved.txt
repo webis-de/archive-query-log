@@ -1,0 +1,157 @@
+{
+    "interpreted_query": "NvFBC",
+    "offset": null,
+    "page": null,
+    "query": "NvFBC",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "January 15, 2016 -\n            Steam Remote Play a way for people with good home networks to seamlessly play their Steam games between two computers running Steam.",
+            "timestamp": 1651575025,
+            "title": "Explanation: NvFBC, NvIFR, NvENC :: Steam Remote Play",
+            "url": "https://steamcommunity.com/groups/homestream/discussions/0/451850849186356998/"
+        },
+        {
+            "rank": 2,
+            "snippet": "April 28, 2017 -\n            15 votes, 16 comments. So since Unwinder talked about <em>NVFBC</em> people keep interpreting it like that is the only benefit from the day than NVIDIA \u2026",
+            "timestamp": 1651575025,
+            "title": "r/nvidia - NVFBC and NVENC Performance difference",
+            "url": "https://www.reddit.com/r/nvidia/comments/6nscjn/nvfbc_and_nvenc_performance_difference/"
+        },
+        {
+            "rank": 3,
+            "snippet": "The NvFBC plugin for OBS Studio FTBFS in the snap. In the video, I explain how I fixed that and then we get into a chat about the benefits of FIsh Shell \ud83d\udc1a O...",
+            "timestamp": 1651575025,
+            "title": "Fixing NvFBC in the OBS Studio snap \ud83d\udce1 - YouTube",
+            "url": "https://www.youtube.com/watch?v=O8lmgGNkUhA"
+        },
+        {
+            "rank": 4,
+            "snippet": "March 21, 2022 -\n            What is <em>Nvfbc</em> capture on Nvidia GPU?NVIDIA\u00ae Frame Buffer Capture (<em>NVFBC</em>) is a fast, low latency desktop capture API supported on Windows and Linux. ... It",
+            "timestamp": 1651575025,
+            "title": "What is use Nvfbc capture on Nvidia GPU?",
+            "url": "https://parsons-technology.com/what-is-use-nvfbc-capture-on-nvidia-gpu/"
+        },
+        {
+            "rank": 5,
+            "snippet": "September 14, 2020 -\n            To people comparing the Remote Play performance unfavorably to Moonlight, have you tried enabling \"<em>NVFBC</em> capture on Nvidia GPU\" in Steam's remote play options? Should theoretically work just as well, for the outgoing signal at least.",
+            "timestamp": 1651575025,
+            "title": "How well does Steam Link &amp; In-Home streaming actually work? | Page ...",
+            "url": "https://www.resetera.com/threads/how-well-does-steam-link-in-home-streaming-actually-work.286085/page-2"
+        },
+        {
+            "rank": 6,
+            "snippet": "September 21, 2021 -\n            This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to consumer-grade GPUs. - GitHub - keylase/nvidia-patch: This patch removes restriction on maximum number of simultaneous NVENC video encoding sessions imposed by Nvidia to ...",
+            "timestamp": 1651575025,
+            "title": "NVENC and NvFBC patches for Nvidia drivers - GitHub",
+            "url": "https://github.com/keylase/nvidia-patch"
+        },
+        {
+            "rank": 7,
+            "snippet": "March 9, 2021 -\n            Anthony Young on Twitter: \"@AkBKukU @hiimcody1 <em>NvFBC</em> ...",
+            "timestamp": 1651575025,
+            "title": "Anthony Young on Twitter: \"@AkBKukU @hiimcody1 NvFBC ...",
+            "url": "https://twitter.com/anjyoun/status/1369318051263344641"
+        },
+        {
+            "rank": 8,
+            "snippet": "Detected a memory leak during testing for #1823. Only occurs with <em>nvfbc</em> CUDA buffers and nvenc. Downloading to system memory before re-uploading to a CUDA buffer with XPRA_NVENC_GPU_MEMCOPY=0 (introduced in r19151) does not help. Using a non-<em>nvfbc</em> source for video does not leak either.",
+            "timestamp": 1651575025,
+            "title": "#1825 (multi window nvfbc) \u2013 Xpra",
+            "url": "http://xpra.org/trac/ticket/1825"
+        },
+        {
+            "rank": 9,
+            "snippet": "3 weeks ago -\n            The 15.0 major release is coming up! This version brings many exciting improvements to GitLab, but also removes some deprecated features. Visit the deprecations page to see what is scheduled for removal in 15.0, and check for any breaking changes that could impact your workflow \u00b7 OBS Studio ...",
+            "timestamp": 1651575025,
+            "title": "Florian Zwoch / obs-nvfbc \u00b7 GitLab",
+            "url": "https://gitlab.com/fzwoch/obs-nvfbc"
+        },
+        {
+            "rank": 10,
+            "snippet": "April 26, 2017 -\n            51 votes, 45 comments. I see all over this subreddit, and the Internet, questions about how Shadowplay works differently compared to other programs \u2026",
+            "timestamp": 1651575025,
+            "title": "r/nvidia - Shadowplay, NVENC, NVFBC, NVIFR - what do they mean?",
+            "url": "https://www.reddit.com/r/nvidia/comments/5mes9h/shadowplay_nvenc_nvfbc_nvifr_what_do_they_mean/"
+        },
+        {
+            "rank": 11,
+            "snippet": "April 22, 2020 -\n            So I started using remote play with the steam link app and get a few dropped frames here and there and compression artifacts. It says my input lag \u2026",
+            "timestamp": 1651575025,
+            "title": "r/Steam_Link - Can't use NVFBC",
+            "url": "https://www.reddit.com/r/Steam_Link/comments/gx2m1f/cant_use_nvfbc/"
+        },
+        {
+            "rank": 12,
+            "snippet": "June 7, 2019 -\n            While poking around NVIDIA files I came across a very intriguing document NVIDIA Capture SDK Programming Guide [PDF Warning]. It describes a set of functions that help to capture screen/video snapshots using a NVIDIA helper library called <em>NVFBC</em> (or NVFBC64 on 64-bit systems).",
+            "timestamp": 1651575025,
+            "title": "Hexacorn | Blog Re-usigned binaries: NVFBC Screen &amp; Video Capture ...",
+            "url": "https://www.hexacorn.com/blog/2019/06/07/re-usigned-binaries-nvfbc-screen-video-capture-library/"
+        },
+        {
+            "rank": 13,
+            "snippet": "December 20, 2021 -\n            GitLab 15.0 is launching on May 22! This version brings many exciting improvements, but also removes deprecated features and introduces breaking changes that may impact your workflow. To see what is being deprecated and removed, please visit Breaking changes in 15.0 and Deprecations",
+            "timestamp": 1651575025,
+            "title": "Files \u00b7 master \u00b7 Florian Zwoch / obs-nvfbc \u00b7 GitLab",
+            "url": "https://gitlab.com/fzwoch/obs-nvfbc/-/tree/master"
+        },
+        {
+            "rank": 14,
+            "snippet": "July 28, 2021 -\n            i havent been getting the <em>nvfbc</em> source for obs ive done all the commands in the terminal, pasted the plugin into obs files and yet the source <em>nvfbc</em> doesnt show up for me system is pop os",
+            "timestamp": 1651575025,
+            "title": "Help with nvfbc on linux OBS - Troubleshooting - Linus Tech Tips",
+            "url": "https://linustechtips.com/topic/1360183-help-with-nvfbc-on-linux-obs/"
+        },
+        {
+            "rank": 15,
+            "snippet": "September 16, 2021 -\n            UPDATED WITH 120.00hz NVIDIA xrandr INSTRUCTIONS IN POST 5! Anthony from LTT gave us instructions for Nvidia users on Linux the holy grail of capture APIs: <em>NVFBC</em>! (go to the \u201cA Shadowplay alternative (optional)\u201d chapter) However most of you will run into initial issues if you add your own ...",
+            "timestamp": 1651575025,
+            "title": "[UPDATE] Setting up NVFBC for OBS on Ubuntu (With troubleshooting ...",
+            "url": "https://forum.level1techs.com/t/update-setting-up-nvfbc-for-obs-on-ubuntu-with-troubleshooting-steps/176193"
+        },
+        {
+            "rank": 16,
+            "snippet": "February 1, 2016 -\n            I see people make a big deal of making it work and I figure it must be better than the alternatives, so how come it's not enabled by default? Tried searching for this but between outdated threads and conflicting opinions... maybe you guys can explain it better.",
+            "timestamp": 1651575025,
+            "title": "So is NVFBC better? :: Steam Link General Discussions",
+            "url": "https://steamcommunity.com/app/353380/discussions/0/451852571442925576/"
+        },
+        {
+            "rank": 17,
+            "snippet": "January 10, 2019 -\n            Nvidia uses hardware FBC for its own streaming and recording software Expirience. Steam also uses it for streaming to steam link. They work independant from any API uses in game or sofware. FBC eff...",
+            "timestamp": 1651575025,
+            "title": "Add Nvidia Frame Buffer Capture (NVFBC and NVIFR) source ...",
+            "url": "https://github.com/psieg/Lightpack/issues/235"
+        },
+        {
+            "rank": 18,
+            "snippet": "In this video I cover installing an equivalent to nVidia ShadowPlay on Linux using a OBS Studio plugin called <em>NvFBC</em>.Step 1 \u2013 Patch Your GPU.https://github.co...",
+            "timestamp": 1651575025,
+            "title": "How To Capture / Record Game Footage On Linux \u2013 NvFBC - OBS Studio ...",
+            "url": "https://www.youtube.com/watch?v=g4hP34pjErs"
+        },
+        {
+            "rank": 19,
+            "snippet": "July 23, 2021 -\n            nvidia-utils-nvlax (nvidia-vulkan-utils-nvlax, nvidia-utils-beta-nvlax) (optional) \u2013 enable <em>NvFBC</em> on GeForce cards",
+            "timestamp": 1651575025,
+            "title": "AUR (en) - obs-nvfbc",
+            "url": "https://aur.archlinux.org/packages/obs-nvfbc"
+        },
+        {
+            "rank": 20,
+            "snippet": "October 29, 2020 -\n            Loading \u00b7 \u00d7Sorry to interrupt \u00b7 Refresh",
+            "timestamp": 1651575025,
+            "title": "VMware Knowledge Base",
+            "url": "https://kb.vmware.com/s/article/81110"
+        },
+        {
+            "rank": 21,
+            "snippet": "The instructions below shows how to remove <em>NvFBC</em>.exe with help from the FreeFixer removal tool. Basically, you install FreeFixer, scan your computer, check the <em>NvFBC</em>.exe file for removal, restart your computer and scan it again to verify that <em>NvFBC</em>.exe has been successfully removed.",
+            "timestamp": 1651575025,
+            "title": "What is NvFBC.exe?",
+            "url": "https://www.freefixer.com/library/file/NvFBC.exe-305821/"
+        }
+    ],
+    "timestamp": 1651575025,
+    "url": "https://search.brave.com/search?q=NvFBC&source=desktop"
+}

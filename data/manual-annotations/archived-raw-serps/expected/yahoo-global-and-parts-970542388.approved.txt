@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "global and parts",
+    "offset": null,
+    "page": null,
+    "query": "global and parts",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Automotive <em>Parts</em> Access",
+            "url": "http://srd.yahoo.com/srst/13980/global+and+parts/1/80/*http://www.gapa.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Technovations, Inc.",
+            "url": "http://srd.yahoo.com/srst/4446320/global+and+parts/2/80/*http://www.topsource.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "ACI-Carron",
+            "url": "http://srd.yahoo.com/srst/8103006/global+and+parts/3/80/*http://www.aci-carron.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Performance Centre",
+            "url": "http://srd.yahoo.com/srst/2063675/global+and+parts/4/80/*http://www.global-performance.com"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Sealing Group",
+            "url": "http://srd.yahoo.com/srst/27398374/global+and+parts/5/80/*http://www.globalsealing.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Aviation Navigator",
+            "url": "http://srd.yahoo.com/srst/307385/global+and+parts/6/80/*http://www.globalair.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "U.S. Joint <em>Global</em> Ocean Flux Study",
+            "url": "http://srd.yahoo.com/srst/248109/global+and+parts/7/80/*http://www1.whoi.edu/jgofs.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "Home",
+            "url": "http://srd.yahoo.com/srst/32800767/global+and+parts/8/80/*http://www.gknplc.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "Jubilee 2000/USA Campaign",
+            "url": "http://srd.yahoo.com/srst/15196034/global+and+parts/9/80/*http://www.j2000usa.org/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "Computer <em>and</em> <em>Global</em> Positioning Satellite Tables",
+            "url": "http://srd.yahoo.com/srst/28561117/global+and+parts/10/80/*http://www.williamkborden.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "MascoTech, Inc. Home Page",
+            "url": "http://srd.yahoo.com/srst/3091143/global+and+parts/11/80/*http://www.mascotech.com/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Public Policy Networks",
+            "url": "http://srd.yahoo.com/srst/22181921/global+and+parts/12/80/*http://www.globalpublicpolicy.net"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "Air International Group Limited",
+            "url": "http://srd.yahoo.com/srst/22148635/global+and+parts/13/80/*http://www.airinter.com.au"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Electronics",
+            "url": "http://srd.yahoo.com/srst/8604314/global+and+parts/14/80/*http://www.globalelectronicsusa.com"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Submarines Oy Ltd.",
+            "url": "http://srd.yahoo.com/srst/24025157/global+and+parts/15/80/*http://www.globalsubmarines.com/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Kitting Systems",
+            "url": "http://srd.yahoo.com/srst/8300184/global+and+parts/16/80/*http://www.globalkitting.com"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Submarines Oy Ltd.",
+            "url": "http://srd.yahoo.com/srst/24025140/global+and+parts/17/80/*http://www.globalsubmarines.com/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Submarines Oy Ltd.",
+            "url": "http://srd.yahoo.com/srst/24025151/global+and+parts/18/80/*http://www.globalsubmarines.com/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Kitting Systems",
+            "url": "http://srd.yahoo.com/srst/11389517/global+and+parts/19/80/*http://www.globalkitting.com"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 970542388,
+            "title": "<em>Global</em> Value International Corp.",
+            "url": "http://srd.yahoo.com/srst/22457836/global+and+parts/20/80/*http://www.global.ttnet.net/"
+        }
+    ],
+    "timestamp": 970542388,
+    "url": "http://search.yahoo.com:80/search?p=global+and+parts"
+}

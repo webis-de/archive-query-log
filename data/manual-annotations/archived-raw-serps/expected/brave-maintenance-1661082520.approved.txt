@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "maintenance",
+    "offset": null,
+    "page": null,
+    "query": "maintenance",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "July 7, 2022 -\n            The meaning of <em>MAINTENANCE</em> is the act of maintaining : the state of being maintained : support. How to use <em>maintenance</em> in a sentence.",
+            "timestamp": 1661082520,
+            "title": "<em></em>Maintenance Definition &amp; Meaning - Merriam-Webster",
+            "url": "https://www.merriam-webster.com/dictionary/maintenance"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Maintenance</em> definition, the act of maintaining: the <em>maintenance</em> of proper oral hygiene. See more.",
+            "timestamp": 1661082520,
+            "title": "<em></em>Maintenance Definition &amp; Meaning | Dictionary.com",
+            "url": "https://www.dictionary.com/browse/maintenance"
+        },
+        {
+            "rank": 3,
+            "snippet": "4 days ago -\n            <em>maintenance</em> meaning: 1. the work needed to keep a road, building, machine, etc. in good condition: 2. money that a\u2026. Learn more.",
+            "timestamp": 1661082520,
+            "title": "<em></em>MAINTENANCE | definition in the Cambridge English Dictionary",
+            "url": "https://dictionary.cambridge.org/us/dictionary/english/maintenance"
+        },
+        {
+            "rank": 4,
+            "snippet": "If you make sure that your house or car or even a database stays in good working condition, you are keeping up on the <em>maintenance</em>.",
+            "timestamp": 1661082520,
+            "title": "<em></em>Maintenance - Definition, Meaning &amp; Synonyms | Vocabulary.com",
+            "url": "https://www.vocabulary.com/dictionary/maintenance"
+        },
+        {
+            "rank": 5,
+            "snippet": "June 6, 2022 -\n            The technical meaning of <em>maintenance</em> involves functional checks, servicing, repairing or replacing of necessary devices, equipment, machinery, building infrastructure, and supporting utilities in industrial, business, and residential installations. Over time, this has come to include multiple ...",
+            "timestamp": 1661082520,
+            "title": "<em></em>Maintenance (technical) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Maintenance_(technical)"
+        },
+        {
+            "rank": 6,
+            "snippet": "Define <em>maintenance</em>. <em>maintenance</em> synonyms, <em>maintenance</em> pronunciation, <em>maintenance</em> translation, English dictionary definition of <em>maintenance</em>. n. 1. The act of maintaining or the state of being maintained: nutrients essential to the <em>maintenance</em> of good health. 2. The work of keeping something in...",
+            "timestamp": 1661082520,
+            "title": "<em></em>Maintenance - definition of maintenance by The Free Dictionary",
+            "url": "https://www.thefreedictionary.com/maintenance"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Maintenance</em> definition: The <em>maintenance</em> of a building, vehicle , road , or machine is the process of keeping it... | Meaning, pronunciation, translations and examples",
+            "timestamp": 1661082520,
+            "title": "<em></em>Maintenance definition and meaning | Collins English Dictionary",
+            "url": "https://www.collinsdictionary.com/us/dictionary/english/maintenance"
+        },
+        {
+            "rank": 8,
+            "snippet": "November 12, 2020 -\n            English dictionary definition of <em>MAINTENANCE</em> along with additional meanings, example sentences, and different ways to say.",
+            "timestamp": 1661082520,
+            "title": "<em></em>MAINTENANCE English Definition and Meaning | Lexico.com",
+            "url": "https://www.lexico.com/en/definition/maintenance"
+        },
+        {
+            "rank": 9,
+            "snippet": "April 1, 2020 -\n            Commercial building and Property repairs &amp; <em>Maintenance</em> service in Melbourne. Well-established company, experienced contractors. Prompt and efficient service.",
+            "timestamp": 1661082520,
+            "title": "<em></em>Bosmaintenance | Commercial Building Maintenance, Property ...",
+            "url": "https://bosmaintenance.com.au/"
+        },
+        {
+            "rank": 10,
+            "snippet": "November 13, 2020 -\n            Define <em>maintenance</em>. <em>Maintenance</em> as a noun means The act of maintaining or the state of being maintained..",
+            "timestamp": 1661082520,
+            "title": "<em></em>Maintenance Definitions | What does maintenance mean? | Best 16 ...",
+            "url": "https://www.yourdictionary.com/maintenance"
+        },
+        {
+            "rank": 11,
+            "snippet": "Heart &amp; Soul Properties offers Complete Property <em>Maintenance</em> in Melbourne. For Cost-Effective &amp; Time",
+            "timestamp": 1661082520,
+            "title": "<em></em>Property Maintenance Melbourne | Property Maintenance Services",
+            "url": "https://www.heartandsoulproperties.com.au/"
+        },
+        {
+            "rank": 12,
+            "snippet": "Definition of <em>MAINTENANCE</em> (noun): work that keeps building in good condition; process of keeping something in existence; money paid to partner caring ...",
+            "timestamp": 1661082520,
+            "title": "<em></em>MAINTENANCE (noun) American English definition and synonyms | ...",
+            "url": "https://www.macmillandictionary.com/us/dictionary/american/maintenance"
+        },
+        {
+            "rank": 13,
+            "snippet": "October 30, 2021 -\n            Look up <em>maintenance</em> in Wiktionary, the free dictionary.",
+            "timestamp": 1661082520,
+            "title": "<em></em>Maintenance - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Maintenance"
+        },
+        {
+            "rank": 14,
+            "snippet": "3 weeks ago -\n            A comprehensive guide covering the concept of <em>maintenance</em>, its different types, advantages, and its uses across industries.",
+            "timestamp": 1661082520,
+            "title": "<em></em>What is Maintenance? Types of Maintenance | SafetyCulture",
+            "url": "https://safetyculture.com/topics/maintenance/"
+        },
+        {
+            "rank": 15,
+            "snippet": "Find 20 home <em>maintenance</em> services in Melbourne. Get FREE quotes in minutes from reviewed, rated &amp; trusted home <em>maintenance</em> experts on Airtasker.",
+            "timestamp": 1661082520,
+            "title": "<em></em>10 Best Home Maintenance Experts in Melbourne | Airtasker",
+            "url": "https://www.airtasker.com/handyman/home-maintenance/melbourne/"
+        },
+        {
+            "rank": 16,
+            "snippet": "February 22, 2021 -\n            A home operates with the seasons, coming to life in the spring and hunkering down for the winter. Follow this natural arc all year long and your house will run like a well-oiled machine.",
+            "timestamp": 1661082520,
+            "title": "<em></em>Home Maintenance Checklist - Real Estate Guides - The New York Times",
+            "url": "https://www.nytimes.com/guides/realestate/home-maintenance-checklist"
+        },
+        {
+            "rank": 17,
+            "snippet": "<em>maintenance</em> on Twitter",
+            "timestamp": 1661082520,
+            "title": "<em></em>maintenance on Twitter",
+            "url": "https://twitter.com/search?q=maintenance"
+        },
+        {
+            "rank": 18,
+            "snippet": "December 14, 2020 -\n            MaintainX helps you track your reactive <em>maintenance</em>, preventive <em>maintenance</em>, and control the daily operations of your business. Get started for Free!",
+            "timestamp": 1661082520,
+            "title": "<em></em>MaintainX - Manage your Maintenance and Operations",
+            "url": "https://www.getmaintainx.com/"
+        },
+        {
+            "rank": 19,
+            "snippet": "Find 43 ways to say <em>MAINTENANCE</em>, along with antonyms, related words, and example sentences at Thesaurus.com, the world's most trusted free thesaurus.",
+            "timestamp": 1661082520,
+            "title": "<em></em>MAINTENANCE Synonyms: 43 Synonyms &amp; Antonyms for MAINTENANCE | ...",
+            "url": "https://www.thesaurus.com/browse/maintenance"
+        },
+        {
+            "rank": 20,
+            "snippet": "June 29, 2021 -\n            Commercial Building And <em>Maintenance</em> Repairs Melbourne Professional &amp; high quality services in Melbourne, meeting all your commercial building, construction &amp; <em>maintenance</em> needs. Offering a number of commercial services in Melbourne including, plumbing, electrical, pest control, floor restoration, ...",
+            "timestamp": 1661082520,
+            "title": "<em></em>Top-Notch Property Maintenance Melbourne",
+            "url": "https://www.mathiouservices.com.au/locations/melbourne/"
+        }
+    ],
+    "timestamp": 1661082520,
+    "url": "https://search.brave.com/search?q=maintenance"
+}

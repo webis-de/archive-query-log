@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "golden books",
+    "offset": null,
+    "page": null,
+    "query": "golden books",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "<em>Golden</em>, Arthur",
+            "url": "http://srd.yahoo.com/srct/27078292/golden+books/1/2/*http://dir.yahoo.com/Arts/Humanities/Literature/Authors/Literary_Fiction/Golden__Arthur/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "G\u00f6del, Escher, Bach: an Eternal <em>Golden</em> Braid",
+            "url": "http://srd.yahoo.com/srct/2688570/golden+books/2/2/*http://dir.yahoo.com/Arts/Humanities/Literature/Authors/Nonfiction/Hofstadter__Douglas/Goedel__Escher__Bach__an_Eternal_Golden_Braid/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "<em>Golden</em> <em>Books</em>",
+            "url": "http://srd.yahoo.com/srst/15107076/golden+books/1/107/*http://www.goldenbooks.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Vintage <em>Books</em>: A Conversation with Arthur <em>Golden</em>",
+            "url": "http://srd.yahoo.com/srst/27087208/golden+books/2/107/*http://www.randomhouse.com/vintage/golden.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "<em>Golden</em> Bough Vintage <em>Books</em>",
+            "url": "http://srd.yahoo.com/srst/2270049/golden+books/3/107/*http://www.goldenbough.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Mikel Midnight <em>Golden</em> Age Directory",
+            "url": "http://srd.yahoo.com/srst/27085115/golden+books/4/107/*http://www.best.com/~blaklion/comics.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "<em>Golden</em> Age Batman Page",
+            "url": "http://srd.yahoo.com/srst/983505/golden+books/5/107/*http://ocsnet.ocsonline.com/~bjourdain/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Good Guys &amp; Gals of the <em>Golden</em> Age",
+            "url": "http://srd.yahoo.com/srst/26816336/golden+books/6/107/*http://goldenage.cjb.net"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Gallery of Comic Book Covers From The 1940s",
+            "url": "http://srd.yahoo.com/srst/26284825/golden+books/7/107/*http://www.ultranet.com/~adjm/comics/cover.shtml"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "<em>Golden</em> Age Catwoman Index",
+            "url": "http://srd.yahoo.com/srst/27606213/golden+books/8/107/*http://www.ocsonline.com/~bjourdain/catwoman.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "<em>Golden</em> Age Comics",
+            "url": "http://srd.yahoo.com/srst/12780537/golden+books/9/107/*http://www.goldenagecomics.com/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Silents Are <em>Golden</em>",
+            "url": "http://srd.yahoo.com/srst/13487730/golden+books/10/107/*http://www.silentsaregolden.com"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "<em>Golden</em>",
+            "url": "http://srd.yahoo.com/srst/512261/golden+books/11/107/*http://www.maui.net/~golden13/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "<em>Golden</em> Tai Chi for Seniors",
+            "url": "http://srd.yahoo.com/srst/27874726/golden+books/12/107/*http://www.taichiforseniors.com/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Bedrock City Comic Co.",
+            "url": "http://srd.yahoo.com/srst/832046/golden+books/13/107/*http://www.bedrockcity.com"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Comics Archives",
+            "url": "http://srd.yahoo.com/srst/674759/golden+books/14/107/*http://www.execpc.com/~icicle/main.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "The <em>Golden</em> Dilettante",
+            "url": "http://srd.yahoo.com/srst/26655140/golden+books/15/107/*http://www.januarymagazine.com/nonfiction/chatwin.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Godel, Escher, Bach",
+            "url": "http://srd.yahoo.com/srst/22418421/golden+books/16/107/*http://www.fas.harvard.edu/~plujan/geb.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Comic Book Marketplace",
+            "url": "http://srd.yahoo.com/srst/1046060/golden+books/17/107/*http://www.gemstonepub.com/cbm/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 971368161,
+            "title": "Comic Company",
+            "url": "http://srd.yahoo.com/srst/14469277/golden+books/18/107/*http://www.comiccompany.com"
+        }
+    ],
+    "timestamp": 971368161,
+    "url": "http://search.yahoo.com:80/search?p=golden+books"
+}

@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "eier spinat pilze",
+    "offset": null,
+    "page": 0,
+    "query": "eier+spinat+pilze",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1200619371,
+            "title": "Schweinefilet in Schinkenmantel mit Spinat - Pilz - Mozarellaf\u00fcllung in Bl\u00e4tterteig",
+            "url": "http://www.chefkoch.de:80/rezepte/827021187349048/Schweinefilet-in-Schinkenmantel-mit-Spinat-Pilz-Mozarellafuellung-in-Blaetterteig.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1200619371,
+            "title": "Spinat - Schinken - Pizza",
+            "url": "http://www.chefkoch.de:80/rezepte/897361195143443/Spinat-Schinken-Pizza.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1200619371,
+            "title": "Spinatkn\u00f6del mit Pilzragout",
+            "url": "http://www.chefkoch.de:80/rezepte/762121178967655/Spinatknoedel-mit-Pilzragout.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "aus Birma",
+            "timestamp": 1200619371,
+            "title": "Zw\u00f6lferlei - Suppe",
+            "url": "http://www.chefkoch.de:80/rezepte/553761153115860/Zwoelferlei-Suppe.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "hausgemachte Nudeln mit k\u00f6stlicher F\u00fcllung in Portionsformen serviert.",
+            "timestamp": 1200619371,
+            "title": "Cannelloni mit Pilzf\u00fcllung",
+            "url": "http://www.chefkoch.de:80/rezepte/880511193470326/Cannelloni-mit-Pilzfuellung.html"
+        }
+    ],
+    "timestamp": 1200619371,
+    "url": "http://www.chefkoch.de:80/rs/s0/eier+spinat+pilze/Rezepte.html"
+}

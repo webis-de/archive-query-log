@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Laxmikant\u2013Pyarelal\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Laxmikant\u2013Pyarelal\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "The name represents an archive of hit film music that was churned out non-stop right from 1963 till the end of the century. LP, Laxmikant-Pyarelal were amongst\u00a0...",
+            "timestamp": 1657295550,
+            "title": "Laxmikant-Pyarelal \u2013 Long Live LP Music",
+            "url": "https://www.google.com/url?q=https://laxmikantpyarelal.com/&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQFnoECAoQAg&usg=AOvVaw0OvcqvnzIhxfF42pXEXSbv"
+        },
+        {
+            "rank": 8,
+            "snippet": "Nov 16, 2021 \u00b7 In 'Music by Laxmikant Pyarelal', Rajiv Vijayakar traces the journey of the composer duo in their musical universe.",
+            "timestamp": 1657295550,
+            "title": "How did Laxmikant-Pyarelal end Shankar-Jaikishan era ... - ThePrint",
+            "url": "https://www.google.com/url?q=https://theprint.in/pageturner/excerpt/how-did-laxmikant-pyarelal-end-shankar-jaikishan-era-in-bollywood-happier-cheaper-music/766662/&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQFnoECAgQAg&usg=AOvVaw2TPPb2-BVBzSZz6B7S5wT8"
+        },
+        {
+            "rank": 9,
+            "snippet": "Laxmikant\u2013Pyarelal were a popular and successful Indian composer duo, consisting of Laxmikant Shantaram Kudalkar (1937\u20131998) and Pyarelal Ramprasad Sharma\u00a0...",
+            "timestamp": 1657295550,
+            "title": "Laxmikant-Pyarelal | Discography - Discogs",
+            "url": "https://www.google.com/url?q=https://www.discogs.com/artist/621186-Laxmikant-Pyarelal&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQFnoECAYQAg&usg=AOvVaw1a2r4w3MM6-5Ik1xh7umBR"
+        },
+        {
+            "rank": 10,
+            "snippet": "Jan 29, 2021 \u00b7 Watch and Enjoy the Super hit Classic Songs composed by the Evergreen Music Duo Laxmikant ...Duration: 45:05Posted: Jan 29, 2021",
+            "timestamp": 1657295550,
+            "title": "Rajshri Hits | Laxmikant Pyarelal | Mere Mehboob Qayamat Hogi | HD",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3D3yr1HqBEy4M&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQtwJ6BAgDEAE&usg=AOvVaw3QryDcpnqgmjIjIPmiQs-0"
+        },
+        {
+            "rank": 11,
+            "snippet": "Nov 2, 2021 \u00b7 Check out all the Super hit Hindi songs by the Music Maestros 'Laxmikant Pyarelal' in this ...Duration: 48:15Posted: Nov 2, 2021",
+            "timestamp": 1657295550,
+            "title": "Laxmikant Pyarelal Popular Songs | Jhilmil Sitaron Ka - YouTube",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DvCzIqb5ysW4&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQtwJ6BAgBEAE&usg=AOvVaw2gc6gXIzjROYY_R66XXXwJ"
+        },
+        {
+            "rank": 12,
+            "snippet": "May 24, 2022 \u00b7 Best Of Laxmikant Pyarelal | Best of Laxmikant Pyarelal | Evergreen Hindi Songs | Non Stop ...Duration: 1:26:38Posted: May 24, 2022",
+            "timestamp": 1657295550,
+            "title": "Best of Laxmikant Pyarelal Top 15 Hits | Evergreen Hindi Songs",
+            "url": "https://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DNj9DnNLeG1s&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQtwJ6BAgEEAE&usg=AOvVaw3zHVKORTuEwrTeYQwL5Kx6"
+        },
+        {
+            "rank": 13,
+            "snippet": "Songs of Laxmikant, Pyarelal. Warning: These indexes are often incomplete and do not represent all the songs in the ITRANS Song Book.",
+            "timestamp": 1657295550,
+            "title": "Songs of Laxmikant, Pyarelal",
+            "url": "https://www.google.com/url?q=https://pages.cs.wisc.edu/~navin/india/songs/isongs/indexes/music/laxmikant__pyarelal.html&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQFnoECAIQAg&usg=AOvVaw0zNHCnrcuNGPuS5bCjb83A"
+        },
+        {
+            "rank": 14,
+            "snippet": "296 results \u00b7 laxmikant pyarelal News: Latest and Breaking News on laxmikant pyarelal. Explore laxmikant pyarelal profile at Times of India for photos,\u00a0...",
+            "timestamp": 1657295550,
+            "title": "Latest News, Videos and Photos of Laxmikant pyarelal - Times of India",
+            "url": "https://www.google.com/url?q=https://timesofindia.indiatimes.com/topic/laxmikant-pyarelal&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQFnoECAkQAg&usg=AOvVaw185qnJQXOyRQF87TS_JQ19"
+        },
+        {
+            "rank": 15,
+            "snippet": "May 21, 2022 \u00b7 Laxmikant Pyarelal Live in Concert along with Kavita Krishnamurti, Amit Kumar, Sudesh Bhosle, Sadhna Sargam, Mohammed Salamat and many more.",
+            "timestamp": 1657295550,
+            "title": "Laxmikant\u2013Pyarelal Live in Concert - Curtis Culwell Center",
+            "url": "https://www.google.com/url?q=https://curtisculwellcenter.com/content/laxmikant-pyarelal-live-concert&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQFnoECAcQAg&usg=AOvVaw0CeltgiEqbXFd89DBxRJkm"
+        },
+        {
+            "rank": 16,
+            "snippet": "Laxmikant Pyarelal is the name adopted by the Indian film composing duo of mandolin player Laxmikant Shantaram Kudalkar (born 1937; died May 25,\u00a0...",
+            "timestamp": 1657295550,
+            "title": "Laxmikant-Pyarelal Songs, Albums, Reviews, Bio &amp; More | AllMusic",
+            "url": "https://www.google.com/url?q=https://www.allmusic.com/artist/laxmikant-pyarelal-mn0002089946&sa=U&ved=2ahUKEwjfwIXu7en4AhUlIkQIHexyDqAQFnoECAAQAg&usg=AOvVaw3HY-wcICWFjS5tCBtkMpif"
+        }
+    ],
+    "timestamp": 1657295550,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22Laxmikant%E2%80%93Pyarelal%22"
+}

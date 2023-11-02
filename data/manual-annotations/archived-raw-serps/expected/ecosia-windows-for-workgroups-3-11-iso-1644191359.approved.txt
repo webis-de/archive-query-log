@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "windows for workgroups 3.11 iso",
+    "offset": null,
+    "page": null,
+    "query": "windows for workgroups 3.11 iso",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Windows</em> 3.0 / 3.1 for <em>Workgroups</em> <em>3.11</em>. <em>Windows</em> 3.x was the first to gain significant development and commercial traction. It combined the 8086, 286, and 386 modes of <em>Windows</em> 2 in to one package. It replaced the MSDOS Executive with a Program Manager and File Manager similar to those in OS/2 1.x.",
+            "timestamp": 1644191359,
+            "title": "WinWorld: Windows 3.0 / 3.1 for Workgroups 3.11",
+            "url": "https://winworldpc.com/product/windows-3/wfw-311"
+        },
+        {
+            "rank": 2,
+            "snippet": "Microsoft <em>Windows</em> For <em>Workgroups 3.11</em> (<em>3.11</em>.300) (1993-11-01) [English] (3.5''-1.44MB) Skip to main content Due to a planned power outage on Friday, 1/14, between 8am-1pm PST, some services may be impacted.",
+            "timestamp": 1644191359,
+            "title": "Microsoft Windows For Workgroups 3.11 (3.11.300) (1993-11 ...",
+            "url": "https://archive.org/details/boxcover-back"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Windows</em> 3.1 for Central and Eastern Europe. A special version named <em>Windows</em> 3.1 for Central and Eastern Europe was released that allowed use of Cyrillic and had fonts with diacritical marks characteristic of Central and Eastern European languages. Microsoft introduced its own code page (<em>Windows</em>-1250) and supported its use in violation of many countries' <em>ISO</em> standards (e.g., the official Polish ...",
+            "timestamp": 1644191359,
+            "title": "Microsoft Windows For Workgroups 3.11 [ English For ...",
+            "url": "https://archive.org/details/microsoft-windows-for-workgroups-3.11-english-for-central-eastern-europe"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Windows</em> 3.1 was available via 720 KB, 1.2 MB, and 1.44 MB floppy distributions. It was also the first version of <em>Windows</em> to be distributed on CD-ROM \u2014 although this was more common for <em>Windows</em> for <em>Workgroups</em> <em>3.11</em>, which typically came with MS-DOS 6.22 on one CD. Installed size on the hard disk was between 10 MB and 15 MB.",
+            "timestamp": 1644191359,
+            "title": "Windows 3.11 Stock Installation : Microsoft : Free Borrow ...",
+            "url": "https://archive.org/details/win3_stock"
+        },
+        {
+            "rank": 5,
+            "snippet": "Hungarian <em>Windows</em> for <em>Workgroups 3.11 ISO</em>. To run it, you'll need MS-DOS 6.22. https: ... To run, you'll need to do type the following, after MS-DOS boots up. C: cd <em>WINDOWS</em>. win. And <em>Windows</em> for <em>Workgroups</em> <em>3.11</em> will start in a moment. Addeddate 2019-12-03 18:22:17 Identifier Win311Hungarian Scanner Internet Archive HTML5 Uploader 1.6.4.",
+            "timestamp": 1644191359,
+            "title": "Windows for Workgroups 3.11 (Hungarian) : Microsoft : Free ...",
+            "url": "https://archive.org/details/Win311Hungarian"
+        },
+        {
+            "rank": 6,
+            "snippet": "This is Microsoft <em>Windows</em> for <em>Workgroups 3.11</em> in GermanFloppy scans, sector-images and KryoFlux dumps are provided Skip to main content Due to a planned power outage on Friday, 1/14, between 8am-1pm PST, some services may be impacted.",
+            "timestamp": 1644191359,
+            "title": "Microsoft Windows for Workgroups 3.11 (German) : Microsoft ...",
+            "url": "https://archive.org/details/MicrosoftWindowsForWorkgroups311German"
+        },
+        {
+            "rank": 7,
+            "snippet": "Home of the original IBM PC emulator for browsers. PCjs offers a variety of online machine emulators written in JavaScript. Run DOS, <em>Windows</em>, OS/2 and other vintage PC applications in a web browser on your desktop computer, iPhone, or iPad. An assortment of microcomputers, minicomputers, terminals, programmable calculators, and arcade machines are available, along with an archive of historical ...",
+            "timestamp": 1644191359,
+            "title": "Microsoft Windows 3.11 (aka Windows for Workgroups) | PCjs ...",
+            "url": "https://www.pcjs.org/software/pcx86/sys/windows/3.11/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Re: <em>Windows 3.11</em> CD edition. Yeah right. I can confirm what dexter152 says. Just copy all the files from the disks to a <em>iso</em> image, no need to modify any files. Works with every version of <em>Windows</em> 3.xx. My gaming machine: AST Advantage 6066d. Cyrix 66MHz 486DX. 4MB RAM. 512KB Cirrus Logic onboard graphics.",
+            "timestamp": 1644191359,
+            "title": "Windows 3.11 CD edition - BetaArchive",
+            "url": "https://www.betaarchive.com/forum/viewtopic.php?t=7130"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Windows</em> 3.0 / 3.1 <em>3.11</em>. <em>Windows</em> 3.x was the first to gain significant development and commercial traction. It combined the 8086, 286, and 386 modes of <em>Windows</em> 2 in to one package. It replaced the MSDOS Executive with a Program Manager and File Manager similar to those in OS/2 1.x.",
+            "timestamp": 1644191359,
+            "title": "WinWorld: Windows 3.0 / 3.1 3.11",
+            "url": "https://winworldpc.com/product/windows-3/311"
+        }
+    ],
+    "timestamp": 1644191359,
+    "url": "https://www.ecosia.org/search?q=windows+for+workgroups+3.11+iso"
+}

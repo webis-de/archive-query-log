@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "8 ft to cm",
+    "offset": null,
+    "page": null,
+    "query": "8 ft to cm",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "How far is <em>8</em> <em>feet</em> in <em>centimeters</em>? <em>8 ft</em> to <em>cm</em> conversion. From. To. swap units \u21ba Amount. <em>8</em> <em>Feet</em> = 243.84 <em>Centimeters</em> (exact result) Display result as. A <em>foot</em> is a unit of length equal to ...",
+            "timestamp": 1629639998,
+            "title": "Convert 8 Feet to Centimeters - CalculateMe.com",
+            "url": "https://www.calculateme.com/length/feet/to-centimeters/8"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>8</em> <em>feet</em> equal 243.84 <em>centimeters</em> (8ft = 243.84cm). Converting <em>8 ft</em> to <em>cm</em> is easy. Simply use our calculator above, or apply the formula to change the length <em>8 ft</em> to <em>cm</em>.",
+            "timestamp": 1629639998,
+            "title": "8 Feet To Centimeters Converter | 8 ft To cm Converter",
+            "url": "https://feet-to-cm.appspot.com/8-feet-to-cm.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>8 ft</em> to <em>cm</em> conversion result above is displayed in three different forms: as a decimal (which could be rounded), in scientific notation (scientific form, standard index form or standard form in the United Kingdom) and as a fraction (exact result).",
+            "timestamp": 1629639998,
+            "title": "8 Feet to Centimeters | Convert 8 ft in cm - UnitChefs",
+            "url": "https://unitchefs.com/feet/centimeters/8/"
+        },
+        {
+            "rank": 4,
+            "snippet": "How to convert <em>feet</em> to <em>centimeters</em>. 1 <em>feet</em> is equal to 30.48 <em>centimeters</em>: 1ft = 30.48cm. The distance d in <em>centimeters</em> (<em>cm</em>) is equal to the distance d in <em>feet</em> (<em>ft</em>) times 30.48: d (<em>cm</em>) = d (<em>ft</em>) \u00d7 30.48 . Example. Convert 20 <em>feet</em> to <em>centimeters</em>: d (<em>cm</em>) = 20ft \u00d7 30.48 = 609.6cm. How many <em>feet</em> in a centimeter. One centimeter is equal to 0.032808 ...",
+            "timestamp": 1629639998,
+            "title": "Feet to CM (ft to cm) Converter - RapidTables.com",
+            "url": "https://www.rapidtables.com/convert/length/feet-to-cm.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "How tall is <em>8</em> <em>ft</em> 1 in <em>centimeters</em>? How high is <em>8</em> <em>foot</em> 1? Use this easy calculator to convert <em>feet</em> and inches to metric. <em>Feet</em>. Inches. <em>8</em> <em>Feet</em>, 1 Inch = 246.38 <em>Centimeters</em> (exact result) Click here. for the opposite calculation. Height Conversion Table (some results rounded) Height Inches",
+            "timestamp": 1629639998,
+            "title": "What is 8 Feet 1 Inch in Centimeters? - CalculateMe.com",
+            "url": "https://www.calculateme.com/height/convert-feet-inches-to-cm/8-ft-1"
+        },
+        {
+            "rank": 6,
+            "snippet": "How tall is <em>8</em> <em>ft</em> 6 in <em>centimeters</em>? How high is <em>8</em> <em>foot</em> 6? Use this easy calculator to convert <em>feet</em> and inches to metric. <em>Feet</em>. Inches. <em>8</em> <em>Feet</em>, 6 Inches = 259.08 <em>Centimeters</em> (exact result) Click here. for the opposite calculation. Height Conversion Table (some results rounded) Height",
+            "timestamp": 1629639998,
+            "title": "What is 8 Feet 6 Inches in Centimeters?",
+            "url": "https://www.calculateme.com/height/convert-feet-inches-to-cm/8-ft-6"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>8</em>.<em>8</em> <em>feet</em> equal 268.224 <em>centimeters</em> (<em>8</em>.8ft = 268.224cm). Converting <em>8</em>.<em>8 ft</em> to <em>cm</em> is easy. Simply use our calculator above, or apply the formula to change the length <em>8</em>.<em>8 ft</em> to <em>cm</em>.",
+            "timestamp": 1629639998,
+            "title": "8.8 Feet To Centimeters Converter | 8.8 ft To cm Converter",
+            "url": "https://feet-to-cm.appspot.com/8.8-feet-to-cm.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>8</em>.6 <em>feet</em> equal 262.128 <em>centimeters</em> (<em>8</em>.6ft = 262.128cm). Converting <em>8</em>.6 <em>ft</em> to <em>cm</em> is easy. Simply use our calculator above, or apply the formula to change the length <em>8</em>.6 <em>ft</em> to <em>cm</em>.",
+            "timestamp": 1629639998,
+            "title": "8.6 Feet To Centimeters Converter | 8.6 ft To cm Converter",
+            "url": "https://feet-to-cm.appspot.com/8.6-feet-to-cm.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "1 <em>feet</em> 6 inches. 45.72 <em>cm</em>. 1 <em>feet</em> 7 inches. 48.26 <em>cm</em>. 1 <em>feet</em> <em>8</em> inches. 50.<em>8</em> <em>cm</em>. 1 <em>feet</em> 9 inches. 53.34 <em>cm</em>. 1 <em>feet</em> 10 inches.",
+            "timestamp": 1629639998,
+            "title": "6 feet 8 inches in cm - MiniWebtool",
+            "url": "https://miniwebtool.com/feet-and-inches-to-cm-converter/?feet=6&inches=8"
+        }
+    ],
+    "timestamp": 1629639998,
+    "url": "https://www.ecosia.org/search?q=8+ft+to+cm&addon=chrome&addonversion=3.4.0&method=topbar"
+}

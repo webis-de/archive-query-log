@@ -1,0 +1,59 @@
+{
+    "interpreted_query": "envious that biden",
+    "offset": null,
+    "page": null,
+    "query": "envious that biden",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "May 12, 2022 \u00b7  Face it, Joe <em>Biden</em> is a doer, a go-getter and a winner. A triple threat if you ask me. To all the Joe <em>Biden</em> haters out there, eat your hearts out. He's done more in his lifetime than most of you would be able to do in an eternity.",
+            "timestamp": 1652739375,
+            "title": "www.godlikeproductions.com \u203a forum1 \u203a message5133141The President <em>Biden</em> haters are basically <em>envious</em> of him",
+            "url": "https://www.godlikeproductions.com/forum1/message5133141/pg1"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Biden</em> labeled it with one word \u201cInteresting\u201d and sent it to Hunter, Hallie <em>Biden</em>, \u201cMom\u201d (likely Jill <em>Biden</em>), Finnegan <em>Biden</em> (his granddaughter who was about 16 at the time), his sister Valerie and her husband Jack, as well as aides Steve Ricchetti and Mike Donilon, among others.",
+            "timestamp": 1652739375,
+            "title": "patriotoutlook.com \u203a bidens-2016-email-makes-this<em>Biden</em>\u2019s 2016 Email Makes This Cringe Video Between Hillary ...",
+            "url": "https://patriotoutlook.com/bidens-2016-email-makes-this-cringe-video-between-hillary-and-jill-even-funnier"
+        },
+        {
+            "rank": 3,
+            "snippet": "Apr 26, 2022 \u00b7  Since <em>Biden</em> ascended to the presidency, Obama has felt <em>envious</em> of his former vice president and has \"complicated feelings\" about him being commander in chief, according to the new book, This Will ...",
+            "timestamp": 1652739375,
+            "title": "www.washingtonexaminer.com \u203a politics \u203a biden-blues<em>Biden</em> blues: New book says Obama is jealous of president",
+            "url": "https://www.washingtonexaminer.com/politics/biden-blues-new-book-says-obama-is-jealous-of-biden"
+        },
+        {
+            "rank": 4,
+            "snippet": "Apr 27, 2022 \u00b7  The View speculated on Wednesday that Fox News host Tucker Carlson \u201cdoesn\u2019t like\u201d Black and Brown people because he\u2019s <em>envious</em> of their penises. \u201cThere is $1.7 trillion in student debt ...",
+            "timestamp": 1652739375,
+            "title": "www.mediaite.com \u203a tv \u203a the-view-speculates-thatThe View Makes Penis Jokes About Tucker Carlson",
+            "url": "https://www.mediaite.com/tv/the-view-speculates-that-tucker-carlson-doesnt-like-black-and-brown-people-because-hes-envious-of-their-penises/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Apr 07, 2022 \u00b7  On April 6, President Joe <em>Biden</em> announced that a pause on federal student loan payments will now be extended until August 31. msn back to msn home video web search",
+            "timestamp": 1652739375,
+            "title": "www.msn.com \u203a en-in \u203a video<em>Biden</em> Extends Pause on Student Loan Payments",
+            "url": "https://www.msn.com/en-in/video/news/biden-extends-pause-on-student-loan-payments/vi-AAVXu8k"
+        },
+        {
+            "rank": 6,
+            "snippet": "Apr 13, 2022 \u00b7  <em>Biden</em> and Harris are domestic and global jokes. Both were jokes before they ever fraudulently occupied the positions they were given by their Marxist globalist masters. I know this may not be popular but don\u2019t blame <em>Biden</em> and Harris for what\u2019s going on in the US. They don\u2019t have a clue. Neither had a clue when they were in the senate.",
+            "timestamp": 1652739375,
+            "title": "citizenfreepress.com \u203a breaking \u203a whoa-saudi-stateSaudi state run TV mocks <em>Biden</em> and Kamala\u2026 And it\u2019s brutal\u2026",
+            "url": "https://citizenfreepress.com/breaking/whoa-saudi-state-run-tv-mocks-biden-and-kamala/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Apr 12, 2022 \u00b7  But back in 2016, it turns out that Joe <em>Biden</em> was also thinking about running and he was keeping an eye on what was going on with Hillary Clinton\u2019s run. He shared an anti-Hillary email with several members of his family that made it to Hunter <em>Biden</em>\u2019s laptop, which referenced a Real Clear Politics article. From NY Post:",
+            "timestamp": 1652739375,
+            "title": "redstate.com \u203a nick-arama \u203a 2022/04/12<em>Biden</em>'s 2016 Email Makes This Cringe Video Between Hillary ...",
+            "url": "https://redstate.com/nick-arama/2022/04/12/bidens-2016-email-makes-this-cringe-video-between-hillary-and-jill-even-funnier-n549250"
+        }
+    ],
+    "timestamp": 1652739375,
+    "url": "https://search.yahoo.com/search?p=envious+that+biden&ei=UTF-8&fr2=time&age=1d&btf=d&fr=sfp"
+}

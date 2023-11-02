@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "virtualbox extensions",
+    "offset": null,
+    "page": null,
+    "query": "virtualbox extensions",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "2 weeks ago -\n            All supported platforms Support <em>VirtualBox</em> RDP, disk encryption, NVMe and PXE boot for Intel cards. See this chapter from the User Manual for an introduction to this <em>Extension</em> Pack. The <em>Extension</em> Pack binaries are released under the <em>VirtualBox</em> Personal Use and Evaluation License (PUEL).",
+            "timestamp": 1667278528,
+            "title": "<em></em>Downloads \u2013 Oracle VM VirtualBox",
+            "url": "https://www.virtualbox.org/wiki/Downloads"
+        },
+        {
+            "rank": 2,
+            "snippet": "August 29, 2022 -\n            Download the latest version of Oracle VM <em>VirtualBox</em>.",
+            "timestamp": 1667278528,
+            "title": "<em></em>Oracle VM VirtualBox - Downloads | Oracle Technology Network | Oracle",
+            "url": "https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "August 23, 2022 -\n            Installing <em>VirtualBox</em> <em>Extension</em> Pack allows you to unlock advanced <em>VirtualBox</em> features. Read how to install <em>VirtualBox</em> <em>Extension</em> Pack on Mac and Windows.",
+            "timestamp": 1667278528,
+            "title": "<em></em>How to Install VirtualBox Extension Pack: Detailed Overview",
+            "url": "https://www.nakivo.com/blog/how-to-install-virtualbox-extension-pack/"
+        },
+        {
+            "rank": 4,
+            "snippet": "June 2, 2020 -\n            The default solution to access VMs outside the guest with <em>VirtualBox</em> seems to be VRDP provided by the <em>VirtualBox</em> <em>Extension</em> Pack. But that is not free to use in a commercial use case and pretty expe...",
+            "timestamp": 1667278528,
+            "title": "<em></em>virtual machine - Which other Extension Packs for VirtualBox are ...",
+            "url": "https://superuser.com/questions/1523315/which-other-extension-packs-for-virtualbox-are-available"
+        },
+        {
+            "rank": 5,
+            "snippet": "August 30, 2022 -\n            Step-by-step instructions on how to install <em>VirtualBox</em> <em>Extension</em> Pack for any OS. Install <em>VirtualBox</em> <em>Extension</em> Pack via GUI or terminal.",
+            "timestamp": 1667278528,
+            "title": "<em></em>How To Install VirtualBox Extension Pack - phoenixNAP",
+            "url": "https://phoenixnap.com/kb/install-virtualbox-extension-pack"
+        },
+        {
+            "rank": 6,
+            "snippet": "April 2, 2016 -\n            Download <em>VirtualBox</em> <em>Extension</em> Pack for Windows for free. A package including all the features of <em>VirtualBox</em>. <em>VirtualBox</em> is an open source virtualization tool...",
+            "timestamp": 1667278528,
+            "title": "<em></em>VirtualBox Extension Pack for Windows - Download it from Uptodown ...",
+            "url": "https://virtualbox-extension-pack.en.uptodown.com/windows"
+        },
+        {
+            "rank": 7,
+            "snippet": "January 15, 2020 -\n            <em>Extension</em> packs. Additional <em>extension</em> packs can be downloaded which extend the functionality of the Oracle VM <em>VirtualBox</em> base package. Currently, Oracle provides a single <em>extension</em> pack, available from: http://www.<em>virtualbox</em>.org. The <em>extension</em> pack provides the following added functionality:",
+            "timestamp": 1667278528,
+            "title": "<em></em>1.5. Installing Oracle VM VirtualBox and Extension Packs",
+            "url": "https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/intro-installing.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "If you are interested in this tool, please work with your IT support person(s). Your IT support person will help you determine if this is the best tool for your use, work with you to resolve possible risks, and obtain the tool \u00b7 This title is not recommended, please look for a different option ...",
+            "timestamp": 1667278528,
+            "title": "<em></em>VirtualBox Extensions | Information Technology Services",
+            "url": "https://its.uiowa.edu/campus-software-program/virtualbox-extensions"
+        },
+        {
+            "rank": 9,
+            "snippet": "August 7, 2022 -\n            Learn how to install the <em>VirtualBox</em> <em>Extension</em> Pack via the CLI and GUI",
+            "timestamp": 1667278528,
+            "title": "<em></em>How to Install Virtualbox Extension Pack on Linux | Baeldung on Linux",
+            "url": "https://www.baeldung.com/linux/install-virtualbox-extension-pack"
+        },
+        {
+            "rank": 10,
+            "snippet": "November 12, 2021 -\n            <em>VirtualBox</em> is a virtual machine that lets you run operating systems in a virtual environment. It's useful, but when you know how to install the <em>VirtualBox</em> <em>Extension</em> Pack you have even more options.",
+            "timestamp": 1667278528,
+            "title": "<em></em>How to Install VirtualBox Extension Pack",
+            "url": "https://www.lifewire.com/install-virtualbox-extension-pack-4782422"
+        },
+        {
+            "rank": 11,
+            "snippet": "September 30, 2020 -\n            Unfortunately, to help prevent spam, we require that you log in to GNOME Shell <em>Extensions</em> in order to post a comment or report an error. You understand, right?",
+            "timestamp": 1667278528,
+            "title": "<em></em>VirtualBox applet - GNOME Shell Extensions",
+            "url": "https://extensions.gnome.org/extension/1415/virtualbox-applet/"
+        },
+        {
+            "rank": 12,
+            "snippet": "April 5, 2021 -\n            A lot of features offered by Oracle ... the former to come preinstalled alongside <em>VirtualBox</em> core package. Which is why you need to install the <em>VirtualBox</em> <em>extension</em> pack and agree to a different license in order to use it....",
+            "timestamp": 1667278528,
+            "title": "<em></em>Install VirtualBox Extension Pack",
+            "url": "https://linuxhint.com/install_virtualbox_extension_pack/"
+        },
+        {
+            "rank": 13,
+            "snippet": "<em>VirtualBox</em> <em>Extension</em> Pack provides new features to your <em>VirtualBox</em> virtualization app. <em>VirtualBox</em> <em>Extension</em> Pack includes a USB (EHCI) controller that gives you the ability to obtain better performance from your USB devices. You also gain access to <em>VirtualBox</em> Remote Desktop Protocol (VDRP) ...",
+            "timestamp": 1667278528,
+            "title": "<em></em>Download VirtualBox Extension Pack - MajorGeeks",
+            "url": "https://www.majorgeeks.com/files/details/virtualbox_extension_pack.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "4 days ago -\n            Released under the terms of the GNU General Public License and, optionally, the CDDL for most files of the source distribution, <em>VirtualBox</em> is free and open-source software, though the <em>Extension</em> Pack is proprietary software. The License to <em>VirtualBox</em> was relicensed to GPLv3 with linking exceptions ...",
+            "timestamp": 1667278528,
+            "title": "<em></em>VirtualBox - Wikipedia",
+            "url": "https://en.wikipedia.org//wiki/VirtualBox"
+        },
+        {
+            "rank": 15,
+            "snippet": "August 30, 2020 -\n            Learn how to install the oracle VM <em>VirtualBox</em> <em>extension</em> pack step by step in <em>VirtualBox</em> for Windows 10.",
+            "timestamp": 1667278528,
+            "title": "<em></em>How to install the Oracle VM VirtualBox Extension Pack in VirtualBox ...",
+            "url": "https://ourcodeworld.com/articles/read/1297/how-to-install-the-oracle-vm-virtualbox-extension-pack-in-virtualbox-for-windows-10"
+        },
+        {
+            "rank": 16,
+            "snippet": "3 weeks ago -\n            <em>VirtualBox</em> <em>Extension</em> Pack 7.0.0: Add new capabilities to <em>VirtualBox</em> with this <em>extension</em> pack",
+            "timestamp": 1667278528,
+            "title": "<em></em>VirtualBox Extension Pack 7.0.0 free download - Software reviews, ...",
+            "url": "https://www.downloadcrew.com/article/20279/virtualbox_extension_pack"
+        },
+        {
+            "rank": 17,
+            "snippet": "June 28, 2020 -\n            If you use <em>VirtualBox</em> to run virtual machines, you may find yourself needing <em>VirtualBox</em> <em>Extension</em> Pack as well. The <em>VirtualBox</em> <em>Extension</em> Pack includes support for USB 3.0 and USB 2.0 devices, webca\u2026",
+            "timestamp": 1667278528,
+            "title": "<em></em>How to Install VirtualBox Extension Pack on Mac, Windows, Linux",
+            "url": "https://osxdaily.com/2020/06/27/install-virtualbox-extension-pack-mac/"
+        },
+        {
+            "rank": 18,
+            "snippet": "July 2, 2022 -\n            In this article, we will examine how to install <em>Extension</em> Pack for <em>VirtualBox</em> 6.1 running on Windows, Linux, and macOS operating systems.",
+            "timestamp": 1667278528,
+            "title": "<em></em>How to Install VirtualBox Extension Pack - SYSNETTECH Solutions",
+            "url": "https://www.sysnettechsolutions.com/en/install-virtualbox-extension-pack/"
+        },
+        {
+            "rank": 19,
+            "snippet": "3 weeks ago -\n            On X11/Wayland desktops the resizing service is started during desktop session initialization, that is desktop login. On X11 desktops VBoxClient --vmsvga handles screen topology through the RandR <em>extension</em>. On Wayland clients VBoxDRMClient is used. The decision is made automatically at each ...",
+            "timestamp": 1667278528,
+            "title": "<em></em>Chapter4.Guest Additions",
+            "url": "https://www.virtualbox.org/manual/ch04.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "April 15, 2019 -\n            The <em>VirtualBox</em> Guest Additions consist of device drivers and system applications that optimize the operating system for better performance and usability. One of the usability features required in this guide is automated logons, which is why you need to install the Guest Additions in the virtual ...",
+            "timestamp": 1667278528,
+            "title": "<em></em>6.4. Installing the VirtualBox Guest Additions",
+            "url": "https://docs.oracle.com/cd/E36500_01/E36502/html/qs-guest-additions.html"
+        }
+    ],
+    "timestamp": 1667278528,
+    "url": "https://search.brave.com/search?q=virtualbox%20extensions"
+}

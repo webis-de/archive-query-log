@@ -1,0 +1,24 @@
+{
+    "interpreted_query": "eifreier hackbraten",
+    "offset": null,
+    "page": 0,
+    "query": "eifreier+hackbraten",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "glutenfrei + eifrei",
+            "timestamp": 1356156512,
+            "title": "Hackbraten mit Quark",
+            "url": "http://www.chefkoch.de/rezepte/798341183472469/Hackbraten-mit-Quark.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "glutenfrei + eifrei",
+            "timestamp": 1356156512,
+            "title": "Hackbraten mit Quark II",
+            "url": "http://www.chefkoch.de/rezepte/804971184311675/Hackbraten-mit-Quark-II.html"
+        }
+    ],
+    "timestamp": 1356156512,
+    "url": "http://www.chefkoch.de/rs/s0/eifreier+hackbraten/Rezepte.html"
+}

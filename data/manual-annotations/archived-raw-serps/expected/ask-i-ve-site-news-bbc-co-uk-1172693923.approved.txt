@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "i've site:news.bbc.co.uk",
+    "offset": null,
+    "page": null,
+    "query": "i've site:news.bbc.co.uk",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "\"I'm a bit disappointed that we didn't see it when we were developing the game ... I don't think we will have it anymore.\" ...",
+            "timestamp": 1172693923,
+            "title": "BBC NEWS | Technology | TV glitch mars Xbox 360 Kong game",
+            "url": "http://news.bbc.co.uk/1/hi/technology/4525318.stm"
+        },
+        {
+            "rank": 2,
+            "snippet": "Electrodes implanted in rats' brains can make them follow instructions and some day they could ... I do not know what the answer is to that.\" ...",
+            "timestamp": 1172693923,
+            "title": "BBC News | SCI/TECH | Here come the ratbots",
+            "url": "http://news.bbc.co.uk/hi/english/sci/tech/newsid_1961000/1961798.stm"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>I've</em> had enough of being fired at from all directions, I just want to go home  ... <em>I've</em> been around Nasiriyah for a week, and the roads I was ...",
+            "timestamp": 1172693923,
+            "title": "BBC NEWS | Middle East | Conflict sapping forces' morale",
+            "url": "http://news.bbc.co.uk/2/hi/middle_east/2896439.stm"
+        },
+        {
+            "rank": 4,
+            "snippet": "\"I don't think <em>I've</em> ever seen anyone who looks like that in Stalham or anywhere else in my life.\" ...",
+            "timestamp": 1172693923,
+            "title": "BBC NEWS | England | Norfolk | Victim's concern over 'odd e-fit'",
+            "url": "http://news.bbc.co.uk/1/hi/england/norfolk/4693952.stm"
+        },
+        {
+            "rank": 5,
+            "snippet": "... and talk to people for week upon week and I have listened and I have learned. ... \"I think I have a very clear idea of what the British ...",
+            "timestamp": 1172693923,
+            "title": "BBC NEWS | UK | UK Politics | Election 2005 | Blair: <em>I've</em> listened ...",
+            "url": "http://news.bbc.co.uk/2/hi/uk_news/politics/vote_2005/frontpage/4521627.stm"
+        },
+        {
+            "rank": 6,
+            "snippet": "Although I don't feel psychologically invaded or like an android - as I feared I might - I ... No wonder as I leave, a member of staff jokes: ...",
+            "timestamp": 1172693923,
+            "title": "BBC NEWS | UK | '<em>I've</em> got a biometric ID card'",
+            "url": "http://news.bbc.co.uk/1/hi/uk/3556720.stm"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>I've</em> had a few hair-raising experiences.  Something chased me while I was in the car with my dad. ... <em>I've</em> seen one above a friend's house in ...",
+            "timestamp": 1172693923,
+            "title": "BBC NEWS | UK | 'UFOs? <em>I've</em> seen 180'",
+            "url": "http://news.bbc.co.uk/hi/english/uk/newsid_2065000/2065037.stm"
+        },
+        {
+            "rank": 8,
+            "snippet": "People following the Atkins diet should not gorge themselves on fatty foods, says the firm marketing it.",
+            "timestamp": 1172693923,
+            "title": "BBC NEWS | Health | Atkins diet boss: 'Eat less fat'",
+            "url": "http://news.bbc.co.uk/2/hi/health/3408931.stm"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>I've</em> applied for several jobs a week in the five years <em>I've</em> been out of work and in that time <em>I've</em> had one interview.",
+            "timestamp": 1172693923,
+            "title": "BBC NEWS | UK | '<em>I've</em> had one interview in five years'",
+            "url": "http://news.bbc.co.uk/1/hi/uk/6192735.stm"
+        },
+        {
+            "rank": 10,
+            "snippet": "\"The bullying started six years ago when I was seven years old. ... I told my parents and teachers.  I also told my friends.",
+            "timestamp": 1172693923,
+            "title": "CBBC Newsround | Press Pack Reports | Your Reports | <em>I've</em> been ...",
+            "url": "http://news.bbc.co.uk/cbbcnews/hi/newsid_6120000/newsid_6121400/6121434.stm"
+        }
+    ],
+    "timestamp": 1172693923,
+    "url": "http://www.ask.com:80/web?o=8001&qsrc=0&l=dir&q=i've+site:news.bbc.co.uk"
+}

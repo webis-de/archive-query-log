@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "guerre froide",
+    "offset": null,
+    "page": null,
+    "query": "guerre froide",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Sujet : La guerre froide La guerre froide est l'un des rares conflits dont l'aspect militaire n'est pas le plus important mais plut\u00f4t les ...",
+            "timestamp": 1654846351,
+            "title": "La Guerre Froide - Histoire - Brevet",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3AOdWs1EL1WN4"
+        },
+        {
+            "rank": 2,
+            "snippet": "Operation Fortune Ruse de guerre Elokuva Traileri HD - Elokuvateattereissa kev\u00e4\u00e4ll\u00e4 2022.Supervakooja Orson Fortunen (Jason Statham) tulee j\u00e4ljitt\u00e4\u00e4 ja lopettaa miljard\u00f6\u00f6ri ja asev\u00e4litt\u00e4j\u00e4 Greg Simmondsin (Hugh Grant) uuden tappavan aseteknologian myynti. Vastahakoisesti h\u00e4n ly\u00f6tt\u00e4ytyy yhteen maailman parhaiden agenttien kanssa (Aubrey Plaza, Cary Elwes, Bugzy Malone), ja yhdess\u00e4 he rekrytoivat operaatioon mukaan Hollywoodin suurimman elokuvat\u00e4hden Danny Francescon (Josh Hartnett) auttamaan heit\u00e4 salaisessa teht\u00e4v\u00e4ss\u00e4\u00e4n pelastaa maailma.",
+            "timestamp": 1654846351,
+            "title": "Operation Fortune Ruse de guerre Elokuva",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3Ax87rtzp"
+        },
+        {
+            "rank": 3,
+            "snippet": "Cette vid\u00e9o est un r\u00e9sum\u00e9 historique de la guerre froide. Voyons sur carte l'\u00e9volution et les grandes \u00e9tapes de ce conflit qui a ...",
+            "timestamp": 1654846351,
+            "title": "La Guerre Froide - R\u00e9sum\u00e9 sur cartes",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3AMhfraAqwZD0"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1654846351,
+            "title": "Fadela Amara en guerre contre les banlieues",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3Ax5ooux"
+        },
+        {
+            "rank": 5,
+            "snippet": "Ce film est une plong\u00e9e passionnante au c\u0153ur de la guerre froide, ce conflit majeur du XXe si\u00e8cle. Berlin en fut le symbole.",
+            "timestamp": 1654846351,
+            "title": "KGB vs CIA : au coeur de la guerre froide",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3AgUG0I5H1qnw"
+        },
+        {
+            "rank": 6,
+            "snippet": "Comme pendant la seconde guerre mondiale, les sioniste ainsi que leurs idiots utiles nous incitent \u00e0 tuer nos fr\u00e8res de sang qui ne souhaitent pas devenir leurs vassaux. Signez la p\u00e9tition contre l'alignement fran\u00e7ais sur Washington et Tel Aviv: http://www.lapetition.be/en-ligne/stop- ... -2236.html \u00abQuiconque n'a pas piti\u00e9 des petits m\u00e9rite d'\u00e9prouver la tyranie des grands.\u00bb [ Mocharrafoddin Saadi ] \u00abGrand est le nombre des femmes qui, sous l'ombre d'un voile ou dans celle d'une tente, sont belles. Mais soul\u00e8ve le voile et tu verras la m\u00e8re de ta m\u00e8re.\u00bb [ Mocharrafoddin Saadi ] \u00abTirez la le\u00e7on des malheurs des autres, afin que les autres n'aient pas \u00e0 tirer la le\u00e7on de vos malheurs.\u00bb [ Mocharrafoddin Saadi ]",
+            "timestamp": 1654846351,
+            "title": "Non a la guerre en Iran signez la p\u00e9tition",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3Ax5d1bf"
+        },
+        {
+            "rank": 7,
+            "snippet": "Tout savoir sur la Guerre froide en troisi\u00e8me ! O\u00f9 nous trouver ? SITE DE REVISIONS LES BONS PROFS ...",
+            "timestamp": 1654846351,
+            "title": "La Guerre froide - Histoire - 3e - Les Bons Profs",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3Ar1pFe2Yg8Hc"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1654846351,
+            "title": "Video La guerre des banderoles [d\u00e9bat] Taddei 01 04 08",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3Ax59qey"
+        },
+        {
+            "rank": 9,
+            "snippet": "Aidez-moi financi\u00e8rement sans payer : https://utip.io/telecrayon \u25bd\u25bd\u25bd LIRE LA DESCRIPTION \u25bd\u25bd\u25bd La Guerre Froide \u00e0 ses ...",
+            "timestamp": 1654846351,
+            "title": "R\u00e9sum\u00e9 de la Guerre Froide #1 - Le d\u00e9but (1947-1953)",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3Aox3Lq-KP-p4"
+        },
+        {
+            "rank": 10,
+            "snippet": "Le mots bougnoule d\u00e9signe en r\u00e9alit\u00e9 les Fran\u00e7ais de souche, car \u00e0 l'\u00e9poque les Allemands consid\u00e9rai les Fran\u00e7ais comme des bougnoule car leur troupes \u00e9tais compos\u00e9 d'africains et \u00e0 la t\u00eate de leurs syst\u00e8me capitaliste les juifs",
+            "timestamp": 1654846351,
+            "title": "Histoire la v\u00e9ritable d\u00e9signation du mot bougnoule",
+            "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide&o=0%3Axbo6am"
+        }
+    ],
+    "timestamp": 1654846351,
+    "url": "https://www.qwant.com/?l=fr&t=videos&q=guerre+froide"
+}

@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "eierschwammerl und gehacktes",
+    "offset": null,
+    "page": 0,
+    "query": "eierschwammerl+und+gehacktes",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Wiener Schwammerlgulasch",
+            "timestamp": 1315110709,
+            "title": "Eierschwammerl",
+            "url": "http://www.chefkoch.de/rezepte/637841164626948/Eierschwammerl.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Pellkartoffeln pellen und in Scheiben schneiden. Pfifferlinge in der Butter scharf anbraten, Speck und Zwiebeln dazugeben. ...",
+            "timestamp": 1315110709,
+            "title": "Tortilla mit Pfifferlingen und Babyspinat",
+            "url": "http://www.chefkoch.de/rezepte/1803221291629516/Tortilla-mit-Pfifferlingen-und-Babyspinat.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Wirsing vierteln, den Strunk noch nicht rausschneiden. Im gro\u00dfen Topf Wasser mit Br\u00fche aufkochen lassen. Wirsing darin ca. ...",
+            "timestamp": 1315110709,
+            "title": "Lachsauflauf mit Wirsing und Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/598551159515687/Lachsauflauf-mit-Wirsing-und-Pfifferlingen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Besonders gut f\u00fcr Pilzliebhaber",
+            "timestamp": 1315110709,
+            "title": "R\u00f6sti mit Pfifferlingen und Fr\u00fchlingszwiebeln",
+            "url": "http://www.chefkoch.de/rezepte/1144641220795462/Roesti-mit-Pfifferlingen-und-Fruehlingszwiebeln.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "und Cranberries oder Granatapfel",
+            "timestamp": 1315110709,
+            "title": "Hirschragout mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/713341174004579/Hirschragout-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "wenns mal schnell gehen muss...",
+            "timestamp": 1315110709,
+            "title": "H\u00e4hnchengeschnetzeltes mit Pfifferlingen und \u00c4pfeln",
+            "url": "http://www.chefkoch.de/rezepte/830441187681618/Haehnchengeschnetzeltes-mit-Pfifferlingen-und-Aepfeln.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Die, am Vortag gekochten, Kartoffeln pellen und in Scheiben schneiden. ...",
+            "timestamp": 1315110709,
+            "title": "Gr\u00f6stl mit Steinpilzen und Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/1173701223489678/Groestl-mit-Steinpilzen-und-Pfifferlingen.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Die Rinderfiletscheiben zwischen Plastikfolie auf 1 cm St\u00e4rke klopfen. Mit Salz und Pfeffer w\u00fcrzen. ...",
+            "timestamp": 1315110709,
+            "title": "Rostbraten mit Pfifferlingen und Birnenr\u00f6sti",
+            "url": "http://www.chefkoch.de/rezepte/1707171279531505/Rostbraten-mit-Pfifferlingen-und-Birnenroesti.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "leckere Beilage altbekannt und doch ganz anders",
+            "timestamp": 1315110709,
+            "title": "Rahm - Pfifferlinge mit Pfiff",
+            "url": "http://www.chefkoch.de/rezepte/1479021253102166/Rahm-Pfifferlinge-mit-Pfiff.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Die Semmelw\u00fcrfel in eine gro\u00dfe Sch\u00fcssel geben. 50 g Zwiebeln sch\u00e4len und klein w\u00fcrfeln. ...",
+            "timestamp": 1315110709,
+            "title": "Putenbruststreifen mit Pfifferlingen, Sauerkraut und Semmelkn\u00f6del",
+            "url": "http://www.chefkoch.de/rezepte/1222391227603370/Putenbruststreifen-mit-Pfifferlingen-Sauerkraut-und-Semmelknoedel.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "Bohnen putzen und in Salzwasser bissfest garen. Pfifferlinge putzen. ...",
+            "timestamp": 1315110709,
+            "title": "Schweinefilet mit Pfifferlingen, Bohnen und Tomaten",
+            "url": "http://www.chefkoch.de/rezepte/1934211314855526/Schweinefilet-mit-Pfifferlingen-Bohnen-und-Tomaten.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Gesch\u00e4lte Kartoffeln weich kochen, pellen und noch m\u00f6glichst hei\u00df durch die Kartoffelpresse in eine Sch\u00fcssel dr\u00fccken. ...",
+            "timestamp": 1315110709,
+            "title": "Basilikum Kartoffel - Gnocchi mit Pfifferlingen und Parmaschinken",
+            "url": "http://www.chefkoch.de/rezepte/976191203240377/Basilikum-Kartoffel-Gnocchi-mit-Pfifferlingen-und-Parmaschinken.html"
+        },
+        {
+            "rank": 13,
+            "snippet": "eigent sich gut zur Resteverwertung",
+            "timestamp": 1315110709,
+            "title": "Sp\u00e4tzlepfanne mit Pfifferlingen, Speck und Filetspitzen",
+            "url": "http://www.chefkoch.de/rezepte/1432141248101437/Spaetzlepfanne-mit-Pfifferlingen-Speck-und-Filetspitzen.html"
+        },
+        {
+            "rank": 14,
+            "snippet": "ww - tauglich, leicht und lecker",
+            "timestamp": 1315110709,
+            "title": "Puten - Zucchini - Pfanne mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/1321961237069404/Puten-Zucchini-Pfanne-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "Niedertemperatur mit wenig Arbeit und Zeit",
+            "timestamp": 1315110709,
+            "title": "Filetsteak vom Rind mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/1856431300895600/Filetsteak-vom-Rind-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "Die Entenbrust an der Hautseite einschneiden, w\u00fcrzen und mit Butter in der Pfanne von beiden Seiten gut anbraten. ...",
+            "timestamp": 1315110709,
+            "title": "Entenbrust mit Pfifferlingen, Brokkoli und Serviettenkl\u00f6\u00dfen",
+            "url": "http://www.chefkoch.de/rezepte/253851100594936/Entenbrust-mit-Pfifferlingen-Brokkoli-und-Serviettenkloessen.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Die Pfifferlinge putzen, eventuell etwas kleiner schneiden und in der Butter anbraten. ...",
+            "timestamp": 1315110709,
+            "title": "Lachs mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/1903161310208184/Lachs-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Die Eierschwammerln putzen. Gro\u00dfe halbieren, kleine ganz lassen. Speck in Streifen schneiden und in hei\u00dfem \u00d6l anr\u00f6sten. ...",
+            "timestamp": 1315110709,
+            "title": "Eierschwammerl nach J\u00e4gerart",
+            "url": "http://www.chefkoch.de/rezepte/886341194250799/Eierschwammerl-nach-Jaegerart.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "Zwiebel in Butter anschwitzen und die Pfifferlinge (Eierschwammerl) beigeben. ...",
+            "timestamp": 1315110709,
+            "title": "Ziegenk\u00e4se - Pfifferling - Terrine",
+            "url": "http://www.chefkoch.de/rezepte/57131020691567/Ziegenkaese-Pfifferling-Terrine.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "Pfifferlinge abbrausen, trockentupfen. Kleinere Pilze ganz lassen, gr\u00f6\u00dfere in Scheiben schneiden. ...",
+            "timestamp": 1315110709,
+            "title": "Pfifferlinge \u00e1 la Creme",
+            "url": "http://www.chefkoch.de/rezepte/623431162642211/Pfifferlinge-la-Creme.html"
+        },
+        {
+            "rank": 21,
+            "snippet": "In der Pfanne die klein geschnittenen Pfifferlinge mit der Butter, Zwiebel, Thymian und Knoblauch schwenken. ...",
+            "timestamp": 1315110709,
+            "title": "Kastanien - Tagliatelle mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/810971185195337/Kastanien-Tagliatelle-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "Die Spaghetti nach Packungsanweisung bissfest kochen. Den gew\u00fcrfelten Bacon in einer Pfanne anbraten. ...",
+            "timestamp": 1315110709,
+            "title": "Spaghetti mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/1219511227435521/Spaghetti-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 23,
+            "snippet": "M\u00f6hren und Kartoffeln sch\u00e4len, klein schneiden und in der Gem\u00fcsebr\u00fche weich kochen. Die Pfifferlinge putzen. ...",
+            "timestamp": 1315110709,
+            "title": "M\u00f6hrensuppe mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/1307521235645513/Moehrensuppe-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 24,
+            "snippet": "Traditionelle polnische K\u00fcche",
+            "timestamp": 1315110709,
+            "title": "Ged\u00fcnstete Pfifferlinge mit Sahne",
+            "url": "http://www.chefkoch.de/rezepte/1352121239948881/Geduenstete-Pfifferlinge-mit-Sahne.html"
+        },
+        {
+            "rank": 25,
+            "snippet": "dazu Spiralnudeln",
+            "timestamp": 1315110709,
+            "title": "botos Paprikagulasch pikant, mit Champignons, Pfifferlingen und Gew\u00fcrzgurken",
+            "url": "http://www.chefkoch.de/rezepte/1829581296508992/botos-Paprikagulasch-pikant-mit-Champignons-Pfifferlingen-und-Gewuerzgurken.html"
+        },
+        {
+            "rank": 26,
+            "snippet": "Pfifferlinge putzen, waschen, einige sch\u00f6ne kleine Pilze f\u00fcr die Garnitur aussortieren und beiseite stellen, die restlichen Pilze ...",
+            "timestamp": 1315110709,
+            "title": "Gef\u00fcllte Kalbsr\u00f6llchen mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/259671101562445/Gefuellte-Kalbsroellchen-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 27,
+            "snippet": "Die Schw\u00e4nze der Kaisergranat ausbrechen, sch\u00e4len, entdarmen und zur Seite stellen. ...",
+            "timestamp": 1315110709,
+            "title": "Kaisergranat mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/1342471239090675/Kaisergranat-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 28,
+            "snippet": "eine leckere Beilage zu Kurzgebratenem",
+            "timestamp": 1315110709,
+            "title": "Pfifferlinge mit Tomaten",
+            "url": "http://www.chefkoch.de/rezepte/225971093013355/Pfifferlinge-mit-Tomaten.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "Penne in Salzwasser al dente kochen, abtropfen lassen und bereit stellen. ...",
+            "timestamp": 1315110709,
+            "title": "Penne mit Pfifferlingen",
+            "url": "http://www.chefkoch.de/rezepte/847971190213447/Penne-mit-Pfifferlingen.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "Die Butter in einer kleinen Pfanne schmelzen lassen, den Schinken dazugeben und braten, bis er knusprig ist. ...",
+            "timestamp": 1315110709,
+            "title": "Pfifferlinge mit Mascarpone",
+            "url": "http://www.chefkoch.de/rezepte/945261200064001/Pfifferlinge-mit-Mascarpone.html"
+        }
+    ],
+    "timestamp": 1315110709,
+    "url": "http://www.chefkoch.de/rs/s0/eierschwammerl+und+gehacktes/Rezepte.html"
+}

@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "high functioning depression%23w",
+    "offset": null,
+    "page": null,
+    "query": "high functioning depression%23w",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The official website of Guam Homeland Security \u2013 Office of Civil Defense (GHS-OCD), Government of Guam. GHS\u2019s mission is to coordinate and facilitate all Government of Guam, Military, and Federal Liaison Response Agencies and their resources in mitigating, preparing, responding, and recovering from any and all types of emergencies in order to protect the lives, environment, and property of ...",
+            "timestamp": 1615448305,
+            "title": "Tropical Depression 23W Strengthens - GHS OCD | Government ...",
+            "url": "https://www.ghs.guam.gov/tropical-depression-23w-strengthens"
+        },
+        {
+            "rank": 2,
+            "snippet": "On 8 October 2017, Tropical Depression 23W was categorized at the level of orange, with <em>high</em> winds up to 40.27 mph. The next day, it tore a destructive path across the northern provinces of Viet Nam on Monday before making landfall on 10 October. It was not a particularly strong storm and was not expected",
+            "timestamp": 1615448305,
+            "title": "Emergency Plan of Action (EPoA)",
+            "url": "https://adore.ifrc.org/Download.aspx?FileId=173936&.pdf"
+        },
+        {
+            "rank": 3,
+            "snippet": "A numerical weather simulation of the depression 23W moving over the Gulf of Thailand during October 19-26, 2003 expressed in terms of meteorological variables including pressure, humidity ...",
+            "timestamp": 1615448305,
+            "title": "Tornadoes over complex terrain: An analysis of the 28th ...",
+            "url": "https://www.researchgate.net/publication/222706542_Tornadoes_over_complex_terrain_An_analysis_of_the_28th_August_1999_tornadic_event_in_eastern_Spain"
+        },
+        {
+            "rank": 4,
+            "snippet": "NASA finds Tropical Depression 23W's strongest storms in two countries Tropical Depression 23W formed on Monday, Oct. 9 and by Tuesday, Oct. Best way to recognize emotions in others: Listen If you want to know how someone is feeling, it might be better to close your eyes and use your ears: People tend to read others' emotions more accurately ...",
+            "timestamp": 1615448305,
+            "title": "Science News Archive | Brightsurf | October 10, 2017",
+            "url": "https://www.brightsurf.com/archive/news/2017-10-10"
+        },
+        {
+            "rank": 5,
+            "snippet": "A numerical weather simulation of the depression 23W moving over the Gulf of Thailand during October 19-26, 2003 expressed in terms of meteorological variables including pressure, humidity ...",
+            "timestamp": 1615448305,
+            "title": "The 14 July 2001 hailstorm in northeastern Spain ...",
+            "url": "https://www.researchgate.net/publication/222655953_The_14_July_2001_hailstorm_in_northeastern_Spain_Diagnosis_of_the_meteorological_situation"
+        },
+        {
+            "rank": 6,
+            "snippet": "The 1994 Pacific typhoon season was an extremely active season in the annual cycle of tropical cyclone formation in the Western North Pacific, with a total of 41 tropical cyclones during the course of the season. The season had no official bounds and it ran year-round in 1994, but most tropical cyclones tend to form in the northwestern Pacific Ocean between May and November.",
+            "timestamp": 1615448305,
+            "title": "1994 Pacific typhoon season - Infogalactic: the planetary ...",
+            "url": "https://infogalactic.com/info/1994_Pacific_typhoon_season"
+        },
+        {
+            "rank": 7,
+            "snippet": "The relatively <em>high</em> peak intensity attained by Mark was somewhat of a surprise, given the synoptic situation. Relatively few TCs form in the WNP poleward of 25\u00b0N\u2014during the 21-yr period 1970\u20131990 only 24 of 585 TCs (4%) that formed in the WNP first attained 25 kt (13 m s \u22121 ) intensity at, or north, of 25\u00b0N.",
+            "timestamp": 1615448305,
+            "title": "Eastern Hemisphere Tropical Cyclones of 1995 in: Monthly ...",
+            "url": "https://journals.ametsoc.org/view/journals/mwre/126/2/1520-0493_1998_126_0257_ehtco_2.0.co_2.xml"
+        },
+        {
+            "rank": 8,
+            "snippet": "The 2013 Pacific typhoon season was the most active Pacific typhoon season since 2004, and the deadliest since 1975.It featured one of the most powerful storms in recorded history. It was an above-average season with 31 named storms, 13 typhoons, and five super typhoons. The season's first named storm, Sonamu, developed on January 4 while the season's last named storm, Podul, dissipated on ...",
+            "timestamp": 1615448305,
+            "title": "Wikizero - 2013 Pacific typhoon season",
+            "url": "https://www.wikizero.com/en/2013_Pacific_typhoon_season"
+        },
+        {
+            "rank": 9,
+            "snippet": "This paper is designed to be an annual summary of the Eastern Hemisphere tropical cyclones of 1995. The tropical cyclone statistics presented are those of the Joint Typhoon Warning Center, Guam. The text focuses primarily upon the tropical cyclones that occurred in the western North Pacific during 1995; however, since the area of responsibility of the Joint Typhoon Warning Center covers the ...",
+            "timestamp": 1615448305,
+            "title": "Eastern Hemisphere Tropical Cyclones of 1995, Monthly ...",
+            "url": "https://www.deepdyve.com/lp/american-meteorological-society/eastern-hemisphere-tropical-cyclones-of-1995-IoMotRIyow"
+        },
+        {
+            "rank": 10,
+            "snippet": "Some 70,000 persons were evacuated from <em>high</em> risk coastal areas. The city of Puerto Progreso was also severely impacted by Isidore. A week after the storm water supply systems in the impacted areas were <em>functioning</em> at only 50% of their total capacity.",
+            "timestamp": 1615448305,
+            "title": "Monthly Global Tropical Cyclone Summary September 2002",
+            "url": "http://australiasevereweather.com/cyclones/2003/summ0209.htm"
+        }
+    ],
+    "timestamp": 1615448305,
+    "url": "https://www.ecosia.org/search?q=high+functioning+depression%2523w"
+}

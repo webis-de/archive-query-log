@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "145 lbs to kg",
+    "offset": null,
+    "page": null,
+    "query": "145 lbs to kg",
+    "results": [],
+    "timestamp": 1664351690,
+    "url": "https://duckduckgo.com/?q=145%20lbs%20to%20kg&t=ffab"
+}

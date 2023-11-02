@@ -1,0 +1,59 @@
+{
+    "interpreted_query": "every previewsworld calls",
+    "offset": null,
+    "page": null,
+    "query": "every previewsworld calls",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Apr 04, 2022 \u00b7  NOTTINGHAM #6 (OF 5) CVR B VOLK. MAD CAVE STUDIOS. FEB221566. (W) David Hazan (A) Luca Romano (A/CA) Shane Connery Volk. When Richard the Lionheart is kidnapped and ransomed by Holy Roman Emperor Henry VI, Everard Blackthorne, the Sheriff of Nottingham, is strongarmed into delivering the ransom and bringing the King home, on penalty of death.",
+            "timestamp": 1649106369,
+            "title": "www.<em>previewsworld</em>.com \u203a Article \u203a 252663-Get-GraphicGet Graphic: The Art of 'Nottingham' with ... - previewsworld.com",
+            "url": "https://www.previewsworld.com/Article/252663-Get-Graphic-The-Art-of-Nottingham-with-Shane-Connery-Volk"
+        },
+        {
+            "rank": 2,
+            "snippet": "Apr 04, 2022 \u00b7  Last month, TikToker Sarah Landry shared a video showcasing an unusual baked good: a novelty cake she commissioned in honor of her husband\u2019s vasectomy. The cake is generously frosted, with the words \u201cSorry about your balls\u201d scrawled across the top in puffy icing letters. The sentiment is a little too 2010 Rob Dyrdek-esque for my tastes ...",
+            "timestamp": 1649106369,
+            "title": "thetakeout.com \u203a literally-every-situation-callsLiterally Every Situation Calls for Cake",
+            "url": "https://thetakeout.com/literally-every-situation-calls-for-cake-1848745409"
+        },
+        {
+            "rank": 3,
+            "snippet": "Apr 04, 2022 \u00b7  \u201cMichael Jordan <em>calls</em> me <em>every</em> \u2018motherf**ker\u2019 and \u2018son of a b**ch\u2019\u201d: Charles Barkley recalls just how him and the Bulls legend had a falling out Samir Mehdi 04/04/2022",
+            "timestamp": 1649106369,
+            "title": "thesportsrush.com \u203a nba-news-michael-jordan-calls\u201cMichael Jordan calls me every \u2018motherf**ker\u2019 and \u2018son of a b ...",
+            "url": "https://thesportsrush.com/nba-news-michael-jordan-calls-me-every-motherfker-and-son-of-a-bch-charles-barkley-recalls-just-how-him-and-the-bulls-legend-had-a-falling-out/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Apr 04, 2022 \u00b7  EDITORIAL: Spar, private meetings and broker <em>calls</em> The Spar saga shows that <em>every</em> now and then corporate SA needs to be reminded to be more careful with potentially price-sensitive information 04 ...",
+            "timestamp": 1649106369,
+            "title": "www.businesslive.co.za \u203a bd \u203a opinionEDITORIAL: Spar, private meetings and broker calls",
+            "url": "https://www.businesslive.co.za/bd/opinion/editorials/2022-04-04-editorial-spar-private-meetings-and-broker-calls/"
+        },
+        {
+            "rank": 5,
+            "snippet": "13 hours ago \u00b7  First Thing: Zelenskiy <em>calls</em> Russian forces \u2018butchers\u2019 over Bucha massacre Ukraine president says worse atrocities may yet be uncovered as satellite images show mass grave near church in Bucha.",
+            "timestamp": 1649106369,
+            "title": "theguardian.com \u203a us-news \u203a 2022First Thing: Zelenskiy calls Russian forces \u2018butchers\u2019 over ...",
+            "url": "https://theguardian.com/us-news/2022/apr/04/first-thing-zelenskiy-calls-russian-forces-butchers-over-bucha-massacre"
+        },
+        {
+            "rank": 6,
+            "snippet": "Apr 04, 2022 \u00b7  <em>Golden State Warriors</em> head coach Steve Kerr gave a long response to the Sacramento shooting that killed six and wounded 12 others on Sunday. \u201cIt\u2019s devastating news,\u201d Kerr said before<em> Golden State\u2019s</em> game against the Sacramento Kings. \u201cI didn\u2019t know about it until this morning, when I woke up. First and foremost, just thinking about| USSA News",
+            "timestamp": 1649106369,
+            "title": "ussanews.com \u203a 2022/04/04 \u203a warriors-head-coachWarriors Head Coach Steve Kerr Calls For \u2018Common Sense Gun ...",
+            "url": "https://ussanews.com/2022/04/04/warriors-head-coach-steve-kerr-calls-for-common-sense-gun-laws-following-sacramento-shooting/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Apr 04, 2022 \u00b7  A busy period is approaching for dead-animal removal teams. The city does free pick-up of deceased pets and wildlife. Requests surge <em>every</em> spring. In March 2021, the city\u2019s MyLA311 system fielded 1,712 requests to remove a dead dog, cat, possum or other animal from Los Angeles streets, backyards or additional locations.",
+            "timestamp": 1649106369,
+            "title": "xtown.la \u203a 2022/04/04 \u203a dead-animal-removal-callsA busy period is approaching for dead-animal removal teams",
+            "url": "https://xtown.la/2022/04/04/dead-animal-removal-calls/"
+        }
+    ],
+    "timestamp": 1649106369,
+    "url": "https://search.yahoo.com/search?p=every+previewsworld+calls&ei=UTF-8&fr2=time&age=1d&btf=d&fr=sfp"
+}

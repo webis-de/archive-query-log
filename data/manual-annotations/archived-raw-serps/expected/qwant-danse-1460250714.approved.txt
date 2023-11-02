@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "danse",
+    "offset": null,
+    "page": null,
+    "query": "danse",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Dance of Death, also called <em>Danse</em> Macabre (from the French language), is an artistic genre of late-medieval allegory on the universality of death: no matter one's ...",
+            "timestamp": 1460250714,
+            "title": "<em>Danse</em> Macabre - Wikipedia, the free encyclopedia",
+            "url": "https://en.wikipedia.org/wiki/Danse_Macabre"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>danse</em> \u200e(imperative dans, present tense <em>danse</em>r, simple past and past participle dansa or <em>danse</em>t, present participle <em>danse</em>nde) to dance; Related terms . dans;",
+            "timestamp": 1460250714,
+            "title": "<em>danse</em> - Wiktionary",
+            "url": "https://en.wiktionary.org/wiki/danse"
+        },
+        {
+            "rank": 3,
+            "snippet": "Background Edit. Before he joined the Brotherhood of Steel, <em>Danse</em> was an orphan growing up in the Capital Wasteland. As a child, he made a dangerous living by ...",
+            "timestamp": 1460250714,
+            "title": "<em>Danse</em> - Fallout Wiki - Wikia",
+            "url": "http://fallout.wikia.com/wiki/Danse"
+        },
+        {
+            "rank": 4,
+            "snippet": "Le Carre\u0301 des Lombes and the Orchestre symphonique de Montre\u0301al Anatomie d'un souffle . A unique evening of dance and music where bodies sway and pulsate to the ...",
+            "timestamp": 1460250714,
+            "title": "<em>Danse</em> <em>Danse</em> | Saison 2015-2016 Cre\u0301ateur du mouvement",
+            "url": "http://www.dansedanse.ca/en"
+        },
+        {
+            "rank": 5,
+            "snippet": "Indila \u2013 \u00ab Dernie\u0300re <em>danse</em> \u00bb Victoires de la Musique 2015 - Duration: 4:49. Les Victoires de la Musique 1,187,573 views. 4:49 John Legend - All ...",
+            "timestamp": 1460250714,
+            "title": "Indila - Dernie\u0300re <em>Danse</em> (Clip Officiel) - YouTube",
+            "url": "http://www.youtube.com/watch?v=K5KAc5CoCuk"
+        },
+        {
+            "rank": 6,
+            "snippet": "Dein Song 2016 - Musikclip: Chiara feat. Kate Ryan \"<em>Danse</em> avec moi\" - Duration: 3:23. KiKA von ARD und ZDF 64,415 views",
+            "timestamp": 1460250714,
+            "title": "<em>danse</em> - YouTube",
+            "url": "http://www.youtube.com/watch?v=aZeTEIaieRw"
+        },
+        {
+            "rank": 7,
+            "snippet": "<em>Danse</em> - Fallout 4: Paladin <em>Danse</em> (or just <em>Danse</em>) is an optional Companion that can be obtained after completing the Brotherhood of Steel quests Fire Support, Call to ...",
+            "timestamp": 1460250714,
+            "title": "<em>Danse</em> - Fallout 4 Wiki Guide - IGN",
+            "url": "http://www.ign.com/wikis/fallout-4/Danse"
+        },
+        {
+            "rank": 8,
+            "snippet": "The Dance [clarification needed] (La <em>Danse</em>) refers to either of two related paintings made by Henri Matisse between 1909 and 1910. The first, preliminary version is ...",
+            "timestamp": 1460250714,
+            "title": "Dance (Matisse) - Wikipedia, the free encyclopedia",
+            "url": "https://en.wikipedia.org/wiki/Dance_(Matisse)"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Danse</em> Macabre is a long-running club and community in Glasgow, Scotland. We enjoy goth, disco, italo, synthpop, new wave, 80s pop, smoke machines, cider and black ...",
+            "timestamp": 1460250714,
+            "title": "<em>Danse</em> Macabre | Glasgow goth/disco club",
+            "url": "http://danse-macabre.co.uk/"
+        },
+        {
+            "rank": 10,
+            "snippet": "General - info [at] <em>danse</em>club.com Demos - demo [at] <em>danse</em>club.com Label Showcase/Events - alex [at] <em>danse</em>club.com \"It's all House &amp; Techno\". UK label run by Austen ...",
+            "timestamp": 1460250714,
+            "title": "<em>DANSE</em> CLUB | Free Listening on SoundCloud",
+            "url": "https://soundcloud.com/danseclub"
+        }
+    ],
+    "timestamp": 1460250714,
+    "url": "https://www.qwant.com/?q=danse"
+}

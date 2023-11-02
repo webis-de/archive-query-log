@@ -1,0 +1,17 @@
+{
+    "interpreted_query": "dataquantum.com+Vancouver+hosting",
+    "offset": null,
+    "page": null,
+    "query": "dataquantum.com+Vancouver+hosting",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "search. q: qu: qu*int: qu-1: qu-2000: qu-an energy: qu-co: qu-cork: qu-es: qu-impex: qu-it: qu-light: qu-sol",
+            "timestamp": 1375879464,
+            "title": "Index: QU | trade.mar.cx",
+            "url": "http://trade.mar.cx/_index/qu"
+        }
+    ],
+    "timestamp": 1375879464,
+    "url": "http://www.bing.com/search?q=%64%61%74%61%71%75%61%6e%74%75%6d%2e%63%6f%6d%2b%56%61%6e%63%6f%75%76%65%72%2b%68%6f%73%74%69%6e%67"
+}

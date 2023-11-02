@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Dan Robitzski",
+    "offset": null,
+    "page": null,
+    "query": "Dan Robitzski",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "21 / by <em>Dan Robitzski</em>. Meet BV-1, the Newest COVID Variant To Be Terrified Of The strain seems to cause more severe disease and resists antibodies. 4. 22.",
+            "timestamp": 1660531082,
+            "title": "Meet BV-1, the Newest COVID Variant To Be Terrified Of - Futurism",
+            "url": "https://futurism.com/neoscope/meet-bv1-newest-covid-variant"
+        },
+        {
+            "rank": 2,
+            "snippet": "19 / by <em>Dan Robitzski</em>. Horrifying Study: Corpses Thrash Around For a Year After Death Scientists photographed a corpse for 17 months so you don't have to. 9. 14.",
+            "timestamp": 1660531082,
+            "title": "Horrifying Study: Corpses Thrash Around For a Year After Death",
+            "url": "https://futurism.com/neoscope/dead-bodies-thrash-year"
+        },
+        {
+            "rank": 3,
+            "snippet": "by <em>Dan Robitzski</em>. The goal is to teach people to learn and respect others' boundaries. 5. 22. 19. Pete Linforth via Pixabay/Tag Hartman-Simkins. The goal is \u2026",
+            "timestamp": 1660531082,
+            "title": "Here's Where You Can Flirt With a Sexting <em>AI</em> Called Slutbot",
+            "url": "https://futurism.com/the-byte/flirt-sexting-ai-slutbot"
+        },
+        {
+            "rank": 4,
+            "snippet": "Jul 28, 2022\u00a0\u00b7 <em>Dan Robitzski</em>. <em>Dan Robitzski</em>. <em>Dan</em> is a Staff Writer and Editor at <em>The Scientist</em>. He typically works on the news desk and joined the team in 2021. He has a background in neuroscience and earned his master's in science journalism at \u2026",
+            "timestamp": 1660531082,
+            "title": "Vitamin D Pills Don\u2019t Prevent Bone Fractures, Osteoporosis: Study",
+            "url": "https://www.the-scientist.com/news-opinion/vitamin-d-pills-don-t-prevent-bone-fractures-osteoporosis-study-70284"
+        },
+        {
+            "rank": 5,
+            "snippet": "by <em>Dan Robitzski</em>. The economy is like a \"jumbo jet that\u2019s in a steady glide after both its engines flamed out.\" 6. 12. 20. Futurism.",
+            "timestamp": 1660531082,
+            "title": "Terrifying argument says economy will <em>collapse</em> for real in August",
+            "url": "https://futurism.com/the-byte/economy-collapse-august"
+        },
+        {
+            "rank": 6,
+            "snippet": "Jul 05, 2022\u00a0\u00b7 <em>Dan Robitzski</em>. <em>Dan Robitzski</em>. <em>Dan</em> is a Staff Writer and Editor at <em>The Scientist</em>. He typically works on the news desk and joined the team in 2021. He has a background in neuroscience and earned his master's in science journalism at \u2026",
+            "timestamp": 1660531082,
+            "title": "Bull Ant Venom Evolved to Make Bites More Painful to Mammals",
+            "url": "https://www.the-scientist.com/the-literature/bull-ant-venom-evolved-to-make-bites-more-painful-to-mammals-70115"
+        },
+        {
+            "rank": 7,
+            "snippet": "Jul 07, 2022\u00a0\u00b7 <em>Dan Robitzski</em>. <em>Dan Robitzski</em>. <em>Dan</em> is a Staff Writer and Editor at The Scientist. He typically works on the news desk and joined the team in 2021. He has a background in neuroscience and earned his master's in science journalism at \u2026",
+            "timestamp": 1660531082,
+            "title": "This Simple Fish May Have Been One of the First Vertebrates",
+            "url": "https://www.the-scientist.com/news-opinion/this-simple-fish-may-have-been-one-of-the-first-vertebrates-70202"
+        },
+        {
+            "rank": 8,
+            "snippet": "Jul 26, 2017\u00a0\u00b7 Petition to add \"Dong Availability\" to the academic scientific lexicon. According to the charts, the average <em>Reddit</em> participant dingus is between six and seven inches long and five to six inches around. That matches pretty well to the typical schlong that female users desired, but men wanted partners sporting dicks measuring one inch longer than that, on average.",
+            "timestamp": 1660531082,
+            "title": "<em>Reddit</em> Study on Ideal Penis Size Surprisingly Consistent With \u2026",
+            "url": "https://news.yahoo.com/reddit-study-ideal-penis-size-224900814.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Dan Robitzski</em> | Jul 28, 2022. A large trial adds to a growing list of conditions once thought to be helped by vitamin D supplementation. Seaweed Has Its Own Matchmakers: Small Crustaceans. Alejandra Manjarrez | Jul 28, 2022.",
+            "timestamp": 1660531082,
+            "title": "News &amp; Opinion Articles | <em>The Scientist</em> Magazine\u00ae",
+            "url": "https://www.the-scientist.com/news-opinion"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>Dan Robitzski</em>, The Scientist Does LSD Make You Smarter? Tibi Puiu, ZME Science Voids of Nothingness May Be Flinging the Universe Apart Paul Sutter, Live Science The Latest Research. Thinking Hard Causes Buildup of Potentially 'Toxic' Substance EurekAlert! Hubble Sees Betelgeuse Star Slowly Recovering After Blowing Its Top ...",
+            "timestamp": 1660531082,
+            "title": "RealClearScience - Opinion, News, Analysis, Video and Polls",
+            "url": "https://www.realclearscience.com/"
+        }
+    ],
+    "timestamp": 1660531082,
+    "url": "https://www.bing.com/search?q=Dan+Robitzski"
+}

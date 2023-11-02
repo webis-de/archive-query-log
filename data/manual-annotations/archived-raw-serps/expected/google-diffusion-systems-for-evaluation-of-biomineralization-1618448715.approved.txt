@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "\"Diffusion Systems for Evaluation of Biomineralization",
+    "offset": null,
+    "page": null,
+    "query": "\"Diffusion Systems for Evaluation of Biomineralization",
+    "results": [],
+    "timestamp": 1618448715,
+    "url": "http://www.google.com/search?hl=en&ie=UTF-8&lr=&num=100&prmd=ivns&q=%22Diffusion+Systems+for+Evaluation+of+Biomineralization&sa=X&safe=off&site=unclesam&source=lnms&tbm=isch&ved=0ahUKEwiN-62-svLZAhXEl-AKHReSCO4Q_AUIBQ"
+}

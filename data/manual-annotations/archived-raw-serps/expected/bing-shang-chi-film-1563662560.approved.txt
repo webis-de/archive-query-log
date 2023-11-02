@@ -1,0 +1,59 @@
+{
+    "interpreted_query": "Shang-Chi film",
+    "offset": null,
+    "page": null,
+    "query": "Shang-Chi film",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "FilmIn 2006, Shang-Chi was chosen as one of the many properties in Marvel Studios' new film deal with Paramount Pictures, along with Captain America, Nick Fury, Doctor Strange, Hawkeye, Power Pack, Black Panther and Cloak and Dagger.  In December 2018, Marvel Studios hired David Callaham to write the screenplay for a Shang-Chi film set in the Marvel Cinematic Universe.    In March 2019, Destin Daniel Crettonwas hired to direct.  On June 17, \u2026",
+            "timestamp": 1563662560,
+            "title": "Shang-Chi - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Shang-Chi_%28film%29"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Shang-Chi</em> is an upcoming Marvel <em>film</em>, based on the Marvel Comics character of the same name. According to Production Weekly, it was announced on June 11, 2019, Marvel Studios, had tasked Sue Chan to begin working on the <em>film</em>, as production designer.",
+            "timestamp": 1563662560,
+            "title": "Shang-Chi (film) | Disney Wiki | FANDOM powered by Wikia",
+            "url": "https://disney.fandom.com/wiki/Shang-Chi_(film)"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1563662560,
+            "title": "Shang-Chi (film) | Marvel Cinematic Universe Wiki | FANDOM ...",
+            "url": "https://marvelcinematicuniverse.fandom.com/wiki/Shang-Chi_(film)"
+        },
+        {
+            "rank": 4,
+            "snippet": "Marvel Studios is developing a new feature that will center on hero <em>Shang-Chi</em> in a project that would act as the superhero studio's first stand-alone <em>movie</em> with an Asian lead.",
+            "timestamp": 1563662560,
+            "title": "Marvel Developing Shang-Chi Movie as Its First with Asian ...",
+            "url": "https://www.hollywoodreporter.com/heat-vision/marvel-developing-shang-chi-movie-as-first-asian-lead-1165752"
+        },
+        {
+            "rank": 5,
+            "snippet": "2019-06-18\u00a0\u00b7 <em>Shang-Chi</em> Cast. Recent rumors suggest that Ludi Lin (Power Rangers, Aquaman) is under consideration for the lead role, and that the great Donnie Yen is \u2026",
+            "timestamp": 1563662560,
+            "title": "Shang-Chi: Marvel Movie Release Date, Director, Cast, and ...",
+            "url": "https://www.denofgeek.com/us/movies/marvel/277973/shang-chi-movie-news"
+        },
+        {
+            "rank": 6,
+            "snippet": "Having had massive box-office success \u2013 and awards buzz \u2013 for Black Panther, it's thought Marvel is hoping that <em>Shang-Chi</em> can be as monumental for Asian and Asian-American audiences as Ryan ...",
+            "timestamp": 1563662560,
+            "title": "Shang-Chi movie - Release date, cast and everything you ...",
+            "url": "https://www.digitalspy.com/movies/a25915180/shang-chi-movie-release-date-trailer-cast-villain-plot/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Marvel Studios' next big hero will reportedly be the martial artist <em>Shang-Chi</em>. According to Deadline, <em>Shang-Chi</em> will headline his own <em>film</em> franchise, appropriately titled <em>Shang-Chi</em>: Master of Kung Fu.",
+            "timestamp": 1563662560,
+            "title": "Shang-Chi Film Franchise in Development at Marvel | CBR",
+            "url": "https://www.cbr.com/marvel-shang-chi-film-franchise/"
+        }
+    ],
+    "timestamp": 1563662560,
+    "url": "https://www.bing.com/search?q=Shang-Chi+film&filters=ufn%3a%22Shang-Chi+film%22+sid%3a%2233883806-0a4a-6aae-5598-51112dd2a9f4%22+catguid%3a%22ca394de6-2ef0-65dd-291d-1b2c098e50c3_cfb02057%22+segment%3a%22generic.carousel%22&FORM=SNAPST"
+}

@@ -1,0 +1,220 @@
+{
+    "interpreted_query": ",sahne und himbeeren",
+    "offset": null,
+    "page": 0,
+    "query": ",sahne+und+himbeeren",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Rote Inge",
+            "timestamp": 1192658021,
+            "title": "Himbeeren mit Sahne und Baiser",
+            "url": "http://www.chefkoch.de:80/rezepte/521141148462374/Himbeeren-mit-Sahne-und-Baiser.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "pralinenartige Schokoladenkekse mit Himbeer- und wei\u00dfer Ganache-F\u00fcllung",
+            "timestamp": 1192658021,
+            "title": "Himbeer - B\u00f6mbchen",
+            "url": "http://www.chefkoch.de:80/rezepte/780681181144042/Himbeer-Boembchen.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Baisertorteletts mit Beeren und Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/334881116982646/Baisertorteletts-mit-Beeren-und-Sahne.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "(oder Himbeeren) - eine Limburgische Spezialit\u00e4t",
+            "timestamp": 1192658021,
+            "title": "Reisfladen mit Kirschen und Sahne nach Tanja\u00b4s Art",
+            "url": "http://www.chefkoch.de:80/rezepte/519941148301635/Reisfladen-mit-Kirschen-und-Sahne-nach-Tanja-s-Art.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "SABO - Himbeer und Pfirsich K\u00e4setorte",
+            "url": "http://www.chefkoch.de:80/rezepte/194981082876133/SABO-Himbeer-und-Pfirsich-Kaesetorte.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "ein tolles Dessert, gut vorzubereiten!",
+            "timestamp": 1192658021,
+            "title": "Geeiste Basilikumt\u00f6rtchen mit Honig und Himbeeren",
+            "url": "http://www.chefkoch.de:80/rezepte/653071166793337/Geeiste-Basilikumtoertchen-mit-Honig-und-Himbeeren.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "Exotisch und fruchtig zugleich",
+            "timestamp": 1192658021,
+            "title": "Himbeer - Kokos - Torte mit Schuss",
+            "url": "http://www.chefkoch.de:80/rezepte/215661090245256/Himbeer-Kokos-Torte-mit-Schuss.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Fr\u00fcchte Nachtisch mit Joghurt und Sahne",
+            "url": "http://www.chefkoch.de:80/rezepte/466581140083663/Fruechte-Nachtisch-mit-Joghurt-und-Sahne.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "erfrischend und leicht - kann man auch mit Himbeeren oder Johannisbeeren machen",
+            "timestamp": 1192658021,
+            "title": "Buttermilchmousse mit Erdbeeren und Orangenmandelbl\u00e4ttern",
+            "url": "http://www.chefkoch.de:80/rezepte/746171177168637/Buttermilchmousse-mit-Erdbeeren-und-Orangenmandelblaettern.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Himbeer - Trifle mit Rum und Sherry",
+            "url": "http://www.chefkoch.de:80/rezepte/35321011800807/Himbeer-Trifle-mit-Rum-und-Sherry.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Sommerpudding mit Himbeeren und Pfirsichsorbet in Buttermilchschaum",
+            "url": "http://www.chefkoch.de:80/rezepte/180101078069766/Sommerpudding-mit-Himbeeren-und-Pfirsichsorbet-in-Buttermilchschaum.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "sommerlich frisch und ganz ohne backen",
+            "timestamp": 1192658021,
+            "title": "Himbeer - Mandel - Schnittchen",
+            "url": "http://www.chefkoch.de:80/rezepte/614631161515179/Himbeer-Mandel-Schnittchen.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Zimtparfait mit Himbeeren",
+            "url": "http://www.chefkoch.de:80/rezepte/99491039768543/Zimtparfait-mit-Himbeeren.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Zitronen - Himbeer - Torte",
+            "url": "http://www.chefkoch.de:80/rezepte/493311143706985/Zitronen-Himbeer-Torte.html"
+        },
+        {
+            "rank": 15,
+            "snippet": "gefrorene Himbeeren mit Sahne und Baiser",
+            "timestamp": 1192658021,
+            "title": "Geheimnis der roten Inge",
+            "url": "http://www.chefkoch.de:80/rezepte/837171188539546/Geheimnis-der-roten-Inge.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Schichtspeise mit Quark, Himbeeren und Zucker - Mandel - Kruste",
+            "url": "http://www.chefkoch.de:80/rezepte/844281189678146/Schichtspeise-mit-Quark-Himbeeren-und-Zucker-Mandel-Kruste.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "mit Himbeer- und Schokoladencreme",
+            "timestamp": 1192658021,
+            "title": "Schokoladentorte mit  zweierlei F\u00fcllung",
+            "url": "http://www.chefkoch.de:80/rezepte/775841180532949/Schokoladentorte-mit-zweierlei-Fuellung.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "Schokobiskuit mit Himbeer- und Sahnef\u00fcllung",
+            "timestamp": 1192658021,
+            "title": "Gewickelte Herrentorte",
+            "url": "http://www.chefkoch.de:80/rezepte/276691105411126/Gewickelte-Herrentorte.html"
+        },
+        {
+            "rank": 19,
+            "snippet": "gef\u00fcllt mit Sahne und Fruchtcocktail",
+            "timestamp": 1192658021,
+            "title": "Biskuitrolle",
+            "url": "http://www.chefkoch.de:80/rezepte/616831161752530/Biskuitrolle.html"
+        },
+        {
+            "rank": 20,
+            "snippet": "schnell und einfach",
+            "timestamp": 1192658021,
+            "title": "Himbeerkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/669841169018175/Himbeerkuchen.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Milchrahmauflauf auf Himbeer - Mascarponecreme",
+            "url": "http://www.chefkoch.de:80/rezepte/206591086611967/Milchrahmauflauf-auf-Himbeer-Mascarponecreme.html"
+        },
+        {
+            "rank": 22,
+            "snippet": "Torte mit Frischk\u00e4secreme und Himbeeren",
+            "timestamp": 1192658021,
+            "title": "Himbeertraumtorte",
+            "url": "http://www.chefkoch.de:80/rezepte/317831113439019/Himbeertraumtorte.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Fruchtige Pfirsichtorte mit Himbeeren",
+            "url": "http://www.chefkoch.de:80/rezepte/533811150285035/Fruchtige-Pfirsichtorte-mit-Himbeeren.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Limetten - Joghurt - Mousse mit Himbeeren",
+            "url": "http://www.chefkoch.de:80/rezepte/722511175028603/Limetten-Joghurt-Mousse-mit-Himbeeren.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Marinierte Lychees und Mandelpl\u00e4tzchen",
+            "url": "http://www.chefkoch.de:80/rezepte/65131023957328/Marinierte-Lychees-und-Mandelplaetzchen.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Entenbrust mit Himbeeren",
+            "url": "http://www.chefkoch.de:80/rezepte/223491092403248/Entenbrust-mit-Himbeeren.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "Himbeer - Biskuit - Speise",
+            "url": "http://www.chefkoch.de:80/rezepte/778701180957948/Himbeer-Biskuit-Speise.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1192658021,
+            "title": "K\u00e4sekuchen mit Kokos und Himbeerf\u00fcllung",
+            "url": "http://www.chefkoch.de:80/rezepte/239771097221324/Kaesekuchen-mit-Kokos-und-Himbeerfuellung.html"
+        },
+        {
+            "rank": 29,
+            "snippet": "und mit Frischk\u00e4se",
+            "timestamp": 1192658021,
+            "title": "Himbeerdessert mit Mandeln",
+            "url": "http://www.chefkoch.de:80/rezepte/397871128710090/Himbeerdessert-mit-Mandeln.html"
+        },
+        {
+            "rank": 30,
+            "snippet": "lecker und leicht",
+            "timestamp": 1192658021,
+            "title": "Joghurtmousse mit Rhabarber - Himbeerkompott",
+            "url": "http://www.chefkoch.de:80/rezepte/369501122561681/Joghurtmousse-mit-Rhabarber-Himbeerkompott.html"
+        }
+    ],
+    "timestamp": 1192658021,
+    "url": "http://www.chefkoch.de:80/rs/s0/,sahne+und+himbeeren/Rezepte.html"
+}

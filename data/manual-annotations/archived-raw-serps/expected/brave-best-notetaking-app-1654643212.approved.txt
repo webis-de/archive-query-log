@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "best notetaking app",
+    "offset": null,
+    "page": null,
+    "query": "best notetaking app",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "December 9, 2021 -\n            Find the <em>best</em> note taking <em>app</em> that will help you gather all your ideas and keep track of everything.",
+            "timestamp": 1654643212,
+            "title": "The 6 best note taking apps of 2022 | Zapier",
+            "url": "https://zapier.com/blog/best-note-taking-apps/"
+        },
+        {
+            "rank": 2,
+            "snippet": "April 20, 2022 -\n            We feature the <em>best</em> note-taking <em>apps</em>, to make it simple and easy to make and use notes on the go, whether for inspiration, ideas, business insights, or even reminders.",
+            "timestamp": 1654643212,
+            "title": "Best note-taking apps of 2022 | TechRadar",
+            "url": "https://www.techradar.com/best/best-note-taking-app"
+        },
+        {
+            "rank": 3,
+            "snippet": "April 22, 2022 -\n            If you are looking for a collaborative destination to document ideas and record key reference points, you must try out these note taking <em>apps</em> in 2022.",
+            "timestamp": 1654643212,
+            "title": "17 Best Note Taking Apps To Try In 2022",
+            "url": "https://www.proofhub.com/articles/note-taking-apps"
+        },
+        {
+            "rank": 4,
+            "snippet": "February 23, 2022 -\n            Jot down your thoughts, save images of things you need to remember, and keep it all at your fingertips, across your devices, with a top-rated note-taking <em>app</em>.",
+            "timestamp": 1654643212,
+            "title": "The Best Note-Taking Apps | PCMag",
+            "url": "https://www.pcmag.com/picks/the-best-note-taking-apps"
+        },
+        {
+            "rank": 5,
+            "snippet": "February 26, 2022 -\n            The top 11 note-taking <em>apps</em> for students, including pro's and con's of each, plus some things to consider when picking a note-taking <em>app</em>.",
+            "timestamp": 1654643212,
+            "title": "The 11 Best Note-Taking Apps in 2022 \u2013 Evernote, Notion, and More",
+            "url": "https://collegeinfogeek.com/best-note-taking-apps/"
+        },
+        {
+            "rank": 6,
+            "snippet": "2 weeks ago -\n            If you still take notes with pen and paper, this is for you. Here are the <em>best</em> note taking <em>apps</em> on the market, including Hive Notes, Hugo, Evernote and more.",
+            "timestamp": 1654643212,
+            "title": "11 Best Note Taking Apps Of 2022 | Free &amp; Paid Tools",
+            "url": "https://hive.com/blog/best-note-taking-apps/"
+        },
+        {
+            "rank": 7,
+            "snippet": "April 15, 2022 -\n            Read reviews and download the <em>best</em> note-taking <em>apps</em> from top companies, including EverNote, OneNote, Dropbox Paper and more.",
+            "timestamp": 1654643212,
+            "title": "The 8 Best Note-Taking Apps of 2022",
+            "url": "https://www.thebalancesmb.com/best-note-taking-apps-4171960"
+        },
+        {
+            "rank": 8,
+            "snippet": "2 weeks ago -\n            \u200eWelcome to Notability: powerful, yet wonderfully simple note-taking and PDF annotation. Apple Editors' Choice and top ranked <em>app</em> worldwide on <em>App</em> Store, regularly #1. Students, teachers, artists, and professionals use Notability daily to enrich their lives.",
+            "timestamp": 1654643212,
+            "title": "\u200eNotability on the App Store",
+            "url": "https://apps.apple.com/us/app/notability/id360593530"
+        },
+        {
+            "rank": 9,
+            "snippet": "October 18, 2021 -\n            Our note taking <em>app</em> helps you capture and prioritize ideas, projects and to-do lists, so nothing falls through the cracks. Start your free trial today!",
+            "timestamp": 1654643212,
+            "title": "Best Note Taking App - Organize Your Notes with Evernote",
+            "url": "https://evernote.com/"
+        },
+        {
+            "rank": 10,
+            "snippet": "2 weeks ago -\n            Your smartphone makes an ideal tool for jotting down notes, reminders, checklists and sudden brainstorms. Check out the <em>best</em> note taking <em>apps</em> for Android and iOS.",
+            "timestamp": 1654643212,
+            "title": "Best note taking apps of 2022 \u2014 Evernote, OneNote, Google Keep ...",
+            "url": "https://www.tomsguide.com/round-up/best-note-taking-apps"
+        },
+        {
+            "rank": 11,
+            "snippet": "2 weeks ago -\n            Try theses top note taking <em>apps</em> and never lose important details again. Make grocery lists, shopping lists or take meeting notes right in your smartphone.",
+            "timestamp": 1654643212,
+            "title": "The 12 Best Free Note Taking Apps to Use in 2022 | ClickUp Blog",
+            "url": "https://clickup.com/blog/note-taking-apps/"
+        },
+        {
+            "rank": 12,
+            "snippet": "February 18, 2022 -\n            But there are hundreds of <em>apps</em> to choose from, and not all <em>apps</em> are created equal. Today, we\u2019re going to take a closer look at 7 of the <em>best</em> <em>notetaking</em> <em>apps</em> in the <em>App</em> Store. Let\u2019s dive in. #toc# <em>Notetaking</em>: Handwritten or Typed? While there\u2019s no \u201ccorrect\u201d way to write your notes, ...",
+            "timestamp": 1654643212,
+            "title": "7 Best Notetaking Apps for iPad [2022] - Paperlike",
+            "url": "https://paperlike.com/blogs/paperlikers-insights/best-note-taking-apps-ipad"
+        },
+        {
+            "rank": 13,
+            "snippet": "Discover the 11 <em>best</em> note taking <em>apps</em> for your to-do lists, ideas, and projects on Windows and macOS.",
+            "timestamp": 1654643212,
+            "title": "11 Best Note Taking Apps for Windows and macOS | GoSkills",
+            "url": "https://www.goskills.com/Office-Productivity/Resources/Best-note-taking-app"
+        },
+        {
+            "rank": 14,
+            "snippet": "May 28, 2021 -\n            The <em>best</em> note-taking <em>apps</em> for the iPad let you draw, easily insert pictures, take audio recordings, and more.",
+            "timestamp": 1654643212,
+            "title": "The 5 best note-taking apps to download on your iPad",
+            "url": "https://www.businessinsider.com/best-note-taking-app-for-ipad"
+        },
+        {
+            "rank": 15,
+            "snippet": "August 19, 2021 -\n            The <em>best</em> note-taking <em>apps</em> to help you record thoughts, ideas and inspirations.",
+            "timestamp": 1654643212,
+            "title": "The best note-taking apps in 2022 | Creative Bloq",
+            "url": "https://www.creativebloq.com/buying-guides/best-note-taking-apps"
+        },
+        {
+            "rank": 16,
+            "snippet": "May 3, 2022 -\n            Here's an in-depth list of the 20 <em>best</em> note-taking <em>apps</em> for android and iOS. Let's look at each in turn to find the perfect one for you.",
+            "timestamp": 1654643212,
+            "title": "20 best note taking apps for Android and iOS | DeskTime Blog",
+            "url": "https://desktime.com/blog/best-note-taking-apps"
+        },
+        {
+            "rank": 17,
+            "snippet": "Looking for the <em>best</em> note-taking <em>app</em>, but can\u2019t find any ideal option? Read on and get to know about the 10 different note-taking <em>app</em> options in this post.",
+            "timestamp": 1654643212,
+            "title": "Top 10 Note-Taking Apps in 2020 | EdrawMind",
+            "url": "https://www.edrawmind.com/article/note-taking-app.html"
+        },
+        {
+            "rank": 18,
+            "snippet": "December 8, 2021 -\n            Looking for iPad Notes <em>apps</em>? Here are the 10 <em>best</em> note taking <em>apps</em> for iPad (free and paid) that you can use in 2022.",
+            "timestamp": 1654643212,
+            "title": "10 Best Note-Taking Apps for iPad (Free and Paid) | Beebom | Beebom",
+            "url": "https://beebom.com/best-note-taking-apps-ipad/"
+        },
+        {
+            "rank": 19,
+            "snippet": "June 20, 2021 -\n            We believe the most useful take on \"the <em>best</em> note taking <em>apps</em> of 2021\" is one that considers as many note <em>apps</em> as possible, grounded with hard data and screenshots to show how each feature looks in each <em>app</em>. So, that's what we built, and what you will find on the rest of this page.",
+            "timestamp": 1654643212,
+            "title": "Best note-taking apps of 2022: an epic guide to 27 choices",
+            "url": "https://www.noteapps.info/best_note_taking_apps_2022"
+        },
+        {
+            "rank": 20,
+            "snippet": "February 12, 2022 -\n            In this article, I profile the <em>best</em> note-taking <em>apps</em> (2022) for all types of note-takers and how you can use them.",
+            "timestamp": 1654643212,
+            "title": "The Best Note-Taking Apps For Writers (2022): A Roundup",
+            "url": "https://becomeawritertoday.com/note-taking-apps/"
+        }
+    ],
+    "timestamp": 1654643212,
+    "url": "https://search.brave.com/search?q=best+notetaking+app"
+}

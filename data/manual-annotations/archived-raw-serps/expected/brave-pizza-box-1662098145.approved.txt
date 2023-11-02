@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "pizza box",
+    "offset": null,
+    "page": null,
+    "query": "pizza box",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Discover the best <em>Pizza</em> <em>Boxes</em> in Best Sellers. Find the top 100 most popular items in Amazon Industrial &amp; Scientific Best Sellers.",
+            "timestamp": 1662098145,
+            "title": "<em></em>Amazon Best Sellers: Best Pizza Boxes",
+            "url": "https://www.amazon.com/Best-Sellers-Pizza-Boxes/zgbs/industrial/5016474011"
+        },
+        {
+            "rank": 2,
+            "snippet": "WestRock offers standard or customized corrugated <em>pizza</em> <em>boxes</em> <em>and</em> <em>pizza</em> containers. We offer various substrates as well as graphic and printing expertise.",
+            "timestamp": 1662098145,
+            "title": "<em></em>Corrugated Pizza Boxes Standardized &amp; Custom | WestRock Corrugated ...",
+            "url": "https://www.westrock.com/products/corrugated-containers/corrugated-pizza-boxes"
+        },
+        {
+            "rank": 3,
+            "snippet": "View the menu, hours, address, and photos for The <em>Pizza</em> <em>Box</em> in Shelton, CT. Order online for delivery or pickup on Slicelife.com",
+            "timestamp": 1662098145,
+            "title": "<em></em>The Pizza Box - Shelton - Menu &amp; Hours - Order Delivery",
+            "url": "https://www.thepizzaboxmenu.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": "2 days ago -\n            One dog's determination to nab his owner's <em>pizza</em> had TikTok users in hysterics.",
+            "timestamp": 1662098145,
+            "title": "<em></em>'Greedy' Dachshund's Desperate Attempt to Eat Pizza Through Box ...",
+            "url": "https://www.newsweek.com/greedy-dachshund-desperate-attempt-eat-pizza-through-box-goes-viral-1738591"
+        },
+        {
+            "rank": 5,
+            "snippet": "Skip to main content \u00b7 Hello Select your address \u00b7 Hello, Sign in \u00b7 Account &amp; Lists Returns &amp; Orders \u00b7 Back to School Disability Customer Support Off to College Best Sellers Amazon Basics Today's Deals New Releases Customer Service Prime Music Books Kindle Books Amazon Home Registry Fashion ...",
+            "timestamp": 1662098145,
+            "title": "<em></em>Pizza Boxes / Take Out Containers - Amazon",
+            "url": "https://www.amazon.com/Pizza-Boxes/b?ie=UTF8&node=5016474011"
+        },
+        {
+            "rank": 6,
+            "snippet": "2 days ago -\n            kazuhiro yamanaka\u2019s lamp made out of crinkled japanese paper and recycled polyester compresses to fit inside a <em>pizza</em> <em>box</em>.",
+            "timestamp": 1662098145,
+            "title": "<em></em>kazuhiro yamanaka\u2019s crinkled paper and recycled polyester lamp ...",
+            "url": "https://www.designboom.com/design/kazuhiro-yamanaka-crinkled-paper-recycled-polyester-lamp-pizza-box-08-30-2022/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Check out our vast selection of <em>pizza</em> <em>boxes</em> that are designed for takeout in your pizzeria, restaurant, or other foodservice establishment. We offer <em>pizza</em> <em>boxes</em> wholesale at great prices that are available in a variety of styles, shapes, and sizes. D",
+            "timestamp": 1662098145,
+            "title": "<em></em>Pizza Boxes: In Bulk &amp; Wholesale at WebstaurantStore",
+            "url": "https://www.webstaurantstore.com/363/pizza-boxes.html"
+        },
+        {
+            "rank": 8,
+            "snippet": "Welcome to the premier industrial source for <em>Pizza</em> <em>Boxes</em> in Georgia. These companies offer a comprehensive range of <em>Pizza</em> <em>Boxes</em>, as well as a variety of related products and services. ThomasNet.com provides numerous search tools, including location, certification and keyword filters, to help ...",
+            "timestamp": 1662098145,
+            "title": "<em></em>Pizza Boxes in Georgia (GA) on Thomasnet.com",
+            "url": "https://www.thomasnet.com/georgia/pizza-boxes-7471303-1.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "May 26, 2022 -\n            The <em>pizza</em> <em>box</em> <em>or</em> <em>pizza</em> package is a folding packaging <em>box</em> made of cardboard in which hot <em>pizzas</em> are stored for take-out. The \"<em>pizza</em> <em>box</em>\" also makes home delivery and takeaway substantially easier. The <em>pizza</em> <em>box</em> has to be highly resistant, cheap, stackable, thermally insulated to regulate humidity ...",
+            "timestamp": 1662098145,
+            "title": "<em></em>Pizza box - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Pizza_box"
+        },
+        {
+            "rank": 10,
+            "snippet": "The <em>Pizza</em> <em>Box</em> of Utica New York brings you traditional East Utica Style cuisine at affordable prices.",
+            "timestamp": 1662098145,
+            "title": "<em></em>Order Online | The Pizza Box",
+            "url": "https://www.thepizzaboxutica.com/"
+        },
+        {
+            "rank": 11,
+            "snippet": "See posts, photos and more on Facebook",
+            "timestamp": 1662098145,
+            "title": "<em></em>pizza box - Home - Portland, Oregon - Facebook",
+            "url": "https://www.facebook.com/pizzaboxpdx/"
+        },
+        {
+            "rank": 12,
+            "snippet": "Everything At <em>Pizza</em> <em>Box</em> from the ground up, we have built ourselves \u2026.from the d\u00e9cor to the actual wood fire oven! We use the old world culinary style of cooking with fire to bring you the best <em>pizza</em> possible. Our dough is made with a high hydration recipe which creates a thin and crispy crust.",
+            "timestamp": 1662098145,
+            "title": "<em></em>Home | pizzabox",
+            "url": "https://www.pizzabox727.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": "See posts, photos and more on Facebook",
+            "timestamp": 1662098145,
+            "title": "<em></em>THE PIZZA BOX - Home - Glenside - Facebook",
+            "url": "https://www.facebook.com/pages/category/Pizza-place/THE-PIZZA-BOX-190596273260/"
+        },
+        {
+            "rank": 14,
+            "snippet": "Home of the Bay Areas Largest <em>Pizza</em> - The Uncle Sam. Local, New York Style <em>Pizza</em>.",
+            "timestamp": 1662098145,
+            "title": "<em></em>The Pizza Box | A Milpitas Original Since 1986",
+            "url": "https://www.thepizzaboxmilpitas.com/"
+        },
+        {
+            "rank": 15,
+            "snippet": "<em>Pizza</em> <em>Box</em>, Portland: See unbiased reviews of <em>Pizza</em> <em>Box</em>, one of 4,370 Portland restaurants listed on Tripadvisor.",
+            "timestamp": 1662098145,
+            "title": "<em></em>PIZZA BOX, Portland - Restaurant Reviews &amp; Phone Number - Tripadvisor",
+            "url": "https://www.tripadvisor.com/Restaurant_Review-g52024-d4211108-Reviews-Pizza_Box-Portland_Oregon.html"
+        },
+        {
+            "rank": 16,
+            "snippet": "December 3, 2021 -\n            Located on: 148 South Jackson Avenue San Jose CA 95116 Phone: 408-272-9333 *Pick Up &amp; Dine In Only Serving San Jose Since 1985 Call Now Menu &amp; Pricing Welcome to The <em>Pizza</em> <em>Box</em> A San Jose Institution known for the King Kong and Uncle Sam <em>Pizza</em>, <em>The</em> <em>Pizza</em> <em>Box</em> on Jackson Ave has been open [\u2026]",
+            "timestamp": 1662098145,
+            "title": "<em></em>Home - The Pizza Box San Jose",
+            "url": "https://thepizzaboxsanjose.com/"
+        },
+        {
+            "rank": 17,
+            "snippet": "The <em>Pizza</em> <em>Box</em> features gourmet Hollywood <em>Pizzas</em> including: the Big Cheese, Stallone, Al Pacino, Robert DeNiro, Al Capone, Schwarzenegger, Sophia Loren, Michelngelo, Cheech &amp; Chong, Dom DeLuise, Frank Sinatra, Celine Dion, Mae West, Joe Pesci, Marilyn Monroe, Michael Jordan, Kobe Bryant, Sonny ...",
+            "timestamp": 1662098145,
+            "title": "<em></em>The Pizza Box (Glenside, PA and Ambler, PA) \u2013 Pizzeria featuring ...",
+            "url": "https://pizzaboxpa.com/"
+        },
+        {
+            "rank": 18,
+            "snippet": "Please note, prices are subject to change at any time \u00b7 Buffalo Chicken Fingers with Fries $9.75",
+            "timestamp": 1662098145,
+            "title": "<em></em>Menu \u2013 The Pizza Box (Glenside, PA and Ambler, PA)",
+            "url": "https://pizzaboxpa.com/menu/"
+        },
+        {
+            "rank": 19,
+            "snippet": "Get 5% off your <em>pizza</em> delivery order - View the menu, hours, address, and photos for <em>Pizza</em> <em>Box</em> in Gap, PA. Order online for delivery or pickup on Slicelife.com",
+            "timestamp": 1662098145,
+            "title": "<em></em>Pizza Box - Gap - Menu &amp; Hours - Order Delivery (5% off)",
+            "url": "https://www.pizzaboxgap.com/"
+        },
+        {
+            "rank": 20,
+            "snippet": "Plan your next trip, read reviews and get travel advice from our community on where to stay and what to do. Find savings on hotels, book the perfect tour or attraction, and reserve a table at the best restaurants.",
+            "timestamp": 1662098145,
+            "title": "<em></em>Cover of the pizza box - Picture of Regina Pizzeria, Boston",
+            "url": "https://www.tripadvisor.com/LocationPhotoDirectLink-g60745-d322981-i153012485-Regina_Pizzeria-Boston_Massachusetts.html"
+        }
+    ],
+    "timestamp": 1662098145,
+    "url": "https://search.brave.com/search?q=pizza%20box"
+}

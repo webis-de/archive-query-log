@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "another word for less likely",
+    "offset": null,
+    "page": null,
+    "query": "another word for less likely",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Need synonyms for less likely? Here's a list of similar words from our thesaurus that you can use instead. Adjective Not likely to happen, be done, or be true unlikely improbable incredible remote implausible questionable unbelievable unconvincing unimaginable absurd far-fetched inconceivable labored US laboured UK strained unrealistic doubtful",
+            "timestamp": 1641721403,
+            "title": "What is another word for less likely - WordHippo",
+            "url": "https://www.wordhippo.com/what-is/another-word-for/less_likely.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Another way to say Less Likely? Synonyms for Less Likely (other words and phrases for Less Likely). Log in. Synonyms for Less likely. 50 other terms for less likely- words and phrases with similar meaning. Lists. synonyms. antonyms. definitions. sentences. thesaurus. words. phrases. idioms. Parts of speech. adjectives. adverbs. nouns. Tags ...",
+            "timestamp": 1641721403,
+            "title": "Less Likely synonyms - 50 Words and Phrases for Less Likely",
+            "url": "https://www.powerthesaurus.org/less_likely/synonyms"
+        },
+        {
+            "rank": 3,
+            "snippet": "Most related words/phrases with sentence examples define Less likely meaning and usage. Log in. Thesaurus for Less likely. Related terms for less likely- synonyms, antonyms and sentences with less likely. Lists. synonyms. antonyms. definitions. sentences. thesaurus. Parts of speech. adjectives. nouns. adverbs. Synonyms",
+            "timestamp": 1641721403,
+            "title": "LESS LIKELY in Thesaurus: 100+ Synonyms &amp; Antonyms for ...",
+            "url": "https://www.powerthesaurus.org/less_likely"
+        },
+        {
+            "rank": 4,
+            "snippet": "Need synonyms for least likely? Here's a list of similar words from our thesaurus that you can use instead. Adjective (the last) Being the least likely (to happen) last unlikeliest iffiest most unexpected most unlikely most improbable most fanciful most far-fetched most inconceivable most implausible most unimaginable most unthinkable",
+            "timestamp": 1641721403,
+            "title": "What is another word for \"least likely\"? - WordHippo",
+            "url": "https://www.wordhippo.com/what-is/another-word-for/least_likely.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Best adjective synonyms for 'less likely' are 'hardly probable', 'doubtful' and 'highly improbable'. Search for synonyms and antonyms Classic Thesaurus C less likely&gt;synonyms 76 Synonyms 24 Antonyms more 9 Broader 23 Narrower 64 Related 28 adjectives\u00d7 List search Special characters '?' and '*': ??? - shows 3-letter terms",
+            "timestamp": 1641721403,
+            "title": "Synonyms for Less likely - 28 Adjectives",
+            "url": "https://www.classicthesaurus.com/less_likely/synonyms/adjective"
+        },
+        {
+            "rank": 6,
+            "snippet": "What does most likely not mean? The expression is probably \u2018more likely than not\u2019. It means that there is a \u2018more than 50% probability\u2019. Another way to say the same thing is \u2018most likely\u2019. Examples: More likely than not the flight will be on time. Is it more likely or most likely?",
+            "timestamp": 1641721403,
+            "title": "What is another word for less likely? \u2013 AnswersToAll",
+            "url": "https://answerstoall.com/popular/what-is-another-word-for-less-likely/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Search less likely and thousands of other words in English definition and synonym dictionary from Reverso. You can complete the list of synonyms of less likely given by the English Thesaurus dictionary with other English dictionaries: Wikipedia, Lexilogos, Oxford, Cambridge, Chambers Harrap, Wordreference, Collins Lexibase dictionaries, Merriam ...",
+            "timestamp": 1641721403,
+            "title": "less likely synonym | English synonyms dictionary - Reverso",
+            "url": "https://dictionary.reverso.net/english-synonyms/less+likely"
+        },
+        {
+            "rank": 8,
+            "snippet": "LESS LIKELY in Thesaurus: 100+ Synonyms &amp; Antonyms \u2026 Powerthesaurus.org DA: 22 PA: 12 MOZ Rank: 36. Most related words/phrases with sentence examples define Less likely meaning and usage; Related terms for less likely- synonyms, antonyms and sentences with less likely",
+            "timestamp": 1641721403,
+            "title": "Another word for less likely\" Keyword Found Websites ...",
+            "url": "https://www.keyword-suggest-tool.com/search/another+word+for+less+likely/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Near Antonyms for likely cheerless, comfortless doubtful, dubious, uncertain bearish, grim, negative, unfavorable funereal, glum, gray (also grey), miserable, wretched Antonyms for likely bleak, dark, depressing, desperate, discouraging, disheartening, dismal, downbeat, dreary, gloomy, hopeless, inauspicious, pessimistic, unencouraging, unlikely,",
+            "timestamp": 1641721403,
+            "title": "299 Synonyms &amp; Antonyms of LIKELY - Merriam-Webster",
+            "url": "https://www.merriam-webster.com/thesaurus/likely"
+        },
+        {
+            "rank": 10,
+            "snippet": "synonyms for not likely Compare Synonyms absurd implausible improbable inconceivable incredible rare remote strange unbelievable contrary doubtful dubious faint out of the ordinary outside chance questionable slight unconvincing unheard-of unimaginable untoward Meet Grammar Coach Improve Your Writing antonyms for not likely MOST RELEVANT believable",
+            "timestamp": 1641721403,
+            "title": "NOT LIKELY Synonyms: 76 Synonyms &amp; Antonyms for NOT LIKELY ...",
+            "url": "https://www.thesaurus.com/browse/not%20likely"
+        }
+    ],
+    "timestamp": 1641721403,
+    "url": "https://www.qwant.com/?q=another+word+for+less+likely&t=all"
+}

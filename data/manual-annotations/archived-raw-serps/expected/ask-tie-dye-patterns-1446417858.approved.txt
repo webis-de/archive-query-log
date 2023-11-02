@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "Tie Dye Patterns",
+    "offset": null,
+    "page": null,
+    "query": "Tie Dye Patterns",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Folding and practice are the keys to achieving the patterns you want when tie-dying. Once tied, pre-soak the fabric in soda ash to make the dye stick. Wring out, then totally immerse the fabric in the dye or you can apply different colors to different...\nMore \u00bb",
+            "timestamp": 1446417858,
+            "title": "How to: Tie Dye Patterns",
+            "url": "http://www.ehow.com/how_7485042_tie-dye-patterns.html?ref=Track2&utm_source=ask"
+        },
+        {
+            "rank": 2,
+            "snippet": "From tie dye inspiration and techniques to videos, Tulip product information and \nprize giveaways, find everything you need for tie dye summer fun here.",
+            "timestamp": 1446417858,
+            "title": "Tie Dye Your Summer | Tie-Dye Techniques",
+            "url": "http://tiedyeyoursummer.com/get-inspired.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Jun 19, 2015 ... Tie Dye Folding Techniques | 16 vibrant tie dye patterns #tiedyeyoursummer #\nmichaelsmakers |Although tie dye has been around for ages, it is\u00a0...",
+            "timestamp": 1446417858,
+            "title": "Tie Dye Folding Techniques | 16 vibrant tie dye patterns - Under the ...",
+            "url": "http://www.bystephanielynn.com/2015/06/tie-dye-folding-techniques-16-vibrant-tie-dye-patterns-tiedyeyoursummer.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Jan 14, 2015 ... Tie dye, a fun way of dying fabrics in vibrant combinations of as many colors as \nyou want, is one of the best ways of creating colorful patterns for\u00a0...",
+            "timestamp": 1446417858,
+            "title": "47 Cool Tie Dye Shirt Patterns | Guide Patterns",
+            "url": "http://www.guidepatterns.com/47-cool-tie-dye-shirt-patterns.php"
+        },
+        {
+            "rank": 5,
+            "snippet": "Find great project sheets that help you learn how to tie-dye along with a variety of patterns you can try.  More \u00bb",
+            "timestamp": 1446417858,
+            "title": "Tie-Dye Patterns",
+            "url": "http://clk.about.com?zi=13/1tO&ity=boostOrg&o=13194&eng=boost&zu=http://familycrafts.about.com/od/tiedye/Lets_Try_TieDye.htm"
+        },
+        {
+            "rank": 6,
+            "snippet": "Discover thousands of images about Tie Dye Patterns on Pinterest, a visual \nbookmarking tool that helps you discover and save creative ideas. | See more \nabout\u00a0...",
+            "timestamp": 1446417858,
+            "title": "Tie Dye Patterns on Pinterest | Tie Dye Shirts, Tie Dye and Shibori",
+            "url": "https://www.pinterest.com/explore/tie-dye-patterns/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Sep 29, 2015 ... Get ready for summer with this epic collection of 94 Tie Dye Techniques and \nPatterns. From t-shirts to picture frames, aprons to flip flops, these\u00a0...",
+            "timestamp": 1446417858,
+            "title": "100+ Tie Dye Techniques and Patterns | FaveCrafts.com",
+            "url": "http://www.favecrafts.com/Tie-Dye/Tie-Dye-Techniques-and-Patterns"
+        },
+        {
+            "rank": 8,
+            "snippet": "Tie Dye Instructions. We teach the modern \"direct application\" method of tie dye. \nIn direct application tie dye, you make small, concentrated solutions of dye and\u00a0...",
+            "timestamp": 1446417858,
+            "title": "Tie-Dye Instructions",
+            "url": "https://www.bestdye.com/Tie-Dye-Instructions.php"
+        },
+        {
+            "rank": 9,
+            "snippet": "May 1, 2012 ... purchase shirts here: http://stores.ebay.com/colorfulsteve In this video i show you \nhow to tie dye the fish scales pattern.",
+            "timestamp": 1446417858,
+            "title": "How To Tie Dye - Fish Scales - YouTube",
+            "url": "http://www.ask.com/youtube?q=Tie+Dye+Patterns&v=Ude0HGhvFpY&qsrc=472"
+        },
+        {
+            "rank": 10,
+            "snippet": "There are many ways to create tie-dye patterns and designs. For example, to \ncreate a basic marbleized tie-dye design, scrunch fabric into a ball and wrap it \nwith\u00a0...",
+            "timestamp": 1446417858,
+            "title": "How to Tie-Dye Using the Bucket Method #RitDye - The Rit Studio",
+            "url": "https://www.ritstudio.com/techniques/creative-techniques/how-to-tie-dye-using-the-bucket-method/"
+        }
+    ],
+    "timestamp": 1446417858,
+    "url": "http://www.ask.com/web?q=Tie+Dye+Patterns&qsrc=466&o=13194&l=sem&qo=relatedSearchNarrow"
+}

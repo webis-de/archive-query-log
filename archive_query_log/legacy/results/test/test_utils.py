@@ -70,6 +70,7 @@ def _find_archived_raw_serp(wayback_raw_url: str) -> ArchivedRawSerp:
         desc="Find record for URL",
         unit="record",
     )
+    record: ArchivedRawSerp
     for record in records:
         if record.raw_archive_url == wayback_raw_url:
             return record

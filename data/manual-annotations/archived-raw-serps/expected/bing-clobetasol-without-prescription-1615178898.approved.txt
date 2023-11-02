@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "clobetasol without prescription",
+    "offset": null,
+    "page": null,
+    "query": "clobetasol without prescription",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Facial Cortisone: Clobetasol is too strong for the face. You can use prescription<em> Locoid (</em>hydrocortisone butyrate) lotion, Cloderm or cordran. You can use prescription Locoid (hydrocortisone butyrate) lotion, Cloderm or cordran.",
+            "timestamp": 1615178898,
+            "title": "non prescription clobetasol alternative | Answers from ...",
+            "url": "https://www.healthtap.com/q/non-prescription-clobetasol-alternative"
+        },
+        {
+            "rank": 2,
+            "snippet": "Jan 01, 1994\u00a0\u00b7 We recently encountered a 43-year-old woman with perioral dermatitis, macular hypopigmentation, and early cutaneous atrophy of her forehead and cheeks. On questioning, she produced a 30-g tube of 0.05% clobetasol propionate (Dermovate), manufactured in England. The patient reported purchasing this medicine for<em> $7</em> without prescription at a corner pharmacy in Brooklyn, NY.",
+            "timestamp": 1615178898,
+            "title": "Over-the-Counter Clobetasol Propionate | JAMA Dermatology ...",
+            "url": "https://jamanetwork.com/journals/jamadermatology/fullarticle/555524"
+        },
+        {
+            "rank": 3,
+            "snippet": "Buy<em> Dermovate Online</em> Without Prescription At the Best Price - Clobetasol<em> 0.5%</em> for<em> Eczema</em>, Dermatitis and Allergic Reactions - Amazon4Health.com",
+            "timestamp": 1615178898,
+            "title": "Buy Dermovate Online Without Prescription - Amazon4Health.com",
+            "url": "https://amazon4health.com/product-category/skin/buy-dermovate-online/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Clobetasol ointment should only be used once prescribed by the doctor. It is a highly potent corticosteroid cream, so it can only be purchased with a prescription following assessment by a doctor. Do<em> not use Clobetasol ointment without direction from</em> a pharmacist or a<em> doctor</em> as it<em> has potential side effects</em>.",
+            "timestamp": 1615178898,
+            "title": "Order Clobetasol online from a US pharmacy | Medzino US",
+            "url": "https://www.medzino.com/us/eczema/clobetasol-propionate-ointment/"
+        },
+        {
+            "rank": 5,
+            "snippet": "Sep 23, 2020\u00a0\u00b7 Clobetasol is a highly potent corticosteroid that helps reduce inflammation in the body. Clobetasol topical (for the skin) is used to treat inflammation and itching caused by plaque psoriasis and skin conditions that respond to corticosteroid medication. Clobetasol topical is available in a cream, gel, ointment, lotion, solution, foam or spray.",
+            "timestamp": 1615178898,
+            "title": "Clobetasol Topical (cream, gel, ointment, lotion ...",
+            "url": "https://www.drugs.com/clobetasol-topical.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1615178898,
+            "title": "Clobetasol Topical: MedlinePlus Drug Information",
+            "url": "https://medlineplus.gov/druginfo/meds/a686008.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "The cost for clobetasol topical topical ointment 0.05% is<em> around $31</em> for a supply of 15 grams, depending on the pharmacy you visit. Prices are for cash paying customers only and are not valid with insurance plans. This clobetasol topical price guide is based on using the Drugs.com discount card which is accepted at most U.S. pharmacies.",
+            "timestamp": 1615178898,
+            "title": "Clobetasol topical Prices, Coupons &amp; Patient Assistance ...",
+            "url": "https://www.drugs.com/price-guide/clobetasol-topical"
+        },
+        {
+            "rank": 8,
+            "snippet": "May 18, 2017\u00a0\u00b7 <em>Clobetasol</em> is a very strong (super-high-potency) corticosteroid. Clobetasol is available under the following different brand names: Temovate, Temovate E, Cormax, Clobex, Clobex Spray, Clarelux, Cormax Ointment, Cormax Scalp Application, Olux, Olux-E, and Olux-E Foam. Dosages of<em> Clobetasol</em> : Adult and Pediatric Dosages:",
+            "timestamp": 1615178898,
+            "title": "Clobetasol: Side Effects, Dosages, Treatment, Interactions ...",
+            "url": "https://www.rxlist.com/consumer_clobetasol_temovate/drugs-condition.htm"
+        },
+        {
+            "rank": 9,
+            "snippet": "<em>Temovate</em> is available by prescription only.<em> Temovate</em> (Clobetasol) is available in a 15g and 50g tube. The 15g tube is available upon request.<em> Temovate</em> is also known as Dermovate. Both drugs have an active ingrediant called clobetasol. Dermovate is a product of Schering Plough. Clobetasol cream \u2026",
+            "timestamp": 1615178898,
+            "title": "Buy Temovate (Clobetasol Propionate) from Our Certified ...",
+            "url": "https://www.canadianpharmacyking.com/Drug/Temovate"
+        }
+    ],
+    "timestamp": 1615178898,
+    "url": "http://www.bing.com/search?q=clobetasol+without+prescription"
+}

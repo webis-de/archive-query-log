@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "bluestacks keyboard not working",
+    "offset": null,
+    "page": null,
+    "query": "bluestacks keyboard not working",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Hello guys sometimes keyboard dosen't work in game .It may be for several reasons such as setting,updates etc. There is a trick to solve this problem...step ...",
+            "timestamp": 1637463746,
+            "title": "Bluestacks keyboard not working |problem solved |free fire ...",
+            "url": "https://www.youtube.com/watch?v=KO-BWXBC8JQ"
+        },
+        {
+            "rank": 2,
+            "snippet": "Hello guys,As you commented that those tricks of blustack controls are not working for someone . I made a new video about it to fix \"bluestacks controls not ...",
+            "timestamp": 1637463746,
+            "title": "Bluestacks keyboard not working | fix | bluestack controls ...",
+            "url": "https://www.youtube.com/watch?v=6TcMtpFf_6g"
+        },
+        {
+            "rank": 3,
+            "snippet": "hello, guys in this video i will tell you that how you can fix keyboard not working in bluestacks 5.keyboard not working in bluestacks 5how to fix keyboard n...",
+            "timestamp": 1637463746,
+            "title": "How to fix keyboard not working in BlueStacks 5 - YouTube",
+            "url": "https://www.youtube.com/watch?v=5XWVVq-Es5A"
+        },
+        {
+            "rank": 4,
+            "snippet": "Here's how you can do it: 1. Launch the game from your BlueStacks home screen, as shown below. 2. After the game launches, click on the \"Game controls\" icon on the side-toolbar, as shown below. 3. From the dropdown menu, click on the arrow under \"Scheme\" to view the list of available control schemes. 4.",
+            "timestamp": 1637463746,
+            "title": "Solution for controls not working ... - BlueStacks Support",
+            "url": "https://support.bluestacks.com/hc/en-us/articles/360059820171-Solution-for-controls-not-working-after-recent-game-update-on-BlueStacks-5"
+        },
+        {
+            "rank": 5,
+            "snippet": "BlUESTACKS KEYBOARD NOT WORKING hello,As many viewers commented that there problem is not solved yet So I made another video in this topic About the keyboard...",
+            "timestamp": 1637463746,
+            "title": "BlUESTACKS KEYBOARD NOT WORKING | FULL FIXED |SMART ...",
+            "url": "https://www.youtube.com/watch?v=3uHUKpCB5is"
+        },
+        {
+            "rank": 6,
+            "snippet": "Firt Of All Please Please Please Like And Subscribe Please Please Please Suportme On YoutubePlease Like And Subscribe And Comment Me For Me Next VideoI Wil...",
+            "timestamp": 1637463746,
+            "title": "Bluestacks Keyboard Not Working | Fix | Bluestack Controls ...",
+            "url": "https://www.youtube.com/watch?v=3rKSOl4tnso"
+        },
+        {
+            "rank": 7,
+            "snippet": "Bluestacks 5 won't work anymore unless you enable this driver again and restart. I can say for sure that Riot Vanguard did not detect PROCEXP113.SYS to be running, so if you don't want to uninstall Bluestacks yet but want to play games with anti-cheat, you can probably do this to temporarily disable it.",
+            "timestamp": 1637463746,
+            "title": "Physical Keyboard Not Working : BlueStacks",
+            "url": "https://www.reddit.com/r/BlueStacks/comments/j1jex3/physical_keyboard_not_working/"
+        },
+        {
+            "rank": 8,
+            "snippet": "Physical keyboard not working. Today I installed BS to play 7 deadly sins. The game runs perfectly but for some reason, at some point, my physical keyboard stop working until I restart the pc. I never had this issue before installing BS. Also, virtualbox keeps running even after I close BS.",
+            "timestamp": 1637463746,
+            "title": "Physical keyboard not working : BlueStacks",
+            "url": "https://www.reddit.com/r/BlueStacks/comments/fhq32d/physical_keyboard_not_working/"
+        },
+        {
+            "rank": 9,
+            "snippet": "How can I enable the virtual keyboard? 1. Launch BlueStacks on your computer and go to the Library.. 2. Now, open your System apps.. 3. Here, double click on the icon for Android Settings. 4. Once it opens up, click on Select IME under BlueStacks Settings, as shown below. 5. Within the IME (Input Method) settings, find the option to \"Enable OnScreen Keyboard\".",
+            "timestamp": 1637463746,
+            "title": "How to use a virtual keyboard on BlueStacks 4 \u2013 BlueStacks ...",
+            "url": "https://support.bluestacks.com/hc/en-us/articles/360045715231-How-to-use-a-virtual-keyboard-on-BlueStacks-4"
+        },
+        {
+            "rank": 10,
+            "snippet": "i am showing you simlpe way how to enable keyboard in bluestacks on your pc if get any problem ask in comment boxOK FRIENDS if like our video plz SUBSCRIBE...",
+            "timestamp": 1637463746,
+            "title": "how to enable keyboard in bluestacks - YouTube",
+            "url": "https://www.youtube.com/watch?v=ovGEZCnH9Y0"
+        }
+    ],
+    "timestamp": 1637463746,
+    "url": "https://www.qwant.com/?q=bluestacks+keyboard+not+working&client=brz-brave&t=web"
+}

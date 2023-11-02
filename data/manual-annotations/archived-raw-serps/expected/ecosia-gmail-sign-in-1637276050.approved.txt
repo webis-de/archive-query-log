@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "gmail sign in",
+    "offset": null,
+    "page": null,
+    "query": "gmail sign in",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Gmail is email that\u2019s intuitive, efficient, and useful. 15 GB of storage, less spam, and mobile access.",
+            "timestamp": 1637276050,
+            "title": "Gmail - Sign in - Google Accounts",
+            "url": "https://accounts.google.com/login?service=mail&lp=1"
+        },
+        {
+            "rank": 2,
+            "snippet": "Non \u00e8 possibile visualizzare una descrizione perch\u00e9 il sito non lo consente.",
+            "timestamp": 1637276050,
+            "title": "google mail",
+            "url": "https://mail.google.com/mail"
+        },
+        {
+            "rank": 3,
+            "snippet": "Sign in - Google Accounts",
+            "timestamp": 1637276050,
+            "title": "Sign in - Google Accounts",
+            "url": "https://accounts.google.com/Login"
+        },
+        {
+            "rank": 4,
+            "snippet": "Sign in. On your computer, go to gmail.com. Enter your Google Account email or phone number and password. If information is already filled in and you need to sign in to a different account, click Use another account. If you see a page descr\u2026",
+            "timestamp": 1637276050,
+            "title": "Sign in to Gmail - Computer - Gmail Help",
+            "url": "https://support.google.com/mail/answer/8494?hl=en&co=GENIE.Platform%3DDesktop"
+        },
+        {
+            "rank": 5,
+            "snippet": "Sign in. On your computer, go to gmail.com. Enter your Google Account email address or phone number and password. If information is already filled in and you need to sign in to a different account, click Use another account. If you see a pa\u2026",
+            "timestamp": 1637276050,
+            "title": "Sign in to Gmail - Computer - Gmail Help",
+            "url": "https://support.google.com/mail/answer/8494?co=GENIE.Platform%3DDesktop&hl=en-GB"
+        },
+        {
+            "rank": 6,
+            "snippet": "When you sign in to your Google Account, all the Google services you use work together to help you get more done. For example, flight confirmations in your Gmail inbox will automatically sync with your Google Calendar and Google Maps to hel\u2026",
+            "timestamp": 1637276050,
+            "title": "Google Account",
+            "url": "https://myaccount.google.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": "Gmail sign in problem . If you have a strong password (or just a very bad memory), you can forget your password anytime. Don\u2019t worry! Gmail will help you recover password. Gmail provided a password recovery sevice, which make it possible to\u2026",
+            "timestamp": 1637276050,
+            "title": "Gmail login mail, Gmail log in, Gmail sign in guide @Gmail ...",
+            "url": "http://civicmediaproject.org/works/support/gmail-login"
+        },
+        {
+            "rank": 8,
+            "snippet": "Sign in - Google Accounts",
+            "timestamp": 1637276050,
+            "title": "Sign in - Google Accounts",
+            "url": "https://classroom.google.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Get free Outlook email and calendar, plus Office Online apps like Word, Excel and PowerPoint. Sign in to access your Outlook, Hotmail or Live email account.",
+            "timestamp": 1637276050,
+            "title": "Outlook \u2013 free personal email and calendar from Microsoft",
+            "url": "https://outlook.live.com/"
+        }
+    ],
+    "timestamp": 1637276050,
+    "url": "https://www.ecosia.org/search?q=gmail+sign+in"
+}

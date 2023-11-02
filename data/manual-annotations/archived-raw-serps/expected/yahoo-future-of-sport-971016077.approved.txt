@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "future of sport",
+    "offset": null,
+    "page": null,
+    "query": "future of sport",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "<em>Future</em> <em>Sport</em>s",
+            "url": "http://srd.yahoo.com/srst/12829150/future+of+sport/1/105/*http://www.broomball.com/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "<em>Future</em>s Golf Tour",
+            "url": "http://srd.yahoo.com/srst/8583264/future+of+sport/2/105/*http://www.futurestour.com"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Hockey's <em>Future</em>",
+            "url": "http://srd.yahoo.com/srst/7836772/future+of+sport/3/105/*http://www.hockeysfuture.com/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Coast to Coast: Past to <em>Future</em>",
+            "url": "http://srd.yahoo.com/srst/22412578/future+of+sport/4/105/*http://www.shedrives.com/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Football's <em>Future</em>",
+            "url": "http://srd.yahoo.com/srst/355366/future+of+sport/5/105/*http://www.footballsfuture.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "<em>Future</em> Cottage",
+            "url": "http://srd.yahoo.com/srst/30487363/future+of+sport/6/105/*http://www.futurecottage.com/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Once and <em>Future</em> Cleveland Browns",
+            "url": "http://srd.yahoo.com/srst/638344/future+of+sport/7/105/*http://www.thecanterburys.com/jerry/browns/index.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Skating's <em>Future</em>: Sarah Hughes",
+            "url": "http://srd.yahoo.com/srst/27660274/future+of+sport/8/105/*http://home.att.net/~icesk8er/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "<em>Future</em> Fins",
+            "url": "http://srd.yahoo.com/srst/24230662/future+of+sport/9/105/*http://futurefins.com"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "<em>Future</em> Pro, Inc.",
+            "url": "http://srd.yahoo.com/srst/9011567/future+of+sport/10/105/*http://www.futureproinc.com"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Great Lakes <em>Sport</em> Fishing Council",
+            "url": "http://srd.yahoo.com/srst/1006096/future+of+sport/11/105/*http://www.great-lakes.org"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Ballparks by Munsey &amp; Suppes",
+            "url": "http://srd.yahoo.com/srst/157781/future+of+sport/12/105/*http://www.ballparks.com/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Stock-Trak",
+            "url": "http://srd.yahoo.com/srst/530873/future+of+sport/13/105/*http://www.stocktrak.com"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Grand Canyon Fund",
+            "url": "http://srd.yahoo.com/srst/13091351/future+of+sport/14/105/*http://www.grandcanyonfund.org"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Alpaca Association <em>of</em> Western Washington",
+            "url": "http://srd.yahoo.com/srst/2138867/future+of+sport/15/105/*http://alpacawa.org"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "<em>Future</em> Products Corporation",
+            "url": "http://srd.yahoo.com/srst/13120293/future+of+sport/16/105/*http://www.aquaforce.com"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Universal Studios Hollywood",
+            "url": "http://srd.yahoo.com/srst/32921/future+of+sport/17/105/*http://www.universalstudios.com/unicity2/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Kathmandu Environment Education Project (KEEP)",
+            "url": "http://srd.yahoo.com/srst/27841890/future+of+sport/18/105/*http://www.keepnepal.org/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "Jeff's Lostworld Disneyland Memories",
+            "url": "http://srd.yahoo.com/srst/200063/future+of+sport/19/105/*http://www.lostworld.pair.com/disneyland/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 971016077,
+            "title": "National Corvette Museum",
+            "url": "http://srd.yahoo.com/srst/289461/future+of+sport/20/105/*http://www.corvettemuseum.com"
+        }
+    ],
+    "timestamp": 971016077,
+    "url": "http://search.yahoo.com:80/search?p=future+of+sport"
+}

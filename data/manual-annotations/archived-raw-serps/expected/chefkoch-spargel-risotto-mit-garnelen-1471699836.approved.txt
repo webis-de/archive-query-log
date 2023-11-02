@@ -1,0 +1,38 @@
+{
+    "interpreted_query": "spargel risotto mit garnelen",
+    "offset": null,
+    "page": 0,
+    "query": "spargel+risotto+mit+garnelen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Salzarm, Baby Led Weaning (BLW) geeignet",
+            "timestamp": 1471699836,
+            "title": "Rollgerste-Kr\u00e4uter-Risotto mit gr\u00fcnem Spargel und Garnelen",
+            "url": "http://www.chefkoch.de/rezepte/3128071466070033/Rollgerste-Kraeuter-Risotto-mit-gruenem-Spargel-und-Garnelen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Spargel waschen, den wei\u00dfen ganz sch\u00e4len, beim gr\u00fcnen Spargel nur das untere Drittel. Holzige Enden entfernen. Spargel in ca. 4 cm...",
+            "timestamp": 1471699836,
+            "title": "Estragon - Risotto mit gr\u00fcnem und wei\u00dfem Spargel und Garnelen",
+            "url": "http://www.chefkoch.de/rezepte/1611051268349130/Estragon-Risotto-mit-gruenem-und-weissem-Spargel-und-Garnelen.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "auf Risotto mit karamellisiertem Spargel",
+            "timestamp": 1471699836,
+            "title": "Gebratene Garnelen",
+            "url": "http://www.chefkoch.de/rezepte/917511197214075/Gebratene-Garnelen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": "Risotto mit Meeresfr\u00fcchten",
+            "timestamp": 1471699836,
+            "title": "Risotto con Frutti di Mare",
+            "url": "http://www.chefkoch.de/rezepte/1688501277138472/Risotto-con-Frutti-di-Mare.html"
+        }
+    ],
+    "timestamp": 1471699836,
+    "url": "http://www.chefkoch.de/rs/s0/spargel+risotto+mit+garnelen/Rezepte.html"
+}

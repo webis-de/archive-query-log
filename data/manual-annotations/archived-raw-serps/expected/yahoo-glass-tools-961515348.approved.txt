@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "glass tools",
+    "offset": null,
+    "page": null,
+    "query": "glass tools",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "<em>Glass</em>",
+            "url": "http://dir.yahoo.com/Business_and_Economy/Business_to_Business/Automotive/Tools_and_Equipment/Glass/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "<em>Glass</em> Equipment Development (GED)",
+            "url": "http://www.gedusa.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Integrated <em>Glass</em> Systems",
+            "url": "http://www.valkema.com"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "<em>Glass</em> Technology",
+            "url": "http://www.creativelinks.com/gt/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Tint-<em>Tools</em>.com",
+            "url": "http://www.tint-tools.com/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Tempsford Stained <em>Glass</em> UK",
+            "url": "http://tempsford.net/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "<em>Glass</em> Wholesalers, Inc",
+            "url": "http://www.gwiweb.com/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "<em>Glass</em> Wholesalers, Inc",
+            "url": "http://www.gwiweb.com/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Castle Stained <em>Glass</em>",
+            "url": "http://www.castlestainedglass.com"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Stained <em>Glass</em> Bargains",
+            "url": "http://www.stainedglass-bargains.com"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Stained <em>Glass</em> Web-Mart",
+            "url": "http://www.glassmart.com"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Tempsford Stained <em>Glass</em> UK",
+            "url": "http://tempsford.net/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Finn's Stained <em>Glass</em>",
+            "url": "http://www.finnsglass.com.au"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "<em>Glass</em> Expressions",
+            "url": "http://www.glassartexpressions.com"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "<em>Glass</em> Expressions",
+            "url": "http://www.glassartexpressions.com"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Tempsford Stained <em>Glass</em> UK",
+            "url": "http://tempsford.net/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "<em>Glass</em> Wholesalers, Inc",
+            "url": "http://www.gwiweb.com/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Jordon <em>Glass</em> Corp.",
+            "url": "http://www.glass1usa.com"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Castle Stained <em>Glass</em>",
+            "url": "http://www.castlestainedglass.com"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 961515348,
+            "title": "Jordon <em>Glass</em> Corp.",
+            "url": "http://www.glass1usa.com"
+        }
+    ],
+    "timestamp": 961515348,
+    "url": "http://search.yahoo.com:80/search?p=glass+tools"
+}

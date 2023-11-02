@@ -1,0 +1,220 @@
+{
+    "interpreted_query": "spargel,wei\u00df",
+    "offset": null,
+    "page": 0,
+    "query": "spargel,wei\ufffd",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel im eigenen Saft",
+            "url": "http://www.chefkoch.de:80/rezepte/295101108824019/Spargel-im-eigenen-Saft.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Gebratener Spargel mit Knoblauch",
+            "url": "http://www.chefkoch.de:80/rezepte/470061140595440/Gebratener-Spargel-mit-Knoblauch.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel, paniert",
+            "url": "http://www.chefkoch.de:80/rezepte/151091066481615/Spargel-paniert.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Stangenspargel",
+            "url": "http://www.chefkoch.de:80/rezepte/301811110212118/Stangenspargel.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "Grundrezept",
+            "timestamp": 1194284442,
+            "title": "Spargel, gekocht",
+            "url": "http://www.chefkoch.de:80/rezepte/358811121244824/Spargel-gekocht.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Frittierter Spargel in Seranomantel",
+            "url": "http://www.chefkoch.de:80/rezepte/485561142629653/Frittierter-Spargel-in-Seranomantel.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargelmousse",
+            "url": "http://www.chefkoch.de:80/rezepte/562471154443999/Spargelmousse.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Gebratener Spargel",
+            "url": "http://www.chefkoch.de:80/rezepte/676471169985935/Gebratener-Spargel.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel mit Orangen-Hollandaise",
+            "url": "http://www.chefkoch.de:80/rezepte/712987592024/Spargel-mit-Orangen-Hollandaise.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "Asparagi alla Parmigiana",
+            "timestamp": 1194284442,
+            "title": "Spargelsalat",
+            "url": "http://www.chefkoch.de:80/rezepte/271181104048759/Spargelsalat.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Karamellisierter Spargel mit Erdbeeren und Vanilleeis",
+            "url": "http://www.chefkoch.de:80/rezepte/372561122991091/Karamellisierter-Spargel-mit-Erdbeeren-und-Vanilleeis.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel mit Rippli oder Kasseler",
+            "url": "http://www.chefkoch.de:80/rezepte/676551169988836/Spargel-mit-Rippli-oder-Kasseler.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Gebratener Spargel mit Pasta",
+            "url": "http://www.chefkoch.de:80/rezepte/1124988982043/Gebratener-Spargel-mit-Pasta.html"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel-Gem\u00fcseragout",
+            "url": "http://www.chefkoch.de:80/rezepte/1140989072286/Spargel-Gemueseragout.html"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel in Petersiliensahne",
+            "url": "http://www.chefkoch.de:80/rezepte/30021008084615/Spargel-in-Petersiliensahne.html"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel in Bl\u00e4tterteig",
+            "url": "http://www.chefkoch.de:80/rezepte/51111018016971/Spargel-in-Blaetterteig.html"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargelcremesuppe mit Krabben",
+            "url": "http://www.chefkoch.de:80/rezepte/55531019747024/Spargelcremesuppe-mit-Krabben.html"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel - Pasteten mit R\u00e4ucherlachs",
+            "url": "http://www.chefkoch.de:80/rezepte/58481021456542/Spargel-Pasteten-mit-Raeucherlachs.html"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel - Fisch - Frikassee",
+            "url": "http://www.chefkoch.de:80/rezepte/60431021991929/Spargel-Fisch-Frikassee.html"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargelflan mit Kr\u00e4utersauce",
+            "url": "http://www.chefkoch.de:80/rezepte/61671022412277/Spargelflan-mit-Kraeutersauce.html"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel mit Mozarella - P\u00e4ckchen",
+            "url": "http://www.chefkoch.de:80/rezepte/64101023707626/Spargel-mit-Mozarella-Paeckchen.html"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargelragout mit Lachs und Scampi",
+            "url": "http://www.chefkoch.de:80/rezepte/64561023798119/Spargelragout-mit-Lachs-und-Scampi.html"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel mit Mozzarella - Schinken - P\u00e4ckchen",
+            "url": "http://www.chefkoch.de:80/rezepte/66201024324611/Spargel-mit-Mozzarella-Schinken-Paeckchen.html"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel mit Kr\u00e4uterfilet",
+            "url": "http://www.chefkoch.de:80/rezepte/68861025534230/Spargel-mit-Kraeuterfilet.html"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel mit Schinken und Krabben",
+            "url": "http://www.chefkoch.de:80/rezepte/71041026389985/Spargel-mit-Schinken-und-Krabben.html"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Gefl\u00fcgel - Spargel - Ragout",
+            "url": "http://www.chefkoch.de:80/rezepte/122321052127115/Gefluegel-Spargel-Ragout.html"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel mit kalter Schinkensauce",
+            "url": "http://www.chefkoch.de:80/rezepte/141411060949840/Spargel-mit-kalter-Schinkensauce.html"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargelsuppe Gr\u00fcn/Wei\u00df",
+            "url": "http://www.chefkoch.de:80/rezepte/151241066555034/Spargelsuppe-Gruen-Weiss.html"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel - Erdbeer - Salat",
+            "url": "http://www.chefkoch.de:80/rezepte/164421071496339/Spargel-Erdbeer-Salat.html"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1194284442,
+            "title": "Spargel Florentin",
+            "url": "http://www.chefkoch.de:80/rezepte/208811087467496/Spargel-Florentin.html"
+        }
+    ],
+    "timestamp": 1194284442,
+    "url": "http://www.chefkoch.de:80/rs/s0/spargel%2Cwei%DF/Rezepte.html"
+}

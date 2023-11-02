@@ -1,0 +1,59 @@
+{
+    "interpreted_query": "gnome desktop entry",
+    "offset": null,
+    "page": null,
+    "query": "gnome desktop entry",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "The desktop entry file specifies the details for the item such as a name, a command to run, an icon, and so on. It also contains keywords which determine the location of the item in the menu hierarchy. Desktop entry files must reside in the $XDG_DATA_DIRS/applications directory and must have a .desktop file extension.",
+            "timestamp": 1655209403,
+            "title": "Desktop Entry Files - GNOME",
+            "url": "https://help.gnome.org/admin//system-admin-guide/2.32/menustructure-desktopentry.html.en"
+        },
+        {
+            "rank": 2,
+            "snippet": "I tried to create both a desktop-entry in Gnome 3 (on Fedora 28) or a menu-item. This is my desktop-entry: [Desktop Entry] Name=Prom Exec=/home/bengbers/Programs/Prom/ProM68.sh %u Type=Application StartupNotify=true Terminal=false Categories=Development;Java; After double-clicking this iscon, nothing happens.",
+            "timestamp": 1655209403,
+            "title": "How to create a desktop-entry in Gnome - Unix &amp; Linux Stack Exchange",
+            "url": "https://unix.stackexchange.com/questions/468221/how-to-create-a-desktop-entry-in-gnome"
+        },
+        {
+            "rank": 3,
+            "snippet": "Each desktop entry representing an application is identified by its desktop file ID, which is based on its filename. To determine the ID of a desktop file, make its full path relative to the $XDG_DATA_DIRS component in which the desktop file is installed, remove the \"applications/\" prefix, and turn '/' into '-'.",
+            "timestamp": 1655209403,
+            "title": "Desktop Entry Specification - GNOME Developer Center",
+            "url": "https://developer-old.gnome.org/desktop-entry-spec/"
+        },
+        {
+            "rank": 4,
+            "snippet": "I have installed ProM 6.8 (a process mining tool, written in Java) and after executing the command ./ProM68.sh &amp; in a terminal, the application starts without problems. I tried to create both a",
+            "timestamp": 1655209403,
+            "title": "How to create a desktop-entry in Gnome? - Stack Overflow",
+            "url": "https://stackoverflow.com/questions/52256401/how-to-create-a-desktop-entry-in-gnome"
+        },
+        {
+            "rank": 5,
+            "snippet": "A desktop entry file is a data file that provides information about an item in a menu. The desktop entry file specifies the details for the item such as a name, a command to run, an icon, and so on. The desktop entry file also contains keywords which determine the location of the item in the menu hierarchy. Desktop entry files have a .desktop file extension.",
+            "timestamp": 1655209403,
+            "title": "Desktop Entry Files (GNOME 2.2 Desktop on Linux System Administration ...",
+            "url": "https://docs.oracle.com/cd/E19957-01/817-5310/6mkpbn3th/index.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "- Ask Ubuntu Gnome desktop entry not working? 2 when I select two video files and open them through the Files manager, it opens two vlc instances, even though I have /usr/bin/vlc --started-from-file %U in /usr/share/applications/vlc.desktop (see here for the meaning of %U). Is this a known bug in Ubuntu 18.04 ? (it worked in Ubuntu 16.04).",
+            "timestamp": 1655209403,
+            "title": "launcher - Gnome desktop entry not working? - Ask Ubuntu",
+            "url": "https://askubuntu.com/questions/1074172/gnome-desktop-entry-not-working"
+        },
+        {
+            "rank": 7,
+            "snippet": "In GNOME and other freedesktop.org-compliant desktops, an application gets registered into the desktop's menus through a desktop entry, which is a text file with .desktop extension. This desktop file contains a listing of the configurations for your application. The desktop takes the information in this file and uses it to:",
+            "timestamp": 1655209403,
+            "title": "Desktop files: putting your application in the desktop menus - GNOME",
+            "url": "https://developer-old.gnome.org/integration-guide/stable/desktop-files.html.en"
+        }
+    ],
+    "timestamp": 1655209403,
+    "url": "https://www.ecosia.org/search?q=gnome+desktop+entry"
+}

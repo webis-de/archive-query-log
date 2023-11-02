@@ -1,4 +1,5 @@
 from collections import defaultdict
+from datetime import datetime, timezone
 from gzip import GzipFile
 from io import TextIOWrapper, BytesIO
 from json import loads
@@ -32,6 +33,15 @@ TESTS_PATH = PROJECT_DIRECTORY_PATH / \
              "archive_query_log/results/test/"
 
 PATTERN_SPECIAL_CHARS = pattern(r"[^0-9a-z]+")
+
+
+def warc_url(url: str, timestamp: float) -> str:
+    wayback_timestamp = datetime \
+        .fromtimestamp(timestamp, timezone.utc) \
+        .strftime("%Y%m%d%H%M%S")
+    wayback_raw_url = \
+        f"https://web.archive.org/web/{wayback_timestamp}id_/{url}"
+    return wayback_raw_url
 
 
 def main():
@@ -94,7 +104,10 @@ def main():
                 url_headers = {
                     "Archived-URL": schema.dumps(archived_query_url),
                 }
-                wayback_raw_url = query_url["serp_wayback_raw_url"]
+                wayback_raw_url = warc_url(
+                    query_url["serp_url"],
+                    int(query_url["serp_timestamp"]),
+                )
                 response = get(
                     wayback_raw_url,
                     timeout=60 * 4,  # nosec: 400
@@ -159,7 +172,10 @@ def main():
             }
         with test_path.open("at") as o:
             for query_url in query_urls[service_name]:
-                wayback_raw_url = query_url["serp_wayback_raw_url"]
+                wayback_raw_url = warc_url(
+                    query_url["serp_url"],
+                    int(query_url["serp_timestamp"]),
+                )
 
                 query = query_url["serp_query_text_url"]
                 query = slugify(query)

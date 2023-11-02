@@ -1,0 +1,87 @@
+{
+    "interpreted_query": "USB 3.1 Type C DP ALT-MODE",
+    "offset": null,
+    "page": null,
+    "query": "USB 3.1 Type C DP ALT-MODE",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "May 2, 2022 -\n            The <em>USB</em> <em>Type</em> <em>C</em> is the newly introduced standard of <em>USB</em> connectors that arrives with many advantages. Primarily, it solves several problems of the traditional connectors. Earlier, you needed different connectors for different devices, and the introduction of <em>Type</em> <em>C</em> solved this problem and multiplied ...",
+            "timestamp": 1667002333,
+            "title": "<em></em>What is DP Alt Mode and Full Function Type C Port? \u2013 UPERFECT",
+            "url": "https://www.uperfectmonitor.com/blogs/portable-monitor/what-is-dp-alt-mode-and-full-function-type-c-port"
+        },
+        {
+            "rank": 2,
+            "snippet": "April 29, 2020 -\n            DisplayPort leverages the Alternate <em>Mode</em> Functional Extension of the <em>USB</em> <em>Type</em>-<em>C</em> interface, and shares similar electrical characteristics with <em>USB</em> <em>3</em>.<em>1</em>, allowing use of common system elements.",
+            "timestamp": 1667002333,
+            "title": "<em></em>DisplayPort over USB-C - DisplayPort",
+            "url": "https://www.displayport.org/displayport-over-usb-c/"
+        },
+        {
+            "rank": 3,
+            "snippet": "September 22, 2014 -\n            From a technical level the <em>DP</em> <em>Alt</em> <em>Mode</em> specification is actually rather simple. <em>USB</em> <em>Type</em>-<em>C</em> \u2013 which immediately implies using/supporting <em>USB</em> <em>3</em>.<em>1</em> signaling \u2013 uses 4 lanes (pairs) of differential signaling for <em>USB</em> Superspeed data, which are split up in a 2-up/2-down configuration for full ...",
+            "timestamp": 1667002333,
+            "title": "<em></em>DisplayPort Alternate Mode for USB Type-C Announced - Video, Power, ...",
+            "url": "https://www.anandtech.com/show/8558/displayport-alternate-mode-for-usb-typec-announced"
+        },
+        {
+            "rank": 4,
+            "snippet": "November 17, 2021 -\n            HDMI <em>Alt</em> <em>Mode</em> <em>for</em> <em>USB</em> <em>Type</em>-<em>C</em>, HDMI <em>Type</em> <em>C</em>, HDMI <em>type</em>-<em>c</em>, HDMI <em>Type</em>-<em>C</em> connector, HDMI <em>Type</em> <em>C</em> connector, 4K, ARC, HEC, CEC,",
+            "timestamp": 1667002333,
+            "title": "<em></em>HDMI Alt Mode USB Type-C",
+            "url": "https://www.hdmi.org/spec/typec"
+        },
+        {
+            "rank": 5,
+            "snippet": "CAC-1557 - The Club 3D CAC-1557 is a DisplayPort\u2122 signal converter. The <em>USB</em> <em>Type</em> <em>C</em> to DisplayPort\u2122 <em>1</em>.4 Cable is the easiest solution for connecting your <em>USB</em> <em>Type</em> <em>C</em> source device featuring DisplayPort\u2122 Alternate <em>Mode</em> to a DisplayPort\u2122 <em>1</em>.4 Monitor, Television or Projector and vice versa.",
+            "timestamp": 1667002333,
+            "title": "<em></em>Club 3D | USB Type C Cable to DP 1.4 8K60Hz M/M 1.8m/5.9ft",
+            "url": "https://www.club-3d.com/en/detail/2470/usb_type_c_cable_to_dp_1.4_8k60hz_m-m_1.8m-5.9ft/"
+        },
+        {
+            "rank": 6,
+            "snippet": "Please, fill in your email address below and we will get back to you with time proposals for an online demo. If you have any questions or expectations regarding the demo, let us know in the Additional info field \u00b7 If you have questions about the installation and use of Unigraf products, please ...",
+            "timestamp": 1667002333,
+            "title": "<em></em>USB-C\u2122 DP Alt Mode Test Tools - Products - Unigraf",
+            "url": "https://www.unigraf.fi/products/usb-c-dp-alt-mode-test-tools"
+        },
+        {
+            "rank": 7,
+            "snippet": "July 15, 2022 -\n            The Universal Serial Bus (<em>USB</em>) port is perhaps the most commonly used and easily recognizable PC connectivity standard found on modern hardware. But as universal as the rectangular port and its various data transfer standards are, things have changed with the introduction of <em>USB</em> <em>Type</em>-<em>C</em>.",
+            "timestamp": 1667002333,
+            "title": "<em></em>USB Type-C and USB 3.1 (now called USB 3.2) Explained",
+            "url": "https://www.onlogic.com/company/io-hub/usb-type-c-and-usb-3-1-explained/"
+        },
+        {
+            "rank": 8,
+            "snippet": "April 28, 2022 -\n            What exactly is the <em>USB</em>-<em>C</em> connector? In covering this topic this article will seek to answer the following questions: What is <em>USB</em>-<em>C</em>? Are all <em>USB</em>-<em>C</em> capabilities supported on every <em>USB</em>-<em>C</em> product? What is <em>USB</em>-<em>C</em> DisplayPort (<em>DP</em> <em>Alt</em> <em>Mode</em>)? How do you identify whether a device with a <em>USB</em>-<em>C</em> port supports ...",
+            "timestamp": 1667002333,
+            "title": "<em></em>USB-C Introduction: What is USB-C DisplayPort (DP Alt Mode) | BenQ US",
+            "url": "https://www.benq.com/en-us/knowledge-center/knowledge/usb-c-introduction-what-is-dp-alt-mode.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "2 weeks ago -\n            Reviews of the CLUB 3D CSV-1380 and CSV-1592. By PureGaming.es \u00b7 CAC-1589 <em>USB</em> Gen 2 <em>Type</em> <em>C</em> Active Optical Cable A/V Unidirectional M/M 20 m/ 65.62 ft",
+            "timestamp": 1667002333,
+            "title": "<em></em>Club 3D | USB C over ALT Mode",
+            "url": "https://www.club-3d.com/en/technology/15/usb_c_over_alt_mode/"
+        },
+        {
+            "rank": 10,
+            "snippet": "November 19, 2019 -\n            In the world of cables, <em>USB</em> <em>Type</em>-<em>C</em> is considered to be the most powerful and versatile connector <em>type</em> to date. One of <em>Type</em>-<em>C</em>\u2019s features that allows for its flexibility is...",
+            "timestamp": 1667002333,
+            "title": "<em></em>How to Enable DisplayPort Alt Mode over a USB Type-C Cable - Total ...",
+            "url": "https://www.totalphase.com/blog/2019/11/how-displayport-alt-mode-is-enabled-over-a-usb-type-c-cable/"
+        },
+        {
+            "rank": 11,
+            "snippet": "August 24, 2017 -\n            Continuing our discussion on display technologies, let\u2019s turn our attention to <em>USB</em>-<em>C</em> and DisplayPort. The DisplayPort protocol, which used to have a unique connector,...",
+            "timestamp": 1667002333,
+            "title": "<em></em>Tech Talk: Using USB-C and DisplayPort over Alt Mode",
+            "url": "https://blog.startech.com/post/tech-talk-using-usb-c-and-displayport-over-alt-mode/"
+        }
+    ],
+    "timestamp": 1667002333,
+    "url": "https://search.brave.com/search?q=USB+3.1+Type+C+DP+ALT-MODE&source=desktop"
+}

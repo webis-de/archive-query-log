@@ -1,0 +1,101 @@
+{
+    "interpreted_query": "tabouleh -rosinen",
+    "offset": null,
+    "page": 0,
+    "query": "tabouleh+-rosinen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Tabouleh",
+            "url": "http://www.chefkoch.de:80/rezepte/285071107091158/Tabouleh.html"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Tabouleh",
+            "url": "http://www.chefkoch.de:80/rezepte/363581121859847/Tabouleh.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Tabouleh",
+            "url": "http://www.chefkoch.de:80/rezepte/472071140744330/Tabouleh.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Tabouleh",
+            "url": "http://www.chefkoch.de:80/rezepte/987421204098378/Tabouleh.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Tabouleh",
+            "url": "http://www.chefkoch.de:80/rezepte/1637731271327009/Tabouleh.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Tabouleh Salat",
+            "url": "http://www.chefkoch.de:80/rezepte/2287541364831231/Tabouleh-Salat.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Petersilien-Tabouleh",
+            "url": "http://www.chefkoch.de:80/rezepte/1996261323283601/Petersilien-Tabouleh.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Tabouleh",
+            "url": "http://www.chefkoch.de:80/rezepte/498491144511330/Tabouleh.html"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Petersiliensalat",
+            "url": "http://www.chefkoch.de:80/rezepte/211581088667214/Petersiliensalat.html"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Libanesischer Petersiliensalat",
+            "url": "http://www.chefkoch.de:80/rezepte/1569901264439030/Libanesischer-Petersiliensalat.html"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Scharfer Petersilien - Minze - Salat",
+            "url": "http://www.chefkoch.de:80/rezepte/815321185962682/Scharfer-Petersilien-Minze-Salat.html"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Tabul\u00e9",
+            "url": "http://www.chefkoch.de:80/rezepte/667031168680268/Tabul.html"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1382360347,
+            "title": "Pikanter Tomaten - Couscous",
+            "url": "http://www.chefkoch.de:80/rezepte/1159251222078861/Pikanter-Tomaten-Couscous.html"
+        }
+    ],
+    "timestamp": 1382360347,
+    "url": "http://www.chefkoch.de:80/rs/s0/tabouleh+-rosinen/Rezepte.html"
+}

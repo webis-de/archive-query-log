@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Wan, Y., Menon, S., and Ramaprasad, A. 2009. The paradoxical nature of electronic decision aids on comparison-shopping: The experiments and analysis. J. Theoret. Appl. Electron. Commerce Res., 80--96. ",
+    "offset": null,
+    "page": null,
+    "query": "Wan, Y., Menon, S., and Ramaprasad, A. 2009. The paradoxical nature of electronic decision aids on comparison-shopping: The experiments and analysis. J. Theoret. Appl. Electron. Commerce Res., 80--96.",
+    "results": [],
+    "timestamp": 1614187144,
+    "url": "https://scholar.google.com/scholar?hl=en&q=Wan%2C+Y.%2C+Menon%2C+S.%2C+and+Ramaprasad%2C+A.+2009.+The+paradoxical+nature+of+electronic+decision+aids+on+comparison-shopping%3A+The+experiments+and+analysis.+J.+Theoret.+Appl.+Electron.+Commerce+Res.%2C+80--96.+"
+}

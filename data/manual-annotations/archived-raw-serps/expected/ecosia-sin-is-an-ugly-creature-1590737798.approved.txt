@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "sin is an ugly creature",
+    "offset": null,
+    "page": null,
+    "query": "sin is an ugly creature",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "Home \u203a Bible \u203a The Beauty of Satan \u2013If I were the Devil \u2013Bible Verses Truth. The Beauty of Satan \u2013If I were the Devil \u2013Bible Verses Truth By darrellcreswell on January 13, 2013 \u2022 ( 25). I always see Satan depicted as this red, horned, hideous-looking <em>creature</em>, when in all actuality he is one of the most beautiful of all of God\u2019s creation.",
+            "timestamp": 1590737798,
+            "title": "The Beauty of Satan \u2013If I were the Devil \u2013Bible Verses ...",
+            "url": "https://darrellcreswell.wordpress.com/2013/01/13/the-beauty-of-satan-if-i-were-the-devil-bible-verses-truth/"
+        },
+        {
+            "rank": 2,
+            "snippet": "Here, feast your eyes on the 10 most <em>ugly</em> animals in the world. These species are sometimes considered nasty, although some of them are not that dangerous. Such species are found in different parts of the world. From the scaly to the slimy to the downright <em>ugly</em>, check out the world's ugliest animals animals list.",
+            "timestamp": 1590737798,
+            "title": "Ugliest Animals: Top 10 most ugly animals in the world ...",
+            "url": "https://www.wonderslist.com/10-ugliest-animals-planet/"
+        },
+        {
+            "rank": 3,
+            "snippet": "So, from the least <em>ugly</em> to the most revolting, natures 10 ugliest <em>creatures</em>. 10. Mata Mata. The mata mata is a freshwater turtle found predominantly in South America, notably in the Amazon and Orinoco basins. The animal\u2019s peculiar physical aspect distinguishes it from other members of its order. It is an animal highly skilled in hunting ...",
+            "timestamp": 1590737798,
+            "title": "Top 10 Ugliest Creatures - Listverse",
+            "url": "https://listverse.com/2007/09/13/top-10-ugliest-creatures/"
+        },
+        {
+            "rank": 4,
+            "snippet": "Why Is The Devil Depicted As An <em>Ugly Creature</em>? Satan is often visualized as a red demon looking montser with a pointed tail with horns, and a pitch fork with an <em>ugly</em> face. When in fact Satan was one of God's most beautiful angel's who was thrown out of Heaven because of him challenging God's authority and Word.",
+            "timestamp": 1590737798,
+            "title": "Why Is The Devil Depicted As An Ugly Creature? | Yahoo Answers",
+            "url": "https://answers.yahoo.com/question/index?qid=20070905120444AA5j8OX"
+        },
+        {
+            "rank": 5,
+            "snippet": "Use Code: HelpBeasty In The Fortnite Item Shop! Make sure to follow me on social media for a free cookie \ud83c\udf6a \u2b9eTwitter: https://twitter.com/BeastyGotFire \u2b9eInsta...",
+            "timestamp": 1590737798,
+            "title": "WHAT IS THIS UGLY CREATURE?!!! - The Last Of Us - Part 4 ...",
+            "url": "https://www.youtube.com/watch?v=d0y3g4WtngI"
+        },
+        {
+            "rank": 6,
+            "snippet": "The beauty of a butterfly. ... Somebody is wondering why I\u2019m talking about such an <em>ugly</em> <em>creature</em> as the caterpillar. ... So even though like the butterfly we were born in <em>sin</em>, an <em>ugly</em> ...",
+            "timestamp": 1590737798,
+            "title": "The beauty of a butterfly | Laurinburg Exchange",
+            "url": "https://www.laurinburgexchange.com/news/religion/5780/the-beauty-of-a-butterfly"
+        },
+        {
+            "rank": 7,
+            "snippet": "The world's ugliest animals <em>-</em> in pictures. ... The blobfish has been voted world's ugliest animal after a campaign set up by the <em>Ugly</em> Animal Preservation ... Deep-sea <em>creature</em> crowned winner of a ...",
+            "timestamp": 1590737798,
+            "title": "The world's ugliest animals - in pictures | Environment ...",
+            "url": "https://www.theguardian.com/environment/gallery/2013/sep/12/worlds-ugliest-animals-in-pictures"
+        },
+        {
+            "rank": 8,
+            "snippet": "How <em>ugly</em> <em>sin</em> is to us depends upon the condition of our hearts. We can become callused and past feeling (1 Tim. 4:2; Eph. 4:19). We can become completely comfortable doing or knowing others are doing what the Bible unmistakably calls sinful (Rom. 1:32).",
+            "timestamp": 1590737798,
+            "title": "How Ugly Is Sin? \u2013 Preachers Pollard's Blog",
+            "url": "https://preacherpollard.com/2013/06/17/how-ugly-is-sin/"
+        },
+        {
+            "rank": 9,
+            "snippet": "Question: \"What is the <em>sin</em> nature?\" Answer: The <em>sin</em> nature is that aspect in man that makes him rebellious against God. When we speak of the <em>sin</em> nature, we refer to the fact that we have a natural inclination to <em>sin</em>; given the choice to do God\u2019s will or our own, we will naturally choose to do our own thing.",
+            "timestamp": 1590737798,
+            "title": "What is the sin nature? | GotQuestions.org",
+            "url": "https://www.gotquestions.org/sin-nature.html"
+        }
+    ],
+    "timestamp": 1590737798,
+    "url": "https://www.ecosia.org/search?q=sin+is+an+ugly+creature&addon=chrome&addonversion=3.2.0&method=topbar"
+}

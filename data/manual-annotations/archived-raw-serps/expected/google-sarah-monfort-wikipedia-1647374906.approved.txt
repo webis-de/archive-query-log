@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "\"Sarah Monfort\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"Sarah Monfort\" -wikipedia",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1647374906,
+            "title": "John Van Ausdal and Sarah Monfort Family",
+            "url": "https://books.google.com/books?id=ihzTzQEACAAJ&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgCEAE"
+        },
+        {
+            "rank": 3,
+            "snippet": "10 , 7 Phebe Johnson , Isaac Hendrickson , | Hendrick Brinckerhoff , Sarah Monfort , Sarah Snedeker , Jacob Brinckerhoff , Elizabeth Barkelow , C. , 1798 , Femmetye Springsteen , 1809 , Bernardus Bennet , Nov.",
+            "timestamp": 1647374906,
+            "title": "History of the First Reformed Dutch Church of Jamaica, L.I.",
+            "url": "https://books.google.com/books?id=OrbVAAAAMAAJ&pg=PA191&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgHEAE"
+        },
+        {
+            "rank": 4,
+            "snippet": "Ariaentie , wife of William van Duine , grandson Johannis Ditmas , children of dec'd son Peter's daughter , vizt : Peter Monfort , Antie Monfort , Sarah Monfort and Catherine Monfort . \u201c Worldly estate .",
+            "timestamp": 1647374906,
+            "title": "Calendar of Wills on File and Recorded in the Offices of the ...",
+            "url": "https://books.google.com/books?id=OJf5CdoAkrkC&pg=PA106&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgJEAE"
+        },
+        {
+            "rank": 5,
+            "snippet": "25 Mahala Schroyer . 50 rick 1 00 J. W. Poling ..... 25 Susan Trace 25 Wm . Schroyer ... 80 W. C. Scott ...... 1 00 Nettie Poling . 25 Rose Lord 50 David Schroyer .. 50 J. M. Cochran ... 100 Sarah Monfort .",
+            "timestamp": 1647374906,
+            "title": "Minutes of the Central Ohio Conference of the Methodist ...",
+            "url": "https://books.google.com/books?id=QeQpAAAAYAAJ&pg=PA842&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgIEAE"
+        },
+        {
+            "rank": 6,
+            "snippet": "Sarah Monfort ; Hendrick Pieterse ; Cornelis Pieterse , m , Geertje Simons ; John Pieterse , m . Neeltje Cowenhoven ; Gerrit Pieterse , m . Katrina ..... Martin Pieterse , m . Hanna Williams ; and Peter Pieterse , m . Willemtie .",
+            "timestamp": 1647374906,
+            "title": "Genealogy of the Van Brunt Family: 1653-1867",
+            "url": "https://books.google.com/books?id=XrVXAAAAcAAJ&pg=PA36&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgEEAE"
+        },
+        {
+            "rank": 7,
+            "snippet": "Wyntie , dau . of Harck Siboutsen , and dying in or about 1697 , left a son , Peter , in his minority . His widow m . Peter Haff . The son , Peter Luyster , settled at Oyster Bay , L. I. , m . Sarah Monfort , and by this marriage had\u00a0...",
+            "timestamp": 1647374906,
+            "title": "The Annals of Newtown, in Queens County, New-York: ...",
+            "url": "https://books.google.com/books?id=I5Q-AAAAYAAJ&pg=PA359&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgBEAE"
+        },
+        {
+            "rank": 8,
+            "snippet": "Granddaughter of Nicholas Maybee ( 1780-1842 ) and Sarah Monfort ( 17781854 ) , his wife , m . 1810 . Gr - granddaughter of Henry Maybee ( d . 1784 ) and Ann Van Cott ( 1756-84 ) , his wife , m . 1771 . Gr - gr - granddaughter of\u00a0...",
+            "timestamp": 1647374906,
+            "title": "Lineage Book",
+            "url": "https://books.google.com/books?id=U9oQAQAAMAAJ&pg=PA223&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgGEAE"
+        },
+        {
+            "rank": 9,
+            "snippet": "Hendrickson , Isaac , and Sarah Monfort , XXXVII . 90 1765. May 4. Hendrickson , Jane , and Abraham Lott , ... IX . 119 1782. June 23. Hendrickson , John , and Abigail Seaman ,. XXXVI . 61 1782. Oct. 17. Hendrickson , John , and Hannah\u00a0...",
+            "timestamp": 1647374906,
+            "title": "Names of persons for whom Marriage Licences were issued by ...",
+            "url": "https://books.google.com/books?id=zhhYAAAAcAAJ&pg=PA179&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgFEAE"
+        },
+        {
+            "rank": 10,
+            "snippet": "Hendrickson , Isaac , and Sarah Monfort , ... XXXVII . 90 1765. May 4. Hendrickson , Jane , and Abraham Lott , .. IX . 119 1782. June 23. Hendrickson , John , and Abigail Seaman ,. 61 1782. Oct. 17. Hendrickson , John , and Hannah\u00a0...",
+            "timestamp": 1647374906,
+            "title": "Names of Persons for Whom Marriage Licenses Were Issued by ...",
+            "url": "https://books.google.com/books?id=t1fITOcnHZgC&pg=PA179&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgDEAE"
+        },
+        {
+            "rank": 11,
+            "snippet": "Granddaughter of Nicholas Maybee ( 1780-1842 ) and Sarah Monfort ( 17781854 ) , his wife , m . 1810 . Gr - granddaughter of Henry Maybee ( d . 1784 ) and Ann Van Cott ( 1756-84 ) , his wife , m . 1771 . Gr - gr - granddaughter of\u00a0...",
+            "timestamp": 1647374906,
+            "title": "Lineage Book - National Society of the Daughters of the ...",
+            "url": "https://books.google.com/books?id=P2gZAQAAIAAJ&pg=PA223&dq=%22Sarah+Monfort%22+-wikipedia&hl=en&sa=X&ved=2ahUKEwjh-sSVg8n2AhW6KUQIHfS9CekQ6AF6BAgAEAE"
+        }
+    ],
+    "timestamp": 1647374906,
+    "url": "https://www.google.com/search?tbs=bks:1&q=%22Sarah+Monfort%22+-wikipedia"
+}

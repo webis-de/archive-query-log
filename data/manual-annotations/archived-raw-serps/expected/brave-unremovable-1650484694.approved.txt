@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "unremovable",
+    "offset": null,
+    "page": null,
+    "query": "unremovable",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Unremovable</em> definition: not able to be removed; fixed | Meaning, pronunciation, translations and examples",
+            "timestamp": 1650484694,
+            "title": "Unremovable definition and meaning | Collins English Dictionary",
+            "url": "https://www.collinsdictionary.com/us/dictionary/english/unremovable"
+        },
+        {
+            "rank": 2,
+            "snippet": "Synonyms for <em>unremovable</em> include irradicable, accepted, accustomed, chronic, deep-rooted, deep-seated, dyed-in-the-wool, entrenched, firmly established and fixed. Find more similar words at wordhippo.com!",
+            "timestamp": 1650484694,
+            "title": "What is another word for unremovable? | Unremovable Synonyms - ...",
+            "url": "https://www.wordhippo.com/what-is/another-word-for/unremovable.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "Define <em>unremovable</em>. <em>unremovable</em> synonyms, <em>unremovable</em> pronunciation, <em>unremovable</em> translation, English dictionary definition of <em>unremovable</em>. adj 1. not able to be removed; fixed 2. not able to be moved; unwavering; constant Collins English Dictionary \u2013 Complete and Unabridged, 12th Edition ...",
+            "timestamp": 1650484694,
+            "title": "Unremovable - definition of unremovable by The Free Dictionary",
+            "url": "https://www.thefreedictionary.com/unremovable"
+        },
+        {
+            "rank": 4,
+            "snippet": "6 hours ago -\n            More than 100 models of Lenovo laptops have critical vulnerabilities that allow hackers to install malware that is almost impossible to remove or, in some",
+            "timestamp": 1650484694,
+            "title": "Hackers can infect more than 100 Lenovo models with unremovable ...",
+            "url": "https://mezha.media/en/2022/04/20/hackers-can-infect-more-than-100-lenovo-models-with-unremovable-malware/"
+        },
+        {
+            "rank": 5,
+            "snippet": "October 10, 2019 -\n            UK English definition of <em>UNREMOVABLE</em> along with additional meanings, example sentences, and ways to say.",
+            "timestamp": 1650484694,
+            "title": "UNREMOVABLE | Meaning &amp; Definition for UK English | Lexico.com",
+            "url": "https://www.lexico.com/definition/unremovable"
+        },
+        {
+            "rank": 6,
+            "snippet": "14 hours ago -\n            by adminon April 20, 2022April 20, 2022Leave a Comment on Hackers can infect &gt;100 Lenovo models with <em>unremovable</em> malware. Are you patched?",
+            "timestamp": 1650484694,
+            "title": "Hackers can infect &gt;100 Lenovo models with unremovable malware. ...",
+            "url": "https://worldfootballnetwork.co.uk/news/hackers-can-infect-100-lenovo-models-with-unremovable-malware-are-you-patched/14867/"
+        },
+        {
+            "rank": 7,
+            "snippet": "December 18, 2017 -\n            As adjectives the difference between irremovable and <em>unremovable</em> is that irremovable is not removable; immovable; inflexible while <em>unremovable</em> is...",
+            "timestamp": 1650484694,
+            "title": "Irremovable vs Unremovable - What's the difference? | WikiDiff",
+            "url": "https://wikidiff.com/unremovable/irremovable"
+        },
+        {
+            "rank": 8,
+            "snippet": "Retrieved from \"https://en.wiktionary.org/w/index.php?title=unremovable&amp;oldid=47071801\"",
+            "timestamp": 1650484694,
+            "title": "unremovable - Wiktionary",
+            "url": "https://en.wiktionary.org/wiki/unremovable"
+        },
+        {
+            "rank": 9,
+            "snippet": "Another way to say <em>Unremovable</em>? Synonyms for <em>Unremovable</em> (other words and phrases for <em>Unremovable</em>).",
+            "timestamp": 1650484694,
+            "title": "Unremovable synonyms - 16 Words and Phrases for Unremovable",
+            "url": "https://www.powerthesaurus.org/unremovable/synonyms"
+        },
+        {
+            "rank": 10,
+            "snippet": "<em>unremovable</em> - WordReference English dictionary, questions, discussion and forums. All Free.",
+            "timestamp": 1650484694,
+            "title": "unremovable - WordReference.com Dictionary of English",
+            "url": "https://www.wordreference.com/definition/unremovable"
+        },
+        {
+            "rank": 11,
+            "snippet": "What does <em>unremovable</em> mean? Unable to be removed. (adjective)",
+            "timestamp": 1650484694,
+            "title": "Unremovable Meaning | Best 1 Definitions of Unremovable",
+            "url": "https://www.yourdictionary.com/unremovable"
+        },
+        {
+            "rank": 12,
+            "snippet": "\u00ab<em>Unremovable</em>\u00bb Meaning of <em>unremovable</em> in the English dictionary with examples of use. Synonyms for <em>unremovable</em> and translation of <em>unremovable</em> to 25 languages.",
+            "timestamp": 1650484694,
+            "title": "UNREMOVABLE - Definition and synonyms of unremovable in the English ...",
+            "url": "https://educalingo.com/en/dic-en/unremovable"
+        },
+        {
+            "rank": 13,
+            "snippet": "<em>unremovable</em>: That cannot be removed; fixed; irremovable.",
+            "timestamp": 1650484694,
+            "title": "unremovable \u2014 definition, examples, related words and more at ...",
+            "url": "https://www.wordnik.com/words/unremovable"
+        },
+        {
+            "rank": 14,
+            "snippet": "February 7, 2022 -\n            The meaning of <em>UNREMOVABLE</em> is not able to be removed or eliminated : not removable. How to use <em>unremovable</em> in a sentence.",
+            "timestamp": 1650484694,
+            "title": "Unremovable Definition &amp; Meaning - Merriam-Webster",
+            "url": "https://www.merriam-webster.com/dictionary/unremovable"
+        },
+        {
+            "rank": 15,
+            "snippet": "DomainOptions, Inc., 7260 W Azure Dr Ste 140-829, Las Vegas, NV 89130 USA. Email: info@domainoptions.net \u00b7 \u00a9 2011-2022 DomainOptions, Inc. Trademarks belong to their respective owners. All rights reserved",
+            "timestamp": 1650484694,
+            "title": "Synonyms for UNREMOVABLE - Thesaurus.net",
+            "url": "https://www.thesaurus.net/unremovable"
+        },
+        {
+            "rank": 16,
+            "snippet": "Translate texts with the world's best machine translation technology, developed by the creators of Linguee \u00b7 Look up words and phrases in comprehensive, reliable bilingual dictionaries and search through billions of online translations",
+            "timestamp": 1650484694,
+            "title": "unremovable - \u82f1\u4e2d \u2013 Linguee\u8bcd\u5178",
+            "url": "https://cn.linguee.com/%E8%8B%B1%E8%AF%AD-%E4%B8%AD%E6%96%87/%E7%BF%BB%E8%AD%AF/unremovable.html"
+        },
+        {
+            "rank": 17,
+            "snippet": "Find all the synonyms and alternative words for <em>unremovable</em> at Synonyms.com, the largest free online thesaurus, antonyms, definitions and translations resource on the web.",
+            "timestamp": 1650484694,
+            "title": "Unremovable Synonyms &amp; Antonyms | Synonyms.com",
+            "url": "https://www.synonyms.com/synonym/unremovable"
+        },
+        {
+            "rank": 18,
+            "snippet": "<em>unremovable</em> - Translation, Meaning and Definition of <em>unremovable</em> in Almaany Online Dictionary of English-Dutch. woordenboek, Nederlands, woordenboeken, gratis, online, thesaurus, een woordenlijst, te vertalen, vertaling, woordenboek Arabisch, Bulgaars woordenboek Chinees woordenboek, Kroatisch ...",
+            "timestamp": 1650484694,
+            "title": "Meaning of unremovable in Dutch english dictionary - Betekenis ...",
+            "url": "https://www.almaany.com/en/dict/en-nl/unremovable/"
+        },
+        {
+            "rank": 19,
+            "snippet": "What's the definition of <em>Unremovable</em> in thesaurus? Most related words/phrases with sentence examples define <em>Unremovable</em> meaning and usage.",
+            "timestamp": 1650484694,
+            "title": "UNREMOVABLE in Thesaurus: 41 Synonyms &amp; Antonyms for UNREMOVABLE",
+            "url": "https://www.powerthesaurus.org/unremovable"
+        },
+        {
+            "rank": 20,
+            "snippet": "Definition of removable from Dictionary.com, the world\u2019s leading online source for English definitions, pronunciations, word origins, idioms, Word of the Day, and more.",
+            "timestamp": 1650484694,
+            "title": "Unremovable | Definition of Unremovable at Dictionary.com",
+            "url": "https://www.dictionary.com/browse/removable"
+        }
+    ],
+    "timestamp": 1650484694,
+    "url": "https://search.brave.com/search?q=unremovable"
+}

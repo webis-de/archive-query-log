@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "troll",
+    "offset": null,
+    "page": null,
+    "query": "troll",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "A <em>troll</em> is a being in Scandinavian folklore, including Norse mythology. In Old Norse sources, beings described as <em>trolls</em> dwell in isolated areas of rocks, mountains, or caves, live together in small family units, and are rarely helpful to human beings. In later Scandinavian folklore, <em>trolls</em> ...",
+            "timestamp": 1649987736,
+            "title": "Troll - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Troll"
+        },
+        {
+            "rank": 2,
+            "snippet": "January 15, 2019 -\n            The meaning of <em>TROLL</em> is a dwarf or giant in Scandinavian folklore inhabiting caves or hills. How to use <em>troll</em> in a sentence.",
+            "timestamp": 1649987736,
+            "title": "Troll Definition &amp; Meaning - Merriam-Webster",
+            "url": "https://www.merriam-webster.com/dictionary/troll"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Troll</em>: Directed by John Carl Buechler. With Noah Hathaway, Michael Moriarty, Shelley Hack, Jenny Beck. A wicked <em>troll</em> king in search of a mystical ring that will transform him to human form invades a San Francisco apartment complex where a powerful witch lives.",
+            "timestamp": 1649987736,
+            "title": "Troll (1986) - IMDb",
+            "url": "https://www.imdb.com/title/tt0092115/"
+        },
+        {
+            "rank": 4,
+            "snippet": "From Norwegian or Swedish <em>troll</em> or Danish trold, from Old Norse tr\u01ebll (\u201cwitch, mage, conjurer\u201d) (compare Icelandic tr\u00f6ll), related to Middle High German <em>trolle</em> (\u201cspook, wraith, monster, ogre\u201d).[1] From Proto-Germanic *truzl\u0105 (\u201ca supernatural being; demon; fiend; giant; monster\u201d). ...",
+            "timestamp": 1649987736,
+            "title": "troll - Wiktionary",
+            "url": "https://en.wiktionary.org/wiki/troll"
+        },
+        {
+            "rank": 5,
+            "snippet": "Definition of <em>troll</em> from Dictionary.com, the world\u2019s leading online source for English definitions, pronunciations, word origins, idioms, Word of the Day, and more.",
+            "timestamp": 1649987736,
+            "title": "Troll Definition &amp; Meaning | Dictionary.com",
+            "url": "https://www.dictionary.com/browse/troll"
+        },
+        {
+            "rank": 6,
+            "snippet": "1 week ago -\n            <em>troll</em> meaning: 1. an imaginary, either very large or very small creature in traditional Scandinavian stories, that\u2026. Learn more.",
+            "timestamp": 1649987736,
+            "title": "TROLL | definition in the Cambridge English Dictionary",
+            "url": "https://dictionary.cambridge.org/us/dictionary/english/troll"
+        },
+        {
+            "rank": 7,
+            "snippet": "November 30, 2021 -\n            In internet slang, a <em>troll</em> is a person who posts inflammatory, insincere, digressive, extraneous, or off-topic messages in an online community (such as social media (Twitter, Facebook, Instagram, etc.), a newsgroup, forum, chat room, online video game, or blog), with the intent of provoking ...",
+            "timestamp": 1649987736,
+            "title": "Internet troll - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Internet_troll"
+        },
+        {
+            "rank": 8,
+            "snippet": "<em>Troll</em> is a 1986 American horror comedy film directed by John Carl Buechler and produced by Charles Band of Empire Pictures, starring Noah Hathaway, Michael Moriarty, Shelley Hack, Jenny Beck, and Sonny Bono. The film was shot in Italy in the Stabilimenti Cinematografici Pontini studios near Rome.",
+            "timestamp": 1649987736,
+            "title": "Troll (film) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Troll_(film)"
+        },
+        {
+            "rank": 9,
+            "snippet": "February 2, 2021 -\n            <em>troll</em>, in early Scandinavian folklore, giant, monstrous being, sometimes possessing magic powers. Hostile to men, <em>trolls</em> lived in castles and haunted the surrounding districts after dark. If exposed to sunlight they burst or turned to stone. In later tales <em>trolls</em> often are man-sized or smaller ...",
+            "timestamp": 1649987736,
+            "title": "troll | legendary creature | Britannica",
+            "url": "https://www.britannica.com/topic/troll"
+        },
+        {
+            "rank": 10,
+            "snippet": "August 26, 2003 -\n            In order to get his life back as a wizard, Torok the <em>troll</em> plans to take over an apartment building. His first step is to possess young Wendy Potter (Jennifer Beck). Her brother, Harry (Noah Hathaway), is the only one who suspects something is wrong. Fortunately, neighbor Eunice St.",
+            "timestamp": 1649987736,
+            "title": "Troll - Rotten Tomatoes",
+            "url": "https://www.rottentomatoes.com/m/troll"
+        },
+        {
+            "rank": 11,
+            "snippet": "<em>Troll</em> definition: In Scandinavian mythology , <em>trolls</em> are creatures who look like ugly people. They live in... | Meaning, pronunciation, translations and examples",
+            "timestamp": 1649987736,
+            "title": "Troll definition and meaning | Collins English Dictionary",
+            "url": "https://www.collinsdictionary.com/dictionary/english/troll"
+        },
+        {
+            "rank": 12,
+            "snippet": "Define <em>troll</em>. <em>troll</em> synonyms, <em>troll</em> pronunciation, <em>troll</em> translation, English dictionary definition of <em>troll</em>. <em>v</em>. <em>trolled</em> , <em>troll</em>\u00b7ing , <em>trolls</em> v. tr. 1. a. To fish for by trailing a baited line from behind a slowly moving boat. b. To fish in by trailing a baited...",
+            "timestamp": 1649987736,
+            "title": "Troll - definition of troll by The Free Dictionary",
+            "url": "https://www.thefreedictionary.com/troll"
+        },
+        {
+            "rank": 13,
+            "snippet": "August 15, 2012 -\n            A <em>troll</em> is a supernatural creature who is either very big or very small, ugly, and not very nice. You're most likely to read about a <em>troll</em> in a fairytale \u2014 perhaps trying to trick a beautiful princess into marrying him!",
+            "timestamp": 1649987736,
+            "title": "Troll - Definition, Meaning &amp; Synonyms | Vocabulary.com",
+            "url": "https://www.vocabulary.com/dictionary/troll"
+        },
+        {
+            "rank": 14,
+            "snippet": "The latest tweets from <em>Troll</em> Football (@TrollFootball)",
+            "timestamp": 1649987736,
+            "title": "Troll Football (@TrollFootball) \u00b7 Twitter",
+            "url": "https://twitter.com/TrollFootball"
+        },
+        {
+            "rank": 15,
+            "snippet": "August 26, 2020 -\n            Until <em>Trolls</em> World Tour, the franchise would use the term \"<em>Trolls</em>\" to explicitly refer to the then-only known Tribe of <em>Trolls</em>, the Pop <em>Trolls</em>. Therefore, some conflicting information exists between \"<em>Troll</em>\" and \"Pop <em>Troll</em>\". Thus, just because \"Pop <em>Trolls</em>\" do something doesn't mean that it applies ...",
+            "timestamp": 1649987736,
+            "title": "Trolls | Trolls Trollpedia | Fandom",
+            "url": "https://trolls.fandom.com/wiki/Trolls_(species)"
+        },
+        {
+            "rank": 16,
+            "snippet": "<em>Trolls</em>: Directed by Mike Mitchell, Walt Dohrn. With Anna Kendrick, Justin Timberlake, Zooey Deschanel, Christopher Mintz-Plasse. After the Bergens invade <em>Troll</em> Village, Poppy, the happiest <em>Troll</em> ever born, and the curmudgeonly Branch set off on a journey to rescue her friends.",
+            "timestamp": 1649987736,
+            "title": "Trolls (2016) - IMDb",
+            "url": "https://www.imdb.com/title/tt1679335/"
+        },
+        {
+            "rank": 17,
+            "snippet": "November 26, 2017 -\n            There are two conflicting definitions of the phrase internet <em>troll</em>, just as there are two conflicting origin stories. The more refined definition comes from the fishing technique of <em>trolling</em> (dragging a fishhook behind a boat) and is a synonym for trickster. This type of <em>troll</em> knowingly strings ...",
+            "timestamp": 1649987736,
+            "title": "How to Troll a Troll",
+            "url": "https://lifehacker.com/how-to-troll-a-troll-1819880278"
+        },
+        {
+            "rank": 18,
+            "snippet": "<em>Trolls</em> is a 2016 American computer-animated musical comedy film produced by DreamWorks Animation and based on the Good Luck <em>Trolls</em> dolls created by Thomas Dam. The film is directed by Mike Mitchell with a screenplay by Jonathan Aibel and Glenn Berger from a story by Erica Rivinoja.",
+            "timestamp": 1649987736,
+            "title": "Trolls (film) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Trolls_(film)"
+        },
+        {
+            "rank": 19,
+            "snippet": "April 10, 2019 -\n            Official Site of DreamWorks Animation. For 25 years, DreamWorks Animation has considered itself and its characters part of your family.",
+            "timestamp": 1649987736,
+            "title": "Trolls | Official Site | DreamWorks",
+            "url": "https://www.dreamworks.com/trolls"
+        },
+        {
+            "rank": 20,
+            "snippet": "Internet <em>trolls</em> like to start fights online by exploiting people's weaknesses and disrupting conversations.",
+            "timestamp": 1649987736,
+            "title": "What is an Internet Troll and How to Deal with Them | Webroot",
+            "url": "https://www.webroot.com/us/en/resources/tips-articles/you-cant-win-an-argument-with-a-troll"
+        }
+    ],
+    "timestamp": 1649987736,
+    "url": "https://search.brave.com/search?q=troll"
+}

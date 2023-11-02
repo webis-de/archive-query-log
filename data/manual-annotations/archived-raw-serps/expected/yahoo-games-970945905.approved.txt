@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "gAmes",
+    "offset": null,
+    "page": null,
+    "query": "gAmes",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "<em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/147939/gAmes/1/1023/*http://dir.yahoo.com/Recreation/Games/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Computer <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/148452/gAmes/2/1023/*http://dir.yahoo.com/Recreation/Games/Computer_Games/"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Video <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/150266/gAmes/3/1023/*http://dir.yahoo.com/Recreation/Games/Video_Games/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "International <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/156280/gAmes/4/1023/*http://dir.yahoo.com/Recreation/Sports/Events/International_Games/"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Olympic <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/156295/gAmes/5/1023/*http://dir.yahoo.com/Recreation/Sports/Events/International_Games/Olympic_Games/"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Card <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/148185/gAmes/6/1023/*http://dir.yahoo.com/Recreation/Games/Card_Games/"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Internet <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/149110/gAmes/7/1023/*http://dir.yahoo.com/Recreation/Games/Computer_Games/Internet_Games/"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "2000 Summer <em>Games</em> - Sydney",
+            "url": "http://srd.yahoo.com/srct/404692/gAmes/8/1023/*http://dir.yahoo.com/Recreation/Sports/Events/International_Games/Olympic_Games/2000_Summer_Games___Sydney/"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Board <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/147955/gAmes/9/1023/*http://dir.yahoo.com/Recreation/Games/Board_Games/"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "<em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/37168/gAmes/10/1023/*http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Games/"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Web <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/149117/gAmes/11/1023/*http://dir.yahoo.com/Recreation/Games/Computer_Games/Internet_Games/Web_Games/"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "<em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/23729/gAmes/12/1023/*http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Computers/Software/Games/"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Role Playing <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/150020/gAmes/13/1023/*http://dir.yahoo.com/Recreation/Games/Role_Playing_Games/"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Classic Arcade <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/644974/gAmes/14/1023/*http://dir.yahoo.com/Recreation/Games/Video_Games/Classic_Arcade_Games/"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Problems, Puzzles, and <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/347360/gAmes/15/1023/*http://dir.yahoo.com/Science/Mathematics/Problems__Puzzles__and_Games/"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Computer <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/22708991/gAmes/16/1023/*http://dir.yahoo.com/Entertainment/Humor/Computer_Games/"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Collectible Card <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/288135/gAmes/17/1023/*http://dir.yahoo.com/Recreation/Games/Card_Games/Collectible_Card_Games/"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Web <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/148998/gAmes/18/1023/*http://dir.yahoo.com/Recreation/Gambling/Web_Games/"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Fighting <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/665421/gAmes/19/1023/*http://dir.yahoo.com/Recreation/Games/Computer_Games/Titles/Action/Fighting_Games/"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 970945905,
+            "title": "Video <em>Games</em>",
+            "url": "http://srd.yahoo.com/srct/654041/gAmes/20/1023/*http://dir.yahoo.com/Business_and_Economy/Shopping_and_Services/Games/Video_Games/"
+        }
+    ],
+    "timestamp": 970945905,
+    "url": "http://search.yahoo.com:80/search?p=gAmes"
+}

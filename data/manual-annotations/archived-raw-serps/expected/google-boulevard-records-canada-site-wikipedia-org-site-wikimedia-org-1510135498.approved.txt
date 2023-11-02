@@ -1,0 +1,150 @@
+{
+    "interpreted_query": "\"Boulevard Records\" Canada -site:wikipedia.org -site:wikimedia.org",
+    "offset": null,
+    "page": null,
+    "query": "\"Boulevard Records\" Canada -site:wikipedia.org -site:wikimedia.org",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "flickr.com1986-09-15 'Express' by Love And Rockets [<em>Canada</em> Praxis fo\u2026 | Flickr1024 \u00d7 1024 - 454k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=https://www.flickr.com/photos/wishbook/9935262124&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IGjAA&usg=AOvVaw0LaEhsrIybgsxXnVFLJgeb"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "usafa.af.milBreaking Barriers! Air Force's 70th Birthday: November ...4206 \u00d7 2804 - 1086k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.usafa.af.mil/News/Features/Article/1052440/breaking-barriers-air-forces-70th-birthday-october-achievements/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IHDAB&usg=AOvVaw3_xBQ6DQzGGeIsX9uXDPT4"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "obamalibrary.govTrip to <em>Canada</em> | Barack Obama Presidential Library1200 \u00d7 800 - 97k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=https://www.obamalibrary.gov/timeline/trip-canada&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IHjAC&usg=AOvVaw3PplISCaW8SjCYtARG8OcQ"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "peterson.af.milFilm crew <em>records</em> training video at Peterson AFB &gt; Peterson Air ...526 \u00d7 394 - 46k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.peterson.af.mil/News/Display/Article/1125510/film-crew-records-training-video-at-peterson-afb/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IIDAD&usg=AOvVaw1Ttvvqnv4f_D_kacuOFFJl"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "travis.af.milDAVID GRANT USAF MEDICAL CENTER - OUTPATIENT MEDICAL <em>RECORDS</em> ...591 \u00d7 394 - 59k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.travis.af.mil/About-Us/Fact-Sheets/Display/Article/855906/david-grant-usaf-medical-center-outpatient-medical-records/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IIjAE&usg=AOvVaw35WMW8ie6gRgsTGQvfGb8U"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "macdill.af.milMaintainers for the human body: medical <em>records</em> technicians ensure ...591 \u00d7 394 - 38k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.macdill.af.mil/News/Features/Display/Article/1296740/maintainers-for-the-human-body-medical-records-technicians-ensure-accuracy/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IJDAF&usg=AOvVaw2vN0b3-tslVaWDjow13udY"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "usafa.af.milBreaking Barriers! Air Force's 70th Birthday: November ...5400 \u00d7 7200 - 8450k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.usafa.af.mil/News/Features/Article/1052440/breaking-barriers-air-forces-70th-birthday-october-achievements/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IJjAG&usg=AOvVaw1BBkikGUac7Aja-ypAD8LW"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "dhs.govThe Blog @ Homeland Security: November 20091600 \u00d7 1067 - 211k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=https://www.dhs.gov/journal/theblog/2009_11_01_archive.html&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IKDAH&usg=AOvVaw3FPRff55eTUwv4ULQQNbZh"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "health.milNaval Hospital Oak Harbor first Navy hospital to pilot new ...720 \u00d7 428 - 122k\u00a0-\u00a0ashx",
+            "url": "https://www.google.com/url?q=https://health.mil/News/Articles/2017/08/04/Naval-Hospital-Oak-Harbor-first-Navy-hospital-to-pilot-new-electronic-health-record&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IKjAI&usg=AOvVaw1uREcwHpECb75i90TcFy1J"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "usafa.af.milOne for the <em>record</em> books &gt; United States Air Force Academy ...3600 \u00d7 2400 - 2565k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.usafa.af.mil/News/Article-Display/Article/428722/one-for-the-record-books/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4ILDAJ&usg=AOvVaw37nmDEVcG7tQejrNQqytcC"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "niagara.afrc.af.milHome page of Niagara Falls Air Reserve Station6557 \u00d7 4015 - 1550k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.niagara.afrc.af.mil/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4ILjAK&usg=AOvVaw0l2aOfDr2OaHmGStxPcPQQ"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "centcom.milHome2608 \u00d7 1738 - 446k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.centcom.mil/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IMDAL&usg=AOvVaw0l8pYn2X2ISOTD_A0S0lN-"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "dover.af.milDover AFB home5285 \u00d7 2973 - 1888k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.dover.af.mil/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IMjAM&usg=AOvVaw3G691JvVhd02DFufkk6bYO"
+        },
+        {
+            "rank": 14,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "climate.govNorthwest Passage clear of ice again in 2016 | NOAA Climate.gov620 \u00d7 839 - 273k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=https://www.climate.gov/news-features/event-tracker/northwest-passage-clear-ice-again-2016&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4INDAN&usg=AOvVaw0ZQEB4nveC55EhHXt6HkJo"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "army.mil<em>Canadian</em> officer takes deputy position at USARAK | Article | The ...625 \u00d7 435 - 58k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=https://www.army.mil/article/159877/canadian_officer_takes_deputy_position_at_usarak&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4INjAO&usg=AOvVaw2BGyS38fdxtgFF0GnwuuQA"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "med.navy.milNavy Medicine1336 \u00d7 891 - 235k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.med.navy.mil/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IODAP&usg=AOvVaw0btcNjnS3Yk3HNvl2DpTeR"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "peterson.af.milAward winning vocalist changes tempo to follow an Air Force beat ...1201 \u00d7 1800 - 1447k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.peterson.af.mil/News/Display/Article/858218/award-winning-vocalist-changes-tempo-to-follow-an-air-force-beat/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IOjAQ&usg=AOvVaw1U38shJwBsL3IfqCIHimVE"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "flickr.comA &amp; A <em>Records</em> &amp; Tapes, Yonge Street | Photographer: City of \u2026 | Flickr1024 \u00d7 709 - 229k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=https://www.flickr.com/photos/torontohistory/19476023951&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IPDAR&usg=AOvVaw3uRuQe_I4qUQGPjByt3AOc"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "dhs.govThe Blog @ Homeland Security: June 2009525 \u00d7 350 - 22k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=https://www.dhs.gov/journal/theblog/2009_06_01_archive.html&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IPjAS&usg=AOvVaw1qDQn4En5OVQiC4sUJy-hZ"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1510135498,
+            "title": "59mdw.af.mil59th Medical Wing clinics, services set to move to new Wilford ...264 \u00d7 394 - 26k\u00a0-\u00a0jpg",
+            "url": "https://www.google.com/url?q=http://www.59mdw.af.mil/News/Article-Display/Article/1181433/59th-medical-wing-clinics-services-set-to-move-to-new-wilford-hall/&sa=U&ved=0ahUKEwi-_bDE6q7XAhVrsFQKHR8uDnoQwW4IQDAT&usg=AOvVaw0_3ai9Ux1A197nr_xq6Hqg"
+        }
+    ],
+    "timestamp": 1510135498,
+    "url": "https://www.google.com/search?safe=off&tbm=isch&tbs=sur:fmc&q=%22Boulevard+Records%22+Canada+-site:wikipedia.org+-site:wikimedia.org"
+}

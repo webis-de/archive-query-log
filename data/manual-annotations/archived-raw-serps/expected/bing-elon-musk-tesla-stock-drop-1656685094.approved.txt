@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "elon musk tesla stock drop",
+    "offset": null,
+    "page": null,
+    "query": "elon musk tesla stock drop",
+    "results": [],
+    "timestamp": 1656685094,
+    "url": "https://www.bing.com/search?q=elon+musk+tesla+stock+drop&FORM=QSRE6"
+}

@@ -1,0 +1,52 @@
+{
+    "interpreted_query": "modern times chaplin watch online",
+    "offset": null,
+    "page": null,
+    "query": "modern times chaplin watch online",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "<em>Modern Times</em>, Charlie <em>Chaplin's</em> last outing as the Little Tramp, puts the iconic character to work as a giddily inept factory employee who becomes smitten\u00a0...",
+            "timestamp": 1662343522,
+            "title": "Watch Modern Times | Prime Video - Amazon.com",
+            "url": "https://www.amazon.com/Modern-Times-Charlie-Chaplin/dp/B004DARF6A"
+        },
+        {
+            "rank": 2,
+            "snippet": "Stream <em>Modern Times</em> on HBO Max. When an oppressed assembly-line factory worker is mistaken for a radical ... Starring: Charlie <em>Chaplin</em>, Paulette Goddard.",
+            "timestamp": 1662343522,
+            "title": "Watch Modern Times - Stream Movies | HBO Max",
+            "url": "https://www.hbomax.com/feature/urn:hbo:feature:GXk3juwcBFTC3wwEAAAfD"
+        },
+        {
+            "rank": 3,
+            "snippet": "<em>Modern Times</em> streaming: where to <em>watch online</em>? Currently you are able to <em>watch</em> \"<em>Modern Times</em>\" streaming on HBO Max, Criterion Channel. It is also possible to\u00a0...",
+            "timestamp": 1662343522,
+            "title": "Modern Times - where to watch movie online? - JustWatch",
+            "url": "https://www.justwatch.com/us/movie/modern-times"
+        },
+        {
+            "rank": 4,
+            "snippet": "<em>Watch</em> Charlie <em>Chaplin Modern Times Online Full Movie</em> without registration. Super fast streaming in 1080p of Charlie <em>Chaplin Modern Times</em> on Fmovies.",
+            "timestamp": 1662343522,
+            "title": "Watch Charlie Chaplin Modern Times Full Movie on FMovies.to",
+            "url": "https://fmovies.co/film/charlie-chaplin-modern-times-6977/"
+        },
+        {
+            "rank": 5,
+            "snippet": "<em>Chaplin's</em> final \u201csilent\u201d movie was full of sound effects and was made when everyone else was chatting. Charlie opposes <em>modern</em> society, the\u00a0...",
+            "timestamp": 1662343522,
+            "title": "Watch Modern Times 1936 Streaming Free Online - RidoMovies",
+            "url": "https://ridomovies.com/movies/modern-times-watch-online-1936-rd1/"
+        },
+        {
+            "rank": 6,
+            "snippet": "<em>Modern Times</em>: Directed by Charles <em>Chaplin</em>. With Charles <em>Chaplin</em> ... <em>Watch</em> on HBO Max ... Charles <em>Chaplin</em> and Paulette Goddard in <em>Modern Times</em> (1936).",
+            "timestamp": 1662343522,
+            "title": "Modern Times (1936) - IMDb",
+            "url": "https://www.imdb.com/title/tt0027977/"
+        }
+    ],
+    "timestamp": 1662343522,
+    "url": "https://www.google.com.hk/search?q=modern+times+chaplin+watch+online"
+}

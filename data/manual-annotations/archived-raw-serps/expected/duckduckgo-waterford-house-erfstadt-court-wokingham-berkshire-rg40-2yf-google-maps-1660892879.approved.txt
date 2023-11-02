@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "Waterford House, Erfstadt Court Wokingham, Berkshire, RG40 2YF google maps",
+    "offset": null,
+    "page": null,
+    "query": "Waterford House, Erfstadt Court Wokingham, Berkshire, RG40 2YF google maps",
+    "results": [],
+    "timestamp": 1660892879,
+    "url": "https://duckduckgo.com/?q=Waterford+House%2C+Erfstadt+Court+Wokingham%2C+Berkshire%2C+RG40+2YF+google+maps"
+}

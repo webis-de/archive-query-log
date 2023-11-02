@@ -1,0 +1,80 @@
+{
+    "interpreted_query": "eierlik\u00f6r kirschkuchen",
+    "offset": null,
+    "page": 0,
+    "query": "eierlik\ufffdr+kirschkuchen",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "super saftig und locker",
+            "timestamp": 1243942587,
+            "title": "Eierlik\u00f6r - Kirschkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1351581239883411/Eierlikoer-Kirschkuchen.html"
+        },
+        {
+            "rank": 2,
+            "snippet": "Blechkuchen",
+            "timestamp": 1243942587,
+            "title": "Eierlik\u00f6r - Kirschkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/1276181232992431/Eierlikoer-Kirschkuchen.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "mit Eierlik\u00f6r und Raspelschokolade",
+            "timestamp": 1243942587,
+            "title": "Einfacher Kirschkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/713401174033275/Einfacher-Kirschkuchen.html"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1243942587,
+            "title": "Kirschkuchen mit Eierlik\u00f6r",
+            "url": "http://www.chefkoch.de:80/rezepte/1157341221916618/Kirschkuchen-mit-Eierlikoer.html"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1243942587,
+            "title": "Eierlik\u00f6r - Kirschkuchen vom Blech",
+            "url": "http://www.chefkoch.de:80/rezepte/763291179149394/Eierlikoer-Kirschkuchen-vom-Blech.html"
+        },
+        {
+            "rank": 6,
+            "snippet": null,
+            "timestamp": 1243942587,
+            "title": "Beschwipster Kirschkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/266401102992191/Beschwipster-Kirschkuchen.html"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1243942587,
+            "title": "Saftiger Schoko - Kirschkuchen",
+            "url": "http://www.chefkoch.de:80/rezepte/538341150970607/Saftiger-Schoko-Kirschkuchen.html"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1243942587,
+            "title": "Kirschkuchen mit Kokoscreme",
+            "url": "http://www.chefkoch.de:80/rezepte/1271701232445509/Kirschkuchen-mit-Kokoscreme.html"
+        },
+        {
+            "rank": 9,
+            "snippet": "Blechkuchen",
+            "timestamp": 1243942587,
+            "title": "Kirschkuchen mit Zimt und Zucker",
+            "url": "http://www.chefkoch.de:80/rezepte/1004511205659177/Kirschkuchen-mit-Zimt-und-Zucker.html"
+        },
+        {
+            "rank": 10,
+            "snippet": "ergibt 2 B\u00f6den, kann auch f\u00fcr Birnentorte verwendet werden",
+            "timestamp": 1243942587,
+            "title": "Kirschtorte \u00e4hnlich Schwarzw\u00e4lder Kirsch",
+            "url": "http://www.chefkoch.de:80/rezepte/297341109204404/Kirschtorte-aehnlich-Schwarzwaelder-Kirsch.html"
+        }
+    ],
+    "timestamp": 1243942587,
+    "url": "http://www.chefkoch.de:80/rs/s0/eierlik%F6r+kirschkuchen/Rezepte.html"
+}

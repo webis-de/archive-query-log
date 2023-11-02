@@ -6,70 +6,70 @@
     "results": [
         {
             "rank": 2,
-            "snippet": null,
+            "snippet": "A Song of Peace (Atelier Musca Latino Americana feat. conductor: Cristian Grases)\nTeresa Jennings2009",
             "timestamp": 1607791072,
             "title": "Give Peace A Chance",
             "url": "http://www.google.ca/search?sa=X&q=John+Lennon+Give+Peace+A+Chance&stick=H4sIAAAAAAAAAIWUPWzTQBTHnUBL6rZS4yKBMkAIDCUSJHb80bC0qAJU1KqodGGy4rPPjj_OH3c4thFCYu6EBIxITAwdmUBCqBIDFWJgQGKhiI0JBEsXKG0h9jHhyT-__3v3v_eeXBlpTLTMFo_bElFjHAjjgdEDRh37yMRbpX9ifzGUbE2TsFIgUAFSc7EsC6Gnb5Um95EHHW-AYxMM2UnVpNMVnCFDkoV8oqpD1hMvlKBlDtkWLS-DA684zcYSgcOwltpJRGyzsOo6uh3l1cUg5D0gFmHPDrr8MGxBWxtENqCyzUzSKLUqR1RtTzchzo-O5bbazoKcZ4EcmnFG3TzIXEJyL4KsA4zaxU0yy-LdonqMFNHKswVkaRYu-gLTtsh7WZGdaNBM6GKog4q2uEnYBVIetkLFyXhqoDIUipFJOIRQKTBKLCmkfIsISVLOFvHCLj87ZJM3Q7s7cCl9BIBMbQ9OM69DGUcEdvP58nroyiHdJQVJikwvW-JaRbGBZKv5DKAKBRQip1CLvLu_HblawAORahJI9Hw5NEURZuOOkLdcUdOuo3uUcT0B1NGZAyP8ufSqPD71ZefjdO15-d7G6_elp2V2asn3seGmq4bbI4a-5nNn2NFLiPRJytXYiVql5bXasmQHM0yNZXPi1kvs-HWDrPnLvt6HKXebu8WOLRueZkR4BXJrLLvgu64BSN9H3GW2UTvRAvmHVmQAP9L7yFSBexOTvZy98nX2P5rG0dUDA2Lkwj9vigjJhfJMueEI6rN3D96O3qjGb3Z3J4PF-drZJsceWcRLPui51Yefzr388OvrXHOaraz1Eh_5XlplDp5vc41TY6e_p4_WN7bnqj-aDLPdPzZ__FCdmWH4lZ2fdzbvn59vMndfPNkcPVwpTTETj0dOXvUtVF8yEPJR_Uo_NurXDn4-F-sLVg8B4zd7Fy9XnQQAAA&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQ-BZ6BAgMEAI"
         },
         {
             "rank": 4,
-            "snippet": null,
+            "snippet": "Dec 6, 2016 \u00b7 Susan Boyle - Make Me A Channel Of Your Peace (Audio)Listen on Spotify: http://\u200bsmarturl.it ...Duration: 4:25\nPosted: Dec 6, 2016",
             "timestamp": 1607791072,
             "title": "Susan Boyle - Make Me a Channel of Your Peace (Audio) - YouTube",
             "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3D7mxO_dsvHew&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwCXoECAIQAQ&usg=AOvVaw3sDFmulY_WjL3_GfznceC6"
         },
         {
             "rank": 5,
-            "snippet": null,
+            "snippet": "Dec 24, 2011 \u00b7 Susan Boyle - Make me a Channel of Your Peace. 213,109 views213K views. \u2022 Dec 24, 2011. 1K ...Duration: 4:24\nPosted: Dec 24, 2011",
             "timestamp": 1607791072,
             "title": "Susan Boyle - Make me a Channel of Your Peace - YouTube",
             "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3DPGHOtR-v4yQ&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwCnoECAkQAQ&usg=AOvVaw3pVYRKCDlXQk_cLt7J_QUv"
         },
         {
             "rank": 7,
-            "snippet": null,
+            "snippet": "Apr 2, 2013 \u00b7 239 Make Me a Channel Of Your Peace (Susan Boyle). 116,364 views116K views. \u2022 Apr 2, 2013.Duration: 4:23\nPosted: Apr 2, 2013",
             "timestamp": 1607791072,
             "title": "239 Make Me a Channel Of Your Peace (Susan Boyle) - YouTube",
             "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3DGcxg4XQgaGg&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwD3oECAQQAQ&usg=AOvVaw2o_qgaJDTXMFIWiFL0zf3H"
         },
         {
             "rank": 8,
-            "snippet": null,
+            "snippet": "Oct 16, 2015 \u00b7 Make Me A Channel Of Your Peace - Susan Boyle - Lyrics- Sub ITA. 305,264 views305K views ...Duration: 4:20\nPosted: Oct 16, 2015",
             "timestamp": 1607791072,
             "title": "Make Me A Channel Of Your Peace - Susan Boyle ... - YouTube",
             "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3DgUI2EyYIEKs&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwEHoECAcQAQ&usg=AOvVaw3XKzVXR_okwW5x3nGsT3zJ"
         },
         {
             "rank": 9,
-            "snippet": null,
+            "snippet": "Jul 29, 2020 \u00b7 Make Me a Channel of Your Peace \u00b7 Susan Boyle The Gift \u2117 2010 Simco Limited under exclusive ...Duration: 2:56\nPosted: Jul 29, 2020",
             "timestamp": 1607791072,
             "title": "Make Me a Channel of Your Peace - YouTube",
             "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3D9pR-ib1ZglE&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwEXoECAgQAQ&usg=AOvVaw0MxKuMhPNEmX1_lura6DOG"
         },
         {
             "rank": 10,
-            "snippet": null,
+            "snippet": "Feb 23, 2019 \u00b7 Susan Boyle: Make Me A Channel Of Your Peace (Lyrics). 6,290 views6.2K views. \u2022 Feb 23, 2019 ...Duration: 4:19\nPosted: Feb 23, 2019",
             "timestamp": 1607791072,
             "title": "Susan Boyle: Make Me A Channel Of Your Peace (Lyrics) - YouTube",
             "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3Dp8Jr2o7oewU&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwEnoECAMQAQ&usg=AOvVaw3YfRj0fCvO755ALdsnKq9M"
         },
         {
             "rank": 11,
-            "snippet": null,
+            "snippet": "Aug 3, 2012 \u00b7 Make Me A Channel of Your Peace - by Susan Boyle. 5,320 views5.3K views. \u2022 Aug 3, 2012. 40 ...Duration: 4:25\nPosted: Aug 3, 2012",
             "timestamp": 1607791072,
             "title": "Make Me A Channel of Your Peace - by Susan Boyle - YouTube",
             "url": "http://www.google.ca/url?q=https://www.youtube.com/watch%3Fv%3DpnxqC9Ed2_Q&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQtwIwE3oECAEQAQ&usg=AOvVaw3-_zXUJa9bgSS3XcQdYsPa"
         },
         {
             "rank": 12,
-            "snippet": null,
+            "snippet": "239 Make Me a Channel Of Your Peace (Susan Boyle). Some know this as the Prayer of St Francis.... Those of us in recovery may recognize it as a modernized\u200b\u00a0...",
             "timestamp": 1607791072,
             "title": "239 Make Me a Channel Of Your Peace (Susan Boyle) (+playlist ...",
             "url": "http://www.google.ca/url?q=https://www.pinterest.com/pin/155796468334138177/&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQFjAUegQIChAB&usg=AOvVaw3kbX9tFK6S2RvOWj0lk5KL"
         },
         {
             "rank": 13,
-            "snippet": null,
+            "snippet": "Jul 11, 2013 - Some know this as the Prayer of St Francis.... Those of us in recovery may recognize it as a modernized version of the 11th step prayer .",
             "timestamp": 1607791072,
             "title": "239 Make Me a Channel Of Your Peace (Susan Boyle) | Syco music ...",
             "url": "http://www.google.ca/url?q=https://www.pinterest.com/pin/131308145358906661/&sa=U&ved=2ahUKEwj2trLy_cjtAhUYsJ4KHWIuDxcQFjAVegQIBRAB&usg=AOvVaw2qobA-pRZQyfEaHRTXbtlv"

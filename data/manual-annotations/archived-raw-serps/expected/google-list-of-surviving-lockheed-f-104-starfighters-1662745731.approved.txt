@@ -1,0 +1,73 @@
+{
+    "interpreted_query": "\"List of surviving Lockheed F-104 Starfighters\" -wikipedia",
+    "offset": null,
+    "page": null,
+    "query": "\"List of surviving Lockheed F-104 Starfighters\"",
+    "results": [
+        {
+            "rank": 2,
+            "snippet": "List of surviving Lockheed F-104 Starfighters. V. List of Lockheed F-104 Starfighter variants. X. Lockheed XF-104. Advertisement. More Information.",
+            "timestamp": 1662745731,
+            "title": "Category:Lockheed F-104 Starfighter | Military Wiki | Fandom",
+            "url": "https://www.google.com/url?q=https://military-history.fandom.com/wiki/Category:Lockheed_F-104_Starfighter&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAQQAg&usg=AOvVaw0E9W0FM_BVl1QZ-JSFATuZ"
+        },
+        {
+            "rank": 3,
+            "snippet": "List of surviving Consolidated PBY Catalinas \u00b7 List of surviving Focke-Wulf Fw 190s \u00b7 List of surviving Lockheed F-104 Starfighters\u00a0...",
+            "timestamp": 1662745731,
+            "title": "Category:Lists of surviving military aircraft",
+            "url": "https://www.google.com/url?q=https://military-history.fandom.com/wiki/Category:Lists_of_surviving_military_aircraft&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAIQAg&usg=AOvVaw3W6RHzYHeXoFH076LIpAYW"
+        },
+        {
+            "rank": 4,
+            "snippet": "Massalia (modern Marseille) silver coin with Greek legend, a testimony to Greeks in. The first written records for the history of France appeared in the Iron\u00a0...",
+            "timestamp": 1662745731,
+            "title": "List of surviving Lockheed F-104 Starfighters - WikiVisually",
+            "url": "https://www.google.com/url?q=https://wikivisually.com/wiki/List_of_surviving_Lockheed_F-104_Starfighters&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAEQAg&usg=AOvVaw1ucm5Pp8CllJH0mUjMUt1F"
+        },
+        {
+            "rank": 5,
+            "snippet": "F-104 notable appearances in media; List of surviving Lockheed F-104 Starfighters; North American Eagle Project; Zero-length launch. Related development.",
+            "timestamp": 1662745731,
+            "title": "Lockheed F-104 Starfighter \u0907\u0924\u093f\u0939\u093e\u0938 \u0926\u0947\u0916\u0947\u0902 \u0905\u0930\u094d\u0925 \u0914\u0930 \u0938\u093e\u092e\u0917\u094d\u0930\u0940 - hmoob.in",
+            "url": "https://www.google.com/url?q=https://www.hmoob.in/wiki/F-104G&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAMQAg&usg=AOvVaw0elKqnozF1ThkJRAN_k8tu"
+        },
+        {
+            "rank": 7,
+            "snippet": "List of surviving North American F-86 Sabres \u00b7 List of surviving Lockheed F-104 Starfighters. Copyright \u00a92021 Artigos.wiki. Close. AddThis. AddThis Sharing.",
+            "timestamp": 1662745731,
+            "title": "North American F-100 Super Sabre (North American F ... - Artigos.wiki",
+            "url": "https://www.google.com/url?q=https://artigos.wiki/blog/en/North_American_F-100_Super_Sabre&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAYQAg&usg=AOvVaw2k4oxKEVnQBeXSCeleb-nV"
+        },
+        {
+            "rank": 12,
+            "snippet": "... surviving North American F-86 Sabres \u00b7 List of surviving Lockheed F-104 Starfighters \u00b7 List of surviving LTV A-7 Corsair IIs. Copyright \u00a92021 Artigos.wiki.",
+            "timestamp": 1662745731,
+            "title": "Lista de Thunderchiefs F-105 da Rep\u00fablica sobreviventes (List of ...",
+            "url": "https://www.google.com/url?q=https://artigos.wiki/blog/en/List_of_surviving_Republic_F-105_Thunderchiefs&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAcQAg&usg=AOvVaw1NbnNpEHS-UGCRgpQl3jnN"
+        },
+        {
+            "rank": 13,
+            "snippet": "... List of surviving Hawker Hurricanes; List of airworthy Ju 52s; List of surviving Lockheed F-104 Starfighters; List of surviving Lockheed P-38 Lightnings\u00a0...",
+            "timestamp": 1662745731,
+            "title": "List of surviving examples of mass-produced aircraft - Aeroplane ...",
+            "url": "https://www.google.com/url?q=https://avia.wikisort.org/aeroplane/en/Aeroplane/List_of_surviving_examples_of_mass-produced_aircraft&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAAQAg&usg=AOvVaw2Ir_AE1q7FuO5hEsBZlQt3"
+        },
+        {
+            "rank": 14,
+            "snippet": "List of surviving Lockheed F-104 Starfighters. Airport. 5722 \u2013 Afyon Airport. 5725 \u2013 Istanbul Aviation Museum. 67-5945 \u2013 Ahili, K\u0131r\u0131kkale Merkez/K\u0131r\u0131kkale.",
+            "timestamp": 1662745731,
+            "title": "Name and meaning/definition of Ahili - Thenamesdictionary",
+            "url": "https://www.google.com/url?q=https://thenamesdictionary.com/name-meanings/63850/name-meaning-of-ahili&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAgQAg&usg=AOvVaw3uzDoeorXbRb4Kg1FUDY54"
+        },
+        {
+            "rank": 15,
+            "snippet": "List of surviving Lockheed F-104 Starfighters. This is a list of known Lockheed F-104 Starfighter survivors. New!!: Dayton, Ohio and List of surviving\u00a0...",
+            "timestamp": 1662745731,
+            "title": "Dayton, Ohio - Unionpedia, the concept map",
+            "url": "https://www.google.com/url?q=https://en.unionpedia.org/i/Dayton,_Ohio&sa=U&ved=2ahUKEwjwkOCuvYj6AhXUI30KHSMfCXsQFnoECAUQAg&usg=AOvVaw3O3G-Nm71rWkSrkz3PfFKJ"
+        }
+    ],
+    "timestamp": 1662745731,
+    "url": "https://www.google.com/search?as_eq=wikipedia&q=%22List+of+surviving+Lockheed+F-104+Starfighters%22"
+}

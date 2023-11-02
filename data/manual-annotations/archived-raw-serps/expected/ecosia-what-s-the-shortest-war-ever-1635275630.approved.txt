@@ -1,0 +1,66 @@
+{
+    "interpreted_query": "what's the shortest war ever",
+    "offset": null,
+    "page": null,
+    "query": "what's the shortest war ever",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "But some of these <em>short</em> <em>wars</em> changed the course of history. It could have been over a small land dispute, or over the annexation of massive sways of territory. Either way, even the <em>smallest</em> of military victories during the <em>shortest wars</em> in history can change the landscape of international power forever. Here are the top 10 <em>shortest wars</em> in history.",
+            "timestamp": 1635275630,
+            "title": "10 Shortest Wars In History - Eskify",
+            "url": "http://eskify.com/10-shortest-wars-in-history/"
+        },
+        {
+            "rank": 2,
+            "snippet": "<em>Shortest Wars</em> In Human History. Decimated palace of Zanzibari Sultan Khalid bin Bargash following the ~38-minute long British-Zanzibar <em>War</em> on August 27th, 1896. When tensions escalate into full-fledged <em>war</em>, series of gruesome battles often ensue that sometimes may last for years on end. Some <em>wars</em>, however, are settled much more quickly, whether ...",
+            "timestamp": 1635275630,
+            "title": "Shortest Wars In Human History - WorldAtlas",
+            "url": "https://www.worldatlas.com/articles/shortest-wars-in-human-history.html"
+        },
+        {
+            "rank": 3,
+            "snippet": "The little known Anglo-Zanzibar <em>War</em> of 1896 is generally considered to be the <em>shortest war</em> in history, lasting for a grand total of 38 minutes. The story begins with the signing of the Heligoland-Zanzibar treaty between Britain and Germany in 1890. This treaty effectively drew up spheres of ...",
+            "timestamp": 1635275630,
+            "title": "The Shortest War in History - The Anglo Zanzibar War",
+            "url": "https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Shortest-War-in-History/"
+        },
+        {
+            "rank": 4,
+            "snippet": "My Quotation of the Day by Robert Lynd prompted James Worron to observe that <em>short</em> <em>wars</em> are quite common \u2013 there are just fewer of them than people hope for. 1. Anglo-Zanzibar <em>War</em>, 1896.",
+            "timestamp": 1635275630,
+            "title": "The Top Ten: Shortest wars | The Independent | The Independent",
+            "url": "https://www.independent.co.uk/news/world/politics/top-ten-shortest-wars-10267712.html"
+        },
+        {
+            "rank": 5,
+            "snippet": "The <em>shortest</em> <em>war</em> <em>ever</em> happened on August 27, 1896 and was the Anglo-Zanzibar <em>War</em>. Which country was not affected by World <em>War</em> 2? There were eight countries that declared neutrality; Portugal, Switzerland, Spain, Sweden, The Vatican, Andorra, Ireland and Liechtenstein.",
+            "timestamp": 1635275630,
+            "title": "What Is The Shortest War Ever? - ww2 questions",
+            "url": "https://ww2questions.com/qa/what-is-the-shortest-war-ever.html"
+        },
+        {
+            "rank": 6,
+            "snippet": "The Anglo-Zanzibar <em>War</em> was a military conflict fought between the United Kingdom and the Zanzibar Sultanate on 27 August 1896. The conflict lasted between 38 and 45 minutes, marking it as the <em>shortest</em> recorded <em>war</em> in history. The immediate cause of the <em>war</em> was the death of the pro-British Sultan Hamad bin Thuwaini on 25 August 1896 and the subsequent succession of Sultan Khalid bin Barghash.",
+            "timestamp": 1635275630,
+            "title": "Anglo-Zanzibar War - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War"
+        },
+        {
+            "rank": 7,
+            "snippet": "The Anglo-Zanzibar <em>War</em> of 1896 lasted all of 38 minutes in what would be the <em>shortest</em> <em>war</em> in history. The <em>war</em> proved that the British were the final authority in Zanzibar\u2019s affairs with a display of might and power that overwhelmed Zanzibari forces. It really wasn\u2019t a <em>war</em> because Zanzibar had no chance to win.",
+            "timestamp": 1635275630,
+            "title": "Anglo-Zanzibar War: The Story Of The Shortest War Ever",
+            "url": "https://allthatsinteresting.com/anglo-zanzibar-war"
+        },
+        {
+            "rank": 8,
+            "snippet": "Watch anything on CuriosityStream for free by going to https://www.curiositystream.com/reallifelore and by using the code<em> reallifelore</em> during the sign up pro...",
+            "timestamp": 1635275630,
+            "title": "Why the Shortest War in History Lasted 38 Minutes - YouTube",
+            "url": "https://www.youtube.com/watch?v=qUxs1tKiBFk"
+        }
+    ],
+    "timestamp": 1635275630,
+    "url": "https://www.ecosia.org/search?q=what%27s+the+shortest+war+ever"
+}

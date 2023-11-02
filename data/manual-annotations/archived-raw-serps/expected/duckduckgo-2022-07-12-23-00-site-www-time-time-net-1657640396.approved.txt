@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "2022-07-12 23:00 site:www.time-time.net",
+    "offset": null,
+    "page": null,
+    "query": "2022-07-12 23:00 site:www.time-time.net",
+    "results": [],
+    "timestamp": 1657640396,
+    "url": "https://duckduckgo.com/?q=2022-07-12+23%3A00+site%3Awww.time-time.net&t=ffab"
+}

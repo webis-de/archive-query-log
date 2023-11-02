@@ -1,0 +1,9 @@
+{
+    "interpreted_query": "sheer skirt beach thing site:www.lyst.com",
+    "offset": null,
+    "page": null,
+    "query": "sheer skirt beach thing site:www.lyst.com",
+    "results": [],
+    "timestamp": 1653921398,
+    "url": "https://duckduckgo.com/?q=sheer+skirt+beach+thing+site%3Awww.lyst.com&t=ffab"
+}

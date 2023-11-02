@@ -1,0 +1,101 @@
+{
+    "interpreted_query": "\"C\u00e9line de Roany\"",
+    "offset": null,
+    "page": null,
+    "query": "\"C\u00e9line de Roany\"",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": "sanfrancisco.ticketsales.com/CelineDion",
+            "timestamp": 1640557696,
+            "title": "Celine Dion Tour - (2021 Tickets On Sale Now)",
+            "url": "https://www.bing.com/aclick?ld=e8ZMiXjex0IF6el7aDur4XyTVUCUwI_FHeowVbIviyYu-tGT81A9dR5EYiHuzOBr8HR3bihH-JVxPkhD_hMr-9kFopMPL_6-1M9OftLxmr1ChN7zrQvfHQWogBfMMLS-arOx8crGikDG0es4yT6GiZd4IoFEJATnU2Fx1FCZNr9A8tqEDM&u=aHR0cHMlM2ElMmYlMmZzYW5mcmFuY2lzY28udGlja2V0c2FsZXMuY29tJTJmY2hhc2UtY2VudGVyJTJmMTQ5JTJmQ2VsaW5lJTJiRGlvbiUzZm1zY2xraWQlM2Q3YjE4MGY0YzRmNDkxODljZGE1ZTZlODRiNWQ4OWJjNCUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZChlMjMwMDEpJTI1MjAlMjU3QyUyNTIwQ2hhc2UlMjUyMENlbnRlciUyNTIwJTI1N0MlMjUyMFNhbiUyNTIwRnJhbmNpc2NvJTI2dXRtX3Rlcm0lM2QlMjUyQmNlbGluZSUyNTIwJTI1MkJkaW9uJTI2dXRtX2NvbnRlbnQlM2QwNCUyNTJGMDElMjUyRjIwMjIlMjUyMCUyNTdDJTI1MjAyMzAwMS0zMDYzMjIxJTI1MjAlMjU3QyUyNTIwQ2VsaW5lJTI1MjBEaW9u&rlid=7b180f4c4f49189cda5e6e84b5d89bc4"
+        },
+        {
+            "rank": 2,
+            "snippet": "C\u00e9line de Roany a bien raison de remercier Elizabeth George et Mo Hayder. \u00c0 la premi\u00e8re, elle emprunte l\u2019habilet\u00e9 de savoir mettre en sc\u00e8ne un personnage f\u00e9minin aussi cr\u00e9dible que Barbara Havers. De la deuxi\u00e8me, elle accepte un h\u00e9ritage litt\u00e9raire qui nous plonge dans les zones les plus sombres de l\u2019\u00e2me humaine. \u2014 Lionel Germain",
+            "timestamp": 1640557696,
+            "title": "Celine de Roany \u2013 Romans policiers sensibles et cruels",
+            "url": "https://celinederoany.com/"
+        },
+        {
+            "rank": 3,
+            "snippet": "C\u00e9line de Roany. Note moyenne 4.31 / 5 (sur 61 notes) 2 Livres, 40 Critiques. biographie &amp; informations. Nationalit\u00e9 : France. N\u00e9 (e) \u00e0 : Nantes , le 07/12/1972. Biographie : Premiers textes \u00e0 sept ans, premi\u00e8re fan fiction d\u2019Alice D\u00e9tective \u00e0 onze, une th\u00e8se de doctorat \u00e0 trente-et-un, il aura fallu encore quinze ans avant de ...",
+            "timestamp": 1640557696,
+            "title": "C\u00e9line de Roany (auteur de Les beaux mensonges) - Babelio",
+            "url": "https://www.babelio.com/auteur/Celine-de-Roany/538580"
+        },
+        {
+            "rank": 4,
+            "snippet": "C\u00e9line de Roany is on Facebook. Join Facebook to connect with C\u00e9line de Roany and others you may know. Facebook gives people the power to share and makes the world more open and connected.",
+            "timestamp": 1640557696,
+            "title": "C\u00e9line de Roany - facebook.com",
+            "url": "https://www.facebook.com/celine.deroanyauteur"
+        },
+        {
+            "rank": 5,
+            "snippet": "by C\u00e9line de Roany. Research Interests: Instruction En Famille, Ief, \u00e9cole \u00e0 La Maison, and Apprendre En Vivant Dans Le Monde R\u00e9ell. Download (.pdf)-by 30-day views-total views-followers.",
+            "timestamp": 1640557696,
+            "title": "C\u00e9line de Roany - Academia.edu",
+            "url": "https://independent.academia.edu/C%C3%A9linedeRoany"
+        },
+        {
+            "rank": 6,
+            "snippet": "N\u00e9e en 1972 \u00e0 Nantes, C\u00e9line de Roany a la bougeotte. C\u00f4te d\u2019Azur, Bretagne, Provence, elle \u00e9largit ses horizons avec l\u2019Allemagne, les Pays Bas et la Suisse puis, depuis 4 ans, l\u2019Australie, o\u00f9 elle vit sur la C\u00f4te Est.",
+            "timestamp": 1640557696,
+            "title": "Sang pour Sang POLAR: Les beaux mensonges, de C\u00e9line de Roany",
+            "url": "https://sangpoursang-polar.blogspot.com/2021/12/les-beaux-mensonges-de-celine-de-roany.html"
+        },
+        {
+            "rank": 7,
+            "snippet": "C\u00e9line de Roany. Download PDF. Download Full PDF Package. This paper. A short summary of this paper. 37 Full PDFs related to this paper. Read Paper. Apprendre. Download.",
+            "timestamp": 1640557696,
+            "title": "(PDF) Apprendre | C\u00e9line de Roany - Academia.edu",
+            "url": "https://www.academia.edu/5838819/Apprendre"
+        },
+        {
+            "rank": 8,
+            "snippet": "C\u00e9leste Ibar a quitt\u00e9 Paris et la BRI, o\u00f9 elle avait pass\u00e9 dix ans, apr\u00e8s une agression d'une brutalit\u00e9 extr\u00eame. Souffrant de s\u00e9quelles, meurtrie dans sa chair, portant sur son visage ...",
+            "timestamp": 1640557696,
+            "title": "C\u00e9line de Roany",
+            "url": "https://actualitte.com/livres/48085/une-enquete-de-celeste-ibar-les-beaux-mensonges"
+        },
+        {
+            "rank": 9,
+            "snippet": "DE ROANY (SANZ-APARICIO) C\u00e9line : C\u00e9line DE ROANY (SANZ-APARICIO), n\u00e9e en 1972 et habite AVIGNON. Aux derni\u00e8res nouvelles elle \u00e9tait \u00e0 Macarons Hotel Restaurant Global Consultants \u00e0 AVIGNON et elle y est toujours. Elle a \u00e9tudi\u00e9 \u00e0 Ecole Paul Doumer (nort Sur Erdre) entre 1978 et 1983.",
+            "timestamp": 1640557696,
+            "title": "C\u00e9line DE ROANY (SANZ-APARICIO), 48 ans (AVIGNON, NANTES ...",
+            "url": "https://copainsdavant.linternaute.com/p/celine-de-roany-sanz-aparicio-714357"
+        },
+        {
+            "rank": 10,
+            "snippet": "\"Les beaux mensonges\" de C\u00e9line de Roany le 31.8.19 Genre: Roman, Policier. R\u00e9sum\u00e9 : C\u00e9leste Ibar a d\u00fb quitter Paris et la BRI, o\u00f9 elle a pass\u00e9 dix ans, apr\u00e8s une agression d'une brutalit\u00e9 extr\u00eame. Encore meurtrie, portant sur son visage les stigmates de sa s\u00e9questration, elle tente de retrouver une vie sereine. \u00c0 peine nomm\u00e9e ...",
+            "timestamp": 1640557696,
+            "title": "\"Les beaux mensonges\" de C\u00e9line de Roany",
+            "url": "https://leslecturesdangelique.blogspot.com/2019/08/special-k-de-celine-de-roany.html"
+        },
+        {
+            "rank": 11,
+            "snippet": "Les Beaux Mensonges par Roany C\u00e9line de aux \u00e9ditions Presses de la Cit\u00e9. Premi\u00e8re enqu\u00eate de C\u00e9leste Ibar, ancienne de la BRI devenue capitaine de police \u00e0 la P",
+            "timestamp": 1640557696,
+            "title": "Les Beaux Mensonges - Roany C\u00e9line de",
+            "url": "https://www.cultura.com/les-beaux-mensonges-tea-9782258196445.html"
+        },
+        {
+            "rank": 12,
+            "snippet": "Search for More Results. Now Specific Results From Your Searches!",
+            "timestamp": 1640557696,
+            "title": "Search for Different Results - More Info",
+            "url": "https://www.bing.com/aclick?ld=e8AGD8KYoiw2TScPoc0ur-jDVUCUy3P2-m3AJYgvGHU-wPotqKq8FXQpSy3dlR--c6ye3hJW5UfoDTEvVo8kqFetWaMXfYuju0myuGoftd6faGocwNUqEJP4Jsji9vavGs_VrcSVJazNm5_jrbk2OxTTvFKgCK8930QXRL7jMUBqJAiMGn&u=aHR0cHMlM2ElMmYlMmZmYW5kaWFuLnVzJTJmZmluZCUzZnElM2RkaW9uJTI1MjBjZWxpbmUlMjZrc2FnaWQlM2QwMDQ1JTI2Y2FpZCUzZGZhbmQwMTA1JTI2cyUzZHlhJTI2aXNlZyUzZGZhbmQ1&rlid=7a6b0eed14321aded9996f25eea302a1"
+        },
+        {
+            "rank": 13,
+            "snippet": "sanfrancisco.ticketsales.com/CelineDion",
+            "timestamp": 1640557696,
+            "title": "Celine Dion Tour - (2021 Tickets On Sale Now)",
+            "url": "https://www.bing.com/aclick?ld=e8ZMiXjex0IF6el7aDur4XyTVUCUwI_FHeowVbIviyYu-tGT81A9dR5EYiHuzOBr8HR3bihH-JVxPkhD_hMr-9kFopMPL_6-1M9OftLxmr1ChN7zrQvfHQWogBfMMLS-arOx8crGikDG0es4yT6GiZd4IoFEJATnU2Fx1FCZNr9A8tqEDM&u=aHR0cHMlM2ElMmYlMmZzYW5mcmFuY2lzY28udGlja2V0c2FsZXMuY29tJTJmY2hhc2UtY2VudGVyJTJmMTQ5JTJmQ2VsaW5lJTJiRGlvbiUzZm1zY2xraWQlM2Q3YjE4MGY0YzRmNDkxODljZGE1ZTZlODRiNWQ4OWJjNCUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9jYW1wYWlnbiUzZChlMjMwMDEpJTI1MjAlMjU3QyUyNTIwQ2hhc2UlMjUyMENlbnRlciUyNTIwJTI1N0MlMjUyMFNhbiUyNTIwRnJhbmNpc2NvJTI2dXRtX3Rlcm0lM2QlMjUyQmNlbGluZSUyNTIwJTI1MkJkaW9uJTI2dXRtX2NvbnRlbnQlM2QwNCUyNTJGMDElMjUyRjIwMjIlMjUyMCUyNTdDJTI1MjAyMzAwMS0zMDYzMjIxJTI1MjAlMjU3QyUyNTIwQ2VsaW5lJTI1MjBEaW9u&rlid=7b180f4c4f49189cda5e6e84b5d89bc4"
+        }
+    ],
+    "timestamp": 1640557696,
+    "url": "https://www.qwant.com/?q=%22C%C3%A9line+de+Roany%22&t=all"
+}

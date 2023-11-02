@@ -1,0 +1,31 @@
+{
+    "interpreted_query": "Fresh Prince of Bel Air",
+    "offset": null,
+    "page": null,
+    "query": "Fresh Prince of Bel Air",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 971413040,
+            "title": "<em>Fresh</em> <em>Prince</em> <em>Of</em> <em>Bel</em>-<em>Air</em>, The",
+            "url": "http://srd.yahoo.com/srct/3905942/Fresh+Prince+of+Bel+Air/1/1/*http://dir.yahoo.com/News_and_Media/Television/Shows/Comedies/Fresh_Prince_Of_Bel_Air__The/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 971413040,
+            "title": "Jon's Info-Zone: Tatyana Ali",
+            "url": "http://srd.yahoo.com/srst/10978764/Fresh+Prince+of+Bel+Air/1/2/*http://www.btinternet.com/~infozone/tatyana.html"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 971413040,
+            "title": "Rico's <em>Fresh</em> <em>Prince</em> Page",
+            "url": "http://srd.yahoo.com/srst/21758774/Fresh+Prince+of+Bel+Air/2/2/*http://www.geocities.com/Hollywood/Movie/1011/fresh/index.html"
+        }
+    ],
+    "timestamp": 971413040,
+    "url": "http://search.yahoo.com:80/search?p=Fresh+Prince+of+Bel+Air"
+}

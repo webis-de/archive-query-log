@@ -41,7 +41,7 @@ def _service_name_argument():
     return argument(
         "service",
         type=ServiceChoice(),
-        required=True,
+        required=False,
     )
 
 
@@ -73,36 +73,37 @@ def _cdx_page_argument():
 def archived_urls_command(
         data_directory: Path,
         focused: bool,
-        service: str,
+        service: str | None,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
     from archive_query_log.legacy.config import SERVICES
     from archive_query_log.legacy.urls.fetch import ArchivedUrlsFetcher, \
         UrlMatchScope
-    service_config = SERVICES[service]
-    match_scope = UrlMatchScope.PREFIX if focused else UrlMatchScope.DOMAIN
-    fetcher = ArchivedUrlsFetcher(
-        match_scope=match_scope,
-        include_status_codes={200},
-        exclude_status_codes=set(),
-        include_mime_types={"text/html"},
-        exclude_mime_types=set(),
-        cdx_api_url=CDX_API_URL
-    )
     if focused:
-        if len(service_config.focused_url_prefixes) == 0:
+        data_directory = data_directory / "focused"
+    service_configs = [SERVICES[service]] if service else SERVICES.values()
+    for service_config in service_configs:
+        match_scope = UrlMatchScope.PREFIX if focused else UrlMatchScope.DOMAIN
+        fetcher = ArchivedUrlsFetcher(
+            match_scope=match_scope,
+            include_status_codes={200},
+            exclude_status_codes=set(),
+            include_mime_types={"text/html"},
+            exclude_mime_types=set(),
+            cdx_api_url=CDX_API_URL
+        )
+        if focused and len(service_config.focused_url_prefixes) == 0:
             LOGGER.warning(
                 f"No focused URL prefixes configured for service {service}."
             )
-        data_directory = data_directory / "focused"
-    run(fetcher.fetch_service(
-        data_directory=data_directory,
-        focused=focused,
-        service=service_config,
-        domain=domain,
-        cdx_page=cdx_page,
-    ))
+        run(fetcher.fetch_service(
+            data_directory=data_directory,
+            focused=focused,
+            service=service_config,
+            domain=domain,
+            cdx_page=cdx_page,
+        ))
 
 
 @make_group.command(
@@ -117,36 +118,37 @@ def archived_urls_command(
 def archived_query_urls_command(
         data_directory: Path,
         focused: bool,
-        service: str,
+        service: str | None,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
     from archive_query_log.legacy.config import SERVICES
     from archive_query_log.legacy.queries.parse import ArchivedQueryUrlParser
-    service_config = SERVICES[service]
-    if len(service_config.query_parsers) == 0:
-        LOGGER.warning(
-            f"No query parsers configured for service {service}."
-        )
-    if len(service_config.page_parsers) == 0 \
-            and len(service_config.offset_parsers) == 0:
-        LOGGER.warning(
-            f"No page or offset parsers configured for service {service}."
-        )
-    parser = ArchivedQueryUrlParser(
-        query_parsers=service_config.query_parsers,
-        page_parsers=service_config.page_parsers,
-        offset_parsers=service_config.offset_parsers,
-    )
     if focused:
         data_directory = data_directory / "focused"
-    parser.parse_service(
-        data_directory=data_directory,
-        focused=focused,
-        service=service_config,
-        domain=domain,
-        cdx_page=cdx_page,
-    )
+    service_configs = [SERVICES[service]] if service else SERVICES.values()
+    for service_config in service_configs:
+        if len(service_config.query_parsers) == 0:
+            LOGGER.warning(
+                f"No query parsers configured for service {service}."
+            )
+        if len(service_config.page_parsers) == 0 \
+                and len(service_config.offset_parsers) == 0:
+            LOGGER.warning(
+                f"No page or offset parsers configured for service {service}."
+            )
+        parser = ArchivedQueryUrlParser(
+            query_parsers=service_config.query_parsers,
+            page_parsers=service_config.page_parsers,
+            offset_parsers=service_config.offset_parsers,
+        )
+        parser.parse_service(
+            data_directory=data_directory,
+            focused=focused,
+            service=service_config,
+            domain=domain,
+            cdx_page=cdx_page,
+        )
 
 
 @make_group.command(
@@ -161,23 +163,24 @@ def archived_query_urls_command(
 def archived_raw_serps_command(
         data_directory: Path,
         focused: bool,
-        service: str,
+        service: str | None,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
     from archive_query_log.legacy.config import SERVICES
     from archive_query_log.legacy.download.warc import WebArchiveWarcDownloader
-    service_config = SERVICES[service]
-    downloader = WebArchiveWarcDownloader(verbose=True)
     if focused:
         data_directory = data_directory / "focused"
-    run(downloader.download_service(
-        data_directory=data_directory,
-        focused=focused,
-        service=service_config,
-        domain=domain,
-        cdx_page=cdx_page,
-    ))
+    service_configs = [SERVICES[service]] if service else SERVICES.values()
+    for service_config in service_configs:
+        downloader = WebArchiveWarcDownloader(verbose=True)
+        run(downloader.download_service(
+            data_directory=data_directory,
+            focused=focused,
+            service=service_config,
+            domain=domain,
+            cdx_page=cdx_page,
+        ))
 
 
 @make_group.command(
@@ -192,34 +195,36 @@ def archived_raw_serps_command(
 def archived_parsed_serps_command(
         data_directory: Path,
         focused: bool,
-        service: str,
+        service: str | None,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
     from archive_query_log.legacy.config import SERVICES
     from archive_query_log.legacy.results.parse import ArchivedParsedSerpParser
-    service_config = SERVICES[service]
-    if len(service_config.results_parsers) == 0:
-        LOGGER.warning(
-            f"No result parsers configured for service {service}."
-        )
-    if len(service_config.interpreted_query_parsers) == 0:
-        LOGGER.warning(
-            f"No interpreted query parsers configured for service {service}."
-        )
-    parser = ArchivedParsedSerpParser(
-        results_parsers=service_config.results_parsers,
-        interpreted_query_parsers=service_config.interpreted_query_parsers,
-    )
     if focused:
         data_directory = data_directory / "focused"
-    parser.parse_service(
-        data_directory=data_directory,
-        focused=focused,
-        service=service_config,
-        domain=domain,
-        cdx_page=cdx_page,
-    )
+    service_configs = [SERVICES[service]] if service else SERVICES.values()
+    for service_config in service_configs:
+        if len(service_config.results_parsers) == 0:
+            LOGGER.warning(
+                f"No result parsers configured for service {service}."
+            )
+        if len(service_config.interpreted_query_parsers) == 0:
+            LOGGER.warning(
+                f"No interpreted query parsers configured "
+                f"for service {service}."
+            )
+        parser = ArchivedParsedSerpParser(
+            results_parsers=service_config.results_parsers,
+            interpreted_query_parsers=service_config.interpreted_query_parsers,
+        )
+        parser.parse_service(
+            data_directory=data_directory,
+            focused=focused,
+            service=service_config,
+            domain=domain,
+            cdx_page=cdx_page,
+        )
 
 
 @make_group.command(
@@ -235,24 +240,25 @@ def archived_parsed_serps_command(
 def archived_raw_search_results_command(
         data_directory: Path,
         focused: bool,
-        service: str,
+        service: str | None,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
     from archive_query_log.legacy.config import SERVICES
     from archive_query_log.legacy.download.warc import WebArchiveWarcDownloader
-    service_config = SERVICES[service]
-    downloader = WebArchiveWarcDownloader(verbose=True)
+    service_configs = [SERVICES[service]] if service else SERVICES.values()
     if focused:
         data_directory = data_directory / "focused"
-    run(downloader.download_service(
-        data_directory=data_directory,
-        focused=focused,
-        service=service_config,
-        domain=domain,
-        cdx_page=cdx_page,
-        snippets=True,
-    ))
+    for service_config in service_configs:
+        downloader = WebArchiveWarcDownloader(verbose=True)
+        run(downloader.download_service(
+            data_directory=data_directory,
+            focused=focused,
+            service=service_config,
+            domain=domain,
+            cdx_page=cdx_page,
+            snippets=True,
+        ))
 
 
 @make_group.command(
@@ -267,7 +273,7 @@ def archived_raw_search_results_command(
 def archived_parsed_search_results_command(
         data_directory: Path,
         focused: bool,
-        service: str,
+        service: str | None,
         domain: str | None,
         cdx_page: int | None,
 ) -> None:
