@@ -12,5 +12,5 @@ srun \
   --pty \
   sh -c "
   cd /workspace
-  venv/bin/python -m pipenv run python -m archive_query_log $*
+  venv/bin/python -m archive_query_log $*
   "
