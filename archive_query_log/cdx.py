@@ -36,8 +36,8 @@ class CdxFlag(Enum):
     IGNORE = "G"
     BLOCKED = "X"
     """
-    Non-standard robot flag indicating the capture is soft-blocked 
-    (not available for direct replay, but available as the original 
+    Non-standard robot flag indicating the capture is soft-blocked
+    (not available for direct replay, but available as the original
     for revisits).
     """
 
@@ -61,13 +61,13 @@ class CdxCapture:
     """
     digest: str
     """
-    Some form of document fingerprint. This represents the HTTP payload 
-    only for HTTP captured resources. It may represent an MD5, a SHA1, and 
+    Some form of document fingerprint. This represents the HTTP payload
+    only for HTTP captured resources. It may represent an MD5, a SHA1, and
     may be a fragment of the full representation of the digest.
     """
     status_code: int | None
     """
-    HTTP response code (3-digit integer). May be '0' in some 
+    HTTP response code (3-digit integer). May be '0' in some
     fringe conditions, old ARCs, bug in crawler, etc.
     """
     mimetype: str | None
@@ -80,7 +80,7 @@ class CdxCapture:
     """
     offset: int | None
     """
-    Compressed byte offset within WARC/ARC file where 
+    Compressed byte offset within WARC/ARC file where
     this document's Gzip envelope begins.
     """
     length: int | None
@@ -94,7 +94,7 @@ class CdxCapture:
     """
     flags: set[CdxFlag] | None
     """
-    Flags indicating robot instructions found in an HTML page 
+    Flags indicating robot instructions found in an HTML page
     or password protection.
     """
     collection: str | None

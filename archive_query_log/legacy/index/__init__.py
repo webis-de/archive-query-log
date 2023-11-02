@@ -173,7 +173,7 @@ class _MetaIndex:
                     offset = record.raw_stream.tell()
                     try:
                         record_url = loads(
-                            record.rec_headers.get_header("Archived-URL")               )
+                            record.rec_headers.get_header("Archived-URL"))
                     except JSONDecodeError:
                         LOGGER.error(
                             f"Could not index "
@@ -542,7 +542,10 @@ class ArchivedRawSearchResultIndex(_WarcIndex[ArchivedRawSearchResult]):
     data_directory: Path = DATA_DIRECTORY_PATH
     focused: bool = False
 
-    def _read_warc_record(self, record: ArcWarcRecord) -> ArchivedRawSearchResult:
+    def _read_warc_record(
+            self,
+            record: ArcWarcRecord,
+    ) -> ArchivedRawSearchResult:
         header = record.rec_headers.get_header("Archived-URL")
         archived_url = self.schema.loads(header)
         if isinstance(archived_url, list):
