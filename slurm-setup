@@ -8,11 +8,13 @@ srun \
   --container-image python:3.10 \
   --container-name web-archive-query-log-python-3.10 \
   --container-mounts "$PWD":/workspace \
+  --container-remap-root \
   --chdir "$PWD" \
   --pty \
   sh -c "
-  cd /workspace
-  pip install --upgrade pip cython
-  test -d venv/ || python3.10 -m venv venv/
+  cd /workspace &&
+  apt-get install -y protobuf-compiler &&
+  pip install --upgrade pip cython &&
+  (test -d venv/ || python3.10 -m venv venv/) &&
   venv/bin/python -m pip install -e .
   "
