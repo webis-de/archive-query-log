@@ -212,7 +212,8 @@ def archived_parsed_serps_command(
             )
         if len(service_config.interpreted_query_parsers) == 0:
             LOGGER.warning(
-                f"No interpreted query parsers configured for service {service}."
+                f"No interpreted query parsers configured"
+                f"for service {service}."
             )
         parser = ArchivedParsedSerpParser(
             results_parsers=service_config.results_parsers,
