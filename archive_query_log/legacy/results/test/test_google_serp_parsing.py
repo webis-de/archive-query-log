@@ -437,10 +437,10 @@ def test_parse_query_google_list_of_cantons_of_france_1634951028():
     )
 
 
-def test_parse_query_google_wan_y_menon_s_and_ramaprasad_a_2009_the_paradoxical_nature_of_electronic_decision_aids_on_comparison_1614187144():
+def test_parse_query_google_scholar_wan_y_menon_s_and_ramaprasad_a_2009_the_paradoxical_nature_of_electronic_decision_aids_on_comparison_1614187144():
     verify_serp_parsing(
         "https://web.archive.org/web/20210224171904id_/https://scholar.google.com/scholar?hl=en&q=Wan%2C+Y.%2C+Menon%2C+S.%2C+and+Ramaprasad%2C+A.+2009.+The+paradoxical+nature+of+electronic+decision+aids+on+comparison-shopping%3A+The+experiments+and+analysis.+J.+Theoret.+Appl.+Electron.+Commerce+Res.%2C+80--96.+",
-        "google",
+        "google-scholar",
     )
 
 
