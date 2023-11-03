@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 from functools import cached_property
+from gzip import open as gzip_open, GzipFile
 from json import JSONDecodeError
 from pathlib import Path
-from typing import Sized, Iterable, Iterator, IO
+from typing import Sized, Iterable, Iterator
 
 from marshmallow import Schema
 from warcio.archiveiterator import ArchiveIterator
@@ -32,10 +33,11 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
                 f"Raw SERPs path must be a directory: {self.path}"
             )
 
-    def _streams(self) -> Iterator[tuple[Path, IO[bytes]]]:
+    def _streams(self) -> Iterator[tuple[Path, GzipFile]]:
         files = self.path.glob("*.warc.gz")
         for file in files:
-            with file.open("rb") as stream:
+            print(file)
+            with gzip_open(file, "rb") as stream:
                 yield file, stream
 
     def __len__(self) -> int:
@@ -66,10 +68,13 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
                 f"{record.rec_headers.get_header('WARC-Record-ID')}."
             )
             return None
-        content_type = record.http_headers.get_header("Content-Type")
-        if content_type is None:
-            content_type = "utf8"
-        print(record_url_header)
+        encoding = record.http_headers.get_header("Content-Type")
+        if encoding is None:
+            encoding = ""
+        encoding = encoding.split(";")[-1].split("=")[-1].strip().lower()
+        if encoding == "" or "/" in encoding:
+            encoding = "utf8"
+        print(encoding)
         return ArchivedRawSerp(
             url=archived_serp_url.url,
             timestamp=archived_serp_url.timestamp,
@@ -77,7 +82,7 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
             page=archived_serp_url.page,
             offset=archived_serp_url.offset,
             content=record.content_stream().read(),
-            encoding=content_type,
+            encoding=encoding,
         )
 
     def __iter__(self) -> Iterator[ArchivedRawSerp]:
