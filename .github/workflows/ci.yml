@@ -248,6 +248,8 @@ jobs:
     - python-security
     - python-test
     - docker-build
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
     - name: "📥 Check-out"
