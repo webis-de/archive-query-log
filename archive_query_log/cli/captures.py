@@ -155,8 +155,7 @@ def fetch(config: Config) -> None:
         changed_sources = tqdm(changed_sources, total=num_changed_sources,
                                desc="Fetching captures", unit="source")
         for source in changed_sources:
-            if "web.archive.org" in source.archive.cdx_api_url:
-                _add_captures(config, source)
+            _add_captures(config, source)
     else:
         echo("No new/changed sources.")
 
@@ -164,7 +163,6 @@ def fetch(config: Config) -> None:
 @captures.group("import")
 def import_() -> None:
     pass
-
 
 
 _CEPH_DIR = Path("/mnt/ceph/storage/")
