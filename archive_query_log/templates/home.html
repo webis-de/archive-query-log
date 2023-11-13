@@ -107,7 +107,11 @@
                             <progress max="{{ progress.total }}" value="{{ progress.current }}">
                                 {{ "{:,.0f}".format(progress.current) }}/{{ "{:,.0f}".format(progress.total) }}
                             </progress>
+                            {% if progress.total != 0 %}
                             {{ "{:.0f}".format(progress.current / progress.total * 100) }}%
+                            {% else %}
+                            —%
+                            {% endif %}
                         </td>
                     </tr>
                 {% endfor %}
