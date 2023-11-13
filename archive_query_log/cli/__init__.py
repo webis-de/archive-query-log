@@ -10,12 +10,13 @@ from archive_query_log import __version__ as app_version
 from archive_query_log.cli.archives import archives
 from archive_query_log.cli.captures import captures
 from archive_query_log.cli.monitoring import monitoring
+from archive_query_log.cli.parsers import parsers
 from archive_query_log.cli.providers import providers
 from archive_query_log.cli.sources import sources
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.orm import (
-    Archive, Provider, Source, Capture, Serp, Result)
+    Archive, Provider, Source, Capture, Serp, Result, UrlQueryParser)
 
 
 def print_version(
@@ -65,6 +66,7 @@ def init(config: Config) -> None:
     echo("Initialize Elasticsearch indices.")
     Archive.init(using=config.es.client)
     Provider.init(using=config.es.client)
+    UrlQueryParser.init(using=config.es.client)
     Source.init(using=config.es.client)
     Capture.init(using=config.es.client)
     Serp.init(using=config.es.client)
@@ -73,6 +75,7 @@ def init(config: Config) -> None:
 
 cli.add_command(archives)
 cli.add_command(providers)
+cli.add_command(parsers)
 cli.add_command(sources)
 cli.add_command(captures)
 cli.add_command(monitoring)
