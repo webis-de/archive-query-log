@@ -8,3 +8,6 @@ data:
     es:
       host: {{ $.Values.elasticsearch.host }}
       port: {{ $.Values.elasticsearch.port }}
+    s3:
+      endpoint_url: {{ $.Values.s3.endpoint_url }}
+      bucket_name: {{ $.Values.s3.bucket_name }}
