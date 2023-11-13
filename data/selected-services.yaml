@@ -14662,10 +14662,6 @@
   - url_pattern: ^https?://[^/]+/recipes\?
     type: query_parameter
     parameter: q
-  offset_parsers:
-  - url_pattern: ^https?://[^/]+/recipes\?
-    type: query_parameter
-    parameter: false
   focused_url_prefixes:
   - /r
   - /recipes?
