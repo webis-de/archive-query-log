@@ -7,7 +7,7 @@ from flask import render_template, Response, make_response
 
 from archive_query_log.config import Config
 from archive_query_log.orm import Archive, Provider, Source, Capture, \
-    BaseDocument, Serp, Result
+    BaseDocument, Serp, Result, UrlQueryParser, UrlPageParser, UrlOffsetParser
 from archive_query_log.utils.time import utc_now
 
 
@@ -164,6 +164,24 @@ def home(config: Config) -> str | Response:
             name="Results",
             description="Search result from the SERPs.",
             document=Result,
+        ),
+        _get_statistics(
+            config=config,
+            name="URL query parsers",
+            description="Parser to get the query from a SERP URL.",
+            document=UrlQueryParser,
+        ),
+        _get_statistics(
+            config=config,
+            name="URL page parsers",
+            description="Parser to get the page from a SERP URL.",
+            document=UrlPageParser,
+        ),
+        _get_statistics(
+            config=config,
+            name="URL offset parsers",
+            description="Parser to get the offset from a SERP URL.",
+            document=UrlOffsetParser,
         ),
     ]
 
