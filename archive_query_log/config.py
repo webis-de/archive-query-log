@@ -8,6 +8,7 @@ from pyrate_limiter import Limiter, RequestRate, Duration
 from requests import Session
 from requests_ratelimiter import LimiterAdapter
 from urllib3 import Retry
+from warc_s3 import WarcS3Store
 
 from archive_query_log import __version__ as version
 
@@ -67,6 +68,22 @@ class EsConfig(DataClassJsonMixin):
 
 
 @dataclass(frozen=True)
+class S3Config(DataClassJsonMixin):
+    endpoint_url:str
+    access_key:str
+    secret_key:str
+    bucket_name: str
+
+    @cached_property
+    def warc_store(self) -> WarcS3Store:
+        return WarcS3Store(
+            endpoint_url=self.endpoint_url,
+            access_key=self.access_key,
+            secret_key=self.secret_key,
+            bucket_name=self.bucket_name,
+        )
+
+@dataclass(frozen=True)
 class HttpConfig(DataClassJsonMixin):
     max_retries: int = 5
 
@@ -114,4 +131,5 @@ class HttpConfig(DataClassJsonMixin):
 @dataclass(frozen=True)
 class Config(DataClassJsonMixin):
     es: EsConfig
+    s3: S3Config
     http: HttpConfig = HttpConfig()
