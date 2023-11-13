@@ -62,6 +62,7 @@ def _get_statistics(
 
     last_modified_response = (
         document.search(using=config.es.client)
+        .query(Exists(field="last_modified"))
         .sort("-last_modified")
         .extra(size=1)
         .execute()
