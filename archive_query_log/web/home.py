@@ -190,6 +190,41 @@ def home(config: Config) -> str | Response:
             document=Source,
             timestamp_field="last_fetched_captures",
         ),
+        _get_processed_progress(
+            config=config,
+            name="Captures → SERPs",
+            description="Parse queries from capture URLs.",
+            document=Capture,
+            timestamp_field="url_query_parser.last_parsed",
+        ),
+        _get_processed_progress(
+            config=config,
+            name="SERPs → SERPs",
+            description="Parse page from SERP URLs.",
+            document=Serp,
+            timestamp_field="url_page_parser.last_parsed",
+        ),
+        _get_processed_progress(
+            config=config,
+            name="SERPs → SERPs",
+            description="Parse offset from SERP URLs.",
+            document=Serp,
+            timestamp_field="url_offset_parser.last_parsed",
+        ),
+        _get_processed_progress(
+            config=config,
+            name="SERPs → SERPs",
+            description="Parse query from SERP contents.",
+            document=Serp,
+            timestamp_field="serp_query_parser.last_parsed",
+        ),
+        _get_processed_progress(
+            config=config,
+            name="SERPs → SERPs",
+            description="Parse snippets from SERP contents.",
+            document=Serp,
+            timestamp_field="serp_snippets_parser.last_parsed",
+        ),
     ]
 
     etag = str(hash((
