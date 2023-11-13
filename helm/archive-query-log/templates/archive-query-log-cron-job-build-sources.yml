@@ -26,7 +26,9 @@ spec:
               requests:
                 memory: 4Gi
             command:
-            - /venv/bin/archive-query-log
+            - /venv/bin/python
+            - -m
+            - archive_query_log
             - -f
             - /workspace/config.config-map.yml
             - -f
