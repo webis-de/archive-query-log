@@ -25,9 +25,7 @@ spec:
       - name: {{ $.Release.Name }}
         image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
         command:
-        - /venv/bin/python
-        - -m
-        - archive_query_log
+        - /venv/bin/archive-query-log
         - -f
         - /workspace/config.config-map.yml
         - -f
