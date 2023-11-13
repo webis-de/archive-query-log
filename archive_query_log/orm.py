@@ -147,6 +147,48 @@ class UrlQueryParser(BaseDocument):
             "number_of_replicas": 2,
         }
 
+UrlPageParserType = Literal[
+    "query_parameter",
+    "fragment_parameter",
+    "path_segment",
+]
+
+
+class UrlPageParser(BaseDocument):
+    provider: InnerProviderId = Object(InnerProviderId)
+    url_pattern_regex: str | None = Keyword()
+    priority: int | None = Integer()
+    parser_type: UrlPageParserType = Keyword()
+    parameter: str | None = Keyword()
+    segment: int | None = Keyword()
+    remove_pattern_regex: str | None = Keyword()
+    space_pattern_regex: str | None = Keyword()
+
+    @cached_property
+    def url_pattern(self) -> Pattern | None:
+        if self.url_pattern_regex is None:
+            raise ValueError("No URL pattern regex.")
+        return pattern(self.url_pattern_regex)
+
+    @cached_property
+    def remove_pattern(self) -> Pattern | None:
+        if self.remove_pattern_regex is None:
+            return None
+        return pattern(self.remove_pattern_regex)
+
+    @cached_property
+    def space_pattern(self) -> Pattern | None:
+        if self.space_pattern_regex is None:
+            return None
+        return pattern(self.space_pattern_regex)
+
+    class Index:
+        name = "aql_url_page_parsers"
+        settings = {
+            "number_of_shards": 1,
+            "number_of_replicas": 2,
+        }
+
 
 class InnerParser(InnerDocument):
     id: str = Keyword()
