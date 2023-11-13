@@ -5760,11 +5760,6 @@
 - name: tim
   domains:
   - tim.it
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/\#searchPage\|
-    type: fragment_segment
-    segment: 1
-    delimiter: '|'
   focused_url_prefixes:
   - /#searchPage
 - name: tnaflix
