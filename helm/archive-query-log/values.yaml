@@ -4,15 +4,15 @@ buildSources:
   enabled: true
   schedule: "0 4 * * 2,4"
   completions: 50
-  parallelism: 25
+  parallelism: 10
   backoffLimit: 25
   ttlMinutesAfterFinished: 15
 
 fetchCaptures:
   enabled: true
-  schedule: "1/10 * * * *"
+  schedule: "* * * * *"
   completions: 100
-  parallelism: 100
+  parallelism: 10
   backoffLimit: 50
   ttlMinutesAfterFinished: 5
 
@@ -20,7 +20,7 @@ importCapturesAql22:
   enabled: false
   dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
   completions: 729  # The number of search providers.
-  parallelism: 50
+  parallelism: 10
   backoffLimit: 25
 
 monitoring:

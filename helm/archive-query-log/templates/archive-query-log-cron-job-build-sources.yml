@@ -8,7 +8,7 @@ metadata:
     checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
 spec:
   suspend: {{ not $.Values.buildSources.enabled }}
-  schedule: {{ $.Values.buildSources.schedule }}
+  schedule: "{{ $.Values.buildSources.schedule }}"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
