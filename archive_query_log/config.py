@@ -69,9 +69,9 @@ class EsConfig(DataClassJsonMixin):
 
 @dataclass(frozen=True)
 class S3Config(DataClassJsonMixin):
-    endpoint_url:str
-    access_key:str
-    secret_key:str
+    endpoint_url: str
+    access_key: str
+    secret_key: str
     bucket_name: str
 
     @cached_property
@@ -82,6 +82,7 @@ class S3Config(DataClassJsonMixin):
             secret_key=self.secret_key,
             bucket_name=self.bucket_name,
         )
+
 
 @dataclass(frozen=True)
 class HttpConfig(DataClassJsonMixin):
