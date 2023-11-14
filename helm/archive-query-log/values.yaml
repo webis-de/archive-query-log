@@ -18,10 +18,12 @@ fetchCaptures:
 
 importCapturesAql22:
   enabled: false
+  schedule: "0 5 * * 3"
   dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
   completions: 729  # The number of search providers.
   parallelism: 10
   backoffLimit: 25
+  ttlMinutesAfterFinished: 15
 
 monitoring:
   ingressClassName: nginx
