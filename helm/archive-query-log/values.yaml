@@ -11,9 +11,9 @@ sourcesBuild:
 capturesFetch:
   enabled: true
   schedule: "* * * * *"
-  completions: 100
+  completions: 50
   parallelism: 10
-  backoffLimit: 50
+  backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 capturesImportAql22:
@@ -24,6 +24,14 @@ capturesImportAql22:
   parallelism: 10
   backoffLimit: 25
   ttlMinutesAfterFinished: 15
+
+serpsParseUrlQuery:
+  enabled: false
+  schedule: "* * * * *"
+  completions: 50
+  parallelism: 10
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
 
 monitoring:
   ingressClassName: nginx
