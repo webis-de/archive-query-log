@@ -15,3 +15,4 @@ NAMESPACE_SERP_SNIPPETS_PARSER = uuid5(
     NAMESPACE_AQL, "serp_snippets_parser")
 NAMESPACE_SERP_DIRECT_ANSWER_PARSER = uuid5(
     NAMESPACE_AQL, "serp_direct_answer_parser")
+NAMESPACE_WARC_DOWNLOADER = uuid5(NAMESPACE_AQL, "warc_downloader")
