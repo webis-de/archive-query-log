@@ -12,6 +12,7 @@ from archive_query_log.cli.captures import captures
 from archive_query_log.cli.monitoring import monitoring
 from archive_query_log.cli.parsers import parsers
 from archive_query_log.cli.providers import providers
+from archive_query_log.cli.serps import serps
 from archive_query_log.cli.sources import sources
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
@@ -78,4 +79,5 @@ cli.add_command(providers)
 cli.add_command(parsers)
 cli.add_command(sources)
 cli.add_command(captures)
+cli.add_command(serps)
 cli.add_command(monitoring)
