@@ -16,7 +16,7 @@ from web_archive_api.memento import MementoApi
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.orm import Capture, Serp, InnerCapture, InnerParser, \
-    UrlQueryParser, Provider
+    UrlQueryParser, Provider, InnerDownloader, WarcLocation
 from archive_query_log.parse.url_query import parse_url_query as \
     _parse_url_query
 from archive_query_log.utils.es import safe_iter_scan
@@ -26,8 +26,6 @@ from archive_query_log.utils.time import utc_now
 @group()
 def serps():
     pass
-
-
 
 
 @serps.group()
@@ -94,9 +92,12 @@ def _parse_save_serp(
         return
     return
 
+
 @parse.command("url-query")
 @pass_config
 def parse_url_query(config: Config) -> None:
+    start_time = utc_now()
+
     Serp.init(using=config.es.client)
 
     providers_search: Search = (
@@ -149,7 +150,7 @@ def parse_url_query(config: Config) -> None:
                     config=config,
                     capture=capture,
                     query_parsers=parsers,
-                    start_time=utc_now(),
+                    start_time=start_time,
                 )
             Capture.index().refresh(using=config.es.client)
         else:
