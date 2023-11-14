@@ -1,6 +1,6 @@
 image: ghcr.io/webis-de/archive-query-log
 
-buildSources:
+sourcesBuild:
   enabled: true
   schedule: "0 4 * * 2,4"
   completions: 50
@@ -8,7 +8,7 @@ buildSources:
   backoffLimit: 25
   ttlMinutesAfterFinished: 15
 
-fetchCaptures:
+capturesFetch:
   enabled: true
   schedule: "* * * * *"
   completions: 100
@@ -16,7 +16,7 @@ fetchCaptures:
   backoffLimit: 50
   ttlMinutesAfterFinished: 5
 
-importCapturesAql22:
+capturesImportAql22:
   enabled: false
   schedule: "0 5 * * 3"
   dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused

@@ -3,21 +3,21 @@ Installed {{ $.Chart.Name }} (release name: {{ $.Release.Name }}{{ with $.Values
 Accessing Elasticsearch {{ $.Values.elasticsearch.host }}:{{ $.Values.elasticsearch.port }} (authenticating with user {{ $.Values.elasticsearch.username }}).
 
 Started cron jobs:
-{{- if $.Values.buildSources.enabled }}
+{{- if $.Values.sourcesBuild.enabled }}
 - Build sources:
-  Scheduled at {{ $.Values.buildSources.schedule }}.
-  Running {{ $.Values.buildSources.completions }}x (parallelism: {{ $.Values.buildSources.parallelism }}, backoff limit: {{ $.Values.buildSources.backoffLimit }}).
+  Scheduled at {{ $.Values.sourcesBuild.schedule }}.
+  Running {{ $.Values.sourcesBuild.completions }}x (parallelism: {{ $.Values.sourcesBuild.parallelism }}, backoff limit: {{ $.Values.sourcesBuild.backoffLimit }}).
 {{- end }}
-{{- if $.Values.fetchCaptures.enabled }}
+{{- if $.Values.capturesFetch.enabled }}
 - Fetch captures:
-  Scheduled at {{ $.Values.fetchCaptures.schedule }}.
-  Running {{ $.Values.fetchCaptures.completions }}x (parallelism: {{ $.Values.fetchCaptures.parallelism }}, backoff limit: {{ $.Values.fetchCaptures.backoffLimit }}).
+  Scheduled at {{ $.Values.capturesFetch.schedule }}.
+  Running {{ $.Values.capturesFetch.completions }}x (parallelism: {{ $.Values.capturesFetch.parallelism }}, backoff limit: {{ $.Values.capturesFetch.backoffLimit }}).
 {{- end }}
 
 One-off jobs:
-{{- if $.Values.importCapturesAql22.enabled }}
+{{- if $.Values.capturesImportAql22.enabled }}
 - Import captures from AQL-22:
-  Running {{ $.Values.importCapturesAql22.completions }}x (search providers: {{ $.Values.importCapturesAql22.completions }}, parallelism: {{ $.Values.importCapturesAql22.parallelism }}, backoff limit: {{ $.Values.importCapturesAql22.backoffLimit }}).
+  Running {{ $.Values.capturesImportAql22.completions }}x (search providers: {{ $.Values.capturesImportAql22.completions }}, parallelism: {{ $.Values.capturesImportAql22.parallelism }}, backoff limit: {{ $.Values.capturesImportAql22.backoffLimit }}).
 {{- end }}
 
 Serving monitoring web interface at {{ if $.Values.monitoring.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.monitoring.host }}{{ $.Values.monitoring.path }}.

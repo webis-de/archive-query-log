@@ -1,25 +1,25 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ $.Release.Name }}-import-captures-aql-22
+  name: {{ $.Release.Name }}-captures-fetch
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
     checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
 spec:
-  suspend: {{ not $.Values.importCapturesAql22.enabled }}
-  schedule: "{{ $.Values.importCapturesAql22.schedule }}"
+  suspend: {{ not $.Values.capturesFetch.enabled }}
+  schedule: "{{ $.Values.capturesFetch.schedule }}"
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
-      completions: {{ $.Values.importCapturesAql22.completions }}
-      parallelism: {{ $.Values.importCapturesAql22.parallelism }}
-      backoffLimit: {{ $.Values.importCapturesAql22.backoffLimit }}
-      completionMode: Indexed
+      completions: {{ $.Values.capturesFetch.completions }}
+      parallelism: {{ $.Values.capturesFetch.parallelism }}
+      backoffLimit: {{ $.Values.capturesFetch.backoffLimit }}
+      ttlSecondsAfterFinished: {{ mul 60 $.Values.capturesFetch.ttlMinutesAfterFinished }}
       template:
         spec:
           containers:
-          - name: {{ $.Release.Name }}-import-captures-aql-22
+          - name: {{ $.Release.Name }}-captures-fetch
             image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
             imagePullPolicy: IfNotPresent
             resources:
@@ -34,15 +34,7 @@ spec:
             - -f
             - /workspace/config.secret.yml
             - captures
-            - import
-            - aql-22
-            - --no-check-memento
-            - /workspace/data/
-            env:
-            - name: SEARCH_PROVIDER_INDEX
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.annotations['batch.kubernetes.io/job-completion-index']
+            - fetch
             volumeMounts:
             - name: {{ $.Release.Name }}-config-map
               mountPath: /workspace/config.config-map.yml
@@ -52,9 +44,6 @@ spec:
               mountPath: /workspace/config.secret.yml
               readOnly: true
               subPath: config.yml
-            - name: {{ $.Release.Name }}-data
-              mountPath: /workspace/data/
-              readOnly: true
           restartPolicy: OnFailure
           volumes:
           - name: {{ $.Release.Name }}-config-map
@@ -63,8 +52,3 @@ spec:
           - name: {{ $.Release.Name }}-secret
             secret:
               secretName: {{ $.Release.Name }}-secret
-          - name: {{ $.Release.Name }}-data
-            hostPath:
-              path: {{ $.Values.importCapturesAql22.dataDir }}
-              type: Directory
-
