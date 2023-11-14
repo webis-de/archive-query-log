@@ -296,6 +296,7 @@ class InnerDownloader(InnerDocument):
 class WarcLocation(InnerDocument):
     file: str = Keyword()
     offset: int = Integer()
+    length: int = Integer()
 
 
 class Snippet(InnerDocument):
