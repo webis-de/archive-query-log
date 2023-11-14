@@ -90,8 +90,8 @@
                 <tr>
                     <th>Stage</th>
                     <th>Description</th>
-                    <th>Processed</th>
                     <th>Unprocessed</th>
+                    <th>Processed</th>
                     <th>Progress</th>
                 </tr>
                 </thead>
@@ -100,9 +100,10 @@
                     <tr>
                         <td>{{ progress.name }}</td>
                         <td>
-                            {% if progress.description %}{{ progress.description }}{% else %}—{% endif %}</td>
-                        <td style="text-align: right">{{ "{:,.0f}".format(progress.current) }}</td>
+                            {% if progress.description %}{{ progress.description }}{% else %}—{% endif %}
+                        </td>
                         <td style="text-align: right">{{ "{:,.0f}".format(progress.total - progress.current) }}</td>
+                        <td style="text-align: right">{{ "{:,.0f}".format(progress.current) }}</td>
                         <td>
                             <progress max="{{ progress.total }}" value="{{ progress.current }}">
                                 {{ "{:,.0f}".format(progress.current) }}/{{ "{:,.0f}".format(progress.total) }}
