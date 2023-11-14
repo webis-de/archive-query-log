@@ -83,6 +83,7 @@ def _parse_save_serp(
             ),
             url_query=url_query,
             url_query_parser=url_query_parser,
+            last_modified=start_time,
         )
         serp.save(using=config.es.client)
         capture.update(
