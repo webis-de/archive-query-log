@@ -10476,23 +10476,6 @@
 - name: yoo7
   domains:
   - yoo7.com
-  query_parsers:
-  - url_pattern: ^https?://[^/]+/tag/.+
-    type: path_segment
-    segment: 0
-    delimiter: ' '
-    remove_patterns:
-    - ^/tag/
-    - /p[0-9]+$
-    space_patterns:
-    - /
-  page_parsers:
-  - url_pattern: ^https?://[^/]+/tag/.+/p[0-9]+
-    type: path_segment
-    segment: 0
-    delimiter: ' '
-    remove_patterns:
-    - ^/tag/.+/p
   focused_url_prefixes:
   - /tag
 - name: elmwatin
