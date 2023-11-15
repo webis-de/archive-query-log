@@ -180,9 +180,9 @@ def _download_warc(config: Config, serp: Serp) -> Iterator[_SerpArcWarcRecord]:
 
 def _download_warcs(
         config: Config,
-        serps: Iterable[Serp],
+        serps_: Iterable[Serp],
 ) -> Iterator[_SerpArcWarcRecord]:
-    for serp in serps:
+    for serp in serps_:
         yield from _download_warc(config, serp)
 
 
