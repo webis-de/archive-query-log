@@ -233,6 +233,13 @@ def home(config: Config) -> str | Response:
         _get_processed_progress(
             config=config,
             name="SERPs → SERPs",
+            description="Download WARCs.",
+            document=Serp,
+            timestamp_field="warc_downloader.last_downloaded",
+        ),
+        _get_processed_progress(
+            config=config,
+            name="SERPs → SERPs",
             description="Parse query from SERP contents.",
             document=Serp,
             timestamp_field="serp_query_parser.last_parsed",
