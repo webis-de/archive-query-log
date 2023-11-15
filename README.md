@@ -77,17 +77,15 @@ From inside the repository directory, create a virtual environment and activate 
 python3.10 -m venv venv/
 source venv/bin/activate
 ```
-Now you can install the Archive Query Log CLI by running:
+
+Install the Archive Query Log by running:
 ```shell
 pip install -e .
 ```
 
-**Note:** The commands below use the syntax of the [PyPi installation](#installation-pypi).
-To run the same commands with the local Python installation, replace `aql` with `python -m archive_query_log`,
-for example:
-
+Now you can run the Archive Query Log CLI by running:
 ```shell
-python -m archive_query_log --help
+aql --help
 ```
 
 </details>
@@ -129,8 +127,8 @@ docker run -it -v "$(pwd)"/config.override.yml:/workspace/config.override.yml aq
 
 #### Configuration
 
-Crawling the Archive Query Log requires access to an Elasticsearch cluster.
-To configure access to the Elasticsearch cluster, 
+Crawling the Archive Query Log requires access to an Elasticsearch cluster and some S3 block storage.
+To configure access to the Elasticsearch cluster and S3, 
 add a `config.override.yml` file in the current directory, with the following contents.
 Replace the placeholders with your actual credentials:
 
@@ -140,30 +138,137 @@ es:
   port: 9200
   username: "<USERNAME>"
   password: "<PASSWORD>"
+s3:
+   endpoint_url: "<URL>"
+   bucket_name: archive-query-log
+   access_key: "<KEY>"
+   secret_key: "<KEY>"
 ```
 
+#### Toy Example: Crawl ChatNoir SERPs from the Wayback Machine
+
+The crawling pipeline of the Archive Query Log can best be understood by looking at a small toy example.
+Here, we want to crawl and parse SERPs of the [ChatNoir search engine](https://chatnoir.eu) 
+from the [Wayback Machine](https://web.archive.org).
+
+<!-- TODO: Add example instructions. -->
+
 #### Add an archive service
+
+Add new web archive services (e.g., the [Wayback Machine](https://web.archive.org)) to the AQL by running:
 
 ```shell
 aql archives add
 ```
 
+We maintain a list of compatible web archives [below](#compatible-archives).
+
+##### Compatible archives
+
+The web archives below are known to be compatible with the Archive Query Log crawler and can be used to mine SERPs.
+
+<!-- TODO: Extend this list. -->
+
+| Name                                       | CDX API URL                            | Memento API URL              |
+|--------------------------------------------|----------------------------------------|------------------------------|
+| [Wayback Machine](https://web.archive.org) | https://web.archive.org/cdx/search/cdx | https://web.archive.org/web/ |
+
+
 #### Add a search provider
+
+Add new search providers (e.g., [Google](https://google.com)) to the AQL by running:
 
 ```shell
 aql providers add
 ```
 
+A search provider can be any website that offers some kind of search functionality.
+Ideally, you should also look at common prefixes of the URLs of the search results pages (e.g., `/search` for Google).
+Narrowing down URL prefixes helps to not crawl too many captures that do not contain search results.
+
+Refer to the [import instructions below](#import-from-aql-22) to import providers from the AQL-22 YAML file format.
+
 #### Build source pairs
+
+
+Once you have added at least one [archive](#add-an-archive-service) and one [search provider](#add-a-search-provider),
+we want to crawl archived captures of SERPs for each search provider and for each archive service,
+that is, we compute the cross product of archives and the search providers' domains
+and URL prefixes (roughly: archive×provider).
+Start building source pairs (i.e., archive–provider pairs) by running:
 
 ```shell
 aql sources build
 ```
 
+Running the command again after adding more archives or providers automatically creates the missing source pairs.
+
 #### Fetch captures
+
+For each [source pair](#build-source-pairs), we now fetch captures from the archive service, that correspond
+to the provider's domain and URL prefix given in the source pair.
 
 ```shell
 aql captures fetch
+```
+
+Again, running the command again after adding more source pairs automatically fetches the missing captures.
+
+#### Parse URLs
+
+Not every capture necessarily points to a search engine result page (SERP).
+But usually, SERPs contain the user query in the URL, so we can filter out non-SERP captures by parsing the URLs.
+
+```shell
+aql serps parse url-query
+```
+
+Parsing the query from the capture URL will add SERPs to a new, more focused index that only contains SERPs.
+From the SERPs, we can also parse the page number and offset of the SERP, if available.
+
+```shell
+aql serps parse url-page
+aql serps parse url-offset
+```
+
+All the above commands can be run in parallel, and they can be run multiple times to update the SERP index.
+Already parsed SERPs will be skipped.
+
+#### Download WARCs
+
+Up to this point, we have only fetched the metadata of the captures, most prominently the URL.
+However, the snippets of the SERPs are not contained in the metadata, but only on the web page.
+So we need to download the actual web pages from the archive service.
+
+```shell
+aql serps download warc
+```
+
+This command will download the contents of each SERP to a WARC file that is stored in the configured S3 bucket.
+A pointer to the WARC file is stored in the SERP index so that we can quickly access a specific SERPs contents later.
+
+#### Parsing WARCs
+
+<!-- TODO: Add instructions on how to parse the SERPs' contents from the WARC files. -->
+
+
+#### Import from AQL-22
+
+We support automatically importing providers and parsers from the AQL-22 YAML-file format
+(see [`data/selected-services.yaml`](data/selected-services.yaml)).
+To import the services and parsers from the AQL-22 YAML file, run:
+
+```shell
+aql providers import
+aql parsers url-query import
+aql parsers url-page import
+aql parsers url-offset import
+```
+
+We also support importing a previous crawl of captures from the AQL-22 file system backend:
+
+```shell
+aql captures import aql-22
 ```
 
 ### Cluster (Helm/Kubernetes)
@@ -176,8 +281,8 @@ Just install [Helm](https://helm.sh/docs/intro/quickstart/) and configure `kubec
 
 #### Configuration
 
-Crawling the Archive Query Log requires access to an Elasticsearch cluster.
-Configure the Elasticsearch credentials in a `values.override.yaml` file like this:
+Crawling the Archive Query Log requires access to an Elasticsearch cluster and some S3 block storage.
+Configure the Elasticsearch and S3 credentials in a `values.override.yaml` file like this:
 
 ```yaml
 elasticsearch:
@@ -185,6 +290,11 @@ elasticsearch:
   port: 9200
   username: "<USERNAME>"
   password: "<PASSWORD>"
+s3:
+  endpoint_url: "<URL>"
+  bucket_name: archive-query-log
+  access_key: "<KEY>"
+  secret_key: "<KEY>"
 ```
 
 #### Deployment
@@ -210,7 +320,7 @@ helm uninstall archive-query-log
 If you use the Archive Query Log dataset or the crawling code in your research, please cite the following paper
 describing the AQL and its use-cases:
 
-> Heinrich Reimer, Sebastian Schmidt, Maik Fröbe, Lukas Gienapp, Harrisen Scells, Benno Stein, Matthias Hagen, and
+> Jan Heinrich Reimer, Sebastian Schmidt, Maik Fröbe, Lukas Gienapp, Harrisen Scells, Benno Stein, Matthias Hagen, and
 > Martin Potthast. [The Archive Query Log: Mining Millions of Search Result Pages of Hundreds of Search Engines 
 > from 25 Years of Web Archives.](https://webis.de/publications.html?q=archive#reimer_2023) In Hsin-Hsi Chen et al., 
 > editors, _46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2023)_, 
@@ -242,13 +352,18 @@ You can use the following BibTeX entry for citation:
 Refer to the local [Python installation](#installation-python-from-source) instructions to set up the development
 environment and install the dependencies.
 
+Then, also install the test dependencies:
+```shell
+pip install -e .[tests]
+```
+
 After having implemented a new feature, you should the check code format, inspect common LINT errors, 
 and run all unit tests with the following commands:
 
 ```shell
 flake8 archive_query_log  # Code format
 pylint archive_query_log  # LINT errors
-mypy archive_query_log  # Static typing
+mypy archive_query_log    # Static typing
 bandit -c pyproject.toml -r archive_query_log  # Security
 pytest archive_query_log  # Unit tests
 ```
