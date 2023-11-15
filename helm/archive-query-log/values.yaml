@@ -33,6 +33,14 @@ serpsParseUrlQuery:
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
+serpsDownloadWarc:
+  enabled: true
+  schedule: "* * * * *"
+  completions: 10
+  parallelism: 10
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
 monitoring:
   ingressClassName: nginx
   host: aql-monitoring.srv.webis.de
