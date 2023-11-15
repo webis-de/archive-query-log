@@ -1,4 +1,5 @@
 from datetime import datetime
+from functools import cache
 from typing import Iterable, Iterator, Final
 from uuid import uuid5
 
@@ -16,7 +17,7 @@ from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_DOWNLOADER
 from archive_query_log.orm import Capture, Serp, InnerCapture, InnerParser, \
-    UrlQueryParser, Provider, InnerDownloader, WarcLocation
+    UrlQueryParser, InnerDownloader, WarcLocation
 from archive_query_log.parse.url_query import parse_url_query as \
     _parse_url_query
 from archive_query_log.utils.es import safe_iter_scan
@@ -33,13 +34,14 @@ def parse():
     pass
 
 
-def _provider_url_query_parsers(
+@cache
+def _url_query_parsers(
         config: Config,
-        provider: Provider,
+        provider_id: str,
 ) -> list[UrlQueryParser]:
     parsers: Iterable[UrlQueryParser] = (
         UrlQueryParser.search(using=config.es.client)
-        .filter(Term(provider__id=provider.id))
+        .filter(Term(provider__id=provider_id))
         .scan()
     )
     parsers = safe_iter_scan(parsers)
@@ -49,7 +51,6 @@ def _provider_url_query_parsers(
 def _parse_save_serp(
         config: Config,
         capture: Capture,
-        query_parsers: list[UrlQueryParser],
         start_time: datetime,
 ) -> None:
     # Re-check if parsing is necessary.
@@ -58,7 +59,7 @@ def _parse_save_serp(
             capture.url_query_parser.last_parsed > capture.last_modified):
         return
 
-    for parser in query_parsers:
+    for parser in _url_query_parsers(config, capture.provider.id):
         # Try to parse the query.
         url_query = _parse_url_query(parser, capture.url)
         if url_query is None:
@@ -96,65 +97,45 @@ def _parse_save_serp(
 @parse.command("url-query")
 @pass_config
 def parse_url_query(config: Config) -> None:
+    Serp.init(using=config.es.client)
     start_time = utc_now()
 
-    Serp.init(using=config.es.client)
-
-    providers_search: Search = (
-        Provider.search(using=config.es.client)
+    changed_captures_search: Search = (
+        Capture.search(using=config.es.client)
+        .filter(
+            ~Exists(field="last_modified") |
+            ~Exists(field="url_query_parser.last_parsed") |
+            Script(
+                script="!doc['last_modified'].isEmpty() && "
+                       "!doc['url_query_parser.last_parsed']"
+                       ".isEmpty() && "
+                       "!doc['last_modified'].value.isBefore("
+                       "doc['url_query_parser.last_parsed'].value"
+                       ")",
+            )
+        )
         .query(FunctionScore(functions=[RandomScore()]))
     )
-    num_providers = (
-        providers_search.extra(track_total_hits=True)
+    num_changed_captures = (
+        changed_captures_search.extra(track_total_hits=True)
         .execute().hits.total.value)
-    providers: Iterable[Provider] = providers_search.scan()
-    providers = safe_iter_scan(providers)
-    # noinspection PyTypeChecker
-    providers = tqdm(providers, total=num_providers, desc="Parsing URL query",
-                     unit="provider")
-
-    for provider in providers:
-        parsers = _provider_url_query_parsers(config, provider)
-        changed_captures_search: Search = (
-            Capture.search(using=config.es.client)
-            .filter(
-                Term(provider__id=provider.id) &
-                (
-                        ~Exists(field="last_modified") |
-                        ~Exists(field="url_query_parser.last_parsed") |
-                        Script(
-                            script="!doc['last_modified'].isEmpty() && "
-                                   "!doc['url_query_parser.last_parsed']"
-                                   ".isEmpty() && "
-                                   "!doc['last_modified'].value.isBefore("
-                                   "doc['url_query_parser.last_parsed'].value"
-                                   ")",
-                        )
-                )
+    if num_changed_captures > 0:
+        changed_captures: Iterable[Capture] = (
+            changed_captures_search.params(preserve_order=True).scan())
+        changed_captures = safe_iter_scan(changed_captures)
+        # noinspection PyTypeChecker
+        changed_captures = tqdm(
+            changed_captures, total=num_changed_captures,
+            desc="Parsing URL query", unit="capture")
+        for capture in changed_captures:
+            _parse_save_serp(
+                config=config,
+                capture=capture,
+                start_time=start_time,
             )
-            .query(FunctionScore(functions=[RandomScore()]))
-        )
-        num_changed_captures = (
-            changed_captures_search.extra(track_total_hits=True)
-            .execute().hits.total.value)
-        if num_changed_captures > 0:
-            changed_captures: Iterable[Capture] = (
-                changed_captures_search.params(preserve_order=True).scan())
-            changed_captures = safe_iter_scan(changed_captures)
-            # noinspection PyTypeChecker
-            changed_captures = tqdm(
-                changed_captures, total=num_changed_captures,
-                desc="Parsing URL query", unit="capture")
-            for capture in changed_captures:
-                _parse_save_serp(
-                    config=config,
-                    capture=capture,
-                    query_parsers=parsers,
-                    start_time=start_time,
-                )
-            Capture.index().refresh(using=config.es.client)
-        else:
-            echo("No new/changed captures.")
+        Capture.index().refresh(using=config.es.client)
+    else:
+        echo("No new/changed captures.")
 
 
 @serps.group()
