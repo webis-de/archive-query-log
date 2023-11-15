@@ -3,7 +3,7 @@ image: ghcr.io/webis-de/archive-query-log
 sourcesBuild:
   enabled: true
   schedule: "0 4 * * 2,4"
-  completions: 50
+  completions: 10
   parallelism: 10
   backoffLimit: 25
   ttlMinutesAfterFinished: 15
@@ -11,7 +11,7 @@ sourcesBuild:
 capturesFetch:
   enabled: true
   schedule: "* * * * *"
-  completions: 50
+  completions: 10
   parallelism: 10
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
@@ -26,9 +26,9 @@ capturesImportAql22:
   ttlMinutesAfterFinished: 15
 
 serpsParseUrlQuery:
-  enabled: false
+  enabled: true
   schedule: "* * * * *"
-  completions: 50
+  completions: 10
   parallelism: 10
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
