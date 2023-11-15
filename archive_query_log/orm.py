@@ -177,12 +177,6 @@ class UrlPageParser(BaseDocument):
             return None
         return pattern(self.remove_pattern_regex)
 
-    @cached_property
-    def space_pattern(self) -> Pattern | None:
-        if self.space_pattern_regex is None:
-            return None
-        return pattern(self.space_pattern_regex)
-
     class Index:
         name = "aql_url_page_parsers"
         settings = {
@@ -219,12 +213,6 @@ class UrlOffsetParser(BaseDocument):
         if self.remove_pattern_regex is None:
             return None
         return pattern(self.remove_pattern_regex)
-
-    @cached_property
-    def space_pattern(self) -> Pattern | None:
-        if self.space_pattern_regex is None:
-            return None
-        return pattern(self.space_pattern_regex)
 
     class Index:
         name = "aql_url_offset_parsers"
