@@ -5,7 +5,7 @@ metadata:
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
-    checksum/elasticsearch-login: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
+    checksum/secret: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
 spec:
   suspend: {{ not $.Values.serpsParseUrlQuery.enabled }}
   schedule: "{{ $.Values.serpsParseUrlQuery.schedule }}"
