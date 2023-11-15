@@ -16,6 +16,7 @@ from archive_query_log.orm import Provider, UrlQueryParserType, \
     InnerProviderId, UrlQueryParser, UrlPageParserType, UrlPageParser, \
     UrlOffsetParser, UrlOffsetParserType
 from archive_query_log.utils.es import safe_iter_scan
+from archive_query_log.utils.time import utc_now
 
 
 @group()
@@ -81,6 +82,7 @@ def _add_url_query_parser(
         segment=segment,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
+        last_modified=utc_now(),
     )
     provider.save(using=config.es.client)
 
@@ -266,6 +268,7 @@ def _add_url_page_parser(
         segment=segment,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
+        last_modified=utc_now(),
     )
     provider.save(using=config.es.client)
 
@@ -451,6 +454,7 @@ def _add_url_offset_parser(
         segment=segment,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
+        last_modified=utc_now(),
     )
     provider.save(using=config.es.client)
 
