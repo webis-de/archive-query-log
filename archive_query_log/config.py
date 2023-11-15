@@ -81,6 +81,7 @@ class S3Config(DataClassJsonMixin):
             access_key=self.access_key,
             secret_key=self.secret_key,
             bucket_name=self.bucket_name,
+            quiet=True,
         )
 
 
