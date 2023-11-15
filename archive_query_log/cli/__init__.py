@@ -1,9 +1,11 @@
 from pathlib import Path
-from typing import Any
+from typing import Any, Type, Iterable
 
 from click import group, Context, Parameter, echo, option, pass_context, \
     Path as PathType, UsageError
+from elasticsearch_dsl import Document
 from mergedeep import merge, Strategy
+from tqdm.auto import tqdm
 from yaml import safe_load
 
 from archive_query_log import __version__ as app_version
@@ -17,7 +19,8 @@ from archive_query_log.cli.sources import sources
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.orm import (
-    Archive, Provider, Source, Capture, Serp, Result, UrlQueryParser)
+    Archive, Provider, Source, Capture, Serp, Result, UrlQueryParser,
+    UrlPageParser, UrlOffsetParser)
 
 
 def print_version(
@@ -64,14 +67,25 @@ def cli(context: Context, config_paths: list[Path]) -> None:
 @cli.command()
 @pass_config
 def init(config: Config) -> None:
-    echo("Initialize Elasticsearch indices.")
-    Archive.init(using=config.es.client)
-    Provider.init(using=config.es.client)
-    UrlQueryParser.init(using=config.es.client)
-    Source.init(using=config.es.client)
-    Capture.init(using=config.es.client)
-    Serp.init(using=config.es.client)
-    Result.init(using=config.es.client)
+    indices_list: list[Type[Document]] = [
+        Archive,
+        Provider,
+        Source,
+        Capture,
+        Serp,
+        Result,
+        UrlQueryParser,
+        UrlPageParser,
+        UrlOffsetParser,
+    ]
+    # noinspection PyTypeChecker
+    indices: Iterable[Type[Document]] = tqdm(
+        indices_list,
+        desc="Initialize Elasticsearch indices.",
+        unit="index",
+    )
+    for index in indices:
+        index.init(using=config.es.client)
 
 
 cli.add_command(archives)
