@@ -33,6 +33,22 @@ serpsParseUrlQuery:
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
+serpsParseUrlPage:
+  enabled: true
+  schedule: "* * * * *"
+  completions: 5
+  parallelism: 5
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseUrlOffset:
+  enabled: true
+  schedule: "* * * * *"
+  completions: 5
+  parallelism: 5
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
 serpsDownloadWarc:
   enabled: true
   schedule: "* * * * *"
