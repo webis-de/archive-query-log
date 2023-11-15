@@ -1,5 +1,4 @@
 from datetime import datetime
-from itertools import chain
 from typing import Iterable, Iterator, Final
 from uuid import uuid5
 
@@ -166,8 +165,18 @@ def download():
 class _SerpArcWarcRecord(ArcWarcRecord):
     serp: Final[Serp]
 
-    def __init__(self, serp: Serp, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, serp: Serp, record: ArcWarcRecord):
+        super().__init__(
+            record.format,
+            record.rec_type,
+            record.rec_headers,
+            record.raw_stream,
+            record.http_headers,
+            record.content_type,
+            record.length,
+            payload_length=record.payload_length,
+            digest_checker=record.digest_checker,
+        )
         self.serp = serp
 
 
@@ -186,6 +195,14 @@ def _download_warc(config: Config, serp: Serp) -> Iterator[_SerpArcWarcRecord]:
         for record in records
     )
     yield from serp_records
+
+
+def _download_warcs(
+        config: Config,
+        serps: Iterable[Serp],
+) -> Iterator[_SerpArcWarcRecord]:
+    for serp in serps:
+        yield from _download_warc(config, serp)
 
 
 def _stored_serp(warc_record: WarcS3Record) -> tuple[Serp, WarcLocation]:
@@ -251,10 +268,7 @@ def warc(config: Config) -> None:
                          desc="Downloading WARCs", unit="SERP")
 
     # Download from Memento API.
-    serp_records = chain.from_iterable(
-        _download_warc(config, serp)
-        for serp in changed_serps
-    )
+    serp_records = _download_warcs(config, changed_serps)
 
     # Write to S3.
     stored_records: Iterator[WarcS3Record] = (
@@ -262,11 +276,10 @@ def warc(config: Config) -> None:
     stored_serps = (_stored_serp(record) for record in stored_records)
 
     for serp, location in stored_serps:
-        print(serp, location)
         serp.update(
             using=config.es.client,
             retry_on_conflict=3,
-            warc_location=location,
-            warc_downloader=downloader,
+            warc_location=location.to_dict(),
+            warc_downloader=downloader.to_dict(),
         )
     Serp.index().refresh(using=config.es.client)
