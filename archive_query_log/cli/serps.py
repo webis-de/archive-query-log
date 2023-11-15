@@ -42,13 +42,14 @@ def _url_query_parsers(
     parsers: Iterable[UrlQueryParser] = (
         UrlQueryParser.search(using=config.es.client)
         .filter(Term(provider__id=provider_id))
+        .sort("-priority")
         .scan()
     )
     parsers = safe_iter_scan(parsers)
     return list(parsers)
 
 
-def _parse_save_serp(
+def _parse_serp_url_query(
         config: Config,
         capture: Capture,
         start_time: datetime,
@@ -128,7 +129,7 @@ def parse_url_query(config: Config) -> None:
             changed_captures, total=num_changed_captures,
             desc="Parsing URL query", unit="capture")
         for capture in changed_captures:
-            _parse_save_serp(
+            _parse_serp_url_query(
                 config=config,
                 capture=capture,
                 start_time=start_time,
