@@ -17,9 +17,13 @@ from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_DOWNLOADER
 from archive_query_log.orm import Capture, Serp, InnerCapture, InnerParser, \
-    UrlQueryParser, InnerDownloader, WarcLocation
+    UrlQueryParser, InnerDownloader, WarcLocation, UrlPageParser, \
+    UrlOffsetParser
 from archive_query_log.parse.url_query import parse_url_query as \
     _parse_url_query
+from archive_query_log.parse.url_page import parse_url_page as _parse_url_page
+from archive_query_log.parse.url_offset import \
+    parse_url_offset as _parse_url_offset
 from archive_query_log.utils.es import safe_iter_scan
 from archive_query_log.utils.time import utc_now
 
@@ -137,6 +141,184 @@ def parse_url_query(config: Config) -> None:
         Capture.index().refresh(using=config.es.client)
     else:
         echo("No new/changed captures.")
+
+
+@cache
+def _url_page_parsers(
+        config: Config,
+        provider_id: str,
+) -> list[UrlPageParser]:
+    parsers: Iterable[UrlPageParser] = (
+        UrlPageParser.search(using=config.es.client)
+        .filter(Term(provider__id=provider_id))
+        .sort("-priority")
+        .scan()
+    )
+    parsers = safe_iter_scan(parsers)
+    return list(parsers)
+
+
+def _parse_serp_url_page(
+        config: Config,
+        serp: Serp,
+        start_time: datetime,
+) -> None:
+    # Re-check if parsing is necessary.
+    if (serp.url_page_parser is not None and
+            serp.url_page_parser.last_parsed is not None and
+            serp.url_page_parser.last_parsed > serp.last_modified):
+        return
+
+    for parser in _url_page_parsers(config, serp.provider.id):
+        # Try to parse the query.
+        url_page = _parse_url_page(parser, serp.url)
+        if url_page is None:
+            # Parsing was not successful, e.g., URL pattern did not match.
+            continue
+        url_page_parser = InnerParser(
+            id=parser.id,
+            last_parsed=start_time,
+        )
+        serp.update(
+            using=config.es.client,
+            retry_on_conflict=3,
+            url_page=url_page,
+            url_page_parser=url_page_parser.to_dict(),
+        )
+        return
+    return
+
+
+@parse.command("url-page")
+@pass_config
+def parse_url_page(config: Config) -> None:
+    start_time = utc_now()
+
+    changed_serps_search: Search = (
+        Serp.search(using=config.es.client)
+        .filter(
+            ~Exists(field="last_modified") |
+            ~Exists(field="url_page_parser.last_parsed") |
+            Script(
+                script="!doc['last_modified'].isEmpty() && "
+                       "!doc['url_page_parser.last_parsed']"
+                       ".isEmpty() && "
+                       "!doc['last_modified'].value.isBefore("
+                       "doc['url_page_parser.last_parsed'].value"
+                       ")",
+            )
+        )
+        .query(FunctionScore(functions=[RandomScore()]))
+    )
+    num_changed_serps = (
+        changed_serps_search.extra(track_total_hits=True)
+        .execute().hits.total.value)
+    if num_changed_serps > 0:
+        changed_serps: Iterable[Serp] = (
+            changed_serps_search.params(preserve_order=True).scan())
+        changed_serps = safe_iter_scan(changed_serps)
+        # noinspection PyTypeChecker
+        changed_serps = tqdm(
+            changed_serps, total=num_changed_serps,
+            desc="Parsing URL page", unit="SERP")
+        for serp in changed_serps:
+            _parse_serp_url_page(
+                config=config,
+                serp=serp,
+                start_time=start_time,
+            )
+        Serp.index().refresh(using=config.es.client)
+    else:
+        echo("No new/changed SERPs.")
+
+
+@cache
+def _url_offset_parsers(
+        config: Config,
+        provider_id: str,
+) -> list[UrlOffsetParser]:
+    parsers: Iterable[UrlOffsetParser] = (
+        UrlOffsetParser.search(using=config.es.client)
+        .filter(Term(provider__id=provider_id))
+        .sort("-priority")
+        .scan()
+    )
+    parsers = safe_iter_scan(parsers)
+    return list(parsers)
+
+
+def _parse_serp_url_offset(
+        config: Config,
+        serp: Serp,
+        start_time: datetime,
+) -> None:
+    # Re-check if parsing is necessary.
+    if (serp.url_offset_parser is not None and
+            serp.url_offset_parser.last_parsed is not None and
+            serp.url_offset_parser.last_parsed > serp.last_modified):
+        return
+
+    for parser in _url_offset_parsers(config, serp.provider.id):
+        # Try to parse the query.
+        url_offset = _parse_url_offset(parser, serp.url)
+        if url_offset is None:
+            # Parsing was not successful, e.g., URL pattern did not match.
+            continue
+        url_offset_parser = InnerParser(
+            id=parser.id,
+            last_parsed=start_time,
+        )
+        serp.update(
+            using=config.es.client,
+            retry_on_conflict=3,
+            url_offset=url_offset,
+            url_offset_parser=url_offset_parser.to_dict(),
+        )
+        return
+    return
+
+
+@parse.command("url-offset")
+@pass_config
+def parse_url_offset(config: Config) -> None:
+    start_time = utc_now()
+
+    changed_serps_search: Search = (
+        Serp.search(using=config.es.client)
+        .filter(
+            ~Exists(field="last_modified") |
+            ~Exists(field="url_offset_parser.last_parsed") |
+            Script(
+                script="!doc['last_modified'].isEmpty() && "
+                       "!doc['url_offset_parser.last_parsed']"
+                       ".isEmpty() && "
+                       "!doc['last_modified'].value.isBefore("
+                       "doc['url_offset_parser.last_parsed'].value"
+                       ")",
+            )
+        )
+        .query(FunctionScore(functions=[RandomScore()]))
+    )
+    num_changed_serps = (
+        changed_serps_search.extra(track_total_hits=True)
+        .execute().hits.total.value)
+    if num_changed_serps > 0:
+        changed_serps: Iterable[Serp] = (
+            changed_serps_search.params(preserve_order=True).scan())
+        changed_serps = safe_iter_scan(changed_serps)
+        # noinspection PyTypeChecker
+        changed_serps = tqdm(
+            changed_serps, total=num_changed_serps,
+            desc="Parsing URL offset", unit="SERP")
+        for serp in changed_serps:
+            _parse_serp_url_offset(
+                config=config,
+                serp=serp,
+                start_time=start_time,
+            )
+        Serp.index().refresh(using=config.es.client)
+    else:
+        echo("No new/changed SERPs.")
 
 
 @serps.group()
