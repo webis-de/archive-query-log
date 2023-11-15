@@ -6874,10 +6874,6 @@
     segment: 2
     space_patterns:
     - '-'
-  offset_parsers:
-  - url_pattern: ^https?://[^/]+/ulta/a/_/Ntt-
-    type: query_parameter
-    parameter: false
   focused_url_prefixes:
   - /shop
   - /ulta/a/_/
