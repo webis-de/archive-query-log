@@ -35,4 +35,3 @@ def parse_url_query(parser: UrlQueryParser, url: str) -> str | None:
     query = query.strip()
     query = " ".join(query.split())
     return query
-
