@@ -4,7 +4,7 @@ from re import Pattern, compile as pattern
 from typing import Literal
 
 from elasticsearch_dsl import Document, Keyword, Text, Date, \
-    InnerDoc as InnerDocument, Object, Boolean, Index, Integer, Nested
+    InnerDoc as InnerDocument, Object, Boolean, Index, Integer, Nested, Long
 
 
 class BaseDocument(Document):
@@ -295,8 +295,8 @@ class InnerDownloader(InnerDocument):
 
 class WarcLocation(InnerDocument):
     file: str = Keyword()
-    offset: int = Integer()
-    length: int = Integer()
+    offset: int = Long()
+    length: int = Long()
 
 
 class Snippet(InnerDocument):
