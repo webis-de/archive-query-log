@@ -132,8 +132,7 @@ def parse_url_query(config: Config) -> None:
         changed_captures_search.extra(track_total_hits=True)
         .execute().hits.total.value)
     if num_changed_captures > 0:
-        changed_captures: Iterable[Capture] = (
-            changed_captures_search.params(preserve_order=True).scan())
+        changed_captures: Iterable[Capture] = changed_captures_search.scan()
         changed_captures = safe_iter_scan(changed_captures)
         # noinspection PyTypeChecker
         changed_captures = tqdm(
@@ -228,8 +227,7 @@ def parse_url_page(config: Config) -> None:
         changed_serps_search.extra(track_total_hits=True)
         .execute().hits.total.value)
     if num_changed_serps > 0:
-        changed_serps: Iterable[Serp] = (
-            changed_serps_search.params(preserve_order=True).scan())
+        changed_serps: Iterable[Serp] = changed_serps_search.scan()
         changed_serps = safe_iter_scan(changed_serps)
         # noinspection PyTypeChecker
         changed_serps = tqdm(
@@ -324,8 +322,7 @@ def parse_url_offset(config: Config) -> None:
         changed_serps_search.extra(track_total_hits=True)
         .execute().hits.total.value)
     if num_changed_serps > 0:
-        changed_serps: Iterable[Serp] = (
-            changed_serps_search.params(preserve_order=True).scan())
+        changed_serps: Iterable[Serp] = changed_serps_search.scan()
         changed_serps = safe_iter_scan(changed_serps)
         # noinspection PyTypeChecker
         changed_serps = tqdm(
@@ -445,8 +442,7 @@ def warc(config: Config) -> None:
         echo("No new/changed captures.")
         return
 
-    changed_serps: Iterable[Serp] = (
-        changed_serps_search.params(preserve_order=True).scan())
+    changed_serps: Iterable[Serp] = changed_serps_search.scan()
     changed_serps = safe_iter_scan(changed_serps)
     # noinspection PyTypeChecker
     changed_serps = tqdm(changed_serps, total=num_changed_serps,

@@ -72,10 +72,9 @@ def _iter_sources_batches_changed_archives(
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
-    changed_archives = (changed_archives_search.params(preserve_order=True)
-                        .scan())
+    changed_archives = changed_archives_search.scan()
     changed_archives = safe_iter_scan(changed_archives)
-    all_providers = all_providers_search.params(preserve_order=True).scan()
+    all_providers = all_providers_search.scan()
     all_providers = safe_iter_scan(all_providers)
     for archive in changed_archives:
         for provider in all_providers:
@@ -99,10 +98,9 @@ def _iter_sources_batches_changed_providers(
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
-    changed_providers = (changed_providers_search.params(preserve_order=True)
-                         .scan())
+    changed_providers = changed_providers_search.scan()
     changed_providers = safe_iter_scan(changed_providers)
-    all_archives = all_archives_search.params(preserve_order=True).scan()
+    all_archives = all_archives_search.scan()
     all_archives = safe_iter_scan(all_archives)
     for provider in changed_providers:
         for archive in all_archives:
