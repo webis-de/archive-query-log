@@ -2,15 +2,15 @@ image: ghcr.io/webis-de/archive-query-log
 
 sourcesBuild:
   enabled: true
-  schedule: "0 4 * * 2,4"
+  schedule: "0 6 * * 2,4"
   completions: 10
   parallelism: 10
   backoffLimit: 25
-  ttlMinutesAfterFinished: 15
+  ttlMinutesAfterFinished: 30
 
 capturesFetch:
   enabled: true
-  schedule: "* * * * *"
+  schedule: "0,15,30,45 * * * *"
   completions: 10
   parallelism: 10
   backoffLimit: 25
@@ -18,16 +18,16 @@ capturesFetch:
 
 capturesImportAql22:
   enabled: false
-  schedule: "0 5 * * 3"
+  schedule: "0 6 * * 3"
   dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
   completions: 729  # The number of search providers.
   parallelism: 10
   backoffLimit: 25
-  ttlMinutesAfterFinished: 15
+  ttlMinutesAfterFinished: 30
 
 serpsParseUrlQuery:
   enabled: true
-  schedule: "* * * * *"
+  schedule: "0,15,30,45 * * * *"
   completions: 10
   parallelism: 10
   backoffLimit: 25
@@ -35,7 +35,7 @@ serpsParseUrlQuery:
 
 serpsParseUrlPage:
   enabled: true
-  schedule: "* * * * *"
+  schedule: "0,15,30,45 * * * *"
   completions: 5
   parallelism: 5
   backoffLimit: 25
@@ -43,7 +43,7 @@ serpsParseUrlPage:
 
 serpsParseUrlOffset:
   enabled: true
-  schedule: "* * * * *"
+  schedule: "0,15,30,45 * * * *"
   completions: 5
   parallelism: 5
   backoffLimit: 25
@@ -51,7 +51,7 @@ serpsParseUrlOffset:
 
 serpsDownloadWarc:
   enabled: true
-  schedule: "* * * * *"
+  schedule: "0,15,30,45 * * * *"
   completions: 10
   parallelism: 10
   backoffLimit: 25
