@@ -36,7 +36,7 @@ DocumentType = Type[BaseDocument]
 
 _statistics_cache: dict[DocumentType, Statistics] = ExpiringDict(
     max_len=100,
-    max_age_seconds=10,
+    max_age_seconds=30,
 )
 
 
@@ -56,8 +56,9 @@ def _get_statistics(
         description: str,
         document: DocumentType,
 ) -> Statistics:
-    if document in _statistics_cache:
-        return _statistics_cache[document]
+    key = document
+    if key in _statistics_cache:
+        return _statistics_cache[key]
     stats = document.index().stats(using=config.es.client)
 
     last_modified_response = (
@@ -80,13 +81,13 @@ def _get_statistics(
             stats["_all"]["total"]["store"]["size_in_bytes"]),
         last_modified=last_modified,
     )
-    _statistics_cache[document] = statistics
+    _statistics_cache[key] = statistics
     return statistics
 
 
-_progress_cache: dict[DocumentType, Progress] = ExpiringDict(
+_progress_cache: dict[tuple[DocumentType, str], Progress] = ExpiringDict(
     max_len=100,
-    max_age_seconds=10,
+    max_age_seconds=30,
 )
 
 
@@ -97,8 +98,9 @@ def _get_processed_progress(
         document: DocumentType,
         timestamp_field: str,
 ) -> Progress:
-    if document in _progress_cache:
-        return _progress_cache[document]
+    key = (document, timestamp_field)
+    if key in _progress_cache:
+        return _progress_cache[key]
 
     search = document.search(using=config.es.client)
     total = search.extra(track_total_hits=True).execute().hits.total.value
@@ -119,7 +121,7 @@ def _get_processed_progress(
         total=total,
         current=total_processed,
     )
-    _progress_cache[document] = progress
+    _progress_cache[key] = progress
     return progress
 
 
