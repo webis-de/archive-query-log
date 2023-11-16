@@ -9,7 +9,7 @@ def parse_url_offset(parser: UrlOffsetParser, url: str) -> int | None:
         return None
 
     # Parse offset.
-    if parser.parser_type == "offset_parameter":
+    if parser.parser_type == "query_parameter":
         if parser.parameter is None:
             raise ValueError("No offset parameter given.")
         offset_string = parse_url_query_parameter(parser.parameter, url)

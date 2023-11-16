@@ -9,7 +9,7 @@ def parse_url_page(parser: UrlPageParser, url: str) -> int | None:
         return None
 
     # Parse page.
-    if parser.parser_type == "page_parameter":
+    if parser.parser_type == "query_parameter":
         if parser.parameter is None:
             raise ValueError("No page parameter given.")
         page_string = parse_url_query_parameter(parser.parameter, url)
