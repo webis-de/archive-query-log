@@ -113,7 +113,7 @@ def _import_captures_path(
             unit="file",
         )
     total_count = sum(len(urls) for urls in urls_iterators)
-    print(f"Found {total_count} captures.")
+    echo(f"Found {total_count} captures.")
 
     archived_urls: Iterable[ArchivedUrl] = chain.from_iterable(
         urls_iterators_list)
@@ -155,7 +155,6 @@ def _import_captures_path(
                     "version_conflict_engine_exception"):
                 continue
             raise RuntimeError(f"Indexing error: {info}")
-    Capture.index().refresh(using=config.es.client)
 
 
 def import_captures(
@@ -165,7 +164,6 @@ def import_captures(
         search_provider: str | None,
         search_provider_index: int | None,
 ) -> None:
-
     echo(f"Importing AQL-22 captures from: {data_dir_path}")
 
     archive_response = (
@@ -236,7 +234,6 @@ def import_captures(
                 url_path_prefix=url_path_prefix,
             ))
 
-    Capture.init(using=config.es.client)
     for importable_path in importable_paths:
         _import_captures_path(
             config=config,

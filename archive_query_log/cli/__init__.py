@@ -23,7 +23,7 @@ from archive_query_log.orm import (
     UrlPageParser, UrlOffsetParser)
 
 
-def print_version(
+def echo_version(
         context: Context,
         _parameter: Parameter,
         value: Any,
@@ -44,7 +44,7 @@ if _DEFAULT_CONFIG_OVERRIDE_PATH.exists():
 
 
 @group()
-@option("-V", "--version", is_flag=True, callback=print_version,
+@option("-V", "--version", is_flag=True, callback=echo_version,
         expose_value=False, is_eager=True)
 @option("-f", "--config-file", "config_paths",
         type=PathType(path_type=Path, exists=True, file_okay=True,
