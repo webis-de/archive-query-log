@@ -171,7 +171,7 @@ def _parse_serp_url_page(
 
     for parser in _url_page_parsers(config, serp.provider.id):
         # Try to parse the query.
-        url_page = _parse_url_page(parser, serp.url)
+        url_page = _parse_url_page(parser, serp.capture.url)
         if url_page is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
@@ -260,7 +260,7 @@ def _parse_serp_url_offset(
 
     for parser in _url_offset_parsers(config, serp.provider.id):
         # Try to parse the query.
-        url_offset = _parse_url_offset(parser, serp.url)
+        url_offset = _parse_url_offset(parser, serp.capture.url)
         if url_offset is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
