@@ -96,6 +96,13 @@ def _parse_serp_url_query(
             url_query_parser=url_query_parser.to_dict(),
         )
         return
+    capture.update(
+        using=config.es.client,
+        retry_on_conflict=3,
+        url_query_parser=InnerParser(
+            last_parsed=start_time,
+        ).to_dict(),
+    )
     return
 
 
@@ -186,6 +193,13 @@ def _parse_serp_url_page(
             url_page_parser=url_page_parser.to_dict(),
         )
         return
+    serp.update(
+        using=config.es.client,
+        retry_on_conflict=3,
+        url_page_parser=InnerParser(
+            last_parsed=start_time,
+        ).to_dict(),
+    )
     return
 
 
@@ -275,6 +289,13 @@ def _parse_serp_url_offset(
             url_offset_parser=url_offset_parser.to_dict(),
         )
         return
+    serp.update(
+        using=config.es.client,
+        retry_on_conflict=3,
+        url_offset_parser=InnerParser(
+            last_parsed=start_time,
+        ).to_dict(),
+    )
     return
 
 
