@@ -1,8 +1,7 @@
 from typing import Iterable, Iterator, Final
-from typing import Iterable, Iterator, Final
 from uuid import uuid5
 
-from click import group, echo
+from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import Exists, FunctionScore, Script
@@ -12,13 +11,11 @@ from warcio.recordloader import ArcWarcRecord
 from web_archive_api.memento import MementoApi
 
 from archive_query_log import __version__ as app_version
-from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_DOWNLOADER
 from archive_query_log.orm import Serp, InnerDownloader, WarcLocation
 from archive_query_log.utils.es import safe_iter_scan
 from archive_query_log.utils.time import utc_now
-
 
 
 class _SerpArcWarcRecord(ArcWarcRecord):

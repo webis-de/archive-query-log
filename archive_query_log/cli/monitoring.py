@@ -20,5 +20,5 @@ def run(
         host: str,
         port: int,
 ) -> None:
-    from archive_query_log.monitoring import run
-    run(config, host, port)
+    from archive_query_log.monitoring import run_monitoring
+    run_monitoring(config, host, port)

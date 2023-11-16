@@ -8,14 +8,14 @@ from archive_query_log.config import Config
 from archive_query_log.monitoring.home import home
 
 
-def flask(config: Config) -> Flask:
+def monitoring_app(config: Config) -> Flask:
     app = Flask(app_name)
     app.add_url_rule("/", "home", lambda: home(config))
     return app
 
 
-def run(config: Config, host: str, port: int) -> None:
-    app = flask(config)
+def run_monitoring(config: Config, host: str, port: int) -> None:
+    app = monitoring_app(config)
     if app.template_folder is None:
         template_file_names = []
     else:
