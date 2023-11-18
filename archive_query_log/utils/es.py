@@ -23,5 +23,6 @@ def safe_iter_scan(it: Iterable[DocumentType]) -> Iterator[DocumentType]:
                 e.info["error"]["root_cause"][0]["resource.id"] ==
                 "search_phase_execution_exception"):
             warn(RuntimeWarning("Scan expired. Stopping iteration."))
+            raise StopIteration() from e
         else:
             raise e
