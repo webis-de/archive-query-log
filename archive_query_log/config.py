@@ -1,9 +1,10 @@
 from dataclasses import dataclass
 from functools import cached_property
+from typing import Iterable, Any
 
 from dataclasses_json import DataClassJsonMixin
 from elasticsearch import Elasticsearch
-from elasticsearch.helpers import streaming_bulk, parallel_bulk, bulk
+from elasticsearch.helpers import streaming_bulk
 from pyrate_limiter import Limiter, RequestRate, Duration
 from requests import Session
 from requests_ratelimiter import LimiterAdapter
@@ -22,6 +23,8 @@ class EsConfig(DataClassJsonMixin):
     max_retries: int = 5
     bulk_chunk_size: int = 500
     bulk_max_chunk_bytes: int = 100 * 1024 * 1024
+    bulk_initial_backoff: int = 2
+    bulk_max_backoff: int = 60
 
     @cached_property
     def client(self) -> Elasticsearch:
@@ -34,37 +37,29 @@ class EsConfig(DataClassJsonMixin):
             retry_on_timeout=True,
         )
 
-    def streaming_bulk(self, actions, *args, **kwargs):
+    def streaming_bulk(
+            self,
+            actions: Iterable[dict[str, Any]],
+    ) -> Iterable[tuple[bool, Any]]:
         return streaming_bulk(
             client=self.client,
             actions=actions,
             chunk_size=self.bulk_chunk_size,
             max_chunk_bytes=self.bulk_max_chunk_bytes,
+            initial_backoff=self.bulk_initial_backoff,
+            max_backoff=self.bulk_max_backoff,
             max_retries=self.max_retries,
-            *args,
-            **kwargs,
+            raise_on_error=True,
+            raise_on_exception=True,
+            yield_ok=True,
         )
 
-    def bulk(self, actions, *args, **kwargs):
-        return bulk(
-            client=self.client,
-            actions=actions,
-            chunk_size=self.bulk_chunk_size,
-            max_chunk_bytes=self.bulk_max_chunk_bytes,
-            max_retries=self.max_retries,
-            *args,
-            **kwargs,
-        )
-
-    def parallel_bulk(self, actions, *args, **kwargs):
-        return parallel_bulk(
-            client=self.client,
-            actions=actions,
-            chunk_size=self.bulk_chunk_size,
-            max_chunk_bytes=self.bulk_max_chunk_bytes,
-            *args,
-            **kwargs,
-        )
+    def bulk(
+            self,
+            actions: Iterable[dict[str, Any]],
+    ) -> None:
+        for _ in self.streaming_bulk(actions):
+            pass
 
 
 @dataclass(frozen=True)
