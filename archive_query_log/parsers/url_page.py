@@ -3,6 +3,7 @@ from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
 from uuid import uuid5
+from warnings import warn
 
 from click import echo
 from elasticsearch_dsl import Search
@@ -100,7 +101,12 @@ def _parse_url_page(parser: UrlPageParser, url: str) -> int | None:
     if parser.remove_pattern is not None:
         page_string = parser.remove_pattern.sub("", page_string)
     page_string = page_string.strip()
-    page = int(page_string)
+    try:
+        page = int(page_string)
+    except ValueError:
+        warn(RuntimeWarning(
+            f"Could not parse page '{page_string}' in URL: {url}"))
+        return None
     return page
 
 
@@ -142,8 +148,6 @@ def _parse_serp_url_page_action(
         )
         yield update_action(
             serp,
-            using=config.es.client,
-            retry_on_conflict=3,
             url_page=url_page,
             url_page_parser=url_page_parser,
         )

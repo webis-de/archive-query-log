@@ -144,6 +144,7 @@ def _parse_serp_url_query_action(
             last_parsed=start_time,
         )
         serp = Serp(
+            meta={"id": capture.id},
             archive=capture.archive,
             provider=capture.provider,
             capture=InnerCapture(

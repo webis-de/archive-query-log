@@ -3,6 +3,7 @@ from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
 from uuid import uuid5
+from warnings import warn
 
 from click import echo
 from elasticsearch_dsl import Search
@@ -100,7 +101,12 @@ def _parse_url_offset(parser: UrlOffsetParser, url: str) -> int | None:
     if parser.remove_pattern is not None:
         offset_string = parser.remove_pattern.sub("", offset_string)
     offset_string = offset_string.strip()
-    offset = int(offset_string)
+    try:
+        offset = int(offset_string)
+    except ValueError as e:
+        warn(RuntimeWarning(
+            f"Could not parse offset '{offset_string}' in URL: {url}"))
+        return None
     return offset
 
 
