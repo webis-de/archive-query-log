@@ -41,14 +41,17 @@ def update_action(
         **fields,
 ) -> dict:
     action = {
-        field: _to_dict_if_needed(value)
-        for field, value in fields.items()
-    }
-    action.update({
         f"_{key}": document.meta[key]
         for key in META_FIELDS
-        if key in document.meta
-    })
+        if key in document.meta and document.meta[key] is not None
+    }
+    action["_op_type"] = "update"
+    # Create a partial document by instantiating a new object of the
+    # document type and ignoring the meta fields (e.g., the document ID).
+    action["doc"] = type(document)(**fields).to_dict(
+        include_meta=False,
+        skip_empty=True,
+    )
     if retry_on_conflict is not None:
-        action["retry_on_conflict"] = retry_on_conflict
+        action["_retry_on_conflict"] = retry_on_conflict
     return action
