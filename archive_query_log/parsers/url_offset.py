@@ -103,7 +103,7 @@ def _parse_url_offset(parser: UrlOffsetParser, url: str) -> int | None:
     offset_string = offset_string.strip()
     try:
         offset = int(offset_string)
-    except ValueError as e:
+    except ValueError:
         warn(RuntimeWarning(
             f"Could not parse offset '{offset_string}' in URL: {url}"))
         return None
