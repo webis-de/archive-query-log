@@ -39,7 +39,7 @@ class EsConfig(DataClassJsonMixin):
 
     def streaming_bulk(
             self,
-            actions: Iterable[dict[str, Any]],
+            actions: Iterable[dict],
     ) -> Iterable[tuple[bool, Any]]:
         return streaming_bulk(
             client=self.client,
@@ -54,10 +54,7 @@ class EsConfig(DataClassJsonMixin):
             yield_ok=True,
         )
 
-    def bulk(
-            self,
-            actions: Iterable[dict[str, Any]],
-    ) -> None:
+    def bulk(self, actions: Iterable[dict]) -> None:
         for _ in self.streaming_bulk(actions):
             pass
 

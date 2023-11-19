@@ -1,8 +1,9 @@
-from typing import Iterator, TypeVar, Iterable
+from typing import Iterator, TypeVar, Iterable, Any
 from warnings import warn
 
 from elasticsearch import NotFoundError
-from elasticsearch_dsl import Document
+from elasticsearch_dsl import Document, InnerDoc
+from elasticsearch_dsl.utils import META_FIELDS
 
 DocumentType = TypeVar("DocumentType", bound=Document)
 
@@ -26,3 +27,28 @@ def safe_iter_scan(it: Iterable[DocumentType]) -> Iterator[DocumentType]:
             raise StopIteration() from e
         else:
             raise e
+
+
+def _to_dict_if_needed(value: Any) -> Any:
+    if isinstance(value, InnerDoc):
+        return value.to_dict()
+    return value
+
+
+def update_action(
+        document: Document,
+        retry_on_conflict: int | None = 3,
+        **fields,
+) -> dict:
+    action = {
+        field: _to_dict_if_needed(value)
+        for field, value in fields.items()
+    }
+    action.update({
+        f"_{key}": document.meta[key]
+        for key in META_FIELDS
+        if key in document.meta
+    })
+    if retry_on_conflict is not None:
+        action["retry_on_conflict"] = retry_on_conflict
+    return action
