@@ -123,7 +123,6 @@ def add(
         domains=set(domains),
         url_path_prefixes=set(url_path_prefixes),
     )
-    Provider.index().refresh(using=config.es.client)
 
 
 @providers.command("import")
@@ -159,4 +158,3 @@ def import_(
         no_merge=no_merge,
         auto_merge=auto_merge,
     )
-    Provider.index().refresh(using=config.es.client)

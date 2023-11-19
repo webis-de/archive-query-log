@@ -18,7 +18,6 @@ def fetch(config: Config) -> None:
     from archive_query_log.captures import fetch_captures
     Capture.init(using=config.es.client)
     fetch_captures(config)
-    Capture.index().refresh(using=config.es.client)
 
 
 @captures.group("import")
@@ -61,4 +60,3 @@ def aql_22(
         search_provider=search_provider,
         search_provider_index=search_provider_index,
     )
-    Capture.index().refresh(using=config.es.client)

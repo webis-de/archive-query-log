@@ -76,7 +76,6 @@ def url_query_add(
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
     )
-    UrlQueryParser.index().refresh(using=config.es.client)
 
 
 @url_query.command("import")
@@ -90,7 +89,6 @@ def url_query_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_url_query_parsers
     UrlQueryParser.init(using=config.es.client)
     import_url_query_parsers(config, services_path)
-    UrlQueryParser.index().refresh(using=config.es.client)
 
 
 @parsers.group()
@@ -155,7 +153,6 @@ def url_page_add(
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
     )
-    UrlPageParser.index().refresh(using=config.es.client)
 
 
 @url_page.command("import")
@@ -169,7 +166,6 @@ def url_page_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_url_page_parsers
     UrlPageParser.init(using=config.es.client)
     import_url_page_parsers(config, services_path)
-    UrlPageParser.index().refresh(using=config.es.client)
 
 
 @parsers.group()
@@ -234,7 +230,6 @@ def url_offset_add(
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
     )
-    UrlOffsetParser.index().refresh(using=config.es.client)
 
 
 @url_offset.command("import")
@@ -248,4 +243,3 @@ def url_offset_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_url_offset_parsers
     UrlOffsetParser.init(using=config.es.client)
     import_url_offset_parsers(config, services_path)
-    UrlOffsetParser.index().refresh(using=config.es.client)

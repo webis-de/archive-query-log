@@ -26,4 +26,3 @@ def build(
         skip_archives=skip_archives,
         skip_providers=skip_providers,
     )
-    Source.index().refresh(using=config.es.client)

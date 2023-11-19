@@ -35,7 +35,6 @@ def add(
         cdx_api_url=cdx_api_url,
         memento_api_url=memento_api_url,
     )
-    Archive.index().refresh(using=config.es.client)
 
 
 @archives.group("import")
@@ -71,4 +70,3 @@ def archive_it(
         no_merge=no_merge,
         auto_merge=auto_merge,
     )
-    Archive.index().refresh(using=config.es.client)
