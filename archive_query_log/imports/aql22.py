@@ -2,13 +2,11 @@ from datetime import datetime, timezone
 from itertools import chain
 from os.path import getmtime
 from pathlib import Path
-from typing import Iterable, Iterator, Any, NamedTuple
+from typing import Iterable, Iterator, NamedTuple
 from urllib.parse import unquote
 from uuid import uuid5
-from warnings import warn
 
 from click import echo
-from elasticsearch import ConnectionTimeout
 from elasticsearch_dsl.query import Term
 from tqdm.auto import tqdm
 
@@ -138,23 +136,7 @@ def _import_captures_path(
         }
         for capture in captures_iter
     )
-    try:
-        responses: Iterable[tuple[bool, Any]] = config.es.streaming_bulk(
-            actions=actions,
-            initial_backoff=2,
-            max_backoff=600,
-            raise_on_error=False,
-        )
-    except ConnectionTimeout:
-        warn(RuntimeWarning("Connection timeout while indexing captures."))
-        return
-    for success, info in responses:
-        if not success:
-            if ("create" in info and
-                    info["create"]["error"]["type"] ==
-                    "version_conflict_engine_exception"):
-                continue
-            raise RuntimeError(f"Indexing error: {info}")
+    config.es.bulk(actions)
 
 
 def import_captures(

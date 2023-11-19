@@ -1,11 +1,10 @@
 from datetime import datetime
+from itertools import chain
 from typing import Iterable, Iterator, Any
 from urllib.parse import urljoin
 from uuid import uuid5
-from warnings import warn
 
 from click import echo
-from elasticsearch import ConnectionTimeout
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import Exists, FunctionScore, Script
@@ -15,7 +14,7 @@ from web_archive_api.cdx import CdxApi, CdxMatchType
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_CAPTURE
 from archive_query_log.orm import Source, Capture
-from archive_query_log.utils.es import safe_iter_scan
+from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now, UTC
 
 
@@ -71,10 +70,10 @@ def _iter_captures(
         )
 
 
-def _add_captures(
+def _add_captures_actions(
         config: Config,
         source: Source,
-) -> None:
+) -> Iterator[dict]:
     start_time = utc_now()
 
     # Re-check if fetching captures is necessary.
@@ -83,29 +82,10 @@ def _add_captures(
         return
 
     captures_iter = _iter_captures(config, source, start_time)
-    actions = (
-        capture.to_dict(include_meta=True)
-        for capture in captures_iter
-    )
-    try:
-        responses: Iterable[tuple[bool, Any]] = config.es.streaming_bulk(
-            actions=actions,
-            initial_backoff=2,
-            max_backoff=600,
-        )
-    except ConnectionTimeout:
-        warn(RuntimeWarning("Connection timeout while indexing captures."))
-        return
+    for capture in captures_iter:
+        yield capture.to_dict(include_meta=True)
 
-    for success, info in responses:
-        if not success:
-            raise RuntimeError(f"Indexing error: {info}")
-
-    source.update(
-        using=config.es.client,
-        retry_on_conflict=3,
-        last_fetched_captures=start_time,
-    )
+    yield update_action(source, last_fetched_captures=start_time)
 
 
 def fetch_captures(config: Config) -> None:
@@ -134,7 +114,10 @@ def fetch_captures(config: Config) -> None:
         # noinspection PyTypeChecker
         changed_sources = tqdm(changed_sources, total=num_changed_sources,
                                desc="Fetching captures", unit="source")
-        for source in changed_sources:
-            _add_captures(config, source)
+        actions = chain.from_iterable(
+            _add_captures_actions(config, source)
+            for source in changed_sources
+        )
+        config.es.bulk(actions)
     else:
         echo("No new/changed sources.")

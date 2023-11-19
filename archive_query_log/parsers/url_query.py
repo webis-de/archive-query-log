@@ -1,6 +1,7 @@
 from datetime import datetime
 from functools import cache
-from typing import Iterable
+from itertools import chain
+from typing import Iterable, Iterator
 from uuid import uuid5
 
 from click import echo
@@ -17,7 +18,7 @@ from archive_query_log.orm import UrlQueryParserType, \
     InnerProviderId
 from archive_query_log.parsers.url import parse_url_query_parameter, \
     parse_url_fragment_parameter, parse_url_path_segment
-from archive_query_log.utils.es import safe_iter_scan
+from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -57,7 +58,7 @@ def add_url_query_parser(
         NAMESPACE_URL_QUERY_PARSER,
         ":".join(parser_id_components),
     ))
-    provider = UrlQueryParser(
+    parser = UrlQueryParser(
         meta={"id": parser_id},
         provider=InnerProviderId(id=provider_id),
         url_pattern_regex=url_pattern_regex,
@@ -69,7 +70,7 @@ def add_url_query_parser(
         space_pattern_regex=space_pattern_regex,
         last_modified=utc_now(),
     )
-    provider.save(using=config.es.client)
+    parser.save(using=config.es.client)
 
 
 def _parse_url_query(parser: UrlQueryParser, url: str) -> str | None:
@@ -121,11 +122,11 @@ def _url_query_parsers(
     return list(parsers)
 
 
-def _parse_serp_url_query(
+def _parse_serp_url_query_action(
         config: Config,
         capture: Capture,
         start_time: datetime,
-) -> None:
+) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (capture.url_query_parser is not None and
             capture.url_query_parser.last_parsed is not None and
@@ -157,26 +158,22 @@ def _parse_serp_url_query(
             url_query_parser=url_query_parser,
             last_modified=start_time,
         )
-        serp.save(using=config.es.client)
-        capture.update(
-            using=config.es.client,
-            retry_on_conflict=3,
-            url_query_parser=url_query_parser.to_dict(),
+        yield serp.to_dict(include_meta=True)
+        yield update_action(
+            capture,
+            url_query_parser=url_query_parser,
         )
         return
-    capture.update(
-        using=config.es.client,
-        retry_on_conflict=3,
-        url_query_parser=InnerParser(
-            last_parsed=start_time,
-        ).to_dict(),
+    yield update_action(
+        capture,
+        url_query_parser=InnerParser(last_parsed=start_time),
     )
     return
 
 
 def parse_serps_url_query(config: Config) -> None:
+    Capture.index().refresh(using=config.es.client)
     start_time = utc_now()
-
     changed_captures_search: Search = (
         Capture.search(using=config.es.client)
         .filter(
@@ -203,12 +200,14 @@ def parse_serps_url_query(config: Config) -> None:
         changed_captures = tqdm(
             changed_captures, total=num_changed_captures,
             desc="Parsing URL query", unit="capture")
-        for capture in changed_captures:
-            _parse_serp_url_query(
+        actions = chain.from_iterable(
+            _parse_serp_url_query_action(
                 config=config,
                 capture=capture,
                 start_time=start_time,
             )
-        Capture.index().refresh(using=config.es.client)
+            for capture in changed_captures
+        )
+        config.es.bulk(actions)
     else:
         echo("No new/changed captures.")

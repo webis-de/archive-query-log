@@ -1,6 +1,7 @@
 from datetime import datetime
 from functools import cache
-from typing import Iterable
+from itertools import chain
+from typing import Iterable, Iterator
 from uuid import uuid5
 
 from click import echo
@@ -16,7 +17,7 @@ from archive_query_log.orm import Serp, InnerParser, \
     UrlPageParser
 from archive_query_log.parsers.url import parse_url_query_parameter, \
     parse_url_fragment_parameter, parse_url_path_segment
-from archive_query_log.utils.es import safe_iter_scan
+from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -56,7 +57,7 @@ def add_url_page_parser(
         NAMESPACE_URL_PAGE_PARSER,
         ":".join(parser_id_components),
     ))
-    provider = UrlPageParser(
+    parser = UrlPageParser(
         meta={"id": parser_id},
         provider=InnerProviderId(id=provider_id),
         url_pattern_regex=url_pattern_regex,
@@ -68,7 +69,7 @@ def add_url_page_parser(
         space_pattern_regex=space_pattern_regex,
         last_modified=utc_now(),
     )
-    provider.save(using=config.es.client)
+    parser.save(using=config.es.client)
 
 
 def _parse_url_page(parser: UrlPageParser, url: str) -> int | None:
@@ -118,11 +119,11 @@ def _url_page_parsers(
     return list(parsers)
 
 
-def _parse_serp_url_page(
+def _parse_serp_url_page_action(
         config: Config,
         serp: Serp,
         start_time: datetime,
-) -> None:
+) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (serp.url_page_parser is not None and
             serp.url_page_parser.last_parsed is not None and
@@ -139,26 +140,24 @@ def _parse_serp_url_page(
             id=parser.id,
             last_parsed=start_time,
         )
-        serp.update(
+        yield update_action(
+            serp,
             using=config.es.client,
             retry_on_conflict=3,
             url_page=url_page,
-            url_page_parser=url_page_parser.to_dict(),
+            url_page_parser=url_page_parser,
         )
         return
-    serp.update(
-        using=config.es.client,
-        retry_on_conflict=3,
-        url_page_parser=InnerParser(
-            last_parsed=start_time,
-        ).to_dict(),
+    yield update_action(
+        serp,
+        url_page_parser=InnerParser(last_parsed=start_time),
     )
     return
 
 
 def parse_serps_url_page(config: Config) -> None:
+    Serp.index().refresh(using=config.es.client)
     start_time = utc_now()
-
     changed_serps_search: Search = (
         Serp.search(using=config.es.client)
         .filter(
@@ -185,12 +184,14 @@ def parse_serps_url_page(config: Config) -> None:
         changed_serps = tqdm(
             changed_serps, total=num_changed_serps,
             desc="Parsing URL page", unit="SERP")
-        for serp in changed_serps:
-            _parse_serp_url_page(
+        actions = chain.from_iterable(
+            _parse_serp_url_page_action(
                 config=config,
                 serp=serp,
                 start_time=start_time,
             )
-        Serp.index().refresh(using=config.es.client)
+            for serp in changed_serps
+        )
+        config.es.bulk(actions)
     else:
         echo("No new/changed SERPs.")

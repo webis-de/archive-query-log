@@ -1,11 +1,10 @@
 from datetime import datetime
 from itertools import chain
-from typing import Iterable, Iterator, Any
+from typing import Iterable, Iterator
 from uuid import uuid5
 from warnings import warn
 
 from click import echo
-from elasticsearch import ConnectionTimeout
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Script, Exists
@@ -15,7 +14,7 @@ from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_SOURCE
 from archive_query_log.orm import (
     Archive, Provider, Source, InnerArchive, InnerProvider)
-from archive_query_log.utils.es import safe_iter_scan
+from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -76,11 +75,7 @@ def _iter_sources_batches_changed_archives(
                 archive,
                 provider,
             )
-        archive.update(
-            using=config.es.client,
-            retry_on_conflict=3,
-            last_built_sources=start_time,
-        )
+        yield [update_action(archive, last_built_sources=start_time)]
 
 
 def _iter_sources_batches_changed_providers(
@@ -101,14 +96,11 @@ def _iter_sources_batches_changed_providers(
                 archive,
                 provider,
             )
-        provider.update(
-            using=config.es.client,
-            retry_on_conflict=3,
-            last_built_sources=start_time,
-        )
+        yield [update_action(provider, last_built_sources=start_time)]
 
 
 def _build_archive_sources(config: Config) -> None:
+    Archive.index().refresh(using=config.es.client)
     start_time = utc_now()
     changed_archives_search = (
         Archive.search(using=config.es.client)
@@ -135,7 +127,9 @@ def _build_archive_sources(config: Config) -> None:
         all_providers_search.extra(track_total_hits=True))
     num_all_providers = (
         num_all_providers_search.execute().hits.total.value)
-    num_batches_archives = num_changed_archives * num_all_providers
+    num_batches_archives = (
+            num_changed_archives * num_all_providers +
+            num_changed_archives)
     if num_batches_archives > 0:
         echo(f"Building sources for {num_changed_archives} "
              f"new/changed archives.")
@@ -154,25 +148,13 @@ def _build_archive_sources(config: Config) -> None:
             unit="batch",
         )
         actions_archives = chain.from_iterable(action_batches_archives)
-        try:
-            responses_archives: Iterable[
-                tuple[bool, Any]] = config.es.streaming_bulk(
-                actions=actions_archives,
-            )
-        except ConnectionTimeout:
-            warn(RuntimeWarning(
-                "Connection timeout while indexing captures."))
-            return
-
-        for success, info in responses_archives:
-            if not success:
-                raise RuntimeError(f"Indexing error: {info}")
-        Source.index().refresh(using=config.es.client)
+        config.es.bulk(actions_archives)
     else:
         echo("No new/changed archives.")
 
 
 def _build_provider_sources(config: Config) -> None:
+    Provider.index().refresh(using=config.es.client)
     start_time = utc_now()
     changed_providers_search = (
         Provider.search(using=config.es.client)
@@ -201,7 +183,9 @@ def _build_provider_sources(config: Config) -> None:
     # pylint: disable=no-member
     num_all_archives = (
         num_all_archives_search.execute().hits.total.value)
-    num_batches_providers = num_changed_providers * num_all_archives
+    num_batches_providers = (
+            num_changed_providers * num_all_archives +
+            num_changed_providers)
     if num_batches_providers > 0:
         echo(
             f"Building sources for {num_changed_providers} "
@@ -221,21 +205,7 @@ def _build_provider_sources(config: Config) -> None:
             unit="batch",
         )
         actions_providers = chain.from_iterable(action_batches_providers)
-        try:
-            responses: Iterable[tuple[bool, Any]] = (
-                config.es.streaming_bulk(
-                    actions=actions_providers,
-                    initial_backoff=2,
-                    max_backoff=600,
-                ))
-        except ConnectionTimeout:
-            warn(RuntimeWarning(
-                "Connection timeout while indexing captures."))
-            return
-        for success, info in responses:
-            if not success:
-                raise RuntimeError(f"Indexing error: {info}")
-        Source.index().refresh(using=config.es.client)
+        config.es.bulk(actions_providers)
     else:
         echo("No new/changed providers.")
 

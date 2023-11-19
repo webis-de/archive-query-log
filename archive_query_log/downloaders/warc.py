@@ -14,7 +14,7 @@ from archive_query_log import __version__ as app_version
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_DOWNLOADER
 from archive_query_log.orm import Serp, InnerDownloader, WarcLocation
-from archive_query_log.utils.es import safe_iter_scan
+from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -128,10 +128,12 @@ def download_serps_warc(config: Config) -> None:
         config.s3.warc_store.write(serp_records))
     stored_serps = (_stored_serp(record) for record in stored_records)
 
-    for serp, location in stored_serps:
-        serp.update(
-            using=config.es.client,
-            retry_on_conflict=3,
-            warc_location=location.to_dict(),
-            warc_downloader=downloader.to_dict(),
+    actions = (
+        update_action(
+            serp,
+            warc_location=location,
+            warc_downloader=downloader,
         )
+        for serp, location in stored_serps
+    )
+    config.es.bulk(actions)
