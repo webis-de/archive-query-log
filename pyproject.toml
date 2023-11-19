@@ -76,6 +76,7 @@ tests = [
     "pytest-cov~=4.0",
     "types-beautifulsoup4~=4.12",
     "types-bleach~=6.0",
+    "types-lxml~=2023.10",
     "types-python-dateutil~=2.8",
     "types-python-slugify~=8.0",
     "types-pyyaml~=6.0",
