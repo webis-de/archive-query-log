@@ -15,26 +15,33 @@ def parse():
     pass
 
 
-@parse.command("url-query")
+@parse.command()
 @pass_config
-def parse_url_query(config: Config) -> None:
+def url_query(config: Config) -> None:
     from archive_query_log.parsers.url_query import parse_serps_url_query
     Serp.init(using=config.es.client)
     parse_serps_url_query(config)
 
 
-@parse.command("url-page")
+@parse.command()
 @pass_config
-def parse_url_page(config: Config) -> None:
+def url_page(config: Config) -> None:
     from archive_query_log.parsers.url_page import parse_serps_url_page
     parse_serps_url_page(config)
 
 
-@parse.command("url-offset")
+@parse.command()
 @pass_config
-def parse_url_offset(config: Config) -> None:
+def url_offset(config: Config) -> None:
     from archive_query_log.parsers.url_offset import parse_serps_url_offset
     parse_serps_url_offset(config)
+
+
+@parse.command()
+@pass_config
+def warc_query(config: Config) -> None:
+    from archive_query_log.parsers.warc_query import parse_serps_warc_query
+    parse_serps_warc_query(config)
 
 
 @serps.group()
