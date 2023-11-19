@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import NamedTuple, Type
 
 from elasticsearch_dsl.query import Script, Exists
@@ -18,11 +18,6 @@ class Statistics(NamedTuple):
     disk_size: str
     last_modified: datetime | None
 
-    @property
-    def last_modified_delta(self) -> timedelta | None:
-        if self.last_modified is None:
-            return None
-        return utc_now() - self.last_modified
 
 
 class Progress(NamedTuple):
@@ -59,8 +54,9 @@ def _get_statistics(
     key = document
     if key in _statistics_cache:
         return _statistics_cache[key]
-    stats = document.index().stats(using=config.es.client)
 
+    document.index().refresh()
+    stats = document.index().stats(using=config.es.client)
     last_modified_response = (
         document.search(using=config.es.client)
         .query(Exists(field="last_modified"))
@@ -102,6 +98,7 @@ def _get_processed_progress(
     if key in _progress_cache:
         return _progress_cache[key]
 
+    document.index().refresh()
     search = document.search(using=config.es.client)
     total = search.extra(track_total_hits=True).execute().hits.total.value
     search_processed = search.filter(
