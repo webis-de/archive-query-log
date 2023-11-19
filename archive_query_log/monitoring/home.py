@@ -54,7 +54,7 @@ def _get_statistics(
     if key in _statistics_cache:
         return _statistics_cache[key]
 
-    document.index().refresh()
+    document.index().refresh(using=config.es.client)
     stats = document.index().stats(using=config.es.client)
     last_modified_response = (
         document.search(using=config.es.client)
@@ -97,7 +97,7 @@ def _get_processed_progress(
     if key in _progress_cache:
         return _progress_cache[key]
 
-    document.index().refresh()
+    document.index().refresh(using=config.es.client)
     search = document.search(using=config.es.client)
     total = search.extra(track_total_hits=True).execute().hits.total.value
     search_processed = search.filter(
