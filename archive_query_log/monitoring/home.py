@@ -19,7 +19,6 @@ class Statistics(NamedTuple):
     last_modified: datetime | None
 
 
-
 class Progress(NamedTuple):
     name: str
     description: str

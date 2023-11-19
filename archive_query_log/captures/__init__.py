@@ -1,6 +1,6 @@
 from datetime import datetime
 from itertools import chain
-from typing import Iterable, Iterator, Any
+from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
 

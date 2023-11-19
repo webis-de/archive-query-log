@@ -58,7 +58,6 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
 
 
 def _iter_sources_batches_changed_archives(
-        config: Config,
         changed_archives_search: Search,
         all_providers_search: Search,
         start_time: datetime,
@@ -79,7 +78,6 @@ def _iter_sources_batches_changed_archives(
 
 
 def _iter_sources_batches_changed_providers(
-        config: Config,
         changed_providers_search: Search,
         all_archives_search: Search,
         start_time: datetime,
@@ -135,7 +133,6 @@ def _build_archive_sources(config: Config) -> None:
              f"new/changed archives.")
         action_batches_archives: Iterable[list[dict]] = (
             _iter_sources_batches_changed_archives(
-                config=config,
                 changed_archives_search=changed_archives_search,
                 all_providers_search=all_providers_search,
                 start_time=start_time,
@@ -192,7 +189,6 @@ def _build_provider_sources(config: Config) -> None:
             f"new/changed providers.")
         action_batches_providers: Iterable[list[dict]] = (
             _iter_sources_batches_changed_providers(
-                config=config,
                 changed_providers_search=changed_providers_search,
                 all_archives_search=all_archives_search,
                 start_time=start_time,
