@@ -20,7 +20,7 @@ from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.orm import (
     Archive, Provider, Source, Capture, Serp, Result, UrlQueryParser,
-    UrlPageParser, UrlOffsetParser)
+    UrlPageParser, UrlOffsetParser, WarcQueryParser)
 
 
 def echo_version(
@@ -77,11 +77,12 @@ def init(config: Config) -> None:
         UrlQueryParser,
         UrlPageParser,
         UrlOffsetParser,
+        WarcQueryParser,
     ]
     # noinspection PyTypeChecker
     indices: Iterable[Type[Document]] = tqdm(
         indices_list,
-        desc="Initialize Elasticsearch indices.",
+        desc="Initialize indices",
         unit="index",
     )
     for index in indices:
