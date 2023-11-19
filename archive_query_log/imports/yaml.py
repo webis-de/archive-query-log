@@ -5,6 +5,7 @@ from warnings import warn
 
 from click import echo
 from click import prompt
+from cssselect import HTMLTranslator
 from diskcache import Index
 from elasticsearch_dsl.query import Terms
 from tqdm.auto import tqdm
@@ -17,6 +18,7 @@ from archive_query_log.orm import Provider
 from archive_query_log.parsers.url_offset import add_url_offset_parser
 from archive_query_log.parsers.url_page import add_url_page_parser
 from archive_query_log.parsers.url_query import add_url_query_parser
+from archive_query_log.parsers.warc_query import add_warc_query_parser
 from archive_query_log.providers import add_provider
 from archive_query_log.utils.es import safe_iter_scan
 
@@ -325,6 +327,75 @@ def import_url_offset_parsers(config: Config, services_path: Path) -> None:
                     parser_type=offset_parser["type"],
                     parameter=offset_parser.get("parameter"),
                     segment=segment,
+                    remove_pattern_regex=remove_pattern_regex,
+                    space_pattern_regex=space_pattern_regex,
+                )
+
+
+def import_warc_query_parsers(config: Config, services_path: Path) -> None:
+    echo("Load providers from services file.")
+    with services_path.open("r") as file:
+        services_list: Sequence[dict] = safe_load(file)
+    echo(f"Found {len(services_list)} service definitions.")
+
+    translator = HTMLTranslator()
+
+    services: Iterable[dict] = services_list
+    # noinspection PyTypeChecker
+    services = tqdm(
+        services,
+        desc="Import parsers for providers",
+        unit="provider",
+    )
+    for i, service in enumerate(services):
+        if ("domains" not in service or
+                "interpreted_query_parsers" not in service):
+            continue
+
+        interpreted_query_parsers = service["interpreted_query_parsers"]
+        num_interpreted_query_parsers = len(interpreted_query_parsers)
+
+        providers = (
+            Provider.search(using=config.es.client)
+            .query(Terms(domains=service["domains"]))
+            .scan()
+        )
+        providers = safe_iter_scan(providers)
+        for provider in providers:
+            for k, interpreted_query_parser in (
+                    enumerate(interpreted_query_parsers)):
+                if interpreted_query_parser["type"] != "html_selector":
+                    continue
+                remove_patterns = (
+                    interpreted_query_parser.get("remove_patterns"))
+                if remove_patterns is not None:
+                    remove_pattern_regex = "|".join(remove_patterns)
+                else:
+                    remove_pattern_regex = None
+                space_patterns = interpreted_query_parser.get("space_patterns")
+                if space_patterns is not None:
+                    space_pattern_regex = "|".join(space_patterns)
+                else:
+                    space_pattern_regex = None
+                query_selector = interpreted_query_parser["query_selector"]
+                xpath = translator.css_to_xpath(query_selector, prefix="")
+                xpath = xpath.replace("/descendant-or-self::*/", "//")
+                query_text = interpreted_query_parser.get("query_text", False)
+                if query_text:
+                    xpath = f"{xpath}//text()"
+                else:
+                    query_attribute = interpreted_query_parser.get(
+                        "query_attribute", "value")
+                    xpath = f"{xpath}@{query_attribute}"
+
+                add_warc_query_parser(
+                    config=config,
+                    provider_id=provider.meta.id,
+                    url_pattern_regex=interpreted_query_parser.get(
+                        "url_pattern"),
+                    priority=num_interpreted_query_parsers - k,
+                    parser_type="xpath",
+                    xpath=xpath,
                     remove_pattern_regex=remove_pattern_regex,
                     space_pattern_regex=space_pattern_regex,
                 )

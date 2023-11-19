@@ -6,7 +6,7 @@ from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.orm import UrlQueryParserType, \
     UrlQueryParser, UrlPageParserType, UrlPageParser, \
-    UrlOffsetParser, UrlOffsetParserType
+    UrlOffsetParser, UrlOffsetParserType, WarcQueryParserType, WarcQueryParser
 
 
 @group()
@@ -42,7 +42,7 @@ def url_query_add(
         provider_id: str,
         url_pattern_regex: str | None,
         priority: int | None,
-        parser_type: UrlQueryParserType,
+        parser_type: str,
         parameter: str | None,
         segment: int | None,
         remove_pattern_regex: str | None,
@@ -119,7 +119,7 @@ def url_page_add(
         provider_id: str,
         url_pattern_regex: str | None,
         priority: int | None,
-        parser_type: UrlPageParserType,
+        parser_type: str,
         parameter: str | None,
         segment: int | None,
         remove_pattern_regex: str | None,
@@ -196,7 +196,7 @@ def url_offset_add(
         provider_id: str,
         url_pattern_regex: str | None,
         priority: int | None,
-        parser_type: UrlOffsetParserType,
+        parser_type: str,
         parameter: str | None,
         segment: int | None,
         remove_pattern_regex: str | None,
@@ -243,3 +243,68 @@ def url_offset_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_url_offset_parsers
     UrlOffsetParser.init(using=config.es.client)
     import_url_offset_parsers(config, services_path)
+
+
+@parsers.group()
+def warc_query() -> None:
+    pass
+
+
+CHOICES_WARC_QUERY_PARSER_TYPE = [
+    "xpath",
+]
+
+
+@warc_query.command("add")
+@option("--provider-id", type=str, required=True)
+@option("--url-pattern-regex", type=str)
+@option("--priority", type=int)
+@option("--parser-type",
+        type=Choice(CHOICES_WARC_QUERY_PARSER_TYPE), required=True)
+@option("--xpath", type=str)
+@option("--remove-pattern-regex", type=str)
+@option("--space-pattern-regex", type=str)
+@pass_config
+def warc_query_add(
+        config: Config,
+        provider_id: str,
+        url_pattern_regex: str | None,
+        priority: int | None,
+        parser_type: str,
+        xpath: str | None,
+        remove_pattern_regex: str | None,
+        space_pattern_regex: str | None,
+) -> None:
+    from archive_query_log.parsers.warc_query import add_warc_query_parser
+    parser_type_strict: WarcQueryParserType
+    if parser_type == "xpath":
+        parser_type_strict = "xpath"
+        if xpath is None:
+            raise UsageError("No XPath given.")
+    else:
+        raise ValueError(f"Invalid parser type: {parser_type}")
+    WarcQueryParser.init(using=config.es.client)
+    add_warc_query_parser(
+        config=config,
+        provider_id=provider_id,
+        url_pattern_regex=url_pattern_regex,
+        priority=priority,
+        parser_type=parser_type_strict,
+        xpath=xpath,
+        remove_pattern_regex=remove_pattern_regex,
+        space_pattern_regex=space_pattern_regex,
+    )
+
+
+@warc_query.command("import")
+@option("-s", "--services-file", "services_path",
+        type=PathType(path_type=Path, exists=True, file_okay=True,
+                      dir_okay=False, readable=True, resolve_path=True,
+                      allow_dash=False),
+        default=Path("data") / "selected-services.yaml")
+@pass_config
+def warc_query_import(config: Config, services_path: Path) -> None:
+    from archive_query_log.imports.yaml import import_warc_query_parsers
+    WarcQueryParser.init(using=config.es.client)
+    import_warc_query_parsers(config, services_path)
+
