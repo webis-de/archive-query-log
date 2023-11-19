@@ -10,9 +10,9 @@ NAMESPACE_URL_PAGE_PARSER = uuid5(NAMESPACE_AQL, "url_page_parser")
 NAMESPACE_URL_OFFSET_PARSER = uuid5(NAMESPACE_AQL, "url_offset_parser")
 NAMESPACE_URL_LANGUAGE_PARSER = uuid5(
     NAMESPACE_AQL, "url_language_parser")
-NAMESPACE_SERP_QUERY_PARSER = uuid5(NAMESPACE_AQL, "serp_query_parser")
-NAMESPACE_SERP_SNIPPETS_PARSER = uuid5(
-    NAMESPACE_AQL, "serp_snippets_parser")
-NAMESPACE_SERP_DIRECT_ANSWER_PARSER = uuid5(
-    NAMESPACE_AQL, "serp_direct_answer_parser")
+NAMESPACE_WARC_QUERY_PARSER = uuid5(NAMESPACE_AQL, "warc_query_parser")
+NAMESPACE_WARC_SNIPPETS_PARSER = uuid5(
+    NAMESPACE_AQL, "warc_snippets_parser")
+NAMESPACE_WARC_DIRECT_ANSWER_PARSER = uuid5(
+    NAMESPACE_AQL, "warc_direct_answer_parser")
 NAMESPACE_WARC_DOWNLOADER = uuid5(NAMESPACE_AQL, "warc_downloader")
