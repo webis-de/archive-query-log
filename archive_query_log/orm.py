@@ -101,6 +101,109 @@ class Source(BaseDocument):
         }
 
 
+class InnerParser(InnerDocument):
+    id: str = Keyword()
+    last_parsed: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+
+
+class Capture(BaseDocument):
+    archive: InnerArchive = Object(InnerArchive)
+    provider: InnerProvider = Object(InnerProvider)
+    url: str = Keyword()
+    url_key: str = Keyword()
+    timestamp: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+    status_code: int = Integer()
+    digest: str = Keyword()
+    mimetype: str | None = Keyword()
+    filename: str | None = Keyword()
+    offset: int | None = Integer()
+    length: int | None = Integer()
+    access: str | None = Keyword()
+    redirect_url: str | None = Keyword()
+    flags: list[str] | None = Keyword()
+    collection: str | None = Keyword()
+    source: str | None = Keyword()
+    source_collection: str | None = Keyword()
+    url_query_parser: InnerParser | None = Object(InnerParser)
+
+    class Index:
+        name = "aql_captures"
+        settings = {
+            "number_of_shards": 10,
+            "number_of_replicas": 2,
+        }
+
+
+class InnerCapture(InnerDocument):
+    id: str = Keyword()
+    url: str = Keyword()
+    timestamp: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+    status_code: int = Integer()
+    digest: str = Keyword()
+    mimetype: str | None = Keyword()
+
+
+class InnerDownloader(InnerDocument):
+    id: str = Keyword()
+    last_downloaded: datetime = Date(
+        default_timezone="UTC",
+        format="strict_date_time_no_millis",
+    )
+
+
+class WarcLocation(InnerDocument):
+    file: str = Keyword()
+    offset: int = Long()
+    length: int = Long()
+
+
+class Snippet(InnerDocument):
+    url: str = Keyword()
+    rank: int | None = Integer()
+    title: str | None = Keyword()
+    text: str | None = Keyword()
+
+
+class Serp(BaseDocument):
+    archive: InnerArchive = Object(InnerArchive)
+    provider: InnerProvider = Object(InnerProvider)
+    capture: InnerCapture = Object(InnerCapture)
+    url_query: str = Keyword()
+    url_query_parser: InnerParser | None = Object(InnerParser)
+    url_page: int | None = Integer()
+    url_page_parser: InnerParser | None = Object(InnerParser)
+    url_offset: int | None = Integer()
+    url_offset_parser: InnerParser | None = Object(InnerParser)
+    # url_language: str | None = Keyword()
+    # url_language_parser: InnerParser | None = Object(InnerParser)
+    warc_location: WarcLocation | None = Object(WarcLocation)
+    warc_downloader: InnerDownloader | None = Object(InnerDownloader)
+    warc_query: str | None = Keyword()
+    warc_query_parser: InnerParser | None = Object(InnerParser)
+    warc_snippets: list[Snippet] | None = Nested(Snippet)
+    warc_snippets_parser: InnerParser | None = Object(InnerParser)
+
+    # rendered_warc_location: WarcLocation | None = Object(WarcLocation)
+    # rendered_warc_downloader: InnerDownloader | None = (
+    #     Object(InnerDownloader))
+
+    class Index:
+        name = "aql_serps"
+        settings = {
+            "number_of_shards": 10,
+            "number_of_replicas": 2,
+        }
+
+
 class InnerProviderId(InnerDocument):
     id: str = Keyword()
 
@@ -222,104 +325,71 @@ class UrlOffsetParser(BaseDocument):
         }
 
 
-class InnerParser(InnerDocument):
-    id: str = Keyword()
-    last_parsed: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
+WarcQueryParserType = Literal[
+    "xpath",
+]
 
 
-class Capture(BaseDocument):
-    archive: InnerArchive = Object(InnerArchive)
-    provider: InnerProvider = Object(InnerProvider)
-    url: str = Keyword()
-    url_key: str = Keyword()
-    timestamp: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
-    status_code: int = Integer()
-    digest: str = Keyword()
-    mimetype: str | None = Keyword()
-    filename: str | None = Keyword()
-    offset: int | None = Integer()
-    length: int | None = Integer()
-    access: str | None = Keyword()
-    redirect_url: str | None = Keyword()
-    flags: list[str] | None = Keyword()
-    collection: str | None = Keyword()
-    source: str | None = Keyword()
-    source_collection: str | None = Keyword()
-    url_query_parser: InnerParser | None = Object(InnerParser)
+class WarcQueryParser(BaseDocument):
+    provider: InnerProviderId = Object(InnerProviderId)
+    url_pattern_regex: str | None = Keyword()
+    priority: int | None = Integer()
+    parser_type: WarcQueryParserType = Keyword()
+    xpath: str | None = Keyword()
+    remove_pattern_regex: str | None = Keyword()
+    space_pattern_regex: str | None = Keyword()
+
+    @cached_property
+    def url_pattern(self) -> Pattern | None:
+        if self.url_pattern_regex is None:
+            raise ValueError("No URL pattern regex.")
+        return pattern(self.url_pattern_regex)
+
+    @cached_property
+    def remove_pattern(self) -> Pattern | None:
+        if self.remove_pattern_regex is None:
+            return None
+        return pattern(self.remove_pattern_regex)
+
+    @cached_property
+    def space_pattern(self) -> Pattern | None:
+        if self.space_pattern_regex is None:
+            return None
+        return pattern(self.space_pattern_regex)
 
     class Index:
-        name = "aql_captures"
+        name = "aql_warc_query_parsers"
         settings = {
-            "number_of_shards": 10,
+            "number_of_shards": 1,
             "number_of_replicas": 2,
         }
 
 
-class InnerCapture(InnerDocument):
-    id: str = Keyword()
-    url: str = Keyword()
-    timestamp: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
-    status_code: int = Integer()
-    digest: str = Keyword()
-    mimetype: str | None = Keyword()
+WarcSnippetsParserType = Literal[
+    "xpath",
+]
 
 
-class InnerDownloader(InnerDocument):
-    id: str = Keyword()
-    last_downloaded: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
+class WarcSnippetsParser(BaseDocument):
+    provider: InnerProviderId = Object(InnerProviderId)
+    url_pattern_regex: str | None = Keyword()
+    priority: int | None = Integer()
+    parser_type: WarcSnippetsParserType = Keyword()
+    xpath: str | None = Keyword()
+    url_xpath: str | None = Keyword()
+    title_xpath: str | None = Keyword()
+    text_xpath: str | None = Keyword()
 
-
-class WarcLocation(InnerDocument):
-    file: str = Keyword()
-    offset: int = Long()
-    length: int = Long()
-
-
-class Snippet(InnerDocument):
-    url: str = Keyword()
-    rank: int | None = Integer()
-    title: str | None = Keyword()
-    text: str | None = Keyword()
-
-
-class Serp(BaseDocument):
-    archive: InnerArchive = Object(InnerArchive)
-    provider: InnerProvider = Object(InnerProvider)
-    capture: InnerCapture = Object(InnerCapture)
-    url_query: str = Keyword()
-    url_query_parser: InnerParser | None = Object(InnerParser)
-    url_page: int | None = Integer()
-    url_page_parser: InnerParser | None = Object(InnerParser)
-    url_offset: int | None = Integer()
-    url_offset_parser: InnerParser | None = Object(InnerParser)
-    # url_language: str | None = Keyword()
-    # url_language_parser: InnerParser | None = Object(InnerParser)
-    warc_location: WarcLocation | None = Object(WarcLocation)
-    warc_downloader: InnerDownloader | None = Object(InnerDownloader)
-    # rendered_warc_location: WarcLocation | None = Object(WarcLocation)
-    # rendered_warc_downloader: InnerDownloader | None = (
-    #     Object(InnerDownloader))
-    serp_query: str | None = Keyword()
-    serp_query_parser: InnerParser | None = Object(InnerParser)
-    serp_snippets: list[Snippet] | None = Nested(Snippet)
-    serp_snippets_parser: InnerParser | None = Object(InnerParser)
+    @cached_property
+    def url_pattern(self) -> Pattern | None:
+        if self.url_pattern_regex is None:
+            raise ValueError("No URL pattern regex.")
+        return pattern(self.url_pattern_regex)
 
     class Index:
-        name = "aql_serps"
+        name = "aql_warc_snippets_parsers"
         settings = {
-            "number_of_shards": 10,
+            "number_of_shards": 1,
             "number_of_replicas": 2,
         }
 
