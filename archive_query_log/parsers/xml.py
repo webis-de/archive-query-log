@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Literal, Type, TypeVar
 from warnings import warn
 
 from cssselect import GenericTranslator
@@ -7,7 +7,7 @@ from cssselect.parser import parse as cssselect_parse
 from lxml.etree import parse as etree_parse, XMLParser, HTMLParser
 # noinspection PyProtectedMember
 # pylint: disable=no-name-in-module
-from lxml.etree import _ElementTree
+from lxml.etree import _ElementTree, _Element
 from warcio.recordloader import ArcWarcRecord
 
 XmlParserType = Literal[
@@ -34,6 +34,25 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
         source=record.content_stream(),
         parser=parser,
     )
+
+
+_T = TypeVar("_T")
+
+
+def safe_xpath(
+        tree: _ElementTree | _Element,
+        xpath: str,
+        item_type: Type[_T],
+) -> list[_T]:
+    results = tree.xpath(xpath, smart_strings=False)
+    if not isinstance(results, list):
+        results = [results]
+    if not all(isinstance(result, item_type) for result in results):
+        types = ", ".join({str(type(result)) for result in results})
+        raise ValueError(
+            f"All results of the XPath '{xpath}' results "
+            f"must be of type {item_type}, found: {types}")
+    return results
 
 
 _translator = GenericTranslator()

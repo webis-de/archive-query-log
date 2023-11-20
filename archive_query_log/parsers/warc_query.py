@@ -17,7 +17,7 @@ from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
     WarcQueryParserType, WarcQueryParser, WarcLocation
 from archive_query_log.parsers.util import clean_text
 from archive_query_log.parsers.warc import open_warc
-from archive_query_log.parsers.xml import parse_xml_tree
+from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
@@ -79,24 +79,16 @@ def _parse_warc_query(
         if tree is None:
             return None
 
-        results = tree.xpath(parser.xpath, smart_strings=False)
-        if not isinstance(results, list):
-            results = [results]
-        if not all(isinstance(result, str) for result in results):
-            types = ", ".join({str(type(result)) for result in results})
-            raise ValueError(
-                f"All XPath {parser.xpath} results must be strings, "
-                f"found: {types}")
-
-        result: str
-        for result in results:
-            result = clean_text(
-                text=result,
+        queries = safe_xpath(tree, parser.xpath, str)
+        query: str
+        for query in queries:
+            query = clean_text(
+                text=query,
                 remove_pattern=parser.remove_pattern,
                 space_pattern=parser.space_pattern,
             )
-            if result is not None:
-                return result
+            if query is not None:
+                return query
         return None
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
