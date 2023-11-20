@@ -17,7 +17,8 @@ from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_QUERY_PARSER
 from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
     WarcQueryParserType, WarcQueryParser, WarcLocation
-from archive_query_log.parsers.xml import parse_xml_tree, get_xml_xpath_non_empty_string
+from archive_query_log.parsers.xml import parse_xml_tree, \
+    get_xml_xpath_non_empty_string
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
@@ -188,9 +189,7 @@ def parse_serps_warc_query(config: Config) -> None:
         )
         .query(FunctionScore(functions=[RandomScore()]))
     )
-    num_changed_serps = (
-        changed_serps_search.extra(track_total_hits=True)
-        .execute().hits.total.value)
+    num_changed_serps = changed_serps_search.count()
     if num_changed_serps > 0:
         changed_serps: Iterable[Serp] = changed_serps_search.scan()
         changed_serps = safe_iter_scan(changed_serps)

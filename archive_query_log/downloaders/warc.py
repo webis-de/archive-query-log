@@ -106,9 +106,7 @@ def download_serps_warc(config: Config) -> None:
         )
         .query(FunctionScore(functions=[RandomScore()]))
     )
-    num_changed_serps = (
-        changed_serps_search.extra(track_total_hits=True)
-        .execute().hits.total.value)
+    num_changed_serps = changed_serps_search.count()
 
     if num_changed_serps <= 0:
         echo("No new/changed captures.")

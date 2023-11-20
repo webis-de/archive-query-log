@@ -114,17 +114,11 @@ def _build_archive_sources(config: Config) -> None:
         )
         .query(FunctionScore(functions=[RandomScore()]))
     )
-    num_changed_archives_search = (
-        changed_archives_search.extra(track_total_hits=True))
-    num_changed_archives = (
-        num_changed_archives_search.execute().hits.total.value)
+    num_changed_archives = changed_archives_search.count()
     all_providers_search = (
         Provider.search(using=config.es.client)
         .filter(~Exists(field="exclusion_reason")))
-    num_all_providers_search = (
-        all_providers_search.extra(track_total_hits=True))
-    num_all_providers = (
-        num_all_providers_search.execute().hits.total.value)
+    num_all_providers = all_providers_search.count()
     num_batches_archives = (
             num_changed_archives * num_all_providers +
             num_changed_archives)
@@ -170,16 +164,9 @@ def _build_provider_sources(config: Config) -> None:
         )
         .query(FunctionScore(functions=[RandomScore()]))
     )
-    num_changed_providers_search = (
-        changed_providers_search.extra(track_total_hits=True))
-    num_changed_providers = (
-        num_changed_providers_search.execute().hits.total.value)
+    num_changed_providers = changed_providers_search.count()
     all_archives_search = Archive.search(using=config.es.client)
-    num_all_archives_search = (
-        all_archives_search.extra(track_total_hits=True))
-    # pylint: disable=no-member
-    num_all_archives = (
-        num_all_archives_search.execute().hits.total.value)
+    num_all_archives = all_archives_search.count()
     num_batches_providers = (
             num_changed_providers * num_all_archives +
             num_changed_providers)

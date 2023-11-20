@@ -108,9 +108,7 @@ def _get_processed_progress(
                    f"doc['{timestamp_field}'].value)",
         )
     )
-    total_processed = (search_processed.extra(track_total_hits=True).execute()
-                       .hits.total.value)
-
+    total_processed = search_processed.count()
     progress = Progress(
         name=name,
         description=description,

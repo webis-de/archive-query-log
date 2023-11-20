@@ -103,9 +103,7 @@ def fetch_captures(config: Config) -> None:
         )
         .query(FunctionScore(functions=[RandomScore()]))
     )
-    num_changed_sources = (
-        changed_sources_search.extra(track_total_hits=True)
-        .execute().hits.total.value)
+    num_changed_sources = changed_sources_search.count()
     if num_changed_sources > 0:
         echo(f"Fetching captures for {num_changed_sources} "
              f"new/changed sources.")

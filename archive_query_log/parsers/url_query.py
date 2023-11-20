@@ -191,9 +191,7 @@ def parse_serps_url_query(config: Config) -> None:
         )
         .query(FunctionScore(functions=[RandomScore()]))
     )
-    num_changed_captures = (
-        changed_captures_search.extra(track_total_hits=True)
-        .execute().hits.total.value)
+    num_changed_captures = changed_captures_search.count()
     if num_changed_captures > 0:
         changed_captures: Iterable[Capture] = changed_captures_search.scan()
         changed_captures = safe_iter_scan(changed_captures)
