@@ -2016,11 +2016,6 @@
     results_selector: table.findList tr.findResult
     url_selector: td.result_text a
     title_selector: td.result_text a
-  - url_pattern: ^https?://[^/]+/find\?
-    type: html_selector
-    results_selector: div#main table tr:has(td[valign="top"])
-    url_selector: td[valign="top"]:nth-child(3) a
-    title_selector: td[valign="top"]:nth-child(3) a
   focused_url_prefixes:
   - /find
 - name: livejasmin
@@ -7819,18 +7814,6 @@
     results_selector: table.search-result-table tr.rowclick
     url_selector: a.search-result-title
     title_selector: a.search-result-title
-  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
-    type: html_selector
-    results_selector: table.result tr[onclick]:has(td.name > div > span.s)
-    url_selector: td.name > a
-    title_selector: td.name > a
-    snippet_selector: td.name > div > span.s
-  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
-    type: html_selector
-    results_selector: table.result tr[onclick]:has(td.name > span.s)
-    url_selector: td.name > a
-    title_selector: td.name > a
-    snippet_selector: td.name > span.s
   focused_url_prefixes:
   - /rs/s
 - name: microcenter
