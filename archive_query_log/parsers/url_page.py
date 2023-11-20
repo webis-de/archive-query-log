@@ -48,11 +48,6 @@ def add_url_page_parser(
         provider_id,
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
-        parser_type,
-        parameter if parameter is not None else "",
-        str(segment) if segment is not None else "",
-        remove_pattern_regex if remove_pattern_regex is not None else "",
-        space_pattern_regex if space_pattern_regex is not None else "",
     )
     parser_id = str(uuid5(
         NAMESPACE_URL_PAGE_PARSER,

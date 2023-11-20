@@ -42,10 +42,6 @@ def add_warc_query_parser(
         provider_id,
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
-        parser_type,
-        xpath if xpath is not None else "",
-        remove_pattern_regex if remove_pattern_regex is not None else "",
-        space_pattern_regex if space_pattern_regex is not None else "",
     )
     parser_id = str(uuid5(
         NAMESPACE_WARC_QUERY_PARSER,
