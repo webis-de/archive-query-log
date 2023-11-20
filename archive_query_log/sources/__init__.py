@@ -66,9 +66,9 @@ def _iter_sources_batches_changed_archives(
     provider: Provider
     changed_archives = changed_archives_search.scan()
     changed_archives = safe_iter_scan(changed_archives)
-    all_providers = all_providers_search.scan()
-    all_providers = safe_iter_scan(all_providers)
     for archive in changed_archives:
+        all_providers = all_providers_search.scan()
+        all_providers = safe_iter_scan(all_providers)
         for provider in all_providers:
             yield _sources_batch(
                 archive,
@@ -86,9 +86,9 @@ def _iter_sources_batches_changed_providers(
     provider: Provider
     changed_providers = changed_providers_search.scan()
     changed_providers = safe_iter_scan(changed_providers)
-    all_archives = all_archives_search.scan()
-    all_archives = safe_iter_scan(all_archives)
     for provider in changed_providers:
+        all_archives = all_archives_search.scan()
+        all_archives = safe_iter_scan(all_archives)
         for archive in all_archives:
             yield _sources_batch(
                 archive,
@@ -120,8 +120,9 @@ def _build_archive_sources(config: Config) -> None:
         .filter(~Exists(field="exclusion_reason")))
     num_all_providers = all_providers_search.count()
     num_batches_archives = (
-            num_changed_archives * num_all_providers +
-            num_changed_archives)
+            (num_changed_archives * num_all_providers) +
+            num_changed_archives
+    )
     if num_batches_archives > 0:
         echo(f"Building sources for {num_changed_archives} "
              f"new/changed archives.")
@@ -168,8 +169,9 @@ def _build_provider_sources(config: Config) -> None:
     all_archives_search = Archive.search(using=config.es.client)
     num_all_archives = all_archives_search.count()
     num_batches_providers = (
-            num_changed_providers * num_all_archives +
-            num_changed_providers)
+            (num_changed_providers * num_all_archives) +
+            num_changed_providers
+    )
     if num_batches_providers > 0:
         echo(
             f"Building sources for {num_changed_providers} "
