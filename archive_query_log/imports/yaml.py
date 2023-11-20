@@ -5,7 +5,6 @@ from warnings import warn
 
 from click import echo
 from click import prompt
-from cssselect import HTMLTranslator
 from diskcache import Index
 from elasticsearch_dsl.query import Terms
 from tqdm.auto import tqdm
@@ -339,8 +338,6 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
         services_list: Sequence[dict] = safe_load(file)
     echo(f"Found {len(services_list)} service definitions.")
 
-    translator = HTMLTranslator()
-
     services: Iterable[dict] = services_list
     # noinspection PyTypeChecker
     services = tqdm(
@@ -348,7 +345,7 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
         desc="Import parsers for providers",
         unit="provider",
     )
-    for i, service in enumerate(services):
+    for service in services:
         if ("domains" not in service or
                 "interpreted_query_parsers" not in service):
             continue

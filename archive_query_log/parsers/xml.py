@@ -3,8 +3,10 @@ from warnings import warn
 
 from cssselect import GenericTranslator
 from cssselect.parser import parse as cssselect_parse
+# pylint: disable=no-name-in-module
 from lxml.etree import parse as etree_parse, XMLParser, HTMLParser
 # noinspection PyProtectedMember
+# pylint: disable=no-name-in-module
 from lxml.etree import _ElementTree
 from warcio.recordloader import ArcWarcRecord
 
@@ -20,6 +22,7 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
         warn(UserWarning("No MIME type given."))
         return None
     mime_type = mime_type.split(";", maxsplit=1)[0]
+    parser: XMLParser | HTMLParser
     if mime_type == "text/xml":
         parser = XMLParser()
     elif mime_type == "text/html":
@@ -42,7 +45,7 @@ def get_xml_xpath_non_empty_string(
         raise ValueError(
             f"XPath {xpath} did not return a list, was: {type(results)}")
     if not all(isinstance(result, str) for result in results):
-        types = ", ".join(type(result) for result in results)
+        types = ", ".join(str(type(result)) for result in results)
         raise ValueError(
             f"XPath {xpath} did not return a list of strings, found: {types}")
     results = (result.strip() for result in results)
@@ -61,7 +64,7 @@ def get_xml_xpath_non_empty_string(
             f"XPath {xpath} did not return a string, was: {type(result)}")
 
 
-translator = GenericTranslator()
+_translator = GenericTranslator()
 
 
 def text_xpath_from_css_selector(
@@ -78,7 +81,7 @@ def text_xpath_from_css_selector(
     selectors = cssselect_parse(css_selector)
 
     xpaths = (
-        "//" + translator.selector_to_xpath(
+        "//" + _translator.selector_to_xpath(
             selector,
             prefix="",
             translate_pseudo_elements=True,

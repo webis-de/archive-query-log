@@ -30,8 +30,8 @@ class Progress(NamedTuple):
 DocumentType = Type[BaseDocument]
 
 _statistics_cache: dict[
-    tuple[DocumentType,
-    tuple[str, ...]], Statistics,
+    tuple[DocumentType, tuple[str, ...]],
+    Statistics,
 ] = ExpiringDict(
     max_len=100,
     max_age_seconds=30,

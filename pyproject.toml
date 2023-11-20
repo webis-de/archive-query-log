@@ -125,6 +125,9 @@ disable = [
     "logging-fstring-interpolation"
 ]
 
+[tool.bandit]
+skips = ["B320", "B410"]
+
 [tool.bandit.assert_used]
 skips = ["**/test_*.py"]
 

@@ -307,4 +307,3 @@ def warc_query_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_warc_query_parsers
     WarcQueryParser.init(using=config.es.client)
     import_warc_query_parsers(config, services_path)
-
