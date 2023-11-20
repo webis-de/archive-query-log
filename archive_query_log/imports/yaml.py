@@ -6,7 +6,6 @@ from warnings import warn
 from click import echo
 from click import prompt
 from cssselect import HTMLTranslator
-from cssselect.parser import parse
 from diskcache import Index
 from elasticsearch_dsl.query import Terms
 from tqdm.auto import tqdm
@@ -20,6 +19,7 @@ from archive_query_log.parsers.url_offset import add_url_offset_parser
 from archive_query_log.parsers.url_page import add_url_page_parser
 from archive_query_log.parsers.url_query import add_url_query_parser
 from archive_query_log.parsers.warc_query import add_warc_query_parser
+from archive_query_log.parsers.xml import text_xpath_from_css_selector
 from archive_query_log.providers import add_provider
 from archive_query_log.utils.es import safe_iter_scan
 
@@ -380,31 +380,15 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
                     space_pattern_regex = None
                 query_selector = interpreted_query_parser["query_selector"]
 
-                xpaths = (
-                    "//" + translator.selector_to_xpath(
-                        selector,
-                        prefix="",
-                        translate_pseudo_elements=True,
-                    ).replace(
-                        "/descendant-or-self::*/", "//")
-                    for selector in parse(query_selector)
-                )
-
                 query_text = interpreted_query_parser.get("query_text", False)
-                if query_text:
-                    xpaths = (
-                        f"{xpath}//text()"
-                        for xpath in xpaths
-                    )
-                else:
-                    query_attribute = interpreted_query_parser.get(
-                        "query_attribute", "value")
-                    xpaths = (
-                        f"{xpath}/@{query_attribute}"
-                        for xpath in xpaths
-                    )
+                query_attribute = interpreted_query_parser.get(
+                    "query_attribute", "value" if not query_text else None)
 
-                xpath = " | ".join(xpaths)
+                xpath = text_xpath_from_css_selector(
+                    query_selector,
+                    attribute=query_attribute,
+                    text=query_text,
+                )
 
                 add_warc_query_parser(
                     config=config,

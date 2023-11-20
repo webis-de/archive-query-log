@@ -17,7 +17,7 @@ from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_QUERY_PARSER
 from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
     WarcQueryParserType, WarcQueryParser, WarcLocation
-from archive_query_log.parsers.xml import parse_xml_tree, get_xml_xpath_string
+from archive_query_log.parsers.xml import parse_xml_tree, get_xml_xpath_non_empty_string
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
@@ -93,7 +93,9 @@ def _parse_warc_query(
             raise ValueError("No XPath given.")
         with _open_warc(warc_store, warc_location) as record:
             tree = parse_xml_tree(record)
-            query = get_xml_xpath_string(tree, parser.xpath)
+            if tree is None:
+                return None
+            query = get_xml_xpath_non_empty_string(tree, parser.xpath)
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
 
