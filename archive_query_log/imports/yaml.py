@@ -405,3 +405,84 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
                     remove_pattern_regex=remove_pattern_regex,
                     space_pattern_regex=space_pattern_regex,
                 )
+
+
+def import_warc_snippets_parsers(config: Config, services_path: Path) -> None:
+    echo("Load providers from services file.")
+    with services_path.open("r") as file:
+        services_list: Sequence[dict] = safe_load(file)
+    echo(f"Found {len(services_list)} service definitions.")
+
+    services: Iterable[dict] = services_list
+    # noinspection PyTypeChecker
+    services = tqdm(
+        services,
+        desc="Import parsers for providers",
+        unit="provider",
+    )
+    for service in services:
+        if ("domains" not in service or "results_parsers" not in service):
+            continue
+
+        results_parsers = service["results_parsers"]
+        num_results_parsers = len(results_parsers)
+
+        providers = (
+            Provider.search(using=config.es.client)
+            .query(Terms(domains=service["domains"]))
+            .scan()
+        )
+        providers = safe_iter_scan(providers)
+        for provider in providers:
+            for k, results_parser in enumerate(results_parsers):
+                if results_parser["type"] != "html_selector":
+                    continue
+                results_selector = results_parser["results_selector"]
+                url_selector = results_parser.get("url_selector")
+                title_selector = results_parser.get("title_selector")
+                snippet_selector = results_parser.get("snippet_selector")
+
+                results_xpaths = xpaths_from_css_selector(results_selector)
+                results_xpath = merge_xpaths(results_xpaths)
+
+                if url_selector is not None:
+                    url_xpaths = xpaths_from_css_selector(url_selector)
+                    url_xpaths = [
+                        text_xpath(xpath, attribute="href")
+                        for xpath in url_xpaths
+                    ]
+                    url_xpath = merge_xpaths(url_xpaths)
+                else:
+                    url_xpath = None
+
+                if title_selector is not None:
+                    title_xpaths = xpaths_from_css_selector(title_selector)
+                    title_xpaths = [
+                        text_xpath(xpath, text=True)
+                        for xpath in title_xpaths
+                    ]
+                    title_xpath = merge_xpaths(title_xpaths)
+                else:
+                    title_xpath = None
+
+                if snippet_selector is not None:
+                    snippet_xpaths = xpaths_from_css_selector(snippet_selector)
+                    snippet_xpaths = [
+                        text_xpath(xpath, text=True)
+                        for xpath in snippet_xpaths
+                    ]
+                    snippet_xpath = merge_xpaths(snippet_xpaths)
+                else:
+                    snippet_xpath = None
+
+                add_warc_snippets_parser(
+                    config=config,
+                    provider_id=provider.meta.id,
+                    url_pattern_regex=results_parser.get("url_pattern"),
+                    priority=num_results_parsers - k,
+                    parser_type="xpath",
+                    xpath=results_xpath,
+                    url_xpath=url_xpath,
+                    title_xpath=title_xpath,
+                    text_xpath=snippet_xpath,
+                )
