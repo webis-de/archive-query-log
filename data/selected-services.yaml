@@ -1312,7 +1312,7 @@
     query_selector: input#header-search-bar
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
-    query_selector: form#search input
+    query_selector: form#search input[name="q"]
   results_parsers:
   - url_pattern: ^https?://[^/]+/search
     type: html_selector
@@ -2003,7 +2003,7 @@
   interpreted_query_parsers:
   - url_pattern: ^https?://[^/]+/find\?
     type: html_selector
-    query_selector: div#nb_search input
+    query_selector: div#nb_search input[name="q"]
   - url_pattern: ^https?://[^/]+/find\?
     type: html_selector
     query_selector: input#navbar-query
