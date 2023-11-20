@@ -62,12 +62,13 @@ def add_warc_query_parser(
 
 def _parse_warc_query(
         parser: WarcQueryParser,
-        url: str,
+        capture_url: str,
         warc_store: WarcS3Store,
         warc_location: WarcLocation,
 ) -> str | None:
     # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(url):
+    if (parser.url_pattern is not None and
+            not parser.url_pattern.match(capture_url)):
         return None
 
     # Parse query.
@@ -80,15 +81,14 @@ def _parse_warc_query(
             return None
 
         queries = safe_xpath(tree, parser.xpath, str)
-        query: str
         for query in queries:
-            query = clean_text(
+            query_cleaned = clean_text(
                 text=query,
                 remove_pattern=parser.remove_pattern,
                 space_pattern=parser.space_pattern,
             )
-            if query is not None:
-                return query
+            if query_cleaned is not None:
+                return query_cleaned
         return None
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")

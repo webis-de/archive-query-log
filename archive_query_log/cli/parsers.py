@@ -6,8 +6,8 @@ from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.orm import UrlQueryParserType, \
     UrlQueryParser, UrlPageParserType, UrlPageParser, \
-    UrlOffsetParser, UrlOffsetParserType, WarcQueryParserType, WarcQueryParser, \
-    WarcSnippetsParserType, WarcSnippetsParser
+    UrlOffsetParser, UrlOffsetParserType, WarcQueryParserType, \
+    WarcQueryParser, WarcSnippetsParserType, WarcSnippetsParser
 
 
 @group()

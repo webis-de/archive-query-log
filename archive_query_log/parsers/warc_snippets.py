@@ -20,8 +20,8 @@ from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_SNIPPETS_PARSER, \
     NAMESPACE_RESULT
 from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
-    WarcSnippetsParserType, WarcSnippetsParser, WarcLocation, Snippet, Result, \
-    InnerSerp
+    WarcSnippetsParserType, WarcSnippetsParser, WarcLocation, Snippet, \
+    Result, InnerSerp
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.es import safe_iter_scan, update_action
@@ -70,12 +70,13 @@ def add_warc_snippets_parser(
 
 def _parse_warc_snippets(
         parser: WarcSnippetsParser,
-        url: str,
+        capture_url: str,
         warc_store: WarcS3Store,
         warc_location: WarcLocation,
 ) -> list[Snippet] | None:
     # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(url):
+    if (parser.url_pattern is not None and
+            not parser.url_pattern.match(capture_url)):
         return None
 
     # Parse snippets.
@@ -94,17 +95,17 @@ def _parse_warc_snippets(
         snippets = []
         element: _Element
         for i, element in enumerate(elements):
-            url = None
+            url: str | None = None
             if parser.url_xpath is not None:
                 urls = safe_xpath(element, parser.url_xpath, str)
                 if len(urls) > 0:
                     url = urls[0]
-            title = None
+            title: str | None = None
             if parser.title_xpath is not None:
                 titles = safe_xpath(element, parser.title_xpath, str)
                 if len(titles) > 0:
                     title = titles[0]
-            text = None
+            text: str | None = None
             if parser.text_xpath is not None:
                 texts = safe_xpath(element, parser.text_xpath, str)
                 if len(texts) > 0:

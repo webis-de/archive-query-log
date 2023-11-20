@@ -69,16 +69,17 @@ def add_url_query_parser(
     parser.save(using=config.es.client)
 
 
-def _parse_url_query(parser: UrlQueryParser, url: str) -> str | None:
+def _parse_url_query(parser: UrlQueryParser, capture_url: str) -> str | None:
     # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(url):
+    if (parser.url_pattern is not None and
+            not parser.url_pattern.match(capture_url)):
         return None
 
     # Parse query.
     if parser.parser_type == "query_parameter":
         if parser.parameter is None:
             raise ValueError("No query parameter given.")
-        query = parse_url_query_parameter(parser.parameter, url)
+        query = parse_url_query_parameter(parser.parameter, capture_url)
         if query is None:
             return None
         return clean_text(
@@ -89,7 +90,7 @@ def _parse_url_query(parser: UrlQueryParser, url: str) -> str | None:
     elif parser.parser_type == "fragment_parameter":
         if parser.parameter is None:
             raise ValueError("No fragment parameter given.")
-        query = parse_url_fragment_parameter(parser.parameter, url)
+        query = parse_url_fragment_parameter(parser.parameter, capture_url)
         if query is None:
             return None
         return clean_text(
@@ -100,7 +101,7 @@ def _parse_url_query(parser: UrlQueryParser, url: str) -> str | None:
     elif parser.parser_type == "path_segment":
         if parser.segment is None:
             raise ValueError("No path segment given.")
-        query = parse_url_path_segment(parser.segment, url)
+        query = parse_url_path_segment(parser.segment, capture_url)
         if query is None:
             return None
         return clean_text(

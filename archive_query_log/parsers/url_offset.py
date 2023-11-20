@@ -68,16 +68,18 @@ def add_url_offset_parser(
     parser.save(using=config.es.client)
 
 
-def _parse_url_offset(parser: UrlOffsetParser, url: str) -> int | None:
+def _parse_url_offset(parser: UrlOffsetParser, capture_url: str) -> int | None:
     # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(url):
+    if (parser.url_pattern is not None and
+            not parser.url_pattern.match(capture_url)):
         return None
 
     # Parse offset.
     if parser.parser_type == "query_parameter":
         if parser.parameter is None:
             raise ValueError("No offset parameter given.")
-        offset_string = parse_url_query_parameter(parser.parameter, url)
+        offset_string = parse_url_query_parameter(
+            parser.parameter, capture_url)
         if offset_string is None:
             return None
         return clean_int(
@@ -87,7 +89,8 @@ def _parse_url_offset(parser: UrlOffsetParser, url: str) -> int | None:
     elif parser.parser_type == "fragment_parameter":
         if parser.parameter is None:
             raise ValueError("No fragment parameter given.")
-        offset_string = parse_url_fragment_parameter(parser.parameter, url)
+        offset_string = parse_url_fragment_parameter(
+            parser.parameter, capture_url)
         if offset_string is None:
             return None
         return clean_int(
@@ -97,7 +100,7 @@ def _parse_url_offset(parser: UrlOffsetParser, url: str) -> int | None:
     elif parser.parser_type == "path_segment":
         if parser.segment is None:
             raise ValueError("No path segment given.")
-        offset_string = parse_url_path_segment(parser.segment, url)
+        offset_string = parse_url_path_segment(parser.segment, capture_url)
         if offset_string is None:
             return None
         return clean_int(
