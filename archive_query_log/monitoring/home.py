@@ -255,6 +255,7 @@ def home(config: Config) -> str | Response:
             output_name="Sources",
             description="Build sources for all archives.",
             document=Archive,
+            filter_query=~Exists(field="exclusion_reason"),
             timestamp_field="last_built_sources",
         ),
         _get_processed_progress(
@@ -263,6 +264,7 @@ def home(config: Config) -> str | Response:
             output_name="Sources",
             description="Build sources for all search providers.",
             document=Provider,
+            filter_query=~Exists(field="exclusion_reason"),
             timestamp_field="last_built_sources",
         ),
         _get_processed_progress(
