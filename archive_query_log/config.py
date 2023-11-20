@@ -104,6 +104,7 @@ class HttpConfig(DataClassJsonMixin):
         _adapter = LimiterAdapter(
             max_retries=_retries,
             limiter=_limiter,
+            per_host=True,
         )
         # noinspection HttpUrlsUsage
         session.mount("http://", _adapter)
