@@ -59,6 +59,8 @@ _translator = GenericTranslator()
 
 
 def xpaths_from_css_selector(css_selector: str) -> list[str]:
+    if css_selector == ":--self":
+        return ["."]
     selectors = cssselect_parse(css_selector)
     return [
         "//" + _translator.selector_to_xpath(
