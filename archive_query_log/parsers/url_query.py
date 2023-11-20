@@ -16,6 +16,7 @@ from archive_query_log.orm import Capture, Serp, InnerCapture, InnerParser, \
     UrlQueryParser
 from archive_query_log.orm import UrlQueryParserType, \
     InnerProviderId
+from archive_query_log.parsers.util import clean_text
 from archive_query_log.parsers.url import parse_url_query_parameter, \
     parse_url_fragment_parameter, parse_url_path_segment
 from archive_query_log.utils.es import safe_iter_scan, update_action
@@ -78,28 +79,37 @@ def _parse_url_query(parser: UrlQueryParser, url: str) -> str | None:
         if parser.parameter is None:
             raise ValueError("No query parameter given.")
         query = parse_url_query_parameter(parser.parameter, url)
+        if query is None:
+            return None
+        return clean_text(
+            text=query,
+            remove_pattern=parser.remove_pattern,
+            space_pattern=parser.space_pattern,
+        )
     elif parser.parser_type == "fragment_parameter":
         if parser.parameter is None:
             raise ValueError("No fragment parameter given.")
         query = parse_url_fragment_parameter(parser.parameter, url)
+        if query is None:
+            return None
+        return clean_text(
+            text=query,
+            remove_pattern=parser.remove_pattern,
+            space_pattern=parser.space_pattern,
+        )
     elif parser.parser_type == "path_segment":
         if parser.segment is None:
             raise ValueError("No path segment given.")
         query = parse_url_path_segment(parser.segment, url)
+        if query is None:
+            return None
+        return clean_text(
+            text=query,
+            remove_pattern=parser.remove_pattern,
+            space_pattern=parser.space_pattern,
+        )
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
-
-    if query is None:
-        return None
-
-    # Clean up query.
-    if parser.remove_pattern is not None:
-        query = parser.remove_pattern.sub("", query)
-    if parser.space_pattern is not None:
-        query = parser.space_pattern.sub(" ", query)
-    query = query.strip()
-    query = " ".join(query.split())
-    return query
 
 
 @cache

@@ -3,7 +3,6 @@ from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
 from uuid import uuid5
-from warnings import warn
 
 from click import echo
 from elasticsearch_dsl import Search
@@ -18,6 +17,7 @@ from archive_query_log.orm import Serp, InnerParser, \
     UrlOffsetParser
 from archive_query_log.parsers.url import parse_url_query_parameter, \
     parse_url_fragment_parameter, parse_url_path_segment
+from archive_query_log.parsers.util import clean_int
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
@@ -78,31 +78,34 @@ def _parse_url_offset(parser: UrlOffsetParser, url: str) -> int | None:
         if parser.parameter is None:
             raise ValueError("No offset parameter given.")
         offset_string = parse_url_query_parameter(parser.parameter, url)
+        if offset_string is None:
+            return None
+        return clean_int(
+            text=offset_string,
+            remove_pattern=parser.remove_pattern,
+        )
     elif parser.parser_type == "fragment_parameter":
         if parser.parameter is None:
             raise ValueError("No fragment parameter given.")
         offset_string = parse_url_fragment_parameter(parser.parameter, url)
+        if offset_string is None:
+            return None
+        return clean_int(
+            text=offset_string,
+            remove_pattern=parser.remove_pattern,
+        )
     elif parser.parser_type == "path_segment":
         if parser.segment is None:
             raise ValueError("No path segment given.")
         offset_string = parse_url_path_segment(parser.segment, url)
+        if offset_string is None:
+            return None
+        return clean_int(
+            text=offset_string,
+            remove_pattern=parser.remove_pattern,
+        )
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
-
-    if offset_string is None:
-        return None
-
-    # Clean up offset string.
-    if parser.remove_pattern is not None:
-        offset_string = parser.remove_pattern.sub("", offset_string)
-    offset_string = offset_string.strip()
-    try:
-        offset = int(offset_string)
-    except ValueError:
-        warn(RuntimeWarning(
-            f"Could not parse offset '{offset_string}' in URL: {url}"))
-        return None
-    return offset
 
 
 @cache

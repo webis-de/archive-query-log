@@ -3,7 +3,6 @@ from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
 from uuid import uuid5
-from warnings import warn
 
 from click import echo
 from elasticsearch_dsl import Search
@@ -18,6 +17,7 @@ from archive_query_log.orm import Serp, InnerParser, \
     UrlPageParser
 from archive_query_log.parsers.url import parse_url_query_parameter, \
     parse_url_fragment_parameter, parse_url_path_segment
+from archive_query_log.parsers.util import clean_int
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
@@ -78,31 +78,34 @@ def _parse_url_page(parser: UrlPageParser, url: str) -> int | None:
         if parser.parameter is None:
             raise ValueError("No page parameter given.")
         page_string = parse_url_query_parameter(parser.parameter, url)
+        if page_string is None:
+            return None
+        return clean_int(
+            text=page_string,
+            remove_pattern=parser.remove_pattern,
+        )
     elif parser.parser_type == "fragment_parameter":
         if parser.parameter is None:
             raise ValueError("No fragment parameter given.")
         page_string = parse_url_fragment_parameter(parser.parameter, url)
+        if page_string is None:
+            return None
+        return clean_int(
+            text=page_string,
+            remove_pattern=parser.remove_pattern,
+        )
     elif parser.parser_type == "path_segment":
         if parser.segment is None:
             raise ValueError("No path segment given.")
         page_string = parse_url_path_segment(parser.segment, url)
+        if page_string is None:
+            return None
+        return clean_int(
+            text=page_string,
+            remove_pattern=parser.remove_pattern,
+        )
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
-
-    if page_string is None:
-        return None
-
-    # Clean up page string.
-    if parser.remove_pattern is not None:
-        page_string = parser.remove_pattern.sub("", page_string)
-    page_string = page_string.strip()
-    try:
-        page = int(page_string)
-    except ValueError:
-        warn(RuntimeWarning(
-            f"Could not parse page '{page_string}' in URL: {url}"))
-        return None
-    return page
 
 
 @cache
