@@ -42,5 +42,10 @@ Started cron jobs:
   Scheduled at {{ $.Values.serpsParseWarcQuery.schedule }}.
   Running {{ $.Values.serpsParseWarcQuery.completions }}x (parallelism: {{ $.Values.serpsParseWarcQuery.parallelism }}, backoff limit: {{ $.Values.serpsParseWarcQuery.backoffLimit }}).
 {{- end }}
+{{- if $.Values.serpsParseWarcSnippets.enabled }}
+- Parse SERP WARC queries:
+  Scheduled at {{ $.Values.serpsParseWarcSnippets.schedule }}.
+  Running {{ $.Values.serpsParseWarcSnippets.completions }}x (parallelism: {{ $.Values.serpsParseWarcSnippets.parallelism }}, backoff limit: {{ $.Values.serpsParseWarcSnippets.backoffLimit }}).
+{{- end }}
 
 Serving monitoring web interface at {{ if $.Values.monitoring.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.monitoring.host }}{{ $.Values.monitoring.path }}.
