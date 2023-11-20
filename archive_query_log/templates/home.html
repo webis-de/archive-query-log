@@ -48,7 +48,11 @@
 </header>
 <main>
     <section>
-        <h2>Stats</h2>
+        Monitor the crawling and parsing of the Archive Query Log.
+        Directly go to the detailed <a href="#statistics">statistics</a> or check the <a href="#progress">progress</a>.
+    </section>
+    <section id="statistics">
+        <h2>Statistics</h2>
         <figure>
             <table>
                 <thead>
@@ -64,13 +68,20 @@
                 {% for statistics in statistics_list %}
                     <tr>
                         <td>{{ statistics.name }}</td>
-                        <td>{% if statistics.description %}{{ statistics.description }}{% else %}—{% endif %}</td>
+                        <td style="font-size: smaller">{% if statistics.description %}{{ statistics.description }}{% else %}—{% endif %}</td>
                         <td style="text-align: right">{{ "{:,.0f}".format(statistics.total) }}</td>
-                        <td style="text-align: right">{{ statistics.disk_size }}</td>
+                        <td style="text-align: right">
+                            {% if statistics.disk_size %}
+                            {{ statistics.disk_size }}
+                            {% else %}
+                            —
+                            {% endif %}
+                        </td>
                         <td>
                             {% if statistics.last_modified %}
-                            <time datetime="{{ statistics.last_modified.isoformat() }}">
-                                {{ statistics.last_modified.strftime("%c") }}
+                            <time datetime="{{ statistics.last_modified.isoformat() }}"
+                                  title="{{ statistics.last_modified.strftime('%c (%Z)') }}">
+                                {{ statistics.last_modified.strftime("%Y-%m-%d %H:%M:%S") }}
                             </time>
                             {% else %}
                             —
@@ -82,13 +93,14 @@
             </table>
         </figure>
     </section>
-    <section>
+    <section id="progress">
         <h2>Progress</h2>
         <figure>
             <table>
                 <thead>
                 <tr>
-                    <th>Stage</th>
+                    <th>Input</th>
+                    <th>Output</th>
                     <th>Description</th>
                     <th>Unprocessed</th>
                     <th>Processed</th>
@@ -98,10 +110,9 @@
                 <tbody>
                 {% for progress in progress_list %}
                     <tr>
-                        <td>{{ progress.name }}</td>
-                        <td>
-                            {% if progress.description %}{{ progress.description }}{% else %}—{% endif %}
-                        </td>
+                        <td>{{ progress.input_name }}</td>
+                        <td>{{ progress.output_name }}</td>
+                        <td style="font-size: smaller">{{ progress.description }}</td>
                         <td style="text-align: right">{{ "{:,.0f}".format(progress.total - progress.current) }}</td>
                         <td style="text-align: right">{{ "{:,.0f}".format(progress.current) }}</td>
                         <td>
