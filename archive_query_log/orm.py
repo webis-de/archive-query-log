@@ -167,17 +167,19 @@ class WarcLocation(InnerDocument):
 
 
 class Snippet(InnerDocument):
-    url: str = Keyword()
-    rank: int | None = Integer()
-    title: str | None = Keyword()
-    text: str | None = Keyword()
+    id: str = Keyword()
+    rank: int = Integer()
+    content: str = Text()
+    url: str | None = Keyword()
+    title: str | None = Text()
+    text: str | None = Text()
 
 
 class Serp(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
     capture: InnerCapture = Object(InnerCapture)
-    url_query: str = Keyword()
+    url_query: str = Text()
     url_query_parser: InnerParser | None = Object(InnerParser)
     url_page: int | None = Integer()
     url_page_parser: InnerParser | None = Object(InnerParser)
@@ -187,7 +189,7 @@ class Serp(BaseDocument):
     # url_language_parser: InnerParser | None = Object(InnerParser)
     warc_location: WarcLocation | None = Object(WarcLocation)
     warc_downloader: InnerDownloader | None = Object(InnerDownloader)
-    warc_query: str | None = Keyword()
+    warc_query: str | None = Text()
     warc_query_parser: InnerParser | None = Object(InnerParser)
     warc_snippets: list[Snippet] | None = Nested(Snippet)
     warc_snippets_parser: InnerParser | None = Object(InnerParser)
@@ -402,7 +404,8 @@ class Result(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
     serp: InnerSerp = Object(InnerSerp)
-    url: str = Keyword()
+    snippet: Snippet = Object(Snippet)
+    snippet_parser: InnerParser | None = Object(InnerParser)
 
     class Index:
         name = "aql_results"
