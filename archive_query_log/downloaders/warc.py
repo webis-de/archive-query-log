@@ -4,7 +4,7 @@ from uuid import uuid5
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Exists, FunctionScore, Script
+from elasticsearch_dsl.query import Exists, FunctionScore, Script, Term
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Record
 from warcio.recordloader import ArcWarcRecord
@@ -37,6 +37,8 @@ class _SerpArcWarcRecord(ArcWarcRecord):
 
 
 def _download_warc(config: Config, serp: Serp) -> Iterator[_SerpArcWarcRecord]:
+    if serp.capture.status_code != 200:
+        return
     memento_api = MementoApi(
         api_url=serp.archive.memento_api_url,
         session=config.http.session,
@@ -93,15 +95,17 @@ def download_serps_warc(config: Config) -> None:
     changed_serps_search: Search = (
         Serp.search(using=config.es.client)
         .filter(
-            ~Exists(field="last_modified") |
-            ~Exists(field="warc_downloader.last_downloaded") |
-            Script(
-                script="!doc['last_modified'].isEmpty() && "
-                       "!doc['warc_downloader.last_downloaded']"
-                       ".isEmpty() && "
-                       "!doc['last_modified'].value.isBefore("
-                       "doc['warc_downloader.last_downloaded'].value"
-                       ")",
+            Term(capture__status_code=200) & (
+                    ~Exists(field="last_modified") |
+                    ~Exists(field="warc_downloader.last_downloaded") |
+                    Script(
+                        script="!doc['last_modified'].isEmpty() && "
+                               "!doc['warc_downloader.last_downloaded']"
+                               ".isEmpty() && "
+                               "!doc['last_modified'].value.isBefore("
+                               "doc['warc_downloader.last_downloaded'].value"
+                               ")",
+                    )
             )
         )
         .query(FunctionScore(functions=[RandomScore()]))
