@@ -15,9 +15,9 @@ from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_QUERY_PARSER
 from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
     WarcQueryParserType, WarcQueryParser, WarcLocation
+from archive_query_log.parsers.util import clean_text
 from archive_query_log.parsers.warc import open_warc
-from archive_query_log.parsers.xml import parse_xml_tree, \
-    get_xml_xpath_non_empty_string
+from archive_query_log.parsers.xml import parse_xml_tree
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
@@ -59,6 +59,7 @@ def add_warc_query_parser(
     )
     parser.save(using=config.es.client)
 
+
 def _parse_warc_query(
         parser: WarcQueryParser,
         url: str,
@@ -75,23 +76,30 @@ def _parse_warc_query(
             raise ValueError("No XPath given.")
         with open_warc(warc_store, warc_location) as record:
             tree = parse_xml_tree(record)
-            if tree is None:
-                return None
-            query = get_xml_xpath_non_empty_string(tree, parser.xpath)
+        if tree is None:
+            return None
+
+        results = tree.xpath(parser.xpath, smart_strings=False)
+        if not isinstance(results, list):
+            results = [results]
+        if not all(isinstance(result, str) for result in results):
+            types = ", ".join({str(type(result)) for result in results})
+            raise ValueError(
+                f"All XPath {parser.xpath} results must be strings, "
+                f"found: {types}")
+
+        result: str
+        for result in results:
+            result = clean_text(
+                text=result,
+                remove_pattern=parser.remove_pattern,
+                space_pattern=parser.space_pattern,
+            )
+            if result is not None:
+                return result
+        return None
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
-
-    if query is None:
-        return None
-
-    # Clean up query.
-    if parser.remove_pattern is not None:
-        query = parser.remove_pattern.sub("", query)
-    if parser.space_pattern is not None:
-        query = parser.space_pattern.sub(" ", query)
-    query = query.strip()
-    query = " ".join(query.split())
-    return query
 
 
 @cache

@@ -36,34 +36,6 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
     )
 
 
-def get_xml_xpath_non_empty_string(
-        tree: _ElementTree,
-        xpath: str,
-) -> str | None:
-    results = tree.xpath(xpath, smart_strings=False)
-    if not isinstance(results, list):
-        raise ValueError(
-            f"XPath {xpath} did not return a list, was: {type(results)}")
-    if not all(isinstance(result, str) for result in results):
-        types = ", ".join(str(type(result)) for result in results)
-        raise ValueError(
-            f"XPath {xpath} did not return a list of strings, found: {types}")
-    results = (result.strip() for result in results)
-    results = (result for result in results if result != "")
-    results = list(set(results))
-    if len(results) == 0:
-        return None
-    if len(results) > 1:
-        warn(RuntimeWarning(
-            f"XPath {xpath} returned more than one result: {results}"))
-    result = results[0]
-    if isinstance(result, str):
-        return result
-    else:
-        raise ValueError(
-            f"XPath {xpath} did not return a string, was: {type(result)}")
-
-
 _translator = GenericTranslator()
 
 
