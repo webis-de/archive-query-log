@@ -1,4 +1,3 @@
-from contextlib import contextmanager
 from datetime import datetime
 from functools import cache
 from itertools import chain
@@ -10,13 +9,13 @@ from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import Exists, FunctionScore, Script, Term
 from tqdm.auto import tqdm
-from warc_s3 import WarcS3Store, WarcS3Location
-from warcio.recordloader import ArcWarcRecord
+from warc_s3 import WarcS3Store
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_QUERY_PARSER
 from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
     WarcQueryParserType, WarcQueryParser, WarcLocation
+from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, \
     get_xml_xpath_non_empty_string
 from archive_query_log.utils.es import safe_iter_scan, update_action
@@ -60,20 +59,6 @@ def add_warc_query_parser(
     )
     parser.save(using=config.es.client)
 
-
-@contextmanager
-def _open_warc(
-        warc_store: WarcS3Store,
-        warc_location: WarcLocation,
-) -> Iterator[ArcWarcRecord]:
-    with warc_store.read(WarcS3Location(
-            key=warc_location.file,
-            offset=warc_location.offset,
-            length=warc_location.length,
-    )) as record:
-        yield record
-
-
 def _parse_warc_query(
         parser: WarcQueryParser,
         url: str,
@@ -88,7 +73,7 @@ def _parse_warc_query(
     if parser.parser_type == "xpath":
         if parser.xpath is None:
             raise ValueError("No XPath given.")
-        with _open_warc(warc_store, warc_location) as record:
+        with open_warc(warc_store, warc_location) as record:
             tree = parse_xml_tree(record)
             if tree is None:
                 return None
