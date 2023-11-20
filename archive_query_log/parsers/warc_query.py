@@ -130,8 +130,6 @@ def _parse_serp_warc_query_action(
         serp: Serp,
         start_time: datetime,
 ) -> Iterator[dict]:
-    if False:
-        yield {}
     # Re-check if it can be parsed.
     if serp.warc_location is None:
         return
@@ -145,7 +143,7 @@ def _parse_serp_warc_query_action(
     for parser in _warc_query_parsers(config, serp.provider.id):
         # Try to parse the query.
         warc_query = _parse_warc_query(
-            parser, serp.url, config.s3.warc_store, serp.warc_location)
+            parser, serp.capture.url, config.s3.warc_store, serp.warc_location)
         if warc_query is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
@@ -153,16 +151,16 @@ def _parse_serp_warc_query_action(
             id=parser.id,
             last_parsed=start_time,
         )
-        # yield update_action(
-        #     serp,
-        #     warc_query=warc_query,
-        #     warc_query_parser=warc_query_parser,
-        # )
+        yield update_action(
+            serp,
+            warc_query=warc_query,
+            warc_query_parser=warc_query_parser,
+        )
         return
-    # yield update_action(
-    #     serp,
-    #     warc_query_parser=InnerParser(last_parsed=start_time),
-    # )
+    yield update_action(
+        serp,
+        warc_query_parser=InnerParser(last_parsed=start_time),
+    )
     return
 
 
@@ -172,15 +170,18 @@ def parse_serps_warc_query(config: Config) -> None:
     changed_serps_search: Search = (
         Serp.search(using=config.es.client)
         .filter(
-            ~Exists(field="last_modified") |
-            ~Exists(field="warc_query_parser.last_parsed") |
-            Script(
-                script="!doc['last_modified'].isEmpty() && "
-                       "!doc['warc_query_parser.last_parsed']"
-                       ".isEmpty() && "
-                       "!doc['last_modified'].value.isBefore("
-                       "doc['warc_query_parser.last_parsed'].value"
-                       ")",
+            Exists(field="warc_location") &
+            (
+                    ~Exists(field="last_modified") |
+                    ~Exists(field="warc_query_parser.last_parsed") |
+                    Script(
+                        script="!doc['last_modified'].isEmpty() && "
+                               "!doc['warc_query_parser.last_parsed']"
+                               ".isEmpty() && "
+                               "!doc['last_modified'].value.isBefore("
+                               "doc['warc_query_parser.last_parsed'].value"
+                               ")",
+                    )
             )
         )
         .query(FunctionScore(functions=[RandomScore()]))

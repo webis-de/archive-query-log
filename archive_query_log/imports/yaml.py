@@ -6,6 +6,7 @@ from warnings import warn
 from click import echo
 from click import prompt
 from cssselect import HTMLTranslator
+from cssselect.parser import parse
 from diskcache import Index
 from elasticsearch_dsl.query import Terms
 from tqdm.auto import tqdm
@@ -378,15 +379,32 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
                 else:
                     space_pattern_regex = None
                 query_selector = interpreted_query_parser["query_selector"]
-                xpath = translator.css_to_xpath(query_selector, prefix="")
-                xpath = xpath.replace("/descendant-or-self::*/", "//")
+
+                xpaths = (
+                    "//" + translator.selector_to_xpath(
+                        selector,
+                        prefix="",
+                        translate_pseudo_elements=True,
+                    ).replace(
+                        "/descendant-or-self::*/", "//")
+                    for selector in parse(query_selector)
+                )
+
                 query_text = interpreted_query_parser.get("query_text", False)
                 if query_text:
-                    xpath = f"{xpath}//text()"
+                    xpaths = (
+                        f"{xpath}//text()"
+                        for xpath in xpaths
+                    )
                 else:
                     query_attribute = interpreted_query_parser.get(
                         "query_attribute", "value")
-                    xpath = f"{xpath}@{query_attribute}"
+                    xpaths = (
+                        f"{xpath}/@{query_attribute}"
+                        for xpath in xpaths
+                    )
+
+                xpath = " | ".join(xpaths)
 
                 add_warc_query_parser(
                     config=config,
