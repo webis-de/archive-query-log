@@ -18,7 +18,9 @@ from archive_query_log.parsers.url_offset import add_url_offset_parser
 from archive_query_log.parsers.url_page import add_url_page_parser
 from archive_query_log.parsers.url_query import add_url_query_parser
 from archive_query_log.parsers.warc_query import add_warc_query_parser
-from archive_query_log.parsers.xml import text_xpath_from_css_selector
+from archive_query_log.parsers.warc_snippets import add_warc_snippets_parser
+from archive_query_log.parsers.xml import xpaths_from_css_selector, text_xpath, \
+    merge_xpaths
 from archive_query_log.providers import add_provider
 from archive_query_log.utils.es import safe_iter_scan
 
@@ -381,11 +383,16 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
                 query_attribute = interpreted_query_parser.get(
                     "query_attribute", "value" if not query_text else None)
 
-                xpath = text_xpath_from_css_selector(
-                    query_selector,
-                    attribute=query_attribute,
-                    text=query_text,
-                )
+                query_xpaths = xpaths_from_css_selector(query_selector)
+                query_xpaths = [
+                    text_xpath(
+                        query_xpath,
+                        attribute=query_attribute,
+                        text=query_text,
+                    )
+                    for query_xpath in query_xpaths
+                ]
+                query_xpath = merge_xpaths(query_xpaths)
 
                 add_warc_query_parser(
                     config=config,
@@ -394,7 +401,7 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
                         "url_pattern"),
                     priority=num_interpreted_query_parsers - k,
                     parser_type="xpath",
-                    xpath=xpath,
+                    xpath=query_xpath,
                     remove_pattern_regex=remove_pattern_regex,
                     space_pattern_regex=space_pattern_regex,
                 )

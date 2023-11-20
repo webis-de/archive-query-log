@@ -1,4 +1,4 @@
-from typing import Literal, Type, TypeVar
+from typing import Literal, Type, TypeVar, Iterable
 from warnings import warn
 
 from cssselect import GenericTranslator
@@ -58,8 +58,25 @@ def safe_xpath(
 _translator = GenericTranslator()
 
 
-def text_xpath_from_css_selector(
-        css_selector: str,
+def xpaths_from_css_selector(css_selector: str) -> list[str]:
+    selectors = cssselect_parse(css_selector)
+    return [
+        "//" + _translator.selector_to_xpath(
+            selector,
+            prefix="",
+            translate_pseudo_elements=True,
+        ).replace(
+            "/descendant-or-self::*/", "//")
+        for selector in selectors
+    ]
+
+
+def merge_xpaths(xpaths: Iterable[str]) -> str:
+    return " | ".join(xpaths)
+
+
+def text_xpath(
+        xpath: str,
         attribute: str | None = None,
         text: bool = False,
 ) -> str:
@@ -68,23 +85,7 @@ def text_xpath_from_css_selector(
     if attribute is not None and text:
         raise ValueError(
             "An attribute and text=True are not allowed at the same time.")
-
-    selectors = cssselect_parse(css_selector)
-
-    xpaths = (
-        "//" + _translator.selector_to_xpath(
-            selector,
-            prefix="",
-            translate_pseudo_elements=True,
-        ).replace(
-            "/descendant-or-self::*/", "//")
-        for selector in selectors
-    )
-
     if text:
-        xpaths = (f"{xpath}//text()" for xpath in xpaths)
+        return f"{xpath}//text()"
     else:
-        xpaths = (f"{xpath}/@{attribute}" for xpath in xpaths)
-
-    xpath = " | ".join(xpaths)
-    return xpath
+        return f"{xpath}/@{attribute}"
