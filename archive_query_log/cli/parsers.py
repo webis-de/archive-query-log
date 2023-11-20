@@ -6,7 +6,8 @@ from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.orm import UrlQueryParserType, \
     UrlQueryParser, UrlPageParserType, UrlPageParser, \
-    UrlOffsetParser, UrlOffsetParserType, WarcQueryParserType, WarcQueryParser
+    UrlOffsetParser, UrlOffsetParserType, WarcQueryParserType, WarcQueryParser, \
+    WarcSnippetsParserType, WarcSnippetsParser
 
 
 @group()
@@ -307,3 +308,71 @@ def warc_query_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_warc_query_parsers
     WarcQueryParser.init(using=config.es.client)
     import_warc_query_parsers(config, services_path)
+
+
+@parsers.group()
+def warc_snippets() -> None:
+    pass
+
+
+CHOICES_WARC_SNIPPETS_PARSER_TYPE = [
+    "xpath",
+]
+
+
+@warc_snippets.command("add")
+@option("--provider-id", type=str, required=True)
+@option("--url-pattern-regex", type=str)
+@option("--priority", type=int)
+@option("--parser-type",
+        type=Choice(CHOICES_WARC_SNIPPETS_PARSER_TYPE), required=True)
+@option("--xpath", type=str)
+@option("--url-xpath", type=str)
+@option("--title-xpath", type=str)
+@option("--text-xpath", type=str)
+@pass_config
+def warc_snippets_add(
+        config: Config,
+        provider_id: str,
+        url_pattern_regex: str | None,
+        priority: int | None,
+        parser_type: str,
+        xpath: str | None,
+        url_xpath: str | None,
+        title_xpath: str | None,
+        text_xpath: str | None,
+) -> None:
+    from archive_query_log.parsers.warc_snippets import \
+        add_warc_snippets_parser
+    parser_type_strict: WarcSnippetsParserType
+    if parser_type == "xpath":
+        parser_type_strict = "xpath"
+        if xpath is None:
+            raise UsageError("No XPath given.")
+    else:
+        raise ValueError(f"Invalid parser type: {parser_type}")
+    WarcSnippetsParser.init(using=config.es.client)
+    add_warc_snippets_parser(
+        config=config,
+        provider_id=provider_id,
+        url_pattern_regex=url_pattern_regex,
+        priority=priority,
+        parser_type=parser_type_strict,
+        xpath=xpath,
+        url_xpath=url_xpath,
+        title_xpath=title_xpath,
+        text_xpath=text_xpath,
+    )
+
+
+@warc_snippets.command("import")
+@option("-s", "--services-file", "services_path",
+        type=PathType(path_type=Path, exists=True, file_okay=True,
+                      dir_okay=False, readable=True, resolve_path=True,
+                      allow_dash=False),
+        default=Path("data") / "selected-services.yaml")
+@pass_config
+def warc_snippets_import(config: Config, services_path: Path) -> None:
+    from archive_query_log.imports.yaml import import_warc_snippets_parsers
+    WarcSnippetsParser.init(using=config.es.client)
+    import_warc_snippets_parsers(config, services_path)
