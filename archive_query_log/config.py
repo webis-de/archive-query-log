@@ -89,9 +89,14 @@ class HttpConfig(DataClassJsonMixin):
             "User-Agent": f"AQL/{version} (Webis group)",
         })
         _retries = Retry(
-            total=5,
+            total=20,
+            connect=10,
+            read=10,
+            redirect=10,
+            status=10,
             backoff_factor=1,
             status_forcelist=[502, 503, 504],
+            respect_retry_after_header=True,
         )
         _limiter = Limiter(
             RequestRate(1, Duration.SECOND * 10),
