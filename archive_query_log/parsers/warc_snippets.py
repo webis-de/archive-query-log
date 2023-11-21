@@ -2,6 +2,7 @@ from datetime import datetime
 from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
+from urllib.parse import urljoin
 from uuid import uuid5
 
 from click import echo
@@ -21,7 +22,7 @@ from archive_query_log.namespaces import NAMESPACE_WARC_SNIPPETS_PARSER, \
     NAMESPACE_RESULT
 from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
     WarcSnippetsParserType, WarcSnippetsParser, WarcLocation, Snippet, \
-    Result, InnerSerp
+    Result, InnerSerp, SnippetId
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.es import safe_iter_scan, update_action
@@ -99,22 +100,31 @@ def _parse_warc_snippets(
             if parser.url_xpath is not None:
                 urls = safe_xpath(element, parser.url_xpath, str)
                 if len(urls) > 0:
-                    url = urls[0]
+                    url = urls[0].strip()
+                    url = urljoin(capture_url, url)
             title: str | None = None
             if parser.title_xpath is not None:
                 titles = safe_xpath(element, parser.title_xpath, str)
                 if len(titles) > 0:
-                    title = titles[0]
+                    title = titles[0].strip()
             text: str | None = None
             if parser.text_xpath is not None:
                 texts = safe_xpath(element, parser.text_xpath, str)
                 if len(texts) > 0:
-                    text = texts[0]
+                    text = texts[0].strip()
 
-            content: str = tostring(element, encoding="unicode")
+            content: str = tostring(
+                element,
+                encoding=str,
+                method="xml",
+                pretty_print=False,
+                with_tail=True,
+                with_comments=True,
+            )
             snippet_id_components = (
                 parser.id,
                 str(hash(content)),
+                str(i),
             )
             snippet_id = str(uuid5(
                 NAMESPACE_RESULT,
@@ -184,10 +194,17 @@ def _parse_serp_warc_snippets_action(
                 ),
                 snippet=snippet,
                 snippet_parser=warc_snippets_parser,
+                last_modified=start_time,
             ).to_dict(include_meta=True)
         yield update_action(
             serp,
-            warc_snippets=warc_snippets,
+            warc_snippets=[
+                SnippetId(
+                    id=snippet.id,
+                    rank=snippet.rank,
+                )
+                for snippet in warc_snippets
+            ],
             warc_snippets_parser=warc_snippets_parser,
         )
         return

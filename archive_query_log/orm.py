@@ -166,9 +166,12 @@ class WarcLocation(InnerDocument):
     length: int = Long()
 
 
-class Snippet(InnerDocument):
+class SnippetId(InnerDocument):
     id: str = Keyword()
     rank: int = Integer()
+
+
+class Snippet(SnippetId):
     content: str = Text()
     url: str | None = Keyword()
     title: str | None = Text()
@@ -191,7 +194,7 @@ class Serp(BaseDocument):
     warc_downloader: InnerDownloader | None = Object(InnerDownloader)
     warc_query: str | None = Text()
     warc_query_parser: InnerParser | None = Object(InnerParser)
-    warc_snippets: list[Snippet] | None = Nested(Snippet)
+    warc_snippets: list[SnippetId] | None = Nested(SnippetId)
     warc_snippets_parser: InnerParser | None = Object(InnerParser)
 
     # rendered_warc_location: WarcLocation | None = Object(WarcLocation)
