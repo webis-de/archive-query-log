@@ -90,8 +90,8 @@ class HttpConfig(DataClassJsonMixin):
         })
         _retries = Retry(
             total=20,
-            connect=10,
-            read=10,
+            connect=5,
+            read=5,
             redirect=10,
             status=10,
             backoff_factor=1,
