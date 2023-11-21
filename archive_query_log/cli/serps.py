@@ -2,7 +2,7 @@ from click import group
 
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
-from archive_query_log.orm import Serp
+from archive_query_log.orm import Serp, Result
 
 
 @group()
@@ -49,6 +49,7 @@ def warc_query(config: Config) -> None:
 def warc_snippets(config: Config) -> None:
     from archive_query_log.parsers.warc_snippets import \
         parse_serps_warc_snippets
+    Result.init(using=config.es.client)
     parse_serps_warc_snippets(config)
 
 
