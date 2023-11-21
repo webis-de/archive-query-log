@@ -63,12 +63,11 @@ def xpaths_from_css_selector(css_selector: str) -> list[str]:
         return ["."]
     selectors = cssselect_parse(css_selector)
     return [
-         _translator.selector_to_xpath(
+        _translator.selector_to_xpath(
             selector,
             prefix="",
             translate_pseudo_elements=True,
-        ).replace(
-            "/descendant-or-self::*/", "//")
+        ).replace("/descendant-or-self::*/", "//")
         for selector in selectors
     ]
 

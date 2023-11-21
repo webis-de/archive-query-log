@@ -119,7 +119,6 @@ def _parse_warc_snippets(
                 method="xml",
                 pretty_print=False,
                 with_tail=True,
-                with_comments=True,
             )
             snippet_id_components = (
                 parser.id,
