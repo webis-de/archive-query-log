@@ -406,6 +406,7 @@ class InnerSerp(InnerDocument):
 class Result(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
+    capture: InnerCapture = Object(InnerCapture)
     serp: InnerSerp = Object(InnerSerp)
     snippet: Snippet = Object(Snippet)
     snippet_parser: InnerParser | None = Object(InnerParser)

@@ -71,6 +71,7 @@ def add_warc_snippets_parser(
 
 def _parse_warc_snippets(
         parser: WarcSnippetsParser,
+        serp_id: str,
         capture_url: str,
         warc_store: WarcS3Store,
         warc_location: WarcLocation,
@@ -121,6 +122,7 @@ def _parse_warc_snippets(
                 with_tail=True,
             )
             snippet_id_components = (
+                serp_id,
                 parser.id,
                 str(hash(content)),
                 str(i),
@@ -175,7 +177,12 @@ def _parse_serp_warc_snippets_action(
     for parser in _warc_snippets_parsers(config, serp.provider.id):
         # Try to parse the snippets.
         warc_snippets = _parse_warc_snippets(
-            parser, serp.capture.url, config.s3.warc_store, serp.warc_location)
+            parser=parser,
+            serp_id=serp.id,
+            capture_url=serp.capture.url,
+            warc_store=config.s3.warc_store,
+            warc_location=serp.warc_location,
+        )
         if warc_snippets is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
@@ -188,6 +195,7 @@ def _parse_serp_warc_snippets_action(
                 meta={"id": snippet.id},
                 archive=serp.archive,
                 provider=serp.provider,
+                capture=serp.capture,
                 serp=InnerSerp(
                     id=serp.id,
                 ),
