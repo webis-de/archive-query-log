@@ -3,11 +3,13 @@ from itertools import chain
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
+from warnings import warn
 
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import Exists, FunctionScore, Script
+from requests import ConnectTimeout
 from tqdm.auto import tqdm
 from web_archive_api.cdx import CdxApi, CdxMatchType
 
@@ -82,8 +84,17 @@ def _add_captures_actions(
         return
 
     captures_iter = _iter_captures(config, source, start_time)
-    for capture in captures_iter:
-        yield capture.to_dict(include_meta=True)
+    try:
+        for capture in captures_iter:
+            yield capture.to_dict(include_meta=True)
+    except ConnectTimeout as e:
+        # The archives' CDX are usually very slow, so we expect timeouts.
+        # Rather than failing, we just warn and continue with the next source.
+        # But we do not mark this source as fetched, so that we try again.
+        warn(RuntimeWarning(
+            f"Connection timeout while fetching captures "
+            f"for source {source.id}: {e}"))
+        return
 
     yield update_action(source, last_fetched_captures=start_time)
 
