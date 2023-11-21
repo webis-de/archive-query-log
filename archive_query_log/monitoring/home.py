@@ -220,7 +220,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the snippets have been parsed "
                         "from the WARC.",
             document=Serp,
-            filter_query=Exists(field="warc_snippets"),
+            filter_query=Exists(field="warc_snippets_parser.id"),
         ),
         _get_statistics(
             config=config,
