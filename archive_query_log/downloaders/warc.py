@@ -116,7 +116,14 @@ def download_serps_warc(config: Config) -> None:
         echo("No new/changed captures.")
         return
 
-    changed_serps: Iterable[Serp] = changed_serps_search.scan()
+    changed_serps: Iterable[Serp] = (
+        changed_serps_search
+        # Downloading WARCs is very slow, so we keep track
+        # of the Elasticsearch query for a full day, assuming that
+        # 1000 WARCs can be downloaded in 24h.
+        .params(scroll="24h")
+        .scan()
+    )
     changed_serps = safe_iter_scan(changed_serps)
     # noinspection PyTypeChecker
     changed_serps = tqdm(changed_serps, total=num_changed_serps,
