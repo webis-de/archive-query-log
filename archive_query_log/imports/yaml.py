@@ -385,6 +385,7 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
 
                 query_xpaths = xpaths_from_css_selector(query_selector)
                 query_xpaths = [
+                    "//" +
                     text_xpath(
                         query_xpath,
                         attribute=query_attribute,
@@ -443,6 +444,10 @@ def import_warc_snippets_parsers(config: Config, services_path: Path) -> None:
                 snippet_selector = results_parser.get("snippet_selector")
 
                 results_xpaths = xpaths_from_css_selector(results_selector)
+                results_xpaths = [
+                    "//" + result_xpath
+                    for result_xpath in results_xpaths
+                ]
                 results_xpath = merge_xpaths(results_xpaths)
 
                 if url_selector is not None:
