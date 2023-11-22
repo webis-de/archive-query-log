@@ -29,18 +29,18 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
     batch = []
     for domain in provider.domains:
         for url_path_prefix in provider.url_path_prefixes:
-            filter_id_components = (
+            source_id_components = (
                 archive.cdx_api_url,
                 archive.memento_api_url,
                 domain,
                 url_path_prefix,
             )
-            filter_id = str(uuid5(
+            source_id = str(uuid5(
                 NAMESPACE_SOURCE,
-                ":".join(filter_id_components),
+                ":".join(source_id_components),
             ))
             source = Source(
-                meta={"id": filter_id},
+                meta={"id": source_id},
                 archive=InnerArchive(
                     id=archive.id,
                     cdx_api_url=archive.cdx_api_url,
