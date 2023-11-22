@@ -6,7 +6,7 @@ from elasticsearch_dsl.query import Terms
 from elasticsearch_dsl.response import Response
 
 from archive_query_log.config import Config
-from archive_query_log.orm import Provider, InterfaceAnnotations
+from archive_query_log.orm import Provider
 from archive_query_log.utils.time import utc_now
 
 
@@ -16,16 +16,14 @@ def add_provider(
         description: str | None,
         notes: str | None,
         exclusion_reason: str | None,
-        website_type: str | None,
-        content_type: str | None,
-        has_input_field: bool | None,
-        has_search_form: bool | None,
-        has_search_div: bool | None,
         domains: set[str],
         url_path_prefixes: set[str],
+        priority: float | None,
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
+    if priority <= 0:
+        raise ValueError("Priority must be strictly positive.")
     Provider.index().refresh(using=config.es.client)
     last_modified = utc_now()
     existing_provider_search: Search = (
@@ -61,7 +59,6 @@ def add_provider(
         if not should_merge:
             return
 
-        interface_annotations = existing_provider.interface_annotations
         if name is None:
             name = existing_provider.name
         if description is None:
@@ -70,16 +67,8 @@ def add_provider(
             notes = existing_provider.notes
         if exclusion_reason is None:
             exclusion_reason = existing_provider.exclusion_reason
-        if website_type is None:
-            website_type = existing_provider.website_type
-        if content_type is None:
-            content_type = existing_provider.content_type
-        if has_input_field is None:
-            has_input_field = interface_annotations.has_input_field
-        if has_search_form is None:
-            has_search_form = interface_annotations.has_search_form
-        if has_search_div is None:
-            has_search_div = interface_annotations.has_search_div
+        if priority is None:
+            priority = existing_provider.priority
 
         if (domains | existing_domains == existing_domains and
                 url_path_prefixes | existing_url_path_prefixes ==
@@ -102,15 +91,9 @@ def add_provider(
         description=description,
         notes=notes,
         exclusion_reason=exclusion_reason,
-        website_type=website_type,
-        content_type=content_type,
-        interface_annotations=InterfaceAnnotations(
-            has_input_field=has_input_field,
-            has_search_form=has_search_form,
-            has_search_div=has_search_div,
-        ),
         domains=list(domains),
         url_path_prefixes=list(url_path_prefixes),
+        priority=priority,
         last_modified=last_modified,
     )
     provider.save(using=config.es.client)

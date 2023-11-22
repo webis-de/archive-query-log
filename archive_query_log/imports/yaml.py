@@ -100,7 +100,10 @@ def import_providers(
             unit="provider",
         )
 
+    num_services = len(services_list)
+
     ask_for_name = True
+    service: dict
     for i, service in enumerate(services):
         if "domains" not in service:
             raise ValueError(f"Service definition #{i} from {services_path} "
@@ -119,30 +122,15 @@ def import_providers(
         else:
             name = None
 
-        description = None
-        notes = service.get("notes", None)
-        exclusion_reason = service.get("excluded", None)
-        website_type = None
-        content_type = None
-        has_input_field = None
-        has_search_form = None
-        has_search_div = None
-        domains = set(service["domains"])
-        url_path_prefixes = set(service["focused_url_prefixes"])
-
         add_provider(
             config=config,
             name=name,
-            description=description,
-            notes=notes,
-            exclusion_reason=exclusion_reason,
-            website_type=website_type,
-            content_type=content_type,
-            has_input_field=has_input_field,
-            has_search_form=has_search_form,
-            has_search_div=has_search_div,
-            domains=domains,
-            url_path_prefixes=url_path_prefixes,
+            description=None,
+            notes=service.get("notes"),
+            exclusion_reason=service.get("excluded"),
+            domains=set(service["domains"]),
+            url_path_prefixes=set(service["focused_url_prefixes"]),
+            priority=num_services - i,
             no_merge=no_merge,
             auto_merge=auto_merge,
         )

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from click import group, option, Choice, Path as PathType
+from click import group, option, Path as PathType, FloatRange
 
 from archive_query_log.cli.util import validate_split_domains, pass_config
 from archive_query_log.config import Config
@@ -12,86 +12,16 @@ def providers() -> None:
     pass
 
 
-CHOICES_WEBSITE_TYPE = [
-    "blog",
-    "career-jobs",
-    "child-safe-search",
-    "comparison",
-    "corporate",
-    "database",
-    "dating",
-    "download",
-    "e-commerce",
-    "education",
-    "forum",
-    "gambling",
-    "gaming",
-    "governmental",
-    "manga-anime",
-    "media-sharing",
-    "news-and-boulevard",
-    "ngo",
-    "political",
-    "pornography",
-    'question-and-answer',
-    "religious",
-    "review",
-    "search-engine",
-    "service",
-    "social-media",
-    "spam-malware",
-    "sports",
-    "streaming",
-    "torrent",
-    "web-portal",
-    "wiki",
-]
-CHOICES_CONTENT_TYPE = [
-    "accommodation",
-    "argument",
-    "article",
-    "audio",
-    "code",
-    "comic",
-    "design",
-    "domain",
-    "e-mail",
-    "flight",
-    "font",
-    "game",
-    "image",
-    "job-listing",
-    "multi-content",
-    "post",
-    "presentation",
-    "product",
-    "real-estate-listing",
-    "recipe",
-    "scientific-content",
-    "software",
-    "text-document",
-    "video",
-    "website",
-]
-
-
 @providers.command()
 @option("--name", type=str)
 @option("--description", type=str)
 @option("--notes", type=str)
 @option("--exclusion-reason", "--exclusion", type=str)
-@option("--website-type", type=Choice(CHOICES_WEBSITE_TYPE))
-@option("--content-type", type=Choice(CHOICES_CONTENT_TYPE))
-@option("--input-field/--no-input-field", "has_input_field",
-        type=bool)
-@option("--search-form/--no-search-form", "has_search_form",
-        type=bool)
-@option("--search-div/--no-search-div", "has_search_div",
-        type=bool)
 @option("--domains", "--domain", type=str, multiple=True,
         required=True, callback=validate_split_domains)
 @option("--url-path-prefixes", "--url-path-prefix", type=str,
         multiple=True, required=True, metavar="PREFIXES")
+@option("--priority", type=FloatRange(min=0, min_open=False))
 @pass_config
 def add(
         config: Config,
@@ -99,13 +29,9 @@ def add(
         description: str | None,
         notes: str | None,
         exclusion_reason: str | None,
-        website_type: str | None,
-        content_type: str | None,
-        has_input_field: bool | None,
-        has_search_form: bool | None,
-        has_search_div: bool | None,
         domains: list[str],
         url_path_prefixes: list[str],
+        priority: float | None,
 ) -> None:
     from archive_query_log.providers import add_provider
     Provider.init(using=config.es.client)
@@ -115,13 +41,9 @@ def add(
         description=description,
         notes=notes,
         exclusion_reason=exclusion_reason,
-        website_type=website_type,
-        content_type=content_type,
-        has_input_field=has_input_field,
-        has_search_form=has_search_form,
-        has_search_div=has_search_div,
         domains=set(domains),
         url_path_prefixes=set(url_path_prefixes),
+        priority=priority,
     )
 
 
