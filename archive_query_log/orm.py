@@ -4,7 +4,7 @@ from re import Pattern, compile as pattern
 from typing import Literal
 
 from elasticsearch_dsl import Document, Keyword, Text, Date, RankFeature, \
-    InnerDoc as InnerDocument, Object, Boolean, Index, Integer, Nested, Long
+    InnerDoc as InnerDocument, Object, Index, Integer, Nested, Long
 
 
 class BaseDocument(Document):
@@ -44,22 +44,14 @@ class Archive(BaseDocument):
         }
 
 
-class InterfaceAnnotations(InnerDocument):
-    has_input_field: bool = Boolean()
-    has_search_form: bool = Boolean()
-    has_search_div: bool = Boolean()
-
-
 class Provider(BaseDocument):
     name: str = Text()
     description: str = Text()
     exclusion_reason: str = Text()
     notes: str = Text()
-    website_type: str = Keyword()
-    content_type: str = Keyword()
-    interface_annotations: InterfaceAnnotations = Object(InterfaceAnnotations)
     domains: list[str] = Keyword()
     url_path_prefixes: list[str] = Keyword()
+    priority: float | None = RankFeature(positive_score_impact=True)
     last_built_sources: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
