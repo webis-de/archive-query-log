@@ -34,6 +34,8 @@ def add_url_query_parser(
         remove_pattern_regex: str | None,
         space_pattern_regex: str | None,
 ) -> None:
+    if priority is not None and priority <= 0:
+        raise ValueError("Priority must be strictly positive.")
     if parser_type == "query_parameter":
         if parameter is None:
             raise ValueError("No query parameter given.")
@@ -195,6 +197,7 @@ def parse_serps_url_query(config: Config) -> None:
                        ")",
             )
         )
+        .query(config.provider_domain_boost_query)
         .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_captures = changed_captures_search.count()

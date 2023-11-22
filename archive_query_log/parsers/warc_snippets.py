@@ -40,6 +40,8 @@ def add_warc_snippets_parser(
         title_xpath: str | None,
         text_xpath: str | None,
 ) -> None:
+    if priority is not None and priority <= 0:
+        raise ValueError("Priority must be strictly positive.")
     if parser_type == "xpath":
         if xpath is None:
             raise ValueError("No XPath given.")
@@ -242,6 +244,7 @@ def parse_serps_warc_snippets(config: Config) -> None:
                     )
             )
         )
+        .query(config.provider_domain_boost_query)
         .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_serps = changed_serps_search.count()

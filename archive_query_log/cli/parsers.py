@@ -1,6 +1,7 @@
 from pathlib import Path
 
-from click import group, option, Choice, Path as PathType, UsageError
+from click import group, option, Choice, Path as PathType, UsageError, \
+    FloatRange
 
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
@@ -30,7 +31,7 @@ CHOICES_URL_QUERY_PARSER_TYPE = [
 @url_query.command("add")
 @option("--provider-id", type=str, required=True)
 @option("--url-pattern-regex", type=str)
-@option("--priority", type=int)
+@option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
         type=Choice(CHOICES_URL_QUERY_PARSER_TYPE), required=True)
 @option("--parameter", type=str)
@@ -42,7 +43,7 @@ def url_query_add(
         config: Config,
         provider_id: str,
         url_pattern_regex: str | None,
-        priority: int | None,
+        priority: float | None,
         parser_type: str,
         parameter: str | None,
         segment: int | None,
@@ -107,7 +108,7 @@ CHOICES_URL_PAGE_PARSER_TYPE = [
 @url_page.command("add")
 @option("--provider-id", type=str, required=True)
 @option("--url-pattern-regex", type=str)
-@option("--priority", type=int)
+@option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
         type=Choice(CHOICES_URL_PAGE_PARSER_TYPE), required=True)
 @option("--parameter", type=str)
@@ -119,7 +120,7 @@ def url_page_add(
         config: Config,
         provider_id: str,
         url_pattern_regex: str | None,
-        priority: int | None,
+        priority: float | None,
         parser_type: str,
         parameter: str | None,
         segment: int | None,
@@ -184,7 +185,7 @@ CHOICES_URL_OFFSET_PARSER_TYPE = [
 @url_offset.command("add")
 @option("--provider-id", type=str, required=True)
 @option("--url-pattern-regex", type=str)
-@option("--priority", type=int)
+@option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
         type=Choice(CHOICES_URL_OFFSET_PARSER_TYPE), required=True)
 @option("--parameter", type=str)
@@ -196,7 +197,7 @@ def url_offset_add(
         config: Config,
         provider_id: str,
         url_pattern_regex: str | None,
-        priority: int | None,
+        priority: float | None,
         parser_type: str,
         parameter: str | None,
         segment: int | None,
@@ -259,7 +260,7 @@ CHOICES_WARC_QUERY_PARSER_TYPE = [
 @warc_query.command("add")
 @option("--provider-id", type=str, required=True)
 @option("--url-pattern-regex", type=str)
-@option("--priority", type=int)
+@option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
         type=Choice(CHOICES_WARC_QUERY_PARSER_TYPE), required=True)
 @option("--xpath", type=str)
@@ -270,7 +271,7 @@ def warc_query_add(
         config: Config,
         provider_id: str,
         url_pattern_regex: str | None,
-        priority: int | None,
+        priority: float | None,
         parser_type: str,
         xpath: str | None,
         remove_pattern_regex: str | None,
@@ -323,7 +324,7 @@ CHOICES_WARC_SNIPPETS_PARSER_TYPE = [
 @warc_snippets.command("add")
 @option("--provider-id", type=str, required=True)
 @option("--url-pattern-regex", type=str)
-@option("--priority", type=int)
+@option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
         type=Choice(CHOICES_WARC_SNIPPETS_PARSER_TYPE), required=True)
 @option("--xpath", type=str)
@@ -335,7 +336,7 @@ def warc_snippets_add(
         config: Config,
         provider_id: str,
         url_pattern_regex: str | None,
-        priority: int | None,
+        priority: float | None,
         parser_type: str,
         xpath: str | None,
         url_xpath: str | None,
