@@ -3,7 +3,7 @@ from functools import cached_property
 from re import Pattern, compile as pattern
 from typing import Literal
 
-from elasticsearch_dsl import Document, Keyword, Text, Date, \
+from elasticsearch_dsl import Document, Keyword, Text, Date, RankFeature, \
     InnerDoc as InnerDocument, Object, Boolean, Index, Integer, Nested, Long
 
 
@@ -223,7 +223,7 @@ UrlQueryParserType = Literal[
 class UrlQueryParser(BaseDocument):
     provider: InnerProviderId = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
-    priority: int | None = Integer()
+    priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: UrlQueryParserType = Keyword()
     parameter: str | None = Keyword()
     segment: int | None = Keyword()
@@ -266,7 +266,7 @@ UrlPageParserType = Literal[
 class UrlPageParser(BaseDocument):
     provider: InnerProviderId = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
-    priority: int | None = Integer()
+    priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: UrlPageParserType = Keyword()
     parameter: str | None = Keyword()
     segment: int | None = Keyword()
@@ -303,7 +303,7 @@ UrlOffsetParserType = Literal[
 class UrlOffsetParser(BaseDocument):
     provider: InnerProviderId = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
-    priority: int | None = Integer()
+    priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: UrlOffsetParserType = Keyword()
     parameter: str | None = Keyword()
     segment: int | None = Keyword()
@@ -338,7 +338,7 @@ WarcQueryParserType = Literal[
 class WarcQueryParser(BaseDocument):
     provider: InnerProviderId = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
-    priority: int | None = Integer()
+    priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: WarcQueryParserType = Keyword()
     xpath: str | None = Keyword()
     remove_pattern_regex: str | None = Keyword()
@@ -378,7 +378,7 @@ WarcSnippetsParserType = Literal[
 class WarcSnippetsParser(BaseDocument):
     provider: InnerProviderId = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
-    priority: int | None = Integer()
+    priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: WarcSnippetsParserType = Keyword()
     xpath: str | None = Keyword()
     url_xpath: str | None = Keyword()
