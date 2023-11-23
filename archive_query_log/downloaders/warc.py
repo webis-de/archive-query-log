@@ -5,7 +5,7 @@ from uuid import uuid5
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Exists, FunctionScore, Term
+from elasticsearch_dsl.query import Exists, FunctionScore, Term, RankFeature
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Record
 from warcio.recordloader import ArcWarcRecord
@@ -86,8 +86,11 @@ def download_serps_warc(config: Config) -> None:
             Term(capture__status_code=200) &
             ~Term(warc_downloader__should_download=False)
         )
-        .query(config.provider_domain_boost_query)
-        .query(FunctionScore(functions=[RandomScore()]))
+        .query(
+            RankFeature(field="archive.priority", saturation={}) |
+            RankFeature(field="provider.priority", saturation={}) |
+            FunctionScore(functions=[RandomScore()])
+        )
     )
     num_changed_serps = changed_serps_search.count()
 
