@@ -43,6 +43,7 @@ def update_action(
     action = {
         f"_{key}": document.meta[key]
         for key in META_FIELDS
+        if key not in ("score")
         if key in document.meta and document.meta[key] is not None
     }
     action["_op_type"] = "update"
