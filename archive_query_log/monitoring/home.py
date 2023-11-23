@@ -8,7 +8,7 @@ from flask import render_template, Response, make_response
 from archive_query_log.config import Config
 from archive_query_log.orm import Archive, Provider, Source, Capture, \
     BaseDocument, Serp, Result, UrlQueryParser, UrlPageParser, UrlOffsetParser, \
-    WarcQueryParser
+    WarcQueryParser, WarcSnippetsParser
 from archive_query_log.utils.time import utc_now
 
 
@@ -119,7 +119,7 @@ def _get_processed_progress(
     if filter_query is not None:
         search = search.filter(filter_query)
     total = search.count()
-    search_processed = search.filter(~Term(**{status_field: False}))
+    search_processed = search.filter(Term(**{status_field: False}))
     total_processed = search_processed.count()
     progress = Progress(
         input_name=input_name,
@@ -240,6 +240,19 @@ def home(config: Config) -> str | Response:
             description="Parser to get the offset from a SERP's URL.",
             document=UrlOffsetParser,
         ),
+        _get_statistics(
+            config=config,
+            name="WARC query parsers",
+            description="Parser to get the query from a SERP's WARC contents.",
+            document=WarcQueryParser,
+        ),
+        _get_statistics(
+            config=config,
+            name="WARC snippets parsers",
+            description="Parser to get the snippets from a SERP's "
+                        "WARC contents.",
+            document=WarcSnippetsParser,
+        ),
     ]
 
     progress_list: list[Progress] = [
@@ -320,6 +333,15 @@ def home(config: Config) -> str | Response:
             document=Serp,
             filter_query=Exists(field="warc_location"),
             status_field="warc_snippets_parser.should_parse",
+        ),
+        _get_processed_progress(
+            config=config,
+            input_name="Results",
+            output_name="Results",
+            description="Download WARCs.",
+            document=Result,
+            filter_query=Exists(field="snippet.url"),
+            status_field="warc_downloader.should_download",
         ),
     ]
 
