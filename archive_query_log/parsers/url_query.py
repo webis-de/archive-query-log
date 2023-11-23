@@ -1,4 +1,3 @@
-from datetime import datetime
 from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
@@ -7,18 +6,17 @@ from uuid import uuid5
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Exists, FunctionScore, Script, Term
+from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_URL_QUERY_PARSER
 from archive_query_log.orm import Capture, Serp, InnerCapture, InnerParser, \
     UrlQueryParser
-from archive_query_log.orm import UrlQueryParserType, \
-    InnerProviderId
-from archive_query_log.parsers.util import clean_text
+from archive_query_log.orm import UrlQueryParserType, InnerProviderId
 from archive_query_log.parsers.url import parse_url_query_parameter, \
     parse_url_fragment_parameter, parse_url_path_segment
+from archive_query_log.parsers.util import clean_text
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
@@ -133,12 +131,11 @@ def _url_query_parsers(
 def _parse_serp_url_query_action(
         config: Config,
         capture: Capture,
-        start_time: datetime,
 ) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (capture.url_query_parser is not None and
-            capture.url_query_parser.last_parsed is not None and
-            capture.url_query_parser.last_parsed > capture.last_modified):
+            capture.url_query_parser.should_parse is not None and
+            not capture.url_query_parser.should_parse):
         return
 
     for parser in _url_query_parsers(config, capture.provider.id):
@@ -147,10 +144,6 @@ def _parse_serp_url_query_action(
         if url_query is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
-        url_query_parser = InnerParser(
-            id=parser.id,
-            last_parsed=start_time,
-        )
         serp = Serp(
             meta={"id": capture.id},
             archive=capture.archive,
@@ -164,56 +157,58 @@ def _parse_serp_url_query_action(
                 mimetype=capture.mimetype,
             ),
             url_query=url_query,
-            url_query_parser=url_query_parser,
-            last_modified=start_time,
+            url_query_parser=InnerParser(
+                id=parser.id,
+                should_parse=False,
+                last_parsed=utc_now(),
+            ),
+            last_modified=utc_now(),
         )
         yield serp.to_dict(include_meta=True)
         yield update_action(
             capture,
-            url_query_parser=url_query_parser,
+            url_query_parser=InnerParser(
+                id=parser.id,
+                should_parse=False,
+                last_parsed=utc_now(),
+            ),
         )
         return
     yield update_action(
         capture,
-        url_query_parser=InnerParser(last_parsed=start_time),
+        url_query_parser=InnerParser(
+            should_parse=False,
+            last_parsed=utc_now(),
+        ),
     )
     return
 
 
 def parse_serps_url_query(config: Config) -> None:
     Capture.index().refresh(using=config.es.client)
-    start_time = utc_now()
     changed_captures_search: Search = (
         Capture.search(using=config.es.client)
-        .filter(
-            ~Exists(field="last_modified") |
-            ~Exists(field="url_query_parser.last_parsed") |
-            Script(
-                script="!doc['last_modified'].isEmpty() && "
-                       "!doc['url_query_parser.last_parsed']"
-                       ".isEmpty() && "
-                       "!doc['last_modified'].value.isBefore("
-                       "doc['url_query_parser.last_parsed'].value"
-                       ")",
-            )
+        .filter(~Term(url_query_parser__should_parse=False))
+        .query(
+            RankFeature(field="archive.priority", saturation={}) |
+            RankFeature(field="provider.priority", saturation={}) |
+            FunctionScore(functions=[RandomScore()])
         )
-        .query(config.provider_domain_boost_query)
-        .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_captures = changed_captures_search.count()
     if num_changed_captures > 0:
-        changed_captures: Iterable[Capture] = changed_captures_search.scan()
+        changed_captures: Iterable[Capture] = (
+            changed_captures_search
+            .params(preserve_order=True)
+            .scan()
+        )
         changed_captures = safe_iter_scan(changed_captures)
         # noinspection PyTypeChecker
         changed_captures = tqdm(
             changed_captures, total=num_changed_captures,
             desc="Parsing URL query", unit="capture")
         actions = chain.from_iterable(
-            _parse_serp_url_query_action(
-                config=config,
-                capture=capture,
-                start_time=start_time,
-            )
+            _parse_serp_url_query_action(config, capture)
             for capture in changed_captures
         )
         config.es.bulk(actions)
