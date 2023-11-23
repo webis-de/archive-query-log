@@ -2,8 +2,9 @@ from click import group, option, IntRange, FloatRange
 
 from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
-from archive_query_log.imports.archive_it import DEFAULT_ARCHIVE_IT_PAGE_SIZE, \
-    DEFAULT_ARCHIVE_IT_WAYBACK_URL, DEFAULT_ARCHIVE_IT_API_URL
+from archive_query_log.imports.archive_it import \
+    DEFAULT_ARCHIVE_IT_PAGE_SIZE, DEFAULT_ARCHIVE_IT_WAYBACK_URL, \
+    DEFAULT_ARCHIVE_IT_API_URL
 from archive_query_log.orm import Archive
 
 

@@ -7,8 +7,8 @@ from flask import render_template, Response, make_response
 
 from archive_query_log.config import Config
 from archive_query_log.orm import Archive, Provider, Source, Capture, \
-    BaseDocument, Serp, Result, UrlQueryParser, UrlPageParser, UrlOffsetParser, \
-    WarcQueryParser, WarcSnippetsParser
+    BaseDocument, Serp, Result, UrlQueryParser, UrlPageParser, \
+    UrlOffsetParser, WarcQueryParser, WarcSnippetsParser
 from archive_query_log.utils.time import utc_now
 
 
