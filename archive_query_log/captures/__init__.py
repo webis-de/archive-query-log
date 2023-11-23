@@ -8,7 +8,7 @@ from warnings import warn
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Exists, FunctionScore, Script
+from elasticsearch_dsl.query import Exists, FunctionScore, Script, RankFeature
 from requests import ConnectTimeout
 from tqdm.auto import tqdm
 from web_archive_api.cdx import CdxApi, CdxMatchType
@@ -112,13 +112,21 @@ def fetch_captures(config: Config) -> None:
                        "doc['last_fetched_captures'].value)",
             )
         )
-        .query(FunctionScore(functions=[RandomScore()]))
+        .query(
+            RankFeature(field="archive.priority", saturation={}) |
+            RankFeature(field="provider.priority", saturation={}) |
+            FunctionScore(functions=[RandomScore()])
+        )
     )
     num_changed_sources = changed_sources_search.count()
     if num_changed_sources > 0:
         echo(f"Fetching captures for {num_changed_sources} "
              f"new/changed sources.")
-        changed_sources: Iterable[Source] = changed_sources_search.scan()
+        changed_sources: Iterable[Source] = (
+            changed_sources_search
+            .params(preserve_order=True)
+            .scan()
+        )
         changed_sources = safe_iter_scan(changed_sources)
         # noinspection PyTypeChecker
         changed_sources = tqdm(changed_sources, total=num_changed_sources,
