@@ -6,7 +6,7 @@ from uuid import uuid5
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
+from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
@@ -115,7 +115,10 @@ def _parse_serp_warc_query_action(
         serp: Serp,
 ) -> Iterator[dict]:
     # Re-check if it can be parsed.
-    if serp.warc_location is None:
+    if (serp.warc_location is None or
+            serp.warc_location.file is None or
+            serp.warc_location.offset is None or
+            serp.warc_location.length is None):
         return
 
     # Re-check if parsing is necessary.
@@ -155,7 +158,10 @@ def parse_serps_warc_query(config: Config) -> None:
     Serp.index().refresh(using=config.es.client)
     changed_serps_search: Search = (
         Serp.search(using=config.es.client)
-        .filter(~Term(warc_query_parser__should_parse=False))
+        .filter(
+            Exists(field="warc_location") &
+            ~Term(warc_query_parser__should_parse=False)
+        )
         .query(
             RankFeature(field="archive.priority", saturation={}) |
             RankFeature(field="provider.priority", saturation={}) |
