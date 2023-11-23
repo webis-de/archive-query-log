@@ -70,12 +70,14 @@ class InnerArchive(InnerDocument):
     id: str = Keyword()
     cdx_api_url: str = Keyword()
     memento_api_url: str = Keyword()
+    priority: int | None = RankFeature(positive_score_impact=True)
 
 
 class InnerProvider(InnerDocument):
     id: str = Keyword()
     domain: str = Keyword()
     url_path_prefix: str = Keyword()
+    priority: int | None = RankFeature(positive_score_impact=True)
 
 
 class Source(BaseDocument):

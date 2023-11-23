@@ -45,11 +45,13 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
                     id=archive.id,
                     cdx_api_url=archive.cdx_api_url,
                     memento_api_url=archive.memento_api_url,
+                    priority=archive.priority,
                 ),
                 provider=InnerProvider(
                     id=provider.id,
                     domain=domain,
                     url_path_prefix=url_path_prefix,
+                    priority=provider.priority,
                 ),
                 last_modified=utc_now(),
             )
