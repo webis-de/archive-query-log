@@ -31,6 +31,7 @@ class Archive(BaseDocument):
     description: str = Text()
     cdx_api_url: str = Keyword()
     memento_api_url: str = Keyword()
+    priority: float | None = RankFeature(positive_score_impact=True)
     last_built_sources: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",

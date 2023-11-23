@@ -22,7 +22,7 @@ def add_provider(
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
-    if priority <= 0:
+    if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
     Provider.index().refresh(using=config.es.client)
     last_modified = utc_now()

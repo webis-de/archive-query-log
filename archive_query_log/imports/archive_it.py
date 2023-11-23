@@ -30,6 +30,7 @@ def import_archives(
         api_url: str = DEFAULT_ARCHIVE_IT_API_URL,
         wayback_url: str = DEFAULT_ARCHIVE_IT_WAYBACK_URL,
         page_size: int = DEFAULT_ARCHIVE_IT_PAGE_SIZE,
+        priority: float | None = None,
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
@@ -81,6 +82,7 @@ def import_archives(
                 description=description,
                 cdx_api_url=cdx_api_url,
                 memento_api_url=memento_api_url,
+                priority=priority,
                 no_merge=no_merge,
                 auto_merge=auto_merge,
             )

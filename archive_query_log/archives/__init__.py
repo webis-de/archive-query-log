@@ -16,9 +16,12 @@ def add_archive(
         description: str | None,
         cdx_api_url: str,
         memento_api_url: str,
+        priority: float | None,
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
+    if priority is not None and priority <= 0:
+        raise ValueError("Priority must be strictly positive.")
     Archive.index().refresh(using=config.es.client)
     last_modified = utc_now()
     existing_archive_search: Search = (
@@ -49,6 +52,8 @@ def add_archive(
             name = existing_archive.name
         if description is None:
             description = existing_archive.description
+        if priority is None:
+            priority = existing_archive.priority
 
         if cdx_api_url == existing_archive.cdx_api_url and \
                 memento_api_url == existing_archive.memento_api_url:
@@ -67,6 +72,7 @@ def add_archive(
         description=description,
         cdx_api_url=cdx_api_url,
         memento_api_url=memento_api_url,
+        priority=priority,
         last_modified=last_modified,
     )
     archive.save(using=config.es.client)
