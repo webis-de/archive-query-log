@@ -1,4 +1,3 @@
-from datetime import datetime
 from itertools import chain
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
@@ -8,14 +7,14 @@ from warnings import warn
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Exists, FunctionScore, Script, RankFeature
+from elasticsearch_dsl.query import FunctionScore, RankFeature, Term
 from requests import ConnectTimeout
 from tqdm.auto import tqdm
 from web_archive_api.cdx import CdxApi, CdxMatchType
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_CAPTURE
-from archive_query_log.orm import Source, Capture
+from archive_query_log.orm import Source, Capture, InnerParser
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now, UTC
 
@@ -23,7 +22,6 @@ from archive_query_log.utils.time import utc_now, UTC
 def _iter_captures(
         config: Config,
         source: Source,
-        start_time: datetime,
 ) -> Iterator[Capture]:
     cdx_api = CdxApi(
         api_url=source.archive.cdx_api_url,
@@ -68,7 +66,10 @@ def _iter_captures(
             collection=cdx_capture.collection,
             source=cdx_capture.source,
             source_collection=cdx_capture.source_collection,
-            last_modified=start_time,
+            last_modified=utc_now(),
+            url_query_parser=InnerParser(
+                should_parse=True,
+            ),
         )
 
 
@@ -76,14 +77,12 @@ def _add_captures_actions(
         config: Config,
         source: Source,
 ) -> Iterator[dict]:
-    start_time = utc_now()
-
     # Re-check if fetching captures is necessary.
-    if (source.last_fetched_captures is not None and
-            source.last_fetched_captures > source.last_modified):
+    if (source.should_fetch_captures is not None and
+            not source.should_fetch_captures):
         return
 
-    captures_iter = _iter_captures(config, source, start_time)
+    captures_iter = _iter_captures(config, source)
     try:
         for capture in captures_iter:
             yield capture.to_dict(include_meta=True)
@@ -96,22 +95,17 @@ def _add_captures_actions(
             f"for source {source.id}: {e}"))
         return
 
-    yield update_action(source, last_fetched_captures=start_time)
+    yield update_action(
+        source,
+        should_fetch_captures=False,
+        last_fetched_captures=utc_now(),
+    )
 
 
 def fetch_captures(config: Config) -> None:
     changed_sources_search: Search = (
         Source.search(using=config.es.client)
-        .filter(
-            ~Exists(field="last_modified") |
-            ~Exists(field="last_fetched_captures") |
-            Script(
-                script="!doc['last_modified'].isEmpty() && "
-                       "!doc['last_fetched_captures'].isEmpty() && "
-                       "!doc['last_modified'].value.isBefore("
-                       "doc['last_fetched_captures'].value)",
-            )
-        )
+        .filter(~Term(should_fetch_captures=False))
         .query(
             RankFeature(field="archive.priority", saturation={}) |
             RankFeature(field="provider.priority", saturation={}) |

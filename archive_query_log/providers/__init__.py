@@ -26,6 +26,7 @@ def add_provider(
         raise ValueError("Priority must be strictly positive.")
     Provider.index().refresh(using=config.es.client)
     last_modified = utc_now()
+    should_build_sources = True
     existing_provider_search: Search = (
         Provider.search(using=config.es.client)
         .query(Terms(domains=list(domains)))
@@ -74,6 +75,7 @@ def add_provider(
                 url_path_prefixes | existing_url_path_prefixes ==
                 existing_url_path_prefixes):
             last_modified = existing_provider.last_modified
+            should_build_sources = existing_provider.should_build_sources
 
         domains = domains | existing_domains
         url_path_prefixes = url_path_prefixes | existing_url_path_prefixes
@@ -95,5 +97,6 @@ def add_provider(
         url_path_prefixes=list(url_path_prefixes),
         priority=priority,
         last_modified=last_modified,
+        should_build_sources=should_build_sources,
     )
     provider.save(using=config.es.client)

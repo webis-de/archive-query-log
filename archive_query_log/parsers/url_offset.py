@@ -1,4 +1,3 @@
-from datetime import datetime
 from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
@@ -7,14 +6,13 @@ from uuid import uuid5
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Exists, FunctionScore, Script, Term
+from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_URL_OFFSET_PARSER
 from archive_query_log.orm import InnerProviderId, UrlOffsetParserType
-from archive_query_log.orm import Serp, InnerParser, \
-    UrlOffsetParser
+from archive_query_log.orm import Serp, InnerParser, UrlOffsetParser
 from archive_query_log.parsers.url import parse_url_query_parameter, \
     parse_url_fragment_parameter, parse_url_path_segment
 from archive_query_log.parsers.util import clean_int
@@ -131,12 +129,11 @@ def _url_offset_parsers(
 def _parse_serp_url_offset_action(
         config: Config,
         serp: Serp,
-        start_time: datetime,
 ) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (serp.url_offset_parser is not None and
-            serp.url_offset_parser.last_parsed is not None and
-            serp.url_offset_parser.last_parsed > serp.last_modified):
+            serp.url_offset_parser.should_parse is not None and
+            not serp.url_offset_parser.should_parse):
         return
 
     for parser in _url_offset_parsers(config, serp.provider.id):
@@ -145,57 +142,51 @@ def _parse_serp_url_offset_action(
         if url_offset is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
-        url_offset_parser = InnerParser(
-            id=parser.id,
-            last_parsed=start_time,
-        )
         yield update_action(
             serp,
             url_offset=url_offset,
-            url_offset_parser=url_offset_parser,
+            url_offset_parser=InnerParser(
+                id=parser.id,
+                should_parse=False,
+                last_parsed=utc_now(),
+            ),
         )
         return
     yield update_action(
         serp,
-        url_offset_parser=InnerParser(last_parsed=start_time),
+        url_offset_parser=InnerParser(
+            should_parse=False,
+            last_parsed=utc_now(),
+        ),
     )
     return
 
 
 def parse_serps_url_offset(config: Config) -> None:
     Serp.index().refresh(using=config.es.client)
-    start_time = utc_now()
     changed_serps_search: Search = (
         Serp.search(using=config.es.client)
-        .filter(
-            ~Exists(field="last_modified") |
-            ~Exists(field="url_offset_parser.last_parsed") |
-            Script(
-                script="!doc['last_modified'].isEmpty() && "
-                       "!doc['url_offset_parser.last_parsed']"
-                       ".isEmpty() && "
-                       "!doc['last_modified'].value.isBefore("
-                       "doc['url_offset_parser.last_parsed'].value"
-                       ")",
-            )
+        .filter(~Term(url_offset_parser__should_parse=False))
+        .query(
+            RankFeature(field="archive.priority", saturation={}) |
+            RankFeature(field="provider.priority", saturation={}) |
+            FunctionScore(functions=[RandomScore()])
         )
-        .query(config.provider_domain_boost_query)
-        .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_serps = changed_serps_search.count()
     if num_changed_serps > 0:
-        changed_serps: Iterable[Serp] = changed_serps_search.scan()
+        changed_serps: Iterable[Serp] = (
+            changed_serps_search
+            .params(preserve_order=True)
+            .scan()
+        )
         changed_serps = safe_iter_scan(changed_serps)
         # noinspection PyTypeChecker
         changed_serps = tqdm(
             changed_serps, total=num_changed_serps,
             desc="Parsing URL offset", unit="SERP")
         actions = chain.from_iterable(
-            _parse_serp_url_offset_action(
-                config=config,
-                serp=serp,
-                start_time=start_time,
-            )
+            _parse_serp_url_offset_action(config, serp)
             for serp in changed_serps
         )
         config.es.bulk(actions)

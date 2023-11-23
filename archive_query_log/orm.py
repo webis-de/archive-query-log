@@ -4,7 +4,7 @@ from re import Pattern, compile as pattern
 from typing import Literal
 
 from elasticsearch_dsl import Document, Keyword, Text, Date, RankFeature, \
-    InnerDoc as InnerDocument, Object, Index, Integer, Nested, Long
+    InnerDoc as InnerDocument, Object, Index, Integer, Nested, Long, Boolean
 
 
 class BaseDocument(Document):
@@ -12,6 +12,9 @@ class BaseDocument(Document):
         default_timezone="UTC",
         format="strict_date_time_no_millis",
     )
+    # TODO: At the moment, this is used more as a creation date.
+    #  We could use a different field for that and use this one for the last
+    #  modified date.
 
     @classmethod
     def index(cls) -> Index:
@@ -32,6 +35,7 @@ class Archive(BaseDocument):
     cdx_api_url: str = Keyword()
     memento_api_url: str = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
+    should_build_sources: bool = Boolean()
     last_built_sources: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
@@ -53,6 +57,7 @@ class Provider(BaseDocument):
     domains: list[str] = Keyword()
     url_path_prefixes: list[str] = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
+    should_build_sources: bool = Boolean()
     last_built_sources: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
@@ -83,6 +88,7 @@ class InnerProvider(InnerDocument):
 class Source(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
+    should_fetch_captures: bool = Boolean()
     last_fetched_captures: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
@@ -98,6 +104,7 @@ class Source(BaseDocument):
 
 class InnerParser(InnerDocument):
     id: str = Keyword()
+    should_parse: bool = Boolean()
     last_parsed: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
@@ -149,6 +156,7 @@ class InnerCapture(InnerDocument):
 
 class InnerDownloader(InnerDocument):
     id: str = Keyword()
+    should_download: bool = Boolean()
     last_downloaded: datetime = Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",

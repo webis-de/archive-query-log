@@ -24,6 +24,7 @@ def add_archive(
         raise ValueError("Priority must be strictly positive.")
     Archive.index().refresh(using=config.es.client)
     last_modified = utc_now()
+    should_build_sources = True
     existing_archive_search: Search = (
         Archive.search(using=config.es.client)
         .query(
@@ -58,6 +59,7 @@ def add_archive(
         if cdx_api_url == existing_archive.cdx_api_url and \
                 memento_api_url == existing_archive.memento_api_url:
             last_modified = existing_archive.last_modified
+            should_build_sources = existing_archive.should_build_sources
 
         if not auto_merge:
             echo(f"Update archive {archive_id}.")
@@ -74,5 +76,6 @@ def add_archive(
         memento_api_url=memento_api_url,
         priority=priority,
         last_modified=last_modified,
+        should_build_sources=should_build_sources,
     )
     archive.save(using=config.es.client)

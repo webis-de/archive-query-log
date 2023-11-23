@@ -1,4 +1,3 @@
-from datetime import datetime
 from itertools import chain
 from typing import Iterable, Iterator
 from uuid import uuid5
@@ -7,7 +6,7 @@ from warnings import warn
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import FunctionScore, Script, Exists
+from elasticsearch_dsl.query import FunctionScore, Exists, Term
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
@@ -62,7 +61,6 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
 def _iter_sources_batches_changed_archives(
         changed_archives_search: Search,
         all_providers_search: Search,
-        start_time: datetime,
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
@@ -76,13 +74,16 @@ def _iter_sources_batches_changed_archives(
                 archive,
                 provider,
             )
-        yield [update_action(archive, last_built_sources=start_time)]
+        yield [update_action(
+            archive,
+            should_build_sources=False,
+            last_built_sources=utc_now(),
+        )]
 
 
 def _iter_sources_batches_changed_providers(
         changed_providers_search: Search,
         all_archives_search: Search,
-        start_time: datetime,
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
@@ -96,24 +97,18 @@ def _iter_sources_batches_changed_providers(
                 archive,
                 provider,
             )
-        yield [update_action(provider, last_built_sources=start_time)]
+        yield [update_action(
+            provider,
+            should_build_sources=False,
+            last_built_sources=utc_now(),
+        )]
 
 
 def _build_archive_sources(config: Config) -> None:
     Archive.index().refresh(using=config.es.client)
-    start_time = utc_now()
     changed_archives_search = (
         Archive.search(using=config.es.client)
-        .filter(
-            ~Exists(field="last_modified") |
-            ~Exists(field="last_built_sources") |
-            Script(
-                script="!doc['last_modified'].isEmpty() && "
-                       "!doc['last_built_sources'].isEmpty() && "
-                       "!doc['last_modified'].value.isBefore("
-                       "doc['last_built_sources'].value)",
-            )
-        )
+        .filter(~Term(should_build_sources=False))
         .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_archives = changed_archives_search.count()
@@ -132,7 +127,6 @@ def _build_archive_sources(config: Config) -> None:
             _iter_sources_batches_changed_archives(
                 changed_archives_search=changed_archives_search,
                 all_providers_search=all_providers_search,
-                start_time=start_time,
             ))
         # noinspection PyTypeChecker
         action_batches_archives = tqdm(
@@ -149,22 +143,9 @@ def _build_archive_sources(config: Config) -> None:
 
 def _build_provider_sources(config: Config) -> None:
     Provider.index().refresh(using=config.es.client)
-    start_time = utc_now()
     changed_providers_search = (
         Provider.search(using=config.es.client)
-        .filter(
-            ~Exists(field="exclusion_reason") &
-            (
-                    ~Exists(field="last_modified") |
-                    ~Exists(field="last_built_sources") |
-                    Script(
-                        script="!doc['last_modified'].isEmpty() && "
-                               "!doc['last_built_sources'].isEmpty() && "
-                               "!doc['last_modified'].value.isBefore("
-                               "doc['last_built_sources'].value)",
-                    )
-            )
-        )
+        .filter(~Term(should_build_sources=False))
         .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_providers = changed_providers_search.count()
@@ -182,7 +163,6 @@ def _build_provider_sources(config: Config) -> None:
             _iter_sources_batches_changed_providers(
                 changed_providers_search=changed_providers_search,
                 all_archives_search=all_archives_search,
-                start_time=start_time,
             ))
         # noinspection PyTypeChecker
         action_batches_providers = tqdm(

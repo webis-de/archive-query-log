@@ -1,4 +1,3 @@
-from datetime import datetime
 from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
@@ -7,7 +6,7 @@ from uuid import uuid5
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import Exists, FunctionScore, Script, Term
+from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
@@ -114,7 +113,6 @@ def _warc_query_parsers(
 def _parse_serp_warc_query_action(
         config: Config,
         serp: Serp,
-        start_time: datetime,
 ) -> Iterator[dict]:
     # Re-check if it can be parsed.
     if serp.warc_location is None:
@@ -122,8 +120,8 @@ def _parse_serp_warc_query_action(
 
     # Re-check if parsing is necessary.
     if (serp.warc_query_parser is not None and
-            serp.warc_query_parser.last_parsed is not None and
-            serp.warc_query_parser.last_parsed > serp.last_modified):
+            serp.warc_query_parser.should_parse is not None and
+            not serp.warc_query_parser.should_parse):
         return
 
     for parser in _warc_query_parsers(config, serp.provider.id):
@@ -133,60 +131,51 @@ def _parse_serp_warc_query_action(
         if warc_query is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
-        warc_query_parser = InnerParser(
-            id=parser.id,
-            last_parsed=start_time,
-        )
         yield update_action(
             serp,
             warc_query=warc_query,
-            warc_query_parser=warc_query_parser,
+            warc_query_parser=InnerParser(
+                id=parser.id,
+                should_parse=False,
+                last_parsed=utc_now(),
+            ),
         )
         return
     yield update_action(
         serp,
-        warc_query_parser=InnerParser(last_parsed=start_time),
+        warc_query_parser=InnerParser(
+            should_parse=False,
+            last_parsed=utc_now(),
+        ),
     )
     return
 
 
 def parse_serps_warc_query(config: Config) -> None:
     Serp.index().refresh(using=config.es.client)
-    start_time = utc_now()
     changed_serps_search: Search = (
         Serp.search(using=config.es.client)
-        .filter(
-            Exists(field="warc_location") &
-            (
-                    ~Exists(field="last_modified") |
-                    ~Exists(field="warc_query_parser.last_parsed") |
-                    Script(
-                        script="!doc['last_modified'].isEmpty() && "
-                               "!doc['warc_query_parser.last_parsed']"
-                               ".isEmpty() && "
-                               "!doc['last_modified'].value.isBefore("
-                               "doc['warc_query_parser.last_parsed'].value"
-                               ")",
-                    )
-            )
+        .filter(~Term(warc_query_parser__should_parse=False))
+        .query(
+            RankFeature(field="archive.priority", saturation={}) |
+            RankFeature(field="provider.priority", saturation={}) |
+            FunctionScore(functions=[RandomScore()])
         )
-        .query(config.provider_domain_boost_query)
-        .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_serps = changed_serps_search.count()
     if num_changed_serps > 0:
-        changed_serps: Iterable[Serp] = changed_serps_search.scan()
+        changed_serps: Iterable[Serp] = (
+            changed_serps_search
+            .params(preserve_order=True)
+            .scan()
+        )
         changed_serps = safe_iter_scan(changed_serps)
         # noinspection PyTypeChecker
         changed_serps = tqdm(
             changed_serps, total=num_changed_serps,
             desc="Parsing WARC query", unit="SERP")
         actions = chain.from_iterable(
-            _parse_serp_warc_query_action(
-                config=config,
-                serp=serp,
-                start_time=start_time,
-            )
+            _parse_serp_warc_query_action(config, serp)
             for serp in changed_serps
         )
         config.es.bulk(actions)

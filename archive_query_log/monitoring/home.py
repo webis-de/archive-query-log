@@ -1,13 +1,14 @@
 from datetime import datetime
 from typing import NamedTuple, Type
 
-from elasticsearch_dsl.query import Script, Exists, Query, Term
+from elasticsearch_dsl.query import Exists, Query, Term
 from expiringdict import ExpiringDict
 from flask import render_template, Response, make_response
 
 from archive_query_log.config import Config
 from archive_query_log.orm import Archive, Provider, Source, Capture, \
-    BaseDocument, Serp, Result, UrlQueryParser, UrlPageParser, UrlOffsetParser
+    BaseDocument, Serp, Result, UrlQueryParser, UrlPageParser, UrlOffsetParser, \
+    WarcQueryParser
 from archive_query_log.utils.time import utc_now
 
 
@@ -106,10 +107,10 @@ def _get_processed_progress(
         output_name: str,
         description: str,
         document: DocumentType,
-        timestamp_field: str,
+        status_field: str,
         filter_query: Query | None = None,
 ) -> Progress:
-    key = (document, repr(filter_query), timestamp_field)
+    key = (document, repr(filter_query), status_field)
     if key in _progress_cache:
         return _progress_cache[key]
 
@@ -118,14 +119,7 @@ def _get_processed_progress(
     if filter_query is not None:
         search = search.filter(filter_query)
     total = search.count()
-    search_processed = search.filter(
-        Exists(field="last_modified") &
-        Exists(field=timestamp_field) &
-        Script(
-            script=f"!doc['last_modified'].value.isAfter("
-                   f"doc['{timestamp_field}'].value)",
-        )
-    )
+    search_processed = search.filter(~Term(**{status_field: False}))
     total_processed = search_processed.count()
     progress = Progress(
         input_name=input_name,
@@ -231,19 +225,19 @@ def home(config: Config) -> str | Response:
         _get_statistics(
             config=config,
             name="URL query parsers",
-            description="Parser to get the query from a SERP URL.",
+            description="Parser to get the query from a SERP's URL.",
             document=UrlQueryParser,
         ),
         _get_statistics(
             config=config,
             name="URL page parsers",
-            description="Parser to get the page from a SERP URL.",
+            description="Parser to get the page from a SERP's URL.",
             document=UrlPageParser,
         ),
         _get_statistics(
             config=config,
             name="URL offset parsers",
-            description="Parser to get the offset from a SERP URL.",
+            description="Parser to get the offset from a SERP's URL.",
             document=UrlOffsetParser,
         ),
     ]
@@ -256,7 +250,7 @@ def home(config: Config) -> str | Response:
             description="Build sources for all archives.",
             document=Archive,
             filter_query=~Exists(field="exclusion_reason"),
-            timestamp_field="last_built_sources",
+            status_field="should_build_sources",
         ),
         _get_processed_progress(
             config=config,
@@ -265,7 +259,7 @@ def home(config: Config) -> str | Response:
             description="Build sources for all search providers.",
             document=Provider,
             filter_query=~Exists(field="exclusion_reason"),
-            timestamp_field="last_built_sources",
+            status_field="should_build_sources",
         ),
         _get_processed_progress(
             config=config,
@@ -274,7 +268,7 @@ def home(config: Config) -> str | Response:
             description="Fetch CDX captures for all domains and "
                         "prefixes in the sources.",
             document=Source,
-            timestamp_field="last_fetched_captures",
+            status_field="should_fetch_captures",
         ),
         _get_processed_progress(
             config=config,
@@ -282,7 +276,7 @@ def home(config: Config) -> str | Response:
             output_name="SERPs",
             description="Parse queries from capture URLs.",
             document=Capture,
-            timestamp_field="url_query_parser.last_parsed",
+            status_field="url_query_parser.should_parse",
         ),
         _get_processed_progress(
             config=config,
@@ -290,7 +284,7 @@ def home(config: Config) -> str | Response:
             output_name="SERPs",
             description="Parse page from SERP URLs.",
             document=Serp,
-            timestamp_field="url_page_parser.last_parsed",
+            status_field="url_page_parser.should_parse",
         ),
         _get_processed_progress(
             config=config,
@@ -298,7 +292,7 @@ def home(config: Config) -> str | Response:
             output_name="SERPs",
             description="Parse offset from SERP URLs.",
             document=Serp,
-            timestamp_field="url_offset_parser.last_parsed",
+            status_field="url_offset_parser.should_parse",
         ),
         _get_processed_progress(
             config=config,
@@ -307,7 +301,7 @@ def home(config: Config) -> str | Response:
             description="Download WARCs.",
             document=Serp,
             filter_query=Term(capture__status_code=200),
-            timestamp_field="warc_downloader.last_downloaded",
+            status_field="warc_downloader.should_download",
         ),
         _get_processed_progress(
             config=config,
@@ -316,7 +310,7 @@ def home(config: Config) -> str | Response:
             description="Parse query from WARC contents.",
             document=Serp,
             filter_query=Exists(field="warc_location"),
-            timestamp_field="warc_query_parser.last_parsed",
+            status_field="warc_query_parser.should_parse",
         ),
         _get_processed_progress(
             config=config,
@@ -325,7 +319,7 @@ def home(config: Config) -> str | Response:
             description="Parse snippets from WARC contents.",
             document=Serp,
             filter_query=Exists(field="warc_location"),
-            timestamp_field="warc_snippets_parser.last_parsed",
+            status_field="warc_snippets_parser.should_parse",
         ),
     ]
 
