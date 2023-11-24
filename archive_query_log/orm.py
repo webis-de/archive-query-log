@@ -12,9 +12,17 @@ class BaseDocument(Document):
         default_timezone="UTC",
         format="strict_date_time_no_millis",
     )
+
     # TODO: At the moment, this is used more as a creation date.
     #  We could use a different field for that and use this one for the last
     #  modified date.
+
+    def __init__(self, id: str | None = None, **kwargs):
+        if id is not None:
+            if "meta" not in kwargs:
+                kwargs["meta"] = {}
+            kwargs["meta"]["id"] = id
+        super().__init__(**kwargs)
 
     @classmethod
     def index(cls) -> Index:

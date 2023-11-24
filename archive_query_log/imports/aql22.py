@@ -67,7 +67,8 @@ def _iter_captures(
             ":".join(capture_id_components),
         ))
         yield Capture(
-            meta={"id": capture_id},
+            id=capture_id,
+            last_modified=last_modified.replace(microsecond=0),
             archive=InnerArchive(
                 id=importable_path.archive.id,
                 cdx_api_url=importable_path.archive.cdx_api_url,
@@ -80,7 +81,9 @@ def _iter_captures(
             ),
             url=url,
             timestamp=timestamp.astimezone(UTC),
-            last_modified=last_modified.replace(microsecond=0),
+            url_query_parser=InnerProvider(
+                should_parse=True,
+            ),
         )
 
 

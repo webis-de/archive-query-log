@@ -88,7 +88,8 @@ def add_provider(
             echo(f"Add new provider {provider_id}.")
 
     provider = Provider(
-        meta={"id": provider_id},
+        id=provider_id,
+        last_modified=last_modified,
         name=name,
         description=description,
         notes=notes,
@@ -96,7 +97,6 @@ def add_provider(
         domains=list(domains),
         url_path_prefixes=list(url_path_prefixes),
         priority=priority,
-        last_modified=last_modified,
         should_build_sources=should_build_sources,
     )
     provider.save(using=config.es.client)

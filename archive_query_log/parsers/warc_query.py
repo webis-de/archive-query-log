@@ -48,7 +48,8 @@ def add_warc_query_parser(
         ":".join(parser_id_components),
     ))
     parser = WarcQueryParser(
-        meta={"id": parser_id},
+        id=parser_id,
+        last_modified=utc_now(),
         provider=InnerProviderId(id=provider_id),
         url_pattern_regex=url_pattern_regex,
         priority=priority,
@@ -56,7 +57,6 @@ def add_warc_query_parser(
         xpath=xpath,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
-        last_modified=utc_now(),
     )
     parser.save(using=config.es.client)
 

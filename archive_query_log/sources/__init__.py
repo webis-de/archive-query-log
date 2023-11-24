@@ -39,7 +39,8 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
                 ":".join(source_id_components),
             ))
             source = Source(
-                meta={"id": source_id},
+                id=source_id,
+                last_modified=utc_now(),
                 archive=InnerArchive(
                     id=archive.id,
                     cdx_api_url=archive.cdx_api_url,
@@ -52,7 +53,7 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
                     url_path_prefix=url_path_prefix,
                     priority=provider.priority,
                 ),
-                last_modified=utc_now(),
+                should_fetch_captures=True,
             )
             batch.append(source.to_dict(include_meta=True))
     return batch

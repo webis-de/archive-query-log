@@ -47,7 +47,8 @@ def _iter_captures(
             ":".join(capture_id_components),
         ))
         yield Capture(
-            meta={"id": capture_id},
+            id=capture_id,
+            last_modified=utc_now(),
             archive=source.archive,
             provider=source.provider,
             url=cdx_capture.url,
@@ -66,7 +67,6 @@ def _iter_captures(
             collection=cdx_capture.collection,
             source=cdx_capture.source,
             source_collection=cdx_capture.source_collection,
-            last_modified=utc_now(),
             url_query_parser=InnerParser(
                 should_parse=True,
             ),

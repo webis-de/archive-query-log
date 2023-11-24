@@ -55,7 +55,8 @@ def add_url_query_parser(
         ":".join(parser_id_components),
     ))
     parser = UrlQueryParser(
-        meta={"id": parser_id},
+        id=parser_id,
+        last_modified=utc_now(),
         provider=InnerProviderId(id=provider_id),
         url_pattern_regex=url_pattern_regex,
         priority=priority,
@@ -64,7 +65,6 @@ def add_url_query_parser(
         segment=segment,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
-        last_modified=utc_now(),
     )
     parser.save(using=config.es.client)
 
@@ -145,7 +145,8 @@ def _parse_serp_url_query_action(
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
         serp = Serp(
-            meta={"id": capture.id},
+            id=capture.id,
+            last_modified=utc_now(),
             archive=capture.archive,
             provider=capture.provider,
             capture=InnerCapture(
@@ -162,7 +163,18 @@ def _parse_serp_url_query_action(
                 should_parse=False,
                 last_parsed=utc_now(),
             ),
-            last_modified=utc_now(),
+            url_page_parser=InnerParser(
+                should_parse=True,
+            ),
+            url_offset_parser=InnerParser(
+                should_parse=True,
+            ),
+            warc_query_parser=InnerParser(
+                should_parse=True,
+            ),
+            warc_snippets_parser=InnerParser(
+                should_parse=True,
+            ),
         )
         yield serp.to_dict(include_meta=True)
         yield update_action(

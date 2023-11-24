@@ -21,7 +21,7 @@ from archive_query_log.namespaces import NAMESPACE_WARC_SNIPPETS_PARSER, \
     NAMESPACE_RESULT
 from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
     WarcSnippetsParserType, WarcSnippetsParser, WarcLocation, Snippet, \
-    Result, InnerSerp, SnippetId
+    Result, InnerSerp, SnippetId, InnerDownloader
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.es import safe_iter_scan, update_action
@@ -56,7 +56,8 @@ def add_warc_snippets_parser(
         ":".join(parser_id_components),
     ))
     parser = WarcSnippetsParser(
-        meta={"id": parser_id},
+        id=parser_id,
+        last_modified=utc_now(),
         provider=InnerProviderId(id=provider_id),
         url_pattern_regex=url_pattern_regex,
         priority=priority,
@@ -65,7 +66,6 @@ def add_warc_snippets_parser(
         url_xpath=url_xpath,
         title_xpath=title_xpath,
         text_xpath=text_xpath,
-        last_modified=utc_now(),
     )
     parser.save(using=config.es.client)
 
@@ -191,7 +191,8 @@ def _parse_serp_warc_snippets_action(
             continue
         for snippet in warc_snippets:
             yield Result(
-                meta={"id": snippet.id},
+                id=snippet.id,
+                last_modified=utc_now(),
                 archive=serp.archive,
                 provider=serp.provider,
                 capture=serp.capture,
@@ -204,7 +205,9 @@ def _parse_serp_warc_snippets_action(
                     should_parse=False,
                     last_parsed=utc_now(),
                 ),
-                last_modified=utc_now(),
+                warc_downloader=InnerDownloader(
+                    should_download=True,
+                ),
             ).to_dict(include_meta=True)
         yield update_action(
             serp,

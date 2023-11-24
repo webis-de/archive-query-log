@@ -69,13 +69,13 @@ def add_archive(
             echo(f"Add new archive {archive_id}.")
 
     archive = Archive(
-        meta={"id": archive_id},
+        id=archive_id,
+        last_modified=last_modified,
         name=name,
         description=description,
         cdx_api_url=cdx_api_url,
         memento_api_url=memento_api_url,
         priority=priority,
-        last_modified=last_modified,
         should_build_sources=should_build_sources,
     )
     archive.save(using=config.es.client)
