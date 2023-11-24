@@ -24,7 +24,7 @@ def add_url_page_parser(
         config: Config,
         provider_id: str,
         url_pattern_regex: str | None,
-        priority: int | None,
+        priority: float | None,
         parser_type: UrlPageParserType,
         parameter: str | None,
         segment: int | None,

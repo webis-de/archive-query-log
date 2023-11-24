@@ -17,6 +17,8 @@ class BaseDocument(Document):
     #  We could use a different field for that and use this one for the last
     #  modified date.
 
+    # pylint: disable=redefined-builtin
+    # noinspection PyShadowingBuiltins
     def __init__(self, id: str | None = None, **kwargs):
         if id is not None:
             if "meta" not in kwargs:

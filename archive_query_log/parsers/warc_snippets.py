@@ -32,7 +32,7 @@ def add_warc_snippets_parser(
         config: Config,
         provider_id: str,
         url_pattern_regex: str | None,
-        priority: int | None,
+        priority: float | None,
         parser_type: WarcSnippetsParserType,
         xpath: str | None,
         url_xpath: str | None,

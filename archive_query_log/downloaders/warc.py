@@ -1,5 +1,6 @@
+from datetime import datetime
 from itertools import chain
-from typing import Iterable, Iterator, Final, TypeVar, Generic, Type
+from typing import Iterable, Iterator, TypeVar, Generic, Type, Callable
 from uuid import uuid5
 
 from click import echo
@@ -23,7 +24,7 @@ _T = TypeVar("_T")
 
 
 class _WrapperArcWarcRecord(ArcWarcRecord, Generic[_T]):
-    wrapped: Final[_T]
+    wrapped: _T
 
     def __init__(self, wrapped: _T, record: ArcWarcRecord):
         super().__init__(
@@ -153,6 +154,14 @@ class _ResultArcWarcRecord(_WrapperArcWarcRecord[Result]):
     pass
 
 
+def _capture_timestamp_distance(
+        timestamp: datetime) -> Callable[[CdxCapture], float]:
+    def _distance(capture: CdxCapture) -> float:
+        return abs(timestamp - capture.timestamp).total_seconds()
+
+    return _distance
+
+
 def _download_result_warc(
         config: Config,
         result: Result,
@@ -176,7 +185,7 @@ def _download_result_warc(
             match_type=CdxMatchType.EXACT,
             to_timestamp=capture_timestamp,
         ),
-        key=lambda capture: abs(capture_timestamp - capture.timestamp),
+        key=_capture_timestamp_distance(capture_timestamp),
         default=None,
     )
     nearest_result_capture_after_serp: CdxCapture | None = min(
@@ -185,7 +194,7 @@ def _download_result_warc(
             match_type=CdxMatchType.EXACT,
             from_timestamp=capture_timestamp,
         ),
-        key=lambda capture: abs(capture_timestamp - capture.timestamp),
+        key=_capture_timestamp_distance(capture_timestamp),
         default=None,
     )
     if nearest_result_capture_before_serp is None:
@@ -250,11 +259,6 @@ def download_results_warc(config: Config) -> None:
         _download_result_warc(config, result)
         for result in changed_results
     )
-
-    for record in result_records:
-        print(record.rec_headers["WARC-Record-Id"])
-
-    return
 
     # Write to S3.
     stored_records: Iterator[WarcS3Record] = (

@@ -25,7 +25,7 @@ def add_warc_query_parser(
         config: Config,
         provider_id: str,
         url_pattern_regex: str | None,
-        priority: int | None,
+        priority: float | None,
         parser_type: WarcQueryParserType,
         xpath: str | None,
         remove_pattern_regex: str | None,
