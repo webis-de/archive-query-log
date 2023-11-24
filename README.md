@@ -252,7 +252,7 @@ A pointer to the WARC file is stored in the SERP index so that we can quickly ac
 <!-- TODO: Add instructions on how to parse the SERPs' contents from the WARC files. -->
 
 
-#### Import from AQL-22
+### Imports
 
 We support automatically importing providers and parsers from the AQL-22 YAML-file format
 (see [`data/selected-services.yaml`](data/selected-services.yaml)).
@@ -263,12 +263,20 @@ aql providers import
 aql parsers url-query import
 aql parsers url-page import
 aql parsers url-offset import
+aql parsers warc-query import
+aql parsers warc-snippets import
 ```
 
 We also support importing a previous crawl of captures from the AQL-22 file system backend:
 
 ```shell
 aql captures import aql-22
+```
+
+Last, we support importing all archives from the [Archive-It]() web archive service:
+
+```shell
+aql archives import archive-it
 ```
 
 ### Cluster (Helm/Kubernetes)
