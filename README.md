@@ -186,7 +186,7 @@ A search provider can be any website that offers some kind of search functionali
 Ideally, you should also look at common prefixes of the URLs of the search results pages (e.g., `/search` for Google).
 Narrowing down URL prefixes helps to not crawl too many captures that do not contain search results.
 
-Refer to the [import instructions below](#import-from-aql-22) to import providers from the AQL-22 YAML file format.
+Refer to the [import instructions below](#imports) to import providers from the AQL-22 YAML file format.
 
 #### Build source pairs
 
