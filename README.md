@@ -186,7 +186,7 @@ A search provider can be any website that offers some kind of search functionali
 Ideally, you should also look at common prefixes of the URLs of the search results pages (e.g., `/search` for Google).
 Narrowing down URL prefixes helps to not crawl too many captures that do not contain search results.
 
-Refer to the [import instructions below](#imports) to import providers from the AQL-22 YAML file format.
+Refer to the [import instructions below](#import) to import providers from the AQL-22 YAML file format.
 
 #### Build source pairs
 
@@ -214,7 +214,7 @@ aql captures fetch
 
 Again, running the command again after adding more source pairs automatically fetches the missing captures.
 
-#### Parse URLs
+#### Parse SERP URLs
 
 Not every capture necessarily points to a search engine result page (SERP).
 But usually, SERPs contain the user query in the URL, so we can filter out non-SERP captures by parsing the URLs.
@@ -234,7 +234,7 @@ aql serps parse url-offset
 All the above commands can be run in parallel, and they can be run multiple times to update the SERP index.
 Already parsed SERPs will be skipped.
 
-#### Download WARCs
+#### Download SERP WARCs
 
 Up to this point, we have only fetched the metadata of the captures, most prominently the URL.
 However, the snippets of the SERPs are not contained in the metadata, but only on the web page.
@@ -245,14 +245,40 @@ aql serps download warc
 ```
 
 This command will download the contents of each SERP to a WARC file that is stored in the configured S3 bucket.
-A pointer to the WARC file is stored in the SERP index so that we can quickly access a specific SERPs contents later.
+A pointer to the WARC file is stored in the SERP index so that we can quickly access a specific SERP's contents later.
 
-#### Parsing WARCs
+#### Parsing SERP WARCs
 
-<!-- TODO: Add instructions on how to parse the SERPs' contents from the WARC files. -->
+From the WARC, we can again parse the query as it appears on the SERP.
 
+```shell
+aql serps parse serp-query
+```
 
-### Imports
+More importantly, we can parse the snippets of the SERP.
+
+```shell
+aql serps parse serp-snippets
+```
+
+Parsing the snippets from the SERP's WARC contents will also add the SERP's results to a new index.
+
+#### Download SERP WARCs
+
+To get the full text of each referenced result from the SERP, we need to download a capture of the result from 
+the web archive. Intuitively, we would like to download a capture of the result at the exact same time as the SERP 
+was captured. But often, web archives crawl the results later or not at all. We therefore search for 
+the nearest captures before and after the SERP's timestamp and download these two captures for each result, 
+if any could be found.
+
+```shell
+aql results download warc
+```
+
+This will again download the result's contents to a WARC file that is stored in the configured S3 bucket.
+A pointer to the WARC file is stored in the result index for random access to a specific result's contents.
+
+### Import
 
 We support automatically importing providers and parsers from the AQL-22 YAML-file format
 (see [`data/selected-services.yaml`](data/selected-services.yaml)).
