@@ -29,7 +29,7 @@ CHOICES_URL_QUERY_PARSER_TYPE = [
 
 
 @url_query.command("add")
-@option("--provider-id", type=str, required=True)
+@option("--provider-id", type=str)
 @option("--url-pattern-regex", type=str)
 @option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
@@ -41,7 +41,7 @@ CHOICES_URL_QUERY_PARSER_TYPE = [
 @pass_config
 def url_query_add(
         config: Config,
-        provider_id: str,
+        provider_id: str | None,
         url_pattern_regex: str | None,
         priority: float | None,
         parser_type: str,
@@ -106,7 +106,7 @@ CHOICES_URL_PAGE_PARSER_TYPE = [
 
 
 @url_page.command("add")
-@option("--provider-id", type=str, required=True)
+@option("--provider-id", type=str)
 @option("--url-pattern-regex", type=str)
 @option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
@@ -118,7 +118,7 @@ CHOICES_URL_PAGE_PARSER_TYPE = [
 @pass_config
 def url_page_add(
         config: Config,
-        provider_id: str,
+        provider_id: str | None,
         url_pattern_regex: str | None,
         priority: float | None,
         parser_type: str,
@@ -183,7 +183,7 @@ CHOICES_URL_OFFSET_PARSER_TYPE = [
 
 
 @url_offset.command("add")
-@option("--provider-id", type=str, required=True)
+@option("--provider-id", type=str)
 @option("--url-pattern-regex", type=str)
 @option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
@@ -195,7 +195,7 @@ CHOICES_URL_OFFSET_PARSER_TYPE = [
 @pass_config
 def url_offset_add(
         config: Config,
-        provider_id: str,
+        provider_id: str | None,
         url_pattern_regex: str | None,
         priority: float | None,
         parser_type: str,
@@ -258,7 +258,7 @@ CHOICES_WARC_QUERY_PARSER_TYPE = [
 
 
 @warc_query.command("add")
-@option("--provider-id", type=str, required=True)
+@option("--provider-id", type=str)
 @option("--url-pattern-regex", type=str)
 @option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
@@ -269,7 +269,7 @@ CHOICES_WARC_QUERY_PARSER_TYPE = [
 @pass_config
 def warc_query_add(
         config: Config,
-        provider_id: str,
+        provider_id: str | None,
         url_pattern_regex: str | None,
         priority: float | None,
         parser_type: str,
@@ -322,7 +322,7 @@ CHOICES_WARC_SNIPPETS_PARSER_TYPE = [
 
 
 @warc_snippets.command("add")
-@option("--provider-id", type=str, required=True)
+@option("--provider-id", type=str)
 @option("--url-pattern-regex", type=str)
 @option("--priority", type=FloatRange(min=0, min_open=False))
 @option("--parser-type",
@@ -334,7 +334,7 @@ CHOICES_WARC_SNIPPETS_PARSER_TYPE = [
 @pass_config
 def warc_snippets_add(
         config: Config,
-        provider_id: str,
+        provider_id: str | None,
         url_pattern_regex: str | None,
         priority: float | None,
         parser_type: str,

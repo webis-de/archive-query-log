@@ -6,7 +6,7 @@ from uuid import uuid5
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
+from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
@@ -22,7 +22,7 @@ from archive_query_log.utils.time import utc_now
 
 def add_url_page_parser(
         config: Config,
-        provider_id: str,
+        provider_id: str | None,
         url_pattern_regex: str | None,
         priority: float | None,
         parser_type: UrlPageParserType,
@@ -45,7 +45,7 @@ def add_url_page_parser(
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
     parser_id_components = (
-        provider_id,
+        provider_id if provider_id is not None else "",
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
@@ -56,7 +56,7 @@ def add_url_page_parser(
     parser = UrlPageParser(
         id=parser_id,
         last_modified=utc_now(),
-        provider=InnerProviderId(id=provider_id),
+        provider=InnerProviderId(id=provider_id) if provider_id else None,
         url_pattern_regex=url_pattern_regex,
         priority=priority,
         parser_type=parser_type,
@@ -117,7 +117,10 @@ def _url_page_parsers(
 ) -> list[UrlPageParser]:
     parsers: Iterable[UrlPageParser] = (
         UrlPageParser.search(using=config.es.client)
-        .filter(Term(provider__id=provider_id))
+        .filter(
+            ~Exists(field="provider.id") |
+            Term(provider__id=provider_id)
+        )
         .query(RankFeature(field="priority", saturation={}))
         .scan()
     )

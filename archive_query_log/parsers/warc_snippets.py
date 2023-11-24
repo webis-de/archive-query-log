@@ -30,7 +30,7 @@ from archive_query_log.utils.time import utc_now
 
 def add_warc_snippets_parser(
         config: Config,
-        provider_id: str,
+        provider_id: str | None,
         url_pattern_regex: str | None,
         priority: float | None,
         parser_type: WarcSnippetsParserType,
@@ -47,7 +47,7 @@ def add_warc_snippets_parser(
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
     parser_id_components = (
-        provider_id,
+        provider_id if provider_id is not None else "",
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
@@ -58,7 +58,7 @@ def add_warc_snippets_parser(
     parser = WarcSnippetsParser(
         id=parser_id,
         last_modified=utc_now(),
-        provider=InnerProviderId(id=provider_id),
+        provider=InnerProviderId(id=provider_id) if provider_id else None,
         url_pattern_regex=url_pattern_regex,
         priority=priority,
         parser_type=parser_type,
@@ -152,7 +152,10 @@ def _warc_snippets_parsers(
 ) -> list[WarcSnippetsParser]:
     parsers: Iterable[WarcSnippetsParser] = (
         WarcSnippetsParser.search(using=config.es.client)
-        .filter(Term(provider__id=provider_id))
+        .filter(
+            ~Exists(field="provider.id") |
+            Term(provider__id=provider_id)
+        )
         .query(RankFeature(field="priority", saturation={}))
         .scan()
     )

@@ -234,7 +234,7 @@ UrlQueryParserType = Literal[
 
 
 class UrlQueryParser(BaseDocument):
-    provider: InnerProviderId = Object(InnerProviderId)
+    provider: InnerProviderId | None = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: UrlQueryParserType = Keyword()
@@ -277,7 +277,7 @@ UrlPageParserType = Literal[
 
 
 class UrlPageParser(BaseDocument):
-    provider: InnerProviderId = Object(InnerProviderId)
+    provider: InnerProviderId | None = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: UrlPageParserType = Keyword()
@@ -314,7 +314,7 @@ UrlOffsetParserType = Literal[
 
 
 class UrlOffsetParser(BaseDocument):
-    provider: InnerProviderId = Object(InnerProviderId)
+    provider: InnerProviderId | None = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: UrlOffsetParserType = Keyword()
@@ -349,7 +349,7 @@ WarcQueryParserType = Literal[
 
 
 class WarcQueryParser(BaseDocument):
-    provider: InnerProviderId = Object(InnerProviderId)
+    provider: InnerProviderId | None = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: WarcQueryParserType = Keyword()
@@ -389,7 +389,7 @@ WarcSnippetsParserType = Literal[
 
 
 class WarcSnippetsParser(BaseDocument):
-    provider: InnerProviderId = Object(InnerProviderId)
+    provider: InnerProviderId | None = Object(InnerProviderId)
     url_pattern_regex: str | None = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: WarcSnippetsParserType = Keyword()
