@@ -421,8 +421,12 @@ class Result(BaseDocument):
     serp: InnerSerp = Object(InnerSerp)
     snippet: Snippet = Object(Snippet)
     snippet_parser: InnerParser | None = Object(InnerParser)
-    warc_location: WarcLocation | None = Object(WarcLocation)
-    warc_downloader: InnerDownloader | None = Object(InnerDownloader)
+    warc_before_serp_location: WarcLocation | None = Object(WarcLocation)
+    warc_before_serp_downloader: InnerDownloader | None = (
+        Object(InnerDownloader))
+    warc_after_serp_location: WarcLocation | None = Object(WarcLocation)
+    warc_after_serp_downloader: InnerDownloader | None = (
+        Object(InnerDownloader))
 
     class Index:
         name = "aql_results"

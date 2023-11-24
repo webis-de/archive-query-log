@@ -9,7 +9,7 @@ from elasticsearch_dsl.query import Exists, FunctionScore, Term, RankFeature
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Record
 from warcio.recordloader import ArcWarcRecord
-from web_archive_api.cdx import CdxApi, CdxMatchType
+from web_archive_api.cdx import CdxApi, CdxMatchType, CdxCapture
 from web_archive_api.memento import MementoApi
 
 from archive_query_log import __version__ as app_version
@@ -145,5 +145,144 @@ def download_serps_warc(config: Config) -> None:
             ),
         )
         for serp, location in stored_serps
+    )
+    config.es.bulk(actions)
+
+
+class _ResultArcWarcRecord(_WrapperArcWarcRecord[Result]):
+    pass
+
+
+def _download_result_warc(
+        config: Config,
+        result: Result,
+) -> Iterator[_ResultArcWarcRecord]:
+    if result.snippet.url is None:
+        return
+
+    cdx_api = CdxApi(
+        api_url=result.archive.cdx_api_url,
+        session=config.http.session,
+    )
+    memento_api = MementoApi(
+        api_url=result.archive.memento_api_url,
+        session=config.http.session,
+    )
+
+    capture_timestamp = result.capture.timestamp
+    nearest_result_capture_before_serp: CdxCapture | None = min(
+        cdx_api.iter_captures(
+            result.snippet.url,
+            match_type=CdxMatchType.EXACT,
+            to_timestamp=capture_timestamp,
+        ),
+        key=lambda capture: abs(capture_timestamp - capture.timestamp),
+        default=None,
+    )
+    nearest_result_capture_after_serp: CdxCapture | None = min(
+        cdx_api.iter_captures(
+            result.snippet.url,
+            match_type=CdxMatchType.EXACT,
+            from_timestamp=capture_timestamp,
+        ),
+        key=lambda capture: abs(capture_timestamp - capture.timestamp),
+        default=None,
+    )
+    if nearest_result_capture_before_serp is None:
+        result.update(
+            using=config.es.client,
+            warc_before_serp_downloader=InnerDownloader(
+                should_download=False,
+                last_downloaded=utc_now(),
+            ).to_dict(),
+        )
+    else:
+        records = memento_api.load_capture_warc(
+            capture=nearest_result_capture_before_serp,
+            raw=True,
+        )
+        for record in records:
+            yield _ResultArcWarcRecord(result, record)
+    if nearest_result_capture_after_serp is None:
+        result.update(
+            using=config.es.client,
+            warc_after_serp_downloader=InnerDownloader(
+                should_download=False,
+                last_downloaded=utc_now(),
+            ).to_dict(),
+        )
+    else:
+        records = memento_api.load_capture_warc(
+            capture=nearest_result_capture_after_serp,
+            raw=True,
+        )
+        for record in records:
+            yield _ResultArcWarcRecord(result, record)
+
+
+def download_results_warc(config: Config) -> None:
+    changed_results_search: Search = (
+        Result.search(using=config.es.client)
+        .filter(
+            Exists(field="snippet.url") &
+            ~Term(should_fetch_captures=False)
+        )
+        .query(
+            RankFeature(field="archive.priority", saturation={}) |
+            RankFeature(field="provider.priority", saturation={}) |
+            FunctionScore(functions=[RandomScore()])
+        )
+    )
+    num_changed_results = changed_results_search.count()
+
+    if num_changed_results <= 0:
+        echo("No new/changed results.")
+        return
+
+    changed_results: Iterable[Result] = changed_results_search.scan()
+    changed_results = safe_iter_scan(changed_results)
+    # noinspection PyTypeChecker
+    changed_results = tqdm(changed_results, total=num_changed_results,
+                           desc="Downloading WARCs", unit="result")
+
+    # Download from Memento API.
+    result_records = chain.from_iterable(
+        _download_result_warc(config, result)
+        for result in changed_results
+    )
+
+    for record in result_records:
+        print(record.rec_headers["WARC-Record-Id"])
+
+    return
+
+    # Write to S3.
+    stored_records: Iterator[WarcS3Record] = (
+        config.s3.warc_store.write(result_records))
+    stored_results = (
+        _unwrap(record, _ResultArcWarcRecord)
+        for record in stored_records
+    )
+
+    downloader_id_components = (
+        config.s3.endpoint_url,
+        config.s3.bucket_name,
+        app_version,
+    )
+    downloader_id = str(uuid5(
+        NAMESPACE_WARC_DOWNLOADER,
+        ":".join(downloader_id_components),
+    ))
+    actions = (
+        update_action(
+            result,
+            warc_location=location,
+            warc_downloader=InnerDownloader(
+                id=downloader_id,
+                should_download=False,
+                last_downloaded=utc_now(),
+            ),
+        )
+        for result, location in stored_results
     )
     config.es.bulk(actions)
