@@ -118,7 +118,7 @@ def _url_page_parsers(
     parsers: Iterable[UrlPageParser] = (
         UrlPageParser.search(using=config.es.client)
         .filter(Term(provider__id=provider_id))
-        .sort("-priority")
+        .query(RankFeature(field="priority", saturation={}))
         .scan()
     )
     parsers = safe_iter_scan(parsers)

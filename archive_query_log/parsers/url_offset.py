@@ -119,7 +119,7 @@ def _url_offset_parsers(
     parsers: Iterable[UrlOffsetParser] = (
         UrlOffsetParser.search(using=config.es.client)
         .filter(Term(provider__id=provider_id))
-        .sort("-priority")
+        .query(RankFeature(field="priority", saturation={}))
         .scan()
     )
     parsers = safe_iter_scan(parsers)

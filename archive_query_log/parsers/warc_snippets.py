@@ -153,7 +153,7 @@ def _warc_snippets_parsers(
     parsers: Iterable[WarcSnippetsParser] = (
         WarcSnippetsParser.search(using=config.es.client)
         .filter(Term(provider__id=provider_id))
-        .sort("-priority")
+        .query(RankFeature(field="priority", saturation={}))
         .scan()
     )
     parsers = safe_iter_scan(parsers)
