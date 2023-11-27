@@ -222,6 +222,32 @@ class Serp(BaseDocument):
         }
 
 
+class InnerSerp(InnerDocument):
+    id: str = Keyword()
+
+
+class Result(BaseDocument):
+    archive: InnerArchive = Object(InnerArchive)
+    provider: InnerProvider = Object(InnerProvider)
+    capture: InnerCapture = Object(InnerCapture)
+    serp: InnerSerp = Object(InnerSerp)
+    snippet: Snippet = Object(Snippet)
+    snippet_parser: InnerParser | None = Object(InnerParser)
+    warc_before_serp_location: WarcLocation | None = Object(WarcLocation)
+    warc_before_serp_downloader: InnerDownloader | None = (
+        Object(InnerDownloader))
+    warc_after_serp_location: WarcLocation | None = Object(WarcLocation)
+    warc_after_serp_downloader: InnerDownloader | None = (
+        Object(InnerDownloader))
+
+    class Index:
+        name = "aql_results"
+        settings = {
+            "number_of_shards": 20,
+            "number_of_replicas": 2,
+        }
+
+
 class InnerProviderId(InnerDocument):
     id: str = Keyword()
 
@@ -412,27 +438,26 @@ class WarcSnippetsParser(BaseDocument):
         }
 
 
-class InnerSerp(InnerDocument):
-    id: str = Keyword()
+WarcMainContentParserType = Literal[
+    "resiliparse",
+]
 
 
-class Result(BaseDocument):
-    archive: InnerArchive = Object(InnerArchive)
-    provider: InnerProvider = Object(InnerProvider)
-    capture: InnerCapture = Object(InnerCapture)
-    serp: InnerSerp = Object(InnerSerp)
-    snippet: Snippet = Object(Snippet)
-    snippet_parser: InnerParser | None = Object(InnerParser)
-    warc_before_serp_location: WarcLocation | None = Object(WarcLocation)
-    warc_before_serp_downloader: InnerDownloader | None = (
-        Object(InnerDownloader))
-    warc_after_serp_location: WarcLocation | None = Object(WarcLocation)
-    warc_after_serp_downloader: InnerDownloader | None = (
-        Object(InnerDownloader))
+class WarcMainContentParser(BaseDocument):
+    provider: InnerProviderId | None = Object(InnerProviderId)
+    url_pattern_regex: str | None = Keyword()
+    priority: float | None = RankFeature(positive_score_impact=True)
+    parser_type: WarcMainContentParserType = Keyword()
+
+    @cached_property
+    def url_pattern(self) -> Pattern | None:
+        if self.url_pattern_regex is None:
+            raise ValueError("No URL pattern regex.")
+        return pattern(self.url_pattern_regex)
 
     class Index:
-        name = "aql_results"
+        name = "aql_warc_snippets_parsers"
         settings = {
-            "number_of_shards": 20,
+            "number_of_shards": 1,
             "number_of_replicas": 2,
         }
