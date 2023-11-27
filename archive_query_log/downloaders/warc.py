@@ -2,11 +2,13 @@ from datetime import datetime
 from itertools import chain
 from typing import Iterable, Iterator, TypeVar, Generic, Type, Callable
 from uuid import uuid5
+from warnings import warn
 
 from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import Exists, FunctionScore, Term, RankFeature
+from requests import ConnectionError as RequestsConnectionError
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Record
 from warcio.recordloader import ArcWarcRecord
@@ -71,11 +73,18 @@ def _download_serp_warc(
         api_url=serp.archive.memento_api_url,
         session=config.http.session,
     )
-    records = memento_api.load_url_warc(
-        url=serp.capture.url,
-        timestamp=serp.capture.timestamp,
-        raw=True,
-    )
+    try:
+        records = memento_api.load_url_warc(
+            url=serp.capture.url,
+            timestamp=serp.capture.timestamp,
+            raw=True,
+        )
+    except RequestsConnectionError:
+        warn(RuntimeWarning(
+            f"Connection error while downloading WARC "
+            f"for capture URL {serp.capture.url} at {serp.capture.timestamp}."
+        ))
+        return
     for record in records:
         yield _SerpArcWarcRecord(serp, record)
 
