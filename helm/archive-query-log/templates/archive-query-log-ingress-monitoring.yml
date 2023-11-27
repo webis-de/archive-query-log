@@ -5,6 +5,8 @@ metadata:
   namespace: {{ $.Release.Namespace }}
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "{{ printf "%t" $.Values.monitoring.forceSslRedirect }}"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
 spec:
   ingressClassName: {{ $.Values.monitoring.ingressClassName }}
   rules:
