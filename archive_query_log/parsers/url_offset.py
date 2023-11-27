@@ -2,6 +2,7 @@ from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
 from uuid import uuid5
+from warnings import warn
 
 from click import echo
 from elasticsearch_dsl import Search
@@ -144,6 +145,12 @@ def _parse_serp_url_offset_action(
         url_offset = _parse_url_offset(parser, serp.capture.url)
         if url_offset is None:
             # Parsing was not successful, e.g., URL pattern did not match.
+            continue
+        if url_offset > 2147483647:
+            warn(RuntimeWarning(
+                f"URL offset {url_offset} parsed from URL {serp.capture.url} "
+                f"is too large for a signed 32-bit integer."
+            ))
             continue
         yield update_action(
             serp,
