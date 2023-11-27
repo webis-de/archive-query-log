@@ -1,6 +1,5 @@
 from itertools import chain
 from typing import Iterable, Iterator
-from urllib.error import HTTPError
 from urllib.parse import urljoin
 from uuid import uuid5
 from warnings import warn
@@ -9,7 +8,7 @@ from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, RankFeature, Term
-from requests import ConnectTimeout
+from requests import ConnectTimeout, HTTPError, Response
 from tqdm.auto import tqdm
 from web_archive_api.cdx import CdxApi, CdxMatchType
 
@@ -105,14 +104,14 @@ def _add_captures_actions(
         return
     except HTTPError as e:
         ignored = False
-        if e.status is not None:
-            if e.status == 403:
-                warn(RuntimeWarning(
-                    f"Unauthorized to fetch captures for source "
-                    f"domain {source.provider.domain} and "
-                    f"URL prefix {source.provider.url_path_prefix}."
-                ))
-                ignored = True
+        response: Response = e.response
+        if response.status_code == 403:
+            warn(RuntimeWarning(
+                f"Unauthorized to fetch captures for source "
+                f"domain {source.provider.domain} and "
+                f"URL prefix {source.provider.url_path_prefix}."
+            ))
+            ignored = True
         if not ignored:
             raise e
 
