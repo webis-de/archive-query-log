@@ -208,7 +208,10 @@ def _parse_serp_warc_snippets_action(
                     should_parse=False,
                     last_parsed=utc_now(),
                 ).to_dict(),
-                warc_downloader=InnerDownloader(
+                warc_before_serp_downloader=InnerDownloader(
+                    should_download=True,
+                ).to_dict(),
+                warc_after_serp_downloader=InnerDownloader(
                     should_download=True,
                 ).to_dict(),
             ).to_dict(include_meta=True)
