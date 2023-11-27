@@ -77,7 +77,7 @@ monitoring:
   ingressClassName: nginx
   host: aql-monitoring.srv.webis.de
   path: /
-  replicas: 2
+  replicas: 1
   forceSslRedirect: true
 
 elasticsearch:
