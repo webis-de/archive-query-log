@@ -1,5 +1,6 @@
 from itertools import chain
 from typing import Iterable, Iterator
+from urllib.error import HTTPError
 from urllib.parse import urljoin
 from uuid import uuid5
 from warnings import warn
@@ -35,13 +36,13 @@ def _iter_captures(
         match_type=CdxMatchType.PREFIX,
     )
     for cdx_capture in cdx_captures:
-        cdx_capture_url = cdx_capture.url
-        if len(cdx_capture_url) > 32766:
+        if len(cdx_capture.url) > 32766:
             warn(RuntimeWarning(
-                f"The URL {cdx_capture_url} exceeds the maximum length of Elasticsearch."
-                f" It will be truncated."
+                f"The URL {cdx_capture.url} exceeds the "
+                f"maximum length of Elasticsearch."
+                f" It will be skipped."
             ))
-            cdx_capture_url = cdx_capture_url[:32766]
+            continue
 
         capture_utc_timestamp_text = (
             cdx_capture.timestamp.astimezone(UTC).strftime("%Y%m%d%H%M%S"))
@@ -59,7 +60,7 @@ def _iter_captures(
             last_modified=utc_now(),
             archive=source.archive,
             provider=source.provider,
-            url=cdx_capture_url,
+            url=cdx_capture.url,
             url_key=cdx_capture.url_key,
             timestamp=cdx_capture.timestamp.astimezone(UTC),
             status_code=cdx_capture.status_code,
@@ -102,6 +103,18 @@ def _add_captures_actions(
             f"Connection timeout while fetching captures "
             f"for source {source.id}: {e}"))
         return
+    except HTTPError as e:
+        ignored = False
+        if e.status is not None:
+            if e.status == 403:
+                warn(RuntimeWarning(
+                    f"Unauthorized to fetch captures for source "
+                    f"domain {source.provider.domain} and "
+                    f"URL prefix {source.provider.url_path_prefix}."
+                ))
+                ignored = True
+        if not ignored:
+            raise e
 
     yield update_action(
         source,
