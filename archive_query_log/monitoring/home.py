@@ -35,7 +35,7 @@ _statistics_cache: dict[
     Statistics,
 ] = ExpiringDict(
     max_len=100,
-    max_age_seconds=60 * 3,  # 3 minutes
+    max_age_seconds=15,
 )
 
 
@@ -97,7 +97,7 @@ _progress_cache: dict[
     Progress,
 ] = ExpiringDict(
     max_len=100,
-    max_age_seconds=60 * 1,  # 1 minute
+    max_age_seconds=15,
 )
 
 
