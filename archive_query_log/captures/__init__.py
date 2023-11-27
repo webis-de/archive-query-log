@@ -35,6 +35,14 @@ def _iter_captures(
         match_type=CdxMatchType.PREFIX,
     )
     for cdx_capture in cdx_captures:
+        cdx_capture_url = cdx_capture.url
+        if len(cdx_capture_url) > 32766:
+            warn(RuntimeWarning(
+                f"The URL {cdx_capture_url} exceeds the maximum length of Elasticsearch."
+                f" It will be truncated."
+            ))
+            cdx_capture_url = cdx_capture_url[:32766]
+
         capture_utc_timestamp_text = (
             cdx_capture.timestamp.astimezone(UTC).strftime("%Y%m%d%H%M%S"))
         capture_id_components = (
@@ -51,7 +59,7 @@ def _iter_captures(
             last_modified=utc_now(),
             archive=source.archive,
             provider=source.provider,
-            url=cdx_capture.url,
+            url=cdx_capture_url,
             url_key=cdx_capture.url_key,
             timestamp=cdx_capture.timestamp.astimezone(UTC),
             status_code=cdx_capture.status_code,
