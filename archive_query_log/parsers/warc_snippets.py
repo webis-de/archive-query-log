@@ -201,16 +201,16 @@ def _parse_serp_warc_snippets_action(
                 capture=serp.capture,
                 serp=InnerSerp(
                     id=serp.id,
-                ),
+                ).to_dict(),
                 snippet=snippet,
                 snippet_parser=InnerParser(
                     id=parser.id,
                     should_parse=False,
                     last_parsed=utc_now(),
-                ),
+                ).to_dict(),
                 warc_downloader=InnerDownloader(
                     should_download=True,
-                ),
+                ).to_dict(),
             ).to_dict(include_meta=True)
         yield update_action(
             serp,
