@@ -11,8 +11,8 @@ sourcesBuild:
 capturesFetch:
   enabled: true
   schedule: "0,15,30,45 * * * *"
-  completions: 10
-  parallelism: 10
+  completions: 15
+  parallelism: 15
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
@@ -28,8 +28,8 @@ capturesImportAql22:
 serpsParseUrlQuery:
   enabled: true
   schedule: "0,15,30,45 * * * *"
-  completions: 10
-  parallelism: 10
+  completions: 15
+  parallelism: 15
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
