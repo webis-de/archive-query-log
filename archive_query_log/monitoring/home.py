@@ -11,6 +11,9 @@ from archive_query_log.orm import Archive, Provider, Source, Capture, \
     UrlOffsetParser, WarcQueryParser, WarcSnippetsParser
 from archive_query_log.utils.time import utc_now
 
+_CACHE_SECONDS_STATISTICS = 60 * 5  # 5 minutes
+_CACHE_SECONDS_PROGRESS = 60 * 10  # 10 minutes
+
 
 class Statistics(NamedTuple):
     name: str
@@ -35,7 +38,7 @@ _statistics_cache: dict[
     Statistics,
 ] = ExpiringDict(
     max_len=100,
-    max_age_seconds=15,
+    max_age_seconds=_CACHE_SECONDS_STATISTICS,
 )
 
 
@@ -97,7 +100,7 @@ _progress_cache: dict[
     Progress,
 ] = ExpiringDict(
     max_len=100,
-    max_age_seconds=15,
+    max_age_seconds=_CACHE_SECONDS_PROGRESS,
 )
 
 
