@@ -31,7 +31,7 @@ dependencies = [
     "diskcache~=5.4",
     "fasttext-langdetect~=1.0",
     "fastwarc~=0.14.0",
-    "flake8~=6.0",
+    "flake8~=7.0",
     "fasttext @ git+https://github.com/cfculhane/fastText.git@4a44513",
     "joblib~=1.2",
     "jupyter~=1.0",
@@ -60,7 +60,7 @@ dynamic = ["version"]
 [project.optional-dependencies]
 tests = [
     "approvaltests~=10.0",
-    "flake8~=6.0",
+    "flake8~=7.0",
     "pylint~=2.12",
     "pytest~=7.2",
     "pytest-cov~=4.0",
