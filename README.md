@@ -336,7 +336,7 @@ s3:
 Let's deploy the Helm chart on the cluster (we're testing first with `--dry-run` to see if everything works):
 
 ```shell
-helm upgrade --install --values helm/archive-query-log/values.override.yaml --dry-run archive-query-log helm/archive-query-log
+helm upgrade --install --values ./helm/values.override.yaml --dry-run archive-query-log ./helm
 ```
 
 If everything worked and the output looks good, you can remove the `--dry-run` flag to actually deploy the chart.
