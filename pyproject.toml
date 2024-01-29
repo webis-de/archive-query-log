@@ -62,7 +62,7 @@ tests = [
     "approvaltests~=10.0",
     "flake8~=7.0",
     "pylint~=2.12",
-    "pytest~=7.2",
+    "pytest~=8.0",
     "pytest-cov~=4.0",
 ]
 
