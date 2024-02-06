@@ -55,7 +55,7 @@ or the Docker image from source.)
 
 #### Installation (PyPi)
 
-First you need to install [Python 3.10](https://python.org/downloads/) and 
+First you need to install [Python 3.10](https://python.org/downloads/), the [Protobuf compiler](https://grpc.io/docs/protoc-installation/), and 
 [pipx](https://pypa.github.io/pipx/installation/) (this allows you to install the AQL CLI in a virtual environment).
 Then, you can install the Archive Query Log CLI by running:
 ```shell
@@ -71,7 +71,7 @@ aql --help
 
 <details>
 
-First install [Python 3.10](https://python.org/downloads/), and clone this repository.
+First install [Python 3.10](https://python.org/downloads/) and the [Protobuf compiler](https://grpc.io/docs/protoc-installation/), and clone this repository.
 From inside the repository directory, create a virtual environment and activate it:
 ```shell
 python3.10 -m venv venv/
