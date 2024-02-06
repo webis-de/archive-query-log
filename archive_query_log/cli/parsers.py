@@ -8,7 +8,8 @@ from archive_query_log.config import Config
 from archive_query_log.orm import UrlQueryParserType, \
     UrlQueryParser, UrlPageParserType, UrlPageParser, \
     UrlOffsetParser, UrlOffsetParserType, WarcQueryParserType, \
-    WarcQueryParser, WarcSnippetsParserType, WarcSnippetsParser
+    WarcQueryParser, WarcSnippetsParserType, WarcSnippetsParser, \
+    WarcMainContentParserType, WarcMainContentParser
 
 
 @group()
@@ -377,3 +378,44 @@ def warc_snippets_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_warc_snippets_parsers
     WarcSnippetsParser.init(using=config.es.client)
     import_warc_snippets_parsers(config, services_path)
+
+
+@parsers.group()
+def warc_main_content() -> None:
+    pass
+
+
+CHOICES_WARC_MAIN_CONTENT_PARSER_TYPE = [
+    "resiliparse",
+]
+
+
+@warc_main_content.command("add")
+@option("--provider-id", type=str)
+@option("--url-pattern-regex", type=str)
+@option("--priority", type=FloatRange(min=0, min_open=False))
+@option("--parser-type",
+        type=Choice(CHOICES_WARC_MAIN_CONTENT_PARSER_TYPE), required=True)
+@pass_config
+def warc_main_content_add(
+        config: Config,
+        provider_id: str | None,
+        url_pattern_regex: str | None,
+        priority: float | None,
+        parser_type: str,
+) -> None:
+    from archive_query_log.parsers.warc_main_content import \
+        add_warc_main_content_parser
+    parser_type_strict: WarcMainContentParserType
+    if parser_type == "resiliparse":
+        parser_type_strict = "resiliparse"
+    else:
+        raise ValueError(f"Invalid parser type: {parser_type}")
+    WarcMainContentParser.init(using=config.es.client)
+    add_warc_main_content_parser(
+        config=config,
+        provider_id=provider_id,
+        url_pattern_regex=url_pattern_regex,
+        priority=priority,
+        parser_type=parser_type_strict,
+    )
