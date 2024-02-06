@@ -147,7 +147,7 @@ class Capture(BaseDocument):
     class Index:
         name = "aql_captures"
         settings = {
-            "number_of_shards": 10,
+            "number_of_shards": 40,
             "number_of_replicas": 2,
         }
 
@@ -217,7 +217,7 @@ class Serp(BaseDocument):
     class Index:
         name = "aql_serps"
         settings = {
-            "number_of_shards": 10,
+            "number_of_shards": 40,
             "number_of_replicas": 2,
         }
 
