@@ -339,11 +339,10 @@ pip install -e .[tests]
 After having implemented a new feature, please check the code format, inspect common LINT errors, and run all unit tests with the following commands:
 
 ```shell
-flake8 archive_query_log  # Code format
-pylint archive_query_log  # LINT errors
-mypy archive_query_log    # Static typing
-bandit -c pyproject.toml -r archive_query_log  # Security
-pytest archive_query_log  # Unit tests
+ruff .                         # Code format and LINT
+mypy .                         # Static typing
+bandit -c pyproject.toml -r .  # Security
+pytest .                       # Unit tests
 ```
 
 ### Add new tests for parsers

@@ -76,17 +76,14 @@ class SearchFormIdentifier:
         # in the internet archive
         try:
             response = self.session.get(url, timeout=10)
-        # pylint: disable=broad-except
         except Exception:
             try:
                 response = self.get_internet_archive_html(url=url)
-            # pylint: disable=broad-except
             except Exception:
                 return None, None, None
 
         try:
             html = response.html.html
-        # pylint: disable=broad-except
         except Exception:
             return None, None, None
 
@@ -95,7 +92,6 @@ class SearchFormIdentifier:
             try:
                 response.html.render(timeout=10)
                 html = response.html.html
-            # pylint: disable=broad-except
             except Exception:
                 return None, None, None
 

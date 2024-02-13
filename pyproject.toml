@@ -71,12 +71,11 @@ tests = [
     "approvaltests~=10.0",
     "bandit[toml]~=1.7",
     "boto3-stubs[s3]~=1.28",
-    "flake8~=7.0",
     "mypy~=1.5",
     "pandas-stubs~=2.0",
-    "pylint~=2.17",
     "pytest~=8.0",
     "pytest-cov~=4.0",
+    "ruff~=0.2.1",
     "types-beautifulsoup4~=4.12",
     "types-bleach~=6.0",
     "types-lxml~=2023.10",
@@ -117,19 +116,38 @@ mypkg = ["*.txt", "*.md", "*.rst"]
 
 [tool.setuptools_scm]
 
+[tool.ruff]
+exclude = [
+    "notebooks",
+    "integrations",
+    "scripts",
+    "data",
+    "docs",
+    "helm",
+]
+
 [tool.mypy]
 ignore_missing_imports = true
-
-[tool.pylint.messages_control]
-disable = [
-    "C",
-    "R",
-    "fixme",
-    "logging-fstring-interpolation"
+exclude = [
+    "venv",
+    "notebooks",
+    "integrations",
+    "scripts",
+    "data",
+    "docs",
+    "helm",
 ]
 
 [tool.bandit]
-skips = ["B320", "B410"]
+exclude_dirs = [
+    "venv",
+    "notebooks",
+    "integrations",
+    "scripts",
+    "data",
+    "docs",
+    "helm",
+]
 
 [tool.bandit.assert_used]
 skips = ["**/test_*.py"]

@@ -9,10 +9,7 @@ from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 # noinspection PyProtectedMember
-# pylint: disable=no-name-in-module
-from lxml.etree import _Element
-# pylint: disable=no-name-in-module
-from lxml.etree import tostring
+from lxml.etree import _Element, tostring  # nosec: B410
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 

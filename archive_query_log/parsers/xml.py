@@ -3,11 +3,9 @@ from warnings import warn
 
 from cssselect import GenericTranslator
 from cssselect.parser import parse as cssselect_parse
-# pylint: disable=no-name-in-module
-from lxml.etree import parse as etree_parse, XMLParser, HTMLParser
+from lxml.etree import parse as etree_parse, XMLParser, HTMLParser  # nosec: B410
 # noinspection PyProtectedMember
-# pylint: disable=no-name-in-module
-from lxml.etree import _ElementTree, _Element
+from lxml.etree import _ElementTree, _Element  # nosec: B410
 from warcio.recordloader import ArcWarcRecord
 
 XmlParserType = Literal[
@@ -30,7 +28,7 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
     else:
         warn(UserWarning(f"Cannot find XML parser for MIME type: {mime_type}"))
         return None
-    return etree_parse(
+    return etree_parse(  # nosec: B320
         source=record.content_stream(),
         parser=parser,
     )
