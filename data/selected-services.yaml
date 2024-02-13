@@ -7819,6 +7819,12 @@
     results_selector: table.search-result-table tr.rowclick
     url_selector: a.search-result-title
     title_selector: a.search-result-title
+  - url_pattern: ^https?://[^/]+/rs/s[0-9]+/[^/]+/
+    type: html_selector
+    results_selector: table.result tr[bgcolor]
+    url_selector: td.name a
+    title_selector: td.name a
+    snippet_selector: td.name span.s:last-child
   focused_url_prefixes:
   - /rs/s
 - name: microcenter

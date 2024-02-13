@@ -36,7 +36,6 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
     def _streams(self) -> Iterator[tuple[Path, GzipFile]]:
         files = self.path.glob("*.warc.gz")
         for file in files:
-            print(file)
             with gzip_open(file, "rb") as stream:
                 yield file, stream
 
@@ -74,7 +73,6 @@ class ArchivedRawSerps(Sized, Iterable[ArchivedRawSerp]):
         encoding = encoding.split(";")[-1].split("=")[-1].strip().lower()
         if encoding == "" or "/" in encoding:
             encoding = "utf8"
-        print(encoding)
         return ArchivedRawSerp(
             url=archived_serp_url.url,
             timestamp=archived_serp_url.timestamp,
