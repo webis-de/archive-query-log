@@ -2016,6 +2016,11 @@
     results_selector: table.findList tr.findResult
     url_selector: td.result_text a
     title_selector: td.result_text a
+  - url_pattern: ^https?://[^/]+/find\?
+    type: html_selector
+    results_selector: div#main table tr:has(td:not(.media_strip_header) a:not(:has(img)))
+    url_selector: td:not(.media_strip_header) a:not(:has(img))
+    title_selector: td:not(.media_strip_header) a:not(:has(img))
   focused_url_prefixes:
   - /find
 - name: livejasmin
