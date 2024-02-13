@@ -5,7 +5,7 @@ from functools import cached_property
 from gzip import GzipFile
 from json import loads, JSONDecodeError
 from pathlib import Path
-from shelve import open as shelf_open, Shelf  # nosec: 502
+from shelve import open as shelf_open, Shelf  # nosec: B403
 from shutil import copyfileobj
 from typing import Iterator, TypeVar, Generic, Type, final, \
     ContextManager, Iterable
@@ -363,7 +363,7 @@ class _Index(
 
     @cached_property
     def _index_shelve(self) -> Shelf:
-        return shelf_open(str(self._index_shelf_path), "r")  # nosec: 502
+        return shelf_open(str(self._index_shelf_path), "r")  # nosec: B301
 
     def index(self) -> None:
         self._meta_index.index()

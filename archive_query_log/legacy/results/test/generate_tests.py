@@ -65,8 +65,9 @@ def main():
                 query_urls[query_url["search_provider_name"]].append(query_url)
 
     print(f"Found {sum(len(urls) for urls in query_urls.values())} SERPs.")
+    random = Random(0)  # nosec: B311
     query_urls = {
-        service_name: Random(0).sample(
+        service_name: random.sample(
             query_urls[service_name], min(
                 NUM_QUERIES_PER_SERVICE,
                 len(query_urls[service_name]),
@@ -110,7 +111,7 @@ def main():
                 )
                 response = get(
                     wayback_raw_url,
-                    timeout=60 * 4,  # nosec: 400
+                    timeout=60 * 4,  # nosec: B113
                 )
                 response.raise_for_status()
 

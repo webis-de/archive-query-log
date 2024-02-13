@@ -58,7 +58,7 @@ class AlexaTop1MArchivedUrls(Sized, Iterable[ArchivedUrl]):
                 ("showNumPages", True),
             ],
             # 10 minutes
-            timeout=10 * 60  # nosec: 400
+            timeout=10 * 60  # nosec: B113
         )
         return int(num_pages_response.text)
 
