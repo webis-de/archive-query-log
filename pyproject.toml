@@ -118,6 +118,8 @@ mypkg = ["*.txt", "*.md", "*.rst"]
 
 [tool.ruff]
 exclude = [
+    "build",
+    "venv",
     "notebooks",
     "integrations",
     "scripts",
@@ -129,6 +131,7 @@ exclude = [
 [tool.mypy]
 ignore_missing_imports = true
 exclude = [
+    "build",
     "venv",
     "notebooks",
     "integrations",
@@ -140,6 +143,7 @@ exclude = [
 
 [tool.bandit]
 exclude_dirs = [
+    "build",
     "venv",
     "notebooks",
     "integrations",
