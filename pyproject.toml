@@ -42,7 +42,6 @@ dependencies = [
     "publicsuffixlist~=0.9.3",
     "pyarrow~=15.0.0",
     "pycld3~=0.22.0",
-    "pylint~=2.16",
     "pyspark~=3.5",
     "python-slugify~=8.0",
     "pyyaml~=6.0",
@@ -61,7 +60,7 @@ dynamic = ["version"]
 tests = [
     "approvaltests~=11.0",
     "flake8~=7.0",
-    "pylint~=2.12",
+    "pylint~=3.1",
     "pytest~=8.0",
     "pytest-cov~=4.0",
 ]
