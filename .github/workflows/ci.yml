@@ -68,7 +68,7 @@ jobs:
       - name: "🧪 Test Python code"
         run: pytest --cov=./ --cov-report=xml --capture=no archive_query_log/
       - name: "📤 Upload coverage to Codecov"
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
   release:
