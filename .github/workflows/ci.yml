@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Check-out"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: "🧰 Install Python"
         uses: actions/setup-python@v4
         with:
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Check-out"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: "🧰 Install Python"
         uses: actions/setup-python@v4
         with:
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Check-out"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: "🧰 Install Python"
         uses: actions/setup-python@v4
         with:
@@ -81,7 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "📥 Check-out"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: "🏷️ Get version tag"
         id: get-version
         run: echo ::set-output name=tag::${GITHUB_REF/refs\/tags\//}
