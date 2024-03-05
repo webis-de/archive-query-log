@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-monitoring
+  namespace: {{ $.Release.Namespace }}
+  annotations:
+    checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
+    checksum/secret: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ $.Release.Name }}-monitoring
+  replicas: {{ $.Values.monitoring.replicas }}
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      labels:
+        app: {{ $.Release.Name }}-monitoring
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: {{ $.Release.Name }}
+        image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+        command:
+        - /venv/bin/python
+        - -m
+        - archive_query_log
+        - -f
+        - /workspace/config.config-map.yml
+        - -f
+        - /workspace/config.secret.yml
+        - monitoring
+        - run
+        - --host
+        - 0.0.0.0
+        - --port
+        - "5000"
+        ports:
+        - name: http
+          containerPort: 5000
+        volumeMounts:
+        - name: {{ $.Release.Name }}-config-map
+          mountPath: /workspace/config.config-map.yml
+          readOnly: true
+          subPath: config.yml
+        - name: {{ $.Release.Name }}-secret
+          mountPath: /workspace/config.secret.yml
+          readOnly: true
+          subPath: config.yml
+      volumes:
+      - name: {{ $.Release.Name }}-config-map
+        configMap:
+          name: {{ $.Release.Name }}-config-map
+      - name: {{ $.Release.Name }}-secret
+        secret:
+          secretName: {{ $.Release.Name }}-secret

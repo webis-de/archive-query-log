@@ -498,5 +498,5 @@ cython_debug/
 
 # Custom exclusions
 *.lop
-reimer*.pdf
-cd-cover.pdf
+.idea/kubernetes-settings.xml
+config.override.yml

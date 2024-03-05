@@ -1,0 +1,54 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ $.Release.Name }}-captures-fetch
+  namespace: {{ $.Release.Namespace }}
+  annotations:
+    checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
+    checksum/secret: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
+spec:
+  suspend: {{ not $.Values.capturesFetch.enabled }}
+  schedule: "{{ $.Values.capturesFetch.schedule }}"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      completions: {{ $.Values.capturesFetch.completions }}
+      parallelism: {{ $.Values.capturesFetch.parallelism }}
+      backoffLimit: {{ $.Values.capturesFetch.backoffLimit }}
+      ttlSecondsAfterFinished: {{ mul 60 $.Values.capturesFetch.ttlMinutesAfterFinished }}
+      template:
+        spec:
+          containers:
+          - name: {{ $.Release.Name }}-captures-fetch
+            image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+            imagePullPolicy: IfNotPresent
+            resources:
+              requests:
+                memory: 4Gi
+            command:
+            - /venv/bin/python
+            - -m
+            - archive_query_log
+            - -f
+            - /workspace/config.config-map.yml
+            - -f
+            - /workspace/config.secret.yml
+            - captures
+            - fetch
+            volumeMounts:
+            - name: {{ $.Release.Name }}-config-map
+              mountPath: /workspace/config.config-map.yml
+              readOnly: true
+              subPath: config.yml
+            - name: {{ $.Release.Name }}-secret
+              mountPath: /workspace/config.secret.yml
+              readOnly: true
+              subPath: config.yml
+          restartPolicy: OnFailure
+          volumes:
+          - name: {{ $.Release.Name }}-config-map
+            configMap:
+              name: {{ $.Release.Name }}-config-map
+          - name: {{ $.Release.Name }}-secret
+            secret:
+              secretName: {{ $.Release.Name }}-secret
