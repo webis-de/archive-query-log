@@ -2,7 +2,8 @@ FROM python:3.10-slim
 
 RUN \
     --mount=type=cache,target=/var/cache/apt \
-    apt-get install -y git build-essential zlib1g-dev protobuf-compiler
+    apt-get -y update &&
+    apt-get -y install git build-essential zlib1g-dev protobuf-compiler
 
 RUN \
     --mount=type=cache,target=/root/.cache/pip \
