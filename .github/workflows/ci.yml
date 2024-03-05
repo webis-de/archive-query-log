@@ -1,173 +1,173 @@
-name: "CI"
+name: CI
 
 on:
   push:
 
 jobs:
   python-build:
-    name: "🏗️ Build Python wheels"
+    name: 🏗️ Build Python wheels
     strategy:
       matrix:
         python:
-        - "3.10"
+        - '3.10'
     runs-on: ubuntu-latest
     steps:
-    - name: "📥 Check-out"
+    - name: 📥 Check-out
       uses: actions/checkout@v3
-    - name: "🧰 Install Protoc"
+    - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
-    - name: "🧰 Install Python"
+    - name: 🧰 Install Python
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: "🧰 Install dependencies"
+    - name: 🧰 Install dependencies
       run: pip install build twine
-    - name: "🏗️ Build Python wheels"
+    - name: 🏗️ Build Python wheels
       run: python -m build
-    - name: "🧪 Check package bundles"
+    - name: 🧪 Check package bundles
       run: twine check dist/*
-    - name: "📤 Upload Python wheels"
+    - name: 📤 Upload Python wheels
       uses: actions/upload-artifact@v3
       if: matrix.python == '3.10'
       with:
         name: wheels
         path: dist
   python-code-check:
-    name: "🔍 Check Python code"
+    name: 🔍 Check Python code
     strategy:
       matrix:
         python:
-        - "3.10"
+        - '3.10'
     runs-on: ubuntu-latest
     steps:
-    - name: "📥 Check-out"
+    - name: 📥 Check-out
       uses: actions/checkout@v3
-    - name: "🧰 Install Protoc"
+    - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
-    - name: "🧰 Install Python"
+    - name: 🧰 Install Python
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: "🧰 Install dependencies"
+    - name: 🧰 Install dependencies
       run: pip install .[tests]
-    - name: "🔍 Check Python code"
+    - name: 🔍 Check Python code
       run: ruff .
   python-typing:
-    name: "🔍 Check Python static typing"
+    name: 🔍 Check Python static typing
     strategy:
       matrix:
         python:
-        - "3.10"
+        - '3.10'
     runs-on: ubuntu-latest
     steps:
-    - name: "📥 Check-out"
+    - name: 📥 Check-out
       uses: actions/checkout@v3
-    - name: "🧰 Install Protoc"
+    - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
-    - name: "🧰 Install Python"
+    - name: 🧰 Install Python
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: "🧰 Install dependencies"
+    - name: 🧰 Install dependencies
       run: pip install .[tests]
-    - name: "🔍 Check Python static typing"
+    - name: 🔍 Check Python static typing
       run: mypy .
   python-security:
-    name: "🔍 Check Python code security"
+    name: 🔍 Check Python code security
     strategy:
       matrix:
         python:
-        - "3.10"
+        - '3.10'
     runs-on: ubuntu-latest
     steps:
-    - name: "📥 Check-out"
+    - name: 📥 Check-out
       uses: actions/checkout@v3
-    - name: "🧰 Install Protoc"
+    - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
-    - name: "🧰 Install Python"
+    - name: 🧰 Install Python
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: "🧰 Install dependencies"
+    - name: 🧰 Install dependencies
       run: pip install .[tests]
-    - name: "🔍 Check Python code security"
+    - name: 🔍 Check Python code security
       run: bandit -c pyproject.toml -r .
-#  python-test:
-#    name: "🧪 Test Python code"
-#    strategy:
-#      matrix:
-#        python:
-#        - "3.10"
-#    runs-on: ubuntu-latest
-#    steps:
-#    - name: "📥 Check-out"
-#      uses: actions/checkout@v3
-#    - name: "🧰 Install Protoc"
-#      run: sudo apt install protobuf-compiler
-#    - name: "🧰 Install Python"
-#      uses: actions/setup-python@v4
-#      with:
-#        python-version: ${{ matrix.python }}
-#        cache: pip
-#        cache-dependency-path: pyproject.toml
-#    - name: "🧰 Install dependencies"
-#      run: pip install .[tests]
-#    - name: "🧪 Test Python code"
-#      run: pytest --cov --cov-report=xml archive_query_log
-#    - name: "📤 Upload coverage to Codecov"
-#      uses: codecov/codecov-action@v3
-#      if: matrix.python == '3.10'
-#      with:
-#        fail_ci_if_error: true
-#        token: ${{ secrets.CODECOV_TOKEN }}
-  docker-build:
-    name: "🏗️ Build Docker image"
+  python-test:
+    name: 🧪 Test Python code
+    strategy:
+      matrix:
+        python:
+        - '3.10'
     runs-on: ubuntu-latest
     steps:
-    - name: "📥 Check-out"
+    - name: 📥 Check-out
       uses: actions/checkout@v3
-    - name: "🧰 Set up QEMU"
+    - name: 🧰 Install Protoc
+      run: sudo apt install protobuf-compiler
+    - name: 🧰 Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python }}
+        cache: pip
+        cache-dependency-path: pyproject.toml
+    - name: 🧰 Install dependencies
+      run: pip install .[tests]
+    - name: 🧪 Test Python code
+      run: pytest --cov --cov-report=xml archive_query_log
+    - name: 📤 Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      if: matrix.python == '3.10'
+      with:
+        fail_ci_if_error: true
+        token: ${{ secrets.CODECOV_TOKEN }}
+  docker-build:
+    name: 🏗️ Build Docker image
+    runs-on: ubuntu-latest
+    steps:
+    - name: 📥 Check-out
+      uses: actions/checkout@v3
+    - name: 🧰 Set up QEMU
       uses: docker/setup-qemu-action@v2
-    - name: "🧰 Set up Docker Buildx"
+    - name: 🧰 Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
-    - name: "🏗️ Build Docker image"
+    - name: 🏗️ Build Docker image
       uses: docker/build-push-action@v4
       with:
         context: .
         push: false
   python-publish:
-    name: "🚀 Publish Python wheels"
+    name: 🚀 Publish Python wheels
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
     needs:
     - python-build
     - python-code-check
     - python-typing
     - python-security
-#    - python-test
+    - python-test
     - docker-build
     runs-on: ubuntu-latest
     permissions:
       id-token: write
     steps:
-    - name: "📥 Check-out"
+    - name: 📥 Check-out
       uses: actions/checkout@v3
-    - name: "📥 Download Python wheels"
+    - name: 📥 Download Python wheels
       uses: actions/download-artifact@v3
       with:
         name: wheels
         path: dist
-    - name: "🚀 Publish Python wheels"
+    - name: 🚀 Publish Python wheels
       uses: pypa/gh-action-pypi-publish@release/v1
   docker-publish:
-    name: "🚀 Publish Docker image"
+    name: 🚀 Publish Docker image
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
     permissions:
       packages: write
@@ -176,37 +176,29 @@ jobs:
     - python-code-check
     - python-typing
     - python-security
-#    - python-test
+    - python-test
     - docker-build
     runs-on: ubuntu-latest
     steps:
-    - name: "📥 Check-out"
+    - name: 📥 Check-out
       uses: actions/checkout@v3
-    - name: "🧰 Set up QEMU"
+    - name: 🧰 Set up QEMU
       uses: docker/setup-qemu-action@v2
-    - name: "🧰 Set up Docker Buildx"
+    - name: 🧰 Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
-    #- name: "🔑 Login to Docker Hub"
-    #  uses: docker/login-action@v2
-    #  with:
-    #    username: ${{ secrets.DOCKERHUB_USERNAME }}
-    #    password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: "🔑 Login to GitHub Packages"
+    - name: 🔑 Login to GitHub Packages
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    - name: "ℹ️ Extract image metadata"
+    - name: ℹ️ Extract image metadata
       id: meta
       uses: docker/metadata-action@v4
       with:
-        #images: |
-        #  webis/archive-query-log
-        #  ghcr.io/${{ github.repository }}
         images: |
           ghcr.io/${{ github.repository }}
-    - name: "🚀 Build and push image"
+    - name: 🚀 Build and push image
       uses: docker/build-push-action@v4
       with:
         context: .
@@ -214,27 +206,27 @@ jobs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
   github-release:
-    name: "🚀 Create GitHub release"
+    name: 🚀 Create GitHub release
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
     needs:
     - python-build
     - python-code-check
     - python-typing
     - python-security
-#    - python-test
+    - python-test
     - docker-build
     permissions:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - name: "📥 Check-out"
+    - name: 📥 Check-out
       uses: actions/checkout@v3
-    - name: "📥 Download Python wheels"
+    - name: 📥 Download Python wheels
       uses: actions/download-artifact@v3
       with:
         name: wheels
         path: dist
-    - name: "🚀 Create GitHub release"
+    - name: 🚀 Create GitHub release
       uses: softprops/action-gh-release@v1
       with:
         name: Release ${{ github.ref_name }}
