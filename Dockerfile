@@ -1,17 +1,8 @@
-FROM ubuntu:22.04
+FROM python:3.10-slim
 
-ENV DEBIAN_FRONTEND=noninteractive
 RUN \
     --mount=type=cache,target=/var/cache/apt \
-    apt-get update -y && \
-    apt-get upgrade -y
-RUN \
-    --mount=type=cache,target=/var/cache/apt \
-    apt-get install -y software-properties-common && \
-    add-apt-repository -y ppa:deadsnakes/ppa
-RUN \
-    --mount=type=cache,target=/var/cache/apt \
-    apt-get install -y python3.10 python3.10-dev python3.10-venv git build-essential zlib1g-dev protobuf-compiler
+    apt-get install -y git build-essential zlib1g-dev protobuf-compiler
 
 RUN \
     --mount=type=cache,target=/root/.cache/pip \
