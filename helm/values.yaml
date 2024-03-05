@@ -1,0 +1,94 @@
+image: ghcr.io/webis-de/archive-query-log
+
+sourcesBuild:
+  enabled: true
+  schedule: "0 6 * * 2,4"
+  completions: 10
+  parallelism: 10
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 30
+
+capturesFetch:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 15
+  parallelism: 15
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+capturesImportAql22:
+  enabled: false
+  schedule: "0 6 * * 3"
+  dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
+  completions: 729  # The number of search providers.
+  parallelism: 10
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 30
+
+serpsParseUrlQuery:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 15
+  parallelism: 15
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseUrlPage:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 5
+  parallelism: 5
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseUrlOffset:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 5
+  parallelism: 5
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsDownloadWarc:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 20
+  parallelism: 20
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseWarcQuery:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 5
+  parallelism: 5
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseWarcSnippets:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 5
+  parallelism: 5
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+monitoring:
+  ingressClassName: nginx
+  host: aql-monitoring.srv.webis.de
+  path: /
+  replicas: 1
+  forceSslRedirect: true
+
+elasticsearch:
+  host: elasticsearch.srv.webis.de
+  port: 9200
+  username: null # Override with `--set elasticsearch.username=EXAMPLE` Helm option.
+  password: null # Override with `--set elasticsearch.password=EXAMPLE` Helm option.
+
+
+s3:
+  endpoint_url: https://s3.dw.webis.de
+  bucket_name: archive-query-log
+  access_key: null # Override with `--set s3.access_key=EXAMPLE` Helm option.
+  secret_key: null # Override with `--set s3.secret_key=EXAMPLE` Helm option.

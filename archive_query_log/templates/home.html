@@ -1,0 +1,146 @@
+<!doctype html>
+<head>
+    <title>Archive Query Log</title>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        :root {
+            --accent: rgb(0, 35, 80);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --accent: rgba(0, 129, 152, 1);
+            }
+        }
+
+        body {
+            grid-template-columns: 1fr min(75rem, 90%) 1fr;
+        }
+
+        figure {
+            width: 100%;
+            text-align: center;
+        }
+
+        figure table {
+            display: inline-block;
+        }
+
+        table progress {
+            max-width: 5rem;
+            margin-bottom: 0;
+        }
+    </style>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+</head>
+<body>
+<header>
+    <h1>Archive Query Log</h1>
+    <p>The Archive Query Log monitoring interface.</p>
+    <nav>
+        <a href="/">Home</a>
+        <a href="https://github.com/webis-de/archive-query-log" target="_blank">GitHub</a>
+        <a href="https://github.com/webis-de/archive-query-log" target="_blank">TIRA</a>
+        <a href="https://webis.de/publications.html?q=archive#reimer_2023">Paper</a>
+        <a href="https://webis.de/" target="_blank">Webis</a>
+    </nav>
+</header>
+<main>
+    <section>
+        Monitor the crawling and parsing of the Archive Query Log.
+        Directly go to the detailed <a href="#statistics">statistics</a> or check the <a href="#progress">progress</a>.
+    </section>
+    <section id="statistics">
+        <h2>Statistics</h2>
+        <figure>
+            <table>
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Count</th>
+                    <th>Size</th>
+                    <th>Last modified</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for statistics in statistics_list %}
+                    <tr>
+                        <td>{{ statistics.name }}</td>
+                        <td style="font-size: smaller">{% if statistics.description %}{{ statistics.description }}{% else %}—{% endif %}</td>
+                        <td style="text-align: right">{{ "{:,.0f}".format(statistics.total) }}</td>
+                        <td style="text-align: right">
+                            {% if statistics.disk_size %}
+                            {{ statistics.disk_size }}
+                            {% else %}
+                            —
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if statistics.last_modified %}
+                            <time datetime="{{ statistics.last_modified.isoformat() }}"
+                                  title="{{ statistics.last_modified.strftime('%c (%Z)') }}">
+                                {{ statistics.last_modified.strftime("%Y-%m-%d %H:%M:%S") }}
+                            </time>
+                            {% else %}
+                            —
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </figure>
+    </section>
+    <section id="progress">
+        <h2>Progress</h2>
+        <figure>
+            <table>
+                <thead>
+                <tr>
+                    <th>Input</th>
+                    <th>Output</th>
+                    <th>Description</th>
+                    <th>Unprocessed</th>
+                    <th>Processed</th>
+                    <th>Progress</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for progress in progress_list %}
+                    <tr>
+                        <td>{{ progress.input_name }}</td>
+                        <td>{{ progress.output_name }}</td>
+                        <td style="font-size: smaller">{{ progress.description }}</td>
+                        <td style="text-align: right">{{ "{:,.0f}".format(progress.total - progress.current) }}</td>
+                        <td style="text-align: right">{{ "{:,.0f}".format(progress.current) }}</td>
+                        <td>
+                            <progress max="{{ progress.total }}" value="{{ progress.current }}">
+                                {{ "{:,.0f}".format(progress.current) }}/{{ "{:,.0f}".format(progress.total) }}
+                            </progress>
+                            {% if progress.total != 0 %}
+                            {{ "{:.0f}".format(progress.current / progress.total * 100) }}%
+                            {% else %}
+                            0%
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </figure>
+    </section>
+</main>
+<footer>
+    <p>
+        © {{ year }} Webis Group
+        •
+        <a href="https://webis.de/people.html" target="_blank">Contact</a>
+        •
+        <a href="https://webis.de/legal.html" target="_blank">Imprint</a>
+        •
+        <a href="https://webis.de/legal.html" target="_blank">Privacy</a>
+    </p>
+</footer>
+</body>

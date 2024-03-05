@@ -1,0 +1,55 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ $.Release.Name }}-serps-parse-url-page
+  namespace: {{ $.Release.Namespace }}
+  annotations:
+    checksum/config-map: {{ include (print $.Template.BasePath "/archive-query-log-config-map.yml") . | sha256sum }}
+    checksum/secret: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
+spec:
+  suspend: {{ not $.Values.serpsParseUrlPage.enabled }}
+  schedule: "{{ $.Values.serpsParseUrlPage.schedule }}"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      completions: {{ $.Values.serpsParseUrlPage.completions }}
+      parallelism: {{ $.Values.serpsParseUrlPage.parallelism }}
+      backoffLimit: {{ $.Values.serpsParseUrlPage.backoffLimit }}
+      ttlSecondsAfterFinished: {{ mul 60 $.Values.serpsParseUrlPage.ttlMinutesAfterFinished }}
+      template:
+        spec:
+          containers:
+          - name: {{ $.Release.Name }}-serps-parse-url-page
+            image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+            imagePullPolicy: IfNotPresent
+            resources:
+              requests:
+                memory: 4Gi
+            command:
+            - /venv/bin/python
+            - -m
+            - archive_query_log
+            - -f
+            - /workspace/config.config-map.yml
+            - -f
+            - /workspace/config.secret.yml
+            - serps
+            - parse
+            - url-page
+            volumeMounts:
+            - name: {{ $.Release.Name }}-config-map
+              mountPath: /workspace/config.config-map.yml
+              readOnly: true
+              subPath: config.yml
+            - name: {{ $.Release.Name }}-secret
+              mountPath: /workspace/config.secret.yml
+              readOnly: true
+              subPath: config.yml
+          restartPolicy: OnFailure
+          volumes:
+          - name: {{ $.Release.Name }}-config-map
+            configMap:
+              name: {{ $.Release.Name }}-config-map
+          - name: {{ $.Release.Name }}-secret
+            secret:
+              secretName: {{ $.Release.Name }}-secret

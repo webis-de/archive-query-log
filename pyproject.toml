@@ -1,21 +1,23 @@
 [project]
 name = "archive-query-log"
 authors = [
-    {name = "Jan Heinrich Reimer", email = "heinrich.reimer@uni-jena.de"},
-    {name = "Sebastian Schmidt", email = "s.schmidt@uni-leipzig.de"},
-    {name = "Maik Fröbe", email = "maik.froebe@uni-jena.de"},
-    {name = "Lukas Gienapp", email = "lukas.gienapp@uni-leipzig.de"},
-    {name = "Harrisen Scells", email = "harry.scells@uni-leipzig.de"},
-    {name = "Benno Stein", email = "benno.stein@uni-weimar.de"},
-    {name = "Matthias Hagen", email = "matthias.hagen@uni-jena.de"},
-    {name = "Martin Potthast", email = "martin.potthast@uni-leipzig.de"},
+    { name = "Jan Heinrich Reimer", email = "heinrich.reimer@uni-jena.de" },
+    { name = "Sebastian Schmidt", email = "s.schmidt@uni-leipzig.de" },
+    { name = "Maik Fröbe", email = "maik.froebe@uni-jena.de" },
+    { name = "Lukas Gienapp", email = "lukas.gienapp@uni-leipzig.de" },
+    { name = "Harrisen Scells", email = "harry.scells@uni-leipzig.de" },
+    { name = "Benno Stein", email = "benno.stein@uni-weimar.de" },
+    { name = "Matthias Hagen", email = "matthias.hagen@uni-jena.de" },
+    { name = "Martin Potthast", email = "martin.potthast@uni-leipzig.de" },
 ]
-description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives"
+description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives."
+readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Operating System :: OS Independent",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering",
@@ -24,56 +26,86 @@ dependencies = [
     "aiohttp~=3.8",
     "aiohttp-retry~=2.8",
     "asyncio-pool~=0.6.0",
-    "beautifulsoup4~=4.11",
+    "beautifulsoup4~=4.12",
     "bleach~=6.0",
+    "boto3~=1.28",
+    "certifi~=2023.7",
     "click~=8.1",
+    "cssselect~=1.2",
     "dataclasses-json~=0.6.0",
-    "diskcache~=5.4",
-    "fasttext-langdetect~=1.0",
-    "fastwarc~=0.14.0",
-    "flake8~=7.0",
-    "fasttext @ git+https://github.com/cfculhane/fastText.git@4a44513",
-    "joblib~=1.2",
-    "jupyter~=1.0",
-    "marshmallow~=3.19",
-    "matplotlib~=3.7",
+    "diskcache~=5.6",
+    "elasticsearch~=7.0",
+    "elasticsearch-dsl~=7.0",
+    "expiringdict~=1.2",
+    "flasgger~=0.9.7",
+    "flask~=2.3",
+    "flask-restful~=0.3.10",
+    "importlib-metadata~=6.0",
+    "joblib~=1.3",
+    "lxml~=4.9",
+    "marshmallow~=3.20",
+    "mergedeep~=1.3",
+    "more-itertools~=10.1",
     "pandas~=2.0",
-    "pex~=2.1",
-    "publicsuffixlist~=0.9.3",
-    "pyarrow~=15.0.0",
+    "publicsuffixlist~=0.10.0",
     "pycld3~=0.22.0",
-    "pyspark~=3.5",
     "python-slugify~=8.0",
+    "python-whois~=0.8.0",
     "pyyaml~=6.0",
-    "ranx~=0.3.6",
-    "requests~=2.28",
+    "ranx~=0.3.16",
+    "requests~=2.31",
     "requests-html~=0.10.0",
-    "seaborn~=0.13.0",
-    "tqdm~=4.64",
+    "requests-ratelimiter~=0.4.0",
+    "resiliparse~=0.14.5",
+    "tqdm~=4.66",
     "unidecode~=1.3",
-    "urllib3~=2.1",
+    "urllib3~=1.26",
     "warcio~=1.7",
+    "warc-s3~=0.1.1",
+    "web-archive-api~=0.1.7",
 ]
 dynamic = ["version"]
 
 [project.optional-dependencies]
 tests = [
     "approvaltests~=11.0",
-    "flake8~=7.0",
-    "pylint~=3.1",
+    "bandit[toml]~=1.7",
+    "boto3-stubs[s3]~=1.28",
+    "mypy~=1.5",
+    "pandas-stubs~=2.0",
     "pytest~=8.0",
     "pytest-cov~=4.0",
+    "ruff~=0.2.1",
+    "types-beautifulsoup4~=4.12",
+    "types-bleach~=6.0",
+    "types-lxml~=2023.10",
+    "types-python-dateutil~=2.8",
+    "types-python-slugify~=8.0",
+    "types-pyyaml~=6.0",
+    "types-requests~=2.31",
+    "types-tqdm~=4.66",
+]
+examples = [
+    "jupyter~=1.0",
+    "matplotlib~=3.7",
+    "seaborn~=0.13.0",
 ]
 
+[project.urls]
+"Homepage" = "https://github.com/webis-de/archive-query-log"
+"Bug Tracker" = "https://github.com/webis-de/archive-query-log/issues"
+
+[project.scripts]
+archive_query_log = "archive_query_log.cli:cli"
+archive-query-log = "archive_query_log.cli:cli"
+aql = "archive_query_log.cli:cli"
+
 [build-system]
-requires = ["setuptools>=50", "wheel"]
+requires = ["setuptools>=50", "setuptools_scm[toml]>=6.2", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 include-package-data = true
-
-[tool.setuptools.dynamic]
-version = {attr = "archive_query_log.__version__"}
 
 [tool.setuptools.packages.find]
 include = ["archive_query_log"]
@@ -82,8 +114,50 @@ namespaces = false
 [tool.setuptools.package-data]
 mypkg = ["*.txt", "*.md", "*.rst"]
 
+[tool.setuptools_scm]
+
+[tool.ruff]
+exclude = [
+    "build",
+    "venv",
+    "notebooks",
+    "integrations",
+    "scripts",
+    "data",
+    "docs",
+    "helm",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+exclude = [
+    "build",
+    "venv",
+    "notebooks",
+    "integrations",
+    "scripts",
+    "data",
+    "docs",
+    "helm",
+]
+
+[tool.bandit]
+exclude_dirs = [
+    "build",
+    "venv",
+    "notebooks",
+    "integrations",
+    "scripts",
+    "data",
+    "docs",
+    "helm",
+]
+
+[tool.bandit.assert_used]
+skips = ["**/test_*.py"]
+
 [tool.pytest.ini_options]
 log_cli = "True"
 filterwarnings = [
-    'ignore::DeprecationWarning',
+    "ignore::marshmallow.warnings.RemovedInMarshmallow4Warning",
 ]

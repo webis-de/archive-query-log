@@ -1,0 +1,8 @@
+es:
+  host: elasticsearch.srv.webis.de
+  port: 9200
+  username: null
+  password: null
+s3:
+  endpoint_url: https://s3.dw.webis.de
+  bucket_name: archive-query-log

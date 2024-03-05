@@ -1,0 +1,51 @@
+Installed {{ $.Chart.Name }} (release name: {{ $.Release.Name }}{{ with $.Values.namespace }}, namespace: {{ . }}{{ end }}).
+
+Accessing Elasticsearch {{ $.Values.elasticsearch.host }}:{{ $.Values.elasticsearch.port }} (authenticating with user {{ $.Values.elasticsearch.username }}).
+
+Started cron jobs:
+{{- if $.Values.sourcesBuild.enabled }}
+- Build sources:
+  Scheduled at {{ $.Values.sourcesBuild.schedule }}.
+  Running {{ $.Values.sourcesBuild.completions }}x (parallelism: {{ $.Values.sourcesBuild.parallelism }}, backoff limit: {{ $.Values.sourcesBuild.backoffLimit }}).
+{{- end }}
+{{- if $.Values.capturesFetch.enabled }}
+- Fetch captures:
+  Scheduled at {{ $.Values.capturesFetch.schedule }}.
+  Running {{ $.Values.capturesFetch.completions }}x (parallelism: {{ $.Values.capturesFetch.parallelism }}, backoff limit: {{ $.Values.capturesFetch.backoffLimit }}).
+{{- end }}
+{{- if $.Values.capturesImportAql22.enabled }}
+- Import captures from AQL-22:
+  Running {{ $.Values.capturesImportAql22.completions }}x (search providers: {{ $.Values.capturesImportAql22.completions }}, parallelism: {{ $.Values.capturesImportAql22.parallelism }}, backoff limit: {{ $.Values.capturesImportAql22.backoffLimit }}).
+{{- end }}
+{{- if $.Values.serpsParseUrlQuery.enabled }}
+- Parse SERP URL queries:
+  Scheduled at {{ $.Values.serpsParseUrlQuery.schedule }}.
+  Running {{ $.Values.serpsParseUrlQuery.completions }}x (parallelism: {{ $.Values.serpsParseUrlQuery.parallelism }}, backoff limit: {{ $.Values.serpsParseUrlQuery.backoffLimit }}).
+{{- end }}
+{{- if $.Values.serpsParseUrlPage.enabled }}
+- Parse SERP URL pages:
+  Scheduled at {{ $.Values.serpsParseUrlPage.schedule }}.
+  Running {{ $.Values.serpsParseUrlPage.completions }}x (parallelism: {{ $.Values.serpsParseUrlPage.parallelism }}, backoff limit: {{ $.Values.serpsParseUrlPage.backoffLimit }}).
+{{- end }}
+{{- if $.Values.serpsParseUrlOffset.enabled }}
+- Parse SERP URL offsets:
+  Scheduled at {{ $.Values.serpsParseUrlOffset.schedule }}.
+  Running {{ $.Values.serpsParseUrlOffset.completions }}x (parallelism: {{ $.Values.serpsParseUrlOffset.parallelism }}, backoff limit: {{ $.Values.serpsParseUrlOffset.backoffLimit }}).
+{{- end }}
+{{- if $.Values.serpsDownloadWarc.enabled }}
+- Download SERP WARCs:
+  Scheduled at {{ $.Values.serpsDownloadWarc.schedule }}.
+  Running {{ $.Values.serpsDownloadWarc.completions }}x (parallelism: {{ $.Values.serpsDownloadWarc.parallelism }}, backoff limit: {{ $.Values.serpsDownloadWarc.backoffLimit }}).
+{{- end }}
+{{- if $.Values.serpsParseWarcQuery.enabled }}
+- Parse SERP WARC queries:
+  Scheduled at {{ $.Values.serpsParseWarcQuery.schedule }}.
+  Running {{ $.Values.serpsParseWarcQuery.completions }}x (parallelism: {{ $.Values.serpsParseWarcQuery.parallelism }}, backoff limit: {{ $.Values.serpsParseWarcQuery.backoffLimit }}).
+{{- end }}
+{{- if $.Values.serpsParseWarcSnippets.enabled }}
+- Parse SERP WARC queries:
+  Scheduled at {{ $.Values.serpsParseWarcSnippets.schedule }}.
+  Running {{ $.Values.serpsParseWarcSnippets.completions }}x (parallelism: {{ $.Values.serpsParseWarcSnippets.parallelism }}, backoff limit: {{ $.Values.serpsParseWarcSnippets.backoffLimit }}).
+{{- end }}
+
+Serving monitoring web interface at {{ if $.Values.monitoring.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.monitoring.host }}{{ $.Values.monitoring.path }}.

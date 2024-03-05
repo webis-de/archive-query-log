@@ -11,3 +11,4 @@ examples/**
 !examples/serps.zip
 !examples/results.jsonl
 !examples/results.zip
+cache
