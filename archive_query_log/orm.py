@@ -1,7 +1,7 @@
 from datetime import datetime
 from functools import cached_property
 from re import Pattern, compile as pattern
-from typing import Literal
+from typing import Literal, List
 
 from elasticsearch_dsl import Document, Keyword, Text, Date, RankFeature, \
     InnerDoc as InnerDocument, Object, Index, Integer, Nested, Long, Boolean
@@ -192,14 +192,12 @@ class Snippet(SnippetId):
 
 class DirectAnswerId(InnerDocument):
     id: str = Keyword()
-    rank: int = Integer()
 
 
 class DirectAnswer(DirectAnswerId):
     content: str = Text()
-    big_box: str | None = Keyword()
-    small_box: str | None = Text()
-    right_box: str | None = Text()
+    url: str | None = Keyword()
+    text: str | None = Text()
 
 
 class Serp(BaseDocument):
@@ -220,7 +218,7 @@ class Serp(BaseDocument):
     warc_query_parser: InnerParser | None = Object(InnerParser)
     warc_snippets: list[SnippetId] | None = Nested(SnippetId)
     warc_snippets_parser: InnerParser | None = Object(InnerParser)
-    warc_direct_answer: list[SnippetId] | None = Nested(SnippetId)
+    warc_direct_answer: list[DirectAnswerId] | None = Nested(DirectAnswerId)
     warc_direct_answer_parser: InnerParser | None = Object(InnerParser)
 
     # rendered_warc_location: WarcLocation | None = Object(WarcLocation)
@@ -461,9 +459,8 @@ class WarcDirectAnswerParser(BaseDocument):
     url_pattern_regex: str | None = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: WarcDirectAnswerParserType = Keyword()
-    xpath: str | None = Keyword()
+    xpaths: List[str] | None = Keyword()
     url_xpath: str | None = Keyword()
-    title_xpath: str | None = Keyword()
     text_xpath: str | None = Keyword()
 
     @cached_property
