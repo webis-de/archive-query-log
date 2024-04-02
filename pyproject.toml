@@ -90,6 +90,10 @@ examples = [
     "matplotlib~=3.7",
     "seaborn~=0.13.0",
 ]
+documentation = [
+    "mkdocs~=1.5",
+    "mkdocs-material~=9.5",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/webis-de/archive-query-log"
@@ -108,11 +112,16 @@ build-backend = "setuptools.build_meta"
 include-package-data = true
 
 [tool.setuptools.packages.find]
-include = ["archive_query_log"]
-namespaces = false
-
-[tool.setuptools.package-data]
-mypkg = ["*.txt", "*.md", "*.rst"]
+exclude = [
+    "build",
+    "venv",
+    "notebooks",
+    "integrations",
+    "scripts",
+    "data",
+    "docs",
+    "helm",
+]
 
 [tool.setuptools_scm]
 
