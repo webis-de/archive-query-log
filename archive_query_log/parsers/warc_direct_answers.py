@@ -1,6 +1,6 @@
 from functools import cache
 from itertools import chain
-from typing import Iterable, Iterator, List
+from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
 
@@ -31,14 +31,14 @@ def add_warc_direct_answer_parser(
         url_pattern_regex: str | None,
         priority: float | None,
         parser_type: WarcDirectAnswerParserType,
-        xpaths: List[str] | None,
+        xpath: str | None,
         url_xpath: str | None,
         text_xpath: str | None,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
     if parser_type == "xpath":
-        if xpaths is None:
+        if xpath is None:
             raise ValueError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
@@ -58,7 +58,7 @@ def add_warc_direct_answer_parser(
         url_pattern_regex=url_pattern_regex,
         priority=priority,
         parser_type=parser_type,
-        xpaths=xpaths,
+        xpath=xpath,
         url_xpath=url_xpath,
         text_xpath=text_xpath,
     )
@@ -79,56 +79,55 @@ def _parse_warc_direct_answer(
 
     # Parse direct answer.
     if parser.parser_type == "xpath":
-        if parser.xpaths is None:
+        if parser.xpath is None:
             raise ValueError("No XPath given.")
         with open_warc(warc_store, warc_location) as record:
             tree = parse_xml_tree(record)
         if tree is None:
             return None
 
-        for xpath in parser.xpaths:
-            elements = safe_xpath(tree, xpath, _Element)
-            if len(elements) == 0:
-                return None
+        elements = safe_xpath(tree, parser.xpath, _Element)
+        if len(elements) == 0:
+            return None
 
-            direct_answers = []
-            element: _Element
-            for i, element in enumerate(elements):
-                url: str | None = None
-                if parser.url_xpath is not None:
-                    urls = safe_xpath(element, parser.url_xpath, str)
-                    if len(urls) > 0:
-                        url = urls[0].strip()
-                        url = urljoin(capture_url, url)
-                text: str | None = None
-                if parser.text_xpath is not None:
-                    texts = safe_xpath(element, parser.text_xpath, str)
-                    if len(texts) > 0:
-                        text = texts[0].strip()
+        direct_answers = []
+        element: _Element
+        for i, element in enumerate(elements):
+            url: str | None = None
+            if parser.url_xpath is not None:
+                urls = safe_xpath(element, parser.url_xpath, str)
+                if len(urls) > 0:
+                    url = urls[0].strip()
+                    url = urljoin(capture_url, url)
+            text: str | None = None
+            if parser.text_xpath is not None:
+                texts = safe_xpath(element, parser.text_xpath, str)
+                if len(texts) > 0:
+                    text = texts[0].strip()
 
-                content: str = tostring(
-                    element,
-                    encoding=str,
-                    method="xml",
-                    pretty_print=False,
-                    with_tail=True,
-                )
-                direct_answer_id_components = (
-                    serp_id,
-                    parser.id,
-                    str(hash(content)),
-                    str(i),
-                )
-                direct_answer_id = str(uuid5(
-                    NAMESPACE_RESULT,
-                    ":".join(direct_answer_id_components),
-                ))
-                direct_answers.append(DirectAnswer(
-                    id=direct_answer_id,
-                    content=content,
-                    url=url,
-                    text=text,
-                ))
+            content: str = tostring(
+                element,
+                encoding=str,
+                method="xml",
+                pretty_print=False,
+                with_tail=True,
+            )
+            direct_answer_id_components = (
+                serp_id,
+                parser.id,
+                str(hash(content)),
+                str(i),
+            )
+            direct_answer_id = str(uuid5(
+                NAMESPACE_RESULT,
+                ":".join(direct_answer_id_components),
+            ))
+            direct_answers.append(DirectAnswer(
+                id=direct_answer_id,
+                content=content,
+                url=url,
+                text=text,
+            ))
         return direct_answers
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")

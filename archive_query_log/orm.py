@@ -1,7 +1,7 @@
 from datetime import datetime
 from functools import cached_property
 from re import Pattern, compile as pattern
-from typing import Literal, List
+from typing import Literal
 
 from elasticsearch_dsl import Document, Keyword, Text, Date, RankFeature, \
     InnerDoc as InnerDocument, Object, Index, Integer, Nested, Long, Boolean
@@ -459,7 +459,7 @@ class WarcDirectAnswerParser(BaseDocument):
     url_pattern_regex: str | None = Keyword()
     priority: float | None = RankFeature(positive_score_impact=True)
     parser_type: WarcDirectAnswerParserType = Keyword()
-    xpaths: List[str] | None = Keyword()
+    xpath: str | None = Keyword()
     url_xpath: str | None = Keyword()
     text_xpath: str | None = Keyword()
 
