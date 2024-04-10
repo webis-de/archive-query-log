@@ -411,7 +411,7 @@ def warc_direct_answers_add(
         url_xpath: str | None,
         text_xpath: str | None,
 ) -> None:
-    from archive_query_log.parsers.warc_snippets import \
+    from archive_query_log.parsers.warc_direct_answers import \
         add_warc_direct_answers_parser
     parser_type_strict: WarcDirectAnswersParserType
     if parser_type == "xpath":
