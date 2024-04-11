@@ -399,13 +399,13 @@ CHOICES_WARC_DIRECT_ANSWERS_PARSER_TYPE = [
         type=Choice(CHOICES_WARC_DIRECT_ANSWERS_PARSER_TYPE), required=True)
 @option("--xpath", type=str)
 @option("--url-xpath", type=str)
-@option("--title-xpath", type=str)
 @option("--text-xpath", type=str)
 @pass_config
 def warc_direct_answers_add(
         config: Config,
         provider_id: str | None,
         url_pattern_regex: str | None,
+        priority: float | None,
         parser_type: str,
         xpath: str | None,
         url_xpath: str | None,
@@ -425,6 +425,7 @@ def warc_direct_answers_add(
         config=config,
         provider_id=provider_id,
         url_pattern_regex=url_pattern_regex,
+        priority=priority,
         parser_type=parser_type_strict,
         xpath=xpath,
         url_xpath=url_xpath,

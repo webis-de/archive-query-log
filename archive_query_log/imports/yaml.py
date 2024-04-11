@@ -500,6 +500,7 @@ def import_warc_direct_answers_parsers(config: Config, services_path: Path) -> N
             continue
 
         results_parsers = service["results_parsers"]
+        num_results_parsers = len(results_parsers)
 
         providers = (
             Provider.search(using=config.es.client)
@@ -508,7 +509,7 @@ def import_warc_direct_answers_parsers(config: Config, services_path: Path) -> N
         )
         providers = safe_iter_scan(providers)
         for provider in providers:
-            for results_parser in enumerate(results_parsers):
+            for k, results_parser in enumerate(results_parsers):
                 if results_parser["type"] != "html_selector":
                     continue
                 results_selector = results_parser["results_selector"]
@@ -546,6 +547,7 @@ def import_warc_direct_answers_parsers(config: Config, services_path: Path) -> N
                     config=config,
                     provider_id=provider.meta.id,
                     url_pattern_regex=results_parser.get("url_pattern"),
+                    priority=num_results_parsers - k,
                     parser_type="xpath",
                     xpath=results_xpath,
                     url_xpath=url_xpath,
