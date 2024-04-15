@@ -433,14 +433,6 @@ def warc_direct_answers_add(
     )
 
 
-@warc_direct_answers.command("import")
-@option("-s", "--services-file", "services_path",
-        type=PathType(path_type=Path, exists=True, file_okay=True,
-                      dir_okay=False, readable=True, resolve_path=True,
-                      allow_dash=False),
-        default=Path("data") / "selected-services.yaml")
-
-
 @parsers.group()
 def warc_main_content() -> None:
     pass

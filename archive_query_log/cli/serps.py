@@ -53,6 +53,14 @@ def warc_snippets(config: Config) -> None:
     parse_serps_warc_snippets(config)
 
 
+@parse.command()
+@pass_config
+def warc_direct_answers(config: Config) -> None:
+    from archive_query_log.parsers.warc_direct_answers import \
+        parse_serps_warc_direct_answers
+    parse_serps_warc_direct_answers(config)
+
+
 @serps.group()
 def download():
     pass
