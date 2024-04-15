@@ -190,6 +190,16 @@ class Snippet(SnippetId):
     text: str | None = Text()
 
 
+class DirectAnswerId(InnerDocument):
+    id: str = Keyword()
+
+
+class DirectAnswer(DirectAnswerId):
+    content: str = Text()
+    url: str | None = Keyword()
+    text: str | None = Text()
+
+
 class Serp(BaseDocument):
     archive: InnerArchive = Object(InnerArchive)
     provider: InnerProvider = Object(InnerProvider)
@@ -208,6 +218,8 @@ class Serp(BaseDocument):
     warc_query_parser: InnerParser | None = Object(InnerParser)
     warc_snippets: list[SnippetId] | None = Nested(SnippetId)
     warc_snippets_parser: InnerParser | None = Object(InnerParser)
+    warc_direct_answers: list[DirectAnswerId] | None = Nested(DirectAnswerId)
+    warc_direct_answers_parser: InnerParser | None = Object(InnerParser)
 
     # rendered_warc_location: WarcLocation | None = Object(WarcLocation)
     # rendered_warc_downloader: InnerDownloader | None = (
@@ -431,6 +443,34 @@ class WarcSnippetsParser(BaseDocument):
 
     class Index:
         name = "aql_warc_snippets_parsers"
+        settings = {
+            "number_of_shards": 1,
+            "number_of_replicas": 2,
+        }
+
+
+WarcDirectAnswersParserType = Literal[
+    "xpath",
+]
+
+
+class WarcDirectAnswersParser(BaseDocument):
+    provider: InnerProviderId | None = Object(InnerProviderId)
+    url_pattern_regex: str | None = Keyword()
+    priority: float | None = RankFeature(positive_score_impact=True)
+    parser_type: WarcDirectAnswersParserType = Keyword()
+    xpath: str | None = Keyword()
+    url_xpath: str | None = Keyword()
+    text_xpath: str | None = Keyword()
+
+    @cached_property
+    def url_pattern(self) -> Pattern | None:
+        if self.url_pattern_regex is None:
+            raise ValueError("No URL pattern regex.")
+        return pattern(self.url_pattern_regex)
+
+    class Index:
+        name = "aql_warc_direct_answers_parsers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,

@@ -15,6 +15,6 @@ NAMESPACE_WARC_SNIPPETS_PARSER = uuid5(
     NAMESPACE_AQL, "warc_snippets_parser")
 NAMESPACE_WARC_MAIN_CONTENT_PARSER = uuid5(
     NAMESPACE_AQL, "warc_main_content_parser")
-NAMESPACE_WARC_DIRECT_ANSWER_PARSER = uuid5(
-    NAMESPACE_AQL, "warc_direct_answer_parser")
+NAMESPACE_WARC_DIRECT_ANSWERS_PARSER = uuid5(
+    NAMESPACE_AQL, "warc_direct_answers_parser")
 NAMESPACE_WARC_DOWNLOADER = uuid5(NAMESPACE_AQL, "warc_downloader")
