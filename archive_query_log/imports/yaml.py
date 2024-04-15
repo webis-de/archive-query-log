@@ -19,7 +19,6 @@ from archive_query_log.parsers.url_page import add_url_page_parser
 from archive_query_log.parsers.url_query import add_url_query_parser
 from archive_query_log.parsers.warc_query import add_warc_query_parser
 from archive_query_log.parsers.warc_snippets import add_warc_snippets_parser
-from archive_query_log.parsers.warc_direct_answers import add_warc_direct_answers_parser
 from archive_query_log.parsers.xml import xpaths_from_css_selector, \
     text_xpath, merge_xpaths
 from archive_query_log.providers import add_provider
@@ -479,77 +478,4 @@ def import_warc_snippets_parsers(config: Config, services_path: Path) -> None:
                     url_xpath=url_xpath,
                     title_xpath=title_xpath,
                     text_xpath=snippet_xpath,
-                )
-
-
-def import_warc_direct_answers_parsers(config: Config, services_path: Path) -> None:
-    echo("Load providers from services file.")
-    with services_path.open("r") as file:
-        services_list: Sequence[dict] = safe_load(file)
-    echo(f"Found {len(services_list)} service definitions.")
-
-    services: Iterable[dict] = services_list
-    # noinspection PyTypeChecker
-    services = tqdm(
-        services,
-        desc="Import parsers for providers",
-        unit="provider",
-    )
-    for service in services:
-        if ("domains" not in service or "results_parsers" not in service):
-            continue
-
-        results_parsers = service["results_parsers"]
-        num_results_parsers = len(results_parsers)
-
-        providers = (
-            Provider.search(using=config.es.client)
-            .query(Terms(domains=service["domains"]))
-            .scan()
-        )
-        providers = safe_iter_scan(providers)
-        for provider in providers:
-            for k, results_parser in enumerate(results_parsers):
-                if results_parser["type"] != "html_selector":
-                    continue
-                results_selector = results_parser["results_selector"]
-                url_selector = results_parser.get("url_selector")
-                direct_answer_selector = results_parser.get("direct_answer_selector")
-
-                results_xpaths = xpaths_from_css_selector(results_selector)
-                results_xpaths = [
-                    "//" + result_xpath
-                    for result_xpath in results_xpaths
-                ]
-                results_xpath = merge_xpaths(results_xpaths)
-
-                if url_selector is not None:
-                    url_xpaths = xpaths_from_css_selector(url_selector)
-                    url_xpaths = [
-                        text_xpath(xpath, attribute="href")
-                        for xpath in url_xpaths
-                    ]
-                    url_xpath = merge_xpaths(url_xpaths)
-                else:
-                    url_xpath = None
-
-                if direct_answer_selector is not None:
-                    direct_answer_xpaths = xpaths_from_css_selector(direct_answer_selector)
-                    direct_answer_xpaths = [
-                        text_xpath(xpath, text=True)
-                        for xpath in direct_answer_xpaths
-                    ]
-                    direct_answer_xpath = merge_xpaths(direct_answer_xpaths)
-                else:
-                    direct_answer_xpath = None
-
-                add_warc_direct_answers_parser(
-                    config=config,
-                    provider_id=provider.meta.id,
-                    url_pattern_regex=results_parser.get("url_pattern"),
-                    priority=num_results_parsers - k,
-                    parser_type="xpath",
-                    xpath=results_xpath,
-                    url_xpath=url_xpath,
-                    text_xpath=direct_answer_xpath,
                 )

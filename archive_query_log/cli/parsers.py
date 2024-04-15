@@ -439,11 +439,6 @@ def warc_direct_answers_add(
                       dir_okay=False, readable=True, resolve_path=True,
                       allow_dash=False),
         default=Path("data") / "selected-services.yaml")
-@pass_config
-def warc_direct_answers_import(config: Config, services_path: Path) -> None:
-    from archive_query_log.imports.yaml import import_warc_direct_answers_parsers
-    WarcDirectAnswersParser.init(using=config.es.client)
-    import_warc_direct_answers_parsers(config, services_path)
 
 
 @parsers.group()
