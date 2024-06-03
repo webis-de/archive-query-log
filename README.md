@@ -20,6 +20,7 @@ Start now by running [your custom analysis/experiment](#integrations), scraping 
 - [Installation](#installation)
 - [Usage](#tldr)
 - [Development](#development)
+- [Third-party Resources](#third-party-resources)
 - [Contribute](#contribute)
 - [Abstract](#abstract)
 
@@ -326,6 +327,10 @@ Add new tests for parsers:
 4. Failing tests will open a diff editor with the approval and a web browser tab with the Wayback URL.
 5. Use the web browser dev tools to find the query input field and search result CSS paths.
 6. Close diffs and tabs and re-run tests.
+
+## Third-party Resources
+
+- [Kaggle dataset of the manual test SERPs](https://www.kaggle.com/datasets/federicominutoli/awesome-archive-query-log), thanks to @DiTo97
 
 ## Contribute
 
