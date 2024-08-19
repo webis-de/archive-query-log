@@ -147,6 +147,7 @@ def _get_processed_progress(
     _progress_cache[key] = progress
     return progress
 
+# how to start api in bash: "uvicorn main:app --reload"
 
 app = FastAPI()
 
