@@ -1,6 +1,6 @@
 from datetime import datetime
 from pathlib import Path
-from typing import NamedTuple, Type, Union
+from typing import Type
 
 from elasticsearch_dsl.query import Exists, Query, Term
 from expiringdict import ExpiringDict
@@ -14,7 +14,6 @@ from archive_query_log.config import Config
 from archive_query_log.orm import Archive, Provider, Source, Capture, \
     BaseDocument, Serp, Result, UrlQueryParser, UrlPageParser, \
     UrlOffsetParser, WarcQueryParser, WarcSnippetsParser
-from archive_query_log.utils.time import utc_now
 
 _CACHE_SECONDS_STATISTICS = 60 * 5  # 5 minutes
 _CACHE_SECONDS_PROGRESS = 60 * 10  # 10 minutes
