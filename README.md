@@ -362,7 +362,7 @@ If you have found an important search provider missing from this query log, plea
 
 If you are unsure about anything, post an [issue](https://github.com/webis-de/archive-query-log/issues/new) or contact us:
 
-- [heinrich.reimer@uni-jena.de](mailto:heinrich.reimer@uni-jena.de)
+- [heinrich.merker@uni-jena.de](mailto:heinrich.merker@uni-jena.de)
 - [s.schmidt@uni-leipzig.de](mailto:s.schmidt@uni-leipzig.de)
 - [maik.froebe@uni-jena.de](mailto:maik.froebe@uni-jena.de)
 - [lukas.gienapp@uni-leipzig.de](mailto:lukas.gienapp@uni-leipzig.de)

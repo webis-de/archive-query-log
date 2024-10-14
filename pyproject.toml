@@ -1,7 +1,7 @@
 [project]
 name = "archive-query-log"
 authors = [
-    { name = "Jan Heinrich Reimer", email = "heinrich.reimer@uni-jena.de" },
+    { name = "Jan Heinrich Merker", email = "heinrich.merker@uni-jena.de" },
     { name = "Sebastian Schmidt", email = "s.schmidt@uni-leipzig.de" },
     { name = "Maik Fröbe", email = "maik.froebe@uni-jena.de" },
     { name = "Lukas Gienapp", email = "lukas.gienapp@uni-leipzig.de" },

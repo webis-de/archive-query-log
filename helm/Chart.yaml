@@ -7,8 +7,8 @@ sources:
 - https://github.com/webis-de/archive-query-log
 icon: https://assets.webis.de/img/webis-logo-gray.svg
 maintainers:
-- name: Jan Heinrich Reimer
-  email: heinrich.reimer@uni-jena.de
+- name: Jan Heinrich Merker
+  email: heinrich.merker@uni-jena.de
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application.
