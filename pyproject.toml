@@ -62,7 +62,7 @@ tests = [
     "flake8~=7.0",
     "pylint~=3.1",
     "pytest~=8.0",
-    "pytest-cov~=4.0",
+    "pytest-cov~=6.0",
 ]
 
 [build-system]
