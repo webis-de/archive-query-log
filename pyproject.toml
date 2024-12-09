@@ -30,7 +30,7 @@ dependencies = [
     "dataclasses-json~=0.6.0",
     "diskcache~=5.4",
     "fasttext-langdetect~=1.0",
-    "fastwarc~=0.14.0",
+    "fastwarc~=0.15.1",
     "flake8~=7.0",
     "fasttext @ git+https://github.com/cfculhane/fastText.git@4a44513",
     "joblib~=1.2",
