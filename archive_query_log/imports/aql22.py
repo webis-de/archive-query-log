@@ -133,13 +133,18 @@ def _import_captures_path(
         check_memento=check_memento,
     )
     actions = (
-        {
-            **capture.to_dict(include_meta=True),
-            "_op_type": "create",
-        }
+        _create_action(capture, config)
         for capture in captures_iter
     )
     config.es.bulk(actions)
+
+
+def _create_action(capture: Capture, config: Config) -> dict:
+    capture.meta.index = config.es.index_captures
+    return {
+        **capture.to_dict(include_meta=True),
+        "_op_type": "create",
+    }
 
 
 def import_captures(

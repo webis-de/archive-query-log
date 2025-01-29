@@ -189,6 +189,7 @@ def _parse_serp_url_query_action(
                 should_parse=True,
             ),
         )
+        serp.meta.index = config.es.index_serps
         yield serp.to_dict(include_meta=True)
         yield update_action(
             capture,

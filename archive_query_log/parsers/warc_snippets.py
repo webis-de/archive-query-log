@@ -211,7 +211,7 @@ def _parse_serp_warc_snippets_action(
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
         for snippet in warc_snippets:
-            yield Result(
+            result = Result(
                 id=snippet.id,
                 last_modified=utc_now(),
                 archive=serp.archive,
@@ -232,7 +232,9 @@ def _parse_serp_warc_snippets_action(
                 warc_after_serp_downloader=InnerDownloader(
                     should_download=True,
                 ).to_dict(),
-            ).to_dict(include_meta=True)
+            )
+            result.meta.index = config.es.index_results
+            yield result.to_dict(include_meta=True)
         yield update_action(
             serp,
             warc_snippets=[

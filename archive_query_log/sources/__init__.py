@@ -16,7 +16,7 @@ from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
-def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
+def _sources_batch(archive: Archive, provider: Provider, config: Config) -> list[dict]:
     if provider.exclusion_reason is not None:
         warn(
             f"Skipping provider {provider.id} "
@@ -56,6 +56,7 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
                 ),
                 should_fetch_captures=True,
             )
+            source.meta.index = config.es.index_sources
             batch.append(source.to_dict(include_meta=True))
     return batch
 
@@ -63,6 +64,7 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
 def _iter_sources_batches_changed_archives(
     changed_archives_search: Search,
     all_providers_search: Search,
+    config: Config,
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
@@ -75,6 +77,7 @@ def _iter_sources_batches_changed_archives(
             yield _sources_batch(
                 archive,
                 provider,
+                config,
             )
         yield [
             update_action(
@@ -88,6 +91,7 @@ def _iter_sources_batches_changed_archives(
 def _iter_sources_batches_changed_providers(
     changed_providers_search: Search,
     all_archives_search: Search,
+    config: Config,
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
@@ -100,6 +104,7 @@ def _iter_sources_batches_changed_providers(
             yield _sources_batch(
                 archive,
                 provider,
+                config,
             )
         yield [
             update_action(
@@ -132,6 +137,7 @@ def _build_archive_sources(config: Config) -> None:
             _iter_sources_batches_changed_archives(
                 changed_archives_search=changed_archives_search,
                 all_providers_search=all_providers_search,
+                config=config,
             )
         )
         # noinspection PyTypeChecker
@@ -169,6 +175,7 @@ def _build_provider_sources(config: Config) -> None:
             _iter_sources_batches_changed_providers(
                 changed_providers_search=changed_providers_search,
                 all_archives_search=all_archives_search,
+                config=config,
             )
         )
         # noinspection PyTypeChecker
