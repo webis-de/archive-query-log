@@ -91,7 +91,7 @@ def _download_serp_warc(
 
 def download_serps_warc(config: Config) -> None:
     changed_serps_search: Search = (
-        Serp.search(using=config.es.client)
+        Serp.search(using=config.es.client, index=config.es.index_serps)
         .filter(
             Term(capture__status_code=200) &
             ~Term(warc_downloader__should_download=False)
@@ -209,6 +209,7 @@ def _download_result_warc(
     if nearest_result_capture_before_serp is None:
         result.update(
             using=config.es.client,
+            index=config.es.index_results,
             warc_before_serp_downloader=InnerDownloader(
                 should_download=False,
                 last_downloaded=utc_now(),
@@ -224,6 +225,7 @@ def _download_result_warc(
     if nearest_result_capture_after_serp is None:
         result.update(
             using=config.es.client,
+            index=config.es.index_results,
             warc_after_serp_downloader=InnerDownloader(
                 should_download=False,
                 last_downloaded=utc_now(),
@@ -240,7 +242,7 @@ def _download_result_warc(
 
 def download_results_warc(config: Config) -> None:
     changed_results_search: Search = (
-        Result.search(using=config.es.client)
+        Result.search(using=config.es.client, index=config.es.index_results)
         .filter(
             Exists(field="snippet.url") &
             ~Term(should_fetch_captures=False)

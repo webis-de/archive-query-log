@@ -8,17 +8,30 @@ from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
+
 # noinspection PyProtectedMember
 from lxml.etree import _Element, tostring  # nosec: B410
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
 from archive_query_log.config import Config
-from archive_query_log.namespaces import NAMESPACE_WARC_SNIPPETS_PARSER, \
-    NAMESPACE_RESULT
-from archive_query_log.orm import Serp, InnerParser, InnerProviderId, \
-    WarcSnippetsParserType, WarcSnippetsParser, WarcLocation, Snippet, \
-    Result, InnerSerp, SnippetId, InnerDownloader
+from archive_query_log.namespaces import (
+    NAMESPACE_WARC_SNIPPETS_PARSER,
+    NAMESPACE_RESULT,
+)
+from archive_query_log.orm import (
+    Serp,
+    InnerParser,
+    InnerProviderId,
+    WarcSnippetsParserType,
+    WarcSnippetsParser,
+    WarcLocation,
+    Snippet,
+    Result,
+    InnerSerp,
+    SnippetId,
+    InnerDownloader,
+)
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.es import safe_iter_scan, update_action
@@ -26,15 +39,15 @@ from archive_query_log.utils.time import utc_now
 
 
 def add_warc_snippets_parser(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: WarcSnippetsParserType,
-        xpath: str | None,
-        url_xpath: str | None,
-        title_xpath: str | None,
-        text_xpath: str | None,
+    config: Config,
+    provider_id: str | None,
+    url_pattern_regex: str | None,
+    priority: float | None,
+    parser_type: WarcSnippetsParserType,
+    xpath: str | None,
+    url_xpath: str | None,
+    title_xpath: str | None,
+    text_xpath: str | None,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
@@ -48,10 +61,12 @@ def add_warc_snippets_parser(
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
-    parser_id = str(uuid5(
-        NAMESPACE_WARC_SNIPPETS_PARSER,
-        ":".join(parser_id_components),
-    ))
+    parser_id = str(
+        uuid5(
+            NAMESPACE_WARC_SNIPPETS_PARSER,
+            ":".join(parser_id_components),
+        )
+    )
     parser = WarcSnippetsParser(
         id=parser_id,
         last_modified=utc_now(),
@@ -64,19 +79,18 @@ def add_warc_snippets_parser(
         title_xpath=title_xpath,
         text_xpath=text_xpath,
     )
-    parser.save(using=config.es.client)
+    parser.save(using=config.es.client, index=config.es.index_warc_snippets_parsers)
 
 
 def _parse_warc_snippets(
-        parser: WarcSnippetsParser,
-        serp_id: str,
-        capture_url: str,
-        warc_store: WarcS3Store,
-        warc_location: WarcLocation,
+    parser: WarcSnippetsParser,
+    serp_id: str,
+    capture_url: str,
+    warc_store: WarcS3Store,
+    warc_location: WarcLocation,
 ) -> list[Snippet] | None:
     # Check if URL matches pattern.
-    if (parser.url_pattern is not None and
-            not parser.url_pattern.match(capture_url)):
+    if parser.url_pattern is not None and not parser.url_pattern.match(capture_url):
         return None
 
     # Parse snippets.
@@ -125,18 +139,22 @@ def _parse_warc_snippets(
                 str(hash(content)),
                 str(i),
             )
-            snippet_id = str(uuid5(
-                NAMESPACE_RESULT,
-                ":".join(snippet_id_components),
-            ))
-            snippets.append(Snippet(
-                id=snippet_id,
-                rank=i,
-                content=content,
-                url=url,
-                title=title,
-                text=text,
-            ))
+            snippet_id = str(
+                uuid5(
+                    NAMESPACE_RESULT,
+                    ":".join(snippet_id_components),
+                )
+            )
+            snippets.append(
+                Snippet(
+                    id=snippet_id,
+                    rank=i,
+                    content=content,
+                    url=url,
+                    title=title,
+                    text=text,
+                )
+            )
         return snippets
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
@@ -144,15 +162,14 @@ def _parse_warc_snippets(
 
 @cache
 def _warc_snippets_parsers(
-        config: Config,
-        provider_id: str,
+    config: Config,
+    provider_id: str,
 ) -> list[WarcSnippetsParser]:
     parsers: Iterable[WarcSnippetsParser] = (
-        WarcSnippetsParser.search(using=config.es.client)
-        .filter(
-            ~Exists(field="provider.id") |
-            Term(provider__id=provider_id)
+        WarcSnippetsParser.search(
+            using=config.es.client, index=config.es.index_warc_snippets_parsers
         )
+        .filter(~Exists(field="provider.id") | Term(provider__id=provider_id))
         .query(RankFeature(field="priority", saturation={}))
         .scan()
     )
@@ -161,20 +178,24 @@ def _warc_snippets_parsers(
 
 
 def _parse_serp_warc_snippets_action(
-        config: Config,
-        serp: Serp,
+    config: Config,
+    serp: Serp,
 ) -> Iterator[dict]:
     # Re-check if it can be parsed.
-    if (serp.warc_location is None or
-            serp.warc_location.file is None or
-            serp.warc_location.offset is None or
-            serp.warc_location.length is None):
+    if (
+        serp.warc_location is None
+        or serp.warc_location.file is None
+        or serp.warc_location.offset is None
+        or serp.warc_location.length is None
+    ):
         return
 
     # Re-check if parsing is necessary.
-    if (serp.warc_snippets_parser is not None and
-            serp.warc_snippets_parser.should_parse is not None and
-            not serp.warc_snippets_parser.should_parse):
+    if (
+        serp.warc_snippets_parser is not None
+        and serp.warc_snippets_parser.should_parse is not None
+        and not serp.warc_snippets_parser.should_parse
+    ):
         return
 
     for parser in _warc_snippets_parsers(config, serp.provider.id):
@@ -239,34 +260,34 @@ def _parse_serp_warc_snippets_action(
 
 
 def parse_serps_warc_snippets(config: Config) -> None:
-    Serp.index().refresh(using=config.es.client)
+    config.es.client.indices.refresh(index=config.es.index_serps)
     changed_serps_search: Search = (
-        Serp.search(using=config.es.client)
+        Serp.search(using=config.es.client, index=config.es.index_serps)
         .filter(
-            Exists(field="warc_location") &
-            ~Term(warc_snippets_parser__should_parse=False)
+            Exists(field="warc_location")
+            & ~Term(warc_snippets_parser__should_parse=False)
         )
         .query(
-            RankFeature(field="archive.priority", saturation={}) |
-            RankFeature(field="provider.priority", saturation={}) |
-            FunctionScore(functions=[RandomScore()])
+            RankFeature(field="archive.priority", saturation={})
+            | RankFeature(field="provider.priority", saturation={})
+            | FunctionScore(functions=[RandomScore()])
         )
     )
     num_changed_serps = changed_serps_search.count()
     if num_changed_serps > 0:
-        changed_serps: Iterable[Serp] = (
-            changed_serps_search
-            .params(preserve_order=True)
-            .scan()
-        )
+        changed_serps: Iterable[Serp] = changed_serps_search.params(
+            preserve_order=True
+        ).scan()
         changed_serps = safe_iter_scan(changed_serps)
         # noinspection PyTypeChecker
         changed_serps = tqdm(
-            changed_serps, total=num_changed_serps,
-            desc="Parsing WARC snippets", unit="SERP")
+            changed_serps,
+            total=num_changed_serps,
+            desc="Parsing WARC snippets",
+            unit="SERP",
+        )
         actions = chain.from_iterable(
-            _parse_serp_warc_snippets_action(config, serp)
-            for serp in changed_serps
+            _parse_serp_warc_snippets_action(config, serp) for serp in changed_serps
         )
         config.es.bulk(actions)
     else:

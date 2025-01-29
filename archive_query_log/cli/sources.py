@@ -20,7 +20,7 @@ def build(
         skip_providers: bool,
 ) -> None:
     from archive_query_log.sources import build_sources
-    Source.init(using=config.es.client)
+    Source.init(using=config.es.client, index=config.es.index_sources)
     build_sources(
         config=config,
         skip_archives=skip_archives,

@@ -19,7 +19,7 @@ def parse():
 @pass_config
 def url_query(config: Config) -> None:
     from archive_query_log.parsers.url_query import parse_serps_url_query
-    Serp.init(using=config.es.client)
+    Serp.init(using=config.es.client, index=config.es.index_serps)
     parse_serps_url_query(config)
 
 
@@ -49,7 +49,7 @@ def warc_query(config: Config) -> None:
 def warc_snippets(config: Config) -> None:
     from archive_query_log.parsers.warc_snippets import \
         parse_serps_warc_snippets
-    Result.init(using=config.es.client)
+    Result.init(using=config.es.client, index=config.es.index_results)
     parse_serps_warc_snippets(config)
 
 

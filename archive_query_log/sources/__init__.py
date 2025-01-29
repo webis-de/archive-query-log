@@ -11,8 +11,7 @@ from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_SOURCE
-from archive_query_log.orm import (
-    Archive, Provider, Source, InnerArchive, InnerProvider)
+from archive_query_log.orm import Archive, Provider, Source, InnerArchive, InnerProvider
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
@@ -34,10 +33,12 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
                 domain,
                 url_path_prefix,
             )
-            source_id = str(uuid5(
-                NAMESPACE_SOURCE,
-                ":".join(source_id_components),
-            ))
+            source_id = str(
+                uuid5(
+                    NAMESPACE_SOURCE,
+                    ":".join(source_id_components),
+                )
+            )
             source = Source(
                 id=source_id,
                 last_modified=utc_now(),
@@ -60,8 +61,8 @@ def _sources_batch(archive: Archive, provider: Provider) -> list[dict]:
 
 
 def _iter_sources_batches_changed_archives(
-        changed_archives_search: Search,
-        all_providers_search: Search,
+    changed_archives_search: Search,
+    all_providers_search: Search,
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
@@ -75,16 +76,18 @@ def _iter_sources_batches_changed_archives(
                 archive,
                 provider,
             )
-        yield [update_action(
-            archive,
-            should_build_sources=False,
-            last_built_sources=utc_now(),
-        )]
+        yield [
+            update_action(
+                archive,
+                should_build_sources=False,
+                last_built_sources=utc_now(),
+            )
+        ]
 
 
 def _iter_sources_batches_changed_providers(
-        changed_providers_search: Search,
-        all_archives_search: Search,
+    changed_providers_search: Search,
+    all_archives_search: Search,
 ) -> Iterator[list[dict]]:
     archive: Archive
     provider: Provider
@@ -98,37 +101,39 @@ def _iter_sources_batches_changed_providers(
                 archive,
                 provider,
             )
-        yield [update_action(
-            provider,
-            should_build_sources=False,
-            last_built_sources=utc_now(),
-        )]
+        yield [
+            update_action(
+                provider,
+                should_build_sources=False,
+                last_built_sources=utc_now(),
+            )
+        ]
 
 
 def _build_archive_sources(config: Config) -> None:
-    Archive.index().refresh(using=config.es.client)
+    config.es.client.indices.refresh(index=config.es.index_archives)
+    config.es.client.indices.refresh(index=config.es.index_providers)
     changed_archives_search = (
-        Archive.search(using=config.es.client)
+        Archive.search(using=config.es.client, index=config.es.index_archives)
         .filter(~Term(should_build_sources=False))
         .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_archives = changed_archives_search.count()
-    all_providers_search = (
-        Provider.search(using=config.es.client)
-        .filter(~Exists(field="exclusion_reason")))
+    all_providers_search = Provider.search(
+        using=config.es.client, index=config.es.index_providers
+    ).filter(~Exists(field="exclusion_reason"))
     num_all_providers = all_providers_search.count()
     num_batches_archives = (
-            (num_changed_archives * num_all_providers) +
-            num_changed_archives
-    )
+        num_changed_archives * num_all_providers
+    ) + num_changed_archives
     if num_batches_archives > 0:
-        echo(f"Building sources for {num_changed_archives} "
-             f"new/changed archives.")
+        echo(f"Building sources for {num_changed_archives} " f"new/changed archives.")
         action_batches_archives: Iterable[list[dict]] = (
             _iter_sources_batches_changed_archives(
                 changed_archives_search=changed_archives_search,
                 all_providers_search=all_providers_search,
-            ))
+            )
+        )
         # noinspection PyTypeChecker
         action_batches_archives = tqdm(
             action_batches_archives,
@@ -143,28 +148,29 @@ def _build_archive_sources(config: Config) -> None:
 
 
 def _build_provider_sources(config: Config) -> None:
-    Provider.index().refresh(using=config.es.client)
+    config.es.client.indices.refresh(index=config.es.index_archives)
+    config.es.client.indices.refresh(index=config.es.index_providers)
     changed_providers_search = (
-        Provider.search(using=config.es.client)
+        Provider.search(using=config.es.client, index=config.es.index_providers)
         .filter(~Term(should_build_sources=False))
         .query(FunctionScore(functions=[RandomScore()]))
     )
     num_changed_providers = changed_providers_search.count()
-    all_archives_search = Archive.search(using=config.es.client)
+    all_archives_search = Archive.search(
+        using=config.es.client, index=config.es.index_archives
+    )
     num_all_archives = all_archives_search.count()
     num_batches_providers = (
-            (num_changed_providers * num_all_archives) +
-            num_changed_providers
-    )
+        num_changed_providers * num_all_archives
+    ) + num_changed_providers
     if num_batches_providers > 0:
-        echo(
-            f"Building sources for {num_changed_providers} "
-            f"new/changed providers.")
+        echo(f"Building sources for {num_changed_providers} " f"new/changed providers.")
         action_batches_providers: Iterable[list[dict]] = (
             _iter_sources_batches_changed_providers(
                 changed_providers_search=changed_providers_search,
                 all_archives_search=all_archives_search,
-            ))
+            )
+        )
         # noinspection PyTypeChecker
         action_batches_providers = tqdm(
             action_batches_providers,
@@ -179,9 +185,9 @@ def _build_provider_sources(config: Config) -> None:
 
 
 def build_sources(
-        config: Config,
-        skip_archives: bool,
-        skip_providers: bool,
+    config: Config,
+    skip_archives: bool,
+    skip_providers: bool,
 ) -> None:
     if not skip_archives:
         _build_archive_sources(config)

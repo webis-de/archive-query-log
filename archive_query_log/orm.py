@@ -51,7 +51,6 @@ class Archive(BaseDocument):
     )
 
     class Index:
-        name = "aql_archives"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,
@@ -73,7 +72,6 @@ class Provider(BaseDocument):
     )
 
     class Index:
-        name = "aql_providers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,
@@ -104,7 +102,6 @@ class Source(BaseDocument):
     )
 
     class Index:
-        name = "aql_sources"
         settings = {
             "number_of_shards": 5,
             "number_of_replicas": 2,
@@ -144,7 +141,6 @@ class Capture(BaseDocument):
     url_query_parser: InnerParser | None = Object(InnerParser)
 
     class Index:
-        name = "aql_captures"
         settings = {
             "number_of_shards": 40,
             "number_of_replicas": 2,
@@ -226,7 +222,6 @@ class Serp(BaseDocument):
     #     Object(InnerDownloader))
 
     class Index:
-        name = "aql_serps"
         settings = {
             "number_of_shards": 40,
             "number_of_replicas": 2,
@@ -252,7 +247,6 @@ class Result(BaseDocument):
         Object(InnerDownloader))
 
     class Index:
-        name = "aql_results"
         settings = {
             "number_of_shards": 20,
             "number_of_replicas": 2,
@@ -299,7 +293,6 @@ class UrlQueryParser(BaseDocument):
         return pattern(self.space_pattern_regex)
 
     class Index:
-        name = "aql_url_query_parsers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,
@@ -336,7 +329,6 @@ class UrlPageParser(BaseDocument):
         return pattern(self.remove_pattern_regex)
 
     class Index:
-        name = "aql_url_page_parsers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,
@@ -373,7 +365,6 @@ class UrlOffsetParser(BaseDocument):
         return pattern(self.remove_pattern_regex)
 
     class Index:
-        name = "aql_url_offset_parsers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,
@@ -413,7 +404,6 @@ class WarcQueryParser(BaseDocument):
         return pattern(self.space_pattern_regex)
 
     class Index:
-        name = "aql_warc_query_parsers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,
@@ -442,7 +432,6 @@ class WarcSnippetsParser(BaseDocument):
         return pattern(self.url_pattern_regex)
 
     class Index:
-        name = "aql_warc_snippets_parsers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,
@@ -470,7 +459,6 @@ class WarcDirectAnswersParser(BaseDocument):
         return pattern(self.url_pattern_regex)
 
     class Index:
-        name = "aql_warc_direct_answers_parsers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,
@@ -495,7 +483,6 @@ class WarcMainContentParser(BaseDocument):
         return pattern(self.url_pattern_regex)
 
     class Index:
-        name = "aql_warc_snippets_parsers"
         settings = {
             "number_of_shards": 1,
             "number_of_replicas": 2,

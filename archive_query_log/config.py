@@ -1,8 +1,8 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import cached_property
+from os import environ
 from typing import Iterable, Any
 
-from dataclasses_json import DataClassJsonMixin
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import streaming_bulk
 from pyrate_limiter import Limiter, RequestRate, Duration
@@ -15,16 +15,57 @@ from archive_query_log import __version__ as version
 
 
 @dataclass(frozen=True)
-class EsConfig(DataClassJsonMixin):
-    host: str
-    port: int
-    username: str
-    password: str
+class EsConfig:
+    host: str = field(default_factory=lambda: environ["ELASTICSEARCH_HOST"])
+    port: int = field(default_factory=lambda: int(environ["ELASTICSEARCH_PORT"]))
+    username: str = field(default_factory=lambda: environ["ELASTICSEARCH_USERNAME"])
+    password: str = field(default_factory=lambda: environ["ELASTICSEARCH_PASSWORD"])
     max_retries: int = 5
     bulk_chunk_size: int = 500
     bulk_max_chunk_bytes: int = 100 * 1024 * 1024
     bulk_initial_backoff: int = 2
     bulk_max_backoff: int = 60
+    index_archives: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_ARCHIVES"]
+    )
+    index_providers: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_PROVIDERS"]
+    )
+    index_sources: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_SOURCES"]
+    )
+    index_captures: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_CAPTURES"]
+    )
+    index_serps: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_SERPS"]
+    )
+    index_results: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_RESULTS"]
+    )
+    index_url_query_parsers: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_URL_QUERY_PARSERS"]
+    )
+    index_url_page_parsers: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_URL_PAGE_PARSERS"]
+    )
+    index_url_offset_parsers: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_URL_OFFSET_PARSERS"]
+    )
+    index_warc_query_parsers: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_WARC_QUERY_PARSERS"]
+    )
+    index_warc_snippets_parsers: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_WARC_SNIPPETS_PARSERS"]
+    )
+    index_warc_direct_answers_parsers: str = field(
+        default_factory=lambda: environ[
+            "ELASTICSEARCH_INDEX_WARC_DIRECT_ANSWERS_PARSERS"
+        ]
+    )
+    index_warc_main_content_parsers: str = field(
+        default_factory=lambda: environ["ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS"]
+    )
 
     @cached_property
     def client(self) -> Elasticsearch:
@@ -37,9 +78,10 @@ class EsConfig(DataClassJsonMixin):
             retry_on_timeout=True,
         )
 
+    # TODO: Check if actions specify the index correcty.
     def streaming_bulk(
-            self,
-            actions: Iterable[dict],
+        self,
+        actions: Iterable[dict],
     ) -> Iterable[tuple[bool, Any]]:
         return streaming_bulk(
             client=self.client,
@@ -60,11 +102,11 @@ class EsConfig(DataClassJsonMixin):
 
 
 @dataclass(frozen=True)
-class S3Config(DataClassJsonMixin):
-    endpoint_url: str
-    access_key: str
-    secret_key: str
-    bucket_name: str
+class S3Config:
+    endpoint_url: str = field(default_factory=lambda: environ["S3_ENDPOINT_URL"])
+    access_key: str = field(default_factory=lambda: environ["S3_ACCESS_KEY"])
+    secret_key: str = field(default_factory=lambda: environ["S3_SECRET_KEY"])
+    bucket_name: str = field(default_factory=lambda: environ["S3_BUCKET_NAME"])
 
     @cached_property
     def warc_store(self) -> WarcS3Store:
@@ -79,15 +121,17 @@ class S3Config(DataClassJsonMixin):
 
 
 @dataclass(frozen=True)
-class HttpConfig(DataClassJsonMixin):
+class HttpConfig:
     max_retries: int = 5
 
     @cached_property
     def session(self) -> Session:
         session = Session()
-        session.headers.update({
-            "User-Agent": f"AQL/{version} (Webis group)",
-        })
+        session.headers.update(
+            {
+                "User-Agent": f"AQL/{version} (Webis group)",
+            }
+        )
         _retries = Retry(
             total=20,
             connect=5,
@@ -114,9 +158,11 @@ class HttpConfig(DataClassJsonMixin):
     @cached_property
     def session_no_retry(self) -> Session:
         session = Session()
-        session.headers.update({
-            "User-Agent": f"AQL/{version} (Webis group)",
-        })
+        session.headers.update(
+            {
+                "User-Agent": f"AQL/{version} (Webis group)",
+            }
+        )
         _limiter = Limiter(
             RequestRate(1, Duration.SECOND * 10),
         )
@@ -130,7 +176,7 @@ class HttpConfig(DataClassJsonMixin):
 
 
 @dataclass(frozen=True)
-class Config(DataClassJsonMixin):
-    es: EsConfig
-    s3: S3Config
-    http: HttpConfig = HttpConfig()
+class Config:
+    es: EsConfig = field(default_factory=EsConfig)
+    s3: S3Config = field(default_factory=S3Config)
+    http: HttpConfig = field(default_factory=HttpConfig)

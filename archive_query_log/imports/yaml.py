@@ -157,7 +157,7 @@ def import_url_query_parsers(config: Config, services_path: Path) -> None:
         num_query_parsers = len(query_parsers)
 
         providers = (
-            Provider.search(using=config.es.client)
+            Provider.search(using=config.es.client, index=config.es.index_providers)
             .query(Terms(domains=service["domains"]))
             .scan()
         )
@@ -219,7 +219,7 @@ def import_url_page_parsers(config: Config, services_path: Path) -> None:
         num_page_parsers = len(page_parsers)
 
         providers = (
-            Provider.search(using=config.es.client)
+            Provider.search(using=config.es.client, index=config.es.index_providers)
             .query(Terms(domains=service["domains"]))
             .scan()
         )
@@ -281,7 +281,7 @@ def import_url_offset_parsers(config: Config, services_path: Path) -> None:
         num_offset_parsers = len(offset_parsers)
 
         providers = (
-            Provider.search(using=config.es.client)
+            Provider.search(using=config.es.client, index=config.es.index_providers)
             .query(Terms(domains=service["domains"]))
             .scan()
         )
@@ -344,7 +344,7 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
         num_interpreted_query_parsers = len(interpreted_query_parsers)
 
         providers = (
-            Provider.search(using=config.es.client)
+            Provider.search(using=config.es.client, index=config.es.index_providers)
             .query(Terms(domains=service["domains"]))
             .scan()
         )
@@ -417,7 +417,7 @@ def import_warc_snippets_parsers(config: Config, services_path: Path) -> None:
         num_results_parsers = len(results_parsers)
 
         providers = (
-            Provider.search(using=config.es.client)
+            Provider.search(using=config.es.client, index=config.es.index_providers)
             .query(Terms(domains=service["domains"]))
             .scan()
         )

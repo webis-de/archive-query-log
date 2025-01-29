@@ -22,11 +22,11 @@ def add_archive(
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
-    Archive.index().refresh(using=config.es.client)
+    config.es.client.indices.refresh(index=config.es.index_archives)
     last_modified = utc_now()
     should_build_sources = True
     existing_archive_search: Search = (
-        Archive.search(using=config.es.client)
+        Archive.search(using=config.es.client, index=config.es.index_archives)
         .query(
             Term(cdx_api_url=cdx_api_url) |
             Term(memento_api_url=memento_api_url)
@@ -78,4 +78,4 @@ def add_archive(
         priority=priority,
         should_build_sources=should_build_sources,
     )
-    archive.save(using=config.es.client)
+    archive.save(using=config.es.client, index=config.es.index_archives)

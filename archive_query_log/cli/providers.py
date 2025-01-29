@@ -34,7 +34,7 @@ def add(
         priority: float | None,
 ) -> None:
     from archive_query_log.providers import add_provider
-    Provider.init(using=config.es.client)
+    Provider.init(using=config.es.client, index=config.es.index_providers)
     add_provider(
         config=config,
         name=name,
@@ -71,7 +71,7 @@ def import_(
         auto_merge: bool,
 ) -> None:
     from archive_query_log.imports.yaml import import_providers
-    Provider.init(using=config.es.client)
+    Provider.init(using=config.es.client, index=config.es.index_providers)
     import_providers(
         config=config,
         services_path=services_path,

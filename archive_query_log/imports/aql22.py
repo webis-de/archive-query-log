@@ -152,7 +152,7 @@ def import_captures(
     echo(f"Importing AQL-22 captures from: {data_dir_path}")
 
     archive_response = (
-        Archive.search(using=config.es.client)
+        Archive.search(using=config.es.client, index=config.es.index_archives)
         .query(
             Term(cdx_api_url="https://web.archive.org/cdx/search/cdx")
         )
@@ -202,7 +202,7 @@ def import_captures(
         url_path_prefix = prefix.removeprefix(domain)
 
         provider_response = (
-            Provider.search(using=config.es.client)
+            Provider.search(using=config.es.client, index=config.es.index_providers)
             .query(
                 Term(domains=domain) &
                 Term(url_path_prefixes=url_path_prefix)

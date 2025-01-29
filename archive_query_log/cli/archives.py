@@ -32,7 +32,7 @@ def add(
         priority: float | None,
 ) -> None:
     from archive_query_log.archives import add_archive
-    Archive.init(using=config.es.client)
+    Archive.init(using=config.es.client, index=config.es.index_archives)
     add_archive(
         config=config,
         name=name,
@@ -69,7 +69,7 @@ def archive_it(
         auto_merge: bool,
 ) -> None:
     from archive_query_log.imports.archive_it import import_archives
-    Archive.init(using=config.es.client)
+    Archive.init(using=config.es.client, index=config.es.index_archives)
     import_archives(
         config=config,
         api_url=api_url,

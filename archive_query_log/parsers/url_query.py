@@ -11,26 +11,34 @@ from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_URL_QUERY_PARSER
-from archive_query_log.orm import Capture, Serp, InnerCapture, InnerParser, \
-    UrlQueryParser
+from archive_query_log.orm import (
+    Capture,
+    Serp,
+    InnerCapture,
+    InnerParser,
+    UrlQueryParser,
+)
 from archive_query_log.orm import UrlQueryParserType, InnerProviderId
-from archive_query_log.parsers.url import parse_url_query_parameter, \
-    parse_url_fragment_parameter, parse_url_path_segment
+from archive_query_log.parsers.url import (
+    parse_url_query_parameter,
+    parse_url_fragment_parameter,
+    parse_url_path_segment,
+)
 from archive_query_log.parsers.util import clean_text
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
 def add_url_query_parser(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: UrlQueryParserType,
-        parameter: str | None,
-        segment: int | None,
-        remove_pattern_regex: str | None,
-        space_pattern_regex: str | None,
+    config: Config,
+    provider_id: str | None,
+    url_pattern_regex: str | None,
+    priority: float | None,
+    parser_type: UrlQueryParserType,
+    parameter: str | None,
+    segment: int | None,
+    remove_pattern_regex: str | None,
+    space_pattern_regex: str | None,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
@@ -50,10 +58,12 @@ def add_url_query_parser(
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
-    parser_id = str(uuid5(
-        NAMESPACE_URL_QUERY_PARSER,
-        ":".join(parser_id_components),
-    ))
+    parser_id = str(
+        uuid5(
+            NAMESPACE_URL_QUERY_PARSER,
+            ":".join(parser_id_components),
+        )
+    )
     parser = UrlQueryParser(
         id=parser_id,
         last_modified=utc_now(),
@@ -66,13 +76,12 @@ def add_url_query_parser(
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
     )
-    parser.save(using=config.es.client)
+    parser.save(using=config.es.client, index=config.es.index_url_query_parsers)
 
 
 def _parse_url_query(parser: UrlQueryParser, capture_url: str) -> str | None:
     # Check if URL matches pattern.
-    if (parser.url_pattern is not None and
-            not parser.url_pattern.match(capture_url)):
+    if parser.url_pattern is not None and not parser.url_pattern.match(capture_url):
         return None
 
     # Parse query.
@@ -115,15 +124,14 @@ def _parse_url_query(parser: UrlQueryParser, capture_url: str) -> str | None:
 
 @cache
 def _url_query_parsers(
-        config: Config,
-        provider_id: str,
+    config: Config,
+    provider_id: str,
 ) -> list[UrlQueryParser]:
     parsers: Iterable[UrlQueryParser] = (
-        UrlQueryParser.search(using=config.es.client)
-        .filter(
-            ~Exists(field="provider.id") |
-            Term(provider__id=provider_id)
+        UrlQueryParser.search(
+            using=config.es.client, index=config.es.index_url_query_parsers
         )
+        .filter(~Exists(field="provider.id") | Term(provider__id=provider_id))
         .query(RankFeature(field="priority", saturation={}))
         .scan()
     )
@@ -132,13 +140,15 @@ def _url_query_parsers(
 
 
 def _parse_serp_url_query_action(
-        config: Config,
-        capture: Capture,
+    config: Config,
+    capture: Capture,
 ) -> Iterator[dict]:
     # Re-check if parsing is necessary.
-    if (capture.url_query_parser is not None and
-            capture.url_query_parser.should_parse is not None and
-            not capture.url_query_parser.should_parse):
+    if (
+        capture.url_query_parser is not None
+        and capture.url_query_parser.should_parse is not None
+        and not capture.url_query_parser.should_parse
+    ):
         return
 
     for parser in _url_query_parsers(config, capture.provider.id):
@@ -200,28 +210,29 @@ def _parse_serp_url_query_action(
 
 
 def parse_serps_url_query(config: Config) -> None:
-    Capture.index().refresh(using=config.es.client)
+    config.es.client.indices.refresh(index=config.es.index_captures)
     changed_captures_search: Search = (
-        Capture.search(using=config.es.client)
+        Capture.search(using=config.es.client, index=config.es.index_captures)
         .filter(~Term(url_query_parser__should_parse=False))
         .query(
-            RankFeature(field="archive.priority", saturation={}) |
-            RankFeature(field="provider.priority", saturation={}) |
-            FunctionScore(functions=[RandomScore()])
+            RankFeature(field="archive.priority", saturation={})
+            | RankFeature(field="provider.priority", saturation={})
+            | FunctionScore(functions=[RandomScore()])
         )
     )
     num_changed_captures = changed_captures_search.count()
     if num_changed_captures > 0:
-        changed_captures: Iterable[Capture] = (
-            changed_captures_search
-            .params(preserve_order=True)
-            .scan()
-        )
+        changed_captures: Iterable[Capture] = changed_captures_search.params(
+            preserve_order=True
+        ).scan()
         changed_captures = safe_iter_scan(changed_captures)
         # noinspection PyTypeChecker
         changed_captures = tqdm(
-            changed_captures, total=num_changed_captures,
-            desc="Parsing URL query", unit="capture")
+            changed_captures,
+            total=num_changed_captures,
+            desc="Parsing URL query",
+            unit="capture",
+        )
         actions = chain.from_iterable(
             _parse_serp_url_query_action(config, capture)
             for capture in changed_captures

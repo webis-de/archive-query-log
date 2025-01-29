@@ -16,7 +16,7 @@ def captures() -> None:
 @pass_config
 def fetch(config: Config) -> None:
     from archive_query_log.captures import fetch_captures
-    Capture.init(using=config.es.client)
+    Capture.init(using=config.es.client, index=config.es.index_captures)
     fetch_captures(config)
 
 
@@ -52,7 +52,7 @@ def aql_22(
         search_provider_index: int | None,
 ) -> None:
     from archive_query_log.imports.aql22 import import_captures
-    Capture.init(using=config.es.client)
+    Capture.init(using=config.es.client, index=config.es.index_captures)
     import_captures(
         config=config,
         data_dir_path=data_dir_path,

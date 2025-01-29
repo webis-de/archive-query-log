@@ -124,7 +124,7 @@ def _add_captures_actions(
 
 def fetch_captures(config: Config) -> None:
     changed_sources_search: Search = (
-        Source.search(using=config.es.client)
+        Source.search(using=config.es.client, index=config.es.index_sources)
         .filter(~Term(should_fetch_captures=False))
         .query(
             RankFeature(field="archive.priority", saturation={}) |

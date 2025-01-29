@@ -68,7 +68,7 @@ def url_query_add(
             raise UsageError("No path segment given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    UrlQueryParser.init(using=config.es.client)
+    UrlQueryParser.init(using=config.es.client, index=config.es.index_url_query_parsers)
     add_url_query_parser(
         config=config,
         provider_id=provider_id,
@@ -91,7 +91,7 @@ def url_query_add(
 @pass_config
 def url_query_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_url_query_parsers
-    UrlQueryParser.init(using=config.es.client)
+    UrlQueryParser.init(using=config.es.client, index=config.es.index_url_query_parsers)
     import_url_query_parsers(config, services_path)
 
 
@@ -145,7 +145,7 @@ def url_page_add(
             raise UsageError("No path segment given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    UrlPageParser.init(using=config.es.client)
+    UrlPageParser.init(using=config.es.client, index=config.es.index_url_page_parsers)
     add_url_page_parser(
         config=config,
         provider_id=provider_id,
@@ -168,7 +168,7 @@ def url_page_add(
 @pass_config
 def url_page_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_url_page_parsers
-    UrlPageParser.init(using=config.es.client)
+    UrlPageParser.init(using=config.es.client, index=config.es.index_url_page_parsers)
     import_url_page_parsers(config, services_path)
 
 
@@ -222,7 +222,7 @@ def url_offset_add(
             raise UsageError("No path segment given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    UrlOffsetParser.init(using=config.es.client)
+    UrlOffsetParser.init(using=config.es.client, index=config.es.index_url_offset_parsers)
     add_url_offset_parser(
         config=config,
         provider_id=provider_id,
@@ -245,7 +245,7 @@ def url_offset_add(
 @pass_config
 def url_offset_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_url_offset_parsers
-    UrlOffsetParser.init(using=config.es.client)
+    UrlOffsetParser.init(using=config.es.client, index=config.es.index_url_offset_parsers)
     import_url_offset_parsers(config, services_path)
 
 
@@ -287,7 +287,7 @@ def warc_query_add(
             raise UsageError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcQueryParser.init(using=config.es.client)
+    WarcQueryParser.init(using=config.es.client, index=config.es.index_warc_query_parsers)
     add_warc_query_parser(
         config=config,
         provider_id=provider_id,
@@ -309,7 +309,7 @@ def warc_query_add(
 @pass_config
 def warc_query_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_warc_query_parsers
-    WarcQueryParser.init(using=config.es.client)
+    WarcQueryParser.init(using=config.es.client, index=config.es.index_warc_query_parsers)
     import_warc_query_parsers(config, services_path)
 
 
@@ -354,7 +354,7 @@ def warc_snippets_add(
             raise UsageError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcSnippetsParser.init(using=config.es.client)
+    WarcSnippetsParser.init(using=config.es.client, index=config.es.index_warc_snippets_parsers)
     add_warc_snippets_parser(
         config=config,
         provider_id=provider_id,
@@ -377,7 +377,7 @@ def warc_snippets_add(
 @pass_config
 def warc_snippets_import(config: Config, services_path: Path) -> None:
     from archive_query_log.imports.yaml import import_warc_snippets_parsers
-    WarcSnippetsParser.init(using=config.es.client)
+    WarcSnippetsParser.init(using=config.es.client, index=config.es.index_warc_snippets_parsers)
     import_warc_snippets_parsers(config, services_path)
 
 
@@ -420,7 +420,7 @@ def warc_direct_answers_add(
             raise UsageError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcDirectAnswersParser.init(using=config.es.client)
+    WarcDirectAnswersParser.init(using=config.es.client, index=config.es.index_warc_direct_answers_parsers)
     add_warc_direct_answers_parser(
         config=config,
         provider_id=provider_id,
@@ -464,7 +464,7 @@ def warc_main_content_add(
         parser_type_strict = "resiliparse"
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcMainContentParser.init(using=config.es.client)
+    WarcMainContentParser.init(using=config.es.client, index=config.es.index_warc_direct_answers_parsers)
     add_warc_main_content_parser(
         config=config,
         provider_id=provider_id,
