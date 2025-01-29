@@ -500,3 +500,5 @@ cython_debug/
 *.lop
 .idea/kubernetes-settings.xml
 config.override.yml
+
+.vscode
