@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from functools import cached_property
 from os import environ
+from pathlib import Path
 from typing import Iterable, Any
 
 from elasticsearch import Elasticsearch
@@ -12,6 +13,7 @@ from urllib3 import Retry
 from warc_s3 import WarcS3Store
 
 from archive_query_log import __version__ as version
+from archive_query_log.utils.warc_cache import WarcCacheStore
 
 
 @dataclass(frozen=True)
@@ -115,8 +117,8 @@ class S3Config:
             access_key=self.access_key,
             secret_key=self.secret_key,
             bucket_name=self.bucket_name,
-            max_file_records=1000,
-            quiet=True,
+            max_file_size=1_000_000_000,
+            quiet=False,
         )
 
 
@@ -180,3 +182,12 @@ class Config:
     es: EsConfig = field(default_factory=EsConfig)
     s3: S3Config = field(default_factory=S3Config)
     http: HttpConfig = field(default_factory=HttpConfig)
+    warc_cache_dir: Path = field(default_factory=lambda: Path(environ["WARC_CACHE_DIR"]))
+
+    @cached_property
+    def warc_cache_store(self) -> WarcCacheStore:
+        return WarcCacheStore(
+            cache_dir_path=self.warc_cache_dir,
+            max_file_records=1000,
+            quiet=False,
+        )
