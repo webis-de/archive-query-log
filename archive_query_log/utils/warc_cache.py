@@ -5,6 +5,7 @@ from gzip import GzipFile
 from io import BytesIO
 from itertools import islice
 from pathlib import Path
+from shutil import copyfileobj
 from tempfile import TemporaryFile
 from typing import IO, NamedTuple, Iterable, Iterator, Optional, Sequence
 from uuid import uuid4
@@ -78,7 +79,7 @@ def _write_records(
                 break
 
             # Write temporary file to file.
-            file.write(tmp_file.read())
+            copyfileobj(tmp_file, file)
 
             rec = _WarcCacheRecord(
                 record=record,
@@ -111,6 +112,9 @@ class WarcCacheStore:
     Suppress logging and progress bars.
     """
 
+    def __post_init__(self):
+        self.cache_dir_path.mkdir(parents=True, exist_ok=True)
+
     def write(self, records: Iterable[WarcRecord]) -> Iterator[WarcCacheRecord]:
         records = iter(records)
         head: Sequence[WarcRecord]
@@ -118,7 +122,9 @@ class WarcCacheStore:
         while len(head) > 0:
             # Find next available key.
             key: str = f"{uuid4().hex}.warc.gz"
-            while (self.cache_dir_path / key).exists() or (self.cache_dir_path / f".{key}").exists():
+            while (self.cache_dir_path / key).exists() or (
+                self.cache_dir_path / f".{key}"
+            ).exists():
                 key = f"{uuid4().hex}.warc.gz"
 
             tmp_file_path: Path = self.cache_dir_path / f".{key}"
@@ -169,4 +175,3 @@ class WarcCacheStore:
 
     def read_all(self, random_order: bool = True) -> Iterator[WarcRecord]:
         raise NotImplementedError()
-
