@@ -102,8 +102,8 @@ class _WrapperWarcRecord(WarcRecord, Generic[_T]):
 
     @property
     def wrapped(self) -> _T:
-        wrapped = self._wrapped_type()
-        wrapped._from_dict(_JSON_DECODER.decode(self.rec_headers["WARC-Wrapped"]))
+        data = _JSON_DECODER.decode(self.rec_headers["WARC-Wrapped"])
+        wrapped = self._wrapped_type.from_es(data)
         return wrapped
 
 
