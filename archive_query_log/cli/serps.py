@@ -66,8 +66,20 @@ def download():
     pass
 
 
-@download.command(help="Download archived documents of captures as WARC.")
+@download.command(name="warc", help="Download archived documents of captures as WARC to a file cache.")
 @pass_config
-def warc(config: Config) -> None:
+def download_warc(config: Config) -> None:
     from archive_query_log.downloaders.warc import download_serps_warc
     download_serps_warc(config)
+
+
+@serps.group()
+def upload():
+    pass
+
+
+@upload.command(name="warc", help="Upload WARCs of archived documents of captures to S3 and update the index.")
+@pass_config
+def upload_warc(config: Config) -> None:
+    from archive_query_log.downloaders.warc import upload_serps_warc
+    upload_serps_warc(config)
