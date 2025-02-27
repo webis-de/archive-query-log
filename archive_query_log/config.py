@@ -13,7 +13,7 @@ from urllib3 import Retry
 from warc_cache import WarcCacheStore
 from warc_s3 import WarcS3Store
 
-from archive_query_log.utils.warc_cache import WarcCacheStore
+from archive_query_log import __version__ as version
 
 
 @dataclass(frozen=True)
@@ -189,7 +189,9 @@ class WarcCacheConfig:
     def store_serps(self) -> WarcCacheStore:
         return WarcCacheStore(
             cache_dir_path=self.path_serps,
-            max_file_records=1000,
+            max_file_records=100,
+            read_all_min_accumulated_bytes=1_000_000_000,
+            read_all_include_temporary_files=False,
             quiet=False,
         )
 
@@ -197,7 +199,9 @@ class WarcCacheConfig:
     # def store_results(self) -> WarcCacheStore:
     #     return WarcCacheStore(
     #         cache_dir_path=self.path_results,
-    #         max_file_records=1000,
+    #         max_file_records=100,
+    #         read_all_min_accumulated_bytes=1_000_000_000,
+    #         read_all_include_temporary_files=False,
     #         quiet=False,
     #     )
 
