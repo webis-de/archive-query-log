@@ -10,9 +10,9 @@ from pyrate_limiter import Limiter, RequestRate, Duration
 from requests import Session
 from requests_ratelimiter import LimiterAdapter
 from urllib3 import Retry
+from warc_cache import WarcCacheStore
 from warc_s3 import WarcS3Store
 
-from archive_query_log import __version__ as version
 from archive_query_log.utils.warc_cache import WarcCacheStore
 
 
@@ -80,7 +80,6 @@ class EsConfig:
             retry_on_timeout=True,
         )
 
-    # TODO: Check if actions specify the index correcty.
     def streaming_bulk(
         self,
         actions: Iterable[dict],
