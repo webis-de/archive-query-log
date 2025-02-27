@@ -17,5 +17,6 @@ def download():
 @download.command(help="Download archived documents of captures as WARC.")
 @pass_config
 def warc(config: Config) -> None:
-    from archive_query_log.downloaders.warc import download_results_warc
-    download_results_warc(config)
+    raise NotImplementedError("This command is not yet implemented.")
+    # from archive_query_log.downloaders.warc import download_results_warc
+    # download_results_warc(config)
