@@ -64,6 +64,8 @@ dependencies = [
     "urllib3~=1.26",
     "warcio~=1.7",
     "warc-s3~=0.1.1",
+    # FIXME: Workaround for https://github.com/boto/boto3/issues/3738.
+    "boto3<=1.35.99",
     "web-archive-api~=0.1.7",
 ]
 dynamic = ["version"]
