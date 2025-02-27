@@ -20,6 +20,7 @@ from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
 # from elasticsearch_dsl.query import Exists
 from requests import ConnectionError as RequestsConnectionError
 from tqdm.auto import tqdm
+from warc_cache import WarcCacheStore, WarcCacheRecord
 from warc_s3 import WarcS3Store
 from warcio.recordloader import ArcWarcRecord as WarcRecord
 
@@ -34,7 +35,6 @@ from archive_query_log.orm import Serp, InnerDownloader, WarcLocation
 # from archive_query_log.orm import Result
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
-from archive_query_log.utils.warc_cache import WarcCacheRecord, WarcCacheStore
 
 _T = TypeVar("_T", bound=Document)
 
@@ -222,10 +222,11 @@ def _iter_cached_records(
     completed_paths: list[Path] = []
 
     def _clear() -> None:
-        print("Clearing cache: ", completed_paths)
+        if len(completed_paths) > 0:
+            print(f"Clearing {len(completed_paths)} cached files.")
         while len(completed_paths) > 0:
             path = completed_paths[0]
-            # path.unlink()  # TODO: Uncomment this line.
+            path.unlink()
             completed_paths.remove(path)
 
     last_path: Path | None = None
@@ -382,10 +383,6 @@ def upload_serps_warc(config: Config) -> None:
         )
         for serp, location in stored_serps
     )
-
-    # TODO
-    for _ in actions:
-        print(_)
 
     config.es.bulk(actions)
 
