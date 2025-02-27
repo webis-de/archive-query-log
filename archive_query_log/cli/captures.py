@@ -25,12 +25,13 @@ def import_() -> None:
     pass
 
 
-_CEPH_DIR = Path("/mnt/ceph/storage/")
-_DEFAULT_DATA_DIR = (
-    _CEPH_DIR / "data-in-progress/data-research/web-search/"
-                "archive-query-log/focused/"
-    if _CEPH_DIR.is_mount() and _CEPH_DIR.exists()
-    else None)
+def _default_data_dir() -> Path | None:
+    ceph_dir = Path("/mnt/ceph/storage/")
+    return (
+        ceph_dir / "data-in-progress/data-research/web-search/archive-query-log/focused/"
+        if ceph_dir.is_mount() and ceph_dir.exists()
+        else None
+    )
 
 
 @import_.command(help="Import captures from the AQL-22 dataset.")
@@ -38,7 +39,7 @@ _DEFAULT_DATA_DIR = (
           type=PathType(path_type=Path, exists=True, file_okay=False,
                         dir_okay=True, readable=True, writable=False,
                         resolve_path=True, allow_dash=False),
-          metavar="DATA_DIR", required=True, default=_DEFAULT_DATA_DIR)
+          metavar="DATA_DIR", required=True, default=_default_data_dir)
 @option("--check-memento/--no-check-memento", default=True)
 @option("--search-provider", type=str, envvar="SEARCH_PROVIDER")
 @option("--search-provider-index", type=int,
