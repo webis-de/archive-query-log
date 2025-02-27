@@ -164,14 +164,35 @@ class WarcCacheStore:
             head, records = spy(records)
 
     def read(self, location: WarcCacheLocation) -> Iterator[WarcRecord]:
-        tmp_file_path = self.cache_dir_path / location.key
-        with tmp_file_path.open("rb") as tmp_file:
-            tmp_file.seek(location.offset)
-            buffer = tmp_file.read(location.length)
+        file_path = self.cache_dir_path / location.key
+        with file_path.open("rb") as file:
+            file.seek(location.offset)
+            buffer = file.read(location.length)
 
         with GzipFile(fileobj=BytesIO(buffer), mode="rb") as gzip_file:
             iterator = ArchiveIterator(gzip_file)
-            yield next(iterator)
+            yield from iterator
 
-    def read_all(self, random_order: bool = True) -> Iterator[WarcRecord]:
-        raise NotImplementedError()
+    def read_all(self) -> Iterator[WarcCacheRecord]:
+        # FIXME: Only use finalized files (not starting with `.`).
+        file_paths = self.cache_dir_path.glob("*.warc.gz")
+        for file_path in file_paths:
+            with file_path.open("rb") as file:
+                with GzipFile(fileobj=file, mode="rb") as gzip_file:
+                    iterator = ArchiveIterator(gzip_file)
+                    last_offset = file.tell()
+                    for record in iterator:
+                        if record.rec_type == "warcinfo":
+                            continue
+                        current_offset = file.tell()
+                        location = WarcCacheLocation(
+                            key=str(file_path.relative_to(self.cache_dir_path)),
+                            offset=last_offset,
+                            length=current_offset - last_offset,
+                        )
+                        yield WarcCacheRecord(
+                            record=record,
+                            location=location,
+                        )
+                        last_offset = current_offset
+                        
