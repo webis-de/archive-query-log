@@ -178,16 +178,34 @@ class HttpConfig:
 
 
 @dataclass(frozen=True)
+class WarcCacheConfig:
+    path_serps: Path = field(
+        default_factory=lambda: Path(environ["WARC_CACHE_PATH_SERPS"])
+    )
+    # path_results: Path = field(
+    #     default_factory=lambda: Path(environ["WARC_CACHE_PATH_RESULTS"])
+    # )
+
+    @cached_property
+    def store_serps(self) -> WarcCacheStore:
+        return WarcCacheStore(
+            cache_dir_path=self.path_serps,
+            max_file_records=1000,
+            quiet=False,
+        )
+
+    # @cached_property
+    # def store_results(self) -> WarcCacheStore:
+    #     return WarcCacheStore(
+    #         cache_dir_path=self.path_results,
+    #         max_file_records=1000,
+    #         quiet=False,
+    #     )
+
+
+@dataclass(frozen=True)
 class Config:
     es: EsConfig = field(default_factory=EsConfig)
     s3: S3Config = field(default_factory=S3Config)
     http: HttpConfig = field(default_factory=HttpConfig)
-    warc_cache_dir: Path = field(default_factory=lambda: Path(environ["WARC_CACHE_DIR"]))
-
-    @cached_property
-    def warc_cache_store(self) -> WarcCacheStore:
-        return WarcCacheStore(
-            cache_dir_path=self.warc_cache_dir,
-            max_file_records=1000,
-            quiet=False,
-        )
+    warc_cache: WarcCacheConfig = field(default_factory=WarcCacheConfig)
