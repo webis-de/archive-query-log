@@ -1,24 +1,24 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ $.Release.Name }}-serps-parse-url-query
+  name: {{ $.Release.Name }}-serps-upload-warc
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/secret: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
 spec:
-  suspend: {{ not $.Values.serpsParseUrlQuery.enabled }}
-  schedule: {{ $.Values.serpsParseUrlQuery.schedule | quote }}
+  suspend: {{ not $.Values.serpsUploadWarc.enabled }}
+  schedule: {{ $.Values.serpsUploadWarc.schedule | quote }}
   concurrencyPolicy: Forbid
   jobTemplate:
     spec:
-      completions: {{ $.Values.serpsParseUrlQuery.completions }}
-      parallelism: {{ $.Values.serpsParseUrlQuery.parallelism }}
-      backoffLimit: {{ $.Values.serpsParseUrlQuery.backoffLimit }}
-      ttlSecondsAfterFinished: {{ mul 60 $.Values.serpsParseUrlQuery.ttlMinutesAfterFinished }}
+      completions: {{ $.Values.serpsUploadWarc.completions }}
+      parallelism: {{ $.Values.serpsUploadWarc.parallelism }}
+      backoffLimit: {{ $.Values.serpsUploadWarc.backoffLimit }}
+      ttlSecondsAfterFinished: {{ mul 60 $.Values.serpsUploadWarc.ttlMinutesAfterFinished }}
       template:
         spec:
           containers:
-            - name: {{ $.Release.Name }}-serps-parse-url-query
+            - name: {{ $.Release.Name }}-serps-upload-warc
               image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
               imagePullPolicy: IfNotPresent
               resources:
@@ -29,8 +29,8 @@ spec:
                 - -m
                 - archive_query_log
                 - serps
-                - parse
-                - url-query
+                - upload
+                - warc
               env:
                 - name: ELASTICSEARCH_HOST
                   value: {{ $.Values.elasticsearch.host | quote }}

@@ -10,7 +10,8 @@ sourcesBuild:
 
 capturesFetch:
   enabled: true
-  schedule: "0,15,30,45 * * * *"
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
   completions: 15
   parallelism: 15
   backoffLimit: 25
@@ -27,7 +28,8 @@ capturesImportAql22:
 
 serpsParseUrlQuery:
   enabled: true
-  schedule: "0,15,30,45 * * * *"
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
   completions: 15
   parallelism: 15
   backoffLimit: 25
@@ -35,7 +37,8 @@ serpsParseUrlQuery:
 
 serpsParseUrlPage:
   enabled: true
-  schedule: "0,15,30,45 * * * *"
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
   completions: 5
   parallelism: 5
   backoffLimit: 25
@@ -43,31 +46,44 @@ serpsParseUrlPage:
 
 serpsParseUrlOffset:
   enabled: true
-  schedule: "0,15,30,45 * * * *"
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
   completions: 5
   parallelism: 5
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsDownloadWarc:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 20
-  parallelism: 20
+  enabled: false
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
+  completions: 10
+  parallelism: 10
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsUploadWarc:
+  enabled: false
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
+  completions: 1
+  parallelism: 1
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsParseWarcQuery:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
+  enabled: false
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
   completions: 5
   parallelism: 5
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsParseWarcSnippets:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
+  enabled: false
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
   completions: 5
   parallelism: 5
   backoffLimit: 25
@@ -85,10 +101,25 @@ elasticsearch:
   port: 9200
   username: null # Override with `--set elasticsearch.username=EXAMPLE` Helm option.
   password: null # Override with `--set elasticsearch.password=EXAMPLE` Helm option.
-
+  indexArchives: aql_test_archives
+  indexProviders: aql_test_providers
+  indexSources: aql_test_sources
+  indexCaptures: aql_test_captures
+  indexSerps: aql_test_serps
+  indexResults: aql_test_results
+  indexUrlQueryParsers: aql_test_url_query_parsers
+  indexUrlPageParsers: aql_test_url_page_parsers
+  indexUrlOffsetParsers: aql_test_url_offset_parsers
+  indexWarcQueryParsers: aql_test_warc_query_parsers
+  indexWarcSnippetsParsers: aql_test_warc_snippets_parsers
+  indexWarcDirectAnswersParser: aql_test_warc_direct_answers_parser
+  indexWarcMainContentParser: aql_test_warc_main_content_parser
 
 s3:
-  endpoint_url: https://s3.dw.webis.de
-  bucket_name: archive-query-log
-  access_key: null # Override with `--set s3.access_key=EXAMPLE` Helm option.
-  secret_key: null # Override with `--set s3.secret_key=EXAMPLE` Helm option.
+  endpointUrl: https://s3.dw.webis.de
+  bucketName: archive-query-log
+  accessKey: null # Override with `--set s3.accessKey=EXAMPLE` Helm option.
+  secretKey: null # Override with `--set s3.secretKey=EXAMPLE` Helm option.
+
+warcCache:
+  pathSerps: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps
