@@ -9,7 +9,7 @@ from re import (
     MULTILINE as RE_MULTILINE,
     DOTALL as RE_DOTALL,
 )
-from typing import Iterable, Iterator, TypeVar, Generic, Type, Callable, Any, NamedTuple
+from typing import Iterable, Iterator, TypeVar, Generic, Type, Callable, Any
 from uuid import uuid5
 from warnings import warn
 
