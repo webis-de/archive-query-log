@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime
 from itertools import chain
 from json import JSONEncoder, JSONDecoder
@@ -206,7 +207,8 @@ def download_serps_warc(config: Config) -> None:
 _R = TypeVar("_R", bound=WarcRecord)
 
 
-class _WithClearCallback(Generic[_T], NamedTuple):
+@dataclass(frozen=True)
+class _WithClearCallback(Generic[_T]):
     payload: _T
     clear: Callable[[], None]
 
