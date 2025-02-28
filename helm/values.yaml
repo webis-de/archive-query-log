@@ -54,16 +54,16 @@ serpsParseUrlOffset:
   ttlMinutesAfterFinished: 5
 
 serpsDownloadWarc:
-  enabled: false
+  enabled: true
   #schedule: "0,15,30,45 * * * *"
   schedule: "* * * * *"
-  completions: 10
-  parallelism: 10
+  completions: 100
+  parallelism: 100
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsUploadWarc:
-  enabled: false
+  enabled: true
   #schedule: "0,15,30,45 * * * *"
   schedule: "* * * * *"
   completions: 1
@@ -112,8 +112,8 @@ elasticsearch:
   indexUrlOffsetParsers: aql_test_url_offset_parsers
   indexWarcQueryParsers: aql_test_warc_query_parsers
   indexWarcSnippetsParsers: aql_test_warc_snippets_parsers
-  indexWarcDirectAnswersParser: aql_test_warc_direct_answers_parser
-  indexWarcMainContentParser: aql_test_warc_main_content_parser
+  indexWarcDirectAnswersParsers: aql_test_warc_direct_answers_parser
+  indexWarcMainContentParsers: aql_test_warc_main_content_parser
 
 s3:
   endpointUrl: https://s3.dw.webis.de

@@ -75,9 +75,9 @@ spec:
                 - name: ELASTICSEARCH_INDEX_WARC_SNIPPETS_PARSERS
                   value: {{ $.Values.elasticsearch.indexWarcSnippetsParsers | quote }}
                 - name: ELASTICSEARCH_INDEX_WARC_DIRECT_ANSWERS_PARSERS
-                  value: {{ $.Values.elasticsearch.indexWarcDirectAnswersParser | quote }}
+                  value: {{ $.Values.elasticsearch.indexWarcDirectAnswersParsers | quote }}
                 - name: ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS
-                  value: {{ $.Values.elasticsearch.indexWarcMainContentParser | quote }}
+                  value: {{ $.Values.elasticsearch.indexWarcMainContentParsers | quote }}
                 - name: S3_ENDPOINT_URL
                   value: {{ $.Values.s3.endpointUrl | quote }}
                 - name: S3_BUCKET_NAME
