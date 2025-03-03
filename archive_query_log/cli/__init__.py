@@ -27,6 +27,9 @@ from archive_query_log.orm import (
     UrlPageParser,
     UrlOffsetParser,
     WarcQueryParser,
+    WarcSnippetsParser,
+    WarcMainContentParser,
+    WarcDirectAnswersParser,
 )
 
 
@@ -72,6 +75,9 @@ def init(config: Config) -> None:
         (UrlPageParser, config.es.index_url_page_parsers),
         (UrlOffsetParser, config.es.index_url_offset_parsers),
         (WarcQueryParser, config.es.index_warc_query_parsers),
+        (WarcSnippetsParser, config.es.index_warc_snippets_parsers),
+        (WarcMainContentParser, config.es.index_warc_main_content_parsers),
+        (WarcDirectAnswersParser, config.es.index_warc_direct_answers_parsers),
     ]
     # noinspection PyTypeChecker
     indices: Iterable[tuple[Type[Document], str]] = tqdm(
