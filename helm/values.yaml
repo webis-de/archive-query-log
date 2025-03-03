@@ -12,8 +12,8 @@ capturesFetch:
   enabled: true
   #schedule: "0,15,30,45 * * * *"
   schedule: "* * * * *"
-  completions: 15
-  parallelism: 15
+  completions: 20
+  parallelism: 20
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
@@ -28,8 +28,7 @@ capturesImportAql22:
 
 serpsParseUrlQuery:
   enabled: true
-  #schedule: "0,15,30,45 * * * *"
-  schedule: "* * * * *"
+  schedule: "0,15,30,45 * * * *"
   completions: 15
   parallelism: 15
   backoffLimit: 25
@@ -37,55 +36,49 @@ serpsParseUrlQuery:
 
 serpsParseUrlPage:
   enabled: true
-  #schedule: "0,15,30,45 * * * *"
-  schedule: "* * * * *"
-  completions: 5
-  parallelism: 5
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsParseUrlOffset:
   enabled: true
-  #schedule: "0,15,30,45 * * * *"
-  schedule: "* * * * *"
-  completions: 5
-  parallelism: 5
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsDownloadWarc:
   enabled: true
-  #schedule: "0,15,30,45 * * * *"
-  schedule: "* * * * *"
-  completions: 100
-  parallelism: 100
+  schedule: "0,15,30,45 * * * *"
+  completions: 500
+  parallelism: 500
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsUploadWarc:
   enabled: true
-  #schedule: "0,15,30,45 * * * *"
-  schedule: "* * * * *"
+  schedule: "0,15,30,45 * * * *"
   completions: 1
   parallelism: 1
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsParseWarcQuery:
-  enabled: false
-  #schedule: "0,15,30,45 * * * *"
-  schedule: "* * * * *"
-  completions: 5
-  parallelism: 5
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
 serpsParseWarcSnippets:
-  enabled: false
-  #schedule: "0,15,30,45 * * * *"
-  schedule: "* * * * *"
-  completions: 5
-  parallelism: 5
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
   backoffLimit: 25
   ttlMinutesAfterFinished: 5
 
