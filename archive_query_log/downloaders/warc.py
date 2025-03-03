@@ -257,13 +257,13 @@ def _iter_wrapped_records(
     For example, a WARC record might contain a SERP document in its WARC-Wrapped header, which we later use to update the corresponding SERP on Elasticsearch.
     """
 
-    for record in records:
+    for record_with_callback in records:
         yield _WithClearCallback(
             payload=_WrapperWarcRecord(
-                record=record.payload,
+                record=record_with_callback.payload,
                 wrapped=wrapped_type,
             ),
-            clear=record.clear,
+            clear=record_with_callback.clear,
         )
 
 
@@ -276,13 +276,13 @@ def _iter_annotated_records(
     """
 
     for record in records:
-        payload = record.payload.wrapped
+        document = record.payload.wrapped
         del record.payload.rec_headers["WARC-Wrapped"]
 
         yield _AnnotatedWarcRecord(
             record=record.payload,
             annotation=_WithClearCallback(
-                payload=payload,
+                payload=document,
                 clear=record.clear,
             ),
         )
@@ -316,21 +316,22 @@ def _iter_s3_stored_records(
         if not isinstance(annotation, _WithClearCallback):
             raise TypeError(f"Expected _WithClearCallback, got {type(annotation)}.")
 
-        payload = annotation.payload
-        if not isinstance(payload, document_type):
-            raise TypeError(f"Expected {document_type}, got {type(payload)}.")
+        document = annotation.payload
+        clear = annotation.clear
+        if not isinstance(document, document_type):
+            raise TypeError(f"Expected {document_type}, got {type(document)}.")
 
-        yield payload, location
+        yield document, location
 
         # Clear cache file after storing in S3.
         current_key = stored_record.location.key
         if last_key is None:
             last_key = current_key
         elif last_key != current_key:
-            annotation.clear()
+            clear()
             last_key = current_key
             last_clear = None
-        last_clear = annotation.clear
+        last_clear = clear
 
     # Ensure last cache file is cleared after all records have been iterated.
     if last_clear is not None:
