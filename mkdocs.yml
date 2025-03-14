@@ -1,0 +1,61 @@
+site_name: Archive Query Log
+site_description: Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives.
+site_author: Webis group
+copyright: Copyright © 2024 Webis
+site_url: https://webis-de.github.io/archive-query-log
+repo_url: https://github.com/webis-de/archive-query-log
+repo_name: webis-de/archive-query-log
+edit_uri: edit/elastic/docs/
+strict: true
+nav:
+  - Introduction: index.md
+  - Foo: test.md
+  - Issue Tracker: https://github.com/webis-de/archive-query-log/issues
+plugins:
+  - search
+  - offline
+extra:
+  social:
+    - name: GitHub
+      icon: fontawesome/brands/github
+      link: https://github.com/webis-de
+    - name: Twitter / X
+      icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/webis_de
+  generator: false
+theme:
+  name: material
+  locale: en
+  language: en
+  logo: webis-logo-white.svg
+  favicon: favicon.png
+  features:
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to system preference
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

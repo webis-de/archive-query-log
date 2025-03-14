@@ -1,0 +1,45 @@
+{
+    "interpreted_query": "sexinsex\u5927\u9646\u514d\u8d39\u5165\u53e3",
+    "offset": null,
+    "page": null,
+    "query": "sexinsex\ufffd\ufffd\u00bd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd",
+    "results": [
+        {
+            "rank": 1,
+            "snippet": null,
+            "timestamp": 1213858525,
+            "title": "sexinsex \u8272\u4e2d\u8272\u8bba\u575b\u7f51\u7ad9,\u8272\u4e2d\u8272\u8bba\u575b\u5927\u9646\u5165\u53e3,\u8272\u4e2d\u8272\u8bba\u575b\u5e10\u53f7\u514d\u8d39..",
+            "url": "http://seinse.net.cn/"
+        },
+        {
+            "rank": 2,
+            "snippet": null,
+            "timestamp": 1213858525,
+            "title": "\u2261 \u90a3\u65f6\u82b1\u5f00\u2261 - \u6d3b\u529b\u57ce\u5e02 (\u6d3b\u529b\u57ce\u5e02\u793e\u533a&amp;\u6d3b\u529b\u57ce\u5e02\u8bba\u575b)\uff0d\u514d\u8d39\u804a...",
+            "url": "http://www.chenji.org/index.php?gid=25"
+        },
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1213858525,
+            "title": "\u6e29\u5dde\u5a77\u5a77\u4e94\u6708\u5929-----11sss\u827a\u672f\u5929\u7a7a\u793e\u533a",
+            "url": "http://www.134qq.cn/"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1213858525,
+            "title": "StartAid Sitemap Page 1707 of 1708",
+            "url": "http://www.startaid.com/sitemaps/page-1707.htm"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1213858525,
+            "title": "sexinsex \u8272\u4e2d\u8272\u8bba\u575b\u7f51\u7ad9,\u8272\u4e2d\u8272\u8bba\u575b\u5927\u9646\u5165\u53e3,\u8272\u4e2d\u8272\u8bba\u575b\u5e10\u53f7\u514d\u8d39..",
+            "url": "http://www.seinse.net.cn/"
+        }
+    ],
+    "timestamp": 1213858525,
+    "url": "http://www.baidu.com:80/s?wd=sexinsex%B4%F3%C2%BD%C3%E2%B7%D1%C8%EB%BF%DA&lm=0&si=&rn=10&ie=gb2312&ct=0&cl=3&f=1&rsp=9"
+}

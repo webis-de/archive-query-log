@@ -1,0 +1,118 @@
+image: ghcr.io/webis-de/archive-query-log
+
+sourcesBuild:
+  enabled: true
+  schedule: "0 6 * * 2,4"
+  completions: 10
+  parallelism: 10
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 30
+
+capturesFetch:
+  enabled: true
+  #schedule: "0,15,30,45 * * * *"
+  schedule: "* * * * *"
+  completions: 20
+  parallelism: 20
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+capturesImportAql22:
+  enabled: false
+  schedule: "0 6 * * 3"
+  dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
+  completions: 729  # The number of search providers.
+  parallelism: 10
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 30
+
+serpsParseUrlQuery:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 15
+  parallelism: 15
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseUrlPage:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseUrlOffset:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsDownloadWarc:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 500
+  parallelism: 500
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsUploadWarc:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseWarcQuery:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+serpsParseWarcSnippets:
+  enabled: true
+  schedule: "0,15,30,45 * * * *"
+  completions: 1
+  parallelism: 1
+  backoffLimit: 25
+  ttlMinutesAfterFinished: 5
+
+monitoring:
+  ingressClassName: nginx
+  host: aql-monitoring.srv.webis.de
+  path: /
+  replicas: 1
+  forceSslRedirect: true
+
+elasticsearch:
+  host: elasticsearch.srv.webis.de
+  port: 9200
+  username: null # Override with `--set elasticsearch.username=EXAMPLE` Helm option.
+  password: null # Override with `--set elasticsearch.password=EXAMPLE` Helm option.
+  indexArchives: aql_test_archives
+  indexProviders: aql_test_providers
+  indexSources: aql_test_sources
+  indexCaptures: aql_test_captures
+  indexSerps: aql_test_serps
+  indexResults: aql_test_results
+  indexUrlQueryParsers: aql_test_url_query_parsers
+  indexUrlPageParsers: aql_test_url_page_parsers
+  indexUrlOffsetParsers: aql_test_url_offset_parsers
+  indexWarcQueryParsers: aql_test_warc_query_parsers
+  indexWarcSnippetsParsers: aql_test_warc_snippets_parsers
+  indexWarcDirectAnswersParsers: aql_test_warc_direct_answers_parser
+  indexWarcMainContentParsers: aql_test_warc_main_content_parser
+
+s3:
+  endpointUrl: https://s3.dw.webis.de
+  bucketName: archive-query-log
+  accessKey: null # Override with `--set s3.accessKey=EXAMPLE` Helm option.
+  secretKey: null # Override with `--set s3.secretKey=EXAMPLE` Helm option.
+
+warcCache:
+  pathSerps: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps

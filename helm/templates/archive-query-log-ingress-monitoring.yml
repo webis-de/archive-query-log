@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $.Release.Name }}-monitoring
+  namespace: {{ $.Release.Namespace }}
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "{{ printf "%t" $.Values.monitoring.forceSslRedirect }}"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: 3600s
+    nginx.ingress.kubernetes.io/proxy-read-timeout: 3600s
+    nginx.ingress.kubernetes.io/proxy-send-timeout: 3600s
+spec:
+  ingressClassName: {{ $.Values.monitoring.ingressClassName }}
+  rules:
+  - host: {{ $.Values.monitoring.host }}
+    http:
+      paths:
+      - path: {{ $.Values.monitoring.path }}
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ $.Release.Name }}-monitoring
+            port:
+              name: http

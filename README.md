@@ -1,10 +1,17 @@
-[![CI](https://img.shields.io/github/actions/workflow/status/webis-de/archive-query-log/ci.yml?branch=main&style=flat-square)](https://github.com/webis-de/archive-query-log/actions/workflows/ci.yml)
-[![Code coverage](https://img.shields.io/codecov/c/github/webis-de/archive-query-log?style=flat-square)](https://codecov.io/github/webis-de/archive-query-log/)
+[![Paper DOI](https://img.shields.io/badge/DOI-10.1145%2F3539618.3591890-blue?style=flat-square)](https://doi.org/10.1145/3539618.3591890)
 [![arXiv preprint](https://img.shields.io/badge/arXiv-2304.00413-blue?style=flat-square)](https://arxiv.org/abs/2304.00413)
-[![Papers with Code](https://img.shields.io/badge/papers%20with%20code-AQL--22-blue?style=flat-square)](https://paperswithcode.com/paper/the-archive-query-log-mining-millions-of)
+[![Papers with Code](https://img.shields.io/badge/papers%20with%20code-AQL--22-blue?style=flat-square)](https://paperswithcode.com/paper/the-archive-query-log-mining-millions-of) \
+[![PyPi](https://img.shields.io/pypi/v/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/)
+[![Python](https://img.shields.io/pypi/pyversions/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/)
+[![Downloads](https://img.shields.io/pypi/dm/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/) \
+[![CI status](https://img.shields.io/github/actions/workflow/status/webis-de/archive-query-log/ci.yml?branch=main&style=flat-square)](https://github.com/webis-de/archive-query-log/actions/workflows/ci.yml)
+[![Code coverage](https://img.shields.io/codecov/c/github/webis-de/archive-query-log?style=flat-square)](https://codecov.io/github/webis-de/archive-query-log/)
+[![Maintenance](https://img.shields.io/maintenance/yes/2025?style=flat-square)](https://github.com/webis-de/archive-query-log/graphs/contributors) \
 [![Issues](https://img.shields.io/github/issues/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/pulls)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/commits)
 [![License](https://img.shields.io/github/license/webis-de/archive-query-log?style=flat-square)](LICENSE)
+<!-- TODO: Add GitHub Docker badges when <https://github.com/badges/shields/issues/5594> is resolved. -->
 
 # 📜 The Archive Query Log
 
@@ -12,13 +19,12 @@ Mining Millions of Search Result Pages of Hundreds of Search Engines from 25&nbs
 
 [![Queries TSNE](docs/queries-tsne-teaser.png)](docs/queries-tsne.png)
 
-Start now by running [your custom analysis/experiment](#integrations), scraping [your own query log](#tldr), or just look at [our example files](data/examples).
+Start now by running [your custom analysis/experiment](#integrations), scraping [your query log](#crawling), or  looking at [our example files](data/examples).
 
 ## Contents
 
 - [Integrations](#integrations)
-- [Installation](#installation)
-- [Usage](#tldr)
+- [Crawling](#crawling)
 - [Development](#development)
 - [Third-party Resources](#third-party-resources)
 - [Contribute](#contribute)
@@ -28,304 +34,331 @@ Start now by running [your custom analysis/experiment](#integrations), scraping 
 
 ### Running Experiments on the AQL
 
-The data in the Archive Query Log is highly sensitive (still, you can [re-crawl everything from the Wayback Machine](#usage)). For that reason, we ensure that custom experiments or analyises can not leak sensitive data (please [get in touch](#contribute) if you have questions) by using [TIRA](https://tira.io) as a platform for custom analyses/experiments. In TIRA, you submit a Docker image that implements your experiment. Your software is then executed in sandboxed mode (without internet connection) to ensure that your software does not leak sensitive information. After your software execution finished, administrators will review your submission and unblind it so that you can access the outputs.  
-Please refer to our [dedicated TIRA tutorial](integrations/tira/) as starting point for your experiments.
+The data in the Archive Query Log is highly sensitive (still, you can [re-crawl everything from the Wayback Machine](#crawling)). For that reason, we ensure that custom experiments or analyses can not leak sensitive data (please [get in touch](#contribute) if you have questions) by using [TIRA](https://tira.io) as a platform for custom analyses/experiments. In TIRA, you submit a Docker image that implements your experiment. Your software is then executed in sandboxed mode (without an internet connection) to ensure that your software does not leak sensitive information. After your software execution is finished, administrators will review your submission and unblind it so that you can access the outputs.  
+Please refer to our [dedicated TIRA tutorial](integrations/tira/README.md) as the starting point for your experiments.
 
-## Installation
+## Crawling
 
-1. Install [Python 3.10](https://python.org/downloads/)
-2. Create and activate virtual environment:
-    ```shell
-    python3.10 -m venv venv/
-    source venv/bin/activate
-    ```
-4. Install dependencies:
-    ```shell
-    pip install -e .
-    ```
+For running the CLI and crawl a query log on your own machine, please refer to the [instructions for single-machine deployments](#single-machine-pypidocker).
+If instead you want to scale up and run the crawling pipelines on a cluster, please refer to the [instructions for cluster deployments](#cluster-helmkubernetes).
 
-## Usage
+### Single-Machine (PyPi/Docker)
 
-To quickly scrape a sample query log, jump to the [TL;DR](#tldr).
+To run the Archive Query Log CLI on your machine, you can either use our [PyPi package](#installation-pypi) or the [Docker image](#installation-docker).
+(If you absolutely need to, you can also install the [Python CLI](#installation-python-from-source) or the Docker image from source.)
 
-If you want to learn more about each step here are some more detailed guides:
+#### Installation (PyPi)
 
-1. [Search providers](#1-search-providers)
-2. [Fetch archived URLs](#2-archived-urls)
-3. [Parse archived query URLs](#3-archived-query-urls)
-4. [Download archived raw SERPs](#4-archived-raw-serps)
-5. [Parse archived SERPs](#5-archived-parsed-serps)
+First you need to install [Python 3.10](https://python.org/downloads/), the [Protobuf compiler](https://grpc.io/docs/protoc-installation/), and [pipx](https://pypa.github.io/pipx/installation/) (this allows you to install the AQL CLI in a virtual environment).Then, you can install the Archive Query Log CLI by running:
 
-### TL;DR
+```shell
+pipx install archive-query-log
+```
 
-Let's start with a small example and construct a query log for the [ChatNoir](https://chatnoir.eu) search engine:
+Now you can run the Archive Query Log CLI by running:
+```shell
+aql --help
+```
 
-1. `python -m archive_query_log make archived-urls chatnoir`
-2. `python -m archive_query_log make archived-query-urls chatnoir`
-3. `python -m archive_query_log make archived-raw-serps chatnoir`
-4. `python -m archive_query_log make archived-parsed-serps chatnoir`
+#### Installation (Python from source)
 
-Got the idea? Now you're ready to scrape your own query logs! To scale things up and understand the data, just keep on reading. For more details on how to add more search providers, see [below](#contribute).
+<details>
 
-### 1. Search providers
+First, install [Python 3.10](https://python.org/downloads/) and the [Protobuf compiler](https://grpc.io/docs/protoc-installation/) and then clone this repository. From inside the repository directory, create a virtual environment and activate it:
 
-Manually or semi-automatically collect a list of search providers that you would like to scrape query logs from.
+```shell
+python3.10 -m venv venv/
+source venv/bin/activate
+```
 
-The list of search providers should be stored in a single [YAML][yaml-spec] file at [`data/selected-services.yaml`](data/selected-services.yaml) and contain one entry per search provider, like shown below:
+Install the Archive Query Log by running:
+
+```shell
+pip install -e .
+```
+
+Now you can run the Archive Query Log CLI by running:
+
+```shell
+aql --help
+```
+
+</details>
+
+#### Installation (Docker)
+
+You only need to install [Docker](https://docs.docker.com/get-docker/).
+
+**Note:** The commands below use the syntax of the [PyPi installation](#installation-pypi). To run the same commands with the Docker installation, replace `aql` with `docker run -it -v "$(pwd)"/config.override.yml:/workspace/config.override.yml ghcr.io/webis-de/archive-query-log`, for example:
+
+```shell
+docker run -it -v "$(pwd)"/config.override.yml:/workspace/config.override.yml ghcr.io/webis-de/archive-query-log --help
+```
+
+#### Installation (Docker from source)
+
+<details>
+
+First, install [Docker](https://docs.docker.com/get-docker/) and clone this repository. From inside the repository directory, build the Docker image like this:
+
+```shell
+docker build -t aql .
+```
+
+**Note:** The commands below use the syntax of the [PyPi installation](#installation-pypi). To run the same commands with the Docker installation, replace `aql` with `docker run -it -v "$(pwd)"/config.override.yml:/workspace/config.override.yml aql`, for example:
+
+```shell
+docker run -it -v "$(pwd)"/config.override.yml:/workspace/config.override.yml aql --help
+```
+
+</details>
+
+#### Configuration
+
+Crawling the Archive Query Log requires access to an Elasticsearch cluster and some S3 block storage. To configure access to the Elasticsearch cluster and S3, add a `config.override.yml` file in the current directory with the following contents. Replace the placeholders with your actual credentials:
 
 ```yaml
-- name: string               # search providers name (alexa_domain - alexa_public_suffix)
-  public_suffix: string      # public suffix (https://publicsuffix.org/) of alexa_domain
-  alexa_domain: string       # domain as it appears in Alexa top-1M ranks
-  alexa_rank: int            # rank from fused Alexa top-1M rankings
-  category: string           # manual annotation
-  notes: string              # manual annotation
-  input_field: bool          # manual annotation
-  search_form: bool          # manual annotation
-  search_div: bool           # manual annotation
-  domains: # known domains of the search providers (including the main domain)
-    - string
-    - string
-    - ...
-  query_parsers: # query parsers in order of precedence
-    - pattern: regex
-      type: query_parameter    # for URLs like https://example.com/search?q=foo
-      parameter: string
-    - pattern: regex
-      type: fragment_parameter # for URLs like https://example.com/search#q=foo
-      parameter: string
-    - pattern: regex
-      type: query_parameter    # for URLs like https://example.com/search/foo
-      path_prefix: string
-    - ...
-  page_parsers: # page number parsers in order of precedence
-    - pattern: regex
-      type: query_parameter    # for URLs like https://example.com/search?page=2
-      parameter: string
-    - ...
-  offset_parsers: # page offset parsers in order of precedence
-    - pattern: regex
-      type: query_parameter    # for URLs like https://example.com/search?start=11
-      parameter: string
-    - ...
-  interpreted_query_parsers: # interpreted query parsers in order of precedence
-    - ...
-  results_parsers: # search result and snippet parsers in order of precedence
-    - ...
-- ...
+es:
+  host: "<HOST>"
+  port: 9200
+  username: "<USERNAME>"
+  password: "<PASSWORD>"
+s3:
+   endpoint_url: "<URL>"
+   bucket_name: archive-query-log
+   access_key: "<KEY>"
+   secret_key: "<KEY>"
 ```
 
-In the source code, a search provider corresponds to the Python class [`Service`](archive_query_log/model/__init__.py).
+#### Toy Example: Crawl ChatNoir SERPs from the Wayback Machine
 
-### 2. Archived URLs
+The crawling pipeline of the Archive Query Log can best be understood by looking at a small toy example. Here, we want to crawl and parse SERPs of the [ChatNoir search engine](https://chatnoir.eu) from the [Wayback Machine](https://web.archive.org).
 
-Fetch all archived URLs for a search provider from the Internet Archive's Wayback Machine.
+> TODO: Add example instructions.
 
-You can run this step with the following command line, where `<PROVIDER>` is the name of the search provider you want to fetch archived URLs from:
+#### Add an archive service
 
-```shell:
-python -m archive_query_log make archived-urls <PROVIDER>
-```
-
-This will create multiple files in the `archived-urls` subdirectory under the [data directory](#pro-tip--specify-a-custom-data-directory), based on the search provider's name (`<PROVIDER>`), domain (`<DOMAIN>`), and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`) from which the URLs were originally fetched:
-
-```
-<DATADIR>/archived-urls/<PROVIDER>/<DOMAIN>/<CDXPAGE>.jsonl.gz
-```
-
-Here, the `<CDXPAGE>` is a 10-digit number with leading zeros, e.g., `0000000001`.
-
-Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file with one archived URL per line, in arbitrary order. Each line contains the following fields:
-
-```json
-{
-  "url": "string",
-  // archived URL
-  "timestamp": "int"
-  // archive timestamp as POSIX integer
-}
-```
-
-In the source code, an archived URL corresponds to the Python class [`ArchivedUrl`](archive_query_log/model/__init__.py).
-
-### 3. Archived Query URLs
-
-Parse and filter archived URLs that contain a query and may point to a search engine result page (SERP).
-
-You can run this step with the following command line, where `<PROVIDER>` is the name of the search provider you want to parse query URLs from:
-
-```shell:
-python -m archive_query_log make archived-query-urls <PROVIDER>
-```
-
-This will create multiple files in the `archived-query-urls` subdirectory under the [data directory](#pro-tip--specify-a-custom-data-directory), based on the search provider's name (`<PROVIDER>`), domain (`<DOMAIN>`), and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`) from which the URLs were originally fetched:
-
-```
-<DATADIR>/archived-query-urls/<PROVIDER>/<DOMAIN>/<CDXPAGE>.jsonl.gz
-```
-
-Here, the `<CDXPAGE>` is a 10-digit number with leading zeros, e.g., `0000000001`.
-
-Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file with one archived query URL per line, in arbitrary order. Each line contains the following fields:
-
-```json
-{
-  "url": "string",
-  // archived URL
-  "timestamp": "int",
-  // archive timestamp as POSIX integer
-  "query": "string",
-  // parsed query
-  "page": "int",
-  // result page number (optional)
-  "offset": "int"
-  // result page offset (optional)
-}
-```
-
-In the source code, an archived query URL corresponds to the Python class [`ArchivedQueryUrl`](archive_query_log/model/__init__.py).
-
-### 4. Archived Raw SERPs
-
-Download the raw HTML content of archived search engine result pages (SERPs).
-
-You can run this step with the following command line, where `<PROVIDER>` is the name of the search provider you want to download raw SERP HTML contents from:
-
-```shell:
-python -m archive_query_log make archived-raw-serps <PROVIDER>
-```
-
-This will create multiple files in the `archived-urls` subdirectory under the [data directory](#pro-tip--specify-a-custom-data-directory), based on the search provider's name (`<PROVIDER>`), domain (`<DOMAIN>`), and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`) from which the URLs were originally fetched. Archived raw SERPs are stored as 1GB-sized WARC chunk files, that is, WARC chunks are "filled" sequentially up to a size of 1GB each. If a chunk is full, a new chunk is created.
-
-```
-<DATADIR>/archived-raw-serps/<PROVIDER>/<DOMAIN>/<CDXPAGE>/<WARCCHUNK>.jsonl.gz
-```
-
-Here, the `<CDXPAGE>` and `<WARCCHUNK>` are both 10-digit numbers with leading zeros, e.g., `0000000001`.
-
-Each individual file is a GZIP-compressed [WARC][warc-spec] file with one WARC request and one WARC response per archived raw SERP. WARC records are arbitrarily ordered within or across chunks, but the WARC request and response for the same archived query URL are kept together. The archived query URL is stored in the WARC request's and response's `Archived-URL` field in [JSONL][jsonl-spec] format (the same format as in the previous step):
-
-```json
-{
-  "url": "string",
-  // archived URL
-  "timestamp": "int",
-  // archive timestamp as POSIX integer
-  "query": "string",
-  // parsed query
-  "page": "int",
-  // result page number (optional)
-  "offset": "int"
-  // result page offset (optional)
-}
-```
-
-In the source code, an archived raw SERP corresponds to the Python class [`ArchivedRawSerp`](archive_query_log/model/__init__.py).
-
-### 5. Archived Parsed SERPs
-
-Parse and filter archived SERPs from raw contents.
-
-You can run this step with the following command line, where `<PROVIDER>` is the name of the search provider you want to parse SERPs from:
-
-```shell:
-python -m archive_query_log make archived-parsed-serps <PROVIDER>
-```
-
-This will create multiple files in the `archived-serps` subdirectory under the [data directory](#pro-tip--specify-a-custom-data-directory), based on the search provider's name (`<PROVIDER>`), domain (`<DOMAIN>`), and the Wayback Machine's CDX [page number][cdx-pagination] (`<CDXPAGE>`) from which the URLs were originally fetched:
-
-```
-<DATADIR>/archived-serps/<PROVIDER>/<DOMAIN>/<CDXPAGE>.jsonl.gz
-```
-
-Here, the `<CDXPAGE>` is a 10-digit number with leading zeros, e.g., `0000000001`.
-
-Each individual file is a GZIP-compressed [JSONL][jsonl-spec] file with one archived parsed SERP per line, in arbitrary order. Each line contains the following fields:
-
-```json
-{
-  "url": "string",
-  // archived URL
-  "timestamp": "int",
-  // archive timestamp as POSIX integer
-  "query": "string",
-  // parsed query
-  "page": "int",
-  // result page number (optional)
-  "offset": "int",
-  // result page offset (optional)
-  "interpreted_query": "string",
-  // query displayed on the SERP (e.g. with spelling correction; optional)
-  "results": [
-    {
-      "url": "string",
-      // URL of the result
-      "title": "string",
-      // title of the result
-      "snippet": "string"
-      // snippet of the result (highlighting normalized to <em>)
-    },
-    ...
-  ]
-}
-```
-
-In the source code, an archived parsed SERP corresponds to the Python class [`ArchivedParsedSerp`](archive_query_log/model/__init__.py).
-
-### Pro Tip: Specify a Custom Data Directory
-
-By default, the data directory is set to [`data/`](data). You can change this with the `--data-directory` option, e.g.:
+Add new web archive services (e.g., the [Wayback Machine](https://web.archive.org)) to the AQL by running:
 
 ```shell
-python -m archive_query_log make archived-urls --data-directory /mnt/ceph/storage/data-in-progress/data-research/web-search/web-archive-query-log/
+aql archives add
 ```
 
-### Pro Tip: Limit Scraping for Testing
+We maintain a list of compatible web archives [below](#compatible-archives).
 
-If the search provider you're scraping queries for is very large and has many domains, testing your settings on a smaller sample from that search provider can be helpful. You can specify a single domain to scrape from like this:
+##### Compatible archives
+
+The web archives below are known to be compatible with the Archive Query Log crawler and can be used to mine SERPs.
+
+<!-- TODO: Extend this list. -->
+
+| Name | CDX API URL | Memento API URL |
+|:--|:--|:--|
+| [Wayback Machine](https://web.archive.org) | <https://web.archive.org/cdx/search/cdx> | <https://web.archive.org/web/> |
+
+#### Add a search provider
+
+Add new search providers (e.g., [Google](https://google.com)) to the AQL by running:
 
 ```shell
-python -m archive_query_log make archived-urls <PROVIDER> <DOMAIN>
+aql providers add
 ```
 
-If a domain is very popular and therefore has many archived URLs,
-you can further limit the number of archived URLs to scrape by selecting
-a [page](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api)
-from the Wayback Machine's
-[CDX API](https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api):
+A search provider can be any website that offers some search functionality. Ideally, you should also look at common prefixes of the URLs of the search results pages (e.g., `/search` for Google). Narrowing down URL prefixes helps to avoid crawling too many captures that do not contain search results.
+
+Refer to the [import instructions below](#import) to import providers from the AQL-22 YAML file format.
+
+#### Build source pairs
+
+Once you have added at least one [archive](#add-an-archive-service) and one [search provider](#add-a-search-provider), we want to crawl archived captures of SERPs for each search provider and for each archive service. That is, we compute the cross-product of archives and the search providers' domains and URL prefixes (roughly: archive×provider). Start building source pairs (i.e., archive–provider pairs) by running:
 
 ```shell
-python -m archive_query_log make archived-urls <PROVIDER> <DOMAIN> <CDX_PAGE>
+aql sources build
+```
+
+Running the command again after adding more archives or providers will automatically create the missing source pairs.
+
+#### Fetch captures
+
+For each [source pair](#build-source-pairs), we now fetch captures from the archive service that corresponds to the provider's domain and URL prefix given in the source pair. Again, rerunning the command after adding more source pairs fetches just the missing captures.
+
+#### Parse SERP URLs
+
+Not every capture necessarily points to a search engine result page (SERP). But usually, SERPs contain the user query in the URL, so we can filter out non-SERP captures by parsing the URLs.
+
+```shell
+aql serps parse url-query
+
+```
+
+Parsing the query from the capture URL will add SERPs to a new, more focused index that only contains SERPs. From the SERPs, we can also parse the page number and offset of the SERP, if available.
+
+```shell
+aql serps parse url-page
+aql serps parse url-offset
+```
+
+All the above commands can be run in parallel, and they can be run multiple times to update the SERP index. Already parsed SERPs will be skipped.
+
+#### Download SERP WARCs
+
+Up to this point, we have only fetched the metadata of the captures, most prominently the URL. However, the snippets of the SERPs are not contained in the metadata but only on the web page. So, we need to download the actual web pages from the archive service.
+
+```shell
+aql serps download warc
+```
+
+This command will download the contents of each SERP to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the SERP index so that we can quickly access a specific SERP's contents later.
+
+#### Parsing SERP WARCs
+
+From the WARC, we can again parse the query as it appears on the SERP.
+
+```shell
+aql serps parse serp-query
+```
+
+More importantly, we can parse the snippets of the SERP.
+
+```shell
+aql serps parse serp-snippets
+```
+
+Parsing the snippets from the SERP's WARC contents will also add the SERP's results to a new index.
+
+#### Download SERP snippet WARCs
+
+To get the full text of each referenced result from the SERP, we need to download a capture of the result from the web archive. Intuitively, we would like to download a capture of the result at the exact same time as the SERP was captured. But often, web archives crawl the results later or not at all. Therefore, the implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures for each result, if any can be found.
+
+```shell
+aql results download warc
+```
+
+This command will again download the result's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the result index for random access to the contents of a specific result.
+
+### Import
+
+We support automatically importing providers and parsers from the AQL-22 YAML-file format (see [`data/selected-services.yaml`](data/selected-services.yaml)). To import the services and parsers from the AQL-22 YAML file, run the following commands:
+
+```shell
+aql providers import
+aql parsers url-query import
+aql parsers url-page import
+aql parsers url-offset import
+aql parsers warc-query import
+aql parsers warc-snippets import
+```
+
+We also support importing a previous crawl of captures from the AQL-22 file system backend:
+
+```shell
+aql captures import aql-22
+```
+
+Last, we support importing all archives from the [Archive-It](https://archive-it.org/) web archive service:
+
+```shell
+aql archives import archive-it
+```
+
+### Cluster (Helm/Kubernetes)
+
+Running the Archive Query Log on a cluster is recommended for large-scale crawls. We provide a Helm chart that automatically starts crawling and parsing jobs for you and stores the results in an Elasticsearch cluster.
+
+#### Installation
+
+Just install [Helm](https://helm.sh/docs/intro/quickstart/) and configure `kubectl` for your cluster.
+
+#### Configuration
+
+Crawling the Archive Query Log requires access to an Elasticsearch cluster and some S3 block storage. Configure the Elasticsearch and S3 credentials in a `values.override.yaml` file like this:
+
+```yaml
+elasticsearch:
+  host: "<HOST>"
+  port: 9200
+  username: "<USERNAME>"
+  password: "<PASSWORD>"
+s3:
+  endpoint_url: "<URL>"
+  bucket_name: archive-query-log
+  access_key: "<KEY>"
+  secret_key: "<KEY>"
+```
+
+#### Deployment
+
+Let us deploy the Helm chart on the cluster (we are testing first with `--dry-run` to see if everything works):
+
+```shell
+helm upgrade --install --values ./helm/values.override.yaml --dry-run archive-query-log ./helm
+```
+
+If everything works and the output looks good, you can remove the `--dry-run` flag to actually deploy the chart.
+
+#### Uninstall
+
+If you no longer need the chart, you can uninstall it:
+
+```shell
+helm uninstall archive-query-log
 ```
 
 ## Citation
 
-If you use the Archive Query Log dataset or the code to generate it in your research, please cite the following paper describing the AQL and its use-cases:
+If you use the Archive Query Log dataset or the crawling code in your research, please cite the following paper describing the AQL and its use cases:
 
-> TODO
+> Jan Heinrich Reimer, Sebastian Schmidt, Maik Fröbe, Lukas Gienapp, Harrisen Scells, Benno Stein, Matthias Hagen, and Martin Potthast. [The Archive Query Log: Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives.](https://webis.de/publications.html?q=archive#reimer_2023) In Hsin-Hsi Chen et al., editors, _46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2023)_, pages 2848–2860, July 2023. ACM.
 
 You can use the following BibTeX entry for citation:
 
 ```bibtex
-% TODO
+@InProceedings{reimer:2023,
+    author = {Jan Heinrich Reimer and Sebastian Schmidt and Maik Fr{\"o}be and Lukas Gienapp and Harrisen Scells and Benno Stein and Matthias Hagen and Martin Potthast},
+    booktitle = {46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2023)},
+    doi = {10.1145/3539618.3591890},
+    editor = {Hsin{-}Hsi Chen and Wei{-}Jou (Edward) Duh and Hen{-}Hsen Huang and Makoto P. Kato and Josiane Mothe and Barbara Poblete},
+    ids = {potthast:2023u},
+    isbn = {9781450394086},
+    month = jul,
+    numpages = 13,
+    pages = {2848--2860},
+    publisher = {ACM},
+    site = {Taipei, Taiwan},
+    title = {{The Archive Query Log: Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives}},
+    url = {https://dl.acm.org/doi/10.1145/3539618.3591890},
+    year = 2023
+}
 ```
 
 ## Development
 
-Run tests:
+Refer to the local [Python installation](#installation-python-from-source) instructions to set up the development environment and install the dependencies.
+
+Then, also install the test dependencies:
+
 ```shell
-flake8 archive_query_log
-pylint -E archive_query_log
-pytest archive_query_log
+pip install -e .[tests]
 ```
 
-Add new tests for parsers:
+After having implemented a new feature, please check the code format, inspect common LINT errors, and run all unit tests with the following commands:
+
+```shell
+ruff .                         # Code format and LINT
+mypy .                         # Static typing
+bandit -c pyproject.toml -r .  # Security
+pytest .                       # Unit tests
+```
+
+### Add new tests for parsers
+
+At the moment, our workflow for adding new tests for parsers goes like this:
 
 1. Select the number of tests to run per service and the number of services.
-2. Auto-generate unit tests and download WARCs with [generate_tests.py](archive_query_log/results/test/generate_tests.py)
+2. Auto-generate unit tests and download WARCs with [generate_tests.py](archive_query_log/legacy/results/test/generate_tests.py)
 3. Run the tests.
 4. Failing tests will open a diff editor with the approval and a web browser tab with the Wayback URL.
-5. Use the web browser dev tools to find the query input field and search result CSS paths.
+5. Use the web browser dev tools to find the query input field and the search result CSS paths.
 6. Close diffs and tabs and re-run tests.
 
 ## Third-party Resources
@@ -334,10 +367,11 @@ Add new tests for parsers:
 
 ## Contribute
 
-If you've found an important search provider to be missing from this query log, please suggest it by creating an [issue][repo-issues]. We also very gratefully accept [pull requests][repo-prs] for adding [search providers](#1-search-providers) or new parser configurations!
+If you have found an important search provider missing from this query log, please suggest it by creating an [issue](https://github.com/webis-de/archive-query-log/issues). We also gratefully accept [pull requests](https://github.com/webis-de/archive-query-log/pulls) for adding search providers or new parser configurations!
 
-If you're unsure about anything, post an [issue][repo-issues], or contact us:
-- [heinrich.reimer@uni-jena.de](mailto:heinrich.reimer@uni-jena.de)
+If you are unsure about anything, post an [issue](https://github.com/webis-de/archive-query-log/issues/new) or contact us:
+
+- [heinrich.merker@uni-jena.de](mailto:heinrich.merker@uni-jena.de)
 - [s.schmidt@uni-leipzig.de](mailto:s.schmidt@uni-leipzig.de)
 - [maik.froebe@uni-jena.de](mailto:maik.froebe@uni-jena.de)
 - [lukas.gienapp@uni-leipzig.de](mailto:lukas.gienapp@uni-leipzig.de)
@@ -346,25 +380,12 @@ If you're unsure about anything, post an [issue][repo-issues], or contact us:
 - [matthias.hagen@uni-jena.de](mailto:matthias.hagen@uni-jena.de)
 - [martin.potthast@uni-leipzig.de](mailto:martin.potthast@uni-leipzig.de)
 
-We're happy to help!
+We are happy to help!
 
 ## License
 
-This repository is released under the [MIT license](LICENSE). Files in the `data/` directory are exempt from this license.
-If you use the AQL in your research, we'd be glad if you'd [cite us](#citation).
+This repository is released under the [MIT license](LICENSE). Files in the `data/` directory are exempt from this license. If you use the AQL in your research, we would be glad if you could [cite us](#citation).
 
 ## Abstract
 
 The Archive Query Log (AQL) is a previously unused, comprehensive query log collected at the Internet Archive over the last 25 years. Its first version includes 356 million queries, 166 million search result pages, and 1.7 billion search results across 550 search providers. Although many query logs have been studied in the literature, the search providers that own them generally do not publish their logs to protect user privacy and vital business data. Of the few query logs publicly available, none combines size, scope, and diversity. The AQL is the first to do so, enabling research on new retrieval models and (diachronic) search engine analyses. Provided in a privacy-preserving manner, it promotes open research as well as more transparency and accountability in the search industry.
-
-[repo-issues]: https://git.webis.de/code-research/web-search/web-archive-query-log/-/issues
-
-[repo-prs]: https://git.webis.de/code-research/web-search/web-archive-query-log/-/merge_requests
-
-[cdx-pagination]: https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md#pagination-api
-
-[warc-spec]: https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1/
-
-[jsonl-spec]: https://jsonlines.org/
-
-[yaml-spec]: https://yaml.org/

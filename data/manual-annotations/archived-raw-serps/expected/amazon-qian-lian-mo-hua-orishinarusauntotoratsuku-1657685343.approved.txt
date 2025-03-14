@@ -1,0 +1,346 @@
+{
+    "interpreted_query": "\u5343\u604b\uff0a\u4e07\u82b1 \u30aa\u30ea\u30b8\u30ca\u30eb\u30b5\u30a6\u30f3\u30c9\u30c8\u30e9\u30c3\u30af",
+    "offset": null,
+    "page": null,
+    "query": "\u5343\u604b\uff0a\u4e07\u82b1 \u30aa\u30ea\u30b8\u30ca\u30eb\u30b5\u30a6\u30f3\u30c9\u30c8\u30e9\u30c3\u30af",
+    "results": [
+        {
+            "rank": 3,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u5343\u604b*\u4e07\u82b1 \u30aa\u30ea\u30b8\u30ca\u30eb\u30fb\u30b5\u30a6\u30f3\u30c9\u30c8\u30e9\u30c3\u30af",
+            "url": "https://www.amazon.co.jp/-/en/dp/B01N9FNNO0/ref=sr_1_1?__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&crid=BFBUJUC89AS1&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&qid=1657692543&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&sr=8-1"
+        },
+        {
+            "rank": 4,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u5343\u604b\uff0a\u4e07\u82b1 \u30aa\u30ea\u30b8\u30ca\u30eb\u30b5\u30a6\u30f3\u30c9\u30c8\u30e9\u30c3\u30af",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?ref=sr_1_2&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-2"
+        },
+        {
+            "rank": 5,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u5343\u604b*\u4e07\u82b1 \u30ad\u30e3\u30e9\u30af\u30bf\u30fc\u30bd\u30f3\u30b0 Vol.4 \u300cBlue sky\u300d",
+            "url": "https://www.amazon.co.jp/-/en/dp/B01CSC1J7A/ref=sr_1_3?__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&crid=BFBUJUC89AS1&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&qid=1657692543&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&sr=8-3"
+        },
+        {
+            "rank": 7,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u604b\u3072\u604b\u3075\u7e01",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92SGLJ&ref=sr_1_4&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-4"
+        },
+        {
+            "rank": 8,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u604b\u3072\u604b\u3075\u7e01 &lt;Koto Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92ZH3P&ref=sr_1_5&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-5"
+        },
+        {
+            "rank": 9,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u3075\u305f\u3064\u306e\u5f71",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91689Y&ref=sr_1_6&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-6"
+        },
+        {
+            "rank": 10,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u30aa\u30ea\u30b8\u30ca\u30eb\u30df\u30cb\u30c9\u30e9\u30de\uff5e\u305d\u306e4\uff5e\u300c\u521d\u3081\u3066\u306e\u4f53\u9a13\u300d",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08CN4GRQX?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08CNN7ZZ7&ref=sr_1_7&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-7"
+        },
+        {
+            "rank": 11,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u30aa\u30ea\u30b8\u30ca\u30eb\u30df\u30cb\u30c9\u30e9\u30de\uff5e\u305d\u306e2\uff5e\u300c\u30ef\u30bf\u30b7\u3001\u30cb\u30f3\u30b8\u30e3\u3067\u3059\u300d",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08CNKMYYR?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08CNHQ4CD&ref=sr_1_8&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-8"
+        },
+        {
+            "rank": 12,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u30aa\u30ea\u30b8\u30ca\u30eb\u30df\u30cb\u30c9\u30e9\u30de\uff5e\u305d\u306e3\uff5e\u300c\u543e\u8f29\u306e\u4e00\u65e5\u300d",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08CNJJTFG?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08CNJXSYR&ref=sr_1_9&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-9"
+        },
+        {
+            "rank": 13,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u604b\u3072\u604b\u3075\u7e01 (Game Size)",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92F7L2&ref=sr_1_10&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-10"
+        },
+        {
+            "rank": 15,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u604b\u3072\u604b\u3075\u7e01 (Karaoke Version)",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92C3WY&ref=sr_1_11&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-11"
+        },
+        {
+            "rank": 16,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u30aa\u30ea\u30b8\u30ca\u30eb\u30df\u30cb\u30c9\u30e9\u30de\uff5e\u305d\u306e1\uff5e\u300c\u5deb\u5973\u306e\u304a\u4ed5\u4e8b\u300d",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08CNJC32F?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08CNK79RH&ref=sr_1_12&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-12"
+        },
+        {
+            "rank": 17,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u604b\u3072\u604b\u3075\u7e01 (Title Version)",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92CM7C&ref=sr_1_13&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-13"
+        },
+        {
+            "rank": 18,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u3075\u305f\u308a\u3067",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D8ZBN1Z&ref=sr_1_14&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-14"
+        },
+        {
+            "rank": 19,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u611b\u3057\u3055\u3068\u611f\u8b1d\u306e\u6c17\u6301\u3061",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D8ZSLNT&ref=sr_1_15&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-15"
+        },
+        {
+            "rank": 20,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "GIFT",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92C495&ref=sr_1_16&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-16"
+        },
+        {
+            "rank": 21,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u30ad\u30df\u306e\u3068\u306a\u308a",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91YL4V&ref=sr_1_17&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-17"
+        },
+        {
+            "rank": 22,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "Love flower",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91JZWJ&ref=sr_1_18&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-18"
+        },
+        {
+            "rank": 23,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u82b1\u9ce5\u98a8\u6708",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92BMCB&ref=sr_1_19&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-19"
+        },
+        {
+            "rank": 24,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u8309\u5b50\u306e\u65e5\u5e38 &lt;Instrument Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91HWW4&ref=sr_1_20&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-20"
+        },
+        {
+            "rank": 25,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u935b\u932c",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D918X2N&ref=sr_1_21&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-21"
+        },
+        {
+            "rank": 26,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u4eca\u6614\u306e\u8857",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D8ZZH1N&ref=sr_1_22&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-22"
+        },
+        {
+            "rank": 27,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u3068\u304a\u308a\u3083\u3093\u305b\uff5e\u7518\u7f8e\u98a8\u6765 &lt;Instrument Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D8ZYXTC&ref=sr_1_23&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-23"
+        },
+        {
+            "rank": 28,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u3068\u304a\u308a\u3083\u3093\u305b\uff5e\u7518\u7f8e\u98a8\u6765 &lt;Quiet Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92ZQRD&ref=sr_1_24&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-24"
+        },
+        {
+            "rank": 29,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u614e\u307e\u3057\u304d\u671d",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92RZ33&ref=sr_1_25&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-25"
+        },
+        {
+            "rank": 30,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u546a\u8a5b",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92N4Q8&ref=sr_1_26&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-26"
+        },
+        {
+            "rank": 31,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u4f1d\u7d71\u3068\u683c\u5f0f",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92M44T&ref=sr_1_27&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-27"
+        },
+        {
+            "rank": 32,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u904b\u547d",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92LSQQ&ref=sr_1_28&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-28"
+        },
+        {
+            "rank": 33,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "Blue sky &lt;Quiet Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92HW1V&ref=sr_1_29&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-29"
+        },
+        {
+            "rank": 34,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "GIFT (Game Size)",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92GPH9&ref=sr_1_30&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-30"
+        },
+        {
+            "rank": 35,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u795e\u69d8\u306e\u795d\u798f",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92FGJ4&ref=sr_1_31&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-31"
+        },
+        {
+            "rank": 36,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u30ad\u30df\u306e\u3068\u306a\u308a (Karaoke Version)",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92BR8X&ref=sr_1_32&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-32"
+        },
+        {
+            "rank": 37,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u3075\u305f\u308a\u3067 (Game Size)",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92BMQS&ref=sr_1_33&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-33"
+        },
+        {
+            "rank": 38,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u30ad\u30ba\u30ca\u30d2\u30c8\u30c4 &lt;Quiet Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D92B5N3&ref=sr_1_34&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-34"
+        },
+        {
+            "rank": 39,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u5fcc\u307e\u308f\u3057\u304d\u7d99\u627f",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D929J33&ref=sr_1_35&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-35"
+        },
+        {
+            "rank": 40,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u604b\u3072\u604b\u3075\u7e01 &lt;Piano Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D9299N5&ref=sr_1_36&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-36"
+        },
+        {
+            "rank": 41,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u6c7a\u610f",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D929144&ref=sr_1_37&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-37"
+        },
+        {
+            "rank": 42,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u9811\u5f35\u308b\u304a\u59c9\u3055\u3093\u306f\u597d\u304d\u3067\u3059\u304b\uff1f &lt;Quiet Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D928RZ9&ref=sr_1_38&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-38"
+        },
+        {
+            "rank": 43,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u5f35\u308a\u8a70\u3081\u305f\u6642",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D928LTP&ref=sr_1_39&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-39"
+        },
+        {
+            "rank": 44,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u660e\u93e1\u6b62\u6c34",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D928K1N&ref=sr_1_40&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-40"
+        },
+        {
+            "rank": 45,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u30ad\u30ba\u30ca\u30d2\u30c8\u30c4 &lt;Instrument Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D9249J9&ref=sr_1_41&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-41"
+        },
+        {
+            "rank": 46,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u8eab\u3082\u5fc3\u3082\u2026",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D923FP1&ref=sr_1_42&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-42"
+        },
+        {
+            "rank": 47,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u6727",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D922V2Y&ref=sr_1_43&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-43"
+        },
+        {
+            "rank": 48,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "Blue sky &lt;Instrument Version&gt;",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91ZZ4K&ref=sr_1_44&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-44"
+        },
+        {
+            "rank": 49,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u6c17\u306b\u306a\u308b\u5f93\u59b9",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91ZB5M&ref=sr_1_45&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-45"
+        },
+        {
+            "rank": 50,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u7530\u5fc3\u5c4b",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91YL4S&ref=sr_1_46&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-46"
+        },
+        {
+            "rank": 51,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u306a\u305c\u306b\u4f55\u6545\uff1f",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91XGC6&ref=sr_1_47&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-47"
+        },
+        {
+            "rank": 52,
+            "snippet": null,
+            "timestamp": 1657685343,
+            "title": "\u4f55\u3082\u898b\u3048\u306a\u3044",
+            "url": "https://www.amazon.co.jp/-/en/music/player/albums/B08D9164JT?marketplaceId=A1VC38T7YXB528&musicTerritory=JP&trackAsin=B08D91WSYX&ref=sr_1_48&keywords=%E5%8D%83%E6%81%8B*%E4%B8%87%E8%8A%B1%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&qid=1657692543&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&sr=8-48"
+        }
+    ],
+    "timestamp": 1657685343,
+    "url": "https://www.amazon.co.jp/s?k=%E5%8D%83%E6%81%8B%EF%BC%8A%E4%B8%87%E8%8A%B1+%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&crid=BFBUJUC89AS1&sprefix=%E5%8D%83%E6%81%8B+%E4%B8%87%E8%8A%B1+original+soundtrack%2Caps%2C546&ref=nb_sb_noss"
+}

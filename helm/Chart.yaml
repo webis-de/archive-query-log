@@ -1,0 +1,19 @@
+apiVersion: v2
+name: archive-query-log
+description: "The Archive Query Log: Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives."
+type: application
+home: https://github.com/webis-de/archive-query-log
+sources:
+- https://github.com/webis-de/archive-query-log
+icon: https://assets.webis.de/img/webis-logo-gray.svg
+maintainers:
+- name: Jan Heinrich Merker
+  email: heinrich.merker@uni-jena.de
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application.
+appVersion: 0.2.2
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+version: 0.2.2
