@@ -81,6 +81,7 @@ def _get_statistics(
     if filter_query is not None:
         search = search.filter(filter_query)
     total = search.count()
+    # FIXME: Use specific last modified field.
     last_modified_response = (
         search.query(Exists(field="last_modified"))
         .sort("-last_modified")
