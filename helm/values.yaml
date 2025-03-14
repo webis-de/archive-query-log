@@ -94,19 +94,19 @@ elasticsearch:
   port: 9200
   username: null # Override with `--set elasticsearch.username=EXAMPLE` Helm option.
   password: null # Override with `--set elasticsearch.password=EXAMPLE` Helm option.
-  indexArchives: aql_test_archives
-  indexProviders: aql_test_providers
-  indexSources: aql_test_sources
-  indexCaptures: aql_test_captures
-  indexSerps: aql_test_serps
-  indexResults: aql_test_results
-  indexUrlQueryParsers: aql_test_url_query_parsers
-  indexUrlPageParsers: aql_test_url_page_parsers
-  indexUrlOffsetParsers: aql_test_url_offset_parsers
-  indexWarcQueryParsers: aql_test_warc_query_parsers
-  indexWarcSnippetsParsers: aql_test_warc_snippets_parsers
-  indexWarcDirectAnswersParsers: aql_test_warc_direct_answers_parser
-  indexWarcMainContentParsers: aql_test_warc_main_content_parser
+  indexArchives: aql_archives
+  indexProviders: aql_providers
+  indexSources: aql_sources
+  indexCaptures: aql_captures
+  indexSerps: aql_serps
+  indexResults: aql_results
+  indexUrlQueryParsers: aql_url_query_parsers
+  indexUrlPageParsers: aql_url_page_parsers
+  indexUrlOffsetParsers: aql_url_offset_parsers
+  indexWarcQueryParsers: aql_warc_query_parsers
+  indexWarcSnippetsParsers: aql_warc_snippets_parsers
+  indexWarcDirectAnswersParsers: aql_warc_direct_answers_parser
+  indexWarcMainContentParsers: aql_warc_main_content_parser
 
 s3:
   endpointUrl: https://s3.dw.webis.de
