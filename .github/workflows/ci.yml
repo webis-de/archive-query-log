@@ -143,8 +143,6 @@ jobs:
       with:
         context: .
         push: false
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
   python-publish:
     name: 🚀 Publish Python wheels
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
@@ -207,8 +205,6 @@ jobs:
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
   github-release:
     name: 🚀 Create GitHub release
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
