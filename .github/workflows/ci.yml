@@ -228,7 +228,9 @@ jobs:
     - python-typing
     - python-security
     - python-test
+    - python-publish
     - docker-build
+    - docker-publish
     permissions:
       contents: write
     runs-on: ubuntu-latest
