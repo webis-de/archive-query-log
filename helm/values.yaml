@@ -10,8 +10,7 @@ sourcesBuild:
 
 capturesFetch:
   enabled: true
-  #schedule: "0,15,30,45 * * * *"
-  schedule: "* * * * *"
+  schedule: "0,15,30,45 * * * *"
   completions: 20
   parallelism: 20
   backoffLimit: 25
