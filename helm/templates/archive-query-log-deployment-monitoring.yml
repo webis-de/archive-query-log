@@ -20,6 +20,9 @@ spec:
       containers:
         - name: {{ $.Release.Name }}
           image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+          resources:
+            requests:
+              memory: 4Gi
           command:
             - /venv/bin/python
             - -m
