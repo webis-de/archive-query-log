@@ -10,6 +10,9 @@ jobs:
       matrix:
         python:
         - '3.10'
+        # - '3.11'
+        # - '3.12'
+        # - '3.13'
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
@@ -40,6 +43,9 @@ jobs:
       matrix:
         python:
         - '3.10'
+        # - '3.11'
+        # - '3.12'
+        # - '3.13'
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
@@ -62,6 +68,9 @@ jobs:
       matrix:
         python:
         - '3.10'
+        # - '3.11'
+        # - '3.12'
+        # - '3.13'
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
@@ -84,6 +93,9 @@ jobs:
       matrix:
         python:
         - '3.10'
+        # - '3.11'
+        # - '3.12'
+        # - '3.13'
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
@@ -106,6 +118,9 @@ jobs:
       matrix:
         python:
         - '3.10'
+        # - '3.11'
+        # - '3.12'
+        # - '3.13'
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
@@ -126,7 +141,6 @@ jobs:
       uses: codecov/codecov-action@v3
       if: matrix.python == '3.10'
       with:
-        fail_ci_if_error: true
         token: ${{ secrets.CODECOV_TOKEN }}
   docker-build:
     name: 🏗️ Build Docker image
@@ -145,7 +159,7 @@ jobs:
         push: false
   python-publish:
     name: 🚀 Publish Python wheels
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+    if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
     needs:
     - python-build
     - python-code-check
@@ -168,7 +182,7 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
   docker-publish:
     name: 🚀 Publish Docker image
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+    if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
     permissions:
       packages: write
     needs:
@@ -207,7 +221,7 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
   github-release:
     name: 🚀 Create GitHub release
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+    if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
     needs:
     - python-build
     - python-code-check
