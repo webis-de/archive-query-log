@@ -3,17 +3,17 @@ image: ghcr.io/webis-de/archive-query-log
 sourcesBuild:
   enabled: true
   schedule: "0 6 * * 2,4"
-  completions: 10
-  parallelism: 10
-  backoffLimit: 25
+  completions: 1
+  parallelism: 1
+  backoffLimit: 50
   ttlMinutesAfterFinished: 30
 
 capturesFetch:
   enabled: true
   schedule: "0,15,30,45 * * * *"
-  completions: 20
-  parallelism: 20
-  backoffLimit: 25
+  completions: 25
+  parallelism: 25
+  backoffLimit: 125
   ttlMinutesAfterFinished: 5
 
 capturesImportAql22:
@@ -22,15 +22,15 @@ capturesImportAql22:
   dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
   completions: 729  # The number of search providers.
   parallelism: 10
-  backoffLimit: 25
+  backoffLimit: 50
   ttlMinutesAfterFinished: 30
 
 serpsParseUrlQuery:
   enabled: true
   schedule: "0,15,30,45 * * * *"
-  completions: 15
-  parallelism: 15
-  backoffLimit: 25
+  completions: 25
+  parallelism: 25
+  backoffLimit: 125
   ttlMinutesAfterFinished: 5
 
 serpsParseUrlPage:
@@ -38,7 +38,7 @@ serpsParseUrlPage:
   schedule: "0,15,30,45 * * * *"
   completions: 1
   parallelism: 1
-  backoffLimit: 25
+  backoffLimit: 5
   ttlMinutesAfterFinished: 5
 
 serpsParseUrlOffset:
@@ -46,15 +46,15 @@ serpsParseUrlOffset:
   schedule: "0,15,30,45 * * * *"
   completions: 1
   parallelism: 1
-  backoffLimit: 25
+  backoffLimit: 5
   ttlMinutesAfterFinished: 5
 
 serpsDownloadWarc:
   enabled: true
   schedule: "0,15,30,45 * * * *"
-  completions: 500
-  parallelism: 500
-  backoffLimit: 25
+  completions: 400
+  parallelism: 400
+  backoffLimit: 2000
   ttlMinutesAfterFinished: 5
 
 serpsUploadWarc:
@@ -62,7 +62,7 @@ serpsUploadWarc:
   schedule: "0,15,30,45 * * * *"
   completions: 1
   parallelism: 1
-  backoffLimit: 25
+  backoffLimit: 5
   ttlMinutesAfterFinished: 5
 
 serpsParseWarcQuery:
@@ -70,15 +70,15 @@ serpsParseWarcQuery:
   schedule: "0,15,30,45 * * * *"
   completions: 1
   parallelism: 1
-  backoffLimit: 25
+  backoffLimit: 5
   ttlMinutesAfterFinished: 5
 
 serpsParseWarcSnippets:
   enabled: true
   schedule: "0,15,30,45 * * * *"
-  completions: 1
-  parallelism: 1
-  backoffLimit: 25
+  completions: 3
+  parallelism: 3
+  backoffLimit: 15
   ttlMinutesAfterFinished: 5
 
 monitoring:
