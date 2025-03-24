@@ -93,15 +93,17 @@ def _get_statistics(
     else:
         last_modified = last_modified_response.hits[0].last_modified
 
+    disk_size = (
+        _convert_bytes(stats["_all"]["total"]["store"]["size_in_bytes"])
+        if filter_query is None
+        else None
+    )
+
     statistics = Statistics(
         name=name,
         description=description,
         total=total,
-        disk_size=(
-            _convert_bytes(stats["_all"]["total"]["store"]["size_in_bytes"])
-            if filter_query is None
-            else None
-        ),
+        disk_size=disk_size,
         last_modified=last_modified,
     )
     _statistics_cache[key] = statistics
