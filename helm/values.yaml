@@ -52,9 +52,9 @@ serpsParseUrlOffset:
 serpsDownloadWarc:
   enabled: true
   schedule: "0,15,30,45 * * * *"
-  completions: 400
-  parallelism: 400
-  backoffLimit: 2000
+  completions: 500
+  parallelism: 500
+  backoffLimit: 2500
   ttlMinutesAfterFinished: 5
 
 serpsUploadWarc:
