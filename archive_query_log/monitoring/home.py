@@ -1,6 +1,5 @@
 from datetime import datetime
 from typing import NamedTuple, Type
-import os
 from pathlib import Path
 
 from elasticsearch_dsl.query import Exists, Query, Term
