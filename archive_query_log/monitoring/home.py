@@ -111,38 +111,28 @@ def _get_statistics(
     return statistics
 
 
-def _get_warc_cache_tempfile_tatistics(directory: str, name: str, description: str) -> Statistics:
+def _get_warc_cache_statistics(config: Config, name: str, description: str, temp=False) -> Statistics:
     """Retrieve WARC cache statistics."""
-    temp_files = list(Path(directory).glob(".*.warc.gz"))
+    
+    if temp:
+        files = list(Path(config.warc_cache.path_serps).glob(".*.warc.gz"))
 
-    temp_count = len(temp_files)
-    temp_size = sum(f.stat().st_size for f in temp_files) if temp_files else 0
-    temp_last_modified = max(f.stat().st_mtime for f in temp_files) if temp_files else None
+    else:
+        files = list(Path(config.warc_cache.path_serps).glob("[!.]*.warc.gz"))
+
+    count = len(files)
+    size = sum(f.stat().st_size for f in files) if files else 0
+    last_modified = max(f.stat().st_mtime for f in files) if files else None
+    
 
     return Statistics(
         name=name,
         description=description,
-        total=temp_count,
-        disk_size=_convert_bytes(temp_size),
-        last_modified=datetime.fromtimestamp(temp_last_modified) if temp_last_modified else None,
+        total=count,
+        disk_size=_convert_bytes(size),
+        last_modified=datetime.fromtimestamp(last_modified) if last_modified else None,
     )
     
-def _get_warc_cache_finalfile_statistics(directory: str, name: str, description: str) -> Statistics:
-    """Retrieve WARC cache statistics."""
-    final_files = list(Path(directory).glob("[!.]*.warc.gz"))
-
-    final_count = len(final_files)
-    final_size = sum(f.stat().st_size for f in final_files) if final_files else 0
-    final_last_modified = max(f.stat().st_mtime for f in final_files) if final_files else None
-
-    return Statistics(
-        name=name,
-        description=description,
-        total=final_count,
-        disk_size=_convert_bytes(final_size),
-        last_modified=datetime.fromtimestamp(final_last_modified) if final_last_modified else None,
-    )
-
 
 _progress_cache: dict[
     tuple[DocumentType, str, str, str],
@@ -317,13 +307,14 @@ def home(config: Config) -> str | Response:
             document=WarcSnippetsParser,
             index=config.es.index_warc_snippets_parsers,
         ),
-        _get_warc_cache_tempfile_tatistics(
-            directory="/mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps",
+        _get_warc_cache_statistics(
+            config=config,
             name="WARC Cache (temporary)",
             description="Statistics for temporary WARC files.",
+            temp=True
         ),
-        _get_warc_cache_finalfile_statistics(
-            directory="/mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps",
+        _get_warc_cache_statistics(
+            config=config,
             name="WARC Cache (finalized)",
             description="Statistics for finalized WARC files.",
         ),
