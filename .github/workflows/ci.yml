@@ -61,7 +61,7 @@ jobs:
     - name: 🧰 Install dependencies
       run: pip install .[tests]
     - name: 🔍 Check Python code
-      run: ruff .
+      run: ruff check .
   python-typing:
     name: 🔍 Check Python static typing
     strategy:

@@ -344,7 +344,7 @@ pip install -e .[tests]
 After having implemented a new feature, please check the code format, inspect common LINT errors, and run all unit tests with the following commands:
 
 ```shell
-ruff .                         # Code format and LINT
+ruff check .                         # Code format and LINT
 mypy .                         # Static typing
 bandit -c pyproject.toml -r .  # Security
 pytest .                       # Unit tests
