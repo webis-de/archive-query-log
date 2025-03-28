@@ -14,10 +14,26 @@ def captures() -> None:
 
 @captures.command()
 @pass_config
-def fetch(config: Config) -> None:
+@option(
+    "--prefetch-limit",
+    type=int,
+    required=False,
+    help="Fetch captures for only a limited number of sources, and prefetch that batch to fetch from.",
+)
+def fetch(
+    config: Config,
+    prefetch_limit: int | None = None,
+) -> None:
     from archive_query_log.captures import fetch_captures
-    Capture.init(using=config.es.client, index=config.es.index_captures)
-    fetch_captures(config)
+
+    Capture.init(
+        using=config.es.client,
+        index=config.es.index_captures,
+    )
+    fetch_captures(
+        config=config,
+        prefetch_limit=prefetch_limit,
+    )
 
 
 @captures.group("import")
