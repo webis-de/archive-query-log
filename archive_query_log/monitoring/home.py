@@ -120,7 +120,7 @@ def _get_warc_cache_statistics(config: Config, name: str, description: str, temp
     else:
         files = list(Path(config.warc_cache.path_serps).glob("[!.]*.warc.gz"))
 
-    count = len(files)
+    total = len(files)
     size = sum(f.stat().st_size for f in files) if files else 0
     last_modified = max(f.stat().st_mtime for f in files) if files else None
     
@@ -128,7 +128,7 @@ def _get_warc_cache_statistics(config: Config, name: str, description: str, temp
     return Statistics(
         name=name,
         description=description,
-        total=count,
+        total=total,
         disk_size=_convert_bytes(size),
         last_modified=datetime.fromtimestamp(last_modified) if last_modified else None,
     )
