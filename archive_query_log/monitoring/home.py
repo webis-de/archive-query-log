@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import NamedTuple, Type
+from pathlib import Path
 
 from elasticsearch_dsl.query import Exists, Query, Term
 from expiringdict import ExpiringDict
@@ -109,6 +110,29 @@ def _get_statistics(
     _statistics_cache[key] = statistics
     return statistics
 
+
+def _get_warc_cache_statistics(config: Config, name: str, description: str, temp=False) -> Statistics:
+    """Retrieve WARC cache statistics."""
+    
+    if temp:
+        files = list(Path(config.warc_cache.path_serps).glob(".*.warc.gz"))
+
+    else:
+        files = list(Path(config.warc_cache.path_serps).glob("[!.]*.warc.gz"))
+
+    total = len(files)
+    size = sum(f.stat().st_size for f in files) if files else 0
+    last_modified = max(f.stat().st_mtime for f in files) if files else None
+    
+
+    return Statistics(
+        name=name,
+        description=description,
+        total=total,
+        disk_size=_convert_bytes(size),
+        last_modified=datetime.fromtimestamp(last_modified) if last_modified else None,
+    )
+    
 
 _progress_cache: dict[
     tuple[DocumentType, str, str, str],
@@ -282,6 +306,17 @@ def home(config: Config) -> str | Response:
             description="Parser to get the snippets from a SERP's " "WARC contents.",
             document=WarcSnippetsParser,
             index=config.es.index_warc_snippets_parsers,
+        ),
+        _get_warc_cache_statistics(
+            config=config,
+            name="WARC Cache (temporary)",
+            description="Statistics for temporary WARC files.",
+            temp=True
+        ),
+        _get_warc_cache_statistics(
+            config=config,
+            name="WARC Cache (finalized)",
+            description="Statistics for finalized WARC files.",
         ),
     ]
 
