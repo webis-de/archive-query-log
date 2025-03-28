@@ -1,5 +1,7 @@
 from datetime import datetime
 from typing import NamedTuple, Type
+import os
+from pathlib import Path
 
 from elasticsearch_dsl.query import Exists, Query, Term
 from expiringdict import ExpiringDict
@@ -108,6 +110,39 @@ def _get_statistics(
     )
     _statistics_cache[key] = statistics
     return statistics
+
+
+def _get_warc_cache_tempfile_tatistics(directory: str, name: str, description: str) -> Statistics:
+    """Retrieve WARC cache statistics."""
+    temp_files = list(Path(directory).glob(".*.warc.gz"))
+
+    temp_count = len(temp_files)
+    temp_size = sum(f.stat().st_size for f in temp_files) if temp_files else 0
+    temp_last_modified = max(f.stat().st_mtime for f in temp_files) if temp_files else None
+
+    return Statistics(
+        name=name,
+        description=description,
+        total=str(temp_count),
+        disk_size=_convert_bytes(temp_size),
+        last_modified=datetime.fromtimestamp(temp_last_modified) if temp_last_modified else None,
+    )
+    
+def _get_warc_cache_finalfile_statistics(directory: str, name: str, description: str) -> Statistics:
+    """Retrieve WARC cache statistics."""
+    final_files = list(Path(directory).glob("[!.]*.warc.gz"))
+
+    final_count = len(final_files)
+    final_size = sum(f.stat().st_size for f in final_files) if final_files else 0
+    final_last_modified = max(f.stat().st_mtime for f in final_files) if final_files else None
+
+    return Statistics(
+        name=name,
+        description=description,
+        total=str(final_count),
+        disk_size=_convert_bytes(final_size),
+        last_modified=datetime.fromtimestamp(final_last_modified) if final_last_modified else None,
+    )
 
 
 _progress_cache: dict[
@@ -282,6 +317,16 @@ def home(config: Config) -> str | Response:
             description="Parser to get the snippets from a SERP's " "WARC contents.",
             document=WarcSnippetsParser,
             index=config.es.index_warc_snippets_parsers,
+        ),
+        _get_warc_cache_tempfile_tatistics(
+            directory="/mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps",
+            name="WARC Cache (temporary)",
+            description="Statistics for temporary WARC files.",
+        ),
+        _get_warc_cache_finalfile_statistics(
+            directory="/mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps",
+            name="WARC Cache (finalized)",
+            description="Statistics for finalized WARC files.",
         ),
     ]
 
