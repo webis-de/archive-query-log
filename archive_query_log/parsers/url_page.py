@@ -1,5 +1,5 @@
 from functools import cache
-from itertools import chain
+from itertools import chain, islice
 from typing import Iterable, Iterator
 from uuid import uuid5
 
@@ -168,7 +168,7 @@ def _parse_serp_url_page_action(
     return
 
 
-def parse_serps_url_page(config: Config) -> None:
+def parse_serps_url_page(config: Config, prefetch_limit: int | None = None) -> None:
     config.es.client.indices.refresh(index=config.es.index_serps)
     changed_serps_search: Search = (
         Serp.search(using=config.es.client, index=config.es.index_serps)
@@ -185,6 +185,12 @@ def parse_serps_url_page(config: Config) -> None:
             preserve_order=True
         ).scan()
         changed_serps = safe_iter_scan(changed_serps)
+
+        if prefetch_limit is not None:
+            num_changed_serps = min(num_changed_serps, prefetch_limit)
+            changed_serps = tqdm(changed_serps, total=num_changed_serps, desc="Pre-fetching SERPs", unit="SERP")
+            changed_serps = iter(list(islice(changed_serps, prefetch_limit)))
+
         # noinspection PyTypeChecker
         changed_serps = tqdm(
             changed_serps, total=num_changed_serps, desc="Parsing URL page", unit="SERP"

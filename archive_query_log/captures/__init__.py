@@ -1,4 +1,4 @@
-from itertools import chain
+from itertools import chain, islice
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
@@ -123,7 +123,7 @@ def _add_captures_actions(
     )
 
 
-def fetch_captures(config: Config) -> None:
+def fetch_captures(config: Config, prefetch_limit: int | None = None) -> None:
     changed_sources_search: Search = (
         Source.search(using=config.es.client, index=config.es.index_sources)
         .filter(~Term(should_fetch_captures=False))
@@ -143,6 +143,12 @@ def fetch_captures(config: Config) -> None:
             .scan()
         )
         changed_sources = safe_iter_scan(changed_sources)
+
+        if prefetch_limit is not None:
+            num_changed_sources = min(num_changed_sources, prefetch_limit)
+            changed_sources = tqdm(changed_sources, total=num_changed_sources, desc="Pre-fetching sources", unit="source")
+            changed_sources = iter(list(islice(changed_sources, prefetch_limit)))
+
         # noinspection PyTypeChecker
         changed_sources = tqdm(changed_sources, total=num_changed_sources,
                                desc="Fetching captures", unit="source")
