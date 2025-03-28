@@ -122,7 +122,7 @@ def _get_warc_cache_tempfile_tatistics(directory: str, name: str, description: s
     return Statistics(
         name=name,
         description=description,
-        total=str(temp_count),
+        total=temp_count,
         disk_size=_convert_bytes(temp_size),
         last_modified=datetime.fromtimestamp(temp_last_modified) if temp_last_modified else None,
     )
@@ -138,7 +138,7 @@ def _get_warc_cache_finalfile_statistics(directory: str, name: str, description:
     return Statistics(
         name=name,
         description=description,
-        total=str(final_count),
+        total=final_count,
         disk_size=_convert_bytes(final_size),
         last_modified=datetime.fromtimestamp(final_last_modified) if final_last_modified else None,
     )
