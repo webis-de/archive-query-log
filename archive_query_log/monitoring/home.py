@@ -30,7 +30,7 @@ _CACHE_SECONDS_PROGRESS = 60 * 10  # 10 minutes
 class Statistics(NamedTuple):
     name: str
     description: str
-    total: str
+    total: int
     disk_size: str | None
     last_modified: datetime | None
 
