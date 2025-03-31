@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $.Release.Name }}-monitoring
+  name: {{ $.Release.Name }}-serps-parse-url-query
   namespace: {{ $.Release.Namespace }}
   annotations:
-    checksum/secret: {{ include (print $.Template.BasePath "/archive-query-log-secret.yaml") . | sha256sum }}
+    checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
 spec:
   selector:
     matchLabels:
-      app: {{ $.Release.Name }}-monitoring
-  replicas: {{ $.Values.monitoring.replicas }}
-  revisionHistoryLimit: 2
+      app: {{ $.Release.Name }}-serps-parse-url-query
+  replicas: {{ $.Values.serpsParseUrlQuery.replicas }}
+  revisionHistoryLimit: 1
   template:
     metadata:
       labels:
-        app: {{ $.Release.Name }}-monitoring
+        app: {{ $.Release.Name }}-serps-parse-url-query
     spec:
-      restartPolicy: Always
       containers:
-        - name: {{ $.Release.Name }}
+        - name: {{ $.Release.Name }}-serps-parse-url-query
           image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
           resources:
             requests:
               memory: 4Gi
@@ -27,15 +27,11 @@ spec:
             - /venv/bin/python
             - -m
             - archive_query_log
-            - monitoring
-            - run
-            - --host
-            - 0.0.0.0
-            - --port
-            - "5000"
-          ports:
-            - name: http
-              containerPort: 5000
+            - serps
+            - parse
+            - url-query
+            - --prefetch-limit
+            - '{{ $.Values.serpsParseUrlQuery.prefetchLimit }}'
           env:
             - name: ELASTICSEARCH_HOST
               value: {{ $.Values.elasticsearch.host | quote }}

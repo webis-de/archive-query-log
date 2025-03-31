@@ -1,24 +1,14 @@
 image: ghcr.io/webis-de/archive-query-log
 
 sourcesBuild:
-  enabled: true
-  schedule: "0 6 * * 2,4"
-  completions: 1
-  parallelism: 1
-  backoffLimit: 50
-  ttlMinutesAfterFinished: 30
+  replicas: 1
 
 capturesFetch:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 25
-  parallelism: 25
-  backoffLimit: 125
-  ttlMinutesAfterFinished: 5
+  replicas: 25
+  prefetchLimit: 1000
 
 capturesImportAql22:
   enabled: false
-  schedule: "0 6 * * 3"
   dataDir: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/focused
   completions: 729  # The number of search providers.
   parallelism: 10
@@ -26,60 +16,31 @@ capturesImportAql22:
   ttlMinutesAfterFinished: 30
 
 serpsParseUrlQuery:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 25
-  parallelism: 25
-  backoffLimit: 125
-  ttlMinutesAfterFinished: 5
+  replicas: 35
+  prefetchLimit: 1000
 
 serpsParseUrlPage:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 1
-  parallelism: 1
-  backoffLimit: 5
-  ttlMinutesAfterFinished: 5
+  replicas: 1
+  prefetchLimit: 1000
 
 serpsParseUrlOffset:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 1
-  parallelism: 1
-  backoffLimit: 5
-  ttlMinutesAfterFinished: 5
+  replicas: 1
+  prefetchLimit: 1000
 
 serpsDownloadWarc:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 500
-  parallelism: 500
-  backoffLimit: 2500
-  ttlMinutesAfterFinished: 5
+  replicas: 500
+  prefetchLimit: 1000
 
 serpsUploadWarc:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 1
-  parallelism: 1
-  backoffLimit: 5
-  ttlMinutesAfterFinished: 5
+  replicas: 1
 
 serpsParseWarcQuery:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 1
-  parallelism: 1
-  backoffLimit: 5
-  ttlMinutesAfterFinished: 5
+  replicas: 3
+  prefetchLimit: 1000
 
 serpsParseWarcSnippets:
-  enabled: true
-  schedule: "0,15,30,45 * * * *"
-  completions: 3
-  parallelism: 3
-  backoffLimit: 15
-  ttlMinutesAfterFinished: 5
+  replicas: 5
+  prefetchLimit: 1000
 
 monitoring:
   ingressClassName: nginx

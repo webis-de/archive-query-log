@@ -1,0 +1,103 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-monitoring
+  namespace: {{ $.Release.Namespace }}
+  annotations:
+    checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ $.Release.Name }}-monitoring
+  replicas: {{ $.Values.monitoring.replicas }}
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      labels:
+        app: {{ $.Release.Name }}-monitoring
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: {{ $.Release.Name }}
+          image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+          resources:
+            requests:
+              memory: 4Gi
+          command:
+            - /venv/bin/python
+            - -m
+            - archive_query_log
+            - monitoring
+            - run
+            - --host
+            - 0.0.0.0
+            - --port
+            - "5000"
+          ports:
+            - name: http
+              containerPort: 5000
+          env:
+            - name: ELASTICSEARCH_HOST
+              value: {{ $.Values.elasticsearch.host | quote }}
+            - name: ELASTICSEARCH_PORT
+              value: {{ $.Values.elasticsearch.port | quote }}
+            - name: ELASTICSEARCH_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: elasticsearchUsername
+            - name: ELASTICSEARCH_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: elasticsearchPassword
+            - name: ELASTICSEARCH_INDEX_ARCHIVES
+              value: {{ $.Values.elasticsearch.indexArchives | quote }}
+            - name: ELASTICSEARCH_INDEX_PROVIDERS
+              value: {{ $.Values.elasticsearch.indexProviders | quote }}
+            - name: ELASTICSEARCH_INDEX_SOURCES
+              value: {{ $.Values.elasticsearch.indexSources | quote }}
+            - name: ELASTICSEARCH_INDEX_CAPTURES
+              value: {{ $.Values.elasticsearch.indexCaptures | quote }}
+            - name: ELASTICSEARCH_INDEX_SERPS
+              value: {{ $.Values.elasticsearch.indexSerps | quote }}
+            - name: ELASTICSEARCH_INDEX_RESULTS
+              value: {{ $.Values.elasticsearch.indexResults | quote }}
+            - name: ELASTICSEARCH_INDEX_URL_QUERY_PARSERS
+              value: {{ $.Values.elasticsearch.indexUrlQueryParsers | quote }}
+            - name: ELASTICSEARCH_INDEX_URL_PAGE_PARSERS
+              value: {{ $.Values.elasticsearch.indexUrlPageParsers | quote }}
+            - name: ELASTICSEARCH_INDEX_URL_OFFSET_PARSERS
+              value: {{ $.Values.elasticsearch.indexUrlOffsetParsers | quote }}
+            - name: ELASTICSEARCH_INDEX_WARC_QUERY_PARSERS
+              value: {{ $.Values.elasticsearch.indexWarcQueryParsers | quote }}
+            - name: ELASTICSEARCH_INDEX_WARC_SNIPPETS_PARSERS
+              value: {{ $.Values.elasticsearch.indexWarcSnippetsParsers | quote }}
+            - name: ELASTICSEARCH_INDEX_WARC_DIRECT_ANSWERS_PARSERS
+              value: {{ $.Values.elasticsearch.indexWarcDirectAnswersParsers | quote }}
+            - name: ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS
+              value: {{ $.Values.elasticsearch.indexWarcMainContentParsers | quote }}
+            - name: S3_ENDPOINT_URL
+              value: {{ $.Values.s3.endpointUrl | quote }}
+            - name: S3_BUCKET_NAME
+              value: {{ $.Values.s3.bucketName | quote }}
+            - name: S3_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: s3AccessKey
+            - name: S3_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: s3SecretKey
+            - name: WARC_CACHE_PATH_SERPS
+              value: {{ $.Values.warcCache.pathSerps | quote }}
+          volumeMounts:
+            - name: {{ $.Release.Name }}-warc-cache-path-serps
+              mountPath: {{ $.Values.warcCache.pathSerps }}
+      volumes:
+        - name: {{ $.Release.Name }}-warc-cache-path-serps
+          hostPath:
+            path: {{ $.Values.warcCache.pathSerps }}
+            type: DirectoryOrCreate
