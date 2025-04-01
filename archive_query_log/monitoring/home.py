@@ -1,11 +1,13 @@
 from datetime import datetime
-from gzip import open as gzip_open
+from gzip import open as gzip_open, BadGzipFile
 from typing import NamedTuple, Type
 from pathlib import Path
+from warnings import warn
 
 from elasticsearch_dsl.query import Exists, Query, Term
 from expiringdict import ExpiringDict
 from flask import render_template, Response, make_response
+from tqdm import tqdm
 from warcio import ArchiveIterator
 
 from archive_query_log.config import Config
@@ -78,6 +80,7 @@ def _get_statistics(
     key = (document, index, last_modified_field)
     if key in _statistics_cache:
         return _statistics_cache[key]
+    print(f"Get statistics: {name}")
 
     config.es.client.indices.refresh(index=index)
     stats = config.es.client.indices.stats(index=index)
@@ -129,6 +132,7 @@ def _get_warc_cache_statistics(
     key = (cache_path.resolve(), temporary)
     if key in _warc_cache_statistics_cache:
         return _warc_cache_statistics_cache[key]
+    print(f"Get statistics: {name}")
     
     file_paths: list[Path]
     if temporary:
@@ -144,15 +148,20 @@ def _get_warc_cache_statistics(
     if len(file_paths) > 0:
         disk_size_bytes = sum(file_path.stat().st_size for file_path in file_paths)
         last_modified = max(file_path.stat().st_mtime for file_path in file_paths)
-        for file_path in file_paths:
-            with gzip_open(file_path, mode="rb") as gzip_file:
-                iterator = ArchiveIterator(
-                    fileobj=gzip_file,
-                    no_record_parse=True,
-                )
-                warc_count += sum(
-                    1 for record in iterator if record.rec_type == "request"
-                )
+        for file_path in tqdm(file_paths, desc="Counting WARC records", unit="file"):
+            try:
+                with gzip_open(file_path, mode="rb") as gzip_file:
+                    iterator = ArchiveIterator(
+                        fileobj=gzip_file,
+                        no_record_parse=True,
+                    )
+                    warc_count += sum(
+                        1 for record in iterator if record.rec_type == "request"
+                    )
+            except BadGzipFile:
+                warn(f"Invalid gzip file: {file_path}")
+                # Ignore invalid gzip files.
+                pass
 
     statistics = Statistics(
         name=name,
@@ -187,6 +196,7 @@ def _get_processed_progress(
     key = (document, index, repr(filter_query), status_field)
     if key in _progress_cache:
         return _progress_cache[key]
+    print(f"Get progress: {input_name} → {output_name}")
 
     config.es.client.indices.refresh(index=index)
     search = document.search(using=config.es.client, index=index)
