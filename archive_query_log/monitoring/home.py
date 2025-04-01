@@ -73,22 +73,19 @@ def _get_statistics(
     description: str,
     index: str,
     document: DocumentType,
-    filter_query: Query | None = None,
+    last_modified_field: str = "last_modified"
 ) -> Statistics:
-    key = (document, index, repr(filter_query))
+    key = (document, index, last_modified_field)
     if key in _statistics_cache:
         return _statistics_cache[key]
 
     config.es.client.indices.refresh(index=index)
     stats = config.es.client.indices.stats(index=index)
     search = document.search(using=config.es.client, index=index)
-    if filter_query is not None:
-        search = search.filter(filter_query)
+    search = search.filter(Exists(field=last_modified_field))
     total = search.count()
-    # FIXME: Use specific last modified field.
     last_modified_response = (
-        search.query(Exists(field="last_modified"))
-        .sort("-last_modified")
+        search.sort(f"-{last_modified_field}")
         .extra(size=1)
         .execute()
     )
@@ -99,7 +96,7 @@ def _get_statistics(
 
     disk_size = (
         _convert_bytes(stats["_all"]["total"]["store"]["size_in_bytes"])
-        if filter_query is None
+        if last_modified_field == "last_modified"
         else None
     )
 
@@ -256,7 +253,6 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the query has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="url_query"),
         ),
         _get_statistics(
             config=config,
@@ -264,7 +260,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the page has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="url_page"),
+            last_modified_field="url_page_parser.last_parsed",
         ),
         _get_statistics(
             config=config,
@@ -272,7 +268,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the offset has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="url_offset"),
+            last_modified_field="url_offset_parser.last_parsed",
         ),
         _get_statistics(
             config=config,
@@ -280,7 +276,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the WARC has been downloaded.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="warc_location"),
+            last_modified_field="warc_downloader.last_downloaded",
         ),
         _get_statistics(
             config=config,
@@ -288,7 +284,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the query has been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="warc_query"),
+            last_modified_field="warc_query_parser.last_parsed",
         ),
         _get_statistics(
             config=config,
@@ -296,7 +292,21 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the snippets have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="warc_snippets_parser.id"),
+            last_modified_field="warc_snippets_parser.last_parsed",
+        ),
+        _get_warc_cache_statistics(
+            config=config,
+            name="→ WARC cache (ready)",
+            description="Downloaded SERP WARC records, ready to be uploaded to S3.",
+            cache_path = config.warc_cache.path_serps,
+            temporary=False,
+        ),
+        _get_warc_cache_statistics(
+            config=config,
+            name="→ WARC cache (in progress)",
+            description="Downloaded SERP WARC records, still locked by a downloader.",
+            cache_path = config.warc_cache.path_serps,
+            temporary=True,
         ),
         _get_statistics(
             config=config,
@@ -339,20 +349,6 @@ def home(config: Config) -> str | Response:
             description="Parser to get the snippets from a SERP's WARC contents.",
             document=WarcSnippetsParser,
             index=config.es.index_warc_snippets_parsers,
-        ),
-        _get_warc_cache_statistics(
-            config=config,
-            name="SERP WARC cache (finalized)",
-            description="Downloaded SERP WARC records, ready to be uploaded to S3.",
-            cache_path = config.warc_cache.path_serps,
-            temporary=False,
-        ),
-        _get_warc_cache_statistics(
-            config=config,
-            name="SERP WARC cache (temporary)",
-            description="Downloaded SERP WARC records, still locked by a downloader.",
-            cache_path = config.warc_cache.path_serps,
-            temporary=True,
         ),
     ]
 
