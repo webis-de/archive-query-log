@@ -1,10 +1,12 @@
 from datetime import datetime
+from gzip import open as gzip_open
 from typing import NamedTuple, Type
 from pathlib import Path
 
 from elasticsearch_dsl.query import Exists, Query, Term
 from expiringdict import ExpiringDict
 from flask import render_template, Response, make_response
+from warcio import ArchiveIterator
 
 from archive_query_log.config import Config
 from archive_query_log.orm import (
@@ -24,6 +26,7 @@ from archive_query_log.orm import (
 from archive_query_log.utils.time import utc_now
 
 _CACHE_SECONDS_STATISTICS = 60 * 5  # 5 minutes
+_CACHE_SECONDS_WARC_CACHE_STATISTICS = 60 * 1  # 1 minute
 _CACHE_SECONDS_PROGRESS = 60 * 10  # 10 minutes
 
 
@@ -110,29 +113,60 @@ def _get_statistics(
     _statistics_cache[key] = statistics
     return statistics
 
+_warc_cache_statistics_cache: dict[
+    tuple[Path, bool],
+    Statistics,
+] = ExpiringDict(
+    max_len=100,
+    max_age_seconds=_CACHE_SECONDS_WARC_CACHE_STATISTICS,
+)
 
-def _get_warc_cache_statistics(config: Config, name: str, description: str, temp=False) -> Statistics:
+def _get_warc_cache_statistics(
+    config: Config,
+    name: str,
+    description: str,
+    cache_path: Path,
+    temporary: bool = False
+) -> Statistics:
     """Retrieve WARC cache statistics."""
+    key = (cache_path.resolve(), temporary)
+    if key in _warc_cache_statistics_cache:
+        return _warc_cache_statistics_cache[key]
     
-    if temp:
-        files = list(Path(config.warc_cache.path_serps).glob(".*.warc.gz"))
+    file_paths: list[Path]
+    if temporary:
+        file_paths = list(cache_path.glob(".*.warc.gz"))
 
     else:
-        files = list(Path(config.warc_cache.path_serps).glob("[!.]*.warc.gz"))
+        file_paths = list(cache_path.glob("[!.]*.warc.gz"))
 
-    total = len(files)
-    size = sum(f.stat().st_size for f in files) if files else 0
-    last_modified = max(f.stat().st_mtime for f in files) if files else None
-    
+    disk_size_bytes: int = 0
+    last_modified: float | None = None
+    warc_count: int = 0
 
-    return Statistics(
+    if len(file_paths) > 0:
+        disk_size_bytes = sum(file_path.stat().st_size for file_path in file_paths)
+        last_modified = max(file_path.stat().st_mtime for file_path in file_paths)
+        for file_path in file_paths:
+            with gzip_open(file_path, mode="rb") as gzip_file:
+                iterator = ArchiveIterator(
+                    fileobj=gzip_file,
+                    no_record_parse=True,
+                )
+                warc_count += sum(
+                    1 for record in iterator if record.rec_type == "WARC-Request"
+                )
+
+    statistics = Statistics(
         name=name,
         description=description,
-        total=total,
-        disk_size=_convert_bytes(size),
+        total=warc_count,
+        disk_size=_convert_bytes(disk_size_bytes),
         last_modified=datetime.fromtimestamp(last_modified) if last_modified else None,
     )
-    
+    _warc_cache_statistics_cache[key] = statistics
+    return statistics
+
 
 _progress_cache: dict[
     tuple[DocumentType, str, str, str],
@@ -259,8 +293,7 @@ def home(config: Config) -> str | Response:
         _get_statistics(
             config=config,
             name="+ WARC snippets",
-            description="SERPs for which the snippets have been parsed "
-            "from the WARC.",
+            description="SERPs for which the snippets have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
             filter_query=Exists(field="warc_snippets_parser.id"),
@@ -303,20 +336,23 @@ def home(config: Config) -> str | Response:
         _get_statistics(
             config=config,
             name="WARC snippets parsers",
-            description="Parser to get the snippets from a SERP's " "WARC contents.",
+            description="Parser to get the snippets from a SERP's WARC contents.",
             document=WarcSnippetsParser,
             index=config.es.index_warc_snippets_parsers,
         ),
         _get_warc_cache_statistics(
             config=config,
-            name="WARC Cache (temporary)",
-            description="Statistics for temporary WARC files.",
-            temp=True
+            name="SERP WARC cache (finalized)",
+            description="Downloaded SERP WARC records, ready to be uploaded to S3.",
+            cache_path = config.warc_cache.path_serps,
+            temporary=False,
         ),
         _get_warc_cache_statistics(
             config=config,
-            name="WARC Cache (finalized)",
-            description="Statistics for finalized WARC files.",
+            name="SERP WARC cache (temporary)",
+            description="Downloaded SERP WARC records, still locked by a downloader.",
+            cache_path = config.warc_cache.path_serps,
+            temporary=True,
         ),
     ]
 
