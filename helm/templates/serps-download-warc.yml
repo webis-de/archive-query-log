@@ -16,6 +16,13 @@ spec:
       labels:
         app: {{ $.Release.Name }}-serps-download-warc
     spec:
+      initContainers:
+        - name: {{ $.Release.Name }}-cooldown
+          image: busybox:1.28
+          command:
+          - sh
+          - -c
+          - sleep $((1 + $RANDOM % 100))
       containers:
         - name: {{ $.Release.Name }}-serps-download-warc
           image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
