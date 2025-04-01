@@ -151,7 +151,7 @@ def _get_warc_cache_statistics(
                     no_record_parse=True,
                 )
                 warc_count += sum(
-                    1 for record in iterator if record.rec_type == "WARC-Request"
+                    1 for record in iterator if record.rec_type == "request"
                 )
 
     statistics = Statistics(
