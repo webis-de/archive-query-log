@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
@@ -74,7 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
@@ -99,7 +99,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
@@ -124,7 +124,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 🧰 Install Protoc
       run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
@@ -147,7 +147,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 🧰 Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: 🧰 Set up Docker Buildx
@@ -172,7 +172,7 @@ jobs:
       id-token: write
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 📥 Download Python wheels
       uses: actions/download-artifact@v4
       with:
@@ -195,7 +195,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 🧰 Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: 🧰 Set up Docker Buildx
@@ -236,7 +236,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 📥 Check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: 📥 Download Python wheels
       uses: actions/download-artifact@v4
       with:
