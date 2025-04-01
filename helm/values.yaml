@@ -35,11 +35,11 @@ serpsUploadWarc:
   replicas: 1
 
 serpsParseWarcQuery:
-  replicas: 3
+  replicas: 15
   prefetchLimit: 1000
 
 serpsParseWarcSnippets:
-  replicas: 5
+  replicas: 25
   prefetchLimit: 1000
 
 monitoring:
