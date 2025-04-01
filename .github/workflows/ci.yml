@@ -149,7 +149,7 @@ jobs:
     - name: 📥 Check-out
       uses: actions/checkout@v3
     - name: 🧰 Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@v3
     - name: 🧰 Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: 🏗️ Build Docker image
@@ -197,7 +197,7 @@ jobs:
     - name: 📥 Check-out
       uses: actions/checkout@v3
     - name: 🧰 Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@v3
     - name: 🧰 Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: 🔑 Login to GitHub Packages
