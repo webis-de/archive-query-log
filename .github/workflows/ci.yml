@@ -138,7 +138,7 @@ jobs:
     - name: 🧪 Test Python code
       run: pytest --cov --cov-report=xml archive_query_log
     - name: 📤 Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v5
       if: matrix.python == '3.10'
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
