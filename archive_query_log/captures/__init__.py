@@ -126,7 +126,11 @@ def _add_captures_actions(
 def fetch_captures(config: Config, prefetch_limit: int | None = None) -> None:
     changed_sources_search: Search = (
         Source.search(using=config.es.client, index=config.es.index_sources)
-        .filter(~Term(should_fetch_captures=False))
+        .filter(
+            ~Term(should_fetch_captures=False)
+            # FIXME: The UK Web Archive is facing an outage: https://www.webarchive.org.uk/#en
+            & ~Term(archive__id="90be629c-2a95-52da-9ae8-ca58454c9826")
+        )
         .query(
             RankFeature(field="archive.priority", saturation={}) |
             RankFeature(field="provider.priority", saturation={}) |
