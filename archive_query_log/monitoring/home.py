@@ -27,8 +27,7 @@ from archive_query_log.orm import (
 )
 from archive_query_log.utils.time import utc_now
 
-_CACHE_SECONDS_STATISTICS = 60 * 5  # 5 minutes
-_CACHE_SECONDS_WARC_CACHE_STATISTICS = 60 * 1  # 1 minute
+_CACHE_SECONDS_STATISTICS = 60 * 60 * 1  # 1 hour
 _CACHE_SECONDS_PROGRESS = 60 * 10  # 10 minutes
 
 
@@ -116,7 +115,7 @@ _warc_cache_statistics_cache: dict[
     Statistics,
 ] = ExpiringDict(
     max_len=100,
-    max_age_seconds=_CACHE_SECONDS_WARC_CACHE_STATISTICS,
+    max_age_seconds=_CACHE_SECONDS_STATISTICS,
 )
 
 
