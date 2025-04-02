@@ -146,26 +146,30 @@ def _get_warc_cache_statistics(
     for file_path in tqdm(
         file_paths, desc="Compute WARC cache statistics", unit="file"
     ):
-        disk_size_bytes += file_path.stat().st_size
-        last_modified = max(
-            last_modified,
-            file_path.stat().st_mtime,
-        )
-        # FIXME: Counting WARC records takes too long at the moment due to the large number of files. Replace this again with record counting once the number of files is reduced.
-        # try:
-        #     with gzip_open(file_path, mode="rb") as gzip_file:
-        #         iterator = ArchiveIterator(
-        #             fileobj=gzip_file,
-        #             no_record_parse=True,
-        #         )
-        #         warc_count += sum(
-        #             1 for record in iterator if record.rec_type == "request"
-        #         )
-        # except BadGzipFile:
-        #     warn(f"Invalid gzip file: {file_path}")
-        #     # Ignore invalid gzip files.
-        #     pass
-        warc_count += 1
+        try:
+            disk_size_bytes += file_path.stat().st_size
+            last_modified = max(
+                last_modified,
+                file_path.stat().st_mtime,
+            )
+            # FIXME: Counting WARC records takes too long at the moment due to the large number of files. Replace this again with record counting once the number of files is reduced.
+            # try:
+            #     with gzip_open(file_path, mode="rb") as gzip_file:
+            #         iterator = ArchiveIterator(
+            #             fileobj=gzip_file,
+            #             no_record_parse=True,
+            #         )
+            #         warc_count += sum(
+            #             1 for record in iterator if record.rec_type == "request"
+            #         )
+            # except BadGzipFile:
+            #     warn(f"Invalid gzip file: {file_path}")
+            #     # Ignore invalid gzip files.
+            #     pass
+            warc_count += 1
+        except FileNotFoundError:
+            # Ignore files that have been deleted while processing.
+            pass
 
     statistics = Statistics(
         name=name,
