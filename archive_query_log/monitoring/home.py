@@ -1,14 +1,14 @@
 from datetime import datetime
-from gzip import open as gzip_open, BadGzipFile
-from typing import NamedTuple, Type
+# from gzip import open as gzip_open, BadGzipFile
+from typing import Iterable, NamedTuple, Type
 from pathlib import Path
-from warnings import warn
+# from warnings import warn
 
 from elasticsearch_dsl.query import Exists, Query, Term
 from expiringdict import ExpiringDict
 from flask import render_template, Response, make_response
 from tqdm import tqdm
-from warcio import ArchiveIterator
+# from warcio import ArchiveIterator
 
 from archive_query_log.config import Config
 from archive_query_log.orm import (
@@ -75,28 +75,25 @@ def _get_statistics(
     description: str,
     index: str,
     document: DocumentType,
-    last_modified_field: str = "last_modified"
+    last_modified_field: str = "last_modified",
 ) -> Statistics:
     key = (document, index, last_modified_field)
     if key in _statistics_cache:
         return _statistics_cache[key]
     print(f"Get statistics: {name}")
 
-    config.es.client.indices.refresh(index=index)
-    stats = config.es.client.indices.stats(index=index)
     search = document.search(using=config.es.client, index=index)
     search = search.filter(Exists(field=last_modified_field))
     total = search.count()
     last_modified_response = (
-        search.sort(f"-{last_modified_field}")
-        .extra(size=1)
-        .execute()
+        search.sort(f"-{last_modified_field}").extra(size=1).execute()
     )
     if last_modified_response.hits.total.value == 0:
         last_modified = None
     else:
         last_modified = last_modified_response.hits[0].last_modified
 
+    stats = config.es.client.indices.stats(index=index)
     disk_size = (
         _convert_bytes(stats["_all"]["total"]["store"]["size_in_bytes"])
         if last_modified_field == "last_modified"
@@ -113,6 +110,7 @@ def _get_statistics(
     _statistics_cache[key] = statistics
     return statistics
 
+
 _warc_cache_statistics_cache: dict[
     tuple[Path, bool],
     Statistics,
@@ -121,47 +119,53 @@ _warc_cache_statistics_cache: dict[
     max_age_seconds=_CACHE_SECONDS_WARC_CACHE_STATISTICS,
 )
 
+
 def _get_warc_cache_statistics(
-    config: Config,
     name: str,
     description: str,
     cache_path: Path,
-    temporary: bool = False
+    temporary: bool = False,
 ) -> Statistics:
     """Retrieve WARC cache statistics."""
-    key = (cache_path.resolve(), temporary)
+    key = (cache_path, temporary)
     if key in _warc_cache_statistics_cache:
         return _warc_cache_statistics_cache[key]
     print(f"Get statistics: {name}")
-    
-    file_paths: list[Path]
+
+    file_paths: Iterable[Path]
     if temporary:
-        file_paths = list(cache_path.glob(".*.warc.gz"))
+        file_paths = cache_path.glob(".*.warc.gz")
 
     else:
-        file_paths = list(cache_path.glob("[!.]*.warc.gz"))
+        file_paths = cache_path.glob("[!.]*.warc.gz")
 
     disk_size_bytes: int = 0
-    last_modified: float | None = None
+    last_modified: float = 0
     warc_count: int = 0
 
-    if len(file_paths) > 0:
-        disk_size_bytes = sum(file_path.stat().st_size for file_path in file_paths)
-        last_modified = max(file_path.stat().st_mtime for file_path in file_paths)
-        for file_path in tqdm(file_paths, desc="Counting WARC records", unit="file"):
-            try:
-                with gzip_open(file_path, mode="rb") as gzip_file:
-                    iterator = ArchiveIterator(
-                        fileobj=gzip_file,
-                        no_record_parse=True,
-                    )
-                    warc_count += sum(
-                        1 for record in iterator if record.rec_type == "request"
-                    )
-            except BadGzipFile:
-                warn(f"Invalid gzip file: {file_path}")
-                # Ignore invalid gzip files.
-                pass
+    for file_path in tqdm(
+        file_paths, desc="Compute WARC cache statistics", unit="file"
+    ):
+        disk_size_bytes += file_path.stat().st_size
+        last_modified = max(
+            last_modified,
+            file_path.stat().st_mtime,
+        )
+        # FIXME: Counting WARC records takes too long at the moment due to the large number of files. Replace this again with record counting once the number of files is reduced.
+        # try:
+        #     with gzip_open(file_path, mode="rb") as gzip_file:
+        #         iterator = ArchiveIterator(
+        #             fileobj=gzip_file,
+        #             no_record_parse=True,
+        #         )
+        #         warc_count += sum(
+        #             1 for record in iterator if record.rec_type == "request"
+        #         )
+        # except BadGzipFile:
+        #     warn(f"Invalid gzip file: {file_path}")
+        #     # Ignore invalid gzip files.
+        #     pass
+        warc_count += 1
 
     statistics = Statistics(
         name=name,
@@ -305,17 +309,17 @@ def home(config: Config) -> str | Response:
             last_modified_field="warc_snippets_parser.last_parsed",
         ),
         _get_warc_cache_statistics(
-            config=config,
             name="→ WARC cache (ready)",
-            description="Downloaded SERP WARC records, ready to be uploaded to S3.",
-            cache_path = config.warc_cache.path_serps,
+            description="Downloaded SERP WARC files, ready to be uploaded to S3.",
+            # description="Downloaded SERP WARC records, ready to be uploaded to S3.",
+            cache_path=config.warc_cache.path_serps,
             temporary=False,
         ),
         _get_warc_cache_statistics(
-            config=config,
             name="→ WARC cache (in progress)",
-            description="Downloaded SERP WARC records, still locked by a downloader.",
-            cache_path = config.warc_cache.path_serps,
+            description="Downloaded SERP WARC files, still locked by a downloader.",
+            # description="Downloaded SERP WARC records, still locked by a downloader.",
+            cache_path=config.warc_cache.path_serps,
             temporary=True,
         ),
         _get_statistics(
