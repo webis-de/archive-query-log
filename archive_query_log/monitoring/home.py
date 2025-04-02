@@ -454,6 +454,10 @@ def home(config: Config) -> str | Response:
             "prefixes in the sources.",
             document=Source,
             index=config.es.index_sources,
+            filter_query=(
+                # FIXME: The UK Web Archive is facing an outage: https://www.webarchive.org.uk/#en
+                ~Term(archive__id="90be629c-2a95-52da-9ae8-ca58454c9826")
+            ),
             status_field="should_fetch_captures",
         ),
         _get_processed_progress(
@@ -490,7 +494,11 @@ def home(config: Config) -> str | Response:
             description="Download WARCs.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Term(capture__status_code=200),
+            filter_query=(
+                Term(capture__status_code=200)
+                # FIXME: Remove this manual prioritization at some time.
+                & Term(provider__id="f205fc44-d918-4b79-9a7f-c1373a6ff9f2")
+            ),
             status_field="warc_downloader.should_download",
         ),
         _get_processed_progress(
