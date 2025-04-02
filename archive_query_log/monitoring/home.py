@@ -78,6 +78,7 @@ def _get_statistics(
     description: str,
     index: str,
     document: DocumentType,
+    filter_field: str = "last_modified",
     last_modified_field: str = "last_modified",
 ) -> Statistics:
     key = (document, index, last_modified_field)
@@ -86,7 +87,9 @@ def _get_statistics(
     print(f"Get statistics: {name}")
 
     search = document.search(using=config.es.client, index=index)
-    search = search.filter(Exists(field=last_modified_field))
+    search = search.filter(
+        Exists(field=filter_field) & Exists(field=last_modified_field)
+    )
     total = search.count()
     last_modified_response = (
         search.sort(f"-{last_modified_field}").extra(size=1).execute()
@@ -94,7 +97,9 @@ def _get_statistics(
     if last_modified_response.hits.total.value == 0:
         last_modified = None
     else:
-        last_modified = last_modified_response.hits[0].last_modified
+        last_modified = last_modified_response.hits[0]
+        for part in last_modified_field.split("."):
+            last_modified = last_modified[part]
 
     stats = config.es.client.indices.stats(index=index)
     disk_size = (
@@ -170,6 +175,7 @@ def _get_warc_cache_statistics(
     )
     _warc_cache_statistics_cache[key] = statistics
     return statistics
+
 
 _warc_s3_statistics_cache: dict[
     str,
