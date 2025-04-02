@@ -232,7 +232,8 @@ def _iter_cached_records(
             print(f"Clearing {len(completed_paths)} cached files.")
         while len(completed_paths) > 0:
             path = completed_paths[0]
-            path.unlink()
+            if path.exists():
+                path.unlink()
             completed_paths.remove(path)
 
     last_path: Path | None = None
