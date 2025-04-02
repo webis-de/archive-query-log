@@ -9,9 +9,7 @@ jobs:
     strategy:
       matrix:
         python:
-        - '3.10'
-        # - '3.11'
-        # - '3.12'
+        - '3.12'
         # - '3.13'
     runs-on: ubuntu-latest
     steps:
@@ -33,7 +31,7 @@ jobs:
       run: twine check dist/*
     - name: 📤 Upload Python wheels
       uses: actions/upload-artifact@v4
-      if: matrix.python == '3.10'
+      if: matrix.python == '3.12'
       with:
         name: wheels
         path: dist
@@ -42,9 +40,7 @@ jobs:
     strategy:
       matrix:
         python:
-        - '3.10'
-        # - '3.11'
-        # - '3.12'
+        - '3.12'
         # - '3.13'
     runs-on: ubuntu-latest
     steps:
@@ -67,9 +63,7 @@ jobs:
     strategy:
       matrix:
         python:
-        - '3.10'
-        # - '3.11'
-        # - '3.12'
+        - '3.12'
         # - '3.13'
     runs-on: ubuntu-latest
     steps:
@@ -92,9 +86,7 @@ jobs:
     strategy:
       matrix:
         python:
-        - '3.10'
-        # - '3.11'
-        # - '3.12'
+        - '3.12'
         # - '3.13'
     runs-on: ubuntu-latest
     steps:
@@ -117,9 +109,7 @@ jobs:
     strategy:
       matrix:
         python:
-        - '3.10'
-        # - '3.11'
-        # - '3.12'
+        - '3.12'
         # - '3.13'
     runs-on: ubuntu-latest
     steps:
@@ -139,7 +129,7 @@ jobs:
       run: pytest --cov --cov-report=xml archive_query_log
     - name: 📤 Upload coverage to Codecov
       uses: codecov/codecov-action@v5
-      if: matrix.python == '3.10'
+      if: matrix.python == '3.12'
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
   docker-build:
