@@ -1,14 +1,12 @@
 from datetime import datetime
-# from gzip import open as gzip_open, BadGzipFile
-from typing import Iterable, NamedTuple, Type
+from typing import Iterable, NamedTuple, Type, TYPE_CHECKING, Any
 from pathlib import Path
-# from warnings import warn
 
+from boto3 import Session
 from elasticsearch_dsl.query import Exists, Query, Term
 from expiringdict import ExpiringDict
 from flask import render_template, Response, make_response
 from tqdm import tqdm
-# from warcio import ArchiveIterator
 
 from archive_query_log.config import Config
 from archive_query_log.orm import (
@@ -27,7 +25,13 @@ from archive_query_log.orm import (
 )
 from archive_query_log.utils.time import utc_now
 
-_CACHE_SECONDS_STATISTICS = 60 * 60 * 1  # 1 hour
+if TYPE_CHECKING:
+    from mypy_boto3_s3 import S3Client
+else:
+    S3Client = Any
+
+_CACHE_SECONDS_STATISTICS = 60 * 30  # 10 minutes
+_CACHE_SECONDS_WARC_CACHE_STATISTICS = 60 * 60 * 1  # 1 hour
 _CACHE_SECONDS_PROGRESS = 60 * 10  # 10 minutes
 
 
@@ -146,25 +150,12 @@ def _get_warc_cache_statistics(
         file_paths, desc="Compute WARC cache statistics", unit="file"
     ):
         try:
-            disk_size_bytes += file_path.stat().st_size
+            stat = file_path.stat(follow_symlinks=False)
+            disk_size_bytes += stat.st_size
             last_modified = max(
                 last_modified,
-                file_path.stat().st_mtime,
+                stat.st_mtime,
             )
-            # FIXME: Counting WARC records takes too long at the moment due to the large number of files. Replace this again with record counting once the number of files is reduced.
-            # try:
-            #     with gzip_open(file_path, mode="rb") as gzip_file:
-            #         iterator = ArchiveIterator(
-            #             fileobj=gzip_file,
-            #             no_record_parse=True,
-            #         )
-            #         warc_count += sum(
-            #             1 for record in iterator if record.rec_type == "request"
-            #         )
-            # except BadGzipFile:
-            #     warn(f"Invalid gzip file: {file_path}")
-            #     # Ignore invalid gzip files.
-            #     pass
             warc_count += 1
         except FileNotFoundError:
             # Ignore files that have been deleted while processing.
@@ -178,6 +169,56 @@ def _get_warc_cache_statistics(
         last_modified=datetime.fromtimestamp(last_modified) if last_modified else None,
     )
     _warc_cache_statistics_cache[key] = statistics
+    return statistics
+
+_warc_s3_statistics_cache: dict[
+    str,
+    Statistics,
+] = ExpiringDict(
+    max_len=100,
+    max_age_seconds=_CACHE_SECONDS_STATISTICS,
+)
+
+
+def _get_warc_s3_statistics(
+    config: Config,
+    name: str,
+    description: str,
+    bucket_name: str,
+) -> Statistics:
+    """Retrieve WARC cache statistics."""
+    key = bucket_name
+    if key in _warc_s3_statistics_cache:
+        return _warc_s3_statistics_cache[key]
+    print(f"Get statistics: {name}")
+
+    client = Session().client(
+        service_name="s3",
+        endpoint_url=config.s3.endpoint_url,
+        aws_access_key_id=config.s3.access_key,
+        aws_secret_access_key=config.s3.secret_key,
+    )
+    pages = client.get_paginator("list_objects_v2").paginate(
+        Bucket=bucket_name,
+    )
+
+    disk_size_bytes: int = 0
+    last_modified: float = 0
+    warc_count: int = 0
+    for page in pages:
+        for obj in page["Contents"]:
+            disk_size_bytes += obj["Size"]
+            last_modified = max(last_modified, obj["LastModified"].timestamp())
+            warc_count += 1
+
+    statistics = Statistics(
+        name=name,
+        description=description,
+        total=warc_count,
+        disk_size=_convert_bytes(disk_size_bytes),
+        last_modified=datetime.fromtimestamp(last_modified) if last_modified else None,
+    )
+    _warc_s3_statistics_cache[key] = statistics
     return statistics
 
 
@@ -312,18 +353,22 @@ def home(config: Config) -> str | Response:
             last_modified_field="warc_snippets_parser.last_parsed",
         ),
         _get_warc_cache_statistics(
+            name="→ WARC cache (in progress)",
+            description="Downloaded SERP WARC files still locked by a downloader.",
+            cache_path=config.warc_cache.path_serps,
+            temporary=True,
+        ),
+        _get_warc_cache_statistics(
             name="→ WARC cache (ready)",
-            description="Downloaded SERP WARC files, ready to be uploaded to S3.",
-            # description="Downloaded SERP WARC records, ready to be uploaded to S3.",
+            description="Downloaded SERP WARC files ready to be uploaded to S3.",
             cache_path=config.warc_cache.path_serps,
             temporary=False,
         ),
-        _get_warc_cache_statistics(
-            name="→ WARC cache (in progress)",
-            description="Downloaded SERP WARC files, still locked by a downloader.",
-            # description="Downloaded SERP WARC records, still locked by a downloader.",
-            cache_path=config.warc_cache.path_serps,
-            temporary=True,
+        _get_warc_s3_statistics(
+            config=config,
+            name="→ WARC S3",
+            description="Downloaded SERP WARC files finalized in S3 block storage.",
+            bucket_name=config.s3.bucket_name,
         ),
         _get_statistics(
             config=config,
