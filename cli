@@ -1,3 +1,0 @@
-#!/bin/bash -e
-
-pipenv run python -m archive_query_log "$@"
