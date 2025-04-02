@@ -15,8 +15,6 @@ jobs:
     steps:
     - name: 📥 Check-out
       uses: actions/checkout@v4
-    - name: 🧰 Install Protoc
-      run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
       uses: actions/setup-python@v5
       with:
@@ -46,8 +44,6 @@ jobs:
     steps:
     - name: 📥 Check-out
       uses: actions/checkout@v4
-    - name: 🧰 Install Protoc
-      run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
       uses: actions/setup-python@v5
       with:
@@ -69,8 +65,6 @@ jobs:
     steps:
     - name: 📥 Check-out
       uses: actions/checkout@v4
-    - name: 🧰 Install Protoc
-      run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
       uses: actions/setup-python@v5
       with:
@@ -92,8 +86,6 @@ jobs:
     steps:
     - name: 📥 Check-out
       uses: actions/checkout@v4
-    - name: 🧰 Install Protoc
-      run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
       uses: actions/setup-python@v5
       with:
@@ -115,8 +107,6 @@ jobs:
     steps:
     - name: 📥 Check-out
       uses: actions/checkout@v4
-    - name: 🧰 Install Protoc
-      run: sudo apt install protobuf-compiler
     - name: 🧰 Install Python
       uses: actions/setup-python@v5
       with:
