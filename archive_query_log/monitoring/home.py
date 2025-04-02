@@ -324,6 +324,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the page has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="url_page",
             last_modified_field="url_page_parser.last_parsed",
         ),
         _get_statistics(
@@ -332,6 +333,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the offset has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="url_offset",
             last_modified_field="url_offset_parser.last_parsed",
         ),
         _get_statistics(
@@ -340,6 +342,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the WARC has been downloaded.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="warc_location",
             last_modified_field="warc_downloader.last_downloaded",
         ),
         _get_statistics(
@@ -348,6 +351,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the query has been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="warc_query",
             last_modified_field="warc_query_parser.last_parsed",
         ),
         _get_statistics(
@@ -356,6 +360,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the snippets have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="warc_snippets.id",
             last_modified_field="warc_snippets_parser.last_parsed",
         ),
         _get_warc_cache_statistics(
