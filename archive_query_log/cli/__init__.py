@@ -56,7 +56,7 @@ def echo_version(
 @pass_context
 def cli(context: Context) -> None:
     if find_dotenv():
-        load_dotenv()
+        load_dotenv(override=True)
     config: Config = Config()
     context.obj = config
 
