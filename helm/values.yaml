@@ -16,15 +16,15 @@ capturesImportAql22:
   ttlMinutesAfterFinished: 30
 
 serpsParseUrlQuery:
-  replicas: 35
+  replicas: 40
   prefetchLimit: 1000
 
 serpsParseUrlPage:
-  replicas: 1
+  replicas: 2
   prefetchLimit: 1000
 
 serpsParseUrlOffset:
-  replicas: 1
+  replicas: 2
   prefetchLimit: 1000
 
 serpsDownloadWarc:
@@ -32,14 +32,14 @@ serpsDownloadWarc:
   prefetchLimit: 1000
 
 serpsUploadWarc:
-  replicas: 1
+  replicas: 15
 
 serpsParseWarcQuery:
-  replicas: 15
+  replicas: 20
   prefetchLimit: 1000
 
 serpsParseWarcSnippets:
-  replicas: 25
+  replicas: 20
   prefetchLimit: 1000
 
 monitoring:
