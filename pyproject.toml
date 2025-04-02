@@ -62,7 +62,7 @@ dependencies = [
     "urllib3~=1.26",
     "warcio~=1.7",
     "warc-s3~=1.0",
-    "warc-cache~=1.0",
+    "warc-cache~=1.0,>=1.0.3",
     "web-archive-api~=1.1",
 ]
 dynamic = ["version"]
