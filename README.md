@@ -17,9 +17,9 @@
 
 Mining Millions of Search Result Pages of Hundreds of Search Engines from 25&nbsp;Years of Web Archives.
 
-[![Queries TSNE](docs/queries-tsne-teaser.png)](docs/queries-tsne.png)
+[![Queries t-SNE](docs/queries-tsne-teaser.png)](docs/queries-tsne.png)
 
-Start now by running [your custom analysis/experiment](#integrations), scraping [your query log](#crawling), or  looking at [our example files](data/examples).
+Start now by running [your custom analysis/experiment](#integrations), scraping [your query log](#crawling), or looking at [our example files](data/examples).
 
 ## Contents
 
@@ -32,7 +32,7 @@ Start now by running [your custom analysis/experiment](#integrations), scraping 
 
 ## Integrations
 
-### Running Experiments on the AQL
+### Running experiments on the AQL
 
 The data in the Archive Query Log is highly sensitive (still, you can [re-crawl everything from the Wayback Machine](#crawling)). For that reason, we ensure that custom experiments or analyses can not leak sensitive data (please [get in touch](#contribute) if you have questions) by using [TIRA](https://tira.io) as a platform for custom analyses/experiments. In TIRA, you submit a Docker image that implements your experiment. Your software is then executed in sandboxed mode (without an internet connection) to ensure that your software does not leak sensitive information. After your software execution is finished, administrators will review your submission and unblind it so that you can access the outputs.  
 Please refer to our [dedicated TIRA tutorial](integrations/tira/README.md) as the starting point for your experiments.
@@ -42,20 +42,21 @@ Please refer to our [dedicated TIRA tutorial](integrations/tira/README.md) as th
 For running the CLI and crawl a query log on your own machine, please refer to the [instructions for single-machine deployments](#single-machine-pypidocker).
 If instead you want to scale up and run the crawling pipelines on a cluster, please refer to the [instructions for cluster deployments](#cluster-helmkubernetes).
 
-### Single-Machine (PyPi/Docker)
+### Single-machine (PyPi/Docker)
 
 To run the Archive Query Log CLI on your machine, you can either use our [PyPi package](#installation-pypi) or the [Docker image](#installation-docker).
 (If you absolutely need to, you can also install the [Python CLI](#installation-python-from-source) or the Docker image from source.)
 
 #### Installation (PyPi)
 
-First you need to install [Python 3.10](https://python.org/downloads/), the [Protobuf compiler](https://grpc.io/docs/protoc-installation/), and [pipx](https://pypa.github.io/pipx/installation/) (this allows you to install the AQL CLI in a virtual environment).Then, you can install the Archive Query Log CLI by running:
+First you need to install [Python 3.10](https://python.org/downloads/), the [Protobuf compiler](https://grpc.io/docs/protoc-installation/), and [pipx](https://pypa.github.io/pipx/installation/) (this allows you to install the AQL CLI in a virtual environment). Then, you can install the Archive Query Log CLI by running:
 
 ```shell
 pipx install archive-query-log
 ```
 
 Now you can run the Archive Query Log CLI by running:
+
 ```shell
 aql --help
 ```
@@ -130,7 +131,7 @@ s3:
    secret_key: "<KEY>"
 ```
 
-#### Toy Example: Crawl ChatNoir SERPs from the Wayback Machine
+#### Toy example: Crawl ChatNoir SERPs from the Wayback Machine
 
 The crawling pipeline of the Archive Query Log can best be understood by looking at a small toy example. Here, we want to crawl and parse SERPs of the [ChatNoir search engine](https://chatnoir.eu) from the [Wayback Machine](https://web.archive.org).
 
@@ -150,11 +151,15 @@ We maintain a list of compatible web archives [below](#compatible-archives).
 
 The web archives below are known to be compatible with the Archive Query Log crawler and can be used to mine SERPs.
 
-<!-- TODO: Extend this list. -->
+| Name | CDX API URL | Memento API URL | Size | Funding | Notes |
+|:--|:--|:--|:-:|:--|:--|
+| [Wayback Machine](https://web.archive.org/) | <https://web.archive.org/cdx/search/cdx> | <https://web.archive.org/web> | [928B](https://web.archive.org/) | [non-profit](https://archive.org/donate) | - |
+| [Stanford Web Archive](https://swap.stanford.edu/) | <https://swap.stanford.edu/was/cdx> | <https://swap.stanford.edu/was> | - | university | Websites selected by subject specialists. |
+| [Arquivo.pt](https://arquivo.pt/) | <https://arquivo.pt/wayback/cdx> | <https://arquivo.pt/wayback> | [47M](https://sobre.arquivo.pt/en/about/press/the-portuguese-web-archive-in-numbers/) | government | [Focus on Portugese websites.](https://arquivo.pt/numeros/#5-top-domains-available-in-arquivo-pt) |
+| [Icelandic Web Archive](https://vefsafn.is/) | <https://vefsafn.is/is/cdx> | <https://vefsafn.is/is> | - | government | Only `.is`-domains and hand-picked Icelandic websites of other TLDs. |
+| [Estonian Web Archives](https://veebiarhiiv.digar.ee/a/20191008165439mp_/http://veebiarhiiv.digar.ee/) | <https://veebiarhiiv.digar.ee/a/cdx> | <https://veebiarhiiv.digar.ee/a> | [75k](https://veebiarhiiv.digar.ee/a/20191008165439/http://www.nlib.ee/veebisaidid) | government | Only `.ee`-domains and hand-picked Estonian websites of other TLDs. |
 
-| Name | CDX API URL | Memento API URL |
-|:--|:--|:--|
-| [Wayback Machine](https://web.archive.org) | <https://web.archive.org/cdx/search/cdx> | <https://web.archive.org/web/> |
+If you know any other web archive service, we would appreciate a [pull request](https://github.com/webis-de/archive-query-log/fork) adding the details to this list.
 
 #### Add a search provider
 
@@ -208,11 +213,21 @@ Up to this point, we have only fetched the metadata of the captures, most promin
 aql serps download warc
 ```
 
-This command will download the contents of each SERP to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the SERP index so that we can quickly access a specific SERP's contents later.
+This command will download the contents of each SERP to a WARC file that is for now stored in the configured cache directory on disk, along with a reference of the SERP. In real-life scenarios, you would probably want to parallelize this step and write to a cache directory that is accessible from any of the workers, because downloads from the Internet Archive and other archives tend to be slow (but the archives can usually handle parallel requests fine).
+
+#### Upload SERP WARCs
+
+The local WARC cache consists of many but small WARC files which is nice for parallel download stability, but not so nice for efficient storage. Hence, in this next step, we pick up WARC records from multiple smaller cache files and upload them to larger but fewer bundles on an S3-compatible block storage:
+
+```shell
+aql serps upload warc
+```
+
+A pointer to the WARC block in S3 is stored in the SERP index so that we can efficiently access a specific SERP's contents later.
 
 #### Parsing SERP WARCs
 
-From the WARC, we can again parse the query as it appears on the SERP.
+From the WARC contents, we can now parse the query as it appears on the SERP (which can sometimes differ from the query encoded in the URL).
 
 ```shell
 aql serps parse serp-query
@@ -226,15 +241,15 @@ aql serps parse serp-snippets
 
 Parsing the snippets from the SERP's WARC contents will also add the SERP's results to a new index.
 
-#### Download SERP snippet WARCs
+<!-- #### Download SERP snippet WARCs
 
-To get the full text of each referenced result from the SERP, we need to download a capture of the result from the web archive. Intuitively, we would like to download a capture of the result at the exact same time as the SERP was captured. But often, web archives crawl the results later or not at all. Therefore, the implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures for each result, if any can be found.
+To get the full text of each referenced result from the SERP, we need to download a capture of the result from the web archive. Intuitively, we would like to download a capture of the result at the exact same time as the SERP was captured. But often, web archives crawl the results later or not at all. Therefore, our implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures individually for each result, if any capture can be found.
 
 ```shell
 aql results download warc
 ```
 
-This command will again download the result's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the result index for random access to the contents of a specific result.
+This command will again download the result's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the result index for random access to the contents of a specific result. -->
 
 ### Import
 
@@ -269,7 +284,7 @@ Running the Archive Query Log on a cluster is recommended for large-scale crawls
 
 Just install [Helm](https://helm.sh/docs/intro/quickstart/) and configure `kubectl` for your cluster.
 
-#### Configuration
+#### Cluster configuration
 
 Crawling the Archive Query Log requires access to an Elasticsearch cluster and some S3 block storage. Configure the Elasticsearch and S3 credentials in a `values.override.yaml` file like this:
 
@@ -318,7 +333,6 @@ You can use the following BibTeX entry for citation:
     booktitle = {46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2023)},
     doi = {10.1145/3539618.3591890},
     editor = {Hsin{-}Hsi Chen and Wei{-}Jou (Edward) Duh and Hen{-}Hsen Huang and Makoto P. Kato and Josiane Mothe and Barbara Poblete},
-    ids = {potthast:2023u},
     isbn = {9781450394086},
     month = jul,
     numpages = 13,
@@ -361,7 +375,7 @@ At the moment, our workflow for adding new tests for parsers goes like this:
 5. Use the web browser dev tools to find the query input field and the search result CSS paths.
 6. Close diffs and tabs and re-run tests.
 
-## Third-party Resources
+## Third-party resources
 
 - [Kaggle dataset of the manual test SERPs](https://www.kaggle.com/datasets/federicominutoli/awesome-archive-query-log), thanks to @DiTo97
 
