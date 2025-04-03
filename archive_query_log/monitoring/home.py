@@ -54,7 +54,7 @@ class Progress(NamedTuple):
 DocumentType = Type[BaseDocument]
 
 _statistics_cache: dict[
-    tuple[DocumentType, str, str],
+    tuple[DocumentType, str, str | None, str | None, str, str],
     Statistics,
 ] = ExpiringDict(
     max_len=100,
@@ -78,16 +78,19 @@ def _get_statistics(
     description: str,
     index: str,
     document: DocumentType,
+    filter_field: str | None = None,
     status_field: str | None = None,
     last_modified_field: str = "last_modified",
 ) -> Statistics:
-    key = (document, index, last_modified_field)
+    key = (document, index, filter_field, status_field, last_modified_field, name)
     if key in _statistics_cache:
         return _statistics_cache[key]
     print(f"Get statistics: {name}")
 
     search = document.search(using=config.es.client, index=index)
     search = search.filter(Exists(field=last_modified_field))
+    if filter_field is not None:
+        search = search.filter(Exists(field=filter_field))
     if status_field is not None:
         search = search.filter(Term(**{status_field: False}))
     total = search.count()
@@ -290,15 +293,15 @@ def home(config: Config) -> str | Response:
         _get_statistics(
             config=config,
             name="Sources",
-            description="The cross product of all archives and "
-            "the provider's domains and URL prefixes.",
+            description="Cross product of archives and "
+            "provider domains and URL prefixes.",
             document=Source,
             index=config.es.index_sources,
         ),
         _get_statistics(
             config=config,
             name="Captures",
-            description="Captures matching from the archives "
+            description="Captures from the archives "
             "that match domain and URL prefixes.",
             document=Capture,
             index=config.es.index_captures,
@@ -306,7 +309,7 @@ def home(config: Config) -> str | Response:
         _get_statistics(
             config=config,
             name="SERPs",
-            description="Search engine result pages that have been "
+            description="Search engine result pages "
             "identified among the captures.",
             document=Serp,
             index=config.es.index_serps,
@@ -324,6 +327,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the page has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="url_page",
             status_field="url_page_parser.should_parse",
             last_modified_field="url_page_parser.last_parsed",
         ),
@@ -333,6 +337,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the offset has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="url_offset",
             status_field="url_offset_parser.should_parse",
             last_modified_field="url_offset_parser.last_parsed",
         ),
@@ -342,6 +347,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the WARC has been downloaded.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="warc_location",
             status_field="warc_downloader.should_download",
             last_modified_field="warc_downloader.last_downloaded",
         ),
@@ -351,6 +357,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the query has been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="warc_query",
             status_field="warc_query_parser.should_parse",
             last_modified_field="warc_query_parser.last_parsed",
         ),
@@ -360,6 +367,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the snippets have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
+            filter_field="warc_snippets",
             status_field="warc_snippets_parser.should_parse",
             last_modified_field="warc_snippets_parser.last_parsed",
         ),
@@ -394,6 +402,7 @@ def home(config: Config) -> str | Response:
         #     description="Search results for which the WARC has been downloaded.",
         #     document=Result,
         #     index=config.es.index_results,
+        #     filter_field="warc_location",
         #     status_field="warc_downloader.should_download",
         #     last_modified_field="warc_downloader.last_downloaded",
         # ),
