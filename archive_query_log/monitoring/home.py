@@ -78,7 +78,7 @@ def _get_statistics(
     description: str,
     index: str,
     document: DocumentType,
-    filter_field: str = "last_modified",
+    status_field: str | None = None,
     last_modified_field: str = "last_modified",
 ) -> Statistics:
     key = (document, index, last_modified_field)
@@ -87,9 +87,9 @@ def _get_statistics(
     print(f"Get statistics: {name}")
 
     search = document.search(using=config.es.client, index=index)
-    search = search.filter(
-        Exists(field=filter_field) & Exists(field=last_modified_field)
-    )
+    search = search.filter(Exists(field=last_modified_field))
+    if status_field is not None:
+        search = search.filter(Term(**{status_field: False}))
     total = search.count()
     last_modified_response = (
         search.sort(f"-{last_modified_field}").extra(size=1).execute()
@@ -324,7 +324,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the page has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
-            filter_field="url_page",
+            status_field="url_page_parser.should_parse",
             last_modified_field="url_page_parser.last_parsed",
         ),
         _get_statistics(
@@ -333,7 +333,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the offset has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
-            filter_field="url_offset",
+            status_field="url_offset_parser.should_parse",
             last_modified_field="url_offset_parser.last_parsed",
         ),
         _get_statistics(
@@ -342,7 +342,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the WARC has been downloaded.",
             document=Serp,
             index=config.es.index_serps,
-            filter_field="warc_location",
+            status_field="warc_downloader.should_download",
             last_modified_field="warc_downloader.last_downloaded",
         ),
         _get_statistics(
@@ -351,7 +351,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the query has been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_field="warc_query",
+            status_field="warc_query_parser.should_parse",
             last_modified_field="warc_query_parser.last_parsed",
         ),
         _get_statistics(
@@ -360,7 +360,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the snippets have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_field="warc_snippets.id",
+            status_field="warc_snippets_parser.should_parse",
             last_modified_field="warc_snippets_parser.last_parsed",
         ),
         _get_warc_cache_statistics(
@@ -384,10 +384,19 @@ def home(config: Config) -> str | Response:
         _get_statistics(
             config=config,
             name="Results",
-            description="Search result from the SERPs.",
+            description="Search results from the SERPs.",
             document=Result,
             index=config.es.index_results,
         ),
+        # _get_statistics(
+        #     config=config,
+        #     name="+ WARC",
+        #     description="Search results for which the WARC has been downloaded.",
+        #     document=Result,
+        #     index=config.es.index_results,
+        #     status_field="warc_downloader.should_download",
+        #     last_modified_field="warc_downloader.last_downloaded",
+        # ),
         _get_statistics(
             config=config,
             name="URL query parsers",
@@ -521,16 +530,16 @@ def home(config: Config) -> str | Response:
             filter_query=Exists(field="warc_location"),
             status_field="warc_snippets_parser.should_parse",
         ),
-        _get_processed_progress(
-            config=config,
-            input_name="Results",
-            output_name="Results",
-            description="Download WARCs.",
-            document=Result,
-            index=config.es.index_results,
-            filter_query=Exists(field="snippet.url"),
-            status_field="warc_downloader.should_download",
-        ),
+        # _get_processed_progress(
+        #     config=config,
+        #     input_name="Results",
+        #     output_name="Results",
+        #     description="Download WARCs.",
+        #     document=Result,
+        #     index=config.es.index_results,
+        #     filter_query=Exists(field="snippet.url"),
+        #     status_field="warc_downloader.should_download",
+        # ),
     ]
 
     etag = str(
