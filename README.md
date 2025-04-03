@@ -149,15 +149,94 @@ We maintain a list of compatible web archives [below](#compatible-archives).
 
 ##### Compatible archives
 
-The web archives below are known to be compatible with the Archive Query Log crawler and can be used to mine SERPs.
+Below, we provide a curated list of web archives.
+In this list, archives that have both a CDX API and a Memento API are compatible with the Archive Query Log crawler and can be used to mine SERPs.
 
-| Name | CDX API URL | Memento API URL | Size | Funding | Notes |
-|:--|:--|:--|:-:|:--|:--|
-| [Wayback Machine](https://web.archive.org/) | <https://web.archive.org/cdx/search/cdx> | <https://web.archive.org/web> | [928B](https://web.archive.org/) | [non-profit](https://archive.org/donate) | - |
-| [Stanford Web Archive](https://swap.stanford.edu/) | <https://swap.stanford.edu/was/cdx> | <https://swap.stanford.edu/was> | - | university | Websites selected by subject specialists. |
-| [Arquivo.pt](https://arquivo.pt/) | <https://arquivo.pt/wayback/cdx> | <https://arquivo.pt/wayback> | [47M](https://sobre.arquivo.pt/en/about/press/the-portuguese-web-archive-in-numbers/) | government | [Focus on Portugese websites.](https://arquivo.pt/numeros/#5-top-domains-available-in-arquivo-pt) |
-| [Icelandic Web Archive](https://vefsafn.is/) | <https://vefsafn.is/is/cdx> | <https://vefsafn.is/is> | - | government | Only `.is`-domains and hand-picked Icelandic websites of other TLDs. |
-| [Estonian Web Archives](https://veebiarhiiv.digar.ee/a/20191008165439mp_/http://veebiarhiiv.digar.ee/) | <https://veebiarhiiv.digar.ee/a/cdx> | <https://veebiarhiiv.digar.ee/a> | [75k](https://veebiarhiiv.digar.ee/a/20191008165439/http://www.nlib.ee/veebisaidid) | government | Only `.ee`-domains and hand-picked Estonian websites of other TLDs. |
+| Name | CDX API | Memento API | Size | Funding | Notes | AQL |
+|:--|:--|:--|:-:|:--|:--|:--|
+| [Wayback Machine](https://web.archive.org/) | [🟩](https://web.archive.org/cdx/search/cdx) | [🟩](https://web.archive.org/web) | [928B](https://web.archive.org/) | [non-profit](https://archive.org/donate) | - | 🟩 |
+| [Stanford Web Archive](https://swap.stanford.edu/) | [🟩](https://swap.stanford.edu/was/cdx) | [🟩](https://swap.stanford.edu/was) | - | university | Websites selected by subject specialists | 🟩 |
+| [Arquivo.pt](https://arquivo.pt/) | [🟩](https://arquivo.pt/wayback/cdx) | [🟩](https://arquivo.pt/wayback) | [47M](https://sobre.arquivo.pt/en/about/press/the-portuguese-web-archive-in-numbers/) | government | [Focus on Portugese websites](https://arquivo.pt/numeros/#5-top-domains-available-in-arquivo-pt) | 🟩 |
+| [Icelandic Web Archive](https://vefsafn.is/) | [🟩](https://vefsafn.is/is/cdx) | [🟩](https://vefsafn.is/is) | - | government | Only `.is`-domains and hand-picked Icelandic websites of other TLDs | 🟩 |
+| [Estonian Web Archives](https://veebiarhiiv.digar.ee/a/20191008165439mp_/http://veebiarhiiv.digar.ee/) | [🟩](https://veebiarhiiv.digar.ee/a/cdx) | [🟩](https://veebiarhiiv.digar.ee/a) | [75k](https://veebiarhiiv.digar.ee/a/20191008165439/http://www.nlib.ee/veebisaidid) | government | Only `.ee`-domains and hand-picked Estonian websites of other TLDs | 🟩 |
+| [Estonian Web Archives](https://veebiarhiiv.digar.ee/a/20191008165439mp_/http://veebiarhiiv.digar.ee/) | [🟩](https://veebiarhiiv.digar.ee/a/cdx) | [🟩](https://veebiarhiiv.digar.ee/a) | [75k](https://veebiarhiiv.digar.ee/a/20191008165439/http://www.nlib.ee/veebisaidid) | government | Only `.ee`-domains and hand-picked Estonian websites of other TLDs | 🟩 |
+| [Australian Web Archive](https://webarchive.nla.gov.au/) | [🟩](https://web.archive.org.au/awa/cdx) | [🟩](https://web.archive.org.au/awa) | [8B](https://trove.nla.gov.au/help/categories/websites-category) | government | Mostly `.au`-domains and other Australia-related websites | 🔜 |
+| [New Zealand Web Archive](https://natlib.govt.nz/collections/a-z/new-zealand-web-archive) | [🟩](https://ndhadeliver.natlib.govt.nz/webarchive/cdx) | [🟩](https://ndhadeliver.natlib.govt.nz/webarchive) | [47k](https://natlib.govt.nz/collections/a-z/new-zealand-web-archive) | government | Websites about New Zealand and the Pacific | 🔜 |
+| [MNMKK OSZK Webarchívum](https://webarchivum.oszk.hu/) | [🟩](http://webadmin.oszk.hu/pywb/cdx) | [🟩](http://webadmin.oszk.hu/pywb) | - | government | Focus on Hungarian websites | 🔜 |
+| [UK Web Archive](https://www.webarchive.org.uk/) | [🟨](https://www.webarchive.org.uk/wayback/archive/cdx) | [🟨](https://www.webarchive.org.uk/wayback/archive) | - | government | UK websites | 🟨¹ |
+| [archive.today](https://archive.is/) | 🟥 | [🟩](https://archive.is/) | - | private | Also known as archive.is and archive.ph | 🟥 |
+| [Perma.cc](https://perma.cc/) | 🟥 | 🟥 | - | university | Maintained by the Harvard Law School Library | 🟥 |
+
+¹ The UK Web Archive is currently unavailable due to a [cyber-attack](https://www.bl.uk/cyber-incident/).
+
+<p><details><summary>Selected archives available as <a href="https://archive-it.org/">Archive-it</a> collections</summary>
+
+- [PRONI Collections](https://archive-it.org/collections/11112/)
+- [Harvard Library](https://preservation.library.harvard.edu/web-archives-collections)
+- [National Library of Ireland](https://archive-it.org/home/nli)
+- [National Central Library of Florence](https://archive-it.org/home/BNCF)
+- [Stanford University Archives](https://archive-it.org/organizations/933)
+- [Stanford University, Social Sciences Resource Group](https://archive-it.org/organizations/159)
+- [California State Library](https://archive-it.org/organizations/898)
+- [Ivy Plus Libraries Confederation](https://archive-it.org/home/IvyPlus)
+- [University of Texas at San Antonio Libraries Special Collections](https://archive-it.org/organizations/318)
+- [Kentucky Department for Libraries and Archives](https://archive-it.org/organizations/386)
+- [University of California, San Francisco](https://archive-it.org/organizations/986)
+- [Montana State Library](https://archive-it.org/organizations/139)
+- [Columbia University Libraries](https://archive-it.org/home/Columbia)
+- [North Carolina State Archives and State Library of North Carolina](https://archive-it.org/organizations/67)
+- [International Internet Preservation Consortium](https://archive-it.org/home/IIPC)
+- [EU Web Archive](https://archive-it.org/home/euwebarchive)
+
+See below on how to [import all public Archive-it archives](#import) automatically.
+
+</details></p>
+
+<p><details><summary>Further archives with unclear status (not yet examined)</summary>
+
+- [Pagefreezer](https://pagefreezer.com/)
+- [archive.st](https://archive.st/)
+- [FreezePage](https://freezepage.com/)
+- [WebCite](https://webcitation.org/)
+- [ウェブ魚拓](https://megalodon.jp/)
+- [Ina](https://ina.fr/)
+- [Web-Archiv des Deutschen Bundestages](https://webarchiv.bundestag.de/cgi/kurz.php)
+- [WARP Web Archiving Project](https://warp.da.ndl.go.jp/)
+- [Kulturarw3](https://www.kb.se/hitta-och-bestall/hitta-i-samlingarna/kulturarw3.html)
+- [Langzeitarchivierung im Bibliotheksverbund Bayern](https://langzeitarchivierung.bib-bvb.de/wayback/)
+- [Ghostarchive](https://ghostarchive.org/)
+- [Webarchiv Österreich](https://webarchiv.onb.ac.at/)
+- [EuropArchive](https://europarchive.org/)
+- [Luxembourg Web Archive](https://www.webarchive.lu/)
+- [Web Archive Singapore](https://eresources.nlb.gov.sg/webarchives/landing-page)
+- [DIR Slovak Internet Archive](https://www.webdepozit.sk/)
+- [Spletni Arhiv Narodne](https://arhiv.nuk.uni-lj.si/)
+- [The Web Archive of Catalonia](https://padicat.cat/)
+- [Web Archive Switzerland](https://www.e-helvetica.nb.admin.ch/)
+- [臺灣網站典藏庫](https://webarchive.lib.ntu.edu.tw/)
+- [UK Government Web Archive](https://www.nationalarchives.gov.uk/webarchive/)
+- [UK Parliament Web Archive](https://webarchive.parliament.uk/)
+- [EU Exit Web Archive](https://webarchive.nationalarchives.gov.uk/eu-exit/)
+- [End of Term Web Archive](https://eotarchive.org/)
+- [Web Archiving Project of the Pacific Islands](https://guides.library.manoa.hawaii.edu/pacificwebarchive)
+- [Library of Congress Web Archives](https://www.loc.gov/web-archives/)
+- [Национальный цифровой архив России](https://ruarxive.org/)
+- [CyberCemetery](https://govinfo.library.unt.edu/)
+- [Πύλη Αρχείου Ελληνικού Ιστού](https://webarchive.nlg.gr/)
+- [York University Libraries Wayback Machine](https://wayback.library.yorku.ca/)
+- [NYARC Web Archive](https://nyarc.org/initiatives/web-archiving)
+- [NLM Web Collecting and Archiving](https://www.nlm.nih.gov/webcollecting/index.html)
+- [Common Crawl](https://commoncrawl.org/)
+- [Webarchiv der Deutschen Nationalbibliothek](https://webarchiv.dnb.de/)
+- [Hrvatski Arhiv Weba](https://haw.nsk.hr/)
+- [Webarchiv](https://webarchiv.cz/)
+- [Netarkivet](https://www.kb.dk/find-materiale/samlinger/netarkivet)
+- [Suomalainen Verkkoarkisto](https://verkkoarkisto.kansalliskirjasto.fi/va/)
+- [ארכיון האינטרנט הישראלי](https://wayback.nli.org.il/)
+
+</details></p>
+
+We have last checked Wikipedia's [list of web archiving initiatives](https://en.wikipedia.org/wiki/List_of_Web_archiving_initiatives) and the [Memento Depot](https://mementoweb.org/depot/) on April 3, 2025. If an archive from there is not listed above, it is considered unavailable/broken.
 
 If you know any other web archive service, we would appreciate a [pull request](https://github.com/webis-de/archive-query-log/fork) adding the details to this list.
 
