@@ -1,8 +1,12 @@
 from functools import cache
+from io import BytesIO
 from itertools import chain, islice
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
+from warnings import warn
+from io import BufferedReader
+
 
 from click import echo
 from elasticsearch_dsl import Search
@@ -86,19 +90,41 @@ def _parse_warc_snippets(
     parser: WarcSnippetsParser,
     serp_id: str,
     capture_url: str,
+    capture_timestamp: str,
     warc_store: WarcS3Store,
     warc_location: WarcLocation,
 ) -> list[Snippet] | None:
     # Check if URL matches pattern.
     if parser.url_pattern is not None and not parser.url_pattern.match(capture_url):
         return None
+    
+
 
     # Parse snippets.
     if parser.parser_type == "xpath":
         if parser.xpath is None:
             raise ValueError("No XPath given.")
+        
+
         with open_warc(warc_store, warc_location) as record:
+            buffered = BytesIO(record.content_stream().read())  # buffer whole content
+            buffered.seek(0)
+            start = buffered.read(2048)
+            buffered.seek(0)
+
+            
+            head = start[:200].decode("utf-8", errors="replace").strip().lower() #TODO: deal with encoding issues
+
+            if not head.startswith("<") or head.startswith("{"):
+                wayback_url = record.rec_headers.get_header("WARC-Target-URI")
+                warn(UserWarning(f"Skipping non-XML document: {wayback_url}"))
+                return None
+
+
             tree = parse_xml_tree(record)
+
+
+
         if tree is None:
             return None
 
@@ -191,12 +217,15 @@ def _parse_serp_warc_snippets_action(
         return
 
     # Re-check if parsing is necessary.
-    if (
-        serp.warc_snippets_parser is not None
-        and serp.warc_snippets_parser.should_parse is not None
-        and not serp.warc_snippets_parser.should_parse
-    ):
-        return
+    # if (
+    #     serp.warc_snippets_parser is not None
+    #     and serp.warc_snippets_parser.should_parse is not None
+    #     and not serp.warc_snippets_parser.should_parse
+    # ):
+        # return
+    capture_timestamp = getattr(serp.capture, "timestamp", None)
+    if capture_timestamp is None:
+        raise ValueError(f"Missing capture timestamp for SERP {serp.id}")
 
     for parser in _warc_snippets_parsers(config, serp.provider.id):
         # Try to parse the snippets.
@@ -204,6 +233,7 @@ def _parse_serp_warc_snippets_action(
             parser=parser,
             serp_id=serp.id,
             capture_url=serp.capture.url,
+            capture_timestamp=capture_timestamp,
             warc_store=config.s3.warc_store,
             warc_location=serp.warc_location,
         )
@@ -267,7 +297,7 @@ def parse_serps_warc_snippets(config: Config, prefetch_limit: int | None = None)
         Serp.search(using=config.es.client, index=config.es.index_serps)
         .filter(
             Exists(field="warc_location")
-            & ~Term(warc_snippets_parser__should_parse=False)
+            # & ~Term(warc_snippets_parser__should_parse=False)
         )
         .query(
             RankFeature(field="archive.priority", saturation={})
@@ -281,6 +311,8 @@ def parse_serps_warc_snippets(config: Config, prefetch_limit: int | None = None)
             preserve_order=True
         ).scan()
         changed_serps = safe_iter_scan(changed_serps)
+        print(f"Parsing {num_changed_serps} new/changed SERPs.")
+
 
         if prefetch_limit is not None:
             num_changed_serps = min(num_changed_serps, prefetch_limit)

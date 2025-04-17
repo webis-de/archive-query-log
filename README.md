@@ -266,6 +266,11 @@ Running the command again after adding more archives or providers will automatic
 
 For each [source pair](#build-source-pairs), we now fetch captures from the archive service that corresponds to the provider's domain and URL prefix given in the source pair. Again, rerunning the command after adding more source pairs fetches just the missing captures.
 
+```shell
+aql captures fetch
+
+```
+
 #### Parse SERP URLs
 
 Not every capture necessarily points to a search engine result page (SERP). But usually, SERPs contain the user query in the URL, so we can filter out non-SERP captures by parsing the URLs.
@@ -315,7 +320,7 @@ aql serps parse serp-query
 More importantly, we can parse the snippets of the SERP.
 
 ```shell
-aql serps parse serp-snippets
+aql serps parse warc-snippets #TODO this is now called warc-snippets?
 ```
 
 Parsing the snippets from the SERP's WARC contents will also add the SERP's results to a new index.
