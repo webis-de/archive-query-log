@@ -98,27 +98,29 @@ def _parse_warc_snippets(
     if parser.url_pattern is not None and not parser.url_pattern.match(capture_url):
         return None
     
-
-
     # Parse snippets.
     if parser.parser_type == "xpath":
         if parser.xpath is None:
             raise ValueError("No XPath given.")
         
+        
+        with open_warc(warc_store, warc_location) as record:
+                buffered = BytesIO(record.content_stream().read())  # buffer whole content
+                buffered.seek(0)
+                start = buffered.read(2048)
+                buffered.seek(0)
+
+                
+                head = start[:200].decode("utf-8", errors="replace").strip().lower() #TODO: deal with encoding issues
+
+                if not head.startswith("<") or head.startswith("{"):
+                    wayback_url = record.rec_headers.get_header("WARC-Target-URI")
+                    warn(UserWarning(f"Skipping non-XML document: {wayback_url}"))
+                    return None
+        
 
         with open_warc(warc_store, warc_location) as record:
-            buffered = BytesIO(record.content_stream().read())  # buffer whole content
-            buffered.seek(0)
-            start = buffered.read(2048)
-            buffered.seek(0)
-
             
-            head = start[:200].decode("utf-8", errors="replace").strip().lower() #TODO: deal with encoding issues
-
-            if not head.startswith("<") or head.startswith("{"):
-                wayback_url = record.rec_headers.get_header("WARC-Target-URI")
-                warn(UserWarning(f"Skipping non-XML document: {wayback_url}"))
-                return None
 
 
             tree = parse_xml_tree(record)
