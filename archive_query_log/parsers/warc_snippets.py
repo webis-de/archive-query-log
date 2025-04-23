@@ -12,6 +12,7 @@ from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 
 # noinspection PyProtectedMember
 from lxml.etree import _Element, tostring  # nosec: B410
+from resiliparse.parse.encoding import detect_encoding
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
@@ -102,10 +103,19 @@ def _parse_warc_snippets(
         
         with open_warc(warc_store, warc_location) as record:
             stream = record.content_stream()
-            start = stream.read(512)
+            start = stream.read(2048)
             head = start[:100].decode("utf-8", errors="replace").strip().lower()
 
-            # Check if the content is XML
+            # Detect encoding using resiliparse
+            detection = detect_encoding(start)
+            encoding = detection or "utf-8"
+
+            try:
+                head = start[:200].decode(encoding, errors="replace").strip().lower()
+            except Exception:
+                encoding = "utf-8"
+                head = start[:200].decode(encoding, errors="replace").strip().lower()
+
             if "<" not in head or head.startswith("{"):
                 wayback_url = record.rec_headers.get_header("WARC-Target-URI")
                 warn(UserWarning(f"Skipping non-XML document: {wayback_url}"))
@@ -124,64 +134,68 @@ def _parse_warc_snippets(
             return None
 
         snippets = []
-        element: _Element
         for i, element in enumerate(elements):
-            url: str | None = None
-            if parser.url_xpath is not None:
-                urls = safe_xpath(element, parser.url_xpath, str)
-                if len(urls) > 0:
-                    url = urls[0].strip()
-                    url = urljoin(capture_url, url)
-            title: str | None = None
-            if parser.title_xpath is not None:
-                titles = safe_xpath(element, parser.title_xpath, str)
-                if len(titles) > 0:
-                    title = titles[0].strip()
-            text: str | None = None
-            if parser.text_xpath is not None:
-                texts = safe_xpath(element, parser.text_xpath, str)
-                if len(texts) > 0:
-                    text = texts[0].strip()
-
-
-            try:
-                content: str = tostring(
-                    element,
-                    encoding=str,
-                    method="xml",
-                    pretty_print=False,
-                    with_tail=True,
-                )
-                snippet_id_components = (
-                    serp_id,
-                    parser.id,
-                    str(hash(content)),
-                    str(i),
-                )
-                snippet_id = str(
-                    uuid5(
-                        NAMESPACE_RESULT,
-                        ":".join(snippet_id_components),
+                url: str | None = None
+                if parser.url_xpath is not None:
+                    urls = safe_xpath(element, parser.url_xpath, str)
+                    if len(urls) > 0:
+                        url = urls[0].strip()
+                        url = urljoin(capture_url, url)
+                title: str | None = None
+                if parser.title_xpath is not None:
+                    titles = safe_xpath(element, parser.title_xpath, str)
+                    if len(titles) > 0:
+                        title = titles[0].strip()
+                text: str | None = None
+                if parser.text_xpath is not None:
+                    texts = safe_xpath(element, parser.text_xpath, str)
+                    if len(texts) > 0:
+                        text = texts[0].strip()
+                try:
+                    # Try unicode output first
+                    content = tostring(
+                        element,
+                        encoding="unicode",
+                        method="xml",
+                        pretty_print=False,
+                        with_tail=True,
                     )
-                )
-                snippets.append(
-                    Snippet(
-                        id=snippet_id,
-                        rank=i,
-                        content=content,
-                        url=url,
-                        title=title,
-                        text=text,
-                    )
-                )
-            except Exception as e:
-                wayback_url = f"https://web.archive.org/web/{capture_timestamp}/{capture_url}"
-                warn(
-                    UserWarning(
-                        f"Failed to parse snippet for SERP {serp_id} and URL:{wayback_url} with parser {parser.id}: {e}"
-                    )
-                )
-                return None
+                except Exception:
+                    try:
+                        content = tostring(
+                            element,
+                            encoding=encoding,
+                            method="xml",
+                            pretty_print=False,
+                            with_tail=True,
+                        ).decode(encoding, errors="replace")
+                        snippet_id_components = (
+                            serp_id,
+                            parser.id,
+                            str(hash(content)),
+                            str(i),
+                        )
+                        snippet_id = str(
+                            uuid5(
+                                NAMESPACE_RESULT,
+                                ":".join(snippet_id_components),
+                            )
+                        )
+                        snippets.append(
+                            Snippet(
+                                id=snippet_id,
+                                rank=i,
+                                content=content,
+                                url=url,
+                                title=title,
+                                text=text,
+                            )
+                        )
+                    except Exception as e:
+                        wayback_url = f"https://web.archive.org/web/{capture_timestamp}/{capture_url}"
+                        warn(UserWarning(f"Failed to parse snippet for SERP {serp_id} and URL:{wayback_url} with parser {parser.id}: {e}"))
+                        print(f"encoding: {encoding}")
+                        return None
         return snippets
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
