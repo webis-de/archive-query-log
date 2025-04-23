@@ -113,7 +113,7 @@ def _parse_warc_snippets(
                 
                 head = start[:200].decode("utf-8", errors="replace").strip().lower() #TODO: deal with encoding issues
 
-                if not head.startswith("<") or head.startswith("{"):
+                if "<" not in head or head.startswith("{"):
                     wayback_url = record.rec_headers.get_header("WARC-Target-URI")
                     warn(UserWarning(f"Skipping non-XML document: {wayback_url}"))
                     return None
