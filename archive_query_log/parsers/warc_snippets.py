@@ -227,12 +227,13 @@ def _parse_serp_warc_snippets_action(
         return
 
     # Re-check if parsing is necessary.
-    # if (
-    #     serp.warc_snippets_parser is not None
-    #     and serp.warc_snippets_parser.should_parse is not None
-    #     and not serp.warc_snippets_parser.should_parse
-    # ):
-        # return
+    if (
+        serp.warc_snippets_parser is not None
+        and serp.warc_snippets_parser.should_parse is not None
+        and not serp.warc_snippets_parser.should_parse
+    ):
+        return
+    
     capture_timestamp = getattr(serp.capture, "timestamp", None)
     if capture_timestamp is None:
         raise ValueError(f"Missing capture timestamp for SERP {serp.id}")
@@ -307,7 +308,7 @@ def parse_serps_warc_snippets(config: Config, prefetch_limit: int | None = None)
         Serp.search(using=config.es.client, index=config.es.index_serps)
         .filter(
             Exists(field="warc_location")
-            # & ~Term(warc_snippets_parser__should_parse=False)
+            & ~Term(warc_snippets_parser__should_parse=False)
         )
         .query(
             RankFeature(field="archive.priority", saturation={})
