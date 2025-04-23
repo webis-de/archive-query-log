@@ -101,29 +101,21 @@ def _parse_warc_snippets(
         if parser.xpath is None:
             raise ValueError("No XPath given.")
         
-        
         with open_warc(warc_store, warc_location) as record:
-                buffered = BytesIO(record.content_stream().read())  # buffer whole content
-                buffered.seek(0)
-                start = buffered.read(2048)
-                buffered.seek(0)
+            stream = record.content_stream()
+            start = stream.read(512)
+            head = start[:100].decode("utf-8", errors="replace").strip().lower()
 
-                
-                head = start[:200].decode("utf-8", errors="replace").strip().lower() #TODO: deal with encoding issues
-
-                if "<" not in head or head.startswith("{"):
-                    wayback_url = record.rec_headers.get_header("WARC-Target-URI")
-                    warn(UserWarning(f"Skipping non-XML document: {wayback_url}"))
-                    return None
+            # Check if the content is XML
+            if "<" not in head or head.startswith("{"):
+                wayback_url = record.rec_headers.get_header("WARC-Target-URI")
+                warn(UserWarning(f"Skipping non-XML document: {wayback_url}"))
+                return None
         
-
+        # Need to open warc again since the content stream is already read.
         with open_warc(warc_store, warc_location) as record:
             
-
-
             tree = parse_xml_tree(record)
-
-
 
         if tree is None:
             return None

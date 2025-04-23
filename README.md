@@ -320,7 +320,7 @@ aql serps parse serp-query
 More importantly, we can parse the snippets of the SERP.
 
 ```shell
-aql serps parse warc-snippets #TODO this is now called warc-snippets?
+aql serps parse warc-snippets
 ```
 
 Parsing the snippets from the SERP's WARC contents will also add the SERP's results to a new index.
