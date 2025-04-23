@@ -5,8 +5,6 @@ from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
 from warnings import warn
-from io import BufferedReader
-
 
 from click import echo
 from elasticsearch_dsl import Search
