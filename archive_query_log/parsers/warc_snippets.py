@@ -154,35 +154,45 @@ def _parse_warc_snippets(
                 if len(texts) > 0:
                     text = texts[0].strip()
 
-            content: str = tostring(
-                element,
-                encoding=str,
-                method="xml",
-                pretty_print=False,
-                with_tail=True,
-            )
-            snippet_id_components = (
-                serp_id,
-                parser.id,
-                str(hash(content)),
-                str(i),
-            )
-            snippet_id = str(
-                uuid5(
-                    NAMESPACE_RESULT,
-                    ":".join(snippet_id_components),
+
+            try:
+                content: str = tostring(
+                    element,
+                    encoding=str,
+                    method="xml",
+                    pretty_print=False,
+                    with_tail=True,
                 )
-            )
-            snippets.append(
-                Snippet(
-                    id=snippet_id,
-                    rank=i,
-                    content=content,
-                    url=url,
-                    title=title,
-                    text=text,
+                snippet_id_components = (
+                    serp_id,
+                    parser.id,
+                    str(hash(content)),
+                    str(i),
                 )
-            )
+                snippet_id = str(
+                    uuid5(
+                        NAMESPACE_RESULT,
+                        ":".join(snippet_id_components),
+                    )
+                )
+                snippets.append(
+                    Snippet(
+                        id=snippet_id,
+                        rank=i,
+                        content=content,
+                        url=url,
+                        title=title,
+                        text=text,
+                    )
+                )
+            except Exception as e:
+                wayback_url = f"https://web.archive.org/web/{capture_timestamp}/{capture_url}"
+                warn(
+                    UserWarning(
+                        f"Failed to parse snippet for SERP {serp_id} and URL:{wayback_url} with parser {parser.id}: {e}"
+                    )
+                )
+                continue
         return snippets
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
