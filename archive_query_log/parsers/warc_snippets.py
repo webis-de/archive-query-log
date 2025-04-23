@@ -1,5 +1,4 @@
 from functools import cache
-from io import BytesIO
 from itertools import chain, islice
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
