@@ -192,7 +192,7 @@ def _parse_warc_snippets(
                         f"Failed to parse snippet for SERP {serp_id} and URL:{wayback_url} with parser {parser.id}: {e}"
                     )
                 )
-                continue
+                return None
         return snippets
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
