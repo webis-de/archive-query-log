@@ -52,7 +52,6 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
             detect_encoding(encoding_guess_bytes, from_html_meta=False),
             detect_encoding(encoding_guess_bytes, from_html_meta=True),
         })
-        guessed_encodings = set(encodings)
 
         # Get the encoding from the Content-Type header.
         html_content_type: str = record.http_headers.get_header("Content-Type")
@@ -75,8 +74,6 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
             try:
                 for _ in text_file:
                     pass
-                if encoding not in guessed_encodings:
-                    print(f"Encoding: {encoding}")
             except (UnicodeDecodeError, UnicodeError):
                 tmp_file = text_file.detach()
                 text_file = None
