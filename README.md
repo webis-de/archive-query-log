@@ -268,7 +268,6 @@ For each [source pair](#build-source-pairs), we now fetch captures from the arch
 
 ```shell
 aql captures fetch
-
 ```
 
 #### Parse SERP URLs
@@ -277,7 +276,6 @@ Not every capture necessarily points to a search engine result page (SERP). But 
 
 ```shell
 aql serps parse url-query
-
 ```
 
 Parsing the query from the capture URL will add SERPs to a new, more focused index that only contains SERPs. From the SERPs, we can also parse the page number and offset of the SERP, if available.
@@ -314,7 +312,7 @@ A pointer to the WARC block in S3 is stored in the SERP index so that we can eff
 From the WARC contents, we can now parse the query as it appears on the SERP (which can sometimes differ from the query encoded in the URL).
 
 ```shell
-aql serps parse serp-query
+aql serps parse warc-query
 ```
 
 More importantly, we can parse the snippets of the SERP.
