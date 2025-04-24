@@ -1,11 +1,13 @@
+from shutil import copyfileobj
+from tempfile import TemporaryFile
 from typing import Literal, Type, TypeVar, Iterable
 from warnings import warn
 
 from cssselect import GenericTranslator
 from cssselect.parser import parse as cssselect_parse
 from lxml.etree import parse as etree_parse, XMLParser, HTMLParser  # nosec: B410
-# noinspection PyProtectedMember
 from lxml.etree import _ElementTree, _Element  # nosec: B410
+from resiliparse.parse import detect_encoding
 from warcio.recordloader import ArcWarcRecord
 
 XmlParserType = Literal[
@@ -17,21 +19,56 @@ XmlParserType = Literal[
 def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
     mime_type: str | None = record.http_headers.get_header("Content-Type")
     if mime_type is None:
-        warn(UserWarning("No MIME type given."))
+        warn("No MIME type given.", UserWarning)
         return None
     mime_type = mime_type.split(";", maxsplit=1)[0]
+
     parser: XMLParser | HTMLParser
     if mime_type == "text/xml":
         parser = XMLParser()
     elif mime_type == "text/html":
         parser = HTMLParser()
     else:
-        warn(UserWarning(f"Cannot find XML parser for MIME type: {mime_type}"))
+        warn(f"Cannot find XML parser for MIME type: {mime_type}", UserWarning)
         return None
-    return etree_parse(  # nosec: B320
-        source=record.content_stream(),
-        parser=parser,
-    )
+
+    wayback_url = record.rec_headers.get_header("WARC-Target-URI")
+
+    with TemporaryFile() as tmp_file:
+        # Copy the content stream to a temporary file.
+        # This is necessary because the content stream is not seekable.
+        try:
+            copyfileobj(record.content_stream(), tmp_file)
+        except AttributeError as e:
+            if e.name == "unused_data":
+                warn(f"Brotli decompression error: {wayback_url}", UserWarning)
+                return None
+        tmp_file.seek(0)
+
+        # Detect encoding using Resiliparse, based on the first 2048 bytes .
+        encoding: str = detect_encoding(tmp_file.peek(2048), from_html_meta=True)
+        print(f"Detected encoding: {encoding}")
+
+        # Decode the first 100 characters to check for XML/HTML content.
+        # Note: 2048 bytes should be enough to decode the first 100 characters.
+        try:
+            head = tmp_file.peek(2048).decode(encoding)[:100]
+        except UnicodeDecodeError:
+            warn(f"Decoding error: {wayback_url}", UserWarning)
+            return None
+
+        if "<" not in head:
+            warn(f"Skipping non-XML document: {wayback_url}", UserWarning)
+            return None
+
+        if head[0] in ["{", "[", '"']:
+            warn(f"Skipping JSON-like document: {wayback_url}", UserWarning)
+            return None
+
+        return etree_parse(  # nosec: B320
+            source=tmp_file,
+            parser=parser,
+        )
 
 
 _T = TypeVar("_T")
