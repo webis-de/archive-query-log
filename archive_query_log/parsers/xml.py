@@ -47,7 +47,6 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
 
         # Detect encoding using Resiliparse, based on the first 2048 bytes .
         encoding: str = detect_encoding(tmp_file.peek(2048), from_html_meta=True)
-        print(f"Detected encoding: {encoding}")
 
         # Decode the first 100 characters to check for XML/HTML content.
         # Note: 2048 bytes should be enough to decode the first 100 characters.
