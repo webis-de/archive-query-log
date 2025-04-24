@@ -9,6 +9,7 @@ from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 
+# noinspection PyProtectedMember
 from lxml.etree import _Element, tostring  # nosec: B410
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
@@ -125,7 +126,7 @@ def _parse_warc_snippets(
                 if len(texts) > 0:
                     text = texts[0].strip()
 
-            content = tostring(
+            content: str = tostring(
                 element,
                 encoding=str,
                 method="xml",
