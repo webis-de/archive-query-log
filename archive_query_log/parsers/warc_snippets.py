@@ -96,10 +96,8 @@ def _parse_warc_snippets(
     if parser.parser_type == "xpath":
         if parser.xpath is None:
             raise ValueError("No XPath given.")
-        
         with open_warc(warc_store, warc_location) as record:
             tree = parse_xml_tree(record)
-
         if tree is None:
             return None
 
@@ -126,6 +124,7 @@ def _parse_warc_snippets(
                 texts = safe_xpath(element, parser.text_xpath, str)
                 if len(texts) > 0:
                     text = texts[0].strip()
+
             content = tostring(
                 element,
                 encoding=str,
