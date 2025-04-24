@@ -155,11 +155,11 @@ In this list, archives that have both a CDX API and a Memento API are compatible
 | Name | CDX API | Memento API | Size | Funding | Notes | AQL |
 |:--|:--|:--|:-:|:--|:--|:--|
 | [Wayback Machine](https://web.archive.org/) | [🟩](https://web.archive.org/cdx/search/cdx) | [🟩](https://web.archive.org/web) | [928B](https://web.archive.org/) | [non-profit](https://archive.org/donate) | - | 🟩 |
-| [Stanford Web Archive](https://swap.stanford.edu/) | [🟩](https://swap.stanford.edu/was/cdx) | [🟩](https://swap.stanford.edu/was) | - | university | Websites selected by subject specialists | 🟩 |
 | [Arquivo.pt](https://arquivo.pt/) | [🟩](https://arquivo.pt/wayback/cdx) | [🟩](https://arquivo.pt/wayback) | [47M](https://sobre.arquivo.pt/en/about/press/the-portuguese-web-archive-in-numbers/) | government | [Focus on Portugese websites](https://arquivo.pt/numeros/#5-top-domains-available-in-arquivo-pt) | 🟩 |
+| [Estonian Web Archives](https://veebiarhiiv.digar.ee/a/20191008165439mp_/http://veebiarhiiv.digar.ee/) | [🟩](https://veebiarhiiv.digar.ee/a/cdx) | [🟩](https://veebiarhiiv.digar.ee/a) | [75k](https://veebiarhiiv.digar.ee/a/20191008165439/http://www.nlib.ee/veebisaidid) | government | Only `.ee`-domains and hand-picked Estonian websites of other TLDs | 🟩 |
+| [Estonian Web Archives](https://veebiarhiiv.digar.ee/a/20191008165439mp_/http://veebiarhiiv.digar.ee/) | [🟩](https://veebiarhiiv.digar.ee/a/cdx) | [🟩](https://veebiarhiiv.digar.ee/a) | [75k](https://veebiarhiiv.digar.ee/a/20191008165439/http://www.nlib.ee/veebisaidid) | government | Only `.ee`-domains and hand-picked Estonian websites of other TLDs | 🟩 |
 | [Icelandic Web Archive](https://vefsafn.is/) | [🟩](https://vefsafn.is/is/cdx) | [🟩](https://vefsafn.is/is) | - | government | Only `.is`-domains and hand-picked Icelandic websites of other TLDs | 🟩 |
-| [Estonian Web Archives](https://veebiarhiiv.digar.ee/a/20191008165439mp_/http://veebiarhiiv.digar.ee/) | [🟩](https://veebiarhiiv.digar.ee/a/cdx) | [🟩](https://veebiarhiiv.digar.ee/a) | [75k](https://veebiarhiiv.digar.ee/a/20191008165439/http://www.nlib.ee/veebisaidid) | government | Only `.ee`-domains and hand-picked Estonian websites of other TLDs | 🟩 |
-| [Estonian Web Archives](https://veebiarhiiv.digar.ee/a/20191008165439mp_/http://veebiarhiiv.digar.ee/) | [🟩](https://veebiarhiiv.digar.ee/a/cdx) | [🟩](https://veebiarhiiv.digar.ee/a) | [75k](https://veebiarhiiv.digar.ee/a/20191008165439/http://www.nlib.ee/veebisaidid) | government | Only `.ee`-domains and hand-picked Estonian websites of other TLDs | 🟩 |
+| [Stanford Web Archive](https://swap.stanford.edu/) | [🟩](https://swap.stanford.edu/was/cdx) | [🟩](https://swap.stanford.edu/was) | - | university | Websites selected by subject specialists | 🟩 |
 | [Australian Web Archive](https://webarchive.nla.gov.au/) | [🟩](https://web.archive.org.au/awa/cdx) | [🟩](https://web.archive.org.au/awa) | [8B](https://trove.nla.gov.au/help/categories/websites-category) | government | Mostly `.au`-domains and other Australia-related websites | 🔜 |
 | [New Zealand Web Archive](https://natlib.govt.nz/collections/a-z/new-zealand-web-archive) | [🟩](https://ndhadeliver.natlib.govt.nz/webarchive/cdx) | [🟩](https://ndhadeliver.natlib.govt.nz/webarchive) | [47k](https://natlib.govt.nz/collections/a-z/new-zealand-web-archive) | government | Websites about New Zealand and the Pacific | 🔜 |
 | [MNMKK OSZK Webarchívum](https://webarchivum.oszk.hu/) | [🟩](http://webadmin.oszk.hu/pywb/cdx) | [🟩](http://webadmin.oszk.hu/pywb) | - | government | Focus on Hungarian websites | 🔜 |
@@ -233,6 +233,7 @@ See below on how to [import all public Archive-it archives](#import) automatical
 - [Netarkivet](https://www.kb.dk/find-materiale/samlinger/netarkivet)
 - [Suomalainen Verkkoarkisto](https://verkkoarkisto.kansalliskirjasto.fi/va/)
 - [ארכיון האינטרנט הישראלי](https://wayback.nli.org.il/)
+- [Scotland Web Archives](https://webarchive.nrscotland.gov.uk/search)
 
 </details></p>
 
