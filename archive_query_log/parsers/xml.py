@@ -1,3 +1,4 @@
+from io import TextIOWrapper
 from shutil import copyfileobj
 from tempfile import TemporaryFile
 from typing import Literal, Type, TypeVar, Iterable
@@ -45,19 +46,54 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
                 return None
         tmp_file.seek(0)
 
-        # Detect encoding using Resiliparse, based on the first 2048 bytes .
-        encoding: str = detect_encoding(tmp_file.peek(2048), from_html_meta=True)
+        # Detect encoding using Resiliparse, based on the first 10KB bytes .
+        encoding_guess_bytes = tmp_file.read(1024 * 10)
+        encodings: list[str] = list({
+            detect_encoding(encoding_guess_bytes, from_html_meta=False),
+            detect_encoding(encoding_guess_bytes, from_html_meta=True),
+        })
+        guessed_encodings = set(encodings)
 
-        # Decode the first 100 characters to check for XML/HTML content.
-        # Note: 2048 bytes should be enough to decode the first 100 characters.
-        try:
-            head = tmp_file.peek(2048).decode(encoding)[:100]
-        except UnicodeDecodeError:
-            warn(f"Decoding error: {wayback_url}", UserWarning)
+        # Get the encoding from the Content-Type header.
+        html_content_type: str = record.http_headers.get_header("Content-Type")
+        if html_content_type is not None and ";" in html_content_type and "charset=" in html_content_type:
+            # Extract the charset from the Content-Type header.
+            encodings.extend({
+                part.strip().removeprefix("charset=").lower()
+                for part in html_content_type.split(";")
+                if part.strip().startswith("charset=")
+            }.difference(encodings))
+
+        # Add fall-back encodings.
+        if "utf-8" in encodings and "utf-8-sig" not in encodings:
+            encodings.append("utf-8-sig")
+
+        # Check if any of the candidate encodings is valid.
+        text_file: TextIOWrapper | None = None
+        for encoding in encodings:
+            text_file = TextIOWrapper(tmp_file, encoding=encoding)
+            try:
+                for _ in text_file:
+                    pass
+                if encoding not in guessed_encodings:
+                    print(f"Encoding: {encoding}")
+            except (UnicodeDecodeError, UnicodeError):
+                tmp_file = text_file.detach()
+                text_file = None
+                tmp_file.seek(0)
+                continue
+            # If the encoding is valid, break the loop.
+            break
+        if text_file is None:
+            warn(f"Could not find valid encoding among {', '.join(encodings)}: {wayback_url}", UserWarning)
             return None
 
+        # Decode the first 100 characters to check for XML/HTML content.
+        head = text_file.read(100)
+        text_file.seek(0)
+
         if "<" not in head:
-            warn(f"Skipping non-XML document: {wayback_url}", UserWarning)
+            # warn(f"Skipping non-XML document: {wayback_url}", UserWarning)
             return None
 
         if head[0] in ["{", "[", '"']:
@@ -65,7 +101,7 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
             return None
 
         return etree_parse(  # nosec: B320
-            source=tmp_file,
+            source=text_file,
             parser=parser,
         )
 
@@ -74,9 +110,9 @@ _T = TypeVar("_T")
 
 
 def safe_xpath(
-        tree: _ElementTree | _Element,
-        xpath: str,
-        item_type: Type[_T],
+    tree: _ElementTree | _Element,
+    xpath: str,
+    item_type: Type[_T],
 ) -> list[_T]:
     results = tree.xpath(xpath, smart_strings=False)
     if not isinstance(results, list):
@@ -85,7 +121,8 @@ def safe_xpath(
         types = ", ".join({str(type(result)) for result in results})
         raise ValueError(
             f"All results of the XPath '{xpath}' results "
-            f"must be of type {item_type}, found: {types}")
+            f"must be of type {item_type}, found: {types}"
+        )
     return results
 
 
@@ -111,15 +148,14 @@ def merge_xpaths(xpaths: Iterable[str]) -> str:
 
 
 def text_xpath(
-        xpath: str,
-        attribute: str | None = None,
-        text: bool = False,
+    xpath: str,
+    attribute: str | None = None,
+    text: bool = False,
 ) -> str:
     if attribute is None and not text:
         raise ValueError("Either an attribute or text=True must be given.")
     if attribute is not None and text:
-        raise ValueError(
-            "An attribute and text=True are not allowed at the same time.")
+        raise ValueError("An attribute and text=True are not allowed at the same time.")
     if text:
         return f"{xpath}//text()"
     else:
