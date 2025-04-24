@@ -107,54 +107,54 @@ def _parse_warc_snippets(
         if len(elements) == 0:
             return None
 
-        snippets = []       
+        snippets = []
         element: _Element
         for i, element in enumerate(elements):
-                url: str | None = None
-                if parser.url_xpath is not None:
-                    urls = safe_xpath(element, parser.url_xpath, str)
-                    if len(urls) > 0:
-                        url = urls[0].strip()
-                        url = urljoin(capture_url, url)
-                title: str | None = None
-                if parser.title_xpath is not None:
-                    titles = safe_xpath(element, parser.title_xpath, str)
-                    if len(titles) > 0:
-                        title = titles[0].strip()
-                text: str | None = None
-                if parser.text_xpath is not None:
-                    texts = safe_xpath(element, parser.text_xpath, str)
-                    if len(texts) > 0:
-                        text = texts[0].strip()
-                content = tostring(
-                    element,
-                    encoding=str,
-                    method="xml",
-                    pretty_print=False,
-                    with_tail=True,
+            url: str | None = None
+            if parser.url_xpath is not None:
+                urls = safe_xpath(element, parser.url_xpath, str)
+                if len(urls) > 0:
+                    url = urls[0].strip()
+                    url = urljoin(capture_url, url)
+            title: str | None = None
+            if parser.title_xpath is not None:
+                titles = safe_xpath(element, parser.title_xpath, str)
+                if len(titles) > 0:
+                    title = titles[0].strip()
+            text: str | None = None
+            if parser.text_xpath is not None:
+                texts = safe_xpath(element, parser.text_xpath, str)
+                if len(texts) > 0:
+                    text = texts[0].strip()
+            content = tostring(
+                element,
+                encoding=str,
+                method="xml",
+                pretty_print=False,
+                with_tail=True,
+            )
+            snippet_id_components = (
+                serp_id,
+                parser.id,
+                str(hash(content)),
+                str(i),
+            )
+            snippet_id = str(
+                uuid5(
+                    NAMESPACE_RESULT,
+                    ":".join(snippet_id_components),
                 )
-                snippet_id_components = (
-                    serp_id,
-                    parser.id,
-                    str(hash(content)),
-                    str(i),
+            )
+            snippets.append(
+                Snippet(
+                    id=snippet_id,
+                    rank=i,
+                    content=content,
+                    url=url,
+                    title=title,
+                    text=text,
                 )
-                snippet_id = str(
-                    uuid5(
-                        NAMESPACE_RESULT,
-                        ":".join(snippet_id_components),
-                    )
-                )
-                snippets.append(
-                    Snippet(
-                        id=snippet_id,
-                        rank=i,
-                        content=content,
-                        url=url,
-                        title=title,
-                        text=text,
-                    )
-                )
+            )
         return snippets
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
