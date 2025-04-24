@@ -4,7 +4,8 @@ sourcesBuild:
   replicas: 1
 
 capturesFetch:
-  replicas: 25
+  replicas: 1
+  # replicas: 25
   prefetchLimit: 1000
 
 capturesImportAql22:
@@ -16,7 +17,7 @@ capturesImportAql22:
   ttlMinutesAfterFinished: 30
 
 serpsParseUrlQuery:
-  replicas: 40
+  replicas: 100
   prefetchLimit: 1000
 
 serpsParseUrlPage:
@@ -32,7 +33,8 @@ serpsDownloadWarc:
   prefetchLimit: 1000
 
 serpsUploadWarc:
-  replicas: 15
+  replicas: 1
+  # replicas: 15
 
 serpsParseWarcQuery:
   replicas: 50
