@@ -47,7 +47,7 @@ dependencies = [
     "mergedeep~=1.3",
     "more-itertools~=10.7",
     "pandas~=2.2",
-    "publicsuffixlist~=1.0",
+    "publicsuffixlist~=1.0,>=1.0.2.20250430",
     # "pycld3~=0.22.0",
     "python-dotenv~=1.1",
     "python-slugify~=8.0",
@@ -59,7 +59,6 @@ dependencies = [
     "requests-ratelimiter~=0.7.0",
     "resiliparse~=0.15.2",
     "tqdm~=4.67",
-    "typing_extensions>=4.13.2",  # transitive seems to be needed for dependency resolution
     "unidecode~=1.4",
     "urllib3~=2.4",
     "warcio~=1.7",
@@ -81,11 +80,11 @@ tests = [
     "ruff~=0.11.2",
     "types-beautifulsoup4~=4.12,>=4.12.0.20250204",
     "types-bleach~=6.2,>=6.2.0.20241123",
-    "types-lxml~=2025.0",
-    "types-python-slugify~=8.0",
-    "types-pyyaml~=6.0",
+    "types-lxml~=2025.0,>=2025.3.30",
+    "types-python-slugify~=8.0,>=8.0.2.20240310",
+    "types-pyyaml~=6.0,>=6.0.12.20250402",
     "types-requests~=2.32,>=2.32.0.20250328",
-    "types-tqdm~=4.67",
+    "types-tqdm~=4.67,>=4.67.0.20250417",
 ]
 examples = [
     "jupyter~=1.0",
