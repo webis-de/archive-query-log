@@ -2,13 +2,14 @@
 name = "archive-query-log"
 authors = [
     { name = "Jan Heinrich Merker", email = "heinrich.merker@uni-jena.de" },
-    { name = "Sebastian Schmidt", email = "s.schmidt@uni-leipzig.de" },
+    { name = "Sebastian Heineking", email = "sebastian.heineking@uni-leipzig.de" },
     { name = "Maik Fröbe", email = "maik.froebe@uni-jena.de" },
     { name = "Lukas Gienapp", email = "lukas.gienapp@uni-leipzig.de" },
     { name = "Harrisen Scells", email = "harry.scells@uni-leipzig.de" },
     { name = "Benno Stein", email = "benno.stein@uni-weimar.de" },
     { name = "Matthias Hagen", email = "matthias.hagen@uni-jena.de" },
-    { name = "Martin Potthast", email = "martin.potthast@uni-leipzig.de" },
+    { name = "Martin Potthast", email = "martin.potthast@uni-kassel.de" },
+    { name = "Simon Ruth", email = "simon.ruth@uni-kassel.de" },
 ]
 description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives."
 readme = "README.md"
@@ -170,7 +171,7 @@ exclude_dirs = [
 skips = ["**/test_*.py"]
 
 [tool.pytest.ini_options]
-log_cli = "True"
+log_cli = true
 filterwarnings = [
     "ignore::marshmallow.warnings.RemovedInMarshmallow4Warning",
 ]
