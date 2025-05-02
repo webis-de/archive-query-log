@@ -21,8 +21,6 @@ jobs:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: 🧰 Update Pip
-      run: pip install --upgrade pip
     - name: 🧰 Install dependencies
       run: pip install build twine
     - name: 🏗️ Build Python wheels
@@ -52,8 +50,6 @@ jobs:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: 🧰 Update Pip
-      run: pip install --upgrade pip
     - name: 🧰 Install dependencies
       run: pip install .[tests]
     - name: 🔍 Check Python code
@@ -75,8 +71,6 @@ jobs:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: 🧰 Update Pip
-      run: pip install --upgrade pip
     - name: 🧰 Install dependencies
       run: pip install .[tests]
     - name: 🔍 Check Python static typing
@@ -98,8 +92,6 @@ jobs:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: 🧰 Update Pip
-      run: pip install --upgrade pip
     - name: 🧰 Install dependencies
       run: pip install .[tests]
     - name: 🔍 Check Python code security
@@ -121,8 +113,6 @@ jobs:
         python-version: ${{ matrix.python }}
         cache: pip
         cache-dependency-path: pyproject.toml
-    - name: 🧰 Update Pip
-      run: pip install --upgrade pip
     - name: 🧰 Install dependencies
       run: pip install .[tests]
     - name: 🧪 Test Python code
