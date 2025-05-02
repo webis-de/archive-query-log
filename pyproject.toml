@@ -42,6 +42,7 @@ dependencies = [
     "flasgger~=0.9.7",
     "flask~=3.1",
     "flask-restful~=0.3.10",
+    "idna>=3.10",  # transitive dependency of requests
     "importlib_metadata>=8.7.0",  # transitive dependency of warc-cache
     "joblib~=1.4",
     "lxml~=5.4",
@@ -51,6 +52,7 @@ dependencies = [
     "pandas~=2.2",
     "publicsuffixlist~=1.0,>=1.0.2.20250430",
     # "pycld3~=0.22.0",
+    "pyrate-limiter>=2.10.0",  # transitive dependency of requests-ratelimiter
     "python-dotenv~=1.1",
     "python-slugify~=8.0",
     "python-whois~=0.9.5",
