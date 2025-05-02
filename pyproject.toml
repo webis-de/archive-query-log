@@ -54,6 +54,7 @@ dependencies = [
     "pandas~=2.2",
     "publicsuffixlist~=1.0,>=1.0.2.20250430",
     # "pycld3~=0.22.0",
+    "pydantic~=2.11",
     "pyrate-limiter>=2.10.0",  # transitive dependency of requests-ratelimiter
     "python-dotenv~=1.1",
     "python-slugify~=8.0,>=8.0.4",
@@ -82,7 +83,7 @@ tests = [
     "bandit[toml]~=1.8",
     "mypy~=1.15",
     "pandas-stubs~=2.2",
-    "pytest~=8.3",
+    "pytest~=8.3,>=8.3.5",
     "pytest-cov~=6.1",
     "ruff~=0.11.8",
     "types-beautifulsoup4~=4.12,>=4.12.0.20250204",
