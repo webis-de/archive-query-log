@@ -82,7 +82,7 @@ tests = [
     "approvaltests~=14.5",
     "bandit[toml]~=1.8",
     "mypy~=1.15",
-    "pandas-stubs~=2.2",
+    "pandas-stubs~=2.2,>=2.2.3.250308",
     "pytest~=8.3,>=8.3.5",
     "pytest-cov~=6.1",
     "ruff~=0.11.8",
