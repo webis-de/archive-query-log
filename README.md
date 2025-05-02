@@ -49,7 +49,7 @@ To run the Archive Query Log CLI on your machine, you can either use our [PyPi p
 
 #### Installation (PyPi)
 
-First you need to install [Python 3.12](https://python.org/downloads/) and [pipx](https://pypa.github.io/pipx/installation/) (this allows you to install the AQL CLI in a virtual environment). Then, you can install the Archive Query Log CLI by running:
+First you need to install [Python 3.13](https://python.org/downloads/) and [pipx](https://pypa.github.io/pipx/installation/) (this allows you to install the AQL CLI in a virtual environment). Then, you can install the Archive Query Log CLI by running:
 
 ```shell
 pipx install archive-query-log
@@ -65,10 +65,10 @@ aql --help
 
 <details>
 
-First, install [Python 3.12](https://python.org/downloads/) and then clone this repository. From inside the repository directory, create a virtual environment and activate it:
+First, install [Python 3.13](https://python.org/downloads/) and then clone this repository. From inside the repository directory, create a virtual environment and activate it:
 
 ```shell
-python3.12 -m venv venv/
+python3.13 -m venv venv/
 source venv/bin/activate
 ```
 

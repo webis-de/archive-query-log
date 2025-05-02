@@ -14,11 +14,11 @@ authors = [
 description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering",
@@ -26,38 +26,30 @@ classifiers = [
 dependencies = [
     "aiohttp~=3.11",
     "aiohttp-retry~=2.9",
-    "anyio>=4.9.0",  # transitive dependency of fastapi
     "asyncio-pool~=0.6.0",
     "beautifulsoup4~=4.12",
     "bleach~=6.2",
-    "boto3~=1.34,>=1.35.99",
-    "certifi~=2025.0",
-    "charset-normalizer>=3.4.1",  # transitive dependency of requests
-    "click~=8.1",
+    "boto3~=1.35.99",
+    "certifi~=2025.0,>=2025.4.26",
+    "click~=8.1,>=8.1.8",
     "cssselect~=1.3",
     "dataclasses-json~=0.6.7",
-    "diskcache~=5.6",
-    "elasticsearch~=7.9",
-    "elasticsearch-dsl~=7.4",
+    "diskcache~=5.6,>=5.6.3",
+    "elasticsearch~=7.9.1",
+    "elasticsearch-dsl~=7.4.1",
     "expiringdict~=1.2",
     "fastapi~=0.115.12",
     "flasgger~=0.9.7",
     "flask~=3.1",
     "flask-restful~=0.3.10",
-    "idna>=3.10",  # transitive dependency of requests
-    "importlib_metadata>=8.7.0",  # transitive dependency of warc-cache
     "joblib~=1.4",
     "lxml~=5.4",
     "marshmallow~=3.26",  # dataclasses-json 0.6.7 depends on marshmallow<4.0.0 and >=3.18.0
-    "mergedeep~=1.3",
+    "mergedeep~=1.3,>=1.3.4",
     "more-itertools~=10.7",
-    "multidict>=6.4.3", # transitive dependency of aiohttp
-    "numpy>=2.2.5",  # transitive dependency of pandas
     "pandas~=2.2,>=2.2.3",
     "publicsuffixlist~=1.0,>=1.0.2.20250430",
-    # "pycld3~=0.22.0",
     "pydantic~=2.11",
-    "pyrate-limiter>=2.10.0",  # transitive dependency of requests-ratelimiter
     "python-dotenv~=1.1",
     "python-slugify~=8.0,>=8.0.4",
     "python-whois~=0.9.5",
@@ -67,9 +59,7 @@ dependencies = [
     "requests-html~=0.10.0",
     "requests-ratelimiter~=0.7.0",
     "resiliparse~=0.15.2",
-    "starlette>=0.46.2",  # transitive dependency of fastapi
     "tqdm~=4.67",
-    "typing-inspect>=0.9.0",  # transitive dependency of dataclasses-json
     "unidecode~=1.4",
     "urllib3~=2.4",
     "warcio~=1.7",
@@ -83,6 +73,7 @@ dynamic = ["version"]
 tests = [
     "approvaltests~=14.5",
     "bandit[toml]~=1.8",
+    "boto3-stubs[s3]~=1.35",
     "mypy~=1.15",
     "pandas-stubs~=2.2,>=2.2.3.250308",
     "pytest~=8.3,>=8.3.5",
@@ -95,7 +86,6 @@ tests = [
     "types-pyyaml~=6.0,>=6.0.12.20250402",
     "types-requests~=2.32,>=2.32.0.20250328",
     "types-tqdm~=4.67,>=4.67.0.20250417",
-    "typing_extensions>=4.13.2",  # transitive dependency of approvaltests
 ]
 examples = [
     "jupyter~=1.0",
