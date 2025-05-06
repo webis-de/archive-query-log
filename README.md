@@ -49,7 +49,7 @@ To run the Archive Query Log CLI on your machine, you can either use our [PyPi p
 
 #### Installation (PyPi)
 
-First you need to install [Python 3.12](https://python.org/downloads/) and [pipx](https://pypa.github.io/pipx/installation/) (this allows you to install the AQL CLI in a virtual environment). Then, you can install the Archive Query Log CLI by running:
+First you need to install [Python 3.13](https://python.org/downloads/) and [pipx](https://pypa.github.io/pipx/installation/) (this allows you to install the AQL CLI in a virtual environment). Then, you can install the Archive Query Log CLI by running:
 
 ```shell
 pipx install archive-query-log
@@ -65,10 +65,10 @@ aql --help
 
 <details>
 
-First, install [Python 3.12](https://python.org/downloads/) and then clone this repository. From inside the repository directory, create a virtual environment and activate it:
+First, install [Python 3.13](https://python.org/downloads/) and then clone this repository. From inside the repository directory, create a virtual environment and activate it:
 
 ```shell
-python3.12 -m venv venv/
+python3.13 -m venv venv/
 source venv/bin/activate
 ```
 
@@ -469,13 +469,14 @@ If you have found an important search provider missing from this query log, plea
 If you are unsure about anything, post an [issue](https://github.com/webis-de/archive-query-log/issues/new) or contact us:
 
 - [heinrich.merker@uni-jena.de](mailto:heinrich.merker@uni-jena.de)
-- [s.schmidt@uni-leipzig.de](mailto:s.schmidt@uni-leipzig.de)
+- [sebastian.heineking@uni-leipzig.de](mailto:sebastian.heineking@uni-leipzig.de)
 - [maik.froebe@uni-jena.de](mailto:maik.froebe@uni-jena.de)
 - [lukas.gienapp@uni-leipzig.de](mailto:lukas.gienapp@uni-leipzig.de)
 - [harry.scells@uni-leipzig.de](mailto:harry.scells@uni-leipzig.de)
 - [benno.stein@uni-weimar.de](mailto:benno.stein@uni-weimar.de)
 - [matthias.hagen@uni-jena.de](mailto:matthias.hagen@uni-jena.de)
-- [martin.potthast@uni-leipzig.de](mailto:martin.potthast@uni-leipzig.de)
+- [martin.potthast@uni-kassel.de](mailto:martin.potthast@uni-kassel.de)
+- [simon.ruth@uni-kassel.de](mailto:simon.ruth@uni-kassel.de)
 
 We are happy to help!
 
