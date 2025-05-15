@@ -514,8 +514,6 @@ def home(config: Config) -> str | Response:
             index=config.es.index_serps,
             filter_query=(
                 Term(capture__status_code=200)
-                # FIXME: Remove this manual prioritization at some time.
-                & Term(provider__id="f205fc44-d918-4b79-9a7f-c1373a6ff9f2")
             ),
             status_field="warc_downloader.should_download",
         ),

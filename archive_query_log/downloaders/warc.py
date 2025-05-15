@@ -164,8 +164,6 @@ def download_serps_warc(config: Config, prefetch_limit: int | None = None) -> No
         .filter(
             Term(capture__status_code=200)
             & ~Term(warc_downloader__should_download=False)
-            # FIXME: Remove this manual prioritization at some time.
-            & Term(provider__id="f205fc44-d918-4b79-9a7f-c1373a6ff9f2")
         )
         .query(
             RankFeature(field="archive.priority", saturation={})
