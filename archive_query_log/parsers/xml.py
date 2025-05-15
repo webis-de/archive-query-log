@@ -70,6 +70,9 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
         # Check if any of the candidate encodings is valid.
         text_file: TextIOWrapper | None = None
         for encoding in encodings:
+            # Build mapping for python equivalent of windows-874.
+            if encoding == "windows-874":
+                encoding = "cp874"
             text_file = TextIOWrapper(tmp_file, encoding=encoding)
             try:
                 for _ in text_file:
