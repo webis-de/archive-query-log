@@ -100,8 +100,6 @@ def _get_statistics(
     if status_field is not None:
         search = search.filter(Term(**{status_field: False}))
 
-    from json import dumps
-    print(dumps(search.to_dict(), indent=2))
     total = search.count()
     last_modified_response = (
         search.sort(f"-{last_modified_field}").extra(size=1).execute()
