@@ -38,13 +38,13 @@ class ServiceChoice(Choice):
         self._ensure_choices()
         return super().to_info_dict()
 
-    def get_metavar(self, param: Parameter) -> str:
+    def get_metavar(self, param: Parameter, ctx: Context) -> str | None:
         self._ensure_choices()
-        return super().get_metavar(param)
+        return super().get_metavar(param, ctx)
 
-    def get_missing_message(self, param: Parameter) -> str:
+    def get_missing_message(self, param: Parameter, ctx: Context | None) -> str:
         self._ensure_choices()
-        return super().get_missing_message(param)
+        return super().get_missing_message(param, ctx)
 
     def convert(
             self,
