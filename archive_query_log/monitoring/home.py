@@ -3,7 +3,7 @@ from typing import Iterable, NamedTuple, Type, TYPE_CHECKING, Any
 from pathlib import Path
 
 from boto3 import Session
-from elasticsearch_dsl.query import Exists, Query, Term
+from elasticsearch_dsl.query import Exists, Query, Term, Nested
 from expiringdict import ExpiringDict
 from flask import render_template, Response, make_response
 from tqdm import tqdm
@@ -90,9 +90,18 @@ def _get_statistics(
     search = document.search(using=config.es.client, index=index)
     search = search.filter(Exists(field=last_modified_field))
     if filter_field is not None:
-        search = search.filter(Exists(field=filter_field))
+        if "." in filter_field:
+            search = search.filter(Nested(
+                path=filter_field.split(".")[0],
+                query=Exists(field=filter_field),
+            ))
+        else:
+            search = search.filter(Exists(field=filter_field))
     if status_field is not None:
         search = search.filter(Term(**{status_field: False}))
+
+    from json import dumps
+    print(dumps(search.to_dict(), indent=2))
     total = search.count()
     last_modified_response = (
         search.sort(f"-{last_modified_field}").extra(size=1).execute()
@@ -367,7 +376,7 @@ def home(config: Config) -> str | Response:
             description="SERPs for which the snippets have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_field="warc_snippets",
+            filter_field="warc_snippets.id",
             status_field="warc_snippets_parser.should_parse",
             last_modified_field="warc_snippets_parser.last_parsed",
         ),
