@@ -240,6 +240,9 @@ def _iter_cached_records(
 
         path = warc_store.cache_dir_path / cache_record.location.key
 
+        if last_path is not None and last_path != path:
+            print(f"Read WARC cache file: {path}")
+
         yield _WithClearCallback(record, _clear)
 
         if last_path is not None and last_path != path:
