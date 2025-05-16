@@ -126,14 +126,10 @@ class _AnnotatedWarcRecord(WarcRecord, Generic[_T]):
         self.annotation = annotation
 
 
-class _SerpWrapperWarcRecord(_WrapperWarcRecord[Serp]):
-    pass
-
-
 def _download_serp_warc(
     config: Config,
     serp: Serp,
-) -> Iterable[_SerpWrapperWarcRecord]:
+) -> Iterable[_WrapperWarcRecord[Serp]]:
     if serp.capture.status_code != 200:
         return
     memento_api = MementoApi(
@@ -154,8 +150,12 @@ def _download_serp_warc(
             )
         )
         return
+
+    # Only keep the meta fields of the SERP, as the source is not needed for updating it.
+    serp = Serp(meta=serp.meta.to_dict())
+
     for record in records:
-        yield _SerpWrapperWarcRecord(record, serp)
+        yield _WrapperWarcRecord(record, serp)
 
 
 def download_serps_warc(config: Config, prefetch_limit: int | None = None) -> None:
@@ -193,7 +193,7 @@ def download_serps_warc(config: Config, prefetch_limit: int | None = None) -> No
     )
 
     # Download from Memento API.
-    serp_records: Iterable[_SerpWrapperWarcRecord] = chain.from_iterable(
+    serp_records: Iterable[_WrapperWarcRecord[Serp]] = chain.from_iterable(
         _download_serp_warc(config, serp) for serp in changed_serps
     )
 
