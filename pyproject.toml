@@ -47,7 +47,7 @@ dependencies = [
     "marshmallow~=3.26",  # dataclasses-json 0.6.7 depends on marshmallow<4.0.0 and >=3.18.0
     "mergedeep~=1.3,>=1.3.4",
     "more-itertools~=10.7",
-    "numpy<2.0",  # numpy 2.0 is not compatible with elasticsearch 7.9.1
+    "numpy<3.0",  # numpy 2.0 is not compatible with elasticsearch 7.9.1
     "pandas~=2.2,>=2.2.3",
     "publicsuffixlist~=1.0,>=1.0.2.20250430",
     "pydantic~=2.11",
