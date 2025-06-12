@@ -1,0 +1,54 @@
+@prefix aql: <https://aql.webis.de/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# AQL Extension Classes
+
+aql:SERP a rdfs:Class ;
+  rdfs:subClassOf schema:SearchResultsPage , dct:Collection ;
+  rdfs:label "AQL SERP" .
+
+aql:Snippet a rdfs:Class ;
+  rdfs:subClassOf schema:CreativeWork , schema:ListItem;
+  rdfs:label "AQL Snippet" ;
+  rdfs:comment "Result block on SERP" .
+
+aql:Result a rdfs:Class ;
+  rdfs:subClassOf schema:WebPage ;
+  rdfs:label "AQL Result" ;
+  rdfs:comment "Landing Page" .
+
+aql:Capture a rdfs:Class ;
+  rdfs:subClassOf schema:WebPage ;
+  rdfs:label "AQL Capture" .
+#   rdfs:comment "A web page snapshot with metadata about how and when it was captured." .
+
+aql:Provider a rdfs:Class ;
+  rdfs:subClassOf schema:Service ;
+  rdfs:label "AQL Provider" .
+
+aql:Archive a rdfs:Class ;
+    rdfs:subClassOf schema:ArchiveOrganization ;
+    rdfs:label "Archive" .
+
+# AQL Extension Properties
+
+aql:domain a rdfs:Property ;
+    rdfs:domain aql:Provider ;  
+    rdfs:range xsd:string ;
+    rdfs:label "domain" ;
+#   skos:altLabel "hostname" ; # Alterative to model as equivalentProperty
+    rdfs:comment "The hostname/domain of a search result or provider." .
+
+aql:hostname a rdfs:Property ;
+    owl:equivalentProperty aql:domain ;
+    rdfs:label "hostname" .
+
+aql:urlPathPrefix a rdfs:Property ;
+    rdfs:domain aql:Provider ;
+    rdfs:range xsd:string ;
+    rdfs:label "URL Path Prefix" ;
+    rdfs:comment "The URL path prefix of a search result or provider." .
