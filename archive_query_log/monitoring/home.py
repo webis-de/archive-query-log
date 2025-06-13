@@ -31,7 +31,6 @@ else:
     S3Client = Any
 
 _CACHE_SECONDS_STATISTICS = 60 * 30  # 10 minutes
-_CACHE_SECONDS_WARC_CACHE_STATISTICS = 60 * 60 * 1  # 1 hour
 _CACHE_SECONDS_PROGRESS = 60 * 10  # 10 minutes
 
 
