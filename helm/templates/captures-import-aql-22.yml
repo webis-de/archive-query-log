@@ -13,13 +13,6 @@ spec:
   completionMode: Indexed
   template:
     spec:
-      initContainers:
-        - name: {{ $.Release.Name }}-cooldown
-          image: busybox:1.28
-          command:
-          - sh
-          - -c
-          - sleep $((1 + $RANDOM % 100))
       containers:
         - name: {{ $.Release.Name }}-captures-import-aql-22
           image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
@@ -28,6 +21,8 @@ spec:
             requests:
               memory: 4Gi
           command:
+            - /usr/bin/timeout
+            - "86400" # 24 hours
             - /venv/bin/python
             - -m
             - archive_query_log
