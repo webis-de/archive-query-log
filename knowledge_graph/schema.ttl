@@ -1,54 +1,151 @@
 @prefix aql: <https://aql.webis.de/> .
+@prefix schema: <http://schema.org/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+# Note: AQL internal properties are not modeled.
+
+#################################################################
 # AQL Extension Classes
+#################################################################
 
 aql:SERP a rdfs:Class ;
   rdfs:subClassOf schema:SearchResultsPage , dct:Collection ;
-  rdfs:label "AQL SERP" .
+  rdfs:label "SERP" .
 
-aql:Snippet a rdfs:Class ;
-  rdfs:subClassOf schema:CreativeWork , schema:ListItem;
-  rdfs:label "AQL Snippet" ;
-  rdfs:comment "Result block on SERP" .
+aql:ResultBlock a rdfs:Class ;
+  rdfs:subClassOf schema:CreativeWork , schema:ListItem ;
+  rdfs:label "Result Block" ;
+  rdfs:comment "Organic result block or feature block shown on SERP." .
+
+aql:WebSearchResultBlock a rdfs:Class ;
+  rdfs:subClassOf aql:ResultBlock ;
+  rdfs:label "Web Search Result Block" ;
+  rdfs:comment "A web search result block on a SERP." .
+
+aql:SpecialContentResultBlock a rdfs:Class ;
+  rdfs:subClassOf aql:ResultBlock ;
+  rdfs:label "Special Content Result Block" ;
+  rdfs:comment "A direct answer/ featured result block on a SERP." .
 
 aql:Result a rdfs:Class ;
   rdfs:subClassOf schema:WebPage ;
-  rdfs:label "AQL Result" ;
+  rdfs:label "Result" ;
   rdfs:comment "Landing Page" .
 
 aql:Capture a rdfs:Class ;
   rdfs:subClassOf schema:WebPage ;
-  rdfs:label "AQL Capture" .
-#   rdfs:comment "A web page snapshot with metadata about how and when it was captured." .
+  rdfs:label "Capture" .
 
 aql:Provider a rdfs:Class ;
   rdfs:subClassOf schema:Service ;
-  rdfs:label "AQL Provider" .
+  rdfs:label "Provider" .
 
 aql:Archive a rdfs:Class ;
-    rdfs:subClassOf schema:ArchiveOrganization ;
-    rdfs:label "Archive" .
+  rdfs:subClassOf schema:ArchiveOrganization ;
+  rdfs:label "Archive" .
 
+#################################################################
 # AQL Extension Properties
+#################################################################
 
-aql:domain a rdfs:Property ;
-    rdfs:domain aql:Provider ;  
-    rdfs:range xsd:string ;
-    rdfs:label "domain" ;
-#   skos:altLabel "hostname" ; # Alterative to model as equivalentProperty
-    rdfs:comment "The hostname/domain of a search result or provider." .
+# SERP properties
+aql:trecTaskURL a rdf:Property ;
+  rdfs:domain aql:SERP ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "TREC Task URL" ;
+  rdfs:comment "The URL of the TREC task associated with the SERP." .
 
-aql:hostname a rdfs:Property ;
-    owl:equivalentProperty aql:domain ;
-    rdfs:label "hostname" .
+# ResultBlock properties
+aql:xPath a rdf:Property ;
+  rdfs:domain aql:ResultBlock ;
+  rdfs:range xsd:string ;
+  rdfs:label "XPath" ;
+  rdfs:comment "The XPath expression to locate the result block on the SERP." .
 
-aql:urlPathPrefix a rdfs:Property ;
-    rdfs:domain aql:Provider ;
-    rdfs:range xsd:string ;
-    rdfs:label "URL Path Prefix" ;
-    rdfs:comment "The URL path prefix of a search result or provider." .
+aql:xmlContents a rdf:Property ;
+  rdfs:domain aql:ResultBlock ;
+  rdfs:range xsd:string ;
+  rdfs:label "XML Contents" ;
+  rdfs:comment "The XML contents of the result block." .
+
+# WebSearchResultBlock properties
+aql:rank a rdf:Property ;
+  rdfs:domain aql:WebSearchResultBlock ;
+  rdfs:range xsd:integer ;
+  rdfs:label "Rank" ;
+  rdfs:comment "The rank of the web search result block on the SERP." .
+
+# Capture properties
+aql:digest a rdf:Property ;
+  rdfs:domain aql:Capture ;
+  rdfs:range xsd:string ;
+  rdfs:label "Digest" ;
+  rdfs:comment "A digest of the capture, e.g., a hash or checksum." . #TODO this correct?
+
+aql:mementoAPIViewerURL a rdf:Property ;
+  rdfs:domain aql:Capture ;
+  rdfs:subPropertyOf schema:archivedAt ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Memento API Viewer URL" .
+  # rdfs:comment "URL to view the capture using the Memento API." . #TODO
+
+aql:mementoAPIRawURL a rdf:Property ;
+  rdfs:domain aql:Capture ;
+  rdfs:subPropertyOf schema:archivedAt ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Memento API Raw contents URL" .
+  # rdfs:comment "URL to access the raw capture using the Memento API." . #TODO
+
+# Provider properties
+aql:domain a rdf:Property ;
+  rdfs:domain aql:Provider ;
+  rdfs:range xsd:string ;
+  rdfs:label "domain" ;
+  rdfs:comment "The hostname/domain of a search result or provider." .
+
+aql:hostname a rdf:Property ;
+  owl:equivalentProperty aql:domain ;
+  rdfs:label "hostname" .
+
+aql:urlPathPrefix a rdf:Property ;
+  rdfs:domain aql:Provider ;
+  rdfs:range xsd:string ;
+  rdfs:label "URL Path Prefix" ;
+  rdfs:comment "The URL path prefix of a search result or provider." .
+
+aql:wikiDataURL a rdf:Property ;
+  rdfs:domain aql:Provider ;
+  rdfs:subPropertyOf schema:url ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "WikiData URL" ;
+  rdfs:comment "URL to the WikiData entry of the provider." .
+
+# Archive properties
+aql:mementoAPIBaseURL a rdf:Property ;
+  rdfs:domain aql:Archive ;
+  rdfs:subPropertyOf schema:url ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Memento API Base URL" ;
+  rdfs:comment "Base URL for the Memento API of the archive." .
+
+aql:cdxAPIBaseURL a rdf:Property ;
+  rdfs:domain aql:Archive ;
+  rdfs:subPropertyOf schema:url ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "CDX API Base URL" ;
+  rdfs:comment "Base URL for the CDX API of the archive." .
+
+aql:wikiDataURL a rdf:Property ;
+  rdfs:domain aql:Archive ;
+  rdfs:subPropertyOf schema:url ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "WikiData URL" ;
+  rdfs:comment "URL to the WikiData entry of the archive." .
+
+#################################################################
+# Properties from other vocabularies
+#################################################################
