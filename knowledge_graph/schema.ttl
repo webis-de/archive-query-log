@@ -106,12 +106,12 @@ aql:mementoAPIRawURL a rdf:Property ;
 aql:domain a rdf:Property ;
   rdfs:domain aql:Provider ;
   rdfs:range xsd:string ;
-  rdfs:label "domain" ;
+  rdfs:label "Domain" ;
   rdfs:comment "The hostname/domain of a search result or provider." .
 
 aql:hostname a rdf:Property ;
   owl:equivalentProperty aql:domain ;
-  rdfs:label "hostname" .
+  rdfs:label "Hostname" .
 
 aql:urlPathPrefix a rdf:Property ;
   rdfs:domain aql:Provider ;
@@ -158,35 +158,31 @@ schema:identifier
   rdfs:range xsd:string .
 
 schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:identifier ;
-  rdfs:label "identifier" .
+  owl:equivalentProperty dct:identifier . #TODO do we need the labels here?
 
 schema:name
   rdfs:domain aql:SERP ;
   rdfs:range xsd:string .
 
 schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty skos:prefLabel ;
-  rdfs:label "name" .
+  owl:equivalentProperty skos:prefLabel .
 
 # WebSearchResultBlock properties
 schema:title
   rdfs:domain aql:WebSearchResultBlock ;
-  rdfs:label "snippet title" ;
+  rdfs:label "Snippet Title" ;
   rdfs:range xsd:string .
 
 schema:title a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:name ;
-  rdfs:label "title" .
+  owl:equivalentProperty dct:name .
 
 schema:abstract
   rdfs:domain aql:WebSearchResultBlock ;
-  rdfs:label "snippet text" ;
+  rdfs:label "Snippet Text" ;
   rdfs:range xsd:string .
 
 schema:abstract a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:abstract ;
-  rdfs:label "abstract" .
+  owl:equivalentProperty dct:abstract .
 
 # Capture properties
 schema:dateCreated
@@ -194,8 +190,7 @@ schema:dateCreated
   rdfs:range xsd:dateTime .
 
 schema:dateCreated a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:created ;
-  rdfs:label "date created" .
+  owl:equivalentProperty dct:created .
 
 schema:url
   rdfs:domain aql:Capture ;
@@ -210,11 +205,11 @@ http:statusCodeNumber
   rdfs:domain aql:Capture ;
   rdfs:range xsd:integer ;
   rdfs:label "HTTP Status Code" ;
-  rdfs:comment "The HTTP status code of the capture." .
+  rdfs:comment "The HTTP status code of the capture." . #TODO make the comments and labels uniform
 
 http:statusCodeNumber a rdf:Property ; # TODO is that a good way to describe equivalent property?
   owl:equivalentProperty aql:httpStatusCode ; # TODO this aql resources is not defined beforehand
-  rdfs:label "status code number" .
+  rdfs:label "Status Code Number" .
 
 schema:encodingFormat
   rdfs:domain aql:Capture ;
@@ -230,16 +225,14 @@ schema:identifier
   rdfs:range xsd:string .
 
 schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:identifier ;
-  rdfs:label "identifier" . 
+  owl:equivalentProperty dct:identifier .
 
 schema:name
   rdfs:domain aql:Provider ;
   rdfs:range xsd:string .
 
 schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty skos:prefLabel ;
-  rdfs:label "name" . 
+  owl:equivalentProperty skos:prefLabel .
 
 # Archive properties
 schema:identifier
@@ -247,16 +240,14 @@ schema:identifier
   rdfs:range xsd:string . 
 
 schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:identifier ;
-  rdfs:label "identifier" . 
+  owl:equivalentProperty dct:identifier .
 
 schema:name
   rdfs:domain aql:Archive ;
   rdfs:range xsd:string .   
 
 schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty skos:prefLabel ;
-  rdfs:label "name" .
+  owl:equivalentProperty skos:prefLabel .
 
 # Result properties
 schema:identifier
@@ -264,8 +255,7 @@ schema:identifier
   rdfs:range xsd:string .
 
 schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:identifier ;
-  rdfs:label "identifier" . #TODO remove these labels in the alternative naming?
+  owl:equivalentProperty dct:identifier .
 
 schema:url
   rdfs:domain aql:Result ;
