@@ -1,0 +1,111 @@
+@prefix aql: <https://aql.webis.de/> .
+@prefix schema: <http://schema.org/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix http: <https://www.w3.org/2011/http#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+#################################################################
+# External Property Mappings (Global)
+#################################################################
+
+schema:identifier a rdf:Property ;
+  rdfs:range xsd:string ;
+  owl:equivalentProperty dct:identifier ;
+  rdfs:comment "A unique identifier, aligns with dct:identifier." .
+
+schema:name a rdf:Property ;
+  rdfs:range xsd:string ;
+  owl:equivalentProperty skos:prefLabel ;
+  rdfs:comment "The name of the resource." .
+
+schema:title a rdf:Property ;
+  rdfs:range xsd:string ;
+  owl:equivalentProperty dct:title ;
+  rdfs:comment "Title of a resource, same as dct:title." .
+
+schema:abstract a rdf:Property ;
+  rdfs:range xsd:string ;
+  owl:equivalentProperty dct:abstract ;
+  rdfs:comment "Text summary, aligns with dct:abstract." .
+
+schema:dateCreated a rdf:Property ;
+  rdfs:range xsd:dateTime ;
+  owl:equivalentProperty dct:created ;
+  rdfs:comment "Creation date of a resource." .
+
+schema:url a rdf:Property ;
+  rdfs:range xsd:anyURI ;
+  owl:equivalentProperty http:absoluteURI ;
+  rdfs:comment "URL to the resource." .
+
+http:statusCodeNumber a rdf:Property ;
+  rdfs:range xsd:integer ;
+  rdfs:label "HTTP Status Code" ;
+  rdfs:comment "HTTP status code of the capture." .
+
+schema:encodingFormat a rdf:Property ;
+  rdfs:range xsd:string ;
+  rdfs:comment "MIME type of the resource, e.g., text/html." .
+
+#################################################################
+# SHACL Shapes for AQL Classes and Subclasses
+#################################################################
+
+aql:SERPShape a sh:NodeShape ;
+  sh:targetClass aql:SERP ;
+  sh:property [ sh:path aql:trecTaskURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:name ; sh:datatype xsd:string ] .
+
+aql:ResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:ResultBlock ;
+  sh:property [ sh:path aql:xPath ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:xmlContents ; sh:datatype xsd:string ] .
+
+aql:WebSearchResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:WebSearchResultBlock ;
+  sh:node aql:ResultBlockShape ;
+  sh:property [ sh:path aql:rank ; sh:datatype xsd:integer ] ;
+  sh:property [ sh:path schema:title ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:abstract ; sh:datatype xsd:string ] .
+
+aql:SpecialContentResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:SpecialContentResultBlock ;
+  sh:node aql:ResultBlockShape .
+
+aql:ResultShape a sh:NodeShape ;
+  sh:targetClass aql:Result ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:title ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:url ; sh:datatype xsd:anyURI ] .
+
+aql:CaptureShape a sh:NodeShape ;
+  sh:targetClass aql:Capture ;
+  sh:property [ sh:path aql:digest ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:mementoAPIViewerURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:mementoAPIRawURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:dateCreated ; sh:datatype xsd:dateTime ] ;
+  sh:property [ sh:path schema:url ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path http:statusCodeNumber ; sh:datatype xsd:integer ] ;
+  sh:property [ sh:path schema:encodingFormat ; sh:datatype xsd:string ] .
+
+aql:ProviderShape a sh:NodeShape ;
+  sh:targetClass aql:Provider ;
+  sh:property [ sh:path aql:domain ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:urlPathPrefix ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:wikiDataURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:name ; sh:datatype xsd:string ] .
+
+aql:ArchiveShape a sh:NodeShape ;
+  sh:targetClass aql:Archive ;
+  sh:property [ sh:path aql:mementoAPIBaseURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:cdxAPIBaseURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:wikiDataURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:name ; sh:datatype xsd:string ] .

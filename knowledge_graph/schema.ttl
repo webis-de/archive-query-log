@@ -263,7 +263,7 @@ schema:url
   rdfs:range xsd:anyURI .
 
 schema:url a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty http:absoluteURI.
+  owl:equivalentProperty http:absoluteURI .
 
 schema:title
   rdfs:domain aql:Result ;
@@ -272,3 +272,11 @@ schema:title
 
 schema:title a rdf:Property ; # TODO is that a good way to describe equivalent property?
   owl:equivalentProperty dct:title .
+
+# Problems, double mentioning of rdfs:domain -> causes conflicts
+
+# schema:identifier mentioned several times -> redundancy
+
+# owl:equivalentProperty aql:httpStatusCode ; -> aql:httpStatusCode is not defined before
+
+# owl:equivalentProperty: best practice to add a rdfs:comment (or label?)
