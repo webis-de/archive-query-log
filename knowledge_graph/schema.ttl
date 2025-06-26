@@ -4,7 +4,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix http: <https://www.w3.org/2011/http#> .
 
 # Note: AQL internal properties are not modeled.
 
@@ -149,3 +151,134 @@ aql:wikiDataURL a rdf:Property ;
 #################################################################
 # Properties from other vocabularies
 #################################################################
+
+# SERP properties
+schema:identifier
+  rdfs:domain aql:SERP ;
+  rdfs:range xsd:string .
+
+schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty dct:identifier ;
+  rdfs:label "identifier" .
+
+schema:name
+  rdfs:domain aql:SERP ;
+  rdfs:range xsd:string .
+
+schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty skos:prefLabel ;
+  rdfs:label "name" .
+
+# WebSearchResultBlock properties
+schema:title
+  rdfs:domain aql:WebSearchResultBlock ;
+  rdfs:label "snippet title" ;
+  rdfs:range xsd:string .
+
+schema:title a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty dct:name ;
+  rdfs:label "title" .
+
+schema:abstract
+  rdfs:domain aql:WebSearchResultBlock ;
+  rdfs:label "snippet text" ;
+  rdfs:range xsd:string .
+
+schema:abstract a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty dct:abstract ;
+  rdfs:label "abstract" .
+
+# Capture properties
+schema:dateCreated
+  rdfs:domain aql:Capture ;
+  rdfs:range xsd:dateTime .
+
+schema:dateCreated a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty dct:created ;
+  rdfs:label "date created" .
+
+schema:url
+  rdfs:domain aql:Capture ;
+  rdfs:label "Original URL" ;
+  rdfs:range xsd:anyURI .
+
+schema:url a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty http:absoluteURI ;
+  rdfs:label "url" .
+
+http:statusCodeNumber
+  rdfs:domain aql:Capture ;
+  rdfs:range xsd:integer ;
+  rdfs:label "HTTP Status Code" ;
+  rdfs:comment "The HTTP status code of the capture." .
+
+http:statusCodeNumber a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty aql:httpStatusCode ; # TODO this aql resources is not defined beforehand
+  rdfs:label "status code number" .
+
+schema:encodingFormat
+  rdfs:domain aql:Capture ;
+  rdfs:range xsd:string ;
+  rdfs:label "MIME Type" ;
+  rdfs:comment "The MIME Type of the capture, e.g., 'text/html'." .
+
+# TODO internet archive metadata / collection
+
+# Provider properties
+schema:identifier
+  rdfs:domain aql:Provider ;
+  rdfs:range xsd:string .
+
+schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty dct:identifier ;
+  rdfs:label "identifier" . 
+
+schema:name
+  rdfs:domain aql:Provider ;
+  rdfs:range xsd:string .
+
+schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty skos:prefLabel ;
+  rdfs:label "name" . 
+
+# Archive properties
+schema:identifier
+  rdfs:domain aql:Archive ;
+  rdfs:range xsd:string . 
+
+schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty dct:identifier ;
+  rdfs:label "identifier" . 
+
+schema:name
+  rdfs:domain aql:Archive ;
+  rdfs:range xsd:string .   
+
+schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty skos:prefLabel ;
+  rdfs:label "name" .
+
+# Result properties
+schema:identifier
+  rdfs:domain aql:Result ;
+  rdfs:range xsd:string .
+
+schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty dct:identifier ;
+  rdfs:label "identifier" . #TODO remove these labels in the alternative naming?
+
+schema:url
+  rdfs:domain aql:Result ;
+  rdfs:label "Original URL" ;
+  rdfs:range xsd:anyURI .
+
+schema:url a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty http:absoluteURI.
+
+schema:title
+  rdfs:domain aql:Result ;
+  rdfs:label "Page Title" ;
+  rdfs:range xsd:string .
+
+schema:title a rdf:Property ; # TODO is that a good way to describe equivalent property?
+  owl:equivalentProperty dct:title .
