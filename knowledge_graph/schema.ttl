@@ -7,11 +7,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix http: <https://www.w3.org/2011/http#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 
 # Note: AQL internal properties are not modeled.
 
 #################################################################
-# AQL Extension Classes
+# AQL Classes
 #################################################################
 
 aql:SERP a rdfs:Class ;
@@ -31,12 +32,12 @@ aql:WebSearchResultBlock a rdfs:Class ;
 aql:SpecialContentResultBlock a rdfs:Class ;
   rdfs:subClassOf aql:ResultBlock ;
   rdfs:label "Special Content Result Block" ;
-  rdfs:comment "A direct answer/ featured result block on a SERP." .
+  rdfs:comment "A direct answer/featured result block on a SERP." .
 
 aql:Result a rdfs:Class ;
   rdfs:subClassOf schema:WebPage ;
   rdfs:label "Result" ;
-  rdfs:comment "Landing Page" .
+  rdfs:comment "Landing Page." .
 
 aql:Capture a rdfs:Class ;
   rdfs:subClassOf schema:WebPage ;
@@ -51,232 +52,113 @@ aql:Archive a rdfs:Class ;
   rdfs:label "Archive" .
 
 #################################################################
-# AQL Extension Properties
+# External Property Mappings
 #################################################################
 
-# SERP properties
-aql:trecTaskURL a rdf:Property ;
-  rdfs:domain aql:SERP ;
-  rdfs:range xsd:anyURI ;
-  rdfs:label "TREC Task URL" ;
-  rdfs:comment "The URL of the TREC task associated with the SERP." .
-
-# ResultBlock properties
-aql:xPath a rdf:Property ;
-  rdfs:domain aql:ResultBlock ;
+schema:identifier a rdf:Property ;
   rdfs:range xsd:string ;
-  rdfs:label "XPath" ;
-  rdfs:comment "The XPath expression to locate the result block on the SERP." .
+  owl:equivalentProperty dct:identifier ;
+  rdfs:comment "A unique identifier, aligns with dct:identifier." .
 
-aql:xmlContents a rdf:Property ;
-  rdfs:domain aql:ResultBlock ;
+schema:name a rdf:Property ;
   rdfs:range xsd:string ;
-  rdfs:label "XML Contents" ;
-  rdfs:comment "The XML contents of the result block." .
+  owl:equivalentProperty skos:prefLabel ;
+  rdfs:comment "The name of the resource." .
 
-# WebSearchResultBlock properties
-aql:rank a rdf:Property ;
-  rdfs:domain aql:WebSearchResultBlock ;
-  rdfs:range xsd:integer ;
-  rdfs:label "Rank" ;
-  rdfs:comment "The rank of the web search result block on the SERP." .
-
-# Capture properties
-aql:digest a rdf:Property ;
-  rdfs:domain aql:Capture ;
+schema:title a rdf:Property ;
   rdfs:range xsd:string ;
-  rdfs:label "Digest" ;
-  rdfs:comment "A digest of the capture, e.g., a hash or checksum." . #TODO this correct?
+  owl:equivalentProperty dct:title ;
+  rdfs:comment "Title of a resource, same as dct:title." .
 
-aql:mementoAPIViewerURL a rdf:Property ;
-  rdfs:domain aql:Capture ;
-  rdfs:subPropertyOf schema:archivedAt ;
-  rdfs:range xsd:anyURI ;
-  rdfs:label "Memento API Viewer URL" .
-  # rdfs:comment "URL to view the capture using the Memento API." . #TODO
-
-aql:mementoAPIRawURL a rdf:Property ;
-  rdfs:domain aql:Capture ;
-  rdfs:subPropertyOf schema:archivedAt ;
-  rdfs:range xsd:anyURI ;
-  rdfs:label "Memento API Raw contents URL" .
-  # rdfs:comment "URL to access the raw capture using the Memento API." . #TODO
-
-# Provider properties
-aql:domain a rdf:Property ;
-  rdfs:domain aql:Provider ;
+schema:abstract a rdf:Property ;
   rdfs:range xsd:string ;
-  rdfs:label "Domain" ;
-  rdfs:comment "The hostname/domain of a search result or provider." .
+  owl:equivalentProperty dct:abstract ;
+  rdfs:comment "Text summary, aligns with dct:abstract." .
 
-aql:hostname a rdf:Property ;
-  owl:equivalentProperty aql:domain ;
-  rdfs:label "Hostname" .
+schema:dateCreated a rdf:Property ;
+  rdfs:range xsd:dateTime ;
+  owl:equivalentProperty dct:created ;
+  rdfs:comment "Creation date of a resource." .
 
-aql:urlPathPrefix a rdf:Property ;
-  rdfs:domain aql:Provider ;
-  rdfs:range xsd:string ;
-  rdfs:label "URL Path Prefix" ;
-  rdfs:comment "The URL path prefix of a search result or provider." .
-
-aql:wikiDataURL a rdf:Property ;
-  rdfs:domain aql:Provider ;
-  rdfs:subPropertyOf schema:url ;
+schema:url a rdf:Property ;
   rdfs:range xsd:anyURI ;
-  rdfs:label "WikiData URL" ;
-  rdfs:comment "URL to the WikiData entry of the provider." .
-
-# Archive properties
-aql:mementoAPIBaseURL a rdf:Property ;
-  rdfs:domain aql:Archive ;
-  rdfs:subPropertyOf schema:url ;
-  rdfs:range xsd:anyURI ;
-  rdfs:label "Memento API Base URL" ;
-  rdfs:comment "Base URL for the Memento API of the archive." .
-
-aql:cdxAPIBaseURL a rdf:Property ;
-  rdfs:domain aql:Archive ;
-  rdfs:subPropertyOf schema:url ;
-  rdfs:range xsd:anyURI ;
-  rdfs:label "CDX API Base URL" ;
-  rdfs:comment "Base URL for the CDX API of the archive." .
-
-aql:wikiDataURL a rdf:Property ;
-  rdfs:domain aql:Archive ;
-  rdfs:subPropertyOf schema:url ;
-  rdfs:range xsd:anyURI ;
-  rdfs:label "WikiData URL" ;
-  rdfs:comment "URL to the WikiData entry of the archive." .
-
-#################################################################
-# Properties from other vocabularies
-#################################################################
-
-# SERP properties
-schema:identifier
-  rdfs:domain aql:SERP ;
-  rdfs:range xsd:string .
-
-schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:identifier . #TODO do we need the labels here?
-
-schema:name
-  rdfs:domain aql:SERP ;
-  rdfs:range xsd:string .
-
-schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty skos:prefLabel .
-
-# WebSearchResultBlock properties
-schema:title
-  rdfs:domain aql:WebSearchResultBlock ;
-  rdfs:label "Snippet Title" ;
-  rdfs:range xsd:string .
-
-schema:title a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:name .
-
-schema:abstract
-  rdfs:domain aql:WebSearchResultBlock ;
-  rdfs:label "Snippet Text" ;
-  rdfs:range xsd:string .
-
-schema:abstract a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:abstract .
-
-# Capture properties
-schema:dateCreated
-  rdfs:domain aql:Capture ;
-  rdfs:range xsd:dateTime .
-
-schema:dateCreated a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:created .
-
-schema:url
-  rdfs:domain aql:Capture ;
-  rdfs:label "Original URL" ;
-  rdfs:range xsd:anyURI .
-
-schema:url a rdf:Property ; # TODO is that a good way to describe equivalent property?
   owl:equivalentProperty http:absoluteURI ;
-  rdfs:label "url" .
+  rdfs:comment "URL to the resource." .
 
-http:statusCodeNumber
-  rdfs:domain aql:Capture ;
+http:statusCodeNumber a rdf:Property ;
   rdfs:range xsd:integer ;
+  owl:equivalentProperty aql:httpStatusCode ;
   rdfs:label "HTTP Status Code" ;
-  rdfs:comment "The HTTP status code of the capture." . #TODO make the comments and labels uniform
+  rdfs:comment "HTTP status code of the capture." .
 
-http:statusCodeNumber a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty aql:httpStatusCode ; # TODO this aql resources is not defined beforehand
-  rdfs:label "Status Code Number" .
-
-schema:encodingFormat
-  rdfs:domain aql:Capture ;
+schema:encodingFormat a rdf:Property ;
   rdfs:range xsd:string ;
-  rdfs:label "MIME Type" ;
-  rdfs:comment "The MIME Type of the capture, e.g., 'text/html'." .
+  rdfs:comment "MIME type of the resource, e.g., text/html." .
 
-# TODO internet archive metadata / collection
+#################################################################
+# SHACL Shapes: Class–Property Relationships
+#################################################################
 
-# Provider properties
-schema:identifier
-  rdfs:domain aql:Provider ;
-  rdfs:range xsd:string .
+aql:SERPShape a sh:NodeShape ;
+  sh:targetClass aql:SERP ;
+  sh:property [ sh:path aql:trecTaskURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:name ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:hasPart ; sh:class aql:ResultBlock ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:hasPart ; sh:class aql:Result ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path aql:hasCaptureResult ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path aql:hasProvider ; sh:class aql:Provider ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:isBasedOn ; sh:class aql:Archive ; sh:nodeKind sh:IRI ] .
 
-schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:identifier .
+aql:ResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:ResultBlock ;
+  sh:property [ sh:path aql:xPath ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:xmlContents ; sh:datatype xsd:string ] .
 
-schema:name
-  rdfs:domain aql:Provider ;
-  rdfs:range xsd:string .
+aql:WebSearchResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:WebSearchResultBlock ;
+  sh:node aql:ResultBlockShape ;
+  sh:property [ sh:path aql:rank ; sh:datatype xsd:integer ] ;
+  sh:property [ sh:path schema:title ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:abstract ; sh:datatype xsd:string ] .
 
-schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty skos:prefLabel .
+aql:SpecialContentResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:SpecialContentResultBlock ;
+  sh:node aql:ResultBlockShape .
 
-# Archive properties
-schema:identifier
-  rdfs:domain aql:Archive ;
-  rdfs:range xsd:string . 
+aql:ResultShape a sh:NodeShape ;
+  sh:targetClass aql:Result ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:title ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:url ; sh:datatype xsd:anyURI ] .
 
-schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:identifier .
+aql:CaptureShape a sh:NodeShape ;
+  sh:targetClass aql:Capture ;
+  sh:property [ sh:path aql:digest ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:mementoAPIViewerURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:mementoAPIRawURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:dateCreated ; sh:datatype xsd:dateTime ] ;
+  sh:property [ sh:path schema:url ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path http:statusCodeNumber ; sh:datatype xsd:integer ] ;
+  sh:property [ sh:path schema:encodingFormat ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dct:isPartOf ; sh:class aql:SERP ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:isBasedOn ; sh:class aql:Archive ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:source ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:relation ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:mainEntity ; sh:class aql:Result ; sh:nodeKind sh:IRI ] .
 
-schema:name
-  rdfs:domain aql:Archive ;
-  rdfs:range xsd:string .   
+aql:ProviderShape a sh:NodeShape ;
+  sh:targetClass aql:Provider ;
+  sh:property [ sh:path aql:domain ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:urlPathPrefix ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:wikiDataURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:name ; sh:datatype xsd:string ] .
 
-schema:name a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty skos:prefLabel .
-
-# Result properties
-schema:identifier
-  rdfs:domain aql:Result ;
-  rdfs:range xsd:string .
-
-schema:identifier a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:identifier .
-
-schema:url
-  rdfs:domain aql:Result ;
-  rdfs:label "Original URL" ;
-  rdfs:range xsd:anyURI .
-
-schema:url a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty http:absoluteURI .
-
-schema:title
-  rdfs:domain aql:Result ;
-  rdfs:label "Page Title" ;
-  rdfs:range xsd:string .
-
-schema:title a rdf:Property ; # TODO is that a good way to describe equivalent property?
-  owl:equivalentProperty dct:title .
-
-# Problems, double mentioning of rdfs:domain -> causes conflicts
-
-# schema:identifier mentioned several times -> redundancy
-
-# owl:equivalentProperty aql:httpStatusCode ; -> aql:httpStatusCode is not defined before
-
-# owl:equivalentProperty: best practice to add a rdfs:comment (or label?)
+aql:ArchiveShape a sh:NodeShape ;
+  sh:targetClass aql:Archive ;
+  sh:property [ sh:path aql:mementoAPIBaseURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:cdxAPIBaseURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:wikiDataURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:name ; sh:datatype xsd:string ] .
