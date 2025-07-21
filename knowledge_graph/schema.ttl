@@ -95,6 +95,16 @@ schema:encodingFormat a rdf:Property ;
   rdfs:range xsd:string ;
   rdfs:comment "MIME type of the resource, e.g., text/html." .
 
+schema:provider a rdf:Property ;
+  rdfs:range aql:Provider ;
+  owl:equivalentProperty dct:publisher ;
+  rdfs:comment "The search provider of the SERP." .
+
+schema:archivedAt a rdf:Property ;
+  rdfs:range aql:Archive ;
+  owl:equivalentProperty dct:source ;
+  rdfs:comment "The archive where the SERP is stored." .
+
 #################################################################
 # SHACL Shapes: Class–Property Relationships
 #################################################################
@@ -107,8 +117,8 @@ aql:SERPShape a sh:NodeShape ;
   sh:property [ sh:path schema:hasPart ; sh:class aql:ResultBlock ; sh:nodeKind sh:IRI ] ;
   sh:property [ sh:path dct:hasPart ; sh:class aql:Result ; sh:nodeKind sh:IRI ] ;
   sh:property [ sh:path aql:hasCaptureResult ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
-  sh:property [ sh:path aql:hasProvider ; sh:class aql:Provider ; sh:nodeKind sh:IRI ] ;
-  sh:property [ sh:path schema:isBasedOn ; sh:class aql:Archive ; sh:nodeKind sh:IRI ] .
+  sh:property [ sh:path schema:provider ; sh:class aql:Provider ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:archivedAt ; sh:class aql:Archive ; sh:nodeKind sh:IRI ] .
 
 aql:ResultBlockShape a sh:NodeShape ;
   sh:targetClass aql:ResultBlock ;
@@ -162,3 +172,12 @@ aql:ArchiveShape a sh:NodeShape ;
   sh:property [ sh:path aql:wikiDataURL ; sh:datatype xsd:anyURI ] ;
   sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
   sh:property [ sh:path schema:name ; sh:datatype xsd:string ] .
+
+# Not modeled properties:
+
+# aql:priority (is an AQL internal property, no relevance for external use)
+
+# aql:hostname (alternative to aql:domain, for now not modeled)
+
+# aql:urlPathTemplate, aql:urlPath, aql:path (alernative to aql:urlPathPrefix, for now not modeled)
+
