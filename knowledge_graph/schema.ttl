@@ -16,7 +16,7 @@
 #################################################################
 
 aql:SERP a rdfs:Class ;
-  rdfs:subClassOf schema:SearchResultsPage , dct:Collection ;
+  rdfs:subClassOf dct:Collection ;
   rdfs:label "SERP" .
 
 aql:ResultBlock a rdfs:Class ;
