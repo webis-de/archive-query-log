@@ -115,13 +115,13 @@ aql:SERPShape a sh:NodeShape ;
   sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
   sh:property [ sh:path schema:name ; sh:datatype xsd:string ] ;
   sh:property [ sh:path schema:hasPart ; sh:class aql:ResultBlock ; sh:nodeKind sh:IRI ] ;
-  sh:property [ sh:path dct:hasPart ; sh:class aql:Result ; sh:nodeKind sh:IRI ] ;
-  sh:property [ sh:path aql:hasCaptureResult ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:isBasedOn ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
   sh:property [ sh:path schema:provider ; sh:class aql:Provider ; sh:nodeKind sh:IRI ] ;
   sh:property [ sh:path schema:archivedAt ; sh:class aql:Archive ; sh:nodeKind sh:IRI ] .
 
 aql:ResultBlockShape a sh:NodeShape ;
   sh:targetClass aql:ResultBlock ;
+  sh:property [ sh:path schema:isPartOf ; sh:class aql:SERP ; sh:nodeKind sh:IRI ] ;
   sh:property [ sh:path aql:xPath ; sh:datatype xsd:string ] ;
   sh:property [ sh:path aql:xmlContents ; sh:datatype xsd:string ] .
 
@@ -138,6 +138,7 @@ aql:SpecialContentResultBlockShape a sh:NodeShape ;
 
 aql:ResultShape a sh:NodeShape ;
   sh:targetClass aql:Result ;
+  sh:property [ sh:path schema:isBasedOn ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
   sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
   sh:property [ sh:path schema:title ; sh:datatype xsd:string ] ;
   sh:property [ sh:path schema:url ; sh:datatype xsd:anyURI ] .
@@ -181,3 +182,6 @@ aql:ArchiveShape a sh:NodeShape ;
 
 # aql:urlPathTemplate, aql:urlPath, aql:path (alernative to aql:urlPathPrefix, for now not modeled)
 
+# dct:isFormatOf (alternative to schema:isBasedOn, for now not modeled)
+
+# schema:archivedAt (alternative to aql:mementoAPIViewerURL, aql:mementoAPIRawURL, not modeled since we wan to describe the relatiionshio to the URLs detailedly)
