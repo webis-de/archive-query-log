@@ -185,3 +185,5 @@ aql:ArchiveShape a sh:NodeShape ;
 # dct:isFormatOf (alternative to schema:isBasedOn, for now not modeled)
 
 # schema:archivedAt (alternative to aql:mementoAPIViewerURL, aql:mementoAPIRawURL, not modeled since we wan to describe the relatiionshio to the URLs detailedly)
+
+#TODO either add note or exclude all alternative properties
