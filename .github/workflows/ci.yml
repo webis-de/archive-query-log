@@ -149,7 +149,7 @@ jobs:
     - name: 📥 Check-out
       uses: actions/checkout@v4
     - name: 📥 Download Python wheels
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: wheels
         path: dist
@@ -213,7 +213,7 @@ jobs:
     - name: 📥 Check-out
       uses: actions/checkout@v4
     - name: 📥 Download Python wheels
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: wheels
         path: dist
