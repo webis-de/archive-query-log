@@ -25,13 +25,14 @@ DEFAULT_ARCHIVE_IT_PAGE_SIZE: int = 100
 
 
 def import_archives(
-        config: Config,
-        api_url: str = DEFAULT_ARCHIVE_IT_API_URL,
-        wayback_url: str = DEFAULT_ARCHIVE_IT_WAYBACK_URL,
-        page_size: int = DEFAULT_ARCHIVE_IT_PAGE_SIZE,
-        priority: float | None = None,
-        no_merge: bool = False,
-        auto_merge: bool = False,
+    config: Config,
+    api_url: str = DEFAULT_ARCHIVE_IT_API_URL,
+    wayback_url: str = DEFAULT_ARCHIVE_IT_WAYBACK_URL,
+    page_size: int = DEFAULT_ARCHIVE_IT_PAGE_SIZE,
+    priority: float | None = None,
+    no_merge: bool = False,
+    auto_merge: bool = False,
+    dry_run: bool = False,
 ) -> None:
     print("Load Archive-It collections.")
     collections_api_url = urljoin(api_url, "/api/collection")
@@ -84,5 +85,6 @@ def import_archives(
                 priority=priority,
                 no_merge=no_merge,
                 auto_merge=auto_merge,
+                dry_run=dry_run,
             )
             progress.update(1)

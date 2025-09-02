@@ -1,5 +1,6 @@
 from functools import cache
 from itertools import chain, islice
+from json import dumps as json_dumps
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
@@ -47,6 +48,7 @@ def add_warc_snippets_parser(
     url_xpath: str | None,
     title_xpath: str | None,
     text_xpath: str | None,
+    dry_run: bool = False,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
@@ -78,7 +80,10 @@ def add_warc_snippets_parser(
         title_xpath=title_xpath,
         text_xpath=text_xpath,
     )
-    parser.save(using=config.es.client, index=config.es.index_warc_snippets_parsers)
+    if not dry_run:
+        parser.save(using=config.es.client, index=config.es.index_warc_snippets_parsers)
+    else:
+        print(json_dumps(parser.to_dict()))
 
 
 def _parse_warc_snippets(
@@ -260,7 +265,11 @@ def _parse_serp_warc_snippets_action(
     return
 
 
-def parse_serps_warc_snippets(config: Config, prefetch_limit: int | None = None) -> None:
+def parse_serps_warc_snippets(
+    config: Config,
+    prefetch_limit: int | None = None,
+    dry_run: bool = False,
+) -> None:
     config.es.client.indices.refresh(index=config.es.index_serps)
     changed_serps_search: Search = (
         Serp.search(using=config.es.client, index=config.es.index_serps)
@@ -296,6 +305,9 @@ def parse_serps_warc_snippets(config: Config, prefetch_limit: int | None = None)
         actions = chain.from_iterable(
             _parse_serp_warc_snippets_action(config, serp) for serp in changed_serps
         )
-        config.es.bulk(actions)
+        config.es.bulk(
+            actions=actions,
+            dry_run=dry_run,
+        )
     else:
         print("No new/changed SERPs.")

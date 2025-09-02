@@ -16,6 +16,7 @@ def build(
     *,
     skip_archives: bool,
     skip_providers: bool,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -28,4 +29,5 @@ def build(
         config=config,
         skip_archives=skip_archives,
         skip_providers=skip_providers,
+        dry_run=dry_run,
     )

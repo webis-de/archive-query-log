@@ -1,4 +1,5 @@
 from functools import cached_property
+from json import dumps as json_dumps
 from pathlib import Path
 from typing import Iterable, Any, Annotated, Type
 
@@ -75,7 +76,12 @@ class EsConfig(BaseModel):
     def streaming_bulk(
         self,
         actions: Iterable[dict],
+        dry_run: bool = False,
     ) -> Iterable[tuple[bool, Any]]:
+        if dry_run:
+            for action in actions:
+                print(json_dumps(action))
+                yield (True, None)
         return streaming_bulk(
             client=self.client,
             actions=actions,
@@ -89,8 +95,15 @@ class EsConfig(BaseModel):
             yield_ok=True,
         )
 
-    def bulk(self, actions: Iterable[dict]) -> None:
-        for _ in self.streaming_bulk(actions):
+    def bulk(
+        self,
+        actions: Iterable[dict],
+        dry_run: bool = False,
+    ) -> None:
+        for _ in self.streaming_bulk(
+            actions=actions,
+            dry_run=dry_run,
+        ):
             pass
 
 

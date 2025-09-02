@@ -59,6 +59,7 @@ def url_query_add(
     segment: int | None = None,
     remove_pattern_regex: str | None = None,
     space_pattern_regex: str | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -92,6 +93,7 @@ def url_query_add(
         segment=segment,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
+        dry_run=dry_run,
     )
 
 
@@ -101,6 +103,7 @@ def url_query_import(
     services_path: Annotated[
         ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
     ] = _DEFAULT_SERVICES_FILE,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -109,7 +112,11 @@ def url_query_import(
     from archive_query_log.imports.yaml import import_url_query_parsers
 
     UrlQueryParser.init(using=config.es.client, index=config.es.index_url_query_parsers)
-    import_url_query_parsers(config, services_path)
+    import_url_query_parsers(
+        config=config,
+        services_path=services_path,
+        dry_run=dry_run,
+    )
 
 
 url_page = App(
@@ -138,6 +145,7 @@ def url_page_add(
     segment: int | None = None,
     remove_pattern_regex: str | None = None,
     space_pattern_regex: str | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -171,6 +179,7 @@ def url_page_add(
         segment=segment,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
+        dry_run=dry_run,
     )
 
 
@@ -180,6 +189,7 @@ def url_page_import(
     services_path: Annotated[
         ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
     ] = _DEFAULT_SERVICES_FILE,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -188,7 +198,11 @@ def url_page_import(
     from archive_query_log.imports.yaml import import_url_page_parsers
 
     UrlPageParser.init(using=config.es.client, index=config.es.index_url_page_parsers)
-    import_url_page_parsers(config, services_path)
+    import_url_page_parsers(
+        config=config,
+        services_path=services_path,
+        dry_run=dry_run,
+    )
 
 
 url_offset = App(
@@ -217,6 +231,7 @@ def url_offset_add(
     segment: int | None = None,
     remove_pattern_regex: str | None = None,
     space_pattern_regex: str | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -252,6 +267,7 @@ def url_offset_add(
         segment=segment,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
+        dry_run=dry_run,
     )
 
 
@@ -261,6 +277,7 @@ def url_offset_import(
     services_path: Annotated[
         ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
     ] = _DEFAULT_SERVICES_FILE,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -271,7 +288,11 @@ def url_offset_import(
     UrlOffsetParser.init(
         using=config.es.client, index=config.es.index_url_offset_parsers
     )
-    import_url_offset_parsers(config, services_path)
+    import_url_offset_parsers(
+        config=config,
+        services_path=services_path,
+        dry_run=dry_run,
+    )
 
 
 warc_query = App(
@@ -295,6 +316,7 @@ def warc_query_add(
     xpath: str | None = None,
     remove_pattern_regex: str | None = None,
     space_pattern_regex: str | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -321,6 +343,7 @@ def warc_query_add(
         xpath=xpath,
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
+        dry_run=dry_run,
     )
 
 
@@ -330,6 +353,7 @@ def warc_query_import(
     services_path: Annotated[
         ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
     ] = _DEFAULT_SERVICES_FILE,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -340,7 +364,11 @@ def warc_query_import(
     WarcQueryParser.init(
         using=config.es.client, index=config.es.index_warc_query_parsers
     )
-    import_warc_query_parsers(config, services_path)
+    import_warc_query_parsers(
+        config=config,
+        services_path=services_path,
+        dry_run=dry_run,
+    )
 
 
 warc_snippets = App(
@@ -365,6 +393,7 @@ def warc_snippets_add(
     url_xpath: str | None = None,
     title_xpath: str | None = None,
     text_xpath: str | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -392,6 +421,7 @@ def warc_snippets_add(
         url_xpath=url_xpath,
         title_xpath=title_xpath,
         text_xpath=text_xpath,
+        dry_run=dry_run,
     )
 
 
@@ -401,6 +431,7 @@ def warc_snippets_import(
     services_path: Annotated[
         ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
     ] = Path("data") / "selected-services.yaml",
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -411,7 +442,11 @@ def warc_snippets_import(
     WarcSnippetsParser.init(
         using=config.es.client, index=config.es.index_warc_snippets_parsers
     )
-    import_warc_snippets_parsers(config, services_path)
+    import_warc_snippets_parsers(
+        config=config,
+        services_path=services_path,
+        dry_run=dry_run,
+    )
 
 
 warc_direct_answers = App(
@@ -435,6 +470,7 @@ def warc_direct_answers_add(
     xpath: str | None = None,
     url_xpath: str | None = None,
     text_xpath: str | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -463,6 +499,7 @@ def warc_direct_answers_add(
         xpath=xpath,
         url_xpath=url_xpath,
         text_xpath=text_xpath,
+        dry_run=dry_run,
     )
 
 
@@ -484,6 +521,7 @@ def warc_direct_answers_add(
 #     url_pattern_regex: str | None = None,
 #     priority: Annotated[float, Number(gte=0)] | None = None,
 #     parser_type: _WarcMainContentParserType,
+#     dry_run: bool = False,
 #     config: Config,
 # ) -> None:
 #     """
@@ -505,4 +543,5 @@ def warc_direct_answers_add(
 #         url_pattern_regex=url_pattern_regex,
 #         priority=priority,
 #         parser_type=parser_type_strict,
+#         dry_run=dry_run,
 #     )

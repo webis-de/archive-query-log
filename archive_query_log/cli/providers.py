@@ -36,6 +36,7 @@ def add(
         Parameter(alias="--url-path-prefix"),
     ],
     priority: Annotated[float, Number(gte=0)] | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -53,6 +54,7 @@ def add(
         domains=set(domains),
         url_path_prefixes=set(url_path_prefixes),
         priority=priority,
+        dry_run=dry_run,
     )
 
 
@@ -70,6 +72,7 @@ def import_(
     review: int | None = None,
     no_merge: bool = False,
     auto_merge: bool = False,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -85,4 +88,5 @@ def import_(
         review=review,
         no_merge=no_merge,
         auto_merge=auto_merge,
+        dry_run=dry_run,
     )

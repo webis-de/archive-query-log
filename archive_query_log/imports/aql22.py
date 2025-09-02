@@ -87,9 +87,10 @@ def _iter_captures(
 
 
 def _import_captures_path(
-        config: Config,
-        importable_path: _ImportablePath,
-        check_memento: bool = True,
+    config: Config,
+    importable_path: _ImportablePath,
+    check_memento: bool = True,
+    dry_run: bool = False,
 ) -> None:
     print(f"Importing captures from {importable_path.path} to "
          f"archive {importable_path.archive.id} and "
@@ -135,7 +136,10 @@ def _import_captures_path(
         _create_action(capture, config)
         for capture in captures_iter
     )
-    config.es.bulk(actions)
+    config.es.bulk(
+        actions=actions,
+        dry_run=dry_run,
+    )
 
 
 def _create_action(capture: Capture, config: Config) -> dict:
@@ -147,11 +151,12 @@ def _create_action(capture: Capture, config: Config) -> dict:
 
 
 def import_captures(
-        config: Config,
-        data_dir_path: Path,
-        check_memento: bool,
-        search_provider: str | None,
-        search_provider_index: int | None,
+    config: Config,
+    data_dir_path: Path,
+    check_memento: bool,
+    search_provider: str | None,
+    search_provider_index: int | None,
+    dry_run: bool = False,
 ) -> None:
     print(f"Importing AQL-22 captures from: {data_dir_path}")
 
@@ -228,4 +233,5 @@ def import_captures(
             config=config,
             importable_path=importable_path,
             check_memento=check_memento,
+            dry_run=dry_run,
         )

@@ -1,5 +1,6 @@
 from functools import cache
 from itertools import chain, islice
+from json import dumps as json_dumps
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
@@ -46,6 +47,7 @@ def add_warc_direct_answers_parser(
     xpath: str | None,
     url_xpath: str | None,
     text_xpath: str | None,
+    dry_run: bool = False,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
@@ -76,9 +78,12 @@ def add_warc_direct_answers_parser(
         url_xpath=url_xpath,
         text_xpath=text_xpath,
     )
-    parser.save(
-        using=config.es.client, index=config.es.index_warc_direct_answers_parsers
-    )
+    if not dry_run:
+        parser.save(
+            using=config.es.client, index=config.es.index_warc_direct_answers_parsers
+        )
+    else:
+        print(json_dumps(parser.to_dict()))
 
 
 def _parse_warc_direct_answers(
@@ -252,7 +257,11 @@ def _parse_serp_warc_direct_answers_action(
     return
 
 
-def parse_serps_warc_direct_answers(config: Config, prefetch_limit: int | None = None) -> None:
+def parse_serps_warc_direct_answers(
+    config: Config,
+    prefetch_limit: int | None = None,
+    dry_run: bool = False,
+) -> None:
     config.es.client.indices.refresh(index=config.es.index_serps)
     changed_serps_search: Search = (
         Serp.search(using=config.es.client, index=config.es.index_serps)
@@ -289,6 +298,9 @@ def parse_serps_warc_direct_answers(config: Config, prefetch_limit: int | None =
             _parse_serp_warc_direct_answers_action(config, serp)
             for serp in changed_serps
         )
-        config.es.bulk(actions)
+        config.es.bulk(
+            actions=actions,
+            dry_run=dry_run,
+        )
     else:
         print("No new/changed SERPs.")

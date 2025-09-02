@@ -19,6 +19,7 @@ captures = App(
 def fetch(
     *,
     prefetch_limit: int | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -36,6 +37,7 @@ def fetch(
     fetch_captures(
         config=config,
         prefetch_limit=prefetch_limit,
+        dry_run=dry_run,
     )
 
 
@@ -58,6 +60,7 @@ def aql_22(
         int | None, Parameter(env_var="SEARCH_PROVIDER_INDEX")
     ]
     | None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -73,4 +76,5 @@ def aql_22(
         check_memento=check_memento,
         search_provider=search_provider,
         search_provider_index=search_provider_index,
+        dry_run=dry_run,
     )

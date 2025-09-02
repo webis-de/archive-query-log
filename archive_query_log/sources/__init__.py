@@ -114,7 +114,10 @@ def _iter_sources_batches_changed_providers(
         ]
 
 
-def _build_archive_sources(config: Config) -> None:
+def _build_archive_sources(
+    config: Config,
+    dry_run: bool = False,
+) -> None:
     config.es.client.indices.refresh(index=config.es.index_archives)
     config.es.client.indices.refresh(index=config.es.index_providers)
     changed_archives_search = (
@@ -147,12 +150,18 @@ def _build_archive_sources(config: Config) -> None:
             unit="batch",
         )
         actions_archives = chain.from_iterable(action_batches_archives)
-        config.es.bulk(actions_archives)
+        config.es.bulk(
+            actions=actions_archives,
+            dry_run=dry_run,
+        )
     else:
         print("No new/changed archives.")
 
 
-def _build_provider_sources(config: Config) -> None:
+def _build_provider_sources(
+    config: Config,
+    dry_run: bool = False,
+) -> None:
     config.es.client.indices.refresh(index=config.es.index_archives)
     config.es.client.indices.refresh(index=config.es.index_providers)
     changed_providers_search = (
@@ -185,7 +194,10 @@ def _build_provider_sources(config: Config) -> None:
             unit="batch",
         )
         actions_providers = chain.from_iterable(action_batches_providers)
-        config.es.bulk(actions_providers)
+        config.es.bulk(
+            actions=actions_providers,
+            dry_run=dry_run,
+        )
     else:
         print("No new/changed providers.")
 
@@ -194,8 +206,15 @@ def build_sources(
     config: Config,
     skip_archives: bool,
     skip_providers: bool,
+    dry_run: bool = False,
 ) -> None:
     if not skip_archives:
-        _build_archive_sources(config)
+        _build_archive_sources(
+            config=config,
+            dry_run=dry_run,
+        )
     if not skip_providers:
-        _build_provider_sources(config)
+        _build_provider_sources(
+            config=config,
+            dry_run=dry_run,
+        )

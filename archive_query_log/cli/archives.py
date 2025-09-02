@@ -41,6 +41,7 @@ def add(
         Parameter(alias="-m"),
     ],
     priority: Annotated[float, Number(gte=0)] | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -58,6 +59,7 @@ def add(
         cdx_api_url=cdx_api_url,
         memento_api_url=memento_api_url,
         priority=priority,
+        dry_run=dry_run,
     )
 
 
@@ -77,6 +79,7 @@ def archive_it(
     priority: Annotated[float, Number(gte=0)] | None = None,
     no_merge: bool = False,
     auto_merge: bool = False,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -93,4 +96,5 @@ def archive_it(
         no_merge=no_merge,
         auto_merge=auto_merge,
         priority=priority,
+        dry_run=dry_run,
     )

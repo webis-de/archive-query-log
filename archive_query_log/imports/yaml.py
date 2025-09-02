@@ -78,12 +78,13 @@ def _provider_name(
 
 
 def import_providers(
-        config: Config,
-        services_path: Path,
-        cache_path: Path,
-        review: int | None,
-        no_merge: bool,
-        auto_merge: bool,
+    config: Config,
+    services_path: Path,
+    cache_path: Path,
+    review: int | None,
+    no_merge: bool,
+    auto_merge: bool,
+    dry_run: bool = False,
 ) -> None:
     print("Load providers from services file.")
     with services_path.open("r") as file:
@@ -134,10 +135,15 @@ def import_providers(
             priority=num_services - i,
             no_merge=no_merge,
             auto_merge=auto_merge,
+            dry_run=dry_run,
         )
 
 
-def import_url_query_parsers(config: Config, services_path: Path) -> None:
+def import_url_query_parsers(
+    config: Config,
+    services_path: Path,
+    dry_run: bool = False,
+) -> None:
     print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
@@ -196,10 +202,15 @@ def import_url_query_parsers(config: Config, services_path: Path) -> None:
                     segment=segment,
                     remove_pattern_regex=remove_pattern_regex,
                     space_pattern_regex=space_pattern_regex,
+                    dry_run=dry_run,
                 )
 
 
-def import_url_page_parsers(config: Config, services_path: Path) -> None:
+def import_url_page_parsers(
+    config: Config,
+    services_path: Path,
+    dry_run: bool = False,
+) -> None:
     print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
@@ -258,10 +269,15 @@ def import_url_page_parsers(config: Config, services_path: Path) -> None:
                     segment=segment,
                     remove_pattern_regex=remove_pattern_regex,
                     space_pattern_regex=space_pattern_regex,
+                    dry_run=dry_run,
                 )
 
 
-def import_url_offset_parsers(config: Config, services_path: Path) -> None:
+def import_url_offset_parsers(
+    config: Config,
+    services_path: Path,
+    dry_run: bool = False,
+) -> None:
     print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
@@ -320,10 +336,15 @@ def import_url_offset_parsers(config: Config, services_path: Path) -> None:
                     segment=segment,
                     remove_pattern_regex=remove_pattern_regex,
                     space_pattern_regex=space_pattern_regex,
+                    dry_run=dry_run,
                 )
 
 
-def import_warc_query_parsers(config: Config, services_path: Path) -> None:
+def import_warc_query_parsers(
+    config: Config,
+    services_path: Path,
+    dry_run: bool = False,
+) -> None:
     print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
@@ -394,10 +415,15 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
                     xpath=query_xpath,
                     remove_pattern_regex=remove_pattern_regex,
                     space_pattern_regex=space_pattern_regex,
+                    dry_run=dry_run,
                 )
 
 
-def import_warc_snippets_parsers(config: Config, services_path: Path) -> None:
+def import_warc_snippets_parsers(
+    config: Config,
+    services_path: Path,
+    dry_run: bool = False,
+) -> None:
     print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
@@ -479,4 +505,5 @@ def import_warc_snippets_parsers(config: Config, services_path: Path) -> None:
                     url_xpath=url_xpath,
                     title_xpath=title_xpath,
                     text_xpath=snippet_xpath,
+                    dry_run=dry_run,
                 )

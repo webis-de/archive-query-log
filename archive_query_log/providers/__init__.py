@@ -1,3 +1,4 @@
+from json import dumps as json_dumps
 from uuid import uuid4
 
 from elasticsearch_dsl import Search
@@ -20,6 +21,7 @@ def add_provider(
     priority: float | None,
     no_merge: bool = False,
     auto_merge: bool = False,
+    dry_run: bool = False,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
@@ -100,4 +102,7 @@ def add_provider(
         priority=priority,
         should_build_sources=should_build_sources,
     )
-    provider.save(using=config.es.client, index=config.es.index_providers)
+    if not dry_run:
+        provider.save(using=config.es.client, index=config.es.index_providers)
+    else:
+        print(json_dumps(provider.to_dict()))

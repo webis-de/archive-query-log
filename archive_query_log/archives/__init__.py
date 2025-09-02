@@ -1,3 +1,4 @@
+from json import dumps as json_dumps
 from uuid import uuid4
 
 from elasticsearch_dsl import Search
@@ -10,14 +11,15 @@ from archive_query_log.utils.time import utc_now
 
 
 def add_archive(
-        config: Config,
-        name: str | None,
-        description: str | None,
-        cdx_api_url: str,
-        memento_api_url: str,
-        priority: float | None,
-        no_merge: bool = False,
-        auto_merge: bool = False,
+    config: Config,
+    name: str | None,
+    description: str | None,
+    cdx_api_url: str,
+    memento_api_url: str,
+    priority: float | None,
+    no_merge: bool = False,
+    auto_merge: bool = False,
+    dry_run: bool = False,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
@@ -76,4 +78,7 @@ def add_archive(
         priority=priority,
         should_build_sources=should_build_sources,
     )
-    archive.save(using=config.es.client, index=config.es.index_archives)
+    if dry_run:
+        print(json_dumps(archive.to_dict()))
+    else:
+        archive.save(using=config.es.client, index=config.es.index_archives)

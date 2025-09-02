@@ -17,6 +17,7 @@ serps.command(parse)
 def url_query(
     *,
     prefetch_limit: int | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -33,6 +34,7 @@ def url_query(
     parse_serps_url_query(
         config=config,
         prefetch_limit=prefetch_limit,
+        dry_run=dry_run,
     )
 
 
@@ -40,6 +42,7 @@ def url_query(
 def url_page(
     *,
     prefetch_limit: int | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -52,6 +55,7 @@ def url_page(
     parse_serps_url_page(
         config=config,
         prefetch_limit=prefetch_limit,
+        dry_run=dry_run,
     )
 
 
@@ -59,6 +63,7 @@ def url_page(
 def url_offset(
     *,
     prefetch_limit: int | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -71,6 +76,7 @@ def url_offset(
     parse_serps_url_offset(
         config=config,
         prefetch_limit=prefetch_limit,
+        dry_run=dry_run,
     )
 
 
@@ -78,6 +84,7 @@ def url_offset(
 def warc_query(
     *,
     prefetch_limit: int | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -90,6 +97,7 @@ def warc_query(
     parse_serps_warc_query(
         config=config,
         prefetch_limit=prefetch_limit,
+        dry_run=dry_run,
     )
 
 
@@ -97,6 +105,7 @@ def warc_query(
 def warc_snippets(
     *,
     prefetch_limit: int | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -113,6 +122,7 @@ def warc_snippets(
     parse_serps_warc_snippets(
         config=config,
         prefetch_limit=prefetch_limit,
+        dry_run=dry_run,
     )
 
 
@@ -120,6 +130,7 @@ def warc_snippets(
 def warc_direct_answers(
     *,
     prefetch_limit: int | None = None,
+    dry_run: bool = False,
     config: Config,
 ) -> None:
     """
@@ -134,6 +145,7 @@ def warc_direct_answers(
     parse_serps_warc_direct_answers(
         config=config,
         prefetch_limit=prefetch_limit,
+        dry_run=dry_run,
     )
 
 

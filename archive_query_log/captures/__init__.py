@@ -135,7 +135,11 @@ def _add_captures_actions(
     )
 
 
-def fetch_captures(config: Config, prefetch_limit: int | None = None) -> None:
+def fetch_captures(
+    config: Config,
+    prefetch_limit: int | None = None,
+    dry_run: bool = False,
+) -> None:
     changed_sources_search: Search = (
         Source.search(using=config.es.client, index=config.es.index_sources)
         .filter(
@@ -177,6 +181,9 @@ def fetch_captures(config: Config, prefetch_limit: int | None = None) -> None:
             _add_captures_actions(config, source)
             for source in changed_sources
         )
-        config.es.bulk(actions)
+        config.es.bulk(
+            actions=actions,
+            dry_run=dry_run,
+        )
     else:
         print("No new/changed sources.")

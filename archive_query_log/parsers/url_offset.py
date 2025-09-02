@@ -1,5 +1,6 @@
 from functools import cache
 from itertools import chain, islice
+from json import dumps as json_dumps
 from typing import Iterable, Iterator
 from uuid import uuid5
 from warnings import warn
@@ -33,6 +34,7 @@ def add_url_offset_parser(
     segment: int | None,
     remove_pattern_regex: str | None,
     space_pattern_regex: str | None,
+    dry_run: bool = False,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
@@ -70,7 +72,10 @@ def add_url_offset_parser(
         remove_pattern_regex=remove_pattern_regex,
         space_pattern_regex=space_pattern_regex,
     )
-    parser.save(using=config.es.client, index=config.es.index_url_offset_parsers)
+    if not dry_run:
+        parser.save(using=config.es.client, index=config.es.index_url_offset_parsers)
+    else:
+        print(json_dumps(parser.to_dict()))
 
 
 def _parse_url_offset(parser: UrlOffsetParser, capture_url: str) -> int | None:
@@ -176,7 +181,11 @@ def _parse_serp_url_offset_action(
     return
 
 
-def parse_serps_url_offset(config: Config, prefetch_limit: int | None = None) -> None:
+def parse_serps_url_offset(
+    config: Config,
+    prefetch_limit: int | None = None,
+    dry_run: bool = False,
+) -> None:
     config.es.client.indices.refresh(index=config.es.index_serps)
     changed_serps_search: Search = (
         Serp.search(using=config.es.client, index=config.es.index_serps)
@@ -209,6 +218,9 @@ def parse_serps_url_offset(config: Config, prefetch_limit: int | None = None) ->
         actions = chain.from_iterable(
             _parse_serp_url_offset_action(config, serp) for serp in changed_serps
         )
-        config.es.bulk(actions)
+        config.es.bulk(
+            actions=actions,
+            dry_run=dry_run,
+        )
     else:
         print("No new/changed SERPs.")
