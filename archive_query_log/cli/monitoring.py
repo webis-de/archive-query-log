@@ -1,24 +1,32 @@
-from click import group, option
+from typing import Annotated
 
-from archive_query_log.cli.util import pass_config
+from cyclopts import App, Parameter
+from cyclopts.types import Port
+
+from archive_query_log.cli.util import Domain
 from archive_query_log.config import Config
 
 
-@group()
-def monitoring() -> None:
-    pass
+monitoring = App(
+    name="monitoring",
+    help="Manage monitoring tasks.",
+)
 
 
 @monitoring.command()
-@option("-h", "--host", type=str, default="127.0.0.1",
-        help="The interface to bind to.")
-@option("-p", "--port", type=int, default=5000,
-        help="The port to bind to.")
-@pass_config
 def run(
-        config: Config,
-        host: str,
-        port: int,
+    *,
+    host: Annotated[Domain, Parameter(alias="-h")] = "127.0.0.1",
+    port: Annotated[Port, Parameter(alias="-p")] = 5000,
+    config: Config,
 ) -> None:
+    """
+    Run the monitoring server.
+
+    :param host: The host interface to bind the server to.
+    :param port: The port to bind the server to.
+    """
+
     from archive_query_log.monitoring import run_monitoring
+
     run_monitoring(config, host, port)

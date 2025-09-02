@@ -1,71 +1,84 @@
 from pathlib import Path
+from typing import Annotated, TypeAlias, Literal
 
-from click import group, option, Choice, Path as PathType, UsageError, \
-    FloatRange
+from cyclopts import App, Parameter
+from cyclopts.types import ResolvedExistingFile
+from cyclopts.validators import Number
 
-from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
-from archive_query_log.orm import UrlQueryParserType, \
-    UrlQueryParser, UrlPageParserType, UrlPageParser, \
-    UrlOffsetParser, UrlOffsetParserType, WarcQueryParserType, \
-    WarcQueryParser, WarcSnippetsParserType, WarcSnippetsParser, \
-    WarcDirectAnswersParserType, WarcDirectAnswersParser, \
-    WarcMainContentParserType, WarcMainContentParser
+from archive_query_log.orm import (
+    UrlQueryParserType,
+    UrlQueryParser,
+    UrlPageParserType,
+    UrlPageParser,
+    UrlOffsetParser,
+    UrlOffsetParserType,
+    WarcQueryParserType,
+    WarcQueryParser,
+    WarcSnippetsParserType,
+    WarcSnippetsParser,
+    WarcDirectAnswersParserType,
+    WarcDirectAnswersParser,
+    # WarcMainContentParserType,
+    # WarcMainContentParser,
+)
+
+parsers = App(
+    name="parsers",
+    alias="p",
+    help="Manage URL and WARC parsers.",
+)
 
 
-@group()
-def parsers() -> None:
-    pass
+_DEFAULT_SERVICES_FILE = Path("data/selected-services.yaml")
 
 
-@parsers.group()
-def url_query() -> None:
-    pass
+url_query = App(
+    name="url-query",
+    alias="uq",
+    help="Manage URL query parsers.",
+)
+parsers.command(url_query)
 
 
-CHOICES_URL_QUERY_PARSER_TYPE = [
+_UrlQueryParserType: TypeAlias = Literal[
     "query-parameter",
     "fragment-parameter",
     "path-segment",
 ]
 
 
-@url_query.command("add")
-@option("--provider-id", type=str)
-@option("--url-pattern-regex", type=str)
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@option("--parser-type",
-        type=Choice(CHOICES_URL_QUERY_PARSER_TYPE), required=True)
-@option("--parameter", type=str)
-@option("--segment", type=int)
-@option("--remove-pattern-regex", type=str)
-@option("--space-pattern-regex", type=str)
-@pass_config
+@url_query.command(name="add")
 def url_query_add(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: str,
-        parameter: str | None,
-        segment: int | None,
-        remove_pattern_regex: str | None,
-        space_pattern_regex: str | None,
+    *,
+    provider_id: str | None = None,
+    url_pattern_regex: str | None = None,
+    priority: Annotated[float, Number(gte=0)] | None = None,
+    parser_type: _UrlQueryParserType,
+    parameter: str | None = None,
+    segment: int | None = None,
+    remove_pattern_regex: str | None = None,
+    space_pattern_regex: str | None = None,
+    config: Config,
 ) -> None:
+    """
+    Add a new URL query parser.
+    """
     from archive_query_log.parsers.url_query import add_url_query_parser
+
     parser_type_strict: UrlQueryParserType
     if parser_type == "query-parameter":
         parser_type_strict = "query_parameter"
         if parameter is None:
-            raise UsageError("No query parameter given.")
+            raise ValueError("No query parameter given.")
     elif parser_type == "fragment-parameter":
         parser_type_strict = "fragment_parameter"
         if parameter is not None:
-            raise UsageError("No fragment parameter given.")
+            raise ValueError("No fragment parameter given.")
     elif parser_type == "path-segment":
         parser_type_strict = "path_segment"
         if segment is None:
-            raise UsageError("No path segment given.")
+            raise ValueError("No path segment given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
     UrlQueryParser.init(using=config.es.client, index=config.es.index_url_query_parsers)
@@ -82,67 +95,69 @@ def url_query_add(
     )
 
 
-@url_query.command("import")
-@option("-s", "--services-file", "services_path",
-        type=PathType(path_type=Path, exists=True, file_okay=True,
-                      dir_okay=False, readable=True, resolve_path=True,
-                      allow_dash=False),
-        default=Path("data") / "selected-services.yaml")
-@pass_config
-def url_query_import(config: Config, services_path: Path) -> None:
+@url_query.command(name="import")
+def url_query_import(
+    *,
+    services_path: Annotated[
+        ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
+    ] = _DEFAULT_SERVICES_FILE,
+    config: Config,
+) -> None:
+    """
+    Import URL query parsers from a YAML search services file.
+    """
     from archive_query_log.imports.yaml import import_url_query_parsers
+
     UrlQueryParser.init(using=config.es.client, index=config.es.index_url_query_parsers)
     import_url_query_parsers(config, services_path)
 
 
-@parsers.group()
-def url_page() -> None:
-    pass
+url_page = App(
+    name="url-page",
+    alias="up",
+    help="Manage URL page parsers.",
+)
+parsers.command(url_page)
 
 
-CHOICES_URL_PAGE_PARSER_TYPE = [
+_UrlPageParserType: TypeAlias = Literal[
     "query-parameter",
     "fragment-parameter",
     "path-segment",
 ]
 
 
-@url_page.command("add")
-@option("--provider-id", type=str)
-@option("--url-pattern-regex", type=str)
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@option("--parser-type",
-        type=Choice(CHOICES_URL_PAGE_PARSER_TYPE), required=True)
-@option("--parameter", type=str)
-@option("--segment", type=int)
-@option("--remove-pattern-regex", type=str)
-@option("--space-pattern-regex", type=str)
-@pass_config
+@url_page.command(name="add")
 def url_page_add(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: str,
-        parameter: str | None,
-        segment: int | None,
-        remove_pattern_regex: str | None,
-        space_pattern_regex: str | None,
+    *,
+    provider_id: str | None = None,
+    url_pattern_regex: str | None = None,
+    priority: Annotated[float, Number(gte=0)] | None = None,
+    parser_type: _UrlPageParserType,
+    parameter: str | None = None,
+    segment: int | None = None,
+    remove_pattern_regex: str | None = None,
+    space_pattern_regex: str | None = None,
+    config: Config,
 ) -> None:
+    """
+    Add a new URL page parser.
+    """
     from archive_query_log.parsers.url_page import add_url_page_parser
+
     parser_type_strict: UrlPageParserType
     if parser_type == "query-parameter":
         parser_type_strict = "query_parameter"
         if parameter is None:
-            raise UsageError("No query parameter given.")
+            raise ValueError("No query parameter given.")
     elif parser_type == "fragment-parameter":
         parser_type_strict = "fragment_parameter"
         if parameter is not None:
-            raise UsageError("No fragment parameter given.")
+            raise ValueError("No fragment parameter given.")
     elif parser_type == "path-segment":
         parser_type_strict = "path_segment"
         if segment is None:
-            raise UsageError("No path segment given.")
+            raise ValueError("No path segment given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
     UrlPageParser.init(using=config.es.client, index=config.es.index_url_page_parsers)
@@ -159,70 +174,74 @@ def url_page_add(
     )
 
 
-@url_page.command("import")
-@option("-s", "--services-file", "services_path",
-        type=PathType(path_type=Path, exists=True, file_okay=True,
-                      dir_okay=False, readable=True, resolve_path=True,
-                      allow_dash=False),
-        default=Path("data") / "selected-services.yaml")
-@pass_config
-def url_page_import(config: Config, services_path: Path) -> None:
+@url_page.command(name="import")
+def url_page_import(
+    *,
+    services_path: Annotated[
+        ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
+    ] = _DEFAULT_SERVICES_FILE,
+    config: Config,
+) -> None:
+    """
+    Import URL page parsers from a YAML search services file.
+    """
     from archive_query_log.imports.yaml import import_url_page_parsers
+
     UrlPageParser.init(using=config.es.client, index=config.es.index_url_page_parsers)
     import_url_page_parsers(config, services_path)
 
 
-@parsers.group()
-def url_offset() -> None:
-    pass
+url_offset = App(
+    name="url-offset",
+    alias="uo",
+    help="Manage URL offset parsers.",
+)
+parsers.command(url_offset)
 
 
-CHOICES_URL_OFFSET_PARSER_TYPE = [
+_UrlOffsetParserType: TypeAlias = Literal[
     "query-parameter",
     "fragment-parameter",
     "path-segment",
 ]
 
 
-@url_offset.command("add")
-@option("--provider-id", type=str)
-@option("--url-pattern-regex", type=str)
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@option("--parser-type",
-        type=Choice(CHOICES_URL_OFFSET_PARSER_TYPE), required=True)
-@option("--parameter", type=str)
-@option("--segment", type=int)
-@option("--remove-pattern-regex", type=str)
-@option("--space-pattern-regex", type=str)
-@pass_config
+@url_offset.command(name="add")
 def url_offset_add(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: str,
-        parameter: str | None,
-        segment: int | None,
-        remove_pattern_regex: str | None,
-        space_pattern_regex: str | None,
+    *,
+    provider_id: str | None = None,
+    url_pattern_regex: str | None = None,
+    priority: Annotated[float, Number(gte=0)] | None = None,
+    parser_type: _UrlOffsetParserType,
+    parameter: str | None = None,
+    segment: int | None = None,
+    remove_pattern_regex: str | None = None,
+    space_pattern_regex: str | None = None,
+    config: Config,
 ) -> None:
+    """
+    Add a new URL offset parser.
+    """
     from archive_query_log.parsers.url_offset import add_url_offset_parser
+
     parser_type_strict: UrlOffsetParserType
     if parser_type == "query-parameter":
         parser_type_strict = "query_parameter"
         if parameter is None:
-            raise UsageError("No query parameter given.")
+            raise ValueError("No query parameter given.")
     elif parser_type == "fragment-parameter":
         parser_type_strict = "fragment_parameter"
         if parameter is not None:
-            raise UsageError("No fragment parameter given.")
+            raise ValueError("No fragment parameter given.")
     elif parser_type == "path-segment":
         parser_type_strict = "path_segment"
         if segment is None:
-            raise UsageError("No path segment given.")
+            raise ValueError("No path segment given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    UrlOffsetParser.init(using=config.es.client, index=config.es.index_url_offset_parsers)
+    UrlOffsetParser.init(
+        using=config.es.client, index=config.es.index_url_offset_parsers
+    )
     add_url_offset_parser(
         config=config,
         provider_id=provider_id,
@@ -236,58 +255,63 @@ def url_offset_add(
     )
 
 
-@url_offset.command("import")
-@option("-s", "--services-file", "services_path",
-        type=PathType(path_type=Path, exists=True, file_okay=True,
-                      dir_okay=False, readable=True, resolve_path=True,
-                      allow_dash=False),
-        default=Path("data") / "selected-services.yaml")
-@pass_config
-def url_offset_import(config: Config, services_path: Path) -> None:
+@url_offset.command(name="import")
+def url_offset_import(
+    *,
+    services_path: Annotated[
+        ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
+    ] = _DEFAULT_SERVICES_FILE,
+    config: Config,
+) -> None:
+    """
+    Import URL offset parsers from a YAML search services file.
+    """
     from archive_query_log.imports.yaml import import_url_offset_parsers
-    UrlOffsetParser.init(using=config.es.client, index=config.es.index_url_offset_parsers)
+
+    UrlOffsetParser.init(
+        using=config.es.client, index=config.es.index_url_offset_parsers
+    )
     import_url_offset_parsers(config, services_path)
 
 
-@parsers.group()
-def warc_query() -> None:
-    pass
+warc_query = App(
+    name="warc-query",
+    alias="wq",
+    help="Manage WARC query parsers.",
+)
+parsers.command(warc_query)
 
 
-CHOICES_WARC_QUERY_PARSER_TYPE = [
-    "xpath",
-]
+_WarqQueryParserType: TypeAlias = Literal["xpath"]
 
 
-@warc_query.command("add")
-@option("--provider-id", type=str)
-@option("--url-pattern-regex", type=str)
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@option("--parser-type",
-        type=Choice(CHOICES_WARC_QUERY_PARSER_TYPE), required=True)
-@option("--xpath", type=str)
-@option("--remove-pattern-regex", type=str)
-@option("--space-pattern-regex", type=str)
-@pass_config
+@warc_query.command(name="add")
 def warc_query_add(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: str,
-        xpath: str | None,
-        remove_pattern_regex: str | None,
-        space_pattern_regex: str | None,
+    *,
+    provider_id: str | None = None,
+    url_pattern_regex: str | None = None,
+    priority: Annotated[float, Number(gte=0)] | None = None,
+    parser_type: _WarqQueryParserType,
+    xpath: str | None = None,
+    remove_pattern_regex: str | None = None,
+    space_pattern_regex: str | None = None,
+    config: Config,
 ) -> None:
+    """
+    Add a new WARC query parser.
+    """
     from archive_query_log.parsers.warc_query import add_warc_query_parser
+
     parser_type_strict: WarcQueryParserType
     if parser_type == "xpath":
         parser_type_strict = "xpath"
         if xpath is None:
-            raise UsageError("No XPath given.")
+            raise ValueError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcQueryParser.init(using=config.es.client, index=config.es.index_warc_query_parsers)
+    WarcQueryParser.init(
+        using=config.es.client, index=config.es.index_warc_query_parsers
+    )
     add_warc_query_parser(
         config=config,
         provider_id=provider_id,
@@ -300,61 +324,64 @@ def warc_query_add(
     )
 
 
-@warc_query.command("import")
-@option("-s", "--services-file", "services_path",
-        type=PathType(path_type=Path, exists=True, file_okay=True,
-                      dir_okay=False, readable=True, resolve_path=True,
-                      allow_dash=False),
-        default=Path("data") / "selected-services.yaml")
-@pass_config
-def warc_query_import(config: Config, services_path: Path) -> None:
+@warc_query.command(name="import")
+def warc_query_import(
+    *,
+    services_path: Annotated[
+        ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
+    ] = _DEFAULT_SERVICES_FILE,
+    config: Config,
+) -> None:
+    """
+    Import WARC query parsers from a YAML search services file.
+    """
     from archive_query_log.imports.yaml import import_warc_query_parsers
-    WarcQueryParser.init(using=config.es.client, index=config.es.index_warc_query_parsers)
+
+    WarcQueryParser.init(
+        using=config.es.client, index=config.es.index_warc_query_parsers
+    )
     import_warc_query_parsers(config, services_path)
 
 
-@parsers.group()
-def warc_snippets() -> None:
-    pass
+warc_snippets = App(
+    name="warc-snippets",
+    alias="ws",
+    help="Manage WARC snippets parsers.",
+)
+parsers.command(warc_snippets)
 
 
-CHOICES_WARC_SNIPPETS_PARSER_TYPE = [
-    "xpath",
-]
+_WarcSnippetsParserType: TypeAlias = Literal["xpath"]
 
 
-@warc_snippets.command("add")
-@option("--provider-id", type=str)
-@option("--url-pattern-regex", type=str)
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@option("--parser-type",
-        type=Choice(CHOICES_WARC_SNIPPETS_PARSER_TYPE), required=True)
-@option("--xpath", type=str)
-@option("--url-xpath", type=str)
-@option("--title-xpath", type=str)
-@option("--text-xpath", type=str)
-@pass_config
+@warc_snippets.command(name="add")
 def warc_snippets_add(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: str,
-        xpath: str | None,
-        url_xpath: str | None,
-        title_xpath: str | None,
-        text_xpath: str | None,
+    *,
+    provider_id: str | None = None,
+    url_pattern_regex: str | None = None,
+    priority: Annotated[float, Number(gte=0)] | None = None,
+    parser_type: _WarcSnippetsParserType,
+    xpath: str | None = None,
+    url_xpath: str | None = None,
+    title_xpath: str | None = None,
+    text_xpath: str | None = None,
+    config: Config,
 ) -> None:
-    from archive_query_log.parsers.warc_snippets import \
-        add_warc_snippets_parser
+    """
+    Add a new WARC snippets parser.
+    """
+    from archive_query_log.parsers.warc_snippets import add_warc_snippets_parser
+
     parser_type_strict: WarcSnippetsParserType
     if parser_type == "xpath":
         parser_type_strict = "xpath"
         if xpath is None:
-            raise UsageError("No XPath given.")
+            raise ValueError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcSnippetsParser.init(using=config.es.client, index=config.es.index_warc_snippets_parsers)
+    WarcSnippetsParser.init(
+        using=config.es.client, index=config.es.index_warc_snippets_parsers
+    )
     add_warc_snippets_parser(
         config=config,
         provider_id=provider_id,
@@ -368,59 +395,65 @@ def warc_snippets_add(
     )
 
 
-@warc_snippets.command("import")
-@option("-s", "--services-file", "services_path",
-        type=PathType(path_type=Path, exists=True, file_okay=True,
-                      dir_okay=False, readable=True, resolve_path=True,
-                      allow_dash=False),
-        default=Path("data") / "selected-services.yaml")
-@pass_config
-def warc_snippets_import(config: Config, services_path: Path) -> None:
+@warc_snippets.command(name="import")
+def warc_snippets_import(
+    *,
+    services_path: Annotated[
+        ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
+    ] = Path("data") / "selected-services.yaml",
+    config: Config,
+) -> None:
+    """
+    Import WARC snippets parsers from a YAML search services file.
+    """
     from archive_query_log.imports.yaml import import_warc_snippets_parsers
-    WarcSnippetsParser.init(using=config.es.client, index=config.es.index_warc_snippets_parsers)
+
+    WarcSnippetsParser.init(
+        using=config.es.client, index=config.es.index_warc_snippets_parsers
+    )
     import_warc_snippets_parsers(config, services_path)
 
 
-@parsers.group()
-def warc_direct_answers() -> None:
-    pass
+warc_direct_answers = App(
+    name="warc-direct-answers",
+    alias="wda",
+    help="Manage WARC direct answers parsers.",
+)
+parsers.command(warc_direct_answers)
 
 
-CHOICES_WARC_DIRECT_ANSWERS_PARSER_TYPE = [
-    "xpath",
-]
+_WarcDirectAnswersParserType: TypeAlias = Literal["xpath"]
 
 
-@warc_direct_answers.command("add")
-@option("--provider-id", type=str)
-@option("--url-pattern-regex", type=str)
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@option("--parser-type",
-        type=Choice(CHOICES_WARC_DIRECT_ANSWERS_PARSER_TYPE), required=True)
-@option("--xpath", type=str)
-@option("--url-xpath", type=str)
-@option("--text-xpath", type=str)
-@pass_config
+@warc_direct_answers.command(name="add")
 def warc_direct_answers_add(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: str,
-        xpath: str | None,
-        url_xpath: str | None,
-        text_xpath: str | None,
+    *,
+    provider_id: str | None = None,
+    url_pattern_regex: str | None = None,
+    priority: Annotated[float, Number(gte=0)] | None = None,
+    parser_type: _WarcDirectAnswersParserType,
+    xpath: str | None = None,
+    url_xpath: str | None = None,
+    text_xpath: str | None = None,
+    config: Config,
 ) -> None:
-    from archive_query_log.parsers.warc_direct_answers import \
-        add_warc_direct_answers_parser
+    """
+    Add a new WARC direct answers parser.
+    """
+    from archive_query_log.parsers.warc_direct_answers import (
+        add_warc_direct_answers_parser,
+    )
+
     parser_type_strict: WarcDirectAnswersParserType
     if parser_type == "xpath":
         parser_type_strict = "xpath"
         if xpath is None:
-            raise UsageError("No XPath given.")
+            raise ValueError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcDirectAnswersParser.init(using=config.es.client, index=config.es.index_warc_direct_answers_parsers)
+    WarcDirectAnswersParser.init(
+        using=config.es.client, index=config.es.index_warc_direct_answers_parsers
+    )
     add_warc_direct_answers_parser(
         config=config,
         provider_id=provider_id,
@@ -433,42 +466,43 @@ def warc_direct_answers_add(
     )
 
 
-@parsers.group()
-def warc_main_content() -> None:
-    pass
+# warc_main_content = App(
+#     name="warc-main-content",
+#     alias="wmc",
+#     help="Manage WARC main content parsers.",
+# )
+# parsers.command(warc_main_content)
 
 
-CHOICES_WARC_MAIN_CONTENT_PARSER_TYPE = [
-    "resiliparse",
-]
+# _WarcMainContentParserType = Literal["resiliparse"]
 
 
-@warc_main_content.command("add")
-@option("--provider-id", type=str)
-@option("--url-pattern-regex", type=str)
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@option("--parser-type",
-        type=Choice(CHOICES_WARC_MAIN_CONTENT_PARSER_TYPE), required=True)
-@pass_config
-def warc_main_content_add(
-        config: Config,
-        provider_id: str | None,
-        url_pattern_regex: str | None,
-        priority: float | None,
-        parser_type: str,
-) -> None:
-    from archive_query_log.parsers.warc_main_content import \
-        add_warc_main_content_parser
-    parser_type_strict: WarcMainContentParserType
-    if parser_type == "resiliparse":
-        parser_type_strict = "resiliparse"
-    else:
-        raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcMainContentParser.init(using=config.es.client, index=config.es.index_warc_direct_answers_parsers)
-    add_warc_main_content_parser(
-        config=config,
-        provider_id=provider_id,
-        url_pattern_regex=url_pattern_regex,
-        priority=priority,
-        parser_type=parser_type_strict,
-    )
+# @warc_main_content.command(name="add")
+# def warc_main_content_add(
+#     *,
+#     provider_id: str | None = None,
+#     url_pattern_regex: str | None = None,
+#     priority: Annotated[float, Number(gte=0)] | None = None,
+#     parser_type: _WarcMainContentParserType,
+#     config: Config,
+# ) -> None:
+#     """
+#     Add a new WARC main content parser.
+#     """
+#     from archive_query_log.parsers.warc_main_content import add_warc_main_content_parser
+
+#     parser_type_strict: WarcMainContentParserType
+#     if parser_type == "resiliparse":
+#         parser_type_strict = "resiliparse"
+#     else:
+#         raise ValueError(f"Invalid parser type: {parser_type}")
+#     WarcMainContentParser.init(
+#         using=config.es.client, index=config.es.index_warc_direct_answers_parsers
+#     )
+#     add_warc_main_content_parser(
+#         config=config,
+#         provider_id=provider_id,
+#         url_pattern_regex=url_pattern_regex,
+#         priority=priority,
+#         parser_type=parser_type_strict,
+#     )

@@ -1,25 +1,28 @@
-from click import group, option
+from cyclopts import App
 
-from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
 from archive_query_log.orm import Source
 
 
-@group()
-def sources():
-    pass
+sources = App(
+    name="sources",
+    alias="sc",
+    help="Manage data sources.",
+)
 
 
 @sources.command()
-@option("--skip-archives", is_flag=True)
-@option("--skip-providers", is_flag=True)
-@pass_config
 def build(
-        config: Config,
-        skip_archives: bool,
-        skip_providers: bool,
+    *,
+    skip_archives: bool,
+    skip_providers: bool,
+    config: Config,
 ) -> None:
+    """
+    Build data sources based on all available web archives and search providers.
+    """
     from archive_query_log.sources import build_sources
+
     Source.init(using=config.es.client, index=config.es.index_sources)
     build_sources(
         config=config,

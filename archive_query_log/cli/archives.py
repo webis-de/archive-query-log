@@ -1,37 +1,55 @@
-from click import group, option, IntRange, FloatRange
+from typing import Annotated
 
-from archive_query_log.cli.util import pass_config
+from cyclopts import App, Parameter
+from cyclopts.types import URL
+from cyclopts.validators import Number
+
 from archive_query_log.config import Config
-from archive_query_log.imports.archive_it import \
-    DEFAULT_ARCHIVE_IT_PAGE_SIZE, DEFAULT_ARCHIVE_IT_WAYBACK_URL, \
-    DEFAULT_ARCHIVE_IT_API_URL
+from archive_query_log.imports.archive_it import (
+    DEFAULT_ARCHIVE_IT_PAGE_SIZE,
+    DEFAULT_ARCHIVE_IT_WAYBACK_URL,
+    DEFAULT_ARCHIVE_IT_API_URL,
+)
 from archive_query_log.orm import Archive
 
 
-@group()
-def archives() -> None:
-    pass
+archives = App(
+    name="archives",
+    alias="a",
+    help="Manage web archives.",
+)
 
 
-@archives.command()
-@option("-n", "--name", type=str, required=True,
-        prompt="Name")
-@option("-d", "--description", type=str)
-@option("-c", "--cdx-api-url", type=str, required=True,
-        prompt="CDX API URL", metavar="URL")
-@option("-m", "--memento-api-url", type=str, required=True,
-        prompt="Memento API URL", metavar="URL")
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@pass_config
+@archives.command
 def add(
-        config: Config,
-        name: str,
-        description: str | None,
-        cdx_api_url: str,
-        memento_api_url: str,
-        priority: float | None,
+    *,
+    name: Annotated[
+        str,
+        Parameter(alias="-n"),
+    ],
+    description: Annotated[
+        str,
+        Parameter(alias="-d"),
+    ]
+    | None = None,
+    cdx_api_url: Annotated[
+        URL,
+        Parameter(alias="-c"),
+    ],
+    memento_api_url: Annotated[
+        URL,
+        Parameter(alias="-m"),
+    ],
+    priority: Annotated[float, Number(gte=0)] | None = None,
+    config: Config,
 ) -> None:
+    """
+    Add a new web archive for crawling.
+    """
     from archive_query_log.archives import add_archive
+
+    print("Adding archive:", name)
+
     Archive.init(using=config.es.client, index=config.es.index_archives)
     add_archive(
         config=config,
@@ -43,32 +61,29 @@ def add(
     )
 
 
-@archives.group("import")
-def import_() -> None:
-    pass
+import_ = App(
+    name="import",
+    help="Import web archives.",
+)
+archives.command(import_)
 
 
-@import_.command()
-@option("--api-url", type=str, required=True,
-        default=DEFAULT_ARCHIVE_IT_API_URL, metavar="URL")
-@option("--wayback-url", type=str, required=True,
-        default=DEFAULT_ARCHIVE_IT_WAYBACK_URL, metavar="URL")
-@option("--page-size", type=IntRange(min=1), required=True,
-        default=DEFAULT_ARCHIVE_IT_PAGE_SIZE)
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@option("--no-merge", is_flag=True, default=False, type=bool)
-@option("--auto-merge", is_flag=True, default=False, type=bool)
-@pass_config
+@import_.command
 def archive_it(
-        config: Config,
-        api_url: str,
-        wayback_url: str,
-        page_size: int,
-        priority: float | None,
-        no_merge: bool,
-        auto_merge: bool,
+    *,
+    api_url: URL = DEFAULT_ARCHIVE_IT_API_URL,
+    wayback_url: URL = DEFAULT_ARCHIVE_IT_WAYBACK_URL,
+    page_size: Annotated[int, Number(gte=1)] = DEFAULT_ARCHIVE_IT_PAGE_SIZE,
+    priority: Annotated[float, Number(gte=0)] | None = None,
+    no_merge: bool = False,
+    auto_merge: bool = False,
+    config: Config,
 ) -> None:
+    """
+    Import all web archives from the Archive-It service, via their API.
+    """
     from archive_query_log.imports.archive_it import import_archives
+
     Archive.init(using=config.es.client, index=config.es.index_archives)
     import_archives(
         config=config,
