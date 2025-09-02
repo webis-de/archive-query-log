@@ -1,9 +1,9 @@
-from dataclasses import dataclass, field
+from pydantic.dataclasses import dataclass
 from functools import cached_property
-from os import environ
 from pathlib import Path
-from typing import Iterable, Any
+from typing import Iterable, Any, Annotated
 
+from cyclopts import Parameter
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import streaming_bulk
 from pyrate_limiter import Limiter, RequestRate, Duration
@@ -16,58 +16,49 @@ from warc_s3 import WarcS3Store
 from archive_query_log import __version__ as version
 
 
+@Parameter(
+    name="es",
+    # show=False,
+    help="Elasticsearch configuration.",
+)
 @dataclass(frozen=True)
 class EsConfig:
-    host: str = field(default_factory=lambda: environ["ELASTICSEARCH_HOST"])
-    port: int = field(default_factory=lambda: int(environ["ELASTICSEARCH_PORT"]))
-    username: str = field(default_factory=lambda: environ["ELASTICSEARCH_USERNAME"])
-    password: str = field(default_factory=lambda: environ["ELASTICSEARCH_PASSWORD"])
+    host: Annotated[str, Parameter(env_var="ELASTICSEARCH_HOST")]
+    port: Annotated[int, Parameter(env_var="ELASTICSEARCH_PORT")]
+    username: Annotated[str, Parameter(env_var="ELASTICSEARCH_USERNAME")]
+    password: Annotated[str, Parameter(env_var="ELASTICSEARCH_PASSWORD")]
+    index_archives: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_ARCHIVES")]
+    index_providers: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_PROVIDERS")]
+    index_sources: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_SOURCES")]
+    index_captures: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_CAPTURES")]
+    index_serps: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_SERPS")]
+    index_results: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_RESULTS")]
+    index_url_query_parsers: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_URL_QUERY_PARSERS")
+    ]
+    index_url_page_parsers: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_URL_PAGE_PARSERS")
+    ]
+    index_url_offset_parsers: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_URL_OFFSET_PARSERS")
+    ]
+    index_warc_query_parsers: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_QUERY_PARSERS")
+    ]
+    index_warc_snippets_parsers: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_SNIPPETS_PARSERS")
+    ]
+    index_warc_direct_answers_parsers: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_DIRECT_ANSWERS_PARSERS")
+    ]
+    index_warc_main_content_parsers: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS")
+    ]
     max_retries: int = 5
     bulk_chunk_size: int = 500
     bulk_max_chunk_bytes: int = 100 * 1024 * 1024
     bulk_initial_backoff: int = 2
     bulk_max_backoff: int = 60
-    index_archives: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_ARCHIVES"]
-    )
-    index_providers: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_PROVIDERS"]
-    )
-    index_sources: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_SOURCES"]
-    )
-    index_captures: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_CAPTURES"]
-    )
-    index_serps: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_SERPS"]
-    )
-    index_results: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_RESULTS"]
-    )
-    index_url_query_parsers: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_URL_QUERY_PARSERS"]
-    )
-    index_url_page_parsers: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_URL_PAGE_PARSERS"]
-    )
-    index_url_offset_parsers: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_URL_OFFSET_PARSERS"]
-    )
-    index_warc_query_parsers: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_WARC_QUERY_PARSERS"]
-    )
-    index_warc_snippets_parsers: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_WARC_SNIPPETS_PARSERS"]
-    )
-    index_warc_direct_answers_parsers: str = field(
-        default_factory=lambda: environ[
-            "ELASTICSEARCH_INDEX_WARC_DIRECT_ANSWERS_PARSERS"
-        ]
-    )
-    index_warc_main_content_parsers: str = field(
-        default_factory=lambda: environ["ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS"]
-    )
 
     @cached_property
     def client(self) -> Elasticsearch:
@@ -102,12 +93,17 @@ class EsConfig:
             pass
 
 
+@Parameter(
+    name="s3",
+    # show=False,
+    help="S3 storage configuration.",
+)
 @dataclass(frozen=True)
 class S3Config:
-    endpoint_url: str = field(default_factory=lambda: environ["S3_ENDPOINT_URL"])
-    access_key: str = field(default_factory=lambda: environ["S3_ACCESS_KEY"])
-    secret_key: str = field(default_factory=lambda: environ["S3_SECRET_KEY"])
-    bucket_name: str = field(default_factory=lambda: environ["S3_BUCKET_NAME"])
+    endpoint_url: Annotated[str, Parameter(env_var="S3_ENDPOINT_URL")]
+    access_key: Annotated[str, Parameter(env_var="S3_ACCESS_KEY")]
+    secret_key: Annotated[str, Parameter(env_var="S3_SECRET_KEY")]
+    bucket_name: Annotated[str, Parameter(env_var="S3_BUCKET_NAME")]
 
     @cached_property
     def warc_store(self) -> WarcS3Store:
@@ -121,6 +117,11 @@ class S3Config:
         )
 
 
+@Parameter(
+    name="http",
+    # show=False,
+    help="HTTP client configuration.",
+)
 @dataclass(frozen=True)
 class HttpConfig:
     max_retries: int = 5
@@ -176,14 +177,15 @@ class HttpConfig:
         return session
 
 
+@Parameter(
+    name="warc-cache",
+    # show=False,
+    help="WARC cache configuration.",
+)
 @dataclass(frozen=True)
 class WarcCacheConfig:
-    path_serps: Path = field(
-        default_factory=lambda: Path(environ["WARC_CACHE_PATH_SERPS"])
-    )
-    # path_results: Path = field(
-    #     default_factory=lambda: Path(environ["WARC_CACHE_PATH_RESULTS"])
-    # )
+    path_serps: Annotated[Path, Parameter(env_var="WARC_CACHE_PATH_SERPS")]
+    # path_results: Annotated[Path, Parameter(env_var="WARC_CACHE_PATH_RESULTS")]
 
     @cached_property
     def store_serps(self) -> WarcCacheStore:
@@ -206,9 +208,10 @@ class WarcCacheConfig:
     #     )
 
 
+@Parameter(name="*")
 @dataclass(frozen=True)
 class Config:
-    es: EsConfig = field(default_factory=EsConfig)
-    s3: S3Config = field(default_factory=S3Config)
-    http: HttpConfig = field(default_factory=HttpConfig)
-    warc_cache: WarcCacheConfig = field(default_factory=WarcCacheConfig)
+    es: EsConfig
+    s3: S3Config
+    http: HttpConfig
+    warc_cache: WarcCacheConfig
