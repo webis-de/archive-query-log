@@ -5,7 +5,6 @@ from urllib.parse import urljoin
 from uuid import uuid5
 from warnings import warn
 
-from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, RankFeature, Term, Range
@@ -157,7 +156,7 @@ def fetch_captures(config: Config, prefetch_limit: int | None = None) -> None:
     )
     num_changed_sources = changed_sources_search.count()
     if num_changed_sources > 0:
-        echo(f"Fetching captures for {num_changed_sources} "
+        print(f"Fetching captures for {num_changed_sources} "
              f"new/changed sources.")
         changed_sources: Iterable[Source] = (
             changed_sources_search
@@ -180,4 +179,4 @@ def fetch_captures(config: Config, prefetch_limit: int | None = None) -> None:
         )
         config.es.bulk(actions)
     else:
-        echo("No new/changed sources.")
+        print("No new/changed sources.")

@@ -1,6 +1,5 @@
 from urllib.parse import urljoin
 
-from click import echo
 from tqdm.auto import tqdm
 
 from archive_query_log.archives import add_archive
@@ -34,7 +33,7 @@ def import_archives(
         no_merge: bool = False,
         auto_merge: bool = False,
 ) -> None:
-    echo("Load Archive-It collections.")
+    print("Load Archive-It collections.")
     collections_api_url = urljoin(api_url, "/api/collection")
     response = config.http.session.get(
         collections_api_url,
@@ -44,7 +43,7 @@ def import_archives(
         ],
     )
     num_collections = int(response.headers["Total-Row-Count"])
-    echo(f"Found {num_collections} collections on Archive-It.")
+    print(f"Found {num_collections} collections on Archive-It.")
 
     # noinspection PyTypeChecker
     progress = tqdm(total=num_collections, desc="Import archives",

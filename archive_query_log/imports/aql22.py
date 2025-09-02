@@ -6,7 +6,6 @@ from typing import Iterable, Iterator, NamedTuple
 from urllib.parse import unquote
 from uuid import uuid5
 
-from click import echo
 from elasticsearch_dsl.query import Term
 from tqdm.auto import tqdm
 
@@ -92,7 +91,7 @@ def _import_captures_path(
         importable_path: _ImportablePath,
         check_memento: bool = True,
 ) -> None:
-    echo(f"Importing captures from {importable_path.path} to "
+    print(f"Importing captures from {importable_path.path} to "
          f"archive {importable_path.archive.id} and "
          f"provider {importable_path.provider.id}.")
 
@@ -101,7 +100,7 @@ def _import_captures_path(
         datetime.fromtimestamp(getmtime(path))
         for path in json_paths
     ).astimezone(UTC)
-    echo(f"Found {len(json_paths)} JSONL files "
+    print(f"Found {len(json_paths)} JSONL files "
          f"(oldest from {oldest_modification_time.strftime('%c')}).")
 
     urls_iterators_list = [ArchivedUrls(path) for path in json_paths]
@@ -114,7 +113,7 @@ def _import_captures_path(
             unit="file",
         )
     total_count = sum(len(urls) for urls in urls_iterators)
-    echo(f"Found {total_count} captures.")
+    print(f"Found {total_count} captures.")
 
     archived_urls: Iterable[ArchivedUrl] = chain.from_iterable(
         urls_iterators_list)
@@ -154,7 +153,7 @@ def import_captures(
         search_provider: str | None,
         search_provider_index: int | None,
 ) -> None:
-    echo(f"Importing AQL-22 captures from: {data_dir_path}")
+    print(f"Importing AQL-22 captures from: {data_dir_path}")
 
     archive_response = (
         Archive.search(using=config.es.client, index=config.es.index_archives)
@@ -164,17 +163,17 @@ def import_captures(
         .execute()
     )
     if archive_response.hits.total.value < 1:
-        echo("No AQL-22 archive found. Add an archive with the "
+        print("No AQL-22 archive found. Add an archive with the "
              "CDX API URL 'https://web.archive.org/cdx/search/cdx' "
              "first.")
         exit(1)
 
     archive: Archive = archive_response.hits[0]
-    echo(f"Importing captures for archive {archive.id}: {archive.name}")
+    print(f"Importing captures for archive {archive.id}: {archive.name}")
 
     archived_urls_path = data_dir_path / "archived-urls"
     if not archived_urls_path.exists():
-        echo("No captures found.")
+        print("No captures found.")
         return
 
     search_provider_paths = sorted(archived_urls_path.glob("*"))
@@ -186,7 +185,7 @@ def import_captures(
     elif search_provider_index is not None:
         search_provider_paths = [search_provider_paths[search_provider_index]]
     if len(search_provider_paths) == 0:
-        echo("No captures found.")
+        print("No captures found.")
         return
     prefix_paths_list: list[Path] = list(chain.from_iterable((
         search_provider_path.glob("*")

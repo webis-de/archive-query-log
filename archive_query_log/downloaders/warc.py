@@ -13,7 +13,6 @@ from typing import Iterable, Iterator, TypeVar, Generic, Type, Callable, Any
 from uuid import uuid5
 from warnings import warn
 
-from click import echo
 from elasticsearch_dsl import Document, Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
@@ -174,7 +173,7 @@ def download_serps_warc(config: Config, prefetch_limit: int | None = None) -> No
     num_changed_serps = changed_serps_search.count()
 
     if num_changed_serps <= 0:
-        echo("No new/changed SERPs.")
+        print("No new/changed SERPs.")
         return
 
     changed_serps: Iterable[Serp] = changed_serps_search.params(
@@ -489,7 +488,7 @@ def upload_serps_warc(config: Config) -> None:
 #     num_changed_results = changed_results_search.count()
 
 #     if num_changed_results <= 0:
-#         echo("No new/changed results.")
+#         print("No new/changed results.")
 #         return
 
 #     changed_results: Iterable[Result] = changed_results_search.scan()

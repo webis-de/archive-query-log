@@ -3,7 +3,6 @@ from typing import Iterable, Iterator
 from uuid import uuid5
 from warnings import warn
 
-from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Exists, Term
@@ -132,7 +131,7 @@ def _build_archive_sources(config: Config) -> None:
         num_changed_archives * num_all_providers
     ) + num_changed_archives
     if num_batches_archives > 0:
-        echo(f"Building sources for {num_changed_archives} " f"new/changed archives.")
+        print(f"Building sources for {num_changed_archives} " f"new/changed archives.")
         action_batches_archives: Iterable[list[dict]] = (
             _iter_sources_batches_changed_archives(
                 changed_archives_search=changed_archives_search,
@@ -150,7 +149,7 @@ def _build_archive_sources(config: Config) -> None:
         actions_archives = chain.from_iterable(action_batches_archives)
         config.es.bulk(actions_archives)
     else:
-        echo("No new/changed archives.")
+        print("No new/changed archives.")
 
 
 def _build_provider_sources(config: Config) -> None:
@@ -170,7 +169,7 @@ def _build_provider_sources(config: Config) -> None:
         num_changed_providers * num_all_archives
     ) + num_changed_providers
     if num_batches_providers > 0:
-        echo(f"Building sources for {num_changed_providers} " f"new/changed providers.")
+        print(f"Building sources for {num_changed_providers} " f"new/changed providers.")
         action_batches_providers: Iterable[list[dict]] = (
             _iter_sources_batches_changed_providers(
                 changed_providers_search=changed_providers_search,
@@ -188,7 +187,7 @@ def _build_provider_sources(config: Config) -> None:
         actions_providers = chain.from_iterable(action_batches_providers)
         config.es.bulk(actions_providers)
     else:
-        echo("No new/changed providers.")
+        print("No new/changed providers.")
 
 
 def build_sources(

@@ -3,7 +3,6 @@ from itertools import chain, islice
 from typing import Iterable, Iterator
 from uuid import uuid5
 
-from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
@@ -246,4 +245,4 @@ def parse_serps_url_query(config: Config, prefetch_limit: int | None = None) -> 
         )
         config.es.bulk(actions)
     else:
-        echo("No new/changed captures.")
+        print("No new/changed captures.")

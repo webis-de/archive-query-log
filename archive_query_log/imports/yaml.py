@@ -3,8 +3,6 @@ from typing import MutableMapping
 from typing import Sequence, Iterable
 from warnings import warn
 
-from click import echo
-from click import prompt
 from diskcache import Index
 from elasticsearch_dsl.query import Terms
 from tqdm.auto import tqdm
@@ -36,7 +34,7 @@ def _provider_name(
         if not review:
             return provider_names[main_domain]
         else:
-            provider_name_suggest = provider_names[main_domain]
+            provider_name_suggest = provider_names[main_domain].strip()
     else:
         try:
             main_domain_info = whois(main_domain)
@@ -63,14 +61,17 @@ def _provider_name(
                     main_org = main_org.removesuffix(f", {suffix}")
                     main_org = main_org.removesuffix(f" {suffix}.")
                     main_org = main_org.removesuffix(f" {suffix}")
-            provider_name_suggest = main_org
+                provider_name_suggest = main_org.strip()
+            else:
+                provider_name_suggest = None
         else:
             provider_name_suggest = None
-    provider_name = prompt(
-        f"Please enter search provider #{i} name (https://{main_domain})",
-        type=str, default=provider_name_suggest,
-        show_default=provider_name_suggest != " ")
-    if provider_name.strip() == "":
+    provider_name = input(
+        f"Please enter search provider #{i} name (https://{main_domain}) "
+    ).strip()
+    if provider_name == "" and provider_name_suggest is not None:
+        provider_name = provider_name_suggest
+    if provider_name == "":
         return None
     provider_names[main_domain] = provider_name
     return provider_name
@@ -84,10 +85,10 @@ def import_providers(
         no_merge: bool,
         auto_merge: bool,
 ) -> None:
-    echo("Load providers from services file.")
+    print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
-    echo(f"Found {len(services_list)} service definitions.")
+    print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
     provider_names: MutableMapping[str, str] = Index(str(cache_path))
@@ -137,10 +138,10 @@ def import_providers(
 
 
 def import_url_query_parsers(config: Config, services_path: Path) -> None:
-    echo("Load providers from services file.")
+    print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
-    echo(f"Found {len(services_list)} service definitions.")
+    print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
     # noinspection PyTypeChecker
@@ -199,10 +200,10 @@ def import_url_query_parsers(config: Config, services_path: Path) -> None:
 
 
 def import_url_page_parsers(config: Config, services_path: Path) -> None:
-    echo("Load providers from services file.")
+    print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
-    echo(f"Found {len(services_list)} service definitions.")
+    print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
     # noinspection PyTypeChecker
@@ -261,10 +262,10 @@ def import_url_page_parsers(config: Config, services_path: Path) -> None:
 
 
 def import_url_offset_parsers(config: Config, services_path: Path) -> None:
-    echo("Load providers from services file.")
+    print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
-    echo(f"Found {len(services_list)} service definitions.")
+    print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
     # noinspection PyTypeChecker
@@ -323,10 +324,10 @@ def import_url_offset_parsers(config: Config, services_path: Path) -> None:
 
 
 def import_warc_query_parsers(config: Config, services_path: Path) -> None:
-    echo("Load providers from services file.")
+    print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
-    echo(f"Found {len(services_list)} service definitions.")
+    print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
     # noinspection PyTypeChecker
@@ -397,10 +398,10 @@ def import_warc_query_parsers(config: Config, services_path: Path) -> None:
 
 
 def import_warc_snippets_parsers(config: Config, services_path: Path) -> None:
-    echo("Load providers from services file.")
+    print("Load providers from services file.")
     with services_path.open("r") as file:
         services_list: Sequence[dict] = safe_load(file)
-    echo(f"Found {len(services_list)} service definitions.")
+    print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
     # noinspection PyTypeChecker

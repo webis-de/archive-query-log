@@ -1,6 +1,5 @@
 from uuid import uuid4
 
-from click import echo, prompt
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import Terms
 from elasticsearch_dsl.response import Response
@@ -49,16 +48,13 @@ def add_provider(
             )
             if num_more_intersecting_domains > 0:
                 intersecting_domains_text += f" (+{num_more_intersecting_domains} more)"
-            echo(
+            print(
                 f"Provider {provider_id} already exists with "
                 f"conflicting domains: {intersecting_domains_text}"
             )
-            add_to_existing = prompt(
-                "Merge with existing provider? " "[y/N]",
-                type=str,
-                default="n",
-                show_default=False,
-            )
+            add_to_existing = input(
+                "Merge with existing provider? [y/N] ",
+            ).strip()
             should_merge = add_to_existing.lower() == "y"
         if not should_merge:
             return
@@ -86,11 +82,11 @@ def add_provider(
         url_path_prefixes = url_path_prefixes | existing_url_path_prefixes
 
         if not auto_merge:
-            echo(f"Update provider {provider_id}.")
+            print(f"Update provider {provider_id}.")
     else:
         provider_id = str(uuid4())
         if not no_merge and not auto_merge:
-            echo(f"Add new provider {provider_id}.")
+            print(f"Add new provider {provider_id}.")
 
     provider = Provider(
         id=provider_id,
