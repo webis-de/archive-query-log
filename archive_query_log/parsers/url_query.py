@@ -216,7 +216,7 @@ def _parse_serp_url_query_action(
 
 def parse_serps_url_query(
     config: Config,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
 ) -> None:
     config.es.client.indices.refresh(index=config.es.index_captures)
@@ -231,15 +231,7 @@ def parse_serps_url_query(
     )
     num_changed_captures = changed_captures_search.count()
     if num_changed_captures > 0:
-        changed_captures: Iterable[Capture] = changed_captures_search.params(
-            preserve_order=True
-        ).scan()
-        changed_captures = safe_iter_scan(changed_captures)
-
-        if prefetch_limit is not None:
-            num_changed_captures = min(num_changed_captures, prefetch_limit)
-            changed_captures = tqdm(changed_captures, total=num_changed_captures, desc="Pre-fetching captures", unit="capture")
-            changed_captures = iter(list(islice(changed_captures, prefetch_limit)))
+        changed_captures: Iterable[Capture] = changed_captures_search.params(size=size).execute()
 
         # noinspection PyTypeChecker
         changed_captures = tqdm(

@@ -16,14 +16,14 @@ serps.command(parse)
 @parse.command
 def url_query(
     *,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
     config: Config,
 ) -> None:
     """
     Parse the search query from a SERP's URL.
 
-    :param prefetch_limit: Parse SERP URLs for only a limited number of captures, and prefetch that batch to parse.
+    :param size: How many captures to parse.
     """
     from archive_query_log.parsers.url_query import parse_serps_url_query
 
@@ -33,7 +33,7 @@ def url_query(
     )
     parse_serps_url_query(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
         dry_run=dry_run,
     )
 
@@ -41,20 +41,20 @@ def url_query(
 @parse.command
 def url_page(
     *,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
     config: Config,
 ) -> None:
     """
     Parse the SERP's page index from a SERP's URL.
 
-    :param prefetch_limit: Parse only a limited number of SERPs, and prefetch that batch to parse.
+    :param size: How many SERPs to parse.
     """
     from archive_query_log.parsers.url_page import parse_serps_url_page
 
     parse_serps_url_page(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
         dry_run=dry_run,
     )
 
@@ -62,20 +62,20 @@ def url_page(
 @parse.command
 def url_offset(
     *,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
     config: Config,
 ) -> None:
     """
     Parse the SERP's pagination offset from a SERP's URL.
 
-    :param prefetch_limit: Parse SERP URLs for only a limited number of captures, and prefetch that batch to parse.
+    :param size: How many SERPs to parse.
     """
     from archive_query_log.parsers.url_offset import parse_serps_url_offset
 
     parse_serps_url_offset(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
         dry_run=dry_run,
     )
 
@@ -83,20 +83,20 @@ def url_offset(
 @parse.command
 def warc_query(
     *,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
     config: Config,
 ) -> None:
     """
     Parse the search query from a SERP's WARC file (e.g., HTML contents).
 
-    :param prefetch_limit: Parse only a limited number of SERPs, and prefetch that batch to parse.
+    :param size: How many SERPs to parse.
     """
     from archive_query_log.parsers.warc_query import parse_serps_warc_query
 
     parse_serps_warc_query(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
         dry_run=dry_run,
     )
 
@@ -104,14 +104,14 @@ def warc_query(
 @parse.command
 def warc_snippets(
     *,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
     config: Config,
 ) -> None:
     """
     Parse the web search result blocks from a SERP's WARC file (e.g., HTML contents).
 
-    :param prefetch_limit: Parse only a limited number of SERPs, and prefetch that batch to parse.
+    :param size: How many SERPs to parse.
     """
     from archive_query_log.parsers.warc_snippets import parse_serps_warc_snippets
 
@@ -121,7 +121,7 @@ def warc_snippets(
     )
     parse_serps_warc_snippets(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
         dry_run=dry_run,
     )
 
@@ -129,14 +129,14 @@ def warc_snippets(
 @parse.command
 def warc_direct_answers(
     *,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
     config: Config,
 ) -> None:
     """
     Parse the special contents result blocks from a SERP's WARC file (e.g., HTML contents).
 
-    :param prefetch_limit: Parse only a limited number of SERPs, and prefetch that batch to parse.
+    :param size: How many SERPs to parse.
     """
     from archive_query_log.parsers.warc_direct_answers import (
         parse_serps_warc_direct_answers,
@@ -144,7 +144,7 @@ def warc_direct_answers(
 
     parse_serps_warc_direct_answers(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
         dry_run=dry_run,
     )
 
@@ -160,19 +160,19 @@ serps.command(download)
 @download.command(name="warc")
 def download_warc(
     *,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     config: Config,
 ) -> None:
     """
     Download archived contents of SERP captures as WARC to a file cache.
 
-    :param prefetch_limit: Download only a limited number of SERPs, and prefetch that batch to parse.
+    :param size: How many SERPs to download.
     """
     from archive_query_log.downloaders.warc import download_serps_warc
 
     download_serps_warc(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
     )
 
 

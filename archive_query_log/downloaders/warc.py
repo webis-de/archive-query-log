@@ -157,7 +157,7 @@ def _download_serp_warc(
         yield _WrapperWarcRecord(record, serp)
 
 
-def download_serps_warc(config: Config, prefetch_limit: int | None = None) -> None:
+def download_serps_warc(config: Config, size: int = 10) -> None:
     changed_serps_search: Search = (
         Serp.search(using=config.es.client, index=config.es.index_serps)
         .filter(
@@ -176,16 +176,8 @@ def download_serps_warc(config: Config, prefetch_limit: int | None = None) -> No
         print("No new/changed SERPs.")
         return
 
-    changed_serps: Iterable[Serp] = changed_serps_search.params(
-        preserve_order=True
-    ).scan()
-    changed_serps = safe_iter_scan(changed_serps)
+    changed_serps: Iterable[Serp] = changed_serps_search.params(size=size).execute()
 
-    if prefetch_limit is not None:
-        num_changed_serps = min(num_changed_serps, prefetch_limit)
-        changed_serps = tqdm(changed_serps, total=num_changed_serps, desc="Pre-fetching SERPs", unit="SERP")
-        changed_serps = iter(list(islice(changed_serps, prefetch_limit)))
-        
     # noinspection PyTypeChecker
     changed_serps = tqdm(
         changed_serps, total=num_changed_serps, desc="Downloading WARCs", unit="SERP"
@@ -491,13 +483,7 @@ def upload_serps_warc(config: Config) -> None:
 #         print("No new/changed results.")
 #         return
 
-#     changed_results: Iterable[Result] = changed_results_search.scan()
-#     changed_results = safe_iter_scan(changed_results)
-#
-#     if prefetch_limit is not None:
-#         num_changed_results = min(num_changed_results, prefetch_limit)
-#         changed_results = tqdm(changed_results, total=num_changed_results, desc="Pre-fetching results", unit="result")
-#         changed_results = iter(list(islice(changed_results, prefetch_limit)))
+#     changed_results: Iterable[Result] = changed_results_search.params(size=size).execute()
 #
 #     # noinspection PyTypeChecker
 #     changed_results = tqdm(

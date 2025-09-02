@@ -18,14 +18,14 @@ captures = App(
 @captures.command
 def fetch(
     *,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
     config: Config,
 ) -> None:
     """
     Fetch captures from web archives.
 
-    :param prefetch_limit: Fetch captures for only a limited number of sources, and prefetch that batch to fetch from.
+    :param size: How many captures to fetch.
     """
 
     from archive_query_log.captures import fetch_captures
@@ -36,7 +36,7 @@ def fetch(
     )
     fetch_captures(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
         dry_run=dry_run,
     )
 

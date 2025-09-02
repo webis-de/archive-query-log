@@ -137,7 +137,7 @@ def _add_captures_actions(
 
 def fetch_captures(
     config: Config,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
 ) -> None:
     changed_sources_search: Search = (
@@ -162,17 +162,7 @@ def fetch_captures(
     if num_changed_sources > 0:
         print(f"Fetching captures for {num_changed_sources} "
              f"new/changed sources.")
-        changed_sources: Iterable[Source] = (
-            changed_sources_search
-            .params(preserve_order=True)
-            .scan()
-        )
-        changed_sources = safe_iter_scan(changed_sources)
-
-        if prefetch_limit is not None:
-            num_changed_sources = min(num_changed_sources, prefetch_limit)
-            changed_sources = tqdm(changed_sources, total=num_changed_sources, desc="Pre-fetching sources", unit="source")
-            changed_sources = iter(list(islice(changed_sources, prefetch_limit)))
+        changed_sources: Iterable[Source] = changed_sources_search.params(size=size).execute()
 
         # noinspection PyTypeChecker
         changed_sources = tqdm(changed_sources, total=num_changed_sources,

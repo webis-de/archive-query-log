@@ -174,7 +174,7 @@ def _parse_serp_warc_query_action(
 
 def parse_serps_warc_query(
     config: Config,
-    prefetch_limit: int | None = None,
+    size: int = 10,
     dry_run: bool = False,
 ) -> None:
     config.es.client.indices.refresh(index=config.es.index_serps)
@@ -191,15 +191,7 @@ def parse_serps_warc_query(
     )
     num_changed_serps = changed_serps_search.count()
     if num_changed_serps > 0:
-        changed_serps: Iterable[Serp] = changed_serps_search.params(
-            preserve_order=True
-        ).scan()
-        changed_serps = safe_iter_scan(changed_serps)
-
-        if prefetch_limit is not None:
-            num_changed_serps = min(num_changed_serps, prefetch_limit)
-            changed_serps = tqdm(changed_serps, total=num_changed_serps, desc="Pre-fetching SERPs", unit="SERP")
-            changed_serps = iter(list(islice(changed_serps, prefetch_limit)))
+        changed_serps: Iterable[Serp] = changed_serps_search.params(size=size).execute()
 
         # noinspection PyTypeChecker
         changed_serps = tqdm(
