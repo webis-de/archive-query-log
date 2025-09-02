@@ -1,11 +1,11 @@
-from pydantic.dataclasses import dataclass
 from functools import cached_property
 from pathlib import Path
-from typing import Iterable, Any, Annotated
+from typing import Iterable, Any, Annotated, Type
 
 from cyclopts import Parameter
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import streaming_bulk
+from pydantic import BaseModel, Field, ConfigDict
 from pyrate_limiter import Limiter, RequestRate, Duration
 from requests import Session
 from requests_ratelimiter import LimiterAdapter
@@ -18,11 +18,12 @@ from archive_query_log import __version__ as version
 
 @Parameter(
     name="es",
-    # show=False,
+    show=False,
     help="Elasticsearch configuration.",
 )
-@dataclass(frozen=True)
-class EsConfig:
+class EsConfig(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
     host: Annotated[str, Parameter(env_var="ELASTICSEARCH_HOST")]
     port: Annotated[int, Parameter(env_var="ELASTICSEARCH_PORT")]
     username: Annotated[str, Parameter(env_var="ELASTICSEARCH_USERNAME")]
@@ -98,8 +99,9 @@ class EsConfig:
     # show=False,
     help="S3 storage configuration.",
 )
-@dataclass(frozen=True)
-class S3Config:
+class S3Config(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
     endpoint_url: Annotated[str, Parameter(env_var="S3_ENDPOINT_URL")]
     access_key: Annotated[str, Parameter(env_var="S3_ACCESS_KEY")]
     secret_key: Annotated[str, Parameter(env_var="S3_SECRET_KEY")]
@@ -122,8 +124,9 @@ class S3Config:
     # show=False,
     help="HTTP client configuration.",
 )
-@dataclass(frozen=True)
-class HttpConfig:
+class HttpConfig(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
     max_retries: int = 5
 
     @cached_property
@@ -182,8 +185,9 @@ class HttpConfig:
     # show=False,
     help="WARC cache configuration.",
 )
-@dataclass(frozen=True)
-class WarcCacheConfig:
+class WarcCacheConfig(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
     path_serps: Annotated[Path, Parameter(env_var="WARC_CACHE_PATH_SERPS")]
     # path_results: Annotated[Path, Parameter(env_var="WARC_CACHE_PATH_RESULTS")]
 
@@ -208,10 +212,18 @@ class WarcCacheConfig:
     #     )
 
 
+def _nested_parameter(cls: Type[BaseModel]) -> Any:
+    """
+    Hack to avoid missing argument warnings for the top-level config parameters that delegate to nested config classes.
+    """
+    return Field(default_factory=lambda: cls.model_validate({}))
+
+
 @Parameter(name="*")
-@dataclass(frozen=True)
-class Config:
-    es: EsConfig
-    s3: S3Config
-    http: HttpConfig
-    warc_cache: WarcCacheConfig
+class Config(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
+    es: Annotated[EsConfig, _nested_parameter(EsConfig)]
+    s3: Annotated[S3Config, _nested_parameter(S3Config)]
+    http: Annotated[HttpConfig, _nested_parameter(HttpConfig)]
+    warc_cache: Annotated[WarcCacheConfig, _nested_parameter(WarcCacheConfig)]
