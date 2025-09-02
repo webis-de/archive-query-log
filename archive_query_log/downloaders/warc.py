@@ -36,7 +36,6 @@ from archive_query_log.orm import Serp, InnerDownloader, WarcLocation
 from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
-_T = TypeVar("_T", bound=Document)
 
 
 _PATTERN_ISO_FORMAT = re_compile(
@@ -76,11 +75,12 @@ class _JsonDecoder(JSONDecoder):
 
 _JSON_DECODER = _JsonDecoder()
 
+_D = TypeVar("_D", bound=Document)
 
-class _WrapperWarcRecord(WarcRecord, Generic[_T]):
-    _wrapped_type: Type[_T]
+class _WrapperWarcRecord(WarcRecord, Generic[_D]):
+    _wrapped_type: Type[_D]
 
-    def __init__(self, record: WarcRecord, wrapped: _T | Type[_T]) -> None:
+    def __init__(self, record: WarcRecord, wrapped: _D | Type[_D]) -> None:
         super().__init__(
             record.format,
             record.rec_type,
@@ -101,10 +101,13 @@ class _WrapperWarcRecord(WarcRecord, Generic[_T]):
             )
 
     @property
-    def wrapped(self) -> _T:
+    def wrapped(self) -> _D:
         data = _JSON_DECODER.decode(self.rec_headers["WARC-Wrapped"])
         wrapped = self._wrapped_type.from_es(data)
         return wrapped
+
+
+_T = TypeVar("_T")
 
 
 class _AnnotatedWarcRecord(WarcRecord, Generic[_T]):
@@ -197,9 +200,6 @@ def download_serps_warc(config: Config, size: int = 10) -> None:
         pass
 
 
-_R = TypeVar("_R", bound=WarcRecord)
-
-
 @dataclass(frozen=True)
 class _WithClearCallback(Generic[_T]):
     payload: _T
@@ -247,8 +247,8 @@ def _iter_cached_records(
 
 def _iter_wrapped_records(
     records: Iterable[_WithClearCallback[WarcRecord]],
-    wrapped_type: Type[_T],
-) -> Iterator[_WithClearCallback[_WrapperWarcRecord[_T]]]:
+    wrapped_type: Type[_D],
+) -> Iterator[_WithClearCallback[_WrapperWarcRecord[_D]]]:
     """
     Interpret the WARC records as wrapped records with a payload of a specific document type in its WARC-Wrapped header.
     For example, a WARC record might contain a SERP document in its WARC-Wrapped header, which we later use to update the corresponding SERP on Elasticsearch.
@@ -265,8 +265,8 @@ def _iter_wrapped_records(
 
 
 def _iter_annotated_records(
-    records: Iterable[_WithClearCallback[_WrapperWarcRecord[_T]]],
-) -> Iterator[_AnnotatedWarcRecord[_WithClearCallback[_T]]]:
+    records: Iterable[_WithClearCallback[_WrapperWarcRecord[_D]]],
+) -> Iterator[_AnnotatedWarcRecord[_WithClearCallback[_D]]]:
     """
     Convert the wrapped records (with a visible WARC header) to "annotated" records (where the payload is opaque to the actual WARC record).
     This is useful for storing the records in S3, where the WARC-Wrapped header should be removed. But still, we need to keep track of the payload for later use.
@@ -286,10 +286,10 @@ def _iter_annotated_records(
 
 
 def _iter_s3_stored_records(
-    records: Iterable[_AnnotatedWarcRecord[_WithClearCallback[_T]]],
+    records: Iterable[_AnnotatedWarcRecord[_WithClearCallback[_D]]],
     warc_store: WarcS3Store,
-    document_type: Type[_T],
-) -> Iterator[tuple[_T, WarcLocation]]:
+    document_type: Type[_D],
+) -> Iterator[tuple[_D, WarcLocation]]:
     """
     Store the annotated records in S3 and yield the stored documents with their corresponding locations on S3.
     """
