@@ -29,12 +29,6 @@ def safe_iter_scan(it: Iterable[DocumentType]) -> Iterator[DocumentType]:
             raise e
 
 
-def _to_dict_if_needed(value: Any) -> Any:
-    if isinstance(value, InnerDoc):
-        return value.to_dict()
-    return value
-
-
 def update_action(
         document: Document,
         retry_on_conflict: int | None = 3,

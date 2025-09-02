@@ -49,10 +49,10 @@ _PATTERN_WHITESPACE = re_compile(
 
 
 class _JsonEncoder(JSONEncoder):
-    def default(self, object: Any) -> str | Any:
-        if isinstance(object, datetime):
-            return object.isoformat()
-        return super().default(object)
+    def default(self, o: Any) -> str | Any:
+        if isinstance(o, datetime):
+            return o.isoformat()
+        return super().default(o)
 
 
 _JSON_ENCODER = _JsonEncoder()
@@ -68,8 +68,8 @@ class _JsonDecoder(JSONDecoder):
             return {key: self._decode_isoformat(value) for key, value in object.items()}
         return object
 
-    def decode(self, string: str, _w=_PATTERN_WHITESPACE.match) -> Any:
-        obj = super().decode(string, _w)
+    def decode(self, s: str, _w=_PATTERN_WHITESPACE.match) -> Any:
+        obj = super().decode(s, _w)
         obj = self._decode_isoformat(obj)
         return obj
 
