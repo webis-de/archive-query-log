@@ -8,26 +8,25 @@ from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 from lxml.etree import _Element, tostring  # nosec: B410
-from pydantic import HttpUrl
+from pydantic import BaseModel, HttpUrl
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import (
-    NAMESPACE_WARC_SNIPPETS_PARSER,
-    NAMESPACE_RESULT,
+    NAMESPACE_WARC_WEB_SEARCH_RESULT_BLOCKS_PARSER,
+    NAMESPACE_WEB_SEARCH_RESULT_BLOCK,
 )
 from archive_query_log.orm import (
     Serp,
     InnerParser,
     InnerProviderId,
-    WarcSnippetsParserType,
-    WarcSnippetsParser,
+    WarcWebSearchResultBlocksParserType,
+    WarcWebSearchResultBlocksParser,
     WarcLocation,
-    Snippet,
-    Result,
+    WebSearchResultBlock,
     InnerSerp,
-    SnippetId,
+    WebSearchResultBlockId,
     InnerDownloader,
 )
 from archive_query_log.parsers.warc import open_warc
@@ -35,12 +34,12 @@ from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
 
 
-def add_warc_snippets_parser(
+def add_warc_web_search_result_blocks_parser(
     config: Config,
     provider_id: str | None,
     url_pattern_regex: str | None,
     priority: float | None,
-    parser_type: WarcSnippetsParserType,
+    parser_type: WarcWebSearchResultBlocksParserType,
     xpath: str | None,
     url_xpath: str | None,
     title_xpath: str | None,
@@ -60,10 +59,10 @@ def add_warc_snippets_parser(
         str(priority) if priority is not None else "",
     )
     parser_id = uuid5(
-        NAMESPACE_WARC_SNIPPETS_PARSER,
+        NAMESPACE_WARC_WEB_SEARCH_RESULT_BLOCKS_PARSER,
         ":".join(parser_id_components),
     )
-    parser = WarcSnippetsParser(
+    parser = WarcWebSearchResultBlocksParser(
         id=parser_id,
         last_modified=utc_now(),
         provider=InnerProviderId(id=provider_id) if provider_id else None,
@@ -76,25 +75,37 @@ def add_warc_snippets_parser(
         text_xpath=text_xpath,
     )
     if not dry_run:
-        parser.save(using=config.es.client, index=config.es.index_warc_snippets_parsers)
+        parser.save(
+            using=config.es.client,
+            index=config.es.index_warc_web_search_result_blocks_parsers,
+        )
     else:
         print(parser)
 
 
-def _parse_warc_snippets(
-    parser: WarcSnippetsParser,
+class WebSearchResultBlockData(BaseModel):
+    id: UUID
+    rank: int
+    content: str
+    url: HttpUrl | None = None
+    title: str | None = None
+    text: str | None = None
+
+
+def _parse_warc_web_search_result_blocks(
+    parser: WarcWebSearchResultBlocksParser,
     serp_id: UUID,
     capture_url: HttpUrl,
     warc_store: WarcS3Store,
     warc_location: WarcLocation,
-) -> list[Snippet] | None:
+) -> list[WebSearchResultBlockData] | None:
     # Check if URL matches pattern.
     if parser.url_pattern is not None and not parser.url_pattern.match(
         str(capture_url)
     ):
         return None
 
-    # Parse snippets.
+    # Parse web search result blocks.
     if parser.parser_type == "xpath":
         if parser.xpath is None:
             raise ValueError("No XPath given.")
@@ -107,7 +118,7 @@ def _parse_warc_snippets(
         if len(elements) == 0:
             return None
 
-        snippets = []
+        web_search_result_blocks = []
         element: _Element
         for i, element in enumerate(elements):
             url: str | None = None
@@ -134,41 +145,40 @@ def _parse_warc_snippets(
                 pretty_print=False,
                 with_tail=True,
             )
-            snippet_id_components = (
+            web_search_result_block_id_components = (
                 str(serp_id),
                 str(parser.id),
                 str(hash(content)),
                 str(i),
             )
-            snippet_id = str(
-                uuid5(
-                    NAMESPACE_RESULT,
-                    ":".join(snippet_id_components),
-                )
+            web_search_result_block_id = uuid5(
+                NAMESPACE_WEB_SEARCH_RESULT_BLOCK,
+                ":".join(web_search_result_block_id_components),
             )
-            snippets.append(
-                Snippet(
-                    id=snippet_id,
+            web_search_result_blocks.append(
+                WebSearchResultBlockData(
+                    id=web_search_result_block_id,
                     rank=i,
                     content=content,
-                    url=url,
+                    url=HttpUrl(url) if url is not None else None,
                     title=title,
                     text=text,
                 )
             )
-        return snippets
+        return web_search_result_blocks
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
 
 
 @cache
-def _warc_snippets_parsers(
+def _warc_web_search_result_blocks_parsers(
     config: Config,
     provider_id: str,
-) -> list[WarcSnippetsParser]:
-    parsers: Iterable[WarcSnippetsParser] = (
-        WarcSnippetsParser.search(
-            using=config.es.client, index=config.es.index_warc_snippets_parsers
+) -> list[WarcWebSearchResultBlocksParser]:
+    parsers: Iterable[WarcWebSearchResultBlocksParser] = (
+        WarcWebSearchResultBlocksParser.search(
+            using=config.es.client,
+            index=config.es.index_warc_web_search_result_blocks_parsers,
         )
         .filter(~Exists(field="provider.id") | Term(provider__id=provider_id))
         .query(RankFeature(field="priority", saturation={}))
@@ -177,7 +187,7 @@ def _warc_snippets_parsers(
     return list(parsers)
 
 
-def _parse_serp_warc_snippets_action(
+def _parse_serp_warc_web_search_result_blocks_action(
     config: Config,
     serp: Serp,
 ) -> Iterator[dict]:
@@ -192,27 +202,27 @@ def _parse_serp_warc_snippets_action(
 
     # Re-check if parsing is necessary.
     if (
-        serp.warc_snippets_parser is not None
-        and serp.warc_snippets_parser.should_parse is not None
-        and not serp.warc_snippets_parser.should_parse
+        serp.warc_web_search_result_blocks_parser is not None
+        and serp.warc_web_search_result_blocks_parser.should_parse is not None
+        and not serp.warc_web_search_result_blocks_parser.should_parse
     ):
         return
 
-    for parser in _warc_snippets_parsers(config, serp.provider.id):
-        # Try to parse the snippets.
-        warc_snippets = _parse_warc_snippets(
+    for parser in _warc_web_search_result_blocks_parsers(config, serp.provider.id):
+        # Try to parse the web search result blocks.
+        warc_web_search_result_blocks = _parse_warc_web_search_result_blocks(
             parser=parser,
             serp_id=serp.id,
             capture_url=serp.capture.url,
             warc_store=config.s3.warc_store,
             warc_location=serp.warc_location,
         )
-        if warc_snippets is None:
+        if warc_web_search_result_blocks is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
-        for snippet in warc_snippets:
-            result = Result(
-                id=snippet.id,
+        for web_search_result_block in warc_web_search_result_blocks:
+            web_search_result_block = WebSearchResultBlock(
+                id=web_search_result_block.id,
                 last_modified=utc_now(),
                 archive=serp.archive,
                 provider=serp.provider,
@@ -220,8 +230,12 @@ def _parse_serp_warc_snippets_action(
                 serp=InnerSerp(
                     id=serp.id,
                 ),
-                snippet=snippet,
-                snippet_parser=InnerParser(
+                rank=web_search_result_block.rank,
+                content=web_search_result_block.content,
+                url=web_search_result_block.url,
+                title=web_search_result_block.title,
+                text=web_search_result_block.text,
+                parser=InnerParser(
                     id=parser.id,
                     should_parse=False,
                     last_parsed=utc_now(),
@@ -233,17 +247,19 @@ def _parse_serp_warc_snippets_action(
                     should_download=True,
                 ),
             )
-            result.meta.index = config.es.index_results
-            yield result.to_dict(include_meta=True)
+            web_search_result_block.meta.index = (
+                config.es.index_web_search_result_blocks
+            )
+            yield web_search_result_block.to_dict(include_meta=True)
         yield serp.update_action(
-            warc_snippets=[
-                SnippetId(
-                    id=snippet.id,
-                    rank=snippet.rank,
+            warc_web_search_result_blocks=[
+                WebSearchResultBlockId(
+                    id=web_search_result_block.id,
+                    rank=web_search_result_block.rank,
                 )
-                for snippet in warc_snippets
+                for web_search_result_block in warc_web_search_result_blocks
             ],
-            warc_snippets_parser=InnerParser(
+            warc_web_search_result_blocks_parser=InnerParser(
                 id=parser.id,
                 should_parse=False,
                 last_parsed=utc_now(),
@@ -251,7 +267,7 @@ def _parse_serp_warc_snippets_action(
         )
         return
     yield serp.update_action(
-        warc_snippets_parser=InnerParser(
+        warc_web_search_result_blocks_parser=InnerParser(
             should_parse=False,
             last_parsed=utc_now(),
         ),
@@ -259,7 +275,7 @@ def _parse_serp_warc_snippets_action(
     return
 
 
-def parse_serps_warc_snippets(
+def parse_serps_warc_web_search_result_blocks(
     config: Config,
     size: int = 10,
     dry_run: bool = False,
@@ -269,7 +285,7 @@ def parse_serps_warc_snippets(
         Serp.search(using=config.es.client, index=config.es.index_serps)
         .filter(
             Exists(field="warc_location")
-            & ~Term(warc_snippets_parser__should_parse=False)
+            & ~Term(warc_web_search_result_blocks_parser__should_parse=False)
         )
         .query(
             RankFeature(field="archive.priority", saturation={})
@@ -285,11 +301,12 @@ def parse_serps_warc_snippets(
         changed_serps = tqdm(
             changed_serps,
             total=num_changed_serps,
-            desc="Parsing WARC snippets",
+            desc="Parsing WARC web search result blocks",
             unit="SERP",
         )
         actions = chain.from_iterable(
-            _parse_serp_warc_snippets_action(config, serp) for serp in changed_serps
+            _parse_serp_warc_web_search_result_blocks_action(config, serp)
+            for serp in changed_serps
         )
         config.es.bulk(
             actions=actions,
