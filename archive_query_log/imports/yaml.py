@@ -16,7 +16,7 @@ from archive_query_log.parsers.url_offset import add_url_offset_parser
 from archive_query_log.parsers.url_page import add_url_page_parser
 from archive_query_log.parsers.url_query import add_url_query_parser
 from archive_query_log.parsers.warc_query import add_warc_query_parser
-from archive_query_log.parsers.warc_snippets import add_warc_snippets_parser
+from archive_query_log.parsers.warc_web_search_result_blocks import add_warc_web_search_result_blocks_parser
 from archive_query_log.parsers.xml import xpaths_from_css_selector, \
     text_xpath, merge_xpaths
 from archive_query_log.providers import add_provider
@@ -418,7 +418,7 @@ def import_warc_query_parsers(
                 )
 
 
-def import_warc_snippets_parsers(
+def import_warc_web_search_result_blocks_parsers(
     config: Config,
     services_path: Path,
     dry_run: bool = False,
@@ -494,7 +494,7 @@ def import_warc_snippets_parsers(
                 else:
                     snippet_xpath = None
 
-                add_warc_snippets_parser(
+                add_warc_web_search_result_blocks_parser(
                     config=config,
                     provider_id=provider.meta.id,
                     url_pattern_regex=results_parser.get("url_pattern"),

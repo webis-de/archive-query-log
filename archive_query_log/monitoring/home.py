@@ -16,12 +16,14 @@ from archive_query_log.orm import (
     Capture,
     BaseDocument,
     Serp,
-    Result,
+    WebSearchResultBlock,
+    SpecialContentsResultBlock,
     UrlQueryParser,
     UrlPageParser,
     UrlOffsetParser,
     WarcQueryParser,
-    WarcSnippetsParser,
+    WarcWebSearchResultBlocksParser,
+    WarcSpecialContentsResultBlocksParser,
 )
 from archive_query_log.utils.time import utc_now
 
@@ -90,10 +92,12 @@ def _get_statistics(
     search = search.filter(Exists(field=last_modified_field))
     if filter_field is not None:
         if "." in filter_field:
-            search = search.filter(Nested(
-                path=filter_field.split(".")[0],
-                query=Exists(field=filter_field),
-            ))
+            search = search.filter(
+                Nested(
+                    path=filter_field.split(".")[0],
+                    query=Exists(field=filter_field),
+                )
+            )
         else:
             search = search.filter(Exists(field=filter_field))
     if status_field is not None:
@@ -315,8 +319,7 @@ def home(config: Config) -> str | Response:
         _get_statistics(
             config=config,
             name="SERPs",
-            description="Search engine result pages "
-            "identified among the captures.",
+            description="Search engine result pages identified among the captures.",
             document=Serp,
             index=config.es.index_serps,
         ),
@@ -369,13 +372,23 @@ def home(config: Config) -> str | Response:
         ),
         _get_statistics(
             config=config,
-            name="+ WARC snippets",
-            description="SERPs for which the snippets have been parsed from the WARC.",
+            name="+ WARC web search result blocks",
+            description="SERPs for which the web search result blocks have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_field="warc_snippets.id",
-            status_field="warc_snippets_parser.should_parse",
-            last_modified_field="warc_snippets_parser.last_parsed",
+            filter_field="warc_web_search_result_blocks.id",
+            status_field="warc_web_search_result_blocks_parser.should_parse",
+            last_modified_field="warc_web_search_result_blocks_parser.last_parsed",
+        ),
+        _get_statistics(
+            config=config,
+            name="+ WARC special contents result blocks",
+            description="SERPs for which the special contents result blocks have been parsed from the WARC.",
+            document=Serp,
+            index=config.es.index_serps,
+            filter_field="warc_special_contents_result_blocks.id",
+            status_field="warc_special_contents_result_blocks_parser.should_parse",
+            last_modified_field="warc_special_contents_result_blocks_parser.last_parsed",
         ),
         _get_warc_cache_statistics(
             name="→ WARC cache (in progress)",
@@ -397,21 +410,28 @@ def home(config: Config) -> str | Response:
         ),
         _get_statistics(
             config=config,
-            name="Results",
-            description="Search results from the SERPs.",
-            document=Result,
-            index=config.es.index_results,
+            name="Web search result blocks",
+            description="Web search result blocks from the SERPs.",
+            document=WebSearchResultBlock,
+            index=config.es.index_web_search_result_blocks,
         ),
-        # _get_statistics(
-        #     config=config,
-        #     name="+ WARC",
-        #     description="Search results for which the WARC has been downloaded.",
-        #     document=Result,
-        #     index=config.es.index_results,
-        #     filter_field="warc_location",
-        #     status_field="warc_downloader.should_download",
-        #     last_modified_field="warc_downloader.last_downloaded",
-        # ),
+        _get_statistics(
+            config=config,
+            name="Special contents result blocks",
+            description="Special contents result blocks from the SERPs.",
+            document=SpecialContentsResultBlock,
+            index=config.es.index_special_contents_result_blocks,
+        ),
+        _get_statistics(
+            config=config,
+            name="+ WARC",
+            description="Web search result blocks for which the WARC has been downloaded.",
+            document=WebSearchResultBlock,
+            index=config.es.index_web_search_result_blocks,
+            filter_field="warc_location",
+            status_field="warc_downloader.should_download",
+            last_modified_field="warc_downloader.last_downloaded",
+        ),
         _get_statistics(
             config=config,
             name="URL query parsers",
@@ -442,10 +462,17 @@ def home(config: Config) -> str | Response:
         ),
         _get_statistics(
             config=config,
-            name="WARC snippets parsers",
-            description="Parser to get the snippets from a SERP's WARC contents.",
-            document=WarcSnippetsParser,
-            index=config.es.index_warc_snippets_parsers,
+            name="WARC web search result blocks parsers",
+            description="Parser to get the web search result blocks from a SERP's WARC contents.",
+            document=WarcWebSearchResultBlocksParser,
+            index=config.es.index_warc_web_search_result_blocks_parsers,
+        ),
+        _get_statistics(
+            config=config,
+            name="WARC special contents result blocks parsers",
+            description="Parser to get the special contents result blocks from a SERP's WARC contents.",
+            document=WarcSpecialContentsResultBlocksParser,
+            index=config.es.index_warc_special_contents_result_blocks_parsers,
         ),
     ]
 
@@ -518,9 +545,7 @@ def home(config: Config) -> str | Response:
             description="Download WARCs.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=(
-                Term(capture__status_code=200)
-            ),
+            filter_query=(Term(capture__status_code=200)),
             status_field="warc_downloader.should_download",
         ),
         _get_processed_progress(
@@ -537,22 +562,32 @@ def home(config: Config) -> str | Response:
             config=config,
             input_name="SERPs",
             output_name="SERPs",
-            description="Parse snippets from WARC contents.",
+            description="Parse web search result blocks from WARC contents.",
             document=Serp,
             index=config.es.index_serps,
             filter_query=Exists(field="warc_location"),
-            status_field="warc_snippets_parser.should_parse",
+            status_field="warc_web_search_result_blocks_parser.should_parse",
         ),
-        # _get_processed_progress(
-        #     config=config,
-        #     input_name="Results",
-        #     output_name="Results",
-        #     description="Download WARCs.",
-        #     document=Result,
-        #     index=config.es.index_results,
-        #     filter_query=Exists(field="snippet.url"),
-        #     status_field="warc_downloader.should_download",
-        # ),
+        _get_processed_progress(
+            config=config,
+            input_name="SERPs",
+            output_name="SERPs",
+            description="Parse special contents result blocks from WARC contents.",
+            document=Serp,
+            index=config.es.index_serps,
+            filter_query=Exists(field="warc_location"),
+            status_field="warc_special_contents_result_blocks_parser.should_parse",
+        ),
+        _get_processed_progress(
+            config=config,
+            input_name="Web search result blocks",
+            output_name="Web search result blocks",
+            description="Download WARCs.",
+            document=WebSearchResultBlock,
+            index=config.es.index_web_search_result_blocks,
+            filter_query=Exists(field="url"),
+            status_field="warc_downloader.should_download",
+        ),
     ]
 
     etag = str(
