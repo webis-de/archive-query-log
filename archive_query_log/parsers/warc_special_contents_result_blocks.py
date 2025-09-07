@@ -8,39 +8,37 @@ from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 from lxml.etree import _Element, tostring  # nosec: B410
-from pydantic import HttpUrl
+from pydantic import BaseModel, HttpUrl
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import (
-    NAMESPACE_WARC_DIRECT_ANSWERS_PARSER,
-    NAMESPACE_RESULT,
+    NAMESPACE_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSER,
+    NAMESPACE_SPECIAL_CONTENTS_RESULT_BLOCK,
 )
 from archive_query_log.orm import (
     Serp,
     InnerParser,
     InnerProviderId,
-    WarcDirectAnswersParserType,
-    WarcDirectAnswersParser,
+    WarcSpecialContentsResultBlocksParserType,
+    WarcSpecialContentsResultBlocksParser,
     WarcLocation,
-    DirectAnswer,
-    Result,
+    SpecialContentsResultBlock,
     InnerSerp,
     DirectAnswerId,
-    InnerDownloader,
 )
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
 
 
-def add_warc_direct_answers_parser(
+def add_warc_special_contents_result_blocks_parser(
     config: Config,
     provider_id: str | None,
     url_pattern_regex: str | None,
     priority: float | None,
-    parser_type: WarcDirectAnswersParserType,
+    parser_type: WarcSpecialContentsResultBlocksParserType,
     xpath: str | None,
     url_xpath: str | None,
     text_xpath: str | None,
@@ -59,10 +57,10 @@ def add_warc_direct_answers_parser(
         str(priority) if priority is not None else "",
     )
     parser_id = uuid5(
-        NAMESPACE_WARC_DIRECT_ANSWERS_PARSER,
+        NAMESPACE_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSER,
         ":".join(parser_id_components),
     )
-    parser = WarcDirectAnswersParser(
+    parser = WarcSpecialContentsResultBlocksParser(
         id=parser_id,
         last_modified=utc_now(),
         provider=InnerProviderId(id=provider_id) if provider_id else None,
@@ -75,26 +73,35 @@ def add_warc_direct_answers_parser(
     )
     if not dry_run:
         parser.save(
-            using=config.es.client, index=config.es.index_warc_direct_answers_parsers
+            using=config.es.client,
+            index=config.es.index_warc_special_contents_result_blocks_parsers,
         )
     else:
         print(parser)
 
 
-def _parse_warc_direct_answers(
-    parser: WarcDirectAnswersParser,
+class SpecialContentsResultBlockData(BaseModel):
+    id: UUID
+    rank: int
+    content: str
+    url: HttpUrl | None = None
+    text: str | None = None
+
+
+def _parse_warc_special_contents_result_blocks(
+    parser: WarcSpecialContentsResultBlocksParser,
     serp_id: UUID,
     capture_url: HttpUrl,
     warc_store: WarcS3Store,
     warc_location: WarcLocation,
-) -> list[DirectAnswer] | None:
+) -> list[SpecialContentsResultBlockData] | None:
     # Check if URL matches pattern.
     if parser.url_pattern is not None and not parser.url_pattern.match(
         str(capture_url)
     ):
         return None
 
-    # Parse direct answers.
+    # Parse special contents result blocks.
     if parser.parser_type == "xpath":
         if parser.xpath is None:
             raise ValueError("No XPath given.")
@@ -107,7 +114,7 @@ def _parse_warc_direct_answers(
         if len(elements) == 0:
             return None
 
-        direct_answers = []
+        special_contents_result_blocks = []
         element: _Element
         for i, element in enumerate(elements):
             url: str | None = None
@@ -129,39 +136,39 @@ def _parse_warc_direct_answers(
                 pretty_print=False,
                 with_tail=True,
             )
-            direct_answer_id_components = (
+            special_contents_result_block_id_components = (
                 str(serp_id),
                 str(parser.id),
                 str(hash(content)),
                 str(i),
             )
-            direct_answer_id = str(
-                uuid5(
-                    NAMESPACE_RESULT,
-                    ":".join(direct_answer_id_components),
-                )
+            special_contents_result_block_id = uuid5(
+                NAMESPACE_SPECIAL_CONTENTS_RESULT_BLOCK,
+                ":".join(special_contents_result_block_id_components),
             )
-            direct_answers.append(
-                DirectAnswer(
-                    id=direct_answer_id,
+            special_contents_result_blocks.append(
+                SpecialContentsResultBlockData(
+                    id=special_contents_result_block_id,
+                    rank=i,
                     content=content,
-                    url=url,
+                    url=HttpUrl(url) if url is not None else None,
                     text=text,
                 )
             )
-        return direct_answers
+        return special_contents_result_blocks
     else:
         raise ValueError(f"Unknown parser type: {parser.parser_type}")
 
 
 @cache
-def _warc_direct_answers_parsers(
+def _warc_special_contents_result_blocks_parsers(
     config: Config,
     provider_id: str,
-) -> list[WarcDirectAnswersParser]:
-    parsers: Iterable[WarcDirectAnswersParser] = (
-        WarcDirectAnswersParser.search(
-            using=config.es.client, index=config.es.index_warc_direct_answers_parsers
+) -> list[WarcSpecialContentsResultBlocksParser]:
+    parsers: Iterable[WarcSpecialContentsResultBlocksParser] = (
+        WarcSpecialContentsResultBlocksParser.search(
+            using=config.es.client,
+            index=config.es.index_warc_special_contents_result_blocks_parsers,
         )
         .filter(~Exists(field="provider.id") | Term(provider__id=provider_id))
         .query(RankFeature(field="priority", saturation={}))
@@ -170,7 +177,7 @@ def _warc_direct_answers_parsers(
     return list(parsers)
 
 
-def _parse_serp_warc_direct_answers_action(
+def _parse_serp_warc_special_contents_result_blocks_action(
     config: Config,
     serp: Serp,
 ) -> Iterator[dict]:
@@ -185,27 +192,31 @@ def _parse_serp_warc_direct_answers_action(
 
     # Re-check if parsing is necessary.
     if (
-        serp.warc_direct_answers_parser is not None
-        and serp.warc_direct_answers_parser.should_parse is not None
-        and not serp.warc_direct_answers_parser.should_parse
+        serp.warc_special_contents_result_blocks_parser is not None
+        and serp.warc_special_contents_result_blocks_parser.should_parse is not None
+        and not serp.warc_special_contents_result_blocks_parser.should_parse
     ):
         return
 
-    for parser in _warc_direct_answers_parsers(config, serp.provider.id):
-        # Try to parse the direct answers.
-        warc_direct_answers = _parse_warc_direct_answers(
-            parser=parser,
-            serp_id=serp.id,
-            capture_url=serp.capture.url,
-            warc_store=config.s3.warc_store,
-            warc_location=serp.warc_location,
+    for parser in _warc_special_contents_result_blocks_parsers(
+        config, serp.provider.id
+    ):
+        # Try to parse the special contents result blocks.
+        warc_special_contents_result_blocks = (
+            _parse_warc_special_contents_result_blocks(
+                parser=parser,
+                serp_id=serp.id,
+                capture_url=serp.capture.url,
+                warc_store=config.s3.warc_store,
+                warc_location=serp.warc_location,
+            )
         )
-        if warc_direct_answers is None:
+        if warc_special_contents_result_blocks is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
-        for direct_answer in warc_direct_answers:
-            result = Result(
-                id=direct_answer.id,
+        for special_contents_result_block in warc_special_contents_result_blocks:
+            special_contents_result_block = SpecialContentsResultBlock(
+                id=special_contents_result_block.id,
                 last_modified=utc_now(),
                 archive=serp.archive,
                 provider=serp.provider,
@@ -213,29 +224,28 @@ def _parse_serp_warc_direct_answers_action(
                 serp=InnerSerp(
                     id=serp.id,
                 ),
-                direct_answer=direct_answer,
-                direct_answer_parser=InnerParser(
+                rank=special_contents_result_block.rank,
+                content=special_contents_result_block.content,
+                url=special_contents_result_block.url,
+                text=special_contents_result_block.text,
+                special_contents_result_block_parser=InnerParser(
                     id=parser.id,
                     should_parse=False,
                     last_parsed=utc_now(),
                 ),
-                warc_before_serp_downloader=InnerDownloader(
-                    should_download=True,
-                ),
-                warc_after_serp_downloader=InnerDownloader(
-                    should_download=True,
-                ),
             )
-            result.meta.index = config.es.index_results
-            yield result.to_dict(include_meta=True)
+            special_contents_result_block.meta.index = (
+                config.es.index_web_search_result_blocks
+            )
+            yield special_contents_result_block.to_dict(include_meta=True)
         yield serp.update_action(
-            warc_direct_answers=[
+            warc_special_contents_result_blocks=[
                 DirectAnswerId(
-                    id=direct_answer.id,
+                    id=special_contents_result_block.id,
                 )
-                for direct_answer in warc_direct_answers
+                for special_contents_result_block in warc_special_contents_result_blocks
             ],
-            warc_direct_answers_parser=InnerParser(
+            warc_special_contents_result_blocks_parser=InnerParser(
                 id=parser.id,
                 should_parse=False,
                 last_parsed=utc_now(),
@@ -243,7 +253,7 @@ def _parse_serp_warc_direct_answers_action(
         )
         return
     yield serp.update_action(
-        warc_direct_answers_parser=InnerParser(
+        warc_special_contents_result_blocks_parser=InnerParser(
             should_parse=False,
             last_parsed=utc_now(),
         ),
@@ -251,7 +261,7 @@ def _parse_serp_warc_direct_answers_action(
     return
 
 
-def parse_serps_warc_direct_answers(
+def parse_serps_warc_special_contents_result_blocks(
     config: Config,
     size: int = 10,
     dry_run: bool = False,
@@ -261,7 +271,7 @@ def parse_serps_warc_direct_answers(
         Serp.search(using=config.es.client, index=config.es.index_serps)
         .filter(
             Exists(field="warc_location")
-            & ~Term(warc_direct_answers_parser__should_parse=False)
+            & ~Term(warc_special_contents_result_blocks_parser__should_parse=False)
         )
         .query(
             RankFeature(field="archive.priority", saturation={})
@@ -277,11 +287,11 @@ def parse_serps_warc_direct_answers(
         changed_serps = tqdm(
             changed_serps,
             total=num_changed_serps,
-            desc="Parsing WARC direct answers",
+            desc="Parsing WARC special contents result blocks",
             unit="SERP",
         )
         actions = chain.from_iterable(
-            _parse_serp_warc_direct_answers_action(config, serp)
+            _parse_serp_warc_special_contents_result_blocks_action(config, serp)
             for serp in changed_serps
         )
         config.es.bulk(
