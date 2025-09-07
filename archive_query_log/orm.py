@@ -1,54 +1,82 @@
-from datetime import datetime
+from datetime import datetime, UTC
 from functools import cached_property
 from re import Pattern, compile as pattern
-from typing import Literal
+from typing import Literal, Annotated, Any, TypeAlias
+from uuid import UUID
 
-from elasticsearch_dsl import Document, Keyword, Text, Date, RankFeature, \
-    InnerDoc as InnerDocument, Object, Index, Integer, Nested, Long, Boolean
+from annotated_types import Ge
+from elasticsearch_dsl import (
+    Keyword as KeywordField,
+    Text as TextField,
+    Date,
+    RankFeature,
+    Integer as IntegerField,
+    Long as LongField,
+)
+from pydantic import HttpUrl, Field
 
+from archive_query_log.utils.es import BaseDocument, BaseInnerDocument
 
-class BaseDocument(Document):
-    last_modified: datetime = Date(
+Keyword: TypeAlias = Annotated[str, KeywordField()]
+IntKeyword: TypeAlias = Annotated[int, KeywordField()]
+Text: TypeAlias = Annotated[str, TextField()]
+Integer: TypeAlias = Annotated[int, IntegerField()]
+Long: TypeAlias = Annotated[int, LongField()]
+StrictUtcDateTimeNoMillis: TypeAlias = Annotated[
+    datetime,
+    Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
-    )
+    ),
+]
+DefaultStrictUtcDateTimeNoMillis: TypeAlias = Annotated[
+    StrictUtcDateTimeNoMillis,
+    Field(default_factory=lambda: datetime.now(UTC)),
+]
+FloatRankFeature: TypeAlias = Annotated[
+    float,
+    Ge(0),
+    RankFeature(positive_score_impact=True),
+]
+IntRankFeature: TypeAlias = Annotated[
+    int,
+    Ge(0),
+    RankFeature(positive_score_impact=True),
+]
 
-    # TODO: At the moment, this is used more as a creation date.
-    #  We could use a different field for that and use this one for the last
-    #  modified date.
 
-    # noinspection PyShadowingBuiltins
-    def __init__(self, id: str | None = None, **kwargs):
-        if id is not None:
-            if "meta" not in kwargs:
-                kwargs["meta"] = {}
-            kwargs["meta"]["id"] = id
-        super().__init__(**kwargs)
-
-    @classmethod
-    def index(cls) -> Index:
-        return cls._index
+class UuidBaseDocument(BaseDocument):
+    def __init__(
+        self,
+        /,
+        id: UUID,
+        meta: dict[str, Any] | None = None,
+        **data: Any,
+    ) -> None:
+        super().__init__(
+            id=str(id),
+            meta=meta,
+            **data,
+        )
 
     @property
-    def id(self) -> str:
-        return self.meta.id
+    def id(self) -> UUID:
+        return UUID(self.meta.id)
 
     @id.setter
-    def id(self, value: str):
-        self.meta.id = value
+    def id(self, value: UUID) -> None:
+        self.meta.id = str(value)
 
 
-class Archive(BaseDocument):
-    name: str = Text()
-    description: str = Text()
-    cdx_api_url: str = Keyword()
-    memento_api_url: str = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    should_build_sources: bool = Boolean()
-    last_built_sources: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
+class Archive(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    name: Text
+    description: Text
+    cdx_api_url: HttpUrl
+    memento_api_url: HttpUrl
+    priority: FloatRankFeature | None = None
+    should_build_sources: bool
+    last_built_sources: StrictUtcDateTimeNoMillis
 
     class Index:
         settings = {
@@ -57,19 +85,17 @@ class Archive(BaseDocument):
         }
 
 
-class Provider(BaseDocument):
-    name: str = Text()
-    description: str = Text()
-    exclusion_reason: str = Text()
-    notes: str = Text()
-    domains: list[str] = Keyword()
-    url_path_prefixes: list[str] = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    should_build_sources: bool = Boolean()
-    last_built_sources: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
+class Provider(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    name: Text
+    description: Text
+    exclusion_reason: Text
+    notes: Text
+    domains: list[Keyword]
+    url_path_prefixes: list[Keyword]
+    priority: FloatRankFeature | None = None
+    should_build_sources: bool
+    last_built_sources: StrictUtcDateTimeNoMillis
 
     class Index:
         settings = {
@@ -78,28 +104,26 @@ class Provider(BaseDocument):
         }
 
 
-class InnerArchive(InnerDocument):
-    id: str = Keyword()
-    cdx_api_url: str = Keyword()
-    memento_api_url: str = Keyword()
-    priority: int | None = RankFeature(positive_score_impact=True)
+class InnerArchive(BaseInnerDocument):
+    id: UUID
+    cdx_api_url: HttpUrl
+    memento_api_url: HttpUrl
+    priority: IntRankFeature | None = None
 
 
-class InnerProvider(InnerDocument):
-    id: str = Keyword()
-    domain: str = Keyword()
-    url_path_prefix: str = Keyword()
-    priority: int | None = RankFeature(positive_score_impact=True)
+class InnerProvider(BaseInnerDocument):
+    id: UUID
+    domain: Keyword
+    url_path_prefix: Keyword
+    priority: IntRankFeature | None = None
 
 
-class Source(BaseDocument):
-    archive: InnerArchive = Object(InnerArchive)
-    provider: InnerProvider = Object(InnerProvider)
-    should_fetch_captures: bool = Boolean()
-    last_fetched_captures: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
+class Source(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    archive: InnerArchive
+    provider: InnerProvider
+    should_fetch_captures: bool
+    last_fetched_captures: StrictUtcDateTimeNoMillis
 
     class Index:
         settings = {
@@ -108,37 +132,32 @@ class Source(BaseDocument):
         }
 
 
-class InnerParser(InnerDocument):
-    id: str = Keyword()
-    should_parse: bool = Boolean()
-    last_parsed: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
+class InnerParser(BaseInnerDocument):
+    id: UUID | None = None
+    should_parse: bool = True
+    last_parsed: StrictUtcDateTimeNoMillis | None = None
 
 
-class Capture(BaseDocument):
-    archive: InnerArchive = Object(InnerArchive)
-    provider: InnerProvider = Object(InnerProvider)
-    url: str = Keyword()
-    url_key: str = Keyword()
-    timestamp: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
-    status_code: int = Integer()
-    digest: str = Keyword()
-    mimetype: str | None = Keyword()
-    filename: str | None = Keyword()
-    offset: int | None = Integer()
-    length: int | None = Integer()
-    access: str | None = Keyword()
-    redirect_url: str | None = Keyword()
-    flags: list[str] | None = Keyword()
-    collection: str | None = Keyword()
-    source: str | None = Keyword()
-    source_collection: str | None = Keyword()
-    url_query_parser: InnerParser | None = Object(InnerParser)
+class Capture(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    archive: InnerArchive
+    provider: InnerProvider
+    url: HttpUrl
+    url_key: Keyword
+    timestamp: StrictUtcDateTimeNoMillis
+    status_code: Integer
+    digest: Keyword
+    mimetype: Keyword | None = None
+    filename: Keyword | None = None
+    offset: Integer | None = None
+    length: Integer | None = None
+    access: Keyword | None = None
+    redirect_url: HttpUrl | None = None
+    flags: list[Keyword] | None = None
+    collection: Keyword | None = None
+    source: Keyword | None = None
+    source_collection: Keyword | None = None
+    url_query_parser: InnerParser | None = None
 
     class Index:
         settings = {
@@ -147,79 +166,73 @@ class Capture(BaseDocument):
         }
 
 
-class InnerCapture(InnerDocument):
-    id: str = Keyword()
-    url: str = Keyword()
-    timestamp: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
-    status_code: int = Integer()
-    digest: str = Keyword()
-    mimetype: str | None = Keyword()
+class InnerCapture(BaseInnerDocument):
+    id: UUID
+    url: HttpUrl
+    timestamp: StrictUtcDateTimeNoMillis
+    status_code: Integer
+    digest: Keyword
+    mimetype: Keyword | None = None
 
 
-class InnerDownloader(InnerDocument):
-    id: str = Keyword()
-    should_download: bool = Boolean()
-    last_downloaded: datetime = Date(
-        default_timezone="UTC",
-        format="strict_date_time_no_millis",
-    )
+class InnerDownloader(BaseInnerDocument):
+    id: UUID
+    should_download: bool
+    last_downloaded: StrictUtcDateTimeNoMillis
 
 
-class WarcLocation(InnerDocument):
-    file: str = Keyword()
-    offset: int = Long()
-    length: int = Long()
+class WarcLocation(BaseInnerDocument):
+    file: Keyword
+    offset: Long
+    length: Long
 
 
-class SnippetId(InnerDocument):
-    id: str = Keyword()
-    rank: int = Integer()
+class SnippetId(BaseInnerDocument):
+    id: UUID
+    rank: Integer
 
 
 class Snippet(SnippetId):
-    content: str = Text()
-    url: str | None = Keyword()
-    title: str | None = Text()
-    text: str | None = Text()
+    content: Text
+    url: HttpUrl | None = None
+    title: Text | None = None
+    text: Text | None = None
 
 
-class DirectAnswerId(InnerDocument):
-    id: str = Keyword()
+class DirectAnswerId(BaseInnerDocument):
+    id: UUID
 
 
 class DirectAnswer(DirectAnswerId):
-    content: str = Text()
-    url: str | None = Keyword()
-    text: str | None = Text()
+    content: Text
+    url: HttpUrl | None = None
+    text: Text | None = None
 
 
-class Serp(BaseDocument):
-    archive: InnerArchive = Object(InnerArchive)
-    provider: InnerProvider = Object(InnerProvider)
-    capture: InnerCapture = Object(InnerCapture)
-    url_query: str = Text()
-    url_query_parser: InnerParser | None = Object(InnerParser)
-    url_page: int | None = Integer()
-    url_page_parser: InnerParser | None = Object(InnerParser)
-    url_offset: int | None = Integer()
-    url_offset_parser: InnerParser | None = Object(InnerParser)
-    # url_language: str | None = Keyword()
-    # url_language_parser: InnerParser | None = Object(InnerParser)
-    warc_location: WarcLocation | None = Object(WarcLocation)
-    warc_downloader: InnerDownloader | None = Object(InnerDownloader)
-    warc_query: str | None = Text()
-    warc_query_parser: InnerParser | None = Object(InnerParser)
-    warc_snippets: list[SnippetId] | None = Nested(SnippetId)
-    warc_snippets_parser: InnerParser | None = Object(InnerParser)
-    warc_direct_answers: list[DirectAnswerId] | None = Nested(DirectAnswerId)
-    warc_direct_answers_parser: InnerParser | None = Object(InnerParser)
+class Serp(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    archive: InnerArchive
+    provider: InnerProvider
+    capture: InnerCapture
+    url_query: Text
+    url_query_parser: InnerParser | None = None
+    url_page: Integer | None = None
+    url_page_parser: InnerParser | None = None
+    url_offset: Integer | None = None
+    url_offset_parser: InnerParser | None = None
+    # url_language: Keyword | None = None
+    # url_language_parser: InnerParser | None = None
+    warc_location: WarcLocation | None = None
+    warc_downloader: InnerDownloader | None = None
+    warc_query: Text | None = None
+    warc_query_parser: InnerParser | None = None
+    warc_snippets: list[SnippetId] | None = None
+    warc_snippets_parser: InnerParser | None = None
+    warc_direct_answers: list[DirectAnswerId] | None = None
+    warc_direct_answers_parser: InnerParser | None = None
 
-    # rendered_warc_location: WarcLocation | None = Object(WarcLocation)
-    # rendered_warc_downloader: InnerDownloader | None = (
-    #     Object(InnerDownloader))
+    # rendered_warc_location: WarcLocation | None = None
+    # rendered_warc_downloader: InnerDownloader | None = None
 
     class Index:
         settings = {
@@ -228,23 +241,22 @@ class Serp(BaseDocument):
         }
 
 
-class InnerSerp(InnerDocument):
-    id: str = Keyword()
+class InnerSerp(BaseInnerDocument):
+    id: UUID
 
 
-class Result(BaseDocument):
-    archive: InnerArchive = Object(InnerArchive)
-    provider: InnerProvider = Object(InnerProvider)
-    capture: InnerCapture = Object(InnerCapture)
-    serp: InnerSerp = Object(InnerSerp)
-    snippet: Snippet = Object(Snippet)
-    snippet_parser: InnerParser | None = Object(InnerParser)
-    warc_before_serp_location: WarcLocation | None = Object(WarcLocation)
-    warc_before_serp_downloader: InnerDownloader | None = (
-        Object(InnerDownloader))
-    warc_after_serp_location: WarcLocation | None = Object(WarcLocation)
-    warc_after_serp_downloader: InnerDownloader | None = (
-        Object(InnerDownloader))
+class Result(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    archive: InnerArchive
+    provider: InnerProvider
+    capture: InnerCapture
+    serp: InnerSerp
+    snippet: Snippet
+    snippet_parser: InnerParser | None = None
+    warc_before_serp_location: WarcLocation | None = None
+    warc_before_serp_downloader: InnerDownloader | None = None
+    warc_after_serp_location: WarcLocation | None = None
+    warc_after_serp_downloader: InnerDownloader | None = None
 
     class Index:
         settings = {
@@ -253,8 +265,8 @@ class Result(BaseDocument):
         }
 
 
-class InnerProviderId(InnerDocument):
-    id: str = Keyword()
+class InnerProviderId(BaseInnerDocument):
+    id: UUID
 
 
 UrlQueryParserType = Literal[
@@ -264,15 +276,16 @@ UrlQueryParserType = Literal[
 ]
 
 
-class UrlQueryParser(BaseDocument):
-    provider: InnerProviderId | None = Object(InnerProviderId)
-    url_pattern_regex: str | None = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    parser_type: UrlQueryParserType = Keyword()
-    parameter: str | None = Keyword()
-    segment: int | None = Keyword()
-    remove_pattern_regex: str | None = Keyword()
-    space_pattern_regex: str | None = Keyword()
+class UrlQueryParser(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    provider: InnerProviderId | None = None
+    url_pattern_regex: Keyword | None = None
+    priority: FloatRankFeature | None = None
+    parser_type: UrlQueryParserType
+    parameter: Keyword | None = None
+    segment: IntKeyword | None = None
+    remove_pattern_regex: Keyword | None = None
+    space_pattern_regex: Keyword | None = None
 
     @cached_property
     def url_pattern(self) -> Pattern | None:
@@ -306,15 +319,16 @@ UrlPageParserType = Literal[
 ]
 
 
-class UrlPageParser(BaseDocument):
-    provider: InnerProviderId | None = Object(InnerProviderId)
-    url_pattern_regex: str | None = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    parser_type: UrlPageParserType = Keyword()
-    parameter: str | None = Keyword()
-    segment: int | None = Keyword()
-    remove_pattern_regex: str | None = Keyword()
-    space_pattern_regex: str | None = Keyword()
+class UrlPageParser(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    provider: InnerProviderId | None = None
+    url_pattern_regex: Keyword | None = None
+    priority: FloatRankFeature | None = None
+    parser_type: UrlPageParserType
+    parameter: Keyword | None = None
+    segment: IntKeyword | None = None
+    remove_pattern_regex: Keyword | None = None
+    space_pattern_regex: Keyword | None = None
 
     @cached_property
     def url_pattern(self) -> Pattern | None:
@@ -342,15 +356,16 @@ UrlOffsetParserType = Literal[
 ]
 
 
-class UrlOffsetParser(BaseDocument):
-    provider: InnerProviderId | None = Object(InnerProviderId)
-    url_pattern_regex: str | None = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    parser_type: UrlOffsetParserType = Keyword()
-    parameter: str | None = Keyword()
-    segment: int | None = Keyword()
-    remove_pattern_regex: str | None = Keyword()
-    space_pattern_regex: str | None = Keyword()
+class UrlOffsetParser(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    provider: InnerProviderId | None = None
+    url_pattern_regex: Keyword | None = None
+    priority: FloatRankFeature | None = None
+    parser_type: UrlOffsetParserType
+    parameter: Keyword | None = None
+    segment: IntKeyword | None = None
+    remove_pattern_regex: Keyword | None = None
+    space_pattern_regex: Keyword | None = None
 
     @cached_property
     def url_pattern(self) -> Pattern | None:
@@ -371,19 +386,18 @@ class UrlOffsetParser(BaseDocument):
         }
 
 
-WarcQueryParserType = Literal[
-    "xpath",
-]
+WarcQueryParserType = Literal["xpath"]
 
 
-class WarcQueryParser(BaseDocument):
-    provider: InnerProviderId | None = Object(InnerProviderId)
-    url_pattern_regex: str | None = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    parser_type: WarcQueryParserType = Keyword()
-    xpath: str | None = Keyword()
-    remove_pattern_regex: str | None = Keyword()
-    space_pattern_regex: str | None = Keyword()
+class WarcQueryParser(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    provider: InnerProviderId | None = None
+    url_pattern_regex: Keyword | None = None
+    priority: FloatRankFeature | None = None
+    parser_type: WarcQueryParserType
+    xpath: Keyword | None = None
+    remove_pattern_regex: Keyword | None = None
+    space_pattern_regex: Keyword | None = None
 
     @cached_property
     def url_pattern(self) -> Pattern | None:
@@ -410,47 +424,19 @@ class WarcQueryParser(BaseDocument):
         }
 
 
-WarcSnippetsParserType = Literal[
-    "xpath",
-]
+WarcSnippetsParserType = Literal["xpath"]
 
 
-class WarcSnippetsParser(BaseDocument):
-    provider: InnerProviderId | None = Object(InnerProviderId)
-    url_pattern_regex: str | None = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    parser_type: WarcSnippetsParserType = Keyword()
-    xpath: str | None = Keyword()
-    url_xpath: str | None = Keyword()
-    title_xpath: str | None = Keyword()
-    text_xpath: str | None = Keyword()
-
-    @cached_property
-    def url_pattern(self) -> Pattern | None:
-        if self.url_pattern_regex is None:
-            raise ValueError("No URL pattern regex.")
-        return pattern(self.url_pattern_regex)
-
-    class Index:
-        settings = {
-            "number_of_shards": 1,
-            "number_of_replicas": 2,
-        }
-
-
-WarcDirectAnswersParserType = Literal[
-    "xpath",
-]
-
-
-class WarcDirectAnswersParser(BaseDocument):
-    provider: InnerProviderId | None = Object(InnerProviderId)
-    url_pattern_regex: str | None = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    parser_type: WarcDirectAnswersParserType = Keyword()
-    xpath: str | None = Keyword()
-    url_xpath: str | None = Keyword()
-    text_xpath: str | None = Keyword()
+class WarcSnippetsParser(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    provider: InnerProviderId | None = None
+    url_pattern_regex: Keyword | None = None
+    priority: FloatRankFeature | None = None
+    parser_type: WarcSnippetsParserType
+    xpath: Keyword | None = None
+    url_xpath: Keyword | None = None
+    title_xpath: Keyword | None = None
+    text_xpath: Keyword | None = None
 
     @cached_property
     def url_pattern(self) -> Pattern | None:
@@ -465,16 +451,41 @@ class WarcDirectAnswersParser(BaseDocument):
         }
 
 
-WarcMainContentParserType = Literal[
-    "resiliparse",
-]
+WarcDirectAnswersParserType = Literal["xpath"]
 
 
-class WarcMainContentParser(BaseDocument):
-    provider: InnerProviderId | None = Object(InnerProviderId)
-    url_pattern_regex: str | None = Keyword()
-    priority: float | None = RankFeature(positive_score_impact=True)
-    parser_type: WarcMainContentParserType = Keyword()
+class WarcDirectAnswersParser(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    provider: InnerProviderId | None = None
+    url_pattern_regex: Keyword | None = None
+    priority: FloatRankFeature | None = None
+    parser_type: WarcDirectAnswersParserType
+    xpath: Keyword | None = None
+    url_xpath: Keyword | None = None
+    text_xpath: Keyword | None = None
+
+    @cached_property
+    def url_pattern(self) -> Pattern | None:
+        if self.url_pattern_regex is None:
+            raise ValueError("No URL pattern regex.")
+        return pattern(self.url_pattern_regex)
+
+    class Index:
+        settings = {
+            "number_of_shards": 1,
+            "number_of_replicas": 2,
+        }
+
+
+WarcMainContentParserType = Literal["resiliparse"]
+
+
+class WarcMainContentParser(UuidBaseDocument):
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    provider: InnerProviderId | None = None
+    url_pattern_regex: Keyword | None = None
+    priority: FloatRankFeature | None = None
+    parser_type: WarcMainContentParserType
 
     @cached_property
     def url_pattern(self) -> Pattern | None:
