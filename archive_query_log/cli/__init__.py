@@ -20,14 +20,15 @@ from archive_query_log.orm import (
     Source,
     Capture,
     Serp,
-    Result,
+    WebSearchResultBlock,
+    SpecialContentsResultBlock,
     UrlQueryParser,
     UrlPageParser,
     UrlOffsetParser,
     WarcQueryParser,
-    WarcSnippetsParser,
+    WarcWebSearchResultBlocksParser,
     WarcMainContentParser,
-    WarcDirectAnswersParser,
+    WarcSpecialContentsResultBlocksParser,
 )
 
 
@@ -54,14 +55,21 @@ def init(
         (Source, config.es.index_sources),
         (Capture, config.es.index_captures),
         (Serp, config.es.index_serps),
-        (Result, config.es.index_results),
+        (WebSearchResultBlock, config.es.index_web_search_result_blocks),
+        (SpecialContentsResultBlock, config.es.index_special_contents_result_blocks),
         (UrlQueryParser, config.es.index_url_query_parsers),
         (UrlPageParser, config.es.index_url_page_parsers),
         (UrlOffsetParser, config.es.index_url_offset_parsers),
         (WarcQueryParser, config.es.index_warc_query_parsers),
-        (WarcSnippetsParser, config.es.index_warc_snippets_parsers),
+        (
+            WarcWebSearchResultBlocksParser,
+            config.es.index_warc_web_search_result_blocks_parsers,
+        ),
         (WarcMainContentParser, config.es.index_warc_main_content_parsers),
-        (WarcDirectAnswersParser, config.es.index_warc_direct_answers_parsers),
+        (
+            WarcSpecialContentsResultBlocksParser,
+            config.es.index_warc_special_contents_result_blocks_parsers,
+        ),
     ]
     # noinspection PyTypeChecker
     indices: Iterable[tuple[Type[BaseDocument], str]] = tqdm(

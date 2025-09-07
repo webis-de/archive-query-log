@@ -1,7 +1,7 @@
 from cyclopts import App
 
 from archive_query_log.config import Config
-from archive_query_log.orm import Serp, Result
+from archive_query_log.orm import Serp, WebSearchResultBlock, SpecialContentsResultBlock
 
 serps = App(
     name="serps",
@@ -102,7 +102,7 @@ def warc_query(
 
 
 @parse.command
-def warc_snippets(
+def warc_web_search_result_blocks(
     *,
     size: int = 10,
     dry_run: bool = False,
@@ -113,13 +113,15 @@ def warc_snippets(
 
     :param size: How many SERPs to parse.
     """
-    from archive_query_log.parsers.warc_snippets import parse_serps_warc_snippets
-
-    Result.init(
-        using=config.es.client,
-        index=config.es.index_results,
+    from archive_query_log.parsers.warc_web_search_result_blocks import (
+        parse_serps_warc_web_search_result_blocks,
     )
-    parse_serps_warc_snippets(
+
+    WebSearchResultBlock.init(
+        using=config.es.client,
+        index=config.es.index_web_search_result_blocks,
+    )
+    parse_serps_warc_web_search_result_blocks(
         config=config,
         size=size,
         dry_run=dry_run,
@@ -127,7 +129,7 @@ def warc_snippets(
 
 
 @parse.command
-def warc_direct_answers(
+def warc_special_contents_result_blocks(
     *,
     size: int = 10,
     dry_run: bool = False,
@@ -138,11 +140,15 @@ def warc_direct_answers(
 
     :param size: How many SERPs to parse.
     """
-    from archive_query_log.parsers.warc_direct_answers import (
-        parse_serps_warc_direct_answers,
+    from archive_query_log.parsers.warc_special_contents_result_blocks import (
+        parse_serps_warc_special_contents_result_blocks,
     )
 
-    parse_serps_warc_direct_answers(
+    SpecialContentsResultBlock.init(
+        using=config.es.client,
+        index=config.es.index_special_contents_result_blocks,
+    )
+    parse_serps_warc_special_contents_result_blocks(
         config=config,
         size=size,
         dry_run=dry_run,

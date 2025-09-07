@@ -15,10 +15,10 @@ from archive_query_log.orm import (
     UrlOffsetParserType,
     WarcQueryParserType,
     WarcQueryParser,
-    WarcSnippetsParserType,
-    WarcSnippetsParser,
-    WarcDirectAnswersParserType,
-    WarcDirectAnswersParser,
+    WarcWebSearchResultBlocksParserType,
+    WarcWebSearchResultBlocksParser,
+    WarcSpecialContentsResultBlocksParserType,
+    WarcSpecialContentsResultBlocksParser,
     # WarcMainContentParserType,
     # WarcMainContentParser,
 )
@@ -371,24 +371,24 @@ def warc_query_import(
     )
 
 
-warc_snippets = App(
-    name="warc-snippets",
-    alias="ws",
-    help="Manage WARC snippets parsers.",
+warc_web_search_result_blocks = App(
+    name="warc-web-search-result-blocks",
+    alias="wwsrb",
+    help="Manage WARC web search result blocks parsers.",
 )
-parsers.command(warc_snippets)
+parsers.command(warc_web_search_result_blocks)
 
 
-_WarcSnippetsParserType: TypeAlias = Literal["xpath"]
+_WarcWebSearchResultBlocksParserType: TypeAlias = Literal["xpath"]
 
 
-@warc_snippets.command(name="add")
-def warc_snippets_add(
+@warc_web_search_result_blocks.command(name="add")
+def warc_web_search_result_blocks_add(
     *,
     provider_id: str | None = None,
     url_pattern_regex: str | None = None,
     priority: Annotated[float, Number(gte=0)] | None = None,
-    parser_type: _WarcSnippetsParserType,
+    parser_type: _WarcWebSearchResultBlocksParserType,
     xpath: str | None = None,
     url_xpath: str | None = None,
     title_xpath: str | None = None,
@@ -397,21 +397,24 @@ def warc_snippets_add(
     config: Config,
 ) -> None:
     """
-    Add a new WARC snippets parser.
+    Add a new WARC web search result blocks parser.
     """
-    from archive_query_log.parsers.warc_snippets import add_warc_snippets_parser
+    from archive_query_log.parsers.warc_web_search_result_blocks import (
+        add_warc_web_search_result_blocks_parser,
+    )
 
-    parser_type_strict: WarcSnippetsParserType
+    parser_type_strict: WarcWebSearchResultBlocksParserType
     if parser_type == "xpath":
         parser_type_strict = "xpath"
         if xpath is None:
             raise ValueError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcSnippetsParser.init(
-        using=config.es.client, index=config.es.index_warc_snippets_parsers
+    WarcWebSearchResultBlocksParser.init(
+        using=config.es.client,
+        index=config.es.index_warc_web_search_result_blocks_parsers,
     )
-    add_warc_snippets_parser(
+    add_warc_web_search_result_blocks_parser(
         config=config,
         provider_id=provider_id,
         url_pattern_regex=url_pattern_regex,
@@ -425,8 +428,8 @@ def warc_snippets_add(
     )
 
 
-@warc_snippets.command(name="import")
-def warc_snippets_import(
+@warc_web_search_result_blocks.command(name="import")
+def warc_web_search_result_blocks_import(
     *,
     services_path: Annotated[
         ResolvedExistingFile, Parameter(alias=["-s", "--services-file"])
@@ -435,38 +438,41 @@ def warc_snippets_import(
     config: Config,
 ) -> None:
     """
-    Import WARC snippets parsers from a YAML search services file.
+    Import WARC web search result blocks parsers from a YAML search services file (formerly called WARC snippet parsers).
     """
-    from archive_query_log.imports.yaml import import_warc_snippets_parsers
-
-    WarcSnippetsParser.init(
-        using=config.es.client, index=config.es.index_warc_snippets_parsers
+    from archive_query_log.imports.yaml import (
+        import_warc_web_search_result_blocks_parsers,
     )
-    import_warc_snippets_parsers(
+
+    WarcWebSearchResultBlocksParser.init(
+        using=config.es.client,
+        index=config.es.index_warc_web_search_result_blocks_parsers,
+    )
+    import_warc_web_search_result_blocks_parsers(
         config=config,
         services_path=services_path,
         dry_run=dry_run,
     )
 
 
-warc_direct_answers = App(
-    name="warc-direct-answers",
-    alias="wda",
-    help="Manage WARC direct answers parsers.",
+warc_special_contents_result_blocks = App(
+    name="warc-special-contents-result-blocks",
+    alias="wscrb",
+    help="Manage WARC special contents result blocks parsers.",
 )
-parsers.command(warc_direct_answers)
+parsers.command(warc_special_contents_result_blocks)
 
 
-_WarcDirectAnswersParserType: TypeAlias = Literal["xpath"]
+_WarcSpecialContentsResultBlocksParserType: TypeAlias = Literal["xpath"]
 
 
-@warc_direct_answers.command(name="add")
-def warc_direct_answers_add(
+@warc_special_contents_result_blocks.command(name="add")
+def warc_special_contents_result_blocks_add(
     *,
     provider_id: str | None = None,
     url_pattern_regex: str | None = None,
     priority: Annotated[float, Number(gte=0)] | None = None,
-    parser_type: _WarcDirectAnswersParserType,
+    parser_type: _WarcSpecialContentsResultBlocksParserType,
     xpath: str | None = None,
     url_xpath: str | None = None,
     text_xpath: str | None = None,
@@ -474,23 +480,24 @@ def warc_direct_answers_add(
     config: Config,
 ) -> None:
     """
-    Add a new WARC direct answers parser.
+    Add a new WARC special contents result blocks parser.
     """
-    from archive_query_log.parsers.warc_direct_answers import (
-        add_warc_direct_answers_parser,
+    from archive_query_log.parsers.warc_special_contents_result_blocks import (
+        add_warc_special_contents_result_blocks_parser,
     )
 
-    parser_type_strict: WarcDirectAnswersParserType
+    parser_type_strict: WarcSpecialContentsResultBlocksParserType
     if parser_type == "xpath":
         parser_type_strict = "xpath"
         if xpath is None:
             raise ValueError("No XPath given.")
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
-    WarcDirectAnswersParser.init(
-        using=config.es.client, index=config.es.index_warc_direct_answers_parsers
+    WarcSpecialContentsResultBlocksParser.init(
+        using=config.es.client,
+        index=config.es.index_warc_special_contents_result_blocks_parsers,
     )
-    add_warc_direct_answers_parser(
+    add_warc_special_contents_result_blocks_parser(
         config=config,
         provider_id=provider_id,
         url_pattern_regex=url_pattern_regex,
@@ -535,7 +542,7 @@ def warc_direct_answers_add(
 #     else:
 #         raise ValueError(f"Invalid parser type: {parser_type}")
 #     WarcMainContentParser.init(
-#         using=config.es.client, index=config.es.index_warc_direct_answers_parsers
+#         using=config.es.client, index=config.es.index_warc_special_contents_result_blocks_parsers
 #     )
 #     add_warc_main_content_parser(
 #         config=config,
