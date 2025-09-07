@@ -192,14 +192,9 @@ class WebSearchResultBlockId(BaseInnerDocument):
     rank: Integer
 
 
-class DirectAnswerId(BaseInnerDocument):
+class SpecialContentsResultBlockId(BaseInnerDocument):
     id: UUID
-
-
-class DirectAnswer(DirectAnswerId):
-    content: Text
-    url: HttpUrl | None = None
-    text: Text | None = None
+    rank: Integer
 
 
 class Serp(UuidBaseDocument):
@@ -221,7 +216,9 @@ class Serp(UuidBaseDocument):
     warc_query_parser: InnerParser | None = None
     warc_web_search_result_blocks: list[WebSearchResultBlockId] | None = None
     warc_web_search_result_blocks_parser: InnerParser | None = None
-    warc_special_contents_result_blocks: list[DirectAnswerId] | None = None
+    warc_special_contents_result_blocks: list[SpecialContentsResultBlockId] | None = (
+        None
+    )
     warc_special_contents_result_blocks_parser: InnerParser | None = None
 
     class Index:
@@ -260,8 +257,22 @@ class WebSearchResultBlock(UuidBaseDocument):
 
 
 class SpecialContentsResultBlock(UuidBaseDocument):
-    # TODO
-    pass
+    last_modified: DefaultStrictUtcDateTimeNoMillis
+    archive: InnerArchive
+    provider: InnerProvider
+    capture: InnerCapture
+    serp: InnerSerp
+    content: Text
+    rank: Integer
+    url: HttpUrl | None = None
+    text: Text | None = None
+    parser: InnerParser | None = None
+
+    class Index:
+        settings = {
+            "number_of_shards": 10,
+            "number_of_replicas": 2,
+        }
 
 
 class InnerProviderId(BaseInnerDocument):

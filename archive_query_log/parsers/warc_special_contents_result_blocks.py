@@ -26,7 +26,7 @@ from archive_query_log.orm import (
     WarcLocation,
     SpecialContentsResultBlock,
     InnerSerp,
-    DirectAnswerId,
+    SpecialContentsResultBlockId,
 )
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
@@ -240,8 +240,9 @@ def _parse_serp_warc_special_contents_result_blocks_action(
             yield special_contents_result_block.to_dict(include_meta=True)
         yield serp.update_action(
             warc_special_contents_result_blocks=[
-                DirectAnswerId(
+                SpecialContentsResultBlockId(
                     id=special_contents_result_block.id,
+                    rank=special_contents_result_block.rank,
                 )
                 for special_contents_result_block in warc_special_contents_result_blocks
             ],
