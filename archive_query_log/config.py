@@ -34,7 +34,12 @@ class EsConfig(BaseModel):
     index_sources: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_SOURCES")]
     index_captures: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_CAPTURES")]
     index_serps: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_SERPS")]
-    index_results: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_RESULTS")]
+    index_web_search_result_blocks: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_WEB_SEARCH_RESULT_BLOCKS")
+    ]
+    index_special_contents_result_blocks: Annotated[
+        str, Parameter(env_var="ELASTICSEARCH_INDEX_SPECIAL_CONTENTS_RESULT_BLOCKS")
+    ]
     index_url_query_parsers: Annotated[
         str, Parameter(env_var="ELASTICSEARCH_INDEX_URL_QUERY_PARSERS")
     ]
@@ -47,11 +52,15 @@ class EsConfig(BaseModel):
     index_warc_query_parsers: Annotated[
         str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_QUERY_PARSERS")
     ]
-    index_warc_snippets_parsers: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_SNIPPETS_PARSERS")
+    index_warc_web_search_result_blocks_parsers: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_INDEX_warc_web_search_result_blocks_parserS"),
     ]
-    index_warc_direct_answers_parsers: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_DIRECT_ANSWERS_PARSERS")
+    index_warc_special_contents_result_blocks_parsers: Annotated[
+        str,
+        Parameter(
+            env_var="ELASTICSEARCH_INDEX_warc_special_contents_result_blocks_parserS"
+        ),
     ]
     index_warc_main_content_parsers: Annotated[
         str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS")

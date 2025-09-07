@@ -187,16 +187,9 @@ class WarcLocation(BaseInnerDocument):
     length: Long
 
 
-class SnippetId(BaseInnerDocument):
+class WebSearchResultBlockId(BaseInnerDocument):
     id: UUID
     rank: Integer
-
-
-class Snippet(SnippetId):
-    content: Text
-    url: HttpUrl | None = None
-    title: Text | None = None
-    text: Text | None = None
 
 
 class DirectAnswerId(BaseInnerDocument):
@@ -226,13 +219,10 @@ class Serp(UuidBaseDocument):
     warc_downloader: InnerDownloader | None = None
     warc_query: Text | None = None
     warc_query_parser: InnerParser | None = None
-    warc_snippets: list[SnippetId] | None = None
-    warc_snippets_parser: InnerParser | None = None
-    warc_direct_answers: list[DirectAnswerId] | None = None
-    warc_direct_answers_parser: InnerParser | None = None
-
-    # rendered_warc_location: WarcLocation | None = None
-    # rendered_warc_downloader: InnerDownloader | None = None
+    warc_web_search_result_blocks: list[WebSearchResultBlockId] | None = None
+    warc_web_search_result_blocks_parser: InnerParser | None = None
+    warc_special_contents_result_blocks: list[DirectAnswerId] | None = None
+    warc_special_contents_result_blocks_parser: InnerParser | None = None
 
     class Index:
         settings = {
@@ -245,14 +235,18 @@ class InnerSerp(BaseInnerDocument):
     id: UUID
 
 
-class Result(UuidBaseDocument):
+class WebSearchResultBlock(UuidBaseDocument):
     last_modified: DefaultStrictUtcDateTimeNoMillis
     archive: InnerArchive
     provider: InnerProvider
     capture: InnerCapture
     serp: InnerSerp
-    snippet: Snippet
-    snippet_parser: InnerParser | None = None
+    content: Text
+    rank: Integer
+    url: HttpUrl | None = None
+    title: Text | None = None
+    text: Text | None = None
+    parser: InnerParser | None = None
     warc_before_serp_location: WarcLocation | None = None
     warc_before_serp_downloader: InnerDownloader | None = None
     warc_after_serp_location: WarcLocation | None = None
@@ -263,6 +257,11 @@ class Result(UuidBaseDocument):
             "number_of_shards": 20,
             "number_of_replicas": 2,
         }
+
+
+class SpecialContentsResultBlock(UuidBaseDocument):
+    # TODO
+    pass
 
 
 class InnerProviderId(BaseInnerDocument):
@@ -424,15 +423,15 @@ class WarcQueryParser(UuidBaseDocument):
         }
 
 
-WarcSnippetsParserType = Literal["xpath"]
+WarcWebSearchResultBlocksParserType = Literal["xpath"]
 
 
-class WarcSnippetsParser(UuidBaseDocument):
+class WarcWebSearchResultBlocksParser(UuidBaseDocument):
     last_modified: DefaultStrictUtcDateTimeNoMillis
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
-    parser_type: WarcSnippetsParserType
+    parser_type: WarcWebSearchResultBlocksParserType
     xpath: Keyword | None = None
     url_xpath: Keyword | None = None
     title_xpath: Keyword | None = None
@@ -451,15 +450,15 @@ class WarcSnippetsParser(UuidBaseDocument):
         }
 
 
-WarcDirectAnswersParserType = Literal["xpath"]
+WarcSpecialContentsResultBlocksParserType = Literal["xpath"]
 
 
-class WarcDirectAnswersParser(UuidBaseDocument):
+class WarcSpecialContentsResultBlocksParser(UuidBaseDocument):
     last_modified: DefaultStrictUtcDateTimeNoMillis
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
-    parser_type: WarcDirectAnswersParserType
+    parser_type: WarcSpecialContentsResultBlocksParserType
     xpath: Keyword | None = None
     url_xpath: Keyword | None = None
     text_xpath: Keyword | None = None
