@@ -1,5 +1,5 @@
 from datetime import timedelta
-from itertools import chain, islice
+from itertools import chain
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
 from uuid import uuid5
@@ -15,7 +15,6 @@ from web_archive_api.cdx import CdxApi, CdxMatchType
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_CAPTURE
 from archive_query_log.orm import Source, Capture, InnerParser
-from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now, UTC
 
 
@@ -27,7 +26,7 @@ def _iter_captures(
         source: Source,
 ) -> Iterator[Capture]:
     cdx_api = CdxApi(
-        api_url=source.archive.cdx_api_url,
+        api_url=str(source.archive.cdx_api_url),
         session=config.http.session,
     )
     url = f"https://{source.provider.domain}"
@@ -52,7 +51,7 @@ def _iter_captures(
         capture_utc_timestamp_text = (
             cdx_capture.timestamp.astimezone(UTC).strftime("%Y%m%d%H%M%S"))
         capture_id_components = (
-            source.archive.cdx_api_url,
+            str(source.archive.cdx_api_url),
             cdx_capture.url,
             capture_utc_timestamp_text,
         )
@@ -128,8 +127,7 @@ def _add_captures_actions(
         if not ignored:
             raise e
 
-    yield update_action(
-        source,
+    yield source.update_action(
         should_fetch_captures=False,
         last_fetched_captures=utc_now(),
     )

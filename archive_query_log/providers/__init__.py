@@ -1,4 +1,3 @@
-from json import dumps as json_dumps
 from uuid import uuid4
 
 from elasticsearch_dsl import Search
@@ -86,7 +85,7 @@ def add_provider(
         if not auto_merge:
             print(f"Update provider {provider_id}.")
     else:
-        provider_id = str(uuid4())
+        provider_id = uuid4()
         if not no_merge and not auto_merge:
             print(f"Add new provider {provider_id}.")
 
@@ -105,4 +104,4 @@ def add_provider(
     if not dry_run:
         provider.save(using=config.es.client, index=config.es.index_providers)
     else:
-        print(json_dumps(provider.to_dict()))
+        print(provider)

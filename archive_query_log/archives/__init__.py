@@ -1,4 +1,3 @@
-from json import dumps as json_dumps
 from uuid import uuid4
 
 from elasticsearch_dsl import Search
@@ -64,7 +63,7 @@ def add_archive(
         if not auto_merge:
             print(f"Update archive {archive_id}.")
     else:
-        archive_id = str(uuid4())
+        archive_id = uuid4()
         if not no_merge and not auto_merge:
             print(f"Add new archive {archive_id}.")
 
@@ -79,6 +78,6 @@ def add_archive(
         should_build_sources=should_build_sources,
     )
     if dry_run:
-        print(json_dumps(archive.to_dict()))
+        print(archive)
     else:
         archive.save(using=config.es.client, index=config.es.index_archives)

@@ -1,16 +1,14 @@
 from functools import cache
-from itertools import chain, islice
-from json import dumps as json_dumps
+from itertools import chain
 from typing import Iterable, Iterator
 from urllib.parse import urljoin
-from uuid import uuid5
+from uuid import uuid5, UUID
 
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
-
-# noinspection PyProtectedMember
 from lxml.etree import _Element, tostring  # nosec: B410
+from pydantic import HttpUrl
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
@@ -34,7 +32,6 @@ from archive_query_log.orm import (
 )
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
-from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -62,11 +59,9 @@ def add_warc_snippets_parser(
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
-    parser_id = str(
-        uuid5(
-            NAMESPACE_WARC_SNIPPETS_PARSER,
-            ":".join(parser_id_components),
-        )
+    parser_id = uuid5(
+        NAMESPACE_WARC_SNIPPETS_PARSER,
+        ":".join(parser_id_components),
     )
     parser = WarcSnippetsParser(
         id=parser_id,
@@ -83,18 +78,20 @@ def add_warc_snippets_parser(
     if not dry_run:
         parser.save(using=config.es.client, index=config.es.index_warc_snippets_parsers)
     else:
-        print(json_dumps(parser.to_dict()))
+        print(parser)
 
 
 def _parse_warc_snippets(
     parser: WarcSnippetsParser,
-    serp_id: str,
-    capture_url: str,
+    serp_id: UUID,
+    capture_url: HttpUrl,
     warc_store: WarcS3Store,
     warc_location: WarcLocation,
 ) -> list[Snippet] | None:
     # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(capture_url):
+    if parser.url_pattern is not None and not parser.url_pattern.match(
+        str(capture_url)
+    ):
         return None
 
     # Parse snippets.
@@ -118,7 +115,7 @@ def _parse_warc_snippets(
                 urls = safe_xpath(element, parser.url_xpath, str)
                 if len(urls) > 0:
                     url = urls[0].strip()
-                    url = urljoin(capture_url, url)
+                    url = urljoin(str(capture_url), url)
             title: str | None = None
             if parser.title_xpath is not None:
                 titles = safe_xpath(element, parser.title_xpath, str)
@@ -138,8 +135,8 @@ def _parse_warc_snippets(
                 with_tail=True,
             )
             snippet_id_components = (
-                serp_id,
-                parser.id,
+                str(serp_id),
+                str(parser.id),
                 str(hash(content)),
                 str(i),
             )
@@ -177,7 +174,6 @@ def _warc_snippets_parsers(
         .query(RankFeature(field="priority", saturation={}))
         .scan()
     )
-    parsers = safe_iter_scan(parsers)
     return list(parsers)
 
 
@@ -223,24 +219,23 @@ def _parse_serp_warc_snippets_action(
                 capture=serp.capture,
                 serp=InnerSerp(
                     id=serp.id,
-                ).to_dict(),
+                ),
                 snippet=snippet,
                 snippet_parser=InnerParser(
                     id=parser.id,
                     should_parse=False,
                     last_parsed=utc_now(),
-                ).to_dict(),
+                ),
                 warc_before_serp_downloader=InnerDownloader(
                     should_download=True,
-                ).to_dict(),
+                ),
                 warc_after_serp_downloader=InnerDownloader(
                     should_download=True,
-                ).to_dict(),
+                ),
             )
             result.meta.index = config.es.index_results
             yield result.to_dict(include_meta=True)
-        yield update_action(
-            serp,
+        yield serp.update_action(
             warc_snippets=[
                 SnippetId(
                     id=snippet.id,
@@ -255,8 +250,7 @@ def _parse_serp_warc_snippets_action(
             ),
         )
         return
-    yield update_action(
-        serp,
+    yield serp.update_action(
         warc_snippets_parser=InnerParser(
             should_parse=False,
             last_parsed=utc_now(),

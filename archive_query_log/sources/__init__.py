@@ -11,7 +11,6 @@ from tqdm.auto import tqdm
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_SOURCE
 from archive_query_log.orm import Archive, Provider, Source, InnerArchive, InnerProvider
-from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -68,10 +67,10 @@ def _iter_sources_batches_changed_archives(
     archive: Archive
     provider: Provider
     changed_archives = changed_archives_search.scan()
-    changed_archives = safe_iter_scan(changed_archives)
+    changed_archives = list(changed_archives)
     for archive in changed_archives:
         all_providers = all_providers_search.scan()
-        all_providers = safe_iter_scan(all_providers)
+        all_providers = list(all_providers)
         for provider in all_providers:
             yield _sources_batch(
                 archive,
@@ -79,8 +78,7 @@ def _iter_sources_batches_changed_archives(
                 config,
             )
         yield [
-            update_action(
-                archive,
+            archive.update_action(
                 should_build_sources=False,
                 last_built_sources=utc_now(),
             )
@@ -95,10 +93,10 @@ def _iter_sources_batches_changed_providers(
     archive: Archive
     provider: Provider
     changed_providers = changed_providers_search.scan()
-    changed_providers = safe_iter_scan(changed_providers)
+    changed_providers = list(changed_providers)
     for provider in changed_providers:
         all_archives = all_archives_search.scan()
-        all_archives = safe_iter_scan(all_archives)
+        all_archives = list(all_archives)
         for archive in all_archives:
             yield _sources_batch(
                 archive,
@@ -106,8 +104,7 @@ def _iter_sources_batches_changed_providers(
                 config,
             )
         yield [
-            update_action(
-                provider,
+            provider.update_action(
                 should_build_sources=False,
                 last_built_sources=utc_now(),
             )

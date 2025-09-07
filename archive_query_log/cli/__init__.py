@@ -2,7 +2,6 @@ from typing import Type, Iterable
 
 from cyclopts import App
 from dotenv import find_dotenv, load_dotenv
-from elasticsearch_dsl import Document
 from tqdm.auto import tqdm
 
 from archive_query_log.cli.archives import archives
@@ -15,6 +14,7 @@ from archive_query_log.cli.serps import serps
 from archive_query_log.cli.sources import sources
 from archive_query_log.config import Config
 from archive_query_log.orm import (
+    BaseDocument,
     Archive,
     Provider,
     Source,
@@ -48,7 +48,7 @@ def init(
     """
     Initialize the Elasticsearch indices.
     """
-    indices_list: list[tuple[Type[Document], str]] = [
+    indices_list: list[tuple[Type[BaseDocument], str]] = [
         (Archive, config.es.index_archives),
         (Provider, config.es.index_providers),
         (Source, config.es.index_sources),
@@ -64,7 +64,7 @@ def init(
         (WarcDirectAnswersParser, config.es.index_warc_direct_answers_parsers),
     ]
     # noinspection PyTypeChecker
-    indices: Iterable[tuple[Type[Document], str]] = tqdm(
+    indices: Iterable[tuple[Type[BaseDocument], str]] = tqdm(
         indices_list,
         desc="Initialize indices",
         unit="index",

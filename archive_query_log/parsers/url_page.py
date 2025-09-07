@@ -1,12 +1,12 @@
 from functools import cache
-from itertools import chain, islice
-from json import dumps as json_dumps
+from itertools import chain
 from typing import Iterable, Iterator
 from uuid import uuid5
 
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
+from pydantic import HttpUrl
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
@@ -19,7 +19,6 @@ from archive_query_log.parsers.url import (
     parse_url_path_segment,
 )
 from archive_query_log.parsers.util import clean_int
-from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -53,11 +52,9 @@ def add_url_page_parser(
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
-    parser_id = str(
-        uuid5(
-            NAMESPACE_URL_PAGE_PARSER,
-            ":".join(parser_id_components),
-        )
+    parser_id = uuid5(
+        NAMESPACE_URL_PAGE_PARSER,
+        ":".join(parser_id_components),
     )
     parser = UrlPageParser(
         id=parser_id,
@@ -74,12 +71,14 @@ def add_url_page_parser(
     if not dry_run:
         parser.save(using=config.es.client, index=config.es.index_url_page_parsers)
     else:
-        print(json_dumps(parser.to_dict()))
+        print(parser)
 
 
-def _parse_url_page(parser: UrlPageParser, capture_url: str) -> int | None:
+def _parse_url_page(parser: UrlPageParser, capture_url: HttpUrl) -> int | None:
     # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(capture_url):
+    if parser.url_pattern is not None and not parser.url_pattern.match(
+        str(capture_url)
+    ):
         return None
 
     # Parse page.
@@ -130,7 +129,6 @@ def _url_page_parsers(
         .query(RankFeature(field="priority", saturation={}))
         .scan()
     )
-    parsers = safe_iter_scan(parsers)
     return list(parsers)
 
 
@@ -152,8 +150,7 @@ def _parse_serp_url_page_action(
         if url_page is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
-        yield update_action(
-            serp,
+        yield serp.update_action(
             url_page=url_page,
             url_page_parser=InnerParser(
                 id=parser.id,
@@ -162,8 +159,7 @@ def _parse_serp_url_page_action(
             ),
         )
         return
-    yield update_action(
-        serp,
+    yield serp.update_action(
         url_page_parser=InnerParser(
             should_parse=False,
             last_parsed=utc_now(),

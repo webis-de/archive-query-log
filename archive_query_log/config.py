@@ -82,18 +82,19 @@ class EsConfig(BaseModel):
             for action in actions:
                 print(json_dumps(action))
                 yield (True, None)
-        return streaming_bulk(
-            client=self.client,
-            actions=actions,
-            chunk_size=self.bulk_chunk_size,
-            max_chunk_bytes=self.bulk_max_chunk_bytes,
-            initial_backoff=self.bulk_initial_backoff,
-            max_backoff=self.bulk_max_backoff,
-            max_retries=self.max_retries,
-            raise_on_error=True,
-            raise_on_exception=True,
-            yield_ok=True,
-        )
+        else:
+            yield from streaming_bulk(
+                client=self.client,
+                actions=actions,
+                chunk_size=self.bulk_chunk_size,
+                max_chunk_bytes=self.bulk_max_chunk_bytes,
+                initial_backoff=self.bulk_initial_backoff,
+                max_backoff=self.bulk_max_backoff,
+                max_retries=self.max_retries,
+                raise_on_error=True,
+                raise_on_exception=True,
+                yield_ok=True,
+            )
 
     def bulk(
         self,

@@ -20,7 +20,6 @@ from archive_query_log.parsers.warc_snippets import add_warc_snippets_parser
 from archive_query_log.parsers.xml import xpaths_from_css_selector, \
     text_xpath, merge_xpaths
 from archive_query_log.providers import add_provider
-from archive_query_log.utils.es import safe_iter_scan
 
 
 def _provider_name(
@@ -168,7 +167,7 @@ def import_url_query_parsers(
             .query(Terms(domains=service["domains"]))
             .scan()
         )
-        providers = safe_iter_scan(providers)
+        providers = list(providers)
         for provider in providers:
             for k, query_parser in enumerate(query_parsers):
                 if query_parser["type"] == "fragment_segment":
@@ -235,7 +234,7 @@ def import_url_page_parsers(
             .query(Terms(domains=service["domains"]))
             .scan()
         )
-        providers = safe_iter_scan(providers)
+        providers = list(providers)
         for provider in providers:
             for k, page_parser in enumerate(page_parsers):
                 if page_parser["type"] == "fragment_segment":
@@ -302,7 +301,7 @@ def import_url_offset_parsers(
             .query(Terms(domains=service["domains"]))
             .scan()
         )
-        providers = safe_iter_scan(providers)
+        providers = list(providers)
         for provider in providers:
             for k, offset_parser in enumerate(offset_parsers):
                 if offset_parser["type"] == "fragment_segment":
@@ -370,7 +369,7 @@ def import_warc_query_parsers(
             .query(Terms(domains=service["domains"]))
             .scan()
         )
-        providers = safe_iter_scan(providers)
+        providers = list(providers)
         for provider in providers:
             for k, interpreted_query_parser in (
                     enumerate(interpreted_query_parsers)):
@@ -448,7 +447,7 @@ def import_warc_snippets_parsers(
             .query(Terms(domains=service["domains"]))
             .scan()
         )
-        providers = safe_iter_scan(providers)
+        providers = list(providers)
         for provider in providers:
             for k, results_parser in enumerate(results_parsers):
                 if results_parser["type"] != "html_selector":

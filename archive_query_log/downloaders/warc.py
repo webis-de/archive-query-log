@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime
-from itertools import chain, islice
+from itertools import chain
 from json import JSONEncoder, JSONDecoder
 from pathlib import Path
 from re import (
@@ -33,9 +33,7 @@ from archive_query_log.namespaces import NAMESPACE_WARC_DOWNLOADER
 from archive_query_log.orm import Serp, InnerDownloader, WarcLocation
 
 # from archive_query_log.orm import Result
-from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
-
 
 
 _PATTERN_ISO_FORMAT = re_compile(
@@ -76,6 +74,7 @@ class _JsonDecoder(JSONDecoder):
 _JSON_DECODER = _JsonDecoder()
 
 _D = TypeVar("_D", bound=Document)
+
 
 class _WrapperWarcRecord(WarcRecord, Generic[_D]):
     _wrapped_type: Type[_D]
@@ -135,12 +134,12 @@ def _download_serp_warc(
     if serp.capture.status_code != 200:
         return
     memento_api = MementoApi(
-        api_url=serp.archive.memento_api_url,
+        api_url=str(serp.archive.memento_api_url),
         session=config.http.session,
     )
     try:
         records = memento_api.load_url_warc(
-            url=serp.capture.url,
+            url=str(serp.capture.url),
             timestamp=serp.capture.timestamp,
             raw=True,
         )
@@ -372,8 +371,7 @@ def upload_serps_warc(config: Config) -> None:
 
     # Update Elasticsearch.
     actions = (
-        update_action(
-            document=serp,
+        serp.update_action(
             warc_location=location,
             warc_downloader=InnerDownloader(
                 id=downloader_id,
@@ -516,8 +514,7 @@ def upload_serps_warc(config: Config) -> None:
 #         )
 #     )
 #     actions = (
-#         update_action(
-#             result,
+#         result.update_action(
 #             warc_location=location,
 #             warc_downloader=InnerDownloader(
 #                 id=downloader_id,

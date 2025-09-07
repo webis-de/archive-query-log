@@ -1,12 +1,12 @@
 from functools import cache
-from itertools import chain, islice
-from json import dumps as json_dumps
+from itertools import chain
 from typing import Iterable, Iterator
 from uuid import uuid5
 
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
+from pydantic import HttpUrl
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
@@ -23,7 +23,6 @@ from archive_query_log.orm import (
 from archive_query_log.parsers.util import clean_text
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
-from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -50,11 +49,9 @@ def add_warc_query_parser(
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
-    parser_id = str(
-        uuid5(
-            NAMESPACE_WARC_QUERY_PARSER,
-            ":".join(parser_id_components),
-        )
+    parser_id = uuid5(
+        NAMESPACE_WARC_QUERY_PARSER,
+        ":".join(parser_id_components),
     )
     parser = WarcQueryParser(
         id=parser_id,
@@ -70,17 +67,19 @@ def add_warc_query_parser(
     if not dry_run:
         parser.save(using=config.es.client, index=config.es.index_warc_query_parsers)
     else:
-        print(json_dumps(parser.to_dict()))
+        print(parser)
 
 
 def _parse_warc_query(
     parser: WarcQueryParser,
-    capture_url: str,
+    capture_url: HttpUrl,
     warc_store: WarcS3Store,
     warc_location: WarcLocation,
 ) -> str | None:
     # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(capture_url):
+    if parser.url_pattern is not None and not parser.url_pattern.match(
+        str(capture_url)
+    ):
         return None
 
     # Parse query.
@@ -119,7 +118,6 @@ def _warc_query_parsers(
         .query(RankFeature(field="priority", saturation={}))
         .scan()
     )
-    parsers = safe_iter_scan(parsers)
     return list(parsers)
 
 
@@ -147,13 +145,15 @@ def _parse_serp_warc_query_action(
     for parser in _warc_query_parsers(config, serp.provider.id):
         # Try to parse the query.
         warc_query = _parse_warc_query(
-            parser, serp.capture.url, config.s3.warc_store, serp.warc_location
+            parser=parser,
+            capture_url=serp.capture.url,
+            warc_store=config.s3.warc_store,
+            warc_location=serp.warc_location,
         )
         if warc_query is None:
             # Parsing was not successful, e.g., URL pattern did not match.
             continue
-        yield update_action(
-            serp,
+        yield serp.update_action(
             warc_query=warc_query,
             warc_query_parser=InnerParser(
                 id=parser.id,
@@ -162,8 +162,7 @@ def _parse_serp_warc_query_action(
             ),
         )
         return
-    yield update_action(
-        serp,
+    yield serp.update_action(
         warc_query_parser=InnerParser(
             should_parse=False,
             last_parsed=utc_now(),
