@@ -92,11 +92,14 @@ def iter_turtle_triples(archive: Archive) -> Iterator[tuple[str, str, str]]:
     #Missing aqlWikidataUrl -> to be exported with another method
     
 def iter_turtle_triples(capture: Capture) -> Iterator[tuple[str, str, str]]:
-    entitiy = f"https://aql.webis.de/capture/{capture.id}"
+    entity = f"https://aql.webis.de/capture/{capture.id}"
     
-    yield(entitiy, "schema:dateCreated", capture.timestamp.isoformat())
-    yield(entitiy, "schema:url", capture.url)
-    yield(entitiy, "http:statusCodeNumber", str(capture.status_code))
-    yield(entitiy, "aql:digest", capture.digest)
-    yield(entitiy, "schema:encodingFormat", capture.mimetype)
-    yield(entitiy, "aql:mementoAPIViewerURL", ) #TODO mementoapi viewer url contained in archive, where is mementoapi raw url from? -> this links to the archive where capture is archived
+    yield(entity, "schema:dateCreated", capture.timestamp.isoformat())
+    yield(entity, "schema:url", capture.url)
+    yield(entity, "http:statusCodeNumber", str(capture.status_code))
+    yield(entity, "aql:digest", capture.digest)
+    yield(entity, "schema:encodingFormat", capture.mimetype)
+    # yield(entitiy, "aql:mementoAPIViewerURL", ) #TODO mementoapi viewer url contained in archive, where is mementoapi raw url from? -> this links to the archive where capture is archived
+    if hasattr(capture, "archive") and hasattr(capture.archive, "memento_api_url"):
+        memento_viewer_url = f"{capture.archive.memento_api_url}/{capture.timestamp.strftime('%Y%m%d%H%M%S')}/{capture.url}"
+        yield(entity, "aql:mementoAPIViewerURL", memento_viewer_url)
