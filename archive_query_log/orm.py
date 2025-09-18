@@ -1,82 +1,68 @@
 from datetime import datetime, UTC
 from functools import cached_property
 from re import Pattern, compile as pattern
-from typing import Literal, Annotated, Any, TypeAlias
+from typing import Literal, Annotated, TypeAlias
 from uuid import UUID
 
 from annotated_types import Ge
 from elasticsearch_dsl import (
-    Keyword as KeywordField,
-    Text as TextField,
-    Date,
-    RankFeature,
-    Integer as IntegerField,
-    Long as LongField,
+    Date as _Date,
+    RankFeature as _RankFeature,
+    Keyword as _Keyword,
 )
-from pydantic import HttpUrl, Field
+from pydantic import HttpUrl, Field, AliasChoices
 
-from archive_query_log.utils.es import BaseDocument, BaseInnerDocument
+from elasticsearch_pydantic import (
+    BaseDocument,
+    BaseInnerDocument,
+    KeywordField as Keyword,
+    TextField as Text,
+    IntegerField as Integer,
+    LongField as Long,
+)
 
-Keyword: TypeAlias = Annotated[str, KeywordField()]
-IntKeyword: TypeAlias = Annotated[int, KeywordField()]
-Text: TypeAlias = Annotated[str, TextField()]
-Integer: TypeAlias = Annotated[int, IntegerField()]
-Long: TypeAlias = Annotated[int, LongField()]
-StrictUtcDateTimeNoMillis: TypeAlias = Annotated[
+
+IntKeyword: TypeAlias = Annotated[int, _Keyword]
+Date: TypeAlias = Annotated[
     datetime,
-    Date(
+    _Date(
         default_timezone="UTC",
         format="strict_date_time_no_millis",
     ),
 ]
-DefaultStrictUtcDateTimeNoMillis: TypeAlias = Annotated[
-    StrictUtcDateTimeNoMillis,
+DefaultDate: TypeAlias = Annotated[
+    Date,
     Field(default_factory=lambda: datetime.now(UTC)),
 ]
 FloatRankFeature: TypeAlias = Annotated[
     float,
     Ge(0),
-    RankFeature(positive_score_impact=True),
+    _RankFeature(positive_score_impact=True),
 ]
 IntRankFeature: TypeAlias = Annotated[
     int,
     Ge(0),
-    RankFeature(positive_score_impact=True),
+    _RankFeature(positive_score_impact=True),
 ]
 
 
 class UuidBaseDocument(BaseDocument):
-    def __init__(
-        self,
-        /,
-        id: UUID,
-        meta: dict[str, Any] | None = None,
-        **data: Any,
-    ) -> None:
-        super().__init__(
-            id=str(id),
-            meta=meta,
-            **data,
-        )
-
-    @property
-    def id(self) -> UUID:
-        return UUID(self.meta.id)
-
-    @id.setter
-    def id(self, value: UUID) -> None:
-        self.meta.id = str(value)
+    id: UUID = Field(  # type: ignore[override]
+        default_factory=UUID,
+        validation_alias=AliasChoices("_id", "id"),
+        serialization_alias="_id",
+    )
 
 
 class Archive(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     name: Text
     description: Text
     cdx_api_url: HttpUrl
     memento_api_url: HttpUrl
     priority: FloatRankFeature | None = None
     should_build_sources: bool = True
-    last_built_sources: StrictUtcDateTimeNoMillis | None = None
+    last_built_sources: Date | None = None
 
     class Index:
         settings = {
@@ -86,7 +72,7 @@ class Archive(UuidBaseDocument):
 
 
 class Provider(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     name: Text
     description: Text
     exclusion_reason: Text
@@ -95,7 +81,7 @@ class Provider(UuidBaseDocument):
     url_path_prefixes: list[Keyword]
     priority: FloatRankFeature | None = None
     should_build_sources: bool = True
-    last_built_sources: StrictUtcDateTimeNoMillis | None = None
+    last_built_sources: Date | None = None
 
     class Index:
         settings = {
@@ -119,11 +105,11 @@ class InnerProvider(BaseInnerDocument):
 
 
 class Source(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     archive: InnerArchive
     provider: InnerProvider
     should_fetch_captures: bool = True
-    last_fetched_captures: StrictUtcDateTimeNoMillis | None = None
+    last_fetched_captures: Date | None = None
 
     class Index:
         settings = {
@@ -135,16 +121,16 @@ class Source(UuidBaseDocument):
 class InnerParser(BaseInnerDocument):
     id: UUID | None = None
     should_parse: bool = True
-    last_parsed: StrictUtcDateTimeNoMillis | None = None
+    last_parsed: Date | None = None
 
 
 class Capture(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     archive: InnerArchive
     provider: InnerProvider
     url: HttpUrl
     url_key: Keyword
-    timestamp: StrictUtcDateTimeNoMillis
+    timestamp: Date
     status_code: Integer
     digest: Keyword
     mimetype: Keyword | None = None
@@ -169,8 +155,8 @@ class Capture(UuidBaseDocument):
 class InnerCapture(BaseInnerDocument):
     id: UUID
     url: HttpUrl
-    timestamp: StrictUtcDateTimeNoMillis
-    status_code: Integer
+    timestamp: Date
+    status_code: Integer | None
     digest: Keyword
     mimetype: Keyword | None = None
 
@@ -178,7 +164,7 @@ class InnerCapture(BaseInnerDocument):
 class InnerDownloader(BaseInnerDocument):
     id: UUID
     should_download: bool = True
-    last_downloaded: StrictUtcDateTimeNoMillis | None = None
+    last_downloaded: Date | None = None
 
 
 class WarcLocation(BaseInnerDocument):
@@ -198,7 +184,7 @@ class SpecialContentsResultBlockId(BaseInnerDocument):
 
 
 class Serp(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     archive: InnerArchive
     provider: InnerProvider
     capture: InnerCapture
@@ -233,7 +219,7 @@ class InnerSerp(BaseInnerDocument):
 
 
 class WebSearchResultBlock(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     archive: InnerArchive
     provider: InnerProvider
     serp_capture: InnerCapture
@@ -245,7 +231,7 @@ class WebSearchResultBlock(UuidBaseDocument):
     text: Text | None = None
     parser: InnerParser | None = None
     should_fetch_captures: bool = True
-    last_fetched_captures: StrictUtcDateTimeNoMillis | None = None
+    last_fetched_captures: Date | None = None
     capture_before_serp: InnerCapture | None = None
     warc_location_before_serp: WarcLocation | None = None
     warc_downloader_before_serp: InnerDownloader | None = None
@@ -261,7 +247,7 @@ class WebSearchResultBlock(UuidBaseDocument):
 
 
 class SpecialContentsResultBlock(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     archive: InnerArchive
     provider: InnerProvider
     serp_capture: InnerCapture
@@ -291,7 +277,7 @@ UrlQueryParserType = Literal[
 
 
 class UrlQueryParser(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
@@ -334,7 +320,7 @@ UrlPageParserType = Literal[
 
 
 class UrlPageParser(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
@@ -371,7 +357,7 @@ UrlOffsetParserType = Literal[
 
 
 class UrlOffsetParser(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
@@ -404,7 +390,7 @@ WarcQueryParserType = Literal["xpath"]
 
 
 class WarcQueryParser(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
@@ -442,7 +428,7 @@ WarcWebSearchResultBlocksParserType = Literal["xpath"]
 
 
 class WarcWebSearchResultBlocksParser(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
@@ -469,7 +455,7 @@ WarcSpecialContentsResultBlocksParserType = Literal["xpath"]
 
 
 class WarcSpecialContentsResultBlocksParser(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
@@ -495,7 +481,7 @@ WarcMainContentParserType = Literal["resiliparse"]
 
 
 class WarcMainContentParser(UuidBaseDocument):
-    last_modified: DefaultStrictUtcDateTimeNoMillis
+    last_modified: DefaultDate
     provider: InnerProviderId | None = None
     url_pattern_regex: Keyword | None = None
     priority: FloatRankFeature | None = None
