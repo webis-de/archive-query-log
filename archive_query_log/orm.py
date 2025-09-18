@@ -236,7 +236,7 @@ class WebSearchResultBlock(UuidBaseDocument):
     last_modified: DefaultStrictUtcDateTimeNoMillis
     archive: InnerArchive
     provider: InnerProvider
-    capture: InnerCapture
+    serp_capture: InnerCapture
     serp: InnerSerp
     content: Text
     rank: Integer
@@ -244,10 +244,14 @@ class WebSearchResultBlock(UuidBaseDocument):
     title: Text | None = None
     text: Text | None = None
     parser: InnerParser | None = None
-    warc_before_serp_location: WarcLocation | None = None
-    warc_before_serp_downloader: InnerDownloader | None = None
-    warc_after_serp_location: WarcLocation | None = None
-    warc_after_serp_downloader: InnerDownloader | None = None
+    should_fetch_captures: bool = True
+    last_fetched_captures: StrictUtcDateTimeNoMillis | None = None
+    capture_before_serp: InnerCapture | None = None
+    warc_location_before_serp: WarcLocation | None = None
+    warc_downloader_before_serp: InnerDownloader | None = None
+    capture_after_serp: InnerCapture | None = None
+    warc_location_after_serp: WarcLocation | None = None
+    warc_downloader_after_serp: InnerDownloader | None = None
 
     class Index:
         settings = {
@@ -260,7 +264,7 @@ class SpecialContentsResultBlock(UuidBaseDocument):
     last_modified: DefaultStrictUtcDateTimeNoMillis
     archive: InnerArchive
     provider: InnerProvider
-    capture: InnerCapture
+    serp_capture: InnerCapture
     serp: InnerSerp
     content: Text
     rank: Integer
