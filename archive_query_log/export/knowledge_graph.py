@@ -1,4 +1,5 @@
 from typing import Iterator
+from orm import Provider, Archive, Capture
 
 # class Provider(BaseDocument):
 #     name: str = Text()
@@ -105,3 +106,5 @@ def iter_turtle_triples(capture: Capture) -> Iterator[tuple[str, str, str]]:
         
         memento_raw_url = f"{capture.archive.memento_api_url}/{capture.timestamp.strftime('%Y%m%d%H%M%S')}id_/{capture.url}" # this links to the raw content of the capture (without rewritten links by the archive)
         yield(entity, "aql:mementoAPIRawURL", memento_raw_url)
+    #TODO insert internet archive metadata/collection later
+    
