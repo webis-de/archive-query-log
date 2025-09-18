@@ -290,7 +290,7 @@ All the above commands can be run in parallel, and they can be run multiple time
 
 #### Download SERP WARCs
 
-Up to this point, we have only fetched the metadata of the captures, most prominently the URL. However, the snippets of the SERPs are not contained in the metadata but only on the web page. So, we need to download the actual web pages from the archive service.
+Up to this point, we have only fetched the metadata of the captures, most prominently the URL. However, the result blocks of the SERPs are not contained in the metadata but only on the web page. So, we need to download the actual web pages from the archive service.
 
 ```shell
 aql serps download warc
@@ -316,23 +316,23 @@ From the WARC contents, we can now parse the query as it appears on the SERP (wh
 aql serps parse warc-query
 ```
 
-More importantly, we can parse the snippets of the SERP.
+More importantly, we can parse the web search result blocks of the SERP.
 
 ```shell
-aql serps parse warc-snippets
+aql serps parse warc-web-search-result-blocks
 ```
 
-Parsing the snippets from the SERP's WARC contents will also add the SERP's results to a new index.
+Parsing the web search result blocks from the SERP's WARC contents will also add the SERP's web search result blocks to a new index.
 
-<!-- #### Download SERP snippet WARCs
+#### Download web search result block landing page WARCs
 
-To get the full text of each referenced result from the SERP, we need to download a capture of the result from the web archive. Intuitively, we would like to download a capture of the result at the exact same time as the SERP was captured. But often, web archives crawl the results later or not at all. Therefore, our implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures individually for each result, if any capture can be found.
+To get the full text of each referenced landing page of a web search result block from the SERP, we need to download a capture of the landing page from the web archive. Intuitively, we would like to download a capture of the landing page at the exact same time as the SERP was captured. But often, web archives crawl these landing pages later or not at all. Therefore, our implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures individually for each web search result block, if any capture can be found.
 
 ```shell
-aql results download warc
+aql web-search-result-blocks download warc
 ```
 
-This command will again download the result's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the result index for random access to the contents of a specific result. -->
+This command will download the landing page's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the web search result blocks index for random access to the contents of a specific landing page.
 
 ### Import
 
@@ -344,7 +344,7 @@ aql parsers url-query import
 aql parsers url-page import
 aql parsers url-offset import
 aql parsers warc-query import
-aql parsers warc-snippets import
+aql parsers warc-web-search-result-blocks import
 ```
 
 We also support importing a previous crawl of captures from the AQL-22 file system backend:
