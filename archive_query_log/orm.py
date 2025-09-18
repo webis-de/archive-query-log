@@ -75,8 +75,8 @@ class Archive(UuidBaseDocument):
     cdx_api_url: HttpUrl
     memento_api_url: HttpUrl
     priority: FloatRankFeature | None = None
-    should_build_sources: bool
-    last_built_sources: StrictUtcDateTimeNoMillis
+    should_build_sources: bool = True
+    last_built_sources: StrictUtcDateTimeNoMillis | None = None
 
     class Index:
         settings = {
@@ -94,8 +94,8 @@ class Provider(UuidBaseDocument):
     domains: list[Keyword]
     url_path_prefixes: list[Keyword]
     priority: FloatRankFeature | None = None
-    should_build_sources: bool
-    last_built_sources: StrictUtcDateTimeNoMillis
+    should_build_sources: bool = True
+    last_built_sources: StrictUtcDateTimeNoMillis | None = None
 
     class Index:
         settings = {
@@ -122,8 +122,8 @@ class Source(UuidBaseDocument):
     last_modified: DefaultStrictUtcDateTimeNoMillis
     archive: InnerArchive
     provider: InnerProvider
-    should_fetch_captures: bool
-    last_fetched_captures: StrictUtcDateTimeNoMillis
+    should_fetch_captures: bool = True
+    last_fetched_captures: StrictUtcDateTimeNoMillis | None = None
 
     class Index:
         settings = {
@@ -177,8 +177,8 @@ class InnerCapture(BaseInnerDocument):
 
 class InnerDownloader(BaseInnerDocument):
     id: UUID
-    should_download: bool
-    last_downloaded: StrictUtcDateTimeNoMillis
+    should_download: bool = True
+    last_downloaded: StrictUtcDateTimeNoMillis | None = None
 
 
 class WarcLocation(BaseInnerDocument):
