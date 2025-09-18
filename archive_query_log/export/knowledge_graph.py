@@ -99,7 +99,9 @@ def iter_turtle_triples(capture: Capture) -> Iterator[tuple[str, str, str]]:
     yield(entity, "http:statusCodeNumber", str(capture.status_code))
     yield(entity, "aql:digest", capture.digest)
     yield(entity, "schema:encodingFormat", capture.mimetype)
-    # yield(entitiy, "aql:mementoAPIViewerURL", ) #TODO mementoapi viewer url contained in archive, where is mementoapi raw url from? -> this links to the archive where capture is archived
     if hasattr(capture, "archive") and hasattr(capture.archive, "memento_api_url"):
-        memento_viewer_url = f"{capture.archive.memento_api_url}/{capture.timestamp.strftime('%Y%m%d%H%M%S')}/{capture.url}"
+        memento_viewer_url = f"{capture.archive.memento_api_url}/{capture.timestamp.strftime('%Y%m%d%H%M%S')}/{capture.url}" # this links to the archive url where capture is archived
         yield(entity, "aql:mementoAPIViewerURL", memento_viewer_url)
+        
+        memento_raw_url = f"{capture.archive.memento_api_url}/{capture.timestamp.strftime('%Y%m%d%H%M%S')}id_/{capture.url}" # this links to the raw content of the capture (without rewritten links by the archive)
+        yield(entity, "aql:mementoAPIRawURL", memento_raw_url)
