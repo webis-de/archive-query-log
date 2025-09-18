@@ -68,6 +68,39 @@ from orm import Provider, Archive, Capture
 #             "number_of_replicas": 2,
 #         }
 
+# class Serp(BaseDocument):
+#     archive: InnerArchive = Object(InnerArchive)
+#     provider: InnerProvider = Object(InnerProvider)
+#     capture: InnerCapture = Object(InnerCapture)
+#     url_query: str = Text()
+#     url_query_parser: InnerParser | None = Object(InnerParser)
+#     url_page: int | None = Integer()
+#     url_page_parser: InnerParser | None = Object(InnerParser)
+#     url_offset: int | None = Integer()
+#     url_offset_parser: InnerParser | None = Object(InnerParser)
+#     # url_language: str | None = Keyword()
+#     # url_language_parser: InnerParser | None = Object(InnerParser)
+#     warc_location: WarcLocation | None = Object(WarcLocation)
+#     warc_downloader: InnerDownloader | None = Object(InnerDownloader)
+#     warc_query: str | None = Text()
+#     warc_query_parser: InnerParser | None = Object(InnerParser)
+#     warc_snippets: list[SnippetId] | None = Nested(SnippetId)
+#     warc_snippets_parser: InnerParser | None = Object(InnerParser)
+#     warc_direct_answers: list[DirectAnswerId] | None = Nested(DirectAnswerId)
+#     warc_direct_answers_parser: InnerParser | None = Object(InnerParser)
+
+#     # rendered_warc_location: WarcLocation | None = Object(WarcLocation)
+#     # rendered_warc_downloader: InnerDownloader | None = (
+#     #     Object(InnerDownloader))
+
+#     class Index:
+#         settings = {
+#             "number_of_shards": 40,
+#             "number_of_replicas": 2,
+#         }
+
+
+
 
 
 def iter_turtle_triples(provider: Provider) -> Iterator[tuple[str, str, str]]:
@@ -107,4 +140,12 @@ def iter_turtle_triples(capture: Capture) -> Iterator[tuple[str, str, str]]:
         memento_raw_url = f"{capture.archive.memento_api_url}/{capture.timestamp.strftime('%Y%m%d%H%M%S')}id_/{capture.url}" # this links to the raw content of the capture (without rewritten links by the archive)
         yield(entity, "aql:mementoAPIRawURL", memento_raw_url)
     #TODO insert internet archive metadata/collection later
+    yield(entity, "schema:archivedAt", f"https://aql.webis.de/archive/{capture.archive.id}")
+
+def iter_turtle_triples(serp: SERP) -> Iterator[tuple[str, str, str]]:
+    entity = f"https://aql.webis.de/serp/{serp.id}"
     
+    yield(entity, "schema:identifier", serp.id)
+    # yield(entity, "aql:trecTaskURLQuery", ) TODO what is the trec task? is this just hypothetical?
+    yield(entity, "schema:publisher", f"https://aql.webis.de/provider/{serp.provider.id}")
+    yield(entity, "schema:hasPart", ) #TODO result block. -> new naming in new branch?
