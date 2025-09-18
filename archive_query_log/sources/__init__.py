@@ -55,7 +55,7 @@ def _sources_batch(archive: Archive, provider: Provider, config: Config) -> list
                 should_fetch_captures=True,
             )
             source.meta.index = config.es.index_sources
-            batch.append(source.to_dict(include_meta=True))
+            batch.append(source.create_action())
     return batch
 
 

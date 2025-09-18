@@ -192,7 +192,7 @@ def _parse_serp_url_query_action(
             ),
         )
         serp.meta.index = config.es.index_serps
-        yield serp.to_dict(include_meta=True)
+        yield serp.create_action()
         yield capture.update_action(
             url_query_parser=InnerParser(
                 id=parser.id,

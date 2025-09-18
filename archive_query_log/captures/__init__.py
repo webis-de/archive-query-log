@@ -105,7 +105,7 @@ def _add_captures_actions(
     try:
         for capture in captures_iter:
             capture.meta.index = config.es.index_captures
-            yield capture.to_dict(include_meta=True)
+            yield capture.create_action()
     except ConnectTimeout as e:
         # The archives' CDX are usually very slow, so we expect timeouts.
         # Rather than failing, we just warn and continue with the next source.

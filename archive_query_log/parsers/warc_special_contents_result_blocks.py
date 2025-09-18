@@ -237,7 +237,7 @@ def _parse_serp_warc_special_contents_result_blocks_action(
             special_contents_result_block.meta.index = (
                 config.es.index_web_search_result_blocks
             )
-            yield special_contents_result_block.to_dict(include_meta=True)
+            yield special_contents_result_block.create_action()
         yield serp.update_action(
             warc_special_contents_result_blocks=[
                 SpecialContentsResultBlockId(

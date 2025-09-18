@@ -351,6 +351,9 @@ class BaseDocument(
 
         return meta
 
+    def create_action(self) -> dict:
+        return self.to_dict(include_meta=True)
+
     def update_action(
         self,
         retry_on_conflict: int | None = 3,
@@ -373,6 +376,15 @@ class BaseDocument(
         if retry_on_conflict is not None:
             action["_retry_on_conflict"] = retry_on_conflict
         action["doc"] = doc
+        return action
+
+    def delete_action(self) -> dict:
+        action = {
+            f"_{key}": self.meta[key]
+            for key in META_FIELDS.difference({"score", "source"})
+            if key in self.meta
+        }
+        action["_op_type"] = "delete"
         return action
 
     @property

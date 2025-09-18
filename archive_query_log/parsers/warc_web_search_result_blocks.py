@@ -250,7 +250,7 @@ def _parse_serp_warc_web_search_result_blocks_action(
             web_search_result_block.meta.index = (
                 config.es.index_web_search_result_blocks
             )
-            yield web_search_result_block.to_dict(include_meta=True)
+            yield web_search_result_block.create_action()
         yield serp.update_action(
             warc_web_search_result_blocks=[
                 WebSearchResultBlockId(
