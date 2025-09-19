@@ -244,7 +244,7 @@ def _nested_parameter(cls: Type[BaseModel]) -> Any:
 class Config(BaseModel):
     model_config = ConfigDict(frozen=True)
 
-    es: Annotated[EsConfig, _nested_parameter(EsConfig)]
-    s3: Annotated[S3Config, _nested_parameter(S3Config)]
-    http: Annotated[HttpConfig, _nested_parameter(HttpConfig)]
-    warc_cache: Annotated[WarcCacheConfig, _nested_parameter(WarcCacheConfig)]
+    es: EsConfig = _nested_parameter(EsConfig)
+    s3: S3Config = _nested_parameter(S3Config)
+    http: HttpConfig = _nested_parameter(HttpConfig)
+    warc_cache: WarcCacheConfig = _nested_parameter(WarcCacheConfig)
