@@ -1,7 +1,7 @@
 from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
-from uuid import uuid5
+from uuid import uuid5, UUID
 
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
@@ -30,7 +30,7 @@ from archive_query_log.utils.time import utc_now
 
 def add_url_query_parser(
     config: Config,
-    provider_id: str | None,
+    provider_id: UUID | None,
     url_pattern_regex: str | None,
     priority: float | None,
     parser_type: UrlQueryParserType,
@@ -54,7 +54,7 @@ def add_url_query_parser(
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
     parser_id_components = (
-        provider_id if provider_id is not None else "",
+        str(provider_id) if provider_id is not None else "",
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )

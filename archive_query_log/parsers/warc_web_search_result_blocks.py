@@ -27,7 +27,6 @@ from archive_query_log.orm import (
     WebSearchResultBlock,
     InnerSerp,
     WebSearchResultBlockId,
-    InnerDownloader,
 )
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
@@ -36,7 +35,7 @@ from archive_query_log.utils.time import utc_now
 
 def add_warc_web_search_result_blocks_parser(
     config: Config,
-    provider_id: str | None,
+    provider_id: UUID | None,
     url_pattern_regex: str | None,
     priority: float | None,
     parser_type: WarcWebSearchResultBlocksParserType,
@@ -54,7 +53,7 @@ def add_warc_web_search_result_blocks_parser(
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
     parser_id_components = (
-        provider_id if provider_id is not None else "",
+        str(provider_id) if provider_id is not None else "",
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
@@ -226,7 +225,7 @@ def _parse_serp_warc_web_search_result_blocks_action(
                 last_modified=utc_now(),
                 archive=serp.archive,
                 provider=serp.provider,
-                capture=serp.capture,
+                serp_capture=serp.capture,
                 serp=InnerSerp(
                     id=serp.id,
                 ),
@@ -239,12 +238,6 @@ def _parse_serp_warc_web_search_result_blocks_action(
                     id=parser.id,
                     should_parse=False,
                     last_parsed=utc_now(),
-                ),
-                warc_before_serp_downloader=InnerDownloader(
-                    should_download=True,
-                ),
-                warc_after_serp_downloader=InnerDownloader(
-                    should_download=True,
                 ),
             )
             web_search_result_block.meta.index = (
