@@ -503,6 +503,60 @@ def _download_web_search_result_block_warc_before_serp(
         yield _AnnotatedWarcRecord(record, result_block)
 
 
+def _download_web_search_result_block_warc_after_serp(
+    config: Config,
+    result_block: WebSearchResultBlock,
+) -> Iterator[_AnnotatedWarcRecord[WebSearchResultBlock]]:
+    if result_block.capture_after_serp is None:
+        return
+
+    # Get downloader ID.
+    downloader_id_components = (
+        config.s3.endpoint_url,
+        config.s3.bucket_name,
+        app_version,
+    )
+    downloader_id = uuid5(
+        NAMESPACE_WARC_DOWNLOADER,
+        ":".join(downloader_id_components),
+    )
+
+    result_block.warc_downloader_after_serp = InnerDownloader(
+        id=downloader_id,
+        should_download=False,
+        last_downloaded=utc_now(),
+    )
+    if result_block.capture_after_serp.status_code != 200:
+        result_block.update(
+            using=config.es.client,
+            index=config.es.index_web_search_result_blocks,
+        )
+        return
+
+    memento_api = MementoApi(
+        api_url=result_block.archive.memento_api_url.encoded_string(),
+        session=config.http.session,
+    )
+
+    try:
+        records = memento_api.load_url_warc(
+            url=result_block.capture_after_serp.url.encoded_string(),
+            timestamp=result_block.capture_after_serp.timestamp,
+            raw=True,
+        )
+    except RequestsConnectionError:
+        warn(
+            RuntimeWarning(
+                f"Connection error while downloading WARC "
+                f"for capture URL {result_block.capture_after_serp.url} at {result_block.capture_after_serp.timestamp}."
+            )
+        )
+        return
+
+    for record in records:
+        yield _AnnotatedWarcRecord(record, result_block)
+
+
 def _unwrap_records(
     record: Iterable[WarcS3Record], wrapper_type: Type[_D]
 ) -> Iterator[tuple[_D, WarcLocation]]:
@@ -556,6 +610,79 @@ def download_web_search_result_block_warc_before_serp(
     # Download from Memento API.
     downloaded_records = chain.from_iterable(
         _download_web_search_result_block_warc_before_serp(
+            config=config,
+            result_block=result_block,
+        )
+        for result_block in changed_result_blocks
+    )
+
+    # Write to S3.
+    stored_records: Iterator[WarcS3Record] = config.s3.warc_store.write(
+        downloaded_records
+    )
+    stored_result_blocks = _unwrap_records(stored_records, WebSearchResultBlock)
+
+    downloader_id_components = (
+        config.s3.endpoint_url,
+        config.s3.bucket_name,
+        app_version,
+    )
+    downloader_id = uuid5(
+        NAMESPACE_WARC_DOWNLOADER,
+        ":".join(downloader_id_components),
+    )
+    actions = (
+        result_block.update_action(
+            warc_location=location,
+            warc_downloader=InnerDownloader(
+                id=downloader_id,
+                should_download=False,
+                last_downloaded=utc_now(),
+            ),
+        )
+        for result_block, location in stored_result_blocks
+    )
+    config.es.bulk(actions)
+
+
+def download_web_search_result_block_warc_after_serp(
+    config: Config, size: int = 10
+) -> None:
+    changed_result_blocks_search: Search = (
+        WebSearchResultBlock.search(
+            using=config.es.client, index=config.es.index_web_search_result_blocks
+        )
+        .filter(
+            Exists(field="capture_after_serp.url")
+            & Term(capture_after_serp__status_code=200)
+            & ~Term(warc_downloader_after_serp__should_download=False)
+        )
+        .query(
+            RankFeature(field="archive.priority", saturation={})
+            | RankFeature(field="provider.priority", saturation={})
+            | FunctionScore(functions=[RandomScore()])
+        )
+    )
+    num_changed_result_blocks = changed_result_blocks_search.count()
+
+    if num_changed_result_blocks <= 0:
+        print("No new/changed web search result blocks.")
+        return
+
+    changed_result_blocks: Iterable[WebSearchResultBlock] = (
+        changed_result_blocks_search.params(size=size).execute()
+    )
+
+    changed_result_blocks = tqdm(
+        changed_result_blocks,
+        total=num_changed_result_blocks,
+        desc="Downloading WARCs",
+        unit="web search result block",
+    )
+
+    # Download from Memento API.
+    downloaded_records = chain.from_iterable(
+        _download_web_search_result_block_warc_after_serp(
             config=config,
             result_block=result_block,
         )
