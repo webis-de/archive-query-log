@@ -71,7 +71,6 @@ def init(
             config.es.index_warc_special_contents_result_blocks_parsers,
         ),
     ]
-    # noinspection PyTypeChecker
     indices: Iterable[tuple[Type[BaseDocument], str]] = tqdm(
         indices_list,
         desc="Initialize indices",

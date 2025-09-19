@@ -178,7 +178,6 @@ class HttpConfig(BaseModel):
             limiter=_limiter,
             per_host=True,
         )
-        # noinspection HttpUrlsUsage
         session.mount("http://", _adapter)
         session.mount("https://", _adapter)
         return session
@@ -197,7 +196,6 @@ class HttpConfig(BaseModel):
         _adapter = LimiterAdapter(
             limiter=_limiter,
         )
-        # noinspection HttpUrlsUsage
         session.mount("http://", _adapter)
         session.mount("https://", _adapter)
         return session

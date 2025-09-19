@@ -94,7 +94,6 @@ def import_providers(
     provider_names: MutableMapping[str, str] = Index(str(cache_path))
 
     if auto_merge or no_merge:
-        # noinspection PyTypeChecker
         services = tqdm(
             services,
             desc="Import providers",
@@ -149,7 +148,6 @@ def import_url_query_parsers(
     print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
-    # noinspection PyTypeChecker
     services = tqdm(
         services,
         desc="Import parsers for providers",
@@ -216,7 +214,6 @@ def import_url_page_parsers(
     print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
-    # noinspection PyTypeChecker
     services = tqdm(
         services,
         desc="Import parsers for providers",
@@ -283,7 +280,6 @@ def import_url_offset_parsers(
     print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
-    # noinspection PyTypeChecker
     services = tqdm(
         services,
         desc="Import parsers for providers",
@@ -350,7 +346,6 @@ def import_warc_query_parsers(
     print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
-    # noinspection PyTypeChecker
     services = tqdm(
         services,
         desc="Import parsers for providers",
@@ -429,7 +424,6 @@ def import_warc_web_search_result_blocks_parsers(
     print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
-    # noinspection PyTypeChecker
     services = tqdm(
         services,
         desc="Import parsers for providers",

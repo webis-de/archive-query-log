@@ -1,7 +1,7 @@
 from datetime import datetime, UTC
 from functools import cached_property
 from re import Pattern, compile as pattern
-from typing import Literal, Annotated, TypeAlias
+from typing import Literal, Annotated, TypeAlias, Sequence
 from uuid import UUID
 
 from annotated_types import Ge
@@ -77,8 +77,8 @@ class Provider(UuidBaseDocument):
     description: Text
     exclusion_reason: Text
     notes: Text
-    domains: list[Keyword]
-    url_path_prefixes: list[Keyword]
+    domains: Sequence[Keyword]
+    url_path_prefixes: Sequence[Keyword]
     priority: FloatRankFeature | None = None
     should_build_sources: bool = True
     last_built_sources: Date | None = None
@@ -131,7 +131,7 @@ class Capture(UuidBaseDocument):
     url: HttpUrl
     url_key: Keyword
     timestamp: Date
-    status_code: Integer
+    status_code: Integer | None = None
     digest: Keyword
     mimetype: Keyword | None = None
     filename: Keyword | None = None
@@ -139,7 +139,7 @@ class Capture(UuidBaseDocument):
     length: Integer | None = None
     access: Keyword | None = None
     redirect_url: HttpUrl | None = None
-    flags: list[Keyword] | None = None
+    flags: Sequence[Keyword] | None = None
     collection: Keyword | None = None
     source: Keyword | None = None
     source_collection: Keyword | None = None
@@ -200,11 +200,11 @@ class Serp(UuidBaseDocument):
     warc_downloader: InnerDownloader | None = None
     warc_query: Text | None = None
     warc_query_parser: InnerParser | None = None
-    warc_web_search_result_blocks: list[WebSearchResultBlockId] | None = None
+    warc_web_search_result_blocks: Sequence[WebSearchResultBlockId] | None = None
     warc_web_search_result_blocks_parser: InnerParser | None = None
-    warc_special_contents_result_blocks: list[SpecialContentsResultBlockId] | None = (
-        None
-    )
+    warc_special_contents_result_blocks: (
+        Sequence[SpecialContentsResultBlockId] | None
+    ) = None
     warc_special_contents_result_blocks_parser: InnerParser | None = None
 
     class Index:

@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Annotated, TypeAlias, Literal
+from uuid import UUID
 
 from cyclopts import App, Parameter
 from cyclopts.types import ResolvedExistingFile
@@ -137,7 +138,7 @@ _UrlPageParserType: TypeAlias = Literal[
 @url_page.command(name="add")
 def url_page_add(
     *,
-    provider_id: str | None = None,
+    provider_id: UUID | None = None,
     url_pattern_regex: str | None = None,
     priority: Annotated[float, Number(gte=0)] | None = None,
     parser_type: _UrlPageParserType,

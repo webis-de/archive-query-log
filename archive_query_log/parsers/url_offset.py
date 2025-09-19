@@ -78,7 +78,7 @@ def add_url_offset_parser(
 def _parse_url_offset(parser: UrlOffsetParser, capture_url: HttpUrl) -> int | None:
     # Check if URL matches pattern.
     if parser.url_pattern is not None and not parser.url_pattern.match(
-        str(capture_url)
+        capture_url.encoded_string()
     ):
         return None
 
@@ -196,7 +196,6 @@ def parse_serps_url_offset(
     if num_changed_serps > 0:
         changed_serps: Iterable[Serp] = changed_serps_search.params(size=size).execute()
 
-        # noinspection PyTypeChecker
         changed_serps = tqdm(
             changed_serps,
             total=num_changed_serps,

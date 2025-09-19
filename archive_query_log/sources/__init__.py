@@ -26,16 +26,14 @@ def _sources_batch(archive: Archive, provider: Provider, config: Config) -> list
     for domain in provider.domains:
         for url_path_prefix in provider.url_path_prefixes:
             source_id_components = (
-                archive.cdx_api_url,
-                archive.memento_api_url,
+                archive.cdx_api_url.encoded_string(),
+                archive.memento_api_url.encoded_string(),
                 domain,
                 url_path_prefix,
             )
-            source_id = str(
-                uuid5(
-                    NAMESPACE_SOURCE,
-                    ":".join(source_id_components),
-                )
+            source_id = uuid5(
+                NAMESPACE_SOURCE,
+                ":".join(source_id_components),
             )
             source = Source(
                 id=source_id,
@@ -139,7 +137,6 @@ def _build_archive_sources(
                 config=config,
             )
         )
-        # noinspection PyTypeChecker
         action_batches_archives = tqdm(
             action_batches_archives,
             total=num_batches_archives,
@@ -183,7 +180,6 @@ def _build_provider_sources(
                 config=config,
             )
         )
-        # noinspection PyTypeChecker
         action_batches_providers = tqdm(
             action_batches_providers,
             total=num_batches_providers,

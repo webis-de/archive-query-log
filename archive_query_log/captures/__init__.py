@@ -8,6 +8,7 @@ from warnings import warn
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, RankFeature, Term, Range
+from pydantic import HttpUrl
 from requests import ConnectTimeout, HTTPError, Response
 from tqdm.auto import tqdm
 from web_archive_api.cdx import CdxApi, CdxMatchType
@@ -26,7 +27,7 @@ def _iter_captures(
         source: Source,
 ) -> Iterator[Capture]:
     cdx_api = CdxApi(
-        api_url=str(source.archive.cdx_api_url),
+        api_url=source.archive.cdx_api_url.encoded_string(),
         session=config.http.session,
     )
     url = f"https://{source.provider.domain}"
@@ -51,20 +52,20 @@ def _iter_captures(
         capture_utc_timestamp_text = (
             cdx_capture.timestamp.astimezone(UTC).strftime("%Y%m%d%H%M%S"))
         capture_id_components = (
-            str(source.archive.cdx_api_url),
+            source.archive.cdx_api_url.encoded_string(),
             cdx_capture.url,
             capture_utc_timestamp_text,
         )
-        capture_id = str(uuid5(
+        capture_id = uuid5(
             NAMESPACE_CAPTURE,
             ":".join(capture_id_components),
-        ))
+        )
         yield Capture(
             id=capture_id,
             last_modified=utc_now(),
             archive=source.archive,
             provider=source.provider,
-            url=cdx_capture.url,
+            url=HttpUrl(cdx_capture.url),
             url_key=cdx_capture.url_key,
             timestamp=cdx_capture.timestamp.astimezone(UTC),
             status_code=cdx_capture.status_code,
@@ -74,9 +75,14 @@ def _iter_captures(
             offset=cdx_capture.offset,
             length=cdx_capture.length,
             access=cdx_capture.access,
-            redirect_url=cdx_capture.redirect_url,
-            flags=([flag.value for flag in cdx_capture.flags]
-                   if cdx_capture.flags is not None else None),
+            redirect_url=HttpUrl(cdx_capture.redirect_url)
+            if cdx_capture.redirect_url is not None
+            else None,
+            flags=(
+                [flag.value for flag in cdx_capture.flags]
+                if cdx_capture.flags is not None
+                else None
+            ),
             collection=cdx_capture.collection,
             source=cdx_capture.source,
             source_collection=cdx_capture.source_collection,

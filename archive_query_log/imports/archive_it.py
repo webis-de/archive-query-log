@@ -46,7 +46,6 @@ def import_archives(
     num_collections = int(response.headers["Total-Row-Count"])
     print(f"Found {num_collections} collections on Archive-It.")
 
-    # noinspection PyTypeChecker
     progress = tqdm(total=num_collections, desc="Import archives",
                     unit="archives", disable=not auto_merge and not no_merge)
     offset_range = range(0, num_collections, page_size)

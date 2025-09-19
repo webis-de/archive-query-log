@@ -97,7 +97,7 @@ def _parse_warc_special_contents_result_blocks(
 ) -> list[SpecialContentsResultBlockData] | None:
     # Check if URL matches pattern.
     if parser.url_pattern is not None and not parser.url_pattern.match(
-        str(capture_url)
+        capture_url.encoded_string()
     ):
         return None
 
@@ -122,7 +122,7 @@ def _parse_warc_special_contents_result_blocks(
                 urls = safe_xpath(element, parser.url_xpath, str)
                 if len(urls) > 0:
                     url = urls[0].strip()
-                    url = urljoin(str(capture_url), url)
+                    url = urljoin(capture_url.encoded_string(), url)
             text: str | None = None
             if parser.text_xpath is not None:
                 texts = safe_xpath(element, parser.text_xpath, str)
@@ -284,7 +284,6 @@ def parse_serps_warc_special_contents_result_blocks(
     if num_changed_serps > 0:
         changed_serps: Iterable[Serp] = changed_serps_search.params(size=size).execute()
 
-        # noinspection PyTypeChecker
         changed_serps = tqdm(
             changed_serps,
             total=num_changed_serps,

@@ -1,7 +1,7 @@
 from functools import cache
 from itertools import chain
 from typing import Iterable, Iterator
-from uuid import uuid5
+from uuid import uuid5, UUID
 
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
@@ -24,7 +24,7 @@ from archive_query_log.utils.time import utc_now
 
 def add_url_page_parser(
     config: Config,
-    provider_id: str | None,
+    provider_id: UUID | None,
     url_pattern_regex: str | None,
     priority: float | None,
     parser_type: UrlPageParserType,
@@ -48,7 +48,7 @@ def add_url_page_parser(
     else:
         raise ValueError(f"Invalid parser type: {parser_type}")
     parser_id_components = (
-        provider_id if provider_id is not None else "",
+        str(provider_id) if provider_id is not None else "",
         url_pattern_regex if url_pattern_regex is not None else "",
         str(priority) if priority is not None else "",
     )
@@ -77,7 +77,7 @@ def add_url_page_parser(
 def _parse_url_page(parser: UrlPageParser, capture_url: HttpUrl) -> int | None:
     # Check if URL matches pattern.
     if parser.url_pattern is not None and not parser.url_pattern.match(
-        str(capture_url)
+        capture_url.encoded_string()
     ):
         return None
 
@@ -187,7 +187,6 @@ def parse_serps_url_page(
     if num_changed_serps > 0:
         changed_serps: Iterable[Serp] = changed_serps_search.params(size=size).execute()
 
-        # noinspection PyTypeChecker
         changed_serps = tqdm(
             changed_serps, total=num_changed_serps, desc="Parsing URL page", unit="SERP"
         )

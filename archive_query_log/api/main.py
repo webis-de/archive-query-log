@@ -108,7 +108,7 @@ def _get_statistics(
         name=name,
         description=description,
         total=total,
-        disk_size=str(
+        disk_size=(
             _convert_bytes(stats["_all"]["total"]["store"]["size_in_bytes"])
             if filter_query is None
             else None

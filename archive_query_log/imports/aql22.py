@@ -57,14 +57,14 @@ def _iter_captures(
                 continue
 
         capture_id_components = (
-            importable_path.archive.cdx_api_url,
+            importable_path.archive.cdx_api_url.encoded_string(),
             url,
             timestamp.astimezone(UTC).strftime("%Y%m%d%H%M%S"),
         )
-        capture_id = str(uuid5(
+        capture_id = uuid5(
             NAMESPACE_CAPTURE,
             ":".join(capture_id_components),
-        ))
+        )
         yield Capture(
             id=capture_id,
             last_modified=last_modified.replace(microsecond=0),
@@ -107,7 +107,6 @@ def _import_captures_path(
     urls_iterators_list = [ArchivedUrls(path) for path in json_paths]
     urls_iterators: Iterable[ArchivedUrls] = urls_iterators_list
     if len(urls_iterators_list) > 50:
-        # noinspection PyTypeChecker
         urls_iterators = tqdm(
             urls_iterators,
             desc="Get capture count",
@@ -116,9 +115,7 @@ def _import_captures_path(
     total_count = sum(len(urls) for urls in urls_iterators)
     print(f"Found {total_count} captures.")
 
-    archived_urls: Iterable[ArchivedUrl] = chain.from_iterable(
-        urls_iterators_list)
-    # noinspection PyTypeChecker
+    archived_urls: Iterable[ArchivedUrl] = chain.from_iterable(urls_iterators_list)
     archived_urls = tqdm(
         archived_urls,
         total=total_count,
@@ -199,7 +196,6 @@ def import_captures(
 
     importable_paths = []
     prefix_paths: Iterable[Path] = prefix_paths_list
-    # noinspection PyTypeChecker
     prefix_paths = tqdm(
         prefix_paths,
         desc="Checking URL prefixes",

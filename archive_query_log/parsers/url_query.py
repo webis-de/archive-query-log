@@ -83,7 +83,7 @@ def add_url_query_parser(
 def _parse_url_query(parser: UrlQueryParser, capture_url: HttpUrl) -> str | None:
     # Check if URL matches pattern.
     if parser.url_pattern is not None and not parser.url_pattern.match(
-        str(capture_url)
+        capture_url.encoded_string()
     ):
         return None
 
@@ -229,7 +229,6 @@ def parse_serps_url_query(
     if num_changed_captures > 0:
         changed_captures: Iterable[Capture] = changed_captures_search.params(size=size).execute()
 
-        # noinspection PyTypeChecker
         changed_captures = tqdm(
             changed_captures,
             total=num_changed_captures,

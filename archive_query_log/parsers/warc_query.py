@@ -78,7 +78,7 @@ def _parse_warc_query(
 ) -> str | None:
     # Check if URL matches pattern.
     if parser.url_pattern is not None and not parser.url_pattern.match(
-        str(capture_url)
+        capture_url.encoded_string()
     ):
         return None
 
@@ -192,7 +192,6 @@ def parse_serps_warc_query(
     if num_changed_serps > 0:
         changed_serps: Iterable[Serp] = changed_serps_search.params(size=size).execute()
 
-        # noinspection PyTypeChecker
         changed_serps = tqdm(
             changed_serps,
             total=num_changed_serps,
