@@ -51,7 +51,6 @@ dependencies = [
     "numpy<2.0",  # numpy 2.0 is not compatible with elasticsearch 7.9.1
     "pandas~=2.2,>=2.2.3",
     "publicsuffixlist~=1.0,>=1.0.2.20250430",
-    "pyarrow~=20.0",
     "pydantic~=2.11",
     "python-dotenv~=1.1",
     "python-slugify~=8.0,>=8.0.4",
