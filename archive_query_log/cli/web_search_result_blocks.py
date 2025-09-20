@@ -33,7 +33,7 @@ def fetch_captures(
 
     WebSearchResultBlock.init(
         using=config.es.client,
-        index=config.es.index_captures,
+        index=config.es.index_web_search_result_blocks,
     )
     fetch_web_search_result_block_captures(
         config=config,
