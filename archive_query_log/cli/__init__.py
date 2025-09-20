@@ -12,6 +12,7 @@ from archive_query_log.cli.providers import providers
 from archive_query_log.cli.results import results
 from archive_query_log.cli.serps import serps
 from archive_query_log.cli.sources import sources
+from archive_query_log.cli.web_search_result_blocks import web_search_result_blocks
 from archive_query_log.config import Config
 from archive_query_log.orm import (
     BaseDocument,
@@ -88,3 +89,4 @@ app.command(captures)
 app.command(serps)
 app.command(results)
 app.command(monitoring)
+app.command(web_search_result_blocks)
