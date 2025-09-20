@@ -54,16 +54,13 @@ class EsConfig(BaseModel):
     ]
     index_warc_web_search_result_blocks_parsers: Annotated[
         str,
-        Parameter(env_var="ELASTICSEARCH_INDEX_warc_web_search_result_blocks_parserS"),
+        Parameter(env_var="ELASTICSEARCH_INDEX_WARC_WEB_SEARCH_RESULT_BLOCKS_PARSERS"),
     ]
     index_warc_special_contents_result_blocks_parsers: Annotated[
         str,
         Parameter(
-            env_var="ELASTICSEARCH_INDEX_warc_special_contents_result_blocks_parserS"
+            env_var="ELASTICSEARCH_INDEX_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSERS"
         ),
-    ]
-    index_warc_main_content_parsers: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS")
     ]
     max_retries: int = 5
     bulk_chunk_size: int = 500
