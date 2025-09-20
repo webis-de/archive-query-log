@@ -1,10 +1,9 @@
 from dataclasses import dataclass
-from datetime import datetime
 from itertools import chain
 from json import loads, dumps
 from pathlib import Path
 from typing import Iterable, Iterator, TypeVar, Generic, Type, Callable, cast
-from uuid import uuid5, UUID
+from uuid import uuid5
 from warnings import warn
 
 from elasticsearch_dsl import Search
@@ -12,13 +11,11 @@ from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
 
 from elasticsearch_dsl.query import Exists
-from pydantic import HttpUrl
 from requests import ConnectionError as RequestsConnectionError
 from tqdm.auto import tqdm
 from warc_cache import WarcCacheStore, WarcCacheRecord
 from warc_s3 import WarcS3Store, WarcS3Record
 from warcio.recordloader import ArcWarcRecord
-from web_archive_api.cdx import CdxApi, CdxMatchType, CdxCapture
 from web_archive_api.memento import MementoApi
 
 from archive_query_log import __version__ as app_version
@@ -30,7 +27,6 @@ from archive_query_log.orm import (
     WarcLocation,
     WebSearchResultBlock,
     UuidBaseDocument,
-    InnerCapture,
 )
 from archive_query_log.utils.time import utc_now
 
@@ -342,110 +338,6 @@ def upload_serps_warc(config: Config) -> None:
         for serp, location in stored_serps
     )
 
-    config.es.bulk(actions)
-
-
-def _capture_timestamp_distance(timestamp: datetime) -> Callable[[CdxCapture], float]:
-    def _distance(capture: CdxCapture) -> float:
-        return abs(timestamp - capture.timestamp).total_seconds()
-
-    return _distance
-
-
-def _cdx_capture_to_inner_capture(cdx_capture: CdxCapture) -> InnerCapture:
-    return InnerCapture(
-        id=UUID(int=0),
-        url=HttpUrl(cdx_capture.url),
-        timestamp=cdx_capture.timestamp,
-        status_code=cdx_capture.status_code,
-        digest=cdx_capture.digest,
-        mimetype=cdx_capture.mimetype,
-    )
-
-
-def _update_web_search_result_block_capture_action(
-    config: Config,
-    result_block: WebSearchResultBlock,
-) -> dict:
-    if result_block.url is None:
-        raise ValueError("Web search result block has no URL.")
-
-    cdx_api = CdxApi(
-        api_url=result_block.archive.cdx_api_url.encoded_string(),
-        session=config.http.session,
-    )
-
-    serp_capture_timestamp = result_block.serp_capture.timestamp
-    nearest_capture_before_serp: CdxCapture | None = min(
-        cdx_api.iter_captures(
-            url=result_block.url.encoded_string(),
-            match_type=CdxMatchType.EXACT,
-            to_timestamp=serp_capture_timestamp,
-        ),
-        key=_capture_timestamp_distance(serp_capture_timestamp),
-        default=None,
-    )
-    nearest_capture_after_serp: CdxCapture | None = min(
-        cdx_api.iter_captures(
-            url=result_block.url.encoded_string(),
-            match_type=CdxMatchType.EXACT,
-            from_timestamp=serp_capture_timestamp,
-        ),
-        key=_capture_timestamp_distance(serp_capture_timestamp),
-        default=None,
-    )
-
-    return result_block.update_action(
-        capture_before_serp=_cdx_capture_to_inner_capture(nearest_capture_before_serp)
-        if nearest_capture_before_serp is not None
-        else None,
-        warc_location_before_serp=None,
-        warc_downloader_before_serp=None,
-        capture_after_serp=_cdx_capture_to_inner_capture(nearest_capture_after_serp)
-        if nearest_capture_after_serp is not None
-        else None,
-        warc_location_after_serp=None,
-        warc_downloader_after_serp=None,
-    )
-
-
-def get_web_search_result_block_captures(config: Config, size: int = 10) -> None:
-    changed_result_blocks_search: Search = (
-        WebSearchResultBlock.search(
-            using=config.es.client, index=config.es.index_web_search_result_blocks
-        )
-        .filter(Exists(field="url") & ~Term(should_fetch_captures=False))
-        .query(
-            RankFeature(field="archive.priority", saturation={})
-            | RankFeature(field="provider.priority", saturation={})
-            | FunctionScore(functions=[RandomScore()])
-        )
-    )
-    num_changed_result_blocks = changed_result_blocks_search.count()
-
-    if num_changed_result_blocks <= 0:
-        print("No new/changed web search result blocks.")
-        return
-
-    changed_result_blocks: Iterable[WebSearchResultBlock] = (
-        changed_result_blocks_search.params(size=size).execute()
-    )
-
-    changed_result_blocks = tqdm(
-        changed_result_blocks,
-        total=num_changed_result_blocks,
-        desc="Fetch captures",
-        unit="web search result block",
-    )
-
-    actions = (
-        _update_web_search_result_block_capture_action(
-            config=config,
-            result_block=web_search_result_block,
-        )
-        for web_search_result_block in changed_result_blocks
-        if web_search_result_block.url is not None
-    )
     config.es.bulk(actions)
 
 
