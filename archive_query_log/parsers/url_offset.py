@@ -1,19 +1,19 @@
-from functools import cache
+from abc import ABC, abstractmethod
+from functools import cached_property
 from itertools import chain
-from typing import Iterable, Iterator
+from typing import Iterable, Iterator, Pattern, Annotated, Sequence
 from uuid import uuid5, UUID
-from warnings import warn
 
+from annotated_types import Gt
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
-from pydantic import HttpUrl
+from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
+from pydantic import BaseModel
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_URL_OFFSET_PARSER
-from archive_query_log.orm import InnerProviderId, UrlOffsetParserType
-from archive_query_log.orm import Serp, InnerParser, UrlOffsetParser
+from archive_query_log.orm import Serp, InnerParser
 from archive_query_log.parsers.url import (
     parse_url_query_parameter,
     parse_url_fragment_parameter,
@@ -23,120 +23,93 @@ from archive_query_log.parsers.util import clean_int
 from archive_query_log.utils.time import utc_now
 
 
-def add_url_offset_parser(
-    config: Config,
-    provider_id: UUID | None,
-    url_pattern_regex: str | None,
-    priority: float | None,
-    parser_type: UrlOffsetParserType,
-    parameter: str | None,
-    segment: int | None,
-    remove_pattern_regex: str | None,
-    space_pattern_regex: str | None,
-    dry_run: bool = False,
-) -> None:
-    if priority is not None and priority <= 0:
-        raise ValueError("Priority must be strictly positive.")
-    if parser_type == "query_parameter":
-        if parameter is None:
-            raise ValueError("No query parameter given.")
-    elif parser_type == "fragment_parameter":
-        if parameter is None:
-            raise ValueError("No fragment parameter given.")
-    elif parser_type == "path_segment":
-        if segment is None:
-            raise ValueError("No path segment given.")
-    else:
-        raise ValueError(f"Invalid parser type: {parser_type}")
-    parser_id_components = (
-        str(provider_id) if provider_id is not None else "",
-        url_pattern_regex if url_pattern_regex is not None else "",
-        str(priority) if priority is not None else "",
-    )
-    parser_id = uuid5(
-        NAMESPACE_URL_OFFSET_PARSER,
-        ":".join(parser_id_components),
-    )
-    parser = UrlOffsetParser(
-        id=parser_id,
-        last_modified=utc_now(),
-        provider=InnerProviderId(id=provider_id) if provider_id else None,
-        url_pattern_regex=url_pattern_regex,
-        priority=priority,
-        parser_type=parser_type,
-        parameter=parameter,
-        segment=segment,
-        remove_pattern_regex=remove_pattern_regex,
-        space_pattern_regex=space_pattern_regex,
-    )
-    if not dry_run:
-        parser.save(using=config.es.client, index=config.es.index_url_offset_parsers)
-    else:
-        print(parser)
+class UrlOffsetParser(BaseModel, ABC):
+    provider_id: UUID | None = None
+    url_pattern: Pattern | None = None
+    priority: Annotated[float, Gt(0)] | None = None
+    remove_pattern: Pattern | None = None
+    space_pattern: Pattern | None = None
+
+    @cached_property
+    def id(self) -> UUID:
+        parser_id_components = (
+            str(self.provider_id) if self.provider_id is not None else "",
+            str(self.url_pattern) if self.url_pattern is not None else "",
+            str(self.priority) if self.priority is not None else "",
+        )
+        return uuid5(
+            NAMESPACE_URL_OFFSET_PARSER,
+            ":".join(parser_id_components),
+        )
+
+    @cached_property
+    def inner_parser(self) -> InnerParser:
+        return InnerParser(
+            id=self.id,
+            should_parse=True,
+            last_parsed=None,
+        )
+
+    def is_applicable(self, serp: Serp) -> bool:
+        # Check if provider matches.
+        if self.provider_id is not None and self.provider_id != serp.provider.id:
+            return False
+
+        # Check if URL matches pattern.
+        if self.url_pattern is not None and not self.url_pattern.match(
+            serp.capture.url.encoded_string()
+        ):
+            return False
+        return True
+
+    @abstractmethod
+    def parse(self, serp: Serp) -> int | None: ...
 
 
-def _parse_url_offset(parser: UrlOffsetParser, capture_url: HttpUrl) -> int | None:
-    # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(
-        capture_url.encoded_string()
-    ):
-        return None
+class QueryParameterUrlOffsetParser(UrlOffsetParser):
+    parameter: str
 
-    # Parse offset.
-    if parser.parser_type == "query_parameter":
-        if parser.parameter is None:
-            raise ValueError("No offset parameter given.")
-        offset_string = parse_url_query_parameter(parser.parameter, capture_url)
+    def parse(self, serp: Serp) -> int | None:
+        offset_string = parse_url_query_parameter(self.parameter, serp.capture.url)
         if offset_string is None:
             return None
         return clean_int(
             text=offset_string,
-            remove_pattern=parser.remove_pattern,
+            remove_pattern=self.remove_pattern,
         )
-    elif parser.parser_type == "fragment_parameter":
-        if parser.parameter is None:
-            raise ValueError("No fragment parameter given.")
-        offset_string = parse_url_fragment_parameter(parser.parameter, capture_url)
+
+
+class FragmentParameterUrlOffsetParser(UrlOffsetParser):
+    parameter: str
+
+    def parse(self, serp: Serp) -> int | None:
+        offset_string = parse_url_fragment_parameter(self.parameter, serp.capture.url)
         if offset_string is None:
             return None
         return clean_int(
             text=offset_string,
-            remove_pattern=parser.remove_pattern,
+            remove_pattern=self.remove_pattern,
         )
-    elif parser.parser_type == "path_segment":
-        if parser.segment is None:
-            raise ValueError("No path segment given.")
-        offset_string = parse_url_path_segment(parser.segment, capture_url)
+
+
+class PathSegmentUrlOffsetParser(UrlOffsetParser):
+    segment: int
+
+    def parse(self, serp: Serp) -> int | None:
+        offset_string = parse_url_path_segment(self.segment, serp.capture.url)
         if offset_string is None:
             return None
         return clean_int(
             text=offset_string,
-            remove_pattern=parser.remove_pattern,
+            remove_pattern=self.remove_pattern,
         )
-    else:
-        raise ValueError(f"Unknown parser type: {parser.parser_type}")
 
 
-@cache
-def _url_offset_parsers(
-    config: Config,
-    provider_id: str,
-) -> list[UrlOffsetParser]:
-    parsers: Iterable[UrlOffsetParser] = (
-        UrlOffsetParser.search(
-            using=config.es.client, index=config.es.index_url_offset_parsers
-        )
-        .filter(~Exists(field="provider.id") | Term(provider__id=provider_id))
-        .query(RankFeature(field="priority", saturation={}))
-        .scan()
-    )
-    return list(parsers)
+# TODO: Add actual parsers.
+URL_OFFSET_PARSERS: Sequence[UrlOffsetParser] = NotImplemented
 
 
-def _parse_serp_url_offset_action(
-    config: Config,
-    serp: Serp,
-) -> Iterator[dict]:
+def _parse_serp_url_offset_action(serp: Serp) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (
         serp.url_offset_parser is not None
@@ -145,19 +118,12 @@ def _parse_serp_url_offset_action(
     ):
         return
 
-    for parser in _url_offset_parsers(config, serp.provider.id):
-        # Try to parse the query.
-        url_offset = _parse_url_offset(parser, serp.capture.url)
-        if url_offset is None:
-            # Parsing was not successful, e.g., URL pattern did not match.
+    for parser in URL_OFFSET_PARSERS:
+        if not parser.is_applicable(serp):
             continue
-        if url_offset > 2147483647:
-            warn(
-                RuntimeWarning(
-                    f"URL offset {url_offset} parsed from URL {serp.capture.url} "
-                    f"is too large for a signed 32-bit integer."
-                )
-            )
+        url_offset = parser.parse(serp)
+        if url_offset is None:
+            # Parsing was not successful.
             continue
         yield serp.update_action(
             url_offset=url_offset,
@@ -203,7 +169,7 @@ def parse_serps_url_offset(
             unit="SERP",
         )
         actions = chain.from_iterable(
-            _parse_serp_url_offset_action(config, serp) for serp in changed_serps
+            _parse_serp_url_offset_action(serp) for serp in changed_serps
         )
         config.es.bulk(
             actions=actions,

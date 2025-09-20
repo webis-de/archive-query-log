@@ -1,12 +1,14 @@
-from functools import cache
+from abc import ABC, abstractmethod
+from functools import cached_property
 from itertools import chain
-from typing import Iterable, Iterator
+from typing import Iterable, Iterator, Pattern, Annotated, Sequence
 from uuid import uuid5, UUID
 
+from annotated_types import Gt
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
-from pydantic import HttpUrl
+from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
+from pydantic import BaseModel
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
@@ -16,9 +18,7 @@ from archive_query_log.orm import (
     Serp,
     InnerCapture,
     InnerParser,
-    UrlQueryParser,
 )
-from archive_query_log.orm import UrlQueryParserType, InnerProviderId
 from archive_query_log.parsers.url import (
     parse_url_query_parameter,
     parse_url_fragment_parameter,
@@ -28,117 +28,93 @@ from archive_query_log.parsers.util import clean_text
 from archive_query_log.utils.time import utc_now
 
 
-def add_url_query_parser(
-    config: Config,
-    provider_id: UUID | None,
-    url_pattern_regex: str | None,
-    priority: float | None,
-    parser_type: UrlQueryParserType,
-    parameter: str | None,
-    segment: int | None,
-    remove_pattern_regex: str | None,
-    space_pattern_regex: str | None,
-    dry_run: bool = False,
-) -> None:
-    if priority is not None and priority <= 0:
-        raise ValueError("Priority must be strictly positive.")
-    if parser_type == "query_parameter":
-        if parameter is None:
-            raise ValueError("No query parameter given.")
-    elif parser_type == "fragment_parameter":
-        if parameter is None:
-            raise ValueError("No fragment parameter given.")
-    elif parser_type == "path_segment":
+class UrlQueryParser(BaseModel, ABC):
+    provider_id: UUID | None = None
+    url_pattern: Pattern | None = None
+    priority: Annotated[float, Gt(0)] | None = None
+    remove_pattern: Pattern | None = None
+    space_pattern: Pattern | None = None
+
+    @cached_property
+    def id(self) -> UUID:
+        parser_id_components = (
+            str(self.provider_id) if self.provider_id is not None else "",
+            str(self.url_pattern) if self.url_pattern is not None else "",
+            str(self.priority) if self.priority is not None else "",
+        )
+        return uuid5(
+            NAMESPACE_URL_QUERY_PARSER,
+            ":".join(parser_id_components),
+        )
+
+    @cached_property
+    def inner_parser(self) -> InnerParser:
+        return InnerParser(
+            id=self.id,
+            should_parse=True,
+            last_parsed=None,
+        )
+
+    def is_applicable(self, capture: Capture) -> bool:
+        # Check if provider matches.
+        if self.provider_id is not None and self.provider_id != capture.provider.id:
+            return False
+
+        # Check if URL matches pattern.
+        if self.url_pattern is not None and not self.url_pattern.match(
+            capture.url.encoded_string()
+        ):
+            return False
+        return True
+
+    @abstractmethod
+    def parse(self, capture: Capture) -> str | None: ...
+
+
+class QueryParameterUrlQueryParser(UrlQueryParser):
+    parameter: str
+
+    def parse(self, capture: Capture) -> str | None:
+        query = parse_url_query_parameter(self.parameter, capture.url)
+        if query is None:
+            return None
+        return clean_text(
+            text=query,
+            remove_pattern=self.remove_pattern,
+            space_pattern=self.space_pattern,
+        )
+
+
+class FragmentParameterUrlQueryParser(UrlQueryParser):
+    parameter: str
+
+    def parse(self, capture: Capture) -> str | None:
+        fragment = parse_url_fragment_parameter(self.parameter, capture.url)
+        if fragment is None:
+            return None
+        return clean_text(
+            text=fragment,
+            remove_pattern=self.remove_pattern,
+            space_pattern=self.space_pattern,
+        )
+
+
+class PathSegmentUrlQueryParser(UrlQueryParser):
+    segment: int
+
+    def parse(self, capture: Capture) -> str | None:
+        segment = parse_url_path_segment(self.segment, capture.url)
         if segment is None:
-            raise ValueError("No path segment given.")
-    else:
-        raise ValueError(f"Invalid parser type: {parser_type}")
-    parser_id_components = (
-        str(provider_id) if provider_id is not None else "",
-        url_pattern_regex if url_pattern_regex is not None else "",
-        str(priority) if priority is not None else "",
-    )
-    parser_id = uuid5(
-        NAMESPACE_URL_QUERY_PARSER,
-        ":".join(parser_id_components),
-    )
-    parser = UrlQueryParser(
-        id=parser_id,
-        last_modified=utc_now(),
-        provider=InnerProviderId(id=provider_id) if provider_id else None,
-        url_pattern_regex=url_pattern_regex,
-        priority=priority,
-        parser_type=parser_type,
-        parameter=parameter,
-        segment=segment,
-        remove_pattern_regex=remove_pattern_regex,
-        space_pattern_regex=space_pattern_regex,
-    )
-    if not dry_run:
-        parser.save(using=config.es.client, index=config.es.index_url_query_parsers)
-    else:
-        print(parser)
-
-
-def _parse_url_query(parser: UrlQueryParser, capture_url: HttpUrl) -> str | None:
-    # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(
-        capture_url.encoded_string()
-    ):
-        return None
-
-    # Parse query.
-    if parser.parser_type == "query_parameter":
-        if parser.parameter is None:
-            raise ValueError("No query parameter given.")
-        query = parse_url_query_parameter(parser.parameter, capture_url)
-        if query is None:
             return None
         return clean_text(
-            text=query,
-            remove_pattern=parser.remove_pattern,
-            space_pattern=parser.space_pattern,
+            text=segment,
+            remove_pattern=self.remove_pattern,
+            space_pattern=self.space_pattern,
         )
-    elif parser.parser_type == "fragment_parameter":
-        if parser.parameter is None:
-            raise ValueError("No fragment parameter given.")
-        query = parse_url_fragment_parameter(parser.parameter, capture_url)
-        if query is None:
-            return None
-        return clean_text(
-            text=query,
-            remove_pattern=parser.remove_pattern,
-            space_pattern=parser.space_pattern,
-        )
-    elif parser.parser_type == "path_segment":
-        if parser.segment is None:
-            raise ValueError("No path segment given.")
-        query = parse_url_path_segment(parser.segment, capture_url)
-        if query is None:
-            return None
-        return clean_text(
-            text=query,
-            remove_pattern=parser.remove_pattern,
-            space_pattern=parser.space_pattern,
-        )
-    else:
-        raise ValueError(f"Unknown parser type: {parser.parser_type}")
 
 
-@cache
-def _url_query_parsers(
-    config: Config,
-    provider_id: str,
-) -> list[UrlQueryParser]:
-    parsers: Iterable[UrlQueryParser] = (
-        UrlQueryParser.search(
-            using=config.es.client, index=config.es.index_url_query_parsers
-        )
-        .filter(~Exists(field="provider.id") | Term(provider__id=provider_id))
-        .query(RankFeature(field="priority", saturation={}))
-        .scan()
-    )
-    return list(parsers)
+# TODO: Add actual parsers.
+URL_QUERY_PARSERS: Sequence[UrlQueryParser] = NotImplemented
 
 
 def _parse_serp_url_query_action(
@@ -153,13 +129,15 @@ def _parse_serp_url_query_action(
     ):
         return
 
-    for parser in _url_query_parsers(config, capture.provider.id):
-        # Try to parse the query.
-        url_query = _parse_url_query(parser, capture.url)
+    for parser in URL_QUERY_PARSERS:
+        if not parser.is_applicable(capture):
+            continue
+        url_query = parser.parse(capture)
         if url_query is None:
-            # Parsing was not successful, e.g., URL pattern did not match.
+            # Parsing was not successful.
             continue
         serp = Serp(
+            index=config.es.index_serps,
             id=capture.id,
             last_modified=utc_now(),
             archive=capture.archive,
@@ -191,7 +169,6 @@ def _parse_serp_url_query_action(
                 should_parse=True,
             ),
         )
-        serp.meta.index = config.es.index_serps
         yield serp.create_action()
         yield capture.update_action(
             url_query_parser=InnerParser(
@@ -227,7 +204,9 @@ def parse_serps_url_query(
     )
     num_changed_captures = changed_captures_search.count()
     if num_changed_captures > 0:
-        changed_captures: Iterable[Capture] = changed_captures_search.params(size=size).execute()
+        changed_captures: Iterable[Capture] = changed_captures_search.params(
+            size=size
+        ).execute()
 
         changed_captures = tqdm(
             changed_captures,

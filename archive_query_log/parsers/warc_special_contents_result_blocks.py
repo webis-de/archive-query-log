@@ -1,14 +1,16 @@
-from functools import cache
+from abc import ABC, abstractmethod
+from functools import cached_property
 from itertools import chain
-from typing import Iterable, Iterator
+from typing import Iterable, Iterator, Pattern, Annotated, Sequence
 from urllib.parse import urljoin
 from uuid import uuid5, UUID
 
+from annotated_types import Gt
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 from lxml.etree import _Element, tostring  # nosec: B410
-from pydantic import BaseModel, HttpUrl
+from pydantic import HttpUrl, BaseModel
 from tqdm.auto import tqdm
 from warc_s3 import WarcS3Store
 
@@ -20,10 +22,6 @@ from archive_query_log.namespaces import (
 from archive_query_log.orm import (
     Serp,
     InnerParser,
-    InnerProviderId,
-    WarcSpecialContentsResultBlocksParserType,
-    WarcSpecialContentsResultBlocksParser,
-    WarcLocation,
     SpecialContentsResultBlock,
     InnerSerp,
     SpecialContentsResultBlockId,
@@ -31,53 +29,6 @@ from archive_query_log.orm import (
 from archive_query_log.parsers.warc import open_warc
 from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
-
-
-def add_warc_special_contents_result_blocks_parser(
-    config: Config,
-    provider_id: UUID | None,
-    url_pattern_regex: str | None,
-    priority: float | None,
-    parser_type: WarcSpecialContentsResultBlocksParserType,
-    xpath: str | None,
-    url_xpath: str | None,
-    text_xpath: str | None,
-    dry_run: bool = False,
-) -> None:
-    if priority is not None and priority <= 0:
-        raise ValueError("Priority must be strictly positive.")
-    if parser_type == "xpath":
-        if xpath is None:
-            raise ValueError("No XPath given.")
-    else:
-        raise ValueError(f"Invalid parser type: {parser_type}")
-    parser_id_components = (
-        str(provider_id) if provider_id is not None else "",
-        url_pattern_regex if url_pattern_regex is not None else "",
-        str(priority) if priority is not None else "",
-    )
-    parser_id = uuid5(
-        NAMESPACE_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSER,
-        ":".join(parser_id_components),
-    )
-    parser = WarcSpecialContentsResultBlocksParser(
-        id=parser_id,
-        last_modified=utc_now(),
-        provider=InnerProviderId(id=provider_id) if provider_id else None,
-        url_pattern_regex=url_pattern_regex,
-        priority=priority,
-        parser_type=parser_type,
-        xpath=xpath,
-        url_xpath=url_xpath,
-        text_xpath=text_xpath,
-    )
-    if not dry_run:
-        parser.save(
-            using=config.es.client,
-            index=config.es.index_warc_special_contents_result_blocks_parsers,
-        )
-    else:
-        print(parser)
 
 
 class SpecialContentsResultBlockData(BaseModel):
@@ -88,29 +39,66 @@ class SpecialContentsResultBlockData(BaseModel):
     text: str | None = None
 
 
-def _parse_warc_special_contents_result_blocks(
-    parser: WarcSpecialContentsResultBlocksParser,
-    serp_id: UUID,
-    capture_url: HttpUrl,
-    warc_store: WarcS3Store,
-    warc_location: WarcLocation,
-) -> list[SpecialContentsResultBlockData] | None:
-    # Check if URL matches pattern.
-    if parser.url_pattern is not None and not parser.url_pattern.match(
-        capture_url.encoded_string()
-    ):
-        return None
+class WarcSpecialContentsResultBlocksParser(BaseModel, ABC):
+    provider_id: UUID | None = None
+    url_pattern: Pattern | None = None
+    priority: Annotated[float, Gt(0)] | None = None
 
-    # Parse special contents result blocks.
-    if parser.parser_type == "xpath":
-        if parser.xpath is None:
-            raise ValueError("No XPath given.")
-        with open_warc(warc_store, warc_location) as record:
+    @cached_property
+    def id(self) -> UUID:
+        parser_id_components = (
+            str(self.provider_id) if self.provider_id is not None else "",
+            str(self.url_pattern) if self.url_pattern is not None else "",
+            str(self.priority) if self.priority is not None else "",
+        )
+        return uuid5(
+            NAMESPACE_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSER,
+            ":".join(parser_id_components),
+        )
+
+    @cached_property
+    def inner_parser(self) -> InnerParser:
+        return InnerParser(
+            id=self.id,
+            should_parse=True,
+            last_parsed=None,
+        )
+
+    def is_applicable(self, serp: Serp) -> bool:
+        # Check if provider matches.
+        if self.provider_id is not None and self.provider_id != serp.provider.id:
+            return False
+
+        # Check if URL matches pattern.
+        if self.url_pattern is not None and not self.url_pattern.match(
+            serp.capture.url.encoded_string()
+        ):
+            return False
+        return True
+
+    @abstractmethod
+    def parse(
+        self, serp: Serp, warc_store: WarcS3Store
+    ) -> list[SpecialContentsResultBlockData] | None: ...
+
+
+class XpathWarcSpecialContentsResultBlocksParser(WarcSpecialContentsResultBlocksParser):
+    xpath: str
+    url_xpath: str | None = None
+    text_xpath: str | None = None
+
+    def parse(
+        self, serp: Serp, warc_store: WarcS3Store
+    ) -> list[SpecialContentsResultBlockData] | None:
+        if serp.warc_location is None:
+            return None
+
+        with open_warc(warc_store, serp.warc_location) as record:
             tree = parse_xml_tree(record)
         if tree is None:
             return None
 
-        elements = safe_xpath(tree, parser.xpath, _Element)
+        elements = safe_xpath(tree, self.xpath, _Element)
         if len(elements) == 0:
             return None
 
@@ -118,14 +106,14 @@ def _parse_warc_special_contents_result_blocks(
         element: _Element
         for i, element in enumerate(elements):
             url: str | None = None
-            if parser.url_xpath is not None:
-                urls = safe_xpath(element, parser.url_xpath, str)
+            if self.url_xpath is not None:
+                urls = safe_xpath(element, self.url_xpath, str)
                 if len(urls) > 0:
                     url = urls[0].strip()
-                    url = urljoin(capture_url.encoded_string(), url)
+                    url = urljoin(serp.capture.url.encoded_string(), url)
             text: str | None = None
-            if parser.text_xpath is not None:
-                texts = safe_xpath(element, parser.text_xpath, str)
+            if self.text_xpath is not None:
+                texts = safe_xpath(element, self.text_xpath, str)
                 if len(texts) > 0:
                     text = texts[0].strip()
 
@@ -137,8 +125,8 @@ def _parse_warc_special_contents_result_blocks(
                 with_tail=True,
             )
             special_contents_result_block_id_components = (
-                str(serp_id),
-                str(parser.id),
+                str(serp.id),
+                str(self.id),
                 str(hash(content)),
                 str(i),
             )
@@ -156,25 +144,12 @@ def _parse_warc_special_contents_result_blocks(
                 )
             )
         return special_contents_result_blocks
-    else:
-        raise ValueError(f"Unknown parser type: {parser.parser_type}")
 
 
-@cache
-def _warc_special_contents_result_blocks_parsers(
-    config: Config,
-    provider_id: str,
-) -> list[WarcSpecialContentsResultBlocksParser]:
-    parsers: Iterable[WarcSpecialContentsResultBlocksParser] = (
-        WarcSpecialContentsResultBlocksParser.search(
-            using=config.es.client,
-            index=config.es.index_warc_special_contents_result_blocks_parsers,
-        )
-        .filter(~Exists(field="provider.id") | Term(provider__id=provider_id))
-        .query(RankFeature(field="priority", saturation={}))
-        .scan()
-    )
-    return list(parsers)
+# TODO: Add actual parsers.
+WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSERS: Sequence[
+    WarcSpecialContentsResultBlocksParser
+] = NotImplemented
 
 
 def _parse_serp_warc_special_contents_result_blocks_action(
@@ -198,21 +173,12 @@ def _parse_serp_warc_special_contents_result_blocks_action(
     ):
         return
 
-    for parser in _warc_special_contents_result_blocks_parsers(
-        config, serp.provider.id
-    ):
-        # Try to parse the special contents result blocks.
-        warc_special_contents_result_blocks = (
-            _parse_warc_special_contents_result_blocks(
-                parser=parser,
-                serp_id=serp.id,
-                capture_url=serp.capture.url,
-                warc_store=config.s3.warc_store,
-                warc_location=serp.warc_location,
-            )
-        )
+    for parser in WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSERS:
+        if not parser.is_applicable(serp):
+            continue
+        warc_special_contents_result_blocks = parser.parse(serp, config.s3.warc_store)
         if warc_special_contents_result_blocks is None:
-            # Parsing was not successful, e.g., URL pattern did not match.
+            # Parsing was not successful.
             continue
         for special_contents_result_block in warc_special_contents_result_blocks:
             special_contents_result_block = SpecialContentsResultBlock(
