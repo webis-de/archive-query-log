@@ -7,7 +7,6 @@ from tqdm.auto import tqdm
 from archive_query_log.cli.archives import archives
 from archive_query_log.cli.captures import captures
 from archive_query_log.cli.monitoring import monitoring
-from archive_query_log.cli.parsers import parsers
 from archive_query_log.cli.providers import providers
 from archive_query_log.cli.results import results
 from archive_query_log.cli.serps import serps
@@ -23,13 +22,6 @@ from archive_query_log.orm import (
     Serp,
     WebSearchResultBlock,
     SpecialContentsResultBlock,
-    UrlQueryParser,
-    UrlPageParser,
-    UrlOffsetParser,
-    WarcQueryParser,
-    WarcWebSearchResultBlocksParser,
-    WarcMainContentParser,
-    WarcSpecialContentsResultBlocksParser,
 )
 
 
@@ -58,19 +50,6 @@ def init(
         (Serp, config.es.index_serps),
         (WebSearchResultBlock, config.es.index_web_search_result_blocks),
         (SpecialContentsResultBlock, config.es.index_special_contents_result_blocks),
-        (UrlQueryParser, config.es.index_url_query_parsers),
-        (UrlPageParser, config.es.index_url_page_parsers),
-        (UrlOffsetParser, config.es.index_url_offset_parsers),
-        (WarcQueryParser, config.es.index_warc_query_parsers),
-        (
-            WarcWebSearchResultBlocksParser,
-            config.es.index_warc_web_search_result_blocks_parsers,
-        ),
-        (WarcMainContentParser, config.es.index_warc_main_content_parsers),
-        (
-            WarcSpecialContentsResultBlocksParser,
-            config.es.index_warc_special_contents_result_blocks_parsers,
-        ),
     ]
     indices: Iterable[tuple[Type[BaseDocument], str]] = tqdm(
         indices_list,
@@ -83,7 +62,6 @@ def init(
 
 app.command(archives)
 app.command(providers)
-app.command(parsers)
 app.command(sources)
 app.command(captures)
 app.command(serps)
