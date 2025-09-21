@@ -7,6 +7,7 @@ from urllib.parse import unquote
 from uuid import uuid5
 
 from elasticsearch_dsl.query import Term
+from pydantic import HttpUrl
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
@@ -14,7 +15,7 @@ from archive_query_log.legacy.model import ArchivedUrl
 from archive_query_log.legacy.urls.iterable import ArchivedUrls
 from archive_query_log.namespaces import NAMESPACE_CAPTURE
 from archive_query_log.orm import Capture, Archive, Provider, \
-    InnerProvider, InnerArchive
+    InnerProvider, InnerArchive, InnerParser
 from archive_query_log.utils.time import CET, UTC
 
 
@@ -34,7 +35,7 @@ def _iter_captures(
         check_memento: bool = True,
 ) -> Iterator[Capture]:
     for archived_url in archived_urls:
-        url = archived_url.url
+        url = HttpUrl(archived_url.url)
         timestamp = datetime.fromtimestamp(
             archived_url.timestamp,
             tz=timezone.utc,
@@ -58,7 +59,7 @@ def _iter_captures(
 
         capture_id_components = (
             importable_path.archive.cdx_api_url.encoded_string(),
-            url,
+            url.encoded_string(),
             timestamp.astimezone(UTC).strftime("%Y%m%d%H%M%S"),
         )
         capture_id = uuid5(
@@ -79,8 +80,10 @@ def _iter_captures(
                 url_path_prefix=importable_path.url_path_prefix,
             ),
             url=url,
+            url_key="",
+            digest="",
             timestamp=timestamp.astimezone(UTC),
-            url_query_parser=InnerProvider(
+            url_query_parser=InnerParser(
                 should_parse=True,
             ),
         )
