@@ -219,7 +219,11 @@ def _get_warc_s3_statistics(
     last_modified: float = 0
     warc_count: int = 0
     for page in pages:
+        if "Contents" not in page:
+            continue
         for obj in page["Contents"]:
+            if "Size" not in obj or "LastModified" not in obj:
+                continue
             disk_size_bytes += obj["Size"]
             last_modified = max(last_modified, obj["LastModified"].timestamp())
             warc_count += 1
