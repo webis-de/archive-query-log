@@ -18,12 +18,6 @@ from archive_query_log.orm import (
     Serp,
     WebSearchResultBlock,
     SpecialContentsResultBlock,
-    UrlQueryParser,
-    UrlPageParser,
-    UrlOffsetParser,
-    WarcQueryParser,
-    WarcWebSearchResultBlocksParser,
-    WarcSpecialContentsResultBlocksParser,
 )
 
 _CACHE_SECONDS_STATISTICS = 60 * 5  # 5 minutes
@@ -287,48 +281,6 @@ def get_statistics() -> list[Statistics]:
             description="Special contents result blocks from the SERPs.",
             document=SpecialContentsResultBlock,
             index=config.es.index_special_contents_result_blocks,
-        ),
-        _get_statistics(
-            config=config,
-            name="URL query parsers",
-            description="Parser to get the query from a SERP's URL.",
-            document=UrlQueryParser,
-            index=config.es.index_url_query_parsers,
-        ),
-        _get_statistics(
-            config=config,
-            name="URL page parsers",
-            description="Parser to get the page from a SERP's URL.",
-            document=UrlPageParser,
-            index=config.es.index_url_page_parsers,
-        ),
-        _get_statistics(
-            config=config,
-            name="URL offset parsers",
-            description="Parser to get the offset from a SERP's URL.",
-            document=UrlOffsetParser,
-            index=config.es.index_url_offset_parsers,
-        ),
-        _get_statistics(
-            config=config,
-            name="WARC query parsers",
-            description="Parser to get the query from a SERP's WARC contents.",
-            document=WarcQueryParser,
-            index=config.es.index_warc_query_parsers,
-        ),
-        _get_statistics(
-            config=config,
-            name="WARC web search result blocks parsers",
-            description="Parser to get the web search result blocks from a SERP's WARC contents.",
-            document=WarcWebSearchResultBlocksParser,
-            index=config.es.index_warc_web_search_result_blocks_parsers,
-        ),
-        _get_statistics(
-            config=config,
-            name="WARC special contents result blocks parsers",
-            description="Parser to get the special contents result blocks from a SERP's WARC contents.",
-            document=WarcSpecialContentsResultBlocksParser,
-            index=config.es.index_warc_special_contents_result_blocks_parsers,
         ),
     ]
 
