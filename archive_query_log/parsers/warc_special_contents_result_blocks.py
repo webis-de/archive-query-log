@@ -26,8 +26,8 @@ from archive_query_log.orm import (
     InnerSerp,
     SpecialContentsResultBlockId,
 )
-from archive_query_log.parsers.warc import open_warc
-from archive_query_log.parsers.xml import parse_xml_tree, safe_xpath
+from archive_query_log.parsers.utils.warc import open_warc
+from archive_query_log.parsers.utils.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
 
 

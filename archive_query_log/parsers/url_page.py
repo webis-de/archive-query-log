@@ -14,12 +14,12 @@ from tqdm.auto import tqdm
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_URL_PAGE_PARSER
 from archive_query_log.orm import Serp, InnerParser
-from archive_query_log.parsers.url import (
+from archive_query_log.parsers.utils import clean_int
+from archive_query_log.parsers.utils.url import (
     parse_url_query_parameter,
     parse_url_fragment_parameter,
     parse_url_path_segment,
 )
-from archive_query_log.parsers.util import clean_int
 from archive_query_log.utils.time import utc_now
 
 
@@ -105,10 +105,6 @@ class PathSegmentUrlPageParser(UrlPageParser):
         )
 
 
-# TODO: Add actual parsers.
-URL_PAGE_PARSERS: Sequence[UrlPageParser] = NotImplemented
-
-
 def _parse_serp_url_page_action(serp: Serp) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (
@@ -174,3 +170,7 @@ def parse_serps_url_page(
         )
     else:
         print("No new/changed SERPs.")
+
+
+# TODO: Add actual parsers.
+URL_PAGE_PARSERS: Sequence[UrlPageParser] = NotImplemented

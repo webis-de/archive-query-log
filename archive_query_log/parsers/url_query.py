@@ -19,12 +19,12 @@ from archive_query_log.orm import (
     InnerCapture,
     InnerParser,
 )
-from archive_query_log.parsers.url import (
+from archive_query_log.parsers.utils import clean_text
+from archive_query_log.parsers.utils.url import (
     parse_url_query_parameter,
     parse_url_fragment_parameter,
     parse_url_path_segment,
 )
-from archive_query_log.parsers.util import clean_text
 from archive_query_log.utils.time import utc_now
 
 
@@ -111,10 +111,6 @@ class PathSegmentUrlQueryParser(UrlQueryParser):
             remove_pattern=self.remove_pattern,
             space_pattern=self.space_pattern,
         )
-
-
-# TODO: Add actual parsers.
-URL_QUERY_PARSERS: Sequence[UrlQueryParser] = NotImplemented
 
 
 def _parse_serp_url_query_action(
@@ -224,3 +220,7 @@ def parse_serps_url_query(
         )
     else:
         print("No new/changed captures.")
+
+
+# TODO: Add actual parsers.
+URL_QUERY_PARSERS: Sequence[UrlQueryParser] = NotImplemented
