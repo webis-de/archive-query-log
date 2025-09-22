@@ -1,5 +1,6 @@
 from functools import cached_property
 from json import dumps as json_dumps
+from os import environ
 from pathlib import Path
 from typing import Iterable, Any, Annotated, Type
 
@@ -25,41 +26,67 @@ from archive_query_log import __version__ as version
 class EsConfig(BaseModel):
     model_config = ConfigDict(frozen=True)
 
-    host: Annotated[str, Parameter(env_var="ELASTICSEARCH_HOST")]
-    port: Annotated[int, Parameter(env_var="ELASTICSEARCH_PORT")]
-    username: Annotated[str, Parameter(env_var="ELASTICSEARCH_USERNAME")]
-    password: Annotated[str, Parameter(env_var="ELASTICSEARCH_PASSWORD")]
-    index_archives: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_ARCHIVES")]
-    index_providers: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_PROVIDERS")]
-    index_sources: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_SOURCES")]
-    index_captures: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_CAPTURES")]
-    index_serps: Annotated[str, Parameter(env_var="ELASTICSEARCH_INDEX_SERPS")]
+    host: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_HOST"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_HOST"]),
+    ]
+    port: Annotated[
+        int,
+        Parameter(env_var="ELASTICSEARCH_PORT"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_PORT"]),
+    ]
+    username: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_USERNAME"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_USERNAME"]),
+    ]
+    password: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_PASSWORD"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_PASSWORD"]),
+    ]
+    index_archives: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_INDEX_ARCHIVES"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_ARCHIVES"]),
+    ]
+    index_providers: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_INDEX_PROVIDERS"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_PROVIDERS"]),
+    ]
+    index_sources: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_INDEX_SOURCES"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_SOURCES"]),
+    ]
+    index_captures: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_INDEX_CAPTURES"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_CAPTURES"]),
+    ]
+    index_serps: Annotated[
+        str,
+        Parameter(env_var="ELASTICSEARCH_INDEX_SERPS"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_SERPS"]),
+    ]
     index_web_search_result_blocks: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_WEB_SEARCH_RESULT_BLOCKS")
+        str,
+        Parameter(env_var="ELASTICSEARCH_INDEX_WEB_SEARCH_RESULT_BLOCKS"),
+        Field(
+            default_factory=lambda: environ[
+                "ELASTICSEARCH_INDEX_WEB_SEARCH_RESULT_BLOCKS"
+            ]
+        ),
     ]
     index_special_contents_result_blocks: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_SPECIAL_CONTENTS_RESULT_BLOCKS")
-    ]
-    index_url_query_parsers: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_URL_QUERY_PARSERS")
-    ]
-    index_url_page_parsers: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_URL_PAGE_PARSERS")
-    ]
-    index_url_offset_parsers: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_URL_OFFSET_PARSERS")
-    ]
-    index_warc_query_parsers: Annotated[
-        str, Parameter(env_var="ELASTICSEARCH_INDEX_WARC_QUERY_PARSERS")
-    ]
-    index_warc_web_search_result_blocks_parsers: Annotated[
         str,
-        Parameter(env_var="ELASTICSEARCH_INDEX_WARC_WEB_SEARCH_RESULT_BLOCKS_PARSERS"),
-    ]
-    index_warc_special_contents_result_blocks_parsers: Annotated[
-        str,
-        Parameter(
-            env_var="ELASTICSEARCH_INDEX_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSERS"
+        Parameter(env_var="ELASTICSEARCH_INDEX_SPECIAL_CONTENTS_RESULT_BLOCKS"),
+        Field(
+            default_factory=lambda: environ[
+                "ELASTICSEARCH_INDEX_SPECIAL_CONTENTS_RESULT_BLOCKS"
+            ]
         ),
     ]
     max_retries: int = 5
@@ -122,10 +149,26 @@ class EsConfig(BaseModel):
 class S3Config(BaseModel):
     model_config = ConfigDict(frozen=True)
 
-    endpoint_url: Annotated[str, Parameter(env_var="S3_ENDPOINT_URL")]
-    access_key: Annotated[str, Parameter(env_var="S3_ACCESS_KEY")]
-    secret_key: Annotated[str, Parameter(env_var="S3_SECRET_KEY")]
-    bucket_name: Annotated[str, Parameter(env_var="S3_BUCKET_NAME")]
+    endpoint_url: Annotated[
+        str,
+        Parameter(env_var="S3_ENDPOINT_URL"),
+        Field(default_factory=lambda: environ["S3_ENDPOINT_URL"]),
+    ]
+    access_key: Annotated[
+        str,
+        Parameter(env_var="S3_ACCESS_KEY"),
+        Field(default_factory=lambda: environ["S3_ACCESS_KEY"]),
+    ]
+    secret_key: Annotated[
+        str,
+        Parameter(env_var="S3_SECRET_KEY"),
+        Field(default_factory=lambda: environ["S3_SECRET_KEY"]),
+    ]
+    bucket_name: Annotated[
+        str,
+        Parameter(env_var="S3_BUCKET_NAME"),
+        Field(default_factory=lambda: environ["S3_BUCKET_NAME"]),
+    ]
 
     @cached_property
     def warc_store(self) -> WarcS3Store:
@@ -206,7 +249,11 @@ class HttpConfig(BaseModel):
 class WarcCacheConfig(BaseModel):
     model_config = ConfigDict(frozen=True)
 
-    path_serps: Annotated[Path, Parameter(env_var="WARC_CACHE_PATH_SERPS")]
+    path_serps: Annotated[
+        Path,
+        Parameter(env_var="WARC_CACHE_PATH_SERPS"),
+        Field(default_factory=lambda: Path(environ["WARC_CACHE_PATH_SERPS"])),
+    ]
     # path_results: Annotated[Path, Parameter(env_var="WARC_CACHE_PATH_RESULTS")]
 
     @cached_property
