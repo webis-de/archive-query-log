@@ -1,6 +1,5 @@
 from uuid import uuid4
 
-from click import echo, prompt
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import Term
 from elasticsearch_dsl.response import Response
@@ -11,14 +10,15 @@ from archive_query_log.utils.time import utc_now
 
 
 def add_archive(
-        config: Config,
-        name: str | None,
-        description: str | None,
-        cdx_api_url: str,
-        memento_api_url: str,
-        priority: float | None,
-        no_merge: bool = False,
-        auto_merge: bool = False,
+    config: Config,
+    name: str | None,
+    description: str | None,
+    cdx_api_url: str,
+    memento_api_url: str,
+    priority: float | None,
+    no_merge: bool = False,
+    auto_merge: bool = False,
+    dry_run: bool = False,
 ) -> None:
     if priority is not None and priority <= 0:
         raise ValueError("Priority must be strictly positive.")
@@ -41,10 +41,9 @@ def add_archive(
         if auto_merge:
             should_merge = True
         else:
-            echo(f"Archive {archive_id} already exists with "
+            print(f"Archive {archive_id} already exists with "
                  f"conflicting API endpoints.")
-            add_to_existing = prompt("Merge with existing archive? [y/N]",
-                                     type=str, default="n", show_default=False)
+            add_to_existing = input("Merge with existing archive? [y/N] ").strip()
             should_merge = add_to_existing.lower() == "y"
         if not should_merge:
             return
@@ -62,11 +61,11 @@ def add_archive(
             should_build_sources = existing_archive.should_build_sources
 
         if not auto_merge:
-            echo(f"Update archive {archive_id}.")
+            print(f"Update archive {archive_id}.")
     else:
-        archive_id = str(uuid4())
+        archive_id = uuid4()
         if not no_merge and not auto_merge:
-            echo(f"Add new archive {archive_id}.")
+            print(f"Add new archive {archive_id}.")
 
     archive = Archive(
         id=archive_id,
@@ -78,4 +77,7 @@ def add_archive(
         priority=priority,
         should_build_sources=should_build_sources,
     )
-    archive.save(using=config.es.client, index=config.es.index_archives)
+    if dry_run:
+        print(archive)
+    else:
+        archive.save(using=config.es.client, index=config.es.index_archives)

@@ -6,16 +6,16 @@ from typing import Iterable, Iterator, NamedTuple
 from urllib.parse import unquote
 from uuid import uuid5
 
-from click import echo
 from elasticsearch_dsl.query import Term
+from pydantic import HttpUrl
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.legacy.model import ArchivedUrl
-from archive_query_log.legacy.urls.iterable import ArchivedUrls
+from archive_query_log.legacy.iterable import ArchivedUrls
 from archive_query_log.namespaces import NAMESPACE_CAPTURE
 from archive_query_log.orm import Capture, Archive, Provider, \
-    InnerProvider, InnerArchive
+    InnerProvider, InnerArchive, InnerParser
 from archive_query_log.utils.time import CET, UTC
 
 
@@ -35,7 +35,7 @@ def _iter_captures(
         check_memento: bool = True,
 ) -> Iterator[Capture]:
     for archived_url in archived_urls:
-        url = archived_url.url
+        url = HttpUrl(archived_url.url)
         timestamp = datetime.fromtimestamp(
             archived_url.timestamp,
             tz=timezone.utc,
@@ -58,14 +58,14 @@ def _iter_captures(
                 continue
 
         capture_id_components = (
-            importable_path.archive.cdx_api_url,
-            url,
+            importable_path.archive.cdx_api_url.encoded_string(),
+            url.encoded_string(),
             timestamp.astimezone(UTC).strftime("%Y%m%d%H%M%S"),
         )
-        capture_id = str(uuid5(
+        capture_id = uuid5(
             NAMESPACE_CAPTURE,
             ":".join(capture_id_components),
-        ))
+        )
         yield Capture(
             id=capture_id,
             last_modified=last_modified.replace(microsecond=0),
@@ -80,19 +80,22 @@ def _iter_captures(
                 url_path_prefix=importable_path.url_path_prefix,
             ),
             url=url,
+            url_key="",
+            digest="",
             timestamp=timestamp.astimezone(UTC),
-            url_query_parser=InnerProvider(
+            url_query_parser=InnerParser(
                 should_parse=True,
             ),
         )
 
 
 def _import_captures_path(
-        config: Config,
-        importable_path: _ImportablePath,
-        check_memento: bool = True,
+    config: Config,
+    importable_path: _ImportablePath,
+    check_memento: bool = True,
+    dry_run: bool = False,
 ) -> None:
-    echo(f"Importing captures from {importable_path.path} to "
+    print(f"Importing captures from {importable_path.path} to "
          f"archive {importable_path.archive.id} and "
          f"provider {importable_path.provider.id}.")
 
@@ -101,24 +104,21 @@ def _import_captures_path(
         datetime.fromtimestamp(getmtime(path))
         for path in json_paths
     ).astimezone(UTC)
-    echo(f"Found {len(json_paths)} JSONL files "
+    print(f"Found {len(json_paths)} JSONL files "
          f"(oldest from {oldest_modification_time.strftime('%c')}).")
 
     urls_iterators_list = [ArchivedUrls(path) for path in json_paths]
     urls_iterators: Iterable[ArchivedUrls] = urls_iterators_list
     if len(urls_iterators_list) > 50:
-        # noinspection PyTypeChecker
         urls_iterators = tqdm(
             urls_iterators,
             desc="Get capture count",
             unit="file",
         )
     total_count = sum(len(urls) for urls in urls_iterators)
-    echo(f"Found {total_count} captures.")
+    print(f"Found {total_count} captures.")
 
-    archived_urls: Iterable[ArchivedUrl] = chain.from_iterable(
-        urls_iterators_list)
-    # noinspection PyTypeChecker
+    archived_urls: Iterable[ArchivedUrl] = chain.from_iterable(urls_iterators_list)
     archived_urls = tqdm(
         archived_urls,
         total=total_count,
@@ -136,7 +136,10 @@ def _import_captures_path(
         _create_action(capture, config)
         for capture in captures_iter
     )
-    config.es.bulk(actions)
+    config.es.bulk(
+        actions=actions,
+        dry_run=dry_run,
+    )
 
 
 def _create_action(capture: Capture, config: Config) -> dict:
@@ -148,13 +151,14 @@ def _create_action(capture: Capture, config: Config) -> dict:
 
 
 def import_captures(
-        config: Config,
-        data_dir_path: Path,
-        check_memento: bool,
-        search_provider: str | None,
-        search_provider_index: int | None,
+    config: Config,
+    data_dir_path: Path,
+    check_memento: bool,
+    search_provider: str | None,
+    search_provider_index: int | None,
+    dry_run: bool = False,
 ) -> None:
-    echo(f"Importing AQL-22 captures from: {data_dir_path}")
+    print(f"Importing AQL-22 captures from: {data_dir_path}")
 
     archive_response = (
         Archive.search(using=config.es.client, index=config.es.index_archives)
@@ -164,17 +168,17 @@ def import_captures(
         .execute()
     )
     if archive_response.hits.total.value < 1:
-        echo("No AQL-22 archive found. Add an archive with the "
+        print("No AQL-22 archive found. Add an archive with the "
              "CDX API URL 'https://web.archive.org/cdx/search/cdx' "
              "first.")
         exit(1)
 
     archive: Archive = archive_response.hits[0]
-    echo(f"Importing captures for archive {archive.id}: {archive.name}")
+    print(f"Importing captures for archive {archive.id}: {archive.name}")
 
     archived_urls_path = data_dir_path / "archived-urls"
     if not archived_urls_path.exists():
-        echo("No captures found.")
+        print("No captures found.")
         return
 
     search_provider_paths = sorted(archived_urls_path.glob("*"))
@@ -186,7 +190,7 @@ def import_captures(
     elif search_provider_index is not None:
         search_provider_paths = [search_provider_paths[search_provider_index]]
     if len(search_provider_paths) == 0:
-        echo("No captures found.")
+        print("No captures found.")
         return
     prefix_paths_list: list[Path] = list(chain.from_iterable((
         search_provider_path.glob("*")
@@ -195,7 +199,6 @@ def import_captures(
 
     importable_paths = []
     prefix_paths: Iterable[Path] = prefix_paths_list
-    # noinspection PyTypeChecker
     prefix_paths = tqdm(
         prefix_paths,
         desc="Checking URL prefixes",
@@ -229,4 +232,5 @@ def import_captures(
             config=config,
             importable_path=importable_path,
             check_memento=check_memento,
+            dry_run=dry_run,
         )
