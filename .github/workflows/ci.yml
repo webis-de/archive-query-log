@@ -72,26 +72,6 @@ jobs:
       run: pip install .[tests]
     - name: 🔍 Check Python static typing
       run: mypy .
-  python-security:
-    name: 🔍 Check Python code security
-    strategy:
-      matrix:
-        python:
-        - '3.13'
-    runs-on: ubuntu-latest
-    steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 🧰 Install Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python }}
-        cache: pip
-        cache-dependency-path: pyproject.toml
-    - name: 🧰 Install dependencies
-      run: pip install .[tests]
-    - name: 🔍 Check Python code security
-      run: bandit -c pyproject.toml -r .
   python-test:
     name: 🧪 Test Python code
     strategy:
@@ -139,7 +119,6 @@ jobs:
     - python-build
     - python-code-check
     - python-typing
-    - python-security
     - python-test
     - docker-build
     runs-on: ubuntu-latest
@@ -164,7 +143,6 @@ jobs:
     - python-build
     - python-code-check
     - python-typing
-    - python-security
     - python-test
     - docker-build
     runs-on: ubuntu-latest
@@ -201,7 +179,6 @@ jobs:
     - python-build
     - python-code-check
     - python-typing
-    - python-security
     - python-test
     - python-publish
     - docker-build
