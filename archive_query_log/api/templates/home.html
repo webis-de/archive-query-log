@@ -72,7 +72,7 @@
                         <td style="text-align: right">{{ "{:,.0f}".format(statistics.total) }}</td>
                         <td style="text-align: right">
                             {% if statistics.disk_size %}
-                            {{ statistics.disk_size }}
+                            {{ statistics.disk_size.human_readable(decimal=True) }}
                             {% else %}
                             —
                             {% endif %}
@@ -81,7 +81,7 @@
                             {% if statistics.last_modified %}
                             <time datetime="{{ statistics.last_modified.isoformat() }}"
                                   title="{{ statistics.last_modified.strftime('%c (%Z)') }}">
-                                {{ statistics.last_modified.strftime("%Y-%m-%d %H:%M:%S") }}
+                                {{ naturaltime(statistics.last_modified) }}
                             </time>
                             {% else %}
                             —
