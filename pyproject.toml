@@ -42,6 +42,7 @@ dependencies = [
     "pydantic~=2.11",
     "python-dotenv~=1.1",
     "python-whois~=0.9.5",
+    "pyyaml~=6.0,>=6.0.2",
     "ray[data]~=2.49",
     "ray-elasticsearch~=1.1",
     "requests~=2.32",
@@ -71,6 +72,7 @@ tests = [
     "types-beautifulsoup4~=4.12,>=4.12.0.20250204",
     "types-bleach~=6.2,>=6.2.0.20241123",
     "types-lxml~=2025.0,>=2025.3.30",
+    "types-pyyaml~=6.0,>=6.0.12.20250402",
     "types-requests~=2.0",
     "types-tqdm~=4.67,>=4.67.0.20250417",
 ]
