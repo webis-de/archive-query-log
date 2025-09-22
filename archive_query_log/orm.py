@@ -55,7 +55,7 @@ class UuidBaseDocument(BaseDocument):
 class Archive(UuidBaseDocument):
     last_modified: DefaultDate
     name: Text
-    description: Text
+    description: Text | None = None
     cdx_api_url: HttpUrl
     memento_api_url: HttpUrl
     priority: FloatRankFeature | None = None
@@ -72,9 +72,9 @@ class Archive(UuidBaseDocument):
 class Provider(UuidBaseDocument):
     last_modified: DefaultDate
     name: Text
-    description: Text
-    exclusion_reason: Text
-    notes: Text
+    description: Text | None = None
+    exclusion_reason: Text | None = None
+    notes: Text | None = None
     domains: Sequence[Keyword]
     url_path_prefixes: Sequence[Keyword]
     priority: FloatRankFeature | None = None
