@@ -9,6 +9,7 @@ from elasticsearch_dsl import (
     Keyword as _Keyword,
 )
 from pydantic import HttpUrl, Field, AliasChoices
+from pydantic_extra_types.language_code import LanguageAlpha2
 
 from elasticsearch_pydantic import (
     BaseDocument,
@@ -21,6 +22,7 @@ from elasticsearch_pydantic import (
 
 
 IntKeyword: TypeAlias = Annotated[int, _Keyword]
+LanguageAlpha2Keyword: TypeAlias = Annotated[LanguageAlpha2, _Keyword]
 Date: TypeAlias = Annotated[
     datetime,
     _Date(
@@ -192,8 +194,8 @@ class Serp(UuidBaseDocument):
     url_page_parser: InnerParser | None = None
     url_offset: Integer | None = None
     url_offset_parser: InnerParser | None = None
-    # url_language: Keyword | None = None
-    # url_language_parser: InnerParser | None = None
+    url_language: LanguageAlpha2Keyword | None = None
+    url_language_parser: InnerParser | None = None
     warc_location: WarcLocation | None = None
     warc_downloader: InnerDownloader | None = None
     warc_query: Text | None = None
@@ -216,18 +218,16 @@ class InnerSerp(BaseInnerDocument):
     id: UUID
 
 
-class WebSearchResultBlock(UuidBaseDocument):
+class ResultBlock(UuidBaseDocument):
     last_modified: DefaultDate
     archive: InnerArchive
     provider: InnerProvider
     serp_capture: InnerCapture
     serp: InnerSerp
     content: Text
+    parser: InnerParser | None = None
     rank: Integer
     url: HttpUrl | None = None
-    title: Text | None = None
-    text: Text | None = None
-    parser: InnerParser | None = None
     should_fetch_captures: bool = True
     last_fetched_captures: Date | None = None
     capture_before_serp: InnerCapture | None = None
@@ -237,6 +237,11 @@ class WebSearchResultBlock(UuidBaseDocument):
     warc_location_after_serp: WarcLocation | None = None
     warc_downloader_after_serp: InnerDownloader | None = None
 
+
+class WebSearchResultBlock(ResultBlock):
+    title: Text | None = None
+    text: Text | None = None
+
     class Index:
         settings = {
             "number_of_shards": 20,
@@ -244,17 +249,8 @@ class WebSearchResultBlock(UuidBaseDocument):
         }
 
 
-class SpecialContentsResultBlock(UuidBaseDocument):
-    last_modified: DefaultDate
-    archive: InnerArchive
-    provider: InnerProvider
-    serp_capture: InnerCapture
-    serp: InnerSerp
-    content: Text
-    rank: Integer
-    url: HttpUrl | None = None
+class SpecialContentsResultBlock(ResultBlock):
     text: Text | None = None
-    parser: InnerParser | None = None
 
     class Index:
         settings = {
