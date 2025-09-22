@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 from functools import cached_property
 from itertools import chain
-from typing import Iterable, Iterator, Pattern, Annotated, Sequence
+from re import compile as re_compile
+from typing import Iterable, Iterator, Pattern, Sequence
 from urllib.parse import urljoin
 from uuid import uuid5, UUID
 
-from annotated_types import Gt
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
@@ -36,24 +36,18 @@ class SpecialContentsResultBlockData(BaseModel):
     rank: int
     content: str
     url: HttpUrl | None = None
+    title: str | None = None
     text: str | None = None
 
 
 class WarcSpecialContentsResultBlocksParser(BaseModel, ABC):
     provider_id: UUID | None = None
     url_pattern: Pattern | None = None
-    priority: Annotated[float, Gt(0)] | None = None
 
     @cached_property
     def id(self) -> UUID:
-        parser_id_components = (
-            str(self.provider_id) if self.provider_id is not None else "",
-            str(self.url_pattern) if self.url_pattern is not None else "",
-            str(self.priority) if self.priority is not None else "",
-        )
         return uuid5(
-            NAMESPACE_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSER,
-            ":".join(parser_id_components),
+            NAMESPACE_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSER, self.model_dump_json()
         )
 
     @cached_property
@@ -85,6 +79,7 @@ class WarcSpecialContentsResultBlocksParser(BaseModel, ABC):
 class XpathWarcSpecialContentsResultBlocksParser(WarcSpecialContentsResultBlocksParser):
     xpath: str
     url_xpath: str | None = None
+    title_xpath: str | None = None
     text_xpath: str | None = None
 
     def parse(
@@ -111,6 +106,11 @@ class XpathWarcSpecialContentsResultBlocksParser(WarcSpecialContentsResultBlocks
                 if len(urls) > 0:
                     url = urls[0].strip()
                     url = urljoin(serp.capture.url.encoded_string(), url)
+            title: str | None = None
+            if self.title_xpath is not None:
+                titles = safe_xpath(element, self.title_xpath, str)
+                if len(titles) > 0:
+                    title = titles[0].strip()
             text: str | None = None
             if self.text_xpath is not None:
                 texts = safe_xpath(element, self.text_xpath, str)
@@ -140,16 +140,11 @@ class XpathWarcSpecialContentsResultBlocksParser(WarcSpecialContentsResultBlocks
                     rank=i,
                     content=content,
                     url=HttpUrl(url) if url is not None else None,
+                    title=title,
                     text=text,
                 )
             )
         return special_contents_result_blocks
-
-
-# TODO: Add actual parsers.
-WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSERS: Sequence[
-    WarcSpecialContentsResultBlocksParser
-] = NotImplemented
 
 
 def _parse_serp_warc_special_contents_result_blocks_action(
@@ -266,3 +261,17 @@ def parse_serps_warc_special_contents_result_blocks(
         )
     else:
         print("No new/changed SERPs.")
+
+
+WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSERS: Sequence[
+    WarcSpecialContentsResultBlocksParser
+] = (
+    # Provider: Google (google.com)
+    XpathWarcSpecialContentsResultBlocksParser(
+        provider_id=UUID("f205fc44-d918-4b79-9a7f-c1373a6ff9f2"),
+        url_pattern=re_compile(r"^https?://[^/]+/search\?"),
+        xpath=".//*[contains(concat(' ',normalize-space(@class),' '),' kp-wholepage ')] | .//*[contains(concat(' ',normalize-space(@class),' '),' XqFnDf ')] | .//*[contains(concat(' ',normalize-space(@class),' '),' WC0BKe ')]",
+        url_xpath=".//*[contains(concat(' ',normalize-space(@class),' '),' ruhjFe ')]/@href | .//*[contains(concat(' ',normalize-space(@class),' '),' setTDc ')]/div[(count(preceding-sibling::*)+1) = 1]/div[(count(preceding-sibling::*)+1) = 1]/div[(count(preceding-sibling::*)+1) = 1]/div[(count(preceding-sibling::*)+1) = 1]/span[(count(preceding-sibling::*)+1) = 1]/a[(count(preceding-sibling::*)+1) = 1]/@href",
+        text_xpath=".//*[contains(concat(' ',normalize-space(@class),' '),' kno-rdesc ')]//text() | .//*[contains(concat(' ',normalize-space(@class),' '),' Z0LcW ')]//text() | .//*[contains(concat(' ',normalize-space(@class),' '),' V3FYCf ')]/div[(count(preceding-sibling::*)+1) = 1]/div[(count(preceding-sibling::*)+1) = 1]/span[(count(preceding-sibling::*)+1) = 1]/span[(count(preceding-sibling::*)+1) = 1]//text()",
+    ),
+)
