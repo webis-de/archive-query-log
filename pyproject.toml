@@ -156,4 +156,3 @@ exclude = [
 
 [tool.pytest.ini_options]
 log_cli = true
-filterwarnings = ["ignore::marshmallow.warnings.RemovedInMarshmallow4Warning"]
