@@ -79,7 +79,7 @@ tests = [
     "pandas-stubs~=2.2,>=2.2.3.250308",
     "pytest~=8.3,>=8.3.5",
     "pytest-cov~=6.1",
-    "ruff~=0.11.8",
+    "ruff>=0.11.8,<0.14.0",
     "types-beautifulsoup4~=4.12,>=4.12.0.20250204",
     "types-bleach~=6.2,>=6.2.0.20241123",
     "types-lxml~=2025.0,>=2025.3.30",
