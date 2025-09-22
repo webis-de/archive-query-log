@@ -1,15 +1,15 @@
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from functools import cached_property
 from hashlib import md5
 from urllib.parse import SplitResult, urlsplit
 from uuid import UUID, uuid5, NAMESPACE_URL
 
-from dataclasses_json import DataClassJsonMixin
+from pydantic import BaseModel, ConfigDict
 
 
-@dataclass(frozen=True, slots=True)
-class ArchivedUrl(DataClassJsonMixin):
+class ArchivedUrl(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
     """
     A URL that is archived in the Wayback Machine (https://web.archive.org/).
     The archived snapshot can be retrieved using the ``archive_url``

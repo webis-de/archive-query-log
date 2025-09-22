@@ -33,14 +33,13 @@ class ArchivedUrls(Sized, Iterable[ArchivedUrl]):
             return count_lines(gzip_file)
 
     def __iter__(self) -> Iterator[ArchivedUrl]:
-        schema = ArchivedUrl.schema()
         with (
             self.path.open("rb") as file,
             GzipFile(fileobj=file, mode="rb") as gzip_file,
             text_io_wrapper(gzip_file) as text_file,
         ):
             for line in text_file:
-                url = schema.loads(line)
+                url = ArchivedUrl.model_validate_json(line)
                 if isinstance(url, list):
                     raise ValueError(f"Expected one URL per line: {line}")
                 yield url
