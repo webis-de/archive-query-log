@@ -12,7 +12,7 @@ from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.legacy.model import ArchivedUrl
-from archive_query_log.legacy.urls.iterable import ArchivedUrls
+from archive_query_log.legacy.iterable import ArchivedUrls
 from archive_query_log.namespaces import NAMESPACE_CAPTURE
 from archive_query_log.orm import Capture, Archive, Provider, \
     InnerProvider, InnerArchive, InnerParser
