@@ -1,10 +1,10 @@
 from typing import Annotated
 
 from cyclopts import App, Parameter
-from cyclopts.types import URL
-from cyclopts.validators import Number
+from cyclopts.types import URL, ResolvedPath, NonNegativeFloat, PositiveInt
 
 from archive_query_log.config import Config
+from archive_query_log.export.base import ExportFormat
 from archive_query_log.imports.archive_it import (
     DEFAULT_ARCHIVE_IT_PAGE_SIZE,
     DEFAULT_ARCHIVE_IT_WAYBACK_URL,
@@ -40,7 +40,7 @@ def add(
         URL,
         Parameter(alias="-m"),
     ],
-    priority: Annotated[float, Number(gte=0)] | None = None,
+    priority: NonNegativeFloat | None = None,
     dry_run: bool = False,
     config: Config,
 ) -> None:
@@ -75,8 +75,8 @@ def archive_it(
     *,
     api_url: URL = DEFAULT_ARCHIVE_IT_API_URL,
     wayback_url: URL = DEFAULT_ARCHIVE_IT_WAYBACK_URL,
-    page_size: Annotated[int, Number(gte=1)] = DEFAULT_ARCHIVE_IT_PAGE_SIZE,
-    priority: Annotated[float, Number(gte=0)] | None = None,
+    page_size: PositiveInt = DEFAULT_ARCHIVE_IT_PAGE_SIZE,
+    priority: NonNegativeFloat | None = None,
     no_merge: bool = False,
     auto_merge: bool = False,
     dry_run: bool = False,
@@ -97,4 +97,27 @@ def archive_it(
         auto_merge=auto_merge,
         priority=priority,
         dry_run=dry_run,
+    )
+
+
+@archives.command
+def export(
+    sample_size: PositiveInt,
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export a sample of web archives.
+    """
+    from archive_query_log.export import export_local
+
+    export_local(
+        document_type=Archive,
+        index=config.es.index_archives,
+        format=format,
+        sample_size=sample_size,
+        output_path=output_path,
+        config=config,
     )

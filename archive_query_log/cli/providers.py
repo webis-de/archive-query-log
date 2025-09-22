@@ -2,11 +2,17 @@ from pathlib import Path
 from typing import Annotated
 
 from cyclopts import App, Parameter
-from cyclopts.types import ResolvedDirectory, ResolvedExistingFile
-from cyclopts.validators import Number
+from cyclopts.types import (
+    ResolvedDirectory,
+    ResolvedExistingFile,
+    ResolvedPath,
+    PositiveInt,
+    NonNegativeFloat,
+)
 
 from archive_query_log.cli.util import Domain
 from archive_query_log.config import Config
+from archive_query_log.export.base import ExportFormat
 from archive_query_log.orm import Provider
 
 
@@ -35,7 +41,7 @@ def add(
         list[str],
         Parameter(alias="--url-path-prefix"),
     ],
-    priority: Annotated[float, Number(gte=0)] | None = None,
+    priority: NonNegativeFloat | None = None,
     dry_run: bool = False,
     config: Config,
 ) -> None:
@@ -89,4 +95,27 @@ def import_(
         no_merge=no_merge,
         auto_merge=auto_merge,
         dry_run=dry_run,
+    )
+
+
+@providers.command
+def export(
+    sample_size: PositiveInt,
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export a sample of web archives.
+    """
+    from archive_query_log.export import export_local
+
+    export_local(
+        document_type=Provider,
+        index=config.es.index_providers,
+        format=format,
+        sample_size=sample_size,
+        output_path=output_path,
+        config=config,
     )

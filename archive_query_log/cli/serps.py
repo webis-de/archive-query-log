@@ -1,6 +1,8 @@
 from cyclopts import App
+from cyclopts.types import ResolvedPath, PositiveInt
 
 from archive_query_log.config import Config
+from archive_query_log.export.base import ExportFormat
 from archive_query_log.orm import Serp, WebSearchResultBlock, SpecialContentsResultBlock
 
 serps = App(
@@ -201,3 +203,26 @@ def upload_warc(
     from archive_query_log.downloaders.warc import upload_serps_warc
 
     upload_serps_warc(config)
+
+
+@serps.command
+def export(
+    sample_size: PositiveInt,
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export a sample of web archives.
+    """
+    from archive_query_log.export import export_local
+
+    export_local(
+        document_type=Serp,
+        index=config.es.index_serps,
+        format="jsonl",
+        sample_size=sample_size,
+        output_path=output_path,
+        config=config,
+    )

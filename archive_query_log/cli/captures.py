@@ -2,9 +2,10 @@ from pathlib import Path
 from typing import Annotated
 
 from cyclopts import App, Parameter
-from cyclopts.types import ResolvedExistingDirectory
+from cyclopts.types import ResolvedExistingDirectory, ResolvedPath, PositiveInt
 
 from archive_query_log.config import Config
+from archive_query_log.export.base import ExportFormat
 from archive_query_log.orm import Capture
 
 
@@ -77,4 +78,27 @@ def aql_22(
         search_provider=search_provider,
         search_provider_index=search_provider_index,
         dry_run=dry_run,
+    )
+
+
+@captures.command
+def export(
+    sample_size: PositiveInt,
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export a sample of web archives.
+    """
+    from archive_query_log.export import export_local
+
+    export_local(
+        document_type=Capture,
+        index=config.es.index_captures,
+        format=format,
+        sample_size=sample_size,
+        output_path=output_path,
+        config=config,
     )
