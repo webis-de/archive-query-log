@@ -19,6 +19,7 @@ if TYPE_CHECKING:
 else:
     S3Client = Any
 
+from archive_query_log import __version__ as app_version
 from archive_query_log.config import Config
 from archive_query_log.orm import (
     Archive,
@@ -401,7 +402,7 @@ def get_statistics(config: ConfigDependency) -> list[Statistics]:
         ),
         _get_statistics(
             config=config,
-            name="+ WARC web search result blocks",
+            name="+ WARC WSRBs",
             description="SERPs for which the web search result blocks have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
@@ -411,7 +412,7 @@ def get_statistics(config: ConfigDependency) -> list[Statistics]:
         ),
         _get_statistics(
             config=config,
-            name="+ WARC special contents result blocks",
+            name="+ WARC SCRBs",
             description="SERPs for which the special contents result blocks have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
@@ -439,14 +440,14 @@ def get_statistics(config: ConfigDependency) -> list[Statistics]:
         ),
         _get_statistics(
             config=config,
-            name="Web search result blocks",
+            name="WSRBs",
             description="Web search result blocks from the SERPs.",
             document=WebSearchResultBlock,
             index=config.es.index_web_search_result_blocks,
         ),
         _get_statistics(
             config=config,
-            name="Special contents result blocks",
+            name="SCRBs",
             description="Special contents result blocks from the SERPs.",
             document=SpecialContentsResultBlock,
             index=config.es.index_special_contents_result_blocks,
@@ -570,8 +571,8 @@ def get_progress(config: ConfigDependency) -> list[Progress]:
         ),
         _get_processed_progress(
             config=config,
-            input_name="Web search result blocks",
-            output_name="Web search result blocks",
+            input_name="WSRBs",
+            output_name="WSRBs",
             description="Download WARCs.",
             document=WebSearchResultBlock,
             index=config.es.index_web_search_result_blocks,
@@ -599,6 +600,7 @@ def home(request: Request, config: ConfigDependency) -> HTMLResponse:
         request=request,
         name="home.html",
         context={
+            "version": app_version,
             "statistics_list": statistics_list,
             "progress_list": progress_list,
             "year": utc_now().year,
