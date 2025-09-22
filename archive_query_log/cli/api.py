@@ -5,7 +5,6 @@ from cyclopts.types import Port
 from pydantic import IPvAnyInterface
 
 from archive_query_log.cli.util import Domain
-from archive_query_log.config import Config
 
 
 api = App(
