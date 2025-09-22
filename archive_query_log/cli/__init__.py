@@ -6,7 +6,7 @@ from tqdm.auto import tqdm
 
 from archive_query_log.cli.archives import archives
 from archive_query_log.cli.captures import captures
-from archive_query_log.cli.monitoring import monitoring
+from archive_query_log.cli.api import api
 from archive_query_log.cli.providers import providers
 from archive_query_log.cli.results import results
 from archive_query_log.cli.serps import serps
@@ -66,5 +66,5 @@ app.command(sources)
 app.command(captures)
 app.command(serps)
 app.command(results)
-app.command(monitoring)
+app.command(api)
 app.command(web_search_result_blocks)

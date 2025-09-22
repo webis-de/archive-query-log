@@ -2,23 +2,23 @@ from typing import Annotated
 
 from cyclopts import App, Parameter
 from cyclopts.types import Port
+from pydantic import IPvAnyInterface
 
 from archive_query_log.cli.util import Domain
 from archive_query_log.config import Config
 
 
-monitoring = App(
-    name="monitoring",
-    help="Manage monitoring tasks.",
+api = App(
+    name="api",
+    help="Manage HTTP API and monitoring.",
 )
 
 
-@monitoring.command()
+@api.command()
 def run(
     *,
-    host: Annotated[Domain, Parameter(alias="-h")] = "127.0.0.1",
+    host: Annotated[Domain | IPvAnyInterface, Parameter(alias="-h")] = "127.0.0.1",
     port: Annotated[Port, Parameter(alias="-p")] = 5000,
-    config: Config,
 ) -> None:
     """
     Run the monitoring server.
@@ -27,6 +27,12 @@ def run(
     :param port: The port to bind the server to.
     """
 
-    from archive_query_log.monitoring import run_monitoring
+    from uvicorn import run
 
-    run_monitoring(config, host, port)
+    run(
+        "archive_query_log.api.__init__:app",
+        host=str(host),
+        port=port,
+        log_level="info",
+        reload=True,
+    )
