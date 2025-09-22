@@ -13,7 +13,7 @@ _D = TypeVar("_D", bound=BaseDocument)
 
 
 @dataclass(frozen=True)
-class JSONLExporter(Exporter, Generic[_D]):
+class JsonlExporter(Exporter, Generic[_D]):
     document_type: type[_D]
     batch_size: int | None = None
     num_cpus: float | None = None
@@ -60,4 +60,4 @@ class JSONLExporter(Exporter, Generic[_D]):
 
 
 def get_exporter(document_type: type[_D]) -> Exporter[_D]:
-    return JSONLExporter(document_type)
+    return JsonlExporter(document_type)

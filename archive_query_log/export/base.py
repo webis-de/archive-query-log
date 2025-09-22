@@ -1,8 +1,10 @@
 from pathlib import Path
-from typing import Generic, Iterable, Protocol, TypeVar
+from typing import Generic, Iterable, Protocol, TypeVar, TypeAlias, Literal
 
 from elasticsearch_pydantic import BaseDocument
 from ray.data import Dataset
+
+ExportFormat: TypeAlias = Literal["jsonl"]
 
 _D = TypeVar("_D", bound=BaseDocument, contravariant=True)
 
