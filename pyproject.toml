@@ -147,6 +147,18 @@ exclude = [
     "helm",
 ]
 
+[tool.ruff.lint]
+select = [
+    "E4",
+    "E7",
+    "E9",
+    "F",
+    "S",  # Security issues
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/test_*.py" = ["S101"]
+
 [tool.mypy]
 ignore_missing_imports = true
 exclude = [
@@ -159,21 +171,6 @@ exclude = [
     "docs",
     "helm",
 ]
-
-[tool.bandit]
-exclude_dirs = [
-    "build",
-    "venv",
-    "notebooks",
-    "integrations",
-    "scripts",
-    "data",
-    "docs",
-    "helm",
-]
-
-[tool.bandit.assert_used]
-skips = ["**/test_*.py"]
 
 [tool.pytest.ini_options]
 log_cli = true

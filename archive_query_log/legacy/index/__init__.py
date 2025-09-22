@@ -363,7 +363,7 @@ class _Index(
 
     @cached_property
     def _index_shelve(self) -> Shelf:
-        return shelf_open(str(self._index_shelf_path), "r")  # nosec: B301
+        return shelf_open(str(self._index_shelf_path), "r")  # noqa: S301
 
     def index(self) -> None:
         self._meta_index.index()

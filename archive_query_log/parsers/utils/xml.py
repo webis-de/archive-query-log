@@ -100,7 +100,7 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
             warn(f"Skipping JSON-like document: {wayback_url}", UserWarning)
             return None
 
-        return etree_parse(  # nosec: B320
+        return etree_parse(  # noqa: S320
             source=text_file,
             parser=parser,
         )

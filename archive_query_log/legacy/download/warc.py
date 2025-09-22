@@ -396,7 +396,7 @@ class WebArchiveWarcDownloader:
             archived_urls_list = self._deduplicate_urls(
                 cdx_urls, snippets)
             sample_size = min(len(cdx_urls), 75_000)
-            random = Random(0)  # nosec: B311
+            random = Random(0)  # noqa: S311
             cdx_urls = random.sample(archived_urls_list, sample_size)
 
         await self._download(cdx_urls)

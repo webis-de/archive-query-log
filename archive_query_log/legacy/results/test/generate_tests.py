@@ -65,7 +65,7 @@ def main():
                 query_urls[query_url["search_provider_name"]].append(query_url)
 
     print(f"Found {sum(len(urls) for urls in query_urls.values())} SERPs.")
-    random = Random(0)  # nosec: B311
+    random = Random(0)  # noqa: S311
     query_urls = {
         service_name: random.sample(
             query_urls[service_name], min(
