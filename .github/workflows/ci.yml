@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 🧰 Install Python
         uses: actions/setup-python@v5
         with:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 🧰 Install Python
         uses: actions/setup-python@v5
         with:
@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 🧰 Install Python
         uses: actions/setup-python@v5
         with:
@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 🧰 Install Python
         uses: actions/setup-python@v5
         with:
@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 🧰 Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: 🧰 Set up Docker Buildx
@@ -108,9 +108,9 @@ jobs:
       id-token: write
     steps:
       - name: 📥 Check-out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 📥 Download Python wheels
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: wheels
           path: dist
@@ -130,7 +130,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 🧰 Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: 🧰 Set up Docker Buildx
@@ -170,9 +170,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 📥 Download Python wheels
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: wheels
           path: dist
