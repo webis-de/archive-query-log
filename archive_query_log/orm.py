@@ -156,7 +156,7 @@ class InnerCapture(BaseInnerDocument):
     id: UUID
     url: HttpUrl
     timestamp: Date
-    status_code: Integer | None
+    status_code: Integer | None = None
     digest: Keyword
     mimetype: Keyword | None = None
 
