@@ -74,7 +74,7 @@ jobs:
       - name: 🧰 Install dependencies
         run: pip install .[tests]
       - name: 🧪 Test Python code
-        run: pytest --cov --cov-report=xml archive_query_log
+        run: pytest --cov --cov-report=xml .
       - name: 📤 Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
