@@ -1,12 +1,23 @@
 from datetime import datetime
 from pathlib import Path
-from typing import Type
+from typing import Type, Any, TYPE_CHECKING, Iterable, Annotated, TypeAlias
 
-from elasticsearch_dsl.query import Exists, Query, Term
+from boto3 import Session
+from dotenv import find_dotenv, load_dotenv
+from elasticsearch_dsl import Search
+from elasticsearch_dsl.query import Exists, Query, Term, Nested
 from expiringdict import ExpiringDict
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Depends
+from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from fastapi.templating import Jinja2Templates
+from humanize import naturaltime
+from pydantic import BaseModel, ByteSize, ConfigDict
+from tqdm import tqdm
+if TYPE_CHECKING:
+    from mypy_boto3_s3 import S3Client
+else:
+    S3Client = Any
 
 from archive_query_log.config import Config
 from archive_query_log.orm import (
@@ -19,28 +30,25 @@ from archive_query_log.orm import (
     WebSearchResultBlock,
     SpecialContentsResultBlock,
 )
+from archive_query_log.utils.time import utc_now
 
 _CACHE_SECONDS_STATISTICS = 60 * 5  # 5 minutes
 _CACHE_SECONDS_PROGRESS = 60 * 10  # 10 minutes
 
-_DEFAULT_CONFIG_PATH = Path("../../config.yml")
-_DEFAULT_CONFIG_OVERRIDE_PATH = Path("../../config.override.yml")
-_DEFAULT_CONFIG_PATHS = []
-if _DEFAULT_CONFIG_PATH.exists():
-    _DEFAULT_CONFIG_PATHS.append(_DEFAULT_CONFIG_PATH)
-if _DEFAULT_CONFIG_OVERRIDE_PATH.exists():
-    _DEFAULT_CONFIG_PATHS.append(_DEFAULT_CONFIG_OVERRIDE_PATH)
-
 
 class Statistics(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
     name: str
     description: str
     total: int
-    disk_size: str | None
+    disk_size: ByteSize | None
     last_modified: datetime | None
 
 
 class Progress(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
     input_name: str
     output_name: str
     description: str
@@ -51,7 +59,7 @@ class Progress(BaseModel):
 DocumentType = Type[BaseDocument]
 
 _statistics_cache: dict[
-    tuple[DocumentType, str, str],
+    tuple[DocumentType, str, str | None, str | None, str, str],
     Statistics,
 ] = ExpiringDict(
     max_len=100,
@@ -59,57 +67,175 @@ _statistics_cache: dict[
 )
 
 
-def _convert_bytes(bytes_count: int) -> str:
-    step_unit = 1000.0
-    bytes_count_decimal: float = bytes_count
-    for unit in ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB", "RB"]:
-        if bytes_count_decimal < step_unit:
-            return f"{bytes_count_decimal:3.1f} {unit}"
-        bytes_count_decimal /= step_unit
-    return f"{bytes_count_decimal:3.1f} QB"
-
-
 def _get_statistics(
     config: Config,
     name: str,
     description: str,
-    document: DocumentType,
     index: str,
-    filter_query: Query | None = None,
+    document: DocumentType,
+    filter_field: str | None = None,
+    status_field: str | None = None,
+    last_modified_field: str = "last_modified",
 ) -> Statistics:
-    key = (document, index, repr(filter_query))
+    key = (document, index, filter_field, status_field, last_modified_field, name)
     if key in _statistics_cache:
         return _statistics_cache[key]
+    print(f"Get statistics: {name}")
 
-    config.es.client.indices.refresh(index=index)
-    stats = config.es.client.indices.stats(index=index)
-    search = document.search(using=config.es.client, index=index)
-    if filter_query is not None:
-        search = search.filter(filter_query)
+    search: Search = document.search(using=config.es.client, index=index)
+    search = search.filter(Exists(field=last_modified_field))
+    if filter_field is not None:
+        if "." in filter_field:
+            search = search.filter(
+                Nested(
+                    path=filter_field.split(".")[0],
+                    query=Exists(field=filter_field),
+                )
+            )
+        else:
+            search = search.filter(Exists(field=filter_field))
+    if status_field is not None:
+        search = search.filter(Term(**{status_field: False}))
+
     total = search.count()
     last_modified_response = (
-        search.query(Exists(field="last_modified"))
-        .sort("-last_modified")
-        .extra(size=1)
-        .execute()
+        search.sort(f"-{last_modified_field}").extra(size=1).execute()
     )
     if last_modified_response.hits.total.value == 0:
         last_modified = None
     else:
-        last_modified = last_modified_response.hits[0].last_modified
+        last_modified = last_modified_response.hits[0]
+        for part in last_modified_field.split("."):
+            last_modified = getattr(last_modified, part)
+
+    stats = config.es.client.indices.stats(index=index)
+    disk_size = (
+        ByteSize(stats["_all"]["total"]["store"]["size_in_bytes"])
+        if last_modified_field == "last_modified"
+        else None
+    )
 
     statistics = Statistics(
         name=name,
         description=description,
         total=total,
-        disk_size=(
-            _convert_bytes(stats["_all"]["total"]["store"]["size_in_bytes"])
-            if filter_query is None
-            else None
-        ),
+        disk_size=disk_size,
         last_modified=last_modified,
     )
     _statistics_cache[key] = statistics
+    return statistics
+
+
+_warc_cache_statistics_cache: dict[
+    tuple[Path, bool],
+    Statistics,
+] = ExpiringDict(
+    max_len=100,
+    max_age_seconds=_CACHE_SECONDS_STATISTICS,
+)
+
+
+def _get_warc_cache_statistics(
+    name: str,
+    description: str,
+    cache_path: Path,
+    temporary: bool = False,
+) -> Statistics:
+    """Retrieve WARC cache statistics."""
+    key = (cache_path, temporary)
+    if key in _warc_cache_statistics_cache:
+        return _warc_cache_statistics_cache[key]
+    print(f"Get statistics: {name}")
+
+    file_paths: Iterable[Path]
+    if temporary:
+        file_paths = cache_path.glob(".*.warc.gz")
+
+    else:
+        file_paths = cache_path.glob("[!.]*.warc.gz")
+
+    disk_size_bytes: int = 0
+    last_modified: float = 0
+    warc_count: int = 0
+
+    for file_path in tqdm(
+        file_paths, desc="Compute WARC cache statistics", unit="file"
+    ):
+        try:
+            stat = file_path.stat(follow_symlinks=False)
+            disk_size_bytes += stat.st_size
+            last_modified = max(
+                last_modified,
+                stat.st_mtime,
+            )
+            warc_count += 1
+        except FileNotFoundError:
+            # Ignore files that have been deleted while processing.
+            pass
+
+    statistics = Statistics(
+        name=name,
+        description=description,
+        total=warc_count,
+        disk_size=ByteSize(disk_size_bytes),
+        last_modified=datetime.fromtimestamp(last_modified) if last_modified else None,
+    )
+    _warc_cache_statistics_cache[key] = statistics
+    return statistics
+
+
+_warc_s3_statistics_cache: dict[
+    str,
+    Statistics,
+] = ExpiringDict(
+    max_len=100,
+    max_age_seconds=_CACHE_SECONDS_STATISTICS,
+)
+
+
+def _get_warc_s3_statistics(
+    config: Config,
+    name: str,
+    description: str,
+    bucket_name: str,
+) -> Statistics:
+    """Retrieve WARC cache statistics."""
+    key = bucket_name
+    if key in _warc_s3_statistics_cache:
+        return _warc_s3_statistics_cache[key]
+    print(f"Get statistics: {name}")
+
+    client = Session().client(
+        service_name="s3",
+        endpoint_url=config.s3.endpoint_url,
+        aws_access_key_id=config.s3.access_key,
+        aws_secret_access_key=config.s3.secret_key,
+    )
+    pages = client.get_paginator("list_objects_v2").paginate(
+        Bucket=bucket_name,
+    )
+
+    disk_size_bytes: int = 0
+    last_modified: float = 0
+    warc_count: int = 0
+    for page in pages:
+        if "Contents" not in page:
+            continue
+        for obj in page["Contents"]:
+            if "Size" not in obj or "LastModified" not in obj:
+                continue
+            disk_size_bytes += obj["Size"]
+            last_modified = max(last_modified, obj["LastModified"].timestamp())
+            warc_count += 1
+
+    statistics = Statistics(
+        name=name,
+        description=description,
+        total=warc_count,
+        disk_size=ByteSize(disk_size_bytes),
+        last_modified=datetime.fromtimestamp(last_modified) if last_modified else None,
+    )
+    _warc_s3_statistics_cache[key] = statistics
     return statistics
 
 
@@ -135,13 +261,14 @@ def _get_processed_progress(
     key = (document, index, repr(filter_query), status_field)
     if key in _progress_cache:
         return _progress_cache[key]
+    print(f"Get progress: {input_name} → {output_name}")
 
     config.es.client.indices.refresh(index=index)
-    search = document.search(using=config.es.client, index=index)
+    search: Search = document.search(using=config.es.client, index=index)
     if filter_query is not None:
         search = search.filter(filter_query)
     total = search.count()
-    search_processed = search.filter(Term(**{status_field: False}))
+    search_processed: Search = search.filter(Term(**{status_field: False}))
     total_processed = search_processed.count()
     progress = Progress(
         input_name=input_name,
@@ -171,12 +298,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+templates_path = Path(__file__).parent / "templates"
+templates = Jinja2Templates(directory=templates_path)
+
+
+def _load_config() -> Config:
+    if find_dotenv():
+        load_dotenv(override=True)
+    return Config()
+
+
+ConfigDependency: TypeAlias = Annotated[Config, Depends(_load_config)]
+
 
 @app.get("/statistics")
-def get_statistics() -> list[Statistics]:
-    config: Config = Config()
-
-    statistics_list = [
+def get_statistics(config: ConfigDependency) -> list[Statistics]:
+    return [
         _get_statistics(
             config=config,
             name="Archives",
@@ -187,28 +324,31 @@ def get_statistics() -> list[Statistics]:
         _get_statistics(
             config=config,
             name="Providers",
-            description="Search providers, i.e., websites that offer a search functionality.",
+            description="Search providers, i.e., websites that offer "
+            "a search functionality.",
             document=Provider,
             index=config.es.index_providers,
         ),
         _get_statistics(
             config=config,
             name="Sources",
-            description="The cross product of all archives and the provider's domains and URL prefixes.",
+            description="Cross product of archives and "
+            "provider domains and URL prefixes.",
             document=Source,
             index=config.es.index_sources,
         ),
         _get_statistics(
             config=config,
             name="Captures",
-            description="Captures matching from the archives that match domain and URL prefixes.",
+            description="Captures from the archives "
+            "that match domain and URL prefixes.",
             document=Capture,
             index=config.es.index_captures,
         ),
         _get_statistics(
             config=config,
             name="SERPs",
-            description="Search engine result pages that have been identified among the captures.",
+            description="Search engine result pages identified among the captures.",
             document=Serp,
             index=config.es.index_serps,
         ),
@@ -218,7 +358,6 @@ def get_statistics() -> list[Statistics]:
             description="SERPs for which the query has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="url_query"),
         ),
         _get_statistics(
             config=config,
@@ -226,7 +365,9 @@ def get_statistics() -> list[Statistics]:
             description="SERPs for which the page has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="url_page"),
+            filter_field="url_page",
+            status_field="url_page_parser.should_parse",
+            last_modified_field="url_page_parser.last_parsed",
         ),
         _get_statistics(
             config=config,
@@ -234,7 +375,9 @@ def get_statistics() -> list[Statistics]:
             description="SERPs for which the offset has been parsed from the URL.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="url_offset"),
+            filter_field="url_offset",
+            status_field="url_offset_parser.should_parse",
+            last_modified_field="url_offset_parser.last_parsed",
         ),
         _get_statistics(
             config=config,
@@ -242,7 +385,9 @@ def get_statistics() -> list[Statistics]:
             description="SERPs for which the WARC has been downloaded.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="warc_location"),
+            filter_field="warc_location",
+            status_field="warc_downloader.should_download",
+            last_modified_field="warc_downloader.last_downloaded",
         ),
         _get_statistics(
             config=config,
@@ -250,7 +395,9 @@ def get_statistics() -> list[Statistics]:
             description="SERPs for which the query has been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="warc_query"),
+            filter_field="warc_query",
+            status_field="warc_query_parser.should_parse",
+            last_modified_field="warc_query_parser.last_parsed",
         ),
         _get_statistics(
             config=config,
@@ -258,7 +405,9 @@ def get_statistics() -> list[Statistics]:
             description="SERPs for which the web search result blocks have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="warc_web_search_result_blocks_parser.id"),
+            filter_field="warc_web_search_result_blocks.id",
+            status_field="warc_web_search_result_blocks_parser.should_parse",
+            last_modified_field="warc_web_search_result_blocks_parser.last_parsed",
         ),
         _get_statistics(
             config=config,
@@ -266,7 +415,27 @@ def get_statistics() -> list[Statistics]:
             description="SERPs for which the special contents result blocks have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Exists(field="warc_special_contents_result_blocks_parser.id"),
+            filter_field="warc_special_contents_result_blocks.id",
+            status_field="warc_special_contents_result_blocks_parser.should_parse",
+            last_modified_field="warc_special_contents_result_blocks_parser.last_parsed",
+        ),
+        _get_warc_cache_statistics(
+            name="→ WARC cache (in progress)",
+            description="Downloaded SERP WARC files still locked by a downloader.",
+            cache_path=config.warc_cache.path_serps,
+            temporary=True,
+        ),
+        _get_warc_cache_statistics(
+            name="→ WARC cache (ready)",
+            description="Downloaded SERP WARC files ready to be uploaded to S3.",
+            cache_path=config.warc_cache.path_serps,
+            temporary=False,
+        ),
+        _get_warc_s3_statistics(
+            config=config,
+            name="→ WARC S3",
+            description="Downloaded SERP WARC files finalized in S3 block storage.",
+            bucket_name=config.s3.bucket_name,
         ),
         _get_statistics(
             config=config,
@@ -282,16 +451,22 @@ def get_statistics() -> list[Statistics]:
             document=SpecialContentsResultBlock,
             index=config.es.index_special_contents_result_blocks,
         ),
+        _get_statistics(
+            config=config,
+            name="+ WARC",
+            description="Web search result blocks for which the WARC has been downloaded.",
+            document=WebSearchResultBlock,
+            index=config.es.index_web_search_result_blocks,
+            filter_field="warc_location",
+            status_field="warc_downloader.should_download",
+            last_modified_field="warc_downloader.last_downloaded",
+        ),
     ]
-
-    return statistics_list
 
 
 @app.get("/progress")
-def get_progress() -> list[Progress]:
-    config: Config = Config()
-
-    progress_list = [
+def get_progress(config: ConfigDependency) -> list[Progress]:
+    return [
         _get_processed_progress(
             config=config,
             input_name="Archives",
@@ -316,9 +491,14 @@ def get_progress() -> list[Progress]:
             config=config,
             input_name="Sources",
             output_name="Captures",
-            description="Fetch CDX captures for all domains and prefixes in the sources.",
+            description="Fetch CDX captures for all domains and "
+            "prefixes in the sources.",
             document=Source,
             index=config.es.index_sources,
+            filter_query=(
+                # FIXME: The UK Web Archive is facing an outage: https://www.webarchive.org.uk/#en
+                ~Term(archive__id="90be629c-2a95-52da-9ae8-ca58454c9826")
+            ),
             status_field="should_fetch_captures",
         ),
         _get_processed_progress(
@@ -355,7 +535,7 @@ def get_progress() -> list[Progress]:
             description="Download WARCs.",
             document=Serp,
             index=config.es.index_serps,
-            filter_query=Term(capture__status_code=200),
+            filter_query=(Term(capture__status_code=200)),
             status_field="warc_downloader.should_download",
         ),
         _get_processed_progress(
@@ -400,4 +580,29 @@ def get_progress() -> list[Progress]:
         ),
     ]
 
-    return progress_list
+
+@app.get(path="/")
+@app.head(path="/")
+def home(request: Request, config: ConfigDependency) -> HTMLResponse:
+    statistics_list: list[Statistics] = get_statistics(config)
+    progress_list: list[Progress] = get_progress(config)
+    etag = str(
+        hash(
+            (
+                tuple(statistics_list),
+                tuple(progress_list),
+            )
+        )
+    )
+
+    return templates.TemplateResponse(
+        request=request,
+        name="home.html",
+        context={
+            "statistics_list": statistics_list,
+            "progress_list": progress_list,
+            "year": utc_now().year,
+            "naturaltime": naturaltime,
+        },
+        headers={"ETag": etag},
+    )
