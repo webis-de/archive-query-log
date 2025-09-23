@@ -147,3 +147,19 @@ def iter_turtle_triples(serp: SERP) -> Iterator[tuple[str, str, str]]:
 #     yield(entity, "schema:title", result.title)
 #     yield(entity, "schema:isBasedOn", f"https://aql.webis.de/capture/{result.capture.id}")
  
+
+
+## How to use 
+
+# def iter_providers_turtle_triples(providers: list[Provider]) -> Iterator[tuple[str, str, str]]:
+#     for provider in providers:
+#         yield from iter_provider_turtle_triples(provider)
+
+# from pandas import DataFrame
+# def map_provider_batch_to_turtle(batch: DataFrame) -> DataFrame:
+#     providers: list[Provider] = load_providers_from_dataframe(batch)
+#     triples: list[tuple[str, str, str]] = list(iter_providers_turtle_triples(providers))
+#     return DataFrame(triples, columns=["subject", "predicate", "object"])
+
+# In Ray: Read from ES (in parallel, e.g., 100 worker) -> Map batches (Providers to Triples; concurrency 100) -> (Repartition, e.g., max. 1M triple per file) -> Write to Turtle files (creates X files)
+```
