@@ -162,4 +162,3 @@ def iter_turtle_triples(serp: SERP) -> Iterator[tuple[str, str, str]]:
 #     return DataFrame(triples, columns=["subject", "predicate", "object"])
 
 # In Ray: Read from ES (in parallel, e.g., 100 worker) -> Map batches (Providers to Triples; concurrency 100) -> (Repartition, e.g., max. 1M triple per file) -> Write to Turtle files (creates X files)
-```
