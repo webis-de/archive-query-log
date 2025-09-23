@@ -34,7 +34,7 @@ from orm import Provider, Archive, Capture, SERP
 
 
 
-# class WebSearchResultBlock(UuidBaseDocument):
+# class ResultBlock():
 #     last_modified: DefaultDate
 #     archive: InnerArchive
 #     provider: InnerProvider
@@ -43,8 +43,6 @@ from orm import Provider, Archive, Capture, SERP
 #     content: Text
 #     rank: Integer
 #     url: HttpUrl | None = None
-#     title: Text | None = None
-#     text: Text | None = None
 #     parser: InnerParser | None = None
 #     should_fetch_captures: bool = True
 #     last_fetched_captures: Date | None = None
@@ -55,6 +53,10 @@ from orm import Provider, Archive, Capture, SERP
 #     warc_location_after_serp: WarcLocation | None = None
 #     warc_downloader_after_serp: InnerDownloader | None = None
 
+# class WebSearchResultBlock(UuidBaseDocument):
+#     title: Text | None = None
+#     text: Text | None = None
+    
 #     class Index:
 #         settings = {
 #             "number_of_shards": 20,
@@ -62,6 +64,15 @@ from orm import Provider, Archive, Capture, SERP
 #         }
 
 
+
+# class SpecialContentsResultBlock(UuidBaseDocument):
+#     text: Text | None = None
+
+#     class Index:
+#         settings = {
+#             "number_of_shards": 20,
+#             "number_of_replicas": 2,
+#         }
 
 def iter_turtle_triples(provider: Provider) -> Iterator[tuple[str, str, str]]:
     entity = f"https://aql.webis.de/provider/{provider.id}"
@@ -83,6 +94,7 @@ def iter_turtle_triples(archive: Archive) -> Iterator[tuple[str, str, str]]:
     yield(entity, "schema:name", archive.name)
     yield(entity, "aql:mementoAPIBaseURL", archive.memento_api_url)
     yield(entity, "aql:cdxAPIBaseURL", archive.cdx_api_url)
+    # priority not modeled since grayed out
     #Missing aqlWikidataUrl -> to be exported with another method
     
 def iter_turtle_triples(capture: Capture) -> Iterator[tuple[str, str, str]]:
@@ -114,7 +126,24 @@ def iter_turtle_triples(serp: SERP) -> Iterator[tuple[str, str, str]]:
         
     for specialcontentsresultblock in serp.warc_special_contents_result_blocks:
         yield(entity, "schema:hasPart", f"https://aql.webis.de/specialcontentsresultblock/{specialcontentsresultblock.id}") # iterate over all specialcontentsresultblocks of a serp
-        
+    # TODO werden hier direkt resultblocks connected oder die Kindklasse websearchresultblock/specialcontentsresultblock?    
+    
+    
     #TODO how to model superclass of resultblock? we dont have a python class for it
         
         # Model result block as superclass in python first, then in knowledgegraph
+        # Update this once heinrich has pushed his code
+        
+
+#TODO model WebSearchResultBlock and SpecialContentsResultBlock, as well as resultblock, as soon as heinrich has pushed his code
+        
+        
+        
+# def iter_turtle_triples(result: Result) -> Iterator[tuple[str, str, str]]: # TODO result doesnt exist in python classes, since results not yet downloaded
+#     entity = f"https://aql.webis.de/result/{result.id}"
+    
+#     yield(entity, "schema:identifier", result.id)# TODO all identifiers have been modeled, even though we didnt model grayed out values, some are grayed out why
+#     yield(entity, "schema:url", result.url)
+#     yield(entity, "schema:title", result.title)
+#     yield(entity, "schema:isBasedOn", f"https://aql.webis.de/capture/{result.capture.id}")
+ 
