@@ -20,7 +20,7 @@ def iter_test_serps(path: Path) -> Iterator[Serp]:
 
 
 @dataclass(frozen=True)
-class TestWarcStore(WarcStore):
+class MockWarcStore(WarcStore):
     serps_path: Path
 
     @cached_property
