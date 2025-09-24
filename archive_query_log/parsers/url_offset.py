@@ -96,7 +96,7 @@ class PathSegmentUrlOffsetParser(UrlOffsetParser):
         )
 
 
-def _parse_serp_url_offset_action(serp: Serp) -> Iterator[dict]:
+def parse_serp_url_offset_action(serp: Serp) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (
         serp.url_offset_parser is not None
@@ -156,7 +156,7 @@ def parse_serps_url_offset(
             unit="SERP",
         )
         actions = chain.from_iterable(
-            _parse_serp_url_offset_action(serp) for serp in changed_serps
+            parse_serp_url_offset_action(serp) for serp in changed_serps
         )
         config.es.bulk(
             actions=actions,

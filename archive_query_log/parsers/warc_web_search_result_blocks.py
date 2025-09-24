@@ -147,9 +147,10 @@ class XpathWarcWebSearchResultBlocksParser(WarcWebSearchResultBlocksParser):
         return web_search_result_blocks
 
 
-def _parse_serp_warc_web_search_result_blocks_action(
-    config: Config,
+def parse_serp_warc_web_search_result_blocks_action(
     serp: Serp,
+    warc_store: WarcS3Store,
+    index_web_search_result_blocks: str,
 ) -> Iterator[dict]:
     # Re-check if it can be parsed.
     if (
@@ -171,7 +172,7 @@ def _parse_serp_warc_web_search_result_blocks_action(
     for parser in WARC_WEB_SEARCH_RESULT_BLOCKS_PARSERS:
         if not parser.is_applicable(serp):
             continue
-        warc_web_search_result_blocks = parser.parse(serp, config.s3.warc_store)
+        warc_web_search_result_blocks = parser.parse(serp, warc_store)
         if warc_web_search_result_blocks is None:
             # Parsing was not successful.
             continue
@@ -196,9 +197,7 @@ def _parse_serp_warc_web_search_result_blocks_action(
                     last_parsed=utc_now(),
                 ),
             )
-            web_search_result_block.meta.index = (
-                config.es.index_web_search_result_blocks
-            )
+            web_search_result_block.meta.index = index_web_search_result_blocks
             yield web_search_result_block.create_action()
         yield serp.update_action(
             warc_web_search_result_blocks=[
@@ -253,7 +252,11 @@ def parse_serps_warc_web_search_result_blocks(
             unit="SERP",
         )
         actions = chain.from_iterable(
-            _parse_serp_warc_web_search_result_blocks_action(config, serp)
+            parse_serp_warc_web_search_result_blocks_action(
+                serp,
+                config.s3.warc_store,
+                config.es.index_web_search_result_blocks,
+            )
             for serp in changed_serps
         )
         config.es.bulk(

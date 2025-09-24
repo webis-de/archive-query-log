@@ -96,7 +96,7 @@ class PathSegmentUrlPageParser(UrlPageParser):
         )
 
 
-def _parse_serp_url_page_action(serp: Serp) -> Iterator[dict]:
+def parse_serp_url_page_action(serp: Serp) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (
         serp.url_page_parser is not None
@@ -153,7 +153,7 @@ def parse_serps_url_page(
             changed_serps, total=num_changed_serps, desc="Parsing URL page", unit="SERP"
         )
         actions = chain.from_iterable(
-            _parse_serp_url_page_action(serp) for serp in changed_serps
+            parse_serp_url_page_action(serp) for serp in changed_serps
         )
         config.es.bulk(
             actions=actions,

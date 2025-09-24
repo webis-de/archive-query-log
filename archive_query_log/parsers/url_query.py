@@ -104,9 +104,9 @@ class PathSegmentUrlQueryParser(UrlQueryParser):
         )
 
 
-def _parse_serp_url_query_action(
-    config: Config,
+def parse_serp_url_query_action(
     capture: Capture,
+    index_serps: str,
 ) -> Iterator[dict]:
     # Re-check if parsing is necessary.
     if (
@@ -124,7 +124,7 @@ def _parse_serp_url_query_action(
             # Parsing was not successful.
             continue
         serp = Serp(
-            index=config.es.index_serps,
+            index=index_serps,
             id=capture.id,
             last_modified=utc_now(),
             archive=capture.archive,
@@ -202,7 +202,7 @@ def parse_serps_url_query(
             unit="capture",
         )
         actions = chain.from_iterable(
-            _parse_serp_url_query_action(config, capture)
+            parse_serp_url_query_action(capture, config.es.index_serps)
             for capture in changed_captures
         )
         config.es.bulk(
