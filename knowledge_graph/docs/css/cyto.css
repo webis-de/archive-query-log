@@ -1,0 +1,2 @@
+.toolbar { display:flex; gap:.5rem; align-items:center; margin-bottom:.5rem; }
+#cy { height: 72vh; border: 1px solid var(--md-default-fg-color--lighter); border-radius: 8px; }
