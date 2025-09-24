@@ -34,13 +34,8 @@ DefaultDate: TypeAlias = Annotated[
     Date,
     Field(default_factory=lambda: datetime.now(UTC)),
 ]
-FloatRankFeature: TypeAlias = Annotated[
+RankFeature: TypeAlias = Annotated[
     float,
-    Ge(0),
-    _RankFeature(positive_score_impact=True),
-]
-IntRankFeature: TypeAlias = Annotated[
-    int,
     Ge(0),
     _RankFeature(positive_score_impact=True),
 ]
@@ -60,7 +55,7 @@ class Archive(UuidBaseDocument):
     description: Text | None = None
     cdx_api_url: HttpUrl
     memento_api_url: HttpUrl
-    priority: FloatRankFeature | None = None
+    priority: RankFeature | None = None
     should_build_sources: bool = True
     last_built_sources: Date | None = None
 
@@ -79,7 +74,7 @@ class Provider(UuidBaseDocument):
     notes: Text | None = None
     domains: Sequence[Keyword]
     url_path_prefixes: Sequence[Keyword]
-    priority: FloatRankFeature | None = None
+    priority: RankFeature | None = None
     should_build_sources: bool = True
     last_built_sources: Date | None = None
 
@@ -94,14 +89,14 @@ class InnerArchive(BaseInnerDocument):
     id: UUID
     cdx_api_url: HttpUrl
     memento_api_url: HttpUrl
-    priority: IntRankFeature | None = None
+    priority: RankFeature | None = None
 
 
 class InnerProvider(BaseInnerDocument):
     id: UUID
     domain: Keyword
     url_path_prefix: Keyword
-    priority: IntRankFeature | None = None
+    priority: RankFeature | None = None
 
 
 class Source(UuidBaseDocument):
