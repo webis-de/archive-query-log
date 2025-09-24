@@ -1,0 +1,191 @@
+@prefix aql:   <https://aql.webis.de/> .
+@prefix schema:<http://schema.org/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix http:  <https://www.w3.org/2011/http#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+
+#################################################################
+# Classes (unchanged)
+#################################################################
+
+aql:SERP a rdfs:Class ;
+  rdfs:subClassOf dct:Collection ;
+  rdfs:label "SERP" .
+
+aql:ResultBlock a rdfs:Class ;
+  rdfs:subClassOf schema:CreativeWork , schema:ListItem ;
+  rdfs:label "Result Block" ;
+  rdfs:comment "Organic or special/featured block shown on a SERP." .
+
+aql:WebSearchResultBlock a rdfs:Class ;
+  rdfs:subClassOf aql:ResultBlock ;
+  rdfs:label "Web Search Result Block" ;
+  rdfs:comment "Organic web result block on a SERP." .
+
+aql:SpecialContentResultBlock a rdfs:Class ;
+  rdfs:subClassOf aql:ResultBlock ;
+  rdfs:label "Special Content Result Block" ;
+  rdfs:comment "Direct answer / featured result (e.g., AI overview, knowledge/Info panel, map/image/video packs)." .
+
+aql:Result a rdfs:Class ;
+  rdfs:subClassOf schema:WebPage ;
+  rdfs:label "Result" ;
+  rdfs:comment "Landing page behind a result block." .
+
+aql:Capture a rdfs:Class ;
+  rdfs:subClassOf schema:WebPage ;
+  rdfs:label "Capture" .
+
+aql:Provider a rdfs:Class ;
+  rdfs:subClassOf schema:Service ;
+  rdfs:label "Provider" .
+
+aql:Archive a rdfs:Class ;
+  rdfs:subClassOf schema:ArchiveOrganization ;
+  rdfs:label "Archive" .
+
+#################################################################
+# External Property Mappings
+#################################################################
+
+schema:identifier a rdf:Property ;
+  rdfs:range xsd:string ;
+  owl:equivalentProperty dct:identifier ;
+  rdfs:comment "A unique identifier, aligns with dct:identifier." .
+
+schema:name a rdf:Property ;
+  rdfs:range xsd:string ;
+  owl:equivalentProperty skos:prefLabel ;
+  rdfs:comment "The name of the resource." .
+
+schema:title a rdf:Property ;
+  rdfs:range xsd:string ;
+  owl:equivalentProperty dct:title ;
+  rdfs:comment "Title of a resource, same as dct:title." .
+
+schema:abstract a rdf:Property ;
+  rdfs:range xsd:string ;
+  owl:equivalentProperty dct:abstract ;
+  rdfs:comment "Text summary, aligns with dct:abstract." .
+
+schema:dateCreated a rdf:Property ;
+  rdfs:range xsd:dateTime ;
+  owl:equivalentProperty dct:created ;
+  rdfs:comment "Creation date of a resource." .
+
+schema:url a rdf:Property ;
+  rdfs:range xsd:anyURI ;
+  owl:equivalentProperty http:absoluteURI ;
+  rdfs:comment "URL to the resource." .
+
+http:statusCodeNumber a rdf:Property ;
+  rdfs:range xsd:integer ;
+  owl:equivalentProperty aql:httpStatusCode ;
+  rdfs:label "HTTP Status Code" ;
+  rdfs:comment "HTTP status code of the capture." .
+
+schema:encodingFormat a rdf:Property ;
+  rdfs:range xsd:string ;
+  rdfs:comment "MIME type of the resource, e.g., text/html." .
+
+schema:provider a rdf:Property ;
+  rdfs:range aql:Provider ;
+  owl:equivalentProperty dct:publisher ;
+  rdfs:comment "The search provider of the SERP." .
+
+schema:archivedAt a rdf:Property ;
+  rdfs:range aql:Archive ;
+  owl:equivalentProperty dct:source ;
+  rdfs:comment "The archive where the SERP is stored." .
+
+#################################################################
+# SHACL Shapes: Class–Property Relationships
+#################################################################
+
+# SERP aggregates blocks; optional capture, provider, archive links; keep TREC URL
+aql:SERPShape a sh:NodeShape ;
+  sh:targetClass aql:SERP ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ; sh:minCount 1 ] ;
+  sh:property [ sh:path aql:trecTaskURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:hasPart ; sh:class aql:ResultBlock ; sh:nodeKind sh:IRI ; sh:minCount 1 ] ;
+  sh:property [ sh:path schema:isBasedOn ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:provider ; sh:class aql:Provider ; sh:nodeKind sh:IRI ; sh:minCount 1 ] ;
+  sh:property [ sh:path schema:archivedAt ; sh:class aql:Archive ; sh:nodeKind sh:IRI ] .
+
+# Base ResultBlock constraints (applies to both organic and special content)
+aql:ResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:ResultBlock ;
+  sh:property [ sh:path schema:isPartOf ; sh:class aql:SERP ; sh:nodeKind sh:IRI ; sh:minCount 1 ] ;
+  # Optional block title (diagram marks it optional)
+  sh:property [ sh:path schema:title ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:rank ; sh:datatype xsd:integer ] ;
+  # Entire block XPath (diagram: "of the entire result block")
+  sh:property [ sh:path aql:xPath ; sh:datatype xsd:string ] ;
+  # Raw serialized contents of the whole block (HTML/XML)
+  sh:property [ sh:path aql:rawContent ; sh:datatype xsd:string ] ;
+  sh:property [
+    sh:path aql:resultBlockType ; sh:datatype xsd:string ;
+    # Possible to add a controlled block type list from the PDF
+    # sh:in ( "web_result" "direct_answer" "ai_overview" "knowledge_panel"
+    #         "local_pack" "image_pack" "video_pack" "top_stories"
+    #         "shopping" "people_also_ask" "jobs" "events" )
+  ] .
+
+# Organic result block = no extra requirements beyond the base shape (can be extended later)
+aql:WebSearchResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:WebSearchResultBlock ;
+  sh:node aql:ResultBlockShape;
+  sh:property [ sh:path schema:abstract ; sh:datatype xsd:string ] .
+
+# Special content (direct answers/featured etc.) also reuse the base block constraints
+aql:SpecialContentResultBlockShape a sh:NodeShape ;
+  sh:targetClass aql:SpecialContentResultBlock ;
+  sh:node aql:ResultBlockShape .
+
+# Landing page behind a block
+aql:ResultShape a sh:NodeShape ;
+  sh:targetClass aql:Result ;
+  sh:property [ sh:path schema:isBasedOn ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:title ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path schema:url ; sh:datatype xsd:anyURI ] .
+
+# Capture + HTTP/MIME + memento links (+ mainEntity back to Result)
+aql:CaptureShape a sh:NodeShape ;
+  sh:targetClass aql:Capture ;
+  sh:property [ sh:path aql:digest ; sh:datatype xsd:string ] ;
+  # Diagram shows both viewer and raw Memento endpoints explicitly
+  sh:property [ sh:path aql:mementoAPIViewerURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:mementoAPIRawURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path schema:dateCreated ; sh:datatype xsd:dateTime ] ;
+  sh:property [ sh:path schema:url ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path http:statusCodeNumber ; sh:datatype xsd:integer ] ;
+  sh:property [ sh:path schema:encodingFormat ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dct:isPartOf ; sh:class aql:SERP ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:isBasedOn ; sh:class aql:Archive ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:source ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dct:relation ; sh:class aql:Capture ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path schema:mainEntity ; sh:class aql:Result ; sh:nodeKind sh:IRI ] .
+
+# Provider with multiple domain/path variants as per diagram (all optional/multi)
+aql:ProviderShape a sh:NodeShape ;
+  sh:targetClass aql:Provider ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ; sh:minCount 1 ] ;
+  sh:property [ sh:path schema:name ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:domain ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:urlPathPrefix ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:wikiDataURL ; sh:datatype xsd:anyURI ] .
+
+# Archive with CDX/Memento base URLs and optional Wikidata link
+aql:ArchiveShape a sh:NodeShape ;
+  sh:targetClass aql:Archive ;
+  sh:property [ sh:path schema:identifier ; sh:datatype xsd:string ; sh:minCount 1 ] ;
+  sh:property [ sh:path schema:name ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path aql:mementoAPIBaseURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:cdxAPIBaseURL ; sh:datatype xsd:anyURI ] ;
+  sh:property [ sh:path aql:wikiDataURL ; sh:datatype xsd:anyURI ] .
