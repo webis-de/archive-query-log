@@ -16,6 +16,7 @@ from warc_cache import WarcCacheStore
 from warc_s3 import WarcS3Store
 
 from archive_query_log import __version__ as version
+from archive_query_log.utils.warc import WarcStore, WarcS3StoreWrapper
 
 
 @Parameter(
@@ -171,7 +172,7 @@ class S3Config(BaseModel):
     ]
 
     @cached_property
-    def warc_store(self) -> WarcS3Store:
+    def warc_s3_store(self) -> WarcS3Store:
         return WarcS3Store(
             endpoint_url=self.endpoint_url,
             access_key=self.access_key,
@@ -180,6 +181,10 @@ class S3Config(BaseModel):
             max_file_size=1_000_000_000,
             quiet=False,
         )
+
+    @cached_property
+    def warc_store(self) -> WarcStore:
+        return WarcS3StoreWrapper(self.warc_s3_store)
 
 
 @Parameter(

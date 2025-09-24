@@ -12,7 +12,6 @@ from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 from lxml.etree import _Element, tostring  # nosec: B410
 from pydantic import HttpUrl, BaseModel
 from tqdm.auto import tqdm
-from warc_s3 import WarcS3Store
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import (
@@ -26,9 +25,9 @@ from archive_query_log.orm import (
     InnerSerp,
     WebSearchResultBlockId,
 )
-from archive_query_log.parsers.utils.warc import open_warc
 from archive_query_log.parsers.utils.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
+from archive_query_log.utils.warc import WarcStore
 
 
 class WebSearchResultBlockData(BaseModel):
@@ -72,7 +71,7 @@ class WarcWebSearchResultBlocksParser(BaseModel, ABC):
 
     @abstractmethod
     def parse(
-        self, serp: Serp, warc_store: WarcS3Store
+        self, serp: Serp, warc_store: WarcStore
     ) -> list[WebSearchResultBlockData] | None: ...
 
 
@@ -83,12 +82,12 @@ class XpathWarcWebSearchResultBlocksParser(WarcWebSearchResultBlocksParser):
     text_xpath: str | None = None
 
     def parse(
-        self, serp: Serp, warc_store: WarcS3Store
+        self, serp: Serp, warc_store: WarcStore
     ) -> list[WebSearchResultBlockData] | None:
         if serp.warc_location is None:
             return None
 
-        with open_warc(warc_store, serp.warc_location) as record:
+        with warc_store.read(serp.warc_location) as record:
             tree = parse_xml_tree(record)
         if tree is None:
             return None
@@ -149,7 +148,7 @@ class XpathWarcWebSearchResultBlocksParser(WarcWebSearchResultBlocksParser):
 
 def parse_serp_warc_web_search_result_blocks_action(
     serp: Serp,
-    warc_store: WarcS3Store,
+    warc_store: WarcStore,
     index_web_search_result_blocks: str,
 ) -> Iterator[dict]:
     # Re-check if it can be parsed.

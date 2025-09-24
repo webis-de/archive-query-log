@@ -10,7 +10,6 @@ from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 from pydantic import BaseModel
 from tqdm.auto import tqdm
-from warc_s3 import WarcS3Store
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_QUERY_PARSER
@@ -19,9 +18,9 @@ from archive_query_log.orm import (
     InnerParser,
 )
 from archive_query_log.parsers.utils import clean_text
-from archive_query_log.parsers.utils.warc import open_warc
 from archive_query_log.parsers.utils.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
+from archive_query_log.utils.warc import WarcStore
 
 
 class WarcQueryParser(BaseModel, ABC):
@@ -55,17 +54,17 @@ class WarcQueryParser(BaseModel, ABC):
         )
 
     @abstractmethod
-    def parse(self, serp: Serp, warc_store: WarcS3Store) -> str | None: ...
+    def parse(self, serp: Serp, warc_store: WarcStore) -> str | None: ...
 
 
 class XpathWarcQueryParser(WarcQueryParser):
     xpath: str
 
-    def parse(self, serp: Serp, warc_store: WarcS3Store) -> str | None:
+    def parse(self, serp: Serp, warc_store: WarcStore) -> str | None:
         if serp.warc_location is None:
             return None
 
-        with open_warc(warc_store, serp.warc_location) as record:
+        with warc_store.read(serp.warc_location) as record:
             tree = parse_xml_tree(record)
         if tree is None:
             return None
@@ -84,7 +83,7 @@ class XpathWarcQueryParser(WarcQueryParser):
 
 def parse_serp_warc_query_action(
     serp: Serp,
-    warc_store: WarcS3Store,
+    warc_store: WarcStore,
 ) -> Iterator[dict]:
     # Re-check if it can be parsed.
     if (

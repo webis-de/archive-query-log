@@ -310,7 +310,7 @@ def upload_serps_warc(config: Config) -> None:
     # Write to S3.
     stored_serps = _iter_s3_stored_records(
         records=annotated_records,
-        warc_store=config.s3.warc_store,
+        warc_store=config.s3.warc_s3_store,
         document_type=UuidBaseDocument,
     )
 
@@ -509,7 +509,7 @@ def download_web_search_result_block_warc_before_serp(
     )
 
     # Write to S3.
-    stored_records: Iterator[WarcS3Record] = config.s3.warc_store.write(
+    stored_records: Iterator[WarcS3Record] = config.s3.warc_s3_store.write(
         downloaded_records
     )
     stored_result_blocks = _unwrap_records(stored_records, WebSearchResultBlock)
@@ -582,7 +582,7 @@ def download_web_search_result_block_warc_after_serp(
     )
 
     # Write to S3.
-    stored_records: Iterator[WarcS3Record] = config.s3.warc_store.write(
+    stored_records: Iterator[WarcS3Record] = config.s3.warc_s3_store.write(
         downloaded_records
     )
     stored_result_blocks = _unwrap_records(stored_records, WebSearchResultBlock)
