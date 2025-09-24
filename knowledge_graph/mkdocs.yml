@@ -20,6 +20,9 @@ markdown_extensions:
   - pymdownx.details
 
 nav:
+nav:
   - Home: index.md
   - Knowledge Graph:
       - Overview: kg/overview.md
+      - Schema (Mermaid): kg/schema.md
+      - SHACL Shapes: kg/shapes.md
