@@ -1,0 +1,25 @@
+site_name: Knowledge Graph Docs
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.copy
+plugins:
+  - search
+  - include-markdown
+  - mermaid2
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Knowledge Graph:
+      - Overview: kg/overview.md
