@@ -9,7 +9,7 @@ from uuid import uuid5, UUID
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
-from lxml.etree import _Element, tostring  # nosec: B410
+from lxml.etree import _Element, tostring, XPath
 from pydantic import HttpUrl, BaseModel
 from tqdm.auto import tqdm
 
@@ -81,6 +81,40 @@ class XpathWarcWebSearchResultBlocksParser(WarcWebSearchResultBlocksParser):
     title_xpath: str | None = None
     text_xpath: str | None = None
 
+    @cached_property
+    def _xpath(self) -> XPath:
+        return XPath(
+            path=self.xpath,
+            smart_strings=False,
+        )
+
+    @cached_property
+    def _url_xpath(self) -> XPath | None:
+        if self.url_xpath is None:
+            return None
+        return XPath(
+            path=self.url_xpath,
+            smart_strings=False,
+        )
+
+    @cached_property
+    def _title_xpath(self) -> XPath | None:
+        if self.title_xpath is None:
+            return None
+        return XPath(
+            path=self.title_xpath,
+            smart_strings=False,
+        )
+
+    @cached_property
+    def _text_xpath(self) -> XPath | None:
+        if self.text_xpath is None:
+            return None
+        return XPath(
+            path=self.text_xpath,
+            smart_strings=False,
+        )
+
     def parse(
         self, serp: Serp, warc_store: WarcStore
     ) -> list[WebSearchResultBlockData] | None:
@@ -92,7 +126,7 @@ class XpathWarcWebSearchResultBlocksParser(WarcWebSearchResultBlocksParser):
         if tree is None:
             return None
 
-        elements = safe_xpath(tree, self.xpath, _Element)
+        elements = safe_xpath(tree, self._xpath, _Element)
         if len(elements) == 0:
             return None
 
@@ -100,19 +134,19 @@ class XpathWarcWebSearchResultBlocksParser(WarcWebSearchResultBlocksParser):
         element: _Element
         for i, element in enumerate(elements):
             url: str | None = None
-            if self.url_xpath is not None:
-                urls = safe_xpath(element, self.url_xpath, str)
+            if self._url_xpath is not None:
+                urls = safe_xpath(element, self._url_xpath, str)
                 if len(urls) > 0:
                     url = urls[0].strip()
                     url = urljoin(serp.capture.url.encoded_string(), url)
             title: str | None = None
-            if self.title_xpath is not None:
-                titles = safe_xpath(element, self.title_xpath, str)
+            if self._title_xpath is not None:
+                titles = safe_xpath(element, self._title_xpath, str)
                 if len(titles) > 0:
                     title = titles[0].strip()
             text: str | None = None
-            if self.text_xpath is not None:
-                texts = safe_xpath(element, self.text_xpath, str)
+            if self._text_xpath is not None:
+                texts = safe_xpath(element, self._text_xpath, str)
                 if len(texts) > 0:
                     text = texts[0].strip()
 

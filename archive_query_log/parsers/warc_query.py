@@ -8,6 +8,7 @@ from uuid import uuid5, UUID
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
+from lxml.etree import XPath, _ElementUnicodeResult
 from pydantic import BaseModel
 from tqdm.auto import tqdm
 
@@ -60,6 +61,13 @@ class WarcQueryParser(BaseModel, ABC):
 class XpathWarcQueryParser(WarcQueryParser):
     xpath: str
 
+    @cached_property
+    def _xpath(self) -> XPath:
+        return XPath(
+            path=self.xpath,
+            # smart_strings=False,
+        )
+
     def parse(self, serp: Serp, warc_store: WarcStore) -> str | None:
         if serp.warc_location is None:
             return None
@@ -69,7 +77,7 @@ class XpathWarcQueryParser(WarcQueryParser):
         if tree is None:
             return None
 
-        queries = safe_xpath(tree, self.xpath, str)
+        queries = safe_xpath(tree, self._xpath, _ElementUnicodeResult)
         for query in queries:
             query_cleaned = clean_text(
                 text=query,

@@ -134,10 +134,10 @@ _T = TypeVar("_T")
 
 def safe_xpath(
     tree: _ElementTree | _Element,
-    xpath: str,
+    xpath: XPath,
     item_type: Type[_T],
 ) -> list[_T]:
-    results = tree.xpath(xpath, smart_strings=False)
+    results = xpath(tree)
     if not isinstance(results, list):
         results = [results]
     if not all(isinstance(result, item_type) for result in results):
