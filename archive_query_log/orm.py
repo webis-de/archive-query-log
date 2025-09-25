@@ -140,6 +140,14 @@ class Capture(UuidBaseDocument):
     source_collection: Keyword | None = None
     url_query_parser: InnerParser | None = None
 
+    @property
+    def memento_url(self) -> HttpUrl:
+        return HttpUrl(
+            f"{self.archive.memento_api_url}/"
+            f"{self.timestamp.astimezone(UTC).strftime('%Y%m%d%H%M%S')}/"
+            f"{self.url}"
+        )
+
     class Index:
         settings = {
             "number_of_shards": 40,
@@ -201,6 +209,14 @@ class Serp(UuidBaseDocument):
         Sequence[SpecialContentsResultBlockId] | None
     ) = None
     warc_special_contents_result_blocks_parser: InnerParser | None = None
+
+    @property
+    def memento_url(self) -> HttpUrl:
+        return HttpUrl(
+            f"{self.archive.memento_api_url}/"
+            f"{self.capture.timestamp.astimezone(UTC).strftime('%Y%m%d%H%M%S')}/"
+            f"{self.capture.url}"
+        )
 
     class Index:
         settings = {
