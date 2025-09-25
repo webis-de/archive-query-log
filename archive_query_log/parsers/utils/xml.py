@@ -1,13 +1,19 @@
 from io import TextIOWrapper
 from shutil import copyfileobj
 from tempfile import TemporaryFile
-from typing import Literal, Type, TypeVar, Iterable
+from typing import Literal, Type, TypeVar, Iterable, Sequence
 from warnings import warn
 
 from cssselect import GenericTranslator
 from cssselect.parser import parse as cssselect_parse
-from lxml.etree import parse as etree_parse, XMLParser, HTMLParser  # nosec: B410
-from lxml.etree import _ElementTree, _Element  # nosec: B410
+from lxml.etree import (
+    parse as etree_parse,
+    XMLParser,
+    HTMLParser,
+    _ElementTree,
+    _Element,
+    XPath,
+)
 from resiliparse.parse import detect_encoding
 from warcio.recordloader import ArcWarcRecord
 
@@ -24,15 +30,6 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
         return None
     mime_type = mime_type.split(";", maxsplit=1)[0]
 
-    parser: XMLParser | HTMLParser
-    if mime_type == "text/xml":
-        parser = XMLParser()
-    elif mime_type == "text/html":
-        parser = HTMLParser()
-    else:
-        warn(f"Cannot find XML parser for MIME type: {mime_type}", UserWarning)
-        return None
-
     wayback_url = record.rec_headers.get_header("WARC-Target-URI")
 
     with TemporaryFile() as tmp_file:
@@ -48,29 +45,33 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
 
         # Detect encoding using Resiliparse, based on the first 10KB bytes .
         encoding_guess_bytes = tmp_file.read(1024 * 10)
-        encodings: list[str] = list({
+        encodings: Sequence[str] = [
             detect_encoding(encoding_guess_bytes, from_html_meta=False),
             detect_encoding(encoding_guess_bytes, from_html_meta=True),
-        })
+        ]
 
         # Get the encoding from the Content-Type header.
         html_content_type: str = record.http_headers.get_header("Content-Type")
-        if html_content_type is not None and ";" in html_content_type and "charset=" in html_content_type:
+        if (
+            html_content_type is not None
+            and ";" in html_content_type
+            and "charset=" in html_content_type
+        ):
             # Extract the charset from the Content-Type header.
-            encodings.extend({
+            encodings = [
                 part.strip().removeprefix("charset=").lower()
                 for part in html_content_type.split(";")
                 if part.strip().startswith("charset=")
-            }.difference(encodings))
+            ] + encodings
 
         # Add fall-back encodings.
         if "utf-8" in encodings and "utf-8-sig" not in encodings:
             encodings.append("utf-8-sig")
 
         # Check if any of the candidate encodings is valid.
-        text_file: TextIOWrapper | None = None
+        encoding: str | None = None
         for encoding in encodings:
-            # Build mapping for python equivalent of windows-874.
+            # Build mapping for Python equivalent of windows-874.
             if encoding == "windows-874":
                 encoding = "cp874"
             text_file = TextIOWrapper(tmp_file, encoding=encoding)
@@ -78,32 +79,54 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
                 for _ in text_file:
                     pass
             except (UnicodeDecodeError, UnicodeError):
-                tmp_file = text_file.detach()
-                text_file = None
+                encoding = None
                 tmp_file.seek(0)
                 continue
+            finally:
+                # Detach the TextIOWrapper to avoid closing the underlying file.
+                text_file.detach()
             # If the encoding is valid, break the loop.
             break
-        if text_file is None:
-            warn(f"Could not find valid encoding among {', '.join(encodings)}: {wayback_url}", UserWarning)
+        if encoding is None:
+            warn(
+                f"Could not find valid encoding among {', '.join(encodings)}: {wayback_url}",
+                UserWarning,
+            )
             return None
 
-        # Decode the first 100 characters to check for XML/HTML content.
-        head = text_file.read(100)
-        text_file.seek(0)
+        # Rewind the temporary file to the beginning.
+        tmp_file.seek(0)
 
+        # Decode the first 100 characters to check for XML/HTML content.
+        text_file = TextIOWrapper(tmp_file, encoding=encoding)
+        try:
+            head = text_file.read(100)
+        finally:
+            # Detach the TextIOWrapper to avoid closing the underlying file.
+            text_file.detach()
         if "<" not in head:
             # warn(f"Skipping non-XML document: {wayback_url}", UserWarning)
             return None
-
         if head[0] in ["{", "[", '"']:
             warn(f"Skipping JSON-like document: {wayback_url}", UserWarning)
             return None
 
-        return etree_parse(  # noqa: S320
-            source=text_file,
+        parser: XMLParser | HTMLParser
+        if mime_type == "text/xml":
+            parser = XMLParser(encoding=encoding)
+        elif mime_type == "text/html":
+            parser = HTMLParser(encoding=encoding)
+        else:
+            warn(f"Cannot find XML parser for MIME type: {mime_type}", UserWarning)
+            return None
+
+        tmp_file.seek(0)
+        tree = etree_parse(  # noqa: S320
+            source=tmp_file,
             parser=parser,
+            base_url=wayback_url,
         )
+        return tree
 
 
 _T = TypeVar("_T")
