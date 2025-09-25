@@ -8,9 +8,9 @@ plugins:
   - search
   - include-markdown
   - mermaid2
-  - search
 markdown_extensions:
   - admonition
+  - mkdocs_graphviz
   - toc:
       permalink: true
   - pymdownx.superfences:
@@ -18,6 +18,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_div_format
+
+
   - pymdownx.details
 
 extra_javascript:
@@ -31,6 +33,7 @@ nav:
   - Home: index.md
   - Knowledge Graph:
       - Overview: kg/overview.md
-      - Schema (Mermaid): kg/schema.md
+      - Static Mermaid: kg/mermaid.md
+      - Static Graphviz: kg/graphviz.md
       - SHACL Shapes: kg/shapes.md
-      - Interactive: kg/interactive.md
+      - Cytoscape Interactive: kg/cytoscape.md
