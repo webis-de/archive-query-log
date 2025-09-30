@@ -37,7 +37,7 @@ def main():
                 lines.append(line)
 
     random = Random(0)  # nosec: B311
-    lines = random.sample(lines, REVIEW_SAMPLE_SIZE)
+    lines = random.sample(lines, REVIEW_SAMPLE_SIZE)  # nosec: B311
 
     with REVIEW_SAMPLE_QUERIES_PATH.open("wt") as o:
         for line in lines:
