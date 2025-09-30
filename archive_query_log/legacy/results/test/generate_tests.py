@@ -67,7 +67,7 @@ def main():
     print(f"Found {sum(len(urls) for urls in query_urls.values())} SERPs.")
     random = Random(0)  # nosec: B311
     query_urls = {
-        service_name: random.sample(
+        service_name: random.sample(  # nosec: B311
             query_urls[service_name], min(
                 NUM_QUERIES_PER_SERVICE,
                 len(query_urls[service_name]),
