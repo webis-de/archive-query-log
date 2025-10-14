@@ -3240,7 +3240,7 @@ URL_QUERY_PARSERS: Sequence[UrlQueryParser] = (
         url_pattern=re_compile(r"^https?://[^/]+/news/search(-xzg-)?kw-[^-]-\.html"),
         segment=2,
         remove_pattern=re_compile(
-            "^search(-xzg-)?kw-|(-fields-[0-9])?(-page-[0-9])?-?\.html$"
+            r"^search(-xzg-)?kw-|(-fields-[0-9])?(-page-[0-9])?-?\.html$"
         ),
     ),
     # Provider: The Gospel Coalition (thegospelcoalition.org)
