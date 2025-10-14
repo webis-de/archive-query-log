@@ -103,15 +103,36 @@ def export(
     config: Config,
 ) -> None:
     """
-    Export a sample of web archives.
+    Export a sample of web search result blocks locally.
     """
     from archive_query_log.export import export_local
 
     export_local(
         document_type=WebSearchResultBlock,
         index=config.es.index_web_search_result_blocks,
-        format="jsonl",
+        format=format,
         sample_size=sample_size,
+        output_path=output_path,
+        config=config,
+    )
+
+
+@web_search_result_blocks.command
+def export_all(
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export all web search result blocks via Ray.
+    """
+    from archive_query_log.export import export_ray
+
+    export_ray(
+        document_type=WebSearchResultBlock,
+        index=config.es.index_web_search_result_blocks,
+        format=format,
         output_path=output_path,
         config=config,
     )

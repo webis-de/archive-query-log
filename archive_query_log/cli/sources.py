@@ -44,15 +44,36 @@ def export(
     config: Config,
 ) -> None:
     """
-    Export a sample of web archives.
+    Export a sample of crawlable sources locally.
     """
     from archive_query_log.export import export_local
 
     export_local(
         document_type=Source,
         index=config.es.index_sources,
-        format="jsonl",
+        format=format,
         sample_size=sample_size,
+        output_path=output_path,
+        config=config,
+    )
+
+
+@sources.command
+def export_all(
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export all crawlable sources via Ray.
+    """
+    from archive_query_log.export import export_ray
+
+    export_ray(
+        document_type=Source,
+        index=config.es.index_sources,
+        format=format,
         output_path=output_path,
         config=config,
     )

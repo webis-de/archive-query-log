@@ -107,7 +107,7 @@ def export(
     config: Config,
 ) -> None:
     """
-    Export a sample of web archives.
+    Export a sample of search providers locally.
     """
     from archive_query_log.export import export_local
 
@@ -116,6 +116,27 @@ def export(
         index=config.es.index_providers,
         format=format,
         sample_size=sample_size,
+        output_path=output_path,
+        config=config,
+    )
+
+
+@providers.command
+def export_all(
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export all search providers via Ray.
+    """
+    from archive_query_log.export import export_ray
+
+    export_ray(
+        document_type=Provider,
+        index=config.es.index_providers,
+        format=format,
         output_path=output_path,
         config=config,
     )

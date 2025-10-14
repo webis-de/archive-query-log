@@ -214,15 +214,36 @@ def export(
     config: Config,
 ) -> None:
     """
-    Export a sample of web archives.
+    Export a sample of SEPRs locally.
     """
     from archive_query_log.export import export_local
 
     export_local(
         document_type=Serp,
         index=config.es.index_serps,
-        format="jsonl",
+        format=format,
         sample_size=sample_size,
+        output_path=output_path,
+        config=config,
+    )
+
+
+@serps.command
+def export_all(
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export all SERPs via Ray.
+    """
+    from archive_query_log.export import export_ray
+
+    export_ray(
+        document_type=Serp,
+        index=config.es.index_serps,
+        format=format,
         output_path=output_path,
         config=config,
     )
