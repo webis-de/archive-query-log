@@ -235,10 +235,17 @@ class ResultBlock(UuidBaseDocument):
     provider: InnerProvider
     serp_capture: InnerCapture
     serp: InnerSerp
+    mimetype: Keyword
+    path: Keyword
     content: Text
-    parser: InnerParser | None = None
+    parser: InnerParser
     rank: Integer
     url: HttpUrl | None = None
+    """URL to the landing page of the result block."""
+    text: Text | None = None
+    """Main content plain text of the result block."""
+    title: Text | None = None
+    """Title text of the result block."""
     should_fetch_captures: bool = True
     last_fetched_captures: Date | None = None
     capture_before_serp: InnerCapture | None = None
@@ -250,8 +257,9 @@ class ResultBlock(UuidBaseDocument):
 
 
 class WebSearchResultBlock(ResultBlock):
-    title: Text | None = None
+    url: HttpUrl  # type: ignore[override]
     text: Text | None = None
+    """Snippet text of the web search result block."""
 
     class Index:
         settings = {
@@ -261,8 +269,6 @@ class WebSearchResultBlock(ResultBlock):
 
 
 class SpecialContentsResultBlock(ResultBlock):
-    text: Text | None = None
-
     class Index:
         settings = {
             "number_of_shards": 10,
