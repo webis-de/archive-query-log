@@ -43,7 +43,7 @@ dependencies = [
     "python-whois~=0.9.5",
     "pyyaml~=6.0",
     "ray[data]~=2.49",
-    "ray-elasticsearch~=1.1",
+    "ray-elasticsearch~=1.1,>=1.1.1",
     "requests~=2.32",
     "requests-ratelimiter~=0.7.0",
     "resiliparse~=0.15.2",
