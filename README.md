@@ -359,6 +359,43 @@ Last, we support importing all archives from the [Archive-It](https://archive-it
 aql archives import archive-it
 ```
 
+### Export
+
+To export a sample of archives, providers, sources, captures, SERPs, or web search result blocks locally, run:
+
+```shell
+aql archives export --sample-size 10 --output-path /path/to/exported-archives.jsonl
+aql providers export --sample-size 10 --output-path /path/to/exported-providers.jsonl
+aql sources export --sample-size 10 --output-path /path/to/exported-sources.jsonl
+aql captures export --sample-size 10 --output-path /path/to/exported-captures.jsonl
+aql serps export --sample-size 10 --output-path /path/to/exported-serps.jsonl
+aql wsrbs export --sample-size 10 --output-path /path/to/exported-wsrbs.jsonl
+```
+
+Currently, only JSON format is supported for local exports.
+
+To export the full index of archives, providers, sources, captures, SERPs, or web search result blocks via Ray, run:
+
+```shell
+ray job submit --runtime-env ray-runtime-env.yml -- aql archives export-all --output-path /path/to/exports/archives/
+ray job submit --runtime-env ray-runtime-env.yml -- aql providers export-all --output-path /path/to/exports/providers/
+ray job submit --runtime-env ray-runtime-env.yml -- aql sources export-all --output-path /path/to/exports/sources/
+ray job submit --runtime-env ray-runtime-env.yml -- aql captures export-all --output-path /path/to/exports/captures/
+ray job submit --runtime-env ray-runtime-env.yml -- aql serps export-all --output-path /path/to/exports/serps/
+ray job submit --runtime-env ray-runtime-env.yml -- aql wsrbs export-all --output-path /path/to/exports/wsrbs/
+```
+
+The same commands can also be run with a development version of the Archive Query Log crawlers by using a local runtime environment file:
+
+```shell
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log archives export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/archives/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log providers export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/providers/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log sources export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/sources/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log captures export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/captures/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log serps export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/serps/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log wsrbs export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/wsrbs/
+```
+
 ### Cluster (Helm/Kubernetes)
 
 Running the Archive Query Log on a cluster is recommended for large-scale crawls. We provide a Helm chart that automatically starts crawling and parsing jobs for you and stores the results in an Elasticsearch cluster.
