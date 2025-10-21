@@ -2,14 +2,14 @@ working_dir: "."
 excludes:
   - /data/
   - /dist/
+  - /docs/
+  - /helm/
+  - /integrations/
+  - /notebooks/
+  - /scripts/
   - /venv/
   - /.venv/
   - /app/
-  - /notebooks/
-  - /integrations/
-  - /docs/
-  - /helm/
-  - /scripts/
   - ".*/"
   - "*.egg-info/"
   - __pycache__/
@@ -34,7 +34,7 @@ pip:
   - python-dotenv~=1.1
   - python-whois~=0.9.5
   - pyyaml~=6.0
-  - ray-elasticsearch~=1.1,>=1.1.1
+  - ray-elasticsearch~=1.1,>=1.1.4
   - requests~=2.32
   - requests-ratelimiter~=0.7.0
   - resiliparse~=0.15.2
