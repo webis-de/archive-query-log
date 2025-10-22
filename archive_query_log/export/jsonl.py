@@ -55,7 +55,7 @@ class JsonlExporter(Exporter, Generic[_D]):
         )
         dataset.write_json(
             str(output_path.resolve()),
-            line_delimited=True,
+            default_handler=str,
         )
 
 
