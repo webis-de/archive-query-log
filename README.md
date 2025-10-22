@@ -377,12 +377,12 @@ Currently, only JSON format is supported for local exports.
 To export the full index of archives, providers, sources, captures, SERPs, or web search result blocks via Ray, run:
 
 ```shell
-ray job submit --runtime-env ray-runtime-env.yml -- aql archives export-all --output-path /path/to/exports/archives/
-ray job submit --runtime-env ray-runtime-env.yml -- aql providers export-all --output-path /path/to/exports/providers/
-ray job submit --runtime-env ray-runtime-env.yml -- aql sources export-all --output-path /path/to/exports/sources/
-ray job submit --runtime-env ray-runtime-env.yml -- aql captures export-all --output-path /path/to/exports/captures/
-ray job submit --runtime-env ray-runtime-env.yml -- aql serps export-all --output-path /path/to/exports/serps/
-ray job submit --runtime-env ray-runtime-env.yml -- aql wsrbs export-all --output-path /path/to/exports/wsrbs/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log archives export-all --output-path /path/to/exports/archives/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log providers export-all --output-path /path/to/exports/providers/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log sources export-all --output-path /path/to/exports/sources/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log captures export-all --output-path /path/to/exports/captures/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log serps export-all --output-path /path/to/exports/serps/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log wsrbs export-all --output-path /path/to/exports/wsrbs/
 ```
 
 The same commands can also be run with a development version of the Archive Query Log crawlers by using a local runtime environment file:

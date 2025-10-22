@@ -6,7 +6,6 @@ excludes:
   - /helm/
   - /integrations/
   - /notebooks/
-  - /scripts/
   - /venv/
   - /.venv/
   - /app/

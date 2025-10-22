@@ -9,7 +9,6 @@ excludes:
   - /integrations/
   - /docs/
   - /helm/
-  - /scripts/
   - ".*/"
   - "*.egg-info/"
   - __pycache__/
