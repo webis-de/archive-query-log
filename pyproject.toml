@@ -2,6 +2,7 @@
 name = "archive-query-log"
 authors = [
     { name = "Jan Heinrich Merker", email = "heinrich.merker@uni-jena.de" },
+    { name = "Simon Ruth", email = "simon.ruth@uni-kassel.de" },
     { name = "Sebastian Heineking", email = "sebastian.heineking@uni-leipzig.de" },
     { name = "Maik Fröbe", email = "maik.froebe@uni-jena.de" },
     { name = "Lukas Gienapp", email = "lukas.gienapp@uni-leipzig.de" },
@@ -9,7 +10,6 @@ authors = [
     { name = "Benno Stein", email = "benno.stein@uni-weimar.de" },
     { name = "Matthias Hagen", email = "matthias.hagen@uni-jena.de" },
     { name = "Martin Potthast", email = "martin.potthast@uni-kassel.de" },
-    { name = "Simon Ruth", email = "simon.ruth@uni-kassel.de" },
 ]
 description = "Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives."
 readme = "README.md"
@@ -24,45 +24,34 @@ classifiers = [
     "Topic :: Scientific/Engineering",
 ]
 dependencies = [
-    "aiohttp~=3.11",
-    "aiohttp-retry~=2.9",
-    "asyncio-pool~=0.6.0",
-    "beautifulsoup4~=4.12",
-    "bleach~=6.2",
-    "boto3~=1.35.99",
-    "certifi~=2025.0,>=2025.4.26",
-    "click~=8.1,>=8.1.8",
+    "boto3~=1.35",
+    "certifi~=2025.8",
     "cssselect~=1.3",
-    "dataclasses-json~=0.6.7",
-    "diskcache~=5.6,>=5.6.3",
-    "elasticsearch~=7.9.1",
-    "elasticsearch-dsl~=7.4.1",
+    "cyclopts~=3.23",
+    "diskcache~=5.6",
+    "elasticsearch~=7.17",
+    "elasticsearch-dsl~=7.4",
+    "elasticsearch-pydantic~=1.1",
     "expiringdict~=1.2",
-    "fastapi~=0.115.12",
-    "flasgger~=0.9.7",
-    "flask~=3.1",
-    "flask-restful~=0.3.10",
-    "joblib~=1.4",
-    "lxml~=5.4",
-    "marshmallow~=3.26",  # dataclasses-json 0.6.7 depends on marshmallow<4.0.0 and >=3.18.0
-    "mergedeep~=1.3,>=1.3.4",
-    "more-itertools~=10.7",
-    "numpy<2.0",  # numpy 2.0 is not compatible with elasticsearch 7.9.1
-    "pandas~=2.2,>=2.2.3",
-    "publicsuffixlist~=1.0,>=1.0.2.20250430",
+    "fastapi~=0.117.1",
+    "humanize~=4.13",
+    "lxml~=6.0",
+    "pandas~=2.3",
     "pydantic~=2.11",
+    "pydantic-extra-types[pycountry]~=2.10",
     "python-dotenv~=1.1",
-    "python-slugify~=8.0,>=8.0.4",
     "python-whois~=0.9.5",
-    "pyyaml~=6.0,>=6.0.2",
-    "ranx~=0.3.20",
+    "pyyaml~=6.0",
+    "ray[data]~=2.49",
+    "ray-elasticsearch~=1.1,>=1.1.1",
     "requests~=2.32",
-    "requests-html~=0.10.0",
     "requests-ratelimiter~=0.7.0",
     "resiliparse~=0.15.2",
     "tqdm~=4.67",
-    "unidecode~=1.4",
-    "urllib3~=2.4",
+    # boto3~=1.35 depends on urllib3<1.27
+    "urllib3~=1.26",
+    "uvicorn~=0.36.0",
+    "validators~=0.35.0",
     "warcio~=1.7",
     "warc-s3~=1.0,>=1.0.1",
     "warc-cache~=1.0,>=1.0.4",
@@ -76,27 +65,30 @@ tests = [
     "bandit[toml]~=1.8",
     "boto3-stubs[s3]~=1.35",
     "mypy~=1.15",
-    "pandas-stubs~=2.2,>=2.2.3.250308",
-    "pytest~=8.3,>=8.3.5",
-    "pytest-cov~=6.1",
-    "ruff~=0.11.8",
-    "types-beautifulsoup4~=4.12,>=4.12.0.20250204",
-    "types-bleach~=6.2,>=6.2.0.20241123",
-    "types-lxml~=2025.0,>=2025.3.30",
-    "types-python-slugify~=8.0,>=8.0.2.20240310",
-    "types-pyyaml~=6.0,>=6.0.12.20250402",
-    "types-requests~=2.32,>=2.32.0.20250328",
-    "types-tqdm~=4.67,>=4.67.0.20250417",
+    "pandas-stubs~=2.3",
+    "pytest~=8.4",
+    "pytest-cov~=7.0",
+    "ruff~=0.13.1",
+    "types-lxml~=2025.3",
+    "types-pyyaml~=6.0",
+    # types-requests~=2.32 depends on urllib3>=2
+    "types-requests~=2.0",
+    "types-tqdm~=4.67",
+    "types-urllib3~=1.26",
 ]
 examples = [
+    "beautifulsoup4~=4.12",
+    "bleach~=6.2",
     "jupyter~=1.0",
     "matplotlib~=3.7",
+    # numpy 2.0 is not compatible with elasticsearch 7.9.1
+    "numpy<2.0",
+    "publicsuffixlist~=1.0,>=1.0.2.20250430",
     "seaborn~=0.13.0",
+    "types-beautifulsoup4~=4.12",
+    "types-bleach~=6.2",
 ]
-documentation = [
-    "mkdocs~=1.5",
-    "mkdocs-material~=9.5",
-]
+documentation = ["mkdocs~=1.5", "mkdocs-material~=9.5"]
 
 [project.urls]
 "Homepage" = "https://github.com/webis-de/archive-query-log"
@@ -108,7 +100,7 @@ archive-query-log = "archive_query_log.cli:cli"
 aql = "archive_query_log.cli:cli"
 
 [build-system]
-requires = ["setuptools~=80.1", "setuptools_scm[toml]~=8.3", "wheel"]
+requires = ["setuptools~=80.1", "setuptools_scm[toml]~=9.2", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
@@ -143,6 +135,18 @@ exclude = [
     "helm",
 ]
 
+[tool.ruff.lint]
+select = [
+    "E4",
+    "E7",
+    "E9",
+    "F",
+    "S",  # Security issues
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/test_*.py" = ["S101"]
+
 [tool.mypy]
 ignore_missing_imports = true
 exclude = [
@@ -156,28 +160,5 @@ exclude = [
     "helm",
 ]
 
-[tool.bandit]
-exclude_dirs = [
-    "build",
-    "venv",
-    "notebooks",
-    "integrations",
-    "scripts",
-    "data",
-    "docs",
-    "helm",
-]
-
-[tool.bandit.assert_used]
-skips = ["**/test_*.py"]
-
 [tool.pytest.ini_options]
 log_cli = true
-filterwarnings = [
-    "ignore::marshmallow.warnings.RemovedInMarshmallow4Warning",
-]
-# Ignore the legacy results parsing tests for now.
-# TODO: Re-enable tests.
-addopts = [
-    "--ignore=archive_query_log/legacy/results/test",
-]

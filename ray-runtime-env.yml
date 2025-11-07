@@ -1,0 +1,17 @@
+working_dir: "."
+excludes:
+  - /data/
+  - /dist/
+  - /venv/
+  - /.venv/
+  - /app/
+  - /notebooks/
+  - /integrations/
+  - /docs/
+  - /helm/
+  - ".*/"
+  - "*.egg-info/"
+  - __pycache__/
+pip:
+  - archive-query-log~=0.2.22
+logging_level: debug

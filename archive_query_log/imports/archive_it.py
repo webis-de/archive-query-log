@@ -1,6 +1,5 @@
 from urllib.parse import urljoin
 
-from click import echo
 from tqdm.auto import tqdm
 
 from archive_query_log.archives import add_archive
@@ -26,15 +25,16 @@ DEFAULT_ARCHIVE_IT_PAGE_SIZE: int = 100
 
 
 def import_archives(
-        config: Config,
-        api_url: str = DEFAULT_ARCHIVE_IT_API_URL,
-        wayback_url: str = DEFAULT_ARCHIVE_IT_WAYBACK_URL,
-        page_size: int = DEFAULT_ARCHIVE_IT_PAGE_SIZE,
-        priority: float | None = None,
-        no_merge: bool = False,
-        auto_merge: bool = False,
+    config: Config,
+    api_url: str = DEFAULT_ARCHIVE_IT_API_URL,
+    wayback_url: str = DEFAULT_ARCHIVE_IT_WAYBACK_URL,
+    page_size: int = DEFAULT_ARCHIVE_IT_PAGE_SIZE,
+    priority: float | None = None,
+    no_merge: bool = False,
+    auto_merge: bool = False,
+    dry_run: bool = False,
 ) -> None:
-    echo("Load Archive-It collections.")
+    print("Load Archive-It collections.")
     collections_api_url = urljoin(api_url, "/api/collection")
     response = config.http.session.get(
         collections_api_url,
@@ -44,9 +44,8 @@ def import_archives(
         ],
     )
     num_collections = int(response.headers["Total-Row-Count"])
-    echo(f"Found {num_collections} collections on Archive-It.")
+    print(f"Found {num_collections} collections on Archive-It.")
 
-    # noinspection PyTypeChecker
     progress = tqdm(total=num_collections, desc="Import archives",
                     unit="archives", disable=not auto_merge and not no_merge)
     offset_range = range(0, num_collections, page_size)
@@ -85,5 +84,6 @@ def import_archives(
                 priority=priority,
                 no_merge=no_merge,
                 auto_merge=auto_merge,
+                dry_run=dry_run,
             )
             progress.update(1)

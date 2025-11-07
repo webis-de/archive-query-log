@@ -3,7 +3,6 @@ from typing import Iterable, Iterator
 from uuid import uuid5
 from warnings import warn
 
-from click import echo
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Exists, Term
@@ -12,7 +11,6 @@ from tqdm.auto import tqdm
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_SOURCE
 from archive_query_log.orm import Archive, Provider, Source, InnerArchive, InnerProvider
-from archive_query_log.utils.es import safe_iter_scan, update_action
 from archive_query_log.utils.time import utc_now
 
 
@@ -28,16 +26,14 @@ def _sources_batch(archive: Archive, provider: Provider, config: Config) -> list
     for domain in provider.domains:
         for url_path_prefix in provider.url_path_prefixes:
             source_id_components = (
-                archive.cdx_api_url,
-                archive.memento_api_url,
+                archive.cdx_api_url.encoded_string(),
+                archive.memento_api_url.encoded_string(),
                 domain,
                 url_path_prefix,
             )
-            source_id = str(
-                uuid5(
-                    NAMESPACE_SOURCE,
-                    ":".join(source_id_components),
-                )
+            source_id = uuid5(
+                NAMESPACE_SOURCE,
+                ":".join(source_id_components),
             )
             source = Source(
                 id=source_id,
@@ -57,7 +53,7 @@ def _sources_batch(archive: Archive, provider: Provider, config: Config) -> list
                 should_fetch_captures=True,
             )
             source.meta.index = config.es.index_sources
-            batch.append(source.to_dict(include_meta=True))
+            batch.append(source.create_action())
     return batch
 
 
@@ -69,10 +65,10 @@ def _iter_sources_batches_changed_archives(
     archive: Archive
     provider: Provider
     changed_archives = changed_archives_search.scan()
-    changed_archives = safe_iter_scan(changed_archives)
+    changed_archives = list(changed_archives)
     for archive in changed_archives:
         all_providers = all_providers_search.scan()
-        all_providers = safe_iter_scan(all_providers)
+        all_providers = list(all_providers)
         for provider in all_providers:
             yield _sources_batch(
                 archive,
@@ -80,8 +76,7 @@ def _iter_sources_batches_changed_archives(
                 config,
             )
         yield [
-            update_action(
-                archive,
+            archive.update_action(
                 should_build_sources=False,
                 last_built_sources=utc_now(),
             )
@@ -96,10 +91,10 @@ def _iter_sources_batches_changed_providers(
     archive: Archive
     provider: Provider
     changed_providers = changed_providers_search.scan()
-    changed_providers = safe_iter_scan(changed_providers)
+    changed_providers = list(changed_providers)
     for provider in changed_providers:
         all_archives = all_archives_search.scan()
-        all_archives = safe_iter_scan(all_archives)
+        all_archives = list(all_archives)
         for archive in all_archives:
             yield _sources_batch(
                 archive,
@@ -107,15 +102,17 @@ def _iter_sources_batches_changed_providers(
                 config,
             )
         yield [
-            update_action(
-                provider,
+            provider.update_action(
                 should_build_sources=False,
                 last_built_sources=utc_now(),
             )
         ]
 
 
-def _build_archive_sources(config: Config) -> None:
+def _build_archive_sources(
+    config: Config,
+    dry_run: bool = False,
+) -> None:
     config.es.client.indices.refresh(index=config.es.index_archives)
     config.es.client.indices.refresh(index=config.es.index_providers)
     changed_archives_search = (
@@ -132,7 +129,7 @@ def _build_archive_sources(config: Config) -> None:
         num_changed_archives * num_all_providers
     ) + num_changed_archives
     if num_batches_archives > 0:
-        echo(f"Building sources for {num_changed_archives} " f"new/changed archives.")
+        print(f"Building sources for {num_changed_archives} " f"new/changed archives.")
         action_batches_archives: Iterable[list[dict]] = (
             _iter_sources_batches_changed_archives(
                 changed_archives_search=changed_archives_search,
@@ -140,7 +137,6 @@ def _build_archive_sources(config: Config) -> None:
                 config=config,
             )
         )
-        # noinspection PyTypeChecker
         action_batches_archives = tqdm(
             action_batches_archives,
             total=num_batches_archives,
@@ -148,12 +144,18 @@ def _build_archive_sources(config: Config) -> None:
             unit="batch",
         )
         actions_archives = chain.from_iterable(action_batches_archives)
-        config.es.bulk(actions_archives)
+        config.es.bulk(
+            actions=actions_archives,
+            dry_run=dry_run,
+        )
     else:
-        echo("No new/changed archives.")
+        print("No new/changed archives.")
 
 
-def _build_provider_sources(config: Config) -> None:
+def _build_provider_sources(
+    config: Config,
+    dry_run: bool = False,
+) -> None:
     config.es.client.indices.refresh(index=config.es.index_archives)
     config.es.client.indices.refresh(index=config.es.index_providers)
     changed_providers_search = (
@@ -170,7 +172,7 @@ def _build_provider_sources(config: Config) -> None:
         num_changed_providers * num_all_archives
     ) + num_changed_providers
     if num_batches_providers > 0:
-        echo(f"Building sources for {num_changed_providers} " f"new/changed providers.")
+        print(f"Building sources for {num_changed_providers} " f"new/changed providers.")
         action_batches_providers: Iterable[list[dict]] = (
             _iter_sources_batches_changed_providers(
                 changed_providers_search=changed_providers_search,
@@ -178,7 +180,6 @@ def _build_provider_sources(config: Config) -> None:
                 config=config,
             )
         )
-        # noinspection PyTypeChecker
         action_batches_providers = tqdm(
             action_batches_providers,
             total=num_batches_providers,
@@ -186,17 +187,27 @@ def _build_provider_sources(config: Config) -> None:
             unit="batch",
         )
         actions_providers = chain.from_iterable(action_batches_providers)
-        config.es.bulk(actions_providers)
+        config.es.bulk(
+            actions=actions_providers,
+            dry_run=dry_run,
+        )
     else:
-        echo("No new/changed providers.")
+        print("No new/changed providers.")
 
 
 def build_sources(
     config: Config,
     skip_archives: bool,
     skip_providers: bool,
+    dry_run: bool = False,
 ) -> None:
     if not skip_archives:
-        _build_archive_sources(config)
+        _build_archive_sources(
+            config=config,
+            dry_run=dry_run,
+        )
     if not skip_providers:
-        _build_provider_sources(config)
+        _build_provider_sources(
+            config=config,
+            dry_run=dry_run,
+        )

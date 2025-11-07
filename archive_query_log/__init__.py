@@ -1,3 +1,6 @@
-from importlib.metadata import version
+from importlib.metadata import version, PackageNotFoundError
 
-__version__ = version("archive-query-log")
+try:
+    __version__ = version("archive-query-log")
+except PackageNotFoundError:
+    __version__ = "unknown"

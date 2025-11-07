@@ -1,32 +1,32 @@
-from click import group, option
+from cyclopts import App
+from cyclopts.types import ResolvedPath, PositiveInt
 
-from archive_query_log.cli.util import pass_config
 from archive_query_log.config import Config
-from archive_query_log.orm import Serp, Result
+from archive_query_log.export.base import ExportFormat
+from archive_query_log.orm import Serp, WebSearchResultBlock, SpecialContentsResultBlock
 
-
-@group()
-def serps():
-    pass
-
-
-@serps.group()
-def parse():
-    pass
-
-
-@parse.command()
-@pass_config
-@option(
-    "--prefetch-limit",
-    type=int,
-    required=False,
-    help="Parse SERP URLs for only a limited number of captures, and prefetch that batch to parse.",
+serps = App(
+    name="serps",
+    alias="s",
+    help="Manage search engine results pages (SERPs).",
 )
+
+parse = App(name="parse", alias="p", help="Parse SERPs.")
+serps.command(parse)
+
+
+@parse.command
 def url_query(
+    *,
+    size: int = 10,
+    dry_run: bool = False,
     config: Config,
-    prefetch_limit: int | None = None,
 ) -> None:
+    """
+    Parse the search query from a SERP's URL.
+
+    :param size: How many captures to parse.
+    """
     from archive_query_log.parsers.url_query import parse_serps_url_query
 
     Serp.init(
@@ -35,151 +35,215 @@ def url_query(
     )
     parse_serps_url_query(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
+        dry_run=dry_run,
     )
 
 
-@parse.command()
-@pass_config
-@option(
-    "--prefetch-limit",
-    type=int,
-    required=False,
-    help="Parse only a limited number of SERPs, and prefetch that batch to parse.",
-)
+@parse.command
 def url_page(
+    *,
+    size: int = 10,
+    dry_run: bool = False,
     config: Config,
-    prefetch_limit: int | None = None,
 ) -> None:
+    """
+    Parse the SERP's page index from a SERP's URL.
+
+    :param size: How many SERPs to parse.
+    """
     from archive_query_log.parsers.url_page import parse_serps_url_page
 
     parse_serps_url_page(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
+        dry_run=dry_run,
     )
 
 
-@parse.command()
-@pass_config
-@option(
-    "--prefetch-limit",
-    type=int,
-    required=False,
-    help="Parse only a limited number of SERPs, and prefetch that batch to parse.",
-)
+@parse.command
 def url_offset(
+    *,
+    size: int = 10,
+    dry_run: bool = False,
     config: Config,
-    prefetch_limit: int | None = None,
 ) -> None:
+    """
+    Parse the SERP's pagination offset from a SERP's URL.
+
+    :param size: How many SERPs to parse.
+    """
     from archive_query_log.parsers.url_offset import parse_serps_url_offset
 
     parse_serps_url_offset(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
+        dry_run=dry_run,
     )
 
 
-@parse.command()
-@pass_config
-@option(
-    "--prefetch-limit",
-    type=int,
-    required=False,
-    help="Parse only a limited number of SERPs, and prefetch that batch to parse.",
-)
+@parse.command
 def warc_query(
+    *,
+    size: int = 10,
+    dry_run: bool = False,
     config: Config,
-    prefetch_limit: int | None = None,
 ) -> None:
+    """
+    Parse the search query from a SERP's WARC file (e.g., HTML contents).
+
+    :param size: How many SERPs to parse.
+    """
     from archive_query_log.parsers.warc_query import parse_serps_warc_query
 
     parse_serps_warc_query(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
+        dry_run=dry_run,
     )
 
 
-@parse.command()
-@pass_config
-@option(
-    "--prefetch-limit",
-    type=int,
-    required=False,
-    help="Parse only a limited number of SERPs, and prefetch that batch to parse.",
-)
-def warc_snippets(
+@parse.command
+def warc_web_search_result_blocks(
+    *,
+    size: int = 10,
+    dry_run: bool = False,
     config: Config,
-    prefetch_limit: int | None = None,
 ) -> None:
-    from archive_query_log.parsers.warc_snippets import parse_serps_warc_snippets
+    """
+    Parse the web search result blocks from a SERP's WARC file (e.g., HTML contents).
 
-    Result.init(
+    :param size: How many SERPs to parse.
+    """
+    from archive_query_log.parsers.warc_web_search_result_blocks import (
+        parse_serps_warc_web_search_result_blocks,
+    )
+
+    WebSearchResultBlock.init(
         using=config.es.client,
-        index=config.es.index_results,
+        index=config.es.index_web_search_result_blocks,
     )
-    parse_serps_warc_snippets(
+    parse_serps_warc_web_search_result_blocks(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
+        dry_run=dry_run,
     )
 
 
-@parse.command()
-@pass_config
-@option(
-    "--prefetch-limit",
-    type=int,
-    required=False,
-    help="Parse only a limited number of SERPs, and prefetch that batch to parse.",
-)
-def warc_direct_answers(
+@parse.command
+def warc_special_contents_result_blocks(
+    *,
+    size: int = 10,
+    dry_run: bool = False,
     config: Config,
-    prefetch_limit: int | None = None,
 ) -> None:
-    from archive_query_log.parsers.warc_direct_answers import (
-        parse_serps_warc_direct_answers,
+    """
+    Parse the special contents result blocks from a SERP's WARC file (e.g., HTML contents).
+
+    :param size: How many SERPs to parse.
+    """
+    from archive_query_log.parsers.warc_special_contents_result_blocks import (
+        parse_serps_warc_special_contents_result_blocks,
     )
 
-    parse_serps_warc_direct_answers(
+    SpecialContentsResultBlock.init(
+        using=config.es.client,
+        index=config.es.index_special_contents_result_blocks,
+    )
+    parse_serps_warc_special_contents_result_blocks(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
+        dry_run=dry_run,
     )
 
 
-@serps.group()
-def download():
-    pass
+download = App(
+    name="download",
+    alias="d",
+    help="Download SERP contents.",
+)
+serps.command(download)
 
 
-@download.command(
-    name="warc", help="Download archived documents of captures as WARC to a file cache."
-)
-@pass_config
-@option(
-    "--prefetch-limit",
-    type=int,
-    required=False,
-    help="Download only a limited number of SERPs, and prefetch that batch to parse.",
-)
-def download_warc(config: Config, prefetch_limit: int | None = None) -> None:
+@download.command(name="warc")
+def download_warc(
+    *,
+    size: int = 10,
+    config: Config,
+) -> None:
+    """
+    Download archived contents of SERP captures as WARC to a file cache.
+
+    :param size: How many SERPs to download.
+    """
     from archive_query_log.downloaders.warc import download_serps_warc
 
     download_serps_warc(
         config=config,
-        prefetch_limit=prefetch_limit,
+        size=size,
     )
 
 
-@serps.group()
-def upload():
-    pass
-
-
-@upload.command(
-    name="warc",
-    help="Upload WARCs of archived documents of captures to S3 and update the index.",
+upload = App(
+    name="upload",
+    alias="u",
+    help="Upload SERP contents.",
 )
-@pass_config
-def upload_warc(config: Config) -> None:
+serps.command(upload)
+
+
+@upload.command(name="warc")
+def upload_warc(
+    *,
+    config: Config,
+) -> None:
+    """
+    Upload WARCs of archived contents of SERP captures to S3 and update the index.
+    """
     from archive_query_log.downloaders.warc import upload_serps_warc
 
     upload_serps_warc(config)
+
+
+@serps.command
+def export(
+    sample_size: PositiveInt,
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export a sample of SEPRs locally.
+    """
+    from archive_query_log.export import export_local
+
+    export_local(
+        document_type=Serp,
+        index=config.es.index_serps,
+        format=format,
+        sample_size=sample_size,
+        output_path=output_path,
+        config=config,
+    )
+
+
+@serps.command
+def export_all(
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export all SERPs via Ray.
+    """
+    from archive_query_log.export import export_ray
+
+    export_ray(
+        document_type=Serp,
+        index=config.es.index_serps,
+        format=format,
+        output_path=output_path,
+        config=config,
+    )

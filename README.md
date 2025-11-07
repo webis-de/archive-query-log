@@ -290,7 +290,7 @@ All the above commands can be run in parallel, and they can be run multiple time
 
 #### Download SERP WARCs
 
-Up to this point, we have only fetched the metadata of the captures, most prominently the URL. However, the snippets of the SERPs are not contained in the metadata but only on the web page. So, we need to download the actual web pages from the archive service.
+Up to this point, we have only fetched the metadata of the captures, most prominently the URL. However, the result blocks of the SERPs are not contained in the metadata but only on the web page. So, we need to download the actual web pages from the archive service.
 
 ```shell
 aql serps download warc
@@ -316,23 +316,23 @@ From the WARC contents, we can now parse the query as it appears on the SERP (wh
 aql serps parse warc-query
 ```
 
-More importantly, we can parse the snippets of the SERP.
+More importantly, we can parse the web search result blocks of the SERP.
 
 ```shell
-aql serps parse warc-snippets
+aql serps parse warc-web-search-result-blocks
 ```
 
-Parsing the snippets from the SERP's WARC contents will also add the SERP's results to a new index.
+Parsing the web search result blocks from the SERP's WARC contents will also add the SERP's web search result blocks to a new index.
 
-<!-- #### Download SERP snippet WARCs
+#### Download web search result block landing page WARCs
 
-To get the full text of each referenced result from the SERP, we need to download a capture of the result from the web archive. Intuitively, we would like to download a capture of the result at the exact same time as the SERP was captured. But often, web archives crawl the results later or not at all. Therefore, our implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures individually for each result, if any capture can be found.
+To get the full text of each referenced landing page of a web search result block from the SERP, we need to download a capture of the landing page from the web archive. Intuitively, we would like to download a capture of the landing page at the exact same time as the SERP was captured. But often, web archives crawl these landing pages later or not at all. Therefore, our implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures individually for each web search result block, if any capture can be found.
 
 ```shell
-aql results download warc
+aql web-search-result-blocks download warc
 ```
 
-This command will again download the result's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the result index for random access to the contents of a specific result. -->
+This command will download the landing page's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the web search result blocks index for random access to the contents of a specific landing page.
 
 ### Import
 
@@ -344,7 +344,7 @@ aql parsers url-query import
 aql parsers url-page import
 aql parsers url-offset import
 aql parsers warc-query import
-aql parsers warc-snippets import
+aql parsers warc-web-search-result-blocks import
 ```
 
 We also support importing a previous crawl of captures from the AQL-22 file system backend:
@@ -357,6 +357,43 @@ Last, we support importing all archives from the [Archive-It](https://archive-it
 
 ```shell
 aql archives import archive-it
+```
+
+### Export
+
+To export a sample of archives, providers, sources, captures, SERPs, or web search result blocks locally, run:
+
+```shell
+aql archives export --sample-size 10 --output-path /path/to/exported-archives.jsonl
+aql providers export --sample-size 10 --output-path /path/to/exported-providers.jsonl
+aql sources export --sample-size 10 --output-path /path/to/exported-sources.jsonl
+aql captures export --sample-size 10 --output-path /path/to/exported-captures.jsonl
+aql serps export --sample-size 10 --output-path /path/to/exported-serps.jsonl
+aql wsrbs export --sample-size 10 --output-path /path/to/exported-wsrbs.jsonl
+```
+
+Currently, only JSON format is supported for local exports.
+
+To export the full index of archives, providers, sources, captures, SERPs, or web search result blocks via Ray, run:
+
+```shell
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log archives export-all --output-path /path/to/exports/archives/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log providers export-all --output-path /path/to/exports/providers/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log sources export-all --output-path /path/to/exports/sources/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log captures export-all --output-path /path/to/exports/captures/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log serps export-all --output-path /path/to/exports/serps/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log wsrbs export-all --output-path /path/to/exports/wsrbs/
+```
+
+The same commands can also be run with a development version of the Archive Query Log crawlers by using a local runtime environment file:
+
+```shell
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log archives export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/archives/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log providers export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/providers/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log sources export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/sources/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log captures export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/captures/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log serps export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/serps/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log wsrbs export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/wsrbs/
 ```
 
 ### Cluster (Helm/Kubernetes)
