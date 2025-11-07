@@ -1,6 +1,9 @@
 # Schema (Mermaid)
 
+...
+
 ```mermaid
+%%{ init: { 'themeVariables': { 'fontSize': '10px', 'lineHeight': '10px' } } }%%
 graph LR
   %% Classes
   SERP["aql:SERP (dct:Collection)"]

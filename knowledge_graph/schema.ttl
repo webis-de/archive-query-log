@@ -189,3 +189,6 @@ aql:ArchiveShape a sh:NodeShape ;
   sh:property [ sh:path aql:mementoAPIBaseURL ; sh:datatype xsd:anyURI ] ;
   sh:property [ sh:path aql:cdxAPIBaseURL ; sh:datatype xsd:anyURI ] ;
   sh:property [ sh:path aql:wikiDataURL ; sh:datatype xsd:anyURI ] .
+
+
+#TODO: schema needs to be checked and adapted according to the latest figma diagram
