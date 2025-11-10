@@ -77,7 +77,7 @@ tests = [
     "boto3-stubs[s3]~=1.35",
     "mypy~=1.15",
     "pandas-stubs~=2.2,>=2.2.3.250308",
-    "pytest~=8.3,>=8.3.5",
+    "pytest>=8.3,<10.0",
     "pytest-cov~=6.1",
     "ruff>=0.11.8,<0.15.0",
     "types-beautifulsoup4~=4.12,>=4.12.0.20250204",
