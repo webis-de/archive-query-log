@@ -1,0 +1,25 @@
+# FastAPI Dependencies
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pydantic==2.9.2
+pydantic-settings==2.6.0
+
+# Elasticsearch
+elasticsearch==9.2.0
+
+# CORS and middleware
+python-multipart==0.0.17
+
+# HTTP Client
+httpx==0.28.1
+aiohttp==3.13.2
+
+# Testing
+pytest==8.3.3
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0
+
+# Code Quality
+black==24.10.0
+flake8==7.1.1
+mypy==1.13.0
