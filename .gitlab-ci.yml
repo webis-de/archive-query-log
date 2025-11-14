@@ -1,0 +1,82 @@
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+  # For Docker Hub: DOCKER_REGISTRY: docker.io
+  # For GitLab Registry: DOCKER_REGISTRY: $CI_REGISTRY
+
+# -------------------------------------------------------------------
+# Test Stage - run Python tests without Docker
+# -------------------------------------------------------------------
+test:
+  stage: test
+  image: python:3.13-slim
+  before_script:
+    - pip install --no-cache-dir -r requirements.txt
+  script:
+    # Run all pytest tests with coverage
+    - pytest -v --cov=app --cov-report=term --cov-report=xml
+    - pytest --cov=app --cov-fail-under=90
+    # Check formatting and linting
+    - black --check app/ tests/ || echo "Code needs formatting"
+    - flake8 app/ tests/ --max-line-length=88 --extend-ignore=E203 || echo "Linting issues found"
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+  only:
+    - branches
+    - merge_requests
+
+# -------------------------------------------------------------------
+# Docker Build Stage with Kaniko (works without DinD)
+# -------------------------------------------------------------------
+build:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.23.0-debug
+    entrypoint: [""]
+  script:
+    - |
+      if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        tag="latest"
+        echo "Building image with tag: $tag"
+      else
+        tag="$CI_COMMIT_REF_SLUG"
+        echo "Building image with tag: $tag"
+      fi
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor \
+      --context "${CI_PROJECT_DIR}" \
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile" \
+      --destination "${CI_REGISTRY_IMAGE}:${tag}" \
+      --cache=true \
+      --cache-ttl=24h
+  only:
+    - main
+    - branches
+  needs:
+    - test
+
+# -------------------------------------------------------------------
+# Optional: Deploy Stage (manual trigger)
+# -------------------------------------------------------------------
+# deploy:
+#   stage: deploy
+#   image: alpine:latest
+#   before_script:
+#     - apk add --no-cache openssh-client
+#   script:
+#     - echo "Deploying to server..."
+#     # SSH into your server and start the container
+#     # ssh user@server "docker-compose pull && docker-compose up -d"
+#   only:
+#     - main
+#   when: manual
