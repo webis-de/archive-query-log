@@ -1,5 +1,5 @@
 # Use Node 22 on Debian bookworm. Angular 18 officially supports Node ^18.19.1 || ^20.11.1 || ^22.0.0.
-image: node:22-bookworm
+image: node:24.11.0-bookworm
 
 # Create pipelines only for push events to the main branch.
 workflow:
@@ -24,6 +24,9 @@ variables:
 #    'npm ci' guarantees lockfile-exact, reproducible installs and removes any preexisting node_modules.
 install:
   stage: install
+  before_script:
+    - node -v && npm -v
+    - npm i -g npm@11.6.1 && npm -v
   script:
     - npm ci --cache $NPM_CONFIG_CACHE --prefer-offline
   artifacts:
