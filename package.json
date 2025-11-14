@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadlessNoSandbox",
     "format": "prettier --write \"src/**/*.{ts,html,scss,css,json}\""
   },
   "private": true,
