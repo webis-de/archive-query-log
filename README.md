@@ -63,7 +63,7 @@ docker-compose down
 
 ---
 
-## �� For Developers (Development)
+## ⚙️ For Developers (Development)
 
 ### Requirements
 - Python 3.13 installed
