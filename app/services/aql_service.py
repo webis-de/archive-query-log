@@ -9,7 +9,7 @@ Contains all functions used by the search router:
 - Search by year
 """
 
-from typing import List, Optional, Any
+from typing import List, Optional, Any, Dict
 from app.core.elastic import get_es_client
 
 
@@ -23,7 +23,8 @@ async def search_serps_basic(query: str, size: int = 10) -> List[Any]:
     es = get_es_client()
     body = {"query": {"match": {"url_query": query}}, "size": size}
     response = await es.search(index="aql_serps", body=body)
-    return response["hits"]["hits"]
+    hits: List[Any] = response["hits"]["hits"]
+    return hits
 
 
 # ---------------------------------------------------------
@@ -36,7 +37,8 @@ async def search_providers(name: str, size: int = 10) -> List[Any]:
     es = get_es_client()
     body = {"query": {"match": {"name": name}}, "size": size}
     response = await es.search(index="aql_providers", body=body)
-    return response["hits"]["hits"]
+    hits: List[Any] = response["hits"]["hits"]
+    return hits
 
 
 # ---------------------------------------------------------
@@ -57,7 +59,10 @@ async def search_serps_advanced(
     """
     es = get_es_client()
 
-    bool_query = {"must": [{"match": {"url_query": query}}], "filter": []}
+    bool_query: Dict[str, Any] = {
+        "must": [{"match": {"url_query": query}}],
+        "filter": [],
+    }
 
     if provider_id:
         bool_query["filter"].append({"term": {"provider.id": provider_id}})
@@ -77,7 +82,8 @@ async def search_serps_advanced(
 
     body = {"query": {"bool": bool_query}, "size": size}
     response = await es.search(index="aql_serps", body=body)
-    return response["hits"]["hits"]
+    hits: List[Any] = response["hits"]["hits"]
+    return hits
 
 
 # ---------------------------------------------------------

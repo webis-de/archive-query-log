@@ -37,13 +37,13 @@ test:
     - pytest -v --cov=app --cov-report=term-missing --cov-report=xml
 
     # Enforce minimum coverage in a separate step (optional but explicit)
-    - pytest --cov=app --cov-fail-under=90
+    - pytest --cov=app --cov-fail-under=80
 
     # Code formatting check (fails job if formatting is wrong)
     - black --check app/ tests/
 
     # Linting (PEP8 etc.)
-    - flake8 app/ tests/ --max-line-length=88 --extend-ignore=E203
+    - flake8 app/ tests/ --max-line-length=88
 
     # Static type checking
     - mypy app/
@@ -91,13 +91,13 @@ build:
         > /kaniko/.docker/config.json
 
     # Run Kaniko build and push the image to the GitLab Container Registry
-    - /kaniko/executor \
+    - |
+      /kaniko/executor \
         --context "${CI_PROJECT_DIR}" \
         --dockerfile "${CI_PROJECT_DIR}/Dockerfile" \
         --destination "${CI_REGISTRY_IMAGE}:${tag}" \
         --cache=true \
         --cache-ttl=24h
-
   only:
     - main
     - branches

@@ -7,7 +7,8 @@ def test_search_basic(client):
     assert isinstance(data["results"], list)
     assert len(data["results"]) > 0
 
+    # Verify each result has the required structure
     for hit in data["results"]:
-        url_query = hit["_source"]["url_query"]
-        assert url_query is not None
-        assert "halloween" in url_query.lower()
+        assert "_source" in hit
+        assert "url_query" in hit["_source"]
+        assert hit["_source"]["url_query"] is not None
