@@ -70,6 +70,7 @@ docker-compose down
 - Git installed
 
 ### Setting Up Local Development Environment
+**Note:** Make sure to configure your [`.env`](#environment-variables) file with the required Elasticsearch credentials before running the development server. 
 
 1. **Create a virtual environment:**
 ```bash
@@ -310,7 +311,6 @@ docker-compose logs -f fastapi
 
 # GitLab Container Registry
 docker login git.uni-jena.de:5050
-docker pull $CI_REGISTRY_IMAGE:latest
 docker push $CI_REGISTRY_IMAGE:latest
 ```
 

@@ -45,21 +45,41 @@ def mock_elasticsearch(monkeypatch):
     """
 
     async def mock_search(*args, **kwargs):
-        # Simulate a realistic Elasticsearch search result
-        return {
-            "hits": {
-                "hits": [
-                    {
-                        "_id": "1",
-                        "_source": {"url_query": "halloween", "provider": "Google"},
-                    },
-                    {
-                        "_id": "2",
-                        "_source": {"url_query": "pumpkin", "provider": "Google"},
-                    },
-                ]
+        # Simulate different Elasticsearch results based on the index
+        index = kwargs.get("index", "")
+
+        if "provider" in index:
+            # Mock data for provider autocomplete
+            return {
+                "hits": {
+                    "hits": [
+                        {
+                            "_id": "1",
+                            "_source": {"name": "Google", "domain": "google.com"},
+                        },
+                        {
+                            "_id": "2",
+                            "_source": {"name": "Bing", "domain": "bing.com"},
+                        },
+                    ]
+                }
             }
-        }
+        else:
+            # Default mock data for SERP searches
+            return {
+                "hits": {
+                    "hits": [
+                        {
+                            "_id": "1",
+                            "_source": {"url_query": "halloween", "provider": "Google"},
+                        },
+                        {
+                            "_id": "2",
+                            "_source": {"url_query": "pumpkin", "provider": "Google"},
+                        },
+                    ]
+                }
+            }
 
     class MockESClient:
         async def search(self, *args, **kwargs):
@@ -68,5 +88,13 @@ def mock_elasticsearch(monkeypatch):
         async def close(self):
             pass
 
-    # Override the real get_es_client function from app.core.elastic
-    monkeypatch.setattr("app.core.elastic.get_es_client", lambda: MockESClient())
+    # Create mock instance
+    mock_client = MockESClient()
+
+    # Override the get_es_client function to return our mock
+    monkeypatch.setattr("app.core.elastic.get_es_client", lambda: mock_client)
+
+    # Also patch the global es_client variable
+    monkeypatch.setattr("app.core.elastic.es_client", mock_client)
+    # Patch in services module too (in case it was already imported)
+    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
