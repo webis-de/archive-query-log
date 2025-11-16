@@ -3,7 +3,7 @@
 This is the entry point for the FastAPI application.
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
@@ -31,8 +31,8 @@ async def lifespan(app: FastAPI):
 # Create FastAPI app
 # ---------------------------------------------------------
 app = FastAPI(
-    title="FastAPI Starter Project",
-    description="A minimal FastAPI project template ready for extension",
+    title="FastAPI AQL-Browser Backend",
+    description="A minimal FastAPI project.",
     version="0.1.0",
     lifespan=lifespan,
 )
@@ -51,14 +51,22 @@ app.add_middleware(
 # ---------------------------------------------------------
 # Setup slowapi Limiter
 # ---------------------------------------------------------
-limiter = Limiter(key_func=get_remote_address)
+limiter = Limiter(key_func=get_remote_address, default_limits=["10/minute"])
 app.state.limiter = limiter
 
 
+# ---------------------------------------------------------
+# Global Rate Limit Handler
+# ---------------------------------------------------------
 @app.exception_handler(RateLimitExceeded)
-async def rate_limit_handler(request, exc):
+async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
     return JSONResponse(
-        status_code=429, content={"detail": "Too many requests, slow down!"}
+        status_code=429,
+        content={
+            "error": "Too Many Requests",
+            "message": str(exc.detail),
+            "status_code": 429,
+        },
     )
 
 
