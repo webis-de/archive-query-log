@@ -1,23 +1,59 @@
 # AqlFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+Angular 18 standalone application with a custom `aql-stylings` library, styled using Tailwind CSS and daisyUI.
+
+## Prerequisites
+
+- Node.js **20.x** (developed and tested with Node 20.19)
+- npm **10.x** (ships with Node 20)
+
+Check your versions:
+
+- `node -v`
+- `npm -v`
+
+## Setup
+
+1. Install dependencies:
+   - `npm install`
+2. Optional: build the `aql-stylings` library:
+   - `npm run build:lib`
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Start the library in watch mode (optional, for library-only development):
+  - `npm run watch:lib`
 
-## Code scaffolding
+- Start the app dev server (`http://localhost:4200/`):
+  - `npm run start`
+  - or `ng serve`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The application automatically reloads when you change any source file.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Build the app for production:
+  - `npm run build`
 
-## Running unit tests
+Build artifacts are output to `dist/aql-frontend`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Linting
 
-## Further help
+- Run ESLint:
+  - `npm run lint`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Formatting
+
+- Run Prettier to format the source code:
+  - `npm run format`
+
+## Tests
+
+- Run unit tests (Karma + Jasmine, headless Chrome):
+  - `npm run test`
+  - or `ng test --watch=false --browsers=ChromeHeadless`
+
+## TODO
+
+- Implement daisyUI-based wrapper components inside the `aql-stylings` library (e.g. `aql-button`, `aql-input`, `aql-card`) that use daisyUI classes internally and expose a consistent, app-friendly API.
+

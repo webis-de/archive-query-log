@@ -106,11 +106,55 @@
           }
         }
       }
+    },
+    "aql-stylings": {
+      "projectType": "library",
+      "root": "projects/aql-stylings",
+      "sourceRoot": "projects/aql-stylings/src",
+      "prefix": "aql",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/aql-stylings/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/aql-stylings/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/aql-stylings/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/aql-stylings/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aql-stylings/**/*.ts",
+              "projects/aql-stylings/**/*.html"
+            ],
+            "eslintConfig": "projects/aql-stylings/eslint.config.js"
+          }
+        }
+      }
     }
   },
   "cli": {
     "schematicCollections": [
       "angular-eslint"
-    ]
+    ],
+    "analytics": false
   }
 }

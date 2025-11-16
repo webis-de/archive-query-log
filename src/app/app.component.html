@@ -1,6 +1,25 @@
-<div class="container">
-  <h1>Willkommen bei AQL Frontend!</h1>
-  <p>Die Angular 18 Standalone-Anwendung läuft erfolgreich.</p>
+<div class="min-h-screen bg-base-100 text-base-content">
+  <main class="container min-h-screen mx-auto px-4 py-10">
+    <div class="flex flex-col items-center gap-8">
+      <div class="space-y-4">
+        <h1 class="text-3xl font-extrabold tracking-tight text-4xl">
+          Willkommen bei
+          <span class="text-primary">AQL Frontend</span>
+        </h1>
+        <p class="text-base text-neutral-600 text-lg">
+          Die Angular 18 App läuft jetzt mit
+          <span class="font-semibold">Tailwind CSS</span>
+          und
+          <span class="font-semibold">daisyUI</span> als Design‑System.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button class="btn btn-primary">Primary Action</button>
+          <button class="btn btn-outline btn-secondary">Secondary Action</button>
+        </div>
+      </div>
+    </div>
+    <section>
+      <router-outlet />
+    </section>
+  </main>
 </div>
-
-<router-outlet />
