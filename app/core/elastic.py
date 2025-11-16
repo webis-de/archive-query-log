@@ -23,8 +23,8 @@ def get_es_client() -> AsyncElasticsearch:
             hosts=[settings.es_host],
             api_key=settings.es_api_key,
             verify_certs=settings.es_verify,
-            max_retries=3,       # retry failed requests up to 3 times
-            retry_on_timeout=True # retry if a request times out
+            max_retries=3,  # retry failed requests up to 3 times
+            retry_on_timeout=True,  # retry if a request times out
         )
     return es_client
 

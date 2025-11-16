@@ -29,7 +29,7 @@ limiter = Limiter(key_func=get_remote_address)
 async def search_basic(
     query: str = Query(..., description="Search term for SERPs"),
     size: int = Query(10, description="Number of results to return"),
-    request: Request = None,
+    request: Optional[Request] = None,
 ):
     results = await aql_service.search_serps_basic(query=query, size=size)
     return {"count": len(results), "results": results}
@@ -43,7 +43,7 @@ async def search_basic(
 async def search_providers(
     name: str = Query(..., description="Provider name to search for"),
     size: int = Query(10, description="Number of results to return"),
-    request: Request = None,
+    request: Optional[Request] = None,
 ):
     results = await aql_service.search_providers(name=name, size=size)
     return {"count": len(results), "results": results}
@@ -60,7 +60,7 @@ async def search_advanced(
     year: Optional[int] = Query(None, description="Filter by year"),
     status_code: Optional[int] = Query(None, description="Filter by HTTP status code"),
     size: int = Query(10, description="Number of results to return"),
-    request: Request = None,
+    request: Optional[Request] = None,
 ):
     results = await aql_service.search_serps_advanced(
         query=query,
@@ -80,7 +80,7 @@ async def search_advanced(
 async def autocomplete_providers(
     q: str = Query(..., min_length=2, description="Prefix for provider name"),
     size: int = Query(10, description="Number of suggestions to return"),
-    request: Request = None,
+    request: Optional[Request] = None,
 ):
     suggestions = await aql_service.autocomplete_providers(q=q, size=size)
     return {"count": len(suggestions), "results": suggestions}
@@ -95,7 +95,7 @@ async def search_by_year(
     query: str = Query(..., description="Search term"),
     year: int = Query(..., description="Year to filter results by"),
     size: int = Query(10, description="Number of results to return"),
-    request: Request = None,
+    request: Optional[Request] = None,
 ):
     results = await aql_service.search_by_year(query=query, year=year, size=size)
     return {"count": len(results), "results": results}

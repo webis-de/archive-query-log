@@ -15,6 +15,7 @@ from slowapi.errors import RateLimitExceeded
 from app.core.elastic import close_es_client
 from app.routers import hello, search
 
+
 # ---------------------------------------------------------
 # Lifespan for startup/shutdown
 # ---------------------------------------------------------
@@ -24,6 +25,7 @@ async def lifespan(app: FastAPI):
     yield
     # shutdown code
     await close_es_client()
+
 
 # ---------------------------------------------------------
 # Create FastAPI app
@@ -52,18 +54,20 @@ app.add_middleware(
 limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
 
+
 @app.exception_handler(RateLimitExceeded)
 async def rate_limit_handler(request, exc):
     return JSONResponse(
-        status_code=429,
-        content={"detail": "Too many requests, slow down!"}
+        status_code=429, content={"detail": "Too many requests, slow down!"}
     )
+
 
 # ---------------------------------------------------------
 # Include routers
 # ---------------------------------------------------------
 app.include_router(hello.router, prefix="/api", tags=["hello"])
 app.include_router(search.router, prefix="/api", tags=["search"])
+
 
 # ---------------------------------------------------------
 # Root & Health Endpoints
@@ -76,6 +80,7 @@ async def root():
         "version": "0.1.0",
         "status": "healthy",
     }
+
 
 @app.get("/health")
 async def health_check():
