@@ -1,11 +1,10 @@
 # AqlFrontend
 
-Angular 18 standalone application with a custom `aql-stylings` library, styled using Tailwind CSS and daisyUI.
+Angular 20.3.x standalone application with a custom `aql-stylings` library, styled using Tailwind CSS and daisyUI.
 
 ## Prerequisites
 
-- Node.js **20.x** (developed and tested with Node 20.19)
-- npm **10.x** (ships with Node 20)
+- Node.js version **^20.19.0 || ^22.12.0 || ^24.0.0**
 
 Check your versions:
 
