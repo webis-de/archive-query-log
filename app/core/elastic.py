@@ -18,17 +18,13 @@ def get_es_client() -> AsyncElasticsearch:
     and returns it. Implements singleton pattern for the entire app.
     """
     global es_client
-    if es_client is None and getattr(settings, "es_api_key", None):
+    if es_client is None:
         es_client = AsyncElasticsearch(
             hosts=[settings.es_host],
             api_key=settings.es_api_key,
             verify_certs=settings.es_verify,
-        )
-    # If still None, create a dummy client (for tests)
-    if es_client is None:
-        es_client = AsyncElasticsearch(
-            hosts=[settings.es_host],
-            verify_certs=False,
+            max_retries=3,  # retry failed requests up to 3 times
+            retry_on_timeout=True,  # retry if a request times out
         )
     return es_client
 

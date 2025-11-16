@@ -3,13 +3,22 @@
 This is the entry point for the FastAPI application.
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.elastic import close_es_client
-from app.routers import hello, search
+from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
+from app.core.elastic import close_es_client
+from app.routers import hello, search
+
+
+# ---------------------------------------------------------
+# Lifespan for startup/shutdown
+# ---------------------------------------------------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # startup code (if any)
@@ -18,15 +27,19 @@ async def lifespan(app: FastAPI):
     await close_es_client()
 
 
-# Create FastAPI app instance with lifespan
+# ---------------------------------------------------------
+# Create FastAPI app
+# ---------------------------------------------------------
 app = FastAPI(
-    title="FastAPI Starter Project",
-    description="A minimal FastAPI project template ready for extension",
+    title="FastAPI AQL-Browser Backend",
+    description="A minimal FastAPI project.",
     version="0.1.0",
     lifespan=lifespan,
 )
 
-# Configure CORS - adjust for production
+# ---------------------------------------------------------
+# Configure CORS
+# ---------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # In production, specify allowed origins
@@ -35,11 +48,38 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ---------------------------------------------------------
+# Setup slowapi Limiter
+# ---------------------------------------------------------
+limiter = Limiter(key_func=get_remote_address, default_limits=["10/minute"])
+app.state.limiter = limiter
+
+
+# ---------------------------------------------------------
+# Global Rate Limit Handler
+# ---------------------------------------------------------
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
+    return JSONResponse(
+        status_code=429,
+        content={
+            "error": "Too Many Requests",
+            "message": str(exc.detail),
+            "status_code": 429,
+        },
+    )
+
+
+# ---------------------------------------------------------
 # Include routers
+# ---------------------------------------------------------
 app.include_router(hello.router, prefix="/api", tags=["hello"])
 app.include_router(search.router, prefix="/api", tags=["search"])
 
 
+# ---------------------------------------------------------
+# Root & Health Endpoints
+# ---------------------------------------------------------
 @app.get("/")
 async def root():
     """Root endpoint - health check"""
