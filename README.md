@@ -1,10 +1,11 @@
 # AqlFrontend
 
-Angular 20.3.x standalone application with a custom `aql-stylings` library, styled using Tailwind CSS and daisyUI.
+Angular 18 standalone application with a custom `aql-stylings` library, styled using Tailwind CSS and daisyUI.
 
 ## Prerequisites
 
-- Node.js version **^20.19.0 || ^22.12.0 || ^24.0.0**
+- Node.js **20.x** (developed and tested with Node 20.19)
+- npm **10.x** (ships with Node 20)
 
 Check your versions:
 
@@ -55,4 +56,3 @@ Build artifacts are output to `dist/aql-frontend`.
 ## TODO
 
 - Implement daisyUI-based wrapper components inside the `aql-stylings` library (e.g. `aql-button`, `aql-input`, `aql-card`) that use daisyUI classes internally and expose a consistent, app-friendly API.
-
