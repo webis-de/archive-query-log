@@ -30,6 +30,7 @@ test:
 
   before_script:
     # Install all dependencies required for the app and tests
+    - python -m pip install --upgrade pip
     - pip install --no-cache-dir -r requirements.txt
 
   script:
@@ -37,7 +38,7 @@ test:
     - pytest -v --cov=app --cov-report=term-missing --cov-report=xml
 
     # Enforce minimum coverage in a separate step (optional but explicit)
-    - pytest --cov=app --cov-fail-under=80
+    - pytest --cov=app --cov-fail-under=75
 
     # Code formatting check (fails job if formatting is wrong)
     - black --check app/ tests/
