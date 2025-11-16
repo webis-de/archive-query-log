@@ -1,49 +1,39 @@
-# Use Node 22 on Debian bookworm. Angular 18 officially supports Node ^18.19.1 || ^20.11.1 || ^22.0.0.
-image: node:24.11.0-bookworm
+image: node:24-bookworm
 
-# Create pipelines only for push events to the main branch.
 workflow:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop"'
     - when: never
 
 stages: [install, lint, test, build]
 
-# Cache the npm download cache (not node_modules) across jobs to speed up 'npm ci'
-# while keeping reproducible installs.
 cache:
   key: "npm-$CI_COMMIT_REF_SLUG"
   paths: [.npm/]
   policy: pull-push
 
 variables:
-  CI: "true"                # Ensure Angular/Karma run in CI/non-interactive mode.
-  NPM_CONFIG_CACHE: ".npm"  # Redirect npm cache into a path we can cache between jobs.
+  CI: "true"
+  NPM_CONFIG_CACHE: ".npm"
 
-# 1) Install dependencies once; share node_modules via artifacts with later stages.
-#    'npm ci' guarantees lockfile-exact, reproducible installs and removes any preexisting node_modules.
 install:
   stage: install
   before_script:
     - node -v && npm -v
-    - npm i -g npm@11.6.1 && npm -v
   script:
     - npm ci --cache $NPM_CONFIG_CACHE --prefer-offline
   artifacts:
     paths: [node_modules/]
     expire_in: 2h
 
-# 2) Lint using the workspace's configured Angular ESLint builder.
 lint:
   stage: lint
   needs: ["install"]
   script:
     - npm run lint
 
-# 3) Unit tests in Headless Chrome on CI.
-#    Install Debian's Chromium and point Karma's chrome launcher to the Chromium binary.
-#    Many containerized runners execute as root; if Chrome sandboxing blocks start-up,
-#    use a custom "ChromeHeadlessNoSandbox" launcher in karma.conf.js.
 test:
   stage: test
   needs: ["install"]
@@ -54,7 +44,6 @@ test:
   script:
     - npm run test:ci
 
-# 4) Production build with Angular CLI; keep dist/ as artifact for download or later jobs.
 build:
   stage: build
   needs: ["install"]
