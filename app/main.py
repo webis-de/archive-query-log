@@ -13,7 +13,7 @@ from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 
 from app.core.elastic import close_es_client
-from app.routers import hello, search
+from app.routers import search
 
 
 # ---------------------------------------------------------
@@ -32,7 +32,7 @@ async def lifespan(app: FastAPI):
 # ---------------------------------------------------------
 app = FastAPI(
     title="FastAPI AQL-Browser Backend",
-    description="A minimal FastAPI project.",
+    description="A minimal FastAPI project serving as a proxy between frontend and elasticsearch.",
     version="0.1.0",
     lifespan=lifespan,
 )
@@ -73,7 +73,6 @@ async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
 # ---------------------------------------------------------
 # Include routers
 # ---------------------------------------------------------
-app.include_router(hello.router, prefix="/api", tags=["hello"])
 app.include_router(search.router, prefix="/api", tags=["search"])
 
 
