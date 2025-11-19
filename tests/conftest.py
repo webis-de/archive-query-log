@@ -22,16 +22,6 @@ def client():
         yield c
 
 
-@pytest.fixture
-def sample_data():
-    """Example fixture for test data
-
-    You can create fixtures for database connections,
-    mock data, authentication tokens, etc.
-    """
-    return {"name": "Test User", "email": "test@example.com"}
-
-
 # -------------------------------------------------------------------
 # 🔹 Elasticsearch Mock Fixture (wird automatisch für alle Tests aktiviert)
 # -------------------------------------------------------------------
