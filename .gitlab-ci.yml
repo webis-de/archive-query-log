@@ -44,7 +44,7 @@ test:
     - black --check app/ tests/
 
     # Linting (PEP8 etc.)
-    - flake8 app/ tests/ --max-line-length=88
+    - flake8 app/ tests/
 
     # Static type checking
     - mypy app/
