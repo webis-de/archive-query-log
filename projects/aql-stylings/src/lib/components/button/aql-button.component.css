@@ -1,0 +1,22 @@
+/* overriding daisyui button styles */
+
+.btn {
+    padding: 0.5rem 1rem;
+}
+
+.btn-square {
+    border-radius: 0.5rem;
+}
+
+.btn-rounded {
+    border-radius: 0.5rem;
+}
+
+.btn-full {
+    border-radius: 9999px;
+}
+
+.btn-flatten {
+    box-shadow: none !important;
+    border: none !important;
+}

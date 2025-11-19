@@ -1,6 +1,39 @@
-<div class="container">
-  <h1>Willkommen bei AQL Frontend!</h1>
-  <p>Die Angular 18 Standalone-Anwendung läuft erfolgreich.</p>
+<div class="min-h-screen bg-base-100 text-base-content">
+  <main class="container min-h-screen mx-auto px-4 py-10">
+    <div class="flex flex-col items-center gap-8">
+      <div class="space-y-4">
+        <h1 class="text-3xl font-extrabold tracking-tight text-4xl">
+          Willkommen bei
+          <span class="text-primary">AQL Frontend</span>
+        </h1>
+        <p class="text-base text-neutral-600 text-lg">
+          Die Angular 20 App läuft jetzt mit neuestem
+          <span class="font-semibold">Tailwind CSS v4</span>
+          und
+          <span class="font-semibold">daisyUI v5</span> als Design‑System.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <aql-button btnType="primary" btnStyle="rounded" [flatten]="true" iconBefore="bi-boxes"
+            >Primary</aql-button
+          >
+          <aql-button btnType="secondary" btnStyle="full" iconAfter="bi-three-dots"
+            >Secondary</aql-button
+          >
+          <aql-dropdown position="right end">
+            <aql-button trigger btnType="ghost" [soft]="true" [flatten]="true">Click me</aql-button>
+            <ul content>
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </aql-dropdown>
+        </div>
+      </div>
+    </div>
+    <section>
+      <router-outlet />
+    </section>
+  </main>
 </div>
 
 <router-outlet />

@@ -10,7 +10,8 @@
       "@services/*": ["src/services/*"],
       "@models/*": ["src/models/*"],
       "@utils/*": ["src/utils/*"],
-      "@environments/*": ["src/environments/*"]
+      "@environments/*": ["src/environments/*"],
+      "aql-stylings": ["dist/aql-stylings"]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
