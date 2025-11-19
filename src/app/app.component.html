@@ -7,14 +7,26 @@
           <span class="text-primary">AQL Frontend</span>
         </h1>
         <p class="text-base text-neutral-600 text-lg">
-          Die Angular 20 App läuft jetzt mit
-          <span class="font-semibold">Tailwind CSS</span>
+          Die Angular 20 App läuft jetzt mit neuestem
+          <span class="font-semibold">Tailwind CSS v4</span>
           und
-          <span class="font-semibold">daisyUI</span> als Design‑System.
+          <span class="font-semibold">daisyUI v5</span> als Design‑System.
         </p>
         <div class="flex flex-wrap gap-3">
-          <button class="btn btn-primary">Primary Action</button>
-          <button class="btn btn-outline btn-secondary">Secondary Action</button>
+          <aql-button btnType="primary" btnStyle="rounded" [flatten]="true" iconBefore="bi-boxes"
+            >Primary</aql-button
+          >
+          <aql-button btnType="secondary" btnStyle="full" iconAfter="bi-three-dots"
+            >Secondary</aql-button
+          >
+          <aql-dropdown position="right end">
+            <aql-button trigger btnType="ghost" [soft]="true" [flatten]="true">Click me</aql-button>
+            <ul content>
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </aql-dropdown>
         </div>
       </div>
     </div>

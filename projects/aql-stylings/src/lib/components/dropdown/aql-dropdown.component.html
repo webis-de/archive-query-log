@@ -1,0 +1,10 @@
+<ng-content select="[trigger]"></ng-content>
+
+<ul
+  tabindex="-1"
+  class="dropdown-content menu bg-base-100 rounded-box z-1 p-2 shadow"
+  [class.w-full]="matchTriggerWidth()"
+  [style.width]="!matchTriggerWidth() && contentWidth() ? contentWidth() : null"
+>
+  <ng-content select="[content]"></ng-content>
+</ul>

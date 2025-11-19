@@ -1,0 +1,15 @@
+:host.dropdown-bottom .dropdown-content {
+  margin-top: 0.25rem;
+}
+
+:host.dropdown-top .dropdown-content {
+  margin-bottom: 0.25rem;
+}
+
+:host.dropdown-left .dropdown-content {
+  margin-right: 0.25rem;
+}
+
+:host.dropdown-right .dropdown-content {
+  margin-left: 0.25rem;
+}
