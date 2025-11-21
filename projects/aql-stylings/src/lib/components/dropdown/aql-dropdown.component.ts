@@ -10,13 +10,15 @@ import {
   inject,
   input,
   signal,
+  PLATFORM_ID,
+  OnDestroy,
+  ViewChild,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 type DropdownPositionSegment = 'bottom' | 'top' | 'left' | 'right' | 'start' | 'end';
 export type DropdownPosition =
   | DropdownPositionSegment
-  | `${DropdownPositionSegment}-${DropdownPositionSegment}`
   | `${DropdownPositionSegment} ${DropdownPositionSegment}`;
 
 @Component({
@@ -27,14 +29,19 @@ export type DropdownPosition =
   styleUrl: './aql-dropdown.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AqlDropdownComponent {
+export class AqlDropdownComponent implements OnDestroy {
   private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly platformId = inject(PLATFORM_ID);
+
+  @ViewChild('contentElement') contentElement!: ElementRef<HTMLElement>;
 
   readonly matchTriggerWidth = input(false, { transform: booleanAttribute });
   readonly contentWidth = input<string | null>('14rem');
   readonly position = input<DropdownPosition | undefined>('bottom');
 
   private readonly openState = signal(false);
+  protected readonly fixedStyles = signal<Record<string, string | number>>({});
+  private cleanupFn: (() => void) | null = null;
 
   private readonly positionSegments = computed<ReadonlySet<DropdownPositionSegment>>(() => {
     const rawPosition = this.position() ?? 'bottom';
@@ -111,11 +118,19 @@ export class AqlDropdownComponent {
       this.setDropdownOpenState(!this.openState());
       return;
     }
+  }
 
-    const contentElement = target.closest('[content]');
-    if (contentElement && hostElement.contains(contentElement)) {
-      this.setDropdownOpenState(false);
-    }
+  onContentClick(event: MouseEvent): void {
+    // Close dropdown and stop propagation to prevent group item from closing
+    this.setDropdownOpenState(false);
+    event.stopPropagation();
+    event.preventDefault();
+  }
+
+  onContentMouseDown(event: MouseEvent): void {
+    // Prevent parent menu items from receiving :active styles
+    event.stopPropagation();
+    event.preventDefault();
   }
 
   @HostListener('document:click', ['$event'])
@@ -125,9 +140,30 @@ export class AqlDropdownComponent {
       return;
     }
 
+    if (this.contentElement && this.contentElement.nativeElement.contains(target)) {
+      return;
+    }
+
     const clickedInside = this.elementRef.nativeElement.contains(target);
+
     if (!clickedInside && this.openState()) {
       this.setDropdownOpenState(false);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.cleanupListeners();
+    if (this.openState() && isPlatformBrowser(this.platformId) && this.contentElement) {
+      if (this.contentElement.nativeElement.parentElement === document.body) {
+        document.body.removeChild(this.contentElement.nativeElement);
+      }
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(): void {
+    if (this.openState()) {
+      this.updateFixedPosition();
     }
   }
 
@@ -139,11 +175,113 @@ export class AqlDropdownComponent {
       return;
     }
 
-    this.openState.set(isOpen);
+    if (isOpen) {
+      this.updateFixedPosition();
+      this.moveContentToBody();
+      this.setupListeners();
+      this.openState.set(isOpen);
+    } else {
+      this.openState.set(isOpen);
+      requestAnimationFrame(() => {
+        this.restoreContent();
+      });
+      this.cleanupListeners();
+    }
 
     if (!isOpen) {
       this.blurActiveElementWithinDropdown();
     }
+  }
+
+  private moveContentToBody(): void {
+    if (isPlatformBrowser(this.platformId) && this.contentElement) {
+      document.body.appendChild(this.contentElement.nativeElement);
+    }
+  }
+
+  private restoreContent(): void {
+    if (isPlatformBrowser(this.platformId) && this.contentElement) {
+      this.elementRef.nativeElement.appendChild(this.contentElement.nativeElement);
+    }
+  }
+
+  private setupListeners(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const scrollHandler = () => {
+      this.updateFixedPosition();
+    };
+
+    window.addEventListener('scroll', scrollHandler, { capture: true, passive: true });
+
+    this.cleanupFn = () => {
+      window.removeEventListener('scroll', scrollHandler, { capture: true });
+    };
+  }
+
+  private cleanupListeners(): void {
+    if (this.cleanupFn) {
+      this.cleanupFn();
+      this.cleanupFn = null;
+    }
+  }
+
+  private updateFixedPosition(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const rect = this.elementRef.nativeElement.getBoundingClientRect();
+    const styles: Record<string, string | number> = {
+      position: 'fixed',
+      zIndex: '9999',
+    };
+
+    const segments = this.positionSegments();
+    const isRight = segments.has('right');
+    const isLeft = segments.has('left');
+    const isTop = segments.has('top');
+    const isBottom = !isTop && !isLeft && !isRight;
+    const isEnd = segments.has('end');
+    const margin = 4;
+
+    // Vertical alignment
+    if (isBottom) {
+      styles['top'] = `${rect.bottom + margin}px`;
+      if (isEnd) {
+        styles['right'] = `${window.innerWidth - rect.right}px `;
+      } else {
+        styles['left'] = `${rect.left}px `;
+      }
+    } else if (isTop) {
+      styles['bottom'] = `${window.innerHeight - rect.top + margin}px`;
+      if (isEnd) {
+        styles['right'] = `${window.innerWidth - rect.right}px`;
+      } else {
+        styles['left'] = `${rect.left}px`;
+      }
+    }
+
+    // Horizontal alignment
+    if (isRight) {
+      styles['left'] = `${rect.right + margin}px`;
+      if (isEnd) {
+        styles['bottom'] = `${window.innerHeight - rect.bottom}px`;
+      } else {
+        styles['top'] = `${rect.top}px`;
+      }
+    } else if (isLeft) {
+      styles['right'] = `${window.innerWidth - rect.left + margin}px`;
+      if (isEnd) {
+        styles['bottom'] = `${window.innerHeight - rect.bottom}px`;
+      } else {
+        styles['top'] = `${rect.top}px`;
+      }
+    }
+
+    this.fixedStyles.set(styles);
   }
 
   private blurActiveElementWithinDropdown(): void {

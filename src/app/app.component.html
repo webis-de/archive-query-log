@@ -1,35 +1,94 @@
-<div class="min-h-screen bg-base-100 text-base-content">
-  <main class="container min-h-screen mx-auto px-4 py-10">
-    <div class="flex flex-col items-center gap-8">
-      <div class="space-y-4">
-        <h1 class="text-3xl font-extrabold tracking-tight text-4xl">
-          Willkommen bei
-          <span class="text-primary">AQL Frontend</span>
-        </h1>
-        <p class="text-base text-neutral-600 text-lg">
-          Die Angular 20 App läuft jetzt mit neuestem
-          <span class="font-semibold">Tailwind CSS v4</span>
-          und
-          <span class="font-semibold">daisyUI v5</span> als Design‑System.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <aql-button btnType="primary" btnStyle="rounded" [flatten]="true" iconBefore="bi-boxes"
-            >Primary</aql-button
-          >
-          <aql-button btnType="secondary" btnStyle="full" iconAfter="bi-three-dots"
-            >Secondary</aql-button
-          >
-          <aql-dropdown position="right end">
-            <aql-button trigger btnType="ghost" [soft]="true" [flatten]="true">Click me</aql-button>
-            <ul content>
-              <li><a>Item 1</a></li>
-              <li><a>Item 2</a></li>
-              <li><a>Item 3</a></li>
-            </ul>
-          </aql-dropdown>
+<div class="flex h-screen bg-base-100 text-base-content overflow-hidden">
+  <aside class="h-full shrink-0">
+    <app-sidebar [userData]="userData" (newProject)="title = 'New Project Clicked'"></app-sidebar>
+  </aside>
+
+  <main class="flex-1 flex flex-col h-full overflow-hidden">
+    <div class="flex-1 overflow-y-auto p-10">
+      <div class="flex flex-col items-center gap-8">
+        <div class="space-y-4">
+          <h1 class="text-3xl font-extrabold tracking-tight text-4xl">
+            Willkommen bei
+            <span class="text-primary">AQL Frontend</span>
+          </h1>
+          <p class="text-base text-neutral-600 text-lg">
+            Die Angular 20 App läuft jetzt mit neuestem
+            <span class="font-semibold">Tailwind CSS v4</span>
+            und
+            <span class="font-semibold">daisyUI v5</span> als Design‑System.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <aql-button btnType="primary" btnStyle="rounded" [flatten]="true" iconBefore="bi-boxes"
+              >Primary</aql-button
+            >
+
+            <aql-button btnType="secondary" btnStyle="full" iconAfter="bi-three-dots"
+              >Secondary</aql-button
+            >
+
+            <div>
+              <aql-dropdown position="right end">
+                <aql-button trigger btnType="ghost" [soft]="true" [flatten]="true"
+                  >Click me</aql-button
+                >
+                <ng-container content>
+                  <aql-menu-item iconBefore="bi-cup-straw">Item 1</aql-menu-item>
+                  <aql-menu-item>Item 2</aql-menu-item>
+                  <aql-menu-item>Item 3 </aql-menu-item>
+                </ng-container>
+              </aql-dropdown>
+            </div>
+
+            <aql-group-item class="w-80" iconBefore="bi-folder2" iconBeforeOpen="bi-folder2-open">
+              <span label>Group Item</span>
+              <aql-dropdown after position="right">
+                <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+                <ng-container content>
+                  <aql-menu-item iconBefore="bi-cup-straw">Item 1</aql-menu-item>
+                  <aql-menu-item>Item 2</aql-menu-item>
+                  <aql-menu-item>Item 3 </aql-menu-item>
+                </ng-container>
+              </aql-dropdown>
+
+              <aql-menu-item
+                >Lorum Ipsum
+                <aql-dropdown after position="right">
+                  <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+                  <ng-container content>
+                    <aql-menu-item iconBefore="bi-cup-straw">Item 1</aql-menu-item>
+                    <aql-menu-item>Item 2</aql-menu-item>
+                    <aql-menu-item>Item 3 </aql-menu-item>
+                  </ng-container>
+                </aql-dropdown></aql-menu-item
+              >
+              <aql-menu-item
+                >Lorum Ipsum dolor sit
+                <aql-dropdown after position="right">
+                  <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+                  <ng-container content>
+                    <aql-menu-item iconBefore="bi-cup-straw">Item 1</aql-menu-item>
+                    <aql-menu-item>Item 2</aql-menu-item>
+                    <aql-menu-item>Item 3 </aql-menu-item>
+                  </ng-container>
+                </aql-dropdown></aql-menu-item
+              >
+              <aql-menu-item
+                >Lorum Ipsum dolor sit amet
+                <aql-dropdown after position="right">
+                  <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+                  <ng-container content>
+                    <aql-menu-item iconBefore="bi-cup-straw">Item 1</aql-menu-item>
+                    <aql-menu-item>Item 2</aql-menu-item>
+                    <aql-menu-item>Item 3 </aql-menu-item>
+                  </ng-container>
+                </aql-dropdown></aql-menu-item
+              >
+            </aql-group-item>
+          </div>
         </div>
       </div>
     </div>
+
     <section>
       <router-outlet />
     </section>

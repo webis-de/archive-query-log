@@ -65,6 +65,12 @@ describe('AqlButtonComponent', () => {
       setInputAndDetect('btnType', 'link');
       expect(buttonElement.nativeElement.classList.contains('btn-link')).toBe(true);
     });
+
+    it('should use icon-only styling when type is icon', () => {
+      setInputAndDetect('btnType', 'icon');
+      expect(buttonElement.nativeElement.classList.contains('btn')).toBe(false);
+      expect(buttonElement.nativeElement.classList.contains('hover:text-base-content')).toBe(true);
+    });
   });
 
   describe('Button Styles', () => {

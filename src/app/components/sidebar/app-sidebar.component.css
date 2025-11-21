@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+/* Sidebar slide animation */
+.sidebar-container {
+  position: relative;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.sidebar-container.expanded {
+  width: 320px;
+}
+
+.sidebar-container.collapsed {
+  width: 56px;
+}
+
+.collapsed-rail,
+.sidebar-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: opacity 150ms ease-in-out;
+}
+
+.collapsed-rail {
+  width: 56px;
+}
+
+.sidebar-panel {
+  width: 320px;
+}
+
+.collapsed-rail.hidden,
+.sidebar-panel.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
