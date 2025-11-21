@@ -11,7 +11,7 @@
       "@models/*": ["src/models/*"],
       "@utils/*": ["src/utils/*"],
       "@environments/*": ["src/environments/*"],
-      "aql-stylings": ["dist/aql-stylings"]
+      "aql-stylings": ["projects/aql-stylings/src/public-api"]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,

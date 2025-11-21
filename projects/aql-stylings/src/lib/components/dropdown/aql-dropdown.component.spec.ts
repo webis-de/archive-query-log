@@ -45,8 +45,8 @@ describe('AqlDropdownComponent', () => {
     dropdownElement = dropdownDebug.nativeElement as HTMLElement;
   });
 
-  function getDropdownContent(): HTMLElement {
-    return dropdownElement.querySelector('ul.dropdown-content') as HTMLElement;
+  function getDropdownContent(): HTMLElement | null {
+    return dropdownElement.querySelector('div.dropdown-content') as HTMLElement;
   }
 
   it('should render trigger and content containers', () => {
@@ -59,9 +59,9 @@ describe('AqlDropdownComponent', () => {
     host.position = 'top start';
     fixture.detectChanges();
 
-    expect(dropdownElement.classList.contains('dropdown-top')).toBeTrue();
-    expect(dropdownElement.classList.contains('dropdown-start')).toBeTrue();
-    expect(dropdownElement.classList.contains('dropdown-bottom')).toBeFalse();
+    expect(dropdownElement.classList.contains('dropdown-top')).toBe(true);
+    expect(dropdownElement.classList.contains('dropdown-start')).toBe(true);
+    expect(dropdownElement.classList.contains('dropdown-bottom')).toBe(false);
   });
 
   it('should toggle open state when trigger is clicked and close on outside click', () => {
@@ -69,22 +69,22 @@ describe('AqlDropdownComponent', () => {
     trigger.click();
     fixture.detectChanges();
 
-    expect(dropdownElement.classList.contains('dropdown-open')).toBeTrue();
+    expect(dropdownElement.classList.contains('dropdown-open')).toBe(true);
 
     document.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     fixture.detectChanges();
 
-    expect(dropdownElement.classList.contains('dropdown-open')).toBeFalse();
+    expect(dropdownElement.classList.contains('dropdown-open')).toBe(false);
   });
 
   it('should respect the open input value', () => {
     host.open = true;
     fixture.detectChanges();
-    expect(dropdownElement.classList.contains('dropdown-open')).toBeTrue();
+    expect(dropdownElement.classList.contains('dropdown-open')).toBe(true);
 
     host.open = false;
     fixture.detectChanges();
-    expect(dropdownElement.classList.contains('dropdown-open')).toBeFalse();
+    expect(dropdownElement.classList.contains('dropdown-open')).toBe(false);
   });
 
   it('should apply matchTriggerWidth class and clear inline width when enabled', () => {
@@ -92,11 +92,11 @@ describe('AqlDropdownComponent', () => {
     fixture.detectChanges();
 
     const dropdownContent = getDropdownContent();
-    expect(dropdownContent.classList.contains('w-full')).toBeTrue();
+    expect(dropdownContent!.classList.contains('w-full')).toBe(true);
 
     host.matchTriggerWidth = false;
     fixture.detectChanges();
-    expect(dropdownContent.classList.contains('w-full')).toBeFalse();
+    expect(dropdownContent!.classList.contains('w-full')).toBe(false);
   });
 
   it('should set inline width when contentWidth is provided and matchTriggerWidth is false', () => {
@@ -104,10 +104,10 @@ describe('AqlDropdownComponent', () => {
     host.contentWidth = '20rem';
     fixture.detectChanges();
 
-    expect(getDropdownContent().style.width).toBe('20rem');
+    expect(getDropdownContent()!.style.width).toBe('20rem');
 
     host.matchTriggerWidth = true;
     fixture.detectChanges();
-    expect(getDropdownContent().style.width).toBe('');
+    expect(getDropdownContent()!.style.width).toBe('');
   });
 });

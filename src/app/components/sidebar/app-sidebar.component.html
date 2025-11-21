@@ -1,0 +1,159 @@
+<div
+  class="flex h-full text-base-content sidebar-container"
+  [class.collapsed]="isCollapsed()"
+  [class.expanded]="!isCollapsed()"
+>
+  <!-- Collapsed rail -->
+  <div
+    class="collapsed-rail flex flex-col items-center justify-between bg-base-100 border-r border-base-200 pt-3 pb-2 px-2 shadow-sm"
+    [class.hidden]="!isCollapsed()"
+  >
+    <div class="w-full flex justify-center pb-3">
+      <aql-button
+        btnType="default"
+        iconStyle="square"
+        size="md"
+        iconBefore="bi-list"
+        aria-label="Expand sidebar"
+        (buttonClick)="toggleCollapsed(false)"
+      >
+      </aql-button>
+    </div>
+
+    <div class="flex-1 flex flex-col items-center gap-2">
+      <aql-button
+        btnType="primary"
+        iconStyle="square"
+        size="md"
+        iconBefore="bi-folder-plus"
+        aria-label="New project"
+        (buttonClick)="onNewProject()"
+      >
+      </aql-button>
+
+      <aql-button
+        btnType="default"
+        iconStyle="square"
+        size="md"
+        iconBefore="bi-search"
+        aria-label="Temporary search"
+      >
+      </aql-button>
+    </div>
+
+    <div>
+      <aql-avatar-card
+        [name]="userData().user.name"
+        [subtitle]="userData().user.institute"
+        [imageSrc]="userData().user.avatarUrl"
+        [avatarOnly]="true"
+      >
+      </aql-avatar-card>
+    </div>
+  </div>
+
+  <!-- Expanded panel -->
+  <div
+    class="sidebar-panel flex flex-col h-full w-80 bg-base-100 border-r border-base-200 shadow-sm overflow-y-auto overflow-x-hidden"
+    [class.hidden]="isCollapsed()"
+  >
+    <div class="flex flex-col sticky top-0 bg-base-100 z-10 pt-3 px-2 gap-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center w-full gap-3">
+          <h1 class="text-lg font-semibold leading-none w-full">Archive Query Log</h1>
+          <aql-button
+            btnType="default"
+            iconStyle="square"
+            iconBefore="bi-list"
+            aria-label="Collapse sidebar"
+            (buttonClick)="toggleCollapsed(true)"
+          >
+          </aql-button>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div>
+          <aql-button
+            btnType="primary"
+            btnStyle="rounded"
+            [fullWidth]="true"
+            [align]="'start'"
+            iconBefore="bi-folder-plus"
+            (buttonClick)="onNewProject()"
+          >
+            New Project
+          </aql-button>
+        </div>
+
+        <div>
+          <aql-button
+            btnType="default"
+            btnStyle="rounded"
+            [fullWidth]="true"
+            [align]="'start'"
+            iconBefore="bi-search"
+            aria-label="Temporary search"
+          >
+            Temporary Search
+          </aql-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-2 py-3">
+      @if (filteredProjects.length > 0) {
+        @for (project of filteredProjects; track project.id) {
+          <aql-group-item
+            class="group-item-row"
+            [iconBefore]="'bi-folder2'"
+            [iconBeforeOpen]="'bi-folder2-open'"
+          >
+            <span label class="font-medium text-sm text-base-content/80">{{ project.name }}</span>
+
+            <aql-dropdown after position="right">
+              <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+              <ng-container content>
+                <aql-menu-item iconBefore="bi-pin">Pin Project</aql-menu-item>
+                <aql-menu-item iconBefore="bi-pencil">Rename Project</aql-menu-item>
+                <aql-menu-item iconBefore="bi-trash">Delete Project</aql-menu-item>
+              </ng-container>
+            </aql-dropdown>
+
+            @for (item of project.items; track item.id) {
+              <aql-menu-item
+                [selected]="selectedItemId() === item.id"
+                (selectedChange)="$event ? onItemSelected(item.id) : null"
+              >
+                {{ item.name }}
+                <aql-dropdown after position="right">
+                  <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+                  <ng-container content>
+                    <aql-menu-item iconBefore="bi-pencil">Rename Search</aql-menu-item>
+                    <aql-menu-item iconBefore="bi-trash">Delete Search</aql-menu-item>
+                  </ng-container>
+                </aql-dropdown>
+              </aql-menu-item>
+            }
+          </aql-group-item>
+        }
+      } @else {
+        <div
+          class="flex flex-col items-center justify-center h-40 text-center px-4 text-base-content/60"
+        >
+          <p>Create new project and start querying the web archive</p>
+        </div>
+      }
+    </div>
+
+    <div class="sticky bottom-0 bg-base-100 p-2 border-t border-base-200 mt-auto">
+      <aql-avatar-card
+        [name]="userData().user.name"
+        [subtitle]="userData().user.institute"
+        [imageSrc]="userData().user.avatarUrl"
+        [avatarOnly]="false"
+      >
+      </aql-avatar-card>
+    </div>
+  </div>
+</div>
