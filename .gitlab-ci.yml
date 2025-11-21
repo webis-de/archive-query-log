@@ -23,7 +23,7 @@ install:
   before_script:
     - node -v && npm -v
   script:
-    - npm ci --cache $NPM_CONFIG_CACHE --prefer-offline
+    - npm ci --cache $NPM_CONFIG_CACHE
   artifacts:
     paths: [node_modules/]
     expire_in: 2h
