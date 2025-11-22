@@ -149,6 +149,68 @@ def test_search_by_year_success(client):
         assert r.json() == {"count": 1, "results": [10]}
 
 
+# -------------------------------------------------------------------
+# Tests for get serp by id
+# -------------------------------------------------------------------
+
+
+def test_get_serp_by_id_success(client):
+    """Test successful retrieval of SERP by ID"""
+    mock_serp = {
+        "_id": "test-uuid-1234",
+        "_source": {
+            "url_query": "test query",
+            "capture": {
+                "url": "https://example.com/search",
+                "timestamp": "2021-01-01T00:00:00+00:00",
+            },
+            "provider": {"domain": "example.com"},
+        },
+        "found": True,
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+    ):
+        r = client.get("search/serp/test-uuid-1234")
+        assert r.status_code == 200
+        assert r.json() == mock_serp
+
+
+def test_get_serp_by_id_not_found(client):
+    """Test SERP not found returns 404"""
+    with patch("app.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
+        r = client.get("search/serp/nonexistent-id")
+        assert r.status_code == 404
+        assert "No results found" in r.json()["detail"]
+
+
+def test_get_serp_by_id_invalid_uuid_format(client):
+    """Test with malformed UUID"""
+    with patch("app.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
+        r = client.get("search/serp/not-a-valid-uuid")
+        assert r.status_code == 404
+
+
+def test_get_serp_by_id_elasticsearch_error(client):
+    """Test Elasticsearch connection error handling"""
+
+    async def raise_connection_error():
+        raise ConnectionError(message="Connection failed", meta=None)
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_by_id",
+        side_effect=raise_connection_error,
+    ):
+        r = client.get("search/serp/test-uuid-1234")
+        assert r.status_code == 500
+
+
+# -------------------------------------------------------------------
+# Tests for get serp by id
+# -------------------------------------------------------------------
+
+
 # --------------------- Additional tests for complete Coverage ---------------------
 
 
