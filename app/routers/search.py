@@ -147,3 +147,14 @@ async def search_by_year(
         aql_service.search_by_year(query=query, year=year, size=size)
     )
     return {"count": len(results), "results": results}
+
+
+# ---------------------------------------------------------
+# 6. Search SERPs by ID
+# ---------------------------------------------------------
+@router.get("/search/serp/{serp_id}")
+@limiter.limit("20/minute")
+async def get_serp(request: Request, serp_id: str):
+    print(f"[DEBUG] Fetching SERP ID: {serp_id}")
+    result = await safe_search(aql_service.get_serp_by_id(serp_id))
+    return result
