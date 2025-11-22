@@ -26,6 +26,19 @@
               >Secondary</aql-button
             >
 
+            <input-field label="Input Field" placeholder="Input"></input-field>
+            <input-field 
+                placeholder="Enter Name" 
+                [showIcon]="false" 
+                [showButton]="false">
+            </input-field>
+            
+
+            <input-field 
+  [disabled]="true" 
+  placeholder="Cannot type here">
+</input-field>
+
             <div>
               <aql-dropdown position="right end">
                 <aql-button trigger btnType="ghost" [soft]="true" [flatten]="true"

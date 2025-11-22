@@ -8,6 +8,7 @@ import {
 } from 'aql-stylings';
 import { AppSidebarComponent } from './components/sidebar/app-sidebar.component';
 import { MOCK_USER_DATA } from './mock-data';
+import { InputFieldComponent } from 'projects/aql-stylings/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { MOCK_USER_DATA } from './mock-data';
     AqlDropdownComponent,
     AqlButtonComponent,
     AqlGroupItemComponent,
+    InputFieldComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
