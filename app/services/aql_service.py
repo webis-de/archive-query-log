@@ -113,12 +113,11 @@ async def search_by_year(query: str, year: int, size: int = 10) -> List[Any]:
 # ---------------------------------------------------------
 # 6. Search SERPs by ID
 # ---------------------------------------------------------
-async def get_serp_by_id(serp_id: str) -> List[Any] | None:
+async def get_serp_by_id(serp_id: str) -> Any | None:
     """Fetch a single SERP by ID from Elasticsearch."""
     es = get_es_client()
     try:
         response = await es.get(index="aql_serps", id=serp_id)
-        hits: List[Any] = response["hits"]["hits"]
-        return hits
+        return response
     except Exception:
         return None
