@@ -51,8 +51,6 @@ docker-compose down
 
 - `GET /` - Root endpoint (Health Check)
 - `GET /health` - Health Check
-- `GET /api/hello` - Hello World
-- `GET /api/hello/{name}` - Personalized greeting
 - `GET /api/search/basic?query=term` - Basic SERP search
 - `GET /api/search/providers?name=provider` - Search for providers
 - `GET /api/search/advanced` - Advanced search with filters
@@ -60,7 +58,8 @@ docker-compose down
 - `GET /api/search/by-year?query=term&year=YYYY` - Search by year
 - `GET /docs` - Swagger UI interactive API documentation
 - `GET /redoc` - ReDoc API documentation
-
+- `GET /api/serp/{serp_id}` - Get a single SERP by ID
+- `GET /api/serp/{serp_id}/original-url` - Get the original SERP URL
 ---
 
 ## ⚙️ For Developers (Development)

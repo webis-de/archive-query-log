@@ -121,3 +121,15 @@ async def get_serp_by_id(serp_id: str) -> Any | None:
         return response
     except Exception:
         return None
+
+
+# ---------------------------------------------------------
+# 7. Get original URL
+# ---------------------------------------------------------
+async def get_serp_original_url(serp_id: str) -> dict | None:
+    """Get the original SERP URL from a SERP by ID."""
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    return {"serp_id": serp["_id"], "original_url": serp["_source"]["capture"]["url"]}
