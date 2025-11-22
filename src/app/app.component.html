@@ -26,18 +26,23 @@
               >Secondary</aql-button
             >
 
-            <input-field label="Input Field" placeholder="Input"></input-field>
-            <input-field 
-                placeholder="Enter Name" 
-                [showIcon]="false" 
-                [showButton]="false">
+            <input-field shape="circle" placeholder="Search..."></input-field>
+            <input-field type="date" [showIcon]="false" shape="square">
+              <i prefix class="bi bi-calendar-date text-[20px] opacity-50"></i>
             </input-field>
-            
+            <input-field type="password" [showIcon]="false" placeholder="password">
+              <button suffix class="btn btn-ghost btn-xs">
+                <i class="bi bi-eye"></i>
+              </button>
+            </input-field>
+            <input-field shape="square">
+              <aql-button suffix btnType="default" btnStyle="full" [flatten]="true" size="sm">
+                Search
+              </aql-button>
+            </input-field>
+            <input-field [disabled]="true" placeholder="Cannot type here"> </input-field>
 
-            <input-field 
-  [disabled]="true" 
-  placeholder="Cannot type here">
-</input-field>
+            <input-field [showIcon]="false" placeholder="just Text..."></input-field>
 
             <div>
               <aql-dropdown position="right end">
