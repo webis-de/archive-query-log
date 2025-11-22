@@ -1,0 +1,28 @@
+<div class="search-container" [class.disabled]="disabled">
+  
+  @if (showIcon) {
+    <i class="bi bi-search search-icon"></i>
+  }
+
+  <input
+    type="text"
+    class="search-input"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onInput($event)"
+  />
+
+  @if (showButton) {
+    <div class="field__suffix">
+      <aql-button 
+        btnType="default" 
+        btnStyle="full" 
+        [flatten]="true" 
+        size="sm"
+        [disabled]="disabled">
+        {{ buttonText }}
+      </aql-button>
+    </div>
+  }
+</div>
