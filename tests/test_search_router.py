@@ -172,7 +172,7 @@ def test_get_serp_by_id_success(client):
     with patch(
         "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ):
-        r = client.get("search/serp/test-uuid-1234")
+        r = client.get("serp/test-uuid-1234")
         assert r.status_code == 200
         assert r.json() == mock_serp
 
@@ -180,7 +180,7 @@ def test_get_serp_by_id_success(client):
 def test_get_serp_by_id_not_found(client):
     """Test SERP not found returns 404"""
     with patch("app.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
-        r = client.get("search/serp/nonexistent-id")
+        r = client.get("serp/nonexistent-id")
         assert r.status_code == 404
         assert "No results found" in r.json()["detail"]
 
@@ -188,7 +188,7 @@ def test_get_serp_by_id_not_found(client):
 def test_get_serp_by_id_invalid_uuid_format(client):
     """Test with malformed UUID"""
     with patch("app.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
-        r = client.get("search/serp/not-a-valid-uuid")
+        r = client.get("serp/not-a-valid-uuid")
         assert r.status_code == 404
 
 
@@ -202,12 +202,83 @@ def test_get_serp_by_id_elasticsearch_error(client):
         "app.routers.search.aql_service.get_serp_by_id",
         side_effect=raise_connection_error,
     ):
-        r = client.get("search/serp/test-uuid-1234")
+        r = client.get("serp/test-uuid-1234")
         assert r.status_code == 500
 
 
 # -------------------------------------------------------------------
 # Tests for get serp by id
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# Tests for get original url
+# -------------------------------------------------------------------
+
+
+def test_get_original_url_success(client):
+    """Test successful retrieval of original URL"""
+
+    expected_response = {
+        "serp_id": "test-uuid-1234",
+        "original_url": "https://google.com/search?q=test&utm_source=tracking",
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_original_url",
+        new=async_return(expected_response),
+    ):
+        r = client.get("/serp/test-uuid-1234/original-url")
+        assert r.status_code == 200
+        assert r.json() == expected_response
+        assert "original_url" in r.json()
+
+
+def test_get_original_url_with_special_chars(client):
+    """Test URL with special characters (encoded)"""
+    mock_response = {
+        "serp_id": "test-id",
+        "original_url": "https://google.com/search?q=%E3%83%86%E3%82%B9%E3%83%88",
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_original_url",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-id/original-url")
+        assert r.status_code == 200
+        assert "%E3%83%86" in r.json()["original_url"]
+
+
+def test_get_original_url_id_not_found(client):
+    """Test SERP not found returns 404"""
+    with patch("app.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
+        r = client.get("/serp/nonexistent-id/original-url")
+        assert r.status_code == 404
+        assert "No results found" in r.json()["detail"]
+
+
+def test_get_original_url_id_invalid_uuid_format(client):
+    """Test with malformed UUID"""
+    with patch("app.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
+        r = client.get("/serp/not-a-valid-uuid/original-url")
+        assert r.status_code == 404
+
+
+def test_get_original_url_elasticsearch_error(client):
+    """Test Elasticsearch error handling"""
+
+    async def raise_error():
+        raise ConnectionError(message="ES down", meta=None)
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_original_url", side_effect=raise_error
+    ):
+        r = client.get("/serp/test-id/original-url")
+        assert r.status_code == 500
+
+
+# -------------------------------------------------------------------
+# Tests for get original url
 # -------------------------------------------------------------------
 
 

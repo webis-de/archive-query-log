@@ -152,9 +152,19 @@ async def search_by_year(
 # ---------------------------------------------------------
 # 6. Search SERPs by ID
 # ---------------------------------------------------------
-@router.get("/search/serp/{serp_id}")
+@router.get("/serp/{serp_id}")
 @limiter.limit("20/minute")
 async def get_serp(request: Request, serp_id: str):
     print(f"[DEBUG] Fetching SERP ID: {serp_id}")
     result = await safe_search(aql_service.get_serp_by_id(serp_id))
+    return result
+
+
+# ---------------------------------------------------------
+# 7. Get original URL
+# ---------------------------------------------------------
+@router.get("/serp/{serp_id}/original-url")
+@limiter.limit("20/minute")
+async def get_original_url(request: Request, serp_id: str):
+    result = await safe_search(aql_service.get_serp_original_url(serp_id))
     return result
