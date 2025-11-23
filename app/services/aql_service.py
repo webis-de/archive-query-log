@@ -142,3 +142,25 @@ async def get_serp_original_url(
         response["url_without_tracking"] = remove_tracking_parameters(original_url)
 
     return response
+
+
+# ---------------------------------------------------------
+# 7. Get memento URL
+# ---------------------------------------------------------
+async def get_serp_memento_url(serp_id: str) -> dict | None:
+    """Get the memento SERP URL from a SERP by ID."""
+    from datetime import datetime
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    base_url = serp["_source"]["archive"]["memento_api_url"]
+    timestamp_str = serp["_source"]["capture"]["timestamp"]
+    capture_url = serp["_source"]["capture"]["url"]
+
+    timestamp = datetime.fromisoformat(timestamp_str.replace("+00:00", "+00:00"))
+    formatted_timestamp = timestamp.strftime("%Y%m%d%H%M%S")
+    memento_url = f"{base_url}/{formatted_timestamp}/{capture_url}"
+
+    return {"serp_id": serp["_id"], "memento_url": memento_url}

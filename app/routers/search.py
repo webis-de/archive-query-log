@@ -176,3 +176,13 @@ async def get_original_url(
         aql_service.get_serp_original_url(serp_id, remove_tracking)
     )
     return result
+
+
+# ---------------------------------------------------------
+# 7. Get memento URL
+# ---------------------------------------------------------
+@router.get("/serp/{serp_id}/memento-url")
+@limiter.limit("20/minute")
+async def get_memento_url(request: Request, serp_id: str):
+    result = await safe_search(aql_service.get_serp_memento_url(serp_id))
+    return result
