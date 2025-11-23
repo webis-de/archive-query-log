@@ -150,7 +150,7 @@ async def search_by_year(
 
 
 # ---------------------------------------------------------
-# 6. Search SERPs by ID
+# 6. Get SERP by ID
 # ---------------------------------------------------------
 @router.get("/serp/{serp_id}")
 @limiter.limit("20/minute")
@@ -179,10 +179,29 @@ async def get_original_url(
 
 
 # ---------------------------------------------------------
-# 7. Get memento URL
+# 8. Get memento URL
 # ---------------------------------------------------------
 @router.get("/serp/{serp_id}/memento-url")
 @limiter.limit("20/minute")
 async def get_memento_url(request: Request, serp_id: str):
     result = await safe_search(aql_service.get_serp_memento_url(serp_id))
     return result
+
+
+# ---------------------------------------------------------
+# 9. Get related SERPs
+# ---------------------------------------------------------
+@router.get("/serp/{serp_id}/related")
+@limiter.limit("20/minute")
+async def get_related_serps(
+    request: Request,
+    serp_id: str,
+    size: int = Query(10, description="Number of related SERPs to return"),
+    same_provider: bool = Query(
+        False, description="Only return SERPs from the same provider"
+    ),
+):
+    result = await safe_search(
+        aql_service.get_related_serps(serp_id, size, same_provider)
+    )
+    return {"count": len(result), "results": result}

@@ -112,7 +112,7 @@ async def search_by_year(query: str, year: int, size: int = 10) -> List[Any]:
 
 
 # ---------------------------------------------------------
-# 6. Search SERPs by ID
+# 6. Get SERP by ID
 # ---------------------------------------------------------
 async def get_serp_by_id(serp_id: str) -> Any | None:
     """Fetch a single SERP by ID from Elasticsearch."""
@@ -164,3 +164,27 @@ async def get_serp_memento_url(serp_id: str) -> dict | None:
     memento_url = f"{base_url}/{formatted_timestamp}/{capture_url}"
 
     return {"serp_id": serp["_id"], "memento_url": memento_url}
+
+
+# ---------------------------------------------------------
+# 9. Get related SERPs
+# ---------------------------------------------------------
+async def get_related_serps(
+    serp_id: str, size: int = 10, same_provider: bool = False
+) -> List[Any]:
+    """Get related SERPs by ID."""
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return []
+    query = serp["_source"]["url_query"]
+    provider_id = serp["_source"]["provider"]["id"] if same_provider else None
+
+    # add 1 to size for the original serp
+    results = await search_serps_advanced(
+        query=query, size=size + 1, provider_id=provider_id
+    )
+
+    # only use results that are not the original serp
+    related = [hit for hit in results if hit["_id"] != serp_id]
+    return related[:size]
