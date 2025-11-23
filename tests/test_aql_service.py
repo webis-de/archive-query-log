@@ -170,6 +170,7 @@ async def test_get_serp_by_id_exception():
 
         assert result is None
 
+
 # ---------------------------------------------------------
 # 8. get_serp_original_url
 # ---------------------------------------------------------
@@ -179,9 +180,7 @@ async def test_get_serp_original_url_success():
     mock_serp = {
         "_id": "test-uuid-1234",
         "_source": {
-            "capture": {
-                "url": "https://google.com/search?q=test&utm_source=tracking"
-            }
+            "capture": {"url": "https://google.com/search?q=test&utm_source=tracking"}
         },
     }
 
@@ -214,7 +213,10 @@ async def test_get_serp_original_url_with_tracking_removal():
         result = await aql.get_serp_original_url("test-id", remove_tracking=True)
 
         assert result["serp_id"] == "test-id"
-        assert result["original_url"] == "https://google.com/search?q=test&utm_source=email&fbclid=123"
+        assert (
+            result["original_url"]
+            == "https://google.com/search?q=test&utm_source=email&fbclid=123"
+        )
         assert "url_without_tracking" in result
         assert "utm_source" not in result["url_without_tracking"]
         assert "fbclid" not in result["url_without_tracking"]
@@ -255,7 +257,10 @@ async def test_get_serp_memento_url_success():
         result = await aql.get_serp_memento_url("test-uuid-5678")
 
         assert result["serp_id"] == "test-uuid-5678"
-        assert result["memento_url"] == "https://web.archive.org/web/20210615143045/https://google.com/search?q=python"
+        assert (
+            result["memento_url"]
+            == "https://web.archive.org/web/20210615143045/https://google.com/search?q=python"
+        )
 
 
 @pytest.mark.asyncio
@@ -278,7 +283,10 @@ async def test_get_serp_memento_url_different_timestamp():
         result = await aql.get_serp_memento_url("test-id-999")
 
         assert result["serp_id"] == "test-id-999"
-        assert result["memento_url"] == "https://archive.example.org/20200101000000/https://bing.com/search?q=test"
+        assert (
+            result["memento_url"]
+            == "https://archive.example.org/20200101000000/https://bing.com/search?q=test"
+        )
 
 
 @pytest.mark.asyncio
