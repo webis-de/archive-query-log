@@ -61,6 +61,7 @@ docker-compose down
 - `GET /api/serp/{serp_id}` - Get a single SERP by ID
 - `GET /api/serp/{serp_id}/original-url` - Get the original SERP URL by ID
     -  `?remove_tracking=bool` - get URL with tracking parameters removed (default=false)
+- `GET /api/serp/{serp_id}/memento-url` - Get the mementor SERP URL by ID
 ---
 
 ## ⚙️ For Developers (Development)
