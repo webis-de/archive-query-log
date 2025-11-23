@@ -80,6 +80,7 @@ docker-compose down
 - `GET /api/serp/{serp_id}/related` - Get related SERPs URL by ID
     -  `?size=uint` - number of SERPs 
     -  `?same_provider=bool` - only find SERPs of the same provider (default=false)
+- `GET /api/serp/{serp_id}/unfurl` - Get unfurled URL of SERP by ID
 ---
 
 ## ⚙️ For Developers (Development)

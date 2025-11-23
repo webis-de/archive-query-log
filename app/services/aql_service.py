@@ -188,3 +188,32 @@ async def get_related_serps(
     # only use results that are not the original serp
     related = [hit for hit in results if hit["_id"] != serp_id]
     return related[:size]
+
+
+# ---------------------------------------------------------
+# 10. Unfurl SERP URL
+# ---------------------------------------------------------
+async def get_serp_unfurl(serp_id: str) -> dict | None:
+    """
+    Parse and unfurl the SERP URL into its components.
+
+    Returns structured breakdown of URL with:
+    - Decoded query parameters
+    - Domain parts (subdomain, domain, TLD)
+    - Path segments
+    - Port (if present)
+    """
+    from app.utils.url_unfurler import unfurl
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    original_url = serp["_source"]["capture"]["url"]
+    unfurled_url = unfurl(original_url)
+
+    return {
+        "serp_id": serp["_id"],
+        "original_url": original_url,
+        "parsed": unfurled_url,
+    }

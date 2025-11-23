@@ -513,6 +513,259 @@ def test_get_related_serps_same_provider_false(client):
 # Tests for get related SERPs
 # -------------------------------------------------------------------
 
+# -------------------------------------------------------------------
+# Tests for unfurl SERP URL
+# -------------------------------------------------------------------
+
+
+def test_unfurl_serp_url_success(client):
+    """Test successful unfurling of SERP URL"""
+    expected_response = {
+        "serp_id": "test-id",
+        "original_url": "https://google.com/search?q=python&hl=en",
+        "parsed": {
+            "scheme": "https",
+            "netloc": "google.com",
+            "port": None,
+            "domain_parts": {
+                "subdomain": None,
+                "domain": "google",
+                "suffix": "com",
+                "registered_domain": "google.com",
+            },
+            "path": "/search",
+            "path_segments": ["search"],
+            "query_parameters": {"q": "python", "hl": "en"},
+            "fragment": None,
+        },
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl",
+        new=async_return(expected_response),
+    ):
+        r = client.get("/serp/test-id/unfurl")
+        assert r.status_code == 200
+        assert r.json() == expected_response
+        assert "parsed" in r.json()
+        assert "domain_parts" in r.json()["parsed"]
+        assert "path_segments" in r.json()["parsed"]
+
+
+def test_unfurl_serp_url_with_subdomain(client):
+    """Test unfurling with subdomain"""
+    mock_response = {
+        "serp_id": "test-subdomain",
+        "original_url": "https://scholar.google.com/scholar?q=test",
+        "parsed": {
+            "scheme": "https",
+            "netloc": "scholar.google.com",
+            "port": None,
+            "domain_parts": {
+                "subdomain": "scholar",
+                "domain": "google",
+                "suffix": "com",
+                "registered_domain": "google.com",
+            },
+            "path": "/scholar",
+            "path_segments": ["scholar"],
+            "query_parameters": {"q": "test"},
+            "fragment": None,
+        },
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-subdomain/unfurl")
+        assert r.status_code == 200
+        assert r.json()["parsed"]["domain_parts"]["subdomain"] == "scholar"
+        assert r.json()["parsed"]["netloc"] == "scholar.google.com"
+
+
+def test_unfurl_serp_url_with_port(client):
+    """Test unfurling with explicit port"""
+    mock_response = {
+        "serp_id": "test-port",
+        "original_url": "https://example.com:8443/search?q=test",
+        "parsed": {
+            "scheme": "https",
+            "netloc": "example.com:8443",
+            "port": 8443,
+            "domain_parts": {
+                "subdomain": None,
+                "domain": "example",
+                "suffix": "com",
+                "registered_domain": "example.com",
+            },
+            "path": "/search",
+            "path_segments": ["search"],
+            "query_parameters": {"q": "test"},
+            "fragment": None,
+        },
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-port/unfurl")
+        assert r.status_code == 200
+        assert r.json()["parsed"]["port"] == 8443
+
+
+def test_unfurl_serp_url_path_segments(client):
+    """Test unfurling with multiple path segments"""
+    mock_response = {
+        "serp_id": "test-path",
+        "original_url": "https://example.com/search/advanced/results?q=test",
+        "parsed": {
+            "scheme": "https",
+            "netloc": "example.com",
+            "port": None,
+            "domain_parts": {
+                "subdomain": None,
+                "domain": "example",
+                "suffix": "com",
+                "registered_domain": "example.com",
+            },
+            "path": "/search/advanced/results",
+            "path_segments": ["search", "advanced", "results"],
+            "query_parameters": {"q": "test"},
+            "fragment": None,
+        },
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-path/unfurl")
+        assert r.status_code == 200
+        assert r.json()["parsed"]["path_segments"] == ["search", "advanced", "results"]
+
+
+def test_unfurl_serp_url_with_encoded_params(client):
+    """Test unfurling with URL-encoded parameters"""
+    mock_response = {
+        "serp_id": "test-encoded",
+        "original_url": "https://google.com/search?q=%E3%83%86%E3%82%B9%E3%83%88",
+        "parsed": {
+            "scheme": "https",
+            "netloc": "google.com",
+            "port": None,
+            "domain_parts": {
+                "subdomain": None,
+                "domain": "google",
+                "suffix": "com",
+                "registered_domain": "google.com",
+            },
+            "path": "/search",
+            "path_segments": ["search"],
+            "query_parameters": {"q": "テスト"},
+            "fragment": None,
+        },
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-encoded/unfurl")
+        assert r.status_code == 200
+        assert "テスト" in r.json()["parsed"]["query_parameters"]["q"]
+
+
+def test_unfurl_serp_url_not_found(client):
+    """Test unfurling when SERP doesn't exist"""
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl", new=async_return(None)
+    ):
+        r = client.get("/serp/nonexistent-id/unfurl")
+        assert r.status_code == 404
+        assert "No results found" in r.json()["detail"]
+
+
+def test_unfurl_serp_url_no_query_params(client):
+    """Test unfurling URL without query parameters"""
+    mock_response = {
+        "serp_id": "test-no-params",
+        "original_url": "https://example.com/search",
+        "parsed": {
+            "scheme": "https",
+            "netloc": "example.com",
+            "port": None,
+            "domain_parts": {
+                "subdomain": None,
+                "domain": "example",
+                "suffix": "com",
+                "registered_domain": "example.com",
+            },
+            "path": "/search",
+            "path_segments": ["search"],
+            "query_parameters": {},
+            "fragment": None,
+        },
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-no-params/unfurl")
+        assert r.status_code == 200
+        assert r.json()["parsed"]["query_parameters"] == {}
+
+
+def test_unfurl_serp_url_with_fragment(client):
+    """Test unfurling URL with fragment identifier"""
+    mock_response = {
+        "serp_id": "test-fragment",
+        "original_url": "https://example.com/search?q=test#results",
+        "parsed": {
+            "scheme": "https",
+            "netloc": "example.com",
+            "port": None,
+            "domain_parts": {
+                "subdomain": None,
+                "domain": "example",
+                "suffix": "com",
+                "registered_domain": "example.com",
+            },
+            "path": "/search",
+            "path_segments": ["search"],
+            "query_parameters": {"q": "test"},
+            "fragment": "results",
+        },
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-fragment/unfurl")
+        assert r.status_code == 200
+        assert r.json()["parsed"]["fragment"] == "results"
+
+
+def test_unfurl_serp_url_elasticsearch_error(client):
+    """Test Elasticsearch error handling for unfurl"""
+
+    async def raise_error():
+        raise ConnectionError(message="ES down", meta=None)
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_unfurl", side_effect=raise_error
+    ):
+        r = client.get("/serp/test-id/unfurl")
+        assert r.status_code == 500
+
+
+# -------------------------------------------------------------------
+# Tests for unfurl SERP URL
+# -------------------------------------------------------------------
+
 # --------------------- Additional tests for complete Coverage ---------------------
 
 

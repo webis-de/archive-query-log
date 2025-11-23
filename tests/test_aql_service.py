@@ -497,3 +497,253 @@ async def test_get_related_serps_custom_size():
 
         # Should return exactly 20 results
         assert len(result) == 20
+
+
+# ---------------------------------------------------------
+# 11. get_serp_unfurl
+# ---------------------------------------------------------
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_success():
+    """Test unfurling a SERP URL with query parameters"""
+    mock_serp = {
+        "_id": "test-unfurl-123",
+        "_source": {
+            "capture": {
+                "url": "https://google.com/search?q=python+tutorial&hl=en&start=10"
+            }
+        },
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-unfurl-123")
+
+        assert result["serp_id"] == "test-unfurl-123"
+        assert (
+            result["original_url"]
+            == "https://google.com/search?q=python+tutorial&hl=en&start=10"
+        )
+
+        parsed = result["parsed"]
+        assert parsed["scheme"] == "https"
+        assert parsed["netloc"] == "google.com"
+        assert parsed["port"] is None
+        assert parsed["path"] == "/search"
+        assert parsed["path_segments"] == ["search"]
+        assert parsed["domain_parts"]["domain"] == "google"
+        assert parsed["domain_parts"]["suffix"] == "com"
+        assert parsed["domain_parts"]["subdomain"] is None
+        assert parsed["domain_parts"]["registered_domain"] == "google.com"
+        assert parsed["query_parameters"]["q"] == "python tutorial"
+        assert parsed["query_parameters"]["hl"] == "en"
+        assert parsed["query_parameters"]["start"] == "10"
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_with_subdomain():
+    """Test unfurling URL with subdomain"""
+    mock_serp = {
+        "_id": "test-subdomain",
+        "_source": {
+            "capture": {"url": "https://scholar.google.com/scholar?q=machine+learning"}
+        },
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-subdomain")
+
+        domain_parts = result["parsed"]["domain_parts"]
+        assert domain_parts["subdomain"] == "scholar"
+        assert domain_parts["domain"] == "google"
+        assert domain_parts["suffix"] == "com"
+        assert domain_parts["registered_domain"] == "google.com"
+        assert result["parsed"]["netloc"] == "scholar.google.com"
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_with_port():
+    """Test unfurling URL with explicit port"""
+    mock_serp = {
+        "_id": "test-port",
+        "_source": {"capture": {"url": "https://example.com:8443/search?q=test"}},
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-port")
+
+        assert result["parsed"]["port"] == 8443
+        assert result["parsed"]["netloc"] == "example.com:8443"
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_path_segments():
+    """Test unfurling URL with multiple path segments"""
+    mock_serp = {
+        "_id": "test-path",
+        "_source": {
+            "capture": {"url": "https://example.com/search/advanced/results?q=test"}
+        },
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-path")
+
+        assert result["parsed"]["path"] == "/search/advanced/results"
+        assert result["parsed"]["path_segments"] == ["search", "advanced", "results"]
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_encoded_params():
+    """Test unfurling URL with URL-encoded parameters"""
+    mock_serp = {
+        "_id": "test-encoded",
+        "_source": {
+            "capture": {
+                "url": "https://google.com/search?q=%E3%83%86%E3%82%B9%E3%83%88&source=web"
+            }
+        },
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-encoded")
+
+        # URL-encoded Japanese characters should be decoded
+        assert "テスト" in result["parsed"]["query_parameters"]["q"]
+        assert result["parsed"]["query_parameters"]["source"] == "web"
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_with_fragment():
+    """Test unfurling URL with fragment identifier"""
+    mock_serp = {
+        "_id": "test-fragment",
+        "_source": {"capture": {"url": "https://example.com/search?q=test#results"}},
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-fragment")
+
+        assert result["parsed"]["fragment"] == "results"
+        assert result["parsed"]["query_parameters"]["q"] == "test"
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_no_query_params():
+    """Test unfurling URL without query parameters"""
+    mock_serp = {
+        "_id": "test-no-params",
+        "_source": {"capture": {"url": "https://example.com/search"}},
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-no-params")
+
+        assert result["parsed"]["scheme"] == "https"
+        assert result["parsed"]["netloc"] == "example.com"
+        assert result["parsed"]["path"] == "/search"
+        assert result["parsed"]["query_parameters"] == {}
+        assert result["parsed"]["path_segments"] == ["search"]
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_multiple_values():
+    """Test unfurling URL with multiple values for same parameter"""
+    mock_serp = {
+        "_id": "test-multi",
+        "_source": {
+            "capture": {
+                "url": "https://example.com/search?tag=python&tag=programming&q=test"
+            }
+        },
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-multi")
+
+        # Multiple values should be returned as list
+        assert isinstance(result["parsed"]["query_parameters"]["tag"], list)
+        assert "python" in result["parsed"]["query_parameters"]["tag"]
+        assert "programming" in result["parsed"]["query_parameters"]["tag"]
+        assert result["parsed"]["query_parameters"]["q"] == "test"
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_complex_tld():
+    """Test unfurling URL with complex TLD like co.uk"""
+    mock_serp = {
+        "_id": "test-complex-tld",
+        "_source": {"capture": {"url": "https://www.google.co.uk/search?q=test"}},
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-complex-tld")
+
+        domain_parts = result["parsed"]["domain_parts"]
+        assert domain_parts["subdomain"] == "www"
+        assert domain_parts["domain"] == "google"
+        assert domain_parts["suffix"] == "co.uk"
+        assert domain_parts["registered_domain"] == "google.co.uk"
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_serp_not_found():
+    """Test unfurling when SERP doesn't exist"""
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=None)
+    ):
+        result = await aql.get_serp_unfurl("nonexistent-id")
+
+        assert result is None
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_special_chars():
+    """Test unfurling URL with special characters in query"""
+    mock_serp = {
+        "_id": "test-special",
+        "_source": {
+            "capture": {"url": "https://google.com/search?q=how+to+use+%26+operator"}
+        },
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-special")
+
+        # & should be decoded from %26
+        assert result["parsed"]["query_parameters"]["q"] == "how to use & operator"
+
+
+@pytest.mark.asyncio
+async def test_get_serp_unfurl_empty_path():
+    """Test unfurling URL with root path"""
+    mock_serp = {
+        "_id": "test-empty-path",
+        "_source": {"capture": {"url": "https://example.com/?q=test"}},
+    }
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ):
+        result = await aql.get_serp_unfurl("test-empty-path")
+
+        assert result["parsed"]["path"] == "/"
+        assert result["parsed"]["path_segments"] == []

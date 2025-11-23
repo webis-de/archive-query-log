@@ -205,3 +205,13 @@ async def get_related_serps(
         aql_service.get_related_serps(serp_id, size, same_provider)
     )
     return {"count": len(result), "results": result}
+
+
+# ---------------------------------------------------------
+# 10. Get unfurled URL
+# ---------------------------------------------------------
+@router.get("/serp/{serp_id}/unfurl")
+@limiter.limit("20/minute")
+async def get_serp_unfurl(request: Request, serp_id: str):
+    result = await safe_search(aql_service.get_serp_unfurl(serp_id))
+    return result
