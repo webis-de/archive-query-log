@@ -313,6 +313,80 @@ def test_get_original_url_with_tracking_removal(client):
 # Tests for get original url
 # -------------------------------------------------------------------
 
+# -------------------------------------------------------------------
+# Tests for get memento url
+# -------------------------------------------------------------------
+
+
+def test_get_memento_url_success(client):
+    """Test successful retrieval of memento URL"""
+
+    expected_response = {
+        "serp_id": "test-uuid-1234",
+        "memento_url": "https://web.archive.org/web/20210101000000/https://google.com/search?q=test",  # noqa: E501
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_memento_url",
+        new=async_return(expected_response),
+    ):
+        r = client.get("/serp/test-uuid-1234/memento-url")
+        assert r.status_code == 200
+        assert r.json() == expected_response
+        assert "memento_url" in r.json()
+
+
+def test_get_memento_url_with_special_chars(client):
+    """Test memento URL with special characters (encoded)"""
+    mock_response = {
+        "serp_id": "test-id",
+        "memento_url": "https://web.archive.org/web/20210101000000/https://google.com/search?q=%E3%83%86%E3%82%B9%E3%83%88",  # noqa: E501
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_memento_url",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-id/memento-url")
+        assert r.status_code == 200
+        assert "%E3%83%86" in r.json()["memento_url"]
+
+
+def test_get_memento_url_id_not_found(client):
+    """Test SERP not found returns 404"""
+    with patch(
+        "app.routers.search.aql_service.get_serp_memento_url", new=async_return(None)
+    ):
+        r = client.get("/serp/nonexistent-id/memento-url")
+        assert r.status_code == 404
+        assert "No results found" in r.json()["detail"]
+
+
+def test_get_memento_url_id_invalid_uuid_format(client):
+    """Test with malformed UUID"""
+    with patch(
+        "app.routers.search.aql_service.get_serp_memento_url", new=async_return(None)
+    ):
+        r = client.get("/serp/not-a-valid-uuid/memento-url")
+        assert r.status_code == 404
+
+
+def test_get_memento_url_elasticsearch_error(client):
+    """Test Elasticsearch error handling"""
+
+    async def raise_error():
+        raise ConnectionError(message="ES down", meta=None)
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_memento_url", side_effect=raise_error
+    ):
+        r = client.get("/serp/test-id/memento-url")
+        assert r.status_code == 500
+
+
+# -------------------------------------------------------------------
+# Tests for get memento url
+# -------------------------------------------------------------------
 
 # --------------------- Additional tests for complete Coverage ---------------------
 

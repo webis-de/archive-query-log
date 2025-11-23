@@ -145,7 +145,7 @@ async def get_serp_original_url(
 
 
 # ---------------------------------------------------------
-# 7. Get memento URL
+# 8. Get memento URL
 # ---------------------------------------------------------
 async def get_serp_memento_url(serp_id: str) -> dict | None:
     """Get the memento SERP URL from a SERP by ID."""
