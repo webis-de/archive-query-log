@@ -277,6 +277,38 @@ def test_get_original_url_elasticsearch_error(client):
         assert r.status_code == 500
 
 
+# --------------------- original url without tracking parameters ---------------------
+
+
+def test_remove_tracking_parameters():
+    """Test tracking parameter removal"""
+    from app.utils.url_cleaner import remove_tracking_parameters
+
+    url = "https://google.com/search?q=test&utm_source=email&fbclid=123"
+    cleaned = remove_tracking_parameters(url)
+
+    assert "utm_source" not in cleaned
+    assert "fbclid" not in cleaned
+    assert "q=test" in cleaned
+
+
+def test_get_original_url_with_tracking_removal(client):
+    """Test URL with tracking removal"""
+    mock_response = {
+        "serp_id": "test-id",
+        "original_url": "https://google.com/search?q=test&utm_source=tracking",
+        "url_without_tracking": "https://google.com/search?q=test",
+    }
+
+    with patch(
+        "app.routers.search.aql_service.get_serp_original_url",
+        new=async_return(mock_response),
+    ):
+        r = client.get("/serp/test-id/original-url?remove_tracking=true")
+        assert r.status_code == 200
+        assert "utm_source" not in r.json()["url_without_tracking"]
+
+
 # -------------------------------------------------------------------
 # Tests for get original url
 # -------------------------------------------------------------------

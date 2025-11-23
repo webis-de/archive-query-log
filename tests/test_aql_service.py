@@ -133,3 +133,39 @@ async def test_search_by_year_calls_advanced():
 
         mock_adv.assert_awaited_once_with(query="foo", year=2022, size=5)
         assert results == [1, 2]
+
+
+# ---------------------------------------------------------
+# 7. get_serp_by_id
+# ---------------------------------------------------------
+@pytest.mark.asyncio
+async def test_get_serp_by_id_success():
+    """Test get_serp_by_id with real Elasticsearch mock"""
+    mock_es_response = {
+        "_id": "test-id",
+        "_source": {"url_query": "test"},
+        "found": True,
+    }
+
+    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+        mock_es = AsyncMock()
+        mock_es.get.return_value = mock_es_response
+        mock_get_client.return_value = mock_es
+
+        result = await aql.get_serp_by_id("test-id")
+
+        assert result == mock_es_response
+        mock_es.get.assert_called_once_with(index="aql_serps", id="test-id")
+
+
+@pytest.mark.asyncio
+async def test_get_serp_by_id_exception():
+    """Test get_serp_by_id when Elasticsearch raises exception"""
+    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+        mock_es = AsyncMock()
+        mock_es.get.side_effect = Exception("ES error")
+        mock_get_client.return_value = mock_es
+
+        result = await aql.get_serp_by_id("test-id")
+
+        assert result is None

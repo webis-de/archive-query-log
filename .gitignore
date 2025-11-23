@@ -68,3 +68,7 @@ dmypy.json
 
 # Project specific
 instance/
+aql-browser.ovpn
+.gitignore
+aql-browser.txt
+key-pass.txt
