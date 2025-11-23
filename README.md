@@ -59,7 +59,8 @@ docker-compose down
 - `GET /docs` - Swagger UI interactive API documentation
 - `GET /redoc` - ReDoc API documentation
 - `GET /api/serp/{serp_id}` - Get a single SERP by ID
-- `GET /api/serp/{serp_id}/original-url` - Get the original SERP URL
+- `GET /api/serp/{serp_id}/original-url` - Get the original SERP URL by ID
+    -  `?remove_tracking=bool` - get URL with tracking parameters removed (default=false)
 ---
 
 ## ⚙️ For Developers (Development)

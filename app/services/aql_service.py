@@ -11,6 +11,7 @@ Contains all functions used by the search router:
 
 from typing import List, Optional, Any, Dict
 from app.core.elastic import get_es_client
+from app.utils.url_cleaner import remove_tracking_parameters
 
 
 # ---------------------------------------------------------
@@ -126,10 +127,18 @@ async def get_serp_by_id(serp_id: str) -> Any | None:
 # ---------------------------------------------------------
 # 7. Get original URL
 # ---------------------------------------------------------
-async def get_serp_original_url(serp_id: str) -> dict | None:
+async def get_serp_original_url(
+    serp_id: str, remove_tracking: bool = False
+) -> dict | None:
     """Get the original SERP URL from a SERP by ID."""
     serp = await get_serp_by_id(serp_id)
     if not serp:
         return None
 
-    return {"serp_id": serp["_id"], "original_url": serp["_source"]["capture"]["url"]}
+    original_url = serp["_source"]["capture"]["url"]
+    response = {"serp_id": serp["_id"], "original_url": original_url}
+
+    if remove_tracking:
+        response["url_without_tracking"] = remove_tracking_parameters(original_url)
+
+    return response

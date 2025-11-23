@@ -165,6 +165,14 @@ async def get_serp(request: Request, serp_id: str):
 # ---------------------------------------------------------
 @router.get("/serp/{serp_id}/original-url")
 @limiter.limit("20/minute")
-async def get_original_url(request: Request, serp_id: str):
-    result = await safe_search(aql_service.get_serp_original_url(serp_id))
+async def get_original_url(
+    request: Request,
+    serp_id: str,
+    remove_tracking: bool = Query(
+        False, description="Remove tracking parameters (utm_*, fbclid, etc.)"
+    ),
+):
+    result = await safe_search(
+        aql_service.get_serp_original_url(serp_id, remove_tracking)
+    )
     return result
