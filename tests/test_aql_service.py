@@ -298,3 +298,202 @@ async def test_get_serp_memento_url_serp_not_found():
         result = await aql.get_serp_memento_url("nonexistent-id")
 
         assert result is None
+
+
+# ---------------------------------------------------------
+# 10. get_related_serps
+# ---------------------------------------------------------
+@pytest.mark.asyncio
+async def test_get_related_serps_success():
+    """Test get_related_serps returns SERPs with same query"""
+    mock_serp = {
+        "_id": "serp-123",
+        "_source": {
+            "url_query": "python tutorial",
+            "provider": {"id": "provider-1"},
+        },
+    }
+
+    mock_related = [
+        {"_id": "serp-123", "_source": {"url_query": "python tutorial"}},
+        {"_id": "serp-456", "_source": {"url_query": "python tutorial"}},
+        {"_id": "serp-789", "_source": {"url_query": "python tutorial"}},
+    ]
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ), patch(
+        "app.services.aql_service.search_serps_advanced",
+        new=AsyncMock(return_value=mock_related),
+    ) as mock_search:
+        result = await aql.get_related_serps("serp-123", size=10)
+
+        # Should call search_serps_advanced with correct query
+        mock_search.assert_awaited_once_with(
+            query="python tutorial", provider_id=None, size=11
+        )
+
+        # Should exclude the original SERP (serp-123)
+        assert len(result) == 2
+        assert all(hit["_id"] != "serp-123" for hit in result)
+        assert result[0]["_id"] == "serp-456"
+        assert result[1]["_id"] == "serp-789"
+
+
+@pytest.mark.asyncio
+async def test_get_related_serps_with_same_provider():
+    """Test get_related_serps with same_provider filter"""
+    mock_serp = {
+        "_id": "serp-abc",
+        "_source": {
+            "url_query": "machine learning",
+            "provider": {"id": "google-provider"},
+        },
+    }
+
+    mock_related = [
+        {"_id": "serp-def", "_source": {"url_query": "machine learning"}},
+    ]
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ), patch(
+        "app.services.aql_service.search_serps_advanced",
+        new=AsyncMock(return_value=mock_related),
+    ) as mock_search:
+        result = await aql.get_related_serps("serp-abc", size=5, same_provider=True)
+
+        # Should call with provider_id
+        mock_search.assert_awaited_once_with(
+            query="machine learning", provider_id="google-provider", size=6
+        )
+
+        assert len(result) == 1
+        assert result[0]["_id"] == "serp-def"
+
+
+@pytest.mark.asyncio
+async def test_get_related_serps_excludes_current_serp():
+    """Test that current SERP is excluded from results"""
+    mock_serp = {
+        "_id": "current-serp",
+        "_source": {
+            "url_query": "test query",
+            "provider": {"id": "provider-x"},
+        },
+    }
+
+    # Mock returns 3 results including the current SERP
+    mock_related = [
+        {"_id": "current-serp", "_source": {}},  # Should be filtered out
+        {"_id": "related-1", "_source": {}},
+        {"_id": "related-2", "_source": {}},
+    ]
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ), patch(
+        "app.services.aql_service.search_serps_advanced",
+        new=AsyncMock(return_value=mock_related),
+    ):
+        result = await aql.get_related_serps("current-serp", size=2)
+
+        # Current SERP should be filtered out
+        assert len(result) == 2
+        assert not any(hit["_id"] == "current-serp" for hit in result)
+        assert result[0]["_id"] == "related-1"
+        assert result[1]["_id"] == "related-2"
+
+
+@pytest.mark.asyncio
+async def test_get_related_serps_respects_size_limit():
+    """Test that size parameter is respected after filtering"""
+    mock_serp = {
+        "_id": "serp-main",
+        "_source": {
+            "url_query": "test",
+            "provider": {"id": "p1"},
+        },
+    }
+
+    # Mock returns 6 results (size+1)
+    mock_related = [{"_id": f"serp-{i}", "_source": {}} for i in range(6)]
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ), patch(
+        "app.services.aql_service.search_serps_advanced",
+        new=AsyncMock(return_value=mock_related),
+    ):
+        result = await aql.get_related_serps("serp-main", size=5)
+
+        # Should return exactly 5 results (size parameter)
+        assert len(result) == 5
+
+
+@pytest.mark.asyncio
+async def test_get_related_serps_serp_not_found():
+    """Test get_related_serps when original SERP doesn't exist"""
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=None)
+    ):
+        result = await aql.get_related_serps("nonexistent-id")
+
+        # Should return empty list
+        assert result == []
+
+
+@pytest.mark.asyncio
+async def test_get_related_serps_no_related_found():
+    """Test when no related SERPs exist (only current SERP returned)"""
+    mock_serp = {
+        "_id": "lonely-serp",
+        "_source": {
+            "url_query": "very unique query",
+            "provider": {"id": "p1"},
+        },
+    }
+
+    # Only the current SERP is returned
+    mock_related = [
+        {"_id": "lonely-serp", "_source": {}},
+    ]
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ), patch(
+        "app.services.aql_service.search_serps_advanced",
+        new=AsyncMock(return_value=mock_related),
+    ):
+        result = await aql.get_related_serps("lonely-serp", size=10)
+
+        # After filtering out current SERP, should return empty list
+        assert result == []
+
+
+@pytest.mark.asyncio
+async def test_get_related_serps_custom_size():
+    """Test get_related_serps with custom size parameter"""
+    mock_serp = {
+        "_id": "serp-x",
+        "_source": {
+            "url_query": "test",
+            "provider": {"id": "p1"},
+        },
+    }
+
+    mock_related = [{"_id": f"serp-{i}", "_source": {}} for i in range(21)]
+
+    with patch(
+        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+    ), patch(
+        "app.services.aql_service.search_serps_advanced",
+        new=AsyncMock(return_value=mock_related),
+    ) as mock_search:
+        result = await aql.get_related_serps("serp-x", size=20)
+
+        # Should request size+1 to account for filtering
+        mock_search.assert_awaited_once_with(query="test", provider_id=None, size=21)
+
+        # Should return exactly 20 results
+        assert len(result) == 20

@@ -388,6 +388,131 @@ def test_get_memento_url_elasticsearch_error(client):
 # Tests for get memento url
 # -------------------------------------------------------------------
 
+# -------------------------------------------------------------------
+# Tests for get related SERPs
+# -------------------------------------------------------------------
+
+
+def test_get_related_serps_success(client):
+    """Test successful retrieval of related SERPs"""
+    mock_related = [
+        {"_id": "serp-456", "_source": {"url_query": "python tutorial"}},
+        {"_id": "serp-789", "_source": {"url_query": "python tutorial"}},
+    ]
+
+    with patch(
+        "app.routers.search.aql_service.get_related_serps",
+        new=async_return(mock_related),
+    ):
+        r = client.get("/serp/serp-123/related?size=10")
+        assert r.status_code == 200
+        assert r.json()["count"] == 2
+        assert r.json()["results"] == mock_related
+
+
+def test_get_related_serps_with_same_provider(client):
+    """Test related SERPs with same_provider filter"""
+    mock_related = [
+        {"_id": "serp-def", "_source": {"url_query": "machine learning"}},
+    ]
+
+    with patch(
+        "app.routers.search.aql_service.get_related_serps",
+        new=async_return(mock_related),
+    ):
+        r = client.get("/serp/serp-abc/related?size=5&same_provider=true")
+        assert r.status_code == 200
+        assert r.json()["count"] == 1
+        assert r.json()["results"][0]["_id"] == "serp-def"
+
+
+def test_get_related_serps_custom_size(client):
+    """Test related SERPs with custom size parameter"""
+    mock_related = [{"_id": f"serp-{i}", "_source": {}} for i in range(20)]
+
+    with patch(
+        "app.routers.search.aql_service.get_related_serps",
+        new=async_return(mock_related),
+    ):
+        r = client.get("/serp/serp-main/related?size=20")
+        assert r.status_code == 200
+        assert r.json()["count"] == 20
+        assert len(r.json()["results"]) == 20
+
+
+def test_get_related_serps_empty_results(client):
+    """Test when no related SERPs are found"""
+    with patch(
+        "app.routers.search.aql_service.get_related_serps", new=async_return([])
+    ):
+        r = client.get("/serp/lonely-serp/related")
+        assert r.status_code == 404
+        assert "No results found" in r.json()["detail"]
+
+
+def test_get_related_serps_default_parameters(client):
+    """Test related SERPs with default parameters (size=10, same_provider=false)"""
+    mock_related = [{"_id": f"serp-{i}", "_source": {}} for i in range(5)]
+
+    with patch(
+        "app.routers.search.aql_service.get_related_serps",
+        new=async_return(mock_related),
+    ):
+        r = client.get("/serp/test-serp/related")
+        assert r.status_code == 200
+        assert r.json()["count"] == 5
+
+
+def test_get_related_serps_elasticsearch_error(client):
+    """Test Elasticsearch error handling for related SERPs"""
+
+    async def raise_error():
+        raise ConnectionError(message="ES down", meta=None)
+
+    with patch(
+        "app.routers.search.aql_service.get_related_serps", side_effect=raise_error
+    ):
+        r = client.get("/serp/test-id/related")
+        assert r.status_code == 500
+
+
+def test_get_related_serps_invalid_size(client):
+    """Test related SERPs with invalid size parameter"""
+    # Note: FastAPI's Query validation with ge=1 would handle this,
+    # but we test the endpoint behavior
+    mock_related = [{"_id": "serp-1", "_source": {}}]
+
+    with patch(
+        "app.routers.search.aql_service.get_related_serps",
+        new=async_return(mock_related),
+    ):
+        # Size 1 is valid, testing edge case
+        r = client.get("/serp/test-id/related?size=1")
+        assert r.status_code == 200
+        assert r.json()["count"] == 1
+
+
+def test_get_related_serps_same_provider_false(client):
+    """Test related SERPs with same_provider explicitly set to false"""
+    mock_related = [
+        {"_id": "serp-1", "_source": {"provider": {"id": "google"}}},
+        {"_id": "serp-2", "_source": {"provider": {"id": "bing"}}},
+    ]
+
+    with patch(
+        "app.routers.search.aql_service.get_related_serps",
+        new=async_return(mock_related),
+    ):
+        r = client.get("/serp/test-id/related?same_provider=false")
+        assert r.status_code == 200
+        assert r.json()["count"] == 2
+        # Results should include SERPs from different providers
+
+
+# -------------------------------------------------------------------
+# Tests for get related SERPs
+# -------------------------------------------------------------------
+
 # --------------------- Additional tests for complete Coverage ---------------------
 
 
