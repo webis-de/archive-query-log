@@ -34,6 +34,12 @@ export class InputFieldComponent {
   // NEU: DaisyUI Color Style (Default 'bordered')
   @Input() color: InputColor = 'bordered';
 
+  // NEU: DaisyUI Size (Default 'md' entspricht ca. 3rem Höhe)
+  @Input() size: InputSize = 'md';
+
+  // NEU: DaisyUI Color Style (Default 'bordered')
+  @Input() color: InputColor = 'bordered';
+
   onInput(event: Event) {
     const target = event.target as HTMLInputElement;
     this.value = target.value;
