@@ -24,7 +24,7 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 
 ### Configuration
 
-Create a [`.env`](#Environment Variables) file in the project root.
+Create a [`.env`](#environment-variables) file in the project root.
 
 ### Installation & Start with Docker
 
