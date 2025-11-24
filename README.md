@@ -24,8 +24,7 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 
 ### Configuration
 
-Create a `.env` file in the project root.
-**TODO: Further instructions?**
+Create a [`.env`](#Environment Variables) file in the project root.
 
 ### Installation & Start with Docker
 
@@ -37,10 +36,8 @@ cd backend
 
 2. **Start the containers:**
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
-
-**TODO: I think it should be `docker compose` on more modern Docker installations.**
 
 3. **Test the API:**
 ```bash
@@ -51,7 +48,7 @@ curl http://localhost:8000/
 
 4. **Stop the containers:**
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ### Available Endpoints
@@ -128,17 +125,17 @@ mypy app/                  # Type checking
 
 **Start containers with hot reload:**
 ```bash
-docker-compose up
+docker compose up
 ```
 
 **Rebuild containers after changes:**
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 **View logs:**
 ```bash
-docker-compose logs -f fastapi
+docker compose logs -f fastapi
 ```
 
 ### Manual Docker Build & Push to GitLab Registry
@@ -314,9 +311,9 @@ flake8 app/ tests/
 mypy app/
 
 # Docker
-docker-compose up --build
-docker-compose down
-docker-compose logs -f fastapi
+docker compose up --build
+docker compose down
+docker compose logs -f fastapi
 
 # GitLab Container Registry
 docker login git.uni-jena.de:5050
