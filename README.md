@@ -22,6 +22,11 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 - Docker & Docker Compose installed
 - Port 8000 available
 
+### Configuration
+
+Create a `.env` file in the project root.
+**TODO: Further instructions?**
+
 ### Installation & Start with Docker
 
 1. **Clone the repository:**
@@ -35,10 +40,14 @@ cd backend
 docker-compose up -d
 ```
 
+**TODO: I think it should be `docker compose` on more modern Docker installations.**
+
 3. **Test the API:**
 ```bash
 curl http://localhost:8000/
 ```
+
+... or open [http://localhost:8000/docs](http://localhost:8000/docs) in your browser for the Swagger UI.
 
 4. **Stop the containers:**
 ```bash
