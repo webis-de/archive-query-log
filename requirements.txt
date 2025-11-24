@@ -4,6 +4,7 @@ uvicorn[standard]==0.38.0
 pydantic==2.12.4
 pydantic-settings==2.12.0
 slowapi==0.1.9
+tldextract==5.1.2
 
 # Elasticsearch
 elasticsearch==9.2.0

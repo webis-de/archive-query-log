@@ -4,15 +4,30 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 
 ## 📋 Table of Contents
 
-- [For Users (Deployment & Usage)](#-for-users-deployment--usage)
-- [For Developers (Development)](#-for-developers-development)
-- [Project Structure](#-project-structure)
-- [API Documentation](#-api-documentation)
-- [Extending the Project](#-extending-the-project)
-- [CI/CD Pipeline](#-cicd-pipeline)
-- [Important Commands](#-important-commands)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [FastAPI Starter Project](#fastapi-starter-project)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [🚀 For Users (Deployment \& Usage)](#-for-users-deployment--usage)
+    - [Requirements](#requirements)
+    - [Installation \& Start with Docker](#installation--start-with-docker)
+    - [Available Endpoints](#available-endpoints)
+  - [⚙️ For Developers (Development)](#️-for-developers-development)
+    - [Requirements](#requirements-1)
+    - [Setting Up Local Development Environment](#setting-up-local-development-environment)
+    - [Docker for Development](#docker-for-development)
+    - [Manual Docker Build \& Push to GitLab Registry](#manual-docker-build--push-to-gitlab-registry)
+  - [📁 Project Structure](#-project-structure)
+  - [📚 API Documentation](#-api-documentation)
+  - [🔧 Extending the Project](#-extending-the-project)
+    - [Add a New Router](#add-a-new-router)
+    - [Add a Database](#add-a-database)
+    - [Environment Variables](#environment-variables)
+  - [🛠 CI/CD Pipeline](#-cicd-pipeline)
+    - [Test Stage](#test-stage)
+    - [Build Stage](#build-stage)
+    - [Deploy Stage (Optional)](#deploy-stage-optional)
+  - [⚡ Important Commands](#-important-commands)
+  - [🤝 Contributing](#-contributing)
+  - [📄 License](#-license)
 
 ---
 
@@ -67,6 +82,11 @@ docker compose down
 - `GET /api/serp/{serp_id}` - Get a single SERP by ID
 - `GET /api/serp/{serp_id}/original-url` - Get the original SERP URL by ID
     -  `?remove_tracking=bool` - get URL with tracking parameters removed (default=false)
+- `GET /api/serp/{serp_id}/memento-url` - Get the mementor SERP URL by ID
+- `GET /api/serp/{serp_id}/related` - Get related SERPs URL by ID
+    -  `?size=uint` - number of SERPs 
+    -  `?same_provider=bool` - only find SERPs of the same provider (default=false)
+- `GET /api/serp/{serp_id}/unfurl` - Get unfurled URL of SERP by ID
 ---
 
 ## ⚙️ For Developers (Development)

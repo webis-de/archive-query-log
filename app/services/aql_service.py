@@ -112,7 +112,7 @@ async def search_by_year(query: str, year: int, size: int = 10) -> List[Any]:
 
 
 # ---------------------------------------------------------
-# 6. Search SERPs by ID
+# 6. Get SERP by ID
 # ---------------------------------------------------------
 async def get_serp_by_id(serp_id: str) -> Any | None:
     """Fetch a single SERP by ID from Elasticsearch."""
@@ -142,3 +142,78 @@ async def get_serp_original_url(
         response["url_without_tracking"] = remove_tracking_parameters(original_url)
 
     return response
+
+
+# ---------------------------------------------------------
+# 8. Get memento URL
+# ---------------------------------------------------------
+async def get_serp_memento_url(serp_id: str) -> dict | None:
+    """Get the memento SERP URL from a SERP by ID."""
+    from datetime import datetime
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    base_url = serp["_source"]["archive"]["memento_api_url"]
+    timestamp_str = serp["_source"]["capture"]["timestamp"]
+    capture_url = serp["_source"]["capture"]["url"]
+
+    timestamp = datetime.fromisoformat(timestamp_str.replace("+00:00", "+00:00"))
+    formatted_timestamp = timestamp.strftime("%Y%m%d%H%M%S")
+    memento_url = f"{base_url}/{formatted_timestamp}/{capture_url}"
+
+    return {"serp_id": serp["_id"], "memento_url": memento_url}
+
+
+# ---------------------------------------------------------
+# 9. Get related SERPs
+# ---------------------------------------------------------
+async def get_related_serps(
+    serp_id: str, size: int = 10, same_provider: bool = False
+) -> List[Any]:
+    """Get related SERPs by ID."""
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return []
+    query = serp["_source"]["url_query"]
+    provider_id = serp["_source"]["provider"]["id"] if same_provider else None
+
+    # add 1 to size for the original serp
+    results = await search_serps_advanced(
+        query=query, size=size + 1, provider_id=provider_id
+    )
+
+    # only use results that are not the original serp
+    related = [hit for hit in results if hit["_id"] != serp_id]
+    return related[:size]
+
+
+# ---------------------------------------------------------
+# 10. Unfurl SERP URL
+# ---------------------------------------------------------
+async def get_serp_unfurl(serp_id: str) -> dict | None:
+    """
+    Parse and unfurl the SERP URL into its components.
+
+    Returns structured breakdown of URL with:
+    - Decoded query parameters
+    - Domain parts (subdomain, domain, TLD)
+    - Path segments
+    - Port (if present)
+    """
+    from app.utils.url_unfurler import unfurl
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    original_url = serp["_source"]["capture"]["url"]
+    unfurled_url = unfurl(original_url)
+
+    return {
+        "serp_id": serp["_id"],
+        "original_url": original_url,
+        "parsed": unfurled_url,
+    }
