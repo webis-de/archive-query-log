@@ -235,8 +235,7 @@ docker push git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-brows
 ├── requirements.txt            
 ├── Dockerfile     
 ├── .flake8             
-├── docker-compose.yml          
-├── .dockerignore               
+├── docker-compose.yml                        
 ├── .gitignore                  
 ├── .env.example   
 ├── .gitlab-ci.yml
