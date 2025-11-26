@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Reproducible installation (devDependencies are needed for the build)
-RUN npm install
+RUN npm ci
 
 # Copy remaining source code
 COPY . .

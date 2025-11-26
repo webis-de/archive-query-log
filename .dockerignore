@@ -9,3 +9,7 @@ Dockerfile
 .idea
 coverage
 .npm
+.env
+__pycache__
+*.pyc
+README.md
