@@ -1,0 +1,22 @@
+<div class="min-h-full bg-base-200 flex flex-col items-center pt-32">
+  <div class="w-full max-w-7xl px-4 text-center">
+    <h1 class="text-5xl font-bold mb-8 text-primary">AQL Search</h1>
+
+    <div class="flex w-full gap-2 h-14">
+      <input-field
+        class="w-full h-full"
+        shape="square"
+        placeholder="Search for queries..."
+        type="text"
+      >
+        <aql-button suffix btnType="primary" btnStyle="full" [flatten]="true" size="sm">
+          Search
+        </aql-button>
+      </input-field>
+
+      <aql-button class="w-20" btnType="link" btnStyle="full" [flatten]="true">
+        <i class="bi bi-filter text-3xl"></i>
+      </aql-button>
+    </div>
+  </div>
+</div>

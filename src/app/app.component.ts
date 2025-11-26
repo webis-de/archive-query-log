@@ -1,27 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {
-  AqlButtonComponent,
-  AqlDropdownComponent,
-  AqlGroupItemComponent,
-  AqlMenuItemComponent,
-} from 'aql-stylings';
 import { AppSidebarComponent } from './components/sidebar/app-sidebar.component';
 import { MOCK_USER_DATA } from './mock-data';
-import { InputFieldComponent } from 'projects/aql-stylings/src/public-api';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    AppSidebarComponent,
-    AqlMenuItemComponent,
-    AqlDropdownComponent,
-    AqlButtonComponent,
-    AqlGroupItemComponent,
-    InputFieldComponent,
-  ],
+  imports: [RouterOutlet, AppSidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
