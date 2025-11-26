@@ -56,3 +56,19 @@ Build artifacts are output to `dist/aql-frontend`.
 
 - Implement daisyUI-based wrapper components inside the `aql-stylings` library (e.g. `aql-button`, `aql-input`, `aql-card`) that use daisyUI classes internally and expose a consistent, app-friendly API.
 
+## Docker
+
+To build and run the application using Docker, follow these steps:
+
+### Build the Image
+
+```bash
+docker build -t aql-frontend:local .
+```
+
+### Run the Container
+
+```bash
+docker run --rm -p 4200:80 --name aql-frontend aql-frontend:local
+```
+The application will be accessible at `http://localhost:4200/`
