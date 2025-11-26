@@ -1,0 +1,62 @@
+<label 
+  class="
+    flex items-center gap-2 cursor-pointer
+    font-['Plus_Jakarta_Sans']
+    transition-opacity duration-200
+  "
+  [class.cursor-not-allowed]="disabled"
+  [class.opacity-100]="disabled"
+>
+  <input 
+    type="radio" 
+    [name]="name"
+    [value]="value"
+    [checked]="checked"
+    [disabled]="disabled"
+    (change)="onChange()"
+    class="
+      radio rounded-full border transition-all duration-200
+      
+      /* Basis-Styling (Unchecked) */
+      bg-transparent
+      border-neutral
+      hover:border-neutral
+      
+      /* Checked State (Der innere Punkt) */
+      checked:bg-none 
+      checked:bg-clip-content 
+      checked:bg-neutral 
+      checked:border-neutral
+      
+      /* Disabled State */
+      disabled:bg-transparent
+      disabled:border-base-300
+      disabled:checked:bg-base-300 
+      disabled:checked:border-base-300
+      
+      /* Focus */
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral focus-visible:ring-offset-1
+    "
+    [ngClass]="{
+      'radio-xs p-[2px]': size === 'xs',
+      'radio-sm p-[3px]': size === 'sm',
+      'radio-md p-[4px]': size === 'md',
+      'radio-lg p-[5px]': size === 'lg'
+    }"
+  />
+  
+  @if (label) {
+    <span 
+      class="label-text"
+      [class.text-base-300]="disabled" 
+      [class.text-base-content]="!disabled"
+      [ngClass]="{
+        'text-xs': size === 'xs',
+        'text-sm': size === 'sm',
+        'text-base': size === 'md' || size === 'lg'
+      }"
+    >
+      {{ label }}
+    </span>
+  }
+</label>

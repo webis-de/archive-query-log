@@ -50,6 +50,53 @@
             <input-field color="error" placeholder="Error Input"></input-field>
 
             <input-field color="bordered" placeholder="Standard Input"></input-field>
+            <div class="w-150 flex gap-4">
+              <radio-button label="Option 1" name="myGroup" value="opt1" size="md"></radio-button>
+
+              <radio-button
+                label="Option 2"
+                name="myGroup"
+                value="opt2"
+                size="lg"
+                [checked]="true"
+              ></radio-button>
+
+              <radio-button
+                label="Option 3"
+                name="myGroup"
+                value="opt3"
+                size="sm"
+                [checked]="true"
+              ></radio-button>
+
+              <radio-button
+                label="Deaktiviert"
+                name="myGroup"
+                value="opt3"
+                size="sm"
+                [disabled]="true"
+                [checked]="true"
+              ></radio-button>
+            </div>
+
+            <div class="flex flex-col gap-4">
+              <checkbox label="Extra klein (xs)" size="xs"> </checkbox>
+
+              <checkbox label="Klein (sm)" size="sm"> </checkbox>
+
+              <checkbox label="Standard (md)" size="md" [checked]="true"> </checkbox>
+
+              <checkbox label="Groß (lg)" size="lg" [checked]="true"> </checkbox>
+            </div>
+            <div class="flex flex-col gap-4">
+              <checkbox label="Nicht verfügbar" [disabled]="true"> </checkbox>
+
+              <checkbox label="Bereits erledigt (Gesperrt)" [disabled]="true" [checked]="true">
+              </checkbox>
+
+              <checkbox label="Bereits erledigt (Gesperrt)" [indeterminate]="true"> </checkbox>
+            </div>
+
             <div>
               <aql-dropdown position="right end">
                 <aql-button trigger btnType="ghost" [soft]="true" [flatten]="true"

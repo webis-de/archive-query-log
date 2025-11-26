@@ -1,0 +1,23 @@
+:host {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Wir haben .checkbox:checked entfernt -> DaisyUI Standard-Haken greift.
+*/
+
+/* Indeterminate (Teilweise ausgewählt):
+   Wir tauschen die "Haken-Maske" gegen eine "Strich-Maske" aus.
+*/
+.checkbox:indeterminate {
+  background-image: none;
+  
+  /* Wir definieren die Maske als Strich (Minus) */
+  -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M5 12h14'/%3e%3c/svg%3e");
+  mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M5 12h14'/%3e%3c/svg%3e");
+  
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
