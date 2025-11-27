@@ -80,11 +80,11 @@
             </div>
 
             <div class="flex flex-col gap-4">
-              <checkbox label="Extra klein (xs)" size="xs"> </checkbox>
+              <checkbox label="xs" size="xs" [indeterminate]="true"> </checkbox>
 
-              <checkbox label="Klein (sm)" size="sm"> </checkbox>
+              <checkbox label="sm" size="sm"> </checkbox>
 
-              <checkbox label="Standard (md)" size="md" [checked]="true"> </checkbox>
+              <checkbox label="md" size="md" [checked]="true"> </checkbox>
 
               <checkbox label="Groß (lg)" size="lg" [checked]="true"> </checkbox>
             </div>
@@ -94,7 +94,7 @@
               <checkbox label="Bereits erledigt (Gesperrt)" [disabled]="true" [checked]="true">
               </checkbox>
 
-              <checkbox label="Bereits erledigt (Gesperrt)" [indeterminate]="true"> </checkbox>
+              <checkbox label="indeterminate" [indeterminate]="true"> </checkbox>
             </div>
 
             <div>

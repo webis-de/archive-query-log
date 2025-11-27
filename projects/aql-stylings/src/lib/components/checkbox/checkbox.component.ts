@@ -16,10 +16,10 @@ export class CheckboxComponent {
   @Input() checked = false;
   @Input() disabled = false;
   
-  // Neuer Input für den "Teilweise ausgewählt" Status
+ 
   @Input() indeterminate = false;
 
-  // DaisyUI Size
+
   @Input() size: CheckboxSize = 'md';
 
   @Output() change = new EventEmitter<boolean>();
@@ -31,7 +31,7 @@ export class CheckboxComponent {
     const target = event.target as HTMLInputElement;
     this.checked = target.checked;
     
-    // Wenn man klickt, wird indeterminate in der Regel aufgehoben
+
     this.indeterminate = false;
     this.indeterminateChange.emit(this.indeterminate);
     
