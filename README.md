@@ -13,7 +13,6 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
     - [Available Endpoints](#available-endpoints)
       - [✅ Core Endpoints](#-core-endpoints)
       - [✅ Search Endpoints](#-search-endpoints)
-      - [✅ Autocomplete](#-autocomplete)
       - [✅ SERP Detail Endpoints](#-serp-detail-endpoints)
   - [⚙️ For Developers (Development)](#️-for-developers-development)
     - [Requirements](#requirements-1)
@@ -88,11 +87,6 @@ docker compose down
 | ------ | ------------------------------------------------------- | -------------------- |
 | GET    | `/api/serps?query=climate+change`                       | Basic SERP search    |
 | GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search |
-
-#### ✅ Autocomplete
-| Method | Endpoint                               | Description                 |
-| ------ | -------------------------------------- | --------------------------- |
-| GET    | `/api/autocomplete/providers?q=prefix` | Autocomplete provider names |
 
 #### ✅ SERP Detail Endpoints
 | Method | Endpoint                                                | Description                                                |
