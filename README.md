@@ -11,6 +11,10 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
     - [Configuration](#configuration)
     - [Installation \& Start with Docker](#installation--start-with-docker)
     - [Available Endpoints](#available-endpoints)
+      - [✅ Core Endpoints](#-core-endpoints)
+      - [✅ Search Endpoints](#-search-endpoints)
+      - [✅ Autocomplete](#-autocomplete)
+      - [✅ SERP Detail Endpoints](#-serp-detail-endpoints)
   - [⚙️ For Developers (Development)](#️-for-developers-development)
     - [Requirements](#requirements-1)
     - [Setting Up Local Development Environment](#setting-up-local-development-environment)
@@ -71,15 +75,34 @@ docker compose down
 
 **To access the Elasticsearch data, the endpoints require a VPN connection to `vpn.webis.de` (via OpenVPN Connect, see Issue #7).**
 
-- `GET /` - Root endpoint (Health Check)
-- `GET /health` - Health Check
-- `GET /api/search`
-  - `?query=climate+change` - Basic SERP search
-  - `?query=climate&year=2024&provider_id=google` - Advanced SERP search
-- `GET /api/serp/{serp_id}` - single SERP by ID
-  -  `?include=original_url,memento_url,related,unfurl` - direct links
-  -  `?include=original_url&remove_tracking=true` - removes tracking parameters
-  -  `?include=related&related_size=5&same_provider=true` - related SERPs from same provider
+#### ✅ Core Endpoints
+| Method | Endpoint  | Description                  |
+| ------ | --------- | ---------------------------- |
+| GET    | `/`       | Root endpoint (Health Check) |
+| GET    | `/health` | Health Check                 |
+| GET    | `/docs`   | Swagger UI                   |
+| GET    | `/redoc`  | ReDoc UI                     |
+
+#### ✅ Search Endpoints
+| Method | Endpoint                                                | Description          |
+| ------ | ------------------------------------------------------- | -------------------- |
+| GET    | `/api/serps?query=climate+change`                       | Basic SERP search    |
+| GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search |
+
+#### ✅ Autocomplete
+| Method | Endpoint                               | Description                 |
+| ------ | -------------------------------------- | --------------------------- |
+| GET    | `/api/autocomplete/providers?q=prefix` | Autocomplete provider names |
+
+#### ✅ SERP Detail Endpoints
+| Method | Endpoint                                                | Description                                                |
+| ------ | ------------------------------------------------------- | ---------------------------------------------------------- |
+| GET    | `/api/serp/{serp_id}`                                   | Get a single SERP by ID                                    |
+| GET    | `/api/serp/{serp_id}/original-url&remove_tracking=bool` | Get original SERP URL optional removed tracking parameters |
+| GET    | `/api/serp/{serp_id}/memento-url`                       | Get Memento SERP URL                                       |
+| GET    | `/api/serp/{serp_id}/related?size=X&same_provider=bool` | Get related SERPs                                          |
+| GET    | `/api/serp/{serp_id}/unfurl`                            | Get unfurled destination URL from redirect chain           |
+
 ---
 
 ## ⚙️ For Developers (Development)
@@ -190,12 +213,14 @@ docker push git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-brows
 ├── app/                        
 │   ├── main.py                 # FastAPI app & configuration
 │   ├── routers/               
-│   │   ├── hello.py            # Example router
 │   │   └── search.py           # AQL search router (basic, advanced, autocomplete, by-year)
 │   ├── models/                
 │   │   └── __init__.py
 │   ├── schemas/               
 │   │   └── aql.py
+│   ├── utils/
+│       ├── url_cleaner.py 
+│   │   └── url_unfurler.py 
 │   ├── services/          
 │   │   └── aql_service.py      # Elasticsearch AQL operations
 │   └── core/                   
@@ -203,18 +228,22 @@ docker push git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-brows
 │       └── settings.py         # Pydantic settings with .env
 ├── tests/                      
 │   ├── conftest.py             # Pytest fixtures, including mocked Elasticsearch
+│   ├── test_aql_service.py
+│   ├── test_autocomplete.py
+│   ├── test_elastic.py
 │   ├── test_main.py
-│   ├── test_hello.py
 │   ├── test_search_basic.py
 │   ├── test_search_advanced.py
-│   ├── test_autocomplete.py
-│   └── search_by_year.py
+│   └── search_router.py
 ├── requirements.txt            
-├── Dockerfile                  
-├── docker-compose.yml          
-├── .dockerignore               
+├── Dockerfile     
+├── .flake8             
+├── docker-compose.yml                        
 ├── .gitignore                  
-├── .env                        
+├── .env.example   
+├── .gitlab-ci.yml
+├── mypy.ini
+├── pytest.ini                     
 └── README.md                   
 ```
 
