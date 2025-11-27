@@ -8,8 +8,12 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
   - [📋 Table of Contents](#-table-of-contents)
   - [🚀 For Users (Deployment \& Usage)](#-for-users-deployment--usage)
     - [Requirements](#requirements)
+    - [Configuration](#configuration)
     - [Installation \& Start with Docker](#installation--start-with-docker)
     - [Available Endpoints](#available-endpoints)
+      - [✅ Core Endpoints](#-core-endpoints)
+      - [✅ Search Endpoints](#-search-endpoints)
+      - [✅ SERP Detail Endpoints](#-serp-detail-endpoints)
   - [⚙️ For Developers (Development)](#️-for-developers-development)
     - [Requirements](#requirements-1)
     - [Setting Up Local Development Environment](#setting-up-local-development-environment)
@@ -71,34 +75,27 @@ docker compose down
 **To access the Elasticsearch data, the endpoints require a VPN connection to `vpn.webis.de` (via OpenVPN Connect, see Issue #7).**
 
 #### ✅ Core Endpoints
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Root endpoint (Health Check) |
-| GET | `/health` | Health Check |
-| GET | `/docs` | Swagger UI |
-| GET | `/redoc` | ReDoc UI |
+| Method | Endpoint  | Description                  |
+| ------ | --------- | ---------------------------- |
+| GET    | `/`       | Root endpoint (Health Check) |
+| GET    | `/health` | Health Check                 |
+| GET    | `/docs`   | Swagger UI                   |
+| GET    | `/redoc`  | ReDoc UI                     |
 
 #### ✅ Search Endpoints
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/search/basic?query=term` | Basic SERP search |
-| GET | `/api/search/providers?name=provider` | Search for providers |
-| GET | `/api/search/advanced` | Advanced search with filters |
-| GET | `/api/search/by-year?query=term&year=YYYY` | Search by year |
-
-#### ✅ Autocomplete
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/autocomplete/providers?q=prefix` | Autocomplete provider names |
+| Method | Endpoint                                                | Description          |
+| ------ | ------------------------------------------------------- | -------------------- |
+| GET    | `/api/serps?query=climate+change`                       | Basic SERP search    |
+| GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search |
 
 #### ✅ SERP Detail Endpoints
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/serp/{serp_id}` | Get a single SERP by ID |
-| GET | `/api/serp/{serp_id}/original-url` | Get original SERP URL |
-| GET | `/api/serp/{serp_id}/memento-url` | Get Memento SERP URL |
-| GET | `/api/serp/{serp_id}/related?size=X&same_provider=bool` | Get related SERPs |
-| GET | `/api/serp/{serp_id}/unfurl` | Get unfurled destination URL from redirect chain |
+| Method | Endpoint                                                | Description                                                |
+| ------ | ------------------------------------------------------- | ---------------------------------------------------------- |
+| GET    | `/api/serp/{serp_id}`                                   | Get a single SERP by ID                                    |
+| GET    | `/api/serp/{serp_id}/original-url&remove_tracking=bool` | Get original SERP URL optional removed tracking parameters |
+| GET    | `/api/serp/{serp_id}/memento-url`                       | Get Memento SERP URL                                       |
+| GET    | `/api/serp/{serp_id}/related?size=X&same_provider=bool` | Get related SERPs                                          |
+| GET    | `/api/serp/{serp_id}/unfurl`                            | Get unfurled destination URL from redirect chain           |
 
 ---
 

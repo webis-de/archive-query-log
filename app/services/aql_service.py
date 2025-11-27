@@ -17,7 +17,7 @@ from app.utils.url_cleaner import remove_tracking_parameters
 # ---------------------------------------------------------
 # 1. Basic SERP Search
 # ---------------------------------------------------------
-async def search_serps_basic(query: str, size: int = 10) -> List[Any]:
+async def search_basic(query: str, size: int = 10) -> List[Any]:
     """
     Simple full-text search in SERPs by query string.
     """
@@ -45,7 +45,7 @@ async def search_providers(name: str, size: int = 10) -> List[Any]:
 # ---------------------------------------------------------
 # 3. Advanced SERP Search
 # ---------------------------------------------------------
-async def search_serps_advanced(
+async def search_advanced(
     query: str,
     provider_id: Optional[str] = None,
     year: Optional[int] = None,
@@ -93,6 +93,7 @@ async def search_serps_advanced(
 async def autocomplete_providers(q: str, size: int = 10) -> List[Any]:
     """
     Autocomplete provider names by prefix (case-insensitive).
+    Returns a list of provider names.
     """
     es = get_es_client()
     body = {"query": {"prefix": {"name": q.lower()}}, "_source": ["name"], "size": size}
@@ -108,7 +109,7 @@ async def search_by_year(query: str, year: int, size: int = 10) -> List[Any]:
     """
     Search SERPs containing a keyword in a specific year.
     """
-    return await search_serps_advanced(query=query, year=year, size=size)
+    return await search_advanced(query=query, year=year, size=size)
 
 
 # ---------------------------------------------------------
@@ -181,9 +182,7 @@ async def get_related_serps(
     provider_id = serp["_source"]["provider"]["id"] if same_provider else None
 
     # add 1 to size for the original serp
-    results = await search_serps_advanced(
-        query=query, size=size + 1, provider_id=provider_id
-    )
+    results = await search_advanced(query=query, size=size + 1, provider_id=provider_id)
 
     # only use results that are not the original serp
     related = [hit for hit in results if hit["_id"] != serp_id]
