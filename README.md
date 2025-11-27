@@ -8,6 +8,7 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
   - [📋 Table of Contents](#-table-of-contents)
   - [🚀 For Users (Deployment \& Usage)](#-for-users-deployment--usage)
     - [Requirements](#requirements)
+    - [Configuration](#configuration)
     - [Installation \& Start with Docker](#installation--start-with-docker)
     - [Available Endpoints](#available-endpoints)
   - [⚙️ For Developers (Development)](#️-for-developers-development)
@@ -72,21 +73,13 @@ docker compose down
 
 - `GET /` - Root endpoint (Health Check)
 - `GET /health` - Health Check
-- `GET /api/search/basic?query=term` - Basic SERP search
-- `GET /api/search/providers?name=provider` - Search for providers
-- `GET /api/search/advanced` - Advanced search with filters
-- `GET /api/autocomplete/providers?q=prefix` - Autocomplete provider names
-- `GET /api/search/by-year?query=term&year=YYYY` - Search by year
-- `GET /docs` - Swagger UI interactive API documentation
-- `GET /redoc` - ReDoc API documentation
-- `GET /api/serp/{serp_id}` - Get a single SERP by ID
-- `GET /api/serp/{serp_id}/original-url` - Get the original SERP URL by ID
-    -  `?remove_tracking=bool` - get URL with tracking parameters removed (default=false)
-- `GET /api/serp/{serp_id}/memento-url` - Get the mementor SERP URL by ID
-- `GET /api/serp/{serp_id}/related` - Get related SERPs URL by ID
-    -  `?size=uint` - number of SERPs 
-    -  `?same_provider=bool` - only find SERPs of the same provider (default=false)
-- `GET /api/serp/{serp_id}/unfurl` - Get unfurled URL of SERP by ID
+- `GET /api/search`
+  - `?query=climate+change` - Basic SERP search
+  - `?query=climate&year=2024&provider_id=google` - Advanced SERP search
+- `GET /api/serp/{serp_id}` - single SERP by ID
+  -  `?include=original_url,memento_url,related,unfurl` - direct links
+  -  `?include=original_url&remove_tracking=true` - removes tracking parameters
+  -  `?include=related&related_size=5&same_provider=true` - related SERPs from same provider
 ---
 
 ## ⚙️ For Developers (Development)

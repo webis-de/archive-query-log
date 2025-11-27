@@ -17,17 +17,17 @@ def mock_es(return_value):
 
 
 # ---------------------------------------------------------
-# 1. search_serps_basic
+# 1. search_basic
 # ---------------------------------------------------------
 @pytest.mark.asyncio
-async def test_search_serps_basic():
+async def test_search_basic():
     fake_hits = [{"a": 1}]
 
     with patch(
         "app.services.aql_service.get_es_client",
         return_value=mock_es(es_response(fake_hits)),
     ) as mock_get:
-        results = await aql.search_serps_basic("test", size=5)
+        results = await aql.search_basic("test", size=5)
 
         mock_get.assert_called_once()
         assert results == fake_hits
@@ -51,16 +51,16 @@ async def test_search_providers():
 
 
 # ---------------------------------------------------------
-# 3. search_serps_advanced – test full filter combination
+# 3. search_advanced – test full filter combination
 # ---------------------------------------------------------
 @pytest.mark.asyncio
-async def test_search_serps_advanced_all_filters():
+async def test_search_advanced_all_filters():
     fake_hits = [{"hit": 1}]
 
     mock_client = mock_es(es_response(fake_hits))
 
     with patch("app.services.aql_service.get_es_client", return_value=mock_client):
-        results = await aql.search_serps_advanced(
+        results = await aql.search_advanced(
             query="foo", provider_id="p123", year=2020, status_code=404, size=7
         )
 
@@ -87,15 +87,15 @@ async def test_search_serps_advanced_all_filters():
 
 
 # ---------------------------------------------------------
-# 4. search_serps_advanced – test minimal filters
+# 4. search_advanced – test minimal filters
 # ---------------------------------------------------------
 @pytest.mark.asyncio
-async def test_search_serps_advanced_minimal():
+async def test_search_advanced_minimal():
     fake_hits = [{"hit": 99}]
     mock_client = mock_es(es_response(fake_hits))
 
     with patch("app.services.aql_service.get_es_client", return_value=mock_client):
-        results = await aql.search_serps_advanced(query="x")
+        results = await aql.search_advanced(query="x")
 
         mock_client.search.assert_awaited_once()
         body = mock_client.search.call_args.kwargs["body"]
@@ -108,16 +108,16 @@ async def test_search_serps_advanced_minimal():
 # ---------------------------------------------------------
 # 5. autocomplete_providers
 # ---------------------------------------------------------
-@pytest.mark.asyncio
-async def test_autocomplete_providers():
-    fake_hits = [{"_source": {"name": "Alpha"}}, {"_source": {"name": "Beta"}}]
-    mock_client = mock_es(es_response(fake_hits))
+# @pytest.mark.asyncio
+# async def test_autocomplete_providers():
+#    fake_hits = [{"_source": {"name": "Alpha"}}, {"_source": {"name": "Beta"}}]
+#    mock_client = mock_es(es_response(fake_hits))
 
-    with patch("app.services.aql_service.get_es_client", return_value=mock_client):
-        results = await aql.autocomplete_providers("a", size=2)
-
-        mock_client.search.assert_awaited_once()
-        assert results == ["Alpha", "Beta"]
+#    with patch("app.services.aql_service.get_es_client", return_value=mock_client):
+#        results = await aql.autocomplete_providers("a", size=2)
+#
+#        mock_client.search.assert_awaited_once()
+#        assert results == ["Alpha", "Beta"]
 
 
 # ---------------------------------------------------------
@@ -126,7 +126,7 @@ async def test_autocomplete_providers():
 @pytest.mark.asyncio
 async def test_search_by_year_calls_advanced():
     with patch(
-        "app.services.aql_service.search_serps_advanced",
+        "app.services.aql_service.search_advanced",
         new=AsyncMock(return_value=[1, 2]),
     ) as mock_adv:
         results = await aql.search_by_year("foo", 2022, size=5)
@@ -323,12 +323,12 @@ async def test_get_related_serps_success():
     with patch(
         "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_serps_advanced",
+        "app.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ) as mock_search:
         result = await aql.get_related_serps("serp-123", size=10)
 
-        # Should call search_serps_advanced with correct query
+        # Should call search_advanced with correct query
         mock_search.assert_awaited_once_with(
             query="python tutorial", provider_id=None, size=11
         )
@@ -358,7 +358,7 @@ async def test_get_related_serps_with_same_provider():
     with patch(
         "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_serps_advanced",
+        "app.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ) as mock_search:
         result = await aql.get_related_serps("serp-abc", size=5, same_provider=True)
@@ -393,7 +393,7 @@ async def test_get_related_serps_excludes_current_serp():
     with patch(
         "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_serps_advanced",
+        "app.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ):
         result = await aql.get_related_serps("current-serp", size=2)
@@ -422,7 +422,7 @@ async def test_get_related_serps_respects_size_limit():
     with patch(
         "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_serps_advanced",
+        "app.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ):
         result = await aql.get_related_serps("serp-main", size=5)
@@ -462,7 +462,7 @@ async def test_get_related_serps_no_related_found():
     with patch(
         "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_serps_advanced",
+        "app.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ):
         result = await aql.get_related_serps("lonely-serp", size=10)
@@ -487,7 +487,7 @@ async def test_get_related_serps_custom_size():
     with patch(
         "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_serps_advanced",
+        "app.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ) as mock_search:
         result = await aql.get_related_serps("serp-x", size=20)

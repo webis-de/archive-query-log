@@ -106,112 +106,60 @@ async def test_safe_search_generic_error():
 
 
 # -------------------------------------------------------------------
-# 2. Tests for unified search endpoint - SERPs
+# 2. Tests for unified search endpoint
 # -------------------------------------------------------------------
-def test_unified_search_serps_basic(client):
-    """Test basic SERP search via unified endpoint"""
-    with patch(
-        "app.routers.search.aql_service.search_serps_basic", new=async_return([1, 2])
-    ):
-        r = client.get("/search?type=serps&query=test&size=2")
+def test_unified_search_basic(client):
+    """Test basic search via unified endpoint"""
+    with patch("app.routers.search.aql_service.search_basic", new=async_return([1, 2])):
+        r = client.get("/serps?query=test&size=2")
         assert r.status_code == 200
         assert r.json() == {"count": 2, "results": [1, 2]}
 
 
-def test_unified_search_serps_advanced(client):
-    """Test advanced SERP search via unified endpoint"""
+def test_unified_search_advanced(client):
+    """Test advanced search via unified endpoint"""
     with patch(
-        "app.routers.search.aql_service.search_serps_advanced", new=async_return(["ok"])
+        "app.routers.search.aql_service.search_advanced", new=async_return(["ok"])
     ):
-        r = client.get("/search?type=serps&query=x&year=2024&provider_id=google&size=1")
+        r = client.get("/serps?query=x&year=2024&provider_id=google&size=1")
         assert r.status_code == 200
         assert r.json() == {"count": 1, "results": ["ok"]}
 
 
-def test_unified_search_serps_by_year(client):
-    """Test SERP search with year filter"""
+def test_unified_search_by_year(client):
+    """Test search with year filter"""
     with patch(
-        "app.routers.search.aql_service.search_serps_advanced", new=async_return([10])
+        "app.routers.search.aql_service.search_advanced", new=async_return([10])
     ):
-        r = client.get("/search?type=serps&query=t&year=2020&size=1")
+        r = client.get("/serps?query=t&year=2020&size=1")
         assert r.status_code == 200
         assert r.json() == {"count": 1, "results": [10]}
 
 
-def test_unified_search_serps_all_filters(client):
-    """Test SERP search with all filters"""
+def test_unified_search_all_filters(client):
+    """Test search with all filters"""
     with patch(
-        "app.routers.search.aql_service.search_serps_advanced",
+        "app.routers.search.aql_service.search_advanced",
         new=async_return(["filtered"]),
     ):
         r = client.get(
-            "/search?type=serps&query=x&provider_id=123&year=2021&status_code=200&size=5"
+            "/serps?query=x&provider_id=123&year=2021&status_code=200&size=5"
         )
         assert r.status_code == 200
         assert r.json() == {"count": 1, "results": ["filtered"]}
 
 
-def test_unified_search_serps_invalid_size(client):
+def test_unified_search_invalid_size(client):
     """Test SERP search with invalid size"""
-    r = client.get("/search?type=serps&query=test&size=0")
+    r = client.get("/serps?query=test&size=0")
     assert r.status_code == 400
 
 
-def test_unified_search_serps_autocomplete_error(client):
-    """Test that autocomplete is not supported for SERPs"""
-    r = client.get("/search?type=serps&query=test&autocomplete=true")
-    assert r.status_code == 400
-    assert "not supported" in r.json()["detail"]
-
-
-# -------------------------------------------------------------------
-# 3. Tests for unified search endpoint - Providers
-# -------------------------------------------------------------------
-def test_unified_search_providers_basic(client):
-    """Test basic provider search via unified endpoint"""
-    with patch(
-        "app.routers.search.aql_service.search_providers", new=async_return(["a"])
-    ):
-        r = client.get("/search?type=providers&query=google&size=1")
-        assert r.status_code == 200
-        assert r.json() == {"count": 1, "results": ["a"]}
-
-
-def test_unified_search_providers_autocomplete(client):
-    """Test provider autocomplete via unified endpoint"""
-    with patch(
-        "app.routers.search.aql_service.autocomplete_providers",
-        new=async_return(["google", "github"]),
-    ):
-        r = client.get("/search?type=providers&query=g&autocomplete=true&size=2")
-        assert r.status_code == 200
-        assert r.json()["count"] == 2
-        assert r.json()["autocomplete"] is True
-        assert r.json()["results"] == ["google", "github"]
-
-
-def test_unified_search_providers_invalid_size(client):
-    """Test provider search with invalid size"""
-    r = client.get("/search?type=providers&query=test&size=0")
-    assert r.status_code == 400
-
-
-def test_unified_search_missing_type(client):
-    """Test unified search without type parameter"""
-    r = client.get("/search?query=test")
-    assert r.status_code == 422  # FastAPI validation error
-
-
-def test_unified_search_missing_query(client):
-    """Test unified search without query parameter"""
-    r = client.get("/search?type=serps")
-    assert r.status_code == 422  # FastAPI validation error
-
-
-def test_unified_search_invalid_type(client):
-    """Test unified search with invalid type"""
-    r = client.get("/search?type=invalid&query=test")
-    assert r.status_code == 422  # FastAPI validation error
+# def test_unified_search_autocomplete_error(client):
+#    """Test that autocomplete is not supported for SERPs"""
+#    r = client.get("/serps?query=test&autocomplete=true")
+#    assert r.status_code == 400
+#    assert "not supported" in r.json()["detail"]
 
 
 # ===================================================================
@@ -505,9 +453,7 @@ def test_get_serp_unified_elasticsearch_error(client):
 # -------------------------------------------------------------------
 def test_legacy_search_basic(client):
     """Test legacy basic search endpoint still works"""
-    with patch(
-        "app.routers.search.aql_service.search_serps_basic", new=async_return([1, 2])
-    ):
+    with patch("app.routers.search.aql_service.search_basic", new=async_return([1, 2])):
         r = client.get("/search/basic?query=test&size=2")
         assert r.status_code == 200
         assert r.json() == {"count": 2, "results": [1, 2]}
@@ -525,7 +471,7 @@ def test_legacy_search_providers(client):
 def test_legacy_search_advanced(client):
     """Test legacy advanced search endpoint still works"""
     with patch(
-        "app.routers.search.aql_service.search_serps_advanced", new=async_return(["ok"])
+        "app.routers.search.aql_service.search_advanced", new=async_return(["ok"])
     ):
         r = client.get("/search/advanced?query=x&size=1")
         assert r.status_code == 200
@@ -534,7 +480,7 @@ def test_legacy_search_advanced(client):
 def test_legacy_search_by_year(client):
     """Test legacy by-year search endpoint still works"""
     with patch(
-        "app.routers.search.aql_service.search_serps_advanced", new=async_return([10])
+        "app.routers.search.aql_service.search_advanced", new=async_return([10])
     ):
         r = client.get("/search/by-year?query=t&year=2020&size=1")
         assert r.status_code == 200
@@ -623,24 +569,22 @@ def test_remove_tracking_parameters():
     assert "q=test" in cleaned
 
 
-def test_unified_search_serps_no_results(client):
+def test_unified_search_no_results(client):
     """Test unified search returning no results"""
-    with patch(
-        "app.routers.search.aql_service.search_serps_basic", new=async_return([])
-    ):
-        r = client.get("/search?type=serps&query=nonexistent")
+    with patch("app.routers.search.aql_service.search_basic", new=async_return([])):
+        r = client.get("/serps?query=nonexistent")
         assert r.status_code == 404
 
 
-def test_unified_search_providers_no_results(client):
-    """Test unified provider search returning no results"""
-    # Empty results trigger 404 in safe_search
-    with patch("app.routers.search.aql_service.search_providers", new=async_return([])):
-        r = client.get("/search?type=providers&query=nonexistent")
-        # Accept both 404 (expected) and 429 (rate limit exceeded in test suite)
-        assert r.status_code in [404, 429]
-        if r.status_code == 404:
-            assert "No results found" in r.json()["detail"]
+# def test_unified_search_providers_no_results(client):
+#    """Test unified provider search returning no results"""
+#    # Empty results trigger 404 in safe_search
+#    with patch("app.routers.search.aql_service.search_providers", new=async_return([])):
+#        r = client.get("/search?type=providers&query=nonexistent")
+#       # Accept both 404 (expected) and 429 (rate limit exceeded in test suite)
+#       assert r.status_code in [404, 429]
+#        if r.status_code == 404:
+#            assert "No results found" in r.json()["detail"]
 
 
 def test_get_serp_unified_include_with_whitespace(client):

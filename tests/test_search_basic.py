@@ -1,5 +1,5 @@
 def test_search_basic(client):
-    response = client.get("/api/search/basic", params={"query": "halloween", "size": 5})
+    response = client.get("/api/serps", params={"query": "halloween", "size": 5})
     assert response.status_code == 200
 
     data = response.json()

@@ -70,71 +70,59 @@ async def safe_search(coro):
 # ---------------------------------------------------------
 # UNIFIED SEARCH ENDPOINT
 # ---------------------------------------------------------
-@router.get("/search")
+@router.get("/serps")
 @limiter.limit("10/minute")
 async def unified_search(
     request: Request,
-    type: SearchType = Query(..., description="Type of search: 'serps' or 'providers'"),
     query: str = Query(..., description="Search term"),
-    autocomplete: bool = Query(
-        False, description="Enable autocomplete mode (prefix search)"
-    ),
     size: int = Query(10, description="Number of results to return"),
-    provider_id: Optional[str] = Query(
-        None, description="Filter by provider ID (serps only)"
-    ),
-    year: Optional[int] = Query(None, description="Filter by year (serps only)"),
-    status_code: Optional[int] = Query(
-        None, description="Filter by HTTP status code (serps only)"
-    ),
+    provider_id: Optional[str] = Query(None, description="Filter by provider ID"),
+    year: Optional[int] = Query(None, description="Filter by year"),
+    status_code: Optional[int] = Query(None, description="Filter by HTTP status code"),
 ):
     """
     Unified search endpoint for SERPs and providers.
 
     Examples:
-    - Basic SERP search: /api/search?type=serps&query=climate+change
-    - Provider search: /api/search?type=providers&query=google
-    - Advanced SERP search: /api/search?type=serps&query=climate&year=2024&provider_id=google
-    - Autocomplete providers: /api/search?type=providers&query=goo&autocomplete=true
+    - Basic search: /api/serps?query=climate+change
+    - Advanced search: /api/serps?query=climate&year=2024&provider_id=google
     """
     if size <= 0:
         raise HTTPException(status_code=400, detail="Size must be a positive integer")
 
-    if type == SearchType.providers:
-        if autocomplete:
-            results = await safe_search(
-                aql_service.autocomplete_providers(q=query, size=size)
-            )
-            return {"count": len(results), "results": results, "autocomplete": True}
-        else:
-            results = await safe_search(
-                aql_service.search_providers(name=query, size=size)
-            )
-            return {"count": len(results), "results": results}
+    # if type == SearchType.providers:
+    #    if autocomplete:
+    #        results = await safe_search(
+    #            aql_service.autocomplete_providers(q=query, size=size)
+    #        )
+    #        return {"count": len(results), "results": results, "autocomplete": True}
+    #    else:
+    #        results = await safe_search(
+    #            aql_service.search_providers(name=query, size=size)
+    #        )
+    #        return {"count": len(results), "results": results}
 
-    elif type == SearchType.serps:
-        if autocomplete:
-            raise HTTPException(
-                status_code=400,
-                detail="Autocomplete is not supported for SERP search. Use type=providers instead.",
-            )
+    # elif type == SearchType.serps:
+    # if autocomplete:
+    #    raise HTTPException(
+    #        status_code=400,
+    #        detail="Autocomplete is not supported for SERP search. Use type=providers instead.",
+    #    )
 
-        if provider_id or year or status_code:
-            results = await safe_search(
-                aql_service.search_serps_advanced(
-                    query=query,
-                    provider_id=provider_id,
-                    year=year,
-                    status_code=status_code,
-                    size=size,
-                )
+    if provider_id or year or status_code:
+        results = await safe_search(
+            aql_service.search_advanced(
+                query=query,
+                provider_id=provider_id,
+                year=year,
+                status_code=status_code,
+                size=size,
             )
-        else:
-            results = await safe_search(
-                aql_service.search_serps_basic(query=query, size=size)
-            )
+        )
+    else:
+        results = await safe_search(aql_service.search_basic(query=query, size=size))
 
-        return {"count": len(results), "results": results}
+    return {"count": len(results), "results": results}
 
 
 # ---------------------------------------------------------
@@ -231,10 +219,11 @@ async def search_basic_legacy(
     query: str = Query(..., description="Search term for SERPs"),
     size: int = Query(10, description="Number of results to return"),
 ):
-    """[DEPRECATED] Use /api/search?type=serps&query=... instead"""
-    return await unified_search(
-        request, SearchType.serps, query, False, size, None, None, None
-    )
+    """[DEPRECATED] Legacy basic SERP search"""
+    if size <= 0:
+        raise HTTPException(status_code=400, detail="Size must be a positive integer")
+    results = await safe_search(aql_service.search_basic(query=query, size=size))
+    return {"count": len(results), "results": results}
 
 
 @router.get("/search/providers", deprecated=True)
@@ -244,10 +233,11 @@ async def search_providers_legacy(
     name: str = Query(..., description="Provider name to search for"),
     size: int = Query(10, description="Number of results to return"),
 ):
-    """[DEPRECATED] Use /api/search?type=providers&query=... instead"""
-    return await unified_search(
-        request, SearchType.providers, name, False, size, None, None, None
-    )
+    """[DEPRECATED] Legacy provider search"""
+    if size <= 0:
+        raise HTTPException(status_code=400, detail="Size must be a positive integer")
+    results = await safe_search(aql_service.search_providers(name=name, size=size))
+    return {"count": len(results), "results": results}
 
 
 @router.get("/search/advanced", deprecated=True)
@@ -260,10 +250,19 @@ async def search_advanced_legacy(
     status_code: Optional[int] = Query(None, description="Filter by HTTP status code"),
     size: int = Query(10, description="Number of results to return"),
 ):
-    """[DEPRECATED] Use /api/search?type=serps&query=...&year=...&provider_id=... instead"""
-    return await unified_search(
-        request, SearchType.serps, query, False, size, provider_id, year, status_code
+    """[DEPRECATED] Legacy advanced SERP search"""
+    if size <= 0:
+        raise HTTPException(status_code=400, detail="Size must be a positive integer")
+    results = await safe_search(
+        aql_service.search_advanced(
+            query=query,
+            provider_id=provider_id,
+            year=year,
+            status_code=status_code,
+            size=size,
+        )
     )
+    return {"count": len(results), "results": results}
 
 
 @router.get("/search/by-year", deprecated=True)
@@ -274,10 +273,13 @@ async def search_by_year_legacy(
     year: int = Query(..., description="Year to filter results by"),
     size: int = Query(10, description="Number of results to return"),
 ):
-    """[DEPRECATED] Use /api/search?type=serps&query=...&year=... instead"""
-    return await unified_search(
-        request, SearchType.serps, query, False, size, None, year, None
+    """[DEPRECATED] Legacy year-filtered SERP search"""
+    if size <= 0:
+        raise HTTPException(status_code=400, detail="Size must be a positive integer")
+    results = await safe_search(
+        aql_service.search_by_year(query=query, year=year, size=size)
     )
+    return {"count": len(results), "results": results}
 
 
 @router.get("/autocomplete/providers", deprecated=True)
@@ -287,10 +289,11 @@ async def autocomplete_providers_legacy(
     q: str = Query(..., min_length=2, description="Prefix for provider name"),
     size: int = Query(10, description="Number of suggestions to return"),
 ):
-    """[DEPRECATED] Use /api/search?type=providers&query=...&autocomplete=true instead"""
-    return await unified_search(
-        request, SearchType.providers, q, True, size, None, None, None
-    )
+    """[DEPRECATED] Legacy providers autocomplete"""
+    if size <= 0:
+        raise HTTPException(status_code=400, detail="Size must be a positive integer")
+    results = await safe_search(aql_service.autocomplete_providers(q=q, size=size))
+    return {"count": len(results), "results": results, "autocomplete": True}
 
 
 @router.get("/serp/{serp_id}/original-url", deprecated=True)
