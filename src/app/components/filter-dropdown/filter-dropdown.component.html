@@ -1,0 +1,85 @@
+<div>
+  <aql-dropdown position="right end">
+    <aql-button trigger btnType="primary" iconStyle="circle" size="lg"
+      ><i class="bi bi-filter"></i
+    ></aql-button>
+    <ng-container content>
+      <li class="menu-title"><span>From</span></li>
+      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
+        <input-field
+          type="date"
+          [showIcon]="false"
+          size="sm"
+          [value]="dateFrom"
+          (change)="dateFrom = $any($event.target).value"
+        ></input-field>
+      </li>
+      <li class="menu-title"><span>To</span></li>
+      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
+        <input-field
+          type="date"
+          [showIcon]="false"
+          size="sm"
+          [value]="dateTo"
+          (change)="dateTo = $any($event.target).value"
+        ></input-field>
+      </li>
+
+      <li class="menu-title"><span>Website Status</span></li>
+      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
+        <radio-button
+          name="statusGroup"
+          label="Any"
+          value="any"
+          size="sm"
+          [checked]="status === 'any'"
+          (click)="status = 'any'"
+        ></radio-button>
+      </li>
+      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
+        <radio-button
+          name="statusGroup"
+          label="Active"
+          value="active"
+          size="sm"
+          [checked]="status === 'active'"
+          (click)="status = 'active'"
+        ></radio-button>
+      </li>
+      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
+        <radio-button
+          name="statusGroup"
+          label="Inactive"
+          value="inactive"
+          size="sm"
+          [checked]="status === 'inactive'"
+          (click)="status = 'inactive'"
+        ></radio-button>
+      </li>
+
+      <li class="menu-title"><span>Search Providers</span></li>
+      <li
+        *ngFor="let provider of providers"
+        (click)="$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()"
+        tabindex="-1"
+      >
+        <checkbox
+          [label]="provider.label"
+          size="sm"
+          [checked]="provider.checked"
+          (change)="provider.checked = !provider.checked"
+        ></checkbox>
+      </li>
+
+      <li
+        class="mt-2"
+        (click)="$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()"
+        tabindex="-1"
+      >
+        <aql-button btnType="primary" btnStyle="full" size="sm" (click)="reset()">Reset</aql-button>
+      </li>
+    </ng-container>
+  </aql-dropdown>
+</div>

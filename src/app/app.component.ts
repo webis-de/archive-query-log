@@ -11,6 +11,7 @@ import {
 import { AppSidebarComponent } from './components/sidebar/app-sidebar.component';
 import { MOCK_USER_DATA } from './mock-data';
 import { InputFieldComponent } from 'projects/aql-stylings/src/public-api';
+import { FilterDropdownComponent } from './components/filter-dropdown/filter-dropdown.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ import { InputFieldComponent } from 'projects/aql-stylings/src/public-api';
     InputFieldComponent,
     RadioButtonComponent,
     CheckboxComponent,
+    FilterDropdownComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
