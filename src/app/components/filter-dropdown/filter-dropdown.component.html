@@ -1,85 +1,98 @@
 <div>
-  <aql-dropdown position="right end">
-    <aql-button trigger btnType="primary" iconStyle="circle" size="lg"
-      ><i class="bi bi-filter"></i
-    ></aql-button>
+  <aql-dropdown position="bottom end">
+    <aql-button
+      trigger
+      btnType="primary"
+      iconStyle="circle"
+      size="md"
+      iconBefore="bi-filter text-3xl"
+    >
+    </aql-button>
     <ng-container content>
-      <li class="menu-title"><span>From</span></li>
-      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
-        <input-field
-          type="date"
-          [showIcon]="false"
-          size="sm"
-          [value]="dateFrom"
-          (change)="dateFrom = $any($event.target).value"
-        ></input-field>
-      </li>
-      <li class="menu-title"><span>To</span></li>
-      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
-        <input-field
-          type="date"
-          [showIcon]="false"
-          size="sm"
-          [value]="dateTo"
-          (change)="dateTo = $any($event.target).value"
-        ></input-field>
-      </li>
-
-      <li class="menu-title"><span>Website Status</span></li>
-      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
-        <radio-button
-          name="statusGroup"
-          label="Any"
-          value="any"
-          size="sm"
-          [checked]="status === 'any'"
-          (click)="status = 'any'"
-        ></radio-button>
-      </li>
-      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
-        <radio-button
-          name="statusGroup"
-          label="Active"
-          value="active"
-          size="sm"
-          [checked]="status === 'active'"
-          (click)="status = 'active'"
-        ></radio-button>
-      </li>
-      <li (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" tabindex="-1">
-        <radio-button
-          name="statusGroup"
-          label="Inactive"
-          value="inactive"
-          size="sm"
-          [checked]="status === 'inactive'"
-          (click)="status = 'inactive'"
-        ></radio-button>
-      </li>
-
-      <li class="menu-title"><span>Search Providers</span></li>
-      <li
-        *ngFor="let provider of providers"
+      <div
+        class="filter-wrapper p-4 min-w-[350px] bg-white"
+        tabindex="0"
         (click)="$event.stopPropagation()"
-        (keydown)="$event.stopPropagation()"
-        tabindex="-1"
+        (keyup.enter)="$event.stopPropagation()"
+        (keydown.space)="$event.preventDefault(); $event.stopPropagation()"
       >
-        <checkbox
-          [label]="provider.label"
-          size="sm"
-          [checked]="provider.checked"
-          (change)="provider.checked = !provider.checked"
-        ></checkbox>
-      </li>
+        <div class="flex gap-4 mb-5">
+          <div class="flex-1">
+            <span class="block text-sm font-bold text-gray-700 mb-1">From</span>
+            <input-field
+              type="date"
+              [showIcon]="false"
+              size="sm"
+              [value]="dateFrom"
+              (change)="dateFrom = $any($event.target).value"
+              class="w-full"
+            ></input-field>
+          </div>
+          <div class="flex-1">
+            <span class="block text-sm font-bold text-gray-700 mb-1">To</span>
+            <input-field
+              type="date"
+              [showIcon]="false"
+              size="sm"
+              [value]="dateTo"
+              (change)="dateTo = $any($event.target).value"
+              class="w-full"
+            ></input-field>
+          </div>
+        </div>
 
-      <li
-        class="mt-2"
-        (click)="$event.stopPropagation()"
-        (keydown)="$event.stopPropagation()"
-        tabindex="-1"
-      >
-        <aql-button btnType="primary" btnStyle="full" size="sm" (click)="reset()">Reset</aql-button>
-      </li>
+        <hr class="border-gray-200 mb-5" />
+        <div class="mb-5">
+          <span class="block text-sm font-bold text-gray-700 mb-2">Website Status</span>
+          <div class="flex flex-row items-center gap-4">
+            <radio-button
+              name="statusGroup"
+              label="Any"
+              value="any"
+              size="sm"
+              [checked]="status === 'any'"
+              (click)="status = 'any'"
+            ></radio-button>
+            <radio-button
+              name="statusGroup"
+              label="Active"
+              value="active"
+              size="sm"
+              [checked]="status === 'active'"
+              (click)="status = 'active'"
+            ></radio-button>
+            <radio-button
+              name="statusGroup"
+              label="Inactive"
+              value="inactive"
+              size="sm"
+              [checked]="status === 'inactive'"
+              (click)="status = 'inactive'"
+            ></radio-button>
+          </div>
+        </div>
+        <div class="mb-6">
+          <span class="block text-sm font-bold text-gray-700 mb-2">Search Providers</span>
+          <div class="flex flex-col gap-2">
+            <div *ngFor="let provider of providers">
+              <checkbox
+                [label]="provider.label"
+                size="sm"
+                [checked]="provider.checked"
+                (change)="provider.checked = !provider.checked"
+              ></checkbox>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-2 mt-4">
+          <aql-button btnType="default" btnStyle="full" size="sm" (click)="apply($event)">
+            Apply
+          </aql-button>
+          <aql-button btnType="default" btnStyle="full" size="sm" class="ml-auto" (click)="reset()">
+            Reset
+          </aql-button>
+        </div>
+      </div>
     </ng-container>
   </aql-dropdown>
 </div>

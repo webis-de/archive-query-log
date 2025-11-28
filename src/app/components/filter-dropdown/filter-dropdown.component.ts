@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// filter-dropdown.component.ts
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -25,6 +26,9 @@ import {
   styleUrls: ['./filter-dropdown.component.css'],
 })
 export class FilterDropdownComponent {
+  @ViewChild(AqlDropdownComponent)
+  dropdown?: AqlDropdownComponent;
+
   dateFrom = '';
   dateTo = '';
   status = 'any';
@@ -42,5 +46,17 @@ export class FilterDropdownComponent {
     this.status = 'any';
     // Re-create array objects to force re-render of list items, ensuring checkboxes reset visually
     this.providers = this.providers.map(p => ({ ...p, checked: false }));
+  }
+
+  apply(event: MouseEvent) {
+    console.log('Filters applied:', {
+      from: this.dateFrom,
+      to: this.dateTo,
+      status: this.status,
+      providers: this.providers.filter(p => p.checked).map(p => p.label),
+    });
+
+    // Dropdown gezielt schließen, über die interne Click-Logik
+    this.dropdown?.onContentClick(event);
   }
 }

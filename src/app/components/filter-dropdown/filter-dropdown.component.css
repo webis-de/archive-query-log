@@ -1,0 +1,8 @@
+.filter-wrapper {
+  min-width: 350px;
+}
+
+input-field {
+  width: 100%;
+  display: block;
+}
