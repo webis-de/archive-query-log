@@ -1,7 +1,7 @@
 :host {
   display: block;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  width: 100%;
+  width: 100%; 
 }
 
 input::-ms-reveal,

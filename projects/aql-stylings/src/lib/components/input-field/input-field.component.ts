@@ -10,29 +10,23 @@ export type InputShape = 'square' | 'circle';
 @Component({
   selector: 'input-field',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule], 
   templateUrl: './input-field.component.html',
   styleUrl: './input-field.component.css',
 })
 export class InputFieldComponent {
-  @Input() label = '';
+  @Input() label = ''; 
   @Input() placeholder = 'input';
   @Input() value = '';
-  @Input() disabled = false;
-
+  @Input() disabled = false; 
+  
   // Default-Icon.
-  @Input() showIcon = true;
+  @Input() showIcon = true; 
   @Input() icon = 'bi bi-search';
-
+  
   // (text, password, date, email, etc.)
   @Input() type = 'text';
-  @Input() shape: InputShape = 'square';
-
-  // NEU: DaisyUI Size (Default 'md' entspricht ca. 3rem Höhe)
-  @Input() size: InputSize = 'md';
-
-  // NEU: DaisyUI Color Style (Default 'bordered')
-  @Input() color: InputColor = 'bordered';
+  @Input() shape: InputShape = 'square'; 
 
   // NEU: DaisyUI Size (Default 'md' entspricht ca. 3rem Höhe)
   @Input() size: InputSize = 'md';
