@@ -10,40 +10,41 @@
     </aql-button>
     <ng-container content>
       <div
-        class="filter-wrapper p-4 min-w-[350px] bg-white"
+        class="filter-wrapper min-w-[350px] bg-base-100 rounded-lg overflow-hidden"
         tabindex="0"
         (click)="$event.stopPropagation()"
-        (keyup.enter)="$event.stopPropagation()"
-        (keydown.space)="$event.preventDefault(); $event.stopPropagation()"
+        (mousedown)="$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()"
       >
-        <div class="flex gap-4 mb-5">
-          <div class="flex-1">
-            <span class="block text-sm font-bold text-gray-700 mb-1">From</span>
-            <input-field
-              type="date"
-              [showIcon]="false"
-              size="sm"
-              [value]="dateFrom"
-              (change)="dateFrom = $any($event.target).value"
-              class="w-full"
-            ></input-field>
-          </div>
-          <div class="flex-1">
-            <span class="block text-sm font-bold text-gray-700 mb-1">To</span>
-            <input-field
-              type="date"
-              [showIcon]="false"
-              size="sm"
-              [value]="dateTo"
-              (change)="dateTo = $any($event.target).value"
-              class="w-full"
-            ></input-field>
+        <div class="p-5 border-b border-base-300">
+          <div class="flex gap-4">
+            <div class="flex-1">
+              <span class="block text-sm font-bold text-base-content/60 mb-1">From</span>
+              <input-field
+                type="date"
+                [showIcon]="false"
+                size="sm"
+                [value]="dateFrom"
+                (change)="dateFrom = $any($event.target).value"
+                class="w-full"
+              ></input-field>
+            </div>
+            <div class="flex-1">
+              <span class="block text-sm font-bold text-base-content/60 mb-1">To</span>
+              <input-field
+                type="date"
+                [showIcon]="false"
+                size="sm"
+                [value]="dateTo"
+                (change)="dateTo = $any($event.target).value"
+                class="w-full"
+              ></input-field>
+            </div>
           </div>
         </div>
 
-        <hr class="border-gray-200 mb-5" />
-        <div class="mb-5">
-          <span class="block text-sm font-bold text-gray-700 mb-2">Website Status</span>
+        <div class="p-5 border-b border-base-300">
+          <span class="block text-sm font-bold text-base-content/60 mb-3">Website Status</span>
           <div class="flex flex-row items-center gap-4">
             <radio-button
               name="statusGroup"
@@ -71,8 +72,9 @@
             ></radio-button>
           </div>
         </div>
-        <div class="mb-6">
-          <span class="block text-sm font-bold text-gray-700 mb-2">Search Providers</span>
+
+        <div class="p-5 pb-6">
+          <span class="block text-sm font-bold text-base-content/60 mb-3">Search Providers</span>
           <div class="flex flex-col gap-2">
             <div *ngFor="let provider of providers">
               <checkbox
@@ -84,13 +86,11 @@
             </div>
           </div>
         </div>
-        <div class="flex gap-2 mt-4">
-          <aql-button btnType="default" btnStyle="full" size="sm" (click)="apply($event)">
-            Apply
-          </aql-button>
-          <aql-button btnType="default" btnStyle="full" size="sm" class="ml-auto" (click)="reset()">
-            Reset
-          </aql-button>
+
+        <div class="flex border-t border-base-300 p-4 justify-between gap-3 rounded-b-lg">
+          <aql-button btnType="default" size="sm" (click)="reset()"> Reset </aql-button>
+
+          <aql-button btnType="default" size="sm" (click)="apply($event)"> Apply </aql-button>
         </div>
       </div>
     </ng-container>
