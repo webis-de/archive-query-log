@@ -98,7 +98,10 @@ build:
         --dockerfile "${CI_PROJECT_DIR}/Dockerfile" \
         --destination "${CI_REGISTRY_IMAGE}:${tag}" \
         --cache=true \
-        --cache-ttl=24h
+        --cache-ttl=24h \
+        --build-arg ES_HOST="${ES_HOST}" \
+        --build-arg ES_API_KEY="${ES_API_KEY}" \
+        --build-arg ES_VERIFY="${ES_VERIFY}"
   only:
     - main
     - branches
