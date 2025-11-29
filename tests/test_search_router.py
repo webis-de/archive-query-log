@@ -319,7 +319,10 @@ def test_get_serp_unified_related_invalid_size(client):
 # -------------------------------------------------------------------
 def test_get_serp_unified_with_unfurl(client):
     """Test getting SERP with unfurled URL included"""
-    mock_serp = {"_id": "test-id", "_source": {}}
+    mock_serp = {
+        "_id": "test-id",
+        "_source": {"capture": {"url": "https://google.com/search?q=python"}},
+    }
     mock_unfurl_data = {
         "serp_id": "test-id",
         "original_url": "https://google.com/search?q=python",
@@ -353,7 +356,10 @@ def test_get_serp_unified_with_unfurl(client):
 # -------------------------------------------------------------------
 def test_get_serp_unified_multiple_includes(client):
     """Test getting SERP with multiple fields included"""
-    mock_serp = {"_id": "test-id", "_source": {}}
+    mock_serp = {
+        "_id": "test-id",
+        "_source": {"capture": {"url": "https://google.com"}},
+    }
     mock_url_data = {
         "serp_id": "test-id",
         "original_url": "https://google.com/search?q=test",
@@ -589,7 +595,10 @@ def test_unified_search_no_results(client):
 
 def test_get_serp_unified_include_with_whitespace(client):
     """Test include parameter with whitespace"""
-    mock_serp = {"_id": "test-id", "_source": {}}
+    mock_serp = {
+        "_id": "test-id",
+        "_source": {"capture": {"url": "https://google.com"}},
+    }
     mock_url_data = {"serp_id": "test-id", "original_url": "https://google.com"}
     mock_unfurl_data = {
         "serp_id": "test-id",

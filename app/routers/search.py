@@ -204,6 +204,10 @@ async def get_serp_unified(
     if IncludeField.unfurl.value in include_fields:
         unfurl_data = await safe_search(aql_service.get_serp_unfurl(serp_id))
         response["unfurl"] = unfurl_data.get("parsed")
+        response["unfurl_web"] = (
+            "https://dfir.blog/unfurl/?"
+            + f"url={serp_data['_source']['capture']['url']}"
+        )
 
     return response
 
