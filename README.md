@@ -8,7 +8,6 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
   - [📋 Table of Contents](#-table-of-contents)
   - [🚀 For Users (Deployment \& Usage)](#-for-users-deployment--usage)
     - [Requirements](#requirements)
-    - [Configuration](#configuration)
     - [Installation \& Start with Docker](#installation--start-with-docker)
     - [Available Endpoints](#available-endpoints)
       - [✅ Core Endpoints](#-core-endpoints)
@@ -17,10 +16,7 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
   - [⚙️ For Developers (Development)](#️-for-developers-development)
     - [Requirements](#requirements-1)
     - [Setting Up Local Development Environment](#setting-up-local-development-environment)
-    - [Docker for Development](#docker-for-development)
-    - [Manual Docker Build \& Push to GitLab Registry](#manual-docker-build--push-to-gitlab-registry)
-  - [📁 Project Structure](#-project-structure)
-  - [📚 API Documentation](#-api-documentation)
+  - [� API Documentation](#-api-documentation)
   - [🔧 Extending the Project](#-extending-the-project)
     - [Add a New Router](#add-a-new-router)
     - [Add a Database](#add-a-database)
@@ -38,36 +34,30 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 ## 🚀 For Users (Deployment & Usage)
 
 ### Requirements
-- Docker & Docker Compose installed
 - Port 8000 available
-
-### Configuration
-
-Create a [`.env`](#environment-variables) file in the project root.
+- Docker (need to be logged in:)
+  ```bash 
+  docker login git.uni-jena.de
+  ```
 
 ### Installation & Start with Docker
 
-1. **Clone the repository:**
+1. **Start the container:**
 ```bash
-git clone git@git.uni-jena.de:fusion/teaching/project/2025wise/swep/aql-browser/backend.git
-cd backend
+docker run -p 8000:8000 git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
 ```
 
-2. **Start the containers:**
-```bash
-docker compose up -d
-```
-
-3. **Test the API:**
+2. **Test the API:**
 ```bash
 curl http://localhost:8000/
 ```
 
 ... or open [http://localhost:8000/docs](http://localhost:8000/docs) in your browser for the Swagger UI.
 
-4. **Stop the containers:**
+3. **Stop the containers:**
 ```bash
-docker compose down
+docker container ls
+docker stop <container-name> 
 ```
 
 ### Available Endpoints
@@ -106,7 +96,7 @@ docker compose down
 - Git installed
 
 ### Setting Up Local Development Environment
-**Note:** Make sure to configure your [`.env`](#environment-variables) file with the required Elasticsearch credentials before running the development server. 
+**Note:** Make sure to configure your openVPN and [`.env`](#environment-variables) file with the required Elasticsearch credentials before running the development server. 
 
 1. **Create a virtual environment:**
 ```bash
@@ -150,97 +140,6 @@ black app/ tests/          # Format code
 flake8 app/ tests/         # Linting
 mypy app/                  # Type checking
 ```
-
-### Docker for Development
-
-**Start containers with hot reload:**
-```bash
-docker compose up
-```
-
-**Rebuild containers after changes:**
-```bash
-docker compose up --build
-```
-
-**View logs:**
-```bash
-docker compose logs -f fastapi
-```
-
-### Manual Docker Build & Push to GitLab Registry
-
-1. **Login to GitLab Container Registry:**
-```bash
-docker login git.uni-jena.de:5050
-# Username: <your-username>
-# Password: <personal-access-token>
-```
-
-2. **Build Docker image:**
-```bash
-docker build -t fastapi-app .
-```
-
-3. **Tag image:**
-```bash
-docker tag fastapi-app git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/archive-query-log:latest
-```
-
-4. **Push image:**
-```bash
-docker push git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/archive-query-log:latest
-```
-
-**One-liner (all steps combined):**
-```bash
-docker build -t git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/archive-query-log:latest . && \
-docker push git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/archive-query-log:latest
-```
-
----
-
-## 📁 Project Structure
-
-```
-.
-├── app/                        
-│   ├── main.py                 # FastAPI app & configuration
-│   ├── routers/               
-│   │   └── search.py           # AQL search router (basic, advanced, autocomplete, by-year)
-│   ├── models/                
-│   │   └── __init__.py
-│   ├── schemas/               
-│   │   └── aql.py
-│   ├── utils/
-│       ├── url_cleaner.py 
-│   │   └── url_unfurler.py 
-│   ├── services/          
-│   │   └── aql_service.py      # Elasticsearch AQL operations
-│   └── core/                   
-│       ├── elastic.py          # Elasticsearch client
-│       └── settings.py         # Pydantic settings with .env
-├── tests/                      
-│   ├── conftest.py             # Pytest fixtures, including mocked Elasticsearch
-│   ├── test_aql_service.py
-│   ├── test_autocomplete.py
-│   ├── test_elastic.py
-│   ├── test_main.py
-│   ├── test_search_basic.py
-│   ├── test_search_advanced.py
-│   └── search_router.py
-├── requirements.txt            
-├── Dockerfile     
-├── .flake8             
-├── docker-compose.yml                        
-├── .gitignore                  
-├── .env.example   
-├── .gitlab-ci.yml
-├── mypy.ini
-├── pytest.ini                     
-└── README.md                   
-```
-
 ---
 
 ## 📚 API Documentation
