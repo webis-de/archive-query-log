@@ -16,7 +16,7 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
   - [⚙️ For Developers (Development)](#️-for-developers-development)
     - [Requirements](#requirements-1)
     - [Setting Up Local Development Environment](#setting-up-local-development-environment)
-  - [� API Documentation](#-api-documentation)
+  - [📚 API Documentation](#-api-documentation)
   - [🔧 Extending the Project](#-extending-the-project)
     - [Add a New Router](#add-a-new-router)
     - [Add a Database](#add-a-database)
@@ -42,7 +42,10 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 
 ### Installation & Start with Docker
 
-1. **Start the container:**
+1. **Start the container (be sure image is up2date):**
+```bash
+docker pull git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
+```
 ```bash
 docker run -p 8000:8000 git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
 ```
