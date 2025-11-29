@@ -16,6 +16,16 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Build-time args for Elasticsearch
+ARG ES_HOST
+ARG ES_API_KEY
+ARG ES_VERIFY
+
+# Persist zur Laufzeit
+ENV ES_HOST=${ES_HOST}
+ENV ES_API_KEY=${ES_API_KEY}
+ENV ES_VERIFY=${ES_VERIFY}
+
 # Copy requirements first for better caching
 COPY requirements.txt .
 
