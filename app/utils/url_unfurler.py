@@ -26,7 +26,7 @@ def unfurl(url: str) -> dict[str, Any]:
             "subdomain": domain_info.subdomain if domain_info.subdomain else None,
             "domain": domain_info.domain,
             "suffix": domain_info.suffix,
-            "registered_domain": domain_info.registered_domain,
+            "registered_domain": domain_info.top_domain_under_public_suffix,
         },
         "path": parsed.path,
         "path_segments": path_segments,
