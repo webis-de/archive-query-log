@@ -23,7 +23,7 @@ def client():
 
 
 # -------------------------------------------------------------------
-# 🔹 Elasticsearch Mock Fixture (wird automatisch für alle Tests aktiviert)
+# 🔹 Elasticsearch Mock Fixture
 # -------------------------------------------------------------------
 @pytest.fixture(autouse=True)
 def mock_elasticsearch(monkeypatch):

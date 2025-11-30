@@ -16,6 +16,7 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
   - [⚙️ For Developers (Development)](#️-for-developers-development)
     - [Requirements](#requirements-1)
     - [Setting Up Local Development Environment](#setting-up-local-development-environment)
+  - [📁 Project Structure](#-project-structure)
   - [📚 API Documentation](#-api-documentation)
   - [🔧 Extending the Project](#-extending-the-project)
     - [Add a New Router](#add-a-new-router)
@@ -143,6 +144,61 @@ black app/ tests/          # Format code
 flake8 app/ tests/         # Linting
 mypy app/                  # Type checking
 ```
+---
+
+## 📁 Project Structure
+
+```
+.
+├── app/                        
+│   ├── main.py                 # FastAPI app & configuration
+│   ├── routers/               
+│   │   └── search.py           # SERP & Search endpoints
+│   ├── models/                
+│   │   └── __init__.py
+│   ├── schemas/               
+│   │   └── aql.py
+│   ├── utils/
+│   │   ├── url_cleaner.py 
+│   │   └── url_unfurler.py 
+│   ├── services/          
+│   │   └── aql_service.py      # Elasticsearch AQL operations
+│   └── core/                   
+│       ├── elastic.py          # Elasticsearch client
+│       └── settings.py         # Pydantic settings with .env
+├── tests/                      
+│   ├── conftest.py             # Pytest fixtures, including mocked Elasticsearch
+│   ├── aql_services/    
+│   │   ├── test_aql_service_related_serps.py 
+│   │   ├── test_aql_service_search.py
+│   │   ├── test_aql_service_serp_by_id.py
+│   │   ├── test_aql_service_serp_memento_url.py
+│   │   ├── test_aql_service_serp_original_url.py
+│   │   ├── test_aql_service_serp_unfurl.py      
+│   │   └── test_aql_service_autocomplete.py
+│   ├── search_router/    
+│   │   ├── test_search_router_edge_cases.py
+│   │   ├── test_search_router_legacy_endpoints.py
+│   │   ├── test_search_router_safe_search.py
+│   │   ├── test_search_router_serp_detail.py    
+│   │   └── test_search_router_unified_search_endpoint.py
+│   ├── test_autocomplete.py
+│   ├── test_elastic.py
+│   ├── test_main.py
+│   ├── test_search_basic.py
+│   └── test_search_advanced.py
+├── requirements.txt            
+├── Dockerfile     
+├── .flake8             
+├── docker-compose.yml                        
+├── .gitignore                  
+├── .env.example   
+├── .gitlab-ci.yml
+├── mypy.ini
+├── pytest.ini                     
+└── README.md                   
+```
+
 ---
 
 ## 📚 API Documentation
