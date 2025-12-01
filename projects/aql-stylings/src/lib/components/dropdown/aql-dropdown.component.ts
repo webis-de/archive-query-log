@@ -121,16 +121,19 @@ export class AqlDropdownComponent implements OnDestroy {
   }
 
   onContentClick(event: MouseEvent): void {
-    // Close dropdown and stop propagation to prevent group item from closing
-    this.setDropdownOpenState(false);
+    const target = event.target as HTMLElement;
+    const closable = target.closest('aql-menu-item, a, button, [closeDropdown]');
+
+    if (closable) {
+      this.setDropdownOpenState(false);
+    }
+
     event.stopPropagation();
-    event.preventDefault();
   }
 
   onContentMouseDown(event: MouseEvent): void {
     // Prevent parent menu items from receiving :active styles
     event.stopPropagation();
-    event.preventDefault();
   }
 
   @HostListener('document:click', ['$event'])
@@ -202,6 +205,12 @@ export class AqlDropdownComponent implements OnDestroy {
   private restoreContent(): void {
     if (isPlatformBrowser(this.platformId) && this.contentElement) {
       this.elementRef.nativeElement.appendChild(this.contentElement.nativeElement);
+      this.contentElement.nativeElement.style.position = '';
+      this.contentElement.nativeElement.style.zIndex = '';
+      this.contentElement.nativeElement.style.top = '';
+      this.contentElement.nativeElement.style.bottom = '';
+      this.contentElement.nativeElement.style.left = '';
+      this.contentElement.nativeElement.style.right = '';
     }
   }
 
@@ -282,6 +291,21 @@ export class AqlDropdownComponent implements OnDestroy {
     }
 
     this.fixedStyles.set(styles);
+
+    // Manually apply styles to the element to ensure it is positioned correctly
+    if (this.contentElement) {
+      this.contentElement.nativeElement.style.top = '';
+      this.contentElement.nativeElement.style.bottom = '';
+      this.contentElement.nativeElement.style.left = '';
+      this.contentElement.nativeElement.style.right = '';
+
+      Object.entries(styles).forEach(([key, value]) => {
+        this.contentElement.nativeElement.style.setProperty(
+          key.replace(/[A-Z]/g, m => '-' + m.toLowerCase()),
+          value.toString(),
+        );
+      });
+    }
   }
 
   private blurActiveElementWithinDropdown(): void {

@@ -76,7 +76,7 @@ describe('AppSidebarComponent', () => {
   });
 
   it('should return filtered projects', () => {
-    const projects = component.filteredProjects;
+    const projects = component.filteredProjects();
     expect(projects).toBeDefined();
     expect(Array.isArray(projects)).toBe(true);
   });

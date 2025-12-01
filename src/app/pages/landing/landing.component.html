@@ -1,0 +1,42 @@
+<div class="flex items-center justify-center h-full bg-base-100">
+  <div class="w-full max-w-2xl px-6 py-12">
+    <h1 class="text-4xl font-bold mb-8 text-base-content text-center">Archive Query Log</h1>
+
+    <div class="flex flex-col gap-4">
+      <aql-input-field
+        [label]="landingMessage()"
+        placeholder="Enter your search query"
+        [(ngModel)]="searchQuery"
+        (keydown.enter)="onSearch()"
+      ></aql-input-field>
+
+      <aql-button
+        btnType="primary"
+        btnStyle="rounded"
+        [fullWidth]="true"
+        iconBefore="bi-search"
+        (buttonClick)="onSearch()"
+      >
+        Search
+      </aql-button>
+    </div>
+
+    @if (isTemporaryMode()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        <strong class="text-warning">Note:</strong> This search will not be saved to your history
+      </p>
+    } @else if (activeProject()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Searching in project: <strong>{{ activeProject()!.name }}</strong>
+      </p>
+    } @else if (hasProjects()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Select a project from the sidebar or search here
+      </p>
+    } @else {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Create your first project using the "New Project" button in the sidebar
+      </p>
+    }
+  </div>
+</div>
