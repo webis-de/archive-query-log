@@ -54,3 +54,20 @@ Build artifacts are output to `dist/aql-frontend`.
 
 - Run tests in CI mode:
   - `npm run test:ci`
+
+## Docker
+
+To build and run the application using Docker, follow these steps:
+
+### Build the Image
+
+```bash
+docker build -t aql-frontend:local .
+```
+
+### Run the Container
+
+```bash
+docker run --rm -p 4200:80 --name aql-frontend aql-frontend:local
+```
+The application will be accessible at `http://localhost:4200/`
