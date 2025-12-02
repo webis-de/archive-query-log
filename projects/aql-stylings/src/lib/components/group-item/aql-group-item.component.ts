@@ -21,22 +21,27 @@ export class AqlGroupItemComponent {
     return this.open() && iconOpen ? iconOpen : icon;
   });
 
-  onToggle(event: Event): void {
-    const details = event.target as HTMLDetailsElement | null;
-    this.open.set(!!details?.open);
+  onToggle(): void {
+    this.open.update(v => !v);
   }
 
-  onSummaryClick(event: MouseEvent): void {
+  onSummaryKeydown(event: KeyboardEvent): void {
     const target = event.target as HTMLElement | null;
     if (!target) {
       return;
     }
 
-    // Check if click is on the [after] slot
-    const afterSlot = target.closest('.after-slot');
-    if (afterSlot) {
-      event.preventDefault();
+    // Prevent Space/Enter from toggling when inside input field
+    const inputField = target.closest('aql-input-field');
+    const input = target.closest('input');
+    if (inputField || input) {
+      event.stopPropagation();
       return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.onToggle();
     }
   }
 }
