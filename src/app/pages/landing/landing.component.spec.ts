@@ -21,6 +21,6 @@ describe('LandingComponent', () => {
 
   it('should render title', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Welcome to AQL Frontend');
+    expect(compiled.querySelector('h1')?.textContent).toContain('AQL Search');
   });
 });

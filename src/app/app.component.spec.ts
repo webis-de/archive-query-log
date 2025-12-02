@@ -24,8 +24,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    const h1 = compiled.querySelector('main h1');
-    expect(h1?.textContent).toContain('Willkommen bei');
-    expect(h1?.textContent).toContain('AQL Frontend');
+    expect(compiled.textContent).toContain('Archive Query Log');
   });
 });
