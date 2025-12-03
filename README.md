@@ -15,17 +15,18 @@ Check your versions:
 
 1. Install dependencies:
    - `npm install`
-2. Optional: build the `aql-stylings` library:
-   - `npm run build:lib`
+
+2. Configure backend API URL (optional):
+   - Development: `src/environments/environment.ts` (default: `http://localhost:8000`)
+   - Production: `src/environments/environment.prod.ts`
 
 ## Development server
 
-- Start the library in watch mode (optional, for library-only development):
-  - `npm run watch:lib`
-
 - Start the app dev server (`http://localhost:4200/`):
   - `npm run start`
-  - or `ng serve`
+
+- Watch the library in development mode:
+  - `npm run watch`
 
 The application automatically reloads when you change any source file.
 
@@ -48,11 +49,25 @@ Build artifacts are output to `dist/aql-frontend`.
 
 ## Tests
 
-- Run unit tests (Karma + Jasmine, headless Chrome):
+- Run unit tests (Karma + Jasmine):
   - `npm run test`
-  - or `ng test --watch=false --browsers=ChromeHeadless`
 
-## TODO
+- Run tests in CI mode:
+  - `npm run test:ci`
 
-- Implement daisyUI-based wrapper components inside the `aql-stylings` library (e.g. `aql-button`, `aql-input`, `aql-card`) that use daisyUI classes internally and expose a consistent, app-friendly API.
+## Docker
 
+To build and run the application using Docker, follow these steps:
+
+### Build the Image
+
+```bash
+docker build -t aql-frontend:local .
+```
+
+### Run the Container
+
+```bash
+docker run --rm -p 4200:80 --name aql-frontend aql-frontend:local
+```
+The application will be accessible at `http://localhost:4200/`

@@ -5,3 +5,5 @@ export * from './lib/components/menu-item/aql-menu-item.component';
 export * from './lib/components/group-item/aql-group-item.component';
 export * from './lib/components/avatar-card/aql-avatar-card.component';
 export * from './lib/components/input-field/input-field.component';
+export * from './lib/components/header-bar/aql-header-bar.component';
+export * from './lib/components/panel/aql-panel.component';

@@ -1,9 +1,9 @@
 <div class="flex h-screen">
   <aside class="h-full shrink-0">
-    <app-sidebar [userData]="userData" (newProject)="title = 'New Project Clicked'"></app-sidebar>
+    <app-sidebar [userData]="userData()" (newProject)="title = 'New Project Clicked'"></app-sidebar>
   </aside>
 
-  <main class="flex-1 overflow-auto">
+  <main class="flex-1 overflow-x-hidden overflow-y-auto">
     <router-outlet></router-outlet>
   </main>
 </div>

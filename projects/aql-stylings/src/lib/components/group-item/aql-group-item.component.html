@@ -1,19 +1,19 @@
-<details class="collapse bg-transparent" [attr.open]="open() ? '' : null" (toggle)="onToggle($event)">
-  <summary class="collapse-title p-0 list-none" tabindex="0" (click)="onSummaryClick($event)" (keyup)="$event">
+<div class="collapse bg-transparent" [class.collapse-open]="open()">
+  <div class="collapse-title p-0 list-none" tabindex="0" (click)="onToggle()" (keydown)="onSummaryKeydown($event)">
     <aql-menu-item
       [iconBefore]="computedIconBefore()"
       [interactive]="false"
       class="w-full hover:bg-transparent focus:bg-transparent"
     >
       <ng-content select="[label]"></ng-content>
-      <ng-container ngProjectAs="[after]">
+      <div after class="after-slot flex items-center" (click)="$event.stopPropagation()">
         <ng-content select="[after]"></ng-content>
-      </ng-container>
+      </div>
     </aql-menu-item>
-  </summary>
+  </div>
   <div class="collapse-content p-0" tabindex="-1" (keyup)="$event">
-    <div class="menu menu-compact bg-base-100 p-0 space-y-1 rounded-md w-full">
+    <div class="menu menu-compact bg-base-100 p-0 rounded-md w-full">
       <ng-content></ng-content>
     </div>
   </div>
-</details>
+</div>

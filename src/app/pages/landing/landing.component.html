@@ -3,22 +3,50 @@
     <h1 class="text-5xl font-bold mb-12 text-primary">AQL Search</h1>
 
     <div class="flex w-full gap-2 h-14">
-      <input-field
+      <aql-input-field
         class="w-full h-full"
         shape="square"
         placeholder="Search for queries..."
         type="text"
         size="lg"
         color="primary"
+        [(ngModel)]="searchQuery"
+        [label]="landingMessage()"
+        (keydown.enter)="onSearch()"
       >
-        <aql-button suffix btnType="primary" btnStyle="full" [flatten]="true" size="sm">
+        <aql-button
+          suffix
+          btnType="primary"
+          btnStyle="full"
+          [flatten]="true"
+          size="sm"
+          (buttonClick)="onSearch()"
+        >
           Search
         </aql-button>
-      </input-field>
+      </aql-input-field>
 
       <aql-button class="w-20" btnType="link" btnStyle="full" [flatten]="true">
         <i class="bi bi-filter text-3xl"></i>
       </aql-button>
     </div>
+
+    @if (isTemporaryMode()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        <strong class="text-warning">Note:</strong> This search will not be saved to your history
+      </p>
+    } @else if (activeProject()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Searching in project: <strong>{{ activeProject()!.name }}</strong>
+      </p>
+    } @else if (hasProjects()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Select a project from the sidebar or search here
+      </p>
+    } @else {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Create your first project using the "New Project" button in the sidebar
+      </p>
+    }
   </div>
 </div>
