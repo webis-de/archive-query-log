@@ -18,7 +18,11 @@ export class InputFieldComponent {
   @Input() label = ''; 
   @Input() placeholder = 'input';
   @Input() value = '';
-  @Input() disabled = false; 
+  @Input() disabled = false;
+
+  // Date input attributes
+  @Input() min = '';
+  @Input() max = ''; 
   
   // Default-Icon.
   @Input() showIcon = true; 

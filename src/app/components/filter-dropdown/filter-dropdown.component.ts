@@ -2,7 +2,6 @@
 import { Component, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Subscription } from 'rxjs';
 import {
   AqlDropdownComponent,
   AqlButtonComponent,
@@ -48,14 +47,14 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
     this.checkInterval = window.setInterval(() => {
       if (this.dropdown) {
         const isOpen = this.dropdown.open;
-        
+
         // Detect transition from open to closed
         if (this.previousOpenState && !isOpen) {
           setTimeout(() => {
             this.reset();
           }, 300);
         }
-        
+
         this.previousOpenState = isOpen;
       }
     }, 50);
@@ -85,5 +84,46 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
 
     // Dropdown gezielt schließen, über die interne Click-Logik
     this.dropdown?.onContentClick(event);
+  }
+
+  /**
+   * Get today's date in YYYY-MM-DD format to prevent future dates
+   */
+  getTodayDate(): string {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+  }
+
+  /**
+   * Get the maximum date for the "From" field
+   * - If "To" date is set, max is one day before "To"
+   * - Otherwise, max is today
+   */
+  getMaxDateFrom(): string {
+    if (this.dateTo) {
+      const toDate = new Date(this.dateTo);
+      toDate.setDate(toDate.getDate() - 1);
+      return toDate.toISOString().split('T')[0];
+    }
+    return this.getTodayDate();
+  }
+
+  /**
+   * Get the minimum date for the "To" field (must be after "From" date)
+   */
+  getMinDateTo(): string {
+    if (!this.dateFrom) return '';
+
+    const fromDate = new Date(this.dateFrom);
+    fromDate.setDate(fromDate.getDate() + 1);
+
+    return fromDate.toISOString().split('T')[0];
+  }
+
+  /**
+   * Get the maximum date for the "To" field (today)
+   */
+  getMaxDateTo(): string {
+    return this.getTodayDate();
   }
 }

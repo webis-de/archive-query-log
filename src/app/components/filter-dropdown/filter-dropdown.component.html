@@ -25,6 +25,7 @@
                 [showIcon]="false"
                 size="sm"
                 [value]="dateFrom"
+                [max]="getMaxDateFrom()"
                 (change)="dateFrom = $any($event.target).value"
                 class="w-full"
               ></input-field>
@@ -36,6 +37,8 @@
                 [showIcon]="false"
                 size="sm"
                 [value]="dateTo"
+                [min]="getMinDateTo()"
+                [max]="getMaxDateTo()"
                 (change)="dateTo = $any($event.target).value"
                 class="w-full"
               ></input-field>

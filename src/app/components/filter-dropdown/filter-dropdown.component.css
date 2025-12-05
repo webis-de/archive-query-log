@@ -6,3 +6,13 @@ input-field {
   width: 100%;
   display: block;
 }
+
+/* Style for disabled dates in native date input */
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+/* Grey out disabled dates - browser-specific */
+input[type='date']:disabled {
+  opacity: 0.6;
+}
