@@ -1,5 +1,5 @@
 <div>
-  <aql-dropdown position="bottom end">
+  <aql-dropdown position="bottom end" [contentWidth]="'350px'">
     <div trigger class="relative">
       <aql-button btnType="primary" iconStyle="circle" size="md" iconBefore="">
         <i
@@ -10,7 +10,6 @@
     </div>
     <ng-container content>
       <div
-        class="filter-wrapper min-w-[350px] bg-base-100 rounded-lg overflow-hidden shadow-2xl"
         tabindex="0"
         (click)="$event.stopPropagation()"
         (mousedown)="$event.stopPropagation()"
@@ -90,9 +89,8 @@
           </div>
         </div>
 
-        <div class="flex border-t border-base-300 p-4 justify-between gap-3 rounded-b-lg">
+        <div class="flex border-t border-base-300 p-4 justify-between gap-3">
           <aql-button btnType="default" size="sm" (click)="reset()"> Reset </aql-button>
-
           <aql-button btnType="primary" size="sm" (click)="apply($event)"> Apply </aql-button>
         </div>
       </div>
