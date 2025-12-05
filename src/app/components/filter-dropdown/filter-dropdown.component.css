@@ -16,3 +16,19 @@ input[type='date']::-webkit-calendar-picker-indicator {
 input[type='date']:disabled {
   opacity: 0.6;
 }
+
+/* Icon transition animation */
+aql-button i {
+  display: inline-block;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.15s ease-in-out;
+}
+
+aql-button i.rotate-180 {
+  transform: rotate(180deg);
+}
+
+aql-button i.rotate-0 {
+  transform: rotate(0deg);
+}

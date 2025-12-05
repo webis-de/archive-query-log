@@ -1,13 +1,13 @@
 <div>
   <aql-dropdown position="bottom end">
-    <aql-button
-      trigger
-      btnType="primary"
-      iconStyle="circle"
-      size="md"
-      iconBefore="bi-filter text-3xl"
-    >
-    </aql-button>
+    <div trigger class="relative">
+      <aql-button btnType="primary" iconStyle="circle" size="md" iconBefore="">
+        <i
+          class="bi text-3xl transition-transform duration-300 ease-in-out"
+          [ngClass]="isOpen ? 'bi-x rotate-180' : 'bi-filter rotate-0'"
+        ></i>
+      </aql-button>
+    </div>
     <ng-container content>
       <div
         class="filter-wrapper min-w-[350px] bg-base-100 rounded-lg overflow-hidden shadow-2xl"

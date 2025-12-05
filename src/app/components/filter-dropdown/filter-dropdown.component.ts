@@ -32,8 +32,10 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
   dateFrom = '';
   dateTo = '';
   status = 'any';
+  isOpen = false; // Track dropdown open state for icon change
   private previousOpenState = false;
   private checkInterval: number | null = null;
+  private appliedClose = false; // Track if close was triggered by Apply button
 
   providers = [
     { label: 'Google', checked: false },
@@ -48,10 +50,17 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
       if (this.dropdown) {
         const isOpen = this.dropdown.open;
 
+        // Update the public isOpen property for the template
+        this.isOpen = isOpen;
+
         // Detect transition from open to closed
         if (this.previousOpenState && !isOpen) {
           setTimeout(() => {
-            this.reset();
+            // Only reset if the close was NOT triggered by Apply button
+            if (!this.appliedClose) {
+              this.reset();
+            }
+            this.appliedClose = false; // Reset the flag for next time
           }, 300);
         }
 
@@ -81,6 +90,9 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
       status: this.status,
       providers: this.providers.filter(p => p.checked).map(p => p.label),
     });
+
+    // Mark that this close was triggered by Apply (so we don't reset)
+    this.appliedClose = true;
 
     // Dropdown gezielt schließen, über die interne Click-Logik
     this.dropdown?.onContentClick(event);
