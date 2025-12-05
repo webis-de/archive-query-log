@@ -1,0 +1,81 @@
+<footer
+  class="footer items-center py-4 px-6 bg-base-300 text-base-content border-t border-base-content/10 grid grid-cols-1 md:grid-cols-3 gap-6"
+>
+  <aside class="flex items-center gap-3 justify-self-center md:justify-self-start">
+    <i class="bi bi-archive-fill text-2xl text-primary opacity-90"></i>
+    <div class="leading-tight">
+      <p class="font-bold text-sm">Copyright © {{ currentYear() }}</p>
+      <span class="text-xs opacity-60">Created by Archive Query Log Team</span>
+    </div>
+  </aside>
+
+  <nav class="flex gap-6 justify-self-center font-medium">
+    <a
+      routerLink="/imprint"
+      class="link link-hover hover:text-primary transition-colors duration-200"
+      >Imprint</a
+    >
+    <a
+      routerLink="/privacy"
+      class="link link-hover hover:text-primary transition-colors duration-200"
+      >Privacy Policy</a
+    >
+  </nav>
+
+  <form
+    (submit)="onContactSubmit(); $event.preventDefault()"
+    class="w-full max-w-xs justify-self-center md:justify-self-end"
+  >
+    <div class="form-control w-full">
+      <div class="label py-0 pb-2">
+        <span class="label-text font-extrabold text-primary text-xs uppercase tracking-wider"
+          >Get in touch</span
+        >
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <div
+          class="bg-base-100 rounded-[var(--rounded-btn,0.5rem)] shadow-sm focus-within:ring-2 focus-within:ring-primary/50 transition-all"
+        >
+          <aql-input-field
+            class="w-full"
+            size="sm"
+            placeholder="Your email address"
+            icon="bi bi-envelope"
+            color="ghost"
+            [(ngModel)]="contactEmail"
+            name="email"
+          ></aql-input-field>
+        </div>
+
+        <label
+          class="input input-sm input-ghost flex items-start gap-2 bg-base-100 h-auto py-2 shadow-sm focus-within:ring-2 focus-within:ring-primary/50 transition-all rounded-[var(--rounded-btn,0.5rem)] cursor-text"
+        >
+          <div class="flex-none flex items-center justify-center mt-0.5">
+            <i class="bi bi-chat-text opacity-50 text-[16px]"></i>
+          </div>
+          <textarea
+            class="grow bg-transparent border-none outline-none p-0 text-sm placeholder:opacity-50 font-['Plus_Jakarta_Sans'] resize-none h-16 leading-relaxed text-base-content"
+            placeholder="Your message..."
+            [(ngModel)]="contactMessage"
+            name="message"
+          ></textarea>
+        </label>
+
+        <div class="flex justify-end">
+          <aql-button
+            btnType="primary"
+            size="sm"
+            iconBefore="bi-send"
+            aria-label="Send contact request"
+            type="submit"
+            [disabled]="!isValid()"
+            class="shadow-md shadow-primary/30"
+          >
+            Send
+          </aql-button>
+        </div>
+      </div>
+    </div>
+  </form>
+</footer>
