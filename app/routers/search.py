@@ -41,6 +41,7 @@ class IncludeField(str, Enum):
     memento_url = "memento_url"
     related = "related"
     unfurl = "unfurl"
+    direct_links = "direct_links"
 
 
 # -------------------- Helper function --------------------
@@ -67,62 +68,91 @@ async def safe_search(coro):
     return results
 
 
+async def safe_search_paginated(coro):
+    """Handle common Elasticsearch exceptions for paginated endpoints (allows empty results)"""
+    try:
+        results = await coro
+
+    except BadRequestError:
+        raise HTTPException(status_code=400, detail="Invalid request to Elasticsearch")
+
+    except ConnectionError:
+        raise HTTPException(status_code=503, detail="Elasticsearch connection failed")
+
+    except ApiError:
+        raise HTTPException(status_code=503, detail="Elasticsearch transport error")
+
+    except Exception:
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+    return results
+
+
 # ---------------------------------------------------------
 # UNIFIED SEARCH ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps")
-@limiter.limit("10/minute")
+@limiter.limit("20/minute")
 async def unified_search(
     request: Request,
     query: str = Query(..., description="Search term"),
-    size: int = Query(10, description="Number of results to return"),
+    page_size: int = Query(10, description="Results per page (10, 20, or 50)"),
     provider_id: Optional[str] = Query(None, description="Filter by provider ID"),
     year: Optional[int] = Query(None, description="Filter by year"),
     status_code: Optional[int] = Query(None, description="Filter by HTTP status code"),
 ):
     """
-    Unified search endpoint for SERPs and providers.
+    Unified search endpoint for SERPs with pagination.
 
     Examples:
     - Basic search: /api/serps?query=climate+change
-    - Advanced search: /api/serps?query=climate&year=2024&provider_id=google
+    - With page size: /api/serps?query=climate&page_size=20
+    - Advanced search: /api/serps?query=climate&year=2024&provider_id=google&page_size=50
     """
-    if size <= 0:
-        raise HTTPException(status_code=400, detail="Size must be a positive integer")
+    # Validate page_size
+    valid_sizes = [10, 20, 50]
+    if page_size not in valid_sizes:
+        raise HTTPException(
+            status_code=400, detail=f"page_size must be one of {valid_sizes}"
+        )
 
-    # if type == SearchType.providers:
-    #    if autocomplete:
-    #        results = await safe_search(
-    #            aql_service.autocomplete_providers(q=query, size=size)
-    #        )
-    #        return {"count": len(results), "results": results, "autocomplete": True}
-    #    else:
-    #        results = await safe_search(
-    #            aql_service.search_providers(name=query, size=size)
-    #        )
-    #        return {"count": len(results), "results": results}
-
-    # elif type == SearchType.serps:
-    # if autocomplete:
-    #    raise HTTPException(
-    #        status_code=400,
-    #        detail="Autocomplete is not supported for SERP search. Use type=providers instead.",
-    #    )
-
+    # Perform search
     if provider_id or year or status_code:
-        results = await safe_search(
+        search_result = await safe_search_paginated(
             aql_service.search_advanced(
                 query=query,
                 provider_id=provider_id,
                 year=year,
                 status_code=status_code,
-                size=size,
+                size=page_size,
             )
         )
     else:
-        results = await safe_search(aql_service.search_basic(query=query, size=size))
+        search_result = await safe_search_paginated(
+            aql_service.search_basic(query=query, size=page_size)
+        )
 
-    return {"count": len(results), "results": results}
+    # Extract results and total count
+    hits = search_result["hits"]
+    total_count = search_result["total"]
+
+    # Calculate pagination info
+    total_pages = (total_count + page_size - 1) // page_size  # Ceiling division
+
+    return {
+        "query": query,
+        "count": len(hits),
+        "total": total_count,
+        "page_size": page_size,
+        "total_pages": total_pages,
+        "pagination": {
+            "current_results": len(hits),
+            "total_results": total_count,
+            "results_per_page": page_size,
+            "total_pages": total_pages,
+        },
+        "results": hits,
+    }
 
 
 # ---------------------------------------------------------
@@ -135,7 +165,8 @@ async def get_serp_unified(
     serp_id: str,
     include: Optional[str] = Query(
         None,
-        description="Comma-separated list of fields: original_url, memento_url, related, unfurl",
+        description="Comma-separated list of fields: original_url, memento_url, "
+        "related, unfurl, direct_links",
     ),
     remove_tracking: bool = Query(
         False,
@@ -156,7 +187,8 @@ async def get_serp_unified(
     - Basic: /api/serp/123
     - With original URL: /api/serp/123?include=original_url
     - With tracking removed: /api/serp/123?include=original_url&remove_tracking=true
-    - Multiple fields: /api/serp/123?include=original_url,memento_url,related,unfurl
+    - With direct links: /api/serp/123?include=direct_links
+    - Multiple fields: /api/serp/123?include=original_url,memento_url,related,unfurl,direct_links
     - Related SERPs: /api/serp/123?include=related&related_size=5&same_provider=true
     """
     if related_size <= 0:
@@ -209,6 +241,13 @@ async def get_serp_unified(
             + f"url={serp_data['_source']['capture']['url']}"
         )
 
+    if IncludeField.direct_links.value in include_fields:
+        direct_links_data = await safe_search(
+            aql_service.get_serp_direct_links(serp_id)
+        )
+        response["direct_links_count"] = direct_links_data.get("direct_links_count")
+        response["direct_links"] = direct_links_data.get("direct_links")
+
     return response
 
 
@@ -217,7 +256,7 @@ async def get_serp_unified(
 # ---------------------------------------------------------
 # Keep old endpoints but mark as deprecated
 @router.get("/search/basic", deprecated=True)
-@limiter.limit("10/minute")
+@limiter.limit("20/minute")
 async def search_basic_legacy(
     request: Request,
     query: str = Query(..., description="Search term for SERPs"),
@@ -231,7 +270,7 @@ async def search_basic_legacy(
 
 
 @router.get("/search/providers", deprecated=True)
-@limiter.limit("10/minute")
+@limiter.limit("20/minute")
 async def search_providers_legacy(
     request: Request,
     name: str = Query(..., description="Provider name to search for"),
@@ -245,7 +284,7 @@ async def search_providers_legacy(
 
 
 @router.get("/search/advanced", deprecated=True)
-@limiter.limit("10/minute")
+@limiter.limit("20/minute")
 async def search_advanced_legacy(
     request: Request,
     query: str = Query(..., description="Search term"),
@@ -270,7 +309,7 @@ async def search_advanced_legacy(
 
 
 @router.get("/search/by-year", deprecated=True)
-@limiter.limit("10/minute")
+@limiter.limit("20/minute")
 async def search_by_year_legacy(
     request: Request,
     query: str = Query(..., description="Search term"),
@@ -287,7 +326,7 @@ async def search_by_year_legacy(
 
 
 @router.get("/autocomplete/providers", deprecated=True)
-@limiter.limit("10/minute")
+@limiter.limit("20/minute")
 async def autocomplete_providers_legacy(
     request: Request,
     q: str = Query(..., min_length=2, description="Prefix for provider name"),

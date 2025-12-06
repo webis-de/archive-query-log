@@ -34,53 +34,78 @@ def async_return(value):
 
 def test_unified_search_basic(client):
     """Test basic search via unified endpoint"""
-    with patch("app.routers.search.aql_service.search_basic", new=async_return([1, 2])):
-        r = client.get("/serps?query=test&size=2")
+    mock_result = {"hits": [1, 2], "total": 2}
+    with patch(
+        "app.routers.search.aql_service.search_basic", new=async_return(mock_result)
+    ):
+        r = client.get("/serps?query=test")  # Default page_size=10
         assert r.status_code == 200
-        assert r.json() == {"count": 2, "results": [1, 2]}
+        data = r.json()
+        assert data["count"] == 2
+        assert data["total"] == 2
+        assert data["results"] == [1, 2]
 
 
 def test_unified_search_advanced(client):
     """Test advanced search via unified endpoint"""
+    mock_result = {"hits": ["ok"], "total": 1}
     with patch(
-        "app.routers.search.aql_service.search_advanced", new=async_return(["ok"])
+        "app.routers.search.aql_service.search_advanced", new=async_return(mock_result)
     ):
-        r = client.get("/serps?query=x&year=2024&provider_id=google&size=1")
+        r = client.get(
+            "/serps?query=x&year=2024&provider_id=google"
+        )  # Default page_size=10
         assert r.status_code == 200
-        assert r.json() == {"count": 1, "results": ["ok"]}
+        data = r.json()
+        assert data["count"] == 1
+        assert data["total"] == 1
+        assert data["results"] == ["ok"]
 
 
 def test_unified_search_by_year(client):
     """Test search with year filter"""
+    mock_result = {"hits": [10], "total": 1}
     with patch(
-        "app.routers.search.aql_service.search_advanced", new=async_return([10])
+        "app.routers.search.aql_service.search_advanced", new=async_return(mock_result)
     ):
-        r = client.get("/serps?query=t&year=2020&size=1")
+        r = client.get("/serps?query=t&year=2020")  # Default page_size=10
         assert r.status_code == 200
-        assert r.json() == {"count": 1, "results": [10]}
+        data = r.json()
+        assert data["count"] == 1
+        assert data["results"] == [10]
 
 
 def test_unified_search_all_filters(client):
     """Test search with all filters"""
+    mock_result = {"hits": ["filtered"], "total": 1}
     with patch(
         "app.routers.search.aql_service.search_advanced",
-        new=async_return(["filtered"]),
+        new=async_return(mock_result),
     ):
         r = client.get(
-            "/serps?query=x&provider_id=123&year=2021&status_code=200&size=5"
+            "/serps?query=x&provider_id=123&year=2021&status_code=200&page_size=10"
         )
         assert r.status_code == 200
-        assert r.json() == {"count": 1, "results": ["filtered"]}
+        data = r.json()
+        assert data["count"] == 1
+        assert data["results"] == ["filtered"]
 
 
-def test_unified_search_invalid_size(client):
-    """Test SERP search with invalid size"""
-    r = client.get("/serps?query=test&size=0")
+def test_unified_search_invalid_page_size(client):
+    """Test SERP search with invalid page_size"""
+    r = client.get("/serps?query=test&page_size=25")
     assert r.status_code == 400
 
 
 def test_unified_search_no_results(client):
-    """Test unified search returning no results"""
-    with patch("app.routers.search.aql_service.search_basic", new=async_return([])):
+    """Test unified search returning no results (now returns 200 with empty results)"""
+    mock_result = {"hits": [], "total": 0}
+    with patch(
+        "app.routers.search.aql_service.search_basic", new=async_return(mock_result)
+    ):
         r = client.get("/serps?query=nonexistent")
-        assert r.status_code == 404
+        assert r.status_code == 200
+        data = r.json()
+        assert data["count"] == 0
+        assert data["total"] == 0
+        assert data["results"] == []

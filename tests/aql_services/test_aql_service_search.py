@@ -10,8 +10,11 @@ import app.services.aql_service as aql
 async def test_search_basic():
     results = await aql.search_basic("test", size=5)
     # Since the global mock returns fixed hits, we only check for structure.
-    assert isinstance(results, list)
-    assert "url_query" in results[0]["_source"]
+    assert isinstance(results, dict)
+    assert "hits" in results
+    assert "total" in results
+    assert isinstance(results["hits"], list)
+    assert "url_query" in results["hits"][0]["_source"]
 
 
 # ---------------------------------------------------------
@@ -40,7 +43,9 @@ async def test_search_advanced_all_filters():
         status_code=404,
         size=7,
     )
-    assert isinstance(results, list)
+    assert isinstance(results, dict)
+    assert "hits" in results
+    assert "total" in results
 
 
 # ---------------------------------------------------------
@@ -49,7 +54,9 @@ async def test_search_advanced_all_filters():
 @pytest.mark.asyncio
 async def test_search_advanced_minimal():
     results = await aql.search_advanced(query="x")
-    assert isinstance(results, list)
+    assert isinstance(results, dict)
+    assert "hits" in results
+    assert "total" in results
 
 
 # ---------------------------------------------------------

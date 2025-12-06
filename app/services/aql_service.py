@@ -17,15 +17,28 @@ from app.utils.url_cleaner import remove_tracking_parameters
 # ---------------------------------------------------------
 # 1. Basic SERP Search
 # ---------------------------------------------------------
-async def search_basic(query: str, size: int = 10) -> List[Any]:
+async def search_basic(query: str, size: int = 10) -> dict:
     """
     Simple full-text search in SERPs by query string.
+
+    Returns:
+        dict with keys:
+            - hits: List of search results
+            - total: Total number of results found
     """
     es = get_es_client()
     body = {"query": {"match": {"url_query": query}}, "size": size}
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
-    return hits
+    total = response["hits"]["total"]
+
+    # Handle both old and new Elasticsearch response formats
+    if isinstance(total, dict):
+        total_count = total.get("value", 0)
+    else:
+        total_count = total
+
+    return {"hits": hits, "total": total_count}
 
 
 # ---------------------------------------------------------
@@ -51,12 +64,17 @@ async def search_advanced(
     year: Optional[int] = None,
     status_code: Optional[int] = None,
     size: int = 10,
-) -> List[Any]:
+) -> dict:
     """
     Perform advanced search on SERPs with optional filters:
     - provider_id: filter by provider
     - year: filter by capture year
     - status_code: filter by HTTP status code
+
+    Returns:
+        dict with keys:
+            - hits: List of search results
+            - total: Total number of results found
     """
     es = get_es_client()
 
@@ -84,7 +102,15 @@ async def search_advanced(
     body = {"query": {"bool": bool_query}, "size": size}
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
-    return hits
+    total = response["hits"]["total"]
+
+    # Handle both old and new Elasticsearch response formats
+    if isinstance(total, dict):
+        total_count = total.get("value", 0)
+    else:
+        total_count = total
+
+    return {"hits": hits, "total": total_count}
 
 
 # ---------------------------------------------------------
@@ -105,7 +131,7 @@ async def autocomplete_providers(q: str, size: int = 10) -> List[Any]:
 # ---------------------------------------------------------
 # 5. Search SERPs by Year
 # ---------------------------------------------------------
-async def search_by_year(query: str, year: int, size: int = 10) -> List[Any]:
+async def search_by_year(query: str, year: int, size: int = 10) -> dict:
     """
     Search SERPs containing a keyword in a specific year.
     """
@@ -215,4 +241,42 @@ async def get_serp_unfurl(serp_id: str) -> dict | None:
         "serp_id": serp["_id"],
         "original_url": original_url,
         "parsed": unfurled_url,
+    }
+
+
+# ---------------------------------------------------------
+# 11. Get direct links from SERP
+# ---------------------------------------------------------
+async def get_serp_direct_links(serp_id: str) -> dict | None:
+    """
+    Extract direct links/results from a SERP.
+
+    Returns all search result links from the SERP with:
+    - URL of each result
+    - Title/snippet (if available)
+    - Position in SERP
+    """
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    source = serp["_source"]
+    direct_links = []
+
+    # Extract direct links from results if they exist in the SERP data
+    if "results" in source:
+        for idx, result in enumerate(source["results"]):
+            direct_links.append(
+                {
+                    "position": idx + 1,
+                    "url": result.get("url"),
+                    "title": result.get("title"),
+                    "snippet": result.get("snippet", result.get("description")),
+                }
+            )
+
+    return {
+        "serp_id": serp["_id"],
+        "direct_links_count": len(direct_links),
+        "direct_links": direct_links,
     }

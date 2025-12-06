@@ -13,8 +13,14 @@ from app.routers.search import router
 def client():
     """Create test client with fresh FastAPI app instance including the search router"""
     app = FastAPI()
-    app.include_router(router)
-    app.state.limiter_enabled = False  # Disable rate limiting for tests
+
+    # Mock the limiter to disable rate limiting in tests
+    with patch("app.routers.search.limiter") as mock_limiter:
+        # Make the limiter decorator a no-op
+        mock_limiter.limit = lambda *args, **kwargs: lambda f: f
+
+        app.include_router(router)
+
     return TestClient(app, raise_server_exceptions=False)
 
 

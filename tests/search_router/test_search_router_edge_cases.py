@@ -42,10 +42,17 @@ def test_remove_tracking_parameters():
 
 
 def test_unified_search_no_results(client):
-    """Test unified search returning no results"""
-    with patch("app.routers.search.aql_service.search_basic", new=async_return([])):
+    """Test unified search returning no results (now returns 200 with empty array)"""
+    mock_result = {"hits": [], "total": 0}
+    with patch(
+        "app.routers.search.aql_service.search_basic", new=async_return(mock_result)
+    ):
         r = client.get("/serps?query=nonexistent")
-        assert r.status_code == 404
+        assert r.status_code == 200
+        data = r.json()
+        assert data["count"] == 0
+        assert data["total"] == 0
+        assert data["results"] == []
 
 
 def test_get_serp_unified_include_with_whitespace(client):
