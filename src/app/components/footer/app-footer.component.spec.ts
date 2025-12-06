@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppFooterComponent } from './app-footer.component';
 import { provideRouter } from '@angular/router';
 import { By } from '@angular/platform-browser';
-import { AqlInputFieldComponent, AqlButtonComponent } from 'aql-stylings';
 
 describe('AppFooterComponent', () => {
   let component: AppFooterComponent;
@@ -23,32 +22,22 @@ describe('AppFooterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render the custom input field for contact', () => {
-    const inputField = fixture.debugElement.query(By.directive(AqlInputFieldComponent));
-    expect(inputField).toBeTruthy();
-
-    // Prüfen ob Placeholder korrekt (Englisch) ist
-    expect(inputField.componentInstance.placeholder).toBe('Your email address');
-    expect(inputField.componentInstance.icon).toContain('envelope');
+  it('should render copyright year', () => {
+    const year = new Date().getFullYear().toString();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain(year);
   });
 
-  it('should render the custom button for sending', () => {
-    const button = fixture.debugElement.query(By.directive(AqlButtonComponent));
-    expect(button).toBeTruthy();
-
-    // Prüfen ob Label "Send" ist (via ng-content Projektion oder Property, je nach Button-Impl)
-    // Da AqlButtonComponent ng-content nutzt, prüfen wir das native Element Text
-    expect(button.nativeElement.textContent).toContain('Send');
+  it('should render the SWEP identifier', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('SWEP 2025');
   });
 
-  it('should have "Get in touch" label', () => {
-    const label = fixture.debugElement.query(By.css('.label-text'));
-    expect(label.nativeElement.textContent).toContain('Get in touch');
-  });
+  it('should render imprint and privacy links', () => {
+    const links = fixture.debugElement.queryAll(By.css('a'));
+    const linkTexts = links.map(l => l.nativeElement.textContent);
 
-  it('should update signal on input', () => {
-    const testEmail = 'test@example.com';
-    component.contactEmail.set(testEmail);
-    expect(component.contactEmail()).toBe(testEmail);
+    expect(linkTexts).toContain('Imprint');
+    expect(linkTexts).toContain('Privacy Policy');
   });
 });
