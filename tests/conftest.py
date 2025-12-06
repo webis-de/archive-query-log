@@ -52,7 +52,7 @@ def mock_elasticsearch(monkeypatch):
                             "_id": "2",
                             "_source": {"name": "Bing", "domain": "bing.com"},
                         },
-                    ]
+                    ],
                 }
             }
         else:
@@ -69,7 +69,7 @@ def mock_elasticsearch(monkeypatch):
                             "_id": "2",
                             "_source": {"url_query": "pumpkin", "provider": "Google"},
                         },
-                    ]
+                    ],
                 }
             }
 

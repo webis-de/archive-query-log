@@ -88,7 +88,6 @@ async def safe_search_paginated(coro):
     return results
 
 
-
 # ---------------------------------------------------------
 # UNIFIED SEARCH ENDPOINT
 # ---------------------------------------------------------
@@ -114,8 +113,7 @@ async def unified_search(
     valid_sizes = [10, 20, 50]
     if page_size not in valid_sizes:
         raise HTTPException(
-            status_code=400, 
-            detail=f"page_size must be one of {valid_sizes}"
+            status_code=400, detail=f"page_size must be one of {valid_sizes}"
         )
 
     # Perform search
@@ -130,15 +128,17 @@ async def unified_search(
             )
         )
     else:
-        search_result = await safe_search_paginated(aql_service.search_basic(query=query, size=page_size))
+        search_result = await safe_search_paginated(
+            aql_service.search_basic(query=query, size=page_size)
+        )
 
     # Extract results and total count
     hits = search_result["hits"]
     total_count = search_result["total"]
-    
+
     # Calculate pagination info
     total_pages = (total_count + page_size - 1) // page_size  # Ceiling division
-    
+
     return {
         "query": query,
         "count": len(hits),
@@ -151,7 +151,7 @@ async def unified_search(
             "results_per_page": page_size,
             "total_pages": total_pages,
         },
-        "results": hits
+        "results": hits,
     }
 
 

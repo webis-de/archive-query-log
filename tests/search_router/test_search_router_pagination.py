@@ -152,9 +152,7 @@ def test_unified_search_advanced_with_pagination(client):
         "app.routers.search.aql_service.search_advanced",
         new=async_return(mock_results),
     ):
-        r = client.get(
-            "/serps?query=test&year=2024&provider_id=google&page_size=20"
-        )
+        r = client.get("/serps?query=test&year=2024&provider_id=google&page_size=20")
         assert r.status_code == 200
         data = r.json()
 

@@ -20,7 +20,7 @@ from app.utils.url_cleaner import remove_tracking_parameters
 async def search_basic(query: str, size: int = 10) -> dict:
     """
     Simple full-text search in SERPs by query string.
-    
+
     Returns:
         dict with keys:
             - hits: List of search results
@@ -31,13 +31,13 @@ async def search_basic(query: str, size: int = 10) -> dict:
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
-    
+
     # Handle both old and new Elasticsearch response formats
     if isinstance(total, dict):
         total_count = total.get("value", 0)
     else:
         total_count = total
-    
+
     return {"hits": hits, "total": total_count}
 
 
@@ -70,7 +70,7 @@ async def search_advanced(
     - provider_id: filter by provider
     - year: filter by capture year
     - status_code: filter by HTTP status code
-    
+
     Returns:
         dict with keys:
             - hits: List of search results
@@ -103,13 +103,13 @@ async def search_advanced(
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
-    
+
     # Handle both old and new Elasticsearch response formats
     if isinstance(total, dict):
         total_count = total.get("value", 0)
     else:
         total_count = total
-    
+
     return {"hits": hits, "total": total_count}
 
 
@@ -131,7 +131,7 @@ async def autocomplete_providers(q: str, size: int = 10) -> List[Any]:
 # ---------------------------------------------------------
 # 5. Search SERPs by Year
 # ---------------------------------------------------------
-async def search_by_year(query: str, year: int, size: int = 10) -> List[Any]:
+async def search_by_year(query: str, year: int, size: int = 10) -> dict:
     """
     Search SERPs containing a keyword in a specific year.
     """
