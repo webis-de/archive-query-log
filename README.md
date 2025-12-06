@@ -82,14 +82,35 @@ docker stop <container-name>
 | GET    | `/api/serps?query=climate+change`                       | Basic SERP search    |
 | GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search |
 
+**Query Parameters for Search Endpoint:**
+- `query` (required) - Search term
+- `page_size` - Results per page (default: 10, options: 10, 20, 50)
+- `provider_id` - Filter by provider ID (optional)
+- `year` - Filter by year (optional)
+- `status_code` - Filter by HTTP status code (optional)
+
+**Response includes pagination information:**
+- `count` - Number of results in current request
+- `total` - Total number of results across all pages
+- `page_size` - Results per page
+- `total_pages` - Total number of pages
+- `pagination` - Detailed pagination object with all metrics
+
 #### ✅ SERP Detail Endpoints
 | Method | Endpoint                                                | Description                                                |
 | ------ | ------------------------------------------------------- | ---------------------------------------------------------- |
 | GET    | `/api/serp/{serp_id}`                                   | Get a single SERP by ID                                    |
-| GET    | `/api/serp/{serp_id}/original-url&remove_tracking=bool` | Get original SERP URL optional removed tracking parameters |
-| GET    | `/api/serp/{serp_id}/memento-url`                       | Get Memento SERP URL                                       |
-| GET    | `/api/serp/{serp_id}/related?size=X&same_provider=bool` | Get related SERPs                                          |
-| GET    | `/api/serp/{serp_id}/unfurl`                            | Get unfurled destination URL from redirect chain           |
+| GET    | `/api/serp/{serp_id}?include=original_url`              | Include original SERP URL                                  |
+| GET    | `/api/serp/{serp_id}?include=memento_url`               | Include Memento SERP URL                                   |
+| GET    | `/api/serp/{serp_id}?include=related&related_size=X`    | Include related SERPs                                      |
+| GET    | `/api/serp/{serp_id}?include=unfurl`                    | Include unfurled URL components                            |
+| GET    | `/api/serp/{serp_id}?include=direct_links`              | Include direct search result links                         |
+
+**Query Parameters for SERP Detail Endpoint:**
+- `include` - Comma-separated fields: `original_url`, `memento_url`, `related`, `unfurl`, `direct_links`
+- `remove_tracking` - Remove tracking parameters from original URL (requires `include=original_url`)
+- `related_size` - Number of related SERPs (requires `include=related`, default: 10)
+- `same_provider` - Only return related SERPs from same provider (requires `include=related`)
 
 ---
 
@@ -169,16 +190,19 @@ mypy app/                  # Type checking
 ├── tests/                      
 │   ├── conftest.py             # Pytest fixtures, including mocked Elasticsearch
 │   ├── aql_services/    
+│   │   ├── test_aql_service_autocomplete.py
+│   │   ├── test_aql_service_direct_links.py
 │   │   ├── test_aql_service_related_serps.py 
 │   │   ├── test_aql_service_search.py
 │   │   ├── test_aql_service_serp_by_id.py
 │   │   ├── test_aql_service_serp_memento_url.py
 │   │   ├── test_aql_service_serp_original_url.py
-│   │   ├── test_aql_service_serp_unfurl.py      
-│   │   └── test_aql_service_autocomplete.py
+│   │   └── test_aql_service_serp_unfurl.py      
 │   ├── search_router/    
+│   │   ├── test_search_router_direct_links.py
 │   │   ├── test_search_router_edge_cases.py
 │   │   ├── test_search_router_legacy_endpoints.py
+│   │   ├── test_search_router_pagination.py
 │   │   ├── test_search_router_safe_search.py
 │   │   ├── test_search_router_serp_detail.py    
 │   │   └── test_search_router_unified_search_endpoint.py
@@ -212,6 +236,7 @@ FastAPI generates interactive API documentation automatically:
 ---
 
 ## 🔧 Extending the Project
+
 
 ### Add a New Router
 

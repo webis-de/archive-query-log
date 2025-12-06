@@ -42,6 +42,7 @@ def mock_elasticsearch(monkeypatch):
             # Mock data for provider autocomplete
             return {
                 "hits": {
+                    "total": {"value": 2, "relation": "eq"},
                     "hits": [
                         {
                             "_id": "1",
@@ -58,6 +59,7 @@ def mock_elasticsearch(monkeypatch):
             # Default mock data for SERP searches
             return {
                 "hits": {
+                    "total": {"value": 2, "relation": "eq"},
                     "hits": [
                         {
                             "_id": "1",
@@ -74,6 +76,35 @@ def mock_elasticsearch(monkeypatch):
     class MockESClient:
         async def search(self, *args, **kwargs):
             return await mock_search(*args, **kwargs)
+
+        async def get(self, index=None, id=None):
+            """Mock get method for single document retrieval"""
+            return {
+                "_id": id or "test-id",
+                "_source": {
+                    "url_query": "test query",
+                    "capture": {
+                        "url": "https://google.com/search?q=test",
+                        "timestamp": "2021-01-01T00:00:00+00:00",
+                        "status_code": 200,
+                    },
+                    "provider": {"id": "google", "domain": "google.com"},
+                    "archive": {"memento_api_url": "https://web.archive.org/web"},
+                    "results": [
+                        {
+                            "url": "https://example.com/1",
+                            "title": "Result 1",
+                            "snippet": "First result snippet",
+                        },
+                        {
+                            "url": "https://example.com/2",
+                            "title": "Result 2",
+                            "description": "Second result description",
+                        },
+                    ],
+                },
+                "found": True,
+            }
 
         async def close(self):
             pass
