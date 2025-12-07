@@ -105,9 +105,10 @@ docker stop <container-name>
 | GET    | `/api/serp/{serp_id}?include=related&related_size=X`    | Include related SERPs                                      |
 | GET    | `/api/serp/{serp_id}?include=unfurl`                    | Include unfurled URL components                            |
 | GET    | `/api/serp/{serp_id}?include=direct_links`              | Include direct search result links                         |
+| GET    | `/api/serp/{serp_id}?include=unbranded`                 | Include provider-agnostic unified view                     |
 
 **Query Parameters for SERP Detail Endpoint:**
-- `include` - Comma-separated fields: `original_url`, `memento_url`, `related`, `unfurl`, `direct_links`
+- `include` - Comma-separated fields: `original_url`, `memento_url`, `related`, `unfurl`, `direct_links`, `unbranded`
 - `remove_tracking` - Remove tracking parameters from original URL (requires `include=original_url`)
 - `related_size` - Number of related SERPs (requires `include=related`, default: 10)
 - `same_provider` - Only return related SERPs from same provider (requires `include=related`)
@@ -197,7 +198,8 @@ mypy app/                  # Type checking
 │   │   ├── test_aql_service_serp_by_id.py
 │   │   ├── test_aql_service_serp_memento_url.py
 │   │   ├── test_aql_service_serp_original_url.py
-│   │   └── test_aql_service_serp_unfurl.py      
+│   │   ├── test_aql_service_serp_unfurl.py
+│   │   └── test_aql_service_unbranded.py      
 │   ├── search_router/    
 │   │   ├── test_search_router_direct_links.py
 │   │   ├── test_search_router_edge_cases.py
@@ -210,7 +212,8 @@ mypy app/                  # Type checking
 │   ├── test_elastic.py
 │   ├── test_main.py
 │   ├── test_search_basic.py
-│   └── test_search_advanced.py
+│   ├── test_search_advanced.py
+│   └── test_search_router_unbranded.py
 ├── requirements.txt            
 ├── Dockerfile     
 ├── .flake8             

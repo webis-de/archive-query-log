@@ -280,3 +280,60 @@ async def get_serp_direct_links(serp_id: str) -> dict | None:
         "direct_links_count": len(direct_links),
         "direct_links": direct_links,
     }
+
+
+# ---------------------------------------------------------
+# 12. Get unbranded SERP view
+# ---------------------------------------------------------
+async def get_serp_unbranded(serp_id: str) -> dict | None:
+    """
+    Get a unified, provider-agnostic view of SERP contents.
+
+    Normalizes parsed query and result blocks across different search
+    providers to present a clean, unbranded view of the SERP.
+
+    Returns:
+        dict with keys:
+            - serp_id: The SERP document ID
+            - query: Normalized parsed query information
+            - results: Normalized list of search results
+            - metadata: Capture metadata (timestamp, URL, status_code)
+    """
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    source = serp["_source"]
+
+    # Extract normalized query information
+    query_data = {
+        "raw": source.get("url_query", ""),
+        "parsed": source.get("parsed_query", None),
+    }
+
+    # Extract normalized results
+    results = []
+    if "results" in source:
+        for idx, result in enumerate(source["results"]):
+            normalized_result = {
+                "position": idx + 1,
+                "url": result.get("url"),
+                "title": result.get("title"),
+                "snippet": result.get("snippet") or result.get("description"),
+            }
+            results.append(normalized_result)
+
+    # Extract metadata
+    capture_info = source.get("capture", {})
+    metadata = {
+        "timestamp": capture_info.get("timestamp"),
+        "url": capture_info.get("url"),
+        "status_code": capture_info.get("status_code"),
+    }
+
+    return {
+        "serp_id": serp["_id"],
+        "query": query_data,
+        "results": results,
+        "metadata": metadata,
+    }

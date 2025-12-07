@@ -42,6 +42,7 @@ class IncludeField(str, Enum):
     related = "related"
     unfurl = "unfurl"
     direct_links = "direct_links"
+    unbranded = "unbranded"
 
 
 # -------------------- Helper function --------------------
@@ -166,7 +167,7 @@ async def get_serp_unified(
     include: Optional[str] = Query(
         None,
         description="Comma-separated list of fields: original_url, memento_url, "
-        "related, unfurl, direct_links",
+        "related, unfurl, direct_links, unbranded",
     ),
     remove_tracking: bool = Query(
         False,
@@ -188,7 +189,8 @@ async def get_serp_unified(
     - With original URL: /api/serp/123?include=original_url
     - With tracking removed: /api/serp/123?include=original_url&remove_tracking=true
     - With direct links: /api/serp/123?include=direct_links
-    - Multiple fields: /api/serp/123?include=original_url,memento_url,related,unfurl,direct_links
+    - Unbranded view: /api/serp/123?include=unbranded
+    - Multiple fields: /api/serp/123?include=memento_url,related,unfurl,direct_links,unbranded
     - Related SERPs: /api/serp/123?include=related&related_size=5&same_provider=true
     """
     if related_size <= 0:
@@ -247,6 +249,10 @@ async def get_serp_unified(
         )
         response["direct_links_count"] = direct_links_data.get("direct_links_count")
         response["direct_links"] = direct_links_data.get("direct_links")
+
+    if IncludeField.unbranded.value in include_fields:
+        unbranded_data = await safe_search(aql_service.get_serp_unbranded(serp_id))
+        response["unbranded"] = unbranded_data
 
     return response
 
