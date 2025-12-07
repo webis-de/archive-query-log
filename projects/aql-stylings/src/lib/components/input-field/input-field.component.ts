@@ -45,8 +45,6 @@ export class AqlInputFieldComponent implements ControlValueAccessor {
   // NEU: DaisyUI Color Style (Default 'bordered')
   @Input() color: InputColor = 'bordered';
 
-  value = '';
-
   onChange: (value: string) => void = () => {};
   onTouched: () => void = () => {};
 

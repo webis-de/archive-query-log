@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import {
   AqlDropdownComponent,
   AqlButtonComponent,
-  InputFieldComponent,
+  AqlInputFieldComponent,
   RadioButtonComponent,
   CheckboxComponent,
 } from 'aql-stylings';
@@ -18,7 +18,7 @@ import {
     FormsModule,
     AqlDropdownComponent,
     AqlButtonComponent,
-    InputFieldComponent,
+    AqlInputFieldComponent,
     RadioButtonComponent,
     CheckboxComponent,
   ],

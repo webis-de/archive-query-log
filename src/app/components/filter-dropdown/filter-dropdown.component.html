@@ -19,7 +19,7 @@
           <div class="flex gap-4">
             <div class="flex-1">
               <span class="block text-sm font-bold text-base-content/60 mb-1">From</span>
-              <input-field
+              <aql-input-field
                 type="date"
                 [showIcon]="false"
                 size="sm"
@@ -27,11 +27,11 @@
                 [max]="getMaxDateFrom()"
                 (change)="dateFrom = $any($event.target).value"
                 class="w-full"
-              ></input-field>
+              ></aql-input-field>
             </div>
             <div class="flex-1">
               <span class="block text-sm font-bold text-base-content/60 mb-1">To</span>
-              <input-field
+              <aql-input-field
                 type="date"
                 [showIcon]="false"
                 size="sm"
@@ -40,7 +40,7 @@
                 [max]="getMaxDateTo()"
                 (change)="dateTo = $any($event.target).value"
                 class="w-full"
-              ></input-field>
+              ></aql-input-field>
             </div>
           </div>
         </div>
