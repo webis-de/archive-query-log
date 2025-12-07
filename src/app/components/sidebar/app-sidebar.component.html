@@ -37,6 +37,7 @@
         size="md"
         iconBefore="bi-search"
         aria-label="Temporary search"
+        (buttonClick)="onTemporarySearch()"
       >
       </aql-button>
     </div>
@@ -94,6 +95,7 @@
             [align]="'start'"
             iconBefore="bi-search"
             aria-label="Temporary search"
+            (buttonClick)="onTemporarySearch()"
           >
             Temporary Search
           </aql-button>
@@ -102,21 +104,62 @@
     </div>
 
     <div class="px-2 py-3">
-      @if (filteredProjects.length > 0) {
-        @for (project of filteredProjects; track project.id) {
+      @if (filteredProjects().length > 0) {
+        @for (project of filteredProjects(); track project.id) {
           <aql-group-item
             class="group-item-row"
             [iconBefore]="'bi-folder2'"
             [iconBeforeOpen]="'bi-folder2-open'"
           >
-            <span label class="font-medium text-sm text-base-content/80">{{ project.name }}</span>
+            @if (editingProjectId() === project.id) {
+              <aql-input-field
+                class="sidebar-edit-input"
+                label
+                size="sm"
+                [showIcon]="false"
+                [(ngModel)]="editingValue"
+                [attr.data-project-id]="project.id"
+                (keydown)="onProjectNameKeydown($event, project.id)"
+                (click)="$event.stopPropagation()"
+              ></aql-input-field>
+            } @else {
+              <span label class="font-medium text-sm text-base-content/80">{{ project.name }}</span>
+            }
+
+            @if (project.isPinned) {
+              <aql-button
+                after
+                btnType="icon"
+                size="xs"
+                class="pinned-icon ms-1"
+                iconBefore="bi-pin-fill"
+                aria-label="Pinned project"
+              ></aql-button>
+            }
+
+            <aql-button
+              after
+              btnType="icon"
+              iconBefore="bi-plus"
+              aria-label="Add search to project"
+              (buttonClick)="onAddToProject(project.id)"
+            ></aql-button>
 
             <aql-dropdown after position="right">
               <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
               <ng-container content>
-                <aql-menu-item iconBefore="bi-pin">Pin Project</aql-menu-item>
-                <aql-menu-item iconBefore="bi-pencil">Rename Project</aql-menu-item>
-                <aql-menu-item iconBefore="bi-trash">Delete Project</aql-menu-item>
+                <aql-menu-item
+                  [iconBefore]="project.isPinned ? 'bi-pin-angle-fill' : 'bi-pin'"
+                  (click)="onPinProject(project.id)"
+                >
+                  {{ project.isPinned ? 'Unpin' : 'Pin' }} Project
+                </aql-menu-item>
+                <aql-menu-item iconBefore="bi-pencil" (click)="onRenameProject(project.id)">
+                  Rename Project
+                </aql-menu-item>
+                <aql-menu-item iconBefore="bi-trash" (click)="onDeleteProject(project.id)">
+                  Delete Project
+                </aql-menu-item>
               </ng-container>
             </aql-dropdown>
 
@@ -125,12 +168,29 @@
                 [selected]="selectedItemId() === item.id"
                 (selectedChange)="$event ? onItemSelected(item.id) : null"
               >
-                {{ item.name }}
+                @if (editingSearchId() === item.id) {
+                  <aql-input-field
+                    class="sidebar-edit-input"
+                    label
+                    size="sm"
+                    [showIcon]="false"
+                    [(ngModel)]="editingValue"
+                    [attr.data-search-id]="item.id"
+                    (keydown)="onSearchNameKeydown($event, item.id)"
+                    (click)="$event.stopPropagation()"
+                  ></aql-input-field>
+                } @else {
+                  <span label>{{ item.name }}</span>
+                }
                 <aql-dropdown after position="right">
                   <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
                   <ng-container content>
-                    <aql-menu-item iconBefore="bi-pencil">Rename Search</aql-menu-item>
-                    <aql-menu-item iconBefore="bi-trash">Delete Search</aql-menu-item>
+                    <aql-menu-item iconBefore="bi-pencil" (click)="onRenameSearch(item.id)">
+                      Rename Search
+                    </aql-menu-item>
+                    <aql-menu-item iconBefore="bi-trash" (click)="onDeleteSearch(item.id)">
+                      Delete Search
+                    </aql-menu-item>
                   </ng-container>
                 </aql-dropdown>
               </aql-menu-item>

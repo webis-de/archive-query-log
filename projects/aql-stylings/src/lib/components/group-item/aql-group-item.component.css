@@ -1,9 +1,7 @@
-/* Force the details element to allow overflow ONLY when the summary's dropdown is open */
-details.collapse:has(.dropdown-open) {
+.collapse:has(.dropdown-open) {
   overflow: visible !important;
 }
 
-/* Ensure the content area still clips its content for the animation to work, UNLESS a dropdown is open inside it */
 .collapse-content {
   overflow: hidden !important;
 }
@@ -12,18 +10,23 @@ details.collapse:has(.dropdown-open) {
   overflow: visible !important;
 }
 
-:host ::ng-deep .menu li::before,
-:host ::ng-deep .menu li > *::before {
-  display: none !important;
-  content: none !important;
-}
-
-details > summary {
+.collapse-title {
   list-style: none;
 }
 
-details > summary::-webkit-details-marker {
+.collapse-title::-webkit-details-marker {
   display: none;
+}
+
+.collapse-open .collapse-content {
+  overflow: visible;
+}
+:host ::ng-deep .collapse[open] {
+  overflow: visible;
+}
+
+:host ::ng-deep .collapse-open {
+  overflow: visible;
 }
 
 /* Force the after-slot icon to receive color white when menu item inside group is focused/active/selected */
@@ -44,4 +47,9 @@ details > summary::-webkit-details-marker {
 :host ::ng-deep .collapse-content > .menu > aql-menu-item .menu-item-content.is-interactive:active .after-slot .dropdown-content i,
 :host ::ng-deep .collapse-content > .menu > aql-menu-item .menu-item-content.active .after-slot .dropdown-content i {
   color: inherit !important;
+}
+
+:host ::ng-deep aql-menu-item .menu-item-content > span > span.truncate {
+  min-height: 1.75rem;
+  line-height: 1.75rem;
 }
