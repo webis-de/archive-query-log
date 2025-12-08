@@ -25,10 +25,7 @@
           Search
         </aql-button>
       </aql-input-field>
-
-      <aql-button class="w-20" btnType="link" btnStyle="full" [flatten]="true">
-        <i class="bi bi-filter text-3xl"></i>
-      </aql-button>
+      <aql-filter-dropdown></aql-filter-dropdown>
     </div>
 
     @if (isTemporaryMode()) {

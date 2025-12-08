@@ -6,11 +6,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
+import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, FormsModule, AqlInputFieldComponent, AqlButtonComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    AqlInputFieldComponent,
+    AqlButtonComponent,
+    FilterDropdownComponent,
+  ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
