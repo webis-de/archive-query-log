@@ -24,8 +24,13 @@ export type InputShape = 'square' | 'circle';
 export class AqlInputFieldComponent implements ControlValueAccessor {
   @Input() label = '';
   @Input() placeholder = 'input';
+  @Input() value = '';
   @Input() disabled = false;
 
+  // Date input attributes
+  @Input() min = '';
+  @Input() max = ''; 
+  
   // Default-Icon.
   @Input() showIcon = true;
   @Input() icon = 'bi bi-search';
@@ -39,8 +44,6 @@ export class AqlInputFieldComponent implements ControlValueAccessor {
 
   // NEU: DaisyUI Color Style (Default 'bordered')
   @Input() color: InputColor = 'bordered';
-
-  value = '';
 
   onChange: (value: string) => void = () => {};
   onTouched: () => void = () => {};
