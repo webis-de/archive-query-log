@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppSidebarComponent } from './app-sidebar.component';
 import { UserData } from '../../models/user-data.model';
 
@@ -26,7 +27,7 @@ describe('AppSidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppSidebarComponent],
+      imports: [AppSidebarComponent, TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppSidebarComponent);

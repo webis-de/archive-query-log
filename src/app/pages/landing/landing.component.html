@@ -1,12 +1,17 @@
-<div class="min-h-full bg-base-200 flex flex-col items-center pt-64">
+<div class="min-h-full bg-base-200 flex flex-col items-center pt-64 relative">
+  <!-- Language selector in top right corner -->
+  <div class="absolute top-4 right-4">
+    <app-language-selector></app-language-selector>
+  </div>
+
   <div class="w-full max-w-3xl px-4 text-center">
-    <h1 class="text-5xl font-bold mb-8 text-primary">AQL Search</h1>
+    <h1 class="text-5xl font-bold mb-8 text-primary">{{ 'app.title' | translate }}</h1>
 
     <div class="flex items-center w-full gap-2">
       <aql-input-field
         class="w-full h-full"
         shape="square"
-        placeholder="Search for queries..."
+        [placeholder]="'landing.searchPlaceholder' | translate"
         type="text"
         size="lg"
         color="primary"
@@ -22,7 +27,7 @@
           size="sm"
           (buttonClick)="onSearch()"
         >
-          Search
+          {{ 'landing.searchButton' | translate }}
         </aql-button>
       </aql-input-field>
       <aql-filter-dropdown></aql-filter-dropdown>
@@ -30,19 +35,20 @@
 
     @if (isTemporaryMode()) {
       <p class="text-sm text-base-content/50 mt-6 text-center">
-        <strong class="text-warning">Note:</strong> This search will not be saved to your history
+        <strong class="text-warning">{{ 'landing.temporaryModeNote' | translate }}</strong>
+        {{ 'landing.temporaryModeWarning' | translate }}
       </p>
     } @else if (activeProject()) {
       <p class="text-sm text-base-content/50 mt-6 text-center">
-        Searching in project: <strong>{{ activeProject()!.name }}</strong>
+        {{ 'landing.searchingInProject' | translate }} <strong>{{ activeProject()!.name }}</strong>
       </p>
     } @else if (hasProjects()) {
       <p class="text-sm text-base-content/50 mt-6 text-center">
-        Select a project from the sidebar or search here
+        {{ 'landing.selectProjectHint' | translate }}
       </p>
     } @else {
       <p class="text-sm text-base-content/50 mt-6 text-center">
-        Create your first project using the "New Project" button in the sidebar
+        {{ 'landing.createProjectHint' | translate }}
       </p>
     }
   </div>

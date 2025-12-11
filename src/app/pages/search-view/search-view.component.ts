@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import {
   AqlHeaderBarComponent,
   AqlInputFieldComponent,
@@ -12,17 +13,20 @@ import {
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
+import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 
 @Component({
   selector: 'app-search-view',
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     AqlHeaderBarComponent,
     AqlInputFieldComponent,
     AqlPanelComponent,
     AqlDropdownComponent,
     AqlButtonComponent,
+    LanguageSelectorComponent,
   ],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',

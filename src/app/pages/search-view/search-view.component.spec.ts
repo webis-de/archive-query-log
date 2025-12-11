@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { SearchViewComponent } from './search-view.component';
 
@@ -10,7 +11,7 @@ describe('SearchViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SearchViewComponent],
+      imports: [SearchViewComponent, TranslateModule.forRoot()],
       providers: [
         provideHttpClient(),
         {

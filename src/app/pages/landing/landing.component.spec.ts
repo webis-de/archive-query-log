@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { LandingComponent } from './landing.component';
 import { SearchHistoryService } from '../../services/search-history.service';
@@ -29,7 +30,7 @@ describe('LandingComponent', () => {
     });
 
     await TestBed.configureTestingModule({
-      imports: [LandingComponent],
+      imports: [LandingComponent, TranslateModule.forRoot()],
       providers: [
         { provide: Router, useValue: mockRouter },
         { provide: ActivatedRoute, useValue: mockActivatedRoute },

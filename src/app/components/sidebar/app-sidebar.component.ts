@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 import {
   AqlGroupItemComponent,
   AqlMenuItemComponent,
@@ -32,6 +33,7 @@ import { ProjectService } from '../../services/project.service';
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     AqlGroupItemComponent,
     AqlMenuItemComponent,
     AqlButtonComponent,

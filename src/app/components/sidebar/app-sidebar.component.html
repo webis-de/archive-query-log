@@ -14,7 +14,7 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-list"
-        aria-label="Expand sidebar"
+        [attr.aria-label]="'sidebar.expandSidebar' | translate"
         (buttonClick)="toggleCollapsed(false)"
       >
       </aql-button>
@@ -26,7 +26,7 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-folder-plus"
-        aria-label="New project"
+        [attr.aria-label]="'sidebar.newProject' | translate"
         (buttonClick)="onNewProject()"
       >
       </aql-button>
@@ -36,7 +36,7 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-search"
-        aria-label="Temporary search"
+        [attr.aria-label]="'sidebar.temporarySearch' | translate"
         (buttonClick)="onTemporarySearch()"
       >
       </aql-button>
@@ -66,7 +66,7 @@
             btnType="default"
             iconStyle="square"
             iconBefore="bi-list"
-            aria-label="Collapse sidebar"
+            [attr.aria-label]="'sidebar.collapseSidebar' | translate"
             (buttonClick)="toggleCollapsed(true)"
           >
           </aql-button>
@@ -83,7 +83,7 @@
             iconBefore="bi-folder-plus"
             (buttonClick)="onNewProject()"
           >
-            New Project
+            {{ 'sidebar.newProject' | translate }}
           </aql-button>
         </div>
 
@@ -94,10 +94,10 @@
             [fullWidth]="true"
             [align]="'start'"
             iconBefore="bi-search"
-            aria-label="Temporary search"
+            [attr.aria-label]="'sidebar.temporarySearch' | translate"
             (buttonClick)="onTemporarySearch()"
           >
-            Temporary Search
+            {{ 'sidebar.temporarySearch' | translate }}
           </aql-button>
         </div>
       </div>

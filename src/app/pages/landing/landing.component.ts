@@ -3,10 +3,12 @@ import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 
 @Component({
   selector: 'app-landing',
@@ -14,9 +16,11 @@ import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filt
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     AqlInputFieldComponent,
     AqlButtonComponent,
     FilterDropdownComponent,
+    LanguageSelectorComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
