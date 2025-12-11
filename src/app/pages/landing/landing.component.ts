@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
-import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { FilterDropdownComponent, FilterState } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 
 @Component({
   selector: 'app-landing',
@@ -32,6 +32,7 @@ export class LandingComponent implements OnInit {
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
   readonly isTemporaryMode = signal<boolean>(false);
+  readonly activeFilters = signal<string[]>(['All']);
 
   readonly activeProject = computed(() => {
     const currentSession = this.session();
@@ -64,6 +65,32 @@ export class LandingComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.isTemporaryMode.set(params['temp'] === 'true');
     });
+  }
+
+  onFiltersChanged(filters: FilterState) {
+    const badges: string[] = [];
+
+    if (filters.dateFrom || filters.dateTo) {
+      let dateStr = 'Date: ';
+      if (filters.dateFrom) dateStr += filters.dateFrom;
+      if (filters.dateFrom && filters.dateTo) dateStr += ' - ';
+      else if (filters.dateTo) dateStr += 'Until ' + filters.dateTo;
+      badges.push(dateStr);
+    }
+
+    if (filters.status && filters.status !== 'any') {
+      badges.push(`Status: ${filters.status}`);
+    }
+
+    if (filters.providers && filters.providers.length > 0) {
+      filters.providers.forEach(p => badges.push(`Provider: ${p}`));
+    }
+
+    if (badges.length === 0) {
+      badges.push('All');
+    }
+
+    this.activeFilters.set(badges);
   }
 
   onSearch(): void {

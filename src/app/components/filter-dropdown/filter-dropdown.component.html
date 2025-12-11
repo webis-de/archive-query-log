@@ -84,7 +84,7 @@
                 [label]="provider.label"
                 size="sm"
                 [checked]="provider.checked"
-                (change)="provider.checked = !provider.checked"
+                (change)="provider.checked = $event"
               ></checkbox>
             </div>
           </div>

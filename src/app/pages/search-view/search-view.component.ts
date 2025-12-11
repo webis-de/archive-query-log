@@ -12,6 +12,7 @@ import {
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
+import { FilterDropdownComponent, FilterState } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 
 @Component({
   selector: 'app-search-view',
@@ -23,6 +24,7 @@ import { SearchHistoryService } from '../../services/search-history.service';
     AqlPanelComponent,
     AqlDropdownComponent,
     AqlButtonComponent,
+    FilterDropdownComponent,
   ],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
@@ -40,6 +42,7 @@ export class SearchViewComponent implements OnInit {
   hasSearched = false;
   currentSearchId?: string;
   isTemporarySearch = false;
+  activeFilters: string[] = ['All'];
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -61,6 +64,32 @@ export class SearchViewComponent implements OnInit {
         this.loadSearchFromHistory(searchId);
       }
     });
+  }
+
+  onFiltersChanged(filters: FilterState) {
+    const badges: string[] = [];
+
+    if (filters.dateFrom || filters.dateTo) {
+      let dateStr = 'Date: ';
+      if (filters.dateFrom) dateStr += filters.dateFrom;
+      if (filters.dateFrom && filters.dateTo) dateStr += ' - ';
+      else if (filters.dateTo) dateStr += 'Until ' + filters.dateTo;
+      badges.push(dateStr);
+    }
+
+    if (filters.status && filters.status !== 'any') {
+      badges.push(`Status: ${filters.status}`);
+    }
+
+    if (filters.providers && filters.providers.length > 0) {
+      filters.providers.forEach(p => badges.push(`Provider: ${p}`));
+    }
+
+    if (badges.length === 0) {
+      badges.push('All');
+    }
+
+    this.activeFilters = badges;
   }
 
   onSearch(): void {

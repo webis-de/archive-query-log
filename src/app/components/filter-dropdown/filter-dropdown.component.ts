@@ -1,5 +1,5 @@
 // filter-dropdown.component.ts
-import { Component, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -9,6 +9,13 @@ import {
   RadioButtonComponent,
   CheckboxComponent,
 } from 'aql-stylings';
+
+export interface FilterState {
+  dateFrom: string;
+  dateTo: string;
+  status: string;
+  providers: string[];
+}
 
 @Component({
   selector: 'aql-filter-dropdown',
@@ -28,6 +35,8 @@ import {
 export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
   @ViewChild(AqlDropdownComponent)
   dropdown?: AqlDropdownComponent;
+
+  @Output() filtersChanged = new EventEmitter<FilterState>();
 
   dateFrom = '';
   dateTo = '';
@@ -84,12 +93,15 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
   }
 
   apply(event: MouseEvent) {
-    console.log('Filters applied:', {
-      from: this.dateFrom,
-      to: this.dateTo,
+    const currentState: FilterState = {
+      dateFrom: this.dateFrom,
+      dateTo: this.dateTo,
       status: this.status,
       providers: this.providers.filter(p => p.checked).map(p => p.label),
-    });
+    };
+
+    console.log('Filters applied:', currentState);
+    this.filtersChanged.emit(currentState);
 
     // Mark that this close was triggered by Apply (so we don't reset)
     this.appliedClose = true;
