@@ -26,6 +26,7 @@ export interface UserSession {
   userId: string;
   projects: Project[];
   activeProjectId?: string;
+  sidebarCollapsed?: boolean;
   createdAt: string;
   lastActive: string;
 }

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,6 +12,8 @@ import {
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
+import { AppMetadataPanelComponent } from '../../components/metadata-panel/metadata-panel.component';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-search-view',
@@ -23,6 +25,7 @@ import { SearchHistoryService } from '../../services/search-history.service';
     AqlPanelComponent,
     AqlDropdownComponent,
     AqlButtonComponent,
+    AppMetadataPanelComponent,
   ],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
@@ -30,6 +33,7 @@ import { SearchHistoryService } from '../../services/search-history.service';
 export class SearchViewComponent implements OnInit {
   private readonly searchService = inject(SearchService);
   private readonly searchHistoryService = inject(SearchHistoryService);
+  private readonly sessionService = inject(SessionService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 
@@ -41,8 +45,15 @@ export class SearchViewComponent implements OnInit {
   currentSearchId?: string;
   isTemporarySearch = false;
 
+  readonly isPanelOpen = signal(false);
+  readonly selectedResult = signal<SearchResult | null>(null);
+  readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
+
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
+      this.isPanelOpen.set(false);
+      this.selectedResult.set(null);
+
       const searchId = params.get('id');
       if (searchId === 'temp') {
         this.isTemporarySearch = true;
@@ -130,5 +141,18 @@ export class SearchViewComponent implements OnInit {
       hour: '2-digit',
       minute: '2-digit',
     });
+  }
+
+  onResultClick(result: SearchResult): void {
+    this.selectedResult.set(result);
+    this.isPanelOpen.set(true);
+
+    if (!this.sessionService.sidebarCollapsed()) {
+      this.sessionService.setSidebarCollapsed(true);
+    }
+  }
+
+  onClosePanel(): void {
+    this.isPanelOpen.set(false);
   }
 }

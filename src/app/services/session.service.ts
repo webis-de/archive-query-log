@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 import { UserSession } from '../models/project.model';
 
 @Injectable({
@@ -14,6 +14,7 @@ export class SessionService {
   }
 
   readonly session = this.sessionSignal.asReadonly();
+  readonly sidebarCollapsed = computed(() => this.sessionSignal()?.sidebarCollapsed ?? false);
 
   get currentSession(): UserSession | null {
     return this.sessionSignal();
@@ -61,6 +62,21 @@ export class SessionService {
 
   getActiveProjectId(): string | undefined {
     return this.currentSession?.activeProjectId;
+  }
+
+  setSidebarCollapsed(collapsed: boolean): void {
+    const session = this.currentSession;
+    if (session) {
+      const updatedSession = {
+        ...session,
+        sidebarCollapsed: collapsed,
+      };
+      this.updateSession(updatedSession);
+    }
+  }
+
+  getSidebarCollapsed(): boolean {
+    return this.currentSession?.sidebarCollapsed ?? false;
   }
 
   generateId(): string {
