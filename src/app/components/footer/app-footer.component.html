@@ -1,33 +1,22 @@
-<footer
-  class="footer items-center py-2 px-6 bg-base-300 text-base-content border-t border-base-content/10 grid grid-cols-1 md:grid-cols-3 gap-6"
->
-  <aside class="flex items-center gap-3 justify-self-center md:justify-self-start">
-    <i class="bi bi-archive-fill text-2xl text-primary opacity-90"></i>
-    <div class="leading-tight">
-      <p class="font-bold text-sm">Copyright © {{ currentYear() }}</p>
-      <span class="text-xs opacity-60">Created by Archive Query Log Team</span>
-    </div>
-  </aside>
-
-  <nav class="flex gap-6 justify-self-center font-medium">
+<footer class="w-full py-4 px-8 bg-transparent text-base-content/50 flex flex-col border-t border-base-200 md:flex-row justify-between items-center text-[11px] tracking-wide">
+  
+  <nav class="flex gap-6 md:ml-auto md:mr-auto mb-2 md:mb-0 uppercase font-medium">
     <a
       routerLink="/imprint"
-      class="link link-hover hover:text-primary transition-colors duration-200"
-      >Imprint</a
+      class="hover:text-base-content transition-colors duration-200"
     >
+      Imprint
+    </a>
+    
     <a
       routerLink="/privacy"
-      class="link link-hover hover:text-primary transition-colors duration-200"
-      >Privacy Policy</a
+      class="hover:text-base-content transition-colors duration-200"
     >
+      Privacy Policy
+    </a>
   </nav>
 
-  <aside class="flex flex-col items-center md:items-end justify-self-center md:justify-self-end">
-    <div class="text-right leading-tight">
-      <p class="font-extrabold text-primary text-lg tracking-wider">SWEP 2025</p>
-      <span class="text-xs opacity-50 uppercase tracking-widest font-semibold"
-        >Software Engineering Project</span
-      >
-    </div>
-  </aside>
+  <div class="uppercase font-semibold tracking-widest">
+    SWEP © {{ currentYear() }}
+  </div>
 </footer>
