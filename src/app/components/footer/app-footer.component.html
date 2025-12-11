@@ -1,7 +1,7 @@
 <footer
-  class="w-full py-4 px-8 bg-transparent text-base-content/50 flex flex-col border-t border-base-200 md:flex-row justify-between items-center text-[11px] tracking-wide"
+  class="w-full py-4 px-8 bg-transparent text-base-content/50 grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1fr] items-center text-[11px] tracking-wide"
 >
-  <nav class="flex gap-6 md:ml-auto md:mr-auto mb-2 md:mb-0 uppercase font-medium">
+  <nav class="flex gap-6 justify-center uppercase font-medium md:col-start-2">
     <a routerLink="/imprint" class="hover:text-base-content transition-colors duration-200">
       Imprint
     </a>
@@ -11,5 +11,9 @@
     </a>
   </nav>
 
-  <div class="uppercase font-semibold tracking-widest">SWEP © {{ currentYear() }}</div>
+  <div
+    class="uppercase font-semibold tracking-widest text-center md:text-right md:col-start-3 md:justify-self-end"
+  >
+    SWEP © {{ currentYear() }}
+  </div>
 </footer>
