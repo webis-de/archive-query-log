@@ -3,8 +3,11 @@
     <app-sidebar [userData]="userData()" (newProject)="title = 'New Project Clicked'"></app-sidebar>
   </aside>
 
-  <main class="flex-1 overflow-x-hidden overflow-y-auto">
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
+  <main class="flex-1 overflow-x-hidden overflow-y-auto flex flex-col">
+    <div class="flex-1">
+      <router-outlet></router-outlet>
+    </div>
+
+    <app-footer class="shrink-0"></app-footer>
   </main>
 </div>
