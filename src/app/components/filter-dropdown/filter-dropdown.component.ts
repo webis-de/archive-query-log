@@ -1,5 +1,13 @@
 // filter-dropdown.component.ts
-import { Component, ViewChild, AfterViewInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  AfterViewInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+  Input,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -35,6 +43,19 @@ export interface FilterState {
 export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
   @ViewChild(AqlDropdownComponent)
   dropdown?: AqlDropdownComponent;
+
+  @Input() set filters(value: FilterState | null) {
+    if (value) {
+      this.dateFrom = value.dateFrom || '';
+      this.dateTo = value.dateTo || '';
+      this.status = value.status || 'any';
+      if (value.providers) {
+        this.providers.forEach(p => {
+          p.checked = value.providers.includes(p.label);
+        });
+      }
+    }
+  }
 
   @Output() filtersChanged = new EventEmitter<FilterState>();
 

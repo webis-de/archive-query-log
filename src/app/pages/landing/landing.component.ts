@@ -6,7 +6,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
-import { FilterDropdownComponent, FilterState } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import {
+  FilterDropdownComponent,
+  FilterState,
+} from 'src/app/components/filter-dropdown/filter-dropdown.component';
 
 @Component({
   selector: 'app-landing',
@@ -33,6 +36,7 @@ export class LandingComponent implements OnInit {
   readonly session = this.sessionService.session;
   readonly isTemporaryMode = signal<boolean>(false);
   readonly activeFilters = signal<string[]>(['All']);
+  private currentFilters: FilterState | null = null;
 
   readonly activeProject = computed(() => {
     const currentSession = this.session();
@@ -68,6 +72,7 @@ export class LandingComponent implements OnInit {
   }
 
   onFiltersChanged(filters: FilterState) {
+    this.currentFilters = filters;
     const badges: string[] = [];
 
     if (filters.dateFrom || filters.dateTo) {
@@ -96,15 +101,30 @@ export class LandingComponent implements OnInit {
   onSearch(): void {
     const query = this.searchQuery().trim();
     if (query) {
+      const queryParams: Record<string, string> = { q: query };
+
+      if (this.currentFilters) {
+        if (this.currentFilters.dateFrom) queryParams['dateFrom'] = this.currentFilters.dateFrom;
+        if (this.currentFilters.dateTo) queryParams['dateTo'] = this.currentFilters.dateTo;
+        if (this.currentFilters.status && this.currentFilters.status !== 'any')
+          queryParams['status'] = this.currentFilters.status;
+        if (this.currentFilters.providers && this.currentFilters.providers.length > 0) {
+          queryParams['providers'] = this.currentFilters.providers.join(',');
+        }
+      }
+
       if (this.isTemporaryMode()) {
         // Route to temporary search view
         this.router.navigate(['/s', 'temp'], {
-          queryParams: { q: query },
+          queryParams: queryParams,
         });
       } else {
         // Normal search: save and navigate
+        // Note: We might want to save filters in history too, but for now just passing them to the view
         const searchItem = this.searchHistoryService.addSearch({ query });
-        this.router.navigate(['/s', searchItem.id]);
+        this.router.navigate(['/s', searchItem.id], {
+          queryParams: queryParams,
+        });
       }
     }
   }

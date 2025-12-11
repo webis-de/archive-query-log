@@ -22,7 +22,10 @@
           </aql-button>
         </aql-input-field>
         <div class="mb-[2px]">
-          <aql-filter-dropdown (filtersChanged)="onFiltersChanged($event)"></aql-filter-dropdown>
+          <aql-filter-dropdown
+            [filters]="initialFilters"
+            (filtersChanged)="onFiltersChanged($event)"
+          ></aql-filter-dropdown>
         </div>
       </div>
 

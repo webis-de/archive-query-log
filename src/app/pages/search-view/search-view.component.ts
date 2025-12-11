@@ -12,7 +12,10 @@ import {
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
-import { FilterDropdownComponent, FilterState } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import {
+  FilterDropdownComponent,
+  FilterState,
+} from 'src/app/components/filter-dropdown/filter-dropdown.component';
 
 @Component({
   selector: 'app-search-view',
@@ -43,8 +46,28 @@ export class SearchViewComponent implements OnInit {
   currentSearchId?: string;
   isTemporarySearch = false;
   activeFilters: string[] = ['All'];
+  initialFilters: FilterState | null = null;
 
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe(queryParams => {
+      const dateFrom = queryParams.get('dateFrom') || '';
+      const dateTo = queryParams.get('dateTo') || '';
+      const status = queryParams.get('status') || 'any';
+      const providersStr = queryParams.get('providers');
+      const providers = providersStr ? providersStr.split(',') : [];
+
+      if (dateFrom || dateTo || status !== 'any' || providers.length > 0) {
+        this.initialFilters = {
+          dateFrom,
+          dateTo,
+          status,
+          providers,
+        };
+        // Update badges immediately
+        this.onFiltersChanged(this.initialFilters);
+      }
+    });
+
     this.route.paramMap.subscribe(params => {
       const searchId = params.get('id');
       if (searchId === 'temp') {

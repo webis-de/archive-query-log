@@ -72,7 +72,9 @@ describe('LandingComponent', () => {
     component.onSearch();
 
     expect(mockSearchHistoryService.addSearch).toHaveBeenCalledWith({ query: 'test query' });
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/s', 'test-id']);
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/s', 'test-id'], {
+      queryParams: { q: 'test query' },
+    });
   });
 
   it('should navigate to temporary search in temp mode', () => {
