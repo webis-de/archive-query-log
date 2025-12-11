@@ -1,0 +1,58 @@
+{
+  "app": {
+    "title": "AQL Suche"
+  },
+  "common": {
+    "search": "Suchen",
+    "loading": "Lädt...",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen"
+  },
+  "sidebar": {
+    "expandSidebar": "Seitenleiste erweitern",
+    "collapseSidebar": "Seitenleiste einklappen",
+    "newProject": "Neues Projekt",
+    "temporarySearch": "Temporäre Suche",
+    "projects": "Projekte",
+    "searchHistory": "Suchverlauf",
+    "noProjectsFound": "Keine Projekte gefunden",
+    "createFirstProject": "Erstellen Sie Ihr erstes Projekt"
+  },
+  "landing": {
+    "welcomeMessage": "Willkommen bei AQL Suche",
+    "searchPlaceholder": "Nach Abfragen suchen...",
+    "searchLabel": "Geben Sie Ihre Suchanfrage ein",
+    "searchButton": "Suchen",
+    "temporaryModeNote": "Hinweis:",
+    "temporaryModeWarning": "Diese Suche wird nicht in Ihrem Verlauf gespeichert",
+    "searchingInProject": "Suche im Projekt:",
+    "selectProjectHint": "Wählen Sie ein Projekt aus der Seitenleiste oder suchen Sie hier",
+    "createProjectHint": "Erstellen Sie Ihr erstes Projekt über die Schaltfläche \"Neues Projekt\" in der Seitenleiste"
+  },
+  "search": {
+    "placeholder": "Suchen",
+    "label": "Suche",
+    "resultsFound": "{{count}} Ergebnisse gefunden",
+    "noResults": "Keine Ergebnisse gefunden",
+    "score": "Bewertung:",
+    "timestamp": "Zeitstempel:",
+    "url": "URL:",
+    "query": "Abfrage:"
+  },
+  "project": {
+    "name": "Projektname",
+    "description": "Beschreibung",
+    "createNew": "Neues Projekt erstellen",
+    "edit": "Projekt bearbeiten",
+    "delete": "Projekt löschen",
+    "confirmDelete": "Sind Sie sicher, dass Sie dieses Projekt löschen möchten?"
+  },
+  "language": {
+    "select": "Sprache wählen",
+    "english": "Englisch",
+    "german": "Deutsch"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "app": {
+    "title": "AQL Search"
+  },
+  "common": {
+    "search": "Search",
+    "loading": "Loading...",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close"
+  },
+  "sidebar": {
+    "expandSidebar": "Expand sidebar",
+    "collapseSidebar": "Collapse sidebar",
+    "newProject": "New project",
+    "temporarySearch": "Temporary search",
+    "projects": "Projects",
+    "searchHistory": "Search History",
+    "noProjectsFound": "No projects found",
+    "createFirstProject": "Create your first project"
+  },
+  "landing": {
+    "welcomeMessage": "Welcome to AQL Search",
+    "searchPlaceholder": "Search for queries...",
+    "searchLabel": "Enter your search query",
+    "searchButton": "Search",
+    "temporaryModeNote": "Note:",
+    "temporaryModeWarning": "This search will not be saved to your history",
+    "searchingInProject": "Searching in project:",
+    "selectProjectHint": "Select a project from the sidebar or search here",
+    "createProjectHint": "Create your first project using the \"New Project\" button in the sidebar"
+  },
+  "search": {
+    "placeholder": "Search",
+    "label": "Search",
+    "resultsFound": "Found {{count}} results",
+    "noResults": "No results found",
+    "score": "Score:",
+    "timestamp": "Timestamp:",
+    "url": "URL:",
+    "query": "Query:"
+  },
+  "project": {
+    "name": "Project Name",
+    "description": "Description",
+    "createNew": "Create New Project",
+    "edit": "Edit Project",
+    "delete": "Delete Project",
+    "confirmDelete": "Are you sure you want to delete this project?"
+  },
+  "language": {
+    "select": "Select Language",
+    "english": "English",
+    "german": "German"
+  }
+}
