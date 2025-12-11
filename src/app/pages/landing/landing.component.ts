@@ -1,16 +1,23 @@
+import { AqlInputFieldComponent, AqlButtonComponent } from 'aql-stylings';
 import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AqlInputFieldComponent, AqlButtonComponent } from 'aql-stylings';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
+import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, FormsModule, AqlInputFieldComponent, AqlButtonComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    AqlInputFieldComponent,
+    AqlButtonComponent,
+    FilterDropdownComponent,
+  ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
