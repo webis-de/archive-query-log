@@ -90,6 +90,14 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
     this.status = 'any';
     // Re-create array objects to force re-render of list items, ensuring checkboxes reset visually
     this.providers = this.providers.map(p => ({ ...p, checked: false }));
+
+    const currentState: FilterState = {
+      dateFrom: this.dateFrom,
+      dateTo: this.dateTo,
+      status: this.status,
+      providers: [],
+    };
+    this.filtersChanged.emit(currentState);
   }
 
   apply(event: MouseEvent) {
