@@ -1,119 +1,143 @@
-<div>
+<div class="flex flex-col h-screen">
   <aql-header-bar>
-    <div class="flex flex-col ps-4 pe-8 py-4 ml-[10vw] min-w-[500px] w-[45vw] shrink-0">
-      <div class="flex flex-row gap-2 w-full items-end">
-        <aql-input-field
-          class="flex-grow"
-          label="Search"
-          placeholder="Search"
-          name="searchQuery"
-          [(ngModel)]="searchQuery"
-          (keydown.enter)="onSearch()"
-        >
-          <aql-button
-            suffix
-            btnType="primary"
-            btnStyle="full"
-            [flatten]="true"
-            size="sm"
-            (buttonClick)="onSearch()"
+    <div
+      class="flex-1 transition-[margin] duration-300"
+      [class.ml-[10vw]]="!isPanelOpen()"
+      [class.ml-0]="isPanelOpen()"
+      [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
+      [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
+    >
+      <div class="flex flex-col ps-4 pe-8 py-4 w-full">
+        <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
+          <aql-input-field
+            class="flex-grow"
+            label="Search"
+            placeholder="Search"
+            name="searchQuery"
+            [(ngModel)]="searchQuery"
+            (keydown.enter)="onSearch()"
           >
-            Search
-          </aql-button>
-        </aql-input-field>
-        <div class="mb-[2px]">
-          <aql-filter-dropdown
-            [filters]="initialFilters"
-            (filtersChanged)="onFiltersChanged($event)"
-          ></aql-filter-dropdown>
+            <aql-button
+              suffix
+              btnType="primary"
+              btnStyle="full"
+              [flatten]="true"
+              size="sm"
+              (buttonClick)="onSearch()"
+            >
+              Search
+            </aql-button>
+          </aql-input-field>
+          <div class="mb-[2px]">
+            <aql-filter-dropdown
+              [filters]="initialFilters"
+              (filtersChanged)="onFiltersChanged($event)"
+            ></aql-filter-dropdown>
+          </div>
         </div>
-      </div>
 
-      <div class="flex flex-wrap gap-2 mt-2 justify-start w-full">
-        <span class="text-sm font-semibold self-center text-base-content/70">Active Filter:</span>
-        @for (badge of activeFilters; track badge) {
-          <div class="badge badge-primary badge-outline">{{ badge }}</div>
-        }
+        <div class="flex flex-wrap gap-2 mt-2 justify-start w-full max-w-[800px]">
+          <span class="text-sm font-semibold self-center text-base-content/70">Active Filter:</span>
+          @for (badge of activeFilters; track badge) {
+            <div class="badge badge-primary badge-outline">{{ badge }}</div>
+          }
+        </div>
       </div>
     </div>
   </aql-header-bar>
 
-  <div class="container ml-[10vw] ps-4 py-6">
-    @if (isLoading) {
-      <div class="flex justify-center items-center py-12">
-        <div class="text-lg">Loading...</div>
-      </div>
-    }
+  <div class="flex flex-row flex-1 overflow-hidden">
+    <div
+      class="flex-1 overflow-y-auto px-4 py-6 transition-all duration-300"
+      [class.ml-[10vw]]="!isPanelOpen()"
+      [class.ml-0]="isPanelOpen()"
+    >
+      @if (isLoading) {
+        <div class="flex justify-center items-center py-12">
+          <div class="text-lg">Loading...</div>
+        </div>
+      }
 
-    @if (!isLoading && hasSearched && totalCount > 0) {
-      <div class="mb-4">
-        <p class="text-sm text-gray-600">Found {{ totalCount }} results</p>
-      </div>
+      @if (!isLoading && hasSearched && totalCount > 0) {
+        <div class="w-full max-w-[800px]">
+          <div class="mb-4">
+            <p class="text-sm text-gray-600">Found {{ totalCount }} results</p>
+          </div>
 
-      <div class="flex flex-col gap-4 min-w-[500px] w-[45vw]">
-        @for (result of searchResults; track result._id) {
-          <aql-panel
-            [panelTitle]="result._source.url_query"
-            [subtitle]="result._source.capture.url"
-            [bordered]="true"
-            [shadow]="true"
-          >
-            <aql-dropdown subtitle-action position="right">
-              <aql-button
-                trigger
-                btnType="icon"
-                iconBefore="bi-three-dots-vertical"
-                size="xs"
-              ></aql-button>
-              <ng-container content>
-                <div class="p-3 space-y-2 text-sm min-w-[200px]">
-                  <div>
-                    <span class="font-semibold">Score:</span>
-                    <span class="ml-2">{{ result._score | number: '1.2-2' }}</span>
-                  </div>
-                  <div>
-                    <span class="font-semibold">ID:</span>
-                    <span class="ml-2 text-xs break-all">{{ result._id }}</span>
-                  </div>
-                  <div>
-                    <span class="font-semibold">MIME Type:</span>
-                    <span class="ml-2">{{ result._source.capture.mimetype }}</span>
-                  </div>
+          <div class="flex flex-col gap-4">
+            @for (result of searchResults; track result._id) {
+              <aql-panel
+                [panelTitle]="result._source.url_query"
+                [subtitle]="result._source.capture.url"
+                [bordered]="true"
+                [shadow]="true"
+                class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl"
+                (click)="onResultClick(result)"
+              >
+                <aql-dropdown subtitle-action position="right" (click)="$event.stopPropagation()">
+                  <aql-button
+                    trigger
+                    btnType="icon"
+                    iconBefore="bi-three-dots-vertical"
+                    size="xs"
+                  ></aql-button>
+                  <ng-container content>
+                    <div class="p-3 space-y-2 text-sm min-w-[200px]">
+                      <div>
+                        <span class="font-semibold">Score:</span>
+                        <span class="ml-2">{{ result._score | number: '1.2-2' }}</span>
+                      </div>
+                      <div>
+                        <span class="font-semibold">ID:</span>
+                        <span class="ml-2 text-xs break-all">{{ result._id }}</span>
+                      </div>
+                      <div>
+                        <span class="font-semibold">MIME Type:</span>
+                        <span class="ml-2">{{ result._source.capture.mimetype }}</span>
+                      </div>
+                    </div>
+                  </ng-container>
+                </aql-dropdown>
+
+                <div class="text-sm text-base-content/70 line-clamp-3 min-h-[3.6rem]">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                  no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                  amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                  est Lorem ipsum dolor sit amet.
                 </div>
-              </ng-container>
-            </aql-dropdown>
 
-            <div class="text-sm text-base-content/70 line-clamp-3 min-h-[3.6rem]">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-              aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-              rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-              amet.
-            </div>
+                <div footer class="flex items-center gap-2 text-sm text-base-content/60">
+                  <span>{{ formatDate(result._source.capture.timestamp) }}</span>
+                  <span>·</span>
+                  <span>{{ result._source.provider.domain }}</span>
+                </div>
+              </aql-panel>
+            }
+          </div>
+        </div>
+      }
 
-            <div footer class="flex items-center gap-2 text-sm text-base-content/60">
-              <span>{{ formatDate(result._source.capture.timestamp) }}</span>
-              <span>·</span>
-              <span>{{ result._source.provider.domain }}</span>
-            </div>
-          </aql-panel>
-        }
-      </div>
-    }
+      @if (!isLoading && hasSearched && totalCount === 0) {
+        <div class="flex justify-center items-center py-12">
+          <div class="text-lg text-gray-600">No results found for "{{ searchQuery }}"</div>
+        </div>
+      }
 
-    @if (!isLoading && hasSearched && totalCount === 0) {
-      <div class="flex justify-center items-center py-12">
-        <div class="text-lg text-gray-600">No results found for "{{ searchQuery }}"</div>
-      </div>
-    }
+      @if (!hasSearched) {
+        <div class="flex justify-center items-center py-12">
+          <div class="text-lg text-gray-600">Enter a search query to begin</div>
+        </div>
+      }
+    </div>
 
-    @if (!hasSearched) {
-      <div class="flex justify-center items-center py-12">
-        <div class="text-lg text-gray-600">Enter a search query to begin</div>
-      </div>
-    }
+    <app-metadata-panel
+      [isOpen]="isPanelOpen()"
+      [searchResult]="selectedResult()"
+      (closePanel)="onClosePanel()"
+    ></app-metadata-panel>
   </div>
 </div>
