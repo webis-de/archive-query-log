@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -12,29 +12,23 @@ export type CheckboxSize = 'xs' | 'sm' | 'md' | 'lg';
   styleUrl: './checkbox.component.css',
 })
 export class CheckboxComponent {
-  @Input() label = '';
-  @Input() checked = false;
-  @Input() disabled = false;
-  
- 
-  @Input() indeterminate = false;
+  // Modern Angular signals-based inputs/outputs
+  readonly label = input<string>('');
+  readonly checked = input<boolean>(false);
+  readonly disabled = input<boolean>(false);
+  readonly indeterminate = input<boolean>(false);
+  readonly size = input<CheckboxSize>('md');
 
+  readonly change = output<boolean>();
+  readonly indeterminateChange = output<boolean>();
 
-  @Input() size: CheckboxSize = 'md';
+  onChange(checked: boolean): void {
+    if (this.disabled()) return;
 
-  @Output() change = new EventEmitter<boolean>();
-  @Output() indeterminateChange = new EventEmitter<boolean>();
+    this.change.emit(checked);
 
-  onChange(event: Event) {
-    if (this.disabled) return;
-    
-    const target = event.target as HTMLInputElement;
-    this.checked = target.checked;
-    
-
-    this.indeterminate = false;
-    this.indeterminateChange.emit(this.indeterminate);
-    
-    this.change.emit(this.checked);
+    if (this.indeterminate()) {
+      this.indeterminateChange.emit(false);
+    }
   }
 }

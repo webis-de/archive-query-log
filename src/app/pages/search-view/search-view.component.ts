@@ -12,10 +12,9 @@ import {
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
-import {
-  FilterDropdownComponent,
-  FilterState,
-} from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { FilterBadgeService } from '../../services/filter-badge.service';
+import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { FilterState } from '../../models/filter.model';
 
 @Component({
   selector: 'app-search-view',
@@ -35,6 +34,7 @@ import {
 export class SearchViewComponent implements OnInit {
   private readonly searchService = inject(SearchService);
   private readonly searchHistoryService = inject(SearchHistoryService);
+  private readonly filterBadgeService = inject(FilterBadgeService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 
@@ -89,30 +89,8 @@ export class SearchViewComponent implements OnInit {
     });
   }
 
-  onFiltersChanged(filters: FilterState) {
-    const badges: string[] = [];
-
-    if (filters.dateFrom || filters.dateTo) {
-      let dateStr = 'Date: ';
-      if (filters.dateFrom) dateStr += filters.dateFrom;
-      if (filters.dateFrom && filters.dateTo) dateStr += ' - ';
-      else if (filters.dateTo) dateStr += 'Until ' + filters.dateTo;
-      badges.push(dateStr);
-    }
-
-    if (filters.status && filters.status !== 'any') {
-      badges.push(`Status: ${filters.status}`);
-    }
-
-    if (filters.providers && filters.providers.length > 0) {
-      filters.providers.forEach(p => badges.push(`Provider: ${p}`));
-    }
-
-    if (badges.length === 0) {
-      badges.push('All');
-    }
-
-    this.activeFilters = badges;
+  onFiltersChanged(filters: FilterState): void {
+    this.activeFilters = this.filterBadgeService.generateBadges(filters);
   }
 
   onSearch(): void {

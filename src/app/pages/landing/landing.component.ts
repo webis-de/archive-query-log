@@ -6,10 +6,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
-import {
-  FilterDropdownComponent,
-  FilterState,
-} from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { FilterBadgeService } from '../../services/filter-badge.service';
+import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { FilterState } from '../../models/filter.model';
 
 @Component({
   selector: 'app-landing',
@@ -28,6 +27,7 @@ export class LandingComponent implements OnInit {
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly projectService = inject(ProjectService);
   private readonly sessionService = inject(SessionService);
+  private readonly filterBadgeService = inject(FilterBadgeService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
 
@@ -71,30 +71,9 @@ export class LandingComponent implements OnInit {
     });
   }
 
-  onFiltersChanged(filters: FilterState) {
+  onFiltersChanged(filters: FilterState): void {
     this.currentFilters = filters;
-    const badges: string[] = [];
-
-    if (filters.dateFrom || filters.dateTo) {
-      let dateStr = 'Date: ';
-      if (filters.dateFrom) dateStr += filters.dateFrom;
-      if (filters.dateFrom && filters.dateTo) dateStr += ' - ';
-      else if (filters.dateTo) dateStr += 'Until ' + filters.dateTo;
-      badges.push(dateStr);
-    }
-
-    if (filters.status && filters.status !== 'any') {
-      badges.push(`Status: ${filters.status}`);
-    }
-
-    if (filters.providers && filters.providers.length > 0) {
-      filters.providers.forEach(p => badges.push(`Provider: ${p}`));
-    }
-
-    if (badges.length === 0) {
-      badges.push('All');
-    }
-
+    const badges = this.filterBadgeService.generateBadges(filters);
     this.activeFilters.set(badges);
   }
 
