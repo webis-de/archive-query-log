@@ -1,6 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppSidebarComponent } from './components/sidebar/app-sidebar.component';
+import { AppFooterComponent } from './components/footer/app-footer.component';
 import { SessionService } from './services/session.service';
 import { ProjectService } from './services/project.service';
 import { UserData } from './models/user-data.model';
@@ -8,7 +9,7 @@ import { UserData } from './models/user-data.model';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppSidebarComponent],
+  imports: [RouterOutlet, AppSidebarComponent, AppFooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
