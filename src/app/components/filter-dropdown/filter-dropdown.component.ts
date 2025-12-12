@@ -97,7 +97,7 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
             providers.map(p => ({
               ...p,
               checked: filterValue.providers.includes(p.label),
-            }))
+            })),
           );
         }
       }
@@ -134,9 +134,7 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
     this.dateFrom.set('');
     this.dateTo.set('');
     this.status.set('any');
-    this.providers.update(providers =>
-      providers.map(p => ({ ...p, checked: p.label === 'All' }))
-    );
+    this.providers.update(providers => providers.map(p => ({ ...p, checked: p.label === 'All' })));
 
     this.emitCurrentState();
   }
@@ -191,16 +189,10 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
           return p;
         });
       } else {
-        const updatedProviders = providers.map(p =>
-          p.label === label ? { ...p, checked } : p
-        );
-        const hasAnySelected = updatedProviders.some(
-          p => p.label !== 'All' && p.checked
-        );
+        const updatedProviders = providers.map(p => (p.label === label ? { ...p, checked } : p));
+        const hasAnySelected = updatedProviders.some(p => p.label !== 'All' && p.checked);
         if (!hasAnySelected) {
-          return updatedProviders.map(p =>
-            p.label === 'All' ? { ...p, checked: true } : p
-          );
+          return updatedProviders.map(p => (p.label === 'All' ? { ...p, checked: true } : p));
         }
         return updatedProviders;
       }
