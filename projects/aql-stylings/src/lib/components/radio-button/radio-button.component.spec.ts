@@ -8,9 +8,8 @@ describe('RadioButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RadioButtonComponent]
-    })
-    .compileComponents();
+      imports: [RadioButtonComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RadioButtonComponent);
     component = fixture.componentInstance;

@@ -5,27 +5,26 @@ import { FormsModule } from '@angular/forms';
 export type CheckboxSize = 'xs' | 'sm' | 'md' | 'lg';
 
 @Component({
-  selector: 'checkbox',
+  selector: 'aql-checkbox',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.css',
 })
-export class CheckboxComponent {
-  // Modern Angular signals-based inputs/outputs
+export class AqlCheckboxComponent {
   readonly label = input<string>('');
   readonly checked = input<boolean>(false);
   readonly disabled = input<boolean>(false);
   readonly indeterminate = input<boolean>(false);
   readonly size = input<CheckboxSize>('md');
 
-  readonly change = output<boolean>();
+  readonly checkboxChange = output<boolean>();
   readonly indeterminateChange = output<boolean>();
 
   onChange(checked: boolean): void {
     if (this.disabled()) return;
 
-    this.change.emit(checked);
+    this.checkboxChange.emit(checked);
 
     if (this.indeterminate()) {
       this.indeterminateChange.emit(false);

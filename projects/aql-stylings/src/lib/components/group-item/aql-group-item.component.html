@@ -6,7 +6,15 @@
       class="w-full hover:bg-transparent focus:bg-transparent"
     >
       <ng-content select="[label]"></ng-content>
-      <div after class="after-slot flex items-center" (click)="$event.stopPropagation()">
+      <div
+        after
+        class="after-slot flex items-center"
+        role="button"
+        tabindex="0"
+        (click)="$event.stopPropagation()"
+        (keydown.enter)="$event.stopPropagation()"
+        (keydown.space)="$event.stopPropagation()"
+      >
         <ng-content select="[after]"></ng-content>
       </div>
     </aql-menu-item>
