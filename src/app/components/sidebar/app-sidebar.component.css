@@ -40,3 +40,167 @@
   opacity: 0;
   pointer-events: none;
 }
+
+.collapse:has(.dropdown-open) {
+  overflow: visible !important;
+}
+
+.collapse-content {
+  overflow: hidden !important;
+}
+
+.collapse-content:has(.dropdown-open) {
+  overflow: visible !important;
+}
+
+.collapse-title {
+  list-style: none;
+}
+
+.collapse-title::-webkit-details-marker {
+  display: none;
+}
+
+.collapse-open .collapse-content {
+  overflow: visible;
+}
+
+:host ::ng-deep .collapse[open] {
+  overflow: visible;
+}
+
+:host ::ng-deep .collapse-open {
+  overflow: visible;
+}
+
+/* Force the after-slot icon to receive color white when menu item inside group is focused/active/selected */
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content:not(:has(.after-slot:active)):not(:has(.after-slot:focus-within)):focus
+  .after-slot
+  .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.is-interactive:not(:has(.after-slot:active)):not(
+    :has(.after-slot:focus-within)
+  ):active
+  .after-slot
+  .bi,
+:host ::ng-deep .collapse-content > .menu > aql-menu-item .menu-item-content.active .after-slot .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content:not(:has(.after-slot:active)):not(:has(.after-slot:focus-within)):focus
+  .after-slot
+  i,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.is-interactive:not(:has(.after-slot:active)):not(
+    :has(.after-slot:focus-within)
+  ):active
+  .after-slot
+  i,
+:host ::ng-deep .collapse-content > .menu > aql-menu-item .menu-item-content.active .after-slot i {
+  color: var(--color-base-100) !important;
+}
+
+/* Prevent icons inside dropdown-content from receiving color white */
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content:focus
+  .after-slot
+  .dropdown-content
+  .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.is-interactive:active
+  .after-slot
+  .dropdown-content
+  .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.active
+  .after-slot
+  .dropdown-content
+  .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content:focus
+  .after-slot
+  .dropdown-content
+  i,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.is-interactive:active
+  .after-slot
+  .dropdown-content
+  i,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.active
+  .after-slot
+  .dropdown-content
+  i {
+  color: inherit !important;
+}
+
+/* Custom compact input for sidebar rename */
+:host ::ng-deep .sidebar-edit-input .input {
+  height: 1.75rem !important;
+  min-height: 1.75rem !important;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Make after-slot visible when not hovering IF it has a pinned icon OR dropdown is open */
+:host ::ng-deep aql-menu-item .menu-item-content:not(:hover) .after-slot:has(.pinned-icon),
+:host ::ng-deep aql-menu-item .menu-item-content:not(:hover) .after-slot:has(.dropdown-open) {
+  opacity: 1 !important;
+}
+
+/* Hide non-pinned items when not hovering AND dropdown is closed */
+:host
+  ::ng-deep
+  aql-menu-item
+  .menu-item-content:not(:hover):not(:has(.dropdown-open))
+  .after-slot
+  > div
+  > *:not(.pinned-icon) {
+  display: none !important;
+}
+
+/* Hide pinned icon when hovering OR dropdown is open */
+:host ::ng-deep aql-menu-item .menu-item-content:hover .after-slot .pinned-icon,
+:host ::ng-deep aql-menu-item .menu-item-content:has(.dropdown-open) .after-slot .pinned-icon {
+  display: none !important;
+}

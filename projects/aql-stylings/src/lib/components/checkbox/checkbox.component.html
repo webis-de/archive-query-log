@@ -1,0 +1,66 @@
+<label
+  class="
+    flex items-center gap-2 cursor-pointer
+    font-['Plus_Jakarta_Sans']
+    transition-opacity duration-200
+  "
+  [class.cursor-not-allowed]="disabled()"
+  [class.opacity-100]="disabled()"
+>
+  <input
+    type="checkbox"
+    [ngModel]="checked()"
+    (ngModelChange)="onChange($event)"
+    [disabled]="disabled()"
+    class="
+      checkbox
+      transition-all duration-200
+
+      <!-- Unchecked: white field -->
+      bg-base-100
+      border-neutral
+      hover:border-neutral
+
+      <!-- Checked: black field with white tick -->
+      checked:bg-neutral
+      checked:border-neutral
+      checked:text-neutral-content
+
+      <!-- Indeterminate -->
+      indeterminate:bg-neutral
+      indeterminate:border-neutral
+      indeterminate:text-neutral-content
+
+      <!-- Disabled State -->
+      disabled:bg-base-300
+      disabled:border-base-300
+      disabled:opacity-100
+
+      focus:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-neutral
+      focus-visible:ring-offset-1
+    "
+    [ngClass]="{
+      'checkbox-xs rounded-[4px]': size() === 'xs',
+      'checkbox-sm rounded-[6px]': size() === 'sm',
+      'checkbox-md rounded-[8px]': size() === 'md',
+      'checkbox-lg rounded-[8px]': size() === 'lg'
+    }"
+  />
+
+  @if (label()) {
+    <span
+      class="label-text select-none"
+      [class.text-base-300]="disabled()"
+      [class.text-base-content]="!disabled()"
+      [ngClass]="{
+        'text-xs': size() === 'xs',
+        'text-sm': size() === 'sm',
+        'text-base': size() === 'md' || size() === 'lg'
+      }"
+    >
+      {{ label() }}
+    </span>
+  }
+</label>

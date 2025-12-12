@@ -1,0 +1,56 @@
+<div class="min-h-full bg-base-200 flex flex-col items-center pt-64">
+  <div class="w-full max-w-3xl px-4 text-center">
+    <h1 class="text-5xl font-bold mb-8 text-primary">AQL Search</h1>
+
+    <div class="flex items-center w-full gap-2">
+      <aql-input-field
+        class="w-full h-full"
+        shape="square"
+        placeholder="Search for queries..."
+        type="text"
+        size="lg"
+        color="primary"
+        [(ngModel)]="searchQuery"
+        [label]="landingMessage()"
+        (keydown.enter)="onSearch()"
+      >
+        <aql-button
+          suffix
+          btnType="primary"
+          btnStyle="full"
+          [flatten]="true"
+          size="sm"
+          (buttonClick)="onSearch()"
+        >
+          Search
+        </aql-button>
+      </aql-input-field>
+      <aql-filter-dropdown (filtersChanged)="onFiltersChanged($event)"></aql-filter-dropdown>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mt-4 justify-start w-full px-1">
+      <span class="text-sm font-semibold self-center text-base-content/70">Active Filter:</span>
+      @for (badge of activeFilters(); track badge) {
+        <div class="badge badge-primary badge-outline">{{ badge }}</div>
+      }
+    </div>
+
+    @if (isTemporaryMode()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        <strong class="text-warning">Note:</strong> This search will not be saved to your history
+      </p>
+    } @else if (activeProject()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Searching in project: <strong>{{ activeProject()!.name }}</strong>
+      </p>
+    } @else if (hasProjects()) {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Select a project from the sidebar or search here
+      </p>
+    } @else {
+      <p class="text-sm text-base-content/50 mt-6 text-center">
+        Create your first project using the "New Project" button in the sidebar
+      </p>
+    }
+  </div>
+</div>

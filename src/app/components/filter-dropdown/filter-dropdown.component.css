@@ -1,0 +1,34 @@
+.filter-wrapper {
+  min-width: 350px;
+}
+
+input-field {
+  width: 100%;
+  display: block;
+}
+
+/* Style for disabled dates in native date input */
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+/* Grey out disabled dates - browser-specific */
+input[type='date']:disabled {
+  opacity: 0.6;
+}
+
+/* Icon transition animation */
+aql-button i {
+  display: inline-block;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.15s ease-in-out;
+}
+
+aql-button i.rotate-180 {
+  transform: rotate(180deg);
+}
+
+aql-button i.rotate-0 {
+  transform: rotate(0deg);
+}

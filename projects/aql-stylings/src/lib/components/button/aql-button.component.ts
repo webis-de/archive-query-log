@@ -34,6 +34,24 @@ export class AqlButtonComponent {
 
   @Output() buttonClick = new EventEmitter<MouseEvent>();
 
+  get iconClasses(): string {
+    if (this.btnType !== 'icon') return '';
+
+    const classes: string[] = [];
+
+    if (this.size === 'xs') {
+      classes.push('text-sm');
+    } else if (this.size === 'sm') {
+      classes.push('text-lg');
+    } else if (this.size === 'md') {
+      classes.push('text-xl');
+    } else if (this.size === 'lg') {
+      classes.push('text-2xl');
+    }
+
+    return classes.join(' ');
+  }
+
   get buttonClasses(): string {
     if (this.btnType === 'icon') {
       return this.getIconButtonClasses();
@@ -103,20 +121,23 @@ export class AqlButtonComponent {
       'focus-visible:ring-primary/30',
       'disabled:text-base-content/40',
       'disabled:cursor-not-allowed',
+      'p-0',
     ];
 
     if (this.size === 'xs') {
-      classes.push('text-xs', 'p-1.5');
+      classes.push('text-xs', 'w-4', 'h-4');
     } else if (this.size === 'sm') {
-      classes.push('text-sm', 'p-1.5');
+      classes.push('text-sm', 'w-5', 'h-5');
+    } else if (this.size === 'md') {
+      classes.push('text-base', 'w-6', 'h-6');
     } else if (this.size === 'lg') {
-      classes.push('text-lg', 'p-2.5');
+      classes.push('text-lg', 'w-8', 'h-8');
     }
 
     if (this.iconStyle === 'square') {
-      classes.push('aspect-square', 'w-10', 'h-10');
+      classes.push('aspect-square');
     } else if (this.iconStyle === 'circle') {
-      classes.push('aspect-square', 'w-10', 'h-10', 'rounded-full');
+      classes.push('aspect-square', 'rounded-full');
     }
 
     return classes.join(' ');
