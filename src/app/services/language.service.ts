@@ -18,6 +18,7 @@ export class LanguageService {
   readonly availableLanguages: Language[] = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
   ];
 
   // Current language signal

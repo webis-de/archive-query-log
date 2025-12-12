@@ -1,8 +1,8 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   AqlHeaderBarComponent,
   AqlInputFieldComponent,
@@ -19,6 +19,7 @@ import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filt
 import { FilterState } from '../../models/filter.model';
 import { AppMetadataPanelComponent } from '../../components/metadata-panel/metadata-panel.component';
 import { SessionService } from '../../services/session.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-search-view',
@@ -38,13 +39,14 @@ import { SessionService } from '../../services/session.service';
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
 })
-export class SearchViewComponent implements OnInit {
+export class SearchViewComponent implements OnInit, OnDestroy {
   private readonly searchService = inject(SearchService);
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly filterBadgeService = inject(FilterBadgeService);
   private readonly sessionService = inject(SessionService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly translate = inject(TranslateService);
 
   searchQuery = '';
   searchResults: SearchResult[] = [];
@@ -55,12 +57,23 @@ export class SearchViewComponent implements OnInit {
   isTemporarySearch = false;
   activeFilters: string[] = ['All'];
   initialFilters: FilterState | null = null;
+  private currentFilters: FilterState | null = null;
+  private langChangeSubscription?: Subscription;
 
   readonly isPanelOpen = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
   readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
 
   ngOnInit(): void {
+    // Subscribe to language changes to update badges
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      if (this.currentFilters) {
+        this.activeFilters = this.filterBadgeService.generateBadges(this.currentFilters);
+      } else {
+        this.activeFilters = [this.translate.instant('filter.badges.all')];
+      }
+    });
+
     this.route.queryParamMap.subscribe(queryParams => {
       const dateFrom = queryParams.get('dateFrom') || '';
       const dateTo = queryParams.get('dateTo') || '';
@@ -105,6 +118,7 @@ export class SearchViewComponent implements OnInit {
   }
 
   onFiltersChanged(filters: FilterState): void {
+    this.currentFilters = filters;
     this.activeFilters = this.filterBadgeService.generateBadges(filters);
   }
 
@@ -188,5 +202,9 @@ export class SearchViewComponent implements OnInit {
 
   onClosePanel(): void {
     this.isPanelOpen.set(false);
+  }
+
+  ngOnDestroy(): void {
+    this.langChangeSubscription?.unsubscribe();
   }
 }

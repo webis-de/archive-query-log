@@ -54,7 +54,8 @@
   "language": {
     "select": "Sprache wählen",
     "english": "Englisch",
-    "german": "Deutsch"
+    "german": "Deutsch",
+    "french": "Französisch"
   },
   "footer": {
     "imprint": "Impressum",
@@ -70,7 +71,14 @@
     "inactive": "Inaktiv",
     "searchProviders": "Suchanbieter",
     "reset": "Zurücksetzen",
-    "apply": "Anwenden"
+    "apply": "Anwenden",
+    "badges": {
+      "all": "Alle",
+      "status": "Status",
+      "provider": "Anbieter",
+      "date": "Datum",
+      "until": "Bis"
+    }
   },
   "metadata": {
     "panel": "Metadaten-Panel",
