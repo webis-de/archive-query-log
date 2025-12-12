@@ -114,7 +114,7 @@
       "prefix": "aql",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular/build:ng-packagr",
           "options": {
             "project": "projects/aql-stylings/ng-package.json"
           },

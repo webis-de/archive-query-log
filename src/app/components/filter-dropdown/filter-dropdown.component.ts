@@ -15,8 +15,8 @@ import {
   AqlDropdownComponent,
   AqlButtonComponent,
   AqlInputFieldComponent,
-  RadioButtonComponent,
-  CheckboxComponent,
+  AqlRadioButtonComponent,
+  AqlCheckboxComponent,
 } from 'aql-stylings';
 import { FilterState, Provider } from '../../models/filter.model';
 
@@ -29,8 +29,8 @@ import { FilterState, Provider } from '../../models/filter.model';
     AqlDropdownComponent,
     AqlButtonComponent,
     AqlInputFieldComponent,
-    RadioButtonComponent,
-    CheckboxComponent,
+    AqlRadioButtonComponent,
+    AqlCheckboxComponent,
   ],
   templateUrl: './filter-dropdown.component.html',
   styleUrls: ['./filter-dropdown.component.css'],

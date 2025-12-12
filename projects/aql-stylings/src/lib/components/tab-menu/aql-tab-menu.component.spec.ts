@@ -72,16 +72,16 @@ describe('AqlTabMenuComponent', () => {
 
   it('should render icon when provided', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    const iconTab = Array.from(compiled.querySelectorAll('[role="tab"]')).find(
-      tab => tab.querySelector('i.bi-house')
+    const iconTab = Array.from(compiled.querySelectorAll('[role="tab"]')).find(tab =>
+      tab.querySelector('i.bi-house'),
     );
     expect(iconTab).toBeTruthy();
   });
 
   it('should render badge when provided', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    const badgeTab = Array.from(compiled.querySelectorAll('[role="tab"]')).find(
-      tab => tab.querySelector('.badge')
+    const badgeTab = Array.from(compiled.querySelectorAll('[role="tab"]')).find(tab =>
+      tab.querySelector('.badge'),
     );
     expect(badgeTab).toBeTruthy();
     expect(badgeTab?.textContent).toContain('5');
