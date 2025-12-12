@@ -7,8 +7,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
+import { FilterBadgeService } from '../../services/filter-badge.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
+import { FilterState } from '../../models/filter.model';
 
 @Component({
   selector: 'app-landing',
@@ -29,6 +31,7 @@ export class LandingComponent implements OnInit {
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly projectService = inject(ProjectService);
   private readonly sessionService = inject(SessionService);
+  private readonly filterBadgeService = inject(FilterBadgeService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
 
@@ -36,6 +39,8 @@ export class LandingComponent implements OnInit {
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
   readonly isTemporaryMode = signal<boolean>(false);
+  readonly activeFilters = signal<string[]>(['All']);
+  private currentFilters: FilterState | null = null;
 
   readonly activeProject = computed(() => {
     const currentSession = this.session();
@@ -70,18 +75,39 @@ export class LandingComponent implements OnInit {
     });
   }
 
+  onFiltersChanged(filters: FilterState): void {
+    this.currentFilters = filters;
+    const badges = this.filterBadgeService.generateBadges(filters);
+    this.activeFilters.set(badges);
+  }
+
   onSearch(): void {
     const query = this.searchQuery().trim();
     if (query) {
+      const queryParams: Record<string, string> = { q: query };
+
+      if (this.currentFilters) {
+        if (this.currentFilters.dateFrom) queryParams['dateFrom'] = this.currentFilters.dateFrom;
+        if (this.currentFilters.dateTo) queryParams['dateTo'] = this.currentFilters.dateTo;
+        if (this.currentFilters.status && this.currentFilters.status !== 'any')
+          queryParams['status'] = this.currentFilters.status;
+        if (this.currentFilters.providers && this.currentFilters.providers.length > 0) {
+          queryParams['providers'] = this.currentFilters.providers.join(',');
+        }
+      }
+
       if (this.isTemporaryMode()) {
         // Route to temporary search view
         this.router.navigate(['/s', 'temp'], {
-          queryParams: { q: query },
+          queryParams: queryParams,
         });
       } else {
         // Normal search: save and navigate
+        // Note: We might want to save filters in history too, but for now just passing them to the view
         const searchItem = this.searchHistoryService.addSearch({ query });
-        this.router.navigate(['/s', searchItem.id]);
+        this.router.navigate(['/s', searchItem.id], {
+          queryParams: queryParams,
+        });
       }
     }
   }

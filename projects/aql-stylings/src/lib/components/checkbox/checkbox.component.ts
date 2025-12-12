@@ -1,40 +1,33 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 export type CheckboxSize = 'xs' | 'sm' | 'md' | 'lg';
 
 @Component({
-  selector: 'checkbox',
+  selector: 'aql-checkbox',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.css',
 })
-export class CheckboxComponent {
-  @Input() label = '';
-  @Input() checked = false;
-  @Input() disabled = false;
-  
- 
-  @Input() indeterminate = false;
+export class AqlCheckboxComponent {
+  readonly label = input<string>('');
+  readonly checked = input<boolean>(false);
+  readonly disabled = input<boolean>(false);
+  readonly indeterminate = input<boolean>(false);
+  readonly size = input<CheckboxSize>('md');
 
+  readonly checkboxChange = output<boolean>();
+  readonly indeterminateChange = output<boolean>();
 
-  @Input() size: CheckboxSize = 'md';
+  onChange(checked: boolean): void {
+    if (this.disabled()) return;
 
-  @Output() change = new EventEmitter<boolean>();
-  @Output() indeterminateChange = new EventEmitter<boolean>();
+    this.checkboxChange.emit(checked);
 
-  onChange(event: Event) {
-    if (this.disabled) return;
-    
-    const target = event.target as HTMLInputElement;
-    this.checked = target.checked;
-    
-
-    this.indeterminate = false;
-    this.indeterminateChange.emit(this.indeterminate);
-    
-    this.change.emit(this.checked);
+    if (this.indeterminate()) {
+      this.indeterminateChange.emit(false);
+    }
   }
 }

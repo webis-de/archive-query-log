@@ -30,7 +30,14 @@
           {{ 'landing.searchButton' | translate }}
         </aql-button>
       </aql-input-field>
-      <aql-filter-dropdown></aql-filter-dropdown>
+      <aql-filter-dropdown (filtersChanged)="onFiltersChanged($event)"></aql-filter-dropdown>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mt-4 justify-start w-full px-1">
+      <span class="text-sm font-semibold self-center text-base-content/70">Active Filter:</span>
+      @for (badge of activeFilters(); track badge) {
+        <div class="badge badge-primary badge-outline">{{ badge }}</div>
+      }
     </div>
 
     @if (isTemporaryMode()) {

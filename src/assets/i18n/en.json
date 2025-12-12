@@ -37,10 +37,11 @@
     "label": "Search",
     "resultsFound": "Found {{count}} results",
     "noResults": "No results found",
-    "score": "Score:",
+    "score": "Score",
     "timestamp": "Timestamp:",
     "url": "URL:",
-    "query": "Query:"
+    "query": "Query:",
+    "activeFilters": "Active Filter:"
   },
   "project": {
     "name": "Project Name",

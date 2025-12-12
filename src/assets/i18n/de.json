@@ -37,10 +37,11 @@
     "label": "Suche",
     "resultsFound": "{{count}} Ergebnisse gefunden",
     "noResults": "Keine Ergebnisse gefunden",
-    "score": "Bewertung:",
+    "score": "Bewertung",
     "timestamp": "Zeitstempel:",
     "url": "URL:",
-    "query": "Abfrage:"
+    "query": "Abfrage:",
+    "activeFilters": "Aktive Filter:"
   },
   "project": {
     "name": "Projektname",

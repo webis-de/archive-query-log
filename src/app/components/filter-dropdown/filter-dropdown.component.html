@@ -4,7 +4,7 @@
       <aql-button btnType="primary" iconStyle="circle" size="md" iconBefore="">
         <i
           class="bi text-3xl transition-transform duration-300 ease-in-out"
-          [ngClass]="isOpen ? 'bi-x rotate-180' : 'bi-filter rotate-0'"
+          [ngClass]="isOpen() ? 'bi-x rotate-180' : 'bi-filter rotate-0'"
         ></i>
       </aql-button>
     </div>
@@ -24,9 +24,9 @@
                 type="date"
                 [showIcon]="false"
                 size="sm"
-                [value]="dateFrom"
-                [max]="getMaxDateFrom()"
-                (change)="dateFrom = $any($event.target).value"
+                [value]="dateFrom()"
+                [max]="maxDateFrom()"
+                (change)="updateDateFrom($any($event.target).value)"
                 class="w-full"
               ></aql-input-field>
             </div>
@@ -36,10 +36,10 @@
                 type="date"
                 [showIcon]="false"
                 size="sm"
-                [value]="dateTo"
-                [min]="getMinDateTo()"
-                [max]="getMaxDateTo()"
-                (change)="dateTo = $any($event.target).value"
+                [value]="dateTo()"
+                [min]="minDateTo()"
+                [max]="maxDateTo()"
+                (change)="updateDateTo($any($event.target).value)"
                 class="w-full"
               ></aql-input-field>
             </div>
@@ -49,44 +49,46 @@
         <div class="p-2 border-b border-base-300">
           <span class="block text-sm font-bold text-base-content/60 mb-3">Website Status</span>
           <div class="flex flex-row items-center gap-4">
-            <radio-button
+            <aql-radio-button
               name="statusGroup"
               label="Any"
               value="any"
               size="sm"
-              [checked]="status === 'any'"
-              (click)="status = 'any'"
-            ></radio-button>
-            <radio-button
+              [checked]="status() === 'any'"
+              (click)="updateStatus('any')"
+            ></aql-radio-button>
+            <aql-radio-button
               name="statusGroup"
               label="Active"
               value="active"
               size="sm"
-              [checked]="status === 'active'"
-              (click)="status = 'active'"
-            ></radio-button>
-            <radio-button
+              [checked]="status() === 'active'"
+              (click)="updateStatus('active')"
+            ></aql-radio-button>
+            <aql-radio-button
               name="statusGroup"
               label="Inactive"
               value="inactive"
               size="sm"
-              [checked]="status === 'inactive'"
-              (click)="status = 'inactive'"
-            ></radio-button>
+              [checked]="status() === 'inactive'"
+              (click)="updateStatus('inactive')"
+            ></aql-radio-button>
           </div>
         </div>
 
         <div class="p-2 pb-6">
           <span class="block text-sm font-bold text-base-content/60 mb-3">Search Providers</span>
           <div class="flex flex-col gap-2">
-            <div *ngFor="let provider of providers">
-              <checkbox
-                [label]="provider.label"
-                size="sm"
-                [checked]="provider.checked"
-                (change)="provider.checked = !provider.checked"
-              ></checkbox>
-            </div>
+            @for (provider of providers(); track provider.id) {
+              <div>
+                <aql-checkbox
+                  [label]="provider.label"
+                  size="sm"
+                  [checked]="provider.checked"
+                  (checkboxChange)="updateProviderCheckedByLabel(provider.label, $event)"
+                ></aql-checkbox>
+              </div>
+            }
           </div>
         </div>
 

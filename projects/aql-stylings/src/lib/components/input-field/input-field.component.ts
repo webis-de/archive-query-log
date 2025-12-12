@@ -4,7 +4,17 @@ import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/f
 
 // Definition der verfügbaren DaisyUI Größen und Farben
 export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
-export type InputColor = 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error' | 'ghost' | 'bordered' | 'neutral';
+export type InputColor =
+  | 'primary'
+  | 'secondary'
+  | 'accent'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'ghost'
+  | 'bordered'
+  | 'neutral';
 export type InputShape = 'square' | 'circle';
 
 @Component({
@@ -17,9 +27,9 @@ export type InputShape = 'square' | 'circle';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => AqlInputFieldComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class AqlInputFieldComponent implements ControlValueAccessor {
   @Input() label = '';
@@ -29,8 +39,8 @@ export class AqlInputFieldComponent implements ControlValueAccessor {
 
   // Date input attributes
   @Input() min = '';
-  @Input() max = ''; 
-  
+  @Input() max = '';
+
   // Default-Icon.
   @Input() showIcon = true;
   @Input() icon = 'bi bi-search';
@@ -45,7 +55,9 @@ export class AqlInputFieldComponent implements ControlValueAccessor {
   // NEU: DaisyUI Color Style (Default 'bordered')
   @Input() color: InputColor = 'bordered';
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (value: string) => void = () => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onTouched: () => void = () => {};
 
   writeValue(value: string): void {

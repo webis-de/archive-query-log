@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,6 +14,11 @@ import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
+import { FilterBadgeService } from '../../services/filter-badge.service';
+import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { FilterState } from '../../models/filter.model';
+import { AppMetadataPanelComponent } from '../../components/metadata-panel/metadata-panel.component';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-search-view',
@@ -27,6 +32,8 @@ import { LanguageSelectorComponent } from '../../components/language-selector/la
     AqlDropdownComponent,
     AqlButtonComponent,
     LanguageSelectorComponent,
+    FilterDropdownComponent,
+    AppMetadataPanelComponent,
   ],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
@@ -34,6 +41,8 @@ import { LanguageSelectorComponent } from '../../components/language-selector/la
 export class SearchViewComponent implements OnInit {
   private readonly searchService = inject(SearchService);
   private readonly searchHistoryService = inject(SearchHistoryService);
+  private readonly filterBadgeService = inject(FilterBadgeService);
+  private readonly sessionService = inject(SessionService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 
@@ -44,9 +53,37 @@ export class SearchViewComponent implements OnInit {
   hasSearched = false;
   currentSearchId?: string;
   isTemporarySearch = false;
+  activeFilters: string[] = ['All'];
+  initialFilters: FilterState | null = null;
+
+  readonly isPanelOpen = signal(false);
+  readonly selectedResult = signal<SearchResult | null>(null);
+  readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
 
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe(queryParams => {
+      const dateFrom = queryParams.get('dateFrom') || '';
+      const dateTo = queryParams.get('dateTo') || '';
+      const status = queryParams.get('status') || 'any';
+      const providersStr = queryParams.get('providers');
+      const providers = providersStr ? providersStr.split(',') : [];
+
+      if (dateFrom || dateTo || status !== 'any' || providers.length > 0) {
+        this.initialFilters = {
+          dateFrom,
+          dateTo,
+          status,
+          providers,
+        };
+        // Update badges immediately
+        this.onFiltersChanged(this.initialFilters);
+      }
+    });
+
     this.route.paramMap.subscribe(params => {
+      this.isPanelOpen.set(false);
+      this.selectedResult.set(null);
+
       const searchId = params.get('id');
       if (searchId === 'temp') {
         this.isTemporarySearch = true;
@@ -65,6 +102,10 @@ export class SearchViewComponent implements OnInit {
         this.loadSearchFromHistory(searchId);
       }
     });
+  }
+
+  onFiltersChanged(filters: FilterState): void {
+    this.activeFilters = this.filterBadgeService.generateBadges(filters);
   }
 
   onSearch(): void {
@@ -134,5 +175,18 @@ export class SearchViewComponent implements OnInit {
       hour: '2-digit',
       minute: '2-digit',
     });
+  }
+
+  onResultClick(result: SearchResult): void {
+    this.selectedResult.set(result);
+    this.isPanelOpen.set(true);
+
+    if (!this.sessionService.sidebarCollapsed()) {
+      this.sessionService.setSidebarCollapsed(true);
+    }
+  }
+
+  onClosePanel(): void {
+    this.isPanelOpen.set(false);
   }
 }
