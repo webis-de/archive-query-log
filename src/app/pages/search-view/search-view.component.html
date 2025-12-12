@@ -7,16 +7,40 @@
       [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
       [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
     >
-      <div class="ps-4 pe-8 py-4 w-full">
-        <div class="max-w-[800px]">
+      <div class="flex flex-col ps-4 pe-8 py-4 w-full">
+        <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
           <aql-input-field
+            class="flex-grow"
             label="Search"
             placeholder="Search"
             name="searchQuery"
             [(ngModel)]="searchQuery"
             (keydown.enter)="onSearch()"
           >
+            <aql-button
+              suffix
+              btnType="primary"
+              btnStyle="full"
+              [flatten]="true"
+              size="sm"
+              (buttonClick)="onSearch()"
+            >
+              Search
+            </aql-button>
           </aql-input-field>
+          <div class="mb-[2px]">
+            <aql-filter-dropdown
+              [filters]="initialFilters"
+              (filtersChanged)="onFiltersChanged($event)"
+            ></aql-filter-dropdown>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mt-2 justify-start w-full max-w-[800px]">
+          <span class="text-sm font-semibold self-center text-base-content/70">Active Filter:</span>
+          @for (badge of activeFilters; track badge) {
+            <div class="badge badge-primary badge-outline">{{ badge }}</div>
+          }
         </div>
       </div>
     </div>
