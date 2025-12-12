@@ -3,6 +3,7 @@ import { AppMetadataPanelComponent } from './metadata-panel.component';
 import { SearchResult } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
 import { signal, WritableSignal } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('AppMetadataPanelComponent', () => {
   let component: AppMetadataPanelComponent;
@@ -31,7 +32,7 @@ describe('AppMetadataPanelComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      imports: [AppMetadataPanelComponent],
+      imports: [AppMetadataPanelComponent, TranslateModule.forRoot()],
       providers: [{ provide: SessionService, useValue: mockSessionService }],
     }).compileComponents();
 

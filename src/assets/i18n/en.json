@@ -55,5 +55,56 @@
     "select": "Select Language",
     "english": "English",
     "german": "German"
+  },
+  "footer": {
+    "imprint": "Imprint",
+    "privacyPolicy": "Privacy Policy",
+    "copyright": "SWEP © {{year}}"
+  },
+  "filter": {
+    "from": "From",
+    "to": "To",
+    "websiteStatus": "Website Status",
+    "any": "Any",
+    "active": "Active",
+    "inactive": "Inactive",
+    "searchProviders": "Search Providers",
+    "reset": "Reset",
+    "apply": "Apply"
+  },
+  "metadata": {
+    "panel": "Metadata Panel",
+    "plainTextView": "Plain Text View",
+    "htmlView": "HTML View",
+    "websitePreview": "Website Preview",
+    "metadata": "Metadata",
+    "score": "Score",
+    "documentId": "Document ID",
+    "mimeType": "MIME Type",
+    "timestamp": "Timestamp",
+    "provider": "Provider",
+    "id": "ID",
+    "textView": "Text View",
+    "website": "Website"
+  },
+  "sidebar": {
+    "expandSidebar": "Expand sidebar",
+    "collapseSidebar": "Collapse sidebar",
+    "newProject": "New project",
+    "temporarySearch": "Temporary search",
+    "projects": "Projects",
+    "searchHistory": "Search History",
+    "noProjectsFound": "No projects found",
+    "createFirstProject": "Create your first project",
+    "archiveQueryLog": "Archive Query Log",
+    "pinProject": "Pin Project",
+    "unpinProject": "Unpin Project",
+    "renameProject": "Rename Project",
+    "deleteProject": "Delete Project",
+    "pinnedProject": "Pinned project",
+    "addToProject": "Add search to project",
+    "renameSearch": "Rename Search",
+    "deleteSearch": "Delete Search",
+    "createNewProject": "Create new project and start querying the web archive"
   }
 }

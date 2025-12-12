@@ -6,9 +6,11 @@ import {
   computed,
   ChangeDetectionStrategy,
   inject,
+  OnInit,
 } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AqlButtonComponent, AqlTabMenuComponent, TabItem } from 'aql-stylings';
 import { SearchResult } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
@@ -16,14 +18,15 @@ import { SessionService } from '../../services/session.service';
 @Component({
   selector: 'app-metadata-panel',
   standalone: true,
-  imports: [CommonModule, AqlButtonComponent, AqlTabMenuComponent],
+  imports: [CommonModule, TranslateModule, AqlButtonComponent, AqlTabMenuComponent],
   templateUrl: './metadata-panel.component.html',
   styleUrl: './metadata-panel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppMetadataPanelComponent {
+export class AppMetadataPanelComponent implements OnInit {
   private readonly sessionService = inject(SessionService);
   private readonly sanitizer = inject(DomSanitizer);
+  private readonly translate = inject(TranslateService);
 
   readonly isOpen = input.required<boolean>();
   readonly searchResult = input<SearchResult | null>(null);
@@ -32,12 +35,27 @@ export class AppMetadataPanelComponent {
 
   readonly activeTab = signal<string>('text');
 
-  readonly tabs: TabItem[] = [
-    { id: 'text', label: 'Text View', icon: 'bi-file-text' },
-    { id: 'html', label: 'HTML View', icon: 'bi-code-square' },
-    { id: 'website', label: 'Website', icon: 'bi-globe' },
-    { id: 'metadata', label: 'Metadata', icon: 'bi-info-circle' },
-  ];
+  readonly tabs = signal<TabItem[]>([]);
+
+  ngOnInit(): void {
+    this.updateTabLabels();
+    this.translate.onLangChange.subscribe(() => {
+      this.updateTabLabels();
+    });
+  }
+
+  private updateTabLabels(): void {
+    this.tabs.set([
+      { id: 'text', label: this.translate.instant('metadata.textView'), icon: 'bi-file-text' },
+      { id: 'html', label: this.translate.instant('metadata.htmlView'), icon: 'bi-code-square' },
+      { id: 'website', label: this.translate.instant('metadata.website'), icon: 'bi-globe' },
+      {
+        id: 'metadata',
+        label: this.translate.instant('metadata.metadata'),
+        icon: 'bi-info-circle',
+      },
+    ]);
+  }
 
   readonly panelClasses = computed(() => {
     const isSidebarCollapsed = this.sessionService.sidebarCollapsed();

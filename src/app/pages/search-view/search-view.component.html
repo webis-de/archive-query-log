@@ -7,7 +7,12 @@
       [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
       [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
     >
-      <div class="flex flex-col ps-4 pe-8 py-4 w-full">
+      <div class="flex flex-col ps-4 pe-8 py-4 w-full relative">
+        <!-- Language selector in top right corner -->
+        <div class="absolute top-4 right-8">
+          <app-language-selector></app-language-selector>
+        </div>
+
         <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
           <aql-input-field
             class="flex-grow"
@@ -45,7 +50,6 @@
           }
         </div>
       </div>
-      <app-language-selector></app-language-selector>
     </div>
   </aql-header-bar>
 
@@ -89,15 +93,15 @@
                   <ng-container content>
                     <div class="p-3 space-y-2 text-sm min-w-[200px]">
                       <div>
-                        <span class="font-semibold">{{ 'search.score' | translate }}:</span>
+                        <span class="font-semibold">{{ 'metadata.score' | translate }}:</span>
                         <span class="ml-2">{{ result._score | number: '1.2-2' }}</span>
                       </div>
                       <div>
-                        <span class="font-semibold">ID:</span>
+                        <span class="font-semibold">{{ 'metadata.id' | translate }}:</span>
                         <span class="ml-2 text-xs break-all">{{ result._id }}</span>
                       </div>
                       <div>
-                        <span class="font-semibold">MIME Type:</span>
+                        <span class="font-semibold">{{ 'metadata.mimeType' | translate }}:</span>
                         <span class="ml-2">{{ result._source.capture.mimetype }}</span>
                       </div>
                     </div>

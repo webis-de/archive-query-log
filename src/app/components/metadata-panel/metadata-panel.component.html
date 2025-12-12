@@ -15,7 +15,7 @@
             {{ result._source.capture.url }}
           </a>
         } @else {
-          <h2 class="text-lg font-semibold">Metadata Panel</h2>
+          <h2 class="text-lg font-semibold">{{ 'metadata.panel' | translate }}</h2>
         }
       </div>
       <aql-button
@@ -29,7 +29,7 @@
 
     <div class="px-6 pt-4 border-b border-base-300">
       <aql-tab-menu
-        [tabs]="tabs"
+        [tabs]="tabs()"
         [activeTabId]="activeTab()"
         [size]="'sm'"
         [tabStyle]="'border'"
@@ -43,7 +43,7 @@
           <div class="p-6">
             <div class="mb-4">
               <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
-                Plain Text View
+                {{ 'metadata.plainTextView' | translate }}
               </h3>
               <p class="text-sm text-base-content/80 leading-relaxed whitespace-pre-line">
                 {{ getExtractionText() }}
@@ -54,7 +54,9 @@
         @case ('html') {
           <div class="p-6">
             <div class="mb-4">
-              <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">HTML View</h3>
+              <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
+                {{ 'metadata.htmlView' | translate }}
+              </h3>
               @if (searchResult(); as result) {
                 <div class="bg-base-200 rounded-lg p-4">
                   <code class="text-xs">
@@ -69,7 +71,7 @@
           <div class="p-6">
             <div class="mb-4">
               <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
-                Website Preview
+                {{ 'metadata.websitePreview' | translate }}
               </h3>
               @if (searchResult(); as result) {
                 <iframe
@@ -84,27 +86,39 @@
         @case ('metadata') {
           <div class="p-6">
             <div class="space-y-4">
-              <h3 class="text-sm font-semibold uppercase text-base-content/60">Metadata</h3>
+              <h3 class="text-sm font-semibold uppercase text-base-content/60">
+                {{ 'metadata.metadata' | translate }}
+              </h3>
               @if (searchResult(); as result) {
                 <div class="space-y-3 text-sm">
                   <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70">Score:</span>
+                    <span class="font-semibold text-base-content/70"
+                      >{{ 'metadata.score' | translate }}:</span
+                    >
                     <span>{{ result._score | number: '1.2-2' }}</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70">Document ID:</span>
+                    <span class="font-semibold text-base-content/70"
+                      >{{ 'metadata.documentId' | translate }}:</span
+                    >
                     <span class="text-xs break-all">{{ result._id }}</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70">MIME Type:</span>
+                    <span class="font-semibold text-base-content/70"
+                      >{{ 'metadata.mimeType' | translate }}:</span
+                    >
                     <span>{{ result._source.capture.mimetype }}</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70">Timestamp:</span>
+                    <span class="font-semibold text-base-content/70"
+                      >{{ 'metadata.timestamp' | translate }}:</span
+                    >
                     <span>{{ result._source.capture.timestamp }}</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70">Provider:</span>
+                    <span class="font-semibold text-base-content/70"
+                      >{{ 'metadata.provider' | translate }}:</span
+                    >
                     <span>{{ result._source.provider.domain }}</span>
                   </div>
                 </div>

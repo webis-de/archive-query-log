@@ -55,5 +55,56 @@
     "select": "Sprache wählen",
     "english": "Englisch",
     "german": "Deutsch"
+  },
+  "footer": {
+    "imprint": "Impressum",
+    "privacyPolicy": "Datenschutz",
+    "copyright": "SWEP © {{year}}"
+  },
+  "filter": {
+    "from": "Von",
+    "to": "Bis",
+    "websiteStatus": "Website-Status",
+    "any": "Beliebig",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "searchProviders": "Suchanbieter",
+    "reset": "Zurücksetzen",
+    "apply": "Anwenden"
+  },
+  "metadata": {
+    "panel": "Metadaten-Panel",
+    "plainTextView": "Klartextansicht",
+    "htmlView": "HTML-Ansicht",
+    "websitePreview": "Website-Vorschau",
+    "metadata": "Metadaten",
+    "score": "Bewertung",
+    "documentId": "Dokument-ID",
+    "mimeType": "MIME-Typ",
+    "timestamp": "Zeitstempel",
+    "provider": "Anbieter",
+    "id": "ID",
+    "textView": "Textansicht",
+    "website": "Website"
+  },
+  "sidebar": {
+    "expandSidebar": "Seitenleiste erweitern",
+    "collapseSidebar": "Seitenleiste einklappen",
+    "newProject": "Neues Projekt",
+    "temporarySearch": "Temporäre Suche",
+    "projects": "Projekte",
+    "searchHistory": "Suchverlauf",
+    "noProjectsFound": "Keine Projekte gefunden",
+    "createFirstProject": "Erstellen Sie Ihr erstes Projekt",
+    "archiveQueryLog": "Archiv-Abfrageprotokoll",
+    "pinProject": "Projekt anheften",
+    "unpinProject": "Projekt lösen",
+    "renameProject": "Projekt umbenennen",
+    "deleteProject": "Projekt löschen",
+    "pinnedProject": "Angeheftetes Projekt",
+    "addToProject": "Suche zum Projekt hinzufügen",
+    "renameSearch": "Suche umbenennen",
+    "deleteSearch": "Suche löschen",
+    "createNewProject": "Neues Projekt erstellen und das Webarchiv abfragen"
   }
 }
