@@ -25,6 +25,7 @@ import {
 } from 'aql-stylings';
 import { UserData } from '../../models/user-data.model';
 import { ProjectService } from '../../services/project.service';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -45,12 +46,13 @@ import { ProjectService } from '../../services/project.service';
 })
 export class AppSidebarComponent implements OnInit {
   private readonly projectService = inject(ProjectService);
+  private readonly sessionService = inject(SessionService);
   private readonly router = inject(Router);
 
   readonly userData = input.required<UserData>();
   @Output() newProject = new EventEmitter<void>();
 
-  readonly isCollapsed = signal(false);
+  readonly isCollapsed = this.sessionService.sidebarCollapsed;
   readonly selectedItemId = signal<string | null>(null);
   readonly editingProjectId = signal<string | null>(null);
   readonly editingSearchId = signal<string | null>(null);
@@ -120,11 +122,8 @@ export class AppSidebarComponent implements OnInit {
   }
 
   toggleCollapsed(force?: boolean): void {
-    if (typeof force === 'boolean') {
-      this.isCollapsed.set(force);
-      return;
-    }
-    this.isCollapsed.update(value => !value);
+    const newValue = typeof force === 'boolean' ? force : !this.isCollapsed();
+    this.sessionService.setSidebarCollapsed(newValue);
   }
 
   onNewProject(): void {

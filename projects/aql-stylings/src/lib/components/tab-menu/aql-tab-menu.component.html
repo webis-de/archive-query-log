@@ -1,0 +1,26 @@
+<div role="tablist" [ngClass]="tabClasses()">
+  @for (tab of tabs(); track tab.id) {
+    <a
+      role="tab"
+      [ngClass]="getTabClasses(tab)"
+      [class.w-full]="fullWidth()"
+      class="flex items-center gap-2 cursor-pointer transition-all duration-200 hover:opacity-80"
+      [class.opacity-50]="tab.disabled"
+      [class.cursor-not-allowed]="tab.disabled"
+      [attr.aria-selected]="tab.id === activeTabId()"
+      [attr.aria-disabled]="tab.disabled"
+      (click)="onTabClick(tab)"
+      (keydown.enter)="onTabClick(tab)"
+      (keydown.space)="onTabClick(tab)"
+      [tabindex]="tab.disabled ? -1 : 0"
+    >
+      @if (tab.icon) {
+        <i [class]="'bi ' + tab.icon"></i>
+      }
+      <span>{{ tab.label }}</span>
+      @if (tab.badge !== undefined && tab.badge !== null) {
+        <span class="badge badge-sm ml-1">{{ tab.badge }}</span>
+      }
+    </a>
+  }
+</div>
