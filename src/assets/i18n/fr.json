@@ -38,14 +38,15 @@
     "searchButton": "Rechercher",
     "temporaryModeNote": "Remarque :",
     "temporaryModeWarning": "Cette recherche ne sera pas enregistrée dans votre historique",
-    "searchingInProject": "Recherche dans le projet :",
+    "temporarySearchMode": "Recherche temporaire (non enregistrée)",
+    "searchingInProject": "Recherche dans \"{{name}}\"",
     "selectProjectHint": "Sélectionnez un projet dans la barre latérale ou recherchez ici",
     "createProjectHint": "Créez votre premier projet en utilisant le bouton \"Nouveau projet\" dans la barre latérale"
   },
   "search": {
     "placeholder": "Rechercher",
     "label": "Recherche",
-    "resultsFound": "{{count}} résultats trouvés",
+    "resultsFound": "{count, plural, =0{Aucun résultat trouvé} =1{1 résultat trouvé} other{# résultats trouvés}}",
     "noResults": "Aucun résultat trouvé",
     "score": "Score",
     "timestamp": "Horodatage :",

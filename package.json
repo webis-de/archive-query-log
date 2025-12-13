@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadlessNoSandbox",
-    "format": "prettier --write \"src/**/*.{ts,html,scss,css,json}\""
+    "format": "prettier --write \"src/**/*.{ts,html,scss,css,json}\"",
+    "check-translations": "node scripts/check-translations.js"
   },
   "private": true,
   "dependencies": {

@@ -14,6 +14,7 @@ import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
+import { LanguageService } from '../../services/language.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { FilterState } from '../../models/filter.model';
@@ -44,6 +45,7 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly filterBadgeService = inject(FilterBadgeService);
   private readonly sessionService = inject(SessionService);
+  private readonly languageService = inject(LanguageService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly translate = inject(TranslateService);
@@ -182,7 +184,8 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   }
 
   formatDate(dateString: string): string {
-    return new Date(dateString).toLocaleString('de-DE', {
+    const locale = this.languageService.getCurrentLanguageCode();
+    return new Date(dateString).toLocaleString(locale, {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',

@@ -60,15 +60,15 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   readonly landingMessage = computed(() => {
     if (this.isTemporaryMode()) {
-      return 'Temporary search (not saved)';
+      return this.translate.instant('landing.temporarySearchMode');
     }
     const active = this.activeProject();
     if (active) {
-      return `Search in "${active.name}"`;
+      return this.translate.instant('landing.searchingInProject', { name: active.name });
     } else if (this.hasProjects()) {
-      return 'Search the web archive';
+      return this.translate.instant('landing.searchLabel');
     } else {
-      return 'Create your first project and start searching';
+      return this.translate.instant('landing.createProjectHint');
     }
   });
 
