@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router, ActivatedRoute } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { LandingComponent } from './landing.component';
 import { SearchHistoryService } from '../../services/search-history.service';
@@ -15,6 +15,7 @@ describe('LandingComponent', () => {
   let mockSearchHistoryService: jasmine.SpyObj<SearchHistoryService>;
   let mockProjectService: jasmine.SpyObj<ProjectService>;
   let mockSessionService: jasmine.SpyObj<SessionService>;
+  let translateService: TranslateService;
 
   beforeEach(async () => {
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
@@ -42,6 +43,9 @@ describe('LandingComponent', () => {
 
     fixture = TestBed.createComponent(LandingComponent);
     component = fixture.componentInstance;
+    translateService = TestBed.inject(TranslateService);
+    translateService.setDefaultLang('en');
+    translateService.use('en');
     fixture.detectChanges();
   });
 
@@ -89,6 +93,7 @@ describe('LandingComponent', () => {
   });
 
   it('should display correct landing message when no projects exist', () => {
-    expect(component.landingMessage()).toBe('Create your first project and start searching');
+    const expected = translateService.instant('landing.createProjectHint');
+    expect(component.landingMessage()).toBe(expected);
   });
 });

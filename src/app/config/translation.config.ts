@@ -7,7 +7,7 @@ import { MissingTranslationHandler, MissingTranslationHandlerParams } from '@ngx
 export class CustomMissingTranslationHandler implements MissingTranslationHandler {
   handle(params: MissingTranslationHandlerParams): string {
     console.warn(`Missing translation for key: ${params.key}`);
-    
+
     // Return the key itself as fallback
     return params.key;
   }
