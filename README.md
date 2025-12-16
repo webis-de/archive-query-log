@@ -81,6 +81,7 @@ docker stop <container-name>
 | ------ | ------------------------------------------------------- | -------------------- |
 | GET    | `/api/serps?query=climate+change`                       | Basic SERP search    |
 | GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search |
+| GET    | `/api/serps/preview?query=climate`                      | Preview aggregations / suggestions for query |
 
 **Query Parameters for Search Endpoint:**
 - `query` (required) - Search term
@@ -89,12 +90,6 @@ docker stop <container-name>
 - `year` - Filter by year (optional)
 - `status_code` - Filter by HTTP status code (optional)
 
-**Response includes pagination information:**
-- `count` - Number of results in current request
-- `total` - Total number of results across all pages
-- `page_size` - Results per page
-- `total_pages` - Total number of pages
-- `pagination` - Detailed pagination object with all metrics
 
 #### ✅ SERP Detail Endpoints
 | Method | Endpoint                                                | Description                                                |
@@ -199,7 +194,8 @@ mypy app/                  # Type checking
 │   │   ├── test_aql_service_serp_memento_url.py
 │   │   ├── test_aql_service_serp_original_url.py
 │   │   ├── test_aql_service_serp_unfurl.py
-│   │   └── test_aql_service_unbranded.py      
+│   │   ├── test_aql_service_unbranded.py
+│   │   └── test_aql_service_preview.py      
 │   ├── search_router/    
 │   │   ├── test_search_router_direct_links.py
 │   │   ├── test_search_router_edge_cases.py
@@ -207,7 +203,8 @@ mypy app/                  # Type checking
 │   │   ├── test_search_router_pagination.py
 │   │   ├── test_search_router_safe_search.py
 │   │   ├── test_search_router_serp_detail.py    
-│   │   └── test_search_router_unified_search_endpoint.py
+│   │   ├── test_search_router_unified_search_endpoint.py
+│   │   └── test_search_router_preview.py
 │   ├── test_autocomplete.py
 │   ├── test_elastic.py
 │   ├── test_main.py

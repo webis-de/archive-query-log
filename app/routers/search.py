@@ -157,6 +157,36 @@ async def unified_search(
 
 
 # ---------------------------------------------------------
+# PREVIEW / SUGGESTIONS ENDPOINT
+# ---------------------------------------------------------
+@router.get("/serps/preview")
+@limiter.limit("20/minute")
+async def serps_preview(
+    request: Request,
+    query: str = Query(..., description="Search term for preview"),
+    top_n_queries: int = Query(10, description="Number of top query suggestions"),
+    interval: str = Query("month", description="Histogram interval (day, week, month)"),
+    top_providers: int = Query(5, description="Number of top providers to return"),
+    top_archives: int = Query(5, description="Number of top archives to return"),
+    last_n_months: int | None = Query(
+        36, description="Limit histogram to last N months (optional)"
+    ),
+):
+    """Return preview/summary statistics for a given query (lightweight aggregations)."""
+    result = await safe_search_paginated(
+        aql_service.preview_search(
+            query=query,
+            top_n_queries=top_n_queries,
+            interval=interval,
+            top_providers=top_providers,
+            top_archives=top_archives,
+            last_n_months=last_n_months,
+        )
+    )
+    return result
+
+
+# ---------------------------------------------------------
 # UNIFIED SERP DETAIL ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serp/{serp_id}")
