@@ -10,6 +10,7 @@ Contains all functions used by the search router:
 """
 
 from typing import List, Optional, Any, Dict
+from elasticsearch import BadRequestError
 from app.core.elastic import get_es_client
 from app.utils.url_cleaner import remove_tracking_parameters
 
@@ -139,7 +140,139 @@ async def search_by_year(query: str, year: int, size: int = 10) -> dict:
 
 
 # ---------------------------------------------------------
-# 6. Get SERP by ID
+# 6. Preview search (aggregations for suggestions / preview)
+# ---------------------------------------------------------
+async def preview_search(
+    query: str,
+    top_n_queries: int = 10,
+    interval: str = "month",
+    top_providers: int = 5,
+    top_archives: int = 5,
+    last_n_months: int | None = 36,
+) -> dict:
+    """
+    Return summary statistics and top-matching queries for a lightweight preview.
+
+    Aggregations returned:
+      - total_hits
+      - top_queries (terms on url_query.keyword)
+      - date_histogram (by capture.timestamp)
+      - top_providers (terms on provider.id)
+      - top_archives (terms on archive.memento_api_url)
+    """
+    es = get_es_client()
+
+    # build query with optional recent range filter
+    must_clause = [{"match_phrase_prefix": {"url_query": query}}]
+    filter_clause: list[dict] = []
+    if last_n_months is not None and last_n_months > 0:
+        from datetime import datetime, timezone, timedelta
+
+        now = datetime.now(timezone.utc)
+        # approximate month as 30 days for simplicity
+        start = now - timedelta(days=30 * last_n_months)
+        # strip microseconds to match index mapping (strict_date_time_no_millis)
+        start_iso = start.replace(microsecond=0).isoformat()
+        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    query_clause: dict[str, Any]
+    if filter_clause:
+        query_clause = {"bool": {"must": must_clause, "filter": filter_clause}}
+    else:
+        query_clause = must_clause[0]
+
+    body = {
+        "query": query_clause,
+        "size": 0,
+        "aggs": {
+            "top_queries": {
+                "terms": {"field": "url_query.keyword", "size": top_n_queries}
+            },
+            "by_time": {
+                "date_histogram": {
+                    "field": "capture.timestamp",
+                    "calendar_interval": interval,
+                    "min_doc_count": 1,
+                }
+            },
+            "top_providers": {
+                "terms": {"field": "provider.id.keyword", "size": top_providers}
+            },
+            "top_archives": {
+                "terms": {
+                    "field": "archive.memento_api_url.keyword",
+                    "size": top_archives,
+                }
+            },
+        },
+    }
+
+    response = await es.search(index="aql_serps", body=body)
+
+    # total hits
+    total = response.get("hits", {}).get("total", 0)
+    if isinstance(total, dict):
+        total_count = total.get("value", 0)
+    else:
+        total_count = total
+
+    aggs = response.get("aggregations", {})
+
+    top_queries = [
+        {"query": b.get("key"), "count": b.get("doc_count")}
+        for b in aggs.get("top_queries", {}).get("buckets", [])
+    ]
+
+    # Fallback: if keyword-based aggregation returned empty buckets, try non-keyword field
+    if not top_queries:
+        fallback_body = dict(body)
+        # replace the aggregation to use the non-keyword field
+        fallback_body["aggs"] = {
+            "top_queries": {"terms": {"field": "url_query", "size": top_n_queries}}
+        }
+        try:
+            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
+            fallback_aggs = fallback_resp.get("aggregations", {})
+            top_queries = [
+                {"query": b.get("key"), "count": b.get("doc_count")}
+                for b in fallback_aggs.get("top_queries", {}).get("buckets", [])
+            ]
+        except BadRequestError:
+            # index mapping disallows aggregations on text fields (no .keyword); ignore fallback
+            top_queries = []
+        except Exception:
+            # other errors: ignore fallback and leave empty
+            top_queries = []
+
+    date_histogram = [
+        {
+            "key_as_string": b.get("key_as_string", b.get("key")),
+            "count": b.get("doc_count"),
+        }
+        for b in aggs.get("by_time", {}).get("buckets", [])
+    ]
+
+    top_providers_list = [
+        {"id": b.get("key"), "count": b.get("doc_count")}
+        for b in aggs.get("top_providers", {}).get("buckets", [])
+    ]
+
+    top_archives_list = [
+        {"archive": b.get("key"), "count": b.get("doc_count")}
+        for b in aggs.get("top_archives", {}).get("buckets", [])
+    ]
+
+    return {
+        "query": query,
+        "total_hits": total_count,
+        "top_queries": top_queries,
+        "date_histogram": date_histogram,
+        "top_providers": top_providers_list,
+        "top_archives": top_archives_list,
+    }
+
+
+# 7. Get SERP by ID
 # ---------------------------------------------------------
 async def get_serp_by_id(serp_id: str) -> Any | None:
     """Fetch a single SERP by ID from Elasticsearch."""
