@@ -98,6 +98,7 @@ async def unified_search(
     request: Request,
     query: str = Query(..., description="Search term"),
     page_size: int = Query(10, description="Results per page (10, 20, or 50)"),
+    page: int = Query(1, description="Page number (starting at 1)"),
     provider_id: Optional[str] = Query(None, description="Filter by provider ID"),
     year: Optional[int] = Query(None, description="Filter by year"),
     status_code: Optional[int] = Query(None, description="Filter by HTTP status code"),
@@ -110,12 +111,17 @@ async def unified_search(
     - With page size: /api/serps?query=climate&page_size=20
     - Advanced search: /api/serps?query=climate&year=2024&provider_id=google&page_size=50
     """
-    # Validate page_size
-    valid_sizes = [10, 20, 50]
+    # Validate page_size and page
+    valid_sizes = [10, 20, 50, 100, 1000]
     if page_size not in valid_sizes:
         raise HTTPException(
             status_code=400, detail=f"page_size must be one of {valid_sizes}"
         )
+    if page <= 0:
+        raise HTTPException(status_code=400, detail="page must be a positive integer")
+
+    # compute ES offset
+    from_ = (page - 1) * page_size
 
     # Perform search
     if provider_id or year or status_code:
@@ -126,11 +132,12 @@ async def unified_search(
                 year=year,
                 status_code=status_code,
                 size=page_size,
+                from_=from_,
             )
         )
     else:
         search_result = await safe_search_paginated(
-            aql_service.search_basic(query=query, size=page_size)
+            aql_service.search_basic(query=query, size=page_size, from_=from_)
         )
 
     # Extract results and total count
@@ -144,6 +151,7 @@ async def unified_search(
         "query": query,
         "count": len(hits),
         "total": total_count,
+        "page": page,
         "page_size": page_size,
         "total_pages": total_pages,
         "pagination": {
@@ -151,6 +159,7 @@ async def unified_search(
             "total_results": total_count,
             "results_per_page": page_size,
             "total_pages": total_pages,
+            "current_page": page,
         },
         "results": hits,
     }
