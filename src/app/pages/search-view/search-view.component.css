@@ -1,0 +1,11 @@
+/* Force single column layout for suggestions dropdown */
+.search-container ::ng-deep .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestions-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

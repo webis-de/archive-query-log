@@ -1,12 +1,28 @@
-import { AqlInputFieldComponent, AqlButtonComponent } from 'aql-stylings';
-import { Component, inject, signal, computed, OnInit } from '@angular/core';
+import {
+  AqlInputFieldComponent,
+  AqlButtonComponent,
+  AqlDropdownComponent,
+  AqlMenuItemComponent,
+} from 'aql-stylings';
+import {
+  Component,
+  inject,
+  signal,
+  computed,
+  OnInit,
+  OnDestroy,
+  HostListener,
+  ElementRef,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
+import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { FilterState } from '../../models/filter.model';
 
@@ -18,24 +34,31 @@ import { FilterState } from '../../models/filter.model';
     FormsModule,
     AqlInputFieldComponent,
     AqlButtonComponent,
+    AqlDropdownComponent,
+    AqlMenuItemComponent,
     FilterDropdownComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent implements OnInit, OnDestroy {
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly projectService = inject(ProjectService);
   private readonly sessionService = inject(SessionService);
   private readonly filterBadgeService = inject(FilterBadgeService);
+  private readonly suggestionsService = inject(SuggestionsService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
+  private readonly elementRef = inject(ElementRef);
+  private suggestionsSubscription?: Subscription;
 
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
   readonly isTemporaryMode = signal<boolean>(false);
   readonly activeFilters = signal<string[]>(['All']);
+  readonly suggestions = signal<Suggestion[]>([]);
+  readonly showSuggestions = signal<boolean>(false);
   private currentFilters: FilterState | null = null;
 
   readonly activeProject = computed(() => {
@@ -69,6 +92,53 @@ export class LandingComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.isTemporaryMode.set(params['temp'] === 'true');
     });
+
+    this.suggestionsSubscription = this.suggestionsService
+      .getSuggestions$()
+      .subscribe(suggestions => {
+        this.suggestions.set(suggestions);
+        this.showSuggestions.set(suggestions.length > 0 && this.searchQuery().trim().length > 0);
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.suggestionsSubscription?.unsubscribe();
+  }
+
+  onSearchInput(value: string): void {
+    this.searchQuery.set(value);
+    const trimmedValue = value.trim();
+    if (trimmedValue.length >= this.suggestionsService.MINIMUM_QUERY_LENGTH) {
+      this.suggestionsService.search(trimmedValue);
+    } else {
+      this.suggestions.set([]);
+      this.showSuggestions.set(false);
+    }
+  }
+
+  onSuggestionSelect(suggestion: Suggestion): void {
+    this.searchQuery.set(suggestion.query);
+    this.showSuggestions.set(false);
+    this.onSearch();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    const searchContainer = this.elementRef.nativeElement.querySelector('.search-container');
+    if (searchContainer && !searchContainer.contains(target)) {
+      this.showSuggestions.set(false);
+    }
+  }
+
+  onSearchFocus(): void {
+    // Show suggestions again if there are any and query is long enough
+    if (
+      this.suggestions().length > 0 &&
+      this.searchQuery().trim().length >= this.suggestionsService.MINIMUM_QUERY_LENGTH
+    ) {
+      this.showSuggestions.set(true);
+    }
   }
 
   onFiltersChanged(filters: FilterState): void {
