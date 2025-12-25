@@ -71,6 +71,82 @@ export class AppMetadataPanelComponent {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
+  /**
+   * Constructs the memento/archive URL for viewing the archived snapshot
+   * Format: {memento_api_url}/{timestamp_formatted}/{capture_url}
+   * @param result The search result containing archive and capture information
+   * @returns SafeResourceUrl for use in iframe
+   */
+  getMementoUrl(result: SearchResult): SafeResourceUrl {
+    const mementoApiUrl = result._source.archive?.memento_api_url;
+    const timestamp = result._source.capture.timestamp;
+    const captureUrl = result._source.capture.url;
+
+    if (!mementoApiUrl || !timestamp || !captureUrl) {
+      // Fallback to current URL if memento data is not available
+      return this.getSafeUrl(captureUrl || '');
+    }
+
+    const formattedTimestamp = this.formatTimestampForMemento(timestamp);
+    const mementoUrl = `${mementoApiUrl}/${formattedTimestamp}/${captureUrl}`;
+
+    return this.sanitizer.bypassSecurityTrustResourceUrl(mementoUrl);
+  }
+
+  /**
+   * Formats an ISO timestamp to the memento format (YYYYMMDDHHmmss)
+   * @param isoTimestamp ISO 8601 timestamp string
+   * @returns Formatted timestamp string for memento URL
+   */
+  formatTimestampForMemento(isoTimestamp: string): string {
+    try {
+      const date = new Date(isoTimestamp);
+      if (isNaN(date.getTime())) {
+        return '';
+      }
+
+      const year = date.getUTCFullYear();
+      const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(date.getUTCDate()).padStart(2, '0');
+      const hours = String(date.getUTCHours()).padStart(2, '0');
+      const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+      const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+
+      return `${year}${month}${day}${hours}${minutes}${seconds}`;
+    } catch {
+      return '';
+    }
+  }
+
+  /**
+   * Gets the archive date formatted for display
+   * @param result The search result
+   * @returns Formatted date string or empty string if not available
+   */
+  getArchiveDate(result: SearchResult): string {
+    const timestamp = result._source.capture.timestamp;
+    if (!timestamp) {
+      return '';
+    }
+
+    try {
+      const date = new Date(timestamp);
+      if (isNaN(date.getTime())) {
+        return '';
+      }
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short',
+      });
+    } catch {
+      return '';
+    }
+  }
+
   getExtractionText(): string {
     // Placeholder - will be replaced with actual extraction data
     return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac odio tempor orci dapibus ultrices in iaculis nunc.';

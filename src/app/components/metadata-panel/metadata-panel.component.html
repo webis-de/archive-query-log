@@ -69,14 +69,29 @@
           <div class="p-6">
             <div class="mb-4">
               <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
-                Website Preview
+                Archived Website Preview
               </h3>
               @if (searchResult(); as result) {
+                <div class="mb-3 p-3 bg-base-200 rounded-lg">
+                  <div class="flex items-center gap-2 text-sm">
+                    <i class="bi bi-clock-history text-primary"></i>
+                    <span class="text-base-content/70">Snapshot from:</span>
+                    <span class="font-medium">{{ getArchiveDate(result) }}</span>
+                  </div>
+                  <div class="mt-1 text-xs text-base-content/60 truncate">
+                    Archive: {{ result._source.archive?.memento_api_url || 'N/A' }}
+                  </div>
+                </div>
                 <iframe
-                  [src]="getSafeUrl(result._source.capture.url)"
+                  [src]="getMementoUrl(result)"
                   class="w-full h-[600px] border border-base-300 rounded-lg"
                   sandbox="allow-scripts allow-same-origin"
+                  title="Archived website snapshot from {{ getArchiveDate(result) }}"
                 ></iframe>
+                <p class="mt-2 text-xs text-base-content/50">
+                  <i class="bi bi-info-circle me-1"></i>
+                  This preview shows how the website appeared at the time of archival.
+                </p>
               }
             </div>
           </div>
