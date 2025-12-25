@@ -116,9 +116,7 @@ describe('LandingComponent', () => {
     });
 
     it('should update suggestions when service emits', () => {
-      const mockSuggestions: Suggestion[] = [
-        { id: '1', query: 'test query', url: 'http://example.com' },
-      ];
+      const mockSuggestions: Suggestion[] = [{ id: '1', query: 'test query' }];
 
       // Set a non-empty search query first
       component.searchQuery.set('test');
@@ -129,9 +127,7 @@ describe('LandingComponent', () => {
     });
 
     it('should not show suggestions when search query is empty even if suggestions are returned', () => {
-      const mockSuggestions: Suggestion[] = [
-        { id: '1', query: 'test query', url: 'http://example.com' },
-      ];
+      const mockSuggestions: Suggestion[] = [{ id: '1', query: 'test query' }];
 
       component.searchQuery.set('');
       suggestionsSubject.next(mockSuggestions);
@@ -176,7 +172,6 @@ describe('LandingComponent', () => {
       const suggestion: Suggestion = {
         id: '1',
         query: 'selected query',
-        url: 'http://example.com',
       };
 
       component.onSuggestionSelect(suggestion);

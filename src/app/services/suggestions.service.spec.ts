@@ -101,7 +101,7 @@ describe('SuggestionsService', () => {
   it('should have correct constants', () => {
     expect(service.MINIMUM_QUERY_LENGTH).toBe(3);
     expect(service.DEBOUNCE_TIME_MS).toBe(300);
-    expect(service.MAX_SUGGESTIONS).toBe(10);
+    expect(service.MAX_SUGGESTIONS).toBe(5);
   });
 
   describe('getSuggestions$', () => {
@@ -158,7 +158,7 @@ describe('SuggestionsService', () => {
       expect(mockApiService.get).toHaveBeenCalledTimes(1);
       expect(mockApiService.get).toHaveBeenCalledWith('/api/serps', {
         query: 'test3',
-        size: 10,
+        size: 5,
       });
     }));
 
@@ -187,12 +187,10 @@ describe('SuggestionsService', () => {
         {
           id: 'result-1',
           query: 'test query one',
-          url: 'http://example.com/page1',
         },
         {
           id: 'result-2',
           query: 'test query two',
-          url: 'http://example2.com/page2',
         },
       ]);
     }));
@@ -200,7 +198,7 @@ describe('SuggestionsService', () => {
     it('should handle API errors gracefully', fakeAsync(() => {
       mockApiService.get.and.returnValue(throwError(() => new Error('API Error')));
 
-      let suggestions: Suggestion[] = [{ id: 'old', query: 'old', url: 'old' }];
+      let suggestions: Suggestion[] = [{ id: 'old', query: 'old' }];
       let errorOccurred = false;
 
       service.getSuggestions$().subscribe({
@@ -247,7 +245,7 @@ describe('SuggestionsService', () => {
 
       expect(mockApiService.get).toHaveBeenCalledWith('/api/serps', {
         query: 'search term',
-        size: 10,
+        size: 5,
       });
     }));
   });
