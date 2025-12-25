@@ -67,30 +67,49 @@
         }
         @case ('website') {
           <div class="p-6">
-            <div class="mb-4">
-              <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
+            <div class="space-y-4">
+              <h3 class="text-sm font-semibold uppercase text-base-content/60">
                 Archived Website Preview
               </h3>
               @if (searchResult(); as result) {
-                <div class="mb-3 p-3 bg-base-200 rounded-lg">
-                  <div class="flex items-center gap-2 text-sm">
-                    <i class="bi bi-clock-history text-primary"></i>
-                    <span class="text-base-content/70">Snapshot from:</span>
-                    <span class="font-medium">{{ archiveDate() }}</span>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between py-2 border-b border-base-300">
+                    <span class="font-semibold text-base-content/70">
+                      <i class="bi bi-clock-history me-1"></i>Snapshot Date:
+                    </span>
+                    <span>{{ archiveDate() }}</span>
                   </div>
-                  <div class="mt-1 text-xs text-base-content/60 truncate">
-                    Archive: {{ result._source.archive?.memento_api_url || 'N/A' }}
+                  <div class="flex justify-between py-2 border-b border-base-300">
+                    <span class="font-semibold text-base-content/70">
+                      <i class="bi bi-archive me-1"></i>Archive:
+                    </span>
+                    <span class="text-xs break-all">{{
+                      result._source.archive?.memento_api_url || 'N/A'
+                    }}</span>
+                  </div>
+                  <div class="flex justify-between items-center py-2 border-b border-base-300">
+                    <span class="font-semibold text-base-content/70">
+                      <i class="bi bi-box-arrow-up-right me-1"></i>Open Snapshot:
+                    </span>
+                    <a
+                      [href]="mementoUrlString()"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:underline text-xs"
+                    >
+                      Open in new tab <i class="bi bi-arrow-right"></i>
+                    </a>
                   </div>
                 </div>
                 @if (mementoUrl(); as url) {
                   <iframe
                     [src]="url"
-                    class="w-full h-[600px] border border-base-300 rounded-lg"
+                    class="w-full h-[500px] border border-base-300 rounded-lg mt-4"
                     sandbox="allow-scripts allow-same-origin"
                     [title]="'Archived website snapshot from ' + archiveDate()"
                   ></iframe>
                 }
-                <p class="mt-2 text-xs text-base-content/50">
+                <p class="text-xs text-base-content/50 mt-3">
                   <i class="bi bi-info-circle me-1"></i>
                   This preview shows how the website appeared at the time of archival.
                 </p>

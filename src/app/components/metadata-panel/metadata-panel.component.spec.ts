@@ -152,6 +152,28 @@ describe('AppMetadataPanelComponent', () => {
     });
   });
 
+  describe('mementoUrlString computed signal', () => {
+    it('should return empty string when no search result', () => {
+      fixture.componentRef.setInput('searchResult', null);
+      fixture.detectChanges();
+      expect(component.mementoUrlString()).toBe('');
+    });
+
+    it('should construct correct memento URL string from search result', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.detectChanges();
+      const url = component.mementoUrlString();
+      expect(url).toBe('https://web.archive.org/web/20250101120000/https://example.com/test');
+    });
+
+    it('should return capture URL when archive data is missing', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResultWithoutArchive);
+      fixture.detectChanges();
+      const url = component.mementoUrlString();
+      expect(url).toBe('https://example.com/test2');
+    });
+  });
+
   describe('mementoUrl computed signal', () => {
     it('should return null when no search result', () => {
       fixture.componentRef.setInput('searchResult', null);
@@ -241,7 +263,7 @@ describe('AppMetadataPanelComponent', () => {
 
       const compiled = fixture.nativeElement as HTMLElement;
       expect(compiled.textContent).toContain('Archived Website Preview');
-      expect(compiled.textContent).toContain('Snapshot from');
+      expect(compiled.textContent).toContain('Snapshot Date');
     });
 
     it('should display archive URL in website tab', () => {

@@ -60,24 +60,31 @@ export class AppMetadataPanelComponent {
   });
 
   /**
-   * Computed memento URL - only recalculates when searchResult changes
+   * Computed raw memento URL string for use in links
    */
-  readonly mementoUrl = computed<SafeResourceUrl | null>(() => {
+  readonly mementoUrlString = computed<string>(() => {
     const result = this.searchResult();
-    if (!result) return null;
+    if (!result) return '';
 
     const mementoApiUrl = result._source.archive?.memento_api_url;
     const timestamp = result._source.capture.timestamp;
     const captureUrl = result._source.capture.url;
 
     if (!mementoApiUrl || !timestamp || !captureUrl) {
-      return this.sanitizer.bypassSecurityTrustResourceUrl(captureUrl || '');
+      return captureUrl || '';
     }
 
     const formattedTimestamp = this.formatTimestampForMemento(timestamp);
-    const mementoUrl = `${mementoApiUrl}/${formattedTimestamp}/${captureUrl}`;
+    return `${mementoApiUrl}/${formattedTimestamp}/${captureUrl}`;
+  });
 
-    return this.sanitizer.bypassSecurityTrustResourceUrl(mementoUrl);
+  /**
+   * Computed memento URL - only recalculates when searchResult changes
+   */
+  readonly mementoUrl = computed<SafeResourceUrl | null>(() => {
+    const urlString = this.mementoUrlString();
+    if (!urlString) return null;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(urlString);
   });
 
   /**
