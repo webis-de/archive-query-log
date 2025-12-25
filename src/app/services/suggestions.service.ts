@@ -8,7 +8,6 @@ import { SearchResponse } from '../models/search.model';
 export interface Suggestion {
   id: string;
   query: string;
-  url: string;
 }
 
 @Injectable({
@@ -18,10 +17,10 @@ export class SuggestionsService {
   private readonly apiService = inject(ApiService);
   private readonly searchSubject = new Subject<string>();
 
-  // TODO Number of suggestion 
+  // TODO Number of suggestion
   readonly MINIMUM_QUERY_LENGTH = 3;
   readonly DEBOUNCE_TIME_MS = 300;
-  readonly MAX_SUGGESTIONS = 10;
+  readonly MAX_SUGGESTIONS = 5;
 
   /**
    * Creates an observable that emits suggestions based on query input.
@@ -66,11 +65,18 @@ export class SuggestionsService {
    * Maps search results to suggestion format
    */
   private mapResultsToSuggestions(response: SearchResponse): Suggestion[] {
-    return response.results.map(result => ({
-      id: result._id,
-      query: result._source.url_query,
-      url: result._source.capture.url,
-    }));
+    const seen = new Set<string>();
+    const unique: Suggestion[] = [];
+
+    for (const result of response.results) {
+      const query = result._source.url_query;
+      if (seen.has(query)) continue;
+      seen.add(query);
+      unique.push({ id: result._id, query });
+      if (unique.length >= this.MAX_SUGGESTIONS) break;
+    }
+
+    return unique;
   }
 
   /**
