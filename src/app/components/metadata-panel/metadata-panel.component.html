@@ -76,18 +76,20 @@
                   <div class="flex items-center gap-2 text-sm">
                     <i class="bi bi-clock-history text-primary"></i>
                     <span class="text-base-content/70">Snapshot from:</span>
-                    <span class="font-medium">{{ getArchiveDate(result) }}</span>
+                    <span class="font-medium">{{ archiveDate() }}</span>
                   </div>
                   <div class="mt-1 text-xs text-base-content/60 truncate">
                     Archive: {{ result._source.archive?.memento_api_url || 'N/A' }}
                   </div>
                 </div>
-                <iframe
-                  [src]="getMementoUrl(result)"
-                  class="w-full h-[600px] border border-base-300 rounded-lg"
-                  sandbox="allow-scripts allow-same-origin"
-                  title="Archived website snapshot from {{ getArchiveDate(result) }}"
-                ></iframe>
+                @if (mementoUrl(); as url) {
+                  <iframe
+                    [src]="url"
+                    class="w-full h-[600px] border border-base-300 rounded-lg"
+                    sandbox="allow-scripts allow-same-origin"
+                    [title]="'Archived website snapshot from ' + archiveDate()"
+                  ></iframe>
+                }
                 <p class="mt-2 text-xs text-base-content/50">
                   <i class="bi bi-info-circle me-1"></i>
                   This preview shows how the website appeared at the time of archival.

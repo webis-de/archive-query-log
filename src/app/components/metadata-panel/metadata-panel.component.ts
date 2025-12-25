@@ -59,38 +59,60 @@ export class AppMetadataPanelComponent {
     return classes.join(' ');
   });
 
-  onClose(): void {
-    this.closePanel.emit();
-  }
-
-  onTabChange(tabId: string): void {
-    this.activeTab.set(tabId);
-  }
-
-  getSafeUrl(url: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
   /**
-   * Constructs the memento/archive URL for viewing the archived snapshot
-   * Format: {memento_api_url}/{timestamp_formatted}/{capture_url}
-   * @param result The search result containing archive and capture information
-   * @returns SafeResourceUrl for use in iframe
+   * Computed memento URL - only recalculates when searchResult changes
    */
-  getMementoUrl(result: SearchResult): SafeResourceUrl {
+  readonly mementoUrl = computed<SafeResourceUrl | null>(() => {
+    const result = this.searchResult();
+    if (!result) return null;
+
     const mementoApiUrl = result._source.archive?.memento_api_url;
     const timestamp = result._source.capture.timestamp;
     const captureUrl = result._source.capture.url;
 
     if (!mementoApiUrl || !timestamp || !captureUrl) {
-      // Fallback to current URL if memento data is not available
-      return this.getSafeUrl(captureUrl || '');
+      return this.sanitizer.bypassSecurityTrustResourceUrl(captureUrl || '');
     }
 
     const formattedTimestamp = this.formatTimestampForMemento(timestamp);
     const mementoUrl = `${mementoApiUrl}/${formattedTimestamp}/${captureUrl}`;
 
     return this.sanitizer.bypassSecurityTrustResourceUrl(mementoUrl);
+  });
+
+  /**
+   * Computed archive date for display - only recalculates when searchResult changes
+   */
+  readonly archiveDate = computed<string>(() => {
+    const result = this.searchResult();
+    if (!result) return '';
+
+    const timestamp = result._source.capture.timestamp;
+    if (!timestamp) return '';
+
+    try {
+      const date = new Date(timestamp);
+      if (isNaN(date.getTime())) return '';
+
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short',
+      });
+    } catch {
+      return '';
+    }
+  });
+
+  onClose(): void {
+    this.closePanel.emit();
+  }
+
+  onTabChange(tabId: string): void {
+    this.activeTab.set(tabId);
   }
 
   /**
@@ -113,35 +135,6 @@ export class AppMetadataPanelComponent {
       const seconds = String(date.getUTCSeconds()).padStart(2, '0');
 
       return `${year}${month}${day}${hours}${minutes}${seconds}`;
-    } catch {
-      return '';
-    }
-  }
-
-  /**
-   * Gets the archive date formatted for display
-   * @param result The search result
-   * @returns Formatted date string or empty string if not available
-   */
-  getArchiveDate(result: SearchResult): string {
-    const timestamp = result._source.capture.timestamp;
-    if (!timestamp) {
-      return '';
-    }
-
-    try {
-      const date = new Date(timestamp);
-      if (isNaN(date.getTime())) {
-        return '';
-      }
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZoneName: 'short',
-      });
     } catch {
       return '';
     }

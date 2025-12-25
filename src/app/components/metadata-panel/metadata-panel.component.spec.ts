@@ -152,21 +152,28 @@ describe('AppMetadataPanelComponent', () => {
     });
   });
 
-  describe('getMementoUrl', () => {
+  describe('mementoUrl computed signal', () => {
+    it('should return null when no search result', () => {
+      fixture.componentRef.setInput('searchResult', null);
+      fixture.detectChanges();
+      expect(component.mementoUrl()).toBeNull();
+    });
+
     it('should construct correct memento URL from search result', () => {
-      const url = component.getMementoUrl(mockSearchResult);
-      // The URL should be sanitized, so we check it's a SafeResourceUrl
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.detectChanges();
+      const url = component.mementoUrl();
       expect(url).toBeTruthy();
     });
 
     it('should handle missing archive data gracefully', () => {
-      const url = component.getMementoUrl(mockSearchResultWithoutArchive);
-      // Should fall back to capture URL
+      fixture.componentRef.setInput('searchResult', mockSearchResultWithoutArchive);
+      fixture.detectChanges();
+      const url = component.mementoUrl();
       expect(url).toBeTruthy();
     });
 
     it('should use memento_api_url as base', () => {
-      // We can verify by checking the component method constructs proper URL
       const result = mockSearchResult;
       const mementoApiUrl = result._source.archive?.memento_api_url;
       const timestamp = result._source.capture.timestamp;
@@ -176,9 +183,17 @@ describe('AppMetadataPanelComponent', () => {
     });
   });
 
-  describe('getArchiveDate', () => {
+  describe('archiveDate computed signal', () => {
+    it('should return empty string when no search result', () => {
+      fixture.componentRef.setInput('searchResult', null);
+      fixture.detectChanges();
+      expect(component.archiveDate()).toBe('');
+    });
+
     it('should format archive date for display', () => {
-      const result = component.getArchiveDate(mockSearchResult);
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.detectChanges();
+      const result = component.archiveDate();
       expect(result).toContain('2025');
       expect(result).toContain('January');
       expect(result).toContain('1');
@@ -195,8 +210,9 @@ describe('AppMetadataPanelComponent', () => {
           },
         },
       } as SearchResult;
-      const result = component.getArchiveDate(invalidResult);
-      expect(result).toBe('');
+      fixture.componentRef.setInput('searchResult', invalidResult);
+      fixture.detectChanges();
+      expect(component.archiveDate()).toBe('');
     });
 
     it('should return empty string for empty timestamp', () => {
@@ -210,8 +226,9 @@ describe('AppMetadataPanelComponent', () => {
           },
         },
       } as SearchResult;
-      const result = component.getArchiveDate(emptyResult);
-      expect(result).toBe('');
+      fixture.componentRef.setInput('searchResult', emptyResult);
+      fixture.detectChanges();
+      expect(component.archiveDate()).toBe('');
     });
   });
 
