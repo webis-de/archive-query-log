@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppFooterComponent } from './app-footer.component';
 import { provideRouter } from '@angular/router';
 import { By } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('AppFooterComponent', () => {
   let component: AppFooterComponent;
@@ -9,7 +10,7 @@ describe('AppFooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppFooterComponent],
+      imports: [AppFooterComponent, TranslateModule.forRoot()],
       providers: [provideRouter([])],
     }).compileComponents();
 
@@ -23,24 +24,20 @@ describe('AppFooterComponent', () => {
   });
 
   it('should render copyright year', () => {
-    const year = new Date().getFullYear().toString();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.textContent).toContain(year);
+    expect(compiled.textContent).toContain('footer.copyright');
   });
 
   it('should render the SWEP identifier', () => {
-    const year = new Date().getFullYear();
     const compiled = fixture.nativeElement as HTMLElement;
-    // Fix: Copyright Symbol hinzugefügt, damit es zum Template passt
-    expect(compiled.textContent).toContain(`SWEP © ${year}`);
+    expect(compiled.textContent).toContain('footer.copyright');
   });
 
   it('should render imprint and privacy links', () => {
     const links = fixture.debugElement.queryAll(By.css('a'));
-    // Fix: .trim() hinzugefügt, um Whitespace/Newlines zu entfernen
     const linkTexts = links.map(l => l.nativeElement.textContent?.trim());
 
-    expect(linkTexts).toContain('Imprint');
-    expect(linkTexts).toContain('Privacy Policy');
+    expect(linkTexts).toContain('footer.imprint');
+    expect(linkTexts).toContain('footer.privacyPolicy');
   });
 });

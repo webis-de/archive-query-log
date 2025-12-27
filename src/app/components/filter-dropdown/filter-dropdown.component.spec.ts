@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FilterDropdownComponent } from './filter-dropdown.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('FilterDropdownComponent', () => {
   let component: FilterDropdownComponent;
@@ -7,7 +8,7 @@ describe('FilterDropdownComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FilterDropdownComponent],
+      imports: [FilterDropdownComponent, TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FilterDropdownComponent);

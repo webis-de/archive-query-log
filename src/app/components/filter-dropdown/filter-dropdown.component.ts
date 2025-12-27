@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import {
   AqlDropdownComponent,
   AqlButtonComponent,
@@ -26,6 +27,7 @@ import { FilterState, Provider } from '../../models/filter.model';
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     AqlDropdownComponent,
     AqlButtonComponent,
     AqlInputFieldComponent,

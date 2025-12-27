@@ -1,14 +1,17 @@
 import { AqlInputFieldComponent, AqlButtonComponent } from 'aql-stylings';
-import { Component, inject, signal, computed, OnInit } from '@angular/core';
+import { Component, inject, signal, computed, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { FilterState } from '../../models/filter.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-landing',
@@ -16,20 +19,23 @@ import { FilterState } from '../../models/filter.model';
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     AqlInputFieldComponent,
     AqlButtonComponent,
     FilterDropdownComponent,
+    LanguageSelectorComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent implements OnInit, OnDestroy {
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly projectService = inject(ProjectService);
   private readonly sessionService = inject(SessionService);
   private readonly filterBadgeService = inject(FilterBadgeService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
+  private readonly translate = inject(TranslateService);
 
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
@@ -37,6 +43,7 @@ export class LandingComponent implements OnInit {
   readonly isTemporaryMode = signal<boolean>(false);
   readonly activeFilters = signal<string[]>(['All']);
   private currentFilters: FilterState | null = null;
+  private langChangeSubscription?: Subscription;
 
   readonly activeProject = computed(() => {
     const currentSession = this.session();
@@ -53,15 +60,15 @@ export class LandingComponent implements OnInit {
 
   readonly landingMessage = computed(() => {
     if (this.isTemporaryMode()) {
-      return 'Temporary search (not saved)';
+      return this.translate.instant('landing.temporarySearchMode');
     }
     const active = this.activeProject();
     if (active) {
-      return `Search in "${active.name}"`;
+      return this.translate.instant('landing.searchingInProject', { name: active.name });
     } else if (this.hasProjects()) {
-      return 'Search the web archive';
+      return this.translate.instant('landing.searchLabel');
     } else {
-      return 'Create your first project and start searching';
+      return this.translate.instant('landing.createProjectHint');
     }
   });
 
@@ -69,6 +76,20 @@ export class LandingComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.isTemporaryMode.set(params['temp'] === 'true');
     });
+
+    // Subscribe to language changes to update badges
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
+      if (this.currentFilters) {
+        const badges = this.filterBadgeService.generateBadges(this.currentFilters);
+        this.activeFilters.set(badges);
+      } else {
+        this.activeFilters.set([this.translate.instant('filter.badges.all')]);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.langChangeSubscription?.unsubscribe();
   }
 
   onFiltersChanged(filters: FilterState): void {

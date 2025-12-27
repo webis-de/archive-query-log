@@ -4,6 +4,7 @@ import { AppSidebarComponent } from './components/sidebar/app-sidebar.component'
 import { AppFooterComponent } from './components/footer/app-footer.component';
 import { SessionService } from './services/session.service';
 import { ProjectService } from './services/project.service';
+import { LanguageService } from './services/language.service';
 import { UserData } from './models/user-data.model';
 
 @Component({
@@ -16,6 +17,7 @@ import { UserData } from './models/user-data.model';
 export class AppComponent {
   private readonly sessionService = inject(SessionService);
   private readonly projectService = inject(ProjectService);
+  private readonly languageService = inject(LanguageService);
 
   title = 'aql-frontend';
 

@@ -1,0 +1,119 @@
+{
+  "app": {
+    "title": "AQL Suche"
+  },
+  "common": {
+    "search": "Suchen",
+    "loading": "Lädt...",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen"
+  },
+  "sidebar": {
+    "expandSidebar": "Seitenleiste erweitern",
+    "collapseSidebar": "Seitenleiste einklappen",
+    "newProject": "Neues Projekt",
+    "temporarySearch": "Temporäre Suche",
+    "projects": "Projekte",
+    "searchHistory": "Suchverlauf",
+    "noProjectsFound": "Keine Projekte gefunden",
+    "createFirstProject": "Erstellen Sie Ihr erstes Projekt"
+  },
+  "landing": {
+    "welcomeMessage": "Willkommen bei AQL Suche",
+    "searchPlaceholder": "Nach Abfragen suchen...",
+    "searchLabel": "Geben Sie Ihre Suchanfrage ein",
+    "searchButton": "Suchen",
+    "temporaryModeNote": "Hinweis:",
+    "temporaryModeWarning": "Diese Suche wird nicht in Ihrem Verlauf gespeichert",
+    "temporarySearchMode": "Temporäre Suche (nicht gespeichert)",
+    "searchingInProject": "Suche in \"{{name}}\"",
+    "selectProjectHint": "Wählen Sie ein Projekt aus der Seitenleiste oder suchen Sie hier",
+    "createProjectHint": "Erstellen Sie Ihr erstes Projekt über die Schaltfläche \"Neues Projekt\" in der Seitenleiste"
+  },
+  "search": {
+    "placeholder": "Suchen",
+    "label": "Suche",
+    "resultsFound": "{count, plural, =0{Keine Ergebnisse gefunden} =1{1 Ergebnis gefunden} other{# Ergebnisse gefunden}}",
+    "noResults": "Keine Ergebnisse gefunden",
+    "score": "Bewertung",
+    "timestamp": "Zeitstempel:",
+    "url": "URL:",
+    "query": "Abfrage:",
+    "activeFilters": "Aktive Filter:"
+  },
+  "project": {
+    "name": "Projektname",
+    "description": "Beschreibung",
+    "createNew": "Neues Projekt erstellen",
+    "edit": "Projekt bearbeiten",
+    "delete": "Projekt löschen",
+    "confirmDelete": "Sind Sie sicher, dass Sie dieses Projekt löschen möchten?"
+  },
+  "language": {
+    "select": "Sprache wählen",
+    "english": "Englisch",
+    "german": "Deutsch",
+    "french": "Französisch"
+  },
+  "footer": {
+    "imprint": "Impressum",
+    "privacyPolicy": "Datenschutz",
+    "copyright": "SWEP © {{year}}"
+  },
+  "filter": {
+    "from": "Von",
+    "to": "Bis",
+    "websiteStatus": "Website-Status",
+    "any": "Beliebig",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "searchProviders": "Suchanbieter",
+    "reset": "Zurücksetzen",
+    "apply": "Anwenden",
+    "badges": {
+      "all": "Alle",
+      "status": "Status",
+      "provider": "Anbieter",
+      "date": "Datum",
+      "until": "Bis"
+    }
+  },
+  "metadata": {
+    "panel": "Metadaten-Panel",
+    "plainTextView": "Klartextansicht",
+    "htmlView": "HTML-Ansicht",
+    "websitePreview": "Website-Vorschau",
+    "metadata": "Metadaten",
+    "score": "Bewertung",
+    "documentId": "Dokument-ID",
+    "mimeType": "MIME-Typ",
+    "timestamp": "Zeitstempel",
+    "provider": "Anbieter",
+    "id": "ID",
+    "textView": "Textansicht",
+    "website": "Website"
+  },
+  "sidebar": {
+    "expandSidebar": "Seitenleiste erweitern",
+    "collapseSidebar": "Seitenleiste einklappen",
+    "newProject": "Neues Projekt",
+    "temporarySearch": "Temporäre Suche",
+    "projects": "Projekte",
+    "searchHistory": "Suchverlauf",
+    "noProjectsFound": "Keine Projekte gefunden",
+    "createFirstProject": "Erstellen Sie Ihr erstes Projekt",
+    "archiveQueryLog": "Archiv-Abfrageprotokoll",
+    "pinProject": "Projekt anheften",
+    "unpinProject": "Projekt lösen",
+    "renameProject": "Projekt umbenennen",
+    "deleteProject": "Projekt löschen",
+    "pinnedProject": "Angeheftetes Projekt",
+    "addToProject": "Suche zum Projekt hinzufügen",
+    "renameSearch": "Suche umbenennen",
+    "deleteSearch": "Suche löschen",
+    "createNewProject": "Neues Projekt erstellen und das Webarchiv abfragen"
+  }
+}

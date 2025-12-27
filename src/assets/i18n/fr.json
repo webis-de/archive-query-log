@@ -1,0 +1,109 @@
+{
+  "app": {
+    "title": "Recherche AQL"
+  },
+  "common": {
+    "search": "Rechercher",
+    "loading": "Chargement...",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer"
+  },
+  "sidebar": {
+    "expandSidebar": "Développer la barre latérale",
+    "collapseSidebar": "Réduire la barre latérale",
+    "newProject": "Nouveau projet",
+    "temporarySearch": "Recherche temporaire",
+    "projects": "Projets",
+    "searchHistory": "Historique de recherche",
+    "noProjectsFound": "Aucun projet trouvé",
+    "createFirstProject": "Créez votre premier projet",
+    "archiveQueryLog": "Journal des requêtes d'archive",
+    "pinProject": "Épingler le projet",
+    "unpinProject": "Désépingler le projet",
+    "renameProject": "Renommer le projet",
+    "deleteProject": "Supprimer le projet",
+    "pinnedProject": "Projet épinglé",
+    "addToProject": "Ajouter la recherche au projet",
+    "renameSearch": "Renommer la recherche",
+    "deleteSearch": "Supprimer la recherche",
+    "createNewProject": "Créer un nouveau projet et interroger l'archive web"
+  },
+  "landing": {
+    "welcomeMessage": "Bienvenue sur AQL Recherche",
+    "searchPlaceholder": "Rechercher des requêtes...",
+    "searchLabel": "Entrez votre requête de recherche",
+    "searchButton": "Rechercher",
+    "temporaryModeNote": "Remarque :",
+    "temporaryModeWarning": "Cette recherche ne sera pas enregistrée dans votre historique",
+    "temporarySearchMode": "Recherche temporaire (non enregistrée)",
+    "searchingInProject": "Recherche dans \"{{name}}\"",
+    "selectProjectHint": "Sélectionnez un projet dans la barre latérale ou recherchez ici",
+    "createProjectHint": "Créez votre premier projet en utilisant le bouton \"Nouveau projet\" dans la barre latérale"
+  },
+  "search": {
+    "placeholder": "Rechercher",
+    "label": "Recherche",
+    "resultsFound": "{count, plural, =0{Aucun résultat trouvé} =1{1 résultat trouvé} other{# résultats trouvés}}",
+    "noResults": "Aucun résultat trouvé",
+    "score": "Score",
+    "timestamp": "Horodatage :",
+    "url": "URL :",
+    "query": "Requête :",
+    "activeFilters": "Filtre actif :"
+  },
+  "project": {
+    "name": "Nom du projet",
+    "description": "Description",
+    "createNew": "Créer un nouveau projet",
+    "edit": "Modifier le projet",
+    "delete": "Supprimer le projet",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce projet ?"
+  },
+  "language": {
+    "select": "Sélectionner la langue",
+    "english": "Anglais",
+    "german": "Allemand",
+    "french": "Français"
+  },
+  "footer": {
+    "imprint": "Mentions légales",
+    "privacyPolicy": "Politique de confidentialité",
+    "copyright": "SWEP © {{year}}"
+  },
+  "filter": {
+    "from": "De",
+    "to": "À",
+    "websiteStatus": "Statut du site web",
+    "any": "Tous",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "searchProviders": "Fournisseurs de recherche",
+    "reset": "Réinitialiser",
+    "apply": "Appliquer",
+    "badges": {
+      "all": "Tous",
+      "status": "Statut",
+      "provider": "Fournisseur",
+      "date": "Date",
+      "until": "Jusqu'à"
+    }
+  },
+  "metadata": {
+    "panel": "Panneau de métadonnées",
+    "plainTextView": "Vue en texte brut",
+    "htmlView": "Vue HTML",
+    "websitePreview": "Aperçu du site web",
+    "metadata": "Métadonnées",
+    "score": "Score",
+    "documentId": "ID du document",
+    "mimeType": "Type MIME",
+    "timestamp": "Horodatage",
+    "provider": "Fournisseur",
+    "id": "ID",
+    "textView": "Vue texte",
+    "website": "Site web"
+  }
+}
