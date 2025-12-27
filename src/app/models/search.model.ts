@@ -63,8 +63,18 @@ export interface SearchResult {
 }
 
 export interface SearchResponse {
+  query: string;
   count: number;
+  total: number;
+  page_size: number;
+  total_pages: number;
   results: SearchResult[];
+  pagination: {
+    current_results: number;
+    total_results: number;
+    results_per_page: number;
+    total_pages: number;
+  };
 }
 
 export interface SearchParams {

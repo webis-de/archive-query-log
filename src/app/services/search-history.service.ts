@@ -66,6 +66,20 @@ export class SearchHistoryService {
     return project?.searches || [];
   }
 
+  updateSearch(searchId: string, filter: Partial<SearchFilter>): void {
+    const session = this.sessionService.currentSession;
+    if (!session) return;
+
+    for (const project of session.projects) {
+      const search = project.searches.find(s => s.id === searchId);
+      if (search) {
+        search.filter = { ...search.filter, ...filter };
+        this.projectService.updateProject(project.id, project);
+        return;
+      }
+    }
+  }
+
   deleteSearch(searchId: string): void {
     const session = this.sessionService.currentSession;
     if (!session) return;
