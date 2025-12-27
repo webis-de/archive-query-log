@@ -286,5 +286,59 @@ describe('AppMetadataPanelComponent', () => {
       expect(iframe).toBeTruthy();
       expect(iframe.getAttribute('title')).toContain('Archived website snapshot');
     });
+
+    it('should show loading state when switching to website tab', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.componentRef.setInput('isOpen', true);
+      component.onTabChange('website');
+
+      expect(component.isIframeLoading()).toBe(true);
+      expect(component.iframeError()).toBe(false);
+    });
+
+    it('should display loading spinner when iframe is loading', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.componentRef.setInput('isOpen', true);
+      component.onTabChange('website');
+      component.isIframeLoading.set(true);
+      fixture.detectChanges();
+
+      const compiled = fixture.nativeElement as HTMLElement;
+      expect(compiled.textContent).toContain('Loading archived snapshot...');
+      expect(compiled.querySelector('.loading-spinner')).toBeTruthy();
+    });
+
+    it('should clear loading state when iframe loads successfully', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.componentRef.setInput('isOpen', true);
+      component.isIframeLoading.set(true);
+
+      component.onIframeLoad();
+
+      expect(component.isIframeLoading()).toBe(false);
+      expect(component.iframeError()).toBe(false);
+    });
+
+    it('should set error state when iframe fails to load', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.componentRef.setInput('isOpen', true);
+      component.isIframeLoading.set(true);
+
+      component.onIframeError();
+
+      expect(component.isIframeLoading()).toBe(false);
+      expect(component.iframeError()).toBe(true);
+    });
+
+    it('should display error message when iframe fails to load', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.componentRef.setInput('isOpen', true);
+      component.onTabChange('website');
+      component.iframeError.set(true);
+      fixture.detectChanges();
+
+      const compiled = fixture.nativeElement as HTMLElement;
+      expect(compiled.textContent).toContain('Failed to load archived snapshot');
+    });
   });
 });

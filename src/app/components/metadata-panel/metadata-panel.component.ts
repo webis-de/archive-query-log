@@ -4,6 +4,7 @@ import {
   output,
   signal,
   computed,
+  effect,
   ChangeDetectionStrategy,
   inject,
 } from '@angular/core';
@@ -31,6 +32,8 @@ export class AppMetadataPanelComponent {
   readonly closePanel = output<void>();
 
   readonly activeTab = signal<string>('text');
+  readonly isIframeLoading = signal<boolean>(false);
+  readonly iframeError = signal<boolean>(false);
 
   readonly tabs: TabItem[] = [
     { id: 'text', label: 'Text View', icon: 'bi-file-text' },
@@ -38,6 +41,16 @@ export class AppMetadataPanelComponent {
     { id: 'website', label: 'Website', icon: 'bi-globe' },
     { id: 'metadata', label: 'Metadata', icon: 'bi-info-circle' },
   ];
+
+  constructor() {
+    effect(() => {
+      const url = this.mementoUrlString();
+      if (url && this.activeTab() === 'website') {
+        this.isIframeLoading.set(true);
+        this.iframeError.set(false);
+      }
+    });
+  }
 
   readonly panelClasses = computed(() => {
     const isSidebarCollapsed = this.sessionService.sidebarCollapsed();
@@ -120,6 +133,21 @@ export class AppMetadataPanelComponent {
 
   onTabChange(tabId: string): void {
     this.activeTab.set(tabId);
+    // Reset iframe state
+    if (tabId === 'website') {
+      this.isIframeLoading.set(true);
+      this.iframeError.set(false);
+    }
+  }
+
+  onIframeLoad(): void {
+    this.isIframeLoading.set(false);
+    this.iframeError.set(false);
+  }
+
+  onIframeError(): void {
+    this.isIframeLoading.set(false);
+    this.iframeError.set(true);
   }
 
   /**

@@ -74,13 +74,13 @@
               @if (searchResult(); as result) {
                 <div class="space-y-3 text-sm">
                   <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70">
+                    <span class="flex flex-row text-base-content/70 gap-1">
                       <i class="bi bi-clock-history me-1"></i>Snapshot Date:
                     </span>
                     <span>{{ archiveDate() }}</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70">
+                    <span class="flex flex-row font-semibold text-base-content/70 gap-1">
                       <i class="bi bi-archive me-1"></i>Archive:
                     </span>
                     <span class="text-xs break-all">{{
@@ -88,7 +88,7 @@
                     }}</span>
                   </div>
                   <div class="flex justify-between items-center py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70">
+                    <span class="flex flex-row font-semibold text-base-content/70 gap-1">
                       <i class="bi bi-box-arrow-up-right me-1"></i>Open Snapshot:
                     </span>
                     <a
@@ -102,12 +102,35 @@
                   </div>
                 </div>
                 @if (mementoUrl(); as url) {
-                  <iframe
-                    [src]="url"
-                    class="w-full h-[500px] border border-base-300 rounded-lg mt-4"
-                    sandbox="allow-scripts allow-same-origin"
-                    [title]="'Archived website snapshot from ' + archiveDate()"
-                  ></iframe>
+                  <div class="relative mt-4">
+                    @if (isIframeLoading()) {
+                      <div class="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg border border-base-300 z-10">
+                        <div class="flex flex-col items-center gap-3">
+                          <span class="loading loading-spinner loading-lg text-primary"></span>
+                          <p class="text-sm text-base-content/70">Loading archived snapshot...</p>
+                        </div>
+                      </div>
+                    }
+                    @if (iframeError()) {
+                      <div class="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg border border-error z-10">
+                        <div class="flex flex-col items-center gap-3 text-error">
+                          <i class="bi bi-exclamation-triangle text-4xl"></i>
+                          <p class="text-sm font-semibold">Failed to load archived snapshot</p>
+                          <p class="text-xs text-base-content/60">The archive may be unavailable or blocked</p>
+                        </div>
+                      </div>
+                    }
+                    <iframe
+                      [src]="url"
+                      class="w-full h-[500px] border border-base-300 rounded-lg"
+                      sandbox="allow-scripts allow-same-origin allow-popups"
+                      referrerpolicy="no-referrer"
+                      loading="eager"
+                      [title]="'Archived website snapshot from ' + archiveDate()"
+                      (load)="onIframeLoad()"
+                      (error)="onIframeError()"
+                    ></iframe>
+                  </div>
                 }
                 <p class="text-xs text-base-content/50 mt-3">
                   <i class="bi bi-info-circle me-1"></i>
