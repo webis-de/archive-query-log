@@ -42,10 +42,13 @@ export class AppMetadataPanelComponent {
     { id: 'metadata', label: 'Metadata', icon: 'bi-info-circle' },
   ];
 
+  private lastLoadedUrl = '';
+
   constructor() {
     effect(() => {
       const url = this.mementoUrlString();
-      if (url && this.activeTab() === 'website') {
+      if (url && this.activeTab() === 'website' && url !== this.lastLoadedUrl) {
+        this.lastLoadedUrl = url;
         this.isIframeLoading.set(true);
         this.iframeError.set(false);
       }

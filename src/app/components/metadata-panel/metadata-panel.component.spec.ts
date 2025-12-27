@@ -297,10 +297,12 @@ describe('AppMetadataPanelComponent', () => {
     });
 
     it('should display loading spinner when iframe is loading', () => {
+      // Prevent iframe load event from resetting loading state
+      spyOn(component, 'onIframeLoad');
+
       fixture.componentRef.setInput('searchResult', mockSearchResult);
       fixture.componentRef.setInput('isOpen', true);
       component.onTabChange('website');
-      component.isIframeLoading.set(true);
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;
@@ -331,10 +333,17 @@ describe('AppMetadataPanelComponent', () => {
     });
 
     it('should display error message when iframe fails to load', () => {
+      // Prevent iframe load event from interfering
+      spyOn(component, 'onIframeLoad');
+
       fixture.componentRef.setInput('searchResult', mockSearchResult);
       fixture.componentRef.setInput('isOpen', true);
       component.onTabChange('website');
+      fixture.detectChanges(); // Trigger effect first to set initial state
+
+      // Now simulate error state after initial load attempt
       component.iframeError.set(true);
+      component.isIframeLoading.set(false);
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;

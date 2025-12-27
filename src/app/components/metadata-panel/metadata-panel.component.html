@@ -103,8 +103,10 @@
                 </div>
                 @if (mementoUrl(); as url) {
                   <div class="relative mt-4">
-                    @if (isIframeLoading()) {
-                      <div class="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg border border-base-300 z-10">
+                    @if (isIframeLoading() && !iframeError()) {
+                      <div
+                        class="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg border border-base-300 z-10"
+                      >
                         <div class="flex flex-col items-center gap-3">
                           <span class="loading loading-spinner loading-lg text-primary"></span>
                           <p class="text-sm text-base-content/70">Loading archived snapshot...</p>
@@ -112,11 +114,15 @@
                       </div>
                     }
                     @if (iframeError()) {
-                      <div class="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg border border-error z-10">
+                      <div
+                        class="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg border border-error z-10"
+                      >
                         <div class="flex flex-col items-center gap-3 text-error">
                           <i class="bi bi-exclamation-triangle text-4xl"></i>
                           <p class="text-sm font-semibold">Failed to load archived snapshot</p>
-                          <p class="text-xs text-base-content/60">The archive may be unavailable or blocked</p>
+                          <p class="text-xs text-base-content/60">
+                            The archive may be unavailable or blocked
+                          </p>
                         </div>
                       </div>
                     }
