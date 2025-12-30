@@ -348,7 +348,7 @@ async def get_related_serps(
     hits = results.get("hits", []) if isinstance(results, dict) else results
 
     # only use results that are not the original serp
-    related = [hit for hit in hits["hits"] if hit["_id"] != serp_id]
+    related = [hit for hit in hits if hit["_id"] != serp_id]
     return related[:size]
 
 
