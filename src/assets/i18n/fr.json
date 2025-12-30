@@ -104,6 +104,27 @@
     "provider": "Fournisseur",
     "id": "ID",
     "textView": "Vue texte",
-    "website": "Site web"
+    "website": "Site web",
+    "relatedSerps": "SERPs associés",
+    "urlDetails": "Détails de l'URL",
+    "unbrandedView": "Vue neutre",
+    "noRelatedSerps": "Aucun SERP associé trouvé",
+    "noUnfurlData": "Détails de l'URL non disponibles",
+    "noUnbrandedData": "Vue neutre non disponible",
+    "unfurl": {
+      "protocol": "Protocole",
+      "domain": "Domaine",
+      "port": "Port",
+      "path": "Chemin",
+      "queryParams": "Paramètres de requête",
+      "parameter": "Paramètre",
+      "value": "Valeur",
+      "fragment": "Fragment",
+      "viewInUnfurlTool": "Voir dans l'outil Unfurl.it"
+    },
+    "unbranded": {
+      "results": "résultats",
+      "noResults": "Aucun résultat de recherche extrait de ce SERP"
+    }
   }
 }

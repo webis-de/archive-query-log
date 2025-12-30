@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
 import { AppMetadataPanelComponent } from './metadata-panel.component';
 import { SearchResult } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
@@ -52,7 +53,7 @@ describe('AppMetadataPanelComponent', () => {
 
     await TestBed.configureTestingModule({
       imports: [AppMetadataPanelComponent, TranslateModule.forRoot()],
-      providers: [{ provide: SessionService, useValue: mockSessionService }],
+      providers: [provideHttpClient(), { provide: SessionService, useValue: mockSessionService }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppMetadataPanelComponent);
@@ -263,7 +264,7 @@ describe('AppMetadataPanelComponent', () => {
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;
-      expect(compiled.textContent).toContain('Archived Website Preview');
+      expect(compiled.textContent).toContain('metadata.websitePreview');
       expect(compiled.textContent).toContain('Snapshot Date');
     });
 

@@ -94,7 +94,28 @@
     "provider": "Provider",
     "id": "ID",
     "textView": "Text View",
-    "website": "Website"
+    "website": "Website",
+    "relatedSerps": "Related SERPs",
+    "urlDetails": "URL Details",
+    "unbrandedView": "Unbranded View",
+    "noRelatedSerps": "No related SERPs found",
+    "noUnfurlData": "URL details not available",
+    "noUnbrandedData": "Unbranded view not available",
+    "unfurl": {
+      "protocol": "Protocol",
+      "domain": "Domain",
+      "port": "Port",
+      "path": "Path",
+      "queryParams": "Query Parameters",
+      "parameter": "Parameter",
+      "value": "Value",
+      "fragment": "Fragment",
+      "viewInUnfurlTool": "View in Unfurl.it Tool"
+    },
+    "unbranded": {
+      "results": "results",
+      "noResults": "No search results parsed from this SERP"
+    }
   },
   "sidebar": {
     "expandSidebar": "Expand sidebar",

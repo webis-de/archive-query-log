@@ -191,6 +191,182 @@
             </div>
           </div>
         }
+        @case ('related') {
+          <div class="p-6">
+            <div class="space-y-4">
+              <h3 class="text-sm font-semibold uppercase text-base-content/60">
+                {{ 'metadata.relatedSerps' | translate }}
+              </h3>
+              @if (isLoadingDetails()) {
+                <div class="flex items-center justify-center py-8">
+                  <span class="loading loading-spinner loading-md text-primary"></span>
+                </div>
+              } @else if (relatedSerps().length > 0) {
+                <div class="related-serps-list space-y-3">
+                  @for (serp of relatedSerps(); track serp._id) {
+                    <app-related-serp-card
+                      [serp]="serp"
+                      (serpClick)="onRelatedSerpClick($event)"
+                    ></app-related-serp-card>
+                  }
+                </div>
+              } @else {
+                <div class="text-center py-8 text-base-content/50">
+                  <i class="bi bi-search text-4xl mb-3 block"></i>
+                  <p>{{ 'metadata.noRelatedSerps' | translate }}</p>
+                </div>
+              }
+            </div>
+          </div>
+        }
+        @case ('unfurl') {
+          <div class="p-6">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <h3 class="text-sm font-semibold uppercase text-base-content/60">
+                  {{ 'metadata.urlDetails' | translate }}
+                </h3>
+                @if (unfurlWebUrl()) {
+                  <a
+                    [href]="unfurlWebUrl()"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                  >
+                    {{ 'metadata.unfurl.viewInUnfurlTool' | translate }}
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+                }
+              </div>
+              @if (isLoadingDetails()) {
+                <div class="flex items-center justify-center py-8">
+                  <span class="loading loading-spinner loading-md text-primary"></span>
+                </div>
+              } @else if (unfurlData(); as unfurl) {
+                <div class="unfurl-view space-y-4">
+                  <!-- Scheme -->
+                  <div class="unfurl-section">
+                    <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+                      {{ 'metadata.unfurl.protocol' | translate }}
+                    </h4>
+                    <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono break-all">
+                      {{ unfurl.scheme }}
+                    </code>
+                  </div>
+
+                  <!-- Domain Parts -->
+                  <div class="unfurl-section">
+                    <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+                      {{ 'metadata.unfurl.domain' | translate }}
+                    </h4>
+                    <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono break-all">
+                      {{ unfurl.netloc }}
+                    </code>
+                    @if (unfurl.domain_parts) {
+                      <div class="mt-2 grid grid-cols-2 gap-2 text-xs">
+                        @if (unfurl.domain_parts.subdomain) {
+                          <div class="p-2 bg-base-200/50 rounded">
+                            <span class="text-base-content/50">Subdomain:</span>
+                            <span class="ms-1 font-mono">{{ unfurl.domain_parts.subdomain }}</span>
+                          </div>
+                        }
+                        <div class="p-2 bg-base-200/50 rounded">
+                          <span class="text-base-content/50">Domain:</span>
+                          <span class="ms-1 font-mono">{{ unfurl.domain_parts.domain }}</span>
+                        </div>
+                        <div class="p-2 bg-base-200/50 rounded">
+                          <span class="text-base-content/50">TLD:</span>
+                          <span class="ms-1 font-mono">{{ unfurl.domain_parts.suffix }}</span>
+                        </div>
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Port (if present) -->
+                  @if (unfurl.port) {
+                    <div class="unfurl-section">
+                      <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+                        {{ 'metadata.unfurl.port' | translate }}
+                      </h4>
+                      <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono">
+                        {{ unfurl.port }}
+                      </code>
+                    </div>
+                  }
+
+                  <!-- Path -->
+                  <div class="unfurl-section">
+                    <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+                      {{ 'metadata.unfurl.path' | translate }}
+                    </h4>
+                    <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono break-all">
+                      {{ unfurl.path || '/' }}
+                    </code>
+                    @if (unfurl.path_segments && unfurl.path_segments.length > 0) {
+                      <div class="mt-2 flex flex-wrap gap-1">
+                        @for (segment of unfurl.path_segments; track $index) {
+                          <span
+                            class="px-2 py-1 bg-primary/10 text-primary rounded text-xs font-mono"
+                          >
+                            /{{ segment }}
+                          </span>
+                        }
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Query Parameters -->
+                  @if (getQueryParamEntries().length > 0) {
+                    <div class="unfurl-section">
+                      <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+                        {{ 'metadata.unfurl.queryParams' | translate }}
+                      </h4>
+                      <div class="overflow-x-auto">
+                        <table class="table table-sm w-full">
+                          <thead>
+                            <tr class="border-b border-base-300">
+                              <th class="text-left font-semibold text-base-content/70">
+                                {{ 'metadata.unfurl.parameter' | translate }}
+                              </th>
+                              <th class="text-left font-semibold text-base-content/70">
+                                {{ 'metadata.unfurl.value' | translate }}
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @for (param of getQueryParamEntries(); track param.key) {
+                              <tr class="border-b border-base-300/50">
+                                <td class="font-mono text-sm text-primary">{{ param.key }}</td>
+                                <td class="font-mono text-sm break-all">{{ param.value }}</td>
+                              </tr>
+                            }
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  }
+
+                  <!-- Fragment -->
+                  @if (unfurl.fragment) {
+                    <div class="unfurl-section">
+                      <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+                        {{ 'metadata.unfurl.fragment' | translate }}
+                      </h4>
+                      <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono break-all">
+                        #{{ unfurl.fragment }}
+                      </code>
+                    </div>
+                  }
+                </div>
+              } @else {
+                <div class="text-center py-8 text-base-content/50">
+                  <i class="bi bi-link-45deg text-4xl mb-3 block"></i>
+                  <p>{{ 'metadata.noUnfurlData' | translate }}</p>
+                </div>
+              }
+            </div>
+          </div>
+        }
       }
     </div>
   </div>

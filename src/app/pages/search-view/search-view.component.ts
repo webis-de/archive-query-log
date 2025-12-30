@@ -221,6 +221,10 @@ export class SearchViewComponent implements OnInit, OnDestroy {
     }
   }
 
+  onRelatedSerpSelected(result: SearchResult): void {
+    this.selectedResult.set(result);
+  }
+
   onClosePanel(): void {
     this.isPanelOpen.set(false);
   }

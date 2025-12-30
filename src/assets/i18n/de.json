@@ -94,7 +94,28 @@
     "provider": "Anbieter",
     "id": "ID",
     "textView": "Textansicht",
-    "website": "Website"
+    "website": "Website",
+    "relatedSerps": "Verwandte SERPs",
+    "urlDetails": "URL-Details",
+    "unbrandedView": "Neutrale Ansicht",
+    "noRelatedSerps": "Keine verwandten SERPs gefunden",
+    "noUnfurlData": "URL-Details nicht verfügbar",
+    "noUnbrandedData": "Neutrale Ansicht nicht verfügbar",
+    "unfurl": {
+      "protocol": "Protokoll",
+      "domain": "Domain",
+      "port": "Port",
+      "path": "Pfad",
+      "queryParams": "Abfrageparameter",
+      "parameter": "Parameter",
+      "value": "Wert",
+      "fragment": "Fragment",
+      "viewInUnfurlTool": "In Unfurl.it Tool anzeigen"
+    },
+    "unbranded": {
+      "results": "Ergebnisse",
+      "noResults": "Keine Suchergebnisse aus diesem SERP extrahiert"
+    }
   },
   "sidebar": {
     "expandSidebar": "Seitenleiste erweitern",
