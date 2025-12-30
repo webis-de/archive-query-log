@@ -117,6 +117,7 @@
     "noUnfurlData": "URL details not available",
     "noUnbrandedData": "Unbranded view not available",
     "unfurl": {
+      "baseUrl": "Base URL",
       "protocol": "Protocol",
       "domain": "Domain",
       "port": "Port",

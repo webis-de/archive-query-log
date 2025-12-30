@@ -251,81 +251,27 @@
                 </div>
               } @else if (unfurlData(); as unfurl) {
                 <div class="unfurl-view space-y-4">
-                  <!-- Scheme -->
+                  <!-- Base URL -->
                   <div class="unfurl-section">
                     <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-                      {{ 'metadata.unfurl.protocol' | translate }}
+                      {{ 'metadata.unfurl.baseUrl' | translate }}
                     </h4>
-                    <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono break-all">
-                      {{ unfurl.scheme }}
-                    </code>
+                    <p class="text-sm font-mono break-all text-base-content">
+                      {{ unfurl.scheme }}://{{ unfurl.netloc }}
+                      @if (unfurl.port) {
+                        :{{ unfurl.port }}
+                      }
+                    </p>
                   </div>
-
-                  <!-- Domain Parts -->
-                  <div class="unfurl-section">
-                    <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-                      {{ 'metadata.unfurl.domain' | translate }}
-                    </h4>
-                    <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono break-all">
-                      {{ unfurl.netloc }}
-                    </code>
-                    @if (unfurl.domain_parts) {
-                      <div class="mt-2 grid grid-cols-2 gap-2 text-xs">
-                        @if (unfurl.domain_parts.subdomain) {
-                          <div class="p-2 bg-base-200/50 rounded">
-                            <span class="text-base-content/50"
-                              >{{ 'metadata.unfurl.subdomain' | translate }}:</span
-                            >
-                            <span class="ms-1 font-mono">{{ unfurl.domain_parts.subdomain }}</span>
-                          </div>
-                        }
-                        <div class="p-2 bg-base-200/50 rounded">
-                          <span class="text-base-content/50"
-                            >{{ 'metadata.unfurl.domainLabel' | translate }}:</span
-                          >
-                          <span class="ms-1 font-mono">{{ unfurl.domain_parts.domain }}</span>
-                        </div>
-                        <div class="p-2 bg-base-200/50 rounded">
-                          <span class="text-base-content/50"
-                            >{{ 'metadata.unfurl.tld' | translate }}:</span
-                          >
-                          <span class="ms-1 font-mono">{{ unfurl.domain_parts.suffix }}</span>
-                        </div>
-                      </div>
-                    }
-                  </div>
-
-                  <!-- Port (if present) -->
-                  @if (unfurl.port) {
-                    <div class="unfurl-section">
-                      <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-                        {{ 'metadata.unfurl.port' | translate }}
-                      </h4>
-                      <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono">
-                        {{ unfurl.port }}
-                      </code>
-                    </div>
-                  }
 
                   <!-- Path -->
                   <div class="unfurl-section">
                     <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
                       {{ 'metadata.unfurl.path' | translate }}
                     </h4>
-                    <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono break-all">
+                    <p class="text-sm font-mono break-all text-base-content">
                       {{ unfurl.path || '/' }}
-                    </code>
-                    @if (unfurl.path_segments && unfurl.path_segments.length > 0) {
-                      <div class="mt-2 flex flex-wrap gap-1">
-                        @for (segment of unfurl.path_segments; track $index) {
-                          <span
-                            class="px-2 py-1 bg-primary/10 text-primary rounded text-xs font-mono"
-                          >
-                            /{{ segment }}
-                          </span>
-                        }
-                      </div>
-                    }
+                    </p>
                   </div>
 
                   <!-- Query Parameters -->
@@ -365,9 +311,9 @@
                       <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
                         {{ 'metadata.unfurl.fragment' | translate }}
                       </h4>
-                      <code class="block p-3 bg-base-200 rounded-lg text-sm font-mono break-all">
+                      <p class="text-sm font-mono break-all text-base-content">
                         #{{ unfurl.fragment }}
-                      </code>
+                      </p>
                     </div>
                   }
                 </div>
