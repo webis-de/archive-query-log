@@ -49,7 +49,7 @@
       </p>
     } @else if (activeProject()) {
       <p class="text-sm text-base-content/50 mt-6 text-center">
-        {{ 'landing.searchingInProject' | translate }} <strong>{{ activeProject()!.name }}</strong>
+        {{ 'landing.searchingInProject' | translate: { name: activeProject()!.name } }}
       </p>
     } @else if (hasProjects()) {
       <p class="text-sm text-base-content/50 mt-6 text-center">

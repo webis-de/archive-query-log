@@ -55,7 +55,14 @@ export class AppMetadataPanelComponent implements OnInit {
   readonly isIframeLoading = signal<boolean>(false);
   readonly iframeError = signal<boolean>(false);
 
-  readonly tabs = signal<TabItem[]>([]);
+  readonly tabs = signal<TabItem[]>([
+    { id: 'text', label: 'Text View', icon: 'bi-file-text' },
+    { id: 'html', label: 'HTML View', icon: 'bi-code-square' },
+    { id: 'website', label: 'Website', icon: 'bi-globe' },
+    { id: 'metadata', label: 'Metadata', icon: 'bi-info-circle' },
+    { id: 'related', label: 'Related SERPs', icon: 'bi-search' },
+    { id: 'unfurl', label: 'URL Details', icon: 'bi-link-45deg' },
+  ]);
 
   // SERP details data (fetched from API with include parameters)
   readonly serpDetails = signal<SerpDetailsResponse | null>(null);
@@ -90,22 +97,34 @@ export class AppMetadataPanelComponent implements OnInit {
 
   private updateTabLabels(): void {
     this.tabs.set([
-      { id: 'text', label: this.translate.instant('metadata.textView'), icon: 'bi-file-text' },
-      { id: 'html', label: this.translate.instant('metadata.htmlView'), icon: 'bi-code-square' },
-      { id: 'website', label: this.translate.instant('metadata.website'), icon: 'bi-globe' },
+      {
+        id: 'text',
+        label: this.translate.instant('metadata.textView') as string,
+        icon: 'bi-file-text',
+      },
+      {
+        id: 'html',
+        label: this.translate.instant('metadata.htmlView') as string,
+        icon: 'bi-code-square',
+      },
+      {
+        id: 'website',
+        label: this.translate.instant('metadata.websiteTab') as string,
+        icon: 'bi-globe',
+      },
       {
         id: 'metadata',
-        label: this.translate.instant('metadata.metadata'),
+        label: this.translate.instant('metadata.metadata') as string,
         icon: 'bi-info-circle',
       },
       {
         id: 'related',
-        label: this.translate.instant('metadata.relatedSerps'),
+        label: this.translate.instant('metadata.relatedSerps') as string,
         icon: 'bi-search',
       },
       {
         id: 'unfurl',
-        label: this.translate.instant('metadata.urlDetails'),
+        label: this.translate.instant('metadata.urlDetails') as string,
         icon: 'bi-link-45deg',
       },
     ]);

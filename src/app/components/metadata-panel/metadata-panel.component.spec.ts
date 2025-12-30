@@ -265,7 +265,7 @@ describe('AppMetadataPanelComponent', () => {
 
       const compiled = fixture.nativeElement as HTMLElement;
       expect(compiled.textContent).toContain('metadata.websitePreview');
-      expect(compiled.textContent).toContain('Snapshot Date');
+      expect(compiled.textContent).toContain('metadata.website.snapshotDate');
     });
 
     it('should display archive URL in website tab', () => {
@@ -286,7 +286,8 @@ describe('AppMetadataPanelComponent', () => {
 
       const iframe = fixture.nativeElement.querySelector('iframe');
       expect(iframe).toBeTruthy();
-      expect(iframe.getAttribute('title')).toContain('Archived website snapshot');
+      // The title attribute now uses translation key with interpolation
+      expect(iframe.getAttribute('title')).toContain('metadata.website.iframeTitle');
     });
 
     it('should show loading state when switching to website tab', () => {
@@ -308,7 +309,7 @@ describe('AppMetadataPanelComponent', () => {
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;
-      expect(compiled.textContent).toContain('Loading archived snapshot...');
+      expect(compiled.textContent).toContain('metadata.website.loadingSnapshot');
       expect(compiled.querySelector('.loading-spinner')).toBeTruthy();
     });
 
@@ -349,7 +350,7 @@ describe('AppMetadataPanelComponent', () => {
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;
-      expect(compiled.textContent).toContain('Failed to load archived snapshot');
+      expect(compiled.textContent).toContain('metadata.website.failedToLoad');
     });
   });
 });

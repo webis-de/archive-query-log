@@ -60,15 +60,15 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   readonly landingMessage = computed(() => {
     if (this.isTemporaryMode()) {
-      return this.translate.instant('landing.temporarySearchMode');
+      return this.translate.instant('landing.temporarySearchMode') as string;
     }
     const active = this.activeProject();
     if (active) {
-      return this.translate.instant('landing.searchingInProject', { name: active.name });
+      return this.translate.instant('landing.searchingInProject', { name: active.name }) as string;
     } else if (this.hasProjects()) {
-      return this.translate.instant('landing.searchLabel');
+      return this.translate.instant('landing.searchLabel') as string;
     } else {
-      return this.translate.instant('landing.createProjectHint');
+      return this.translate.instant('landing.createProjectHint') as string;
     }
   });
 
@@ -83,7 +83,7 @@ export class LandingComponent implements OnInit, OnDestroy {
         const badges = this.filterBadgeService.generateBadges(this.currentFilters);
         this.activeFilters.set(badges);
       } else {
-        this.activeFilters.set([this.translate.instant('filter.badges.all')]);
+        this.activeFilters.set([this.translate.instant('filter.badges.all') as string]);
       }
     });
   }

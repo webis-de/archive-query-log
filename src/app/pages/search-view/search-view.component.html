@@ -69,7 +69,9 @@
         @if (!isLoading && hasSearched && totalCount > 0) {
           <div class="w-full max-w-[800px]">
             <div class="mb-4">
-              <p class="text-sm text-gray-600">Found {{ totalCount }} results</p>
+              <p class="text-sm text-gray-600">
+                {{ 'search.resultsFound' | translate: { count: totalCount } }}
+              </p>
             </div>
 
             <div class="flex flex-col gap-4">
@@ -92,15 +94,17 @@
                     <ng-container content>
                       <div class="p-3 space-y-2 text-sm min-w-[200px]">
                         <div>
-                          <span class="font-semibold">Score:</span>
+                          <span class="font-semibold">{{ 'search.scoreLabel' | translate }}</span>
                           <span class="ml-2">{{ result._score | number: '1.2-2' }}</span>
                         </div>
                         <div>
-                          <span class="font-semibold">ID:</span>
+                          <span class="font-semibold">{{ 'search.idLabel' | translate }}</span>
                           <span class="ml-2 text-xs break-all">{{ result._id }}</span>
                         </div>
                         <div>
-                          <span class="font-semibold">MIME Type:</span>
+                          <span class="font-semibold">{{
+                            'search.mimeTypeLabel' | translate
+                          }}</span>
                           <span class="ml-2">{{ result._source.capture.mimetype }}</span>
                         </div>
                       </div>
@@ -131,13 +135,15 @@
 
         @if (!isLoading && hasSearched && totalCount === 0) {
           <div class="flex justify-center items-center py-12">
-            <div class="text-lg text-gray-600">No results found for "{{ searchQuery }}"</div>
+            <div class="text-lg text-gray-600">
+              {{ 'search.noResultsFor' | translate: { query: searchQuery } }}
+            </div>
           </div>
         }
 
         @if (!hasSearched) {
           <div class="flex justify-center items-center py-12">
-            <div class="text-lg text-gray-600">Enter a search query to begin</div>
+            <div class="text-lg text-gray-600">{{ 'search.enterQuery' | translate }}</div>
           </div>
         }
 

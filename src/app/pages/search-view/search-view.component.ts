@@ -77,7 +77,7 @@ export class SearchViewComponent implements OnInit, OnDestroy {
       if (this.currentFilters) {
         this.activeFilters = this.filterBadgeService.generateBadges(this.currentFilters);
       } else {
-        this.activeFilters = [this.translate.instant('filter.badges.all')];
+        this.activeFilters = [this.translate.instant('filter.badges.all') as string];
       }
     });
 
