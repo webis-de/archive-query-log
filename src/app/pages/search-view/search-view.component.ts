@@ -9,6 +9,7 @@ import {
   AqlPanelComponent,
   AqlDropdownComponent,
   AqlButtonComponent,
+  AqlPaginationComponent,
 } from 'aql-stylings';
 import { SearchService } from '../../services/search.service';
 import { SearchResult } from '../../models/search.model';
@@ -34,6 +35,7 @@ import { Subscription } from 'rxjs';
     AqlDropdownComponent,
     AqlButtonComponent,
     LanguageSelectorComponent,
+    AqlPaginationComponent,
     FilterDropdownComponent,
     AppMetadataPanelComponent,
   ],
@@ -57,6 +59,7 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   hasSearched = false;
   currentSearchId?: string;
   isTemporarySearch = false;
+  isPaginationChange = false;
   activeFilters: string[] = ['All'];
   initialFilters: FilterState | null = null;
   private currentFilters: FilterState | null = null;
@@ -65,6 +68,8 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   readonly isPanelOpen = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
   readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
+  readonly currentPage = signal<number>(1);
+  readonly pageSize = signal<number>(10);
 
   ngOnInit(): void {
     // Subscribe to language changes to update badges
@@ -132,14 +137,16 @@ export class SearchViewComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.hasSearched = true;
 
-    this.searchService.search(this.searchQuery).subscribe({
+    const offset = (this.currentPage() - 1) * this.pageSize();
+
+    this.searchService.search(this.searchQuery, this.pageSize(), offset).subscribe({
       next: response => {
         this.searchResults = response.results;
-        this.totalCount = response.count;
+        this.totalCount = response.total;
         this.isLoading = false;
 
-        // Only save search to history if it's not a temporary search
-        if (!this.isTemporarySearch) {
+        // Only save search to history if it's not a temporary search or pagination change
+        if (!this.isTemporarySearch && !this.isPaginationChange) {
           const searchItem = this.searchHistoryService.addSearch({
             query: this.searchQuery,
           });
@@ -147,6 +154,8 @@ export class SearchViewComponent implements OnInit, OnDestroy {
           this.currentSearchId = searchItem.id;
           this.router.navigate(['/s', searchItem.id], { replaceUrl: true });
         }
+
+        this.isPaginationChange = false;
       },
       error: error => {
         console.error('Search error:', error);
@@ -165,12 +174,21 @@ export class SearchViewComponent implements OnInit, OnDestroy {
       this.isLoading = true;
       this.hasSearched = true;
 
+      // Update pagination state from stored search
+      if (searchItem.filter.size) {
+        this.pageSize.set(searchItem.filter.size);
+      }
+      if (searchItem.filter.offset !== undefined && searchItem.filter.size) {
+        const page = Math.floor(searchItem.filter.offset / searchItem.filter.size) + 1;
+        this.currentPage.set(page);
+      }
+
       this.searchService
         .search(searchItem.filter.query, searchItem.filter.size, searchItem.filter.offset)
         .subscribe({
           next: response => {
             this.searchResults = response.results;
-            this.totalCount = response.count;
+            this.totalCount = response.total;
             this.isLoading = false;
           },
           error: error => {
@@ -205,6 +223,40 @@ export class SearchViewComponent implements OnInit, OnDestroy {
 
   onClosePanel(): void {
     this.isPanelOpen.set(false);
+  }
+
+  onPageChange(page: number): void {
+    this.currentPage.set(page);
+    this.isPaginationChange = true;
+    this.onSearch();
+    this.scrollToTop();
+  }
+
+  onPageSizeChange(size: number): void {
+    this.pageSize.set(size);
+    this.currentPage.set(1);
+    this.isPaginationChange = true;
+    this.updateSearchHistoryPageSize(size);
+    this.onSearch();
+  }
+
+  private updateSearchHistoryPageSize(size: number): void {
+    if (!this.currentSearchId || this.currentSearchId === 'temp') {
+      return;
+    }
+
+    const searchItem = this.searchHistoryService.getSearch(this.currentSearchId);
+    if (searchItem) {
+      this.searchHistoryService.updateSearch(this.currentSearchId, {
+        ...searchItem.filter,
+        size,
+        offset: 0,
+      });
+    }
+  }
+
+  private scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   ngOnDestroy(): void {

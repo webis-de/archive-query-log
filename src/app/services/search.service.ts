@@ -16,7 +16,7 @@ export class SearchService {
     };
 
     if (size !== undefined) {
-      params['size'] = size;
+      params['page_size'] = size;
     }
     if (offset !== undefined) {
       params['offset'] = offset;
@@ -31,7 +31,7 @@ export class SearchService {
     };
 
     if (params.size !== undefined) {
-      apiParams['size'] = params.size;
+      apiParams['page_size'] = params.size;
     }
     if (params.provider_id) {
       apiParams['provider_id'] = params.provider_id;
