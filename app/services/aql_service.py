@@ -18,7 +18,7 @@ from app.utils.url_cleaner import remove_tracking_parameters
 # ---------------------------------------------------------
 # 1. Basic SERP Search
 # ---------------------------------------------------------
-async def search_basic(query: str, size: int = 10) -> dict:
+async def search_basic(query: str, size: int = 10, from_: int = 0) -> dict:
     """
     Simple full-text search in SERPs by query string.
 
@@ -28,7 +28,7 @@ async def search_basic(query: str, size: int = 10) -> dict:
             - total: Total number of results found
     """
     es = get_es_client()
-    body = {"query": {"match": {"url_query": query}}, "size": size}
+    body = {"query": {"match": {"url_query": query}}, "size": size, "from": from_}
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
@@ -65,6 +65,7 @@ async def search_advanced(
     year: Optional[int] = None,
     status_code: Optional[int] = None,
     size: int = 10,
+    from_: int = 0,
 ) -> dict:
     """
     Perform advanced search on SERPs with optional filters:
@@ -100,7 +101,7 @@ async def search_advanced(
     if status_code:
         bool_query["filter"].append({"term": {"capture.status_code": status_code}})
 
-    body = {"query": {"bool": bool_query}, "size": size}
+    body = {"query": {"bool": bool_query}, "size": size, "from": from_}
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
@@ -343,8 +344,11 @@ async def get_related_serps(
     # add 1 to size for the original serp
     results = await search_advanced(query=query, size=size + 1, provider_id=provider_id)
 
+    # extract hits from the returned dict (search_advanced returns {"hits": [...], "total": N})
+    hits = results.get("hits", []) if isinstance(results, dict) else results
+
     # only use results that are not the original serp
-    related = [hit for hit in results if hit["_id"] != serp_id]
+    related = [hit for hit in hits if hit.get("_id") != serp_id]
     return related[:size]
 
 

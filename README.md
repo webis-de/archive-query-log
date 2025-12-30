@@ -86,6 +86,8 @@ docker stop <container-name>
 **Query Parameters for Search Endpoint:**
 - `query` (required) - Search term
 - `page_size` - Results per page (default: 10, options: 10, 20, 50)
+- `page_size` - Results per page (default: 10, options: 10, 20, 50, 100, 1000)
+- `page` - Page number (1-based). Use together with `page_size` to navigate pages, e.g. `?query=climate&page_size=20&page=2`.
 - `provider_id` - Filter by provider ID (optional)
 - `year` - Filter by year (optional)
 - `status_code` - Filter by HTTP status code (optional)
