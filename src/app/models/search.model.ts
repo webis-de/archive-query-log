@@ -41,7 +41,7 @@ export interface WarcDownloader {
 
 export interface SearchResultSource {
   last_modified: string;
-  archive: Archive;
+  archive?: Archive;
   provider: Provider;
   capture: Capture;
   url_query: string;

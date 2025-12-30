@@ -4,6 +4,7 @@ import {
   output,
   signal,
   computed,
+  effect,
   ChangeDetectionStrategy,
   inject,
   OnInit,
@@ -34,6 +35,8 @@ export class AppMetadataPanelComponent implements OnInit {
   readonly closePanel = output<void>();
 
   readonly activeTab = signal<string>('text');
+  readonly isIframeLoading = signal<boolean>(false);
+  readonly iframeError = signal<boolean>(false);
 
   readonly tabs = signal<TabItem[]>([]);
 
@@ -57,6 +60,19 @@ export class AppMetadataPanelComponent implements OnInit {
     ]);
   }
 
+  private lastLoadedUrl = '';
+
+  constructor() {
+    effect(() => {
+      const url = this.mementoUrlString();
+      if (url && this.activeTab() === 'website' && url !== this.lastLoadedUrl) {
+        this.lastLoadedUrl = url;
+        this.isIframeLoading.set(true);
+        this.iframeError.set(false);
+      }
+    });
+  }
+
   readonly panelClasses = computed(() => {
     const isSidebarCollapsed = this.sessionService.sidebarCollapsed();
     const widthClass = isSidebarCollapsed ? 'w-[60vw]' : 'w-[calc(60vw-20rem)]';
@@ -77,16 +93,107 @@ export class AppMetadataPanelComponent implements OnInit {
     return classes.join(' ');
   });
 
+  /**
+   * Computed raw memento URL string for use in links
+   */
+  readonly mementoUrlString = computed<string>(() => {
+    const result = this.searchResult();
+    if (!result) return '';
+
+    const mementoApiUrl = result._source.archive?.memento_api_url;
+    const timestamp = result._source.capture.timestamp;
+    const captureUrl = result._source.capture.url;
+
+    if (!mementoApiUrl || !timestamp || !captureUrl) {
+      return captureUrl || '';
+    }
+
+    const formattedTimestamp = this.formatTimestampForMemento(timestamp);
+    return `${mementoApiUrl}/${formattedTimestamp}/${captureUrl}`;
+  });
+
+  /**
+   * Computed memento URL - only recalculates when searchResult changes
+   */
+  readonly mementoUrl = computed<SafeResourceUrl | null>(() => {
+    const urlString = this.mementoUrlString();
+    if (!urlString) return null;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(urlString);
+  });
+
+  /**
+   * Computed archive date for display - only recalculates when searchResult changes
+   */
+  readonly archiveDate = computed<string>(() => {
+    const result = this.searchResult();
+    if (!result) return '';
+
+    const timestamp = result._source.capture.timestamp;
+    if (!timestamp) return '';
+
+    try {
+      const date = new Date(timestamp);
+      if (isNaN(date.getTime())) return '';
+
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short',
+      });
+    } catch {
+      return '';
+    }
+  });
+
   onClose(): void {
     this.closePanel.emit();
   }
 
   onTabChange(tabId: string): void {
     this.activeTab.set(tabId);
+    // Reset iframe state
+    if (tabId === 'website') {
+      this.isIframeLoading.set(true);
+      this.iframeError.set(false);
+    }
   }
 
-  getSafeUrl(url: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  onIframeLoad(): void {
+    this.isIframeLoading.set(false);
+    this.iframeError.set(false);
+  }
+
+  onIframeError(): void {
+    this.isIframeLoading.set(false);
+    this.iframeError.set(true);
+  }
+
+  /**
+   * Formats an ISO timestamp to the memento format (YYYYMMDDHHmmss)
+   * @param isoTimestamp ISO 8601 timestamp string
+   * @returns Formatted timestamp string for memento URL
+   */
+  formatTimestampForMemento(isoTimestamp: string): string {
+    try {
+      const date = new Date(isoTimestamp);
+      if (isNaN(date.getTime())) {
+        return '';
+      }
+
+      const year = date.getUTCFullYear();
+      const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(date.getUTCDate()).padStart(2, '0');
+      const hours = String(date.getUTCHours()).padStart(2, '0');
+      const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+      const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+
+      return `${year}${month}${day}${hours}${minutes}${seconds}`;
+    } catch {
+      return '';
+    }
   }
 
   getExtractionText(): string {
