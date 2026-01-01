@@ -163,7 +163,7 @@ export class AqlDropdownComponent implements OnDestroy {
     }
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onWindowResize(): void {
     if (this.openState()) {
       this.updateFixedPosition();
