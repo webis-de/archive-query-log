@@ -2,7 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { API_CONFIG } from '../config/api.config';
-import { SearchResponse, SearchParams } from '../models/search.model';
+import {
+  SearchResponse,
+  SearchParams,
+  QueryMetadataResponse,
+  QueryMetadataParams,
+} from '../models/search.model';
 
 @Injectable({
   providedIn: 'root',
@@ -44,5 +49,29 @@ export class SearchService {
     }
 
     return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, apiParams);
+  }
+
+  getQueryMetadata(params: QueryMetadataParams): Observable<QueryMetadataResponse> {
+    const apiParams: Record<string, string | number> = {
+      query: params.query,
+    };
+
+    if (params.top_n_queries !== undefined) {
+      apiParams['top_n_queries'] = params.top_n_queries;
+    }
+    if (params.interval) {
+      apiParams['interval'] = params.interval;
+    }
+    if (params.top_providers !== undefined) {
+      apiParams['top_providers'] = params.top_providers;
+    }
+    if (params.top_archives !== undefined) {
+      apiParams['top_archives'] = params.top_archives;
+    }
+    if (params.last_n_months !== undefined) {
+      apiParams['last_n_months'] = params.last_n_months;
+    }
+
+    return this.apiService.get<QueryMetadataResponse>(API_CONFIG.endpoints.serpsPreview, apiParams);
   }
 }

@@ -11,3 +11,8 @@ export * from './lib/components/header-bar/aql-header-bar.component';
 export * from './lib/components/panel/aql-panel.component';
 export * from './lib/components/tab-menu/aql-tab-menu.component';
 export * from './lib/components/pagination/aql-pagination.component';
+export * from './lib/components/charts/base/base-echart.component';
+export * from './lib/components/charts/line-chart/aql-line-chart.component';
+export * from './lib/components/charts/bar-chart/aql-bar-chart.component';
+export * from './lib/components/charts/pie-chart/aql-pie-chart.component';
+export * from './lib/directives/tooltip/tooltip.directive';

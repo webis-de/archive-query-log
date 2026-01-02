@@ -17,14 +17,14 @@ import { SearchResult } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
 
 @Component({
-  selector: 'app-metadata-panel',
+  selector: 'app-query-metadata-panel',
   standalone: true,
   imports: [CommonModule, TranslateModule, AqlButtonComponent, AqlTabMenuComponent],
-  templateUrl: './metadata-panel.component.html',
-  styleUrl: './metadata-panel.component.css',
+  templateUrl: './query-metadata-panel.component.html',
+  styleUrl: './query-metadata-panel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppMetadataPanelComponent implements OnInit {
+export class AppQueryMetadataPanelComponent implements OnInit {
   private readonly sessionService = inject(SessionService);
   private readonly sanitizer = inject(DomSanitizer);
   private readonly translate = inject(TranslateService);
@@ -41,7 +41,11 @@ export class AppMetadataPanelComponent implements OnInit {
   readonly tabs = signal<TabItem[]>([]);
 
   ngOnInit(): void {
-    this.updateTabLabels();
+    // Wait for translations to load before updating labels
+    this.translate.get('metadata.textView').subscribe(() => {
+      this.updateTabLabels();
+    });
+
     this.translate.onLangChange.subscribe(() => {
       this.updateTabLabels();
     });

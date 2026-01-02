@@ -12,14 +12,15 @@ import {
   AqlPaginationComponent,
 } from 'aql-stylings';
 import { SearchService } from '../../services/search.service';
-import { SearchResult } from '../../models/search.model';
+import { SearchResult, QueryMetadataResponse } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { LanguageService } from '../../services/language.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { FilterState } from '../../models/filter.model';
-import { AppMetadataPanelComponent } from '../../components/metadata-panel/metadata-panel.component';
+import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-panel/query-metadata-panel.component';
+import { QueryOverviewPanelComponent } from '../../components/query-overview-panel/query-overview-panel.component';
 import { SessionService } from '../../services/session.service';
 import { Subscription } from 'rxjs';
 
@@ -37,7 +38,8 @@ import { Subscription } from 'rxjs';
     LanguageSelectorComponent,
     AqlPaginationComponent,
     FilterDropdownComponent,
-    AppMetadataPanelComponent,
+    AppQueryMetadataPanelComponent,
+    QueryOverviewPanelComponent,
   ],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
@@ -64,12 +66,21 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   initialFilters: FilterState | null = null;
   private currentFilters: FilterState | null = null;
   private langChangeSubscription?: Subscription;
+  private metadataSubscription?: Subscription;
+
+  readonly metadataInterval = signal<'day' | 'week' | 'month'>('month');
+  readonly metadataTopQueries = 10;
+  readonly metadataTopProviders = 5;
+  readonly metadataTopArchives = 5;
+  readonly metadataLastMonths = 36;
 
   readonly isPanelOpen = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
   readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
   readonly currentPage = signal<number>(1);
   readonly pageSize = signal<number>(10);
+  readonly queryMetadata = signal<QueryMetadataResponse | null>(null);
+  readonly isMetadataLoading = signal<boolean>(false);
 
   ngOnInit(): void {
     // Subscribe to language changes to update badges
@@ -130,7 +141,9 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   }
 
   onSearch(): void {
-    if (!this.searchQuery.trim()) {
+    const trimmedQuery = this.searchQuery.trim();
+    if (!trimmedQuery) {
+      this.queryMetadata.set(null);
       return;
     }
 
@@ -138,6 +151,7 @@ export class SearchViewComponent implements OnInit, OnDestroy {
     this.hasSearched = true;
 
     const offset = (this.currentPage() - 1) * this.pageSize();
+    this.loadQueryMetadata(trimmedQuery);
 
     this.searchService.search(this.searchQuery, this.pageSize(), offset).subscribe({
       next: response => {
@@ -173,6 +187,7 @@ export class SearchViewComponent implements OnInit, OnDestroy {
       this.searchQuery = searchItem.filter.query;
       this.isLoading = true;
       this.hasSearched = true;
+      this.loadQueryMetadata(searchItem.filter.query);
 
       // Update pagination state from stored search
       if (searchItem.filter.size) {
@@ -198,6 +213,39 @@ export class SearchViewComponent implements OnInit, OnDestroy {
             this.totalCount = 0;
           },
         });
+    }
+  }
+
+  private loadQueryMetadata(query: string): void {
+    this.isMetadataLoading.set(true);
+    this.queryMetadata.set(null);
+    this.metadataSubscription?.unsubscribe();
+
+    this.metadataSubscription = this.searchService
+      .getQueryMetadata({
+        query,
+        interval: this.metadataInterval(),
+        top_n_queries: this.metadataTopQueries,
+        top_providers: this.metadataTopProviders,
+        top_archives: this.metadataTopArchives,
+        last_n_months: this.metadataLastMonths,
+      })
+      .subscribe({
+        next: response => {
+          this.queryMetadata.set(response);
+          this.isMetadataLoading.set(false);
+        },
+        error: error => {
+          console.error('Metadata error:', error);
+          this.isMetadataLoading.set(false);
+        },
+      });
+  }
+
+  onMetadataIntervalChange(interval: 'day' | 'week' | 'month'): void {
+    this.metadataInterval.set(interval);
+    if (this.searchQuery.trim()) {
+      this.loadQueryMetadata(this.searchQuery.trim());
     }
   }
 
@@ -261,5 +309,6 @@ export class SearchViewComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.langChangeSubscription?.unsubscribe();
+    this.metadataSubscription?.unsubscribe();
   }
 }

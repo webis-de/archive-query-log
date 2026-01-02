@@ -15,8 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([headerInterceptor])),
     importProvidersFrom(
       TranslateModule.forRoot({
-        defaultLanguage: 'en',
-        useDefaultLang: true,
+        fallbackLang: 'en',
         missingTranslationHandler: {
           provide: MissingTranslationHandler,
           useClass: CustomMissingTranslationHandler,
