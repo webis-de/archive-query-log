@@ -11,16 +11,6 @@
     "edit": "Edit",
     "close": "Close"
   },
-  "sidebar": {
-    "expandSidebar": "Expand sidebar",
-    "collapseSidebar": "Collapse sidebar",
-    "newProject": "New project",
-    "temporarySearch": "Temporary search",
-    "projects": "Projects",
-    "searchHistory": "Search History",
-    "noProjectsFound": "No projects found",
-    "createFirstProject": "Create your first project"
-  },
   "landing": {
     "welcomeMessage": "Welcome to AQL Search",
     "searchPlaceholder": "Search for queries...",
@@ -110,10 +100,12 @@
     "unpinProject": "Unpin Project",
     "renameProject": "Rename Project",
     "deleteProject": "Delete Project",
+    "confirmDeleteProject": "Are you sure you want to delete the project",
     "pinnedProject": "Pinned project",
     "addToProject": "Add search to project",
     "renameSearch": "Rename Search",
     "deleteSearch": "Delete Search",
+    "confirmDeleteSearch": "Are you sure you want to delete the search",
     "createNewProject": "Create new project and start querying the web archive"
   }
 }

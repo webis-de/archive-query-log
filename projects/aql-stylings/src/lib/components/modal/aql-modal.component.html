@@ -1,0 +1,45 @@
+<dialog
+  class="z-[99999] backdrop-z-[99998]"
+  #dialogElement
+  [ngClass]="modalClasses()"
+  (click)="onBackdropClick($event)"
+>
+  <div [ngClass]="modalBoxClasses()">
+    @if (modalTitle()) {
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold">{{ modalTitle() }}</h3>
+        @if (showCloseButton()) {
+          <aql-button
+            btnType="ghost"
+            iconStyle="circle"
+            size="sm"
+            (buttonClick)="close()"
+            aria-label="Close modal"
+          >
+            ✕
+          </aql-button>
+        }
+      </div>
+    } @else if (showCloseButton()) {
+      <div class="flex justify-end mb-2">
+        <aql-button
+          btnType="ghost"
+          iconStyle="circle"
+          size="sm"
+          (buttonClick)="close()"
+          aria-label="Close modal"
+        >
+          ✕
+        </aql-button>
+      </div>
+    }
+
+    <div class="modal-content">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="modal-action">
+      <ng-content select="[modal-actions]"></ng-content>
+    </div>
+  </div>
+</dialog>

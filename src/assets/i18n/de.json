@@ -11,16 +11,6 @@
     "edit": "Bearbeiten",
     "close": "Schließen"
   },
-  "sidebar": {
-    "expandSidebar": "Seitenleiste erweitern",
-    "collapseSidebar": "Seitenleiste einklappen",
-    "newProject": "Neues Projekt",
-    "temporarySearch": "Temporäre Suche",
-    "projects": "Projekte",
-    "searchHistory": "Suchverlauf",
-    "noProjectsFound": "Keine Projekte gefunden",
-    "createFirstProject": "Erstellen Sie Ihr erstes Projekt"
-  },
   "landing": {
     "welcomeMessage": "Willkommen bei AQL Suche",
     "searchPlaceholder": "Nach Abfragen suchen...",
@@ -110,10 +100,12 @@
     "unpinProject": "Projekt lösen",
     "renameProject": "Projekt umbenennen",
     "deleteProject": "Projekt löschen",
+    "confirmDeleteProject": "Sind Sie sicher, dass Sie das Projekt",
     "pinnedProject": "Angeheftetes Projekt",
     "addToProject": "Suche zum Projekt hinzufügen",
     "renameSearch": "Suche umbenennen",
     "deleteSearch": "Suche löschen",
+    "confirmDeleteSearch": "Sind Sie sicher, dass Sie die Suche",
     "createNewProject": "Neues Projekt erstellen und das Webarchiv abfragen"
   }
 }

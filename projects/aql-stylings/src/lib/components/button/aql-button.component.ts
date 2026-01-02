@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-export type ButtonType = 'default' | 'primary' | 'secondary' | 'accent' | 'ghost' | 'link' | 'icon';
+export type ButtonType = 'default' | 'primary' | 'secondary' | 'accent' | 'ghost' | 'link' | 'icon' | 'error';
 
 // daisyUI utility classes (only for 1:1 ratio buttons)
 export type IconStyle = 'default' | 'square' | 'circle';
