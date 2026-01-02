@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
-import { QueryMetadataPanelComponent } from './query-metadata-panel.component';
+import { QueryOverviewPanelComponent } from './query-overview-panel.component';
 import { QueryMetadataResponse } from '../../models/search.model';
 
-describe('QueryMetadataPanelComponent', () => {
-  let component: QueryMetadataPanelComponent;
-  let fixture: ComponentFixture<QueryMetadataPanelComponent>;
+describe('QueryOverviewPanelComponent', () => {
+  let component: QueryOverviewPanelComponent;
+  let fixture: ComponentFixture<QueryOverviewPanelComponent>;
 
   const mockMetadata: QueryMetadataResponse = {
     query: 'neural network',
@@ -21,10 +21,10 @@ describe('QueryMetadataPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QueryMetadataPanelComponent, TranslateModule.forRoot()],
+      imports: [QueryOverviewPanelComponent, TranslateModule.forRoot()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(QueryMetadataPanelComponent);
+    fixture = TestBed.createComponent(QueryOverviewPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -71,6 +71,6 @@ describe('QueryMetadataPanelComponent', () => {
     fixture.detectChanges();
 
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.textContent).toContain('No data');
+    expect(compiled.textContent).toContain('searchStats.noData');
   });
 });

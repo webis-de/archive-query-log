@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppMetadataPanelComponent } from './metadata-panel.component';
+import { AppQueryMetadataPanelComponent } from './query-metadata-panel.component';
 import { SearchResult } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
 import { signal, WritableSignal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('AppMetadataPanelComponent', () => {
-  let component: AppMetadataPanelComponent;
-  let fixture: ComponentFixture<AppMetadataPanelComponent>;
+describe('AppQueryMetadataPanelComponent', () => {
+  let component: AppQueryMetadataPanelComponent;
+  let fixture: ComponentFixture<AppQueryMetadataPanelComponent>;
   let mockSessionService: { sidebarCollapsed: WritableSignal<boolean> };
 
   const mockSearchResult: SearchResult = {
@@ -51,11 +51,11 @@ describe('AppMetadataPanelComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      imports: [AppMetadataPanelComponent, TranslateModule.forRoot()],
+      imports: [AppQueryMetadataPanelComponent, TranslateModule.forRoot()],
       providers: [{ provide: SessionService, useValue: mockSessionService }],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AppMetadataPanelComponent);
+    fixture = TestBed.createComponent(AppQueryMetadataPanelComponent);
     component = fixture.componentInstance;
     fixture.componentRef.setInput('isOpen', false);
     fixture.detectChanges();
@@ -263,7 +263,7 @@ describe('AppMetadataPanelComponent', () => {
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;
-      expect(compiled.textContent).toContain('Archived Website Preview');
+      expect(compiled.textContent).toContain('Website Preview');
       expect(compiled.textContent).toContain('Snapshot Date');
     });
 
