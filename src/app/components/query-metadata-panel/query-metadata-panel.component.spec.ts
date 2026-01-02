@@ -263,7 +263,7 @@ describe('AppQueryMetadataPanelComponent', () => {
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;
-      expect(compiled.textContent).toContain('Website Preview');
+      expect(compiled.textContent).toContain('metadata.websitePreview');
       expect(compiled.textContent).toContain('Snapshot Date');
     });
 
