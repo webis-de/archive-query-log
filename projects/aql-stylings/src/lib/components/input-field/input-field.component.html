@@ -1,7 +1,8 @@
-<label 
+<label
   class="
-    input flex items-center w-full gap-2 transition-all duration-200
+    input flex items-center w-full transition-all duration-200
     focus-within:outline-none
+    gap-2
   "
   [ngClass]="{
     'input-xs': size === 'xs',
@@ -22,17 +23,18 @@
     'rounded-full': shape === 'circle'
   }"
 >
-  <div class="flex-none flex items-center justify-center empty:hidden">
-    <ng-content select="[prefix]"></ng-content>
-    
+  <div class="contents">
     @if (showIcon) {
-      <i [ngClass]="icon" 
-         class="opacity-50 text-base-content"
-         [class.text-[14px]]="size === 'xs'"
-         [class.text-[16px]]="size === 'sm'"
-         [class.text-[20px]]="size === 'md' || size === 'lg'"
-      ></i>
+      <div class="flex-none flex items-center justify-center">
+        <i [ngClass]="icon"
+           class="opacity-50 text-base-content"
+           [class.text-[14px]]="size === 'xs'"
+           [class.text-[16px]]="size === 'sm'"
+           [class.text-[20px]]="size === 'md' || size === 'lg'"
+        ></i>
+      </div>
     }
+    <ng-content select="[prefix]"></ng-content>
   </div>
   
   <input
