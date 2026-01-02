@@ -279,10 +279,8 @@ export class AppSidebarComponent implements OnInit {
   }
 
   onDeleteSearch(searchId: string): void {
-    let parentProjectId: string | undefined;
     const search = this.projectService.projects().flatMap(p => {
       const s = p.searches.find(search => search.id === searchId);
-      if (s) parentProjectId = p.id;
       return s ? [s] : [];
     })[0];
 

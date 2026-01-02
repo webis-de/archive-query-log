@@ -3,6 +3,8 @@
   #dialogElement
   [ngClass]="modalClasses()"
   (click)="onBackdropClick($event)"
+  (keydown.escape)="close()"
+  tabindex="-1"
 >
   <div [ngClass]="modalBoxClasses()">
     @if (modalTitle()) {
