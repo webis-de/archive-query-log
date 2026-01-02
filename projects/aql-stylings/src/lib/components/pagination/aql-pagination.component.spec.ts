@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AqlPaginationComponent } from './aql-pagination.component';
 import { AqlButtonComponent } from '../button/aql-button.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('AqlPaginationComponent', () => {
   let component: AqlPaginationComponent;
@@ -8,7 +9,7 @@ describe('AqlPaginationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AqlPaginationComponent, AqlButtonComponent],
+      imports: [TranslateModule.forRoot(), AqlPaginationComponent, AqlButtonComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AqlPaginationComponent);

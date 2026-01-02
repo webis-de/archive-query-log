@@ -13,6 +13,8 @@ describe('LanguageService', () => {
       imports: [TranslateModule.forRoot()],
       providers: [LanguageService, TranslateService],
     });
+    const translate = TestBed.inject(TranslateService);
+    spyOn(translate, 'getBrowserLang').and.returnValue('en');
     service = TestBed.inject(LanguageService);
   });
 
