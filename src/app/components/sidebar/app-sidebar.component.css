@@ -198,9 +198,3 @@
   > *:not(.pinned-icon) {
   display: none !important;
 }
-
-/* Hide pinned icon when hovering OR dropdown is open */
-:host ::ng-deep aql-menu-item .menu-item-content:hover .after-slot .pinned-icon,
-:host ::ng-deep aql-menu-item .menu-item-content:has(.dropdown-open) .after-slot .pinned-icon {
-  display: none !important;
-}

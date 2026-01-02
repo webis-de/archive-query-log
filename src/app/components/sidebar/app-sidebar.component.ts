@@ -23,6 +23,7 @@ import {
   AqlAvatarCardComponent,
   AqlDropdownComponent,
   AqlInputFieldComponent,
+  AqlTooltipDirective,
 } from 'aql-stylings';
 import { UserData } from '../../models/user-data.model';
 import { ProjectService } from '../../services/project.service';
@@ -41,6 +42,7 @@ import { SessionService } from '../../services/session.service';
     AqlAvatarCardComponent,
     AqlDropdownComponent,
     AqlInputFieldComponent,
+    AqlTooltipDirective,
   ],
   templateUrl: './app-sidebar.component.html',
   styleUrl: './app-sidebar.component.css',

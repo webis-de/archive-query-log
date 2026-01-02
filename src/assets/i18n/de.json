@@ -11,16 +11,6 @@
     "edit": "Bearbeiten",
     "close": "Schließen"
   },
-  "sidebar": {
-    "expandSidebar": "Seitenleiste erweitern",
-    "collapseSidebar": "Seitenleiste einklappen",
-    "newProject": "Neues Projekt",
-    "temporarySearch": "Temporäre Suche",
-    "projects": "Projekte",
-    "searchHistory": "Suchverlauf",
-    "noProjectsFound": "Keine Projekte gefunden",
-    "createFirstProject": "Erstellen Sie Ihr erstes Projekt"
-  },
   "landing": {
     "welcomeMessage": "Willkommen bei AQL Suche",
     "searchPlaceholder": "Nach Abfragen suchen...",
@@ -57,6 +47,19 @@
     "english": "Englisch",
     "german": "Deutsch",
     "french": "Französisch"
+  },
+  "tooltip": {
+    "filter": {
+      "open": "Filter oeffnen",
+      "close": "Filter schliessen"
+    },
+    "pagination": {
+      "previousPage": "Zur vorherigen Seite",
+      "nextPage": "Zur naechsten Seite",
+      "firstPage": "Bereits auf der ersten Seite",
+      "lastPage": "Bereits auf der letzten Seite",
+      "morePages": "Mehr Seiten verfuegbar"
+    }
   },
   "footer": {
     "imprint": "Impressum",

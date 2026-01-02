@@ -1,14 +1,16 @@
 import { Component, computed, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { AqlButtonComponent } from '../button/aql-button.component';
 import { AqlDropdownComponent } from '../dropdown/aql-dropdown.component';
+import { AqlTooltipDirective } from '../../directives/tooltip/tooltip.directive';
 
 export type PaginationSize = 'xs' | 'sm' | 'md' | 'lg';
 
 @Component({
   selector: 'aql-pagination',
   standalone: true,
-  imports: [CommonModule, AqlButtonComponent, AqlDropdownComponent],
+  imports: [CommonModule, TranslateModule, AqlButtonComponent, AqlDropdownComponent, AqlTooltipDirective],
   templateUrl: './aql-pagination.component.html',
   styleUrls: ['./aql-pagination.component.css'],
 })
