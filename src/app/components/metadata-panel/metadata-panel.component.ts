@@ -75,7 +75,9 @@ export class AppMetadataPanelComponent implements OnInit {
 
   readonly panelClasses = computed(() => {
     const isSidebarCollapsed = this.sessionService.sidebarCollapsed();
-    const widthClass = isSidebarCollapsed ? 'w-[60vw]' : 'w-[calc(60vw-20rem)]';
+    const isOpen = this.isOpen();
+
+    const widthClass = isOpen ? (isSidebarCollapsed ? 'w-[60vw]' : 'w-[calc(60vw-20rem)]') : 'w-0';
 
     const classes = [
       'h-full',
@@ -88,9 +90,16 @@ export class AppMetadataPanelComponent implements OnInit {
       'flex-shrink-0',
       'transition-[width]',
       'duration-300',
+      'ease-in-out',
+      'overflow-hidden',
     ];
 
     return classes.join(' ');
+  });
+
+  readonly contentWrapperClasses = computed(() => {
+    const isSidebarCollapsed = this.sessionService.sidebarCollapsed();
+    return isSidebarCollapsed ? 'w-[60vw]' : 'w-[calc(60vw-20rem)]';
   });
 
   /**

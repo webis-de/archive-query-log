@@ -4,6 +4,7 @@ import { LanguageService } from './language.service';
 
 describe('LanguageService', () => {
   let service: LanguageService;
+  let translateService: TranslateService;
 
   beforeEach(() => {
     // Clear localStorage before each test
@@ -13,6 +14,10 @@ describe('LanguageService', () => {
       imports: [TranslateModule.forRoot()],
       providers: [LanguageService, TranslateService],
     });
+
+    translateService = TestBed.inject(TranslateService);
+    spyOn(translateService, 'getBrowserLang').and.returnValue('en');
+
     service = TestBed.inject(LanguageService);
   });
 

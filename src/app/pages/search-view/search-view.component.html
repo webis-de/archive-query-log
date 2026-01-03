@@ -1,53 +1,78 @@
 <div class="flex flex-col h-full">
   <aql-header-bar>
-    <div
-      class="flex-1 transition-[margin] duration-300"
-      [class.ml-[10vw]]="!isPanelOpen()"
-      [class.ml-0]="isPanelOpen()"
-      [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
-      [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
-    >
-      <div class="flex flex-col ps-4 pe-8 py-4 w-full relative">
-        <!-- Language selector in top right corner -->
-        <div class="fixed top-4 right-8 z-50">
-          <app-language-selector></app-language-selector>
-        </div>
-
-        <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
-          <aql-input-field
-            class="flex-grow"
-            [label]="'search.label' | translate"
-            [placeholder]="'search.placeholder' | translate"
-            name="searchQuery"
-            [(ngModel)]="searchQuery"
-            (keydown.enter)="onSearch()"
-          >
-            <aql-button
-              suffix
-              btnType="primary"
-              btnStyle="full"
-              [flatten]="true"
-              size="sm"
-              (buttonClick)="onSearch()"
-            >
-              {{ 'search.label' | translate }}
-            </aql-button>
-          </aql-input-field>
-          <div class="mb-[2px]">
-            <aql-filter-dropdown
-              [filters]="initialFilters"
-              (filtersChanged)="onFiltersChanged($event)"
-            ></aql-filter-dropdown>
+    <div class="flex-1 flex flex-row items-start transition-[margin] duration-300">
+      <div
+        class="flex-shrink-0 transition-[width,padding] duration-300 pt-4 px-6 w-0 flex items-center justify-center overflow-hidden"
+        [class.lg:w-40]="!isPanelOpen()"
+        [class.lg:w-0]="isPanelOpen()"
+        [class.lg:px-6]="!isPanelOpen()"
+        [class.lg:px-0]="isPanelOpen()"
+      >
+        @if (!isPanelOpen()) {
+          <img
+            src="assets/img/logo/aql-logo.png"
+            alt="AQL Logo"
+            class="h-16 w-auto min-w-max hidden lg:block"
+          />
+        }
+      </div>
+      <div
+        class="flex-1 transition-[margin-right] duration-300 ease-in-out"
+        [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
+        [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
+      >
+        <div class="flex flex-col ps-4 pe-8 py-4 w-full relative transition-all duration-300">
+          <!-- Language selector in top right corner -->
+          <div class="fixed top-4 right-8 z-50">
+            <app-language-selector></app-language-selector>
           </div>
-        </div>
 
-        <div class="flex flex-wrap gap-2 mt-2 justify-start w-full max-w-[800px]">
-          <span class="text-sm font-semibold self-center text-base-content/70">{{
-            'search.activeFilters' | translate
-          }}</span>
-          @for (badge of activeFilters; track badge) {
-            <div class="badge badge-primary badge-outline">{{ badge }}</div>
-          }
+          <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
+            <aql-input-field
+              class="flex-grow"
+              [label]="'search.label' | translate"
+              [placeholder]="'search.placeholder' | translate"
+              [showIcon]="false"
+              name="searchQuery"
+              [(ngModel)]="searchQuery"
+              (keydown.enter)="onSearch()"
+            >
+              <img
+                prefix
+                src="assets/img/icon/aql-search-icon.svg"
+                alt="Search"
+                class="h-5 w-auto transition-opacity duration-300"
+                [class.lg:opacity-0]="!isPanelOpen()"
+                [class.lg:absolute]="!isPanelOpen()"
+                [class.lg:invisible]="!isPanelOpen()"
+              />
+              <aql-button
+                suffix
+                btnType="primary"
+                btnStyle="full"
+                [flatten]="true"
+                size="sm"
+                (buttonClick)="onSearch()"
+              >
+                {{ 'search.label' | translate }}
+              </aql-button>
+            </aql-input-field>
+            <div class="mb-[2px]">
+              <aql-filter-dropdown
+                [filters]="initialFilters"
+                (filtersChanged)="onFiltersChanged($event)"
+              ></aql-filter-dropdown>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 mt-2 justify-start w-full max-w-[800px]">
+            <span class="text-sm font-semibold self-center text-base-content/70">{{
+              'search.activeFilters' | translate
+            }}</span>
+            @for (badge of activeFilters; track badge) {
+              <div class="badge badge-primary badge-outline">{{ badge }}</div>
+            }
+          </div>
         </div>
       </div>
     </div>
@@ -63,8 +88,8 @@
 
       <div
         class="transition-all duration-300"
-        [class.ml-[10vw]]="!isPanelOpen()"
-        [class.ml-0]="isPanelOpen()"
+        [class.lg:ml-40]="!isPanelOpen()"
+        [class.lg:ml-0]="isPanelOpen()"
       >
         @if (!isLoading && hasSearched && totalCount > 0) {
           <div class="w-full max-w-[800px]">
@@ -155,7 +180,7 @@
             [showPageSizeSelector]="true"
             [size]="'md'"
             [contentMaxWidth]="'800px'"
-            [contentClass]="!isPanelOpen() ? 'pl-[10vw]' : 'pl-0'"
+            [contentClass]="!isPanelOpen() ? 'lg:pl-40' : 'lg:pl-0'"
             [showSelectorLabel]="!isPanelOpen()"
             (pageChange)="onPageChange($event)"
             (pageSizeChange)="onPageSizeChange($event)"

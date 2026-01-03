@@ -11,16 +11,6 @@
     "edit": "Edit",
     "close": "Close"
   },
-  "sidebar": {
-    "expandSidebar": "Expand sidebar",
-    "collapseSidebar": "Collapse sidebar",
-    "newProject": "New project",
-    "temporarySearch": "Temporary search",
-    "projects": "Projects",
-    "searchHistory": "Search History",
-    "noProjectsFound": "No projects found",
-    "createFirstProject": "Create your first project"
-  },
   "landing": {
     "welcomeMessage": "Welcome to AQL Search",
     "searchPlaceholder": "Search for queries...",
