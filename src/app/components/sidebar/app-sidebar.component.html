@@ -14,6 +14,8 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-list"
+        [aqlTooltip]="'sidebar.expandSidebar' | translate"
+        [tooltipPosition]="'right'"
         [attr.aria-label]="'sidebar.expandSidebar' | translate"
         (buttonClick)="toggleCollapsed(false)"
       >
@@ -26,6 +28,8 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-folder-plus"
+        [aqlTooltip]="'sidebar.newProject' | translate"
+        [tooltipPosition]="'right'"
         [attr.aria-label]="'sidebar.newProject' | translate"
         (buttonClick)="onNewProject()"
       >
@@ -36,6 +40,8 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-search"
+        [aqlTooltip]="'sidebar.temporarySearch' | translate"
+        [tooltipPosition]="'right'"
         [attr.aria-label]="'sidebar.temporarySearch' | translate"
         (buttonClick)="onTemporarySearch()"
       >
@@ -68,6 +74,8 @@
             btnType="default"
             iconStyle="square"
             iconBefore="bi-list"
+            [aqlTooltip]="'sidebar.collapseSidebar' | translate"
+            [tooltipPosition]="'right'"
             [attr.aria-label]="'sidebar.collapseSidebar' | translate"
             (buttonClick)="toggleCollapsed(true)"
           >
@@ -143,12 +151,19 @@
               after
               btnType="icon"
               iconBefore="bi-plus"
+              [aqlTooltip]="'sidebar.addToProject' | translate"
+              [tooltipPosition]="'top'"
               [attr.aria-label]="'sidebar.addToProject' | translate"
               (buttonClick)="onAddToProject(project.id)"
             ></aql-button>
 
             <aql-dropdown after position="right">
-              <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+              <aql-button
+                trigger
+                btnType="icon"
+                iconBefore="bi-three-dots"
+                [attr.aria-label]="'Options'"
+              ></aql-button>
               <ng-container content>
                 <aql-menu-item
                   [iconBefore]="project.isPinned ? 'bi-pin-angle-fill' : 'bi-pin'"
@@ -189,7 +204,12 @@
                   <span label>{{ item.name }}</span>
                 }
                 <aql-dropdown after position="right">
-                  <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+                  <aql-button
+                    trigger
+                    btnType="icon"
+                    iconBefore="bi-three-dots"
+                    [attr.aria-label]="'Options'"
+                  ></aql-button>
                   <ng-container content>
                     <aql-menu-item iconBefore="bi-pencil" (click)="onRenameSearch(item.id)">
                       {{ 'sidebar.renameSearch' | translate }}

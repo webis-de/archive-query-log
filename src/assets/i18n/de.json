@@ -66,6 +66,19 @@
     "german": "Deutsch",
     "french": "Französisch"
   },
+  "tooltip": {
+    "filter": {
+      "open": "Filter oeffnen",
+      "close": "Filter schliessen"
+    },
+    "pagination": {
+      "previousPage": "Zur vorherigen Seite",
+      "nextPage": "Zur naechsten Seite",
+      "firstPage": "Bereits auf der ersten Seite",
+      "lastPage": "Bereits auf der letzten Seite",
+      "morePages": "Mehr Seiten verfuegbar"
+    }
+  },
   "footer": {
     "imprint": "Impressum",
     "privacyPolicy": "Datenschutz",

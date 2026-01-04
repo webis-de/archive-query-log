@@ -89,6 +89,19 @@
     "german": "Allemand",
     "french": "Français"
   },
+  "tooltip": {
+    "filter": {
+      "open": "Ouvrir les filtres",
+      "close": "Fermer les filtres"
+    },
+    "pagination": {
+      "previousPage": "Page precedente",
+      "nextPage": "Page suivante",
+      "firstPage": "Deja sur la premiere page",
+      "lastPage": "Deja sur la derniere page",
+      "morePages": "Plus de pages disponibles"
+    }
+  },
   "footer": {
     "imprint": "Mentions légales",
     "privacyPolicy": "Politique de confidentialité",

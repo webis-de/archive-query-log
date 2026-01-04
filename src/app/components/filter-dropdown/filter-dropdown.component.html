@@ -1,7 +1,19 @@
 <div>
   <aql-dropdown position="bottom end" [contentWidth]="'350px'">
     <div trigger class="relative">
-      <aql-button btnType="primary" iconStyle="circle" size="md" iconBefore="">
+      <aql-button
+        btnType="primary"
+        iconStyle="circle"
+        size="md"
+        iconBefore=""
+        [aqlTooltip]="
+          isOpen() ? ('tooltip.filter.close' | translate) : ('tooltip.filter.open' | translate)
+        "
+        [tooltipPosition]="'right'"
+        [attr.aria-label]="
+          isOpen() ? ('tooltip.filter.close' | translate) : ('tooltip.filter.open' | translate)
+        "
+      >
         <i
           class="bi text-3xl transition-transform duration-300 ease-in-out"
           [ngClass]="isOpen() ? 'bi-x rotate-180' : 'bi-filter rotate-0'"

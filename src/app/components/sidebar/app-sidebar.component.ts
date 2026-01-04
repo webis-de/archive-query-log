@@ -25,6 +25,7 @@ import {
   AqlDropdownComponent,
   AqlInputFieldComponent,
   AqlModalComponent,
+  AqlTooltipDirective,
 } from 'aql-stylings';
 import { UserData } from '../../models/user-data.model';
 import { ProjectService } from '../../services/project.service';
@@ -44,6 +45,7 @@ import { SessionService } from '../../services/session.service';
     AqlDropdownComponent,
     AqlInputFieldComponent,
     AqlModalComponent,
+    AqlTooltipDirective,
   ],
   templateUrl: './app-sidebar.component.html',
   styleUrl: './app-sidebar.component.css',

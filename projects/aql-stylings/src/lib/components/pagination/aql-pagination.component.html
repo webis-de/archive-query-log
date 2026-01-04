@@ -48,7 +48,10 @@
           class="join-item"
           [size]="size()"
           [disabled]="isFirstPage()"
+          [aqlTooltip]="isFirstPage() ? ('tooltip.pagination.firstPage' | translate) : ('tooltip.pagination.previousPage' | translate)"
+          [tooltipPosition]="'top'"
           (buttonClick)="goToPreviousPage()"
+          [attr.aria-label]="'tooltip.pagination.previousPage' | translate"
         >
           «
         </aql-button>
@@ -68,6 +71,9 @@
               class="join-item"
               [size]="size()"
               [disabled]="true"
+              [aqlTooltip]="'tooltip.pagination.morePages' | translate"
+              [tooltipPosition]="'top'"
+              [attr.aria-label]="'tooltip.pagination.morePages' | translate"
             >
               ...
             </aql-button>
@@ -78,7 +84,10 @@
           class="join-item"
           [size]="size()"
           [disabled]="isLastPage()"
+          [aqlTooltip]="isLastPage() ? ('tooltip.pagination.lastPage' | translate) : ('tooltip.pagination.nextPage' | translate)"
+          [tooltipPosition]="'top'"
           (buttonClick)="goToNextPage()"
+          [attr.aria-label]="'tooltip.pagination.nextPage' | translate"
         >
           »
         </aql-button>

@@ -73,3 +73,5 @@
     font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   }
 }
+
+@import '../projects/aql-stylings/src/styles.css';
