@@ -28,35 +28,54 @@
           </div>
 
           <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
-            <aql-input-field
-              class="flex-grow"
-              [label]="'search.label' | translate"
-              [placeholder]="'search.placeholder' | translate"
-              [showIcon]="false"
-              name="searchQuery"
-              [(ngModel)]="searchQuery"
-              (keydown.enter)="onSearch()"
+            <aql-dropdown
+              class="flex-grow search-container"
+              [open]="showSuggestions() && suggestions().length > 0 && searchQuery.trim().length > 0"
+              [matchTriggerWidth]="true"
+              position="bottom"
             >
-              <img
-                prefix
-                src="assets/img/icon/aql-search-icon.svg"
-                alt="Search"
-                class="h-5 w-auto transition-opacity duration-300"
-                [class.lg:opacity-0]="!isPanelOpen()"
-                [class.lg:absolute]="!isPanelOpen()"
-                [class.lg:invisible]="!isPanelOpen()"
-              />
-              <aql-button
-                suffix
-                btnType="primary"
-                btnStyle="full"
-                [flatten]="true"
-                size="sm"
-                (buttonClick)="onSearch()"
+              <aql-input-field
+                trigger
+                class="w-full"
+                [label]="'search.label' | translate"
+                [placeholder]="'search.placeholder' | translate"
+                name="searchQuery"
+                [ngModel]="searchQuery"
+                (ngModelChange)="onSearchInput($event)"
+                (keydown.enter)="onSearch(); showSuggestions.set(false)"
+                (click)="onSearchFocus(); $event.stopPropagation()"
               >
-                {{ 'search.label' | translate }}
-              </aql-button>
-            </aql-input-field>
+                <img
+                  prefix
+                  src="assets/img/icon/aql-search-icon.svg"
+                  alt="Search"
+                  class="h-5 w-auto transition-opacity duration-300"
+                  [class.lg:opacity-0]="!isPanelOpen()"
+                  [class.lg:absolute]="!isPanelOpen()"
+                  [class.lg:invisible]="!isPanelOpen()"
+                />
+                <aql-button
+                  suffix
+                  btnType="primary"
+                  btnStyle="full"
+                  [flatten]="true"
+                  size="sm"
+                  (buttonClick)="onSearch(); showSuggestions.set(false); $event.stopPropagation()"
+                >
+                  {{ 'search.label' | translate }}
+                </aql-button>
+              </aql-input-field>
+
+              <div content class="suggestions-content max-h-72 overflow-y-auto">
+                @for (suggestion of suggestions(); track suggestion.id) {
+                  <aql-menu-item iconBefore="bi-search" (click)="onSuggestionSelect(suggestion)">
+                    <div class="flex flex-col min-w-0">
+                      <span class="font-medium truncate">{{ suggestion.query }}</span>
+                    </div>
+                  </aql-menu-item>
+                }
+              </div>
+            </aql-dropdown>
             <div class="mb-[2px]">
               <aql-filter-dropdown
                 [filters]="initialFilters"

@@ -8,28 +8,48 @@
     <h1 class="text-5xl font-bold mb-8 text-primary">{{ 'app.title' | translate }}</h1>
 
     <div class="flex items-center w-full gap-2">
-      <aql-input-field
-        class="w-full h-full"
-        shape="square"
-        [placeholder]="'landing.searchPlaceholder' | translate"
-        type="text"
-        size="lg"
-        color="primary"
-        [(ngModel)]="searchQuery"
-        [label]="landingMessage()"
-        (keydown.enter)="onSearch()"
+      <aql-dropdown
+        class="flex-1 search-container"
+        [open]="showSuggestions() && suggestions().length > 0 && searchQuery().trim().length > 0"
+        [matchTriggerWidth]="true"
+        position="bottom"
       >
-        <aql-button
-          suffix
-          btnType="primary"
-          btnStyle="full"
-          [flatten]="true"
-          size="sm"
-          (buttonClick)="onSearch()"
+        <aql-input-field
+          trigger
+          class="w-full h-full"
+          shape="square"
+          [placeholder]="'landing.searchPlaceholder' | translate"
+          type="text"
+          size="lg"
+          color="primary"
+          [ngModel]="searchQuery()"
+          (ngModelChange)="onSearchInput($event)"
+          [label]="landingMessage()"
+          (keydown.enter)="onSearch(); showSuggestions.set(false)"
+          (click)="onSearchFocus(); $event.stopPropagation()"
         >
-          {{ 'landing.searchButton' | translate }}
-        </aql-button>
-      </aql-input-field>
+          <aql-button
+            suffix
+            btnType="primary"
+            btnStyle="full"
+            [flatten]="true"
+            size="sm"
+            (buttonClick)="onSearch(); showSuggestions.set(false); $event.stopPropagation()"
+          >
+            {{ 'landing.searchButton' | translate }}
+          </aql-button>
+        </aql-input-field>
+
+        <div content class="suggestions-content max-h-72 overflow-y-auto">
+          @for (suggestion of suggestions(); track suggestion.id) {
+            <aql-menu-item iconBefore="bi-search" (click)="onSuggestionSelect(suggestion)">
+              <div class="flex flex-col min-w-0">
+                <span class="font-medium truncate">{{ suggestion.query }}</span>
+              </div>
+            </aql-menu-item>
+          }
+        </div>
+      </aql-dropdown>
       <aql-filter-dropdown (filtersChanged)="onFiltersChanged($event)"></aql-filter-dropdown>
     </div>
 

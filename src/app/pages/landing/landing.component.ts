@@ -1,13 +1,21 @@
-import { AqlInputFieldComponent, AqlButtonComponent } from 'aql-stylings';
-import { Component, inject, signal, computed, OnInit, OnDestroy } from '@angular/core';
+import {
+  AqlInputFieldComponent,
+  AqlButtonComponent,
+  AqlDropdownComponent,
+  AqlMenuItemComponent,
+} from 'aql-stylings';
+import { Component, inject, signal, computed, HostListener, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
+import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { FilterState } from '../../models/filter.model';
@@ -22,6 +30,8 @@ import { Subscription } from 'rxjs';
     TranslateModule,
     AqlInputFieldComponent,
     AqlButtonComponent,
+    AqlDropdownComponent,
+    AqlMenuItemComponent,
     FilterDropdownComponent,
     LanguageSelectorComponent,
   ],
@@ -33,18 +43,26 @@ export class LandingComponent implements OnInit, OnDestroy {
   private readonly projectService = inject(ProjectService);
   private readonly sessionService = inject(SessionService);
   private readonly filterBadgeService = inject(FilterBadgeService);
+  private readonly suggestionsService = inject(SuggestionsService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private readonly translate = inject(TranslateService);
+  private readonly elementRef = inject(ElementRef);
+
+  private currentFilters: FilterState | null = null;
+  private langChangeSubscription?: Subscription;
 
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
-  readonly isTemporaryMode = signal<boolean>(false);
   readonly activeFilters = signal<string[]>(['All']);
-  private currentFilters: FilterState | null = null;
-  private langChangeSubscription?: Subscription;
+  readonly showSuggestions = signal<boolean>(false);
+  readonly isTemporaryMode = toSignal(
+    this.route.queryParams.pipe(map(params => params['temp'] === 'true')),
+    { initialValue: false },
+  );
 
+  readonly suggestions = this.suggestionsService.suggestions;
   readonly activeProject = computed(() => {
     const currentSession = this.session();
     const activeProjectId = currentSession?.activeProjectId;
@@ -55,7 +73,6 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
     return null;
   });
-
   readonly hasProjects = computed(() => this.projects().length > 0);
 
   readonly landingMessage = computed(() => {
@@ -73,10 +90,6 @@ export class LandingComponent implements OnInit, OnDestroy {
   });
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.isTemporaryMode.set(params['temp'] === 'true');
-    });
-
     // Subscribe to language changes to update badges
     this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
       if (this.currentFilters) {
@@ -90,6 +103,43 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.langChangeSubscription?.unsubscribe();
+  }
+
+  onSearchInput(value: string): void {
+    this.searchQuery.set(value);
+    const trimmedValue = value.trim();
+    if (trimmedValue.length >= this.suggestionsService.MINIMUM_QUERY_LENGTH) {
+      this.suggestionsService.search(trimmedValue);
+      this.showSuggestions.set(true);
+    } else {
+      this.suggestionsService.search('');
+      this.showSuggestions.set(false);
+    }
+  }
+
+  onSuggestionSelect(suggestion: Suggestion): void {
+    this.searchQuery.set(suggestion.query);
+    this.showSuggestions.set(false);
+    this.onSearch();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    const searchContainer = this.elementRef.nativeElement.querySelector('.search-container');
+    if (searchContainer && !searchContainer.contains(target)) {
+      this.showSuggestions.set(false);
+    }
+  }
+
+  onSearchFocus(): void {
+    // Show suggestions again if there are any and query is long enough
+    if (
+      this.suggestions().length > 0 &&
+      this.searchQuery().trim().length >= this.suggestionsService.MINIMUM_QUERY_LENGTH
+    ) {
+      this.showSuggestions.set(true);
+    }
   }
 
   onFiltersChanged(filters: FilterState): void {

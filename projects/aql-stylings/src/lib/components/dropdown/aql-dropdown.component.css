@@ -13,3 +13,7 @@
 :host.dropdown-right .dropdown-content {
   margin-left: 0.25rem;
 }
+
+:host.dropdown:not(.dropdown-open) .dropdown-content {
+  display: none;
+}

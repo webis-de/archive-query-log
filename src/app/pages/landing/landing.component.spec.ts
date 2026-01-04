@@ -1,27 +1,28 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { LandingComponent } from './landing.component';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
+import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
   let fixture: ComponentFixture<LandingComponent>;
   let mockRouter: jasmine.SpyObj<Router>;
-  let mockActivatedRoute: jasmine.SpyObj<ActivatedRoute>;
   let mockSearchHistoryService: jasmine.SpyObj<SearchHistoryService>;
   let mockProjectService: jasmine.SpyObj<ProjectService>;
   let mockSessionService: jasmine.SpyObj<SessionService>;
+  let mockSuggestionsService: jasmine.SpyObj<SuggestionsService>;
+  let queryParamsSubject: BehaviorSubject<Record<string, string>>;
   let translateService: TranslateService;
 
   beforeEach(async () => {
+    queryParamsSubject = new BehaviorSubject<Record<string, string>>({});
+
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
-    mockActivatedRoute = jasmine.createSpyObj('ActivatedRoute', [], {
-      queryParams: of({}),
-    });
     mockSearchHistoryService = jasmine.createSpyObj('SearchHistoryService', ['addSearch']);
     mockProjectService = jasmine.createSpyObj('ProjectService', [], {
       projects: jasmine.createSpy().and.returnValue([]),
@@ -29,15 +30,25 @@ describe('LandingComponent', () => {
     mockSessionService = jasmine.createSpyObj('SessionService', [], {
       session: jasmine.createSpy().and.returnValue(null),
     });
+    mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
+      MINIMUM_QUERY_LENGTH: 3,
+      suggestions: jasmine.createSpy().and.returnValue([]),
+    });
 
     await TestBed.configureTestingModule({
       imports: [LandingComponent, TranslateModule.forRoot()],
       providers: [
         { provide: Router, useValue: mockRouter },
-        { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            queryParams: queryParamsSubject.asObservable(),
+          },
+        },
         { provide: SearchHistoryService, useValue: mockSearchHistoryService },
         { provide: ProjectService, useValue: mockProjectService },
         { provide: SessionService, useValue: mockSessionService },
+        { provide: SuggestionsService, useValue: mockSuggestionsService },
       ],
     }).compileComponents();
 
@@ -83,7 +94,9 @@ describe('LandingComponent', () => {
   });
 
   it('should navigate to temporary search in temp mode', () => {
-    component.isTemporaryMode.set(true);
+    queryParamsSubject.next({ temp: 'true' });
+    fixture.detectChanges();
+
     component.searchQuery.set('temp query');
     component.onSearch();
 
@@ -95,5 +108,65 @@ describe('LandingComponent', () => {
   it('should display correct landing message when no projects exist', () => {
     const expected = translateService.instant('landing.createProjectHint');
     expect(component.landingMessage()).toBe(expected);
+  });
+
+  describe('Suggestions', () => {
+    it('should initialize with empty suggestions', () => {
+      expect(component.suggestions()).toEqual([]);
+      expect(component.showSuggestions()).toBeFalse();
+    });
+
+    it('should trigger search when input has minimum length', () => {
+      component.onSearchInput('tes');
+
+      expect(component.searchQuery()).toBe('tes');
+      expect(mockSuggestionsService.search).toHaveBeenCalledWith('tes');
+      expect(component.showSuggestions()).toBeTrue();
+    });
+
+    it('should clear suggestions when input is shorter than minimum', () => {
+      component.onSearchInput('te');
+
+      expect(component.searchQuery()).toBe('te');
+      expect(mockSuggestionsService.search).toHaveBeenCalledWith('');
+      expect(component.showSuggestions()).toBeFalse();
+    });
+
+    it('should select suggestion and trigger search', () => {
+      const mockSearchItem = {
+        id: 'test-id',
+        projectId: 'project-1',
+        filter: { query: 'selected query' },
+        createdAt: new Date().toISOString(),
+        label: 'selected query',
+      };
+      mockSearchHistoryService.addSearch.and.returnValue(mockSearchItem);
+
+      const suggestion: Suggestion = {
+        id: '1',
+        query: 'selected query',
+      };
+
+      component.onSuggestionSelect(suggestion);
+
+      expect(component.searchQuery()).toBe('selected query');
+      expect(component.showSuggestions()).toBeFalse();
+      expect(mockRouter.navigate).toHaveBeenCalled();
+    });
+
+    it('should hide suggestions when clicking outside search container', () => {
+      component.showSuggestions.set(true);
+
+      // Simulate clicking outside by creating a mock event with a target outside the container
+      const outsideElement = document.createElement('div');
+      document.body.appendChild(outsideElement);
+      const event = new MouseEvent('click', { bubbles: true });
+      Object.defineProperty(event, 'target', { value: outsideElement });
+
+      component.onDocumentClick(event);
+
+      expect(component.showSuggestions()).toBeFalse();
+      document.body.removeChild(outsideElement);
+    });
   });
 });

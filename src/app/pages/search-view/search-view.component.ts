@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, signal, HostListener, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,6 +10,7 @@ import {
   AqlDropdownComponent,
   AqlButtonComponent,
   AqlPaginationComponent,
+  AqlMenuItemComponent,
 } from 'aql-stylings';
 import { SearchService } from '../../services/search.service';
 import { SearchResult, QueryMetadataResponse } from '../../models/search.model';
@@ -17,6 +18,7 @@ import { SearchHistoryService } from '../../services/search-history.service';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { LanguageService } from '../../services/language.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
+import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { FilterState } from '../../models/filter.model';
 import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-panel/query-metadata-panel.component';
@@ -37,6 +39,7 @@ import { Subscription } from 'rxjs';
     AqlButtonComponent,
     LanguageSelectorComponent,
     AqlPaginationComponent,
+    AqlMenuItemComponent,
     FilterDropdownComponent,
     AppQueryMetadataPanelComponent,
     QueryOverviewPanelComponent,
@@ -48,11 +51,13 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   private readonly searchService = inject(SearchService);
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly filterBadgeService = inject(FilterBadgeService);
+  private readonly suggestionsService = inject(SuggestionsService);
   private readonly sessionService = inject(SessionService);
   private readonly languageService = inject(LanguageService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly translate = inject(TranslateService);
+  private readonly elementRef = inject(ElementRef);
 
   searchQuery = '';
   searchResults: SearchResult[] = [];
@@ -81,6 +86,8 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   readonly pageSize = signal<number>(10);
   readonly queryMetadata = signal<QueryMetadataResponse | null>(null);
   readonly isMetadataLoading = signal<boolean>(false);
+  readonly suggestions = this.suggestionsService.suggestions;
+  readonly showSuggestions = signal<boolean>(false);
 
   ngOnInit(): void {
     // Subscribe to language changes to update badges
@@ -133,6 +140,43 @@ export class SearchViewComponent implements OnInit, OnDestroy {
         this.loadSearchFromHistory(searchId);
       }
     });
+  }
+
+  onSearchInput(value: string): void {
+    this.searchQuery = value;
+    const trimmedValue = value.trim();
+    if (trimmedValue.length >= this.suggestionsService.MINIMUM_QUERY_LENGTH) {
+      this.suggestionsService.search(trimmedValue);
+      this.showSuggestions.set(true);
+    } else {
+      this.suggestionsService.search('');
+      this.showSuggestions.set(false);
+    }
+  }
+
+  onSuggestionSelect(suggestion: Suggestion): void {
+    this.searchQuery = suggestion.query;
+    this.showSuggestions.set(false);
+    this.onSearch();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    const searchContainer = this.elementRef.nativeElement.querySelector('.search-container');
+    if (searchContainer && !searchContainer.contains(target)) {
+      this.showSuggestions.set(false);
+    }
+  }
+
+  onSearchFocus(): void {
+    // Show suggestions again if there are any and query is long enough
+    if (
+      this.suggestions().length > 0 &&
+      this.searchQuery.trim().length >= this.suggestionsService.MINIMUM_QUERY_LENGTH
+    ) {
+      this.showSuggestions.set(true);
+    }
   }
 
   onFiltersChanged(filters: FilterState): void {
