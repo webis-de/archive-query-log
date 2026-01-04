@@ -34,6 +34,24 @@
     "query": "Query:",
     "activeFilters": "Active Filter:"
   },
+  "searchStats": {
+    "title": "Query overview",
+    "query": "Query",
+    "totalHits": "Total hits",
+    "timeline": "Timeline",
+    "interval": "Interval",
+    "intervalDay": "Day",
+    "intervalWeek": "Week",
+    "intervalMonth": "Month",
+    "chartPlaceholder": "Chart placeholder",
+    "histogramBuckets": "Histogram buckets: {{count}}",
+    "noHistogram": "No histogram data",
+    "topQueries": "Top queries",
+    "topProviders": "Top providers",
+    "topArchives": "Top archives",
+    "loading": "Loading...",
+    "noData": "No data"
+  },
   "project": {
     "name": "Project Name",
     "description": "Description",

@@ -84,3 +84,50 @@ export interface SearchParams {
   year?: number;
   status_code?: number;
 }
+
+export interface QueryHistogramBucket {
+  key_as_string: string;
+  count: number;
+}
+
+export interface TopQueryItem {
+  key: string;
+  count: number;
+}
+
+export interface TopProviderItem {
+  domain: string;
+  count: number;
+}
+
+export interface TopArchiveItem {
+  name: string;
+  count: number;
+}
+
+// Generic type for backward compatibility
+export interface QueryAggregateItem {
+  key?: string;
+  label?: string;
+  name?: string;
+  domain?: string;
+  count: number;
+}
+
+export interface QueryMetadataResponse {
+  query: string;
+  total_hits: number;
+  top_queries: TopQueryItem[];
+  date_histogram: QueryHistogramBucket[];
+  top_providers: TopProviderItem[];
+  top_archives: TopArchiveItem[];
+}
+
+export interface QueryMetadataParams {
+  query: string;
+  top_n_queries?: number;
+  interval?: string;
+  top_providers?: number;
+  top_archives?: number;
+  last_n_months?: number;
+}
