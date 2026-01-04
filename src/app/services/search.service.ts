@@ -7,7 +7,7 @@ import {
   SearchParams,
   QueryMetadataResponse,
   QueryMetadataParams,
-  SerpDetailsResponse
+  SerpDetailsResponse,
 } from '../models/search.model';
 
 @Injectable({
@@ -75,8 +75,8 @@ export class SearchService {
 
     return this.apiService.get<QueryMetadataResponse>(API_CONFIG.endpoints.serpsPreview, apiParams);
   }
-  
-    /**
+
+  /**
    * Get SERP details by ID with optional additional fields.
    * @param serpId The SERP document ID
    * @param includeFields Array of fields to include: 'original_url', 'memento_url', 'related', 'unfurl', 'direct_links', 'unbranded'

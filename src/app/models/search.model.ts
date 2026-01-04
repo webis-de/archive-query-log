@@ -138,7 +138,7 @@ export interface RelatedSerp {
   _source: SearchResultSource;
 }
 
-// Unfurl data 
+// Unfurl data
 export interface DomainParts {
   subdomain: string | null;
   domain: string;

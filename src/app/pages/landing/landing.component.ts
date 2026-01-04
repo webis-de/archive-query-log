@@ -4,7 +4,16 @@ import {
   AqlDropdownComponent,
   AqlMenuItemComponent,
 } from 'aql-stylings';
-import { Component, inject, signal, computed, HostListener, ElementRef, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  inject,
+  signal,
+  computed,
+  HostListener,
+  ElementRef,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';

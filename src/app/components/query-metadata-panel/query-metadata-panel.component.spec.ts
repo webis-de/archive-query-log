@@ -53,7 +53,10 @@ describe('AppQueryMetadataPanelComponent', () => {
 
     await TestBed.configureTestingModule({
       imports: [AppQueryMetadataPanelComponent, TranslateModule.forRoot()],
-      providers: [{ provide: SessionService, useValue: mockSessionService }],
+      providers: [
+        provideHttpClient(),
+        { provide: SessionService, useValue: mockSessionService }
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppQueryMetadataPanelComponent);

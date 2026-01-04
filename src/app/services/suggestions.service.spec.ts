@@ -9,7 +9,17 @@ describe('SuggestionsService', () => {
   let mockApiService: jasmine.SpyObj<ApiService>;
 
   const mockSearchResponse: SearchResponse = {
+    query: 'test',
     count: 3,
+    total: 3,
+    page_size: 10,
+    total_pages: 1,
+    pagination: {
+      current_results: 3,
+      total_results: 3,
+      results_per_page: 10,
+      total_pages: 1,
+    },
     results: [
       {
         _index: 'test-index',
