@@ -1,6 +1,6 @@
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { of, throwError } from 'rxjs';
-import { SuggestionsService, Suggestion } from './suggestions.service';
+import { SuggestionsService } from './suggestions.service';
 import { ApiService } from './api.service';
 import { SearchResponse } from '../models/search.model';
 
@@ -104,49 +104,32 @@ describe('SuggestionsService', () => {
     expect(service.MAX_SUGGESTIONS).toBe(5);
   });
 
-  describe('getSuggestions$', () => {
+  describe('suggestions signal', () => {
     it('should return empty array for queries shorter than minimum length', fakeAsync(() => {
-      let suggestions: Suggestion[] = [];
-      service.getSuggestions$().subscribe(result => {
-        suggestions = result;
-      });
-
       service.search('ab'); // 2 characters, less than minimum of 3
       tick(350); // Wait for debounce
 
-      expect(suggestions).toEqual([]);
+      expect(service.suggestions()).toEqual([]);
       expect(mockApiService.get).not.toHaveBeenCalled();
     }));
 
     it('should fetch suggestions for queries with minimum length', fakeAsync(() => {
-      let suggestions: Suggestion[] = [];
-      service.getSuggestions$().subscribe(result => {
-        suggestions = result;
-      });
-
       service.search('tes'); // Exactly 3 characters
       tick(350); // Wait for debounce
 
       expect(mockApiService.get).toHaveBeenCalled();
-      expect(suggestions.length).toBe(2);
+      expect(service.suggestions().length).toBe(2);
     }));
 
     it('should fetch suggestions for queries longer than minimum length', fakeAsync(() => {
-      let suggestions: Suggestion[] = [];
-      service.getSuggestions$().subscribe(result => {
-        suggestions = result;
-      });
-
       service.search('testing'); // 7 characters
       tick(350); // Wait for debounce
 
       expect(mockApiService.get).toHaveBeenCalled();
-      expect(suggestions.length).toBe(2);
+      expect(service.suggestions().length).toBe(2);
     }));
 
     it('should debounce rapid queries', fakeAsync(() => {
-      service.getSuggestions$().subscribe();
-
       service.search('test1');
       tick(100);
       service.search('test2');
@@ -163,8 +146,6 @@ describe('SuggestionsService', () => {
     }));
 
     it('should not make duplicate calls for the same query', fakeAsync(() => {
-      service.getSuggestions$().subscribe();
-
       service.search('test');
       tick(350);
       service.search('test'); // Same query
@@ -175,15 +156,10 @@ describe('SuggestionsService', () => {
     }));
 
     it('should map results to suggestions correctly', fakeAsync(() => {
-      let suggestions: Suggestion[] = [];
-      service.getSuggestions$().subscribe(result => {
-        suggestions = result;
-      });
-
       service.search('test');
       tick(350);
 
-      expect(suggestions).toEqual([
+      expect(service.suggestions()).toEqual([
         {
           id: 'result-1',
           query: 'test query one',
@@ -198,48 +174,28 @@ describe('SuggestionsService', () => {
     it('should handle API errors gracefully', fakeAsync(() => {
       mockApiService.get.and.returnValue(throwError(() => new Error('API Error')));
 
-      let suggestions: Suggestion[] = [{ id: 'old', query: 'old' }];
-      let errorOccurred = false;
-
-      service.getSuggestions$().subscribe({
-        next: result => {
-          suggestions = result;
-        },
-        error: () => {
-          errorOccurred = true;
-        },
-      });
-
       service.search('test');
       tick(350);
 
-      // Should return empty array on error, not propagate the error
-      expect(suggestions).toEqual([]);
-      expect(errorOccurred).toBeFalse();
+      // Should return empty array on error
+      expect(service.suggestions()).toEqual([]);
     }));
   });
 
-  describe('clear', () => {
-    it('should clear suggestions when called', fakeAsync(() => {
-      let suggestions: Suggestion[] = [];
-      service.getSuggestions$().subscribe(result => {
-        suggestions = result;
-      });
-
+  describe('clear suggestions', () => {
+    it('should clear suggestions when called with empty string', fakeAsync(() => {
       service.search('test');
       tick(350);
-      expect(suggestions.length).toBe(2);
+      expect(service.suggestions().length).toBe(2);
 
-      service.clear();
+      service.search('');
       tick(350);
-      expect(suggestions).toEqual([]);
+      expect(service.suggestions()).toEqual([]);
     }));
   });
 
   describe('search', () => {
     it('should call API with correct parameters', fakeAsync(() => {
-      service.getSuggestions$().subscribe();
-
       service.search('search term');
       tick(350);
 

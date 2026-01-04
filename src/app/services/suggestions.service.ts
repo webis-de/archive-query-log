@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { debounceTime, switchMap, map, catchError, distinctUntilChanged } from 'rxjs/operators';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ApiService } from './api.service';
 import { API_CONFIG } from '../config/api.config';
 import { SearchResponse } from '../models/search.model';
@@ -17,17 +18,13 @@ export class SuggestionsService {
   private readonly apiService = inject(ApiService);
   private readonly searchSubject = new Subject<string>();
 
-  // TODO Number of suggestion
   readonly MINIMUM_QUERY_LENGTH = 3;
   readonly DEBOUNCE_TIME_MS = 300;
   readonly MAX_SUGGESTIONS = 5;
 
-  /**
-   * Creates an observable that emits suggestions based on query input.
-   * Automatically debounces and filters queries less than minimum length.
-   */
-  getSuggestions$(): Observable<Suggestion[]> {
-    return this.searchSubject.pipe(
+  // Automatically debounces and filters queries less than minimum length.
+  readonly suggestions = toSignal(
+    this.searchSubject.pipe(
       debounceTime(this.DEBOUNCE_TIME_MS),
       distinctUntilChanged(),
       switchMap(query => {
@@ -36,19 +33,14 @@ export class SuggestionsService {
         }
         return this.fetchSuggestions(query);
       }),
-    );
-  }
+    ),
+    { initialValue: [] as Suggestion[] },
+  );
 
-  /**
-   * Triggers a new suggestion search
-   */
   search(query: string): void {
     this.searchSubject.next(query);
   }
 
-  /**
-   * Fetches suggestions from the API
-   */
   private fetchSuggestions(query: string): Observable<Suggestion[]> {
     const params: Record<string, string | number> = {
       query: query,
@@ -61,9 +53,6 @@ export class SuggestionsService {
     );
   }
 
-  /**
-   * Maps search results to suggestion format
-   */
   private mapResultsToSuggestions(response: SearchResponse): Suggestion[] {
     const seen = new Set<string>();
     const unique: Suggestion[] = [];
@@ -77,12 +66,5 @@ export class SuggestionsService {
     }
 
     return unique;
-  }
-
-  /**
-   * Clears any pending search
-   */
-  clear(): void {
-    this.searchSubject.next('');
   }
 }

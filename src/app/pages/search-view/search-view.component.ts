@@ -1,16 +1,7 @@
-import {
-  Component,
-  inject,
-  OnInit,
-  OnDestroy,
-  signal,
-  HostListener,
-  ElementRef,
-} from '@angular/core';
+import { Component, inject, OnInit, signal, HostListener, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import {
   AqlHeaderBarComponent,
   AqlInputFieldComponent,
@@ -46,7 +37,7 @@ import { SessionService } from '../../services/session.service';
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
 })
-export class SearchViewComponent implements OnInit, OnDestroy {
+export class SearchViewComponent implements OnInit {
   private readonly searchService = inject(SearchService);
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly filterBadgeService = inject(FilterBadgeService);
@@ -55,7 +46,6 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly elementRef = inject(ElementRef);
-  private suggestionsSubscription?: Subscription;
 
   searchQuery = '';
   searchResults: SearchResult[] = [];
@@ -70,17 +60,10 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   readonly isPanelOpen = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
   readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
-  readonly suggestions = signal<Suggestion[]>([]);
+  readonly suggestions = this.suggestionsService.suggestions;
   readonly showSuggestions = signal<boolean>(false);
 
   ngOnInit(): void {
-    this.suggestionsSubscription = this.suggestionsService
-      .getSuggestions$()
-      .subscribe(suggestions => {
-        this.suggestions.set(suggestions);
-        this.showSuggestions.set(suggestions.length > 0 && this.searchQuery.trim().length > 0);
-      });
-
     this.route.queryParamMap.subscribe(queryParams => {
       const dateFrom = queryParams.get('dateFrom') || '';
       const dateTo = queryParams.get('dateTo') || '';
@@ -124,17 +107,14 @@ export class SearchViewComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    this.suggestionsSubscription?.unsubscribe();
-  }
-
   onSearchInput(value: string): void {
     this.searchQuery = value;
     const trimmedValue = value.trim();
     if (trimmedValue.length >= this.suggestionsService.MINIMUM_QUERY_LENGTH) {
       this.suggestionsService.search(trimmedValue);
+      this.showSuggestions.set(true);
     } else {
-      this.suggestions.set([]);
+      this.suggestionsService.search('');
       this.showSuggestions.set(false);
     }
   }

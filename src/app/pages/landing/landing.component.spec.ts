@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router, ActivatedRoute } from '@angular/router';
-import { of, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { LandingComponent } from './landing.component';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
@@ -11,20 +11,16 @@ describe('LandingComponent', () => {
   let component: LandingComponent;
   let fixture: ComponentFixture<LandingComponent>;
   let mockRouter: jasmine.SpyObj<Router>;
-  let mockActivatedRoute: jasmine.SpyObj<ActivatedRoute>;
   let mockSearchHistoryService: jasmine.SpyObj<SearchHistoryService>;
   let mockProjectService: jasmine.SpyObj<ProjectService>;
   let mockSessionService: jasmine.SpyObj<SessionService>;
   let mockSuggestionsService: jasmine.SpyObj<SuggestionsService>;
-  let suggestionsSubject: Subject<Suggestion[]>;
+  let queryParamsSubject: BehaviorSubject<Record<string, string>>;
 
   beforeEach(async () => {
-    suggestionsSubject = new Subject<Suggestion[]>();
+    queryParamsSubject = new BehaviorSubject<Record<string, string>>({});
 
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
-    mockActivatedRoute = jasmine.createSpyObj('ActivatedRoute', [], {
-      queryParams: of({}),
-    });
     mockSearchHistoryService = jasmine.createSpyObj('SearchHistoryService', ['addSearch']);
     mockProjectService = jasmine.createSpyObj('ProjectService', [], {
       projects: jasmine.createSpy().and.returnValue([]),
@@ -32,20 +28,21 @@ describe('LandingComponent', () => {
     mockSessionService = jasmine.createSpyObj('SessionService', [], {
       session: jasmine.createSpy().and.returnValue(null),
     });
-    mockSuggestionsService = jasmine.createSpyObj(
-      'SuggestionsService',
-      ['getSuggestions$', 'search', 'clear'],
-      {
-        MINIMUM_QUERY_LENGTH: 3,
-      },
-    );
-    mockSuggestionsService.getSuggestions$.and.returnValue(suggestionsSubject.asObservable());
+    mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
+      MINIMUM_QUERY_LENGTH: 3,
+      suggestions: jasmine.createSpy().and.returnValue([]),
+    });
 
     await TestBed.configureTestingModule({
       imports: [LandingComponent],
       providers: [
         { provide: Router, useValue: mockRouter },
-        { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            queryParams: queryParamsSubject.asObservable(),
+          },
+        },
         { provide: SearchHistoryService, useValue: mockSearchHistoryService },
         { provide: ProjectService, useValue: mockProjectService },
         { provide: SessionService, useValue: mockSessionService },
@@ -92,7 +89,9 @@ describe('LandingComponent', () => {
   });
 
   it('should navigate to temporary search in temp mode', () => {
-    component.isTemporaryMode.set(true);
+    queryParamsSubject.next({ temp: 'true' });
+    fixture.detectChanges();
+
     component.searchQuery.set('temp query');
     component.onSearch();
 
@@ -111,51 +110,19 @@ describe('LandingComponent', () => {
       expect(component.showSuggestions()).toBeFalse();
     });
 
-    it('should subscribe to suggestions on init', () => {
-      expect(mockSuggestionsService.getSuggestions$).toHaveBeenCalled();
-    });
-
-    it('should update suggestions when service emits', () => {
-      const mockSuggestions: Suggestion[] = [{ id: '1', query: 'test query' }];
-
-      // Set a non-empty search query first
-      component.searchQuery.set('test');
-      suggestionsSubject.next(mockSuggestions);
-
-      expect(component.suggestions()).toEqual(mockSuggestions);
-      expect(component.showSuggestions()).toBeTrue();
-    });
-
-    it('should not show suggestions when search query is empty even if suggestions are returned', () => {
-      const mockSuggestions: Suggestion[] = [{ id: '1', query: 'test query' }];
-
-      component.searchQuery.set('');
-      suggestionsSubject.next(mockSuggestions);
-
-      expect(component.suggestions()).toEqual(mockSuggestions);
-      expect(component.showSuggestions()).toBeFalse();
-    });
-
-    it('should not show suggestions when empty array is emitted', () => {
-      suggestionsSubject.next([]);
-
-      expect(component.suggestions()).toEqual([]);
-      expect(component.showSuggestions()).toBeFalse();
-    });
-
     it('should trigger search when input has minimum length', () => {
       component.onSearchInput('tes');
 
       expect(component.searchQuery()).toBe('tes');
       expect(mockSuggestionsService.search).toHaveBeenCalledWith('tes');
+      expect(component.showSuggestions()).toBeTrue();
     });
 
-    it('should not trigger search when input is shorter than minimum', () => {
+    it('should clear suggestions when input is shorter than minimum', () => {
       component.onSearchInput('te');
 
       expect(component.searchQuery()).toBe('te');
-      expect(mockSuggestionsService.search).not.toHaveBeenCalled();
-      expect(component.suggestions()).toEqual([]);
+      expect(mockSuggestionsService.search).toHaveBeenCalledWith('');
       expect(component.showSuggestions()).toBeFalse();
     });
 

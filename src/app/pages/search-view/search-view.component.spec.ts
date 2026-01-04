@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { of, Subject } from 'rxjs';
+import { of } from 'rxjs';
 import { SearchViewComponent } from './search-view.component';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 
@@ -9,19 +9,12 @@ describe('SearchViewComponent', () => {
   let component: SearchViewComponent;
   let fixture: ComponentFixture<SearchViewComponent>;
   let mockSuggestionsService: jasmine.SpyObj<SuggestionsService>;
-  let suggestionsSubject: Subject<Suggestion[]>;
 
   beforeEach(async () => {
-    suggestionsSubject = new Subject<Suggestion[]>();
-
-    mockSuggestionsService = jasmine.createSpyObj(
-      'SuggestionsService',
-      ['getSuggestions$', 'search', 'clear'],
-      {
-        MINIMUM_QUERY_LENGTH: 3,
-      },
-    );
-    mockSuggestionsService.getSuggestions$.and.returnValue(suggestionsSubject.asObservable());
+    mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
+      MINIMUM_QUERY_LENGTH: 3,
+      suggestions: jasmine.createSpy().and.returnValue([]),
+    });
 
     await TestBed.configureTestingModule({
       imports: [SearchViewComponent],
@@ -53,51 +46,19 @@ describe('SearchViewComponent', () => {
       expect(component.showSuggestions()).toBeFalse();
     });
 
-    it('should subscribe to suggestions on init', () => {
-      expect(mockSuggestionsService.getSuggestions$).toHaveBeenCalled();
-    });
-
-    it('should update suggestions when service emits', () => {
-      const mockSuggestions: Suggestion[] = [{ id: '1', query: 'test query' }];
-
-      // Set a non-empty search query first
-      component.searchQuery = 'test';
-      suggestionsSubject.next(mockSuggestions);
-
-      expect(component.suggestions()).toEqual(mockSuggestions);
-      expect(component.showSuggestions()).toBeTrue();
-    });
-
-    it('should not show suggestions when search query is empty even if suggestions are returned', () => {
-      const mockSuggestions: Suggestion[] = [{ id: '1', query: 'test query' }];
-
-      component.searchQuery = '';
-      suggestionsSubject.next(mockSuggestions);
-
-      expect(component.suggestions()).toEqual(mockSuggestions);
-      expect(component.showSuggestions()).toBeFalse();
-    });
-
-    it('should not show suggestions when empty array is emitted', () => {
-      suggestionsSubject.next([]);
-
-      expect(component.suggestions()).toEqual([]);
-      expect(component.showSuggestions()).toBeFalse();
-    });
-
     it('should trigger search when input has minimum length', () => {
       component.onSearchInput('tes');
 
       expect(component.searchQuery).toBe('tes');
       expect(mockSuggestionsService.search).toHaveBeenCalledWith('tes');
+      expect(component.showSuggestions()).toBeTrue();
     });
 
-    it('should not trigger search when input is shorter than minimum', () => {
+    it('should clear suggestions when input is shorter than minimum', () => {
       component.onSearchInput('te');
 
       expect(component.searchQuery).toBe('te');
-      expect(mockSuggestionsService.search).not.toHaveBeenCalled();
-      expect(component.suggestions()).toEqual([]);
+      expect(mockSuggestionsService.search).toHaveBeenCalledWith('');
       expect(component.showSuggestions()).toBeFalse();
     });
 

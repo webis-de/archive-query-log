@@ -4,20 +4,12 @@ import {
   AqlDropdownComponent,
   AqlMenuItemComponent,
 } from 'aql-stylings';
-import {
-  Component,
-  inject,
-  signal,
-  computed,
-  OnInit,
-  OnDestroy,
-  HostListener,
-  ElementRef,
-} from '@angular/core';
+import { Component, inject, signal, computed, HostListener, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
@@ -41,7 +33,7 @@ import { FilterState } from '../../models/filter.model';
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
-export class LandingComponent implements OnInit, OnDestroy {
+export class LandingComponent {
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly projectService = inject(ProjectService);
   private readonly sessionService = inject(SessionService);
@@ -50,17 +42,20 @@ export class LandingComponent implements OnInit, OnDestroy {
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private readonly elementRef = inject(ElementRef);
-  private suggestionsSubscription?: Subscription;
+
+  private currentFilters: FilterState | null = null;
 
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
-  readonly isTemporaryMode = signal<boolean>(false);
   readonly activeFilters = signal<string[]>(['All']);
-  readonly suggestions = signal<Suggestion[]>([]);
   readonly showSuggestions = signal<boolean>(false);
-  private currentFilters: FilterState | null = null;
+  readonly isTemporaryMode = toSignal(
+    this.route.queryParams.pipe(map(params => params['temp'] === 'true')),
+    { initialValue: false },
+  );
 
+  readonly suggestions = this.suggestionsService.suggestions;
   readonly activeProject = computed(() => {
     const currentSession = this.session();
     const activeProjectId = currentSession?.activeProjectId;
@@ -71,7 +66,6 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
     return null;
   });
-
   readonly hasProjects = computed(() => this.projects().length > 0);
 
   readonly landingMessage = computed(() => {
@@ -88,30 +82,14 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
   });
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.isTemporaryMode.set(params['temp'] === 'true');
-    });
-
-    this.suggestionsSubscription = this.suggestionsService
-      .getSuggestions$()
-      .subscribe(suggestions => {
-        this.suggestions.set(suggestions);
-        this.showSuggestions.set(suggestions.length > 0 && this.searchQuery().trim().length > 0);
-      });
-  }
-
-  ngOnDestroy(): void {
-    this.suggestionsSubscription?.unsubscribe();
-  }
-
   onSearchInput(value: string): void {
     this.searchQuery.set(value);
     const trimmedValue = value.trim();
     if (trimmedValue.length >= this.suggestionsService.MINIMUM_QUERY_LENGTH) {
       this.suggestionsService.search(trimmedValue);
+      this.showSuggestions.set(true);
     } else {
-      this.suggestions.set([]);
+      this.suggestionsService.search('');
       this.showSuggestions.set(false);
     }
   }
