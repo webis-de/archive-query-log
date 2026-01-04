@@ -25,10 +25,12 @@
     "unpinProject": "Désépingler le projet",
     "renameProject": "Renommer le projet",
     "deleteProject": "Supprimer le projet",
+    "confirmDeleteProject": "Êtes-vous sûr de vouloir supprimer le projet",
     "pinnedProject": "Projet épinglé",
     "addToProject": "Ajouter la recherche au projet",
     "renameSearch": "Renommer la recherche",
     "deleteSearch": "Supprimer la recherche",
+    "confirmDeleteSearch": "Êtes-vous sûr de vouloir supprimer la recherche",
     "createNewProject": "Créer un nouveau projet et interroger l'archive web"
   },
   "landing": {

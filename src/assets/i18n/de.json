@@ -100,10 +100,12 @@
     "unpinProject": "Projekt lösen",
     "renameProject": "Projekt umbenennen",
     "deleteProject": "Projekt löschen",
+    "confirmDeleteProject": "Sind Sie sicher, dass Sie das Projekt",
     "pinnedProject": "Angeheftetes Projekt",
     "addToProject": "Suche zum Projekt hinzufügen",
     "renameSearch": "Suche umbenennen",
     "deleteSearch": "Suche löschen",
+    "confirmDeleteSearch": "Sind Sie sicher, dass Sie die Suche",
     "createNewProject": "Neues Projekt erstellen und das Webarchiv abfragen"
   }
 }

@@ -100,10 +100,12 @@
     "unpinProject": "Unpin Project",
     "renameProject": "Rename Project",
     "deleteProject": "Delete Project",
+    "confirmDeleteProject": "Are you sure you want to delete the project",
     "pinnedProject": "Pinned project",
     "addToProject": "Add search to project",
     "renameSearch": "Rename Search",
     "deleteSearch": "Delete Search",
+    "confirmDeleteSearch": "Are you sure you want to delete the search",
     "createNewProject": "Create new project and start querying the web archive"
   }
 }

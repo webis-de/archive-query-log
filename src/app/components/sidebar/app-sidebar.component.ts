@@ -6,6 +6,7 @@ import {
   Output,
   signal,
   viewChildren,
+  viewChild,
   inject,
   computed,
   HostListener,
@@ -23,6 +24,7 @@ import {
   AqlAvatarCardComponent,
   AqlDropdownComponent,
   AqlInputFieldComponent,
+  AqlModalComponent,
 } from 'aql-stylings';
 import { UserData } from '../../models/user-data.model';
 import { ProjectService } from '../../services/project.service';
@@ -41,6 +43,7 @@ import { SessionService } from '../../services/session.service';
     AqlAvatarCardComponent,
     AqlDropdownComponent,
     AqlInputFieldComponent,
+    AqlModalComponent,
   ],
   templateUrl: './app-sidebar.component.html',
   styleUrl: './app-sidebar.component.css',
@@ -59,6 +62,14 @@ export class AppSidebarComponent implements OnInit {
   readonly editingProjectId = signal<string | null>(null);
   readonly editingSearchId = signal<string | null>(null);
   readonly editingValue = signal<string>('');
+
+  readonly deleteModal = viewChild<AqlModalComponent>('deleteModal');
+
+  readonly itemToDelete = signal<{
+    type: 'project' | 'search';
+    id: string;
+    name: string;
+  } | null>(null);
 
   readonly allMenuItems = viewChildren(AqlMenuItemComponent);
 
@@ -182,16 +193,9 @@ export class AppSidebarComponent implements OnInit {
 
   onDeleteProject(projectId: string): void {
     const project = this.projectService.getProject(projectId);
-    if (project && confirm(`Delete project "${project.name}"?`)) {
-      // Check if any search in this project is currently active
-      const isAnySearchActive = project.searches.some(
-        search => search.id === this.selectedItemId(),
-      );
-
-      this.projectService.deleteProject(projectId);
-      if (isAnySearchActive) {
-        this.router.navigate(['/']);
-      }
+    if (project) {
+      this.itemToDelete.set({ type: 'project', id: project.id, name: project.name });
+      this.deleteModal()?.open();
     }
   }
 
@@ -275,21 +279,56 @@ export class AppSidebarComponent implements OnInit {
   }
 
   onDeleteSearch(searchId: string): void {
-    let parentProjectId: string | undefined;
     const search = this.projectService.projects().flatMap(p => {
       const s = p.searches.find(search => search.id === searchId);
-      if (s) parentProjectId = p.id;
       return s ? [s] : [];
     })[0];
 
-    if (search && confirm(`Delete search "${search.label}"?`)) {
-      const isActive = this.selectedItemId() === searchId;
-      this.projectService.deleteSearch(searchId);
+    if (search) {
+      this.itemToDelete.set({ type: 'search', id: search.id, name: search.label });
+      this.deleteModal()?.open();
+    }
+  }
+
+  confirmDelete(): void {
+    const item = this.itemToDelete();
+    if (!item) return;
+
+    if (item.type === 'project') {
+      // Check if any search in this project is currently active
+      const projectData = this.projectService.getProject(item.id);
+      const isAnySearchActive = projectData?.searches.some(
+        search => search.id === this.selectedItemId(),
+      );
+
+      this.projectService.deleteProject(item.id);
+      if (isAnySearchActive) {
+        this.router.navigate(['/']);
+      }
+    } else {
+      // Delete search
+      let parentProjectId: string | undefined;
+      this.projectService.projects().forEach(p => {
+        if (p.searches.find(s => s.id === item.id)) {
+          parentProjectId = p.id;
+        }
+      });
+
+      const isActive = this.selectedItemId() === item.id;
+      this.projectService.deleteSearch(item.id);
 
       if (isActive && parentProjectId) {
         this.projectService.setActiveProject(parentProjectId);
         this.router.navigate(['/']);
       }
     }
+
+    this.deleteModal()?.close();
+    this.itemToDelete.set(null);
+  }
+
+  cancelDelete(): void {
+    this.deleteModal()?.close();
+    this.itemToDelete.set(null);
   }
 }

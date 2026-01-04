@@ -223,3 +223,35 @@
     </div>
   </div>
 </div>
+
+<aql-modal
+  #deleteModal
+  [modalTitle]="
+    itemToDelete()?.type === 'project'
+      ? ('sidebar.deleteProject' | translate)
+      : ('sidebar.deleteSearch' | translate)
+  "
+  maxWidth="md"
+  [closeOnBackdropClick]="false"
+>
+  @if (itemToDelete(); as item) {
+    <p class="text-base-content">
+      @if (item.type === 'project') {
+        {{ 'sidebar.confirmDeleteProject' | translate }}
+        <span class="font-bold">"{{ item.name }}"</span>?
+      } @else {
+        {{ 'sidebar.confirmDeleteSearch' | translate }}
+        <span class="font-bold">"{{ item.name }}"</span>?
+      }
+    </p>
+  }
+
+  <div modal-actions class="flex gap-2 justify-end">
+    <aql-button btnStyle="rounded" (buttonClick)="cancelDelete()">
+      {{ 'common.cancel' | translate }}
+    </aql-button>
+    <aql-button btnStyle="rounded" btnType="error" (buttonClick)="confirmDelete()">
+      {{ 'common.delete' | translate }}
+    </aql-button>
+  </div>
+</aql-modal>
