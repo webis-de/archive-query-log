@@ -26,9 +26,14 @@
   "search": {
     "placeholder": "Suchen",
     "label": "Suche",
-    "resultsFound": "{count, plural, =0{Keine Ergebnisse gefunden} =1{1 Ergebnis gefunden} other{# Ergebnisse gefunden}}",
+    "resultsFound": "{{count}} Ergebnisse gefunden",
     "noResults": "Keine Ergebnisse gefunden",
+    "noResultsFor": "Keine Ergebnisse für \"{{query}}\" gefunden",
+    "enterQuery": "Geben Sie eine Suchanfrage ein",
     "score": "Bewertung",
+    "scoreLabel": "Bewertung:",
+    "idLabel": "ID:",
+    "mimeTypeLabel": "MIME-Typ:",
     "timestamp": "Zeitstempel:",
     "url": "URL:",
     "query": "Abfrage:",
@@ -115,7 +120,45 @@
     "provider": "Anbieter",
     "id": "ID",
     "textView": "Textansicht",
-    "website": "Website"
+    "websiteTab": "Website",
+    "relatedSerps": "Verwandte SERPs",
+    "urlDetails": "URL-Details",
+    "unbrandedView": "Neutrale Ansicht",
+    "backToOriginal": "Zurück zum ursprünglichen Ergebnis",
+    "backOne": "Einen Schritt zurück",
+    "noRelatedSerps": "Keine verwandten SERPs gefunden",
+    "noUnfurlData": "URL-Details nicht verfügbar",
+    "noUnbrandedData": "Neutrale Ansicht nicht verfügbar",
+    "unfurl": {
+      "baseUrl": "Basis-URL",
+      "protocol": "Protokoll",
+      "domain": "Domain",
+      "port": "Port",
+      "path": "Pfad",
+      "queryParams": "Abfrageparameter",
+      "parameter": "Parameter",
+      "value": "Wert",
+      "fragment": "Fragment",
+      "viewInUnfurlTool": "In Unfurl.it Tool anzeigen",
+      "subdomain": "Subdomain",
+      "domainLabel": "Domain",
+      "tld": "TLD"
+    },
+    "unbranded": {
+      "results": "Ergebnisse",
+      "noResults": "Keine Suchergebnisse aus diesem SERP extrahiert"
+    },
+    "website": {
+      "snapshotDate": "Snapshot-Datum:",
+      "archive": "Archiv:",
+      "openSnapshot": "Snapshot öffnen:",
+      "openInNewTab": "In neuem Tab öffnen",
+      "loadingSnapshot": "Archivierter Snapshot wird geladen...",
+      "failedToLoad": "Archivierter Snapshot konnte nicht geladen werden",
+      "archiveUnavailable": "Das Archiv ist möglicherweise nicht verfügbar oder blockiert",
+      "previewNote": "Diese Vorschau zeigt, wie die Website zum Zeitpunkt der Archivierung aussah.",
+      "iframeTitle": "Archivierter Website-Snapshot vom {{date}}"
+    }
   },
   "sidebar": {
     "expandSidebar": "Seitenleiste erweitern",

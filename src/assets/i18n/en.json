@@ -26,9 +26,14 @@
   "search": {
     "placeholder": "Search",
     "label": "Search",
-    "resultsFound": "{count, plural, =0{No results found} =1{Found 1 result} other{Found # results}}",
+    "resultsFound": "Found {{count}} results",
     "noResults": "No results found",
+    "noResultsFor": "No results found for \"{{query}}\"",
+    "enterQuery": "Enter a search query to begin",
     "score": "Score",
+    "scoreLabel": "Score:",
+    "idLabel": "ID:",
+    "mimeTypeLabel": "MIME Type:",
     "timestamp": "Timestamp:",
     "url": "URL:",
     "query": "Query:",
@@ -115,7 +120,45 @@
     "provider": "Provider",
     "id": "ID",
     "textView": "Text View",
-    "website": "Website"
+    "websiteTab": "Website",
+    "relatedSerps": "Related SERPs",
+    "urlDetails": "URL Details",
+    "unbrandedView": "Unbranded View",
+    "backToOriginal": "Back to original result",
+    "backOne": "Back one item",
+    "noRelatedSerps": "No related SERPs found",
+    "noUnfurlData": "URL details not available",
+    "noUnbrandedData": "Unbranded view not available",
+    "unfurl": {
+      "baseUrl": "Base URL",
+      "protocol": "Protocol",
+      "domain": "Domain",
+      "port": "Port",
+      "path": "Path",
+      "queryParams": "Query Parameters",
+      "parameter": "Parameter",
+      "value": "Value",
+      "fragment": "Fragment",
+      "viewInUnfurlTool": "View in Unfurl.it Tool",
+      "subdomain": "Subdomain",
+      "domainLabel": "Domain",
+      "tld": "TLD"
+    },
+    "unbranded": {
+      "results": "results",
+      "noResults": "No search results parsed from this SERP"
+    },
+    "website": {
+      "snapshotDate": "Snapshot Date:",
+      "archive": "Archive:",
+      "openSnapshot": "Open Snapshot:",
+      "openInNewTab": "Open in new tab",
+      "loadingSnapshot": "Loading archived snapshot...",
+      "failedToLoad": "Failed to load archived snapshot",
+      "archiveUnavailable": "The archive may be unavailable or blocked",
+      "previewNote": "This preview shows how the website appeared at the time of archival.",
+      "iframeTitle": "Archived website snapshot from {{date}}"
+    }
   },
   "sidebar": {
     "expandSidebar": "Expand sidebar",

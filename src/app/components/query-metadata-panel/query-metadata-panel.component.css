@@ -1,3 +1,34 @@
 :host {
   display: contents;
 }
+
+/* Unfurl View */
+.unfurl-view .unfurl-section {
+  margin-bottom: 1rem;
+}
+
+.unfurl-view code {
+  overflow-x: auto;
+}
+
+.unfurl-view .table th,
+.unfurl-view .table td {
+  padding: 0.75rem 1rem;
+}
+
+/* Loading states */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: var(--color-base-200);
+  border-radius: 0.25rem;
+}

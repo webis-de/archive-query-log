@@ -78,4 +78,15 @@ export class LanguageService {
     const nextIndex = (currentIndex + 1) % this.availableLanguages.length;
     this.setLanguage(this.availableLanguages[nextIndex].code);
   }
+
+  formatDate(dateString: string): string {
+    const locale = this.getCurrentLanguageCode();
+    return new Date(dateString).toLocaleString(locale, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  }
 }

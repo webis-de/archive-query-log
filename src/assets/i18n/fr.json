@@ -48,9 +48,14 @@
   "search": {
     "placeholder": "Rechercher",
     "label": "Recherche",
-    "resultsFound": "{count, plural, =0{Aucun résultat trouvé} =1{1 résultat trouvé} other{# résultats trouvés}}",
+    "resultsFound": "{{count}} résultats trouvés",
     "noResults": "Aucun résultat trouvé",
+    "noResultsFor": "Aucun résultat pour \"{{query}}\"",
+    "enterQuery": "Entrez une requête de recherche pour commencer",
     "score": "Score",
+    "scoreLabel": "Score :",
+    "idLabel": "ID :",
+    "mimeTypeLabel": "Type MIME :",
     "timestamp": "Horodatage :",
     "url": "URL :",
     "query": "Requête :",
@@ -138,6 +143,44 @@
     "provider": "Fournisseur",
     "id": "ID",
     "textView": "Vue texte",
-    "website": "Site web"
+    "websiteTab": "Site web",
+    "relatedSerps": "SERPs associés",
+    "urlDetails": "Détails de l'URL",
+    "unbrandedView": "Vue neutre",
+    "backToOriginal": "Retour au résultat d'origine",
+    "backOne": "Reculer d'un élément",
+    "noRelatedSerps": "Aucun SERP associé trouvé",
+    "noUnfurlData": "Détails de l'URL non disponibles",
+    "noUnbrandedData": "Vue neutre non disponible",
+    "unfurl": {
+      "baseUrl": "URL de base",
+      "protocol": "Protocole",
+      "domain": "Domaine",
+      "port": "Port",
+      "path": "Chemin",
+      "queryParams": "Paramètres de requête",
+      "parameter": "Paramètre",
+      "value": "Valeur",
+      "fragment": "Fragment",
+      "viewInUnfurlTool": "Voir dans l'outil Unfurl.it",
+      "subdomain": "Sous-domaine",
+      "domainLabel": "Domaine",
+      "tld": "TLD"
+    },
+    "unbranded": {
+      "results": "résultats",
+      "noResults": "Aucun résultat de recherche extrait de ce SERP"
+    },
+    "website": {
+      "snapshotDate": "Date du snapshot :",
+      "archive": "Archive :",
+      "openSnapshot": "Ouvrir le snapshot :",
+      "openInNewTab": "Ouvrir dans un nouvel onglet",
+      "loadingSnapshot": "Chargement du snapshot archivé...",
+      "failedToLoad": "Échec du chargement du snapshot archivé",
+      "archiveUnavailable": "L'archive peut être indisponible ou bloquée",
+      "previewNote": "Cet aperçu montre comment le site web apparaissait au moment de l'archivage.",
+      "iframeTitle": "Snapshot archivé du site web du {{date}}"
+    }
   }
 }

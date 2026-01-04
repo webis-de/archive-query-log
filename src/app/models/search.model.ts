@@ -131,3 +131,76 @@ export interface QueryMetadataParams {
   top_archives?: number;
   last_n_months?: number;
 }
+
+export interface RelatedSerp {
+  _id: string;
+  _score: number;
+  _source: SearchResultSource;
+}
+
+// Unfurl data 
+export interface DomainParts {
+  subdomain: string | null;
+  domain: string;
+  suffix: string;
+  registered_domain: string;
+}
+
+export interface UnfurlData {
+  scheme: string;
+  netloc: string;
+  port: number | null;
+  domain_parts: DomainParts;
+  path: string;
+  path_segments: string[];
+  query_parameters: Record<string, string | string[]>;
+  fragment: string | null;
+}
+
+// Unbranded SERP
+export interface UnbrandedResult {
+  position: number;
+  url: string;
+  title: string;
+  snippet: string | null;
+}
+
+export interface UnbrandedQuery {
+  raw: string;
+  parsed: string | null;
+}
+
+export interface UnbrandedMetadata {
+  timestamp: string;
+  url: string;
+  status_code: number;
+}
+
+export interface UnbrandedSerp {
+  serp_id: string;
+  query: UnbrandedQuery;
+  results: UnbrandedResult[];
+  metadata: UnbrandedMetadata;
+}
+
+export interface SerpDetailsResponse {
+  serp_id: string;
+  serp: SearchResult;
+  original_url?: string;
+  url_without_tracking?: string;
+  memento_url?: string;
+  related?: {
+    count: number;
+    serps: RelatedSerp[];
+  };
+  unfurl?: UnfurlData;
+  unfurl_web?: string;
+  direct_links_count?: number;
+  direct_links?: {
+    position: number;
+    url: string;
+    title: string;
+    snippet: string;
+  }[];
+  unbranded?: UnbrandedSerp;
+}

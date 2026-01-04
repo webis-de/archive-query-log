@@ -95,7 +95,7 @@ export class SearchViewComponent implements OnInit, OnDestroy {
       if (this.currentFilters) {
         this.activeFilters = this.filterBadgeService.generateBadges(this.currentFilters);
       } else {
-        this.activeFilters = [this.translate.instant('filter.badges.all')];
+        this.activeFilters = [this.translate.instant('filter.badges.all') as string];
       }
     });
 
@@ -294,14 +294,7 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   }
 
   formatDate(dateString: string): string {
-    const locale = this.languageService.getCurrentLanguageCode();
-    return new Date(dateString).toLocaleString(locale, {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
+    return this.languageService.formatDate(dateString);
   }
 
   onResultClick(result: SearchResult): void {
@@ -311,6 +304,10 @@ export class SearchViewComponent implements OnInit, OnDestroy {
     if (!this.sessionService.sidebarCollapsed()) {
       this.sessionService.setSidebarCollapsed(true);
     }
+  }
+
+  onRelatedSerpSelected(result: SearchResult): void {
+    this.selectedResult.set(result);
   }
 
   onClosePanel(): void {
