@@ -11,9 +11,8 @@ import {
 } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AqlButtonComponent, AqlTabMenuComponent, TabItem } from 'aql-stylings';
+import { AqlButtonComponent, AqlTabMenuComponent, AqlPanelComponent, TabItem } from 'aql-stylings';
 import {
   SearchResult,
   SerpDetailsResponse,
@@ -22,7 +21,7 @@ import {
 } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
 import { SearchService } from '../../services/search.service';
-import { AppRelatedSerpCardComponent } from '../related-serp-card/related-serp-card.component';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-metadata-panel',
@@ -32,7 +31,7 @@ import { AppRelatedSerpCardComponent } from '../related-serp-card/related-serp-c
     TranslateModule,
     AqlButtonComponent,
     AqlTabMenuComponent,
-    AppRelatedSerpCardComponent,
+    AqlPanelComponent,
   ],
   templateUrl: './metadata-panel.component.html',
   styleUrl: './metadata-panel.component.css',
@@ -42,47 +41,41 @@ export class AppMetadataPanelComponent implements OnInit {
   private readonly sessionService = inject(SessionService);
   private readonly sanitizer = inject(DomSanitizer);
   private readonly translate = inject(TranslateService);
-  private readonly router = inject(Router);
   private readonly searchService = inject(SearchService);
+  private readonly languageService = inject(LanguageService);
 
   readonly isOpen = input.required<boolean>();
   readonly searchResult = input<SearchResult | null>(null);
-
   readonly closePanel = output<void>();
   readonly relatedSerpSelected = output<SearchResult>();
-
   readonly activeTab = signal<string>('text');
   readonly isIframeLoading = signal<boolean>(false);
   readonly iframeError = signal<boolean>(false);
+  readonly originalResult = signal<SearchResult | null>(null);
+  readonly history = signal<SearchResult[]>([]);
+  private isInternalNavigation = false;
 
-  readonly tabs = signal<TabItem[]>([
-    { id: 'text', label: 'Text View', icon: 'bi-file-text' },
-    { id: 'html', label: 'HTML View', icon: 'bi-code-square' },
-    { id: 'website', label: 'Website', icon: 'bi-globe' },
-    { id: 'metadata', label: 'Metadata', icon: 'bi-info-circle' },
-    { id: 'related', label: 'Related SERPs', icon: 'bi-search' },
-    { id: 'unfurl', label: 'URL Details', icon: 'bi-link-45deg' },
-  ]);
+  readonly tabs = signal<TabItem[]>([]);
 
-  // SERP details data (fetched from API with include parameters)
   readonly serpDetails = signal<SerpDetailsResponse | null>(null);
   readonly isLoadingDetails = signal<boolean>(false);
   readonly detailsError = signal<string | null>(null);
-
-  // Computed signals for related features
   readonly relatedSerps = computed<RelatedSerp[]>(() => {
     const details = this.serpDetails();
     return details?.related?.serps || [];
   });
-
   readonly unfurlData = computed<UnfurlData | null>(() => {
     const details = this.serpDetails();
     return details?.unfurl || null;
   });
-
   readonly unfurlWebUrl = computed<string | null>(() => {
     const details = this.serpDetails();
     return details?.unfurl_web || null;
+  });
+  readonly isViewingRelatedSerp = computed<boolean>(() => {
+    const original = this.originalResult();
+    const current = this.searchResult();
+    return original !== null && current !== null && original._id !== current._id;
   });
 
   ngOnInit(): void {
@@ -99,32 +92,32 @@ export class AppMetadataPanelComponent implements OnInit {
     this.tabs.set([
       {
         id: 'text',
-        label: this.translate.instant('metadata.textView') as string,
+        label: this.translate.instant('metadata.textView'),
         icon: 'bi-file-text',
       },
       {
         id: 'html',
-        label: this.translate.instant('metadata.htmlView') as string,
+        label: this.translate.instant('metadata.htmlView'),
         icon: 'bi-code-square',
       },
       {
         id: 'website',
-        label: this.translate.instant('metadata.websiteTab') as string,
+        label: this.translate.instant('metadata.websiteTab'),
         icon: 'bi-globe',
       },
       {
         id: 'metadata',
-        label: this.translate.instant('metadata.metadata') as string,
+        label: this.translate.instant('metadata.metadata'),
         icon: 'bi-info-circle',
       },
       {
         id: 'related',
-        label: this.translate.instant('metadata.relatedSerps') as string,
+        label: this.translate.instant('metadata.relatedSerps'),
         icon: 'bi-search',
       },
       {
         id: 'unfurl',
-        label: this.translate.instant('metadata.urlDetails') as string,
+        label: this.translate.instant('metadata.urlDetails'),
         icon: 'bi-link-45deg',
       },
     ]);
@@ -134,7 +127,7 @@ export class AppMetadataPanelComponent implements OnInit {
   private lastLoadedSerpId = '';
 
   constructor() {
-    // Effect to load iframe for website tab
+    // load iframe for website tab
     effect(() => {
       const url = this.mementoUrlString();
       if (url && this.activeTab() === 'website' && url !== this.lastLoadedUrl) {
@@ -144,30 +137,33 @@ export class AppMetadataPanelComponent implements OnInit {
       }
     });
 
-    // Effect to fetch SERP details when searchResult changes
+    // fetch SERP details
     effect(() => {
       const result = this.searchResult();
       if (result && result._id !== this.lastLoadedSerpId) {
+        if (this.isInternalNavigation) {
+          this.isInternalNavigation = false;
+        } else {
+          this.originalResult.set(null);
+          this.history.set([]);
+        }
+
         this.lastLoadedSerpId = result._id;
         this.fetchSerpDetails(result._id);
       } else if (!result) {
         this.serpDetails.set(null);
         this.lastLoadedSerpId = '';
+        this.originalResult.set(null);
+        this.history.set([]);
       }
     });
   }
 
-  /**
-   * Fetch SERP details - fetch each include separately to handle partial failures gracefully
-   */
   private fetchSerpDetails(serpId: string): void {
     this.isLoadingDetails.set(true);
     this.detailsError.set(null);
-
-    // Reset the details
     this.serpDetails.set(null);
 
-    // Track completion of all requests
     let completedRequests = 0;
     const totalRequests = 2;
     const partialResponse: Partial<SerpDetailsResponse> = {
@@ -182,7 +178,6 @@ export class AppMetadataPanelComponent implements OnInit {
       }
     };
 
-    // Fetch unfurl data
     this.searchService.getSerpDetails(serpId, ['unfurl']).subscribe({
       next: response => {
         partialResponse.unfurl = response.unfurl;
@@ -196,7 +191,6 @@ export class AppMetadataPanelComponent implements OnInit {
       },
     });
 
-    // Fetch related SERPs
     this.searchService.getSerpDetails(serpId, ['related'], { relatedSize: 10 }).subscribe({
       next: response => {
         partialResponse.related = response.related;
@@ -230,9 +224,6 @@ export class AppMetadataPanelComponent implements OnInit {
     return classes.join(' ');
   });
 
-  /**
-   * Computed raw memento URL string for use in links
-   */
   readonly mementoUrlString = computed<string>(() => {
     const result = this.searchResult();
     if (!result) return '';
@@ -249,18 +240,12 @@ export class AppMetadataPanelComponent implements OnInit {
     return `${mementoApiUrl}/${formattedTimestamp}/${captureUrl}`;
   });
 
-  /**
-   * Computed memento URL - only recalculates when searchResult changes
-   */
   readonly mementoUrl = computed<SafeResourceUrl | null>(() => {
     const urlString = this.mementoUrlString();
     if (!urlString) return null;
     return this.sanitizer.bypassSecurityTrustResourceUrl(urlString);
   });
 
-  /**
-   * Computed archive date for display - only recalculates when searchResult changes
-   */
   readonly archiveDate = computed<string>(() => {
     const result = this.searchResult();
     if (!result) return '';
@@ -286,6 +271,7 @@ export class AppMetadataPanelComponent implements OnInit {
   });
 
   onClose(): void {
+    this.originalResult.set(null);
     this.closePanel.emit();
   }
 
@@ -338,11 +324,17 @@ export class AppMetadataPanelComponent implements OnInit {
     return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac odio tempor orci dapibus ultrices in iaculis nunc.';
   }
 
-  /**
-   * Handle click on a related SERP card - loads the SERP details in the current panel
-   */
   onRelatedSerpClick(serp: RelatedSerp): void {
-    // Convert RelatedSerp to SearchResult format for the panel
+    if (!this.originalResult()) {
+      this.originalResult.set(this.searchResult());
+    }
+
+    // Add current search result to history
+    const current = this.searchResult();
+    if (current) {
+      this.history.update(h => [...h, current]);
+    }
+
     const searchResult: SearchResult = {
       _index: '',
       _type: '',
@@ -351,14 +343,33 @@ export class AppMetadataPanelComponent implements OnInit {
       _source: serp._source,
     };
 
-    // Update the searchResult signal which will trigger the effect to fetch new details
-    // We need to emit an event to update the parent component's selectedResult
+    this.isInternalNavigation = true;
     this.relatedSerpSelected.emit(searchResult);
   }
 
-  /**
-   * Get query parameter entries for display in unfurl view
-   */
+  // Navigate back one item in history
+  onBackOne(): void {
+    const historyStack = this.history();
+    if (historyStack.length === 0) return;
+
+    const previous = historyStack[historyStack.length - 1];
+    this.history.update(h => h.slice(0, -1));
+
+    this.isInternalNavigation = true;
+    this.relatedSerpSelected.emit(previous);
+  }
+
+  // Navigate back to the original search result
+  onBackToOriginal(): void {
+    const original = this.originalResult();
+    if (original) {
+      this.history.set([]);
+      this.isInternalNavigation = true;
+      this.relatedSerpSelected.emit(original);
+      this.originalResult.set(null);
+    }
+  }
+
   getQueryParamEntries(): { key: string; value: string }[] {
     const unfurl = this.unfurlData();
     if (!unfurl?.query_parameters) return [];
@@ -369,23 +380,7 @@ export class AppMetadataPanelComponent implements OnInit {
     }));
   }
 
-  /**
-   * Format timestamp for display
-   */
-  formatTimestamp(timestamp: string): string {
-    try {
-      const date = new Date(timestamp);
-      if (isNaN(date.getTime())) return timestamp;
-
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-    } catch {
-      return timestamp;
-    }
+  formatDate(dateString: string): string {
+    return this.languageService.formatDate(dateString);
   }
 }

@@ -18,13 +18,32 @@
           <h2 class="text-lg font-semibold">{{ 'metadata.panel' | translate }}</h2>
         }
       </div>
-      <aql-button
-        iconStyle="square"
-        iconBefore="bi-x-lg"
-        size="md"
-        (buttonClick)="onClose()"
-        class="flex-shrink-0"
-      ></aql-button>
+      <div class="flex gap-2 flex-shrink-0">
+        @if (history().length > 0) {
+          <aql-button
+            iconStyle="square"
+            iconBefore="bi-arrow-left"
+            size="md"
+            [title]="'metadata.backOne' | translate"
+            (buttonClick)="onBackOne()"
+          ></aql-button>
+        }
+        @if (isViewingRelatedSerp()) {
+          <aql-button
+            iconStyle="square"
+            iconBefore="bi-arrow-bar-left"
+            size="md"
+            [title]="'metadata.backToOriginal' | translate"
+            (buttonClick)="onBackToOriginal()"
+          ></aql-button>
+        }
+        <aql-button
+          iconStyle="square"
+          iconBefore="bi-x-lg"
+          size="md"
+          (buttonClick)="onClose()"
+        ></aql-button>
+      </div>
     </div>
 
     <div class="px-6 pt-4 border-b border-base-300">
@@ -209,12 +228,31 @@
                   <span class="loading loading-spinner loading-md text-primary"></span>
                 </div>
               } @else if (relatedSerps().length > 0) {
-                <div class="related-serps-list space-y-3">
+                <div class="flex flex-col gap-4">
                   @for (serp of relatedSerps(); track serp._id) {
-                    <app-related-serp-card
-                      [serp]="serp"
-                      (serpClick)="onRelatedSerpClick($event)"
-                    ></app-related-serp-card>
+                    <aql-panel
+                      [panelTitle]="serp._source.url_query"
+                      [subtitle]="serp._source.capture.url"
+                      [bordered]="true"
+                      [shadow]="true"
+                      [rounded]="true"
+                      class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl"
+                      tabindex="0"
+                      role="button"
+                      (click)="onRelatedSerpClick(serp)"
+                      (keydown.enter)="onRelatedSerpClick(serp)"
+                      (keydown.space)="onRelatedSerpClick(serp)"
+                    >
+                      <div footer class="flex items-center gap-2 text-xs text-base-content/60">
+                        <span>
+                          {{ formatDate(serp._source.capture.timestamp) }}
+                        </span>
+                        <span>·</span>
+                        <span>
+                          {{ serp._source.provider.domain }}
+                        </span>
+                      </div>
+                    </aql-panel>
                   }
                 </div>
               } @else {
