@@ -166,6 +166,24 @@ async def unified_search(
 
 
 # ---------------------------------------------------------
+# SUGGESTIONS ENDPOINT
+# ---------------------------------------------------------
+@router.get("/suggestions")
+@limiter.limit("30/minute")
+async def suggestions(
+    request: Request,
+    prefix: str = Query(..., description="Search query prefix"),
+    size: int = Query(10, description="Number of suggestions", ge=1, le=50),
+    last_n_months: int | None = Query(36, description="Limit to last N months"),
+):
+    """Return popular search suggestions based on prefix."""
+    result = await safe_search(
+        aql_service.search_suggestions(prefix, last_n_months, size)
+    )
+    return result
+
+
+# ---------------------------------------------------------
 # PREVIEW / SUGGESTIONS ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps/preview")
