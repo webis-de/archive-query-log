@@ -57,17 +57,70 @@ Build artifacts are output to `dist/aql-frontend`.
 
 ## Docker
 
-To build and run the application using Docker, follow these steps:
+### For Users (Quick Start with Docker)
 
-### Build the Image
+**Requirements:**
+- Port 4200 available (or any port you choose)
+- Docker (need to be logged in):
+  ```bash
+  docker login git.uni-jena.de
+  ```
+
+**Pull and run the latest image:**
+```bash
+docker pull git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/frontend:latest
+```
+```bash
+docker run --rm -p 4200:80 git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/frontend:latest
+```
+
+The application will be accessible at `http://localhost:4200/`
+
+> **Note:** The frontend expects the backend API to be available. For full functionality, also run the backend container.
+
+### For Developers (Build Locally)
+
+To build and run the application using Docker locally:
+
+#### Build the Image
 
 ```bash
 docker build -t aql-frontend:local .
 ```
 
-### Run the Container
+#### Run the Container
 
 ```bash
 docker run --rm -p 4200:80 --name aql-frontend aql-frontend:local
 ```
+
+### Using Docker Compose
+
+You can also use Docker Compose to build and run the frontend:
+
+```bash
+# Build and start the container
+docker compose up --build
+
+# Or run in detached mode
+docker compose up -d --build
+
+# Stop the container
+docker compose down
+```
+
 The application will be accessible at `http://localhost:4200/`
+
+## CI/CD Pipeline
+
+The GitLab CI/CD pipeline automatically:
+
+1. **install** - Installs npm dependencies
+2. **lint** - Runs ESLint checks
+3. **test** - Runs unit tests with Karma/Jasmine
+4. **build** - Builds production bundle
+5. **docker** - Builds and pushes Docker image to GitLab Container Registry
+
+Docker images are automatically pushed to:
+- `git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/frontend:latest` (main branch)
+- `git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/frontend:<branch-slug>` (other branches)
