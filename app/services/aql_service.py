@@ -273,6 +273,87 @@ async def preview_search(
     }
 
 
+# ---------------------------------------------------------
+# 6b. Search suggestions
+# ---------------------------------------------------------
+async def search_suggestions(
+    prefix: str,
+    last_n_months: int | None = 36,
+    size: int = 10,
+) -> dict:
+    """
+    Get popular search query suggestions based on prefix.
+
+    Matches queries starting with the given prefix and returns the most
+    popular (frequent) ones, ranked by document count.
+
+    Performance Note:
+    - Fetches size*20 documents to account for duplicates during deduplication
+    - Uses match_phrase_prefix (faster than wildcard queries)
+    - Time filtering reduces result set before aggregation
+
+    Args:
+        prefix: Query prefix to search for
+        last_n_months: Filter to last N months (None/0 = no filter)
+        size: Number of suggestions to return (1-50)
+
+    Returns:
+        Dict with "prefix" and "suggestions" list
+    """
+    es = get_es_client()
+
+    # Build query with optional time filter
+    must_clause = [{"match_phrase_prefix": {"url_query": prefix}}]
+    filter_clause: list[dict] = []
+
+    if last_n_months is not None and last_n_months > 0:
+        from datetime import datetime, timezone, timedelta
+
+        now = datetime.now(timezone.utc)
+        start = now - timedelta(days=30 * last_n_months)
+        start_iso = start.replace(microsecond=0).isoformat()
+        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    query_clause: dict[str, Any]
+    if filter_clause:
+        query_clause = {"bool": {"must": must_clause, "filter": filter_clause}}
+    else:
+        query_clause = must_clause[0]
+
+    # Get matched documents and deduplicate by url_query
+    body = {
+        "query": query_clause,
+        "size": min(size * 20, 1000),  # Cap at 1000 to prevent excessive memory use
+        "_source": ["url_query"],
+        "sort": ["_score"],
+    }
+
+    try:
+        response = await es.search(index="aql_serps", body=body)
+
+        # Deduplicate and count occurrences
+        suggestion_counts: dict[str, int] = {}
+        for hit in response["hits"]["hits"]:
+            query = hit["_source"].get("url_query")
+            if query:
+                suggestion_counts[query] = suggestion_counts.get(query, 0) + 1
+
+        # Sort by count (descending) and take top N
+        suggestions = [
+            {"query": q, "count": c}
+            for q, c in sorted(suggestion_counts.items(), key=lambda x: (-x[1], x[0]))[
+                :size
+            ]
+        ]
+    except Exception:
+        suggestions = []
+
+    return {
+        "prefix": prefix,
+        "suggestions": suggestions,
+    }
+
+
 # 7. Get SERP by ID
 # ---------------------------------------------------------
 async def get_serp_by_id(serp_id: str) -> Any | None:

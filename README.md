@@ -81,6 +81,7 @@ docker stop <container-name>
 | ------ | ------------------------------------------------------- | -------------------- |
 | GET    | `/api/serps?query=climate+change`                       | Basic SERP search    |
 | GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search |
+| GET    | `/api/suggestions?prefix=the`                           | Get search query suggestions (autocomplete) |
 | GET    | `/api/serps/preview?query=climate`                      | Preview aggregations / suggestions for query |
 
 **Query Parameters for Search Endpoint:**
@@ -91,6 +92,23 @@ docker stop <container-name>
 - `provider_id` - Filter by provider ID (optional)
 - `year` - Filter by year (optional)
 - `status_code` - Filter by HTTP status code (optional)
+
+**Query Parameters for Suggestions Endpoint:**
+- `prefix` (required) - Query prefix to search for suggestions
+- `size` - Number of suggestions to return (default: 10, range: 1-50)
+- `last_n_months` - Filter to last N months of data (default: 36, can be None to disable)
+
+**Example Suggestions Requests:**
+```bash
+# Get top 5 suggestions for "python"
+curl http://localhost:8000/api/suggestions?prefix=python&size=5
+
+# Get suggestions for "the" from last 12 months
+curl http://localhost:8000/api/suggestions?prefix=the&last_n_months=12
+
+# Get suggestions with all parameters
+curl http://localhost:8000/api/suggestions?prefix=test&size=20&last_n_months=24
+```
 
 
 #### ✅ SERP Detail Endpoints
