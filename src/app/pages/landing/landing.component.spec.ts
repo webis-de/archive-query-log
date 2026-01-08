@@ -1,12 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 import { LandingComponent } from './landing.component';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
+import { ProviderService } from '../../services/provider.service';
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
@@ -16,6 +17,7 @@ describe('LandingComponent', () => {
   let mockProjectService: jasmine.SpyObj<ProjectService>;
   let mockSessionService: jasmine.SpyObj<SessionService>;
   let mockSuggestionsService: jasmine.SpyObj<SuggestionsService>;
+  let mockProviderService: jasmine.SpyObj<ProviderService>;
   let queryParamsSubject: BehaviorSubject<Record<string, string>>;
   let translateService: TranslateService;
 
@@ -34,6 +36,8 @@ describe('LandingComponent', () => {
       MINIMUM_QUERY_LENGTH: 3,
       suggestions: jasmine.createSpy().and.returnValue([]),
     });
+    mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviders']);
+    mockProviderService.getProviders.and.returnValue(of([]));
 
     await TestBed.configureTestingModule({
       imports: [LandingComponent, TranslateModule.forRoot()],
@@ -49,6 +53,7 @@ describe('LandingComponent', () => {
         { provide: ProjectService, useValue: mockProjectService },
         { provide: SessionService, useValue: mockSessionService },
         { provide: SuggestionsService, useValue: mockSuggestionsService },
+        { provide: ProviderService, useValue: mockProviderService },
       ],
     }).compileComponents();
 

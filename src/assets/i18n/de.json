@@ -97,6 +97,11 @@
     "active": "Aktiv",
     "inactive": "Inaktiv",
     "searchProviders": "Suchanbieter",
+    "searchProvidersPlaceholder": "Anbieter suchen...",
+    "loadingProviders": "Anbieter werden geladen...",
+    "providerLoadError": "Fehler beim Laden der Anbieter",
+    "noProvidersFound": "Keine Anbieter gefunden",
+    "selectedCount": "{{count}} ausgewählt",
     "reset": "Zurücksetzen",
     "apply": "Anwenden",
     "badges": {

@@ -3,11 +3,13 @@ import {
   ViewChild,
   AfterViewInit,
   OnDestroy,
+  OnInit,
   output,
   input,
   signal,
   computed,
   effect,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +23,7 @@ import {
   AqlTooltipDirective,
 } from 'aql-stylings';
 import { FilterState, Provider } from '../../models/filter.model';
+import { ProviderService, ProviderOption } from '../../services/provider.service';
 
 @Component({
   selector: 'aql-filter-dropdown',
@@ -39,9 +42,11 @@ import { FilterState, Provider } from '../../models/filter.model';
   templateUrl: './filter-dropdown.component.html',
   styleUrls: ['./filter-dropdown.component.css'],
 })
-export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
+export class FilterDropdownComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(AqlDropdownComponent)
   dropdown?: AqlDropdownComponent;
+
+  private readonly providerService = inject(ProviderService);
 
   readonly filters = input<FilterState | null>(null);
   readonly filtersChanged = output<FilterState>();
@@ -50,17 +55,34 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
   readonly dateTo = signal<string>('');
   readonly status = signal<string>('any');
   readonly isOpen = signal<boolean>(false);
-  readonly providers = signal<Provider[]>([
-    { id: 'all', label: 'All', checked: true },
-    { id: 'google', label: 'Google', checked: false },
-    { id: 'bing', label: 'Bing', checked: false },
-    { id: 'duckduckgo', label: 'DuckDuckGo', checked: false },
-    { id: 'yahoo', label: 'Yahoo', checked: false },
-  ]);
+  readonly providers = signal<Provider[]>([]);
+  readonly providerSearch = signal<string>('');
+  readonly isLoadingProviders = signal<boolean>(true);
+  readonly providerLoadError = signal<boolean>(false);
 
   private previousOpenState = false;
   private checkInterval: number | null = null;
   private appliedClose = false;
+
+  // Filtered providers based on search input
+  readonly filteredProviders = computed(() => {
+    const allProviders = this.providers();
+    const searchTerm = this.providerSearch().toLowerCase().trim();
+
+    if (!searchTerm) {
+      return allProviders;
+    }
+
+    // Always keep "All" option visible, filter the rest
+    return allProviders.filter(
+      p => p.label === 'All' || p.label.toLowerCase().includes(searchTerm),
+    );
+  });
+
+  // Count of selected providers (excluding "All")
+  readonly selectedProviderCount = computed(() => {
+    return this.providers().filter(p => p.checked && p.label !== 'All').length;
+  });
 
   readonly todayDate = computed(() => {
     const today = new Date();
@@ -96,15 +118,56 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
         this.dateTo.set(filterValue.dateTo || '');
         this.status.set(filterValue.status || 'any');
 
-        if (filterValue.providers) {
+        if (filterValue.providers && filterValue.providers.length > 0) {
           this.providers.update(providers =>
             providers.map(p => ({
               ...p,
-              checked: filterValue.providers.includes(p.label),
+              checked: p.label === 'All' ? false : filterValue.providers.includes(p.label),
             })),
           );
         }
       }
+    });
+  }
+
+  ngOnInit(): void {
+    this.loadProviders();
+  }
+
+  private loadProviders(): void {
+    this.isLoadingProviders.set(true);
+    this.providerLoadError.set(false);
+
+    this.providerService.getProviders().subscribe({
+      next: (providerOptions: ProviderOption[]) => {
+        const providerList: Provider[] = [
+          { id: 'all', label: 'All', checked: true },
+          ...providerOptions.map(p => ({
+            id: p.id,
+            label: p.name,
+            checked: false,
+          })),
+        ];
+        this.providers.set(providerList);
+        this.isLoadingProviders.set(false);
+
+        // Re-apply filter state if it was set before providers loaded
+        const filterValue = this.filters();
+        if (filterValue?.providers && filterValue.providers.length > 0) {
+          this.providers.update(providers =>
+            providers.map(p => ({
+              ...p,
+              checked: p.label === 'All' ? false : filterValue.providers.includes(p.label),
+            })),
+          );
+        }
+      },
+      error: () => {
+        this.isLoadingProviders.set(false);
+        this.providerLoadError.set(true);
+        // Set fallback with only "All" option
+        this.providers.set([{ id: 'all', label: 'All', checked: true }]);
+      },
     });
   }
 
@@ -138,6 +201,7 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
     this.dateFrom.set('');
     this.dateTo.set('');
     this.status.set('any');
+    this.providerSearch.set('');
     this.providers.update(providers => providers.map(p => ({ ...p, checked: p.label === 'All' })));
 
     this.emitCurrentState();
@@ -174,6 +238,10 @@ export class FilterDropdownComponent implements AfterViewInit, OnDestroy {
 
   updateStatus(value: string): void {
     this.status.set(value);
+  }
+
+  updateProviderSearch(value: string): void {
+    this.providerSearch.set(value);
   }
 
   updateProviderCheckedByLabel(label: string, checked: boolean): void {

@@ -98,18 +98,66 @@
           <span class="block text-sm font-bold text-base-content/60 mb-3">{{
             'filter.searchProviders' | translate
           }}</span>
-          <div class="flex flex-col gap-2">
-            @for (provider of providers(); track provider.id) {
-              <div>
-                <aql-checkbox
-                  [label]="provider.label"
+
+          <!-- Loading state -->
+          @if (isLoadingProviders()) {
+            <div class="flex items-center justify-center py-4">
+              <span class="loading loading-spinner loading-sm mr-2"></span>
+              <span class="text-sm text-base-content/60">{{
+                'filter.loadingProviders' | translate
+              }}</span>
+            </div>
+          }
+
+          <!-- Error state -->
+          @if (providerLoadError() && !isLoadingProviders()) {
+            <div class="text-sm text-error py-2">
+              {{ 'filter.providerLoadError' | translate }}
+            </div>
+          }
+
+          <!-- Provider list -->
+          @if (!isLoadingProviders()) {
+            <!-- Search input for filtering providers -->
+            @if (providers().length > 6) {
+              <div class="mb-3">
+                <aql-input-field
+                  type="text"
+                  [showIcon]="true"
                   size="sm"
-                  [checked]="provider.checked"
-                  (checkboxChange)="updateProviderCheckedByLabel(provider.label, $event)"
-                ></aql-checkbox>
+                  [placeholder]="'filter.searchProvidersPlaceholder' | translate"
+                  [value]="providerSearch()"
+                  (input)="updateProviderSearch($any($event.target).value)"
+                  class="w-full"
+                ></aql-input-field>
               </div>
             }
-          </div>
+
+            <!-- Selected count indicator -->
+            @if (selectedProviderCount() > 0) {
+              <div class="text-xs text-base-content/60 mb-2">
+                {{ 'filter.selectedCount' | translate: { count: selectedProviderCount() } }}
+              </div>
+            }
+
+            <div class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-1">
+              @for (provider of filteredProviders(); track provider.id) {
+                <div>
+                  <aql-checkbox
+                    [label]="provider.label"
+                    size="sm"
+                    [checked]="provider.checked"
+                    (checkboxChange)="updateProviderCheckedByLabel(provider.label, $event)"
+                  ></aql-checkbox>
+                </div>
+              }
+              @if (filteredProviders().length === 0 && providerSearch()) {
+                <div class="text-sm text-base-content/60 py-2">
+                  {{ 'filter.noProvidersFound' | translate }}
+                </div>
+              }
+            </div>
+          }
         </div>
 
         <div class="flex border-t border-base-300 p-2 justify-between gap-3">
