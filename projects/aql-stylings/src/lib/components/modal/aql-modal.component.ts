@@ -85,10 +85,7 @@ export class AqlModalComponent implements OnDestroy {
   });
 
   ngOnDestroy(): void {
-    const dialog = this.dialogElement()?.nativeElement;
-    if (dialog && this.cancelHandler) {
-      dialog.removeEventListener('cancel', this.cancelHandler);
-    }
+    this.detachCancelHandler();
     this.close();
   }
 
@@ -100,6 +97,7 @@ export class AqlModalComponent implements OnDestroy {
       this.modalOpen.emit();
 
       if (!this.closeOnEscape()) {
+        this.detachCancelHandler();
         this.cancelHandler = (event: Event) => event.preventDefault();
         dialog.addEventListener('cancel', this.cancelHandler);
       }
@@ -113,6 +111,7 @@ export class AqlModalComponent implements OnDestroy {
       this.isOpen.set(false);
       this.modalClose.emit();
     }
+    this.detachCancelHandler();
   }
 
   onBackdropClick(event: MouseEvent): void {
@@ -132,6 +131,14 @@ export class AqlModalComponent implements OnDestroy {
       if (!isInDialog) {
         this.close();
       }
+    }
+  }
+
+  private detachCancelHandler(): void {
+    const dialog = this.dialogElement()?.nativeElement;
+    if (dialog && this.cancelHandler) {
+      dialog.removeEventListener('cancel', this.cancelHandler);
+      this.cancelHandler = undefined;
     }
   }
 }

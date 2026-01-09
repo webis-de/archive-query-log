@@ -13,44 +13,28 @@ export interface Language {
 export class LanguageService {
   private readonly STORAGE_KEY = 'app_language';
   private readonly translate = inject(TranslateService);
-
-  // Available languages
   readonly availableLanguages: Language[] = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
   ];
 
-  // Current language signal
   currentLanguage = signal<Language>(this.availableLanguages[0]);
 
   constructor() {
-    this.initLanguage();
+    this.translate.addLangs(this.availableLanguages.map(l => l.code));
   }
 
-  /**
-   * Initialize language from localStorage or browser settings
-   */
-  private initLanguage(): void {
-    // Try to get saved language from localStorage
+  initLanguage(): void {
     const savedLang = localStorage.getItem(this.STORAGE_KEY);
+    const langCode = savedLang || this.translate.getBrowserLang() || 'en';
+    const language = this.availableLanguages.find(l => l.code === langCode);
 
-    let langCode: string;
-
-    if (savedLang) {
-      langCode = savedLang;
-    } else {
-      // Get browser language
-      const browserLang = this.translate.getBrowserLang() || 'en';
-      langCode = this.availableLanguages.some(l => l.code === browserLang) ? browserLang : 'en';
+    if (language) {
+      this.currentLanguage.set(language);
     }
-
-    this.setLanguage(langCode);
   }
 
-  /**
-   * Set the application language
-   */
   setLanguage(langCode: string): void {
     const language = this.availableLanguages.find(l => l.code === langCode);
 
@@ -61,16 +45,10 @@ export class LanguageService {
     }
   }
 
-  /**
-   * Get the current language code
-   */
   getCurrentLanguageCode(): string {
     return this.currentLanguage().code;
   }
 
-  /**
-   * Toggle between available languages
-   */
   toggleLanguage(): void {
     const currentIndex = this.availableLanguages.findIndex(
       l => l.code === this.currentLanguage().code,
@@ -88,5 +66,12 @@ export class LanguageService {
       hour: '2-digit',
       minute: '2-digit',
     });
+  }
+
+  /**
+   * Formats a Date object to ISO date string (YYYY-MM-DD)
+   */
+  formatDateForInput(date: Date): string {
+    return date.toISOString().split('T')[0];
   }
 }

@@ -1,9 +1,8 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
   input,
-  Output,
+  output,
   signal,
   viewChildren,
   viewChild,
@@ -16,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   AqlGroupItemComponent,
@@ -57,7 +57,7 @@ export class AppSidebarComponent implements OnInit {
   private readonly router = inject(Router);
 
   readonly userData = input.required<UserData>();
-  @Output() newProject = new EventEmitter<void>();
+  readonly newProject = output<void>();
 
   readonly isCollapsed = this.sessionService.sidebarCollapsed;
   readonly selectedItemId = signal<string | null>(null);
@@ -77,13 +77,18 @@ export class AppSidebarComponent implements OnInit {
 
   readonly projects = this.projectService.projects;
 
-  ngOnInit(): void {
+  constructor() {
     this.router.events
-      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(),
+      )
       .subscribe((event: NavigationEnd) => {
         this.updateSelectedItemFromRoute(event.url);
       });
+  }
 
+  ngOnInit(): void {
     this.updateSelectedItemFromRoute(this.router.url);
   }
 

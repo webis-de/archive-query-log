@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -10,24 +10,24 @@ export type RadioSize = 'xs' | 'sm' | 'md' | 'lg';
   imports: [CommonModule, FormsModule],
   templateUrl: './radio-button.component.html',
   styleUrl: './radio-button.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AqlRadioButtonComponent {
-  @Input() label = '';
-  @Input() name = 'radio-group';
-  @Input() value: string | number = '';
+  readonly label = input<string>('');
+  readonly name = input<string>('radio-group');
+  readonly value = input<string | number>('');
 
   // Model Binding
-  @Input() checked = false;
-  @Input() disabled = false;
+  readonly checked = input<boolean>(false);
+  readonly disabled = input<boolean>(false);
 
   // DaisyUI Größen
-  @Input() size: RadioSize = 'md';
+  readonly size = input<RadioSize>('md');
 
-  @Output() radioChange = new EventEmitter<string | number>();
+  readonly radioChange = output<string | number>();
 
   onChange() {
-    if (this.disabled) return;
-    this.checked = true;
-    this.radioChange.emit(this.value);
+    if (this.disabled()) return;
+    this.radioChange.emit(this.value());
   }
 }

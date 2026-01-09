@@ -19,10 +19,7 @@ describe('AqlButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  function setInputAndDetect<K extends keyof AqlButtonComponent>(
-    name: K,
-    value: AqlButtonComponent[K],
-  ): void {
+  function setInputAndDetect(name: keyof AqlButtonComponent, value: unknown): void {
     fixture.componentRef.setInput(name as string, value);
     fixture.detectChanges();
   }
@@ -170,8 +167,7 @@ describe('AqlButtonComponent', () => {
 
   describe('Button Size', () => {
     it('should not apply size class for medium size', () => {
-      component.size = 'md';
-      fixture.detectChanges();
+      setInputAndDetect('size', 'md');
       expect(buttonElement.nativeElement.classList.contains('btn-xs')).toBe(false);
       expect(buttonElement.nativeElement.classList.contains('btn-sm')).toBe(false);
       expect(buttonElement.nativeElement.classList.contains('btn-lg')).toBe(false);

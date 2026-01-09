@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, input, forwardRef, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -23,6 +23,7 @@ export type InputShape = 'square' | 'circle';
   imports: [CommonModule, FormsModule],
   templateUrl: './input-field.component.html',
   styleUrl: './input-field.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -32,28 +33,20 @@ export type InputShape = 'square' | 'circle';
   ],
 })
 export class AqlInputFieldComponent implements ControlValueAccessor {
-  @Input() label = '';
-  @Input() placeholder = 'input';
-  @Input() value = '';
-  @Input() disabled = false;
+  // Configuration inputs
+  readonly label = input<string>('');
+  readonly placeholder = input<string>('input');
+  readonly min = input<string>('');
+  readonly max = input<string>('');
+  readonly showIcon = input<boolean>(true);
+  readonly icon = input<string>('bi bi-search');
+  readonly type = input<string>('text');
+  readonly shape = input<InputShape>('square');
+  readonly size = input<InputSize>('md');
+  readonly color = input<InputColor>('bordered');
 
-  // Date input attributes
-  @Input() min = '';
-  @Input() max = '';
-
-  // Default-Icon.
-  @Input() showIcon = true;
-  @Input() icon = 'bi bi-search';
-
-  // (text, password, date, email, etc.)
-  @Input() type = 'text';
-  @Input() shape: InputShape = 'square';
-
-  // NEU: DaisyUI Size (Default 'md' entspricht ca. 3rem Höhe)
-  @Input() size: InputSize = 'md';
-
-  // NEU: DaisyUI Color Style (Default 'bordered')
-  @Input() color: InputColor = 'bordered';
+  value = '';
+  disabled = false;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (value: string) => void = () => {};

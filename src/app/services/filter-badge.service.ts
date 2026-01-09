@@ -17,7 +17,7 @@ export class FilterBadgeService {
 
     if (filters.status && filters.status !== 'any') {
       const statusLabel = this.translate.instant('filter.badges.status') as string;
-      const statusValue = this.translate.instant(`filter.badges.${filters.status}`) as string;
+      const statusValue = this.translate.instant(`filter.${filters.status}`) as string;
       badges.push(`${statusLabel}: ${statusValue}`);
     }
 

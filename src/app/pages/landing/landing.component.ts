@@ -11,8 +11,8 @@ import {
   computed,
   HostListener,
   ElementRef,
-  OnInit,
-  OnDestroy,
+  ChangeDetectionStrategy,
+  DestroyRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -28,7 +28,8 @@ import { SuggestionsService, Suggestion } from '../../services/suggestions.servi
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { FilterState } from '../../models/filter.model';
-import { Subscription } from 'rxjs';
+import { createFilterBadgeController } from '../../utils/filter-badges';
+import { createSearchSuggestionsController } from '../../utils/search-suggestions';
 
 @Component({
   selector: 'app-landing',
@@ -46,8 +47,9 @@ import { Subscription } from 'rxjs';
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingComponent implements OnInit, OnDestroy {
+export class LandingComponent {
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly projectService = inject(ProjectService);
   private readonly sessionService = inject(SessionService);
@@ -57,9 +59,9 @@ export class LandingComponent implements OnInit, OnDestroy {
   private readonly route = inject(ActivatedRoute);
   private readonly translate = inject(TranslateService);
   private readonly elementRef = inject(ElementRef);
+  private readonly destroyRef = inject(DestroyRef);
 
   private currentFilters: FilterState | null = null;
-  private langChangeSubscription?: Subscription;
 
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
@@ -97,39 +99,35 @@ export class LandingComponent implements OnInit, OnDestroy {
       return this.translate.instant('landing.createProjectHint');
     }
   });
+  private readonly filterBadgeController = createFilterBadgeController({
+    filterBadgeService: this.filterBadgeService,
+    translate: this.translate,
+    destroyRef: this.destroyRef,
+    getFilters: () => this.currentFilters,
+    setFilters: filters => {
+      this.currentFilters = filters;
+    },
+    setBadges: badges => this.activeFilters.set(badges),
+  });
+  private readonly suggestionsController = createSearchSuggestionsController({
+    suggestionsService: this.suggestionsService,
+    suggestions: this.suggestions,
+    getQuery: () => this.searchQuery(),
+    setQuery: value => this.searchQuery.set(value),
+    showSuggestions: this.showSuggestions,
+    onSearch: () => this.onSearch(),
+  });
 
-  ngOnInit(): void {
-    // Subscribe to language changes to update badges
-    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
-      if (this.currentFilters) {
-        const badges = this.filterBadgeService.generateBadges(this.currentFilters);
-        this.activeFilters.set(badges);
-      } else {
-        this.activeFilters.set([this.translate.instant('filter.badges.all')]);
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.langChangeSubscription?.unsubscribe();
+  constructor() {
+    this.filterBadgeController.refreshBadges();
   }
 
   onSearchInput(value: string): void {
-    this.searchQuery.set(value);
-    const trimmedValue = value.trim();
-    if (trimmedValue.length >= this.suggestionsService.MINIMUM_QUERY_LENGTH) {
-      this.suggestionsService.search(trimmedValue);
-      this.showSuggestions.set(true);
-    } else {
-      this.suggestionsService.search('');
-      this.showSuggestions.set(false);
-    }
+    this.suggestionsController.onSearchInput(value);
   }
 
   onSuggestionSelect(suggestion: Suggestion): void {
-    this.searchQuery.set(suggestion.query);
-    this.showSuggestions.set(false);
-    this.onSearch();
+    this.suggestionsController.onSuggestionSelect(suggestion);
   }
 
   @HostListener('document:click', ['$event'])
@@ -142,19 +140,11 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   onSearchFocus(): void {
-    // Show suggestions again if there are any and query is long enough
-    if (
-      this.suggestions().length > 0 &&
-      this.searchQuery().trim().length >= this.suggestionsService.MINIMUM_QUERY_LENGTH
-    ) {
-      this.showSuggestions.set(true);
-    }
+    this.suggestionsController.onSearchFocus();
   }
 
   onFiltersChanged(filters: FilterState): void {
-    this.currentFilters = filters;
-    const badges = this.filterBadgeService.generateBadges(filters);
-    this.activeFilters.set(badges);
+    this.filterBadgeController.onFiltersChanged(filters);
   }
 
   onSearch(): void {

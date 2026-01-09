@@ -43,7 +43,7 @@
             <span class="text-xs">
               {{ intervalLabel() | translate }}
             </span>
-            <i [class]="intervalDropdown.open ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+            <i [class]="intervalDropdown.open() ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
           </aql-button>
           <ng-container content>
             <aql-menu-item (click)="onIntervalSelect('day')">

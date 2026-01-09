@@ -1,16 +1,18 @@
 import {
   Component,
   inject,
-  OnInit,
-  OnDestroy,
   signal,
   HostListener,
   ElementRef,
+  ChangeDetectionStrategy,
+  DestroyRef,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { combineLatest } from 'rxjs';
 import {
   AqlHeaderBarComponent,
   AqlInputFieldComponent,
@@ -19,6 +21,7 @@ import {
   AqlButtonComponent,
   AqlPaginationComponent,
   AqlMenuItemComponent,
+  AqlTooltipDirective,
 } from 'aql-stylings';
 import { SearchService } from '../../services/search.service';
 import { SearchResult, QueryMetadataResponse } from '../../models/search.model';
@@ -32,7 +35,8 @@ import { FilterState } from '../../models/filter.model';
 import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-panel/query-metadata-panel.component';
 import { QueryOverviewPanelComponent } from '../../components/query-overview-panel/query-overview-panel.component';
 import { SessionService } from '../../services/session.service';
-import { Subscription } from 'rxjs';
+import { createSearchSuggestionsController } from '../../utils/search-suggestions';
+import { createFilterBadgeController } from '../../utils/filter-badges';
 
 @Component({
   selector: 'app-search-view',
@@ -48,14 +52,16 @@ import { Subscription } from 'rxjs';
     LanguageSelectorComponent,
     AqlPaginationComponent,
     AqlMenuItemComponent,
+    AqlTooltipDirective,
     FilterDropdownComponent,
     AppQueryMetadataPanelComponent,
     QueryOverviewPanelComponent,
   ],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchViewComponent implements OnInit, OnDestroy {
+export class SearchViewComponent {
   private readonly searchService = inject(SearchService);
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly filterBadgeService = inject(FilterBadgeService);
@@ -66,20 +72,19 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   private readonly router = inject(Router);
   private readonly translate = inject(TranslateService);
   private readonly elementRef = inject(ElementRef);
+  private readonly destroyRef = inject(DestroyRef);
 
   searchQuery = '';
-  searchResults: SearchResult[] = [];
-  totalCount = 0;
-  isLoading = false;
-  hasSearched = false;
+  readonly searchResults = signal<SearchResult[]>([]);
+  readonly totalCount = signal<number>(0);
+  readonly isLoading = signal<boolean>(false);
+  readonly hasSearched = signal<boolean>(false);
   currentSearchId?: string;
   isTemporarySearch = false;
   isPaginationChange = false;
   activeFilters: string[] = ['All'];
   initialFilters: FilterState | null = null;
   private currentFilters: FilterState | null = null;
-  private langChangeSubscription?: Subscription;
-  private metadataSubscription?: Subscription;
 
   readonly metadataInterval = signal<'day' | 'week' | 'month'>('month');
   readonly metadataTopQueries = 10;
@@ -96,76 +101,86 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   readonly isMetadataLoading = signal<boolean>(false);
   readonly suggestions = this.suggestionsService.suggestions;
   readonly showSuggestions = signal<boolean>(false);
+  private lastRouteSearchId: string | null = null;
+  private readonly suggestionsController = createSearchSuggestionsController({
+    suggestionsService: this.suggestionsService,
+    suggestions: this.suggestions,
+    getQuery: () => this.searchQuery,
+    setQuery: value => {
+      this.searchQuery = value;
+    },
+    showSuggestions: this.showSuggestions,
+    onSearch: () => this.onSearch(),
+  });
+  private readonly filterBadgeController = createFilterBadgeController({
+    filterBadgeService: this.filterBadgeService,
+    translate: this.translate,
+    destroyRef: this.destroyRef,
+    getFilters: () => this.currentFilters,
+    setFilters: filters => {
+      this.currentFilters = filters;
+    },
+    setBadges: badges => {
+      this.activeFilters = badges;
+    },
+  });
 
-  ngOnInit(): void {
-    // Subscribe to language changes to update badges
-    this.langChangeSubscription = this.translate.onLangChange.subscribe(() => {
-      if (this.currentFilters) {
-        this.activeFilters = this.filterBadgeService.generateBadges(this.currentFilters);
-      } else {
-        this.activeFilters = [this.translate.instant('filter.badges.all') as string];
-      }
-    });
+  constructor() {
+    this.filterBadgeController.refreshBadges();
 
-    this.route.queryParamMap.subscribe(queryParams => {
-      const dateFrom = queryParams.get('dateFrom') || '';
-      const dateTo = queryParams.get('dateTo') || '';
-      const status = queryParams.get('status') || 'any';
-      const providersStr = queryParams.get('providers');
-      const providers = providersStr ? providersStr.split(',') : [];
+    combineLatest([this.route.paramMap, this.route.queryParamMap])
+      .pipe(takeUntilDestroyed())
+      .subscribe(([params, queryParams]) => {
+        const dateFrom = queryParams.get('dateFrom') || '';
+        const dateTo = queryParams.get('dateTo') || '';
+        const status = queryParams.get('status') || 'any';
+        const providersStr = queryParams.get('providers');
+        const providers = providersStr ? providersStr.split(',') : [];
 
-      if (dateFrom || dateTo || status !== 'any' || providers.length > 0) {
-        this.initialFilters = {
-          dateFrom,
-          dateTo,
-          status,
-          providers,
-        };
-        // Update badges immediately
-        this.onFiltersChanged(this.initialFilters);
-      }
-    });
+        if (dateFrom || dateTo || status !== 'any' || providers.length > 0) {
+          this.initialFilters = {
+            dateFrom,
+            dateTo,
+            status,
+            providers,
+          };
+          // Update badges immediately
+          this.onFiltersChanged(this.initialFilters);
+        }
 
-    this.route.paramMap.subscribe(params => {
-      this.isPanelOpen.set(false);
-      this.selectedResult.set(null);
+        const searchId = params.get('id');
+        const isTemporary = searchId === 'temp';
 
-      const searchId = params.get('id');
-      if (searchId === 'temp') {
-        this.isTemporarySearch = true;
-        this.currentSearchId = 'temp';
+        if (searchId !== this.lastRouteSearchId) {
+          this.isPanelOpen.set(false);
+          this.selectedResult.set(null);
+          this.lastRouteSearchId = searchId;
 
-        // Check for query parameter
-        this.route.queryParamMap.subscribe(queryParams => {
+          if (!isTemporary && searchId) {
+            this.isTemporarySearch = false;
+            this.loadSearchFromHistory(searchId);
+          }
+        }
+
+        if (isTemporary) {
+          this.isTemporarySearch = true;
+          this.currentSearchId = 'temp';
+
           const query = queryParams.get('q');
           if (query) {
             this.searchQuery = query;
             this.onSearch();
           }
-        });
-      } else if (searchId) {
-        this.isTemporarySearch = false;
-        this.loadSearchFromHistory(searchId);
-      }
-    });
+        }
+      });
   }
 
   onSearchInput(value: string): void {
-    this.searchQuery = value;
-    const trimmedValue = value.trim();
-    if (trimmedValue.length >= this.suggestionsService.MINIMUM_QUERY_LENGTH) {
-      this.suggestionsService.search(trimmedValue);
-      this.showSuggestions.set(true);
-    } else {
-      this.suggestionsService.search('');
-      this.showSuggestions.set(false);
-    }
+    this.suggestionsController.onSearchInput(value);
   }
 
   onSuggestionSelect(suggestion: Suggestion): void {
-    this.searchQuery = suggestion.query;
-    this.showSuggestions.set(false);
-    this.onSearch();
+    this.suggestionsController.onSuggestionSelect(suggestion);
   }
 
   @HostListener('document:click', ['$event'])
@@ -178,18 +193,11 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   }
 
   onSearchFocus(): void {
-    // Show suggestions again if there are any and query is long enough
-    if (
-      this.suggestions().length > 0 &&
-      this.searchQuery.trim().length >= this.suggestionsService.MINIMUM_QUERY_LENGTH
-    ) {
-      this.showSuggestions.set(true);
-    }
+    this.suggestionsController.onSearchFocus();
   }
 
   onFiltersChanged(filters: FilterState): void {
-    this.currentFilters = filters;
-    this.activeFilters = this.filterBadgeService.generateBadges(filters);
+    this.filterBadgeController.onFiltersChanged(filters);
   }
 
   onSearch(): void {
@@ -199,17 +207,17 @@ export class SearchViewComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.isLoading = true;
-    this.hasSearched = true;
+    this.isLoading.set(true);
+    this.hasSearched.set(true);
 
     const offset = (this.currentPage() - 1) * this.pageSize();
     this.loadQueryMetadata(trimmedQuery);
 
     this.searchService.search(this.searchQuery, this.pageSize(), offset).subscribe({
       next: response => {
-        this.searchResults = response.results;
-        this.totalCount = response.total;
-        this.isLoading = false;
+        this.searchResults.set(response.results);
+        this.totalCount.set(response.total);
+        this.isLoading.set(false);
 
         // Only save search to history if it's not a temporary search or pagination change
         if (!this.isTemporarySearch && !this.isPaginationChange) {
@@ -225,9 +233,9 @@ export class SearchViewComponent implements OnInit, OnDestroy {
       },
       error: error => {
         console.error('Search error:', error);
-        this.isLoading = false;
-        this.searchResults = [];
-        this.totalCount = 0;
+        this.isLoading.set(false);
+        this.searchResults.set([]);
+        this.totalCount.set(0);
       },
     });
   }
@@ -237,8 +245,8 @@ export class SearchViewComponent implements OnInit, OnDestroy {
     if (searchItem) {
       this.currentSearchId = searchId;
       this.searchQuery = searchItem.filter.query;
-      this.isLoading = true;
-      this.hasSearched = true;
+      this.isLoading.set(true);
+      this.hasSearched.set(true);
       this.loadQueryMetadata(searchItem.filter.query);
 
       // Update pagination state from stored search
@@ -254,15 +262,15 @@ export class SearchViewComponent implements OnInit, OnDestroy {
         .search(searchItem.filter.query, searchItem.filter.size, searchItem.filter.offset)
         .subscribe({
           next: response => {
-            this.searchResults = response.results;
-            this.totalCount = response.total;
-            this.isLoading = false;
+            this.searchResults.set(response.results);
+            this.totalCount.set(response.total);
+            this.isLoading.set(false);
           },
           error: error => {
             console.error('Search error:', error);
-            this.isLoading = false;
-            this.searchResults = [];
-            this.totalCount = 0;
+            this.isLoading.set(false);
+            this.searchResults.set([]);
+            this.totalCount.set(0);
           },
         });
     }
@@ -271,9 +279,8 @@ export class SearchViewComponent implements OnInit, OnDestroy {
   private loadQueryMetadata(query: string): void {
     this.isMetadataLoading.set(true);
     this.queryMetadata.set(null);
-    this.metadataSubscription?.unsubscribe();
 
-    this.metadataSubscription = this.searchService
+    this.searchService
       .getQueryMetadata({
         query,
         interval: this.metadataInterval(),
@@ -282,6 +289,7 @@ export class SearchViewComponent implements OnInit, OnDestroy {
         top_archives: this.metadataTopArchives,
         last_n_months: this.metadataLastMonths,
       })
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: response => {
           this.queryMetadata.set(response);
@@ -354,10 +362,5 @@ export class SearchViewComponent implements OnInit, OnDestroy {
 
   private scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  ngOnDestroy(): void {
-    this.langChangeSubscription?.unsubscribe();
-    this.metadataSubscription?.unsubscribe();
   }
 }

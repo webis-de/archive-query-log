@@ -7,12 +7,18 @@ import {
   effect,
   ChangeDetectionStrategy,
   inject,
-  OnInit,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AqlButtonComponent, AqlTabMenuComponent, AqlPanelComponent, TabItem } from 'aql-stylings';
+import {
+  AqlButtonComponent,
+  AqlTabMenuComponent,
+  AqlPanelComponent,
+  AqlTooltipDirective,
+  TabItem,
+} from 'aql-stylings';
 import {
   SearchResult,
   SerpDetailsResponse,
@@ -32,12 +38,13 @@ import { LanguageService } from '../../services/language.service';
     AqlButtonComponent,
     AqlTabMenuComponent,
     AqlPanelComponent,
+    AqlTooltipDirective,
   ],
   templateUrl: './query-metadata-panel.component.html',
   styleUrl: './query-metadata-panel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppQueryMetadataPanelComponent implements OnInit {
+export class AppQueryMetadataPanelComponent {
   private readonly sessionService = inject(SessionService);
   private readonly sanitizer = inject(DomSanitizer);
   private readonly translate = inject(TranslateService);
@@ -78,14 +85,51 @@ export class AppQueryMetadataPanelComponent implements OnInit {
     return original !== null && current !== null && original._id !== current._id;
   });
 
-  ngOnInit(): void {
+  private lastLoadedUrl = '';
+  private lastLoadedSerpId = '';
+
+  constructor() {
     // Wait for translations to load before updating labels
-    this.translate.get('metadata.textView').subscribe(() => {
+    this.translate
+      .get('metadata.textView')
+      .pipe(takeUntilDestroyed())
+      .subscribe(() => {
+        this.updateTabLabels();
+      });
+
+    this.translate.onLangChange.pipe(takeUntilDestroyed()).subscribe(() => {
       this.updateTabLabels();
     });
 
-    this.translate.onLangChange.subscribe(() => {
-      this.updateTabLabels();
+    // load iframe for website tab
+    effect(() => {
+      const url = this.mementoUrlString();
+      if (url && this.activeTab() === 'website' && url !== this.lastLoadedUrl) {
+        this.lastLoadedUrl = url;
+        this.isIframeLoading.set(true);
+        this.iframeError.set(false);
+      }
+    });
+
+    // fetch SERP details
+    effect(() => {
+      const result = this.searchResult();
+      if (result && result._id !== this.lastLoadedSerpId) {
+        if (this.isInternalNavigation) {
+          this.isInternalNavigation = false;
+        } else {
+          this.originalResult.set(null);
+          this.history.set([]);
+        }
+
+        this.lastLoadedSerpId = result._id;
+        this.fetchSerpDetails(result._id);
+      } else if (!result) {
+        this.serpDetails.set(null);
+        this.lastLoadedSerpId = '';
+        this.originalResult.set(null);
+        this.history.set([]);
+      }
     });
   }
 
@@ -122,42 +166,6 @@ export class AppQueryMetadataPanelComponent implements OnInit {
         icon: 'bi-link-45deg',
       },
     ]);
-  }
-
-  private lastLoadedUrl = '';
-  private lastLoadedSerpId = '';
-
-  constructor() {
-    // load iframe for website tab
-    effect(() => {
-      const url = this.mementoUrlString();
-      if (url && this.activeTab() === 'website' && url !== this.lastLoadedUrl) {
-        this.lastLoadedUrl = url;
-        this.isIframeLoading.set(true);
-        this.iframeError.set(false);
-      }
-    });
-
-    // fetch SERP details
-    effect(() => {
-      const result = this.searchResult();
-      if (result && result._id !== this.lastLoadedSerpId) {
-        if (this.isInternalNavigation) {
-          this.isInternalNavigation = false;
-        } else {
-          this.originalResult.set(null);
-          this.history.set([]);
-        }
-
-        this.lastLoadedSerpId = result._id;
-        this.fetchSerpDetails(result._id);
-      } else if (!result) {
-        this.serpDetails.set(null);
-        this.lastLoadedSerpId = '';
-        this.originalResult.set(null);
-        this.history.set([]);
-      }
-    });
   }
 
   private fetchSerpDetails(serpId: string): void {
