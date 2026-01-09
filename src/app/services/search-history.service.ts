@@ -17,7 +17,7 @@ export class SearchHistoryService {
   private readonly projectService = inject(ProjectService);
 
   addSearch(filter: SearchFilter, projectId?: string): SearchHistoryItem {
-    const session = this.sessionService.currentSession || this.sessionService.initializeSession();
+    const session = this.sessionService.session() || this.sessionService.initializeSession();
 
     // Get or create active project
     let activeProjectId = projectId || session.activeProjectId;
@@ -50,7 +50,7 @@ export class SearchHistoryService {
   }
 
   getSearch(searchId: string): SearchHistoryItem | undefined {
-    const session = this.sessionService.currentSession;
+    const session = this.sessionService.session();
     if (!session) return undefined;
 
     for (const project of session.projects) {
@@ -67,7 +67,7 @@ export class SearchHistoryService {
   }
 
   updateSearch(searchId: string, filter: Partial<SearchFilter>): void {
-    const session = this.sessionService.currentSession;
+    const session = this.sessionService.session();
     if (!session) return;
 
     for (const project of session.projects) {
@@ -81,7 +81,7 @@ export class SearchHistoryService {
   }
 
   deleteSearch(searchId: string): void {
-    const session = this.sessionService.currentSession;
+    const session = this.sessionService.session();
     if (!session) return;
 
     for (const project of session.projects) {

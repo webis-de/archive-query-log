@@ -52,6 +52,9 @@ import { SessionService } from '../../services/session.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppSidebarComponent implements OnInit {
+  readonly projectService = inject(ProjectService);
+  readonly sessionService = inject(SessionService);
+  readonly router = inject(Router);
   readonly userData = input.required<UserData>();
   readonly newProject = output<void>();
   readonly isCollapsed = this.sessionService.sidebarCollapsed;
@@ -99,10 +102,6 @@ export class AppSidebarComponent implements OnInit {
         })),
     }));
   });
-
-  private readonly projectService = inject(ProjectService);
-  private readonly sessionService = inject(SessionService);
-  private readonly router = inject(Router);
 
   constructor() {
     this.router.events

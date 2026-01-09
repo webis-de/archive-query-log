@@ -5,7 +5,7 @@ import { UserSession } from '../models/project.model';
   providedIn: 'root',
 })
 export class SessionService {
-  readonly session = this.sessionSignal.asReadonly();
+  readonly session = computed(() => this.sessionSignal());
   readonly sidebarCollapsed = computed(() => this.sessionSignal()?.sidebarCollapsed ?? false);
 
   private readonly STORAGE_KEY = 'aql_user_session';
@@ -14,10 +14,6 @@ export class SessionService {
   constructor() {
     const session = this.loadSession();
     this.sessionSignal.set(session);
-  }
-
-  get currentSession(): UserSession | null {
-    return this.sessionSignal();
   }
 
   initializeSession(): UserSession {
@@ -50,7 +46,7 @@ export class SessionService {
   }
 
   setActiveProject(projectId: string): void {
-    const session = this.currentSession;
+    const session = this.session();
     if (session) {
       const updatedSession = {
         ...session,
@@ -61,11 +57,11 @@ export class SessionService {
   }
 
   getActiveProjectId(): string | undefined {
-    return this.currentSession?.activeProjectId;
+    return this.session()?.activeProjectId;
   }
 
   setSidebarCollapsed(collapsed: boolean): void {
-    const session = this.currentSession;
+    const session = this.session();
     if (session) {
       const updatedSession = {
         ...session,
@@ -73,10 +69,6 @@ export class SessionService {
       };
       this.updateSession(updatedSession);
     }
-  }
-
-  getSidebarCollapsed(): boolean {
-    return this.currentSession?.sidebarCollapsed ?? false;
   }
 
   generateId(): string {

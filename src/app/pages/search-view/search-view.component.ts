@@ -62,6 +62,17 @@ import { createFilterBadgeController } from '../../utils/filter-badges';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchViewComponent {
+  readonly searchService = inject(SearchService);
+  readonly searchHistoryService = inject(SearchHistoryService);
+  readonly filterBadgeService = inject(FilterBadgeService);
+  readonly suggestionsService = inject(SuggestionsService);
+  readonly sessionService = inject(SessionService);
+  readonly languageService = inject(LanguageService);
+  readonly route = inject(ActivatedRoute);
+  readonly router = inject(Router);
+  readonly translate = inject(TranslateService);
+  readonly elementRef = inject(ElementRef);
+  readonly destroyRef = inject(DestroyRef);
   searchQuery = '';
   readonly searchResults = signal<SearchResult[]>([]);
   readonly totalCount = signal<number>(0);
@@ -87,17 +98,6 @@ export class SearchViewComponent {
   readonly suggestions = this.suggestionsService.suggestions;
   readonly showSuggestions = signal<boolean>(false);
 
-  private readonly searchService = inject(SearchService);
-  private readonly searchHistoryService = inject(SearchHistoryService);
-  private readonly filterBadgeService = inject(FilterBadgeService);
-  private readonly suggestionsService = inject(SuggestionsService);
-  private readonly sessionService = inject(SessionService);
-  private readonly languageService = inject(LanguageService);
-  private readonly route = inject(ActivatedRoute);
-  private readonly router = inject(Router);
-  private readonly translate = inject(TranslateService);
-  private readonly elementRef = inject(ElementRef);
-  private readonly destroyRef = inject(DestroyRef);
   private currentFilters: FilterState | null = null;
   private lastRouteSearchId: string | null = null;
   private readonly suggestionsController = createSearchSuggestionsController({

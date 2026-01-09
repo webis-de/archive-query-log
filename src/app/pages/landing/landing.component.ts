@@ -50,6 +50,16 @@ import { createSearchSuggestionsController } from '../../utils/search-suggestion
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingComponent {
+  readonly searchHistoryService = inject(SearchHistoryService);
+  readonly projectService = inject(ProjectService);
+  readonly sessionService = inject(SessionService);
+  readonly filterBadgeService = inject(FilterBadgeService);
+  readonly suggestionsService = inject(SuggestionsService);
+  readonly router = inject(Router);
+  readonly route = inject(ActivatedRoute);
+  readonly translate = inject(TranslateService);
+  readonly elementRef = inject(ElementRef);
+  readonly destroyRef = inject(DestroyRef);
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
@@ -85,16 +95,6 @@ export class LandingComponent {
     }
   });
 
-  private readonly searchHistoryService = inject(SearchHistoryService);
-  private readonly projectService = inject(ProjectService);
-  private readonly sessionService = inject(SessionService);
-  private readonly filterBadgeService = inject(FilterBadgeService);
-  private readonly suggestionsService = inject(SuggestionsService);
-  private readonly router = inject(Router);
-  private readonly route = inject(ActivatedRoute);
-  private readonly translate = inject(TranslateService);
-  private readonly elementRef = inject(ElementRef);
-  private readonly destroyRef = inject(DestroyRef);
   private currentFilters: FilterState | null = null;
   private readonly filterBadgeController = createFilterBadgeController({
     filterBadgeService: this.filterBadgeService,

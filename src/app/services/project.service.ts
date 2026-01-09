@@ -17,7 +17,7 @@ export class ProjectService {
   }
 
   createProject(name?: string): Project {
-    const session = this.sessionService.currentSession || this.sessionService.initializeSession();
+    const session = this.sessionService.session() || this.sessionService.initializeSession();
 
     const project: Project = {
       id: this.sessionService.generateId(),
@@ -50,7 +50,7 @@ export class ProjectService {
   }
 
   updateProject(projectId: string, updates: Partial<Project>): void {
-    const session = this.sessionService.currentSession;
+    const session = this.sessionService.session();
     if (!session) return;
 
     const projectIndex = session.projects.findIndex(p => p.id === projectId);
@@ -71,7 +71,7 @@ export class ProjectService {
   }
 
   deleteProject(projectId: string): void {
-    const session = this.sessionService.currentSession;
+    const session = this.sessionService.session();
     if (!session) return;
 
     const updatedProjects = session.projects.filter(p => p.id !== projectId);
@@ -115,7 +115,7 @@ export class ProjectService {
   renameSearch(searchId: string, newLabel: string): void {
     if (!newLabel.trim()) return;
 
-    const session = this.sessionService.currentSession;
+    const session = this.sessionService.session();
     if (!session) return;
 
     for (const project of session.projects) {
@@ -133,7 +133,7 @@ export class ProjectService {
   }
 
   deleteSearch(searchId: string): void {
-    const session = this.sessionService.currentSession;
+    const session = this.sessionService.session();
     if (!session) return;
 
     for (const project of session.projects) {

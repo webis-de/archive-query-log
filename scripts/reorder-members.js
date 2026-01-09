@@ -19,10 +19,12 @@ const getOrderKey = member => {
     return `${accessibility}-constructor`;
   }
   if (Node.isMethodDeclaration(member)) {
-    return `${accessibility}-method`;
+    const scope = member.isStatic() ? "static" : "instance";
+    return `${accessibility}-${scope}-method`;
   }
   if (Node.isGetAccessorDeclaration(member) || Node.isSetAccessorDeclaration(member)) {
-    return `${accessibility}-method`;
+    const scope = member.isStatic() ? "static" : "instance";
+    return `${accessibility}-${scope}-method`;
   }
   if (Node.isPropertyDeclaration(member)) {
     const isStatic = member.isStatic();
@@ -42,9 +44,9 @@ const ORDER = [
   "public-constructor",
   "protected-constructor",
   "private-constructor",
-  "public-method",
-  "protected-method",
-  "private-method",
+  "public-instance-method",
+  "protected-instance-method",
+  "private-instance-method",
   "unknown",
 ];
 
