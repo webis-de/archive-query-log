@@ -18,7 +18,6 @@ export class AqlCheckboxComponent {
   readonly disabled = input<boolean>(false);
   readonly indeterminate = input<boolean>(false);
   readonly size = input<CheckboxSize>('md');
-
   readonly checkboxChange = output<boolean>();
   readonly indeterminateChange = output<boolean>();
 

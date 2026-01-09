@@ -30,30 +30,29 @@ export type DropdownPosition =
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AqlDropdownComponent implements OnDestroy {
-  private readonly elementRef = inject(ElementRef<HTMLElement>);
-  private readonly platformId = inject(PLATFORM_ID);
-
   // Track currently open dropdown globally
   private static currentlyOpenDropdown: AqlDropdownComponent | null = null;
 
   readonly contentElement = viewChild<ElementRef<HTMLElement>>('contentElement');
-
   readonly matchTriggerWidth = input(false, { transform: booleanAttribute });
   readonly contentWidth = input<string | null>('14rem');
   readonly position = input<DropdownPosition | undefined>('bottom');
   readonly open = input<boolean | undefined>(undefined);
   readonly openChange = output<boolean>();
-
   readonly internalOpen = signal(false);
-  protected readonly fixedStyles = signal<Record<string, string | number>>({});
-  private cleanupFn: (() => void) | null = null;
-
   // Use external open if provided, otherwise use internal state
   readonly isOpen = computed(() => {
     const external = this.open();
     return external !== undefined ? external : this.internalOpen();
   });
+  @HostBinding('class.dropdown')
+  readonly baseDropdownClass = true;
 
+  protected readonly fixedStyles = signal<Record<string, string | number>>({});
+
+  private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly platformId = inject(PLATFORM_ID);
+  private cleanupFn: (() => void) | null = null;
   private readonly positionSegments = computed<ReadonlySet<DropdownPositionSegment>>(() => {
     const rawPosition = this.position() ?? 'bottom';
     const segments = rawPosition
@@ -66,9 +65,6 @@ export class AqlDropdownComponent implements OnDestroy {
 
     return new Set<DropdownPositionSegment>(segments.length ? segments : ['bottom']);
   });
-
-  @HostBinding('class.dropdown')
-  readonly baseDropdownClass = true;
 
   @HostBinding('class.dropdown-open')
   get isDropdownOpen(): boolean {

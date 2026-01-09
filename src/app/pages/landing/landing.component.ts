@@ -50,19 +50,6 @@ import { createSearchSuggestionsController } from '../../utils/search-suggestion
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingComponent {
-  private readonly searchHistoryService = inject(SearchHistoryService);
-  private readonly projectService = inject(ProjectService);
-  private readonly sessionService = inject(SessionService);
-  private readonly filterBadgeService = inject(FilterBadgeService);
-  private readonly suggestionsService = inject(SuggestionsService);
-  private readonly router = inject(Router);
-  private readonly route = inject(ActivatedRoute);
-  private readonly translate = inject(TranslateService);
-  private readonly elementRef = inject(ElementRef);
-  private readonly destroyRef = inject(DestroyRef);
-
-  private currentFilters: FilterState | null = null;
-
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
@@ -72,7 +59,6 @@ export class LandingComponent {
     this.route.queryParams.pipe(map(params => params['temp'] === 'true')),
     { initialValue: false },
   );
-
   readonly suggestions = this.suggestionsService.suggestions;
   readonly activeProject = computed(() => {
     const currentSession = this.session();
@@ -85,7 +71,6 @@ export class LandingComponent {
     return null;
   });
   readonly hasProjects = computed(() => this.projects().length > 0);
-
   readonly landingMessage = computed(() => {
     if (this.isTemporaryMode()) {
       return this.translate.instant('landing.temporarySearchMode');
@@ -99,6 +84,18 @@ export class LandingComponent {
       return this.translate.instant('landing.createProjectHint');
     }
   });
+
+  private readonly searchHistoryService = inject(SearchHistoryService);
+  private readonly projectService = inject(ProjectService);
+  private readonly sessionService = inject(SessionService);
+  private readonly filterBadgeService = inject(FilterBadgeService);
+  private readonly suggestionsService = inject(SuggestionsService);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
+  private readonly translate = inject(TranslateService);
+  private readonly elementRef = inject(ElementRef);
+  private readonly destroyRef = inject(DestroyRef);
+  private currentFilters: FilterState | null = null;
   private readonly filterBadgeController = createFilterBadgeController({
     filterBadgeService: this.filterBadgeService,
     translate: this.translate,

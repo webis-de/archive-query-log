@@ -62,6 +62,31 @@ import { createFilterBadgeController } from '../../utils/filter-badges';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchViewComponent {
+  searchQuery = '';
+  readonly searchResults = signal<SearchResult[]>([]);
+  readonly totalCount = signal<number>(0);
+  readonly isLoading = signal<boolean>(false);
+  readonly hasSearched = signal<boolean>(false);
+  currentSearchId?: string;
+  isTemporarySearch = false;
+  isPaginationChange = false;
+  activeFilters: string[] = ['All'];
+  initialFilters: FilterState | null = null;
+  readonly metadataInterval = signal<'day' | 'week' | 'month'>('month');
+  readonly metadataTopQueries = 10;
+  readonly metadataTopProviders = 5;
+  readonly metadataTopArchives = 5;
+  readonly metadataLastMonths = 36;
+  readonly isPanelOpen = signal(false);
+  readonly selectedResult = signal<SearchResult | null>(null);
+  readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
+  readonly currentPage = signal<number>(1);
+  readonly pageSize = signal<number>(10);
+  readonly queryMetadata = signal<QueryMetadataResponse | null>(null);
+  readonly isMetadataLoading = signal<boolean>(false);
+  readonly suggestions = this.suggestionsService.suggestions;
+  readonly showSuggestions = signal<boolean>(false);
+
   private readonly searchService = inject(SearchService);
   private readonly searchHistoryService = inject(SearchHistoryService);
   private readonly filterBadgeService = inject(FilterBadgeService);
@@ -73,34 +98,7 @@ export class SearchViewComponent {
   private readonly translate = inject(TranslateService);
   private readonly elementRef = inject(ElementRef);
   private readonly destroyRef = inject(DestroyRef);
-
-  searchQuery = '';
-  readonly searchResults = signal<SearchResult[]>([]);
-  readonly totalCount = signal<number>(0);
-  readonly isLoading = signal<boolean>(false);
-  readonly hasSearched = signal<boolean>(false);
-  currentSearchId?: string;
-  isTemporarySearch = false;
-  isPaginationChange = false;
-  activeFilters: string[] = ['All'];
-  initialFilters: FilterState | null = null;
   private currentFilters: FilterState | null = null;
-
-  readonly metadataInterval = signal<'day' | 'week' | 'month'>('month');
-  readonly metadataTopQueries = 10;
-  readonly metadataTopProviders = 5;
-  readonly metadataTopArchives = 5;
-  readonly metadataLastMonths = 36;
-
-  readonly isPanelOpen = signal(false);
-  readonly selectedResult = signal<SearchResult | null>(null);
-  readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
-  readonly currentPage = signal<number>(1);
-  readonly pageSize = signal<number>(10);
-  readonly queryMetadata = signal<QueryMetadataResponse | null>(null);
-  readonly isMetadataLoading = signal<boolean>(false);
-  readonly suggestions = this.suggestionsService.suggestions;
-  readonly showSuggestions = signal<boolean>(false);
   private lastRouteSearchId: string | null = null;
   private readonly suggestionsController = createSearchSuggestionsController({
     suggestionsService: this.suggestionsService,
@@ -240,6 +238,49 @@ export class SearchViewComponent {
     });
   }
 
+  onMetadataIntervalChange(interval: 'day' | 'week' | 'month'): void {
+    this.metadataInterval.set(interval);
+    if (this.searchQuery.trim()) {
+      this.loadQueryMetadata(this.searchQuery.trim());
+    }
+  }
+
+  formatDate(dateString: string): string {
+    return this.languageService.formatDate(dateString);
+  }
+
+  onResultClick(result: SearchResult): void {
+    this.selectedResult.set(result);
+    this.isPanelOpen.set(true);
+
+    if (!this.sessionService.sidebarCollapsed()) {
+      this.sessionService.setSidebarCollapsed(true);
+    }
+  }
+
+  onRelatedSerpSelected(result: SearchResult): void {
+    this.selectedResult.set(result);
+  }
+
+  onClosePanel(): void {
+    this.isPanelOpen.set(false);
+  }
+
+  onPageChange(page: number): void {
+    this.currentPage.set(page);
+    this.isPaginationChange = true;
+    this.onSearch();
+    this.scrollToTop();
+  }
+
+  onPageSizeChange(size: number): void {
+    this.pageSize.set(size);
+    this.currentPage.set(1);
+    this.isPaginationChange = true;
+    this.updateSearchHistoryPageSize(size);
+    this.onSearch();
+  }
+
   private loadSearchFromHistory(searchId: string): void {
     const searchItem = this.searchHistoryService.getSearch(searchId);
     if (searchItem) {
@@ -300,49 +341,6 @@ export class SearchViewComponent {
           this.isMetadataLoading.set(false);
         },
       });
-  }
-
-  onMetadataIntervalChange(interval: 'day' | 'week' | 'month'): void {
-    this.metadataInterval.set(interval);
-    if (this.searchQuery.trim()) {
-      this.loadQueryMetadata(this.searchQuery.trim());
-    }
-  }
-
-  formatDate(dateString: string): string {
-    return this.languageService.formatDate(dateString);
-  }
-
-  onResultClick(result: SearchResult): void {
-    this.selectedResult.set(result);
-    this.isPanelOpen.set(true);
-
-    if (!this.sessionService.sidebarCollapsed()) {
-      this.sessionService.setSidebarCollapsed(true);
-    }
-  }
-
-  onRelatedSerpSelected(result: SearchResult): void {
-    this.selectedResult.set(result);
-  }
-
-  onClosePanel(): void {
-    this.isPanelOpen.set(false);
-  }
-
-  onPageChange(page: number): void {
-    this.currentPage.set(page);
-    this.isPaginationChange = true;
-    this.onSearch();
-    this.scrollToTop();
-  }
-
-  onPageSizeChange(size: number): void {
-    this.pageSize.set(size);
-    this.currentPage.set(1);
-    this.isPaginationChange = true;
-    this.updateSearchHistoryPageSize(size);
-    this.onSearch();
   }
 
   private updateSearchHistoryPageSize(size: number): void {

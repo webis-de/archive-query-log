@@ -39,9 +39,7 @@ export class AqlButtonComponent {
   readonly isLoading = input<boolean>(false);
   readonly size = input<'xs' | 'sm' | 'md' | 'lg'>('md');
   readonly align = input<'start' | 'center' | 'end'>('center');
-
   readonly buttonClick = output<MouseEvent>();
-
   readonly iconClasses = computed<string>(() => {
     if (this.btnType() !== 'icon') return '';
 
@@ -60,7 +58,6 @@ export class AqlButtonComponent {
 
     return classes.join(' ');
   });
-
   readonly buttonClasses = computed<string>(() => {
     if (this.btnType() === 'icon') {
       return this.getIconButtonClasses();
@@ -117,6 +114,12 @@ export class AqlButtonComponent {
     return classes.join(' ');
   });
 
+  onClick(event: MouseEvent): void {
+    if (!this.disabled()) {
+      this.buttonClick.emit(event);
+    }
+  }
+
   private getIconButtonClasses(): string {
     const classes: string[] = [
       'inline-flex',
@@ -157,11 +160,5 @@ export class AqlButtonComponent {
     }
 
     return classes.join(' ');
-  }
-
-  onClick(event: MouseEvent): void {
-    if (!this.disabled()) {
-      this.buttonClick.emit(event);
-    }
   }
 }

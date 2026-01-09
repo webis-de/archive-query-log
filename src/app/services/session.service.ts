@@ -5,6 +5,9 @@ import { UserSession } from '../models/project.model';
   providedIn: 'root',
 })
 export class SessionService {
+  readonly session = this.sessionSignal.asReadonly();
+  readonly sidebarCollapsed = computed(() => this.sessionSignal()?.sidebarCollapsed ?? false);
+
   private readonly STORAGE_KEY = 'aql_user_session';
   private readonly sessionSignal = signal<UserSession | null>(null);
 
@@ -12,9 +15,6 @@ export class SessionService {
     const session = this.loadSession();
     this.sessionSignal.set(session);
   }
-
-  readonly session = this.sessionSignal.asReadonly();
-  readonly sidebarCollapsed = computed(() => this.sessionSignal()?.sidebarCollapsed ?? false);
 
   get currentSession(): UserSession | null {
     return this.sessionSignal();

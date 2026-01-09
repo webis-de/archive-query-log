@@ -42,13 +42,9 @@ import { LanguageService } from '../../services/language.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterDropdownComponent {
-  private readonly languageService = inject(LanguageService);
-
   readonly dropdown = viewChild<AqlDropdownComponent>(AqlDropdownComponent);
-
   readonly filters = input<FilterState | null>(null);
   readonly filtersChanged = output<FilterState>();
-
   readonly dateFrom = signal<string>('');
   readonly dateTo = signal<string>('');
   readonly status = signal<string>('any');
@@ -60,13 +56,9 @@ export class FilterDropdownComponent {
     { id: 'duckduckgo', label: 'DuckDuckGo', checked: false },
     { id: 'yahoo', label: 'Yahoo', checked: false },
   ]);
-
-  private appliedClose = false;
-
   readonly todayDate = computed(() => {
     return this.languageService.formatDateForInput(new Date());
   });
-
   readonly maxDateFrom = computed(() => {
     const dateTo = this.dateTo();
     if (dateTo) {
@@ -76,7 +68,6 @@ export class FilterDropdownComponent {
     }
     return this.todayDate();
   });
-
   readonly minDateTo = computed(() => {
     const dateFrom = this.dateFrom();
     if (!dateFrom) return '';
@@ -85,8 +76,10 @@ export class FilterDropdownComponent {
     fromDate.setDate(fromDate.getDate() + 1);
     return this.languageService.formatDateForInput(fromDate);
   });
-
   readonly maxDateTo = computed(() => this.todayDate());
+
+  private readonly languageService = inject(LanguageService);
+  private appliedClose = false;
 
   constructor() {
     effect(() => {
@@ -137,21 +130,6 @@ export class FilterDropdownComponent {
     this.dropdown()?.onContentClick(event);
   }
 
-  private emitCurrentState(): void {
-    const selectedProviders = this.providers()
-      .filter(p => p.checked && p.label !== 'All')
-      .map(p => p.label);
-
-    const currentState: FilterState = {
-      dateFrom: this.dateFrom(),
-      dateTo: this.dateTo(),
-      status: this.status(),
-      providers: selectedProviders,
-    };
-
-    this.filtersChanged.emit(currentState);
-  }
-
   updateDateFrom(value: string): void {
     this.dateFrom.set(value);
   }
@@ -189,5 +167,20 @@ export class FilterDropdownComponent {
         return updatedProviders;
       }
     });
+  }
+
+  private emitCurrentState(): void {
+    const selectedProviders = this.providers()
+      .filter(p => p.checked && p.label !== 'All')
+      .map(p => p.label);
+
+    const currentState: FilterState = {
+      dateFrom: this.dateFrom(),
+      dateTo: this.dateTo(),
+      status: this.status(),
+      providers: selectedProviders,
+    };
+
+    this.filtersChanged.emit(currentState);
   }
 }

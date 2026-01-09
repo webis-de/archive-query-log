@@ -9,6 +9,7 @@ export abstract class BaseEChartComponent implements OnDestroy {
 
   protected readonly chartContainer = viewChild<ElementRef<HTMLDivElement>>('chartContainer');
   protected chart: echarts.ECharts | null = null;
+
   private resizeObserver?: ResizeObserver;
   private resizeListener?: () => void;
   private initRetryTimeoutId: number | null = null;
@@ -34,6 +35,8 @@ export abstract class BaseEChartComponent implements OnDestroy {
     this.chart?.dispose();
     this.chart = null;
   }
+
+  protected abstract buildDefaultOption(): echarts.EChartsOption;
 
   private ensureChart(element: HTMLDivElement): void {
     if (this.chart) return;
@@ -72,6 +75,4 @@ export abstract class BaseEChartComponent implements OnDestroy {
     const option = this.options() ?? this.buildDefaultOption();
     this.chart.setOption(option, { notMerge: true, lazyUpdate: true });
   }
-
-  protected abstract buildDefaultOption(): echarts.EChartsOption;
 }

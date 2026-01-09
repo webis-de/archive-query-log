@@ -44,10 +44,8 @@ export class AqlInputFieldComponent implements ControlValueAccessor {
   readonly shape = input<InputShape>('square');
   readonly size = input<InputSize>('md');
   readonly color = input<InputColor>('bordered');
-
   value = '';
   disabled = false;
-
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (value: string) => void = () => {};
   // eslint-disable-next-line @typescript-eslint/no-empty-function

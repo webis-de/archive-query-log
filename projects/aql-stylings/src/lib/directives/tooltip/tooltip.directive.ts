@@ -38,6 +38,10 @@ export class AqlTooltipDirective implements OnDestroy {
     this.hide();
   }
 
+  ngOnDestroy(): void {
+    this.hide();
+  }
+
   private show(): void {
     if (this.tooltipElement) return;
 
@@ -101,9 +105,5 @@ export class AqlTooltipDirective implements OnDestroy {
 
     this.renderer.setStyle(this.tooltipElement, 'top', `${top}px`);
     this.renderer.setStyle(this.tooltipElement, 'left', `${left}px`);
-  }
-
-  ngOnDestroy(): void {
-    this.hide();
   }
 }

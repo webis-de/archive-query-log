@@ -7,14 +7,14 @@ import { ProjectService } from './project.service';
   providedIn: 'root',
 })
 export class SearchHistoryService {
-  private readonly sessionService = inject(SessionService);
-  private readonly projectService = inject(ProjectService);
-
   readonly searchHistory = computed(() => {
     const session = this.sessionService.session();
     if (!session) return [];
     return session.projects.flatMap(p => p.searches);
   });
+
+  private readonly sessionService = inject(SessionService);
+  private readonly projectService = inject(ProjectService);
 
   addSearch(filter: SearchFilter, projectId?: string): SearchHistoryItem {
     const session = this.sessionService.currentSession || this.sessionService.initializeSession();

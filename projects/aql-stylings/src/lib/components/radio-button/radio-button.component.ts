@@ -16,14 +16,11 @@ export class AqlRadioButtonComponent {
   readonly label = input<string>('');
   readonly name = input<string>('radio-group');
   readonly value = input<string | number>('');
-
   // Model Binding
   readonly checked = input<boolean>(false);
   readonly disabled = input<boolean>(false);
-
   // DaisyUI Größen
   readonly size = input<RadioSize>('md');
-
   readonly radioChange = output<string | number>();
 
   onChange() {

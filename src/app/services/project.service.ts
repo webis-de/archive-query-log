@@ -6,15 +6,15 @@ import { SessionService } from './session.service';
   providedIn: 'root',
 })
 export class ProjectService {
+  readonly projects = computed(() => {
+    return this.sessionService.session()?.projects ?? [];
+  });
+
   private readonly sessionService = inject(SessionService);
 
   constructor() {
     this.sessionService.initializeSession();
   }
-
-  readonly projects = computed(() => {
-    return this.sessionService.session()?.projects ?? [];
-  });
 
   createProject(name?: string): Project {
     const session = this.sessionService.currentSession || this.sessionService.initializeSession();

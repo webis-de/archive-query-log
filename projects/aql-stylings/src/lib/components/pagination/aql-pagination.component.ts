@@ -83,7 +83,6 @@ export class AqlPaginationComponent {
 
     return pages;
   });
-
   readonly isFirstPage = computed(() => this.currentPage() === 1);
   readonly isLastPage = computed(() => this.currentPage() === this.totalPages());
   readonly startItem = computed(() => {

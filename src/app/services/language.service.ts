@@ -11,15 +11,15 @@ export interface Language {
   providedIn: 'root',
 })
 export class LanguageService {
-  private readonly STORAGE_KEY = 'app_language';
-  private readonly translate = inject(TranslateService);
   readonly availableLanguages: Language[] = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
   ];
-
   currentLanguage = signal<Language>(this.availableLanguages[0]);
+
+  private readonly STORAGE_KEY = 'app_language';
+  private readonly translate = inject(TranslateService);
 
   constructor() {
     this.translate.addLangs(this.availableLanguages.map(l => l.code));

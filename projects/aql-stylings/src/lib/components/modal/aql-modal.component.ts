@@ -25,7 +25,6 @@ export type ModalAlign = 'start' | 'center' | 'end';
 })
 export class AqlModalComponent implements OnDestroy {
   dialogElement = viewChild<ElementRef<HTMLDialogElement>>('dialogElement');
-
   modalTitle = input<string>();
   position = input<ModalPosition>('middle');
   align = input<ModalAlign>('center');
@@ -34,14 +33,9 @@ export class AqlModalComponent implements OnDestroy {
   closeOnEscape = input(true);
   showCloseButton = input(true);
   maxWidth = input<'sm' | 'md' | 'lg' | 'xl' | 'full'>('lg');
-
   modalOpen = output<void>();
   modalClose = output<void>();
-
   isOpen = signal(false);
-
-  private cancelHandler?: (event: Event) => void;
-
   modalClasses = computed(() => {
     const classes: string[] = ['modal'];
 
@@ -59,7 +53,6 @@ export class AqlModalComponent implements OnDestroy {
 
     return classes.join(' ');
   });
-
   modalBoxClasses = computed(() => {
     const classes: string[] = ['modal-box'];
 
@@ -83,6 +76,8 @@ export class AqlModalComponent implements OnDestroy {
 
     return classes.join(' ');
   });
+
+  private cancelHandler?: (event: Event) => void;
 
   ngOnDestroy(): void {
     this.detachCancelHandler();

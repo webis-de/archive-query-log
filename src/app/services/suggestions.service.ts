@@ -15,13 +15,9 @@ export interface Suggestion {
   providedIn: 'root',
 })
 export class SuggestionsService {
-  private readonly apiService = inject(ApiService);
-  private readonly searchSubject = new Subject<string>();
-
   readonly MINIMUM_QUERY_LENGTH = 3;
   readonly DEBOUNCE_TIME_MS = 300;
   readonly MAX_SUGGESTIONS = 5;
-
   // Automatically debounces and filters queries less than minimum length.
   readonly suggestions = toSignal(
     this.searchSubject.pipe(
@@ -36,6 +32,9 @@ export class SuggestionsService {
     ),
     { initialValue: [] as Suggestion[] },
   );
+
+  private readonly apiService = inject(ApiService);
+  private readonly searchSubject = new Subject<string>();
 
   search(query: string): void {
     this.searchSubject.next(query);

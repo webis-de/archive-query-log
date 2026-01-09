@@ -52,58 +52,21 @@ import { SessionService } from '../../services/session.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppSidebarComponent implements OnInit {
-  private readonly projectService = inject(ProjectService);
-  private readonly sessionService = inject(SessionService);
-  private readonly router = inject(Router);
-
   readonly userData = input.required<UserData>();
   readonly newProject = output<void>();
-
   readonly isCollapsed = this.sessionService.sidebarCollapsed;
   readonly selectedItemId = signal<string | null>(null);
   readonly editingProjectId = signal<string | null>(null);
   readonly editingSearchId = signal<string | null>(null);
   readonly editingValue = signal<string>('');
-
   readonly deleteModal = viewChild<AqlModalComponent>('deleteModal');
-
   readonly itemToDelete = signal<{
     type: 'project' | 'search';
     id: string;
     name: string;
   } | null>(null);
-
   readonly allMenuItems = viewChildren(AqlMenuItemComponent);
-
   readonly projects = this.projectService.projects;
-
-  constructor() {
-    this.router.events
-      .pipe(
-        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
-        takeUntilDestroyed(),
-      )
-      .subscribe((event: NavigationEnd) => {
-        this.updateSelectedItemFromRoute(event.url);
-      });
-  }
-
-  ngOnInit(): void {
-    this.updateSelectedItemFromRoute(this.router.url);
-  }
-
-  private updateSelectedItemFromRoute(url: string): void {
-    // Extract search ID from URL
-    const match = url.match(/\/s\/([^/]+)/);
-    if (match && match[1] !== 'temp') {
-      const searchId = match[1];
-      this.selectedItemId.set(searchId);
-    } else {
-      // Clear selection if on landing page or temp search
-      this.selectedItemId.set(null);
-    }
-  }
-
   readonly filteredProjects = computed(() => {
     const allProjects = this.projects();
 
@@ -136,6 +99,25 @@ export class AppSidebarComponent implements OnInit {
         })),
     }));
   });
+
+  private readonly projectService = inject(ProjectService);
+  private readonly sessionService = inject(SessionService);
+  private readonly router = inject(Router);
+
+  constructor() {
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(),
+      )
+      .subscribe((event: NavigationEnd) => {
+        this.updateSelectedItemFromRoute(event.url);
+      });
+  }
+
+  ngOnInit(): void {
+    this.updateSelectedItemFromRoute(this.router.url);
+  }
 
   onItemSelected(itemId: string): void {
     this.router.navigate(['/s', itemId]);
@@ -242,24 +224,6 @@ export class AppSidebarComponent implements OnInit {
     }
   }
 
-  private focusAndSelectInput(selector: string): void {
-    setTimeout(() => {
-      const inputField = document.querySelector(selector);
-      if (inputField) {
-        // Find the native input element inside aql-input-field
-        const nativeInput = inputField.querySelector('input') as HTMLInputElement;
-        if (nativeInput) {
-          nativeInput.focus();
-          nativeInput.select();
-        } else {
-          console.warn('Native input not found for selector:', selector);
-        }
-      } else {
-        console.warn('Input field not found for selector:', selector);
-      }
-    }, 50); // render timeout
-  }
-
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     const target = event.target as HTMLElement;
@@ -337,5 +301,35 @@ export class AppSidebarComponent implements OnInit {
   cancelDelete(): void {
     this.deleteModal()?.close();
     this.itemToDelete.set(null);
+  }
+
+  private updateSelectedItemFromRoute(url: string): void {
+    // Extract search ID from URL
+    const match = url.match(/\/s\/([^/]+)/);
+    if (match && match[1] !== 'temp') {
+      const searchId = match[1];
+      this.selectedItemId.set(searchId);
+    } else {
+      // Clear selection if on landing page or temp search
+      this.selectedItemId.set(null);
+    }
+  }
+
+  private focusAndSelectInput(selector: string): void {
+    setTimeout(() => {
+      const inputField = document.querySelector(selector);
+      if (inputField) {
+        // Find the native input element inside aql-input-field
+        const nativeInput = inputField.querySelector('input') as HTMLInputElement;
+        if (nativeInput) {
+          nativeInput.focus();
+          nativeInput.select();
+        } else {
+          console.warn('Native input not found for selector:', selector);
+        }
+      } else {
+        console.warn('Input field not found for selector:', selector);
+      }
+    }, 50); // render timeout
   }
 }

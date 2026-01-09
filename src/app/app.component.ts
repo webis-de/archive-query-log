@@ -15,11 +15,7 @@ import { UserData } from './models/user-data.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  private readonly sessionService = inject(SessionService);
-  private readonly projectService = inject(ProjectService);
-
   title = 'aql-frontend';
-
   readonly userData = computed<UserData>(() => {
     const projects = this.projectService.projects();
 
@@ -41,6 +37,9 @@ export class AppComponent {
       })),
     };
   });
+
+  private readonly sessionService = inject(SessionService);
+  private readonly projectService = inject(ProjectService);
 
   constructor() {
     this.sessionService.initializeSession();
