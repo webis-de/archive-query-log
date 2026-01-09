@@ -49,6 +49,9 @@ htmlcov/
 .env.local
 .env.*.local
 
+# Kubernetes secrets - NEVER commit real secrets
+k8s/secret.yaml
+
 # Database
 *.db
 *.sqlite

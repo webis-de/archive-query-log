@@ -1,0 +1,77 @@
+# Backend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aql-backend
+  namespace: user-ajjxp
+  labels:
+    app: aql-backend
+    component: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aql-backend
+  template:
+    metadata:
+      labels:
+        app: aql-backend
+        component: backend
+    spec:
+      imagePullSecrets:
+        - name: gitlab-registry
+      containers:
+        - name: aql-backend
+          # Uni Jena GitLab Container Registry
+          image: git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          env:
+            # From ConfigMap (non-sensitive)
+            - name: ES_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: aql-backend-config
+                  key: ES_HOST
+            - name: ES_VERIFY
+              valueFrom:
+                configMapKeyRef:
+                  name: aql-backend-config
+                  key: ES_VERIFY
+            - name: ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: aql-backend-config
+                  key: ENVIRONMENT
+            # From Secret (sensitive)
+            - name: ES_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aql-backend-secrets
+                  key: ES_API_KEY
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+      restartPolicy: Always

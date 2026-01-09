@@ -1,0 +1,18 @@
+# Backend Service - Internal ClusterIP
+apiVersion: v1
+kind: Service
+metadata:
+  name: aql-backend
+  namespace: user-ajjxp
+  labels:
+    app: aql-backend
+    component: backend
+spec:
+  type: ClusterIP
+  selector:
+    app: aql-backend
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+      protocol: TCP

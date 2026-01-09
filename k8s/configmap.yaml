@@ -1,0 +1,16 @@
+# Backend ConfigMap - Non-sensitive configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aql-backend-config
+  namespace: user-ajjxp
+  labels:
+    app: aql-backend
+    component: backend
+data:
+  # Elasticsearch host URL
+  ES_HOST: "https://elasticsearch.srv.webis.de:9200"
+  # SSL verification (set to "true" in production if using valid certs)
+  ES_VERIFY: "false"
+  # Application environment
+  ENVIRONMENT: "production"
