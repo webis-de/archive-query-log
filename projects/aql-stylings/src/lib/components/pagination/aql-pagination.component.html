@@ -1,18 +1,17 @@
 <div class="relative w-full pointer-events-none">
   @if (showPageSizeSelector()) {
     <div class="absolute left-0 z-10 pointer-events-auto transition-all duration-300">
-      <div class="pagination-selector bg-base-100/90 backdrop-blur-xl border border-base-content/10 rounded-xl shadow-2xl">
+      <div
+        class="pagination-selector bg-base-100/90 backdrop-blur-xl border border-base-content/10 rounded-xl shadow-2xl"
+      >
         <div class="flex items-center gap-2 px-2 py-2">
           @if (showSelectorLabel()) {
             <span class="text-sm text-base-content/70">Per page:</span>
           }
           <aql-dropdown position="top end" [contentWidth]="'4.7rem'" #dropdown>
-            <button
-              trigger
-              class="btn btn-md btn-ghost normal-case gap-2"
-            >
+            <button trigger class="btn btn-md btn-ghost normal-case gap-2">
               <span>{{ selectedPageSize() }}</span>
-              <i [class]="dropdown.open ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+              <i [class]="dropdown.open() ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
             </button>
             <ul content class="w-full">
               @for (option of pageSizeOptions(); track option) {
@@ -33,64 +32,68 @@
     </div>
   }
 
-  <div
-    class="w-full transition-all duration-300"
-    [ngClass]="contentClass()"
-  >
-    <div
-      class="relative flex items-center w-full"
-      [style.max-width]="contentMaxWidth() ?? '100%'"
-    >
+  <div class="w-full transition-all duration-300" [ngClass]="contentClass()">
+    <div class="relative flex items-center w-full" [style.max-width]="contentMaxWidth() ?? '100%'">
       <div class="flex justify-center w-full">
-        <div class="pagination-buttons bg-base-100/90 backdrop-blur-xl border border-base-content/10 rounded-xl shadow-2xl pointer-events-auto">
+        <div
+          class="pagination-buttons bg-base-100/90 backdrop-blur-xl border border-base-content/10 rounded-xl shadow-2xl pointer-events-auto"
+        >
           <div class="join px-2 py-2">
-        <aql-button
-          class="join-item"
-          [size]="size()"
-          [disabled]="isFirstPage()"
-          [aqlTooltip]="isFirstPage() ? ('tooltip.pagination.firstPage' | translate) : ('tooltip.pagination.previousPage' | translate)"
-          [tooltipPosition]="'top'"
-          (buttonClick)="goToPreviousPage()"
-          [attr.aria-label]="'tooltip.pagination.previousPage' | translate"
-        >
-          «
-        </aql-button>
-
-        @for (page of visiblePages(); track trackByPage($index, page)) {
-          @if (isPageNumber(page)) {
-            <aql-button
-              class="join-item"
-              [btnType]="page === currentPage() ? 'primary' : 'default'"
-              [size]="size()"
-              (buttonClick)="goToPage(page)"
-            >
-              {{ page }}
-            </aql-button>
-          } @else {
             <aql-button
               class="join-item"
               [size]="size()"
-              [disabled]="true"
-              [aqlTooltip]="'tooltip.pagination.morePages' | translate"
+              [disabled]="isFirstPage()"
+              [aqlTooltip]="
+                isFirstPage()
+                  ? ('tooltip.pagination.firstPage' | translate)
+                  : ('tooltip.pagination.previousPage' | translate)
+              "
               [tooltipPosition]="'top'"
-              [attr.aria-label]="'tooltip.pagination.morePages' | translate"
+              (buttonClick)="goToPreviousPage()"
+              [attr.aria-label]="'tooltip.pagination.previousPage' | translate"
             >
-              ...
+              «
             </aql-button>
-          }
-        }
 
-        <aql-button
-          class="join-item"
-          [size]="size()"
-          [disabled]="isLastPage()"
-          [aqlTooltip]="isLastPage() ? ('tooltip.pagination.lastPage' | translate) : ('tooltip.pagination.nextPage' | translate)"
-          [tooltipPosition]="'top'"
-          (buttonClick)="goToNextPage()"
-          [attr.aria-label]="'tooltip.pagination.nextPage' | translate"
-        >
-          »
-        </aql-button>
+            @for (page of visiblePages(); track trackByPage($index, page)) {
+              @if (isPageNumber(page)) {
+                <aql-button
+                  class="join-item"
+                  [btnType]="page === currentPage() ? 'primary' : 'default'"
+                  [size]="size()"
+                  (buttonClick)="goToPage(page)"
+                >
+                  {{ page }}
+                </aql-button>
+              } @else {
+                <aql-button
+                  class="join-item"
+                  [size]="size()"
+                  [disabled]="true"
+                  [aqlTooltip]="'tooltip.pagination.morePages' | translate"
+                  [tooltipPosition]="'top'"
+                  [attr.aria-label]="'tooltip.pagination.morePages' | translate"
+                >
+                  ...
+                </aql-button>
+              }
+            }
+
+            <aql-button
+              class="join-item"
+              [size]="size()"
+              [disabled]="isLastPage()"
+              [aqlTooltip]="
+                isLastPage()
+                  ? ('tooltip.pagination.lastPage' | translate)
+                  : ('tooltip.pagination.nextPage' | translate)
+              "
+              [tooltipPosition]="'top'"
+              (buttonClick)="goToNextPage()"
+              [attr.aria-label]="'tooltip.pagination.nextPage' | translate"
+            >
+              »
+            </aql-button>
           </div>
         </div>
       </div>

@@ -57,7 +57,7 @@
       <span class="text-sm font-semibold self-center text-base-content/70">{{
         'search.activeFilters' | translate
       }}</span>
-      @for (badge of activeFilters(); track badge) {
+      @for (badge of activeFilters(); track $index) {
         <div class="badge badge-primary badge-outline">{{ badge }}</div>
       }
     </div>

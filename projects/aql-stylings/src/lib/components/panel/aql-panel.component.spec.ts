@@ -20,40 +20,40 @@ describe('AqlPanelComponent', () => {
   });
 
   it('should have default values for inputs', () => {
-    expect(component.bordered).toBe(true);
-    expect(component.shadow).toBe(false);
-    expect(component.rounded).toBe(true);
-    expect(component.panelTitle).toBeUndefined();
-    expect(component.subtitle).toBeUndefined();
+    expect(component.bordered()).toBe(true);
+    expect(component.shadow()).toBe(false);
+    expect(component.rounded()).toBe(true);
+    expect(component.panelTitle()).toBeUndefined();
+    expect(component.subtitle()).toBeUndefined();
   });
 
   it('should accept panelTitle input', () => {
-    component.panelTitle = 'Test Title';
+    fixture.componentRef.setInput('panelTitle', 'Test Title');
     fixture.detectChanges();
-    expect(component.panelTitle).toBe('Test Title');
+    expect(component.panelTitle()).toBe('Test Title');
   });
 
   it('should accept subtitle input', () => {
-    component.subtitle = 'Test Subtitle';
+    fixture.componentRef.setInput('subtitle', 'Test Subtitle');
     fixture.detectChanges();
-    expect(component.subtitle).toBe('Test Subtitle');
+    expect(component.subtitle()).toBe('Test Subtitle');
   });
 
   it('should accept bordered input', () => {
-    component.bordered = false;
+    fixture.componentRef.setInput('bordered', false);
     fixture.detectChanges();
-    expect(component.bordered).toBe(false);
+    expect(component.bordered()).toBe(false);
   });
 
   it('should accept shadow input', () => {
-    component.shadow = true;
+    fixture.componentRef.setInput('shadow', true);
     fixture.detectChanges();
-    expect(component.shadow).toBe(true);
+    expect(component.shadow()).toBe(true);
   });
 
   it('should accept rounded input', () => {
-    component.rounded = false;
+    fixture.componentRef.setInput('rounded', false);
     fixture.detectChanges();
-    expect(component.rounded).toBe(false);
+    expect(component.rounded()).toBe(false);
   });
 });

@@ -40,9 +40,7 @@ export class QueryOverviewPanelComponent {
   readonly query = input<string>('');
   readonly isLoading = input<boolean>(false);
   readonly interval = input<'day' | 'week' | 'month'>('month');
-
   readonly intervalChange = output<'day' | 'week' | 'month'>();
-
   readonly displayQuery = computed(() => {
     const responseQuery = this.data()?.query?.trim();
     if (responseQuery) {
@@ -51,7 +49,6 @@ export class QueryOverviewPanelComponent {
 
     return this.query().trim();
   });
-
   readonly totalHits = computed<number | null>(() => {
     const total = this.data()?.total_hits;
     if (typeof total !== 'number' || Number.isNaN(total)) {
@@ -60,17 +57,14 @@ export class QueryOverviewPanelComponent {
 
     return total;
   });
-
   readonly histogramBuckets = computed<QueryHistogramBucket[]>(() => {
     return this.data()?.date_histogram ?? [];
   });
-
   readonly hasHistogram = computed(() => this.histogramBuckets().length > 0);
   readonly histogramLabels = computed(() =>
     this.histogramBuckets().map(bucket => bucket.key_as_string),
   );
   readonly histogramCounts = computed(() => this.histogramBuckets().map(bucket => bucket.count));
-
   readonly topQueries = computed<LabeledCount[]>(() => {
     const items = this.data()?.top_queries;
     if (!items?.length) return [];
@@ -79,7 +73,6 @@ export class QueryOverviewPanelComponent {
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
-
   readonly topProviders = computed<LabeledCount[]>(() => {
     const items = this.data()?.top_providers;
     if (!items?.length) return [];
@@ -88,7 +81,6 @@ export class QueryOverviewPanelComponent {
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
-
   readonly topArchives = computed<LabeledCount[]>(() => {
     const items = this.data()?.top_archives;
     if (!items?.length) return [];
@@ -97,7 +89,6 @@ export class QueryOverviewPanelComponent {
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
-
   readonly topQueryLabels = computed(() => this.topQueries().map(item => item.label));
   readonly topQueryCounts = computed(() => this.topQueries().map(item => item.count));
   readonly topProviderPieData = computed<AqlPieChartItem[]>(() =>
@@ -106,14 +97,12 @@ export class QueryOverviewPanelComponent {
   readonly topArchivePieData = computed<AqlPieChartItem[]>(() =>
     this.topArchives().map(item => ({ name: item.label, value: item.count })),
   );
-
   readonly intervalLabel = computed(() => {
     const interval = this.interval();
     if (interval === 'day') return 'searchStats.intervalDay';
     if (interval === 'week') return 'searchStats.intervalWeek';
     return 'searchStats.intervalMonth';
   });
-
   readonly histogramChartOptions = computed<EChartsOption | null>(() => {
     const buckets = this.histogramBuckets();
     if (buckets.length === 0) {

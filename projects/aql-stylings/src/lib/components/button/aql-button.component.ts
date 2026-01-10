@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export type ButtonType =
@@ -26,89 +26,98 @@ export type BtnStyle = 'default' | 'rounded' | 'full';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AqlButtonComponent {
-  @Input() btnType: ButtonType = 'default';
-  @Input() iconStyle?: IconStyle;
-  @Input() btnStyle: BtnStyle = 'default';
-  @Input() disabled = false;
-  @Input() iconBefore?: string;
-  @Input() iconAfter?: string;
-  @Input() fullWidth = false;
-  @Input() outline = false;
-  @Input() soft = false;
-  @Input() flatten = false;
-  @Input() isLoading = false;
-  @Input() size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
-  @Input() align: 'start' | 'center' | 'end' = 'center';
-
-  @Output() buttonClick = new EventEmitter<MouseEvent>();
-
-  get iconClasses(): string {
-    if (this.btnType !== 'icon') return '';
+  readonly btnType = input<ButtonType>('default');
+  readonly iconStyle = input<IconStyle | undefined>(undefined);
+  readonly btnStyle = input<BtnStyle>('default');
+  readonly disabled = input<boolean>(false);
+  readonly iconBefore = input<string | undefined>(undefined);
+  readonly iconAfter = input<string | undefined>(undefined);
+  readonly fullWidth = input<boolean>(false);
+  readonly outline = input<boolean>(false);
+  readonly soft = input<boolean>(false);
+  readonly flatten = input<boolean>(false);
+  readonly isLoading = input<boolean>(false);
+  readonly size = input<'xs' | 'sm' | 'md' | 'lg'>('md');
+  readonly align = input<'start' | 'center' | 'end'>('center');
+  readonly buttonClick = output<MouseEvent>();
+  readonly iconClasses = computed<string>(() => {
+    if (this.btnType() !== 'icon') return '';
 
     const classes: string[] = [];
 
-    if (this.size === 'xs') {
+    const size = this.size();
+    if (size === 'xs') {
       classes.push('text-sm');
-    } else if (this.size === 'sm') {
+    } else if (size === 'sm') {
       classes.push('text-lg');
-    } else if (this.size === 'md') {
+    } else if (size === 'md') {
       classes.push('text-xl');
-    } else if (this.size === 'lg') {
+    } else if (size === 'lg') {
       classes.push('text-2xl');
     }
 
     return classes.join(' ');
-  }
-
-  get buttonClasses(): string {
-    if (this.btnType === 'icon') {
+  });
+  readonly buttonClasses = computed<string>(() => {
+    if (this.btnType() === 'icon') {
       return this.getIconButtonClasses();
     }
 
     const classes: string[] = ['btn'];
 
-    if (this.soft) {
+    if (this.soft()) {
       classes.push('btn-soft');
     }
 
-    if (this.outline) {
+    if (this.outline()) {
       classes.push('btn-outline');
     }
 
-    if (this.flatten) {
+    if (this.flatten()) {
       classes.push('btn-flatten');
     }
 
-    if (this.btnType !== 'default') {
-      classes.push(`btn-${this.btnType}`);
+    const btnType = this.btnType();
+    if (btnType !== 'default') {
+      classes.push(`btn-${btnType}`);
     }
 
-    if (this.iconStyle === 'square') {
+    const iconStyle = this.iconStyle();
+    if (iconStyle === 'square') {
       classes.push('btn-square');
-    } else if (this.iconStyle === 'circle') {
+    } else if (iconStyle === 'circle') {
       classes.push('btn-circle');
     }
 
-    if (this.btnStyle === 'rounded') {
+    const btnStyle = this.btnStyle();
+    if (btnStyle === 'rounded') {
       classes.push('btn-rounded');
-    } else if (this.btnStyle === 'full') {
+    } else if (btnStyle === 'full') {
       classes.push('btn-full');
     }
 
-    if (this.size !== 'md') {
-      classes.push(`btn-${this.size}`);
+    const size = this.size();
+    if (size !== 'md') {
+      classes.push(`btn-${size}`);
     }
-    if (this.fullWidth) {
+    if (this.fullWidth()) {
       classes.push('btn-block');
     }
 
-    if (this.align === 'start') {
+    const align = this.align();
+    if (align === 'start') {
       classes.push('justify-start');
-    } else if (this.align === 'end') {
+    } else if (align === 'end') {
       classes.push('justify-end');
     }
 
     return classes.join(' ');
+  });
+
+  onClick(event: MouseEvent): void {
+    if (!this.disabled()) {
+      this.buttonClick.emit(event);
+    }
   }
 
   private getIconButtonClasses(): string {
@@ -132,28 +141,24 @@ export class AqlButtonComponent {
       'p-0',
     ];
 
-    if (this.size === 'xs') {
+    const size = this.size();
+    if (size === 'xs') {
       classes.push('text-xs', 'w-4', 'h-4');
-    } else if (this.size === 'sm') {
+    } else if (size === 'sm') {
       classes.push('text-sm', 'w-5', 'h-5');
-    } else if (this.size === 'md') {
+    } else if (size === 'md') {
       classes.push('text-base', 'w-6', 'h-6');
-    } else if (this.size === 'lg') {
+    } else if (size === 'lg') {
       classes.push('text-lg', 'w-8', 'h-8');
     }
 
-    if (this.iconStyle === 'square') {
+    const iconStyle = this.iconStyle();
+    if (iconStyle === 'square') {
       classes.push('aspect-square');
-    } else if (this.iconStyle === 'circle') {
+    } else if (iconStyle === 'circle') {
       classes.push('aspect-square', 'rounded-full');
     }
 
     return classes.join(' ');
-  }
-
-  onClick(event: MouseEvent): void {
-    if (!this.disabled) {
-      this.buttonClick.emit(event);
-    }
   }
 }

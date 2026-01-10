@@ -25,7 +25,6 @@ export type ModalAlign = 'start' | 'center' | 'end';
 })
 export class AqlModalComponent implements OnDestroy {
   dialogElement = viewChild<ElementRef<HTMLDialogElement>>('dialogElement');
-
   modalTitle = input<string>();
   position = input<ModalPosition>('middle');
   align = input<ModalAlign>('center');
@@ -34,14 +33,9 @@ export class AqlModalComponent implements OnDestroy {
   closeOnEscape = input(true);
   showCloseButton = input(true);
   maxWidth = input<'sm' | 'md' | 'lg' | 'xl' | 'full'>('lg');
-
   modalOpen = output<void>();
   modalClose = output<void>();
-
   isOpen = signal(false);
-
-  private cancelHandler?: (event: Event) => void;
-
   modalClasses = computed(() => {
     const classes: string[] = ['modal'];
 
@@ -59,7 +53,6 @@ export class AqlModalComponent implements OnDestroy {
 
     return classes.join(' ');
   });
-
   modalBoxClasses = computed(() => {
     const classes: string[] = ['modal-box'];
 
@@ -84,11 +77,10 @@ export class AqlModalComponent implements OnDestroy {
     return classes.join(' ');
   });
 
+  private cancelHandler?: (event: Event) => void;
+
   ngOnDestroy(): void {
-    const dialog = this.dialogElement()?.nativeElement;
-    if (dialog && this.cancelHandler) {
-      dialog.removeEventListener('cancel', this.cancelHandler);
-    }
+    this.detachCancelHandler();
     this.close();
   }
 
@@ -100,6 +92,7 @@ export class AqlModalComponent implements OnDestroy {
       this.modalOpen.emit();
 
       if (!this.closeOnEscape()) {
+        this.detachCancelHandler();
         this.cancelHandler = (event: Event) => event.preventDefault();
         dialog.addEventListener('cancel', this.cancelHandler);
       }
@@ -113,6 +106,7 @@ export class AqlModalComponent implements OnDestroy {
       this.isOpen.set(false);
       this.modalClose.emit();
     }
+    this.detachCancelHandler();
   }
 
   onBackdropClick(event: MouseEvent): void {
@@ -132,6 +126,14 @@ export class AqlModalComponent implements OnDestroy {
       if (!isInDialog) {
         this.close();
       }
+    }
+  }
+
+  private detachCancelHandler(): void {
+    const dialog = this.dialogElement()?.nativeElement;
+    if (dialog && this.cancelHandler) {
+      dialog.removeEventListener('cancel', this.cancelHandler);
+      this.cancelHandler = undefined;
     }
   }
 }

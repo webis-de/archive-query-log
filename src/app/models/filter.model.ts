@@ -5,7 +5,7 @@ export interface FilterState {
   providers: string[];
 }
 
-export interface Provider {
+export interface FilterProvider {
   id: string;
   label: string;
   checked: boolean;

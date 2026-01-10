@@ -1,7 +1,14 @@
 <div>
   <aql-dropdown position="left">
     <div trigger>
-      <aql-button btnType="ghost" size="sm" iconBefore="">
+      <aql-button
+        btnType="ghost"
+        size="sm"
+        iconBefore=""
+        [aqlTooltip]="'tooltip.language.selectLanguage' | translate"
+        [tooltipPosition]="'bottom'"
+        [attr.aria-label]="'language.select' | translate"
+      >
         <i class="bi bi-translate"></i>
         <span class="hidden sm:inline ml-2">{{ languageService.currentLanguage().name }}</span>
       </aql-button>

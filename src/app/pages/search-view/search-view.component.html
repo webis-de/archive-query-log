@@ -91,7 +91,7 @@
             <span class="text-sm font-semibold self-center text-base-content/70">{{
               'search.activeFilters' | translate
             }}</span>
-            @for (badge of activeFilters; track badge) {
+            @for (badge of activeFilters; track $index) {
               <div class="badge badge-primary badge-outline">{{ badge }}</div>
             }
           </div>
@@ -107,17 +107,17 @@
         [class.lg:ml-40]="!isPanelOpen()"
         [class.lg:ml-0]="isPanelOpen()"
       >
-        @if (!isLoading && hasSearched && totalCount > 0) {
+        @if (!isLoading() && hasSearched() && totalCount() > 0) {
           <div class="flex flex-row flex-nowrap gap-6 w-full overflow-x-auto">
             <div class="flex-1 w-full max-w-[800px]">
               <div class="mb-4">
                 <p class="text-sm text-gray-600">
-                  {{ 'search.resultsFound' | translate: { count: totalCount } }}
+                  {{ 'search.resultsFound' | translate: { count: totalCount() } }}
                 </p>
               </div>
 
               <div class="flex flex-col gap-4">
-                @for (result of searchResults; track result._id) {
+                @for (result of searchResults(); track result._id) {
                   <aql-panel
                     [panelTitle]="result._source.url_query"
                     [subtitle]="result._source.capture.url"
@@ -136,6 +136,9 @@
                         btnType="icon"
                         iconBefore="bi-three-dots-vertical"
                         size="xs"
+                        [aqlTooltip]="'tooltip.search.moreOptions' | translate"
+                        [tooltipPosition]="'top'"
+                        [attr.aria-label]="'tooltip.search.moreOptions' | translate"
                       ></aql-button>
                       <ng-container content>
                         <div class="p-3 space-y-2 text-sm min-w-[200px]">
@@ -193,11 +196,11 @@
           </div>
         } @else {
           <div class="flex-1 w-full max-w-[800px]">
-            @if (isLoading) {
+            @if (isLoading()) {
               <div class="flex justify-center items-center py-12">
                 <div class="text-lg">{{ 'common.loading' | translate }}</div>
               </div>
-            } @else if (hasSearched && totalCount === 0) {
+            } @else if (hasSearched() && totalCount() === 0) {
               <div class="flex justify-center items-center py-12">
                 <div class="text-lg text-gray-600">
                   {{ 'search.noResultsFor' | translate: { query: searchQuery } }}
@@ -212,10 +215,10 @@
         }
       </div>
 
-      @if (!isLoading && hasSearched && totalCount > 0) {
+      @if (!isLoading() && hasSearched() && totalCount() > 0) {
         <div class="sticky bottom-0 z-40 w-full pb-6 pt-4 pointer-events-none">
           <aql-pagination
-            [totalItems]="totalCount"
+            [totalItems]="totalCount()"
             [pageSize]="pageSize()"
             [currentPage]="currentPage()"
             [showPageSizeSelector]="true"

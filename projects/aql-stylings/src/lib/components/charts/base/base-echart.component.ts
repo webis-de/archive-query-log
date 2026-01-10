@@ -9,8 +9,10 @@ export abstract class BaseEChartComponent implements OnDestroy {
 
   protected readonly chartContainer = viewChild<ElementRef<HTMLDivElement>>('chartContainer');
   protected chart: echarts.ECharts | null = null;
+
   private resizeObserver?: ResizeObserver;
   private resizeListener?: () => void;
+  private initRetryTimeoutId: number | null = null;
 
   constructor() {
     effect(() => {
@@ -22,6 +24,10 @@ export abstract class BaseEChartComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (this.initRetryTimeoutId !== null) {
+      clearTimeout(this.initRetryTimeoutId);
+      this.initRetryTimeoutId = null;
+    }
     this.resizeObserver?.disconnect();
     if (this.resizeListener) {
       window.removeEventListener('resize', this.resizeListener);
@@ -30,6 +36,8 @@ export abstract class BaseEChartComponent implements OnDestroy {
     this.chart = null;
   }
 
+  protected abstract buildDefaultOption(): echarts.EChartsOption;
+
   private ensureChart(element: HTMLDivElement): void {
     if (this.chart) return;
     const width = element.clientWidth;
@@ -37,7 +45,10 @@ export abstract class BaseEChartComponent implements OnDestroy {
 
     if (width === 0 || height === 0) {
       // Retry initialization when element has no dimensions
-      setTimeout(() => {
+      if (this.initRetryTimeoutId !== null) {
+        clearTimeout(this.initRetryTimeoutId);
+      }
+      this.initRetryTimeoutId = window.setTimeout(() => {
         if (!this.chart) {
           this.ensureChart(element);
         }
@@ -64,6 +75,4 @@ export abstract class BaseEChartComponent implements OnDestroy {
     const option = this.options() ?? this.buildDefaultOption();
     this.chart.setOption(option, { notMerge: true, lazyUpdate: true });
   }
-
-  protected abstract buildDefaultOption(): echarts.EChartsOption;
 }

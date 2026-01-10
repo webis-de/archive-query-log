@@ -1,7 +1,7 @@
-import { Injectable, inject } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
-import { debounceTime, switchMap, map, catchError, distinctUntilChanged } from 'rxjs/operators';
+import { Injectable, Signal, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { debounceTime, distinctUntilChanged, switchMap, catchError, map } from 'rxjs/operators';
+import { Observable, of, Subject } from 'rxjs';
 import { ApiService } from './api.service';
 import { API_CONFIG } from '../config/api.config';
 import { SearchResponse } from '../models/search.model';
@@ -15,27 +15,29 @@ export interface Suggestion {
   providedIn: 'root',
 })
 export class SuggestionsService {
-  private readonly apiService = inject(ApiService);
-  private readonly searchSubject = new Subject<string>();
-
   readonly MINIMUM_QUERY_LENGTH = 3;
   readonly DEBOUNCE_TIME_MS = 300;
   readonly MAX_SUGGESTIONS = 5;
+  readonly suggestions: Signal<Suggestion[]>;
 
-  // Automatically debounces and filters queries less than minimum length.
-  readonly suggestions = toSignal(
-    this.searchSubject.pipe(
-      debounceTime(this.DEBOUNCE_TIME_MS),
-      distinctUntilChanged(),
-      switchMap(query => {
-        if (query.length < this.MINIMUM_QUERY_LENGTH) {
-          return of([]);
-        }
-        return this.fetchSuggestions(query);
-      }),
-    ),
-    { initialValue: [] as Suggestion[] },
-  );
+  private readonly apiService = inject(ApiService);
+  private readonly searchSubject = new Subject<string>();
+
+  constructor() {
+    this.suggestions = toSignal(
+      this.searchSubject.pipe(
+        debounceTime(this.DEBOUNCE_TIME_MS),
+        distinctUntilChanged(),
+        switchMap(query => {
+          if (query.length < this.MINIMUM_QUERY_LENGTH) {
+            return of([]);
+          }
+          return this.fetchSuggestions(query);
+        }),
+      ),
+      { initialValue: [] as Suggestion[] },
+    );
+  }
 
   search(query: string): void {
     this.searchSubject.next(query);

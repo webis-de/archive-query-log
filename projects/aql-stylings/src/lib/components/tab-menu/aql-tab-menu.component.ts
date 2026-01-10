@@ -33,9 +33,7 @@ export class AqlTabMenuComponent {
   readonly size = input<TabSize>('md');
   readonly tabStyle = input<TabStyle>('default');
   readonly fullWidth = input(false, { transform: booleanAttribute });
-
   readonly tabChange = output<string>();
-
   readonly tabClasses = computed(() => {
     const classes: string[] = ['tabs'];
 

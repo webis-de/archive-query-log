@@ -9,7 +9,8 @@
     "save": "Enregistrer",
     "delete": "Supprimer",
     "edit": "Modifier",
-    "close": "Fermer"
+    "close": "Fermer",
+    "options": "Options"
   },
   "sidebar": {
     "expandSidebar": "Développer la barre latérale",
@@ -105,6 +106,16 @@
       "firstPage": "Deja sur la premiere page",
       "lastPage": "Deja sur la derniere page",
       "morePages": "Plus de pages disponibles"
+    },
+    "metadata": {
+      "backOne": "Revenir d'un élément",
+      "backToOriginal": "Retourner au résultat d'origine"
+    },
+    "search": {
+      "moreOptions": "Plus d'options"
+    },
+    "language": {
+      "selectLanguage": "Sélectionner la langue"
     }
   },
   "footer": {

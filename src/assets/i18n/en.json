@@ -9,7 +9,8 @@
     "save": "Save",
     "delete": "Delete",
     "edit": "Edit",
-    "close": "Close"
+    "close": "Close",
+    "options": "Options"
   },
   "landing": {
     "welcomeMessage": "Welcome to AQL Search",
@@ -19,7 +20,7 @@
     "temporaryModeNote": "Note:",
     "temporaryModeWarning": "This search will not be saved to your history",
     "temporarySearchMode": "Temporary search (not saved)",
-    "searchingInProject": "Search in",
+    "searchingInProject": "Search in \"{{name}}\"",
     "selectProjectHint": "Select a project from the sidebar or search here",
     "createProjectHint": "Create your first project using the \"New Project\" button in the sidebar"
   },
@@ -82,6 +83,16 @@
       "firstPage": "Already on first page",
       "lastPage": "Already on last page",
       "morePages": "More pages available"
+    },
+    "metadata": {
+      "backOne": "Go back one item",
+      "backToOriginal": "Return to original result"
+    },
+    "search": {
+      "moreOptions": "More options"
+    },
+    "language": {
+      "selectLanguage": "Select language"
     }
   },
   "footer": {

@@ -1,4 +1,4 @@
-import { TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, fakeAsync, tick, flushMicrotasks } from '@angular/core/testing';
 import { of, throwError } from 'rxjs';
 import { SuggestionsService } from './suggestions.service';
 import { ApiService } from './api.service';
@@ -101,6 +101,9 @@ describe('SuggestionsService', () => {
     TestBed.configureTestingModule({
       providers: [SuggestionsService, { provide: ApiService, useValue: mockApiService }],
     });
+  });
+
+  beforeEach(() => {
     service = TestBed.inject(SuggestionsService);
   });
 
@@ -117,7 +120,8 @@ describe('SuggestionsService', () => {
   describe('suggestions signal', () => {
     it('should return empty array for queries shorter than minimum length', fakeAsync(() => {
       service.search('ab'); // 2 characters, less than minimum of 3
-      tick(350); // Wait for debounce
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
 
       expect(service.suggestions()).toEqual([]);
       expect(mockApiService.get).not.toHaveBeenCalled();
@@ -125,7 +129,8 @@ describe('SuggestionsService', () => {
 
     it('should fetch suggestions for queries with minimum length', fakeAsync(() => {
       service.search('tes'); // Exactly 3 characters
-      tick(350); // Wait for debounce
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
 
       expect(mockApiService.get).toHaveBeenCalled();
       expect(service.suggestions().length).toBe(2);
@@ -133,7 +138,8 @@ describe('SuggestionsService', () => {
 
     it('should fetch suggestions for queries longer than minimum length', fakeAsync(() => {
       service.search('testing'); // 7 characters
-      tick(350); // Wait for debounce
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
 
       expect(mockApiService.get).toHaveBeenCalled();
       expect(service.suggestions().length).toBe(2);
@@ -145,7 +151,8 @@ describe('SuggestionsService', () => {
       service.search('test2');
       tick(100);
       service.search('test3');
-      tick(350); // Wait for final debounce
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
 
       // Should only make one API call with the last value
       expect(mockApiService.get).toHaveBeenCalledTimes(1);
@@ -157,17 +164,21 @@ describe('SuggestionsService', () => {
 
     it('should not make duplicate calls for the same query', fakeAsync(() => {
       service.search('test');
-      tick(350);
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
+      mockApiService.get.calls.reset();
       service.search('test'); // Same query
-      tick(350);
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
 
       // distinctUntilChanged should prevent duplicate calls
-      expect(mockApiService.get).toHaveBeenCalledTimes(1);
+      expect(mockApiService.get).toHaveBeenCalledTimes(0);
     }));
 
     it('should map results to suggestions correctly', fakeAsync(() => {
       service.search('test');
-      tick(350);
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
 
       expect(service.suggestions()).toEqual([
         {
@@ -182,24 +193,29 @@ describe('SuggestionsService', () => {
     }));
 
     it('should handle API errors gracefully', fakeAsync(() => {
+      // Create new service instance with error response
       mockApiService.get.and.returnValue(throwError(() => new Error('API Error')));
+      const errorService = TestBed.inject(SuggestionsService);
 
-      service.search('test');
-      tick(350);
+      errorService.search('test');
+      tick(errorService.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
 
       // Should return empty array on error
-      expect(service.suggestions()).toEqual([]);
+      expect(errorService.suggestions()).toEqual([]);
     }));
   });
 
   describe('clear suggestions', () => {
     it('should clear suggestions when called with empty string', fakeAsync(() => {
       service.search('test');
-      tick(350);
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
       expect(service.suggestions().length).toBe(2);
 
       service.search('');
-      tick(350);
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
       expect(service.suggestions()).toEqual([]);
     }));
   });
@@ -207,7 +223,8 @@ describe('SuggestionsService', () => {
   describe('search', () => {
     it('should call API with correct parameters', fakeAsync(() => {
       service.search('search term');
-      tick(350);
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
 
       expect(mockApiService.get).toHaveBeenCalledWith('/api/serps', {
         query: 'search term',
