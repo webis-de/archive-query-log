@@ -211,13 +211,6 @@ async def preview_search(
 
     response = await es.search(index="aql_serps", body=body)
 
-    # Separate query to get sample documents for extracting top_queries (if aggregation fails)
-    sample_body = {
-        "query": query_clause,
-        "size": 1000,  # Get up to 1000 documents to extract queries from
-        "_source": ["url_query"],
-    }
-
     # total hits
     total = response.get("hits", {}).get("total", 0)
     if isinstance(total, dict):
