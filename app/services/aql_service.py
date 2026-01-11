@@ -185,6 +185,7 @@ async def preview_search(
     body = {
         "query": query_clause,
         "size": 0,
+        "track_total_hits": True,
         "aggs": {
             "top_queries": {
                 "terms": {"field": "url_query.keyword", "size": top_n_queries}
@@ -210,6 +211,13 @@ async def preview_search(
 
     response = await es.search(index="aql_serps", body=body)
 
+    # Separate query to get sample documents for extracting top_queries (if aggregation fails)
+    sample_body = {
+        "query": query_clause,
+        "size": 1000,  # Get up to 1000 documents to extract queries from
+        "_source": ["url_query"],
+    }
+
     # total hits
     total = response.get("hits", {}).get("total", 0)
     if isinstance(total, dict):
@@ -224,25 +232,40 @@ async def preview_search(
         for b in aggs.get("top_queries", {}).get("buckets", [])
     ]
 
-    # Fallback: if keyword-based aggregation returned empty buckets, try non-keyword field
+    # Fallback: Extract top queries from sample documents if aggregation fails
     if not top_queries:
-        fallback_body = dict(body)
-        # replace the aggregation to use the non-keyword field
-        fallback_body["aggs"] = {
-            "top_queries": {"terms": {"field": "url_query", "size": top_n_queries}}
-        }
         try:
-            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
-            fallback_aggs = fallback_resp.get("aggregations", {})
+            # Dynamically adjust sample size based on total hits and requested top_n
+            # Use min(10000, total_count) to balance accuracy vs performance
+            sample_size = min(10000, max(1000, top_n_queries * 100))
+
+            sample_body_adjusted = {
+                "query": query_clause,
+                "size": sample_size,
+                "_source": ["url_query"],
+            }
+            sample_response = await es.search(
+                index="aql_serps", body=sample_body_adjusted
+            )
+            hits = sample_response.get("hits", {}).get("hits", [])
+
+            # Count occurrences of each unique query
+            query_counts: dict[str, int] = {}
+            for hit in hits:
+                source = hit.get("_source", {})
+                q = source.get("url_query", "")
+                if q:
+                    query_counts[q] = query_counts.get(q, 0) + 1
+
+            # Sort by count and get top N
+            sorted_queries = sorted(
+                query_counts.items(), key=lambda x: x[1], reverse=True
+            )
             top_queries = [
-                {"query": b.get("key"), "count": b.get("doc_count")}
-                for b in fallback_aggs.get("top_queries", {}).get("buckets", [])
+                {"query": query, "count": count}
+                for query, count in sorted_queries[:top_n_queries]
             ]
-        except BadRequestError:
-            # index mapping disallows aggregations on text fields (no .keyword); ignore fallback
-            top_queries = []
-        except Exception:
-            # other errors: ignore fallback and leave empty
+        except (BadRequestError, Exception):
             top_queries = []
 
     date_histogram = [
@@ -258,10 +281,44 @@ async def preview_search(
         for b in aggs.get("top_providers", {}).get("buckets", [])
     ]
 
+    # Fallback: if keyword-based aggregation returned empty buckets, try non-keyword field
+    if not top_providers_list:
+        fallback_body = dict(body)
+        fallback_body["aggs"] = {
+            "top_providers": {"terms": {"field": "provider.id", "size": top_providers}}
+        }
+        try:
+            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
+            fallback_aggs = fallback_resp.get("aggregations", {})
+            top_providers_list = [
+                {"id": b.get("key"), "count": b.get("doc_count")}
+                for b in fallback_aggs.get("top_providers", {}).get("buckets", [])
+            ]
+        except (BadRequestError, Exception):
+            top_providers_list = []
+
     top_archives_list = [
         {"archive": b.get("key"), "count": b.get("doc_count")}
         for b in aggs.get("top_archives", {}).get("buckets", [])
     ]
+
+    # Fallback: if keyword-based aggregation returned empty buckets, try non-keyword field
+    if not top_archives_list:
+        fallback_body = dict(body)
+        fallback_body["aggs"] = {
+            "top_archives": {
+                "terms": {"field": "archive.memento_api_url", "size": top_archives}
+            }
+        }
+        try:
+            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
+            fallback_aggs = fallback_resp.get("aggregations", {})
+            top_archives_list = [
+                {"archive": b.get("key"), "count": b.get("doc_count")}
+                for b in fallback_aggs.get("top_archives", {}).get("buckets", [])
+            ]
+        except (BadRequestError, Exception):
+            top_archives_list = []
 
     return {
         "query": query,
