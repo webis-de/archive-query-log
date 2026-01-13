@@ -7,7 +7,7 @@ workflow:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop"'
     - when: never
 
-stages: [install, lint, test, build]
+stages: [install, lint, test, build, docker]
 
 cache:
   key: "npm-$CI_COMMIT_REF_SLUG"
@@ -52,3 +52,47 @@ build:
   artifacts:
     paths: [dist/]
     expire_in: 1 week
+
+# -------------------------------------------------------------------
+# Docker Build Stage with Kaniko
+# -------------------------------------------------------------------
+docker:
+  stage: docker
+  needs: ["build"]
+  
+  # Kaniko executor image used to build Docker images in GitLab CI
+  image:
+    name: gcr.io/kaniko-project/executor:v1.23.0-debug
+    entrypoint: [""]
+
+  script:
+    # Decide which tag to push based on branch
+    # - "latest" for default branch
+    # - branch-slug for feature branches
+    - |
+      if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        tag="latest"
+        echo "Building image with tag: $tag"
+      else
+        tag="$CI_COMMIT_REF_SLUG"
+        echo "Building image with tag: $tag"
+      fi
+
+    # Configure Docker auth for GitLab Container Registry inside Kaniko
+    - mkdir -p /kaniko/.docker
+    - |
+      echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" \
+        > /kaniko/.docker/config.json
+
+    # Run Kaniko build and push the image to the GitLab Container Registry
+    - |
+      /kaniko/executor \
+        --context "${CI_PROJECT_DIR}" \
+        --dockerfile "${CI_PROJECT_DIR}/Dockerfile" \
+        --destination "${CI_REGISTRY_IMAGE}:${tag}" \
+        --cache=true \
+        --cache-ttl=24h
+
+  only:
+    - main
+    - branches
