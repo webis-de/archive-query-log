@@ -90,7 +90,10 @@ docker run --rm -p 4200:80 git.uni-jena.de:5050/fusion/teaching/project/2025wise
 
 The application will be accessible at `http://localhost:4200/`
 
-> **Note:** The frontend expects the backend API to be available. For full functionality, also run the backend container.
+> **Note:**
+- The frontend expects the backend API to be available. For full functionality, also run the backend container.
+- The Docker image serves the app with NGINX using `nginx.conf`.
+- Update `environment.prod.ts` before building the image to point at your production API.
 
 ### For Developers (Build Locally)
 
