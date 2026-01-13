@@ -1,10 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppQueryMetadataPanelComponent } from './query-metadata-panel.component';
-import { provideHttpClient } from '@angular/common/http';
 import { SearchResult } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
 import { signal, WritableSignal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { SearchService } from '../../services/search.service';
+import { of } from 'rxjs';
 
 describe('AppQueryMetadataPanelComponent', () => {
   let component: AppQueryMetadataPanelComponent;
@@ -50,10 +51,16 @@ describe('AppQueryMetadataPanelComponent', () => {
     mockSessionService = {
       sidebarCollapsed: signal(true),
     };
+    const mockSearchService = {
+      getSerpDetails: () => of({}),
+    };
 
     await TestBed.configureTestingModule({
       imports: [AppQueryMetadataPanelComponent, TranslateModule.forRoot()],
-      providers: [provideHttpClient(), { provide: SessionService, useValue: mockSessionService }],
+      providers: [
+        { provide: SessionService, useValue: mockSessionService },
+        { provide: SearchService, useValue: mockSearchService },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppQueryMetadataPanelComponent);

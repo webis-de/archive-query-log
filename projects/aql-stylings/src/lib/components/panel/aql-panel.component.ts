@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,9 +10,9 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AqlPanelComponent {
-  @Input() panelTitle?: string;
-  @Input() subtitle?: string;
-  @Input() bordered = true;
-  @Input() shadow = false;
-  @Input() rounded = true;
+  readonly panelTitle = input<string | undefined>(undefined);
+  readonly subtitle = input<string | undefined>(undefined);
+  readonly bordered = input<boolean>(true);
+  readonly shadow = input<boolean>(false);
+  readonly rounded = input<boolean>(true);
 }

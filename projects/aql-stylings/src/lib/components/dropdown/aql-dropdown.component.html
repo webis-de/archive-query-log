@@ -10,7 +10,7 @@
   [style.width]="!matchTriggerWidth() && contentWidth() ? contentWidth() : null"
   (mousedown)="onContentMouseDown($event)"
   (click)="onContentClick($event)"
-  (keyup)="$event"
+  (keyup)="($event)"
 >
   <ng-content select="[content]"></ng-content>
 </div>

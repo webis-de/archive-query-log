@@ -2,7 +2,7 @@ import {
   Directive,
   ElementRef,
   HostListener,
-  Input,
+  input,
   OnDestroy,
   Renderer2,
   inject,
@@ -15,8 +15,8 @@ type TooltipPosition = 'top' | 'bottom' | 'left' | 'right';
   standalone: true,
 })
 export class AqlTooltipDirective implements OnDestroy {
-  @Input() aqlTooltip = '';
-  @Input() tooltipPosition: TooltipPosition = 'top';
+  readonly aqlTooltip = input<string>('');
+  readonly tooltipPosition = input<TooltipPosition>('top');
 
   private readonly el = inject(ElementRef);
   private readonly renderer = inject(Renderer2);
@@ -24,7 +24,7 @@ export class AqlTooltipDirective implements OnDestroy {
 
   @HostListener('mouseenter')
   onMouseEnter(): void {
-    if (!this.aqlTooltip) return;
+    if (!this.aqlTooltip()) return;
     this.show();
   }
 
@@ -38,13 +38,17 @@ export class AqlTooltipDirective implements OnDestroy {
     this.hide();
   }
 
+  ngOnDestroy(): void {
+    this.hide();
+  }
+
   private show(): void {
     if (this.tooltipElement) return;
 
     this.tooltipElement = this.renderer.createElement('div');
     this.renderer.addClass(this.tooltipElement, 'aql-tooltip-overlay');
-    this.renderer.addClass(this.tooltipElement, `aql-tooltip-${this.tooltipPosition}`);
-    const textNode = this.renderer.createText(this.aqlTooltip);
+    this.renderer.addClass(this.tooltipElement, `aql-tooltip-${this.tooltipPosition()}`);
+    const textNode = this.renderer.createText(this.aqlTooltip());
     this.renderer.appendChild(this.tooltipElement, textNode);
     this.renderer.appendChild(document.body, this.tooltipElement);
     this.position();
@@ -67,13 +71,13 @@ export class AqlTooltipDirective implements OnDestroy {
     let top = 0;
     let left = 0;
 
-    switch (this.tooltipPosition) {
+    switch (this.tooltipPosition()) {
       case 'top':
         top = hostRect.top - tooltipRect.height - offset;
         left = hostRect.left + (hostRect.width - tooltipRect.width) / 2;
         break;
       case 'bottom':
-        top = hostRect.bottom + offset;
+        top = hostRect.bottom + offset * 2;
         left = hostRect.left + (hostRect.width - tooltipRect.width) / 2;
         break;
       case 'left':
@@ -101,9 +105,5 @@ export class AqlTooltipDirective implements OnDestroy {
 
     this.renderer.setStyle(this.tooltipElement, 'top', `${top}px`);
     this.renderer.setStyle(this.tooltipElement, 'left', `${left}px`);
-  }
-
-  ngOnDestroy(): void {
-    this.hide();
   }
 }

@@ -9,7 +9,8 @@
     "save": "Speichern",
     "delete": "Löschen",
     "edit": "Bearbeiten",
-    "close": "Schließen"
+    "close": "Schließen",
+    "options": "Optionen"
   },
   "landing": {
     "welcomeMessage": "Willkommen bei AQL Suche",
@@ -73,15 +74,25 @@
   },
   "tooltip": {
     "filter": {
-      "open": "Filter oeffnen",
-      "close": "Filter schliessen"
+      "open": "Filter öffnen",
+      "close": "Filter schließen"
     },
     "pagination": {
       "previousPage": "Zur vorherigen Seite",
-      "nextPage": "Zur naechsten Seite",
+      "nextPage": "Zur nächsten Seite",
       "firstPage": "Bereits auf der ersten Seite",
       "lastPage": "Bereits auf der letzten Seite",
       "morePages": "Mehr Seiten verfuegbar"
+    },
+    "metadata": {
+      "backOne": "Einen Schritt zurück",
+      "backToOriginal": "Zum ursprünglichen Ergebnis zurückkehren"
+    },
+    "search": {
+      "moreOptions": "Weitere Optionen"
+    },
+    "language": {
+      "selectLanguage": "Sprache auswählen"
     }
   },
   "footer": {

@@ -4,56 +4,70 @@ Angular 20.3.x standalone application with a custom `aql-stylings` library, styl
 
 ## Prerequisites
 
-- Node.js version **^20.19.0 || ^22.12.0 || ^24.0.0**
+- Node.js **^20.19.0 || ^22.12.0 || ^24.0.0**
 
-Check your versions:
+Check versions:
 
 - `node -v`
 - `npm -v`
 
-## Setup
+## Quick Start
 
 1. Install dependencies:
    - `npm install`
-
-2. Configure backend API URL (optional):
-   - Development: `src/environments/environment.ts` (default: `http://localhost:8000`)
+2. Configure API URL:
+   - Development: `src/environments/environment.ts`
    - Production: `src/environments/environment.prod.ts`
+3. Start dev server:
+   - `npm run start`
 
-## Development server
+App runs at `http://localhost:4200/`.
 
-- Start the app dev server (`http://localhost:4200/`):
-  - `npm run start`
+## Project Structure
 
-- Watch the library in development mode:
-  - `npm run watch`
+- `src/` Angular app
+- `projects/aql-stylings/` shared UI library
+- `scripts/` repo utilities (formatting/validation helpers)
 
-The application automatically reloads when you change any source file.
+## Common Scripts
 
-## Build
+- `npm run start` start dev server
+- `npm run watch` watch `aql-stylings` library in dev mode
+- `npm run build` production build to `dist/aql-frontend/browser`
+- `npm run lint` ESLint (Angular + TypeScript)
+- `npm run format` Prettier format for `src/` and `projects/`
+- `npm run reorder` auto-reorder class members to match lint ordering
+- `npm run test` unit tests (Karma + Jasmine)
+- `npm run test:ci` headless tests
+- `npm run check-translations` validate i18n keys across languages
 
-- Build the app for production:
-  - `npm run build`
+## Configuration
 
-Build artifacts are output to `dist/aql-frontend`.
+API base URL is read from:
 
-## Linting
+- `src/environments/environment.ts` (dev)
+- `src/environments/environment.prod.ts` (prod)
 
-- Run ESLint:
-  - `npm run lint`
+Endpoints are configured in `src/app/config/api.config.ts`.
 
-## Formatting
+## Linting and Formatting
 
-- Run Prettier to format the source code:
-  - `npm run format`
+- Lint: `npm run lint`
+- Format: `npm run format`
+- Reorder class members: `npm run reorder`
+
+Member ordering is enforced by ESLint. If you reorder manually, run format afterward.
 
 ## Tests
 
-- Run unit tests (Karma + Jasmine):
-  - `npm run test`
+- `npm run test` interactive
+- `npm run test:ci` headless CI run
 
-- Run tests in CI mode:
-  - `npm run test:ci`
+## Build
+
+- `npm run build`
+
+Output goes to `dist/aql-frontend/browser` (Angular application builder output).
 
 ## Docker
 

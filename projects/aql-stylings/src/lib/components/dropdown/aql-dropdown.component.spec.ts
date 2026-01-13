@@ -24,7 +24,7 @@ class DropdownHostComponent {
   position: DropdownPosition | undefined = 'bottom';
   matchTriggerWidth = false;
   contentWidth: string | null = '14rem';
-  open = false;
+  open?: boolean = undefined;
 }
 
 describe('AqlDropdownComponent', () => {

@@ -1,5 +1,9 @@
 <div>
-  <aql-dropdown position="bottom end" [contentWidth]="'350px'">
+  <aql-dropdown
+    position="bottom end"
+    [contentWidth]="'350px'"
+    (openChange)="onDropdownOpenChange($event)"
+  >
     <div trigger class="relative">
       <aql-button
         btnType="primary"
@@ -38,9 +42,9 @@
                 type="date"
                 [showIcon]="false"
                 size="sm"
-                [value]="dateFrom()"
+                [ngModel]="dateFrom()"
+                (ngModelChange)="updateDateFrom($event)"
                 [max]="maxDateFrom()"
-                (change)="updateDateFrom($any($event.target).value)"
                 class="w-full"
               ></aql-input-field>
             </div>
@@ -52,10 +56,10 @@
                 type="date"
                 [showIcon]="false"
                 size="sm"
-                [value]="dateTo()"
+                [ngModel]="dateTo()"
+                (ngModelChange)="updateDateTo($event)"
                 [min]="minDateTo()"
                 [max]="maxDateTo()"
-                (change)="updateDateTo($any($event.target).value)"
                 class="w-full"
               ></aql-input-field>
             </div>

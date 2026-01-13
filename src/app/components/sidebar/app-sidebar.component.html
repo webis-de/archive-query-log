@@ -162,7 +162,7 @@
                 trigger
                 btnType="icon"
                 iconBefore="bi-three-dots"
-                [attr.aria-label]="'Options'"
+                [attr.aria-label]="'common.options' | translate"
               ></aql-button>
               <ng-container content>
                 <aql-menu-item
@@ -208,7 +208,7 @@
                     trigger
                     btnType="icon"
                     iconBefore="bi-three-dots"
-                    [attr.aria-label]="'Options'"
+                    [attr.aria-label]="'common.options' | translate"
                   ></aql-button>
                   <ng-container content>
                     <aql-menu-item iconBefore="bi-pencil" (click)="onRenameSearch(item.id)">
