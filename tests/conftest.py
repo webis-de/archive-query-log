@@ -56,6 +56,47 @@ def mock_elasticsearch(monkeypatch):
                 }
             }
         else:
+            # Check for archive aggregation queries
+            aggs = kwargs.get("body", {}).get("aggs", {})
+            if "unique_archives" in aggs:
+                # Return aggregation data for archives
+                return {
+                    "hits": {"total": {"value": 100, "relation": "eq"}, "hits": []},
+                    "aggregations": {
+                        "unique_archives": {
+                            "buckets": [
+                                {"key": "https://web.archive.org/web", "doc_count": 80},
+                                {"key": "https://archive.example.org", "doc_count": 20},
+                            ]
+                        }
+                    },
+                }
+
+            # Check for archive term query
+            query_clause = kwargs.get("body", {}).get("query", {})
+            if (
+                "term" in query_clause
+                and "archive.memento_api_url" in query_clause.get("term", {})
+            ):
+                # Return archive search results
+                return {
+                    "hits": {
+                        "total": {"value": 50, "relation": "eq"},
+                        "hits": [
+                            {
+                                "_id": f"doc-{i}",
+                                "_source": {
+                                    "url_query": f"query {i}",
+                                    "archive": {
+                                        "memento_api_url": "https://web.archive.org/web"
+                                    },
+                                },
+                            }
+                            for i in range(1, 4)
+                        ],
+                    }
+                }
+
             # Default mock data for SERP searches
             return {
                 "hits": {

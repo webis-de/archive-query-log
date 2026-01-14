@@ -447,3 +447,64 @@ async def get_serp_unfurl_legacy(request: Request, serp_id: str):
     """[DEPRECATED] Use /api/serp/{id}?include=unfurl instead"""
     result = await safe_search(aql_service.get_serp_unfurl(serp_id))
     return result
+
+
+# ---------------------------------------------------------
+# ARCHIVE DETAIL ENDPOINTS
+# ---------------------------------------------------------
+@router.get("/archives")
+@limiter.limit("30/minute")
+async def list_archives(
+    request: Request,
+    limit: int = Query(
+        100, description="Maximum number of archives to return", ge=1, le=1000
+    ),
+):
+    """
+    List all available web archives in the dataset.
+
+    Returns archive metadata including:
+    - Archive name
+    - Memento API URL
+    - CDX API URL
+    - Homepage URL
+    - Number of SERPs in this archive
+
+    Example:
+    - /api/archives
+    - /api/archives?limit=50
+    """
+    result = await safe_search_paginated(aql_service.list_all_archives(size=limit))
+    return result
+
+
+@router.get("/archive")
+@limiter.limit("20/minute")
+async def get_archive(
+    request: Request,
+    id: str = Query(..., description="Archive ID (Memento API URL, URL-encoded)"),
+):
+    """
+    Get metadata for a specific web archive.
+
+    Archive ID is the base Memento API URL. This endpoint returns:
+    - Archive name
+    - Memento API URL
+    - CDX API URL (from archive data or derived)
+    - Archive homepage (derived)
+    - Number of SERPs captured from this archive
+
+    The id parameter should be URL-encoded. Examples:
+    - Internet Archive: https%3A%2F%2Fweb.archive.org%2Fweb
+    - Arquivo: https%3A%2F%2Farquivo.pt%2Fwayback
+
+    Example:
+    - /api/archive?id=https%3A%2F%2Fweb.archive.org%2Fweb
+    """
+    from urllib.parse import unquote
+
+    # Decode the archive_id from URL encoding
+    decoded_archive_id = unquote(id)
+
+    result = await safe_search(aql_service.get_archive_metadata(decoded_archive_id))
+    return result
