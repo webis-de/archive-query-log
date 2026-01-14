@@ -132,7 +132,7 @@ curl http://localhost:8000/api/suggestions?prefix=test&size=20&last_n_months=24
 | Method | Endpoint                                   | Description                                         |
 | ------ | ------------------------------------------ | --------------------------------------------------- |
 | GET    | `/api/archives`                            | List all available web archives in the dataset      |
-| GET    | `/api/archive`                             | Get metadata for a specific web archive by ID       |
+| GET    | `/api/archive?id=<url>`                             | Get metadata for a specific web archive by ID       |
 
 **Query Parameters for Archives Endpoint:**
 - `limit` - Maximum number of archives to return (default: 100, range: 1-1000)
