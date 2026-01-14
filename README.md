@@ -128,6 +128,53 @@ curl http://localhost:8000/api/suggestions?prefix=test&size=20&last_n_months=24
 - `related_size` - Number of related SERPs (requires `include=related`, default: 10)
 - `same_provider` - Only return related SERPs from same provider (requires `include=related`)
 
+#### ✅ Archive Detail Endpoints
+| Method | Endpoint                                   | Description                                         |
+| ------ | ------------------------------------------ | --------------------------------------------------- |
+| GET    | `/api/archives`                            | List all available web archives in the dataset      |
+| GET    | `/api/archive`                             | Get metadata for a specific web archive by ID       |
+
+**Query Parameters for Archives Endpoint:**
+- `limit` - Maximum number of archives to return (default: 100, range: 1-1000)
+
+**Query Parameters for Archive Detail Endpoint:**
+- `id` - Archive ID (Memento API URL, URL-encoded) - **required**
+
+**Archive Metadata Fields:**
+- `id` - Unique archive identifier (Memento API URL)
+- `name` - Human-readable archive name (e.g., "Internet Archive (Wayback Machine)")
+- `memento_api_url` - Memento API base URL
+- `cdx_api_url` - CDX API URL (from archive data or derived)
+- `homepage` - Archive homepage URL
+- `serp_count` - Number of SERPs captured from this archive
+
+**Example Archive Requests:**
+```bash
+# List all archives (default limit: 100)
+curl http://localhost:8000/api/archives
+
+# List archives with custom limit
+curl http://localhost:8000/api/archives?limit=50
+
+# Get specific archive metadata (Internet Archive)
+curl "http://localhost:8000/api/archive?id=https%3A%2F%2Fweb.archive.org%2Fweb"
+
+# Get arquivo.pt archive metadata
+curl "http://localhost:8000/api/archive?id=https%3A%2F%2Farquivo.pt%2Fwayback"
+```
+
+**Example Response for Individual Archive:**
+```json
+{
+  "id": "https://web.archive.org/web",
+  "name": "Internet Archive (Wayback Machine)",
+  "memento_api_url": "https://web.archive.org/web",
+  "cdx_api_url": "https://web.archive.org/cdx/search/cdx",
+  "homepage": "https://web.archive.org",
+  "serp_count": 551912265
+}
+```
+
 ---
 
 ## ⚙️ For Developers (Development)

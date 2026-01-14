@@ -605,3 +605,223 @@ async def get_serp_unbranded(serp_id: str) -> dict | None:
         "results": results,
         "metadata": metadata,
     }
+
+
+# ---------------------------------------------------------
+# 13. Get Archive Metadata by ID
+# ---------------------------------------------------------
+async def get_archive_metadata(archive_id: str) -> dict | None:
+    """
+    Get metadata for a specific web archive.
+
+    Archive ID is the Memento API URL (base URL without document path).
+    Aggregates information from all SERPs using this archive.
+
+    Returns:
+        dict with:
+            - id: Archive identifier (memento_api_url)
+            - name: Human-readable archive name (derived from URL)
+            - memento_api_url: Memento API base URL
+            - cdx_api_url: CDX API URL (from archive data or derived)
+            - homepage: Archive homepage URL (optional)
+            - serp_count: Number of SERPs in this archive
+    """
+    es = get_es_client()
+
+    # Search for all SERPs using this archive, and get one example to extract metadata
+    body = {
+        "query": {"match": {"archive.memento_api_url": archive_id}},
+        "size": 1,
+        "track_total_hits": True,
+        "_source": ["archive"],
+    }
+
+    try:
+        response = await es.search(index="aql_serps", body=body)
+        total = response.get("hits", {}).get("total", 0)
+
+        # Handle both old and new Elasticsearch response formats
+        if isinstance(total, dict):
+            serp_count = total.get("value", 0)
+        else:
+            serp_count = total
+
+        if serp_count == 0:
+            return None
+
+        # Get archive metadata from a sample document if available
+        hits = response.get("hits", {}).get("hits", [])
+        archive_data = {}
+        if hits:
+            archive_data = hits[0].get("_source", {}).get("archive", {})
+
+        # Derive archive name from URL
+        archive_name = _derive_archive_name(archive_id)
+
+        # Use CDX API URL from data if available, otherwise derive it
+        cdx_api_url = archive_data.get("cdx_api_url") or _derive_cdx_url(archive_id)
+
+        # Derive homepage from archive URL
+        homepage = _derive_homepage(archive_id)
+
+        return {
+            "id": archive_id,
+            "name": archive_name,
+            "memento_api_url": archive_id,
+            "cdx_api_url": cdx_api_url,
+            "homepage": homepage,
+            "serp_count": serp_count,
+        }
+
+    except Exception:
+        return None
+
+
+# ---------------------------------------------------------
+# 14. List all Archives
+# ---------------------------------------------------------
+async def list_all_archives(size: int = 100) -> dict:
+    """
+    Get a list of all available web archives in the dataset.
+
+    Returns all unique archives with their SERP counts, sorted by count.
+
+    Args:
+        size: Maximum number of archives to return (default: 100)
+
+    Returns:
+        dict with:
+            - total: Number of unique archives found
+            - archives: List of ArchiveMetadata dicts
+    """
+    es = get_es_client()
+
+    body = {
+        "query": {"match_all": {}},
+        "size": 0,
+        "aggs": {
+            "unique_archives": {
+                "terms": {
+                    "field": "archive.memento_api_url",
+                    "size": size,
+                    "order": {"_count": "desc"},
+                }
+            }
+        },
+    }
+
+    try:
+        response = await es.search(index="aql_serps", body=body)
+        aggs = response.get("aggregations", {})
+
+        archives = []
+        for bucket in aggs.get("unique_archives", {}).get("buckets", []):
+            archive_id = bucket.get("key")
+            serp_count = bucket.get("doc_count", 0)
+
+            if not archive_id or serp_count == 0:
+                continue
+
+            archive_name = _derive_archive_name(archive_id)
+            cdx_api_url = _derive_cdx_url(archive_id)
+            homepage = _derive_homepage(archive_id)
+
+            archives.append(
+                {
+                    "id": archive_id,
+                    "name": archive_name,
+                    "memento_api_url": archive_id,
+                    "cdx_api_url": cdx_api_url,
+                    "homepage": homepage,
+                    "serp_count": serp_count,
+                }
+            )
+
+        return {
+            "total": len(archives),
+            "archives": archives,
+        }
+
+    except Exception:
+        return {"total": 0, "archives": []}
+
+
+# ---------------------------------------------------------
+# Helper Functions for Archive Metadata
+# ---------------------------------------------------------
+def _derive_archive_name(memento_api_url: str) -> str:
+    """
+    Derive a human-readable archive name from the Memento API URL.
+
+    Examples:
+    - https://web.archive.org/web -> Internet Archive
+    - https://archive.example.org -> Archive Example
+    """
+    from urllib.parse import urlparse
+
+    # Known archives mapping
+    known_archives = {
+        "https://web.archive.org/web": "Internet Archive (Wayback Machine)",
+        "https://web.archive.org": "Internet Archive (Wayback Machine)",
+        "https://archive.org": "Internet Archive",
+    }
+
+    if memento_api_url in known_archives:
+        return known_archives[memento_api_url]
+
+    # Generic fallback: extract domain from URL
+    try:
+        parsed = urlparse(memento_api_url)
+        domain = parsed.netloc or parsed.path
+        # Capitalize and make readable
+        name = domain.replace("-", " ").replace(".org", "").title()
+        return name if name else "Unknown Archive"
+    except Exception:
+        return "Unknown Archive"
+
+
+def _derive_cdx_url(memento_api_url: str) -> str | None:
+    """
+    Derive CDX API URL from Memento API URL.
+
+    Common patterns:
+    - https://web.archive.org/web -> https://web.archive.org/cdx/search/csv
+    - https://archive.example.org -> https://archive.example.org/cdx/search/csv
+    """
+    if not memento_api_url:
+        return None
+
+    # Known CDX URLs
+    if memento_api_url.startswith("https://web.archive.org"):
+        return "https://web.archive.org/cdx/search/csv"
+
+    # Generic: append /cdx/search/csv to base URL
+    base_url = memento_api_url.rstrip("/")
+    return f"{base_url}/cdx/search/csv"
+
+
+def _derive_homepage(memento_api_url: str) -> str | None:
+    """
+    Derive archive homepage from Memento API URL.
+
+    Examples:
+    - https://web.archive.org/web -> https://web.archive.org
+    - https://archive.example.org -> https://archive.example.org
+    """
+    if not memento_api_url:
+        return None
+
+    # Known homepages
+    if memento_api_url.startswith("https://web.archive.org"):
+        return "https://web.archive.org"
+
+    # Generic: return base URL without /web or /cdx paths
+    from urllib.parse import urlparse
+
+    try:
+        parsed = urlparse(memento_api_url)
+        # Remove /web or other path components
+        base_url = f"{parsed.scheme}://{parsed.netloc}"
+        return base_url
+    except Exception:
+        return None

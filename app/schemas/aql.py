@@ -31,3 +31,24 @@ class SERPSearchByYearRequest(BaseModel):
     provider_id: Optional[str] = None
     year: int
     limit: int = 50
+
+
+# ---------------------------------------------------------
+# Archive Schemas
+# ---------------------------------------------------------
+class ArchiveMetadata(BaseModel):
+    """Web archive metadata including API endpoints and SERP count"""
+
+    id: str
+    name: str
+    memento_api_url: str
+    cdx_api_url: Optional[str] = None
+    homepage: Optional[str] = None
+    serp_count: int
+
+
+class ArchiveList(BaseModel):
+    """List of all available archives"""
+
+    total: int
+    archives: list[ArchiveMetadata]
