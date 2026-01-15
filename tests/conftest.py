@@ -72,28 +72,54 @@ def mock_elasticsearch(monkeypatch):
                     },
                 }
 
-            # Check for archive term query
+            # Check for archive match/term query used by get_archive_metadata()
             query_clause = kwargs.get("body", {}).get("query", {})
+            # Normalize to get the requested archive id
+            requested_id = None
             if (
-                "term" in query_clause
-                and "archive.memento_api_url" in query_clause.get("term", {})
+                "match" in query_clause
+                and "archive.memento_api_url" in query_clause["match"]
             ):
-                # Return archive search results
+                requested_id = query_clause["match"]["archive.memento_api_url"]
+            elif (
+                "term" in query_clause
+                and "archive.memento_api_url" in query_clause["term"]
+            ):
+                requested_id = query_clause["term"]["archive.memento_api_url"]
+
+            if requested_id is not None:
+                # Simulate found/not found with counts aligned to aggregation mock
+                if requested_id == "https://web.archive.org/web":
+                    serp_count = 80
+                elif requested_id == "https://archive.example.org":
+                    serp_count = 20
+                else:
+                    serp_count = 0
+
                 return {
                     "hits": {
-                        "total": {"value": 50, "relation": "eq"},
-                        "hits": [
-                            {
-                                "_id": f"doc-{i}",
-                                "_source": {
-                                    "url_query": f"query {i}",
-                                    "archive": {
-                                        "memento_api_url": "https://web.archive.org/web"
+                        "total": {"value": serp_count, "relation": "eq"},
+                        "hits": (
+                            [
+                                {
+                                    "_id": "doc-1",
+                                    "_source": {
+                                        "archive": {
+                                            "memento_api_url": requested_id,
+                                            "cdx_api_url": (
+                                                "https://web.archive.org/cdx/search/csv"
+                                                if requested_id.startswith(
+                                                    "https://web.archive.org"
+                                                )
+                                                else None
+                                            ),
+                                        }
                                     },
-                                },
-                            }
-                            for i in range(1, 4)
-                        ],
+                                }
+                            ]
+                            if serp_count > 0
+                            else []
+                        ),
                     }
                 }
 

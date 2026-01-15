@@ -13,6 +13,9 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
       - [✅ Core Endpoints](#-core-endpoints)
       - [✅ Search Endpoints](#-search-endpoints)
       - [✅ SERP Detail Endpoints](#-serp-detail-endpoints)
+      - [✅ Archive Endpoints (vereinheitlicht)](#-archive-endpoints-vereinheitlicht)
+      - [✅ Providers Endpoints](#-providers-endpoints)
+  - [| GET    | `/api/providers?size=uint` | Get all available search providers (optional: get number of providers) |](#-get-----apiproviderssizeuint--get-all-available-search-providers-optional-get-number-of-providers-)
   - [⚙️ For Developers (Development)](#️-for-developers-development)
     - [Requirements](#requirements-1)
     - [Setting Up Local Development Environment](#setting-up-local-development-environment)
@@ -77,12 +80,13 @@ docker stop <container-name>
 | GET    | `/redoc`  | ReDoc UI                     |
 
 #### ✅ Search Endpoints
-| Method | Endpoint                                                | Description          |
-| ------ | ------------------------------------------------------- | -------------------- |
-| GET    | `/api/serps?query=climate+change`                       | Basic SERP search    |
-| GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search |
-| GET    | `/api/suggestions?prefix=the`                           | Get search query suggestions (autocomplete) |
+| Method | Endpoint                                                | Description                                  |
+| ------ | ------------------------------------------------------- | -------------------------------------------- |
+| GET    | `/api/serps?query=climate+change`                       | Basic SERP search                            |
+| GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search                         |
+| GET    | `/api/suggestions?prefix=the`                           | Get search query suggestions (autocomplete)  |
 | GET    | `/api/serps/preview?query=climate`                      | Preview aggregations / suggestions for query |
+| GET    | `/api/serps/compare?ids=id1,id2`                        | Compare multiple SERPs (2-5)                 |
 
 **Query Parameters for Search Endpoint:**
 - `query` (required) - Search term
@@ -110,17 +114,39 @@ curl http://localhost:8000/api/suggestions?prefix=the&last_n_months=12
 curl http://localhost:8000/api/suggestions?prefix=test&size=20&last_n_months=24
 ```
 
+**Query Parameters for Compare Endpoint:**
+- `ids` (required) - Comma-separated list of SERP IDs (2-5 IDs)
+
+**Example Compare Requests:**
+```bash
+# Compare 2 SERPs
+curl "http://localhost:8000/api/serps/compare?ids=abc123,def456"
+
+# Compare 3 SERPs
+curl "http://localhost:8000/api/serps/compare?ids=id1,id2,id3"
+
+# Compare 5 SERPs (maximum)
+curl "http://localhost:8000/api/serps/compare?ids=id1,id2,id3,id4,id5"
+```
+
+**Compare Response includes:**
+- Comparison summary (total unique URLs, common URLs count, average similarity)
+- Full metadata for each SERP (query, provider, timestamp, status)
+- URL comparison (common URLs, unique URLs per SERP)
+- Ranking comparison (position differences for common URLs)
+- Similarity metrics (Jaccard similarity and Spearman correlation for each pair)
+
 
 #### ✅ SERP Detail Endpoints
-| Method | Endpoint                                                | Description                                                |
-| ------ | ------------------------------------------------------- | ---------------------------------------------------------- |
-| GET    | `/api/serp/{serp_id}`                                   | Get a single SERP by ID                                    |
-| GET    | `/api/serp/{serp_id}?include=original_url`              | Include original SERP URL                                  |
-| GET    | `/api/serp/{serp_id}?include=memento_url`               | Include Memento SERP URL                                   |
-| GET    | `/api/serp/{serp_id}?include=related&related_size=X`    | Include related SERPs                                      |
-| GET    | `/api/serp/{serp_id}?include=unfurl`                    | Include unfurled URL components                            |
-| GET    | `/api/serp/{serp_id}?include=direct_links`              | Include direct search result links                         |
-| GET    | `/api/serp/{serp_id}?include=unbranded`                 | Include provider-agnostic unified view                     |
+| Method | Endpoint                                             | Description                            |
+| ------ | ---------------------------------------------------- | -------------------------------------- |
+| GET    | `/api/serp/{serp_id}`                                | Get a single SERP by ID                |
+| GET    | `/api/serp/{serp_id}?include=original_url`           | Include original SERP URL              |
+| GET    | `/api/serp/{serp_id}?include=memento_url`            | Include Memento SERP URL               |
+| GET    | `/api/serp/{serp_id}?include=related&related_size=X` | Include related SERPs                  |
+| GET    | `/api/serp/{serp_id}?include=unfurl`                 | Include unfurled URL components        |
+| GET    | `/api/serp/{serp_id}?include=direct_links`           | Include direct search result links     |
+| GET    | `/api/serp/{serp_id}?include=unbranded`              | Include provider-agnostic unified view |
 
 **Query Parameters for SERP Detail Endpoint:**
 - `include` - Comma-separated fields: `original_url`, `memento_url`, `related`, `unfurl`, `direct_links`, `unbranded`
@@ -128,17 +154,17 @@ curl http://localhost:8000/api/suggestions?prefix=test&size=20&last_n_months=24
 - `related_size` - Number of related SERPs (requires `include=related`, default: 10)
 - `same_provider` - Only return related SERPs from same provider (requires `include=related`)
 
-#### ✅ Archive Detail Endpoints
-| Method | Endpoint                                   | Description                                         |
-| ------ | ------------------------------------------ | --------------------------------------------------- |
-| GET    | `/api/archives`                            | List all available web archives in the dataset      |
-| GET    | `/api/archive?id=url`                             | Get metadata for a specific web archive by ID       |
+#### ✅ Archive Endpoints
+| Method | Endpoint                       | Description                                    |
+| ------ | ------------------------------ | ---------------------------------------------- |
+| GET    | `/api/archives`                | List all available web archives in the dataset |
+| GET    | `/api/archives/{archive_id}`   | Get metadata for a specific web archive       |
 
-**Query Parameters for Archives Endpoint:**
+**Query Parameters for Archives List Endpoint:**
 - `limit` - Maximum number of archives to return (default: 100, range: 1-1000)
 
-**Query Parameters for Archive Detail Endpoint:**
-- `id` - Archive ID (Memento API URL, URL-encoded) - **required**
+**Path Parameters for Archive Detail Endpoint:**
+- `archive_id` - Memento API URL of the archive (no encoding needed)
 
 **Archive Metadata Fields:**
 - `id` - Unique archive identifier (Memento API URL)
@@ -157,10 +183,10 @@ curl http://localhost:8000/api/archives
 curl http://localhost:8000/api/archives?limit=50
 
 # Get specific archive metadata (Internet Archive)
-curl "http://localhost:8000/api/archive?id=https%3A%2F%2Fweb.archive.org%2Fweb"
+curl "http://localhost:8000/api/archives/https://web.archive.org/web"
 
 # Get arquivo.pt archive metadata
-curl "http://localhost:8000/api/archive?id=https%3A%2F%2Farquivo.pt%2Fwayback"
+curl "http://localhost:8000/api/archives/https://arquivo.pt/wayback"
 ```
 
 **Example Response for Individual Archive:**
@@ -174,7 +200,10 @@ curl "http://localhost:8000/api/archive?id=https%3A%2F%2Farquivo.pt%2Fwayback"
   "serp_count": 551912265
 }
 ```
-
+#### ✅ Providers Endpoints
+| Method | Endpoint                   | Description                                                            |
+| ------ | -------------------------- | ---------------------------------------------------------------------- |
+| GET    | `/api/providers?size=uint` | Get all available search providers (optional: get number of providers) |
 ---
 
 ## ⚙️ For Developers (Development)
