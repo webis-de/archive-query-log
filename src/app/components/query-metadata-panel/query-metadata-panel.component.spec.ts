@@ -263,6 +263,106 @@ describe('AppQueryMetadataPanelComponent', () => {
     });
   });
 
+  describe('archiveName computed signal', () => {
+    it('should return empty string when no search result', () => {
+      fixture.componentRef.setInput('searchResult', null);
+      fixture.detectChanges();
+      expect(component.archiveName()).toBe('');
+    });
+
+    it('should return Internet Archive name for web.archive.org', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.detectChanges();
+      expect(component.archiveName()).toBe('Internet Archive (Wayback Machine)');
+    });
+
+    it('should return Unknown Archive when no archive data', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResultWithoutArchive);
+      fixture.detectChanges();
+      expect(component.archiveName()).toBe('Unknown Archive');
+    });
+
+    it('should derive name from unknown archive URL', () => {
+      const customArchiveResult = {
+        ...mockSearchResult,
+        _source: {
+          ...mockSearchResult._source,
+          archive: {
+            memento_api_url: 'https://archive.example.org/web',
+          },
+        },
+      } as SearchResult;
+      fixture.componentRef.setInput('searchResult', customArchiveResult);
+      fixture.detectChanges();
+      expect(component.archiveName()).toContain('Archive');
+    });
+  });
+
+  describe('archiveHomepage computed signal', () => {
+    it('should return null when no search result', () => {
+      fixture.componentRef.setInput('searchResult', null);
+      fixture.detectChanges();
+      expect(component.archiveHomepage()).toBeNull();
+    });
+
+    it('should return web.archive.org homepage for Internet Archive', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResult);
+      fixture.detectChanges();
+      expect(component.archiveHomepage()).toBe('https://web.archive.org');
+    });
+
+    it('should return null when no archive data', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResultWithoutArchive);
+      fixture.detectChanges();
+      expect(component.archiveHomepage()).toBeNull();
+    });
+
+    it('should derive homepage from unknown archive URL', () => {
+      const customArchiveResult = {
+        ...mockSearchResult,
+        _source: {
+          ...mockSearchResult._source,
+          archive: {
+            memento_api_url: 'https://archive.example.org/web',
+          },
+        },
+      } as SearchResult;
+      fixture.componentRef.setInput('searchResult', customArchiveResult);
+      fixture.detectChanges();
+      expect(component.archiveHomepage()).toBe('https://archive.example.org');
+    });
+  });
+
+  describe('cdxApiUrl computed signal', () => {
+    it('should return null when no search result', () => {
+      fixture.componentRef.setInput('searchResult', null);
+      fixture.detectChanges();
+      expect(component.cdxApiUrl()).toBeNull();
+    });
+
+    it('should return null when no archive data', () => {
+      fixture.componentRef.setInput('searchResult', mockSearchResultWithoutArchive);
+      fixture.detectChanges();
+      expect(component.cdxApiUrl()).toBeNull();
+    });
+
+    it('should return CDX API URL when available', () => {
+      const resultWithCdx = {
+        ...mockSearchResult,
+        _source: {
+          ...mockSearchResult._source,
+          archive: {
+            memento_api_url: 'https://web.archive.org/web',
+            cdx_api_url: 'https://web.archive.org/cdx/search/csv',
+          },
+        },
+      } as SearchResult;
+      fixture.componentRef.setInput('searchResult', resultWithCdx);
+      fixture.detectChanges();
+      expect(component.cdxApiUrl()).toBe('https://web.archive.org/cdx/search/csv');
+    });
+  });
+
   describe('Website tab with archived snapshot', () => {
     it('should display archive date info when website tab is active', () => {
       fixture.componentRef.setInput('searchResult', mockSearchResult);
