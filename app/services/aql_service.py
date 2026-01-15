@@ -10,7 +10,6 @@ Contains all functions used by the search router:
 """
 
 from typing import List, Optional, Any, Dict
-from elasticsearch import BadRequestError
 from app.core.elastic import get_es_client
 from app.utils.url_cleaner import remove_tracking_parameters
 
@@ -138,473 +137,6 @@ async def search_by_year(query: str, year: int, size: int = 10) -> dict:
     Search SERPs containing a keyword in a specific year.
     """
     return await search_advanced(query=query, year=year, size=size)
-
-
-# ---------------------------------------------------------
-# 6. Preview search (aggregations for suggestions / preview)
-# ---------------------------------------------------------
-async def preview_search(
-    query: str,
-    top_n_queries: int = 10,
-    interval: str = "month",
-    top_providers: int = 5,
-    top_archives: int = 5,
-    last_n_months: int | None = 36,
-) -> dict:
-    """
-    Return summary statistics and top-matching queries for a lightweight preview.
-
-    Aggregations returned:
-      - total_hits
-      - top_queries (terms on url_query.keyword)
-      - date_histogram (by capture.timestamp)
-      - top_providers (terms on provider.id)
-      - top_archives (terms on archive.memento_api_url)
-    """
-    es = get_es_client()
-
-    # build query with optional recent range filter
-    must_clause = [{"match_phrase_prefix": {"url_query": query}}]
-    filter_clause: list[dict] = []
-    if last_n_months is not None and last_n_months > 0:
-        from datetime import datetime, timezone, timedelta
-
-        now = datetime.now(timezone.utc)
-        # approximate month as 30 days for simplicity
-        start = now - timedelta(days=30 * last_n_months)
-        # strip microseconds to match index mapping (strict_date_time_no_millis)
-        start_iso = start.replace(microsecond=0).isoformat()
-        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
-
-    query_clause: dict[str, Any]
-    if filter_clause:
-        query_clause = {"bool": {"must": must_clause, "filter": filter_clause}}
-    else:
-        query_clause = must_clause[0]
-
-    body = {
-        "query": query_clause,
-        "size": 0,
-        "track_total_hits": True,
-        "aggs": {
-            "top_queries": {
-                "terms": {"field": "url_query.keyword", "size": top_n_queries}
-            },
-            "by_time": {
-                "date_histogram": {
-                    "field": "capture.timestamp",
-                    "calendar_interval": interval,
-                    "min_doc_count": 1,
-                }
-            },
-            "top_providers": {
-                "terms": {"field": "provider.id.keyword", "size": top_providers}
-            },
-            "top_archives": {
-                "terms": {
-                    "field": "archive.memento_api_url.keyword",
-                    "size": top_archives,
-                }
-            },
-        },
-    }
-
-    response = await es.search(index="aql_serps", body=body)
-
-    # total hits
-    total = response.get("hits", {}).get("total", 0)
-    if isinstance(total, dict):
-        total_count = total.get("value", 0)
-    else:
-        total_count = total
-
-    aggs = response.get("aggregations", {})
-
-    top_queries = [
-        {"query": b.get("key"), "count": b.get("doc_count")}
-        for b in aggs.get("top_queries", {}).get("buckets", [])
-    ]
-
-    # Fallback: Extract top queries from sample documents if aggregation fails
-    if not top_queries:
-        try:
-            # Dynamically adjust sample size based on total hits and requested top_n
-            # Use min(10000, total_count) to balance accuracy vs performance
-            sample_size = min(10000, max(1000, top_n_queries * 100))
-
-            sample_body_adjusted = {
-                "query": query_clause,
-                "size": sample_size,
-                "_source": ["url_query"],
-            }
-            sample_response = await es.search(
-                index="aql_serps", body=sample_body_adjusted
-            )
-            hits = sample_response.get("hits", {}).get("hits", [])
-
-            # Count occurrences of each unique query
-            query_counts: dict[str, int] = {}
-            for hit in hits:
-                source = hit.get("_source", {})
-                q = source.get("url_query", "")
-                if q:
-                    query_counts[q] = query_counts.get(q, 0) + 1
-
-            # Sort by count and get top N
-            sorted_queries = sorted(
-                query_counts.items(), key=lambda x: x[1], reverse=True
-            )
-            top_queries = [
-                {"query": query, "count": count}
-                for query, count in sorted_queries[:top_n_queries]
-            ]
-        except (BadRequestError, Exception):
-            top_queries = []
-
-    date_histogram = [
-        {
-            "key_as_string": b.get("key_as_string", b.get("key")),
-            "count": b.get("doc_count"),
-        }
-        for b in aggs.get("by_time", {}).get("buckets", [])
-    ]
-
-    top_providers_list = [
-        {"id": b.get("key"), "count": b.get("doc_count")}
-        for b in aggs.get("top_providers", {}).get("buckets", [])
-    ]
-
-    # Fallback: if keyword-based aggregation returned empty buckets, try non-keyword field
-    if not top_providers_list:
-        fallback_body = dict(body)
-        fallback_body["aggs"] = {
-            "top_providers": {"terms": {"field": "provider.id", "size": top_providers}}
-        }
-        try:
-            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
-            fallback_aggs = fallback_resp.get("aggregations", {})
-            top_providers_list = [
-                {"id": b.get("key"), "count": b.get("doc_count")}
-                for b in fallback_aggs.get("top_providers", {}).get("buckets", [])
-            ]
-        except (BadRequestError, Exception):
-            top_providers_list = []
-
-    top_archives_list = [
-        {"archive": b.get("key"), "count": b.get("doc_count")}
-        for b in aggs.get("top_archives", {}).get("buckets", [])
-    ]
-
-    # Fallback: if keyword-based aggregation returned empty buckets, try non-keyword field
-    if not top_archives_list:
-        fallback_body = dict(body)
-        fallback_body["aggs"] = {
-            "top_archives": {
-                "terms": {"field": "archive.memento_api_url", "size": top_archives}
-            }
-        }
-        try:
-            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
-            fallback_aggs = fallback_resp.get("aggregations", {})
-            top_archives_list = [
-                {"archive": b.get("key"), "count": b.get("doc_count")}
-                for b in fallback_aggs.get("top_archives", {}).get("buckets", [])
-            ]
-        except (BadRequestError, Exception):
-            top_archives_list = []
-
-    return {
-        "query": query,
-        "total_hits": total_count,
-        "top_queries": top_queries,
-        "date_histogram": date_histogram,
-        "top_providers": top_providers_list,
-        "top_archives": top_archives_list,
-    }
-
-
-# ---------------------------------------------------------
-# 6b. Search suggestions
-# ---------------------------------------------------------
-async def search_suggestions(
-    prefix: str,
-    last_n_months: int | None = 36,
-    size: int = 10,
-) -> dict:
-    """
-    Get popular search query suggestions based on prefix.
-
-    Matches queries starting with the given prefix and returns the most
-    popular (frequent) ones, ranked by document count.
-
-    Performance Note:
-    - Fetches size*20 documents to account for duplicates during deduplication
-    - Uses match_phrase_prefix (faster than wildcard queries)
-    - Time filtering reduces result set before aggregation
-
-    Args:
-        prefix: Query prefix to search for
-        last_n_months: Filter to last N months (None/0 = no filter)
-        size: Number of suggestions to return (1-50)
-
-    Returns:
-        Dict with "prefix" and "suggestions" list
-    """
-    es = get_es_client()
-
-    # Build query with optional time filter
-    must_clause = [{"match_phrase_prefix": {"url_query": prefix}}]
-    filter_clause: list[dict] = []
-
-    if last_n_months is not None and last_n_months > 0:
-        from datetime import datetime, timezone, timedelta
-
-        now = datetime.now(timezone.utc)
-        start = now - timedelta(days=30 * last_n_months)
-        start_iso = start.replace(microsecond=0).isoformat()
-        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
-
-    query_clause: dict[str, Any]
-    if filter_clause:
-        query_clause = {"bool": {"must": must_clause, "filter": filter_clause}}
-    else:
-        query_clause = must_clause[0]
-
-    # Get matched documents and deduplicate by url_query
-    body = {
-        "query": query_clause,
-        "size": min(size * 20, 1000),  # Cap at 1000 to prevent excessive memory use
-        "_source": ["url_query"],
-        "sort": ["_score"],
-    }
-
-    try:
-        response = await es.search(index="aql_serps", body=body)
-
-        # Deduplicate and count occurrences
-        suggestion_counts: dict[str, int] = {}
-        for hit in response["hits"]["hits"]:
-            query = hit["_source"].get("url_query")
-            if query:
-                suggestion_counts[query] = suggestion_counts.get(query, 0) + 1
-
-        # Sort by count (descending) and take top N
-        suggestions = [
-            {"query": q, "count": c}
-            for q, c in sorted(suggestion_counts.items(), key=lambda x: (-x[1], x[0]))[
-                :size
-            ]
-        ]
-    except Exception:
-        suggestions = []
-
-    return {
-        "prefix": prefix,
-        "suggestions": suggestions,
-    }
-
-
-# 7. Get SERP by ID
-# ---------------------------------------------------------
-async def get_serp_by_id(serp_id: str) -> Any | None:
-    """Fetch a single SERP by ID from Elasticsearch."""
-    es = get_es_client()
-    try:
-        response = await es.get(index="aql_serps", id=serp_id)
-        return response
-    except Exception:
-        return None
-
-
-# ---------------------------------------------------------
-# 7. Get original URL
-# ---------------------------------------------------------
-async def get_serp_original_url(
-    serp_id: str, remove_tracking: bool = False
-) -> dict | None:
-    """Get the original SERP URL from a SERP by ID."""
-    serp = await get_serp_by_id(serp_id)
-    if not serp:
-        return None
-
-    original_url = serp["_source"]["capture"]["url"]
-    response = {"serp_id": serp["_id"], "original_url": original_url}
-
-    if remove_tracking:
-        response["url_without_tracking"] = remove_tracking_parameters(original_url)
-
-    return response
-
-
-# ---------------------------------------------------------
-# 8. Get memento URL
-# ---------------------------------------------------------
-async def get_serp_memento_url(serp_id: str) -> dict | None:
-    """Get the memento SERP URL from a SERP by ID."""
-    from datetime import datetime
-
-    serp = await get_serp_by_id(serp_id)
-    if not serp:
-        return None
-
-    base_url = serp["_source"]["archive"]["memento_api_url"]
-    timestamp_str = serp["_source"]["capture"]["timestamp"]
-    capture_url = serp["_source"]["capture"]["url"]
-
-    timestamp = datetime.fromisoformat(timestamp_str.replace("+00:00", "+00:00"))
-    formatted_timestamp = timestamp.strftime("%Y%m%d%H%M%S")
-    memento_url = f"{base_url}/{formatted_timestamp}/{capture_url}"
-
-    return {"serp_id": serp["_id"], "memento_url": memento_url}
-
-
-# ---------------------------------------------------------
-# 9. Get related SERPs
-# ---------------------------------------------------------
-async def get_related_serps(
-    serp_id: str, size: int = 10, same_provider: bool = False
-) -> List[Any]:
-    """Get related SERPs by ID."""
-
-    serp = await get_serp_by_id(serp_id)
-    if not serp:
-        return []
-    query = serp["_source"]["url_query"]
-    provider_id = serp["_source"]["provider"]["id"] if same_provider else None
-
-    # add 1 to size for the original serp
-    results = await search_advanced(query=query, size=size + 1, provider_id=provider_id)
-
-    # extract hits from the returned dict (search_advanced returns {"hits": [...], "total": N})
-    hits = results.get("hits", []) if isinstance(results, dict) else results
-
-    # only use results that are not the original serp
-    related = [hit for hit in hits if hit["_id"] != serp_id]
-    return related[:size]
-
-
-# ---------------------------------------------------------
-# 10. Unfurl SERP URL
-# ---------------------------------------------------------
-async def get_serp_unfurl(serp_id: str) -> dict | None:
-    """
-    Parse and unfurl the SERP URL into its components.
-
-    Returns structured breakdown of URL with:
-    - Decoded query parameters
-    - Domain parts (subdomain, domain, TLD)
-    - Path segments
-    - Port (if present)
-    """
-    from app.utils.url_unfurler import unfurl
-
-    serp = await get_serp_by_id(serp_id)
-    if not serp:
-        return None
-
-    original_url = serp["_source"]["capture"]["url"]
-    unfurled_url = unfurl(original_url)
-
-    return {
-        "serp_id": serp["_id"],
-        "original_url": original_url,
-        "parsed": unfurled_url,
-    }
-
-
-# ---------------------------------------------------------
-# 11. Get direct links from SERP
-# ---------------------------------------------------------
-async def get_serp_direct_links(serp_id: str) -> dict | None:
-    """
-    Extract direct links/results from a SERP.
-
-    Returns all search result links from the SERP with:
-    - URL of each result
-    - Title/snippet (if available)
-    - Position in SERP
-    """
-    serp = await get_serp_by_id(serp_id)
-    if not serp:
-        return None
-
-    source = serp["_source"]
-    direct_links = []
-
-    # Extract direct links from results if they exist in the SERP data
-    if "results" in source:
-        for idx, result in enumerate(source["results"]):
-            direct_links.append(
-                {
-                    "position": idx + 1,
-                    "url": result.get("url"),
-                    "title": result.get("title"),
-                    "snippet": result.get("snippet", result.get("description")),
-                }
-            )
-
-    return {
-        "serp_id": serp["_id"],
-        "direct_links_count": len(direct_links),
-        "direct_links": direct_links,
-    }
-
-
-# ---------------------------------------------------------
-# 12. Get unbranded SERP view
-# ---------------------------------------------------------
-async def get_serp_unbranded(serp_id: str) -> dict | None:
-    """
-    Get a unified, provider-agnostic view of SERP contents.
-
-    Normalizes parsed query and result blocks across different search
-    providers to present a clean, unbranded view of the SERP.
-
-    Returns:
-        dict with keys:
-            - serp_id: The SERP document ID
-            - query: Normalized parsed query information
-            - results: Normalized list of search results
-            - metadata: Capture metadata (timestamp, URL, status_code)
-    """
-    serp = await get_serp_by_id(serp_id)
-    if not serp:
-        return None
-
-    source = serp["_source"]
-
-    # Extract normalized query information
-    query_data = {
-        "raw": source.get("url_query", ""),
-        "parsed": source.get("parsed_query", None),
-    }
-
-    # Extract normalized results
-    results = []
-    if "results" in source:
-        for idx, result in enumerate(source["results"]):
-            normalized_result = {
-                "position": idx + 1,
-                "url": result.get("url"),
-                "title": result.get("title"),
-                "snippet": result.get("snippet") or result.get("description"),
-            }
-            results.append(normalized_result)
-
-    # Extract metadata
-    capture_info = source.get("capture", {})
-    metadata = {
-        "timestamp": capture_info.get("timestamp"),
-        "url": capture_info.get("url"),
-        "status_code": capture_info.get("status_code"),
-    }
-
-    return {
-        "serp_id": serp["_id"],
-        "query": query_data,
-        "results": results,
-        "metadata": metadata,
-    }
 
 
 # ---------------------------------------------------------
@@ -825,3 +357,732 @@ def _derive_homepage(memento_api_url: str) -> str | None:
         return base_url
     except Exception:
         return None
+
+
+# ---------------------------------------------------------
+# 15. Get All Providers
+# ---------------------------------------------------------
+async def get_all_providers(size: int = 100) -> List[Any]:
+    """
+    Retrieve all available search providers from Elasticsearch.
+    Returns a list of all providers.
+    """
+    es = get_es_client()
+
+    # First query to get total count
+    count_body = {"query": {"match_all": {}}, "size": 0, "track_total_hits": True}
+    count_response = await es.search(index="aql_providers", body=count_body)
+    total_info = count_response.get("hits", {}).get("total", 0)
+    total = total_info.get("value", 0) if isinstance(total_info, dict) else total_info
+
+    # Use the smaller of requested size or total count
+    actual_size = min(size, total) if size > 0 else total
+
+    # Fetch all providers
+    body = {"query": {"match_all": {}}, "size": actual_size}
+    response = await es.search(index="aql_providers", body=body)
+    hits: List[Any] = response.get("hits", {}).get("hits", [])
+    return hits
+
+
+# ---------------------------------------------------------
+# 6b. Search suggestions
+# ---------------------------------------------------------
+async def search_suggestions(
+    prefix: str,
+    last_n_months: int | None = 36,
+    size: int = 10,
+) -> dict:
+    """
+    Get popular search query suggestions based on prefix.
+
+    Matches queries starting with the given prefix and returns the most
+    popular (frequent) ones, ranked by document count.
+
+    Performance Note:
+    - Fetches size*20 documents to account for duplicates during deduplication
+    - Uses match_phrase_prefix (faster than wildcard queries)
+    - Time filtering reduces result set before aggregation
+
+    Args:
+        prefix: Query prefix to search for
+        last_n_months: Filter to last N months (None/0 = no filter)
+        size: Number of suggestions to return (1-50)
+
+    Returns:
+        Dict with "prefix" and "suggestions" list
+    """
+    es = get_es_client()
+
+    # Build query with optional time filter
+    must_clause = [{"match_phrase_prefix": {"url_query": prefix}}]
+    filter_clause: list[dict] = []
+
+    if last_n_months is not None and last_n_months > 0:
+        from datetime import datetime, timezone, timedelta
+
+        now = datetime.now(timezone.utc)
+        start = now - timedelta(days=30 * last_n_months)
+        start_iso = start.replace(microsecond=0).isoformat()
+        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    query_clause: dict[str, Any]
+    if filter_clause:
+        query_clause = {"bool": {"must": must_clause, "filter": filter_clause}}
+    else:
+        query_clause = must_clause[0]
+
+    # Get matched documents and deduplicate by url_query
+    body = {
+        "query": query_clause,
+        "size": min(size * 20, 1000),  # Cap at 1000 to prevent excessive memory use
+        "_source": ["url_query"],
+        "sort": ["_score"],
+    }
+
+    try:
+        response = await es.search(index="aql_serps", body=body)
+
+        # Deduplicate and count occurrences
+        suggestion_counts: dict[str, int] = {}
+        for hit in response["hits"]["hits"]:
+            query = hit["_source"].get("url_query")
+            if query:
+                suggestion_counts[query] = suggestion_counts.get(query, 0) + 1
+
+        # Sort by count (descending) and take top N
+        suggestions = [
+            {"query": q, "count": c}
+            for q, c in sorted(suggestion_counts.items(), key=lambda x: (-x[1], x[0]))[
+                :size
+            ]
+        ]
+    except Exception:
+        suggestions = []
+
+    return {
+        "prefix": prefix,
+        "suggestions": suggestions,
+    }
+
+
+# ---------------------------------------------------------
+# 6c. Preview Search (aggregations + fallbacks)
+# ---------------------------------------------------------
+async def preview_search(
+    query: str,
+    top_n_queries: int = 10,
+    interval: str = "month",
+    top_providers: int = 5,
+    top_archives: int = 5,
+    last_n_months: int | None = 36,
+) -> dict:
+    """
+    Lightweight preview aggregations for a query.
+
+    Returns:
+        dict with keys:
+            - query: str
+            - total_hits: int
+            - top_queries: List[{query, count}]
+            - date_histogram: List[{date, count}]
+            - top_providers: List[{provider, count}]
+            - top_archives: List[{archive, count}]
+    """
+    es = get_es_client()
+
+    # Build base query with optional time filter
+    must_clause: list[dict] = [{"match": {"url_query": query}}]
+    filter_clause: list[dict] = []
+    if last_n_months is not None and last_n_months > 0:
+        from datetime import datetime, timezone, timedelta
+
+        now = datetime.now(timezone.utc)
+        start = now - timedelta(days=30 * last_n_months)
+        start_iso = start.replace(microsecond=0).isoformat()
+        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    if filter_clause:
+        query_clause: dict[str, Any] = {
+            "bool": {"must": must_clause, "filter": filter_clause}
+        }
+    else:
+        query_clause = must_clause[0]
+
+    # Map interval to ES calendar_interval
+    interval = interval.lower()
+    if interval not in {"day", "week", "month"}:
+        interval = "month"
+
+    # Initial aggregations using keyword fields where applicable
+    agg_body = {
+        "query": query_clause,
+        "size": 0,
+        "aggs": {
+            "top_queries": {
+                "terms": {"field": "url_query.keyword", "size": top_n_queries}
+            },
+            "by_time": {
+                "date_histogram": {
+                    "field": "capture.timestamp",
+                    "calendar_interval": interval,
+                }
+            },
+            "top_providers": {
+                "terms": {"field": "provider.name.keyword", "size": top_providers}
+            },
+            "top_archives": {
+                "terms": {
+                    "field": "archive.memento_api_url",
+                    "size": top_archives,
+                }
+            },
+        },
+    }
+
+    try:
+        agg_resp = await es.search(index="aql_serps", body=agg_body)
+    except Exception:
+        # On any error, return empty structure
+        return {
+            "query": query,
+            "total_hits": 0,
+            "top_queries": [],
+            "date_histogram": [],
+            "top_providers": [],
+            "top_archives": [],
+        }
+
+    # Total hits handling (dict or int)
+    total_obj = agg_resp.get("hits", {}).get("total", 0)
+    total_hits = (
+        total_obj.get("value", total_obj) if isinstance(total_obj, dict) else total_obj
+    )
+
+    aggs = agg_resp.get("aggregations", {}) or {}
+
+    # Extract initial aggregations
+    top_queries_buckets = aggs.get("top_queries", {}).get("buckets", [])
+    by_time_buckets = aggs.get("by_time", {}).get("buckets", [])
+    top_providers_buckets = aggs.get("top_providers", {}).get("buckets", [])
+    top_archives_buckets = aggs.get("top_archives", {}).get("buckets", [])
+
+    # Convert to output structures
+    top_queries_out: list[dict] = [
+        {"query": b.get("key"), "count": b.get("doc_count", 0)}
+        for b in top_queries_buckets
+    ]
+    date_histogram_out: list[dict] = [
+        {"date": b.get("key_as_string"), "count": b.get("doc_count", 0)}
+        for b in by_time_buckets
+    ]
+    top_providers_out: list[dict] = [
+        {"provider": b.get("key"), "count": b.get("doc_count", 0)}
+        for b in top_providers_buckets
+    ]
+    top_archives_out: list[dict] = [
+        {"archive": b.get("key"), "count": b.get("doc_count", 0)}
+        for b in top_archives_buckets
+    ]
+
+    # Fallback: compute top_queries from a sample if aggregation empty
+    if not top_queries_out:
+        # Sample size scales with requested top N (bounded)
+        sample_size = max(top_n_queries * 100, 200)
+        sample_size = min(sample_size, 10000)
+
+        sample_body = {
+            "query": query_clause,
+            "size": sample_size,
+            "_source": ["url_query"],
+            "sort": ["_score"],
+        }
+        try:
+            sample_resp = await es.search(index="aql_serps", body=sample_body)
+            counts: dict[str, int] = {}
+            for hit in sample_resp.get("hits", {}).get("hits", []):
+                q = (hit.get("_source", {}) or {}).get("url_query")
+                if q:
+                    counts[q] = counts.get(q, 0) + 1
+            top_queries_out = [
+                {"query": q, "count": c}
+                for q, c in sorted(counts.items(), key=lambda x: (-x[1], x[0]))[
+                    :top_n_queries
+                ]
+            ]
+        except Exception:
+            top_queries_out = []
+
+    # Fallback: recompute providers without .keyword if empty
+    if not top_providers_out:
+        try:
+            prov_fallback_body = {
+                "query": query_clause,
+                "size": 0,
+                "aggs": {
+                    "top_providers": {
+                        "terms": {"field": "provider.name", "size": top_providers}
+                    }
+                },
+            }
+            prov_resp = await es.search(index="aql_serps", body=prov_fallback_body)
+            fb_buckets = (
+                prov_resp.get("aggregations", {})
+                .get("top_providers", {})
+                .get("buckets", [])
+            )
+            top_providers_out = [
+                {"provider": b.get("key"), "count": b.get("doc_count", 0)}
+                for b in fb_buckets
+            ]
+        except Exception:
+            pass
+
+    return {
+        "query": query,
+        "total_hits": total_hits or 0,
+        "top_queries": top_queries_out,
+        "date_histogram": date_histogram_out,
+        "top_providers": top_providers_out,
+        "top_archives": top_archives_out,
+    }
+
+
+# 7. Get SERP by ID
+# ---------------------------------------------------------
+async def get_serp_by_id(serp_id: str) -> Any | None:
+    """Fetch a single SERP by ID from Elasticsearch."""
+    es = get_es_client()
+    try:
+        response = await es.get(index="aql_serps", id=serp_id)
+        return response
+    except Exception:
+        return None
+
+
+# ---------------------------------------------------------
+# 7. Get original URL
+# ---------------------------------------------------------
+async def get_serp_original_url(
+    serp_id: str, remove_tracking: bool = False
+) -> dict | None:
+    """Get the original SERP URL from a SERP by ID."""
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    original_url = serp["_source"]["capture"]["url"]
+    response = {"serp_id": serp["_id"], "original_url": original_url}
+
+    if remove_tracking:
+        response["url_without_tracking"] = remove_tracking_parameters(original_url)
+
+    return response
+
+
+# ---------------------------------------------------------
+# 8. Get memento URL
+# ---------------------------------------------------------
+async def get_serp_memento_url(serp_id: str) -> dict | None:
+    """Get the memento SERP URL from a SERP by ID."""
+    from datetime import datetime
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    base_url = serp["_source"]["archive"]["memento_api_url"]
+    timestamp_str = serp["_source"]["capture"]["timestamp"]
+    capture_url = serp["_source"]["capture"]["url"]
+
+    timestamp = datetime.fromisoformat(timestamp_str.replace("+00:00", "+00:00"))
+    formatted_timestamp = timestamp.strftime("%Y%m%d%H%M%S")
+    memento_url = f"{base_url}/{formatted_timestamp}/{capture_url}"
+
+    return {"serp_id": serp["_id"], "memento_url": memento_url}
+
+
+# ---------------------------------------------------------
+# 9. Get related SERPs
+# ---------------------------------------------------------
+async def get_related_serps(
+    serp_id: str, size: int = 10, same_provider: bool = False
+) -> List[Any]:
+    """Get related SERPs by ID."""
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return []
+    query = serp["_source"]["url_query"]
+    provider_id = serp["_source"]["provider"]["id"] if same_provider else None
+
+    # add 1 to size for the original serp
+    results = await search_advanced(query=query, size=size + 1, provider_id=provider_id)
+
+    # extract hits from the returned dict (search_advanced returns {"hits": [...], "total": N})
+    hits = results.get("hits", []) if isinstance(results, dict) else results
+
+    # only use results that are not the original serp
+    related = [hit for hit in hits if hit["_id"] != serp_id]
+    return related[:size]
+
+
+# ---------------------------------------------------------
+# 10. Unfurl SERP URL
+# ---------------------------------------------------------
+async def get_serp_unfurl(serp_id: str) -> dict | None:
+    """
+    Parse and unfurl the SERP URL into its components.
+
+    Returns structured breakdown of URL with:
+    - Decoded query parameters
+    - Domain parts (subdomain, domain, TLD)
+    - Path segments
+    - Port (if present)
+    """
+    from app.utils.url_unfurler import unfurl
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    original_url = serp["_source"]["capture"]["url"]
+    unfurled_url = unfurl(original_url)
+
+    return {
+        "serp_id": serp["_id"],
+        "original_url": original_url,
+        "parsed": unfurled_url,
+    }
+
+
+# ---------------------------------------------------------
+# 11. Get direct links from SERP
+# ---------------------------------------------------------
+async def get_serp_direct_links(serp_id: str) -> dict | None:
+    """
+    Extract direct links/results from a SERP.
+
+    Returns all search result links from the SERP with:
+    - URL of each result
+    - Title/snippet (if available)
+    - Position in SERP
+    """
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    source = serp["_source"]
+    direct_links = []
+
+    # Extract direct links from results if they exist in the SERP data
+    if "results" in source:
+        for idx, result in enumerate(source["results"]):
+            direct_links.append(
+                {
+                    "position": idx + 1,
+                    "url": result.get("url"),
+                    "title": result.get("title"),
+                    "snippet": result.get("snippet", result.get("description")),
+                }
+            )
+
+    return {
+        "serp_id": serp["_id"],
+        "direct_links_count": len(direct_links),
+        "direct_links": direct_links,
+    }
+
+
+# ---------------------------------------------------------
+# 12. Get unbranded SERP view
+# ---------------------------------------------------------
+async def get_serp_unbranded(serp_id: str) -> dict | None:
+    """
+    Get a unified, provider-agnostic view of SERP contents.
+
+    Normalizes parsed query and result blocks across different search
+    providers to present a clean, unbranded view of the SERP.
+
+    Returns:
+        dict with keys:
+            - serp_id: The SERP document ID
+            - query: Normalized parsed query information
+            - results: Normalized list of search results
+            - metadata: Capture metadata (timestamp, URL, status_code)
+    """
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    source = serp["_source"]
+
+    # Extract normalized query information
+    query_data = {
+        "raw": source.get("url_query", ""),
+        "parsed": source.get("parsed_query", None),
+    }
+
+    # Extract normalized results
+    results = []
+    if "results" in source:
+        for idx, result in enumerate(source["results"]):
+            normalized_result = {
+                "position": idx + 1,
+                "url": result.get("url"),
+                "title": result.get("title"),
+                "snippet": result.get("snippet") or result.get("description"),
+            }
+            results.append(normalized_result)
+
+    # Extract metadata
+    capture_info = source.get("capture", {})
+    metadata = {
+        "timestamp": capture_info.get("timestamp"),
+        "url": capture_info.get("url"),
+        "status_code": capture_info.get("status_code"),
+    }
+
+    return {
+        "serp_id": serp["_id"],
+        "query": query_data,
+        "results": results,
+        "metadata": metadata,
+    }
+
+
+# ---------------------------------------------------------
+# 14. Get Provider by ID
+# ---------------------------------------------------------
+async def get_provider_by_id(provider_id: str) -> Any | None:
+    """Fetch a single provider by ID from Elasticsearch."""
+    es = get_es_client()
+    try:
+        response = await es.get(index="aql_providers", id=provider_id)
+        return response
+    except Exception:
+        return None
+
+
+# ---------------------------------------------------------
+# (removed) Get All Archives via aql_archives index
+# Note: Use list_all_archives() which aggregates over aql_serps and
+# returns enriched metadata. The former duplicate implementation that
+# directly queried the dedicated aql_archives index was unused and
+# has been removed to avoid confusion.
+
+
+# ---------------------------------------------------------
+# 16. Get Archive by ID
+# ---------------------------------------------------------
+async def get_archive_by_id(archive_id: str) -> Any | None:
+    """Fetch a single archive by ID from Elasticsearch."""
+    es = get_es_client()
+    try:
+        response = await es.get(index="aql_archives", id=archive_id)
+        return response
+    except Exception:
+        return None
+
+
+# ---------------------------------------------------------
+# 17. Compare SERPs
+# ---------------------------------------------------------
+async def compare_serps(serp_ids: List[str]) -> dict | None:
+    """
+    Compare multiple SERPs and return detailed comparison data.
+
+    Compares 2-5 SERPs and returns:
+    - Full SERP data for each ID
+    - Common and unique URLs across SERPs
+    - Ranking differences for common URLs
+    - Similarity metrics (Jaccard similarity, ranking correlation)
+    - Provider, timestamp, and query comparison
+    - Statistical summary
+
+    Args:
+        serp_ids: List of SERP IDs to compare (2-5 items)
+
+    Returns:
+        Dict with comparison data or None if any SERP not found
+    """
+    if not serp_ids or len(serp_ids) < 2:
+        return None
+
+    # Fetch all SERPs
+    serps_data = []
+    for serp_id in serp_ids:
+        serp = await get_serp_by_id(serp_id)
+        if not serp:
+            return None
+        serps_data.append(serp)
+
+    # Extract metadata and results from each SERP
+    serps_metadata = []
+    serps_results = []
+
+    for serp in serps_data:
+        source = serp["_source"]
+
+        # Extract metadata
+        metadata = {
+            "serp_id": serp["_id"],
+            "query": source.get("url_query", ""),
+            "provider_id": source.get("provider", {}).get("id"),
+            "provider_name": source.get("provider", {}).get("name"),
+            "timestamp": source.get("capture", {}).get("timestamp"),
+            "status_code": source.get("capture", {}).get("status_code"),
+            "archive": source.get("archive", {}).get("memento_api_url"),
+        }
+        serps_metadata.append(metadata)
+
+        # Extract search results (URLs with positions)
+        results = []
+        if "results" in source:
+            for idx, result in enumerate(source["results"]):
+                results.append(
+                    {
+                        "position": idx + 1,
+                        "url": result.get("url"),
+                        "title": result.get("title"),
+                        "snippet": result.get("snippet") or result.get("description"),
+                    }
+                )
+        serps_results.append(results)
+
+    # Compute URL-based comparisons
+    url_sets = [set(r["url"] for r in results if r["url"]) for results in serps_results]
+
+    # Find common and unique URLs
+    common_urls = set.intersection(*url_sets) if url_sets else set()
+    all_urls = set.union(*url_sets) if url_sets else set()
+    unique_per_serp = [urls - common_urls for urls in url_sets]
+
+    # Calculate Jaccard similarity for each pair
+    def jaccard_similarity(set1: set, set2: set) -> float:
+        if not set1 and not set2:
+            return 1.0
+        intersection = len(set1 & set2)
+        union = len(set1 | set2)
+        return intersection / union if union > 0 else 0.0
+
+    pairwise_similarities = []
+    for i in range(len(url_sets)):
+        for j in range(i + 1, len(url_sets)):
+            similarity = jaccard_similarity(url_sets[i], url_sets[j])
+            pairwise_similarities.append(
+                {
+                    "serp_1": serp_ids[i],
+                    "serp_2": serp_ids[j],
+                    "jaccard_similarity": round(similarity, 4),
+                }
+            )
+
+    # Calculate average Jaccard similarity
+    if pairwise_similarities:
+        total_similarity = sum(
+            p["jaccard_similarity"]
+            for p in pairwise_similarities
+            if isinstance(p["jaccard_similarity"], (int, float))
+        )
+        avg_similarity = total_similarity / len(pairwise_similarities)
+    else:
+        avg_similarity = 0.0
+
+    # Calculate ranking differences for common URLs
+    ranking_comparison = []
+    for url in common_urls:
+        positions = {}
+        for idx, results in enumerate(serps_results):
+            for result in results:
+                if result["url"] == url:
+                    positions[serp_ids[idx]] = result["position"]
+                    break
+
+        # Calculate position variance
+        position_values = list(positions.values())
+        if len(position_values) > 1:
+            mean_position = sum(position_values) / len(position_values)
+            variance = sum((p - mean_position) ** 2 for p in position_values) / len(
+                position_values
+            )
+            std_dev = variance**0.5
+        else:
+            std_dev = 0.0
+
+        ranking_comparison.append(
+            {
+                "url": url,
+                "positions": positions,
+                "min_position": min(positions.values()),
+                "max_position": max(positions.values()),
+                "position_difference": max(positions.values())
+                - min(positions.values()),
+                "std_dev": round(std_dev, 2),
+            }
+        )
+
+    # Sort by position difference (descending)
+    ranking_comparison.sort(key=lambda x: x["position_difference"], reverse=True)
+
+    # Calculate Spearman correlation for each pair (if applicable)
+    def spearman_correlation(results1: List[dict], results2: List[dict]) -> float:
+        """Calculate Spearman rank correlation for common URLs."""
+        # Get common URLs with their positions
+        url_positions1 = {r["url"]: r["position"] for r in results1 if r["url"]}
+        url_positions2 = {r["url"]: r["position"] for r in results2 if r["url"]}
+        common = set(url_positions1.keys()) & set(url_positions2.keys())
+
+        if len(common) < 2:
+            return 0.0
+
+        # Calculate rank differences
+        rank_diffs_squared = sum(
+            (url_positions1[url] - url_positions2[url]) ** 2 for url in common
+        )
+        n = len(common)
+        correlation = 1 - (6 * rank_diffs_squared) / (n * (n**2 - 1))
+        return float(correlation)
+
+    pairwise_correlations = []
+    for i in range(len(serps_results)):
+        for j in range(i + 1, len(serps_results)):
+            correlation = spearman_correlation(serps_results[i], serps_results[j])
+            pairwise_correlations.append(
+                {
+                    "serp_1": serp_ids[i],
+                    "serp_2": serp_ids[j],
+                    "spearman_correlation": round(correlation, 4),
+                }
+            )
+
+    # Build response
+    return {
+        "comparison_summary": {
+            "serp_count": len(serp_ids),
+            "serp_ids": serp_ids,
+            "total_unique_urls": len(all_urls),
+            "common_urls_count": len(common_urls),
+            "avg_jaccard_similarity": round(avg_similarity, 4),
+        },
+        "serps_metadata": serps_metadata,
+        "serps_full_data": [
+            {"serp_id": serp["_id"], "data": serp} for serp in serps_data
+        ],
+        "url_comparison": {
+            "common_urls": list(common_urls),
+            "unique_per_serp": [
+                {"serp_id": serp_ids[idx], "unique_urls": list(urls)}
+                for idx, urls in enumerate(unique_per_serp)
+            ],
+            "url_counts": [
+                {"serp_id": serp_ids[idx], "total_urls": len(url_sets[idx])}
+                for idx in range(len(url_sets))
+            ],
+        },
+        "ranking_comparison": ranking_comparison[:50],  # Limit to top 50
+        "similarity_metrics": {
+            "pairwise_jaccard": pairwise_similarities,
+            "pairwise_spearman": pairwise_correlations,
+        },
+    }

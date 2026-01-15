@@ -1,4 +1,3 @@
-# Neue vereinheitlichte Router-Datei
 """
 Unified AQL Search API endpoints with global rate-limiting and error handling.
 
@@ -46,8 +45,13 @@ class IncludeField(str, Enum):
 
 
 # -------------------- Helper function --------------------
-async def safe_search(coro):
-    """Handle common Elasticsearch exceptions"""
+async def safe_search(coro, allow_empty=False):
+    """Handle common Elasticsearch exceptions
+
+    Args:
+        coro: Coroutine to execute
+        allow_empty: If True, empty results won't raise 404
+    """
     try:
         results = await coro
 
@@ -63,7 +67,7 @@ async def safe_search(coro):
     except Exception:
         raise HTTPException(status_code=500, detail="Internal server error")
 
-    if not results:
+    if not results and not allow_empty:
         raise HTTPException(status_code=404, detail="No results found")
 
     return results
@@ -214,9 +218,126 @@ async def serps_preview(
 
 
 # ---------------------------------------------------------
+# SERP COMPARISON ENDPOINT
+# ---------------------------------------------------------
+@router.get("/serps/compare")
+@limiter.limit("10/minute")
+async def compare_serps(
+    request: Request,
+    ids: str = Query(
+        ...,
+        description="Comma-separated list of SERP IDs to compare (2-5 IDs)",
+        examples=["id1,id2,id3"],
+    ),
+):
+    """
+    Compare multiple SERPs side by side.
+
+    Returns detailed comparison including:
+    - Full SERP data for each ID
+    - Common and unique URLs across SERPs
+    - Ranking differences for common URLs
+    - Similarity metrics (Jaccard similarity, Spearman correlation)
+    - Provider, timestamp, and query comparison
+    - Statistical summary
+
+    Examples:
+    - Compare 2 SERPs: /api/serps/compare?ids=abc123,def456
+    - Compare 3 SERPs: /api/serps/compare?ids=abc,def,ghi
+    - Compare 5 SERPs: /api/serps/compare?ids=id1,id2,id3,id4,id5
+    """
+    # Parse and validate IDs
+    serp_ids = [id.strip() for id in ids.split(",") if id.strip()]
+
+    if len(serp_ids) < 2:
+        raise HTTPException(
+            status_code=400,
+            detail="At least 2 SERP IDs are required for comparison",
+        )
+
+    if len(serp_ids) > 5:
+        raise HTTPException(
+            status_code=400,
+            detail="Maximum 5 SERPs can be compared at once",
+        )
+
+    # Check for duplicate IDs
+    if len(serp_ids) != len(set(serp_ids)):
+        raise HTTPException(
+            status_code=400,
+            detail="Duplicate SERP IDs are not allowed",
+        )
+
+    # Perform comparison
+    result = await safe_search(aql_service.compare_serps(serp_ids))
+
+    return result
+
+
+# GET ALL PROVIDERS ENDPOINT
+# ---------------------------------------------------------
+@router.get("/providers")
+@limiter.limit("10/minute")
+async def get_all_providers(
+    request: Request,
+    size: int = Query(0, description="Number of providers to return (0 = all)"),
+):
+    """
+    Get a list of (all) available search providers.
+
+    Example:
+    - Get all providers: /api/providers or /api/providers?size=0
+    - Limit results: /api/providers?size=uint
+    """
+    if size < 0:
+        raise HTTPException(
+            status_code=400, detail="Size must be 0 (for all) or a positive integer"
+        )
+
+    results = await safe_search(
+        aql_service.get_all_providers(size=size), allow_empty=True
+    )
+    return {"count": len(results), "results": results}
+
+
+# ---------------------------------------------------------
+# GET PROVIDER BY ID ENDPOINT
+# ---------------------------------------------------------
+@router.get("/provider/{provider_id}", deprecated=True)
+@router.get("/providers/{provider_id}")
+@limiter.limit("10/minute")
+async def get_provider_by_id(request: Request, provider_id: str):
+    """
+    Get a single provider document by its ID.
+
+    Example:
+    - Get provider: /api/provider/google
+    """
+    result = await safe_search(aql_service.get_provider_by_id(provider_id))
+    # Return the raw ES document to stay consistent with other detail endpoints
+    return {"provider_id": result.get("_id"), "provider": result}
+
+
+# New canonical archive detail endpoint using the same ID as the list
+@router.get("/archives/{archive_id:path}")
+@limiter.limit("10/minute")
+async def get_archive_by_memento_url(request: Request, archive_id: str):
+    """
+    Get archive metadata by its canonical ID (memento_api_url), matching the
+    `id` field returned by /api/archives.
+
+    This enables stable deep-links without relying on ES internal document IDs.
+    Example: /api/archives/https://web.archive.org/web
+    """
+    result = await safe_search(aql_service.get_archive_metadata(archive_id))
+    return result
+
+
+# ---------------------------------------------------------
 # UNIFIED SERP DETAIL ENDPOINT
 # ---------------------------------------------------------
-@router.get("/serp/{serp_id}")
+@router.get("/serp/{serp_id}", deprecated=True)
+@router.get("/serps/{serp_id}")
 @limiter.limit("20/minute")
 async def get_serp_unified(
     request: Request,
@@ -315,9 +436,80 @@ async def get_serp_unified(
 
 
 # ---------------------------------------------------------
+# ARCHIVE DETAIL ENDPOINTS
+# ---------------------------------------------------------
+@router.get("/archives")
+@limiter.limit("30/minute")
+async def list_archives(
+    request: Request,
+    limit: int = Query(
+        100, description="Maximum number of archives to return", ge=1, le=1000
+    ),
+    size: Optional[int] = Query(
+        None, description="Alias for limit (for backwards compatibility)"
+    ),
+):
+    """
+    List all available web archives in the dataset.
+
+    Returns archive metadata including:
+    - Archive name
+    - Memento API URL
+    - CDX API URL
+    - Homepage URL
+    - Number of SERPs in this archive
+
+    Example:
+    - /api/archives
+    - /api/archives?limit=50
+    """
+    # Support legacy "size" param as alias for limit
+    effective_limit = limit
+    if size is not None:
+        # Validate legacy size value similarly to limit
+        if size < 1 or size > 1000:
+            raise HTTPException(status_code=422, detail="Invalid size parameter")
+        effective_limit = size
+
+    svc_result = await safe_search_paginated(
+        aql_service.list_all_archives(size=effective_limit)
+    )
+    # Enforce limit/size at router layer as a safety net
+    archives_list = list(svc_result.get("archives", []))[:effective_limit]
+
+    # Provide both legacy (count/results) and modern (total/archives) shapes
+    return {
+        "total": svc_result.get("total", 0),
+        "archives": archives_list,
+        "count": len(archives_list),
+        "results": archives_list,
+    }
+
+
+# ---------------------------------------------------------
 # LEGACY ENDPOINTS (DEPRECATED - for backwards compatibility)
 # ---------------------------------------------------------
 # Keep old endpoints but mark as deprecated
+
+
+# ---------------------------------------------------------
+# GET ARCHIVE BY ID ENDPOINTS
+# ---------------------------------------------------------
+@router.get("/archive/{archive_id}", deprecated=True)
+@router.get("/archives/{archive_id}", deprecated=True)
+@limiter.limit("10/minute")
+async def get_archive_by_id(request: Request, archive_id: str):
+    """
+    Backwards-compatible detail endpoint using the Elasticsearch document ID
+    from the dedicated aql_archives index.
+
+    Deprecated for deep-linking: prefer /api/archives/{archive_id} where the
+    archive_id is the "memento_api_url" used in the archives list.
+    """
+    result = await safe_search(aql_service.get_archive_by_id(archive_id))
+    return {"archive_id": result.get("_id"), "archive": result}
+
+
 @router.get("/search/basic", deprecated=True)
 @limiter.limit("20/minute")
 async def search_basic_legacy(
@@ -403,6 +595,7 @@ async def autocomplete_providers_legacy(
 
 
 @router.get("/serp/{serp_id}/original-url", deprecated=True)
+@router.get("/serps/{serp_id}/original-url", deprecated=True)
 @limiter.limit("20/minute")
 async def get_original_url_legacy(
     request: Request,
@@ -417,6 +610,7 @@ async def get_original_url_legacy(
 
 
 @router.get("/serp/{serp_id}/memento-url", deprecated=True)
+@router.get("/serps/{serp_id}/memento-url", deprecated=True)
 @limiter.limit("20/minute")
 async def get_memento_url_legacy(request: Request, serp_id: str):
     """[DEPRECATED] Use /api/serp/{id}?include=memento_url instead"""
@@ -425,6 +619,7 @@ async def get_memento_url_legacy(request: Request, serp_id: str):
 
 
 @router.get("/serp/{serp_id}/related", deprecated=True)
+@router.get("/serps/{serp_id}/related", deprecated=True)
 @limiter.limit("20/minute")
 async def get_related_serps_legacy(
     request: Request,
@@ -442,6 +637,7 @@ async def get_related_serps_legacy(
 
 
 @router.get("/serp/{serp_id}/unfurl", deprecated=True)
+@router.get("/serps/{serp_id}/unfurl", deprecated=True)
 @limiter.limit("20/minute")
 async def get_serp_unfurl_legacy(request: Request, serp_id: str):
     """[DEPRECATED] Use /api/serp/{id}?include=unfurl instead"""
@@ -449,62 +645,4 @@ async def get_serp_unfurl_legacy(request: Request, serp_id: str):
     return result
 
 
-# ---------------------------------------------------------
-# ARCHIVE DETAIL ENDPOINTS
-# ---------------------------------------------------------
-@router.get("/archives")
-@limiter.limit("30/minute")
-async def list_archives(
-    request: Request,
-    limit: int = Query(
-        100, description="Maximum number of archives to return", ge=1, le=1000
-    ),
-):
-    """
-    List all available web archives in the dataset.
-
-    Returns archive metadata including:
-    - Archive name
-    - Memento API URL
-    - CDX API URL
-    - Homepage URL
-    - Number of SERPs in this archive
-
-    Example:
-    - /api/archives
-    - /api/archives?limit=50
-    """
-    result = await safe_search_paginated(aql_service.list_all_archives(size=limit))
-    return result
-
-
-@router.get("/archive")
-@limiter.limit("20/minute")
-async def get_archive(
-    request: Request,
-    id: str = Query(..., description="Archive ID (Memento API URL, URL-encoded)"),
-):
-    """
-    Get metadata for a specific web archive.
-
-    Archive ID is the base Memento API URL. This endpoint returns:
-    - Archive name
-    - Memento API URL
-    - CDX API URL (from archive data or derived)
-    - Archive homepage (derived)
-    - Number of SERPs captured from this archive
-
-    The id parameter should be URL-encoded. Examples:
-    - Internet Archive: https%3A%2F%2Fweb.archive.org%2Fweb
-    - Arquivo: https%3A%2F%2Farquivo.pt%2Fwayback
-
-    Example:
-    - /api/archive?id=https%3A%2F%2Fweb.archive.org%2Fweb
-    """
-    from urllib.parse import unquote
-
-    # Decode the archive_id from URL encoding
-    decoded_archive_id = unquote(id)
-
-    result = await safe_search(aql_service.get_archive_metadata(decoded_archive_id))
-    return result
+# Removed: Query-parameter archive detail endpoint `/api/archive?id=...`
