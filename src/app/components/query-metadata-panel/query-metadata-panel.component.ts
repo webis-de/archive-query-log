@@ -148,6 +148,67 @@ export class AppQueryMetadataPanelComponent {
       return '';
     }
   });
+  /**
+   * Derive human-readable archive name from the Memento API URL
+   */
+  readonly archiveName = computed<string>(() => {
+    const result = this.searchResult();
+    if (!result) return '';
+
+    const mementoApiUrl = result._source.archive?.memento_api_url;
+    if (!mementoApiUrl) return 'Unknown Archive';
+
+    // Known archives mapping
+    const knownArchives: Record<string, string> = {
+      'https://web.archive.org/web': 'Internet Archive (Wayback Machine)',
+      'https://web.archive.org': 'Internet Archive (Wayback Machine)',
+      'https://archive.org': 'Internet Archive',
+    };
+
+    if (knownArchives[mementoApiUrl]) {
+      return knownArchives[mementoApiUrl];
+    }
+
+    // Generic fallback: extract domain from URL (mirror backend behavior)
+    try {
+      const url = new URL(mementoApiUrl);
+      const domain = url.host || url.pathname;
+      const name = domain.replace(/-/g, ' ').replace(/\.org/g, '').trim();
+      return name ? name.replace(/\b\w/g, c => c.toUpperCase()) : 'Unknown Archive';
+    } catch {
+      return 'Unknown Archive';
+    }
+  });
+  /**
+   * Derive archive homepage URL from the Memento API URL
+   */
+  readonly archiveHomepage = computed<string | null>(() => {
+    const result = this.searchResult();
+    if (!result) return null;
+
+    const mementoApiUrl = result._source.archive?.memento_api_url;
+    if (!mementoApiUrl) return null;
+
+    // Known homepages
+    if (mementoApiUrl.startsWith('https://web.archive.org')) {
+      return 'https://web.archive.org';
+    }
+
+    // Generic: return base URL without /web or other path components (mirror backend behavior)
+    try {
+      const url = new URL(mementoApiUrl);
+      return `${url.protocol}//${url.host}`;
+    } catch {
+      return null;
+    }
+  });
+  /**
+   * Get CDX API URL from archive data
+   */
+  readonly cdxApiUrl = computed<string | null>(() => {
+    const result = this.searchResult();
+    return result?._source.archive?.cdx_api_url || null;
+  });
 
   private readonly sessionService = inject(SessionService);
   private readonly sanitizer = inject(DomSanitizer);

@@ -167,6 +167,9 @@
     "website": {
       "snapshotDate": "Snapshot-Datum:",
       "archive": "Archiv:",
+      "homepage": "Homepage:",
+      "mementoApi": "Memento-API:",
+      "cdxApi": "CDX-API:",
       "openSnapshot": "Snapshot öffnen:",
       "openInNewTab": "In neuem Tab öffnen",
       "loadingSnapshot": "Archivierter Snapshot wird geladen...",
