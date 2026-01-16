@@ -1,6 +1,7 @@
 import {
   Component,
-  viewChild,
+  ViewChild,
+  OnInit,
   output,
   input,
   inject,
@@ -21,6 +22,7 @@ import {
   AqlTooltipDirective,
 } from 'aql-stylings';
 import { FilterState, FilterProvider } from '../../models/filter.model';
+import { ProviderService, ProviderOption } from '../../services/provider.service';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
@@ -41,21 +43,37 @@ import { LanguageService } from '../../services/language.service';
   styleUrls: ['./filter-dropdown.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilterDropdownComponent {
-  readonly dropdown = viewChild<AqlDropdownComponent>(AqlDropdownComponent);
+export class FilterDropdownComponent implements OnInit {
+  @ViewChild(AqlDropdownComponent)
+  dropdown?: AqlDropdownComponent;
   readonly filters = input<FilterState | null>(null);
   readonly filtersChanged = output<FilterState>();
   readonly dateFrom = signal<string>('');
   readonly dateTo = signal<string>('');
   readonly status = signal<string>('any');
   readonly isOpen = signal<boolean>(false);
-  readonly providers = signal<FilterProvider[]>([
-    { id: 'all', label: 'All', checked: true },
-    { id: 'google', label: 'Google', checked: false },
-    { id: 'bing', label: 'Bing', checked: false },
-    { id: 'duckduckgo', label: 'DuckDuckGo', checked: false },
-    { id: 'yahoo', label: 'Yahoo', checked: false },
-  ]);
+  readonly providers = signal<FilterProvider[]>([]);
+  readonly providerSearch = signal<string>('');
+  readonly isLoadingProviders = signal<boolean>(true);
+  readonly providerLoadError = signal<boolean>(false);
+  // Filtered providers based on search input
+  readonly filteredProviders = computed(() => {
+    const allProviders = this.providers();
+    const searchTerm = this.providerSearch().toLowerCase().trim();
+
+    if (!searchTerm) {
+      return allProviders;
+    }
+
+    // Always keep "All" option visible, filter the rest
+    return allProviders.filter(
+      p => p.label === 'All' || p.label.toLowerCase().includes(searchTerm),
+    );
+  });
+  // Count of selected providers (excluding "All")
+  readonly selectedProviderCount = computed(() => {
+    return this.providers().filter(p => p.checked && p.label !== 'All').length;
+  });
   readonly todayDate = computed(() => {
     return this.languageService.formatDateForInput(new Date());
   });
@@ -78,7 +96,9 @@ export class FilterDropdownComponent {
   });
   readonly maxDateTo = computed(() => this.todayDate());
 
+  private readonly providerService = inject(ProviderService);
   private readonly languageService = inject(LanguageService);
+  private previousOpenState = false;
   private appliedClose = false;
 
   constructor() {
@@ -89,11 +109,11 @@ export class FilterDropdownComponent {
         this.dateTo.set(filterValue.dateTo || '');
         this.status.set(filterValue.status || 'any');
 
-        if (filterValue.providers) {
+        if (filterValue.providers && filterValue.providers.length > 0) {
           this.providers.update(providers =>
             providers.map(p => ({
               ...p,
-              checked: filterValue.providers.includes(p.label),
+              checked: p.label === 'All' ? false : filterValue.providers.includes(p.label),
             })),
           );
         }
@@ -101,10 +121,16 @@ export class FilterDropdownComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.loadProviders();
+  }
+
   onDropdownOpenChange(isOpen: boolean): void {
-    const wasOpen = this.isOpen();
+    const wasOpen = this.previousOpenState;
+    this.previousOpenState = isOpen;
     this.isOpen.set(isOpen);
 
+    // Reset filters when dropdown closes without applying
     if (wasOpen && !isOpen) {
       setTimeout(() => {
         if (!this.appliedClose) {
@@ -119,6 +145,7 @@ export class FilterDropdownComponent {
     this.dateFrom.set('');
     this.dateTo.set('');
     this.status.set('any');
+    this.providerSearch.set('');
     this.providers.update(providers => providers.map(p => ({ ...p, checked: p.label === 'All' })));
 
     this.emitCurrentState();
@@ -127,7 +154,7 @@ export class FilterDropdownComponent {
   apply(event: MouseEvent): void {
     this.emitCurrentState();
     this.appliedClose = true;
-    this.dropdown()?.onContentClick(event);
+    this.dropdown?.onContentClick(event);
   }
 
   updateDateFrom(value: string): void {
@@ -140,6 +167,10 @@ export class FilterDropdownComponent {
 
   updateStatus(value: string): void {
     this.status.set(value);
+  }
+
+  updateProviderSearch(value: string): void {
+    this.providerSearch.set(value);
   }
 
   updateProviderCheckedByLabel(label: string, checked: boolean): void {
@@ -166,6 +197,43 @@ export class FilterDropdownComponent {
         }
         return updatedProviders;
       }
+    });
+  }
+
+  private loadProviders(): void {
+    this.isLoadingProviders.set(true);
+    this.providerLoadError.set(false);
+
+    this.providerService.getProviders().subscribe({
+      next: (providerOptions: ProviderOption[]) => {
+        const providerList: FilterProvider[] = [
+          { id: 'all', label: 'All', checked: true },
+          ...providerOptions.map(p => ({
+            id: p.id,
+            label: p.name,
+            checked: false,
+          })),
+        ];
+        this.providers.set(providerList);
+        this.isLoadingProviders.set(false);
+
+        // Re-apply filter state if it was set before providers loaded
+        const filterValue = this.filters();
+        if (filterValue?.providers && filterValue.providers.length > 0) {
+          this.providers.update(providers =>
+            providers.map(p => ({
+              ...p,
+              checked: p.label === 'All' ? false : filterValue.providers.includes(p.label),
+            })),
+          );
+        }
+      },
+      error: () => {
+        this.isLoadingProviders.set(false);
+        this.providerLoadError.set(true);
+        // Set fallback with only "All" option
+        this.providers.set([{ id: 'all', label: 'All', checked: true }]);
+      },
     });
   }
 

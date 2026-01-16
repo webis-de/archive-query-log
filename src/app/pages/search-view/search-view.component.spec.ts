@@ -1,26 +1,63 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideHttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { SearchViewComponent } from './search-view.component';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
+import { ProviderService } from '../../services/provider.service';
+import { SearchService } from '../../services/search.service';
+import { SearchResponse, QueryMetadataResponse } from '../../models/search.model';
 
 describe('SearchViewComponent', () => {
   let component: SearchViewComponent;
   let fixture: ComponentFixture<SearchViewComponent>;
   let mockSuggestionsService: jasmine.SpyObj<SuggestionsService>;
+  let mockProviderService: jasmine.SpyObj<ProviderService>;
+  let mockSearchService: jasmine.SpyObj<SearchService>;
+
+  const mockSearchResponse: SearchResponse = {
+    query: '',
+    count: 0,
+    total: 0,
+    page_size: 10,
+    total_pages: 0,
+    results: [],
+    pagination: {
+      current_results: 0,
+      total_results: 0,
+      results_per_page: 10,
+      total_pages: 0,
+    },
+  };
 
   beforeEach(async () => {
     mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
       MINIMUM_QUERY_LENGTH: 3,
       suggestions: jasmine.createSpy().and.returnValue([]),
     });
+    mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviders']);
+    mockProviderService.getProviders.and.returnValue(of([]));
+    mockSearchService = jasmine.createSpyObj('SearchService', [
+      'search',
+      'searchWithParams',
+      'getQueryMetadata',
+    ]);
+    mockSearchService.search.and.returnValue(of(mockSearchResponse));
+    mockSearchService.searchWithParams.and.returnValue(of(mockSearchResponse));
+    mockSearchService.getQueryMetadata.and.returnValue(
+      of({
+        query: '',
+        total_hits: 0,
+        top_queries: [],
+        date_histogram: [],
+        top_providers: [],
+        top_archives: [],
+      } as QueryMetadataResponse),
+    );
 
     await TestBed.configureTestingModule({
       imports: [SearchViewComponent, TranslateModule.forRoot()],
       providers: [
-        provideHttpClient(),
         {
           provide: ActivatedRoute,
           useValue: {
@@ -29,6 +66,8 @@ describe('SearchViewComponent', () => {
           },
         },
         { provide: SuggestionsService, useValue: mockSuggestionsService },
+        { provide: ProviderService, useValue: mockProviderService },
+        { provide: SearchService, useValue: mockSearchService },
       ],
     }).compileComponents();
 

@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppQueryMetadataPanelComponent } from './query-metadata-panel.component';
-import { SearchResult } from '../../models/search.model';
+import { SearchResult, SerpDetailsResponse } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
+import { SearchService } from '../../services/search.service';
 import { signal, WritableSignal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { SearchService } from '../../services/search.service';
 import { of } from 'rxjs';
 
 describe('AppQueryMetadataPanelComponent', () => {
   let component: AppQueryMetadataPanelComponent;
   let fixture: ComponentFixture<AppQueryMetadataPanelComponent>;
   let mockSessionService: { sidebarCollapsed: WritableSignal<boolean> };
+  let mockSearchService: jasmine.SpyObj<SearchService>;
 
   const mockSearchResult: SearchResult = {
     _id: 'test-123',
@@ -51,9 +52,10 @@ describe('AppQueryMetadataPanelComponent', () => {
     mockSessionService = {
       sidebarCollapsed: signal(true),
     };
-    const mockSearchService = {
-      getSerpDetails: () => of({}),
-    };
+    mockSearchService = jasmine.createSpyObj('SearchService', ['getSerpDetails']);
+    mockSearchService.getSerpDetails.and.returnValue(
+      of({ serp_id: 'test-123', serp: mockSearchResult } as SerpDetailsResponse),
+    );
 
     await TestBed.configureTestingModule({
       imports: [AppQueryMetadataPanelComponent, TranslateModule.forRoot()],

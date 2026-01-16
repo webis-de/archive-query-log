@@ -108,6 +108,11 @@
     "active": "Active",
     "inactive": "Inactive",
     "searchProviders": "Search Providers",
+    "searchProvidersPlaceholder": "Search providers...",
+    "loadingProviders": "Loading providers...",
+    "providerLoadError": "Failed to load providers",
+    "noProvidersFound": "No providers found",
+    "selectedCount": "{{count}} selected",
     "reset": "Reset",
     "apply": "Apply",
     "badges": {
