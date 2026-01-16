@@ -1,4 +1,5 @@
 const { Project, Node, SyntaxKind } = require("ts-morph");
+const os = require("os");
 
 const project = new Project({
   tsConfigFilePath: "tsconfig.json",
@@ -120,7 +121,7 @@ for (const sourceFile of project.getSourceFiles()) {
       previousOrderKey = entry.orderKey;
     }
 
-    const replacement = lines.join("\n");
+    const replacement = lines.join(os.EOL);
     const start = members[0].getPos();
     const end = members[members.length - 1].getEnd();
     sourceFile.replaceText([start, end], replacement);

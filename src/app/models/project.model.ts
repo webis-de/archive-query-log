@@ -3,6 +3,10 @@ export interface SearchFilter {
   size?: number;
   offset?: number;
   timestamp?: string;
+  provider?: string;
+  archive?: string;
+  from_timestamp?: string;
+  to_timestamp?: string;
 }
 
 export interface SearchHistoryItem {

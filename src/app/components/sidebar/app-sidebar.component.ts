@@ -119,7 +119,24 @@ export class AppSidebarComponent implements OnInit {
   }
 
   onItemSelected(itemId: string): void {
-    this.router.navigate(['/s', itemId]);
+    // Get the search item from history
+    const project = this.projectService.projects().find(p => p.searches.some(s => s.id === itemId));
+    const search = project?.searches.find(s => s.id === itemId);
+
+    if (search && project) {
+      this.projectService.setActiveProject(project.id);
+
+      const queryParams: Record<string, string> = {
+        q: search.filter.query,
+        sid: itemId,
+      };
+      if (search.filter.provider) queryParams['provider'] = search.filter.provider;
+      if (search.filter.from_timestamp)
+        queryParams['from_timestamp'] = search.filter.from_timestamp;
+      if (search.filter.to_timestamp) queryParams['to_timestamp'] = search.filter.to_timestamp;
+
+      this.router.navigate(['/serps/search'], { queryParams });
+    }
   }
 
   toggleCollapsed(force?: boolean): void {
@@ -303,13 +320,17 @@ export class AppSidebarComponent implements OnInit {
   }
 
   private updateSelectedItemFromRoute(url: string): void {
-    // Extract search ID from URL
-    const match = url.match(/\/s\/([^/]+)/);
-    if (match && match[1] !== 'temp') {
-      const searchId = match[1];
-      this.selectedItemId.set(searchId);
+    // Check if on the search view page
+    if (url.includes('/serps/search')) {
+      const params = new URLSearchParams(url.split('?')[1] || '');
+      const searchId = params.get('sid');
+
+      if (searchId) {
+        this.selectedItemId.set(searchId);
+      } else {
+        this.selectedItemId.set(null);
+      }
     } else {
-      // Clear selection if on landing page or temp search
       this.selectedItemId.set(null);
     }
   }
