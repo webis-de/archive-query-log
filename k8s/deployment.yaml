@@ -23,7 +23,7 @@ spec:
       containers:
         - name: aql-frontend
           # Uni Jena GitLab Container Registry
-          image: git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/frontend:latest
+          image: git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/aql-frontend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80

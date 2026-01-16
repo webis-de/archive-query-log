@@ -22,12 +22,12 @@ k8s/
 
 ## Before Deploying
 
-### 1. Update the image name
+### 1. Image name
 
-Edit `deployment.yaml` and replace `YOUR_DOCKERHUB_USERNAME`:
+The deployment uses the Uni Jena GitLab Container Registry (pushed automatically by CI):
 
 ```yaml
-image: docker.io/yourusername/aql-frontend:latest
+image: git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/aql-frontend:latest
 ```
 
 ### 2. Confirm the ingress hostname
@@ -40,10 +40,24 @@ Ask the product owner for the correct domain and update `ingress.yaml`:
 
 ## Build & Push Image
 
+The CI pipeline automatically builds and pushes the image on every commit to main.
+
+To pull the image manually:
+
+```bash
+# Login to GitLab registry (if needed)
+docker login git.uni-jena.de:5050
+
+# Pull the image
+docker pull git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/aql-frontend:latest
+```
+
+To build and push manually:
+
 ```bash
 # From the aql-frontend directory
-docker build -t yourusername/aql-frontend:latest .
-docker push yourusername/aql-frontend:latest
+docker build -t git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/aql-frontend:latest .
+docker push git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/aql-frontend:latest
 ```
 
 ## Deploy
