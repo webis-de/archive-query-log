@@ -28,6 +28,7 @@ import {
 import { SessionService } from '../../services/session.service';
 import { SearchService } from '../../services/search.service';
 import { LanguageService } from '../../services/language.service';
+import { ProviderService, ProviderDetail } from '../../services/provider.service';
 
 @Component({
   selector: 'app-query-metadata-panel',
@@ -58,6 +59,10 @@ export class AppQueryMetadataPanelComponent {
   readonly serpDetails = signal<SerpDetailsResponse | null>(null);
   readonly isLoadingDetails = signal<boolean>(false);
   readonly detailsError = signal<string | null>(null);
+  readonly providerDetails = signal<ProviderDetail | null>(null);
+  readonly isLoadingProvider = signal<boolean>(false);
+  readonly providerError = signal<string | null>(null);
+  readonly showProviderDetails = signal<boolean>(false);
   readonly relatedSerps = computed<RelatedSerp[]>(() => {
     const details = this.serpDetails();
     return details?.related?.serps || [];
@@ -215,9 +220,11 @@ export class AppQueryMetadataPanelComponent {
   private readonly translate = inject(TranslateService);
   private readonly searchService = inject(SearchService);
   private readonly languageService = inject(LanguageService);
+  private readonly providerService = inject(ProviderService);
   private isInternalNavigation = false;
   private lastLoadedUrl = '';
   private lastLoadedSerpId = '';
+  private lastLoadedProviderId = '';
 
   constructor() {
     // Wait for translations to load before updating labels
@@ -255,11 +262,20 @@ export class AppQueryMetadataPanelComponent {
 
         this.lastLoadedSerpId = result._id;
         this.fetchSerpDetails(result._id);
+
+        // Reset provider details when SERP changes
+        this.providerDetails.set(null);
+        this.showProviderDetails.set(false);
+        this.lastLoadedProviderId = '';
       } else if (!result) {
         this.serpDetails.set(null);
         this.lastLoadedSerpId = '';
         this.originalResult.set(null);
         this.history.set([]);
+        // Reset provider details
+        this.providerDetails.set(null);
+        this.showProviderDetails.set(false);
+        this.lastLoadedProviderId = '';
       }
     });
   }
@@ -376,6 +392,47 @@ export class AppQueryMetadataPanelComponent {
 
   formatDate(dateString: string): string {
     return this.languageService.formatDate(dateString);
+  }
+
+  /**
+   * Toggle provider details visibility and fetch if needed
+   */
+  toggleProviderDetails(): void {
+    const result = this.searchResult();
+    if (!result) return;
+
+    const providerId = result._source.provider?.id;
+    if (!providerId) return;
+
+    // Toggle visibility
+    this.showProviderDetails.update(v => !v);
+
+    // Fetch if not already loaded for this provider
+    if (this.showProviderDetails() && providerId !== this.lastLoadedProviderId) {
+      this.fetchProviderDetails(providerId);
+    }
+  }
+
+  /**
+   * Fetch provider details from the backend
+   */
+  private fetchProviderDetails(providerId: string): void {
+    this.isLoadingProvider.set(true);
+    this.providerError.set(null);
+    this.providerDetails.set(null);
+    this.lastLoadedProviderId = providerId;
+
+    this.providerService.getProviderById(providerId).subscribe({
+      next: details => {
+        this.providerDetails.set(details);
+        this.isLoadingProvider.set(false);
+      },
+      error: err => {
+        console.error('Failed to fetch provider details:', err);
+        this.providerError.set('Failed to load provider details');
+        this.isLoadingProvider.set(false);
+      },
+    });
   }
 
   private updateTabLabels(): void {

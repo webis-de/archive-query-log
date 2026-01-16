@@ -12,5 +12,6 @@ export const API_CONFIG = {
     serpsPreview: '/api/serps/preview',
     // Providers
     providers: '/api/providers',
+    provider: (providerId: string) => `/api/providers/${providerId}`,
   },
 } as const;

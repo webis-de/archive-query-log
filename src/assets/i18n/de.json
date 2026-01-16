@@ -134,6 +134,18 @@
     "mimeType": "MIME-Typ",
     "timestamp": "Zeitstempel",
     "provider": "Anbieter",
+    "providerDetails": {
+      "title": "Anbieter-Details",
+      "name": "Name",
+      "id": "Anbieter-ID",
+      "domains": "Domains",
+      "urlPatterns": "URL-Muster",
+      "priority": "Priorität",
+      "loading": "Anbieter-Details werden geladen...",
+      "error": "Anbieter-Details konnten nicht geladen werden",
+      "showDetails": "Anbieter-Details anzeigen",
+      "hideDetails": "Anbieter-Details ausblenden"
+    },
     "id": "ID",
     "textView": "Textansicht",
     "websiteTab": "Website",
