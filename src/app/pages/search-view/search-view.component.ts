@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { combineLatest } from 'rxjs';
 import {
   AqlHeaderBarComponent,
   AqlInputFieldComponent,
@@ -32,6 +31,7 @@ import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { FilterState } from '../../models/filter.model';
+import { SearchFilter } from '../../models/project.model';
 import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-panel/query-metadata-panel.component';
 import { QueryOverviewPanelComponent } from '../../components/query-overview-panel/query-overview-panel.component';
 import { SessionService } from '../../services/session.service';
@@ -78,8 +78,6 @@ export class SearchViewComponent {
   readonly totalCount = signal<number>(0);
   readonly isLoading = signal<boolean>(false);
   readonly hasSearched = signal<boolean>(false);
-  currentSearchId?: string;
-  isTemporarySearch = false;
   isPaginationChange = false;
   activeFilters: string[] = ['All'];
   initialFilters: FilterState | null = null;
@@ -99,7 +97,7 @@ export class SearchViewComponent {
   readonly showSuggestions = signal<boolean>(false);
 
   private currentFilters: FilterState | null = null;
-  private lastRouteSearchId: string | null = null;
+  private lastQueryString: string | null = null;
   private readonly suggestionsController = createSearchSuggestionsController({
     suggestionsService: this.suggestionsService,
     suggestions: this.suggestions,
@@ -126,51 +124,43 @@ export class SearchViewComponent {
   constructor() {
     this.filterBadgeController.refreshBadges();
 
-    combineLatest([this.route.paramMap, this.route.queryParamMap])
-      .pipe(takeUntilDestroyed())
-      .subscribe(([params, queryParams]) => {
-        const dateFrom = queryParams.get('dateFrom') || '';
-        const dateTo = queryParams.get('dateTo') || '';
-        const status = queryParams.get('status') || 'any';
-        const providersStr = queryParams.get('providers');
-        const providers = providersStr ? providersStr.split(',') : [];
+    this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(queryParams => {
+      const query = queryParams.get('q');
+      const fromTimestamp = queryParams.get('from_timestamp') || '';
+      const toTimestamp = queryParams.get('to_timestamp') || '';
+      const status = queryParams.get('status') || 'any';
+      const providerStr = queryParams.get('provider');
+      const providers = providerStr ? providerStr.split(',') : [];
 
-        if (dateFrom || dateTo || status !== 'any' || providers.length > 0) {
-          this.initialFilters = {
-            dateFrom,
-            dateTo,
-            status,
-            providers,
-          };
-          // Update badges immediately
-          this.onFiltersChanged(this.initialFilters);
-        }
-
-        const searchId = params.get('id');
-        const isTemporary = searchId === 'temp';
-
-        if (searchId !== this.lastRouteSearchId) {
-          this.isPanelOpen.set(false);
-          this.selectedResult.set(null);
-          this.lastRouteSearchId = searchId;
-
-          if (!isTemporary && searchId) {
-            this.isTemporarySearch = false;
-            this.loadSearchFromHistory(searchId);
-          }
-        }
-
-        if (isTemporary) {
-          this.isTemporarySearch = true;
-          this.currentSearchId = 'temp';
-
-          const query = queryParams.get('q');
-          if (query) {
-            this.searchQuery = query;
-            this.onSearch();
-          }
-        }
+      // Build current query string for comparison
+      const currentQueryString = JSON.stringify({
+        q: query,
+        from_timestamp: fromTimestamp,
+        to_timestamp: toTimestamp,
+        status,
+        provider: providerStr,
       });
+
+      // Update filters
+      if (fromTimestamp || toTimestamp || status !== 'any' || providers.length > 0) {
+        this.initialFilters = {
+          dateFrom: fromTimestamp,
+          dateTo: toTimestamp,
+          status,
+          providers,
+        };
+        this.onFiltersChanged(this.initialFilters);
+      }
+
+      // Only trigger search if params changed and query exists
+      if (query && currentQueryString !== this.lastQueryString) {
+        this.isPanelOpen.set(false);
+        this.selectedResult.set(null);
+        this.lastQueryString = currentQueryString;
+        this.searchQuery = query;
+        this.onSearch();
+      }
+    });
   }
 
   onSearchInput(value: string): void {
@@ -217,14 +207,35 @@ export class SearchViewComponent {
         this.totalCount.set(response.total);
         this.isLoading.set(false);
 
-        // Only save search to history if it's not a temporary search or pagination change
-        if (!this.isTemporarySearch && !this.isPaginationChange) {
-          const searchItem = this.searchHistoryService.addSearch({
+        // Save search to history if not a pagination change
+        if (!this.isPaginationChange) {
+          const searchFilter: SearchFilter = {
             query: this.searchQuery,
-          });
+          };
 
-          this.currentSearchId = searchItem.id;
-          this.router.navigate(['/s', searchItem.id], { replaceUrl: true });
+          if (this.currentFilters?.providers && this.currentFilters.providers.length > 0) {
+            searchFilter.provider = this.currentFilters.providers.join(',');
+          }
+          if (this.currentFilters?.dateFrom) {
+            searchFilter.from_timestamp = this.currentFilters.dateFrom;
+          }
+          if (this.currentFilters?.dateTo) {
+            searchFilter.to_timestamp = this.currentFilters.dateTo;
+          }
+
+          this.searchHistoryService.addSearch(searchFilter);
+
+          // Build query params for URL
+          const queryParams: Record<string, string> = { q: this.searchQuery };
+          if (searchFilter.provider) queryParams['provider'] = searchFilter.provider;
+          if (searchFilter.from_timestamp)
+            queryParams['from_timestamp'] = searchFilter.from_timestamp;
+          if (searchFilter.to_timestamp) queryParams['to_timestamp'] = searchFilter.to_timestamp;
+          if (this.currentFilters?.status && this.currentFilters.status !== 'any') {
+            queryParams['status'] = this.currentFilters.status;
+          }
+
+          this.router.navigate(['/serps/search'], { queryParams, replaceUrl: true });
         }
 
         this.isPaginationChange = false;
@@ -277,44 +288,7 @@ export class SearchViewComponent {
     this.pageSize.set(size);
     this.currentPage.set(1);
     this.isPaginationChange = true;
-    this.updateSearchHistoryPageSize(size);
     this.onSearch();
-  }
-
-  private loadSearchFromHistory(searchId: string): void {
-    const searchItem = this.searchHistoryService.getSearch(searchId);
-    if (searchItem) {
-      this.currentSearchId = searchId;
-      this.searchQuery = searchItem.filter.query;
-      this.isLoading.set(true);
-      this.hasSearched.set(true);
-      this.loadQueryMetadata(searchItem.filter.query);
-
-      // Update pagination state from stored search
-      if (searchItem.filter.size) {
-        this.pageSize.set(searchItem.filter.size);
-      }
-      if (searchItem.filter.offset !== undefined && searchItem.filter.size) {
-        const page = Math.floor(searchItem.filter.offset / searchItem.filter.size) + 1;
-        this.currentPage.set(page);
-      }
-
-      this.searchService
-        .search(searchItem.filter.query, searchItem.filter.size, searchItem.filter.offset)
-        .subscribe({
-          next: response => {
-            this.searchResults.set(response.results);
-            this.totalCount.set(response.total);
-            this.isLoading.set(false);
-          },
-          error: error => {
-            console.error('Search error:', error);
-            this.isLoading.set(false);
-            this.searchResults.set([]);
-            this.totalCount.set(0);
-          },
-        });
-    }
   }
 
   private loadQueryMetadata(query: string): void {
@@ -341,21 +315,6 @@ export class SearchViewComponent {
           this.isMetadataLoading.set(false);
         },
       });
-  }
-
-  private updateSearchHistoryPageSize(size: number): void {
-    if (!this.currentSearchId || this.currentSearchId === 'temp') {
-      return;
-    }
-
-    const searchItem = this.searchHistoryService.getSearch(this.currentSearchId);
-    if (searchItem) {
-      this.searchHistoryService.updateSearch(this.currentSearchId, {
-        ...searchItem.filter,
-        size,
-        offset: 0,
-      });
-    }
   }
 
   private scrollToTop(): void {

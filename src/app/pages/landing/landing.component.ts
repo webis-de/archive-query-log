@@ -150,28 +150,32 @@ export class LandingComponent {
       const queryParams: Record<string, string> = { q: query };
 
       if (this.currentFilters) {
-        if (this.currentFilters.dateFrom) queryParams['dateFrom'] = this.currentFilters.dateFrom;
-        if (this.currentFilters.dateTo) queryParams['dateTo'] = this.currentFilters.dateTo;
+        if (this.currentFilters.dateFrom)
+          queryParams['from_timestamp'] = this.currentFilters.dateFrom;
+        if (this.currentFilters.dateTo) queryParams['to_timestamp'] = this.currentFilters.dateTo;
         if (this.currentFilters.status && this.currentFilters.status !== 'any')
           queryParams['status'] = this.currentFilters.status;
         if (this.currentFilters.providers && this.currentFilters.providers.length > 0) {
-          queryParams['providers'] = this.currentFilters.providers.join(',');
+          queryParams['provider'] = this.currentFilters.providers.join(',');
         }
       }
 
-      if (this.isTemporaryMode()) {
-        // Route to temporary search view
-        this.router.navigate(['/s', 'temp'], {
-          queryParams: queryParams,
-        });
-      } else {
-        // Normal search: save and navigate
-        // Note: We might want to save filters in history too, but for now just passing them to the view
-        const searchItem = this.searchHistoryService.addSearch({ query });
-        this.router.navigate(['/s', searchItem.id], {
-          queryParams: queryParams,
-        });
+      // Save search to history with all parameters
+      const searchFilter = {
+        query,
+        provider: queryParams['provider'],
+        from_timestamp: queryParams['from_timestamp'],
+        to_timestamp: queryParams['to_timestamp'],
+      };
+
+      if (!this.isTemporaryMode()) {
+        this.searchHistoryService.addSearch(searchFilter);
       }
+
+      // Navigate to search view with query params
+      this.router.navigate(['/serps/search'], {
+        queryParams: queryParams,
+      });
     }
   }
 }

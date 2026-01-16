@@ -75,33 +75,27 @@ describe('LandingComponent', () => {
   });
 
   it('should navigate to search when query is provided', () => {
-    const mockSearchItem = {
-      id: 'test-id',
-      projectId: 'project-1',
-      filter: { query: 'test query' },
-      createdAt: new Date().toISOString(),
-      label: 'test query',
-    };
-    mockSearchHistoryService.addSearch.and.returnValue(mockSearchItem);
-
     component.searchQuery.set('test query');
     component.onSearch();
 
-    expect(mockSearchHistoryService.addSearch).toHaveBeenCalledWith({ query: 'test query' });
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/s', 'test-id'], {
+    expect(mockSearchHistoryService.addSearch).toHaveBeenCalledWith({
+      query: 'test query',
+      provider: undefined,
+      from_timestamp: undefined,
+      to_timestamp: undefined,
+    });
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
       queryParams: { q: 'test query' },
     });
   });
 
-  it('should navigate to temporary search in temp mode', () => {
-    queryParamsSubject.next({ temp: 'true' });
-    fixture.detectChanges();
-
-    component.searchQuery.set('temp query');
+  it('should not navigate to temporary search in normal mode', () => {
+    component.searchQuery.set('test query');
     component.onSearch();
 
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/s', 'temp'], {
-      queryParams: { q: 'temp query' },
+    // Should navigate to /serps/search, not a temporary route
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+      queryParams: { q: 'test query' },
     });
   });
 
@@ -133,15 +127,6 @@ describe('LandingComponent', () => {
     });
 
     it('should select suggestion and trigger search', () => {
-      const mockSearchItem = {
-        id: 'test-id',
-        projectId: 'project-1',
-        filter: { query: 'selected query' },
-        createdAt: new Date().toISOString(),
-        label: 'selected query',
-      };
-      mockSearchHistoryService.addSearch.and.returnValue(mockSearchItem);
-
       const suggestion: Suggestion = {
         id: '1',
         query: 'selected query',
@@ -151,7 +136,9 @@ describe('LandingComponent', () => {
 
       expect(component.searchQuery()).toBe('selected query');
       expect(component.showSuggestions()).toBeFalse();
-      expect(mockRouter.navigate).toHaveBeenCalled();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+        queryParams: { q: 'selected query' },
+      });
     });
 
     it('should hide suggestions when clicking outside search container', () => {

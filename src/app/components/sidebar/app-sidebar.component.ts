@@ -119,7 +119,19 @@ export class AppSidebarComponent implements OnInit {
   }
 
   onItemSelected(itemId: string): void {
-    this.router.navigate(['/s', itemId]);
+    // Get the search item from history
+    const project = this.projectService.projects().find(p => p.searches.some(s => s.id === itemId));
+    const search = project?.searches.find(s => s.id === itemId);
+
+    if (search) {
+      const queryParams: Record<string, string> = { q: search.filter.query };
+      if (search.filter.provider) queryParams['provider'] = search.filter.provider;
+      if (search.filter.from_timestamp)
+        queryParams['from_timestamp'] = search.filter.from_timestamp;
+      if (search.filter.to_timestamp) queryParams['to_timestamp'] = search.filter.to_timestamp;
+
+      this.router.navigate(['/serps/search'], { queryParams });
+    }
   }
 
   toggleCollapsed(force?: boolean): void {
@@ -303,13 +315,28 @@ export class AppSidebarComponent implements OnInit {
   }
 
   private updateSelectedItemFromRoute(url: string): void {
-    // Extract search ID from URL
-    const match = url.match(/\/s\/([^/]+)/);
-    if (match && match[1] !== 'temp') {
-      const searchId = match[1];
-      this.selectedItemId.set(searchId);
+    // Check if we're on the search view page
+    if (url.includes('/serps/search')) {
+      // Extract query parameter to find matching search
+      const query = new URLSearchParams(url.split('?')[1] || '').get('q');
+
+      if (query) {
+        // Find the search item that matches this query
+        const search = this.projectService
+          .projects()
+          .flatMap(p => p.searches)
+          .find(s => s.filter.query === query);
+
+        if (search) {
+          this.selectedItemId.set(search.id);
+        } else {
+          this.selectedItemId.set(null);
+        }
+      } else {
+        this.selectedItemId.set(null);
+      }
     } else {
-      // Clear selection if on landing page or temp search
+      // Clear selection if on landing page
       this.selectedItemId.set(null);
     }
   }
