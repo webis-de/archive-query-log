@@ -1,0 +1,205 @@
+{
+  "app": {
+    "title": "Recherche AQL"
+  },
+  "common": {
+    "search": "Rechercher",
+    "loading": "Chargement...",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "options": "Options"
+  },
+  "sidebar": {
+    "expandSidebar": "Développer la barre latérale",
+    "collapseSidebar": "Réduire la barre latérale",
+    "newProject": "Nouveau projet",
+    "temporarySearch": "Recherche temporaire",
+    "projects": "Projets",
+    "searchHistory": "Historique de recherche",
+    "noProjectsFound": "Aucun projet trouvé",
+    "createFirstProject": "Créez votre premier projet",
+    "archiveQueryLog": "Journal des requêtes d'archive",
+    "pinProject": "Épingler le projet",
+    "unpinProject": "Désépingler le projet",
+    "renameProject": "Renommer le projet",
+    "deleteProject": "Supprimer le projet",
+    "confirmDeleteProject": "Êtes-vous sûr de vouloir supprimer le projet",
+    "pinnedProject": "Projet épinglé",
+    "addToProject": "Ajouter la recherche au projet",
+    "renameSearch": "Renommer la recherche",
+    "deleteSearch": "Supprimer la recherche",
+    "confirmDeleteSearch": "Êtes-vous sûr de vouloir supprimer la recherche",
+    "createNewProject": "Créer un nouveau projet et interroger l'archive web"
+  },
+  "landing": {
+    "welcomeMessage": "Bienvenue sur AQL Recherche",
+    "searchPlaceholder": "Rechercher des requêtes...",
+    "searchLabel": "Entrez votre requête de recherche",
+    "searchButton": "Rechercher",
+    "temporaryModeNote": "Remarque :",
+    "temporaryModeWarning": "Cette recherche ne sera pas enregistrée dans votre historique",
+    "temporarySearchMode": "Recherche temporaire (non enregistrée)",
+    "searchingInProject": "Recherche dans \"{{name}}\"",
+    "selectProjectHint": "Sélectionnez un projet dans la barre latérale ou recherchez ici",
+    "createProjectHint": "Créez votre premier projet en utilisant le bouton \"Nouveau projet\" dans la barre latérale"
+  },
+  "search": {
+    "placeholder": "Rechercher",
+    "label": "Recherche",
+    "resultsFound": "{{count}} résultats trouvés",
+    "noResults": "Aucun résultat trouvé",
+    "noResultsFor": "Aucun résultat pour \"{{query}}\"",
+    "enterQuery": "Entrez une requête de recherche pour commencer",
+    "score": "Score",
+    "scoreLabel": "Score :",
+    "idLabel": "ID :",
+    "mimeTypeLabel": "Type MIME :",
+    "timestamp": "Horodatage :",
+    "url": "URL :",
+    "query": "Requête :",
+    "activeFilters": "Filtre actif :"
+  },
+  "searchStats": {
+    "title": "Query overview",
+    "query": "Query",
+    "totalHits": "Total hits",
+    "timeline": "Timeline",
+    "interval": "Interval",
+    "intervalDay": "Day",
+    "intervalWeek": "Week",
+    "intervalMonth": "Month",
+    "chartPlaceholder": "Chart placeholder",
+    "histogramBuckets": "Histogram buckets: {{count}}",
+    "noHistogram": "No histogram data",
+    "topQueries": "Top queries",
+    "topProviders": "Top providers",
+    "topArchives": "Top archives",
+    "loading": "Loading...",
+    "noData": "No data"
+  },
+
+  "project": {
+    "name": "Nom du projet",
+    "description": "Description",
+    "createNew": "Créer un nouveau projet",
+    "edit": "Modifier le projet",
+    "delete": "Supprimer le projet",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce projet ?"
+  },
+  "language": {
+    "select": "Sélectionner la langue",
+    "english": "Anglais",
+    "german": "Allemand",
+    "french": "Français"
+  },
+  "tooltip": {
+    "filter": {
+      "open": "Ouvrir les filtres",
+      "close": "Fermer les filtres"
+    },
+    "pagination": {
+      "previousPage": "Page precedente",
+      "nextPage": "Page suivante",
+      "firstPage": "Deja sur la premiere page",
+      "lastPage": "Deja sur la derniere page",
+      "morePages": "Plus de pages disponibles"
+    },
+    "metadata": {
+      "backOne": "Revenir d'un élément",
+      "backToOriginal": "Retourner au résultat d'origine"
+    },
+    "search": {
+      "moreOptions": "Plus d'options"
+    },
+    "language": {
+      "selectLanguage": "Sélectionner la langue"
+    }
+  },
+  "footer": {
+    "imprint": "Mentions légales",
+    "privacyPolicy": "Politique de confidentialité",
+    "copyright": "SWEP © {{year}}"
+  },
+  "filter": {
+    "from": "De",
+    "to": "À",
+    "websiteStatus": "Statut du site web",
+    "any": "Tous",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "searchProviders": "Fournisseurs de recherche",
+    "searchProvidersPlaceholder": "Rechercher des fournisseurs...",
+    "loadingProviders": "Chargement des fournisseurs...",
+    "providerLoadError": "Échec du chargement des fournisseurs",
+    "noProvidersFound": "Aucun fournisseur trouvé",
+    "selectedCount": "{{count}} sélectionné(s)",
+    "reset": "Réinitialiser",
+    "apply": "Appliquer",
+    "badges": {
+      "all": "Tous",
+      "status": "Statut",
+      "provider": "Fournisseur",
+      "date": "Date",
+      "until": "Jusqu'à"
+    }
+  },
+  "metadata": {
+    "panel": "Panneau de métadonnées",
+    "plainTextView": "Vue en texte brut",
+    "htmlView": "Vue HTML",
+    "websitePreview": "Aperçu du site web",
+    "metadata": "Métadonnées",
+    "score": "Score",
+    "documentId": "ID du document",
+    "mimeType": "Type MIME",
+    "timestamp": "Horodatage",
+    "provider": "Fournisseur",
+    "id": "ID",
+    "textView": "Vue texte",
+    "websiteTab": "Site web",
+    "relatedSerps": "SERPs associés",
+    "urlDetails": "Détails de l'URL",
+    "unbrandedView": "Vue neutre",
+    "backToOriginal": "Retour au résultat d'origine",
+    "backOne": "Reculer d'un élément",
+    "noRelatedSerps": "Aucun SERP associé trouvé",
+    "noUnfurlData": "Détails de l'URL non disponibles",
+    "noUnbrandedData": "Vue neutre non disponible",
+    "unfurl": {
+      "baseUrl": "URL de base",
+      "protocol": "Protocole",
+      "domain": "Domaine",
+      "port": "Port",
+      "path": "Chemin",
+      "queryParams": "Paramètres de requête",
+      "parameter": "Paramètre",
+      "value": "Valeur",
+      "fragment": "Fragment",
+      "viewInUnfurlTool": "Voir dans l'outil Unfurl.it",
+      "subdomain": "Sous-domaine",
+      "domainLabel": "Domaine",
+      "tld": "TLD"
+    },
+    "unbranded": {
+      "results": "résultats",
+      "noResults": "Aucun résultat de recherche extrait de ce SERP"
+    },
+    "website": {
+      "snapshotDate": "Date du snapshot :",
+      "archive": "Archive :",
+      "homepage": "Page d'accueil :",
+      "mementoApi": "API Memento :",
+      "cdxApi": "API CDX :",
+      "openSnapshot": "Ouvrir le snapshot :",
+      "openInNewTab": "Ouvrir dans un nouvel onglet",
+      "loadingSnapshot": "Chargement du snapshot archivé...",
+      "failedToLoad": "Échec du chargement du snapshot archivé",
+      "archiveUnavailable": "L'archive peut être indisponible ou bloquée",
+      "previewNote": "Cet aperçu montre comment le site web apparaissait au moment de l'archivage.",
+      "iframeTitle": "Snapshot archivé du site web du {{date}}"
+    }
+  }
+}

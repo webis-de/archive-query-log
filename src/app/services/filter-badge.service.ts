@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { FilterState } from '../models/filter.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FilterBadgeService {
+  private readonly translate = inject(TranslateService);
+
   generateBadges(filters: FilterState): string[] {
     const badges: string[] = [];
 
@@ -13,25 +16,30 @@ export class FilterBadgeService {
     }
 
     if (filters.status && filters.status !== 'any') {
-      badges.push(`Status: ${filters.status}`);
+      const statusLabel = this.translate.instant('filter.badges.status') as string;
+      const statusValue = this.translate.instant(`filter.${filters.status}`) as string;
+      badges.push(`${statusLabel}: ${statusValue}`);
     }
 
     if (filters.providers && filters.providers.length > 0) {
-      filters.providers.forEach(p => badges.push(`Provider: ${p}`));
+      const providerLabel = this.translate.instant('filter.badges.provider') as string;
+      filters.providers.forEach(p => badges.push(`${providerLabel}: ${p}`));
     }
 
-    return badges.length === 0 ? ['All'] : badges;
+    return badges.length === 0 ? [this.translate.instant('filter.badges.all') as string] : badges;
   }
 
   private formatDateBadge(dateFrom: string, dateTo: string): string {
-    let dateStr = 'Date: ';
+    const dateLabel = this.translate.instant('filter.badges.date') as string;
+    const untilLabel = this.translate.instant('filter.badges.until') as string;
+    let dateStr = `${dateLabel}: `;
 
     if (dateFrom && dateTo) {
       dateStr += `${dateFrom} - ${dateTo}`;
     } else if (dateFrom) {
       dateStr += dateFrom;
     } else if (dateTo) {
-      dateStr += `Until ${dateTo}`;
+      dateStr += `${untilLabel} ${dateTo}`;
     }
 
     return dateStr;

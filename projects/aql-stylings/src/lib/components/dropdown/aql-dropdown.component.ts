@@ -4,15 +4,15 @@ import {
   ElementRef,
   HostBinding,
   HostListener,
-  Input,
   booleanAttribute,
   computed,
   inject,
   input,
+  output,
   signal,
   PLATFORM_ID,
   OnDestroy,
-  ViewChild,
+  viewChild,
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
@@ -30,19 +30,29 @@ export type DropdownPosition =
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AqlDropdownComponent implements OnDestroy {
-  private readonly elementRef = inject(ElementRef<HTMLElement>);
-  private readonly platformId = inject(PLATFORM_ID);
+  // Track currently open dropdown globally
+  private static currentlyOpenDropdown: AqlDropdownComponent | null = null;
 
-  @ViewChild('contentElement') contentElement!: ElementRef<HTMLElement>;
-
+  readonly contentElement = viewChild<ElementRef<HTMLElement>>('contentElement');
   readonly matchTriggerWidth = input(false, { transform: booleanAttribute });
   readonly contentWidth = input<string | null>('14rem');
   readonly position = input<DropdownPosition | undefined>('bottom');
+  readonly open = input<boolean | undefined>(undefined);
+  readonly openChange = output<boolean>();
+  readonly internalOpen = signal(false);
+  // Use external open if provided, otherwise use internal state
+  readonly isOpen = computed(() => {
+    const external = this.open();
+    return external !== undefined ? external : this.internalOpen();
+  });
+  @HostBinding('class.dropdown')
+  readonly baseDropdownClass = true;
 
-  private readonly openState = signal(false);
   protected readonly fixedStyles = signal<Record<string, string | number>>({});
-  private cleanupFn: (() => void) | null = null;
 
+  private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly platformId = inject(PLATFORM_ID);
+  private cleanupFn: (() => void) | null = null;
   private readonly positionSegments = computed<ReadonlySet<DropdownPositionSegment>>(() => {
     const rawPosition = this.position() ?? 'bottom';
     const segments = rawPosition
@@ -56,21 +66,9 @@ export class AqlDropdownComponent implements OnDestroy {
     return new Set<DropdownPositionSegment>(segments.length ? segments : ['bottom']);
   });
 
-  @Input()
-  set open(value: boolean | string | null | undefined) {
-    this.openState.set(this.coerceBoolean(value));
-  }
-
-  get open(): boolean {
-    return this.openState();
-  }
-
-  @HostBinding('class.dropdown')
-  readonly baseDropdownClass = true;
-
   @HostBinding('class.dropdown-open')
   get isDropdownOpen(): boolean {
-    return this.openState();
+    return this.isOpen();
   }
 
   @HostBinding('class.dropdown-bottom')
@@ -115,7 +113,7 @@ export class AqlDropdownComponent implements OnDestroy {
     const triggerInsideHost = !!triggerElement && hostElement.contains(triggerElement);
 
     if (triggerInsideHost) {
-      this.setDropdownOpenState(!this.openState());
+      this.setDropdownOpenState(!this.isOpen());
       return;
     }
   }
@@ -138,40 +136,47 @@ export class AqlDropdownComponent implements OnDestroy {
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
+    if (!this.isOpen()) {
+      return;
+    }
+
     const target = event.target as HTMLElement | null;
     if (!target) {
       return;
     }
 
-    if (this.contentElement && this.contentElement.nativeElement.contains(target)) {
-      return;
-    }
+    const contentEl = this.contentElement();
+    const clickedInContent = contentEl && contentEl.nativeElement.contains(target);
+    const clickedInTrigger = this.elementRef.nativeElement.contains(target);
 
-    const clickedInside = this.elementRef.nativeElement.contains(target);
-
-    if (!clickedInside && this.openState()) {
+    // If clicked outside both trigger and content, close the dropdown
+    if (!clickedInTrigger && !clickedInContent) {
       this.setDropdownOpenState(false);
     }
   }
 
   ngOnDestroy(): void {
     this.cleanupListeners();
-    if (this.openState() && isPlatformBrowser(this.platformId) && this.contentElement) {
-      if (this.contentElement.nativeElement.parentElement === document.body) {
-        document.body.removeChild(this.contentElement.nativeElement);
+    if (AqlDropdownComponent.currentlyOpenDropdown === this) {
+      AqlDropdownComponent.currentlyOpenDropdown = null;
+    }
+    const contentEl = this.contentElement();
+    if (this.isOpen() && isPlatformBrowser(this.platformId) && contentEl) {
+      if (contentEl.nativeElement.parentElement === document.body) {
+        document.body.removeChild(contentEl.nativeElement);
       }
     }
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onWindowResize(): void {
-    if (this.openState()) {
+    if (this.isOpen()) {
       this.updateFixedPosition();
     }
   }
 
   private setDropdownOpenState(isOpen: boolean): void {
-    if (this.openState() === isOpen) {
+    if (this.isOpen() === isOpen) {
       if (!isOpen) {
         this.blurActiveElementWithinDropdown();
       }
@@ -179,16 +184,34 @@ export class AqlDropdownComponent implements OnDestroy {
     }
 
     if (isOpen) {
+      // Close any other currently open dropdown
+      if (
+        AqlDropdownComponent.currentlyOpenDropdown &&
+        AqlDropdownComponent.currentlyOpenDropdown !== this
+      ) {
+        AqlDropdownComponent.currentlyOpenDropdown.setDropdownOpenState(false);
+      }
+
       this.updateFixedPosition();
       this.moveContentToBody();
       this.setupListeners();
-      this.openState.set(isOpen);
+      this.internalOpen.set(isOpen);
+      this.openChange.emit(isOpen);
+
+      // Register this dropdown as currently open
+      AqlDropdownComponent.currentlyOpenDropdown = this;
     } else {
-      this.openState.set(isOpen);
+      this.internalOpen.set(isOpen);
+      this.openChange.emit(isOpen);
       requestAnimationFrame(() => {
         this.restoreContent();
       });
       this.cleanupListeners();
+
+      // Unregister if this were the open dropdown
+      if (AqlDropdownComponent.currentlyOpenDropdown === this) {
+        AqlDropdownComponent.currentlyOpenDropdown = null;
+      }
     }
 
     if (!isOpen) {
@@ -197,20 +220,22 @@ export class AqlDropdownComponent implements OnDestroy {
   }
 
   private moveContentToBody(): void {
-    if (isPlatformBrowser(this.platformId) && this.contentElement) {
-      document.body.appendChild(this.contentElement.nativeElement);
+    const contentEl = this.contentElement();
+    if (isPlatformBrowser(this.platformId) && contentEl) {
+      document.body.appendChild(contentEl.nativeElement);
     }
   }
 
   private restoreContent(): void {
-    if (isPlatformBrowser(this.platformId) && this.contentElement) {
-      this.elementRef.nativeElement.appendChild(this.contentElement.nativeElement);
-      this.contentElement.nativeElement.style.position = '';
-      this.contentElement.nativeElement.style.zIndex = '';
-      this.contentElement.nativeElement.style.top = '';
-      this.contentElement.nativeElement.style.bottom = '';
-      this.contentElement.nativeElement.style.left = '';
-      this.contentElement.nativeElement.style.right = '';
+    const contentEl = this.contentElement();
+    if (isPlatformBrowser(this.platformId) && contentEl) {
+      this.elementRef.nativeElement.appendChild(contentEl.nativeElement);
+      contentEl.nativeElement.style.position = '';
+      contentEl.nativeElement.style.zIndex = '';
+      contentEl.nativeElement.style.top = '';
+      contentEl.nativeElement.style.bottom = '';
+      contentEl.nativeElement.style.left = '';
+      contentEl.nativeElement.style.right = '';
     }
   }
 
@@ -293,14 +318,15 @@ export class AqlDropdownComponent implements OnDestroy {
     this.fixedStyles.set(styles);
 
     // Manually apply styles to the element to ensure it is positioned correctly
-    if (this.contentElement) {
-      this.contentElement.nativeElement.style.top = '';
-      this.contentElement.nativeElement.style.bottom = '';
-      this.contentElement.nativeElement.style.left = '';
-      this.contentElement.nativeElement.style.right = '';
+    const contentEl = this.contentElement();
+    if (contentEl) {
+      contentEl.nativeElement.style.top = '';
+      contentEl.nativeElement.style.bottom = '';
+      contentEl.nativeElement.style.left = '';
+      contentEl.nativeElement.style.right = '';
 
       Object.entries(styles).forEach(([key, value]) => {
-        this.contentElement.nativeElement.style.setProperty(
+        contentEl.nativeElement.style.setProperty(
           key.replace(/[A-Z]/g, m => '-' + m.toLowerCase()),
           value.toString(),
         );
@@ -324,20 +350,6 @@ export class AqlDropdownComponent implements OnDestroy {
 
   private hasPositionSegment(segment: DropdownPositionSegment): boolean {
     return this.positionSegments().has(segment);
-  }
-
-  private coerceBoolean(value: boolean | string | null | undefined): boolean {
-    if (typeof value === 'string') {
-      const normalized = value.trim().toLowerCase();
-      if (normalized === '' || normalized === 'true') {
-        return true;
-      }
-      if (normalized === 'false') {
-        return false;
-      }
-    }
-
-    return !!value;
   }
 
   private isValidPositionSegment(value: string): value is DropdownPositionSegment {

@@ -1,0 +1,204 @@
+{
+  "app": {
+    "title": "AQL Search"
+  },
+  "common": {
+    "search": "Search",
+    "loading": "Loading...",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "options": "Options"
+  },
+  "landing": {
+    "welcomeMessage": "Welcome to AQL Search",
+    "searchPlaceholder": "Search for queries...",
+    "searchLabel": "Enter your search query",
+    "searchButton": "Search",
+    "temporaryModeNote": "Note:",
+    "temporaryModeWarning": "This search will not be saved to your history",
+    "temporarySearchMode": "Temporary search (not saved)",
+    "searchingInProject": "Search in \"{{name}}\"",
+    "selectProjectHint": "Select a project from the sidebar or search here",
+    "createProjectHint": "Create your first project using the \"New Project\" button in the sidebar"
+  },
+  "search": {
+    "placeholder": "Search",
+    "label": "Search",
+    "resultsFound": "Found {{count}} results",
+    "noResults": "No results found",
+    "noResultsFor": "No results found for \"{{query}}\"",
+    "enterQuery": "Enter a search query to begin",
+    "score": "Score",
+    "scoreLabel": "Score:",
+    "idLabel": "ID:",
+    "mimeTypeLabel": "MIME Type:",
+    "timestamp": "Timestamp:",
+    "url": "URL:",
+    "query": "Query:",
+    "activeFilters": "Active Filter:"
+  },
+  "searchStats": {
+    "title": "Query overview",
+    "query": "Query",
+    "totalHits": "Total hits",
+    "timeline": "Timeline",
+    "interval": "Interval",
+    "intervalDay": "Day",
+    "intervalWeek": "Week",
+    "intervalMonth": "Month",
+    "chartPlaceholder": "Chart placeholder",
+    "histogramBuckets": "Histogram buckets: {{count}}",
+    "noHistogram": "No histogram data",
+    "topQueries": "Top queries",
+    "topProviders": "Top providers",
+    "topArchives": "Top archives",
+    "loading": "Loading...",
+    "noData": "No data"
+  },
+  "project": {
+    "name": "Project Name",
+    "description": "Description",
+    "createNew": "Create New Project",
+    "edit": "Edit Project",
+    "delete": "Delete Project",
+    "confirmDelete": "Are you sure you want to delete this project?"
+  },
+  "language": {
+    "select": "Select Language",
+    "english": "English",
+    "german": "German",
+    "french": "French"
+  },
+  "tooltip": {
+    "filter": {
+      "open": "Open filters",
+      "close": "Close filters"
+    },
+    "pagination": {
+      "previousPage": "Go to previous page",
+      "nextPage": "Go to next page",
+      "firstPage": "Already on first page",
+      "lastPage": "Already on last page",
+      "morePages": "More pages available"
+    },
+    "metadata": {
+      "backOne": "Go back one item",
+      "backToOriginal": "Return to original result"
+    },
+    "search": {
+      "moreOptions": "More options"
+    },
+    "language": {
+      "selectLanguage": "Select language"
+    }
+  },
+  "footer": {
+    "imprint": "Imprint",
+    "privacyPolicy": "Privacy Policy",
+    "copyright": "SWEP © {{year}}"
+  },
+  "filter": {
+    "from": "From",
+    "to": "To",
+    "websiteStatus": "Website Status",
+    "any": "Any",
+    "active": "Active",
+    "inactive": "Inactive",
+    "searchProviders": "Search Providers",
+    "searchProvidersPlaceholder": "Search providers...",
+    "loadingProviders": "Loading providers...",
+    "providerLoadError": "Failed to load providers",
+    "noProvidersFound": "No providers found",
+    "selectedCount": "{{count}} selected",
+    "reset": "Reset",
+    "apply": "Apply",
+    "badges": {
+      "all": "All",
+      "status": "Status",
+      "provider": "Provider",
+      "date": "Date",
+      "until": "Until"
+    }
+  },
+  "metadata": {
+    "panel": "Metadata Panel",
+    "plainTextView": "Plain Text View",
+    "htmlView": "HTML View",
+    "websitePreview": "Website Preview",
+    "metadata": "Metadata",
+    "score": "Score",
+    "documentId": "Document ID",
+    "mimeType": "MIME Type",
+    "timestamp": "Timestamp",
+    "provider": "Provider",
+    "id": "ID",
+    "textView": "Text View",
+    "websiteTab": "Website",
+    "relatedSerps": "Related SERPs",
+    "urlDetails": "URL Details",
+    "unbrandedView": "Unbranded View",
+    "backToOriginal": "Back to original result",
+    "backOne": "Back one item",
+    "noRelatedSerps": "No related SERPs found",
+    "noUnfurlData": "URL details not available",
+    "noUnbrandedData": "Unbranded view not available",
+    "unfurl": {
+      "baseUrl": "Base URL",
+      "protocol": "Protocol",
+      "domain": "Domain",
+      "port": "Port",
+      "path": "Path",
+      "queryParams": "Query Parameters",
+      "parameter": "Parameter",
+      "value": "Value",
+      "fragment": "Fragment",
+      "viewInUnfurlTool": "View in Unfurl.it Tool",
+      "subdomain": "Subdomain",
+      "domainLabel": "Domain",
+      "tld": "TLD"
+    },
+    "unbranded": {
+      "results": "results",
+      "noResults": "No search results parsed from this SERP"
+    },
+    "website": {
+      "snapshotDate": "Snapshot Date:",
+      "archive": "Archive:",
+      "homepage": "Homepage:",
+      "mementoApi": "Memento API:",
+      "cdxApi": "CDX API:",
+      "openSnapshot": "Open Snapshot:",
+      "openInNewTab": "Open in new tab",
+      "loadingSnapshot": "Loading archived snapshot...",
+      "failedToLoad": "Failed to load archived snapshot",
+      "archiveUnavailable": "The archive may be unavailable or blocked",
+      "previewNote": "This preview shows how the website appeared at the time of archival.",
+      "iframeTitle": "Archived website snapshot from {{date}}"
+    }
+  },
+  "sidebar": {
+    "expandSidebar": "Expand sidebar",
+    "collapseSidebar": "Collapse sidebar",
+    "newProject": "New project",
+    "temporarySearch": "Temporary search",
+    "projects": "Projects",
+    "searchHistory": "Search History",
+    "noProjectsFound": "No projects found",
+    "createFirstProject": "Create your first project",
+    "archiveQueryLog": "Archive Query Log",
+    "pinProject": "Pin Project",
+    "unpinProject": "Unpin Project",
+    "renameProject": "Rename Project",
+    "deleteProject": "Delete Project",
+    "confirmDeleteProject": "Are you sure you want to delete the project",
+    "pinnedProject": "Pinned project",
+    "addToProject": "Add search to project",
+    "renameSearch": "Rename Search",
+    "deleteSearch": "Delete Search",
+    "confirmDeleteSearch": "Are you sure you want to delete the search",
+    "createNewProject": "Create new project and start querying the web archive"
+  }
+}

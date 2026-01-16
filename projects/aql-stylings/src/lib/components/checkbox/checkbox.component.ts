@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -10,6 +10,7 @@ export type CheckboxSize = 'xs' | 'sm' | 'md' | 'lg';
   imports: [CommonModule, FormsModule],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AqlCheckboxComponent {
   readonly label = input<string>('');
@@ -17,7 +18,6 @@ export class AqlCheckboxComponent {
   readonly disabled = input<boolean>(false);
   readonly indeterminate = input<boolean>(false);
   readonly size = input<CheckboxSize>('md');
-
   readonly checkboxChange = output<boolean>();
   readonly indeterminateChange = output<boolean>();
 

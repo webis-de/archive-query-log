@@ -1,0 +1,125 @@
+<div class="rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm">
+  <div class="flex items-center justify-between">
+    <h3 class="text-sm font-semibold uppercase text-base-content/60">
+      {{ 'searchStats.title' | translate }}
+    </h3>
+    @if (isLoading()) {
+      <span class="loading loading-spinner loading-xs text-primary"></span>
+    }
+  </div>
+
+  <div class="mt-4 space-y-3 text-sm">
+    <div class="flex items-start justify-between gap-3">
+      <span class="text-base-content/70">{{ 'searchStats.query' | translate }}</span>
+      <span class="font-semibold text-right break-all" [title]="displayQuery()">
+        @if (displayQuery()) {
+          {{ displayQuery() }}
+        } @else {
+          --
+        }
+      </span>
+    </div>
+    <div class="flex items-center justify-between gap-3">
+      <span class="text-base-content/70">{{ 'searchStats.totalHits' | translate }}</span>
+      <span class="font-semibold">
+        @if (totalHits() !== null) {
+          {{ totalHits() | number }}
+        } @else {
+          --
+        }
+      </span>
+    </div>
+  </div>
+
+  <div class="mt-6">
+    <div class="flex items-center justify-between gap-3">
+      <h4 class="text-sm font-semibold uppercase text-base-content/60">
+        {{ 'searchStats.timeline' | translate }}
+      </h4>
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-base-content/70">{{ 'searchStats.interval' | translate }}:</span>
+        <aql-dropdown [contentWidth]="'10rem'" [position]="'bottom end'" #intervalDropdown>
+          <aql-button trigger size="xs" btnType="ghost" class="gap-2">
+            <span class="text-xs">
+              {{ intervalLabel() | translate }}
+            </span>
+            <i [class]="intervalDropdown.open() ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+          </aql-button>
+          <ng-container content>
+            <aql-menu-item (click)="onIntervalSelect('day')">
+              {{ 'searchStats.intervalDay' | translate }}
+            </aql-menu-item>
+            <aql-menu-item (click)="onIntervalSelect('week')">
+              {{ 'searchStats.intervalWeek' | translate }}
+            </aql-menu-item>
+            <aql-menu-item (click)="onIntervalSelect('month')">
+              {{ 'searchStats.intervalMonth' | translate }}
+            </aql-menu-item>
+          </ng-container>
+        </aql-dropdown>
+      </div>
+    </div>
+    <div class="mt-3">
+      @if (hasHistogram() && histogramChartOptions()) {
+        <aql-line-chart [options]="histogramChartOptions()" [height]="'180px'"></aql-line-chart>
+      } @else {
+        <div
+          class="h-32 rounded-lg border border-dashed border-base-300 bg-base-200/40 flex items-center justify-center text-xs text-base-content/60"
+        >
+          {{ 'searchStats.noHistogram' | translate }}
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="mt-6 space-y-4">
+    <div>
+      <h4 class="text-sm font-semibold uppercase text-base-content/60">
+        {{ 'searchStats.topQueries' | translate }}
+      </h4>
+      @if (isLoading()) {
+        <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.loading' | translate }}</p>
+      } @else if (topQueries().length > 0) {
+        <div class="mt-2">
+          <aql-bar-chart
+            [labels]="topQueryLabels()"
+            [data]="topQueryCounts()"
+            [height]="'180px'"
+          ></aql-bar-chart>
+        </div>
+      } @else {
+        <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.noData' | translate }}</p>
+      }
+    </div>
+
+    <div>
+      <h4 class="text-sm font-semibold uppercase text-base-content/60">
+        {{ 'searchStats.topProviders' | translate }}
+      </h4>
+      @if (isLoading()) {
+        <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.loading' | translate }}</p>
+      } @else if (topProviders().length > 0) {
+        <div class="mt-2">
+          <aql-pie-chart [data]="topProviderPieData()" [height]="'220px'"></aql-pie-chart>
+        </div>
+      } @else {
+        <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.noData' | translate }}</p>
+      }
+    </div>
+
+    <div>
+      <h4 class="text-sm font-semibold uppercase text-base-content/60">
+        {{ 'searchStats.topArchives' | translate }}
+      </h4>
+      @if (isLoading()) {
+        <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.loading' | translate }}</p>
+      } @else if (topArchives().length > 0) {
+        <div class="mt-2">
+          <aql-pie-chart [data]="topArchivePieData()" [height]="'220px'"></aql-pie-chart>
+        </div>
+      } @else {
+        <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.noData' | translate }}</p>
+      }
+    </div>
+  </div>
+</div>

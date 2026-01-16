@@ -1,11 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
   input,
-  Output,
+  output,
   signal,
   viewChildren,
+  viewChild,
   inject,
   computed,
   HostListener,
@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TranslateModule } from '@ngx-translate/core';
 import {
   AqlGroupItemComponent,
   AqlMenuItemComponent,
@@ -22,6 +24,8 @@ import {
   AqlAvatarCardComponent,
   AqlDropdownComponent,
   AqlInputFieldComponent,
+  AqlModalComponent,
+  AqlTooltipDirective,
 } from 'aql-stylings';
 import { UserData } from '../../models/user-data.model';
 import { ProjectService } from '../../services/project.service';
@@ -33,57 +37,39 @@ import { SessionService } from '../../services/session.service';
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     AqlGroupItemComponent,
     AqlMenuItemComponent,
     AqlButtonComponent,
     AqlAvatarCardComponent,
     AqlDropdownComponent,
     AqlInputFieldComponent,
+    AqlModalComponent,
+    AqlTooltipDirective,
   ],
   templateUrl: './app-sidebar.component.html',
   styleUrl: './app-sidebar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppSidebarComponent implements OnInit {
-  private readonly projectService = inject(ProjectService);
-  private readonly sessionService = inject(SessionService);
-  private readonly router = inject(Router);
-
+  readonly projectService = inject(ProjectService);
+  readonly sessionService = inject(SessionService);
+  readonly router = inject(Router);
   readonly userData = input.required<UserData>();
-  @Output() newProject = new EventEmitter<void>();
-
+  readonly newProject = output<void>();
   readonly isCollapsed = this.sessionService.sidebarCollapsed;
   readonly selectedItemId = signal<string | null>(null);
   readonly editingProjectId = signal<string | null>(null);
   readonly editingSearchId = signal<string | null>(null);
   readonly editingValue = signal<string>('');
-
+  readonly deleteModal = viewChild<AqlModalComponent>('deleteModal');
+  readonly itemToDelete = signal<{
+    type: 'project' | 'search';
+    id: string;
+    name: string;
+  } | null>(null);
   readonly allMenuItems = viewChildren(AqlMenuItemComponent);
-
   readonly projects = this.projectService.projects;
-
-  ngOnInit(): void {
-    this.router.events
-      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        this.updateSelectedItemFromRoute(event.url);
-      });
-
-    this.updateSelectedItemFromRoute(this.router.url);
-  }
-
-  private updateSelectedItemFromRoute(url: string): void {
-    // Extract search ID from URL
-    const match = url.match(/\/s\/([^/]+)/);
-    if (match && match[1] !== 'temp') {
-      const searchId = match[1];
-      this.selectedItemId.set(searchId);
-    } else {
-      // Clear selection if on landing page or temp search
-      this.selectedItemId.set(null);
-    }
-  }
-
   readonly filteredProjects = computed(() => {
     const allProjects = this.projects();
 
@@ -117,8 +103,40 @@ export class AppSidebarComponent implements OnInit {
     }));
   });
 
+  constructor() {
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(),
+      )
+      .subscribe((event: NavigationEnd) => {
+        this.updateSelectedItemFromRoute(event.url);
+      });
+  }
+
+  ngOnInit(): void {
+    this.updateSelectedItemFromRoute(this.router.url);
+  }
+
   onItemSelected(itemId: string): void {
-    this.router.navigate(['/s', itemId]);
+    // Get the search item from history
+    const project = this.projectService.projects().find(p => p.searches.some(s => s.id === itemId));
+    const search = project?.searches.find(s => s.id === itemId);
+
+    if (search && project) {
+      this.projectService.setActiveProject(project.id);
+
+      const queryParams: Record<string, string> = {
+        q: search.filter.query,
+        sid: itemId,
+      };
+      if (search.filter.provider) queryParams['provider'] = search.filter.provider;
+      if (search.filter.from_timestamp)
+        queryParams['from_timestamp'] = search.filter.from_timestamp;
+      if (search.filter.to_timestamp) queryParams['to_timestamp'] = search.filter.to_timestamp;
+
+      this.router.navigate(['/serps/search'], { queryParams });
+    }
   }
 
   toggleCollapsed(force?: boolean): void {
@@ -180,16 +198,9 @@ export class AppSidebarComponent implements OnInit {
 
   onDeleteProject(projectId: string): void {
     const project = this.projectService.getProject(projectId);
-    if (project && confirm(`Delete project "${project.name}"?`)) {
-      // Check if any search in this project is currently active
-      const isAnySearchActive = project.searches.some(
-        search => search.id === this.selectedItemId(),
-      );
-
-      this.projectService.deleteProject(projectId);
-      if (isAnySearchActive) {
-        this.router.navigate(['/']);
-      }
+    if (project) {
+      this.itemToDelete.set({ type: 'project', id: project.id, name: project.name });
+      this.deleteModal()?.open();
     }
   }
 
@@ -229,24 +240,6 @@ export class AppSidebarComponent implements OnInit {
     }
   }
 
-  private focusAndSelectInput(selector: string): void {
-    setTimeout(() => {
-      const inputField = document.querySelector(selector);
-      if (inputField) {
-        // Find the native input element inside aql-input-field
-        const nativeInput = inputField.querySelector('input') as HTMLInputElement;
-        if (nativeInput) {
-          nativeInput.focus();
-          nativeInput.select();
-        } else {
-          console.warn('Native input not found for selector:', selector);
-        }
-      } else {
-        console.warn('Input field not found for selector:', selector);
-      }
-    }, 50); // render timeout
-  }
-
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     const target = event.target as HTMLElement;
@@ -273,21 +266,90 @@ export class AppSidebarComponent implements OnInit {
   }
 
   onDeleteSearch(searchId: string): void {
-    let parentProjectId: string | undefined;
     const search = this.projectService.projects().flatMap(p => {
       const s = p.searches.find(search => search.id === searchId);
-      if (s) parentProjectId = p.id;
       return s ? [s] : [];
     })[0];
 
-    if (search && confirm(`Delete search "${search.label}"?`)) {
-      const isActive = this.selectedItemId() === searchId;
-      this.projectService.deleteSearch(searchId);
+    if (search) {
+      this.itemToDelete.set({ type: 'search', id: search.id, name: search.label });
+      this.deleteModal()?.open();
+    }
+  }
+
+  confirmDelete(): void {
+    const item = this.itemToDelete();
+    if (!item) return;
+
+    if (item.type === 'project') {
+      // Check if any search in this project is currently active
+      const projectData = this.projectService.getProject(item.id);
+      const isAnySearchActive = projectData?.searches.some(
+        search => search.id === this.selectedItemId(),
+      );
+
+      this.projectService.deleteProject(item.id);
+      if (isAnySearchActive) {
+        this.router.navigate(['/']);
+      }
+    } else {
+      // Delete search
+      let parentProjectId: string | undefined;
+      this.projectService.projects().forEach(p => {
+        if (p.searches.find(s => s.id === item.id)) {
+          parentProjectId = p.id;
+        }
+      });
+
+      const isActive = this.selectedItemId() === item.id;
+      this.projectService.deleteSearch(item.id);
 
       if (isActive && parentProjectId) {
         this.projectService.setActiveProject(parentProjectId);
         this.router.navigate(['/']);
       }
     }
+
+    this.deleteModal()?.close();
+    this.itemToDelete.set(null);
+  }
+
+  cancelDelete(): void {
+    this.deleteModal()?.close();
+    this.itemToDelete.set(null);
+  }
+
+  private updateSelectedItemFromRoute(url: string): void {
+    // Check if on the search view page
+    if (url.includes('/serps/search')) {
+      const params = new URLSearchParams(url.split('?')[1] || '');
+      const searchId = params.get('sid');
+
+      if (searchId) {
+        this.selectedItemId.set(searchId);
+      } else {
+        this.selectedItemId.set(null);
+      }
+    } else {
+      this.selectedItemId.set(null);
+    }
+  }
+
+  private focusAndSelectInput(selector: string): void {
+    setTimeout(() => {
+      const inputField = document.querySelector(selector);
+      if (inputField) {
+        // Find the native input element inside aql-input-field
+        const nativeInput = inputField.querySelector('input') as HTMLInputElement;
+        if (nativeInput) {
+          nativeInput.focus();
+          nativeInput.select();
+        } else {
+          console.warn('Native input not found for selector:', selector);
+        }
+      } else {
+        console.warn('Input field not found for selector:', selector);
+      }
+    }, 50); // render timeout
   }
 }

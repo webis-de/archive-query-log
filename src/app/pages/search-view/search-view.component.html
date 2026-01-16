@@ -1,143 +1,242 @@
-<div class="flex flex-col h-screen">
+<div class="flex flex-col h-full">
   <aql-header-bar>
-    <div
-      class="flex-1 transition-[margin] duration-300"
-      [class.ml-[10vw]]="!isPanelOpen()"
-      [class.ml-0]="isPanelOpen()"
-      [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
-      [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
-    >
-      <div class="flex flex-col ps-4 pe-8 py-4 w-full">
-        <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
-          <aql-input-field
-            class="flex-grow"
-            label="Search"
-            placeholder="Search"
-            name="searchQuery"
-            [(ngModel)]="searchQuery"
-            (keydown.enter)="onSearch()"
-          >
-            <aql-button
-              suffix
-              btnType="primary"
-              btnStyle="full"
-              [flatten]="true"
-              size="sm"
-              (buttonClick)="onSearch()"
-            >
-              Search
-            </aql-button>
-          </aql-input-field>
-          <div class="mb-[2px]">
-            <aql-filter-dropdown
-              [filters]="initialFilters"
-              (filtersChanged)="onFiltersChanged($event)"
-            ></aql-filter-dropdown>
+    <div class="flex-1 flex flex-row items-start transition-[margin] duration-300">
+      <div
+        class="flex-shrink-0 transition-[width,padding] duration-300 pt-4 px-0 w-0 flex items-center justify-center overflow-hidden"
+        [class.lg:w-40]="!isPanelOpen()"
+        [class.lg:w-0]="isPanelOpen()"
+        [class.lg:px-6]="!isPanelOpen()"
+        [class.lg:px-0]="isPanelOpen()"
+      >
+        @if (!isPanelOpen()) {
+          <img
+            src="assets/img/logo/aql-logo.png"
+            alt="AQL Logo"
+            class="h-16 w-auto min-w-max hidden lg:block"
+          />
+        }
+      </div>
+      <div
+        class="flex-1 transition-[margin-right] duration-300 ease-in-out"
+        [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
+        [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
+      >
+        <div class="flex flex-col ps-4 pe-8 py-4 w-full relative transition-all duration-300">
+          <!-- Language selector in top right corner -->
+          <div class="fixed top-4 right-8 z-50">
+            <app-language-selector></app-language-selector>
           </div>
-        </div>
 
-        <div class="flex flex-wrap gap-2 mt-2 justify-start w-full max-w-[800px]">
-          <span class="text-sm font-semibold self-center text-base-content/70">Active Filter:</span>
-          @for (badge of activeFilters; track badge) {
-            <div class="badge badge-primary badge-outline">{{ badge }}</div>
-          }
+          <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
+            <aql-dropdown
+              class="flex-grow search-container"
+              [open]="
+                showSuggestions() && suggestions().length > 0 && searchQuery.trim().length > 0
+              "
+              [matchTriggerWidth]="true"
+              position="bottom"
+            >
+              <aql-input-field
+                trigger
+                class="w-full"
+                [label]="'search.label' | translate"
+                [placeholder]="'search.placeholder' | translate"
+                name="searchQuery"
+                [showIcon]="false"
+                [ngModel]="searchQuery"
+                (ngModelChange)="onSearchInput($event)"
+                (keydown.enter)="onSearch(); showSuggestions.set(false)"
+                (click)="onSearchFocus(); $event.stopPropagation()"
+              >
+                <img
+                  prefix
+                  src="assets/img/icon/aql-search-icon.svg"
+                  alt="Search"
+                  class="h-5 w-auto transition-opacity duration-300"
+                  [class.lg:opacity-0]="!isPanelOpen()"
+                  [class.lg:absolute]="!isPanelOpen()"
+                  [class.lg:invisible]="!isPanelOpen()"
+                />
+                <aql-button
+                  suffix
+                  btnType="primary"
+                  btnStyle="full"
+                  [flatten]="true"
+                  size="sm"
+                  (buttonClick)="onSearch(); showSuggestions.set(false); $event.stopPropagation()"
+                >
+                  {{ 'search.label' | translate }}
+                </aql-button>
+              </aql-input-field>
+
+              <div content class="suggestions-content max-h-72 overflow-y-auto">
+                @for (suggestion of suggestions(); track suggestion.id) {
+                  <aql-menu-item iconBefore="bi-search" (click)="onSuggestionSelect(suggestion)">
+                    <div class="flex flex-col min-w-0">
+                      <span class="font-medium truncate">{{ suggestion.query }}</span>
+                    </div>
+                  </aql-menu-item>
+                }
+              </div>
+            </aql-dropdown>
+            <div class="mb-[2px]">
+              <aql-filter-dropdown
+                [filters]="initialFilters"
+                (filtersChanged)="onFiltersChanged($event)"
+              ></aql-filter-dropdown>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 mt-2 justify-start w-full max-w-[800px]">
+            <span class="text-sm font-semibold self-center text-base-content/70">{{
+              'search.activeFilters' | translate
+            }}</span>
+            @for (badge of activeFilters; track $index) {
+              <div class="badge badge-primary badge-outline">{{ badge }}</div>
+            }
+          </div>
         </div>
       </div>
     </div>
   </aql-header-bar>
 
   <div class="flex flex-row flex-1 overflow-hidden">
-    <div
-      class="flex-1 overflow-y-auto px-4 py-6 transition-all duration-300"
-      [class.ml-[10vw]]="!isPanelOpen()"
-      [class.ml-0]="isPanelOpen()"
-    >
-      @if (isLoading) {
-        <div class="flex justify-center items-center py-12">
-          <div class="text-lg">Loading...</div>
-        </div>
-      }
+    <div class="flex-1 overflow-y-auto px-4 py-6 transition-all duration-300 relative">
+      <div
+        class="transition-all duration-300"
+        [class.lg:ml-40]="!isPanelOpen()"
+        [class.lg:ml-0]="isPanelOpen()"
+      >
+        @if (!isLoading() && hasSearched() && totalCount() > 0) {
+          <div class="flex flex-row flex-nowrap gap-6 w-full overflow-x-auto">
+            <div class="flex-1 w-full max-w-[800px]">
+              <div class="mb-4">
+                <p class="text-sm text-gray-600">
+                  {{ 'search.resultsFound' | translate: { count: totalCount() } }}
+                </p>
+              </div>
 
-      @if (!isLoading && hasSearched && totalCount > 0) {
-        <div class="w-full max-w-[800px]">
-          <div class="mb-4">
-            <p class="text-sm text-gray-600">Found {{ totalCount }} results</p>
-          </div>
+              <div class="flex flex-col gap-4">
+                @for (result of searchResults(); track result._id) {
+                  <aql-panel
+                    [panelTitle]="result._source.url_query"
+                    [subtitle]="result._source.capture.url"
+                    [bordered]="true"
+                    [shadow]="true"
+                    class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl"
+                    (click)="onResultClick(result)"
+                  >
+                    <aql-dropdown
+                      subtitle-action
+                      position="right"
+                      (click)="$event.stopPropagation()"
+                    >
+                      <aql-button
+                        trigger
+                        btnType="icon"
+                        iconBefore="bi-three-dots-vertical"
+                        size="xs"
+                        [aqlTooltip]="'tooltip.search.moreOptions' | translate"
+                        [tooltipPosition]="'top'"
+                        [attr.aria-label]="'tooltip.search.moreOptions' | translate"
+                      ></aql-button>
+                      <ng-container content>
+                        <div class="p-3 space-y-2 text-sm min-w-[200px]">
+                          <div>
+                            <span class="font-semibold">{{ 'search.scoreLabel' | translate }}</span>
+                            <span class="ml-2">{{ result._score | number: '1.2-2' }}</span>
+                          </div>
+                          <div>
+                            <span class="font-semibold">{{ 'search.idLabel' | translate }}</span>
+                            <span class="ml-2 text-xs break-all">{{ result._id }}</span>
+                          </div>
+                          <div>
+                            <span class="font-semibold">{{
+                              'search.mimeTypeLabel' | translate
+                            }}</span>
+                            <span class="ml-2">{{ result._source.capture.mimetype }}</span>
+                          </div>
+                        </div>
+                      </ng-container>
+                    </aql-dropdown>
 
-          <div class="flex flex-col gap-4">
-            @for (result of searchResults; track result._id) {
-              <aql-panel
-                [panelTitle]="result._source.url_query"
-                [subtitle]="result._source.capture.url"
-                [bordered]="true"
-                [shadow]="true"
-                class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl"
-                (click)="onResultClick(result)"
-              >
-                <aql-dropdown subtitle-action position="right" (click)="$event.stopPropagation()">
-                  <aql-button
-                    trigger
-                    btnType="icon"
-                    iconBefore="bi-three-dots-vertical"
-                    size="xs"
-                  ></aql-button>
-                  <ng-container content>
-                    <div class="p-3 space-y-2 text-sm min-w-[200px]">
-                      <div>
-                        <span class="font-semibold">Score:</span>
-                        <span class="ml-2">{{ result._score | number: '1.2-2' }}</span>
-                      </div>
-                      <div>
-                        <span class="font-semibold">ID:</span>
-                        <span class="ml-2 text-xs break-all">{{ result._id }}</span>
-                      </div>
-                      <div>
-                        <span class="font-semibold">MIME Type:</span>
-                        <span class="ml-2">{{ result._source.capture.mimetype }}</span>
-                      </div>
+                    <div class="text-sm text-base-content/70 line-clamp-3 min-h-[3.6rem]">
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                      ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                      vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                      gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </div>
-                  </ng-container>
-                </aql-dropdown>
 
-                <div class="text-sm text-base-content/70 line-clamp-3 min-h-[3.6rem]">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                  no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                  amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                  est Lorem ipsum dolor sit amet.
-                </div>
+                    <div footer class="flex items-center gap-2 text-sm text-base-content/60">
+                      <span>{{ formatDate(result._source.capture.timestamp) }}</span>
+                      <span>·</span>
+                      <span>{{ result._source.provider.domain }}</span>
+                    </div>
+                  </aql-panel>
+                }
+              </div>
 
-                <div footer class="flex items-center gap-2 text-sm text-base-content/60">
-                  <span>{{ formatDate(result._source.capture.timestamp) }}</span>
-                  <span>·</span>
-                  <span>{{ result._source.provider.domain }}</span>
-                </div>
-              </aql-panel>
+              <div class="h-8"></div>
+            </div>
+
+            @if (!isPanelOpen()) {
+              <app-query-overview-panel
+                class="w-full min-w-[200px] max-w-[400px] sticky top-9 self-start"
+                [query]="searchQuery"
+                [data]="queryMetadata()"
+                [isLoading]="isMetadataLoading()"
+                [interval]="metadataInterval()"
+                (intervalChange)="onMetadataIntervalChange($event)"
+              ></app-query-overview-panel>
             }
           </div>
-        </div>
-      }
+        } @else {
+          <div class="flex-1 w-full max-w-[800px]">
+            @if (isLoading()) {
+              <div class="flex justify-center items-center py-12">
+                <div class="text-lg">{{ 'common.loading' | translate }}</div>
+              </div>
+            } @else if (hasSearched() && totalCount() === 0) {
+              <div class="flex justify-center items-center py-12">
+                <div class="text-lg text-gray-600">
+                  {{ 'search.noResultsFor' | translate: { query: searchQuery } }}
+                </div>
+              </div>
+            } @else {
+              <div class="flex justify-center items-center py-12">
+                <div class="text-lg text-gray-600">{{ 'search.enterQuery' | translate }}</div>
+              </div>
+            }
+          </div>
+        }
+      </div>
 
-      @if (!isLoading && hasSearched && totalCount === 0) {
-        <div class="flex justify-center items-center py-12">
-          <div class="text-lg text-gray-600">No results found for "{{ searchQuery }}"</div>
-        </div>
-      }
-
-      @if (!hasSearched) {
-        <div class="flex justify-center items-center py-12">
-          <div class="text-lg text-gray-600">Enter a search query to begin</div>
+      @if (!isLoading() && hasSearched() && totalCount() > 0) {
+        <div class="sticky bottom-0 z-40 w-full pb-6 pt-4 pointer-events-none">
+          <aql-pagination
+            [totalItems]="totalCount()"
+            [pageSize]="pageSize()"
+            [currentPage]="currentPage()"
+            [showPageSizeSelector]="true"
+            [size]="'md'"
+            [contentMaxWidth]="'800px'"
+            [contentClass]="!isPanelOpen() ? 'pl-[10vw]' : 'pl-0'"
+            [showSelectorLabel]="!isPanelOpen()"
+            (pageChange)="onPageChange($event)"
+            (pageSizeChange)="onPageSizeChange($event)"
+          ></aql-pagination>
         </div>
       }
     </div>
-
-    <app-metadata-panel
+    <app-query-metadata-panel
       [isOpen]="isPanelOpen()"
       [searchResult]="selectedResult()"
       (closePanel)="onClosePanel()"
-    ></app-metadata-panel>
+      (relatedSerpSelected)="onRelatedSerpSelected($event)"
+    ></app-query-metadata-panel>
   </div>
 </div>

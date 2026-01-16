@@ -41,7 +41,7 @@ export interface WarcDownloader {
 
 export interface SearchResultSource {
   last_modified: string;
-  archive: Archive;
+  archive?: Archive;
   provider: Provider;
   capture: Capture;
   url_query: string;
@@ -63,8 +63,18 @@ export interface SearchResult {
 }
 
 export interface SearchResponse {
+  query: string;
   count: number;
+  total: number;
+  page_size: number;
+  total_pages: number;
   results: SearchResult[];
+  pagination: {
+    current_results: number;
+    total_results: number;
+    results_per_page: number;
+    total_pages: number;
+  };
 }
 
 export interface SearchParams {
@@ -73,4 +83,124 @@ export interface SearchParams {
   provider_id?: string;
   year?: number;
   status_code?: number;
+}
+
+export interface QueryHistogramBucket {
+  key_as_string: string;
+  count: number;
+}
+
+export interface TopQueryItem {
+  key: string;
+  count: number;
+}
+
+export interface TopProviderItem {
+  domain: string;
+  count: number;
+}
+
+export interface TopArchiveItem {
+  name: string;
+  count: number;
+}
+
+// Generic type for backward compatibility
+export interface QueryAggregateItem {
+  key?: string;
+  label?: string;
+  name?: string;
+  domain?: string;
+  count: number;
+}
+
+export interface QueryMetadataResponse {
+  query: string;
+  total_hits: number;
+  top_queries: TopQueryItem[];
+  date_histogram: QueryHistogramBucket[];
+  top_providers: TopProviderItem[];
+  top_archives: TopArchiveItem[];
+}
+
+export interface QueryMetadataParams {
+  query: string;
+  top_n_queries?: number;
+  interval?: string;
+  top_providers?: number;
+  top_archives?: number;
+  last_n_months?: number;
+}
+
+export interface RelatedSerp {
+  _id: string;
+  _score: number;
+  _source: SearchResultSource;
+}
+
+// Unfurl data
+export interface DomainParts {
+  subdomain: string | null;
+  domain: string;
+  suffix: string;
+  registered_domain: string;
+}
+
+export interface UnfurlData {
+  scheme: string;
+  netloc: string;
+  port: number | null;
+  domain_parts: DomainParts;
+  path: string;
+  path_segments: string[];
+  query_parameters: Record<string, string | string[]>;
+  fragment: string | null;
+}
+
+// Unbranded SERP
+export interface UnbrandedResult {
+  position: number;
+  url: string;
+  title: string;
+  snippet: string | null;
+}
+
+export interface UnbrandedQuery {
+  raw: string;
+  parsed: string | null;
+}
+
+export interface UnbrandedMetadata {
+  timestamp: string;
+  url: string;
+  status_code: number;
+}
+
+export interface UnbrandedSerp {
+  serp_id: string;
+  query: UnbrandedQuery;
+  results: UnbrandedResult[];
+  metadata: UnbrandedMetadata;
+}
+
+export interface SerpDetailsResponse {
+  serp_id: string;
+  serp: SearchResult;
+  original_url?: string;
+  url_without_tracking?: string;
+  memento_url?: string;
+  related?: {
+    count: number;
+    serps: RelatedSerp[];
+  };
+  unfurl?: UnfurlData;
+  unfurl_web?: string;
+  direct_links_count?: number;
+  direct_links?: {
+    position: number;
+    url: string;
+    title: string;
+    snippet: string;
+  }[];
+  unbranded?: UnbrandedSerp;
 }

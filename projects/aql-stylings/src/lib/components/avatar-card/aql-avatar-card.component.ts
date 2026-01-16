@@ -15,7 +15,6 @@ export class AqlAvatarCardComponent {
   readonly imageSrc = input<string | null>(null);
   readonly imageAlt = input<string>('Avatar image');
   readonly avatarOnly = input<boolean>(false);
-
   readonly initials = computed(() => {
     const name = (this.name() ?? '').trim();
     if (!name) {

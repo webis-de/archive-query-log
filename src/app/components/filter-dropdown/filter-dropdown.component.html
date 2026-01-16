@@ -1,7 +1,23 @@
 <div>
-  <aql-dropdown position="bottom end" [contentWidth]="'350px'">
+  <aql-dropdown
+    position="bottom end"
+    [contentWidth]="'350px'"
+    (openChange)="onDropdownOpenChange($event)"
+  >
     <div trigger class="relative">
-      <aql-button btnType="primary" iconStyle="circle" size="md" iconBefore="">
+      <aql-button
+        btnType="primary"
+        iconStyle="circle"
+        size="md"
+        iconBefore=""
+        [aqlTooltip]="
+          isOpen() ? ('tooltip.filter.close' | translate) : ('tooltip.filter.open' | translate)
+        "
+        [tooltipPosition]="'right'"
+        [attr.aria-label]="
+          isOpen() ? ('tooltip.filter.close' | translate) : ('tooltip.filter.open' | translate)
+        "
+      >
         <i
           class="bi text-3xl transition-transform duration-300 ease-in-out"
           [ngClass]="isOpen() ? 'bi-x rotate-180' : 'bi-filter rotate-0'"
@@ -19,27 +35,31 @@
         <div class="p-2 border-b border-base-300">
           <div class="flex gap-4">
             <div class="flex-1">
-              <span class="block text-sm font-bold text-base-content/60 mb-1">From</span>
+              <span class="block text-sm font-bold text-base-content/60 mb-1">{{
+                'filter.from' | translate
+              }}</span>
               <aql-input-field
                 type="date"
                 [showIcon]="false"
                 size="sm"
-                [value]="dateFrom()"
+                [ngModel]="dateFrom()"
+                (ngModelChange)="updateDateFrom($event)"
                 [max]="maxDateFrom()"
-                (change)="updateDateFrom($any($event.target).value)"
                 class="w-full"
               ></aql-input-field>
             </div>
             <div class="flex-1">
-              <span class="block text-sm font-bold text-base-content/60 mb-1">To</span>
+              <span class="block text-sm font-bold text-base-content/60 mb-1">{{
+                'filter.to' | translate
+              }}</span>
               <aql-input-field
                 type="date"
                 [showIcon]="false"
                 size="sm"
-                [value]="dateTo()"
+                [ngModel]="dateTo()"
+                (ngModelChange)="updateDateTo($event)"
                 [min]="minDateTo()"
                 [max]="maxDateTo()"
-                (change)="updateDateTo($any($event.target).value)"
                 class="w-full"
               ></aql-input-field>
             </div>
@@ -47,11 +67,13 @@
         </div>
 
         <div class="p-2 border-b border-base-300">
-          <span class="block text-sm font-bold text-base-content/60 mb-3">Website Status</span>
+          <span class="block text-sm font-bold text-base-content/60 mb-3">{{
+            'filter.websiteStatus' | translate
+          }}</span>
           <div class="flex flex-row items-center gap-4">
             <aql-radio-button
               name="statusGroup"
-              label="Any"
+              [label]="'filter.any' | translate"
               value="any"
               size="sm"
               [checked]="status() === 'any'"
@@ -59,7 +81,7 @@
             ></aql-radio-button>
             <aql-radio-button
               name="statusGroup"
-              label="Active"
+              [label]="'filter.active' | translate"
               value="active"
               size="sm"
               [checked]="status() === 'active'"
@@ -67,7 +89,7 @@
             ></aql-radio-button>
             <aql-radio-button
               name="statusGroup"
-              label="Inactive"
+              [label]="'filter.inactive' | translate"
               value="inactive"
               size="sm"
               [checked]="status() === 'inactive'"
@@ -77,24 +99,78 @@
         </div>
 
         <div class="p-2 pb-6">
-          <span class="block text-sm font-bold text-base-content/60 mb-3">Search Providers</span>
-          <div class="flex flex-col gap-2">
-            @for (provider of providers(); track provider.id) {
-              <div>
-                <aql-checkbox
-                  [label]="provider.label"
+          <span class="block text-sm font-bold text-base-content/60 mb-3">{{
+            'filter.searchProviders' | translate
+          }}</span>
+
+          <!-- Loading state -->
+          @if (isLoadingProviders()) {
+            <div class="flex items-center justify-center py-4">
+              <span class="loading loading-spinner loading-sm mr-2"></span>
+              <span class="text-sm text-base-content/60">{{
+                'filter.loadingProviders' | translate
+              }}</span>
+            </div>
+          }
+
+          <!-- Error state -->
+          @if (providerLoadError() && !isLoadingProviders()) {
+            <div class="text-sm text-error py-2">
+              {{ 'filter.providerLoadError' | translate }}
+            </div>
+          }
+
+          <!-- Provider list -->
+          @if (!isLoadingProviders()) {
+            <!-- Search input for filtering providers -->
+            @if (providers().length > 6) {
+              <div class="mb-3">
+                <aql-input-field
+                  type="text"
+                  [showIcon]="true"
                   size="sm"
-                  [checked]="provider.checked"
-                  (checkboxChange)="updateProviderCheckedByLabel(provider.label, $event)"
-                ></aql-checkbox>
+                  [placeholder]="'filter.searchProvidersPlaceholder' | translate"
+                  [ngModel]="providerSearch()"
+                  (ngModelChange)="updateProviderSearch($event)"
+                  class="w-full"
+                ></aql-input-field>
               </div>
             }
-          </div>
+
+            <!-- Selected count indicator -->
+            @if (selectedProviderCount() > 0) {
+              <div class="text-xs text-base-content/60 mb-2">
+                {{ 'filter.selectedCount' | translate: { count: selectedProviderCount() } }}
+              </div>
+            }
+
+            <div class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-1">
+              @for (provider of filteredProviders(); track provider.id) {
+                <div>
+                  <aql-checkbox
+                    [label]="provider.label"
+                    size="sm"
+                    [checked]="provider.checked"
+                    (checkboxChange)="updateProviderCheckedByLabel(provider.label, $event)"
+                  ></aql-checkbox>
+                </div>
+              }
+              @if (filteredProviders().length === 0 && providerSearch()) {
+                <div class="text-sm text-base-content/60 py-2">
+                  {{ 'filter.noProvidersFound' | translate }}
+                </div>
+              }
+            </div>
+          }
         </div>
 
         <div class="flex border-t border-base-300 p-2 justify-between gap-3">
-          <aql-button btnType="default" size="sm" (click)="reset()"> Reset </aql-button>
-          <aql-button btnType="primary" size="sm" (click)="apply($event)"> Apply </aql-button>
+          <aql-button btnType="default" size="sm" (click)="reset()">
+            {{ 'filter.reset' | translate }}
+          </aql-button>
+          <aql-button btnType="primary" size="sm" (click)="apply($event)">
+            {{ 'filter.apply' | translate }}
+          </aql-button>
         </div>
       </div>
     </ng-container>

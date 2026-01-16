@@ -9,5 +9,8 @@ export const API_CONFIG = {
     // Search Engine Results Page
     serps: '/api/serps',
     serp: (serpId: string) => `/api/serp/${serpId}`,
+    serpsPreview: '/api/serps/preview',
+    // Providers
+    providers: '/api/providers',
   },
 } as const;

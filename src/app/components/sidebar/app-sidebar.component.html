@@ -14,7 +14,9 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-list"
-        aria-label="Expand sidebar"
+        [aqlTooltip]="'sidebar.expandSidebar' | translate"
+        [tooltipPosition]="'right'"
+        [attr.aria-label]="'sidebar.expandSidebar' | translate"
         (buttonClick)="toggleCollapsed(false)"
       >
       </aql-button>
@@ -26,7 +28,9 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-folder-plus"
-        aria-label="New project"
+        [aqlTooltip]="'sidebar.newProject' | translate"
+        [tooltipPosition]="'right'"
+        [attr.aria-label]="'sidebar.newProject' | translate"
         (buttonClick)="onNewProject()"
       >
       </aql-button>
@@ -36,7 +40,9 @@
         iconStyle="square"
         size="md"
         iconBefore="bi-search"
-        aria-label="Temporary search"
+        [aqlTooltip]="'sidebar.temporarySearch' | translate"
+        [tooltipPosition]="'right'"
+        [attr.aria-label]="'sidebar.temporarySearch' | translate"
         (buttonClick)="onTemporarySearch()"
       >
       </aql-button>
@@ -61,12 +67,16 @@
     <div class="flex flex-col sticky top-0 bg-base-100 z-10 pt-3 px-2 gap-3">
       <div class="flex items-center justify-between">
         <div class="flex items-center w-full gap-3">
-          <h1 class="text-lg font-semibold leading-none w-full">Archive Query Log</h1>
+          <h1 class="text-lg font-semibold leading-none w-full">
+            {{ 'sidebar.archiveQueryLog' | translate }}
+          </h1>
           <aql-button
             btnType="default"
             iconStyle="square"
             iconBefore="bi-list"
-            aria-label="Collapse sidebar"
+            [aqlTooltip]="'sidebar.collapseSidebar' | translate"
+            [tooltipPosition]="'right'"
+            [attr.aria-label]="'sidebar.collapseSidebar' | translate"
             (buttonClick)="toggleCollapsed(true)"
           >
           </aql-button>
@@ -83,7 +93,7 @@
             iconBefore="bi-folder-plus"
             (buttonClick)="onNewProject()"
           >
-            New Project
+            {{ 'sidebar.newProject' | translate }}
           </aql-button>
         </div>
 
@@ -94,10 +104,10 @@
             [fullWidth]="true"
             [align]="'start'"
             iconBefore="bi-search"
-            aria-label="Temporary search"
+            [attr.aria-label]="'sidebar.temporarySearch' | translate"
             (buttonClick)="onTemporarySearch()"
           >
-            Temporary Search
+            {{ 'sidebar.temporarySearch' | translate }}
           </aql-button>
         </div>
       </div>
@@ -133,7 +143,7 @@
                 size="xs"
                 class="pinned-icon ms-1"
                 iconBefore="bi-pin-fill"
-                aria-label="Pinned project"
+                [attr.aria-label]="'sidebar.pinnedProject' | translate"
               ></aql-button>
             }
 
@@ -141,24 +151,35 @@
               after
               btnType="icon"
               iconBefore="bi-plus"
-              aria-label="Add search to project"
+              [aqlTooltip]="'sidebar.addToProject' | translate"
+              [tooltipPosition]="'top'"
+              [attr.aria-label]="'sidebar.addToProject' | translate"
               (buttonClick)="onAddToProject(project.id)"
             ></aql-button>
 
             <aql-dropdown after position="right">
-              <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+              <aql-button
+                trigger
+                btnType="icon"
+                iconBefore="bi-three-dots"
+                [attr.aria-label]="'common.options' | translate"
+              ></aql-button>
               <ng-container content>
                 <aql-menu-item
                   [iconBefore]="project.isPinned ? 'bi-pin-angle-fill' : 'bi-pin'"
                   (click)="onPinProject(project.id)"
                 >
-                  {{ project.isPinned ? 'Unpin' : 'Pin' }} Project
+                  {{
+                    project.isPinned
+                      ? ('sidebar.unpinProject' | translate)
+                      : ('sidebar.pinProject' | translate)
+                  }}
                 </aql-menu-item>
                 <aql-menu-item iconBefore="bi-pencil" (click)="onRenameProject(project.id)">
-                  Rename Project
+                  {{ 'sidebar.renameProject' | translate }}
                 </aql-menu-item>
                 <aql-menu-item iconBefore="bi-trash" (click)="onDeleteProject(project.id)">
-                  Delete Project
+                  {{ 'sidebar.deleteProject' | translate }}
                 </aql-menu-item>
               </ng-container>
             </aql-dropdown>
@@ -183,13 +204,18 @@
                   <span label>{{ item.name }}</span>
                 }
                 <aql-dropdown after position="right">
-                  <aql-button trigger btnType="icon" iconBefore="bi-three-dots"></aql-button>
+                  <aql-button
+                    trigger
+                    btnType="icon"
+                    iconBefore="bi-three-dots"
+                    [attr.aria-label]="'common.options' | translate"
+                  ></aql-button>
                   <ng-container content>
                     <aql-menu-item iconBefore="bi-pencil" (click)="onRenameSearch(item.id)">
-                      Rename Search
+                      {{ 'sidebar.renameSearch' | translate }}
                     </aql-menu-item>
                     <aql-menu-item iconBefore="bi-trash" (click)="onDeleteSearch(item.id)">
-                      Delete Search
+                      {{ 'sidebar.deleteSearch' | translate }}
                     </aql-menu-item>
                   </ng-container>
                 </aql-dropdown>
@@ -201,7 +227,7 @@
         <div
           class="flex flex-col items-center justify-center h-40 text-center px-4 text-base-content/60"
         >
-          <p>Create new project and start querying the web archive</p>
+          <p>{{ 'sidebar.createNewProject' | translate }}</p>
         </div>
       }
     </div>
@@ -217,3 +243,35 @@
     </div>
   </div>
 </div>
+
+<aql-modal
+  #deleteModal
+  [modalTitle]="
+    itemToDelete()?.type === 'project'
+      ? ('sidebar.deleteProject' | translate)
+      : ('sidebar.deleteSearch' | translate)
+  "
+  maxWidth="md"
+  [closeOnBackdropClick]="false"
+>
+  @if (itemToDelete(); as item) {
+    <p class="text-base-content">
+      @if (item.type === 'project') {
+        {{ 'sidebar.confirmDeleteProject' | translate }}
+        <span class="font-bold">"{{ item.name }}"</span>?
+      } @else {
+        {{ 'sidebar.confirmDeleteSearch' | translate }}
+        <span class="font-bold">"{{ item.name }}"</span>?
+      }
+    </p>
+  }
+
+  <div modal-actions class="flex gap-2 justify-end">
+    <aql-button btnStyle="rounded" (buttonClick)="cancelDelete()">
+      {{ 'common.cancel' | translate }}
+    </aql-button>
+    <aql-button btnStyle="rounded" btnType="error" (buttonClick)="confirmDelete()">
+      {{ 'common.delete' | translate }}
+    </aql-button>
+  </div>
+</aql-modal>

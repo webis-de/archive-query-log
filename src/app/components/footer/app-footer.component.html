@@ -3,17 +3,17 @@
 >
   <nav class="flex gap-6 justify-center uppercase font-medium md:col-start-2">
     <a routerLink="/imprint" class="hover:text-base-content transition-colors duration-200">
-      Imprint
+      {{ 'footer.imprint' | translate }}
     </a>
 
     <a routerLink="/privacy" class="hover:text-base-content transition-colors duration-200">
-      Privacy Policy
+      {{ 'footer.privacyPolicy' | translate }}
     </a>
   </nav>
 
   <div
     class="uppercase font-semibold tracking-widest text-center md:text-right md:col-start-3 md:justify-self-end"
   >
-    SWEP © {{ currentYear() }}
+    {{ 'footer.copyright' | translate: { year: currentYear() } }}
   </div>
 </footer>
