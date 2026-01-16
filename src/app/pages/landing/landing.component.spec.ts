@@ -7,6 +7,7 @@ import { SearchHistoryService } from '../../services/search-history.service';
 import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
+import { SearchFilter, SearchHistoryItem } from '../../models/project.model';
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
@@ -24,6 +25,7 @@ describe('LandingComponent', () => {
 
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockSearchHistoryService = jasmine.createSpyObj('SearchHistoryService', ['addSearch']);
+    mockSearchHistoryService.addSearch.and.returnValue({ id: 'test-id' } as SearchHistoryItem);
     mockProjectService = jasmine.createSpyObj('ProjectService', [], {
       projects: jasmine.createSpy().and.returnValue([]),
     });
@@ -83,9 +85,9 @@ describe('LandingComponent', () => {
       provider: undefined,
       from_timestamp: undefined,
       to_timestamp: undefined,
-    });
+    } as SearchFilter);
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
-      queryParams: { q: 'test query' },
+      queryParams: { q: 'test query', sid: 'test-id' },
     });
   });
 
@@ -95,7 +97,7 @@ describe('LandingComponent', () => {
 
     // Should navigate to /serps/search, not a temporary route
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
-      queryParams: { q: 'test query' },
+      queryParams: { q: 'test query', sid: 'test-id' },
     });
   });
 
@@ -137,7 +139,7 @@ describe('LandingComponent', () => {
       expect(component.searchQuery()).toBe('selected query');
       expect(component.showSuggestions()).toBeFalse();
       expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
-        queryParams: { q: 'selected query' },
+        queryParams: { q: 'selected query', sid: 'test-id' },
       });
     });
 

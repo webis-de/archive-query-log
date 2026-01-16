@@ -73,14 +73,10 @@ export class SearchViewComponent {
   readonly translate = inject(TranslateService);
   readonly elementRef = inject(ElementRef);
   readonly destroyRef = inject(DestroyRef);
-  searchQuery = '';
   readonly searchResults = signal<SearchResult[]>([]);
   readonly totalCount = signal<number>(0);
   readonly isLoading = signal<boolean>(false);
   readonly hasSearched = signal<boolean>(false);
-  isPaginationChange = false;
-  activeFilters: string[] = ['All'];
-  initialFilters: FilterState | null = null;
   readonly metadataInterval = signal<'day' | 'week' | 'month'>('month');
   readonly metadataTopQueries = 10;
   readonly metadataTopProviders = 5;
@@ -95,6 +91,13 @@ export class SearchViewComponent {
   readonly isMetadataLoading = signal<boolean>(false);
   readonly suggestions = this.suggestionsService.suggestions;
   readonly showSuggestions = signal<boolean>(false);
+  searchQuery = '';
+  currentSearchId?: string;
+  isTemporarySearch = false;
+  isLoadedFromHistory = false;
+  isPaginationChange = false;
+  activeFilters: string[] = ['All'];
+  initialFilters: FilterState | null = null;
 
   private currentFilters: FilterState | null = null;
   private lastQueryString: string | null = null;
@@ -131,6 +134,16 @@ export class SearchViewComponent {
       const status = queryParams.get('status') || 'any';
       const providerStr = queryParams.get('provider');
       const providers = providerStr ? providerStr.split(',') : [];
+      const isTemp = queryParams.get('temp') === 'true';
+      const searchId = queryParams.get('sid');
+
+      // Set search ID if loading from history
+      if (searchId) {
+        this.currentSearchId = searchId;
+        this.isLoadedFromHistory = true;
+      }
+
+      this.isTemporarySearch = isTemp;
 
       // Build current query string for comparison
       const currentQueryString = JSON.stringify({
@@ -207,8 +220,8 @@ export class SearchViewComponent {
         this.totalCount.set(response.total);
         this.isLoading.set(false);
 
-        // Save search to history if not a pagination change
-        if (!this.isPaginationChange) {
+        // Save search to history if not a temporary search or pagination change
+        if (!this.isTemporarySearch && !this.isPaginationChange && !this.isLoadedFromHistory) {
           const searchFilter: SearchFilter = {
             query: this.searchQuery,
           };
@@ -223,10 +236,11 @@ export class SearchViewComponent {
             searchFilter.to_timestamp = this.currentFilters.dateTo;
           }
 
-          this.searchHistoryService.addSearch(searchFilter);
+          const searchItem = this.searchHistoryService.addSearch(searchFilter);
+          this.currentSearchId = searchItem.id;
 
           // Build query params for URL
-          const queryParams: Record<string, string> = { q: this.searchQuery };
+          const queryParams: Record<string, string> = { q: this.searchQuery, sid: searchItem.id };
           if (searchFilter.provider) queryParams['provider'] = searchFilter.provider;
           if (searchFilter.from_timestamp)
             queryParams['from_timestamp'] = searchFilter.from_timestamp;
@@ -238,6 +252,7 @@ export class SearchViewComponent {
           this.router.navigate(['/serps/search'], { queryParams, replaceUrl: true });
         }
 
+        this.isLoadedFromHistory = false;
         this.isPaginationChange = false;
       },
       error: error => {
@@ -288,7 +303,59 @@ export class SearchViewComponent {
     this.pageSize.set(size);
     this.currentPage.set(1);
     this.isPaginationChange = true;
+    this.updateSearchHistoryPageSize(size);
     this.onSearch();
+  }
+
+  loadSearchFromHistory(searchId: string): void {
+    const searchItem = this.searchHistoryService.getSearch(searchId);
+    if (searchItem) {
+      this.currentSearchId = searchId;
+      this.searchQuery = searchItem.filter.query;
+      this.isLoading.set(true);
+      this.hasSearched.set(true);
+      this.loadQueryMetadata(searchItem.filter.query);
+
+      // Update pagination state from stored search
+      if (searchItem.filter.size) {
+        this.pageSize.set(searchItem.filter.size);
+      }
+      if (searchItem.filter.offset !== undefined && searchItem.filter.size) {
+        const page = Math.floor(searchItem.filter.offset / searchItem.filter.size) + 1;
+        this.currentPage.set(page);
+      }
+
+      // Restore filters if present
+      if (
+        searchItem.filter.provider ||
+        searchItem.filter.from_timestamp ||
+        searchItem.filter.to_timestamp
+      ) {
+        this.initialFilters = {
+          dateFrom: searchItem.filter.from_timestamp || '',
+          dateTo: searchItem.filter.to_timestamp || '',
+          status: 'any',
+          providers: searchItem.filter.provider ? searchItem.filter.provider.split(',') : [],
+        };
+        this.onFiltersChanged(this.initialFilters);
+      }
+
+      this.searchService
+        .search(searchItem.filter.query, searchItem.filter.size, searchItem.filter.offset)
+        .subscribe({
+          next: response => {
+            this.searchResults.set(response.results);
+            this.totalCount.set(response.total);
+            this.isLoading.set(false);
+          },
+          error: error => {
+            console.error('Search error:', error);
+            this.isLoading.set(false);
+            this.searchResults.set([]);
+            this.totalCount.set(0);
+          },
+        });
+    }
   }
 
   private loadQueryMetadata(query: string): void {
@@ -319,5 +386,20 @@ export class SearchViewComponent {
 
   private scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  private updateSearchHistoryPageSize(size: number): void {
+    if (!this.currentSearchId || this.isTemporarySearch) {
+      return;
+    }
+
+    const searchItem = this.searchHistoryService.getSearch(this.currentSearchId);
+    if (searchItem) {
+      this.searchHistoryService.updateSearch(this.currentSearchId, {
+        ...searchItem.filter,
+        size,
+        offset: 0,
+      });
+    }
   }
 }

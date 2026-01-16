@@ -169,7 +169,10 @@ export class LandingComponent {
       };
 
       if (!this.isTemporaryMode()) {
-        this.searchHistoryService.addSearch(searchFilter);
+        const searchItem = this.searchHistoryService.addSearch(searchFilter);
+        queryParams['sid'] = searchItem.id;
+      } else {
+        queryParams['temp'] = 'true';
       }
 
       // Navigate to search view with query params

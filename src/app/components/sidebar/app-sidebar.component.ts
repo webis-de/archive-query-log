@@ -123,8 +123,13 @@ export class AppSidebarComponent implements OnInit {
     const project = this.projectService.projects().find(p => p.searches.some(s => s.id === itemId));
     const search = project?.searches.find(s => s.id === itemId);
 
-    if (search) {
-      const queryParams: Record<string, string> = { q: search.filter.query };
+    if (search && project) {
+      this.projectService.setActiveProject(project.id);
+
+      const queryParams: Record<string, string> = {
+        q: search.filter.query,
+        sid: itemId,
+      };
       if (search.filter.provider) queryParams['provider'] = search.filter.provider;
       if (search.filter.from_timestamp)
         queryParams['from_timestamp'] = search.filter.from_timestamp;
@@ -315,28 +320,17 @@ export class AppSidebarComponent implements OnInit {
   }
 
   private updateSelectedItemFromRoute(url: string): void {
-    // Check if we're on the search view page
+    // Check if on the search view page
     if (url.includes('/serps/search')) {
-      // Extract query parameter to find matching search
-      const query = new URLSearchParams(url.split('?')[1] || '').get('q');
+      const params = new URLSearchParams(url.split('?')[1] || '');
+      const searchId = params.get('sid');
 
-      if (query) {
-        // Find the search item that matches this query
-        const search = this.projectService
-          .projects()
-          .flatMap(p => p.searches)
-          .find(s => s.filter.query === query);
-
-        if (search) {
-          this.selectedItemId.set(search.id);
-        } else {
-          this.selectedItemId.set(null);
-        }
+      if (searchId) {
+        this.selectedItemId.set(searchId);
       } else {
         this.selectedItemId.set(null);
       }
     } else {
-      // Clear selection if on landing page
       this.selectedItemId.set(null);
     }
   }
