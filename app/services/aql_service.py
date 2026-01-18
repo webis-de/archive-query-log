@@ -15,6 +15,21 @@ from app.utils.url_cleaner import remove_tracking_parameters
 
 
 # ---------------------------------------------------------
+# Helper: Add hidden filter to Elasticsearch queries
+# ---------------------------------------------------------
+def _add_hidden_filter(filter_list: list[dict]) -> None:
+    """
+    Add a filter to exclude hidden SERPs from results.
+
+    This filters out SERPs marked as hidden (e.g., spam, porn, problematic content).
+    Uses must_not to maintain backwards compatibility: accepts both False and missing hidden field.
+
+    Filter logic: hidden != True (i.e., False or doesn't exist)
+    """
+    filter_list.append({"bool": {"must_not": [{"term": {"hidden": True}}]}})
+
+
+# ---------------------------------------------------------
 # 1. Basic SERP Search
 # ---------------------------------------------------------
 async def search_basic(query: str, size: int = 10, from_: int = 0) -> dict:
@@ -27,7 +42,16 @@ async def search_basic(query: str, size: int = 10, from_: int = 0) -> dict:
             - total: Total number of results found
     """
     es = get_es_client()
-    body = {"query": {"match": {"url_query": query}}, "size": size, "from": from_}
+
+    # Build query with hidden filter
+    filter_clause: list[dict] = []
+    _add_hidden_filter(filter_clause)
+
+    query_clause = {
+        "bool": {"must": [{"match": {"url_query": query}}], "filter": filter_clause}
+    }
+
+    body = {"query": query_clause, "size": size, "from": from_}
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
@@ -100,6 +124,9 @@ async def search_advanced(
     if status_code:
         bool_query["filter"].append({"term": {"capture.status_code": status_code}})
 
+    # Add hidden filter
+    _add_hidden_filter(bool_query["filter"])
+
     body = {"query": {"bool": bool_query}, "size": size, "from": from_}
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
@@ -160,9 +187,18 @@ async def get_archive_metadata(archive_id: str) -> dict | None:
     """
     es = get_es_client()
 
-    # Search for all SERPs using this archive, and get one example to extract metadata
+    # Search for all SERPs using this archive (excluding hidden),
+    # and get one example to extract metadata
+    filter_clause: list[dict] = []
+    _add_hidden_filter(filter_clause)
+
     body = {
-        "query": {"match": {"archive.memento_api_url": archive_id}},
+        "query": {
+            "bool": {
+                "must": [{"match": {"archive.memento_api_url": archive_id}}],
+                "filter": filter_clause,
+            }
+        },
         "size": 1,
         "track_total_hits": True,
         "_source": ["archive"],
@@ -217,6 +253,7 @@ async def list_all_archives(size: int = 100) -> dict:
     Get a list of all available web archives in the dataset.
 
     Returns all unique archives with their SERP counts, sorted by count.
+    Excludes hidden SERPs from the count.
 
     Args:
         size: Maximum number of archives to return (default: 100)
@@ -228,8 +265,12 @@ async def list_all_archives(size: int = 100) -> dict:
     """
     es = get_es_client()
 
+    # Add hidden filter to aggregation query
+    filter_clause: list[dict] = []
+    _add_hidden_filter(filter_clause)
+
     body = {
-        "query": {"match_all": {}},
+        "query": {"bool": {"must": [{"match_all": {}}], "filter": filter_clause}},
         "size": 0,
         "aggs": {
             "unique_archives": {
@@ -398,6 +439,7 @@ async def search_suggestions(
 
     Matches queries starting with the given prefix and returns the most
     popular (frequent) ones, ranked by document count.
+    Excludes hidden SERPs from suggestions.
 
     Performance Note:
     - Fetches size*20 documents to account for duplicates during deduplication
@@ -425,6 +467,9 @@ async def search_suggestions(
         start = now - timedelta(days=30 * last_n_months)
         start_iso = start.replace(microsecond=0).isoformat()
         filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    # Add hidden filter
+    _add_hidden_filter(filter_clause)
 
     query_clause: dict[str, Any]
     if filter_clause:
@@ -480,10 +525,12 @@ async def preview_search(
     """
     Lightweight preview aggregations for a query.
 
+    Excludes hidden SERPs from all aggregations and counts.
+
     Returns:
         dict with keys:
             - query: str
-            - total_hits: int
+            - total_hits: int (only counting visible SERPs)
             - top_queries: List[{query, count}]
             - date_histogram: List[{date, count}]
             - top_providers: List[{provider, count}]
@@ -501,6 +548,9 @@ async def preview_search(
         start = now - timedelta(days=30 * last_n_months)
         start_iso = start.replace(microsecond=0).isoformat()
         filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    # Add hidden filter
+    _add_hidden_filter(filter_clause)
 
     if filter_clause:
         query_clause: dict[str, Any] = {

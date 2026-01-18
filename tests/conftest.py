@@ -76,16 +76,30 @@ def mock_elasticsearch(monkeypatch):
             query_clause = kwargs.get("body", {}).get("query", {})
             # Normalize to get the requested archive id
             requested_id = None
+
+            # Handle simple match query
             if (
                 "match" in query_clause
                 and "archive.memento_api_url" in query_clause["match"]
             ):
                 requested_id = query_clause["match"]["archive.memento_api_url"]
+            # Handle term query
             elif (
                 "term" in query_clause
                 and "archive.memento_api_url" in query_clause["term"]
             ):
                 requested_id = query_clause["term"]["archive.memento_api_url"]
+            # Handle bool query with must clause (new format with hidden filter)
+            elif "bool" in query_clause:
+                bool_query = query_clause["bool"]
+                must_clauses = bool_query.get("must", [])
+                for clause in must_clauses:
+                    if (
+                        "match" in clause
+                        and "archive.memento_api_url" in clause["match"]
+                    ):
+                        requested_id = clause["match"]["archive.memento_api_url"]
+                        break
 
             if requested_id is not None:
                 # Simulate found/not found with counts aligned to aggregation mock
