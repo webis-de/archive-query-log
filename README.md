@@ -90,12 +90,31 @@ docker stop <container-name>
 
 **Query Parameters for Search Endpoint:**
 - `query` (required) - Search term
-- `page_size` - Results per page (default: 10, options: 10, 20, 50)
 - `page_size` - Results per page (default: 10, options: 10, 20, 50, 100, 1000)
 - `page` - Page number (1-based). Use together with `page_size` to navigate pages, e.g. `?query=climate&page_size=20&page=2`.
 - `provider_id` - Filter by provider ID (optional)
 - `year` - Filter by year (optional)
 - `status_code` - Filter by HTTP status code (optional)
+
+**Query Parameters for Preview Endpoint:**
+- `query` (required) - Search term for aggregation
+- `top_n_queries` - Number of top queries to return (default: 10)
+- `interval` - Histogram interval: `day`, `week`, `month` (default: `month`)
+- `top_providers` - Number of top providers to return (default: 5)
+- `top_archives` - Number of top archives to return (default: 5)
+- `last_n_months` - Limit histogram to last N months (optional, default: 36)
+
+**Example Preview Requests:**
+```bash
+# Get overview statistics for a query
+curl http://localhost:8000/api/serps/preview?query=climate
+
+# Get statistics with custom intervals and limits
+curl http://localhost:8000/api/serps/preview?query=climate&interval=week&top_providers=10&last_n_months=12
+
+# Get top 20 queries with daily histogram
+curl http://localhost:8000/api/serps/preview?query=python&top_n_queries=20&interval=day
+```
 
 **Query Parameters for Suggestions Endpoint:**
 - `prefix` (required) - Query prefix to search for suggestions
@@ -282,25 +301,35 @@ mypy app/                  # Type checking
 ├── tests/                      
 │   ├── conftest.py             # Pytest fixtures, including mocked Elasticsearch
 │   ├── aql_services/    
+│   │   ├── test_aql_service_archive_metadata.py
 │   │   ├── test_aql_service_autocomplete.py
+│   │   ├── test_aql_service_compare.py
 │   │   ├── test_aql_service_direct_links.py
-│   │   ├── test_aql_service_related_serps.py 
+│   │   ├── test_aql_service_preview.py
+│   │   ├── test_aql_service_provider_by_id.py
+│   │   ├── test_aql_service_related_serps.py
 │   │   ├── test_aql_service_search.py
+│   │   ├── test_aql_service_search_suggestions.py
 │   │   ├── test_aql_service_serp_by_id.py
 │   │   ├── test_aql_service_serp_memento_url.py
 │   │   ├── test_aql_service_serp_original_url.py
 │   │   ├── test_aql_service_serp_unfurl.py
-│   │   ├── test_aql_service_unbranded.py
-│   │   └── test_aql_service_preview.py      
+│   │   └── test_aql_service_unbranded.py
 │   ├── search_router/    
+│   │   ├── test_search_router_archive_detail.py
+│   │   ├── test_search_router_archives.py
+│   │   ├── test_search_router_archives_detail_canonical.py
+│   │   ├── test_search_router_compare.py
 │   │   ├── test_search_router_direct_links.py
 │   │   ├── test_search_router_edge_cases.py
+│   │   ├── test_search_router_error_handling.py
 │   │   ├── test_search_router_legacy_endpoints.py
 │   │   ├── test_search_router_pagination.py
-│   │   ├── test_search_router_safe_search.py
-│   │   ├── test_search_router_serp_detail.py    
+│   │   ├── test_search_router_preview.py
+│   │   ├── test_search_router_provider_by_id.py
+│   │   ├── test_search_router_serp_detail.py
 │   │   ├── test_search_router_unified_search_endpoint.py
-│   │   └── test_search_router_preview.py
+│   │   └── test_search_router_unbranded.py
 │   ├── test_autocomplete.py
 │   ├── test_elastic.py
 │   ├── test_main.py
