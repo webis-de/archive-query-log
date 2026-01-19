@@ -32,36 +32,43 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
   - [⚡ Important Commands](#-important-commands)
   - [🤝 Contributing](#-contributing)
   - [📄 License](#-license)
+  - [🔐 Content Filtering](#-content-filtering)
 
 ---
 
 ## 🚀 For Users (Deployment & Usage)
 
 ### Requirements
+
 - Port 8000 available
 - Docker (need to be logged in:)
-  ```bash 
+
+  ```bash
   docker login git.uni-jena.de
   ```
 
 ### Installation & Start with Docker
 
 1. **Start the container (be sure image is up2date):**
+
 ```bash
 docker pull git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
 ```
+
 ```bash
 docker run -p 8000:8000 git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
 ```
 
-2. **Test the API:**
+1. **Test the API:**
+
 ```bash
 curl http://localhost:8000/
 ```
 
 ... or open [http://localhost:8000/docs](http://localhost:8000/docs) in your browser for the Swagger UI.
 
-3. **Stop the containers:**
+1. **Stop the containers:**
+
 ```bash
 docker container ls
 docker stop <container-name> 
@@ -72,6 +79,7 @@ docker stop <container-name>
 **To access the Elasticsearch data, the endpoints require a VPN connection to `vpn.webis.de` (via OpenVPN Connect, see Issue #7).**
 
 #### ✅ Core Endpoints
+
 | Method | Endpoint  | Description                  |
 | ------ | --------- | ---------------------------- |
 | GET    | `/`       | Root endpoint (Health Check) |
@@ -80,6 +88,7 @@ docker stop <container-name>
 | GET    | `/redoc`  | ReDoc UI                     |
 
 #### ✅ Search Endpoints
+
 | Method | Endpoint                                                | Description                                  |
 | ------ | ------------------------------------------------------- | -------------------------------------------- |
 | GET    | `/api/serps?query=climate+change`                       | Basic SERP search                            |
@@ -89,6 +98,7 @@ docker stop <container-name>
 | GET    | `/api/serps/compare?ids=id1,id2`                        | Compare multiple SERPs (2-5)                 |
 
 **Query Parameters for Search Endpoint:**
+
 - `query` (required) - Search term
 - `page_size` - Results per page (default: 10, options: 10, 20, 50, 100, 1000)
 - `page` - Page number (1-based). Use together with `page_size` to navigate pages, e.g. `?query=climate&page_size=20&page=2`.
@@ -97,6 +107,7 @@ docker stop <container-name>
 - `status_code` - Filter by HTTP status code (optional)
 
 **Query Parameters for Preview Endpoint:**
+
 - `query` (required) - Search term for aggregation
 - `top_n_queries` - Number of top queries to return (default: 10)
 - `interval` - Histogram interval: `day`, `week`, `month` (default: `month`)
@@ -105,6 +116,7 @@ docker stop <container-name>
 - `last_n_months` - Limit histogram to last N months (optional, default: 36)
 
 **Example Preview Requests:**
+
 ```bash
 # Get overview statistics for a query
 curl http://localhost:8000/api/serps/preview?query=climate
@@ -117,11 +129,13 @@ curl http://localhost:8000/api/serps/preview?query=python&top_n_queries=20&inter
 ```
 
 **Query Parameters for Suggestions Endpoint:**
+
 - `prefix` (required) - Query prefix to search for suggestions
 - `size` - Number of suggestions to return (default: 10, range: 1-50)
 - `last_n_months` - Filter to last N months of data (default: 36, can be None to disable)
 
 **Example Suggestions Requests:**
+
 ```bash
 # Get top 5 suggestions for "python"
 curl http://localhost:8000/api/suggestions?prefix=python&size=5
@@ -134,9 +148,11 @@ curl http://localhost:8000/api/suggestions?prefix=test&size=20&last_n_months=24
 ```
 
 **Query Parameters for Compare Endpoint:**
+
 - `ids` (required) - Comma-separated list of SERP IDs (2-5 IDs)
 
 **Example Compare Requests:**
+
 ```bash
 # Compare 2 SERPs
 curl "http://localhost:8000/api/serps/compare?ids=abc123,def456"
@@ -149,14 +165,15 @@ curl "http://localhost:8000/api/serps/compare?ids=id1,id2,id3,id4,id5"
 ```
 
 **Compare Response includes:**
+
 - Comparison summary (total unique URLs, common URLs count, average similarity)
 - Full metadata for each SERP (query, provider, timestamp, status)
 - URL comparison (common URLs, unique URLs per SERP)
 - Ranking comparison (position differences for common URLs)
 - Similarity metrics (Jaccard similarity and Spearman correlation for each pair)
 
-
 #### ✅ SERP Detail Endpoints
+
 | Method | Endpoint                                             | Description                            |
 | ------ | ---------------------------------------------------- | -------------------------------------- |
 | GET    | `/api/serp/{serp_id}`                                | Get a single SERP by ID                |
@@ -168,24 +185,29 @@ curl "http://localhost:8000/api/serps/compare?ids=id1,id2,id3,id4,id5"
 | GET    | `/api/serp/{serp_id}?include=unbranded`              | Include provider-agnostic unified view |
 
 **Query Parameters for SERP Detail Endpoint:**
+
 - `include` - Comma-separated fields: `original_url`, `memento_url`, `related`, `unfurl`, `direct_links`, `unbranded`
 - `remove_tracking` - Remove tracking parameters from original URL (requires `include=original_url`)
 - `related_size` - Number of related SERPs (requires `include=related`, default: 10)
 - `same_provider` - Only return related SERPs from same provider (requires `include=related`)
 
 #### ✅ Archive Endpoints
+
 | Method | Endpoint                       | Description                                    |
 | ------ | ------------------------------ | ---------------------------------------------- |
 | GET    | `/api/archives`                | List all available web archives in the dataset |
 | GET    | `/api/archives/{archive_id}`   | Get metadata for a specific web archive       |
 
 **Query Parameters for Archives List Endpoint:**
+
 - `limit` - Maximum number of archives to return (default: 100, range: 1-1000)
 
 **Path Parameters for Archive Detail Endpoint:**
+
 - `archive_id` - Memento API URL of the archive (no encoding needed)
 
 **Archive Metadata Fields:**
+
 - `id` - Unique archive identifier (Memento API URL)
 - `name` - Human-readable archive name (e.g., "Internet Archive (Wayback Machine)")
 - `memento_api_url` - Memento API base URL
@@ -194,6 +216,7 @@ curl "http://localhost:8000/api/serps/compare?ids=id1,id2,id3,id4,id5"
 - `serp_count` - Number of SERPs captured from this archive
 
 **Example Archive Requests:**
+
 ```bash
 # List all archives (default limit: 100)
 curl http://localhost:8000/api/archives
@@ -209,6 +232,7 @@ curl "http://localhost:8000/api/archives/https://arquivo.pt/wayback"
 ```
 
 **Example Response for Individual Archive:**
+
 ```json
 {
   "id": "https://web.archive.org/web",
@@ -219,27 +243,34 @@ curl "http://localhost:8000/api/archives/https://arquivo.pt/wayback"
   "serp_count": 551912265
 }
 ```
+
 #### ✅ Providers Endpoints
+
 | Method | Endpoint                   | Description                                                            |
 | ------ | -------------------------- | ---------------------------------------------------------------------- |
 | GET    | `/api/providers?size=uint` | Get all available search providers (optional: get number of providers) |
+
 ---
 
 ## ⚙️ For Developers (Development)
 
 ### Requirements
+
 - Python 3.13 installed
 - Git installed
 
 ### Setting Up Local Development Environment
-**Note:** Make sure to configure your openVPN and [`.env`](#environment-variables) file with the required Elasticsearch credentials before running the development server. 
+
+**Note:** Make sure to configure your openVPN and [`.env`](#environment-variables) file with the required Elasticsearch credentials before running the development server.
 
 1. **Create a virtual environment:**
+
 ```bash
 python3.13 -m venv venv
 ```
 
-2. **Activate the virtual environment:**
+1. **Activate the virtual environment:**
+
 ```bash
 # Linux / Mac
 source venv/bin/activate
@@ -248,18 +279,22 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-3. **Install dependencies:**
+1. **Install dependencies:**
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Start the development server:**
+1. **Start the development server:**
+
 ```bash
 uvicorn app.main:app --reload
 ```
+
 - API available at: [http://localhost:8000](http://localhost:8000)
 
-5. **Run tests:**
+1. **Run tests:**
+
 ```bash
 pytest -v
 
@@ -270,12 +305,14 @@ pytest --cov=app
 pytest --cov-report=xml
 ```
 
-6. **Check code quality:**
+1. **Check code quality:**
+
 ```bash
 black app/ tests/          # Format code
 flake8 app/ tests/         # Linting
 mypy app/                  # Type checking
 ```
+
 ---
 
 ## 📁 Project Structure
@@ -362,10 +399,10 @@ FastAPI generates interactive API documentation automatically:
 
 ## 🔧 Extending the Project
 
-
 ### Add a New Router
 
 1. **Create router file:** `app/routers/users.py`
+
 ```python
 from fastapi import APIRouter
 
@@ -376,7 +413,8 @@ async def get_users():
     return {"users": []}
 ```
 
-2. **Register in main.py:**
+1. **Register in main.py:**
+
 ```python
 from app.routers import users
 app.include_router(users.router, prefix="/api", tags=["users"])
@@ -385,25 +423,28 @@ app.include_router(users.router, prefix="/api", tags=["users"])
 ### Add a Database
 
 1. **Add dependencies to `requirements.txt`**
+
 ```
 sqlalchemy==2.0.23
 psycopg2-binary==2.9.9
 ```
 
-2. **Create database setup in `app/database.py`**  
-3. **Define models in `app/models/`**  
-4. **Add PostgreSQL service in `docker-compose.yml`**
+1. **Create database setup in `app/database.py`**  
+2. **Define models in `app/models/`**  
+3. **Add PostgreSQL service in `docker-compose.yml`**
 
 ### Environment Variables
 
 1. **Create `.env`:**
+
 ```
 ES_HOST=https://elasticsearch.srv.webis.de:9200
 ES_API_KEY=<API_KEY>
 ES_VERIFY=False
 ```
 
-2. **Use Pydantic Settings:**
+1. **Use Pydantic Settings:**
+
 ```python
 from pydantic_settings import BaseSettings
 
@@ -426,18 +467,21 @@ settings = Settings()
 The project uses GitLab CI/CD with three stages:
 
 ### Test Stage
+
 - Runs pytest with coverage  
 - Code quality checks (`black`, `flake8`)  
 - Automatically mocks Elasticsearch (no network needed)  
 - Runs on every push and merge request  
 
 ### Build Stage
+
 - Builds Docker image  
 - Pushes to GitLab Container Registry  
 - Tags: `latest` for main branch, branch name otherwise  
 - Runs only if tests pass  
 
 ### Deploy Stage (Optional)
+
 - Manual trigger  
 - Can deploy to Kubernetes, Docker Compose, etc.  
 
@@ -476,6 +520,34 @@ docker push $CI_REGISTRY_IMAGE:latest
 
 ---
 
-## 📄 License
+## � Content Filtering
+
+### Hidden SERPs Filter
+
+The backend is prepared to filter out hidden SERPs (marked as spam, porn, or other problematic content) from all search results and aggregations.
+
+**Current Status:**
+
+- ✅ Filter logic implemented in all SERP-related Elasticsearch queries
+- ⏳ Waiting for `hidden` flag to be added to Elasticsearch `aql_serps` index
+
+**Implementation Details:**
+
+- A helper function `_add_hidden_filter()` adds the filter to all queries that access `aql_serps`
+- Affected functions: `search_basic()`, `search_advanced()`, `search_suggestions()`, `preview_search()`, `get_archive_metadata()`, `list_all_archives()`
+- Filter clause: `{"bool": {"must_not": [{"term": {"hidden": True}}]}}`
+  - This means: `hidden != True` (excludes only documents where hidden is explicitly True)
+  - **Backwards compatible**: Accepts documents where the field is missing or False
+- Once the `hidden` field is added to the index, filtering will work automatically without code changes
+
+**Next Steps (Research Project):**
+
+- Add `hidden` boolean field to Elasticsearch documents in `aql_serps` index
+- Mark problematic SERPs with `hidden: True`
+- Filter will be automatically applied to all API responses (no code changes needed)
+
+---
+
+## �📄 License
 
 This project is a FastAPI starter template for building extensible web APIs.
