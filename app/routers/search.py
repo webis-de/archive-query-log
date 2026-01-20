@@ -218,6 +218,50 @@ async def serps_preview(
 
 
 # ---------------------------------------------------------
+# TIMELINE ENDPOINT
+# ---------------------------------------------------------
+@router.get("/serps/timeline")
+@limiter.limit("30/minute")
+async def serps_timeline(
+    request: Request,
+    query: str = Query(..., description="Search term for timeline"),
+    provider_id: Optional[str] = Query(None, description="Filter by provider ID"),
+    archive_id: Optional[str] = Query(
+        None, description="Filter by archive memento_api_url"
+    ),
+    interval: str = Query("month", description="Histogram interval (day, week, month)"),
+    last_n_months: int | None = Query(
+        36, description="Limit histogram to last N months (optional)"
+    ),
+):
+    """Return a date histogram (counts only) for the given query,
+    optionally filtered by provider and archive."""
+    # Validate interval
+    valid_intervals = {"day", "week", "month"}
+    if interval.lower() not in valid_intervals:
+        raise HTTPException(
+            status_code=400, detail=f"interval must be one of {sorted(valid_intervals)}"
+        )
+
+    # Validate last_n_months
+    if last_n_months is not None and last_n_months < 0:
+        raise HTTPException(
+            status_code=400, detail="last_n_months must be >= 0 or null"
+        )
+
+    result = await safe_search_paginated(
+        aql_service.serps_timeline(
+            query=query,
+            provider_id=provider_id,
+            archive_id=archive_id,
+            interval=interval,
+            last_n_months=last_n_months,
+        )
+    )
+    return result
+
+
+# ---------------------------------------------------------
 # SERP COMPARISON ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps/compare")
@@ -303,8 +347,8 @@ async def get_all_providers(
 # ---------------------------------------------------------
 # GET PROVIDER BY ID ENDPOINT
 # ---------------------------------------------------------
-@router.get("/provider/{provider_id}", deprecated=True)
 @router.get("/providers/{provider_id}")
+@router.get("/provider/{provider_id}", deprecated=True)
 @limiter.limit("10/minute")
 async def get_provider_by_id(request: Request, provider_id: str):
     """
@@ -336,8 +380,8 @@ async def get_archive_by_memento_url(request: Request, archive_id: str):
 # ---------------------------------------------------------
 # UNIFIED SERP DETAIL ENDPOINT
 # ---------------------------------------------------------
-@router.get("/serp/{serp_id}", deprecated=True)
 @router.get("/serps/{serp_id}")
+@router.get("/serp/{serp_id}", deprecated=True)
 @limiter.limit("20/minute")
 async def get_serp_unified(
     request: Request,

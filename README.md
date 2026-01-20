@@ -172,6 +172,35 @@ curl "http://localhost:8000/api/serps/compare?ids=id1,id2,id3,id4,id5"
 - Ranking comparison (position differences for common URLs)
 - Similarity metrics (Jaccard similarity and Spearman correlation for each pair)
 
+#### ✅ Timeline Endpoint
+
+| Method | Endpoint              | Description                       |
+| ------ | --------------------- | --------------------------------- |
+| GET    | `/api/serps/timeline` | Date histogram counts for a query |
+
+**Query Parameters for Timeline Endpoint:**
+
+- `query` (required) – Query string to match
+- `provider_id` – Optional provider filter (e.g., `google`)
+- `archive_id` – Optional archive filter (Memento API URL)
+- `interval` – `day` | `week` | `month` (default: `month`)
+- `last_n_months` – Limit to last N months (default: `36`, `null` to disable)
+
+Note: The `date_histogram` `date` values are returned without time (format `YYYY-MM-DD`).
+
+**Example Timeline Requests:**
+
+```bash
+# Basic timeline for a query
+curl "http://localhost:8000/api/serps/timeline?query=climate"
+
+# Timeline filtered by provider and archive
+curl "http://localhost:8000/api/serps/timeline?query=climate&provider_id=google&archive_id=https://web.archive.org/web"
+
+# Weekly timeline limited to last 12 months
+curl "http://localhost:8000/api/serps/timeline?query=climate&interval=week&last_n_months=12"
+```
+
 #### ✅ SERP Detail Endpoints
 
 | Method | Endpoint                                             | Description                            |
@@ -193,10 +222,10 @@ curl "http://localhost:8000/api/serps/compare?ids=id1,id2,id3,id4,id5"
 
 #### ✅ Archive Endpoints
 
-| Method | Endpoint                       | Description                                    |
-| ------ | ------------------------------ | ---------------------------------------------- |
-| GET    | `/api/archives`                | List all available web archives in the dataset |
-| GET    | `/api/archives/{archive_id}`   | Get metadata for a specific web archive       |
+| Method | Endpoint                     | Description                                    |
+| ------ | ---------------------------- | ---------------------------------------------- |
+| GET    | `/api/archives`              | List all available web archives in the dataset |
+| GET    | `/api/archives/{archive_id}` | Get metadata for a specific web archive        |
 
 **Query Parameters for Archives List Endpoint:**
 

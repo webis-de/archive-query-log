@@ -698,6 +698,119 @@ async def preview_search(
     }
 
 
+# ---------------------------------------------------------
+# 6d. SERPs Timeline (date histogram counts, excluding hidden)
+# ---------------------------------------------------------
+async def serps_timeline(
+    query: str,
+    provider_id: Optional[str] = None,
+    archive_id: Optional[str] = None,
+    interval: str = "month",
+    last_n_months: int | None = 36,
+) -> dict:
+    """
+    Build a date histogram for captures of the same query, optionally
+    filtered by provider and archive. Returns counts per time bucket.
+
+    Hidden SERPs are excluded via a must_not filter.
+
+    Args:
+        query: Query string to match in SERPs
+        provider_id: Optional provider id filter (e.g., "google")
+        archive_id: Optional archive filter (memento_api_url)
+        interval: One of {day, week, month} (default: month)
+        last_n_months: Limit to last N months (None/0 = no filter)
+
+    Returns:
+        dict with keys:
+            - query, provider_id, archive_id, interval, last_n_months
+            - total_hits
+            - date_histogram: List[{date, count}] with date as YYYY-MM-DD
+    """
+    es = get_es_client()
+
+    # Build query clauses
+    must_clause: list[dict] = [{"match": {"url_query": query}}]
+    filter_clause: list[dict] = []
+
+    if provider_id:
+        filter_clause.append({"term": {"provider.id": provider_id}})
+    if archive_id:
+        filter_clause.append({"term": {"archive.memento_api_url": archive_id}})
+    if last_n_months is not None and last_n_months > 0:
+        from datetime import datetime, timezone, timedelta
+
+        now = datetime.now(timezone.utc)
+        start = now - timedelta(days=30 * last_n_months)
+        start_iso = start.replace(microsecond=0).isoformat()
+        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    # Exclude hidden SERPs
+    _add_hidden_filter(filter_clause)
+
+    if filter_clause:
+        query_clause: dict[str, Any] = {
+            "bool": {"must": must_clause, "filter": filter_clause}
+        }
+    else:
+        query_clause = must_clause[0]
+
+    # Normalize interval
+    interval = (interval or "month").lower()
+    if interval not in {"day", "week", "month"}:
+        interval = "month"
+
+    body = {
+        "query": query_clause,
+        "size": 0,
+        "aggs": {
+            "by_time": {
+                "date_histogram": {
+                    "field": "capture.timestamp",
+                    "calendar_interval": interval,
+                }
+            }
+        },
+    }
+
+    try:
+        resp = await es.search(index="aql_serps", body=body)
+    except Exception:
+        return {
+            "query": query,
+            "provider_id": provider_id,
+            "archive_id": archive_id,
+            "interval": interval,
+            "last_n_months": last_n_months,
+            "total_hits": 0,
+            "date_histogram": [],
+        }
+
+    total_obj = resp.get("hits", {}).get("total", 0)
+    total_hits = (
+        total_obj.get("value", total_obj) if isinstance(total_obj, dict) else total_obj
+    )
+
+    buckets = (resp.get("aggregations", {}) or {}).get("by_time", {}).get("buckets", [])
+    date_histogram_out: list[dict] = []
+    for b in buckets:
+        key_str = b.get("key_as_string")
+        # Remove time component if present (e.g., 2025-01-01T00:00:00Z -> 2025-01-01)
+        if isinstance(key_str, str) and "T" in key_str:
+            key_str = key_str.split("T", 1)[0]
+        date_histogram_out.append({"date": key_str, "count": b.get("doc_count", 0)})
+
+    return {
+        "query": query,
+        "provider_id": provider_id,
+        "archive_id": archive_id,
+        "interval": interval,
+        "last_n_months": last_n_months,
+        "total_hits": total_hits or 0,
+        "date_histogram": date_histogram_out,
+    }
+
+
 # 7. Get SERP by ID
 # ---------------------------------------------------------
 async def get_serp_by_id(serp_id: str) -> Any | None:
