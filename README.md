@@ -13,11 +13,11 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
       - [✅ Core Endpoints](#-core-endpoints)
       - [✅ Search Endpoints](#-search-endpoints)
       - [✅ SERP Detail Endpoints](#-serp-detail-endpoints)
-      - [✅ Archive Endpoints (vereinheitlicht)](#-archive-endpoints-vereinheitlicht)
+      - [✅ Archive Endpoints](#-archive-endpoints)
       - [✅ Providers Endpoints](#-providers-endpoints)
-  - [| GET    | `/api/providers?size=uint` | Get all available search providers (optional: get number of providers) |](#-get-----apiproviderssizeuint--get-all-available-search-providers-optional-get-number-of-providers-)
+      - [✅ Archive Statistics Endpoints](#-archive-statistics-endpoints)
   - [⚙️ For Developers (Development)](#️-for-developers-development)
-    - [Requirements](#requirements-1)
+    - [Developer Requirements](#developer-requirements)
     - [Setting Up Local Development Environment](#setting-up-local-development-environment)
   - [📁 Project Structure](#-project-structure)
   - [📚 API Documentation](#-api-documentation)
@@ -51,28 +51,28 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 
 1. **Start the container (be sure image is up2date):**
 
-```bash
-docker pull git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
-```
+   ```bash
+   docker pull git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
+   ```
 
-```bash
-docker run -p 8000:8000 git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
-```
+   ```bash
+   docker run -p 8000:8000 git.uni-jena.de:5050/fusion/teaching/project/2025wise/swep/aql-browser/backend:latest
+   ```
 
-1. **Test the API:**
+2. **Test the API:**
 
-```bash
-curl http://localhost:8000/
-```
+   ```bash
+   curl http://localhost:8000/
+   ```
 
-... or open [http://localhost:8000/docs](http://localhost:8000/docs) in your browser for the Swagger UI.
+   ... or open [http://localhost:8000/docs](http://localhost:8000/docs) in your browser for the Swagger UI.
 
-1. **Stop the containers:**
+3. **Stop the containers:**
 
-```bash
-docker container ls
-docker stop <container-name> 
-```
+   ```bash
+   docker container ls
+   docker stop <container-name>
+   ```
 
 ### Available Endpoints
 
@@ -275,15 +275,75 @@ curl "http://localhost:8000/api/archives/https://arquivo.pt/wayback"
 
 #### ✅ Providers Endpoints
 
-| Method | Endpoint                   | Description                                                            |
-| ------ | -------------------------- | ---------------------------------------------------------------------- |
-| GET    | `/api/providers?size=uint` | Get all available search providers (optional: get number of providers) |
+| Method | Endpoint                                   | Description                                         |
+| ------ | ------------------------------------------ | --------------------------------------------------- |
+| GET    | `/api/providers?size=uint`                 | Get all available search providers                  |
+| GET    | `/api/providers/{provider_id}`             | Get metadata for a specific search provider         |
+| GET    | `/api/providers/{provider_id}/statistics`  | Get descriptive statistics for a search provider    |
+
+**Query Parameters for Provider Statistics Endpoint:**
+
+- `interval` - Histogram interval: `day`, `week`, `month` (default: `month`)
+- `last_n_months` - Limit histogram to last N months (default: 36, can be None to disable)
+
+**Provider Statistics Response includes:**
+
+- Total number of archived SERPs
+- Number of unique queries
+- Date range of captures
+- Top web archives used by this provider
+- Date histogram of captures over time
+
+**Example Provider Statistics Requests:**
+
+```bash
+# Get statistics for a provider
+curl http://localhost:8000/api/providers/google/statistics
+
+# Get statistics with custom interval and time range
+curl http://localhost:8000/api/providers/google/statistics?interval=week&last_n_months=12
+
+# Get daily statistics for all available data
+curl http://localhost:8000/api/providers/bing/statistics?interval=day&last_n_months=null
+```
+
+#### ✅ Archive Statistics Endpoints
+
+| Method | Endpoint                                | Description                                    |
+| ------ | --------------------------------------- | ---------------------------------------------- |
+| GET    | `/api/archives/{archive_id}/statistics` | Get descriptive statistics for a web archive   |
+
+**Query Parameters for Archive Statistics Endpoint:**
+
+- `interval` - Histogram interval: `day`, `week`, `month` (default: `month`)
+- `last_n_months` - Limit histogram to last N months (default: 36, can be None to disable)
+
+**Archive Statistics Response includes:**
+
+- Total number of archived SERPs
+- Number of unique queries
+- Date range of captures
+- Top search providers in this archive
+- Date histogram of captures over time
+
+**Example Archive Statistics Requests:**
+
+```bash
+# Get statistics for Internet Archive
+curl "http://localhost:8000/api/archives/https://web.archive.org/web/statistics"
+
+# Get statistics with custom interval and time range
+curl "http://localhost:8000/api/archives/https://web.archive.org/web/statistics?interval=week&last_n_months=12"
+
+# Get daily statistics for arquivo.pt archive
+curl "http://localhost:8000/api/archives/https://arquivo.pt/wayback/statistics?interval=day"
+```
 
 ---
 
 ## ⚙️ For Developers (Development)
 
-### Requirements
+### Developer Requirements
 
 - Python 3.13 installed
 - Git installed
@@ -346,7 +406,7 @@ mypy app/                  # Type checking
 
 ## 📁 Project Structure
 
-```
+```text
 .
 ├── app/                        
 │   ├── main.py                 # FastAPI app & configuration
@@ -368,11 +428,13 @@ mypy app/                  # Type checking
 │   ├── conftest.py             # Pytest fixtures, including mocked Elasticsearch
 │   ├── aql_services/    
 │   │   ├── test_aql_service_archive_metadata.py
+│   │   ├── test_aql_service_archive_statistics.py
 │   │   ├── test_aql_service_autocomplete.py
 │   │   ├── test_aql_service_compare.py
 │   │   ├── test_aql_service_direct_links.py
 │   │   ├── test_aql_service_preview.py
 │   │   ├── test_aql_service_provider_by_id.py
+│   │   ├── test_aql_service_provider_statistics.py
 │   │   ├── test_aql_service_related_serps.py
 │   │   ├── test_aql_service_search.py
 │   │   ├── test_aql_service_search_suggestions.py
@@ -380,11 +442,13 @@ mypy app/                  # Type checking
 │   │   ├── test_aql_service_serp_memento_url.py
 │   │   ├── test_aql_service_serp_original_url.py
 │   │   ├── test_aql_service_serp_unfurl.py
+│   │   ├── test_aql_service_timeline.py
 │   │   └── test_aql_service_unbranded.py
 │   ├── search_router/    
 │   │   ├── test_search_router_archive_detail.py
 │   │   ├── test_search_router_archives.py
 │   │   ├── test_search_router_archives_detail_canonical.py
+│   │   ├── test_search_router_archive_statistics.py
 │   │   ├── test_search_router_compare.py
 │   │   ├── test_search_router_direct_links.py
 │   │   ├── test_search_router_edge_cases.py
@@ -393,9 +457,12 @@ mypy app/                  # Type checking
 │   │   ├── test_search_router_pagination.py
 │   │   ├── test_search_router_preview.py
 │   │   ├── test_search_router_provider_by_id.py
+│   │   ├── test_search_router_provider_statistics.py
+│   │   ├── test_search_router_safe_search.py
 │   │   ├── test_search_router_serp_detail.py
-│   │   ├── test_search_router_unified_search_endpoint.py
-│   │   └── test_search_router_unbranded.py
+│   │   ├── test_search_router_suggestions.py
+│   │   ├── test_search_router_timeline.py
+│   │   └── test_search_router_unified_search_endpoint.py
 │   ├── test_autocomplete.py
 │   ├── test_elastic.py
 │   ├── test_main.py
@@ -453,7 +520,7 @@ app.include_router(users.router, prefix="/api", tags=["users"])
 
 1. **Add dependencies to `requirements.txt`**
 
-```
+```bash
 sqlalchemy==2.0.23
 psycopg2-binary==2.9.9
 ```
@@ -466,7 +533,7 @@ psycopg2-binary==2.9.9
 
 1. **Create `.env`:**
 
-```
+```bash
 ES_HOST=https://elasticsearch.srv.webis.de:9200
 ES_API_KEY=<API_KEY>
 ES_VERIFY=False
@@ -549,7 +616,7 @@ docker push $CI_REGISTRY_IMAGE:latest
 
 ---
 
-## � Content Filtering
+## 🔒 Content Filtering
 
 ### Hidden SERPs Filter
 
@@ -577,6 +644,6 @@ The backend is prepared to filter out hidden SERPs (marked as spam, porn, or oth
 
 ---
 
-## �📄 License
+## 📄 License
 
 This project is a FastAPI starter template for building extensible web APIs.

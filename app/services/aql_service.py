@@ -1249,3 +1249,285 @@ async def compare_serps(serp_ids: List[str]) -> dict | None:
             "pairwise_spearman": pairwise_correlations,
         },
     }
+
+
+# ---------------------------------------------------------
+# 18. Get Provider Statistics
+# ---------------------------------------------------------
+async def get_provider_statistics(
+    provider_id: str,
+    interval: str = "month",
+    last_n_months: int | None = 36,
+) -> dict | None:
+    """
+    Get descriptive statistics for a search provider.
+
+    Aggregates information from all SERPs captured from this provider.
+    Excludes hidden SERPs from all statistics.
+
+    Args:
+        provider_id: Provider ID (e.g., 'google')
+        interval: Histogram interval (day, week, month)
+        last_n_months: Limit histogram to last N months (None/0 = no filter)
+
+    Returns:
+        dict with:
+            - provider_id: str
+            - serp_count: int (total visible SERPs)
+            - unique_queries_count: int
+            - date_range: {earliest, latest} or None if no data
+            - top_archives: List[{archive, count}]
+            - date_histogram: List[{date, count}] (optional based on interval)
+    """
+    es = get_es_client()
+
+    # Build query with filter
+    filter_clause: list[dict] = [{"term": {"provider.id": provider_id}}]
+
+    if last_n_months is not None and last_n_months > 0:
+        from datetime import datetime, timezone, timedelta
+
+        now = datetime.now(timezone.utc)
+        start = now - timedelta(days=30 * last_n_months)
+        start_iso = start.replace(microsecond=0).isoformat()
+        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    # Add hidden filter
+    _add_hidden_filter(filter_clause)
+
+    query_clause: dict[str, Any] = {
+        "bool": {"must": [{"match_all": {}}], "filter": filter_clause}
+    }
+
+    # Normalize interval
+    interval = (interval or "month").lower()
+    if interval not in {"day", "week", "month"}:
+        interval = "month"
+
+    # Aggregations for statistics
+    # Get basic stats (these are more robust)
+    basic_agg_body = {
+        "query": query_clause,
+        "size": 0,
+        "track_total_hits": True,
+        "aggs": {
+            "unique_queries": {
+                "terms": {
+                    "field": "url_query.keyword",
+                    "size": 10000,
+                }
+            },
+            "top_archives": {
+                "terms": {
+                    "field": "archive.memento_api_url",
+                    "size": 5,
+                }
+            },
+        },
+    }
+
+    try:
+        resp = await es.search(index="aql_serps", body=basic_agg_body)
+    except Exception:
+        return None
+
+    # Extract total hits
+    total_obj = resp.get("hits", {}).get("total", 0)
+    serp_count = (
+        total_obj.get("value", total_obj) if isinstance(total_obj, dict) else total_obj
+    )
+
+    if serp_count == 0:
+        return None
+
+    aggs = resp.get("aggregations", {}) or {}
+
+    # Extract unique queries count (count the buckets from terms aggregation)
+    unique_queries_buckets = aggs.get("unique_queries", {}).get("buckets", [])
+    unique_queries = len(unique_queries_buckets)
+
+    # Try to get date histogram (may fail on documents with malformed timestamps)
+    # Note: Only use date_histogram, NOT stats aggregation - stats fails on corrupted timestamps
+    date_histogram_out: list[dict] = []
+    try:
+        histogram_agg_body = {
+            "query": query_clause,
+            "size": 0,
+            "aggs": {
+                "by_time": {
+                    "date_histogram": {
+                        "field": "capture.timestamp",
+                        "calendar_interval": interval,
+                    }
+                },
+            },
+        }
+        hist_resp = await es.search(index="aql_serps", body=histogram_agg_body)
+        hist_aggs = hist_resp.get("aggregations", {}) or {}
+
+        # Extract date histogram
+        by_time_buckets = hist_aggs.get("by_time", {}).get("buckets", [])
+        for b in by_time_buckets:
+            key_str = b.get("key_as_string")
+            if isinstance(key_str, str) and "T" in key_str:
+                key_str = key_str.split("T", 1)[0]
+            date_histogram_out.append({"date": key_str, "count": b.get("doc_count", 0)})
+    except Exception:
+        # If histogram fails, continue with what we have
+        pass
+
+    # Extract top archives
+    top_archives_buckets = aggs.get("top_archives", {}).get("buckets", [])
+    top_archives_out: list[dict] = [
+        {"archive": b.get("key"), "count": b.get("doc_count", 0)}
+        for b in top_archives_buckets
+    ]
+
+    return {
+        "provider_id": provider_id,
+        "serp_count": serp_count,
+        "unique_queries_count": unique_queries,
+        "top_archives": top_archives_out,
+        "date_histogram": date_histogram_out if date_histogram_out else None,
+    }
+
+
+# ---------------------------------------------------------
+# 19. Get Archive Statistics
+# ---------------------------------------------------------
+async def get_archive_statistics(
+    archive_id: str,
+    interval: str = "month",
+    last_n_months: int | None = 36,
+) -> dict | None:
+    """
+    Get descriptive statistics for a web archive.
+
+    Aggregates information from all SERPs in this archive.
+    Excludes hidden SERPs from all statistics.
+
+    Args:
+        archive_id: Memento API URL of the archive
+        interval: Histogram interval (day, week, month)
+        last_n_months: Limit histogram to last N months (None/0 = no filter)
+
+    Returns:
+        dict with:
+            - archive_id: str
+            - serp_count: int (total visible SERPs, already in metadata)
+            - unique_queries_count: int
+            - date_range: {earliest, latest} or None if no data
+            - top_providers: List[{provider, count}]
+            - date_histogram: List[{date, count}]
+    """
+    es = get_es_client()
+
+    # Build query with filter
+    filter_clause: list[dict] = [{"term": {"archive.memento_api_url": archive_id}}]
+
+    if last_n_months is not None and last_n_months > 0:
+        from datetime import datetime, timezone, timedelta
+
+        now = datetime.now(timezone.utc)
+        start = now - timedelta(days=30 * last_n_months)
+        start_iso = start.replace(microsecond=0).isoformat()
+        filter_clause.append({"range": {"capture.timestamp": {"gte": start_iso}}})
+
+    # Add hidden filter
+    _add_hidden_filter(filter_clause)
+
+    query_clause: dict[str, Any] = {
+        "bool": {"must": [{"match_all": {}}], "filter": filter_clause}
+    }
+
+    # Normalize interval
+    interval = (interval or "month").lower()
+    if interval not in {"day", "week", "month"}:
+        interval = "month"
+
+    # Aggregations for statistics
+    # Get basic stats (these are more robust)
+    basic_agg_body = {
+        "query": query_clause,
+        "size": 0,
+        "track_total_hits": True,
+        "aggs": {
+            "unique_queries": {
+                "terms": {
+                    "field": "url_query.keyword",
+                    "size": 10000,
+                }
+            },
+            "top_providers": {
+                "terms": {
+                    "field": "provider.id",
+                    "size": 5,
+                }
+            },
+        },
+    }
+
+    try:
+        resp = await es.search(index="aql_serps", body=basic_agg_body)
+    except Exception:
+        return None
+
+    # Extract total hits
+    total_obj = resp.get("hits", {}).get("total", 0)
+    serp_count = (
+        total_obj.get("value", total_obj) if isinstance(total_obj, dict) else total_obj
+    )
+
+    if serp_count == 0:
+        return None
+
+    aggs = resp.get("aggregations", {}) or {}
+
+    # Extract unique queries count (count the buckets from terms aggregation)
+    unique_queries_buckets = aggs.get("unique_queries", {}).get("buckets", [])
+    unique_queries = len(unique_queries_buckets)
+
+    # Try to get date histogram (may fail on documents with malformed timestamps)
+    # Note: Only use date_histogram, NOT stats aggregation - stats fails on corrupted timestamps
+    date_histogram_out: list[dict] = []
+    try:
+        histogram_agg_body = {
+            "query": query_clause,
+            "size": 0,
+            "aggs": {
+                "by_time": {
+                    "date_histogram": {
+                        "field": "capture.timestamp",
+                        "calendar_interval": interval,
+                    }
+                },
+            },
+        }
+        hist_resp = await es.search(index="aql_serps", body=histogram_agg_body)
+        hist_aggs = hist_resp.get("aggregations", {}) or {}
+
+        # Extract date histogram
+        by_time_buckets = hist_aggs.get("by_time", {}).get("buckets", [])
+        for b in by_time_buckets:
+            key_str = b.get("key_as_string")
+            if isinstance(key_str, str) and "T" in key_str:
+                key_str = key_str.split("T", 1)[0]
+            date_histogram_out.append({"date": key_str, "count": b.get("doc_count", 0)})
+    except Exception:
+        # If histogram fails, continue with what we have
+        pass
+
+    # Extract top providers
+    top_providers_buckets = aggs.get("top_providers", {}).get("buckets", [])
+    top_providers_out: list[dict] = [
+        {"provider": b.get("key"), "count": b.get("doc_count", 0)}
+        for b in top_providers_buckets
+    ]
+
+    return {
+        "archive_id": archive_id,
+        "serp_count": serp_count,
+        "unique_queries_count": unique_queries,
+        "top_providers": top_providers_out,
+        "date_histogram": date_histogram_out if date_histogram_out else None,
+    }
