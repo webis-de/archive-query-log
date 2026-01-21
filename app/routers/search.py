@@ -362,6 +362,80 @@ async def get_provider_by_id(request: Request, provider_id: str):
     return {"provider_id": result.get("_id"), "provider": result}
 
 
+# ---------------------------------------------------------
+# PROVIDER STATISTICS ENDPOINT
+# ---------------------------------------------------------
+@router.get("/providers/{provider_id}/statistics")
+@limiter.limit("20/minute")
+async def get_provider_statistics(
+    request: Request,
+    provider_id: str,
+    interval: str = Query("month", description="Histogram interval (day, week, month)"),
+    last_n_months: int | None = Query(
+        36, description="Limit histogram to last N months (optional)"
+    ),
+):
+    """
+    Get descriptive statistics for a search provider.
+
+    Returns statistics about SERPs captured from this provider, including:
+    - Total number of archived SERPs
+    - Number of unique queries
+    - Date range of captures
+    - Top web archives used by this provider
+    - Date histogram of captures over time
+
+    Example:
+    - /api/providers/google/statistics
+    - /api/providers/google/statistics?interval=week&last_n_months=12
+    """
+    result = await safe_search(
+        aql_service.get_provider_statistics(
+            provider_id=provider_id,
+            interval=interval,
+            last_n_months=last_n_months,
+        )
+    )
+    return result
+
+
+# ---------------------------------------------------------
+# ARCHIVE STATISTICS ENDPOINT (must be before general archive detail endpoint)
+# ---------------------------------------------------------
+@router.get("/archives/{archive_id:path}/statistics")
+@limiter.limit("20/minute")
+async def get_archive_statistics(
+    request: Request,
+    archive_id: str,
+    interval: str = Query("month", description="Histogram interval (day, week, month)"),
+    last_n_months: int | None = Query(
+        36, description="Limit histogram to last N months (optional)"
+    ),
+):
+    """
+    Get descriptive statistics for a web archive.
+
+    Returns statistics about SERPs in this archive, including:
+    - Total number of archived SERPs
+    - Number of unique queries
+    - Date range of captures
+    - Top search providers in this archive
+    - Date histogram of captures over time
+
+    Example:
+    - /api/archives/https://web.archive.org/web/statistics
+    - /api/archives/https://web.archive.org/web/statistics?interval=week&last_n_months=12
+    """
+    result = await safe_search(
+        aql_service.get_archive_statistics(
+            archive_id=archive_id,
+            interval=interval,
+            last_n_months=last_n_months,
+        )
+    )
+    return result
+
+
 # New canonical archive detail endpoint using the same ID as the list
 @router.get("/archives/{archive_id:path}")
 @limiter.limit("10/minute")
