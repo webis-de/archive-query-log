@@ -34,22 +34,6 @@ describe('AppQueryMetadataPanelComponent', () => {
     },
   } as SearchResult;
 
-  const mockSearchResultWithoutArchive: SearchResult = {
-    _id: 'test-456',
-    _score: 0.85,
-    _source: {
-      url_query: 'Test Query 2',
-      capture: {
-        url: 'https://example.com/test2',
-        timestamp: '2024-06-15T08:30:45Z',
-        mimetype: 'text/html',
-      },
-      provider: {
-        domain: 'example.com',
-      },
-    },
-  } as SearchResult;
-
   beforeEach(async () => {
     mockSessionService = {
       sidebarCollapsed: signal(true),
