@@ -86,22 +86,22 @@ export interface SearchParams {
 }
 
 export interface QueryHistogramBucket {
-  key_as_string: string;
+  date: string;
   count: number;
 }
 
 export interface TopQueryItem {
-  key: string;
+  query: string;
   count: number;
 }
 
 export interface TopProviderItem {
-  domain: string;
+  provider: string;
   count: number;
 }
 
 export interface TopArchiveItem {
-  name: string;
+  archive: string;
   count: number;
 }
 

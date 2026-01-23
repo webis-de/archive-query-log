@@ -23,14 +23,18 @@ export class AqlBarChartComponent extends BaseEChartComponent {
     return {
       color: this.colors() ?? undefined,
       tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-      grid: { left: '4%', right: '4%', top: '6%', bottom: '6%', containLabel: true },
+      grid: { left: '4%', right: '4%', top: '12%', bottom: '6%', containLabel: true },
       xAxis: { type: 'category', data: resolvedLabels },
       yAxis: { type: 'value' },
       series: [
         {
           type: 'bar',
           data,
-          barMaxWidth: 36,
+          barCategoryGap: '2%',
+          label: {
+            show: true,
+            position: 'top',
+          },
         },
       ],
     };

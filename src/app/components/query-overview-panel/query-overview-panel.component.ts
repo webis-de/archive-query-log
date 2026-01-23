@@ -1,4 +1,14 @@
-import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  output,
+  signal,
+  viewChild,
+  WritableSignal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import {
@@ -9,8 +19,11 @@ import {
   AqlMenuItemComponent,
   AqlPieChartComponent,
   AqlPieChartItem,
+  AqlScrollbarDirective,
+  BaseEChartComponent,
 } from 'aql-stylings';
 import { QueryHistogramBucket, QueryMetadataResponse } from '../../models/search.model';
+import { ExportService } from '../../services/export.service';
 import type { EChartsOption, TooltipComponentFormatterCallbackParams } from 'echarts';
 
 interface LabeledCount {
@@ -30,6 +43,7 @@ interface LabeledCount {
     AqlLineChartComponent,
     AqlBarChartComponent,
     AqlPieChartComponent,
+    AqlScrollbarDirective,
   ],
   templateUrl: './query-overview-panel.component.html',
   styleUrl: './query-overview-panel.component.css',
@@ -41,6 +55,16 @@ export class QueryOverviewPanelComponent {
   readonly isLoading = input<boolean>(false);
   readonly interval = input<'day' | 'week' | 'month'>('month');
   readonly intervalChange = output<'day' | 'week' | 'month'>();
+  readonly showTopQueriesList = signal<boolean>(false);
+  readonly showTopProvidersList = signal<boolean>(false);
+  readonly showTopArchivesList = signal<boolean>(false);
+  readonly topQueriesCopied = signal(false);
+  readonly topProvidersCopied = signal(false);
+  readonly topArchivesCopied = signal(false);
+  readonly topQueryBarChart = viewChild<AqlBarChartComponent>('topQueryBarChart');
+  readonly topProviderPieChart = viewChild<AqlPieChartComponent>('topProviderPieChart');
+  readonly topArchivePieChart = viewChild<AqlPieChartComponent>('topArchivePieChart');
+  readonly histogramChart = viewChild<AqlLineChartComponent>('histogramChart');
   readonly displayQuery = computed(() => {
     const responseQuery = this.data()?.query?.trim();
     if (responseQuery) {
@@ -61,15 +85,13 @@ export class QueryOverviewPanelComponent {
     return this.data()?.date_histogram ?? [];
   });
   readonly hasHistogram = computed(() => this.histogramBuckets().length > 0);
-  readonly histogramLabels = computed(() =>
-    this.histogramBuckets().map(bucket => bucket.key_as_string),
-  );
+  readonly histogramLabels = computed(() => this.histogramBuckets().map(bucket => bucket.date));
   readonly histogramCounts = computed(() => this.histogramBuckets().map(bucket => bucket.count));
   readonly topQueries = computed<LabeledCount[]>(() => {
     const items = this.data()?.top_queries;
     if (!items?.length) return [];
     return items.map(item => ({
-      label: item.key,
+      label: item.query,
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
@@ -77,7 +99,7 @@ export class QueryOverviewPanelComponent {
     const items = this.data()?.top_providers;
     if (!items?.length) return [];
     return items.map(item => ({
-      label: item.domain,
+      label: item.provider,
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
@@ -85,7 +107,7 @@ export class QueryOverviewPanelComponent {
     const items = this.data()?.top_archives;
     if (!items?.length) return [];
     return items.map(item => ({
-      label: item.name,
+      label: item.archive,
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
@@ -211,12 +233,42 @@ export class QueryOverviewPanelComponent {
     } as EChartsOption;
   });
 
+  private readonly exportService = inject(ExportService);
+
   onIntervalSelect(value: 'day' | 'week' | 'month'): void {
     if (value === this.interval()) {
       return;
     }
 
     this.intervalChange.emit(value);
+  }
+
+  getFilename(suffix: string): string {
+    const query = this.displayQuery() || 'unknown';
+    const sanitizedQuery = query.replace(/[^a-z0-9.-]/gi, '_').toLowerCase();
+    return `query_${sanitizedQuery}_${suffix}`;
+  }
+
+  copyDataToClipboard(data: LabeledCount[], feedbackSignal: WritableSignal<boolean>): void {
+    const formattedData = data.map(item => ({ Label: item.label, Count: item.count }));
+    const text = this.exportService.formatAsTsv(formattedData, ['Label', 'Count']);
+    this.exportService.copyToClipboard(text).subscribe(() => {
+      feedbackSignal.set(true);
+      setTimeout(() => feedbackSignal.set(false), 5000);
+    });
+  }
+
+  downloadDataAsCsv(data: LabeledCount[], filename: string): void {
+    const formattedData = data.map(item => ({ Label: item.label, Count: item.count }));
+    this.exportService.downloadCsv(formattedData, filename, { headers: ['Label', 'Count'] });
+  }
+
+  downloadChartAsPng(chart: BaseEChartComponent | undefined, filename: string): void {
+    if (!chart) return;
+    const url = chart.getDataURL({ type: 'png', pixelRatio: 2, backgroundColor: '#ffffff' });
+    if (url) {
+      this.exportService.downloadUrl(url, filename);
+    }
   }
 
   private formatDate(dateString: string): string {
