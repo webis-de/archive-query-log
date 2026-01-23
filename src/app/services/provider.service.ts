@@ -21,6 +21,34 @@ export interface ProviderOption {
   name: string;
 }
 
+/**
+ * Detailed provider metadata from the provider document
+ */
+export interface ProviderDetail {
+  id: string;
+  name: string;
+  domains: string[];
+  url_patterns: string[];
+  priority?: number;
+}
+
+/**
+ * Response from the provider detail API endpoint
+ */
+export interface ProviderDetailResponse {
+  provider_id: string;
+  provider: {
+    _id: string;
+    _source: {
+      name: string;
+      domains?: string[];
+      url_patterns?: string[];
+      priority?: number;
+      [key: string]: unknown;
+    };
+  };
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -64,5 +92,27 @@ export class ProviderService {
    */
   clearCache(): void {
     this.providersCache$ = undefined;
+  }
+
+  /**
+   * Fetch a specific provider by ID from the backend.
+   * Returns the full provider metadata including domains and URL patterns.
+   */
+  getProviderById(providerId: string): Observable<ProviderDetail | null> {
+    return this.apiService
+      .get<ProviderDetailResponse>(API_CONFIG.endpoints.provider(providerId))
+      .pipe(
+        map(response => ({
+          id: response.provider._id,
+          name: response.provider._source.name,
+          domains: response.provider._source.domains || [],
+          url_patterns: response.provider._source.url_patterns || [],
+          priority: response.provider._source.priority,
+        })),
+        catchError(error => {
+          console.error(`Failed to fetch provider ${providerId}:`, error);
+          return of(null);
+        }),
+      );
   }
 }

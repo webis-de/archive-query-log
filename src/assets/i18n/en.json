@@ -134,6 +134,18 @@
     "mimeType": "MIME Type",
     "timestamp": "Timestamp",
     "provider": "Provider",
+    "providerDetails": {
+      "title": "Provider Details",
+      "name": "Name",
+      "id": "Provider ID",
+      "domains": "Domains",
+      "urlPatterns": "URL Patterns",
+      "priority": "Priority",
+      "loading": "Loading provider details...",
+      "error": "Failed to load provider details",
+      "showDetails": "Show provider details",
+      "hideDetails": "Hide provider details"
+    },
     "id": "ID",
     "textView": "Text View",
     "websiteTab": "Website",

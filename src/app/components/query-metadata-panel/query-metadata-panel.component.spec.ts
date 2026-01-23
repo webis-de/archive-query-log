@@ -3,6 +3,7 @@ import { AppQueryMetadataPanelComponent } from './query-metadata-panel.component
 import { SearchResult, SerpDetailsResponse } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
 import { SearchService } from '../../services/search.service';
+import { ProviderService } from '../../services/provider.service';
 import { signal, WritableSignal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
@@ -12,6 +13,7 @@ describe('AppQueryMetadataPanelComponent', () => {
   let fixture: ComponentFixture<AppQueryMetadataPanelComponent>;
   let mockSessionService: { sidebarCollapsed: WritableSignal<boolean> };
   let mockSearchService: jasmine.SpyObj<SearchService>;
+  let mockProviderService: jasmine.SpyObj<ProviderService>;
 
   const mockSearchResult: SearchResult = {
     _id: 'test-123',
@@ -56,12 +58,15 @@ describe('AppQueryMetadataPanelComponent', () => {
     mockSearchService.getSerpDetails.and.returnValue(
       of({ serp_id: 'test-123', serp: mockSearchResult } as SerpDetailsResponse),
     );
+    mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviderById']);
+    mockProviderService.getProviderById.and.returnValue(of(null));
 
     await TestBed.configureTestingModule({
       imports: [AppQueryMetadataPanelComponent, TranslateModule.forRoot()],
       providers: [
         { provide: SessionService, useValue: mockSessionService },
         { provide: SearchService, useValue: mockSearchService },
+        { provide: ProviderService, useValue: mockProviderService },
       ],
     }).compileComponents();
 

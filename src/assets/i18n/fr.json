@@ -157,6 +157,18 @@
     "mimeType": "Type MIME",
     "timestamp": "Horodatage",
     "provider": "Fournisseur",
+    "providerDetails": {
+      "title": "Détails du fournisseur",
+      "name": "Nom",
+      "id": "ID du fournisseur",
+      "domains": "Domaines",
+      "urlPatterns": "Modèles d'URL",
+      "priority": "Priorité",
+      "loading": "Chargement des détails du fournisseur...",
+      "error": "Échec du chargement des détails du fournisseur",
+      "showDetails": "Afficher les détails du fournisseur",
+      "hideDetails": "Masquer les détails du fournisseur"
+    },
     "id": "ID",
     "textView": "Vue texte",
     "websiteTab": "Site web",
