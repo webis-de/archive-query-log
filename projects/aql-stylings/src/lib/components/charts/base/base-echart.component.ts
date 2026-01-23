@@ -36,6 +36,15 @@ export abstract class BaseEChartComponent implements OnDestroy {
     this.chart = null;
   }
 
+  getDataURL(opts?: {
+    type?: 'png' | 'jpeg';
+    pixelRatio?: number;
+    backgroundColor?: string;
+    excludeComponents?: string[];
+  }): string | undefined {
+    return this.chart?.getDataURL(opts);
+  }
+
   protected abstract buildDefaultOption(): echarts.EChartsOption;
 
   private ensureChart(element: HTMLDivElement): void {

@@ -17,3 +17,4 @@ export * from './lib/components/charts/line-chart/aql-line-chart.component';
 export * from './lib/components/charts/bar-chart/aql-bar-chart.component';
 export * from './lib/components/charts/pie-chart/aql-pie-chart.component';
 export * from './lib/directives/tooltip/tooltip.directive';
+export * from './lib/directives/scrollbar/scrollbar.directive';
