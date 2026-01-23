@@ -1,5 +1,5 @@
 <div
-  class="flex flex-col gap-3 bg-base-100 px-4 py-3"
+  class="flex flex-col gap-4 bg-base-100 px-4 py-3"
   [class.border]="bordered()"
   [class.border-base-300]="bordered()"
   [class.shadow-md]="shadow()"
@@ -8,7 +8,7 @@
   <!-- Title Section -->
   @if (panelTitle()) {
     <div>
-      <h3 class="text-lg font-semibold text-base-content">
+      <h3 class="text-lg font-semibold text-base-content truncate" [title]="panelTitle()">
         {{ panelTitle() }}
       </h3>
       @if (subtitle()) {

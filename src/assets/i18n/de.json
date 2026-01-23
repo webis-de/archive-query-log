@@ -38,7 +38,15 @@
     "timestamp": "Zeitstempel:",
     "url": "URL:",
     "query": "Abfrage:",
-    "activeFilters": "Aktive Filter:"
+    "activeFilters": "Aktive Filter:",
+    "statusLabel": "Status",
+    "typeLabel": "Typ",
+    "archiveLabel": "Archiv",
+    "pipelineLabel": "Analyse",
+    "paramsLabel": "Parameter",
+    "parserUrl": "URL-Parser",
+    "parserPage": "Seiten-Parser",
+    "parserWarc": "WARC-Parser"
   },
   "searchStats": {
     "title": "Query overview",

@@ -118,65 +118,10 @@
 
               <div class="flex flex-col gap-4">
                 @for (result of searchResults(); track result._id) {
-                  <aql-panel
-                    [panelTitle]="result._source.url_query"
-                    [subtitle]="result._source.capture.url"
-                    [bordered]="true"
-                    [shadow]="true"
-                    class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl"
-                    (click)="onResultClick(result)"
-                  >
-                    <aql-dropdown
-                      subtitle-action
-                      position="right"
-                      (click)="$event.stopPropagation()"
-                    >
-                      <aql-button
-                        trigger
-                        btnType="icon"
-                        iconBefore="bi-three-dots-vertical"
-                        size="xs"
-                        [aqlTooltip]="'tooltip.search.moreOptions' | translate"
-                        [tooltipPosition]="'top'"
-                        [attr.aria-label]="'tooltip.search.moreOptions' | translate"
-                      ></aql-button>
-                      <ng-container content>
-                        <div class="p-3 space-y-2 text-sm min-w-[200px]">
-                          <div>
-                            <span class="font-semibold">{{ 'search.scoreLabel' | translate }}</span>
-                            <span class="ml-2">{{ result._score | number: '1.2-2' }}</span>
-                          </div>
-                          <div>
-                            <span class="font-semibold">{{ 'search.idLabel' | translate }}</span>
-                            <span class="ml-2 text-xs break-all">{{ result._id }}</span>
-                          </div>
-                          <div>
-                            <span class="font-semibold">{{
-                              'search.mimeTypeLabel' | translate
-                            }}</span>
-                            <span class="ml-2">{{ result._source.capture.mimetype }}</span>
-                          </div>
-                        </div>
-                      </ng-container>
-                    </aql-dropdown>
-
-                    <div class="text-sm text-base-content/70 line-clamp-3 min-h-[3.6rem]">
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                      kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                      ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                      vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                      gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    </div>
-
-                    <div footer class="flex items-center gap-2 text-sm text-base-content/60">
-                      <span>{{ formatDate(result._source.capture.timestamp) }}</span>
-                      <span>·</span>
-                      <span>{{ result._source.provider.domain }}</span>
-                    </div>
-                  </aql-panel>
+                  <app-search-result-item
+                    [result]="result"
+                    (clicked)="onResultClick($event)"
+                  ></app-search-result-item>
                 }
               </div>
 

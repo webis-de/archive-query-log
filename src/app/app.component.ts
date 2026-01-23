@@ -1,6 +1,5 @@
 import { Component, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AppSidebarComponent } from './components/sidebar/app-sidebar.component';
 import { AppFooterComponent } from './components/footer/app-footer.component';
 import { SessionService } from './services/session.service';
 import { ProjectService } from './services/project.service';
@@ -9,7 +8,7 @@ import { UserData } from './models/user-data.model';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppSidebarComponent, AppFooterComponent],
+  imports: [RouterOutlet, AppFooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
