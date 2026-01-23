@@ -15,18 +15,15 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   AqlHeaderBarComponent,
   AqlInputFieldComponent,
-  AqlPanelComponent,
   AqlDropdownComponent,
   AqlButtonComponent,
   AqlPaginationComponent,
   AqlMenuItemComponent,
-  AqlTooltipDirective,
 } from 'aql-stylings';
 import { SearchService } from '../../services/search.service';
 import { SearchResult, QueryMetadataResponse } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
-import { LanguageService } from '../../services/language.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
@@ -37,6 +34,7 @@ import { QueryOverviewPanelComponent } from '../../components/query-overview-pan
 import { SessionService } from '../../services/session.service';
 import { createSearchSuggestionsController } from '../../utils/search-suggestions';
 import { createFilterBadgeController } from '../../utils/filter-badges';
+import { SearchResultItemComponent } from '../../components/search-result-item/search-result-item.component';
 
 @Component({
   selector: 'app-search-view',
@@ -46,16 +44,15 @@ import { createFilterBadgeController } from '../../utils/filter-badges';
     TranslateModule,
     AqlHeaderBarComponent,
     AqlInputFieldComponent,
-    AqlPanelComponent,
     AqlDropdownComponent,
     AqlButtonComponent,
     LanguageSelectorComponent,
     AqlPaginationComponent,
     AqlMenuItemComponent,
-    AqlTooltipDirective,
     FilterDropdownComponent,
     AppQueryMetadataPanelComponent,
     QueryOverviewPanelComponent,
+    SearchResultItemComponent,
   ],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
@@ -67,7 +64,6 @@ export class SearchViewComponent {
   readonly filterBadgeService = inject(FilterBadgeService);
   readonly suggestionsService = inject(SuggestionsService);
   readonly sessionService = inject(SessionService);
-  readonly languageService = inject(LanguageService);
   readonly route = inject(ActivatedRoute);
   readonly router = inject(Router);
   readonly translate = inject(TranslateService);
@@ -269,10 +265,6 @@ export class SearchViewComponent {
     if (this.searchQuery.trim()) {
       this.loadQueryMetadata(this.searchQuery.trim());
     }
-  }
-
-  formatDate(dateString: string): string {
-    return this.languageService.formatDate(dateString);
   }
 
   onResultClick(result: SearchResult): void {

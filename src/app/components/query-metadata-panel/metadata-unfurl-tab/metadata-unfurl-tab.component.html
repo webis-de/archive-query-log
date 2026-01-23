@@ -1,0 +1,96 @@
+<div class="p-6">
+  <div class="space-y-4">
+    <div class="flex justify-between items-center">
+      <h3 class="text-sm font-semibold uppercase text-base-content/60">
+        {{ 'metadata.urlDetails' | translate }}
+      </h3>
+      @if (unfurlWebUrl()) {
+        <a
+          [href]="unfurlWebUrl()"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+        >
+          {{ 'metadata.unfurl.viewInUnfurlTool' | translate }}
+          <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+      }
+    </div>
+    @if (isLoading()) {
+      <div class="flex items-center justify-center py-8">
+        <span class="loading loading-spinner loading-md text-primary"></span>
+      </div>
+    } @else if (unfurlData(); as unfurl) {
+      <div class="unfurl-view space-y-4">
+        <!-- Base URL -->
+        <div class="unfurl-section">
+          <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+            {{ 'metadata.unfurl.baseUrl' | translate }}
+          </h4>
+          <p class="text-sm font-mono break-all text-base-content">
+            {{ unfurl.scheme }}://{{ unfurl.netloc }}
+            @if (unfurl.port) {
+              :{{ unfurl.port }}
+            }
+          </p>
+        </div>
+
+        <!-- Path -->
+        <div class="unfurl-section">
+          <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+            {{ 'metadata.unfurl.path' | translate }}
+          </h4>
+          <p class="text-sm font-mono break-all text-base-content">
+            {{ unfurl.path || '/' }}
+          </p>
+        </div>
+
+        <!-- Query Parameters -->
+        @if (queryParamEntries().length > 0) {
+          <div class="unfurl-section">
+            <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+              {{ 'metadata.unfurl.queryParams' | translate }}
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="table table-sm w-full">
+                <thead>
+                  <tr class="border-b border-base-300">
+                    <th class="text-left font-semibold text-base-content/70">
+                      {{ 'metadata.unfurl.parameter' | translate }}
+                    </th>
+                    <th class="text-left font-semibold text-base-content/70">
+                      {{ 'metadata.unfurl.value' | translate }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (param of queryParamEntries(); track param.key) {
+                    <tr class="border-b border-base-300/50">
+                      <td class="font-mono text-sm text-primary">{{ param.key }}</td>
+                      <td class="font-mono text-sm break-all">{{ param.value }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        }
+
+        <!-- Fragment -->
+        @if (unfurl.fragment) {
+          <div class="unfurl-section">
+            <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+              {{ 'metadata.unfurl.fragment' | translate }}
+            </h4>
+            <p class="text-sm font-mono break-all text-base-content">#{{ unfurl.fragment }}</p>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="text-center py-8 text-base-content/50">
+        <i class="bi bi-link-45deg text-4xl mb-3 block"></i>
+        <p>{{ 'metadata.noUnfurlData' | translate }}</p>
+      </div>
+    }
+  </div>
+</div>

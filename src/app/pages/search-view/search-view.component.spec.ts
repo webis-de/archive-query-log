@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { SearchViewComponent } from './search-view.component';
+import { SearchResultItemComponent } from '../../components/search-result-item/search-result-item.component';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { ProviderService } from '../../services/provider.service';
 import { SearchService } from '../../services/search.service';
@@ -56,7 +57,7 @@ describe('SearchViewComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [SearchViewComponent, TranslateModule.forRoot()],
+      imports: [SearchViewComponent, SearchResultItemComponent, TranslateModule.forRoot()],
       providers: [
         {
           provide: ActivatedRoute,

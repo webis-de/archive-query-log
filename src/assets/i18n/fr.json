@@ -60,7 +60,15 @@
     "timestamp": "Horodatage :",
     "url": "URL :",
     "query": "Requête :",
-    "activeFilters": "Filtre actif :"
+    "activeFilters": "Filtre actif :",
+    "statusLabel": "Statut",
+    "typeLabel": "Type",
+    "archiveLabel": "Archive",
+    "pipelineLabel": "Analyse",
+    "paramsLabel": "Paramètres",
+    "parserUrl": "Analyseur URL",
+    "parserPage": "Analyseur Page",
+    "parserWarc": "Analyseur WARC"
   },
   "searchStats": {
     "title": "Query overview",

@@ -9,13 +9,11 @@ import {
   inject,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   AqlButtonComponent,
   AqlTabMenuComponent,
-  AqlPanelComponent,
   AqlTooltipDirective,
   TabItem,
 } from 'aql-stylings';
@@ -27,8 +25,11 @@ import {
 } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
 import { SearchService } from '../../services/search.service';
-import { LanguageService } from '../../services/language.service';
-import { ProviderService, ProviderDetail } from '../../services/provider.service';
+import { MetadataHtmlTabComponent } from './metadata-html-tab/metadata-html-tab.component';
+import { MetadataWebsiteTabComponent } from './metadata-website-tab/metadata-website-tab.component';
+import { MetadataInfoTabComponent } from './metadata-info-tab/metadata-info-tab.component';
+import { MetadataRelatedTabComponent } from './metadata-related-tab/metadata-related-tab.component';
+import { MetadataUnfurlTabComponent } from './metadata-unfurl-tab/metadata-unfurl-tab.component';
 
 @Component({
   selector: 'app-query-metadata-panel',
@@ -38,8 +39,12 @@ import { ProviderService, ProviderDetail } from '../../services/provider.service
     TranslateModule,
     AqlButtonComponent,
     AqlTabMenuComponent,
-    AqlPanelComponent,
     AqlTooltipDirective,
+    MetadataHtmlTabComponent,
+    MetadataWebsiteTabComponent,
+    MetadataInfoTabComponent,
+    MetadataRelatedTabComponent,
+    MetadataUnfurlTabComponent,
   ],
   templateUrl: './query-metadata-panel.component.html',
   styleUrl: './query-metadata-panel.component.css',
@@ -50,19 +55,13 @@ export class AppQueryMetadataPanelComponent {
   readonly searchResult = input<SearchResult | null>(null);
   readonly closePanel = output<void>();
   readonly relatedSerpSelected = output<SearchResult>();
-  readonly activeTab = signal<string>('text');
-  readonly isIframeLoading = signal<boolean>(false);
-  readonly iframeError = signal<boolean>(false);
+  readonly activeTab = signal<string>('html');
   readonly originalResult = signal<SearchResult | null>(null);
   readonly history = signal<SearchResult[]>([]);
   readonly tabs = signal<TabItem[]>([]);
   readonly serpDetails = signal<SerpDetailsResponse | null>(null);
   readonly isLoadingDetails = signal<boolean>(false);
   readonly detailsError = signal<string | null>(null);
-  readonly providerDetails = signal<ProviderDetail | null>(null);
-  readonly isLoadingProvider = signal<boolean>(false);
-  readonly providerError = signal<string | null>(null);
-  readonly showProviderDetails = signal<boolean>(false);
   readonly relatedSerps = computed<RelatedSerp[]>(() => {
     const details = this.serpDetails();
     return details?.related?.serps || [];
@@ -83,10 +82,9 @@ export class AppQueryMetadataPanelComponent {
   readonly panelClasses = computed(() => {
     const isSidebarCollapsed = this.sessionService.sidebarCollapsed();
     const isOpen = this.isOpen();
-
     const widthClass = isOpen ? (isSidebarCollapsed ? 'w-[60vw]' : 'w-[calc(60vw-20rem)]') : 'w-0';
 
-    const classes = [
+    return [
       'h-full',
       widthClass,
       'bg-base-100',
@@ -99,137 +97,22 @@ export class AppQueryMetadataPanelComponent {
       'duration-300',
       'ease-in-out',
       'overflow-hidden',
-    ];
-
-    return classes.join(' ');
+    ].join(' ');
   });
   readonly contentWrapperClasses = computed(() => {
     const isSidebarCollapsed = this.sessionService.sidebarCollapsed();
     return isSidebarCollapsed ? 'w-[60vw]' : 'w-[calc(60vw-20rem)]';
   });
-  /**
-   * Computed raw memento URL string for use in links
-   */
-  readonly mementoUrlString = computed<string>(() => {
-    const result = this.searchResult();
-    if (!result) return '';
-
-    const mementoApiUrl = result._source.archive?.memento_api_url;
-    const timestamp = result._source.capture.timestamp;
-    const captureUrl = result._source.capture.url;
-
-    if (!mementoApiUrl || !timestamp || !captureUrl) {
-      return captureUrl || '';
-    }
-
-    const formattedTimestamp = this.formatTimestampForMemento(timestamp);
-    return `${mementoApiUrl}/${formattedTimestamp}/${captureUrl}`;
-  });
-  readonly mementoUrl = computed<SafeResourceUrl | null>(() => {
-    const urlString = this.mementoUrlString();
-    if (!urlString) return null;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(urlString);
-  });
-  readonly archiveDate = computed<string>(() => {
-    const result = this.searchResult();
-    if (!result) return '';
-
-    const timestamp = result._source.capture.timestamp;
-    if (!timestamp) return '';
-
-    try {
-      const date = new Date(timestamp);
-      if (isNaN(date.getTime())) return '';
-
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZoneName: 'short',
-      });
-    } catch {
-      return '';
-    }
-  });
-  /**
-   * Derive human-readable archive name from the Memento API URL
-   */
-  readonly archiveName = computed<string>(() => {
-    const result = this.searchResult();
-    if (!result) return '';
-
-    const mementoApiUrl = result._source.archive?.memento_api_url;
-    if (!mementoApiUrl) return 'Unknown Archive';
-
-    // Known archives mapping
-    const knownArchives: Record<string, string> = {
-      'https://web.archive.org/web': 'Internet Archive (Wayback Machine)',
-      'https://web.archive.org': 'Internet Archive (Wayback Machine)',
-      'https://archive.org': 'Internet Archive',
-    };
-
-    if (knownArchives[mementoApiUrl]) {
-      return knownArchives[mementoApiUrl];
-    }
-
-    // Generic fallback: extract domain from URL (mirror backend behavior)
-    try {
-      const url = new URL(mementoApiUrl);
-      const domain = url.host || url.pathname;
-      const name = domain.replace(/-/g, ' ').replace(/\.org/g, '').trim();
-      return name ? name.replace(/\b\w/g, c => c.toUpperCase()) : 'Unknown Archive';
-    } catch {
-      return 'Unknown Archive';
-    }
-  });
-  /**
-   * Derive archive homepage URL from the Memento API URL
-   */
-  readonly archiveHomepage = computed<string | null>(() => {
-    const result = this.searchResult();
-    if (!result) return null;
-
-    const mementoApiUrl = result._source.archive?.memento_api_url;
-    if (!mementoApiUrl) return null;
-
-    // Known homepages
-    if (mementoApiUrl.startsWith('https://web.archive.org')) {
-      return 'https://web.archive.org';
-    }
-
-    // Generic: return base URL without /web or other path components (mirror backend behavior)
-    try {
-      const url = new URL(mementoApiUrl);
-      return `${url.protocol}//${url.host}`;
-    } catch {
-      return null;
-    }
-  });
-  /**
-   * Get CDX API URL from archive data
-   */
-  readonly cdxApiUrl = computed<string | null>(() => {
-    const result = this.searchResult();
-    return result?._source.archive?.cdx_api_url || null;
-  });
 
   private readonly sessionService = inject(SessionService);
-  private readonly sanitizer = inject(DomSanitizer);
   private readonly translate = inject(TranslateService);
   private readonly searchService = inject(SearchService);
-  private readonly languageService = inject(LanguageService);
-  private readonly providerService = inject(ProviderService);
   private isInternalNavigation = false;
-  private lastLoadedUrl = '';
   private lastLoadedSerpId = '';
-  private lastLoadedProviderId = '';
 
   constructor() {
-    // Wait for translations to load before updating labels
     this.translate
-      .get('metadata.textView')
+      .get('metadata.htmlView')
       .pipe(takeUntilDestroyed())
       .subscribe(() => {
         this.updateTabLabels();
@@ -237,16 +120,6 @@ export class AppQueryMetadataPanelComponent {
 
     this.translate.onLangChange.pipe(takeUntilDestroyed()).subscribe(() => {
       this.updateTabLabels();
-    });
-
-    // load iframe for website tab
-    effect(() => {
-      const url = this.mementoUrlString();
-      if (url && this.activeTab() === 'website' && url !== this.lastLoadedUrl) {
-        this.lastLoadedUrl = url;
-        this.isIframeLoading.set(true);
-        this.iframeError.set(false);
-      }
     });
 
     // fetch SERP details
@@ -262,20 +135,11 @@ export class AppQueryMetadataPanelComponent {
 
         this.lastLoadedSerpId = result._id;
         this.fetchSerpDetails(result._id);
-
-        // Reset provider details when SERP changes
-        this.providerDetails.set(null);
-        this.showProviderDetails.set(false);
-        this.lastLoadedProviderId = '';
       } else if (!result) {
         this.serpDetails.set(null);
         this.lastLoadedSerpId = '';
         this.originalResult.set(null);
         this.history.set([]);
-        // Reset provider details
-        this.providerDetails.set(null);
-        this.showProviderDetails.set(false);
-        this.lastLoadedProviderId = '';
       }
     });
   }
@@ -287,54 +151,9 @@ export class AppQueryMetadataPanelComponent {
 
   onTabChange(tabId: string): void {
     this.activeTab.set(tabId);
-    // Reset iframe state
-    if (tabId === 'website') {
-      this.isIframeLoading.set(true);
-      this.iframeError.set(false);
-    }
   }
 
-  onIframeLoad(): void {
-    this.isIframeLoading.set(false);
-    this.iframeError.set(false);
-  }
-
-  onIframeError(): void {
-    this.isIframeLoading.set(false);
-    this.iframeError.set(true);
-  }
-
-  /**
-   * Formats an ISO timestamp to the memento format (YYYYMMDDHHmmss)
-   * @param isoTimestamp ISO 8601 timestamp string
-   * @returns Formatted timestamp string for memento URL
-   */
-  formatTimestampForMemento(isoTimestamp: string): string {
-    try {
-      const date = new Date(isoTimestamp);
-      if (isNaN(date.getTime())) {
-        return '';
-      }
-
-      const year = date.getUTCFullYear();
-      const month = String(date.getUTCMonth() + 1).padStart(2, '0');
-      const day = String(date.getUTCDate()).padStart(2, '0');
-      const hours = String(date.getUTCHours()).padStart(2, '0');
-      const minutes = String(date.getUTCMinutes()).padStart(2, '0');
-      const seconds = String(date.getUTCSeconds()).padStart(2, '0');
-
-      return `${year}${month}${day}${hours}${minutes}${seconds}`;
-    } catch {
-      return '';
-    }
-  }
-
-  getExtractionText(): string {
-    // Placeholder - will be replaced with actual extraction data
-    return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac odio tempor orci dapibus ultrices in iaculis nunc.';
-  }
-
-  onRelatedSerpClick(serp: RelatedSerp): void {
+  onRelatedSerpClick(searchResult: SearchResult): void {
     if (!this.originalResult()) {
       this.originalResult.set(this.searchResult());
     }
@@ -344,14 +163,6 @@ export class AppQueryMetadataPanelComponent {
     if (current) {
       this.history.update(h => [...h, current]);
     }
-
-    const searchResult: SearchResult = {
-      _index: '',
-      _type: '',
-      _id: serp._id,
-      _score: serp._score,
-      _source: serp._source,
-    };
 
     this.isInternalNavigation = true;
     this.relatedSerpSelected.emit(searchResult);
@@ -380,68 +191,8 @@ export class AppQueryMetadataPanelComponent {
     }
   }
 
-  getQueryParamEntries(): { key: string; value: string }[] {
-    const unfurl = this.unfurlData();
-    if (!unfurl?.query_parameters) return [];
-
-    return Object.entries(unfurl.query_parameters).map(([key, value]) => ({
-      key,
-      value: Array.isArray(value) ? value.join(', ') : value,
-    }));
-  }
-
-  formatDate(dateString: string): string {
-    return this.languageService.formatDate(dateString);
-  }
-
-  /**
-   * Toggle provider details visibility and fetch if needed
-   */
-  toggleProviderDetails(): void {
-    const result = this.searchResult();
-    if (!result) return;
-
-    const providerId = result._source.provider?.id;
-    if (!providerId) return;
-
-    // Toggle visibility
-    this.showProviderDetails.update(v => !v);
-
-    // Fetch if not already loaded for this provider
-    if (this.showProviderDetails() && providerId !== this.lastLoadedProviderId) {
-      this.fetchProviderDetails(providerId);
-    }
-  }
-
-  /**
-   * Fetch provider details from the backend
-   */
-  private fetchProviderDetails(providerId: string): void {
-    this.isLoadingProvider.set(true);
-    this.providerError.set(null);
-    this.providerDetails.set(null);
-    this.lastLoadedProviderId = providerId;
-
-    this.providerService.getProviderById(providerId).subscribe({
-      next: details => {
-        this.providerDetails.set(details);
-        this.isLoadingProvider.set(false);
-      },
-      error: err => {
-        console.error('Failed to fetch provider details:', err);
-        this.providerError.set('Failed to load provider details');
-        this.isLoadingProvider.set(false);
-      },
-    });
-  }
-
   private updateTabLabels(): void {
     this.tabs.set([
-      {
-        id: 'text',
-        label: this.translate.instant('metadata.textView'),
-        icon: 'bi-file-text',
-      },
       {
         id: 'html',
         label: this.translate.instant('metadata.htmlView'),
