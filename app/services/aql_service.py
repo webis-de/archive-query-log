@@ -1306,6 +1306,10 @@ async def get_provider_statistics(
 
     # Aggregations for statistics
     # Get basic stats (these are more robust)
+    # Note: Using terms aggregation with high size limit instead of cardinality
+    # because url_query field is text-based and doesn't support cardinality aggregations
+    # without enabling fielddata (which is memory-intensive).
+    # size: 100000 covers most practical scenarios while staying memory-efficient
     basic_agg_body = {
         "query": query_clause,
         "size": 0,
@@ -1314,7 +1318,7 @@ async def get_provider_statistics(
             "unique_queries": {
                 "terms": {
                     "field": "url_query.keyword",
-                    "size": 10000,
+                    "size": 100000,
                 }
             },
             "top_archives": {
@@ -1342,9 +1346,33 @@ async def get_provider_statistics(
 
     aggs = resp.get("aggregations", {}) or {}
 
-    # Extract unique queries count (count the buckets from terms aggregation)
+    # Extract unique queries count from terms aggregation buckets
     unique_queries_buckets = aggs.get("unique_queries", {}).get("buckets", [])
     unique_queries = len(unique_queries_buckets)
+
+    # Fallback: if aggregation returned no buckets, fetch and count manually
+    # Reason: url_query.keyword sub-field may not be indexed/populated in some cases.
+    # Solution: Sample documents (adaptive size: min 1000, max 10000) and count unique
+    # values in-memory via dictionary deduplication. This is memory-efficient and avoids
+    # fielddata overhead while still providing accurate unique query counts for large datasets.
+    if not unique_queries_buckets:
+        try:
+            # Fetch a sample of documents and count unique queries
+            sample_size = min(10000, max(serp_count, 1000))  # Adaptive sample size
+            fallback_body = {
+                "query": query_clause,
+                "size": sample_size,
+                "_source": ["url_query"],
+            }
+            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
+            query_counts: dict[str, int] = {}
+            for hit in fallback_resp.get("hits", {}).get("hits", []):
+                q = (hit.get("_source", {}) or {}).get("url_query")
+                if q:
+                    query_counts[q] = query_counts.get(q, 0) + 1
+            unique_queries = len(query_counts)
+        except Exception:
+            unique_queries = 0
 
     # Try to get date histogram (may fail on documents with malformed timestamps)
     # Note: Only use date_histogram, NOT stats aggregation - stats fails on corrupted timestamps
@@ -1447,6 +1475,10 @@ async def get_archive_statistics(
 
     # Aggregations for statistics
     # Get basic stats (these are more robust)
+    # Note: Using terms aggregation with high size limit instead of cardinality
+    # because url_query field is text-based and doesn't support cardinality aggregations
+    # without enabling fielddata (which is memory-intensive).
+    # size: 100000 covers most practical scenarios while staying memory-efficient
     basic_agg_body = {
         "query": query_clause,
         "size": 0,
@@ -1455,7 +1487,7 @@ async def get_archive_statistics(
             "unique_queries": {
                 "terms": {
                     "field": "url_query.keyword",
-                    "size": 10000,
+                    "size": 100000,
                 }
             },
             "top_providers": {
@@ -1483,9 +1515,33 @@ async def get_archive_statistics(
 
     aggs = resp.get("aggregations", {}) or {}
 
-    # Extract unique queries count (count the buckets from terms aggregation)
+    # Extract unique queries count from terms aggregation buckets
     unique_queries_buckets = aggs.get("unique_queries", {}).get("buckets", [])
     unique_queries = len(unique_queries_buckets)
+
+    # Fallback: if aggregation returned no buckets, fetch and count manually
+    # Reason: url_query.keyword sub-field may not be indexed/populated in some cases.
+    # Solution: Sample documents (adaptive size: min 1000, max 10000) and count unique
+    # values in-memory via dictionary deduplication. This is memory-efficient and avoids
+    # fielddata overhead while still providing accurate unique query counts for large datasets.
+    if not unique_queries_buckets:
+        try:
+            # Fetch a sample of documents and count unique queries
+            sample_size = min(10000, max(serp_count, 1000))  # Adaptive sample size
+            fallback_body = {
+                "query": query_clause,
+                "size": sample_size,
+                "_source": ["url_query"],
+            }
+            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
+            query_counts: dict[str, int] = {}
+            for hit in fallback_resp.get("hits", {}).get("hits", []):
+                q = (hit.get("_source", {}) or {}).get("url_query")
+                if q:
+                    query_counts[q] = query_counts.get(q, 0) + 1
+            unique_queries = len(query_counts)
+        except Exception:
+            unique_queries = 0
 
     # Try to get date histogram (may fail on documents with malformed timestamps)
     # Note: Only use date_histogram, NOT stats aggregation - stats fails on corrupted timestamps

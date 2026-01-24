@@ -125,7 +125,7 @@ async def test_get_archive_statistics_different_intervals():
             return_value={
                 "hits": {"total": {"value": 100, "relation": "eq"}, "hits": []},
                 "aggregations": {
-                    "unique_queries": {"value": 50},
+                    "unique_queries": {"buckets": [{"key": "q", "doc_count": 1}] * 50},
                     "top_providers": {"buckets": []},
                 },
             }
