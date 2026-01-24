@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  output,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import {
@@ -9,6 +17,7 @@ import {
 } from 'aql-stylings';
 import { SearchResult, Parser } from '../../models/search.model';
 import { LanguageService } from '../../services/language.service';
+import { stripTrackingParams, hasTrackingParams } from '../../utils/url-sanitizer';
 
 @Component({
   selector: 'app-search-result-item',
@@ -28,6 +37,18 @@ import { LanguageService } from '../../services/language.service';
 export class SearchResultItemComponent {
   readonly result = input.required<SearchResult>();
   readonly clicked = output<SearchResult>();
+
+  readonly hasTracking = computed<boolean>(() => {
+    const url = this.result()._source.capture.url;
+    return hasTrackingParams(url);
+  });
+
+  readonly cleanUrl = computed<string>(() => {
+    const url = this.result()._source.capture.url;
+    return stripTrackingParams(url);
+  });
+
+  readonly copyCleanSuccess = signal<boolean>(false);
 
   private readonly languageService = inject(LanguageService);
 
@@ -66,5 +87,20 @@ export class SearchResultItemComponent {
     } catch {
       return [];
     }
+  }
+
+  copyCleanUrl(event: Event): void {
+    event.stopPropagation();
+    const clean = this.cleanUrl();
+    navigator.clipboard.writeText(clean).then(() => {
+      this.copyCleanSuccess.set(true);
+      setTimeout(() => this.copyCleanSuccess.set(false), 2000);
+    });
+  }
+
+  openOriginalUrl(event: Event): void {
+    event.stopPropagation();
+    const url = this.result()._source.capture.url;
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 }

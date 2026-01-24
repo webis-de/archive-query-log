@@ -1,7 +1,7 @@
 <div [ngClass]="panelClasses()">
   <div [ngClass]="contentWrapperClasses()" class="h-full flex flex-col">
     <div
-      class="flex items-center justify-between px-6 py-4 gap-4 border-b border-base-300 flex-shrink-0"
+      class="flex items-center justify-between px-6 py-4 gap-4 border-b border-base-300 shrink-0"
     >
       <div class="flex-1 min-w-0">
         @if (searchResult(); as result) {
@@ -20,7 +20,7 @@
           <h2 class="text-lg font-semibold">{{ 'metadata.panel' | translate }}</h2>
         }
       </div>
-      <div class="flex gap-2 flex-shrink-0">
+      <div class="flex gap-2 shrink-0">
         @if (history().length > 0) {
           <aql-button
             iconStyle="square"
@@ -87,6 +87,7 @@
           <app-metadata-unfurl-tab
             [unfurlData]="unfurlData()"
             [unfurlWebUrl]="unfurlWebUrl()"
+            [originalUrl]="originalCaptureUrl()"
             [isLoading]="isLoadingDetails()"
           ></app-metadata-unfurl-tab>
         }

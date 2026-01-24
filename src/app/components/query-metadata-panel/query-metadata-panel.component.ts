@@ -74,6 +74,10 @@ export class AppQueryMetadataPanelComponent {
     const details = this.serpDetails();
     return details?.unfurl_web || null;
   });
+  readonly originalCaptureUrl = computed<string | null>(() => {
+    const result = this.searchResult();
+    return result?._source.capture.url || null;
+  });
   readonly isViewingRelatedSerp = computed<boolean>(() => {
     const original = this.originalResult();
     const current = this.searchResult();

@@ -68,7 +68,10 @@
     "paramsLabel": "Paramètres",
     "parserUrl": "Analyseur URL",
     "parserPage": "Analyseur Page",
-    "parserWarc": "Analyseur WARC"
+    "parserWarc": "Analyseur WARC",
+    "copyCleanUrl": "Copier l'URL nettoyée (Sans suivi)",
+    "copiedCleanUrl": "URL nettoyée copiée !",
+    "openOriginalUrl": "Ouvrir l'URL originale"
   },
   "searchStats": {
     "title": "Query overview",
@@ -201,7 +204,17 @@
       "viewInUnfurlTool": "Voir dans l'outil Unfurl.it",
       "subdomain": "Sous-domaine",
       "domainLabel": "Domaine",
-      "tld": "TLD"
+      "tld": "TLD",
+      "privacyStrip": {
+        "title": "URL respectueuse de la vie privée disponible",
+        "description": "Cette URL contient {{count}} paramètre(s) de suivi qui peuvent être supprimés.",
+        "trackingParam": "Paramètre de suivi",
+        "copy": "Copier l'URL nettoyée",
+        "copied": "Copié !",
+        "open": "Ouvrir l'URL nettoyée",
+        "copyTooltip": "Copier l'URL sans les paramètres de suivi",
+        "openTooltip": "Ouvrir l'URL sans les paramètres de suivi dans un nouvel onglet"
+      }
     },
     "unbranded": {
       "results": "résultats",

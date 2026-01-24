@@ -17,7 +17,33 @@
       [attr.aria-label]="'tooltip.search.moreOptions' | translate"
     ></aql-button>
     <ng-container content>
-      <div class="p-3 space-y-2 text-sm min-w-[200px]">
+      <div class="p-3 space-y-2 text-sm min-w-50">
+        @if (hasTracking()) {
+          <button
+            class="w-full text-left px-3 py-2 rounded-lg hover:bg-base-200 flex items-center gap-2 transition-colors"
+            (click)="copyCleanUrl($event)"
+          >
+            <i
+              [class]="
+                copyCleanSuccess()
+                  ? 'bi bi-check-lg text-success'
+                  : 'bi bi-shield-check text-success'
+              "
+            ></i>
+            <span>{{
+              (copyCleanSuccess() ? 'search.copiedCleanUrl' : 'search.copyCleanUrl') | translate
+            }}</span>
+          </button>
+          <div class="divider my-1"></div>
+        }
+        <button
+          class="w-full text-left px-3 py-2 rounded-lg hover:bg-base-200 flex items-center gap-2 transition-colors"
+          (click)="openOriginalUrl($event)"
+        >
+          <i class="bi bi-box-arrow-up-right"></i>
+          <span>{{ 'search.openOriginalUrl' | translate }}</span>
+        </button>
+        <div class="divider my-1"></div>
         <div>
           <span class="font-semibold">{{ 'search.scoreLabel' | translate }}</span>
           <span class="ml-2">{{ result()._score | number: '1.2-2' }}</span>
@@ -116,7 +142,7 @@
         }}</span>
         @for (param of getFormattedUrlParams(); track param.key) {
           <div
-            class="flex items-center max-w-[200px] text-[10px] font-mono bg-base-200 border border-base-300 px-1.5 py-0.5 rounded-md select-all"
+            class="flex items-center max-w-50 text-[10px] font-mono bg-base-200 border border-base-300 px-1.5 py-0.5 rounded-md select-all"
             [title]="param.key + '=' + param.value"
           >
             <span class="opacity-60">{{ param.key }}=</span>
