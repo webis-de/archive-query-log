@@ -19,6 +19,9 @@ class SERPSearchAdvanced(BaseModel):
     to_timestamp: Optional[str] = None
     status_code: Optional[int] = None
     limit: int = 10
+    advanced_mode: bool = (
+        False  # Enable advanced search with boolean operators, phrases, wildcards
+    )
 
 
 class ProviderAutocompleteRequest(BaseModel):
