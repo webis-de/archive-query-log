@@ -93,6 +93,7 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 | ------ | ------------------------------------------------------- | -------------------------------------------- |
 | GET    | `/api/serps?query=climate+change`                       | Basic SERP search                            |
 | GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search                         |
+| GET    | `/api/serps?query=%22climate%20change%22%20AND%20renewable&advanced_mode=true` | Advanced search mode with boolean operators |
 | GET    | `/api/suggestions?prefix=the`                           | Get search query suggestions (autocomplete)  |
 | GET    | `/api/serps/preview?query=climate`                      | Preview aggregations / suggestions for query |
 | GET    | `/api/serps/compare?ids=id1,id2`                        | Compare multiple SERPs (2-5)                 |
@@ -105,6 +106,60 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 - `provider_id` - Filter by provider ID (optional)
 - `year` - Filter by year (optional)
 - `status_code` - Filter by HTTP status code (optional)
+- `advanced_mode` - Enable advanced search mode with boolean operators, phrase search, and wildcards (default: false)
+
+**Advanced Search Mode:**
+
+When `advanced_mode=true`, the search query supports:
+
+1. **Boolean Operators** (case-insensitive):
+   - `AND` - Both terms must be present
+   - `OR` - Either term must be present
+   - Example: `climate AND change` or `solar OR wind`
+
+2. **Phrase Search** (exact match):
+   - Use double quotes for exact phrases
+   - Example: `"climate change"` matches only exact phrase
+
+3. **Wildcards**:
+   - `*` - Matches zero or more characters
+   - `?` - Matches exactly one character
+   - Example: `climat*` matches climate, climatic, climatology, etc.
+   - Example: `cl?mate` matches climate, clamate, etc.
+
+4. **Grouping with Parentheses**:
+   - Use `()` to group expressions and control operator precedence
+   - Example: `(renewable OR solar) AND energy`
+
+**Advanced Search Examples:**
+
+```bash
+# Boolean AND - find SERPs with both terms
+curl "http://localhost:8000/api/serps?query=climate%20AND%20change&advanced_mode=true"
+
+# Boolean OR - find SERPs with either term
+curl "http://localhost:8000/api/serps?query=solar%20OR%20wind&advanced_mode=true"
+
+# Exact phrase search
+curl "http://localhost:8000/api/serps?query=%22climate%20change%22&advanced_mode=true"
+
+# Wildcard search - find variations
+curl "http://localhost:8000/api/serps?query=climat*&advanced_mode=true"
+
+# Complex boolean query with grouping
+curl "http://localhost:8000/api/serps?query=(renewable%20OR%20solar)%20AND%20energy&advanced_mode=true"
+
+# Combine with filters
+curl "http://localhost:8000/api/serps?query=%22renewable%20energy%22%20AND%20policy&advanced_mode=true&year=2023"
+
+# Multiple boolean operators
+curl "http://localhost:8000/api/serps?query=climate%20AND%20change%20AND%20policy&advanced_mode=true"
+
+# Phrase with wildcard
+curl "http://localhost:8000/api/serps?query=%22climate%20change%22%20OR%20climat*&advanced_mode=true"
+```
+
+**Note:** In simple mode (`advanced_mode=false`, default), operators like "AND" and "OR" are treated as literal search terms.
 
 **Query Parameters for Preview Endpoint:**
 

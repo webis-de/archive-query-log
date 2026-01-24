@@ -106,6 +106,13 @@ async def unified_search(
     provider_id: Optional[str] = Query(None, description="Filter by provider ID"),
     year: Optional[int] = Query(None, description="Filter by year"),
     status_code: Optional[int] = Query(None, description="Filter by HTTP status code"),
+    advanced_mode: bool = Query(
+        False,
+        description=(
+            "Enable advanced search with boolean operators (AND, OR), "
+            "phrase search (quotes), and wildcards (*, ?)"
+        ),
+    ),
 ):
     """
     Unified search endpoint for SERPs with pagination.
@@ -114,6 +121,9 @@ async def unified_search(
     - Basic search: /api/serps?query=climate+change
     - With page size: /api/serps?query=climate&page_size=20
     - Advanced search: /api/serps?query=climate&year=2024&provider_id=google&page_size=50
+    - Advanced mode: /api/serps?query="climate change" AND renewable&advanced_mode=true
+    - Wildcard search: /api/serps?query=climat*&advanced_mode=true
+    - Boolean search: /api/serps?query=(renewable OR solar) AND energy&advanced_mode=true
     """
     # Validate page_size and page
     valid_sizes = [10, 20, 50, 100, 1000]
@@ -137,11 +147,14 @@ async def unified_search(
                 status_code=status_code,
                 size=page_size,
                 from_=from_,
+                advanced_mode=advanced_mode,
             )
         )
     else:
         search_result = await safe_search_paginated(
-            aql_service.search_basic(query=query, size=page_size, from_=from_)
+            aql_service.search_basic(
+                query=query, size=page_size, from_=from_, advanced_mode=advanced_mode
+            )
         )
 
     # Extract results and total count
@@ -158,6 +171,7 @@ async def unified_search(
         "page": page,
         "page_size": page_size,
         "total_pages": total_pages,
+        "advanced_mode": advanced_mode,
         "pagination": {
             "current_results": len(hits),
             "total_results": total_count,

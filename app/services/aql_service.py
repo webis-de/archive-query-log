@@ -12,6 +12,7 @@ Contains all functions used by the search router:
 from typing import List, Optional, Any, Dict
 from app.core.elastic import get_es_client
 from app.utils.url_cleaner import remove_tracking_parameters
+from app.utils.advanced_search_parser import parse_advanced_query
 
 
 # ---------------------------------------------------------
@@ -32,9 +33,17 @@ def _add_hidden_filter(filter_list: list[dict]) -> None:
 # ---------------------------------------------------------
 # 1. Basic SERP Search
 # ---------------------------------------------------------
-async def search_basic(query: str, size: int = 10, from_: int = 0) -> dict:
+async def search_basic(
+    query: str, size: int = 10, from_: int = 0, advanced_mode: bool = False
+) -> dict:
     """
     Simple full-text search in SERPs by query string.
+
+    Args:
+        query: Search query string
+        size: Number of results to return
+        from_: Offset for pagination
+        advanced_mode: If True, parse query for boolean operators, phrases, wildcards
 
     Returns:
         dict with keys:
@@ -47,11 +56,22 @@ async def search_basic(query: str, size: int = 10, from_: int = 0) -> dict:
     filter_clause: list[dict] = []
     _add_hidden_filter(filter_clause)
 
-    query_clause = {
-        "bool": {"must": [{"match": {"url_query": query}}], "filter": filter_clause}
-    }
+    # Choose query type based on advanced_mode
+    if advanced_mode:
+        # Parse query with advanced syntax
+        query_match = parse_advanced_query(query)
+    else:
+        # Simple match query
+        query_match = {"match": {"url_query": query}}
 
-    body = {"query": query_clause, "size": size, "from": from_}
+    query_clause = {"bool": {"must": [query_match], "filter": filter_clause}}
+
+    body = {
+        "query": query_clause,
+        "size": size,
+        "from": from_,
+        "track_total_hits": True,
+    }
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
@@ -89,12 +109,14 @@ async def search_advanced(
     status_code: Optional[int] = None,
     size: int = 10,
     from_: int = 0,
+    advanced_mode: bool = False,
 ) -> dict:
     """
     Perform advanced search on SERPs with optional filters:
     - provider_id: filter by provider
     - year: filter by capture year
     - status_code: filter by HTTP status code
+    - advanced_mode: enable boolean operators, phrase search, wildcards
 
     Returns:
         dict with keys:
@@ -104,9 +126,19 @@ async def search_advanced(
     es = get_es_client()
 
     bool_query: Dict[str, Any] = {
-        "must": [{"match": {"url_query": query}}],
+        "must": [],
         "filter": [],
     }
+
+    # Choose query type based on advanced_mode
+    if advanced_mode:
+        # Parse query with advanced syntax
+        query_match = parse_advanced_query(query)
+    else:
+        # Simple match query
+        query_match = {"match": {"url_query": query}}
+
+    bool_query["must"].append(query_match)
 
     if provider_id:
         bool_query["filter"].append({"term": {"provider.id": provider_id}})
@@ -127,7 +159,12 @@ async def search_advanced(
     # Add hidden filter
     _add_hidden_filter(bool_query["filter"])
 
-    body = {"query": {"bool": bool_query}, "size": size, "from": from_}
+    body = {
+        "query": {"bool": bool_query},
+        "size": size,
+        "from": from_,
+        "track_total_hits": True,
+    }
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
@@ -568,6 +605,7 @@ async def preview_search(
     agg_body = {
         "query": query_clause,
         "size": 0,
+        "track_total_hits": True,
         "aggs": {
             "top_queries": {
                 "terms": {"field": "url_query.keyword", "size": top_n_queries}

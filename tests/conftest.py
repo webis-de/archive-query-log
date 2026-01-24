@@ -6,10 +6,29 @@ shared across all test modules.
 
 import pytest
 from fastapi.testclient import TestClient
+
+
+# Import app AFTER setting up mocks
 from app.main import app
 
 
-@pytest.fixture(scope="module")
+# Patch the limiter before any tests run
+def _disable_limiter():
+    """Disable rate limiting for tests by replacing the enabled property"""
+    from app.routers import search
+    from app import main
+
+    # Disable rate limiting completely
+    search.limiter.enabled = False
+    if hasattr(main, "limiter"):
+        main.limiter.enabled = False
+
+
+# Disable limiter immediately on module load
+_disable_limiter()
+
+
+@pytest.fixture(scope="function")
 def client():
     """Create a test client for the FastAPI app
 
