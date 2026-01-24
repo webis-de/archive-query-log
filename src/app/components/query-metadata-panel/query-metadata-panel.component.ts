@@ -30,6 +30,7 @@ import { MetadataWebsiteTabComponent } from './metadata-website-tab/metadata-web
 import { MetadataInfoTabComponent } from './metadata-info-tab/metadata-info-tab.component';
 import { MetadataRelatedTabComponent } from './metadata-related-tab/metadata-related-tab.component';
 import { MetadataUnfurlTabComponent } from './metadata-unfurl-tab/metadata-unfurl-tab.component';
+import { MetadataUnbrandedTabComponent } from './metadata-unbranded-tab/metadata-unbranded-tab.component';
 
 @Component({
   selector: 'app-query-metadata-panel',
@@ -45,6 +46,7 @@ import { MetadataUnfurlTabComponent } from './metadata-unfurl-tab/metadata-unfur
     MetadataInfoTabComponent,
     MetadataRelatedTabComponent,
     MetadataUnfurlTabComponent,
+    MetadataUnbrandedTabComponent,
   ],
   templateUrl: './query-metadata-panel.component.html',
   styleUrl: './query-metadata-panel.component.css',
@@ -218,6 +220,11 @@ export class AppQueryMetadataPanelComponent {
         label: this.translate.instant('metadata.urlDetails'),
         icon: 'bi-link-45deg',
       },
+      {
+        id: 'unbranded',
+        label: this.translate.instant('metadata.unbrandedView'),
+        icon: 'bi-eye',
+      },
     ]);
   }
 
@@ -227,7 +234,7 @@ export class AppQueryMetadataPanelComponent {
     this.serpDetails.set(null);
 
     let completedRequests = 0;
-    const totalRequests = 2;
+    const totalRequests = 3;
     const partialResponse: Partial<SerpDetailsResponse> = {
       serp_id: serpId,
     };
@@ -261,6 +268,17 @@ export class AppQueryMetadataPanelComponent {
       error: err => {
         console.warn('Failed to fetch related SERPs (backend issue), showing empty list:', err);
         partialResponse.related = { count: 0, serps: [] };
+        checkComplete();
+      },
+    });
+
+    this.searchService.getSerpDetails(serpId, ['unbranded']).subscribe({
+      next: response => {
+        partialResponse.unbranded = response.unbranded;
+        checkComplete();
+      },
+      error: err => {
+        console.warn('Failed to fetch unbranded data:', err);
         checkComplete();
       },
     });

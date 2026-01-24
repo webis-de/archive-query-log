@@ -52,6 +52,12 @@ export interface SearchResultSource {
   warc_snippets_parser: Parser;
   warc_location?: WarcLocation;
   warc_downloader?: WarcDownloader;
+  parsed_query?: string;
+  results?: unknown[];
+  warc_results?: unknown[];
+  parsed_results?: unknown[];
+  search_results?: unknown[];
+  [key: string]: unknown; // Allow additional dynamic fields
 }
 
 export interface SearchResult {
