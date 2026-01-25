@@ -18,14 +18,12 @@
       <div class="mb-2">
         <div class="form-control">
           <div class="input-group">
-            <span class="input-group-text bg-base-200"> </span>
-            <input
-              type="text"
-              class="input input-bordered w-full"
+            <aql-input-field
+              [showIcon]="false"
               [value]="data.query.parsed || data.query.raw"
-              readonly
+              [disabled]="true"
               placeholder="Search query"
-            />
+            ></aql-input-field>
           </div>
         </div>
       </div>

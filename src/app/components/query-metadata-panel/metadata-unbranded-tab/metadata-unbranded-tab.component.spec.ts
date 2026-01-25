@@ -106,9 +106,10 @@ describe('MetadataUnbrandedTabComponent', () => {
     const headerBadge = el.querySelector('.badge-outline');
     expect(headerBadge.textContent.trim()).toBe('1');
 
-    // search input shows parsed query
+    // search input shows parsed query and is disabled
     const input = el.querySelector('input[type="text"]') as HTMLInputElement;
     expect(input.value).toBe('parsed query');
+    expect(input.disabled).toBeTrue();
 
     // timestamp displayed
     expect(el.textContent).toContain('Timestamp 2020-01-01');

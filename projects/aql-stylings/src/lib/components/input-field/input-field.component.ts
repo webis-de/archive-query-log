@@ -1,4 +1,4 @@
-import { Component, input, forwardRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, forwardRef, ChangeDetectionStrategy, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -44,8 +44,25 @@ export class AqlInputFieldComponent implements ControlValueAccessor {
   readonly shape = input<InputShape>('square');
   readonly size = input<InputSize>('md');
   readonly color = input<InputColor>('bordered');
-  value = '';
-  disabled = false;
+  private _value = '';
+
+  @Input()
+  set value(v: string) {
+    this._value = v || '';
+  }
+  get value() {
+    return this._value;
+  }
+
+  private _disabled = false;
+
+  @Input()
+  set disabled(v: boolean) {
+    this._disabled = !!v;
+  }
+  get disabled() {
+    return this._disabled;
+  }
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (value: string) => void = () => {};
   // eslint-disable-next-line @typescript-eslint/no-empty-function
