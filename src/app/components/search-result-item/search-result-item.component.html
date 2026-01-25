@@ -38,10 +38,13 @@
         }
         <button
           class="w-full text-left px-3 py-2 rounded-lg hover:bg-base-200 flex items-center gap-2 transition-colors"
-          (click)="openOriginalUrl($event)"
+          (click)="copyOriginalUrl($event)"
         >
-          <i class="bi bi-box-arrow-up-right"></i>
-          <span>{{ 'search.openOriginalUrl' | translate }}</span>
+          <i class="bi bi-clipboard text-base-content/80"></i>
+          <span>{{
+            (copyOriginalSuccess() ? 'search.copiedOriginalUrl' : 'search.copyOriginalUrl')
+              | translate
+          }}</span>
         </button>
         <div class="divider my-1"></div>
         <div>

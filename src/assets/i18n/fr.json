@@ -71,7 +71,8 @@
     "parserWarc": "Analyseur WARC",
     "copyCleanUrl": "Copier l'URL nettoyée (Sans suivi)",
     "copiedCleanUrl": "URL nettoyée copiée !",
-    "openOriginalUrl": "Ouvrir l'URL originale"
+    "copyOriginalUrl": "Copier l'URL originale",
+    "copiedOriginalUrl": "URL originale copiée !"
   },
   "searchStats": {
     "title": "Query overview",

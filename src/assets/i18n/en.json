@@ -49,7 +49,8 @@
     "parserWarc": "WARC Parser",
     "copyCleanUrl": "Copy Clean URL (No Tracking)",
     "copiedCleanUrl": "Clean URL Copied!",
-    "openOriginalUrl": "Open Original URL"
+    "copyOriginalUrl": "Copy Original URL",
+    "copiedOriginalUrl": "Original URL Copied!"
   },
   "searchStats": {
     "title": "Query overview",

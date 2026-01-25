@@ -49,6 +49,7 @@ export class SearchResultItemComponent {
   });
 
   readonly copyCleanSuccess = signal<boolean>(false);
+  readonly copyOriginalSuccess = signal<boolean>(false);
 
   private readonly languageService = inject(LanguageService);
 
@@ -98,9 +99,12 @@ export class SearchResultItemComponent {
     });
   }
 
-  openOriginalUrl(event: Event): void {
+  copyOriginalUrl(event: Event): void {
     event.stopPropagation();
     const url = this.result()._source.capture.url;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    navigator.clipboard.writeText(url).then(() => {
+      this.copyOriginalSuccess.set(true);
+      setTimeout(() => this.copyOriginalSuccess.set(false), 2000);
+    });
   }
 }
