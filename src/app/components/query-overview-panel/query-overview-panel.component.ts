@@ -7,13 +7,18 @@ import {
   output,
   signal,
   viewChild,
+  effect,
   WritableSignal,
 } from '@angular/core';
+import { ProviderService, ProviderOption } from '../../services/provider.service';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language.service';
 import {
   AqlBarChartComponent,
   AqlButtonComponent,
+  AqlInputFieldComponent,
   AqlLineChartComponent,
   AqlDropdownComponent,
   AqlMenuItemComponent,
@@ -36,8 +41,10 @@ interface LabeledCount {
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
     TranslateModule,
     AqlButtonComponent,
+    AqlInputFieldComponent,
     AqlDropdownComponent,
     AqlMenuItemComponent,
     AqlLineChartComponent,
@@ -55,6 +62,16 @@ export class QueryOverviewPanelComponent {
   readonly isLoading = input<boolean>(false);
   readonly interval = input<'day' | 'week' | 'month'>('month');
   readonly intervalChange = output<'day' | 'week' | 'month'>();
+  // Emit when provider is changed (null for all)
+  readonly providerChange = output<string | null>();
+  // Emit when user clicks a histogram bucket: { from_timestamp, to_timestamp, provider_id?, provider_name? }
+  readonly histogramClick = output<{
+    from_timestamp: string;
+    to_timestamp: string;
+    provider_id?: string;
+    provider_name?: string;
+  }>();
+
   readonly showTopQueriesList = signal<boolean>(false);
   readonly showTopProvidersList = signal<boolean>(false);
   readonly showTopArchivesList = signal<boolean>(false);
@@ -125,6 +142,7 @@ export class QueryOverviewPanelComponent {
     if (interval === 'week') return 'searchStats.intervalWeek';
     return 'searchStats.intervalMonth';
   });
+
   readonly histogramChartOptions = computed<EChartsOption | null>(() => {
     const buckets = this.histogramBuckets();
     if (buckets.length === 0) {
@@ -143,9 +161,10 @@ export class QueryOverviewPanelComponent {
         formatter: (params: TooltipComponentFormatterCallbackParams) => {
           if (Array.isArray(params) && params.length > 0) {
             const dataIndex = params[0].dataIndex as number;
-            const date = this.formatDate(labels[dataIndex]);
+            const date = this.languageService.formatDateTime(labels[dataIndex]);
             const value = params[0].value;
-            return `${date}<br/>Count: ${value}`;
+            const hint = this.translate.instant('searchStats.clickToFilter');
+            return `${date}<br/>Count: ${value}<br/><span style="font-size:11px;color:#888">${hint}</span>`;
           }
           return '';
         },
@@ -173,7 +192,7 @@ export class QueryOverviewPanelComponent {
         axisPointer: {
           label: {
             formatter: (params: { value: string | number }) => {
-              return this.formatDate(String(params.value));
+              return this.languageService.formatDateTime(String(params.value));
             },
           } as Record<string, string | number | ((params: { value: string | number }) => string)>,
         },
@@ -229,11 +248,71 @@ export class QueryOverviewPanelComponent {
             },
           },
         },
+        {
+          type: 'bar',
+          data: counts,
+          barWidth: '80%',
+          itemStyle: {
+            color: 'transparent',
+          },
+          emphasis: {
+            itemStyle: {
+              color: 'rgba(59,130,246,0.06)',
+            },
+          },
+          silent: false,
+          z: 5,
+          cursor: 'pointer',
+        },
       ],
     } as EChartsOption;
   });
 
+  // Currently selected provider for timeline (null = all)
+  readonly selectedProviderSignal = signal<string | null>(null);
+  // Allow parent to set selected provider (provider id)
+  readonly selectedProvider = input<string | null>(null);
+  readonly providers = signal<ProviderOption[]>([]);
+  readonly providerSearch = signal<string>('');
+  readonly filteredProviders = computed<ProviderOption[]>(() => {
+    const all = this.providers();
+    const search = this.providerSearch().toLowerCase().trim();
+    if (!search) return all;
+    return all.filter(p => p.name.toLowerCase().includes(search));
+  });
+
+  readonly selectedProviderLabel = computed(() => {
+    const id = this.selectedProviderSignal();
+    if (!id) return 'searchStats.allProviders';
+    const provider = this.providers().find(p => p.id === id);
+    return provider ? provider.name : id;
+  });
+
+  private readonly providerService = inject(ProviderService);
   private readonly exportService = inject(ExportService);
+  private readonly translate = inject(TranslateService);
+  private readonly languageService = inject(LanguageService);
+
+  constructor() {
+    // keep internal signal in sync with input when parent changes selection
+    effect(() => {
+      const incoming = this.selectedProvider();
+      this.selectedProviderSignal.set(incoming ?? null);
+    });
+
+    // Load all providers (shared cached list)
+    this.providerService.getProviders().subscribe(list => {
+      this.providers.set(list);
+    });
+
+    // Reset provider search when providers change
+    effect(() => {
+      const list = this.providers();
+      if (!list || list.length === 0) {
+        this.providerSearch.set('');
+      }
+    });
+  }
 
   onIntervalSelect(value: 'day' | 'week' | 'month'): void {
     if (value === this.interval()) {
@@ -269,6 +348,71 @@ export class QueryOverviewPanelComponent {
     if (url) {
       this.exportService.downloadUrl(url, filename);
     }
+  }
+
+  onProviderSelect(provider: string | null): void {
+    this.selectedProviderSignal.set(provider);
+    this.providerChange.emit(provider);
+  }
+
+  updateProviderSearch(value: string): void {
+    this.providerSearch.set(value);
+  }
+
+  onHistogramClick(params: unknown): void {
+    // echarts click payload includes dataIndex and name
+    try {
+      const dataIndex = (params as { dataIndex?: number } | undefined)?.dataIndex;
+      if (dataIndex === undefined || dataIndex === null) return;
+      const label = this.histogramLabels()[dataIndex];
+      if (!label) return;
+
+      const interval = this.interval();
+      const range = this.computeRangeForLabel(label, interval);
+      const provider = this.selectedProviderSignal();
+      const providerObj = provider ? this.providers().find(p => p.id === provider) : null;
+      const providerName = providerObj ? providerObj.name : undefined;
+
+      this.histogramClick.emit({
+        from_timestamp: range.from,
+        to_timestamp: range.to,
+        provider_id: provider || undefined,
+        provider_name: providerName,
+      });
+    } catch {
+      // ignore errors
+    }
+  }
+
+  private computeRangeForLabel(label: string, interval: 'day' | 'week' | 'month') {
+    const date = new Date(label);
+    if (isNaN(date.getTime())) {
+      // fallback: treat label as exact date
+      const d = new Date(label);
+      return { from: d.toISOString(), to: d.toISOString() };
+    }
+
+    const start = new Date(
+      Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), 0, 0, 0),
+    );
+    let end: Date;
+
+    if (interval === 'day') {
+      end = new Date(start);
+      end.setUTCDate(end.getUTCDate() + 1);
+      end.setUTCMilliseconds(end.getUTCMilliseconds() - 1);
+    } else if (interval === 'week') {
+      // Assuming label is start of week
+      end = new Date(start);
+      end.setUTCDate(end.getUTCDate() + 7);
+      end.setUTCMilliseconds(end.getUTCMilliseconds() - 1);
+    } else {
+      // month
+      end = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth() + 1, 1));
+      end.setUTCMilliseconds(end.getUTCMilliseconds() - 1);
+    }
+
+    return { from: start.toISOString(), to: end.toISOString() };
   }
 
   private formatDate(dateString: string): string {

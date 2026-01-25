@@ -27,6 +27,7 @@ import { LanguageSelectorComponent } from '../../components/language-selector/la
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { LanguageService } from '../../services/language.service';
 import { FilterState } from '../../models/filter.model';
 import { SearchFilter } from '../../models/project.model';
 import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-panel/query-metadata-panel.component';
@@ -69,6 +70,7 @@ export class SearchViewComponent {
   readonly translate = inject(TranslateService);
   readonly elementRef = inject(ElementRef);
   readonly destroyRef = inject(DestroyRef);
+  readonly languageService = inject(LanguageService);
   readonly searchResults = signal<SearchResult[]>([]);
   readonly totalCount = signal<number>(0);
   readonly isLoading = signal<boolean>(false);
@@ -78,6 +80,7 @@ export class SearchViewComponent {
   readonly metadataTopProviders = 5;
   readonly metadataTopArchives = 5;
   readonly metadataLastMonths = 36;
+  readonly metadataProvider = signal<string | null>(null);
   readonly isPanelOpen = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
   readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
@@ -153,8 +156,8 @@ export class SearchViewComponent {
       // Update filters
       if (fromTimestamp || toTimestamp || status !== 'any' || providers.length > 0) {
         this.initialFilters = {
-          dateFrom: fromTimestamp,
-          dateTo: toTimestamp,
+          dateFrom: fromTimestamp ? this.languageService.formatDate(fromTimestamp) : '',
+          dateTo: toTimestamp ? this.languageService.formatDate(toTimestamp) : '',
           status,
           providers,
         };
@@ -267,6 +270,52 @@ export class SearchViewComponent {
     }
   }
 
+  onMetadataProviderChange(provider: string | null): void {
+    this.metadataProvider.set(provider);
+    if (this.searchQuery.trim()) {
+      this.loadQueryMetadata(this.searchQuery.trim());
+    }
+  }
+
+  onMetadataHistogramClick(payload: {
+    from_timestamp: string;
+    to_timestamp: string;
+    provider_id?: string;
+    provider_name?: string;
+  }): void {
+    // Build query params starting from existing query
+    const params: Record<string, string> = { q: this.searchQuery };
+
+    // Preserve existing provider filters when available, otherwise fall back to payload provider
+    const activeProviders = this.currentFilters?.providers?.length
+      ? this.currentFilters!.providers
+      : [];
+    if (activeProviders.length > 0) {
+      params['provider'] = activeProviders.join(',');
+    } else if (payload.provider_id) {
+      params['provider'] = payload.provider_id;
+    }
+
+    if (payload.from_timestamp) params['from_timestamp'] = payload.from_timestamp;
+    if (payload.to_timestamp) params['to_timestamp'] = payload.to_timestamp;
+
+    // Preserve other active filters (status) and only change the date range
+    const status = this.currentFilters?.status ?? 'any';
+
+    this.initialFilters = {
+      // Format date-only strings for display (no clock time)
+      dateFrom: payload.from_timestamp
+        ? this.languageService.formatDate(payload.from_timestamp)
+        : '',
+      dateTo: payload.to_timestamp ? this.languageService.formatDate(payload.to_timestamp) : '',
+      status,
+      providers: activeProviders,
+    };
+
+    // Navigate to trigger a search with the new time range while preserving other filters
+    this.router.navigate(['/serps/search'], { queryParams: params });
+  }
+
   onResultClick(result: SearchResult): void {
     this.selectedResult.set(result);
     this.isPanelOpen.set(true);
@@ -324,8 +373,12 @@ export class SearchViewComponent {
         searchItem.filter.to_timestamp
       ) {
         this.initialFilters = {
-          dateFrom: searchItem.filter.from_timestamp || '',
-          dateTo: searchItem.filter.to_timestamp || '',
+          dateFrom: searchItem.filter.from_timestamp
+            ? this.languageService.formatDate(searchItem.filter.from_timestamp)
+            : '',
+          dateTo: searchItem.filter.to_timestamp
+            ? this.languageService.formatDate(searchItem.filter.to_timestamp)
+            : '',
           status: 'any',
           providers: searchItem.filter.provider ? searchItem.filter.provider.split(',') : [],
         };
@@ -362,6 +415,7 @@ export class SearchViewComponent {
         top_providers: this.metadataTopProviders,
         top_archives: this.metadataTopArchives,
         last_n_months: this.metadataLastMonths,
+        provider_id: this.metadataProvider() ?? undefined,
       })
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({

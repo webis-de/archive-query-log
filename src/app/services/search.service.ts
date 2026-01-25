@@ -72,6 +72,9 @@ export class SearchService {
     if (params.last_n_months !== undefined) {
       apiParams['last_n_months'] = params.last_n_months;
     }
+    if (params.provider_id) {
+      apiParams['provider_id'] = params.provider_id;
+    }
 
     return this.apiService.get<QueryMetadataResponse>(API_CONFIG.endpoints.serpsPreview, apiParams);
   }

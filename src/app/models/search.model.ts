@@ -130,6 +130,7 @@ export interface QueryMetadataParams {
   top_providers?: number;
   top_archives?: number;
   last_n_months?: number;
+  provider_id?: string;
 }
 
 export interface RelatedSerp {

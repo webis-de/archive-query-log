@@ -59,10 +59,26 @@ export class LanguageService {
 
   formatDate(dateString: string): string {
     const locale = this.getCurrentLanguageCode();
-    return new Date(dateString).toLocaleString(locale, {
+    const d = this.parseDate(dateString);
+    if (!d) return dateString; // fallback to original string if we cannot parse
+
+    // Only show day, month and year (no clock time)
+    return d.toLocaleDateString(locale, {
       year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
+      month: 'short',
+      day: 'numeric',
+    });
+  }
+
+  formatDateTime(dateString: string): string {
+    const locale = this.getCurrentLanguageCode();
+    const d = this.parseDate(dateString);
+    if (!d) return dateString;
+
+    return d.toLocaleString(locale, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
     });
@@ -73,5 +89,46 @@ export class LanguageService {
    */
   formatDateForInput(date: Date): string {
     return date.toISOString().split('T')[0];
+  }
+
+  private parseDate(dateString: string): Date | null {
+    if (!dateString) return null;
+
+    // If already a Date object string (ISO) or numeric timestamp
+    // try standard parse first
+    const asNumber = Number(dateString);
+    if (!Number.isNaN(asNumber) && isFinite(asNumber)) {
+      const d = new Date(asNumber);
+      if (!isNaN(d.getTime())) return d;
+    }
+
+    // ISO-like (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ)
+    if (/^\d{4}-\d{2}-\d{2}/.test(dateString)) {
+      const d = new Date(dateString);
+      if (!isNaN(d.getTime())) return d;
+    }
+
+    // Common German date format: DD.MM.YYYY or DD.MM.YYYY HH:MM
+    const germanMatch = dateString.match(
+      /^(\d{1,2})\.(\d{1,2})\.(\d{4})(?:[ T](\d{1,2}):(\d{2}))?/,
+    );
+    if (germanMatch) {
+      const day = parseInt(germanMatch[1], 10);
+      const month = parseInt(germanMatch[2], 10) - 1;
+      const year = parseInt(germanMatch[3], 10);
+      const hour = germanMatch[4] ? parseInt(germanMatch[4], 10) : 0;
+      const minute = germanMatch[5] ? parseInt(germanMatch[5], 10) : 0;
+      const d = new Date(Date.UTC(year, month, day, hour, minute, 0));
+      if (!isNaN(d.getTime())) return d;
+    }
+
+    // Fallback: try Date.parse once more
+    const parsed = Date.parse(dateString);
+    if (!Number.isNaN(parsed)) {
+      const d = new Date(parsed);
+      if (!isNaN(d.getTime())) return d;
+    }
+
+    return null;
   }
 }

@@ -60,11 +60,13 @@
     "chartPlaceholder": "Chart placeholder",
     "histogramBuckets": "Histogram buckets: {{count}}",
     "noHistogram": "No histogram data",
+    "clickToFilter": "Klicken zum Filtern nach Datum",
     "topQueries": "Top queries",
     "topProviders": "Top providers",
     "topArchives": "Top archives",
     "loading": "Loading...",
-    "noData": "No data"
+    "noData": "No data",
+    "allProviders": "Alle Anbieter"
   },
   "project": {
     "name": "Projektname",

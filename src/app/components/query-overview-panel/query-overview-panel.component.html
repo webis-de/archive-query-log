@@ -57,6 +57,60 @@
             </aql-menu-item>
           </ng-container>
         </aql-dropdown>
+
+        <!-- Provider filter dropdown -->
+        <aql-dropdown [contentWidth]="'13.5rem'" [position]="'bottom end'" #providerDropdown>
+          <aql-button trigger size="xs" btnType="ghost" class="gap-2" btnStyle="rounded">
+            <span class="text-xs">
+              {{ selectedProviderLabel() | translate }}
+            </span>
+            <i [class]="providerDropdown.open() ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+          </aql-button>
+          <ng-container content>
+            <div
+              tabindex="0"
+              class="text-left"
+              (click)="$event.stopPropagation()"
+              (keydown.enter)="$event.stopPropagation()"
+              (keydown.space)="$event.stopPropagation()"
+              (mousedown)="$event.stopPropagation()"
+            >
+              <!-- Use same padding and sizing pattern as Filter dropdown -->
+              <div class="p-2">
+                <!-- Search input when we have many providers -->
+                @if (providers().length > 6) {
+                  <div class="mb-2">
+                    <aql-input-field
+                      type="text"
+                      [showIcon]="true"
+                      size="sm"
+                      [placeholder]="'filter.searchProvidersPlaceholder' | translate"
+                      [ngModel]="providerSearch()"
+                      (ngModelChange)="updateProviderSearch($event)"
+                      class="w-full"
+                    ></aql-input-field>
+                  </div>
+                }
+
+                <div
+                  class="max-h-40 w-48 overflow-y-auto overflow-x-hidden box-border"
+                  aqlScrollbar
+                >
+                  <aql-menu-item (click)="onProviderSelect(null)">
+                    {{ 'searchStats.allProviders' | translate }}
+                  </aql-menu-item>
+                  <aql-menu-item
+                    *ngFor="let p of filteredProviders()"
+                    (click)="onProviderSelect(p.id)"
+                  >
+                    <span class="truncate w-full block" [title]="p.name">{{ p.name }}</span>
+                  </aql-menu-item>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </aql-dropdown>
+
         @if (hasHistogram()) {
           <aql-button
             btnType="ghost"
@@ -76,6 +130,7 @@
           #histogramChart
           [options]="histogramChartOptions()"
           [height]="'180px'"
+          (chartClick)="onHistogramClick($event)"
         ></aql-line-chart>
       } @else {
         <div

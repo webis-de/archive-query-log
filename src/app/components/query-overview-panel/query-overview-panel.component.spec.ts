@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
+import { of } from 'rxjs';
 import { QueryOverviewPanelComponent } from './query-overview-panel.component';
 import { QueryMetadataResponse } from '../../models/search.model';
+import { ProviderService } from '../../services/provider.service';
 
 describe('QueryOverviewPanelComponent', () => {
   let component: QueryOverviewPanelComponent;
@@ -20,8 +22,12 @@ describe('QueryOverviewPanelComponent', () => {
   };
 
   beforeEach(async () => {
+    const mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviders']);
+    mockProviderService.getProviders.and.returnValue(of([]));
+
     await TestBed.configureTestingModule({
       imports: [QueryOverviewPanelComponent, TranslateModule.forRoot()],
+      providers: [{ provide: ProviderService, useValue: mockProviderService }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(QueryOverviewPanelComponent);
