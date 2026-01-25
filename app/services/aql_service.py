@@ -601,7 +601,7 @@ async def preview_search(
     if interval not in {"day", "week", "month"}:
         interval = "month"
 
-    # Initial aggregations using keyword fields where applicable
+    # Initial aggregations (prefer stable keyword fields)
     agg_body = {
         "query": query_clause,
         "size": 0,
@@ -617,7 +617,8 @@ async def preview_search(
                 }
             },
             "top_providers": {
-                "terms": {"field": "provider.name.keyword", "size": top_providers}
+                # Use provider.id which is expected to be keyword and stable
+                "terms": {"field": "provider.id", "size": top_providers}
             },
             "top_archives": {
                 "terms": {
@@ -701,15 +702,19 @@ async def preview_search(
         except Exception:
             top_queries_out = []
 
-    # Fallback: recompute providers without .keyword if empty
+    # Fallbacks for providers if empty
     if not top_providers_out:
         try:
+            # 1) Try keyword name if available
             prov_fallback_body = {
                 "query": query_clause,
                 "size": 0,
                 "aggs": {
                     "top_providers": {
-                        "terms": {"field": "provider.name", "size": top_providers}
+                        "terms": {
+                            "field": "provider.name.keyword",
+                            "size": top_providers,
+                        }
                     }
                 },
             }
@@ -722,6 +727,31 @@ async def preview_search(
             top_providers_out = [
                 {"provider": b.get("key"), "count": b.get("doc_count", 0)}
                 for b in fb_buckets
+            ]
+        except Exception:
+            pass
+
+    if not top_providers_out:
+        try:
+            # 2) Last resort: non-keyword provider.name (may require fielddata)
+            prov_fallback_body2 = {
+                "query": query_clause,
+                "size": 0,
+                "aggs": {
+                    "top_providers": {
+                        "terms": {"field": "provider.name", "size": top_providers}
+                    }
+                },
+            }
+            prov_resp2 = await es.search(index="aql_serps", body=prov_fallback_body2)
+            fb_buckets2 = (
+                prov_resp2.get("aggregations", {})
+                .get("top_providers", {})
+                .get("buckets", [])
+            )
+            top_providers_out = [
+                {"provider": b.get("key"), "count": b.get("doc_count", 0)}
+                for b in fb_buckets2
             ]
         except Exception:
             pass
