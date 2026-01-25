@@ -34,7 +34,13 @@ def _add_hidden_filter(filter_list: list[dict]) -> None:
 # 1. Basic SERP Search
 # ---------------------------------------------------------
 async def search_basic(
-    query: str, size: int = 10, from_: int = 0, advanced_mode: bool = False
+    query: str,
+    size: int = 10,
+    from_: int = 0,
+    advanced_mode: bool = False,
+    fuzzy: bool = False,
+    fuzziness: str = "AUTO",
+    expand_synonyms: bool = False,
 ) -> dict:
     """
     Simple full-text search in SERPs by query string.
@@ -44,11 +50,15 @@ async def search_basic(
         size: Number of results to return
         from_: Offset for pagination
         advanced_mode: If True, parse query for boolean operators, phrases, wildcards
+        fuzzy: If True, enable fuzzy matching to handle typos
+        fuzziness: Control fuzzy tolerance (AUTO, 0, 1, 2)
+        expand_synonyms: If True, use multi_match to search across multiple fields with synonyms
 
     Returns:
         dict with keys:
             - hits: List of search results
             - total: Total number of results found
+            - suggestions: Optional "did you mean?" suggestions
     """
     es = get_es_client()
 
@@ -56,10 +66,38 @@ async def search_basic(
     filter_clause: list[dict] = []
     _add_hidden_filter(filter_clause)
 
-    # Choose query type based on advanced_mode
+    # Choose query type based on advanced_mode, fuzzy, and expand_synonyms
     if advanced_mode:
-        # Parse query with advanced syntax
+        # Parse query with advanced syntax (boolean operators, wildcards, etc.)
         query_match = parse_advanced_query(query)
+    elif expand_synonyms:
+        # Multi-match query for broader matching (simulates synonym expansion)
+        # Uses phrase and partial matching for query expansion effect
+        query_match = {
+            "bool": {
+                "should": [
+                    {
+                        "match": {"url_query": {"query": query, "boost": 3.0}}
+                    },  # Exact match highest
+                    {
+                        "match_phrase": {"url_query": {"query": query, "boost": 2.0}}
+                    },  # Phrase match
+                    {
+                        "match": {
+                            "url_query": {
+                                "query": query,
+                                "fuzziness": fuzziness if fuzzy else "0",
+                                "boost": 1.0,
+                            }
+                        }
+                    },  # Fuzzy/expanded
+                ],
+                "minimum_should_match": 1,
+            }
+        }
+    elif fuzzy:
+        # Fuzzy match query with configurable fuzziness
+        query_match = {"match": {"url_query": {"query": query, "fuzziness": fuzziness}}}
     else:
         # Simple match query
         query_match = {"match": {"url_query": query}}
@@ -72,6 +110,20 @@ async def search_basic(
         "from": from_,
         "track_total_hits": True,
     }
+
+    # Add term suggester for "Did you mean?" functionality
+    if fuzzy or expand_synonyms:
+        body["suggest"] = {
+            "did_you_mean": {
+                "text": query,
+                "term": {
+                    "field": "url_query",
+                    "suggest_mode": "popular",  # Only suggest more popular terms
+                    "min_word_length": 3,  # Don't suggest for very short words
+                },
+            }
+        }
+
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
@@ -82,7 +134,25 @@ async def search_basic(
     else:
         total_count = total
 
-    return {"hits": hits, "total": total_count}
+    # Extract suggestions if available
+    suggestions = []
+    if "suggest" in response and "did_you_mean" in response["suggest"]:
+        for suggestion in response["suggest"]["did_you_mean"]:
+            for option in suggestion.get("options", []):
+                if option["text"] != suggestion["text"]:  # Only include if different
+                    suggestions.append(
+                        {
+                            "text": option["text"],
+                            "score": option["score"],
+                            "freq": option["freq"],
+                        }
+                    )
+
+    result = {"hits": hits, "total": total_count}
+    if suggestions:
+        result["suggestions"] = suggestions
+
+    return result
 
 
 # ---------------------------------------------------------
@@ -110,6 +180,9 @@ async def search_advanced(
     size: int = 10,
     from_: int = 0,
     advanced_mode: bool = False,
+    fuzzy: bool = False,
+    fuzziness: str = "AUTO",
+    expand_synonyms: bool = False,
 ) -> dict:
     """
     Perform advanced search on SERPs with optional filters:
@@ -117,11 +190,15 @@ async def search_advanced(
     - year: filter by capture year
     - status_code: filter by HTTP status code
     - advanced_mode: enable boolean operators, phrase search, wildcards
+    - fuzzy: enable fuzzy matching to handle typos
+    - fuzziness: control fuzzy tolerance (AUTO, 0, 1, 2)
+    - expand_synonyms: enable synonym-based query expansion
 
     Returns:
         dict with keys:
             - hits: List of search results
             - total: Total number of results found
+            - suggestions: Optional "did you mean?" suggestions
     """
     es = get_es_client()
 
@@ -130,10 +207,37 @@ async def search_advanced(
         "filter": [],
     }
 
-    # Choose query type based on advanced_mode
+    # Choose query type based on advanced_mode, fuzzy, and expand_synonyms
     if advanced_mode:
         # Parse query with advanced syntax
         query_match = parse_advanced_query(query)
+    elif expand_synonyms:
+        # Multi-match query for broader matching (simulates synonym expansion)
+        query_match = {
+            "bool": {
+                "should": [
+                    {
+                        "match": {"url_query": {"query": query, "boost": 3.0}}
+                    },  # Exact match highest
+                    {
+                        "match_phrase": {"url_query": {"query": query, "boost": 2.0}}
+                    },  # Phrase match
+                    {
+                        "match": {
+                            "url_query": {
+                                "query": query,
+                                "fuzziness": fuzziness if fuzzy else "0",
+                                "boost": 1.0,
+                            }
+                        }
+                    },  # Fuzzy/expanded
+                ],
+                "minimum_should_match": 1,
+            }
+        }
+    elif fuzzy:
+        # Fuzzy match query with configurable fuzziness
+        query_match = {"match": {"url_query": {"query": query, "fuzziness": fuzziness}}}
     else:
         # Simple match query
         query_match = {"match": {"url_query": query}}
@@ -165,6 +269,20 @@ async def search_advanced(
         "from": from_,
         "track_total_hits": True,
     }
+
+    # Add term suggester for "Did you mean?" functionality
+    if fuzzy or expand_synonyms:
+        body["suggest"] = {
+            "did_you_mean": {
+                "text": query,
+                "term": {
+                    "field": "url_query",
+                    "suggest_mode": "popular",
+                    "min_word_length": 3,
+                },
+            }
+        }
+
     response = await es.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
@@ -175,7 +293,25 @@ async def search_advanced(
     else:
         total_count = total
 
-    return {"hits": hits, "total": total_count}
+    # Extract suggestions if available
+    suggestions = []
+    if "suggest" in response and "did_you_mean" in response["suggest"]:
+        for suggestion in response["suggest"]["did_you_mean"]:
+            for option in suggestion.get("options", []):
+                if option["text"] != suggestion["text"]:
+                    suggestions.append(
+                        {
+                            "text": option["text"],
+                            "score": option["score"],
+                            "freq": option["freq"],
+                        }
+                    )
+
+    result = {"hits": hits, "total": total_count}
+    if suggestions:
+        result["suggestions"] = suggestions
+
+    return result
 
 
 # ---------------------------------------------------------

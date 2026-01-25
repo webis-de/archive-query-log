@@ -113,6 +113,28 @@ async def unified_search(
             "phrase search (quotes), and wildcards (*, ?)"
         ),
     ),
+    fuzzy: bool = Query(
+        False,
+        description=(
+            "Enable fuzzy matching to find similar queries and handle typos. "
+            "Matches queries with up to 2 character differences."
+        ),
+    ),
+    fuzziness: str = Query(
+        "AUTO",
+        description=(
+            "Control fuzzy matching tolerance. Options: AUTO (default), 0 (exact), 1, 2. "
+            "AUTO uses 0 for 1-2 chars, 1 for 3-5 chars,"
+            "2 for 6+ chars. Only applies when fuzzy=true."
+        ),
+    ),
+    expand_synonyms: bool = Query(
+        False,
+        description=(
+            "Enable synonym-based query expansion to find related terms. "
+            "Example: 'climate' also matches 'global warming', 'climate change'."
+        ),
+    ),
 ):
     """
     Unified search endpoint for SERPs with pagination.
@@ -134,6 +156,13 @@ async def unified_search(
     if page <= 0:
         raise HTTPException(status_code=400, detail="page must be a positive integer")
 
+    # Validate fuzziness parameter
+    valid_fuzziness = ["AUTO", "0", "1", "2"]
+    if fuzziness not in valid_fuzziness:
+        raise HTTPException(
+            status_code=400, detail=f"fuzziness must be one of {valid_fuzziness}"
+        )
+
     # compute ES offset
     from_ = (page - 1) * page_size
 
@@ -148,23 +177,33 @@ async def unified_search(
                 size=page_size,
                 from_=from_,
                 advanced_mode=advanced_mode,
+                fuzzy=fuzzy,
+                fuzziness=fuzziness,
+                expand_synonyms=expand_synonyms,
             )
         )
     else:
         search_result = await safe_search_paginated(
             aql_service.search_basic(
-                query=query, size=page_size, from_=from_, advanced_mode=advanced_mode
+                query=query,
+                size=page_size,
+                from_=from_,
+                advanced_mode=advanced_mode,
+                fuzzy=fuzzy,
+                fuzziness=fuzziness,
+                expand_synonyms=expand_synonyms,
             )
         )
 
     # Extract results and total count
     hits = search_result["hits"]
     total_count = search_result["total"]
+    suggestions = search_result.get("suggestions", [])
 
     # Calculate pagination info
     total_pages = (total_count + page_size - 1) // page_size  # Ceiling division
 
-    return {
+    response = {
         "query": query,
         "count": len(hits),
         "total": total_count,
@@ -172,6 +211,9 @@ async def unified_search(
         "page_size": page_size,
         "total_pages": total_pages,
         "advanced_mode": advanced_mode,
+        "fuzzy": fuzzy,
+        "fuzziness": fuzziness if fuzzy else None,
+        "expand_synonyms": expand_synonyms,
         "pagination": {
             "current_results": len(hits),
             "total_results": total_count,
@@ -181,6 +223,12 @@ async def unified_search(
         },
         "results": hits,
     }
+
+    # Add suggestions if available
+    if suggestions:
+        response["did_you_mean"] = suggestions
+
+    return response
 
 
 # ---------------------------------------------------------
