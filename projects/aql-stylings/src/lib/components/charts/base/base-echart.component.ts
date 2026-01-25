@@ -1,4 +1,13 @@
-import {Directive, ElementRef, OnDestroy, effect, input, viewChild, EventEmitter, Output} from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  OnDestroy,
+  effect,
+  input,
+  viewChild,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import * as echarts from 'echarts';
 
 @Directive()
