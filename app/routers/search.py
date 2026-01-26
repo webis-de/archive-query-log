@@ -522,6 +522,11 @@ async def get_archive_by_memento_url(request: Request, archive_id: str):
 async def get_serp_unified(
     request: Request,
     serp_id: str,
+    view: Optional[str] = Query(
+        None,
+        description="View mode: raw (default), unbranded, or snapshot. "
+        "Use /api/serps/{id}/views to see available options.",
+    ),
     include: Optional[str] = Query(
         None,
         description="Comma-separated list of fields: original_url, memento_url, "
@@ -540,21 +545,64 @@ async def get_serp_unified(
     ),
 ):
     """
-    Get SERP by ID with optional additional fields.
+    Get SERP by ID with optional additional fields and view modes.
+
+    View modes:
+    - raw (default): Full SERP data
+    - unbranded: Normalized provider-agnostic view
+    - snapshot: Redirect to web archive memento
 
     Examples:
     - Basic: /api/serp/123
+    - Unbranded view: /api/serp/123?view=unbranded
+    - Snapshot redirect: /api/serp/123?view=snapshot
     - With original URL: /api/serp/123?include=original_url
     - With tracking removed: /api/serp/123?include=original_url&remove_tracking=true
     - With direct links: /api/serp/123?include=direct_links
-    - Unbranded view: /api/serp/123?include=unbranded
     - Multiple fields: /api/serp/123?include=memento_url,related,unfurl,direct_links,unbranded
     - Related SERPs: /api/serp/123?include=related&related_size=5&same_provider=true
     """
+    from app.schemas.aql import SERPViewType
+    from fastapi.responses import RedirectResponse
+
     if related_size <= 0:
         raise HTTPException(
             status_code=400, detail="related_size must be a positive integer"
         )
+
+    # Handle view parameter
+    if view:
+        view = view.lower()
+
+        # Validate view type
+        valid_views = {v.value for v in SERPViewType}
+        if view not in valid_views:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid view type: {view}. Valid options: {', '.join(valid_views)}",
+            )
+
+        # Handle unbranded view
+        if view == SERPViewType.unbranded.value:
+            unbranded_data = await safe_search(aql_service.get_serp_unbranded(serp_id))
+            return {
+                "serp_id": serp_id,
+                "view": SERPViewType.unbranded.value,
+                "data": unbranded_data,
+            }
+
+        # Handle snapshot view - redirect to web archive memento
+        elif view == SERPViewType.snapshot.value:
+            memento_data = await safe_search(aql_service.get_serp_memento_url(serp_id))
+            memento_url = memento_data.get("memento_url")
+            if not memento_url:
+                raise HTTPException(
+                    status_code=404,
+                    detail="Memento URL not available for this SERP",
+                )
+            return RedirectResponse(url=memento_url)
+
+        # view == 'raw' falls through to normal processing
 
     serp_data = await safe_search(aql_service.get_serp_by_id(serp_id))
 
@@ -613,6 +661,30 @@ async def get_serp_unified(
         response["unbranded"] = unbranded_data
 
     return response
+
+
+# ---------------------------------------------------------
+# SERP VIEW SWITCHER ENDPOINT
+# ---------------------------------------------------------
+@router.get("/serps/{serp_id}/views")
+@limiter.limit("20/minute")
+async def get_serp_views(request: Request, serp_id: str):
+    """
+    Get available view options for a SERP to enable easy switching between views.
+
+    Returns metadata about available views:
+    - Raw (full data) - always available
+    - Unbranded (normalized) - available if results exist
+    - Snapshot (web archive) - available if memento URL can be constructed
+
+    This endpoint helps researchers switch between different SERP representations,
+    similar to switching between "plain text" and "full HTML" views.
+
+    Examples:
+    - /api/serps/123/views
+    """
+    result = await safe_search(aql_service.get_serp_view_options(serp_id))
+    return result
 
 
 # ---------------------------------------------------------

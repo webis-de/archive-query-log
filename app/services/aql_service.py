@@ -1219,6 +1219,92 @@ async def get_serp_unbranded(serp_id: str) -> dict | None:
 
 
 # ---------------------------------------------------------
+# 13. Get Available Views for a SERP
+# ---------------------------------------------------------
+async def get_serp_view_options(serp_id: str) -> dict | None:
+    """
+    Get available view options for switching between different SERP representations.
+
+    Returns metadata about which views are available for this SERP:
+    - Raw view: Full original data
+    - Unbranded view: Normalized, provider-agnostic view
+    - Snapshot view: Web archive memento link
+
+    Args:
+        serp_id: The SERP document ID
+
+    Returns:
+        dict with keys:
+            - serp_id: The SERP document ID
+            - views: List of available view options with metadata
+    """
+    from app.schemas.aql import SERPViewType
+
+    serp = await get_serp_by_id(serp_id)
+    if not serp:
+        return None
+
+    source = serp["_source"]
+    capture_info = source.get("capture", {})
+
+    views = []
+
+    # Raw view - always available
+    views.append(
+        {
+            "type": SERPViewType.raw.value,
+            "label": "Full Data",
+            "description": "Complete SERP data as archived, including all metadata",
+            "available": True,
+            "url": f"/api/serps/{serp_id}",
+        }
+    )
+
+    # Unbranded view - always available (shows empty results if no data)
+    # The unbranded function handles missing results gracefully
+    views.append(
+        {
+            "type": SERPViewType.unbranded.value,
+            "label": "Unbranded View",
+            "description": "Provider-agnostic normalized view of search results",
+            "available": True,
+            "url": f"/api/serps/{serp_id}?view=unbranded",
+        }
+    )
+
+    # Snapshot view - available if memento URL can be constructed
+    has_memento = bool(
+        capture_info.get("url")
+        and capture_info.get("timestamp")
+        and source.get("archive", {}).get("memento_api_url")
+    )
+
+    memento_url = None
+    if has_memento:
+        archive_base = source.get("archive", {}).get("memento_api_url")
+        timestamp = capture_info.get("timestamp")
+        original_url = capture_info.get("url")
+        memento_url = f"{archive_base}/{timestamp}/{original_url}"
+
+    views.append(
+        {
+            "type": SERPViewType.snapshot.value,
+            "label": "Web Archive Snapshot",
+            "description": "View original SERP in web archive memento interface",
+            "available": has_memento,
+            "url": memento_url,
+            "reason": (
+                None
+                if has_memento
+                else "Memento URL cannot be constructed from available data"
+            ),
+        }
+    )
+
+    return {"serp_id": serp["_id"], "views": views}
+
+
+# ---------------------------------------------------------
 # 14. Get Provider by ID
 # ---------------------------------------------------------
 async def get_provider_by_id(provider_id: str) -> Any | None:

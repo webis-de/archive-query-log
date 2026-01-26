@@ -1,5 +1,17 @@
 from pydantic import BaseModel
 from typing import Optional
+from enum import Enum
+
+
+# ---------------------------------------------------------
+# View Type Enums
+# ---------------------------------------------------------
+class SERPViewType(str, Enum):
+    """Different view modes for displaying archived SERPs"""
+
+    raw = "raw"  # Original full SERP data as stored
+    unbranded = "unbranded"  # Provider-agnostic normalized view
+    snapshot = "snapshot"  # Web archive memento/snapshot view
 
 
 class SERPSearchBasic(BaseModel):
@@ -55,3 +67,25 @@ class ArchiveList(BaseModel):
 
     total: int
     archives: list[ArchiveMetadata]
+
+
+# ---------------------------------------------------------
+# SERP View Schemas
+# ---------------------------------------------------------
+class SERPView(BaseModel):
+    """Metadata about a specific SERP view option"""
+
+    type: SERPViewType
+    label: str
+    description: str
+    available: bool
+    url: Optional[str] = None
+    reason: Optional[str] = None  # Reason if not available
+
+
+class SERPViewOptions(BaseModel):
+    """Available view options for a SERP"""
+
+    serp_id: str
+    current_view: SERPViewType
+    views: list[SERPView]
