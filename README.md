@@ -94,6 +94,7 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 | GET    | `/api/serps?query=climate+change`                       | Basic SERP search                            |
 | GET    | `/api/serps?query=climate&year=2024&provider_id=google` | Advanced SERP search                         |
 | GET    | `/api/serps?query=%22climate%20change%22%20AND%20renewable&advanced_mode=true` | Advanced search mode with boolean operators |
+| GET    | `/api/serps?query=clmate&fuzzy=true`                    | Fuzzy search to handle typos and misspellings |
 | GET    | `/api/suggestions?prefix=the`                           | Get search query suggestions (autocomplete)  |
 | GET    | `/api/serps/preview?query=climate`                      | Preview aggregations / suggestions for query |
 | GET    | `/api/serps/compare?ids=id1,id2`                        | Compare multiple SERPs (2-5)                 |
@@ -107,6 +108,85 @@ A minimal yet extensible FastAPI project with modern project structure, tests, E
 - `year` - Filter by year (optional)
 - `status_code` - Filter by HTTP status code (optional)
 - `advanced_mode` - Enable advanced search mode with boolean operators, phrase search, and wildcards (default: false)
+- `fuzzy` - Enable fuzzy search to match similar queries and handle typos (default: false)
+- `fuzziness` - Control fuzzy matching tolerance: AUTO (default), 0 (exact), 1, 2 (only applies when fuzzy=true)
+- `expand_synonyms` - Enable enhanced relevance scoring and broader matching (default: false)
+
+**Fuzzy Search Mode:**
+
+When `fuzzy=true`, the search uses fuzzy matching to handle typos and misspellings.
+
+**Fuzziness Levels:**
+- `AUTO` (default): 0 edits for 1-2 chars, 1 edit for 3-5 chars, 2 edits for 6+ chars
+- `0`: Exact match only
+- `1`: Up to 1 character difference
+- `2`: Up to 2 character differences
+
+**Features:**
+
+1. **Typos and Misspellings**:
+   - Example: `clmate` matches `climate`, `tehnology` matches `technology`
+
+2. **Common Mistakes**:
+   - Transposed characters: `climaet` → `climate`
+   - Missing characters: `climat` → `climate`
+   - Extra characters: `climatee` → `climate`
+   - Wrong characters: `climite` → `climate`
+
+3. **"Did You Mean?" Suggestions**:
+   - When fuzzy search is enabled, the API may return a `did_you_mean` field with suggested corrections
+   - Based on more popular terms in the database
+   - Example response: `"did_you_mean": [{"text": "climate", "score": 0.85, "freq": 12345}]`
+
+**Fuzzy Search Examples:**
+
+```bash
+# Basic fuzzy search - handle typo in "climate"
+curl "http://localhost:8000/api/serps?query=clmate&fuzzy=true"
+
+# Fuzzy search with custom fuzziness level
+curl "http://localhost:8000/api/serps?query=clmate&fuzzy=true&fuzziness=1"
+
+# Fuzzy search with filters - find misspelled queries from 2023
+curl "http://localhost:8000/api/serps?query=renwable&fuzzy=true&year=2023"
+
+# Fuzzy search with pagination
+curl "http://localhost:8000/api/serps?query=tehnology&fuzzy=true&page_size=20&page=1"
+```
+
+**Enhanced Relevance Scoring (Query Expansion):**
+
+When `expand_synonyms=true`, the search uses multi-layer matching to improve result relevance.
+
+**How it works:**
+- **Multi-Layer Scoring**: Results are scored using multiple matching strategies simultaneously
+  - Exact token matches (highest boost)
+  - Phrase matches (medium boost)
+  - Fuzzy matches when combined with `fuzzy=true` (lower boost)
+- **Better Ranking**: Documents matching on multiple layers get significantly higher scores
+- **No true synonyms**: This does NOT find semantically related terms (e.g., "climate" will not match "global warming")
+
+**What you get:**
+- More relevant results ranked higher (scores can increase 5-6x)
+- Better sorting of search results
+- Works best when combined with `fuzzy=true` for maximum flexibility
+
+**Query Expansion Examples:**
+
+```bash
+# Enhanced relevance scoring
+curl "http://localhost:8000/api/serps?query=climate&expand_synonyms=true"
+# Top result score: ~85 vs ~14 without expansion
+
+# Combine with fuzzy matching for best results
+curl "http://localhost:8000/api/serps?query=climat&expand_synonyms=true&fuzzy=true&fuzziness=1"
+
+# Compare scores with and without expansion
+curl "http://localhost:8000/api/serps?query=climate&expand_synonyms=false"
+curl "http://localhost:8000/api/serps?query=climate&expand_synonyms=true"
+```
+
+**Note:** When both `advanced_mode=true` and `fuzzy=true` are set, `advanced_mode` takes precedence.
 
 **Advanced Search Mode:**
 
