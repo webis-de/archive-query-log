@@ -338,22 +338,75 @@ curl "http://localhost:8000/api/serps/timeline?query=climate&interval=week&last_
 
 #### ✅ SERP Detail Endpoints
 
-| Method | Endpoint                                             | Description                            |
-| ------ | ---------------------------------------------------- | -------------------------------------- |
-| GET    | `/api/serp/{serp_id}`                                | Get a single SERP by ID                |
-| GET    | `/api/serp/{serp_id}?include=original_url`           | Include original SERP URL              |
-| GET    | `/api/serp/{serp_id}?include=memento_url`            | Include Memento SERP URL               |
-| GET    | `/api/serp/{serp_id}?include=related&related_size=X` | Include related SERPs                  |
-| GET    | `/api/serp/{serp_id}?include=unfurl`                 | Include unfurled URL components        |
-| GET    | `/api/serp/{serp_id}?include=direct_links`           | Include direct search result links     |
-| GET    | `/api/serp/{serp_id}?include=unbranded`              | Include provider-agnostic unified view |
+| Method | Endpoint                                               | Description                            |
+| ------ | ------------------------------------------------------ | -------------------------------------- |
+| GET    | `/api/serps/{serp_id}`                                 | Get a single SERP by ID                |
+| GET    | `/api/serps/{serp_id}?include=original_url`            | Include original SERP URL              |
+| GET    | `/api/serps/{serp_id}?include=memento_url`             | Include Memento SERP URL               |
+| GET    | `/api/serps/{serp_id}?include=related&related_size=X`  | Include related SERPs                  |
+| GET    | `/api/serps/{serp_id}?include=unfurl`                  | Include unfurled URL components        |
+| GET    | `/api/serps/{serp_id}?include=direct_links`            | Include direct search result links     |
+| GET    | `/api/serps/{serp_id}?include=unbranded`               | Include provider-agnostic unified view |
+| GET    | `/api/serps/{serp_id}/views`                           | Get available view options for a SERP  |
+| GET    | `/api/serps/{serp_id}?view=unbranded`                  | Get unbranded view of a SERP           |
+| GET    | `/api/serps/{serp_id}?view=snapshot`                   | Redirect to web archive snapshot       |
 
 **Query Parameters for SERP Detail Endpoint:**
 
+- `view` - View mode: `raw` (default), `unbranded`, or `snapshot`
 - `include` - Comma-separated fields: `original_url`, `memento_url`, `related`, `unfurl`, `direct_links`, `unbranded`
 - `remove_tracking` - Remove tracking parameters from original URL (requires `include=original_url`)
 - `related_size` - Number of related SERPs (requires `include=related`, default: 10)
 - `same_provider` - Only return related SERPs from same provider (requires `include=related`)
+
+**SERP View Switcher:**
+
+The SERP detail endpoint supports different view modes to help researchers examine archived SERPs from different perspectives:
+
+1. **Raw View** (`view=raw`, default):
+   - Complete SERP data as stored in the database
+   - Includes all metadata, results, and archive information
+   - Always available
+
+2. **Unbranded View** (`view=unbranded`):
+   - Provider-agnostic, normalized view of search results
+   - Strips provider-specific branding and formatting
+   - Focuses on query and results in a standardized format
+   - Available when parsed results exist
+
+3. **Snapshot View** (`view=snapshot`):
+   - Redirects to the web archive's memento interface
+   - Shows the original SERP as it appeared in the archive
+   - Available when memento URL can be constructed
+
+**View Discovery:**
+
+Use `/api/serps/{serp_id}/views` to discover which views are available for a specific SERP. The response includes:
+- View type and label
+- Description of what the view provides
+- Availability status
+- Direct URL to access the view
+- Reason if view is unavailable
+
+**Example View Switcher Requests:**
+
+```bash
+# Discover available views for a SERP
+curl http://localhost:8000/api/serps/abc123/views
+
+# Get raw view (default, full data)
+curl http://localhost:8000/api/serps/abc123
+curl http://localhost:8000/api/serps/abc123?view=raw
+
+# Get unbranded view (normalized, provider-agnostic)
+curl http://localhost:8000/api/serps/abc123?view=unbranded
+
+# Redirect to web archive snapshot
+curl -L http://localhost:8000/api/serps/abc123?view=snapshot
+
+# Combine view parameter with include fields (raw view only)
+curl http://localhost:8000/api/serps/abc123?view=raw&include=related,unfurl
+```
 
 #### ✅ Archive Endpoints
 
