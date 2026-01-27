@@ -85,7 +85,7 @@ export class SearchViewComponent {
   readonly pageSize = signal<number>(10);
   readonly queryMetadata = signal<QueryMetadataResponse | null>(null);
   readonly isMetadataLoading = signal<boolean>(false);
-  readonly suggestions = this.suggestionsService.suggestions;
+  readonly suggestions = this.suggestionsService.suggestionsWithMeta;
   readonly showSuggestions = signal<boolean>(false);
   searchQuery = '';
   currentSearchId?: string;

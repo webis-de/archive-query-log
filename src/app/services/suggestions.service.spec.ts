@@ -3,6 +3,7 @@ import { of, throwError } from 'rxjs';
 import { SuggestionsService } from './suggestions.service';
 import { ApiService } from './api.service';
 import { SearchResponse } from '../models/search.model';
+import { SearchService } from './search.service';
 
 describe('SuggestionsService', () => {
   let service: SuggestionsService;
@@ -98,8 +99,24 @@ describe('SuggestionsService', () => {
     mockApiService = jasmine.createSpyObj('ApiService', ['get']);
     mockApiService.get.and.returnValue(of(mockSearchResponse));
 
+    const mockSearchService = jasmine.createSpyObj('SearchService', ['getQueryMetadata']);
+    mockSearchService.getQueryMetadata.and.returnValue(
+      of({
+        query: 'test',
+        total_hits: 123,
+        top_queries: [],
+        date_histogram: [],
+        top_providers: [],
+        top_archives: [],
+      }),
+    );
+
     TestBed.configureTestingModule({
-      providers: [SuggestionsService, { provide: ApiService, useValue: mockApiService }],
+      providers: [
+        SuggestionsService,
+        { provide: ApiService, useValue: mockApiService },
+        { provide: SearchService, useValue: mockSearchService },
+      ],
     });
   });
 
@@ -154,8 +171,8 @@ describe('SuggestionsService', () => {
       tick(service.DEBOUNCE_TIME_MS);
       flushMicrotasks();
 
-      // Should only make one API call with the last value
-      expect(mockApiService.get).toHaveBeenCalledTimes(1);
+      // We now fetch suggestions and augment them with metadata, which results in two calls
+      expect(mockApiService.get).toHaveBeenCalledTimes(2);
       expect(mockApiService.get).toHaveBeenCalledWith('/api/serps', {
         query: 'test3',
         size: 5,
@@ -203,6 +220,18 @@ describe('SuggestionsService', () => {
 
       // Should return empty array on error
       expect(errorService.suggestions()).toEqual([]);
+    }));
+
+    it('should augment suggestions with preview metadata (score)', fakeAsync(() => {
+      // mockSearchService defined in beforeEach returns total_hits: 123
+      service.search('test');
+      tick(service.DEBOUNCE_TIME_MS);
+      flushMicrotasks();
+
+      const withMeta = service.suggestionsWithMeta();
+      expect(withMeta.length).toBe(2);
+      expect(withMeta[0].score).toBe(123);
+      expect(withMeta[1].score).toBe(123);
     }));
   });
 
