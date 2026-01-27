@@ -16,8 +16,13 @@ import {
 export class SearchService {
   private readonly apiService = inject(ApiService);
 
-  search(query: string, size?: number, offset?: number): Observable<SearchResponse> {
-    const params: Record<string, string | number> = {
+  search(
+    query: string,
+    size?: number,
+    offset?: number,
+    advancedMode?: boolean,
+  ): Observable<SearchResponse> {
+    const params: Record<string, string | number | boolean> = {
       query: query,
     };
 
@@ -27,12 +32,15 @@ export class SearchService {
     if (offset !== undefined) {
       params['offset'] = offset;
     }
+    if (advancedMode !== undefined) {
+      params['advanced_mode'] = advancedMode;
+    }
 
     return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, params);
   }
 
   searchWithParams(params: SearchParams): Observable<SearchResponse> {
-    const apiParams: Record<string, string | number> = {
+    const apiParams: Record<string, string | number | boolean> = {
       query: params.query,
     };
 
@@ -47,6 +55,9 @@ export class SearchService {
     }
     if (params.status_code !== undefined) {
       apiParams['status_code'] = params.status_code;
+    }
+    if (params.advanced_mode !== undefined) {
+      apiParams['advanced_mode'] = params.advanced_mode;
     }
 
     return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, apiParams);

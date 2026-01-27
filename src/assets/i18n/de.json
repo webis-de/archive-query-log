@@ -121,6 +121,8 @@
     "providerLoadError": "Fehler beim Laden der Anbieter",
     "noProvidersFound": "Keine Anbieter gefunden",
     "selectedCount": "{{count}} ausgewählt",
+    "advancedMode": "Erweiterter Suchmodus",
+    "advancedModeTooltip": "AND, OR, Phrasensuche und Platzhalter verwenden",
     "reset": "Zurücksetzen",
     "apply": "Anwenden",
     "badges": {

@@ -83,6 +83,7 @@ export interface SearchParams {
   provider_id?: string;
   year?: number;
   status_code?: number;
+  advanced_mode?: boolean;
 }
 
 export interface QueryHistogramBucket {

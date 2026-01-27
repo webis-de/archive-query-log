@@ -3,6 +3,7 @@ export interface FilterState {
   dateTo: string;
   status: string;
   providers: string[];
+  advancedMode?: boolean;
 }
 
 export interface FilterProvider {
