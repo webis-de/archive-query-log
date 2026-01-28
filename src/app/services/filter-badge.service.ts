@@ -26,6 +26,20 @@ export class FilterBadgeService {
       filters.providers.forEach(p => badges.push(`${providerLabel}: ${p}`));
     }
 
+    if (filters.advancedMode) {
+      badges.push(this.translate.instant('filter.badges.advancedSearch') as string);
+    }
+
+    if (filters.fuzzy) {
+      const fuzzyLabel = this.translate.instant('filter.badges.fuzzySearch') as string;
+      const fuzziness = filters.fuzziness || 'AUTO';
+      badges.push(`${fuzzyLabel} (${fuzziness})`);
+    }
+
+    if (filters.expandSynonyms) {
+      badges.push(this.translate.instant('filter.badges.expandSynonyms') as string);
+    }
+
     return badges.length === 0 ? [this.translate.instant('filter.badges.all') as string] : badges;
   }
 

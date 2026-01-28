@@ -75,6 +75,10 @@ export interface SearchResponse {
     results_per_page: number;
     total_pages: number;
   };
+  fuzzy: boolean;
+  fuzziness: string | null;
+  expand_synonyms: boolean;
+  did_you_mean?: { text: string; score: number; freq: number }[];
 }
 
 export interface SearchParams {
@@ -84,6 +88,9 @@ export interface SearchParams {
   year?: number;
   status_code?: number;
   advanced_mode?: boolean;
+  fuzzy?: boolean;
+  fuzziness?: 'AUTO' | '0' | '1' | '2';
+  expand_synonyms?: boolean;
 }
 
 export interface QueryHistogramBucket {

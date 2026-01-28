@@ -4,6 +4,9 @@ export interface FilterState {
   status: string;
   providers: string[];
   advancedMode?: boolean;
+  fuzzy?: boolean;
+  fuzziness?: 'AUTO' | '0' | '1' | '2';
+  expandSynonyms?: boolean;
 }
 
 export interface FilterProvider {

@@ -26,6 +26,9 @@ describe('SuggestionsService', () => {
       results_per_page: 10,
       total_pages: 1,
     },
+    fuzzy: false,
+    fuzziness: null,
+    expand_synonyms: false,
     results: [
       {
         _index: 'test-index',

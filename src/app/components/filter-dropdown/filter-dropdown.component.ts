@@ -52,7 +52,9 @@ export class FilterDropdownComponent implements OnInit {
   readonly dateTo = signal<string>('');
   readonly status = signal<string>('any');
   readonly advancedMode = signal<boolean>(false);
-  readonly placeholderToggle = signal<boolean>(false);
+  readonly fuzzySearch = signal<boolean>(false);
+  readonly fuzziness = signal<'AUTO' | '0' | '1' | '2'>('AUTO');
+  readonly expandSynonyms = signal<boolean>(false);
   readonly isOpen = signal<boolean>(false);
   readonly providers = signal<FilterProvider[]>([]);
   readonly providerSearch = signal<string>('');
@@ -111,6 +113,9 @@ export class FilterDropdownComponent implements OnInit {
         this.dateTo.set(filterValue.dateTo || '');
         this.status.set(filterValue.status || 'any');
         this.advancedMode.set(filterValue.advancedMode || false);
+        this.fuzzySearch.set(filterValue.fuzzy ?? false);
+        this.fuzziness.set(filterValue.fuzziness ?? 'AUTO');
+        this.expandSynonyms.set(filterValue.expandSynonyms ?? false);
 
         if (filterValue.providers && filterValue.providers.length > 0) {
           this.providers.update(providers =>
@@ -149,7 +154,9 @@ export class FilterDropdownComponent implements OnInit {
     this.dateTo.set('');
     this.status.set('any');
     this.advancedMode.set(false);
-    this.placeholderToggle.set(false);
+    this.fuzzySearch.set(false);
+    this.fuzziness.set('AUTO');
+    this.expandSynonyms.set(false);
     this.providerSearch.set('');
     this.providers.update(providers => providers.map(p => ({ ...p, checked: p.label === 'All' })));
 
@@ -178,8 +185,16 @@ export class FilterDropdownComponent implements OnInit {
     this.advancedMode.set(value);
   }
 
-  updatePlaceholderToggle(value: boolean): void {
-    this.placeholderToggle.set(value);
+  updateFuzzySearch(value: boolean): void {
+    this.fuzzySearch.set(value);
+  }
+
+  updateFuzziness(value: 'AUTO' | '0' | '1' | '2'): void {
+    this.fuzziness.set(value);
+  }
+
+  updateExpandSynonyms(value: boolean): void {
+    this.expandSynonyms.set(value);
   }
 
   updateProviderSearch(value: string): void {
@@ -261,6 +276,9 @@ export class FilterDropdownComponent implements OnInit {
       status: this.status(),
       providers: selectedProviders,
       advancedMode: this.advancedMode(),
+      fuzzy: this.fuzzySearch(),
+      fuzziness: this.fuzziness(),
+      expandSynonyms: this.expandSynonyms(),
     };
 
     this.filtersChanged.emit(currentState);

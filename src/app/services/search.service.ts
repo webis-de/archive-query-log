@@ -21,6 +21,9 @@ export class SearchService {
     size?: number,
     offset?: number,
     advancedMode?: boolean,
+    fuzzy?: boolean,
+    fuzziness?: string,
+    expandSynonyms?: boolean,
   ): Observable<SearchResponse> {
     const params: Record<string, string | number | boolean> = {
       query: query,
@@ -34,6 +37,15 @@ export class SearchService {
     }
     if (advancedMode !== undefined) {
       params['advanced_mode'] = advancedMode;
+    }
+    if (fuzzy !== undefined) {
+      params['fuzzy'] = fuzzy;
+    }
+    if (fuzziness) {
+      params['fuzziness'] = fuzziness;
+    }
+    if (expandSynonyms !== undefined) {
+      params['expand_synonyms'] = expandSynonyms;
     }
 
     return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, params);
@@ -58,6 +70,15 @@ export class SearchService {
     }
     if (params.advanced_mode !== undefined) {
       apiParams['advanced_mode'] = params.advanced_mode;
+    }
+    if (params.fuzzy !== undefined) {
+      apiParams['fuzzy'] = params.fuzzy;
+    }
+    if (params.fuzziness) {
+      apiParams['fuzziness'] = params.fuzziness;
+    }
+    if (params.expand_synonyms !== undefined) {
+      apiParams['expand_synonyms'] = params.expand_synonyms;
     }
 
     return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, apiParams);

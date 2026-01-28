@@ -54,10 +54,45 @@
               <input
                 type="checkbox"
                 class="toggle toggle-sm"
-                [ngModel]="placeholderToggle()"
-                (ngModelChange)="updatePlaceholderToggle($event)"
+                [ngModel]="fuzzySearch()"
+                (ngModelChange)="updateFuzzySearch($event)"
               />
-              <span class="text-sm font-medium text-base-content">Placeholder</span>
+              <span
+                class="text-sm font-medium text-base-content"
+                [aqlTooltip]="'filter.fuzzySearchTooltip' | translate"
+                [tooltipPosition]="'right'"
+              >
+                {{ 'filter.fuzzySearch' | translate }}
+              </span>
+            </label>
+          </div>
+          <div *ngIf="fuzzySearch()" class="mt-3 space-y-2">
+            <div class="flex items-center gap-2">
+              <label for="fuzziness-select" class="text-sm font-medium text-base-content/60 w-24">
+                {{ 'filter.fuzziness' | translate }}
+              </label>
+              <select
+                id="fuzziness-select"
+                class="select select-sm select-bordered flex-1"
+                [ngModel]="fuzziness()"
+                (ngModelChange)="updateFuzziness($event)"
+              >
+                <option value="AUTO">AUTO</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                class="toggle toggle-sm"
+                [ngModel]="expandSynonyms()"
+                (ngModelChange)="updateExpandSynonyms($event)"
+              />
+              <span class="text-sm font-medium text-base-content">
+                {{ 'filter.expandSynonyms' | translate }}
+              </span>
             </label>
           </div>
         </div>

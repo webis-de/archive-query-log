@@ -46,7 +46,13 @@
     "paramsLabel": "Parameters",
     "parserUrl": "URL Parser",
     "parserPage": "Page Parser",
-    "parserWarc": "WARC Parser"
+    "parserWarc": "WARC Parser",
+    "didYouMean": "Did you mean:",
+    "match": "match",
+    "frequency": "Freq",
+    "frequencyTooltip": "Frequency in search index",
+    "searchInsteadFor": "Search instead for",
+    "suggestQuery": "Search for {{query}}"
   },
   "searchStats": {
     "title": "Query overview",
@@ -130,8 +136,20 @@
       "status": "Status",
       "provider": "Provider",
       "date": "Date",
-      "until": "Until"
-    }
+      "until": "Until",
+      "advancedSearch": "Advanced Search",
+      "fuzzySearch": "Fuzzy Search",
+      "expandSynonyms": "Expand Synonyms"
+    },
+    "fuzzySearch": "Fuzzy Search",
+    "fuzzySearchTooltip": "handle typos and similar queries",
+    "fuzziness": "Fuzziness Level",
+    "fuzzinessAuto": "Auto",
+    "fuzzinessExact": "Exact (0)",
+    "fuzziness1": "Low (1)",
+    "fuzziness2": "High (2)",
+    "expandSynonyms": "Expand Synonyms",
+    "expandSynonymsTooltip": "Find related terms and synonyms"
   },
   "metadata": {
     "panel": "Metadata Panel",
