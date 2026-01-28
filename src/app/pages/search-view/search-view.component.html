@@ -119,20 +119,54 @@
           [class.lg:ml-0]="isPanelOpen()"
         >
           <div class="w-full max-w-[800px] mb-4">
-            <div class="flex items-center gap-2 p-3 bg-base-200 rounded-lg">
-              <span class="text-base-content/70">{{ 'search.didYouMean' | translate }}</span>
-              <div class="flex flex-wrap gap-2">
-                @for (suggestion of didYouMeanSuggestions(); track suggestion.text) {
+            <div class="bg-base-200 rounded-lg p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-base-content/70 font-medium">
+                  {{ 'search.didYouMean' | translate }}
+                </span>
+                @if (originalQuery()) {
                   <aql-button
                     btnType="link"
-                    size="lg"
-                    (buttonClick)="handleSuggestionClick(suggestion.text)"
+                    size="md"
+                    (buttonClick)="searchOriginalQuery()"
                     [attr.aria-label]="
-                      'search.suggestQuery' | translate: { query: suggestion.text }
+                      'search.searchInsteadFor' | translate: { query: originalQuery() }
                     "
                   >
-                    {{ suggestion.text }}
+                    {{ 'search.searchInsteadFor' | translate }}: "{{ originalQuery() }}"
                   </aql-button>
+                }
+              </div>
+              <div class="flex flex-wrap gap-3">
+                @for (suggestion of didYouMeanSuggestions(); track suggestion.text) {
+                  <div class="flex items-center gap-2">
+                    <aql-button
+                      btnType="default"
+                      btnStyle="default"
+                      size="md"
+                      btnStyle="full"
+                      [flatten]="true"
+                      (buttonClick)="handleSuggestionClick(suggestion.text)"
+                      [attr.aria-label]="
+                        'search.suggestQuery' | translate: { query: suggestion.text }
+                      "
+                    >
+                      {{ suggestion.text }}
+                    </aql-button>
+                    <div class="flex items-center gap-2 text-xs">
+                      <span class="badge badge-sm badge-primary badge-outline">
+                        {{ (suggestion.score * 100).toFixed(0) }}% {{ 'search.match' | translate }}
+                      </span>
+                      @if (suggestion.freq > 0) {
+                        <span
+                          class="badge badge-sm badge-ghost"
+                          [title]="'search.frequencyTooltip' | translate"
+                        >
+                          {{ 'search.frequency' | translate }}: {{ suggestion.freq }}
+                        </span>
+                      }
+                    </div>
+                  </div>
                 }
               </div>
             </div>

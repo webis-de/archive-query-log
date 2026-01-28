@@ -78,7 +78,7 @@ export interface SearchResponse {
   fuzzy: boolean;
   fuzziness: string | null;
   expand_synonyms: boolean;
-  did_you_mean?: { text: string; score: number }[];
+  did_you_mean?: { text: string; score: number; freq: number }[];
 }
 
 export interface SearchParams {

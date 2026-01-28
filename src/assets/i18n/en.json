@@ -47,7 +47,12 @@
     "parserUrl": "URL Parser",
     "parserPage": "Page Parser",
     "parserWarc": "WARC Parser",
-    "didYouMean": "Did you mean:"
+    "didYouMean": "Did you mean:",
+    "match": "match",
+    "frequency": "Freq",
+    "frequencyTooltip": "Frequency in search index",
+    "searchInsteadFor": "Search instead for",
+    "suggestQuery": "Search for {{query}}"
   },
   "searchStats": {
     "title": "Query overview",
@@ -131,7 +136,10 @@
       "status": "Status",
       "provider": "Provider",
       "date": "Date",
-      "until": "Until"
+      "until": "Until",
+      "advancedSearch": "Advanced Search",
+      "fuzzySearch": "Fuzzy Search",
+      "expandSynonyms": "Expand Synonyms"
     },
     "fuzzySearch": "Fuzzy Search",
     "fuzzySearchTooltip": "handle typos and similar queries",

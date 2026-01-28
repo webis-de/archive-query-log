@@ -159,6 +159,18 @@ export class LandingComponent {
         if (this.currentFilters.providers && this.currentFilters.providers.length > 0) {
           queryParams['provider'] = this.currentFilters.providers.join(',');
         }
+        if (this.currentFilters.advancedMode) {
+          queryParams['advanced_mode'] = 'true';
+        }
+        if (this.currentFilters.fuzzy) {
+          queryParams['fuzzy'] = 'true';
+        }
+        if (this.currentFilters.fuzziness) {
+          queryParams['fuzziness'] = this.currentFilters.fuzziness;
+        }
+        if (this.currentFilters.expandSynonyms) {
+          queryParams['expand_synonyms'] = 'true';
+        }
       }
 
       // Save search to history with all parameters

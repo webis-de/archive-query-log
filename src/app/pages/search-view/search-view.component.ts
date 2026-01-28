@@ -85,7 +85,8 @@ export class SearchViewComponent {
   readonly pageSize = signal<number>(10);
   readonly queryMetadata = signal<QueryMetadataResponse | null>(null);
   readonly isMetadataLoading = signal<boolean>(false);
-  readonly didYouMeanSuggestions = signal<{ text: string; score: number }[]>([]);
+  readonly didYouMeanSuggestions = signal<{ text: string; score: number; freq: number }[]>([]);
+  readonly originalQuery = signal<string>('');
   readonly suggestions = this.suggestionsService.suggestionsWithMeta;
   readonly showSuggestions = signal<boolean>(false);
   searchQuery = '';
@@ -250,7 +251,13 @@ export class SearchViewComponent {
         next: response => {
           this.searchResults.set(response.results);
           this.totalCount.set(response.total);
-          this.didYouMeanSuggestions.set(response.did_you_mean || []);
+          const suggestions = response.did_you_mean || [];
+          if (suggestions.length > 0) {
+            this.originalQuery.set(this.searchQuery);
+          } else {
+            this.originalQuery.set('');
+          }
+          this.didYouMeanSuggestions.set(suggestions);
           this.isLoading.set(false);
 
           // Save search to history if not a temporary search or pagination change
@@ -349,6 +356,17 @@ export class SearchViewComponent {
     this.searchQuery = suggestion;
     this.currentPage.set(1);
     this.onSearch();
+  }
+
+  searchOriginalQuery(): void {
+    const original = this.originalQuery();
+    if (original) {
+      this.searchQuery = original;
+      this.originalQuery.set('');
+      this.didYouMeanSuggestions.set([]);
+      this.currentPage.set(1);
+      this.onSearch();
+    }
   }
 
   onPageChange(page: number): void {
