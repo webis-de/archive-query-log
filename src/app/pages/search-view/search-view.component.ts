@@ -10,7 +10,7 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   AqlHeaderBarComponent,
@@ -42,6 +42,7 @@ import { SearchResultItemComponent } from '../../components/search-result-item/s
     CommonModule,
     FormsModule,
     TranslateModule,
+    RouterLink,
     AqlHeaderBarComponent,
     AqlInputFieldComponent,
     AqlDropdownComponent,
