@@ -111,6 +111,34 @@
 
   <div class="flex flex-row flex-1 overflow-hidden">
     <div class="flex-1 overflow-y-auto px-4 py-6 transition-all duration-300 relative">
+      <!-- Did You Mean Suggestions -->
+      @if (didYouMeanSuggestions().length > 0) {
+        <div
+          class="transition-all duration-300"
+          [class.lg:ml-40]="!isPanelOpen()"
+          [class.lg:ml-0]="isPanelOpen()"
+        >
+          <div class="w-full max-w-[800px] mb-4">
+            <div class="flex items-center gap-2 p-3 bg-base-200 rounded-lg">
+              <span class="text-base-content/70">{{ 'search.didYouMean' | translate }}</span>
+              <div class="flex flex-wrap gap-2">
+                @for (suggestion of didYouMeanSuggestions(); track suggestion.text) {
+                  <aql-button
+                    btnType="link"
+                    size="lg"
+                    (buttonClick)="handleSuggestionClick(suggestion.text)"
+                    [attr.aria-label]="
+                      'search.suggestQuery' | translate: { query: suggestion.text }
+                    "
+                  >
+                    {{ suggestion.text }}
+                  </aql-button>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
       <div
         class="transition-all duration-300"
         [class.lg:ml-40]="!isPanelOpen()"

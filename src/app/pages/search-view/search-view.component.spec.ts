@@ -29,6 +29,9 @@ describe('SearchViewComponent', () => {
       results_per_page: 10,
       total_pages: 0,
     },
+    fuzzy: false,
+    fuzziness: null,
+    expand_synonyms: false,
   };
 
   beforeEach(async () => {

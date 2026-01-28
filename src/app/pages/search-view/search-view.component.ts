@@ -85,6 +85,7 @@ export class SearchViewComponent {
   readonly pageSize = signal<number>(10);
   readonly queryMetadata = signal<QueryMetadataResponse | null>(null);
   readonly isMetadataLoading = signal<boolean>(false);
+  readonly didYouMeanSuggestions = signal<{ text: string; score: number }[]>([]);
   readonly suggestions = this.suggestionsService.suggestionsWithMeta;
   readonly showSuggestions = signal<boolean>(false);
   searchQuery = '';
@@ -131,6 +132,10 @@ export class SearchViewComponent {
       const providerStr = queryParams.get('provider');
       const providers = providerStr ? providerStr.split(',') : [];
       const advancedMode = queryParams.get('advanced_mode') === 'true';
+      const fuzzy = queryParams.get('fuzzy') === 'true';
+      const fuzziness =
+        (queryParams.get('fuzziness') as 'AUTO' | '0' | '1' | '2' | null) || undefined;
+      const expandSynonyms = queryParams.get('expand_synonyms') === 'true';
       const isTemp = queryParams.get('temp') === 'true';
       const searchId = queryParams.get('sid');
 
@@ -158,7 +163,10 @@ export class SearchViewComponent {
         toTimestamp ||
         status !== 'any' ||
         providers.length > 0 ||
-        advancedMode
+        advancedMode ||
+        fuzzy ||
+        fuzziness ||
+        expandSynonyms
       ) {
         this.initialFilters = {
           dateFrom: fromTimestamp,
@@ -166,8 +174,13 @@ export class SearchViewComponent {
           status,
           providers,
           advancedMode,
+          fuzzy,
+          fuzziness,
+          expandSynonyms,
         };
-        this.onFiltersChanged(this.initialFilters);
+        if (this.initialFilters) {
+          this.onFiltersChanged(this.initialFilters);
+        }
       }
 
       // Only trigger search if params changed and query exists
@@ -218,62 +231,94 @@ export class SearchViewComponent {
 
     const offset = (this.currentPage() - 1) * this.pageSize();
     const advancedMode = this.currentFilters?.advancedMode || false;
+    const fuzzy = this.currentFilters?.fuzzy || undefined;
+    const fuzziness = this.currentFilters?.fuzziness || undefined;
+    const expandSynonyms = this.currentFilters?.expandSynonyms || undefined;
     this.loadQueryMetadata(trimmedQuery);
 
-    this.searchService.search(this.searchQuery, this.pageSize(), offset, advancedMode).subscribe({
-      next: response => {
-        this.searchResults.set(response.results);
-        this.totalCount.set(response.total);
-        this.isLoading.set(false);
+    this.searchService
+      .search(
+        this.searchQuery,
+        this.pageSize(),
+        offset,
+        advancedMode,
+        fuzzy,
+        fuzziness,
+        expandSynonyms,
+      )
+      .subscribe({
+        next: response => {
+          this.searchResults.set(response.results);
+          this.totalCount.set(response.total);
+          this.didYouMeanSuggestions.set(response.did_you_mean || []);
+          this.isLoading.set(false);
 
-        // Save search to history if not a temporary search or pagination change
-        if (!this.isTemporarySearch && !this.isPaginationChange && !this.isLoadedFromHistory) {
-          const searchFilter: SearchFilter = {
-            query: this.searchQuery,
-          };
+          // Save search to history if not a temporary search or pagination change
+          if (!this.isTemporarySearch && !this.isPaginationChange && !this.isLoadedFromHistory) {
+            const searchFilter: SearchFilter = {
+              query: this.searchQuery,
+            };
 
-          if (this.currentFilters?.providers && this.currentFilters.providers.length > 0) {
-            searchFilter.provider = this.currentFilters.providers.join(',');
-          }
-          if (this.currentFilters?.dateFrom) {
-            searchFilter.from_timestamp = this.currentFilters.dateFrom;
-          }
-          if (this.currentFilters?.dateTo) {
-            searchFilter.to_timestamp = this.currentFilters.dateTo;
-          }
-          if (this.currentFilters?.advancedMode) {
-            searchFilter.advanced_mode = this.currentFilters.advancedMode;
+            if (this.currentFilters?.providers && this.currentFilters.providers.length > 0) {
+              searchFilter.provider = this.currentFilters.providers.join(',');
+            }
+            if (this.currentFilters?.dateFrom) {
+              searchFilter.from_timestamp = this.currentFilters.dateFrom;
+            }
+            if (this.currentFilters?.dateTo) {
+              searchFilter.to_timestamp = this.currentFilters.dateTo;
+            }
+            if (this.currentFilters?.advancedMode) {
+              searchFilter.advanced_mode = this.currentFilters.advancedMode;
+            }
+            if (this.currentFilters?.fuzzy) {
+              searchFilter.fuzzy = this.currentFilters.fuzzy;
+            }
+            if (this.currentFilters?.fuzziness) {
+              searchFilter.fuzziness = this.currentFilters.fuzziness;
+            }
+            if (this.currentFilters?.expandSynonyms) {
+              searchFilter.expand_synonyms = this.currentFilters.expandSynonyms;
+            }
+
+            const searchItem = this.searchHistoryService.addSearch(searchFilter);
+            this.currentSearchId = searchItem.id;
+
+            // Build query params for URL
+            const queryParams: Record<string, string> = { q: this.searchQuery, sid: searchItem.id };
+            if (searchFilter.provider) queryParams['provider'] = searchFilter.provider;
+            if (searchFilter.from_timestamp)
+              queryParams['from_timestamp'] = searchFilter.from_timestamp;
+            if (searchFilter.to_timestamp) queryParams['to_timestamp'] = searchFilter.to_timestamp;
+            if (this.currentFilters?.status && this.currentFilters.status !== 'any') {
+              queryParams['status'] = this.currentFilters.status;
+            }
+            if (searchFilter.advanced_mode) {
+              queryParams['advanced_mode'] = 'true';
+            }
+            if (searchFilter.fuzzy) {
+              queryParams['fuzzy'] = 'true';
+            }
+            if (searchFilter.fuzziness) {
+              queryParams['fuzziness'] = searchFilter.fuzziness;
+            }
+            if (searchFilter.expand_synonyms) {
+              queryParams['expand_synonyms'] = 'true';
+            }
+
+            this.router.navigate(['/serps/search'], { queryParams, replaceUrl: true });
           }
 
-          const searchItem = this.searchHistoryService.addSearch(searchFilter);
-          this.currentSearchId = searchItem.id;
-
-          // Build query params for URL
-          const queryParams: Record<string, string> = { q: this.searchQuery, sid: searchItem.id };
-          if (searchFilter.provider) queryParams['provider'] = searchFilter.provider;
-          if (searchFilter.from_timestamp)
-            queryParams['from_timestamp'] = searchFilter.from_timestamp;
-          if (searchFilter.to_timestamp) queryParams['to_timestamp'] = searchFilter.to_timestamp;
-          if (this.currentFilters?.status && this.currentFilters.status !== 'any') {
-            queryParams['status'] = this.currentFilters.status;
-          }
-          if (searchFilter.advanced_mode) {
-            queryParams['advanced_mode'] = 'true';
-          }
-
-          this.router.navigate(['/serps/search'], { queryParams, replaceUrl: true });
-        }
-
-        this.isLoadedFromHistory = false;
-        this.isPaginationChange = false;
-      },
-      error: error => {
-        console.error('Search error:', error);
-        this.isLoading.set(false);
-        this.searchResults.set([]);
-        this.totalCount.set(0);
-      },
-    });
+          this.isLoadedFromHistory = false;
+          this.isPaginationChange = false;
+        },
+        error: error => {
+          console.error('Search error:', error);
+          this.isLoading.set(false);
+          this.searchResults.set([]);
+          this.totalCount.set(0);
+        },
+      });
   }
 
   onMetadataIntervalChange(interval: 'day' | 'week' | 'month'): void {
@@ -298,6 +343,12 @@ export class SearchViewComponent {
 
   onClosePanel(): void {
     this.isPanelOpen.set(false);
+  }
+
+  handleSuggestionClick(suggestion: string): void {
+    this.searchQuery = suggestion;
+    this.currentPage.set(1);
+    this.onSearch();
   }
 
   onPageChange(page: number): void {

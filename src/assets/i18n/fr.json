@@ -68,7 +68,8 @@
     "paramsLabel": "Paramètres",
     "parserUrl": "Analyseur URL",
     "parserPage": "Analyseur Page",
-    "parserWarc": "Analyseur WARC"
+    "parserWarc": "Analyseur WARC",
+    "didYouMean": "Vouliez-vous dire :"
   },
   "searchStats": {
     "title": "Query overview",
@@ -153,8 +154,17 @@
       "status": "Statut",
       "provider": "Fournisseur",
       "date": "Date",
-      "until": "Jusqu'à"
-    }
+      "jusqu'à": "Jusqu'à"
+    },
+    "fuzzySearch": "Recherche floue",
+    "fuzzySearchTooltip": "gérer les fautes de frappe et les requêtes similaires",
+    "fuzziness": "Niveau de flou",
+    "fuzzinessAuto": "Automatique",
+    "fuzzinessExact": "Exact (0)",
+    "fuzziness1": "Faible (1)",
+    "fuzziness2": "Élevé (2)",
+    "expandSynonyms": "Étendre les synonymes",
+    "expandSynonymsTooltip": "Trouver des termes et synonymes connexes"
   },
   "metadata": {
     "panel": "Panneau de métadonnées",

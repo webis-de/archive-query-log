@@ -46,7 +46,8 @@
     "paramsLabel": "Parameter",
     "parserUrl": "URL-Parser",
     "parserPage": "Seiten-Parser",
-    "parserWarc": "WARC-Parser"
+    "parserWarc": "WARC Parser",
+    "didYouMean": "Meinten Sie:"
   },
   "searchStats": {
     "title": "Query overview",
@@ -131,7 +132,16 @@
       "provider": "Anbieter",
       "date": "Datum",
       "until": "Bis"
-    }
+    },
+    "fuzzySearch": "Fuzzy-Suche",
+    "fuzzySearchTooltip": "Tippfehler und ähnliche Anfragen behandeln",
+    "fuzziness": "Unschärfe-Stufe",
+    "fuzzinessAuto": "Automatisch",
+    "fuzzinessExact": "Exakt (0)",
+    "fuzziness1": "Niedrig (1)",
+    "fuzziness2": "Hoch (2)",
+    "expandSynonyms": "Synonyme erweitern",
+    "expandSynonymsTooltip": "Verwandte Begriffe und Synonyme finden"
   },
   "metadata": {
     "panel": "Metadaten-Panel",

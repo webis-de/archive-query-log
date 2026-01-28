@@ -8,6 +8,9 @@ export interface SearchFilter {
   from_timestamp?: string;
   to_timestamp?: string;
   advanced_mode?: boolean;
+  fuzzy?: boolean;
+  fuzziness?: 'AUTO' | '0' | '1' | '2';
+  expand_synonyms?: boolean;
 }
 
 export interface SearchHistoryItem {
