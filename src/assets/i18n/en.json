@@ -121,6 +121,8 @@
     "providerLoadError": "Failed to load providers",
     "noProvidersFound": "No providers found",
     "selectedCount": "{{count}} selected",
+    "advancedMode": "Advanced Search Mode",
+    "advancedModeTooltip": "Use AND, OR, phrase search, and wildcards",
     "reset": "Reset",
     "apply": "Apply",
     "badges": {

@@ -51,6 +51,8 @@ export class FilterDropdownComponent implements OnInit {
   readonly dateFrom = signal<string>('');
   readonly dateTo = signal<string>('');
   readonly status = signal<string>('any');
+  readonly advancedMode = signal<boolean>(false);
+  readonly placeholderToggle = signal<boolean>(false);
   readonly isOpen = signal<boolean>(false);
   readonly providers = signal<FilterProvider[]>([]);
   readonly providerSearch = signal<string>('');
@@ -108,6 +110,7 @@ export class FilterDropdownComponent implements OnInit {
         this.dateFrom.set(filterValue.dateFrom || '');
         this.dateTo.set(filterValue.dateTo || '');
         this.status.set(filterValue.status || 'any');
+        this.advancedMode.set(filterValue.advancedMode || false);
 
         if (filterValue.providers && filterValue.providers.length > 0) {
           this.providers.update(providers =>
@@ -145,6 +148,8 @@ export class FilterDropdownComponent implements OnInit {
     this.dateFrom.set('');
     this.dateTo.set('');
     this.status.set('any');
+    this.advancedMode.set(false);
+    this.placeholderToggle.set(false);
     this.providerSearch.set('');
     this.providers.update(providers => providers.map(p => ({ ...p, checked: p.label === 'All' })));
 
@@ -167,6 +172,14 @@ export class FilterDropdownComponent implements OnInit {
 
   updateStatus(value: string): void {
     this.status.set(value);
+  }
+
+  updateAdvancedMode(value: boolean): void {
+    this.advancedMode.set(value);
+  }
+
+  updatePlaceholderToggle(value: boolean): void {
+    this.placeholderToggle.set(value);
   }
 
   updateProviderSearch(value: string): void {
@@ -247,6 +260,7 @@ export class FilterDropdownComponent implements OnInit {
       dateTo: this.dateTo(),
       status: this.status(),
       providers: selectedProviders,
+      advancedMode: this.advancedMode(),
     };
 
     this.filtersChanged.emit(currentState);

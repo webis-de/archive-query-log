@@ -130,6 +130,7 @@ export class SearchViewComponent {
       const status = queryParams.get('status') || 'any';
       const providerStr = queryParams.get('provider');
       const providers = providerStr ? providerStr.split(',') : [];
+      const advancedMode = queryParams.get('advanced_mode') === 'true';
       const isTemp = queryParams.get('temp') === 'true';
       const searchId = queryParams.get('sid');
 
@@ -148,15 +149,23 @@ export class SearchViewComponent {
         to_timestamp: toTimestamp,
         status,
         provider: providerStr,
+        advanced_mode: advancedMode,
       });
 
       // Update filters
-      if (fromTimestamp || toTimestamp || status !== 'any' || providers.length > 0) {
+      if (
+        fromTimestamp ||
+        toTimestamp ||
+        status !== 'any' ||
+        providers.length > 0 ||
+        advancedMode
+      ) {
         this.initialFilters = {
           dateFrom: fromTimestamp,
           dateTo: toTimestamp,
           status,
           providers,
+          advancedMode,
         };
         this.onFiltersChanged(this.initialFilters);
       }
@@ -208,9 +217,10 @@ export class SearchViewComponent {
     this.hasSearched.set(true);
 
     const offset = (this.currentPage() - 1) * this.pageSize();
+    const advancedMode = this.currentFilters?.advancedMode || false;
     this.loadQueryMetadata(trimmedQuery);
 
-    this.searchService.search(this.searchQuery, this.pageSize(), offset).subscribe({
+    this.searchService.search(this.searchQuery, this.pageSize(), offset, advancedMode).subscribe({
       next: response => {
         this.searchResults.set(response.results);
         this.totalCount.set(response.total);
@@ -231,6 +241,9 @@ export class SearchViewComponent {
           if (this.currentFilters?.dateTo) {
             searchFilter.to_timestamp = this.currentFilters.dateTo;
           }
+          if (this.currentFilters?.advancedMode) {
+            searchFilter.advanced_mode = this.currentFilters.advancedMode;
+          }
 
           const searchItem = this.searchHistoryService.addSearch(searchFilter);
           this.currentSearchId = searchItem.id;
@@ -243,6 +256,9 @@ export class SearchViewComponent {
           if (searchFilter.to_timestamp) queryParams['to_timestamp'] = searchFilter.to_timestamp;
           if (this.currentFilters?.status && this.currentFilters.status !== 'any') {
             queryParams['status'] = this.currentFilters.status;
+          }
+          if (searchFilter.advanced_mode) {
+            queryParams['advanced_mode'] = 'true';
           }
 
           this.router.navigate(['/serps/search'], { queryParams, replaceUrl: true });
@@ -321,19 +337,26 @@ export class SearchViewComponent {
       if (
         searchItem.filter.provider ||
         searchItem.filter.from_timestamp ||
-        searchItem.filter.to_timestamp
+        searchItem.filter.to_timestamp ||
+        searchItem.filter.advanced_mode
       ) {
         this.initialFilters = {
           dateFrom: searchItem.filter.from_timestamp || '',
           dateTo: searchItem.filter.to_timestamp || '',
           status: 'any',
           providers: searchItem.filter.provider ? searchItem.filter.provider.split(',') : [],
+          advancedMode: searchItem.filter.advanced_mode || false,
         };
         this.onFiltersChanged(this.initialFilters);
       }
 
       this.searchService
-        .search(searchItem.filter.query, searchItem.filter.size, searchItem.filter.offset)
+        .search(
+          searchItem.filter.query,
+          searchItem.filter.size,
+          searchItem.filter.offset,
+          searchItem.filter.advanced_mode,
+        )
         .subscribe({
           next: response => {
             this.searchResults.set(response.results);

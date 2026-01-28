@@ -32,6 +32,36 @@
         (mousedown)="$event.stopPropagation()"
         (keydown)="$event.stopPropagation()"
       >
+        <!-- Toggle Section -->
+        <div class="p-2 border-b border-base-300">
+          <div class="flex items-center justify-between gap-3">
+            <label class="flex items-center gap-2 cursor-pointer flex-1">
+              <input
+                type="checkbox"
+                class="toggle toggle-sm"
+                [ngModel]="advancedMode()"
+                (ngModelChange)="updateAdvancedMode($event)"
+              />
+              <span
+                class="text-sm font-medium text-base-content"
+                [aqlTooltip]="'filter.advancedModeTooltip' | translate"
+                [tooltipPosition]="'right'"
+              >
+                {{ 'filter.advancedMode' | translate }}
+              </span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer flex-1">
+              <input
+                type="checkbox"
+                class="toggle toggle-sm"
+                [ngModel]="placeholderToggle()"
+                (ngModelChange)="updatePlaceholderToggle($event)"
+              />
+              <span class="text-sm font-medium text-base-content">Placeholder</span>
+            </label>
+          </div>
+        </div>
+
         <div class="p-2 border-b border-base-300">
           <div class="flex gap-4">
             <div class="flex-1">

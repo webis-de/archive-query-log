@@ -7,6 +7,7 @@ export interface SearchFilter {
   archive?: string;
   from_timestamp?: string;
   to_timestamp?: string;
+  advanced_mode?: boolean;
 }
 
 export interface SearchHistoryItem {

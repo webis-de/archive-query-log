@@ -144,6 +144,8 @@
     "providerLoadError": "Échec du chargement des fournisseurs",
     "noProvidersFound": "Aucun fournisseur trouvé",
     "selectedCount": "{{count}} sélectionné(s)",
+    "advancedMode": "Mode de recherche avancée",
+    "advancedModeTooltip": "Utiliser AND, OR, recherche de phrase et caractères génériques",
     "reset": "Réinitialiser",
     "apply": "Appliquer",
     "badges": {
