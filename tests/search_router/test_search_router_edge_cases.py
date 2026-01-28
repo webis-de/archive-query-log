@@ -77,7 +77,7 @@ def test_get_serp_unified_include_with_whitespace(client):
         "app.routers.search.aql_service.get_serp_unfurl",
         new=async_return(mock_unfurl_data),
     ):
-        r = client.get("/serp/test-id?include=original_url,unfurl")
+        r = client.get("/serps/test-id?include=original_url,unfurl")
         assert r.status_code == 200
         assert "original_url" in r.json()
         assert "unfurl" in r.json()

@@ -54,7 +54,7 @@ def test_get_serp_unified_basic(client):
     with patch(
         "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ):
-        r = client.get("/serp/test-uuid-1234")
+        r = client.get("/serps/test-uuid-1234")
         assert r.status_code == 200
         assert r.json()["serp_id"] == "test-uuid-1234"
         assert r.json()["serp"] == mock_serp
@@ -79,7 +79,7 @@ def test_get_serp_unified_with_original_url(client):
         "app.routers.search.aql_service.get_serp_original_url",
         new=async_return(mock_url_data),
     ):
-        r = client.get("/serp/test-id?include=original_url")
+        r = client.get("/serps/test-id?include=original_url")
         assert r.status_code == 200
         assert r.json()["original_url"] == "https://google.com/search?q=test"
         assert "serp" in r.json()
@@ -100,7 +100,7 @@ def test_get_serp_unified_with_tracking_removal(client):
         "app.routers.search.aql_service.get_serp_original_url",
         new=async_return(mock_url_data),
     ):
-        r = client.get("/serp/test-id?include=original_url&remove_tracking=true")
+        r = client.get("/serps/test-id?include=original_url&remove_tracking=true")
         assert r.status_code == 200
         assert (
             r.json()["original_url"]
@@ -126,7 +126,7 @@ def test_get_serp_unified_with_memento_url(client):
         "app.routers.search.aql_service.get_serp_memento_url",
         new=async_return(mock_memento_data),
     ):
-        r = client.get("/serp/test-id?include=memento_url")
+        r = client.get("/serps/test-id?include=memento_url")
         assert r.status_code == 200
         assert "memento_url" in r.json()
         assert "web.archive.org" in r.json()["memento_url"]
@@ -149,7 +149,7 @@ def test_get_serp_unified_with_related(client):
         "app.routers.search.aql_service.get_related_serps",
         new=async_return(mock_related),
     ):
-        r = client.get("/serp/test-id?include=related&related_size=10")
+        r = client.get("/serps/test-id?include=related&related_size=10")
         assert r.status_code == 200
         assert "related" in r.json()
         assert r.json()["related"]["count"] == 2
@@ -158,7 +158,7 @@ def test_get_serp_unified_with_related(client):
 
 def test_get_serp_unified_related_invalid_size(client):
     """Test invalid related_size parameter"""
-    r = client.get("/serp/test-id?include=related&related_size=0")
+    r = client.get("/serps/test-id?include=related&related_size=0")
     assert r.status_code == 400
 
 
@@ -189,7 +189,7 @@ def test_get_serp_unified_with_unfurl(client):
         "app.routers.search.aql_service.get_serp_unfurl",
         new=async_return(mock_unfurl_data),
     ):
-        r = client.get("/serp/test-id?include=unfurl")
+        r = client.get("/serps/test-id?include=unfurl")
         assert r.status_code == 200
         assert "unfurl" in r.json()
         assert r.json()["unfurl"]["scheme"] == "https"
@@ -235,7 +235,7 @@ def test_get_serp_unified_multiple_includes(client):
         "app.routers.search.aql_service.get_serp_unfurl",
         new=async_return(mock_unfurl_data),
     ):
-        r = client.get("/serp/test-id?include=original_url,memento_url,related,unfurl")
+        r = client.get("/serps/test-id?include=original_url,memento_url,related,unfurl")
         assert r.status_code == 200
         assert "original_url" in r.json()
         assert "memento_url" in r.json()
@@ -249,7 +249,7 @@ def test_get_serp_unified_multiple_includes(client):
 def test_get_serp_unified_not_found(client):
     """Test unified SERP detail when SERP doesn't exist"""
     with patch("app.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
-        r = client.get("/serp/nonexistent-id")
+        r = client.get("/serps/nonexistent-id")
         assert r.status_code == 404
 
 
@@ -265,6 +265,6 @@ def test_get_serp_unified_elasticsearch_error(client):
         "app.routers.search.aql_service.get_serp_by_id",
         new=AsyncMock(side_effect=raise_error),
     ):
-        r = client.get("/serp/test-id")
+        r = client.get("/serps/test-id")
         assert r.status_code == 503
         assert "connection" in r.json()["detail"].lower()

@@ -753,8 +753,8 @@ async def preview_search(
                 }
             },
             "top_providers": {
-                # Use provider.id which is expected to be keyword and stable
-                "terms": {"field": "provider.id", "size": top_providers}
+                # Use provider.domain for readable output (e.g., "google.com", "bing.com")
+                "terms": {"field": "provider.domain", "size": top_providers}
             },
             "top_archives": {
                 "terms": {
@@ -841,16 +841,13 @@ async def preview_search(
     # Fallbacks for providers if empty
     if not top_providers_out:
         try:
-            # 1) Try keyword name if available
+            # 1) Fallback to provider.id (UUIDs as last resort)
             prov_fallback_body = {
                 "query": query_clause,
                 "size": 0,
                 "aggs": {
                     "top_providers": {
-                        "terms": {
-                            "field": "provider.name.keyword",
-                            "size": top_providers,
-                        }
+                        "terms": {"field": "provider.id", "size": top_providers}
                     }
                 },
             }
@@ -869,13 +866,16 @@ async def preview_search(
 
     if not top_providers_out:
         try:
-            # 2) Last resort: non-keyword provider.name (may require fielddata)
+            # 2) Last resort: use provider.domain.keyword if available
             prov_fallback_body2 = {
                 "query": query_clause,
                 "size": 0,
                 "aggs": {
                     "top_providers": {
-                        "terms": {"field": "provider.name", "size": top_providers}
+                        "terms": {
+                            "field": "provider.domain.keyword",
+                            "size": top_providers,
+                        }
                     }
                 },
             }

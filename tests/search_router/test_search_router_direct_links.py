@@ -64,7 +64,7 @@ def test_get_serp_unified_with_direct_links(client):
         "app.routers.search.aql_service.get_serp_direct_links",
         new=async_return(mock_direct_links_data),
     ):
-        r = client.get("/serp/test-id?include=direct_links")
+        r = client.get("/serps/test-id?include=direct_links")
         assert r.status_code == 200
         assert "direct_links" in r.json()
         assert r.json()["direct_links_count"] == 2
@@ -105,7 +105,7 @@ def test_get_serp_unified_with_direct_links_and_other_fields(client):
         "app.routers.search.aql_service.get_serp_direct_links",
         new=async_return(mock_direct_links_data),
     ):
-        r = client.get("/serp/test-id?include=original_url,direct_links")
+        r = client.get("/serps/test-id?include=original_url,direct_links")
         assert r.status_code == 200
         assert "original_url" in r.json()
         assert "direct_links" in r.json()
@@ -127,7 +127,7 @@ def test_get_serp_unified_direct_links_no_results(client):
         "app.routers.search.aql_service.get_serp_direct_links",
         new=async_return(mock_direct_links_data),
     ):
-        r = client.get("/serp/test-id?include=direct_links")
+        r = client.get("/serps/test-id?include=direct_links")
         assert r.status_code == 200
         assert r.json()["direct_links_count"] == 0
         assert r.json()["direct_links"] == []
