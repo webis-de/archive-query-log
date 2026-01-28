@@ -14,7 +14,7 @@
     'input-warning': color() === 'warning',
     'input-error': color() === 'error',
     'input-ghost': color() === 'ghost',
-    'opacity-80 pointer-events-none bg-[var(--color-base-200)]': disabled,
+    'opacity-80 pointer-events-none bg-[var(--color-base-200)]': disabled(),
     'rounded-[10px]': shape() === 'square',
     'rounded-full': shape() === 'circle',
   }"
@@ -41,8 +41,8 @@
     [class.text-sm]="size() === 'sm' || size() === 'md'"
     [class.text-base]="size() === 'lg'"
     [placeholder]="placeholder()"
-    [value]="value"
-    [disabled]="disabled"
+    [value]="value()"
+    [disabled]="disabled()"
     (input)="onInput($event)"
     [min]="min()"
     [max]="max()"
