@@ -24,7 +24,7 @@ def test_provider_by_id_success(client):
         mock_es.get.return_value = fake_doc
         mock_get_client.return_value = mock_es
 
-        resp = client.get("/api/provider/google")
+        resp = client.get("/api/providers/google")
         assert resp.status_code == 200
         data = resp.json()
         assert data["provider_id"] == "google"
@@ -52,7 +52,7 @@ def test_provider_by_id_not_found(client):
         mock_es.get.side_effect = Exception("ES error")
         mock_get_client.return_value = mock_es
 
-        resp = client.get("/api/provider/unknown")
+        resp = client.get("/api/providers/unknown")
         assert resp.status_code == 404
         data = resp.json()
         assert data["detail"] == "No results found"
