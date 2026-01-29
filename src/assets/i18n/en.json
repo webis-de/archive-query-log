@@ -307,6 +307,7 @@
     "moreItems": "+{{count}} more",
     "score": "Score",
     "andMore": "... and {{count}} more",
-    "addMore": "Add more"
+    "addMore": "Add more",
+    "maxItemsReached": "You can only compare up to {{max}} items."
   }
 }

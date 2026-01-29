@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { AppFooterComponent } from './components/footer/app-footer.component';
 import { AppSidebarComponent } from './components/sidebar/app-sidebar.component';
 import { SessionService } from './services/session.service';
+import { AqlToastComponent } from 'aql-stylings';
 
 // #region LEGACY - Uncomment when implementing user-based session storage
 // import { computed } from '@angular/core';
@@ -13,7 +14,7 @@ import { SessionService } from './services/session.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppFooterComponent, AppSidebarComponent],
+  imports: [RouterOutlet, AppFooterComponent, AppSidebarComponent, AqlToastComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

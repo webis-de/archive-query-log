@@ -66,7 +66,8 @@
     "moreItems": "+{{count}} de plus",
     "score": "Score",
     "andMore": "... et {{count}} de plus",
-    "addMore": "Ajouter plus"
+    "addMore": "Ajouter plus",
+    "maxItemsReached": "Vous ne pouvez comparer que jusqu'à {{max}} éléments."
   },
   "landing": {
     "welcomeMessage": "Bienvenue sur AQL Recherche",

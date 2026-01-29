@@ -1,5 +1,7 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
 import { CompareApiResponse, CompareResponse, SearchResult } from '../models/search.model';
+import { ToastService } from 'aql-stylings';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +15,9 @@ export class CompareService {
   });
   readonly isFull = computed(() => this.selectedSerpIds().length >= this.maxItems);
 
+  private readonly toastService = inject(ToastService);
+  private readonly translateService = inject(TranslateService);
+
   toggle(id: string): void {
     const current = this.selectedSerpIds();
     if (current.includes(id)) {
@@ -24,7 +29,14 @@ export class CompareService {
 
   add(id: string): void {
     const current = this.selectedSerpIds();
-    if (current.length < this.maxItems && !current.includes(id)) {
+    if (current.length >= this.maxItems) {
+      const message = this.translateService.instant('compare.maxItemsReached', {
+        max: this.maxItems,
+      });
+      this.toastService.show(message, 'warning');
+      return;
+    }
+    if (!current.includes(id)) {
       this.selectedSerpIds.update(ids => [...ids, id]);
     }
   }

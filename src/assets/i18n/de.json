@@ -307,6 +307,7 @@
     "moreItems": "+{{count}} weitere",
     "score": "Bewertung",
     "andMore": "... und {{count}} weitere",
-    "addMore": "Mehr hinzufügen"
+    "addMore": "Mehr hinzufügen",
+    "maxItemsReached": "Sie können maximal {{max}} Elemente vergleichen."
   }
 }
