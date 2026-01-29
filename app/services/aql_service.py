@@ -1308,13 +1308,41 @@ async def get_serp_view_options(serp_id: str) -> dict | None:
 # 14. Get Provider by ID
 # ---------------------------------------------------------
 async def get_provider_by_id(provider_id: str) -> Any | None:
-    """Fetch a single provider by ID from Elasticsearch."""
+    """
+    Fetch a single provider by ID or name from Elasticsearch.
+
+    Accepts both UUID and provider name (e.g., 'google' or 'f205fc44-d918-4b79-9a7f-c1373a6ff9f2').
+    """
     es = get_es_client()
+
+    # First try as UUID (direct lookup)
     try:
         response = await es.get(index="aql_providers", id=provider_id)
         return response
     except Exception:
-        return None
+        pass
+
+    # Try searching by name
+    try:
+        body = {
+            "query": {
+                "bool": {
+                    "should": [
+                        {"match": {"name": provider_id}},
+                        {"term": {"name.keyword": provider_id}},
+                    ]
+                }
+            },
+            "size": 1,
+        }
+        response = await es.search(index="aql_providers", body=body)
+        hits = response.get("hits", {}).get("hits", [])
+        if hits:
+            return hits[0]
+    except Exception:
+        pass
+
+    return None
 
 
 # ---------------------------------------------------------
@@ -1542,6 +1570,57 @@ async def compare_serps(serp_ids: List[str]) -> dict | None:
 
 
 # ---------------------------------------------------------
+# 17b. Resolve Provider Identifier (name or ID to UUID)
+# ---------------------------------------------------------
+async def _resolve_provider_id(provider_identifier: str) -> str | None:
+    """
+    Resolve a provider identifier (name or UUID) to its actual UUID.
+
+    First tries the identifier as-is (UUID), then searches by provider name.
+
+    Args:
+        provider_identifier: Provider name (e.g., 'google') or UUID
+
+    Returns:
+        The provider UUID, or None if not found
+    """
+    es = get_es_client()
+
+    # Try as UUID first (direct lookup)
+    try:
+        response = await es.get(index="aql_providers", id=provider_identifier)
+        return provider_identifier
+    except Exception:
+        pass
+
+    # Try searching by name/type field
+    try:
+        body = {
+            "query": {
+                "bool": {
+                    "should": [
+                        {"match": {"name": provider_identifier}},
+                        {"term": {"name.keyword": provider_identifier}},
+                        {"match": {"type": provider_identifier}},
+                        {"term": {"type.keyword": provider_identifier}},
+                    ]
+                }
+            },
+            "size": 1,
+        }
+        response = await es.search(index="aql_providers", body=body)
+        hits = response.get("hits", {}).get("hits", [])
+        if hits:
+            provider_id = hits[0]["_id"]
+            if isinstance(provider_id, str):
+                return provider_id
+    except Exception:
+        pass
+
+    return None
+
+
+# ---------------------------------------------------------
 # 18. Get Provider Statistics
 # ---------------------------------------------------------
 async def get_provider_statistics(
@@ -1556,7 +1635,7 @@ async def get_provider_statistics(
     Excludes hidden SERPs from all statistics.
 
     Args:
-        provider_id: Provider ID (e.g., 'google')
+        provider_id: Provider ID or name (e.g., 'google' or 'f205fc44-d918-4b79-9a7f-c1373a6ff9f2')
         interval: Histogram interval (day, week, month)
         last_n_months: Limit histogram to last N months (None/0 = no filter)
 
@@ -1571,8 +1650,13 @@ async def get_provider_statistics(
     """
     es = get_es_client()
 
+    # Resolve provider identifier to UUID
+    resolved_provider_id = await _resolve_provider_id(provider_id)
+    if not resolved_provider_id:
+        return None
+
     # Build query with filter
-    filter_clause: list[dict] = [{"term": {"provider.id": provider_id}}]
+    filter_clause: list[dict] = [{"term": {"provider.id": resolved_provider_id}}]
 
     if last_n_months is not None and last_n_months > 0:
         from datetime import datetime, timezone, timedelta
@@ -1702,7 +1786,7 @@ async def get_provider_statistics(
     ]
 
     return {
-        "provider_id": provider_id,
+        "provider_id": resolved_provider_id,
         "serp_count": serp_count,
         "unique_queries_count": unique_queries,
         "top_archives": top_archives_out,

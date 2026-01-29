@@ -7,7 +7,20 @@ from unittest.mock import patch
 @pytest.fixture
 def mock_provider_statistics_client(monkeypatch):
     class MockClient:
+        async def get(self, *args, **kwargs):
+            # Mock for provider ID resolution (UUID lookup)
+            raise Exception("Not found")  # Simulate UUID not found
+
         async def search(self, *args, **kwargs):
+            # Check if this is a provider lookup request (from _resolve_provider_id)
+            body = kwargs.get("body", {})
+            if body and "query" in body and body["query"].get("bool", {}).get("should"):
+                # This is a provider name lookup
+                return {
+                    "hits": {"hits": [{"_id": "google", "_source": {"name": "Google"}}]}
+                }
+
+            # Otherwise it's the main statistics query
             return {
                 "hits": {"total": {"value": 500, "relation": "eq"}, "hits": []},
                 "aggregations": {
@@ -43,7 +56,7 @@ def test_provider_statistics_router(client, mock_provider_statistics_client):
     data = resp.json()
 
     assert "provider_id" in data
-    assert data["provider_id"] == "google"
+    assert data["provider_id"] == "google"  # Resolved to UUID "google" (mock)
     assert "serp_count" in data
     assert data["serp_count"] == 500
     assert "unique_queries_count" in data

@@ -50,6 +50,8 @@ def test_provider_by_id_not_found(client):
     with patch("app.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.get.side_effect = Exception("ES error")
+        # Mock search to return no results (fallback from name lookup)
+        mock_es.search.return_value = {"hits": {"hits": []}}
         mock_get_client.return_value = mock_es
 
         resp = client.get("/api/providers/unknown")
