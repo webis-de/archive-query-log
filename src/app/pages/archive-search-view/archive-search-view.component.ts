@@ -130,9 +130,11 @@ export class ArchiveSearchViewComponent {
   }
 
   onClosePanel(): void {
-    this.selectedArchive.set(null);
-    this.selectedArchiveDetail.set(null);
     this.panelNavController.closePanel();
+    setTimeout(() => {
+      this.selectedArchive.set(null);
+      this.selectedArchiveDetail.set(null);
+    }, 300);
   }
 
   trackByArchiveId(index: number, item: ArchiveDetail): string {

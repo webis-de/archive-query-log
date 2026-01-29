@@ -131,9 +131,11 @@ export class ProviderSearchViewComponent {
   }
 
   onClosePanel(): void {
-    this.selectedProvider.set(null);
-    this.selectedProviderDetail.set(null);
     this.panelNavController.closePanel();
+    setTimeout(() => {
+      this.selectedProvider.set(null);
+      this.selectedProviderDetail.set(null);
+    }, 300);
   }
 
   trackByProviderId(index: number, item: ProviderDetail): string {

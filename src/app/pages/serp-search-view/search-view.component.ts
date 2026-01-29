@@ -369,8 +369,10 @@ export class SearchViewComponent {
   }
 
   onClosePanel(): void {
-    this.selectedResult.set(null);
     this.panelNavController.closePanel();
+    setTimeout(() => {
+      this.selectedResult.set(null);
+    }, 300);
   }
 
   handleSuggestionClick(suggestion: string): void {
