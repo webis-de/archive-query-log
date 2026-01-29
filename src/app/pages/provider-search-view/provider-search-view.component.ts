@@ -14,6 +14,7 @@ import { Location } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { combineLatest } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import {
   createPanelNavigationController,
   PanelNavigationController,
@@ -34,7 +35,9 @@ import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-
     TranslateModule,
     SearchHeaderComponent,
     SearchResultItemComponent,
+    SearchResultItemComponent,
     AppQueryMetadataPanelComponent,
+    ScrollingModule,
   ],
   templateUrl: './provider-search-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -131,6 +134,10 @@ export class ProviderSearchViewComponent {
     this.selectedProvider.set(null);
     this.selectedProviderDetail.set(null);
     this.panelNavController.closePanel();
+  }
+
+  trackByProviderId(index: number, item: ProviderDetail): string {
+    return item.id;
   }
 
   private loadProviders(): void {

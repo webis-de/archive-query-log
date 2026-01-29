@@ -14,6 +14,7 @@ import { Location } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { combineLatest } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import {
   createPanelNavigationController,
   PanelNavigationController,
@@ -35,7 +36,9 @@ import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-
     TranslateModule,
     SearchHeaderComponent,
     SearchResultItemComponent,
+    SearchResultItemComponent,
     AppQueryMetadataPanelComponent,
+    ScrollingModule,
   ],
   templateUrl: './archive-search-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -130,6 +133,10 @@ export class ArchiveSearchViewComponent {
     this.selectedArchive.set(null);
     this.selectedArchiveDetail.set(null);
     this.panelNavController.closePanel();
+  }
+
+  trackByArchiveId(index: number, item: ArchiveDetail): string {
+    return item.id;
   }
 
   private loadArchives(): void {

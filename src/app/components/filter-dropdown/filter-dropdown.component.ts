@@ -22,6 +22,7 @@ import {
   AqlCheckboxComponent,
   AqlTooltipDirective,
 } from 'aql-stylings';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FilterState, FilterProvider } from '../../models/filter.model';
 import { ProviderService, ProviderDetail } from '../../services/provider.service';
 import { LanguageService } from '../../services/language.service';
@@ -40,6 +41,7 @@ import { LanguageService } from '../../services/language.service';
     AqlRadioButtonComponent,
     AqlCheckboxComponent,
     AqlTooltipDirective,
+    ScrollingModule,
   ],
   templateUrl: './filter-dropdown.component.html',
   styleUrls: ['./filter-dropdown.component.css'],
@@ -239,6 +241,10 @@ export class FilterDropdownComponent implements OnInit {
         return updatedProviders;
       }
     });
+  }
+
+  trackByProviderId(index: number, item: FilterProvider): string {
+    return item.id;
   }
 
   private loadProviders(): void {
