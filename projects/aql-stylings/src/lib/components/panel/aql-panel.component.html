@@ -1,5 +1,5 @@
 <div
-  class="flex flex-col gap-4 bg-base-100 px-4 py-3"
+  class="flex flex-col gap-4 bg-base-100 px-4 py-3 h-full"
   [class.border]="bordered()"
   [class.border-base-300]="bordered() && !isActive()"
   [class.border-primary]="isActive()"
@@ -11,28 +11,34 @@
 >
   <!-- Title Section -->
   @if (panelTitle()) {
-    <div>
-      <h3 class="text-lg font-semibold text-base-content truncate" [title]="panelTitle()">
-        {{ panelTitle() }}
-      </h3>
-      @if (subtitle()) {
-        <div class="flex items-center gap-2 max-w-[50%]">
-          <a
-            [href]="subtitle()"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="link link-hover text-sm text-base-content/70 truncate flex-1 min-w-0"
-          >
-            {{ subtitle() }}
-          </a>
-          <ng-content select="[subtitle-action]"></ng-content>
-        </div>
-      }
+    <div class="flex items-start justify-between gap-4 mb-2">
+      <div class="min-w-0 flex-1 flex flex-col">
+        <h3 class="text-lg font-semibold text-base-content truncate" [title]="panelTitle()">
+          {{ panelTitle() }}
+        </h3>
+        @if (subtitle()) {
+          <div class="flex items-center gap-2 max-w-90">
+            <a
+              [href]="subtitle()"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link link-hover text-sm text-base-content/70 truncate flex-1 min-w-0"
+            >
+              {{ subtitle() }}
+            </a>
+            <ng-content select="[subtitle-action]"></ng-content>
+          </div>
+        }
+      </div>
+
+      <div class="flex items-start gap-2 flex-shrink-0">
+        <ng-content select="[header-action]"></ng-content>
+      </div>
     </div>
   }
 
   <!-- Content Section -->
-  <div>
+  <div class="flex-1 flex flex-col min-h-0">
     <ng-content></ng-content>
   </div>
 

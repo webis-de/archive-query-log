@@ -286,6 +286,27 @@
     "renameSearch": "Rename Search",
     "deleteSearch": "Delete Search",
     "confirmDeleteSearch": "Are you sure you want to delete the search",
-    "createNewProject": "Create new project and start querying the web archive"
+    "createNewProject": "Create new project and start querying the web archive",
+    "compare": "Compare"
+  },
+  "compare": {
+    "title": "Compare SERPs",
+    "back": "Back to Search",
+    "comparingItems": "Comparing {{count}} items",
+    "clearAll": "Clear All",
+    "selectItems": "Select items to compare",
+    "selectItemsHint": "Go to search results and select at least 2 items (max 5) to compare side-by-side.",
+    "goToSearch": "Go to Search",
+    "addToCompare": "Compare",
+    "addedToCompare": "Added to Compare",
+    "compareItems": "Compare ({{count}}) Items",
+    "similarityOverview": "Similarity Overview",
+    "jaccardSimilarity": "Jaccard Similarity",
+    "commonUrls": "Common URLs",
+    "uniqueUrls": "Unique URLs",
+    "moreItems": "+{{count}} more",
+    "score": "Score",
+    "andMore": "... and {{count}} more",
+    "addMore": "Add more"
   }
 }

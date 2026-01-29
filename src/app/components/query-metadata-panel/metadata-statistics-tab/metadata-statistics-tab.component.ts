@@ -7,18 +7,19 @@ import {
   DestroyRef,
   computed,
   ChangeDetectionStrategy,
+  Signal,
 } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import type { EChartsOption } from 'echarts';
 import { ArchiveService } from '../../../services/archive.service';
-import { ProviderService } from '../../../services/provider.service';
+import { ProviderService, ProviderDetail } from '../../../services/provider.service';
 import {
   ArchiveStatistics,
   ProviderStatistics,
   TopEntityItem,
 } from '../../../models/statistics.model';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { Observable } from 'rxjs';
 import { AqlBarChartComponent, AqlKpiCardComponent } from 'aql-stylings';
 
@@ -90,12 +91,24 @@ export class MetadataStatisticsTabComponent {
       ],
     };
   });
+  readonly providers: Signal<ProviderDetail[]>;
+  readonly providerMap: Signal<Map<string, string>>;
 
   private readonly archiveService = inject(ArchiveService);
   private readonly providerService = inject(ProviderService);
   private readonly destroyRef = inject(DestroyRef);
 
   constructor() {
+    this.providers = toSignal(this.providerService.getProviders(), {
+      initialValue: [] as ProviderDetail[],
+    });
+
+    this.providerMap = computed(() => {
+      const map = new Map<string, string>();
+      this.providers().forEach(p => map.set(p.id, p.name));
+      return map;
+    });
+
     effect(() => {
       const id = this.entityId();
       const type = this.type();
@@ -106,7 +119,10 @@ export class MetadataStatisticsTabComponent {
   }
 
   getEntityName(item: TopEntityItem): string {
-    return item.provider ?? item.archive ?? 'Unknown';
+    if (item.provider) {
+      return this.providerMap().get(item.provider) || item.provider;
+    }
+    return item.archive ?? 'Unknown';
   }
 
   private fetchStatistics(id: string, type: 'archive' | 'provider'): void {

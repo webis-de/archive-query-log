@@ -29,8 +29,9 @@ export const createPanelNavigationController = (
   };
 
   const navigateToItem = (itemId: string): void => {
+    const encodedId = encodeURIComponent(itemId);
     const queryString = buildQueryString();
-    location.go(`${basePath}/${itemId}${queryString ? '?' + queryString : ''}`);
+    location.go(`${basePath}/${encodedId}${queryString ? '?' + queryString : ''}`);
     isPanelOpen.set(true);
   };
 

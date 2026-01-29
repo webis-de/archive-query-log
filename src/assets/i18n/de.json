@@ -286,6 +286,27 @@
     "renameSearch": "Suche umbenennen",
     "deleteSearch": "Suche löschen",
     "confirmDeleteSearch": "Sind Sie sicher, dass Sie die Suche",
-    "createNewProject": "Neues Projekt erstellen und das Webarchiv abfragen"
+    "createNewProject": "Neues Projekt erstellen und das Webarchiv abfragen",
+    "compare": "Vergleichen"
+  },
+  "compare": {
+    "title": "SERPs vergleichen",
+    "back": "Zurück zur Suche",
+    "comparingItems": "Vergleiche {{count}} Elemente",
+    "clearAll": "Alle löschen",
+    "selectItems": "Elemente zum Vergleichen auswählen",
+    "selectItemsHint": "Gehen Sie zu den Suchergebnissen und wählen Sie mindestens 2 Elemente (max. 5) aus, um sie nebeneinander zu vergleichen.",
+    "goToSearch": "Zur Suche",
+    "addToCompare": "Vergleichen",
+    "addedToCompare": "Zum Vergleich hinzugefügt",
+    "compareItems": "({{count}}) Elemente vergleichen",
+    "similarityOverview": "Ähnlichkeitsübersicht",
+    "jaccardSimilarity": "Jaccard-Ähnlichkeit",
+    "commonUrls": "Gemeinsame URLs",
+    "uniqueUrls": "Einzigartige URLs",
+    "moreItems": "+{{count}} weitere",
+    "score": "Bewertung",
+    "andMore": "... und {{count}} weitere",
+    "addMore": "Mehr hinzufügen"
   }
 }

@@ -9,6 +9,40 @@
   (click)="onClick()"
   [hasFooter]="!!result()"
 >
+  <ng-container header-action>
+    @if (result(); as r) {
+      <div
+        (click)="$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()"
+        tabindex="0"
+        role="button"
+      >
+        @if (isCompared()) {
+          <aql-button
+            btnType="primary"
+            btnStyle="rounded"
+            [outline]="true"
+            size="sm"
+            iconBefore="bi-check text-lg"
+            (buttonClick)="compareService.toggle(r._id)"
+          >
+            {{ 'compare.addedToCompare' | translate }}
+          </aql-button>
+        } @else {
+          <aql-button
+            btnType="default"
+            btnStyle="rounded"
+            size="sm"
+            iconBefore="bi-plus text-lg"
+            (buttonClick)="compareService.toggle(r._id)"
+          >
+            {{ 'compare.addToCompare' | translate }}
+          </aql-button>
+        }
+      </div>
+    }
+  </ng-container>
+
   <aql-dropdown
     subtitle-action
     position="right"

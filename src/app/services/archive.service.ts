@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable, catchError, map, of, shareReplay } from 'rxjs';
 import { ApiService } from './api.service';
 import { API_CONFIG } from '../config/api.config';
-import { ArchivesApiResponse, ArchiveDetail, ArchiveDetailResponse } from '../models/archive.model';
+import { ArchivesApiResponse, ArchiveDetail } from '../models/archive.model';
 import { ArchiveStatistics } from '../models/statistics.model';
 
 @Injectable({
@@ -26,6 +26,8 @@ export class ArchiveService {
               id: archive.id,
               name: archive.name,
               cdx_api_url: archive.cdx_api_url,
+              memento_api_url: archive.memento_api_url,
+              homepage: archive.homepage,
               serp_count: archive.serp_count,
             })),
           ),
@@ -52,13 +54,21 @@ export class ArchiveService {
    * Fetch a specific archive by ID from the backend.
    */
   getArchiveById(archiveId: string): Observable<ArchiveDetail | null> {
-    return this.apiService.get<ArchiveDetailResponse>(API_CONFIG.endpoints.archive(archiveId)).pipe(
-      map(response => ({
-        id: response.archive.id,
-        name: response.archive.name,
-        cdx_api_url: response.archive.cdx_api_url,
-        memento_api_url: response.archive.memento_api_url,
-      })),
+    return this.apiService.get<ArchiveDetail>(API_CONFIG.endpoints.archive(archiveId)).pipe(
+      map(data => {
+        if (!data) {
+          throw new Error('Archive data not found in response');
+        }
+
+        return {
+          id: data.id,
+          name: data.name,
+          cdx_api_url: data.cdx_api_url,
+          memento_api_url: data.memento_api_url,
+          homepage: data.homepage,
+          serp_count: data.serp_count,
+        };
+      }),
       catchError(error => {
         console.error(`Failed to fetch archive ${archiveId}:`, error);
         return of(null);

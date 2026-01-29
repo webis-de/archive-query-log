@@ -23,6 +23,7 @@ export class AqlKpiCardComponent {
   readonly title = input.required<string>();
   readonly value = input.required<string | number>();
   readonly subtitle = input<string>();
+  readonly secondary = input<string>();
   readonly icon = input<string>();
   readonly colorScheme = input<KpiColorScheme>('primary');
   readonly formatAsNumber = input<boolean>(true);

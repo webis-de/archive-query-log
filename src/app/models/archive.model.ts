@@ -27,18 +27,5 @@ export interface ArchiveDetail {
   cdx_api_url?: string;
   serp_count?: number;
   memento_api_url?: string;
-}
-
-/**
- * Response from the archive detail API endpoint
- */
-export interface ArchiveDetailResponse {
-  archive: {
-    id: string;
-    name: string;
-    cdx_api_url?: string;
-    memento_api_url?: string;
-    homepage?: string;
-    serp_count?: number;
-  };
+  homepage?: string;
 }

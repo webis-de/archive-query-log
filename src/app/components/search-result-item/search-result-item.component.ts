@@ -14,6 +14,7 @@ import { LanguageService } from '../../services/language.service';
 import { SerpResultContentComponent } from './serp-result-content/serp-result-content.component';
 import { ProviderResultContentComponent } from './provider-result-content/provider-result-content.component';
 import { ArchiveResultContentComponent } from './archive-result-content/archive-result-content.component';
+import { CompareService } from '../../services/compare.service';
 
 export type ResultItem = SearchResult | ProviderDetail | ArchiveDetail;
 
@@ -63,8 +64,21 @@ export class SearchResultItemComponent {
     const res = this.result();
     return res ? this.languageService.formatDate(res._source.capture.timestamp) : '';
   });
+  readonly compareService = inject(CompareService);
+  isCompared = computed(() => {
+    const result = this.result();
+    return result ? this.compareService.isSelected(result._id) : false;
+  });
 
   private readonly languageService = inject(LanguageService);
+
+  toggleCompare(event: Event): void {
+    event.stopPropagation();
+    const result = this.result();
+    if (result) {
+      this.compareService.toggle(result._id);
+    }
+  }
 
   onClick(): void {
     const result = this.result();

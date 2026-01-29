@@ -212,3 +212,73 @@ export interface SerpDetailsResponse {
   }[];
   unbranded?: UnbrandedSerp;
 }
+
+export interface CompareResponse {
+  serps: Record<string, SearchResult>;
+  common_urls: string[];
+  unique_urls: Record<string, string[]>;
+  rankings: Record<string, Record<string, number>>;
+  similarity: {
+    jaccard: Record<string, Record<string, number>>;
+    spearman: Record<string, Record<string, number>>;
+  };
+  metadata_comparison: {
+    providers: Record<string, string>;
+    timestamps: Record<string, string>;
+    queries: Record<string, string>;
+    archives: Record<string, string>;
+    status_codes: Record<string, number>;
+    total_urls: Record<string, number>;
+  };
+}
+
+export interface RankingComparisonItem {
+  url: string;
+  ranks: Record<string, number>;
+}
+
+export interface CompareApiResponse {
+  comparison_summary: {
+    serp_count: number;
+    serp_ids: string[];
+    total_unique_urls: number;
+    common_urls_count: number;
+    avg_jaccard_similarity: number;
+  };
+  serps_metadata: {
+    serp_id: string;
+    query: string;
+    provider_id: string;
+    timestamp: string;
+    status_code: number;
+    archive: string;
+  }[];
+  serps_full_data: {
+    serp_id: string;
+    data: SearchResult;
+  }[];
+  url_comparison: {
+    common_urls: string[];
+    unique_per_serp: {
+      serp_id: string;
+      unique_urls: string[];
+    }[];
+    url_counts: {
+      serp_id: string;
+      total_urls: number;
+    }[];
+  };
+  ranking_comparison: RankingComparisonItem[];
+  similarity_metrics: {
+    pairwise_jaccard: {
+      serp_1: string;
+      serp_2: string;
+      jaccard_similarity: number;
+    }[];
+    pairwise_spearman: {
+      serp_1: string;
+      serp_2: string;
+      spearman_correlation: number;
+    }[];
+  };
+}

@@ -1,7 +1,7 @@
-import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   AqlHeaderBarComponent,
@@ -13,6 +13,7 @@ import {
 import { FilterDropdownComponent } from '../filter-dropdown/filter-dropdown.component';
 import { FilterState } from '../../models/filter.model';
 import { Suggestion } from '../../services/suggestions.service';
+import { CompareService } from '../../services/compare.service';
 
 export interface SearchHeaderConfig {
   labelKey: string;
@@ -20,6 +21,7 @@ export interface SearchHeaderConfig {
   showFilterDropdown?: boolean;
   showSuggestions?: boolean;
   showEntityTabs?: boolean;
+  allowComparison?: boolean;
 }
 
 @Component({
@@ -42,6 +44,7 @@ export interface SearchHeaderConfig {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchHeaderComponent {
+  readonly compareService = inject(CompareService);
   readonly searchQuery = input.required<string>();
   readonly config = input.required<SearchHeaderConfig>();
   readonly isPanelOpen = input.required<boolean>();
@@ -56,6 +59,8 @@ export class SearchHeaderComponent {
   readonly searchFocus = output<void>();
   readonly suggestionSelect = output<Suggestion>();
   readonly filtersChanged = output<FilterState>();
+
+  private readonly router = inject(Router);
 
   onSearchInput(value: string): void {
     this.searchQueryChange.emit(value);
@@ -75,6 +80,11 @@ export class SearchHeaderComponent {
 
   onFiltersChanged(filters: FilterState): void {
     this.filtersChanged.emit(filters);
+  }
+
+  navigateToCompare(): void {
+    const ids = this.compareService.selectedSerpIds().join(',');
+    this.router.navigate([`/serps/compare/${ids}`], { state: { returnUrl: this.router.url } });
   }
 
   stopPropagation(event: Event): void {

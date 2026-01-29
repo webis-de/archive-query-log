@@ -21,8 +21,10 @@
     </div>
     <div
       class="flex-1 transition-[margin-right] duration-300 ease-in-out"
-      [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
-      [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
+      [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed() && !config().allowComparison"
+      [class.mr-[calc(60vw-17rem)]]="
+        isPanelOpen() && isSidebarCollapsed() && config().allowComparison
+      "
     >
       <div class="flex flex-col ps-4 pe-8 py-4 w-full relative transition-all duration-300">
         <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
@@ -133,5 +135,37 @@
         }
       </div>
     </div>
+
+    @if (config().allowComparison) {
+      <div
+        class="flex items-start py-4 pr-6 pl-2 transition-opacity duration-300 w-[17rem] flex-shrink-0"
+        [class.opacity-0]="compareService.selectedSerpIds().length < 1"
+        [class.pointer-events-none]="compareService.selectedSerpIds().length < 1"
+      >
+        <div class="flex gap-2 w-full">
+          <aql-button
+            btnType="default"
+            btnStyle="rounded"
+            iconBefore="bi-x-lg"
+            class="flex-shrink-0"
+            [title]="'compare.clearAll' | translate"
+            (buttonClick)="compareService.clear()"
+          >
+          </aql-button>
+          <aql-button
+            btnType="primary"
+            btnStyle="rounded"
+            [fullWidth]="true"
+            iconAfter="bi-arrow-right"
+            (buttonClick)="navigateToCompare()"
+            [disabled]="compareService.selectedSerpIds().length < 2"
+          >
+            {{
+              'compare.compareItems' | translate: { count: compareService.selectedSerpIds().length }
+            }}
+          </aql-button>
+        </div>
+      </div>
+    }
   </div>
 </aql-header-bar>

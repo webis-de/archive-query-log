@@ -15,6 +15,11 @@
         {{ formattedValue() }}
       }
     </div>
+    @if (secondary()) {
+      <div class="stat-desc text-secondary">
+        {{ secondary() }}
+      </div>
+    }
     @if (subtitle()) {
       <div class="stat-desc opacity-60">
         {{ subtitle() }}

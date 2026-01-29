@@ -45,7 +45,28 @@
     "renameSearch": "Renommer la recherche",
     "deleteSearch": "Supprimer la recherche",
     "confirmDeleteSearch": "Êtes-vous sûr de vouloir supprimer la recherche",
-    "createNewProject": "Créer un nouveau projet et interroger l'archive web"
+    "createNewProject": "Créer un nouveau projet et interroger l'archive web",
+    "compare": "Comparer"
+  },
+  "compare": {
+    "title": "Comparer les SERPs",
+    "back": "Retour à la recherche",
+    "comparingItems": "Comparaison de {{count}} éléments",
+    "clearAll": "Tout effacer",
+    "selectItems": "Sélectionner des éléments à comparer",
+    "selectItemsHint": "Allez dans les résultats de recherche et sélectionnez au moins 2 éléments (maximum 5) pour les comparer côte à côte.",
+    "goToSearch": "Aller à la recherche",
+    "addToCompare": "Comparer",
+    "addedToCompare": "Ajouté au comparateur",
+    "compareItems": "Comparer ({{count}}) éléments",
+    "similarityOverview": "Aperçu de la similitude",
+    "jaccardSimilarity": "Similitude de Jaccard",
+    "commonUrls": "URLs communes",
+    "uniqueUrls": "URLs uniques",
+    "moreItems": "+{{count}} de plus",
+    "score": "Score",
+    "andMore": "... et {{count}} de plus",
+    "addMore": "Ajouter plus"
   },
   "landing": {
     "welcomeMessage": "Bienvenue sur AQL Recherche",
@@ -109,7 +130,6 @@
     "loading": "Loading...",
     "noData": "No data"
   },
-
   "project": {
     "name": "Nom du projet",
     "description": "Description",

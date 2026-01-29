@@ -44,6 +44,7 @@ interface NavItem {
     AqlButtonComponent,
     AqlTooltipDirective,
     LanguageSelectorComponent,
+    AqlButtonComponent,
     // #region LEGACY
     // FormsModule,
     // AqlMenuItemComponent,
@@ -67,12 +68,23 @@ export class AppSidebarComponent implements OnInit {
     { id: 'serps', label: 'sidebar.serps', icon: 'bi-search', route: '/' },
     { id: 'providers', label: 'sidebar.providers', icon: 'bi-globe', route: '/providers' },
     { id: 'archives', label: 'sidebar.archives', icon: 'bi-archive', route: '/archives' },
+    {
+      id: 'compare',
+      label: 'sidebar.compare',
+      icon: 'bi-layout-split',
+      route: '/compare',
+    },
   ];
   readonly isActiveRoute = computed(() => {
     const current = this.activeRoute();
     return (route: string) => {
       if (route === '/') {
-        return current === '/' || current.startsWith('/serps');
+        return (
+          current === '/' || (current.startsWith('/serps') && !current.startsWith('/serps/compare'))
+        );
+      }
+      if (route === '/compare') {
+        return current.startsWith('/compare') || current.startsWith('/serps/compare');
       }
       return current.startsWith(route);
     };

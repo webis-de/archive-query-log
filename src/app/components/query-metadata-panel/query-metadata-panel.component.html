@@ -31,9 +31,14 @@
           <h2 class="text-lg font-semibold truncate">
             {{ archive.name }}
           </h2>
-          <p class="text-sm text-base-content/60 font-mono truncate">
+          <a
+            [href]="archive.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-primary hover:underline truncate block"
+          >
             {{ archive.id }}
-          </p>
+          </a>
         } @else if (error()) {
           <h2 class="text-lg font-semibold text-error">{{ 'common.error' | translate }}</h2>
         } @else {
