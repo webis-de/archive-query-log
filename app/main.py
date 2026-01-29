@@ -51,7 +51,7 @@ app.add_middleware(
 # ---------------------------------------------------------
 # Setup slowapi Limiter
 # ---------------------------------------------------------
-limiter = Limiter(key_func=get_remote_address, default_limits=["10/minute"])
+limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
 app.state.limiter = limiter
 
 

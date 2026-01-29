@@ -469,6 +469,18 @@ curl "http://localhost:8000/api/archives/https://arquivo.pt/wayback"
 | GET    | `/api/providers/{provider_id}`             | Get metadata for a specific search provider         |
 | GET    | `/api/providers/{provider_id}/statistics`  | Get descriptive statistics for a search provider    |
 
+**Provider Identifier Resolution:**
+
+Both provider endpoints accept either a **provider UUID** or a **provider name**:
+
+- By name: `/api/providers/google`
+- By UUID: `/api/providers/f205fc44-d918-4b79-9a7f-c1373a6ff9f2`
+
+The API automatically resolves the identifier to the correct provider by:
+1. First trying it as a UUID (direct lookup in `aql_providers` index)
+2. If not found, searching by provider name
+3. Returns 404 if neither lookup succeeds
+
 **Query Parameters for Provider Statistics Endpoint:**
 
 - `interval` - Histogram interval: `day`, `week`, `month` (default: `month`)
@@ -482,17 +494,26 @@ curl "http://localhost:8000/api/archives/https://arquivo.pt/wayback"
 - Top web archives used by this provider
 - Date histogram of captures over time
 
-**Example Provider Statistics Requests:**
+**Example Provider Requests:**
 
 ```bash
-# Get statistics for a provider
+# Get provider metadata by name
+curl http://localhost:8000/api/providers/google
+
+# Get provider metadata by UUID
+curl http://localhost:8000/api/providers/f205fc44-d918-4b79-9a7f-c1373a6ff9f2
+
+# Get statistics for a provider (by name)
 curl http://localhost:8000/api/providers/google/statistics
 
-# Get statistics with custom interval and time range
+# Get statistics with custom interval and time range (by name)
 curl http://localhost:8000/api/providers/google/statistics?interval=week&last_n_months=12
 
+# Get statistics by UUID
+curl http://localhost:8000/api/providers/f205fc44-d918-4b79-9a7f-c1373a6ff9f2/statistics
+
 # Get daily statistics for all available data
-curl http://localhost:8000/api/providers/bing/statistics?interval=day&last_n_months=null
+curl http://localhost:8000/api/providers/google/statistics?interval=day&last_n_months=null
 ```
 
 #### ✅ Archive Statistics Endpoints

@@ -33,5 +33,4 @@ def test_list_archives_with_size_alias(client):
         response = client.get("/api/archives?size=2")
         assert response.status_code == 200
         data = response.json()
-        assert data["count"] == 2
         assert len(data["archives"]) == 2

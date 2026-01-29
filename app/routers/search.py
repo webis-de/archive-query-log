@@ -97,7 +97,7 @@ async def safe_search_paginated(coro):
 # UNIFIED SEARCH ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps")
-@limiter.limit("20/minute")
+@limiter.limit("60/minute")
 async def unified_search(
     request: Request,
     query: str = Query(..., description="Search term"),
@@ -235,7 +235,7 @@ async def unified_search(
 # SUGGESTIONS ENDPOINT
 # ---------------------------------------------------------
 @router.get("/suggestions")
-@limiter.limit("30/minute")
+@limiter.limit("60/minute")
 async def suggestions(
     request: Request,
     prefix: str = Query(..., description="Search query prefix"),
@@ -253,7 +253,7 @@ async def suggestions(
 # PREVIEW / SUGGESTIONS ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps/preview")
-@limiter.limit("20/minute")
+@limiter.limit("60/minute")
 async def serps_preview(
     request: Request,
     query: str = Query(..., description="Search term for preview"),
@@ -283,7 +283,7 @@ async def serps_preview(
 # TIMELINE ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps/timeline")
-@limiter.limit("30/minute")
+@limiter.limit("60/minute")
 async def serps_timeline(
     request: Request,
     query: str = Query(..., description="Search term for timeline"),
@@ -327,7 +327,7 @@ async def serps_timeline(
 # SERP COMPARISON ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps/compare")
-@limiter.limit("10/minute")
+@limiter.limit("60/minute")
 async def compare_serps(
     request: Request,
     ids: str = Query(
@@ -383,7 +383,7 @@ async def compare_serps(
 # GET ALL PROVIDERS ENDPOINT
 # ---------------------------------------------------------
 @router.get("/providers")
-@limiter.limit("10/minute")
+@limiter.limit("60/minute")
 async def get_all_providers(
     request: Request,
     size: int = Query(0, description="Number of providers to return (0 = all)"),
@@ -410,7 +410,7 @@ async def get_all_providers(
 # GET PROVIDER BY ID ENDPOINT
 # ---------------------------------------------------------
 @router.get("/providers/{provider_id}")
-@limiter.limit("10/minute")
+@limiter.limit("60/minute")
 async def get_provider_by_id(request: Request, provider_id: str):
     """
     Get a single provider document by its ID.
@@ -427,7 +427,7 @@ async def get_provider_by_id(request: Request, provider_id: str):
 # PROVIDER STATISTICS ENDPOINT
 # ---------------------------------------------------------
 @router.get("/providers/{provider_id}/statistics")
-@limiter.limit("20/minute")
+@limiter.limit("60/minute")
 async def get_provider_statistics(
     request: Request,
     provider_id: str,
@@ -464,7 +464,7 @@ async def get_provider_statistics(
 # ARCHIVE STATISTICS ENDPOINT (must be before general archive detail endpoint)
 # ---------------------------------------------------------
 @router.get("/archives/{archive_id:path}/statistics")
-@limiter.limit("20/minute")
+@limiter.limit("60/minute")
 async def get_archive_statistics(
     request: Request,
     archive_id: str,
@@ -499,7 +499,7 @@ async def get_archive_statistics(
 
 # New canonical archive detail endpoint using the same ID as the list
 @router.get("/archives/{archive_id:path}")
-@limiter.limit("10/minute")
+@limiter.limit("60/minute")
 async def get_archive_by_memento_url(request: Request, archive_id: str):
     """
     Get archive metadata by its canonical ID (memento_api_url), matching the
@@ -516,7 +516,7 @@ async def get_archive_by_memento_url(request: Request, archive_id: str):
 # UNIFIED SERP DETAIL ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps/{serp_id}")
-@limiter.limit("20/minute")
+@limiter.limit("60/minute")
 async def get_serp_unified(
     request: Request,
     serp_id: str,
@@ -665,7 +665,7 @@ async def get_serp_unified(
 # SERP VIEW SWITCHER ENDPOINT
 # ---------------------------------------------------------
 @router.get("/serps/{serp_id}/views")
-@limiter.limit("20/minute")
+@limiter.limit("60/minute")
 async def get_serp_views(request: Request, serp_id: str):
     """
     Get available view options for a SERP to enable easy switching between views.
@@ -689,7 +689,7 @@ async def get_serp_views(request: Request, serp_id: str):
 # ARCHIVE DETAIL ENDPOINTS
 # ---------------------------------------------------------
 @router.get("/archives")
-@limiter.limit("30/minute")
+@limiter.limit("60/minute")
 async def list_archives(
     request: Request,
     limit: int = Query(
@@ -727,10 +727,7 @@ async def list_archives(
     # Enforce limit/size at router layer as a safety net
     archives_list = list(svc_result.get("archives", []))[:effective_limit]
 
-    # Provide both legacy (count/results) and modern (total/archives) shapes
     return {
         "total": svc_result.get("total", 0),
         "archives": archives_list,
-        "count": len(archives_list),
-        "results": archives_list,
     }
