@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable, catchError, map, of, shareReplay } from 'rxjs';
 import { ApiService } from './api.service';
 import { API_CONFIG } from '../config/api.config';
+import { ProviderStatistics } from '../models/statistics.model';
 
 export interface ProviderResponse {
   _id: string;
@@ -16,20 +17,12 @@ export interface ProvidersApiResponse {
   results: ProviderResponse[];
 }
 
-export interface ProviderOption {
-  id: string;
-  name: string;
-}
-
-/**
- * Detailed provider metadata from the provider document
- */
 export interface ProviderDetail {
   id: string;
   name: string;
-  domains: string[];
-  url_patterns: string[];
+  domains?: string[];
   priority?: number;
+  url_patterns: string[];
 }
 
 /**
@@ -55,13 +48,13 @@ export interface ProviderDetailResponse {
 export class ProviderService {
   private readonly apiService = inject(ApiService);
   // Cache the providers response to avoid multiple API calls
-  private providersCache$?: Observable<ProviderOption[]>;
+  private providersCache$?: Observable<ProviderDetail[]>;
 
   /**
    * Fetch all available providers from the backend.
    * Results are cached to avoid redundant API calls.
    */
-  getProviders(): Observable<ProviderOption[]> {
+  getProviders(): Observable<ProviderDetail[]> {
     if (!this.providersCache$) {
       this.providersCache$ = this.apiService
         .get<ProvidersApiResponse>(API_CONFIG.endpoints.providers)
@@ -70,6 +63,9 @@ export class ProviderService {
             response.results.map(provider => ({
               id: provider._id,
               name: provider._source.name,
+              domains: provider._source['domains'] as string[],
+              priority: provider._source['priority'] as number,
+              url_patterns: provider._source['url_patterns'] as string[],
             })),
           ),
           // Sort providers alphabetically by name
@@ -114,5 +110,28 @@ export class ProviderService {
           return of(null);
         }),
       );
+  }
+
+  /**
+   * Search providers by query string.
+   * Filters the cached providers list client-side.
+   */
+  searchProviders(query: string): Observable<ProviderDetail[]> {
+    return this.getProviders().pipe(
+      map(providers => {
+        if (!query.trim()) return providers;
+        const lowerQuery = query.toLowerCase();
+        return providers.filter(provider => provider.name.toLowerCase().includes(lowerQuery));
+      }),
+    );
+  }
+
+  /**
+   * Fetch statistics for a specific provider.
+   */
+  getProviderStatistics(providerId: string): Observable<ProviderStatistics> {
+    return this.apiService.get<ProviderStatistics>(
+      API_CONFIG.endpoints.providerStatistics(encodeURIComponent(providerId)),
+    );
   }
 }

@@ -19,7 +19,7 @@ export class SearchService {
   search(
     query: string,
     size?: number,
-    offset?: number,
+    page?: number,
     advancedMode?: boolean,
     fuzzy?: boolean,
     fuzziness?: string,
@@ -32,8 +32,8 @@ export class SearchService {
     if (size !== undefined) {
       params['page_size'] = size;
     }
-    if (offset !== undefined) {
-      params['offset'] = offset;
+    if (page !== undefined) {
+      params['page'] = page;
     }
     if (advancedMode !== undefined) {
       params['advanced_mode'] = advancedMode;

@@ -17,3 +17,7 @@
 :host.dropdown:not(.dropdown-open) .dropdown-content {
   display: none;
 }
+
+.dropdown-content {
+  overflow: hidden;
+}

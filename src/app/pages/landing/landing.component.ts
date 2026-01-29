@@ -26,7 +26,6 @@ import { SessionService } from '../../services/session.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
-import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { FilterState } from '../../models/filter.model';
 import { createFilterBadgeController } from '../../utils/filter-badges';
 import { createSearchSuggestionsController } from '../../utils/search-suggestions';
@@ -43,7 +42,6 @@ import { createSearchSuggestionsController } from '../../utils/search-suggestion
     AqlDropdownComponent,
     AqlMenuItemComponent,
     FilterDropdownComponent,
-    LanguageSelectorComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
@@ -60,6 +58,7 @@ export class LandingComponent {
   readonly translate = inject(TranslateService);
   readonly elementRef = inject(ElementRef);
   readonly destroyRef = inject(DestroyRef);
+  readonly langChange = toSignal(this.translate.onLangChange);
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
@@ -69,7 +68,6 @@ export class LandingComponent {
     this.route.queryParams.pipe(map(params => params['temp'] === 'true')),
     { initialValue: false },
   );
-
   readonly suggestions = this.suggestionsService.suggestionsWithMeta;
   readonly activeProject = computed(() => {
     const currentSession = this.session();
@@ -83,6 +81,7 @@ export class LandingComponent {
   });
   readonly hasProjects = computed(() => this.projects().length > 0);
   readonly landingMessage = computed(() => {
+    this.langChange(); // force update on language change
     if (this.isTemporaryMode()) {
       return this.translate.instant('landing.temporarySearchMode');
     }
@@ -189,7 +188,7 @@ export class LandingComponent {
       }
 
       // Navigate to search view with query params
-      this.router.navigate(['/serps/search'], {
+      this.router.navigate(['/serps'], {
         queryParams: queryParams,
       });
     }

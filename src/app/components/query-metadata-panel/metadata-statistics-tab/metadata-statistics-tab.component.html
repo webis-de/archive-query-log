@@ -1,0 +1,74 @@
+<div class="p-6 h-full flex flex-col gap-8">
+  @if (isLoading()) {
+    <div class="flex justify-center py-12">
+      <span class="loading loading-spinner text-primary loading-md"></span>
+    </div>
+  }
+
+  @if (error(); as errorMsg) {
+    <div class="alert alert-error">
+      <span>{{ errorMsg }}</span>
+    </div>
+  }
+
+  @if (!isLoading() && !error() && statistics(); as stats) {
+    <div class="flex flex-col gap-8">
+      <div class="flex flex-wrap gap-4">
+        <aql-kpi-card
+          class="flex-1"
+          [title]="'statistics.serpCount' | translate"
+          [value]="stats.serp_count"
+          colorScheme="primary"
+        />
+        <aql-kpi-card
+          class="flex-1"
+          [title]="'statistics.uniqueQueries' | translate"
+          [value]="stats.unique_queries_count"
+          colorScheme="secondary"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 min-h-[300px]">
+        <h3 class="text-sm font-semibold uppercase tracking-wider opacity-70">
+          {{ 'statistics.capturesOverTime' | translate }}
+        </h3>
+        <aql-bar-chart class="w-full" [options]="chartOptions()" height="300px"></aql-bar-chart>
+      </div>
+
+      @if (hasTopEntities()) {
+        <div class="flex flex-col gap-3">
+          <h3 class="text-sm font-semibold uppercase tracking-wider opacity-70">
+            @if (isArchive()) {
+              {{ 'statistics.topProviders' | translate }}
+            } @else {
+              {{ 'statistics.topArchives' | translate }}
+            }
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="table table-sm table-pin-rows">
+              <thead>
+                <tr>
+                  <th>{{ 'common.name' | translate }}</th>
+                  <th class="text-right">{{ 'common.count' | translate }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (item of topEntities(); track item.count) {
+                  <tr class="hover">
+                    <td
+                      class="font-mono text-xs truncate max-w-[200px]"
+                      [title]="getEntityName(item)"
+                    >
+                      {{ getEntityName(item) }}
+                    </td>
+                    <td class="text-right font-mono">{{ item.count | number }}</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

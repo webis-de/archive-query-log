@@ -2,6 +2,7 @@ import {
   Component,
   inject,
   signal,
+  effect,
   HostListener,
   ElementRef,
   ChangeDetectionStrategy,
@@ -10,23 +11,23 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AqlPaginationComponent } from 'aql-stylings';
 import {
-  AqlHeaderBarComponent,
-  AqlInputFieldComponent,
-  AqlDropdownComponent,
-  AqlButtonComponent,
-  AqlPaginationComponent,
-  AqlMenuItemComponent,
-} from 'aql-stylings';
+  createPanelNavigationController,
+  PanelNavigationController,
+} from '../../utils/panel-navigation';
 import { SearchService } from '../../services/search.service';
 import { SearchResult, QueryMetadataResponse } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
-import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
+import { SearchHeaderComponent } from '../../components/search-header/search-header.component';
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
-import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { ArchiveDetail } from '../../models/archive.model';
+import { ProviderDetail } from '../../services/provider.service';
+
 import { FilterState } from '../../models/filter.model';
 import { SearchFilter } from '../../models/project.model';
 import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-panel/query-metadata-panel.component';
@@ -42,15 +43,8 @@ import { SearchResultItemComponent } from '../../components/search-result-item/s
     CommonModule,
     FormsModule,
     TranslateModule,
-    RouterLink,
-    AqlHeaderBarComponent,
-    AqlInputFieldComponent,
-    AqlDropdownComponent,
-    AqlButtonComponent,
-    LanguageSelectorComponent,
+    SearchHeaderComponent,
     AqlPaginationComponent,
-    AqlMenuItemComponent,
-    FilterDropdownComponent,
     AppQueryMetadataPanelComponent,
     QueryOverviewPanelComponent,
     SearchResultItemComponent,
@@ -67,6 +61,7 @@ export class SearchViewComponent {
   readonly sessionService = inject(SessionService);
   readonly route = inject(ActivatedRoute);
   readonly router = inject(Router);
+  readonly location = inject(Location);
   readonly translate = inject(TranslateService);
   readonly elementRef = inject(ElementRef);
   readonly destroyRef = inject(DestroyRef);
@@ -80,6 +75,7 @@ export class SearchViewComponent {
   readonly metadataTopArchives = 5;
   readonly metadataLastMonths = 36;
   readonly isPanelOpen = signal(false);
+  readonly isTransitionEnabled = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
   readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
   readonly currentPage = signal<number>(1);
@@ -100,6 +96,8 @@ export class SearchViewComponent {
 
   private currentFilters: FilterState | null = null;
   private lastQueryString: string | null = null;
+  private pendingSerpId: string | null = null;
+  private readonly panelNavController: PanelNavigationController;
   private readonly suggestionsController = createSearchSuggestionsController({
     suggestionsService: this.suggestionsService,
     suggestions: this.suggestions,
@@ -124,7 +122,34 @@ export class SearchViewComponent {
   });
 
   constructor() {
+    this.panelNavController = createPanelNavigationController({
+      location: this.location,
+      basePath: '/serps',
+      getSearchQuery: () => this.searchQuery,
+      isPanelOpen: this.isPanelOpen,
+    });
+
     this.filterBadgeController.refreshBadges();
+
+    // Enable transitions after initial render to prevent animation on page load
+    setTimeout(() => this.isTransitionEnabled.set(true), 50);
+
+    effect(() => {
+      const results = this.searchResults();
+      const pendingId = this.pendingSerpId;
+
+      if (pendingId && results.length > 0) {
+        const result = results.find(r => r._id === pendingId);
+        if (result && result._id !== this.selectedResult()?._id) {
+          this.selectedResult.set(result);
+          this.isPanelOpen.set(true);
+          if (!this.sessionService.sidebarCollapsed()) {
+            this.sessionService.setSidebarCollapsed(true);
+          }
+          this.pendingSerpId = null;
+        }
+      }
+    });
 
     this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(queryParams => {
       const query = queryParams.get('q');
@@ -139,13 +164,6 @@ export class SearchViewComponent {
         (queryParams.get('fuzziness') as 'AUTO' | '0' | '1' | '2' | null) || undefined;
       const expandSynonyms = queryParams.get('expand_synonyms') === 'true';
       const isTemp = queryParams.get('temp') === 'true';
-      const searchId = queryParams.get('sid');
-
-      // Set search ID if loading from history
-      if (searchId) {
-        this.currentSearchId = searchId;
-        this.isLoadedFromHistory = true;
-      }
 
       this.isTemporarySearch = isTemp;
 
@@ -231,7 +249,6 @@ export class SearchViewComponent {
     this.isLoading.set(true);
     this.hasSearched.set(true);
 
-    const offset = (this.currentPage() - 1) * this.pageSize();
     const advancedMode = this.currentFilters?.advancedMode || false;
     const fuzzy = this.currentFilters?.fuzzy || undefined;
     const fuzziness = this.currentFilters?.fuzziness || undefined;
@@ -242,7 +259,7 @@ export class SearchViewComponent {
       .search(
         this.searchQuery,
         this.pageSize(),
-        offset,
+        this.currentPage(),
         advancedMode,
         fuzzy,
         fuzziness,
@@ -281,12 +298,12 @@ export class SearchViewComponent {
             }
             if (this.currentFilters?.fuzzy) {
               searchFilter.fuzzy = this.currentFilters.fuzzy;
-            }
-            if (this.currentFilters?.fuzziness) {
-              searchFilter.fuzziness = this.currentFilters.fuzziness;
-            }
-            if (this.currentFilters?.expandSynonyms) {
-              searchFilter.expand_synonyms = this.currentFilters.expandSynonyms;
+              if (this.currentFilters?.fuzziness) {
+                searchFilter.fuzziness = this.currentFilters.fuzziness;
+              }
+              if (this.currentFilters?.expandSynonyms) {
+                searchFilter.expand_synonyms = this.currentFilters.expandSynonyms;
+              }
             }
 
             const searchItem = this.searchHistoryService.addSearch(searchFilter);
@@ -336,9 +353,10 @@ export class SearchViewComponent {
     }
   }
 
-  onResultClick(result: SearchResult): void {
+  onResultClick(item: SearchResult | ProviderDetail | ArchiveDetail): void {
+    const result = item as SearchResult;
     this.selectedResult.set(result);
-    this.isPanelOpen.set(true);
+    this.panelNavController.navigateToItem(result._id);
 
     if (!this.sessionService.sidebarCollapsed()) {
       this.sessionService.setSidebarCollapsed(true);
@@ -347,10 +365,12 @@ export class SearchViewComponent {
 
   onRelatedSerpSelected(result: SearchResult): void {
     this.selectedResult.set(result);
+    this.panelNavController.navigateToItem(result._id);
   }
 
   onClosePanel(): void {
-    this.isPanelOpen.set(false);
+    this.selectedResult.set(null);
+    this.panelNavController.closePanel();
   }
 
   handleSuggestionClick(suggestion: string): void {
@@ -398,35 +418,27 @@ export class SearchViewComponent {
       if (searchItem.filter.size) {
         this.pageSize.set(searchItem.filter.size);
       }
-      if (searchItem.filter.offset !== undefined && searchItem.filter.size) {
-        const page = Math.floor(searchItem.filter.offset / searchItem.filter.size) + 1;
-        this.currentPage.set(page);
+      if (searchItem.filter.page !== undefined) {
+        this.currentPage.set(searchItem.filter.page);
       }
 
       // Restore filters if present
       if (
         searchItem.filter.provider ||
         searchItem.filter.from_timestamp ||
-        searchItem.filter.to_timestamp ||
-        searchItem.filter.advanced_mode
+        searchItem.filter.to_timestamp
       ) {
         this.initialFilters = {
           dateFrom: searchItem.filter.from_timestamp || '',
           dateTo: searchItem.filter.to_timestamp || '',
           status: 'any',
           providers: searchItem.filter.provider ? searchItem.filter.provider.split(',') : [],
-          advancedMode: searchItem.filter.advanced_mode || false,
         };
         this.onFiltersChanged(this.initialFilters);
       }
 
       this.searchService
-        .search(
-          searchItem.filter.query,
-          searchItem.filter.size,
-          searchItem.filter.offset,
-          searchItem.filter.advanced_mode,
-        )
+        .search(searchItem.filter.query, searchItem.filter.size, searchItem.filter.page || 1)
         .subscribe({
           next: response => {
             this.searchResults.set(response.results);
@@ -483,7 +495,7 @@ export class SearchViewComponent {
       this.searchHistoryService.updateSearch(this.currentSearchId, {
         ...searchItem.filter,
         size,
-        offset: 0,
+        page: 1,
       });
     }
   }

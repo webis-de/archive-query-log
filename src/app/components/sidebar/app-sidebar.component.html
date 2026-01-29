@@ -5,9 +5,10 @@
 >
   <!-- Collapsed rail -->
   <div
-    class="collapsed-rail flex flex-col items-center justify-between bg-base-100 border-r border-base-200 pt-3 pb-2 px-2 shadow-sm"
+    class="collapsed-rail flex flex-col items-center justify-between bg-base-100 border-r border-base-200 py-3 px-2 shadow-sm"
     [class.hidden]="!isCollapsed()"
   >
+    <!-- #region LEGACY - Sidebar toggle button
     <div class="w-full flex justify-center pb-3">
       <aql-button
         btnType="default"
@@ -21,33 +22,32 @@
       >
       </aql-button>
     </div>
+    #endregion LEGACY -->
 
     <div class="flex-1 flex flex-col items-center gap-2">
-      <aql-button
-        btnType="primary"
-        iconStyle="square"
-        size="md"
-        iconBefore="bi-folder-plus"
-        [aqlTooltip]="'sidebar.newProject' | translate"
-        [tooltipPosition]="'right'"
-        [attr.aria-label]="'sidebar.newProject' | translate"
-        (buttonClick)="onNewProject()"
-      >
-      </aql-button>
-
-      <aql-button
-        btnType="default"
-        iconStyle="square"
-        size="md"
-        iconBefore="bi-search"
-        [aqlTooltip]="'sidebar.temporarySearch' | translate"
-        [tooltipPosition]="'right'"
-        [attr.aria-label]="'sidebar.temporarySearch' | translate"
-        (buttonClick)="onTemporarySearch()"
-      >
-      </aql-button>
+      @for (item of navItems; track item.id) {
+        <aql-button
+          [btnType]="isActiveRoute()(item.route) ? 'primary' : 'default'"
+          iconStyle="square"
+          size="md"
+          [iconBefore]="item.icon"
+          [aqlTooltip]="item.label | translate"
+          [tooltipPosition]="'right'"
+          [attr.aria-label]="item.label | translate"
+          (buttonClick)="navigateTo(item.route)"
+        >
+        </aql-button>
+      }
     </div>
 
+    <div class="mt-auto w-full flex justify-center">
+      <app-language-selector
+        [showLabel]="false"
+        [dropdownPosition]="'right top'"
+      ></app-language-selector>
+    </div>
+
+    <!-- #region LEGACY - Avatar card requires userData
     <div>
       <aql-avatar-card
         [name]="userData().user.name"
@@ -57,9 +57,12 @@
       >
       </aql-avatar-card>
     </div>
+    -->
+    <!-- #endregion LEGACY -->
   </div>
 
-  <!-- Expanded panel -->
+  <!-- #region LEGACY - Expanded panel (Uncomment when implementing user-based session storage) -->
+  <!--
   <div
     class="sidebar-panel flex flex-col h-full w-80 bg-base-100 border-r border-base-200 shadow-sm overflow-y-auto overflow-x-hidden"
     [class.hidden]="isCollapsed()"
@@ -67,7 +70,8 @@
     <div class="flex flex-col sticky top-0 bg-base-100 z-10 pt-3 px-2 gap-3">
       <div class="flex items-center justify-between">
         <div class="flex items-center w-full gap-3">
-          <h1 class="text-lg font-semibold leading-none w-full">
+          
+          <h1 class="text-xl font-semibold leading-none text-primary w-full">
             {{ 'sidebar.archiveQueryLog' | translate }}
           </h1>
           <aql-button
@@ -82,34 +86,49 @@
           </aql-button>
         </div>
       </div>
+    </div>
 
-      <div class="flex flex-col gap-2">
-        <div>
-          <aql-button
-            btnType="primary"
-            btnStyle="rounded"
-            [fullWidth]="true"
-            [align]="'start'"
-            iconBefore="bi-folder-plus"
-            (buttonClick)="onNewProject()"
-          >
-            {{ 'sidebar.newProject' | translate }}
-          </aql-button>
-        </div>
+    <div class="px-2 py-3 flex flex-col gap-2">
+      @for (item of navItems; track item.id) {
+        <aql-button
+          [btnType]="isActiveRoute()(item.route) ? 'primary' : 'default'"
+          [fullWidth]="true"
+          align="start"
+          size="md"
+          iconStyle="square"
+          [iconBefore]="item.icon"
+          (buttonClick)="navigateTo(item.route)"
+        >
+          {{ item.label | translate }}
+        </aql-button>
+      }
+    </div>
+    <div class="flex flex-col gap-2">
+      <div>
+        <aql-button
+          btnType="primary"
+          btnStyle="rounded"
+          [fullWidth]="true"
+          [align]="'start'"
+          iconBefore="bi-folder-plus"
+          (buttonClick)="onNewProject()"
+        >
+          {{ 'sidebar.newProject' | translate }}
+        </aql-button>
+      </div>
 
-        <div>
-          <aql-button
-            btnType="default"
-            btnStyle="rounded"
-            [fullWidth]="true"
-            [align]="'start'"
-            iconBefore="bi-search"
-            [attr.aria-label]="'sidebar.temporarySearch' | translate"
-            (buttonClick)="onTemporarySearch()"
-          >
-            {{ 'sidebar.temporarySearch' | translate }}
-          </aql-button>
-        </div>
+      <div>
+        <aql-button
+          btnType="default"
+          btnStyle="rounded"
+          [fullWidth]="true"
+          [align]="'start'"
+          iconBefore="bi-search"
+          [attr.aria-label]="'sidebar.temporarySearch' | translate"
+          (buttonClick)="onTemporarySearch()"
+        >
+          {{ 'sidebar.temporarySearch' | translate }}
+        </aql-button>
       </div>
     </div>
 
@@ -231,6 +250,12 @@
         </div>
       }
     </div>
+    <div class="sticky bottom-0 bg-base-100 p-2 border-t border-base-200 mt-auto">
+      <app-language-selector
+        [showLabel]="true"
+        [dropdownPosition]="'right'"
+      ></app-language-selector>
+    </div>
 
     <div class="sticky bottom-0 bg-base-100 p-2 border-t border-base-200 mt-auto">
       <aql-avatar-card
@@ -242,8 +267,12 @@
       </aql-avatar-card>
     </div>
   </div>
+  -->
+  <!-- #endregion LEGACY -->
 </div>
 
+<!-- #region LEGACY - Uncomment when implementing user-based session storage -->
+<!--
 <aql-modal
   #deleteModal
   [modalTitle]="
@@ -275,3 +304,5 @@
     </aql-button>
   </div>
 </aql-modal>
+-->
+<!-- #endregion LEGACY -->

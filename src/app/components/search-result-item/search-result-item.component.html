@@ -1,12 +1,20 @@
 <aql-panel
-  [panelTitle]="result()._source.url_query"
-  [subtitle]="result()._source.capture.url"
+  [panelTitle]="panelTitle()"
+  [subtitle]="panelSubtitle()"
   [bordered]="true"
   [shadow]="true"
+  [isActive]="isActive()"
   class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl block"
+  [class.shadow-primary/20]="isActive()"
   (click)="onClick()"
+  [hasFooter]="!!result()"
 >
-  <aql-dropdown subtitle-action position="right" (click)="$event.stopPropagation()">
+  <aql-dropdown
+    subtitle-action
+    position="right"
+    (click)="$event.stopPropagation()"
+    [class.hidden]="!result()"
+  >
     <aql-button
       trigger
       btnType="icon"
@@ -17,127 +25,45 @@
       [attr.aria-label]="'tooltip.search.moreOptions' | translate"
     ></aql-button>
     <ng-container content>
-      <div class="p-3 space-y-2 text-sm min-w-[200px]">
-        <div>
-          <span class="font-semibold">{{ 'search.scoreLabel' | translate }}</span>
-          <span class="ml-2">{{ result()._score | number: '1.2-2' }}</span>
+      @if (result(); as r) {
+        <div class="p-3 space-y-2 text-sm min-w-[200px]">
+          <div>
+            <span class="font-semibold">{{ 'search.scoreLabel' | translate }}</span>
+            <span class="ml-2">{{ r._score | number: '1.2-2' }}</span>
+          </div>
+          <div>
+            <span class="font-semibold">{{ 'search.idLabel' | translate }}</span>
+            <span class="ml-2 text-xs break-all">{{ r._id }}</span>
+          </div>
+          <div>
+            <span class="font-semibold">{{ 'search.mimeTypeLabel' | translate }}</span>
+            <span class="ml-2">{{ r._source.capture.mimetype }}</span>
+          </div>
         </div>
-        <div>
-          <span class="font-semibold">{{ 'search.idLabel' | translate }}</span>
-          <span class="ml-2 text-xs break-all">{{ result()._id }}</span>
-        </div>
-        <div>
-          <span class="font-semibold">{{ 'search.mimeTypeLabel' | translate }}</span>
-          <span class="ml-2">{{ result()._source.capture.mimetype }}</span>
-        </div>
-      </div>
+      }
     </ng-container>
   </aql-dropdown>
 
-  <div class="flex flex-col gap-1 min-h-[3.6rem] text-sm text-base-content/80">
-    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
-      <div class="flex items-center gap-1.5">
-        <span class="font-medium text-base-content/50 uppercase tracking-wide text-[10px]">{{
-          'search.statusLabel' | translate
-        }}</span>
-        <span
-          [class]="getStatusColorClass(result()._source.capture.status_code)"
-          class="font-medium"
-        >
-          {{ result()._source.capture.status_code }}
-        </span>
-      </div>
-      <div class="w-px h-3 bg-base-content/10"></div>
-      <div class="flex items-center gap-1.5">
-        <span class="font-medium text-base-content/50 uppercase tracking-wide text-[10px]">{{
-          'search.typeLabel' | translate
-        }}</span>
-        <span class="font-medium">{{ result()._source.capture.mimetype }}</span>
-      </div>
-      @if (result()._source.archive?.id) {
-        <div class="w-px h-3 bg-base-content/10"></div>
-        <div class="flex items-center gap-1.5">
-          <span class="font-medium text-base-content/50 uppercase tracking-wide text-[10px]">{{
-            'search.archiveLabel' | translate
-          }}</span>
-          <span class="font-mono text-xs opacity-80">{{ result()._source.archive?.id }}</span>
+  @if (result(); as r) {
+    <app-serp-result-content [result]="r" />
+  } @else if (provider(); as p) {
+    <app-provider-result-content [provider]="p" />
+  } @else if (archive(); as a) {
+    <app-archive-result-content [archive]="a" />
+  }
+  <ng-container footer>
+    @if (result(); as r) {
+      <div class="flex justify-between">
+        <div class="flex items-center gap-2 text-sm text-base-content/60">
+          <span>{{ formattedDate() }}</span>
+          <span>·</span>
+          <span>{{ r._source.provider.domain }}</span>
         </div>
-      }
-    </div>
-
-    <div class="flex items-center gap-2 mt-0.5">
-      <span class="font-medium text-base-content/50 uppercase tracking-wide text-[10px]">{{
-        'search.pipelineLabel' | translate
-      }}</span>
-      <div class="flex items-center gap-2 text-xs">
-        <span
-          class="badge badge-sm badge-outline"
-          [class.badge-success]="getParserStatus(result()._source.url_query_parser) === 'success'"
-          [class.text-success]="getParserStatus(result()._source.url_query_parser) === 'success'"
-          [class.border-base-content/20]="
-            getParserStatus(result()._source.url_query_parser) !== 'success'
-          "
-          [class.opacity-50]="getParserStatus(result()._source.url_query_parser) === 'skipped'"
-          [title]="'search.parserUrl' | translate"
-        >
-          URL
-        </span>
-        <span
-          class="badge badge-sm badge-outline"
-          [class.badge-success]="getParserStatus(result()._source.url_page_parser) === 'success'"
-          [class.text-success]="getParserStatus(result()._source.url_page_parser) === 'success'"
-          [class.border-base-content/20]="
-            getParserStatus(result()._source.url_page_parser) !== 'success'
-          "
-          [class.opacity-50]="getParserStatus(result()._source.url_page_parser) === 'skipped'"
-          [title]="'search.parserPage' | translate"
-        >
-          Page
-        </span>
-        <span
-          class="badge badge-sm badge-outline"
-          [class.badge-success]="getParserStatus(result()._source.warc_query_parser) === 'success'"
-          [class.text-success]="getParserStatus(result()._source.warc_query_parser) === 'success'"
-          [class.border-base-content/20]="
-            getParserStatus(result()._source.warc_query_parser) !== 'success'
-          "
-          [class.opacity-50]="getParserStatus(result()._source.warc_query_parser) === 'skipped'"
-          [title]="'search.parserWarc' | translate"
-        >
-          WARC
-        </span>
-      </div>
-    </div>
-
-    @if (getFormattedUrlParams().length > 0) {
-      <div class="flex flex-wrap gap-2 items-center mt-1">
-        <span class="font-medium text-base-content/50 uppercase tracking-wide text-[10px]">{{
-          'search.paramsLabel' | translate
-        }}</span>
-        @for (param of getFormattedUrlParams(); track param.key) {
-          <div
-            class="flex items-center max-w-[200px] text-[10px] font-mono bg-base-200 border border-base-300 px-1.5 py-0.5 rounded-md select-all"
-            [title]="param.key + '=' + param.value"
-          >
-            <span class="opacity-60">{{ param.key }}=</span>
-            <span class="truncate font-medium">{{ param.value }}</span>
-          </div>
-        }
+        <div class="flex items-center gap-2 text-sm text-base-content/60">
+          <span>{{ 'search.scoreLabel' | translate }}</span>
+          <span>{{ r._score | number: '1.2-2' }}</span>
+        </div>
       </div>
     }
-  </div>
-
-  <div footer class="flex justify-between">
-    <div class="flex items-center gap-2 text-sm text-base-content/60">
-      <span>{{ formatDate(result()._source.capture.timestamp) }}</span>
-      <span>·</span>
-      <span>{{ result()._source.provider.domain }}</span>
-    </div>
-    <div>
-      <div class="flex items-center gap-2 text-sm text-base-content/60">
-        <span>{{ 'search.scoreLabel' | translate }}</span>
-        <span>{{ result()._score | number: '1.2-2' }}</span>
-      </div>
-    </div>
-  </div>
+  </ng-container>
 </aql-panel>

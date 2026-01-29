@@ -1,7 +1,7 @@
 export interface SearchFilter {
   query: string;
   size?: number;
-  offset?: number;
+  page?: number;
   timestamp?: string;
   provider?: string;
   archive?: string;

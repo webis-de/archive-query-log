@@ -4,7 +4,11 @@
       class="flex items-center justify-between px-6 py-4 gap-4 border-b border-base-300 flex-shrink-0"
     >
       <div class="flex-1 min-w-0">
-        @if (searchResult(); as result) {
+        @if (isLoading()) {
+          <h2 class="text-lg font-semibold animate-pulse bg-base-300 h-7 w-2/3 rounded">
+            <span class="sr-only">Loading...</span>
+          </h2>
+        } @else if (searchResult(); as result) {
           <h2 class="text-lg font-semibold truncate">
             {{ result._source.url_query }}
           </h2>
@@ -16,6 +20,22 @@
           >
             {{ result._source.capture.url }}
           </a>
+        } @else if (providerDetail(); as provider) {
+          <h2 class="text-lg font-semibold truncate">
+            {{ provider.name }}
+          </h2>
+          <p class="text-sm text-base-content/60 font-mono truncate">
+            {{ provider.id }}
+          </p>
+        } @else if (archiveDetail(); as archive) {
+          <h2 class="text-lg font-semibold truncate">
+            {{ archive.name }}
+          </h2>
+          <p class="text-sm text-base-content/60 font-mono truncate">
+            {{ archive.id }}
+          </p>
+        } @else if (error()) {
+          <h2 class="text-lg font-semibold text-error">{{ 'common.error' | translate }}</h2>
         } @else {
           <h2 class="text-lg font-semibold">{{ 'metadata.panel' | translate }}</h2>
         }
@@ -52,45 +72,82 @@
       </div>
     </div>
 
-    <div class="px-6 pt-4 border-b border-base-300">
-      <aql-tab-menu
-        [tabs]="tabs()"
-        [activeTabId]="activeTab()"
-        [size]="'sm'"
-        [tabStyle]="'border'"
-        (tabChange)="onTabChange($event)"
-      ></aql-tab-menu>
-    </div>
+    @if (isLoading()) {
+      <div class="flex-1 flex items-center justify-center">
+        <span class="loading loading-spinner loading-lg text-primary"></span>
+      </div>
+    } @else if (error(); as err) {
+      <div class="flex-1 flex flex-col items-center justify-center p-8 text-center opacity-60">
+        <i class="bi bi-exclamation-triangle text-4xl mb-4 text-error"></i>
+        <p class="text-lg font-semibold">{{ err }}</p>
+      </div>
+    } @else if (!hasContent()) {
+      <div class="flex-1 flex flex-col items-center justify-center p-8 text-center opacity-60">
+        <i class="bi bi-inbox text-4xl mb-4"></i>
+        <p class="text-lg font-semibold">{{ 'metadata.noDataSelected' | translate }}</p>
+      </div>
+    } @else {
+      <div class="px-6 pt-4 border-b border-base-300">
+        <aql-tab-menu
+          [tabs]="tabs()"
+          [activeTabId]="activeTab()"
+          [size]="'sm'"
+          [tabStyle]="'border'"
+          (tabChange)="onTabChange($event)"
+        ></aql-tab-menu>
+      </div>
 
-    <div class="flex-1 overflow-y-auto">
-      @switch (activeTab()) {
-        @case ('html') {
-          <app-metadata-html-tab [searchResult]="searchResult()"></app-metadata-html-tab>
+      <div class="flex-1 overflow-y-auto">
+        @switch (activeTab()) {
+          @case ('html') {
+            <app-metadata-html-tab [searchResult]="searchResult()"></app-metadata-html-tab>
+          }
+          @case ('website') {
+            <app-metadata-website-tab
+              [searchResult]="searchResult()"
+              [isActive]="activeTab() === 'website'"
+            ></app-metadata-website-tab>
+          }
+          @case ('metadata') {
+            <app-metadata-info-tab [searchResult]="searchResult()"></app-metadata-info-tab>
+          }
+          @case ('related') {
+            <app-metadata-related-tab
+              [relatedSerps]="relatedSerps()"
+              [isLoading]="isLoadingDetails()"
+              (serpSelected)="onRelatedSerpClick($event)"
+            ></app-metadata-related-tab>
+          }
+          @case ('unfurl') {
+            <app-metadata-unfurl-tab
+              [unfurlData]="unfurlData()"
+              [unfurlWebUrl]="unfurlWebUrl()"
+              [isLoading]="isLoadingDetails()"
+            ></app-metadata-unfurl-tab>
+          }
+          @case ('provider-info') {
+            <app-metadata-provider-tab
+              [providerDetail]="providerDetail()"
+            ></app-metadata-provider-tab>
+          }
+          @case ('archive-info') {
+            <app-metadata-archive-tab [archiveDetail]="archiveDetail()"></app-metadata-archive-tab>
+          }
+          @case ('statistics') {
+            @if (providerDetail(); as provider) {
+              <app-metadata-statistics-tab
+                [entityId]="provider.id"
+                [type]="'provider'"
+              ></app-metadata-statistics-tab>
+            } @else if (archiveDetail(); as archive) {
+              <app-metadata-statistics-tab
+                [entityId]="archive.id"
+                [type]="'archive'"
+              ></app-metadata-statistics-tab>
+            }
+          }
         }
-        @case ('website') {
-          <app-metadata-website-tab
-            [searchResult]="searchResult()"
-            [isActive]="activeTab() === 'website'"
-          ></app-metadata-website-tab>
-        }
-        @case ('metadata') {
-          <app-metadata-info-tab [searchResult]="searchResult()"></app-metadata-info-tab>
-        }
-        @case ('related') {
-          <app-metadata-related-tab
-            [relatedSerps]="relatedSerps()"
-            [isLoading]="isLoadingDetails()"
-            (serpSelected)="onRelatedSerpClick($event)"
-          ></app-metadata-related-tab>
-        }
-        @case ('unfurl') {
-          <app-metadata-unfurl-tab
-            [unfurlData]="unfurlData()"
-            [unfurlWebUrl]="unfurlWebUrl()"
-            [isLoading]="isLoadingDetails()"
-          ></app-metadata-unfurl-tab>
-        }
-      }
-    </div>
+      </div>
+    }
   </div>
 </div>

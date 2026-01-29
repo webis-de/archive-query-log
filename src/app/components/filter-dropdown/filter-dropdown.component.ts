@@ -10,6 +10,7 @@ import {
   effect,
   ChangeDetectionStrategy,
 } from '@angular/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -22,7 +23,7 @@ import {
   AqlTooltipDirective,
 } from 'aql-stylings';
 import { FilterState, FilterProvider } from '../../models/filter.model';
-import { ProviderService, ProviderOption } from '../../services/provider.service';
+import { ProviderService, ProviderDetail } from '../../services/provider.service';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
@@ -32,6 +33,7 @@ import { LanguageService } from '../../services/language.service';
     CommonModule,
     FormsModule,
     TranslateModule,
+    ScrollingModule,
     AqlDropdownComponent,
     AqlButtonComponent,
     AqlInputFieldComponent,
@@ -53,6 +55,7 @@ export class FilterDropdownComponent implements OnInit {
   readonly status = signal<string>('any');
   readonly advancedMode = signal<boolean>(false);
   readonly fuzzySearch = signal<boolean>(false);
+  readonly placeholderToggle = signal<boolean>(false);
   readonly fuzziness = signal<'AUTO' | '0' | '1' | '2'>('AUTO');
   readonly expandSynonyms = signal<boolean>(false);
   readonly isOpen = signal<boolean>(false);
@@ -129,6 +132,10 @@ export class FilterDropdownComponent implements OnInit {
     });
   }
 
+  trackByProviderId(_: number, item: FilterProvider): string {
+    return item.id;
+  }
+
   ngOnInit(): void {
     this.loadProviders();
   }
@@ -187,6 +194,12 @@ export class FilterDropdownComponent implements OnInit {
 
   updateFuzzySearch(value: boolean): void {
     this.fuzzySearch.set(value);
+    this.emitCurrentState();
+  }
+
+  updatePlaceholderToggle(value: boolean): void {
+    this.placeholderToggle.set(value);
+    this.emitCurrentState();
   }
 
   updateFuzziness(value: 'AUTO' | '0' | '1' | '2'): void {
@@ -233,7 +246,7 @@ export class FilterDropdownComponent implements OnInit {
     this.providerLoadError.set(false);
 
     this.providerService.getProviders().subscribe({
-      next: (providerOptions: ProviderOption[]) => {
+      next: (providerOptions: ProviderDetail[]) => {
         const providerList: FilterProvider[] = [
           { id: 'all', label: 'All', checked: true },
           ...providerOptions.map(p => ({

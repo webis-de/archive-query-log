@@ -1,0 +1,137 @@
+<aql-header-bar>
+  <div class="flex-1 flex flex-row items-start min-h-24 transition-[margin] duration-300">
+    <div
+      class="flex-shrink-0 py-4 px-0 w-0 flex items-center justify-center overflow-hidden"
+      [class.transition-[width,padding]]="isTransitionEnabled()"
+      [class.duration-300]="isTransitionEnabled()"
+      [class.lg:w-40]="!isPanelOpen()"
+      [class.lg:w-0]="isPanelOpen()"
+      [class.lg:px-6]="!isPanelOpen()"
+      [class.lg:px-0]="isPanelOpen()"
+    >
+      @if (!isPanelOpen()) {
+        <a routerLink="/" class="cursor-pointer">
+          <img
+            src="assets/img/logo/aql-logo.png"
+            alt="AQL Logo"
+            class="h-16 w-auto min-w-max hidden lg:block"
+          />
+        </a>
+      }
+    </div>
+    <div
+      class="flex-1 transition-[margin-right] duration-300 ease-in-out"
+      [class.mr-[60vw]]="isPanelOpen() && isSidebarCollapsed()"
+      [class.mr-[calc(60vw-20rem)]]="isPanelOpen() && !isSidebarCollapsed()"
+    >
+      <div class="flex flex-col ps-4 pe-8 py-4 w-full relative transition-all duration-300">
+        <div class="flex flex-row gap-2 w-full items-end max-w-[800px]">
+          @if (config().showSuggestions) {
+            <!-- Search with suggestions dropdown -->
+            <aql-dropdown
+              class="flex-grow search-container"
+              [open]="
+                showSuggestionsDropdown() &&
+                suggestions().length > 0 &&
+                searchQuery().trim().length > 0
+              "
+              [matchTriggerWidth]="true"
+              position="bottom"
+            >
+              <aql-input-field
+                trigger
+                class="w-full"
+                [label]="config().labelKey | translate"
+                [placeholder]="config().placeholderKey | translate"
+                name="searchQuery"
+                [showIcon]="false"
+                [ngModel]="searchQuery()"
+                (ngModelChange)="onSearchInput($event)"
+                (keydown.enter)="onSearch()"
+                (click)="onSearchFocus(); stopPropagation($event)"
+              >
+                <img
+                  prefix
+                  src="assets/img/icon/aql-search-icon.svg"
+                  alt="Search"
+                  class="h-5 w-auto transition-opacity duration-300"
+                  [class.lg:opacity-0]="!isPanelOpen()"
+                  [class.lg:absolute]="!isPanelOpen()"
+                  [class.lg:invisible]="!isPanelOpen()"
+                />
+                <aql-button
+                  suffix
+                  btnType="primary"
+                  btnStyle="full"
+                  [flatten]="true"
+                  size="sm"
+                  (buttonClick)="onSearch(); stopPropagation($event)"
+                >
+                  {{ 'search.label' | translate }}
+                </aql-button>
+              </aql-input-field>
+
+              <div content class="suggestions-content max-h-72 overflow-y-auto">
+                @for (suggestion of suggestions(); track suggestion.id) {
+                  <aql-menu-item iconBefore="bi-search" (click)="onSuggestionClick(suggestion)">
+                    <div class="flex flex-col min-w-0">
+                      <span class="font-medium truncate">{{ suggestion.query }}</span>
+                    </div>
+                  </aql-menu-item>
+                }
+              </div>
+            </aql-dropdown>
+          } @else {
+            <!-- Simple search without suggestions -->
+            <aql-input-field
+              class="flex-full"
+              [label]="config().labelKey | translate"
+              [placeholder]="config().placeholderKey | translate"
+              name="searchQuery"
+              [showIcon]="false"
+              [ngModel]="searchQuery()"
+              (ngModelChange)="onSearchInput($event)"
+              (keydown.enter)="onSearch()"
+            >
+              <img
+                prefix
+                src="assets/img/icon/aql-search-icon.svg"
+                alt="Search"
+                class="h-5 w-auto transition-opacity duration-300"
+                [class.lg:opacity-0]="!isPanelOpen()"
+                [class.lg:absolute]="!isPanelOpen()"
+                [class.lg:invisible]="!isPanelOpen()"
+              />
+            </aql-input-field>
+          }
+
+          @if (config().showFilterDropdown) {
+            <div>
+              <aql-filter-dropdown
+                [filters]="initialFilters()"
+                (filtersChanged)="onFiltersChanged($event)"
+              ></aql-filter-dropdown>
+            </div>
+          }
+        </div>
+
+        @if (config().showFilterDropdown && activeFilters().length > 0) {
+          <div class="flex flex-row gap-2 mt-2 w-full max-w-[800px] items-center">
+            <span class="text-sm font-semibold text-base-content/70 whitespace-nowrap">{{
+              'search.activeFilters' | translate
+            }}</span>
+            <div
+              class="flex flex-nowrap gap-2 overflow-x-auto slim-scrollbar items-center pb-2 flex-1"
+            >
+              @for (badge of activeFilters(); track $index) {
+                <div class="badge badge-primary badge-outline whitespace-nowrap flex-shrink-0">
+                  {{ badge }}
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</aql-header-bar>

@@ -1,0 +1,78 @@
+<div class="flex flex-col h-full">
+  <app-search-header
+    [searchQuery]="searchQuery()"
+    [config]="{
+      labelKey: 'providers.searchLabel',
+      placeholderKey: 'providers.searchPlaceholder',
+      showFilterDropdown: false,
+      showSuggestions: false,
+      showEntityTabs: false,
+    }"
+    [isPanelOpen]="isPanelOpen()"
+    [isTransitionEnabled]="isTransitionEnabled()"
+    [isSidebarCollapsed]="true"
+    (searchQueryChange)="onSearchInput($event)"
+  ></app-search-header>
+
+  <div class="flex flex-row flex-1 overflow-hidden">
+    <div
+      class="flex-1 overflow-y-auto px-4 py-6 relative"
+      [class.transition-all]="isTransitionEnabled()"
+      [class.duration-300]="isTransitionEnabled()"
+    >
+      <div
+        [class.transition-all]="isTransitionEnabled()"
+        [class.duration-300]="isTransitionEnabled()"
+        [class.lg:ml-40]="!isPanelOpen()"
+        [class.lg:ml-0]="isPanelOpen()"
+      >
+        @if (!isLoading() && hasSearched() && totalCount() > 0) {
+          <div class="flex-1 w-full max-w-[800px]">
+            <div class="mb-4">
+              <p class="text-sm text-gray-600">
+                {{ 'providers.resultsFound' | translate: { count: totalCount() } }}
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-4">
+              @for (provider of filteredProviders(); track provider.id) {
+                <app-search-result-item
+                  [provider]="provider"
+                  [isActive]="selectedProvider()?.id === provider.id"
+                  (clicked)="onProviderClick($event)"
+                ></app-search-result-item>
+              }
+            </div>
+          </div>
+        } @else {
+          <div class="flex-1 w-full max-w-[800px]">
+            @if (isLoading()) {
+              <div class="flex justify-center items-center py-12">
+                <div class="text-lg">{{ 'common.loading' | translate }}</div>
+              </div>
+            } @else if (hasSearched() && totalCount() === 0) {
+              <div class="flex justify-center items-center py-12">
+                <div class="text-lg text-gray-600">
+                  {{ 'providers.noResultsFor' | translate: { query: searchQuery } }}
+                </div>
+              </div>
+            } @else {
+              <div class="flex justify-center items-center py-12">
+                <div class="text-lg text-gray-600">{{ 'providers.enterQuery' | translate }}</div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Provider Detail Panel -->
+    <app-query-metadata-panel
+      [isOpen]="isPanelOpen()"
+      [providerDetail]="selectedProviderDetail()"
+      [isLoading]="isDetailLoading()"
+      [error]="detailError()"
+      (closePanel)="onClosePanel()"
+    ></app-query-metadata-panel>
+  </div>
+</div>

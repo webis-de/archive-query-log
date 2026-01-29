@@ -91,7 +91,7 @@ describe('LandingComponent', () => {
       from_timestamp: undefined,
       to_timestamp: undefined,
     } as SearchFilter);
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps'], {
       queryParams: { q: 'test query', sid: 'test-id' },
     });
   });
@@ -100,8 +100,8 @@ describe('LandingComponent', () => {
     component.searchQuery.set('test query');
     component.onSearch();
 
-    // Should navigate to /serps/search, not a temporary route
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+    // Should navigate to /serps, not a temporary route
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps'], {
       queryParams: { q: 'test query', sid: 'test-id' },
     });
   });
@@ -143,7 +143,7 @@ describe('LandingComponent', () => {
 
       expect(component.searchQuery()).toBe('selected query');
       expect(component.showSuggestions()).toBeFalse();
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps'], {
         queryParams: { q: 'selected query', sid: 'test-id' },
       });
     });

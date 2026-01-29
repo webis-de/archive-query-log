@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, input, output, computed } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   AqlPanelComponent,
@@ -7,64 +7,76 @@ import {
   AqlButtonComponent,
   AqlTooltipDirective,
 } from 'aql-stylings';
-import { SearchResult, Parser } from '../../models/search.model';
+import { SearchResult } from '../../models/search.model';
+import { ProviderDetail } from '../../services/provider.service';
+import { ArchiveDetail } from '../../models/archive.model';
 import { LanguageService } from '../../services/language.service';
+import { SerpResultContentComponent } from './serp-result-content/serp-result-content.component';
+import { ProviderResultContentComponent } from './provider-result-content/provider-result-content.component';
+import { ArchiveResultContentComponent } from './archive-result-content/archive-result-content.component';
+
+export type ResultItem = SearchResult | ProviderDetail | ArchiveDetail;
 
 @Component({
   selector: 'app-search-result-item',
   standalone: true,
   imports: [
-    CommonModule,
+    DecimalPipe,
     TranslateModule,
     AqlPanelComponent,
     AqlDropdownComponent,
     AqlButtonComponent,
     AqlTooltipDirective,
+    SerpResultContentComponent,
+    ProviderResultContentComponent,
+    ArchiveResultContentComponent,
   ],
   templateUrl: './search-result-item.component.html',
   styleUrl: './search-result-item.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchResultItemComponent {
-  readonly result = input.required<SearchResult>();
-  readonly clicked = output<SearchResult>();
+  readonly result = input<SearchResult | null>(null);
+  readonly provider = input<ProviderDetail | null>(null);
+  readonly archive = input<ArchiveDetail | null>(null);
+  readonly isActive = input<boolean>(false);
+  readonly clicked = output<ResultItem>();
+  readonly panelTitle = computed(() => {
+    const result = this.result();
+    const provider = this.provider();
+    const archive = this.archive();
+
+    if (result) return result._source.url_query;
+    if (provider) return provider.name;
+    if (archive) return archive.name;
+    return '';
+  });
+  readonly panelSubtitle = computed(() => {
+    const result = this.result();
+    const archive = this.archive();
+
+    if (result) return result._source.capture.url;
+    if (archive) return archive.id;
+    return '';
+  });
+  readonly formattedDate = computed(() => {
+    const res = this.result();
+    return res ? this.languageService.formatDate(res._source.capture.timestamp) : '';
+  });
 
   private readonly languageService = inject(LanguageService);
 
   onClick(): void {
-    this.clicked.emit(this.result());
-  }
+    const result = this.result();
+    const provider = this.provider();
+    const archive = this.archive();
 
-  formatDate(dateString: string): string {
-    return this.languageService.formatDate(dateString);
-  }
-
-  getStatusColorClass(code: number): string {
-    if (code >= 200 && code < 300) return 'text-success';
-    if (code >= 300 && code < 400) return 'text-info';
-    if (code >= 400 && code < 500) return 'text-warning';
-    if (code >= 500) return 'text-error';
-    return 'text-base-content/60';
-  }
-
-  getParserStatus(parser: Parser): 'success' | 'pending' | 'skipped' {
-    if (parser.last_parsed) return 'success';
-    if (parser.should_parse) return 'pending';
-    return 'skipped';
-  }
-
-  getFormattedUrlParams(): { key: string; value: string }[] {
-    try {
-      const url = new URL(this.result()._source.capture.url);
-      const params: { key: string; value: string }[] = [];
-      url.searchParams.forEach((value, key) => {
-        if (params.length < 3) {
-          params.push({ key, value });
-        }
-      });
-      return params;
-    } catch {
-      return [];
+    if (result) {
+      this.clicked.emit(result);
+    } else if (provider) {
+      this.clicked.emit(provider);
+    } else if (archive) {
+      this.clicked.emit(archive);
     }
   }
 }

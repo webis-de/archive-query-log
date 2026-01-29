@@ -30,6 +30,11 @@ import { MetadataWebsiteTabComponent } from './metadata-website-tab/metadata-web
 import { MetadataInfoTabComponent } from './metadata-info-tab/metadata-info-tab.component';
 import { MetadataRelatedTabComponent } from './metadata-related-tab/metadata-related-tab.component';
 import { MetadataUnfurlTabComponent } from './metadata-unfurl-tab/metadata-unfurl-tab.component';
+import { ProviderDetail } from '../../services/provider.service';
+import { ArchiveDetail } from '../../models/archive.model';
+import { MetadataProviderTabComponent } from './metadata-provider-tab/metadata-provider-tab.component';
+import { MetadataArchiveTabComponent } from './metadata-archive-tab/metadata-archive-tab.component';
+import { MetadataStatisticsTabComponent } from './metadata-statistics-tab/metadata-statistics-tab.component';
 
 @Component({
   selector: 'app-query-metadata-panel',
@@ -45,6 +50,9 @@ import { MetadataUnfurlTabComponent } from './metadata-unfurl-tab/metadata-unfur
     MetadataInfoTabComponent,
     MetadataRelatedTabComponent,
     MetadataUnfurlTabComponent,
+    MetadataProviderTabComponent,
+    MetadataArchiveTabComponent,
+    MetadataStatisticsTabComponent,
   ],
   templateUrl: './query-metadata-panel.component.html',
   styleUrl: './query-metadata-panel.component.css',
@@ -53,6 +61,10 @@ import { MetadataUnfurlTabComponent } from './metadata-unfurl-tab/metadata-unfur
 export class AppQueryMetadataPanelComponent {
   readonly isOpen = input.required<boolean>();
   readonly searchResult = input<SearchResult | null>(null);
+  readonly providerDetail = input<ProviderDetail | null>(null);
+  readonly archiveDetail = input<ArchiveDetail | null>(null);
+  readonly isLoading = input<boolean>(false);
+  readonly error = input<string | null>(null);
   readonly closePanel = output<void>();
   readonly relatedSerpSelected = output<SearchResult>();
   readonly activeTab = signal<string>('html');
@@ -62,6 +74,13 @@ export class AppQueryMetadataPanelComponent {
   readonly serpDetails = signal<SerpDetailsResponse | null>(null);
   readonly isLoadingDetails = signal<boolean>(false);
   readonly detailsError = signal<string | null>(null);
+  readonly hasContent = computed(() => {
+    return (
+      this.searchResult() !== null ||
+      this.providerDetail() !== null ||
+      this.archiveDetail() !== null
+    );
+  });
   readonly relatedSerps = computed<RelatedSerp[]>(() => {
     const details = this.serpDetails();
     return details?.related?.serps || [];
@@ -111,6 +130,13 @@ export class AppQueryMetadataPanelComponent {
   private lastLoadedSerpId = '';
 
   constructor() {
+    effect(() => {
+      this.searchResult();
+      this.providerDetail();
+      this.archiveDetail();
+      this.updateTabLabels();
+    });
+
     this.translate
       .get('metadata.htmlView')
       .pipe(takeUntilDestroyed())
@@ -192,33 +218,72 @@ export class AppQueryMetadataPanelComponent {
   }
 
   private updateTabLabels(): void {
-    this.tabs.set([
-      {
-        id: 'html',
-        label: this.translate.instant('metadata.htmlView'),
-        icon: 'bi-code-square',
-      },
-      {
-        id: 'website',
-        label: this.translate.instant('metadata.websiteTab'),
-        icon: 'bi-globe',
-      },
-      {
-        id: 'metadata',
-        label: this.translate.instant('metadata.metadata'),
-        icon: 'bi-info-circle',
-      },
-      {
-        id: 'related',
-        label: this.translate.instant('metadata.relatedSerps'),
-        icon: 'bi-search',
-      },
-      {
-        id: 'unfurl',
-        label: this.translate.instant('metadata.urlDetails'),
-        icon: 'bi-link-45deg',
-      },
-    ]);
+    const result = this.searchResult();
+    const provider = this.providerDetail();
+    const archive = this.archiveDetail();
+
+    if (result) {
+      if (this.activeTab() === 'provider-info' || this.activeTab() === 'archive-info') {
+        this.activeTab.set('html');
+      }
+      this.tabs.set([
+        {
+          id: 'html',
+          label: this.translate.instant('metadata.htmlView'),
+          icon: 'bi-code-square',
+        },
+        {
+          id: 'website',
+          label: this.translate.instant('metadata.websiteTab'),
+          icon: 'bi-globe',
+        },
+        {
+          id: 'metadata',
+          label: this.translate.instant('metadata.metadata'),
+          icon: 'bi-info-circle',
+        },
+        {
+          id: 'related',
+          label: this.translate.instant('metadata.relatedSerps'),
+          icon: 'bi-search',
+        },
+        {
+          id: 'unfurl',
+          label: this.translate.instant('metadata.urlDetails'),
+          icon: 'bi-link-45deg',
+        },
+      ]);
+    } else if (provider) {
+      this.activeTab.set(this.activeTab() === 'statistics' ? 'statistics' : 'provider-info');
+      this.tabs.set([
+        {
+          id: 'provider-info',
+          label: this.translate.instant('providers.details'),
+          icon: 'bi-info-circle',
+        },
+        {
+          id: 'statistics',
+          label: this.translate.instant('statistics.title'),
+          icon: 'bi-bar-chart',
+        },
+      ]);
+    } else if (archive) {
+      this.activeTab.set(this.activeTab() === 'statistics' ? 'statistics' : 'archive-info');
+      this.tabs.set([
+        {
+          id: 'archive-info',
+          label: this.translate.instant('archives.details'),
+          icon: 'bi-info-circle',
+        },
+        {
+          id: 'statistics',
+          label: this.translate.instant('statistics.title'),
+          icon: 'bi-bar-chart',
+        },
+      ]);
+    } else {
+      this.tabs.set([]);
+    }
   }
 
   private fetchSerpDetails(serpId: string): void {

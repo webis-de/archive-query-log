@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { FilterDropdownComponent } from './filter-dropdown.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { ProviderService, ProviderOption } from '../../services/provider.service';
+import { ProviderDetail, ProviderService } from '../../services/provider.service';
 import { of, throwError } from 'rxjs';
 
 describe('FilterDropdownComponent', () => {
@@ -9,14 +9,56 @@ describe('FilterDropdownComponent', () => {
   let fixture: ComponentFixture<FilterDropdownComponent>;
   let providerServiceSpy: jasmine.SpyObj<ProviderService>;
 
-  const mockProviders: ProviderOption[] = [
-    { id: 'google', name: 'Google' },
-    { id: 'bing', name: 'Bing' },
-    { id: 'duckduckgo', name: 'DuckDuckGo' },
-    { id: 'yahoo', name: 'Yahoo' },
-    { id: 'yandex', name: 'Yandex' },
-    { id: 'baidu', name: 'Baidu' },
-    { id: 'ecosia', name: 'Ecosia' },
+  const mockProviders: ProviderDetail[] = [
+    {
+      id: 'google',
+      name: 'Google',
+      domains: ['google.com', 'google.de'],
+      priority: 1,
+      url_patterns: ['google.com/*'],
+    },
+    {
+      id: 'bing',
+      name: 'Bing',
+      domains: ['bing.com', 'bing.de'],
+      priority: 2,
+      url_patterns: ['bing.com/*'],
+    },
+    {
+      id: 'duckduckgo',
+      name: 'DuckDuckGo',
+      domains: ['duckduckgo.com', 'duckduckgo.de'],
+      priority: 3,
+      url_patterns: ['duckduckgo.com/*'],
+    },
+    {
+      id: 'yahoo',
+      name: 'Yahoo',
+      domains: ['yahoo.com', 'yahoo.de'],
+      priority: 4,
+      url_patterns: ['yahoo.com/*'],
+    },
+    {
+      id: 'yandex',
+      name: 'Yandex',
+      domains: ['yandex.com', 'yandex.de'],
+      priority: 5,
+      url_patterns: ['yandex.com/*'],
+    },
+    {
+      id: 'baidu',
+      name: 'Baidu',
+      domains: ['baidu.com', 'baidu.de'],
+      priority: 6,
+      url_patterns: ['baidu.com/*'],
+    },
+    {
+      id: 'ecosia',
+      name: 'Ecosia',
+      domains: ['ecosia.org', 'ecosia.de'],
+      priority: 7,
+      url_patterns: ['ecosia.org/*'],
+    },
   ];
 
   beforeEach(async () => {

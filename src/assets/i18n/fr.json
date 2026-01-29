@@ -1,6 +1,14 @@
 {
   "app": {
-    "title": "Recherche AQL"
+    "title": "Archive Query Log"
+  },
+  "statistics": {
+    "title": "Statistiques",
+    "serpCount": "Total SERPs",
+    "uniqueQueries": "Requêtes uniques",
+    "capturesOverTime": "Captures au fil du temps",
+    "topProviders": "Meilleurs fournisseurs",
+    "topArchives": "Meilleures archives"
   },
   "common": {
     "search": "Rechercher",
@@ -10,11 +18,16 @@
     "delete": "Supprimer",
     "edit": "Modifier",
     "close": "Fermer",
-    "options": "Options"
+    "options": "Options",
+    "name": "Nom",
+    "count": "Nombre"
   },
   "sidebar": {
     "expandSidebar": "Développer la barre latérale",
     "collapseSidebar": "Réduire la barre latérale",
+    "serps": "SERPs",
+    "providers": "Fournisseurs",
+    "archives": "Archives",
     "newProject": "Nouveau projet",
     "temporarySearch": "Recherche temporaire",
     "projects": "Projets",
@@ -37,6 +50,8 @@
   "landing": {
     "welcomeMessage": "Bienvenue sur AQL Recherche",
     "searchPlaceholder": "Rechercher des requêtes...",
+    "searchPlaceholderProviders": "Rechercher des fournisseurs...",
+    "searchPlaceholderArchives": "Rechercher des archives...",
     "searchLabel": "Entrez votre requête de recherche",
     "searchButton": "Rechercher",
     "temporaryModeNote": "Remarque :",
@@ -240,6 +255,38 @@
       "archiveUnavailable": "L'archive peut être indisponible ou bloquée",
       "previewNote": "Cet aperçu montre comment le site web apparaissait au moment de l'archivage.",
       "iframeTitle": "Snapshot archivé du site web du {{date}}"
-    }
+    },
+    "noDataSelected": "Aucune donnée sélectionnée"
+  },
+  "providers": {
+    "searchLabel": "Rechercher des fournisseurs",
+    "searchPlaceholder": "Rechercher des fournisseurs...",
+    "searchProvider": "Fournisseur de recherche",
+    "resultsFound": "{{count}} fournisseurs trouvés",
+    "noResultsFor": "Aucun fournisseur trouvé pour \"{{query}}\"",
+    "enterQuery": "Entrez une recherche ou parcourez tous les fournisseurs",
+    "details": "Détails du fournisseur",
+    "name": "Nom",
+    "id": "ID du fournisseur",
+    "domains": "Domaines",
+    "urlPatterns": "Modèles d'URL",
+    "priority": "Priorité",
+    "failedToLoadDetails": "Échec du chargement des détails du fournisseur."
+  },
+  "archives": {
+    "searchLabel": "Rechercher des archives",
+    "searchPlaceholder": "Rechercher des archives...",
+    "webArchive": "Archive web",
+    "resultsFound": "{{count}} archives trouvées",
+    "noResultsFor": "Aucune archive trouvée pour \"{{query}}\"",
+    "enterQuery": "Entrez une recherche ou parcourez toutes les archives",
+    "details": "Détails de l'archive",
+    "name": "Nom",
+    "id": "ID de l'archive",
+    "cdxApiUrl": "URL de l'API CDX",
+    "mementoApiUrl": "URL de l'API Memento",
+    "serpCount": "Nombre de SERP",
+    "priority": "Priorité",
+    "failedToLoadDetails": "Échec du chargement des détails de l'archive."
   }
 }

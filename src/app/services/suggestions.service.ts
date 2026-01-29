@@ -21,8 +21,7 @@ import { SearchService } from './search.service';
 export interface Suggestion {
   id: string;
   query: string;
-  // optional preview metadata fields
-  score?: number | null; // total hits for this suggestion
+  score?: number | null;
   top_provider?: string | null;
   top_archive?: string | null;
 }
@@ -35,22 +34,16 @@ export class SuggestionsService {
   readonly DEBOUNCE_TIME_MS = 300;
   readonly MAX_SUGGESTIONS = 5;
   readonly suggestions: Signal<Suggestion[]>;
-
   readonly suggestionsWithMeta: Signal<Suggestion[]>;
 
   private readonly apiService = inject(ApiService);
   private readonly searchService = inject(SearchService);
   private readonly searchSubject = new Subject<string>();
-
-  // cache for preview metadata per query
   private readonly metadataCache = new Map<string, QueryMetadataResponse>();
-  // in-flight metadata requests deduplication
   private readonly inFlightMetadata = new Map<string, Observable<QueryMetadataResponse>>();
-  // retry/backoff configuration for 429 responses
   private readonly META_MAX_RETRIES = 3;
-  private readonly META_BASE_DELAY_MS = 100; // exponential backoff base (100ms)
-  // cooldown: when the backend responds with too many requests, temporarily suspend metadata fetches
-  private readonly META_COOLDOWN_MS = 2000; // 2s cooldown
+  private readonly META_BASE_DELAY_MS = 100;
+  private readonly META_COOLDOWN_MS = 2000;
   private metadataCooldownUntil = 0;
 
   constructor() {

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
@@ -37,8 +38,9 @@ describe('SearchViewComponent', () => {
   beforeEach(async () => {
     mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
       MINIMUM_QUERY_LENGTH: 3,
-      suggestionsWithMeta: jasmine.createSpy().and.returnValue([]),
-    });
+      suggestionsWithMeta: signal([]),
+      search: jasmine.createSpy('search'),
+    } as unknown as jasmine.SpyObj<SuggestionsService>);
     mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviders']);
     mockProviderService.getProviders.and.returnValue(of([]));
     mockSearchService = jasmine.createSpyObj('SearchService', [
@@ -116,23 +118,6 @@ describe('SearchViewComponent', () => {
 
       expect(component.searchQuery).toBe('selected query');
       expect(component.showSuggestions()).toBeFalse();
-    });
-
-    it('should render suggestion scores in the dropdown', () => {
-      const suggestions: Suggestion[] = [
-        { id: 's1', query: 'q one', score: 42 },
-        { id: 's2', query: 'q two', score: 7 },
-      ];
-      mockSuggestionsService.suggestionsWithMeta.and.returnValue(suggestions);
-
-      component.onSearchInput('tes');
-      fixture.detectChanges();
-
-      const text = fixture.nativeElement.textContent;
-      expect(text).toContain('q one');
-      expect(text).toContain('42');
-      expect(text).toContain('q two');
-      expect(text).toContain('7');
     });
 
     it('should hide suggestions when clicking outside search container', () => {

@@ -1,12 +1,7 @@
-<div class="min-h-full bg-base-200 flex flex-col items-center pt-64 relative">
-  <!-- Language selector in top right corner -->
-  <div class="absolute top-4 right-4">
-    <app-language-selector></app-language-selector>
-  </div>
-
+<div class="min-h-full flex flex-col items-center pt-32 relative">
   <div class="w-full max-w-3xl px-4 text-center">
+    <img src="assets/img/logo/aql-logo.svg" alt="AQL Logo" class="h-24 w-auto mx-auto mb-2" />
     <h1 class="text-5xl font-bold mb-8 text-primary">{{ 'app.title' | translate }}</h1>
-
     <div class="flex items-center w-full gap-2">
       <aql-dropdown
         class="flex-1 search-container"
@@ -32,7 +27,6 @@
             suffix
             btnType="primary"
             btnStyle="full"
-            [flatten]="true"
             size="sm"
             (buttonClick)="onSearch(); showSuggestions.set(false); $event.stopPropagation()"
           >
@@ -40,21 +34,21 @@
           </aql-button>
         </aql-input-field>
 
-        <div content class="suggestions-content max-h-72 overflow-y-auto">
+        <div content class="suggestions-content max-h-72 overflow-y-auto overflow-x-hidden w-full">
           @for (suggestion of suggestions(); track suggestion.id) {
-            <aql-menu-item iconBefore="bi-search" (click)="onSuggestionSelect(suggestion)">
-              <div class="flex items-center justify-between w-full min-w-0">
-                <div class="flex-1 min-w-0">
-                  <span class="font-medium truncate">{{ suggestion.query }}</span>
-                </div>
-                <div class="ml-3 text-sm text-gray-500 flex-shrink-0">
-                  {{
-                    suggestion.score !== null && suggestion.score !== undefined
-                      ? (suggestion.score | number)
-                      : '—'
-                  }}
-                </div>
-              </div>
+            <aql-menu-item
+              class="w-full max-w-full"
+              iconBefore="bi-search"
+              (click)="onSuggestionSelect(suggestion)"
+            >
+              {{ suggestion.query }}
+              <span after class="text-sm text-gray-500">
+                {{
+                  suggestion.score !== null && suggestion.score !== undefined
+                    ? (suggestion.score | number)
+                    : '—'
+                }}
+              </span>
             </aql-menu-item>
           }
         </div>
@@ -71,6 +65,7 @@
       }
     </div>
 
+    <!-- # LEGACY - Activate when implementing temporary search for user-based session storage use case-->
     <!-- @if (isTemporaryMode()) {
       <p class="text-sm text-base-content/50 mt-6 text-center">
         <strong class="text-warning">{{ 'landing.temporaryModeNote' | translate }}</strong>
