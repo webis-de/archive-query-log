@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { SearchViewComponent } from './search-view.component';
@@ -16,7 +17,7 @@ describe('SearchViewComponent', () => {
   let mockSuggestionsService: jasmine.SpyObj<SuggestionsService>;
   let mockProviderService: jasmine.SpyObj<ProviderService>;
   let mockSearchService: jasmine.SpyObj<SearchService>;
-  let mockRouter: jasmine.SpyObj<Router>;
+  let mockRouter: Router;
 
   const mockSearchResponse: SearchResponse = {
     query: '',
@@ -62,10 +63,13 @@ describe('SearchViewComponent', () => {
       } as QueryMetadataResponse),
     );
 
-    mockRouter = jasmine.createSpyObj('Router', ['navigate']);
-
     await TestBed.configureTestingModule({
-      imports: [SearchViewComponent, SearchResultItemComponent, TranslateModule.forRoot()],
+      imports: [
+        SearchViewComponent,
+        SearchResultItemComponent,
+        TranslateModule.forRoot(),
+        RouterTestingModule.withRoutes([]),
+      ],
       providers: [
         {
           provide: ActivatedRoute,
@@ -77,12 +81,13 @@ describe('SearchViewComponent', () => {
         { provide: SuggestionsService, useValue: mockSuggestionsService },
         { provide: ProviderService, useValue: mockProviderService },
         { provide: SearchService, useValue: mockSearchService },
-        { provide: Router, useValue: mockRouter },
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SearchViewComponent);
     component = fixture.componentInstance;
+    mockRouter = TestBed.inject(Router);
+    spyOn(mockRouter, 'navigate').and.stub();
     fixture.detectChanges();
   });
 

@@ -35,6 +35,7 @@ import { ArchiveDetail } from '../../models/archive.model';
 import { MetadataProviderTabComponent } from './metadata-provider-tab/metadata-provider-tab.component';
 import { MetadataArchiveTabComponent } from './metadata-archive-tab/metadata-archive-tab.component';
 import { MetadataStatisticsTabComponent } from './metadata-statistics-tab/metadata-statistics-tab.component';
+import { MetadataUnbrandedTabComponent } from './metadata-unbranded-tab/metadata-unbranded-tab.component';
 
 @Component({
   selector: 'app-query-metadata-panel',
@@ -53,6 +54,7 @@ import { MetadataStatisticsTabComponent } from './metadata-statistics-tab/metada
     MetadataProviderTabComponent,
     MetadataArchiveTabComponent,
     MetadataStatisticsTabComponent,
+    MetadataUnbrandedTabComponent,
   ],
   templateUrl: './query-metadata-panel.component.html',
   styleUrl: './query-metadata-panel.component.css',
@@ -252,6 +254,11 @@ export class AppQueryMetadataPanelComponent {
           label: this.translate.instant('metadata.urlDetails'),
           icon: 'bi-link-45deg',
         },
+        {
+          id: 'unbranded',
+          label: this.translate.instant('metadata.unbrandedView'),
+          icon: 'bi-eye',
+        },
       ]);
     } else if (provider) {
       this.activeTab.set(this.activeTab() === 'statistics' ? 'statistics' : 'provider-info');
@@ -292,7 +299,7 @@ export class AppQueryMetadataPanelComponent {
     this.serpDetails.set(null);
 
     let completedRequests = 0;
-    const totalRequests = 2;
+    const totalRequests = 3;
     const partialResponse: Partial<SerpDetailsResponse> = {
       serp_id: serpId,
     };
@@ -326,6 +333,17 @@ export class AppQueryMetadataPanelComponent {
       error: err => {
         console.warn('Failed to fetch related SERPs (backend issue), showing empty list:', err);
         partialResponse.related = { count: 0, serps: [] };
+        checkComplete();
+      },
+    });
+
+    this.searchService.getSerpDetails(serpId, ['unbranded']).subscribe({
+      next: response => {
+        partialResponse.unbranded = response.unbranded;
+        checkComplete();
+      },
+      error: err => {
+        console.warn('Failed to fetch unbranded data:', err);
         checkComplete();
       },
     });

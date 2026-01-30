@@ -16,7 +16,6 @@ import { LanguageService } from '../../services/language.service';
 import {
   AqlBarChartComponent,
   AqlButtonComponent,
-  AqlInputFieldComponent,
   AqlLineChartComponent,
   AqlDropdownComponent,
   AqlMenuItemComponent,
@@ -42,7 +41,6 @@ interface LabeledCount {
     FormsModule,
     TranslateModule,
     AqlButtonComponent,
-    AqlInputFieldComponent,
     AqlDropdownComponent,
     AqlMenuItemComponent,
     AqlLineChartComponent,

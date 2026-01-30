@@ -52,15 +52,6 @@
                     {{ 'filter.advancedMode' | translate }}
                   </span>
                 </label>
-                <label class="flex items-center gap-2 cursor-pointer flex-1">
-                  <input
-                    type="checkbox"
-                    class="toggle toggle-sm"
-                    [ngModel]="placeholderToggle()"
-                    (ngModelChange)="updatePlaceholderToggle($event)"
-                  />
-                  <span class="text-sm font-medium text-base-content">Placeholder</span>
-                </label>
               </div>
 
               <!-- Fuzzy Search Options -->

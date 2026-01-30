@@ -41,7 +41,6 @@ import { LanguageService } from '../../services/language.service';
     AqlRadioButtonComponent,
     AqlCheckboxComponent,
     AqlTooltipDirective,
-
   ],
   templateUrl: './filter-dropdown.component.html',
   styleUrls: ['./filter-dropdown.component.css'],
@@ -57,7 +56,6 @@ export class FilterDropdownComponent implements OnInit {
   readonly status = signal<string>('any');
   readonly advancedMode = signal<boolean>(false);
   readonly fuzzySearch = signal<boolean>(false);
-  readonly placeholderToggle = signal<boolean>(false);
   readonly fuzziness = signal<'AUTO' | '0' | '1' | '2'>('AUTO');
   readonly expandSynonyms = signal<boolean>(false);
   readonly isOpen = signal<boolean>(false);
@@ -134,8 +132,6 @@ export class FilterDropdownComponent implements OnInit {
     });
   }
 
-
-
   ngOnInit(): void {
     this.loadProviders();
   }
@@ -194,11 +190,6 @@ export class FilterDropdownComponent implements OnInit {
 
   updateFuzzySearch(value: boolean): void {
     this.fuzzySearch.set(value);
-    this.emitCurrentState();
-  }
-
-  updatePlaceholderToggle(value: boolean): void {
-    this.placeholderToggle.set(value);
     this.emitCurrentState();
   }
 

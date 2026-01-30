@@ -130,6 +130,12 @@
               [isLoading]="isLoadingDetails()"
             ></app-metadata-unfurl-tab>
           }
+          @case ('unbranded') {
+            <app-metadata-unbranded-tab
+              [unbranded]="serpDetails()?.unbranded ?? null"
+              [isLoading]="isLoadingDetails()"
+            ></app-metadata-unbranded-tab>
+          }
           @case ('provider-info') {
             <app-metadata-provider-tab
               [providerDetail]="providerDetail()"

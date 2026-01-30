@@ -27,7 +27,6 @@ import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { ArchiveDetail } from '../../models/archive.model';
 import { ProviderDetail } from '../../services/provider.service';
-import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
 import { LanguageService } from '../../services/language.service';
 import { FilterState } from '../../models/filter.model';
 import { SearchFilter } from '../../models/project.model';
@@ -283,20 +282,15 @@ export class SearchViewComponent {
 
     const yearFilter = this.metadataYear();
     const year = yearFilter ? parseInt(yearFilter, 10) : undefined;
-    
+
     this.searchService
-      .search(
-        this.searchQuery,
-        this.pageSize(),
-        this.currentPage(),
-        {
-           advancedMode,
-           fuzzy,
-           fuzziness,
-           expandSynonyms,
-           year
-        }
-      )
+      .search(this.searchQuery, this.pageSize(), this.currentPage(), {
+        advancedMode,
+        fuzzy,
+        fuzziness,
+        expandSynonyms,
+        year,
+      })
       .subscribe({
         next: response => {
           this.searchResults.set(response.results);
@@ -452,7 +446,6 @@ export class SearchViewComponent {
     // Navigate to trigger a search with the new time range while preserving other filters
     this.router.navigate(['/serps/search'], { queryParams: params });
   }
-
 
   onRelatedSerpSelected(result: SearchResult): void {
     this.selectedResult.set(result);
