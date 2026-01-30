@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { SearchViewComponent } from './search-view.component';
@@ -15,6 +15,7 @@ describe('SearchViewComponent', () => {
   let mockSuggestionsService: jasmine.SpyObj<SuggestionsService>;
   let mockProviderService: jasmine.SpyObj<ProviderService>;
   let mockSearchService: jasmine.SpyObj<SearchService>;
+  let mockRouter: jasmine.SpyObj<Router>;
 
   const mockSearchResponse: SearchResponse = {
     query: '',
@@ -56,6 +57,8 @@ describe('SearchViewComponent', () => {
       } as QueryMetadataResponse),
     );
 
+    mockRouter = jasmine.createSpyObj('Router', ['navigate']);
+
     await TestBed.configureTestingModule({
       imports: [SearchViewComponent, SearchResultItemComponent, TranslateModule.forRoot()],
       providers: [
@@ -69,6 +72,7 @@ describe('SearchViewComponent', () => {
         { provide: SuggestionsService, useValue: mockSuggestionsService },
         { provide: ProviderService, useValue: mockProviderService },
         { provide: SearchService, useValue: mockSearchService },
+        { provide: Router, useValue: mockRouter },
       ],
     }).compileComponents();
 
@@ -128,6 +132,44 @@ describe('SearchViewComponent', () => {
 
       expect(component.showSuggestions()).toBeFalse();
       document.body.removeChild(outsideElement);
+    });
+
+    it('should navigate with year param when histogram click occurs', () => {
+      component.searchQuery = 'test';
+
+      const payload: Parameters<SearchViewComponent['onMetadataHistogramClick']>[0] = {
+        year: '2024',
+      };
+      component.onMetadataHistogramClick(payload);
+
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+        queryParams: { q: 'test', year: '2024' },
+      });
+    });
+
+    it('should set initialFilters dateFrom and dateTo when year is clicked', () => {
+      component.searchQuery = 'test';
+
+      const payload: Parameters<SearchViewComponent['onMetadataHistogramClick']>[0] = {
+        year: '2024',
+      };
+      component.onMetadataHistogramClick(payload);
+
+      expect(component.initialFilters?.dateFrom).toContain('2024');
+      expect(component.initialFilters?.dateTo).toContain('2024');
+    });
+
+    it('should include year when performing search after year filter set', () => {
+      component.searchQuery = 'hello';
+      component.metadataYear.set('2024');
+      component.onSearch();
+
+      expect(mockSearchService.search).toHaveBeenCalled();
+      const lastCallArgs = (mockSearchService.search as jasmine.Spy).calls.mostRecent().args;
+      // args: query, pageSize, offset, options
+      expect(lastCallArgs[0]).toBe('hello');
+      expect(lastCallArgs[3]).toBeDefined();
+      expect(lastCallArgs[3].year).toBe(2024);
     });
   });
 });

@@ -60,10 +60,11 @@ export class QueryOverviewPanelComponent {
   readonly isLoading = input<boolean>(false);
   readonly interval = input<'day' | 'week' | 'month'>('month');
   readonly intervalChange = output<'day' | 'week' | 'month'>();
-  // Emit when user clicks a histogram bucket: { from_timestamp, to_timestamp }
+  // Emit when user clicks a histogram bucket. Currently supports filtering by year: { year: '2024' }
   readonly histogramClick = output<{
-    from_timestamp: string;
-    to_timestamp: string;
+    year?: string;
+    from_timestamp?: string;
+    to_timestamp?: string;
   }>();
 
   readonly showTopQueriesList = signal<boolean>(false);
@@ -313,10 +314,23 @@ export class QueryOverviewPanelComponent {
       const interval = this.interval();
       const range = this.computeRangeForLabel(label, interval);
 
-      this.histogramClick.emit({
-        from_timestamp: range.from,
-        to_timestamp: range.to,
-      });
+      // Backend supports filtering by year for now. Extract year from label (UTC) if possible.
+      let year: string | undefined = undefined;
+      try {
+        const d = new Date(label);
+        if (!isNaN(d.getTime())) {
+          year = String(d.getUTCFullYear());
+        }
+      } catch {
+        // ignore
+      }
+
+      if (year) {
+        this.histogramClick.emit({ year });
+      } else {
+        // fallback to emitting range if parsing failed
+        this.histogramClick.emit({ from_timestamp: range.from, to_timestamp: range.to });
+      }
     } catch {
       // ignore errors
     }

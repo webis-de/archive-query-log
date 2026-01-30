@@ -80,6 +80,7 @@ export class SearchViewComponent {
   readonly metadataTopProviders = 5;
   readonly metadataTopArchives = 5;
   readonly metadataLastMonths = 36;
+  readonly metadataYear = signal<string | null>(null);
   readonly isPanelOpen = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
   readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
@@ -132,6 +133,7 @@ export class SearchViewComponent {
       const status = queryParams.get('status') || 'any';
       const providerStr = queryParams.get('provider');
       const providers = providerStr ? providerStr.split(',') : [];
+      const year = queryParams.get('year') || '';
       const isTemp = queryParams.get('temp') === 'true';
       const searchId = queryParams.get('sid');
 
@@ -150,10 +152,23 @@ export class SearchViewComponent {
         to_timestamp: toTimestamp,
         status,
         provider: providerStr,
+        year,
       });
 
-      // Update filters
-      if (fromTimestamp || toTimestamp || status !== 'any' || providers.length > 0) {
+      // Update filters (including year)
+      if (year) {
+        const y = parseInt(year, 10);
+        const fromIso = `${String(y).padStart(4, '0')}-01-01T12:00:00Z`;
+        const toIso = `${String(y).padStart(4, '0')}-12-31T12:00:00Z`;
+        this.initialFilters = {
+          dateFrom: this.languageService.formatDate(fromIso),
+          dateTo: this.languageService.formatDate(toIso),
+          status,
+          providers,
+        };
+        this.onFiltersChanged(this.initialFilters);
+        this.metadataYear.set(year);
+      } else if (fromTimestamp || toTimestamp || status !== 'any' || providers.length > 0) {
         this.initialFilters = {
           dateFrom: fromTimestamp ? this.languageService.formatDate(fromTimestamp) : '',
           dateTo: toTimestamp ? this.languageService.formatDate(toTimestamp) : '',
@@ -212,7 +227,14 @@ export class SearchViewComponent {
     const offset = (this.currentPage() - 1) * this.pageSize();
     this.loadQueryMetadata(trimmedQuery);
 
-    this.searchService.search(this.searchQuery, this.pageSize(), offset).subscribe({
+    const yearFilter = this.metadataYear();
+    const searchObs = yearFilter
+      ? this.searchService.search(this.searchQuery, this.pageSize(), offset, {
+          year: parseInt(yearFilter, 10),
+        })
+      : this.searchService.search(this.searchQuery, this.pageSize(), offset);
+
+    searchObs.subscribe({
       next: response => {
         this.searchResults.set(response.results);
         this.totalCount.set(response.total);
@@ -270,8 +292,9 @@ export class SearchViewComponent {
   }
 
   onMetadataHistogramClick(payload: {
-    from_timestamp: string;
-    to_timestamp: string;
+    year?: string;
+    from_timestamp?: string;
+    to_timestamp?: string;
     provider_id?: string;
     provider_name?: string;
   }): void {
@@ -288,21 +311,39 @@ export class SearchViewComponent {
       params['provider'] = payload.provider_id;
     }
 
-    if (payload.from_timestamp) params['from_timestamp'] = payload.from_timestamp;
-    if (payload.to_timestamp) params['to_timestamp'] = payload.to_timestamp;
+    // If year specified, use that (backend supports year filter). Otherwise use timestamp range.
+    if (payload.year) {
+      params['year'] = payload.year;
+    } else {
+      if (payload.from_timestamp) params['from_timestamp'] = payload.from_timestamp;
+      if (payload.to_timestamp) params['to_timestamp'] = payload.to_timestamp;
+    }
 
-    // Preserve other active filters (status) and only change the date range
+    // Preserve other active filters (status) and set display dates
     const status = this.currentFilters?.status ?? 'any';
 
-    this.initialFilters = {
-      // Format date-only strings for display (no clock time)
-      dateFrom: payload.from_timestamp
-        ? this.languageService.formatDate(payload.from_timestamp)
-        : '',
-      dateTo: payload.to_timestamp ? this.languageService.formatDate(payload.to_timestamp) : '',
-      status,
-      providers: activeProviders,
-    };
+    if (payload.year) {
+      const y = parseInt(payload.year, 10);
+      // Use midday UTC (12:00) to avoid timezone rollover when formatting in local timezone
+      const fromIso = `${String(y).padStart(4, '0')}-01-01T12:00:00Z`;
+      const toIso = `${String(y).padStart(4, '0')}-12-31T12:00:00Z`;
+      this.initialFilters = {
+        dateFrom: this.languageService.formatDate(fromIso),
+        dateTo: this.languageService.formatDate(toIso),
+        status,
+        providers: activeProviders,
+      };
+    } else {
+      this.initialFilters = {
+        // Format date-only strings for display (no clock time)
+        dateFrom: payload.from_timestamp
+          ? this.languageService.formatDate(payload.from_timestamp)
+          : '',
+        dateTo: payload.to_timestamp ? this.languageService.formatDate(payload.to_timestamp) : '',
+        status,
+        providers: activeProviders,
+      };
+    }
 
     // Navigate to trigger a search with the new time range while preserving other filters
     this.router.navigate(['/serps/search'], { queryParams: params });
