@@ -6,7 +6,12 @@
   class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl block"
   (click)="onClick()"
 >
-  <aql-dropdown subtitle-action position="right" [contentWidth]="'18rem'" (click)="$event.stopPropagation()">
+  <aql-dropdown
+    subtitle-action
+    position="right"
+    [contentWidth]="'18rem'"
+    (click)="$event.stopPropagation()"
+  >
     <aql-button
       trigger
       btnType="icon"
