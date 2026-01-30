@@ -1,5 +1,14 @@
-import { ChangeDetectionStrategy, Component, inject, input, output, computed } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  output,
+  signal,
+} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   AqlPanelComponent,
@@ -7,7 +16,7 @@ import {
   AqlButtonComponent,
   AqlTooltipDirective,
 } from 'aql-stylings';
-import { SearchResult } from '../../models/search.model';
+import { SearchResult, Parser } from '../../models/search.model';
 import { ProviderDetail } from '../../services/provider.service';
 import { ArchiveDetail } from '../../models/archive.model';
 import { LanguageService } from '../../services/language.service';
@@ -17,11 +26,13 @@ import { ArchiveResultContentComponent } from './archive-result-content/archive-
 import { CompareService } from '../../services/compare.service';
 
 export type ResultItem = SearchResult | ProviderDetail | ArchiveDetail;
+import { stripTrackingParams, hasTrackingParams } from '../../utils/url-sanitizer';
 
 @Component({
   selector: 'app-search-result-item',
   standalone: true,
   imports: [
+    CommonModule,
     DecimalPipe,
     TranslateModule,
     AqlPanelComponent,
@@ -70,6 +81,21 @@ export class SearchResultItemComponent {
     return result ? this.compareService.isSelected(result._id) : false;
   });
 
+  readonly hasTracking = computed<boolean>(() => {
+    const res = this.result();
+    const url = res ? res._source.capture.url : '';
+    return hasTrackingParams(url);
+  });
+
+  readonly cleanUrl = computed<string>(() => {
+    const res = this.result();
+    const url = res ? res._source.capture.url : '';
+    return stripTrackingParams(url);
+  });
+
+  readonly copyCleanSuccess = signal<boolean>(false);
+  readonly copyOriginalSuccess = signal<boolean>(false);
+
   private readonly languageService = inject(LanguageService);
 
   toggleCompare(event: Event): void {
@@ -92,5 +118,53 @@ export class SearchResultItemComponent {
     } else if (archive) {
       this.clicked.emit(archive);
     }
+  }
+
+  copyCleanUrl(event: Event): void {
+    event.stopPropagation();
+    const res = this.result();
+    if (!res) return;
+    const clean = this.cleanUrl();
+    navigator.clipboard.writeText(clean).then(() => {
+      this.copyCleanSuccess.set(true);
+      setTimeout(() => this.copyCleanSuccess.set(false), 2000);
+    });
+  }
+
+  copyOriginalUrl(event: Event): void {
+    event.stopPropagation();
+    const res = this.result();
+    if (!res) return;
+    const url = res._source.capture.url;
+    navigator.clipboard.writeText(url).then(() => {
+      this.copyOriginalSuccess.set(true);
+      setTimeout(() => this.copyOriginalSuccess.set(false), 2000);
+    });
+  }
+
+  getParserStatus(parser: Parser | undefined): 'success' | 'pending' | 'skipped' {
+    if (!parser) return 'skipped';
+    if (parser.last_parsed) return 'success';
+    if (parser.should_parse) return 'pending';
+    return 'skipped';
+  }
+
+  getFormattedUrlParams(): { key: string; value: string }[] {
+    const res = this.result();
+    if (!res) return [];
+    try {
+      const url = new URL(res._source.capture.url);
+      const params: { key: string; value: string }[] = [];
+      url.searchParams.forEach((value, key) => {
+        if (params.length < 3) params.push({ key, value });
+      });
+      return params;
+    } catch {
+      return [];
+    }
+  }
+
+  trackByKey(index: number, item: { key: string }): string {
+    return item.key;
   }
 }

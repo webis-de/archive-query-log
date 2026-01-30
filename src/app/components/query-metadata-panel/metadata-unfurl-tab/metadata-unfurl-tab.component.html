@@ -16,6 +16,42 @@
         </a>
       }
     </div>
+
+    <!-- Privacy URL Strip Section -->
+    @if (hasTrackingParams()) {
+      <div class="bg-base-200 rounded-lg p-3 border border-base-300">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="bi bi-shield-check text-sm"></i>
+          <span class="text-xs font-medium">{{
+            'metadata.unfurl.privacyStrip.title' | translate
+          }}</span>
+        </div>
+        <div class="text-xs text-base-content/70 mb-2">
+          {{
+            'metadata.unfurl.privacyStrip.description'
+              | translate: { count: trackingParamsFound().length }
+          }}
+        </div>
+        @if (strippedUrl(); as stripped) {
+          <div class="flex gap-2">
+            <aql-button
+              [btnType]="copySuccess() ? 'primary' : 'ghost'"
+              size="xs"
+              [iconBefore]="copySuccess() ? 'bi-check-lg' : 'bi-clipboard'"
+              (buttonClick)="copyStrippedUrl()"
+            >
+              {{
+                (copySuccess()
+                  ? 'metadata.unfurl.privacyStrip.copied'
+                  : 'metadata.unfurl.privacyStrip.copy'
+                ) | translate
+              }}
+            </aql-button>
+          </div>
+        }
+      </div>
+    }
+
     @if (isLoading()) {
       <div class="flex items-center justify-center py-8">
         <span class="loading loading-spinner loading-md text-primary"></span>
@@ -66,8 +102,20 @@
                 <tbody>
                   @for (param of queryParamEntries(); track param.key) {
                     <tr class="border-b border-base-300/50">
-                      <td class="font-mono text-sm text-primary">{{ param.key }}</td>
-                      <td class="font-mono text-sm break-all">{{ param.value }}</td>
+                      <td class="font-mono text-sm">
+                        @if (param.isTracking) {
+                          <span class="text-base-content/50">{{ param.key }}</span>
+                          <span class="badge badge-xs badge-ghost ml-1">tracking</span>
+                        } @else {
+                          <span class="text-primary">{{ param.key }}</span>
+                        }
+                      </td>
+                      <td
+                        class="font-mono text-sm break-all"
+                        [class.text-base-content/60]="param.isTracking"
+                      >
+                        {{ param.value }}
+                      </td>
                     </tr>
                   }
                 </tbody>
