@@ -139,21 +139,6 @@ export class FilterDropdownComponent implements OnInit {
     }
   }
 
-  /**
-   * Restores the UI to the last applied filter state.
-   * Called when dropdown closes without clicking Apply.
-   */
-  private restoreLastAppliedState(): void {
-    this.selectedYear.set(this.lastAppliedState.year);
-    this.status.set(this.lastAppliedState.status || 'any');
-    this.advancedMode.set(this.lastAppliedState.advancedMode || false);
-    this.fuzzySearch.set(this.lastAppliedState.fuzzy ?? false);
-    this.fuzziness.set(this.lastAppliedState.fuzziness ?? 'AUTO');
-    this.expandSynonyms.set(this.lastAppliedState.expandSynonyms ?? false);
-    this.selectedProvider.set(this.lastAppliedState.provider);
-    this.providerSearch.set('');
-  }
-
   reset(): void {
     this.selectedYear.set(undefined);
     this.status.set('any');
@@ -232,6 +217,21 @@ export class FilterDropdownComponent implements OnInit {
 
   trackByProviderId(index: number, item: FilterProvider): string {
     return item.id;
+  }
+
+  /**
+   * Restores the UI to the last applied filter state.
+   * Called when dropdown closes without clicking Apply.
+   */
+  private restoreLastAppliedState(): void {
+    this.selectedYear.set(this.lastAppliedState.year);
+    this.status.set(this.lastAppliedState.status || 'any');
+    this.advancedMode.set(this.lastAppliedState.advancedMode || false);
+    this.fuzzySearch.set(this.lastAppliedState.fuzzy ?? false);
+    this.fuzziness.set(this.lastAppliedState.fuzziness ?? 'AUTO');
+    this.expandSynonyms.set(this.lastAppliedState.expandSynonyms ?? false);
+    this.selectedProvider.set(this.lastAppliedState.provider);
+    this.providerSearch.set('');
   }
 
   private loadProviders(): void {
