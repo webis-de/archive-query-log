@@ -135,9 +135,7 @@
                 [data]="queryMetadata()"
                 [isLoading]="isMetadataLoading()"
                 [interval]="metadataInterval()"
-                [selectedProvider]="metadataProvider()"
                 (intervalChange)="onMetadataIntervalChange($event)"
-                (providerChange)="onMetadataProviderChange($event)"
                 (histogramClick)="onMetadataHistogramClick($event)"
               ></app-query-overview-panel>
             }

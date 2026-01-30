@@ -65,8 +65,7 @@
     "topProviders": "Top providers",
     "topArchives": "Top archives",
     "loading": "Loading...",
-    "noData": "No data",
-    "allProviders": "Alle Anbieter"
+    "noData": "No data"
   },
   "project": {
     "name": "Projektname",

@@ -80,7 +80,6 @@ export class SearchViewComponent {
   readonly metadataTopProviders = 5;
   readonly metadataTopArchives = 5;
   readonly metadataLastMonths = 36;
-  readonly metadataProvider = signal<string | null>(null);
   readonly isPanelOpen = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
   readonly isSidebarCollapsed = this.sessionService.sidebarCollapsed;
@@ -270,13 +269,6 @@ export class SearchViewComponent {
     }
   }
 
-  onMetadataProviderChange(provider: string | null): void {
-    this.metadataProvider.set(provider);
-    if (this.searchQuery.trim()) {
-      this.loadQueryMetadata(this.searchQuery.trim());
-    }
-  }
-
   onMetadataHistogramClick(payload: {
     from_timestamp: string;
     to_timestamp: string;
@@ -415,7 +407,6 @@ export class SearchViewComponent {
         top_providers: this.metadataTopProviders,
         top_archives: this.metadataTopArchives,
         last_n_months: this.metadataLastMonths,
-        provider_id: this.metadataProvider() ?? undefined,
       })
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({

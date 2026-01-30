@@ -7,10 +7,8 @@ import {
   output,
   signal,
   viewChild,
-  effect,
   WritableSignal,
 } from '@angular/core';
-import { ProviderService, ProviderOption } from '../../services/provider.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -62,14 +60,10 @@ export class QueryOverviewPanelComponent {
   readonly isLoading = input<boolean>(false);
   readonly interval = input<'day' | 'week' | 'month'>('month');
   readonly intervalChange = output<'day' | 'week' | 'month'>();
-  // Emit when provider is changed (null for all)
-  readonly providerChange = output<string | null>();
-  // Emit when user clicks a histogram bucket: { from_timestamp, to_timestamp, provider_id?, provider_name? }
+  // Emit when user clicks a histogram bucket: { from_timestamp, to_timestamp }
   readonly histogramClick = output<{
     from_timestamp: string;
     to_timestamp: string;
-    provider_id?: string;
-    provider_name?: string;
   }>();
 
   readonly showTopQueriesList = signal<boolean>(false);
@@ -268,51 +262,9 @@ export class QueryOverviewPanelComponent {
     } as EChartsOption;
   });
 
-  // Currently selected provider for timeline (null = all)
-  readonly selectedProviderSignal = signal<string | null>(null);
-  // Allow parent to set selected provider (provider id)
-  readonly selectedProvider = input<string | null>(null);
-  readonly providers = signal<ProviderOption[]>([]);
-  readonly providerSearch = signal<string>('');
-  readonly filteredProviders = computed<ProviderOption[]>(() => {
-    const all = this.providers();
-    const search = this.providerSearch().toLowerCase().trim();
-    if (!search) return all;
-    return all.filter(p => p.name.toLowerCase().includes(search));
-  });
-
-  readonly selectedProviderLabel = computed(() => {
-    const id = this.selectedProviderSignal();
-    if (!id) return 'searchStats.allProviders';
-    const provider = this.providers().find(p => p.id === id);
-    return provider ? provider.name : id;
-  });
-
-  private readonly providerService = inject(ProviderService);
   private readonly exportService = inject(ExportService);
   private readonly translate = inject(TranslateService);
   private readonly languageService = inject(LanguageService);
-
-  constructor() {
-    // keep internal signal in sync with input when parent changes selection
-    effect(() => {
-      const incoming = this.selectedProvider();
-      this.selectedProviderSignal.set(incoming ?? null);
-    });
-
-    // Load all providers (shared cached list)
-    this.providerService.getProviders().subscribe(list => {
-      this.providers.set(list);
-    });
-
-    // Reset provider search when providers change
-    effect(() => {
-      const list = this.providers();
-      if (!list || list.length === 0) {
-        this.providerSearch.set('');
-      }
-    });
-  }
 
   onIntervalSelect(value: 'day' | 'week' | 'month'): void {
     if (value === this.interval()) {
@@ -350,15 +302,6 @@ export class QueryOverviewPanelComponent {
     }
   }
 
-  onProviderSelect(provider: string | null): void {
-    this.selectedProviderSignal.set(provider);
-    this.providerChange.emit(provider);
-  }
-
-  updateProviderSearch(value: string): void {
-    this.providerSearch.set(value);
-  }
-
   onHistogramClick(params: unknown): void {
     // echarts click payload includes dataIndex and name
     try {
@@ -369,15 +312,10 @@ export class QueryOverviewPanelComponent {
 
       const interval = this.interval();
       const range = this.computeRangeForLabel(label, interval);
-      const provider = this.selectedProviderSignal();
-      const providerObj = provider ? this.providers().find(p => p.id === provider) : null;
-      const providerName = providerObj ? providerObj.name : undefined;
 
       this.histogramClick.emit({
         from_timestamp: range.from,
         to_timestamp: range.to,
-        provider_id: provider || undefined,
-        provider_name: providerName,
       });
     } catch {
       // ignore errors
