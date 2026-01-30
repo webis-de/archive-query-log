@@ -6,7 +6,7 @@
   class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl block"
   (click)="onClick()"
 >
-  <aql-dropdown subtitle-action position="right" (click)="$event.stopPropagation()">
+  <aql-dropdown subtitle-action position="right" [contentWidth]="'18rem'" (click)="$event.stopPropagation()">
     <aql-button
       trigger
       btnType="icon"
@@ -17,47 +17,41 @@
       [attr.aria-label]="'tooltip.search.moreOptions' | translate"
     ></aql-button>
     <ng-container content>
-      <div class="p-3 space-y-2 text-sm min-w-50">
-        @if (hasTracking()) {
-          <button
-            class="w-full text-left px-3 py-2 rounded-lg hover:bg-base-200 flex items-center gap-2 transition-colors"
-            (click)="copyCleanUrl($event)"
+      <div class="text-sm">
+        <!-- ID at top -->
+        <div class="pb-2 mb-2 border-b border-base-300">
+          <span class="font-semibold text-xs">{{ 'search.idLabel' | translate }}</span>
+          <p class="text-xs truncate mt-1">{{ result()._id }}</p>
+        </div>
+        <!-- Copy buttons stacked -->
+        <div class="flex flex-col gap-1">
+          @if (hasTracking()) {
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              [fullWidth]="true"
+              align="start"
+              [iconBefore]="copyCleanSuccess() ? 'bi-check-lg' : 'bi-shield-check'"
+              (buttonClick)="copyCleanUrl($event)"
+            >
+              {{
+                (copyCleanSuccess() ? 'search.copiedCleanUrl' : 'search.copyCleanUrl') | translate
+              }}
+            </aql-button>
+          }
+          <aql-button
+            btnType="ghost"
+            size="xs"
+            [fullWidth]="true"
+            align="start"
+            [iconBefore]="copyOriginalSuccess() ? 'bi-check-lg' : 'bi-clipboard'"
+            (buttonClick)="copyOriginalUrl($event)"
           >
-            <i
-              [class]="
-                copyCleanSuccess()
-                  ? 'bi bi-check-lg text-success'
-                  : 'bi bi-shield-check text-success'
-              "
-            ></i>
-            <span>{{
-              (copyCleanSuccess() ? 'search.copiedCleanUrl' : 'search.copyCleanUrl') | translate
-            }}</span>
-          </button>
-          <div class="divider my-1"></div>
-        }
-        <button
-          class="w-full text-left px-3 py-2 rounded-lg hover:bg-base-200 flex items-center gap-2 transition-colors"
-          (click)="copyOriginalUrl($event)"
-        >
-          <i class="bi bi-clipboard text-base-content/80"></i>
-          <span>{{
-            (copyOriginalSuccess() ? 'search.copiedOriginalUrl' : 'search.copyOriginalUrl')
-              | translate
-          }}</span>
-        </button>
-        <div class="divider my-1"></div>
-        <div>
-          <span class="font-semibold">{{ 'search.scoreLabel' | translate }}</span>
-          <span class="ml-2">{{ result()._score | number: '1.2-2' }}</span>
-        </div>
-        <div>
-          <span class="font-semibold">{{ 'search.idLabel' | translate }}</span>
-          <span class="ml-2 text-xs break-all">{{ result()._id }}</span>
-        </div>
-        <div>
-          <span class="font-semibold">{{ 'search.mimeTypeLabel' | translate }}</span>
-          <span class="ml-2">{{ result()._source.capture.mimetype }}</span>
+            {{
+              (copyOriginalSuccess() ? 'search.copiedOriginalUrl' : 'search.copyOriginalUrl')
+                | translate
+            }}
+          </aql-button>
         </div>
       </div>
     </ng-container>
