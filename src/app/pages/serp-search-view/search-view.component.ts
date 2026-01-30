@@ -27,7 +27,8 @@ import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { ArchiveDetail } from '../../models/archive.model';
 import { ProviderDetail } from '../../services/provider.service';
-
+import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { LanguageService } from '../../services/language.service';
 import { FilterState } from '../../models/filter.model';
 import { SearchFilter } from '../../models/project.model';
 import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-panel/query-metadata-panel.component';
@@ -65,6 +66,7 @@ export class SearchViewComponent {
   readonly translate = inject(TranslateService);
   readonly elementRef = inject(ElementRef);
   readonly destroyRef = inject(DestroyRef);
+  readonly languageService = inject(LanguageService);
   readonly searchResults = signal<SearchResult[]>([]);
   readonly totalCount = signal<number>(0);
   readonly isLoading = signal<boolean>(false);
@@ -74,6 +76,7 @@ export class SearchViewComponent {
   readonly metadataTopProviders = 5;
   readonly metadataTopArchives = 5;
   readonly metadataLastMonths = 36;
+  readonly metadataYear = signal<string | null>(null);
   readonly isPanelOpen = signal(false);
   readonly isTransitionEnabled = signal(false);
   readonly selectedResult = signal<SearchResult | null>(null);
@@ -163,6 +166,7 @@ export class SearchViewComponent {
       const fuzziness =
         (queryParams.get('fuzziness') as 'AUTO' | '0' | '1' | '2' | null) || undefined;
       const expandSynonyms = queryParams.get('expand_synonyms') === 'true';
+      const year = queryParams.get('year') || '';
       const isTemp = queryParams.get('temp') === 'true';
 
       this.isTemporarySearch = isTemp;
@@ -175,10 +179,30 @@ export class SearchViewComponent {
         status,
         provider: providerStr,
         advanced_mode: advancedMode,
+        fuzzy,
+        fuzziness,
+        expandSynonyms,
+        year,
       });
 
       // Update filters
-      if (
+      let newInitialFilters: FilterState | null = null;
+      if (year) {
+        const y = parseInt(year, 10);
+        const fromIso = `${String(y).padStart(4, '0')}-01-01T12:00:00Z`;
+        const toIso = `${String(y).padStart(4, '0')}-12-31T12:00:00Z`;
+        newInitialFilters = {
+          dateFrom: this.languageService.formatDate(fromIso),
+          dateTo: this.languageService.formatDate(toIso),
+          status,
+          providers,
+          advancedMode,
+          fuzzy,
+          fuzziness,
+          expandSynonyms,
+        };
+        this.metadataYear.set(year);
+      } else if (
         fromTimestamp ||
         toTimestamp ||
         status !== 'any' ||
@@ -188,9 +212,9 @@ export class SearchViewComponent {
         fuzziness ||
         expandSynonyms
       ) {
-        this.initialFilters = {
-          dateFrom: fromTimestamp,
-          dateTo: toTimestamp,
+        newInitialFilters = {
+          dateFrom: fromTimestamp ? this.languageService.formatDate(fromTimestamp) : '',
+          dateTo: toTimestamp ? this.languageService.formatDate(toTimestamp) : '',
           status,
           providers,
           advancedMode,
@@ -198,9 +222,11 @@ export class SearchViewComponent {
           fuzziness,
           expandSynonyms,
         };
-        if (this.initialFilters) {
-          this.onFiltersChanged(this.initialFilters);
-        }
+      }
+
+      if (newInitialFilters) {
+        this.initialFilters = newInitialFilters;
+        this.onFiltersChanged(this.initialFilters);
       }
 
       // Only trigger search if params changed and query exists
@@ -255,15 +281,21 @@ export class SearchViewComponent {
     const expandSynonyms = this.currentFilters?.expandSynonyms || undefined;
     this.loadQueryMetadata(trimmedQuery);
 
+    const yearFilter = this.metadataYear();
+    const year = yearFilter ? parseInt(yearFilter, 10) : undefined;
+    
     this.searchService
       .search(
         this.searchQuery,
         this.pageSize(),
         this.currentPage(),
-        advancedMode,
-        fuzzy,
-        fuzziness,
-        expandSynonyms,
+        {
+           advancedMode,
+           fuzzy,
+           fuzziness,
+           expandSynonyms,
+           year
+        }
       )
       .subscribe({
         next: response => {
@@ -363,6 +395,65 @@ export class SearchViewComponent {
     }
   }
 
+  onMetadataHistogramClick(payload: {
+    year?: string;
+    from_timestamp?: string;
+    to_timestamp?: string;
+    provider_id?: string;
+    provider_name?: string;
+  }): void {
+    // Build query params starting from existing query
+    const params: Record<string, string> = { q: this.searchQuery };
+
+    // Preserve existing provider filters when available, otherwise fall back to payload provider
+    const activeProviders = this.currentFilters?.providers?.length
+      ? this.currentFilters!.providers
+      : [];
+    if (activeProviders.length > 0) {
+      params['provider'] = activeProviders.join(',');
+    } else if (payload.provider_id) {
+      params['provider'] = payload.provider_id;
+    }
+
+    // If year specified, use that (backend supports year filter). Otherwise use timestamp range.
+    if (payload.year) {
+      params['year'] = payload.year;
+    } else {
+      if (payload.from_timestamp) params['from_timestamp'] = payload.from_timestamp;
+      if (payload.to_timestamp) params['to_timestamp'] = payload.to_timestamp;
+    }
+
+    // Preserve other active filters (status) and set display dates
+    const status = this.currentFilters?.status ?? 'any';
+
+    if (payload.year) {
+      const y = parseInt(payload.year, 10);
+      // Use midday UTC (12:00) to avoid timezone rollover when formatting in local timezone
+      const fromIso = `${String(y).padStart(4, '0')}-01-01T12:00:00Z`;
+      const toIso = `${String(y).padStart(4, '0')}-12-31T12:00:00Z`;
+      this.initialFilters = {
+        dateFrom: this.languageService.formatDate(fromIso),
+        dateTo: this.languageService.formatDate(toIso),
+        status,
+        providers: activeProviders,
+      };
+    } else {
+      this.initialFilters = {
+        // Format date-only strings for display (no clock time)
+        dateFrom: payload.from_timestamp
+          ? this.languageService.formatDate(payload.from_timestamp)
+          : '',
+        dateTo: payload.to_timestamp ? this.languageService.formatDate(payload.to_timestamp) : '',
+        status,
+        providers: activeProviders,
+      };
+    }
+
+    // Navigate to trigger a search with the new time range while preserving other filters
+    this.router.navigate(['/serps/search'], { queryParams: params });
+  }
+
+
   onRelatedSerpSelected(result: SearchResult): void {
     this.selectedResult.set(result);
     this.panelNavController.navigateToItem(result._id);
@@ -431,8 +522,12 @@ export class SearchViewComponent {
         searchItem.filter.to_timestamp
       ) {
         this.initialFilters = {
-          dateFrom: searchItem.filter.from_timestamp || '',
-          dateTo: searchItem.filter.to_timestamp || '',
+          dateFrom: searchItem.filter.from_timestamp
+            ? this.languageService.formatDate(searchItem.filter.from_timestamp)
+            : '',
+          dateTo: searchItem.filter.to_timestamp
+            ? this.languageService.formatDate(searchItem.filter.to_timestamp)
+            : '',
           status: 'any',
           providers: searchItem.filter.provider ? searchItem.filter.provider.split(',') : [],
         };

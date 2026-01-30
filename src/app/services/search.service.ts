@@ -20,10 +20,15 @@ export class SearchService {
     query: string,
     size?: number,
     page?: number,
-    advancedMode?: boolean,
-    fuzzy?: boolean,
-    fuzziness?: string,
-    expandSynonyms?: boolean,
+    options: {
+      advancedMode?: boolean;
+      fuzzy?: boolean;
+      fuzziness?: string;
+      expandSynonyms?: boolean;
+      year?: number;
+      provider_id?: string;
+      status_code?: number;
+    } = {},
   ): Observable<SearchResponse> {
     const params: Record<string, string | number | boolean> = {
       query: query,
@@ -35,17 +40,26 @@ export class SearchService {
     if (page !== undefined) {
       params['page'] = page;
     }
-    if (advancedMode !== undefined) {
-      params['advanced_mode'] = advancedMode;
+    if (options.advancedMode !== undefined) {
+      params['advanced_mode'] = options.advancedMode;
     }
-    if (fuzzy !== undefined) {
-      params['fuzzy'] = fuzzy;
+    if (options.fuzzy !== undefined) {
+      params['fuzzy'] = options.fuzzy;
     }
-    if (fuzziness) {
-      params['fuzziness'] = fuzziness;
+    if (options.fuzziness) {
+      params['fuzziness'] = options.fuzziness;
     }
-    if (expandSynonyms !== undefined) {
-      params['expand_synonyms'] = expandSynonyms;
+    if (options.expandSynonyms !== undefined) {
+      params['expand_synonyms'] = options.expandSynonyms;
+    }
+    if (options.provider_id) {
+      params['provider_id'] = options.provider_id;
+    }
+    if (options.year !== undefined) {
+      params['year'] = options.year;
+    }
+    if (options.status_code !== undefined) {
+      params['status_code'] = options.status_code;
     }
 
     return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, params);
@@ -103,6 +117,9 @@ export class SearchService {
     }
     if (params.last_n_months !== undefined) {
       apiParams['last_n_months'] = params.last_n_months;
+    }
+    if (params.provider_id) {
+      apiParams['provider_id'] = params.provider_id;
     }
 
     return this.apiService.get<QueryMetadataResponse>(API_CONFIG.endpoints.serpsPreview, apiParams);

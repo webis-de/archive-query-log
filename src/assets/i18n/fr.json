@@ -125,6 +125,7 @@
     "chartPlaceholder": "Chart placeholder",
     "histogramBuckets": "Histogram buckets: {{count}}",
     "noHistogram": "No histogram data",
+    "clickToFilter": "Cliquez pour filtrer par date",
     "topQueries": "Top queries",
     "topProviders": "Top providers",
     "topArchives": "Top archives",

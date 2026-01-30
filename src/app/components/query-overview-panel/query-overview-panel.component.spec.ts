@@ -73,4 +73,14 @@ describe('QueryOverviewPanelComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.textContent).toContain('searchStats.noData');
   });
+
+  it('should emit year when histogram bar is clicked', () => {
+    fixture.componentRef.setInput('data', mockMetadata);
+    fixture.detectChanges();
+
+    spyOn(component.histogramClick, 'emit');
+    component.onHistogramClick({ dataIndex: 0 } as unknown as Event);
+
+    expect(component.histogramClick.emit).toHaveBeenCalledWith({ year: '2024' });
+  });
 });

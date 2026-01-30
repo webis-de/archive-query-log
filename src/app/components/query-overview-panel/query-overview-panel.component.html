@@ -57,6 +57,7 @@
             </aql-menu-item>
           </ng-container>
         </aql-dropdown>
+
         @if (hasHistogram()) {
           <aql-button
             btnType="ghost"
@@ -76,6 +77,7 @@
           #histogramChart
           [options]="histogramChartOptions()"
           [height]="'180px'"
+          (chartClick)="onHistogramClick($event)"
         ></aql-line-chart>
       } @else {
         <div

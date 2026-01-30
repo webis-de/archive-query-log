@@ -65,6 +65,7 @@
                 [isLoading]="isMetadataLoading()"
                 [interval]="metadataInterval()"
                 (intervalChange)="onMetadataIntervalChange($event)"
+                (histogramClick)="onMetadataHistogramClick($event)"
               ></app-query-overview-panel>
             }
           </div>
