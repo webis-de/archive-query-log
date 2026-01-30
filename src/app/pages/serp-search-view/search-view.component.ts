@@ -408,14 +408,40 @@ export class SearchViewComponent {
       params['year'] = payload.year;
     }
 
-    // Preserve other active filters (status)
+    // Preserve all active filters in URL params
     const status = this.currentFilters?.status ?? 'any';
+    const advancedMode = this.currentFilters?.advancedMode ?? false;
+    const fuzzy = this.currentFilters?.fuzzy ?? false;
+    const fuzziness = this.currentFilters?.fuzziness ?? 'AUTO';
+    const expandSynonyms = this.currentFilters?.expandSynonyms ?? false;
+
+    // Add all filter params to URL so they are restored on navigation
+    if (status && status !== 'any') {
+      params['status'] = status;
+    }
+    if (advancedMode) {
+      params['advanced_mode'] = 'true';
+    }
+    if (fuzzy) {
+      params['fuzzy'] = 'true';
+    }
+    if (fuzziness && fuzziness !== 'AUTO') {
+      params['fuzziness'] = fuzziness;
+    }
+    if (expandSynonyms) {
+      params['expand_synonyms'] = 'true';
+    }
+
     const yearNum = payload.year ? parseInt(payload.year, 10) : undefined;
 
     this.initialFilters = {
       year: yearNum,
       status,
       provider: activeProvider || payload.provider_id,
+      advancedMode,
+      fuzzy,
+      fuzziness,
+      expandSynonyms,
     };
 
     // Navigate to trigger a search with the new year while preserving other filters

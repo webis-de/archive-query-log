@@ -93,7 +93,17 @@ export class FilterDropdownComponent implements OnInit {
 
   private readonly providerService = inject(ProviderService);
   private previousOpenState = false;
-  private appliedClose = false;
+
+  // Store the last applied filter state to restore when closing without apply
+  private lastAppliedState: FilterState = {
+    year: undefined,
+    status: 'any',
+    provider: undefined,
+    advancedMode: false,
+    fuzzy: false,
+    fuzziness: 'AUTO',
+    expandSynonyms: false,
+  };
 
   constructor() {
     effect(() => {
@@ -106,6 +116,8 @@ export class FilterDropdownComponent implements OnInit {
         this.fuzziness.set(filterValue.fuzziness ?? 'AUTO');
         this.expandSynonyms.set(filterValue.expandSynonyms ?? false);
         this.selectedProvider.set(filterValue.provider);
+        // Update the last applied state when filters are set externally
+        this.lastAppliedState = { ...filterValue };
       }
     });
   }
@@ -119,15 +131,27 @@ export class FilterDropdownComponent implements OnInit {
     this.previousOpenState = isOpen;
     this.isOpen.set(isOpen);
 
-    // Reset filters when dropdown closes without applying
+    // When dropdown closes without applying, restore to last applied state
     if (wasOpen && !isOpen) {
       setTimeout(() => {
-        if (!this.appliedClose) {
-          this.reset();
-        }
-        this.appliedClose = false;
+        this.restoreLastAppliedState();
       }, 300);
     }
+  }
+
+  /**
+   * Restores the UI to the last applied filter state.
+   * Called when dropdown closes without clicking Apply.
+   */
+  private restoreLastAppliedState(): void {
+    this.selectedYear.set(this.lastAppliedState.year);
+    this.status.set(this.lastAppliedState.status || 'any');
+    this.advancedMode.set(this.lastAppliedState.advancedMode || false);
+    this.fuzzySearch.set(this.lastAppliedState.fuzzy ?? false);
+    this.fuzziness.set(this.lastAppliedState.fuzziness ?? 'AUTO');
+    this.expandSynonyms.set(this.lastAppliedState.expandSynonyms ?? false);
+    this.selectedProvider.set(this.lastAppliedState.provider);
+    this.providerSearch.set('');
   }
 
   reset(): void {
@@ -140,12 +164,31 @@ export class FilterDropdownComponent implements OnInit {
     this.providerSearch.set('');
     this.selectedProvider.set(undefined);
 
+    // Update the last applied state and emit
+    this.lastAppliedState = {
+      year: undefined,
+      status: 'any',
+      provider: undefined,
+      advancedMode: false,
+      fuzzy: false,
+      fuzziness: 'AUTO',
+      expandSynonyms: false,
+    };
     this.emitCurrentState();
   }
 
   apply(event: MouseEvent): void {
+    // Save the current state as the last applied state
+    this.lastAppliedState = {
+      year: this.selectedYear(),
+      status: this.status(),
+      provider: this.selectedProvider(),
+      advancedMode: this.advancedMode(),
+      fuzzy: this.fuzzySearch(),
+      fuzziness: this.fuzziness(),
+      expandSynonyms: this.expandSynonyms(),
+    };
     this.emitCurrentState();
-    this.appliedClose = true;
     this.dropdown?.onContentClick(event);
   }
 
