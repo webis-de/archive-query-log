@@ -150,13 +150,11 @@ export class LandingComponent {
       const queryParams: Record<string, string> = { q: query };
 
       if (this.currentFilters) {
-        if (this.currentFilters.dateFrom)
-          queryParams['from_timestamp'] = this.currentFilters.dateFrom;
-        if (this.currentFilters.dateTo) queryParams['to_timestamp'] = this.currentFilters.dateTo;
+        if (this.currentFilters.year) queryParams['year'] = String(this.currentFilters.year);
         if (this.currentFilters.status && this.currentFilters.status !== 'any')
           queryParams['status'] = this.currentFilters.status;
-        if (this.currentFilters.providers && this.currentFilters.providers.length > 0) {
-          queryParams['provider'] = this.currentFilters.providers.join(',');
+        if (this.currentFilters.provider) {
+          queryParams['provider'] = this.currentFilters.provider;
         }
         if (this.currentFilters.advancedMode) {
           queryParams['advanced_mode'] = 'true';
@@ -176,8 +174,6 @@ export class LandingComponent {
       const searchFilter = {
         query,
         provider: queryParams['provider'],
-        from_timestamp: queryParams['from_timestamp'],
-        to_timestamp: queryParams['to_timestamp'],
       };
 
       if (!this.isTemporaryMode()) {

@@ -11,8 +11,9 @@ export class FilterBadgeService {
   generateBadges(filters: FilterState): string[] {
     const badges: string[] = [];
 
-    if (filters.dateFrom || filters.dateTo) {
-      badges.push(this.formatDateBadge(filters.dateFrom, filters.dateTo));
+    if (filters.year) {
+      const yearLabel = this.translate.instant('filter.badges.year') as string;
+      badges.push(`${yearLabel}: ${filters.year}`);
     }
 
     if (filters.status && filters.status !== 'any') {
@@ -21,9 +22,9 @@ export class FilterBadgeService {
       badges.push(`${statusLabel}: ${statusValue}`);
     }
 
-    if (filters.providers && filters.providers.length > 0) {
+    if (filters.provider) {
       const providerLabel = this.translate.instant('filter.badges.provider') as string;
-      filters.providers.forEach(p => badges.push(`${providerLabel}: ${p}`));
+      badges.push(`${providerLabel}: ${filters.provider}`);
     }
 
     if (filters.advancedMode) {
@@ -41,21 +42,5 @@ export class FilterBadgeService {
     }
 
     return badges.length === 0 ? [this.translate.instant('filter.badges.all') as string] : badges;
-  }
-
-  private formatDateBadge(dateFrom: string, dateTo: string): string {
-    const dateLabel = this.translate.instant('filter.badges.date') as string;
-    const untilLabel = this.translate.instant('filter.badges.until') as string;
-    let dateStr = `${dateLabel}: `;
-
-    if (dateFrom && dateTo) {
-      dateStr += `${dateFrom} - ${dateTo}`;
-    } else if (dateFrom) {
-      dateStr += dateFrom;
-    } else if (dateTo) {
-      dateStr += `${untilLabel} ${dateTo}`;
-    }
-
-    return dateStr;
   }
 }

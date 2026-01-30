@@ -175,9 +175,7 @@ export class AppSidebarComponent implements OnInit {
         sid: itemId,
       };
       if (search.filter.provider) queryParams['provider'] = search.filter.provider;
-      if (search.filter.from_timestamp)
-        queryParams['from_timestamp'] = search.filter.from_timestamp;
-      if (search.filter.to_timestamp) queryParams['to_timestamp'] = search.filter.to_timestamp;
+      if (search.filter.year) queryParams['year'] = String(search.filter.year);
 
       this.router.navigate(['/serps'], { queryParams });
     }

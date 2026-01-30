@@ -132,8 +132,8 @@
     "copyright": "SWEP © {{year}}"
   },
   "filter": {
-    "from": "Von",
-    "to": "Bis",
+    "year": "Jahr",
+    "anyYear": "Beliebiges Jahr",
     "websiteStatus": "Website-Status",
     "any": "Beliebig",
     "active": "Aktiv",
@@ -152,8 +152,7 @@
       "all": "Alle",
       "status": "Status",
       "provider": "Anbieter",
-      "date": "Datum",
-      "until": "Bis",
+      "year": "Jahr",
       "advancedSearch": "Erweiterte Suche",
       "fuzzySearch": "Fuzzy-Suche",
       "expandSynonyms": "Synonyme erweitern"

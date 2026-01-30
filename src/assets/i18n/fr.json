@@ -179,8 +179,8 @@
     "copyright": "SWEP © {{year}}"
   },
   "filter": {
-    "from": "De",
-    "to": "À",
+    "year": "Année",
+    "anyYear": "Toutes les années",
     "websiteStatus": "Statut du site web",
     "any": "Tous",
     "active": "Actif",
@@ -199,8 +199,7 @@
       "all": "Tous",
       "status": "Statut",
       "provider": "Fournisseur",
-      "date": "Date",
-      "jusqu'à": "Jusqu'à",
+      "year": "Année",
       "advancedSearch": "Recherche avancée",
       "fuzzySearch": "Recherche floue",
       "expandSynonyms": "Étendre les synonymes"

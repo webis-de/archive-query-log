@@ -16,10 +16,7 @@ interface FilterBadgeControllerOptions {
 export const createFilterBadgeController = (options: FilterBadgeControllerOptions) => {
   const { filterBadgeService, translate, destroyRef, getFilters, setFilters, setBadges } = options;
   const emptyFilters: FilterState = {
-    dateFrom: '',
-    dateTo: '',
     status: 'any',
-    providers: [],
   };
 
   const refreshBadges = (): void => {

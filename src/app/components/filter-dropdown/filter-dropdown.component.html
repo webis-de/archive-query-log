@@ -111,37 +111,19 @@
           </div>
 
           <div class="p-2 border-b border-base-300">
-            <div class="flex gap-4">
-              <div class="flex-1">
-                <span class="block text-sm font-bold text-base-content/60 mb-1">{{
-                  'filter.from' | translate
-                }}</span>
-                <aql-input-field
-                  type="date"
-                  [showIcon]="false"
-                  size="sm"
-                  [ngModel]="dateFrom()"
-                  (ngModelChange)="updateDateFrom($event)"
-                  [max]="maxDateFrom()"
-                  class="w-full"
-                ></aql-input-field>
-              </div>
-              <div class="flex-1">
-                <span class="block text-sm font-bold text-base-content/60 mb-1">{{
-                  'filter.to' | translate
-                }}</span>
-                <aql-input-field
-                  type="date"
-                  [showIcon]="false"
-                  size="sm"
-                  [ngModel]="dateTo()"
-                  (ngModelChange)="updateDateTo($event)"
-                  [min]="minDateTo()"
-                  [max]="maxDateTo()"
-                  class="w-full"
-                ></aql-input-field>
-              </div>
-            </div>
+            <span class="block text-sm font-bold text-base-content/60 mb-1">{{
+              'filter.year' | translate
+            }}</span>
+            <select
+              class="select select-sm select-bordered w-full"
+              [ngModel]="selectedYear() ?? ''"
+              (ngModelChange)="updateYear($event)"
+            >
+              <option value="">{{ 'filter.anyYear' | translate }}</option>
+              @for (year of availableYears(); track year) {
+                <option [value]="year">{{ year }}</option>
+              }
+            </select>
           </div>
 
           <div class="p-2 border-b border-base-300">
@@ -215,13 +197,6 @@
                 </div>
               }
 
-              <!-- Selected count indicator -->
-              @if (selectedProviderCount() > 0) {
-                <div class="text-xs text-base-content/60 mb-2">
-                  {{ 'filter.selectedCount' | translate: { count: selectedProviderCount() } }}
-                </div>
-              }
-
               @if (filteredProviders().length === 0 && providerSearch()) {
                 <div class="text-sm text-base-content/60 py-2">
                   {{ 'filter.noProvidersFound' | translate }}
@@ -232,12 +207,18 @@
                     *cdkVirtualFor="let provider of filteredProviders(); trackBy: trackByProviderId"
                     class="mb-2"
                   >
-                    <aql-checkbox
+                    <aql-radio-button
+                      name="providerGroup"
                       [label]="provider.label"
+                      [value]="provider.id"
                       size="sm"
-                      [checked]="provider.checked"
-                      (checkboxChange)="updateProviderCheckedByLabel(provider.label, $event)"
-                    ></aql-checkbox>
+                      [checked]="
+                        provider.id === 'all'
+                          ? !selectedProvider()
+                          : selectedProvider() === provider.id
+                      "
+                      (click)="selectProvider(provider.id === 'all' ? undefined : provider.id)"
+                    ></aql-radio-button>
                   </div>
                 </cdk-virtual-scroll-viewport>
               }
