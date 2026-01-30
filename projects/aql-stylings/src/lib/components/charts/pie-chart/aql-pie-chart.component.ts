@@ -32,8 +32,8 @@ export class AqlPieChartComponent extends BaseEChartComponent {
     let defaultCenter = ['50%', '50%'];
     if (!this.chartCenter()) {
       if (position === 'bottom' && !isHorizontal) {
-        // Vertical legend at bottom - move chart up
-        defaultCenter = ['50%', '35%'];
+        // Vertical legend at bottom - move chart up with more space
+        defaultCenter = ['50%', '30%'];
       } else if (isHorizontal && position === 'bottom') {
         defaultCenter = ['50%', '45%'];
       } else if (position === 'left') {
@@ -49,7 +49,7 @@ export class AqlPieChartComponent extends BaseEChartComponent {
       legend: {
         type: 'scroll',
         orient: isHorizontal ? 'horizontal' : 'vertical',
-        [position]: 0,
+        [position]: position === 'bottom' && !isHorizontal ? -5 : 0,
         top: position === 'bottom' ? 'auto' : isHorizontal ? 'auto' : 'middle',
         left: isHorizontal ? 'center' : position === 'left' ? 0 : 'auto',
         right: position === 'right' ? 0 : 'auto',

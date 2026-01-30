@@ -9,11 +9,13 @@
         [class.lg:px-0]="isPanelOpen()"
       >
         @if (!isPanelOpen()) {
-          <img
-            src="assets/img/logo/aql-logo.png"
-            alt="AQL Logo"
-            class="h-16 w-auto min-w-max hidden lg:block"
-          />
+          <a routerLink="/" class="cursor-pointer">
+            <img
+              src="assets/img/logo/aql-logo.png"
+              alt="AQL Logo"
+              class="h-16 w-auto min-w-max hidden lg:block"
+            />
+          </a>
         }
       </div>
       <div
@@ -48,15 +50,16 @@
                 (keydown.enter)="onSearch(); showSuggestions.set(false)"
                 (click)="onSearchFocus(); $event.stopPropagation()"
               >
-                <img
-                  prefix
-                  src="assets/img/icon/aql-search-icon.svg"
-                  alt="Search"
-                  class="h-5 w-auto transition-opacity duration-300"
-                  [class.lg:opacity-0]="!isPanelOpen()"
-                  [class.lg:absolute]="!isPanelOpen()"
-                  [class.lg:invisible]="!isPanelOpen()"
-                />
+                <a prefix routerLink="/" class="cursor-pointer flex items-center">
+                  <img
+                    src="assets/img/icon/aql-search-icon.svg"
+                    alt="Search"
+                    class="h-5 w-auto transition-opacity duration-300"
+                    [class.lg:opacity-0]="!isPanelOpen()"
+                    [class.lg:absolute]="!isPanelOpen()"
+                    [class.lg:invisible]="!isPanelOpen()"
+                  />
+                </a>
                 <aql-button
                   suffix
                   btnType="primary"
