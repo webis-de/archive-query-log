@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AqlPaginationComponent } from 'aql-stylings';
+import { AqlPaginationComponent, AqlButtonComponent } from 'aql-stylings';
 import {
   createPanelNavigationController,
   PanelNavigationController,
@@ -45,6 +45,7 @@ import { SearchResultItemComponent } from '../../components/search-result-item/s
     TranslateModule,
     SearchHeaderComponent,
     AqlPaginationComponent,
+    AqlButtonComponent,
     AppQueryMetadataPanelComponent,
     QueryOverviewPanelComponent,
     SearchResultItemComponent,
