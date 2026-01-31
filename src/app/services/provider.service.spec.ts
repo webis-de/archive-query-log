@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { ProviderService, ProvidersApiResponse } from './provider.service';
+import { ProviderService, ProvidersApiResponse, ProviderDetailResponse } from './provider.service';
 import { environment } from '../../environments/environment';
 
 describe('ProviderService', () => {
@@ -120,5 +120,71 @@ describe('ProviderService', () => {
 
     const req = httpMock.expectOne(`${environment.apiUrl}/api/providers`);
     req.flush(mockApiResponse);
+  });
+
+  describe('getProviderById', () => {
+    const mockProviderDetailResponse: ProviderDetailResponse = {
+      provider_id: 'google',
+      provider: {
+        _id: 'google',
+        _source: {
+          name: 'Google',
+          domains: ['google.com', 'google.de', 'google.co.uk'],
+          url_patterns: ['/search?q=', '/webhp?q='],
+          priority: 1,
+        },
+      },
+    };
+
+    it('should fetch provider details by ID', (done: DoneFn) => {
+      service.getProviderById('google').subscribe(provider => {
+        expect(provider).toBeTruthy();
+        expect(provider?.id).toBe('google');
+        expect(provider?.name).toBe('Google');
+        expect(provider?.domains).toEqual(['google.com', 'google.de', 'google.co.uk']);
+        expect(provider?.url_patterns).toEqual(['/search?q=', '/webhp?q=']);
+        expect(provider?.priority).toBe(1);
+        done();
+      });
+
+      const req = httpMock.expectOne(`${environment.apiUrl}/api/providers/google`);
+      expect(req.request.method).toBe('GET');
+      req.flush(mockProviderDetailResponse);
+    });
+
+    it('should return null on error', (done: DoneFn) => {
+      service.getProviderById('unknown').subscribe(provider => {
+        expect(provider).toBeNull();
+        done();
+      });
+
+      const req = httpMock.expectOne(`${environment.apiUrl}/api/providers/unknown`);
+      req.error(new ErrorEvent('Network error'));
+    });
+
+    it('should handle missing optional fields', (done: DoneFn) => {
+      const minimalResponse: ProviderDetailResponse = {
+        provider_id: 'minimal',
+        provider: {
+          _id: 'minimal',
+          _source: {
+            name: 'Minimal Provider',
+          },
+        },
+      };
+
+      service.getProviderById('minimal').subscribe(provider => {
+        expect(provider).toBeTruthy();
+        expect(provider?.id).toBe('minimal');
+        expect(provider?.name).toBe('Minimal Provider');
+        expect(provider?.domains).toEqual([]);
+        expect(provider?.url_patterns).toEqual([]);
+        expect(provider?.priority).toBeUndefined();
+        done();
+      });
+
+      const req = httpMock.expectOne(`${environment.apiUrl}/api/providers/minimal`);
+      req.flush(minimalResponse);
+    });
   });
 });

@@ -1,12 +1,15 @@
 export interface SearchFilter {
   query: string;
   size?: number;
-  offset?: number;
+  page?: number;
   timestamp?: string;
   provider?: string;
   archive?: string;
-  from_timestamp?: string;
-  to_timestamp?: string;
+  year?: number;
+  advanced_mode?: boolean;
+  fuzzy?: boolean;
+  fuzziness?: 'AUTO' | '0' | '1' | '2';
+  expand_synonyms?: boolean;
 }
 
 export interface SearchHistoryItem {

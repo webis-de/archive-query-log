@@ -1,6 +1,14 @@
 {
   "app": {
-    "title": "Recherche AQL"
+    "title": "Archive Query Log"
+  },
+  "statistics": {
+    "title": "Statistiques",
+    "serpCount": "Total SERPs",
+    "uniqueQueries": "Requêtes uniques",
+    "capturesOverTime": "Captures au fil du temps",
+    "topProviders": "Meilleurs fournisseurs",
+    "topArchives": "Meilleures archives"
   },
   "common": {
     "search": "Rechercher",
@@ -10,11 +18,16 @@
     "delete": "Supprimer",
     "edit": "Modifier",
     "close": "Fermer",
-    "options": "Options"
+    "options": "Options",
+    "name": "Nom",
+    "count": "Nombre"
   },
   "sidebar": {
     "expandSidebar": "Développer la barre latérale",
     "collapseSidebar": "Réduire la barre latérale",
+    "serps": "SERPs",
+    "providers": "Fournisseurs",
+    "archives": "Archives",
     "newProject": "Nouveau projet",
     "temporarySearch": "Recherche temporaire",
     "projects": "Projets",
@@ -32,11 +45,35 @@
     "renameSearch": "Renommer la recherche",
     "deleteSearch": "Supprimer la recherche",
     "confirmDeleteSearch": "Êtes-vous sûr de vouloir supprimer la recherche",
-    "createNewProject": "Créer un nouveau projet et interroger l'archive web"
+    "createNewProject": "Créer un nouveau projet et interroger l'archive web",
+    "compare": "Comparer"
+  },
+  "compare": {
+    "title": "Comparer les SERPs",
+    "back": "Retour à la recherche",
+    "comparingItems": "Comparaison de {{count}} éléments",
+    "clearAll": "Tout effacer",
+    "selectItems": "Sélectionner des éléments à comparer",
+    "selectItemsHint": "Allez dans les résultats de recherche et sélectionnez au moins 2 éléments (maximum 5) pour les comparer côte à côte.",
+    "goToSearch": "Aller à la recherche",
+    "addToCompare": "Comparer",
+    "addedToCompare": "Ajouté au comparateur",
+    "compareItems": "Comparer ({{count}}) éléments",
+    "similarityOverview": "Aperçu de la similitude",
+    "jaccardSimilarity": "Similitude de Jaccard",
+    "commonUrls": "URLs communes",
+    "uniqueUrls": "URLs uniques",
+    "moreItems": "+{{count}} de plus",
+    "score": "Score",
+    "andMore": "... et {{count}} de plus",
+    "addMore": "Ajouter plus",
+    "maxItemsReached": "Vous ne pouvez comparer que jusqu'à {{max}} éléments."
   },
   "landing": {
     "welcomeMessage": "Bienvenue sur AQL Recherche",
     "searchPlaceholder": "Rechercher des requêtes...",
+    "searchPlaceholderProviders": "Rechercher des fournisseurs...",
+    "searchPlaceholderArchives": "Rechercher des archives...",
     "searchLabel": "Entrez votre requête de recherche",
     "searchButton": "Rechercher",
     "temporaryModeNote": "Remarque :",
@@ -60,7 +97,25 @@
     "timestamp": "Horodatage :",
     "url": "URL :",
     "query": "Requête :",
-    "activeFilters": "Filtre actif :"
+    "activeFilters": "Filtre actif :",
+    "statusLabel": "Statut",
+    "typeLabel": "Type",
+    "archiveLabel": "Archive",
+    "pipelineLabel": "Analyse",
+    "paramsLabel": "Paramètres",
+    "parserUrl": "Analyseur URL",
+    "parserPage": "Analyseur Page",
+    "parserWarc": "Analyseur WARC",
+    "didYouMean": "Vouliez-vous dire :",
+    "match": "correspondance",
+    "frequency": "Fréq",
+    "frequencyTooltip": "Fréquence dans l'index de recherche",
+    "searchInsteadFor": "Rechercher plutôt",
+    "suggestQuery": "Rechercher {{query}}",
+    "copyCleanUrl": "Copier l'URL nettoyée (Sans suivi)",
+    "copiedCleanUrl": "URL nettoyée copiée !",
+    "copyOriginalUrl": "Copier l'URL originale",
+    "copiedOriginalUrl": "URL originale copiée !"
   },
   "searchStats": {
     "title": "Query overview",
@@ -74,13 +129,13 @@
     "chartPlaceholder": "Chart placeholder",
     "histogramBuckets": "Histogram buckets: {{count}}",
     "noHistogram": "No histogram data",
+    "clickToFilter": "Cliquez pour filtrer par date",
     "topQueries": "Top queries",
     "topProviders": "Top providers",
     "topArchives": "Top archives",
     "loading": "Loading...",
     "noData": "No data"
   },
-
   "project": {
     "name": "Nom du projet",
     "description": "Description",
@@ -124,8 +179,8 @@
     "copyright": "SWEP © {{year}}"
   },
   "filter": {
-    "from": "De",
-    "to": "À",
+    "year": "Année",
+    "anyYear": "Toutes les années",
     "websiteStatus": "Statut du site web",
     "any": "Tous",
     "active": "Actif",
@@ -136,15 +191,28 @@
     "providerLoadError": "Échec du chargement des fournisseurs",
     "noProvidersFound": "Aucun fournisseur trouvé",
     "selectedCount": "{{count}} sélectionné(s)",
+    "advancedMode": "Mode de recherche avancée",
+    "advancedModeTooltip": "Utiliser AND, OR, recherche de phrase et caractères génériques",
     "reset": "Réinitialiser",
     "apply": "Appliquer",
     "badges": {
       "all": "Tous",
       "status": "Statut",
       "provider": "Fournisseur",
-      "date": "Date",
-      "until": "Jusqu'à"
-    }
+      "year": "Année",
+      "advancedSearch": "Recherche avancée",
+      "fuzzySearch": "Recherche floue",
+      "expandSynonyms": "Étendre les synonymes"
+    },
+    "fuzzySearch": "Recherche floue",
+    "fuzzySearchTooltip": "gérer les fautes de frappe et les requêtes similaires",
+    "fuzziness": "Niveau de flou",
+    "fuzzinessAuto": "Automatique",
+    "fuzzinessExact": "Exact (0)",
+    "fuzziness1": "Faible (1)",
+    "fuzziness2": "Élevé (2)",
+    "expandSynonyms": "Étendre les synonymes",
+    "expandSynonymsTooltip": "Trouver des termes et synonymes connexes"
   },
   "metadata": {
     "panel": "Panneau de métadonnées",
@@ -157,6 +225,18 @@
     "mimeType": "Type MIME",
     "timestamp": "Horodatage",
     "provider": "Fournisseur",
+    "providerDetails": {
+      "title": "Détails du fournisseur",
+      "name": "Nom",
+      "id": "ID du fournisseur",
+      "domains": "Domaines",
+      "urlPatterns": "Modèles d'URL",
+      "priority": "Priorité",
+      "loading": "Chargement des détails du fournisseur...",
+      "error": "Échec du chargement des détails du fournisseur",
+      "showDetails": "Afficher les détails du fournisseur",
+      "hideDetails": "Masquer les détails du fournisseur"
+    },
     "id": "ID",
     "textView": "Vue texte",
     "websiteTab": "Site web",
@@ -181,7 +261,17 @@
       "viewInUnfurlTool": "Voir dans l'outil Unfurl.it",
       "subdomain": "Sous-domaine",
       "domainLabel": "Domaine",
-      "tld": "TLD"
+      "tld": "TLD",
+      "privacyStrip": {
+        "title": "URL respectueuse de la vie privée disponible",
+        "description": "Cette URL contient {{count}} paramètre(s) de suivi qui peuvent être supprimés.",
+        "trackingParam": "Paramètre de suivi",
+        "copy": "Copier l'URL nettoyée",
+        "copied": "Copié !",
+        "open": "Ouvrir l'URL nettoyée",
+        "copyTooltip": "Copier l'URL sans les paramètres de suivi",
+        "openTooltip": "Ouvrir l'URL sans les paramètres de suivi dans un nouvel onglet"
+      }
     },
     "unbranded": {
       "results": "résultats",
@@ -200,6 +290,38 @@
       "archiveUnavailable": "L'archive peut être indisponible ou bloquée",
       "previewNote": "Cet aperçu montre comment le site web apparaissait au moment de l'archivage.",
       "iframeTitle": "Snapshot archivé du site web du {{date}}"
-    }
+    },
+    "noDataSelected": "Aucune donnée sélectionnée"
+  },
+  "providers": {
+    "searchLabel": "Rechercher des fournisseurs",
+    "searchPlaceholder": "Rechercher des fournisseurs...",
+    "searchProvider": "Fournisseur de recherche",
+    "resultsFound": "{{count}} fournisseurs trouvés",
+    "noResultsFor": "Aucun fournisseur trouvé pour \"{{query}}\"",
+    "enterQuery": "Entrez une recherche ou parcourez tous les fournisseurs",
+    "details": "Détails du fournisseur",
+    "name": "Nom",
+    "id": "ID du fournisseur",
+    "domains": "Domaines",
+    "urlPatterns": "Modèles d'URL",
+    "priority": "Priorité",
+    "failedToLoadDetails": "Échec du chargement des détails du fournisseur."
+  },
+  "archives": {
+    "searchLabel": "Rechercher des archives",
+    "searchPlaceholder": "Rechercher des archives...",
+    "webArchive": "Archive web",
+    "resultsFound": "{{count}} archives trouvées",
+    "noResultsFor": "Aucune archive trouvée pour \"{{query}}\"",
+    "enterQuery": "Entrez une recherche ou parcourez toutes les archives",
+    "details": "Détails de l'archive",
+    "name": "Nom",
+    "id": "ID de l'archive",
+    "cdxApiUrl": "URL de l'API CDX",
+    "mementoApiUrl": "URL de l'API Memento",
+    "serpCount": "Nombre de SERP",
+    "priority": "Priorité",
+    "failedToLoadDetails": "Échec du chargement des détails de l'archive."
   }
 }

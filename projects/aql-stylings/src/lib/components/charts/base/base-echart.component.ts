@@ -1,4 +1,13 @@
-import { Directive, ElementRef, OnDestroy, effect, input, viewChild } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  OnDestroy,
+  effect,
+  input,
+  viewChild,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import * as echarts from 'echarts';
 
 @Directive()
@@ -6,6 +15,7 @@ export abstract class BaseEChartComponent implements OnDestroy {
   readonly height = input<string>('220px');
   readonly colors = input<string[] | null>(null);
   readonly options = input<echarts.EChartsOption | null>(null);
+  @Output() readonly chartClick = new EventEmitter<unknown>();
 
   protected readonly chartContainer = viewChild<ElementRef<HTMLDivElement>>('chartContainer');
   protected chart: echarts.ECharts | null = null;
@@ -32,8 +42,24 @@ export abstract class BaseEChartComponent implements OnDestroy {
     if (this.resizeListener) {
       window.removeEventListener('resize', this.resizeListener);
     }
-    this.chart?.dispose();
+    if (this.chart) {
+      try {
+        this.chart.off('click');
+      } catch {
+        // ignore
+      }
+      this.chart.dispose();
+    }
     this.chart = null;
+  }
+
+  getDataURL(opts?: {
+    type?: 'png' | 'jpeg';
+    pixelRatio?: number;
+    backgroundColor?: string;
+    excludeComponents?: string[];
+  }): string | undefined {
+    return this.chart?.getDataURL(opts);
   }
 
   protected abstract buildDefaultOption(): echarts.EChartsOption;
@@ -57,6 +83,14 @@ export abstract class BaseEChartComponent implements OnDestroy {
     }
 
     this.chart = echarts.init(element, undefined, { renderer: 'canvas' });
+    // Attach click listener
+    this.chart.on('click', params => {
+      try {
+        this.chartClick.emit(params);
+      } catch {
+        // ignore
+      }
+    });
     this.applyOptions();
 
     if (typeof ResizeObserver !== 'undefined') {

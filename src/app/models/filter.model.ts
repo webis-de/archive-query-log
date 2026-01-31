@@ -1,8 +1,11 @@
 export interface FilterState {
-  dateFrom: string;
-  dateTo: string;
+  year?: number;
   status: string;
-  providers: string[];
+  provider?: string; // Single provider ID, undefined means no filter (all providers)
+  advancedMode?: boolean;
+  fuzzy?: boolean;
+  fuzziness?: 'AUTO' | '0' | '1' | '2';
+  expandSynonyms?: boolean;
 }
 
 export interface FilterProvider {

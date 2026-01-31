@@ -1,6 +1,6 @@
-<div class="flex h-screen">
+<div class="flex h-screen bg-base-200">
   <aside class="h-full shrink-0">
-    <app-sidebar [userData]="userData()" (newProject)="title = 'New Project Clicked'"></app-sidebar>
+    <app-sidebar></app-sidebar>
   </aside>
 
   <main class="flex-1 overflow-x-hidden flex flex-col min-h-0">
@@ -10,4 +10,5 @@
 
     <app-footer class="shrink-0"></app-footer>
   </main>
+  <aql-toast></aql-toast>
 </div>

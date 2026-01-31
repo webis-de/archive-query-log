@@ -39,7 +39,7 @@
       <div class="flex items-center gap-2">
         <span class="text-xs text-base-content/70">{{ 'searchStats.interval' | translate }}:</span>
         <aql-dropdown [contentWidth]="'10rem'" [position]="'bottom end'" #intervalDropdown>
-          <aql-button trigger size="xs" btnType="ghost" class="gap-2">
+          <aql-button trigger size="xs" btnType="ghost" class="gap-2" btnStyle="rounded">
             <span class="text-xs">
               {{ intervalLabel() | translate }}
             </span>
@@ -57,11 +57,28 @@
             </aql-menu-item>
           </ng-container>
         </aql-dropdown>
+
+        @if (hasHistogram()) {
+          <aql-button
+            btnType="ghost"
+            size="xs"
+            iconStyle="square"
+            title="Download PNG"
+            (click)="downloadChartAsPng(histogramChart(), getFilename('timeline.png'))"
+          >
+            <i class="bi bi-download"></i>
+          </aql-button>
+        }
       </div>
     </div>
     <div class="mt-3">
       @if (hasHistogram() && histogramChartOptions()) {
-        <aql-line-chart [options]="histogramChartOptions()" [height]="'180px'"></aql-line-chart>
+        <aql-line-chart
+          #histogramChart
+          [options]="histogramChartOptions()"
+          [height]="'180px'"
+          (chartClick)="onHistogramClick($event)"
+        ></aql-line-chart>
       } @else {
         <div
           class="h-32 rounded-lg border border-dashed border-base-300 bg-base-200/40 flex items-center justify-center text-xs text-base-content/60"
@@ -74,18 +91,82 @@
 
   <div class="mt-6 space-y-4">
     <div>
-      <h4 class="text-sm font-semibold uppercase text-base-content/60">
-        {{ 'searchStats.topQueries' | translate }}
-      </h4>
+      <div class="flex items-center justify-between mb-2">
+        <h4 class="text-sm font-semibold uppercase text-base-content/60">
+          {{ 'searchStats.topQueries' | translate }}
+        </h4>
+        <div class="flex items-center gap-1">
+          @if (showTopQueriesList()) {
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              [title]="topQueriesCopied() ? 'Copied!' : 'Copy to Clipboard'"
+              [disabled]="isLoading() || topQueries().length === 0"
+              (click)="copyDataToClipboard(topQueries(), topQueriesCopied)"
+            >
+              <i [class]="topQueriesCopied() ? 'bi bi-check' : 'bi bi-clipboard'"></i>
+            </aql-button>
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              title="Download CSV"
+              [disabled]="isLoading() || topQueries().length === 0"
+              (click)="downloadDataAsCsv(topQueries(), getFilename('top_queries.csv'))"
+            >
+              <i class="bi bi-download"></i>
+            </aql-button>
+          } @else {
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              title="Download PNG"
+              [disabled]="isLoading() || topQueries().length === 0"
+              (click)="downloadChartAsPng(topQueryBarChart(), getFilename('top_queries.png'))"
+            >
+              <i class="bi bi-download"></i>
+            </aql-button>
+          }
+          <aql-button
+            btnType="ghost"
+            size="xs"
+            iconStyle="square"
+            [title]="showTopQueriesList() ? 'Show Chart' : 'Show List'"
+            [disabled]="isLoading() || topQueries().length === 0"
+            (click)="showTopQueriesList.set(!showTopQueriesList())"
+          >
+            <i [class]="showTopQueriesList() ? 'bi bi-graph-up' : 'bi bi-list-ul'"></i>
+          </aql-button>
+        </div>
+      </div>
       @if (isLoading()) {
         <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.loading' | translate }}</p>
       } @else if (topQueries().length > 0) {
-        <div class="mt-2">
-          <aql-bar-chart
-            [labels]="topQueryLabels()"
-            [data]="topQueryCounts()"
-            [height]="'180px'"
-          ></aql-bar-chart>
+        <div class="mt-2 text-xs">
+          @if (showTopQueriesList()) {
+            <div class="h-[180px] overflow-y-auto" aqlScrollbar [slim]="true">
+              <table class="table w-full">
+                <tbody>
+                  @for (item of topQueries(); track item.label) {
+                    <tr>
+                      <td class="px-0 py-1 pr-2">{{ item.label }}</td>
+                      <td class="px-0 py-1 text-right font-mono">{{ item.count }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          } @else {
+            <aql-bar-chart
+              #topQueryBarChart
+              [labels]="topQueryLabels()"
+              [data]="topQueryCounts()"
+              [height]="'180px'"
+              [colors]="['#3B82F6']"
+            ></aql-bar-chart>
+          }
         </div>
       } @else {
         <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.noData' | translate }}</p>
@@ -93,14 +174,85 @@
     </div>
 
     <div>
-      <h4 class="text-sm font-semibold uppercase text-base-content/60">
-        {{ 'searchStats.topProviders' | translate }}
-      </h4>
+      <div class="flex items-center justify-between mb-2">
+        <h4 class="text-sm font-semibold uppercase text-base-content/60">
+          {{ 'searchStats.topProviders' | translate }}
+        </h4>
+        <div class="flex items-center gap-1">
+          @if (showTopProvidersList()) {
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              [title]="topProvidersCopied() ? 'Copied!' : 'Copy to Clipboard'"
+              [disabled]="isLoading() || topProviders().length === 0"
+              (click)="copyDataToClipboard(topProviders(), topProvidersCopied)"
+            >
+              <i [class]="topProvidersCopied() ? 'bi bi-check' : 'bi bi-clipboard'"></i>
+            </aql-button>
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              title="Download CSV"
+              [disabled]="isLoading() || topProviders().length === 0"
+              (click)="downloadDataAsCsv(topProviders(), getFilename('top_providers.csv'))"
+            >
+              <i class="bi bi-download"></i>
+            </aql-button>
+          } @else {
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              title="Download PNG"
+              [disabled]="isLoading() || topProviders().length === 0"
+              (click)="downloadChartAsPng(topProviderPieChart(), getFilename('top_providers.png'))"
+            >
+              <i class="bi bi-download"></i>
+            </aql-button>
+          }
+          <aql-button
+            btnType="ghost"
+            size="xs"
+            iconStyle="square"
+            [title]="showTopProvidersList() ? 'Show Chart' : 'Show List'"
+            [disabled]="isLoading() || topProviders().length === 0"
+            (click)="showTopProvidersList.set(!showTopProvidersList())"
+          >
+            <i [class]="showTopProvidersList() ? 'bi bi-graph-up' : 'bi bi-list-ul'"></i>
+          </aql-button>
+        </div>
+      </div>
       @if (isLoading()) {
         <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.loading' | translate }}</p>
       } @else if (topProviders().length > 0) {
-        <div class="mt-2">
-          <aql-pie-chart [data]="topProviderPieData()" [height]="'220px'"></aql-pie-chart>
+        <div class="mt-2 text-xs">
+          @if (showTopProvidersList()) {
+            <div class="h-[280px] overflow-y-auto" aqlScrollbar [slim]="true">
+              <table class="table w-full">
+                <tbody>
+                  @for (item of topProviders(); track item.label) {
+                    <tr>
+                      <td class="px-0 py-1 pr-2">{{ item.label }}</td>
+                      <td class="px-0 py-1 text-right font-mono">{{ item.count }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          } @else {
+            <aql-pie-chart
+              #topProviderPieChart
+              [data]="topProviderPieData()"
+              [height]="'280px'"
+              [colors]="['#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE']"
+              legendPosition="bottom"
+              legendOrient="vertical"
+              [showLabels]="true"
+              [radius]="['25%', '50%']"
+            ></aql-pie-chart>
+          }
         </div>
       } @else {
         <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.noData' | translate }}</p>
@@ -108,14 +260,87 @@
     </div>
 
     <div>
-      <h4 class="text-sm font-semibold uppercase text-base-content/60">
-        {{ 'searchStats.topArchives' | translate }}
-      </h4>
+      <div class="flex items-center justify-between mb-2">
+        <h4 class="text-sm font-semibold uppercase text-base-content/60">
+          {{ 'searchStats.topArchives' | translate }}
+        </h4>
+        <div class="flex items-center gap-1">
+          @if (showTopArchivesList()) {
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              [title]="topArchivesCopied() ? 'Copied!' : 'Copy to Clipboard'"
+              [disabled]="isLoading() || topArchives().length === 0"
+              (click)="copyDataToClipboard(topArchives(), topArchivesCopied)"
+            >
+              <i [class]="topArchivesCopied() ? 'bi bi-check' : 'bi bi-clipboard'"></i>
+            </aql-button>
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              title="Download CSV"
+              [disabled]="isLoading() || topArchives().length === 0"
+              (click)="downloadDataAsCsv(topArchives(), getFilename('top_archives.csv'))"
+            >
+              <i class="bi bi-download"></i>
+            </aql-button>
+          } @else {
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              iconStyle="square"
+              title="Download PNG"
+              [disabled]="isLoading() || topArchives().length === 0"
+              (click)="downloadChartAsPng(topArchivePieChart(), getFilename('top_archives.png'))"
+            >
+              <i class="bi bi-download"></i>
+            </aql-button>
+          }
+          <aql-button
+            btnType="ghost"
+            size="xs"
+            iconStyle="square"
+            [title]="showTopArchivesList() ? 'Show Chart' : 'Show List'"
+            [disabled]="isLoading() || topArchives().length === 0"
+            (click)="showTopArchivesList.set(!showTopArchivesList())"
+          >
+            <i [class]="showTopArchivesList() ? 'bi bi-graph-up' : 'bi bi-list-ul'"></i>
+          </aql-button>
+        </div>
+      </div>
       @if (isLoading()) {
         <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.loading' | translate }}</p>
       } @else if (topArchives().length > 0) {
-        <div class="mt-2">
-          <aql-pie-chart [data]="topArchivePieData()" [height]="'220px'"></aql-pie-chart>
+        <div class="mt-2 text-xs">
+          @if (showTopArchivesList()) {
+            <div class="h-[280px] overflow-y-auto" aqlScrollbar [slim]="true">
+              <table class="table w-full">
+                <tbody>
+                  @for (item of topArchives(); track item.label) {
+                    <tr>
+                      <td class="px-0 py-1 pr-2 truncate max-w-[200px]" [title]="item.label">
+                        {{ item.label }}
+                      </td>
+                      <td class="px-0 py-1 text-right font-mono">{{ item.count }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          } @else {
+            <aql-pie-chart
+              #topArchivePieChart
+              [data]="topArchivePieData()"
+              [height]="'280px'"
+              [colors]="['#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE']"
+              legendPosition="bottom"
+              legendOrient="vertical"
+              [showLabels]="true"
+              [radius]="['25%', '50%']"
+            ></aql-pie-chart>
+          }
         </div>
       } @else {
         <p class="text-xs text-base-content/50 mt-2">{{ 'searchStats.noData' | translate }}</p>

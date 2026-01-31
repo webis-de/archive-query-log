@@ -1,0 +1,79 @@
+<div class="p-6">
+  <div class="space-y-4">
+    <div class="flex justify-between items-center">
+      <h3 class="text-sm font-semibold uppercase text-base-content/60">
+        {{ 'metadata.unbrandedView' | translate }}
+      </h3>
+      @if (unbranded(); as data) {
+        <span class="badge badge-sm badge-outline">{{ data.results.length }}</span>
+      }
+    </div>
+
+    @if (isLoading()) {
+      <div class="flex items-center justify-center py-8">
+        <span class="loading loading-spinner loading-md text-primary"></span>
+      </div>
+    } @else if (unbranded(); as data) {
+      <!-- Search Bar -->
+      <div class="mb-2">
+        <div class="form-control">
+          <div class="input-group">
+            <aql-input-field
+              [showIcon]="false"
+              [value]="data.query.parsed || data.query.raw"
+              [disabled]="true"
+              placeholder="Search query"
+            ></aql-input-field>
+          </div>
+        </div>
+      </div>
+
+      @if (data.metadata.timestamp || data.metadata.url) {
+        <div class="text-xs text-base-content/60 mb-4">
+          @if (data.metadata.timestamp) {
+            <span>{{ 'metadata.timestamp' | translate }} {{ data.metadata.timestamp }}</span>
+          }
+        </div>
+      }
+
+      <!-- Results -->
+      @if (data.results.length === 0) {
+        <div class="text-center py-8 text-base-content/50">
+          <i class="bi bi-eye-slash text-4xl mb-3 block"></i>
+          <p>{{ 'metadata.unbranded.noResults' | translate }}</p>
+        </div>
+      } @else {
+        <div class="flex flex-col gap-4">
+          @for (result of data.results; track result.position) {
+            <aql-panel
+              [panelTitle]="result.title || 'Untitled'"
+              [subtitle]="result.url"
+              [bordered]="true"
+              [shadow]="true"
+              [rounded]="true"
+              [hasFooter]="true"
+              class="transition-shadow duration-200 rounded-2xl"
+              tabindex="0"
+              role="link"
+              [attr.aria-label]="result.title || result.url"
+            >
+              <div footer class="text-sm text-base-content/80">
+                <div class="flex items-center gap-2">
+                  <div class="badge badge-primary">{{ result.position }}</div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm text-base-content/80 break-words">{{ result.snippet }}</p>
+                  </div>
+                </div>
+              </div>
+            </aql-panel>
+          }
+        </div>
+      }
+    } @else {
+      <div class="text-center py-8 text-base-content/50">
+        <i class="bi bi-eye-slash text-4xl mb-3 block"></i>
+        <p>{{ 'metadata.noUnbrandedData' | translate }}</p>
+      </div>
+    }
+  </div>
+</div>

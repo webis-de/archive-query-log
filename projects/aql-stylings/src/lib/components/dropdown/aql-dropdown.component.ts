@@ -301,14 +301,14 @@ export class AqlDropdownComponent implements OnDestroy {
     // Horizontal alignment
     if (isRight) {
       styles['left'] = `${rect.right + margin}px`;
-      if (isEnd) {
+      if (isEnd || isTop) {
         styles['bottom'] = `${window.innerHeight - rect.bottom}px`;
       } else {
         styles['top'] = `${rect.top}px`;
       }
     } else if (isLeft) {
       styles['right'] = `${window.innerWidth - rect.left + margin}px`;
-      if (isEnd) {
+      if (isEnd || isTop) {
         styles['bottom'] = `${window.innerHeight - rect.bottom}px`;
       } else {
         styles['top'] = `${rect.top}px`;

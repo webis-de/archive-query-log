@@ -1,6 +1,18 @@
-import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+  output,
+  signal,
+  viewChild,
+  WritableSignal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language.service';
 import {
   AqlBarChartComponent,
   AqlButtonComponent,
@@ -9,8 +21,11 @@ import {
   AqlMenuItemComponent,
   AqlPieChartComponent,
   AqlPieChartItem,
+  AqlScrollbarDirective,
+  BaseEChartComponent,
 } from 'aql-stylings';
 import { QueryHistogramBucket, QueryMetadataResponse } from '../../models/search.model';
+import { ExportService } from '../../services/export.service';
 import type { EChartsOption, TooltipComponentFormatterCallbackParams } from 'echarts';
 
 interface LabeledCount {
@@ -23,6 +38,7 @@ interface LabeledCount {
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
     TranslateModule,
     AqlButtonComponent,
     AqlDropdownComponent,
@@ -30,6 +46,7 @@ interface LabeledCount {
     AqlLineChartComponent,
     AqlBarChartComponent,
     AqlPieChartComponent,
+    AqlScrollbarDirective,
   ],
   templateUrl: './query-overview-panel.component.html',
   styleUrl: './query-overview-panel.component.css',
@@ -41,6 +58,23 @@ export class QueryOverviewPanelComponent {
   readonly isLoading = input<boolean>(false);
   readonly interval = input<'day' | 'week' | 'month'>('month');
   readonly intervalChange = output<'day' | 'week' | 'month'>();
+  // Emit when user clicks a histogram bucket. Supports filtering by year: { year: '2024' }
+  readonly histogramClick = output<{
+    year?: string;
+    provider_id?: string;
+    provider_name?: string;
+  }>();
+
+  readonly showTopQueriesList = signal<boolean>(false);
+  readonly showTopProvidersList = signal<boolean>(false);
+  readonly showTopArchivesList = signal<boolean>(false);
+  readonly topQueriesCopied = signal(false);
+  readonly topProvidersCopied = signal(false);
+  readonly topArchivesCopied = signal(false);
+  readonly topQueryBarChart = viewChild<AqlBarChartComponent>('topQueryBarChart');
+  readonly topProviderPieChart = viewChild<AqlPieChartComponent>('topProviderPieChart');
+  readonly topArchivePieChart = viewChild<AqlPieChartComponent>('topArchivePieChart');
+  readonly histogramChart = viewChild<AqlLineChartComponent>('histogramChart');
   readonly displayQuery = computed(() => {
     const responseQuery = this.data()?.query?.trim();
     if (responseQuery) {
@@ -61,15 +95,13 @@ export class QueryOverviewPanelComponent {
     return this.data()?.date_histogram ?? [];
   });
   readonly hasHistogram = computed(() => this.histogramBuckets().length > 0);
-  readonly histogramLabels = computed(() =>
-    this.histogramBuckets().map(bucket => bucket.key_as_string),
-  );
+  readonly histogramLabels = computed(() => this.histogramBuckets().map(bucket => bucket.date));
   readonly histogramCounts = computed(() => this.histogramBuckets().map(bucket => bucket.count));
   readonly topQueries = computed<LabeledCount[]>(() => {
     const items = this.data()?.top_queries;
     if (!items?.length) return [];
     return items.map(item => ({
-      label: item.key,
+      label: item.query,
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
@@ -77,7 +109,7 @@ export class QueryOverviewPanelComponent {
     const items = this.data()?.top_providers;
     if (!items?.length) return [];
     return items.map(item => ({
-      label: item.domain,
+      label: item.provider,
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
@@ -85,7 +117,7 @@ export class QueryOverviewPanelComponent {
     const items = this.data()?.top_archives;
     if (!items?.length) return [];
     return items.map(item => ({
-      label: item.name,
+      label: item.archive,
       count: typeof item.count === 'number' && !Number.isNaN(item.count) ? item.count : 0,
     }));
   });
@@ -103,6 +135,7 @@ export class QueryOverviewPanelComponent {
     if (interval === 'week') return 'searchStats.intervalWeek';
     return 'searchStats.intervalMonth';
   });
+
   readonly histogramChartOptions = computed<EChartsOption | null>(() => {
     const buckets = this.histogramBuckets();
     if (buckets.length === 0) {
@@ -121,9 +154,10 @@ export class QueryOverviewPanelComponent {
         formatter: (params: TooltipComponentFormatterCallbackParams) => {
           if (Array.isArray(params) && params.length > 0) {
             const dataIndex = params[0].dataIndex as number;
-            const date = this.formatDate(labels[dataIndex]);
+            const date = this.languageService.formatDateTime(labels[dataIndex]);
             const value = params[0].value;
-            return `${date}<br/>Count: ${value}`;
+            const hint = this.translate.instant('searchStats.clickToFilter');
+            return `${date}<br/>Count: ${value}<br/><span style="font-size:11px;color:#888">${hint}</span>`;
           }
           return '';
         },
@@ -151,7 +185,7 @@ export class QueryOverviewPanelComponent {
         axisPointer: {
           label: {
             formatter: (params: { value: string | number }) => {
-              return this.formatDate(String(params.value));
+              return this.languageService.formatDateTime(String(params.value));
             },
           } as Record<string, string | number | ((params: { value: string | number }) => string)>,
         },
@@ -207,9 +241,29 @@ export class QueryOverviewPanelComponent {
             },
           },
         },
+        {
+          type: 'bar',
+          data: counts,
+          barWidth: '80%',
+          itemStyle: {
+            color: 'transparent',
+          },
+          emphasis: {
+            itemStyle: {
+              color: 'rgba(59,130,246,0.06)',
+            },
+          },
+          silent: false,
+          z: 5,
+          cursor: 'pointer',
+        },
       ],
     } as EChartsOption;
   });
+
+  private readonly exportService = inject(ExportService);
+  private readonly translate = inject(TranslateService);
+  private readonly languageService = inject(LanguageService);
 
   onIntervalSelect(value: 'day' | 'week' | 'month'): void {
     if (value === this.interval()) {
@@ -217,6 +271,61 @@ export class QueryOverviewPanelComponent {
     }
 
     this.intervalChange.emit(value);
+  }
+
+  getFilename(suffix: string): string {
+    const query = this.displayQuery() || 'unknown';
+    const sanitizedQuery = query.replace(/[^a-z0-9.-]/gi, '_').toLowerCase();
+    return `query_${sanitizedQuery}_${suffix}`;
+  }
+
+  copyDataToClipboard(data: LabeledCount[], feedbackSignal: WritableSignal<boolean>): void {
+    const formattedData = data.map(item => ({ Label: item.label, Count: item.count }));
+    const text = this.exportService.formatAsTsv(formattedData, ['Label', 'Count']);
+    this.exportService.copyToClipboard(text).subscribe(() => {
+      feedbackSignal.set(true);
+      setTimeout(() => feedbackSignal.set(false), 5000);
+    });
+  }
+
+  downloadDataAsCsv(data: LabeledCount[], filename: string): void {
+    const formattedData = data.map(item => ({ Label: item.label, Count: item.count }));
+    this.exportService.downloadCsv(formattedData, filename, { headers: ['Label', 'Count'] });
+  }
+
+  downloadChartAsPng(chart: BaseEChartComponent | undefined, filename: string): void {
+    if (!chart) return;
+    const url = chart.getDataURL({ type: 'png', pixelRatio: 2, backgroundColor: '#ffffff' });
+    if (url) {
+      this.exportService.downloadUrl(url, filename);
+    }
+  }
+
+  onHistogramClick(params: unknown): void {
+    // echarts click payload includes dataIndex and name
+    try {
+      const dataIndex = (params as { dataIndex?: number } | undefined)?.dataIndex;
+      if (dataIndex === undefined || dataIndex === null) return;
+      const label = this.histogramLabels()[dataIndex];
+      if (!label) return;
+
+      // Backend supports filtering by year only. Extract year from label (UTC).
+      let year: string | undefined = undefined;
+      try {
+        const d = new Date(label);
+        if (!isNaN(d.getTime())) {
+          year = String(d.getUTCFullYear());
+        }
+      } catch {
+        // ignore
+      }
+
+      if (year) {
+        this.histogramClick.emit({ year });
+      }
+    } catch {
+      // ignore errors
+    }
   }
 
   private formatDate(dateString: string): string {

@@ -1,63 +1,123 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  input,
-  output,
   signal,
-  viewChildren,
-  viewChild,
   inject,
   computed,
-  HostListener,
   OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
-import {
-  AqlGroupItemComponent,
-  AqlMenuItemComponent,
-  AqlButtonComponent,
-  AqlAvatarCardComponent,
-  AqlDropdownComponent,
-  AqlInputFieldComponent,
-  AqlModalComponent,
-  AqlTooltipDirective,
-} from 'aql-stylings';
-import { UserData } from '../../models/user-data.model';
-import { ProjectService } from '../../services/project.service';
+import { AqlButtonComponent, AqlTooltipDirective } from 'aql-stylings';
+import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 import { SessionService } from '../../services/session.service';
+
+// #region LEGACY - Uncomment when implementing user-based session storage
+// import { FormsModule } from '@angular/forms';
+// import {
+//   AqlGroupItemComponent,
+//   AqlDropdownComponent,
+//   AqlInputFieldComponent,
+//   AqlModalComponent,
+//   AqlAvatarCardComponent,
+// } from 'aql-stylings';
+// import { UserData } from '../../models/user-data.model';
+// import { ProjectService } from '../../services/project.service';
+// #endregion LEGACY
+
+interface NavItem {
+  id: string;
+  label: string;
+  icon: string;
+  route: string;
+}
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
     TranslateModule,
-    AqlGroupItemComponent,
-    AqlMenuItemComponent,
     AqlButtonComponent,
-    AqlAvatarCardComponent,
-    AqlDropdownComponent,
-    AqlInputFieldComponent,
-    AqlModalComponent,
     AqlTooltipDirective,
+    LanguageSelectorComponent,
+    AqlButtonComponent,
+    // #region LEGACY
+    // FormsModule,
+    // AqlMenuItemComponent,
+    // AqlGroupItemComponent,
+    // AqlDropdownComponent,
+    // AqlInputFieldComponent,
+    // AqlModalComponent,
+    // AqlAvatarCardComponent,
+    // #endregion LEGACY
   ],
   templateUrl: './app-sidebar.component.html',
   styleUrl: './app-sidebar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppSidebarComponent implements OnInit {
-  readonly projectService = inject(ProjectService);
   readonly sessionService = inject(SessionService);
   readonly router = inject(Router);
-  readonly userData = input.required<UserData>();
-  readonly newProject = output<void>();
   readonly isCollapsed = this.sessionService.sidebarCollapsed;
+  readonly activeRoute = signal<string>('/');
+  readonly navItems: NavItem[] = [
+    { id: 'serps', label: 'sidebar.serps', icon: 'bi-search', route: '/' },
+    { id: 'providers', label: 'sidebar.providers', icon: 'bi-globe', route: '/providers' },
+    { id: 'archives', label: 'sidebar.archives', icon: 'bi-archive', route: '/archives' },
+    {
+      id: 'compare',
+      label: 'sidebar.compare',
+      icon: 'bi-layout-split',
+      route: '/compare',
+    },
+  ];
+  readonly isActiveRoute = computed(() => {
+    const current = this.activeRoute();
+    return (route: string) => {
+      if (route === '/') {
+        return (
+          current === '/' || (current.startsWith('/serps') && !current.startsWith('/serps/compare'))
+        );
+      }
+      if (route === '/compare') {
+        return current.startsWith('/compare') || current.startsWith('/serps/compare');
+      }
+      return current.startsWith(route);
+    };
+  });
+
+  constructor() {
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(),
+      )
+      .subscribe((event: NavigationEnd) => {
+        this.activeRoute.set(event.urlAfterRedirects || event.url);
+      });
+  }
+
+  ngOnInit(): void {
+    this.activeRoute.set(this.router.url);
+  }
+
+  toggleCollapsed(force?: boolean): void {
+    const newValue = typeof force === 'boolean' ? force : !this.isCollapsed();
+    this.sessionService.setSidebarCollapsed(newValue);
+  }
+
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
+  }
+
+  // #region LEGACY - Uncomment when implementing user-based session storage
+  /*
+  readonly projectService = inject(ProjectService);
+  readonly newProject = output<void>();
   readonly selectedItemId = signal<string | null>(null);
   readonly editingProjectId = signal<string | null>(null);
   readonly editingSearchId = signal<string | null>(null);
@@ -103,23 +163,7 @@ export class AppSidebarComponent implements OnInit {
     }));
   });
 
-  constructor() {
-    this.router.events
-      .pipe(
-        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
-        takeUntilDestroyed(),
-      )
-      .subscribe((event: NavigationEnd) => {
-        this.updateSelectedItemFromRoute(event.url);
-      });
-  }
-
-  ngOnInit(): void {
-    this.updateSelectedItemFromRoute(this.router.url);
-  }
-
   onItemSelected(itemId: string): void {
-    // Get the search item from history
     const project = this.projectService.projects().find(p => p.searches.some(s => s.id === itemId));
     const search = project?.searches.find(s => s.id === itemId);
 
@@ -131,17 +175,10 @@ export class AppSidebarComponent implements OnInit {
         sid: itemId,
       };
       if (search.filter.provider) queryParams['provider'] = search.filter.provider;
-      if (search.filter.from_timestamp)
-        queryParams['from_timestamp'] = search.filter.from_timestamp;
-      if (search.filter.to_timestamp) queryParams['to_timestamp'] = search.filter.to_timestamp;
+      if (search.filter.year) queryParams['year'] = String(search.filter.year);
 
-      this.router.navigate(['/serps/search'], { queryParams });
+      this.router.navigate(['/serps'], { queryParams });
     }
-  }
-
-  toggleCollapsed(force?: boolean): void {
-    const newValue = typeof force === 'boolean' ? force : !this.isCollapsed();
-    this.sessionService.setSidebarCollapsed(newValue);
   }
 
   onNewProject(): void {
@@ -282,7 +319,6 @@ export class AppSidebarComponent implements OnInit {
     if (!item) return;
 
     if (item.type === 'project') {
-      // Check if any search in this project is currently active
       const projectData = this.projectService.getProject(item.id);
       const isAnySearchActive = projectData?.searches.some(
         search => search.id === this.selectedItemId(),
@@ -293,7 +329,6 @@ export class AppSidebarComponent implements OnInit {
         this.router.navigate(['/']);
       }
     } else {
-      // Delete search
       let parentProjectId: string | undefined;
       this.projectService.projects().forEach(p => {
         if (p.searches.find(s => s.id === item.id)) {
@@ -320,8 +355,7 @@ export class AppSidebarComponent implements OnInit {
   }
 
   private updateSelectedItemFromRoute(url: string): void {
-    // Check if on the search view page
-    if (url.includes('/serps/search')) {
+    if (url.includes('/serps')) {
       const params = new URLSearchParams(url.split('?')[1] || '');
       const searchId = params.get('sid');
 
@@ -339,17 +373,14 @@ export class AppSidebarComponent implements OnInit {
     setTimeout(() => {
       const inputField = document.querySelector(selector);
       if (inputField) {
-        // Find the native input element inside aql-input-field
         const nativeInput = inputField.querySelector('input') as HTMLInputElement;
         if (nativeInput) {
           nativeInput.focus();
           nativeInput.select();
-        } else {
-          console.warn('Native input not found for selector:', selector);
         }
-      } else {
-        console.warn('Input field not found for selector:', selector);
       }
-    }, 50); // render timeout
+    }, 50);
   }
+  */
+  // #endregion LEGACY
 }

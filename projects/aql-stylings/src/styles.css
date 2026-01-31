@@ -1,2 +1,37 @@
-/* AQL Stylings Library Global Styles */
 @import './lib/directives/tooltip/tooltip.directive.css';
+
+/* Base scrollbar styles */
+.aql-scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.aql-scrollbar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+.aql-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.aql-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.aql-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Slim scrollbar styles */
+.aql-scrollbar.aql-scrollbar-slim {
+  scrollbar-width: thin !important;
+}
+
+.aql-scrollbar.aql-scrollbar-slim::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+.aql-scrollbar.aql-scrollbar-slim::-webkit-scrollbar-thumb {
+  border: none;
+}

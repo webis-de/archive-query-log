@@ -16,4 +16,8 @@ export * from './lib/components/charts/base/base-echart.component';
 export * from './lib/components/charts/line-chart/aql-line-chart.component';
 export * from './lib/components/charts/bar-chart/aql-bar-chart.component';
 export * from './lib/components/charts/pie-chart/aql-pie-chart.component';
+export * from './lib/components/kpi-card/aql-kpi-card.component';
 export * from './lib/directives/tooltip/tooltip.directive';
+export * from './lib/components/toast/aql-toast.component';
+export * from './lib/services/toast.service';
+export * from './lib/directives/scrollbar/scrollbar.directive';

@@ -15,4 +15,6 @@ export class AqlPanelComponent {
   readonly bordered = input<boolean>(true);
   readonly shadow = input<boolean>(false);
   readonly rounded = input<boolean>(true);
+  readonly isActive = input<boolean>(false);
+  readonly hasFooter = input<boolean>(false);
 }

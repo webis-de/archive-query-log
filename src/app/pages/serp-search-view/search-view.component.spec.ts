@@ -1,8 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute } from '@angular/router';
+import { signal } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { SearchViewComponent } from './search-view.component';
+import { SearchResultItemComponent } from '../../components/search-result-item/search-result-item.component';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { ProviderService } from '../../services/provider.service';
 import { SearchService } from '../../services/search.service';
@@ -14,6 +17,7 @@ describe('SearchViewComponent', () => {
   let mockSuggestionsService: jasmine.SpyObj<SuggestionsService>;
   let mockProviderService: jasmine.SpyObj<ProviderService>;
   let mockSearchService: jasmine.SpyObj<SearchService>;
+  let mockRouter: Router;
 
   const mockSearchResponse: SearchResponse = {
     query: '',
@@ -28,13 +32,17 @@ describe('SearchViewComponent', () => {
       results_per_page: 10,
       total_pages: 0,
     },
+    fuzzy: false,
+    fuzziness: null,
+    expand_synonyms: false,
   };
 
   beforeEach(async () => {
     mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
       MINIMUM_QUERY_LENGTH: 3,
-      suggestions: jasmine.createSpy().and.returnValue([]),
-    });
+      suggestionsWithMeta: signal([]),
+      search: jasmine.createSpy('search'),
+    } as unknown as jasmine.SpyObj<SuggestionsService>);
     mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviders']);
     mockProviderService.getProviders.and.returnValue(of([]));
     mockSearchService = jasmine.createSpyObj('SearchService', [
@@ -56,7 +64,12 @@ describe('SearchViewComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [SearchViewComponent, TranslateModule.forRoot()],
+      imports: [
+        SearchViewComponent,
+        SearchResultItemComponent,
+        TranslateModule.forRoot(),
+        RouterTestingModule.withRoutes([]),
+      ],
       providers: [
         {
           provide: ActivatedRoute,
@@ -73,6 +86,8 @@ describe('SearchViewComponent', () => {
 
     fixture = TestBed.createComponent(SearchViewComponent);
     component = fixture.componentInstance;
+    mockRouter = TestBed.inject(Router);
+    spyOn(mockRouter, 'navigate').and.stub();
     fixture.detectChanges();
   });
 
@@ -127,6 +142,43 @@ describe('SearchViewComponent', () => {
 
       expect(component.showSuggestions()).toBeFalse();
       document.body.removeChild(outsideElement);
+    });
+
+    it('should navigate with year param when histogram click occurs', () => {
+      component.searchQuery = 'test';
+
+      const payload: Parameters<SearchViewComponent['onMetadataHistogramClick']>[0] = {
+        year: '2024',
+      };
+      component.onMetadataHistogramClick(payload);
+
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+        queryParams: { q: 'test', year: '2024' },
+      });
+    });
+
+    it('should set initialFilters year when year is clicked', () => {
+      component.searchQuery = 'test';
+
+      const payload: Parameters<SearchViewComponent['onMetadataHistogramClick']>[0] = {
+        year: '2024',
+      };
+      component.onMetadataHistogramClick(payload);
+
+      expect(component.initialFilters?.year).toBe(2024);
+    });
+
+    it('should include year when performing search after year filter set', () => {
+      component.searchQuery = 'hello';
+      component.metadataYear.set('2024');
+      component.onSearch();
+
+      expect(mockSearchService.search).toHaveBeenCalled();
+      const lastCallArgs = (mockSearchService.search as jasmine.Spy).calls.mostRecent().args;
+      // args: query, pageSize, offset, options
+      expect(lastCallArgs[0]).toBe('hello');
+      expect(lastCallArgs[3]).toBeDefined();
+      expect(lastCallArgs[3].year).toBe(2024);
     });
   });
 });

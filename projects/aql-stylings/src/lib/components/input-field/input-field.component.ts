@@ -1,4 +1,4 @@
-import { Component, input, forwardRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, model, forwardRef, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -44,15 +44,16 @@ export class AqlInputFieldComponent implements ControlValueAccessor {
   readonly shape = input<InputShape>('square');
   readonly size = input<InputSize>('md');
   readonly color = input<InputColor>('bordered');
-  value = '';
-  disabled = false;
+  readonly value = model<string>('');
+  readonly disabled = model<boolean>(false);
+
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (value: string) => void = () => {};
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onTouched: () => void = () => {};
 
   writeValue(value: string): void {
-    this.value = value || '';
+    this.value.set(value || '');
   }
 
   registerOnChange(fn: (value: string) => void): void {
@@ -63,14 +64,10 @@ export class AqlInputFieldComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  setDisabledState(isDisabled: boolean): void {
-    this.disabled = isDisabled;
-  }
-
   onInput(event: Event) {
     const target = event.target as HTMLInputElement;
-    this.value = target.value;
-    this.onChange(this.value);
+    this.value.set(target.value);
+    this.onChange(this.value());
     this.onTouched();
   }
 }

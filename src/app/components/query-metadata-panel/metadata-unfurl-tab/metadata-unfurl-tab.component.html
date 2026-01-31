@@ -1,0 +1,144 @@
+<div class="p-6">
+  <div class="space-y-4">
+    <div class="flex justify-between items-center">
+      <h3 class="text-sm font-semibold uppercase text-base-content/60">
+        {{ 'metadata.urlDetails' | translate }}
+      </h3>
+      @if (unfurlWebUrl()) {
+        <a
+          [href]="unfurlWebUrl()"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+        >
+          {{ 'metadata.unfurl.viewInUnfurlTool' | translate }}
+          <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+      }
+    </div>
+
+    <!-- Privacy URL Strip Section -->
+    @if (hasTrackingParams()) {
+      <div class="bg-base-200 rounded-lg p-3 border border-base-300">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="bi bi-shield-check text-sm"></i>
+          <span class="text-xs font-medium">{{
+            'metadata.unfurl.privacyStrip.title' | translate
+          }}</span>
+        </div>
+        <div class="text-xs text-base-content/70 mb-2">
+          {{
+            'metadata.unfurl.privacyStrip.description'
+              | translate: { count: trackingParamsFound().length }
+          }}
+        </div>
+        @if (strippedUrl(); as stripped) {
+          <div class="flex gap-2">
+            <aql-button
+              [btnType]="copySuccess() ? 'primary' : 'ghost'"
+              size="xs"
+              [iconBefore]="copySuccess() ? 'bi-check-lg' : 'bi-clipboard'"
+              (buttonClick)="copyStrippedUrl()"
+            >
+              {{
+                (copySuccess()
+                  ? 'metadata.unfurl.privacyStrip.copied'
+                  : 'metadata.unfurl.privacyStrip.copy'
+                ) | translate
+              }}
+            </aql-button>
+          </div>
+        }
+      </div>
+    }
+
+    @if (isLoading()) {
+      <div class="flex items-center justify-center py-8">
+        <span class="loading loading-spinner loading-md text-primary"></span>
+      </div>
+    } @else if (unfurlData(); as unfurl) {
+      <div class="unfurl-view space-y-4">
+        <!-- Base URL -->
+        <div class="unfurl-section">
+          <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+            {{ 'metadata.unfurl.baseUrl' | translate }}
+          </h4>
+          <p class="text-sm font-mono break-all text-base-content">
+            {{ unfurl.scheme }}://{{ unfurl.netloc }}
+            @if (unfurl.port) {
+              :{{ unfurl.port }}
+            }
+          </p>
+        </div>
+
+        <!-- Path -->
+        <div class="unfurl-section">
+          <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+            {{ 'metadata.unfurl.path' | translate }}
+          </h4>
+          <p class="text-sm font-mono break-all text-base-content">
+            {{ unfurl.path || '/' }}
+          </p>
+        </div>
+
+        <!-- Query Parameters -->
+        @if (queryParamEntries().length > 0) {
+          <div class="unfurl-section">
+            <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+              {{ 'metadata.unfurl.queryParams' | translate }}
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="table table-sm w-full">
+                <thead>
+                  <tr class="border-b border-base-300">
+                    <th class="text-left font-semibold text-base-content/70">
+                      {{ 'metadata.unfurl.parameter' | translate }}
+                    </th>
+                    <th class="text-left font-semibold text-base-content/70">
+                      {{ 'metadata.unfurl.value' | translate }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (param of queryParamEntries(); track param.key) {
+                    <tr class="border-b border-base-300/50">
+                      <td class="font-mono text-sm">
+                        @if (param.isTracking) {
+                          <span class="text-base-content/50">{{ param.key }}</span>
+                          <span class="badge badge-xs badge-ghost ml-1">tracking</span>
+                        } @else {
+                          <span class="text-primary">{{ param.key }}</span>
+                        }
+                      </td>
+                      <td
+                        class="font-mono text-sm break-all"
+                        [class.text-base-content/60]="param.isTracking"
+                      >
+                        {{ param.value }}
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        }
+
+        <!-- Fragment -->
+        @if (unfurl.fragment) {
+          <div class="unfurl-section">
+            <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
+              {{ 'metadata.unfurl.fragment' | translate }}
+            </h4>
+            <p class="text-sm font-mono break-all text-base-content">#{{ unfurl.fragment }}</p>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="text-center py-8 text-base-content/50">
+        <i class="bi bi-link-45deg text-4xl mb-3 block"></i>
+        <p>{{ 'metadata.noUnfurlData' | translate }}</p>
+      </div>
+    }
+  </div>
+</div>

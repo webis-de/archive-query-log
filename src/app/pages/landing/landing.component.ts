@@ -26,7 +26,6 @@ import { SessionService } from '../../services/session.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
 import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
-import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { FilterState } from '../../models/filter.model';
 import { createFilterBadgeController } from '../../utils/filter-badges';
 import { createSearchSuggestionsController } from '../../utils/search-suggestions';
@@ -43,7 +42,6 @@ import { createSearchSuggestionsController } from '../../utils/search-suggestion
     AqlDropdownComponent,
     AqlMenuItemComponent,
     FilterDropdownComponent,
-    LanguageSelectorComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
@@ -60,6 +58,7 @@ export class LandingComponent {
   readonly translate = inject(TranslateService);
   readonly elementRef = inject(ElementRef);
   readonly destroyRef = inject(DestroyRef);
+  readonly langChange = toSignal(this.translate.onLangChange);
   readonly searchQuery = signal<string>('');
   readonly projects = this.projectService.projects;
   readonly session = this.sessionService.session;
@@ -69,7 +68,7 @@ export class LandingComponent {
     this.route.queryParams.pipe(map(params => params['temp'] === 'true')),
     { initialValue: false },
   );
-  readonly suggestions = this.suggestionsService.suggestions;
+  readonly suggestions = this.suggestionsService.suggestionsWithMeta;
   readonly activeProject = computed(() => {
     const currentSession = this.session();
     const activeProjectId = currentSession?.activeProjectId;
@@ -82,6 +81,7 @@ export class LandingComponent {
   });
   readonly hasProjects = computed(() => this.projects().length > 0);
   readonly landingMessage = computed(() => {
+    this.langChange(); // force update on language change
     if (this.isTemporaryMode()) {
       return this.translate.instant('landing.temporarySearchMode');
     }
@@ -150,13 +150,23 @@ export class LandingComponent {
       const queryParams: Record<string, string> = { q: query };
 
       if (this.currentFilters) {
-        if (this.currentFilters.dateFrom)
-          queryParams['from_timestamp'] = this.currentFilters.dateFrom;
-        if (this.currentFilters.dateTo) queryParams['to_timestamp'] = this.currentFilters.dateTo;
+        if (this.currentFilters.year) queryParams['year'] = String(this.currentFilters.year);
         if (this.currentFilters.status && this.currentFilters.status !== 'any')
           queryParams['status'] = this.currentFilters.status;
-        if (this.currentFilters.providers && this.currentFilters.providers.length > 0) {
-          queryParams['provider'] = this.currentFilters.providers.join(',');
+        if (this.currentFilters.provider) {
+          queryParams['provider'] = this.currentFilters.provider;
+        }
+        if (this.currentFilters.advancedMode) {
+          queryParams['advanced_mode'] = 'true';
+        }
+        if (this.currentFilters.fuzzy) {
+          queryParams['fuzzy'] = 'true';
+        }
+        if (this.currentFilters.fuzziness) {
+          queryParams['fuzziness'] = this.currentFilters.fuzziness;
+        }
+        if (this.currentFilters.expandSynonyms) {
+          queryParams['expand_synonyms'] = 'true';
         }
       }
 
@@ -164,8 +174,6 @@ export class LandingComponent {
       const searchFilter = {
         query,
         provider: queryParams['provider'],
-        from_timestamp: queryParams['from_timestamp'],
-        to_timestamp: queryParams['to_timestamp'],
       };
 
       if (!this.isTemporaryMode()) {
@@ -176,7 +184,7 @@ export class LandingComponent {
       }
 
       // Navigate to search view with query params
-      this.router.navigate(['/serps/search'], {
+      this.router.navigate(['/serps'], {
         queryParams: queryParams,
       });
     }

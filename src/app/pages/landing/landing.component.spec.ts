@@ -36,7 +36,7 @@ describe('LandingComponent', () => {
     });
     mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
       MINIMUM_QUERY_LENGTH: 3,
-      suggestions: jasmine.createSpy().and.returnValue([]),
+      suggestionsWithMeta: jasmine.createSpy().and.returnValue([]),
     });
     mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviders']);
     mockProviderService.getProviders.and.returnValue(of([]));
@@ -88,10 +88,8 @@ describe('LandingComponent', () => {
     expect(mockSearchHistoryService.addSearch).toHaveBeenCalledWith({
       query: 'test query',
       provider: undefined,
-      from_timestamp: undefined,
-      to_timestamp: undefined,
     } as SearchFilter);
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps'], {
       queryParams: { q: 'test query', sid: 'test-id' },
     });
   });
@@ -100,8 +98,8 @@ describe('LandingComponent', () => {
     component.searchQuery.set('test query');
     component.onSearch();
 
-    // Should navigate to /serps/search, not a temporary route
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+    // Should navigate to /serps, not a temporary route
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps'], {
       queryParams: { q: 'test query', sid: 'test-id' },
     });
   });
@@ -143,9 +141,26 @@ describe('LandingComponent', () => {
 
       expect(component.searchQuery()).toBe('selected query');
       expect(component.showSuggestions()).toBeFalse();
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps/search'], {
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps'], {
         queryParams: { q: 'selected query', sid: 'test-id' },
       });
+    });
+
+    it('should render suggestion scores in the landing dropdown', () => {
+      const suggestions: Suggestion[] = [
+        { id: 's1', query: 'landing one', score: 42 },
+        { id: 's2', query: 'landing two', score: 7 },
+      ];
+      mockSuggestionsService.suggestionsWithMeta.and.returnValue(suggestions);
+
+      component.onSearchInput('tes');
+      fixture.detectChanges();
+
+      const text = fixture.nativeElement.textContent;
+      expect(text).toContain('landing one');
+      expect(text).toContain('42');
+      expect(text).toContain('landing two');
+      expect(text).toContain('7');
     });
 
     it('should hide suggestions when clicking outside search container', () => {

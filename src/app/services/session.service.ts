@@ -6,7 +6,7 @@ import { UserSession } from '../models/project.model';
 })
 export class SessionService {
   readonly session = computed(() => this.sessionSignal());
-  readonly sidebarCollapsed = computed(() => this.sessionSignal()?.sidebarCollapsed ?? false);
+  readonly sidebarCollapsed = computed(() => this.sessionSignal()?.sidebarCollapsed ?? true);
 
   private readonly STORAGE_KEY = 'aql_user_session';
   private readonly sessionSignal = signal<UserSession | null>(null);

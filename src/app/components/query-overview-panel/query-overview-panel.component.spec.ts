@@ -11,12 +11,12 @@ describe('QueryOverviewPanelComponent', () => {
     query: 'neural network',
     total_hits: 12000,
     top_queries: [
-      { key: 'neural nets', count: 120 },
-      { key: 'deep learning', count: 95 },
+      { query: 'neural nets', count: 120 },
+      { query: 'deep learning', count: 95 },
     ],
-    date_histogram: [{ key_as_string: '2024-01-01T00:00:00Z', count: 500 }],
-    top_providers: [{ domain: 'example.com', count: 42 }],
-    top_archives: [{ name: 'Archive.org', count: 18 }],
+    date_histogram: [{ date: '2024-01-01T00:00:00Z', count: 500 }],
+    top_providers: [{ provider: 'example.com', count: 42 }],
+    top_archives: [{ archive: 'Archive.org', count: 18 }],
   };
 
   beforeEach(async () => {
@@ -72,5 +72,15 @@ describe('QueryOverviewPanelComponent', () => {
 
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.textContent).toContain('searchStats.noData');
+  });
+
+  it('should emit year when histogram bar is clicked', () => {
+    fixture.componentRef.setInput('data', mockMetadata);
+    fixture.detectChanges();
+
+    spyOn(component.histogramClick, 'emit');
+    component.onHistogramClick({ dataIndex: 0 } as unknown as Event);
+
+    expect(component.histogramClick.emit).toHaveBeenCalledWith({ year: '2024' });
   });
 });

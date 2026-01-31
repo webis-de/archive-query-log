@@ -1,0 +1,29 @@
+<div class="stats shadow bg-base-200" [class.stats-vertical]="!compact()">
+  <div class="stat">
+    @if (icon()) {
+      <div class="stat-figure" [class]="valueColorClass()">
+        <i [class]="icon()"></i>
+      </div>
+    }
+    <div class="stat-title text-xs uppercase tracking-wider opacity-70">
+      {{ title() }}
+    </div>
+    <div class="stat-value text-2xl" [class]="valueColorClass()">
+      @if (formatAsNumber() && typeof formattedValue() === 'number') {
+        {{ formattedValue() | number }}
+      } @else {
+        {{ formattedValue() }}
+      }
+    </div>
+    @if (secondary()) {
+      <div class="stat-desc text-secondary">
+        {{ secondary() }}
+      </div>
+    }
+    @if (subtitle()) {
+      <div class="stat-desc opacity-60">
+        {{ subtitle() }}
+      </div>
+    }
+  </div>
+</div>

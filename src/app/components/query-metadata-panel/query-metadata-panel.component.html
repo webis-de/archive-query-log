@@ -1,10 +1,14 @@
 <div [ngClass]="panelClasses()">
   <div [ngClass]="contentWrapperClasses()" class="h-full flex flex-col">
     <div
-      class="flex items-center justify-between px-6 py-4 gap-4 border-b border-base-300 flex-shrink-0"
+      class="flex items-center justify-between px-6 py-4 gap-4 border-b border-base-300 shrink-0"
     >
       <div class="flex-1 min-w-0">
-        @if (searchResult(); as result) {
+        @if (isLoading()) {
+          <h2 class="text-lg font-semibold animate-pulse bg-base-300 h-7 w-2/3 rounded">
+            <span class="sr-only">Loading...</span>
+          </h2>
+        } @else if (searchResult(); as result) {
           <h2 class="text-lg font-semibold truncate">
             {{ result._source.url_query }}
           </h2>
@@ -16,11 +20,32 @@
           >
             {{ result._source.capture.url }}
           </a>
+        } @else if (providerDetail(); as provider) {
+          <h2 class="text-lg font-semibold truncate">
+            {{ provider.name }}
+          </h2>
+          <p class="text-sm text-base-content/60 font-mono truncate">
+            {{ provider.id }}
+          </p>
+        } @else if (archiveDetail(); as archive) {
+          <h2 class="text-lg font-semibold truncate">
+            {{ archive.name }}
+          </h2>
+          <a
+            [href]="archive.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-primary hover:underline truncate block"
+          >
+            {{ archive.id }}
+          </a>
+        } @else if (error()) {
+          <h2 class="text-lg font-semibold text-error">{{ 'common.error' | translate }}</h2>
         } @else {
           <h2 class="text-lg font-semibold">{{ 'metadata.panel' | translate }}</h2>
         }
       </div>
-      <div class="flex gap-2 flex-shrink-0">
+      <div class="flex gap-2 shrink-0">
         @if (history().length > 0) {
           <aql-button
             iconStyle="square"
@@ -52,358 +77,88 @@
       </div>
     </div>
 
-    <div class="px-6 pt-4 border-b border-base-300">
-      <aql-tab-menu
-        [tabs]="tabs()"
-        [activeTabId]="activeTab()"
-        [size]="'sm'"
-        [tabStyle]="'border'"
-        (tabChange)="onTabChange($event)"
-      ></aql-tab-menu>
-    </div>
+    @if (isLoading()) {
+      <div class="flex-1 flex items-center justify-center">
+        <span class="loading loading-spinner loading-lg text-primary"></span>
+      </div>
+    } @else if (error(); as err) {
+      <div class="flex-1 flex flex-col items-center justify-center p-8 text-center opacity-60">
+        <i class="bi bi-exclamation-triangle text-4xl mb-4 text-error"></i>
+        <p class="text-lg font-semibold">{{ err }}</p>
+      </div>
+    } @else if (!hasContent()) {
+      <div class="flex-1 flex flex-col items-center justify-center p-8 text-center opacity-60">
+        <i class="bi bi-inbox text-4xl mb-4"></i>
+        <p class="text-lg font-semibold">{{ 'metadata.noDataSelected' | translate }}</p>
+      </div>
+    } @else {
+      <div class="px-6 pt-4 border-b border-base-300">
+        <aql-tab-menu
+          [tabs]="tabs()"
+          [activeTabId]="activeTab()"
+          [size]="'sm'"
+          [tabStyle]="'border'"
+          (tabChange)="onTabChange($event)"
+        ></aql-tab-menu>
+      </div>
 
-    <div class="flex-1 overflow-y-auto">
-      @switch (activeTab()) {
-        @case ('text') {
-          <div class="p-6">
-            <div class="mb-4">
-              <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
-                {{ 'metadata.plainTextView' | translate }}
-              </h3>
-              <p class="text-sm text-base-content/80 leading-relaxed whitespace-pre-line">
-                {{ getExtractionText() }}
-              </p>
-            </div>
-          </div>
+      <div class="flex-1 overflow-y-auto">
+        @switch (activeTab()) {
+          @case ('html') {
+            <app-metadata-html-tab [searchResult]="searchResult()"></app-metadata-html-tab>
+          }
+          @case ('website') {
+            <app-metadata-website-tab
+              [searchResult]="searchResult()"
+              [isActive]="activeTab() === 'website'"
+            ></app-metadata-website-tab>
+          }
+          @case ('metadata') {
+            <app-metadata-info-tab [searchResult]="searchResult()"></app-metadata-info-tab>
+          }
+          @case ('related') {
+            <app-metadata-related-tab
+              [relatedSerps]="relatedSerps()"
+              [isLoading]="isLoadingDetails()"
+              (serpSelected)="onRelatedSerpClick($event)"
+            ></app-metadata-related-tab>
+          }
+          @case ('unfurl') {
+            <app-metadata-unfurl-tab
+              [unfurlData]="unfurlData()"
+              [unfurlWebUrl]="unfurlWebUrl()"
+              [isLoading]="isLoadingDetails()"
+            ></app-metadata-unfurl-tab>
+          }
+          @case ('unbranded') {
+            <app-metadata-unbranded-tab
+              [unbranded]="serpDetails()?.unbranded ?? null"
+              [isLoading]="isLoadingDetails()"
+            ></app-metadata-unbranded-tab>
+          }
+          @case ('provider-info') {
+            <app-metadata-provider-tab
+              [providerDetail]="providerDetail()"
+            ></app-metadata-provider-tab>
+          }
+          @case ('archive-info') {
+            <app-metadata-archive-tab [archiveDetail]="archiveDetail()"></app-metadata-archive-tab>
+          }
+          @case ('statistics') {
+            @if (providerDetail(); as provider) {
+              <app-metadata-statistics-tab
+                [entityId]="provider.id"
+                [type]="'provider'"
+              ></app-metadata-statistics-tab>
+            } @else if (archiveDetail(); as archive) {
+              <app-metadata-statistics-tab
+                [entityId]="archive.id"
+                [type]="'archive'"
+              ></app-metadata-statistics-tab>
+            }
+          }
         }
-        @case ('html') {
-          <div class="p-6">
-            <div class="mb-4">
-              <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
-                {{ 'metadata.htmlView' | translate }}
-              </h3>
-              @if (searchResult(); as result) {
-                <div class="bg-base-200 rounded-lg p-4">
-                  <code class="text-xs">
-                    <pre class="whitespace-pre-wrap break-words">{{ result._source | json }}</pre>
-                  </code>
-                </div>
-              }
-            </div>
-          </div>
-        }
-        @case ('website') {
-          <div class="p-6">
-            <div class="space-y-4">
-              <h3 class="text-sm font-semibold uppercase text-base-content/60">
-                {{ 'metadata.websitePreview' | translate }}
-              </h3>
-              @if (searchResult(); as result) {
-                <div class="space-y-3 text-sm">
-                  <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="flex flex-row text-base-content/70 gap-1">
-                      <i class="bi bi-clock-history me-1"></i
-                      >{{ 'metadata.website.snapshotDate' | translate }}
-                    </span>
-                    <span>{{ archiveDate() }}</span>
-                  </div>
-                  <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="flex flex-row font-semibold text-base-content/70 gap-1">
-                      <i class="bi bi-archive me-1"></i>{{ 'metadata.website.archive' | translate }}
-                    </span>
-                    <span class="text-xs break-all">{{ archiveName() }}</span>
-                  </div>
-                  @if (archiveHomepage(); as homepage) {
-                    <div class="flex justify-between items-center py-2 border-b border-base-300">
-                      <span class="flex flex-row font-semibold text-base-content/70 gap-1">
-                        <i class="bi bi-house me-1"></i
-                        >{{ 'metadata.website.homepage' | translate }}
-                      </span>
-                      <a
-                        [href]="homepage"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-primary hover:underline text-xs"
-                      >
-                        {{ homepage }}
-                        <i class="bi bi-box-arrow-up-right ms-1"></i>
-                      </a>
-                    </div>
-                  }
-                  <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="flex flex-row font-semibold text-base-content/70 gap-1">
-                      <i class="bi bi-link-45deg me-1"></i
-                      >{{ 'metadata.website.mementoApi' | translate }}
-                    </span>
-                    <span class="text-xs break-all">{{
-                      result._source.archive?.memento_api_url || 'N/A'
-                    }}</span>
-                  </div>
-                  @if (cdxApiUrl(); as cdxUrl) {
-                    <div class="flex justify-between py-2 border-b border-base-300">
-                      <span class="flex flex-row font-semibold text-base-content/70 gap-1">
-                        <i class="bi bi-database me-1"></i
-                        >{{ 'metadata.website.cdxApi' | translate }}
-                      </span>
-                      <span class="text-xs break-all">{{ cdxUrl }}</span>
-                    </div>
-                  }
-                  <div class="flex justify-between items-center py-2 border-b border-base-300">
-                    <span class="flex flex-row font-semibold text-base-content/70 gap-1">
-                      <i class="bi bi-box-arrow-up-right me-1"></i
-                      >{{ 'metadata.website.openSnapshot' | translate }}
-                    </span>
-                    <a
-                      [href]="mementoUrlString()"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-primary hover:underline text-xs"
-                    >
-                      {{ 'metadata.website.openInNewTab' | translate }}
-                      <i class="bi bi-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-                @if (mementoUrl(); as url) {
-                  <div class="relative mt-4">
-                    @if (isIframeLoading() && !iframeError()) {
-                      <div
-                        class="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg border border-base-300 z-10"
-                      >
-                        <div class="flex flex-col items-center gap-3">
-                          <span class="loading loading-spinner loading-lg text-primary"></span>
-                          <p class="text-sm text-base-content/70">
-                            {{ 'metadata.website.loadingSnapshot' | translate }}
-                          </p>
-                        </div>
-                      </div>
-                    }
-                    @if (iframeError()) {
-                      <div
-                        class="absolute inset-0 flex items-center justify-center bg-base-200 rounded-lg border border-error z-10"
-                      >
-                        <div class="flex flex-col items-center gap-3 text-error">
-                          <i class="bi bi-exclamation-triangle text-4xl"></i>
-                          <p class="text-sm font-semibold">
-                            {{ 'metadata.website.failedToLoad' | translate }}
-                          </p>
-                          <p class="text-xs text-base-content/60">
-                            {{ 'metadata.website.archiveUnavailable' | translate }}
-                          </p>
-                        </div>
-                      </div>
-                    }
-                    <iframe
-                      [src]="url"
-                      class="w-full h-[500px] border border-base-300 rounded-lg"
-                      sandbox="allow-scripts allow-same-origin allow-popups"
-                      referrerpolicy="no-referrer"
-                      loading="eager"
-                      [title]="'metadata.website.iframeTitle' | translate: { date: archiveDate() }"
-                      (load)="onIframeLoad()"
-                      (error)="onIframeError()"
-                    ></iframe>
-                  </div>
-                }
-                <p class="text-xs text-base-content/50 mt-3">
-                  <i class="bi bi-info-circle me-1"></i>
-                  {{ 'metadata.website.previewNote' | translate }}
-                </p>
-              }
-            </div>
-          </div>
-        }
-        @case ('metadata') {
-          <div class="p-6">
-            <div class="space-y-4">
-              <h3 class="text-sm font-semibold uppercase text-base-content/60">
-                {{ 'metadata.metadata' | translate }}
-              </h3>
-              @if (searchResult(); as result) {
-                <div class="space-y-3 text-sm">
-                  <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70"
-                      >{{ 'metadata.score' | translate }}:</span
-                    >
-                    <span>{{ result._score | number: '1.2-2' }}</span>
-                  </div>
-                  <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70"
-                      >{{ 'metadata.documentId' | translate }}:</span
-                    >
-                    <span class="text-xs break-all">{{ result._id }}</span>
-                  </div>
-                  <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70"
-                      >{{ 'metadata.mimeType' | translate }}:</span
-                    >
-                    <span>{{ result._source.capture.mimetype }}</span>
-                  </div>
-                  <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70"
-                      >{{ 'metadata.timestamp' | translate }}:</span
-                    >
-                    <span>{{ result._source.capture.timestamp }}</span>
-                  </div>
-                  <div class="flex justify-between py-2 border-b border-base-300">
-                    <span class="font-semibold text-base-content/70"
-                      >{{ 'metadata.provider' | translate }}:</span
-                    >
-                    <span>{{ result._source.provider.domain }}</span>
-                  </div>
-                </div>
-              }
-            </div>
-          </div>
-        }
-        @case ('related') {
-          <div class="p-6">
-            <div class="space-y-4">
-              <h3 class="text-sm font-semibold uppercase text-base-content/60">
-                {{ 'metadata.relatedSerps' | translate }}
-              </h3>
-              @if (isLoadingDetails()) {
-                <div class="flex items-center justify-center py-8">
-                  <span class="loading loading-spinner loading-md text-primary"></span>
-                </div>
-              } @else if (relatedSerps().length > 0) {
-                <div class="flex flex-col gap-4">
-                  @for (serp of relatedSerps(); track serp._id) {
-                    <aql-panel
-                      [panelTitle]="serp._source.url_query"
-                      [subtitle]="serp._source.capture.url"
-                      [bordered]="true"
-                      [shadow]="true"
-                      [rounded]="true"
-                      class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl"
-                      tabindex="0"
-                      role="button"
-                      (click)="onRelatedSerpClick(serp)"
-                      (keydown.enter)="onRelatedSerpClick(serp)"
-                      (keydown.space)="onRelatedSerpClick(serp)"
-                    >
-                      <div footer class="flex items-center gap-2 text-xs text-base-content/60">
-                        <span>
-                          {{ formatDate(serp._source.capture.timestamp) }}
-                        </span>
-                        <span>·</span>
-                        <span>
-                          {{ serp._source.provider.domain }}
-                        </span>
-                      </div>
-                    </aql-panel>
-                  }
-                </div>
-              } @else {
-                <div class="text-center py-8 text-base-content/50">
-                  <i class="bi bi-search text-4xl mb-3 block"></i>
-                  <p>{{ 'metadata.noRelatedSerps' | translate }}</p>
-                </div>
-              }
-            </div>
-          </div>
-        }
-        @case ('unfurl') {
-          <div class="p-6">
-            <div class="space-y-4">
-              <div class="flex justify-between items-center">
-                <h3 class="text-sm font-semibold uppercase text-base-content/60">
-                  {{ 'metadata.urlDetails' | translate }}
-                </h3>
-                @if (unfurlWebUrl()) {
-                  <a
-                    [href]="unfurlWebUrl()"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                  >
-                    {{ 'metadata.unfurl.viewInUnfurlTool' | translate }}
-                    <i class="bi bi-box-arrow-up-right"></i>
-                  </a>
-                }
-              </div>
-              @if (isLoadingDetails()) {
-                <div class="flex items-center justify-center py-8">
-                  <span class="loading loading-spinner loading-md text-primary"></span>
-                </div>
-              } @else if (unfurlData(); as unfurl) {
-                <div class="unfurl-view space-y-4">
-                  <!-- Base URL -->
-                  <div class="unfurl-section">
-                    <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-                      {{ 'metadata.unfurl.baseUrl' | translate }}
-                    </h4>
-                    <p class="text-sm font-mono break-all text-base-content">
-                      {{ unfurl.scheme }}://{{ unfurl.netloc }}
-                      @if (unfurl.port) {
-                        :{{ unfurl.port }}
-                      }
-                    </p>
-                  </div>
-
-                  <!-- Path -->
-                  <div class="unfurl-section">
-                    <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-                      {{ 'metadata.unfurl.path' | translate }}
-                    </h4>
-                    <p class="text-sm font-mono break-all text-base-content">
-                      {{ unfurl.path || '/' }}
-                    </p>
-                  </div>
-
-                  <!-- Query Parameters -->
-                  @if (getQueryParamEntries().length > 0) {
-                    <div class="unfurl-section">
-                      <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-                        {{ 'metadata.unfurl.queryParams' | translate }}
-                      </h4>
-                      <div class="overflow-x-auto">
-                        <table class="table table-sm w-full">
-                          <thead>
-                            <tr class="border-b border-base-300">
-                              <th class="text-left font-semibold text-base-content/70">
-                                {{ 'metadata.unfurl.parameter' | translate }}
-                              </th>
-                              <th class="text-left font-semibold text-base-content/70">
-                                {{ 'metadata.unfurl.value' | translate }}
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            @for (param of getQueryParamEntries(); track param.key) {
-                              <tr class="border-b border-base-300/50">
-                                <td class="font-mono text-sm text-primary">{{ param.key }}</td>
-                                <td class="font-mono text-sm break-all">{{ param.value }}</td>
-                              </tr>
-                            }
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  }
-
-                  <!-- Fragment -->
-                  @if (unfurl.fragment) {
-                    <div class="unfurl-section">
-                      <h4 class="text-xs font-semibold uppercase text-base-content/50 mb-2">
-                        {{ 'metadata.unfurl.fragment' | translate }}
-                      </h4>
-                      <p class="text-sm font-mono break-all text-base-content">
-                        #{{ unfurl.fragment }}
-                      </p>
-                    </div>
-                  }
-                </div>
-              } @else {
-                <div class="text-center py-8 text-base-content/50">
-                  <i class="bi bi-link-45deg text-4xl mb-3 block"></i>
-                  <p>{{ 'metadata.noUnfurlData' | translate }}</p>
-                </div>
-              }
-            </div>
-          </div>
-        }
-      }
-    </div>
+      </div>
+    }
   </div>
 </div>

@@ -16,23 +16,57 @@ import {
 export class SearchService {
   private readonly apiService = inject(ApiService);
 
-  search(query: string, size?: number, offset?: number): Observable<SearchResponse> {
-    const params: Record<string, string | number> = {
+  search(
+    query: string,
+    size?: number,
+    page?: number,
+    options: {
+      advancedMode?: boolean;
+      fuzzy?: boolean;
+      fuzziness?: string;
+      expandSynonyms?: boolean;
+      year?: number;
+      provider_id?: string;
+      status_code?: number;
+    } = {},
+  ): Observable<SearchResponse> {
+    const params: Record<string, string | number | boolean> = {
       query: query,
     };
 
     if (size !== undefined) {
       params['page_size'] = size;
     }
-    if (offset !== undefined) {
-      params['offset'] = offset;
+    if (page !== undefined) {
+      params['page'] = page;
+    }
+    if (options.advancedMode !== undefined) {
+      params['advanced_mode'] = options.advancedMode;
+    }
+    if (options.fuzzy !== undefined) {
+      params['fuzzy'] = options.fuzzy;
+    }
+    if (options.fuzziness) {
+      params['fuzziness'] = options.fuzziness;
+    }
+    if (options.expandSynonyms !== undefined) {
+      params['expand_synonyms'] = options.expandSynonyms;
+    }
+    if (options.provider_id) {
+      params['provider_id'] = options.provider_id;
+    }
+    if (options.year !== undefined) {
+      params['year'] = options.year;
+    }
+    if (options.status_code !== undefined) {
+      params['status_code'] = options.status_code;
     }
 
     return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, params);
   }
 
   searchWithParams(params: SearchParams): Observable<SearchResponse> {
-    const apiParams: Record<string, string | number> = {
+    const apiParams: Record<string, string | number | boolean> = {
       query: params.query,
     };
 
@@ -47,6 +81,18 @@ export class SearchService {
     }
     if (params.status_code !== undefined) {
       apiParams['status_code'] = params.status_code;
+    }
+    if (params.advanced_mode !== undefined) {
+      apiParams['advanced_mode'] = params.advanced_mode;
+    }
+    if (params.fuzzy !== undefined) {
+      apiParams['fuzzy'] = params.fuzzy;
+    }
+    if (params.fuzziness) {
+      apiParams['fuzziness'] = params.fuzziness;
+    }
+    if (params.expand_synonyms !== undefined) {
+      apiParams['expand_synonyms'] = params.expand_synonyms;
     }
 
     return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, apiParams);
@@ -71,6 +117,9 @@ export class SearchService {
     }
     if (params.last_n_months !== undefined) {
       apiParams['last_n_months'] = params.last_n_months;
+    }
+    if (params.provider_id) {
+      apiParams['provider_id'] = params.provider_id;
     }
 
     return this.apiService.get<QueryMetadataResponse>(API_CONFIG.endpoints.serpsPreview, apiParams);

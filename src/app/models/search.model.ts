@@ -52,6 +52,12 @@ export interface SearchResultSource {
   warc_snippets_parser: Parser;
   warc_location?: WarcLocation;
   warc_downloader?: WarcDownloader;
+  parsed_query?: string;
+  results?: unknown[];
+  warc_results?: unknown[];
+  parsed_results?: unknown[];
+  search_results?: unknown[];
+  [key: string]: unknown; // Allow additional dynamic fields
 }
 
 export interface SearchResult {
@@ -75,6 +81,10 @@ export interface SearchResponse {
     results_per_page: number;
     total_pages: number;
   };
+  fuzzy: boolean;
+  fuzziness: string | null;
+  expand_synonyms: boolean;
+  did_you_mean?: { text: string; score: number; freq: number }[];
 }
 
 export interface SearchParams {
@@ -83,25 +93,29 @@ export interface SearchParams {
   provider_id?: string;
   year?: number;
   status_code?: number;
+  advanced_mode?: boolean;
+  fuzzy?: boolean;
+  fuzziness?: 'AUTO' | '0' | '1' | '2';
+  expand_synonyms?: boolean;
 }
 
 export interface QueryHistogramBucket {
-  key_as_string: string;
+  date: string;
   count: number;
 }
 
 export interface TopQueryItem {
-  key: string;
+  query: string;
   count: number;
 }
 
 export interface TopProviderItem {
-  domain: string;
+  provider: string;
   count: number;
 }
 
 export interface TopArchiveItem {
-  name: string;
+  archive: string;
   count: number;
 }
 
@@ -130,6 +144,7 @@ export interface QueryMetadataParams {
   top_providers?: number;
   top_archives?: number;
   last_n_months?: number;
+  provider_id?: string;
 }
 
 export interface RelatedSerp {
@@ -203,4 +218,74 @@ export interface SerpDetailsResponse {
     snippet: string;
   }[];
   unbranded?: UnbrandedSerp;
+}
+
+export interface CompareResponse {
+  serps: Record<string, SearchResult>;
+  common_urls: string[];
+  unique_urls: Record<string, string[]>;
+  rankings: Record<string, Record<string, number>>;
+  similarity: {
+    jaccard: Record<string, Record<string, number>>;
+    spearman: Record<string, Record<string, number>>;
+  };
+  metadata_comparison: {
+    providers: Record<string, string>;
+    timestamps: Record<string, string>;
+    queries: Record<string, string>;
+    archives: Record<string, string>;
+    status_codes: Record<string, number>;
+    total_urls: Record<string, number>;
+  };
+}
+
+export interface RankingComparisonItem {
+  url: string;
+  ranks: Record<string, number>;
+}
+
+export interface CompareApiResponse {
+  comparison_summary: {
+    serp_count: number;
+    serp_ids: string[];
+    total_unique_urls: number;
+    common_urls_count: number;
+    avg_jaccard_similarity: number;
+  };
+  serps_metadata: {
+    serp_id: string;
+    query: string;
+    provider_id: string;
+    timestamp: string;
+    status_code: number;
+    archive: string;
+  }[];
+  serps_full_data: {
+    serp_id: string;
+    data: SearchResult;
+  }[];
+  url_comparison: {
+    common_urls: string[];
+    unique_per_serp: {
+      serp_id: string;
+      unique_urls: string[];
+    }[];
+    url_counts: {
+      serp_id: string;
+      total_urls: number;
+    }[];
+  };
+  ranking_comparison: RankingComparisonItem[];
+  similarity_metrics: {
+    pairwise_jaccard: {
+      serp_1: string;
+      serp_2: string;
+      jaccard_similarity: number;
+    }[];
+    pairwise_spearman: {
+      serp_1: string;
+      serp_2: string;
+      spearman_correlation: number;
+    }[];
+  };
 }
