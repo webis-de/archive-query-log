@@ -58,11 +58,11 @@ export class QueryOverviewPanelComponent {
   readonly isLoading = input<boolean>(false);
   readonly interval = input<'day' | 'week' | 'month'>('month');
   readonly intervalChange = output<'day' | 'week' | 'month'>();
-  // Emit when user clicks a histogram bucket. Currently supports filtering by year: { year: '2024' }
+  // Emit when user clicks a histogram bucket. Supports filtering by year: { year: '2024' }
   readonly histogramClick = output<{
     year?: string;
-    from_timestamp?: string;
-    to_timestamp?: string;
+    provider_id?: string;
+    provider_name?: string;
   }>();
 
   readonly showTopQueriesList = signal<boolean>(false);
@@ -309,10 +309,7 @@ export class QueryOverviewPanelComponent {
       const label = this.histogramLabels()[dataIndex];
       if (!label) return;
 
-      const interval = this.interval();
-      const range = this.computeRangeForLabel(label, interval);
-
-      // Backend supports filtering by year for now. Extract year from label (UTC) if possible.
+      // Backend supports filtering by year only. Extract year from label (UTC).
       let year: string | undefined = undefined;
       try {
         const d = new Date(label);
@@ -325,44 +322,10 @@ export class QueryOverviewPanelComponent {
 
       if (year) {
         this.histogramClick.emit({ year });
-      } else {
-        // fallback to emitting range if parsing failed
-        this.histogramClick.emit({ from_timestamp: range.from, to_timestamp: range.to });
       }
     } catch {
       // ignore errors
     }
-  }
-
-  private computeRangeForLabel(label: string, interval: 'day' | 'week' | 'month') {
-    const date = new Date(label);
-    if (isNaN(date.getTime())) {
-      // fallback: treat label as exact date
-      const d = new Date(label);
-      return { from: d.toISOString(), to: d.toISOString() };
-    }
-
-    const start = new Date(
-      Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), 0, 0, 0),
-    );
-    let end: Date;
-
-    if (interval === 'day') {
-      end = new Date(start);
-      end.setUTCDate(end.getUTCDate() + 1);
-      end.setUTCMilliseconds(end.getUTCMilliseconds() - 1);
-    } else if (interval === 'week') {
-      // Assuming label is start of week
-      end = new Date(start);
-      end.setUTCDate(end.getUTCDate() + 7);
-      end.setUTCMilliseconds(end.getUTCMilliseconds() - 1);
-    } else {
-      // month
-      end = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth() + 1, 1));
-      end.setUTCMilliseconds(end.getUTCMilliseconds() - 1);
-    }
-
-    return { from: start.toISOString(), to: end.toISOString() };
   }
 
   private formatDate(dateString: string): string {

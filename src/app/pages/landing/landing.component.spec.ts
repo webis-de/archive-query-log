@@ -88,8 +88,6 @@ describe('LandingComponent', () => {
     expect(mockSearchHistoryService.addSearch).toHaveBeenCalledWith({
       query: 'test query',
       provider: undefined,
-      from_timestamp: undefined,
-      to_timestamp: undefined,
     } as SearchFilter);
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/serps'], {
       queryParams: { q: 'test query', sid: 'test-id' },

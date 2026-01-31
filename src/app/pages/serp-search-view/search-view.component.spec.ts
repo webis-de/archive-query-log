@@ -157,7 +157,7 @@ describe('SearchViewComponent', () => {
       });
     });
 
-    it('should set initialFilters dateFrom and dateTo when year is clicked', () => {
+    it('should set initialFilters year when year is clicked', () => {
       component.searchQuery = 'test';
 
       const payload: Parameters<SearchViewComponent['onMetadataHistogramClick']>[0] = {
@@ -165,8 +165,7 @@ describe('SearchViewComponent', () => {
       };
       component.onMetadataHistogramClick(payload);
 
-      expect(component.initialFilters?.dateFrom).toContain('2024');
-      expect(component.initialFilters?.dateTo).toContain('2024');
+      expect(component.initialFilters?.year).toBe(2024);
     });
 
     it('should include year when performing search after year filter set', () => {

@@ -155,11 +155,8 @@ export class SearchViewComponent {
 
     this.route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(queryParams => {
       const query = queryParams.get('q');
-      const fromTimestamp = queryParams.get('from_timestamp') || '';
-      const toTimestamp = queryParams.get('to_timestamp') || '';
       const status = queryParams.get('status') || 'any';
-      const providerStr = queryParams.get('provider');
-      const providers = providerStr ? providerStr.split(',') : [];
+      const provider = queryParams.get('provider') || undefined;
       const advancedMode = queryParams.get('advanced_mode') === 'true';
       const fuzzy = queryParams.get('fuzzy') === 'true';
       const fuzziness =
@@ -173,10 +170,8 @@ export class SearchViewComponent {
       // Build current query string for comparison
       const currentQueryString = JSON.stringify({
         q: query,
-        from_timestamp: fromTimestamp,
-        to_timestamp: toTimestamp,
         status,
-        provider: providerStr,
+        provider,
         advanced_mode: advancedMode,
         fuzzy,
         fuzziness,
@@ -184,43 +179,31 @@ export class SearchViewComponent {
         year,
       });
 
-      // Update filters
+      // Update filters with new model (year-based, single provider)
       let newInitialFilters: FilterState | null = null;
-      if (year) {
-        const y = parseInt(year, 10);
-        const fromIso = `${String(y).padStart(4, '0')}-01-01T12:00:00Z`;
-        const toIso = `${String(y).padStart(4, '0')}-12-31T12:00:00Z`;
-        newInitialFilters = {
-          dateFrom: this.languageService.formatDate(fromIso),
-          dateTo: this.languageService.formatDate(toIso),
-          status,
-          providers,
-          advancedMode,
-          fuzzy,
-          fuzziness,
-          expandSynonyms,
-        };
-        this.metadataYear.set(year);
-      } else if (
-        fromTimestamp ||
-        toTimestamp ||
+      const yearNum = year ? parseInt(year, 10) : undefined;
+
+      if (
+        yearNum ||
         status !== 'any' ||
-        providers.length > 0 ||
+        provider ||
         advancedMode ||
         fuzzy ||
         fuzziness ||
         expandSynonyms
       ) {
         newInitialFilters = {
-          dateFrom: fromTimestamp ? this.languageService.formatDate(fromTimestamp) : '',
-          dateTo: toTimestamp ? this.languageService.formatDate(toTimestamp) : '',
+          year: yearNum,
           status,
-          providers,
+          provider,
           advancedMode,
           fuzzy,
           fuzziness,
           expandSynonyms,
         };
+        if (yearNum) {
+          this.metadataYear.set(year);
+        }
       }
 
       if (newInitialFilters) {
@@ -280,8 +263,28 @@ export class SearchViewComponent {
     const expandSynonyms = this.currentFilters?.expandSynonyms || undefined;
     this.loadQueryMetadata(trimmedQuery);
 
-    const yearFilter = this.metadataYear();
-    const year = yearFilter ? parseInt(yearFilter, 10) : undefined;
+    // Get year from filters or metadataYear signal
+    const yearFilter = this.currentFilters?.year ?? this.metadataYear();
+    const year = yearFilter
+      ? typeof yearFilter === 'string'
+        ? parseInt(yearFilter, 10)
+        : yearFilter
+      : undefined;
+
+    // Get provider ID (undefined means "All" - no filter)
+    const provider_id = this.currentFilters?.provider;
+
+    // Map status to HTTP status code:
+    // - 'active' = 200 (successful response)
+    // - 'inactive' = 404 (not found - site is down/removed)
+    // - 'any' = undefined (no filter)
+    const statusFilter = this.currentFilters?.status;
+    let status_code: number | undefined;
+    if (statusFilter === 'active') {
+      status_code = 200;
+    } else if (statusFilter === 'inactive') {
+      status_code = 404;
+    }
 
     this.searchService
       .search(this.searchQuery, this.pageSize(), this.currentPage(), {
@@ -290,6 +293,8 @@ export class SearchViewComponent {
         fuzziness,
         expandSynonyms,
         year,
+        provider_id,
+        status_code,
       })
       .subscribe({
         next: response => {
@@ -310,14 +315,8 @@ export class SearchViewComponent {
               query: this.searchQuery,
             };
 
-            if (this.currentFilters?.providers && this.currentFilters.providers.length > 0) {
-              searchFilter.provider = this.currentFilters.providers.join(',');
-            }
-            if (this.currentFilters?.dateFrom) {
-              searchFilter.from_timestamp = this.currentFilters.dateFrom;
-            }
-            if (this.currentFilters?.dateTo) {
-              searchFilter.to_timestamp = this.currentFilters.dateTo;
+            if (this.currentFilters?.provider) {
+              searchFilter.provider = this.currentFilters.provider;
             }
             if (this.currentFilters?.advancedMode) {
               searchFilter.advanced_mode = this.currentFilters.advancedMode;
@@ -337,10 +336,9 @@ export class SearchViewComponent {
 
             // Build query params for URL
             const queryParams: Record<string, string> = { q: this.searchQuery, sid: searchItem.id };
-            if (searchFilter.provider) queryParams['provider'] = searchFilter.provider;
-            if (searchFilter.from_timestamp)
-              queryParams['from_timestamp'] = searchFilter.from_timestamp;
-            if (searchFilter.to_timestamp) queryParams['to_timestamp'] = searchFilter.to_timestamp;
+            if (this.currentFilters?.provider)
+              queryParams['provider'] = this.currentFilters.provider;
+            if (this.currentFilters?.year) queryParams['year'] = String(this.currentFilters.year);
             if (this.currentFilters?.status && this.currentFilters.status !== 'any') {
               queryParams['status'] = this.currentFilters.status;
             }
@@ -391,59 +389,62 @@ export class SearchViewComponent {
 
   onMetadataHistogramClick(payload: {
     year?: string;
-    from_timestamp?: string;
-    to_timestamp?: string;
     provider_id?: string;
     provider_name?: string;
   }): void {
     // Build query params starting from existing query
     const params: Record<string, string> = { q: this.searchQuery };
 
-    // Preserve existing provider filters when available, otherwise fall back to payload provider
-    const activeProviders = this.currentFilters?.providers?.length
-      ? this.currentFilters!.providers
-      : [];
-    if (activeProviders.length > 0) {
-      params['provider'] = activeProviders.join(',');
+    // Preserve existing provider filter when available, otherwise fall back to payload provider
+    const activeProvider = this.currentFilters?.provider;
+    if (activeProvider) {
+      params['provider'] = activeProvider;
     } else if (payload.provider_id) {
       params['provider'] = payload.provider_id;
     }
 
-    // If year specified, use that (backend supports year filter). Otherwise use timestamp range.
+    // If year specified, use that (backend only supports year filter)
     if (payload.year) {
       params['year'] = payload.year;
-    } else {
-      if (payload.from_timestamp) params['from_timestamp'] = payload.from_timestamp;
-      if (payload.to_timestamp) params['to_timestamp'] = payload.to_timestamp;
     }
 
-    // Preserve other active filters (status) and set display dates
+    // Preserve all active filters in URL params
     const status = this.currentFilters?.status ?? 'any';
+    const advancedMode = this.currentFilters?.advancedMode ?? false;
+    const fuzzy = this.currentFilters?.fuzzy ?? false;
+    const fuzziness = this.currentFilters?.fuzziness ?? 'AUTO';
+    const expandSynonyms = this.currentFilters?.expandSynonyms ?? false;
 
-    if (payload.year) {
-      const y = parseInt(payload.year, 10);
-      // Use midday UTC (12:00) to avoid timezone rollover when formatting in local timezone
-      const fromIso = `${String(y).padStart(4, '0')}-01-01T12:00:00Z`;
-      const toIso = `${String(y).padStart(4, '0')}-12-31T12:00:00Z`;
-      this.initialFilters = {
-        dateFrom: this.languageService.formatDate(fromIso),
-        dateTo: this.languageService.formatDate(toIso),
-        status,
-        providers: activeProviders,
-      };
-    } else {
-      this.initialFilters = {
-        // Format date-only strings for display (no clock time)
-        dateFrom: payload.from_timestamp
-          ? this.languageService.formatDate(payload.from_timestamp)
-          : '',
-        dateTo: payload.to_timestamp ? this.languageService.formatDate(payload.to_timestamp) : '',
-        status,
-        providers: activeProviders,
-      };
+    // Add all filter params to URL so they are restored on navigation
+    if (status && status !== 'any') {
+      params['status'] = status;
+    }
+    if (advancedMode) {
+      params['advanced_mode'] = 'true';
+    }
+    if (fuzzy) {
+      params['fuzzy'] = 'true';
+    }
+    if (fuzziness && fuzziness !== 'AUTO') {
+      params['fuzziness'] = fuzziness;
+    }
+    if (expandSynonyms) {
+      params['expand_synonyms'] = 'true';
     }
 
-    // Navigate to trigger a search with the new time range while preserving other filters
+    const yearNum = payload.year ? parseInt(payload.year, 10) : undefined;
+
+    this.initialFilters = {
+      year: yearNum,
+      status,
+      provider: activeProvider || payload.provider_id,
+      advancedMode,
+      fuzzy,
+      fuzziness,
+      expandSynonyms,
+    };
+
+    // Navigate to trigger a search with the new year while preserving other filters
     this.router.navigate(['/serps/search'], { queryParams: params });
   }
 
@@ -509,20 +510,10 @@ export class SearchViewComponent {
       }
 
       // Restore filters if present
-      if (
-        searchItem.filter.provider ||
-        searchItem.filter.from_timestamp ||
-        searchItem.filter.to_timestamp
-      ) {
+      if (searchItem.filter.provider) {
         this.initialFilters = {
-          dateFrom: searchItem.filter.from_timestamp
-            ? this.languageService.formatDate(searchItem.filter.from_timestamp)
-            : '',
-          dateTo: searchItem.filter.to_timestamp
-            ? this.languageService.formatDate(searchItem.filter.to_timestamp)
-            : '',
           status: 'any',
-          providers: searchItem.filter.provider ? searchItem.filter.provider.split(',') : [],
+          provider: searchItem.filter.provider,
         };
         this.onFiltersChanged(this.initialFilters);
       }

@@ -5,8 +5,7 @@ export interface SearchFilter {
   timestamp?: string;
   provider?: string;
   archive?: string;
-  from_timestamp?: string;
-  to_timestamp?: string;
+  year?: number;
   advanced_mode?: boolean;
   fuzzy?: boolean;
   fuzziness?: 'AUTO' | '0' | '1' | '2';
