@@ -41,14 +41,18 @@
               iconBefore="bi-search"
               (click)="onSuggestionSelect(suggestion)"
             >
-              {{ suggestion.query }}
-              <span after class="text-sm text-gray-500">
-                {{
-                  suggestion.score !== null && suggestion.score !== undefined
-                    ? (suggestion.score | number)
-                    : '—'
-                }}
-              </span>
+              <div class="flex items-center justify-between w-full min-w-0">
+                <div class="flex-1 min-w-0">
+                  <span class="font-medium truncate">{{ suggestion.query }}</span>
+                </div>
+                <div class="ml-3 text-sm text-gray-500 flex-shrink-0">
+                  @if (suggestion.score !== null && suggestion.score !== undefined) {
+                    {{ suggestion.score | number }}
+                  } @else {
+                    <span class="loading loading-spinner loading-xs"></span>
+                  }
+                </div>
+              </div>
             </aql-menu-item>
           }
         </div>
