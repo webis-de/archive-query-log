@@ -195,7 +195,11 @@ export class FilterDropdownComponent implements OnInit {
 
   updateFuzzySearch(value: boolean): void {
     this.fuzzySearch.set(value);
-    this.emitCurrentState();
+    // Don't auto-apply; wait for user to click Apply button
+    // If fuzzy is being disabled, also disable expand synonyms
+    if (!value && this.expandSynonyms()) {
+      this.expandSynonyms.set(false);
+    }
   }
 
   updateFuzziness(value: 'AUTO' | '0' | '1' | '2'): void {
