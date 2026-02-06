@@ -1,0 +1,133 @@
+stages:
+  - test
+  - build
+  - deploy
+
+# Global variables for all jobs
+variables:
+  # Not strictly required without Docker-in-Docker, but harmless
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+
+  # Make the repo root available to Python so `import app` works.
+  # CI_PROJECT_DIR is the absolute path to your project root in GitLab CI.
+  # See GitLab CI/CD variables docs.
+  # https://docs.gitlab.com/ci/variables/ 
+  PYTHONPATH: "$CI_PROJECT_DIR"
+
+# -------------------------------------------------------------------
+# Test Stage - run Python tests and quality checks
+# -------------------------------------------------------------------
+test:
+  stage: test
+  image: python:3.13-slim
+
+  variables:
+    PYTHONPATH: "$CI_PROJECT_DIR"
+    ES_HOST: "http://dummy-es:9200"
+    ES_API_KEY: ""
+    ES_VERIFY: "False"
+
+  before_script:
+    # Install all dependencies required for the app and tests
+    - python -m pip install --upgrade pip
+    - pip install --no-cache-dir -r requirements.txt
+
+  script:
+    # Run pytest once with coverage and XML report for GitLab
+    - pytest -v --cov=app --cov-report=term-missing --cov-report=xml
+
+    # Enforce minimum coverage in a separate step (optional but explicit)
+    - pytest --cov=app --cov-fail-under=90
+
+    # Code formatting check (fails job if formatting is wrong)
+    - black --check app/ tests/
+
+    # Linting (PEP8 etc.)
+    - flake8 app/ tests/
+
+    # Static type checking
+    - mypy app/
+
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+
+  only:
+    - branches
+    - merge_requests
+
+# -------------------------------------------------------------------
+# Docker Build Stage with Kaniko (no Docker-in-Docker required)
+# -------------------------------------------------------------------
+build:
+  stage: build
+
+  # Kaniko executor image used to build Docker images in GitLab CI
+  image:
+    name: gcr.io/kaniko-project/executor:v1.23.0-debug
+    entrypoint: [""]
+
+  script:
+    # Decide which tag to push based on branch.
+    # - "latest" for default branch
+    # - branch-slug for feature branches
+    - |
+      if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+        tag="latest"
+        echo "Building image with tag: $tag"
+      else
+        tag="$CI_COMMIT_REF_SLUG"
+        echo "Building image with tag: $tag"
+      fi
+
+    # Configure Docker auth for GitLab Container Registry inside Kaniko
+    - mkdir -p /kaniko/.docker
+    - |
+      echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" \
+        > /kaniko/.docker/config.json
+
+    # Run Kaniko build and push the image to the GitLab Container Registry
+    - |
+      /kaniko/executor \
+        --context "${CI_PROJECT_DIR}" \
+        --dockerfile "${CI_PROJECT_DIR}/Dockerfile" \
+        --destination "${CI_REGISTRY_IMAGE}:${tag}" \
+        --cache=true \
+        --cache-ttl=24h \
+        --build-arg ES_HOST="${ES_HOST}" \
+        --build-arg ES_API_KEY="${ES_API_KEY}" \
+        --build-arg ES_VERIFY="${ES_VERIFY}"
+  only:
+    - main
+    - branches
+
+  # Ensure build only runs if tests succeeded
+  needs:
+    - test
+
+# -------------------------------------------------------------------
+# Optional: Deploy Stage (manual trigger example)
+# -------------------------------------------------------------------
+# deploy:
+#   stage: deploy
+#   image: alpine:latest
+#
+#   before_script:
+#     # Install SSH client to deploy to a remote server
+#     - apk add --no-cache openssh-client
+#
+#   script:
+#     - echo "Deploying to server..."
+#     # Example: SSH into your server and restart containers
+#     # ssh user@server "cd /path/to/deployment && docker-compose pull && docker-compose up -d"
+#
+#   only:
+#     - main
+#
+#   # Manual trigger so deploy doesn't run automatically on every push
+#   when: manual
