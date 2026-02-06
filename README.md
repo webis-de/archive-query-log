@@ -385,6 +385,8 @@ ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log 
 ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log wsrbs export-all --output-path /path/to/exports/wsrbs/
 ```
 
+<details>
+<summary>Development version</summary>
 The same commands can also be run with a development version of the Archive Query Log crawlers by using a local runtime environment file:
 
 ```shell
@@ -395,6 +397,8 @@ ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python
 ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log serps export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/serps/
 ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log wsrbs export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/wsrbs/
 ```
+
+</details>
 
 ### Cluster (Helm/Kubernetes)
 
