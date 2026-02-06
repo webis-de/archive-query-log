@@ -1550,7 +1550,7 @@ URL_PAGE_PARSERS: Sequence[UrlPageParser] = (
         url_pattern=re_compile(r"^https?://[^/]+/news/search(-xzg-)?kw-[^-]-\.html"),
         segment=2,
         remove_pattern=re_compile(
-            "^search(-xzg-)?kw-[^-]-(-fields-[0-9])?|(-page-[0-9])?-?\.html$"
+            r"^search(-xzg-)?kw-[^-]-(-fields-[0-9])?|(-page-[0-9])?-?\.html$"
         ),
     ),
     # Provider: Western Governors University (wgu.edu)
