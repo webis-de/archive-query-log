@@ -1,0 +1,135 @@
+.collapse:has(.dropdown-open) {
+  overflow: visible !important;
+}
+
+.collapse-content {
+  overflow: hidden !important;
+}
+
+.collapse-content:has(.dropdown-open) {
+  overflow: visible !important;
+}
+
+.collapse-title {
+  list-style: none;
+}
+
+.collapse-title::-webkit-details-marker {
+  display: none;
+}
+
+.collapse-open .collapse-content {
+  overflow: visible;
+}
+:host ::ng-deep .collapse[open] {
+  overflow: visible;
+}
+
+:host ::ng-deep .collapse-open {
+  overflow: visible;
+}
+
+/* Force the after-slot icon to receive color white when menu item inside group is focused/active/selected */
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content:not(:has(.after-slot:active)):not(:has(.after-slot:focus-within)):focus
+  .after-slot
+  .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.is-interactive:not(:has(.after-slot:active)):not(
+    :has(.after-slot:focus-within)
+  ):active
+  .after-slot
+  .bi,
+:host ::ng-deep .collapse-content > .menu > aql-menu-item .menu-item-content.active .after-slot .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content:not(:has(.after-slot:active)):not(:has(.after-slot:focus-within)):focus
+  .after-slot
+  i,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.is-interactive:not(:has(.after-slot:active)):not(
+    :has(.after-slot:focus-within)
+  ):active
+  .after-slot
+  i,
+:host ::ng-deep .collapse-content > .menu > aql-menu-item .menu-item-content.active .after-slot i {
+  color: var(--color-base-100) !important;
+}
+
+/* Prevent icons inside dropdown-content from receiving color white */
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content:focus
+  .after-slot
+  .dropdown-content
+  .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.is-interactive:active
+  .after-slot
+  .dropdown-content
+  .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.active
+  .after-slot
+  .dropdown-content
+  .bi,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content:focus
+  .after-slot
+  .dropdown-content
+  i,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.is-interactive:active
+  .after-slot
+  .dropdown-content
+  i,
+:host
+  ::ng-deep
+  .collapse-content
+  > .menu
+  > aql-menu-item
+  .menu-item-content.active
+  .after-slot
+  .dropdown-content
+  i {
+  color: inherit !important;
+}
+
+:host ::ng-deep aql-menu-item .menu-item-content > span > span.truncate {
+  min-height: 1.75rem;
+  line-height: 1.75rem;
+}

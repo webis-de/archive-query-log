@@ -1,0 +1,163 @@
+import { Injectable, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ApiService } from './api.service';
+import { API_CONFIG } from '../config/api.config';
+import {
+  SearchResponse,
+  SearchParams,
+  QueryMetadataResponse,
+  QueryMetadataParams,
+  SerpDetailsResponse,
+} from '../models/search.model';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class SearchService {
+  private readonly apiService = inject(ApiService);
+
+  search(
+    query: string,
+    size?: number,
+    page?: number,
+    options: {
+      advancedMode?: boolean;
+      fuzzy?: boolean;
+      fuzziness?: string;
+      expandSynonyms?: boolean;
+      year?: number;
+      provider_id?: string;
+      status_code?: number;
+    } = {},
+  ): Observable<SearchResponse> {
+    const params: Record<string, string | number | boolean> = {
+      query: query,
+    };
+
+    if (size !== undefined) {
+      params['page_size'] = size;
+    }
+    if (page !== undefined) {
+      params['page'] = page;
+    }
+    if (options.advancedMode !== undefined) {
+      params['advanced_mode'] = options.advancedMode;
+    }
+    if (options.fuzzy !== undefined) {
+      params['fuzzy'] = options.fuzzy;
+    }
+    if (options.fuzziness) {
+      params['fuzziness'] = options.fuzziness;
+    }
+    if (options.expandSynonyms !== undefined) {
+      params['expand_synonyms'] = options.expandSynonyms;
+    }
+    if (options.provider_id) {
+      params['provider_id'] = options.provider_id;
+    }
+    if (options.year !== undefined) {
+      params['year'] = options.year;
+    }
+    if (options.status_code !== undefined) {
+      params['status_code'] = options.status_code;
+    }
+
+    return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, params);
+  }
+
+  searchWithParams(params: SearchParams): Observable<SearchResponse> {
+    const apiParams: Record<string, string | number | boolean> = {
+      query: params.query,
+    };
+
+    if (params.size !== undefined) {
+      apiParams['page_size'] = params.size;
+    }
+    if (params.provider_id) {
+      apiParams['provider_id'] = params.provider_id;
+    }
+    if (params.year !== undefined) {
+      apiParams['year'] = params.year;
+    }
+    if (params.status_code !== undefined) {
+      apiParams['status_code'] = params.status_code;
+    }
+    if (params.advanced_mode !== undefined) {
+      apiParams['advanced_mode'] = params.advanced_mode;
+    }
+    if (params.fuzzy !== undefined) {
+      apiParams['fuzzy'] = params.fuzzy;
+    }
+    if (params.fuzziness) {
+      apiParams['fuzziness'] = params.fuzziness;
+    }
+    if (params.expand_synonyms !== undefined) {
+      apiParams['expand_synonyms'] = params.expand_synonyms;
+    }
+
+    return this.apiService.get<SearchResponse>(API_CONFIG.endpoints.serps, apiParams);
+  }
+
+  getQueryMetadata(params: QueryMetadataParams): Observable<QueryMetadataResponse> {
+    const apiParams: Record<string, string | number> = {
+      query: params.query,
+    };
+
+    if (params.top_n_queries !== undefined) {
+      apiParams['top_n_queries'] = params.top_n_queries;
+    }
+    if (params.interval) {
+      apiParams['interval'] = params.interval;
+    }
+    if (params.top_providers !== undefined) {
+      apiParams['top_providers'] = params.top_providers;
+    }
+    if (params.top_archives !== undefined) {
+      apiParams['top_archives'] = params.top_archives;
+    }
+    if (params.last_n_months !== undefined) {
+      apiParams['last_n_months'] = params.last_n_months;
+    }
+    if (params.provider_id) {
+      apiParams['provider_id'] = params.provider_id;
+    }
+
+    return this.apiService.get<QueryMetadataResponse>(API_CONFIG.endpoints.serpsPreview, apiParams);
+  }
+
+  /**
+   * Get SERP details by ID with optional additional fields.
+   * @param serpId The SERP document ID
+   * @param includeFields Array of fields to include: 'original_url', 'memento_url', 'related', 'unfurl', 'direct_links', 'unbranded'
+   * @param options Additional options for the request
+   */
+  getSerpDetails(
+    serpId: string,
+    includeFields: string[] = [],
+    options: {
+      removeTracking?: boolean;
+      relatedSize?: number;
+      sameProvider?: boolean;
+    } = {},
+  ): Observable<SerpDetailsResponse> {
+    const params: Record<string, string | number | boolean> = {};
+
+    if (includeFields.length > 0) {
+      params['include'] = includeFields.join(',');
+    }
+
+    if (options.removeTracking !== undefined) {
+      params['remove_tracking'] = options.removeTracking;
+    }
+
+    if (options.relatedSize !== undefined) {
+      params['related_size'] = options.relatedSize;
+    }
+
+    if (options.sameProvider !== undefined) {
+      params['same_provider'] = options.sameProvider;
+    }
+
+    return this.apiService.get<SerpDetailsResponse>(API_CONFIG.endpoints.serp(serpId), params);
+  }
+}

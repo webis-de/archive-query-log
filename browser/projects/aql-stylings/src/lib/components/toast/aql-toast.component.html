@@ -1,0 +1,9 @@
+@if (toasts().length > 0) {
+  <div class="toast toast-top toast-end z-10000">
+    @for (toast of toasts(); track toast.id) {
+      <div class="alert" [ngClass]="getAlertClass(toast.type)" role="alert">
+        <span>{{ toast.message }}</span>
+      </div>
+    }
+  </div>
+}

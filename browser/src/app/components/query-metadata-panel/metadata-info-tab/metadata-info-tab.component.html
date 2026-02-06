@@ -1,0 +1,144 @@
+<div class="p-6">
+  <div class="space-y-4">
+    <h3 class="text-sm font-semibold uppercase text-base-content/60">
+      {{ 'metadata.metadata' | translate }}
+    </h3>
+    @if (searchResult(); as result) {
+      <div class="space-y-3 text-sm">
+        <div class="flex justify-between py-2 border-b border-base-300">
+          <span class="font-semibold text-base-content/70"
+            >{{ 'metadata.score' | translate }}:</span
+          >
+          <span>{{ result._score | number: '1.2-2' }}</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-base-300">
+          <span class="font-semibold text-base-content/70"
+            >{{ 'metadata.documentId' | translate }}:</span
+          >
+          <span class="text-xs break-all">{{ result._id }}</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-base-300">
+          <span class="font-semibold text-base-content/70"
+            >{{ 'metadata.mimeType' | translate }}:</span
+          >
+          <span>{{ result._source.capture.mimetype }}</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-base-300">
+          <span class="font-semibold text-base-content/70"
+            >{{ 'metadata.timestamp' | translate }}:</span
+          >
+          <span>{{ result._source.capture.timestamp }}</span>
+        </div>
+        <!-- Provider Section with Expandable Details -->
+        <div class="py-2 border-b border-base-300">
+          <div class="flex justify-between items-center group">
+            <span class="font-semibold text-base-content/70"
+              >{{ 'metadata.provider' | translate }}:</span
+            >
+            <div class="flex items-center gap-2">
+              @if (result._source.provider.id) {
+                <aql-button
+                  class="flex gap-2"
+                  (buttonClick)="toggleProviderDetails()"
+                  btnType="ghost"
+                  btnStyle="rounded"
+                  [attr.aria-expanded]="showProviderDetails()"
+                  [attr.aria-label]="
+                    showProviderDetails()
+                      ? ('metadata.providerDetails.hideDetails' | translate)
+                      : ('metadata.providerDetails.showDetails' | translate)
+                  "
+                  aria-controls="provider-details"
+                  [aqlTooltip]="
+                    showProviderDetails()
+                      ? ('metadata.providerDetails.hideDetails' | translate)
+                      : ('metadata.providerDetails.showDetails' | translate)
+                  "
+                >
+                  <span class="font-normal text-base-content text-sm">{{
+                    result._source.provider.domain
+                  }}</span>
+                  <i
+                    class="bi"
+                    [class.bi-chevron-down]="!showProviderDetails()"
+                    [class.bi-chevron-up]="showProviderDetails()"
+                  ></i>
+                </aql-button>
+              } @else {
+                <span>{{ result._source.provider.domain }}</span>
+              }
+            </div>
+          </div>
+          <!-- Expandable Provider Details -->
+          @if (showProviderDetails()) {
+            <div id="provider-details" class="mt-4 p-4 bg-base-200 rounded-lg space-y-3">
+              <h4 class="text-sm font-semibold text-base-content/80">
+                {{ 'metadata.providerDetails.title' | translate }}
+              </h4>
+              @if (isLoadingProvider()) {
+                <div class="flex items-center gap-2 text-sm text-base-content/60">
+                  <span class="loading loading-spinner loading-sm"></span>
+                  {{ 'metadata.providerDetails.loading' | translate }}
+                </div>
+              } @else if (providerError()) {
+                <div class="text-sm text-error">
+                  <i class="bi bi-exclamation-triangle me-1"></i>
+                  {{ 'metadata.providerDetails.error' | translate }}
+                </div>
+              } @else if (providerDetails(); as provider) {
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-base-content/60"
+                      >{{ 'metadata.providerDetails.name' | translate }}:</span
+                    >
+                    <span class="font-medium">{{ provider.name }}</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-base-content/60"
+                      >{{ 'metadata.providerDetails.id' | translate }}:</span
+                    >
+                    <span class="text-xs font-mono">{{ provider.id }}</span>
+                  </div>
+                  @if (provider.domains && provider.domains.length > 0) {
+                    <div>
+                      <span class="text-base-content/60 block mb-1"
+                        >{{ 'metadata.providerDetails.domains' | translate }}:</span
+                      >
+                      <div class="flex flex-wrap gap-1">
+                        @for (domain of provider.domains; track domain) {
+                          <span class="badge badge-sm badge-outline">{{ domain }}</span>
+                        }
+                      </div>
+                    </div>
+                  }
+                  @if (provider.url_patterns && provider.url_patterns.length > 0) {
+                    <div>
+                      <span class="text-base-content/60 block mb-1"
+                        >{{ 'metadata.providerDetails.urlPatterns' | translate }}:</span
+                      >
+                      <div class="space-y-1">
+                        @for (pattern of provider.url_patterns; track pattern) {
+                          <code class="block text-xs bg-base-100 px-2 py-1 rounded break-all">{{
+                            pattern
+                          }}</code>
+                        }
+                      </div>
+                    </div>
+                  }
+                  @if (provider.priority !== undefined) {
+                    <div class="flex justify-between">
+                      <span class="text-base-content/60"
+                        >{{ 'metadata.providerDetails.priority' | translate }}:</span
+                      >
+                      <span>{{ provider.priority }}</span>
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

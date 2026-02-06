@@ -1,0 +1,364 @@
+<div class="flex flex-col h-full bg-base-200">
+  <aql-header-bar>
+    <div class="flex items-center px-6 py-3 w-full h-full gap-6">
+      <div class="flex items-center justify-between w-full gap-4">
+        <h1 class="text-2xl font-bold">{{ 'compare.title' | translate }}</h1>
+        <aql-button
+          btnType="default"
+          btnStyle="rounded"
+          iconAfter="bi-arrow-right"
+          (buttonClick)="goBack()"
+        >
+          {{ 'compare.back' | translate }}
+        </aql-button>
+      </div>
+    </div>
+  </aql-header-bar>
+
+  <div class="flex flex-1 min-h-0 overflow-hidden bg-base-200 p-6">
+    @if (loading()) {
+      <div class="flex items-center justify-center w-full h-full">
+        <span class="loading loading-spinner loading-lg text-primary"></span>
+      </div>
+    } @else if (error()) {
+      <div class="flex items-center justify-center w-full h-full">
+        <div class="alert alert-error max-w-md">
+          <span>{{ error() }}</span>
+        </div>
+      </div>
+    } @else if (compareService.selectedSerpIds().length < 2) {
+      <div class="flex flex-col items-center justify-center w-full h-full text-base-content/60">
+        <i class="bi bi-layout-split text-6xl mb-4"></i>
+        <h2 class="text-xl font-semibold mb-2">{{ 'compare.selectItems' | translate }}</h2>
+        <p class="max-w-md text-center">
+          {{ 'compare.selectItemsHint' | translate }}
+        </p>
+        <aql-button class="mt-6" btnType="primary" btnStyle="rounded" (buttonClick)="goBack()">
+          {{ 'compare.goToSearch' | translate }}
+        </aql-button>
+      </div>
+    } @else if (data(); as d) {
+      <div class="flex gap-6 w-full max-h-full">
+        <div class="w-80 flex-shrink-0 flex flex-col min-h-0">
+          <aql-panel [bordered]="true" class="flex flex-col h-auto max-h-full overflow-hidden">
+            <div class="py-1 flex flex-col gap-2 overflow-y-auto">
+              <div class="pt-1 border-b border-base-200 bg-base-100/50">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold text-base-content/70">
+                    {{ 'compare.comparingItems' | translate: { count: serpIds().length } }}
+                  </span>
+                  <aql-button
+                    variant="ghost"
+                    btnStyle="rounded"
+                    size="xs"
+                    (buttonClick)="clearAll()"
+                  >
+                    {{ 'compare.clearAll' | translate }}
+                  </aql-button>
+                </div>
+              </div>
+
+              <div class="flex flex-col flex-1 overflow-y-auto gap-2">
+                @for (id of serpIds(); track id) {
+                  @if (d.serps[id]; as serp) {
+                    <div class="card bg-base-200/50 compact border border-base-200">
+                      <div class="card-body p-3">
+                        <div class="flex items-center justify-between">
+                          <div class="font-bold text-base leading-tight">
+                            {{ serp._source.provider.domain }}
+                          </div>
+                          <aql-button
+                            btnType="ghost"
+                            iconStyle="square"
+                            size="xs"
+                            (buttonClick)="removeId(id)"
+                          >
+                            <i class="bi bi-x text-lg"></i>
+                          </aql-button>
+                        </div>
+                        <div class="text-xs text-base-content/70 mt-1">
+                          {{ serp._source.capture.timestamp | date: 'medium' }}
+                        </div>
+
+                        @if (serp._score !== undefined && serp._score !== null) {
+                          <div class="mt-2">
+                            <span class="badge badge-sm badge-ghost gap-1">
+                              {{ 'compare.score' | translate }}:
+                              <span class="font-mono">{{ serp._score | number: '1.2-2' }}</span>
+                            </span>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  }
+                }
+
+                <aql-button
+                  variant="outline"
+                  btnStyle="rounded"
+                  size="sm"
+                  iconBefore="bi-plus-lg"
+                  [fullWidth]="true"
+                  (buttonClick)="goBack()"
+                >
+                  {{ 'compare.addMore' | translate }}
+                </aql-button>
+              </div>
+            </div>
+          </aql-panel>
+        </div>
+
+        <main class="flex-1 min-w-0 flex flex-col">
+          <aql-panel [bordered]="true" class="flex flex-col h-auto max-h-full overflow-hidden">
+            <div class="flex-1 overflow-y-auto py-1">
+              <div>
+                <div class="overflow-x-auto mb-8">
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th class="w-32 bg-base-100">Metric</th>
+                        @for (id of serpIds(); track id) {
+                          <th class="min-w-[200px] max-w-[200px]" [title]="id">
+                            <div class="flex flex-col w-full">
+                              <span class="font-bold text-lg truncate">{{
+                                d.metadata_comparison.providers[id]
+                              }}</span>
+                              <span class="text-xs opacity-50 font-mono truncate">{{ id }}</span>
+                            </div>
+                          </th>
+                        }
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="font-semibold text-base-content/70">Query</td>
+                        @for (id of serpIds(); track id) {
+                          <td
+                            class="font-mono text-sm max-w-[200px] truncate"
+                            [title]="d.metadata_comparison.queries[id]"
+                          >
+                            {{ d.metadata_comparison.queries[id] }}
+                          </td>
+                        }
+                      </tr>
+                      <tr>
+                        <td class="font-semibold text-base-content/70">Date</td>
+                        @for (id of serpIds(); track id) {
+                          <td>{{ d.metadata_comparison.timestamps[id] | date: 'medium' }}</td>
+                        }
+                      </tr>
+                      <tr>
+                        <td class="font-semibold text-base-content/70">Archive</td>
+                        @for (id of serpIds(); track id) {
+                          <td class="text-xs break-all">
+                            <a
+                              [href]="d.metadata_comparison.archives[id]"
+                              target="_blank"
+                              class="link link-hover"
+                            >
+                              {{ d.metadata_comparison.archives[id] }}
+                            </a>
+                          </td>
+                        }
+                      </tr>
+                      <tr>
+                        <td class="font-semibold text-base-content/70">Status</td>
+                        @for (id of serpIds(); track id) {
+                          <td>
+                            <div
+                              class="badge badge-sm badge-outline"
+                              [ngClass]="getStatusClass(d.metadata_comparison.status_codes[id])"
+                            >
+                              {{ d.metadata_comparison.status_codes[id] }}
+                            </div>
+                          </td>
+                        }
+                      </tr>
+                      <tr>
+                        <td class="font-semibold text-base-content/70">Total URLs</td>
+                        @for (id of serpIds(); track id) {
+                          <td class="font-medium">
+                            {{ d.metadata_comparison.total_urls[id] }}
+                          </td>
+                        }
+                      </tr>
+                      <tr>
+                        <td class="font-semibold text-base-content/70">Unique URLs</td>
+                        @for (id of serpIds(); track id) {
+                          <td class="font-medium">
+                            {{ d.unique_urls[id]?.length || 0 }}
+                          </td>
+                        }
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="flex flex-col xl:flex-row gap-8">
+                  <div class="flex-1 bg-base-200/50 rounded-xl p-4 border border-base-200">
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-center">
+                      {{ 'compare.jaccardSimilarity' | translate }}
+                    </h4>
+                    <div class="overflow-x-auto flex justify-center">
+                      <table class="table table-xs w-auto">
+                        <thead>
+                          <tr>
+                            <th class="bg-transparent"></th>
+                            @for (id of serpIds(); track id) {
+                              <th class="bg-transparent whitespace-nowrap px-2">
+                                {{ getSerpLabel(id) }}
+                              </th>
+                            }
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @for (rowId of serpIds(); track rowId) {
+                            <tr>
+                              <td class="font-bold bg-transparent whitespace-nowrap px-2">
+                                {{ getSerpLabel(rowId) }}
+                              </td>
+                              @for (colId of serpIds(); track colId) {
+                                <td
+                                  class="text-center px-2"
+                                  [class.font-bold]="rowId === colId"
+                                  [class.bg-primary/10]="
+                                    d.similarity.jaccard[rowId]?.[colId]! > 0.8
+                                  "
+                                  [title]="d.similarity.jaccard[rowId]?.[colId]"
+                                >
+                                  {{ d.similarity.jaccard[rowId]?.[colId] | number: '1.2-2' }}
+                                </td>
+                              }
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="flex-1 bg-base-200/50 rounded-xl p-4 border border-base-200">
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-center">
+                      Spearman Correlation
+                    </h4>
+                    <div class="overflow-x-auto flex justify-center">
+                      <table class="table table-xs w-auto">
+                        <thead>
+                          <tr>
+                            <th class="bg-transparent"></th>
+                            @for (id of serpIds(); track id) {
+                              <th class="bg-transparent whitespace-nowrap px-2">
+                                {{ getSerpLabel(id) }}
+                              </th>
+                            }
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @for (rowId of serpIds(); track rowId) {
+                            <tr>
+                              <td class="font-bold bg-transparent whitespace-nowrap px-2">
+                                {{ getSerpLabel(rowId) }}
+                              </td>
+                              @for (colId of serpIds(); track colId) {
+                                <td
+                                  class="text-center px-2"
+                                  [class.font-bold]="rowId === colId"
+                                  [class.bg-secondary/10]="
+                                    d.similarity.spearman[rowId]?.[colId]! > 0.8
+                                  "
+                                >
+                                  {{ d.similarity.spearman[rowId]?.[colId] | number: '1.2-2' }}
+                                </td>
+                              }
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                @if (hasRankings()) {
+                  <div class="mt-8">
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-center">
+                      {{ 'compare.rankings' | translate }}
+                    </h4>
+                    <div class="overflow-x-auto">
+                      <table class="table table-sm table-pin-rows">
+                        <thead>
+                          <tr>
+                            <th class="bg-base-200">URL</th>
+                            @for (id of serpIds(); track id) {
+                              <th class="bg-base-200 font-normal">
+                                <div class="flex flex-col">
+                                  <span class="font-bold whitespace-nowrap">{{
+                                    getSerpLabel(id)
+                                  }}</span>
+                                  <span
+                                    class="text-xs opacity-50 font-mono truncate max-w-[100px]"
+                                    >{{ id }}</span
+                                  >
+                                </div>
+                              </th>
+                            }
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @for (item of d.rankings | keyvalue; track item.key) {
+                            <tr class="hover">
+                              <td class="max-w-xs truncate" [title]="item.key">
+                                <a
+                                  [href]="item.key"
+                                  target="_blank"
+                                  class="link link-hover text-sm"
+                                >
+                                  {{ item.key }}
+                                </a>
+                              </td>
+                              @for (id of serpIds(); track id) {
+                                <td class="text-center font-mono">
+                                  @if (item.value[id]) {
+                                    {{ item.value[id] }}
+                                  } @else {
+                                    <span class="text-base-content/30">-</span>
+                                  }
+                                </td>
+                              }
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                }
+
+                @if (d.common_urls.length > 0) {
+                  <div class="mt-8">
+                    <h4
+                      class="text-sm font-bold uppercase tracking-wider mb-2 text-base-content/70"
+                    >
+                      {{ 'compare.commonUrls' | translate }} ({{ d.common_urls.length }})
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                      @for (url of d.common_urls.slice(0, 10); track url) {
+                        <a
+                          [href]="url"
+                          target="_blank"
+                          class="badge badge-outline text-xs max-w-full truncate hover:bg-base-200"
+                          >{{ url }}</a
+                        >
+                      }
+                      @if (d.common_urls.length > 10) {
+                        <span class="badge badge-ghost text-xs">
+                          +{{ d.common_urls.length - 10 }} more
+                        </span>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </aql-panel>
+        </main>
+      </div>
+    }
+  </div>
+</div>

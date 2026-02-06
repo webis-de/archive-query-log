@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Prevent the parent menu item from receiving active/hovered state when the dropdown inside it is open */
+.menu-item-content:has(.dropdown-open) {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+.menu-item-content {
+  transition-property: color, box-shadow;
+}
+
+/* Keep the after-slot visible when the dropdown is open, even if not hovering the row */
+.after-slot:has(.dropdown-open) {
+  opacity: 1 !important;
+}
+
+/* Prevent parent from receiving active state when clicking the [after] slot item*/
+.menu-item-content:not(.active):has(.after-slot:active),
+.menu-item-content:not(.active):has(.after-slot:focus-within),
+.menu-item-content.is-interactive:not(.active):has(.after-slot:active),
+.menu-item-content.is-interactive:not(.active):has(.after-slot:focus-within) {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+.menu-item-content.active,
+.menu-item-content.is-interactive:active {
+  background-color: var(--color-base-content) !important;
+  color: var(--color-base-100) !important;
+}

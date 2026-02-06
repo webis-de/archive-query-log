@@ -1,0 +1,16 @@
+<ng-content select="[trigger]"></ng-content>
+
+<div
+  #contentElement
+  tabindex="-1"
+  role="menu"
+  class="dropdown-content menu bg-base-100 text-base-content rounded-box p-2 shadow"
+  [class.w-full]="matchTriggerWidth()"
+  [style]="fixedStyles()"
+  [style.width]="!matchTriggerWidth() && contentWidth() ? contentWidth() : null"
+  (mousedown)="onContentMouseDown($event)"
+  (click)="onContentClick($event)"
+  (keyup)="($event)"
+>
+  <ng-content select="[content]"></ng-content>
+</div>

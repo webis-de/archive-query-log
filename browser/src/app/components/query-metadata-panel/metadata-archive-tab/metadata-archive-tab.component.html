@@ -1,0 +1,60 @@
+<div class="p-6 text-sm space-y-4">
+  <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
+    {{ 'archives.details' | translate }}
+  </h3>
+
+  @if (archiveDetail(); as archive) {
+    <div class="space-y-4">
+      <div>
+        <div class="text-sm font-medium text-base-content/60">
+          {{ 'archives.name' | translate }}
+        </div>
+        <p class="text-lg font-medium">{{ archive.name }}</p>
+      </div>
+
+      <div>
+        <div class="text-sm font-medium text-base-content/60">{{ 'archives.id' | translate }}</div>
+        <p class="font-mono text-sm">{{ archive.id }}</p>
+      </div>
+
+      @if (archive.cdx_api_url) {
+        <div>
+          <div class="text-sm font-medium text-base-content/60">
+            {{ 'archives.cdxApiUrl' | translate }}
+          </div>
+          <a
+            [href]="archive.cdx_api_url"
+            target="_blank"
+            class="block text-sm text-primary hover:underline break-all mt-1"
+          >
+            {{ archive.cdx_api_url }}
+          </a>
+        </div>
+      }
+
+      @if (archive.memento_api_url) {
+        <div>
+          <div class="text-sm font-medium text-base-content/60">
+            {{ 'archives.mementoApiUrl' | translate }}
+          </div>
+          <a
+            [href]="archive.memento_api_url"
+            target="_blank"
+            class="block text-sm text-primary hover:underline break-all mt-1"
+          >
+            {{ archive.memento_api_url }}
+          </a>
+        </div>
+      }
+
+      @if (archive.serp_count) {
+        <div>
+          <div class="text-sm font-medium text-base-content/60">
+            {{ 'archives.serpCount' | translate }}
+          </div>
+          <p>{{ archive.serp_count }}</p>
+        </div>
+      }
+    </div>
+  }
+</div>

@@ -1,0 +1,308 @@
+<div
+  class="flex h-full text-base-content sidebar-container"
+  [class.collapsed]="isCollapsed()"
+  [class.expanded]="!isCollapsed()"
+>
+  <!-- Collapsed rail -->
+  <div
+    class="collapsed-rail flex flex-col items-center justify-between bg-base-100 border-r border-base-200 py-3 px-2 shadow-sm"
+    [class.hidden]="!isCollapsed()"
+  >
+    <!-- #region LEGACY - Sidebar toggle button
+    <div class="w-full flex justify-center pb-3">
+      <aql-button
+        btnType="default"
+        iconStyle="square"
+        size="md"
+        iconBefore="bi-list"
+        [aqlTooltip]="'sidebar.expandSidebar' | translate"
+        [tooltipPosition]="'right'"
+        [attr.aria-label]="'sidebar.expandSidebar' | translate"
+        (buttonClick)="toggleCollapsed(false)"
+      >
+      </aql-button>
+    </div>
+    #endregion LEGACY -->
+
+    <div class="flex-1 flex flex-col items-center gap-2">
+      @for (item of navItems; track item.id) {
+        <aql-button
+          [btnType]="isActiveRoute()(item.route) ? 'primary' : 'default'"
+          iconStyle="square"
+          size="md"
+          [iconBefore]="item.icon"
+          [aqlTooltip]="item.label | translate"
+          [tooltipPosition]="'right'"
+          [attr.aria-label]="item.label | translate"
+          (buttonClick)="navigateTo(item.route)"
+        >
+        </aql-button>
+      }
+    </div>
+
+    <div class="mt-auto w-full flex justify-center">
+      <app-language-selector
+        [showLabel]="false"
+        [dropdownPosition]="'right top'"
+      ></app-language-selector>
+    </div>
+
+    <!-- #region LEGACY - Avatar card requires userData
+    <div>
+      <aql-avatar-card
+        [name]="userData().user.name"
+        [subtitle]="userData().user.institute"
+        [imageSrc]="userData().user.avatarUrl"
+        [avatarOnly]="true"
+      >
+      </aql-avatar-card>
+    </div>
+    -->
+    <!-- #endregion LEGACY -->
+  </div>
+
+  <!-- #region LEGACY - Expanded panel (Uncomment when implementing user-based session storage) -->
+  <!--
+  <div
+    class="sidebar-panel flex flex-col h-full w-80 bg-base-100 border-r border-base-200 shadow-sm overflow-y-auto overflow-x-hidden"
+    [class.hidden]="isCollapsed()"
+  >
+    <div class="flex flex-col sticky top-0 bg-base-100 z-10 pt-3 px-2 gap-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center w-full gap-3">
+          
+          <h1 class="text-xl font-semibold leading-none text-primary w-full">
+            {{ 'sidebar.archiveQueryLog' | translate }}
+          </h1>
+          <aql-button
+            btnType="default"
+            iconStyle="square"
+            iconBefore="bi-list"
+            [aqlTooltip]="'sidebar.collapseSidebar' | translate"
+            [tooltipPosition]="'right'"
+            [attr.aria-label]="'sidebar.collapseSidebar' | translate"
+            (buttonClick)="toggleCollapsed(true)"
+          >
+          </aql-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-2 py-3 flex flex-col gap-2">
+      @for (item of navItems; track item.id) {
+        <aql-button
+          [btnType]="isActiveRoute()(item.route) ? 'primary' : 'default'"
+          [fullWidth]="true"
+          align="start"
+          size="md"
+          iconStyle="square"
+          [iconBefore]="item.icon"
+          (buttonClick)="navigateTo(item.route)"
+        >
+          {{ item.label | translate }}
+        </aql-button>
+      }
+    </div>
+    <div class="flex flex-col gap-2">
+      <div>
+        <aql-button
+          btnType="primary"
+          btnStyle="rounded"
+          [fullWidth]="true"
+          [align]="'start'"
+          iconBefore="bi-folder-plus"
+          (buttonClick)="onNewProject()"
+        >
+          {{ 'sidebar.newProject' | translate }}
+        </aql-button>
+      </div>
+
+      <div>
+        <aql-button
+          btnType="default"
+          btnStyle="rounded"
+          [fullWidth]="true"
+          [align]="'start'"
+          iconBefore="bi-search"
+          [attr.aria-label]="'sidebar.temporarySearch' | translate"
+          (buttonClick)="onTemporarySearch()"
+        >
+          {{ 'sidebar.temporarySearch' | translate }}
+        </aql-button>
+      </div>
+    </div>
+
+    <div class="px-2 py-3">
+      @if (filteredProjects().length > 0) {
+        @for (project of filteredProjects(); track project.id) {
+          <aql-group-item
+            class="group-item-row"
+            [iconBefore]="'bi-folder2'"
+            [iconBeforeOpen]="'bi-folder2-open'"
+          >
+            @if (editingProjectId() === project.id) {
+              <aql-input-field
+                class="sidebar-edit-input"
+                label
+                size="sm"
+                [showIcon]="false"
+                [(ngModel)]="editingValue"
+                [attr.data-project-id]="project.id"
+                (keydown)="onProjectNameKeydown($event, project.id)"
+                (click)="$event.stopPropagation()"
+              ></aql-input-field>
+            } @else {
+              <span label class="font-medium text-sm text-base-content/80">{{ project.name }}</span>
+            }
+
+            @if (project.isPinned) {
+              <aql-button
+                after
+                btnType="icon"
+                size="xs"
+                class="pinned-icon ms-1"
+                iconBefore="bi-pin-fill"
+                [attr.aria-label]="'sidebar.pinnedProject' | translate"
+              ></aql-button>
+            }
+
+            <aql-button
+              after
+              btnType="icon"
+              iconBefore="bi-plus"
+              [aqlTooltip]="'sidebar.addToProject' | translate"
+              [tooltipPosition]="'top'"
+              [attr.aria-label]="'sidebar.addToProject' | translate"
+              (buttonClick)="onAddToProject(project.id)"
+            ></aql-button>
+
+            <aql-dropdown after position="right">
+              <aql-button
+                trigger
+                btnType="icon"
+                iconBefore="bi-three-dots"
+                [attr.aria-label]="'common.options' | translate"
+              ></aql-button>
+              <ng-container content>
+                <aql-menu-item
+                  [iconBefore]="project.isPinned ? 'bi-pin-angle-fill' : 'bi-pin'"
+                  (click)="onPinProject(project.id)"
+                >
+                  {{
+                    project.isPinned
+                      ? ('sidebar.unpinProject' | translate)
+                      : ('sidebar.pinProject' | translate)
+                  }}
+                </aql-menu-item>
+                <aql-menu-item iconBefore="bi-pencil" (click)="onRenameProject(project.id)">
+                  {{ 'sidebar.renameProject' | translate }}
+                </aql-menu-item>
+                <aql-menu-item iconBefore="bi-trash" (click)="onDeleteProject(project.id)">
+                  {{ 'sidebar.deleteProject' | translate }}
+                </aql-menu-item>
+              </ng-container>
+            </aql-dropdown>
+
+            @for (item of project.items; track item.id) {
+              <aql-menu-item
+                [selected]="selectedItemId() === item.id"
+                (selectedChange)="$event ? onItemSelected(item.id) : null"
+              >
+                @if (editingSearchId() === item.id) {
+                  <aql-input-field
+                    class="sidebar-edit-input"
+                    label
+                    size="sm"
+                    [showIcon]="false"
+                    [(ngModel)]="editingValue"
+                    [attr.data-search-id]="item.id"
+                    (keydown)="onSearchNameKeydown($event, item.id)"
+                    (click)="$event.stopPropagation()"
+                  ></aql-input-field>
+                } @else {
+                  <span label>{{ item.name }}</span>
+                }
+                <aql-dropdown after position="right">
+                  <aql-button
+                    trigger
+                    btnType="icon"
+                    iconBefore="bi-three-dots"
+                    [attr.aria-label]="'common.options' | translate"
+                  ></aql-button>
+                  <ng-container content>
+                    <aql-menu-item iconBefore="bi-pencil" (click)="onRenameSearch(item.id)">
+                      {{ 'sidebar.renameSearch' | translate }}
+                    </aql-menu-item>
+                    <aql-menu-item iconBefore="bi-trash" (click)="onDeleteSearch(item.id)">
+                      {{ 'sidebar.deleteSearch' | translate }}
+                    </aql-menu-item>
+                  </ng-container>
+                </aql-dropdown>
+              </aql-menu-item>
+            }
+          </aql-group-item>
+        }
+      } @else {
+        <div
+          class="flex flex-col items-center justify-center h-40 text-center px-4 text-base-content/60"
+        >
+          <p>{{ 'sidebar.createNewProject' | translate }}</p>
+        </div>
+      }
+    </div>
+    <div class="sticky bottom-0 bg-base-100 p-2 border-t border-base-200 mt-auto">
+      <app-language-selector
+        [showLabel]="true"
+        [dropdownPosition]="'right'"
+      ></app-language-selector>
+    </div>
+
+    <div class="sticky bottom-0 bg-base-100 p-2 border-t border-base-200 mt-auto">
+      <aql-avatar-card
+        [name]="userData().user.name"
+        [subtitle]="userData().user.institute"
+        [imageSrc]="userData().user.avatarUrl"
+        [avatarOnly]="false"
+      >
+      </aql-avatar-card>
+    </div>
+  </div>
+  -->
+  <!-- #endregion LEGACY -->
+</div>
+
+<!-- #region LEGACY - Uncomment when implementing user-based session storage -->
+<!--
+<aql-modal
+  #deleteModal
+  [modalTitle]="
+    itemToDelete()?.type === 'project'
+      ? ('sidebar.deleteProject' | translate)
+      : ('sidebar.deleteSearch' | translate)
+  "
+  maxWidth="md"
+  [closeOnBackdropClick]="false"
+>
+  @if (itemToDelete(); as item) {
+    <p class="text-base-content">
+      @if (item.type === 'project') {
+        {{ 'sidebar.confirmDeleteProject' | translate }}
+        <span class="font-bold">"{{ item.name }}"</span>?
+      } @else {
+        {{ 'sidebar.confirmDeleteSearch' | translate }}
+        <span class="font-bold">"{{ item.name }}"</span>?
+      }
+    </p>
+  }
+
+  <div modal-actions class="flex gap-2 justify-end">
+    <aql-button btnStyle="rounded" (buttonClick)="cancelDelete()">
+      {{ 'common.cancel' | translate }}
+    </aql-button>
+    <aql-button btnStyle="rounded" btnType="error" (buttonClick)="confirmDelete()">
+      {{ 'common.delete' | translate }}
+    </aql-button>
+  </div>
+</aql-modal>
+-->
+<!-- #endregion LEGACY -->

@@ -1,0 +1,11 @@
+.tab-disabled {
+  pointer-events: none;
+}
+
+:host ::ng-deep .tabs-border .tab {
+  position: relative;
+}
+
+:host ::ng-deep .tabs-border .tab-active {
+  box-shadow: inset 0 -2px 0 0 var(--color-primary);
+}

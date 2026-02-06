@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+@import '../projects/aql-stylings/src/styles.css';
+
+@import 'tailwindcss';
+@theme;
+@plugin 'daisyui';
+@plugin 'daisyui/theme' {
+  name: 'aql-light';
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #f8fafc;
+  --color-base-200: #f3f4f6;
+  --color-base-300: #e5e7eb;
+  --color-base-content: #111827;
+  --color-primary: #3b82f6;
+  --color-primary-content: #ffffff;
+  --color-secondary: #00d8c0;
+  --color-secondary-content: #ffffff;
+  --color-accent: #f3c649;
+  --color-accent-content: #111827;
+  --color-neutral: #111827;
+  --color-neutral-content: #f9fafb;
+  --color-info: #38bdf8;
+  --color-info-content: #0f172a;
+  --color-success: #22c55e;
+  --color-success-content: #052e16;
+  --color-warning: #f59e0b;
+  --color-warning-content: #1f2937;
+  --color-error: #ef4444;
+  --color-error-content: #111827;
+}
+
+@plugin 'daisyui/theme' {
+  name: 'aql-dark';
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: #020617;
+  --color-base-200: #020617;
+  --color-base-300: #020617;
+  --color-base-content: #f9fafb;
+  --color-primary: #3b82f6;
+  --color-primary-content: #ffffff;
+  --color-secondary: #00d8c0;
+  --color-secondary-content: #051017;
+  --color-accent: #f3c649;
+  --color-accent-content: #051017;
+  --color-neutral: #111827;
+  --color-neutral-content: #f9fafb;
+  --color-info: #38bdf8;
+  --color-info-content: #0b1220;
+  --color-success: #22c55e;
+  --color-success-content: #052e16;
+  --color-warning: #f59e0b;
+  --color-warning-content: #1f2937;
+  --color-error: #ef4444;
+  --color-error-content: #111827;
+}
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+}

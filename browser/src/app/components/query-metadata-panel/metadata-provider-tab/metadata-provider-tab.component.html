@@ -1,0 +1,56 @@
+<div class="p-6 text-sm space-y-4">
+  <h3 class="text-sm font-semibold uppercase text-base-content/60 mb-2">
+    {{ 'providers.details' | translate }}
+  </h3>
+
+  @if (providerDetail(); as provider) {
+    <div class="space-y-4">
+      <div>
+        <div class="text-sm font-medium text-base-content/60">
+          {{ 'providers.name' | translate }}
+        </div>
+        <p class="text-lg font-medium">{{ provider.name }}</p>
+      </div>
+
+      <div>
+        <div class="text-sm font-medium text-base-content/60">{{ 'providers.id' | translate }}</div>
+        <p class="font-mono text-sm">{{ provider.id }}</p>
+      </div>
+
+      @if (provider.domains && provider.domains.length > 0) {
+        <div>
+          <div class="text-sm font-medium text-base-content/60">
+            {{ 'providers.domains' | translate }}
+          </div>
+          <div class="flex flex-wrap gap-2 mt-1">
+            @for (domain of provider.domains; track domain) {
+              <span class="badge badge-outline">{{ domain }}</span>
+            }
+          </div>
+        </div>
+      }
+
+      @if (provider.url_patterns && provider.url_patterns.length > 0) {
+        <div>
+          <div class="text-sm font-medium text-base-content/60">
+            {{ 'providers.urlPatterns' | translate }}
+          </div>
+          <div class="flex flex-col gap-1 mt-1">
+            @for (pattern of provider.url_patterns; track pattern) {
+              <code class="text-xs bg-base-200 px-2 py-1 rounded break-all">{{ pattern }}</code>
+            }
+          </div>
+        </div>
+      }
+
+      @if (provider.priority !== undefined) {
+        <div>
+          <div class="text-sm font-medium text-base-content/60">
+            {{ 'providers.priority' | translate }}
+          </div>
+          <p>{{ provider.priority }}</p>
+        </div>
+      }
+    </div>
+  }
+</div>
