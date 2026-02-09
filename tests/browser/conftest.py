@@ -9,20 +9,19 @@ from fastapi.testclient import TestClient
 
 
 # Import app AFTER setting up mocks
-from archive_query_log.browser.main import app
+from archive_query_log.browser import app
 
 
 # Patch the limiter before any tests run
 def _disable_limiter():
     """Disable rate limiting for tests by replacing the enabled property"""
     from archive_query_log.browser.routers import search
-    from archive_query_log.browser import main
+    from archive_query_log.browser import limiter
 
     # Disable rate limiting completely
     search.limiter.enabled = False
-    if hasattr(main, "limiter"):
-        main.limiter.enabled = False
-
+    limiter.enabled = False
+    
 
 # Disable limiter immediately on module load
 _disable_limiter()
