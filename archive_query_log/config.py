@@ -30,69 +30,89 @@ class EsConfig(BaseModel):
     host: Annotated[
         str,
         Parameter(env_var="ELASTICSEARCH_HOST"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_HOST"]),
+        Field(default_factory=lambda: environ.get("ELASTICSEARCH_HOST", "localhost")),
     ]
     port: Annotated[
         int,
         Parameter(env_var="ELASTICSEARCH_PORT"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_PORT"]),
+        Field(default_factory=lambda: int(environ.get("ELASTICSEARCH_PORT", 9200))),
     ]
     username: Annotated[
         str | None,
         Parameter(env_var="ELASTICSEARCH_USERNAME"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_USERNAME"]),
+        Field(default_factory=lambda: environ.get("ELASTICSEARCH_USERNAME")),
     ]
     password: Annotated[
         str | None,
         Parameter(env_var="ELASTICSEARCH_PASSWORD"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_PASSWORD"]),
+        Field(default_factory=lambda: environ.get("ELASTICSEARCH_PASSWORD")),
     ]
     api_key: Annotated[
         str | None,
         Parameter(env_var="ELASTICSEARCH_API_KEY"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_API_KEY"]),
+        Field(default_factory=lambda: environ.get("ELASTICSEARCH_API_KEY")),
     ]
     index_archives: Annotated[
         str,
         Parameter(env_var="ELASTICSEARCH_INDEX_ARCHIVES"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_ARCHIVES"]),
+        Field(
+            default_factory=lambda: environ.get(
+                "ELASTICSEARCH_INDEX_ARCHIVES", "archives"
+            )
+        ),
     ]
     index_providers: Annotated[
         str,
         Parameter(env_var="ELASTICSEARCH_INDEX_PROVIDERS"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_PROVIDERS"]),
+        Field(
+            default_factory=lambda: environ.get(
+                "ELASTICSEARCH_INDEX_PROVIDERS", "providers"
+            )
+        ),
     ]
     index_sources: Annotated[
         str,
         Parameter(env_var="ELASTICSEARCH_INDEX_SOURCES"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_SOURCES"]),
+        Field(
+            default_factory=lambda: environ.get(
+                "ELASTICSEARCH_INDEX_SOURCES", "sources"
+            )
+        ),
     ]
     index_captures: Annotated[
         str,
         Parameter(env_var="ELASTICSEARCH_INDEX_CAPTURES"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_CAPTURES"]),
+        Field(
+            default_factory=lambda: environ.get(
+                "ELASTICSEARCH_INDEX_CAPTURES", "captures"
+            )
+        ),
     ]
     index_serps: Annotated[
         str,
         Parameter(env_var="ELASTICSEARCH_INDEX_SERPS"),
-        Field(default_factory=lambda: environ["ELASTICSEARCH_INDEX_SERPS"]),
+        Field(
+            default_factory=lambda: environ.get("ELASTICSEARCH_INDEX_SERPS", "serps")
+        ),
     ]
     index_web_search_result_blocks: Annotated[
         str,
         Parameter(env_var="ELASTICSEARCH_INDEX_WEB_SEARCH_RESULT_BLOCKS"),
         Field(
-            default_factory=lambda: environ[
-                "ELASTICSEARCH_INDEX_WEB_SEARCH_RESULT_BLOCKS"
-            ]
+            default_factory=lambda: environ.get(
+                "ELASTICSEARCH_INDEX_WEB_SEARCH_RESULT_BLOCKS",
+                "web_search_result_blocks",
+            )
         ),
     ]
     index_special_contents_result_blocks: Annotated[
         str,
         Parameter(env_var="ELASTICSEARCH_INDEX_SPECIAL_CONTENTS_RESULT_BLOCKS"),
         Field(
-            default_factory=lambda: environ[
-                "ELASTICSEARCH_INDEX_SPECIAL_CONTENTS_RESULT_BLOCKS"
-            ]
+            default_factory=lambda: environ.get(
+                "ELASTICSEARCH_INDEX_SPECIAL_CONTENTS_RESULT_BLOCKS",
+                "special_contents_result_blocks",
+            )
         ),
     ]
     max_retries: int = 5
