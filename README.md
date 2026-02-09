@@ -459,6 +459,8 @@ An API documentation is available at <http://localhost:8000/docs>.
 The AQL Browser is a web application to explore the data in the Archive Query Log.
 It is run as two separate components: a [backend API](#browser-api) that serves all relevant data from the Elasticsearch cluster and a [frontend web app](#browser-app) that provides a user interface to explore the data and query the backend API.
 
+![Browser app screenshot](docs/screenshot-browser.png)
+
 ### Browser API
 
 To start the backend API of the AQL Browser, run:
@@ -474,7 +476,17 @@ Read more about the API in the [API documentation](docs/browser-backend.md).
 To start the frontend web app of the AQL Browser, first install the dependencies:
 
 ```shell
+cd browser/
+npm install
 ```
+
+Then, start the development server:
+
+```shell
+npm run start
+```
+
+More information about the frontend web app can be found in the [frontend documentation](browser/README.md).
 
 ## Citation
 
