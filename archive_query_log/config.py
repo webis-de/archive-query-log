@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Iterable, Any, Annotated, Type
 
 from cyclopts import Parameter
-from elasticsearch import Elasticsearch
+from elasticsearch import Elasticsearch, AsyncElasticsearch
 from elasticsearch.helpers import streaming_bulk
 from pydantic import BaseModel, Field, ConfigDict
 from pyrate_limiter import Limiter, RequestRate, Duration
@@ -38,14 +38,19 @@ class EsConfig(BaseModel):
         Field(default_factory=lambda: environ["ELASTICSEARCH_PORT"]),
     ]
     username: Annotated[
-        str,
+        str | None,
         Parameter(env_var="ELASTICSEARCH_USERNAME"),
         Field(default_factory=lambda: environ["ELASTICSEARCH_USERNAME"]),
     ]
     password: Annotated[
-        str,
+        str | None,
         Parameter(env_var="ELASTICSEARCH_PASSWORD"),
         Field(default_factory=lambda: environ["ELASTICSEARCH_PASSWORD"]),
+    ]
+    api_key: Annotated[
+        str | None,
+        Parameter(env_var="ELASTICSEARCH_API_KEY"),
+        Field(default_factory=lambda: environ["ELASTICSEARCH_API_KEY"]),
     ]
     index_archives: Annotated[
         str,
@@ -100,7 +105,28 @@ class EsConfig(BaseModel):
     def client(self) -> Elasticsearch:
         return Elasticsearch(
             hosts=f"https://{self.host}:{self.port}",
-            http_auth=(self.username, self.password),
+            api_key=self.api_key,
+            http_auth=(self.username, self.password)
+            if self.api_key is None
+            and self.username is not None
+            and self.password is not None
+            else None,
+            timeout=60,
+            max_retries=self.max_retries,
+            retry_on_status=(502, 503, 504),
+            retry_on_timeout=True,
+        )
+
+    @cached_property
+    def async_client(self) -> AsyncElasticsearch:
+        return AsyncElasticsearch(
+            hosts=f"https://{self.host}:{self.port}",
+            api_key=self.api_key,
+            http_auth=(self.username, self.password)
+            if self.api_key is None
+            and self.username is not None
+            and self.password is not None
+            else None,
             timeout=60,
             max_retries=self.max_retries,
             retry_on_status=(502, 503, 504),
