@@ -13,8 +13,8 @@ from archive_query_log.browser.routers.search import router
 def client():
     """Create test client with fresh FastAPI app instance including the search router"""
     app = FastAPI()
-    archive_query_log.browser.include_router(router)
-    archive_query_log.browser.state.limiter_enabled = False  # Disable rate limiting for tests
+    app.include_router(router)
+    app.state.limiter_enabled = False  # Disable rate limiting for tests
     return TestClient(app, raise_server_exceptions=False)
 
 

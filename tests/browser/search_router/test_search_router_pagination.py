@@ -19,7 +19,7 @@ def client():
         # Make the limiter decorator a no-op
         mock_limiter.limit = lambda *args, **kwargs: lambda f: f
 
-        archive_query_log.browser.include_router(router)
+        app.include_router(router)
 
     return TestClient(app, raise_server_exceptions=False)
 

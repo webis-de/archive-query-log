@@ -8,7 +8,7 @@ from archive_query_log.browser.routers.search import router
 @pytest.fixture
 def app():
     app = FastAPI()
-    archive_query_log.browser.include_router(router, prefix="/api")
+    app.include_router(router, prefix="/api")
     return app
 
 
