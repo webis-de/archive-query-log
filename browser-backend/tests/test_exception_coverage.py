@@ -5,7 +5,7 @@ Covers Elasticsearch errors, malformed data, and fallback aggregations.
 
 import pytest
 from unittest.mock import AsyncMock, patch
-from app.services import aql_service
+from archive_query_log.browser.services import aql_service
 
 
 class TestAqlServiceExceptionHandling:
@@ -14,7 +14,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_search_basic_with_es_error(self):
         """Test search_basic when Elasticsearch throws an error"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.side_effect = Exception("Connection failed")
             mock_get_es.return_value = mock_es
@@ -26,7 +26,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_search_advanced_with_es_error(self):
         """Test search_advanced when Elasticsearch throws an error"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.side_effect = Exception("Connection failed")
             mock_get_es.return_value = mock_es
@@ -38,7 +38,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_preview_search_with_aggregation_error(self):
         """Test preview_search when aggregation fails but document fetch succeeds"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
 
             # First call (aggregation) fails, second call (sample) succeeds
@@ -57,7 +57,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_preview_search_with_both_aggregations_failing(self):
         """Test preview_search when both aggregation and fallback fail"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.side_effect = Exception("Both calls fail")
             mock_get_es.return_value = mock_es
@@ -71,7 +71,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_get_archive_metadata_not_found(self):
         """Test get_archive_metadata when archive doesn't exist"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.return_value = {
                 "hits": {"total": 0, "hits": []},
@@ -85,7 +85,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_list_all_archives_with_es_error(self):
         """Test list_all_archives when Elasticsearch throws error"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.side_effect = Exception("ES error")
             mock_get_es.return_value = mock_es
@@ -99,7 +99,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_get_all_providers_with_es_error(self):
         """Test get_all_providers when Elasticsearch fails"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.side_effect = Exception("ES error")
             mock_get_es.return_value = mock_es
@@ -110,7 +110,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_compare_serps_with_missing_serp(self):
         """Test compare_serps when one SERP doesn't exist"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.get.return_value = None  # SERP not found
             mock_get_es.return_value = mock_es
@@ -129,7 +129,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_get_serp_by_id_not_found(self):
         """Test get_serp_by_id when SERP doesn't exist"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.get.side_effect = Exception("Not found")
             mock_get_es.return_value = mock_es
@@ -141,7 +141,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_get_serp_direct_links_no_results_field(self):
         """Test get_serp_direct_links when SERP has no results field"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.get.return_value = {
                 "_id": "test-id",
@@ -160,7 +160,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_search_suggestions_with_sample_error(self):
         """Test search_suggestions when aggregation succeeds but has empty results"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.return_value = {"hits": {"hits": []}}  # No suggestions found
             mock_get_es.return_value = mock_es
@@ -173,7 +173,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_serps_timeline_with_es_error(self):
         """Test serps_timeline when Elasticsearch fails"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.side_effect = Exception("ES error")
             mock_get_es.return_value = mock_es
@@ -187,7 +187,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_get_provider_statistics_with_es_error(self):
         """Test get_provider_statistics when Elasticsearch fails"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.side_effect = Exception("ES error")
             mock_get_es.return_value = mock_es
@@ -199,7 +199,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_get_provider_statistics_no_data(self):
         """Test get_provider_statistics when provider has no SERPs"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.return_value = {
                 "hits": {"total": {"value": 0}},
@@ -214,7 +214,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_get_archive_statistics_with_es_error(self):
         """Test get_archive_statistics when Elasticsearch fails"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
             mock_es.search.side_effect = Exception("ES error")
             mock_get_es.return_value = mock_es
@@ -242,7 +242,7 @@ class TestAqlServiceExceptionHandling:
     @pytest.mark.asyncio
     async def test_get_provider_statistics_histogram_error(self):
         """Test get_provider_statistics when histogram fails but aggregation works"""
-        with patch("app.services.aql_service.get_es_client") as mock_get_es:
+        with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_es:
             mock_es = AsyncMock()
 
             # First call succeeds, histogram call fails

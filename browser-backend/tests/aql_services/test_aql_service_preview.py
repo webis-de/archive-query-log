@@ -1,5 +1,5 @@
 import pytest
-from app.services import aql_service
+from archive_query_log.browser.services import aql_service
 
 
 @pytest.mark.asyncio
@@ -48,7 +48,7 @@ async def test_preview_search_service(monkeypatch):
 
     mock_client = MockClient()
 
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
 
     result = await aql_service.preview_search(
         "climate", top_n_queries=5, interval="month", top_providers=3, top_archives=3
@@ -108,7 +108,7 @@ async def test_preview_search_fallback_to_sample_queries(monkeypatch):
                 }
 
     mock_client = MockClientWithEmptyAgg()
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
 
     result = await aql_service.preview_search("python", top_n_queries=5)
 
@@ -158,7 +158,7 @@ async def test_preview_search_fallback_providers(monkeypatch):
                 }
 
     mock_client = MockClientEmptyProviders()
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
 
     result = await aql_service.preview_search("test")
 
@@ -193,7 +193,7 @@ async def test_preview_search_sample_size_scales_with_request(monkeypatch):
             }
 
     mock_client = MockClientTrackingSampleSize()
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
 
     # Request with top_n_queries=5 (should request ~500 docs)
     await aql_service.preview_search("test", top_n_queries=5)

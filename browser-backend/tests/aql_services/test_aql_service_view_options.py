@@ -4,7 +4,7 @@ Tests the service-level view options generation.
 """
 
 import pytest
-from app.services import aql_service
+from archive_query_log.browser.services import aql_service
 
 
 @pytest.mark.asyncio

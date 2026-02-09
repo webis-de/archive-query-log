@@ -1,17 +1,17 @@
 import pytest
 from unittest.mock import patch, AsyncMock
 
-from app.core.elastic import get_es_client, close_es_client
+from archive_query_log.browser.core.elastic import get_es_client, close_es_client
 
 
 @pytest.mark.asyncio
 async def test_get_es_client_creates_singleton():
     # ensure clean state
-    from app.core import elastic
+    from archive_query_log.browser.core import elastic
 
     elastic.es_client = None
 
-    with patch("app.core.elastic.AsyncElasticsearch") as mock_es:
+    with patch("archive_query_log.browser.core.elastic.AsyncElasticsearch") as mock_es:
         instance = mock_es.return_value
         client1 = get_es_client()
         client2 = get_es_client()
@@ -24,11 +24,11 @@ async def test_get_es_client_creates_singleton():
 @pytest.mark.asyncio
 async def test_close_es_client_closes_and_resets():
     # Reset global client
-    import app.core.elastic as elastic
+    import archive_query_log.browser.core.elastic as elastic
 
     elastic.es_client = None
 
-    with patch("app.core.elastic.AsyncElasticsearch") as mock_es:
+    with patch("archive_query_log.browser.core.elastic.AsyncElasticsearch") as mock_es:
         instance = mock_es.return_value
 
         client = get_es_client()

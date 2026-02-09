@@ -6,7 +6,7 @@ from unittest.mock import patch
 # ---------------------------------------------------------
 def test_compare_serps_success(client):
     """Test successful comparison of 2 SERPs"""
-    with patch("app.services.aql_service.compare_serps") as mock_compare:
+    with patch("archive_query_log.browser.services.aql_service.compare_serps") as mock_compare:
         mock_compare.return_value = {
             "comparison_summary": {
                 "serp_count": 2,
@@ -49,7 +49,7 @@ def test_compare_serps_success(client):
 
 def test_compare_serps_three_serps(client):
     """Test comparison of 3 SERPs"""
-    with patch("app.services.aql_service.compare_serps") as mock_compare:
+    with patch("archive_query_log.browser.services.aql_service.compare_serps") as mock_compare:
         mock_compare.return_value = {
             "comparison_summary": {
                 "serp_count": 3,
@@ -73,7 +73,7 @@ def test_compare_serps_three_serps(client):
 
 def test_compare_serps_max_five(client):
     """Test comparison of 5 SERPs (maximum allowed)"""
-    with patch("app.services.aql_service.compare_serps") as mock_compare:
+    with patch("archive_query_log.browser.services.aql_service.compare_serps") as mock_compare:
         mock_compare.return_value = {
             "comparison_summary": {
                 "serp_count": 5,
@@ -125,7 +125,7 @@ def test_compare_serps_duplicate_ids(client):
 
 def test_compare_serps_whitespace_handling(client):
     """Test that whitespace in IDs is handled correctly"""
-    with patch("app.services.aql_service.compare_serps") as mock_compare:
+    with patch("archive_query_log.browser.services.aql_service.compare_serps") as mock_compare:
         mock_compare.return_value = {
             "comparison_summary": {
                 "serp_count": 2,
@@ -148,7 +148,7 @@ def test_compare_serps_whitespace_handling(client):
 
 def test_compare_serps_not_found(client):
     """Test that 404 is returned when a SERP is not found"""
-    with patch("app.services.aql_service.compare_serps") as mock_compare:
+    with patch("archive_query_log.browser.services.aql_service.compare_serps") as mock_compare:
         mock_compare.return_value = None  # Indicates SERP not found
 
         response = client.get("/api/serps/compare?ids=invalid1,invalid2")
@@ -157,7 +157,7 @@ def test_compare_serps_not_found(client):
 
 def test_compare_serps_with_url_encoding(client):
     """Test that URL-encoded commas are handled"""
-    with patch("app.services.aql_service.compare_serps") as mock_compare:
+    with patch("archive_query_log.browser.services.aql_service.compare_serps") as mock_compare:
         mock_compare.return_value = {
             "comparison_summary": {
                 "serp_count": 2,

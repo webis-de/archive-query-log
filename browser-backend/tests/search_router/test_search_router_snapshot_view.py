@@ -8,7 +8,7 @@ def test_get_serp_snapshot_view_no_memento_url(client):
     mock_memento_data = {"serp_id": "test-id"}  # No memento_url field
 
     with patch(
-        "app.routers.search.aql_service.get_serp_memento_url",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_memento_url",
         new=AsyncMock(return_value=mock_memento_data),
     ):
         response = client.get("/api/serps/test-id?view=snapshot")
@@ -25,7 +25,7 @@ def test_get_serp_snapshot_view_with_memento_url(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_memento_url",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_memento_url",
         new=AsyncMock(return_value=mock_memento_data),
     ):
         response = client.get(

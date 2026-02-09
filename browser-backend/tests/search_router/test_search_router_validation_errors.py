@@ -16,7 +16,7 @@ def test_unified_search_invalid_include_field(client):
     mock_serp = {"_id": "test-id", "_source": {}}
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id",
         new=AsyncMock(return_value=mock_serp),
     ):
         response = client.get("/api/serps/test-id?include=invalid_field")
@@ -31,7 +31,7 @@ def test_safe_search_paginated_bad_request(client):
     from elasticsearch import BadRequestError
 
     with patch(
-        "app.routers.search.aql_service.list_all_archives",
+        "archive_query_log.browser.routers.search.aql_service.list_all_archives",
         side_effect=BadRequestError("Bad request", {}, {}),
     ):
         response = client.get("/api/archives")
@@ -44,7 +44,7 @@ def test_safe_search_paginated_connection_error(client):
     from elasticsearch import ConnectionError as ESConnectionError
 
     with patch(
-        "app.routers.search.aql_service.list_all_archives",
+        "archive_query_log.browser.routers.search.aql_service.list_all_archives",
         side_effect=ESConnectionError("Connection failed", []),
     ):
         response = client.get("/api/archives")
@@ -57,7 +57,7 @@ def test_safe_search_paginated_api_error(client):
     from elasticsearch import ApiError
 
     with patch(
-        "app.routers.search.aql_service.list_all_archives",
+        "archive_query_log.browser.routers.search.aql_service.list_all_archives",
         side_effect=ApiError("API error", {}, {}),
     ):
         response = client.get("/api/archives")

@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import AsyncMock, patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 # ---------------------------------------------------------
@@ -19,9 +19,9 @@ async def test_get_related_serps_success():
     ]
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_advanced",
+        "archive_query_log.browser.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ) as mock_search:
         result = await aql.get_related_serps("serp-123", size=10)
@@ -47,9 +47,9 @@ async def test_get_related_serps_with_same_provider():
     mock_related = [{"_id": "serp-def", "_source": {"url_query": "machine learning"}}]
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_advanced",
+        "archive_query_log.browser.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ) as mock_search:
         result = await aql.get_related_serps("serp-abc", size=5, same_provider=True)
@@ -75,9 +75,9 @@ async def test_get_related_serps_excludes_current_serp():
     ]
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_advanced",
+        "archive_query_log.browser.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ):
         result = await aql.get_related_serps("current-serp", size=2)
@@ -96,9 +96,9 @@ async def test_get_related_serps_respects_size_limit():
     mock_related = [{"_id": f"serp-{i}", "_source": {}} for i in range(6)]  # 6 Findings
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_advanced",
+        "archive_query_log.browser.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ):
         result = await aql.get_related_serps("serp-main", size=5)
@@ -109,7 +109,7 @@ async def test_get_related_serps_respects_size_limit():
 @pytest.mark.asyncio
 async def test_get_related_serps_serp_not_found():
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=None)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=None)
     ):
         result = await aql.get_related_serps("nonexistent-id")
         assert result == []
@@ -125,9 +125,9 @@ async def test_get_related_serps_no_related_found():
     mock_related = [{"_id": "lonely-serp", "_source": {}}]
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_advanced",
+        "archive_query_log.browser.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ):
         result = await aql.get_related_serps("lonely-serp", size=10)
@@ -146,9 +146,9 @@ async def test_get_related_serps_custom_size():
     ]  # 21 foundings
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ), patch(
-        "app.services.aql_service.search_advanced",
+        "archive_query_log.browser.services.aql_service.search_advanced",
         new=AsyncMock(return_value=mock_related),
     ) as mock_search:
         result = await aql.get_related_serps("serp-x", size=20)

@@ -16,7 +16,7 @@ def test_get_all_providers_with_zero_size(client):
     mock_providers = [{"id": "1"}, {"id": "2"}, {"id": "3"}]
 
     with patch(
-        "app.routers.search.aql_service.get_all_providers",
+        "archive_query_log.browser.routers.search.aql_service.get_all_providers",
         new=AsyncMock(return_value=mock_providers),
     ):
         response = client.get("/api/providers?size=0")

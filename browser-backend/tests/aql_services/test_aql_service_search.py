@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import AsyncMock, patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 # ---------------------------------------------------------
@@ -65,7 +65,7 @@ async def test_search_advanced_minimal():
 @pytest.mark.asyncio
 async def test_search_by_year_calls_advanced():
     with patch(
-        "app.services.aql_service.search_advanced",
+        "archive_query_log.browser.services.aql_service.search_advanced",
         new=AsyncMock(return_value=[1, 2]),
     ) as mock_adv:
         results = await aql.search_by_year("foo", 2022, size=5)

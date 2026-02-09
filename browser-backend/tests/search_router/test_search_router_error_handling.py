@@ -2,7 +2,7 @@
 
 import pytest
 from fastapi.testclient import TestClient
-from app.main import app
+from archive_query_log.browser.main import app
 from elasticsearch import ConnectionError, RequestError
 
 
@@ -19,7 +19,7 @@ async def test_unified_search_elasticsearch_connection_error(monkeypatch):
         raise ConnectionError("ES connection failed")
 
     monkeypatch.setattr(
-        "app.services.aql_service.search_basic", mock_search_connection_error
+        "archive_query_log.browser.services.aql_service.search_basic", mock_search_connection_error
     )
 
     from fastapi.testclient import TestClient
@@ -39,7 +39,7 @@ async def test_unified_search_bad_request(monkeypatch):
         raise RequestError("Invalid query")
 
     monkeypatch.setattr(
-        "app.services.aql_service.search_basic", mock_search_bad_request
+        "archive_query_log.browser.services.aql_service.search_basic", mock_search_bad_request
     )
 
     from fastapi.testclient import TestClient
@@ -68,7 +68,7 @@ def test_preview_with_invalid_interval(client, monkeypatch):
             }
 
     mock_client = MockClient()
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
 
     # Valid interval
     resp = client.get("/api/serps/preview?query=test&interval=day")
@@ -91,7 +91,7 @@ def test_suggestions_endpoint_works(client, monkeypatch):
             ],
         }
 
-    monkeypatch.setattr("app.services.aql_service.search_suggestions", mock_suggestions)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.search_suggestions", mock_suggestions)
 
     resp = client.get("/api/suggestions?prefix=test&size=5")
     assert resp.status_code == 200

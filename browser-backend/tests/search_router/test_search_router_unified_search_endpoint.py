@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from unittest.mock import patch, AsyncMock
 
-from app.routers.search import router
+from archive_query_log.browser.routers.search import router
 
 
 # ---------------------
@@ -13,8 +13,8 @@ from app.routers.search import router
 def client():
     """Create test client with fresh FastAPI app instance including the search router"""
     app = FastAPI()
-    app.include_router(router)
-    app.state.limiter_enabled = False  # Disable rate limiting for tests
+    archive_query_log.browser.include_router(router)
+    archive_query_log.browser.state.limiter_enabled = False  # Disable rate limiting for tests
     return TestClient(app, raise_server_exceptions=False)
 
 
@@ -36,7 +36,7 @@ def test_unified_search_basic(client):
     """Test basic search via unified endpoint"""
     mock_result = {"hits": [1, 2], "total": 2}
     with patch(
-        "app.routers.search.aql_service.search_basic", new=async_return(mock_result)
+        "archive_query_log.browser.routers.search.aql_service.search_basic", new=async_return(mock_result)
     ):
         r = client.get("/serps?query=test")  # Default page_size=10
         assert r.status_code == 200
@@ -50,7 +50,7 @@ def test_unified_search_advanced(client):
     """Test advanced search via unified endpoint"""
     mock_result = {"hits": ["ok"], "total": 1}
     with patch(
-        "app.routers.search.aql_service.search_advanced", new=async_return(mock_result)
+        "archive_query_log.browser.routers.search.aql_service.search_advanced", new=async_return(mock_result)
     ):
         r = client.get(
             "/serps?query=x&year=2024&provider_id=google"
@@ -66,7 +66,7 @@ def test_unified_search_by_year(client):
     """Test search with year filter"""
     mock_result = {"hits": [10], "total": 1}
     with patch(
-        "app.routers.search.aql_service.search_advanced", new=async_return(mock_result)
+        "archive_query_log.browser.routers.search.aql_service.search_advanced", new=async_return(mock_result)
     ):
         r = client.get("/serps?query=t&year=2020")  # Default page_size=10
         assert r.status_code == 200
@@ -79,7 +79,7 @@ def test_unified_search_all_filters(client):
     """Test search with all filters"""
     mock_result = {"hits": ["filtered"], "total": 1}
     with patch(
-        "app.routers.search.aql_service.search_advanced",
+        "archive_query_log.browser.routers.search.aql_service.search_advanced",
         new=async_return(mock_result),
     ):
         r = client.get(
@@ -101,7 +101,7 @@ def test_unified_search_no_results(client):
     """Test unified search returning no results (now returns 200 with empty results)"""
     mock_result = {"hits": [], "total": 0}
     with patch(
-        "app.routers.search.aql_service.search_basic", new=async_return(mock_result)
+        "archive_query_log.browser.routers.search.aql_service.search_basic", new=async_return(mock_result)
     ):
         r = client.get("/serps?query=nonexistent")
         assert r.status_code == 200

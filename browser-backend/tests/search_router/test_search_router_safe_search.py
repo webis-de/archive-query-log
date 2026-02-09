@@ -2,7 +2,7 @@ import pytest
 from fastapi import HTTPException
 from unittest.mock import AsyncMock
 
-from app.routers.search import safe_search
+from archive_query_log.browser.routers.search import safe_search
 from elasticsearch import TransportError, RequestError
 
 

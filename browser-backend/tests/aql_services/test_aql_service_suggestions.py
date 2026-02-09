@@ -7,7 +7,7 @@ from unittest.mock import AsyncMock, patch
 @pytest.mark.asyncio
 async def test_search_basic_with_suggestions():
     """Test that search_basic returns suggestions when fuzzy=True"""
-    from app.services import aql_service
+    from archive_query_log.browser.services import aql_service
 
     mock_response = {
         "hits": {
@@ -27,7 +27,7 @@ async def test_search_basic_with_suggestions():
         },
     }
 
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.search.return_value = mock_response
         mock_get_client.return_value = mock_es
@@ -47,7 +47,7 @@ async def test_search_basic_with_suggestions():
 @pytest.mark.asyncio
 async def test_search_basic_no_suggestions_when_empty():
     """Test that no suggestions are returned when options list is empty"""
-    from app.services import aql_service
+    from archive_query_log.browser.services import aql_service
 
     mock_response = {
         "hits": {
@@ -57,7 +57,7 @@ async def test_search_basic_no_suggestions_when_empty():
         "suggest": {"did_you_mean": [{"text": "test", "options": []}]},
     }
 
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.search.return_value = mock_response
         mock_get_client.return_value = mock_es
@@ -72,7 +72,7 @@ async def test_search_basic_no_suggestions_when_empty():
 @pytest.mark.asyncio
 async def test_search_basic_with_expand_synonyms():
     """Test search with expand_synonyms=True"""
-    from app.services import aql_service
+    from archive_query_log.browser.services import aql_service
 
     mock_response = {
         "hits": {
@@ -82,7 +82,7 @@ async def test_search_basic_with_expand_synonyms():
         "suggest": {"did_you_mean": []},
     }
 
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.search.return_value = mock_response
         mock_get_client.return_value = mock_es
@@ -99,7 +99,7 @@ async def test_search_basic_with_expand_synonyms():
 @pytest.mark.asyncio
 async def test_search_basic_total_as_integer():
     """Test that search_basic handles total as integer (old ES format)"""
-    from app.services import aql_service
+    from archive_query_log.browser.services import aql_service
 
     mock_response = {
         "hits": {
@@ -108,7 +108,7 @@ async def test_search_basic_total_as_integer():
         },
     }
 
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.search.return_value = mock_response
         mock_get_client.return_value = mock_es

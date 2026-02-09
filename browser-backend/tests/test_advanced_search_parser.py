@@ -4,7 +4,7 @@ Tests for Advanced Search Mode
 Tests boolean operators, phrase search, and wildcards in the advanced search parser.
 """
 
-from app.utils.advanced_search_parser import (
+from archive_query_log.browser.utils.advanced_search_parser import (
     parse_advanced_query,
     AdvancedSearchParser,
     TokenType,

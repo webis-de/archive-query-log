@@ -9,14 +9,14 @@ from fastapi.testclient import TestClient
 
 
 # Import app AFTER setting up mocks
-from app.main import app
+from archive_query_log.browser.main import app
 
 
 # Patch the limiter before any tests run
 def _disable_limiter():
     """Disable rate limiting for tests by replacing the enabled property"""
-    from app.routers import search
-    from app import main
+    from archive_query_log.browser.routers import search
+    from archive_query_log.browser import main
 
     # Disable rate limiting completely
     search.limiter.enabled = False
@@ -213,9 +213,9 @@ def mock_elasticsearch(monkeypatch):
     mock_client = MockESClient()
 
     # Override the get_es_client function to return our mock
-    monkeypatch.setattr("app.core.elastic.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.core.elastic.get_es_client", lambda: mock_client)
 
     # Also patch the global es_client variable
-    monkeypatch.setattr("app.core.elastic.es_client", mock_client)
+    monkeypatch.setattr("archive_query_log.browser.core.elastic.es_client", mock_client)
     # Patch in services module too (in case it was already imported)
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)

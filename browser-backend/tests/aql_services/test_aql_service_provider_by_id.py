@@ -1,13 +1,13 @@
 import pytest
 from unittest.mock import AsyncMock, patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 @pytest.mark.asyncio
 async def test_get_provider_by_id_success():
     mock_es_response = {"_id": "google", "_source": {"name": "Google"}, "found": True}
 
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.get.return_value = mock_es_response
         mock_get_client.return_value = mock_es
@@ -21,7 +21,7 @@ async def test_get_provider_by_id_success():
 
 @pytest.mark.asyncio
 async def test_get_provider_by_id_not_found():
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.get.side_effect = Exception("ES error")
         # Mock search to return no results (fallback from name lookup)

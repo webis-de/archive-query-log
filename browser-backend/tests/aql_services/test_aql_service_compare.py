@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 # ---------------------------------------------------------
@@ -9,7 +9,7 @@ import app.services.aql_service as aql
 @pytest.mark.asyncio
 async def test_compare_serps_basic():
     """Test basic comparison of 2 SERPs"""
-    with patch("app.services.aql_service.get_serp_by_id") as mock_get:
+    with patch("archive_query_log.browser.services.aql_service.get_serp_by_id") as mock_get:
         # Mock two different SERPs
         mock_get.side_effect = [
             {
@@ -72,7 +72,7 @@ async def test_compare_serps_basic():
 @pytest.mark.asyncio
 async def test_compare_serps_multiple():
     """Test comparison of 3 SERPs"""
-    with patch("app.services.aql_service.get_serp_by_id") as mock_get:
+    with patch("archive_query_log.browser.services.aql_service.get_serp_by_id") as mock_get:
         # Mock three SERPs
         mock_get.side_effect = [
             {
@@ -108,7 +108,7 @@ async def test_compare_serps_multiple():
 @pytest.mark.asyncio
 async def test_compare_serps_common_urls():
     """Test that common URLs are correctly identified"""
-    with patch("app.services.aql_service.get_serp_by_id") as mock_get:
+    with patch("archive_query_log.browser.services.aql_service.get_serp_by_id") as mock_get:
         # Both SERPs have the same URLs
         mock_get.side_effect = [
             {
@@ -162,7 +162,7 @@ async def test_compare_serps_common_urls():
 @pytest.mark.asyncio
 async def test_compare_serps_ranking_difference():
     """Test that ranking differences are calculated correctly"""
-    with patch("app.services.aql_service.get_serp_by_id") as mock_get:
+    with patch("archive_query_log.browser.services.aql_service.get_serp_by_id") as mock_get:
         # Same URLs but different rankings
         mock_get.side_effect = [
             {
@@ -226,7 +226,7 @@ async def test_compare_serps_ranking_difference():
 @pytest.mark.asyncio
 async def test_compare_serps_invalid_id():
     """Test that None is returned when a SERP ID is not found"""
-    with patch("app.services.aql_service.get_serp_by_id") as mock_get:
+    with patch("archive_query_log.browser.services.aql_service.get_serp_by_id") as mock_get:
         # First SERP exists, second doesn't
         mock_get.side_effect = [
             {
@@ -262,7 +262,7 @@ async def test_compare_serps_empty_list():
 @pytest.mark.asyncio
 async def test_compare_serps_no_results():
     """Test comparison when SERPs have no results"""
-    with patch("app.services.aql_service.get_serp_by_id") as mock_get:
+    with patch("archive_query_log.browser.services.aql_service.get_serp_by_id") as mock_get:
         mock_get.side_effect = [
             {
                 "_id": "serp1",

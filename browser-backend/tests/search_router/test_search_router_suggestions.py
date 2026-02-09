@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from app.main import app
+from archive_query_log.browser.main import app
 
 
 @pytest.fixture

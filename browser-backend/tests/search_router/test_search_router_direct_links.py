@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from unittest.mock import patch, AsyncMock
 
-from app.routers.search import router
+from archive_query_log.browser.routers.search import router
 
 
 # ---------------------
@@ -15,11 +15,11 @@ def client():
     app = FastAPI()
 
     # Mock the limiter to disable rate limiting in tests
-    with patch("app.routers.search.limiter") as mock_limiter:
+    with patch("archive_query_log.browser.routers.search.limiter") as mock_limiter:
         # Make the limiter decorator a no-op
         mock_limiter.limit = lambda *args, **kwargs: lambda f: f
 
-        app.include_router(router)
+        archive_query_log.browser.include_router(router)
 
     return TestClient(app, raise_server_exceptions=False)
 
@@ -59,9 +59,9 @@ def test_get_serp_unified_with_direct_links(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_serp_direct_links",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_direct_links",
         new=async_return(mock_direct_links_data),
     ):
         r = client.get("/serps/test-id?include=direct_links")
@@ -97,12 +97,12 @@ def test_get_serp_unified_with_direct_links_and_other_fields(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_serp_original_url",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_original_url",
         new=async_return(mock_url_data),
     ), patch(
-        "app.routers.search.aql_service.get_serp_direct_links",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_direct_links",
         new=async_return(mock_direct_links_data),
     ):
         r = client.get("/serps/test-id?include=original_url,direct_links")
@@ -122,9 +122,9 @@ def test_get_serp_unified_direct_links_no_results(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_serp_direct_links",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_direct_links",
         new=async_return(mock_direct_links_data),
     ):
         r = client.get("/serps/test-id?include=direct_links")

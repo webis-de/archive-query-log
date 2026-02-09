@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from unittest.mock import patch, AsyncMock
 
-from app.routers.search import router
+from archive_query_log.browser.routers.search import router
 
 
 # ---------------------
@@ -15,11 +15,11 @@ def client():
     app = FastAPI()
 
     # Mock the limiter to disable rate limiting in tests
-    with patch("app.routers.search.limiter") as mock_limiter:
+    with patch("archive_query_log.browser.routers.search.limiter") as mock_limiter:
         # Make the limiter decorator a no-op
         mock_limiter.limit = lambda *args, **kwargs: lambda f: f
 
-        app.include_router(router)
+        archive_query_log.browser.include_router(router)
 
     return TestClient(app, raise_server_exceptions=False)
 
@@ -52,7 +52,7 @@ def test_get_serp_unified_basic(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ):
         r = client.get("/serps/test-uuid-1234")
         assert r.status_code == 200
@@ -74,9 +74,9 @@ def test_get_serp_unified_with_original_url(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_serp_original_url",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_original_url",
         new=async_return(mock_url_data),
     ):
         r = client.get("/serps/test-id?include=original_url")
@@ -95,9 +95,9 @@ def test_get_serp_unified_with_tracking_removal(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_serp_original_url",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_original_url",
         new=async_return(mock_url_data),
     ):
         r = client.get("/serps/test-id?include=original_url&remove_tracking=true")
@@ -121,9 +121,9 @@ def test_get_serp_unified_with_memento_url(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_serp_memento_url",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_memento_url",
         new=async_return(mock_memento_data),
     ):
         r = client.get("/serps/test-id?include=memento_url")
@@ -144,9 +144,9 @@ def test_get_serp_unified_with_related(client):
     ]
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_related_serps",
+        "archive_query_log.browser.routers.search.aql_service.get_related_serps",
         new=async_return(mock_related),
     ):
         r = client.get("/serps/test-id?include=related&related_size=10")
@@ -184,9 +184,9 @@ def test_get_serp_unified_with_unfurl(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_serp_unfurl",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_unfurl",
         new=async_return(mock_unfurl_data),
     ):
         r = client.get("/serps/test-id?include=unfurl")
@@ -221,18 +221,18 @@ def test_get_serp_unified_multiple_includes(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(mock_serp)
     ), patch(
-        "app.routers.search.aql_service.get_serp_original_url",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_original_url",
         new=async_return(mock_url_data),
     ), patch(
-        "app.routers.search.aql_service.get_serp_memento_url",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_memento_url",
         new=async_return(mock_memento_data),
     ), patch(
-        "app.routers.search.aql_service.get_related_serps",
+        "archive_query_log.browser.routers.search.aql_service.get_related_serps",
         new=async_return(mock_related),
     ), patch(
-        "app.routers.search.aql_service.get_serp_unfurl",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_unfurl",
         new=async_return(mock_unfurl_data),
     ):
         r = client.get("/serps/test-id?include=original_url,memento_url,related,unfurl")
@@ -248,7 +248,7 @@ def test_get_serp_unified_multiple_includes(client):
 # -------------------------------------------------------------------
 def test_get_serp_unified_not_found(client):
     """Test unified SERP detail when SERP doesn't exist"""
-    with patch("app.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
+    with patch("archive_query_log.browser.routers.search.aql_service.get_serp_by_id", new=async_return(None)):
         r = client.get("/serps/nonexistent-id")
         assert r.status_code == 404
 
@@ -262,7 +262,7 @@ def test_get_serp_unified_elasticsearch_error(client):
         raise ESConnectionError(message="ES down")
 
     with patch(
-        "app.routers.search.aql_service.get_serp_by_id",
+        "archive_query_log.browser.routers.search.aql_service.get_serp_by_id",
         new=AsyncMock(side_effect=raise_error),
     ):
         r = client.get("/serps/test-id")

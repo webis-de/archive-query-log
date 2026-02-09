@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import AsyncMock, patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 # ---------------------------------------------------------
@@ -15,7 +15,7 @@ async def test_get_serp_by_id_success():
     }
 
     # Patching the ES client for this specific test
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.get.return_value = mock_es_response
         mock_get_client.return_value = mock_es
@@ -31,7 +31,7 @@ async def test_get_serp_by_id_success():
 # ---------------------------------------------------------
 @pytest.mark.asyncio
 async def test_get_serp_by_id_exception():
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.get.side_effect = Exception("ES error")
         mock_get_client.return_value = mock_es

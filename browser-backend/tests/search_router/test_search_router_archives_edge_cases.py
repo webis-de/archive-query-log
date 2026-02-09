@@ -27,7 +27,7 @@ def test_list_archives_with_size_alias(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.list_all_archives",
+        "archive_query_log.browser.routers.search.aql_service.list_all_archives",
         new=AsyncMock(return_value=mock_result),
     ):
         response = client.get("/api/archives?size=2")

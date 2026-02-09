@@ -2,13 +2,13 @@ import pytest
 from unittest.mock import AsyncMock, patch
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
-from app.routers.search import router
+from archive_query_log.browser.routers.search import router
 
 
 @pytest.fixture
 def app():
     app = FastAPI()
-    app.include_router(router, prefix="/api")
+    archive_query_log.browser.include_router(router, prefix="/api")
     return app
 
 
@@ -19,7 +19,7 @@ def client(app):
 
 def test_provider_by_id_success(client):
     fake_doc = {"_id": "google", "_source": {"name": "Google"}, "found": True}
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.get.return_value = fake_doc
         mock_get_client.return_value = mock_es
@@ -34,7 +34,7 @@ def test_provider_by_id_success(client):
 # plural form test
 def test_providers_by_id_success(client):
     fake_doc = {"_id": "google", "_source": {"name": "Google"}, "found": True}
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.get.return_value = fake_doc
         mock_get_client.return_value = mock_es
@@ -47,7 +47,7 @@ def test_providers_by_id_success(client):
 
 
 def test_provider_by_id_not_found(client):
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_es = AsyncMock()
         mock_es.get.side_effect = Exception("ES error")
         # Mock search to return no results (fallback from name lookup)

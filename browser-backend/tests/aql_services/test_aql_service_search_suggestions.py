@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import AsyncMock, patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 # ---------------------------------------------------------
@@ -169,7 +169,7 @@ async def test_search_suggestions_with_spaces():
 @pytest.mark.asyncio
 async def test_search_suggestions_error_handling():
     """Test that errors don't crash but return empty suggestions."""
-    with patch("app.services.aql_service.get_es_client") as mock_es_getter:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_getter:
         mock_es = AsyncMock()
         mock_es.search.side_effect = Exception("Elasticsearch error")
         mock_es_getter.return_value = mock_es

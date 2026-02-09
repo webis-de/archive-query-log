@@ -2,7 +2,7 @@
 
 import pytest
 from unittest.mock import AsyncMock, patch
-from app.services import aql_service
+from archive_query_log.browser.services import aql_service
 
 
 @pytest.mark.asyncio
@@ -11,7 +11,7 @@ async def test_get_archive_statistics_success():
 
     archive_id = "https://web.archive.org/web"
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             side_effect=[
@@ -68,7 +68,7 @@ async def test_get_archive_statistics_success():
 async def test_get_archive_statistics_not_found():
     """Test retrieving statistics for non-existent archive"""
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={"hits": {"total": {"value": 0, "relation": "eq"}, "hits": []}}
@@ -86,7 +86,7 @@ async def test_get_archive_statistics_not_found():
 async def test_get_archive_statistics_with_time_filter():
     """Test archive statistics with last_n_months filter"""
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={
@@ -119,7 +119,7 @@ async def test_get_archive_statistics_with_time_filter():
 async def test_get_archive_statistics_different_intervals():
     """Test archive statistics with different interval values"""
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={
@@ -144,7 +144,7 @@ async def test_get_archive_statistics_different_intervals():
 async def test_get_archive_statistics_empty_aggregations():
     """Test archive statistics when aggregations return empty buckets"""
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={

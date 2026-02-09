@@ -2,14 +2,14 @@
 
 import pytest
 from unittest.mock import AsyncMock, patch
-from app.services import aql_service
+from archive_query_log.browser.services import aql_service
 
 
 @pytest.mark.asyncio
 async def test_get_provider_statistics_success():
     """Test retrieving statistics for a valid provider"""
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             side_effect=[
@@ -72,7 +72,7 @@ async def test_get_provider_statistics_success():
 async def test_get_provider_statistics_not_found():
     """Test retrieving statistics for non-existent provider"""
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={"hits": {"total": {"value": 0, "relation": "eq"}, "hits": []}}
@@ -88,7 +88,7 @@ async def test_get_provider_statistics_not_found():
 async def test_get_provider_statistics_with_time_filter():
     """Test provider statistics with last_n_months filter"""
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={
@@ -119,7 +119,7 @@ async def test_get_provider_statistics_with_time_filter():
 async def test_get_provider_statistics_interval_normalization():
     """Test that invalid intervals are normalized to 'month'"""
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={

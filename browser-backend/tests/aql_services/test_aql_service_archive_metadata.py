@@ -7,12 +7,12 @@ from unittest.mock import AsyncMock, patch
 @pytest.mark.asyncio
 async def test_get_archive_metadata_success():
     """Test retrieving archive metadata for a valid archive"""
-    from app.services import aql_service
+    from archive_query_log.browser.services import aql_service
 
     archive_id = "https://web.archive.org/web"
 
     # Mock the Elasticsearch response
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={
@@ -35,11 +35,11 @@ async def test_get_archive_metadata_success():
 @pytest.mark.asyncio
 async def test_get_archive_metadata_not_found():
     """Test retrieving metadata for non-existent archive"""
-    from app.services import aql_service
+    from archive_query_log.browser.services import aql_service
 
     archive_id = "https://non.existent.archive/web"
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={"hits": {"total": {"value": 0, "relation": "eq"}, "hits": []}}
@@ -54,9 +54,9 @@ async def test_get_archive_metadata_not_found():
 @pytest.mark.asyncio
 async def test_list_all_archives():
     """Test listing all available archives"""
-    from app.services import aql_service
+    from archive_query_log.browser.services import aql_service
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={
@@ -85,9 +85,9 @@ async def test_list_all_archives():
 @pytest.mark.asyncio
 async def test_list_all_archives_empty():
     """Test listing archives when none exist"""
-    from app.services import aql_service
+    from archive_query_log.browser.services import aql_service
 
-    with patch("app.services.aql_service.get_es_client") as mock_es_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_es_client:
         mock_client = AsyncMock()
         mock_client.search = AsyncMock(
             return_value={"aggregations": {"unique_archives": {"buckets": []}}}
@@ -102,7 +102,7 @@ async def test_list_all_archives_empty():
 
 def test_derive_archive_name():
     """Test archive name derivation"""
-    from app.services.aql_service import _derive_archive_name
+    from archive_query_log.browser.services.aql_service import _derive_archive_name
 
     # Test known archives
     assert (
@@ -121,7 +121,7 @@ def test_derive_archive_name():
 
 def test_derive_cdx_url():
     """Test CDX URL derivation"""
-    from app.services.aql_service import _derive_cdx_url
+    from archive_query_log.browser.services.aql_service import _derive_cdx_url
 
     # Test Internet Archive
     assert (
@@ -139,7 +139,7 @@ def test_derive_cdx_url():
 
 def test_derive_homepage():
     """Test homepage derivation"""
-    from app.services.aql_service import _derive_homepage
+    from archive_query_log.browser.services.aql_service import _derive_homepage
 
     # Test Internet Archive
     assert _derive_homepage("https://web.archive.org/web") == "https://web.archive.org"

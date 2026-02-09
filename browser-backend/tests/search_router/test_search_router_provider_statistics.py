@@ -45,7 +45,7 @@ def mock_provider_statistics_client(monkeypatch):
             }
 
     mock_client = MockClient()
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
     return mock_client
 
 
@@ -94,7 +94,7 @@ def test_provider_statistics_not_found(client):
         async def search(self, *args, **kwargs):
             return {"hits": {"total": {"value": 0, "relation": "eq"}, "hits": []}}
 
-    with patch("app.services.aql_service.get_es_client") as mock_get_client:
+    with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_get_client.return_value = MockEmptyClient()
         resp = client.get("/api/providers/nonexistent/statistics")
 

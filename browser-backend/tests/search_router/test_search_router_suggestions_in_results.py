@@ -15,7 +15,7 @@ def test_unified_search_with_suggestions(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_basic",
+        "archive_query_log.browser.routers.search.aql_service.search_basic",
         new=AsyncMock(return_value=mock_result),
     ):
         response = client.get("/api/serps?query=climat&fuzzy=true")
@@ -36,7 +36,7 @@ def test_unified_search_without_suggestions(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_basic",
+        "archive_query_log.browser.routers.search.aql_service.search_basic",
         new=AsyncMock(return_value=mock_result),
     ):
         response = client.get("/api/serps?query=test")

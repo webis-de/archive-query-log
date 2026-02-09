@@ -1,5 +1,5 @@
 import pytest
-from app.services import aql_service
+from archive_query_log.browser.services import aql_service
 
 
 @pytest.mark.asyncio
@@ -28,7 +28,7 @@ async def test_serps_timeline_service(monkeypatch):
             }
 
     mock_client = MockClient()
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
 
     result = await aql_service.serps_timeline(
         query="test",

@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from unittest.mock import patch, AsyncMock
 
-from app.routers.search import router
+from archive_query_log.browser.routers.search import router
 
 
 # ---------------------
@@ -15,11 +15,11 @@ def client():
     app = FastAPI()
 
     # Mock the limiter to disable rate limiting in tests
-    with patch("app.routers.search.limiter") as mock_limiter:
+    with patch("archive_query_log.browser.routers.search.limiter") as mock_limiter:
         # Make the limiter decorator a no-op
         mock_limiter.limit = lambda *args, **kwargs: lambda f: f
 
-        app.include_router(router)
+        archive_query_log.browser.include_router(router)
 
     return TestClient(app, raise_server_exceptions=False)
 
@@ -44,7 +44,7 @@ def test_unified_search_with_pagination_10(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_basic", new=async_return(mock_results)
+        "archive_query_log.browser.routers.search.aql_service.search_basic", new=async_return(mock_results)
     ):
         r = client.get("/serps?query=test&page_size=10")
         assert r.status_code == 200
@@ -68,7 +68,7 @@ def test_unified_search_with_pagination_20(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_basic", new=async_return(mock_results)
+        "archive_query_log.browser.routers.search.aql_service.search_basic", new=async_return(mock_results)
     ):
         r = client.get("/serps?query=test&page_size=20")
         assert r.status_code == 200
@@ -87,7 +87,7 @@ def test_unified_search_with_pagination_50(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_basic", new=async_return(mock_results)
+        "archive_query_log.browser.routers.search.aql_service.search_basic", new=async_return(mock_results)
     ):
         r = client.get("/serps?query=test&page_size=50")
         assert r.status_code == 200
@@ -114,7 +114,7 @@ def test_unified_search_pagination_ceiling_division(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_basic", new=async_return(mock_results)
+        "archive_query_log.browser.routers.search.aql_service.search_basic", new=async_return(mock_results)
     ):
         r = client.get("/serps?query=test&page_size=10")
         assert r.status_code == 200
@@ -129,7 +129,7 @@ def test_unified_search_default_page_size(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_basic", new=async_return(mock_results)
+        "archive_query_log.browser.routers.search.aql_service.search_basic", new=async_return(mock_results)
     ):
         r = client.get("/serps?query=test")
         assert r.status_code == 200
@@ -149,7 +149,7 @@ def test_unified_search_advanced_with_pagination(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_advanced",
+        "archive_query_log.browser.routers.search.aql_service.search_advanced",
         new=async_return(mock_results),
     ):
         r = client.get("/serps?query=test&year=2024&provider_id=google&page_size=20")
@@ -169,7 +169,7 @@ def test_unified_search_pagination_response_structure(client):
     }
 
     with patch(
-        "app.routers.search.aql_service.search_basic", new=async_return(mock_results)
+        "archive_query_log.browser.routers.search.aql_service.search_basic", new=async_return(mock_results)
     ):
         r = client.get("/serps?query=test&page_size=10")
         assert r.status_code == 200

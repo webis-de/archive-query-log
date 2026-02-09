@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import AsyncMock, patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 # ---------------------------------------------------------
@@ -20,7 +20,7 @@ async def test_get_serp_memento_url_success():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_memento_url("test-uuid-5678")
 
@@ -48,7 +48,7 @@ async def test_get_serp_memento_url_different_timestamp():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_memento_url("test-id-999")
 
@@ -65,7 +65,7 @@ async def test_get_serp_memento_url_different_timestamp():
 @pytest.mark.asyncio
 async def test_get_serp_memento_url_serp_not_found():
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=None)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=None)
     ):
         result = await aql.get_serp_memento_url("nonexistent-id")
         assert result is None

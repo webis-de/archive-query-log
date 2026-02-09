@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import AsyncMock, patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 # ---------------------------------------------------------
@@ -18,7 +18,7 @@ async def test_get_serp_unfurl_success():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-unfurl-123")
 
@@ -46,7 +46,7 @@ async def test_get_serp_unfurl_with_subdomain():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-subdomain")
         domain_parts = result["parsed"]["domain_parts"]
@@ -67,7 +67,7 @@ async def test_get_serp_unfurl_with_port():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-port")
         assert result["parsed"]["port"] == 8443
@@ -87,7 +87,7 @@ async def test_get_serp_unfurl_path_segments():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-path")
         assert result["parsed"]["path"] == "/search/advanced/results"
@@ -109,7 +109,7 @@ async def test_get_serp_unfurl_encoded_params():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-encoded")
         assert "テスト" in result["parsed"]["query_parameters"]["q"]
@@ -127,7 +127,7 @@ async def test_get_serp_unfurl_with_fragment():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-fragment")
         assert result["parsed"]["fragment"] == "results"
@@ -145,7 +145,7 @@ async def test_get_serp_unfurl_no_query_params():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-no-params")
         assert result["parsed"]["query_parameters"] == {}
@@ -167,7 +167,7 @@ async def test_get_serp_unfurl_multiple_values():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-multi")
         tags = result["parsed"]["query_parameters"]["tag"]
@@ -188,7 +188,7 @@ async def test_get_serp_unfurl_complex_tld():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-complex-tld")
         domain_parts = result["parsed"]["domain_parts"]
@@ -204,7 +204,7 @@ async def test_get_serp_unfurl_complex_tld():
 @pytest.mark.asyncio
 async def test_get_serp_unfurl_serp_not_found():
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=None)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=None)
     ):
         result = await aql.get_serp_unfurl("nonexistent-id")
         assert result is None
@@ -223,7 +223,7 @@ async def test_get_serp_unfurl_special_chars():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-special")
         assert result["parsed"]["query_parameters"]["q"] == "how to use & operator"
@@ -240,7 +240,7 @@ async def test_get_serp_unfurl_empty_path():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
+        "archive_query_log.browser.services.aql_service.get_serp_by_id", new=AsyncMock(return_value=mock_serp)
     ):
         result = await aql.get_serp_unfurl("test-empty-path")
         assert result["parsed"]["path"] == "/"

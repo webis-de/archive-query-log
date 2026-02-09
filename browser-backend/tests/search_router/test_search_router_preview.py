@@ -39,7 +39,7 @@ def mock_preview_client(monkeypatch):
                 }
 
     mock_client = MockClient()
-    monkeypatch.setattr("app.services.aql_service.get_es_client", lambda: mock_client)
+    monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
     return mock_client
 
 

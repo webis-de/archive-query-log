@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import AsyncMock, patch
-import app.services.aql_service as aql
+import archive_query_log.browser.services.aql_service as aql
 
 
 # ---------------------------------------------------------
@@ -25,7 +25,7 @@ async def test_get_serp_direct_links():
 async def test_get_serp_direct_links_not_found():
     """Test direct links retrieval when SERP doesn't exist"""
     with patch(
-        "app.services.aql_service.get_serp_by_id",
+        "archive_query_log.browser.services.aql_service.get_serp_by_id",
         new=AsyncMock(return_value=None),
     ):
         result = await aql.get_serp_direct_links("nonexistent-id")
@@ -54,7 +54,7 @@ async def test_get_serp_direct_links_with_results():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id",
+        "archive_query_log.browser.services.aql_service.get_serp_by_id",
         new=AsyncMock(return_value=mock_serp),
     ):
         result = await aql.get_serp_direct_links("test-serp-id")
@@ -87,7 +87,7 @@ async def test_get_serp_direct_links_empty_results():
     }
 
     with patch(
-        "app.services.aql_service.get_serp_by_id",
+        "archive_query_log.browser.services.aql_service.get_serp_by_id",
         new=AsyncMock(return_value=mock_serp),
     ):
         result = await aql.get_serp_direct_links("test-serp-id")

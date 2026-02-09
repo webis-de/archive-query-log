@@ -12,8 +12,8 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 
-from app.core.elastic import close_es_client
-from app.routers import search
+from archive_query_log.browser.core.elastic import close_es_client
+from archive_query_log.browser.routers import search
 
 
 # ---------------------------------------------------------

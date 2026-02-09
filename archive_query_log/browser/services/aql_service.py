@@ -10,9 +10,9 @@ Contains all functions used by the search router:
 """
 
 from typing import List, Optional, Any, Dict
-from app.core.elastic import get_es_client
-from app.utils.url_cleaner import remove_tracking_parameters
-from app.utils.advanced_search_parser import parse_advanced_query
+from archive_query_log.browser.core.elastic import get_es_client
+from archive_query_log.browser.utils.url_cleaner import remove_tracking_parameters
+from archive_query_log.browser.utils.advanced_search_parser import parse_advanced_query
 
 
 # ---------------------------------------------------------
