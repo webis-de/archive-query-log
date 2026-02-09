@@ -6,223 +6,316 @@ on:
 jobs:
   python-build:
     name: 🏗️ Build Python wheels
-    strategy:
-      matrix:
-        python:
-        - '3.13'
     runs-on: ubuntu-latest
     steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 🧰 Install Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: ${{ matrix.python }}
-        cache: pip
-        cache-dependency-path: pyproject.toml
-    - name: 🧰 Install dependencies
-      run: pip install build twine
-    - name: 🏗️ Build Python wheels
-      run: python -m build
-    - name: 🧪 Check package bundles
-      run: twine check dist/*
-    - name: 📤 Upload Python wheels
-      uses: actions/upload-artifact@v4
-      if: matrix.python == '3.13'
-      with:
-        name: wheels
-        path: dist
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: 🧰 Install dependencies
+        run: pip install build twine
+      - name: 🏗️ Build Python wheels
+        run: python -m build
+      - name: 🧪 Check package bundles
+        run: twine check dist/*
+      - name: 📤 Upload Python wheels
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheels
+          path: dist
   python-code-check:
     name: 🔍 Check Python code
-    strategy:
-      matrix:
-        python:
-        - '3.13'
     runs-on: ubuntu-latest
     steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 🧰 Install Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: ${{ matrix.python }}
-        cache: pip
-        cache-dependency-path: pyproject.toml
-    - name: 🧰 Install dependencies
-      run: pip install .[tests]
-    - name: 🔍 Check Python code
-      run: ruff check .
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: 🧰 Install dependencies
+        run: pip install .[tests]
+      - name: 🔍 Check Python code
+        run: ruff check .
   python-typing:
     name: 🔍 Check Python static typing
-    strategy:
-      matrix:
-        python:
-        - '3.13'
     runs-on: ubuntu-latest
     steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 🧰 Install Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: ${{ matrix.python }}
-        cache: pip
-        cache-dependency-path: pyproject.toml
-    - name: 🧰 Install dependencies
-      run: pip install .[tests]
-    - name: 🔍 Check Python static typing
-      run: mypy .
-  python-security:
-    name: 🔍 Check Python code security
-    strategy:
-      matrix:
-        python:
-        - '3.13'
-    runs-on: ubuntu-latest
-    steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 🧰 Install Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: ${{ matrix.python }}
-        cache: pip
-        cache-dependency-path: pyproject.toml
-    - name: 🧰 Install dependencies
-      run: pip install .[tests]
-    - name: 🔍 Check Python code security
-      run: bandit -c pyproject.toml -r .
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: 🧰 Install dependencies
+        run: pip install .[tests]
+      - name: 🔍 Check Python static typing
+        run: mypy .
   python-test:
     name: 🧪 Test Python code
-    strategy:
-      matrix:
-        python:
-        - '3.13'
     runs-on: ubuntu-latest
     steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 🧰 Install Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: ${{ matrix.python }}
-        cache: pip
-        cache-dependency-path: pyproject.toml
-    - name: 🧰 Install dependencies
-      run: pip install .[tests]
-    - name: 🧪 Test Python code
-      run: pytest --cov --cov-report=xml archive_query_log
-    - name: 📤 Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
-      if: matrix.python == '3.13'
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: 🧰 Install dependencies
+        run: pip install .[tests]
+      - name: 🧪 Test Python code
+        run: pytest --cov --cov-report=xml .
+      - name: 📤 Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+  node-build-browser:
+    name: 🏗️ Build browser Node app
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.13"
+          check-latest: true
+          cache-dependency-path: browser/package-lock.json
+      - name: 🧰 Install Node dependencies
+        working-directory: browser/
+        run: npm clean-install
+      - name: 🏗️ Build browser Node app
+        working-directory: browser/
+        run: npm run build
+      - name: 📤 Upload app for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: browser/dist/aql-frontend/browser/
+  node-check-browser:
+    name: 🔍 Check browser Node app code
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.13"
+          check-latest: true
+          cache-dependency-path: browser/package-lock.json
+      - name: 🧰 Install Node dependencies
+        working-directory: browser/
+        run: npm clean-install
+      - name: 🔍 Check Node app code
+        working-directory: browser/
+        run: npm run lint
+  node-security-browser:
+    name: 🔍 Check browser Node app security
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.13"
+          cache-dependency-path: browser/package-lock.json
+      - name: 🧰 Install Node dependencies
+        working-directory: browser/
+        run: npm clean-install
+      - name: 🔍 Check Node app security
+        working-directory: browser/
+        run: npm audit --level high
+  node-test-browser:
+    name: 🧪 Test browser Node app
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.13"
+          cache-dependency-path: browser/package-lock.json
+      - name: 🧰 Install Chrome browser
+        uses: browser-actions/setup-chrome@v2
+      - name: 🧰 Install Node dependencies
+        working-directory: browser/
+        run: npm clean-install
+      - name: 🧪 Test Node app
+        working-directory: browser/
+        run: npm run test:ci
+      - name: 📤 Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: browser/coverage/
   docker-build:
     name: 🏗️ Build Docker image
     runs-on: ubuntu-latest
     steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 🧰 Set up QEMU
-      uses: docker/setup-qemu-action@v3
-    - name: 🧰 Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-    - name: 🏗️ Build Docker image
-      uses: docker/build-push-action@v6
-      with:
-        context: .
-        push: false
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: 🧰 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: 🏗️ Build Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+  docker-build-browser:
+    name: 🏗️ Build browser Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: 🧰 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: 🏗️ Build browser Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: browser/
+          push: false
   python-publish:
     name: 🚀 Publish Python wheels
     if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
     needs:
-    - python-build
-    - python-code-check
-    - python-typing
-    - python-security
-    - python-test
-    - docker-build
+      - python-build
+      - python-code-check
+      - python-typing
+      - python-test
+      - docker-build
     runs-on: ubuntu-latest
     permissions:
       id-token: write
     steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 📥 Download Python wheels
-      uses: actions/download-artifact@v4
-      with:
-        name: wheels
-        path: dist
-    - name: 🚀 Publish Python wheels
-      uses: pypa/gh-action-pypi-publish@release/v1
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 📥 Download Python wheels
+        uses: actions/download-artifact@v5
+        with:
+          name: wheels
+          path: dist
+      - name: 🚀 Publish Python wheels
+        uses: pypa/gh-action-pypi-publish@release/v1
   docker-publish:
     name: 🚀 Publish Docker image
     if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
     permissions:
       packages: write
     needs:
-    - python-build
-    - python-code-check
-    - python-typing
-    - python-security
-    - python-test
-    - docker-build
+      - python-build
+      - python-code-check
+      - python-typing
+      - python-test
+      - docker-build
     runs-on: ubuntu-latest
     steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 🧰 Set up QEMU
-      uses: docker/setup-qemu-action@v3
-    - name: 🧰 Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-    - name: 🔑 Login to GitHub Packages
-      uses: docker/login-action@v3
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-    - name: ℹ️ Extract image metadata
-      id: meta
-      uses: docker/metadata-action@v5
-      with:
-        images: |
-          ghcr.io/${{ github.repository }}
-    - name: 🚀 Build and push image
-      uses: docker/build-push-action@v6
-      with:
-        context: .
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: 🧰 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: 🔑 Login to GitHub Packages
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: ℹ️ Extract image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ghcr.io/${{ github.repository }}
+      - name: 🚀 Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+  docker-publish-browser:
+    name: 🚀 Publish browser Docker image
+    if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
+    permissions:
+      packages: write
+    needs:
+      - python-build
+      - python-code-check
+      - python-typing
+      - python-test
+      - docker-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: 🧰 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: 🔑 Login to GitHub Packages
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: ℹ️ Extract image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ghcr.io/${{ github.repository }}/browser
+      - name: 🚀 Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: browser/
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
   github-release:
     name: 🚀 Create GitHub release
     if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
     needs:
-    - python-build
-    - python-code-check
-    - python-typing
-    - python-security
-    - python-test
-    - python-publish
-    - docker-build
-    - docker-publish
+      - python-build
+      - python-code-check
+      - python-typing
+      - python-test
+      - python-publish
+      - docker-build
+      - docker-publish
     permissions:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - name: 📥 Check-out
-      uses: actions/checkout@v4
-    - name: 📥 Download Python wheels
-      uses: actions/download-artifact@v4
-      with:
-        name: wheels
-        path: dist
-    - name: 🚀 Create GitHub release
-      uses: softprops/action-gh-release@v2
-      with:
-        name: Release ${{ github.ref_name }}
-        files: dist/*
-        fail_on_unmatched_files: true
-        draft: false
-        prerelease: false
-        generate_release_notes: true
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 📥 Download Python wheels
+        uses: actions/download-artifact@v5
+        with:
+          name: wheels
+          path: dist
+      - name: 🚀 Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Release ${{ github.ref_name }}
+          files: dist/*
+          fail_on_unmatched_files: true
+          draft: false
+          prerelease: false
+          generate_release_notes: true

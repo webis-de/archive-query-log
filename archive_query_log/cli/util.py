@@ -1,25 +1,17 @@
-from typing import Sequence
+from typing import Annotated, Any
 
-from click import Parameter, Context, BadParameter, make_pass_decorator
-
-from archive_query_log.config import Config
-
-
-def validate_split_domains(
-        _context: Context,
-        _parameter: Parameter,
-        value: Sequence[str],
-) -> Sequence[str]:
-    valid_domains = []
-    for domains in value:
-        for domain in domains.split(","):
-            domain = domain.strip()
-            if not domain.islower():
-                raise BadParameter(f"Domain must be lowercase: {domain}")
-            if "." not in domain:
-                raise BadParameter(f"Not a valid domain: {domain}")
-            valid_domains.append(domain)
-    return valid_domains
+from cyclopts import Parameter
+from validators import domain as validate_domain
 
 
-pass_config = make_pass_decorator(Config)
+def _domain_validator(type_, value: Any) -> None:
+    if value is not None:
+        valid = validate_domain(value)
+        if not valid:
+            if isinstance(valid, bool):
+                raise ValueError(f"Not a valid domain: {value}")
+            else:
+                raise valid
+
+
+Domain = Annotated[str, Parameter(validator=_domain_validator)]

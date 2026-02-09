@@ -1,0 +1,131 @@
+<aql-panel
+  [panelTitle]="panelTitle()"
+  [subtitle]="panelSubtitle()"
+  [bordered]="true"
+  [shadow]="true"
+  [isActive]="isActive()"
+  class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl block"
+  [class.shadow-primary/20]="isActive()"
+  (click)="onClick()"
+  [hasFooter]="!!result()"
+>
+  <ng-container header-action>
+    @if (result(); as r) {
+      <div
+        (click)="$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()"
+        tabindex="0"
+        role="button"
+      >
+        @if (isCompared()) {
+          <aql-button
+            btnType="primary"
+            btnStyle="rounded"
+            [outline]="true"
+            size="sm"
+            iconBefore="bi-check text-lg"
+            (buttonClick)="toggleCompare($event)"
+          >
+            {{ 'compare.addedToCompare' | translate }}
+          </aql-button>
+        } @else {
+          <aql-button
+            btnType="default"
+            btnStyle="rounded"
+            size="sm"
+            iconBefore="bi-plus text-lg"
+            (buttonClick)="toggleCompare($event)"
+          >
+            {{ 'compare.addToCompare' | translate }}
+          </aql-button>
+        }
+      </div>
+    }
+  </ng-container>
+
+  <aql-dropdown
+    subtitle-action
+    position="right"
+    [contentWidth]="'18rem'"
+    (click)="$event.stopPropagation()"
+    [class.hidden]="!result()"
+  >
+    <aql-button
+      trigger
+      btnType="icon"
+      iconBefore="bi-three-dots-vertical"
+      size="xs"
+      [aqlTooltip]="'tooltip.search.moreOptions' | translate"
+      [tooltipPosition]="'top'"
+      [attr.aria-label]="'tooltip.search.moreOptions' | translate"
+    ></aql-button>
+    @if (result(); as r) {
+      <ng-container content>
+        <div class="text-sm">
+          <!-- ID at top -->
+          <div class="pb-2 mb-2 border-b border-base-300">
+            <span class="font-semibold text-xs">{{ 'search.idLabel' | translate }}</span>
+            <p class="text-xs truncate mt-1">{{ r._id }}</p>
+          </div>
+          <!-- Copy buttons stacked -->
+          <div class="flex flex-col gap-1">
+            @if (hasTracking()) {
+              <aql-button
+                btnType="ghost"
+                size="xs"
+                [fullWidth]="true"
+                align="start"
+                [iconBefore]="copyCleanSuccess() ? 'bi-check-lg' : 'bi-shield-check'"
+                (buttonClick)="copyCleanUrl($event)"
+              >
+                {{
+                  (copyCleanSuccess() ? 'search.copiedCleanUrl' : 'search.copyCleanUrl') | translate
+                }}
+              </aql-button>
+            }
+            <aql-button
+              btnType="ghost"
+              size="xs"
+              [fullWidth]="true"
+              align="start"
+              [iconBefore]="copyOriginalSuccess() ? 'bi-check-lg' : 'bi-clipboard'"
+              (buttonClick)="copyOriginalUrl($event)"
+            >
+              {{
+                (copyOriginalSuccess() ? 'search.copiedOriginalUrl' : 'search.copyOriginalUrl')
+                  | translate
+              }}
+            </aql-button>
+          </div>
+        </div>
+      </ng-container>
+    }
+  </aql-dropdown>
+
+  @if (result(); as r) {
+    <app-serp-result-content [result]="r"></app-serp-result-content>
+  } @else {
+    @if (provider(); as p) {
+      <app-provider-result-content [provider]="p"></app-provider-result-content>
+    } @else {
+      @if (archive(); as a) {
+        <app-archive-result-content [archive]="a"></app-archive-result-content>
+      }
+    }
+  }
+  <ng-container footer>
+    @if (result(); as r) {
+      <div class="flex justify-between">
+        <div class="flex items-center gap-2 text-sm text-base-content/60">
+          <span>{{ formattedDate() }}</span>
+          <span>·</span>
+          <span>{{ r._source.provider.domain }}</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-base-content/60">
+          <span>{{ 'search.scoreLabel' | translate }}</span>
+          <span>{{ r._score | number: '1.2-2' }}</span>
+        </div>
+      </div>
+    }
+  </ng-container>
+</aql-panel>

@@ -1,0 +1,45 @@
+<div class="p-6">
+  <div class="space-y-4">
+    <h3 class="text-sm font-semibold uppercase text-base-content/60">
+      {{ 'metadata.relatedSerps' | translate }}
+    </h3>
+    @if (isLoading()) {
+      <div class="flex items-center justify-center py-8">
+        <span class="loading loading-spinner loading-md text-primary"></span>
+      </div>
+    } @else if (relatedSerps().length > 0) {
+      <div class="flex flex-col gap-4">
+        @for (serp of relatedSerps(); track serp._id) {
+          <aql-panel
+            [panelTitle]="serp._source.url_query"
+            [subtitle]="serp._source.capture.url"
+            [bordered]="true"
+            [shadow]="true"
+            [rounded]="true"
+            class="cursor-pointer hover:shadow-lg transition-shadow duration-200 rounded-2xl"
+            tabindex="0"
+            role="button"
+            (click)="onRelatedSerpClick(serp)"
+            (keydown.enter)="onRelatedSerpClick(serp)"
+            (keydown.space)="onRelatedSerpClick(serp)"
+          >
+            <div footer class="flex items-center gap-2 text-xs text-base-content/60">
+              <span>
+                {{ formatDate(serp._source.capture.timestamp) }}
+              </span>
+              <span>·</span>
+              <span>
+                {{ serp._source.provider.domain }}
+              </span>
+            </div>
+          </aql-panel>
+        }
+      </div>
+    } @else {
+      <div class="text-center py-8 text-base-content/50">
+        <i class="bi bi-search text-4xl mb-3 block"></i>
+        <p>{{ 'metadata.noRelatedSerps' | translate }}</p>
+      </div>
+    }
+  </div>
+</div>

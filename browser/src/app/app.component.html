@@ -1,0 +1,14 @@
+<div class="flex h-screen bg-base-200">
+  <aside class="h-full shrink-0">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <main class="flex-1 overflow-x-hidden flex flex-col min-h-0">
+    <div class="flex-1 min-h-0">
+      <router-outlet></router-outlet>
+    </div>
+
+    <app-footer class="shrink-0"></app-footer>
+  </main>
+  <aql-toast></aql-toast>
+</div>

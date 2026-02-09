@@ -1,0 +1,36 @@
+<div>
+  <aql-dropdown [position]="dropdownPosition()">
+    <div trigger>
+      <aql-button
+        btnType="ghost"
+        size="md"
+        iconStyle="square"
+        [iconBefore]="'bi-translate'"
+        [aqlTooltip]="'tooltip.language.selectLanguage' | translate"
+        [tooltipPosition]="'right'"
+        [attr.aria-label]="'language.select' | translate"
+      >
+        @if (showLabel()) {
+          <span class="ml-2">{{ languageService.currentLanguage().name }}</span>
+        }
+      </aql-button>
+    </div>
+
+    <ng-container content>
+      @for (lang of languageService.availableLanguages; track lang.code) {
+        <button
+          class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-base-200 transition-colors w-full cursor-pointer"
+          [class.bg-primary]="lang.code === languageService.currentLanguage().code"
+          [class.text-primary-content]="lang.code === languageService.currentLanguage().code"
+          (click)="onLanguageSelect(lang.code)"
+        >
+          <span class="text-xl">{{ lang.flag }}</span>
+          <span class="flex-1 text-left">{{ lang.name }}</span>
+          @if (lang.code === languageService.currentLanguage().code) {
+            <i class="bi bi-check-lg"></i>
+          }
+        </button>
+      }
+    </ng-container>
+  </aql-dropdown>
+</div>

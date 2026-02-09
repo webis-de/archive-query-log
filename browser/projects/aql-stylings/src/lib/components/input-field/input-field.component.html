@@ -1,0 +1,54 @@
+<label
+  class="input flex items-center w-full transition-all duration-200 focus-within:outline-none gap-2"
+  [ngClass]="{
+    'input-xs': size() === 'xs',
+    'input-sm': size() === 'sm',
+    'input-md': size() === 'md',
+    'input-lg': size() === 'lg',
+    'input-bordered': color() !== 'ghost',
+    'input-primary': color() === 'primary',
+    'input-secondary': color() === 'secondary',
+    'input-accent': color() === 'accent',
+    'input-info': color() === 'info',
+    'input-success': color() === 'success',
+    'input-warning': color() === 'warning',
+    'input-error': color() === 'error',
+    'input-ghost': color() === 'ghost',
+    'opacity-80 pointer-events-none bg-[var(--color-base-200)]': disabled(),
+    'rounded-[10px]': shape() === 'square',
+    'rounded-full': shape() === 'circle',
+  }"
+>
+  <div class="contents">
+    @if (showIcon()) {
+      <div class="flex-none flex items-center justify-center">
+        <i
+          [ngClass]="icon()"
+          class="opacity-50 text-base-content"
+          [class.text-[14px]]="size() === 'xs'"
+          [class.text-[16px]]="size() === 'sm'"
+          [class.text-[20px]]="size() === 'md' || size() === 'lg'"
+        ></i>
+      </div>
+    }
+    <ng-content select="[prefix]"></ng-content>
+  </div>
+
+  <input
+    [type]="type()"
+    class="grow w-full bg-transparent border-none outline-none p-0 text-base-content placeholder:text-base-content placeholder:opacity-50 font-['Plus_Jakarta_Sans'] h-full"
+    [class.text-xs]="size() === 'xs'"
+    [class.text-sm]="size() === 'sm' || size() === 'md'"
+    [class.text-base]="size() === 'lg'"
+    [placeholder]="placeholder()"
+    [value]="value()"
+    [disabled]="disabled()"
+    (input)="onInput($event)"
+    [min]="min()"
+    [max]="max()"
+  />
+
+  <div class="flex-none flex items-center justify-center empty:hidden">
+    <ng-content select="[suffix]"></ng-content>
+  </div>
+</label>

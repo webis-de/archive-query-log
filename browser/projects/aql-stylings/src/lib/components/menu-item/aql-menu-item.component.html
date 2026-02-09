@@ -1,0 +1,38 @@
+<li class="list-none">
+  <div
+    #menuItemLink
+    role="menuitem"
+    tabindex="0"
+    class="menu-item-content group flex items-center justify-between rounded-lg w-full py-2 px-3 focus:outline-none"
+    [class.hover:bg-base-200]="interactive()"
+    [class.active]="interactive() && selected()"
+    [class.is-interactive]="interactive()"
+    (focus)="onMainFocus()"
+    (click)="onItemClick($event)"
+    (keyup)="($event)"
+  >
+    <span class="inline-flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
+      @if (iconBefore()) {
+        <i class="bi flex-shrink-0" [ngClass]="iconBefore()"></i>
+      }
+
+      <span class="truncate w-full">
+        <ng-content></ng-content>
+      </span>
+    </span>
+
+    <span
+      tabindex="-1"
+      class="after-slot inline-flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-150 group-active:text-neutral-content flex-shrink-0"
+      [class.text-neutral-content]="interactive() && selected()"
+      (click)="onAfterClick($event)"
+      (mousedown)="onAfterMouseDown($event, menuItemLink)"
+      (keyup)="($event)"
+    >
+      <ng-content select="[after]"></ng-content>
+      @if (iconAfter()) {
+        <i class="bi ml-2" [ngClass]="iconAfter()"></i>
+      }
+    </span>
+  </div>
+</li>

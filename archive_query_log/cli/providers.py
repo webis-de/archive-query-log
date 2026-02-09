@@ -1,39 +1,55 @@
 from pathlib import Path
+from typing import Annotated
 
-from click import group, option, Path as PathType, FloatRange
+from cyclopts import App, Parameter
+from cyclopts.types import (
+    ResolvedDirectory,
+    ResolvedExistingFile,
+    ResolvedPath,
+    PositiveInt,
+    NonNegativeFloat,
+)
 
-from archive_query_log.cli.util import validate_split_domains, pass_config
+from archive_query_log.cli.util import Domain
 from archive_query_log.config import Config
+from archive_query_log.export.base import ExportFormat
 from archive_query_log.orm import Provider
 
 
-@group()
-def providers() -> None:
-    pass
+providers = App(
+    name="providers",
+    alias="pv",
+    help="Manage search providers.",
+)
 
 
 @providers.command()
-@option("--name", type=str)
-@option("--description", type=str)
-@option("--notes", type=str)
-@option("--exclusion-reason", "--exclusion", type=str)
-@option("--domains", "--domain", type=str, multiple=True,
-        required=True, callback=validate_split_domains)
-@option("--url-path-prefixes", "--url-path-prefix", type=str,
-        multiple=True, required=True, metavar="PREFIXES")
-@option("--priority", type=FloatRange(min=0, min_open=False))
-@pass_config
 def add(
-        config: Config,
-        name: str | None,
-        description: str | None,
-        notes: str | None,
-        exclusion_reason: str | None,
-        domains: list[str],
-        url_path_prefixes: list[str],
-        priority: float | None,
+    *,
+    name: str | None,
+    description: str | None,
+    notes: str | None,
+    exclusion_reason: Annotated[
+        str | None,
+        Parameter(alias="--exclusion"),
+    ],
+    domains: Annotated[
+        list[Domain],
+        Parameter(alias="--domain"),
+    ],
+    url_path_prefixes: Annotated[
+        list[str],
+        Parameter(alias="--url-path-prefix"),
+    ],
+    priority: NonNegativeFloat | None = None,
+    dry_run: bool = False,
+    config: Config,
 ) -> None:
+    """
+    Add a new search provider.
+    """
     from archive_query_log.providers import add_provider
+
     Provider.init(using=config.es.client, index=config.es.index_providers)
     add_provider(
         config=config,
@@ -44,33 +60,32 @@ def add(
         domains=set(domains),
         url_path_prefixes=set(url_path_prefixes),
         priority=priority,
+        dry_run=dry_run,
     )
 
 
-@providers.command("import")
-@option("-s", "--services-file", "services_path",
-        type=PathType(path_type=Path, exists=True, file_okay=True,
-                      dir_okay=False, readable=True, resolve_path=True,
-                      allow_dash=False),
-        default=Path("data") / "selected-services.yaml")
-@option("-c", "--cache-dir", "cache_path",
-        type=PathType(path_type=Path, exists=False, file_okay=False,
-                      dir_okay=True, readable=True, writable=True,
-                      resolve_path=True, allow_dash=False),
-        default=Path("data") / "cache" / "provider-names")
-@option("--review", type=int)
-@option("--no-merge", is_flag=True, default=False, type=bool)
-@option("--auto-merge", is_flag=True, default=False, type=bool)
-@pass_config
+@providers.command(name="import")
 def import_(
-        config: Config,
-        services_path: Path,
-        cache_path: Path,
-        review: int | None,
-        no_merge: bool,
-        auto_merge: bool,
+    *,
+    services_path: Annotated[
+        ResolvedExistingFile,
+        Parameter(alias=["-s", "--services-file"]),
+    ] = Path("data") / "selected-services.yaml",
+    cache_path: Annotated[
+        ResolvedDirectory,
+        Parameter(alias=["-c", "--cache-dir"]),
+    ] = Path("data") / "cache" / "provider-names",
+    review: int | None = None,
+    no_merge: bool = False,
+    auto_merge: bool = False,
+    dry_run: bool = False,
+    config: Config,
 ) -> None:
+    """
+    Import search providers from a YAML search services file.
+    """
     from archive_query_log.imports.yaml import import_providers
+
     Provider.init(using=config.es.client, index=config.es.index_providers)
     import_providers(
         config=config,
@@ -79,4 +94,49 @@ def import_(
         review=review,
         no_merge=no_merge,
         auto_merge=auto_merge,
+        dry_run=dry_run,
+    )
+
+
+@providers.command
+def export(
+    sample_size: PositiveInt,
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export a sample of search providers locally.
+    """
+    from archive_query_log.export import export_local
+
+    export_local(
+        document_type=Provider,
+        index=config.es.index_providers,
+        format=format,
+        sample_size=sample_size,
+        output_path=output_path,
+        config=config,
+    )
+
+
+@providers.command
+def export_all(
+    output_path: ResolvedPath,
+    *,
+    format: ExportFormat = "jsonl",
+    config: Config,
+) -> None:
+    """
+    Export all search providers via Ray.
+    """
+    from archive_query_log.export import export_ray
+
+    export_ray(
+        document_type=Provider,
+        index=config.es.index_providers,
+        format=format,
+        output_path=output_path,
+        config=config,
     )

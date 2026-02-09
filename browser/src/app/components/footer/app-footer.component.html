@@ -1,0 +1,19 @@
+<footer
+  class="w-full py-4 px-8 bg-base-100 border-t border-base-300 text-base-content/50 grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1fr] items-center text-[11px] tracking-wide"
+>
+  <nav class="flex gap-6 justify-center uppercase font-medium md:col-start-2">
+    <a routerLink="/imprint" class="hover:text-base-content transition-colors duration-200">
+      {{ 'footer.imprint' | translate }}
+    </a>
+
+    <a routerLink="/privacy" class="hover:text-base-content transition-colors duration-200">
+      {{ 'footer.privacyPolicy' | translate }}
+    </a>
+  </nav>
+
+  <div
+    class="uppercase font-semibold tracking-widest text-center md:text-right md:col-start-3 md:justify-self-end"
+  >
+    {{ 'footer.copyright' | translate: { year: currentYear() } }}
+  </div>
+</footer>

@@ -56,6 +56,7 @@ elasticsearch:
   port: 9200
   username: null # Override with `--set elasticsearch.username=EXAMPLE` Helm option.
   password: null # Override with `--set elasticsearch.password=EXAMPLE` Helm option.
+  apiKey: null # Override with `--set elasticsearch.apiKey=EXAMPLE` Helm option.
   indexArchives: aql_archives
   indexProviders: aql_providers
   indexSources: aql_sources
@@ -78,3 +79,19 @@ s3:
 
 warcCache:
   pathSerps: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps
+
+browser:
+  frontend:
+    ingressClassName: nginx
+    host: aql.webis.de
+    path: /
+    replicas: 1
+    forceSslRedirect: true
+    image: ghcr.io/webis-de/archive-query-log/browser-frontend
+  backend:
+    ingressClassName: nginx
+    host: aql.webis.de
+    path: /api/
+    replicas: 1
+    forceSslRedirect: true
+    image: ghcr.io/webis-de/archive-query-log/browser-backend

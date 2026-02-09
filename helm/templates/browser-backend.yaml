@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-browser-backend
+  labels:
+    app: {{ $.Release.Name }}-browser-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ $.Release.Name }}-browser-backend
+  template:
+    metadata:
+      labels:
+        app: {{ $.Release.Name }}-browser-backend
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: {{ $.Release.Name }}-browser-backend
+          image: "{{ .Values.browser.backend.image }}:{{ .Chart.AppVersion }}"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          command:
+            - uvicorn
+            - archive_query_log.browser:app
+            - --host
+            - 0.0.0.0
+            - --port
+            - "5000"
+          ports:
+            - name: http
+              containerPort: 5000
+          env:
+            - name: ELASTICSEARCH_HOST
+              value: {{ $.Values.elasticsearch.host | quote }}
+            - name: ELASTICSEARCH_PORT
+              value: {{ $.Values.elasticsearch.port | quote }}
+            - name: ELASTICSEARCH_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: elasticsearchApiKey
+            - name: ES_HOST
+              value: "https://$ELASTICSEARCH_HOST:$ELASTICSEARCH_PORT"
+            - name: ES_VERIFY
+              value: "true"
+            - name: ES_API_KEY
+              value: "$ELASTICSEARCH_API_KEY"
+            - name: ENVIRONMENT
+              value: "production"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3

@@ -6,7 +6,7 @@
 [![Downloads](https://img.shields.io/pypi/dm/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/) \
 [![CI status](https://img.shields.io/github/actions/workflow/status/webis-de/archive-query-log/ci.yml?branch=main&style=flat-square)](https://github.com/webis-de/archive-query-log/actions/workflows/ci.yml)
 [![Code coverage](https://img.shields.io/codecov/c/github/webis-de/archive-query-log?style=flat-square)](https://codecov.io/github/webis-de/archive-query-log/)
-[![Maintenance](https://img.shields.io/maintenance/yes/2025?style=flat-square)](https://github.com/webis-de/archive-query-log/graphs/contributors) \
+[![Maintenance](https://img.shields.io/maintenance/yes/2026?style=flat-square)](https://github.com/webis-de/archive-query-log/graphs/contributors) \
 [![Issues](https://img.shields.io/github/issues/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/issues)
 [![Pull requests](https://img.shields.io/github/issues-pr/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/pulls)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/webis-de/archive-query-log?style=flat-square)](https://github.com/webis-de/archive-query-log/commits)
@@ -290,7 +290,7 @@ All the above commands can be run in parallel, and they can be run multiple time
 
 #### Download SERP WARCs
 
-Up to this point, we have only fetched the metadata of the captures, most prominently the URL. However, the snippets of the SERPs are not contained in the metadata but only on the web page. So, we need to download the actual web pages from the archive service.
+Up to this point, we have only fetched the metadata of the captures, most prominently the URL. However, the result blocks of the SERPs are not contained in the metadata but only on the web page. So, we need to download the actual web pages from the archive service.
 
 ```shell
 aql serps download warc
@@ -316,23 +316,23 @@ From the WARC contents, we can now parse the query as it appears on the SERP (wh
 aql serps parse warc-query
 ```
 
-More importantly, we can parse the snippets of the SERP.
+More importantly, we can parse the web search result blocks of the SERP.
 
 ```shell
-aql serps parse warc-snippets
+aql serps parse warc-web-search-result-blocks
 ```
 
-Parsing the snippets from the SERP's WARC contents will also add the SERP's results to a new index.
+Parsing the web search result blocks from the SERP's WARC contents will also add the SERP's web search result blocks to a new index.
 
-<!-- #### Download SERP snippet WARCs
+#### Download web search result block landing page WARCs
 
-To get the full text of each referenced result from the SERP, we need to download a capture of the result from the web archive. Intuitively, we would like to download a capture of the result at the exact same time as the SERP was captured. But often, web archives crawl the results later or not at all. Therefore, our implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures individually for each result, if any capture can be found.
+To get the full text of each referenced landing page of a web search result block from the SERP, we need to download a capture of the landing page from the web archive. Intuitively, we would like to download a capture of the landing page at the exact same time as the SERP was captured. But often, web archives crawl these landing pages later or not at all. Therefore, our implementation searches for the nearest captures before and after the SERP's timestamp and downloads these two captures individually for each web search result block, if any capture can be found.
 
 ```shell
-aql results download warc
+aql web-search-result-blocks download warc
 ```
 
-This command will again download the result's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the result index for random access to the contents of a specific result. -->
+This command will download the landing page's contents to a WARC file that is stored in the configured S3 bucket. A pointer to the WARC file is stored in the web search result blocks index for random access to the contents of a specific landing page.
 
 ### Import
 
@@ -344,7 +344,7 @@ aql parsers url-query import
 aql parsers url-page import
 aql parsers url-offset import
 aql parsers warc-query import
-aql parsers warc-snippets import
+aql parsers warc-web-search-result-blocks import
 ```
 
 We also support importing a previous crawl of captures from the AQL-22 file system backend:
@@ -358,6 +358,47 @@ Last, we support importing all archives from the [Archive-It](https://archive-it
 ```shell
 aql archives import archive-it
 ```
+
+### Export
+
+To export a sample of archives, providers, sources, captures, SERPs, or web search result blocks locally, run:
+
+```shell
+aql archives export --sample-size 10 --output-path /path/to/exported-archives.jsonl
+aql providers export --sample-size 10 --output-path /path/to/exported-providers.jsonl
+aql sources export --sample-size 10 --output-path /path/to/exported-sources.jsonl
+aql captures export --sample-size 10 --output-path /path/to/exported-captures.jsonl
+aql serps export --sample-size 10 --output-path /path/to/exported-serps.jsonl
+aql wsrbs export --sample-size 10 --output-path /path/to/exported-wsrbs.jsonl
+```
+
+Currently, only JSON format is supported for local exports.
+
+To export the full index of archives, providers, sources, captures, SERPs, or web search result blocks via Ray, run:
+
+```shell
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log archives export-all --output-path /path/to/exports/archives/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log providers export-all --output-path /path/to/exports/providers/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log sources export-all --output-path /path/to/exports/sources/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log captures export-all --output-path /path/to/exports/captures/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log serps export-all --output-path /path/to/exports/serps/
+ray job submit --runtime-env ray-runtime-env.yml -- python -m archive_query_log wsrbs export-all --output-path /path/to/exports/wsrbs/
+```
+
+<details>
+<summary>Development version</summary>
+The same commands can also be run with a development version of the Archive Query Log crawlers by using a local runtime environment file:
+
+```shell
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log archives export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/archives/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log providers export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/providers/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log sources export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/sources/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log captures export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/captures/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log serps export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/serps/
+ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python -m archive_query_log wsrbs export-all --output-path /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/exports/wsrbs/
+```
+
+</details>
 
 ### Cluster (Helm/Kubernetes)
 
@@ -402,6 +443,51 @@ If you no longer need the chart, you can uninstall it:
 helm uninstall archive-query-log
 ```
 
+## Monitoring
+
+To serve a basic monitoring UI, run:
+
+```shell
+uvicorn archive_query_log.api:app --reload
+```
+
+Then, open <http://localhost:8000> in your web browser.
+An API documentation is available at <http://localhost:8000/docs>.
+
+## Browser
+
+The AQL Browser is a web application to explore the data in the Archive Query Log.
+It is run as two separate components: a [backend API](#browser-api) that serves all relevant data from the Elasticsearch cluster and a [frontend web app](#browser-app) that provides a user interface to explore the data and query the backend API.
+
+![Browser app screenshot](docs/screenshot-browser.png)
+
+### Browser API
+
+To start the backend API of the AQL Browser, run:
+
+```shell
+uvicorn archive_query_log.browser:app --reload
+```
+
+Read more about the API in the [API documentation](docs/browser-backend.md).
+
+### Browser app
+
+To start the frontend web app of the AQL Browser, first install the dependencies:
+
+```shell
+cd browser/
+npm install
+```
+
+Then, start the development server:
+
+```shell
+npm run start
+```
+
+More information about the frontend web app can be found in the [frontend documentation](browser/README.md).
+
 ## Citation
 
 If you use the Archive Query Log dataset or the crawling code in your research, please cite the following paper describing the AQL and its use cases:
@@ -441,10 +527,14 @@ pip install -e .[tests]
 After having implemented a new feature, please check the code format, inspect common LINT errors, and run all unit tests with the following commands:
 
 ```shell
-ruff check .                         # Code format and LINT
-mypy .                         # Static typing
-bandit -c pyproject.toml -r .  # Security
-pytest .                       # Unit tests
+ruff check .  # Code format and LINT
+mypy .        # Static typing
+pytest .      # Unit tests
+```
+
+When working on the browser app, run the frontend tests with:
+
+```shell
 ```
 
 ### Add new tests for parsers

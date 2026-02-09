@@ -1,0 +1,32 @@
+<div class="collapse bg-transparent" [class.collapse-open]="open()">
+  <div
+    class="collapse-title p-0 list-none"
+    tabindex="0"
+    (click)="onToggle()"
+    (keydown)="onSummaryKeydown($event)"
+  >
+    <aql-menu-item
+      [iconBefore]="computedIconBefore()"
+      [interactive]="false"
+      class="w-full hover:bg-transparent focus:bg-transparent"
+    >
+      <ng-content select="[label]"></ng-content>
+      <div
+        after
+        class="after-slot flex items-center"
+        role="button"
+        tabindex="0"
+        (click)="$event.stopPropagation()"
+        (keydown.enter)="$event.stopPropagation()"
+        (keydown.space)="$event.stopPropagation()"
+      >
+        <ng-content select="[after]"></ng-content>
+      </div>
+    </aql-menu-item>
+  </div>
+  <div class="collapse-content p-0" tabindex="-1" (keyup)="($event)">
+    <div class="menu menu-compact bg-base-100 p-0 rounded-md w-full">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
