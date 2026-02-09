@@ -18,9 +18,23 @@ spec:
       containers:
         - name: {{ $.Release.Name }}-browser-backend
           image: "{{ .Values.browser.backend.image }}:{{ .Chart.AppVersion }}"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          command:
+            - uvicorn
+            - archive_query_log.browser:app
+            - --host
+            - 0.0.0.0
+            - --port
+            - "5000"
           ports:
             - name: http
-              containerPort: 8000
+              containerPort: 5000
           env:
             - name: ELASTICSEARCH_HOST
               value: {{ $.Values.elasticsearch.host | quote }}
@@ -39,13 +53,6 @@ spec:
               value: "$ELASTICSEARCH_API_KEY"
             - name: ENVIRONMENT
               value: "production"
-          resources:
-            requests:
-              memory: "256Mi"
-              cpu: "100m"
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
           livenessProbe:
             httpGet:
               path: /health
