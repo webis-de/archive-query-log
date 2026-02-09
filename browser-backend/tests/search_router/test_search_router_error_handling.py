@@ -3,7 +3,7 @@
 import pytest
 from fastapi.testclient import TestClient
 from app.main import app
-from elasticsearch import ConnectionError, BadRequestError
+from elasticsearch import ConnectionError, RequestError
 
 
 @pytest.fixture
@@ -36,7 +36,7 @@ async def test_unified_search_bad_request(monkeypatch):
     """Test handling of bad requests to Elasticsearch"""
 
     async def mock_search_bad_request(*args, **kwargs):
-        raise BadRequestError("Invalid query")
+        raise RequestError("Invalid query")
 
     monkeypatch.setattr(
         "app.services.aql_service.search_basic", mock_search_bad_request

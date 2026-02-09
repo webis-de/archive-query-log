@@ -1,7 +1,7 @@
 from io import TextIOWrapper
 from shutil import copyfileobj
 from tempfile import TemporaryFile
-from typing import Literal, Type, TypeVar, Iterable, Sequence
+from typing import Literal, Type, TypeVar, Iterable, MutableSequence
 from warnings import warn
 
 from cssselect import GenericTranslator
@@ -45,7 +45,7 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
 
         # Detect encoding using Resiliparse, based on the first 10KB bytes .
         encoding_guess_bytes = tmp_file.read(1024 * 10)
-        encodings: Sequence[str] = [
+        encodings: MutableSequence[str] = [
             detect_encoding(encoding_guess_bytes, from_html_meta=False),
             detect_encoding(encoding_guess_bytes, from_html_meta=True),
         ]
@@ -62,7 +62,7 @@ def parse_xml_tree(record: ArcWarcRecord) -> _ElementTree | None:
                 part.strip().removeprefix("charset=").lower()
                 for part in html_content_type.split(";")
                 if part.strip().startswith("charset=")
-            ] + encodings
+            ] + list(encodings)
 
         # Add fall-back encodings.
         if "utf-8" in encodings and "utf-8-sig" not in encodings:

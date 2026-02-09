@@ -13,8 +13,8 @@ from enum import Enum
 # Elasticsearch Exceptions
 from elasticsearch import (
     ConnectionError,
-    ApiError,
-    BadRequestError,
+    TransportError,
+    RequestError,
 )
 
 from app.services import aql_service
@@ -55,13 +55,13 @@ async def safe_search(coro, allow_empty=False):
     try:
         results = await coro
 
-    except BadRequestError:
+    except RequestError:
         raise HTTPException(status_code=400, detail="Invalid request to Elasticsearch")
 
     except ConnectionError:
         raise HTTPException(status_code=503, detail="Elasticsearch connection failed")
 
-    except ApiError:
+    except TransportError:
         raise HTTPException(status_code=503, detail="Elasticsearch transport error")
 
     except Exception:
@@ -78,13 +78,13 @@ async def safe_search_paginated(coro):
     try:
         results = await coro
 
-    except BadRequestError:
+    except RequestError:
         raise HTTPException(status_code=400, detail="Invalid request to Elasticsearch")
 
     except ConnectionError:
         raise HTTPException(status_code=503, detail="Elasticsearch connection failed")
 
-    except ApiError:
+    except TransportError:
         raise HTTPException(status_code=503, detail="Elasticsearch transport error")
 
     except Exception:

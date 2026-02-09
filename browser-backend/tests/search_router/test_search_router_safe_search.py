@@ -3,7 +3,7 @@ from fastapi import HTTPException
 from unittest.mock import AsyncMock
 
 from app.routers.search import safe_search
-from elasticsearch import ApiError, BadRequestError
+from elasticsearch import TransportError, RequestError
 
 
 # ---------------------
@@ -57,7 +57,7 @@ async def test_safe_search_transport_error():
     """Test that safe_search raises 503 on Elasticsearch transport error"""
 
     async def boom():
-        raise ApiError(message="api error", meta=None, body=None)
+        raise TransportError(message="api error", meta=None, body=None)
 
     with pytest.raises(HTTPException) as exc:
         await safe_search(boom())
@@ -70,7 +70,7 @@ async def test_safe_search_request_error():
     """Test that safe_search raises 400 on Elasticsearch BadRequestError"""
 
     async def boom():
-        raise BadRequestError(message="bad rq", meta=None, body=None)
+        raise RequestError(message="bad rq", meta=None, body=None)
 
     with pytest.raises(HTTPException) as exc:
         await safe_search(boom())
