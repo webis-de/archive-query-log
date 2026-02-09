@@ -24,6 +24,7 @@ classifiers = [
     "Topic :: Scientific/Engineering",
 ]
 dependencies = [
+    "aiohttp~=3.13",
     "boto3~=1.35",
     "certifi~=2025.8",
     "cssselect~=1.3",
