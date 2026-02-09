@@ -8,7 +8,7 @@
     "watch": "ng build aql-stylings --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadlessNoSandbox",
+    "test:ci": "ng test --no-watch --browsers=ChromeHeadless --code-coverage",
     "format": "prettier --write \"src/**/*.{ts,html,scss,css,json}\" \"projects/**/*.{ts,html,scss,css,json}\"",
     "reorder": "node scripts/reorder-members.js",
     "check-translations": "node scripts/check-translations.js"
