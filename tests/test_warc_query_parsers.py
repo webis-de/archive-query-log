@@ -10,6 +10,7 @@ from tests import TESTS_DATA_PATH
 from tests.utils import MockWarcStore, iter_test_serps, verify_yaml
 
 _SERPS_PATHS = (
+    # TODO: Re-enable tests.
     # TESTS_DATA_PATH / "360.jsonl",
     # TESTS_DATA_PATH / "aliexpress.jsonl",
     # TESTS_DATA_PATH / "amazon.jsonl",
@@ -29,7 +30,7 @@ _SERPS_PATHS = (
     # TESTS_DATA_PATH / "etsy.jsonl",
     # TESTS_DATA_PATH / "facebook.jsonl",
     # TESTS_DATA_PATH / "github.jsonl",
-    # TESTS_DATA_PATH / "google.jsonl",
+    TESTS_DATA_PATH / "google.jsonl",
     # TESTS_DATA_PATH / "imdb.jsonl",
     # TESTS_DATA_PATH / "imgur.jsonl",
     # TESTS_DATA_PATH / "indeed.jsonl",
@@ -53,7 +54,7 @@ _SERPS_PATHS = (
     # TESTS_DATA_PATH / "xvideos.jsonl",
     # TESTS_DATA_PATH / "yahoo.jsonl",
     # TESTS_DATA_PATH / "yandex.jsonl",
-    TESTS_DATA_PATH / "youtube.jsonl",
+    # TESTS_DATA_PATH / "youtube.jsonl",
 )
 
 
