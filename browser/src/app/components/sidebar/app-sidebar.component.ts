@@ -43,8 +43,8 @@ interface NavItem {
     AqlButtonComponent,
     AqlTooltipDirective,
     LanguageSelectorComponent,
-    AqlButtonComponent
-],
+    AqlButtonComponent,
+  ],
   templateUrl: './app-sidebar.component.html',
   styleUrl: './app-sidebar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

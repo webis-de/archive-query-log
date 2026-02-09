@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-
 @Component({
   selector: 'aql-panel',
   standalone: true,

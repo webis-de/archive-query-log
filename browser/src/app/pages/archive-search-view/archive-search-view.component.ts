@@ -37,8 +37,8 @@ import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-
     SearchResultItemComponent,
     SearchResultItemComponent,
     AppQueryMetadataPanelComponent,
-    ScrollingModule
-],
+    ScrollingModule,
+  ],
   templateUrl: './archive-search-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

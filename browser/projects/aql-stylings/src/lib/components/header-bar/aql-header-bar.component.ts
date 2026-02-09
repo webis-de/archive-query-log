@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-
 @Component({
   selector: 'aql-header-bar',
   standalone: true,

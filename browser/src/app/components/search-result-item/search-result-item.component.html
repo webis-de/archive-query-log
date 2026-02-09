@@ -8,7 +8,7 @@
   [class.shadow-primary/20]="isActive()"
   (click)="onClick()"
   [hasFooter]="!!result()"
-  >
+>
   <ng-container header-action>
     @if (result(); as r) {
       <div
@@ -16,7 +16,7 @@
         (keydown)="$event.stopPropagation()"
         tabindex="0"
         role="button"
-        >
+      >
         @if (isCompared()) {
           <aql-button
             btnType="primary"
@@ -25,7 +25,7 @@
             size="sm"
             iconBefore="bi-check text-lg"
             (buttonClick)="toggleCompare($event)"
-            >
+          >
             {{ 'compare.addedToCompare' | translate }}
           </aql-button>
         } @else {
@@ -35,7 +35,7 @@
             size="sm"
             iconBefore="bi-plus text-lg"
             (buttonClick)="toggleCompare($event)"
-            >
+          >
             {{ 'compare.addToCompare' | translate }}
           </aql-button>
         }
@@ -49,7 +49,7 @@
     [contentWidth]="'18rem'"
     (click)="$event.stopPropagation()"
     [class.hidden]="!result()"
-    >
+  >
     <aql-button
       trigger
       btnType="icon"
@@ -77,9 +77,9 @@
                 align="start"
                 [iconBefore]="copyCleanSuccess() ? 'bi-check-lg' : 'bi-shield-check'"
                 (buttonClick)="copyCleanUrl($event)"
-                >
+              >
                 {{
-                (copyCleanSuccess() ? 'search.copiedCleanUrl' : 'search.copyCleanUrl') | translate
+                  (copyCleanSuccess() ? 'search.copiedCleanUrl' : 'search.copyCleanUrl') | translate
                 }}
               </aql-button>
             }
@@ -90,10 +90,10 @@
               align="start"
               [iconBefore]="copyOriginalSuccess() ? 'bi-check-lg' : 'bi-clipboard'"
               (buttonClick)="copyOriginalUrl($event)"
-              >
+            >
               {{
-              (copyOriginalSuccess() ? 'search.copiedOriginalUrl' : 'search.copyOriginalUrl')
-              | translate
+                (copyOriginalSuccess() ? 'search.copiedOriginalUrl' : 'search.copyOriginalUrl')
+                  | translate
               }}
             </aql-button>
           </div>

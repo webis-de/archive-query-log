@@ -47,8 +47,8 @@ import { SearchResultItemComponent } from '../../components/search-result-item/s
     AqlButtonComponent,
     AppQueryMetadataPanelComponent,
     QueryOverviewPanelComponent,
-    SearchResultItemComponent
-],
+    SearchResultItemComponent,
+  ],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -7,12 +7,7 @@ import { LanguageService } from '../../services/language.service';
 @Component({
   selector: 'app-language-selector',
   standalone: true,
-  imports: [
-    TranslateModule,
-    AqlDropdownComponent,
-    AqlButtonComponent,
-    AqlTooltipDirective
-],
+  imports: [TranslateModule, AqlDropdownComponent, AqlButtonComponent, AqlTooltipDirective],
   templateUrl: './language-selector.component.html',
   styleUrl: './language-selector.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
