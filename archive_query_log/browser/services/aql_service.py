@@ -1107,7 +1107,7 @@ async def get_serp_unfurl(serp_id: str) -> dict | None:
     - Path segments
     - Port (if present)
     """
-    from app.utils.url_unfurler import unfurl
+    from archive_query_log.browser.utils.url_unfurler import unfurl
 
     serp = await get_serp_by_id(serp_id)
     if not serp:
@@ -1238,7 +1238,7 @@ async def get_serp_view_options(serp_id: str) -> dict | None:
             - serp_id: The SERP document ID
             - views: List of available view options with metadata
     """
-    from app.schemas.aql import SERPViewType
+    from archive_query_log.browser.schemas.aql import SERPViewType
 
     serp = await get_serp_by_id(serp_id)
     if not serp:

@@ -42,9 +42,9 @@ async def test_safe_search_connection_error():
     """Test that safe_search raises 503 on Elasticsearch connection error"""
 
     async def boom():
-        from elasticsearch import ConnectionError as ESConnectionError
+        from elasticsearch import ConnectionError as ConnectionError
 
-        raise ESConnectionError(message="conn")
+        raise ConnectionError()
 
     with pytest.raises(HTTPException) as exc:
         await safe_search(boom())
@@ -57,7 +57,7 @@ async def test_safe_search_transport_error():
     """Test that safe_search raises 503 on Elasticsearch transport error"""
 
     async def boom():
-        raise TransportError(message="api error", meta=None, body=None)
+        raise TransportError()
 
     with pytest.raises(HTTPException) as exc:
         await safe_search(boom())
@@ -67,10 +67,10 @@ async def test_safe_search_transport_error():
 
 @pytest.mark.asyncio
 async def test_safe_search_request_error():
-    """Test that safe_search raises 400 on Elasticsearch BadRequestError"""
+    """Test that safe_search raises 400 on Elasticsearch RequestError"""
 
     async def boom():
-        raise RequestError(message="bad rq", meta=None, body=None)
+        raise RequestError()
 
     with pytest.raises(HTTPException) as exc:
         await safe_search(boom())

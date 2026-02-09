@@ -11,7 +11,7 @@ async def test_get_es_client_creates_singleton():
 
     elastic.es_client = None
 
-    with patch("archive_query_log.browser.core.elastic.AsyncElasticsearch") as mock_es:
+    with patch("archive_query_log.config.AsyncElasticsearch") as mock_es:
         instance = mock_es.return_value
         client1 = get_es_client()
         client2 = get_es_client()
@@ -28,7 +28,7 @@ async def test_close_es_client_closes_and_resets():
 
     elastic.es_client = None
 
-    with patch("archive_query_log.browser.core.elastic.AsyncElasticsearch") as mock_es:
+    with patch("archive_query_log.config.AsyncElasticsearch") as mock_es:
         instance = mock_es.return_value
 
         client = get_es_client()

@@ -6,7 +6,9 @@ and provides functions for accessing and shutting down the client.
 """
 
 from elasticsearch import AsyncElasticsearch
-from archive_query_log.browser.core.settings import settings
+from dotenv import load_dotenv, find_dotenv
+
+from archive_query_log.config import Config
 
 # Global Elasticsearch client (singleton)
 es_client: AsyncElasticsearch | None = None
@@ -19,17 +21,13 @@ def get_es_client() -> AsyncElasticsearch:
     """
     global es_client
     if es_client is None:
-        es_client = AsyncElasticsearch(
-            hosts=[settings.es_host],
-            api_key=settings.es_api_key,
-            verify_certs=settings.es_verify,
-            max_retries=3,  # retry failed requests up to 3 times
-            retry_on_timeout=True,  # retry if a request times out
-        )
+        if find_dotenv():
+            load_dotenv(override=True)
+        es_client = Config().es.async_client
     return es_client
 
 
-async def close_es_client():
+async def close_es_client() -> None:
     """
     Closes the Elasticsearch client cleanly on app shutdown.
     """

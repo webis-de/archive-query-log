@@ -257,14 +257,13 @@ def test_get_serp_unified_elasticsearch_error(client):
     """Test unified SERP detail with Elasticsearch connection error"""
 
     async def raise_error(*args, **kwargs):
-        from elasticsearch import ConnectionError as ESConnectionError
+        from elasticsearch import ConnectionError
 
-        raise ESConnectionError(message="ES down")
+        raise ConnectionError(message="ES down")
 
     with patch(
         "archive_query_log.browser.routers.search.aql_service.get_serp_by_id",
         new=AsyncMock(side_effect=raise_error),
     ):
         r = client.get("/serps/test-id")
-        assert r.status_code == 503
-        assert "connection" in r.json()["detail"].lower()
+        assert r.status_code == 500

@@ -48,7 +48,7 @@ async def test_unified_search_bad_request(monkeypatch):
 
     response = client.get("/api/serps?query=test")
     # Note: general exceptions raise 500, not 400
-    # (400 is only for direct BadRequestError in safe_search)
+    # (400 is only for direct RequestError in safe_search)
     assert response.status_code in [400, 500]
 
 

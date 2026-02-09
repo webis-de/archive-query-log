@@ -560,7 +560,7 @@ async def get_serp_unified(
     - Multiple fields: /api/serp/123?include=memento_url,related,unfurl,direct_links,unbranded
     - Related SERPs: /api/serp/123?include=related&related_size=5&same_provider=true
     """
-    from app.schemas.aql import SERPViewType
+    from archive_query_log.browser.schemas.aql import SERPViewType
     from fastapi.responses import RedirectResponse
 
     if related_size <= 0:
