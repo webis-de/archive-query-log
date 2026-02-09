@@ -79,6 +79,75 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+  node-build-browser:
+    name: 🏗️ Build browser Node app
+    runs-on: ubuntu-latest
+    env:
+      working-directory: browser/
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.0"
+      - name: 🧰 Install Node dependencies
+        run: npm clean-install
+      - name: 🏗️ Build browser Node app
+        run: npm run build
+      - name: 📤 Upload app for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/aql-frontend/browser/
+  node-check-browser:
+    name: 🔍 Check browser Node app code
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.0"
+      - name: 🧰 Install Node dependencies
+        run: npm clean-install
+      - name: 🔍 Check Node app code
+        run: npm run lint
+  node-security-browser:
+    name: 🔍 Check browser Node app security
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.0"
+      - name: 🧰 Install Node dependencies
+        run: npm clean-install
+      - name: 🔍 Check Node app security
+        run: npm audit --level high
+  node-test-browser:
+    name: 🧪 Test browser Node app
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.0"
+      - name: 🧰 Install Chrome browser
+        uses: browser-actions/setup-chrome@v2
+      - name: 🧰 Install Node dependencies
+        run: npm clean-install
+      - name: 🧪 Test Node app
+        run: npm run test:ci
+      - name: 📤 Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: app/coverage/coverage-final.json
   docker-build:
     name: 🏗️ Build Docker image
     runs-on: ubuntu-latest
@@ -93,6 +162,21 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          push: false
+  docker-build-browser:
+    name: 🏗️ Build browser Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: 🧰 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: 🏗️ Build browser Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: browser/
           push: false
   python-publish:
     name: 🚀 Publish Python wheels
@@ -151,6 +235,44 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+  docker-publish-browser:
+    name: 🚀 Publish browser Docker image
+    if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
+    permissions:
+      packages: write
+    needs:
+      - python-build
+      - python-code-check
+      - python-typing
+      - python-test
+      - docker-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: 🧰 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: 🔑 Login to GitHub Packages
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: ℹ️ Extract image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ghcr.io/${{ github.repository }}/browser
+      - name: 🚀 Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: browser/
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
