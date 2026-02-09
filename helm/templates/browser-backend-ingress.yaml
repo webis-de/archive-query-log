@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $.Release.Name }}-browser-backend-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "{{ printf "%t" $.Values.browser.backend.forceSslRedirect }}"
+spec:
+  ingressClassName: {{ $.Values.browser.backend.ingressClassName }}
+  rules:
+    - host: {{ $.Values.browser.backend.host }}
+      http:
+        paths:
+          - path: {{ $.Values.browser.backend.path }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $.Release.Name }}-browser-frontend
+                port:
+                  name: http
