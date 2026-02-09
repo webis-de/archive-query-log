@@ -1,5 +1,8 @@
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
+
+# TODO: Replace with dfir-unfurl.
+
 TRACKING_PARAMS = {
     # Google Analytics
     "utm_source",

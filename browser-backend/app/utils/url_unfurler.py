@@ -1,6 +1,8 @@
 from typing import Any
 
 
+# TODO: Replace with dfir-unfurl.
+
 def unfurl(url: str) -> dict[str, Any]:
     from urllib.parse import urlparse, parse_qs, unquote
     import tldextract
