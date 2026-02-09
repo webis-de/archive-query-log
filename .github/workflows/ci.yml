@@ -82,9 +82,6 @@ jobs:
   node-build-browser:
     name: 🏗️ Build browser Node app
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: browser/
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
@@ -92,20 +89,20 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: "24.0"
+          cache-dependency-path: browser/package-lock.json
       - name: 🧰 Install Node dependencies
+        working-directory: browser/
         run: npm clean-install
       - name: 🏗️ Build browser Node app
+        working-directory: browser/
         run: npm run build
       - name: 📤 Upload app for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/aql-frontend/browser/
+          path: browser/dist/aql-frontend/browser/
   node-check-browser:
     name: 🔍 Check browser Node app code
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: browser/
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
@@ -113,16 +110,16 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: "24.0"
+          cache-dependency-path: browser/package-lock.json
       - name: 🧰 Install Node dependencies
+        working-directory: browser/
         run: npm clean-install
       - name: 🔍 Check Node app code
+        working-directory: browser/
         run: npm run lint
   node-security-browser:
     name: 🔍 Check browser Node app security
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: browser/
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
@@ -130,16 +127,16 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: "24.0"
+          cache-dependency-path: browser/package-lock.json
       - name: 🧰 Install Node dependencies
+        working-directory: browser/
         run: npm clean-install
       - name: 🔍 Check Node app security
+        working-directory: browser/
         run: npm audit --level high
   node-test-browser:
     name: 🧪 Test browser Node app
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: browser/
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
@@ -147,17 +144,20 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: "24.0"
+          cache-dependency-path: browser/package-lock.json
       - name: 🧰 Install Chrome browser
         uses: browser-actions/setup-chrome@v2
       - name: 🧰 Install Node dependencies
+        working-directory: browser/
         run: npm clean-install
       - name: 🧪 Test Node app
+        working-directory: browser/
         run: npm run test:ci
       - name: 📤 Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: app/coverage/coverage-final.json
+          files: browser/coverage/
   docker-build:
     name: 🏗️ Build Docker image
     runs-on: ubuntu-latest
