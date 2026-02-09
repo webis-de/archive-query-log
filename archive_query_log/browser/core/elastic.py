@@ -5,7 +5,7 @@ Initializes a singleton AsyncElasticsearch client based on settings from .env,
 and provides functions for accessing and shutting down the client.
 """
 
-from elasticsearch import AsyncElasticsearch
+from elasticsearch._async.client import AsyncElasticsearch
 from dotenv import load_dotenv, find_dotenv
 
 from archive_query_log.config import Config
