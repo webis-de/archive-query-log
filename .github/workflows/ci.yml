@@ -82,8 +82,9 @@ jobs:
   node-build-browser:
     name: 🏗️ Build browser Node app
     runs-on: ubuntu-latest
-    env:
-      working-directory: browser/
+    defaults:
+      run:
+        working-directory: browser/
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
@@ -102,6 +103,9 @@ jobs:
   node-check-browser:
     name: 🔍 Check browser Node app code
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: browser/
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
@@ -116,6 +120,9 @@ jobs:
   node-security-browser:
     name: 🔍 Check browser Node app security
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: browser/
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
@@ -130,6 +137,9 @@ jobs:
   node-test-browser:
     name: 🧪 Test browser Node app
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: browser/
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
