@@ -862,7 +862,7 @@ async def preview_search(
                 for b in fb_buckets
             ]
         except Exception:
-            pass
+            top_providers_out = []
 
     if not top_providers_out:
         try:
@@ -890,7 +890,7 @@ async def preview_search(
                 for b in fb_buckets2
             ]
         except Exception:
-            pass
+            top_providers_out = []
 
     return {
         "query": query,
@@ -1320,29 +1320,26 @@ async def get_provider_by_id(provider_id: str) -> Any | None:
         response = await es.get(index="aql_providers", id=provider_id)
         return response
     except Exception:
-        pass
-
-    # Try searching by name
-    try:
-        body = {
-            "query": {
-                "bool": {
-                    "should": [
-                        {"match": {"name": provider_id}},
-                        {"term": {"name.keyword": provider_id}},
-                    ]
-                }
-            },
-            "size": 1,
-        }
-        response = await es.search(index="aql_providers", body=body)
-        hits = response.get("hits", {}).get("hits", [])
-        if hits:
-            return hits[0]
-    except Exception:
-        pass
-
-    return None
+        # Try searching by name
+        try:
+            body = {
+                "query": {
+                    "bool": {
+                        "should": [
+                            {"match": {"name": provider_id}},
+                            {"term": {"name.keyword": provider_id}},
+                        ]
+                    }
+                },
+                "size": 1,
+            }
+            response = await es.search(index="aql_providers", body=body)
+            hits = response.get("hits", {}).get("hits", [])
+            if hits:
+                return hits[0]
+            return None
+        except Exception:
+            return None
 
 
 # ---------------------------------------------------------
@@ -1591,33 +1588,30 @@ async def _resolve_provider_id(provider_identifier: str) -> str | None:
         response = await es.get(index="aql_providers", id=provider_identifier)
         return provider_identifier
     except Exception:
-        pass
-
-    # Try searching by name/type field
-    try:
-        body = {
-            "query": {
-                "bool": {
-                    "should": [
-                        {"match": {"name": provider_identifier}},
-                        {"term": {"name.keyword": provider_identifier}},
-                        {"match": {"type": provider_identifier}},
-                        {"term": {"type.keyword": provider_identifier}},
-                    ]
-                }
-            },
-            "size": 1,
-        }
-        response = await es.search(index="aql_providers", body=body)
-        hits = response.get("hits", {}).get("hits", [])
-        if hits:
-            provider_id = hits[0]["_id"]
-            if isinstance(provider_id, str):
-                return provider_id
-    except Exception:
-        pass
-
-    return None
+        # Try searching by name/type field
+        try:
+            body = {
+                "query": {
+                    "bool": {
+                        "should": [
+                            {"match": {"name": provider_identifier}},
+                            {"term": {"name.keyword": provider_identifier}},
+                            {"match": {"type": provider_identifier}},
+                            {"term": {"type.keyword": provider_identifier}},
+                        ]
+                    }
+                },
+                "size": 1,
+            }
+            response = await es.search(index="aql_providers", body=body)
+            hits = response.get("hits", {}).get("hits", [])
+            if hits:
+                provider_id = hits[0]["_id"]
+                if isinstance(provider_id, str):
+                    return provider_id
+            return None
+        except Exception:
+            return None
 
 
 # ---------------------------------------------------------
@@ -1776,7 +1770,7 @@ async def get_provider_statistics(
             date_histogram_out.append({"date": key_str, "count": b.get("doc_count", 0)})
     except Exception:
         # If histogram fails, continue with what we have
-        pass
+        date_histogram_out = []
 
     # Extract top archives
     top_archives_buckets = aggs.get("top_archives", {}).get("buckets", [])
@@ -1945,7 +1939,7 @@ async def get_archive_statistics(
             date_histogram_out.append({"date": key_str, "count": b.get("doc_count", 0)})
     except Exception:
         # If histogram fails, continue with what we have
-        pass
+        date_histogram_out = []
 
     # Extract top providers
     top_providers_buckets = aggs.get("top_providers", {}).get("buckets", [])
