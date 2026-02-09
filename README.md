@@ -443,6 +443,39 @@ If you no longer need the chart, you can uninstall it:
 helm uninstall archive-query-log
 ```
 
+## Monitoring
+
+To serve a basic monitoring UI, run:
+
+```shell
+uvicorn archive_query_log.api:app --reload
+```
+
+Then, open <http://localhost:8000> in your web browser.
+An API documentation is available at <http://localhost:8000/docs>.
+
+## Browser
+
+The AQL Browser is a web application to explore the data in the Archive Query Log.
+It is run as two separate components: a [backend API](#browser-api) that serves all relevant data from the Elasticsearch cluster and a [frontend web app](#browser-app) that provides a user interface to explore the data and query the backend API.
+
+### Browser API
+
+To start the backend API of the AQL Browser, run:
+
+```shell
+uvicorn archive_query_log.browser:app --reload
+```
+
+Read more about the API in the [API documentation](docs/browser-backend.md).
+
+### Browser app
+
+To start the frontend web app of the AQL Browser, first install the dependencies:
+
+```shell
+```
+
 ## Citation
 
 If you use the Archive Query Log dataset or the crawling code in your research, please cite the following paper describing the AQL and its use cases:
@@ -482,9 +515,14 @@ pip install -e .[tests]
 After having implemented a new feature, please check the code format, inspect common LINT errors, and run all unit tests with the following commands:
 
 ```shell
-ruff check .                         # Code format and LINT
-mypy .                         # Static typing
-pytest .                       # Unit tests
+ruff check .  # Code format and LINT
+mypy .        # Static typing
+pytest .      # Unit tests
+```
+
+When working on the browser app, run the frontend tests with:
+
+```shell
 ```
 
 ### Add new tests for parsers
