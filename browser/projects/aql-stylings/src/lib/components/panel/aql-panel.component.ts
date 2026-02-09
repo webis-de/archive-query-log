@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'aql-panel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './aql-panel.component.html',
   styleUrl: './aql-panel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

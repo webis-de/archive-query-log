@@ -14,7 +14,7 @@ import {
   OnDestroy,
   viewChild,
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 type DropdownPositionSegment = 'bottom' | 'top' | 'left' | 'right' | 'start' | 'end';
 export type DropdownPosition =
@@ -24,7 +24,7 @@ export type DropdownPosition =
 @Component({
   selector: 'aql-dropdown',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './aql-dropdown.component.html',
   styleUrl: './aql-dropdown.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

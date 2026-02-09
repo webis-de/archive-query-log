@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import * as echarts from 'echarts';
 import { BaseEChartComponent } from '../base/base-echart.component';
 
 @Component({
   selector: 'aql-bar-chart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './aql-bar-chart.component.html',
   styleUrl: './aql-bar-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

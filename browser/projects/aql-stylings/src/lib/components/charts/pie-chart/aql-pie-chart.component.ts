@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import * as echarts from 'echarts';
 import { BaseEChartComponent } from '../base/base-echart.component';
 
@@ -11,7 +11,7 @@ export interface AqlPieChartItem {
 @Component({
   selector: 'aql-pie-chart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './aql-pie-chart.component.html',
   styleUrl: './aql-pie-chart.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -7,7 +7,7 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { SearchResult } from '../../../models/search.model';
@@ -15,7 +15,7 @@ import { SearchResult } from '../../../models/search.model';
 @Component({
   selector: 'app-metadata-website-tab',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './metadata-website-tab.component.html',
   styleUrl: './metadata-website-tab.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

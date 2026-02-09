@@ -1,5 +1,5 @@
 import { Component, inject, input, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { AqlDropdownComponent, AqlButtonComponent, AqlTooltipDirective } from 'aql-stylings';
 import { LanguageService } from '../../services/language.service';
@@ -8,12 +8,11 @@ import { LanguageService } from '../../services/language.service';
   selector: 'app-language-selector',
   standalone: true,
   imports: [
-    CommonModule,
     TranslateModule,
     AqlDropdownComponent,
     AqlButtonComponent,
-    AqlTooltipDirective,
-  ],
+    AqlTooltipDirective
+],
   templateUrl: './language-selector.component.html',
   styleUrl: './language-selector.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

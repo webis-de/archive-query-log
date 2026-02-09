@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { RelatedSerp, SearchResult } from '../../../models/search.model';
 import { AqlPanelComponent } from 'aql-stylings';
@@ -8,7 +8,7 @@ import { LanguageService } from '../../../services/language.service';
 @Component({
   selector: 'app-metadata-related-tab',
   standalone: true,
-  imports: [CommonModule, TranslateModule, AqlPanelComponent],
+  imports: [TranslateModule, AqlPanelComponent],
   templateUrl: './metadata-related-tab.component.html',
   styleUrl: './metadata-related-tab.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

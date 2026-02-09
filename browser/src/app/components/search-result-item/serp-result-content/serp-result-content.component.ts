@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, input, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchResult, Parser } from '../../../models/search.model';
 
 @Component({
   selector: 'app-serp-result-content',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './serp-result-content.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { AqlMenuItemComponent } from '../menu-item/aql-menu-item.component';
 
 @Component({
   selector: 'aql-group-item',
   standalone: true,
-  imports: [CommonModule, AqlMenuItemComponent],
+  imports: [AqlMenuItemComponent],
   templateUrl: './aql-group-item.component.html',
   styleUrl: './aql-group-item.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

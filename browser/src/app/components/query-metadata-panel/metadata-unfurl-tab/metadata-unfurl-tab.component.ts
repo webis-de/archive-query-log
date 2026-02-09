@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { AqlButtonComponent } from 'aql-stylings';
 import { UnfurlData } from '../../../models/search.model';
@@ -12,7 +12,7 @@ import {
 @Component({
   selector: 'app-metadata-unfurl-tab',
   standalone: true,
-  imports: [CommonModule, TranslateModule, AqlButtonComponent],
+  imports: [TranslateModule, AqlButtonComponent],
   templateUrl: './metadata-unfurl-tab.component.html',
   styleUrl: './metadata-unfurl-tab.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

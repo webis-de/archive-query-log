@@ -9,7 +9,7 @@ import {
   DestroyRef,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -40,7 +40,6 @@ import { SearchResultItemComponent } from '../../components/search-result-item/s
 @Component({
   selector: 'app-search-view',
   imports: [
-    CommonModule,
     FormsModule,
     TranslateModule,
     SearchHeaderComponent,
@@ -48,8 +47,8 @@ import { SearchResultItemComponent } from '../../components/search-result-item/s
     AqlButtonComponent,
     AppQueryMetadataPanelComponent,
     QueryOverviewPanelComponent,
-    SearchResultItemComponent,
-  ],
+    SearchResultItemComponent
+],
   templateUrl: './search-view.component.html',
   styleUrl: './search-view.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

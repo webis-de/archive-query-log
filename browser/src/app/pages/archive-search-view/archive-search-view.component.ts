@@ -7,7 +7,7 @@ import {
   effect,
 } from '@angular/core';
 import { takeUntilDestroyed, toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -31,15 +31,14 @@ import { AppQueryMetadataPanelComponent } from '../../components/query-metadata-
   selector: 'app-archive-search-view',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
     TranslateModule,
     SearchHeaderComponent,
     SearchResultItemComponent,
     SearchResultItemComponent,
     AppQueryMetadataPanelComponent,
-    ScrollingModule,
-  ],
+    ScrollingModule
+],
   templateUrl: './archive-search-view.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

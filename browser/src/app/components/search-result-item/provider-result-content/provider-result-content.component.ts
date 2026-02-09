@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, input, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { ProviderDetail } from '../../../services/provider.service';
 
 @Component({
   selector: 'app-provider-result-content',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './provider-result-content.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

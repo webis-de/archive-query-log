@@ -6,7 +6,7 @@ import {
   computed,
   OnInit,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -39,22 +39,12 @@ interface NavItem {
   selector: 'app-sidebar',
   standalone: true,
   imports: [
-    CommonModule,
     TranslateModule,
     AqlButtonComponent,
     AqlTooltipDirective,
     LanguageSelectorComponent,
-    AqlButtonComponent,
-    // #region LEGACY
-    // FormsModule,
-    // AqlMenuItemComponent,
-    // AqlGroupItemComponent,
-    // AqlDropdownComponent,
-    // AqlInputFieldComponent,
-    // AqlModalComponent,
-    // AqlAvatarCardComponent,
-    // #endregion LEGACY
-  ],
+    AqlButtonComponent
+],
   templateUrl: './app-sidebar.component.html',
   styleUrl: './app-sidebar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
