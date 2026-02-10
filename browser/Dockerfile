@@ -8,7 +8,7 @@ RUN npm clean-install
 # Copy remaining source code
 COPY . .
 # Build web app.
-RUN npm run build -- --configuration=production
+RUN npm run build
 
 # Stage 2: Serve pre-built, static files with NGINX.
 FROM nginx:stable-alpine AS runtime
