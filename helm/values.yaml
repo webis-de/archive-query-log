@@ -41,7 +41,8 @@ serpsParseWarcQuery:
   prefetchLimit: 1000
 
 serpsParseWarcSnippets:
-  replicas: 50
+  replicas: 0
+  # replicas: 50
   prefetchLimit: 1000
 
 monitoring:
@@ -91,7 +92,7 @@ browser:
   backend:
     ingressClassName: nginx-external
     host: aql.webis.de
-    path: /api/
+    path: /api
     replicas: 1
     forceSslRedirect: true
     image: ghcr.io/webis-de/archive-query-log
