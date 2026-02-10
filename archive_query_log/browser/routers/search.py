@@ -140,12 +140,12 @@ async def unified_search(
     Unified search endpoint for SERPs with pagination.
 
     Examples:
-    - Basic search: /api/serps?query=climate+change
-    - With page size: /api/serps?query=climate&page_size=20
-    - Advanced search: /api/serps?query=climate&year=2024&provider_id=google&page_size=50
-    - Advanced mode: /api/serps?query="climate change" AND renewable&advanced_mode=true
-    - Wildcard search: /api/serps?query=climat*&advanced_mode=true
-    - Boolean search: /api/serps?query=(renewable OR solar) AND energy&advanced_mode=true
+    - Basic search: /serps?query=climate+change
+    - With page size: /serps?query=climate&page_size=20
+    - Advanced search: /serps?query=climate&year=2024&provider_id=google&page_size=50
+    - Advanced mode: /serps?query="climate change" AND renewable&advanced_mode=true
+    - Wildcard search: /serps?query=climat*&advanced_mode=true
+    - Boolean search: /serps?query=(renewable OR solar) AND energy&advanced_mode=true
     """
     # Validate page_size and page
     valid_sizes = [10, 20, 50, 100, 1000]
@@ -348,9 +348,9 @@ async def compare_serps(
     - Statistical summary
 
     Examples:
-    - Compare 2 SERPs: /api/serps/compare?ids=abc123,def456
-    - Compare 3 SERPs: /api/serps/compare?ids=abc,def,ghi
-    - Compare 5 SERPs: /api/serps/compare?ids=id1,id2,id3,id4,id5
+    - Compare 2 SERPs: /serps/compare?ids=abc123,def456
+    - Compare 3 SERPs: /serps/compare?ids=abc,def,ghi
+    - Compare 5 SERPs: /serps/compare?ids=id1,id2,id3,id4,id5
     """
     # Parse and validate IDs
     serp_ids = [id.strip() for id in ids.split(",") if id.strip()]
@@ -392,8 +392,8 @@ async def get_all_providers(
     Get a list of (all) available search providers.
 
     Example:
-    - Get all providers: /api/providers or /api/providers?size=0
-    - Limit results: /api/providers?size=uint
+    - Get all providers: /providers or /providers?size=0
+    - Limit results: /providers?size=uint
     """
     if size < 0:
         raise HTTPException(
@@ -416,7 +416,7 @@ async def get_provider_by_id(request: Request, provider_id: str):
     Get a single provider document by its ID.
 
     Example:
-    - Get provider: /api/provider/google
+    - Get provider: /provider/google
     """
     result = await safe_search(aql_service.get_provider_by_id(provider_id))
     # Return the raw ES document to stay consistent with other detail endpoints
@@ -447,8 +447,8 @@ async def get_provider_statistics(
     - Date histogram of captures over time
 
     Example:
-    - /api/providers/google/statistics
-    - /api/providers/google/statistics?interval=week&last_n_months=12
+    - /providers/google/statistics
+    - /providers/google/statistics?interval=week&last_n_months=12
     """
     result = await safe_search(
         aql_service.get_provider_statistics(
@@ -484,8 +484,8 @@ async def get_archive_statistics(
     - Date histogram of captures over time
 
     Example:
-    - /api/archives/https://web.archive.org/web/statistics
-    - /api/archives/https://web.archive.org/web/statistics?interval=week&last_n_months=12
+    - /archives/https://web.archive.org/web/statistics
+    - /archives/https://web.archive.org/web/statistics?interval=week&last_n_months=12
     """
     result = await safe_search(
         aql_service.get_archive_statistics(
@@ -503,10 +503,10 @@ async def get_archive_statistics(
 async def get_archive_by_memento_url(request: Request, archive_id: str):
     """
     Get archive metadata by its canonical ID (memento_api_url), matching the
-    `id` field returned by /api/archives.
+    `id` field returned by /archives.
 
     This enables stable deep-links without relying on ES internal document IDs.
-    Example: /api/archives/https://web.archive.org/web
+    Example: /archives/https://web.archive.org/web
     """
     result = await safe_search(aql_service.get_archive_metadata(archive_id))
     return result
@@ -523,7 +523,7 @@ async def get_serp_unified(
     view: Optional[str] = Query(
         None,
         description="View mode: raw (default), unbranded, or snapshot. "
-        "Use /api/serps/{id}/views to see available options.",
+        "Use /serps/{id}/views to see available options.",
     ),
     include: Optional[str] = Query(
         None,
@@ -551,14 +551,14 @@ async def get_serp_unified(
     - snapshot: Redirect to web archive memento
 
     Examples:
-    - Basic: /api/serp/123
-    - Unbranded view: /api/serp/123?view=unbranded
-    - Snapshot redirect: /api/serp/123?view=snapshot
-    - With original URL: /api/serp/123?include=original_url
-    - With tracking removed: /api/serp/123?include=original_url&remove_tracking=true
-    - With direct links: /api/serp/123?include=direct_links
-    - Multiple fields: /api/serp/123?include=memento_url,related,unfurl,direct_links,unbranded
-    - Related SERPs: /api/serp/123?include=related&related_size=5&same_provider=true
+    - Basic: /serp/123
+    - Unbranded view: /serp/123?view=unbranded
+    - Snapshot redirect: /serp/123?view=snapshot
+    - With original URL: /serp/123?include=original_url
+    - With tracking removed: /serp/123?include=original_url&remove_tracking=true
+    - With direct links: /serp/123?include=direct_links
+    - Multiple fields: /serp/123?include=memento_url,related,unfurl,direct_links,unbranded
+    - Related SERPs: /serp/123?include=related&related_size=5&same_provider=true
     """
     from archive_query_log.browser.schemas.aql import SERPViewType
     from fastapi.responses import RedirectResponse
@@ -679,7 +679,7 @@ async def get_serp_views(request: Request, serp_id: str):
     similar to switching between "plain text" and "full HTML" views.
 
     Examples:
-    - /api/serps/123/views
+    - /serps/123/views
     """
     result = await safe_search(aql_service.get_serp_view_options(serp_id))
     return result
@@ -710,8 +710,8 @@ async def list_archives(
     - Number of SERPs in this archive
 
     Example:
-    - /api/archives
-    - /api/archives?limit=50
+    - /archives
+    - /archives?limit=50
     """
     # Support legacy "size" param as alias for limit
     effective_limit = limit

@@ -1256,7 +1256,7 @@ async def get_serp_view_options(serp_id: str) -> dict | None:
             "label": "Full Data",
             "description": "Complete SERP data as archived, including all metadata",
             "available": True,
-            "url": f"/api/serps/{serp_id}",
+            "url": f"/serps/{serp_id}",
         }
     )
 
@@ -1268,7 +1268,7 @@ async def get_serp_view_options(serp_id: str) -> dict | None:
             "label": "Unbranded View",
             "description": "Provider-agnostic normalized view of search results",
             "available": True,
-            "url": f"/api/serps/{serp_id}?view=unbranded",
+            "url": f"/serps/{serp_id}?view=unbranded",
         }
     )
 
