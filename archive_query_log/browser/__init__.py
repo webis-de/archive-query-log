@@ -81,7 +81,7 @@ app.include_router(search.router, tags=["search"])
 # ---------------------------------------------------------
 @app.get("/")
 async def root():
-    return RedirectResponse(url="/docs")
+    return RedirectResponse(url="./docs")
 
 @app.get("/health")
 async def health_check():
