@@ -1,8 +1,8 @@
-"""Tests for Archives endpoints (/api/archives and /api/archive/{id})"""
+"""Tests for Archives endpoints (/archives and /archive/{id})"""
 
 
 def test_get_all_archives(client):
-    response = client.get("/api/archives")
+    response = client.get("/archives")
     assert response.status_code == 200
     data = response.json()
     assert "total" in data
@@ -11,7 +11,7 @@ def test_get_all_archives(client):
 
 
 def test_get_all_archives_with_size_limit(client):
-    response = client.get("/api/archives?size=1")
+    response = client.get("/archives?size=1")
     assert response.status_code == 200
     data = response.json()
     assert len(data["archives"]) == 1

@@ -40,7 +40,7 @@ def test_compare_serps_success(client):
             },
         }
 
-        response = client.get("/api/serps/compare?ids=serp1,serp2")
+        response = client.get("/serps/compare?ids=serp1,serp2")
         assert response.status_code == 200
         data = response.json()
         assert data["comparison_summary"]["serp_count"] == 2
@@ -65,7 +65,7 @@ def test_compare_serps_three_serps(client):
             "similarity_metrics": {},
         }
 
-        response = client.get("/api/serps/compare?ids=serp1,serp2,serp3")
+        response = client.get("/serps/compare?ids=serp1,serp2,serp3")
         assert response.status_code == 200
         data = response.json()
         assert data["comparison_summary"]["serp_count"] == 3
@@ -89,7 +89,7 @@ def test_compare_serps_max_five(client):
             "similarity_metrics": {},
         }
 
-        response = client.get("/api/serps/compare?ids=s1,s2,s3,s4,s5")
+        response = client.get("/serps/compare?ids=s1,s2,s3,s4,s5")
         assert response.status_code == 200
         data = response.json()
         assert data["comparison_summary"]["serp_count"] == 5
@@ -97,28 +97,28 @@ def test_compare_serps_max_five(client):
 
 def test_compare_serps_too_few_ids(client):
     """Test that comparison requires at least 2 IDs"""
-    response = client.get("/api/serps/compare?ids=serp1")
+    response = client.get("/serps/compare?ids=serp1")
     assert response.status_code == 400
     assert "At least 2 SERP IDs" in response.json()["detail"]
 
 
 def test_compare_serps_no_ids(client):
     """Test that IDs parameter is required"""
-    response = client.get("/api/serps/compare")
+    response = client.get("/serps/compare")
     assert response.status_code == 422  # FastAPI validation error
 
 
 def test_compare_serps_too_many_ids(client):
     """Test that comparison rejects more than 5 IDs"""
     ids = ",".join([f"serp{i}" for i in range(1, 7)])  # 6 IDs
-    response = client.get(f"/api/serps/compare?ids={ids}")
+    response = client.get(f"/serps/compare?ids={ids}")
     assert response.status_code == 400
     assert "Maximum 5 SERPs" in response.json()["detail"]
 
 
 def test_compare_serps_duplicate_ids(client):
     """Test that duplicate IDs are rejected"""
-    response = client.get("/api/serps/compare?ids=serp1,serp2,serp1")
+    response = client.get("/serps/compare?ids=serp1,serp2,serp1")
     assert response.status_code == 400
     assert "Duplicate SERP IDs" in response.json()["detail"]
 
@@ -141,7 +141,7 @@ def test_compare_serps_whitespace_handling(client):
             "similarity_metrics": {},
         }
 
-        response = client.get("/api/serps/compare?ids=serp1, serp2 , serp3")
+        response = client.get("/serps/compare?ids=serp1, serp2 , serp3")
         # Should strip whitespace and work
         assert response.status_code == 200 or response.status_code == 400
 
@@ -151,7 +151,7 @@ def test_compare_serps_not_found(client):
     with patch("archive_query_log.browser.services.aql_service.compare_serps") as mock_compare:
         mock_compare.return_value = None  # Indicates SERP not found
 
-        response = client.get("/api/serps/compare?ids=invalid1,invalid2")
+        response = client.get("/serps/compare?ids=invalid1,invalid2")
         assert response.status_code == 404
 
 
@@ -173,13 +173,13 @@ def test_compare_serps_with_url_encoding(client):
             "similarity_metrics": {},
         }
 
-        response = client.get("/api/serps/compare?ids=abc-123%2Cdef-456")
+        response = client.get("/serps/compare?ids=abc-123%2Cdef-456")
         assert response.status_code == 200
 
 
 def test_compare_serps_empty_string_ids(client):
     """Test that empty strings in ID list are filtered out"""
-    response = client.get("/api/serps/compare?ids=serp1,,serp2")
+    response = client.get("/serps/compare?ids=serp1,,serp2")
     # Should work if it filters empty strings, or fail if validation is strict
     # Depending on implementation, adjust assertion
     assert response.status_code in [200, 400]

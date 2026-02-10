@@ -7,7 +7,7 @@ Tests fuzzy search, fuzziness levels, "did you mean?" suggestions, and synonym e
 
 def test_fuzzy_search_basic(client):
     """Test basic fuzzy search with typo."""
-    response = client.get("/api/serps?query=clmate&fuzzy=true")
+    response = client.get("/serps?query=clmate&fuzzy=true")
     assert response.status_code == 200
     data = response.json()
     assert data["fuzzy"] is True
@@ -17,7 +17,7 @@ def test_fuzzy_search_basic(client):
 
 def test_fuzzy_search_disabled(client):
     """Test that fuzzy search is disabled by default."""
-    response = client.get("/api/serps?query=climate")
+    response = client.get("/serps?query=climate")
     assert response.status_code == 200
     data = response.json()
     assert data["fuzzy"] is False
@@ -27,25 +27,25 @@ def test_fuzzy_search_disabled(client):
 def test_fuzziness_levels(client):
     """Test different fuzziness levels."""
     # Test fuzziness=0 (exact match)
-    response = client.get("/api/serps?query=climate&fuzzy=true&fuzziness=0")
+    response = client.get("/serps?query=climate&fuzzy=true&fuzziness=0")
     assert response.status_code == 200
     data = response.json()
     assert data["fuzziness"] == "0"
 
     # Test fuzziness=1
-    response = client.get("/api/serps?query=climate&fuzzy=true&fuzziness=1")
+    response = client.get("/serps?query=climate&fuzzy=true&fuzziness=1")
     assert response.status_code == 200
     data = response.json()
     assert data["fuzziness"] == "1"
 
     # Test fuzziness=2
-    response = client.get("/api/serps?query=climate&fuzzy=true&fuzziness=2")
+    response = client.get("/serps?query=climate&fuzzy=true&fuzziness=2")
     assert response.status_code == 200
     data = response.json()
     assert data["fuzziness"] == "2"
 
     # Test fuzziness=AUTO
-    response = client.get("/api/serps?query=climate&fuzzy=true&fuzziness=AUTO")
+    response = client.get("/serps?query=climate&fuzzy=true&fuzziness=AUTO")
     assert response.status_code == 200
     data = response.json()
     assert data["fuzziness"] == "AUTO"
@@ -53,7 +53,7 @@ def test_fuzziness_levels(client):
 
 def test_invalid_fuzziness(client):
     """Test that invalid fuzziness values are rejected."""
-    response = client.get("/api/serps?query=climate&fuzzy=true&fuzziness=5")
+    response = client.get("/serps?query=climate&fuzzy=true&fuzziness=5")
     assert response.status_code == 400
     assert "fuzziness must be one of" in response.json()["detail"]
 
@@ -61,7 +61,7 @@ def test_invalid_fuzziness(client):
 def test_did_you_mean_suggestions(client):
     """Test 'Did you mean?' suggestions."""
     # Search with misspelling that should trigger suggestions
-    response = client.get("/api/serps?query=clmate&fuzzy=true")
+    response = client.get("/serps?query=clmate&fuzzy=true")
     assert response.status_code == 200
     data = response.json()
     # Suggestions may or may not be present depending on data
@@ -75,7 +75,7 @@ def test_did_you_mean_suggestions(client):
 
 def test_expand_synonyms(client):
     """Test enhanced relevance scoring."""
-    response = client.get("/api/serps?query=climate&expand_synonyms=true")
+    response = client.get("/serps?query=climate&expand_synonyms=true")
     assert response.status_code == 200
     data = response.json()
     assert data["expand_synonyms"] is True
@@ -85,7 +85,7 @@ def test_expand_synonyms(client):
 def test_expand_synonyms_with_fuzzy(client):
     """Test combining synonym expansion with fuzzy matching."""
     response = client.get(
-        "/api/serps?query=climat&expand_synonyms=true&fuzzy=true&fuzziness=1"
+        "/serps?query=climat&expand_synonyms=true&fuzzy=true&fuzziness=1"
     )
     assert response.status_code == 200
     data = response.json()
@@ -96,7 +96,7 @@ def test_expand_synonyms_with_fuzzy(client):
 
 def test_fuzzy_search_with_filters(client):
     """Test fuzzy search with additional filters."""
-    response = client.get("/api/serps?query=clmate&fuzzy=true&year=2023")
+    response = client.get("/serps?query=clmate&fuzzy=true&year=2023")
     assert response.status_code == 200
     data = response.json()
     assert data["fuzzy"] is True
@@ -104,7 +104,7 @@ def test_fuzzy_search_with_filters(client):
 
 def test_fuzzy_search_with_advanced_mode(client):
     """Test that advanced_mode works with fuzzy."""
-    response = client.get("/api/serps?query=climate&fuzzy=true&advanced_mode=true")
+    response = client.get("/serps?query=climate&fuzzy=true&advanced_mode=true")
     assert response.status_code == 200
     data = response.json()
     assert data["advanced_mode"] is True
@@ -120,7 +120,7 @@ def test_fuzzy_search_misspellings(client):
     ]
 
     for misspelled in misspellings:
-        response = client.get(f"/api/serps?query={misspelled}&fuzzy=true")
+        response = client.get(f"/serps?query={misspelled}&fuzzy=true")
         assert response.status_code == 200
         data = response.json()
         assert data["fuzzy"] is True
@@ -129,7 +129,7 @@ def test_fuzzy_search_misspellings(client):
 
 def test_fuzzy_search_pagination(client):
     """Test fuzzy search with pagination."""
-    response = client.get("/api/serps?query=clmate&fuzzy=true&page=1&page_size=20")
+    response = client.get("/serps?query=clmate&fuzzy=true&page=1&page_size=20")
     assert response.status_code == 200
     data = response.json()
     assert data["fuzzy"] is True
@@ -140,7 +140,7 @@ def test_fuzzy_search_pagination(client):
 
 def test_fuzzy_search_response_structure(client):
     """Test that fuzzy search response has correct structure."""
-    response = client.get("/api/serps?query=climate&fuzzy=true")
+    response = client.get("/serps?query=climate&fuzzy=true")
     assert response.status_code == 200
     data = response.json()
 

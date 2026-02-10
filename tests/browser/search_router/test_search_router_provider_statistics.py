@@ -50,8 +50,8 @@ def mock_provider_statistics_client(monkeypatch):
 
 
 def test_provider_statistics_router(client, mock_provider_statistics_client):
-    """Test GET /api/providers/{provider_id}/statistics"""
-    resp = client.get("/api/providers/google/statistics")
+    """Test GET /providers/{provider_id}/statistics"""
+    resp = client.get("/providers/google/statistics")
     assert resp.status_code == 200
     data = resp.json()
 
@@ -69,7 +69,7 @@ def test_provider_statistics_router(client, mock_provider_statistics_client):
 
 def test_provider_statistics_with_params(client, mock_provider_statistics_client):
     """Test provider statistics with custom parameters"""
-    resp = client.get("/api/providers/google/statistics?interval=week&last_n_months=12")
+    resp = client.get("/providers/google/statistics?interval=week&last_n_months=12")
     assert resp.status_code == 200
     data = resp.json()
 
@@ -80,7 +80,7 @@ def test_provider_statistics_with_params(client, mock_provider_statistics_client
 
 def test_provider_statistics_default_interval(client, mock_provider_statistics_client):
     """Test that default interval is 'month'"""
-    resp = client.get("/api/providers/google/statistics")
+    resp = client.get("/providers/google/statistics")
     assert resp.status_code == 200
     data = resp.json()
 
@@ -96,7 +96,7 @@ def test_provider_statistics_not_found(client):
 
     with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_get_client.return_value = MockEmptyClient()
-        resp = client.get("/api/providers/nonexistent/statistics")
+        resp = client.get("/providers/nonexistent/statistics")
 
         # Should return 404 because the service returns None when serp_count is 0
         assert resp.status_code == 404
@@ -107,7 +107,7 @@ def test_provider_statistics_with_different_intervals(
 ):
     """Test provider statistics with different interval values"""
     for interval in ["day", "week", "month"]:
-        resp = client.get(f"/api/providers/google/statistics?interval={interval}")
+        resp = client.get(f"/providers/google/statistics?interval={interval}")
         assert resp.status_code == 200
         data = resp.json()
         assert data["provider_id"] == "google"

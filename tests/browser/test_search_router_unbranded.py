@@ -7,7 +7,7 @@ that normalizes query and result data across providers.
 
 def test_get_serp_unbranded_basic(client):
     """Test basic unbranded view for a SERP."""
-    response = client.get("/api/serps/1?include=unbranded")
+    response = client.get("/serps/1?include=unbranded")
     assert response.status_code == 200
 
     data = response.json()
@@ -22,7 +22,7 @@ def test_get_serp_unbranded_basic(client):
 
 def test_unbranded_query_structure(client):
     """Test that unbranded view has correct query structure."""
-    response = client.get("/api/serps/1?include=unbranded")
+    response = client.get("/serps/1?include=unbranded")
     assert response.status_code == 200
 
     unbranded = response.json()["unbranded"]
@@ -35,7 +35,7 @@ def test_unbranded_query_structure(client):
 
 def test_unbranded_results_structure(client):
     """Test that unbranded results are normalized correctly."""
-    response = client.get("/api/serps/1?include=unbranded")
+    response = client.get("/serps/1?include=unbranded")
     assert response.status_code == 200
 
     unbranded = response.json()["unbranded"]
@@ -55,7 +55,7 @@ def test_unbranded_results_structure(client):
 
 def test_unbranded_metadata(client):
     """Test that metadata is included in unbranded view."""
-    response = client.get("/api/serps/1?include=unbranded")
+    response = client.get("/serps/1?include=unbranded")
     assert response.status_code == 200
 
     unbranded = response.json()["unbranded"]
@@ -68,7 +68,7 @@ def test_unbranded_metadata(client):
 
 def test_unbranded_with_other_includes(client):
     """Test that unbranded can be combined with other include fields."""
-    response = client.get("/api/serps/1?include=unbranded,original_url,direct_links")
+    response = client.get("/serps/1?include=unbranded,original_url,direct_links")
     assert response.status_code == 200
 
     data = response.json()
@@ -80,7 +80,7 @@ def test_unbranded_with_other_includes(client):
 
 def test_unbranded_result_positions_correct(client):
     """Test that result positions are numbered correctly."""
-    response = client.get("/api/serps/1?include=unbranded")
+    response = client.get("/serps/1?include=unbranded")
     assert response.status_code == 200
 
     unbranded = response.json()["unbranded"]

@@ -51,7 +51,7 @@ async def test_raw_view_always_available(client):
     raw_view = next(v for v in result["views"] if v["type"] == "raw")
     assert raw_view["available"] is True
     assert raw_view["url"] is not None
-    assert "/api/serps/1" in raw_view["url"]
+    assert "/serps/1" in raw_view["url"]
 
 
 @pytest.mark.asyncio

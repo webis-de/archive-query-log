@@ -27,7 +27,7 @@ def mock_timeline_client(monkeypatch):
 
 def test_serps_timeline_router(client, mock_timeline_client):
     resp = client.get(
-        "/api/serps/timeline?query=test&provider_id=google&archive_id=https://web.archive.org/web"
+        "/serps/timeline?query=test&provider_id=google&archive_id=https://web.archive.org/web"
     )
     assert resp.status_code == 200
     data = resp.json()
@@ -40,7 +40,7 @@ def test_serps_timeline_router(client, mock_timeline_client):
 
 
 def test_serps_timeline_with_params(client, mock_timeline_client):
-    resp = client.get("/api/serps/timeline?query=test&interval=week&last_n_months=6")
+    resp = client.get("/serps/timeline?query=test&interval=week&last_n_months=6")
     assert resp.status_code == 200
     data = resp.json()
     assert data["query"] == "test"
@@ -49,12 +49,12 @@ def test_serps_timeline_with_params(client, mock_timeline_client):
 
 
 def test_serps_timeline_invalid_interval(client):
-    resp = client.get("/api/serps/timeline?query=test&interval=year")
+    resp = client.get("/serps/timeline?query=test&interval=year")
     assert resp.status_code == 400
     data = resp.json()
     assert "interval" in data["detail"]
 
 
 def test_serps_timeline_invalid_last_n_months(client):
-    resp = client.get("/api/serps/timeline?query=test&last_n_months=-1")
+    resp = client.get("/serps/timeline?query=test&last_n_months=-1")
     assert resp.status_code == 400

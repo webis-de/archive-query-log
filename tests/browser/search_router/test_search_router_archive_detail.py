@@ -6,8 +6,8 @@ from fastapi.testclient import TestClient
 
 @pytest.mark.asyncio
 async def test_list_archives(client: TestClient, mock_elasticsearch):
-    """Test GET /api/archives"""
-    response = client.get("/api/archives")
+    """Test GET /archives"""
+    response = client.get("/archives")
 
     # Should succeed
     assert response.status_code == 200
@@ -20,8 +20,8 @@ async def test_list_archives(client: TestClient, mock_elasticsearch):
 
 @pytest.mark.asyncio
 async def test_list_archives_with_limit(client: TestClient, mock_elasticsearch):
-    """Test GET /api/archives with limit parameter"""
-    response = client.get("/api/archives?limit=50")
+    """Test GET /archives with limit parameter"""
+    response = client.get("/archives?limit=50")
 
     assert response.status_code == 200
     data = response.json()
@@ -32,8 +32,8 @@ async def test_list_archives_with_limit(client: TestClient, mock_elasticsearch):
 
 @pytest.mark.asyncio
 async def test_list_archives_invalid_limit(client: TestClient, mock_elasticsearch):
-    """Test GET /api/archives with invalid limit"""
-    response = client.get("/api/archives?limit=0")
+    """Test GET /archives with invalid limit"""
+    response = client.get("/archives?limit=0")
 
     # Should fail validation
     assert response.status_code == 422
@@ -44,7 +44,7 @@ async def test_list_archives_returns_archive_structure(
     client: TestClient, mock_elasticsearch
 ):
     """Test that list_archives returns proper archive metadata"""
-    response = client.get("/api/archives")
+    response = client.get("/archives")
 
     assert response.status_code == 200
     data = response.json()
@@ -71,7 +71,7 @@ async def test_list_archives_returns_archive_structure(
 @pytest.mark.asyncio
 async def test_internet_archive_details(client: TestClient, mock_elasticsearch):
     """Test that Internet Archive is correctly identified in list"""
-    response = client.get("/api/archives")
+    response = client.get("/archives")
 
     assert response.status_code == 200
     data = response.json()
@@ -91,7 +91,7 @@ async def test_internet_archive_details(client: TestClient, mock_elasticsearch):
 @pytest.mark.asyncio
 async def test_archive_list_sorted_by_count(client: TestClient, mock_elasticsearch):
     """Test that archives are sorted by SERP count (descending)"""
-    response = client.get("/api/archives")
+    response = client.get("/archives")
 
     assert response.status_code == 200
     data = response.json()

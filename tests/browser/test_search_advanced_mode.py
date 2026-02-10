@@ -1,7 +1,7 @@
 """
 Integration tests for Advanced Search Mode in search router
 
-Tests the /api/serps endpoint with advanced_mode parameter.
+Tests the /serps endpoint with advanced_mode parameter.
 """
 
 
@@ -11,7 +11,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_boolean_and(self, client):
         """Test AND operator in advanced mode"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={"query": "climate AND change", "advanced_mode": "true"},
         )
         assert response.status_code == 200
@@ -22,7 +22,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_boolean_or(self, client):
         """Test OR operator in advanced mode"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={"query": "solar OR wind", "advanced_mode": "true"},
         )
         assert response.status_code == 200
@@ -33,7 +33,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_phrase_search(self, client):
         """Test phrase search with quotes"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={"query": '"climate change"', "advanced_mode": "true"},
         )
         assert response.status_code == 200
@@ -44,7 +44,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_wildcard_asterisk(self, client):
         """Test wildcard search with *"""
         response = client.get(
-            "/api/serps", params={"query": "climat*", "advanced_mode": "true"}
+            "/serps", params={"query": "climat*", "advanced_mode": "true"}
         )
         assert response.status_code == 200
         data = response.json()
@@ -53,7 +53,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_wildcard_question(self, client):
         """Test wildcard search with ?"""
         response = client.get(
-            "/api/serps", params={"query": "cl?mate", "advanced_mode": "true"}
+            "/serps", params={"query": "cl?mate", "advanced_mode": "true"}
         )
         assert response.status_code == 200
         data = response.json()
@@ -62,7 +62,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_complex_query(self, client):
         """Test complex boolean query with parentheses"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={
                 "query": "(renewable OR solar) AND energy",
                 "advanced_mode": "true",
@@ -75,7 +75,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_with_filters(self, client):
         """Test advanced mode combined with provider and year filters"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={
                 "query": "climate AND change",
                 "advanced_mode": "true",
@@ -89,7 +89,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_false(self, client):
         """Test that advanced_mode=false uses simple search"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={"query": "climate AND change", "advanced_mode": "false"},
         )
         assert response.status_code == 200
@@ -99,7 +99,7 @@ class TestAdvancedSearchMode:
 
     def test_advanced_mode_default_false(self, client):
         """Test that advanced_mode defaults to false"""
-        response = client.get("/api/serps", params={"query": "climate"})
+        response = client.get("/serps", params={"query": "climate"})
         assert response.status_code == 200
         data = response.json()
         assert data["advanced_mode"] is False
@@ -107,7 +107,7 @@ class TestAdvancedSearchMode:
     def test_advanced_mode_pagination(self, client):
         """Test advanced mode with pagination"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={
                 "query": "climate*",
                 "advanced_mode": "true",
@@ -128,7 +128,7 @@ class TestAdvancedSearchModeValidation:
     def test_empty_query_advanced_mode(self, client):
         """Test empty query in advanced mode - should handle gracefully"""
         response = client.get(
-            "/api/serps", params={"query": "", "advanced_mode": "true"}
+            "/serps", params={"query": "", "advanced_mode": "true"}
         )
         # Depending on implementation, might be 400 or return empty results
         assert response.status_code in [200, 400, 422]
@@ -136,7 +136,7 @@ class TestAdvancedSearchModeValidation:
     def test_only_operators_advanced_mode(self, client):
         """Test query with only operators"""
         response = client.get(
-            "/api/serps", params={"query": "AND OR", "advanced_mode": "true"}
+            "/serps", params={"query": "AND OR", "advanced_mode": "true"}
         )
         # Should handle gracefully, not crash
         assert response.status_code == 200
@@ -148,10 +148,10 @@ class TestAdvancedSearchComparison:
     def test_simple_vs_advanced_single_term(self, client):
         """Single term should work similarly in both modes"""
         simple_response = client.get(
-            "/api/serps", params={"query": "climate", "advanced_mode": "false"}
+            "/serps", params={"query": "climate", "advanced_mode": "false"}
         )
         advanced_response = client.get(
-            "/api/serps", params={"query": "climate", "advanced_mode": "true"}
+            "/serps", params={"query": "climate", "advanced_mode": "true"}
         )
 
         assert simple_response.status_code == 200
@@ -167,13 +167,13 @@ class TestAdvancedSearchComparison:
         """
         # Simple mode: "AND" is a literal word to search for
         simple_response = client.get(
-            "/api/serps",
+            "/serps",
             params={"query": "climate AND change", "advanced_mode": "false"},
         )
 
         # Advanced mode: "AND" is a boolean operator
         advanced_response = client.get(
-            "/api/serps",
+            "/serps",
             params={"query": "climate AND change", "advanced_mode": "true"},
         )
 
@@ -188,7 +188,7 @@ class TestAdvancedSearchWithProviderFilter:
     def test_advanced_boolean_with_provider(self, client):
         """Test boolean query with provider filter"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={
                 "query": "climate AND energy",
                 "advanced_mode": "true",
@@ -202,7 +202,7 @@ class TestAdvancedSearchWithProviderFilter:
     def test_advanced_phrase_with_year(self, client):
         """Test phrase search with year filter"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={
                 "query": '"renewable energy"',
                 "advanced_mode": "true",
@@ -216,7 +216,7 @@ class TestAdvancedSearchWithProviderFilter:
     def test_advanced_wildcard_with_status_code(self, client):
         """Test wildcard search with status code filter"""
         response = client.get(
-            "/api/serps",
+            "/serps",
             params={
                 "query": "climat*",
                 "advanced_mode": "true",

@@ -8,7 +8,7 @@ from archive_query_log.browser.routers.search import router
 @pytest.fixture
 def app():
     app = FastAPI()
-    app.include_router(router, prefix="/api")
+    app.include_router(router, prefix="")
     return app
 
 
@@ -24,7 +24,7 @@ def test_provider_by_id_success(client):
         mock_es.get.return_value = fake_doc
         mock_get_client.return_value = mock_es
 
-        resp = client.get("/api/providers/google")
+        resp = client.get("/providers/google")
         assert resp.status_code == 200
         data = resp.json()
         assert data["provider_id"] == "google"
@@ -39,7 +39,7 @@ def test_providers_by_id_success(client):
         mock_es.get.return_value = fake_doc
         mock_get_client.return_value = mock_es
 
-        resp = client.get("/api/providers/google")
+        resp = client.get("/providers/google")
         assert resp.status_code == 200
         data = resp.json()
         assert data["provider_id"] == "google"
@@ -54,7 +54,7 @@ def test_provider_by_id_not_found(client):
         mock_es.search.return_value = {"hits": {"hits": []}}
         mock_get_client.return_value = mock_es
 
-        resp = client.get("/api/providers/unknown")
+        resp = client.get("/providers/unknown")
         assert resp.status_code == 404
         data = resp.json()
         assert data["detail"] == "No results found"

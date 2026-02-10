@@ -26,7 +26,7 @@ async def test_unified_search_elasticsearch_connection_error(monkeypatch):
 
     client = TestClient(app)
 
-    response = client.get("/api/serps?query=test")
+    response = client.get("/serps?query=test")
     assert response.status_code == 503
     assert "connection failed" in response.json()["detail"].lower()
 
@@ -46,7 +46,7 @@ async def test_unified_search_bad_request(monkeypatch):
 
     client = TestClient(app)
 
-    response = client.get("/api/serps?query=test")
+    response = client.get("/serps?query=test")
     # Note: general exceptions raise 500, not 400
     # (400 is only for direct RequestError in safe_search)
     assert response.status_code in [400, 500]
@@ -71,11 +71,11 @@ def test_preview_with_invalid_interval(client, monkeypatch):
     monkeypatch.setattr("archive_query_log.browser.services.aql_service.get_es_client", lambda: mock_client)
 
     # Valid interval
-    resp = client.get("/api/serps/preview?query=test&interval=day")
+    resp = client.get("/serps/preview?query=test&interval=day")
     assert resp.status_code == 200
 
     # Valid interval
-    resp = client.get("/api/serps/preview?query=test&interval=week")
+    resp = client.get("/serps/preview?query=test&interval=week")
     assert resp.status_code == 200
 
 
@@ -93,7 +93,7 @@ def test_suggestions_endpoint_works(client, monkeypatch):
 
     monkeypatch.setattr("archive_query_log.browser.services.aql_service.search_suggestions", mock_suggestions)
 
-    resp = client.get("/api/suggestions?prefix=test&size=5")
+    resp = client.get("/suggestions?prefix=test&size=5")
     assert resp.status_code == 200
     data = resp.json()
     assert "suggestions" in data

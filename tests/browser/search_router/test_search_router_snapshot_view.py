@@ -11,7 +11,7 @@ def test_get_serp_snapshot_view_no_memento_url(client):
         "archive_query_log.browser.routers.search.aql_service.get_serp_memento_url",
         new=AsyncMock(return_value=mock_memento_data),
     ):
-        response = client.get("/api/serps/test-id?view=snapshot")
+        response = client.get("/serps/test-id?view=snapshot")
         assert response.status_code == 404
         data = response.json()
         assert "Memento URL not available" in data["detail"]
@@ -29,7 +29,7 @@ def test_get_serp_snapshot_view_with_memento_url(client):
         new=AsyncMock(return_value=mock_memento_data),
     ):
         response = client.get(
-            "/api/serps/test-id?view=snapshot", follow_redirects=False
+            "/serps/test-id?view=snapshot", follow_redirects=False
         )
         assert response.status_code == 307  # Redirect
         assert "web.archive.org" in response.headers["location"]

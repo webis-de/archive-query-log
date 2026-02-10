@@ -14,7 +14,7 @@ def client():
 # ---------------------------------------------------------
 def test_suggestions_endpoint_basic(client):
     """Test basic suggestions endpoint with required parameters."""
-    response = client.get("/api/suggestions?prefix=test")
+    response = client.get("/suggestions?prefix=test")
 
     assert response.status_code == 200
     data = response.json()
@@ -27,7 +27,7 @@ def test_suggestions_endpoint_basic(client):
 
 def test_suggestions_endpoint_with_size(client):
     """Test suggestions endpoint with size parameter."""
-    response = client.get("/api/suggestions?prefix=python&size=5")
+    response = client.get("/suggestions?prefix=python&size=5")
 
     assert response.status_code == 200
     data = response.json()
@@ -37,7 +37,7 @@ def test_suggestions_endpoint_with_size(client):
 
 def test_suggestions_endpoint_with_all_parameters(client):
     """Test suggestions endpoint with all parameters."""
-    response = client.get("/api/suggestions?prefix=the&size=10&last_n_months=12")
+    response = client.get("/suggestions?prefix=the&size=10&last_n_months=12")
 
     assert response.status_code == 200
     data = response.json()
@@ -51,7 +51,7 @@ def test_suggestions_endpoint_with_all_parameters(client):
 # ---------------------------------------------------------
 def test_suggestions_missing_prefix(client):
     """Test that missing prefix parameter returns error."""
-    response = client.get("/api/suggestions")
+    response = client.get("/suggestions")
 
     # Should return 422 (validation error)
     assert response.status_code == 422
@@ -59,14 +59,14 @@ def test_suggestions_missing_prefix(client):
 
 def test_suggestions_size_too_small(client):
     """Test that size < 1 returns validation error."""
-    response = client.get("/api/suggestions?prefix=test&size=0")
+    response = client.get("/suggestions?prefix=test&size=0")
 
     assert response.status_code == 422
 
 
 def test_suggestions_size_too_large(client):
     """Test that size > 50 returns validation error."""
-    response = client.get("/api/suggestions?prefix=test&size=51")
+    response = client.get("/suggestions?prefix=test&size=51")
 
     assert response.status_code == 422
 
@@ -74,11 +74,11 @@ def test_suggestions_size_too_large(client):
 def test_suggestions_valid_size_boundaries(client):
     """Test valid size boundaries (1 and 50)."""
     # Size = 1
-    response = client.get("/api/suggestions?prefix=test&size=1")
+    response = client.get("/suggestions?prefix=test&size=1")
     assert response.status_code == 200
 
     # Size = 50
-    response = client.get("/api/suggestions?prefix=test&size=50")
+    response = client.get("/suggestions?prefix=test&size=50")
     assert response.status_code == 200
 
 
@@ -87,7 +87,7 @@ def test_suggestions_valid_size_boundaries(client):
 # ---------------------------------------------------------
 def test_suggestions_response_structure(client):
     """Test that response has correct structure."""
-    response = client.get("/api/suggestions?prefix=test&size=3")
+    response = client.get("/suggestions?prefix=test&size=3")
 
     assert response.status_code == 200
     data = response.json()
@@ -109,7 +109,7 @@ def test_suggestions_response_structure(client):
 
 def test_suggestions_response_content_type(client):
     """Test that response has correct content type."""
-    response = client.get("/api/suggestions?prefix=test")
+    response = client.get("/suggestions?prefix=test")
 
     assert response.headers["content-type"] == "application/json"
 
@@ -120,7 +120,7 @@ def test_suggestions_response_content_type(client):
 def test_suggestions_with_special_characters(client):
     """Test prefix with special characters."""
     # Use URL-encoded %2B for + character
-    response = client.get("/api/suggestions?prefix=c%2B%2B")
+    response = client.get("/suggestions?prefix=c%2B%2B")
 
     assert response.status_code == 200
     assert response.json()["prefix"] == "c++"
@@ -128,7 +128,7 @@ def test_suggestions_with_special_characters(client):
 
 def test_suggestions_with_spaces(client):
     """Test prefix with spaces."""
-    response = client.get("/api/suggestions?prefix=hello+world")
+    response = client.get("/suggestions?prefix=hello+world")
 
     assert response.status_code == 200
     assert response.json()["prefix"] == "hello world"
@@ -136,7 +136,7 @@ def test_suggestions_with_spaces(client):
 
 def test_suggestions_empty_prefix(client):
     """Test with empty prefix string."""
-    response = client.get("/api/suggestions?prefix=")
+    response = client.get("/suggestions?prefix=")
 
     # Empty prefix might be valid, check structure
     if response.status_code == 200:
@@ -150,7 +150,7 @@ def test_suggestions_empty_prefix(client):
 # ---------------------------------------------------------
 def test_suggestions_default_size(client):
     """Test that default size is 10 when not specified."""
-    response = client.get("/api/suggestions?prefix=test")
+    response = client.get("/suggestions?prefix=test")
 
     assert response.status_code == 200
     # Should return at most 10 (or fewer if not enough results)
@@ -159,7 +159,7 @@ def test_suggestions_default_size(client):
 
 def test_suggestions_default_last_n_months(client):
     """Test that default last_n_months=36 is applied."""
-    response = client.get("/api/suggestions?prefix=test")
+    response = client.get("/suggestions?prefix=test")
 
     # Just check that it works with default
     assert response.status_code == 200

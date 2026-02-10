@@ -44,7 +44,7 @@ def mock_preview_client(monkeypatch):
 
 
 def test_serps_preview_router(client, mock_preview_client):
-    resp = client.get("/api/serps/preview?query=test")
+    resp = client.get("/serps/preview?query=test")
     assert resp.status_code == 200
     data = resp.json()
     assert "total_hits" in data
@@ -57,7 +57,7 @@ def test_serps_preview_router(client, mock_preview_client):
 def test_serps_preview_with_params(client, mock_preview_client):
     """Test preview with custom top_n_queries and interval parameters"""
     resp = client.get(
-        "/api/serps/preview?query=test&top_n_queries=15&"
+        "/serps/preview?query=test&top_n_queries=15&"
         "interval=week&top_providers=10&top_archives=8"
     )
     assert resp.status_code == 200
@@ -70,7 +70,7 @@ def test_serps_preview_with_params(client, mock_preview_client):
 
 def test_serps_preview_with_last_n_months(client, mock_preview_client):
     """Test preview with last_n_months filter"""
-    resp = client.get("/api/serps/preview?query=test&last_n_months=12")
+    resp = client.get("/serps/preview?query=test&last_n_months=12")
     assert resp.status_code == 200
     data = resp.json()
     assert data["query"] == "test"

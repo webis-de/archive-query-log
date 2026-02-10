@@ -1,6 +1,6 @@
 """Tests for the canonical archive detail endpoint using memento_api_url.
 
-Covers the new route: /api/archives/{archive_id:path}
+Covers the new route: /archives/{archive_id:path}
 """
 
 from urllib.parse import quote
@@ -13,7 +13,7 @@ async def test_archive_detail_canonical_success(client: TestClient):
     archive_id = "https://web.archive.org/web"
     encoded = quote(archive_id, safe="")
 
-    resp = client.get(f"/api/archives/{encoded}")
+    resp = client.get(f"/archives/{encoded}")
     assert resp.status_code == 200
     data = resp.json()
 
@@ -41,6 +41,6 @@ async def test_archive_detail_canonical_not_found(client: TestClient):
     archive_id = "https://unknown.example.org"
     encoded = quote(archive_id, safe="")
 
-    resp = client.get(f"/api/archives/{encoded}")
+    resp = client.get(f"/archives/{encoded}")
     assert resp.status_code == 404
     assert resp.json()["detail"] == "No results found"

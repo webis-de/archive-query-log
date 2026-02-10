@@ -38,9 +38,9 @@ def mock_archive_statistics_client(monkeypatch):
 
 
 def test_archive_statistics_router(client, mock_archive_statistics_client):
-    """Test GET /api/archives/{archive_id}/statistics"""
+    """Test GET /archives/{archive_id}/statistics"""
     archive_id = "https://web.archive.org/web"
-    resp = client.get(f"/api/archives/{archive_id}/statistics")
+    resp = client.get(f"/archives/{archive_id}/statistics")
 
     assert resp.status_code == 200
     data = resp.json()
@@ -61,7 +61,7 @@ def test_archive_statistics_with_params(client, mock_archive_statistics_client):
     """Test archive statistics with custom parameters"""
     archive_id = "https://web.archive.org/web"
     resp = client.get(
-        f"/api/archives/{archive_id}/statistics?interval=week&last_n_months=12"
+        f"/archives/{archive_id}/statistics?interval=week&last_n_months=12"
     )
     assert resp.status_code == 200
     data = resp.json()
@@ -74,7 +74,7 @@ def test_archive_statistics_with_params(client, mock_archive_statistics_client):
 def test_archive_statistics_default_interval(client, mock_archive_statistics_client):
     """Test that default interval is 'month'"""
     archive_id = "https://web.archive.org/web"
-    resp = client.get(f"/api/archives/{archive_id}/statistics")
+    resp = client.get(f"/archives/{archive_id}/statistics")
     assert resp.status_code == 200
     data = resp.json()
 
@@ -90,7 +90,7 @@ def test_archive_statistics_not_found(client):
 
     with patch("archive_query_log.browser.services.aql_service.get_es_client") as mock_get_client:
         mock_get_client.return_value = MockEmptyClient()
-        resp = client.get("/api/archives/https://nonexistent.archive/web/statistics")
+        resp = client.get("/archives/https://nonexistent.archive/web/statistics")
 
         # Should return 404 because the service returns None when serp_count is 0
         assert resp.status_code == 404
@@ -102,7 +102,7 @@ def test_archive_statistics_with_different_intervals(
     """Test archive statistics with different interval values"""
     archive_id = "https://web.archive.org/web"
     for interval in ["day", "week", "month"]:
-        resp = client.get(f"/api/archives/{archive_id}/statistics?interval={interval}")
+        resp = client.get(f"/archives/{archive_id}/statistics?interval={interval}")
         assert resp.status_code == 200
         data = resp.json()
         assert data["archive_id"] == archive_id
@@ -111,7 +111,7 @@ def test_archive_statistics_with_different_intervals(
 def test_archive_statistics_structure(client, mock_archive_statistics_client):
     """Test that archive statistics response has correct structure"""
     archive_id = "https://web.archive.org/web"
-    resp = client.get(f"/api/archives/{archive_id}/statistics")
+    resp = client.get(f"/archives/{archive_id}/statistics")
 
     assert resp.status_code == 200
     data = resp.json()
