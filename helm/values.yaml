@@ -82,16 +82,16 @@ warcCache:
 
 browser:
   frontend:
-    ingressClassName: nginx
+    ingressClassName: nginx-external
     host: aql.webis.de
     path: /
     replicas: 1
     forceSslRedirect: true
-    image: ghcr.io/webis-de/archive-query-log/browser-frontend
+    image: ghcr.io/webis-de/archive-query-log/browser
   backend:
-    ingressClassName: nginx
+    ingressClassName: nginx-external
     host: aql.webis.de
     path: /api/
     replicas: 1
     forceSslRedirect: true
-    image: ghcr.io/webis-de/archive-query-log/browser-backend
+    image: ghcr.io/webis-de/archive-query-log
