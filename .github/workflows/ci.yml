@@ -256,11 +256,11 @@ jobs:
     permissions:
       packages: write
     needs:
-      - python-build
-      - python-code-check
-      - python-typing
-      - python-test
-      - docker-build
+      - node-build-browser
+      - node-check-browser
+      - node-security-browser
+      - node-test-browser
+      - docker-build-browser
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
@@ -299,6 +299,12 @@ jobs:
       - python-publish
       - docker-build
       - docker-publish
+      - node-build-browser
+      - node-check-browser
+      - node-security-browser
+      - node-test-browser
+      - docker-build-browser
+      - docker-publish-browser
     permissions:
       contents: write
     runs-on: ubuntu-latest
