@@ -1,5 +1,6 @@
 export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:8000',
+  production: true,
+  // Assume that both the API and web app are routed on the same hostname.
+  apiUrl: '/api',
   apiTimeout: 60000,
 };
