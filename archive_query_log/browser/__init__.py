@@ -73,7 +73,7 @@ async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
 # ---------------------------------------------------------
 # Include routers
 # ---------------------------------------------------------
-app.include_router(search.router, prefix="/api", tags=["search"])
+app.include_router(search.router, tags=["search"])
 
 
 # ---------------------------------------------------------
