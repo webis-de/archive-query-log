@@ -63,7 +63,7 @@ export class ComparePageComponent {
 
           const idsParam = ids.join(',');
           return this.http
-            .get<CompareApiResponse>(`${environment.apiUrl}/api/serps/compare`, {
+            .get<CompareApiResponse>(`${environment.apiUrl}/serps/compare`, {
               params: { ids: idsParam },
             })
             .pipe(

@@ -44,7 +44,7 @@ describe('ProviderService', () => {
       done();
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/api/providers`);
+    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
     expect(req.request.method).toBe('GET');
     req.flush(mockApiResponse);
   });
@@ -57,7 +57,7 @@ describe('ProviderService', () => {
       done();
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/api/providers`);
+    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
     req.flush(mockApiResponse);
   });
 
@@ -72,7 +72,7 @@ describe('ProviderService', () => {
     });
 
     // Only one request should be made
-    const req = httpMock.expectOne(`${environment.apiUrl}/api/providers`);
+    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
     req.flush(mockApiResponse);
   });
 
@@ -82,7 +82,7 @@ describe('ProviderService', () => {
       done();
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/api/providers`);
+    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
     req.error(new ErrorEvent('Network error'));
   });
 
@@ -97,11 +97,11 @@ describe('ProviderService', () => {
         done();
       });
 
-      const req2 = httpMock.expectOne(`${environment.apiUrl}/api/providers`);
+      const req2 = httpMock.expectOne(`${environment.apiUrl}/providers`);
       req2.flush(mockApiResponse);
     });
 
-    const req1 = httpMock.expectOne(`${environment.apiUrl}/api/providers`);
+    const req1 = httpMock.expectOne(`${environment.apiUrl}/providers`);
     req1.flush(mockApiResponse);
   });
 
@@ -118,7 +118,7 @@ describe('ProviderService', () => {
       done();
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/api/providers`);
+    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
     req.flush(mockApiResponse);
   });
 
@@ -147,7 +147,7 @@ describe('ProviderService', () => {
         done();
       });
 
-      const req = httpMock.expectOne(`${environment.apiUrl}/api/providers/google`);
+      const req = httpMock.expectOne(`${environment.apiUrl}/providers/google`);
       expect(req.request.method).toBe('GET');
       req.flush(mockProviderDetailResponse);
     });
@@ -158,7 +158,7 @@ describe('ProviderService', () => {
         done();
       });
 
-      const req = httpMock.expectOne(`${environment.apiUrl}/api/providers/unknown`);
+      const req = httpMock.expectOne(`${environment.apiUrl}/providers/unknown`);
       req.error(new ErrorEvent('Network error'));
     });
 
@@ -183,7 +183,7 @@ describe('ProviderService', () => {
         done();
       });
 
-      const req = httpMock.expectOne(`${environment.apiUrl}/api/providers/minimal`);
+      const req = httpMock.expectOne(`${environment.apiUrl}/providers/minimal`);
       req.flush(minimalResponse);
     });
   });

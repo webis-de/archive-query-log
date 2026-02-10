@@ -7,16 +7,16 @@ export const API_CONFIG = {
 
   endpoints: {
     // Search Engine Results Page
-    serps: '/api/serps',
-    serp: (serpId: string) => `/api/serps/${serpId}`,
-    serpsPreview: '/api/serps/preview',
+    serps: '/serps',
+    serp: (serpId: string) => `/serps/${serpId}`,
+    serpsPreview: '/serps/preview',
     // Providers
-    providers: '/api/providers',
-    provider: (providerId: string) => `/api/providers/${providerId}`,
-    providerStatistics: (providerId: string) => `/api/providers/${providerId}/statistics`,
+    providers: '/providers',
+    provider: (providerId: string) => `/providers/${providerId}`,
+    providerStatistics: (providerId: string) => `/providers/${providerId}/statistics`,
     // Archives
-    archives: '/api/archives',
-    archive: (archiveId: string) => `/api/archives/${archiveId}`,
-    archiveStatistics: (archiveId: string) => `/api/archives/${archiveId}/statistics`,
+    archives: '/archives',
+    archive: (archiveId: string) => `/archives/${archiveId}`,
+    archiveStatistics: (archiveId: string) => `/archives/${archiveId}/statistics`,
   },
 } as const;

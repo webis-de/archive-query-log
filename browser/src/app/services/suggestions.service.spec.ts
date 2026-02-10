@@ -183,7 +183,7 @@ describe('SuggestionsService', () => {
 
       // We should only call the search API once for the input
       expect(mockApiService.get).toHaveBeenCalledTimes(1);
-      expect(mockApiService.get).toHaveBeenCalledWith('/api/serps', {
+      expect(mockApiService.get).toHaveBeenCalledWith('/serps', {
         query: 'test3',
         size: 5,
       });
@@ -351,7 +351,7 @@ describe('SuggestionsService', () => {
       tick(service.DEBOUNCE_TIME_MS);
       flushMicrotasks();
 
-      expect(mockApiService.get).toHaveBeenCalledWith('/api/serps', {
+      expect(mockApiService.get).toHaveBeenCalledWith('/serps', {
         query: 'search term',
         size: 5,
       });
