@@ -5,7 +5,7 @@ This is the entry point for the FastAPI application.
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from contextlib import asynccontextmanager
 
 from slowapi import Limiter
@@ -81,15 +81,9 @@ app.include_router(search.router, tags=["search"])
 # ---------------------------------------------------------
 @app.get("/")
 async def root():
-    """Root endpoint - health check"""
-    return {
-        "message": "FastAPI is running!",
-        "version": "0.1.0",
-        "status": "healthy",
-    }
-
+    return RedirectResponse(url="/docs")
 
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
-    return {"status": "ok"}
+    return "healthy"
