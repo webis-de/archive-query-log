@@ -9,6 +9,7 @@ Provides FastAPI routes for:
 from fastapi import APIRouter, Query, HTTPException, Request
 from typing import Optional
 from enum import Enum
+from traceback import print_exc
 
 # Elasticsearch Exceptions
 from elasticsearch import (
@@ -65,6 +66,7 @@ async def safe_search(coro, allow_empty=False):
         raise HTTPException(status_code=503, detail="Elasticsearch transport error")
 
     except Exception:
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail="Internal server error")
 
     if not results and not allow_empty:
@@ -79,15 +81,19 @@ async def safe_search_paginated(coro):
         results = await coro
 
     except RequestError:
+        print_exc()
         raise HTTPException(status_code=400, detail="Invalid request to Elasticsearch")
 
     except ConnectionError:
+        print_exc()
         raise HTTPException(status_code=503, detail="Elasticsearch connection failed")
 
     except TransportError:
+        print_exc()
         raise HTTPException(status_code=503, detail="Elasticsearch transport error")
 
     except Exception:
+        print_exc()
         raise HTTPException(status_code=500, detail="Internal server error")
 
     return results
