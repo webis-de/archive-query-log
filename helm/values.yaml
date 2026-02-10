@@ -85,14 +85,14 @@ browser:
   frontend:
     ingressClassName: nginx-external
     host: aql.webis.de
-    path: /
+    secondaryHost: aql.web.webis.de
     replicas: 1
     forceSslRedirect: true
     image: ghcr.io/webis-de/archive-query-log/browser
   backend:
     ingressClassName: nginx-external
     host: aql.webis.de
-    path: /api
+    secondaryHost: aql.web.webis.de
     replicas: 1
     forceSslRedirect: true
     image: ghcr.io/webis-de/archive-query-log

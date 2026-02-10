@@ -8,7 +8,7 @@ spec:
   selector:
     app: {{ $.Release.Name }}-browser-backend
   ports:
-    - name: http
-      port: 8000
-      targetPort: http
-      protocol: TCP
+  - name: http
+    port: 4000
+    targetPort: http
+    protocol: TCP

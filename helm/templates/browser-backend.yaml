@@ -4,6 +4,8 @@ metadata:
   name: {{ $.Release.Name }}-browser-backend
   labels:
     app: {{ $.Release.Name }}-browser-backend
+  annotations:
+    checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
 spec:
   replicas: 1
   selector:
@@ -26,12 +28,14 @@ spec:
               memory: "512Mi"
               cpu: "500m"
           command:
-            - uvicorn
+            - /venv/bin/uvicorn
             - archive_query_log.browser:app
             - --host
             - 0.0.0.0
             - --port
             - "5000"
+            - --root-path
+            - {{ $.Values.browser.backend.path }}
           ports:
             - name: http
               containerPort: 5000
@@ -45,18 +49,12 @@ spec:
                 secretKeyRef:
                   name: {{ $.Release.Name }}-secret
                   key: elasticsearchApiKey
-            - name: ES_HOST
-              value: "https://$ELASTICSEARCH_HOST:$ELASTICSEARCH_PORT"
-            - name: ES_VERIFY
-              value: "true"
-            - name: ES_API_KEY
-              value: "$ELASTICSEARCH_API_KEY"
             - name: ENVIRONMENT
               value: "production"
           livenessProbe:
             httpGet:
               path: /health
-              port: 8000
+              port: http
             initialDelaySeconds: 10
             periodSeconds: 30
             timeoutSeconds: 5
@@ -64,7 +62,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /health
-              port: 8000
+              port: http
             initialDelaySeconds: 5
             periodSeconds: 10
             timeoutSeconds: 3
