@@ -35,5 +35,5 @@ npm run check-translations # Validate i18n keys of translation files.
 
 ## Configuration
 
-The API URL can be specified in the environment configuration files, `src/environments/environment.ts` (development) and `src/environments/environment.prod.ts` (production).
+The API URL can be specified in the environment configuration files, `src/environments/environment.ts` (production) and `src/environments/environment.development.ts` (development).
 Further configuration options are available in the project files: `src/app/config/api.config.ts`.
