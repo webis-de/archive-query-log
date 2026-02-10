@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $.Release.Name }}-browser-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "{{ printf "%t" $.Values.browser.backend.forceSslRedirect }}"
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx-external
+  rules:
+    - host: aql.web.webis.de
+      http:
+        paths:
+          - path: /api(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ $.Release.Name }}-browser-backend
+                port:
+                  name: http
+    - host: aql.web.webis.de
+      http:
+        paths:
+          - path: /(?!api(?:/|$))(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ $.Release.Name }}-browser-frontend
+                port:
+                  name: http

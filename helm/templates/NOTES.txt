@@ -18,4 +18,7 @@ Started jobs:
   Running {{ $.Values.capturesImportAql22.completions }}x (search providers: {{ $.Values.capturesImportAql22.completions }}, parallelism: {{ $.Values.capturesImportAql22.parallelism }}, backoff limit: {{ $.Values.capturesImportAql22.backoffLimit }}).
 {{- end }}
 
-Serving monitoring web interface at {{ if $.Values.monitoring.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.monitoring.host }}{{ $.Values.monitoring.path }}.
+Web interfaces:
+- Internal monitoring: {{ if $.Values.monitoring.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.monitoring.host }}{{ $.Values.monitoring.path }}
+- AQL Browser API: {{ if $.Values.browser.backend.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.browser.backend.host }}{{ $.Values.browser.backend.path }}
+- AQL Browser app: {{ if $.Values.browser.frontend.forceSslRedirect }}https{{ else }}http{{ end }}://{{ $.Values.browser.frontend.host }}{{ $.Values.browser.frontend.path }}
