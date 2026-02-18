@@ -23,7 +23,7 @@ jobs:
       - name: 🧪 Check package bundles
         run: twine check dist/*
       - name: 📤 Upload Python wheels
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: wheels
           path: dist
