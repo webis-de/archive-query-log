@@ -98,7 +98,7 @@ jobs:
         working-directory: browser/
         run: npm run build
       - name: 📤 Upload app for GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: browser/dist/aql-frontend/browser/
   node-check-browser:
