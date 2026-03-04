@@ -1,25 +1,26 @@
 from datetime import datetime
 from pathlib import Path
-from typing import Type, Any, TYPE_CHECKING, Iterable, Annotated, TypeAlias
+from typing import Type, Any, TYPE_CHECKING, Iterable
 
 from boto3 import Session
-from dotenv import find_dotenv, load_dotenv
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.query import Exists, Query, Term, Nested
 from expiringdict import ExpiringDict
-from fastapi import FastAPI, Request, Depends
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 from humanize import naturaltime
 from pydantic import BaseModel, ByteSize, ConfigDict
 from tqdm import tqdm
+
 if TYPE_CHECKING:
     from mypy_boto3_s3 import S3Client
 else:
     S3Client = Any
 
 from archive_query_log import __version__ as app_version
+from archive_query_log.api.dependencies import ConfigDependency
 from archive_query_log.config import Config
 from archive_query_log.orm import (
     Archive,
@@ -301,15 +302,6 @@ app.add_middleware(
 
 templates_path = Path(__file__).parent / "templates"
 templates = Jinja2Templates(directory=templates_path)
-
-
-def _load_config() -> Config:
-    if find_dotenv():
-        load_dotenv(override=True)
-    return Config()
-
-
-ConfigDependency: TypeAlias = Annotated[Config, Depends(_load_config)]
 
 
 @app.get("/statistics")

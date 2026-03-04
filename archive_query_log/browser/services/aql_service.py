@@ -10,7 +10,9 @@ Contains all functions used by the search router:
 """
 
 from typing import List, Optional, Any, Dict
-from archive_query_log.browser.core.elastic import get_es_client
+
+from elasticsearch import AsyncElasticsearch
+
 from archive_query_log.browser.utils.url_cleaner import remove_tracking_parameters
 from archive_query_log.browser.utils.advanced_search_parser import parse_advanced_query
 
@@ -34,6 +36,7 @@ def _add_hidden_filter(filter_list: list[dict]) -> None:
 # 1. Basic SERP Search
 # ---------------------------------------------------------
 async def search_basic(
+    elasticsearch: AsyncElasticsearch,
     query: str,
     size: int = 10,
     from_: int = 0,
@@ -60,7 +63,6 @@ async def search_basic(
             - total: Total number of results found
             - suggestions: Optional "did you mean?" suggestions
     """
-    es = get_es_client()
 
     # Build query with hidden filter
     filter_clause: list[dict] = []
@@ -124,7 +126,7 @@ async def search_basic(
             }
         }
 
-    response = await es.search(index="aql_serps", body=body)
+    response = await elasticsearch.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
 
@@ -158,13 +160,16 @@ async def search_basic(
 # ---------------------------------------------------------
 # 2. Provider Search
 # ---------------------------------------------------------
-async def search_providers(name: str, size: int = 10) -> List[Any]:
+async def search_providers(
+    elasticsearch: AsyncElasticsearch,
+    name: str,
+    size: int = 10,
+) -> List[Any]:
     """
     Search for providers by name.
     """
-    es = get_es_client()
     body = {"query": {"match": {"name": name}}, "size": size}
-    response = await es.search(index="aql_providers", body=body)
+    response = await elasticsearch.search(index="aql_providers", body=body)
     hits: List[Any] = response["hits"]["hits"]
     return hits
 
@@ -173,6 +178,7 @@ async def search_providers(name: str, size: int = 10) -> List[Any]:
 # 3. Advanced SERP Search
 # ---------------------------------------------------------
 async def search_advanced(
+    elasticsearch: AsyncElasticsearch,
     query: str,
     provider_id: Optional[str] = None,
     year: Optional[int] = None,
@@ -200,7 +206,6 @@ async def search_advanced(
             - total: Total number of results found
             - suggestions: Optional "did you mean?" suggestions
     """
-    es = get_es_client()
 
     bool_query: Dict[str, Any] = {
         "must": [],
@@ -283,7 +288,7 @@ async def search_advanced(
             }
         }
 
-    response = await es.search(index="aql_serps", body=body)
+    response = await elasticsearch.search(index="aql_serps", body=body)
     hits: List[Any] = response["hits"]["hits"]
     total = response["hits"]["total"]
 
@@ -317,14 +322,17 @@ async def search_advanced(
 # ---------------------------------------------------------
 # 4. Autocomplete Providers
 # ---------------------------------------------------------
-async def autocomplete_providers(q: str, size: int = 10) -> List[Any]:
+async def autocomplete_providers(
+    elasticsearch: AsyncElasticsearch,
+    q: str,
+    size: int = 10,
+) -> List[Any]:
     """
     Autocomplete provider names by prefix (case-insensitive).
     Returns a list of provider names.
     """
-    es = get_es_client()
     body = {"query": {"prefix": {"name": q.lower()}}, "_source": ["name"], "size": size}
-    response = await es.search(index="aql_providers", body=body)
+    response = await elasticsearch.search(index="aql_providers", body=body)
     suggestions = [hit["_source"]["name"] for hit in response["hits"]["hits"]]
     return suggestions
 
@@ -332,17 +340,27 @@ async def autocomplete_providers(q: str, size: int = 10) -> List[Any]:
 # ---------------------------------------------------------
 # 5. Search SERPs by Year
 # ---------------------------------------------------------
-async def search_by_year(query: str, year: int, size: int = 10) -> dict:
+async def search_by_year(
+    elasticsearch: AsyncElasticsearch,
+    query: str,
+    year: int,
+    size: int = 10,
+) -> dict:
     """
     Search SERPs containing a keyword in a specific year.
     """
-    return await search_advanced(query=query, year=year, size=size)
+    return await search_advanced(
+        elasticsearch=elasticsearch, query=query, year=year, size=size
+    )
 
 
 # ---------------------------------------------------------
 # 13. Get Archive Metadata by ID
 # ---------------------------------------------------------
-async def get_archive_metadata(archive_id: str) -> dict | None:
+async def get_archive_metadata(
+    elasticsearch: AsyncElasticsearch,
+    archive_id: str,
+) -> dict | None:
     """
     Get metadata for a specific web archive.
 
@@ -358,7 +376,6 @@ async def get_archive_metadata(archive_id: str) -> dict | None:
             - homepage: Archive homepage URL (optional)
             - serp_count: Number of SERPs in this archive
     """
-    es = get_es_client()
 
     # Search for all SERPs using this archive (excluding hidden),
     # and get one example to extract metadata
@@ -378,7 +395,7 @@ async def get_archive_metadata(archive_id: str) -> dict | None:
     }
 
     try:
-        response = await es.search(index="aql_serps", body=body)
+        response = await elasticsearch.search(index="aql_serps", body=body)
         total = response.get("hits", {}).get("total", 0)
 
         # Handle both old and new Elasticsearch response formats
@@ -390,20 +407,14 @@ async def get_archive_metadata(archive_id: str) -> dict | None:
         if serp_count == 0:
             return None
 
-        # Get archive metadata from a sample document if available
-        hits = response.get("hits", {}).get("hits", [])
-        archive_data = {}
-        if hits:
-            archive_data = hits[0].get("_source", {}).get("archive", {})
+        # TODO: Derive archive name from URL
+        archive_name = "TODO " + archive_id
 
-        # Derive archive name from URL
-        archive_name = _derive_archive_name(archive_id)
+        # TODO: Use CDX API URL from data if available, otherwise derive it
+        cdx_api_url = "TODO"
 
-        # Use CDX API URL from data if available, otherwise derive it
-        cdx_api_url = archive_data.get("cdx_api_url") or _derive_cdx_url(archive_id)
-
-        # Derive homepage from archive URL
-        homepage = _derive_homepage(archive_id)
+        # TODO: Derive homepage from archive URL
+        homepage = "TODO"
 
         return {
             "id": archive_id,
@@ -421,7 +432,10 @@ async def get_archive_metadata(archive_id: str) -> dict | None:
 # ---------------------------------------------------------
 # 14. List all Archives
 # ---------------------------------------------------------
-async def list_all_archives(size: int = 100) -> dict:
+async def list_all_archives(
+    elasticsearch: AsyncElasticsearch,
+    size: int = 100,
+) -> dict:
     """
     Get a list of all available web archives in the dataset.
 
@@ -436,7 +450,6 @@ async def list_all_archives(size: int = 100) -> dict:
             - total: Number of unique archives found
             - archives: List of ArchiveMetadata dicts
     """
-    es = get_es_client()
 
     # Add hidden filter to aggregation query
     filter_clause: list[dict] = []
@@ -457,7 +470,7 @@ async def list_all_archives(size: int = 100) -> dict:
     }
 
     try:
-        response = await es.search(index="aql_serps", body=body)
+        response = await elasticsearch.search(index="aql_serps", body=body)
         aggs = response.get("aggregations", {})
 
         archives = []
@@ -468,9 +481,9 @@ async def list_all_archives(size: int = 100) -> dict:
             if not archive_id or serp_count == 0:
                 continue
 
-            archive_name = _derive_archive_name(archive_id)
-            cdx_api_url = _derive_cdx_url(archive_id)
-            homepage = _derive_homepage(archive_id)
+            archive_name = "TODO " + archive_id  # TODO: Derive archive name from URL
+            cdx_api_url = "TODO"  # TODO: Derive CDX API URL from archive_id
+            homepage = "TODO"  # TODO: Derive homepage from archive_id
 
             archives.append(
                 {
@@ -493,99 +506,20 @@ async def list_all_archives(size: int = 100) -> dict:
 
 
 # ---------------------------------------------------------
-# Helper Functions for Archive Metadata
-# ---------------------------------------------------------
-def _derive_archive_name(memento_api_url: str) -> str:
-    """
-    Derive a human-readable archive name from the Memento API URL.
-
-    Examples:
-    - https://web.archive.org/web -> Internet Archive
-    - https://archive.example.org -> Archive Example
-    """
-    from urllib.parse import urlparse
-
-    # Known archives mapping
-    known_archives = {
-        "https://web.archive.org/web": "Internet Archive (Wayback Machine)",
-        "https://web.archive.org": "Internet Archive (Wayback Machine)",
-        "https://archive.org": "Internet Archive",
-    }
-
-    if memento_api_url in known_archives:
-        return known_archives[memento_api_url]
-
-    # Generic fallback: extract domain from URL
-    try:
-        parsed = urlparse(memento_api_url)
-        domain = parsed.netloc or parsed.path
-        # Capitalize and make readable
-        name = domain.replace("-", " ").replace(".org", "").title()
-        return name if name else "Unknown Archive"
-    except Exception:
-        return "Unknown Archive"
-
-
-def _derive_cdx_url(memento_api_url: str) -> str | None:
-    """
-    Derive CDX API URL from Memento API URL.
-
-    Common patterns:
-    - https://web.archive.org/web -> https://web.archive.org/cdx/search/csv
-    - https://archive.example.org -> https://archive.example.org/cdx/search/csv
-    """
-    if not memento_api_url:
-        return None
-
-    # Known CDX URLs
-    if memento_api_url.startswith("https://web.archive.org"):
-        return "https://web.archive.org/cdx/search/csv"
-
-    # Generic: append /cdx/search/csv to base URL
-    base_url = memento_api_url.rstrip("/")
-    return f"{base_url}/cdx/search/csv"
-
-
-def _derive_homepage(memento_api_url: str) -> str | None:
-    """
-    Derive archive homepage from Memento API URL.
-
-    Examples:
-    - https://web.archive.org/web -> https://web.archive.org
-    - https://archive.example.org -> https://archive.example.org
-    """
-    if not memento_api_url:
-        return None
-
-    # Known homepages
-    if memento_api_url.startswith("https://web.archive.org"):
-        return "https://web.archive.org"
-
-    # Generic: return base URL without /web or /cdx paths
-    from urllib.parse import urlparse
-
-    try:
-        parsed = urlparse(memento_api_url)
-        # Remove /web or other path components
-        base_url = f"{parsed.scheme}://{parsed.netloc}"
-        return base_url
-    except Exception:
-        return None
-
-
-# ---------------------------------------------------------
 # 15. Get All Providers
 # ---------------------------------------------------------
-async def get_all_providers(size: int = 100) -> List[Any]:
+async def get_all_providers(
+    elasticsearch: AsyncElasticsearch,
+    size: int = 100,
+) -> List[Any]:
     """
     Retrieve all available search providers from Elasticsearch.
     Returns a list of all providers.
     """
-    es = get_es_client()
 
     # First query to get total count
     count_body = {"query": {"match_all": {}}, "size": 0, "track_total_hits": True}
-    count_response = await es.search(index="aql_providers", body=count_body)
+    count_response = await elasticsearch.search(index="aql_providers", body=count_body)
     total_info = count_response.get("hits", {}).get("total", 0)
     total = total_info.get("value", 0) if isinstance(total_info, dict) else total_info
 
@@ -594,7 +528,7 @@ async def get_all_providers(size: int = 100) -> List[Any]:
 
     # Fetch all providers
     body = {"query": {"match_all": {}}, "size": actual_size}
-    response = await es.search(index="aql_providers", body=body)
+    response = await elasticsearch.search(index="aql_providers", body=body)
     hits: List[Any] = response.get("hits", {}).get("hits", [])
     return hits
 
@@ -603,6 +537,7 @@ async def get_all_providers(size: int = 100) -> List[Any]:
 # 6b. Search suggestions
 # ---------------------------------------------------------
 async def search_suggestions(
+    elasticsearch: AsyncElasticsearch,
     prefix: str,
     last_n_months: int | None = 36,
     size: int = 10,
@@ -627,7 +562,6 @@ async def search_suggestions(
     Returns:
         Dict with "prefix" and "suggestions" list
     """
-    es = get_es_client()
 
     # Build query with optional time filter
     must_clause = [{"match_phrase_prefix": {"url_query": prefix}}]
@@ -659,7 +593,7 @@ async def search_suggestions(
     }
 
     try:
-        response = await es.search(index="aql_serps", body=body)
+        response = await elasticsearch.search(index="aql_serps", body=body)
 
         # Deduplicate and count occurrences
         suggestion_counts: dict[str, int] = {}
@@ -688,6 +622,7 @@ async def search_suggestions(
 # 6c. Preview Search (aggregations + fallbacks)
 # ---------------------------------------------------------
 async def preview_search(
+    elasticsearch: AsyncElasticsearch,
     query: str,
     top_n_queries: int = 10,
     interval: str = "month",
@@ -709,7 +644,6 @@ async def preview_search(
             - top_providers: List[{provider, count}]
             - top_archives: List[{archive, count}]
     """
-    es = get_es_client()
 
     # Build base query with optional time filter
     must_clause: list[dict] = [{"match": {"url_query": query}}]
@@ -766,7 +700,7 @@ async def preview_search(
     }
 
     try:
-        agg_resp = await es.search(index="aql_serps", body=agg_body)
+        agg_resp = await elasticsearch.search(index="aql_serps", body=agg_body)
     except Exception:
         # On any error, return empty structure
         return {
@@ -823,7 +757,9 @@ async def preview_search(
             "sort": ["_score"],
         }
         try:
-            sample_resp = await es.search(index="aql_serps", body=sample_body)
+            sample_resp = await elasticsearch.search(
+                index="aql_serps", body=sample_body
+            )
             counts: dict[str, int] = {}
             for hit in sample_resp.get("hits", {}).get("hits", []):
                 q = (hit.get("_source", {}) or {}).get("url_query")
@@ -851,7 +787,9 @@ async def preview_search(
                     }
                 },
             }
-            prov_resp = await es.search(index="aql_serps", body=prov_fallback_body)
+            prov_resp = await elasticsearch.search(
+                index="aql_serps", body=prov_fallback_body
+            )
             fb_buckets = (
                 prov_resp.get("aggregations", {})
                 .get("top_providers", {})
@@ -879,7 +817,9 @@ async def preview_search(
                     }
                 },
             }
-            prov_resp2 = await es.search(index="aql_serps", body=prov_fallback_body2)
+            prov_resp2 = await elasticsearch.search(
+                index="aql_serps", body=prov_fallback_body2
+            )
             fb_buckets2 = (
                 prov_resp2.get("aggregations", {})
                 .get("top_providers", {})
@@ -906,6 +846,7 @@ async def preview_search(
 # 6d. SERPs Timeline (date histogram counts, excluding hidden)
 # ---------------------------------------------------------
 async def serps_timeline(
+    elasticsearch: AsyncElasticsearch,
     query: str,
     provider_id: Optional[str] = None,
     archive_id: Optional[str] = None,
@@ -931,7 +872,6 @@ async def serps_timeline(
             - total_hits
             - date_histogram: List[{date, count}] with date as YYYY-MM-DD
     """
-    es = get_es_client()
 
     # Build query clauses
     must_clause: list[dict] = [{"match": {"url_query": query}}]
@@ -978,7 +918,7 @@ async def serps_timeline(
     }
 
     try:
-        resp = await es.search(index="aql_serps", body=body)
+        resp = await elasticsearch.search(index="aql_serps", body=body)
     except Exception:
         return {
             "query": query,
@@ -1017,11 +957,13 @@ async def serps_timeline(
 
 # 7. Get SERP by ID
 # ---------------------------------------------------------
-async def get_serp_by_id(serp_id: str) -> Any | None:
+async def get_serp_by_id(
+    elasticsearch: AsyncElasticsearch,
+    serp_id: str,
+) -> Any | None:
     """Fetch a single SERP by ID from Elasticsearch."""
-    es = get_es_client()
     try:
-        response = await es.get(index="aql_serps", id=serp_id)
+        response = await elasticsearch.get(index="aql_serps", id=serp_id)
         return response
     except Exception:
         return None
@@ -1031,10 +973,12 @@ async def get_serp_by_id(serp_id: str) -> Any | None:
 # 7. Get original URL
 # ---------------------------------------------------------
 async def get_serp_original_url(
-    serp_id: str, remove_tracking: bool = False
+    elasticsearch: AsyncElasticsearch,
+    serp_id: str,
+    remove_tracking: bool = False,
 ) -> dict | None:
     """Get the original SERP URL from a SERP by ID."""
-    serp = await get_serp_by_id(serp_id)
+    serp = await get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
     if not serp:
         return None
 
@@ -1050,11 +994,14 @@ async def get_serp_original_url(
 # ---------------------------------------------------------
 # 8. Get memento URL
 # ---------------------------------------------------------
-async def get_serp_memento_url(serp_id: str) -> dict | None:
+async def get_serp_memento_url(
+    elasticsearch: AsyncElasticsearch,
+    serp_id: str,
+) -> dict | None:
     """Get the memento SERP URL from a SERP by ID."""
     from datetime import datetime
 
-    serp = await get_serp_by_id(serp_id)
+    serp = await get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
     if not serp:
         return None
 
@@ -1073,18 +1020,23 @@ async def get_serp_memento_url(serp_id: str) -> dict | None:
 # 9. Get related SERPs
 # ---------------------------------------------------------
 async def get_related_serps(
-    serp_id: str, size: int = 10, same_provider: bool = False
+    elasticsearch: AsyncElasticsearch,
+    serp_id: str,
+    size: int = 10,
+    same_provider: bool = False,
 ) -> List[Any]:
     """Get related SERPs by ID."""
 
-    serp = await get_serp_by_id(serp_id)
+    serp = await get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
     if not serp:
         return []
     query = serp["_source"]["url_query"]
     provider_id = serp["_source"]["provider"]["id"] if same_provider else None
 
     # add 1 to size for the original serp
-    results = await search_advanced(query=query, size=size + 1, provider_id=provider_id)
+    results = await search_advanced(
+        elasticsearch=elasticsearch, query=query, size=size + 1, provider_id=provider_id
+    )
 
     # extract hits from the returned dict (search_advanced returns {"hits": [...], "total": N})
     hits = results.get("hits", []) if isinstance(results, dict) else results
@@ -1097,7 +1049,10 @@ async def get_related_serps(
 # ---------------------------------------------------------
 # 10. Unfurl SERP URL
 # ---------------------------------------------------------
-async def get_serp_unfurl(serp_id: str) -> dict | None:
+async def get_serp_unfurl(
+    elasticsearch: AsyncElasticsearch,
+    serp_id: str,
+) -> dict | None:
     """
     Parse and unfurl the SERP URL into its components.
 
@@ -1109,7 +1064,7 @@ async def get_serp_unfurl(serp_id: str) -> dict | None:
     """
     from archive_query_log.browser.utils.url_unfurler import unfurl
 
-    serp = await get_serp_by_id(serp_id)
+    serp = await get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
     if not serp:
         return None
 
@@ -1126,7 +1081,10 @@ async def get_serp_unfurl(serp_id: str) -> dict | None:
 # ---------------------------------------------------------
 # 11. Get direct links from SERP
 # ---------------------------------------------------------
-async def get_serp_direct_links(serp_id: str) -> dict | None:
+async def get_serp_direct_links(
+    elasticsearch: AsyncElasticsearch,
+    serp_id: str,
+) -> dict | None:
     """
     Extract direct links/results from a SERP.
 
@@ -1135,7 +1093,7 @@ async def get_serp_direct_links(serp_id: str) -> dict | None:
     - Title/snippet (if available)
     - Position in SERP
     """
-    serp = await get_serp_by_id(serp_id)
+    serp = await get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
     if not serp:
         return None
 
@@ -1164,7 +1122,10 @@ async def get_serp_direct_links(serp_id: str) -> dict | None:
 # ---------------------------------------------------------
 # 12. Get unbranded SERP view
 # ---------------------------------------------------------
-async def get_serp_unbranded(serp_id: str) -> dict | None:
+async def get_serp_unbranded(
+    elasticsearch: AsyncElasticsearch,
+    serp_id: str,
+) -> dict | None:
     """
     Get a unified, provider-agnostic view of SERP contents.
 
@@ -1178,7 +1139,7 @@ async def get_serp_unbranded(serp_id: str) -> dict | None:
             - results: Normalized list of search results
             - metadata: Capture metadata (timestamp, URL, status_code)
     """
-    serp = await get_serp_by_id(serp_id)
+    serp = await get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
     if not serp:
         return None
 
@@ -1221,7 +1182,10 @@ async def get_serp_unbranded(serp_id: str) -> dict | None:
 # ---------------------------------------------------------
 # 13. Get Available Views for a SERP
 # ---------------------------------------------------------
-async def get_serp_view_options(serp_id: str) -> dict | None:
+async def get_serp_view_options(
+    elasticsearch: AsyncElasticsearch,
+    serp_id: str,
+) -> dict | None:
     """
     Get available view options for switching between different SERP representations.
 
@@ -1240,7 +1204,7 @@ async def get_serp_view_options(serp_id: str) -> dict | None:
     """
     from archive_query_log.browser.schemas.aql import SERPViewType
 
-    serp = await get_serp_by_id(serp_id)
+    serp = await get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
     if not serp:
         return None
 
@@ -1307,17 +1271,19 @@ async def get_serp_view_options(serp_id: str) -> dict | None:
 # ---------------------------------------------------------
 # 14. Get Provider by ID
 # ---------------------------------------------------------
-async def get_provider_by_id(provider_id: str) -> Any | None:
+async def get_provider_by_id(
+    elasticsearch: AsyncElasticsearch,
+    provider_id: str,
+) -> Any | None:
     """
     Fetch a single provider by ID or name from Elasticsearch.
 
     Accepts both UUID and provider name (e.g., 'google' or 'f205fc44-d918-4b79-9a7f-c1373a6ff9f2').
     """
-    es = get_es_client()
 
     # First try as UUID (direct lookup)
     try:
-        response = await es.get(index="aql_providers", id=provider_id)
+        response = await elasticsearch.get(index="aql_providers", id=provider_id)
         return response
     except Exception:
         # Try searching by name
@@ -1333,7 +1299,7 @@ async def get_provider_by_id(provider_id: str) -> Any | None:
                 },
                 "size": 1,
             }
-            response = await es.search(index="aql_providers", body=body)
+            response = await elasticsearch.search(index="aql_providers", body=body)
             hits = response.get("hits", {}).get("hits", [])
             if hits:
                 return hits[0]
@@ -1353,11 +1319,13 @@ async def get_provider_by_id(provider_id: str) -> Any | None:
 # ---------------------------------------------------------
 # 16. Get Archive by ID
 # ---------------------------------------------------------
-async def get_archive_by_id(archive_id: str) -> Any | None:
+async def get_archive_by_id(
+    elasticsearch: AsyncElasticsearch,
+    archive_id: str,
+) -> Any | None:
     """Fetch a single archive by ID from Elasticsearch."""
-    es = get_es_client()
     try:
-        response = await es.get(index="aql_archives", id=archive_id)
+        response = await elasticsearch.get(index="aql_archives", id=archive_id)
         return response
     except Exception:
         return None
@@ -1366,7 +1334,10 @@ async def get_archive_by_id(archive_id: str) -> Any | None:
 # ---------------------------------------------------------
 # 17. Compare SERPs
 # ---------------------------------------------------------
-async def compare_serps(serp_ids: List[str]) -> dict | None:
+async def compare_serps(
+    elasticsearch: AsyncElasticsearch,
+    serp_ids: List[str],
+) -> dict | None:
     """
     Compare multiple SERPs and return detailed comparison data.
 
@@ -1390,7 +1361,7 @@ async def compare_serps(serp_ids: List[str]) -> dict | None:
     # Fetch all SERPs
     serps_data = []
     for serp_id in serp_ids:
-        serp = await get_serp_by_id(serp_id)
+        serp = await get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
         if not serp:
             return None
         serps_data.append(serp)
@@ -1569,7 +1540,10 @@ async def compare_serps(serp_ids: List[str]) -> dict | None:
 # ---------------------------------------------------------
 # 17b. Resolve Provider Identifier (name or ID to UUID)
 # ---------------------------------------------------------
-async def _resolve_provider_id(provider_identifier: str) -> str | None:
+async def _resolve_provider_id(
+    elasticsearch: AsyncElasticsearch,
+    provider_identifier: str,
+) -> str | None:
     """
     Resolve a provider identifier (name or UUID) to its actual UUID.
 
@@ -1581,11 +1555,12 @@ async def _resolve_provider_id(provider_identifier: str) -> str | None:
     Returns:
         The provider UUID, or None if not found
     """
-    es = get_es_client()
 
     # Try as UUID first (direct lookup)
     try:
-        response = await es.get(index="aql_providers", id=provider_identifier)
+        response = await elasticsearch.get(
+            index="aql_providers", id=provider_identifier
+        )
         return provider_identifier
     except Exception:
         # Try searching by name/type field
@@ -1603,7 +1578,7 @@ async def _resolve_provider_id(provider_identifier: str) -> str | None:
                 },
                 "size": 1,
             }
-            response = await es.search(index="aql_providers", body=body)
+            response = await elasticsearch.search(index="aql_providers", body=body)
             hits = response.get("hits", {}).get("hits", [])
             if hits:
                 provider_id = hits[0]["_id"]
@@ -1618,6 +1593,7 @@ async def _resolve_provider_id(provider_identifier: str) -> str | None:
 # 18. Get Provider Statistics
 # ---------------------------------------------------------
 async def get_provider_statistics(
+    elasticsearch: AsyncElasticsearch,
     provider_id: str,
     interval: str = "month",
     last_n_months: int | None = 36,
@@ -1642,10 +1618,11 @@ async def get_provider_statistics(
             - top_archives: List[{archive, count}]
             - date_histogram: List[{date, count}] (optional based on interval)
     """
-    es = get_es_client()
 
     # Resolve provider identifier to UUID
-    resolved_provider_id = await _resolve_provider_id(provider_id)
+    resolved_provider_id = await _resolve_provider_id(
+        elasticsearch=elasticsearch, provider_identifier=provider_id
+    )
     if not resolved_provider_id:
         return None
 
@@ -1699,7 +1676,7 @@ async def get_provider_statistics(
     }
 
     try:
-        resp = await es.search(index="aql_serps", body=basic_agg_body)
+        resp = await elasticsearch.search(index="aql_serps", body=basic_agg_body)
     except Exception:
         return None
 
@@ -1732,7 +1709,9 @@ async def get_provider_statistics(
                 "size": sample_size,
                 "_source": ["url_query"],
             }
-            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
+            fallback_resp = await elasticsearch.search(
+                index="aql_serps", body=fallback_body
+            )
             query_counts: dict[str, int] = {}
             for hit in fallback_resp.get("hits", {}).get("hits", []):
                 q = (hit.get("_source", {}) or {}).get("url_query")
@@ -1758,7 +1737,9 @@ async def get_provider_statistics(
                 },
             },
         }
-        hist_resp = await es.search(index="aql_serps", body=histogram_agg_body)
+        hist_resp = await elasticsearch.search(
+            index="aql_serps", body=histogram_agg_body
+        )
         hist_aggs = hist_resp.get("aggregations", {}) or {}
 
         # Extract date histogram
@@ -1792,6 +1773,7 @@ async def get_provider_statistics(
 # 19. Get Archive Statistics
 # ---------------------------------------------------------
 async def get_archive_statistics(
+    elasticsearch: AsyncElasticsearch,
     archive_id: str,
     interval: str = "month",
     last_n_months: int | None = 36,
@@ -1816,7 +1798,6 @@ async def get_archive_statistics(
             - top_providers: List[{provider, count}]
             - date_histogram: List[{date, count}]
     """
-    es = get_es_client()
 
     # Build query with filter
     filter_clause: list[dict] = [{"term": {"archive.memento_api_url": archive_id}}]
@@ -1868,7 +1849,7 @@ async def get_archive_statistics(
     }
 
     try:
-        resp = await es.search(index="aql_serps", body=basic_agg_body)
+        resp = await elasticsearch.search(index="aql_serps", body=basic_agg_body)
     except Exception:
         return None
 
@@ -1901,7 +1882,9 @@ async def get_archive_statistics(
                 "size": sample_size,
                 "_source": ["url_query"],
             }
-            fallback_resp = await es.search(index="aql_serps", body=fallback_body)
+            fallback_resp = await elasticsearch.search(
+                index="aql_serps", body=fallback_body
+            )
             query_counts: dict[str, int] = {}
             for hit in fallback_resp.get("hits", {}).get("hits", []):
                 q = (hit.get("_source", {}) or {}).get("url_query")
@@ -1927,7 +1910,9 @@ async def get_archive_statistics(
                 },
             },
         }
-        hist_resp = await es.search(index="aql_serps", body=histogram_agg_body)
+        hist_resp = await elasticsearch.search(
+            index="aql_serps", body=histogram_agg_body
+        )
         hist_aggs = hist_resp.get("aggregations", {}) or {}
 
         # Extract date histogram

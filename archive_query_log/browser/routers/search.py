@@ -11,16 +11,16 @@ from typing import Optional
 from enum import Enum
 from traceback import print_exc
 
-# Elasticsearch Exceptions
 from elasticsearch import (
     ConnectionError,
     TransportError,
     RequestError,
 )
-
-from archive_query_log.browser.services import aql_service
 from slowapi.util import get_remote_address
 from slowapi.extension import Limiter
+
+from archive_query_log.api.dependencies import AsyncElasticsearchDependency
+from archive_query_log.browser.services import aql_service
 
 router = APIRouter()
 limiter = Limiter(key_func=get_remote_address)
@@ -109,6 +109,7 @@ async def safe_search_paginated(coro):
 @limiter.limit("60/minute")
 async def unified_search(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     query: str = Query(..., description="Search term"),
     page_size: int = Query(10, description="Results per page (10, 20, or 50)"),
     page: int = Query(1, description="Page number (starting at 1)"),
@@ -179,6 +180,7 @@ async def unified_search(
     if provider_id or year or status_code:
         search_result = await safe_search_paginated(
             aql_service.search_advanced(
+                elasticsearch=elasticsearch,
                 query=query,
                 provider_id=provider_id,
                 year=year,
@@ -194,6 +196,7 @@ async def unified_search(
     else:
         search_result = await safe_search_paginated(
             aql_service.search_basic(
+                elasticsearch=elasticsearch,
                 query=query,
                 size=page_size,
                 from_=from_,
@@ -247,13 +250,19 @@ async def unified_search(
 @limiter.limit("60/minute")
 async def suggestions(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     prefix: str = Query(..., description="Search query prefix"),
     size: int = Query(10, description="Number of suggestions", ge=1, le=50),
     last_n_months: int | None = Query(36, description="Limit to last N months"),
 ):
     """Return popular search suggestions based on prefix."""
     result = await safe_search(
-        aql_service.search_suggestions(prefix, last_n_months, size)
+        aql_service.search_suggestions(
+            elasticsearch=elasticsearch,
+            prefix=prefix,
+            last_n_months=last_n_months,
+            size=size,
+        )
     )
     return result
 
@@ -265,6 +274,7 @@ async def suggestions(
 @limiter.limit("60/minute")
 async def serps_preview(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     query: str = Query(..., description="Search term for preview"),
     top_n_queries: int = Query(10, description="Number of top query suggestions"),
     interval: str = Query("month", description="Histogram interval (day, week, month)"),
@@ -277,6 +287,7 @@ async def serps_preview(
     """Return preview/summary statistics for a given query (lightweight aggregations)."""
     result = await safe_search_paginated(
         aql_service.preview_search(
+            elasticsearch=elasticsearch,
             query=query,
             top_n_queries=top_n_queries,
             interval=interval,
@@ -295,6 +306,7 @@ async def serps_preview(
 @limiter.limit("60/minute")
 async def serps_timeline(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     query: str = Query(..., description="Search term for timeline"),
     provider_id: Optional[str] = Query(None, description="Filter by provider ID"),
     archive_id: Optional[str] = Query(
@@ -322,6 +334,7 @@ async def serps_timeline(
 
     result = await safe_search_paginated(
         aql_service.serps_timeline(
+            elasticsearch=elasticsearch,
             query=query,
             provider_id=provider_id,
             archive_id=archive_id,
@@ -339,6 +352,7 @@ async def serps_timeline(
 @limiter.limit("60/minute")
 async def compare_serps(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     ids: str = Query(
         ...,
         description="Comma-separated list of SERP IDs to compare (2-5 IDs)",
@@ -384,7 +398,9 @@ async def compare_serps(
         )
 
     # Perform comparison
-    result = await safe_search(aql_service.compare_serps(serp_ids))
+    result = await safe_search(
+        aql_service.compare_serps(elasticsearch=elasticsearch, serp_ids=serp_ids)
+    )
 
     return result
 
@@ -395,6 +411,7 @@ async def compare_serps(
 @limiter.limit("60/minute")
 async def get_all_providers(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     size: int = Query(0, description="Number of providers to return (0 = all)"),
 ):
     """
@@ -410,7 +427,8 @@ async def get_all_providers(
         )
 
     results = await safe_search(
-        aql_service.get_all_providers(size=size), allow_empty=True
+        aql_service.get_all_providers(elasticsearch=elasticsearch, size=size),
+        allow_empty=True,
     )
     return {"count": len(results), "results": results}
 
@@ -420,14 +438,22 @@ async def get_all_providers(
 # ---------------------------------------------------------
 @router.get("/providers/{provider_id}")
 @limiter.limit("60/minute")
-async def get_provider_by_id(request: Request, provider_id: str):
+async def get_provider_by_id(
+    request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
+    provider_id: str,
+):
     """
     Get a single provider document by its ID.
 
     Example:
     - Get provider: /provider/google
     """
-    result = await safe_search(aql_service.get_provider_by_id(provider_id))
+    result = await safe_search(
+        aql_service.get_provider_by_id(
+            elasticsearch=elasticsearch, provider_id=provider_id
+        )
+    )
     # Return the raw ES document to stay consistent with other detail endpoints
     return {"provider_id": result.get("_id"), "provider": result}
 
@@ -439,6 +465,7 @@ async def get_provider_by_id(request: Request, provider_id: str):
 @limiter.limit("60/minute")
 async def get_provider_statistics(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     provider_id: str,
     interval: str = Query("month", description="Histogram interval (day, week, month)"),
     last_n_months: int | None = Query(
@@ -461,6 +488,7 @@ async def get_provider_statistics(
     """
     result = await safe_search(
         aql_service.get_provider_statistics(
+            elasticsearch=elasticsearch,
             provider_id=provider_id,
             interval=interval,
             last_n_months=last_n_months,
@@ -476,6 +504,7 @@ async def get_provider_statistics(
 @limiter.limit("60/minute")
 async def get_archive_statistics(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     archive_id: str,
     interval: str = Query("month", description="Histogram interval (day, week, month)"),
     last_n_months: int | None = Query(
@@ -498,6 +527,7 @@ async def get_archive_statistics(
     """
     result = await safe_search(
         aql_service.get_archive_statistics(
+            elasticsearch=elasticsearch,
             archive_id=archive_id,
             interval=interval,
             last_n_months=last_n_months,
@@ -509,7 +539,11 @@ async def get_archive_statistics(
 # New canonical archive detail endpoint using the same ID as the list
 @router.get("/archives/{archive_id:path}")
 @limiter.limit("60/minute")
-async def get_archive_by_memento_url(request: Request, archive_id: str):
+async def get_archive_by_memento_url(
+    request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
+    archive_id: str,
+):
     """
     Get archive metadata by its canonical ID (memento_api_url), matching the
     `id` field returned by /archives.
@@ -517,7 +551,11 @@ async def get_archive_by_memento_url(request: Request, archive_id: str):
     This enables stable deep-links without relying on ES internal document IDs.
     Example: /archives/https://web.archive.org/web
     """
-    result = await safe_search(aql_service.get_archive_metadata(archive_id))
+    result = await safe_search(
+        aql_service.get_archive_metadata(
+            elasticsearch=elasticsearch, archive_id=archive_id
+        )
+    )
     return result
 
 
@@ -528,6 +566,7 @@ async def get_archive_by_memento_url(request: Request, archive_id: str):
 @limiter.limit("60/minute")
 async def get_serp_unified(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     serp_id: str,
     view: Optional[str] = Query(
         None,
@@ -591,7 +630,11 @@ async def get_serp_unified(
 
         # Handle unbranded view
         if view == SERPViewType.unbranded.value:
-            unbranded_data = await safe_search(aql_service.get_serp_unbranded(serp_id))
+            unbranded_data = await safe_search(
+                aql_service.get_serp_unbranded(
+                    elasticsearch=elasticsearch, serp_id=serp_id
+                )
+            )
             return {
                 "serp_id": serp_id,
                 "view": SERPViewType.unbranded.value,
@@ -600,7 +643,11 @@ async def get_serp_unified(
 
         # Handle snapshot view - redirect to web archive memento
         elif view == SERPViewType.snapshot.value:
-            memento_data = await safe_search(aql_service.get_serp_memento_url(serp_id))
+            memento_data = await safe_search(
+                aql_service.get_serp_memento_url(
+                    elasticsearch=elasticsearch, serp_id=serp_id
+                )
+            )
             memento_url = memento_data.get("memento_url")
             if not memento_url:
                 raise HTTPException(
@@ -611,7 +658,9 @@ async def get_serp_unified(
 
         # view == 'raw' falls through to normal processing
 
-    serp_data = await safe_search(aql_service.get_serp_by_id(serp_id))
+    serp_data = await safe_search(
+        aql_service.get_serp_by_id(elasticsearch=elasticsearch, serp_id=serp_id)
+    )
 
     include_fields = set()
     if include:
@@ -632,24 +681,39 @@ async def get_serp_unified(
 
     if IncludeField.original_url.value in include_fields:
         url_data = await safe_search(
-            aql_service.get_serp_original_url(serp_id, remove_tracking)
+            aql_service.get_serp_original_url(
+                elasticsearch=elasticsearch,
+                serp_id=serp_id,
+                remove_tracking=remove_tracking,
+            )
         )
         response["original_url"] = url_data.get("original_url")
         if remove_tracking and "url_without_tracking" in url_data:
             response["url_without_tracking"] = url_data["url_without_tracking"]
 
     if IncludeField.memento_url.value in include_fields:
-        memento_data = await safe_search(aql_service.get_serp_memento_url(serp_id))
+        memento_data = await safe_search(
+            aql_service.get_serp_memento_url(
+                elasticsearch=elasticsearch, serp_id=serp_id
+            )
+        )
         response["memento_url"] = memento_data.get("memento_url")
 
     if IncludeField.related.value in include_fields:
         related_serps = await safe_search(
-            aql_service.get_related_serps(serp_id, related_size, same_provider)
+            aql_service.get_related_serps(
+                elasticsearch=elasticsearch,
+                serp_id=serp_id,
+                size=related_size,
+                same_provider=same_provider,
+            )
         )
         response["related"] = {"count": len(related_serps), "serps": related_serps}
 
     if IncludeField.unfurl.value in include_fields:
-        unfurl_data = await safe_search(aql_service.get_serp_unfurl(serp_id))
+        unfurl_data = await safe_search(
+            aql_service.get_serp_unfurl(elasticsearch=elasticsearch, serp_id=serp_id)
+        )
         response["unfurl"] = unfurl_data.get("parsed")
         response["unfurl_web"] = (
             "https://dfir.blog/unfurl/?"
@@ -658,13 +722,17 @@ async def get_serp_unified(
 
     if IncludeField.direct_links.value in include_fields:
         direct_links_data = await safe_search(
-            aql_service.get_serp_direct_links(serp_id)
+            aql_service.get_serp_direct_links(
+                elasticsearch=elasticsearch, serp_id=serp_id
+            )
         )
         response["direct_links_count"] = direct_links_data.get("direct_links_count")
         response["direct_links"] = direct_links_data.get("direct_links")
 
     if IncludeField.unbranded.value in include_fields:
-        unbranded_data = await safe_search(aql_service.get_serp_unbranded(serp_id))
+        unbranded_data = await safe_search(
+            aql_service.get_serp_unbranded(elasticsearch=elasticsearch, serp_id=serp_id)
+        )
         response["unbranded"] = unbranded_data
 
     return response
@@ -675,7 +743,11 @@ async def get_serp_unified(
 # ---------------------------------------------------------
 @router.get("/serps/{serp_id}/views")
 @limiter.limit("60/minute")
-async def get_serp_views(request: Request, serp_id: str):
+async def get_serp_views(
+    request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
+    serp_id: str,
+):
     """
     Get available view options for a SERP to enable easy switching between views.
 
@@ -690,7 +762,9 @@ async def get_serp_views(request: Request, serp_id: str):
     Examples:
     - /serps/123/views
     """
-    result = await safe_search(aql_service.get_serp_view_options(serp_id))
+    result = await safe_search(
+        aql_service.get_serp_view_options(elasticsearch=elasticsearch, serp_id=serp_id)
+    )
     return result
 
 
@@ -701,6 +775,7 @@ async def get_serp_views(request: Request, serp_id: str):
 @limiter.limit("60/minute")
 async def list_archives(
     request: Request,
+    elasticsearch: AsyncElasticsearchDependency,
     limit: int = Query(
         100, description="Maximum number of archives to return", ge=1, le=1000
     ),
@@ -731,7 +806,7 @@ async def list_archives(
         effective_limit = size
 
     svc_result = await safe_search_paginated(
-        aql_service.list_all_archives(size=effective_limit)
+        aql_service.list_all_archives(elasticsearch=elasticsearch, size=effective_limit)
     )
     # Enforce limit/size at router layer as a safety net
     archives_list = list(svc_result.get("archives", []))[:effective_limit]
