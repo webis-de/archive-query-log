@@ -59,7 +59,15 @@ app.include_router(providers_router, tags=["providers"], prefix="/providers")
 app.include_router(archives_router, tags=["archives"], prefix="/archives")
 
 # Configure and mount MCP server.
-mcp = FastApiMCP(app)
+mcp = FastApiMCP(
+    app,
+    name="AQL MCP API",
+    include_operations=[
+        "search_serps",
+        "search_providers",
+        "search_archives",
+    ],
+)
 mcp.mount_http()
 
 

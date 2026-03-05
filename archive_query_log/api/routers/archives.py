@@ -83,7 +83,7 @@ def _prepare_search(
     return search
 
 
-@router.get("/")
+@router.get("/", operation_id="search_archives")
 @limiter.limit("30/minute")
 def search(
     request: Request,

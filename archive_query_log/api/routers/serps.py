@@ -173,7 +173,7 @@ def _prepare_search(
     return search
 
 
-@router.get("/")
+@router.get("/", operation_id="search_serps")
 @limiter.limit("15/minute")
 def search(
     request: Request,
