@@ -35,6 +35,7 @@ dependencies = [
     "elasticsearch-pydantic~=1.1",
     "expiringdict~=1.2",
     "fastapi~=0.121.2",
+    "fastapi-mcp~=0.4.0",
     "httpx~=0.28.1",
     "humanize~=4.13",
     "lxml~=6.0",
