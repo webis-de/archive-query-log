@@ -14,8 +14,12 @@ Examples:
 - (renewable OR solar) AND energy -> complex boolean logic
 """
 
-from typing import List, Dict, Any
+# TODO: Replace this with a proper parser package if needed (e.g., pyparsing) for more complex queries: https://github.com/pyparsing/pyparsing/blob/master/examples/searchparser.py
+
+from typing import List
 from enum import Enum
+
+from elasticsearch_dsl.query import Query, MatchPhrase, Wildcard, Match, MatchAll
 
 
 class TokenType(Enum):
@@ -33,11 +37,11 @@ class TokenType(Enum):
 class Token:
     """Represents a token in the query"""
 
-    def __init__(self, type_: TokenType, value: str):
+    def __init__(self, type_: TokenType, value: str) -> None:
         self.type = type_
         self.value = value
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Token({self.type}, {self.value!r})"
 
 
@@ -49,7 +53,7 @@ class AdvancedSearchParser:
     into Elasticsearch query DSL.
     """
 
-    def __init__(self, query: str):
+    def __init__(self, query: str) -> None:
         self.query = query
         self.tokens: List[Token] = []
         self.current_token_index = 0
@@ -121,7 +125,7 @@ class AdvancedSearchParser:
             return self.tokens[self.current_token_index]
         return Token(TokenType.EOF, "")
 
-    def _consume_token(self):
+    def _consume_token(self) -> None:
         """Move to next token"""
         self.current_token_index += 1
 
@@ -133,7 +137,7 @@ class AdvancedSearchParser:
         """
         return word
 
-    def _build_term_query(self, term: str, is_phrase: bool = False) -> Dict[str, Any]:
+    def _build_term_query(self, term: str, is_phrase: bool = False) -> Query:
         """
         Build Elasticsearch query for a single term or phrase.
 
@@ -149,15 +153,15 @@ class AdvancedSearchParser:
 
         if is_phrase:
             # Phrase search - exact match
-            return {"match_phrase": {"url_query": term}}
+            return MatchPhrase(url_query=term)
         elif has_wildcard:
             # Wildcard search
-            return {"wildcard": {"url_query": self._convert_wildcard_to_es(term)}}
+            return Wildcard(url_query=self._convert_wildcard_to_es(term))
         else:
             # Regular term search
-            return {"match": {"url_query": term}}
+            return Match(url_query=term)
 
-    def _parse_primary(self) -> Dict[str, Any]:
+    def _parse_primary(self) -> Query:
         """
         Parse a primary expression (word, phrase, or parenthesized expression).
 
@@ -183,9 +187,9 @@ class AdvancedSearchParser:
 
         else:
             # Empty or invalid - return match all
-            return {"match_all": {}}
+            return MatchAll()
 
-    def _parse_and(self) -> Dict[str, Any]:
+    def _parse_and(self) -> Query:
         """
         Parse AND expressions.
 
@@ -199,14 +203,11 @@ class AdvancedSearchParser:
             right = self._parse_primary()
 
             # Combine with bool must (AND logic)
-            if "bool" in left and "must" in left["bool"]:
-                left["bool"]["must"].append(right)
-            else:
-                left = {"bool": {"must": [left, right]}}
+            left = left & right
 
         return left
 
-    def _parse_or(self) -> Dict[str, Any]:
+    def _parse_or(self) -> Query:
         """
         Parse OR expressions.
 
@@ -220,14 +221,11 @@ class AdvancedSearchParser:
             right = self._parse_and()
 
             # Combine with bool should (OR logic)
-            if "bool" in left and "should" in left["bool"]:
-                left["bool"]["should"].append(right)
-            else:
-                left = {"bool": {"should": [left, right], "minimum_should_match": 1}}
+            left = left | right
 
         return left
 
-    def parse(self) -> Dict[str, Any]:
+    def parse(self) -> Query:
         """
         Parse the query and generate Elasticsearch query DSL.
 
@@ -238,12 +236,12 @@ class AdvancedSearchParser:
         self.current_token_index = 0
 
         if not self.tokens or len(self.tokens) == 1:  # Only EOF token
-            return {"match_all": {}}
+            return MatchAll()
 
         return self._parse_or()
 
 
-def parse_advanced_query(query: str) -> Dict[str, Any]:
+def parse_advanced_query(query: str) -> Query:
     """
     Parse an advanced search query into Elasticsearch query DSL.
 
