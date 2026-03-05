@@ -7,8 +7,10 @@ from elasticsearch_dsl import (
     Date as _Date,
     RankFeature as _RankFeature,
     Keyword as _Keyword,
+    Text as _Text,
+    Completion as _Completion,
 )
-from pydantic import HttpUrl, Field, AliasChoices
+from pydantic import HttpUrl, Field, AliasChoices, computed_field
 from pydantic_extra_types.language_code import LanguageAlpha2
 
 from elasticsearch_pydantic import (
@@ -20,7 +22,15 @@ from elasticsearch_pydantic import (
     LongField as Long,
 )
 
-
+TextWithSuggestAndKeyword: TypeAlias = Annotated[
+    str,
+    _Text(
+        fields={
+            "suggest": _Completion(),
+            "keyword": _Keyword(),
+        }
+    ),
+]
 IntKeyword: TypeAlias = Annotated[int, _Keyword]
 LanguageAlpha2Keyword: TypeAlias = Annotated[LanguageAlpha2, _Keyword]
 Date: TypeAlias = Annotated[
@@ -51,7 +61,7 @@ class UuidBaseDocument(BaseDocument):
 
 class Archive(UuidBaseDocument):
     last_modified: DefaultDate
-    name: Text
+    name: TextWithSuggestAndKeyword
     description: Text | None = None
     cdx_api_url: HttpUrl
     memento_api_url: HttpUrl
@@ -68,7 +78,7 @@ class Archive(UuidBaseDocument):
 
 class Provider(UuidBaseDocument):
     last_modified: DefaultDate
-    name: Text
+    name: TextWithSuggestAndKeyword
     description: Text | None = None
     exclusion_reason: Text | None = None
     notes: Text | None = None
@@ -140,6 +150,7 @@ class Capture(UuidBaseDocument):
     source_collection: Keyword | None = None
     url_query_parser: InnerParser | None = None
 
+    @computed_field  # type: ignore[prop-decorator]
     @property
     def memento_url(self) -> HttpUrl:
         return HttpUrl(
@@ -191,7 +202,7 @@ class Serp(UuidBaseDocument):
     archive: InnerArchive
     provider: InnerProvider
     capture: InnerCapture
-    url_query: Text
+    url_query: TextWithSuggestAndKeyword
     url_query_parser: InnerParser | None = None
     url_page: Integer | None = None
     url_page_parser: InnerParser | None = None
@@ -201,7 +212,7 @@ class Serp(UuidBaseDocument):
     url_language_parser: InnerParser | None = None
     warc_location: WarcLocation | None = None
     warc_downloader: InnerDownloader | None = None
-    warc_query: Text | None = None
+    warc_query: TextWithSuggestAndKeyword | None = None
     warc_query_parser: InnerParser | None = None
     warc_web_search_result_blocks: Sequence[WebSearchResultBlockId] | None = None
     warc_web_search_result_blocks_parser: InnerParser | None = None
@@ -210,6 +221,7 @@ class Serp(UuidBaseDocument):
     ) = None
     warc_special_contents_result_blocks_parser: InnerParser | None = None
 
+    @computed_field  # type: ignore[prop-decorator]
     @property
     def memento_url(self) -> HttpUrl:
         return HttpUrl(
