@@ -109,7 +109,7 @@ def search(
     return list(response)
 
 
-@router.get("/count")
+@router.get("/count", operation_id="count_archives")
 @limiter.limit("30/minute")
 def count(
     request: Request,
@@ -130,7 +130,7 @@ def count(
     return search.count()
 
 
-@router.get("/suggestions")
+@router.get("/suggestions", operation_id="suggest_archives_queries")
 @limiter.limit("120/minute")
 def suggest_queries(
     request: Request,
@@ -160,7 +160,7 @@ def suggest_queries(
     return [hit.name for hit in response]
 
 
-@router.get("/{id}")
+@router.get("/{id}", operation_id="get_archive_by_id")
 @limiter.limit("120/minute")
 def get_by_id(
     request: Request,

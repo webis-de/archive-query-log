@@ -200,7 +200,7 @@ def search(
     return [EnrichedSerp(**serp.model_dump()) for serp in response]
 
 
-@router.get("/count")
+@router.get("/count", operation_id="count_serps")
 @limiter.limit("15/minute")
 def count(
     request: Request,
@@ -221,7 +221,7 @@ def count(
     return search.count()
 
 
-@router.get("/suggestions")
+@router.get("/suggestions", operation_id="suggest_serps_queries")
 @limiter.limit("120/minute")
 def suggest_queries(
     request: Request,
@@ -251,7 +251,7 @@ def suggest_queries(
     return [hit.url_query for hit in response]
 
 
-@router.get("/count-unique")
+@router.get("/count-unique", operation_id="count_unique_serps")
 @limiter.limit("15/minute")
 def count_unique(
     request: Request,
@@ -285,7 +285,7 @@ class ArchiveBucket(BaseModel):
     count: int
 
 
-@router.get("/top-archives")
+@router.get("/top-archives", operation_id="top_archives")
 @limiter.limit("15/minute")
 def top_archives(
     request: Request,
@@ -325,7 +325,7 @@ class ProviderBucket(BaseModel):
     count: int
 
 
-@router.get("/top-providers")
+@router.get("/top-providers", operation_id="top_providers")
 @limiter.limit("15/minute")
 def top_providers(
     request: Request,
@@ -368,7 +368,7 @@ class DateHistogramBucket(BaseModel):
     count: int
 
 
-@router.get("/date-histogram")
+@router.get("/date-histogram", operation_id="serp_date_histogram")
 @limiter.limit("15/minute")
 def date_histogram(
     request: Request,
@@ -469,7 +469,7 @@ class SerpComparisonResult(BaseModel):
     serps: list[EnrichedSerpWithResults]
 
 
-@router.get("/compare")
+@router.get("/compare", operation_id="compare_serps")
 @limiter.limit("15/minute")
 def compare(
     request: Request,
@@ -519,7 +519,7 @@ def compare(
     return SerpComparisonResult(serps=enriched_serps_with_results)
 
 
-@router.get("/{id}")
+@router.get("/{id}", operation_id="get_serp_by_id")
 @limiter.limit("120/minute")
 def get_by_id(
     request: Request,
