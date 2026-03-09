@@ -76,6 +76,7 @@ tests = [
     "pytest-cov~=7.0",
     "ruff~=0.13.1",
     "types-lxml~=2025.3",
+    "types-python-dateutil~=2.9",
     "types-pyyaml~=6.0",
     # types-requests~=2.32 depends on urllib3>=2
     "types-requests~=2.0",
