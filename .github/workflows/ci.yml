@@ -23,7 +23,7 @@ jobs:
       - name: 🧪 Check package bundles
         run: twine check dist/*
       - name: 📤 Upload Python wheels
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: wheels
           path: dist
@@ -206,7 +206,7 @@ jobs:
       - name: 🏗️ Package Helm chart
         run: helm package helm/ --version ${{ steps.version.outputs.version }}
       - name: 📤 Upload Helm chart
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: helm-chart
           path: archive-query-log-*.tgz
