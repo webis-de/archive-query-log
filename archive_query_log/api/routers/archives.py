@@ -5,7 +5,7 @@ Routes for getting web archives and related statistics.
 from functools import cached_property
 from typing import Annotated
 from uuid import UUID
-from typing import Iterable, Literal
+from typing import Iterable
 
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search

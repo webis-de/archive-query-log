@@ -316,7 +316,7 @@ def upload_serps_warc(config: Config) -> None:
 
     # Get downloader ID.
     downloader_id_components = (
-        config.s3.endpoint_url,
+        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
         config.s3.bucket_name,
         app_version,
     )
@@ -350,7 +350,7 @@ def _download_web_search_result_block_warc_before_serp(
 
     # Get downloader ID.
     downloader_id_components = (
-        config.s3.endpoint_url,
+        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
         config.s3.bucket_name,
         app_version,
     )
@@ -404,7 +404,7 @@ def _download_web_search_result_block_warc_after_serp(
 
     # Get downloader ID.
     downloader_id_components = (
-        config.s3.endpoint_url,
+        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
         config.s3.bucket_name,
         app_version,
     )
@@ -515,7 +515,7 @@ def download_web_search_result_block_warc_before_serp(
     stored_result_blocks = _unwrap_records(stored_records, WebSearchResultBlock)
 
     downloader_id_components = (
-        config.s3.endpoint_url,
+        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
         config.s3.bucket_name,
         app_version,
     )
@@ -588,7 +588,7 @@ def download_web_search_result_block_warc_after_serp(
     stored_result_blocks = _unwrap_records(stored_records, WebSearchResultBlock)
 
     downloader_id_components = (
-        config.s3.endpoint_url,
+        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
         config.s3.bucket_name,
         app_version,
     )
