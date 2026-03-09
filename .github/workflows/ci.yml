@@ -190,6 +190,24 @@ jobs:
         with:
           context: browser/
           push: false
+  helm-package:
+    name: 🏗️ Package Helm chart
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 🧰 Install Helm
+        uses: azure/setup-helm@v4.3.0
+      - name: ℹ️ Determine version
+        id: version
+        uses: codacy/git-version@2.7.1
+      - name: 🏗️ Package Helm chart
+        run: helm package helm/ --version ${{ steps.version.outputs.version }}
+      - name: 📤 Upload Helm chart
+        uses: actions/upload-artifact@v4
+        with:
+          name: helm-chart
+          path: archive-query-log-*.tgz
   python-publish:
     name: 🚀 Publish Python wheels
     if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
@@ -288,6 +306,18 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+  helm-publish:
+    name: 🏗️ Package Helm chart
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check-out
+        uses: actions/checkout@v5
+      - name: 📥 Download Python wheels
+        uses: actions/download-artifact@v5
+        with:
+          name: helm-chart
+      - name: 🚀 Publish Helm chart
+        run: helm push archive-query-log-*.tgz oci://${{ github.repository }}/charts
   github-release:
     name: 🚀 Create GitHub release
     if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
