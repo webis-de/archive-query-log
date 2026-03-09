@@ -201,6 +201,8 @@ jobs:
       - name: ℹ️ Determine version
         id: version
         uses: codacy/git-version@2.7.1
+        with:
+          release-branch: main
       - name: 🏗️ Package Helm chart
         run: helm package helm/ --version ${{ steps.version.outputs.version }}
       - name: 📤 Upload Helm chart
