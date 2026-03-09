@@ -1,5 +1,5 @@
 # Stage 1: Build web app with Angular.
-FROM node:24-bookworm AS build
+FROM node:25.8.0-bookworm AS build
 WORKDIR /app
 # Copy only the package configuration files for dependencies.
 COPY package*.json ./
@@ -11,7 +11,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve pre-built, static files with NGINX.
-FROM nginx:stable-alpine AS runtime
+FROM nginx:1.28.5-alpine AS runtime
 # Add NGINX configuration for web app.
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copy Angular build output to NGINX's web root.
