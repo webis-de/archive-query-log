@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ $.Release.Name }}-browser-backend-ingress
+  name: {{ $.Release.Name }}-browser-backend-ingress-secondary
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/proxy-body-size: 100m
@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: {{ $.Values.browser.backend.ingressClassName }}
   rules:
-    - host: {{ $.Values.browser.backend.host }}
+    - host: {{ $.Values.browser.backend.secondaryHost }}
       http:
         paths:
           - path: /api(/|$)(.*)
@@ -20,7 +20,3 @@ spec:
                 name: {{ $.Release.Name }}-browser-backend
                 port:
                   name: http
-  tls:
-    - secretName: cert-webis-de
-      hosts:
-        - {{ $.Values.browser.backend.host }}

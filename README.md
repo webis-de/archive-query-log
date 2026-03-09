@@ -443,35 +443,48 @@ If you no longer need the chart, you can uninstall it:
 helm uninstall archive-query-log
 ```
 
-## Monitoring
+## API
 
-To serve a basic monitoring UI, run:
+Direct access to the Elasticsearch cluster usually poses security and privacy risks, so we provide a backend API that serves the data from the Archive Query Log securely. The API is built with FastAPI and can be started by running:
 
 ```shell
 uvicorn archive_query_log.api:app --reload
 ```
 
-Then, open <http://localhost:8000> in your web browser.
 An API documentation is available at <http://localhost:8000/docs>.
+
+### Monitoring
+
+A basic monitoring UI is served with the API and can be accessed at <http://localhost:8000>.
+
+### MCP Server
+
+Selected endpoints of the API are also available via the [model context protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro).
+This means that you can use AQL data in LLM agents and similar LLM-based applications that support MCP.
+The MCP server is available at <http://localhost:8000/mcp>.
+
+#### Testing the MCP server
+
+The MCP server can be tested with the MCP Inspector:
+
+1. Start the MCP Inspector:
+
+   ```shell
+   npx @modelcontextprotocol/inspector
+   ```
+
+2. Configure the MCP Inspector to connect to the AQL MCP server at <http://localhost:8000/mcp>:
+   - Transport Type: STDIO
+   - Command: `npx`
+   - Arguments: `mcp-remote http://localhost:8000/mcp 8080`
+3. Hit "Connect", and then explore the available tools at "Tools" > "List Tools"
 
 ## Browser
 
 The AQL Browser is a web application to explore the data in the Archive Query Log.
-It is run as two separate components: a [backend API](#browser-api) that serves all relevant data from the Elasticsearch cluster and a [frontend web app](#browser-app) that provides a user interface to explore the data and query the backend API.
+The app internally uses the [AQL API](#api) to provide a user interface for data exploration and querying.
 
 ![Browser app screenshot](docs/screenshot-browser.png)
-
-### Browser API
-
-To start the backend API of the AQL Browser, run:
-
-```shell
-uvicorn archive_query_log.browser:app --reload
-```
-
-Read more about the API in the [API documentation](docs/browser-backend.md).
-
-### Browser app
 
 To start the frontend web app of the AQL Browser, first install the dependencies:
 
@@ -490,9 +503,11 @@ More information about the frontend web app can be found in the [frontend docume
 
 ## Citation
 
-If you use the Archive Query Log dataset or the crawling code in your research, please cite the following paper describing the AQL and its use cases:
+If you use the Archive Query Log dataset or the crawling code in your research, please cite the following papers describing the AQL and its use cases:
 
 > Jan Heinrich Reimer, Sebastian Schmidt, Maik Fröbe, Lukas Gienapp, Harrisen Scells, Benno Stein, Matthias Hagen, and Martin Potthast. [The Archive Query Log: Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives.](https://webis.de/publications.html?q=archive#reimer_2023) In Hsin-Hsi Chen et al., editors, _46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2023)_, pages 2848–2860, July 2023. ACM.
+
+> Jan Heinrich Merker, Simon Ruth, Harrisen Scells, and Martin Potthast. [An Open SERP Mining Infrastructure for the Archive Query Log.](https://webis.de/publications.html?q=archive#merker_2026a) In _Advances in Information Retrieval. 48th European Conference on IR Research (ECIR 2026)_, LNCS, March 2026. Springer Nature.
 
 You can use the following BibTeX entry for citation:
 
@@ -508,9 +523,20 @@ You can use the following BibTeX entry for citation:
     pages = {2848--2860},
     publisher = {ACM},
     site = {Taipei, Taiwan},
-    title = {{The Archive Query Log: Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives}},
+    title = {The {Archive} {Query} {Log}: Mining Millions of Search Result Pages of Hundreds of Search Engines from 25 Years of Web Archives},
     url = {https://dl.acm.org/doi/10.1145/3539618.3591890},
     year = 2023
+}
+@InProceedings{merker:2026a,
+  address = {Cham, Switzerland},
+  author = {Jan Heinrich Merker and Simon Ruth and Harrisen Scells and Martin Potthast},
+  booktitle = {Advances in Information Retrieval. 48th European Conference on IR Research (ECIR 2026)},
+  month = mar,
+  publisher = {Springer Nature},
+  series = {Lecture Notes in Computer Science},
+  site = {Delft, The Netherlands},
+  title = {An Open SERP Mining Infrastructure for the {Archive} {Query} {Log}},
+  year = 2026
 }
 ```
 

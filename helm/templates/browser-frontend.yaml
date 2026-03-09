@@ -5,7 +5,8 @@ metadata:
   labels:
     app: {{ $.Release.Name }}-browser-frontend
 spec:
-  replicas: 1
+  replicas: {{ .Values.browser.frontend.replicas }}
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: {{ $.Release.Name }}-browser-frontend
