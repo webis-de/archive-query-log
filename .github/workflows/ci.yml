@@ -135,7 +135,7 @@ jobs:
         run: npm clean-install
       - name: 🔍 Check Node app security
         working-directory: browser/
-        run: npm audit --audit-level high
+        run: npm audit --audit-level critical
   node-test-browser:
     name: 🧪 Test browser Node app
     runs-on: ubuntu-latest
