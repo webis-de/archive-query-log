@@ -11,7 +11,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve pre-built, static files with NGINX.
-FROM nginx:1.28.5-alpine AS runtime
+FROM nginx:1.29.5-alpine AS runtime
 # Add NGINX configuration for web app.
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copy Angular build output to NGINX's web root.
