@@ -307,15 +307,18 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
   helm-publish:
-    name: 🏗️ Package Helm chart
+    name: 🚀 Publish Helm chart
+    needs:
+      - helm-package
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v5
-      - name: 📥 Download Python wheels
+      - name: 📥 Download Helm chart
         uses: actions/download-artifact@v5
         with:
           name: helm-chart
+          path: .
       - name: 🚀 Publish Helm chart
         run: helm push archive-query-log-*.tgz oci://${{ github.repository }}/charts
   github-release:
