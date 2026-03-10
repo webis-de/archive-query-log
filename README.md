@@ -402,7 +402,7 @@ ray job submit --runtime-env ray-runtime-env.local.yml --working-dir . -- python
 
 ### Cluster (Helm/Kubernetes)
 
-Running the Archive Query Log on a cluster is recommended for large-scale crawls. We provide a Helm chart that automatically starts crawling and parsing jobs for you and stores the results in an Elasticsearch cluster.
+Running the Archive Query Log on a cluster is recommended for large-scale crawls. We provide a [Helm chart](https://github.com/webis-de/archive-query-log/pkgs/container/archive-query-log%2Fcharts%2Farchive-query-log) that automatically starts crawling and parsing jobs for you and stores the results in an Elasticsearch cluster.
 
 #### Installation
 
@@ -410,7 +410,7 @@ Just install [Helm](https://helm.sh/docs/intro/quickstart/) and configure `kubec
 
 #### Cluster configuration
 
-Crawling the Archive Query Log requires access to an Elasticsearch cluster and some S3 block storage. Configure the Elasticsearch and S3 credentials in a `values.override.yaml` file like this:
+Crawling the Archive Query Log requires access to an Elasticsearch cluster and some S3 block storage. Configure the Elasticsearch and S3 credentials in a `values.yaml` file like this:
 
 ```yaml
 elasticsearch:
@@ -430,10 +430,17 @@ s3:
 Let us deploy the Helm chart on the cluster (we are testing first with `--dry-run` to see if everything works):
 
 ```shell
-helm upgrade --install --values ./helm/values.override.yaml --dry-run archive-query-log ./helm
+helm install archive-query-log --values values.yaml --version X.Y.Z oci://ghcr.io/webis-de/archive-query-log/charts/archive-query-log --dry-run
 ```
 
+Replace `X.Y.Z` with the latest version of the chart, as found on [GitHub Packages](https://github.com/webis-de/archive-query-log/pkgs/container/archive-query-log%2Fcharts%2Farchive-query-log)
 If everything works and the output looks good, you can remove the `--dry-run` flag to actually deploy the chart.
+
+To upgrade the chart, use:
+
+```shell
+helm upgrade --install archive-query-log --values values.yaml --version X.Y.Z oci://ghcr.io/webis-de/archive-query-log/charts/archive-query-log --dry-run
+```
 
 #### Uninstall
 
