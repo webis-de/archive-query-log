@@ -200,15 +200,9 @@ jobs:
         uses: azure/setup-helm@v4.3.0
       - name: ℹ️ Determine version
         id: version
-        uses: codacy/git-version@2.7.1
-        with:
-          release-branch: main
+        uses: PaulHatch/semantic-version@v6.0.1
       - name: 🏗️ Package Helm chart
-        run: helm package helm/
-        if: github.event_name != 'push' || !endsWith(github.event.base_ref, 'main') || !startsWith(github.ref, 'refs/tags')
-      - name: 🏗️ Package Helm chart
-        run: helm package helm/ --version ${{ steps.version.outputs.version }}
-        if: github.event_name == 'push' && endsWith(github.event.base_ref, 'main') && startsWith(github.ref, 'refs/tags')
+        run: helm package helm/ --version ${{ steps.version.outputs.major }}.${{ steps.version.outputs.minor }}.${{ steps.version.outputs.patch }}
       - name: 📤 Upload Helm chart
         uses: actions/upload-artifact@v7
         with:
