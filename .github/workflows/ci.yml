@@ -324,6 +324,12 @@ jobs:
         with:
           name: helm-chart
           path: .
+      - name: 🔑 Login to GitHub Packages
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: 🚀 Publish Helm chart
         run: helm push archive-query-log-*.tgz oci://ghcr.io/${{ github.repository }}/charts
   github-release:
