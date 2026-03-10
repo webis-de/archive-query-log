@@ -20,7 +20,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: {{ $.Release.Name }}-browser-backend
-          image: "{{ .Values.browser.backend.image }}:{{ .Chart.AppVersion }}"
+          image: "{{ .Values.browser.backend.image }}:0.3.8"
           resources:
             requests:
               memory: "256Mi"

@@ -18,7 +18,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: {{ $.Release.Name }}-browser-frontend
-          image: "{{ .Values.browser.frontend.image }}:{{ .Chart.AppVersion }}"
+          image: "{{ .Values.browser.frontend.image }}:0.3.8"
           ports:
             - name: http
               containerPort: 80
