@@ -9,7 +9,7 @@ from typing import Annotated, Iterable, Literal, Callable
 from uuid import UUID
 
 from elasticsearch import Elasticsearch
-from elasticsearch_dsl import Search
+from elasticsearch_dsl import Search, Nested
 from elasticsearch_dsl.aggs import (
     Terms as TermsAggregation,
     DateHistogram,
@@ -462,7 +462,7 @@ def date_histogram(
 
 
 class EnrichedSerpWithResults(EnrichedSerp):
-    results: list[WebSearchResultBlock] | None
+    results: Annotated[list[WebSearchResultBlock] | None, Nested(WebSearchResultBlock)]
 
 
 class SerpComparisonResult(BaseModel):
