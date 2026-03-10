@@ -196,6 +196,8 @@ jobs:
     steps:
       - name: 📥 Check-out
         uses: actions/checkout@v6
+        with:
+          fetch-tags: true
       - name: 🧰 Install Helm
         uses: azure/setup-helm@v4.3.0
       - name: ℹ️ Determine version
