@@ -490,4 +490,4 @@ config.override.yml
 
 .vscode
 .idea
-./values.yaml
+/values.yaml
