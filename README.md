@@ -1,6 +1,6 @@
-[![Paper DOI](https://img.shields.io/badge/DOI-10.1145%2F3539618.3591890-blue?style=flat-square)](https://doi.org/10.1145/3539618.3591890)
-[![arXiv preprint](https://img.shields.io/badge/arXiv-2304.00413-blue?style=flat-square)](https://arxiv.org/abs/2304.00413)
-[![Papers with Code](https://img.shields.io/badge/papers%20with%20code-AQL--22-blue?style=flat-square)](https://paperswithcode.com/paper/the-archive-query-log-mining-millions-of) \
+[![Paper](https://img.shields.io/badge/DOI-10.1145%2F3539618.3591890-blue?style=flat-square)](https://doi.org/10.1145/3539618.3591890)
+[![Paper](https://img.shields.io/badge/DOI-10.1007%2F978--3--032--21321--1__59-blue?style=flat-square
+)](https://doi.org/10.1007/978-3-032-21321-1_59) \
 [![PyPi](https://img.shields.io/pypi/v/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/)
 [![Python](https://img.shields.io/pypi/pyversions/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/)
 [![Downloads](https://img.shields.io/pypi/dm/archive-query-log?style=flat-square)](https://pypi.org/project/archive-query-log/) \
