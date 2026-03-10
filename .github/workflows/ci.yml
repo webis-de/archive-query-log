@@ -202,7 +202,7 @@ jobs:
         id: version
         uses: release-kit/semver@v2
         with:
-          source: workflow-tag
+          source: latest-tag
       - name: 🏗️ Package Helm chart
         run: helm package helm/ --version ${{ steps.version.outputs.major }}.${{ steps.version.outputs.minor }}.${{ steps.version.outputs.patch }}
       - name: 📤 Upload Helm chart
