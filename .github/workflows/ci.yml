@@ -201,6 +201,8 @@ jobs:
       - name: ℹ️ Determine version
         id: version
         uses: PaulHatch/semantic-version@v6.0.1
+        with:
+          tag_prefix: ""
       - name: 🏗️ Package Helm chart
         run: helm package helm/ --version ${{ steps.version.outputs.major }}.${{ steps.version.outputs.minor }}.${{ steps.version.outputs.patch }}
       - name: 📤 Upload Helm chart
