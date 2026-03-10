@@ -6,7 +6,7 @@ This is the entry point for the FastAPI application.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastmcp import FastMCP
-from fastmcp.server.openapi import RouteMap, MCPType
+from fastmcp.server.providers.openapi import RouteMap, MCPType
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
