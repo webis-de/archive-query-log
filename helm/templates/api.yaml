@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-api
+  labels:
+    app: {{ $.Release.Name }}-api
+  annotations:
+    checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+spec:
+  replicas: {{ .Values.api.replicas }}
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: {{ $.Release.Name }}-api
+  template:
+    metadata:
+      labels:
+        app: {{ $.Release.Name }}-api
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: {{ $.Release.Name }}-api
+          image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          command:
+            - /venv/bin/uvicorn
+            - archive_query_log.api:app
+            - --host
+            - 0.0.0.0
+            - --port
+            - "5000"
+            - --root-path
+            - /api/
+          ports:
+            - name: http
+              containerPort: 5000
+          env:
+            - name: ELASTICSEARCH_HOST
+              value: {{ $.Values.elasticsearch.host | quote }}
+            - name: ELASTICSEARCH_PORT
+              value: {{ $.Values.elasticsearch.port | quote }}
+            - name: ELASTICSEARCH_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: elasticsearchApiKey
+            - name: S3_ENDPOINT_URL
+              value: {{ $.Values.s3.endpointUrl | quote }}
+            - name: S3_BUCKET_NAME
+              value: {{ $.Values.s3.bucketName | quote }}
+            - name: S3_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: s3AccessKey
+            - name: S3_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: s3SecretKey
+            - name: WARC_CACHE_PATH_SERPS
+              value: {{ $.Values.warcCache.pathSerps | quote }}
+            - name: ENVIRONMENT
+              value: "production"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
