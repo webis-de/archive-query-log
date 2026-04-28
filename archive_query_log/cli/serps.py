@@ -205,6 +205,27 @@ def upload_warc(
     upload_serps_warc(config)
 
 
+@download.command(name="ia-metadata")
+def download_ia_metadata(
+    *,
+    size: int = 10,
+    dry_run: bool = False,
+    config: Config,
+) -> None:
+    """
+    Download Internet Archive metadata for SERPs with a stored WARC.
+
+    Reads the WARC from S3, extracts the x-archive-src identifier,
+    fetches collection/crawl metadata from archive.org, and updates the index.
+
+    :param size: How many SERPs to process per run.
+    """
+    from archive_query_log.downloaders.ia_metadata import download_serps_ia_metadata
+
+    Serp.init(using=config.es.client, index=config.es.index_serps)
+    download_serps_ia_metadata(config=config, size=size, dry_run=dry_run)
+
+
 @serps.command
 def export(
     sample_size: PositiveInt,

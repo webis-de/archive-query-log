@@ -220,6 +220,15 @@ class Serp(UuidBaseDocument):
         Sequence[SpecialContentsResultBlockId] | None
     ) = None
     warc_special_contents_result_blocks_parser: InnerParser | None = None
+    ia_identifier: Keyword | None = None
+    ia_collection: Sequence[Keyword] | None = None
+    ia_crawljob: Keyword | None = None
+    ia_crawler: Keyword | None = None
+    ia_source: Keyword | None = None
+    ia_mediatype: Keyword | None = None
+    ia_publicdate: Keyword | None = None
+    ia_date: Keyword | None = None
+    ia_metadata_downloader: InnerDownloader | None = None
 
     @computed_field  # type: ignore[prop-decorator]
     @property
