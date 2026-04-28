@@ -35,8 +35,12 @@ def _extract_ia_identifier(serp: Serp, warc_store: WarcStore) -> str | None:
 def _fetch_ia_metadata(identifier: str) -> dict | None:
     from internetarchive import get_item
     WANTED_KEYS = {
-        "collection", "crawljob", "crawler", "source",
-        "identifier", "mediatype", "publicdate", "date",
+        "identifier", "collection",
+        "contributor", "crawler", "crawljob", "source",
+        "mediatype", "publicdate", "addeddate",
+        "firstfiledate", "lastfiledate",
+        "operator", "sponsor", "uploader", "title",
+        "backup_location",
     }
     try:
         item = get_item(identifier)
@@ -54,15 +58,24 @@ def _download_serp_ia_metadata_action(
     identifier = _extract_ia_identifier(serp, warc_store)
     metadata = _fetch_ia_metadata(identifier) if identifier else None
 
+    m = metadata or {}
     yield serp.update_action(
         ia_identifier=identifier,
-        ia_collection=_normalize_to_list(metadata.get("collection")) if metadata else None,
-        ia_crawljob=metadata.get("crawljob") if metadata else None,
-        ia_crawler=metadata.get("crawler") if metadata else None,
-        ia_source=metadata.get("source") if metadata else None,
-        ia_mediatype=metadata.get("mediatype") if metadata else None,
-        ia_publicdate=metadata.get("publicdate") if metadata else None,
-        ia_date=metadata.get("date") if metadata else None,
+        ia_collection=_normalize_to_list(m.get("collection")),
+        ia_contributor=m.get("contributor"),
+        ia_crawler=m.get("crawler"),
+        ia_crawljob=m.get("crawljob"),
+        ia_source=m.get("source"),
+        ia_mediatype=m.get("mediatype"),
+        ia_publicdate=m.get("publicdate"),
+        ia_addeddate=m.get("addeddate"),
+        ia_firstfiledate=m.get("firstfiledate"),
+        ia_lastfiledate=m.get("lastfiledate"),
+        ia_operator=m.get("operator"),
+        ia_sponsor=m.get("sponsor"),
+        ia_uploader=m.get("uploader"),
+        ia_title=m.get("title"),
+        ia_backup_location=m.get("backup_location"),
         ia_metadata_downloader=InnerDownloader(
             id=_DOWNLOADER_ID,
             should_download=False,
