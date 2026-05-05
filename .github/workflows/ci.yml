@@ -76,7 +76,7 @@ jobs:
       - name: 🧪 Test Python code
         run: pytest --cov --cov-report=xml .
       - name: 📤 Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
   node-build-browser:
@@ -156,7 +156,7 @@ jobs:
         working-directory: browser/
         run: npm run test:ci
       - name: 📤 Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: browser/coverage/
