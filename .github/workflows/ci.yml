@@ -199,7 +199,7 @@ jobs:
         with:
           fetch-tags: true
       - name: 🧰 Install Helm
-        uses: azure/setup-helm@v4.3.0
+        uses: azure/setup-helm@v5.0.0
       - name: ℹ️ Determine version
         id: version
         uses: release-kit/semver@v2
