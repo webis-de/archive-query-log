@@ -5,7 +5,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
     apt-get -y install git build-essential zlib1g-dev
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    ([ -d /venv ] || python3.13 -m venv /venv) && \
+    ([ -d /venv ] || python3 -m venv /venv) && \
     /venv/bin/pip install --upgrade pip
 
 WORKDIR /workspace/
