@@ -51,7 +51,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^21.1.0",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.14",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.17",
     "ts-morph": "^27.0.2",
