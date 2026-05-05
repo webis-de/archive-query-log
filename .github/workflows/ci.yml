@@ -171,7 +171,7 @@ jobs:
       - name: 🧰 Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: 🏗️ Build Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: false
@@ -186,7 +186,7 @@ jobs:
       - name: 🧰 Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: 🏗️ Build browser Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: browser/
           push: false
@@ -266,7 +266,7 @@ jobs:
           images: |
             ghcr.io/${{ github.repository }}
       - name: 🚀 Build and push image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
@@ -304,7 +304,7 @@ jobs:
           images: |
             ghcr.io/${{ github.repository }}/browser
       - name: 🚀 Build and push image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: browser/
           push: true
