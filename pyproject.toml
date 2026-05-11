@@ -51,7 +51,7 @@ dependencies = [
     "ray-elasticsearch~=1.1,>=1.1.1",
     "requests~=2.32",
     "requests-ratelimiter~=0.7.0",
-    "resiliparse~=0.15.2",
+    "resiliparse>=0.15.2,<0.17.0",
     "slowapi~=0.1.9",
     "tldextract~=5.3",  # TODO: Replace with dfir-unfurl.
     "tqdm~=4.67",
