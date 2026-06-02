@@ -261,7 +261,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: ℹ️ Extract image metadata
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ghcr.io/${{ github.repository }}
@@ -299,7 +299,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: ℹ️ Extract image metadata
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: |
             ghcr.io/${{ github.repository }}/browser
