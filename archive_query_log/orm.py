@@ -10,7 +10,7 @@ from elasticsearch_dsl import (
     Text as _Text,
     Completion as _Completion,
 )
-from pydantic import HttpUrl, Field, AliasChoices, computed_field
+from pydantic import Field, AliasChoices, computed_field, AnyHttpUrl
 from pydantic_extra_types.language_code import LanguageAlpha2
 
 from elasticsearch_pydantic import (
@@ -63,8 +63,8 @@ class Archive(UuidBaseDocument):
     last_modified: DefaultDate
     name: TextWithSuggestAndKeyword
     description: Text | None = None
-    cdx_api_url: HttpUrl
-    memento_api_url: HttpUrl
+    cdx_api_url: AnyHttpUrl
+    memento_api_url: AnyHttpUrl
     priority: RankFeature | None = None
     should_build_sources: bool = True
     last_built_sources: Date | None = None
@@ -97,8 +97,8 @@ class Provider(UuidBaseDocument):
 
 class InnerArchive(BaseInnerDocument):
     id: UUID
-    cdx_api_url: HttpUrl
-    memento_api_url: HttpUrl
+    cdx_api_url: AnyHttpUrl
+    memento_api_url: AnyHttpUrl
     priority: RankFeature | None = None
 
 
@@ -133,7 +133,7 @@ class Capture(UuidBaseDocument):
     last_modified: DefaultDate
     archive: InnerArchive
     provider: InnerProvider
-    url: HttpUrl
+    url: AnyHttpUrl
     url_key: Keyword
     timestamp: Date
     status_code: Integer | None = None
@@ -143,7 +143,7 @@ class Capture(UuidBaseDocument):
     offset: Integer | None = None
     length: Integer | None = None
     access: Keyword | None = None
-    redirect_url: HttpUrl | None = None
+    redirect_url: AnyHttpUrl | None = None
     flags: Sequence[Keyword] | None = None
     collection: Keyword | None = None
     source: Keyword | None = None
@@ -152,8 +152,8 @@ class Capture(UuidBaseDocument):
 
     @computed_field  # type: ignore[prop-decorator]
     @property
-    def memento_url(self) -> HttpUrl:
-        return HttpUrl(
+    def memento_url(self) -> AnyHttpUrl:
+        return AnyHttpUrl(
             f"{self.archive.memento_api_url}/"
             f"{self.timestamp.astimezone(UTC).strftime('%Y%m%d%H%M%S')}/"
             f"{self.url}"
@@ -168,7 +168,7 @@ class Capture(UuidBaseDocument):
 
 class InnerCapture(BaseInnerDocument):
     id: UUID
-    url: HttpUrl
+    url: AnyHttpUrl
     timestamp: Date
     status_code: Integer | None = None
     digest: Keyword
@@ -223,8 +223,8 @@ class Serp(UuidBaseDocument):
 
     @computed_field  # type: ignore[prop-decorator]
     @property
-    def memento_url(self) -> HttpUrl:
-        return HttpUrl(
+    def memento_url(self) -> AnyHttpUrl:
+        return AnyHttpUrl(
             f"{self.archive.memento_api_url}/"
             f"{self.capture.timestamp.astimezone(UTC).strftime('%Y%m%d%H%M%S')}/"
             f"{self.capture.url}"
@@ -252,7 +252,7 @@ class ResultBlock(UuidBaseDocument):
     content: Text
     parser: InnerParser
     rank: Integer
-    url: HttpUrl | None = None
+    url: AnyHttpUrl | None = None
     """URL to the landing page of the result block."""
     text: Text | None = None
     """Main content plain text of the result block."""
@@ -269,7 +269,7 @@ class ResultBlock(UuidBaseDocument):
 
 
 class WebSearchResultBlock(ResultBlock):
-    url: HttpUrl  # type: ignore[override]
+    url: AnyHttpUrl  # type: ignore[override]
     text: Text | None = None
     """Snippet text of the web search result block."""
 
