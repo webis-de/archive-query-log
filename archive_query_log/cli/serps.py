@@ -3,7 +3,7 @@ from cyclopts.types import ResolvedPath, PositiveInt
 
 from archive_query_log.config import Config
 from archive_query_log.export.base import ExportFormat
-from archive_query_log.orm import Serp, WebSearchResultBlock, Feature
+from archive_query_log.orm import Serp, OrganicResult, Feature
 
 serps = App(
     name="serps",
@@ -104,7 +104,7 @@ def warc_query(
 
 
 @parse.command
-def warc_web_search_result_blocks(
+def warc_organic_results(
     *,
     size: int = 10,
     dry_run: bool = False,
@@ -115,15 +115,15 @@ def warc_web_search_result_blocks(
 
     :param size: How many SERPs to parse.
     """
-    from archive_query_log.parsers.warc_web_search_result_blocks import (
-        parse_serps_warc_web_search_result_blocks,
+    from archive_query_log.parsers.warc_organic_results import (
+        parse_serps_warc_organic_results,
     )
 
-    WebSearchResultBlock.init(
+    OrganicResult.init(
         using=config.es.client,
-        index=config.es.index_web_search_result_blocks,
+        index=config.es.index_organic_results,
     )
-    parse_serps_warc_web_search_result_blocks(
+    parse_serps_warc_organic_results(
         config=config,
         size=size,
         dry_run=dry_run,

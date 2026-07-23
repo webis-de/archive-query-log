@@ -25,7 +25,7 @@ from archive_query_log.orm import (
     Serp,
     InnerDownloader,
     WarcLocation,
-    WebSearchResultBlock,
+    OrganicResult,
     UuidBaseDocument,
 )
 from archive_query_log.utils.time import utc_now
@@ -341,10 +341,10 @@ def upload_serps_warc(config: Config) -> None:
     config.es.bulk(actions)
 
 
-def _download_web_search_result_block_warc_before_serp(
+def _download_organic_result_warc_before_serp(
     config: Config,
-    result_block: WebSearchResultBlock,
-) -> Iterator[_AnnotatedWarcRecord[WebSearchResultBlock]]:
+    result_block: OrganicResult,
+) -> Iterator[_AnnotatedWarcRecord[OrganicResult]]:
     if result_block.capture_before_serp is None:
         return
 
@@ -367,7 +367,7 @@ def _download_web_search_result_block_warc_before_serp(
     if result_block.capture_before_serp.status_code != 200:
         result_block.update(
             using=config.es.client,
-            index=config.es.index_web_search_result_blocks,
+            index=config.es.index_organic_results,
         )
         return
 
@@ -395,10 +395,10 @@ def _download_web_search_result_block_warc_before_serp(
         yield _AnnotatedWarcRecord(record, result_block)
 
 
-def _download_web_search_result_block_warc_after_serp(
+def _download_organic_result_warc_after_serp(
     config: Config,
-    result_block: WebSearchResultBlock,
-) -> Iterator[_AnnotatedWarcRecord[WebSearchResultBlock]]:
+    result_block: OrganicResult,
+) -> Iterator[_AnnotatedWarcRecord[OrganicResult]]:
     if result_block.capture_after_serp is None:
         return
 
@@ -421,7 +421,7 @@ def _download_web_search_result_block_warc_after_serp(
     if result_block.capture_after_serp.status_code != 200:
         result_block.update(
             using=config.es.client,
-            index=config.es.index_web_search_result_blocks,
+            index=config.es.index_organic_results,
         )
         return
 
@@ -464,12 +464,12 @@ def _unwrap_records(
         yield annotation, location
 
 
-def download_web_search_result_block_warc_before_serp(
+def download_organic_result_warc_before_serp(
     config: Config, size: int = 10
 ) -> None:
     changed_result_blocks_search: Search = (
-        WebSearchResultBlock.search(
-            using=config.es.client, index=config.es.index_web_search_result_blocks
+        OrganicResult.search(
+            using=config.es.client, index=config.es.index_organic_results
         )
         .filter(
             Exists(field="capture_before_serp.url")
@@ -488,7 +488,7 @@ def download_web_search_result_block_warc_before_serp(
         print("No new/changed web search result blocks.")
         return
 
-    changed_result_blocks: Iterable[WebSearchResultBlock] = (
+    changed_result_blocks: Iterable[OrganicResult] = (
         changed_result_blocks_search.params(size=size).execute()
     )
 
@@ -501,7 +501,7 @@ def download_web_search_result_block_warc_before_serp(
 
     # Download from Memento API.
     downloaded_records = chain.from_iterable(
-        _download_web_search_result_block_warc_before_serp(
+        _download_organic_result_warc_before_serp(
             config=config,
             result_block=result_block,
         )
@@ -512,7 +512,7 @@ def download_web_search_result_block_warc_before_serp(
     stored_records: Iterator[WarcS3Record] = config.s3.warc_s3_store.write(
         downloaded_records
     )
-    stored_result_blocks = _unwrap_records(stored_records, WebSearchResultBlock)
+    stored_result_blocks = _unwrap_records(stored_records, OrganicResult)
 
     downloader_id_components = (
         config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
@@ -537,12 +537,12 @@ def download_web_search_result_block_warc_before_serp(
     config.es.bulk(actions)
 
 
-def download_web_search_result_block_warc_after_serp(
+def download_organic_result_warc_after_serp(
     config: Config, size: int = 10
 ) -> None:
     changed_result_blocks_search: Search = (
-        WebSearchResultBlock.search(
-            using=config.es.client, index=config.es.index_web_search_result_blocks
+        OrganicResult.search(
+            using=config.es.client, index=config.es.index_organic_results
         )
         .filter(
             Exists(field="capture_after_serp.url")
@@ -561,7 +561,7 @@ def download_web_search_result_block_warc_after_serp(
         print("No new/changed web search result blocks.")
         return
 
-    changed_result_blocks: Iterable[WebSearchResultBlock] = (
+    changed_result_blocks: Iterable[OrganicResult] = (
         changed_result_blocks_search.params(size=size).execute()
     )
 
@@ -574,7 +574,7 @@ def download_web_search_result_block_warc_after_serp(
 
     # Download from Memento API.
     downloaded_records = chain.from_iterable(
-        _download_web_search_result_block_warc_after_serp(
+        _download_organic_result_warc_after_serp(
             config=config,
             result_block=result_block,
         )
@@ -585,7 +585,7 @@ def download_web_search_result_block_warc_after_serp(
     stored_records: Iterator[WarcS3Record] = config.s3.warc_s3_store.write(
         downloaded_records
     )
-    stored_result_blocks = _unwrap_records(stored_records, WebSearchResultBlock)
+    stored_result_blocks = _unwrap_records(stored_records, OrganicResult)
 
     downloader_id_components = (
         config.s3.endpoint_url if config.s3.endpoint_url is not None else "",

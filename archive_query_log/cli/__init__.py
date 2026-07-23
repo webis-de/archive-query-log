@@ -10,7 +10,7 @@ from archive_query_log.cli.api import api
 from archive_query_log.cli.providers import providers
 from archive_query_log.cli.serps import serps
 from archive_query_log.cli.sources import sources
-from archive_query_log.cli.web_search_result_blocks import web_search_result_blocks
+from archive_query_log.cli.organic_results import organic_results
 from archive_query_log.config import Config
 from archive_query_log.orm import (
     BaseDocument,
@@ -19,7 +19,7 @@ from archive_query_log.orm import (
     Source,
     Capture,
     Serp,
-    WebSearchResultBlock,
+    OrganicResult,
     Feature,
 )
 
@@ -47,7 +47,7 @@ def init(
         (Source, config.es.index_sources),
         (Capture, config.es.index_captures),
         (Serp, config.es.index_serps),
-        (WebSearchResultBlock, config.es.index_web_search_result_blocks),
+        (OrganicResult, config.es.index_organic_results),
         (Feature, config.es.index_features),
     ]
     indices: Iterable[tuple[Type[BaseDocument], str]] = tqdm(
@@ -65,4 +65,4 @@ app.command(sources)
 app.command(captures)
 app.command(serps)
 app.command(api)
-app.command(web_search_result_blocks)
+app.command(organic_results)

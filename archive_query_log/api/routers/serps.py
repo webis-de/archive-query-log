@@ -38,7 +38,7 @@ from archive_query_log.api.dependencies import (
 from archive_query_log.api.utils.advanced_search_parser import parse_advanced_query
 from archive_query_log.api.utils.url_cleaner import remove_tracking_parameters
 from archive_query_log.config import Config
-from archive_query_log.orm import Serp, Provider, Archive, WebSearchResultBlock
+from archive_query_log.orm import Serp, Provider, Archive, OrganicResult
 
 
 router = APIRouter()
@@ -462,7 +462,7 @@ def date_histogram(
 
 
 class EnrichedSerpWithResults(EnrichedSerp):
-    results: Annotated[list[WebSearchResultBlock] | None, Nested(WebSearchResultBlock)]
+    results: Annotated[list[OrganicResult] | None, Nested(OrganicResult)]
 
 
 class SerpComparisonResult(BaseModel):
@@ -503,12 +503,12 @@ def compare(
     # Load information on SERP results.
     enriched_serps_with_results: list[EnrichedSerpWithResults] = []
     for serp in enriched_serps:
-        results: list[WebSearchResultBlock] | None = None
-        if serp.warc_web_search_result_blocks is not None:
-            results = WebSearchResultBlock.mget(
-                docs=[str(block.id) for block in serp.warc_web_search_result_blocks],
+        results: list[OrganicResult] | None = None
+        if serp.warc_organic_results is not None:
+            results = OrganicResult.mget(
+                docs=[str(block.id) for block in serp.warc_organic_results],
                 using=elasticsearch,
-                index=config.es.index_web_search_result_blocks,
+                index=config.es.index_organic_results,
             )
         enriched_serps_with_results.append(
             EnrichedSerpWithResults(**serp.model_dump(), results=results)

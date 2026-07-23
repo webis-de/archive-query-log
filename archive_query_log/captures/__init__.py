@@ -19,7 +19,7 @@ from archive_query_log.orm import (
     Source,
     Capture,
     InnerParser,
-    WebSearchResultBlock,
+    OrganicResult,
     InnerCapture,
 )
 from archive_query_log.utils.time import utc_now, UTC
@@ -222,9 +222,9 @@ def _cdx_capture_to_inner_capture(cdx_capture: CdxCapture) -> InnerCapture:
     )
 
 
-def _update_web_search_result_block_capture_action(
+def _update_organic_result_capture_action(
     config: Config,
-    result_block: WebSearchResultBlock,
+    result_block: OrganicResult,
 ) -> dict:
     if result_block.url is None:
         raise ValueError("Web search result block has no URL.")
@@ -268,14 +268,14 @@ def _update_web_search_result_block_capture_action(
     )
 
 
-def fetch_web_search_result_block_captures(
+def fetch_organic_result_captures(
     config: Config,
     size: int = 10,
     dry_run: bool = False,
 ) -> None:
     changed_result_blocks_search: Search = (
-        WebSearchResultBlock.search(
-            using=config.es.client, index=config.es.index_web_search_result_blocks
+        OrganicResult.search(
+            using=config.es.client, index=config.es.index_organic_results
         )
         .filter(Exists(field="url") & ~Term(should_fetch_captures=False))
         .query(
@@ -290,7 +290,7 @@ def fetch_web_search_result_block_captures(
         print("No new/changed web search result blocks.")
         return
 
-    changed_result_blocks: Iterable[WebSearchResultBlock] = (
+    changed_result_blocks: Iterable[OrganicResult] = (
         changed_result_blocks_search.params(size=size).execute()
     )
 
@@ -302,12 +302,12 @@ def fetch_web_search_result_block_captures(
     )
 
     actions = (
-        _update_web_search_result_block_capture_action(
+        _update_organic_result_capture_action(
             config=config,
-            result_block=web_search_result_block,
+            result_block=organic_result,
         )
-        for web_search_result_block in changed_result_blocks
-        if web_search_result_block.url is not None
+        for organic_result in changed_result_blocks
+        if organic_result.url is not None
     )
     config.es.bulk(
         actions=actions,

@@ -32,7 +32,7 @@ class EsConfig(BaseSettings):
     index_sources: str = "sources"
     index_captures: str = "captures"
     index_serps: str = "serps"
-    index_web_search_result_blocks: str = "web_search_result_blocks"
+    index_organic_results: str = "organic_results"
     index_features: str = "features"
     max_retries: int = 5
     bulk_chunk_size: int = 500

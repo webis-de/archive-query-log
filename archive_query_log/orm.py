@@ -187,7 +187,7 @@ class WarcLocation(BaseInnerDocument):
     length: Long
 
 
-class WebSearchResultBlockId(BaseInnerDocument):
+class OrganicResultId(BaseInnerDocument):
     id: UUID
     rank: Integer
 
@@ -214,8 +214,8 @@ class Serp(UuidBaseDocument):
     warc_downloader: InnerDownloader | None = None
     warc_query: TextWithSuggestAndKeyword | None = None
     warc_query_parser: InnerParser | None = None
-    warc_web_search_result_blocks: Sequence[WebSearchResultBlockId] | None = None
-    warc_web_search_result_blocks_parser: InnerParser | None = None
+    warc_organic_results: Sequence[OrganicResultId] | None = None
+    warc_organic_results_parser: InnerParser | None = None
     warc_features: Sequence[FeatureId] | None = None
     warc_features_parser: InnerParser | None = None
 
@@ -264,7 +264,7 @@ class _SerpElement(UuidBaseDocument):
     warc_downloader_after_serp: InnerDownloader | None = None
 
 
-class WebSearchResultBlock(UuidBaseDocument):
+class OrganicResult(UuidBaseDocument):
     """
     Organic results are unpaid (often textual) listings ranked by the search engine's algorithms based on their estimated relevance to the search query.
 

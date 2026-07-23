@@ -177,7 +177,7 @@ class XpathWarcFeaturesParser(WarcFeaturesParser):
 def parse_serp_warc_features_action(
     serp: Serp,
     warc_store: WarcStore,
-    index_web_search_result_blocks: str,
+    index_features: str,
 ) -> Iterator[dict]:
     # Re-check if it can be parsed.
     if (
@@ -223,7 +223,7 @@ def parse_serp_warc_features_action(
                     last_parsed=utc_now(),
                 ),
             )
-            feature.meta.index = index_web_search_result_blocks
+            feature.meta.index = index_features
             yield feature.create_action()
         yield serp.update_action(
             warc_features=[
