@@ -3,7 +3,7 @@ from cyclopts.types import ResolvedPath, PositiveInt
 
 from archive_query_log.config import Config
 from archive_query_log.export.base import ExportFormat
-from archive_query_log.orm import Serp, WebSearchResultBlock, SpecialContentsResultBlock
+from archive_query_log.orm import Serp, WebSearchResultBlock, Feature
 
 serps = App(
     name="serps",
@@ -131,26 +131,26 @@ def warc_web_search_result_blocks(
 
 
 @parse.command
-def warc_special_contents_result_blocks(
+def warc_features(
     *,
     size: int = 10,
     dry_run: bool = False,
     config: Config = Config(),
 ) -> None:
     """
-    Parse the special contents result blocks from a SERP's WARC file (e.g., HTML contents).
+    Parse the SERP features from a SERP's WARC file (e.g., HTML contents).
 
     :param size: How many SERPs to parse.
     """
-    from archive_query_log.parsers.warc_special_contents_result_blocks import (
-        parse_serps_warc_special_contents_result_blocks,
+    from archive_query_log.parsers.warc_features import (
+        parse_serps_warc_features,
     )
 
-    SpecialContentsResultBlock.init(
+    Feature.init(
         using=config.es.client,
-        index=config.es.index_special_contents_result_blocks,
+        index=config.es.index_features,
     )
-    parse_serps_warc_special_contents_result_blocks(
+    parse_serps_warc_features(
         config=config,
         size=size,
         dry_run=dry_run,

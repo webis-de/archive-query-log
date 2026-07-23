@@ -31,7 +31,7 @@ from archive_query_log.orm import (
     BaseDocument,
     Serp,
     WebSearchResultBlock,
-    SpecialContentsResultBlock,
+    Feature,
 )
 from archive_query_log.utils.time import utc_now
 
@@ -393,13 +393,13 @@ def _statistics(
         ),
         _get_statistics(
             config=config,
-            name="+ WARC SCRBs",
-            description="SERPs for which the special contents result blocks have been parsed from the WARC.",
+            name="+ WARC SERP features",
+            description="SERPs for which the SERP features have been parsed from the WARC.",
             document=Serp,
             index=config.es.index_serps,
-            filter_field="warc_special_contents_result_blocks.id",
-            status_field="warc_special_contents_result_blocks_parser.should_parse",
-            last_modified_field="warc_special_contents_result_blocks_parser.last_parsed",
+            filter_field="warc_features.id",
+            status_field="warc_features_parser.should_parse",
+            last_modified_field="warc_features_parser.last_parsed",
         ),
         _get_warc_cache_statistics(
             name="→ WARC cache (in progress)",
@@ -428,10 +428,10 @@ def _statistics(
         ),
         _get_statistics(
             config=config,
-            name="SCRBs",
-            description="Special contents result blocks from the SERPs.",
-            document=SpecialContentsResultBlock,
-            index=config.es.index_special_contents_result_blocks,
+            name="SERP Features",
+            description="SERP features like direct answers, carousels, etc.",
+            document=Feature,
+            index=config.es.index_features,
         ),
         _get_statistics(
             config=config,
@@ -552,11 +552,11 @@ def _progress(config: ConfigDependency) -> list[Progress]:
             config=config,
             input_name="SERPs",
             output_name="SERPs",
-            description="Parse special contents result blocks from WARC contents.",
+            description="Parse SERP features from WARC contents.",
             document=Serp,
             index=config.es.index_serps,
             filter_query=Exists(field="warc_location"),
-            status_field="warc_special_contents_result_blocks_parser.should_parse",
+            status_field="warc_features_parser.should_parse",
         ),
         _get_processed_progress(
             config=config,

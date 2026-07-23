@@ -20,7 +20,7 @@ from archive_query_log.orm import (
     Capture,
     Serp,
     WebSearchResultBlock,
-    SpecialContentsResultBlock,
+    Feature,
 )
 
 
@@ -48,7 +48,7 @@ def init(
         (Capture, config.es.index_captures),
         (Serp, config.es.index_serps),
         (WebSearchResultBlock, config.es.index_web_search_result_blocks),
-        (SpecialContentsResultBlock, config.es.index_special_contents_result_blocks),
+        (Feature, config.es.index_features),
     ]
     indices: Iterable[tuple[Type[BaseDocument], str]] = tqdm(
         indices_list,

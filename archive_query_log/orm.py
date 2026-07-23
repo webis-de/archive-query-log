@@ -192,7 +192,7 @@ class WebSearchResultBlockId(BaseInnerDocument):
     rank: Integer
 
 
-class SpecialContentsResultBlockId(BaseInnerDocument):
+class FeatureId(BaseInnerDocument):
     id: UUID
     rank: Integer
 
@@ -216,10 +216,8 @@ class Serp(UuidBaseDocument):
     warc_query_parser: InnerParser | None = None
     warc_web_search_result_blocks: Sequence[WebSearchResultBlockId] | None = None
     warc_web_search_result_blocks_parser: InnerParser | None = None
-    warc_special_contents_result_blocks: (
-        Sequence[SpecialContentsResultBlockId] | None
-    ) = None
-    warc_special_contents_result_blocks_parser: InnerParser | None = None
+    warc_features: Sequence[FeatureId] | None = None
+    warc_features_parser: InnerParser | None = None
 
     @computed_field  # type: ignore[prop-decorator]
     @property
@@ -241,14 +239,12 @@ class InnerSerp(BaseInnerDocument):
     id: UUID
 
 
-class ResultBlock(UuidBaseDocument):
+class _SerpElement(UuidBaseDocument):
     last_modified: DefaultDate
     archive: InnerArchive
     provider: InnerProvider
     serp_capture: InnerCapture
     serp: InnerSerp
-    mimetype: Keyword
-    path: Keyword
     content: Text
     parser: InnerParser
     rank: Integer
@@ -268,10 +264,35 @@ class ResultBlock(UuidBaseDocument):
     warc_downloader_after_serp: InnerDownloader | None = None
 
 
-class WebSearchResultBlock(ResultBlock):
-    url: AnyHttpUrl  # type: ignore[override]
+class WebSearchResultBlock(UuidBaseDocument):
+    """
+    Organic results are unpaid (often textual) listings ranked by the search engine's algorithms based on their estimated relevance to the search query.
+
+    See: https://serp-elements-catalog.pages.dev/organic
+    """
+
+    last_modified: DefaultDate
+    archive: InnerArchive
+    provider: InnerProvider
+    serp_capture: InnerCapture
+    serp: InnerSerp
+    content: Text
+    parser: InnerParser
+    rank: Integer
+    url: AnyHttpUrl
+    """URL to the landing page of the result block."""
     text: Text | None = None
     """Snippet text of the web search result block."""
+    title: Text | None = None
+    """Title text of the result block."""
+    should_fetch_captures: bool = True
+    last_fetched_captures: Date | None = None
+    capture_before_serp: InnerCapture | None = None
+    warc_location_before_serp: WarcLocation | None = None
+    warc_downloader_before_serp: InnerDownloader | None = None
+    capture_after_serp: InnerCapture | None = None
+    warc_location_after_serp: WarcLocation | None = None
+    warc_downloader_after_serp: InnerDownloader | None = None
 
     class Index:
         settings = {
@@ -280,7 +301,36 @@ class WebSearchResultBlock(ResultBlock):
         }
 
 
-class SpecialContentsResultBlock(ResultBlock):
+class Feature(_SerpElement):
+    """
+    SERP features enhance a SERP's functionality by delivering more direct answers to the search query and/or assisting users in the search process rather than just linking to websites.
+
+    See: https://serp-elements-catalog.pages.dev/features
+    """
+
+    last_modified: DefaultDate
+    archive: InnerArchive
+    provider: InnerProvider
+    serp_capture: InnerCapture
+    serp: InnerSerp
+    content: Text
+    parser: InnerParser
+    rank: Integer
+    url: AnyHttpUrl | None = None
+    """URL to the landing page of the SERP feature, e.g., a source of a direct answer."""
+    text: Text | None = None
+    """Main content plain text of the SERP feature, e.g., a direct answer."""
+    title: Text | None = None
+    """Title text of the SERP feature."""
+    should_fetch_captures: bool = True
+    last_fetched_captures: Date | None = None
+    capture_before_serp: InnerCapture | None = None
+    warc_location_before_serp: WarcLocation | None = None
+    warc_downloader_before_serp: InnerDownloader | None = None
+    capture_after_serp: InnerCapture | None = None
+    warc_location_after_serp: WarcLocation | None = None
+    warc_downloader_after_serp: InnerDownloader | None = None
+
     class Index:
         settings = {
             "number_of_shards": 10,

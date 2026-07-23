@@ -10,44 +10,42 @@ from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, Term, RankFeature, Exists
 from lxml.etree import _Element, tostring, XPath
-from pydantic import HttpUrl, BaseModel
+from pydantic import AnyHttpUrl, BaseModel
 from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import (
-    NAMESPACE_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSER,
-    NAMESPACE_SPECIAL_CONTENTS_RESULT_BLOCK,
+    NAMESPACE_WARC_FEATURES_PARSER,
+    NAMESPACE_FEATURE,
 )
 from archive_query_log.orm import (
     Serp,
     InnerParser,
-    SpecialContentsResultBlock,
+    Feature,
     InnerSerp,
-    SpecialContentsResultBlockId,
+    FeatureId,
 )
 from archive_query_log.parsers.utils.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
 from archive_query_log.utils.warc import WarcStore
 
 
-class SpecialContentsResultBlockData(BaseModel):
+class FeatureData(BaseModel):
     id: UUID
     rank: int
     content: str
-    url: HttpUrl | None = None
+    url: AnyHttpUrl | None = None
     title: str | None = None
     text: str | None = None
 
 
-class WarcSpecialContentsResultBlocksParser(BaseModel, ABC):
+class WarcFeaturesParser(BaseModel, ABC):
     provider_id: UUID | None = None
     url_pattern: Pattern | None = None
 
     @cached_property
     def id(self) -> UUID:
-        return uuid5(
-            NAMESPACE_WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSER, self.model_dump_json()
-        )
+        return uuid5(NAMESPACE_WARC_FEATURES_PARSER, self.model_dump_json())
 
     @cached_property
     def inner_parser(self) -> InnerParser:
@@ -70,12 +68,10 @@ class WarcSpecialContentsResultBlocksParser(BaseModel, ABC):
         return True
 
     @abstractmethod
-    def parse(
-        self, serp: Serp, warc_store: WarcStore
-    ) -> list[SpecialContentsResultBlockData] | None: ...
+    def parse(self, serp: Serp, warc_store: WarcStore) -> list[FeatureData] | None: ...
 
 
-class XpathWarcSpecialContentsResultBlocksParser(WarcSpecialContentsResultBlocksParser):
+class XpathWarcFeaturesParser(WarcFeaturesParser):
     xpath: str
     url_xpath: str | None = None
     title_xpath: str | None = None
@@ -115,9 +111,7 @@ class XpathWarcSpecialContentsResultBlocksParser(WarcSpecialContentsResultBlocks
             smart_strings=False,
         )
 
-    def parse(
-        self, serp: Serp, warc_store: WarcStore
-    ) -> list[SpecialContentsResultBlockData] | None:
+    def parse(self, serp: Serp, warc_store: WarcStore) -> list[FeatureData] | None:
         if serp.warc_location is None:
             return None
 
@@ -130,7 +124,7 @@ class XpathWarcSpecialContentsResultBlocksParser(WarcSpecialContentsResultBlocks
         if len(elements) == 0:
             return None
 
-        special_contents_result_blocks = []
+        features = []
         element: _Element
         for i, element in enumerate(elements):
             url: str | None = None
@@ -157,30 +151,30 @@ class XpathWarcSpecialContentsResultBlocksParser(WarcSpecialContentsResultBlocks
                 pretty_print=False,
                 with_tail=True,
             )
-            special_contents_result_block_id_components = (
+            feature_id_components = (
                 str(serp.id),
                 str(self.id),
                 str(hash(content)),
                 str(i),
             )
-            special_contents_result_block_id = uuid5(
-                NAMESPACE_SPECIAL_CONTENTS_RESULT_BLOCK,
-                ":".join(special_contents_result_block_id_components),
+            feature_id = uuid5(
+                NAMESPACE_FEATURE,
+                ":".join(feature_id_components),
             )
-            special_contents_result_blocks.append(
-                SpecialContentsResultBlockData(
-                    id=special_contents_result_block_id,
+            features.append(
+                FeatureData(
+                    id=feature_id,
                     rank=i,
                     content=content,
-                    url=HttpUrl(url) if url is not None else None,
+                    url=AnyHttpUrl(url) if url is not None else None,
                     title=title,
                     text=text,
                 )
             )
-        return special_contents_result_blocks
+        return features
 
 
-def parse_serp_warc_special_contents_result_blocks_action(
+def parse_serp_warc_features_action(
     serp: Serp,
     warc_store: WarcStore,
     index_web_search_result_blocks: str,
@@ -196,22 +190,22 @@ def parse_serp_warc_special_contents_result_blocks_action(
 
     # Re-check if parsing is necessary.
     if (
-        serp.warc_special_contents_result_blocks_parser is not None
-        and serp.warc_special_contents_result_blocks_parser.should_parse is not None
-        and not serp.warc_special_contents_result_blocks_parser.should_parse
+        serp.warc_features_parser is not None
+        and serp.warc_features_parser.should_parse is not None
+        and not serp.warc_features_parser.should_parse
     ):
         return
 
-    for parser in WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSERS:
+    for parser in WARC_FEATURES_PARSERS:
         if not parser.is_applicable(serp):
             continue
-        warc_special_contents_result_blocks = parser.parse(serp, warc_store)
-        if warc_special_contents_result_blocks is None:
+        warc_features = parser.parse(serp, warc_store)
+        if warc_features is None:
             # Parsing was not successful.
             continue
-        for special_contents_result_block in warc_special_contents_result_blocks:
-            special_contents_result_block = SpecialContentsResultBlock(
-                id=special_contents_result_block.id,
+        for feature in warc_features:
+            feature = Feature(
+                id=feature.id,
                 last_modified=utc_now(),
                 archive=serp.archive,
                 provider=serp.provider,
@@ -219,27 +213,27 @@ def parse_serp_warc_special_contents_result_blocks_action(
                 serp=InnerSerp(
                     id=serp.id,
                 ),
-                rank=special_contents_result_block.rank,
-                content=special_contents_result_block.content,
-                url=special_contents_result_block.url,
-                text=special_contents_result_block.text,
+                rank=feature.rank,
+                content=feature.content,
+                url=feature.url,
+                text=feature.text,
                 parser=InnerParser(
                     id=parser.id,
                     should_parse=False,
                     last_parsed=utc_now(),
                 ),
             )
-            special_contents_result_block.meta.index = index_web_search_result_blocks
-            yield special_contents_result_block.create_action()
+            feature.meta.index = index_web_search_result_blocks
+            yield feature.create_action()
         yield serp.update_action(
-            warc_special_contents_result_blocks=[
-                SpecialContentsResultBlockId(
-                    id=special_contents_result_block.id,
-                    rank=special_contents_result_block.rank,
+            warc_features=[
+                FeatureId(
+                    id=feature.id,
+                    rank=feature.rank,
                 )
-                for special_contents_result_block in warc_special_contents_result_blocks
+                for feature in warc_features
             ],
-            warc_special_contents_result_blocks_parser=InnerParser(
+            warc_features_parser=InnerParser(
                 id=parser.id,
                 should_parse=False,
                 last_parsed=utc_now(),
@@ -247,7 +241,7 @@ def parse_serp_warc_special_contents_result_blocks_action(
         )
         return
     yield serp.update_action(
-        warc_special_contents_result_blocks_parser=InnerParser(
+        warc_features_parser=InnerParser(
             should_parse=False,
             last_parsed=utc_now(),
         ),
@@ -255,7 +249,7 @@ def parse_serp_warc_special_contents_result_blocks_action(
     return
 
 
-def parse_serps_warc_special_contents_result_blocks(
+def parse_serps_warc_features(
     config: Config,
     size: int = 10,
     dry_run: bool = False,
@@ -265,7 +259,7 @@ def parse_serps_warc_special_contents_result_blocks(
         Serp.search(using=config.es.client, index=config.es.index_serps)
         .filter(
             Exists(field="warc_location")
-            & ~Term(warc_special_contents_result_blocks_parser__should_parse=False)
+            & ~Term(warc_features_parser__should_parse=False)
         )
         .query(
             RankFeature(field="archive.priority", saturation={})
@@ -280,14 +274,14 @@ def parse_serps_warc_special_contents_result_blocks(
         changed_serps = tqdm(
             changed_serps,
             total=num_changed_serps,
-            desc="Parsing WARC special contents result blocks",
+            desc="Parsing WARC SERP features",
             unit="SERP",
         )
         actions = chain.from_iterable(
-            parse_serp_warc_special_contents_result_blocks_action(
+            parse_serp_warc_features_action(
                 serp,
                 config.s3.warc_store,
-                config.es.index_special_contents_result_blocks,
+                config.es.index_features,
             )
             for serp in changed_serps
         )
@@ -299,11 +293,9 @@ def parse_serps_warc_special_contents_result_blocks(
         print("No new/changed SERPs.")
 
 
-WARC_SPECIAL_CONTENTS_RESULT_BLOCKS_PARSERS: Sequence[
-    WarcSpecialContentsResultBlocksParser
-] = (
+WARC_FEATURES_PARSERS: Sequence[WarcFeaturesParser] = (
     # Provider: Google (google.com)
-    XpathWarcSpecialContentsResultBlocksParser(
+    XpathWarcFeaturesParser(
         provider_id=UUID("f205fc44-d918-4b79-9a7f-c1373a6ff9f2"),
         url_pattern=re_compile(r"^https?://[^/]+/search\?"),
         xpath=".//*[contains(concat(' ',normalize-space(@class),' '),' kp-wholepage ')] | .//*[contains(concat(' ',normalize-space(@class),' '),' XqFnDf ')] | .//*[contains(concat(' ',normalize-space(@class),' '),' WC0BKe ')]",
