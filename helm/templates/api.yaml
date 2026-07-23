@@ -35,8 +35,6 @@ spec:
             - 0.0.0.0
             - --port
             - "5000"
-            - --root-path
-            - /api/
           ports:
             - name: http
               containerPort: 5000
@@ -50,6 +48,16 @@ spec:
                 secretKeyRef:
                   name: {{ $.Release.Name }}-secret
                   key: elasticsearchApiKey
+            - name: ELASTICSEARCH_INDEX_ARCHIVES
+              value: {{ $.Values.elasticsearch.indexArchives | quote }}
+            - name: ELASTICSEARCH_INDEX_PROVIDERS
+              value: {{ $.Values.elasticsearch.indexProviders | quote }}
+            - name: ELASTICSEARCH_INDEX_SOURCES
+              value: {{ $.Values.elasticsearch.indexSources | quote }}
+            - name: ELASTICSEARCH_INDEX_CAPTURES
+              value: {{ $.Values.elasticsearch.indexCaptures | quote }}
+            - name: ELASTICSEARCH_INDEX_SERPS
+              value: {{ $.Values.elasticsearch.indexSerps | quote }}
             - name: S3_ENDPOINT_URL
               value: {{ $.Values.s3.endpointUrl | quote }}
             - name: S3_BUCKET_NAME
