@@ -43,7 +43,7 @@ def add(
     ],
     priority: NonNegativeFloat | None = None,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Add a new search provider.
@@ -79,7 +79,7 @@ def import_(
     no_merge: bool = False,
     auto_merge: bool = False,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Import search providers from a YAML search services file.
@@ -104,7 +104,7 @@ def export(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export a sample of search providers locally.
@@ -126,7 +126,7 @@ def export_all(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export all search providers via Ray.

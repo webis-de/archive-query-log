@@ -19,7 +19,7 @@ def build(
     skip_archives: bool,
     skip_providers: bool,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Build data sources based on all available web archives and search providers.
@@ -41,7 +41,7 @@ def export(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export a sample of crawlable sources locally.
@@ -63,7 +63,7 @@ def export_all(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export all crawlable sources via Ray.

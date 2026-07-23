@@ -36,7 +36,7 @@ app = App()
 @app.command
 def init(
     *,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Initialize the Elasticsearch indices.

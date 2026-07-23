@@ -20,7 +20,7 @@ def url_query(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the search query from a SERP's URL.
@@ -45,7 +45,7 @@ def url_page(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the SERP's page index from a SERP's URL.
@@ -66,7 +66,7 @@ def url_offset(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the SERP's pagination offset from a SERP's URL.
@@ -87,7 +87,7 @@ def warc_query(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the search query from a SERP's WARC file (e.g., HTML contents).
@@ -108,7 +108,7 @@ def warc_web_search_result_blocks(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the web search result blocks from a SERP's WARC file (e.g., HTML contents).
@@ -135,7 +135,7 @@ def warc_special_contents_result_blocks(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the special contents result blocks from a SERP's WARC file (e.g., HTML contents).
@@ -169,7 +169,7 @@ serps.command(download)
 def download_warc(
     *,
     size: int = 10,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Download archived contents of SERP captures as WARC to a file cache.
@@ -195,7 +195,7 @@ serps.command(upload)
 @upload.command(name="warc")
 def upload_warc(
     *,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Upload WARCs of archived contents of SERP captures to S3 and update the index.
@@ -211,7 +211,7 @@ def export(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export a sample of SEPRs locally.
@@ -233,7 +233,7 @@ def export_all(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export all SERPs via Ray.

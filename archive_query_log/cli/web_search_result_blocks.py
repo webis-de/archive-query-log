@@ -23,7 +23,7 @@ def fetch_captures(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Fetch captures of web search result block landing pages from web archives.
@@ -56,7 +56,7 @@ web_search_result_blocks.command(download)
 def download_warc_before_serp(
     *,
     size: int = 10,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Download archived contents of web search result block landing page captures as WARC to S3.
@@ -77,7 +77,7 @@ def download_warc_before_serp(
 def download_warc_after_serp(
     *,
     size: int = 10,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Download archived contents of web search result block landing page captures as WARC to S3.
@@ -100,7 +100,7 @@ def export(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export a sample of web search result blocks locally.
@@ -122,7 +122,7 @@ def export_all(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export all web search result blocks via Ray.

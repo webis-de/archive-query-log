@@ -21,7 +21,7 @@ def fetch(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Fetch captures from web archives.
@@ -62,7 +62,7 @@ def aql_22(
     ]
     | None,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Import crawled captures from the AQL-22 dataset.
@@ -87,7 +87,7 @@ def export(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export a sample of captures locally.
@@ -109,7 +109,7 @@ def export_all(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export all captures via Ray.
