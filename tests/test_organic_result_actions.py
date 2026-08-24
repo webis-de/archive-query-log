@@ -4,9 +4,9 @@ from uuid import UUID
 from pydantic import HttpUrl
 from pytest import mark
 
-from archive_query_log.captures import _web_search_result_block_capture_update_action
+from archive_query_log.captures import _organic_result_capture_update_action
 from archive_query_log.downloaders.warc import (
-    _web_search_result_block_warc_update_action,
+    _organic_result_warc_update_action,
 )
 from archive_query_log.orm import (
     InnerArchive,
@@ -15,7 +15,7 @@ from archive_query_log.orm import (
     InnerProvider,
     InnerSerp,
     WarcLocation,
-    WebSearchResultBlock,
+    OrganicResult,
 )
 
 
@@ -39,13 +39,13 @@ def _warc_location() -> WarcLocation:
     return WarcLocation(file="test.warc.gz", offset=0, length=100)
 
 
-def _web_search_result_block(
+def _organic_result(
     capture_before_serp: InnerCapture | None = None,
     capture_after_serp: InnerCapture | None = None,
     warc_location_before_serp: WarcLocation | None = None,
     warc_location_after_serp: WarcLocation | None = None,
-) -> WebSearchResultBlock:
-    return WebSearchResultBlock(
+) -> OrganicResult:
+    return OrganicResult(
         id=UUID(int=1),
         archive=InnerArchive(
             id=UUID(int=2),
@@ -59,8 +59,6 @@ def _web_search_result_block(
         ),
         serp_capture=_inner_capture(_SERP_TIMESTAMP),
         serp=InnerSerp(id=UUID(int=4)),
-        mimetype="text/html",
-        path="//div",
         content="<div>Test</div>",
         parser=InnerParser(
             id=UUID(int=5),
@@ -82,14 +80,14 @@ def test_warc_update_action_updates_declared_fields(before_serp: bool) -> None:
     The downloader must mark exactly the fields that its selection query filters
     on, otherwise downloaded blocks are never marked as downloaded.
     """
-    action = _web_search_result_block_warc_update_action(
-        result_block=_web_search_result_block(),
+    action = _organic_result_warc_update_action(
+        result_block=_organic_result(),
         location=_warc_location(),
         downloader_id=UUID(int=6),
         before_serp=before_serp,
     )
 
-    assert set(action["doc"]) <= set(WebSearchResultBlock.model_fields)
+    assert set(action["doc"]) <= set(OrganicResult.model_fields)
 
     suffix = "before_serp" if before_serp else "after_serp"
     other_suffix = "after_serp" if before_serp else "before_serp"
@@ -101,13 +99,13 @@ def test_warc_update_action_updates_declared_fields(before_serp: bool) -> None:
 
 
 def test_capture_update_action_marks_captures_as_fetched() -> None:
-    action = _web_search_result_block_capture_update_action(
-        result_block=_web_search_result_block(),
+    action = _organic_result_capture_update_action(
+        result_block=_organic_result(),
         capture_before_serp=_inner_capture(_SERP_TIMESTAMP),
         capture_after_serp=_inner_capture(_SERP_TIMESTAMP),
     )
 
-    assert set(action["doc"]) <= set(WebSearchResultBlock.model_fields)
+    assert set(action["doc"]) <= set(OrganicResult.model_fields)
     assert action["doc"]["should_fetch_captures"] is False
     assert action["doc"]["last_fetched_captures"] is not None
 
@@ -118,14 +116,14 @@ def test_capture_update_action_keeps_warcs_of_unchanged_captures() -> None:
     captures did not change, because they would have to be downloaded again.
     """
     capture = _inner_capture(_SERP_TIMESTAMP)
-    result_block = _web_search_result_block(
+    result_block = _organic_result(
         capture_before_serp=capture,
         capture_after_serp=capture,
         warc_location_before_serp=_warc_location(),
         warc_location_after_serp=_warc_location(),
     )
 
-    action = _web_search_result_block_capture_update_action(
+    action = _organic_result_capture_update_action(
         result_block=result_block,
         # Equal to the stored captures, but not the same objects.
         capture_before_serp=_inner_capture(_SERP_TIMESTAMP),
@@ -139,12 +137,12 @@ def test_capture_update_action_keeps_warcs_of_unchanged_captures() -> None:
 
 
 def test_capture_update_action_resets_warcs_of_changed_captures() -> None:
-    result_block = _web_search_result_block(
+    result_block = _organic_result(
         capture_before_serp=_inner_capture(_SERP_TIMESTAMP),
         warc_location_before_serp=_warc_location(),
     )
 
-    action = _web_search_result_block_capture_update_action(
+    action = _organic_result_capture_update_action(
         result_block=result_block,
         capture_before_serp=_inner_capture(datetime(2019, 1, 1, tzinfo=UTC)),
         capture_after_serp=None,
@@ -155,12 +153,12 @@ def test_capture_update_action_resets_warcs_of_changed_captures() -> None:
 
 
 def test_capture_update_action_resets_warcs_of_removed_captures() -> None:
-    result_block = _web_search_result_block(
+    result_block = _organic_result(
         capture_before_serp=_inner_capture(_SERP_TIMESTAMP),
         warc_location_before_serp=_warc_location(),
     )
 
-    action = _web_search_result_block_capture_update_action(
+    action = _organic_result_capture_update_action(
         result_block=result_block,
         capture_before_serp=None,
         capture_after_serp=None,
@@ -175,13 +173,13 @@ def test_capture_update_action_treats_sides_independently() -> None:
     A change on one side of the SERP must not discard the other side's WARC.
     """
     capture_before_serp = _inner_capture(_SERP_TIMESTAMP)
-    result_block = _web_search_result_block(
+    result_block = _organic_result(
         capture_before_serp=capture_before_serp,
         capture_after_serp=None,
         warc_location_before_serp=_warc_location(),
     )
 
-    action = _web_search_result_block_capture_update_action(
+    action = _organic_result_capture_update_action(
         result_block=result_block,
         capture_before_serp=_inner_capture(_SERP_TIMESTAMP),
         capture_after_serp=_inner_capture(datetime(2021, 1, 1, tzinfo=UTC)),

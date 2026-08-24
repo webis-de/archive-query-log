@@ -3,7 +3,7 @@ from cyclopts.types import ResolvedPath, PositiveInt
 
 from archive_query_log.config import Config
 from archive_query_log.export.base import ExportFormat
-from archive_query_log.orm import Serp, WebSearchResultBlock, SpecialContentsResultBlock
+from archive_query_log.orm import Serp, OrganicResult, Feature
 
 serps = App(
     name="serps",
@@ -20,7 +20,7 @@ def url_query(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the search query from a SERP's URL.
@@ -45,7 +45,7 @@ def url_page(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the SERP's page index from a SERP's URL.
@@ -66,7 +66,7 @@ def url_offset(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the SERP's pagination offset from a SERP's URL.
@@ -87,7 +87,7 @@ def warc_query(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the search query from a SERP's WARC file (e.g., HTML contents).
@@ -104,26 +104,26 @@ def warc_query(
 
 
 @parse.command
-def warc_web_search_result_blocks(
+def warc_organic_results(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Parse the web search result blocks from a SERP's WARC file (e.g., HTML contents).
 
     :param size: How many SERPs to parse.
     """
-    from archive_query_log.parsers.warc_web_search_result_blocks import (
-        parse_serps_warc_web_search_result_blocks,
+    from archive_query_log.parsers.warc_organic_results import (
+        parse_serps_warc_organic_results,
     )
 
-    WebSearchResultBlock.init(
+    OrganicResult.init(
         using=config.es.client,
-        index=config.es.index_web_search_result_blocks,
+        index=config.es.index_organic_results,
     )
-    parse_serps_warc_web_search_result_blocks(
+    parse_serps_warc_organic_results(
         config=config,
         size=size,
         dry_run=dry_run,
@@ -131,26 +131,26 @@ def warc_web_search_result_blocks(
 
 
 @parse.command
-def warc_special_contents_result_blocks(
+def warc_features(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
-    Parse the special contents result blocks from a SERP's WARC file (e.g., HTML contents).
+    Parse the SERP features from a SERP's WARC file (e.g., HTML contents).
 
     :param size: How many SERPs to parse.
     """
-    from archive_query_log.parsers.warc_special_contents_result_blocks import (
-        parse_serps_warc_special_contents_result_blocks,
+    from archive_query_log.parsers.warc_features import (
+        parse_serps_warc_features,
     )
 
-    SpecialContentsResultBlock.init(
+    Feature.init(
         using=config.es.client,
-        index=config.es.index_special_contents_result_blocks,
+        index=config.es.index_features,
     )
-    parse_serps_warc_special_contents_result_blocks(
+    parse_serps_warc_features(
         config=config,
         size=size,
         dry_run=dry_run,
@@ -169,7 +169,7 @@ serps.command(download)
 def download_warc(
     *,
     size: int = 10,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Download archived contents of SERP captures as WARC to a file cache.
@@ -195,7 +195,7 @@ serps.command(upload)
 @upload.command(name="warc")
 def upload_warc(
     *,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Upload WARCs of archived contents of SERP captures to S3 and update the index.
@@ -211,7 +211,7 @@ def export(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export a sample of SEPRs locally.
@@ -233,7 +233,7 @@ def export_all(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export all SERPs via Ray.

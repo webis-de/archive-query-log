@@ -3,27 +3,27 @@ from cyclopts.types import ResolvedPath, PositiveInt
 
 from archive_query_log.config import Config
 from archive_query_log.export.base import ExportFormat
-from archive_query_log.orm import WebSearchResultBlock
+from archive_query_log.orm import OrganicResult
 
-web_search_result_blocks = App(
+organic_results = App(
     name="web-search-result-blocks",
     alias="wsrb",
     help="Manage web search result blocks.",
 )
 
 parse = App(name="parse", alias="p", help="Parse web search result blocks.")
-web_search_result_blocks.command(parse)
+organic_results.command(parse)
 
 
 # TODO: Add parsers for main content.
 
 
-@web_search_result_blocks.command
+@organic_results.command
 def fetch_captures(
     *,
     size: int = 10,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Fetch captures of web search result block landing pages from web archives.
@@ -31,13 +31,13 @@ def fetch_captures(
     :param size: How many captures to fetch.
     """
 
-    from archive_query_log.captures import fetch_web_search_result_block_captures
+    from archive_query_log.captures import fetch_organic_result_captures
 
-    WebSearchResultBlock.init(
+    OrganicResult.init(
         using=config.es.client,
-        index=config.es.index_web_search_result_blocks,
+        index=config.es.index_organic_results,
     )
-    fetch_web_search_result_block_captures(
+    fetch_organic_result_captures(
         config=config,
         size=size,
         dry_run=dry_run,
@@ -49,14 +49,14 @@ download = App(
     alias="d",
     help="Download web search result block landing pages.",
 )
-web_search_result_blocks.command(download)
+organic_results.command(download)
 
 
 @download.command(name="warc-before-serp")
 def download_warc_before_serp(
     *,
     size: int = 10,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Download archived contents of web search result block landing page captures as WARC to S3.
@@ -64,14 +64,14 @@ def download_warc_before_serp(
     :param size: How many web search result block landing pages to download.
     """
     from archive_query_log.downloaders.warc import (
-        download_web_search_result_block_warc_before_serp,
+        download_organic_result_warc_before_serp,
     )
 
-    WebSearchResultBlock.init(
+    OrganicResult.init(
         using=config.es.client,
-        index=config.es.index_web_search_result_blocks,
+        index=config.es.index_organic_results,
     )
-    download_web_search_result_block_warc_before_serp(
+    download_organic_result_warc_before_serp(
         config=config,
         size=size,
     )
@@ -81,7 +81,7 @@ def download_warc_before_serp(
 def download_warc_after_serp(
     *,
     size: int = 10,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Download archived contents of web search result block landing page captures as WARC to S3.
@@ -89,26 +89,26 @@ def download_warc_after_serp(
     :param size: How many web search result block landing pages to download.
     """
     from archive_query_log.downloaders.warc import (
-        download_web_search_result_block_warc_after_serp,
+        download_organic_result_warc_after_serp,
     )
 
-    WebSearchResultBlock.init(
+    OrganicResult.init(
         using=config.es.client,
-        index=config.es.index_web_search_result_blocks,
+        index=config.es.index_organic_results,
     )
-    download_web_search_result_block_warc_after_serp(
+    download_organic_result_warc_after_serp(
         config=config,
         size=size,
     )
 
 
-@web_search_result_blocks.command
+@organic_results.command
 def export(
     sample_size: PositiveInt,
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export a sample of web search result blocks locally.
@@ -116,8 +116,8 @@ def export(
     from archive_query_log.export import export_local
 
     export_local(
-        document_type=WebSearchResultBlock,
-        index=config.es.index_web_search_result_blocks,
+        document_type=OrganicResult,
+        index=config.es.index_organic_results,
         format=format,
         sample_size=sample_size,
         output_path=output_path,
@@ -125,12 +125,12 @@ def export(
     )
 
 
-@web_search_result_blocks.command
+@organic_results.command
 def export_all(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export all web search result blocks via Ray.
@@ -138,8 +138,8 @@ def export_all(
     from archive_query_log.export import export_ray
 
     export_ray(
-        document_type=WebSearchResultBlock,
-        index=config.es.index_web_search_result_blocks,
+        document_type=OrganicResult,
+        index=config.es.index_organic_results,
         format=format,
         output_path=output_path,
         config=config,

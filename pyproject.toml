@@ -34,7 +34,7 @@ dependencies = [
     "elasticsearch-dsl~=7.4",
     "elasticsearch-pydantic~=1.1",
     "expiringdict~=1.2",
-    "fastapi>=0.121.2,<0.136.0",
+    "fastapi>=0.121.2,<0.138.0",
     "fastmcp~=3.1",
     "httpx~=0.28.1",
     "humanize~=4.13",
@@ -57,7 +57,7 @@ dependencies = [
     "tqdm~=4.67",
     # boto3~=1.35 depends on urllib3<1.27
     "urllib3>=1.26,<3.0",
-    "uvicorn>=0.38,<0.43",
+    "uvicorn>=0.38,<0.50",
     "validators~=0.35.0",
     "warcio~=1.7",
     "warc-s3~=1.0,>=1.0.1",

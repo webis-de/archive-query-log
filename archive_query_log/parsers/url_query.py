@@ -152,7 +152,7 @@ def parse_serp_url_query_action(
             warc_query_parser=InnerParser(
                 should_parse=True,
             ),
-            warc_web_search_result_blocks_parser=InnerParser(
+            warc_organic_results_parser=InnerParser(
                 should_parse=True,
             ),
         )

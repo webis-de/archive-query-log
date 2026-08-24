@@ -42,7 +42,7 @@ def add(
     ],
     priority: NonNegativeFloat | None = None,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Add a new web archive for crawling.
@@ -80,7 +80,7 @@ def archive_it(
     no_merge: bool = False,
     auto_merge: bool = False,
     dry_run: bool = False,
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Import all web archives from the Archive-It service, via their API.
@@ -106,7 +106,7 @@ def export(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export a sample of web archives locally.
@@ -128,7 +128,7 @@ def export_all(
     output_path: ResolvedPath,
     *,
     format: ExportFormat = "jsonl",
-    config: Config,
+    config: Config = Config(),
 ) -> None:
     """
     Export all web archives via Ray.

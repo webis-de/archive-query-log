@@ -22,27 +22,27 @@ from warcio.recordloader import ArcWarcRecord
 from warcio.statusandheaders import StatusAndHeaders
 from warcio.warcwriter import WARCWriter
 
-from archive_query_log.namespaces import NAMESPACE_WEB_SEARCH_RESULT_BLOCK
+from archive_query_log.namespaces import NAMESPACE_ORGANIC_RESULT
 from archive_query_log.orm import (
     InnerArchive,
     InnerCapture,
     InnerProvider,
     Serp,
     WarcLocation,
-    WebSearchResultBlock,
+    OrganicResult,
 )
-from archive_query_log.parsers import warc_web_search_result_blocks as module
+from archive_query_log.parsers import warc_organic_results as module
 from archive_query_log.parsers.utils import content_digest
-from archive_query_log.parsers.warc_web_search_result_blocks import (
-    XpathWarcWebSearchResultBlocksParser,
-    parse_serp_warc_web_search_result_blocks_action,
+from archive_query_log.parsers.warc_organic_results import (
+    XpathWarcOrganicResultsParser,
+    parse_serp_warc_organic_results_action,
 )
 from archive_query_log.utils.warc import WarcStore
 
 
 _TIMESTAMP = datetime(2020, 6, 1, 12, 0, 0, tzinfo=UTC)
 _SERP_URL = "https://example.com/search?q=test"
-_INDEX = "web_search_result_blocks"
+_INDEX = "organic_results"
 
 _HTML = (
     b"<html><body><div id='search'><div id='rso'>"
@@ -56,8 +56,8 @@ _HTML = (
 # Hard-coded so that a change of the ID derivation must be a deliberate edit.
 _EXPECTED_DIGEST = "aca4bd1f7c671d07b0e27f8e3dcc2c96"
 _EXPECTED_BLOCK_IDS = [
-    UUID("060408b2-6e23-5806-b6ff-5110e63a1aba"),
-    UUID("b93ab366-5d80-5785-acd0-7f27e798ae08"),
+    UUID("c39bf45a-dd09-5cdb-9778-4171dc833a65"),
+    UUID("80e99287-0ba8-53cb-a4f8-91a4bdc6cdd9"),
 ]
 
 
@@ -113,8 +113,8 @@ def _serp() -> Serp:
     )
 
 
-def _parser() -> XpathWarcWebSearchResultBlocksParser:
-    return XpathWarcWebSearchResultBlocksParser(
+def _parser() -> XpathWarcOrganicResultsParser:
+    return XpathWarcOrganicResultsParser(
         provider_id=UUID(int=3),
         url_pattern=re_compile(r"^https?://[^/]+/search\?"),
         xpath=(
@@ -147,8 +147,8 @@ def test_block_id_derivation_is_reproducible() -> None:
         content_digest("<div>Test</div>"),
         "0",
     )
-    block_id = uuid5(NAMESPACE_WEB_SEARCH_RESULT_BLOCK, ":".join(components))
-    assert block_id == UUID("327bc95f-2f20-59be-99ec-0592e8b15bf4")
+    block_id = uuid5(NAMESPACE_ORGANIC_RESULT, ":".join(components))
+    assert block_id == UUID("0a3b37b0-7a23-5ff1-ae61-2e745ac28f04")
 
 
 def test_parsed_block_ids_are_reproducible(monkeypatch: MonkeyPatch) -> None:
@@ -159,15 +159,15 @@ def test_parsed_block_ids_are_reproducible(monkeypatch: MonkeyPatch) -> None:
     parser = _parser()
     monkeypatch.setattr(
         module,
-        "WARC_WEB_SEARCH_RESULT_BLOCKS_PARSERS",
+        "WARC_ORGANIC_RESULTS_PARSERS",
         (parser,),
     )
 
     actions = list(
-        parse_serp_warc_web_search_result_blocks_action(
+        parse_serp_warc_organic_results_action(
             serp=_serp(),
             warc_store=_InlineWarcStore(_HTML, _SERP_URL),
-            index_web_search_result_blocks=_INDEX,
+            index_organic_results=_INDEX,
         )
     )
 
@@ -180,7 +180,7 @@ def test_parsed_block_ids_are_reproducible(monkeypatch: MonkeyPatch) -> None:
     assert len(updates) == 1
     referenced = [
         UUID(block["id"])
-        for block in updates[0]["doc"]["warc_web_search_result_blocks"]
+        for block in updates[0]["doc"]["warc_organic_results"]
     ]
     assert referenced == _EXPECTED_BLOCK_IDS
 
@@ -192,15 +192,15 @@ def test_parsed_blocks_are_writable(monkeypatch: MonkeyPatch) -> None:
     """
     monkeypatch.setattr(
         module,
-        "WARC_WEB_SEARCH_RESULT_BLOCKS_PARSERS",
+        "WARC_ORGANIC_RESULTS_PARSERS",
         (_parser(),),
     )
 
     actions = list(
-        parse_serp_warc_web_search_result_blocks_action(
+        parse_serp_warc_organic_results_action(
             serp=_serp(),
             warc_store=_InlineWarcStore(_HTML, _SERP_URL),
-            index_web_search_result_blocks=_INDEX,
+            index_organic_results=_INDEX,
         )
     )
     creates = [action for action in actions if action["_op_type"] == "create"]
@@ -208,10 +208,7 @@ def test_parsed_blocks_are_writable(monkeypatch: MonkeyPatch) -> None:
 
     for action in creates:
         assert action["_index"] == _INDEX
-        assert action["mimetype"] == "text/html"
-        # `path` records the selector that matched the block.
-        assert action["path"] == _parser().xpath
-        for field, info in WebSearchResultBlock.model_fields.items():
+        for field, info in OrganicResult.model_fields.items():
             if info.is_required():
                 assert field in action or field == "id", (
                     f"required field {field!r} missing from create action"

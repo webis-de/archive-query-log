@@ -1,6 +1,6 @@
 from urllib.parse import urlencode, urlunsplit
 
-from pydantic import HttpUrl
+from pydantic import AnyHttpUrl
 
 
 # TODO: Replace with dfir-unfurl.
@@ -29,7 +29,7 @@ TRACKING_PARAMS = {
 }
 
 
-def remove_tracking_parameters(url: HttpUrl) -> HttpUrl:
+def remove_tracking_parameters(url: AnyHttpUrl) -> AnyHttpUrl:
     """
     Remove common tracking parameters from URL.
     """
@@ -51,4 +51,4 @@ def remove_tracking_parameters(url: HttpUrl) -> HttpUrl:
             url.fragment,
         )
     )
-    return HttpUrl(cleaned_url)
+    return AnyHttpUrl(cleaned_url)

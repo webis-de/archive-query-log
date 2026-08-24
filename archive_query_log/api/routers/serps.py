@@ -27,7 +27,7 @@ from elasticsearch_dsl.query import (
     Ids,
 )
 from fastapi import APIRouter, Query as QueryParam, Request, Depends
-from pydantic import BaseModel, Field, HttpUrl, computed_field
+from pydantic import BaseModel, Field, AnyHttpUrl, computed_field
 from slowapi.util import get_remote_address
 from slowapi.extension import Limiter
 
@@ -38,7 +38,7 @@ from archive_query_log.api.dependencies import (
 from archive_query_log.api.utils.advanced_search_parser import parse_advanced_query
 from archive_query_log.api.utils.url_cleaner import remove_tracking_parameters
 from archive_query_log.config import Config
-from archive_query_log.orm import Serp, Provider, Archive, WebSearchResultBlock
+from archive_query_log.orm import Serp, Provider, Archive, OrganicResult
 
 
 router = APIRouter()
@@ -50,13 +50,13 @@ class EnrichedSerp(Serp):
 
     @computed_field  # type: ignore[prop-decorator]
     @property
-    def capture_url_without_tracking(self) -> HttpUrl:
-        return HttpUrl(remove_tracking_parameters(self.capture.url))
+    def capture_url_without_tracking(self) -> AnyHttpUrl:
+        return AnyHttpUrl(remove_tracking_parameters(self.capture.url))
 
     @computed_field  # type: ignore[prop-decorator]
     @property
-    def unfurl_url(self) -> HttpUrl:
-        return HttpUrl(f"https://dfir.blog/unfurl/?url={self.capture.url}")
+    def unfurl_url(self) -> AnyHttpUrl:
+        return AnyHttpUrl(f"https://dfir.blog/unfurl/?url={self.capture.url}")
 
     # TODO: Parsed unfurl data
 
@@ -462,7 +462,7 @@ def date_histogram(
 
 
 class EnrichedSerpWithResults(EnrichedSerp):
-    results: Annotated[list[WebSearchResultBlock] | None, Nested(WebSearchResultBlock)]
+    results: Annotated[list[OrganicResult] | None, Nested(OrganicResult)]
 
 
 class SerpComparisonResult(BaseModel):
@@ -503,12 +503,12 @@ def compare(
     # Load information on SERP results.
     enriched_serps_with_results: list[EnrichedSerpWithResults] = []
     for serp in enriched_serps:
-        results: list[WebSearchResultBlock] | None = None
-        if serp.warc_web_search_result_blocks is not None:
-            results = WebSearchResultBlock.mget(
-                docs=[str(block.id) for block in serp.warc_web_search_result_blocks],
+        results: list[OrganicResult] | None = None
+        if serp.warc_organic_results is not None:
+            results = OrganicResult.mget(
+                docs=[str(block.id) for block in serp.warc_organic_results],
                 using=elasticsearch,
-                index=config.es.index_web_search_result_blocks,
+                index=config.es.index_organic_results,
             )
         enriched_serps_with_results.append(
             EnrichedSerpWithResults(**serp.model_dump(), results=results)
