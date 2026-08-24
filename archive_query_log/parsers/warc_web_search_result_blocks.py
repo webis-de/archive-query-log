@@ -25,6 +25,7 @@ from archive_query_log.orm import (
     InnerSerp,
     WebSearchResultBlockId,
 )
+from archive_query_log.parsers.utils import content_digest
 from archive_query_log.parsers.utils.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
 from archive_query_log.utils.warc import WarcStore
@@ -33,6 +34,7 @@ from archive_query_log.utils.warc import WarcStore
 class WebSearchResultBlockData(BaseModel):
     id: UUID
     rank: int
+    path: str
     content: str
     url: HttpUrl | None = None
     title: str | None = None
@@ -160,7 +162,7 @@ class XpathWarcWebSearchResultBlocksParser(WarcWebSearchResultBlocksParser):
             web_search_result_block_id_components = (
                 str(serp.id),
                 str(self.id),
-                str(hash(content)),
+                content_digest(content),
                 str(i),
             )
             web_search_result_block_id = uuid5(
@@ -171,6 +173,7 @@ class XpathWarcWebSearchResultBlocksParser(WarcWebSearchResultBlocksParser):
                 WebSearchResultBlockData(
                     id=web_search_result_block_id,
                     rank=i,
+                    path=self.xpath,
                     content=content,
                     url=HttpUrl(url) if url is not None else None,
                     title=title,
@@ -211,6 +214,7 @@ def parse_serp_warc_web_search_result_blocks_action(
             continue
         for web_search_result_block in warc_web_search_result_blocks:
             web_search_result_block = WebSearchResultBlock(
+                index=index_web_search_result_blocks,
                 id=web_search_result_block.id,
                 last_modified=utc_now(),
                 archive=serp.archive,
@@ -220,6 +224,8 @@ def parse_serp_warc_web_search_result_blocks_action(
                     id=serp.id,
                 ),
                 rank=web_search_result_block.rank,
+                mimetype="text/html",
+                path=web_search_result_block.path,
                 content=web_search_result_block.content,
                 url=web_search_result_block.url,
                 title=web_search_result_block.title,
@@ -230,7 +236,6 @@ def parse_serp_warc_web_search_result_blocks_action(
                     last_parsed=utc_now(),
                 ),
             )
-            web_search_result_block.meta.index = index_web_search_result_blocks
             yield web_search_result_block.create_action()
         yield serp.update_action(
             warc_web_search_result_blocks=[
