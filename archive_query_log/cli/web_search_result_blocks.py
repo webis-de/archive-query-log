@@ -67,6 +67,10 @@ def download_warc_before_serp(
         download_web_search_result_block_warc_before_serp,
     )
 
+    WebSearchResultBlock.init(
+        using=config.es.client,
+        index=config.es.index_web_search_result_blocks,
+    )
     download_web_search_result_block_warc_before_serp(
         config=config,
         size=size,
@@ -88,6 +92,10 @@ def download_warc_after_serp(
         download_web_search_result_block_warc_after_serp,
     )
 
+    WebSearchResultBlock.init(
+        using=config.es.client,
+        index=config.es.index_web_search_result_blocks,
+    )
     download_web_search_result_block_warc_after_serp(
         config=config,
         size=size,
