@@ -1,5 +1,15 @@
+from hashlib import blake2b
 from re import Pattern
 from warnings import warn
+
+
+def content_digest(content: str) -> str:
+    """
+    Stable hash of parsed content, used as a component of derived document IDs.
+    Must not use the builtin `hash()`, as that is salted per interpreter and
+    would make the derived IDs differ between runs.
+    """
+    return blake2b(content.encode("utf-8"), digest_size=16).hexdigest()
 
 
 def clean_text(
