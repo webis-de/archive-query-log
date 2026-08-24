@@ -1,22 +1,22 @@
 from urllib.parse import parse_qsl, unquote
-from pydantic import HttpUrl
+from pydantic import AnyUrl
 
 
-def parse_url_query_parameter(parameter: str, url: HttpUrl) -> str | None:
+def parse_url_query_parameter(parameter: str, url: AnyUrl) -> str | None:
     for key, value in parse_qsl(url.query):
         if key == parameter:
             return value
     return None
 
 
-def parse_url_fragment_parameter(parameter: str, url: HttpUrl) -> str | None:
+def parse_url_fragment_parameter(parameter: str, url: AnyUrl) -> str | None:
     for key, value in parse_qsl(url.fragment):
         if key == parameter:
             return value
     return None
 
 
-def parse_url_path_segment(segment: int, url: HttpUrl) -> str | None:
+def parse_url_path_segment(segment: int, url: AnyUrl) -> str | None:
     path = url.path
     if path is None:
         return None
