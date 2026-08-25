@@ -1,20 +1,18 @@
 from dataclasses import dataclass
 from itertools import chain
-from json import loads, dumps
+from json import dumps, loads
 from pathlib import Path
-from typing import Iterable, Iterator, TypeVar, Generic, Type, Callable, cast
+from typing import Callable, Generic, Iterable, Iterator, Type, TypeVar
 from uuid import UUID, uuid5
 from warnings import warn
 
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
-from elasticsearch_dsl.query import FunctionScore, Term, RankFeature
-
-from elasticsearch_dsl.query import Exists
+from elasticsearch_dsl.query import Exists, FunctionScore, RankFeature, Term
 from requests import ConnectionError as RequestsConnectionError
 from tqdm.auto import tqdm
-from warc_cache import WarcCacheStore, WarcCacheRecord
-from warc_s3 import WarcS3Store, WarcS3Record
+from warc_cache import WarcCacheRecord, WarcCacheStore
+from warc_s3 import WarcS3Store
 from warcio.recordloader import ArcWarcRecord
 from web_archive_api.memento import MementoApi
 
@@ -22,14 +20,13 @@ from archive_query_log import __version__ as app_version
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_WARC_DOWNLOADER
 from archive_query_log.orm import (
-    Serp,
     InnerDownloader,
-    WarcLocation,
     OrganicResult,
+    Serp,
     UuidBaseDocument,
+    WarcLocation,
 )
 from archive_query_log.utils.time import utc_now
-
 
 _D = TypeVar("_D", bound=UuidBaseDocument)
 
@@ -80,6 +77,17 @@ class _AnnotatedWarcRecord(ArcWarcRecord, Generic[_T]):
             digest_checker=record.digest_checker,
         )
         self.annotation = annotation
+
+
+class _PseudoOrganicResult(UuidBaseDocument):
+    before_serp: bool
+    # `update_action()` only dumps fields declared on the model itself, so
+    # the fields it is called with below must be declared here too, even
+    # though this pseudo document never actually sets them.
+    warc_location_before_serp: WarcLocation | None = None
+    warc_downloader_before_serp: InnerDownloader | None = None
+    warc_location_after_serp: WarcLocation | None = None
+    warc_downloader_after_serp: InnerDownloader | None = None
 
 
 def _warc_downloader_id(config: Config) -> UUID:
@@ -349,7 +357,7 @@ def _download_organic_result_warc(
     config: Config,
     result_block: OrganicResult,
     before_serp: bool,
-) -> Iterator[_AnnotatedWarcRecord[OrganicResult]]:
+) -> Iterator[_WrapperWarcRecord[_PseudoOrganicResult]]:
     capture = (
         result_block.capture_before_serp
         if before_serp
@@ -378,27 +386,20 @@ def _download_organic_result_warc(
         )
         return
 
+    # Only keep the meta fields needed to route the update, since
+    # `update_action()` serializes any other set meta field (e.g. `seq_no`)
+    # under a key Elasticsearch's update API does not accept.
+    pseudo_result = _PseudoOrganicResult(
+        id=result_block.id,
+        index=result_block.index,
+        before_serp=before_serp,
+    )
     for record in records:
-        yield _AnnotatedWarcRecord(record, result_block)
-
-
-def _unwrap_records(
-    record: Iterable[WarcS3Record], wrapper_type: Type[_D]
-) -> Iterator[tuple[_D, WarcLocation]]:
-    for stored_record in record:
-        location = WarcLocation(
-            file=stored_record.location.key,
-            offset=stored_record.location.offset,
-            length=stored_record.location.length,
-        )
-
-        annotated_record = cast(_AnnotatedWarcRecord[_D], stored_record.record)
-        annotation = annotated_record.annotation
-        yield annotation, location
+        yield _WrapperWarcRecord(record, pseudo_result)
 
 
 def _organic_result_warc_update_action(
-    result_block: OrganicResult,
+    result_block: UuidBaseDocument,
     location: WarcLocation,
     downloader_id: UUID,
     before_serp: bool,
@@ -474,24 +475,13 @@ def _download_organic_results_warc(
         for result_block in changed_result_blocks
     )
 
-    # Write to S3.
-    stored_records: Iterator[WarcS3Record] = config.s3.warc_s3_store.write(
+    # Write to cache.
+    locations: Iterator[WarcCacheRecord] = config.warc_cache.store_results.write(
         downloaded_records
     )
-    stored_result_blocks = _unwrap_records(stored_records, OrganicResult)
 
-    # Update Elasticsearch.
-    downloader_id = _warc_downloader_id(config)
-    actions = (
-        _organic_result_warc_update_action(
-            result_block=result_block,
-            location=location,
-            downloader_id=downloader_id,
-            before_serp=before_serp,
-        )
-        for result_block, location in stored_result_blocks
-    )
-    config.es.bulk(actions)
+    for _ in locations:
+        pass
 
 
 def download_organic_result_warc_before_serp(
@@ -512,3 +502,41 @@ def download_organic_result_warc_after_serp(
         size=size,
         before_serp=False,
     )
+
+
+def upload_organic_results_warc(
+    config: Config,
+) -> None:
+    # Read from cache.
+    cached_records = _iter_cached_records(warc_store=config.warc_cache.store_results)
+
+    # Parse wrapped records (document visible in a WARC header).
+    wrapped_records = _iter_wrapped_records(
+        records=cached_records,
+        wrapped_type=_PseudoOrganicResult,
+    )
+
+    # Transform to annotated records (document opaque to the actual WARC record).
+    annotated_records = _iter_annotated_records(
+        records=wrapped_records,
+    )
+        
+    # Write to S3.
+    stored_pseudo_results = _iter_s3_stored_records(
+        records=annotated_records,
+        warc_store=config.s3.warc_s3_store,
+        document_type=_PseudoOrganicResult,
+    )
+
+    # Update Elasticsearch.
+    downloader_id = _warc_downloader_id(config)
+    actions = (
+        _organic_result_warc_update_action(
+            result_block=pseudo_result,
+            location=location,
+            downloader_id=downloader_id,
+            before_serp=pseudo_result.before_serp,
+        )
+        for pseudo_result, location in stored_pseudo_results
+    )
+    config.es.bulk(actions)
