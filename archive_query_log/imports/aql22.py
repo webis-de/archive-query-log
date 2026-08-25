@@ -143,7 +143,7 @@ def _import_captures_path(
 
 
 def _create_action(capture: Capture, config: Config) -> dict:
-    capture.meta.index = config.es.index_captures
+    capture.index = config.es.index_captures
     return {
         **capture.to_dict(include_meta=True),
         "_op_type": "create",

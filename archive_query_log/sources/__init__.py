@@ -10,7 +10,14 @@ from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_SOURCE
-from archive_query_log.orm import Archive, Provider, Source, InnerArchive, InnerProvider
+from archive_query_log.orm import (
+    Archive,
+    Provider,
+    Source,
+    InnerArchive,
+    InnerProvider,
+    UuidBaseDocument,
+)
 from archive_query_log.utils.time import utc_now
 
 
@@ -52,7 +59,7 @@ def _sources_batch(archive: Archive, provider: Provider, config: Config) -> list
                 ),
                 should_fetch_captures=True,
             )
-            source.meta.index = config.es.index_sources
+            source.index = config.es.index_sources
             batch.append(source.create_action())
     return batch
 
@@ -75,8 +82,11 @@ def _iter_sources_batches_changed_archives(
                 provider,
                 config,
             )
+        # Only keep the meta fields, since e.g. the search-relevance score
+        # must not end up in the update action's document body.
+        pseudo_archive = UuidBaseDocument(id=archive.id, index=archive.index)
         yield [
-            archive.update_action(
+            pseudo_archive.update_action(
                 should_build_sources=False,
                 last_built_sources=utc_now(),
             )
@@ -101,8 +111,11 @@ def _iter_sources_batches_changed_providers(
                 provider,
                 config,
             )
+        # Only keep the meta fields, since e.g. the search-relevance score
+        # must not end up in the update action's document body.
+        pseudo_provider = UuidBaseDocument(id=provider.id, index=provider.index)
         yield [
-            provider.update_action(
+            pseudo_provider.update_action(
                 should_build_sources=False,
                 last_built_sources=utc_now(),
             )
