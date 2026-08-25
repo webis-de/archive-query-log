@@ -5,7 +5,7 @@ from typing import Sequence, Iterable
 from diskcache import Index
 from tqdm.auto import tqdm
 from whois import whois
-from whois.parser import PywhoisError
+from whois.exceptions import PywhoisError
 from yaml import safe_load
 
 from archive_query_log.config import Config
