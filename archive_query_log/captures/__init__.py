@@ -8,7 +8,7 @@ from warnings import warn
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, RankFeature, Term, Range, Exists
-from pydantic import HttpUrl
+from pydantic import HttpUrl, ValidationError
 from requests import ConnectTimeout, HTTPError, Response
 from tqdm.auto import tqdm
 from web_archive_api.cdx import CdxApi, CdxMatchType, CdxCapture
@@ -71,36 +71,48 @@ def _iter_captures(
             NAMESPACE_CAPTURE,
             ":".join(capture_id_components),
         )
-        yield Capture(
-            id=capture_id,
-            last_modified=utc_now(),
-            archive=source.archive,
-            provider=source.provider,
-            url=HttpUrl(cdx_capture.url),
-            url_key=cdx_capture.url_key,
-            timestamp=cdx_capture.timestamp.astimezone(UTC),
-            status_code=cdx_capture.status_code,
-            digest=cdx_capture.digest,
-            mimetype=cdx_capture.mimetype,
-            filename=cdx_capture.filename,
-            offset=cdx_capture.offset,
-            length=cdx_capture.length,
-            access=cdx_capture.access,
-            redirect_url=HttpUrl(cdx_capture.redirect_url)
-            if cdx_capture.redirect_url is not None
-            else None,
-            flags=(
-                [flag.value for flag in cdx_capture.flags]
-                if cdx_capture.flags is not None
-                else None
-            ),
-            collection=cdx_capture.collection,
-            source=cdx_capture.source,
-            source_collection=cdx_capture.source_collection,
-            url_query_parser=InnerParser(
-                should_parse=True,
-            ),
-        )
+        try:
+            capture = Capture(
+                id=capture_id,
+                last_modified=utc_now(),
+                archive=source.archive,
+                provider=source.provider,
+                url=HttpUrl(cdx_capture.url),
+                url_key=cdx_capture.url_key,
+                timestamp=cdx_capture.timestamp.astimezone(UTC),
+                status_code=cdx_capture.status_code,
+                digest=cdx_capture.digest,
+                mimetype=cdx_capture.mimetype,
+                filename=cdx_capture.filename,
+                offset=cdx_capture.offset,
+                length=cdx_capture.length,
+                access=cdx_capture.access,
+                redirect_url=HttpUrl(cdx_capture.redirect_url)
+                if cdx_capture.redirect_url is not None
+                else None,
+                flags=(
+                    [flag.value for flag in cdx_capture.flags]
+                    if cdx_capture.flags is not None
+                    else None
+                ),
+                collection=cdx_capture.collection,
+                source=cdx_capture.source,
+                source_collection=cdx_capture.source_collection,
+                url_query_parser=InnerParser(
+                    should_parse=True,
+                ),
+            )
+        except ValidationError as e:
+            # E.g., the URL may exceed the maximum length that `HttpUrl`
+            # accepts (much stricter than Elasticsearch's own limit checked
+            # above), or otherwise fail URL validation.
+            warn(
+                RuntimeWarning(
+                    f"Skipping invalid capture for URL {cdx_capture.url}: {e}"
+                )
+            )
+            continue
+        yield capture
 
 
 def _add_captures_actions(
@@ -122,7 +134,12 @@ def _add_captures_actions(
     try:
         for capture in captures_iter:
             capture.index = config.es.index_captures
-            yield capture.create_action()
+            # Use an idempotent upsert instead of a failing create, since a
+            # capture's id is a deterministic hash of its CDX identity, so a
+            # duplicate id always means identical content (e.g., duplicate
+            # rows across CDX pagination boundaries, or a re-fetch after an
+            # interrupted run).
+            yield capture.index_action()
     except ConnectTimeout as e:
         # The archives' CDX are usually very slow, so we expect timeouts.
         # Rather than failing, we just warn and continue with the next source.
@@ -243,6 +260,12 @@ def _organic_result_capture_update_action(
     if capture_after_serp != result_block.capture_after_serp:
         updates["warc_location_after_serp"] = None
         updates["warc_downloader_after_serp"] = None
+
+    # Drop the search-relevance score, if set, since it must not end up in
+    # the update action's document body (unlike `id`/`index`/etc., which are
+    # needed to route the update, `score` is never a valid field to send).
+    result_block = result_block.model_copy()
+    result_block.__pydantic_fields_set__.discard("score")
 
     return result_block.update_action(**updates)
 
