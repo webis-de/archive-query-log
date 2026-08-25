@@ -69,6 +69,7 @@ def add_archive(
 
     archive = Archive(
         id=archive_id,
+        index=config.es.index_archives,
         last_modified=last_modified,
         name=name,
         description=description,
@@ -80,4 +81,4 @@ def add_archive(
     if dry_run:
         print(archive)
     else:
-        archive.save(using=config.es.client, index=config.es.index_archives)
+        config.es.bulk([archive.index_action()])
