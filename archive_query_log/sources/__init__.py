@@ -16,7 +16,6 @@ from archive_query_log.orm import (
     Source,
     InnerArchive,
     InnerProvider,
-    UuidBaseDocument,
 )
 from archive_query_log.utils.time import utc_now
 
@@ -82,11 +81,14 @@ def _iter_sources_batches_changed_archives(
                 provider,
                 config,
             )
-        # Only keep the meta fields, since e.g. the search-relevance score
-        # must not end up in the update action's document body.
-        pseudo_archive = UuidBaseDocument(id=archive.id, index=archive.index)
+        # Drop the search-relevance score, if set, since `update_action()`
+        # only dumps fields declared on the model itself, and a minimal
+        # pseudo document wouldn't declare `should_build_sources` at all,
+        # while the score must not end up in the update action's body.
+        archive = archive.model_copy()
+        archive.__pydantic_fields_set__.discard("score")
         yield [
-            pseudo_archive.update_action(
+            archive.update_action(
                 should_build_sources=False,
                 last_built_sources=utc_now(),
             )
@@ -111,11 +113,14 @@ def _iter_sources_batches_changed_providers(
                 provider,
                 config,
             )
-        # Only keep the meta fields, since e.g. the search-relevance score
-        # must not end up in the update action's document body.
-        pseudo_provider = UuidBaseDocument(id=provider.id, index=provider.index)
+        # Drop the search-relevance score, if set, since `update_action()`
+        # only dumps fields declared on the model itself, and a minimal
+        # pseudo document wouldn't declare `should_build_sources` at all,
+        # while the score must not end up in the update action's body.
+        provider = provider.model_copy()
+        provider.__pydantic_fields_set__.discard("score")
         yield [
-            pseudo_provider.update_action(
+            provider.update_action(
                 should_build_sources=False,
                 last_built_sources=utc_now(),
             )
