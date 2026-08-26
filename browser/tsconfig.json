@@ -3,15 +3,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@directives/*": ["src/directives/*"],
-      "@services/*": ["src/services/*"],
-      "@models/*": ["src/models/*"],
-      "@utils/*": ["src/utils/*"],
-      "@environments/*": ["src/environments/*"],
-      "aql-stylings": ["projects/aql-stylings/src/public-api"]
+      "@components/*": ["./src/components/*"],
+      "@directives/*": ["./src/directives/*"],
+      "@services/*": ["./src/services/*"],
+      "@models/*": ["./src/models/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@environments/*": ["./src/environments/*"],
+      "aql-stylings": ["./projects/aql-stylings/src/public-api"]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
