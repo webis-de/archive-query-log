@@ -399,20 +399,22 @@ def _download_organic_result_warc(
 
 
 def _organic_result_warc_update_action(
-    result_block: UuidBaseDocument,
+    result_block: _PseudoOrganicResult,
     location: WarcLocation,
     downloader_id: UUID,
-    before_serp: bool,
 ) -> dict:
     downloader = InnerDownloader(
         id=downloader_id,
         should_download=False,
         last_downloaded=utc_now(),
     )
-    # The field names must match the ones queried in
-    # `_download_organic_results_warc()`, otherwise the downloaded
-    # blocks are never marked as downloaded and would be downloaded again.
-    if before_serp:
+    # Only keep the meta fields of the organic result, as the source is not needed for updating it.
+    result_block = UuidBaseDocument(
+        id=result_block.id,
+        index=result_block.index,
+        seq_no=result_block.seq_no
+    )
+    if result_block.before_serp:
         return result_block.update_action(
             warc_location_before_serp=location,
             warc_downloader_before_serp=downloader,
@@ -535,7 +537,6 @@ def upload_organic_results_warc(
             result_block=pseudo_result,
             location=location,
             downloader_id=downloader_id,
-            before_serp=pseudo_result.before_serp,
         )
         for pseudo_result, location in stored_pseudo_results
     )
