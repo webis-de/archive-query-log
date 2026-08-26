@@ -88,7 +88,7 @@ jobs:
       - name: 🧰 Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: "24.13"
+          node-version: "24.19"
           check-latest: true
           cache-dependency-path: browser/package-lock.json
       - name: 🧰 Install Node dependencies
@@ -110,7 +110,7 @@ jobs:
       - name: 🧰 Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: "24.13"
+          node-version: "24.19"
           check-latest: true
           cache-dependency-path: browser/package-lock.json
       - name: 🧰 Install Node dependencies
@@ -128,7 +128,7 @@ jobs:
       - name: 🧰 Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: "24.13"
+          node-version: "24.19"
           cache-dependency-path: browser/package-lock.json
       - name: 🧰 Install Node dependencies
         working-directory: browser/
@@ -145,7 +145,7 @@ jobs:
       - name: 🧰 Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: "24.13"
+          node-version: "24.19"
           cache-dependency-path: browser/package-lock.json
       - name: 🧰 Install Chrome browser
         uses: browser-actions/setup-chrome@v2
