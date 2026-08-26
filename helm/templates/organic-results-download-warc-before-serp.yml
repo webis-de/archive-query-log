@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $.Release.Name }}-serps-parse-warc-query
+  name: {{ $.Release.Name }}-organic-results-download-warc-before-serp
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
 spec:
   selector:
     matchLabels:
-      app: {{ $.Release.Name }}-serps-parse-warc-query
-  replicas: {{ $.Values.serpsParseWarcQuery.replicas }}
+      app: {{ $.Release.Name }}-organic-results-download-warc-before-serp
+  replicas: {{ $.Values.organicResultsDownloadWarcBeforeSerp.replicas }}
   revisionHistoryLimit: 1
   template:
     metadata:
       labels:
-        app: {{ $.Release.Name }}-serps-parse-warc-query
+        app: {{ $.Release.Name }}-organic-results-download-warc-before-serp
     spec:
       containers:
-        - name: {{ $.Release.Name }}-serps-parse-warc-query
+        - name: {{ $.Release.Name }}-organic-results-download-warc-before-serp
           image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: IfNotPresent
           resources:
@@ -29,11 +29,11 @@ spec:
             - /venv/bin/python
             - -m
             - archive_query_log
-            - serps
-            - parse
-            - warc-query
+            - web-search-result-blocks
+            - download
+            - warc-before-serp
             - --size
-            - '{{ $.Values.serpsParseWarcQuery.size }}'
+            - '{{ $.Values.organicResultsDownloadWarcBeforeSerp.size }}'
           env:
             - name: ELASTICSEARCH_HOST
               value: {{ $.Values.elasticsearch.host | quote }}
@@ -77,13 +77,13 @@ spec:
                 secretKeyRef:
                   name: {{ $.Release.Name }}-secret
                   key: s3SecretKey
-            - name: WARC_CACHE_PATH_SERPS
-              value: {{ $.Values.warcCache.pathSerps | quote }}
+            - name: WARC_CACHE_PATH_RESULTS
+              value: {{ $.Values.warcCache.pathResults | quote }}
           volumeMounts:
-            - name: {{ $.Release.Name }}-warc-cache-path-serps
-              mountPath: {{ $.Values.warcCache.pathSerps }}
+            - name: {{ $.Release.Name }}-warc-cache-path-results
+              mountPath: {{ $.Values.warcCache.pathResults }}
       volumes:
-        - name: {{ $.Release.Name }}-warc-cache-path-serps
+        - name: {{ $.Release.Name }}-warc-cache-path-results
           hostPath:
-            path: {{ $.Values.warcCache.pathSerps }}
+            path: {{ $.Values.warcCache.pathResults }}
             type: DirectoryOrCreate

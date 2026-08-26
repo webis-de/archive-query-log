@@ -9,8 +9,14 @@ Started workers:
 - Parse SERP URL pages (replicas: {{ $.Values.serpsParseUrlPage.replicas }}).
 - Parse SERP URL offsets (replicas: {{ $.Values.serpsParseUrlOffset.replicas }}).
 - Download SERP WARCs (replicas: {{ $.Values.serpsDownloadWarc.replicas }}).
+- Upload SERP WARCs (replicas: {{ $.Values.serpsUploadWarc.replicas }}).
 - Parse SERP WARC queries (replicas: {{ $.Values.serpsParseWarcQuery.replicas }}).
-- Parse SERP WARC queries (replicas: {{ $.Values.serpsParseWarcSnippets.replicas }}).
+- Parse SERP WARC organic results (replicas: {{ $.Values.serpsParseWarcOrganicResults.replicas }}).
+- Parse SERP WARC features (replicas: {{ $.Values.serpsParseWarcFeatures.replicas }}).
+- Fetch organic result captures (replicas: {{ $.Values.organicResultsFetchCaptures.replicas }}).
+- Download organic result WARCs before SERP (replicas: {{ $.Values.organicResultsDownloadWarcBeforeSerp.replicas }}).
+- Download organic result WARCs after SERP (replicas: {{ $.Values.organicResultsDownloadWarcAfterSerp.replicas }}).
+- Upload organic result WARCs (replicas: {{ $.Values.organicResultsUploadWarc.replicas }}).
 {{- if $.Values.capturesImportAql22.enabled }}
 
 Started jobs:

@@ -8,7 +8,7 @@ from warnings import warn
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, RankFeature, Term, Range, Exists
-from pydantic import HttpUrl
+from pydantic import HttpUrl, ValidationError
 from requests import ConnectTimeout, HTTPError, Response
 from tqdm.auto import tqdm
 from web_archive_api.cdx import CdxApi, CdxMatchType, CdxCapture
@@ -121,8 +121,13 @@ def _add_captures_actions(
     captures_iter = _iter_captures(config, source)
     try:
         for capture in captures_iter:
-            capture.meta.index = config.es.index_captures
-            yield capture.create_action()
+            capture.index = config.es.index_captures
+            # Use an idempotent upsert instead of a failing create, since a
+            # capture's id is a deterministic hash of its CDX identity, so a
+            # duplicate id always means identical content (e.g., duplicate
+            # rows across CDX pagination boundaries, or a re-fetch after an
+            # interrupted run).
+            yield capture.index_action()
     except ConnectTimeout as e:
         # The archives' CDX are usually very slow, so we expect timeouts.
         # Rather than failing, we just warn and continue with the next source.
