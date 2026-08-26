@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-organic-results-download-warc-after-serp
+  namespace: {{ $.Release.Namespace }}
+  annotations:
+    checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ $.Release.Name }}-organic-results-download-warc-after-serp
+  replicas: {{ $.Values.organicResultsDownloadWarcAfterSerp.replicas }}
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        app: {{ $.Release.Name }}-organic-results-download-warc-after-serp
+    spec:
+      containers:
+        - name: {{ $.Release.Name }}-organic-results-download-warc-after-serp
+          image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory: 4Gi
+          command:
+            - /usr/bin/timeout
+            - "86400" # 24 hours
+            - /venv/bin/python
+            - -m
+            - archive_query_log
+            - web-search-result-blocks
+            - download
+            - warc-after-serp
+            - --size
+            - '{{ $.Values.organicResultsDownloadWarcAfterSerp.size }}'
+          env:
+            - name: ELASTICSEARCH_HOST
+              value: {{ $.Values.elasticsearch.host | quote }}
+            - name: ELASTICSEARCH_PORT
+              value: {{ $.Values.elasticsearch.port | quote }}
+            - name: ELASTICSEARCH_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: elasticsearchUsername
+            - name: ELASTICSEARCH_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: elasticsearchPassword
+            - name: ELASTICSEARCH_INDEX_ARCHIVES
+              value: {{ $.Values.elasticsearch.indexArchives | quote }}
+            - name: ELASTICSEARCH_INDEX_PROVIDERS
+              value: {{ $.Values.elasticsearch.indexProviders | quote }}
+            - name: ELASTICSEARCH_INDEX_SOURCES
+              value: {{ $.Values.elasticsearch.indexSources | quote }}
+            - name: ELASTICSEARCH_INDEX_CAPTURES
+              value: {{ $.Values.elasticsearch.indexCaptures | quote }}
+            - name: ELASTICSEARCH_INDEX_SERPS
+              value: {{ $.Values.elasticsearch.indexSerps | quote }}
+            - name: ELASTICSEARCH_INDEX_ORGANIC_RESULTS
+              value: {{ $.Values.elasticsearch.indexOrganicResults | quote }}
+            - name: ELASTICSEARCH_INDEX_FEATURES
+              value: {{ $.Values.elasticsearch.indexFeatures | quote }}
+            - name: S3_ENDPOINT_URL
+              value: {{ $.Values.s3.endpointUrl | quote }}
+            - name: S3_BUCKET_NAME
+              value: {{ $.Values.s3.bucketName | quote }}
+            - name: S3_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: s3AccessKey
+            - name: S3_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $.Release.Name }}-secret
+                  key: s3SecretKey
+            - name: WARC_CACHE_PATH_RESULTS
+              value: {{ $.Values.warcCache.pathResults | quote }}
+          volumeMounts:
+            - name: {{ $.Release.Name }}-warc-cache-path-results
+              mountPath: {{ $.Values.warcCache.pathResults }}
+      volumes:
+        - name: {{ $.Release.Name }}-warc-cache-path-results
+          hostPath:
+            path: {{ $.Values.warcCache.pathResults }}
+            type: DirectoryOrCreate

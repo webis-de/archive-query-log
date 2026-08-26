@@ -45,6 +45,21 @@ serpsParseWarcSnippets:
   # replicas: 50
   prefetchLimit: 1000
 
+organicResultsFetchCaptures:
+  replicas: 1
+  size: 1000
+
+organicResultsDownloadWarcBeforeSerp:
+  replicas: 500
+  size: 1000
+
+organicResultsDownloadWarcAfterSerp:
+  replicas: 500
+  size: 1000
+
+organicResultsUploadWarc:
+  replicas: 1
+
 monitoring:
   ingressClassName: nginx
   host: aql-monitoring.srv.webis.de
@@ -71,6 +86,8 @@ elasticsearch:
   indexWarcSnippetsParsers: aql_warc_snippets_parsers
   indexWarcDirectAnswersParsers: aql_warc_direct_answers_parser
   indexWarcMainContentParsers: aql_warc_main_content_parser
+  indexOrganicResults: aql_organic_results
+  indexFeatures: aql_features
 
 s3:
   endpointUrl: https://s3.dw.webis.de
@@ -80,6 +97,7 @@ s3:
 
 warcCache:
   pathSerps: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps
+  pathResults: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/results
 
 browser:
   frontend:
