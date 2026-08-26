@@ -25,7 +25,7 @@ import { ProjectService } from '../../services/project.service';
 import { SessionService } from '../../services/session.service';
 import { FilterBadgeService } from '../../services/filter-badge.service';
 import { SuggestionsService, Suggestion } from '../../services/suggestions.service';
-import { FilterDropdownComponent } from 'src/app/components/filter-dropdown/filter-dropdown.component';
+import { FilterDropdownComponent } from '../../components/filter-dropdown/filter-dropdown.component';
 import { FilterState } from '../../models/filter.model';
 import { createFilterBadgeController } from '../../utils/filter-badges';
 import { createSearchSuggestionsController } from '../../utils/search-suggestions';
