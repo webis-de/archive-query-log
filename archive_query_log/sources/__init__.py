@@ -81,12 +81,6 @@ def _iter_sources_batches_changed_archives(
                 provider,
                 config,
             )
-        # Drop the search-relevance score, if set, since `update_action()`
-        # only dumps fields declared on the model itself, and a minimal
-        # pseudo document wouldn't declare `should_build_sources` at all,
-        # while the score must not end up in the update action's body.
-        archive = archive.model_copy()
-        archive.__pydantic_fields_set__.discard("score")
         yield [
             archive.update_action(
                 should_build_sources=False,
@@ -113,12 +107,6 @@ def _iter_sources_batches_changed_providers(
                 provider,
                 config,
             )
-        # Drop the search-relevance score, if set, since `update_action()`
-        # only dumps fields declared on the model itself, and a minimal
-        # pseudo document wouldn't declare `should_build_sources` at all,
-        # while the score must not end up in the update action's body.
-        provider = provider.model_copy()
-        provider.__pydantic_fields_set__.discard("score")
         yield [
             provider.update_action(
                 should_build_sources=False,
