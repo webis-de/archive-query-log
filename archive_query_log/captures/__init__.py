@@ -71,48 +71,36 @@ def _iter_captures(
             NAMESPACE_CAPTURE,
             ":".join(capture_id_components),
         )
-        try:
-            capture = Capture(
-                id=capture_id,
-                last_modified=utc_now(),
-                archive=source.archive,
-                provider=source.provider,
-                url=HttpUrl(cdx_capture.url),
-                url_key=cdx_capture.url_key,
-                timestamp=cdx_capture.timestamp.astimezone(UTC),
-                status_code=cdx_capture.status_code,
-                digest=cdx_capture.digest,
-                mimetype=cdx_capture.mimetype,
-                filename=cdx_capture.filename,
-                offset=cdx_capture.offset,
-                length=cdx_capture.length,
-                access=cdx_capture.access,
-                redirect_url=HttpUrl(cdx_capture.redirect_url)
-                if cdx_capture.redirect_url is not None
-                else None,
-                flags=(
-                    [flag.value for flag in cdx_capture.flags]
-                    if cdx_capture.flags is not None
-                    else None
-                ),
-                collection=cdx_capture.collection,
-                source=cdx_capture.source,
-                source_collection=cdx_capture.source_collection,
-                url_query_parser=InnerParser(
-                    should_parse=True,
-                ),
-            )
-        except ValidationError as e:
-            # E.g., the URL may exceed the maximum length that `HttpUrl`
-            # accepts (much stricter than Elasticsearch's own limit checked
-            # above), or otherwise fail URL validation.
-            warn(
-                RuntimeWarning(
-                    f"Skipping invalid capture for URL {cdx_capture.url}: {e}"
-                )
-            )
-            continue
-        yield capture
+        yield Capture(
+            id=capture_id,
+            last_modified=utc_now(),
+            archive=source.archive,
+            provider=source.provider,
+            url=HttpUrl(cdx_capture.url),
+            url_key=cdx_capture.url_key,
+            timestamp=cdx_capture.timestamp.astimezone(UTC),
+            status_code=cdx_capture.status_code,
+            digest=cdx_capture.digest,
+            mimetype=cdx_capture.mimetype,
+            filename=cdx_capture.filename,
+            offset=cdx_capture.offset,
+            length=cdx_capture.length,
+            access=cdx_capture.access,
+            redirect_url=HttpUrl(cdx_capture.redirect_url)
+            if cdx_capture.redirect_url is not None
+            else None,
+            flags=(
+                [flag.value for flag in cdx_capture.flags]
+                if cdx_capture.flags is not None
+                else None
+            ),
+            collection=cdx_capture.collection,
+            source=cdx_capture.source,
+            source_collection=cdx_capture.source_collection,
+            url_query_parser=InnerParser(
+                should_parse=True,
+            ),
+        )
 
 
 def _add_captures_actions(
