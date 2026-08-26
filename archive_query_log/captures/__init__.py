@@ -1,6 +1,6 @@
 from datetime import timedelta, datetime
 from itertools import chain
-from typing import Iterable, Iterator, Callable
+from typing import Any, Iterable, Iterator, Callable
 from urllib.parse import urljoin
 from uuid import uuid5, UUID
 from warnings import warn
@@ -222,6 +222,31 @@ def _cdx_capture_to_inner_capture(cdx_capture: CdxCapture) -> InnerCapture:
     )
 
 
+def _organic_result_capture_update_action(
+    result_block: OrganicResult,
+    capture_before_serp: InnerCapture | None,
+    capture_after_serp: InnerCapture | None,
+) -> dict:
+    updates: dict[str, Any] = {
+        "capture_before_serp": capture_before_serp,
+        "capture_after_serp": capture_after_serp,
+        "should_fetch_captures": False,
+        "last_fetched_captures": utc_now(),
+    }
+
+    # Only discard already downloaded WARCs if the capture they belong to changed.
+    # Omitting the fields from the update action keeps their current values.
+    # Added in case there are already WARCs that have been downloaded with the old version.
+    if capture_before_serp != result_block.capture_before_serp:
+        updates["warc_location_before_serp"] = None
+        updates["warc_downloader_before_serp"] = None
+    if capture_after_serp != result_block.capture_after_serp:
+        updates["warc_location_after_serp"] = None
+        updates["warc_downloader_after_serp"] = None
+
+    return result_block.update_action(**updates)
+
+
 def _update_organic_result_capture_action(
     config: Config,
     result_block: OrganicResult,
@@ -254,17 +279,14 @@ def _update_organic_result_capture_action(
         default=None,
     )
 
-    return result_block.update_action(
+    return _organic_result_capture_update_action(
+        result_block=result_block,
         capture_before_serp=_cdx_capture_to_inner_capture(nearest_capture_before_serp)
         if nearest_capture_before_serp is not None
         else None,
-        warc_location_before_serp=None,
-        warc_downloader_before_serp=None,
         capture_after_serp=_cdx_capture_to_inner_capture(nearest_capture_after_serp)
         if nearest_capture_after_serp is not None
         else None,
-        warc_location_after_serp=None,
-        warc_downloader_after_serp=None,
     )
 
 

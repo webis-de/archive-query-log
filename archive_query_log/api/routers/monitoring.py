@@ -435,13 +435,25 @@ def _statistics(
         ),
         _get_statistics(
             config=config,
-            name="+ WARC",
-            description="Web search result blocks for which the WARC has been downloaded.",
+            name="+ WARC (before SERP)",
+            description="Organic results for which the WARC of the "
+            "landing page capture before the SERP has been downloaded.",
             document=OrganicResult,
             index=config.es.index_organic_results,
-            filter_field="warc_location",
-            status_field="warc_downloader.should_download",
-            last_modified_field="warc_downloader.last_downloaded",
+            filter_field="warc_location_before_serp",
+            status_field="warc_downloader_before_serp.should_download",
+            last_modified_field="warc_downloader_before_serp.last_downloaded",
+        ),
+        _get_statistics(
+            config=config,
+            name="+ WARC (after SERP)",
+            description="Organic results for which the WARC of the "
+            "landing page capture after the SERP has been downloaded.",
+            document=OrganicResult,
+            index=config.es.index_organic_results,
+            filter_field="warc_location_after_serp",
+            status_field="warc_downloader_after_serp.should_download",
+            last_modified_field="warc_downloader_after_serp.last_downloaded",
         ),
     ]
 
@@ -562,11 +574,29 @@ def _progress(config: ConfigDependency) -> list[Progress]:
             config=config,
             input_name="WSRBs",
             output_name="WSRBs",
-            description="Download WARCs.",
+            description="Download WARCs of the landing page captures "
+            "before the SERPs.",
             document=OrganicResult,
             index=config.es.index_organic_results,
-            filter_query=Exists(field="url"),
-            status_field="warc_downloader.should_download",
+            filter_query=(
+                Exists(field="capture_before_serp.url")
+                & Term(capture_before_serp__status_code=200)
+            ),
+            status_field="warc_downloader_before_serp.should_download",
+        ),
+        _get_processed_progress(
+            config=config,
+            input_name="WSRBs",
+            output_name="WSRBs",
+            description="Download WARCs of the landing page captures "
+            "after the SERPs.",
+            document=OrganicResult,
+            index=config.es.index_organic_results,
+            filter_query=(
+                Exists(field="capture_after_serp.url")
+                & Term(capture_after_serp__status_code=200)
+            ),
+            status_field="warc_downloader_after_serp.should_download",
         ),
     ]
 

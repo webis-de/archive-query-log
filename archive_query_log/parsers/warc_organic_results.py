@@ -25,6 +25,7 @@ from archive_query_log.orm import (
     InnerSerp,
     OrganicResultId,
 )
+from archive_query_log.parsers.utils import content_digest
 from archive_query_log.parsers.utils.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
 from archive_query_log.utils.warc import WarcStore
@@ -157,7 +158,7 @@ class XpathWarcOrganicResultsParser(WarcOrganicResultsParser):
             organic_result_id_components = (
                 str(serp.id),
                 str(self.id),
-                str(hash(content)),
+                content_digest(content),
                 str(i),
             )
             organic_result_id = uuid5(
@@ -208,6 +209,7 @@ def parse_serp_warc_organic_results_action(
             continue
         for organic_result in warc_organic_results:
             organic_result = OrganicResult(
+                index=index_organic_results,
                 id=organic_result.id,
                 last_modified=utc_now(),
                 archive=serp.archive,
@@ -227,7 +229,6 @@ def parse_serp_warc_organic_results_action(
                     last_parsed=utc_now(),
                 ),
             )
-            organic_result.meta.index = index_organic_results
             yield organic_result.create_action()
         yield serp.update_action(
             warc_organic_results=[

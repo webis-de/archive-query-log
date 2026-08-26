@@ -67,6 +67,10 @@ def download_warc_before_serp(
         download_organic_result_warc_before_serp,
     )
 
+    OrganicResult.init(
+        using=config.es.client,
+        index=config.es.index_organic_results,
+    )
     download_organic_result_warc_before_serp(
         config=config,
         size=size,
@@ -88,6 +92,10 @@ def download_warc_after_serp(
         download_organic_result_warc_after_serp,
     )
 
+    OrganicResult.init(
+        using=config.es.client,
+        index=config.es.index_organic_results,
+    )
     download_organic_result_warc_after_serp(
         config=config,
         size=size,

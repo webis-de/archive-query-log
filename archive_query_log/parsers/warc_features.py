@@ -25,6 +25,7 @@ from archive_query_log.orm import (
     InnerSerp,
     FeatureId,
 )
+from archive_query_log.parsers.utils import content_digest
 from archive_query_log.parsers.utils.xml import parse_xml_tree, safe_xpath
 from archive_query_log.utils.time import utc_now
 from archive_query_log.utils.warc import WarcStore
@@ -154,7 +155,7 @@ class XpathWarcFeaturesParser(WarcFeaturesParser):
             feature_id_components = (
                 str(serp.id),
                 str(self.id),
-                str(hash(content)),
+                content_digest(content),
                 str(i),
             )
             feature_id = uuid5(
@@ -205,6 +206,7 @@ def parse_serp_warc_features_action(
             continue
         for feature in warc_features:
             feature = Feature(
+                index=index_features,
                 id=feature.id,
                 last_modified=utc_now(),
                 archive=serp.archive,
@@ -216,6 +218,7 @@ def parse_serp_warc_features_action(
                 rank=feature.rank,
                 content=feature.content,
                 url=feature.url,
+                title=feature.title,
                 text=feature.text,
                 parser=InnerParser(
                     id=parser.id,
@@ -223,7 +226,6 @@ def parse_serp_warc_features_action(
                     last_parsed=utc_now(),
                 ),
             )
-            feature.meta.index = index_features
             yield feature.create_action()
         yield serp.update_action(
             warc_features=[

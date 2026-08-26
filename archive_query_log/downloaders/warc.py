@@ -3,7 +3,7 @@ from itertools import chain
 from json import loads, dumps
 from pathlib import Path
 from typing import Iterable, Iterator, TypeVar, Generic, Type, Callable, cast
-from uuid import uuid5
+from uuid import UUID, uuid5
 from warnings import warn
 
 from elasticsearch_dsl import Search
@@ -80,6 +80,18 @@ class _AnnotatedWarcRecord(ArcWarcRecord, Generic[_T]):
             digest_checker=record.digest_checker,
         )
         self.annotation = annotation
+
+
+def _warc_downloader_id(config: Config) -> UUID:
+    downloader_id_components = (
+        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
+        config.s3.bucket_name,
+        app_version,
+    )
+    return uuid5(
+        NAMESPACE_WARC_DOWNLOADER,
+        ":".join(downloader_id_components),
+    )
 
 
 def _download_serp_warc(
@@ -315,15 +327,7 @@ def upload_serps_warc(config: Config) -> None:
     )
 
     # Get downloader ID.
-    downloader_id_components = (
-        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
-        config.s3.bucket_name,
-        app_version,
-    )
-    downloader_id = uuid5(
-        NAMESPACE_WARC_DOWNLOADER,
-        ":".join(downloader_id_components),
-    )
+    downloader_id = _warc_downloader_id(config)
 
     # Update Elasticsearch.
     actions = (
@@ -341,34 +345,17 @@ def upload_serps_warc(config: Config) -> None:
     config.es.bulk(actions)
 
 
-def _download_organic_result_warc_before_serp(
+def _download_organic_result_warc(
     config: Config,
     result_block: OrganicResult,
+    before_serp: bool,
 ) -> Iterator[_AnnotatedWarcRecord[OrganicResult]]:
-    if result_block.capture_before_serp is None:
-        return
-
-    # Get downloader ID.
-    downloader_id_components = (
-        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
-        config.s3.bucket_name,
-        app_version,
+    capture = (
+        result_block.capture_before_serp
+        if before_serp
+        else result_block.capture_after_serp
     )
-    downloader_id = uuid5(
-        NAMESPACE_WARC_DOWNLOADER,
-        ":".join(downloader_id_components),
-    )
-
-    result_block.warc_downloader_before_serp = InnerDownloader(
-        id=downloader_id,
-        should_download=False,
-        last_downloaded=utc_now(),
-    )
-    if result_block.capture_before_serp.status_code != 200:
-        result_block.update(
-            using=config.es.client,
-            index=config.es.index_organic_results,
-        )
+    if capture is None:
         return
 
     memento_api = MementoApi(
@@ -378,69 +365,15 @@ def _download_organic_result_warc_before_serp(
 
     try:
         records = memento_api.load_url_warc(
-            url=result_block.capture_before_serp.url.encoded_string(),
-            timestamp=result_block.capture_before_serp.timestamp,
+            url=capture.url.encoded_string(),
+            timestamp=capture.timestamp,
             raw=True,
         )
     except RequestsConnectionError:
         warn(
             RuntimeWarning(
                 f"Connection error while downloading WARC "
-                f"for capture URL {result_block.capture_before_serp.url} at {result_block.capture_before_serp.timestamp}."
-            )
-        )
-        return
-
-    for record in records:
-        yield _AnnotatedWarcRecord(record, result_block)
-
-
-def _download_organic_result_warc_after_serp(
-    config: Config,
-    result_block: OrganicResult,
-) -> Iterator[_AnnotatedWarcRecord[OrganicResult]]:
-    if result_block.capture_after_serp is None:
-        return
-
-    # Get downloader ID.
-    downloader_id_components = (
-        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
-        config.s3.bucket_name,
-        app_version,
-    )
-    downloader_id = uuid5(
-        NAMESPACE_WARC_DOWNLOADER,
-        ":".join(downloader_id_components),
-    )
-
-    result_block.warc_downloader_after_serp = InnerDownloader(
-        id=downloader_id,
-        should_download=False,
-        last_downloaded=utc_now(),
-    )
-    if result_block.capture_after_serp.status_code != 200:
-        result_block.update(
-            using=config.es.client,
-            index=config.es.index_organic_results,
-        )
-        return
-
-    memento_api = MementoApi(
-        api_url=result_block.archive.memento_api_url.encoded_string(),
-        session=config.http.session,
-    )
-
-    try:
-        records = memento_api.load_url_warc(
-            url=result_block.capture_after_serp.url.encoded_string(),
-            timestamp=result_block.capture_after_serp.timestamp,
-            raw=True,
-        )
-    except RequestsConnectionError:
-        warn(
-            RuntimeWarning(
-                f"Connection error while downloading WARC "
-                f"for capture URL {result_block.capture_after_serp.url} at {result_block.capture_after_serp.timestamp}."
+                f"for capture URL {capture.url} at {capture.timestamp}."
             )
         )
         return
@@ -464,17 +397,49 @@ def _unwrap_records(
         yield annotation, location
 
 
-def download_organic_result_warc_before_serp(
-    config: Config, size: int = 10
+def _organic_result_warc_update_action(
+    result_block: OrganicResult,
+    location: WarcLocation,
+    downloader_id: UUID,
+    before_serp: bool,
+) -> dict:
+    downloader = InnerDownloader(
+        id=downloader_id,
+        should_download=False,
+        last_downloaded=utc_now(),
+    )
+    # The field names must match the ones queried in
+    # `_download_organic_results_warc()`, otherwise the downloaded
+    # blocks are never marked as downloaded and would be downloaded again.
+    if before_serp:
+        return result_block.update_action(
+            warc_location_before_serp=location,
+            warc_downloader_before_serp=downloader,
+        )
+    else:
+        return result_block.update_action(
+            warc_location_after_serp=location,
+            warc_downloader_after_serp=downloader,
+        )
+
+
+def _download_organic_results_warc(
+    config: Config,
+    size: int,
+    before_serp: bool,
 ) -> None:
+    capture_field = "capture_before_serp" if before_serp else "capture_after_serp"
+    warc_downloader_field = (
+        "warc_downloader_before_serp" if before_serp else "warc_downloader_after_serp"
+    )
     changed_result_blocks_search: Search = (
         OrganicResult.search(
             using=config.es.client, index=config.es.index_organic_results
         )
         .filter(
-            Exists(field="capture_before_serp.url")
-            & Term(capture_before_serp__status_code=200)
-            & ~Term(warc_downloader_before_serp__should_download=False)
+            Exists(field=f"{capture_field}.url")
+            & Term(**{f"{capture_field}.status_code": 200})
+            & ~Term(**{f"{warc_downloader_field}.should_download": False})
         )
         .query(
             RankFeature(field="archive.priority", saturation={})
@@ -501,9 +466,10 @@ def download_organic_result_warc_before_serp(
 
     # Download from Memento API.
     downloaded_records = chain.from_iterable(
-        _download_organic_result_warc_before_serp(
+        _download_organic_result_warc(
             config=config,
             result_block=result_block,
+            before_serp=before_serp,
         )
         for result_block in changed_result_blocks
     )
@@ -514,97 +480,35 @@ def download_organic_result_warc_before_serp(
     )
     stored_result_blocks = _unwrap_records(stored_records, OrganicResult)
 
-    downloader_id_components = (
-        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
-        config.s3.bucket_name,
-        app_version,
-    )
-    downloader_id = uuid5(
-        NAMESPACE_WARC_DOWNLOADER,
-        ":".join(downloader_id_components),
-    )
+    # Update Elasticsearch.
+    downloader_id = _warc_downloader_id(config)
     actions = (
-        result_block.update_action(
-            warc_location=location,
-            warc_downloader=InnerDownloader(
-                id=downloader_id,
-                should_download=False,
-                last_downloaded=utc_now(),
-            ),
+        _organic_result_warc_update_action(
+            result_block=result_block,
+            location=location,
+            downloader_id=downloader_id,
+            before_serp=before_serp,
         )
         for result_block, location in stored_result_blocks
     )
     config.es.bulk(actions)
+
+
+def download_organic_result_warc_before_serp(
+    config: Config, size: int = 10
+) -> None:
+    _download_organic_results_warc(
+        config=config,
+        size=size,
+        before_serp=True,
+    )
 
 
 def download_organic_result_warc_after_serp(
     config: Config, size: int = 10
 ) -> None:
-    changed_result_blocks_search: Search = (
-        OrganicResult.search(
-            using=config.es.client, index=config.es.index_organic_results
-        )
-        .filter(
-            Exists(field="capture_after_serp.url")
-            & Term(capture_after_serp__status_code=200)
-            & ~Term(warc_downloader_after_serp__should_download=False)
-        )
-        .query(
-            RankFeature(field="archive.priority", saturation={})
-            | RankFeature(field="provider.priority", saturation={})
-            | FunctionScore(functions=[RandomScore()])
-        )
+    _download_organic_results_warc(
+        config=config,
+        size=size,
+        before_serp=False,
     )
-    num_changed_result_blocks = changed_result_blocks_search.count()
-
-    if num_changed_result_blocks <= 0:
-        print("No new/changed web search result blocks.")
-        return
-
-    changed_result_blocks: Iterable[OrganicResult] = (
-        changed_result_blocks_search.params(size=size).execute()
-    )
-
-    changed_result_blocks = tqdm(
-        changed_result_blocks,
-        total=num_changed_result_blocks,
-        desc="Downloading WARCs",
-        unit="web search result block",
-    )
-
-    # Download from Memento API.
-    downloaded_records = chain.from_iterable(
-        _download_organic_result_warc_after_serp(
-            config=config,
-            result_block=result_block,
-        )
-        for result_block in changed_result_blocks
-    )
-
-    # Write to S3.
-    stored_records: Iterator[WarcS3Record] = config.s3.warc_s3_store.write(
-        downloaded_records
-    )
-    stored_result_blocks = _unwrap_records(stored_records, OrganicResult)
-
-    downloader_id_components = (
-        config.s3.endpoint_url if config.s3.endpoint_url is not None else "",
-        config.s3.bucket_name,
-        app_version,
-    )
-    downloader_id = uuid5(
-        NAMESPACE_WARC_DOWNLOADER,
-        ":".join(downloader_id_components),
-    )
-    actions = (
-        result_block.update_action(
-            warc_location=location,
-            warc_downloader=InnerDownloader(
-                id=downloader_id,
-                should_download=False,
-                last_downloaded=utc_now(),
-            ),
-        )
-        for result_block, location in stored_result_blocks
-    )
-    config.es.bulk(actions)
