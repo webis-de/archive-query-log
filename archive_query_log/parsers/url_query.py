@@ -116,13 +116,6 @@ def parse_serp_url_query_action(
     ):
         return
 
-    # Drop the search-relevance score, if set, since `update_action()` only
-    # dumps fields declared on the model itself, and a minimal pseudo
-    # document wouldn't declare `url_query_parser` at all, while the score
-    # must not end up in the update action's document body.
-    capture = capture.model_copy()
-    capture.__pydantic_fields_set__.discard("score")
-
     for parser in URL_QUERY_PARSERS:
         if not parser.is_applicable(capture):
             continue
