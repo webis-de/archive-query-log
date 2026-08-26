@@ -249,12 +249,6 @@ def _organic_result_capture_update_action(
         updates["warc_location_after_serp"] = None
         updates["warc_downloader_after_serp"] = None
 
-    # Drop the search-relevance score, if set, since it must not end up in
-    # the update action's document body (unlike `id`/`index`/etc., which are
-    # needed to route the update, `score` is never a valid field to send).
-    result_block = result_block.model_copy()
-    result_block.__pydantic_fields_set__.discard("score")
-
     return result_block.update_action(**updates)
 
 
