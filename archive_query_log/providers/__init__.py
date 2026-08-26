@@ -91,7 +91,6 @@ def add_provider(
 
     provider = Provider(
         id=provider_id,
-        index=config.es.index_providers,
         last_modified=last_modified,
         name=name,
         description=description,
@@ -103,6 +102,6 @@ def add_provider(
         should_build_sources=should_build_sources,
     )
     if not dry_run:
-        config.es.bulk([provider.index_action()])
+        provider.save(using=config.es.client, index=config.es.index_providers)
     else:
         print(provider)
