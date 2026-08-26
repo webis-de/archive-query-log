@@ -18,8 +18,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 type DropdownPositionSegment = 'bottom' | 'top' | 'left' | 'right' | 'start' | 'end';
 export type DropdownPosition =
-  | DropdownPositionSegment
-  | `${DropdownPositionSegment} ${DropdownPositionSegment}`;
+  DropdownPositionSegment | `${DropdownPositionSegment} ${DropdownPositionSegment}`;
 
 @Component({
   selector: 'aql-dropdown',
