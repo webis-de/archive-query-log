@@ -1,26 +1,41 @@
-from datetime import datetime, UTC
-from typing import Annotated, TypeAlias, Sequence
+from datetime import UTC, datetime
+from typing import Annotated, Sequence, TypeAlias
 from uuid import UUID
 
 from annotated_types import Ge
 from elasticsearch_dsl import (
-    Date as _Date,
-    RankFeature as _RankFeature,
-    Keyword as _Keyword,
-    Text as _Text,
     Completion as _Completion,
 )
-from pydantic import Field, AliasChoices, computed_field, AnyHttpUrl
-from pydantic_extra_types.language_code import LanguageAlpha2
-
+from elasticsearch_dsl import (
+    Date as _Date,
+)
+from elasticsearch_dsl import (
+    Keyword as _Keyword,
+)
+from elasticsearch_dsl import (
+    RankFeature as _RankFeature,
+)
+from elasticsearch_dsl import (
+    Text as _Text,
+)
 from elasticsearch_pydantic import (
     BaseDocument,
     BaseInnerDocument,
-    KeywordField as Keyword,
-    TextField as Text,
+)
+from elasticsearch_pydantic import (
     IntegerField as Integer,
+)
+from elasticsearch_pydantic import (
+    KeywordField as Keyword,
+)
+from elasticsearch_pydantic import (
     LongField as Long,
 )
+from elasticsearch_pydantic import (
+    TextField as Text,
+)
+from pydantic import AliasChoices, AnyHttpUrl, Field, computed_field
+from pydantic_extra_types.language_code import LanguageAlpha2
 
 TextWithSuggestAndKeyword: TypeAlias = Annotated[
     str,

@@ -10,7 +10,13 @@ from tqdm.auto import tqdm
 
 from archive_query_log.config import Config
 from archive_query_log.namespaces import NAMESPACE_SOURCE
-from archive_query_log.orm import Archive, Provider, Source, InnerArchive, InnerProvider
+from archive_query_log.orm import (
+    Archive,
+    Provider,
+    Source,
+    InnerArchive,
+    InnerProvider,
+)
 from archive_query_log.utils.time import utc_now
 
 
@@ -52,7 +58,7 @@ def _sources_batch(archive: Archive, provider: Provider, config: Config) -> list
                 ),
                 should_fetch_captures=True,
             )
-            source.meta.index = config.es.index_sources
+            source.index = config.es.index_sources
             batch.append(source.create_action())
     return batch
 

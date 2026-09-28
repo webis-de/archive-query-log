@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $.Release.Name }}-serps-parse-warc-query
+  name: {{ $.Release.Name }}-serps-parse-warc-organic-results
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
 spec:
   selector:
     matchLabels:
-      app: {{ $.Release.Name }}-serps-parse-warc-query
-  replicas: {{ $.Values.serpsParseWarcQuery.replicas }}
+      app: {{ $.Release.Name }}-serps-parse-warc-organic-results
+  replicas: {{ $.Values.serpsParseWarcOrganicResults.replicas }}
   revisionHistoryLimit: 1
   template:
     metadata:
       labels:
-        app: {{ $.Release.Name }}-serps-parse-warc-query
+        app: {{ $.Release.Name }}-serps-parse-warc-organic-results
     spec:
       containers:
-        - name: {{ $.Release.Name }}-serps-parse-warc-query
+        - name: {{ $.Release.Name }}-serps-parse-warc-organic-results
           image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: IfNotPresent
           resources:
@@ -31,9 +31,9 @@ spec:
             - archive_query_log
             - serps
             - parse
-            - warc-query
+            - warc-organic-results
             - --size
-            - '{{ $.Values.serpsParseWarcQuery.size }}'
+            - '{{ $.Values.serpsParseWarcOrganicResults.size }}'
           env:
             - name: ELASTICSEARCH_HOST
               value: {{ $.Values.elasticsearch.host | quote }}

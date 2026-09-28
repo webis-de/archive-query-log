@@ -1,11 +1,16 @@
 from datetime import UTC, datetime
+from io import BytesIO
 from uuid import UUID
 
 from pydantic import HttpUrl
 from pytest import mark
+from warcio.recordloader import ArcWarcRecord
+from warcio.statusandheaders import StatusAndHeaders
 
 from archive_query_log.captures import _organic_result_capture_update_action
 from archive_query_log.downloaders.warc import (
+    _PseudoOrganicResult,
+    _WrapperWarcRecord,
     _organic_result_warc_update_action,
 )
 from archive_query_log.orm import (
@@ -37,6 +42,12 @@ def _inner_capture(timestamp: datetime) -> InnerCapture:
 
 def _warc_location() -> WarcLocation:
     return WarcLocation(file="test.warc.gz", offset=0, length=100)
+
+
+def _dummy_warc_record() -> ArcWarcRecord:
+    return ArcWarcRecord(
+        "warc", "resource", StatusAndHeaders("", []), BytesIO(b""), None, None, 0
+    )
 
 
 def _organic_result(
@@ -189,3 +200,32 @@ def test_capture_update_action_treats_sides_independently() -> None:
     assert "warc_downloader_before_serp" not in action["doc"]
     assert action["doc"]["warc_location_after_serp"] is None
     assert action["doc"]["warc_downloader_after_serp"] is None
+
+
+@mark.parametrize("before_serp", [True, False])
+def test_pseudo_organic_result_round_trips_through_wrapper(before_serp: bool) -> None:
+    """
+    The before/after-SERP side must survive being wrapped into the
+    WARC-Wrapped header and read back, both immediately and after being
+    re-wrapped by its type alone (as happens when re-reading from the WARC
+    cache), since both before-SERP and after-SERP downloads share one cache.
+    """
+    pseudo_result = _PseudoOrganicResult(
+        id=UUID(int=1),
+        index="organic_results",
+        seq_no=7,
+        before_serp=before_serp,
+    )
+
+    # Simulates writing the record to the WARC cache.
+    written: _WrapperWarcRecord[_PseudoOrganicResult] = _WrapperWarcRecord(
+        _dummy_warc_record(), pseudo_result
+    )
+    assert written.wrapped == pseudo_result
+
+    # Simulates re-reading the cached record later, when only the type
+    # (not the original instance) is known.
+    reread = _WrapperWarcRecord(written, _PseudoOrganicResult)
+
+    assert reread.wrapped == pseudo_result
+    assert reread.wrapped.before_serp is before_serp

@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $.Release.Name }}-serps-parse-warc-query
+  name: {{ $.Release.Name }}-serps-parse-warc-features
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
 spec:
   selector:
     matchLabels:
-      app: {{ $.Release.Name }}-serps-parse-warc-query
-  replicas: {{ $.Values.serpsParseWarcQuery.replicas }}
+      app: {{ $.Release.Name }}-serps-parse-warc-features
+  replicas: {{ $.Values.serpsParseWarcFeatures.replicas }}
   revisionHistoryLimit: 1
   template:
     metadata:
       labels:
-        app: {{ $.Release.Name }}-serps-parse-warc-query
+        app: {{ $.Release.Name }}-serps-parse-warc-features
     spec:
       containers:
-        - name: {{ $.Release.Name }}-serps-parse-warc-query
+        - name: {{ $.Release.Name }}-serps-parse-warc-features
           image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: IfNotPresent
           resources:
@@ -31,9 +31,9 @@ spec:
             - archive_query_log
             - serps
             - parse
-            - warc-query
+            - warc-features
             - --size
-            - '{{ $.Values.serpsParseWarcQuery.size }}'
+            - '{{ $.Values.serpsParseWarcFeatures.size }}'
           env:
             - name: ELASTICSEARCH_HOST
               value: {{ $.Values.elasticsearch.host | quote }}

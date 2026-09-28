@@ -6,7 +6,7 @@ sourcesBuild:
 capturesFetch:
   replicas: 1
   # replicas: 25
-  prefetchLimit: 1000
+  size: 1000
 
 capturesImportAql22:
   enabled: false
@@ -18,19 +18,19 @@ capturesImportAql22:
 
 serpsParseUrlQuery:
   replicas: 100
-  prefetchLimit: 1000
+  size: 1000
 
 serpsParseUrlPage:
   replicas: 2
-  prefetchLimit: 1000
+  size: 1000
 
 serpsParseUrlOffset:
   replicas: 2
-  prefetchLimit: 1000
+  size: 1000
 
 serpsDownloadWarc:
   replicas: 500
-  prefetchLimit: 1000
+  size: 1000
 
 serpsUploadWarc:
   replicas: 1
@@ -38,12 +38,32 @@ serpsUploadWarc:
 
 serpsParseWarcQuery:
   replicas: 50
-  prefetchLimit: 1000
+  size: 1000
 
-serpsParseWarcSnippets:
+serpsParseWarcOrganicResults:
   replicas: 0
   # replicas: 50
-  prefetchLimit: 1000
+  size: 1000
+
+serpsParseWarcFeatures:
+  replicas: 0
+  # replicas: 50
+  size: 1000
+
+organicResultsFetchCaptures:
+  replicas: 1
+  size: 1000
+
+organicResultsDownloadWarcBeforeSerp:
+  replicas: 500
+  size: 1000
+
+organicResultsDownloadWarcAfterSerp:
+  replicas: 500
+  size: 1000
+
+organicResultsUploadWarc:
+  replicas: 1
 
 monitoring:
   ingressClassName: nginx
@@ -63,14 +83,8 @@ elasticsearch:
   indexSources: aql_sources
   indexCaptures: aql_captures
   indexSerps: aql_serps
-  indexResults: aql_results
-  indexUrlQueryParsers: aql_url_query_parsers
-  indexUrlPageParsers: aql_url_page_parsers
-  indexUrlOffsetParsers: aql_url_offset_parsers
-  indexWarcQueryParsers: aql_warc_query_parsers
-  indexWarcSnippetsParsers: aql_warc_snippets_parsers
-  indexWarcDirectAnswersParsers: aql_warc_direct_answers_parser
-  indexWarcMainContentParsers: aql_warc_main_content_parser
+  indexOrganicResults: aql_organic_results
+  indexFeatures: aql_features
 
 s3:
   endpointUrl: https://s3.dw.webis.de
@@ -80,6 +94,7 @@ s3:
 
 warcCache:
   pathSerps: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/serps
+  pathResults: /mnt/ceph/storage/data-in-progress/data-research/web-search/archive-query-log/cache/warc/results
 
 browser:
   frontend:

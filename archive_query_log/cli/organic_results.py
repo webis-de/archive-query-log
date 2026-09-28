@@ -1,5 +1,5 @@
 from cyclopts import App
-from cyclopts.types import ResolvedPath, PositiveInt
+from cyclopts.types import PositiveInt, ResolvedPath
 
 from archive_query_log.config import Config
 from archive_query_log.export.base import ExportFormat
@@ -59,7 +59,7 @@ def download_warc_before_serp(
     config: Config = Config(),
 ) -> None:
     """
-    Download archived contents of web search result block landing page captures as WARC to S3.
+    Download archived contents of web search result block landing page captures as WARC to file cache.
 
     :param size: How many web search result block landing pages to download.
     """
@@ -84,7 +84,7 @@ def download_warc_after_serp(
     config: Config = Config(),
 ) -> None:
     """
-    Download archived contents of web search result block landing page captures as WARC to S3.
+    Download archived contents of web search result block landing page captures as WARC to file cache.
 
     :param size: How many web search result block landing pages to download.
     """
@@ -144,3 +144,22 @@ def export_all(
         output_path=output_path,
         config=config,
     )
+
+upload = App(
+    name="upload",
+    alias="u",
+    help="Upload web search result block landing pages.",
+)
+organic_results.command(upload)
+
+@upload.command(name="warc")
+def upload_warc(
+    *,
+    config: Config = Config(),
+) -> None:
+    """
+    Upload WARCs of archived contents of organic result captures to S3 and update the index.
+    """
+    from archive_query_log.downloaders.warc import upload_organic_results_warc
+
+    upload_organic_results_warc(config)
