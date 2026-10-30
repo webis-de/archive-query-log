@@ -32,7 +32,7 @@ dependencies = [
     "elasticsearch-dsl~=7.4",
     "elasticsearch-pydantic~=1.2",
     "expiringdict~=1.2",
-    "fastapi>=0.121.2,<0.142.0",
+    "fastapi>=0.121.2,<0.163.0",
     "fastmcp~=3.1",
     "humanize~=4.13",
     "jinja2~=3.1",
@@ -54,7 +54,7 @@ dependencies = [
     "tldextract~=5.3",  # TODO: Replace with dfir-unfurl.
     "tqdm~=4.67",
     "urllib3~=2.0",
-    "uvicorn>=0.38,<0.50",
+    "uvicorn>=0.38,<0.55",
     "validators~=0.35.0",
     "warcio~=1.7",
     "warc-s3~=1.0,>=1.0.1",
