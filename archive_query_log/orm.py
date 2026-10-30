@@ -76,6 +76,8 @@ class Archive(UuidBaseDocument):
     priority: RankFeature | None = None
     should_build_sources: bool = True
     last_built_sources: Date | None = None
+    hidden: bool = False
+    """Whether the web archive is hidden (e.g., spam, porn, etc.)."""
 
     class Index:
         settings = {
@@ -95,6 +97,8 @@ class Provider(UuidBaseDocument):
     priority: RankFeature | None = None
     should_build_sources: bool = True
     last_built_sources: Date | None = None
+    hidden: bool = False
+    """Whether the search provider is hidden (e.g., spam, porn, etc.)."""
 
     class Index:
         settings = {
@@ -226,6 +230,8 @@ class Serp(UuidBaseDocument):
     warc_organic_results_parser: InnerParser | None = None
     warc_features: Sequence[FeatureId] | None = None
     warc_features_parser: InnerParser | None = None
+    hidden: bool = False
+    """Whether the SERP is hidden (e.g., spam, porn, etc.)."""
 
     @computed_field  # type: ignore[prop-decorator]
     @property
@@ -301,6 +307,8 @@ class OrganicResult(UuidBaseDocument):
     capture_after_serp: InnerCapture | None = None
     warc_location_after_serp: WarcLocation | None = None
     warc_downloader_after_serp: InnerDownloader | None = None
+    hidden: bool = False
+    """Whether the organic result is hidden (e.g., spam, porn, etc.)."""
 
     class Index:
         settings = {
