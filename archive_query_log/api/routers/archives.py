@@ -16,6 +16,7 @@ from elasticsearch_dsl.query import (
     MatchAll,
     MatchPhrasePrefix,
     Ids,
+    Term,
 )
 from fastapi import APIRouter, Request, Depends
 from pydantic import AnyHttpUrl, BaseModel, Field
@@ -46,11 +47,12 @@ class _FilterParams(BaseModel):
 
     @cached_property
     def elasticsearch_query(self) -> Query:
-        filters: list[Query] = []
+        # Always exclude hidden web archives (e.g., spam, porn, etc.).
+        filters: list[Query] = [~Term(hidden=True)]
         # Exclude specific web archive ID.
         if self.exclude_id is not None:
             filters.append(~Ids(values=[str(self.exclude_id)]))
-        return MatchAll() if not filters else Bool(filter=filters)
+        return Bool(filter=filters)
 
 
 class _QueryParams(BaseModel):
@@ -178,10 +180,13 @@ def get_by_id(
     """
     Get a web archive by its ID.
     """
-    archive: Archive = Archive.get(
-        id=str(id), using=elasticsearch, index=config.es.index_archives
+    # Search by ID (instead of getting the document directly), to always exclude hidden web archives (e.g., spam, porn, etc.).
+    search: Search = Archive.search(
+        using=elasticsearch,
+        index=config.es.index_archives,
     )
-    # TODO: Enable once implemented in ORM.
-    # if exclude_hidden and archive.hidden:
-    #     return None
-    return EnrichedArchive(**archive.model_dump())
+    search = search.filter(Ids(values=[str(id)])).filter(~Term(hidden=True))
+    response = search[:1].execute()
+    if not response.hits:
+        return None
+    return EnrichedArchive(**response.hits[0].model_dump())

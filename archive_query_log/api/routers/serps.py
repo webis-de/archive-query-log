@@ -86,14 +86,11 @@ class _FilterParams(BaseModel):
         UUID | None,
         Field(description="Exclude a specific SERP ID."),
     ] = None
-    exclude_hidden: Annotated[
-        bool,
-        Field(description="Exclude hidden SERPs (e.g., spam, porn, etc.)"),
-    ] = False
 
     @cached_property
     def elasticsearch_query(self) -> Query:
-        filters: list[Query] = []
+        # Always exclude hidden SERPs (e.g., spam, porn, etc.).
+        filters: list[Query] = [~Term(hidden=True)]
         # Include only SERPs from the given web archive (by its UUID).
         if self.archive_id:
             filters.append(Term(archive__id=str(self.archive_id)))
@@ -115,10 +112,7 @@ class _FilterParams(BaseModel):
         # Exclude a specific SERP ID.
         if self.exclude_id:
             filters.append(~Ids(values=[str(self.exclude_id)]))
-        # Exclude hidden SERPs.
-        if self.exclude_hidden:
-            filters.append(~Term(hidden=True))
-        return MatchAll() if not filters else Bool(filter=filters)
+        return Bool(filter=filters)
 
 
 class _QueryParams(BaseModel):

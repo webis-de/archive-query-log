@@ -15,6 +15,7 @@ from elasticsearch_dsl.query import (
     MatchAll,
     MatchPhrasePrefix,
     Ids,
+    Term,
 )
 from fastapi import APIRouter, Request, Depends
 from pydantic import BaseModel, Field
@@ -38,11 +39,12 @@ class _FilterParams(BaseModel):
 
     @cached_property
     def elasticsearch_query(self) -> Query:
-        filters: list[Query] = []
+        # Always exclude hidden search providers (e.g., spam, porn, etc.).
+        filters: list[Query] = [~Term(hidden=True)]
         # Exclude specific search provider ID.
         if self.exclude_id is not None:
             filters.append(~Ids(values=[str(self.exclude_id)]))
-        return MatchAll() if not filters else Bool(filter=filters)
+        return Bool(filter=filters)
 
 
 class _QueryParams(BaseModel):
@@ -170,17 +172,17 @@ def get_by_id(
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
     id: UUID,
-    exclude_hidden: bool = False,
 ) -> Provider | None:
     """
     Get a search provider by its ID.
     """
-    provider: Provider = Provider.get(
-        id=str(id),
+    # Search by ID (instead of getting the document directly), to always exclude hidden search providers (e.g., spam, porn, etc.).
+    search: Search = Provider.search(
         using=elasticsearch,
         index=config.es.index_providers,
     )
-    # TODO: Enable once implemented in ORM.
-    # if exclude_hidden and provider.hidden:
-    #     return None
-    return provider
+    search = search.filter(Ids(values=[str(id)])).filter(~Term(hidden=True))
+    response = search[:1].execute()
+    if not response.hits:
+        return None
+    return response.hits[0]
