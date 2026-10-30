@@ -8,7 +8,7 @@ from warnings import warn
 from elasticsearch_dsl import Search
 from elasticsearch_dsl.function import RandomScore
 from elasticsearch_dsl.query import FunctionScore, RankFeature, Term, Range, Exists
-from pydantic import HttpUrl, ValidationError
+from pydantic import HttpUrl
 from requests import ConnectTimeout, HTTPError, Response
 from tqdm.auto import tqdm
 from web_archive_api.cdx import CdxApi, CdxMatchType, CdxCapture
