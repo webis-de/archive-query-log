@@ -314,6 +314,44 @@ def count_unique(
     return response.aggregations.unique_queries.value
 
 
+class QueryBucket(BaseModel):
+    query: str
+    count: int
+
+
+@router.get(
+    "/top-queries",
+    operation_id="top_queries",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
+@limiter.limit("60/minute")
+def top_queries(
+    request: Request,
+    config: ConfigDependency,
+    elasticsearch: ElasticsearchDependency,
+    filter_params: Annotated[_FilterParams, Depends()],
+    query_params: Annotated[_QueryParams, Depends()],
+    size: Annotated[int, Field(gt=0, le=100)] = 10,
+) -> list[QueryBucket]:
+    """
+    Get the most common queries among the SERPs matching the given filters and query.
+    """
+    search = _prepare_search(
+        config=config,
+        elasticsearch=elasticsearch,
+        filter_params=filter_params,
+        query_params=query_params,
+    )
+    search.aggs.bucket(
+        "top_queries",
+        TermsAggregation(field="url_query.keyword", size=size),
+    )
+    response = search.execute()
+    return [
+        QueryBucket(query=bucket.key, count=bucket.doc_count)
+        for bucket in response.aggregations.top_queries.buckets
+    ]
+
 class ArchiveBucket(BaseModel):
     archive: Archive
     count: int
