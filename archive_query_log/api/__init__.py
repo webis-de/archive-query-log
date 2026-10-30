@@ -32,6 +32,9 @@ app.include_router(monitoring_router, tags=["monitoring"])
 app.include_router(serps_router, tags=["serps"], prefix="/serps")
 app.include_router(providers_router, tags=["providers"], prefix="/providers")
 app.include_router(archives_router, tags=["archives"], prefix="/archives")
+app.include_router(
+    organic_results_router, tags=["organic-results"], prefix="/organic-results"
+)
 
 # Configure and mount MCP server.
 mcp = FastMCP.from_fastapi(
