@@ -3,8 +3,10 @@
 This is the entry point for the FastAPI application.
 """
 
-from fastapi import FastAPI
+from elasticsearch import NotFoundError
+from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from fastmcp import FastMCP
 from fastmcp.server.providers.openapi import RouteMap, MCPType
 from slowapi import Limiter
@@ -35,6 +37,13 @@ app.include_router(archives_router, tags=["archives"], prefix="/archives")
 app.include_router(
     organic_results_router, tags=["organic-results"], prefix="/organic-results"
 )
+
+
+# Return 404 responses (instead of 500 errors) for unknown Elasticsearch documents.
+@app.exception_handler(NotFoundError)
+async def not_found_error_handler(request: Request, exc: NotFoundError) -> Response:
+    return JSONResponse(status_code=404, content={"detail": "Not found."})
+
 
 # Configure and mount MCP server.
 mcp = FastMCP.from_fastapi(
