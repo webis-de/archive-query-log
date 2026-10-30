@@ -11,8 +11,8 @@
       <div class="flex flex-col gap-4">
         @for (serp of relatedSerps(); track serp._id) {
           <aql-panel
-            [panelTitle]="serp._source.url_query"
-            [subtitle]="serp._source.capture.url"
+            [panelTitle]="serp.url_query"
+            [subtitle]="serp.capture.url"
             [bordered]="true"
             [shadow]="true"
             [rounded]="true"
@@ -25,11 +25,11 @@
           >
             <div footer class="flex items-center gap-2 text-xs text-base-content/60">
               <span>
-                {{ formatDate(serp._source.capture.timestamp) }}
+                {{ formatDate(serp.capture.timestamp) }}
               </span>
               <span>·</span>
               <span>
-                {{ serp._source.provider.domain }}
+                {{ serp.provider.domain }}
               </span>
             </div>
           </aql-panel>

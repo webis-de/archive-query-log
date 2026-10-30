@@ -15,7 +15,7 @@ export class SerpResultContentComponent {
   readonly formattedUrlParams = computed<{ key: string; value: string }[]>(() => {
     const result = this.result();
     try {
-      const url = new URL(result._source.capture.url);
+      const url = new URL(result.capture.url);
       const params: { key: string; value: string }[] = [];
       url.searchParams.forEach((value, key) => {
         if (params.length < 3) {

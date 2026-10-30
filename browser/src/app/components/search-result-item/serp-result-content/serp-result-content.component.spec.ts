@@ -16,18 +16,17 @@ describe('SerpResultContentComponent', () => {
     component = fixture.componentInstance;
     fixture.componentRef.setInput('result', {
       _id: '1',
-      _source: {
-        capture: {
-          url: 'http://test.com',
-          timestamp: '2022',
-          status_code: 200,
-          mimetype: 'text/html',
-        },
-        url_query_parser: {},
-        url_page_parser: {},
-        warc_query_parser: {},
+      capture: {
+        url: 'http://test.com',
+        timestamp: '2022',
+        status_code: 200,
+        mimetype: 'text/html',
       },
-    } as SearchResult);
+      archive: {},
+      url_query_parser: {},
+      url_page_parser: {},
+      warc_query_parser: {},
+    } as unknown as SearchResult);
     fixture.detectChanges();
   });
 

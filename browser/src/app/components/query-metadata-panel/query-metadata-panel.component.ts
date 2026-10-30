@@ -97,7 +97,7 @@ export class AppQueryMetadataPanelComponent {
   });
   readonly originalCaptureUrl = computed<string | null>(() => {
     const result = this.searchResult();
-    return result?._source.capture.url || null;
+    return result?.capture.url || null;
   });
   readonly isViewingRelatedSerp = computed<boolean>(() => {
     const original = this.originalResult();

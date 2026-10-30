@@ -15,24 +15,22 @@ describe('AppQueryMetadataPanelComponent', () => {
   let mockSearchService: jasmine.SpyObj<SearchService>;
   let mockProviderService: jasmine.SpyObj<ProviderService>;
 
-  const mockSearchResult: SearchResult = {
+  const mockSearchResult = {
     _id: 'test-123',
     _score: 0.95,
-    _source: {
-      url_query: 'Test Query',
-      capture: {
-        url: 'https://example.com/test',
-        timestamp: '2025-01-01T12:00:00Z',
-        mimetype: 'text/html',
-      },
-      provider: {
-        domain: 'example.com',
-      },
-      archive: {
-        memento_api_url: 'https://web.archive.org/web',
-      },
+    url_query: 'Test Query',
+    capture: {
+      url: 'https://example.com/test',
+      timestamp: '2025-01-01T12:00:00Z',
+      mimetype: 'text/html',
     },
-  } as SearchResult;
+    provider: {
+      domain: 'example.com',
+    },
+    archive: {
+      memento_api_url: 'https://web.archive.org/web',
+    },
+  } as unknown as SearchResult;
 
   beforeEach(async () => {
     mockSessionService = {

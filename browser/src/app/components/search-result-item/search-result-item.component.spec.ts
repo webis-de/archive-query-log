@@ -2,33 +2,34 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SearchResultItemComponent } from './search-result-item.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language.service';
-import { SearchResult, SearchResultSource } from '../../models/search.model';
+import { SearchResult } from '../../models/search.model';
 
 describe('SearchResultItemComponent', () => {
   let component: SearchResultItemComponent;
   let fixture: ComponentFixture<SearchResultItemComponent>;
 
-  const mockSearchResult: SearchResult = {
+  const mockSearchResult = {
     _index: 'test_index',
     _type: 'test_type',
     _id: 'test_id',
     _score: 1.0,
-    _source: {
-      url_query: 'test query',
-      capture: {
-        url: 'http://test.com',
-        timestamp: '2023-01-01T00:00:00Z',
-        mimetype: 'text/html',
-        status_code: 200,
-      },
-      provider: {
-        domain: 'test.com',
-      },
-      url_query_parser: { should_parse: true, last_parsed: '2023-01-01T00:00:00Z' },
-      url_page_parser: { should_parse: true, last_parsed: '2023-01-01T00:00:00Z' },
-      warc_query_parser: { should_parse: false },
-    } as unknown as SearchResultSource,
-  };
+    url_query: 'test query',
+    capture: {
+      url: 'http://test.com',
+      timestamp: '2023-01-01T00:00:00Z',
+      mimetype: 'text/html',
+      status_code: 200,
+    },
+    provider: {
+      domain: 'test.com',
+    },
+    archive: {
+      id: 'test_archive',
+    },
+    url_query_parser: { should_parse: true, last_parsed: '2023-01-01T00:00:00Z' },
+    url_page_parser: { should_parse: true, last_parsed: '2023-01-01T00:00:00Z' },
+    warc_query_parser: { should_parse: false },
+  } as unknown as SearchResult;
 
   const mockLanguageService = {
     formatDate: (date: string) => date,
