@@ -2,7 +2,7 @@
 Routes for getting SERPs and related statistics.
 """
 
-from datetime import datetime, timedelta
+from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from functools import cached_property
 from typing import Annotated, Iterable, Literal, Callable
@@ -375,6 +375,29 @@ class DateHistogramBucket(BaseModel):
     count: int
 
 
+_INTERVAL_ALIASES: dict[str, str] = {
+    "day": "1d",
+    "week": "1w",
+    "month": "1M",
+    "quarter": "1q",
+    "year": "1y",
+}
+
+_INTERVAL_UNITS: dict[str, Callable[[int], relativedelta]] = {
+    "d": lambda n: relativedelta(days=n),
+    "w": lambda n: relativedelta(weeks=n),
+    "M": lambda n: relativedelta(months=n),
+    "q": lambda n: relativedelta(months=3 * n),
+    "y": lambda n: relativedelta(years=n),
+}
+
+
+def _parse_interval(interval: str) -> relativedelta:
+    # Parse intervals like "1M" or "7d" (as also returned by the auto date histogram).
+    interval = _INTERVAL_ALIASES.get(interval, interval)
+    return _INTERVAL_UNITS[interval[-1]](int(interval[:-1]))
+
+
 @router.get("/date-histogram", operation_id="serp_date_histogram")
 @limiter.limit("15/minute")
 def date_histogram(
@@ -435,23 +458,11 @@ def date_histogram(
         )
     response = search.execute()
 
-    end_timestamp_fn_mapping: dict[str, Callable[[datetime], datetime]] = {
-        "day": lambda timestamp: timestamp + timedelta(days=+1),
-        "week": lambda timestamp: timestamp + timedelta(weeks=+1),
-        "month": lambda timestamp: timestamp + relativedelta(month=+1),
-        "quarter": lambda timestamp: timestamp + relativedelta(month=+3),
-        "year": lambda timestamp: timestamp + relativedelta(year=+1),
-    }
-    end_timestamp_fn_mapping["1d"] = end_timestamp_fn_mapping["day"]
-    end_timestamp_fn_mapping["1w"] = end_timestamp_fn_mapping["week"]
-    end_timestamp_fn_mapping["1M"] = end_timestamp_fn_mapping["month"]
-    end_timestamp_fn_mapping["1q"] = end_timestamp_fn_mapping["quarter"]
-    end_timestamp_fn_mapping["1y"] = end_timestamp_fn_mapping["year"]
-    end_timestamp_fn: Callable[[datetime], datetime] = end_timestamp_fn_mapping[
+    delta = _parse_interval(
         interval
         if interval is not None
         else response.aggregations.date_histogram.interval
-    ]
+    )
 
     buckets = (
         (bucket.key, bucket.doc_count)
@@ -461,7 +472,7 @@ def date_histogram(
     return [
         DateHistogramBucket(
             from_timestamp=start_timestamp,
-            to_timestamp=end_timestamp_fn(start_timestamp),
+            to_timestamp=start_timestamp + delta,
             count=count,
         )
         for (start_timestamp, count) in buckets
