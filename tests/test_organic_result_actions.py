@@ -92,10 +92,13 @@ def test_warc_update_action_updates_declared_fields(before_serp: bool) -> None:
     on, otherwise downloaded blocks are never marked as downloaded.
     """
     action = _organic_result_warc_update_action(
-        result_block=_organic_result(),
+        result_block=_PseudoOrganicResult(
+            id=UUID(int=1),
+            index="organic_results",
+            before_serp=before_serp,
+        ),
         location=_warc_location(),
         downloader_id=UUID(int=6),
-        before_serp=before_serp,
     )
 
     assert set(action["doc"]) <= set(OrganicResult.model_fields)
