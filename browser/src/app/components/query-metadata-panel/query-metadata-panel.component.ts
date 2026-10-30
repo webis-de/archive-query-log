@@ -17,10 +17,11 @@ import {
   AqlTooltipDirective,
   TabItem,
 } from 'aql-stylings';
+import { Subscription } from 'rxjs';
 import {
   SearchResult,
   SerpDetailsResponse,
-  RelatedSerp,
+  UnbrandedSerp,
   UnfurlData,
 } from '../../models/search.model';
 import { SessionService } from '../../services/session.service';
@@ -76,6 +77,8 @@ export class AppQueryMetadataPanelComponent {
   readonly serpDetails = signal<SerpDetailsResponse | null>(null);
   readonly isLoadingDetails = signal<boolean>(false);
   readonly detailsError = signal<string | null>(null);
+  readonly unbranded = signal<UnbrandedSerp | null>(null);
+  readonly isLoadingUnbranded = signal<boolean>(false);
   readonly hasContent = computed(() => {
     return (
       this.searchResult() !== null ||
@@ -83,9 +86,9 @@ export class AppQueryMetadataPanelComponent {
       this.archiveDetail() !== null
     );
   });
-  readonly relatedSerps = computed<RelatedSerp[]>(() => {
+  readonly relatedSerps = computed<SearchResult[]>(() => {
     const details = this.serpDetails();
-    return details?.related?.serps || [];
+    return details?.related || [];
   });
   readonly unfurlData = computed<UnfurlData | null>(() => {
     const details = this.serpDetails();
@@ -134,6 +137,8 @@ export class AppQueryMetadataPanelComponent {
   private readonly searchService = inject(SearchService);
   private isInternalNavigation = false;
   private lastLoadedSerpId = '';
+  private lastLoadedUnbrandedSerpId = '';
+  private unbrandedSubscription?: Subscription;
 
   constructor() {
     effect(() => {
@@ -166,12 +171,24 @@ export class AppQueryMetadataPanelComponent {
         }
 
         this.lastLoadedSerpId = result._id;
-        this.fetchSerpDetails(result._id);
+        this.fetchSerpDetails(result);
       } else if (!result) {
         this.serpDetails.set(null);
         this.lastLoadedSerpId = '';
         this.originalResult.set(null);
         this.history.set([]);
+      }
+    });
+
+    // Lazily fetch the unbranded view (incl. organic results) when its tab is opened.
+    effect(() => {
+      const result = this.searchResult();
+      if (
+        this.activeTab() === 'unbranded' &&
+        result &&
+        result._id !== this.lastLoadedUnbrandedSerpId
+      ) {
+        this.fetchUnbrandedSerp(result);
       }
     });
   }
@@ -297,58 +314,37 @@ export class AppQueryMetadataPanelComponent {
     }
   }
 
-  private fetchSerpDetails(serpId: string): void {
+  private fetchSerpDetails(serp: SearchResult): void {
     this.isLoadingDetails.set(true);
     this.detailsError.set(null);
     this.serpDetails.set(null);
 
-    let completedRequests = 0;
-    const totalRequests = 3;
-    const partialResponse: Partial<SerpDetailsResponse> = {
-      serp_id: serpId,
-    };
-
-    const checkComplete = () => {
-      completedRequests++;
-      if (completedRequests >= totalRequests) {
-        this.serpDetails.set(partialResponse as SerpDetailsResponse);
+    this.searchService.getSerpDetails(serp, { relatedSize: 10 }).subscribe({
+      next: response => {
+        this.serpDetails.set(response);
         this.isLoadingDetails.set(false);
-      }
-    };
-
-    this.searchService.getSerpDetails(serpId, ['unfurl']).subscribe({
-      next: response => {
-        partialResponse.unfurl = response.unfurl;
-        partialResponse.unfurl_web = response.unfurl_web;
-        partialResponse.serp = response.serp;
-        checkComplete();
       },
       error: err => {
-        console.warn('Failed to fetch unfurl data:', err);
-        checkComplete();
+        console.warn('Failed to fetch SERP details:', err);
+        this.isLoadingDetails.set(false);
       },
     });
+  }
 
-    this.searchService.getSerpDetails(serpId, ['related'], { relatedSize: 10 }).subscribe({
-      next: response => {
-        partialResponse.related = response.related;
-        checkComplete();
+  private fetchUnbrandedSerp(serp: SearchResult): void {
+    this.lastLoadedUnbrandedSerpId = serp._id;
+    this.unbrandedSubscription?.unsubscribe();
+    this.isLoadingUnbranded.set(true);
+    this.unbranded.set(null);
+
+    this.unbrandedSubscription = this.searchService.getUnbrandedSerp(serp).subscribe({
+      next: unbranded => {
+        this.unbranded.set(unbranded);
+        this.isLoadingUnbranded.set(false);
       },
       error: err => {
-        console.warn('Failed to fetch related SERPs (backend issue), showing empty list:', err);
-        partialResponse.related = { count: 0, serps: [] };
-        checkComplete();
-      },
-    });
-
-    this.searchService.getSerpDetails(serpId, ['unbranded']).subscribe({
-      next: response => {
-        partialResponse.unbranded = response.unbranded;
-        checkComplete();
-      },
-      error: err => {
-        console.warn('Failed to fetch unbranded data:', err);
-        checkComplete();
+        console.warn('Failed to fetch unbranded SERP:', err);
+        this.isLoadingUnbranded.set(false);
       },
     });
   }

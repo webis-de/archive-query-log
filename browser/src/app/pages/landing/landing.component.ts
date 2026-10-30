@@ -68,7 +68,7 @@ export class LandingComponent {
     this.route.queryParams.pipe(map(params => params['temp'] === 'true')),
     { initialValue: false },
   );
-  readonly suggestions = this.suggestionsService.suggestionsWithMeta;
+  readonly suggestions = this.suggestionsService.suggestions;
   readonly activeProject = computed(() => {
     const currentSession = this.session();
     const activeProjectId = currentSession?.activeProjectId;

@@ -132,8 +132,8 @@
           }
           @case ('unbranded') {
             <app-metadata-unbranded-tab
-              [unbranded]="serpDetails()?.unbranded ?? null"
-              [isLoading]="isLoadingDetails()"
+              [unbranded]="unbranded()"
+              [isLoading]="isLoadingUnbranded()"
             ></app-metadata-unbranded-tab>
           }
           @case ('provider-info') {

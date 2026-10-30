@@ -36,7 +36,7 @@ describe('LandingComponent', () => {
     });
     mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
       MINIMUM_QUERY_LENGTH: 3,
-      suggestionsWithMeta: jasmine.createSpy().and.returnValue([]),
+      suggestions: jasmine.createSpy().and.returnValue([]),
     });
     mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviders']);
     mockProviderService.getProviders.and.returnValue(of([]));
@@ -151,7 +151,7 @@ describe('LandingComponent', () => {
         { id: 's1', query: 'landing one', score: 42 },
         { id: 's2', query: 'landing two', score: 7 },
       ];
-      mockSuggestionsService.suggestionsWithMeta.and.returnValue(suggestions);
+      mockSuggestionsService.suggestions.and.returnValue(suggestions);
 
       component.onSearchInput('tes');
       fixture.detectChanges();

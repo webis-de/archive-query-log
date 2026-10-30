@@ -10,12 +10,11 @@ import {
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { switchMap, map, catchError, startWith, of } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 import { CompareService } from '../../services/compare.service';
-import { SearchResult, CompareApiResponse, CompareResponse } from '../../models/search.model';
-import { environment } from '../../../environments/environment';
+import { CompareResponse, SearchResultWithOrganicResults } from '../../models/search.model';
+import { AqlApiClient } from '../../api/client';
 import { AqlHeaderBarComponent, AqlPanelComponent, AqlButtonComponent } from 'aql-stylings';
 import { SessionService } from '../../services/session.service';
 
@@ -50,7 +49,7 @@ export class ComparePageComponent {
   readonly serpIds = this.compareService.selectedSerpIds;
   readonly hasRankings: Signal<boolean>;
 
-  private readonly http = inject(HttpClient);
+  private readonly api = inject(AqlApiClient);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private returnUrl?: string;
@@ -61,11 +60,10 @@ export class ComparePageComponent {
         switchMap(ids => {
           if (ids.length < 2) return of({ data: null, loading: false, error: null });
 
-          const idsParam = ids.join(',');
-          return this.http
-            .get<CompareApiResponse>(`${environment.apiUrl}/serps/compare`, {
-              params: { ids: idsParam },
-            })
+          return this.api
+            .request((client, signal) =>
+              client.GET('/serps/compare', { params: { query: { ids } }, signal }),
+            )
             .pipe(
               map(response => ({
                 data: this.compareService.mapApiResponse(response),
@@ -139,17 +137,18 @@ export class ComparePageComponent {
     }
   }
 
-  getSerp(id: string): SearchResult | undefined {
+  getSerp(id: string): SearchResultWithOrganicResults | undefined {
     return this.data()?.serps[id];
   }
 
   getSerpLabel(id: string): string {
     const serp = this.getSerp(id);
     if (!serp) return id.substring(0, 8);
-    return serp._source.provider?.domain || serp._source.url_query || id.substring(0, 8);
+    return serp.provider?.domain || serp.url_query || id.substring(0, 8);
   }
 
-  getStatusClass(code: number): string {
+  getStatusClass(code: number | null): string {
+    if (code === null) return 'badge-ghost';
     if (code >= 200 && code < 300) return 'badge-success';
     if (code >= 300 && code < 400) return 'badge-info';
     if (code >= 400 && code < 500) return 'badge-warning';
