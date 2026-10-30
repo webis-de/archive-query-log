@@ -34,7 +34,7 @@ from elasticsearch_pydantic import (
 from elasticsearch_pydantic import (
     TextField as Text,
 )
-from pydantic import AliasChoices, AnyHttpUrl, Field, computed_field
+from pydantic import AliasChoices, AnyHttpUrl, ConfigDict, Field, computed_field
 from pydantic_extra_types.language_code import LanguageAlpha2
 
 TextWithSuggestAndKeyword: TypeAlias = Annotated[
@@ -66,7 +66,15 @@ RankFeature: TypeAlias = Annotated[
 ]
 
 
+class _BaseInnerDocument(BaseInnerDocument):
+    # Mark fields with defaults as required in API response schemas, as they are always serialized.
+    model_config = ConfigDict(json_schema_serialization_defaults_required=True)
+
+
 class UuidBaseDocument(BaseDocument):
+    # Mark fields with defaults (e.g., the ID) as required in API response schemas, as they are always serialized.
+    model_config = ConfigDict(json_schema_serialization_defaults_required=True)
+
     id: UUID = Field(  # type: ignore[override]
         default_factory=UUID,
         validation_alias=AliasChoices("_id", "id"),
@@ -83,6 +91,8 @@ class Archive(UuidBaseDocument):
     priority: RankFeature | None = None
     should_build_sources: bool = True
     last_built_sources: Date | None = None
+    hidden: bool = False
+    """Whether the web archive is hidden (e.g., spam, porn, etc.)."""
 
     class Index:
         settings = {
@@ -102,6 +112,8 @@ class Provider(UuidBaseDocument):
     priority: RankFeature | None = None
     should_build_sources: bool = True
     last_built_sources: Date | None = None
+    hidden: bool = False
+    """Whether the search provider is hidden (e.g., spam, porn, etc.)."""
 
     class Index:
         settings = {
@@ -110,14 +122,14 @@ class Provider(UuidBaseDocument):
         }
 
 
-class InnerArchive(BaseInnerDocument):
+class InnerArchive(_BaseInnerDocument):
     id: UUID
     cdx_api_url: AnyHttpUrl
     memento_api_url: AnyHttpUrl
     priority: RankFeature | None = None
 
 
-class InnerProvider(BaseInnerDocument):
+class InnerProvider(_BaseInnerDocument):
     id: UUID
     domain: Keyword
     url_path_prefix: Keyword
@@ -138,7 +150,7 @@ class Source(UuidBaseDocument):
         }
 
 
-class InnerParser(BaseInnerDocument):
+class InnerParser(_BaseInnerDocument):
     id: UUID | None = None
     should_parse: bool = True
     last_parsed: Date | None = None
@@ -181,7 +193,7 @@ class Capture(UuidBaseDocument):
         }
 
 
-class InnerCapture(BaseInnerDocument):
+class InnerCapture(_BaseInnerDocument):
     id: UUID
     url: AnyHttpUrl
     timestamp: Date
@@ -190,24 +202,24 @@ class InnerCapture(BaseInnerDocument):
     mimetype: Keyword | None = None
 
 
-class InnerDownloader(BaseInnerDocument):
+class InnerDownloader(_BaseInnerDocument):
     id: UUID
     should_download: bool = True
     last_downloaded: Date | None = None
 
 
-class WarcLocation(BaseInnerDocument):
+class WarcLocation(_BaseInnerDocument):
     file: Keyword
     offset: Long
     length: Long
 
 
-class OrganicResultId(BaseInnerDocument):
+class OrganicResultId(_BaseInnerDocument):
     id: UUID
     rank: Integer
 
 
-class FeatureId(BaseInnerDocument):
+class FeatureId(_BaseInnerDocument):
     id: UUID
     rank: Integer
 
@@ -233,6 +245,8 @@ class Serp(UuidBaseDocument):
     warc_organic_results_parser: InnerParser | None = None
     warc_features: Sequence[FeatureId] | None = None
     warc_features_parser: InnerParser | None = None
+    hidden: bool = False
+    """Whether the SERP is hidden (e.g., spam, porn, etc.)."""
 
     @computed_field  # type: ignore[prop-decorator]
     @property
@@ -250,7 +264,7 @@ class Serp(UuidBaseDocument):
         }
 
 
-class InnerSerp(BaseInnerDocument):
+class InnerSerp(_BaseInnerDocument):
     id: UUID
 
 
@@ -308,6 +322,8 @@ class OrganicResult(UuidBaseDocument):
     capture_after_serp: InnerCapture | None = None
     warc_location_after_serp: WarcLocation | None = None
     warc_downloader_after_serp: InnerDownloader | None = None
+    hidden: bool = False
+    """Whether the organic result is hidden (e.g., spam, porn, etc.)."""
 
     class Index:
         settings = {

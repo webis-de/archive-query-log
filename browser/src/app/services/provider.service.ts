@@ -1,21 +1,11 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, catchError, map, of, shareReplay } from 'rxjs';
-import { ApiService } from './api.service';
-import { API_CONFIG } from '../config/api.config';
+import { Observable, catchError, forkJoin, map, of, shareReplay } from 'rxjs';
+import { AqlApiClient } from '../api/client';
+import { components } from '../api/schema';
 import { ProviderStatistics } from '../models/statistics.model';
+import { SearchService, SerpFilterParams, toHistogramItems } from './search.service';
 
-export interface ProviderResponse {
-  _id: string;
-  _source: {
-    name: string;
-    [key: string]: unknown;
-  };
-}
-
-export interface ProvidersApiResponse {
-  count: number;
-  results: ProviderResponse[];
-}
+export type ProviderResponse = components['schemas']['Provider'];
 
 export interface ProviderDetail {
   id: string;
@@ -26,19 +16,17 @@ export interface ProviderDetail {
 }
 
 /**
- * Response from the provider detail API endpoint
+ * Maximum number of providers to fetch at once (Elasticsearch's default result window).
  */
-export interface ProviderDetailResponse {
-  provider_id: string;
-  provider: {
-    _id: string;
-    _source: {
-      name: string;
-      domains?: string[];
-      url_patterns?: string[];
-      priority?: number;
-      [key: string]: unknown;
-    };
+const MAX_PROVIDERS = 10000;
+
+function toProviderDetail(provider: ProviderResponse): ProviderDetail {
+  return {
+    id: provider._id,
+    name: provider.name,
+    domains: provider.domains,
+    priority: provider.priority ?? undefined,
+    url_patterns: provider.url_path_prefixes,
   };
 }
 
@@ -46,7 +34,8 @@ export interface ProviderDetailResponse {
   providedIn: 'root',
 })
 export class ProviderService {
-  private readonly apiService = inject(ApiService);
+  private readonly api = inject(AqlApiClient);
+  private readonly searchService = inject(SearchService);
   // Cache the providers response to avoid multiple API calls
   private providersCache$?: Observable<ProviderDetail[]>;
 
@@ -56,18 +45,12 @@ export class ProviderService {
    */
   getProviders(): Observable<ProviderDetail[]> {
     if (!this.providersCache$) {
-      this.providersCache$ = this.apiService
-        .get<ProvidersApiResponse>(API_CONFIG.endpoints.providers)
+      this.providersCache$ = this.api
+        .request((client, signal) =>
+          client.GET('/providers/', { params: { query: { size: MAX_PROVIDERS } }, signal }),
+        )
         .pipe(
-          map(response =>
-            response.results.map(provider => ({
-              id: provider._id,
-              name: provider._source.name,
-              domains: provider._source['domains'] as string[],
-              priority: provider._source['priority'] as number,
-              url_patterns: provider._source['url_patterns'] as string[],
-            })),
-          ),
+          map(response => response.map(toProviderDetail)),
           // Sort providers alphabetically by name
           map(providers => providers.sort((a, b) => a.name.localeCompare(b.name))),
           // Cache the result and share among subscribers
@@ -96,16 +79,12 @@ export class ProviderService {
    * Returns the full provider metadata including domains and URL patterns.
    */
   getProviderById(providerId: string): Observable<ProviderDetail | null> {
-    return this.apiService
-      .get<ProviderDetailResponse>(API_CONFIG.endpoints.provider(providerId))
+    return this.api
+      .request((client, signal) =>
+        client.GET('/providers/{id}', { params: { path: { id: providerId } }, signal }),
+      )
       .pipe(
-        map(response => ({
-          id: response.provider._id,
-          name: response.provider._source.name,
-          domains: response.provider._source.domains || [],
-          url_patterns: response.provider._source.url_patterns || [],
-          priority: response.provider._source.priority,
-        })),
+        map(response => (response ? toProviderDetail(response) : null)),
         catchError(error => {
           // Use warn to reduce test noise when backend isn't available in CI
           console.warn(`Failed to fetch provider ${providerId}:`, error);
@@ -129,11 +108,26 @@ export class ProviderService {
   }
 
   /**
-   * Fetch statistics for a specific provider.
+   * Fetch statistics for a specific provider, aggregated from the provider's SERPs.
    */
   getProviderStatistics(providerId: string): Observable<ProviderStatistics> {
-    return this.apiService.get<ProviderStatistics>(
-      API_CONFIG.endpoints.providerStatistics(encodeURIComponent(providerId)),
+    const filterParams: SerpFilterParams = { provider_id: providerId };
+    return forkJoin({
+      serp_count: this.searchService.count(filterParams),
+      unique_queries_count: this.searchService.countUnique(filterParams),
+      top_archives: this.searchService.topArchives(filterParams, 5),
+      date_histogram: this.searchService.dateHistogram(filterParams, 'month'),
+    }).pipe(
+      map(statistics => ({
+        provider_id: providerId,
+        serp_count: statistics.serp_count,
+        unique_queries_count: statistics.unique_queries_count,
+        date_histogram: toHistogramItems(statistics.date_histogram),
+        top_archives: statistics.top_archives.map(bucket => ({
+          archive: bucket.archive.name,
+          count: bucket.count,
+        })),
+      })),
     );
   }
 }

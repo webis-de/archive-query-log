@@ -38,9 +38,7 @@
           <span class="flex flex-row font-semibold text-base-content/70 gap-1">
             <i class="bi bi-link-45deg me-1"></i>{{ 'metadata.website.mementoApi' | translate }}
           </span>
-          <span class="text-xs break-all">{{
-            result._source.archive?.memento_api_url || 'N/A'
-          }}</span>
+          <span class="text-xs break-all">{{ result.archive.memento_api_url || 'N/A' }}</span>
         </div>
         @if (cdxApiUrl(); as cdxUrl) {
           <div class="flex justify-between py-2 border-b border-base-300">

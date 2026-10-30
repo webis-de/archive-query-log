@@ -16,9 +16,10 @@ from elasticsearch_dsl.query import (
     MatchAll,
     MatchPhrasePrefix,
     Ids,
+    Term,
 )
 from fastapi import APIRouter, Request, Depends
-from pydantic import BaseModel, Field
+from pydantic import AnyHttpUrl, BaseModel, Field
 from slowapi.util import get_remote_address
 from slowapi.extension import Limiter
 
@@ -31,6 +32,13 @@ router = APIRouter()
 limiter = Limiter(key_func=get_remote_address)
 
 
+class EnrichedArchive(Archive):
+    homepage: Annotated[
+        AnyHttpUrl | None,
+        Field(description="Homepage of the web archive (not yet available)."),
+    ] = None
+
+
 class _FilterParams(BaseModel):
     exclude_id: Annotated[
         UUID | None,
@@ -39,11 +47,12 @@ class _FilterParams(BaseModel):
 
     @cached_property
     def elasticsearch_query(self) -> Query:
-        filters: list[Query] = []
+        # Always exclude hidden web archives (e.g., spam, porn, etc.).
+        filters: list[Query] = [~Term(hidden=True)]
         # Exclude specific web archive ID.
         if self.exclude_id is not None:
             filters.append(~Ids(values=[str(self.exclude_id)]))
-        return MatchAll() if not filters else Bool(filter=filters)
+        return Bool(filter=filters)
 
 
 class _QueryParams(BaseModel):
@@ -93,7 +102,7 @@ def search(
     query_params: Annotated[_QueryParams, Depends()],
     size: int = 10,
     from_: int = 0,
-) -> list[Archive]:
+) -> list[EnrichedArchive]:
     """
     Search for web archives matching the given query and filters, with pagination."""
     search = _prepare_search(
@@ -106,7 +115,7 @@ def search(
     search = search[from_ : from_ + size]
     # Execute search and handle response.
     response = search.execute()
-    return list(response)
+    return [EnrichedArchive(**archive.model_dump()) for archive in response]
 
 
 @router.get("/count", operation_id="count_archives")
@@ -167,14 +176,13 @@ def get_by_id(
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
     id: UUID,
-) -> Archive | None:
+) -> EnrichedArchive:
     """
     Get a web archive by its ID.
     """
     archive: Archive = Archive.get(
-        id=str(id), using=elasticsearch, index=config.es.index_archives
+        id=str(id),
+        using=elasticsearch,
+        index=config.es.index_archives,
     )
-    # TODO: Enable once implemented in ORM.
-    # if exclude_hidden and archive.hidden:
-    #     return None
-    return archive
+    return EnrichedArchive(**archive.model_dump())

@@ -10,15 +10,15 @@
           </h2>
         } @else if (searchResult(); as result) {
           <h2 class="text-lg font-semibold truncate">
-            {{ result._source.url_query }}
+            {{ result.url_query }}
           </h2>
           <a
-            [href]="result._source.capture.url"
+            [href]="result.capture.url"
             target="_blank"
             rel="noopener noreferrer"
             class="text-sm text-primary hover:underline truncate block"
           >
-            {{ result._source.capture.url }}
+            {{ result.capture.url }}
           </a>
         } @else if (providerDetail(); as provider) {
           <h2 class="text-lg font-semibold truncate">
@@ -132,8 +132,8 @@
           }
           @case ('unbranded') {
             <app-metadata-unbranded-tab
-              [unbranded]="serpDetails()?.unbranded ?? null"
-              [isLoading]="isLoadingDetails()"
+              [unbranded]="unbranded()"
+              [isLoading]="isLoadingUnbranded()"
             ></app-metadata-unbranded-tab>
           }
           @case ('provider-info') {

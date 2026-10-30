@@ -14,7 +14,7 @@ from lxml.etree import (
     _Element,
     XPath,
 )
-from resiliparse.parse import detect_encoding
+from resiliparse.parse.encoding import detect_encoding
 from warcio.recordloader import ArcWarcRecord
 
 XmlParserType = Literal[

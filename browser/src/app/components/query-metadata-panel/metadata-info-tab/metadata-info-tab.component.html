@@ -21,13 +21,13 @@
           <span class="font-semibold text-base-content/70"
             >{{ 'metadata.mimeType' | translate }}:</span
           >
-          <span>{{ result._source.capture.mimetype }}</span>
+          <span>{{ result.capture.mimetype }}</span>
         </div>
         <div class="flex justify-between py-2 border-b border-base-300">
           <span class="font-semibold text-base-content/70"
             >{{ 'metadata.timestamp' | translate }}:</span
           >
-          <span>{{ result._source.capture.timestamp }}</span>
+          <span>{{ result.capture.timestamp }}</span>
         </div>
         <!-- Provider Section with Expandable Details -->
         <div class="py-2 border-b border-base-300">
@@ -36,7 +36,7 @@
               >{{ 'metadata.provider' | translate }}:</span
             >
             <div class="flex items-center gap-2">
-              @if (result._source.provider.id) {
+              @if (result.provider.id) {
                 <aql-button
                   class="flex gap-2"
                   (buttonClick)="toggleProviderDetails()"
@@ -56,7 +56,7 @@
                   "
                 >
                   <span class="font-normal text-base-content text-sm">{{
-                    result._source.provider.domain
+                    result.provider.domain
                   }}</span>
                   <i
                     class="bi"
@@ -65,7 +65,7 @@
                   ></i>
                 </aql-button>
               } @else {
-                <span>{{ result._source.provider.domain }}</span>
+                <span>{{ result.provider.domain }}</span>
               }
             </div>
           </div>

@@ -20,7 +20,7 @@ import {
   PanelNavigationController,
 } from '../../utils/panel-navigation';
 import { SearchService } from '../../services/search.service';
-import { SearchResult, QueryMetadataResponse } from '../../models/search.model';
+import { SearchResult, QueryMetadataResponse, QuerySuggestion } from '../../models/search.model';
 import { SearchHistoryService } from '../../services/search-history.service';
 import { SearchHeaderComponent } from '../../components/search-header/search-header.component';
 import { FilterBadgeService } from '../../services/filter-badge.service';
@@ -84,9 +84,9 @@ export class SearchViewComponent {
   readonly pageSize = signal<number>(10);
   readonly queryMetadata = signal<QueryMetadataResponse | null>(null);
   readonly isMetadataLoading = signal<boolean>(false);
-  readonly didYouMeanSuggestions = signal<{ text: string; score: number; freq: number }[]>([]);
+  readonly didYouMeanSuggestions = signal<QuerySuggestion[]>([]);
   readonly originalQuery = signal<string>('');
-  readonly suggestions = this.suggestionsService.suggestionsWithMeta;
+  readonly suggestions = this.suggestionsService.suggestions;
   readonly showSuggestions = signal<boolean>(false);
   searchQuery = '';
   currentSearchId?: string;
@@ -300,7 +300,7 @@ export class SearchViewComponent {
         next: response => {
           this.searchResults.set(response.results);
           this.totalCount.set(response.total);
-          const suggestions = response.did_you_mean || [];
+          const suggestions = response.did_you_mean;
           if (suggestions.length > 0) {
             this.originalQuery.set(this.searchQuery);
           } else {

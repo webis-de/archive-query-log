@@ -58,7 +58,7 @@ export class SearchResultItemComponent {
     const provider = this.provider();
     const archive = this.archive();
 
-    if (result) return result._source.url_query;
+    if (result) return result.url_query;
     if (provider) return provider.name;
     if (archive) return archive.name;
     return '';
@@ -67,13 +67,13 @@ export class SearchResultItemComponent {
     const result = this.result();
     const archive = this.archive();
 
-    if (result) return result._source.capture.url;
+    if (result) return result.capture.url;
     if (archive) return archive.id;
     return '';
   });
   readonly formattedDate = computed(() => {
     const res = this.result();
-    return res ? this.languageService.formatDate(res._source.capture.timestamp) : '';
+    return res ? this.languageService.formatDate(res.capture.timestamp) : '';
   });
   readonly compareService = inject(CompareService);
   isCompared = computed(() => {
@@ -83,13 +83,13 @@ export class SearchResultItemComponent {
 
   readonly hasTracking = computed<boolean>(() => {
     const res = this.result();
-    const url = res ? res._source.capture.url : '';
+    const url = res ? res.capture.url : '';
     return hasTrackingParams(url);
   });
 
   readonly cleanUrl = computed<string>(() => {
     const res = this.result();
-    const url = res ? res._source.capture.url : '';
+    const url = res ? res.capture.url : '';
     return stripTrackingParams(url);
   });
 
@@ -135,7 +135,7 @@ export class SearchResultItemComponent {
     event.stopPropagation();
     const res = this.result();
     if (!res) return;
-    const url = res._source.capture.url;
+    const url = res.capture.url;
     navigator.clipboard.writeText(url).then(() => {
       this.copyOriginalSuccess.set(true);
       setTimeout(() => this.copyOriginalSuccess.set(false), 2000);
@@ -153,7 +153,7 @@ export class SearchResultItemComponent {
     const res = this.result();
     if (!res) return [];
     try {
-      const url = new URL(res._source.capture.url);
+      const url = new URL(res.capture.url);
       const params: { key: string; value: string }[] = [];
       url.searchParams.forEach((value, key) => {
         if (params.length < 3) params.push({ key, value });

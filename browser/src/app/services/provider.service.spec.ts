@@ -1,22 +1,35 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { ProviderService, ProvidersApiResponse, ProviderDetailResponse } from './provider.service';
+import { ProviderService, ProviderResponse } from './provider.service';
 import { environment } from '../../environments/environment';
 
 describe('ProviderService', () => {
   let service: ProviderService;
   let httpMock: HttpTestingController;
 
-  const mockApiResponse: ProvidersApiResponse = {
-    count: 4,
-    results: [
-      { _id: 'google', _source: { name: 'Google' } },
-      { _id: 'bing', _source: { name: 'Bing' } },
-      { _id: 'duckduckgo', _source: { name: 'DuckDuckGo' } },
-      { _id: 'yahoo', _source: { name: 'Yahoo' } },
-    ],
-  };
+  const mockProvider = (id: string, name: string, overrides: Partial<ProviderResponse> = {}) =>
+    ({
+      _id: id,
+      name,
+      domains: [],
+      url_path_prefixes: [],
+      priority: null,
+      ...overrides,
+    }) as unknown as ProviderResponse;
+
+  const mockApiResponse: ProviderResponse[] = [
+    mockProvider('google', 'Google'),
+    mockProvider('bing', 'Bing'),
+    mockProvider('duckduckgo', 'DuckDuckGo'),
+    mockProvider('yahoo', 'Yahoo'),
+  ];
+
+  // Requests are sent with absolute URLs (resolved against the current location).
+  const apiUrl = (path: string) => new URL(`${environment.apiUrl}${path}`, location.href).href;
+  const providersUrl = apiUrl('/providers/');
+  const expectProvidersRequest = () =>
+    httpMock.expectOne(req => req.url.split('?')[0] === providersUrl);
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -44,8 +57,9 @@ describe('ProviderService', () => {
       done();
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
+    const req = expectProvidersRequest();
     expect(req.request.method).toBe('GET');
+    expect(new URL(req.request.url).searchParams.get('size')).toBe('10000');
     req.flush(mockApiResponse);
   });
 
@@ -57,7 +71,7 @@ describe('ProviderService', () => {
       done();
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
+    const req = expectProvidersRequest();
     req.flush(mockApiResponse);
   });
 
@@ -72,7 +86,7 @@ describe('ProviderService', () => {
     });
 
     // Only one request should be made
-    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
+    const req = expectProvidersRequest();
     req.flush(mockApiResponse);
   });
 
@@ -82,7 +96,7 @@ describe('ProviderService', () => {
       done();
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
+    const req = expectProvidersRequest();
     req.error(new ErrorEvent('Network error'));
   });
 
@@ -97,11 +111,11 @@ describe('ProviderService', () => {
         done();
       });
 
-      const req2 = httpMock.expectOne(`${environment.apiUrl}/providers`);
+      const req2 = expectProvidersRequest();
       req2.flush(mockApiResponse);
     });
 
-    const req1 = httpMock.expectOne(`${environment.apiUrl}/providers`);
+    const req1 = expectProvidersRequest();
     req1.flush(mockApiResponse);
   });
 
@@ -118,23 +132,16 @@ describe('ProviderService', () => {
       done();
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/providers`);
+    const req = expectProvidersRequest();
     req.flush(mockApiResponse);
   });
 
   describe('getProviderById', () => {
-    const mockProviderDetailResponse: ProviderDetailResponse = {
-      provider_id: 'google',
-      provider: {
-        _id: 'google',
-        _source: {
-          name: 'Google',
-          domains: ['google.com', 'google.de', 'google.co.uk'],
-          url_patterns: ['/search?q=', '/webhp?q='],
-          priority: 1,
-        },
-      },
-    };
+    const mockProviderDetailResponse = mockProvider('google', 'Google', {
+      domains: ['google.com', 'google.de', 'google.co.uk'],
+      url_path_prefixes: ['/search?q=', '/webhp?q='],
+      priority: 1,
+    });
 
     it('should fetch provider details by ID', (done: DoneFn) => {
       service.getProviderById('google').subscribe(provider => {
@@ -147,7 +154,7 @@ describe('ProviderService', () => {
         done();
       });
 
-      const req = httpMock.expectOne(`${environment.apiUrl}/providers/google`);
+      const req = httpMock.expectOne(apiUrl('/providers/google'));
       expect(req.request.method).toBe('GET');
       req.flush(mockProviderDetailResponse);
     });
@@ -158,20 +165,12 @@ describe('ProviderService', () => {
         done();
       });
 
-      const req = httpMock.expectOne(`${environment.apiUrl}/providers/unknown`);
+      const req = httpMock.expectOne(apiUrl('/providers/unknown'));
       req.error(new ErrorEvent('Network error'));
     });
 
     it('should handle missing optional fields', (done: DoneFn) => {
-      const minimalResponse: ProviderDetailResponse = {
-        provider_id: 'minimal',
-        provider: {
-          _id: 'minimal',
-          _source: {
-            name: 'Minimal Provider',
-          },
-        },
-      };
+      const minimalResponse = mockProvider('minimal', 'Minimal Provider');
 
       service.getProviderById('minimal').subscribe(provider => {
         expect(provider).toBeTruthy();
@@ -183,7 +182,7 @@ describe('ProviderService', () => {
         done();
       });
 
-      const req = httpMock.expectOne(`${environment.apiUrl}/providers/minimal`);
+      const req = httpMock.expectOne(apiUrl('/providers/minimal'));
       req.flush(minimalResponse);
     });
   });

@@ -2,7 +2,7 @@
 Routes for getting SERPs and related statistics.
 """
 
-from datetime import datetime, timedelta
+from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from functools import cached_property
 from typing import Annotated, Iterable, Literal, Callable
@@ -21,8 +21,8 @@ from elasticsearch_dsl.query import (
     Bool,
     Match,
     MatchAll,
-    MatchPhrasePrefix,
     Term,
+    Terms,
     Range,
     Ids,
 )
@@ -86,14 +86,11 @@ class _FilterParams(BaseModel):
         UUID | None,
         Field(description="Exclude a specific SERP ID."),
     ] = None
-    exclude_hidden: Annotated[
-        bool,
-        Field(description="Exclude hidden SERPs (e.g., spam, porn, etc.)"),
-    ] = False
 
     @cached_property
     def elasticsearch_query(self) -> Query:
-        filters: list[Query] = []
+        # Always exclude hidden SERPs (e.g., spam, porn, etc.).
+        filters: list[Query] = [~Term(hidden=True)]
         # Include only SERPs from the given web archive (by its UUID).
         if self.archive_id:
             filters.append(Term(archive__id=str(self.archive_id)))
@@ -102,22 +99,20 @@ class _FilterParams(BaseModel):
             filters.append(Term(provider__id=str(self.provider_id)))
         # Filter by capture timestamp range.
         if self.from_timestamp or self.to_timestamp:
-            range = {}
+            # Parse any ISO 8601 timestamp (assuming UTC if no timezone is given), not just the field's stricter `strict_date_time_no_millis` format.
+            range: dict[str, datetime | str] = {"format": "strict_date_optional_time"}
             if self.from_timestamp:
-                range["gte"] = self.from_timestamp.isoformat()
+                range["gte"] = self.from_timestamp
             if self.to_timestamp:
-                range["lt"] = self.to_timestamp.isoformat()
+                range["lt"] = self.to_timestamp
             filters.append(Range(capture__timestamp=range))
         # Include only SERPs with this HTTP status code.
         if self.status_code:
             filters.append(Term(capture__status_code=self.status_code))
         # Exclude a specific SERP ID.
         if self.exclude_id:
-            filters.append(~Ids(ids=[str(self.exclude_id)]))
-        # Exclude hidden SERPs.
-        if self.exclude_hidden:
-            filters.append(~Term(hidden=True))
-        return MatchAll() if not filters else Bool(filter=filters)
+            filters.append(~Ids(values=[str(self.exclude_id)]))
+        return Bool(filter=filters)
 
 
 class _QueryParams(BaseModel):
@@ -155,6 +150,29 @@ class _QueryParams(BaseModel):
         # TODO: Implement multi-field matching (e.g., also match against URL etc.)
 
 
+def _deprecated_query_params(
+    fuzziness: Annotated[
+        Literal["AUTO", "0", "1", "2"] | None,
+        QueryParam(
+            deprecated=True,
+            description="Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+        ),
+    ] = None,
+    expand_synonyms: Annotated[
+        bool,
+        QueryParam(
+            deprecated=True,
+            description="Deprecated and ignored: Synonym expansion is not supported.",
+        ),
+    ] = False,
+) -> None:
+    # Accept (but ignore) query parameters of the former AQL Browser API.
+    pass
+
+
+_DEPRECATED_QUERY_PARAMS = [Depends(_deprecated_query_params)]
+
+
 def _prepare_search(
     config: Config,
     elasticsearch: Elasticsearch,
@@ -173,8 +191,12 @@ def _prepare_search(
     return search
 
 
-@router.get("/", operation_id="search_serps")
-@limiter.limit("15/minute")
+@router.get(
+    "/",
+    operation_id="search_serps",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
+@limiter.limit("60/minute")
 def search(
     request: Request,
     config: ConfigDependency,
@@ -200,8 +222,12 @@ def search(
     return [EnrichedSerp(**serp.model_dump()) for serp in response]
 
 
-@router.get("/count", operation_id="count_serps")
-@limiter.limit("15/minute")
+@router.get(
+    "/count",
+    operation_id="count_serps",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
+@limiter.limit("120/minute")
 def count(
     request: Request,
     config: ConfigDependency,
@@ -221,38 +247,130 @@ def count(
     return search.count()
 
 
-@router.get("/suggestions", operation_id="suggest_serps_queries")
+class QuerySuggestion(BaseModel):
+    text: str
+    score: float
+    frequency: Annotated[
+        int,
+        Field(description="Number of (non-hidden) SERPs with this query or term."),
+    ]
+
+
+class QuerySuggestions(BaseModel):
+    completions: Annotated[
+        list[QuerySuggestion],
+        Field(
+            description="Queries starting with the given query (e.g., for autocompletion while typing)."
+        ),
+    ]
+    corrections: Annotated[
+        list[QuerySuggestion],
+        Field(
+            description='Spelling corrections for the terms of the given query (e.g., for "Did you mean?" suggestions).'
+        ),
+    ]
+
+
+@router.get("/suggestions", operation_id="suggest_queries")
 @limiter.limit("120/minute")
 def suggest_queries(
     request: Request,
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
-    filter_params: Annotated[_FilterParams, Depends()],
-    query_params: Annotated[_QueryParams, Depends()],
+    query: Annotated[str, Field(description="(Partial) query to suggest queries for.")],
     size: Annotated[int, Field(gt=0, le=100)] = 10,
-) -> list[str]:
+) -> QuerySuggestions:
     """
-    Suggest SERP search queries based on a preliminar query.
+    Suggest SERP search queries based on a preliminary query, both as completions of the query and as spelling corrections of its terms.
     """
-    # FIXME: This currently just returns some matching queries. It would be more performant to use an actual ES completion suggester on a dedicated indexed field: https://www.elastic.co/docs/reference/elasticsearch/rest-apis/search-suggesters#completion-suggester
-    search = _prepare_search(
-        config=config,
-        elasticsearch=elasticsearch,
-        filter_params=filter_params,
-        query_params=query_params,
+    # Use only Elasticsearch's suggesters (without searching SERPs).
+    search: Search = Serp.search(
+        using=elasticsearch,
+        index=config.es.index_serps,
     )
-    # Add additional prefix filtering for suggestions (e.g., to only include queries starting with the given prefix).
-    if query_params.query:
-        search = search.filter(MatchPhrasePrefix(url_query=query_params.query))
-    # Configure pagination.
-    search = search[:size]
-    # Execute search and handle response.
-    response: Iterable[Serp] = search.execute()
-    return [hit.url_query for hit in response]
+    # Return only the full query of suggested SERPs (as the completion field truncates long queries).
+    search = search.source(["url_query"])
+    # Add completion suggester for completions.
+    search = search.suggest(
+        "completions",
+        query,
+        completion={
+            "field": "url_query.suggest",
+            "size": size,
+            "skip_duplicates": True,
+        },
+    )
+    # Add term suggester for spelling corrections.
+    search = search.suggest(
+        "corrections",
+        query,
+        term={
+            "field": "url_query",
+            # Only suggest more popular terms.
+            "suggest_mode": "popular",
+            # Don't suggest for very short terms.
+            "min_word_length": 3,
+            "size": size,
+        },
+    )
+    response = search[:0].execute()
+
+    completions: list[tuple[str, float]] = [
+        (option._source.url_query, option._score)
+        for entry in response.suggest.completions
+        for option in entry.options
+    ]
+
+    # Count the SERPs per completed query (as the completion suggester does not return frequencies).
+    frequencies: dict[str, int] = {}
+    if completions:
+        completed_queries = [text for text, _ in completions]
+        frequency_search: Search = Serp.search(
+            using=elasticsearch,
+            index=config.es.index_serps,
+        )
+        frequency_search = frequency_search.filter(
+            Terms(url_query__keyword=completed_queries)
+        ).filter(~Term(hidden=True))
+        frequency_search.aggs.bucket(
+            "frequencies",
+            TermsAggregation(
+                field="url_query.keyword",
+                include=completed_queries,
+                size=len(completed_queries),
+            ),
+        )
+        frequency_response = frequency_search[:0].execute()
+        frequencies = {
+            bucket.key: bucket.doc_count
+            for bucket in frequency_response.aggregations.frequencies.buckets
+        }
+
+    return QuerySuggestions(
+        completions=[
+            QuerySuggestion(
+                text=text,
+                score=score,
+                frequency=frequencies.get(text, 0),
+            )
+            for text, score in completions
+        ],
+        corrections=[
+            QuerySuggestion(text=option.text, score=option.score, frequency=option.freq)
+            for entry in response.suggest.corrections
+            for option in entry.options
+            # Only include corrections different from the original term.
+            if option.text != entry.text
+        ],
+    )
 
 
-@router.get("/count-unique", operation_id="count_unique_serps")
-@limiter.limit("15/minute")
+@router.get(
+    "/count-unique",
+    operation_id="count_unique_serps",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
+@limiter.limit("60/minute")
 def count_unique(
     request: Request,
     config: ConfigDependency,
@@ -280,13 +398,56 @@ def count_unique(
     return response.aggregations.unique_queries.value
 
 
+class QueryBucket(BaseModel):
+    query: str
+    count: int
+
+
+@router.get(
+    "/top-queries",
+    operation_id="top_queries",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
+@limiter.limit("60/minute")
+def top_queries(
+    request: Request,
+    config: ConfigDependency,
+    elasticsearch: ElasticsearchDependency,
+    filter_params: Annotated[_FilterParams, Depends()],
+    query_params: Annotated[_QueryParams, Depends()],
+    size: Annotated[int, Field(gt=0, le=100)] = 10,
+) -> list[QueryBucket]:
+    """
+    Get the most common queries among the SERPs matching the given filters and query.
+    """
+    search = _prepare_search(
+        config=config,
+        elasticsearch=elasticsearch,
+        filter_params=filter_params,
+        query_params=query_params,
+    )
+    search.aggs.bucket(
+        "top_queries",
+        TermsAggregation(field="url_query.keyword", size=size),
+    )
+    response = search.execute()
+    return [
+        QueryBucket(query=bucket.key, count=bucket.doc_count)
+        for bucket in response.aggregations.top_queries.buckets
+    ]
+
+
 class ArchiveBucket(BaseModel):
     archive: Archive
     count: int
 
 
-@router.get("/top-archives", operation_id="top_archives")
-@limiter.limit("15/minute")
+@router.get(
+    "/top-archives",
+    operation_id="top_archives",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
+@limiter.limit("60/minute")
 def top_archives(
     request: Request,
     config: ConfigDependency,
@@ -309,14 +470,19 @@ def top_archives(
         TermsAggregation(field="archive.id", size=size),
     )
     response = search.execute()
-    archives = Archive.mget(
-        docs=[bucket.key for bucket in response.aggregations.top_archives.buckets],
+    buckets = response.aggregations.top_archives.buckets
+    if not buckets:
+        return []
+    archives: list[Archive | None] = Archive.mget(
+        docs=[bucket.key for bucket in buckets],
         using=elasticsearch,
         index=config.es.index_archives,
     )
     return [
         ArchiveBucket(archive=archive, count=bucket.doc_count)
-        for archive, bucket in zip(archives, response.aggregations.top_archives.buckets)
+        for archive, bucket in zip(archives, buckets)
+        # Always exclude hidden web archives (e.g., spam, porn, etc.).
+        if archive is not None and not archive.hidden
     ]
 
 
@@ -325,8 +491,12 @@ class ProviderBucket(BaseModel):
     count: int
 
 
-@router.get("/top-providers", operation_id="top_providers")
-@limiter.limit("15/minute")
+@router.get(
+    "/top-providers",
+    operation_id="top_providers",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
+@limiter.limit("60/minute")
 def top_providers(
     request: Request,
     config: ConfigDependency,
@@ -349,16 +519,19 @@ def top_providers(
         TermsAggregation(field="provider.id", size=size),
     )
     response = search.execute()
-    providers = Provider.mget(
-        docs=[bucket.key for bucket in response.aggregations.top_providers.buckets],
+    buckets = response.aggregations.top_providers.buckets
+    if not buckets:
+        return []
+    providers: list[Provider | None] = Provider.mget(
+        docs=[bucket.key for bucket in buckets],
         using=elasticsearch,
         index=config.es.index_providers,
     )
     return [
         ProviderBucket(provider=provider, count=bucket.doc_count)
-        for provider, bucket in zip(
-            providers, response.aggregations.top_providers.buckets
-        )
+        for provider, bucket in zip(providers, buckets)
+        # Always exclude hidden search providers (e.g., spam, porn, etc.).
+        if provider is not None and not provider.hidden
     ]
 
 
@@ -368,8 +541,35 @@ class DateHistogramBucket(BaseModel):
     count: int
 
 
-@router.get("/date-histogram", operation_id="serp_date_histogram")
-@limiter.limit("15/minute")
+_INTERVAL_ALIASES: dict[str, str] = {
+    "day": "1d",
+    "week": "1w",
+    "month": "1M",
+    "quarter": "1q",
+    "year": "1y",
+}
+
+_INTERVAL_UNITS: dict[str, Callable[[int], relativedelta]] = {
+    "d": lambda n: relativedelta(days=n),
+    "w": lambda n: relativedelta(weeks=n),
+    "M": lambda n: relativedelta(months=n),
+    "q": lambda n: relativedelta(months=3 * n),
+    "y": lambda n: relativedelta(years=n),
+}
+
+
+def _parse_interval(interval: str) -> relativedelta:
+    # Parse intervals like "1M" or "7d" (as also returned by the auto date histogram).
+    interval = _INTERVAL_ALIASES.get(interval, interval)
+    return _INTERVAL_UNITS[interval[-1]](int(interval[:-1]))
+
+
+@router.get(
+    "/date-histogram",
+    operation_id="serp_date_histogram",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
+@limiter.limit("60/minute")
 def date_histogram(
     request: Request,
     config: ConfigDependency,
@@ -428,23 +628,11 @@ def date_histogram(
         )
     response = search.execute()
 
-    end_timestamp_fn_mapping: dict[str, Callable[[datetime], datetime]] = {
-        "day": lambda timestamp: timestamp + timedelta(days=+1),
-        "week": lambda timestamp: timestamp + timedelta(weeks=+1),
-        "month": lambda timestamp: timestamp + relativedelta(month=+1),
-        "quarter": lambda timestamp: timestamp + relativedelta(month=+3),
-        "year": lambda timestamp: timestamp + relativedelta(year=+1),
-    }
-    end_timestamp_fn_mapping["1d"] = end_timestamp_fn_mapping["day"]
-    end_timestamp_fn_mapping["1w"] = end_timestamp_fn_mapping["week"]
-    end_timestamp_fn_mapping["1M"] = end_timestamp_fn_mapping["month"]
-    end_timestamp_fn_mapping["1q"] = end_timestamp_fn_mapping["quarter"]
-    end_timestamp_fn_mapping["1y"] = end_timestamp_fn_mapping["year"]
-    end_timestamp_fn: Callable[[datetime], datetime] = end_timestamp_fn_mapping[
+    delta = _parse_interval(
         interval
         if interval is not None
         else response.aggregations.date_histogram.interval
-    ]
+    )
 
     buckets = (
         (bucket.key, bucket.doc_count)
@@ -454,7 +642,7 @@ def date_histogram(
     return [
         DateHistogramBucket(
             from_timestamp=start_timestamp,
-            to_timestamp=end_timestamp_fn(start_timestamp),
+            to_timestamp=start_timestamp + delta,
             count=count,
         )
         for (start_timestamp, count) in buckets
@@ -470,7 +658,7 @@ class SerpComparisonResult(BaseModel):
 
 
 @router.get("/compare", operation_id="compare_serps")
-@limiter.limit("15/minute")
+@limiter.limit("60/minute")
 def compare(
     request: Request,
     config: ConfigDependency,
@@ -494,6 +682,7 @@ def compare(
         docs=[str(id) for id in ids],
         using=elasticsearch,
         index=config.es.index_serps,
+        missing="raise",
     )
     # Enrich SERPs.
     enriched_serps: list[EnrichedSerp] = [
@@ -509,6 +698,7 @@ def compare(
                 docs=[str(block.id) for block in serp.warc_organic_results],
                 using=elasticsearch,
                 index=config.es.index_organic_results,
+                missing="raise",
             )
         enriched_serps_with_results.append(
             EnrichedSerpWithResults(**serp.model_dump(), results=results)
@@ -526,11 +716,7 @@ def get_by_id(
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
     id: UUID,
-    exclude_hidden: Annotated[
-        bool,
-        Field(description="Exclude hidden SERPs (e.g., spam, porn, etc.)."),
-    ] = False,
-) -> EnrichedSerp | None:
+) -> EnrichedSerp:
     """
     Get a SERP by its ID.
     """
@@ -539,8 +725,4 @@ def get_by_id(
         using=elasticsearch,
         index=config.es.index_serps,
     )
-    # TODO: Enable once implemented in ORM.
-    # if exclude_hidden and serp.hidden:
-    #     return None
-    enriched_serp = EnrichedSerp(**serp.model_dump())
-    return enriched_serp
+    return EnrichedSerp(**serp.model_dump())

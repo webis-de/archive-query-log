@@ -20,38 +20,21 @@ describe('SearchViewComponent', () => {
   let mockRouter: Router;
 
   const mockSearchResponse: SearchResponse = {
-    query: '',
-    count: 0,
     total: 0,
-    page_size: 10,
-    total_pages: 0,
     results: [],
-    pagination: {
-      current_results: 0,
-      total_results: 0,
-      results_per_page: 10,
-      total_pages: 0,
-    },
-    fuzzy: false,
-    fuzziness: null,
-    expand_synonyms: false,
+    did_you_mean: [],
   };
 
   beforeEach(async () => {
     mockSuggestionsService = jasmine.createSpyObj('SuggestionsService', ['search'], {
       MINIMUM_QUERY_LENGTH: 3,
-      suggestionsWithMeta: signal([]),
+      suggestions: signal([]),
       search: jasmine.createSpy('search'),
     } as unknown as jasmine.SpyObj<SuggestionsService>);
     mockProviderService = jasmine.createSpyObj('ProviderService', ['getProviders']);
     mockProviderService.getProviders.and.returnValue(of([]));
-    mockSearchService = jasmine.createSpyObj('SearchService', [
-      'search',
-      'searchWithParams',
-      'getQueryMetadata',
-    ]);
+    mockSearchService = jasmine.createSpyObj('SearchService', ['search', 'getQueryMetadata']);
     mockSearchService.search.and.returnValue(of(mockSearchResponse));
-    mockSearchService.searchWithParams.and.returnValue(of(mockSearchResponse));
     mockSearchService.getQueryMetadata.and.returnValue(
       of({
         query: '',

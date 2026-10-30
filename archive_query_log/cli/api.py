@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Annotated
 
 from cyclopts import App, Parameter
@@ -35,3 +36,25 @@ def run(
         log_level="info",
         reload=True,
     )
+
+
+@api.command()
+def openapi(
+    *,
+    output: Annotated[Path | None, Parameter(alias="-o")] = None,
+) -> None:
+    """
+    Export the OpenAPI specification of the HTTP API.
+
+    :param output: The file to write the OpenAPI specification to (default: standard output).
+    """
+
+    from json import dumps
+
+    from archive_query_log.api import app
+
+    specification = dumps(app.openapi(), indent=2) + "\n"
+    if output is None:
+        print(specification, end="")
+    else:
+        output.write_text(specification)

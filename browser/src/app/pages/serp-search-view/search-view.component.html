@@ -76,12 +76,12 @@
                       <span class="badge badge-sm badge-primary badge-outline">
                         {{ (suggestion.score * 100).toFixed(0) }}% {{ 'search.match' | translate }}
                       </span>
-                      @if (suggestion.freq > 0) {
+                      @if (suggestion.frequency > 0) {
                         <span
                           class="badge badge-sm badge-ghost"
                           [title]="'search.frequencyTooltip' | translate"
                         >
-                          {{ 'search.frequency' | translate }}: {{ suggestion.freq }}
+                          {{ 'search.frequency' | translate }}: {{ suggestion.frequency }}
                         </span>
                       }
                     </div>

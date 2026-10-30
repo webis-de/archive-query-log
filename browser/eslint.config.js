@@ -7,6 +7,10 @@ const prettierConfig = require("eslint-config-prettier");
 
 module.exports = tseslint.config(
   {
+    // Generated from the API's OpenAPI specification (`npm run generate-api`).
+    ignores: ["src/app/api/schema.ts"],
+  },
+  {
     files: ["**/*.ts"],
     extends: [
       eslint.configs.recommended,

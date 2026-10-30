@@ -27,7 +27,7 @@ export class MetadataInfoTabComponent {
     const result = this.searchResult();
     if (!result) return;
 
-    const providerId = result._source.provider?.id;
+    const providerId = result.provider?.id;
     if (!providerId) return;
 
     this.showProviderDetails.update(v => !v);

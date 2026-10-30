@@ -29,7 +29,7 @@ export class MetadataWebsiteTabComponent {
     const result = this.searchResult();
     if (!result) return '';
 
-    const timestamp = result._source.capture.timestamp;
+    const timestamp = result.capture.timestamp;
     if (!timestamp) return '';
 
     try {
@@ -52,9 +52,9 @@ export class MetadataWebsiteTabComponent {
     const result = this.searchResult();
     if (!result) return '';
 
-    const mementoApiUrl = result._source.archive?.memento_api_url;
-    const timestamp = result._source.capture.timestamp;
-    const captureUrl = result._source.capture.url;
+    const mementoApiUrl = result.archive?.memento_api_url;
+    const timestamp = result.capture.timestamp;
+    const captureUrl = result.capture.url;
 
     if (!mementoApiUrl || !timestamp || !captureUrl) {
       return captureUrl || '';
@@ -72,7 +72,7 @@ export class MetadataWebsiteTabComponent {
     const result = this.searchResult();
     if (!result) return '';
 
-    const mementoApiUrl = result._source.archive?.memento_api_url;
+    const mementoApiUrl = result.archive?.memento_api_url;
     if (!mementoApiUrl) return 'Unknown Archive';
 
     const knownArchives: Record<string, string> = {
@@ -98,7 +98,7 @@ export class MetadataWebsiteTabComponent {
     const result = this.searchResult();
     if (!result) return null;
 
-    const mementoApiUrl = result._source.archive?.memento_api_url;
+    const mementoApiUrl = result.archive?.memento_api_url;
     if (!mementoApiUrl) return null;
 
     if (mementoApiUrl.startsWith('https://web.archive.org')) {
@@ -114,7 +114,7 @@ export class MetadataWebsiteTabComponent {
   });
   readonly cdxApiUrl = computed<string | null>(() => {
     const result = this.searchResult();
-    return result?._source.archive?.cdx_api_url || null;
+    return result?.archive?.cdx_api_url || null;
   });
 
   private readonly sanitizer = inject(DomSanitizer);

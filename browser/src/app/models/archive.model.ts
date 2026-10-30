@@ -1,22 +1,9 @@
-/**
- * Archive response from the archives list endpoint
- */
-export interface ArchiveResponse {
-  id: string;
-  name: string;
-  memento_api_url?: string;
-  cdx_api_url?: string;
-  homepage?: string;
-  serp_count?: number;
-}
+import { components } from '../api/schema';
 
 /**
- * Response from the archives list API endpoint
+ * Archive response from the archives API endpoints
  */
-export interface ArchivesApiResponse {
-  total: number;
-  archives: ArchiveResponse[];
-}
+export type ArchiveResponse = components['schemas']['EnrichedArchive'];
 
 /**
  * Simplified archive option for dropdowns and lists

@@ -36,7 +36,7 @@ pip:
   - ray-elasticsearch~=1.1,>=1.1.4
   - requests~=2.32
   - requests-ratelimiter~=0.7.0
-  - resiliparse~=0.15.2
+  - resiliparse~=1.0
   - tqdm~=4.67
   # boto3~=1.35 depends on urllib3<1.27
   - urllib3~=1.26

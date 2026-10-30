@@ -4,7 +4,9 @@ export interface DateHistogramItem {
 }
 
 export interface TopEntityItem {
+  /** Provider UUID (resolved to the provider's name for display). */
   provider?: string;
+  /** Archive name. */
   archive?: string;
   count: number;
 }

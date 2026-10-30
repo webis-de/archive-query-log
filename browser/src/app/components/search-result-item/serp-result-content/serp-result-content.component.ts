@@ -15,7 +15,7 @@ export class SerpResultContentComponent {
   readonly formattedUrlParams = computed<{ key: string; value: string }[]>(() => {
     const result = this.result();
     try {
-      const url = new URL(result._source.capture.url);
+      const url = new URL(result.capture.url);
       const params: { key: string; value: string }[] = [];
       url.searchParams.forEach((value, key) => {
         if (params.length < 3) {
@@ -28,7 +28,8 @@ export class SerpResultContentComponent {
     }
   });
 
-  getStatusColorClass(code: number): string {
+  getStatusColorClass(code: number | null): string {
+    if (code === null) return 'text-base-content/60';
     if (code >= 200 && code < 300) return 'text-success';
     if (code >= 300 && code < 400) return 'text-info';
     if (code >= 400 && code < 500) return 'text-warning';
@@ -36,7 +37,8 @@ export class SerpResultContentComponent {
     return 'text-base-content/60';
   }
 
-  getParserStatus(parser: Parser): 'success' | 'pending' | 'skipped' {
+  getParserStatus(parser: Parser | null): 'success' | 'pending' | 'skipped' {
+    if (!parser) return 'skipped';
     if (parser.last_parsed) return 'success';
     if (parser.should_parse) return 'pending';
     return 'skipped';
