@@ -114,7 +114,7 @@ class _FilterParams(BaseModel):
             filters.append(Term(capture__status_code=self.status_code))
         # Exclude a specific SERP ID.
         if self.exclude_id:
-            filters.append(~Ids(ids=[str(self.exclude_id)]))
+            filters.append(~Ids(values=[str(self.exclude_id)]))
         # Exclude hidden SERPs.
         if self.exclude_hidden:
             filters.append(~Term(hidden=True))
