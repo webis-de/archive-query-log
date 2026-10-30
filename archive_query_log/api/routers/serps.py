@@ -21,8 +21,8 @@ from elasticsearch_dsl.query import (
     Bool,
     Match,
     MatchAll,
-    MatchPhrasePrefix,
     Term,
+    Terms,
     Range,
     Ids,
 )
@@ -247,38 +247,122 @@ def count(
     return search.count()
 
 
-@router.get(
-    "/suggestions",
-    operation_id="suggest_serps_queries",
-    dependencies=_DEPRECATED_QUERY_PARAMS,
-)
+class QuerySuggestion(BaseModel):
+    text: str
+    score: float
+    frequency: Annotated[
+        int,
+        Field(description="Number of (non-hidden) SERPs with this query or term."),
+    ]
+
+
+class QuerySuggestions(BaseModel):
+    completions: Annotated[
+        list[QuerySuggestion],
+        Field(
+            description="Queries starting with the given query (e.g., for autocompletion while typing)."
+        ),
+    ]
+    corrections: Annotated[
+        list[QuerySuggestion],
+        Field(
+            description='Spelling corrections for the terms of the given query (e.g., for "Did you mean?" suggestions).'
+        ),
+    ]
+
+
+@router.get("/suggestions", operation_id="suggest_queries")
 @limiter.limit("120/minute")
 def suggest_queries(
     request: Request,
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
-    filter_params: Annotated[_FilterParams, Depends()],
-    query_params: Annotated[_QueryParams, Depends()],
+    query: Annotated[str, Field(description="(Partial) query to suggest queries for.")],
     size: Annotated[int, Field(gt=0, le=100)] = 10,
-) -> list[str]:
+) -> QuerySuggestions:
     """
-    Suggest SERP search queries based on a preliminar query.
+    Suggest SERP search queries based on a preliminary query, both as completions of the query and as spelling corrections of its terms.
     """
-    # FIXME: This currently just returns some matching queries. It would be more performant to use an actual ES completion suggester on a dedicated indexed field: https://www.elastic.co/docs/reference/elasticsearch/rest-apis/search-suggesters#completion-suggester
-    search = _prepare_search(
-        config=config,
-        elasticsearch=elasticsearch,
-        filter_params=filter_params,
-        query_params=query_params,
+    # Use only Elasticsearch's suggesters (without searching SERPs).
+    search: Search = Serp.search(
+        using=elasticsearch,
+        index=config.es.index_serps,
     )
-    # Add additional prefix filtering for suggestions (e.g., to only include queries starting with the given prefix).
-    if query_params.query:
-        search = search.filter(MatchPhrasePrefix(url_query=query_params.query))
-    # Configure pagination.
-    search = search[:size]
-    # Execute search and handle response.
-    response: Iterable[Serp] = search.execute()
-    return [hit.url_query for hit in response]
+    # Return only the full query of suggested SERPs (as the completion field truncates long queries).
+    search = search.source(["url_query"])
+    # Add completion suggester for completions.
+    search = search.suggest(
+        "completions",
+        query,
+        completion={
+            "field": "url_query.suggest",
+            "size": size,
+            "skip_duplicates": True,
+        },
+    )
+    # Add term suggester for spelling corrections.
+    search = search.suggest(
+        "corrections",
+        query,
+        term={
+            "field": "url_query",
+            # Only suggest more popular terms.
+            "suggest_mode": "popular",
+            # Don't suggest for very short terms.
+            "min_word_length": 3,
+            "size": size,
+        },
+    )
+    response = search[:0].execute()
+
+    completions: list[tuple[str, float]] = [
+        (option._source.url_query, option._score)
+        for entry in response.suggest.completions
+        for option in entry.options
+    ]
+
+    # Count the SERPs per completed query (as the completion suggester does not return frequencies).
+    frequencies: dict[str, int] = {}
+    if completions:
+        completed_queries = [text for text, _ in completions]
+        frequency_search: Search = Serp.search(
+            using=elasticsearch,
+            index=config.es.index_serps,
+        )
+        frequency_search = frequency_search.filter(
+            Terms(url_query__keyword=completed_queries)
+        ).filter(~Term(hidden=True))
+        frequency_search.aggs.bucket(
+            "frequencies",
+            TermsAggregation(
+                field="url_query.keyword",
+                include=completed_queries,
+                size=len(completed_queries),
+            ),
+        )
+        frequency_response = frequency_search[:0].execute()
+        frequencies = {
+            bucket.key: bucket.doc_count
+            for bucket in frequency_response.aggregations.frequencies.buckets
+        }
+
+    return QuerySuggestions(
+        completions=[
+            QuerySuggestion(
+                text=text,
+                score=score,
+                frequency=frequencies.get(text, 0),
+            )
+            for text, score in completions
+        ],
+        corrections=[
+            QuerySuggestion(text=option.text, score=option.score, frequency=option.freq)
+            for entry in response.suggest.corrections
+            for option in entry.options
+            # Only include corrections different from the original term.
+            if option.text != entry.text
+        ],
+    )
 
 
 @router.get(
