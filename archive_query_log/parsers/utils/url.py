@@ -1,5 +1,16 @@
-from urllib.parse import parse_qsl, unquote
+from urllib.parse import parse_qsl, unquote, unquote_to_bytes
 from pydantic import AnyHttpUrl
+from resiliparse.parse.encoding import detect_encoding
+
+
+def detect_url_encoding(encoded: str) -> str:
+    """If UTF-8 decoding fails, guess the URL encoding from the raw bytes."""
+    data = unquote_to_bytes(encoded.replace("+", " "))
+    try:
+        data.decode("utf-8")
+    except UnicodeDecodeError:
+        return detect_encoding(data)
+    return "utf-8"
 
 
 def parse_url_query_parameter(parameter: str, url: AnyHttpUrl) -> str | None:
