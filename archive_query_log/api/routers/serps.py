@@ -102,11 +102,12 @@ class _FilterParams(BaseModel):
             filters.append(Term(provider__id=str(self.provider_id)))
         # Filter by capture timestamp range.
         if self.from_timestamp or self.to_timestamp:
-            range = {}
+            # Parse any ISO 8601 timestamp (assuming UTC if no timezone is given), not just the field's stricter `strict_date_time_no_millis` format.
+            range: dict[str, datetime | str] = {"format": "strict_date_optional_time"}
             if self.from_timestamp:
-                range["gte"] = self.from_timestamp.isoformat()
+                range["gte"] = self.from_timestamp
             if self.to_timestamp:
-                range["lt"] = self.to_timestamp.isoformat()
+                range["lt"] = self.to_timestamp
             filters.append(Range(capture__timestamp=range))
         # Include only SERPs with this HTTP status code.
         if self.status_code:
