@@ -14,14 +14,24 @@ def detect_url_encoding(encoded: str) -> str:
 
 
 def parse_url_query_parameter(parameter: str, url: AnyHttpUrl) -> str | None:
-    for key, value in parse_qsl(url.query):
+    if url.query is None:
+        return None
+    for key, value in parse_qsl(
+        url.query,
+        encoding=detect_url_encoding(url.query),
+    ):
         if key == parameter:
             return value
     return None
 
 
 def parse_url_fragment_parameter(parameter: str, url: AnyHttpUrl) -> str | None:
-    for key, value in parse_qsl(url.fragment):
+    if url.fragment is None:
+        return None
+    for key, value in parse_qsl(
+        url.fragment,
+        encoding=detect_url_encoding(url.fragment),
+    ):
         if key == parameter:
             return value
     return None
