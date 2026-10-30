@@ -408,12 +408,6 @@ def _organic_result_warc_update_action(
         should_download=False,
         last_downloaded=utc_now(),
     )
-    # Only keep the meta fields of the organic result, as the source is not needed for updating it.
-    result_block = UuidBaseDocument(
-        id=result_block.id,
-        index=result_block.index,
-        seq_no=result_block.seq_no
-    )
     if result_block.before_serp:
         return result_block.update_action(
             warc_location_before_serp=location,
