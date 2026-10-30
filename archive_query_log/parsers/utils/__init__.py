@@ -17,11 +17,17 @@ def clean_text(
         remove_pattern: Pattern | None,
         space_pattern: Pattern | None,
 ) -> str | None:
+    # Null characters are rejected by Elasticsearch completion fields.
+    text = text.replace("\x00", "")
+    # Remove any provider-specific patterns.
     if remove_pattern is not None:
         text = remove_pattern.sub("", text)
+    # Replace any provider-specific space-indicating characters.
     if space_pattern is not None:
         text = space_pattern.sub(" ", text)
+    # Clear surrounding whitespace.
     text = text.strip()
+    # Normalize whitespace delimiters.
     text = " ".join(text.split())
     if text == "":
         return None
