@@ -196,7 +196,7 @@ def _prepare_search(
     operation_id="search_serps",
     dependencies=_DEPRECATED_QUERY_PARAMS,
 )
-@limiter.limit("15/minute")
+@limiter.limit("60/minute")
 def search(
     request: Request,
     config: ConfigDependency,
@@ -227,7 +227,7 @@ def search(
     operation_id="count_serps",
     dependencies=_DEPRECATED_QUERY_PARAMS,
 )
-@limiter.limit("15/minute")
+@limiter.limit("120/minute")
 def count(
     request: Request,
     config: ConfigDependency,
@@ -286,7 +286,7 @@ def suggest_queries(
     operation_id="count_unique_serps",
     dependencies=_DEPRECATED_QUERY_PARAMS,
 )
-@limiter.limit("15/minute")
+@limiter.limit("60/minute")
 def count_unique(
     request: Request,
     config: ConfigDependency,
@@ -324,7 +324,7 @@ class ArchiveBucket(BaseModel):
     operation_id="top_archives",
     dependencies=_DEPRECATED_QUERY_PARAMS,
 )
-@limiter.limit("15/minute")
+@limiter.limit("60/minute")
 def top_archives(
     request: Request,
     config: ConfigDependency,
@@ -372,7 +372,7 @@ class ProviderBucket(BaseModel):
     operation_id="top_providers",
     dependencies=_DEPRECATED_QUERY_PARAMS,
 )
-@limiter.limit("15/minute")
+@limiter.limit("60/minute")
 def top_providers(
     request: Request,
     config: ConfigDependency,
@@ -444,7 +444,7 @@ def _parse_interval(interval: str) -> relativedelta:
     operation_id="serp_date_histogram",
     dependencies=_DEPRECATED_QUERY_PARAMS,
 )
-@limiter.limit("15/minute")
+@limiter.limit("60/minute")
 def date_histogram(
     request: Request,
     config: ConfigDependency,
@@ -533,7 +533,7 @@ class SerpComparisonResult(BaseModel):
 
 
 @router.get("/compare", operation_id="compare_serps")
-@limiter.limit("15/minute")
+@limiter.limit("60/minute")
 def compare(
     request: Request,
     config: ConfigDependency,
