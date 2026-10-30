@@ -15,6 +15,9 @@ from archive_query_log.api.routers.monitoring import router as monitoring_router
 from archive_query_log.api.routers.serps import router as serps_router
 from archive_query_log.api.routers.providers import router as providers_router
 from archive_query_log.api.routers.archives import router as archives_router
+from archive_query_log.api.routers.organic_results import (
+    router as organic_results_router,
+)
 
 
 # Create FastAPI app.
