@@ -86,7 +86,7 @@ jobs:
       - name: 📥 Check-out
         uses: actions/checkout@v6
       - name: 🧰 Install Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: "24.13"
           check-latest: true
@@ -108,7 +108,7 @@ jobs:
       - name: 📥 Check-out
         uses: actions/checkout@v6
       - name: 🧰 Install Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: "24.13"
           check-latest: true
@@ -126,7 +126,7 @@ jobs:
       - name: 📥 Check-out
         uses: actions/checkout@v6
       - name: 🧰 Install Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: "24.13"
           cache-dependency-path: browser/package-lock.json
@@ -143,7 +143,7 @@ jobs:
       - name: 📥 Check-out
         uses: actions/checkout@v6
       - name: 🧰 Install Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: "24.13"
           cache-dependency-path: browser/package-lock.json
