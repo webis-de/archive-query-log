@@ -105,9 +105,9 @@ export interface paths {
     };
     /**
      * Suggest Queries
-     * @description Suggest SERP search queries based on a preliminar query.
+     * @description Suggest SERP search queries based on a preliminary query, both as completions of the query and as spelling corrections of its terms.
      */
-    get: operations['suggest_serps_queries'];
+    get: operations['suggest_queries'];
     put?: never;
     post?: never;
     delete?: never;
@@ -128,6 +128,26 @@ export interface paths {
      * @description Count unique SERP's (by parsed query) among the SERPs matching the given filters and query.
      */
     get: operations['count_unique_serps'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/serps/top-queries': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /**
+     * Top Queries
+     * @description Get the most common queries among the SERPs matching the given filters and query.
+     */
+    get: operations['top_queries'];
     put?: never;
     post?: never;
     delete?: never;
@@ -398,6 +418,46 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  '/organic-results/': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /**
+     * Get By Ids
+     * @description Get multiple organic results by their IDs (skipping unknown IDs).
+     */
+    get: operations['get_organic_results_by_ids'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  '/organic-results/{id}': {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /**
+     * Get By Id
+     * @description Get an organic result by its ID.
+     */
+    get: operations['get_organic_result_by_id'];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   '/health': {
     parameters: {
       query?: never;
@@ -477,6 +537,11 @@ export interface components {
       should_build_sources: boolean;
       /** Last Built Sources */
       last_built_sources: string | null;
+      /**
+       * Hidden
+       * @default false
+       */
+      hidden: boolean;
     };
     /** ArchiveBucket */
     ArchiveBucket: {
@@ -498,6 +563,72 @@ export interface components {
       to_timestamp: string;
       /** Count */
       count: number;
+    };
+    /** EnrichedArchive */
+    EnrichedArchive: {
+      /**
+       * Id
+       * Format: uuid
+       */
+      _id: string;
+      /** Index */
+      _index: string | null;
+      /** Parentindex */
+      _parentindex: string | null;
+      /** Primary Term */
+      _primary_term: number | null;
+      /** Routing */
+      _routing: string | null;
+      /** Score */
+      _score: number | null;
+      /** Seq No */
+      _seq_no: number | null;
+      /** Type */
+      _type: string | null;
+      /** Using */
+      _using: string | null;
+      /** Version */
+      _version: number | null;
+      /** Version Type */
+      _version_type: string | null;
+      /**
+       * Last Modified
+       * Format: date-time
+       */
+      last_modified: string;
+      /** Name */
+      name: string;
+      /** Description */
+      description: string | null;
+      /**
+       * Cdx Api Url
+       * Format: uri
+       */
+      cdx_api_url: string;
+      /**
+       * Memento Api Url
+       * Format: uri
+       */
+      memento_api_url: string;
+      /** Priority */
+      priority: number | null;
+      /**
+       * Should Build Sources
+       * @default true
+       */
+      should_build_sources: boolean;
+      /** Last Built Sources */
+      last_built_sources: string | null;
+      /**
+       * Hidden
+       * @default false
+       */
+      hidden: boolean;
+      /**
+       * Homepage
+       * @description Homepage of the web archive (not yet available).
+       */
+      homepage: string | null;
     };
     /** EnrichedSerp */
     EnrichedSerp: {
@@ -557,6 +688,11 @@ export interface components {
       /** Warc Features */
       warc_features: components['schemas']['FeatureId'][] | null;
       warc_features_parser: components['schemas']['InnerParser'] | null;
+      /**
+       * Hidden
+       * @default false
+       */
+      hidden: boolean;
       /**
        * Memento Url
        * Format: uri
@@ -631,6 +767,11 @@ export interface components {
       /** Warc Features */
       warc_features: components['schemas']['FeatureId'][] | null;
       warc_features_parser: components['schemas']['InnerParser'] | null;
+      /**
+       * Hidden
+       * @default false
+       */
+      hidden: boolean;
       /** Results */
       results: components['schemas']['OrganicResult'][] | null;
       /**
@@ -825,6 +966,11 @@ export interface components {
       capture_after_serp: components['schemas']['InnerCapture'] | null;
       warc_location_after_serp: components['schemas']['WarcLocation'] | null;
       warc_downloader_after_serp: components['schemas']['InnerDownloader'] | null;
+      /**
+       * Hidden
+       * @default false
+       */
+      hidden: boolean;
     };
     /** OrganicResultId */
     OrganicResultId: {
@@ -902,12 +1048,49 @@ export interface components {
       should_build_sources: boolean;
       /** Last Built Sources */
       last_built_sources: string | null;
+      /**
+       * Hidden
+       * @default false
+       */
+      hidden: boolean;
     };
     /** ProviderBucket */
     ProviderBucket: {
       provider: components['schemas']['Provider'];
       /** Count */
       count: number;
+    };
+    /** QueryBucket */
+    QueryBucket: {
+      /** Query */
+      query: string;
+      /** Count */
+      count: number;
+    };
+    /** QuerySuggestion */
+    QuerySuggestion: {
+      /** Text */
+      text: string;
+      /** Score */
+      score: number;
+      /**
+       * Frequency
+       * @description Number of (non-hidden) SERPs with this query or term.
+       */
+      frequency: number;
+    };
+    /** QuerySuggestions */
+    QuerySuggestions: {
+      /**
+       * Completions
+       * @description Queries starting with the given query (e.g., for autocompletion while typing).
+       */
+      completions: components['schemas']['QuerySuggestion'][];
+      /**
+       * Corrections
+       * @description Spelling corrections for the terms of the given query (e.g., for "Did you mean?" suggestions).
+       */
+      corrections: components['schemas']['QuerySuggestion'][];
     };
     /** SerpComparisonResult */
     SerpComparisonResult: {
@@ -1043,13 +1226,22 @@ export interface operations {
       query?: {
         size?: number;
         from_?: number;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.
+         */
+        fuzziness?: ('AUTO' | '0' | '1' | '2') | null;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Synonym expansion is not supported.
+         */
+        expand_synonyms?: boolean;
         archive_id?: string | null;
         provider_id?: string | null;
         from_timestamp?: string | null;
         to_timestamp?: string | null;
         status_code?: number | null;
         exclude_id?: string | null;
-        exclude_hidden?: boolean;
         query?: string | null;
         query_language?: boolean;
         fuzzy_matching?: boolean;
@@ -1084,13 +1276,22 @@ export interface operations {
   count_serps: {
     parameters: {
       query?: {
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.
+         */
+        fuzziness?: ('AUTO' | '0' | '1' | '2') | null;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Synonym expansion is not supported.
+         */
+        expand_synonyms?: boolean;
         archive_id?: string | null;
         provider_id?: string | null;
         from_timestamp?: string | null;
         to_timestamp?: string | null;
         status_code?: number | null;
         exclude_id?: string | null;
-        exclude_hidden?: boolean;
         query?: string | null;
         query_language?: boolean;
         fuzzy_matching?: boolean;
@@ -1122,21 +1323,12 @@ export interface operations {
       };
     };
   };
-  suggest_serps_queries: {
+  suggest_queries: {
     parameters: {
-      query?: {
+      query: {
+        /** @description (Partial) query to suggest queries for. */
+        query: string;
         size?: number;
-        archive_id?: string | null;
-        provider_id?: string | null;
-        from_timestamp?: string | null;
-        to_timestamp?: string | null;
-        status_code?: number | null;
-        exclude_id?: string | null;
-        exclude_hidden?: boolean;
-        query?: string | null;
-        query_language?: boolean;
-        fuzzy_matching?: boolean;
-        multi_field_matching?: boolean;
       };
       header?: never;
       path?: never;
@@ -1150,7 +1342,7 @@ export interface operations {
           [name: string]: unknown;
         };
         content: {
-          'application/json': string[];
+          'application/json': components['schemas']['QuerySuggestions'];
         };
       };
       /** @description Validation Error */
@@ -1167,13 +1359,22 @@ export interface operations {
   count_unique_serps: {
     parameters: {
       query?: {
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.
+         */
+        fuzziness?: ('AUTO' | '0' | '1' | '2') | null;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Synonym expansion is not supported.
+         */
+        expand_synonyms?: boolean;
         archive_id?: string | null;
         provider_id?: string | null;
         from_timestamp?: string | null;
         to_timestamp?: string | null;
         status_code?: number | null;
         exclude_id?: string | null;
-        exclude_hidden?: boolean;
         query?: string | null;
         query_language?: boolean;
         fuzzy_matching?: boolean;
@@ -1192,6 +1393,57 @@ export interface operations {
         };
         content: {
           'application/json': number;
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['HTTPValidationError'];
+        };
+      };
+    };
+  };
+  top_queries: {
+    parameters: {
+      query?: {
+        size?: number;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.
+         */
+        fuzziness?: ('AUTO' | '0' | '1' | '2') | null;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Synonym expansion is not supported.
+         */
+        expand_synonyms?: boolean;
+        archive_id?: string | null;
+        provider_id?: string | null;
+        from_timestamp?: string | null;
+        to_timestamp?: string | null;
+        status_code?: number | null;
+        exclude_id?: string | null;
+        query?: string | null;
+        query_language?: boolean;
+        fuzzy_matching?: boolean;
+        multi_field_matching?: boolean;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['QueryBucket'][];
         };
       };
       /** @description Validation Error */
@@ -1209,13 +1461,22 @@ export interface operations {
     parameters: {
       query?: {
         size?: number;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.
+         */
+        fuzziness?: ('AUTO' | '0' | '1' | '2') | null;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Synonym expansion is not supported.
+         */
+        expand_synonyms?: boolean;
         archive_id?: string | null;
         provider_id?: string | null;
         from_timestamp?: string | null;
         to_timestamp?: string | null;
         status_code?: number | null;
         exclude_id?: string | null;
-        exclude_hidden?: boolean;
         query?: string | null;
         query_language?: boolean;
         fuzzy_matching?: boolean;
@@ -1251,13 +1512,22 @@ export interface operations {
     parameters: {
       query?: {
         size?: number;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.
+         */
+        fuzziness?: ('AUTO' | '0' | '1' | '2') | null;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Synonym expansion is not supported.
+         */
+        expand_synonyms?: boolean;
         archive_id?: string | null;
         provider_id?: string | null;
         from_timestamp?: string | null;
         to_timestamp?: string | null;
         status_code?: number | null;
         exclude_id?: string | null;
-        exclude_hidden?: boolean;
         query?: string | null;
         query_language?: boolean;
         fuzzy_matching?: boolean;
@@ -1297,13 +1567,22 @@ export interface operations {
           | ('day' | '1d' | 'week' | '1w' | 'month' | '1M' | 'quarter' | '1q' | 'year' | '1y')
           | null;
         num_buckets?: number | null;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.
+         */
+        fuzziness?: ('AUTO' | '0' | '1' | '2') | null;
+        /**
+         * @deprecated
+         * @description Deprecated and ignored: Synonym expansion is not supported.
+         */
+        expand_synonyms?: boolean;
         archive_id?: string | null;
         provider_id?: string | null;
         from_timestamp?: string | null;
         to_timestamp?: string | null;
         status_code?: number | null;
         exclude_id?: string | null;
-        exclude_hidden?: boolean;
         query?: string | null;
         query_language?: boolean;
         fuzzy_matching?: boolean;
@@ -1369,10 +1648,7 @@ export interface operations {
   };
   get_serp_by_id: {
     parameters: {
-      query?: {
-        /** @description Exclude hidden SERPs (e.g., spam, porn, etc.). */
-        exclude_hidden?: boolean;
-      };
+      query?: never;
       header?: never;
       path: {
         id: string;
@@ -1387,7 +1663,7 @@ export interface operations {
           [name: string]: unknown;
         };
         content: {
-          'application/json': components['schemas']['EnrichedSerp'] | null;
+          'application/json': components['schemas']['EnrichedSerp'];
         };
       };
       /** @description Validation Error */
@@ -1511,9 +1787,7 @@ export interface operations {
   };
   get_provider_by_id: {
     parameters: {
-      query?: {
-        exclude_hidden?: boolean;
-      };
+      query?: never;
       header?: never;
       path: {
         id: string;
@@ -1528,7 +1802,7 @@ export interface operations {
           [name: string]: unknown;
         };
         content: {
-          'application/json': components['schemas']['Provider'] | null;
+          'application/json': components['schemas']['Provider'];
         };
       };
       /** @description Validation Error */
@@ -1565,7 +1839,7 @@ export interface operations {
           [name: string]: unknown;
         };
         content: {
-          'application/json': components['schemas']['Archive'][];
+          'application/json': components['schemas']['EnrichedArchive'][];
         };
       };
       /** @description Validation Error */
@@ -1667,7 +1941,70 @@ export interface operations {
           [name: string]: unknown;
         };
         content: {
-          'application/json': components['schemas']['Archive'] | null;
+          'application/json': components['schemas']['EnrichedArchive'];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['HTTPValidationError'];
+        };
+      };
+    };
+  };
+  get_organic_results_by_ids: {
+    parameters: {
+      query: {
+        /** @description IDs of the organic results to get (e.g., as referenced by a SERP). */
+        ids: string[];
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['OrganicResult'][];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['HTTPValidationError'];
+        };
+      };
+    };
+  };
+  get_organic_result_by_id: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          'application/json': components['schemas']['OrganicResult'];
         };
       };
       /** @description Validation Error */

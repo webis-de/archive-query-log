@@ -125,6 +125,46 @@
             }
           },
           {
+            "name": "fuzziness",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "AUTO",
+                    "0",
+                    "1",
+                    "2"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+              "deprecated": true,
+              "title": "Fuzziness"
+            },
+            "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+            "deprecated": true
+          },
+          {
+            "name": "expand_synonyms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Deprecated and ignored: Synonym expansion is not supported.",
+              "deprecated": true,
+              "default": false,
+              "title": "Expand Synonyms"
+            },
+            "description": "Deprecated and ignored: Synonym expansion is not supported.",
+            "deprecated": true
+          },
+          {
             "name": "archive_id",
             "in": "query",
             "required": false,
@@ -223,16 +263,6 @@
                 }
               ],
               "title": "Exclude Id"
-            }
-          },
-          {
-            "name": "exclude_hidden",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Exclude Hidden"
             }
           },
           {
@@ -320,6 +350,46 @@
         "operationId": "count_serps",
         "parameters": [
           {
+            "name": "fuzziness",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "AUTO",
+                    "0",
+                    "1",
+                    "2"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+              "deprecated": true,
+              "title": "Fuzziness"
+            },
+            "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+            "deprecated": true
+          },
+          {
+            "name": "expand_synonyms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Deprecated and ignored: Synonym expansion is not supported.",
+              "deprecated": true,
+              "default": false,
+              "title": "Expand Synonyms"
+            },
+            "description": "Deprecated and ignored: Synonym expansion is not supported.",
+            "deprecated": true
+          },
+          {
             "name": "archive_id",
             "in": "query",
             "required": false,
@@ -418,16 +488,6 @@
                 }
               ],
               "title": "Exclude Id"
-            }
-          },
-          {
-            "name": "exclude_hidden",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Exclude Hidden"
             }
           },
           {
@@ -508,9 +568,20 @@
           "serps"
         ],
         "summary": "Suggest Queries",
-        "description": "Suggest SERP search queries based on a preliminar query.",
-        "operationId": "suggest_serps_queries",
+        "description": "Suggest SERP search queries based on a preliminary query, both as completions of the query and as spelling corrections of its terms.",
+        "operationId": "suggest_queries",
         "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "(Partial) query to suggest queries for.",
+              "title": "Query"
+            },
+            "description": "(Partial) query to suggest queries for."
+          },
           {
             "name": "size",
             "in": "query",
@@ -522,163 +593,6 @@
               "default": 10,
               "title": "Size"
             }
-          },
-          {
-            "name": "archive_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Archive Id"
-            }
-          },
-          {
-            "name": "provider_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Provider Id"
-            }
-          },
-          {
-            "name": "from_timestamp",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "From Timestamp"
-            }
-          },
-          {
-            "name": "to_timestamp",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "To Timestamp"
-            }
-          },
-          {
-            "name": "status_code",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Status Code"
-            }
-          },
-          {
-            "name": "exclude_id",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Exclude Id"
-            }
-          },
-          {
-            "name": "exclude_hidden",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Exclude Hidden"
-            }
-          },
-          {
-            "name": "query",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Query"
-            }
-          },
-          {
-            "name": "query_language",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Query Language"
-            }
-          },
-          {
-            "name": "fuzzy_matching",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Fuzzy Matching"
-            }
-          },
-          {
-            "name": "multi_field_matching",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Multi Field Matching"
-            }
           }
         ],
         "responses": {
@@ -687,11 +601,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  },
-                  "title": "Response Suggest Serps Queries"
+                  "$ref": "#/components/schemas/QuerySuggestions"
                 }
               }
             }
@@ -719,6 +629,46 @@
         "operationId": "count_unique_serps",
         "parameters": [
           {
+            "name": "fuzziness",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "AUTO",
+                    "0",
+                    "1",
+                    "2"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+              "deprecated": true,
+              "title": "Fuzziness"
+            },
+            "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+            "deprecated": true
+          },
+          {
+            "name": "expand_synonyms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Deprecated and ignored: Synonym expansion is not supported.",
+              "deprecated": true,
+              "default": false,
+              "title": "Expand Synonyms"
+            },
+            "description": "Deprecated and ignored: Synonym expansion is not supported.",
+            "deprecated": true
+          },
+          {
             "name": "archive_id",
             "in": "query",
             "required": false,
@@ -817,16 +767,6 @@
                 }
               ],
               "title": "Exclude Id"
-            }
-          },
-          {
-            "name": "exclude_hidden",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Exclude Hidden"
             }
           },
           {
@@ -901,14 +841,14 @@
         }
       }
     },
-    "/serps/top-archives": {
+    "/serps/top-queries": {
       "get": {
         "tags": [
           "serps"
         ],
-        "summary": "Top Archives",
-        "description": "Get the most common web archives among the SERPs matching the given filters and query.",
-        "operationId": "top_archives",
+        "summary": "Top Queries",
+        "description": "Get the most common queries among the SERPs matching the given filters and query.",
+        "operationId": "top_queries",
         "parameters": [
           {
             "name": "size",
@@ -918,9 +858,49 @@
               "type": "integer",
               "maximum": 100,
               "exclusiveMinimum": 0,
-              "default": 5,
+              "default": 10,
               "title": "Size"
             }
+          },
+          {
+            "name": "fuzziness",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "AUTO",
+                    "0",
+                    "1",
+                    "2"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+              "deprecated": true,
+              "title": "Fuzziness"
+            },
+            "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+            "deprecated": true
+          },
+          {
+            "name": "expand_synonyms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Deprecated and ignored: Synonym expansion is not supported.",
+              "deprecated": true,
+              "default": false,
+              "title": "Expand Synonyms"
+            },
+            "description": "Deprecated and ignored: Synonym expansion is not supported.",
+            "deprecated": true
           },
           {
             "name": "archive_id",
@@ -1024,13 +1004,240 @@
             }
           },
           {
-            "name": "exclude_hidden",
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
             "in": "query",
             "required": false,
             "schema": {
               "type": "boolean",
               "default": false,
-              "title": "Exclude Hidden"
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QueryBucket"
+                  },
+                  "title": "Response Top Queries"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/top-archives": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Top Archives",
+        "description": "Get the most common web archives among the SERPs matching the given filters and query.",
+        "operationId": "top_archives",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "exclusiveMinimum": 0,
+              "default": 5,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "fuzziness",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "AUTO",
+                    "0",
+                    "1",
+                    "2"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+              "deprecated": true,
+              "title": "Fuzziness"
+            },
+            "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+            "deprecated": true
+          },
+          {
+            "name": "expand_synonyms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Deprecated and ignored: Synonym expansion is not supported.",
+              "deprecated": true,
+              "default": false,
+              "title": "Expand Synonyms"
+            },
+            "description": "Deprecated and ignored: Synonym expansion is not supported.",
+            "deprecated": true
+          },
+          {
+            "name": "archive_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Archive Id"
+            }
+          },
+          {
+            "name": "provider_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider Id"
+            }
+          },
+          {
+            "name": "from_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Timestamp"
+            }
+          },
+          {
+            "name": "to_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Timestamp"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status Code"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
             }
           },
           {
@@ -1130,6 +1337,46 @@
             }
           },
           {
+            "name": "fuzziness",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "AUTO",
+                    "0",
+                    "1",
+                    "2"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+              "deprecated": true,
+              "title": "Fuzziness"
+            },
+            "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+            "deprecated": true
+          },
+          {
+            "name": "expand_synonyms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Deprecated and ignored: Synonym expansion is not supported.",
+              "deprecated": true,
+              "default": false,
+              "title": "Expand Synonyms"
+            },
+            "description": "Deprecated and ignored: Synonym expansion is not supported.",
+            "deprecated": true
+          },
+          {
             "name": "archive_id",
             "in": "query",
             "required": false,
@@ -1228,16 +1475,6 @@
                 }
               ],
               "title": "Exclude Id"
-            }
-          },
-          {
-            "name": "exclude_hidden",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Exclude Hidden"
             }
           },
           {
@@ -1373,6 +1610,46 @@
             }
           },
           {
+            "name": "fuzziness",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "AUTO",
+                    "0",
+                    "1",
+                    "2"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+              "deprecated": true,
+              "title": "Fuzziness"
+            },
+            "description": "Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+            "deprecated": true
+          },
+          {
+            "name": "expand_synonyms",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Deprecated and ignored: Synonym expansion is not supported.",
+              "deprecated": true,
+              "default": false,
+              "title": "Expand Synonyms"
+            },
+            "description": "Deprecated and ignored: Synonym expansion is not supported.",
+            "deprecated": true
+          },
+          {
             "name": "archive_id",
             "in": "query",
             "required": false,
@@ -1471,16 +1748,6 @@
                 }
               ],
               "title": "Exclude Id"
-            }
-          },
-          {
-            "name": "exclude_hidden",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Exclude Hidden"
             }
           },
           {
@@ -1626,18 +1893,6 @@
               "format": "uuid",
               "title": "Id"
             }
-          },
-          {
-            "name": "exclude_hidden",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "description": "Exclude hidden SERPs (e.g., spam, porn, etc.).",
-              "default": false,
-              "title": "Exclude Hidden"
-            },
-            "description": "Exclude hidden SERPs (e.g., spam, porn, etc.)."
           }
         ],
         "responses": {
@@ -1646,15 +1901,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/EnrichedSerp"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ],
-                  "title": "Response Get Serp By Id"
+                  "$ref": "#/components/schemas/EnrichedSerp"
                 }
               }
             }
@@ -2022,16 +2269,6 @@
               "format": "uuid",
               "title": "Id"
             }
-          },
-          {
-            "name": "exclude_hidden",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false,
-              "title": "Exclude Hidden"
-            }
           }
         ],
         "responses": {
@@ -2040,15 +2277,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/Provider"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ],
-                  "title": "Response Get Provider By Id"
+                  "$ref": "#/components/schemas/Provider"
                 }
               }
             }
@@ -2167,7 +2396,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Archive"
+                    "$ref": "#/components/schemas/EnrichedArchive"
                   },
                   "title": "Response Search Archives"
                 }
@@ -2424,15 +2653,106 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/Archive"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ],
-                  "title": "Response Get Archive By Id"
+                  "$ref": "#/components/schemas/EnrichedArchive"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organic-results/": {
+      "get": {
+        "tags": [
+          "organic-results"
+        ],
+        "summary": "Get By Ids",
+        "description": "Get multiple organic results by their IDs (skipping unknown IDs).",
+        "operationId": "get_organic_results_by_ids",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "minItems": 1,
+              "maxItems": 100,
+              "description": "IDs of the organic results to get (e.g., as referenced by a SERP).",
+              "title": "Ids"
+            },
+            "description": "IDs of the organic results to get (e.g., as referenced by a SERP)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrganicResult"
+                  },
+                  "title": "Response Get Organic Results By Ids"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/organic-results/{id}": {
+      "get": {
+        "tags": [
+          "organic-results"
+        ],
+        "summary": "Get By Id",
+        "description": "Get an organic result by its ID.",
+        "operationId": "get_organic_result_by_id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganicResult"
                 }
               }
             }
@@ -2650,6 +2970,11 @@
               }
             ],
             "title": "Last Built Sources"
+          },
+          "hidden": {
+            "type": "boolean",
+            "title": "Hidden",
+            "default": false
           }
         },
         "type": "object",
@@ -2672,7 +2997,8 @@
           "memento_api_url",
           "priority",
           "should_build_sources",
-          "last_built_sources"
+          "last_built_sources",
+          "hidden"
         ],
         "title": "Archive"
       },
@@ -2717,6 +3043,230 @@
           "count"
         ],
         "title": "DateHistogramBucket"
+      },
+      "EnrichedArchive": {
+        "properties": {
+          "_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "_index": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Index"
+          },
+          "_parentindex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parentindex"
+          },
+          "_primary_term": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Term"
+          },
+          "_routing": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Routing"
+          },
+          "_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "_seq_no": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seq No"
+          },
+          "_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Type"
+          },
+          "_using": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Using"
+          },
+          "_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          },
+          "_version_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version Type"
+          },
+          "last_modified": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Last Modified"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "cdx_api_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Cdx Api Url"
+          },
+          "memento_api_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Memento Api Url"
+          },
+          "priority": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Priority"
+          },
+          "should_build_sources": {
+            "type": "boolean",
+            "title": "Should Build Sources",
+            "default": true
+          },
+          "last_built_sources": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Built Sources"
+          },
+          "hidden": {
+            "type": "boolean",
+            "title": "Hidden",
+            "default": false
+          },
+          "homepage": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Homepage",
+            "description": "Homepage of the web archive (not yet available)."
+          }
+        },
+        "type": "object",
+        "required": [
+          "_id",
+          "_index",
+          "_parentindex",
+          "_primary_term",
+          "_routing",
+          "_score",
+          "_seq_no",
+          "_type",
+          "_using",
+          "_version",
+          "_version_type",
+          "last_modified",
+          "name",
+          "description",
+          "cdx_api_url",
+          "memento_api_url",
+          "priority",
+          "should_build_sources",
+          "last_built_sources",
+          "hidden",
+          "homepage"
+        ],
+        "title": "EnrichedArchive"
       },
       "EnrichedSerp": {
         "properties": {
@@ -3020,6 +3570,11 @@
               }
             ]
           },
+          "hidden": {
+            "type": "boolean",
+            "title": "Hidden",
+            "default": false
+          },
           "memento_url": {
             "type": "string",
             "minLength": 1,
@@ -3075,6 +3630,7 @@
           "warc_organic_results_parser",
           "warc_features",
           "warc_features_parser",
+          "hidden",
           "memento_url",
           "capture_url_without_tracking",
           "unfurl_url"
@@ -3383,6 +3939,11 @@
               }
             ]
           },
+          "hidden": {
+            "type": "boolean",
+            "title": "Hidden",
+            "default": false
+          },
           "results": {
             "anyOf": [
               {
@@ -3452,6 +4013,7 @@
           "warc_organic_results_parser",
           "warc_features",
           "warc_features_parser",
+          "hidden",
           "results",
           "memento_url",
           "capture_url_without_tracking",
@@ -3967,6 +4529,11 @@
                 "type": "null"
               }
             ]
+          },
+          "hidden": {
+            "type": "boolean",
+            "title": "Hidden",
+            "default": false
           }
         },
         "type": "object",
@@ -4000,7 +4567,8 @@
           "warc_downloader_before_serp",
           "capture_after_serp",
           "warc_location_after_serp",
-          "warc_downloader_after_serp"
+          "warc_downloader_after_serp",
+          "hidden"
         ],
         "title": "OrganicResult",
         "description": "Organic results are unpaid (often textual) listings ranked by the search engine's algorithms based on their estimated relevance to the search query.\n\nSee: https://serp-elements-catalog.pages.dev/organic"
@@ -4260,6 +4828,11 @@
               }
             ],
             "title": "Last Built Sources"
+          },
+          "hidden": {
+            "type": "boolean",
+            "title": "Hidden",
+            "default": false
           }
         },
         "type": "object",
@@ -4284,7 +4857,8 @@
           "url_path_prefixes",
           "priority",
           "should_build_sources",
-          "last_built_sources"
+          "last_built_sources",
+          "hidden"
         ],
         "title": "Provider"
       },
@@ -4304,6 +4878,74 @@
           "count"
         ],
         "title": "ProviderBucket"
+      },
+      "QueryBucket": {
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "query",
+          "count"
+        ],
+        "title": "QueryBucket"
+      },
+      "QuerySuggestion": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "frequency": {
+            "type": "integer",
+            "title": "Frequency",
+            "description": "Number of (non-hidden) SERPs with this query or term."
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "score",
+          "frequency"
+        ],
+        "title": "QuerySuggestion"
+      },
+      "QuerySuggestions": {
+        "properties": {
+          "completions": {
+            "items": {
+              "$ref": "#/components/schemas/QuerySuggestion"
+            },
+            "type": "array",
+            "title": "Completions",
+            "description": "Queries starting with the given query (e.g., for autocompletion while typing)."
+          },
+          "corrections": {
+            "items": {
+              "$ref": "#/components/schemas/QuerySuggestion"
+            },
+            "type": "array",
+            "title": "Corrections",
+            "description": "Spelling corrections for the terms of the given query (e.g., for \"Did you mean?\" suggestions)."
+          }
+        },
+        "type": "object",
+        "required": [
+          "completions",
+          "corrections"
+        ],
+        "title": "QuerySuggestions"
       },
       "SerpComparisonResult": {
         "properties": {
