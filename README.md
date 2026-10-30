@@ -460,6 +460,15 @@ uvicorn archive_query_log.api:app --reload
 
 An API documentation is available at <http://localhost:8000/docs>.
 
+### OpenAPI Specification
+
+The API's [OpenAPI](https://www.openapis.org/) specification is served at <http://localhost:8000/openapi.json>.
+To export the specification without running the API (e.g., to generate API clients), run:
+
+```shell
+aql api openapi --output openapi.json
+```
+
 ### Monitoring
 
 A basic monitoring UI is served with the API and can be accessed at <http://localhost:8000>.

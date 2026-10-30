@@ -10,7 +10,7 @@ from elasticsearch_dsl import (
     Text as _Text,
     Completion as _Completion,
 )
-from pydantic import Field, AliasChoices, computed_field, AnyHttpUrl
+from pydantic import Field, AliasChoices, ConfigDict, computed_field, AnyHttpUrl
 from pydantic_extra_types.language_code import LanguageAlpha2
 
 from elasticsearch_pydantic import (
@@ -51,7 +51,15 @@ RankFeature: TypeAlias = Annotated[
 ]
 
 
+class _BaseInnerDocument(BaseInnerDocument):
+    # Mark fields with defaults as required in API response schemas, as they are always serialized.
+    model_config = ConfigDict(json_schema_serialization_defaults_required=True)
+
+
 class UuidBaseDocument(BaseDocument):
+    # Mark fields with defaults (e.g., the ID) as required in API response schemas, as they are always serialized.
+    model_config = ConfigDict(json_schema_serialization_defaults_required=True)
+
     id: UUID = Field(  # type: ignore[override]
         default_factory=UUID,
         validation_alias=AliasChoices("_id", "id"),
@@ -95,14 +103,14 @@ class Provider(UuidBaseDocument):
         }
 
 
-class InnerArchive(BaseInnerDocument):
+class InnerArchive(_BaseInnerDocument):
     id: UUID
     cdx_api_url: AnyHttpUrl
     memento_api_url: AnyHttpUrl
     priority: RankFeature | None = None
 
 
-class InnerProvider(BaseInnerDocument):
+class InnerProvider(_BaseInnerDocument):
     id: UUID
     domain: Keyword
     url_path_prefix: Keyword
@@ -123,7 +131,7 @@ class Source(UuidBaseDocument):
         }
 
 
-class InnerParser(BaseInnerDocument):
+class InnerParser(_BaseInnerDocument):
     id: UUID | None = None
     should_parse: bool = True
     last_parsed: Date | None = None
@@ -166,7 +174,7 @@ class Capture(UuidBaseDocument):
         }
 
 
-class InnerCapture(BaseInnerDocument):
+class InnerCapture(_BaseInnerDocument):
     id: UUID
     url: AnyHttpUrl
     timestamp: Date
@@ -175,24 +183,24 @@ class InnerCapture(BaseInnerDocument):
     mimetype: Keyword | None = None
 
 
-class InnerDownloader(BaseInnerDocument):
+class InnerDownloader(_BaseInnerDocument):
     id: UUID
     should_download: bool = True
     last_downloaded: Date | None = None
 
 
-class WarcLocation(BaseInnerDocument):
+class WarcLocation(_BaseInnerDocument):
     file: Keyword
     offset: Long
     length: Long
 
 
-class OrganicResultId(BaseInnerDocument):
+class OrganicResultId(_BaseInnerDocument):
     id: UUID
     rank: Integer
 
 
-class FeatureId(BaseInnerDocument):
+class FeatureId(_BaseInnerDocument):
     id: UUID
     rank: Integer
 
@@ -235,7 +243,7 @@ class Serp(UuidBaseDocument):
         }
 
 
-class InnerSerp(BaseInnerDocument):
+class InnerSerp(_BaseInnerDocument):
     id: UUID
 
 
