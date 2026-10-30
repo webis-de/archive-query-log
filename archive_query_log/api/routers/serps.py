@@ -310,14 +310,18 @@ def top_archives(
         TermsAggregation(field="archive.id", size=size),
     )
     response = search.execute()
+    buckets = response.aggregations.top_archives.buckets
+    if not buckets:
+        return []
     archives = Archive.mget(
-        docs=[bucket.key for bucket in response.aggregations.top_archives.buckets],
+        docs=[bucket.key for bucket in buckets],
         using=elasticsearch,
         index=config.es.index_archives,
     )
     return [
         ArchiveBucket(archive=archive, count=bucket.doc_count)
-        for archive, bucket in zip(archives, response.aggregations.top_archives.buckets)
+        for archive, bucket in zip(archives, buckets)
+        if archive is not None
     ]
 
 
@@ -350,16 +354,18 @@ def top_providers(
         TermsAggregation(field="provider.id", size=size),
     )
     response = search.execute()
+    buckets = response.aggregations.top_providers.buckets
+    if not buckets:
+        return []
     providers = Provider.mget(
-        docs=[bucket.key for bucket in response.aggregations.top_providers.buckets],
+        docs=[bucket.key for bucket in buckets],
         using=elasticsearch,
         index=config.es.index_providers,
     )
     return [
         ProviderBucket(provider=provider, count=bucket.doc_count)
-        for provider, bucket in zip(
-            providers, response.aggregations.top_providers.buckets
-        )
+        for provider, bucket in zip(providers, buckets)
+        if provider is not None
     ]
 
 
