@@ -172,17 +172,13 @@ def get_by_id(
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
     id: UUID,
-) -> Provider | None:
+) -> Provider:
     """
     Get a search provider by its ID.
     """
-    # Search by ID (instead of getting the document directly), to always exclude hidden search providers (e.g., spam, porn, etc.).
-    search: Search = Provider.search(
+    provider: Provider = Provider.get(
+        id=str(id),
         using=elasticsearch,
         index=config.es.index_providers,
     )
-    search = search.filter(Ids(values=[str(id)])).filter(~Term(hidden=True))
-    response = search[:1].execute()
-    if not response.hits:
-        return None
-    return response.hits[0]
+    return provider

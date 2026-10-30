@@ -352,6 +352,7 @@ def top_queries(
         for bucket in response.aggregations.top_queries.buckets
     ]
 
+
 class ArchiveBucket(BaseModel):
     archive: Archive
     count: int
@@ -388,7 +389,7 @@ def top_archives(
     buckets = response.aggregations.top_archives.buckets
     if not buckets:
         return []
-    archives = Archive.mget(
+    archives: list[Archive | None] = Archive.mget(
         docs=[bucket.key for bucket in buckets],
         using=elasticsearch,
         index=config.es.index_archives,
@@ -396,7 +397,8 @@ def top_archives(
     return [
         ArchiveBucket(archive=archive, count=bucket.doc_count)
         for archive, bucket in zip(archives, buckets)
-        if archive is not None
+        # Always exclude hidden web archives (e.g., spam, porn, etc.).
+        if archive is not None and not archive.hidden
     ]
 
 
@@ -436,7 +438,7 @@ def top_providers(
     buckets = response.aggregations.top_providers.buckets
     if not buckets:
         return []
-    providers = Provider.mget(
+    providers: list[Provider | None] = Provider.mget(
         docs=[bucket.key for bucket in buckets],
         using=elasticsearch,
         index=config.es.index_providers,
@@ -444,7 +446,8 @@ def top_providers(
     return [
         ProviderBucket(provider=provider, count=bucket.doc_count)
         for provider, bucket in zip(providers, buckets)
-        if provider is not None
+        # Always exclude hidden search providers (e.g., spam, porn, etc.).
+        if provider is not None and not provider.hidden
     ]
 
 
@@ -595,6 +598,7 @@ def compare(
         docs=[str(id) for id in ids],
         using=elasticsearch,
         index=config.es.index_serps,
+        missing="raise",
     )
     # Enrich SERPs.
     enriched_serps: list[EnrichedSerp] = [
@@ -610,6 +614,7 @@ def compare(
                 docs=[str(block.id) for block in serp.warc_organic_results],
                 using=elasticsearch,
                 index=config.es.index_organic_results,
+                missing="raise",
             )
         enriched_serps_with_results.append(
             EnrichedSerpWithResults(**serp.model_dump(), results=results)
@@ -627,17 +632,13 @@ def get_by_id(
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
     id: UUID,
-) -> EnrichedSerp | None:
+) -> EnrichedSerp:
     """
     Get a SERP by its ID.
     """
-    # Search by ID (instead of getting the document directly), to always exclude hidden SERPs (e.g., spam, porn, etc.).
-    search: Search = Serp.search(
+    serp: Serp = Serp.get(
+        id=str(id),
         using=elasticsearch,
         index=config.es.index_serps,
     )
-    search = search.filter(Ids(values=[str(id)])).filter(~Term(hidden=True))
-    response = search[:1].execute()
-    if not response.hits:
-        return None
-    return EnrichedSerp(**response.hits[0].model_dump())
+    return EnrichedSerp(**serp.model_dump())

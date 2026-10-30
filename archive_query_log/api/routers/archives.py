@@ -176,17 +176,13 @@ def get_by_id(
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
     id: UUID,
-) -> EnrichedArchive | None:
+) -> EnrichedArchive:
     """
     Get a web archive by its ID.
     """
-    # Search by ID (instead of getting the document directly), to always exclude hidden web archives (e.g., spam, porn, etc.).
-    search: Search = Archive.search(
+    archive: Archive = Archive.get(
+        id=str(id),
         using=elasticsearch,
         index=config.es.index_archives,
     )
-    search = search.filter(Ids(values=[str(id)])).filter(~Term(hidden=True))
-    response = search[:1].execute()
-    if not response.hits:
-        return None
-    return EnrichedArchive(**response.hits[0].model_dump())
+    return EnrichedArchive(**archive.model_dump())
