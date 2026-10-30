@@ -156,6 +156,29 @@ class _QueryParams(BaseModel):
         # TODO: Implement multi-field matching (e.g., also match against URL etc.)
 
 
+def _deprecated_query_params(
+    fuzziness: Annotated[
+        Literal["AUTO", "0", "1", "2"] | None,
+        QueryParam(
+            deprecated=True,
+            description="Deprecated and ignored: Fuzzy matching always uses automatic fuzziness.",
+        ),
+    ] = None,
+    expand_synonyms: Annotated[
+        bool,
+        QueryParam(
+            deprecated=True,
+            description="Deprecated and ignored: Synonym expansion is not supported.",
+        ),
+    ] = False,
+) -> None:
+    # Accept (but ignore) query parameters of the former AQL Browser API.
+    pass
+
+
+_DEPRECATED_QUERY_PARAMS = [Depends(_deprecated_query_params)]
+
+
 def _prepare_search(
     config: Config,
     elasticsearch: Elasticsearch,
@@ -174,7 +197,11 @@ def _prepare_search(
     return search
 
 
-@router.get("/", operation_id="search_serps")
+@router.get(
+    "/",
+    operation_id="search_serps",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
 @limiter.limit("15/minute")
 def search(
     request: Request,
@@ -201,7 +228,11 @@ def search(
     return [EnrichedSerp(**serp.model_dump()) for serp in response]
 
 
-@router.get("/count", operation_id="count_serps")
+@router.get(
+    "/count",
+    operation_id="count_serps",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
 @limiter.limit("15/minute")
 def count(
     request: Request,
@@ -222,7 +253,11 @@ def count(
     return search.count()
 
 
-@router.get("/suggestions", operation_id="suggest_serps_queries")
+@router.get(
+    "/suggestions",
+    operation_id="suggest_serps_queries",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
 @limiter.limit("120/minute")
 def suggest_queries(
     request: Request,
@@ -252,7 +287,11 @@ def suggest_queries(
     return [hit.url_query for hit in response]
 
 
-@router.get("/count-unique", operation_id="count_unique_serps")
+@router.get(
+    "/count-unique",
+    operation_id="count_unique_serps",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
 @limiter.limit("15/minute")
 def count_unique(
     request: Request,
@@ -286,7 +325,11 @@ class ArchiveBucket(BaseModel):
     count: int
 
 
-@router.get("/top-archives", operation_id="top_archives")
+@router.get(
+    "/top-archives",
+    operation_id="top_archives",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
 @limiter.limit("15/minute")
 def top_archives(
     request: Request,
@@ -330,7 +373,11 @@ class ProviderBucket(BaseModel):
     count: int
 
 
-@router.get("/top-providers", operation_id="top_providers")
+@router.get(
+    "/top-providers",
+    operation_id="top_providers",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
 @limiter.limit("15/minute")
 def top_providers(
     request: Request,
@@ -398,7 +445,11 @@ def _parse_interval(interval: str) -> relativedelta:
     return _INTERVAL_UNITS[interval[-1]](int(interval[:-1]))
 
 
-@router.get("/date-histogram", operation_id="serp_date_histogram")
+@router.get(
+    "/date-histogram",
+    operation_id="serp_date_histogram",
+    dependencies=_DEPRECATED_QUERY_PARAMS,
+)
 @limiter.limit("15/minute")
 def date_histogram(
     request: Request,
@@ -544,21 +595,17 @@ def get_by_id(
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
     id: UUID,
-    exclude_hidden: Annotated[
-        bool,
-        Field(description="Exclude hidden SERPs (e.g., spam, porn, etc.)."),
-    ] = False,
 ) -> EnrichedSerp | None:
     """
     Get a SERP by its ID.
     """
-    serp: Serp = Serp.get(
-        id=str(id),
+    # Search by ID (instead of getting the document directly), to always exclude hidden SERPs (e.g., spam, porn, etc.).
+    search: Search = Serp.search(
         using=elasticsearch,
         index=config.es.index_serps,
     )
-    # TODO: Enable once implemented in ORM.
-    # if exclude_hidden and serp.hidden:
-    #     return None
-    enriched_serp = EnrichedSerp(**serp.model_dump())
-    return enriched_serp
+    search = search.filter(Ids(values=[str(id)])).filter(~Term(hidden=True))
+    response = search[:1].execute()
+    if not response.hits:
+        return None
+    return EnrichedSerp(**response.hits[0].model_dump())
