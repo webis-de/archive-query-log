@@ -31,6 +31,18 @@ npm run reorder # Auto-reorder class members to match lint ordering
 npm run test    # Unit tests (Karma and Jasmine)
 npm run test:ci # Headless unit tests (does not require a web browser)
 npm run check-translations # Validate i18n keys of translation files.
+npm run generate-api # Re-generate API types from the OpenAPI specification in `openapi.json`.
+```
+
+### API Types
+
+The TypeScript types for the [AQL API](../README.md#api) in `src/app/api/schema.ts` are generated with [openapi-typescript](https://openapi-ts.dev/) from the OpenAPI specification in `openapi.json`.
+Services send typed requests with the [openapi-fetch](https://openapi-ts.dev/openapi-fetch/) client in `src/app/api/client.ts` (`AqlApiClient`), which routes requests through Angular's `HttpClient`.
+Whenever the API changes, first [export the OpenAPI specification](../README.md#openapi-specification), then re-generate the types:
+
+```shell
+aql api openapi --output browser/openapi.json  # From the repository root.
+npm run generate-api
 ```
 
 ## Configuration

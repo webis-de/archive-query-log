@@ -1,0 +1,4442 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AQL API",
+    "description": "Access and explore data from the Archive Query Log.",
+    "version": "0.3.16.dev102+g9173baf4e.d20261030"
+  },
+  "paths": {
+    "/statistics": {
+      "get": {
+        "tags": [
+          "monitoring"
+        ],
+        "summary": "Statistics",
+        "operationId": "statistics_statistics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Statistics"
+                  },
+                  "type": "array",
+                  "title": "Response Statistics Statistics Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/progress": {
+      "get": {
+        "tags": [
+          "monitoring"
+        ],
+        "summary": "Progress",
+        "operationId": "progress_progress_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Progress"
+                  },
+                  "type": "array",
+                  "title": "Response Progress Progress Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "monitoring"
+        ],
+        "summary": "Home",
+        "operationId": "home__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "head": {
+        "tags": [
+          "monitoring"
+        ],
+        "summary": "Home",
+        "operationId": "home__head",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Search",
+        "description": "Search for SERPs matching the given query and filters, with pagination.",
+        "operationId": "search_serps",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "exclusiveMinimum": 0,
+              "default": 10,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "from_",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "From "
+            }
+          },
+          {
+            "name": "archive_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Archive Id"
+            }
+          },
+          {
+            "name": "provider_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider Id"
+            }
+          },
+          {
+            "name": "from_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Timestamp"
+            }
+          },
+          {
+            "name": "to_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Timestamp"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status Code"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Exclude Hidden"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EnrichedSerp"
+                  },
+                  "title": "Response Search Serps"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/count": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Count",
+        "description": "Count SERPs matching the given query and filters.",
+        "operationId": "count_serps",
+        "parameters": [
+          {
+            "name": "archive_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Archive Id"
+            }
+          },
+          {
+            "name": "provider_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider Id"
+            }
+          },
+          {
+            "name": "from_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Timestamp"
+            }
+          },
+          {
+            "name": "to_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Timestamp"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status Code"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Exclude Hidden"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "title": "Response Count Serps"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/suggestions": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Suggest Queries",
+        "description": "Suggest SERP search queries based on a preliminar query.",
+        "operationId": "suggest_serps_queries",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "exclusiveMinimum": 0,
+              "default": 10,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "archive_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Archive Id"
+            }
+          },
+          {
+            "name": "provider_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider Id"
+            }
+          },
+          {
+            "name": "from_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Timestamp"
+            }
+          },
+          {
+            "name": "to_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Timestamp"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status Code"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Exclude Hidden"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "title": "Response Suggest Serps Queries"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/count-unique": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Count Unique",
+        "description": "Count unique SERP's (by parsed query) among the SERPs matching the given filters and query.",
+        "operationId": "count_unique_serps",
+        "parameters": [
+          {
+            "name": "archive_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Archive Id"
+            }
+          },
+          {
+            "name": "provider_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider Id"
+            }
+          },
+          {
+            "name": "from_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Timestamp"
+            }
+          },
+          {
+            "name": "to_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Timestamp"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status Code"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Exclude Hidden"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "title": "Response Count Unique Serps"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/top-archives": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Top Archives",
+        "description": "Get the most common web archives among the SERPs matching the given filters and query.",
+        "operationId": "top_archives",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "exclusiveMinimum": 0,
+              "default": 5,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "archive_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Archive Id"
+            }
+          },
+          {
+            "name": "provider_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider Id"
+            }
+          },
+          {
+            "name": "from_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Timestamp"
+            }
+          },
+          {
+            "name": "to_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Timestamp"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status Code"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Exclude Hidden"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArchiveBucket"
+                  },
+                  "title": "Response Top Archives"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/top-providers": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Top Providers",
+        "description": "Get the most common search providers among the SERPs matching the given filters and query.",
+        "operationId": "top_providers",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "exclusiveMinimum": 0,
+              "default": 5,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "archive_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Archive Id"
+            }
+          },
+          {
+            "name": "provider_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider Id"
+            }
+          },
+          {
+            "name": "from_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Timestamp"
+            }
+          },
+          {
+            "name": "to_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Timestamp"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status Code"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Exclude Hidden"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProviderBucket"
+                  },
+                  "title": "Response Top Providers"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/date-histogram": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Date Histogram",
+        "description": "Get a date histogram of the SERPs matching the given filters and query.\n\nEither specify a fixed calendar interval (e.g., day, week, month) or a target number of buckets (for automatic interval selection).",
+        "operationId": "serp_date_histogram",
+        "parameters": [
+          {
+            "name": "interval",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "day",
+                    "1d",
+                    "week",
+                    "1w",
+                    "month",
+                    "1M",
+                    "quarter",
+                    "1q",
+                    "year",
+                    "1y"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Histogram interval.",
+              "title": "Interval"
+            },
+            "description": "Histogram interval."
+          },
+          {
+            "name": "num_buckets",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 1000,
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Num Buckets"
+            }
+          },
+          {
+            "name": "archive_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Archive Id"
+            }
+          },
+          {
+            "name": "provider_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider Id"
+            }
+          },
+          {
+            "name": "from_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Timestamp"
+            }
+          },
+          {
+            "name": "to_timestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Timestamp"
+            }
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status Code"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Exclude Hidden"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DateHistogramBucket"
+                  },
+                  "title": "Response Serp Date Histogram"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/compare": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Compare",
+        "description": "Compare multiple SERPs.",
+        "operationId": "compare_serps",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "minItems": 2,
+              "description": "IDs of the SERPs to compare.",
+              "title": "Ids"
+            },
+            "description": "IDs of the SERPs to compare."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SerpComparisonResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serps/{id}": {
+      "get": {
+        "tags": [
+          "serps"
+        ],
+        "summary": "Get By Id",
+        "description": "Get a SERP by its ID.",
+        "operationId": "get_serp_by_id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Exclude hidden SERPs (e.g., spam, porn, etc.).",
+              "default": false,
+              "title": "Exclude Hidden"
+            },
+            "description": "Exclude hidden SERPs (e.g., spam, porn, etc.)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/EnrichedSerp"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Response Get Serp By Id"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers/": {
+      "get": {
+        "tags": [
+          "providers"
+        ],
+        "summary": "Search",
+        "description": "Search for search providers matching the given query and filters, with pagination.",
+        "operationId": "search_providers",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "from_",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "From "
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Provider"
+                  },
+                  "title": "Response Search Providers"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers/count": {
+      "get": {
+        "tags": [
+          "providers"
+        ],
+        "summary": "Count",
+        "description": "Count search providers matching the given query and filters.",
+        "operationId": "count_providers",
+        "parameters": [
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "title": "Response Count Providers"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers/suggestions": {
+      "get": {
+        "tags": [
+          "providers"
+        ],
+        "summary": "Suggest Queries",
+        "description": "Suggest search provider search queries based on a preliminar query.",
+        "operationId": "suggest_providers_queries",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "exclusiveMinimum": 0,
+              "default": 10,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "title": "Response Suggest Providers Queries"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers/{id}": {
+      "get": {
+        "tags": [
+          "providers"
+        ],
+        "summary": "Get By Id",
+        "description": "Get a search provider by its ID.",
+        "operationId": "get_provider_by_id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Id"
+            }
+          },
+          {
+            "name": "exclude_hidden",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Exclude Hidden"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Provider"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Response Get Provider By Id"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/archives/": {
+      "get": {
+        "tags": [
+          "archives"
+        ],
+        "summary": "Search",
+        "description": "Search for web archives matching the given query and filters, with pagination.",
+        "operationId": "search_archives",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "from_",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "From "
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Archive"
+                  },
+                  "title": "Response Search Archives"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/archives/count": {
+      "get": {
+        "tags": [
+          "archives"
+        ],
+        "summary": "Count",
+        "description": "Count web archives matching the given query and filters.",
+        "operationId": "count_archives",
+        "parameters": [
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "title": "Response Count Archives"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/archives/suggestions": {
+      "get": {
+        "tags": [
+          "archives"
+        ],
+        "summary": "Suggest Queries",
+        "description": "Suggest web archive search queries based on a preliminar query.",
+        "operationId": "suggest_archives_queries",
+        "parameters": [
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "exclusiveMinimum": 0,
+              "default": 10,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "exclude_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Exclude Id"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Query"
+            }
+          },
+          {
+            "name": "query_language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Query Language"
+            }
+          },
+          {
+            "name": "fuzzy_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Fuzzy Matching"
+            }
+          },
+          {
+            "name": "multi_field_matching",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Multi Field Matching"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "title": "Response Suggest Archives Queries"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/archives/{id}": {
+      "get": {
+        "tags": [
+          "archives"
+        ],
+        "summary": "Get By Id",
+        "description": "Get a web archive by its ID.",
+        "operationId": "get_archive_by_id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Archive"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Response Get Archive By Id"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Health Check",
+        "description": "Check the health of the application.",
+        "operationId": "health_check_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "title": "Response Health Check Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Archive": {
+        "properties": {
+          "_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "_index": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Index"
+          },
+          "_parentindex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parentindex"
+          },
+          "_primary_term": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Term"
+          },
+          "_routing": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Routing"
+          },
+          "_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "_seq_no": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seq No"
+          },
+          "_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Type"
+          },
+          "_using": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Using"
+          },
+          "_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          },
+          "_version_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version Type"
+          },
+          "last_modified": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Last Modified"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "cdx_api_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Cdx Api Url"
+          },
+          "memento_api_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Memento Api Url"
+          },
+          "priority": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Priority"
+          },
+          "should_build_sources": {
+            "type": "boolean",
+            "title": "Should Build Sources",
+            "default": true
+          },
+          "last_built_sources": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Built Sources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "_id",
+          "_index",
+          "_parentindex",
+          "_primary_term",
+          "_routing",
+          "_score",
+          "_seq_no",
+          "_type",
+          "_using",
+          "_version",
+          "_version_type",
+          "last_modified",
+          "name",
+          "description",
+          "cdx_api_url",
+          "memento_api_url",
+          "priority",
+          "should_build_sources",
+          "last_built_sources"
+        ],
+        "title": "Archive"
+      },
+      "ArchiveBucket": {
+        "properties": {
+          "archive": {
+            "$ref": "#/components/schemas/Archive"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "archive",
+          "count"
+        ],
+        "title": "ArchiveBucket"
+      },
+      "DateHistogramBucket": {
+        "properties": {
+          "from_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "From Timestamp"
+          },
+          "to_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "To Timestamp"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "from_timestamp",
+          "to_timestamp",
+          "count"
+        ],
+        "title": "DateHistogramBucket"
+      },
+      "EnrichedSerp": {
+        "properties": {
+          "_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "_index": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Index"
+          },
+          "_parentindex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parentindex"
+          },
+          "_primary_term": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Term"
+          },
+          "_routing": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Routing"
+          },
+          "_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "_seq_no": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seq No"
+          },
+          "_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Type"
+          },
+          "_using": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Using"
+          },
+          "_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          },
+          "_version_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version Type"
+          },
+          "last_modified": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Last Modified"
+          },
+          "archive": {
+            "$ref": "#/components/schemas/InnerArchive"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InnerProvider"
+          },
+          "capture": {
+            "$ref": "#/components/schemas/InnerCapture"
+          },
+          "url_query": {
+            "type": "string",
+            "title": "Url Query"
+          },
+          "url_query_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "url_page": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2147483647.0,
+                "minimum": -2147483648.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url Page"
+          },
+          "url_page_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "url_offset": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2147483647.0,
+                "minimum": -2147483648.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url Offset"
+          },
+          "url_offset_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "url_language": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^\\w{2}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url Language"
+          },
+          "url_language_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_location": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WarcLocation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_downloader": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerDownloader"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_query": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warc Query"
+          },
+          "warc_query_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_organic_results": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/OrganicResultId"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warc Organic Results"
+          },
+          "warc_organic_results_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_features": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/FeatureId"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warc Features"
+          },
+          "warc_features_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "memento_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Memento Url",
+            "readOnly": true
+          },
+          "capture_url_without_tracking": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Capture Url Without Tracking",
+            "readOnly": true
+          },
+          "unfurl_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Unfurl Url",
+            "readOnly": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "_id",
+          "_index",
+          "_parentindex",
+          "_primary_term",
+          "_routing",
+          "_score",
+          "_seq_no",
+          "_type",
+          "_using",
+          "_version",
+          "_version_type",
+          "last_modified",
+          "archive",
+          "provider",
+          "capture",
+          "url_query",
+          "url_query_parser",
+          "url_page",
+          "url_page_parser",
+          "url_offset",
+          "url_offset_parser",
+          "url_language",
+          "url_language_parser",
+          "warc_location",
+          "warc_downloader",
+          "warc_query",
+          "warc_query_parser",
+          "warc_organic_results",
+          "warc_organic_results_parser",
+          "warc_features",
+          "warc_features_parser",
+          "memento_url",
+          "capture_url_without_tracking",
+          "unfurl_url"
+        ],
+        "title": "EnrichedSerp"
+      },
+      "EnrichedSerpWithResults": {
+        "properties": {
+          "_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "_index": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Index"
+          },
+          "_parentindex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parentindex"
+          },
+          "_primary_term": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Term"
+          },
+          "_routing": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Routing"
+          },
+          "_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "_seq_no": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seq No"
+          },
+          "_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Type"
+          },
+          "_using": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Using"
+          },
+          "_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          },
+          "_version_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version Type"
+          },
+          "last_modified": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Last Modified"
+          },
+          "archive": {
+            "$ref": "#/components/schemas/InnerArchive"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InnerProvider"
+          },
+          "capture": {
+            "$ref": "#/components/schemas/InnerCapture"
+          },
+          "url_query": {
+            "type": "string",
+            "title": "Url Query"
+          },
+          "url_query_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "url_page": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2147483647.0,
+                "minimum": -2147483648.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url Page"
+          },
+          "url_page_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "url_offset": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2147483647.0,
+                "minimum": -2147483648.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url Offset"
+          },
+          "url_offset_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "url_language": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^\\w{2}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url Language"
+          },
+          "url_language_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_location": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WarcLocation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_downloader": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerDownloader"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_query": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warc Query"
+          },
+          "warc_query_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_organic_results": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/OrganicResultId"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warc Organic Results"
+          },
+          "warc_organic_results_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_features": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/FeatureId"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warc Features"
+          },
+          "warc_features_parser": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerParser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "results": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/OrganicResult"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Results"
+          },
+          "memento_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Memento Url",
+            "readOnly": true
+          },
+          "capture_url_without_tracking": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Capture Url Without Tracking",
+            "readOnly": true
+          },
+          "unfurl_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Unfurl Url",
+            "readOnly": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "_id",
+          "_index",
+          "_parentindex",
+          "_primary_term",
+          "_routing",
+          "_score",
+          "_seq_no",
+          "_type",
+          "_using",
+          "_version",
+          "_version_type",
+          "last_modified",
+          "archive",
+          "provider",
+          "capture",
+          "url_query",
+          "url_query_parser",
+          "url_page",
+          "url_page_parser",
+          "url_offset",
+          "url_offset_parser",
+          "url_language",
+          "url_language_parser",
+          "warc_location",
+          "warc_downloader",
+          "warc_query",
+          "warc_query_parser",
+          "warc_organic_results",
+          "warc_organic_results_parser",
+          "warc_features",
+          "warc_features_parser",
+          "results",
+          "memento_url",
+          "capture_url_without_tracking",
+          "unfurl_url"
+        ],
+        "title": "EnrichedSerpWithResults"
+      },
+      "FeatureId": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "rank": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": -2147483648.0,
+            "title": "Rank"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "rank"
+        ],
+        "title": "FeatureId"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "InnerArchive": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "cdx_api_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Cdx Api Url"
+          },
+          "memento_api_url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Memento Api Url"
+          },
+          "priority": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Priority"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "cdx_api_url",
+          "memento_api_url",
+          "priority"
+        ],
+        "title": "InnerArchive"
+      },
+      "InnerCapture": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Url"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "status_code": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2147483647.0,
+                "minimum": -2147483648.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status Code"
+          },
+          "digest": {
+            "type": "string",
+            "title": "Digest"
+          },
+          "mimetype": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mimetype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "url",
+          "timestamp",
+          "status_code",
+          "digest",
+          "mimetype"
+        ],
+        "title": "InnerCapture"
+      },
+      "InnerDownloader": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "should_download": {
+            "type": "boolean",
+            "title": "Should Download",
+            "default": true
+          },
+          "last_downloaded": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Downloaded"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "should_download",
+          "last_downloaded"
+        ],
+        "title": "InnerDownloader"
+      },
+      "InnerParser": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "should_parse": {
+            "type": "boolean",
+            "title": "Should Parse",
+            "default": true
+          },
+          "last_parsed": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Parsed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "should_parse",
+          "last_parsed"
+        ],
+        "title": "InnerParser"
+      },
+      "InnerProvider": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "domain": {
+            "type": "string",
+            "title": "Domain"
+          },
+          "url_path_prefix": {
+            "type": "string",
+            "title": "Url Path Prefix"
+          },
+          "priority": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Priority"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "domain",
+          "url_path_prefix",
+          "priority"
+        ],
+        "title": "InnerProvider"
+      },
+      "InnerSerp": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "title": "InnerSerp"
+      },
+      "OrganicResult": {
+        "properties": {
+          "_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "_index": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Index"
+          },
+          "_parentindex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parentindex"
+          },
+          "_primary_term": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Term"
+          },
+          "_routing": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Routing"
+          },
+          "_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "_seq_no": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seq No"
+          },
+          "_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Type"
+          },
+          "_using": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Using"
+          },
+          "_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          },
+          "_version_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version Type"
+          },
+          "last_modified": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Last Modified"
+          },
+          "archive": {
+            "$ref": "#/components/schemas/InnerArchive"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InnerProvider"
+          },
+          "serp_capture": {
+            "$ref": "#/components/schemas/InnerCapture"
+          },
+          "serp": {
+            "$ref": "#/components/schemas/InnerSerp"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content"
+          },
+          "parser": {
+            "$ref": "#/components/schemas/InnerParser"
+          },
+          "rank": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": -2147483648.0,
+            "title": "Rank"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri",
+            "title": "Url"
+          },
+          "text": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Text"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "should_fetch_captures": {
+            "type": "boolean",
+            "title": "Should Fetch Captures",
+            "default": true
+          },
+          "last_fetched_captures": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Fetched Captures"
+          },
+          "capture_before_serp": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerCapture"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_location_before_serp": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WarcLocation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_downloader_before_serp": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerDownloader"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "capture_after_serp": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerCapture"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_location_after_serp": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WarcLocation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warc_downloader_after_serp": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InnerDownloader"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "_id",
+          "_index",
+          "_parentindex",
+          "_primary_term",
+          "_routing",
+          "_score",
+          "_seq_no",
+          "_type",
+          "_using",
+          "_version",
+          "_version_type",
+          "last_modified",
+          "archive",
+          "provider",
+          "serp_capture",
+          "serp",
+          "content",
+          "parser",
+          "rank",
+          "url",
+          "text",
+          "title",
+          "should_fetch_captures",
+          "last_fetched_captures",
+          "capture_before_serp",
+          "warc_location_before_serp",
+          "warc_downloader_before_serp",
+          "capture_after_serp",
+          "warc_location_after_serp",
+          "warc_downloader_after_serp"
+        ],
+        "title": "OrganicResult",
+        "description": "Organic results are unpaid (often textual) listings ranked by the search engine's algorithms based on their estimated relevance to the search query.\n\nSee: https://serp-elements-catalog.pages.dev/organic"
+      },
+      "OrganicResultId": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "rank": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": -2147483648.0,
+            "title": "Rank"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "rank"
+        ],
+        "title": "OrganicResultId"
+      },
+      "Progress": {
+        "properties": {
+          "input_name": {
+            "type": "string",
+            "title": "Input Name"
+          },
+          "output_name": {
+            "type": "string",
+            "title": "Output Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "current": {
+            "type": "integer",
+            "title": "Current"
+          }
+        },
+        "type": "object",
+        "required": [
+          "input_name",
+          "output_name",
+          "description",
+          "total",
+          "current"
+        ],
+        "title": "Progress"
+      },
+      "Provider": {
+        "properties": {
+          "_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "_index": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Index"
+          },
+          "_parentindex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parentindex"
+          },
+          "_primary_term": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Term"
+          },
+          "_routing": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Routing"
+          },
+          "_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "_seq_no": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seq No"
+          },
+          "_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Type"
+          },
+          "_using": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Using"
+          },
+          "_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          },
+          "_version_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version Type"
+          },
+          "last_modified": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Last Modified"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "exclusion_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exclusion Reason"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "domains": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Domains"
+          },
+          "url_path_prefixes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Url Path Prefixes"
+          },
+          "priority": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Priority"
+          },
+          "should_build_sources": {
+            "type": "boolean",
+            "title": "Should Build Sources",
+            "default": true
+          },
+          "last_built_sources": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Built Sources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "_id",
+          "_index",
+          "_parentindex",
+          "_primary_term",
+          "_routing",
+          "_score",
+          "_seq_no",
+          "_type",
+          "_using",
+          "_version",
+          "_version_type",
+          "last_modified",
+          "name",
+          "description",
+          "exclusion_reason",
+          "notes",
+          "domains",
+          "url_path_prefixes",
+          "priority",
+          "should_build_sources",
+          "last_built_sources"
+        ],
+        "title": "Provider"
+      },
+      "ProviderBucket": {
+        "properties": {
+          "provider": {
+            "$ref": "#/components/schemas/Provider"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "provider",
+          "count"
+        ],
+        "title": "ProviderBucket"
+      },
+      "SerpComparisonResult": {
+        "properties": {
+          "serps": {
+            "items": {
+              "$ref": "#/components/schemas/EnrichedSerpWithResults"
+            },
+            "type": "array",
+            "title": "Serps"
+          }
+        },
+        "type": "object",
+        "required": [
+          "serps"
+        ],
+        "title": "SerpComparisonResult"
+      },
+      "Statistics": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "disk_size": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Disk Size"
+          },
+          "last_modified": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Modified"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "description",
+          "total",
+          "disk_size",
+          "last_modified"
+        ],
+        "title": "Statistics"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "WarcLocation": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "title": "File"
+          },
+          "offset": {
+            "type": "integer",
+            "maximum": 9.223372036854776e+18,
+            "minimum": -9.223372036854776e+18,
+            "title": "Offset"
+          },
+          "length": {
+            "type": "integer",
+            "maximum": 9.223372036854776e+18,
+            "minimum": -9.223372036854776e+18,
+            "title": "Length"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file",
+          "offset",
+          "length"
+        ],
+        "title": "WarcLocation"
+      }
+    }
+  }
+}

@@ -11,7 +11,8 @@
     "test:ci": "ng test --no-watch --browsers=ChromeHeadless --code-coverage",
     "format": "prettier --write \"src/**/*.{ts,html,scss,css,json}\" \"projects/**/*.{ts,html,scss,css,json}\"",
     "reorder": "node scripts/reorder-members.js",
-    "check-translations": "node scripts/check-translations.js"
+    "check-translations": "node scripts/check-translations.js",
+    "generate-api": "openapi-typescript openapi.json --output src/app/api/schema.ts && prettier --write src/app/api/schema.ts"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
     "echarts": "^6.1.0",
+    "openapi-fetch": "^0.17.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -51,6 +53,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^21.1.0",
+    "openapi-typescript": "^7.13.0",
     "postcss": "^8.5.14",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.17",
