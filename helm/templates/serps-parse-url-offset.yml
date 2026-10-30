@@ -32,8 +32,8 @@ spec:
             - serps
             - parse
             - url-offset
-            - --prefetch-limit
-            - '{{ $.Values.serpsParseUrlOffset.prefetchLimit }}'
+            - --size
+            - '{{ $.Values.serpsParseUrlOffset.size }}'
           env:
             - name: ELASTICSEARCH_HOST
               value: {{ $.Values.elasticsearch.host | quote }}
@@ -59,22 +59,10 @@ spec:
               value: {{ $.Values.elasticsearch.indexCaptures | quote }}
             - name: ELASTICSEARCH_INDEX_SERPS
               value: {{ $.Values.elasticsearch.indexSerps | quote }}
-            - name: ELASTICSEARCH_INDEX_RESULTS
-              value: {{ $.Values.elasticsearch.indexResults | quote }}
-            - name: ELASTICSEARCH_INDEX_URL_QUERY_PARSERS
-              value: {{ $.Values.elasticsearch.indexUrlQueryParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_URL_PAGE_PARSERS
-              value: {{ $.Values.elasticsearch.indexUrlPageParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_URL_OFFSET_PARSERS
-              value: {{ $.Values.elasticsearch.indexUrlOffsetParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_WARC_QUERY_PARSERS
-              value: {{ $.Values.elasticsearch.indexWarcQueryParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_WARC_SNIPPETS_PARSERS
-              value: {{ $.Values.elasticsearch.indexWarcSnippetsParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_WARC_DIRECT_ANSWERS_PARSERS
-              value: {{ $.Values.elasticsearch.indexWarcDirectAnswersParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS
-              value: {{ $.Values.elasticsearch.indexWarcMainContentParsers | quote }}
+            - name: ELASTICSEARCH_INDEX_ORGANIC_RESULTS
+              value: {{ $.Values.elasticsearch.indexOrganicResults | quote }}
+            - name: ELASTICSEARCH_INDEX_FEATURES
+              value: {{ $.Values.elasticsearch.indexFeatures | quote }}
             - name: S3_ENDPOINT_URL
               value: {{ $.Values.s3.endpointUrl | quote }}
             - name: S3_BUCKET_NAME

@@ -121,8 +121,13 @@ def _add_captures_actions(
     captures_iter = _iter_captures(config, source)
     try:
         for capture in captures_iter:
-            capture.meta.index = config.es.index_captures
-            yield capture.create_action()
+            capture.index = config.es.index_captures
+            # Use an idempotent upsert instead of a failing create, since a
+            # capture's id is a deterministic hash of its CDX identity, so a
+            # duplicate id always means identical content (e.g., duplicate
+            # rows across CDX pagination boundaries, or a re-fetch after an
+            # interrupted run).
+            yield capture.index_action()
     except ConnectTimeout as e:
         # The archives' CDX are usually very slow, so we expect timeouts.
         # Rather than failing, we just warn and continue with the next source.

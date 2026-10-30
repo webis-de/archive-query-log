@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $.Release.Name }}-serps-parse-warc-snippets
+  name: {{ $.Release.Name }}-organic-results-upload-warc
   namespace: {{ $.Release.Namespace }}
   annotations:
     checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
 spec:
   selector:
     matchLabels:
-      app: {{ $.Release.Name }}-serps-parse-warc-snippets
-  replicas: {{ $.Values.serpsParseWarcSnippets.replicas }}
+      app: {{ $.Release.Name }}-organic-results-upload-warc
+  replicas: {{ $.Values.organicResultsUploadWarc.replicas }}
   revisionHistoryLimit: 1
   template:
     metadata:
       labels:
-        app: {{ $.Release.Name }}-serps-parse-warc-snippets
+        app: {{ $.Release.Name }}-organic-results-upload-warc
     spec:
       containers:
-        - name: {{ $.Release.Name }}-serps-parse-warc-snippets
+        - name: {{ $.Release.Name }}-organic-results-upload-warc
           image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: IfNotPresent
           resources:
@@ -29,11 +29,9 @@ spec:
             - /venv/bin/python
             - -m
             - archive_query_log
-            - serps
-            - parse
-            - warc-snippets
-            - --prefetch-limit
-            - '{{ $.Values.serpsParseWarcSnippets.prefetchLimit }}'
+            - web-search-result-blocks
+            - upload
+            - warc
           env:
             - name: ELASTICSEARCH_HOST
               value: {{ $.Values.elasticsearch.host | quote }}
@@ -59,22 +57,10 @@ spec:
               value: {{ $.Values.elasticsearch.indexCaptures | quote }}
             - name: ELASTICSEARCH_INDEX_SERPS
               value: {{ $.Values.elasticsearch.indexSerps | quote }}
-            - name: ELASTICSEARCH_INDEX_RESULTS
-              value: {{ $.Values.elasticsearch.indexResults | quote }}
-            - name: ELASTICSEARCH_INDEX_URL_QUERY_PARSERS
-              value: {{ $.Values.elasticsearch.indexUrlQueryParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_URL_PAGE_PARSERS
-              value: {{ $.Values.elasticsearch.indexUrlPageParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_URL_OFFSET_PARSERS
-              value: {{ $.Values.elasticsearch.indexUrlOffsetParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_WARC_QUERY_PARSERS
-              value: {{ $.Values.elasticsearch.indexWarcQueryParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_WARC_SNIPPETS_PARSERS
-              value: {{ $.Values.elasticsearch.indexWarcSnippetsParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_WARC_DIRECT_ANSWERS_PARSERS
-              value: {{ $.Values.elasticsearch.indexWarcDirectAnswersParsers | quote }}
-            - name: ELASTICSEARCH_INDEX_WARC_MAIN_CONTENT_PARSERS
-              value: {{ $.Values.elasticsearch.indexWarcMainContentParsers | quote }}
+            - name: ELASTICSEARCH_INDEX_ORGANIC_RESULTS
+              value: {{ $.Values.elasticsearch.indexOrganicResults | quote }}
+            - name: ELASTICSEARCH_INDEX_FEATURES
+              value: {{ $.Values.elasticsearch.indexFeatures | quote }}
             - name: S3_ENDPOINT_URL
               value: {{ $.Values.s3.endpointUrl | quote }}
             - name: S3_BUCKET_NAME
@@ -89,13 +75,13 @@ spec:
                 secretKeyRef:
                   name: {{ $.Release.Name }}-secret
                   key: s3SecretKey
-            - name: WARC_CACHE_PATH_SERPS
-              value: {{ $.Values.warcCache.pathSerps | quote }}
+            - name: WARC_CACHE_PATH_RESULTS
+              value: {{ $.Values.warcCache.pathResults | quote }}
           volumeMounts:
-            - name: {{ $.Release.Name }}-warc-cache-path-serps
-              mountPath: {{ $.Values.warcCache.pathSerps }}
+            - name: {{ $.Release.Name }}-warc-cache-path-results
+              mountPath: {{ $.Values.warcCache.pathResults }}
       volumes:
-        - name: {{ $.Release.Name }}-warc-cache-path-serps
+        - name: {{ $.Release.Name }}-warc-cache-path-results
           hostPath:
-            path: {{ $.Values.warcCache.pathSerps }}
+            path: {{ $.Values.warcCache.pathResults }}
             type: DirectoryOrCreate
