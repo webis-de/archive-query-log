@@ -18,7 +18,7 @@ from elasticsearch_dsl.query import (
     Ids,
 )
 from fastapi import APIRouter, Request, Depends
-from pydantic import BaseModel, Field
+from pydantic import AnyHttpUrl, BaseModel, Field
 from slowapi.util import get_remote_address
 from slowapi.extension import Limiter
 
@@ -29,6 +29,13 @@ from archive_query_log.orm import Archive
 
 router = APIRouter()
 limiter = Limiter(key_func=get_remote_address)
+
+
+class EnrichedArchive(Archive):
+    homepage: Annotated[
+        AnyHttpUrl | None,
+        Field(description="Homepage of the web archive (not yet available)."),
+    ] = None
 
 
 class _FilterParams(BaseModel):
@@ -93,7 +100,7 @@ def search(
     query_params: Annotated[_QueryParams, Depends()],
     size: int = 10,
     from_: int = 0,
-) -> list[Archive]:
+) -> list[EnrichedArchive]:
     """
     Search for web archives matching the given query and filters, with pagination."""
     search = _prepare_search(
@@ -106,7 +113,7 @@ def search(
     search = search[from_ : from_ + size]
     # Execute search and handle response.
     response = search.execute()
-    return list(response)
+    return [EnrichedArchive(**archive.model_dump()) for archive in response]
 
 
 @router.get("/count", operation_id="count_archives")
@@ -167,7 +174,7 @@ def get_by_id(
     config: ConfigDependency,
     elasticsearch: ElasticsearchDependency,
     id: UUID,
-) -> Archive | None:
+) -> EnrichedArchive | None:
     """
     Get a web archive by its ID.
     """
@@ -177,4 +184,4 @@ def get_by_id(
     # TODO: Enable once implemented in ORM.
     # if exclude_hidden and archive.hidden:
     #     return None
-    return archive
+    return EnrichedArchive(**archive.model_dump())
