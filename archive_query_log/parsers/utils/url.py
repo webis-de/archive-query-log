@@ -1,4 +1,4 @@
-from urllib.parse import parse_qsl, unquote
+from urllib.parse import parse_qsl, unquote_to_bytes
 
 from chardet import EncodingEra, detect
 from pydantic import AnyHttpUrl
@@ -41,13 +41,17 @@ def _detect_encoding(value: bytes, parameters: list[tuple[str, bytes]]) -> str:
     return result["encoding"]
 
 
+def _decode_value(value: bytes, parameters: list[tuple[str, bytes]]) -> str:
+    if _is_decodable(value, "utf-8"):
+        return value.decode("utf-8")
+    return value.decode(_detect_encoding(value, parameters), errors="replace")
+
+
 def _parse_parameter(parameter: str, query_string: str) -> str | None:
     parameters = _parse_raw_parameters(query_string)
     for name, value in parameters:
         if name == parameter:
-            if _is_decodable(value, "utf-8"):
-                return value.decode("utf-8")
-            return value.decode(_detect_encoding(value, parameters), errors="replace")
+            return _decode_value(value, parameters)
     return None
 
 
@@ -71,4 +75,7 @@ def parse_url_path_segment(segment: int, url: AnyHttpUrl) -> str | None:
     if len(path_segments) <= segment:
         return None
     path_segment = path_segments[segment]
-    return unquote(path_segment)
+    return _decode_value(
+        unquote_to_bytes(path_segment),
+        _parse_raw_parameters(url.query or ""),
+    )
