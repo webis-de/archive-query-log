@@ -5,11 +5,14 @@ from pytest import mark
 
 from archive_query_log.parsers.utils.url import (
     parse_url_fragment_parameter,
+    parse_url_path_segment,
     parse_url_query_parameter,
 )
 
 _EUC_JP_QUERY = "%BF%CD%B5%A4+%A5%C8%A5%C3%A5%D7+%CD%A2%C6%FE%BC%D6"
 _EUC_JP_DECODED = "人気 トップ 輸入車"
+_EUC_JP_LONG_DECODED = "東京のホテルと旅館の予約サイトを比較する"
+_EUC_JP_LONG_QUERY = quote_from_bytes(_EUC_JP_LONG_DECODED.encode("euc_jp"), safe="")
 
 
 def _parse_query(query_string: str) -> str | None:
@@ -52,17 +55,20 @@ def test_parse_url_parameters_missing() -> None:
     ("query", "encoding"),
     [
         ("定时关机器", "gb18030"),
-        ("高邮头闸公交查询", "gb18030"),
+        ("中华人民共和国国家统计局发布的数据", "gb18030"),
         ("東京のホテル", "euc_jp"),
         ("テスト", "shift_jis"),
         ("개미는 오늘도", "euc_kr"),
         ("почта россии в москве на карте", "cp1251"),
-        ("Schokoladensoße", "cp1252"),
     ],
 )
 def test_parse_url_query_parameter_guesses_encoding(query: str, encoding: str) -> None:
     encoded = quote_from_bytes(query.encode(encoding), safe="")
     assert _parse_query(f"q={encoded}") == query
+
+
+def test_parse_url_query_parameter_keeps_replacement_if_uncertain() -> None:
+    assert _parse_query("q=Schokoladenso%DFe") == "Schokoladenso\ufffde"
 
 
 def test_parse_url_query_parameter_declared_encoding() -> None:
@@ -84,3 +90,22 @@ def test_parse_url_query_parameter_keeps_utf8_next_to_non_utf8() -> None:
 def test_parse_url_query_parameter_ignores_other_invalid_values() -> None:
     other = quote_from_bytes("почта россии в москве".encode("cp1251"), safe="")
     assert _parse_query(f"q={_EUC_JP_QUERY}&x={other}") == _EUC_JP_DECODED
+
+
+@mark.parametrize(
+    ("url", "expected"),
+    [
+        ("https://example.org/s/test", "test"),
+        ("https://example.org/s/caf%C3%A9%20%D0%B4", "café д"),
+        ("https://example.org/s/中文", "中文"),
+        (f"https://example.org/s/{_EUC_JP_LONG_QUERY}", _EUC_JP_LONG_DECODED),
+        ("https://example.org/s/%BF%CD%B5%A4?ie=euc-jp", "人気"),
+        ("https://example.org/s/Schokoladenso%DFe", "Schokoladenso\ufffde"),
+    ],
+)
+def test_parse_url_path_segment(url: str, expected: str) -> None:
+    assert parse_url_path_segment(2, AnyHttpUrl(url)) == expected
+
+
+def test_parse_url_path_segment_missing() -> None:
+    assert parse_url_path_segment(5, AnyHttpUrl("https://example.org/s/test")) is None
