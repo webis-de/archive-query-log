@@ -5,6 +5,7 @@ from pydantic import AnyHttpUrl
 from resiliparse.parse.encoding import map_encoding_to_html5
 
 _ENCODING_PARAMETERS = {"ie", "ei", "ics", "enc", "encoding", "charset", "oe"}
+_MIN_DETECTION_CONFIDENCE = 0.1
 
 
 def _is_decodable(data: bytes, encoding: str) -> bool:
@@ -34,7 +35,10 @@ def _detect_encoding(value: bytes, parameters: list[tuple[str, bytes]]) -> str:
                 return encoding
     # Fall back to chardet encoding detection.
     result = detect(value, encoding_era=EncodingEra.MODERN_WEB)
-    return result["encoding"] or "utf-8"
+    # Keep replacement characters rather than risking plausible but wrong text.
+    if result["encoding"] is None or result["confidence"] < _MIN_DETECTION_CONFIDENCE:
+        return "utf-8"
+    return result["encoding"]
 
 
 def _parse_parameter(parameter: str, query_string: str) -> str | None:
