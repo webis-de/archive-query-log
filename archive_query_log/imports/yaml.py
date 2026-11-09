@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import MutableMapping
 from typing import Sequence, Iterable
 
-from diskcache import Index
+from diskcache_community import Index, SafeDisk
 from tqdm.auto import tqdm
 from whois import whois
 from whois.exceptions import PywhoisError
@@ -100,7 +100,9 @@ def import_providers(
     print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
-    provider_names: MutableMapping[str, str] = Index(str(cache_path))
+    provider_names: MutableMapping[str, str] = Index(
+        str(cache_path), disk=SafeDisk.with_options(on_error="miss")
+    )
 
     if auto_merge or no_merge:
         services = tqdm(
