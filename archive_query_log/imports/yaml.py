@@ -1,8 +1,7 @@
+from dbm import open as dbm_open
 from pathlib import Path
-from typing import MutableMapping
 from typing import Sequence, Iterable
 
-from diskcache import Index
 from tqdm.auto import tqdm
 from whois import whois
 from whois.exceptions import PywhoisError
@@ -15,15 +14,15 @@ from archive_query_log.providers import add_provider
 def _provider_name(
     i: int,
     main_domain: str,
-    provider_names: MutableMapping[str, str],
+    cached_name: str | None,
     review: bool,
 ) -> str | None:
     provider_name_suggest: str | None
-    if main_domain in provider_names:
+    if cached_name is not None:
         if not review:
-            return provider_names[main_domain]
+            return cached_name
         else:
-            provider_name_suggest = provider_names[main_domain].strip()
+            provider_name_suggest = cached_name.strip()
     else:
         try:
             main_domain_info = whois(main_domain)
@@ -81,7 +80,6 @@ def _provider_name(
         provider_name = provider_name_suggest
     if provider_name == "":
         return None
-    provider_names[main_domain] = provider_name
     return provider_name
 
 
@@ -100,7 +98,6 @@ def import_providers(
     print(f"Found {len(services_list)} service definitions.")
 
     services: Iterable[dict] = services_list
-    provider_names: MutableMapping[str, str] = Index(str(cache_path))
 
     if auto_merge or no_merge:
         services = tqdm(
@@ -111,38 +108,47 @@ def import_providers(
 
     num_services = len(services_list)
 
-    ask_for_name = True
-    service: dict
-    for i, service in enumerate(services):
-        if "domains" not in service:
-            raise ValueError(
-                f"Service definition #{i} from {services_path} "
-                f"has no domains: {service}"
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    with dbm_open(cache_path, "c") as provider_names:
+        ask_for_name = True
+        service: dict
+        for i, service in enumerate(services):
+            if "domains" not in service:
+                raise ValueError(
+                    f"Service definition #{i} from {services_path} "
+                    f"has no domains: {service}"
+                )
+
+            if "query_parsers" not in service or len(service["query_parsers"]) == 0:
+                continue
+
+            main_domain = service["domains"][0]
+            if ask_for_name:
+                cached_name = (
+                    provider_names[main_domain].decode()
+                    if main_domain in provider_names
+                    else None
+                )
+                name = _provider_name(
+                    i, main_domain, cached_name, review is not None and review <= i
+                )
+                if name is not None:
+                    provider_names[main_domain] = name
+                else:
+                    ask_for_name = False
+            else:
+                name = None
+
+            add_provider(
+                config=config,
+                name=name,
+                description=None,
+                notes=service.get("notes"),
+                exclusion_reason=service.get("excluded"),
+                domains=set(service["domains"]),
+                url_path_prefixes=set(service["focused_url_prefixes"]),
+                priority=num_services - i,
+                no_merge=no_merge,
+                auto_merge=auto_merge,
+                dry_run=dry_run,
             )
-
-        if "query_parsers" not in service or len(service["query_parsers"]) == 0:
-            continue
-
-        main_domain = service["domains"][0]
-        if ask_for_name:
-            name = _provider_name(
-                i, main_domain, provider_names, review is not None and review <= i
-            )
-            if name is None:
-                ask_for_name = False
-        else:
-            name = None
-
-        add_provider(
-            config=config,
-            name=name,
-            description=None,
-            notes=service.get("notes"),
-            exclusion_reason=service.get("excluded"),
-            domains=set(service["domains"]),
-            url_path_prefixes=set(service["focused_url_prefixes"]),
-            priority=num_services - i,
-            no_merge=no_merge,
-            auto_merge=auto_merge,
-            dry_run=dry_run,
-        )

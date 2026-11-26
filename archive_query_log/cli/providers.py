@@ -3,7 +3,6 @@ from typing import Annotated
 
 from cyclopts import App, Parameter
 from cyclopts.types import (
-    ResolvedDirectory,
     ResolvedExistingFile,
     ResolvedPath,
     PositiveInt,
@@ -72,9 +71,9 @@ def import_(
         Parameter(alias=["-s", "--services-file"]),
     ] = Path("data") / "selected-services.yaml",
     cache_path: Annotated[
-        ResolvedDirectory,
-        Parameter(alias=["-c", "--cache-dir"]),
-    ] = Path("data") / "cache" / "provider-names",
+        ResolvedPath,
+        Parameter(alias=["-c", "--cache-file"]),
+    ] = Path("data") / "cache" / "provider-names.db",
     review: int | None = None,
     no_merge: bool = False,
     auto_merge: bool = False,
