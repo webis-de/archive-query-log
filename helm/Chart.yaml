@@ -10,10 +10,7 @@ maintainers:
 - name: Jan Heinrich Merker
   email: heinrich.merker@uni-jena.de
 
-# This is the version number of the application being deployed. This version number should be
-# incremented each time you make changes to the application.
-appVersion: 0.3.15
-
-# This is the chart version. This version number should be incremented each time you make changes
-# to the chart and its templates, including the app version.
-version: 0.3.15
+# The application (image tag) and chart versions are set from the latest Git tag when CI packages the chart.
+# Use 0.0.0 as a fallback when installing the chart directly from this directory.
+appVersion: 0.0.0
+version: 0.0.0
